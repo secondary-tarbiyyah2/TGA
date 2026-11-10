@@ -167,7 +167,8 @@ const routineText = (id) => (ROUTINES[id] ? ROUTINES[id].label : "");
 /**
  * @param file   { subject, year, board, exam… }
  * @param lesson the lesson JSON
- * @param meta   { yearLabel, accent, band, prev, next, slides: { starter, teach:[n…], guided, independent, exit, close, total, …Answers }, breaks, keyQuestions }
+ * @param meta   { yearLabel, accent, band, prev, next, slides: { starter, teach:[n…], guided, independent, exit, close, total, …Answers }, breaks, keyQuestions,
+ *                 assess: an assessment lesson's { mode, label, rows: [{ label, rest, marks, a }], marks, minutes } or null }
  */
 export async function buildPlan(file, lesson, meta) {
   planQuran = meta.subjectSlug === "quran";
@@ -180,6 +181,9 @@ export async function buildPlan(file, lesson, meta) {
   const senior = meta.band === "senior";
   const children = [];
   const ks4 = /^y1[01]$/.test(file.year);
+  // An assessment lesson (test, mock or quiz): the independent questions are the paper.
+  const A = meta.assess || null;
+  const marksText = (m) => (m == null ? "" : ` [${m} mark${m === 1 ? "" : "s"}]`);
 
   // ── Header banner ──────────────────────────────────────────────────────────
   const chip = `${clean(file.subject).toUpperCase()}  ·  ${meta.yearLabel.toUpperCase()}${ks4 && (lesson.boardShort || file.boardShort || lesson.board || file.board) ? `  ·  ${clean(lesson.boardShort || file.boardShort || lesson.board || file.board).toUpperCase()}` : ""}${ks4 && (file.examShort || file.exam) ? `  ·  EXAM: ${clean(file.examShort || file.exam).toUpperCase()}` : ""}`;
@@ -195,7 +199,7 @@ export async function buildPlan(file, lesson, meta) {
               [
                 para([run(chip, { bold: true, color: "E3C98F", size: 16 })], { after: 30 }),
                 para([run(`Lesson ${lesson.n}: ${clean(lesson.title)}`, { bold: true, color: "FFFFFF", size: 32 })], { after: 30 }),
-                para([run(`${clean(lesson.unit)}   ·   ${duration} minutes   ·   ${S.total} slides`, { color: "E8E4D8", size: 17 })], { after: 0 }),
+                para([run(`${clean(lesson.unit)}   ·   ${duration} minutes   ·   ${S.total} slides${A ? `   ·   ${A.label.toUpperCase()}${A.marks ? `, ${A.marks} marks` : ""}` : ""}`, { color: "E8E4D8", size: 17 })], { after: 0 }),
               ],
               { w: CONTENT_W, fill: accent, pad: 140, borders: { top: border(accent), bottom: border(accent), left: border(accent), right: border(accent) } },
             ),
@@ -282,7 +286,21 @@ export async function buildPlan(file, lesson, meta) {
     ],
   ]);
   rows.push([at(t.guided), slideRef(S.iDo || S.guided, S.guidedAnswers), phase(S.iDo ? "I do, then we do" : senior ? "Guided practice" : "We do", routineFor(lesson, "practice")), [small(S.iDo ? `I do (slide ${S.iDo}): go through the model of question 1 (see Models below), then we do the rest together.` : "Model your thinking aloud; check every pupil before moving on.", { italics: true, color: MUTED }), ...qList(lesson.practice)]]);
-  rows.push([at(t.independent), slideRef(S.indModel || S.independent, S.independentAnswers), phase(senior ? "Independent" : "You do", routineFor(lesson, "independent")), [...(S.indModel ? [small(`Go through task 1 first (slide ${S.indModel}).`, { color: accent })] : []), small(meta.band === "senior" ? "Core, extend, stretch: pupils start where they can; circulate via chat and cameras." : "Bronze, silver, gold: children choose where to start.", { italics: true, color: MUTED }), ...qList(lesson.independent)]]);
+  if (A) {
+    const qs = S.assessment || [];
+    rows.push([
+      at(t.independent),
+      range(S.examConditions, qs.length ? qs[qs.length - 1] : S.examConditions),
+      phase(`${A.label} (exam conditions)`, null),
+      [
+        small(`Slide ${S.examConditions}: exam conditions. Cameras on, mics off, work alone, no other tabs.${A.minutes ? ` Start a ${A.minutes}-minute timer and put the start and finish times in the chat.` : ""}`, { color: accent, bold: true }),
+        ...(A.before ? [small(`Before you start: ${clean(A.before)}`, { color: MUTED })] : []),
+        small(`Questions on slide${qs.length > 1 ? "s" : ""} ${qs.join(", ")}. No answers are shown in the lesson; the mark scheme is in the teacher-only section${S.teacherOnly ? ` from slide ${S.teacherOnly}` : ""} and below.`, { italics: true, color: MUTED }),
+        ...A.rows.map((r) => small(`${r.label}${marksText(r.marks)}: ${clean(r.rest)}`)),
+        ...(A.marks ? [small(`Total: ${A.marks} marks.`, { bold: true })] : []),
+      ],
+    ]);
+  } else rows.push([at(t.independent), slideRef(S.indModel || S.independent, S.independentAnswers), phase(senior ? "Independent" : "You do", routineFor(lesson, "independent")), [...(S.indModel ? [small(`Go through task 1 first (slide ${S.indModel}).`, { color: accent })] : []), small(meta.band === "senior" ? "Core, extend, stretch: pupils start where they can; circulate via chat and cameras." : "Bronze, silver, gold: children choose where to start.", { italics: true, color: MUTED }), ...qList(lesson.independent)]]);
   rows.push([at(t.exit), String(S.exit), phase("Exit ticket", routineFor(lesson, "exit")), [...qList(lesson.exit), ...pollNote("exit"), small("Then a 1-2-3 confidence check on fingers.", { italics: true, color: MUTED })]]);
   if (S.islamicEnd) rows.push([at(t.islamic), String(S.islamicEnd), phase("Islamic position", null), [small(clean(lesson.islamicLink.text), { italics: true })]]);
   rows.push([at(t.close), S.topicKeywords ? `${S.topicKeywords}, ${S.close}` : String(S.close), phase("Close", null), [small(`Homework: ${clean(Array.isArray(lesson.homework) ? lesson.homework.join(" ") : lesson.homework)}`), ...(S.topicKeywords ? [small(`Topic key words for revision (slide ${S.topicKeywords}).`, { color: MUTED })] : []), small("Close with du'a and jazakallahu khayran.", { color: MUTED })]]);
@@ -345,7 +363,11 @@ export async function buildPlan(file, lesson, meta) {
     if (x.sort && Array.isArray(x.sort.answer)) keyRows.push([`Card sort: ${clean(x.heading)}`, [para([run(sortAnswer(x.sort), { size: 17 })], { after: 0 })]]);
   });
   addSection(senior ? "Guided practice" : "We do", lesson.practice);
-  addSection("Independent", lesson.independent);
+  if (A) {
+    // The mark scheme: every question with its label and marks, answered or not.
+    keyRows.push({ section: `Mark scheme: ${A.label}${A.marks ? ` (${A.marks} marks)` : ""}${S.markScheme && S.markScheme.length ? `, also on teacher-only slide${S.markScheme.length > 1 ? "s" : ""} ${S.markScheme.join(", ")}` : ""}` });
+    A.rows.forEach((r) => keyRows.push([`${r.label}${marksText(r.marks)}: ${clean(r.rest)}`, [para([run(r.a ? clean(r.a) : "No answer recorded: mark against the success criteria.", { size: 17, bold: !!r.a, italics: !r.a, color: r.a ? INK : MUTED })], { after: 0 })]]));
+  } else addSection("Independent", lesson.independent);
   addSection("Exit ticket", lesson.exit);
   children.push(heading("Answer key", accent));
   if (keyRows.length > 1) {
@@ -367,7 +389,7 @@ export async function buildPlan(file, lesson, meta) {
   // ── Adaptations | assessment for learning ─────────────────────────────────
   const ad = adaptations(lesson.send).map(([k, v]) => para([run(`${k}: `, { bold: true, color: accent, size: 17 }), run(v, { size: 17 })], { after: 30 }));
   const ind = lesson.independent || [];
-  if (ind.length >= 3) ad.push(para([run("Stretch task: ", { bold: true, color: accent, size: 17 }), run(clean(itemQ(ind[ind.length - 1])).replace(/^(stretch|gold|challenge)\s*[:\-–]\s*/i, ""), { size: 17 })], { after: 30 }));
+  if (ind.length >= 3 && !A) ad.push(para([run("Stretch task: ", { bold: true, color: accent, size: 17 }), run(clean(itemQ(ind[ind.length - 1])).replace(/^(stretch|gold|challenge)\s*[:\-–]\s*/i, ""), { size: 17 })], { after: 30 }));
   if (!ad.length) ad.push(para([run(`Start ${kids} who need support at the first task with a worked example to hand; move confident ${kids} straight to the last task.`, { size: 17 })]));
   const sr = routineFor(lesson, "starter");
   const afl = [

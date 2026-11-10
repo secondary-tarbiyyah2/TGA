@@ -6,7 +6,7 @@ import { ui } from "@/components/learn/ui";
 import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Modal";
 import { problemsFor, realEditAt, syncNotes, triggerCurriculumSync, when, type SyncNote } from "@/lib/learn/curriculumUnits";
 import type { CurriculumLesson } from "@/lib/learn/curriculum";
-import { BLOCKS, HOOK_TYPES, ROUTINES, ROUTINE_SECTIONS, blockProblems, extrasProblems, lessonWarnings } from "@/lib/learn/lessonSchema.mjs";
+import { ASSESSMENT_LABEL, ASSESSMENT_MODES, BLOCKS, HOOK_TYPES, ROUTINES, ROUTINE_SECTIONS, blockProblems, detectAssessment, extrasProblems, lessonWarnings } from "@/lib/learn/lessonSchema.mjs";
 import { Select } from "@/components/learn/Select";
 
 import { askConfirm } from "@/components/learn/kit";
@@ -48,6 +48,8 @@ type LessonBase = {
   resources?: string[];
   islamicLink?: IslamicLink;
   pictures?: Picture[];
+  /** A test, mock or quiz (exam conditions, marks, mark scheme for the teacher only); false: never one. Left out: detected from the title. */
+  assessmentMode?: "test" | "mock" | "quiz" | false;
   [key: string]: unknown;
 };
 export type LessonContent = LessonBase & { starter: Item[]; practice: Item[]; independent: Item[]; exit: Item[] };
@@ -169,6 +171,7 @@ function tidy(c: FormContent): LessonContent {
     void _a;
     out.hook = { ...rest, type: c.hook.type, text: c.hook.text.trim(), ...(opts.length ? { options: opts } : {}), ...(c.hook.a?.trim() ? { a: c.hook.a.trim() } : {}) };
   } else delete out.hook;
+  if (c.assessmentMode === undefined) delete out.assessmentMode;
   if (c.islamicLink && c.islamicLink.text.trim()) out.islamicLink = { text: c.islamicLink.text.trim(), at: c.islamicLink.at === "end" ? "end" : "start" };
   else delete out.islamicLink;
   const pics = (c.pictures || [])
@@ -373,6 +376,7 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
                 <span className={ui.label}>Length (minutes)</span>
                 <input type="number" min={10} max={120} value={c.duration ?? ""} onChange={(e) => set("duration", e.target.value ? Number(e.target.value) : undefined)} className={`mt-1 ${ui.input}`} />
               </label>
+              <AssessmentField value={c.assessmentMode} title={c.title} unit={c.unit} onChange={(v) => set("assessmentMode", v)} />
               <div className="sm:col-span-2">
                 <TextField label="Big question (optional)" hint="Gets its own slide and comes back on the exit ticket" value={c.bigQuestion || ""} onChange={(v) => set("bigQuestion", v)} />
               </div>
@@ -544,6 +548,28 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
 }
 
 /** Fill in any list the form expects but the stored lesson lacks. Items keep their answers and minutes. */
+/** Test, mock or quiz: the slides then show exam conditions and marks, and keep the answers for the teacher. */
+function AssessmentField({ value, title, unit, onChange }: { value: LessonBase["assessmentMode"]; title: string; unit: string; onChange: (v: LessonBase["assessmentMode"]) => void }) {
+  const labels = ASSESSMENT_LABEL as Record<string, string>;
+  const found = detectAssessment({ title, unit }) as { mode: string; matched: string } | null;
+  const current = value === false ? "none" : value || "";
+  return (
+    <label className="block">
+      <span className={ui.label}>Assessment (test, mock or quiz)</span>
+      <Select value={current} onChange={(e) => onChange(e.target.value === "none" ? false : e.target.value ? (e.target.value as "test" | "mock" | "quiz") : undefined)} className={`mt-1 ${ui.select}`}>
+        <option value="">{found ? `From the title: ${labels[found.mode]}` : "From the title: not an assessment"}</option>
+        {(ASSESSMENT_MODES as string[]).map((m) => (
+          <option key={m} value={m}>
+            {labels[m]}
+          </option>
+        ))}
+        <option value="none">Not an assessment</option>
+      </Select>
+      <span className="mt-1 block text-xs text-ink/65">An assessment gets an exam-conditions slide, questions with their marks, and the answers only in a teacher-only section at the end.</span>
+    </label>
+  );
+}
+
 function normalise(raw: LessonContent): FormContent {
   const rows = (a: unknown) => (Array.isArray(a) ? a.map(toRow) : typeof a === "string" && a ? [toRow(a)] : []);
   return {
