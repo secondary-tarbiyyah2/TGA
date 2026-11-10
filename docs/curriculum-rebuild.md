@@ -76,6 +76,9 @@ navigation, dashboards, lesson workspaces, review workflow (migration 0192), cur
 what's left are in docs/portal-redesign.md; follow its design rules for every new page.
 
 Next, in this order (each one agent; briefs in docs/agent-briefs/):
+(10 Nov 2026, 06:00: running now on branches `lessons-humanities-s1`, `lessons-comp-art-pshe-s1`,
+`lessons-quran-options-s1` (all of item 1 except Year 1-2 science, which sits in Topic) and `claude/tafweed-T19-polish`
+(long forms in titled sections, redesign Next items 2, 3 and 5). If a session stops, resume from those branches.)
 1. Spring 1 lessons still to write: Year 1-2 Topic and Year 1-2 science; History, Geography, Computing, Art and DT,
    PSHE (Y1-11); Qur'an (Y1-11); Business and Computer Science options (Y10-11). (English Y7-11, Islamic Studies
    Y1-11 and Arabic Y3-11 are done and merged.)
@@ -87,7 +90,7 @@ Next, in this order (each one agent; briefs in docs/agent-briefs/):
 4. Consolidation pass (owner agreed): every old SOW, map and lesson marked keep / adapt / retire; retired lessons recorded in
    content/retired-lessons.json and moved to an "Archive - do not teach from" area; renumber lessons into teaching order.
 5. Backlog docs/backlog/tafweed.md: T19 portal polish is folded into the redesign (docs/portal-redesign.md "Next"), T22 LADO (owner must say which local authority), T23 safeguarding mailbox (owner must create it in
-   Microsoft 365). Prospectus PDF still needs the tablet-or-printer line (tools: the prospectus patch script approach in
+   Microsoft 365). Prospectus PDF tablet-or-printer line: owner said not to do it (10 Nov). (Old note: the prospectus patch script approach in
    git history of public/prospectus).
 6. Small fixes: arrows (→) in poll options render as dashes (branch `builder-arrows-fix` may exist); make the website use
    self-hosted fonts so builds don't fail when Google Fonts can't be reached.

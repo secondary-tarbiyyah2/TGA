@@ -301,6 +301,16 @@ function TextArea({
   );
 }
 
+/** A titled part of a step ("About you", "Contact details"), so a long step reads as a few short groups. Layout only. */
+function Part({ title, hint, first }: { title: string; hint?: string; first?: boolean }) {
+  return (
+    <div className={first ? "" : "border-t border-gold-light/60 pt-6"}>
+      <h3 className="font-semibold text-ink">{title}</h3>
+      {hint && <p className="mt-0.5 text-sm text-ink/70">{hint}</p>}
+    </div>
+  );
+}
+
 function Radios({ id, legend, options, value, onChange, error, hint }: { id: string; legend: string; options: Option[]; value: string; onChange: (v: string) => void; error?: string; hint?: string }) {
   return (
     <fieldset id={`f-${id}`} tabIndex={-1} aria-invalid={error ? true : undefined} aria-describedby={error ? `${id}-err` : undefined}>
@@ -690,6 +700,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
 
         {step === 0 && (
           <>
+            <Part first title="The role" hint="Choose “General application” if no current vacancy fits." />
             <div>
               <label htmlFor="f-vacancyId" className="block text-sm font-medium text-ink">
                 Which role are you applying for? <span className="text-red-700" aria-hidden="true">*</span>
@@ -708,17 +719,20 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
               <Err id="vacancyId" msg={errors.vacancyId} />
             </div>
 
+            <Part title="About you" hint="Your name as it appears on your ID documents." />
             <div className="grid gap-4 sm:grid-cols-[8rem_1fr_1fr]">
               <TextInput id="title" label="Title" value={v.title} onChange={(x) => set("title", x)} maxLength={20} autoComplete="honorific-prefix" placeholder="e.g. Ms" />
               <TextInput id="firstName" label="First name" required value={v.firstName} onChange={(x) => set("firstName", x)} error={errors.firstName} maxLength={80} autoComplete="given-name" />
               <TextInput id="lastName" label="Last name" required value={v.lastName} onChange={(x) => set("lastName", x)} error={errors.lastName} maxLength={80} autoComplete="family-name" />
             </div>
             <TextInput id="preferredName" label="Name you like to be called" value={v.preferredName} onChange={(x) => set("preferredName", x)} maxLength={80} autoComplete="nickname" />
+            <Part title="Contact details" hint="We use these to keep you updated and arrange an interview." />
             <div className="grid gap-4 sm:grid-cols-2">
               <TextInput id="email" label="Email" required type="email" inputMode="email" value={v.email} onChange={(x) => set("email", x)} error={errors.email} maxLength={254} autoComplete="email" />
               <TextInput id="emailConfirm" label="Email again" required type="email" inputMode="email" value={v.emailConfirm} onChange={(x) => set("emailConfirm", x)} error={errors.emailConfirm} maxLength={254} autoComplete="email" />
             </div>
             <TextInput id="phone" label="Phone (with country code)" required type="tel" inputMode="tel" value={v.phone} onChange={(x) => set("phone", x)} error={errors.phone} maxLength={40} autoComplete="tel" placeholder="+44 7…" />
+            <Part title="Where you live and work" />
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="f-country" className="block text-sm font-medium text-ink">
@@ -737,10 +751,12 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
 
         {step === 1 && (
           <>
+            <Part first title="Qualifications" hint="Teaching, academic and Islamic study, with where and when." />
             <Radios id="teacherStatus" legend="Your teacher status" options={TEACHER_STATUS} value={v.teacherStatus} onChange={(x) => set("teacherStatus", x)} error={errors.teacherStatus} />
             <TextInput id="highestQualification" label="Your highest qualification" required value={v.highestQualification} onChange={(x) => set("highestQualification", x)} error={errors.highestQualification} maxLength={300} placeholder="e.g. BSc Mathematics (2:1), PGCE Secondary" />
             <TextArea id="qualifications" label="Other qualifications and training" value={v.qualifications} onChange={(x) => set("qualifications", x)} hint="Degrees, teaching qualifications and recent training, with the institution and year." rows={4} />
             <TextArea id="islamicQualifications" label="Islamic qualifications, ijazah or study" value={v.islamicQualifications} onChange={(x) => set("islamicQualifications", x)} hint="For example Qur'an study, an ijazah, an alimiyyah course or Arabic study, with where and with whom. An ijazah is welcome but not required." rows={4} />
+            <Part title="What you teach" />
             <Checks id="subjects" legend="Subjects or areas you can teach" options={SUBJECTS} value={v.subjects} onChange={(x) => set("subjects", x)} error={errors.subjects} hint="Choose all that apply." />
             <Checks id="yearGroups" legend="Year groups you have taught" options={YEAR_GROUPS} value={v.yearGroups} onChange={(x) => set("yearGroups", x)} required={false} />
             <TextInput id="languages" label="Languages you speak" value={v.languages} onChange={(x) => set("languages", x)} maxLength={300} placeholder="e.g. English, Arabic, Urdu" />
