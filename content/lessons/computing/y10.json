@@ -99,470 +99,1048 @@
       "boardShort": "Edexcel GCSE 1CP2"
     },
     {
-      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "unit": "Summer 1: Algorithms",
       "n": 2,
-      "title": "Flowcharts",
+      "title": "Flowcharts: representing algorithms visually",
       "duration": 50,
+      "bigQuestion": "Why might a flowchart be easier to follow than a paragraph of instructions?",
       "objectives": [
-        "Use the standard flowchart symbols correctly",
-        "Interpret and complete a flowchart for an algorithm",
-        "Create a flowchart for a problem with selection and iteration"
+        "To understand how to represent and interpret algorithms with standard flowchart symbols"
       ],
+      "successCriteria": [
+        "All: name the flowchart symbols",
+        "Most: draw a flowchart with a decision and a loop",
+        "Some: convert between a flowchart and pseudocode"
+      ],
+      "smsc": "Social: communicating ideas clearly",
       "keywords": [
         {
-          "term": "flowchart",
-          "def": "a diagram showing the steps of an algorithm using standard symbols"
-        },
-        {
-          "term": "terminator",
-          "def": "oval symbol marking start or end"
-        },
-        {
-          "term": "decision",
-          "def": "diamond symbol with two exits, yes and no"
+          "term": "terminal",
+          "def": "the start or stop symbol"
         },
         {
           "term": "process",
-          "def": "rectangle symbol for an action or calculation"
+          "def": "a rectangle for an action"
+        },
+        {
+          "term": "decision",
+          "def": "a diamond with yes/no paths"
         },
         {
           "term": "input/output",
-          "def": "parallelogram symbol for data entering or leaving"
+          "def": "a parallelogram for data in or out"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might a flowchart be easier to follow than a paragraph of instructions?",
+        "a": "It shows paths and decisions visually; you can see every route at a glance."
+      },
       "starter": [
-        "Bismillah. State the three parts of computational thinking.",
-        "Which flowchart symbol is used for a yes/no question?",
-        "What is the difference between selection and iteration?"
+        {
+          "q": "Iteration means ...",
+          "a": "repeating",
+          "mins": 1,
+          "options": [
+            "repeating",
+            "choosing"
+          ]
+        },
+        {
+          "q": "Write the pseudocode to display 'Hello'.",
+          "a": "SEND 'Hello' TO DISPLAY",
+          "mins": 1
+        },
+        {
+          "q": "END IF closes ...",
+          "a": "a selection block",
+          "mins": 1,
+          "options": [
+            "a selection block",
+            "a loop"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Flowchart symbols",
-          "bullets": [
-            "Oval: start/end.",
-            "Parallelogram: input/output.",
-            "Rectangle: process.",
-            "Diamond: decision.",
-            "Arrows show the flow."
-          ],
-          "note": "Use the Edexcel-style symbols. Remind pupils that arrows show direction and that each diamond must have two labelled exits (Yes/No). Marks are lost for unlabelled decisions."
+          "heading": "Symbols",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Symbol",
+              "Shape",
+              "Use"
+            ],
+            "rows": [
+              [
+                "Terminal",
+                "Rounded rectangle",
+                "Start, Stop"
+              ],
+              [
+                "Input/output",
+                "Parallelogram",
+                "RECEIVE, SEND"
+              ],
+              [
+                "Process",
+                "Rectangle",
+                "SET, calculate"
+              ],
+              [
+                "Decision",
+                "Diamond",
+                "Yes/no question"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Selection in a flowchart",
-          "bullets": [
-            "Start.",
-            "Input n.",
-            "Decision: n MOD 2 = 0?",
-            "Yes: output 'even'. No: output 'odd'. End."
-          ],
-          "note": "Draw this step by step. Trace with n = 7 (odd) and n = 10 (even). Ask what MOD does. Link to Y9 learning: remainders. Use the phrase 'follow the arrows' when tracing."
+          "heading": "A loop in a flowchart",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Start",
+            "Set count to 0",
+            "Decision: count < 5?",
+            "Yes: output, add 1, back to the decision",
+            "No: stop"
+          ]
         },
         {
-          "heading": "Iteration in a flowchart",
-          "bullets": [
-            "Set total to 0 and count to 1.",
-            "Decision: count <= 5?",
-            "Yes: add count to total, add 1 to count, loop back.",
-            "No: output total."
-          ],
-          "note": "Show how a loop is made by an arrow going back to a decision. Trace this algorithm: it outputs 15. Ask pupils what it calculates (sum of 1 to 5). A common mistake is forgetting to increase the counter, causing an infinite loop."
+          "heading": "Converting",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Flowchart",
+              "points": [
+                "Diamond with arrow back"
+              ]
+            },
+            "right": {
+              "title": "Pseudocode",
+              "points": [
+                "WHILE count < 5 DO ... END WHILE"
+              ]
+            },
+            "label": "same algorithm"
+          }
         },
         {
-          "heading": "Exam technique",
-          "bullets": [
-            "Use a ruler and correct shapes.",
-            "Start with a terminator.",
-            "Label Yes/No.",
-            "Check by tracing."
-          ],
-          "note": "Teach pupils to check any flowchart they draw using test data. Mention that on Paper 1 they may need to complete missing parts of a flowchart or say what the algorithm does. Use command words: 'complete', 'describe', 'state'."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A diamond in a flowchart is a ...",
+            "options": [
+              "decision",
+              "process",
+              "terminal"
+            ],
+            "answer": 0,
+            "why": "It has yes/no outputs."
+          }
         }
       ],
       "practice": [
-        "Which symbol would you use for 'Input the user's age'? (parallelogram)",
-        "Trace the sum flowchart. What are the values of count and total at each pass? (count 1,2,3,4,5; total 1,3,6,10,15)",
-        "Add the missing labels to a decision diamond which asks 'Is the temperature above 30?'"
+        {
+          "q": "Draw a flowchart that inputs a temperature and outputs 'Hot' if it is over 25, otherwise 'Not hot'.",
+          "a": "Start, input, decision (> 25), two outputs, stop.",
+          "mins": 4,
+          "model": "I do: Start → input age → decision age >= 18 → yes 'Adult' / no 'Child' → Stop."
+        }
       ],
       "independent": [
-        "Draw a flowchart for an algorithm that inputs a mark and outputs 'Pass' if it is 40 or more, otherwise 'Fail'.",
-        "Draw a flowchart which asks for numbers repeatedly until the user enters 0, then outputs how many numbers were entered (not counting 0).",
-        "Trace your flowchart with test data 5, 8, 2, 0 and write down the final output."
+        {
+          "q": "In diagrams.net: draw a flowchart for a password check that allows three attempts; then write it in pseudocode.",
+          "a": "Correct symbols, a loop with a counter and a decision; matching pseudocode.",
+          "mins": 12,
+          "model": "The teacher draws the start and input."
+        },
+        {
+          "q": "Extend: add a message showing attempts remaining.",
+          "a": "Output inside the loop.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name the shape used for a decision and explain what must be on its exits.",
-        "State the output of the sum flowchart if the limit changes from 5 to 4."
+        {
+          "q": "Input and output use a ...",
+          "a": "parallelogram",
+          "mins": 1,
+          "options": [
+            "parallelogram",
+            "diamond"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why might a flowchart be easier to follow than a paragraph of instructions?",
+          "a": "It shows paths and decisions visually; you can see every route at a glance.",
+          "mins": 2
+        }
       ],
-      "homework": "Draw a flowchart for an algorithm that asks for a password up to 3 times and ends with 'Locked' if all attempts are wrong.",
-      "send": "SEND/EAL: provide symbol stencils and partly completed flowcharts. Stretch: draw a flowchart with a nested decision for a ticket price calculator.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Draw a flowchart for making wudu in order (sequence only).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "diagrams.net (free, browser)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Flowchart diagram",
+          "alt": "A flowchart",
+          "for": "hook"
+        },
+        {
+          "find": "Decision diamond symbol",
+          "alt": "A decision symbol",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "1.2.1"
+      ]
     },
     {
-      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "unit": "Summer 1: Algorithms",
       "n": 3,
-      "title": "Pseudo-code and trace tables",
+      "title": "Trace tables and reading pseudocode",
       "duration": 50,
+      "bigQuestion": "Why would a programmer run code in their head before running it on a computer?",
       "objectives": [
-        "Read and write algorithms in pseudo-code using sequence, selection and iteration",
-        "Complete a trace table for an algorithm",
-        "Identify the purpose of an algorithm and find errors"
+        "To understand how to use a trace table to follow an algorithm and find its output"
       ],
+      "successCriteria": [
+        "All: complete a trace table for a FOR loop",
+        "Most: trace a WHILE loop with DIV",
+        "Some: use a trace table to find a logic error"
+      ],
+      "smsc": "Moral: careful checking",
       "keywords": [
         {
-          "term": "pseudo-code",
-          "def": "a way of writing algorithms in structured English not tied to a programming language"
-        },
-        {
           "term": "trace table",
-          "def": "a table used to record the values of variables as an algorithm runs"
+          "def": "a table that records variable values step by step"
         },
         {
-          "term": "variable",
-          "def": "a named store whose value can change"
+          "term": "dry run",
+          "def": "working through code by hand"
         },
         {
           "term": "logic error",
-          "def": "a mistake that makes a program run but give the wrong result"
+          "def": "the program runs but gives the wrong result"
+        },
+        {
+          "term": "output",
+          "def": "what the algorithm displays"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why would a programmer run code in their head before running it on a computer?",
+        "a": "To understand it, predict the result and catch logic errors."
+      },
       "starter": [
-        "Bismillah. Draw the symbol for a decision.",
-        "Why is a flowchart useful before coding?",
-        "What is the value of 17 MOD 5?"
+        {
+          "q": "Merge sort uses ...",
+          "a": "divide and conquer",
+          "mins": 1,
+          "options": [
+            "divide and conquer",
+            "neighbour swaps only"
+          ]
+        },
+        {
+          "q": "Merge 1, 4 and 2, 3.",
+          "a": "1, 2, 3, 4.",
+          "mins": 1
+        },
+        {
+          "q": "Bubble sort is good for ...",
+          "a": "small lists",
+          "mins": 1,
+          "options": [
+            "small lists",
+            "huge lists"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "What is pseudo-code?",
-          "bullets": [
-            "Structured English for algorithms.",
-            "No strict syntax, but be clear.",
-            "Uses SET/IF/WHILE-type keywords."
-          ],
-          "note": "Explain that Pearson's papers present algorithms in pseudo-code (and flowcharts) and that you should check the specification's conventions for the exact style; clear, consistent structure is what matters. Show how to write assignments, inputs and outputs. Keep to one style throughout."
+          "heading": "A FOR loop",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "pseudocode",
+            "text": "SET total TO 0\nFOR i FROM 1 TO 4 DO\n    SET total TO total + i * 2\nEND FOR\nSEND total TO DISPLAY",
+            "output": "20"
+          }
         },
         {
-          "heading": "Pseudo-code example",
-          "bullets": [
-            "SET total TO 0",
-            "FOR i FROM 1 TO 4",
-            "SET total TO total + i * 2",
-            "OUTPUT total"
-          ],
-          "note": "Walk through the algorithm: i = 1 → total 2; i = 2 → total 6; i = 3 → total 12; i = 4 → total 20. Present the trace table with the columns i and total. Pupils should fill the table as you go and see that the output is 20."
+          "heading": "Its trace table",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "i",
+              "total"
+            ],
+            "rows": [
+              [
+                "-",
+                "0"
+              ],
+              [
+                "1",
+                "2"
+              ],
+              [
+                "2",
+                "6"
+              ],
+              [
+                "3",
+                "12"
+              ],
+              [
+                "4",
+                "20"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Trace tables",
-          "bullets": [
-            "One column for each variable.",
-            "One row for each change.",
-            "Output column for printed values."
-          ],
-          "note": "Show a second example with selection: SET x TO 12, IF x MOD 2 = 0 THEN OUTPUT 'even' ELSE OUTPUT 'odd'. Teach pupils to record every change and not to skip rows. Common mistake: updating two variables on one row when they change at different steps."
+          "heading": "Method",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "One column per variable (and output)",
+            "New row when a value changes",
+            "Follow the loop exactly",
+            "Write the output",
+            "Check against what was intended"
+          ]
         },
         {
-          "heading": "Purpose and errors",
-          "bullets": [
-            "Trace with simple test data.",
-            "State what it does in one sentence.",
-            "Look for off-by-one and wrong operators."
-          ],
-          "note": "Give an algorithm that finds the largest of three numbers with a bug (uses < instead of >). Trace it with 5, 9, 2 to show the wrong result. Explain syntax errors vs logic errors. Discuss how testing with boundary data finds errors."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "After the loop above, total is ...",
+            "options": [
+              "20",
+              "8",
+              "10"
+            ],
+            "answer": 0,
+            "why": "2 + 4 + 6 + 8 = 20."
+          }
         }
       ],
       "practice": [
-        "Trace: SET a TO 3; SET b TO 4; SET c TO a * b; SET a TO c - a; OUTPUT a. (a = 9)",
-        "State the purpose: SET count TO 0; FOR i FROM 1 TO 10; IF i MOD 2 = 0 THEN SET count TO count + 1; OUTPUT count. (counts even numbers from 1 to 10, outputs 5)",
-        "Spot the error: an algorithm meant to output the highest of two numbers outputs the lower one."
+        {
+          "q": "Trace: SET n TO 20; SET count TO 0; WHILE n > 1 DO SET n TO n DIV 2; SET count TO count + 1 END WHILE; SEND count TO DISPLAY.",
+          "a": "n: 10, 5, 2, 1; count: 1, 2, 3, 4. Output 4.",
+          "mins": 4,
+          "model": "I do: first pass: n = 20 DIV 2 = 10, count = 1."
+        }
       ],
       "independent": [
-        "Complete a trace table for: SET n TO 5; SET f TO 1; WHILE n > 1; SET f TO f * n; SET n TO n - 1; END WHILE; OUTPUT f. (output 120)",
-        "Write pseudo-code that inputs 3 numbers and outputs the largest.",
-        "Write pseudo-code to output the total of the numbers 1 to 100, and state the expected answer (5050)."
+        {
+          "q": "Pupil PDF: four trace tables (FOR, WHILE, nested IF, arrays); state each output.",
+          "a": "Correct tables and outputs.",
+          "mins": 12,
+          "model": "The teacher starts the first."
+        },
+        {
+          "q": "Extend: one algorithm has a logic error; use your trace to find and fix it.",
+          "a": "Error found (wrong comparison) and corrected.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What is the purpose of a trace table?",
-        "State the output of: SET x TO 2; FOR i FROM 1 TO 3; SET x TO x * 2; OUTPUT x. (16)"
+        {
+          "q": "A trace table records ...",
+          "a": "variable values step by step",
+          "mins": 1,
+          "options": [
+            "variable values step by step",
+            "only the output"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why would a programmer run code in their head before running it on a computer?",
+          "a": "To understand it, predict the result and catch logic errors.",
+          "mins": 2
+        }
       ],
-      "homework": "Write pseudo-code for a program which asks for 5 test marks and outputs the average. Trace it with 60, 70, 80, 90, 100.",
-      "send": "SEND/EAL: provide trace table templates and pre-filled first rows; use colour to track variables. Stretch: find and correct two errors in an unfamiliar pseudo-code algorithm.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Two teacher-written trace-table exam questions, with answers to check.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Table grid paper",
+          "alt": "A trace table",
+          "for": "teach:2"
+        },
+        {
+          "find": "Magnifying glass on code",
+          "alt": "Checking code",
+          "for": "hook"
+        }
+      ],
+      "covers": [
+        "1.2.7",
+        "1.2.8"
+      ]
     },
     {
-      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "unit": "Summer 1: Algorithms",
       "n": 4,
       "title": "Searching algorithms: linear and binary search",
       "duration": 50,
+      "bigQuestion": "Finding a word in a dictionary: do you start at 'a' and read every word?",
       "objectives": [
-        "Describe and carry out a linear search",
-        "Describe and carry out a binary search on a sorted list",
-        "Compare the two searches and choose the right one"
+        "To understand how linear and binary search work and when each can be used"
       ],
+      "successCriteria": [
+        "All: describe linear search",
+        "Most: trace a binary search on a sorted list",
+        "Some: compare the number of comparisons for each"
+      ],
+      "crossCurricular": "Maths: halving and powers of 2",
+      "smsc": "Moral: efficiency and good use of resources",
       "keywords": [
         {
           "term": "linear search",
-          "def": "checks each item in turn from the start until the target is found or the list ends"
+          "def": "checks each item in turn"
         },
         {
           "term": "binary search",
-          "def": "repeatedly checks the middle item of a sorted list and halves the search area"
+          "def": "repeatedly halves a sorted list"
         },
         {
           "term": "sorted",
-          "def": "arranged in order, such as lowest to highest"
+          "def": "in order"
         },
         {
-          "term": "efficiency",
-          "def": "how few steps or how little time or memory an algorithm needs"
+          "term": "comparison",
+          "def": "checking one item against the target"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Finding a word in a dictionary: do you start at 'a' and read every word?",
+        "a": "No: you open near the middle and halve the search: binary search."
+      },
       "starter": [
-        "Bismillah. Trace: SET x TO 3; SET x TO x + 4; OUTPUT x.",
-        "How do you look up a name in a printed phone book?",
-        "What does 'sorted' mean for a list of numbers?"
+        {
+          "q": "A diamond is a ...",
+          "a": "decision",
+          "mins": 1,
+          "options": [
+            "decision",
+            "terminal"
+          ]
+        },
+        {
+          "q": "Name the three constructs.",
+          "a": "Sequence, selection, iteration.",
+          "mins": 1
+        },
+        {
+          "q": "WHILE loops repeat ...",
+          "a": "while a condition is true",
+          "mins": 1,
+          "options": [
+            "while a condition is true",
+            "a fixed number of times"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Linear search",
           "bullets": [
-            "Start at the first item.",
-            "Compare each item with the target.",
-            "Stop when found or at the end."
+            "Start at the first item",
+            "Compare with the target",
+            "Move to the next",
+            "Stop when found or at the end"
           ],
-          "note": "Search [14, 9, 22, 5, 17] for 22: compare 14, 9, 22 found at the third position (3 comparisons). Search for 30: all 5 compared, not found. Note it works on any list, sorted or not."
+          "note": "Works on unsorted lists."
         },
         {
-          "heading": "Binary search idea",
-          "bullets": [
-            "The list must be sorted.",
-            "Check the middle item.",
-            "Target smaller? Discard the right half.",
-            "Target bigger? Discard the left half."
-          ],
-          "note": "Link to guessing a number between 1 and 100 and being told higher or lower. State the rule for a list with an even number of items: pick a consistent middle (e.g. the lower middle) and follow it, which is acceptable as long as it is clear. Misconception: binary search works on unsorted lists; it does not."
+          "heading": "Binary search trace",
+          "bullets": [],
+          "note": "List: 3, 8, 12, 17, 21, 25, 30, 34, 41 (indexes 0 to 8). Target 30.",
+          "table": {
+            "head": [
+              "Step",
+              "Low",
+              "High",
+              "Mid",
+              "Value",
+              "Action"
+            ],
+            "rows": [
+              [
+                "1",
+                "0",
+                "8",
+                "4",
+                "21",
+                "30 > 21: low = 5"
+              ],
+              [
+                "2",
+                "5",
+                "8",
+                "6",
+                "30",
+                "Found"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Worked example",
-          "bullets": [
-            "List: 3, 8, 12, 15, 21, 27, 34, 40, 52.",
-            "Target 27. Middle: 21 (position 5).",
-            "27 > 21, so search 27, 34, 40, 52.",
-            "Middle (lower): 34. 27 < 34, so search 27. Found."
-          ],
-          "note": "Draw the list as boxes and cross out the discarded half each time. Count comparisons: 3 for binary against 6 for linear. Show how with 1,000,000 items binary search needs about 20 comparisons at most. State that this is why sorted data is valuable."
+          "heading": "Compare",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Linear",
+              "points": [
+                "Any list",
+                "Slow on long lists"
+              ]
+            },
+            "right": {
+              "title": "Binary",
+              "points": [
+                "Sorted list only",
+                "Very fast: halves each time"
+              ]
+            },
+            "label": "versus"
+          }
         },
         {
-          "heading": "Choosing a search",
-          "bullets": [
-            "Unsorted list: linear.",
-            "Sorted and large: binary.",
-            "Binary needs fewer comparisons.",
-            "Sorting first costs time."
-          ],
-          "note": "Pose a scenario: a list of 10 names unsorted versus 1 million sorted student IDs. Ask which search to choose and why. Exam answers should compare efficiency and the requirement for sorted data."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Binary search requires the list to be ...",
+            "options": [
+              "sorted",
+              "short",
+              "unsorted"
+            ],
+            "answer": 0,
+            "why": "Halving only works on ordered data."
+          }
         }
       ],
       "practice": [
-        "Linear search for 5 in [8, 3, 5, 9]. How many comparisons? (3)",
-        "Why can't you use binary search on [9, 2, 7, 4]? (not sorted)",
-        "Binary search for 12 in [2, 5, 9, 12, 15, 20, 31]. Which item is checked first? (12, the middle item, found immediately)"
+        {
+          "q": "Trace a binary search for 4 in the same list.",
+          "a": "Mid 4 (21): high 3; mid 1 (8): high 0; mid 0 (3): low 1 > high: not found (3 comparisons).",
+          "mins": 4,
+          "model": "I do: I write low, high and mid for each step, using mid = (low + high) DIV 2."
+        }
       ],
       "independent": [
-        "Carry out a linear search for 40 in [52, 12, 40, 8, 27] and record each comparison.",
-        "Carry out a binary search for 8 in [3, 8, 12, 15, 21, 27, 34, 40, 52] showing low, high and middle each time.",
-        "Write a paragraph comparing linear and binary search, with one advantage and one disadvantage of each."
+        {
+          "q": "Pupil PDF: trace linear and binary searches for three targets; count the comparisons for each.",
+          "a": "Correct traces and counts.",
+          "mins": 12,
+          "model": "The teacher traces the first."
+        },
+        {
+          "q": "Extend: roughly how many comparisons for binary search on 1,000 sorted items?",
+          "a": "About 10, because 2^10 = 1,024.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "State one requirement for using binary search.",
-        "Which search is usually faster on a large sorted list, and why?"
+        {
+          "q": "Linear search works on ...",
+          "a": "sorted or unsorted lists",
+          "mins": 1,
+          "options": [
+            "sorted or unsorted lists",
+            "sorted lists only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Finding a word in a dictionary: do you start at 'a' and read every word?",
+          "a": "No: you open near the middle and halve the search: binary search.",
+          "mins": 2
+        }
       ],
-      "homework": "Write pseudo-code for a linear search that outputs the position of a target in a list or 'not found'. Test with two lists.",
-      "send": "SEND/EAL: provide cards to physically cross out halves; show each step in colour. Stretch: work out the maximum number of comparisons binary search needs for 31 items (5).",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Exam-style question: explain why binary search is more efficient (4 marks), with a model answer to check.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Dictionary open pages",
+          "alt": "A dictionary",
+          "for": "hook"
+        },
+        {
+          "find": "Binary search halving diagram",
+          "alt": "Halving the list",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "1.2.9",
+        "1.2.10"
+      ]
     },
     {
-      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "unit": "Summer 1: Algorithms",
       "n": 5,
       "title": "Sorting algorithms: bubble sort",
       "duration": 50,
+      "bigQuestion": "Why are sorted lists so useful?",
       "objectives": [
-        "Describe how a bubble sort works",
-        "Carry out a bubble sort on a list, showing each pass",
-        "Explain when the algorithm can stop"
+        "To understand how bubble sort works and how to trace it pass by pass"
       ],
+      "successCriteria": [
+        "All: describe one pass of bubble sort",
+        "Most: trace a full bubble sort, counting swaps",
+        "Some: explain how a 'swapped' flag makes it stop early"
+      ],
+      "smsc": "Moral: patience and accuracy",
       "keywords": [
         {
-          "term": "sort",
-          "def": "arrange data in order"
-        },
-        {
           "term": "bubble sort",
-          "def": "compares neighbouring items and swaps them if out of order, repeating passes"
+          "def": "repeatedly compares and swaps neighbouring items"
         },
         {
           "term": "pass",
-          "def": "one complete run through the list"
+          "def": "one run through the list"
         },
         {
           "term": "swap",
-          "def": "exchange the positions of two items"
+          "def": "exchanging two items"
+        },
+        {
+          "term": "flag",
+          "def": "a variable that records whether something happened"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why are sorted lists so useful?",
+        "a": "Searching becomes much faster (binary search), and data is easier to read."
+      },
       "starter": [
-        "Bismillah. Name the two searches we studied and state when binary search can be used.",
-        "Put these in order: 7, 2, 9, 4.",
-        "Explain how you physically sorted a hand of cards when you last played a card game."
+        {
+          "q": "Binary search is faster because it ...",
+          "a": "halves the list",
+          "mins": 1,
+          "options": [
+            "halves the list",
+            "checks every item"
+          ]
+        },
+        {
+          "q": "Can binary search work on an unsorted list?",
+          "a": "No.",
+          "mins": 1
+        },
+        {
+          "q": "DIV gives ...",
+          "a": "a whole number result",
+          "mins": 1,
+          "options": [
+            "a whole number result",
+            "a remainder"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Why sort?",
-          "bullets": [
-            "Sorted data is easier to search.",
-            "Used in contacts, scores and files.",
-            "Different algorithms sort differently."
-          ],
-          "note": "Ask for examples of sorted data in apps (alphabetical contacts, leaderboards). Explain we need precise instructions for a computer to sort."
+          "heading": "One pass",
+          "bullets": [],
+          "note": "List: 5, 1, 4, 2.",
+          "table": {
+            "head": [
+              "Compare",
+              "Swap?",
+              "List after"
+            ],
+            "rows": [
+              [
+                "5 and 1",
+                "Yes",
+                "1, 5, 4, 2"
+              ],
+              [
+                "5 and 4",
+                "Yes",
+                "1, 4, 5, 2"
+              ],
+              [
+                "5 and 2",
+                "Yes",
+                "1, 4, 2, 5"
+              ]
+            ]
+          }
         },
         {
-          "heading": "How bubble sort works",
+          "heading": "Full trace",
           "bullets": [
-            "Compare the first two items.",
-            "Swap if they are in the wrong order.",
-            "Move along one place and repeat.",
-            "Repeat passes until no swaps."
+            "Pass 2: 1,4 no; 4,2 swap → 1, 2, 4, 5; 4,5 no",
+            "Pass 3: no swaps → stop",
+            "The largest item 'bubbles' to the end each pass"
           ],
-          "note": "Demonstrate with 5 pupils holding number cards or with number cards on screen. Largest values 'bubble' to the end. After pass 1 the largest item is in its final position."
+          "note": ""
         },
         {
-          "heading": "Worked example",
-          "bullets": [
-            "Start: 5 3 8 1.",
-            "Pass 1: 3 5 1 8.",
-            "Pass 2: 3 1 5 8.",
-            "Pass 3: 1 3 5 8. Pass 4: no swaps, stop."
-          ],
-          "note": "Show every comparison in pass 1: compare 5, 3 swap giving 3 5 8 1; compare 5, 8 no swap; compare 8, 1 swap giving 3 5 1 8. Count swaps per pass. A common mistake is to stop after pass 3 without a final pass proving no swaps are needed (but accept if all in place and explain)."
+          "heading": "Stopping early",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Set swapped to False",
+            "Compare each neighbour pair",
+            "Swap if out of order; swapped = True",
+            "End of pass",
+            "Repeat only if swapped is True"
+          ]
         },
         {
-          "heading": "Strengths and weaknesses",
-          "bullets": [
-            "Simple to understand and code.",
-            "Needs many passes on big lists.",
-            "Slow compared with merge sort."
-          ],
-          "note": "Compare: for n items bubble sort may need around n × n comparisons. Do not require formulas at GCSE, but pupils should state it is inefficient for large lists. Use a flag: if no swaps in a pass, stop early."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "After pass 1 of bubble sort (ascending), the largest item is ...",
+            "options": [
+              "at the end",
+              "at the start",
+              "in the middle"
+            ],
+            "answer": 0,
+            "why": "It bubbles up."
+          }
         }
       ],
       "practice": [
-        "Carry out pass 1 of a bubble sort on 4, 2, 7, 1. (2 4 1 7)",
-        "How many swaps happen in pass 1 on 3, 2, 1? (2) What is the list after pass 1? (2 1 3)",
-        "How does the algorithm know it is finished?"
+        {
+          "q": "Trace pass 1 for 7, 3, 9, 2.",
+          "a": "3, 7, 9, 2 → 3, 7, 9, 2 → 3, 7, 2, 9.",
+          "mins": 4,
+          "model": "I do: compare 7 and 3: swap; 7 and 9: no; 9 and 2: swap."
+        }
       ],
       "independent": [
-        "Bubble sort 9, 4, 7, 2, 6, writing the list after each pass and the number of swaps.",
-        "Write pseudo-code for one pass of a bubble sort on a list called nums with n items.",
-        "Explain two weaknesses of bubble sort for a list of one million items."
+        {
+          "q": "Pupil PDF: full bubble sort traces for two lists; count passes and swaps.",
+          "a": "Correct traces with counts.",
+          "mins": 12,
+          "model": "The teacher traces the first pass."
+        },
+        {
+          "q": "Extend: write bubble sort in Python with a swapped flag.",
+          "a": "A working function.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "State what happens in a bubble sort when two neighbouring items are in the wrong order.",
-        "After one pass of 6, 5, 1, 4 what is the list? (5 1 4 6)"
+        {
+          "q": "Bubble sort compares ...",
+          "a": "neighbouring items",
+          "mins": 1,
+          "options": [
+            "neighbouring items",
+            "the first and last items"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why are sorted lists so useful?",
+          "a": "Searching becomes much faster (binary search), and data is easier to read.",
+          "mins": 2
+        }
       ],
-      "homework": "Bubble sort the list 12, 5, 9, 1, 8 and show every pass. Explain how you know when to stop.",
-      "send": "SEND/EAL: use physical number cards and highlighters to mark the pair being compared. Stretch: describe how a flag variable could stop the sort early.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Trace bubble sort on 6, 2, 8, 1, 5 and check with the answer sheet.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bubbles rising water",
+          "alt": "Bubbles rising",
+          "for": "hook"
+        },
+        {
+          "find": "Sorting cards",
+          "alt": "Sorting",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "1.2.9"
+      ]
     },
     {
-      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "unit": "Summer 1: Algorithms",
       "n": 6,
-      "title": "Sorting algorithms: merge sort and comparing sorts",
+      "title": "Merge sort and comparing efficiency",
       "duration": 50,
+      "bigQuestion": "Sorting a pile of 1,000 exam papers: would you compare neighbours over and over, or split the pile among friends and merge?",
       "objectives": [
-        "Describe how a merge sort splits and merges lists",
-        "Carry out a merge sort on a list of 8 items",
-        "Compare bubble sort and merge sort"
+        "To understand how merge sort works and how to compare the efficiency of bubble sort and merge sort"
       ],
+      "successCriteria": [
+        "All: describe the split and merge stages",
+        "Most: trace a merge sort on eight items",
+        "Some: explain why merge sort is more efficient on large lists"
+      ],
+      "crossCurricular": "Maths: halving and doubling",
+      "smsc": "Social: dividing work fairly",
       "keywords": [
         {
           "term": "merge sort",
-          "def": "splits a list into single items, then merges them back in order"
+          "def": "splits a list into single items then merges them in order"
         },
         {
           "term": "divide and conquer",
-          "def": "solving a problem by splitting it into smaller problems"
+          "def": "break a problem into smaller ones"
         },
         {
-          "term": "merge",
-          "def": "combine two sorted lists into one sorted list"
+          "term": "efficiency",
+          "def": "how much time or memory an algorithm uses"
         },
         {
           "term": "memory",
-          "def": "storage used while the algorithm is running"
+          "def": "space used while running"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sorting a pile of 1,000 exam papers: would you compare neighbours over and over, or split the pile among friends and merge?",
+        "a": "Split and merge: that's merge sort, much faster for big piles."
+      },
       "starter": [
-        "Bismillah. After one pass of bubble sort on 4, 3, 2, 1 what is the list? (3 2 1 4)",
-        "Why does bubble sort slow down on large lists?",
-        "How would you sort a pile of 100 exam papers with the help of 3 friends?"
+        {
+          "q": "A pass is ...",
+          "a": "one run through the list",
+          "mins": 1,
+          "options": [
+            "one run through the list",
+            "a swap"
+          ]
+        },
+        {
+          "q": "What does the swapped flag do?",
+          "a": "Stops early when no swaps happen.",
+          "mins": 1
+        },
+        {
+          "q": "Bubble sort moves the largest item to ...",
+          "a": "the end",
+          "mins": 1,
+          "options": [
+            "the end",
+            "the start"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Split then merge",
-          "bullets": [
-            "Keep splitting the list in half.",
-            "Stop at lists of one item.",
-            "Merge pairs of lists back in order."
-          ],
-          "note": "Introduce merge sort as a divide and conquer algorithm and link to decomposition. A list of one item is already sorted. Show the stages with arrows."
+          "heading": "Merge sort trace",
+          "bullets": [],
+          "note": "List: 6, 2, 9, 4, 7, 1, 8, 3.",
+          "table": {
+            "head": [
+              "Stage",
+              "Lists"
+            ],
+            "rows": [
+              [
+                "Split to singles",
+                "6 | 2 | 9 | 4 | 7 | 1 | 8 | 3"
+              ],
+              [
+                "Merge pairs",
+                "2,6 | 4,9 | 1,7 | 3,8"
+              ],
+              [
+                "Merge fours",
+                "2,4,6,9 | 1,3,7,8"
+              ],
+              [
+                "Final merge",
+                "1,2,3,4,6,7,8,9"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Splitting",
-          "bullets": [
-            "6 2 8 4 3 7 1 5.",
-            "6 2 8 4 | 3 7 1 5.",
-            "6 2 | 8 4 | 3 7 | 1 5.",
-            "6 | 2 | 8 | 4 | 3 | 7 | 1 | 5."
-          ],
-          "note": "Draw the split tree. Emphasise that no sorting happens while splitting; it all happens during merging. Common mistake: trying to sort during the split stage."
+          "heading": "Compare",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Bubble sort",
+              "points": [
+                "Simple",
+                "Little extra memory",
+                "Slow on large lists"
+              ]
+            },
+            "right": {
+              "title": "Merge sort",
+              "points": [
+                "Fast on large lists",
+                "Uses extra memory",
+                "More complex"
+              ]
+            },
+            "label": "versus"
+          }
         },
         {
-          "heading": "Merging",
+          "heading": "Choosing",
           "bullets": [
-            "Compare the first items of each list.",
-            "Move the smaller one to the new list.",
-            "Repeat until both lists are used."
+            "Small or nearly sorted list: bubble sort is fine",
+            "Large list: merge sort",
+            "Memory limited: consider bubble sort"
           ],
-          "note": "Merge 6 and 2 to get 2 6; 8 and 4 to get 4 8; 3 and 7 to get 3 7; 1 and 5 to get 1 5. Then merge 2 6 with 4 8: compare 2 and 4, take 2; compare 6 and 4, take 4; compare 6 and 8, take 6; then 8: result 2 4 6 8. Merge 3 7 with 1 5: 1 3 5 7. Final merge gives 1 2 3 4 5 6 7 8."
+          "note": ""
         },
         {
-          "heading": "Bubble vs merge",
-          "bullets": [
-            "Merge sort is faster on large lists.",
-            "Merge sort needs extra memory.",
-            "Bubble sort is simpler to write."
-          ],
-          "note": "Give exam-style comparison language: merge sort is more efficient (fewer comparisons) for large data sets but uses more memory because it creates new lists; bubble sort is simple but slow. Ask pupils to decide for a list of 10 items versus 10 million."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Merge sort is an example of ...",
+            "options": [
+              "divide and conquer",
+              "linear search",
+              "a flag"
+            ],
+            "answer": 0,
+            "why": "Split, then merge."
+          }
         }
       ],
       "practice": [
-        "Merge the sorted lists 2 5 9 and 1 6 8. (1 2 5 6 8 9)",
-        "Split 7 3 9 1 5 2 into halves and halves again. (7 3 9 | 1 5 2 then 7 | 3 9 | 1 | 5 2 and so on)",
-        "State one advantage and one disadvantage of merge sort."
+        {
+          "q": "Merge 2, 5, 9 and 1, 6, 7.",
+          "a": "1, 2, 5, 6, 7, 9.",
+          "mins": 4,
+          "model": "I do: compare fronts 2 and 1: take 1; 2 and 6: take 2; 5 and 6: take 5; 9 and 6: take 6; 9 and 7: take 7; then 9."
+        }
       ],
       "independent": [
-        "Merge sort 9, 3, 7, 1, 8, 2, 6, 4, showing the split and merge stages in a diagram.",
-        "Compare bubble sort and merge sort in a table with three rows: how it works, speed on large lists, memory use.",
-        "Write a 4-mark answer: 'Explain which sorting algorithm would be better for sorting 1 million customer records.'"
+        {
+          "q": "Pupil PDF: trace merge sort on two eight-item lists; then answer: 'Compare bubble sort and merge sort for sorting 50,000 records.' (4 marks)",
+          "a": "Correct traces; answer: merge faster on large lists; uses more memory; bubble simpler.",
+          "mins": 12,
+          "model": "The teacher splits the first list."
+        },
+        {
+          "q": "Extend: why can merge sort use more memory?",
+          "a": "It creates new lists while merging.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What does a merge sort do first?",
-        "Give one reason merge sort needs more memory than bubble sort."
+        {
+          "q": "Best for a very large list is usually ...",
+          "a": "merge sort",
+          "mins": 1,
+          "options": [
+            "merge sort",
+            "bubble sort"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Sorting a pile of 1,000 exam papers: would you compare neighbours over and over, or split the pile among friends and merge?",
+          "a": "Split and merge: that's merge sort, much faster for big piles.",
+          "mins": 2
+        }
       ],
-      "homework": "Merge sort the list 14, 3, 9, 20, 1, 7 and show your working. Then explain why merge sort is a divide and conquer algorithm.",
-      "send": "SEND/EAL: provide a split-and-merge template with boxes; use number cards. Stretch: count the comparisons used in your merge sort and compare with a bubble sort of the same list.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Teacher-written exam question comparing sorts, with mark scheme.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Stacks of paper sorted",
+          "alt": "Sorting papers",
+          "for": "hook"
+        },
+        {
+          "find": "Merge arrows diagram",
+          "alt": "Merging",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "1.2.9",
+        "1.2.10"
+      ]
     },
     {
       "unit": "Spring 1: Programming 2: data structures, files and subprograms",
@@ -1253,156 +1831,205 @@
       ]
     },
     {
-      "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
+      "unit": "Summer 1: Algorithms",
       "n": 10,
-      "title": "Algorithm building blocks: sequence, selection, repetition and iteration",
+      "title": "Algorithm building blocks: sequence, selection and iteration",
       "duration": 50,
-      "bigQuestion": "Which three ideas are enough to build almost any algorithm?",
+      "bigQuestion": "Every app, from a calculator to a game, is built from just three building blocks. How can so little make so much?",
       "objectives": [
-        "Identify sequence, selection and repetition in an algorithm (1.2.1)",
-        "Distinguish count-controlled and condition-controlled repetition",
-        "Write an algorithm that iterates over a data structure"
+        "To understand how every algorithm is built from sequence, selection and iteration, written in Pearson pseudocode"
       ],
       "successCriteria": [
-        "All: name the construct used in a short algorithm",
-        "Most: write a loop that processes every item of a list",
-        "Some: combine selection inside a loop to count or total items meeting a rule"
+        "All: identify sequence, selection and iteration in an algorithm",
+        "Most: write each construct in Pearson pseudocode",
+        "Some: combine all three in one algorithm"
       ],
-      "crossCurricular": "Mathematics: sequences, repeated calculation and conditions",
-      "smsc": "Moral: honesty and care in checking work step by step",
+      "crossCurricular": "Maths: following and writing step-by-step methods",
+      "smsc": "Moral: precision and clear thinking",
       "keywords": [
         {
           "term": "sequence",
-          "def": "instructions carried out one after another in order"
+          "def": "instructions carried out in order"
         },
         {
           "term": "selection",
-          "def": "choosing which instructions to run, based on a condition"
-        },
-        {
-          "term": "repetition",
-          "def": "running instructions more than once, in a loop"
+          "def": "choosing a path with IF"
         },
         {
           "term": "iteration",
-          "def": "going through each item of a data structure, one at a time"
+          "def": "repeating with FOR or WHILE"
+        },
+        {
+          "term": "pseudocode",
+          "def": "a structured, language-neutral way to write algorithms"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Every app, from a calculator to a game, is built from just three building blocks. How can so little make so much?",
+        "a": "Sequence, selection and iteration can be combined and nested without limit."
+      },
       "starter": [
-        "Bismillah. What does a diamond mean in a flowchart?",
-        "Write one line of Python that stores your name in a variable.",
-        "Say in words what for i in range(3): print(i) prints."
+        {
+          "q": "Binary 1010 in denary is ...",
+          "a": "10",
+          "mins": 1,
+          "options": [
+            "10",
+            "12",
+            "8"
+          ]
+        },
+        {
+          "q": "Hex A in denary?",
+          "a": "10.",
+          "mins": 1
+        },
+        {
+          "q": "A bit is ...",
+          "a": "a 0 or a 1",
+          "mins": 1,
+          "options": [
+            "a 0 or a 1",
+            "8 bytes"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Three constructs",
-          "bullets": [
-            "Sequence: step after step, in order",
-            "Selection: if / elif / else chooses a path",
-            "Repetition: a loop runs steps again"
-          ],
-          "note": "Every algorithm in the course, from bubble sort to a login check, is made from these. Show each as a flowchart shape: a straight line, a diamond with two exits, a diamond with a line looping back. Point out that each block has one entry and one exit.",
+          "heading": "The three constructs",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
               "Construct",
-              "Flowchart clue",
-              "Python clue"
+              "Pseudocode"
             ],
             "rows": [
               [
                 "Sequence",
-                "Boxes in a line",
-                "Lines one after another"
+                "SET total TO 0 then SEND total TO DISPLAY"
               ],
               [
                 "Selection",
-                "Diamond, Yes and No exits",
-                "if / else"
+                "IF mark >= 50 THEN ... ELSE ... END IF"
               ],
               [
-                "Repetition",
-                "Arrow loops back up",
-                "for / while"
+                "Iteration (count)",
+                "FOR index FROM 1 TO 10 DO ... END FOR"
+              ],
+              [
+                "Iteration (condition)",
+                "WHILE guess <> secret DO ... END WHILE"
               ]
             ]
           }
         },
         {
-          "heading": "Two kinds of repetition",
-          "bullets": [
-            "Count-controlled: repeat a set number of times",
-            "Condition-controlled: repeat until a test is met",
-            "Choose for when the count is known, while when it is not"
-          ],
-          "note": "Run both programs. The for loop knows it will run 4 times; the while loop stops when the total reaches 10 or more, and that depends on the values. Ask pupils what happens if the condition never becomes false: an infinite loop.",
+          "heading": "All three together",
+          "bullets": [],
+          "note": "",
           "code": {
-            "lang": "python",
-            "text": "total = 0\nfor n in range(1, 5):\n    total = total + n\nprint(total)\n\nstock = 20\nweeks = 0\nwhile stock > 0:\n    stock = stock - 6\n    weeks = weeks + 1\nprint(weeks)",
-            "output": "10\n4"
+            "lang": "pseudocode",
+            "text": "SET passes TO 0\nFOR index FROM 1 TO 5 DO\n    RECEIVE mark FROM (INTEGER) KEYBOARD\n    IF mark >= 50 THEN\n        SET passes TO passes + 1\n    END IF\nEND FOR\nSEND passes TO DISPLAY",
+            "output": "Counts how many of five marks are 50 or more"
           }
         },
         {
-          "heading": "Iteration over a data structure",
-          "bullets": [
-            "Visit every item of a list in turn",
-            "Selection inside the loop filters items",
-            "Variables such as count store the result"
-          ],
-          "note": "The loop variable takes each value of the list in turn; there is no index to manage. Point out that the if is inside the loop because it must be asked about every item. Pupils often put count = 0 inside the loop; show why that resets it each time.",
-          "code": {
-            "lang": "python",
-            "text": "marks = [45, 72, 50, 38, 90]\ncount = 0\nfor m in marks:\n    if m >= 50:\n        count = count + 1\nprint(count, \"passed\")",
-            "output": "3 passed"
+          "heading": "Common mistakes",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Missing END IF or END FOR, or using = to compare in pseudocode written like Python",
+            "right": "Close every block; follow the command set exactly"
           }
         },
         {
-          "heading": "Worked example: highest mark",
-          "note": "Model the thinking: set the first item as the highest so far, then compare each other item. Check with the trace: 45 -> 72 -> 72 -> 72 -> 90. Ask pupils why we do not start the highest at 0 (it fails for negative data, and starting with an item in the list is safer).",
-          "model": {
-            "problem": "Write pseudocode that outputs the highest value in the list temps = [14, 19, 11, 22, 17].",
-            "steps": [
-              "Set highest to the first item, temps[0] (14)",
-              "FOR each t IN temps: compare t with highest",
-              "IF t > highest THEN set highest to t",
-              "After the loop ends, OUTPUT highest"
-            ],
-            "answer": "highest = 14, 19, 19, 22, 22, so the output is 22. It uses sequence, iteration over the list and selection inside it."
-          }
-        },
-        {
-          "heading": "Check: which construct?",
-          "note": "Answer B. A is selection, C sequence, D a count-controlled loop. Ask pupils to say what the output is when the loop has run (the running total each time). A common slip is to call any loop 'selection' because it has a condition.",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "An algorithm asks for passwords until the user types the correct one. Which construct repeats the question?",
+            "q": "Which construct is FOR index FROM 1 TO 10?",
             "options": [
-              "Sequence",
-              "Condition-controlled repetition",
-              "Selection only",
-              "Count-controlled repetition"
+              "Iteration",
+              "Selection",
+              "Sequence"
             ],
-            "answer": 1,
-            "why": "The number of attempts is unknown in advance, so the loop is controlled by a condition. A count-controlled loop (D) needs a known number of repeats; selection (C) chooses but does not repeat."
+            "answer": 0,
+            "why": "A count-controlled loop."
           }
         }
       ],
       "practice": [
-        "Name the construct in each: (a) IF age >= 18 THEN OUTPUT 'adult'; (b) FOR 1 TO 7 OUTPUT 'Salam'; (c) SET a TO 3 then SET b TO a + 2.",
-        "Write pseudocode that totals the prices in the list [2.50, 1.20, 0.80] using iteration.",
-        "Rewrite the while loop in the lesson (stock = 20, minus 6 each week) as a flowchart description with a decision diamond."
+        {
+          "q": "Write pseudocode that asks for a number and displays 'Even' or 'Odd'.",
+          "a": "RECEIVE n FROM (INTEGER) KEYBOARD\nIF n MOD 2 = 0 THEN SEND 'Even' TO DISPLAY ELSE SEND 'Odd' TO DISPLAY END IF",
+          "mins": 4,
+          "model": "I do: RECEIVE age ...; IF age >= 16 THEN SEND 'Can apply' TO DISPLAY ELSE SEND 'Too young' TO DISPLAY END IF."
+        }
       ],
       "independent": [
-        "Core: Write pseudocode to count how many names in a list of ten begin with the letter A.",
-        "Extend: Write a Python program that loops over a list of marks, outputs the mean and the number of marks above the mean.",
-        "Stretch: Describe an algorithm that checks whether every number in a list is bigger than the one before it. State which constructs you used."
+        {
+          "q": "Write pseudocode that totals ten prices entered by a user and displays the total and the average.",
+          "a": "SET total TO 0; FOR index FROM 1 TO 10 DO RECEIVE price ...; SET total TO total + price END FOR; SEND total TO DISPLAY; SEND total / 10 TO DISPLAY.",
+          "mins": 12,
+          "model": "The teacher writes the first two lines."
+        },
+        {
+          "q": "Extend: rewrite it with a WHILE loop that stops when the user enters 0.",
+          "a": "WHILE price <> 0 DO ... END WHILE with a running total.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "State the difference between count-controlled and condition-controlled repetition.",
-        "Which construct is used when a program chooses between two outputs? Give an example."
+        {
+          "q": "Selection uses ...",
+          "a": "IF",
+          "mins": 1,
+          "options": [
+            "IF",
+            "FOR",
+            "SET"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Every app, from a calculator to a game, is built from just three building blocks. How can so little make so much?",
+          "a": "Sequence, selection and iteration can be combined and nested without limit.",
+          "mins": 2
+        }
       ],
-      "homework": "Write an algorithm in pseudocode for a till that adds the prices in a list until the total passes 20 pounds. State which constructs you used.",
-      "send": "SEND/EAL: give colour-coded cards (sequence blue, selection green, repetition orange) to sort lines of an algorithm. Stretch: write the loop in two ways, with for and with while.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Write one algorithm of your own using all three constructs in pseudocode.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Lego building blocks",
+          "alt": "Building blocks",
+          "for": "hook"
+        },
+        {
+          "find": "Flowchart decision diamond",
+          "alt": "A decision",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "1.2.1",
+        "1.2.2",
+        "1.2.3"
+      ]
     },
     {
       "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
@@ -2242,59 +2869,74 @@
       "boardShort": "Edexcel GCSE 1CP2"
     },
     {
-      "unit": "Unit 1.3: Computational thinking: logic and truth tables",
+      "unit": "Summer 1: Algorithms",
       "n": 15,
       "title": "Logic gates and truth tables: AND, OR and NOT",
       "duration": 50,
-      "bigQuestion": "How can a computer decide yes or no from several pieces of information?",
+      "bigQuestion": "A door opens if you have a key card AND it's school hours. What is that in logic?",
       "objectives": [
-        "Complete truth tables for AND, OR and NOT (1.3.1)",
-        "Write and read logic expressions with up to two inputs",
-        "Relate logic expressions to conditions in programs"
+        "To understand AND, OR and NOT and how to complete truth tables for them"
       ],
       "successCriteria": [
-        "All: complete the truth tables for AND, OR and NOT",
-        "Most: complete a truth table for a combined two-input expression",
-        "Some: write an expression from a description and show two expressions are not the same"
+        "All: complete truth tables for AND, OR and NOT",
+        "Most: evaluate a two-input expression",
+        "Some: link logic to conditions in programs"
       ],
-      "crossCurricular": "Mathematics: Venn diagrams and set logic (AND is intersection, OR is union)",
-      "smsc": "Moral: sound judgement uses all the evidence, as logic combines inputs fairly",
+      "crossCurricular": "Maths: Venn diagrams and logic",
+      "smsc": "Moral: clear rules",
       "keywords": [
         {
-          "term": "Boolean",
-          "def": "a value that is either True or False (1 or 0)"
-        },
-        {
           "term": "AND",
-          "def": "output is True only if both inputs are True"
+          "def": "true only if both inputs are true"
         },
         {
           "term": "OR",
-          "def": "output is True if at least one input is True"
+          "def": "true if at least one input is true"
         },
         {
           "term": "NOT",
-          "def": "reverses the input: True becomes False"
+          "def": "reverses the input"
         },
         {
           "term": "truth table",
-          "def": "lists every combination of inputs and the output for each"
+          "def": "shows the output for every input combination"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A door opens if you have a key card AND it's school hours. What is that in logic?",
+        "a": "An AND condition: both must be true."
+      },
       "starter": [
-        "Bismillah. What is the output of 5 > 3 in Python?",
-        "Name the data type that holds True or False.",
-        "How many different combinations of two inputs, each 0 or 1, are there?"
+        {
+          "q": "A nested loop is ...",
+          "a": "a loop inside a loop",
+          "mins": 1,
+          "options": [
+            "a loop inside a loop",
+            "two separate loops"
+          ]
+        },
+        {
+          "q": "What does LENGTH() return?",
+          "a": "The number of items.",
+          "mins": 1
+        },
+        {
+          "q": "A trace table records ...",
+          "a": "values step by step",
+          "mins": 1,
+          "options": [
+            "values step by step",
+            "only code"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The three operators",
-          "bullets": [
-            "AND: both must be 1",
-            "OR: at least one is 1",
-            "NOT: flips the value"
-          ],
-          "note": "Link to real life: you can enter the exam hall if you have a pen AND your ID. Rows in a truth table go in counting order, 00, 01, 10, 11. Say that the same rules apply in Python with and, or and not. Pupils often confuse OR with 'exactly one': in computing OR includes both.",
+          "heading": "Truth tables",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
               "A",
@@ -2336,164 +2978,240 @@
           }
         },
         {
-          "heading": "Same thing in Python",
-          "bullets": [
-            "Booleans are True and False",
-            "and, or, not work on them",
-            "Loop through every combination"
-          ],
-          "note": "Run the program: the output columns mirror the table (with True and False instead of 1 and 0). Ask pupils to match each column to the table. This shows that a truth table is just a record of every possible input.",
+          "heading": "In programs",
+          "bullets": [],
+          "note": "",
           "code": {
-            "lang": "python",
-            "text": "for a in (False, True):\n    for b in (False, True):\n        print(a, b, a and b, a or b, not a)",
-            "output": "False False False False True\nFalse True False True True\nTrue False False True False\nTrue True True True False"
+            "lang": "pseudocode",
+            "text": "IF age >= 16 AND hasPermission = True THEN\n    SEND 'Can join' TO DISPLAY\nEND IF",
+            "output": "Displays only when both conditions are true"
           }
         },
         {
-          "heading": "Worked example: a combined expression",
-          "note": "Model by working out the middle column first: the bracket is evaluated before the final operator. Build the table row by row. Emphasise writing the intermediate column; marks are often given for it.",
-          "model": {
-            "problem": "Complete the truth table for the expression A OR (NOT B).",
-            "steps": [
-              "Four rows for the inputs A and B: 00, 01, 10, 11",
-              "Work out NOT B: 1, 0, 1, 0",
-              "Combine with A using OR: row 00 -> 0 OR 1 = 1; row 01 -> 0 OR 0 = 0",
-              "Row 10 -> 1 OR 1 = 1; row 11 -> 1 OR 0 = 1"
-            ],
-            "answer": "Output column: 1, 0, 1, 1."
-          }
-        },
-        {
-          "heading": "Misconception: NOT over brackets",
-          "bullets": [
-            "NOT (A AND B) gives 1, 1, 1, 0",
-            "NOT A AND NOT B gives 1, 0, 0, 0",
-            "The expressions are different"
-          ],
-          "note": "Ask pupils to build both columns to prove it. The brackets matter: NOT applies to the whole bracket. This is useful when writing conditions such as not (a and b).",
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
           "misconception": {
-            "wrong": "NOT (A AND B) is the same as (NOT A) AND (NOT B).",
-            "right": "They are different. NOT (A AND B) is 1 unless both inputs are 1; (NOT A) AND (NOT B) is 1 only when both are 0."
+            "wrong": "OR is true only when exactly one input is true",
+            "right": "OR is also true when both are true"
           }
         },
         {
-          "heading": "Check: AND or OR?",
-          "note": "Answer D. 'Either' here means at least one, which is OR; then the output is 1 for rows with a 1 in A or B. Option A is the AND column. Ask how the table would change if the rule were: A AND NOT B.",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "A garden light switches on if the sensor detects movement (A) or the manual switch is on (B). For A = 1 and B = 0, what is the output?",
+            "q": "1 OR 1 = ...",
             "options": [
-              "0, because both must be on",
-              "0, because the switch is off",
-              "1, because NOT A is 0",
-              "1, because one input is 1"
+              "1",
+              "0",
+              "2"
             ],
-            "answer": 3,
-            "why": "The rule is OR, so one input at 1 is enough. The AND rule would give 0 (A, B). NOT A is not part of the rule (C)."
+            "answer": 0,
+            "why": "OR is true if at least one is true."
           }
         }
       ],
       "practice": [
-        "Complete the truth table for NOT A AND B (inputs A and B).",
-        "Write a Python condition that is True if age >= 11 and age <= 16.",
-        "Write the logic expression: a door alarm sounds if the door is open (D) AND the system is armed (S)."
-      ],
-      "independent": [
-        "Core: Complete the truth tables for A AND B, A OR B and NOT (A OR B).",
-        "Extend: Write a logic expression and truth table for: a school gate stays locked if it is after 4 pm (P) OR the key is not in the office (K).",
-        "Stretch: Show, using truth tables, that NOT (A OR B) is the same as (NOT A) AND (NOT B)."
-      ],
-      "exit": [
-        "Complete: 1 AND 0 = ?, 1 OR 0 = ?, NOT 1 = ?",
-        "Write the Python form of the expression 'A OR NOT B'."
-      ],
-      "homework": "Find two real conditions from home or the masjid (for example 'open if it is Friday and before 2 pm') and write each as a logic expression with a truth table.",
-      "send": "SEND/EAL: give a blank truth table with the inputs filled in and a key (1 = true). Stretch: ask for expressions with a hidden NOT and justify the output.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
-    },
-    {
-      "unit": "Unit 1.3: Computational thinking: logic and truth tables",
-      "n": 16,
-      "title": "Three-input logic and conditions in programs",
-      "duration": 50,
-      "bigQuestion": "How do real systems combine three or more conditions?",
-      "objectives": [
-        "Complete truth tables with three inputs (1.3.1)",
-        "Write logic expressions from a description and read them back",
-        "Relate expressions to conditions in Python programs"
-      ],
-      "successCriteria": [
-        "All: list all eight combinations of three inputs",
-        "Most: complete a three-input truth table for a bracketed expression",
-        "Some: write an expression from a scenario and use the truth table to test a program condition"
-      ],
-      "crossCurricular": "Design and Technology: control systems with several sensors",
-      "smsc": "Moral: caution and care (taqwa in action): safety systems must consider every case",
-      "keywords": [
         {
-          "term": "input",
-          "def": "a value fed into a logic expression"
-        },
-        {
-          "term": "expression",
-          "def": "a combination of inputs and operators, such as (A AND B) OR C"
-        },
-        {
-          "term": "bracket",
-          "def": "groups part of an expression to be worked out first"
-        },
-        {
-          "term": "condition",
-          "def": "a Boolean test in a program, such as age > 16"
+          "q": "Evaluate NOT (A AND B) for A = 1, B = 0.",
+          "a": "A AND B = 0, so NOT 0 = 1.",
+          "mins": 4,
+          "model": "I do: A = 1, B = 1: A AND B = 1, NOT = 0."
         }
       ],
+      "independent": [
+        {
+          "q": "Pupil PDF: complete truth tables for A AND NOT B and NOT A OR B; then write two program conditions using AND and OR.",
+          "a": "Correct tables and conditions.",
+          "mins": 12,
+          "model": "The teacher fills the first row."
+        },
+        {
+          "q": "Extend: when is A AND NOT B true?",
+          "a": "Only when A = 1 and B = 0.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "NOT 0 = ...",
+          "a": "1",
+          "mins": 1,
+          "options": [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A door opens if you have a key card AND it's school hours. What is that in logic?",
+          "a": "An AND condition: both must be true.",
+          "mins": 2
+        }
+      ],
+      "homework": "Teacher-written truth-table exam question with answers.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Logic gate symbols",
+          "alt": "Logic gate symbols",
+          "for": "teach:1"
+        },
+        {
+          "find": "Key card door access",
+          "alt": "A key card door",
+          "for": "hook"
+        }
+      ],
+      "covers": [
+        "1.3.1",
+        "1.2.6"
+      ]
+    },
+    {
+      "unit": "Summer 1: Algorithms",
+      "n": 16,
+      "title": "Three-input logic and truth tables",
+      "duration": 50,
+      "bigQuestion": "An alarm sounds if the door is open AND (it's night OR the owner is away). How many situations must you check?",
+      "objectives": [
+        "To understand how to build truth tables for three-input logic expressions"
+      ],
+      "successCriteria": [
+        "All: list the 8 input combinations for three inputs",
+        "Most: complete a truth table for a three-input expression",
+        "Some: write an expression from a description"
+      ],
+      "smsc": "Moral: thinking through every case",
+      "keywords": [
+        {
+          "term": "input combination",
+          "def": "one set of values for all inputs"
+        },
+        {
+          "term": "Boolean expression",
+          "def": "a statement using AND, OR, NOT"
+        },
+        {
+          "term": "brackets",
+          "def": "show which part is worked out first"
+        },
+        {
+          "term": "2^n",
+          "def": "the number of rows for n inputs"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An alarm sounds if the door is open AND (it's night OR the owner is away). How many situations must you check?",
+        "a": "Three inputs: 2^3 = 8 combinations."
+      },
       "starter": [
-        "Bismillah. Write the truth table for A OR B.",
-        "What is the value of NOT (1 AND 0)?",
-        "Write a Python condition for 'x is between 1 and 9'."
+        {
+          "q": "A AND B is 1 when ...",
+          "a": "both are 1",
+          "mins": 1,
+          "options": [
+            "both are 1",
+            "either is 1"
+          ]
+        },
+        {
+          "q": "NOT 1 = ?",
+          "a": "0.",
+          "mins": 1
+        },
+        {
+          "q": "Rows for two inputs?",
+          "a": "4",
+          "mins": 1,
+          "options": [
+            "4",
+            "2",
+            "8"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Eight rows",
           "bullets": [
-            "Three inputs give 2 x 2 x 2 = 8 rows",
-            "Write rows in counting order, 000 to 111",
-            "Work out brackets in a helper column"
+            "Count in binary: 000 to 111",
+            "Column C alternates 0,1",
+            "B in pairs, A in fours"
           ],
-          "note": "Show the pattern: C alternates every row, B every two, A every four. Ask what four inputs would need (16 rows). Pupils lose marks by missing rows or writing them out of order.",
+          "note": ""
+        },
+        {
+          "heading": "P = A AND (B OR NOT C)",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
               "A",
               "B",
               "C",
-              "(A AND B) OR C"
+              "NOT C",
+              "B OR NOT C",
+              "P"
             ],
             "rows": [
               [
                 "0",
                 "0",
                 "0",
+                "1",
+                "1",
                 "0"
               ],
               [
                 "0",
                 "0",
                 "1",
-                "1"
+                "0",
+                "0",
+                "0"
               ],
               [
                 "0",
                 "1",
                 "0",
+                "1",
+                "1",
                 "0"
               ],
               [
                 "0",
                 "1",
                 "1",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "0",
+                "0",
+                "1",
+                "1",
                 "1"
               ],
               [
+                "1",
+                "0",
                 "1",
                 "0",
                 "0",
@@ -2501,19 +3219,17 @@
               ],
               [
                 "1",
+                "1",
                 "0",
+                "1",
                 "1",
                 "1"
               ],
               [
                 "1",
                 "1",
+                "1",
                 "0",
-                "1"
-              ],
-              [
-                "1",
-                "1",
                 "1",
                 "1"
               ]
@@ -2521,67 +3237,98 @@
           }
         },
         {
-          "heading": "From scenario to expression",
+          "heading": "From words to logic",
           "bullets": [
-            "Underline the words AND, OR, NOT",
-            "Give each condition a letter",
-            "Use brackets to match the meaning"
+            "'Door open AND (night OR away)'",
+            "D AND (N OR W)",
+            "Brackets first"
           ],
-          "note": "Work through: an alarm sounds if the door is open and it is night or the owner is away. Pupils must decide where the bracket goes; 'open AND (night OR away)'. Compare with (open AND night) OR away and ask when they differ.",
-          "code": {
-            "lang": "python",
-            "text": "door_open = True\nnight = False\naway = True\nalarm = door_open and (night or away)\nprint(alarm)\nalarm2 = (door_open and night) or away\nprint(alarm2)\ndoor_open = False\nprint(door_open and (night or away))",
-            "output": "True\nTrue\nFalse"
-          }
+          "note": ""
         },
         {
-          "heading": "Worked example: three-input table",
-          "note": "Model using a helper column for the bracket B OR C first. Remind pupils that NOT A AND (B OR C) is only 1 when A is 0 and at least one of B, C is 1. Let pupils check the table by reading out the rows that equal 1: there are three.",
-          "model": {
-            "problem": "Complete the truth table for NOT A AND (B OR C).",
-            "steps": [
-              "List the eight rows from 000 to 111",
-              "Helper column B OR C: 0, 1, 1, 1, 0, 1, 1, 1",
-              "Column NOT A: 1, 1, 1, 1, 0, 0, 0, 0",
-              "AND the two columns together row by row"
-            ],
-            "answer": "Output column: 0, 1, 1, 1, 0, 0, 0, 0."
-          }
-        },
-        {
-          "heading": "Check: reading an expression",
-          "note": "Answer A. Rows where A = 1 and B = 1 give 1 for A AND B regardless of C. The only row for which the bracketed expression is 1 with C = 0 is 110. Option C is the trap of reading the expression as A OR B.",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "Which input row gives an output of 1 for the expression (A AND B) AND NOT C?",
+            "q": "How many rows for a three-input truth table?",
             "options": [
-              "A = 1, B = 1, C = 0",
-              "A = 1, B = 0, C = 0",
-              "A = 0, B = 1, C = 0",
-              "A = 1, B = 1, C = 1"
+              "8",
+              "6",
+              "3"
             ],
             "answer": 0,
-            "why": "Both A and B must be 1 and C must be 0 so that NOT C is 1. The other rows each break one of those three requirements."
+            "why": "2^3 = 8."
           }
         }
       ],
       "practice": [
-        "Complete the truth table for (A OR B) AND C.",
-        "Write an expression for: a heater runs if it is cold (C) and the window is closed (W) or the override switch (O) is on.",
-        "Write the Python statement that stores the result of the expression in the previous question in the variable heater_on."
+        {
+          "q": "For A = 1, B = 0, C = 0, find P = A AND (B OR NOT C).",
+          "a": "NOT C = 1; B OR NOT C = 1; P = 1.",
+          "mins": 4,
+          "model": "I do: A = 1, B = 0, C = 1: NOT C = 0; B OR 0 = 0; P = 0."
+        }
       ],
       "independent": [
-        "Core: Complete the truth table for A AND (NOT B) AND C.",
-        "Extend: A lift moves only if the door is closed (D), the lift is not overloaded (O) and a button is pressed (B). Write the expression, build the table and state in how many of the eight rows the lift moves.",
-        "Stretch: Write a Python function with three Boolean parameters that returns True only if exactly one of them is True. Give its truth table."
+        {
+          "q": "Pupil PDF: complete truth tables for (A OR B) AND NOT C and for the alarm D AND (N OR W).",
+          "a": "Correct eight-row tables.",
+          "mins": 12,
+          "model": "The teacher writes the input columns."
+        },
+        {
+          "q": "Extend: write the alarm condition in Python using and, or.",
+          "a": "if door_open and (night or away):",
+          "mins": 3
+        }
       ],
       "exit": [
-        "How many rows has a truth table with three inputs?",
-        "Write the expression 'A or B, and C' with brackets correctly placed."
+        {
+          "q": "In P = A AND (B OR NOT C), work out first ...",
+          "a": "NOT C, then the bracket",
+          "mins": 1,
+          "options": [
+            "NOT C, then the bracket",
+            "A AND B"
+          ]
+        },
+        {
+          "q": "Back to our ponder: An alarm sounds if the door is open AND (it's night OR the owner is away). How many situations must you check?",
+          "a": "Three inputs: 2^3 = 8 combinations.",
+          "mins": 2
+        }
       ],
-      "homework": "Choose a safety system (a car seatbelt warning, an oven door lock). Write its logic as an expression with three inputs and a truth table.",
-      "send": "SEND/EAL: give a pre-filled template with the eight input rows and the helper column labelled. Stretch: show the expression can be rewritten without brackets and test it with a truth table.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Algorithms unit quiz (portal) and tracing set as independent study; algorithms in Python (unit week 6) as extension.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Algorithms unit quiz and tracing set (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Alarm system panel",
+          "alt": "An alarm panel",
+          "for": "hook"
+        },
+        {
+          "find": "Binary counting 000 to 111",
+          "alt": "Counting in binary",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "1.3.1"
+      ]
     },
     {
       "unit": "Spring 2: Data representation",
@@ -7227,6 +7974,385 @@
       ],
       "covers": [
         "2.3.2"
+      ]
+    },
+    {
+      "unit": "Summer 1: Algorithms",
+      "n": 40,
+      "title": "Binary search in pseudocode and exam questions",
+      "duration": 50,
+      "bigQuestion": "Why do we need both a 'found' flag and a 'low <= high' check in the loop?",
+      "objectives": [
+        "To understand how binary search is written in pseudocode and how to answer exam questions on searching"
+      ],
+      "successCriteria": [
+        "All: complete missing lines of a binary search algorithm",
+        "Most: explain each line's purpose",
+        "Some: answer a 6-mark comparison question on searching"
+      ],
+      "smsc": "Moral: careful, accurate work",
+      "keywords": [
+        {
+          "term": "array",
+          "def": "an ordered collection of items with indexes"
+        },
+        {
+          "term": "index",
+          "def": "the position of an item"
+        },
+        {
+          "term": "DIV",
+          "def": "whole-number division"
+        },
+        {
+          "term": "found flag",
+          "def": "a Boolean that records whether the target was found"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do we need both a 'found' flag and a 'low <= high' check in the loop?",
+        "a": "The loop stops if the item is found or if there is nowhere left to look."
+      },
+      "starter": [
+        {
+          "q": "Binary search needs ...",
+          "a": "a sorted list",
+          "mins": 1,
+          "options": [
+            "a sorted list",
+            "a short list"
+          ]
+        },
+        {
+          "q": "mid for low 5, high 8?",
+          "a": "6.",
+          "mins": 1
+        },
+        {
+          "q": "Linear search checks ...",
+          "a": "each item in turn",
+          "mins": 1,
+          "options": [
+            "each item in turn",
+            "the middle first"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The algorithm",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "pseudocode",
+            "text": "SET low TO 0\nSET high TO LENGTH(items) - 1\nSET found TO False\nWHILE found = False AND low <= high DO\n    SET mid TO (low + high) DIV 2\n    IF items[mid] = target THEN\n        SET found TO True\n    ELSE\n        IF items[mid] < target THEN\n            SET low TO mid + 1\n        ELSE\n            SET high TO mid - 1\n        END IF\n    END IF\nEND WHILE",
+            "output": "found is True if the target is in the list"
+          }
+        },
+        {
+          "heading": "What each part does",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Line",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "SET high TO LENGTH(items) - 1",
+                "Last index"
+              ],
+              [
+                "WHILE found = False AND low <= high",
+                "Stop when found or no items left"
+              ],
+              [
+                "SET mid TO (low + high) DIV 2",
+                "Middle index"
+              ],
+              [
+                "SET low TO mid + 1",
+                "Discard the lower half"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "6-mark technique",
+          "bullets": [
+            "Compare: linear vs binary",
+            "Use: sorted, number of comparisons, list size",
+            "Give a context and a judgement"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "If items[mid] < target, the algorithm ...",
+            "options": [
+              "sets low to mid + 1",
+              "sets high to mid - 1",
+              "stops"
+            ],
+            "answer": 0,
+            "why": "The target is in the upper half."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fill the gap: IF items[mid] > target THEN SET ____ TO mid - 1",
+          "a": "high",
+          "mins": 4,
+          "model": "I do: if the middle is too small, the target must be above it: low = mid + 1."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Exam practice: 'A school stores 20,000 pupil records sorted by ID. Discuss the use of linear and binary search.' (6 marks) Portal response box; then self-mark with the mark scheme.",
+          "a": "Points: binary needs sorted (it is); far fewer comparisons (about 15 vs up to 20,000); linear simpler; judgement: binary.",
+          "mins": 12,
+          "model": "The teacher plans the answer."
+        },
+        {
+          "q": "Extend: write the search in Python and test it with three targets.",
+          "a": "A working Python function.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "(3 + 8) DIV 2 = ...",
+          "a": "5",
+          "mins": 1,
+          "options": [
+            "5",
+            "5.5",
+            "6"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why do we need both a 'found' flag and a 'low <= high' check in the loop?",
+          "a": "The loop stops if the item is found or if there is nowhere left to look.",
+          "mins": 2
+        }
+      ],
+      "homework": "Teacher-written exam question on searching, with mark scheme.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Mark scheme (teacher-written)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Code on screen pseudocode",
+          "alt": "Pseudocode",
+          "for": "teach:1"
+        },
+        {
+          "find": "Library shelves sorted books",
+          "alt": "Sorted data",
+          "for": "hook"
+        }
+      ],
+      "covers": [
+        "1.2.9",
+        "1.2.4"
+      ]
+    },
+    {
+      "unit": "Summer 1: Algorithms",
+      "n": 41,
+      "title": "Trace tables: nested loops and arrays for the exam",
+      "duration": 50,
+      "bigQuestion": "An exam gives you an algorithm with no title. How can you work out what it does?",
+      "objectives": [
+        "To understand how to trace algorithms with nested loops and arrays, as in Paper 1 questions"
+      ],
+      "successCriteria": [
+        "All: trace a loop over an array",
+        "Most: trace a nested loop",
+        "Some: describe what an unfamiliar algorithm does"
+      ],
+      "smsc": "Moral: perseverance with hard problems",
+      "keywords": [
+        {
+          "term": "nested loop",
+          "def": "a loop inside another loop"
+        },
+        {
+          "term": "array",
+          "def": "a list of items with indexes"
+        },
+        {
+          "term": "LENGTH()",
+          "def": "the number of items in an array"
+        },
+        {
+          "term": "purpose",
+          "def": "what an algorithm is for"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An exam gives you an algorithm with no title. How can you work out what it does?",
+        "a": "Trace it with simple data and look at the pattern in the output."
+      },
+      "starter": [
+        {
+          "q": "20 DIV 3 = ...",
+          "a": "6",
+          "mins": 1,
+          "options": [
+            "6",
+            "6.67",
+            "2"
+          ]
+        },
+        {
+          "q": "20 MOD 3?",
+          "a": "2.",
+          "mins": 1
+        },
+        {
+          "q": "A logic error ...",
+          "a": "gives a wrong result",
+          "mins": 1,
+          "options": [
+            "gives a wrong result",
+            "stops the program"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Loop over an array",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "pseudocode",
+            "text": "SET nums TO [4, 9, 2, 7]\nSET biggest TO nums[0]\nFOR i FROM 1 TO LENGTH(nums) - 1 DO\n    IF nums[i] > biggest THEN\n        SET biggest TO nums[i]\n    END IF\nEND FOR\nSEND biggest TO DISPLAY",
+            "output": "9"
+          }
+        },
+        {
+          "heading": "Nested loop",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "pseudocode",
+            "text": "FOR row FROM 1 TO 3 DO\n    SET line TO ''\n    FOR col FROM 1 TO row DO\n        SET line TO line & '*'\n    END FOR\n    SEND line TO DISPLAY\nEND FOR",
+            "output": "*\n**\n***"
+          }
+        },
+        {
+          "heading": "Describe the purpose",
+          "bullets": [
+            "Trace with small data",
+            "Look at what changes",
+            "State the purpose in one sentence"
+          ],
+          "note": "The first algorithm finds the largest value."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "The first algorithm's purpose is to ...",
+            "options": [
+              "find the largest value",
+              "sort the array",
+              "count the items"
+            ],
+            "answer": 0,
+            "why": "It keeps the biggest so far."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many times does the inner loop run in total in the nested example?",
+          "a": "1 + 2 + 3 = 6.",
+          "mins": 4,
+          "model": "I do: for row = 1 it runs once, row = 2 twice ..."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: trace three exam-style algorithms (one nested), state outputs and describe each purpose in one sentence.",
+          "a": "Correct traces, outputs and purposes.",
+          "mins": 12,
+          "model": "The teacher traces the first."
+        },
+        {
+          "q": "Extend: change the first algorithm to find the smallest value.",
+          "a": "Use < and a variable called smallest.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "LENGTH([4, 9, 2, 7]) = ...",
+          "a": "4",
+          "mins": 1,
+          "options": [
+            "4",
+            "3",
+            "7"
+          ]
+        },
+        {
+          "q": "Back to our ponder: An exam gives you an algorithm with no title. How can you work out what it does?",
+          "a": "Trace it with simple data and look at the pattern in the output.",
+          "mins": 2
+        }
+      ],
+      "homework": "Teacher-written algorithm-description question with mark scheme.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Nested boxes",
+          "alt": "Nested loops",
+          "for": "hook"
+        },
+        {
+          "find": "Star pattern triangle",
+          "alt": "A pattern of stars",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "1.2.7",
+        "1.2.4"
       ]
     }
   ]

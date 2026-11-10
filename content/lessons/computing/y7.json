@@ -2521,6 +2521,996 @@
           "for": "teach:1"
         }
       ]
+    },
+    {
+      "unit": "Summer 1: Networks, web design and cyber security",
+      "n": 13,
+      "title": "Networks: what they are and how devices connect",
+      "duration": 50,
+      "bigQuestion": "When you join a Teams lesson from home, how many networks might your video pass through?",
+      "objectives": [
+        "To understand what a network is and how devices connect to each other and to the internet"
+      ],
+      "successCriteria": [
+        "All: define a network and name three network devices",
+        "Most: explain the difference between a LAN and the internet",
+        "Some: describe what a router does with data"
+      ],
+      "smsc": "Social: connecting people for learning and good",
+      "keywords": [
+        {
+          "term": "network",
+          "def": "two or more devices connected to share data"
+        },
+        {
+          "term": "router",
+          "def": "a device that directs data between networks"
+        },
+        {
+          "term": "LAN",
+          "def": "a local area network, such as a home"
+        },
+        {
+          "term": "internet",
+          "def": "a worldwide network of networks"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you join a Teams lesson from home, how many networks might your video pass through?",
+        "a": "Your home network, your internet provider's network and many more before reaching Microsoft's servers."
+      },
+      "starter": [
+        {
+          "q": "An algorithm is ...",
+          "a": "a set of precise steps",
+          "mins": 1,
+          "options": [
+            "a set of precise steps",
+            "a computer"
+          ]
+        },
+        {
+          "q": "What does 'debug' mean?",
+          "a": "Find and fix errors.",
+          "mins": 1
+        },
+        {
+          "q": "In Scratch, a loop ...",
+          "a": "repeats instructions",
+          "mins": 1,
+          "options": [
+            "repeats instructions",
+            "deletes sprites"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Network devices",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Device",
+              "Job"
+            ],
+            "rows": [
+              [
+                "Router",
+                "Connects your home to the internet"
+              ],
+              [
+                "Switch",
+                "Connects wired devices in a LAN"
+              ],
+              [
+                "Wireless access point",
+                "Lets devices join by Wi-Fi"
+              ],
+              [
+                "Server",
+                "Stores and sends data"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "LAN and the internet",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "LAN",
+              "points": [
+                "Small area (home, school)",
+                "Owned by one group"
+              ]
+            },
+            "right": {
+              "title": "Internet",
+              "points": [
+                "Worldwide",
+                "Network of networks"
+              ]
+            },
+            "label": "part of"
+          }
+        },
+        {
+          "heading": "How data travels",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Data split into packets",
+            "Sent to the router",
+            "Routed across networks",
+            "Arrives at the server",
+            "Reassembled"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "The internet is ...",
+            "options": [
+              "a worldwide network of networks",
+              "one big computer",
+              "the same as Wi-Fi"
+            ],
+            "answer": 0,
+            "why": "Networks joined together."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Draw your home network: which devices connect to the router?",
+          "a": "Laptop, phone, TV by Wi-Fi; router connects to the internet provider.",
+          "mins": 4,
+          "model": "I do: router in the centre, lines to laptop, phone and printer, one line out to the internet."
+        }
+      ],
+      "independent": [
+        {
+          "q": "In diagrams.net: draw your home network (no personal details) with labels and one sentence on how a Teams video reaches you; save to the portal.",
+          "a": "A labelled diagram and an accurate sentence.",
+          "mins": 15,
+          "model": "The teacher draws the router and one device."
+        },
+        {
+          "q": "Extend: explain why data is split into packets.",
+          "a": "Packets can take different routes and be resent if lost.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A router ...",
+          "a": "directs data between networks",
+          "mins": 1,
+          "options": [
+            "directs data between networks",
+            "prints documents"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When you join a Teams lesson from home, how many networks might your video pass through?",
+          "a": "Your home network, your internet provider's network and many more before reaching Microsoft's servers.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find your home router with a parent and count the devices connected.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (networks, web design and cyber security; no secondary scheme of work supplied)",
+        "diagrams.net (free, browser)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Home wifi router",
+          "alt": "A router",
+          "for": "hook"
+        },
+        {
+          "find": "Network cables switch",
+          "alt": "A network switch",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Networks, web design and cyber security",
+      "n": 14,
+      "title": "How a web page reaches you; HTML basics",
+      "duration": 50,
+      "bigQuestion": "When you type a web address, where does the page actually come from?",
+      "objectives": [
+        "To understand how a browser requests a web page and how HTML tags structure a page"
+      ],
+      "successCriteria": [
+        "All: put the steps of loading a web page in order",
+        "Most: write a page with a heading and paragraphs using HTML tags",
+        "Some: explain what DNS does"
+      ],
+      "smsc": "Moral: understanding the tools we use every day",
+      "keywords": [
+        {
+          "term": "browser",
+          "def": "a program for viewing web pages"
+        },
+        {
+          "term": "HTML",
+          "def": "the language that structures web pages"
+        },
+        {
+          "term": "tag",
+          "def": "an instruction in angle brackets, like <h1>"
+        },
+        {
+          "term": "DNS",
+          "def": "the system that turns web addresses into IP addresses"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you type a web address, where does the page actually come from?",
+        "a": "From a web server somewhere in the world, found using DNS and sent over the internet."
+      },
+      "starter": [
+        {
+          "q": "A router ...",
+          "a": "directs data between networks",
+          "mins": 1,
+          "options": [
+            "directs data between networks",
+            "stores web pages"
+          ]
+        },
+        {
+          "q": "What is a LAN?",
+          "a": "A local area network, like a home.",
+          "mins": 1
+        },
+        {
+          "q": "Data travels in ...",
+          "a": "packets",
+          "mins": 1,
+          "options": [
+            "packets",
+            "envelopes"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Loading a page",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Type the address",
+            "DNS finds the IP address",
+            "Browser sends a request (HTTP/HTTPS)",
+            "Server sends the files",
+            "Browser shows the page"
+          ]
+        },
+        {
+          "heading": "HTML tags",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "html",
+            "text": "<h1>Rivers of the World</h1>\n<p>The Nile is one of the longest rivers.</p>\n<p>Rivers begin at a source.</p>",
+            "output": "A big heading and two paragraphs"
+          }
+        },
+        {
+          "heading": "Opening and closing tags",
+          "bullets": [
+            "<h1> opens, </h1> closes",
+            "Most tags come in pairs",
+            "Tags don't appear on the page"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which tag makes a main heading?",
+            "options": [
+              "<h1>",
+              "<p>",
+              "<img>"
+            ],
+            "answer": 0,
+            "why": "h1 is the top-level heading."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix the bug: <h1>My Page<h1>",
+          "a": "<h1>My Page</h1>: the closing tag needs a /.",
+          "mins": 4,
+          "model": "I do: <p>Hello<p> becomes <p>Hello</p>."
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the HTML editor: write a page about a topic you study (a river, a masjid's architecture) with an <h1>, an <h2> and three <p> paragraphs; save the link to the portal.",
+          "a": "A valid page with correct paired tags.",
+          "mins": 15,
+          "model": "The teacher writes the <h1> live."
+        },
+        {
+          "q": "Extend: add a list with <ul> and <li>.",
+          "a": "A working list.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "DNS turns a web address into ...",
+          "a": "an IP address",
+          "mins": 1,
+          "options": [
+            "an IP address",
+            "a password"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When you type a web address, where does the page actually come from?",
+          "a": "From a web server somewhere in the world, found using DNS and sent over the internet.",
+          "mins": 2
+        }
+      ],
+      "homework": "Right-click a web page with a parent and choose 'View page source' to spot three tags.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (networks, web design and cyber security; no secondary scheme of work supplied)",
+        "A free browser HTML editor (for example CodePen or the school's chosen tool; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "HTML code on screen",
+          "alt": "HTML code",
+          "for": "teach:2"
+        },
+        {
+          "find": "Data centre servers",
+          "alt": "Web servers",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Networks, web design and cyber security",
+      "n": 15,
+      "title": "Designing a website front page",
+      "duration": 50,
+      "bigQuestion": "What makes you leave a website within five seconds?",
+      "objectives": [
+        "To understand how to plan and build a clear front page with headings, links and an image"
+      ],
+      "successCriteria": [
+        "All: add a link and an image with alt text",
+        "Most: follow a wireframe plan for the layout",
+        "Some: justify design choices for the audience"
+      ],
+      "smsc": "Moral: accessibility: designing for everyone",
+      "keywords": [
+        {
+          "term": "wireframe",
+          "def": "a simple plan of a page layout"
+        },
+        {
+          "term": "link",
+          "def": "text you click to go to another page"
+        },
+        {
+          "term": "alt text",
+          "def": "a description of an image for screen readers"
+        },
+        {
+          "term": "accessible",
+          "def": "usable by everyone, including people with disabilities"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes you leave a website within five seconds?",
+        "a": "Clutter, slow loading, unreadable text or not finding what you need."
+      },
+      "starter": [
+        {
+          "q": "<h1> is ...",
+          "a": "a main heading",
+          "mins": 1,
+          "options": [
+            "a main heading",
+            "a picture"
+          ]
+        },
+        {
+          "q": "Fix: <p>Hi<p>",
+          "a": "<p>Hi</p>",
+          "mins": 1
+        },
+        {
+          "q": "Tags come in ...",
+          "a": "pairs (mostly)",
+          "mins": 1,
+          "options": [
+            "pairs (mostly)",
+            "triples"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A wireframe",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Area",
+              "Content"
+            ],
+            "rows": [
+              [
+                "Top",
+                "<h1> site title"
+              ],
+              [
+                "Menu",
+                "Links to pages"
+              ],
+              [
+                "Main",
+                "Image and introduction"
+              ],
+              [
+                "Footer",
+                "Contact (school only), date"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Links and images",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "html",
+            "text": "<a href=\"rivers.html\">Rivers</a>\n<img src=\"nile.jpg\" alt=\"The River Nile at sunset\">",
+            "output": "A clickable link and an image with a description"
+          }
+        },
+        {
+          "heading": "Accessibility",
+          "bullets": [
+            "Alt text on every image",
+            "Strong colour contrast",
+            "Clear headings in order"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Alt text helps ...",
+            "options": [
+              "people using screen readers",
+              "the page load faster only",
+              "hide the image"
+            ],
+            "answer": 0,
+            "why": "It describes the image."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the HTML for a link called 'Our Projects' to projects.html.",
+          "a": "<a href=\"projects.html\">Our Projects</a>",
+          "mins": 4,
+          "model": "I do: <a href=\"about.html\">About us</a>."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Sketch a wireframe, then build the front page with a title, menu of three links, an image with alt text and an introduction; save the link to the portal.",
+          "a": "A page matching its wireframe with working tags.",
+          "mins": 15,
+          "model": "The teacher builds the menu."
+        },
+        {
+          "q": "Extend: add a second page and link it from the menu.",
+          "a": "A working two-page site.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A wireframe is ...",
+          "a": "a simple layout plan",
+          "mins": 1,
+          "options": [
+            "a simple layout plan",
+            "a network cable"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What makes you leave a website within five seconds?",
+          "a": "Clutter, slow loading, unreadable text or not finding what you need.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find a website you find easy to use and note two design features.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (networks, web design and cyber security; no secondary scheme of work supplied)",
+        "A free browser HTML editor (for example CodePen or the school's chosen tool; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Website wireframe sketch",
+          "alt": "A wireframe",
+          "for": "teach:1"
+        },
+        {
+          "find": "Accessibility icon",
+          "alt": "Accessibility",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Networks, web design and cyber security",
+      "n": 16,
+      "title": "Cyber security: threats and how to stay safe",
+      "duration": 50,
+      "bigQuestion": "A message says 'Your account will be closed! Click here now!' What should make you suspicious?",
+      "objectives": [
+        "To understand common cyber threats and the habits that protect people and devices"
+      ],
+      "successCriteria": [
+        "All: name three cyber threats",
+        "Most: spot the signs of a phishing message",
+        "Some: explain how strong passwords and two-step verification protect accounts"
+      ],
+      "smsc": "Moral: honesty and protecting others online",
+      "keywords": [
+        {
+          "term": "malware",
+          "def": "software designed to harm a device or steal data"
+        },
+        {
+          "term": "phishing",
+          "def": "fake messages that trick people into giving information"
+        },
+        {
+          "term": "two-step verification",
+          "def": "a second check when logging in"
+        },
+        {
+          "term": "update",
+          "def": "a fix from the maker that closes security holes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A message says 'Your account will be closed! Click here now!' What should make you suspicious?",
+        "a": "Urgency, a threat, and a link: classic phishing signs."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever cheats us is not one of us' (Muslim). Cyber criminals cheat; we protect ourselves and warn others.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Alt text ...",
+          "a": "describes an image",
+          "mins": 1,
+          "options": [
+            "describes an image",
+            "is a link"
+          ]
+        },
+        {
+          "q": "Write a link tag to home.html.",
+          "a": "<a href=\"home.html\">Home</a>",
+          "mins": 1
+        },
+        {
+          "q": "A wireframe is ...",
+          "a": "a layout plan",
+          "mins": 1,
+          "options": [
+            "a layout plan",
+            "malware"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Threats",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Threat",
+              "What it does"
+            ],
+            "rows": [
+              [
+                "Malware (viruses, ransomware)",
+                "Harms devices or locks files"
+              ],
+              [
+                "Phishing",
+                "Tricks you into giving details"
+              ],
+              [
+                "Weak passwords",
+                "Easy to guess or crack"
+              ],
+              [
+                "Unsafe downloads",
+                "Hide malware"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Spot the phish",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Phishing sign",
+              "Normal"
+            ],
+            "cards": [
+              "Urgent threat",
+              "Spelling mistakes and odd sender address",
+              "Message from your teacher on Teams about homework",
+              "Asks for your password"
+            ],
+            "answer": [
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "Stay safe habits",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Three random words passwords",
+            "Two-step verification",
+            "Update devices",
+            "Think before clicking",
+            "Tell an adult or report"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is a sign of phishing?",
+            "options": [
+              "It asks for your password urgently",
+              "It's from your teacher about a lesson",
+              "It has no links"
+            ],
+            "answer": 0,
+            "why": "Real services never ask for passwords like that."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find three phishing signs in the teacher's example email.",
+          "a": "Odd sender address, urgency, a request for login details.",
+          "mins": 4,
+          "model": "I do: sign 1: 'support@amaz0n-security.co': not the real address."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Make a one-page cyber security guide for your family (five tips with reasons) in the HTML editor or a document; save to the portal.",
+          "a": "Five accurate tips with reasons.",
+          "mins": 15,
+          "model": "The teacher writes tip one."
+        },
+        {
+          "q": "Extend: explain what ransomware is and why backups help.",
+          "a": "It locks files for a payment; backups let you restore without paying.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Updates help because they ...",
+          "a": "fix security holes",
+          "mins": 1,
+          "options": [
+            "fix security holes",
+            "slow devices"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A message says 'Your account will be closed! Click here now!' What should make you suspicious?",
+          "a": "Urgency, a threat, and a link: classic phishing signs.",
+          "mins": 2
+        }
+      ],
+      "homework": "Check one device at home with a parent for pending updates.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (networks, web design and cyber security; no secondary scheme of work supplied)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Example phishing email (teacher-made, pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Phishing hook email",
+          "alt": "Phishing",
+          "for": "hook"
+        },
+        {
+          "find": "Padlock on laptop",
+          "alt": "Security",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Networks, web design and cyber security",
+      "n": 17,
+      "title": "Publishing safely and peer review; unit quiz",
+      "duration": 50,
+      "bigQuestion": "Before you publish anything online, what three questions should you ask?",
+      "objectives": [
+        "To understand how to publish web content safely and improve it through peer review"
+      ],
+      "successCriteria": [
+        "All: check my page for personal information before sharing",
+        "Most: give and use specific peer feedback",
+        "Some: score well on the unit quiz across networks, HTML and security"
+      ],
+      "smsc": "Moral: responsible publishing",
+      "keywords": [
+        {
+          "term": "privacy",
+          "def": "keeping personal information safe"
+        },
+        {
+          "term": "peer review",
+          "def": "classmates checking work and suggesting improvements"
+        },
+        {
+          "term": "personal information",
+          "def": "details that identify you, such as address or full name"
+        },
+        {
+          "term": "publish",
+          "def": "make work available to others"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Before you publish anything online, what three questions should you ask?",
+        "a": "Is it true and kind? Does it reveal personal information? Do I have permission for everything in it?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who have believed, if there comes to you a disobedient one with information, investigate' (Al-Hujurat 49:6). We check before we share.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Phishing ...",
+          "a": "tricks people into giving information",
+          "mins": 1,
+          "options": [
+            "tricks people into giving information",
+            "speeds up Wi-Fi"
+          ]
+        },
+        {
+          "q": "Name one stay-safe habit.",
+          "a": "Two-step verification.",
+          "mins": 1
+        },
+        {
+          "q": "Malware is ...",
+          "a": "harmful software",
+          "mins": 1,
+          "options": [
+            "harmful software",
+            "a router"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Publishing checklist",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Check",
+              "Yes?"
+            ],
+            "rows": [
+              [
+                "No full name, address, school details",
+                ""
+              ],
+              [
+                "Images allowed and with alt text",
+                ""
+              ],
+              [
+                "Content true and kind",
+                ""
+              ],
+              [
+                "Shared on the school portal only",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Peer review",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read the page",
+            "One strength",
+            "One specific improvement",
+            "Check the publishing list",
+            "Author improves"
+          ]
+        },
+        {
+          "heading": "Quiz topics",
+          "bullets": [
+            "Networks and devices",
+            "How a page loads; HTML",
+            "Cyber threats and habits"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which should NOT be on a published school page?",
+            "options": [
+              "Your home address",
+              "A heading",
+              "Alt text"
+            ],
+            "answer": 0,
+            "why": "Personal information stays private."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Peer review the teacher's sample page using the cycle.",
+          "a": "Strength: clear menu. Improvement: add alt text to the second image; remove the full name.",
+          "mins": 4,
+          "model": "I do: 'The headings are in a logical order; the photo needs alt text.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: peer review each other's front page, then improve yours; then sit the 15-minute unit quiz in the portal.",
+          "a": "Reviewed and improved page; quiz completed.",
+          "mins": 15,
+          "model": "The teacher reviews one page live."
+        },
+        {
+          "q": "Extend: add a privacy note to your footer.",
+          "a": "Note added.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "49:6 teaches us to ...",
+          "a": "check information before acting on it",
+          "mins": 1,
+          "options": [
+            "check information before acting on it",
+            "share everything"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Before you publish anything online, what three questions should you ask?",
+          "a": "Is it true and kind? Does it reveal personal information? Do I have permission for everything in it?",
+          "mins": 2
+        }
+      ],
+      "homework": "Show your finished page to your family and explain how you kept it safe.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (networks, web design and cyber security; no secondary scheme of work supplied)",
+        "A free browser HTML editor (for example CodePen or the school's chosen tool; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Unit quiz (portal, 15 minutes, secure test mode)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Checklist tick boxes",
+          "alt": "A checklist",
+          "for": "teach:1"
+        },
+        {
+          "find": "Publish button",
+          "alt": "Publishing",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }

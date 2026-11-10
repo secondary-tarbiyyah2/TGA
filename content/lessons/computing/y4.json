@@ -1465,6 +1465,998 @@
           "for": "keywords"
         }
       ]
+    },
+    {
+      "unit": "Summer 1: Photo editing and spoken audio editing",
+      "n": 10,
+      "title": "Digital images: pixels and photographs",
+      "duration": 45,
+      "bigQuestion": "If you zoom in very far on a photo, what do you see?",
+      "objectives": [
+        "To understand that digital images are made of pixels and how to take a good photograph of an object"
+      ],
+      "successCriteria": [
+        "All: explain what a pixel is",
+        "Most: compare low and high resolution",
+        "Some: take a clear photo of an object using light and framing"
+      ],
+      "smsc": "Spiritual: noticing beauty in Allah's creation through photos of nature",
+      "keywords": [
+        {
+          "term": "pixel",
+          "def": "a tiny square of colour that makes up a digital image"
+        },
+        {
+          "term": "resolution",
+          "def": "how many pixels an image has"
+        },
+        {
+          "term": "file",
+          "def": "a saved piece of work on a computer"
+        },
+        {
+          "term": "frame",
+          "def": "what is inside the edges of the photo"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you zoom in very far on a photo, what do you see?",
+        "a": "Tiny squares of colour: pixels."
+      },
+      "starter": [
+        {
+          "q": "The internet is ...",
+          "a": "a network of networks",
+          "mins": 1,
+          "options": [
+            "a network of networks",
+            "one computer"
+          ]
+        },
+        {
+          "q": "Name a piece of hardware.",
+          "a": "For example: a keyboard.",
+          "mins": 1
+        },
+        {
+          "q": "A strong password is ...",
+          "a": "long and hard to guess",
+          "mins": 1,
+          "options": [
+            "long and hard to guess",
+            "1234"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Pixels",
+          "bullets": [
+            "Every digital picture is a grid of tiny squares",
+            "Each square has one colour",
+            "More pixels: more detail"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Resolution",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Low resolution",
+              "points": [
+                "Few pixels",
+                "Blocky when enlarged"
+              ]
+            },
+            "right": {
+              "title": "High resolution",
+              "points": [
+                "Many pixels",
+                "Sharp details"
+              ]
+            },
+            "label": "versus"
+          }
+        },
+        {
+          "heading": "A good photo",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Choose an object or a plant",
+            "Good light (near a window)",
+            "Fill the frame",
+            "Hold still",
+            "Check and retake"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A pixel is ...",
+            "options": [
+              "a tiny square of colour",
+              "a type of camera",
+              "a printer"
+            ],
+            "answer": 0,
+            "why": "Images are grids of pixels."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Colour a 6 by 6 pixel grid on the pupil PDF to make a simple shape.",
+          "a": "A recognisable shape (a star or a leaf).",
+          "mins": 4,
+          "model": "I do: I colour a heart shape square by square."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Photograph three objects or plants at home (no people) using the good-photo steps; upload them to the portal.",
+          "a": "Three clear, well-framed photos.",
+          "mins": 12,
+          "model": "The teacher photographs a mug on camera."
+        },
+        {
+          "q": "Extend: zoom right in on one photo and screenshot the pixels.",
+          "a": "Pixels visible.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Higher resolution means ...",
+          "a": "more pixels and more detail",
+          "mins": 1,
+          "options": [
+            "more pixels and more detail",
+            "fewer pixels"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you zoom in very far on a photo, what do you see?",
+          "a": "Tiny squares of colour: pixels.",
+          "mins": 2
+        }
+      ],
+      "homework": "Take one more photo of something in nature (a leaf, the sky) for next lesson.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 4: Photo Editing with When in Doubt, Talk it Out; Audio Editing), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only); spoken recordings only, no music",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Device camera"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Pixel art grid",
+          "alt": "Pixels in a grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "Close-up leaf macro",
+          "alt": "A close-up of a leaf",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Photo editing and spoken audio editing",
+      "n": 11,
+      "title": "Crop, resize and rotate",
+      "duration": 45,
+      "bigQuestion": "Why might you want to cut part of a photo away?",
+      "objectives": [
+        "To understand how cropping, resizing and rotating change an image and when to use each"
+      ],
+      "successCriteria": [
+        "All: crop a photo",
+        "Most: resize without stretching",
+        "Some: save a new copy and keep the original"
+      ],
+      "smsc": "Moral: editing carefully and keeping originals",
+      "keywords": [
+        {
+          "term": "crop",
+          "def": "cut away the edges"
+        },
+        {
+          "term": "resize",
+          "def": "make the whole image bigger or smaller"
+        },
+        {
+          "term": "rotate",
+          "def": "turn the image"
+        },
+        {
+          "term": "aspect ratio",
+          "def": "the shape of the image: width compared to height"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might you want to cut part of a photo away?",
+        "a": "To remove clutter and focus on the important thing."
+      },
+      "starter": [
+        {
+          "q": "A pixel is ...",
+          "a": "a tiny square of colour",
+          "mins": 1,
+          "options": [
+            "a tiny square of colour",
+            "a lens"
+          ]
+        },
+        {
+          "q": "Give one tip for a good photo.",
+          "a": "Good light.",
+          "mins": 1
+        },
+        {
+          "q": "High resolution has ...",
+          "a": "more pixels",
+          "mins": 1,
+          "options": [
+            "more pixels",
+            "fewer pixels"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three tools",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Tool",
+              "Does",
+              "Use when"
+            ],
+            "rows": [
+              [
+                "Crop",
+                "Cuts edges",
+                "Clutter around the subject"
+              ],
+              [
+                "Resize",
+                "Changes size",
+                "Too big for a page"
+              ],
+              [
+                "Rotate",
+                "Turns",
+                "Photo is sideways"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Dragging a side to resize, so the image stretches",
+            "right": "Keep the aspect ratio: drag a corner or lock the ratio"
+          }
+        },
+        {
+          "heading": "Save safely",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Edit",
+            "File",
+            "Save as a new name",
+            "Keep the original",
+            "Upload"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Your photo is sideways. Use ...",
+            "options": [
+              "rotate",
+              "crop",
+              "delete"
+            ],
+            "answer": 0,
+            "why": "Rotate turns it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Crop the teacher's photo of a vase on a cluttered table so only the vase shows.",
+          "a": "Clutter removed, vase centred.",
+          "mins": 4,
+          "model": "I do: Crop tool, drag the edges in, press Enter."
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the photo editor: crop, resize and (if needed) rotate two of your photos; save new copies and upload them.",
+          "a": "Two edited copies; originals kept.",
+          "mins": 12,
+          "model": "The teacher edits one photo live."
+        },
+        {
+          "q": "Extend: make a square crop for a profile-style icon of an object.",
+          "a": "Square icon saved.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "To avoid stretching, keep the ...",
+          "a": "aspect ratio",
+          "mins": 1,
+          "options": [
+            "aspect ratio",
+            "colour"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why might you want to cut part of a photo away?",
+          "a": "To remove clutter and focus on the important thing.",
+          "mins": 2
+        }
+      ],
+      "homework": "Explain to a grown-up the difference between crop and resize.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 4: Photo Editing with When in Doubt, Talk it Out; Audio Editing), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only); spoken recordings only, no music",
+        "Photopea (free, browser) or the school's photo editor (TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Photo crop tool",
+          "alt": "Cropping",
+          "for": "teach:1"
+        },
+        {
+          "find": "Rotate arrow icon",
+          "alt": "Rotate",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Photo editing and spoken audio editing",
+      "n": 12,
+      "title": "Filters and brightness: keeping edits honest",
+      "duration": 45,
+      "bigQuestion": "An advert photo makes a burger look huge and perfect. Is that honest?",
+      "objectives": [
+        "To understand how filters and brightness change a photo and why edits should be honest"
+      ],
+      "successCriteria": [
+        "All: change brightness and contrast",
+        "Most: apply a filter and compare it with the original",
+        "Some: explain when editing a photo could be dishonest"
+      ],
+      "smsc": "Moral: honesty in editing",
+      "keywords": [
+        {
+          "term": "filter",
+          "def": "an effect that changes the look of a photo"
+        },
+        {
+          "term": "brightness",
+          "def": "how light or dark an image is"
+        },
+        {
+          "term": "contrast",
+          "def": "difference between light and dark parts"
+        },
+        {
+          "term": "honest",
+          "def": "true, not tricking anyone"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An advert photo makes a burger look huge and perfect. Is that honest?",
+        "a": "Not fully: heavy editing can mislead. Honest editing improves without tricking."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever cheats us is not one of us' (Muslim). Honesty includes how we show pictures and products.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Crop means ...",
+          "a": "cut away the edges",
+          "mins": 1,
+          "options": [
+            "cut away the edges",
+            "turn"
+          ]
+        },
+        {
+          "q": "Why save a new copy?",
+          "a": "To keep the original.",
+          "mins": 1
+        },
+        {
+          "q": "Dragging a corner keeps ...",
+          "a": "the aspect ratio",
+          "mins": 1,
+          "options": [
+            "the aspect ratio",
+            "the filter"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Adjustments",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Tool",
+              "Effect"
+            ],
+            "rows": [
+              [
+                "Brightness",
+                "Lighter or darker"
+              ],
+              [
+                "Contrast",
+                "Stronger or softer difference"
+              ],
+              [
+                "Saturation",
+                "More or less colour"
+              ],
+              [
+                "Filter",
+                "A preset look"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Honest or misleading?",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Honest",
+              "Misleading"
+            ],
+            "cards": [
+              "Brightening a dark photo of a flower",
+              "Making a small cake look huge in an advert",
+              "Cropping clutter away",
+              "Changing a product's colour to sell it"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Before and after",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Original",
+              "points": [
+                "Too dark"
+              ]
+            },
+            "right": {
+              "title": "Edited",
+              "points": [
+                "Brighter, still true"
+              ]
+            },
+            "label": "improved"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which edit is honest?",
+            "options": [
+              "Brightening a dark photo",
+              "Adding a fake extra item to sell it",
+              "Hiding a scratch on a product for sale"
+            ],
+            "answer": 0,
+            "why": "It improves without tricking."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Brighten the teacher's dark photo of a plant by a small amount.",
+          "a": "Plant clearer, colours still natural.",
+          "mins": 4,
+          "model": "I do: Adjustments, Brightness +20, compare with the original."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Edit two of your photos with brightness, contrast and one filter; upload before and after with one sentence on whether it is honest.",
+          "a": "Two before/after pairs with honest notes.",
+          "mins": 12,
+          "model": "The teacher does one live."
+        },
+        {
+          "q": "Extend: find an advert at home that might be edited; discuss it with a grown-up.",
+          "a": "Discussed.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Editing that tricks people is ...",
+          "a": "dishonest",
+          "mins": 1,
+          "options": [
+            "dishonest",
+            "always fine"
+          ]
+        },
+        {
+          "q": "Back to our ponder: An advert photo makes a burger look huge and perfect. Is that honest?",
+          "a": "Not fully: heavy editing can mislead. Honest editing improves without tricking.",
+          "mins": 2
+        }
+      ],
+      "homework": "Talk with a grown-up about why honesty matters in adverts.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 4: Photo Editing with When in Doubt, Talk it Out; Audio Editing), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only); spoken recordings only, no music",
+        "Photopea (free, browser) or the school's photo editor (TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sun brightness icon",
+          "alt": "Brightness",
+          "for": "teach:1"
+        },
+        {
+          "find": "Burger advert",
+          "alt": "A food advert",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Photo editing and spoken audio editing",
+      "n": 13,
+      "title": "Recording speech: trim and delete mistakes",
+      "duration": 45,
+      "bigQuestion": "When you record yourself, why does your voice sound different?",
+      "objectives": [
+        "To understand how to record spoken audio and edit out mistakes and silences"
+      ],
+      "successCriteria": [
+        "All: record a short spoken sentence",
+        "Most: trim silence at the start and end",
+        "Some: delete a mistake from the middle and keep the speech natural"
+      ],
+      "crossCurricular": "Science: sound travels as vibrations (Year 4 sound unit)",
+      "smsc": "Social: speaking clearly for listeners",
+      "keywords": [
+        {
+          "term": "record",
+          "def": "capture sound so it can be played back"
+        },
+        {
+          "term": "waveform",
+          "def": "a picture of sound"
+        },
+        {
+          "term": "trim",
+          "def": "cut away the start or end"
+        },
+        {
+          "term": "clip",
+          "def": "a piece of recorded sound"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you record yourself, why does your voice sound different?",
+        "a": "We usually hear our voice through our bones too; a recording is how others hear us."
+      },
+      "starter": [
+        {
+          "q": "A filter ...",
+          "a": "changes the look of a photo",
+          "mins": 1,
+          "options": [
+            "changes the look of a photo",
+            "records sound"
+          ]
+        },
+        {
+          "q": "Give an example of an honest edit.",
+          "a": "Brightening a dark photo.",
+          "mins": 1
+        },
+        {
+          "q": "Contrast is ...",
+          "a": "difference between light and dark",
+          "mins": 1,
+          "options": [
+            "difference between light and dark",
+            "the size"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The waveform",
+          "bullets": [
+            "Tall waves: loud",
+            "Flat line: silence",
+            "Time goes left to right"
+          ],
+          "note": "Show a waveform of the teacher saying 'Assalamu alaykum'."
+        },
+        {
+          "heading": "Record, then edit",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Quiet room",
+            "Microphone close but not touching",
+            "Record",
+            "Play back",
+            "Trim and delete mistakes"
+          ]
+        },
+        {
+          "heading": "Trim and delete",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Problem",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Silence at the start",
+                "Select it, delete"
+              ],
+              [
+                "A cough in the middle",
+                "Select just that part, delete"
+              ],
+              [
+                "Too quiet",
+                "Amplify a little"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A flat line on the waveform means ...",
+            "options": [
+              "silence",
+              "very loud",
+              "music"
+            ],
+            "answer": 0,
+            "why": "No sound."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Look at the teacher's waveform: where is the mistake?",
+          "a": "The bumpy part between two sentences (a cough).",
+          "mins": 4,
+          "model": "I do: I select the silence before the first word and delete it."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Record one spoken science fact about sound (about 15 seconds; no music), trim the start and end and delete one mistake; upload it.",
+          "a": "A clean, trimmed spoken clip.",
+          "mins": 12,
+          "model": "The teacher records and trims live."
+        },
+        {
+          "q": "Extend: record a second take and compare which is clearer.",
+          "a": "Two takes compared.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Trim means ...",
+          "a": "cut away the start or end",
+          "mins": 1,
+          "options": [
+            "cut away the start or end",
+            "make louder"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When you record yourself, why does your voice sound different?",
+          "a": "We usually hear our voice through our bones too; a recording is how others hear us.",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise saying your science fact clearly to a grown-up.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 4: Photo Editing with When in Doubt, Talk it Out; Audio Editing), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only); spoken recordings only, no music",
+        "Audacity (free) or the school's audio tool (TO CONFIRM); spoken recordings only, no music",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Device microphone"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Audio waveform",
+          "alt": "A sound waveform",
+          "for": "teach:1"
+        },
+        {
+          "find": "Microphone",
+          "alt": "A microphone",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Photo editing and spoken audio editing",
+      "n": 14,
+      "title": "Finish and share a spoken science summary safely",
+      "duration": 45,
+      "bigQuestion": "Your friend recorded a funny voice clip in a lesson. Can you post it anywhere you like?",
+      "objectives": [
+        "To understand how to finish, export and share a spoken recording safely and with permission"
+      ],
+      "successCriteria": [
+        "All: export my recording as a file",
+        "Most: share it only through the school portal",
+        "Some: explain why we never share recordings of other people without permission"
+      ],
+      "smsc": "Moral: privacy and permission",
+      "keywords": [
+        {
+          "term": "export",
+          "def": "save the finished recording as a file others can play"
+        },
+        {
+          "term": "permission",
+          "def": "being allowed to do something"
+        },
+        {
+          "term": "share",
+          "def": "let others see or hear your work"
+        },
+        {
+          "term": "safe",
+          "def": "protected from harm"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your friend recorded a funny voice clip in a lesson. Can you post it anywhere you like?",
+        "a": "No: you need their permission, and school work stays on the school portal."
+      },
+      "islamicLink": {
+        "text": "Respecting others' privacy is part of Islamic manners; Allah says: 'and do not spy' (Al-Hujurat 49:12).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A waveform shows ...",
+          "a": "sound",
+          "mins": 1,
+          "options": [
+            "sound",
+            "pixels"
+          ]
+        },
+        {
+          "q": "How do you remove a cough from a recording?",
+          "a": "Select it and delete.",
+          "mins": 1
+        },
+        {
+          "q": "Trim means ...",
+          "a": "cut the start or end",
+          "mins": 1,
+          "options": [
+            "cut the start or end",
+            "rotate"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Finish it",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Listen once more",
+            "Fix any gaps",
+            "Even the volume",
+            "Export as MP3",
+            "Give it a clear name"
+          ]
+        },
+        {
+          "heading": "Sharing safely",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Safe",
+              "Not safe"
+            ],
+            "rows": [
+              [
+                "Upload to the TGA portal",
+                "Posting on public apps"
+              ],
+              [
+                "Share with my teacher and family",
+                "Sharing others' voices without permission"
+              ],
+              [
+                "Use my first name only",
+                "Adding my address or school details"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Review",
+          "bullets": [
+            "Clear speech",
+            "No long silences",
+            "One fact explained well"
+          ],
+          "note": "Success criteria for the finished clip."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Where should school recordings be shared?",
+            "options": [
+              "The TGA portal",
+              "Any public website",
+              "A stranger's chat"
+            ],
+            "answer": 0,
+            "why": "Keep work on the school platform."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Name the exported file well.",
+          "a": "'Year4_Sound_Fact_Firstname.mp3'",
+          "mins": 4,
+          "model": "I do: 'Year4_Rivers_Ahmed.mp3': clear and safe (first name only)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Finish your science summary (about 30 seconds, spoken only), export it and upload it to the portal; listen to two classmates' clips and give kind feedback.",
+          "a": "Exported clip uploaded; two feedback comments.",
+          "mins": 12,
+          "model": "The teacher exports one live."
+        },
+        {
+          "q": "Extend: add a short spoken introduction with your first name only.",
+          "a": "Intro added.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Before sharing someone else's voice you need ...",
+          "a": "their permission",
+          "mins": 1,
+          "options": [
+            "their permission",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your friend recorded a funny voice clip in a lesson. Can you post it anywhere you like?",
+          "a": "No: you need their permission, and school work stays on the school portal.",
+          "mins": 2
+        }
+      ],
+      "homework": "Play your finished clip to your family.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 4: Photo Editing with When in Doubt, Talk it Out; Audio Editing), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only); spoken recordings only, no music",
+        "Audacity (free) or the school's audio tool (TO CONFIRM); spoken recordings only, no music",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Export file icon",
+          "alt": "Export",
+          "for": "teach:1"
+        },
+        {
+          "find": "Lock and key",
+          "alt": "Privacy",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
