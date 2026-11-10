@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -85,7 +86,7 @@ export default function LearnInvitePage() {
     setPasswordSet(true);
   }
 
-  if (session === "loading" || verifying) return <p className="text-ink/65">Loading…</p>;
+  if (session === "loading" || verifying) return <Loading label="Loading…" bare />;
   if (!session) {
     return (
       <section className="app-pad">

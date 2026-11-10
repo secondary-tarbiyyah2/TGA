@@ -9,7 +9,7 @@ import { CHIP_STYLES, GOLD_BUTTON, INPUT_CLASS, friendlyError, initials, invite,
 import { Tabs } from "@/components/learn/Tabs";
 import { btn as btnClass, ui } from "@/components/learn/ui";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 type Tab = "staff" | "families";
 type Chip = { id: string; label: string; roles: LearnRole[] };
 
@@ -315,7 +315,7 @@ export function PeopleList({
       </div>
 
       {loading ? (
-        <p className="p-6 text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : error ? (
         <p role="alert" className="m-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>
       ) : people.length === 0 ? (

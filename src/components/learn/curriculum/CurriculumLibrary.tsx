@@ -36,7 +36,7 @@ import {
 } from "@/lib/learn/curriculum";
 import { StatusChip, ui } from "@/components/learn/ui";
 import { useLessonPins } from "@/lib/learn/pins";
-import { ActionsMenu, WorkflowBadge, WorkspaceHeader, type MenuAction, type WorkflowStatus } from "@/components/learn/kit";
+import { ActionsMenu, WorkflowBadge, WorkspaceHeader, type MenuAction, type WorkflowStatus, Loading } from "@/components/learn/kit";
 import { allHubs, boardLabel, hubNodeLessons, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, syllabusFor } from "@/lib/learn/syllabusIndex";
 import { Select } from "@/components/learn/Select";
 
@@ -1449,7 +1449,7 @@ export function HistoryDialog({ lesson, onClose, onChanged }: { lesson: Curricul
       <div className="p-4">
         {error && <p className="mb-2 text-sm text-red-700">{error}</p>}
         {!versions ? (
-          <p className="text-sm text-ink/65">Loading…</p>
+          <Loading label="Loading…" bare />
         ) : (
           <ul className="space-y-2">
             {versions.map((v) => (

@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { DashboardHero } from "@/components/learn/DashboardHero";
 import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { useEffect, useMemo, useState } from "react";
@@ -147,7 +148,7 @@ function StudentContent() {
             <ReportConcernLink />
           </div>
           <PrintScope title="My timetable">
-            {slots === null ? <p className="text-sm text-ink/65">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} yearGroups={yearGroupName ? [yearGroupName] : undefined} />}
+            {slots === null ? <Loading label="Loading…" bare /> : <TimetableGrid slots={slots} simplified={simplified} yearGroups={yearGroupName ? [yearGroupName] : undefined} />}
           </PrintScope>
           <IcsFeedLink />
         </div>

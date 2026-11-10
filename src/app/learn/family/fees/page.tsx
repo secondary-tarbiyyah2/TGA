@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
@@ -77,7 +78,7 @@ function FamilyFeesContent() {
     <>
       <PageHeader crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Fees" }]} title="Fees" subtitle="What has been charged, what you have paid, and what is still due." />
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load your fees. Please try again later.</p>}
-      {rows === null && <p className="text-sm text-ink/65">Loading…</p>}
+      {rows === null && <Loading label="Loading…" bare />}
       {rows && rows.length === 0 && !error && (
         <EmptyState
           title="Nothing to pay"

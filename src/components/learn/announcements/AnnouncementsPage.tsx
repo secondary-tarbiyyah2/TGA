@@ -7,7 +7,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { ComposeModal } from "./ComposeModal";
 import { ANNOUNCEMENT_COLUMNS, formatDate, isExpired, isNew, type AnnouncementRow } from "./types";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 export type AnnouncementsMode = "admin" | "teach" | "family" | "student";
 
 const STAFF_VIEWER: ClassViewer = { kind: "staff" };
@@ -170,7 +170,7 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
 
       {items === null ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : visible.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-gold-light bg-white px-6 py-12 text-center">
           <p className="font-medium text-ink">{query ? "No notices match your search." : canManage && view !== "all" && counts.all > 0 ? "Nothing in this view." : "No announcements yet."}</p>

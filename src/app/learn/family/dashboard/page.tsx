@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { UpNextCard } from "@/components/learn/UpNextCard";
 import { Icon } from "@/components/learn/Icon";
 import { DashboardHero } from "@/components/learn/DashboardHero";
@@ -60,7 +61,7 @@ function ChildTimetable({ classIds, yearGroup }: { classIds: string[] | null; ye
     ).then(({ data }) => setSlots((data as unknown as TimetableSlot[]) || []));
   }, [supabase, classIds]);
 
-  if (slots === null) return <p className="text-sm text-ink/65">Loading timetable…</p>;
+  if (slots === null) return <Loading label="Loading timetable…" bare />;
   return <TimetableGrid slots={slots} yearGroups={yearGroup ? [yearGroup] : undefined} />;
 }
 

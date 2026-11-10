@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useMemo, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { useLearnSession } from "@/lib/learn/session";
@@ -175,7 +176,7 @@ export function TeachPupils() {
         />
 
         {pupils === null ? (
-          <p className="text-sm text-ink/65">Loading…</p>
+          <Loading label="Loading…" bare />
         ) : rows.length === 0 ? (
           <p className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/65">No pupils to show.</p>
         ) : (

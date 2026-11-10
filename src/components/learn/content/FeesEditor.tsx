@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
@@ -103,7 +104,7 @@ export function FeesEditor() {
     };
   }, [supabase]);
 
-  if (!bands || !settings) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (!bands || !settings) return <Loading label="Loading…" bare />;
   const dirty = savedJson !== "" && snap(bands, settings, discountDrafts, removedIds) !== savedJson;
 
   const terms = Number(settings.fee_terms);

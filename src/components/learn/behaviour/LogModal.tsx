@@ -1,5 +1,6 @@
 "use client";
 
+import { askNotice } from "@/components/learn/kit";
 import { useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import {
@@ -122,7 +123,7 @@ export function LogModal({
       if (dErr) {
         setBusy(false);
         // onSaved usually closes this dialog, so say it before it goes.
-        window.alert("The record was saved, but the follow-up session could not be created, so it is not on the register yet.");
+        await askNotice("Saved, but the follow-up session wasn't created", "The record is saved. The follow-up session could not be created, so it is not on the register yet. Please add it again from Behaviour.");
         onSaved();
         return;
       }

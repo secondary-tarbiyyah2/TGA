@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -23,7 +24,7 @@ export function LatestGradesWidget({ childId, limit = 5 }: { childId: string; li
       .then(({ data }) => setRows((data as Row[]) || []));
   }, [supabase, childId, limit]);
 
-  if (rows === null) return <p className="text-sm text-ink/65">Loading grades…</p>;
+  if (rows === null) return <Loading label="Loading grades…" bare />;
   if (rows.length === 0) return <p className="text-sm text-ink/65">No grades recorded yet.</p>;
 
   return (

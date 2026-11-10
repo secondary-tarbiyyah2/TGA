@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLearnSession } from "@/lib/learn/session";
@@ -178,7 +179,7 @@ export default function ReportConcernPage() {
   return (
     <section className="app-pad">
       <div className="mx-auto max-w-2xl">
-        {session === "loading" && <p className="text-ink/65">Loading…</p>}
+        {session === "loading" && <Loading label="Loading…" bare />}
         {session === null && (
           <p className="text-ink/65">
             Please <Link href="/login" className="text-gold-700 underline">sign in</Link> to report a concern.

@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -384,7 +385,7 @@ function ReportsContent() {
         </div>
 
         {error && <p role="alert" className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load attendance just now. Please refresh the page or try a shorter date range.</p>}
-        {rows === null && !error && !badRange && <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/65">Loading attendance…</p>}
+        {rows === null && !error && !badRange && <Loading label="Loading attendance…" />}
         {truncated && (
           <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
             Showing the first {MAX_ROWS.toLocaleString()} records for this date range. Narrow the dates to see everything.

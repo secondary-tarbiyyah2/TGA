@@ -5,7 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 export type BaselineRow = {
   id: string;
   child_id: string;
@@ -160,7 +160,7 @@ export function BaselineAssessments({ childId, canEdit }: { childId: string; can
       </div>
 
       {rows === null ? (
-        <p className="mt-3 text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare className="mt-3" />
       ) : rows.length === 0 ? (
         <p className="mt-3 text-sm text-ink/65">No results yet. Issue a TGA entry assessment from Entry assessments; results appear here automatically when it is marked.</p>
       ) : (

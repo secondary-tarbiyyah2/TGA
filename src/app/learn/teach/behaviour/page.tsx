@@ -27,7 +27,7 @@ import {
 } from "@/components/learn/behaviour/data";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 type Modal = { kind: BehaviourKind; childId?: string };
 
 function TeachBehaviourContent() {
@@ -98,7 +98,7 @@ function TeachBehaviourContent() {
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
 
       {classes === null || students === null ? (
-        <p className="text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : classes.length === 0 ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/30 px-4 py-8 text-center text-sm text-ink/65">You are not assigned to any classes yet, so there is no one to log behaviour for.</p>
       ) : (

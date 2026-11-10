@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -62,7 +63,7 @@ export function RetentionRegistry() {
 
       <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink/65">Recent retention job runs</p>
       <ul className="mt-2 space-y-1">
-        {runs === null && <p className="text-sm text-ink/65">Loading…</p>}
+        {runs === null && <Loading label="Loading…" bare />}
         {(runs || []).map((r) => (
           <li key={r.id} className="text-sm text-ink/70">
             {new Date(r.run_at).toLocaleString("en-GB")} · {r.data_type}: {r.action}d {r.rows_affected} row(s)

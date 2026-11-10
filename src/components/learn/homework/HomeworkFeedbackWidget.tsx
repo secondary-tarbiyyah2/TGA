@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -47,7 +48,7 @@ export function HomeworkFeedbackWidget({ childId, href }: { childId: string; hre
     };
   }, [supabase, childId]);
 
-  if (attention === null || feedback === null) return <p className="text-sm text-ink/65">Loading homework feedback…</p>;
+  if (attention === null || feedback === null) return <Loading label="Loading homework feedback…" bare />;
 
   return (
     <div>
