@@ -29,7 +29,7 @@ function FamilyClassesContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Classes" }]}
+        crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Classes" }]}
         title="Classes"
         subtitle="Each of your children's classes: lessons, homework, grades and announcements."
       />

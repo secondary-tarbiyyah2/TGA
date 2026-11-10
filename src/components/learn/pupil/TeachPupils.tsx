@@ -142,7 +142,7 @@ export function TeachPupils() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Pupils" }]}
+        crumbs={[{ label: "Today", href: "/teach/dashboard" }, { label: "Pupils" }]}
         title="Pupils"
         subtitle="Everyone you teach: who is away today and why, attendance, and the medical and additional-needs information to read."
       />

@@ -9,7 +9,7 @@ export default function AdminLessonReviewPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <PageHeader
-          crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Curriculum", href: "/admin/curriculum" }, { label: "Lesson review" }]}
+          crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Curriculum", href: "/admin/curriculum" }, { label: "Lesson review" }]}
           title="Lesson review"
           subtitle="Lessons submitted for review, sent back for changes, or approved and waiting to be published."
         />

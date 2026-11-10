@@ -30,7 +30,7 @@ export function ActionCentreWidget({ role }: { role: Role }) {
           Needs you <span className="font-normal text-ink/60">· {urgent.length}</span>
         </h2>
         <Link href={`${base}/actions`} className={`${ui.btnSecondary} ${ui.sm}`}>
-          Open Action centre
+          See everything waiting
         </Link>
       </div>
       {cats.length > 1 && (
@@ -58,9 +58,9 @@ export function ActionCentreWidget({ role }: { role: Role }) {
       </ul>
       {urgent.length > 3 && (
         <p className="mt-2 text-xs text-ink/60">
-          and {urgent.length - 3} more in the{" "}
+          and {urgent.length - 3} more under{" "}
           <Link href={`${base}/actions`} className="font-medium text-teal-700 hover:underline">
-            Action centre
+            Waiting for you
           </Link>
           .
         </p>

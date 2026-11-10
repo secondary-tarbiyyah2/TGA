@@ -200,7 +200,7 @@ function ContentAdmin() {
   return (
     <div className="space-y-5">
       <PageHeader
-        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Website content" }]}
+        crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Website content" }]}
         title="Website content"
         subtitle="Everything published on the public website. Most changes go live a few minutes after you save."
       />

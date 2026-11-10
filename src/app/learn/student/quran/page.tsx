@@ -11,7 +11,7 @@ function Content() {
   const childId = useStudentChildId();
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "Qur'an" }]} title="Qur'an and Qaidah" subtitle="Your marks out of 10, the surahs you have covered, what to revise, homework and your one-to-one sessions." />
+      <PageHeader crumbs={[{ label: "Today", href: "/student/dashboard" }, { label: "Qur'an" }]} title="Qur'an and Qaidah" subtitle="Your marks out of 10, the surahs you have covered, what to revise, homework and your one-to-one sessions." />
       {childId === undefined ? <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" /> : childId === null ? <EmptyState title="Your account isn't linked to a pupil record yet." /> : <QuranPupilView childId={childId} />}
     </>
   );

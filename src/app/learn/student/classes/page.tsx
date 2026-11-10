@@ -12,7 +12,7 @@ function StudentClassesContent() {
   const classes = useViewerClasses(viewer);
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "My classes" }]} title="My classes" subtitle="Tap a class to see its lessons, homework and notices." />
+      <PageHeader crumbs={[{ label: "Today", href: "/student/dashboard" }, { label: "My classes" }]} title="My classes" subtitle="Tap a class to see its lessons, homework and notices." />
       {childId === null ? (
         <p className="text-sm text-ink/65">Your account isn&apos;t linked to a student record yet.</p>
       ) : viewer ? (

@@ -49,7 +49,7 @@ function StudentBehaviourContent() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "Merits" }]} title="My merits and badges" subtitle="Well done for the good things you do. Every merit counts, and earns points for your house." />
+      <PageHeader crumbs={[{ label: "Today", href: "/student/dashboard" }, { label: "Merits" }]} title="My merits and badges" subtitle="Well done for the good things you do. Every merit counts, and earns points for your house." />
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
       {records === null ? (
         <p className="text-ink/65">Loading…</p>

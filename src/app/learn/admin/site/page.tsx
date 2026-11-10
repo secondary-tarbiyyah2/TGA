@@ -54,7 +54,7 @@ function SiteAdminContent() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Site administration" }]} title="Site administration" subtitle="Every admin page in one place. Search, or pick a category." />
+      <PageHeader crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Site administration" }]} title="Site administration" subtitle="Every admin page in one place. Search, or pick a category." />
 
       <input
         type="search"
