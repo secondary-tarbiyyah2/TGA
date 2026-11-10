@@ -23,7 +23,7 @@ const RELATED_POLICIES = [
   { slug: "02-online-safety-and-acceptable-use", label: "Online Safety and Acceptable Use" },
   { slug: "03-live-lesson-protocols", label: "Live Lesson Protocols" },
   { slug: "06-anti-bullying-and-cyberbullying", label: "Anti-Bullying and Cyberbullying" },
-  { slug: "05-no-platform-for-extremism-prevent", label: "No Platform for Extremism (Prevent)" },
+  { slug: "05-safeguarding-extremism-and-radicalisation", label: "Extremism and radicalisation" },
 ];
 
 export default async function SafeguardingPage() {
