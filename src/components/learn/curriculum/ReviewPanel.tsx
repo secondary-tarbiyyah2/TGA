@@ -71,7 +71,7 @@ export function ReviewPanel({
   const stale = row && row.approved_version != null && currentVersion != null && currentVersion > row.approved_version && (status === "approved" || status === "published");
 
   return (
-    <section aria-label="Review and approval" className="space-y-4">
+    <section data-guide="lesson-review" aria-label="Review and approval" className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <WorkflowBadge status={status} className="!text-sm" />
         {row?.checked_at && <span className="text-xs text-ink/60">Updated {when(row.checked_at)}</span>}

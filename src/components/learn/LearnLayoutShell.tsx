@@ -21,6 +21,8 @@ import { HubTabs } from "@/components/learn/PageHeader";
 import { ViewSettingsMenu } from "@/components/ViewSettings";
 import { ConfirmProvider } from "@/components/learn/kit";
 import { TourHost } from "@/components/learn/tour/TourHost";
+import { GuideButton } from "@/components/learn/guide/GuideButton";
+import { GuideHost } from "@/components/learn/guide/GuideHost";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -140,6 +142,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
               <CommandPalette area={area} roles={roles.map((r) => r.role)} />
             </div>
             <div className="ml-auto flex items-center gap-0.5 sm:gap-1">
+              <GuideButton />
               <ClockChip userId={activeSession.user.id} roles={roles} />
               <ViewSettingsMenu variant="portal" />
               <FeedbackButton />
@@ -174,6 +177,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
       </div>
       <MobileTabBar area={area} roles={roles.map((r) => r.role)} />
       <TourHost area={area} roles={roleNames} userId={activeSession.user.id} />
+      <GuideHost area={area} roles={roleNames} userId={activeSession.user.id} />
     </div>
     </ConfirmProvider>
   );

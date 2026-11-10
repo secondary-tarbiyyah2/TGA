@@ -67,7 +67,7 @@ function ChangePassword() {
   };
 
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+    <div data-guide="account-password" className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Password</h2>
       <form onSubmit={submit} noValidate className="mt-3 flex flex-wrap items-end gap-2">
         <PasswordInput label="New password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="new-password" />

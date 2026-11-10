@@ -124,7 +124,7 @@ export function ReleasedReports({ audience = "family" }: { audience?: "family" |
       ) : (
         <>
           {children.length > 1 && <Tabs variant="switch" label="Child" value={activeChild} onChange={setChild} items={children.map((c) => ({ key: c.id, label: c.name.split(/\s+/)[0] }))} />}
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul data-guide="reports-list" className="grid gap-3 sm:grid-cols-2">
             {list.map((r) => {
               const n = asNarrative(r.narrative);
               const o = n ? overallOf(Object.values(n.classes)) : null;

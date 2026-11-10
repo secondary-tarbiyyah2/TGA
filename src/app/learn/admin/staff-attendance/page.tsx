@@ -258,7 +258,7 @@ function StaffAttendanceContent() {
     <div className="space-y-6">
       {error && <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error} Please refresh the page and try again.</p>}
 
-      <section className={card}>
+      <section data-guide="staff-hours" className={card}>
         <div className="border-b border-gold-light px-5 py-4">
           <h2 className="text-base font-semibold text-ink">On shift now ({open.length})</h2>
         </div>

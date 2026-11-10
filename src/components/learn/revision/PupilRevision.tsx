@@ -102,7 +102,7 @@ export function PupilRevision() {
         <EmptyState title="No revision units yet" icon="bookOpenCheck" tile="tile-teal">Your teachers add a summary and a quiz for each unit as the year goes on. Check back after your first topics.</EmptyState>
       )}
       {bySubject.size > 1 && (
-        <div role="group" aria-label="Choose a subject" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
+        <div data-guide="revision-subjects" role="group" aria-label="Choose a subject" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
           {["", ...bySubject.keys()].map((s) => (
             <button key={s || "all"} type="button" aria-pressed={subject === s} onClick={() => setSubject(s)} className={`${subject === s ? ui.chipOn : ui.chip} min-h-10 shrink-0`}>
               {s || "All subjects"}
@@ -198,6 +198,7 @@ function UnitView({ id, onBack }: { id: string; onBack: () => void }) {
               if (k !== "practice") setPracticeTopic(null);
             }}
             label="Revision steps"
+            guide="revision-steps"
           />
           {tab === "summary" && (unit.kind === "summary" ? <SummaryView unit={unit} onQuiz={() => setTab("quiz")} /> : <LessonSlidesView unit={unit} onQuiz={() => setTab("quiz")} />)}
           {tab === "quiz" && (

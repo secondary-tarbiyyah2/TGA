@@ -269,7 +269,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
   return (
     <div className="space-y-5">
       {topExtra}
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="Safeguarding summary">
+      <div data-guide="safeguarding-summary" className="grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="Safeguarding summary">
         {tile("Open alerts", loading ? "…" : activeCount, activeCount === 0 ? "ok" : openCount > 0 ? "bad" : "warn", () => { setTab("alerts"); setFilter("active"); setKindFilter("all"); }, loading ? undefined : `${openCount} not yet acknowledged`)}
         {tile("Flagged messages", loading ? "…" : openFlagged, openFlagged === 0 ? "ok" : "bad", () => { setTab("alerts"); setFilter("active"); setKindFilter("flagged_message"); })}
         {tile("Unsigned critical policies", loading ? "…" : criticalUnsigned, criticalUnsigned === 0 ? "ok" : "bad", () => setTab("signatures"), "people yet to sign child protection / safeguarding")}
@@ -285,6 +285,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
         value={tab}
         onChange={setTab}
         label="Safeguarding sections"
+        guide="safeguarding-sections"
       />
 
       {message && <p role="status" className="rounded-lg bg-cream px-4 py-2 text-sm text-ink/80">{message}</p>}

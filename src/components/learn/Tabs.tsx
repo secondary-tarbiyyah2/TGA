@@ -35,6 +35,7 @@ export function Tabs<K extends string>({
   variant = "line",
   fill = false,
   className = "",
+  guide,
 }: {
   items: TabItem<K>[];
   value: K;
@@ -47,6 +48,8 @@ export function Tabs<K extends string>({
   /** Switch only: stretch tabs to share the full width. */
   fill?: boolean;
   className?: string;
+  /** Portal guide: a data-guide name so "Show me" can point at these tabs. */
+  guide?: string;
 }) {
   const refs = useRef<Array<HTMLButtonElement | null>>([]);
   const listRef = useRef<HTMLDivElement | null>(null);
@@ -86,7 +89,7 @@ export function Tabs<K extends string>({
       : `portal-tabs ${fill ? "flex" : "inline-flex max-w-full"} gap-1 overflow-x-auto rounded-xl border border-gold-light bg-cream p-1`;
 
   return (
-    <div ref={listRef} role="tablist" aria-label={label} className={`${listCls} ${more ? "portal-tabs--more" : ""} ${className}`}>
+    <div ref={listRef} role="tablist" aria-label={label} data-guide={guide} className={`${listCls} ${more ? "portal-tabs--more" : ""} ${className}`}>
       {items.map((t, i) => {
         const selected = t.key === value;
         const tabCls =

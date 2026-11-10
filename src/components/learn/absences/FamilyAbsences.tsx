@@ -361,7 +361,7 @@ export function FamilyAbsences() {
         })()}
 
       {view === "report" && (
-        <form ref={formRef} onSubmit={submit} className="mx-auto max-w-xl space-y-5 rounded-2xl border border-gold-light bg-white p-5 sm:p-6">
+        <form ref={formRef} onSubmit={submit} data-guide="absence-form" className="mx-auto max-w-xl space-y-5 rounded-2xl border border-gold-light bg-white p-5 sm:p-6">
           {children !== null && children.length === 0 ? (
             <p className="text-sm text-ink/65">There are no children on your account yet. Once your child is enrolled you can send notes here.</p>
           ) : sent ? (

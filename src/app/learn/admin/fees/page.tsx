@@ -231,7 +231,7 @@ function FeesContent() {
           )
         }
         action={
-          <Button variant="primary" icon="plus" onClick={() => setCreating(true)}>
+          <Button variant="primary" icon="plus" onClick={() => setCreating(true)} data-guide="fees-new">
             New charge
           </Button>
         }
@@ -245,7 +245,7 @@ function FeesContent() {
       )}
       {loadError && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load fees just now. Please refresh the page and try again.</p>}
 
-      <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <div data-guide="fees-figures" className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatTile label="Billed" value={formatGBP(stats.billed)} />
         <StatTile label="Collected" value={formatGBP(stats.collected)} status={stats.collected > 0 && stats.outstanding === 0 ? "ok" : undefined} />
         <StatTile label="Outstanding" value={formatGBP(stats.outstanding)} />

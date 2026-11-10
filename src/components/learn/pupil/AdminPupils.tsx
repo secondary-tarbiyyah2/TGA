@@ -356,7 +356,7 @@ export function AdminPupils() {
               : undefined
           }
           primary={
-            <Button variant="primary" icon="userRoundPlus" onClick={() => setAdding(true)}>
+            <Button variant="primary" icon="userRoundPlus" onClick={() => setAdding(true)} data-guide="pupils-add">
               Add pupil
             </Button>
           }
@@ -368,7 +368,7 @@ export function AdminPupils() {
         </div>
       )}
       <div className="space-y-3">
-        <div className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1" role="group" aria-label="Show">
+        <div data-guide="pupils-filter" className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1" role="group" aria-label="Show">
           {filterChips
             .filter((c) => c.key === "all" || c.key === show || c.count > 0)
             .map((c) => (
@@ -401,6 +401,7 @@ export function AdminPupils() {
           </section>
         )}
 
+        <div data-guide="pupils-list">
         <DataTable
           caption="Pupils"
           rows={pupils === null ? null : rows}
@@ -428,6 +429,7 @@ export function AdminPupils() {
           empty="No pupils yet. Use Add pupil to add the first one."
           emptyFiltered="No pupils match."
         />
+        </div>
       </div>
 
       {adding && <AddPupil onClose={() => setAdding(false)} onChanged={refresh} />}

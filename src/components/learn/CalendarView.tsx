@@ -228,7 +228,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
       {canManageTerms && (
         <div className="flex flex-wrap items-center gap-3">
           <h2 className="mr-auto font-serif text-h3 font-semibold text-ink">Academic calendar</h2>
-          <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Calendar sections" />
+          <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Calendar sections" guide="calendar-sections" />
         </div>
       )}
 
@@ -252,7 +252,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                     {mode === "month" ? gregSpan(grid.first, grid.last) : mode === "week" ? gregSpan(weekDays[0], weekDays[6]) : gregLong(parseKey(selected))}
                   </p>
                 </div>
-                <div role="group" aria-label="Calendar view" className="flex gap-1 rounded-xl border border-gold-light bg-cream/60 p-1">
+                <div data-guide="calendar-views" role="group" aria-label="Calendar view" className="flex gap-1 rounded-xl border border-gold-light bg-cream/60 p-1">
                   {MODES.map((m) => (
                     <button
                       key={m.id}

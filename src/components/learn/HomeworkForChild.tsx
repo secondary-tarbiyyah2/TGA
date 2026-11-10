@@ -144,7 +144,7 @@ function HomeworkItem({
             closed ? (
               <p className="rounded-lg bg-amber-50 p-3 text-amber-900">This homework is closed. It no longer accepts work after the due time.</p>
             ) : (
-              <div>
+              <div data-guide="homework-hand-in" >
                 <p className="mb-2 text-xs text-ink/65">You can hand in: {describeAllowed(hw as Homework, { types: SUBMISSION_TYPE_LABEL, files: FILE_CATEGORY_LABEL }).toLowerCase()}</p>
                 <SubmitWork
                   homework={{ id: row.homework_id, allowed_submission_types: hw.allowed_submission_types, allowed_file_types: hw.allowed_file_types }}
@@ -261,7 +261,7 @@ export function HomeworkForChild({
     />
   );
 
-  if (!groupByStatus) return <ul className="space-y-2">{rows.map(item)}</ul>;
+  if (!groupByStatus) return <ul data-guide="homework-list" className="space-y-2">{rows.map(item)}</ul>;
 
   // Outstanding work first: missing (oldest first), then what is due soonest.
   // Anything sent back for a resubmission also counts as still to do.
@@ -273,7 +273,7 @@ export function HomeworkForChild({
   const openInDone = !!openId && done.some((r) => r.homework_id === openId);
   return (
     <div className="space-y-5">
-      <section aria-labelledby="hw-todo">
+      <section data-guide="homework-list" aria-labelledby="hw-todo">
         <h2 id="hw-todo" className="mb-2 text-sm font-semibold text-ink">
           Still to hand in <span className="font-normal text-ink/60">· {todo.length}</span>
         </h2>

@@ -219,7 +219,7 @@ export function CurriculumPlanner() {
   return (
     <div className="space-y-4">
       <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4">
-        <div data-tour="planner-years">
+        <div data-tour="planner-years" data-guide="planner-years">
           <Tabs variant="switch" items={YEARS.map((y) => ({ key: y, label: yearLabel(y).replace("Year ", "Y") }))} value={year} onChange={setYear} label="Year group" />
         </div>
         <p className="text-sm text-ink/75">
@@ -261,7 +261,7 @@ export function CurriculumPlanner() {
       )}
 
       {units && subjects.length > 0 && (
-        <div data-tour="planner-grid" className="overflow-hidden rounded-2xl border border-gold-light bg-white">
+        <div data-tour="planner-grid" data-guide="planner-grid" className="overflow-hidden rounded-2xl border border-gold-light bg-white">
           {/* Column headings: only on wide screens, where the grid shows. */}
           <div className="hidden border-b border-gold-light bg-cream lg:grid" style={{ gridTemplateColumns: `10rem repeat(${allColumns.length}, minmax(0, 1fr))` }}>
             <span className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Subject</span>

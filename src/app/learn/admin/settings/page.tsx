@@ -33,10 +33,10 @@ const SCHOOL_COLUMNS = "headteacher_name, admissions_email, contact_phone, conta
 
 /** One settings group. Each opens in place (only School details starts
  * open), so the page is a short list of headings rather than one long form. */
-function Section({ title, hint, children, onSave, busy, message, defaultOpen = false }: { title: string; hint: string; children: React.ReactNode; onSave?: () => void; busy?: boolean; message?: string | null; defaultOpen?: boolean }) {
+function Section({ title, hint, children, onSave, busy, message, defaultOpen = false, guide }: { title: string; hint: string; children: React.ReactNode; onSave?: () => void; busy?: boolean; message?: string | null; defaultOpen?: boolean; guide?: string }) {
   const bad = !!message && message !== "Saved." && !message.startsWith("Saved");
   return (
-    <details open={defaultOpen} className="group rounded-2xl border border-gold-light bg-white">
+    <details open={defaultOpen} data-guide={guide} className="group rounded-2xl border border-gold-light bg-white">
       <summary className="flex cursor-pointer list-none items-start justify-between gap-3 px-5 py-4">
         <span>
           <span className="block text-base font-semibold text-ink">{title}</span>
@@ -119,7 +119,7 @@ function SchoolDetails() {
   if (!s) return <LoadingState rows={3} />;
   const set = (k: keyof SchoolSettings) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setS({ ...s, [k]: e.target.value || null });
   return (
-    <Section title="School details" hint="Shown on the website and in emails to families. Also editable under Website content, Site settings." onSave={save} busy={busy} message={msg} defaultOpen>
+    <Section title="School details" hint="Shown on the website and in emails to families. Also editable under Website content, Site settings." onSave={save} busy={busy} message={msg} defaultOpen guide="settings-form">
       <FormSection title="Contact" description="How families reach the school.">
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Headteacher name">

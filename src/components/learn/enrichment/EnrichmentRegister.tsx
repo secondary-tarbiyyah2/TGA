@@ -111,7 +111,7 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
   if (periods === null) return <Loading label="Loading…" bare />;
 
   return (
-    <div className="space-y-4">
+    <div data-guide="enrichment-register" className="space-y-4">
       <div className="flex flex-wrap items-end gap-3">
         <label className="text-xs font-medium text-ink/70">
           Date

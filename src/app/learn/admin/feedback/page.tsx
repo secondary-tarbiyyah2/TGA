@@ -104,6 +104,7 @@ function FeedbackAdmin() {
         value={view}
         onChange={setView}
         label="Feedback by status"
+        guide="feedback-status"
         idBase="feedback"
         className="mb-4"
       />

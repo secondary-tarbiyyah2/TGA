@@ -39,9 +39,9 @@ const MIME: Record<LessonFileKind, string> = {
 const asList = (v: unknown): string[] => (Array.isArray(v) ? v.map((x) => String(x)).filter(Boolean) : typeof v === "string" && v.trim() ? [v] : []);
 
 /** A titled part of the workspace: a heading row and its content, separated by a hairline (no cards inside cards). */
-function Part({ title, action, children, id }: { title: string; action?: React.ReactNode; children: React.ReactNode; id?: string }) {
+function Part({ title, action, children, id, guide }: { title: string; action?: React.ReactNode; children: React.ReactNode; id?: string; guide?: string }) {
   return (
-    <section aria-labelledby={id} className="border-t border-gold-light py-5 first:border-t-0 first:pt-0">
+    <section aria-labelledby={id} data-guide={guide} className="border-t border-gold-light py-5 first:border-t-0 first:pt-0">
       <div className="mb-3 flex items-baseline justify-between gap-3">
         <h2 id={id} className="text-[0.9375rem] font-semibold text-ink">
           {title}
@@ -237,7 +237,7 @@ export function LessonWorkspace({ id, at, area }: { id: string; at?: { subject: 
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div className="min-w-0">
-          <Part title="Lesson materials" id="lw-materials">
+          <Part title="Lesson materials" id="lw-materials" guide="lesson-materials">
             <ul className="divide-y divide-gold-light/70">
               <Material icon="presentation" title="Teaching slides" detail="Presentation · the main teaching resource" onOpen={lesson.pdf_path ? () => open("slides-pdf", `Slides: ${lesson.title}`) : undefined} openLabel="Preview" />
               <Material icon="fileText" title="Lesson plan" detail="Teaching guidance and sequence" onOpen={lesson.plan_pdf_path ? () => open("plan-pdf", `Lesson plan: ${lesson.title}`) : undefined} openLabel="Preview" />
