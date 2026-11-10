@@ -590,190 +590,495 @@
       ]
     },
     {
-      "unit": "Unit 2: Alif-lam and hamzat al-wasl",
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
       "n": 4,
       "title": "Alif-lam: shamsiyyah and qamariyyah",
       "duration": 50,
+      "bigQuestion": "Why do you think Arabic merges the laam into some letters but not others?",
       "objectives": [
-        "Read al- with the lam pronounced or merged",
-        "Sort the 14 sun letters and 14 moon letters",
-        "Apply to Surat Al-'Asr and Al-Fil"
+        "To understand how the letter after al- decides whether the laam is said or silent"
       ],
+      "successCriteria": [
+        "All: sort al- words into sun and moon letters",
+        "Most: recite al- words in Al-Qiyamah correctly",
+        "Some: explain why the sun-letter laam is merged"
+      ],
+      "smsc": "Intellectual: the logic of Arabic sounds",
       "keywords": [
         {
-          "term": "lam shamsiyyah",
-          "def": "lam of al- merges into a sun letter, so it is not pronounced"
+          "term": "shamsiyyah (شمسية)",
+          "def": "sun letter: the laam of al- is silent and the next letter doubles"
         },
         {
-          "term": "lam qamariyyah",
-          "def": "lam of al- is pronounced clearly before a moon letter"
+          "term": "qamariyyah (قمرية)",
+          "def": "moon letter: the laam of al- is said with a sukoon"
         },
         {
-          "term": "shaddah",
-          "def": "doubling mark on the sun letter"
+          "term": "lam at-ta'rif (لام التعريف)",
+          "def": "the laam of 'the' (al-)"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think Arabic merges the laam into some letters but not others?",
+        "a": "The 14 sun letters come from near the laam's place in the mouth, so it merges for ease; the moon letters are far, so the laam stays clear."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "Which letters are throat letters?",
-        "What does a shaddah mean?"
+        {
+          "q": "Recite Al-Qiyamah 75:3 in your head. How does the next ayah begin?",
+          "a": "بَلَىٰ قَٰدِرِينَ",
+          "mins": 1,
+          "options": [
+            "لَا تُحَرِّكْ",
+            "وَقِيلَ مَنْ",
+            "بَلَىٰ قَٰدِرِينَ"
+          ]
+        },
+        {
+          "q": "«لَآ أُقْسِمُ» is ...",
+          "a": "Munfasil",
+          "mins": 1,
+          "options": [
+            "Munfasil",
+            "Muttasil"
+          ]
+        },
+        {
+          "q": "Al-Qiyamah 75:5: «بَلْ ...» Which word comes next?",
+          "a": "يُرِيدُ",
+          "mins": 1,
+          "options": [
+            "أَلْقَىٰ",
+            "ثُمَّ",
+            "يُرِيدُ"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The definite article",
+          "heading": "The definite article ٱلْ",
           "bullets": [
-            "Al- means 'the' in Arabic",
-            "The lam changes before some letters",
-            "Two types: shamsiyyah and qamariyyah"
+            "Al- means 'the'",
+            "The next letter decides",
+            "Sun: laam silent, shaddah on the next letter",
+            "Moon: laam with sukoon, said clearly"
           ],
-          "note": "Write ٱلشَّمْسُ and ٱلْقَمَرُ. Recite both. In the first, no lam is heard; in the second it is clear. The names mean 'sun' and 'moon' and teach the rule. Ask: what do you notice about the letter after the lam?"
+          "note": "Bismillah. Model ٱلشَّمْسُ and ٱلْقَمَرُ (75:9)."
         },
         {
-          "heading": "Sun letters (14)",
-          "bullets": [
-            "ت ث د ذ ر ز س ش ص ض ط ظ ل ن",
-            "Lam merges into the sun letter",
-            "The letter carries a shaddah"
-          ],
-          "note": "Say the sun letters in order. Examples: as-salihat, an-nar, ar-Rahman, as-sabr. Misconception: pupils think the lam is deleted; actually it merges and the letter is doubled. Practise chorally."
+          "heading": "Sun and moon in Al-Qiyamah",
+          "bullets": [],
+          "note": "Pupils decide first.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Type"
+            ],
+            "rows": [
+              [
+                "ٱلشَّمْسُ",
+                "75:9",
+                "Sun (ش)"
+              ],
+              [
+                "وَٱلْقَمَرُ",
+                "75:9",
+                "Moon (ق)"
+              ],
+              [
+                "بِٱلنَّفْسِ",
+                "75:2",
+                "Sun (ن)"
+              ],
+              [
+                "ٱلْإِنسَٰنُ",
+                "75:3",
+                "Moon (hamza)"
+              ],
+              [
+                "ٱلْبَصَرُ",
+                "75:7",
+                "Moon (ب)"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Moon letters (14)",
+          "heading": "Memory phrase",
           "bullets": [
-            "ا ب ج ح خ ع غ ف ق ك م ه و ي",
-            "Lam is pronounced clearly",
-            "Lam has sukoon"
+            "Moon letters: اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ",
+            "All the others are sun letters",
+            "Check by sight: shaddah after the laam means sun"
           ],
-          "note": "Examples: al-'asr, al-haqq, al-fil, al-hutamah, al-af'idah. Ask pupils to find two moon examples in Al-'Asr and Al-Fil. Remember that the lam is sakin and pronounced; no merging."
+          "note": "The mushaf shows it: a sukoon on the laam (moon) or a shaddah on the next letter (sun)."
         },
         {
-          "heading": "Check by sight",
+          "heading": "The laam in the Name Allah",
           "bullets": [
-            "Look for shaddah on the next letter",
-            "Shaddah means shamsiyyah",
-            "Sukoon on lam means qamariyyah"
+            "Heavy after fathah or dammah",
+            "Light after kasrah"
           ],
-          "note": "Show mushaf lines with and without the sign. In printed mushafs the lam of shamsiyyah usually has no sukoon and the next letter has shaddah. Quick-fire: pupils shout 'sun' or 'moon'."
+          "note": "Recap from Year 5: «بِسْمِ ٱللَّهِ» (1:1) light after kasrah; «قُلْ هُوَ ٱللَّهُ» (112:1) heavy after fathah."
         },
         {
-          "heading": "Lam in Allah",
-          "bullets": [
-            "After fatha or damma: heavy lam",
-            "After kasra: light lam",
-            "Example: Allahu vs bismillahi"
-          ],
-          "note": "Link to Year 7 raa and laam. الله after fatha/damma: heavy, e.g. قَالَ اللَّهُ. After kasra: light, e.g. بِسْمِ اللَّهِ. Pupils recite both. Common error: heavy lam after kasra."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«ٱلنَّفْسِ» (75:2): the laam is ...",
+            "options": [
+              "silent (sun letter)",
+              "said (moon letter)",
+              "heavy, with a full mouth"
+            ],
+            "answer": 0,
+            "why": "ن is a sun letter: the laam is silent and the ن doubles."
+          }
         }
       ],
       "practice": [
-        "Sort: الشَّمْسُ، الْقَمَرُ، النَّارُ، الْحَقِّ، الصَّبْرِ، الْفِيلِ",
-        "Why is the lam not heard in الصَّالِحَاتِ?",
-        "Is the lam in اللَّهِ heavy after kasra? Explain."
+        {
+          "q": "Label al- in «ٱلْمَفَرُّ» (75:10) and «ٱلْمُسْتَقَرُّ» (75:12).",
+          "a": "Both moon letters (م): the laam is said: al-mafarr, al-mustaqarr.",
+          "mins": 4,
+          "model": "I do: after the laam is م; the laam has a sukoon in the mushaf: moon letter, so I say al-."
+        },
+        {
+          "q": "Moon letters are in the phrase ...",
+          "a": "اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ",
+          "mins": 1,
+          "options": [
+            "اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ",
+            "يَنْمُو",
+            "قُطْبُ جَدٍّ"
+          ]
+        }
       ],
       "independent": [
-        "Sort 20 words from Al-'Asr, Al-Fil and Al-Humazah into sun and moon",
-        "Recite the same words using the correct lam sound",
-        "Create a memory aid for the 14 sun letters"
+        {
+          "q": "Sort (pupil PDF): label every al- in 75:1 to 15 as sun or moon. Today's rota group recites 75:1 to 10.",
+          "a": "Sun: ٱلنَّفْسِ، ٱللَّوَّامَةِ، ٱلشَّمْسُ; moon: ٱلْقِيَٰمَةِ، ٱلْإِنسَٰنُ، ٱلْبَصَرُ، ٱلْقَمَرُ، ٱلْمَفَرُّ، ٱلْمُسْتَقَرُّ.",
+          "mins": 10,
+          "model": "The teacher labels 75:1: ٱلْقِيَٰمَةِ: moon (ق)."
+        },
+        {
+          "q": "Extend: how many sun and moon letters are there?",
+          "a": "Fourteen each.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why is «ٱللَّوَّامَةِ» a sun letter even though it starts with laam?",
+          "a": "The laam of al- merges into the laam after it: laam is one of the 14 sun letters.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name three sun letters.",
-        "How can you tell shamsiyyah from qamariyyah by sight?"
+        {
+          "q": "«ٱلشَّمْسُ»: the laam is ...",
+          "a": "silent",
+          "mins": 1,
+          "options": [
+            "silent",
+            "said"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why do you think Arabic merges the laam into some letters but not others?",
+          "a": "The 14 sun letters come from near the laam's place in the mouth, so it merges for ease; the moon letters are far, so the laam stays clear.",
+          "mins": 2
+        }
       ],
-      "homework": "Learn the 14 sun letters and 14 moon letters by heart.",
-      "send": "SEND/EAL: sun and moon letters on a colour card. Stretch: find five examples in Surat Al-Baqarah and classify them."
+      "homework": "Find five sun and five moon al- words in Al-Muddaththir; revise 75:1 to 10.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Alif-lam rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sun and crescent moon",
+          "alt": "The sun and the moon",
+          "for": "teach:1"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Alif-lam and hamzat al-wasl",
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
       "n": 5,
       "title": "Hamzat al-wasl: starting well",
       "duration": 50,
+      "bigQuestion": "You stop after 'كَلَّا' in 75:20 and want to restart at 'بَلْ'. Easy. But what if a word starts with ٱ? How do you start?",
       "objectives": [
-        "Recognise hamzat al-wasl and hamzat al-qat'",
-        "Choose the correct vowel when starting on hamzat al-wasl",
-        "Practise starting mid-ayah"
+        "To understand how to start on a word that begins with hamzat al-wasl and why it disappears when joined"
       ],
+      "successCriteria": [
+        "All: tell hamzat al-wasl (ٱ) from hamzat al-qat' (أ)",
+        "Most: choose the right starting vowel for verbs and nouns",
+        "Some: start correctly at three places in Al-Qiyamah after a stop"
+      ],
+      "smsc": "Spiritual: starting well, in recitation and in life",
       "keywords": [
         {
-          "term": "hamzat al-wasl",
-          "def": "a joining hamzah, pronounced only when starting"
+          "term": "hamzat al-wasl (همزة الوصل)",
+          "def": "a joining hamza: said only when we start with it, dropped when joined"
         },
         {
-          "term": "hamzat al-qat'",
-          "def": "a cutting hamzah, always pronounced"
+          "term": "hamzat al-qat' (همزة القطع)",
+          "def": "a cutting hamza: always said"
         },
         {
-          "term": "ibtida'",
-          "def": "starting a recitation or restarting after a stop"
+          "term": "ibtida' (ابتداء)",
+          "def": "starting after a stop"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "You stop after 'كَلَّا' in 75:20 and want to restart at 'بَلْ'. Easy. But what if a word starts with ٱ? How do you start?",
+        "a": "Hamzat al-wasl is said when starting: with fathah in al-, and with kasrah or dammah in verbs depending on the third letter."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "What is a moon letter?",
-        "Give a word with a shaddah."
+        {
+          "q": "Recite Al-Qiyamah 75:21 in your head. How does the next ayah begin?",
+          "a": "وُجُوهٌۭ يَوْمَئِذٍۢ",
+          "mins": 1,
+          "options": [
+            "وُجُوهٌۭ يَوْمَئِذٍۢ",
+            "وَجُمِعَ ٱلشَّمْسُ",
+            "فَلَا صَدَّقَ"
+          ]
+        },
+        {
+          "q": "Saktah means ...",
+          "a": "a short pause with no breath",
+          "mins": 1,
+          "options": [
+            "a short pause with no breath",
+            "a long stop"
+          ]
+        },
+        {
+          "q": "«ٱلشَّمْسُ»: laam is ...",
+          "a": "silent",
+          "mins": 1,
+          "options": [
+            "silent",
+            "said"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Two kinds of hamzah",
-          "bullets": [
-            "Hamzat al-qat' is always pronounced",
-            "Hamzat al-wasl is silent when joined",
-            "It has an alif without a hamzah sign"
-          ],
-          "note": "Compare أَنْعَمْتَ (qat') with اهْدِنَا (wasl). In وَقَالَ اهْدِنَا we drop the wasl. When joining, the hamzah disappears; only when you start do you say it. Ask: why does Arabic have a joining hamzah? For ease of speech."
+          "bullets": [],
+          "note": "Bismillah.",
+          "compare": {
+            "left": {
+              "title": "Hamzat al-qat' (أ إ)",
+              "points": [
+                "Always said",
+                "Written with a hamza",
+                "أَيَحْسَبُ"
+              ]
+            },
+            "right": {
+              "title": "Hamzat al-wasl (ٱ)",
+              "points": [
+                "Said only when starting",
+                "Dropped when joined",
+                "ٱلْإِنسَٰنُ"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Start with fatha",
-          "bullets": [
-            "In ال, the start vowel is fatha",
-            "Examples: Al-hamdu, Al-fil, Allah",
-            "Applies to the definite article"
-          ],
-          "note": "Starting on ٱلْحَمْدُ gives 'Alhamdu'. Do not say 'ilhamdu'. Pupils rehearse starting at Al-Fil ayah 1 and Al-'Asr ayah 3 (illal-ladhina uses a qat' hamzah, a different case)."
+          "heading": "Which vowel to start with",
+          "bullets": [],
+          "note": "Model each.",
+          "table": {
+            "head": [
+              "Word type",
+              "Start with",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Al- (the)",
+                "Fathah: a",
+                "ٱلشَّمْسُ → ash-shams"
+              ],
+              [
+                "Verb, 3rd letter dammah",
+                "Dammah: u",
+                "ٱدْعُوا۟ → ud'u"
+              ],
+              [
+                "Verb, 3rd letter fathah or kasrah",
+                "Kasrah: i",
+                "ٱذْهَبْ → idh-hab"
+              ],
+              [
+                "Special nouns (ٱسْم ٱبْن ٱمْرِئ ...)",
+                "Kasrah: i",
+                "ٱسْمَ → ism"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Start with kasra or damma",
-          "bullets": [
-            "Verbs: look at the third letter",
-            "Third letter has damma: start with damma",
-            "Otherwise start with kasra"
-          ],
-          "note": "Count the alif as first letter. ٱدْعُ: third letter 'ayn has damma, start with damma, ud'u. ٱهْدِنَا: third letter dal has kasra, so ihdina. ٱقْرَأْ: third letter ra has fatha, so start with kasra: iqra'. Practise chorally."
+          "heading": "In Al-Qiyamah",
+          "bullets": [],
+          "note": "Starting points after a stop.",
+          "table": {
+            "head": [
+              "If you start at",
+              "Say"
+            ],
+            "rows": [
+              [
+                "وَٱلْتَفَّتِ",
+                "wal-taffat (joined: no start needed)"
+              ],
+              [
+                "ٱلْءَاخِرَةَ",
+                "al-aakhirah (start: fathah)"
+              ],
+              [
+                "فَٱتَّبِعْ",
+                "if started: ittabi' (kasrah: 3rd letter has kasrah)"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Nouns and special words",
-          "bullets": [
-            "Nouns: start with kasra",
-            "Examples: ibn, ism, ithnan, imra'ah",
-            "Starting on ism: say ism, with kasra"
-          ],
-          "note": "Short list of nouns with hamzat al-wasl: ibn, ibnah, ism, ithnan, imra'ah. Starting on 'ism' we say ism with kasra. These are rare, so stress recognising rather than memorising everything today."
-        },
-        {
-          "heading": "Practise starting",
-          "bullets": [
-            "Start at Al-Fatihah ayah 6",
-            "Start at Al-Humazah ayah 4",
-            "Start at Al-Fil ayah 2"
-          ],
-          "note": "Teacher names an ayah; pupils start there. At Al-Fatihah ayah 6 (ihdinas-sirat) the start is kasra. For Al-Fil ayah 2 start with 'Alam' (qat'). Correct errors with kindness."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Starting at «ٱذْهَبْ» (79:17) we say ...",
+            "options": [
+              "idh-hab",
+              "adh-hab",
+              "udh-hab"
+            ],
+            "answer": 0,
+            "why": "Verb; the third letter ه has a fathah, so we start with kasrah: idh-hab."
+          }
         }
       ],
       "practice": [
-        "Is the first hamzah in اهْدِنَا wasl or qat'? How do you start?",
-        "Starting with ٱدْعُ: which vowel and why?",
-        "How do you start the word ٱبْن?"
+        {
+          "q": "How do you start the word «ٱتَّبِعْ» (as in 75:18) if you begin with it?",
+          "a": "ittabi': the third letter ب has a kasrah, so start with kasrah.",
+          "mins": 4,
+          "model": "I do: it is a verb. Count letters: ٱ (1), تّ (2), بِ (3): kasrah. So start with kasrah: ittabi'."
+        },
+        {
+          "q": "Al- always starts with ...",
+          "a": "fathah",
+          "mins": 1,
+          "options": [
+            "fathah",
+            "kasrah",
+            "dammah"
+          ]
+        }
       ],
       "independent": [
-        "Sort 12 words by hamzat al-wasl or qat'",
-        "Start at five ayat chosen by your partner",
-        "Write the third-letter rule in your own words"
+        {
+          "q": "Starting drill (pupil PDF): write how to start each of eight words with hamzat al-wasl from Al-Qiyamah, Al-Muddaththir and Al-A'la. Today's rota group recites 75:20 to 30.",
+          "a": "Answers on the teacher sheet (al- words with fathah; verbs by the third letter; ism with kasrah).",
+          "mins": 12,
+          "model": "The teacher does the first: ٱلْقِيَٰمَةِ → al-qiyaamah."
+        },
+        {
+          "q": "Extend: why does the alif of «بَلِ ٱلْإِنسَٰنُ» disappear in reading?",
+          "a": "Hamzat al-wasl is dropped when joined; the laam of بَلْ takes a kasrah to join.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: name three special nouns that start with hamzat al-wasl.",
+          "a": "ٱسْم، ٱبْن، ٱمْرِئ (also ٱبْنَة، ٱمْرَأَة، ٱثْنَان، ٱثْنَتَان).",
+          "mins": 3
+        }
       ],
       "exit": [
-        "How do you start the word ٱقْرَأْ?",
-        "Does the hamzah of ٱهْدِنَا get pronounced when joined?"
+        {
+          "q": "Hamzat al-wasl is said ...",
+          "a": "only when starting with it",
+          "mins": 1,
+          "options": [
+            "only when starting with it",
+            "always",
+            "never"
+          ]
+        },
+        {
+          "q": "Back to our ponder: You stop after 'كَلَّا' in 75:20 and want to restart at 'بَلْ'. Easy. But what if a word starts with ٱ? How do you start?",
+          "a": "Hamzat al-wasl is said when starting: with fathah in al-, and with kasrah or dammah in verbs depending on the third letter.",
+          "mins": 2
+        }
       ],
-      "homework": "Find five words in Juz' Amma that begin with hamzat al-wasl and note the starting vowel.",
-      "send": "SEND/EAL: flow chart (verb? third letter damma? yes/no). Stretch: explain why the hamzah is silent when joined."
+      "homework": "Practise starting at five al- words and two verbs with a parent; revise 75:20 to 30.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Hamzat al-wasl rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Starting line track",
+          "alt": "A starting line",
+          "for": "teach:2"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 3: Surat Al-'Asr",
@@ -4707,6 +5012,3067 @@
           "find": "Crescent moon dusk",
           "alt": "The crescent moon at dusk",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 26,
+      "title": "Back after the break: Surat Al-Qiyamah 75:1-10",
+      "duration": 50,
+      "bigQuestion": "Allah swears by 'the reproaching soul' (75:2): the voice inside that blames us after a wrong. Is that voice a gift or a burden?",
+      "objectives": [
+        "To memorise Al-Qiyamah 75:1-10 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 75:1-10 after the teacher, word for word",
+        "Most: recite 75:1-10 from memory with no more than one prompt",
+        "Some: link 75:1-10 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: conscience (the reproaching soul) and repentance",
+      "keywords": [
+        {
+          "term": "al-qiyamah (القيامة)",
+          "def": "the Resurrection"
+        },
+        {
+          "term": "al-lawwamah (اللوامة)",
+          "def": "the self-reproaching soul"
+        },
+        {
+          "term": "banan (بنان)",
+          "def": "fingertips"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah swears by 'the reproaching soul' (75:2): the voice inside that blames us after a wrong. Is that voice a gift or a burden?",
+        "a": "A gift: it pushes us to repent and do better before the Day of Resurrection."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'I swear by the Day of Resurrection' 'And I swear by the reproaching soul [to the certainty of resurrection].' (Al-Qiyamah 75:1 to 2), and 'Yes. [We are] Able [even] to proportion his fingertips.' (75:4).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ ...»?",
+          "a": "Al-Muddaththir",
+          "mins": 1,
+          "options": [
+            "Al-Qiyamah",
+            "Al-Muddaththir",
+            "Al-Muzzammil"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Muddaththir?",
+          "a": "56",
+          "mins": 1,
+          "options": [
+            "56",
+            "40",
+            "37"
+          ]
+        },
+        {
+          "q": "Madd munfasil is ...",
+          "a": "4 or 5 counts",
+          "mins": 1,
+          "options": [
+            "4 or 5 counts",
+            "6 counts"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Qiyamah 75:1-10",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 75:1-10 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "لَآ أُقْسِمُ بِيَوْمِ ٱلْقِيَٰمَةِ (١) وَلَآ أُقْسِمُ بِٱلنَّفْسِ ٱللَّوَّامَةِ (٢) أَيَحْسَبُ ٱلْإِنسَٰنُ أَلَّن نَّجْمَعَ عِظَامَهُۥ (٣) بَلَىٰ قَٰدِرِينَ عَلَىٰٓ أَن نُّسَوِّىَ بَنَانَهُۥ (٤) بَلْ يُرِيدُ ٱلْإِنسَٰنُ لِيَفْجُرَ أَمَامَهُۥ (٥) يَسْـَٔلُ أَيَّانَ يَوْمُ ٱلْقِيَٰمَةِ (٦) فَإِذَا بَرِقَ ٱلْبَصَرُ (٧) وَخَسَفَ ٱلْقَمَرُ (٨) وَجُمِعَ ٱلشَّمْسُ وَٱلْقَمَرُ (٩) يَقُولُ ٱلْإِنسَٰنُ يَوْمَئِذٍ أَيْنَ ٱلْمَفَرُّ (١٠)",
+            "source": "Surat Al-Qiyamah, 75:1-10"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "75:1-2",
+                "I swear by the Day of Resurrection And I swear by the reproaching soul [to the certainty of resurrection]."
+              ],
+              [
+                "75:3-4",
+                "Does man think that We will not assemble his bones? Yes. [We are] Able [even] to proportion his fingertips."
+              ],
+              [
+                "75:5-6",
+                "But man desires to continue in sin. He asks, \"When is the Day of Resurrection?\""
+              ],
+              [
+                "75:7-8",
+                "So when vision is dazzled And the moon darkens"
+              ],
+              [
+                "75:9-10",
+                "And the sun and the moon are joined, Man will say on that Day, \"Where is the [place of] escape?\""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "لَآ أُقْسِمُ",
+                "Al-Qiyamah 75:1",
+                "Madd munfasil",
+                "4 or 5 counts"
+              ],
+              [
+                "أَلَّن نَّجْمَعَ",
+                "Al-Qiyamah 75:3",
+                "Idgham with ghunnah: ن into ن",
+                "Merge and hum"
+              ],
+              [
+                "عَلَىٰٓ أَن نُّسَوِّىَ",
+                "Al-Qiyamah 75:4",
+                "Munfasil; idgham with ghunnah",
+                "4 or 5; merge and hum"
+              ],
+              [
+                "ٱلشَّمْسُ وَٱلْقَمَرُ",
+                "Al-Qiyamah 75:9",
+                "Sun letter ش, moon letter ق",
+                "Silent laam, then clear laam"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 75:1-10 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "In 75:4 Allah says He is able to proportion even ...",
+            "options": [
+              "the fingertips",
+              "the mountains",
+              "the clouds"
+            ],
+            "answer": 0,
+            "why": "75:4: 'Able [even] to proportion his fingertips.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Qiyamah 75:1-10 together, ayah by ayah.",
+          "a": "The class recites 75:1-10 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 75:1-10. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«وَٱلْقَمَرُ»: the laam is ...",
+          "a": "said (moon letter)",
+          "mins": 1,
+          "options": [
+            "said (moon letter)",
+            "silent (sun letter)"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 75:1-10 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "List three signs of the Day in 75:7 to 9.",
+          "a": "Vision is dazzled, the moon darkens, the sun and moon are joined.",
+          "mins": 2
+        },
+        {
+          "q": "Why might fingertips be mentioned (75:4)?",
+          "a": "Each person's fingertips are unique; restoring them shows Allah's complete power over the smallest details.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Qiyamah 75:7: «فَإِذَا بَرِقَ ...» Which word comes next?",
+          "a": "ٱلْبَصَرُ",
+          "mins": 1,
+          "options": [
+            "ٱلْبَصَرُ",
+            "نَفْسِهِۦ",
+            "فَأَوْلَىٰ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Allah swears by 'the reproaching soul' (75:2): the voice inside that blames us after a wrong. Is that voice a gift or a burden?",
+          "a": "A gift: it pushes us to repent and do better before the Day of Resurrection.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Qiyamah 75:1-10 to a parent three times a day and revise Al-Muddaththir on the rota (today's group); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Qiyamah 75:1-10 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Fingerprint",
+          "alt": "A fingerprint",
+          "for": "hook"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 27,
+      "title": "Surat Al-Qiyamah 75:11-19: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Allah told the Prophet ﷺ not to rush his tongue when receiving the Qur'an: 'upon Us is its collection' (75:16 to 17). What does this teach us about how to memorise?",
+      "objectives": [
+        "To memorise Al-Qiyamah 75:11-19 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 75:11-19 after the teacher, word for word",
+        "Most: recite 75:11-19 from memory with no more than one prompt",
+        "Some: link 75:11-19 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: patience and trust in Allah while learning His Book",
+      "keywords": [
+        {
+          "term": "ta'jal (تعجل)",
+          "def": "to hurry"
+        },
+        {
+          "term": "qur'anahu (قرآنه)",
+          "def": "its recitation"
+        },
+        {
+          "term": "bayanahu (بيانه)",
+          "def": "its explanation"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah told the Prophet ﷺ not to rush his tongue when receiving the Qur'an: 'upon Us is its collection' (75:16 to 17). What does this teach us about how to memorise?",
+        "a": "Listen first, then follow (75:18); trust Allah, be calm, do not rush."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Move not your tongue with it, [O Muhammad], to hasten with recitation of the Qur'an.' 'Indeed, upon Us is its collection [in your heart] and [to make possible] its recitation.' 'So when We have recited it [through Gabriel], then follow its recitation.' (Al-Qiyamah 75:16 to 18). This is the root of talaqqi: listen, then follow.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qiyamah 75:8 in your head. How does the next ayah begin?",
+          "a": "وَجُمِعَ ٱلشَّمْسُ",
+          "mins": 1,
+          "options": [
+            "وَجُمِعَ ٱلشَّمْسُ",
+            "أَلَيْسَ ذَٰلِكَ",
+            "إِنَّ عَلَيْنَا"
+          ]
+        },
+        {
+          "q": "«ٱلنَّفْسِ»: sun or moon?",
+          "a": "Sun",
+          "mins": 1,
+          "options": [
+            "Sun",
+            "Moon"
+          ]
+        },
+        {
+          "q": "Al-Qiyamah 75:10: «يَقُولُ ٱلْإِنسَٰنُ ...» Which word comes next?",
+          "a": "يَوْمَئِذٍ",
+          "mins": 1,
+          "options": [
+            "ٱلذَّكَرَ",
+            "ٱلْبَصَرُ",
+            "يَوْمَئِذٍ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Qiyamah 75:11-19",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 75:11-19 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "كَلَّا لَا وَزَرَ (١١) إِلَىٰ رَبِّكَ يَوْمَئِذٍ ٱلْمُسْتَقَرُّ (١٢) يُنَبَّؤُا۟ ٱلْإِنسَٰنُ يَوْمَئِذٍۭ بِمَا قَدَّمَ وَأَخَّرَ (١٣) بَلِ ٱلْإِنسَٰنُ عَلَىٰ نَفْسِهِۦ بَصِيرَةٌۭ (١٤) وَلَوْ أَلْقَىٰ مَعَاذِيرَهُۥ (١٥) لَا تُحَرِّكْ بِهِۦ لِسَانَكَ لِتَعْجَلَ بِهِۦٓ (١٦) إِنَّ عَلَيْنَا جَمْعَهُۥ وَقُرْءَانَهُۥ (١٧) فَإِذَا قَرَأْنَٰهُ فَٱتَّبِعْ قُرْءَانَهُۥ (١٨) ثُمَّ إِنَّ عَلَيْنَا بَيَانَهُۥ (١٩)",
+            "source": "Surat Al-Qiyamah, 75:11-19"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "75:11-12",
+                "No! There is no refuge. To your Lord, that Day, is the [place of] permanence."
+              ],
+              [
+                "75:13-14",
+                "Man will be informed that Day of what he sent ahead and kept back. Rather, man, against himself, will be a witness,"
+              ],
+              [
+                "75:15-16",
+                "Even if he presents his excuses. Move not your tongue with it, [O Muhammad], to hasten with recitation of the Qur'an."
+              ],
+              [
+                "75:17-18",
+                "Indeed, upon Us is its collection [in your heart] and [to make possible] its recitation. So when We have recited it [through Gabriel], then follow its recitation."
+              ],
+              [
+                "75:19",
+                "Then upon Us is its clarification [to you]."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "يُنَبَّؤُا۟ ٱلْإِنسَٰنُ",
+                "Al-Qiyamah 75:13",
+                "Written waw-alif with a small zero: not read",
+                "yunabba'ul-insaan"
+              ],
+              [
+                "بَلِ ٱلْإِنسَٰنُ",
+                "Al-Qiyamah 75:14",
+                "Laam of بَلْ takes a kasrah before hamzat al-wasl",
+                "balil-insaan"
+              ],
+              [
+                "لِتَعْجَلَ بِهِۦٓ",
+                "Al-Qiyamah 75:16",
+                "Madd silah kubra when joined to 75:17 (4 or 5)",
+                "At a stop: bih"
+              ],
+              [
+                "وَقُرْءَانَهُۥ",
+                "Al-Qiyamah 75:17",
+                "Madd silah sughra on the small waw",
+                "2 counts"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 75:11-19 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "75:18 tells the Prophet ﷺ: when We have recited it ...",
+            "options": [
+              "then follow its recitation",
+              "recite it quickly first",
+              "write it down at once"
+            ],
+            "answer": 0,
+            "why": "75:18: 'So when We have recited it [through Gabriel], then follow its recitation.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Qiyamah 75:11-19 together, ayah by ayah.",
+          "a": "The class recites 75:11-19 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 75:11-19. Ayah 11: 3 times looking, 3 times without looking. Then ayah 12 the same way. Then link: recite 11 and 12 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«بَلِ ٱلْإِنسَٰنُ» (75:14): why does بَلْ get a kasrah?",
+          "a": "Two sukoons meet with hamzat al-wasl",
+          "mins": 1,
+          "options": [
+            "Two sukoons meet with hamzat al-wasl",
+            "It is a madd",
+            "It is a mistake"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 75:11-19 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Link 75:16 to 19 to how we learn in class (talaqqi).",
+          "a": "We listen to the teacher first, then follow, then the teacher corrects: just as the Prophet ﷺ listened, then followed.",
+          "mins": 2
+        },
+        {
+          "q": "What do 75:14 to 15 say about excuses on the Day?",
+          "a": "A person is a witness against himself, even if he brings excuses.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Qiyamah 75:17: «إِنَّ ...» Which word comes next?",
+          "a": "عَلَيْنَا",
+          "mins": 1,
+          "options": [
+            "صَدَّقَ",
+            "أَلَمْ",
+            "عَلَيْنَا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Allah told the Prophet ﷺ not to rush his tongue when receiving the Qur'an: 'upon Us is its collection' (75:16 to 17). What does this teach us about how to memorise?",
+          "a": "Listen first, then follow (75:18); trust Allah, be calm, do not rush.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Qiyamah 75:11-19 to a parent three times a day and revise 75:1 to 10 (today's rota group); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Qiyamah 75:11-19 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Microphone muted headset",
+          "alt": "Listening first: a headset",
+          "for": "hook"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 28,
+      "title": "Surat Al-Qiyamah 75:20-30: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "'But you love the immediate and leave the Hereafter' (75:20 to 21). Give an example from teenage life.",
+      "objectives": [
+        "To memorise Al-Qiyamah 75:20-30 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 75:20-30 after the teacher, word for word",
+        "Most: recite 75:20-30 from memory with no more than one prompt",
+        "Some: link 75:20-30 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: choosing the lasting Hereafter over the immediate",
+      "keywords": [
+        {
+          "term": "al-'ajilah (العاجلة)",
+          "def": "the immediate, this world"
+        },
+        {
+          "term": "nadirah (ناضرة)",
+          "def": "radiant"
+        },
+        {
+          "term": "saktah (سكتة)",
+          "def": "a short pause without a breath"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'But you love the immediate and leave the Hereafter' (75:20 to 21). Give an example from teenage life.",
+        "a": "Staying up on a phone instead of sleeping for Fajr; a quick reward now over a lasting one later."
+      },
+      "islamicLink": {
+        "text": "Allah says: '[Some] faces, that Day, will be radiant,' 'Looking at their Lord.' (Al-Qiyamah 75:22 to 23).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qiyamah 75:15 in your head. How does the next ayah begin?",
+          "a": "لَا تُحَرِّكْ",
+          "mins": 1,
+          "options": [
+            "لَا تُحَرِّكْ",
+            "فَإِذَا بَرِقَ",
+            "وُجُوهٌۭ يَوْمَئِذٍۢ"
+          ]
+        },
+        {
+          "q": "75:18 teaches us to ...",
+          "a": "listen, then follow",
+          "mins": 1,
+          "options": [
+            "listen, then follow",
+            "rush ahead"
+          ]
+        },
+        {
+          "q": "Al-Qiyamah 75:19: «ثُمَّ ...» Which word comes next?",
+          "a": "إِنَّ",
+          "mins": 1,
+          "options": [
+            "تُحَرِّكْ",
+            "أَوْلَىٰ",
+            "إِنَّ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Qiyamah 75:20-30",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 75:20-30 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "كَلَّا بَلْ تُحِبُّونَ ٱلْعَاجِلَةَ (٢٠) وَتَذَرُونَ ٱلْءَاخِرَةَ (٢١) وُجُوهٌۭ يَوْمَئِذٍۢ نَّاضِرَةٌ (٢٢) إِلَىٰ رَبِّهَا نَاظِرَةٌۭ (٢٣) وَوُجُوهٌۭ يَوْمَئِذٍۭ بَاسِرَةٌۭ (٢٤) تَظُنُّ أَن يُفْعَلَ بِهَا فَاقِرَةٌۭ (٢٥) كَلَّآ إِذَا بَلَغَتِ ٱلتَّرَاقِىَ (٢٦) وَقِيلَ مَنْ ۜ رَاقٍۢ (٢٧) وَظَنَّ أَنَّهُ ٱلْفِرَاقُ (٢٨) وَٱلْتَفَّتِ ٱلسَّاقُ بِٱلسَّاقِ (٢٩) إِلَىٰ رَبِّكَ يَوْمَئِذٍ ٱلْمَسَاقُ (٣٠)",
+            "source": "Surat Al-Qiyamah, 75:20-30"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly; only the Arabic is the Qur'an. 75:26 to 30 describe the moment of death simply and seriously; let pupils reflect quietly.",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "75:20-21",
+                "No! But you love the immediate And leave the Hereafter."
+              ],
+              [
+                "75:22-23",
+                "[Some] faces, that Day, will be radiant, Looking at their Lord."
+              ],
+              [
+                "75:24-25",
+                "And [some] faces, that Day, will be contorted, Expecting that there will be done to them [something] backbreaking."
+              ],
+              [
+                "75:26-27",
+                "No! When the soul has reached the collar bones And it is said, \"Who will cure [him]?\""
+              ],
+              [
+                "75:28-29",
+                "And the dying one is certain that it is the [time of] separation And the leg is wound about the leg,"
+              ],
+              [
+                "75:30",
+                "To your Lord, that Day, will be the procession."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "وُجُوهٌۭ يَوْمَئِذٍۢ نَّاضِرَةٌ",
+                "Al-Qiyamah 75:22",
+                "Idgham with ghunnah; idgham (tanween into ن); itbaq ض",
+                "Merge, hum; covered ض"
+              ],
+              [
+                "نَاظِرَةٌۭ",
+                "Al-Qiyamah 75:23",
+                "Itbaq ظ",
+                "Covered tongue on ظ"
+              ],
+              [
+                "مَنْ ۜ رَاقٍۢ",
+                "Al-Qiyamah 75:27",
+                "Saktah (small س): no idgham",
+                "Pause on مَنْ without breath, then raaq"
+              ],
+              [
+                "وَٱلْتَفَّتِ ٱلسَّاقُ بِٱلسَّاقِ",
+                "Al-Qiyamah 75:29",
+                "Sun letters: س",
+                "Silent laams"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 75:20-30 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What will the radiant faces be doing (75:23)?",
+            "options": [
+              "Looking at their Lord",
+              "Looking for escape",
+              "Sleeping"
+            ],
+            "answer": 0,
+            "why": "75:23: 'Looking at their Lord.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Qiyamah 75:20-30 together, ayah by ayah.",
+          "a": "The class recites 75:20-30 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 75:20-30. Ayah 20: 3 times looking, 3 times without looking. Then ayah 21 the same way. Then link: recite 20 and 21 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«مَنْ ۜ رَاقٍۢ» (75:27): the small sign means ...",
+          "a": "saktah: a short pause with no breath",
+          "mins": 1,
+          "options": [
+            "saktah: a short pause with no breath",
+            "a full stop",
+            "idgham"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 75:20-30 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Contrast 75:22 to 23 with 75:24 to 25.",
+          "a": "Radiant faces looking at their Lord versus contorted faces expecting disaster.",
+          "mins": 2
+        },
+        {
+          "q": "Why is the saktah needed in 75:27?",
+          "a": "Without it the noon would merge into the raa (idgham), and «مَن رَّاقٍ» could sound like one word.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Qiyamah 75:26: «كَلَّآ ...» Which word comes next?",
+          "a": "إِذَا",
+          "mins": 1,
+          "options": [
+            "إِذَا",
+            "ٱلْمَفَرُّ",
+            "كَانَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 'But you love the immediate and leave the Hereafter' (75:20 to 21). Give an example from teenage life.",
+          "a": "Staying up on a phone instead of sleeping for Fajr; a quick reward now over a lasting one later.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Qiyamah 75:20-30 to a parent three times a day and revise 75:1 to 19 (today's rota group); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Qiyamah 75:20-30 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sunrise bright",
+          "alt": "Bright sunrise",
+          "for": "hook"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 29,
+      "title": "Surat Al-Qiyamah 75:31-40: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "'Does man think that he will be left neglected?' (75:36). Why is it important to know that life has a purpose?",
+      "objectives": [
+        "To memorise Al-Qiyamah 75:31-40 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 75:31-40 after the teacher, word for word",
+        "Most: recite 75:31-40 from memory with no more than one prompt",
+        "Some: link 75:31-40 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: purpose in life and certainty of the resurrection",
+      "keywords": [
+        {
+          "term": "suda (سدى)",
+          "def": "neglected, without purpose"
+        },
+        {
+          "term": "'alaqah (علقة)",
+          "def": "a clinging form, an early stage of creation"
+        },
+        {
+          "term": "al-mawta (الموتى)",
+          "def": "the dead"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'Does man think that he will be left neglected?' (75:36). Why is it important to know that life has a purpose?",
+        "a": "Because Allah created us for a reason, our choices matter; He who created us can bring us back (75:40)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Does man think that he will be left neglected?' (Al-Qiyamah 75:36) and 'Is not that [Creator] Able to give life to the dead?' (75:40).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qiyamah 75:25 in your head. How does the next ayah begin?",
+          "a": "كَلَّآ إِذَا",
+          "mins": 1,
+          "options": [
+            "فَإِذَا قَرَأْنَٰهُ",
+            "كَلَّا لَا",
+            "كَلَّآ إِذَا"
+          ]
+        },
+        {
+          "q": "Starting at «ٱذْهَبْ» we say ...",
+          "a": "idh-hab",
+          "mins": 1,
+          "options": [
+            "idh-hab",
+            "adh-hab"
+          ]
+        },
+        {
+          "q": "Al-Qiyamah 75:30: «إِلَىٰ رَبِّكَ ...» Which word comes next?",
+          "a": "يَوْمَئِذٍ",
+          "mins": 1,
+          "options": [
+            "يَوْمَئِذٍ",
+            "جَمْعَهُۥ",
+            "وَقِيلَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Qiyamah 75:31-40",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 75:31-40 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "فَلَا صَدَّقَ وَلَا صَلَّىٰ (٣١) وَلَٰكِن كَذَّبَ وَتَوَلَّىٰ (٣٢) ثُمَّ ذَهَبَ إِلَىٰٓ أَهْلِهِۦ يَتَمَطَّىٰٓ (٣٣) أَوْلَىٰ لَكَ فَأَوْلَىٰ (٣٤) ثُمَّ أَوْلَىٰ لَكَ فَأَوْلَىٰٓ (٣٥) أَيَحْسَبُ ٱلْإِنسَٰنُ أَن يُتْرَكَ سُدًى (٣٦) أَلَمْ يَكُ نُطْفَةًۭ مِّن مَّنِىٍّۢ يُمْنَىٰ (٣٧) ثُمَّ كَانَ عَلَقَةًۭ فَخَلَقَ فَسَوَّىٰ (٣٨) فَجَعَلَ مِنْهُ ٱلزَّوْجَيْنِ ٱلذَّكَرَ وَٱلْأُنثَىٰٓ (٣٩) أَلَيْسَ ذَٰلِكَ بِقَٰدِرٍ عَلَىٰٓ أَن يُحْۦِىَ ٱلْمَوْتَىٰ (٤٠)",
+            "source": "Surat Al-Qiyamah, 75:31-40"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly; only the Arabic is the Qur'an. 75:37 to 39 describe the stages of human creation: explain factually and briefly, as in science, with no further discussion.",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "75:31-32",
+                "And the disbeliever had not believed, nor had he prayed. But [instead], he denied and turned away."
+              ],
+              [
+                "75:33-34",
+                "And then he went to his people, swaggering [in pride]. Woe to you, and woe!"
+              ],
+              [
+                "75:35-36",
+                "Then woe to you, and woe! Does man think that he will be left neglected?"
+              ],
+              [
+                "75:37-38",
+                "Had he not been a sperm from semen emitted? Then he was a clinging clot, and [Allah] created [his form] and proportioned [him]"
+              ],
+              [
+                "75:39-40",
+                "And made of him two mates, the male and the female. Is not that [Creator] Able to give life to the dead?"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "إِلَىٰٓ أَهْلِهِۦ",
+                "Al-Qiyamah 75:33",
+                "Madd munfasil",
+                "4 or 5 counts"
+              ],
+              [
+                "نُطْفَةًۭ مِّن",
+                "Al-Qiyamah 75:37",
+                "Idgham with ghunnah: tanween into م",
+                "Merge and hum"
+              ],
+              [
+                "عَلَقَةًۭ فَخَلَقَ",
+                "Al-Qiyamah 75:38",
+                "Ikhfa: tanween before ف",
+                "Light hum"
+              ],
+              [
+                "يُحْۦِىَ ٱلْمَوْتَىٰ",
+                "Al-Qiyamah 75:40",
+                "Small yaa and alif: read carefully",
+                "yuhyiyal-mawtaa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 75:31-40 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "75:40 asks: is not that Creator able to ...",
+            "options": [
+              "give life to the dead",
+              "make the sun stop",
+              "speak to animals"
+            ],
+            "answer": 0,
+            "why": "75:40: 'Is not that [Creator] Able to give life to the dead?'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Qiyamah 75:31-40 together, ayah by ayah.",
+          "a": "The class recites 75:31-40 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 75:31-40. Ayah 31: 3 times looking, 3 times without looking. Then ayah 32 the same way. Then link: recite 31 and 32 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«عَلَقَةًۭ فَخَلَقَ» (75:38): tanween before ف is ...",
+          "a": "Ikhfa",
+          "mins": 1,
+          "options": [
+            "Ikhfa",
+            "Izhar",
+            "Idgham"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 75:31-40 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Recite all of Al-Qiyamah 75:1 to 40 to a partner.",
+          "a": "Forty ayat; partner notes slips.",
+          "mins": 2
+        },
+        {
+          "q": "How do 75:37 to 40 answer 75:3?",
+          "a": "The One who created a person in stages from a small beginning can certainly gather his bones again.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many ayat in Al-Qiyamah?",
+          "a": "40",
+          "mins": 1,
+          "options": [
+            "40",
+            "56",
+            "46"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 'Does man think that he will be left neglected?' (75:36). Why is it important to know that life has a purpose?",
+          "a": "Because Allah created us for a reason, our choices matter; He who created us can bring us back (75:40).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Qiyamah 75:31-40 to a parent three times a day and revise 75:1 to 30 (today's rota group); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Qiyamah 75:31-40 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Seed sprouting soil",
+          "alt": "A seed sprouting",
+          "for": "hook"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 30,
+      "title": "Full Al-Qiyamah: madd 'iwad and the stops",
+      "duration": 50,
+      "bigQuestion": "Many ayah ends of Al-Qiyamah end in ة or alif. Why do ayah ends that sound alike help memorising?",
+      "objectives": [
+        "To understand how to stop on every ayah end of Al-Qiyamah, including tanween and madd 'iwad, and recite the whole surah"
+      ],
+      "successCriteria": [
+        "All: stop correctly on taa marbutah and tanween endings",
+        "Most: stop with madd 'iwad on tanween fathah",
+        "Some: recite all of Al-Qiyamah with clean stops"
+      ],
+      "smsc": "Spiritual: the beauty and rhythm of the Qur'an",
+      "keywords": [
+        {
+          "term": "madd 'iwad (مد عوض)",
+          "def": "an alif in place of tanween fathah at a stop: 2 counts"
+        },
+        {
+          "term": "fasilah (فاصلة)",
+          "def": "the last word of an ayah"
+        },
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping on a word, with a breath"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Many ayah ends of Al-Qiyamah end in ة or alif. Why do ayah ends that sound alike help memorising?",
+        "a": "The rhyme (fasilah) gives a rhythm that helps the memory; it is part of the Qur'an's beauty."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qiyamah 75:33 in your head. How does the next ayah begin?",
+          "a": "أَوْلَىٰ لَكَ",
+          "mins": 1,
+          "options": [
+            "لَا تُحَرِّكْ",
+            "كَلَّا لَا",
+            "أَوْلَىٰ لَكَ"
+          ]
+        },
+        {
+          "q": "Hamzat al-wasl is said ...",
+          "a": "only when starting",
+          "mins": 1,
+          "options": [
+            "only when starting",
+            "always"
+          ]
+        },
+        {
+          "q": "«عَلَقَةًۭ فَخَلَقَ» is ...",
+          "a": "Ikhfa",
+          "mins": 1,
+          "options": [
+            "Ikhfa",
+            "Izhar"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Endings at a stop",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Ending",
+              "At a stop",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ة with a vowel",
+                "Haa sakinah",
+                "ٱلْقِيَٰمَةِ → al-qiyaamah"
+              ],
+              [
+                "Tanween fathah",
+                "Alif: madd 'iwad, 2",
+                "سُدًى (75:36) → sudaa"
+              ],
+              [
+                "Doubled letter ّ",
+                "Keep the shaddah, sukoon",
+                "ٱلْمَفَرُّ → al-mafarr"
+              ],
+              [
+                "Alif maqsurah ى",
+                "Natural madd 2",
+                "صَلَّىٰ → sallaa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Madd 'iwad",
+          "bullets": [
+            "'Iwad means 'in place of'",
+            "The alif replaces the tanween",
+            "Exactly 2 counts"
+          ],
+          "note": "Contrast with tanween kasrah and dammah, which simply drop."
+        },
+        {
+          "heading": "Recite the last section",
+          "bullets": [
+            "Listen, then recite"
+          ],
+          "note": "Pupils follow.",
+          "quote": {
+            "text": "فَلَا صَدَّقَ وَلَا صَلَّىٰ (٣١) وَلَٰكِن كَذَّبَ وَتَوَلَّىٰ (٣٢) ثُمَّ ذَهَبَ إِلَىٰٓ أَهْلِهِۦ يَتَمَطَّىٰٓ (٣٣) أَوْلَىٰ لَكَ فَأَوْلَىٰ (٣٤) ثُمَّ أَوْلَىٰ لَكَ فَأَوْلَىٰٓ (٣٥) أَيَحْسَبُ ٱلْإِنسَٰنُ أَن يُتْرَكَ سُدًى (٣٦) أَلَمْ يَكُ نُطْفَةًۭ مِّن مَّنِىٍّۢ يُمْنَىٰ (٣٧) ثُمَّ كَانَ عَلَقَةًۭ فَخَلَقَ فَسَوَّىٰ (٣٨) فَجَعَلَ مِنْهُ ٱلزَّوْجَيْنِ ٱلذَّكَرَ وَٱلْأُنثَىٰٓ (٣٩) أَلَيْسَ ذَٰلِكَ بِقَٰدِرٍ عَلَىٰٓ أَن يُحْۦِىَ ٱلْمَوْتَىٰ (٤٠)",
+            "source": "Surat Al-Qiyamah, 75:31-40"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Stopping on «سُدًى» (75:36) gives ...",
+            "options": [
+              "sudaa (madd 'iwad, 2)",
+              "sudan",
+              "sud"
+            ],
+            "answer": 0,
+            "why": "Tanween fathah at a stop becomes a 2-count alif."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Stop on «نَاضِرَةٌ» (75:22), «ٱلْمُسْتَقَرُّ» (75:12) and «سُدًى» (75:36).",
+          "a": "naadirah; al-mustaqarr; sudaa.",
+          "mins": 4,
+          "model": "I do: ة becomes haa: naadirah. The shaddah stays: al-mustaqarr. Tanween fathah becomes alif: sudaa."
+        },
+        {
+          "q": "'Iwad means ...",
+          "a": "in place of",
+          "mins": 1,
+          "options": [
+            "in place of",
+            "joined",
+            "heavy"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Stop map (pupil PDF): write how to stop on every ayah end of 75:20 to 40. Today's rota group recites 75:31 to 40.",
+          "a": "Answers on the teacher sheet, for example: ٱلْعَاجِلَةَ → al-'aajilah; ٱلتَّرَاقِىَ → at-taraaqee; سُدًى → sudaa.",
+          "mins": 12,
+          "model": "The teacher does 75:20 to 21 aloud."
+        },
+        {
+          "q": "Extend: what is a fasilah?",
+          "a": "The last word of an ayah; its rhyme and rhythm.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why is «يُمْنَىٰ» (75:37) not madd 'iwad?",
+          "a": "It ends in alif maqsurah, a natural madd; there is no tanween to replace.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Stopping on «ٱلْمَفَرُّ» we ...",
+          "a": "keep the shaddah",
+          "mins": 1,
+          "options": [
+            "keep the shaddah",
+            "drop the raa"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Many ayah ends of Al-Qiyamah end in ة or alif. Why do ayah ends that sound alike help memorising?",
+          "a": "The rhyme (fasilah) gives a rhythm that helps the memory; it is part of the Qur'an's beauty.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite all of Al-Qiyamah to a parent with clean stops; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Full Al-Qiyamah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Pause button symbol",
+          "alt": "A pause sign",
+          "for": "teach:1"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 31,
+      "title": "Muraja'ah: Al-Muddaththir with Al-Qiyamah",
+      "duration": 50,
+      "bigQuestion": "Al-Muddaththir ends 'He is worthy of fear and worthy to forgive' (74:56) and Al-Qiyamah begins with the Day. How do the two connect?",
+      "objectives": [
+        "To understand how to keep two neighbouring surahs secure and linked in order"
+      ],
+      "successCriteria": [
+        "All: recite Al-Muddaththir 74:1 to 30 alone",
+        "Most: recite all of Al-Muddaththir with two prompts or fewer",
+        "Some: link the end of 74 to the start of 75 smoothly"
+      ],
+      "smsc": "Moral: steady habits keep what we have learned",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "manzil (منزل)",
+          "def": "older surahs on the rota"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Muddaththir ends 'He is worthy of fear and worthy to forgive' (74:56) and Al-Qiyamah begins with the Day. How do the two connect?",
+        "a": "Both warn about the Hereafter; one ends with Allah's forgiveness, the next opens with the Day when all will stand before Him."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ ...»?",
+          "a": "Al-Muddaththir",
+          "mins": 1,
+          "options": [
+            "Al-Qiyamah",
+            "Al-Muddaththir",
+            "Al-Muzzammil"
+          ]
+        },
+        {
+          "q": "Recite Al-Muddaththir 74:30 in your head. How does the next ayah begin?",
+          "a": "وَمَا جَعَلْنَآ",
+          "mins": 1,
+          "options": [
+            "وَمَا جَعَلْنَآ",
+            "فَمَن شَآءَ",
+            "فَقَالَ إِنْ"
+          ]
+        },
+        {
+          "q": "Recite Al-Muddaththir 74:55 in your head. How does the next ayah begin?",
+          "a": "وَمَا يَذْكُرُونَ",
+          "mins": 1,
+          "options": [
+            "عَنِ ٱلْمُجْرِمِينَ",
+            "فَمَا لَهُمْ",
+            "وَمَا يَذْكُرُونَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Surat Al-Muddaththir 74:1-10",
+          "bullets": [
+            "Recite with me, mics muted"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ (١) قُمْ فَأَنذِرْ (٢) وَرَبَّكَ فَكَبِّرْ (٣) وَثِيَابَكَ فَطَهِّرْ (٤) وَٱلرُّجْزَ فَٱهْجُرْ (٥) وَلَا تَمْنُن تَسْتَكْثِرُ (٦) وَلِرَبِّكَ فَٱصْبِرْ (٧) فَإِذَا نُقِرَ فِى ٱلنَّاقُورِ (٨) فَذَٰلِكَ يَوْمَئِذٍۢ يَوْمٌ عَسِيرٌ (٩) عَلَى ٱلْكَٰفِرِينَ غَيْرُ يَسِيرٍۢ (١٠)",
+            "source": "Surat Al-Muddaththir, 74:1-10"
+          }
+        },
+        {
+          "heading": "Surat Al-Muddaththir 74:49-56",
+          "bullets": [
+            "Recite with me, mics muted"
+          ],
+          "note": "Continue together.",
+          "quote": {
+            "text": "فَمَا لَهُمْ عَنِ ٱلتَّذْكِرَةِ مُعْرِضِينَ (٤٩) كَأَنَّهُمْ حُمُرٌۭ مُّسْتَنفِرَةٌۭ (٥٠) فَرَّتْ مِن قَسْوَرَةٍۭ (٥١) بَلْ يُرِيدُ كُلُّ ٱمْرِئٍۢ مِّنْهُمْ أَن يُؤْتَىٰ صُحُفًۭا مُّنَشَّرَةًۭ (٥٢) كَلَّا ۖ بَل لَّا يَخَافُونَ ٱلْءَاخِرَةَ (٥٣) كَلَّآ إِنَّهُۥ تَذْكِرَةٌۭ (٥٤) فَمَن شَآءَ ذَكَرَهُۥ (٥٥) وَمَا يَذْكُرُونَ إِلَّآ أَن يَشَآءَ ٱللَّهُ ۚ هُوَ أَهْلُ ٱلتَّقْوَىٰ وَأَهْلُ ٱلْمَغْفِرَةِ (٥٦)",
+            "source": "Surat Al-Muddaththir, 74:49-56"
+          }
+        },
+        {
+          "heading": "Linking 74 to 75",
+          "bullets": [],
+          "note": "Practise the join from the last ayah of 74 to the first of 75 (with Bismillah between surahs).",
+          "cycle": [
+            "Recite 74:54 to 56",
+            "Isti'adhah is not repeated; say Bismillah",
+            "Recite 75:1 to 3",
+            "Repeat the join three times",
+            "Partner ticks"
+          ]
+        },
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "The rubric for the rota.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which comes first in the mushaf?",
+            "options": [
+              "Al-Muddaththir (74)",
+              "Al-Qiyamah (75)",
+              "Al-Insan (76)"
+            ],
+            "answer": 0,
+            "why": "Surah 74 comes before 75."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation: each pupil recites one ayah of Al-Muddaththir 74:1-56 in register order.",
+          "a": "74:1-56 recited in order by the class.",
+          "mins": 4,
+          "model": "I do: I recite 74:1 with a clean stop; the first name on the register continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Recital rota: today's group recites Al-Muddaththir 74:1-56 to the teacher. Everyone else: 3-3-link the weakest section and log revision.",
+          "a": "Rubric marked with one target for each pupil.",
+          "mins": 15,
+          "model": "The teacher shows how to pick the weakest section from the revision log."
+        },
+        {
+          "q": "Extend: write your target in the portal response box. Start: 'In my next recital I will ...'",
+          "a": "For example: 'In my next recital I will make the saktah in 75:27 without a breath.'",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many ayat in Al-Muddaththir?",
+          "a": "56",
+          "mins": 1,
+          "options": [
+            "56",
+            "40"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Muddaththir ends 'He is worthy of fear and worthy to forgive' (74:56) and Al-Qiyamah begins with the Day. How do the two connect?",
+          "a": "Both warn about the Hereafter; one ends with Allah's forgiveness, the next opens with the Day when all will stand before Him.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Muddaththir and Al-Qiyamah on alternate days; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Check list clipboard",
+          "alt": "A checklist",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 32,
+      "title": "Waqf and saktah in Al-Qiyamah",
+      "duration": 50,
+      "bigQuestion": "Hafs recites a saktah in only a few places in the Qur'an, one of them in Al-Qiyamah. Why might a tiny pause matter so much?",
+      "objectives": [
+        "To understand how waqf signs and the saktah guide where to stop in Al-Qiyamah"
+      ],
+      "successCriteria": [
+        "All: read the saktah in 75:27 correctly",
+        "Most: name the waqf signs in a mushaf page",
+        "Some: choose a good restart after an emergency stop in a long ayah"
+      ],
+      "smsc": "Spiritual: precision with Allah's words",
+      "keywords": [
+        {
+          "term": "saktah (سكتة)",
+          "def": "a brief silent pause, no breath"
+        },
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping on a word, with a breath"
+        },
+        {
+          "term": "'alamat al-waqf (علامات الوقف)",
+          "def": "stopping signs"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Hafs recites a saktah in only a few places in the Qur'an, one of them in Al-Qiyamah. Why might a tiny pause matter so much?",
+        "a": "It keeps two words apart so the meaning is clear: مَنْ and رَاقٍۢ stay separate."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qiyamah 75:37 in your head. How does the next ayah begin?",
+          "a": "ثُمَّ كَانَ",
+          "mins": 1,
+          "options": [
+            "يَسْـَٔلُ أَيَّانَ",
+            "ثُمَّ كَانَ",
+            "كَلَّا لَا"
+          ]
+        },
+        {
+          "q": "Madd 'iwad is ...",
+          "a": "2 counts",
+          "mins": 1,
+          "options": [
+            "2 counts",
+            "6 counts"
+          ]
+        },
+        {
+          "q": "«سُدًى» at a stop is ...",
+          "a": "sudaa",
+          "mins": 1,
+          "options": [
+            "sudaa",
+            "sudan"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Saktah in Hafs",
+          "bullets": [],
+          "note": "Bismillah. The places of saktah in Hafs 'an 'Asim (via ash-Shatibiyyah).",
+          "table": {
+            "head": [
+              "Where",
+              "Words"
+            ],
+            "rows": [
+              [
+                "Al-Kahf 18:1 to 2",
+                "عِوَجَا ۜ قَيِّمًۭا"
+              ],
+              [
+                "Ya-Sin 36:52",
+                "مَّرْقَدِنَا ۜ ۗ هَٰذَا"
+              ],
+              [
+                "Al-Qiyamah 75:27",
+                "مَنْ ۜ رَاقٍۢ"
+              ],
+              [
+                "Al-Mutaffifin 83:14",
+                "بَلْ ۜ رَانَ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "How to make a saktah",
+          "bullets": [
+            "Stop the sound briefly",
+            "No breath",
+            "Then continue"
+          ],
+          "note": "Model 75:27 slowly, then at normal pace."
+        },
+        {
+          "heading": "Waqf signs",
+          "bullets": [],
+          "note": "Find each in a mushaf page.",
+          "table": {
+            "head": [
+              "Sign",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "مـ",
+                "Must stop"
+              ],
+              [
+                "لا",
+                "Do not stop"
+              ],
+              [
+                "ج",
+                "Equal"
+              ],
+              [
+                "صلى",
+                "Continue is better"
+              ],
+              [
+                "قلى",
+                "Stop is better"
+              ],
+              [
+                "∴ ∴",
+                "Stop at one only"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Taking a breath at the saktah, or merging مَن رَّاقٍ",
+            "right": "A tiny silent pause, no breath, no idgham: man (pause) raaq"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "At the saktah in 75:27 we ...",
+            "options": [
+              "pause briefly without a breath",
+              "stop and breathe",
+              "merge the noon into raa"
+            ],
+            "answer": 0,
+            "why": "Saktah: a brief silent pause, no breath."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 75:26 to 28 with the saktah.",
+          "a": "kallaa idhaa balaghatit-taraaqiy, wa qeela man (saktah) raaq, wa zanna annahul-firaaq.",
+          "mins": 4,
+          "model": "I do: I read 75:26, stop at the ayah end, then 75:27: wa qeela man, a tiny silent pause, raaq."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Waqf hunt (pupil PDF): find every waqf sign in Al-Qiyamah on the mushaf page and write its meaning. Today's rota group recites 75:20 to 40.",
+          "a": "Answers on the teacher sheet; the saktah at 75:27 marked.",
+          "mins": 11,
+          "model": "The teacher finds the first sign on the page."
+        },
+        {
+          "q": "Extend: name two other places of saktah in Hafs.",
+          "a": "Al-Kahf 18:1 to 2; Ya-Sin 36:52; Al-Mutaffifin 83:14.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: what would happen to the sound of 75:27 without the saktah?",
+          "a": "The noon of مَنْ would merge into raa (idgham): marraaq.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Saktah means ...",
+          "a": "a silent pause with no breath",
+          "mins": 1,
+          "options": [
+            "a silent pause with no breath",
+            "a stop with a breath"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Hafs recites a saktah in only a few places in the Qur'an, one of them in Al-Qiyamah. Why might a tiny pause matter so much?",
+          "a": "It keeps two words apart so the meaning is clear: مَنْ and رَاقٍۢ stay separate.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite 75:20 to 40 to a parent, making the saktah correctly; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Waqf and saktah in Al-Qiyamah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Madinah mushaf page",
+          "alt": "A mushaf page with waqf signs",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 33,
+      "title": "Recital: Al-Muddaththir",
+      "duration": 50,
+      "bigQuestion": "Al-Muddaththir begins with the command 'Arise and warn' (74:2). What does it ask of a believer today?",
+      "objectives": [
+        "To understand how to recite Al-Muddaththir fluently with tarteel"
+      ],
+      "successCriteria": [
+        "All: recite 74:1 to 30 alone",
+        "Most: recite all of Al-Muddaththir with two prompts or fewer",
+        "Some: score 4 for fluency and waqf"
+      ],
+      "smsc": "Spiritual: standing up for truth with patience",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "tarteel (ترتيل)",
+          "def": "measured recitation"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Muddaththir begins with the command 'Arise and warn' (74:2). What does it ask of a believer today?",
+        "a": "To stand up for the truth, keep clean, glorify Allah and be patient (74:2 to 7)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:4 in your head. How does the next ayah begin?",
+          "a": "وَٱلرُّجْزَ فَٱهْجُرْ",
+          "mins": 1,
+          "options": [
+            "وَٱلرُّجْزَ فَٱهْجُرْ",
+            "عَلَى ٱلْكَٰفِرِينَ",
+            "وَلَا تَمْنُن"
+          ]
+        },
+        {
+          "q": "Recite Al-Muddaththir 74:38 in your head. How does the next ayah begin?",
+          "a": "إِلَّآ أَصْحَٰبَ",
+          "mins": 1,
+          "options": [
+            "يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ",
+            "ثُمَّ نَظَرَ",
+            "إِلَّآ أَصْحَٰبَ"
+          ]
+        },
+        {
+          "q": "Al-Muddaththir is surah ...",
+          "a": "74",
+          "mins": 1,
+          "options": [
+            "74",
+            "75"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Surat Al-Muddaththir 74:1-10",
+          "bullets": [
+            "Recite with me, mics muted"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ (١) قُمْ فَأَنذِرْ (٢) وَرَبَّكَ فَكَبِّرْ (٣) وَثِيَابَكَ فَطَهِّرْ (٤) وَٱلرُّجْزَ فَٱهْجُرْ (٥) وَلَا تَمْنُن تَسْتَكْثِرُ (٦) وَلِرَبِّكَ فَٱصْبِرْ (٧) فَإِذَا نُقِرَ فِى ٱلنَّاقُورِ (٨) فَذَٰلِكَ يَوْمَئِذٍۢ يَوْمٌ عَسِيرٌ (٩) عَلَى ٱلْكَٰفِرِينَ غَيْرُ يَسِيرٍۢ (١٠)",
+            "source": "Surat Al-Muddaththir, 74:1-10"
+          }
+        },
+        {
+          "heading": "Surat Al-Muddaththir 74:38-48",
+          "bullets": [
+            "Recite with me, mics muted"
+          ],
+          "note": "Continue together.",
+          "quote": {
+            "text": "كُلُّ نَفْسٍۭ بِمَا كَسَبَتْ رَهِينَةٌ (٣٨) إِلَّآ أَصْحَٰبَ ٱلْيَمِينِ (٣٩) فِى جَنَّٰتٍۢ يَتَسَآءَلُونَ (٤٠) عَنِ ٱلْمُجْرِمِينَ (٤١) مَا سَلَكَكُمْ فِى سَقَرَ (٤٢) قَالُوا۟ لَمْ نَكُ مِنَ ٱلْمُصَلِّينَ (٤٣) وَلَمْ نَكُ نُطْعِمُ ٱلْمِسْكِينَ (٤٤) وَكُنَّا نَخُوضُ مَعَ ٱلْخَآئِضِينَ (٤٥) وَكُنَّا نُكَذِّبُ بِيَوْمِ ٱلدِّينِ (٤٦) حَتَّىٰٓ أَتَىٰنَا ٱلْيَقِينُ (٤٧) فَمَا تَنفَعُهُمْ شَفَٰعَةُ ٱلشَّٰفِعِينَ (٤٨)",
+            "source": "Surat Al-Muddaththir, 74:38-48"
+          }
+        },
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "The rubric for the rota.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "74:2: 'Arise and ...'",
+            "options": [
+              "warn",
+              "sleep",
+              "travel"
+            ],
+            "answer": 0,
+            "why": "74:2: 'Arise and warn.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation: each pupil recites one ayah of Al-Muddaththir 74:1-56 in register order.",
+          "a": "74:1-56 recited in order by the class.",
+          "mins": 4,
+          "model": "I do: I recite 74:1 with a clean stop; the first name on the register continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Recital rota: today's group recites Al-Muddaththir 74:1-56 to the teacher. Everyone else: 3-3-link the weakest section and log revision.",
+          "a": "Rubric marked with one target for each pupil.",
+          "mins": 15,
+          "model": "The teacher shows how to pick the weakest section from the revision log."
+        },
+        {
+          "q": "Extend: write your target in the portal response box. Start: 'In my next recital I will ...'",
+          "a": "For example: 'In my next recital I will make the saktah in 75:27 without a breath.'",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Recite Al-Muddaththir 74:47 in your head. How does the next ayah begin?",
+          "a": "فَمَا تَنفَعُهُمْ",
+          "mins": 1,
+          "options": [
+            "سَأُرْهِقُهُۥ صَعُودًا",
+            "يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ",
+            "فَمَا تَنفَعُهُمْ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Muddaththir begins with the command 'Arise and warn' (74:2). What does it ask of a believer today?",
+          "a": "To stand up for the truth, keep clean, glorify Allah and be patient (74:2 to 7).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Muddaththir to a parent; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Recital rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Check list clipboard",
+          "alt": "A checklist",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 34,
+      "title": "Recital: Al-Qiyamah",
+      "duration": 50,
+      "bigQuestion": "Al-Qiyamah asks: 'Does man think he will be left neglected?' (75:36). How does reciting it change your day?",
+      "objectives": [
+        "To understand how to recite Al-Qiyamah fluently with its rules and stops"
+      ],
+      "successCriteria": [
+        "All: recite 75:1 to 19 alone",
+        "Most: recite all of Al-Qiyamah with two prompts or fewer",
+        "Some: score 4 on every row"
+      ],
+      "smsc": "Spiritual: purpose and accountability",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "hamzat al-wasl (همزة الوصل)",
+          "def": "a joining hamza: said only when we start with it, dropped when joined"
+        },
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping on a word, with a breath"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Qiyamah asks: 'Does man think he will be left neglected?' (75:36). How does reciting it change your day?",
+        "a": "It reminds us that life has purpose and every act is seen."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qiyamah 75:11 in your head. How does the next ayah begin?",
+          "a": "إِلَىٰ رَبِّكَ",
+          "mins": 1,
+          "options": [
+            "إِلَىٰ رَبِّهَا",
+            "إِلَىٰ رَبِّكَ",
+            "فَإِذَا بَرِقَ"
+          ]
+        },
+        {
+          "q": "Recite Al-Qiyamah 75:26 in your head. How does the next ayah begin?",
+          "a": "وَقِيلَ مَنْ",
+          "mins": 1,
+          "options": [
+            "وَتَذَرُونَ ٱلْءَاخِرَةَ",
+            "وَقِيلَ مَنْ",
+            "إِلَىٰ رَبِّهَا"
+          ]
+        },
+        {
+          "q": "The saktah is in ...",
+          "a": "75:27",
+          "mins": 1,
+          "options": [
+            "75:27",
+            "75:7"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Surat Al-Qiyamah 75:1-15",
+          "bullets": [
+            "Recite with me, mics muted"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "لَآ أُقْسِمُ بِيَوْمِ ٱلْقِيَٰمَةِ (١) وَلَآ أُقْسِمُ بِٱلنَّفْسِ ٱللَّوَّامَةِ (٢) أَيَحْسَبُ ٱلْإِنسَٰنُ أَلَّن نَّجْمَعَ عِظَامَهُۥ (٣) بَلَىٰ قَٰدِرِينَ عَلَىٰٓ أَن نُّسَوِّىَ بَنَانَهُۥ (٤) بَلْ يُرِيدُ ٱلْإِنسَٰنُ لِيَفْجُرَ أَمَامَهُۥ (٥) يَسْـَٔلُ أَيَّانَ يَوْمُ ٱلْقِيَٰمَةِ (٦) فَإِذَا بَرِقَ ٱلْبَصَرُ (٧) وَخَسَفَ ٱلْقَمَرُ (٨) وَجُمِعَ ٱلشَّمْسُ وَٱلْقَمَرُ (٩) يَقُولُ ٱلْإِنسَٰنُ يَوْمَئِذٍ أَيْنَ ٱلْمَفَرُّ (١٠) كَلَّا لَا وَزَرَ (١١) إِلَىٰ رَبِّكَ يَوْمَئِذٍ ٱلْمُسْتَقَرُّ (١٢) يُنَبَّؤُا۟ ٱلْإِنسَٰنُ يَوْمَئِذٍۭ بِمَا قَدَّمَ وَأَخَّرَ (١٣) بَلِ ٱلْإِنسَٰنُ عَلَىٰ نَفْسِهِۦ بَصِيرَةٌۭ (١٤) وَلَوْ أَلْقَىٰ مَعَاذِيرَهُۥ (١٥)",
+            "source": "Surat Al-Qiyamah, 75:1-15"
+          }
+        },
+        {
+          "heading": "Surat Al-Qiyamah 75:26-40",
+          "bullets": [
+            "Recite with me, mics muted"
+          ],
+          "note": "Continue together.",
+          "quote": {
+            "text": "كَلَّآ إِذَا بَلَغَتِ ٱلتَّرَاقِىَ (٢٦) وَقِيلَ مَنْ ۜ رَاقٍۢ (٢٧) وَظَنَّ أَنَّهُ ٱلْفِرَاقُ (٢٨) وَٱلْتَفَّتِ ٱلسَّاقُ بِٱلسَّاقِ (٢٩) إِلَىٰ رَبِّكَ يَوْمَئِذٍ ٱلْمَسَاقُ (٣٠) فَلَا صَدَّقَ وَلَا صَلَّىٰ (٣١) وَلَٰكِن كَذَّبَ وَتَوَلَّىٰ (٣٢) ثُمَّ ذَهَبَ إِلَىٰٓ أَهْلِهِۦ يَتَمَطَّىٰٓ (٣٣) أَوْلَىٰ لَكَ فَأَوْلَىٰ (٣٤) ثُمَّ أَوْلَىٰ لَكَ فَأَوْلَىٰٓ (٣٥) أَيَحْسَبُ ٱلْإِنسَٰنُ أَن يُتْرَكَ سُدًى (٣٦) أَلَمْ يَكُ نُطْفَةًۭ مِّن مَّنِىٍّۢ يُمْنَىٰ (٣٧) ثُمَّ كَانَ عَلَقَةًۭ فَخَلَقَ فَسَوَّىٰ (٣٨) فَجَعَلَ مِنْهُ ٱلزَّوْجَيْنِ ٱلذَّكَرَ وَٱلْأُنثَىٰٓ (٣٩) أَلَيْسَ ذَٰلِكَ بِقَٰدِرٍ عَلَىٰٓ أَن يُحْۦِىَ ٱلْمَوْتَىٰ (٤٠)",
+            "source": "Surat Al-Qiyamah, 75:26-40"
+          }
+        },
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "The rubric for the rota.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which comes first?",
+            "options": [
+              "«وُجُوهٌۭ يَوْمَئِذٍۢ نَّاضِرَةٌ»",
+              "«كَلَّآ إِذَا بَلَغَتِ ٱلتَّرَاقِىَ»",
+              "«أَيَحْسَبُ ٱلْإِنسَٰنُ أَن يُتْرَكَ سُدًى»"
+            ],
+            "answer": 0,
+            "why": "75:22, then 75:26, then 75:36."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation: each pupil recites one ayah of Al-Qiyamah 75:1-40 in register order.",
+          "a": "75:1-40 recited in order by the class.",
+          "mins": 4,
+          "model": "I do: I recite 75:1 with a clean stop; the first name on the register continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Recital rota: today's group recites Al-Qiyamah 75:1-40 to the teacher. Everyone else: 3-3-link the weakest section and log revision.",
+          "a": "Rubric marked with one target for each pupil.",
+          "mins": 15,
+          "model": "The teacher shows how to pick the weakest section from the revision log."
+        },
+        {
+          "q": "Extend: write your target in the portal response box. Start: 'In my next recital I will ...'",
+          "a": "For example: 'In my next recital I will make the saktah in 75:27 without a breath.'",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Recite Al-Qiyamah 75:34 in your head. How does the next ayah begin?",
+          "a": "ثُمَّ أَوْلَىٰ",
+          "mins": 1,
+          "options": [
+            "فَجَعَلَ مِنْهُ",
+            "ثُمَّ أَوْلَىٰ",
+            "كَلَّآ إِذَا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Qiyamah asks: 'Does man think he will be left neglected?' (75:36). How does reciting it change your day?",
+          "a": "It reminds us that life has purpose and every act is seen.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Qiyamah to a parent; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Recital rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Check list clipboard",
+          "alt": "A checklist",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 35,
+      "title": "Peer feedback: tarteel in Surahs 74 and 75",
+      "duration": 50,
+      "bigQuestion": "What is the difference between reciting fast and reciting with tarteel?",
+      "objectives": [
+        "To understand how to give precise peer feedback on tarteel: pace, rules and stops"
+      ],
+      "successCriteria": [
+        "All: tick the rubric while a partner recites",
+        "Most: give one precise target with the ayah, word and rule",
+        "Some: model the correction for the partner"
+      ],
+      "smsc": "Social: giving and receiving advice with adab",
+      "keywords": [
+        {
+          "term": "tahqiq (تحقيق)",
+          "def": "the slowest pace"
+        },
+        {
+          "term": "hadr (حدر)",
+          "def": "the quickest pace, rules kept"
+        },
+        {
+          "term": "nasihah (نصيحة)",
+          "def": "sincere advice"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the difference between reciting fast and reciting with tarteel?",
+        "a": "Tarteel is measured: every letter, madd and stop is given its right; speed can come later."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said the best of you are those who learn the Qur'an and teach it (reported by al-Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qiyamah 75:38 in your head. How does the next ayah begin?",
+          "a": "فَجَعَلَ مِنْهُ",
+          "mins": 1,
+          "options": [
+            "وَلَٰكِن كَذَّبَ",
+            "فَجَعَلَ مِنْهُ",
+            "يُنَبَّؤُا۟ ٱلْإِنسَٰنُ"
+          ]
+        },
+        {
+          "q": "Recite Al-Muddaththir 74:12 in your head. How does the next ayah begin?",
+          "a": "وَبَنِينَ شُهُودًۭا",
+          "mins": 1,
+          "options": [
+            "وَبَنِينَ شُهُودًۭا",
+            "ثُمَّ قُتِلَ",
+            "وَٱلَّيْلِ إِذْ"
+          ]
+        },
+        {
+          "q": "Feedback should name ...",
+          "a": "the ayah, word and rule",
+          "mins": 1,
+          "options": [
+            "the ayah, word and rule",
+            "only a score"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three levels of pace",
+          "bullets": [],
+          "note": "Bismillah. All are allowed with the rules kept.",
+          "table": {
+            "head": [
+              "Level",
+              "Pace",
+              "Use"
+            ],
+            "rows": [
+              [
+                "Tahqiq",
+                "Slowest, for learning",
+                "Class and correction"
+              ],
+              [
+                "Tadwir",
+                "Middle",
+                "Everyday recitation"
+              ],
+              [
+                "Hadr",
+                "Quickest, rules kept",
+                "Long revision"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The rubric",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Peer rounds",
+          "bullets": [],
+          "note": "Breakout rooms in threes; rotate roles.",
+          "cycle": [
+            "Reciter: a chosen section",
+            "Listener ticks the rubric",
+            "Note-taker writes a strength and a target",
+            "Rotate",
+            "Report one target"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which pace is slowest, used for learning?",
+            "options": [
+              "Tahqiq",
+              "Hadr",
+              "Tadwir"
+            ],
+            "answer": 0,
+            "why": "Tahqiq is the slowest and most careful pace."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "The teacher recites 75:22 to 25 with two errors. Write precise feedback for each.",
+          "a": "For example: '75:22: نَّاضِرَةٌ needs the covered ض'; '75:25: تَظُنُّ needs itbaq on ظ'.",
+          "mins": 4,
+          "model": "I do: I read نَّاضِرَةٌ with an open د sound. Feedback: '75:22: ض is itbaq: cover the roof of the mouth.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Peer rounds in breakout rooms (threes): each pupil recites a section of 74 or 75; the others mark the rubric and write feedback in the portal response box.",
+          "a": "Three completed rubric sheets with precise targets.",
+          "mins": 18,
+          "model": "The teacher and two pupils model one round on the main screen."
+        },
+        {
+          "q": "Extend: practise your target three times and record yourself (voice only) for the teacher.",
+          "a": "A short voice recording.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Hadr is ...",
+          "a": "the quickest pace with rules kept",
+          "mins": 1,
+          "options": [
+            "the quickest pace with rules kept",
+            "reciting with mistakes"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What is the difference between reciting fast and reciting with tarteel?",
+          "a": "Tarteel is measured: every letter, madd and stop is given its right; speed can come later.",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise your target daily; recite one section of 75 at tahqiq pace.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Peer feedback rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Three headsets on desk",
+          "alt": "Headsets for group listening",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 36,
+      "title": "Al-Qiyamah: meaning and reflection",
+      "duration": 50,
+      "bigQuestion": "If you had to explain Al-Qiyamah to a friend in one sentence, what would you say?",
+      "objectives": [
+        "To understand the message of Al-Qiyamah and how its sections build the case for the Resurrection"
+      ],
+      "successCriteria": [
+        "All: name the main sections of Al-Qiyamah",
+        "Most: explain how 75:36 to 40 answer 75:3",
+        "Some: write a reflection linking one ayah to my own choices"
+      ],
+      "smsc": "Spiritual: living with purpose in light of the Hereafter",
+      "keywords": [
+        {
+          "term": "tadabbur (تدبر)",
+          "def": "deep reflection"
+        },
+        {
+          "term": "ba'th (بعث)",
+          "def": "resurrection"
+        },
+        {
+          "term": "suda (سدى)",
+          "def": "without purpose"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had to explain Al-Qiyamah to a friend in one sentence, what would you say?",
+        "a": "The Resurrection is certain: the One who created us from a small beginning will bring us back, so live with purpose."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Does man think that he will be left neglected?' (Al-Qiyamah 75:36).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qiyamah 75:13 in your head. How does the next ayah begin?",
+          "a": "بَلِ ٱلْإِنسَٰنُ",
+          "mins": 1,
+          "options": [
+            "بَلِ ٱلْإِنسَٰنُ",
+            "إِلَىٰ رَبِّكَ",
+            "فَإِذَا بَرِقَ"
+          ]
+        },
+        {
+          "q": "75:16 to 19 teach ...",
+          "a": "listen, then follow",
+          "mins": 1,
+          "options": [
+            "listen, then follow",
+            "hurry"
+          ]
+        },
+        {
+          "q": "Radiant faces will be looking at ...",
+          "a": "their Lord",
+          "mins": 1,
+          "options": [
+            "their Lord",
+            "the sky"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sections",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Ayat",
+              "Theme"
+            ],
+            "rows": [
+              [
+                "75:1-15",
+                "Oaths; the Day; no escape"
+              ],
+              [
+                "75:16-19",
+                "How the Qur'an was taught"
+              ],
+              [
+                "75:20-25",
+                "Loving the immediate; two kinds of faces"
+              ],
+              [
+                "75:26-35",
+                "Death and the denier"
+              ],
+              [
+                "75:36-40",
+                "Purpose and proof of the Resurrection"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tadabbur",
+          "bullets": [
+            "What is Allah telling me?",
+            "What does He want me to do?",
+            "One change this week"
+          ],
+          "note": "Pairs discuss 75:20 to 21."
+        },
+        {
+          "heading": "Key ayat",
+          "bullets": [
+            "Read and reflect"
+          ],
+          "note": "",
+          "quote": {
+            "text": "أَيَحْسَبُ ٱلْإِنسَٰنُ أَن يُتْرَكَ سُدًى (٣٦) أَلَمْ يَكُ نُطْفَةًۭ مِّن مَّنِىٍّۢ يُمْنَىٰ (٣٧) ثُمَّ كَانَ عَلَقَةًۭ فَخَلَقَ فَسَوَّىٰ (٣٨) فَجَعَلَ مِنْهُ ٱلزَّوْجَيْنِ ٱلذَّكَرَ وَٱلْأُنثَىٰٓ (٣٩) أَلَيْسَ ذَٰلِكَ بِقَٰدِرٍ عَلَىٰٓ أَن يُحْۦِىَ ٱلْمَوْتَىٰ (٤٠)",
+            "source": "Surat Al-Qiyamah, 75:36-40"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "How do 75:37 to 40 answer the doubt in 75:3?",
+            "options": [
+              "The One who created us in stages can recreate us",
+              "They change the subject",
+              "They describe the weather"
+            ],
+            "answer": 0,
+            "why": "75:40: 'Is not that [Creator] Able to give life to the dead?'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "In the portal response box, write one sentence on what 75:20 to 21 ask of you. Start: 'These ayat warn me ...'",
+          "a": "For example: 'These ayat warn me not to choose quick pleasures over the Hereafter.'",
+          "mins": 4,
+          "model": "Point: 75:20 to 21 blame loving the immediate. Evidence: 'you love the immediate and leave the Hereafter.' Explain: we often choose what is quick. Link: so I will pray Fajr on time instead of staying up late."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Reflection (Forms long answer): explain how Al-Qiyamah proves the Resurrection, using two ayat as evidence. Start: 'Al-Qiyamah proves ...' Today's rota group finishes any outstanding recitals.",
+          "a": "A paragraph with two cited ayat (for example 75:4 and 75:40) and a clear explanation.",
+          "mins": 14,
+          "model": "The teacher writes the first sentence with the class."
+        },
+        {
+          "q": "Extend: link 75:16 to 19 to the way we learn hifdh.",
+          "a": "Listening first (talaqqi), then following, then explanation: as Allah taught the Prophet ﷺ.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Tadabbur should lead to ...",
+          "a": "action",
+          "mins": 1,
+          "options": [
+            "action",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you had to explain Al-Qiyamah to a friend in one sentence, what would you say?",
+          "a": "The Resurrection is certain: the One who created us from a small beginning will bring us back, so live with purpose.",
+          "mins": 2
+        }
+      ],
+      "homework": "Share your reflection with your family; revise Al-Qiyamah.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Qiyamah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Open book on desk with notebook",
+          "alt": "A notebook for reflection",
+          "for": "teach:2"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 37,
+      "title": "Half-term hifdh check: Al-Qiyamah",
+      "duration": 50,
+      "bigQuestion": "What has helped your hifdh most this half term?",
+      "objectives": [
+        "To understand how well I recite Al-Qiyamah from memory and what my next target is"
+      ],
+      "successCriteria": [
+        "All: recite 75:1 to 19 alone",
+        "Most: recite all of Al-Qiyamah with two prompts or fewer",
+        "Some: score 4 on every rubric row"
+      ],
+      "smsc": "Moral: honest self-assessment and setting targets",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping on a word, with a breath"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What has helped your hifdh most this half term?",
+        "a": "Answers vary: listening first (75:18), sections, daily logging."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «لَآ أُقْسِمُ ...»?",
+          "a": "Al-Qiyamah",
+          "mins": 1,
+          "options": [
+            "Al-Qiyamah",
+            "Al-Insan",
+            "Al-Muddaththir"
+          ]
+        },
+        {
+          "q": "Recite Al-Qiyamah 75:20 in your head. How does the next ayah begin?",
+          "a": "وَتَذَرُونَ ٱلْءَاخِرَةَ",
+          "mins": 1,
+          "options": [
+            "ثُمَّ إِنَّ",
+            "وَتَذَرُونَ ٱلْءَاخِرَةَ",
+            "إِلَىٰ رَبِّهَا"
+          ]
+        },
+        {
+          "q": "Recite Al-Qiyamah 75:39 in your head. How does the next ayah begin?",
+          "a": "أَلَيْسَ ذَٰلِكَ",
+          "mins": 1,
+          "options": [
+            "فَإِذَا بَرِقَ",
+            "أَوْلَىٰ لَكَ",
+            "أَلَيْسَ ذَٰلِكَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Surat Al-Qiyamah 75:1-10",
+          "bullets": [
+            "Recite with me, mics muted"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "لَآ أُقْسِمُ بِيَوْمِ ٱلْقِيَٰمَةِ (١) وَلَآ أُقْسِمُ بِٱلنَّفْسِ ٱللَّوَّامَةِ (٢) أَيَحْسَبُ ٱلْإِنسَٰنُ أَلَّن نَّجْمَعَ عِظَامَهُۥ (٣) بَلَىٰ قَٰدِرِينَ عَلَىٰٓ أَن نُّسَوِّىَ بَنَانَهُۥ (٤) بَلْ يُرِيدُ ٱلْإِنسَٰنُ لِيَفْجُرَ أَمَامَهُۥ (٥) يَسْـَٔلُ أَيَّانَ يَوْمُ ٱلْقِيَٰمَةِ (٦) فَإِذَا بَرِقَ ٱلْبَصَرُ (٧) وَخَسَفَ ٱلْقَمَرُ (٨) وَجُمِعَ ٱلشَّمْسُ وَٱلْقَمَرُ (٩) يَقُولُ ٱلْإِنسَٰنُ يَوْمَئِذٍ أَيْنَ ٱلْمَفَرُّ (١٠)",
+            "source": "Surat Al-Qiyamah, 75:1-10"
+          }
+        },
+        {
+          "heading": "Surat Al-Qiyamah 75:31-40",
+          "bullets": [
+            "Recite with me, mics muted"
+          ],
+          "note": "Continue together.",
+          "quote": {
+            "text": "فَلَا صَدَّقَ وَلَا صَلَّىٰ (٣١) وَلَٰكِن كَذَّبَ وَتَوَلَّىٰ (٣٢) ثُمَّ ذَهَبَ إِلَىٰٓ أَهْلِهِۦ يَتَمَطَّىٰٓ (٣٣) أَوْلَىٰ لَكَ فَأَوْلَىٰ (٣٤) ثُمَّ أَوْلَىٰ لَكَ فَأَوْلَىٰٓ (٣٥) أَيَحْسَبُ ٱلْإِنسَٰنُ أَن يُتْرَكَ سُدًى (٣٦) أَلَمْ يَكُ نُطْفَةًۭ مِّن مَّنِىٍّۢ يُمْنَىٰ (٣٧) ثُمَّ كَانَ عَلَقَةًۭ فَخَلَقَ فَسَوَّىٰ (٣٨) فَجَعَلَ مِنْهُ ٱلزَّوْجَيْنِ ٱلذَّكَرَ وَٱلْأُنثَىٰٓ (٣٩) أَلَيْسَ ذَٰلِكَ بِقَٰدِرٍ عَلَىٰٓ أَن يُحْۦِىَ ٱلْمَوْتَىٰ (٤٠)",
+            "source": "Surat Al-Qiyamah, 75:31-40"
+          }
+        },
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "The rubric for the rota.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«لَآ أُقْسِمُ» (75:1) is ...",
+            "options": [
+              "Munfasil",
+              "Muttasil",
+              "Lazim"
+            ],
+            "answer": 0,
+            "why": "Alif ends لَآ; the hamza starts أُقْسِمُ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation: each pupil recites one ayah of Al-Qiyamah 75:1-40 in register order.",
+          "a": "75:1-40 recited in order by the class.",
+          "mins": 4,
+          "model": "I do: I recite 75:1 with a clean stop; the first name on the register continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Recital rota: today's group recites Al-Qiyamah 75:1-40 to the teacher. Everyone else: 3-3-link the weakest section and log revision.",
+          "a": "Rubric marked with one target for each pupil.",
+          "mins": 15,
+          "model": "The teacher shows how to pick the weakest section from the revision log."
+        },
+        {
+          "q": "Extend: write your target in the portal response box. Start: 'In my next recital I will ...'",
+          "a": "For example: 'In my next recital I will make the saktah in 75:27 without a breath.'",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Your next step is ...",
+          "a": "work on my one target daily",
+          "mins": 1,
+          "options": [
+            "work on my one target daily",
+            "stop revising"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What has helped your hifdh most this half term?",
+          "a": "Answers vary: listening first (75:18), sections, daily logging.",
+          "mins": 2
+        }
+      ],
+      "homework": "Work on your target daily; revise Surahs 74 and 75.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Half-term hifdh check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Check list clipboard",
+          "alt": "A checklist",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Al-Qiyamah, hamzat al-wasl and alif-lam",
+      "n": 38,
+      "title": "Tajweed recitation check: hamzat al-wasl, alif-lam and waqf",
+      "duration": 50,
+      "bigQuestion": "Which rule from this half term do you now apply without thinking?",
+      "objectives": [
+        "To understand how well I apply hamzat al-wasl, alif-lam and waqf when reciting and starting"
+      ],
+      "successCriteria": [
+        "All: start correctly on an al- word",
+        "Most: start correctly on a verb with hamzat al-wasl",
+        "Some: score full marks on the written check"
+      ],
+      "smsc": "Moral: steady effort brings results",
+      "keywords": [
+        {
+          "term": "hamzat al-wasl (همزة الوصل)",
+          "def": "a joining hamza: said only when we start with it, dropped when joined"
+        },
+        {
+          "term": "shamsiyyah (شمسية)",
+          "def": "sun letter: the laam of al- is silent and the next letter doubles"
+        },
+        {
+          "term": "qamariyyah (قمرية)",
+          "def": "moon letter: the laam of al- is said with a sukoon"
+        },
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping on a word, with a breath"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which rule from this half term do you now apply without thinking?",
+        "a": "Answers vary: sun and moon letters, the saktah, starting with hamzat al-wasl."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Starting at «ٱتَّبِعْ» we say ...",
+          "a": "ittabi'",
+          "mins": 1,
+          "options": [
+            "ittabi'",
+            "attabi'"
+          ]
+        },
+        {
+          "q": "«ٱلْقَمَرُ»: laam is ...",
+          "a": "said",
+          "mins": 1,
+          "options": [
+            "said",
+            "silent"
+          ]
+        },
+        {
+          "q": "Saktah in 75:27 is ...",
+          "a": "a silent pause",
+          "mins": 1,
+          "options": [
+            "a silent pause",
+            "a breath"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Surat Al-Qiyamah 75:20-30",
+          "bullets": [
+            "Recite with me, mics muted"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "كَلَّا بَلْ تُحِبُّونَ ٱلْعَاجِلَةَ (٢٠) وَتَذَرُونَ ٱلْءَاخِرَةَ (٢١) وُجُوهٌۭ يَوْمَئِذٍۢ نَّاضِرَةٌ (٢٢) إِلَىٰ رَبِّهَا نَاظِرَةٌۭ (٢٣) وَوُجُوهٌۭ يَوْمَئِذٍۭ بَاسِرَةٌۭ (٢٤) تَظُنُّ أَن يُفْعَلَ بِهَا فَاقِرَةٌۭ (٢٥) كَلَّآ إِذَا بَلَغَتِ ٱلتَّرَاقِىَ (٢٦) وَقِيلَ مَنْ ۜ رَاقٍۢ (٢٧) وَظَنَّ أَنَّهُ ٱلْفِرَاقُ (٢٨) وَٱلْتَفَّتِ ٱلسَّاقُ بِٱلسَّاقِ (٢٩) إِلَىٰ رَبِّكَ يَوْمَئِذٍ ٱلْمَسَاقُ (٣٠)",
+            "source": "Surat Al-Qiyamah, 75:20-30"
+          }
+        },
+        {
+          "heading": "The written check",
+          "bullets": [],
+          "note": "On the pupil PDF: twelve items: start these words, label these laams, read these stops.",
+          "table": {
+            "head": [
+              "Part",
+              "Task"
+            ],
+            "rows": [
+              [
+                "A",
+                "How do you start? (4 words)"
+              ],
+              [
+                "B",
+                "Sun or moon? (4 words)"
+              ],
+              [
+                "C",
+                "How do you stop? (4 ayah ends)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Starting at «ٱلْءَاخِرَةَ» we say ...",
+            "options": [
+              "al-aakhirah",
+              "il-aakhirah",
+              "ul-aakhirah"
+            ],
+            "answer": 0,
+            "why": "Al- always starts with a fathah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation: each pupil recites one ayah of Al-Qiyamah 75:1-40 in register order.",
+          "a": "75:1-40 recited in order by the class.",
+          "mins": 4,
+          "model": "I do: I recite 75:1 with a clean stop; the first name on the register continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Check: today's group recites 75:20 to 40 to the teacher, starting where the teacher says. Everyone else completes the written check on the pupil PDF.",
+          "a": "Rubric and written check marked; one target each.",
+          "mins": 15,
+          "model": "The teacher does part A item 1 aloud."
+        },
+        {
+          "q": "Extend: write your target in the portal response box.",
+          "a": "For example: 'Start verbs with the correct vowel every time.'",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Hamzat al-wasl is dropped ...",
+          "a": "when joined",
+          "mins": 1,
+          "options": [
+            "when joined",
+            "when starting"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Which rule from this half term do you now apply without thinking?",
+          "a": "Answers vary: sun and moon letters, the saktah, starting with hamzat al-wasl.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise Surahs 74 and 75 daily; next half term: Al-Insan.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Tajweed recitation check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Check list clipboard",
+          "alt": "A checklist",
+          "for": "teach:2"
         }
       ]
     }

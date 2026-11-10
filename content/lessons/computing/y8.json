@@ -1528,6 +1528,1231 @@
           "for": "keywords"
         }
       ]
+    },
+    {
+      "unit": "Spring 2: Networks and protocols",
+      "n": 9,
+      "title": "What is a network? LAN, WAN and devices",
+      "duration": 50,
+      "bigQuestion": "Your online lesson travels from your teacher's house to yours. What do you think it passes through on the way?",
+      "objectives": [
+        "To understand what a network is, the difference between a LAN and a WAN, and the devices that connect them"
+      ],
+      "successCriteria": [
+        "All: define a network",
+        "Most: compare a LAN and a WAN",
+        "Some: explain the role of a router, switch and server"
+      ],
+      "crossCurricular": "Geography: global connections (undersea cables)",
+      "smsc": "Social: networks connecting people and communities",
+      "keywords": [
+        {
+          "term": "network",
+          "def": "two or more devices connected to share data"
+        },
+        {
+          "term": "LAN",
+          "def": "local area network: a small area such as a home"
+        },
+        {
+          "term": "WAN",
+          "def": "wide area network: across a large area; the internet is one"
+        },
+        {
+          "term": "router",
+          "def": "a device that sends data between networks"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your online lesson travels from your teacher's house to yours. What do you think it passes through on the way?",
+        "a": "The home router, the internet service provider, many routers across the internet, and your router."
+      },
+      "starter": [
+        {
+          "q": "Binary 1010 in denary is ...",
+          "a": "10",
+          "mins": 1,
+          "options": [
+            "10",
+            "8",
+            "12"
+          ]
+        },
+        {
+          "q": "Give one tip for a strong password (Spring 1).",
+          "a": "Long, three random words.",
+          "mins": 1
+        },
+        {
+          "q": "AND is true when ...",
+          "a": "both inputs are 1",
+          "mins": 1,
+          "options": [
+            "both inputs are 1",
+            "one input is 1"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why network?",
+          "bullets": [
+            "Share files and printers",
+            "Communicate",
+            "Access the internet"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "LAN or WAN?",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "LAN",
+              "points": [
+                "Small area: home, school",
+                "Owned by you",
+                "Fast"
+              ]
+            },
+            "right": {
+              "title": "WAN",
+              "points": [
+                "Large area: countries",
+                "Uses others' infrastructure",
+                "The internet"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Devices",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Device",
+              "Job"
+            ],
+            "rows": [
+              [
+                "Router",
+                "Sends data between networks"
+              ],
+              [
+                "Switch",
+                "Connects devices within a LAN"
+              ],
+              [
+                "Wireless access point",
+                "Lets devices join by Wi-Fi"
+              ],
+              [
+                "Server",
+                "Provides a service, such as web pages"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "The internet is an example of a ...",
+            "options": [
+              "WAN",
+              "LAN",
+              "switch"
+            ],
+            "answer": 0,
+            "why": "It spans the world."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is a school's network a LAN or WAN? Explain.",
+          "a": "A LAN: it covers one site and is owned by the school.",
+          "mins": 4,
+          "model": "I do: area? one building. Owner? the school. So LAN."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Map your home network (pupil PDF): devices, router, how they connect (wired or Wi-Fi), and where the internet comes in.",
+          "a": "A labelled diagram of the home network.",
+          "mins": 15,
+          "model": "The teacher draws a sample home network."
+        },
+        {
+          "q": "Extend: explain why a home network is a LAN but uses a WAN.",
+          "a": "Devices form a LAN; the router connects it to the internet (a WAN).",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: research how undersea cables carry internet traffic between continents.",
+          "a": "A short explanation.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A router ...",
+          "a": "sends data between networks",
+          "mins": 1,
+          "options": [
+            "sends data between networks",
+            "prints documents"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your online lesson travels from your teacher's house to yours. What do you think it passes through on the way?",
+          "a": "The home router, the internet service provider, many routers across the internet, and your router.",
+          "mins": 2
+        }
+      ],
+      "homework": "Count how many devices connect to your home network (with a parent).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (networks; no secondary scheme of work supplied)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Wifi router",
+          "alt": "A home router",
+          "for": "teach:3"
+        },
+        {
+          "find": "Undersea cable map",
+          "alt": "Undersea internet cables",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Networks and protocols",
+      "n": 10,
+      "title": "Protocols: TCP/IP, HTTP and HTTPS",
+      "duration": 50,
+      "bigQuestion": "Two people who speak different languages need rules to talk. How do computers made by different companies talk?",
+      "objectives": [
+        "To understand what protocols are and how TCP/IP, HTTP and HTTPS let computers communicate"
+      ],
+      "successCriteria": [
+        "All: define a protocol",
+        "Most: describe what TCP/IP and HTTP do",
+        "Some: explain why HTTPS is more secure than HTTP"
+      ],
+      "crossCurricular": "English: rules of communication",
+      "smsc": "Moral: honesty and security online",
+      "keywords": [
+        {
+          "term": "protocol",
+          "def": "a set of rules for communication"
+        },
+        {
+          "term": "TCP/IP",
+          "def": "rules for splitting, addressing and sending data across the internet"
+        },
+        {
+          "term": "HTTP",
+          "def": "rules for requesting and sending web pages"
+        },
+        {
+          "term": "HTTPS",
+          "def": "HTTP with encryption"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two people who speak different languages need rules to talk. How do computers made by different companies talk?",
+        "a": "They follow shared protocols: agreed rules everyone uses."
+      },
+      "starter": [
+        {
+          "q": "A LAN covers ...",
+          "a": "a small area",
+          "mins": 1,
+          "options": [
+            "a small area",
+            "the world"
+          ]
+        },
+        {
+          "q": "What does a router do?",
+          "a": "Sends data between networks.",
+          "mins": 1
+        },
+        {
+          "q": "The internet is a ...",
+          "a": "WAN",
+          "mins": 1,
+          "options": [
+            "WAN",
+            "LAN"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Protocols are rules",
+          "bullets": [
+            "Format of data",
+            "Order of messages",
+            "What to do with errors"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Key protocols",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Protocol",
+              "Job"
+            ],
+            "rows": [
+              [
+                "TCP",
+                "Splits data into packets; checks they all arrive"
+              ],
+              [
+                "IP",
+                "Addresses and routes packets"
+              ],
+              [
+                "HTTP",
+                "Requests and sends web pages"
+              ],
+              [
+                "HTTPS",
+                "HTTP encrypted (padlock)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "HTTP vs HTTPS",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "HTTP",
+              "points": [
+                "Readable if intercepted",
+                "No padlock"
+              ]
+            },
+            "right": {
+              "title": "HTTPS",
+              "points": [
+                "Encrypted",
+                "Padlock in the browser"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which should a website use for logins?",
+            "options": [
+              "HTTPS",
+              "HTTP",
+              "Neither"
+            ],
+            "answer": 0,
+            "why": "Encryption protects passwords."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "You see 'http://' on a page asking for your password. What should you do?",
+          "a": "Do not enter it; it is not encrypted; leave the page.",
+          "mins": 4,
+          "model": "I do: check for https and the padlock; if missing, don't type passwords or card details."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Protocol cards (pupil PDF): match six protocols to their jobs and write when each is used in your day.",
+          "a": "Six correct matches with examples.",
+          "mins": 15,
+          "model": "The teacher matches HTTP with 'opening a website'."
+        },
+        {
+          "q": "Extend: why does TCP check packets arrived?",
+          "a": "So missing packets can be resent and data is complete.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: research one email protocol (SMTP or IMAP) and say what it does.",
+          "a": "SMTP sends email; IMAP fetches and syncs email.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A protocol is ...",
+          "a": "a set of rules for communication",
+          "mins": 1,
+          "options": [
+            "a set of rules for communication",
+            "a cable"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Two people who speak different languages need rules to talk. How do computers made by different companies talk?",
+          "a": "They follow shared protocols: agreed rules everyone uses.",
+          "mins": 2
+        }
+      ],
+      "homework": "Check three websites you use for HTTPS (with a parent).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (networks; no secondary scheme of work supplied)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Browser padlock https",
+          "alt": "A browser padlock",
+          "for": "teach:3"
+        },
+        {
+          "find": "Handshake icon",
+          "alt": "A handshake symbol",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Networks and protocols",
+      "n": 11,
+      "title": "Packets and addresses: how data travels",
+      "duration": 50,
+      "bigQuestion": "A large photo is sent as hundreds of small pieces. Why not send it in one piece?",
+      "objectives": [
+        "To understand how data is split into packets with IP addresses and routed across the internet"
+      ],
+      "successCriteria": [
+        "All: describe what a packet contains",
+        "Most: explain packet switching",
+        "Some: explain why packets may take different routes and arrive out of order"
+      ],
+      "crossCurricular": "Maths: counting and ordering",
+      "smsc": "Intellectual: the clever design of the internet",
+      "keywords": [
+        {
+          "term": "packet",
+          "def": "a small chunk of data with a header"
+        },
+        {
+          "term": "IP address",
+          "def": "a number that identifies a device on a network"
+        },
+        {
+          "term": "packet switching",
+          "def": "packets travel separately and are reassembled"
+        },
+        {
+          "term": "header",
+          "def": "addressing information at the front of a packet"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A large photo is sent as hundreds of small pieces. Why not send it in one piece?",
+        "a": "Small packets can take the fastest routes, share the network fairly and be resent if lost."
+      },
+      "starter": [
+        {
+          "q": "HTTPS is ...",
+          "a": "encrypted",
+          "mins": 1,
+          "options": [
+            "encrypted",
+            "slower only"
+          ]
+        },
+        {
+          "q": "What does TCP do?",
+          "a": "Splits data into packets and checks arrival.",
+          "mins": 1
+        },
+        {
+          "q": "A protocol is ...",
+          "a": "a set of rules",
+          "mins": 1,
+          "options": [
+            "a set of rules",
+            "a device"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Inside a packet",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Part",
+              "Contains"
+            ],
+            "rows": [
+              [
+                "Header",
+                "Source and destination IP addresses, packet number"
+              ],
+              [
+                "Payload",
+                "A piece of the data"
+              ],
+              [
+                "Trailer",
+                "Error check"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Packet switching",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Split data into packets",
+            "Number each packet",
+            "Routers send each the best way",
+            "Packets arrive (any order)",
+            "Reassemble by number"
+          ]
+        },
+        {
+          "heading": "IP addresses",
+          "bullets": [
+            "IPv4: four numbers 0 to 255, e.g. 192.168.1.10",
+            "Each device on a network has one",
+            "Routers read them to forward packets"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "How does the receiver put packets in order?",
+            "options": [
+              "Using the packet numbers in the headers",
+              "They always arrive in order",
+              "By guessing"
+            ],
+            "answer": 0,
+            "why": "Sequence numbers in headers."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Packets arrive in the order 3, 1, 4, 2. What does the receiver do?",
+          "a": "Reorders them 1, 2, 3, 4 using their numbers.",
+          "mins": 4,
+          "model": "I do: read the packet numbers in the headers and sort them."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Unplugged simulation (pupil PDF): split a 12-word sentence into 4 packets with headers, 'route' them in a shuffled order, then reassemble.",
+          "a": "Correct packets with headers, reassembled in order.",
+          "mins": 15,
+          "model": "The teacher makes packet 1 with its header."
+        },
+        {
+          "q": "Extend: what happens if packet 2 never arrives?",
+          "a": "TCP requests it again.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: is 192.168.300.1 a valid IPv4 address? Why?",
+          "a": "No: 300 is greater than 255.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Packet switching means ...",
+          "a": "packets travel separately",
+          "mins": 1,
+          "options": [
+            "packets travel separately",
+            "one big file at once"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A large photo is sent as hundreds of small pieces. Why not send it in one piece?",
+          "a": "Small packets can take the fastest routes, share the network fairly and be resent if lost.",
+          "mins": 2
+        }
+      ],
+      "homework": "Explain packets to someone at home using a jigsaw puzzle example.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (networks; no secondary scheme of work supplied)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Packet cards (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Envelopes stacked",
+          "alt": "Envelopes like packets",
+          "for": "hook"
+        },
+        {
+          "find": "Jigsaw puzzle pieces",
+          "alt": "Jigsaw pieces",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Networks and protocols",
+      "n": 12,
+      "title": "The web: browsers, web servers and URLs",
+      "duration": 50,
+      "bigQuestion": "Is the internet the same thing as the World Wide Web?",
+      "objectives": [
+        "To understand how a browser requests a web page from a web server using a URL and DNS"
+      ],
+      "successCriteria": [
+        "All: label the parts of a URL",
+        "Most: describe the request and response between browser and server",
+        "Some: explain what DNS does"
+      ],
+      "crossCurricular": "English: reading and evaluating websites",
+      "smsc": "Moral: thinking before we click",
+      "keywords": [
+        {
+          "term": "URL",
+          "def": "a web address"
+        },
+        {
+          "term": "browser",
+          "def": "software that requests and shows web pages"
+        },
+        {
+          "term": "web server",
+          "def": "a computer that stores and sends web pages"
+        },
+        {
+          "term": "DNS",
+          "def": "domain name system: turns names into IP addresses"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is the internet the same thing as the World Wide Web?",
+        "a": "No: the internet is the network; the web is one service that runs on it, like email is another."
+      },
+      "starter": [
+        {
+          "q": "A packet header contains ...",
+          "a": "addresses",
+          "mins": 1,
+          "options": [
+            "addresses",
+            "the whole file"
+          ]
+        },
+        {
+          "q": "Is 192.168.1.10 a valid IPv4 address?",
+          "a": "Yes.",
+          "mins": 1
+        },
+        {
+          "q": "Packets are reassembled using ...",
+          "a": "numbers in headers",
+          "mins": 1,
+          "options": [
+            "numbers in headers",
+            "luck"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Parts of a URL",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Part",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Protocol",
+                "https://"
+              ],
+              [
+                "Domain",
+                "www.example.com"
+              ],
+              [
+                "Path",
+                "/lessons/networks"
+              ],
+              [
+                "Page",
+                "index.html"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Request and response",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Type the URL",
+            "DNS finds the IP address",
+            "Browser sends an HTTP request",
+            "Server sends the page",
+            "Browser displays it"
+          ]
+        },
+        {
+          "heading": "Internet vs web",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Internet",
+              "points": [
+                "The network of networks",
+                "Hardware and protocols"
+              ]
+            },
+            "right": {
+              "title": "World Wide Web",
+              "points": [
+                "Web pages and links",
+                "A service on the internet"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "DNS turns ...",
+            "options": [
+              "domain names into IP addresses",
+              "pictures into text",
+              "LANs into WANs"
+            ],
+            "answer": 0,
+            "why": "Like a phone book for the internet."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Label: https://www.bbc.co.uk/news",
+          "a": "Protocol https; domain www.bbc.co.uk; path /news.",
+          "mins": 4,
+          "model": "I do: before :// is the protocol; up to the first / is the domain; the rest is the path."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Flow diagram (pupil PDF): draw what happens from typing a URL to seeing the page, in six labelled steps.",
+          "a": "A correct six-step diagram.",
+          "mins": 15,
+          "model": "The teacher draws steps 1 and 2."
+        },
+        {
+          "q": "Extend: name two other internet services that are not the web.",
+          "a": "Email; online gaming; video calls.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: explain why a fake URL like 'paypa1.com' is dangerous.",
+          "a": "It imitates a real domain to trick people (phishing).",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A web server ...",
+          "a": "stores and sends web pages",
+          "mins": 1,
+          "options": [
+            "stores and sends web pages",
+            "is a browser"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is the internet the same thing as the World Wide Web?",
+          "a": "No: the internet is the network; the web is one service that runs on it, like email is another.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find the protocol, domain and path of three URLs you use.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (networks; no secondary scheme of work supplied)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Server room racks",
+          "alt": "Web servers",
+          "for": "teach:2"
+        },
+        {
+          "find": "Web browser address bar",
+          "alt": "A browser address bar",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Networks and protocols",
+      "n": 13,
+      "title": "Network security: passwords and threats",
+      "duration": 50,
+      "bigQuestion": "Which is the weakest part of most networks: the hardware, the software or the people?",
+      "objectives": [
+        "To understand common network threats and how to protect against them"
+      ],
+      "successCriteria": [
+        "All: name three threats",
+        "Most: match each threat to a protection",
+        "Some: explain how a firewall and two-factor authentication work"
+      ],
+      "crossCurricular": "PSHE: staying safe online",
+      "smsc": "Moral: trustworthiness (amanah) with data",
+      "keywords": [
+        {
+          "term": "malware",
+          "def": "software designed to cause harm"
+        },
+        {
+          "term": "phishing",
+          "def": "fake messages that trick people into giving information"
+        },
+        {
+          "term": "firewall",
+          "def": "a barrier that checks and blocks network traffic"
+        },
+        {
+          "term": "two-factor authentication",
+          "def": "a second check when logging in"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is the weakest part of most networks: the hardware, the software or the people?",
+        "a": "Often the people: tricks like phishing target trust, not technology."
+      },
+      "islamicLink": {
+        "text": "Islam teaches us to keep trusts (amanah) and to protect others' rights. Keeping passwords and others' data safe is part of being trustworthy.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "DNS turns ...",
+          "a": "names into IP addresses",
+          "mins": 1,
+          "options": [
+            "names into IP addresses",
+            "IP into pictures"
+          ]
+        },
+        {
+          "q": "Label the domain in https://www.example.com/page.",
+          "a": "www.example.com",
+          "mins": 1
+        },
+        {
+          "q": "The web is ...",
+          "a": "a service on the internet",
+          "mins": 1,
+          "options": [
+            "a service on the internet",
+            "the same as the internet"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Threats",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Threat",
+              "What it does"
+            ],
+            "rows": [
+              [
+                "Malware (virus, ransomware)",
+                "Damages or locks files"
+              ],
+              [
+                "Phishing",
+                "Tricks you into giving details"
+              ],
+              [
+                "Weak passwords",
+                "Easy to guess"
+              ],
+              [
+                "Unsecured Wi-Fi",
+                "Others can intercept data"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Protections",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Strong, unique passwords",
+            "Two-factor authentication",
+            "Anti-malware and updates",
+            "Firewall",
+            "Think before you click"
+          ]
+        },
+        {
+          "heading": "Spot the phish",
+          "bullets": [
+            "Urgent tone",
+            "Odd sender address",
+            "Links that don't match",
+            "Requests for passwords"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "An email says 'Your account will close in 1 hour! Click here.' It is probably ...",
+            "options": [
+              "phishing",
+              "a real warning",
+              "a firewall"
+            ],
+            "answer": 0,
+            "why": "Urgency plus a link is a classic phishing sign."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Match: ransomware, phishing, weak password to a protection each.",
+          "a": "Ransomware: backups and anti-malware; phishing: check sender, don't click; weak password: passphrase and 2FA.",
+          "mins": 4,
+          "model": "I do: threat, then the best defence: phishing → check sender and links."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Security poster (pupil PDF): four threats and four protections for your family, in plain English.",
+          "a": "A clear poster with four pairs.",
+          "mins": 15,
+          "model": "The teacher makes the first pair."
+        },
+        {
+          "q": "Extend: explain how a firewall decides what to block.",
+          "a": "It checks traffic against rules (allowed ports, addresses).",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why do updates matter for security?",
+          "a": "They fix vulnerabilities attackers could use.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Two-factor authentication adds ...",
+          "a": "a second check",
+          "mins": 1,
+          "options": [
+            "a second check",
+            "a second screen"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Which is the weakest part of most networks: the hardware, the software or the people?",
+          "a": "Often the people: tricks like phishing target trust, not technology.",
+          "mins": 2
+        }
+      ],
+      "homework": "Turn on 2FA for one account with a parent.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (networks; no secondary scheme of work supplied)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Padlock on laptop",
+          "alt": "A padlock on a laptop",
+          "for": "hook"
+        },
+        {
+          "find": "Phishing email warning",
+          "alt": "A suspicious email",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Networks and protocols",
+      "n": 14,
+      "title": "Revision and assessment: networks",
+      "duration": 50,
+      "bigQuestion": "What is the difference between knowing a fact and understanding it?",
+      "objectives": [
+        "To understand how secure my knowledge of networks is and fix gaps"
+      ],
+      "successCriteria": [
+        "All: answer recall questions on networks",
+        "Most: explain processes (packets, DNS) in sequence",
+        "Some: apply knowledge to a new scenario"
+      ],
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "recall",
+          "def": "remember facts"
+        },
+        {
+          "term": "explain",
+          "def": "give reasons and sequence"
+        },
+        {
+          "term": "apply",
+          "def": "use knowledge in a new situation"
+        },
+        {
+          "term": "gap",
+          "def": "something not yet secure"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the difference between knowing a fact and understanding it?",
+        "a": "Understanding means you can explain why and apply it to something new."
+      },
+      "starter": [
+        {
+          "q": "Phishing is ...",
+          "a": "a trick message",
+          "mins": 1,
+          "options": [
+            "a trick message",
+            "a firewall"
+          ]
+        },
+        {
+          "q": "Name a protection against malware.",
+          "a": "Anti-malware software; updates.",
+          "mins": 1
+        },
+        {
+          "q": "A firewall ...",
+          "a": "blocks unwanted traffic",
+          "mins": 1,
+          "options": [
+            "blocks unwanted traffic",
+            "speeds up Wi-Fi"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Unit map",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Networks",
+            "items": [
+              "LAN and WAN",
+              "Devices",
+              "Protocols",
+              "Packets and IP",
+              "The web and DNS",
+              "Security"
+            ]
+          }
+        },
+        {
+          "heading": "Explain in sequence",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Type URL",
+            "DNS lookup",
+            "HTTP request",
+            "Packets travel",
+            "Page reassembled and shown"
+          ]
+        },
+        {
+          "heading": "The portal quiz",
+          "bullets": [
+            "15 questions",
+            "Recall, explain, apply",
+            "Self-mark, then fix gaps"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which happens first when you open a website?",
+            "options": [
+              "DNS finds the IP address",
+              "The page is displayed",
+              "Packets are reassembled"
+            ],
+            "answer": 0,
+            "why": "DNS lookup comes first."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Apply: a school wants its two buildings across town to share files. LAN or WAN, and which devices?",
+          "a": "A WAN connecting two LANs, using routers (and possibly a leased line or VPN).",
+          "mins": 4,
+          "model": "I do: two sites far apart: WAN between them; each building has a LAN with switches; routers link them."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Take the 15-question networks quiz in the portal, then write your top two gaps and how you'll fix them.",
+          "a": "Quiz score and a gap plan.",
+          "mins": 15,
+          "model": "The teacher models answering one explain question."
+        },
+        {
+          "q": "Extend: make five flashcards on your gaps.",
+          "a": "Five flashcards.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: explain packet switching to a Year 6 pupil in under 60 words.",
+          "a": "A clear, accurate explanation.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Applying knowledge means ...",
+          "a": "using it in a new situation",
+          "mins": 1,
+          "options": [
+            "using it in a new situation",
+            "copying notes"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What is the difference between knowing a fact and understanding it?",
+          "a": "Understanding means you can explain why and apply it to something new.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise your two gaps with flashcards.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (networks; no secondary scheme of work supplied)",
+        "Portal networks quiz (15 questions)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Network diagram",
+          "alt": "A network diagram",
+          "for": "teach:1"
+        },
+        {
+          "find": "Checklist",
+          "alt": "A checklist",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
