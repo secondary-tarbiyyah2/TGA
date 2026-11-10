@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y5",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 5: number and place value to 1,000,000, negative numbers, Roman numerals, addition and subtraction, multiples, factors, primes, squares and cubes); sequencing checked against the school's Drive Maths folder (Primary national curriculum material; no Y5-specific scheme found, so lessons written from the National Curriculum); Spring 1 founding year: White Rose Maths Year 5 small-step titles (bridge from Autumn blocks 1-4, then Spring blocks 1 Multiplication and division B and 2 Fractions B), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 5 Spring blocks 3 Decimals and percentages, 4 Perimeter and area and 5 Statistics (small-step titles only); Summer 1 founding year: White Rose Maths Year 5 Summer blocks Shape, Position and direction and Decimals (small-step titles only)",
+  "source": "National Curriculum (KS2 Year 5: number and place value to 1,000,000, negative numbers, Roman numerals, addition and subtraction, multiples, factors, primes, squares and cubes); sequencing checked against the school's Drive Maths folder (Primary national curriculum material; no Y5-specific scheme found, so lessons written from the National Curriculum); Spring 1 founding year: White Rose Maths Year 5 small-step titles (bridge from Autumn blocks 1-4, then Spring blocks 1 Multiplication and division B and 2 Fractions B), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 5 Spring blocks 3 Decimals and percentages, 4 Perimeter and area and 5 Statistics (small-step titles only); Summer 1 founding year: White Rose Maths Year 5 Summer blocks Shape, Position and direction and Decimals (small-step titles only) | Summer 2 founding year (14 Jun to 9 Jul 2027): White Rose Maths Year 5 Summer blocks Decimals, Negative numbers, Converting units and Volume (small-step titles only), unit weeks 1, 2, 3 and 5 as the Year 5 plan says, lesson 5 upgraded for negative numbers, and the end-of-year arithmetic and reasoning papers in the last two lessons of the week of 5 Jul",
   "lessons": [
     {
       "unit": "Spring 1: Multiplication and division B; fractions B",
@@ -747,88 +747,223 @@
       ]
     },
     {
-      "unit": "Unit 1: Place value to 1,000,000",
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
       "n": 5,
-      "title": "Negative numbers in context",
+      "title": "Negative numbers: count through zero",
       "duration": 45,
+      "bigQuestion": "What comes before zero?",
       "objectives": [
-        "Order positive and negative numbers",
-        "Calculate intervals across zero"
+        "To understand how to count forwards and backwards through zero with negative numbers"
       ],
+      "successCriteria": [
+        "All: read negative numbers on a number line and a thermometer",
+        "Most: count back through zero",
+        "Some: count forwards from a negative number"
+      ],
+      "crossCurricular": "Geography: temperatures below freezing",
       "keywords": [
         {
           "term": "negative number",
-          "def": "a number below zero, written with a minus sign"
+          "def": "a number less than zero, written with a minus sign"
         },
         {
-          "term": "interval",
-          "def": "the distance between two numbers"
+          "term": "positive number",
+          "def": "a number greater than zero"
         },
         {
-          "term": "temperature",
-          "def": "how hot or cold something is, in degrees Celsius"
+          "term": "zero",
+          "def": "neither positive nor negative"
+        },
+        {
+          "term": "degrees Celsius",
+          "def": "°C: how we measure temperature"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "It is 3 °C and the temperature falls 5 degrees overnight. What will the thermometer show?",
+        "a": "-2 °C: 3 down to 0 is 3, then 2 more below zero."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "thermometer below zero",
+          "alt": "A thermometer showing below zero",
+          "for": "hook"
+        },
+        {
+          "find": "lift buttons basement",
+          "alt": "Lift buttons with basement floors",
+          "for": "keywords"
         }
       ],
       "starter": [
-        "Say Bismillah. Count back from 5 to -5.",
-        "Which is warmer: -3 degrees or 2 degrees?",
-        "What is 12 - 7?"
+        {
+          "q": "Count back from 5 to 0.",
+          "a": "5, 4, 3, 2, 1, 0",
+          "mins": 1
+        },
+        {
+          "q": "12 - 7 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "0.45 × 10 = ?",
+          "a": "4.5",
+          "mins": 1
+        },
+        {
+          "q": "6 × 9 = ?",
+          "a": "54",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Numbers below zero",
+          "heading": "Below zero",
           "bullets": [
-            "Negative numbers are less than zero.",
-            "Seen on thermometers, lifts and bank statements.",
-            "-5 is further from zero than -2."
+            "Numbers less than 0 are negative.",
+            "We see them on thermometers and lift buttons."
           ],
-          "note": "Show a vertical thermometer. Ask for other places negatives appear (basement floors, overdrafts, golf scores, depth below sea level)."
+          "numberline": {
+            "min": -5,
+            "max": 5,
+            "step": 1,
+            "marks": [
+              {
+                "at": -5,
+                "label": "-5"
+              },
+              {
+                "at": 0,
+                "label": "0"
+              },
+              {
+                "at": 5,
+                "label": "5"
+              }
+            ]
+          },
+          "note": "Show a thermometer."
         },
         {
-          "heading": "Ordering on the number line",
+          "heading": "Count back through zero",
           "bullets": [
-            "Numbers increase as you move right.",
-            "-6 < -2 < 0 < 3.",
-            "The further below zero, the smaller the number."
+            "4, 3, 2, 1, 0, -1, -2 ...",
+            "Jump to zero first."
           ],
-          "note": "Misconception: -9 is bigger than -2 because 9 is bigger than 2. Use temperatures: -9 degrees is colder than -2 degrees."
+          "model": {
+            "problem": "Start at 4 and count back 7.",
+            "steps": [
+              "4 back to 0 is 4 jumps.",
+              "3 more jumps: -1, -2, -3."
+            ],
+            "answer": "-3"
+          },
+          "note": "Model."
         },
         {
-          "heading": "Counting through zero",
+          "heading": "Count forwards from negative",
           "bullets": [
-            "5 down 8: 4, 3, 2, 1, 0, -1, -2, -3.",
-            "So 5 - 8 = -3.",
-            "-6 up 9: the answer is 3."
+            "From -6 to 0 is 6 jumps.",
+            "Then keep going."
           ],
-          "note": "Use a number line and jump to zero first, then continue. Model: -6 to 0 is 6, then 3 more makes 9, so we land on 3."
+          "model": {
+            "problem": "Start at -6 and count on 9.",
+            "steps": [
+              "-6 to 0: 6 jumps.",
+              "3 more: 1, 2, 3."
+            ],
+            "answer": "3"
+          },
+          "note": "Model."
         },
         {
-          "heading": "Finding the difference",
-          "bullets": [
-            "From -5 to 8: jump 5 to zero, then 8.",
-            "5 + 8 = 13 degrees difference.",
-            "From 21 down to -3 is 24."
-          ],
-          "note": "Emphasise: add the two distances when crossing zero. Context question: Cairo reaches 21 degrees in the day and a hilltop at night is -3 degrees. What is the difference?"
+          "heading": "Hinge",
+          "check": {
+            "q": "Start at 2. Count back 5.",
+            "options": [
+              "-3",
+              "3",
+              "-7"
+            ],
+            "answer": 0,
+            "why": "2 to 0 is 2 jumps, then 3 more: -3."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
         }
       ],
       "practice": [
-        "Order from smallest: 4, -7, 0, -2, 6.",
-        "The temperature is -4 degrees and rises by 9 degrees. What is it now?",
-        "What is the difference between -12 degrees and 15 degrees?"
+        {
+          "q": "Start at 1, back 4?",
+          "a": "-3",
+          "mins": 2,
+          "model": "Teacher: 1 to 0 is 1 jump, then 3 more: -3."
+        },
+        {
+          "q": "Start at -5, on 8?",
+          "a": "3",
+          "mins": 2
+        },
+        {
+          "q": "Start at -2, back 3?",
+          "a": "-5",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Put in ascending order: -15, 8, -3, 0, -20, 11.",
-        "Find the missing number: -6 + ? = 4; 3 - ? = -5; ? - 7 = -2.",
-        "A diver is at -35 m, then rises 23 m. Where is the diver now? Then dives 18 m. Where now?",
-        "Five day temperatures were -3, 5, -8, 2, -1 degrees. Find the range (highest minus lowest)."
+        {
+          "q": "Core: Count back 6 from 3; on 7 from -4; back 10 from 5.",
+          "a": "-3; 3; -5",
+          "mins": 4,
+          "model": "Teacher does back 6 from 3 on the number line."
+        },
+        {
+          "q": "Extend: Continue: 8, 5, 2, __, __, __",
+          "a": "-1, -4, -7",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: The temperature is -4 °C and rises 9 degrees, then falls 7. What is it now?",
+          "a": "-2 °C",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Which is smaller: -9 or -3?",
-        "The temperature falls from 4 degrees to -6 degrees. By how much did it fall?"
+        {
+          "q": "3 back 5 is...",
+          "a": "A) -2",
+          "mins": 2,
+          "options": [
+            "-2",
+            "2",
+            "-8"
+          ]
+        },
+        {
+          "q": "Big question: what comes before zero?",
+          "a": "Negative numbers: -1, -2, -3 ...",
+          "mins": 3
+        }
       ],
-      "homework": "Record or research the temperatures in three cold places, then order them and find the difference between the coldest and warmest.",
-      "send": "SEND: vertical number line / thermometer. EAL: pre-teach below zero, rise, fall. Stretch: calculate with decimals such as -2.5."
+      "homework": "Find a thermometer, weather app or lift with negative numbers and note what you see.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: count back in 3s from 10 to below -10. (10, 7, 4, 1, -2, -5, -8, -11)",
+      "resources": [
+        "White Rose Maths Year 5, Negative numbers block: small step 'Understand negative numbers' (Summer 2, essential week 2) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable number line -20 to 20",
+        "A thermometer (household) or a weather app",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 5 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 1: Place value to 1,000,000",
@@ -15911,6 +16046,3915 @@
         "Paper number line 0 to 1 in tenths",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 5 maths lesson 80 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 81,
+      "title": "Add decimals crossing the whole",
+      "duration": 45,
+      "bigQuestion": "What happens when the tenths add up to more than 10?",
+      "objectives": [
+        "To understand how to add decimals with exchanges across the ones"
+      ],
+      "successCriteria": [
+        "All: add tenths that cross 1",
+        "Most: use column addition with 2 decimal places",
+        "Some: check with an estimate"
+      ],
+      "keywords": [
+        {
+          "term": "decimal point",
+          "def": "separates the ones from the tenths"
+        },
+        {
+          "term": "tenth",
+          "def": "one part of ten equal parts: 0.1"
+        },
+        {
+          "term": "hundredth",
+          "def": "one part of a hundred: 0.01"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 10 of one place for 1 of the next"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "0.8 + 0.7: is the answer more or less than 1? How do you know?",
+        "a": "More: 0.8 needs only 0.2 to make 1, and 0.7 is more than 0.2. It is 1.5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "place value counters",
+          "alt": "Place value counters",
+          "for": "teach:1"
+        },
+        {
+          "find": "coins in a hand",
+          "alt": "Coins: pounds and pence",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.37 + ? = 1",
+          "a": "0.63",
+          "mins": 1
+        },
+        {
+          "q": "0.6 + 0.4 = ?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "0.25 + 0.5 = ?",
+          "a": "0.75",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "10 tenths make 1",
+          "bullets": [
+            "0.8 + 0.7 = 15 tenths.",
+            "15 tenths = 1.5."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 2,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 0.8,
+                "label": "0.8"
+              },
+              {
+                "at": 1,
+                "label": "1"
+              },
+              {
+                "at": 1.5,
+                "label": "1.5"
+              }
+            ]
+          },
+          "note": "Use place value counters."
+        },
+        {
+          "heading": "Line up the points",
+          "bullets": [
+            "Ones under ones, tenths under tenths.",
+            "Exchange 10 hundredths for 1 tenth."
+          ],
+          "model": {
+            "problem": "2.65 + 1.48",
+            "steps": [
+              "Hundredths: 5 + 8 = 13: write 3, exchange 1.",
+              "Tenths: 6 + 4 + 1 = 11: write 1, exchange 1.",
+              "Ones: 2 + 1 + 1 = 4."
+            ],
+            "answer": "4.13"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Estimate first",
+          "bullets": [
+            "2.65 is about 3; 1.48 is about 1.5.",
+            "So about 4.5: 4.13 is sensible."
+          ],
+          "misconception": {
+            "wrong": "2.65 + 1.48 = 3.13",
+            "right": "Remember the exchanged one: 4.13."
+          },
+          "note": "Estimation catches place value slips."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3.47 + 2.86 =",
+            "options": [
+              "6.33",
+              "5.33",
+              "6.23"
+            ],
+            "answer": 0,
+            "why": "7 + 6 = 13, 4 + 8 + 1 = 13, 3 + 2 + 1 = 6."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1.6 + 0.9",
+          "a": "2.5",
+          "mins": 2,
+          "model": "Teacher: 6 tenths + 9 tenths = 15 tenths = 1.5; 1 + 1.5 = 2.5."
+        },
+        {
+          "q": "4.75 + 2.38",
+          "a": "7.13",
+          "mins": 2
+        },
+        {
+          "q": "0.99 + 0.02",
+          "a": "1.01",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 3.56 + 2.78; 5.09 + 1.95; 0.87 + 0.46",
+          "a": "6.34; 7.04; 1.33",
+          "mins": 4,
+          "model": "Teacher works 3.56 + 2.78: 6 + 8 = 14, 5 + 7 + 1 = 13, 3 + 2 + 1 = 6: 6.34."
+        },
+        {
+          "q": "Extend: A bag of flour is 1.75 kg and a bag of sugar 0.85 kg. Total mass?",
+          "a": "2.6 kg",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find two numbers with 2 decimal places that add to exactly 5.",
+          "a": "For example 2.37 + 2.63",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.9 + 0.6 =",
+          "a": "A) 1.5",
+          "mins": 2,
+          "options": [
+            "1.5",
+            "0.15",
+            "15"
+          ]
+        },
+        {
+          "q": "Big question: what happens when tenths add to more than 10?",
+          "a": "Exchange 10 tenths for 1 one.",
+          "mins": 3
+        }
+      ],
+      "homework": "Add the prices of 3 items from a receipt or shop leaflet, then check with an estimate.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what must be added to 3.47 to make 10? (6.53)",
+      "resources": [
+        "White Rose Maths Year 5, Decimals block: small step 'Add decimals crossing the whole' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters (printable) or coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 81 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 82,
+      "title": "Add and subtract decimals with different numbers of places",
+      "duration": 45,
+      "bigQuestion": "Why do we line up the decimal points?",
+      "objectives": [
+        "To understand how to add and subtract decimals with different numbers of decimal places"
+      ],
+      "successCriteria": [
+        "All: line up decimal points and fill empty places with zeros",
+        "Most: subtract with exchange",
+        "Some: subtract a decimal from a whole number"
+      ],
+      "keywords": [
+        {
+          "term": "decimal place",
+          "def": "a place after the decimal point"
+        },
+        {
+          "term": "placeholder",
+          "def": "a zero that keeps digits in the right place"
+        },
+        {
+          "term": "difference",
+          "def": "the result of a subtraction"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 1 of a place for 10 of the next place down"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 6.4 - 2.35 the same as 6.40 - 2.35? Why?",
+        "a": "Yes: 6.4 and 6.40 are equal; the zero just fills the hundredths place."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "measuring tape metres",
+          "alt": "A tape measure",
+          "for": "hook"
+        },
+        {
+          "find": "receipt from a shop",
+          "alt": "A receipt",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2.65 + 1.48 = ?",
+          "a": "4.13",
+          "mins": 1
+        },
+        {
+          "q": "1 - 0.35 = ?",
+          "a": "0.65",
+          "mins": 1
+        },
+        {
+          "q": "9 × 6 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "Is 6.4 = 6.40?",
+          "a": "yes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Line up the points",
+          "bullets": [
+            "Write 6.4 as 6.40.",
+            "Now every column has a digit."
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "6",
+                ".",
+                "4",
+                "0"
+              ],
+              [
+                "2",
+                ".",
+                "3",
+                "5"
+              ]
+            ]
+          },
+          "note": "Model the layout."
+        },
+        {
+          "heading": "Subtract with exchange",
+          "bullets": [
+            "0 - 5: exchange a tenth."
+          ],
+          "model": {
+            "problem": "6.4 - 2.35",
+            "steps": [
+              "6.40 - 2.35.",
+              "Hundredths: exchange 1 tenth: 10 - 5 = 5.",
+              "Tenths: 3 - 3 = 0. Ones: 6 - 2 = 4."
+            ],
+            "answer": "4.05"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "From a whole number",
+          "bullets": [
+            "10 = 10.00.",
+            "Count on or use columns."
+          ],
+          "model": {
+            "problem": "10 - 3.62",
+            "steps": [
+              "Count on 3.62 to 4: 0.38.",
+              "4 to 10: 6.",
+              "6 + 0.38."
+            ],
+            "answer": "6.38"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "4.2 + 3.85 =",
+            "options": [
+              "8.05",
+              "7.105",
+              "8.5"
+            ],
+            "answer": 0,
+            "why": "4.20 + 3.85 = 8.05."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3.5 + 1.27",
+          "a": "4.77",
+          "mins": 2,
+          "model": "Teacher writes 3.50 + 1.27: 0 + 7 = 7, 5 + 2 = 7, 3 + 1 = 4: 4.77."
+        },
+        {
+          "q": "7.1 - 2.46",
+          "a": "4.64",
+          "mins": 2
+        },
+        {
+          "q": "5 - 1.75",
+          "a": "3.25",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 8.3 + 2.67; 9.5 - 4.28; 12 - 5.45",
+          "a": "10.97; 5.22; 6.55",
+          "mins": 4,
+          "model": "Teacher works 8.30 + 2.67 = 10.97."
+        },
+        {
+          "q": "Extend: A 2.5 m plank has 0.75 m and 1.2 m cut off. How much is left?",
+          "a": "2.5 - 1.95 = 0.55 m",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write a subtraction of two decimals with different places whose answer is 1.09.",
+          "a": "For example 3.5 - 2.41",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "6.4 - 2.35 =",
+          "a": "A) 4.05",
+          "mins": 2,
+          "options": [
+            "4.05",
+            "4.15",
+            "3.05"
+          ]
+        },
+        {
+          "q": "Big question: why line up the points?",
+          "a": "So each digit is added to or taken from the same place value.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 2 prices, one with pence and one whole pounds, and work out the difference.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how much change from £20 for items costing £7.85 and £4.60? (£20 - £12.45 = £7.55)",
+      "resources": [
+        "White Rose Maths Year 5, Decimals block: small steps 'Add decimals with the same number of decimal places' to 'Subtract decimals with different numbers of decimal places' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value grid (printable)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 82 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 83,
+      "title": "Multiply decimals by 10, 100 and 1,000",
+      "duration": 45,
+      "bigQuestion": "Does the decimal point really move?",
+      "objectives": [
+        "To understand how multiplying by 10, 100 and 1,000 changes the value of each digit"
+      ],
+      "successCriteria": [
+        "All: multiply a decimal by 10",
+        "Most: multiply decimals by 100 and 1,000",
+        "Some: use multiplying by 10, 100 and 1,000 in measures"
+      ],
+      "keywords": [
+        {
+          "term": "place value",
+          "def": "the value of a digit from its place"
+        },
+        {
+          "term": "ten times bigger",
+          "def": "each digit moves one place left"
+        },
+        {
+          "term": "placeholder",
+          "def": "a zero that keeps a place"
+        },
+        {
+          "term": "multiply",
+          "def": "make groups of"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Someone says 'to multiply by 10, add a zero'. Is 3.4 × 10 = 3.40?",
+        "a": "No: 3.40 is the same as 3.4. The digits move one place left: 34."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "place value chart",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "metre stick",
+          "alt": "A metre stick",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "4.2 + 3.85 = ?",
+          "a": "8.05",
+          "mins": 1
+        },
+        {
+          "q": "45 × 10 = ?",
+          "a": "450",
+          "mins": 1
+        },
+        {
+          "q": "6 × 100 = ?",
+          "a": "600",
+          "mins": 1
+        },
+        {
+          "q": "8 × 7 = ?",
+          "a": "56",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Digits move left",
+          "bullets": [
+            "× 10: one place.",
+            "× 100: two places.",
+            "× 1,000: three places."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "× 10",
+              "× 100",
+              "× 1,000"
+            ],
+            "rows": [
+              [
+                "3.45",
+                "34.5",
+                "345",
+                "3,450"
+              ],
+              [
+                "0.072",
+                "0.72",
+                "7.2",
+                "72"
+              ]
+            ]
+          },
+          "note": "Model with a place value chart."
+        },
+        {
+          "heading": "The point stays still",
+          "bullets": [
+            "The digits move, not the point."
+          ],
+          "misconception": {
+            "wrong": "3.4 × 10 = 3.40",
+            "right": "3.4 × 10 = 34: each digit is worth 10 times more."
+          },
+          "note": "Slide digits on the chart."
+        },
+        {
+          "heading": "In measures",
+          "bullets": [
+            "1 m = 100 cm, so 1.35 m = 135 cm."
+          ],
+          "model": {
+            "problem": "A ribbon is 0.25 m. How many cm?",
+            "steps": [
+              "Multiply by 100.",
+              "0.25 × 100: digits move 2 places left."
+            ],
+            "answer": "25 cm"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "0.06 × 100 =",
+            "options": [
+              "6",
+              "0.6",
+              "60"
+            ],
+            "answer": 0,
+            "why": "Two places left: 6."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2.7 × 10",
+          "a": "27",
+          "mins": 2,
+          "model": "Teacher slides 2 and 7 one place left: 27."
+        },
+        {
+          "q": "0.45 × 100",
+          "a": "45",
+          "mins": 2
+        },
+        {
+          "q": "1.6 × 1,000",
+          "a": "1,600",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 4.8 × 10; 0.39 × 100; 2.05 × 1,000; 0.007 × 1,000",
+          "a": "48; 39; 2,050; 7",
+          "mins": 4,
+          "model": "Teacher does 4.8 × 10 = 48 on the chart."
+        },
+        {
+          "q": "Extend: A 1.25 kg bag. How many grams?",
+          "a": "1,250 g",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Fill the gap: 0.36 × __ = 360",
+          "a": "1,000",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "5.2 × 100 =",
+          "a": "A) 520",
+          "mins": 2,
+          "options": [
+            "520",
+            "5.200",
+            "52"
+          ]
+        },
+        {
+          "q": "Big question: does the point really move?",
+          "a": "No: the digits move left; each is worth 10, 100 or 1,000 times more.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 decimals on food packets (for example 0.5 kg) and write them × 1,000 in grams.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what number × 100 gives 4.5? (0.045)",
+      "resources": [
+        "White Rose Maths Year 5, Decimals block: small step 'Multiply decimals by 10, 100 and 1,000' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value chart (printable)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 83 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 84,
+      "title": "Divide decimals by 10, 100 and 1,000",
+      "duration": 45,
+      "bigQuestion": "How small can a number get when we keep dividing by 10?",
+      "objectives": [
+        "To understand how dividing by 10, 100 and 1,000 changes the value of each digit"
+      ],
+      "successCriteria": [
+        "All: divide a number by 10",
+        "Most: divide by 100 and 1,000, using placeholders",
+        "Some: use dividing in measures"
+      ],
+      "keywords": [
+        {
+          "term": "divide",
+          "def": "share or split into equal groups"
+        },
+        {
+          "term": "ten times smaller",
+          "def": "each digit moves one place right"
+        },
+        {
+          "term": "placeholder",
+          "def": "a zero that keeps a place"
+        },
+        {
+          "term": "thousandth",
+          "def": "one part of a thousand: 0.001"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Keep dividing 1 by 10. What do you get each time? Does it ever reach zero?",
+        "a": "0.1, 0.01, 0.001 ...: it gets smaller but never reaches zero."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "place value chart",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "tiny seeds",
+          "alt": "Small seeds",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.45 × 100 = ?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "450 ÷ 10 = ?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "1 m = ? cm",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "72 ÷ 8 = ?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Digits move right",
+          "bullets": [
+            "÷ 10: one place.",
+            "÷ 100: two places.",
+            "÷ 1,000: three places."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "÷ 10",
+              "÷ 100",
+              "÷ 1,000"
+            ],
+            "rows": [
+              [
+                "45",
+                "4.5",
+                "0.45",
+                "0.045"
+              ],
+              [
+                "3.2",
+                "0.32",
+                "0.032",
+                "0.0032"
+              ]
+            ]
+          },
+          "note": "Model on the chart."
+        },
+        {
+          "heading": "Placeholders",
+          "bullets": [
+            "8 ÷ 100 = 0.08.",
+            "The zero holds the tenths place."
+          ],
+          "model": {
+            "problem": "8 ÷ 100",
+            "steps": [
+              "8 moves 2 places right.",
+              "Tenths place is empty: write 0."
+            ],
+            "answer": "0.08"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "In measures",
+          "bullets": [
+            "cm to m: ÷ 100.",
+            "g to kg: ÷ 1,000."
+          ],
+          "note": "Model 1,250 g = 1.25 kg."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3.2 ÷ 10 =",
+            "options": [
+              "0.32",
+              "32",
+              "0.032"
+            ],
+            "answer": 0,
+            "why": "One place right."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "56 ÷ 10",
+          "a": "5.6",
+          "mins": 2,
+          "model": "Teacher moves 5 and 6 one place right: 5.6."
+        },
+        {
+          "q": "7 ÷ 100",
+          "a": "0.07",
+          "mins": 2
+        },
+        {
+          "q": "1,250 ÷ 1,000",
+          "a": "1.25",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 34 ÷ 10; 6.5 ÷ 100; 820 ÷ 1,000; 9 ÷ 1,000",
+          "a": "3.4; 0.065; 0.82; 0.009",
+          "mins": 4,
+          "model": "Teacher does 34 ÷ 10 = 3.4."
+        },
+        {
+          "q": "Extend: 75 cm in metres; 450 g in kg",
+          "a": "0.75 m; 0.45 kg",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A 2 kg bag of rice is shared equally into 100 bowls. How many kg in each? How many grams?",
+          "a": "0.02 kg; 20 g",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "45 ÷ 100 =",
+          "a": "A) 0.45",
+          "mins": 2,
+          "options": [
+            "0.45",
+            "4.5",
+            "4,500"
+          ]
+        },
+        {
+          "q": "Big question: how small can it get?",
+          "a": "As small as we like: it never reaches zero.",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 3 lengths from home in cm, then in m (÷ 100).",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: which is bigger: 4 ÷ 100 or 0.4 ÷ 10? (equal: both 0.04)",
+      "resources": [
+        "White Rose Maths Year 5, Decimals block: small step 'Divide decimals by 10, 100 and 1,000' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value chart (printable)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 84 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 85,
+      "title": "Decimal problems with money and measures",
+      "duration": 45,
+      "bigQuestion": "How do we know which operation to use?",
+      "objectives": [
+        "To understand how to solve multi-step problems with decimals in money and measures"
+      ],
+      "successCriteria": [
+        "All: add and subtract decimals in money problems",
+        "Most: multiply and divide by 10, 100 and 1,000 in measures",
+        "Some: solve two-step problems and check them"
+      ],
+      "smsc": "Moral: giving charity (sadaqah) regularly",
+      "keywords": [
+        {
+          "term": "total",
+          "def": "the amount altogether"
+        },
+        {
+          "term": "change",
+          "def": "money given back"
+        },
+        {
+          "term": "multi-step",
+          "def": "needs more than one calculation"
+        },
+        {
+          "term": "estimate",
+          "def": "a rounded answer to check against"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A cake needs 0.35 kg of flour. How much flour for 10 cakes?",
+        "a": "3.5 kg (350 g × 10 = 3,500 g)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "shopping basket of groceries",
+          "alt": "A shopping basket",
+          "for": "hook"
+        },
+        {
+          "find": "weighing flour on scales",
+          "alt": "Flour on scales",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6.4 - 2.35 = ?",
+          "a": "4.05",
+          "mins": 1
+        },
+        {
+          "q": "0.35 × 10 = ?",
+          "a": "3.5",
+          "mins": 1
+        },
+        {
+          "q": "750 g in kg?",
+          "a": "0.75",
+          "mins": 1
+        },
+        {
+          "q": "£10 - £4.90 = ?",
+          "a": "£5.10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choose the operation",
+          "bullets": [
+            "Altogether: add.",
+            "Left or change: subtract.",
+            "Lots of: multiply."
+          ],
+          "note": "Key words help, but think about the story."
+        },
+        {
+          "heading": "Money",
+          "bullets": [
+            "Line up the points."
+          ],
+          "model": {
+            "problem": "Dates £2.45, bread £1.80, milk £0.65. Change from £10?",
+            "steps": [
+              "2.45 + 1.80 + 0.65 = 4.90.",
+              "10.00 - 4.90 = 5.10."
+            ],
+            "answer": "£5.10"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Measures",
+          "bullets": [
+            "× 10, × 100, × 1,000.",
+            "Check the unit."
+          ],
+          "model": {
+            "problem": "10 packets of 0.35 kg. Total in kg and g?",
+            "steps": [
+              "0.35 × 10 = 3.5 kg.",
+              "3.5 × 1,000 = 3,500 g."
+            ],
+            "answer": "3.5 kg = 3,500 g"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2.5 m of ribbon; 0.75 m is used. Left?",
+            "options": [
+              "1.75 m",
+              "1.85 m",
+              "2.25 m"
+            ],
+            "answer": 0,
+            "why": "2.50 - 0.75 = 1.75."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rice £1.35 and lentils £2.70. Total?",
+          "a": "£4.05",
+          "mins": 2,
+          "model": "Teacher adds 1.35 + 2.70 = 4.05."
+        },
+        {
+          "q": "Change from £5?",
+          "a": "£0.95",
+          "mins": 2
+        },
+        {
+          "q": "100 tiles each 0.15 m wide: total width?",
+          "a": "15 m",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) A jug holds 1.2 l. 0.45 l is poured out. How much is left? (b) 3 books cost £4.99, £6.50 and £2.75. Total?",
+          "a": "(a) 0.75 l (b) £14.24",
+          "mins": 4,
+          "model": "Teacher solves (a): 1.20 - 0.45 = 0.75 l."
+        },
+        {
+          "q": "Extend: A family gives £12.50 sadaqah to a food bank each week. How much in 10 weeks? In 100 weeks?",
+          "a": "£125; £1,250",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 1,000 sheets of paper make a pile 9.5 cm high. How thick is one sheet in mm?",
+          "a": "95 mm ÷ 1,000 = 0.095 mm",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "£10 - £6.35 =",
+          "a": "A) £3.65",
+          "mins": 2,
+          "options": [
+            "£3.65",
+            "£4.65",
+            "£3.75"
+          ]
+        },
+        {
+          "q": "Big question: how do we know which operation?",
+          "a": "Picture the story: altogether, left over, or many lots of.",
+          "mins": 3
+        }
+      ],
+      "homework": "Plan a shopping list with prices and work out the change from £20.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a pack of 10 pens costs £3.40. How much is one pen? (34p)",
+      "resources": [
+        "White Rose Maths Year 5, Decimals block: small step 'Decimal sequences and problems' (money and measures) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Shop leaflet or printed price list (example prices)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 85 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 86,
+      "title": "Compare and order negative numbers",
+      "duration": 45,
+      "bigQuestion": "Is -8 bigger or smaller than -3?",
+      "objectives": [
+        "To understand how to compare and order positive and negative numbers"
+      ],
+      "successCriteria": [
+        "All: use a number line to compare two numbers",
+        "Most: use < and > with negative numbers",
+        "Some: order a set of positive and negative numbers"
+      ],
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "say which is greater or smaller"
+        },
+        {
+          "term": "greater than",
+          "def": ">: bigger"
+        },
+        {
+          "term": "less than",
+          "def": "<: smaller"
+        },
+        {
+          "term": "order",
+          "def": "put from smallest to greatest"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is colder: -8 °C or -3 °C? Which number is smaller?",
+        "a": "-8 °C is colder, so -8 is smaller."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "frozen lake winter",
+          "alt": "A frozen lake",
+          "for": "hook"
+        },
+        {
+          "find": "thermometer",
+          "alt": "A thermometer",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Start at 2, back 6?",
+          "a": "-4",
+          "mins": 1
+        },
+        {
+          "q": "Start at -3, on 5?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "Is 0 positive?",
+          "a": "no",
+          "mins": 1
+        },
+        {
+          "q": "7 × 7 = ?",
+          "a": "49",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Further left is smaller",
+          "bullets": [
+            "On a number line, left is smaller.",
+            "-8 is left of -3."
+          ],
+          "numberline": {
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": -8,
+                "label": "-8"
+              },
+              {
+                "at": -3,
+                "label": "-3"
+              },
+              {
+                "at": 0,
+                "label": "0"
+              },
+              {
+                "at": 5,
+                "label": "5"
+              }
+            ]
+          },
+          "note": "Point on the line."
+        },
+        {
+          "heading": "Use < and >",
+          "bullets": [
+            "-8 < -3.",
+            "-1 > -6."
+          ],
+          "misconception": {
+            "wrong": "-8 > -3 because 8 > 3.",
+            "right": "-8 is further below zero, so -8 < -3."
+          },
+          "note": "The open mouth faces the bigger number."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "Smallest first."
+          ],
+          "model": {
+            "problem": "Order 5, -3, 0, -8, 2.",
+            "steps": [
+              "Most negative first: -8, -3.",
+              "Then 0, then positives."
+            ],
+            "answer": "-8, -3, 0, 2, 5"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is greatest?",
+            "options": [
+              "-1",
+              "-4",
+              "-10"
+            ],
+            "answer": 0,
+            "why": "-1 is closest to zero, so greatest."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "< or >: -5 __ -2",
+          "a": "<",
+          "mins": 2,
+          "model": "Teacher: -5 is further left, so smaller: -5 < -2."
+        },
+        {
+          "q": "< or >: 0 __ -7",
+          "a": ">",
+          "mins": 2
+        },
+        {
+          "q": "Order: -1, -6, 4",
+          "a": "-6, -1, 4",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Order the temperatures: 3 °C, -2 °C, -9 °C, 0 °C, -4 °C.",
+          "a": "-9, -4, -2, 0, 3",
+          "mins": 4,
+          "model": "Teacher places -9 and 3 on the line first."
+        },
+        {
+          "q": "Extend: Write < or >: -12 __ -21; -4 __ 1; -0.5 __ -1",
+          "a": ">; <; >",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write a negative number between -3 and -4.",
+          "a": "For example -3.5",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Coldest:",
+          "a": "A) -9 °C",
+          "mins": 2,
+          "options": [
+            "-9 °C",
+            "-4 °C",
+            "0 °C"
+          ]
+        },
+        {
+          "q": "Big question: is -8 bigger or smaller than -3?",
+          "a": "Smaller: it is further below zero.",
+          "mins": 3
+        }
+      ],
+      "homework": "Look up the night temperatures of 3 cold cities and order them.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: which integer is exactly halfway between -7 and 3? (-2)",
+      "resources": [
+        "White Rose Maths Year 5, Negative numbers block: small step 'Compare and order negative numbers' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable number line -20 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 86 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 87,
+      "title": "Find the difference across zero",
+      "duration": 45,
+      "bigQuestion": "How far is it from -5 °C to 8 °C?",
+      "objectives": [
+        "To understand how to find the difference between two numbers across zero"
+      ],
+      "successCriteria": [
+        "All: find the difference when both numbers are positive or both negative",
+        "Most: find the difference across zero by jumping to zero",
+        "Some: solve temperature difference problems"
+      ],
+      "crossCurricular": "Science: temperature and changes of state (water freezes at 0 °C)",
+      "keywords": [
+        {
+          "term": "difference",
+          "def": "how far apart two numbers are"
+        },
+        {
+          "term": "interval",
+          "def": "the gap between two numbers"
+        },
+        {
+          "term": "rise",
+          "def": "go up"
+        },
+        {
+          "term": "fall",
+          "def": "go down"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "At night it was -5 °C. By lunch it was 8 °C. How many degrees did it rise?",
+        "a": "13: 5 up to zero, then 8 more."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "frost on grass morning",
+          "alt": "Frost in the morning",
+          "for": "hook"
+        },
+        {
+          "find": "thermometer",
+          "alt": "A thermometer",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Which is smaller: -6 or -2?",
+          "a": "-6",
+          "mins": 1
+        },
+        {
+          "q": "Start at -4, on 9?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "5 + 8 = ?",
+          "a": "13",
+          "mins": 1
+        },
+        {
+          "q": "8 × 6 = ?",
+          "a": "48",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Jump to zero",
+          "bullets": [
+            "From -5 to 0: 5.",
+            "From 0 to 8: 8.",
+            "Add the jumps: 13."
+          ],
+          "numberline": {
+            "min": -6,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": -5,
+                "label": "-5"
+              },
+              {
+                "at": 0,
+                "label": "0"
+              },
+              {
+                "at": 8,
+                "label": "8"
+              }
+            ]
+          },
+          "note": "Use the number line."
+        },
+        {
+          "heading": "Both negative",
+          "bullets": [
+            "From -12 to -4: count up 8."
+          ],
+          "model": {
+            "problem": "Difference between -12 and -4?",
+            "steps": [
+              "-12 to -4 on the line.",
+              "Count: 8 jumps."
+            ],
+            "answer": "8"
+          },
+          "note": "No need to cross zero."
+        },
+        {
+          "heading": "Falling temperatures",
+          "bullets": [
+            "From 21 °C down to -3 °C.",
+            "21 to 0, then 3 more."
+          ],
+          "model": {
+            "problem": "It falls from 21 °C to -3 °C. By how much?",
+            "steps": [
+              "21 down to 0: 21.",
+              "0 down to -3: 3.",
+              "21 + 3 = 24."
+            ],
+            "answer": "24 degrees"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Difference between -4 and 6?",
+            "options": [
+              "10",
+              "2",
+              "-10"
+            ],
+            "answer": 0,
+            "why": "4 to zero, 6 more: 10."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "From -3 to 7?",
+          "a": "10",
+          "mins": 2,
+          "model": "Teacher: -3 to 0 is 3, 0 to 7 is 7: 10."
+        },
+        {
+          "q": "From -9 to -2?",
+          "a": "7",
+          "mins": 2
+        },
+        {
+          "q": "From 15 down to -6?",
+          "a": "21",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Differences: -7 and 5; -10 and -1; 12 and -8.",
+          "a": "12; 9; 20",
+          "mins": 4,
+          "model": "Teacher jumps -7 to 0 (7), 0 to 5 (5): 12."
+        },
+        {
+          "q": "Extend: A freezer is -18 °C; the kitchen is 21 °C. Difference?",
+          "a": "39 degrees",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: The difference between two temperatures is 15. One is -6 °C. What could the other be?",
+          "a": "9 °C or -21 °C",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "From -2 to 3 is...",
+          "a": "A) 5",
+          "mins": 2,
+          "options": [
+            "5",
+            "1",
+            "-5"
+          ]
+        },
+        {
+          "q": "Big question: how far from -5 °C to 8 °C?",
+          "a": "13 degrees: jump to zero, then add.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find today's highest and lowest temperatures (weather app) and the difference.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a diver is at -14 m and swims up 9 m. How far is she now below the surface? (5 m: at -5 m)",
+      "resources": [
+        "White Rose Maths Year 5, Negative numbers block: small step 'Find the difference' (temperature differences) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable number line -20 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 87 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 88,
+      "title": "Negative number problems",
+      "duration": 45,
+      "bigQuestion": "How do we solve a problem when we cannot see the number line?",
+      "objectives": [
+        "To understand how to solve problems involving negative numbers in context"
+      ],
+      "successCriteria": [
+        "All: solve a one-step rise or fall problem",
+        "Most: solve two-step problems",
+        "Some: explain a strategy using zero"
+      ],
+      "crossCurricular": "Geography: hot and cold places in the world",
+      "keywords": [
+        {
+          "term": "rise",
+          "def": "an increase"
+        },
+        {
+          "term": "fall",
+          "def": "a decrease"
+        },
+        {
+          "term": "below zero",
+          "def": "less than 0"
+        },
+        {
+          "term": "strategy",
+          "def": "a plan for solving"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Mount Everest's summit can be about -36 °C, while Makkah in summer can reach about 45 °C. How could we find the difference?",
+        "a": "Jump from -36 to 0 (36), then to 45 (45): 81 degrees."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "snowy mountain summit",
+          "alt": "A snowy mountain",
+          "for": "hook"
+        },
+        {
+          "find": "desert sand dunes",
+          "alt": "Desert dunes",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Difference -4 and 6?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "-5 + 8 = ?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Order -3, 1, -7",
+          "a": "-7, -3, 1",
+          "mins": 1
+        },
+        {
+          "q": "9 × 4 = ?",
+          "a": "36",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Draw your own line",
+          "bullets": [
+            "Sketch a line with 0 in the middle.",
+            "Mark the numbers, jump to zero."
+          ],
+          "note": "Model."
+        },
+        {
+          "heading": "Two steps",
+          "bullets": [
+            "Do one change at a time."
+          ],
+          "model": {
+            "problem": "It is -7 °C. It rises 12 degrees, then falls 4. Final temperature?",
+            "steps": [
+              "-7 + 12: 7 to zero, 5 more: 5.",
+              "5 - 4 = 1."
+            ],
+            "answer": "1 °C"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Missing start",
+          "bullets": [
+            "Work backwards."
+          ],
+          "model": {
+            "problem": "After a fall of 9 degrees it is -3 °C. Start?",
+            "steps": [
+              "Go back up 9 from -3.",
+              "-3 to 0 is 3; 6 more."
+            ],
+            "answer": "6 °C"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "It is 4 °C and falls 10 degrees. Now?",
+            "options": [
+              "-6 °C",
+              "-14 °C",
+              "6 °C"
+            ],
+            "answer": 0,
+            "why": "4 down to 0, then 6 more."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "It is -2 °C and rises 7. Now?",
+          "a": "5 °C",
+          "mins": 2,
+          "model": "Teacher: -2 to 0 is 2, then 5 more: 5 °C."
+        },
+        {
+          "q": "It is 1 °C and falls 6. Now?",
+          "a": "-5 °C",
+          "mins": 2
+        },
+        {
+          "q": "Difference between -36 and 45?",
+          "a": "81",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) -8 °C rises 15 (b) 6 °C falls 11 (c) -3 °C falls 4",
+          "a": "(a) 7 °C (b) -5 °C (c) -7 °C",
+          "mins": 4,
+          "model": "Teacher solves (a): -8 to 0 is 8, then 7 more: 7 °C."
+        },
+        {
+          "q": "Extend: Moscow is -12 °C; London is 9 degrees warmer; Cairo is 18 degrees warmer than London. Cairo?",
+          "a": "London -3 °C; Cairo 15 °C",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A lift goes from floor -2 up 7 floors, then down 9. Which floor?",
+          "a": "-4",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "-5 + 8 =",
+          "a": "A) 3",
+          "mins": 2,
+          "options": [
+            "3",
+            "-3",
+            "13"
+          ]
+        },
+        {
+          "q": "Big question: how do we solve without a number line?",
+          "a": "Sketch one: jump to zero, then the rest.",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 2 temperature problems for a grown-up and check their answers.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find two temperatures 20 degrees apart where one is negative and one positive. (for example -8 °C and 12 °C)",
+      "resources": [
+        "White Rose Maths Year 5, Negative numbers block: negative numbers in context (problems) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable number line -50 to 50",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 88 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 89,
+      "title": "Sequences through zero",
+      "duration": 45,
+      "bigQuestion": "What happens when a sequence keeps going down past zero?",
+      "objectives": [
+        "To understand how to continue and describe sequences that cross zero"
+      ],
+      "successCriteria": [
+        "All: find the rule of a sequence",
+        "Most: continue a sequence below zero",
+        "Some: find a missing term in a sequence"
+      ],
+      "keywords": [
+        {
+          "term": "sequence",
+          "def": "numbers in order following a rule"
+        },
+        {
+          "term": "term",
+          "def": "one number in a sequence"
+        },
+        {
+          "term": "rule",
+          "def": "how to get from one term to the next"
+        },
+        {
+          "term": "decrease",
+          "def": "get smaller"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "10, 6, 2, ... What comes next? Does the rule stop working at zero?",
+        "a": "-2, -6: the rule keeps working below zero."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stairs going down",
+          "alt": "Stairs going down",
+          "for": "hook"
+        },
+        {
+          "find": "number line",
+          "alt": "A number line",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2 - 4 = ?",
+          "a": "-2",
+          "mins": 1
+        },
+        {
+          "q": "-3 - 5 = ?",
+          "a": "-8",
+          "mins": 1
+        },
+        {
+          "q": "-6 + 4 = ?",
+          "a": "-2",
+          "mins": 1
+        },
+        {
+          "q": "12 × 3 = ?",
+          "a": "36",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Find the rule",
+          "bullets": [
+            "Look at the jumps between terms.",
+            "Same jump each time?"
+          ],
+          "numberline": {
+            "min": -10,
+            "max": 10,
+            "step": 2,
+            "marks": [
+              {
+                "at": 10,
+                "label": "10"
+              },
+              {
+                "at": 6,
+                "label": "6"
+              },
+              {
+                "at": 2,
+                "label": "2"
+              },
+              {
+                "at": -2,
+                "label": "-2"
+              },
+              {
+                "at": -6,
+                "label": "-6"
+              },
+              {
+                "at": -10,
+                "label": "-10"
+              }
+            ]
+          },
+          "note": "Model 10, 6, 2."
+        },
+        {
+          "heading": "Continue below zero",
+          "bullets": [
+            "Keep jumping the same amount."
+          ],
+          "model": {
+            "problem": "Continue 7, 4, 1, ...",
+            "steps": [
+              "Rule: subtract 3.",
+              "1 - 3 = -2, then -5, then -8."
+            ],
+            "answer": "-2, -5, -8"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Going up from negative",
+          "bullets": [
+            "-11, -7, -3: add 4."
+          ],
+          "misconception": {
+            "wrong": "-3 + 4 = -7",
+            "right": "Count up from -3: -2, -1, 0, 1: the answer is 1."
+          },
+          "note": "Next: 1, 5."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Next term: 5, 2, -1, ...",
+            "options": [
+              "-4",
+              "-3",
+              "2"
+            ],
+            "answer": 0,
+            "why": "Subtract 3 each time."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Next two: 8, 3, -2, ...",
+          "a": "-7, -12",
+          "mins": 2,
+          "model": "Teacher: the rule is subtract 5: -2 - 5 = -7, -7 - 5 = -12."
+        },
+        {
+          "q": "Rule: -15, -10, -5, ...?",
+          "a": "add 5",
+          "mins": 2
+        },
+        {
+          "q": "Missing: -9, __, -1, 3",
+          "a": "-5",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Continue each for 3 terms: 12, 7, 2, ...; -20, -14, -8, ...; 4, 1.5, -1, ...",
+          "a": "-3, -8, -13; -2, 4, 10; -3.5, -6, -8.5",
+          "mins": 4,
+          "model": "Teacher finds the rule of the first: subtract 5."
+        },
+        {
+          "q": "Extend: Find the missing terms: 6, __, -4, __, -14",
+          "a": "1, -9",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A sequence starts at 30 and subtracts 7. What is the first negative term?",
+          "a": "-5 (30, 23, 16, 9, 2, -5)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "-11, -7, -3, next?",
+          "a": "A) 1",
+          "mins": 2,
+          "options": [
+            "1",
+            "-1",
+            "-7"
+          ]
+        },
+        {
+          "q": "Big question: what happens below zero?",
+          "a": "The rule keeps going: the terms become negative.",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a sequence that crosses zero and ask a grown-up to find the rule.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is the 10th term of 20, 16, 12, ...? (-16)",
+      "resources": [
+        "White Rose Maths Year 5, Negative numbers block: counting in steps through zero (sequences) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable number line -20 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 89 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 90,
+      "title": "Grams and kilograms",
+      "duration": 45,
+      "bigQuestion": "Why does Allah command us to weigh fairly?",
+      "objectives": [
+        "To understand how to convert between grams and kilograms"
+      ],
+      "successCriteria": [
+        "All: recall 1 kg = 1,000 g",
+        "Most: convert kg to g by multiplying by 1,000",
+        "Some: convert g to kg by dividing by 1,000"
+      ],
+      "keywords": [
+        {
+          "term": "gram",
+          "def": "g: a small unit of mass"
+        },
+        {
+          "term": "kilogram",
+          "def": "kg: 1,000 grams"
+        },
+        {
+          "term": "mass",
+          "def": "how heavy something is"
+        },
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A shopkeeper's scales read 2.4 kg. How many grams is that? Why must the scales be honest?",
+        "a": "2,400 g. Honest weighing is fair to the buyer; Allah commands it."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "kitchen scales flour",
+          "alt": "Kitchen scales",
+          "for": "teach:1"
+        },
+        {
+          "find": "balance scale",
+          "alt": "A balance scale",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.75 × 1,000 = ?",
+          "a": "750",
+          "mins": 1
+        },
+        {
+          "q": "3,500 ÷ 1,000 = ?",
+          "a": "3.5",
+          "mins": 1
+        },
+        {
+          "q": "-3 - 4 = ?",
+          "a": "-7",
+          "mins": 1
+        },
+        {
+          "q": "8 × 12 = ?",
+          "a": "96",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1 kg = 1,000 g",
+          "bullets": [
+            "kg to g: × 1,000.",
+            "g to kg: ÷ 1,000."
+          ],
+          "table": {
+            "head": [
+              "kg",
+              "g"
+            ],
+            "rows": [
+              [
+                "1",
+                "1,000"
+              ],
+              [
+                "2.4",
+                "2,400"
+              ],
+              [
+                "0.75",
+                "750"
+              ],
+              [
+                "0.05",
+                "50"
+              ]
+            ]
+          },
+          "note": "Read a kitchen scale."
+        },
+        {
+          "heading": "Mixed units",
+          "bullets": [
+            "3 kg 50 g = 3,050 g.",
+            "Watch the placeholder zero."
+          ],
+          "model": {
+            "problem": "Write 3 kg 50 g in grams.",
+            "steps": [
+              "3 kg = 3,000 g.",
+              "3,000 + 50 = 3,050."
+            ],
+            "answer": "3,050 g"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Grams to kilograms",
+          "bullets": [
+            "Divide by 1,000."
+          ],
+          "misconception": {
+            "wrong": "3 kg 50 g = 3.5 kg",
+            "right": "50 g = 0.05 kg, so 3.05 kg."
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "750 g =",
+            "options": [
+              "0.75 kg",
+              "7.5 kg",
+              "75 kg"
+            ],
+            "answer": 0,
+            "why": "750 ÷ 1,000 = 0.75."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1.6 kg in g?",
+          "a": "1,600 g",
+          "mins": 2,
+          "model": "Teacher: 1.6 × 1,000: digits move 3 places left: 1,600."
+        },
+        {
+          "q": "2,300 g in kg?",
+          "a": "2.3 kg",
+          "mins": 2
+        },
+        {
+          "q": "Which is heavier: 1.2 kg or 1,150 g?",
+          "a": "1.2 kg (1,200 g)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 4.5 kg; 0.3 kg; 6 kg 25 g (to g). 2,750 g; 600 g (to kg).",
+          "a": "4,500 g; 300 g; 6,025 g; 2.75 kg; 0.6 kg",
+          "mins": 4,
+          "model": "Teacher converts 4.5 kg = 4,500 g."
+        },
+        {
+          "q": "Extend: A recipe needs 1.25 kg of rice. You have 800 g. How much more?",
+          "a": "450 g",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Order: 1.05 kg, 1,500 g, 1.4 kg, 950 g",
+          "a": "950 g, 1.05 kg, 1.4 kg, 1,500 g",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2.4 kg =",
+          "a": "A) 2,400 g",
+          "mins": 2,
+          "options": [
+            "2,400 g",
+            "240 g",
+            "24 g"
+          ]
+        },
+        {
+          "q": "Big question: why weigh fairly?",
+          "a": "Allah commands honest weights and measures; cheating takes other people's rights.",
+          "mins": 3
+        }
+      ],
+      "homework": "Read the mass on 3 food packets and convert each to the other unit.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many 250 g bags make 2 kg? (8)",
+      "resources": [
+        "White Rose Maths Year 5, Converting units block: small step 'Kilograms and kilometres' (grams and kilograms) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Kitchen scales (household)",
+        "Food packets with masses",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 90 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "Allah commands: 'Give full measure when you measure, and weigh with an even balance' (Qur'an 17:35). Converting units correctly is part of being honest and fair.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 91,
+      "title": "Millimetres, centimetres and metres",
+      "duration": 45,
+      "bigQuestion": "Which unit would you use to measure a grain of rice, a book and a room?",
+      "objectives": [
+        "To understand how to convert between millimetres, centimetres and metres"
+      ],
+      "successCriteria": [
+        "All: recall 10 mm = 1 cm and 100 cm = 1 m",
+        "Most: convert between mm, cm and m",
+        "Some: choose a sensible unit"
+      ],
+      "keywords": [
+        {
+          "term": "millimetre",
+          "def": "mm: a tenth of a centimetre"
+        },
+        {
+          "term": "centimetre",
+          "def": "cm: a hundredth of a metre"
+        },
+        {
+          "term": "metre",
+          "def": "m: 100 centimetres"
+        },
+        {
+          "term": "unit",
+          "def": "the size we measure with"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A ruler is 30 cm. How many millimetres is that?",
+        "a": "300 mm."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ruler millimetres close up",
+          "alt": "A ruler showing mm",
+          "for": "teach:1"
+        },
+        {
+          "find": "grains of rice",
+          "alt": "Grains of rice",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1,600 g in kg?",
+          "a": "1.6",
+          "mins": 1
+        },
+        {
+          "q": "4.5 × 100 = ?",
+          "a": "450",
+          "mins": 1
+        },
+        {
+          "q": "86 ÷ 10 = ?",
+          "a": "8.6",
+          "mins": 1
+        },
+        {
+          "q": "7 × 12 = ?",
+          "a": "84",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The facts",
+          "bullets": [
+            "10 mm = 1 cm.",
+            "100 cm = 1 m.",
+            "1,000 mm = 1 m."
+          ],
+          "table": {
+            "head": [
+              "mm",
+              "cm",
+              "m"
+            ],
+            "rows": [
+              [
+                "10",
+                "1",
+                "0.01"
+              ],
+              [
+                "450",
+                "45",
+                "0.45"
+              ],
+              [
+                "1,350",
+                "135",
+                "1.35"
+              ]
+            ]
+          },
+          "note": "Show on a ruler."
+        },
+        {
+          "heading": "Convert",
+          "bullets": [
+            "Bigger to smaller unit: multiply.",
+            "Smaller to bigger unit: divide."
+          ],
+          "model": {
+            "problem": "1.35 m in cm and in mm.",
+            "steps": [
+              "1.35 × 100 = 135 cm.",
+              "135 × 10 = 1,350 mm."
+            ],
+            "answer": "135 cm; 1,350 mm"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Choose the unit",
+          "bullets": [
+            "Rice: mm.",
+            "Book: cm.",
+            "Room: m."
+          ],
+          "note": "Discuss estimates."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "45 mm =",
+            "options": [
+              "4.5 cm",
+              "45 cm",
+              "0.45 cm"
+            ],
+            "answer": 0,
+            "why": "÷ 10: 4.5 cm."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "8.6 cm in mm?",
+          "a": "86 mm",
+          "mins": 2,
+          "model": "Teacher: × 10: 86 mm."
+        },
+        {
+          "q": "2,500 mm in m?",
+          "a": "2.5 m",
+          "mins": 2
+        },
+        {
+          "q": "0.7 m in cm?",
+          "a": "70 cm",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 3.2 m to cm; 65 mm to cm; 240 cm to m; 0.08 m to mm",
+          "a": "320 cm; 6.5 cm; 2.4 m; 80 mm",
+          "mins": 4,
+          "model": "Teacher does 3.2 m = 320 cm."
+        },
+        {
+          "q": "Extend: Order: 1.2 m, 125 cm, 1,150 mm",
+          "a": "1,150 mm, 1.2 m, 125 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A shelf is 1.4 m long. How many 35 mm wide books fit?",
+          "a": "1,400 ÷ 35 = 40",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 m =",
+          "a": "A) 1,000 mm",
+          "mins": 2,
+          "options": [
+            "1,000 mm",
+            "100 mm",
+            "10 mm"
+          ]
+        },
+        {
+          "q": "Big question: which unit for rice, a book, a room?",
+          "a": "mm, cm and m.",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure 3 things at home in cm, then write them in mm and m.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many 5 mm beads in a 1 m string? (200)",
+      "resources": [
+        "White Rose Maths Year 5, Converting units block: small step 'Millimetres and metres' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Ruler and tape measure (household)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 91 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 92,
+      "title": "Metres and kilometres",
+      "duration": 45,
+      "bigQuestion": "How far is a kilometre?",
+      "objectives": [
+        "To understand how to convert between metres and kilometres and solve distance problems"
+      ],
+      "successCriteria": [
+        "All: recall 1 km = 1,000 m",
+        "Most: convert between m and km",
+        "Some: add and subtract distances in mixed units"
+      ],
+      "crossCurricular": "Geography: distances on maps",
+      "keywords": [
+        {
+          "term": "kilometre",
+          "def": "km: 1,000 metres"
+        },
+        {
+          "term": "metre",
+          "def": "m: a long step"
+        },
+        {
+          "term": "distance",
+          "def": "how far"
+        },
+        {
+          "term": "route",
+          "def": "the way from one place to another"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Walking 1 km takes about 12 minutes. About how long to walk 3.5 km to the masjid?",
+        "a": "About 42 minutes."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "road sign distance km",
+          "alt": "A distance sign",
+          "for": "hook"
+        },
+        {
+          "find": "running track",
+          "alt": "A 400 m running track",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1.35 m in cm?",
+          "a": "135",
+          "mins": 1
+        },
+        {
+          "q": "3.2 × 1,000 = ?",
+          "a": "3,200",
+          "mins": 1
+        },
+        {
+          "q": "450 ÷ 1,000 = ?",
+          "a": "0.45",
+          "mins": 1
+        },
+        {
+          "q": "12 × 3.5 = ?",
+          "a": "42",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1 km = 1,000 m",
+          "bullets": [
+            "km to m: × 1,000.",
+            "m to km: ÷ 1,000."
+          ],
+          "table": {
+            "head": [
+              "km",
+              "m"
+            ],
+            "rows": [
+              [
+                "3.2",
+                "3,200"
+              ],
+              [
+                "0.45",
+                "450"
+              ],
+              [
+                "1.05",
+                "1,050"
+              ]
+            ]
+          },
+          "note": "Quick conversions."
+        },
+        {
+          "heading": "Mixed units",
+          "bullets": [
+            "Change to the same unit first."
+          ],
+          "model": {
+            "problem": "5 km - 1,800 m",
+            "steps": [
+              "5 km = 5,000 m.",
+              "5,000 - 1,800 = 3,200 m.",
+              "3,200 m = 3.2 km."
+            ],
+            "answer": "3.2 km"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Laps",
+          "bullets": [
+            "A track lap is 400 m.",
+            "How many laps make 2 km?"
+          ],
+          "note": "2,000 ÷ 400 = 5 laps."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2.6 km =",
+            "options": [
+              "2,600 m",
+              "260 m",
+              "26 m"
+            ],
+            "answer": 0,
+            "why": "× 1,000."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "750 m in km?",
+          "a": "0.75 km",
+          "mins": 2,
+          "model": "Teacher: ÷ 1,000: 0.75 km."
+        },
+        {
+          "q": "1.2 km + 650 m in m?",
+          "a": "1,850 m",
+          "mins": 2
+        },
+        {
+          "q": "Laps of 400 m in 3.2 km?",
+          "a": "8",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 4.5 km; 0.8 km; 2 km 40 m (to m). 6,300 m; 90 m (to km).",
+          "a": "4,500 m; 800 m; 2,040 m; 6.3 km; 0.09 km",
+          "mins": 4,
+          "model": "Teacher converts 4.5 km = 4,500 m."
+        },
+        {
+          "q": "Extend: Huda walks 1.25 km to school and 850 m to the library. Total in km?",
+          "a": "2.1 km",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A route is 3 km. 1.75 km is done. How many 250 m stretches are left?",
+          "a": "1,250 ÷ 250 = 5",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 km =",
+          "a": "A) 1,000 m",
+          "mins": 2,
+          "options": [
+            "1,000 m",
+            "100 m",
+            "10,000 m"
+          ]
+        },
+        {
+          "q": "Big question: how far is a kilometre?",
+          "a": "1,000 metres: about 12 minutes' walk, or 2.5 laps of a track.",
+          "mins": 3
+        }
+      ],
+      "homework": "Use a map with a grown-up to find a route of about 1 km near home.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: about how many km is 5 miles, using 5 miles ≈ 8 km? How many miles is 40 km? (8 km; about 25 miles)",
+      "resources": [
+        "White Rose Maths Year 5, Converting units block: small step 'Kilograms and kilometres' (kilometres); extension week: miles and kilometres in brief (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Map of the local area (printable or online)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 92 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 93,
+      "title": "Millilitres and litres",
+      "duration": 45,
+      "bigQuestion": "How many glasses of water fill a 1.5 litre bottle?",
+      "objectives": [
+        "To understand how to convert between millilitres and litres"
+      ],
+      "successCriteria": [
+        "All: recall 1 l = 1,000 ml",
+        "Most: convert between ml and l",
+        "Some: solve capacity problems"
+      ],
+      "smsc": "Moral: not wasting water, even when making wudu",
+      "keywords": [
+        {
+          "term": "litre",
+          "def": "l: 1,000 millilitres"
+        },
+        {
+          "term": "millilitre",
+          "def": "ml: a tiny amount of liquid"
+        },
+        {
+          "term": "capacity",
+          "def": "how much a container holds"
+        },
+        {
+          "term": "volume of liquid",
+          "def": "how much liquid there is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bottle holds 1.5 l. A glass holds 250 ml. How many glasses can you pour?",
+        "a": "6: 1,500 ÷ 250."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug water",
+          "alt": "A measuring jug",
+          "for": "teach:1"
+        },
+        {
+          "find": "water bottle",
+          "alt": "A water bottle",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2.6 km in m?",
+          "a": "2,600",
+          "mins": 1
+        },
+        {
+          "q": "1,500 ÷ 250 = ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "0.25 × 1,000 = ?",
+          "a": "250",
+          "mins": 1
+        },
+        {
+          "q": "4 × 250 = ?",
+          "a": "1,000",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1 l = 1,000 ml",
+          "bullets": [
+            "l to ml: × 1,000.",
+            "ml to l: ÷ 1,000."
+          ],
+          "table": {
+            "head": [
+              "l",
+              "ml"
+            ],
+            "rows": [
+              [
+                "1.5",
+                "1,500"
+              ],
+              [
+                "0.25",
+                "250"
+              ],
+              [
+                "2.05",
+                "2,050"
+              ]
+            ]
+          },
+          "note": "Read a jug scale."
+        },
+        {
+          "heading": "Read a scale",
+          "bullets": [
+            "Find the step between marks."
+          ],
+          "model": {
+            "problem": "Halfway between 600 ml and 700 ml?",
+            "steps": [
+              "Step is 100 ml.",
+              "Half of 100 is 50."
+            ],
+            "answer": "650 ml"
+          },
+          "note": "Jug marked every 100 ml; the water is halfway between 600 and 700."
+        },
+        {
+          "heading": "Problems",
+          "bullets": [
+            "Same units first."
+          ],
+          "model": {
+            "problem": "A 2 l jug has 6 cups of 250 ml poured out. What is left?",
+            "steps": [
+              "6 × 250 = 1,500 ml.",
+              "2,000 - 1,500 = 500 ml."
+            ],
+            "answer": "500 ml = 0.5 l"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1.2 l =",
+            "options": [
+              "1,200 ml",
+              "120 ml",
+              "12 ml"
+            ],
+            "answer": 0,
+            "why": "× 1,000."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "350 ml in l?",
+          "a": "0.35 l",
+          "mins": 2,
+          "model": "Teacher: ÷ 1,000: 0.35 l."
+        },
+        {
+          "q": "Cups of 200 ml in 1.4 l?",
+          "a": "7",
+          "mins": 2
+        },
+        {
+          "q": "Total: 1.5 l and 750 ml?",
+          "a": "2,250 ml (2.25 l)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 3.5 l; 0.08 l (to ml). 4,250 ml; 500 ml (to l).",
+          "a": "3,500 ml; 80 ml; 4.25 l; 0.5 l",
+          "mins": 4,
+          "model": "Teacher converts 3.5 l = 3,500 ml."
+        },
+        {
+          "q": "Extend: Wudu uses about 0.6 l of water if we are careful. How much for 5 prayers? In ml?",
+          "a": "3 l = 3,000 ml",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A 5 l container fills how many 125 ml bottles?",
+          "a": "40",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "750 ml =",
+          "a": "A) 0.75 l",
+          "mins": 2,
+          "options": [
+            "0.75 l",
+            "7.5 l",
+            "75 l"
+          ]
+        },
+        {
+          "q": "Big question: how many 250 ml glasses in 1.5 l?",
+          "a": "6.",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure a cup's capacity with a jug and work out how many cups fill a 1 l bottle.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how much is 3 bottles of 330 ml in litres? (0.99 l)",
+      "resources": [
+        "White Rose Maths Year 5, Converting units block: small step 'Millilitres and litres' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Measuring jug and cups (household)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 93 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 94,
+      "title": "Converting units: mixed problems",
+      "duration": 45,
+      "bigQuestion": "Why must we convert before we calculate?",
+      "objectives": [
+        "To understand how to solve problems that mix units of length, mass and capacity"
+      ],
+      "successCriteria": [
+        "All: convert to the same unit before calculating",
+        "Most: solve two-step measure problems",
+        "Some: check the answer is in the unit asked for"
+      ],
+      "keywords": [
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        },
+        {
+          "term": "metric",
+          "def": "units based on 10, 100 and 1,000"
+        },
+        {
+          "term": "approximately",
+          "def": "close to, not exact"
+        },
+        {
+          "term": "mile",
+          "def": "an imperial unit of distance, about 1.6 km"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "1.2 kg of flour and 450 g of sugar: is the total 451.2 g? What went wrong?",
+        "a": "Different units: 1,200 g + 450 g = 1,650 g."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "baking ingredients on table",
+          "alt": "Baking ingredients",
+          "for": "hook"
+        },
+        {
+          "find": "road sign miles",
+          "alt": "A road sign in miles",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1.5 l in ml?",
+          "a": "1,500",
+          "mins": 1
+        },
+        {
+          "q": "2,040 m in km?",
+          "a": "2.04",
+          "mins": 1
+        },
+        {
+          "q": "65 mm in cm?",
+          "a": "6.5",
+          "mins": 1
+        },
+        {
+          "q": "6 × 125 = ?",
+          "a": "750",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same unit first",
+          "bullets": [
+            "Pick one unit.",
+            "Convert, then calculate."
+          ],
+          "misconception": {
+            "wrong": "1.2 kg + 450 g = 451.2 g",
+            "right": "1,200 g + 450 g = 1,650 g = 1.65 kg."
+          },
+          "note": "Model the ponder question."
+        },
+        {
+          "heading": "Two steps",
+          "bullets": [
+            "Convert, calculate, convert back if asked."
+          ],
+          "model": {
+            "problem": "A recipe uses 1.25 kg flour for 10 rotis. How many grams per roti?",
+            "steps": [
+              "1.25 kg = 1,250 g.",
+              "1,250 ÷ 10 = 125 g."
+            ],
+            "answer": "125 g"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Miles and kilometres",
+          "bullets": [
+            "5 miles is about 8 km.",
+            "Used on UK road signs."
+          ],
+          "table": {
+            "head": [
+              "miles",
+              "km (about)"
+            ],
+            "rows": [
+              [
+                "5",
+                "8"
+              ],
+              [
+                "10",
+                "16"
+              ],
+              [
+                "25",
+                "40"
+              ]
+            ]
+          },
+          "note": "Approximate only."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2 m - 35 cm =",
+            "options": [
+              "165 cm",
+              "1.65 cm",
+              "33 cm"
+            ],
+            "answer": 0,
+            "why": "200 - 35 = 165 cm."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1.4 kg + 650 g in g?",
+          "a": "2,050 g",
+          "mins": 2,
+          "model": "Teacher: 1,400 + 650 = 2,050 g."
+        },
+        {
+          "q": "3 l - 1,250 ml in l?",
+          "a": "1.75 l",
+          "mins": 2
+        },
+        {
+          "q": "About how many km is 15 miles?",
+          "a": "24 km",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) 2.5 m of ribbon is cut into 5 equal pieces: length in cm (b) 4 bags of 750 g: total in kg (c) 1.8 l minus 450 ml in ml",
+          "a": "(a) 50 cm (b) 3 kg (c) 1,350 ml",
+          "mins": 4,
+          "model": "Teacher solves (a): 2.5 m = 250 cm; 250 ÷ 5 = 50 cm."
+        },
+        {
+          "q": "Extend: A drive of 40 km: about how many miles?",
+          "a": "About 25 miles",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A 1 kg bag of dates is shared into 8 equal bags. How many grams each?",
+          "a": "125 g",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 kg 200 g + 900 g =",
+          "a": "A) 2.1 kg",
+          "mins": 2,
+          "options": [
+            "2.1 kg",
+            "1.11 kg",
+            "2,100 kg"
+          ]
+        },
+        {
+          "q": "Big question: why convert first?",
+          "a": "Only the same units can be added or subtracted correctly.",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 2 recipe or shopping problems with mixed units and solve them.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: is 3 miles more or less than 5 km? (less: 3 miles is about 4.8 km)",
+      "resources": [
+        "White Rose Maths Year 5, Converting units block: small steps 'Convert units of length, mass and capacity' and the extension week 'Imperial units' (miles and kilometres) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Recipe card (example)",
+        "Kitchen scales and jug (household)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 94 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 95,
+      "title": "Cubic centimetres",
+      "duration": 45,
+      "bigQuestion": "How can we measure the space inside a box?",
+      "objectives": [
+        "To understand that volume is the space an object takes up, measured in cubic centimetres"
+      ],
+      "successCriteria": [
+        "All: count cubes to find volume",
+        "Most: write volume in cm³",
+        "Some: make different shapes with the same volume"
+      ],
+      "keywords": [
+        {
+          "term": "volume",
+          "def": "how much space an object takes up"
+        },
+        {
+          "term": "cubic centimetre",
+          "def": "cm³: a cube 1 cm on each side"
+        },
+        {
+          "term": "cube",
+          "def": "a 3-D shape with 6 square faces"
+        },
+        {
+          "term": "solid",
+          "def": "a 3-D shape"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A sugar cube is about 1 cm on each side. How many could fit in a small box?",
+        "a": "Count how many fill the bottom layer, then how many layers."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sugar cubes",
+          "alt": "Sugar cubes",
+          "for": "hook"
+        },
+        {
+          "find": "centimetre cubes",
+          "alt": "Centimetre cubes",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1.25 kg in g?",
+          "a": "1,250",
+          "mins": 1
+        },
+        {
+          "q": "3 × 4 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Faces on a cube?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "2 × 3 × 2 = ?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Volume",
+          "bullets": [
+            "Space an object takes up.",
+            "Measured in cm³: 1 cm cubes."
+          ],
+          "note": "Show a 1 cm cube."
+        },
+        {
+          "heading": "Count cubes",
+          "bullets": [
+            "Count every cube, even hidden ones."
+          ],
+          "model": {
+            "problem": "A shape has 2 layers of 6 cubes. Volume?",
+            "steps": [
+              "Layer: 6 cubes.",
+              "2 layers: 6 × 2 = 12."
+            ],
+            "answer": "12 cm³"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Same volume, different shape",
+          "bullets": [
+            "12 cubes can make many shapes."
+          ],
+          "misconception": {
+            "wrong": "A taller shape always has a bigger volume.",
+            "right": "Count the cubes: shapes can look different but have the same volume."
+          },
+          "note": "Show 12 cubes as 2 × 6, 3 × 4, 2 × 2 × 3."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A shape of 8 cm cubes has volume...",
+            "options": [
+              "8 cm³",
+              "8 cm²",
+              "8 cm"
+            ],
+            "answer": 0,
+            "why": "Volume is in cubic units."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3 layers of 4 cubes?",
+          "a": "12 cm³",
+          "mins": 2,
+          "model": "Teacher: 4 in a layer × 3 layers = 12 cm³."
+        },
+        {
+          "q": "Shape of 15 cubes?",
+          "a": "15 cm³",
+          "mins": 2
+        },
+        {
+          "q": "Unit for volume?",
+          "a": "cm³",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the volume of the 4 cube shapes on the sheet.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher counts shape 1 layer by layer."
+        },
+        {
+          "q": "Extend: Build (or draw) 2 different shapes of volume 10 cm³.",
+          "a": "Answers will vary",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How many 1 cm cubes fit in a 2 cm cube?",
+          "a": "8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Volume is measured in...",
+          "a": "A) cm³",
+          "mins": 2,
+          "options": [
+            "cm³",
+            "cm²",
+            "cm"
+          ]
+        },
+        {
+          "q": "Big question: how can we measure space inside a box?",
+          "a": "Count how many 1 cm cubes fill it.",
+          "mins": 3
+        }
+      ],
+      "homework": "Build shapes from sugar cubes, dice or Lego and write each volume.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many 1 cm cubes fit in a 3 cm cube? (27)",
+      "resources": [
+        "White Rose Maths Year 5, Measurement: volume block: small step 'Cubic centimetres' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Sugar cubes, dice or Lego bricks (about 30)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 95 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "Zakat al-fitr is given at the end of Ramadan as one sa' (صاع) of food, and a sa' is a measure of volume. Measuring volume fairly helps us give exactly what is due.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 96,
+      "title": "Compare volume and count cubes in cuboids",
+      "duration": 45,
+      "bigQuestion": "How can we find the volume of a cuboid without counting every cube?",
+      "objectives": [
+        "To understand how to find and compare the volume of cuboids by counting in layers"
+      ],
+      "successCriteria": [
+        "All: count cubes in a layer",
+        "Most: multiply the layer by the number of layers",
+        "Some: compare volumes of cuboids"
+      ],
+      "keywords": [
+        {
+          "term": "cuboid",
+          "def": "a box shape with rectangle faces"
+        },
+        {
+          "term": "layer",
+          "def": "one flat level of cubes"
+        },
+        {
+          "term": "length",
+          "def": "how long"
+        },
+        {
+          "term": "width",
+          "def": "how wide"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A box is 4 cubes long, 3 wide and 2 high. Do you need to count every cube?",
+        "a": "No: 4 × 3 = 12 in a layer, 2 layers: 24."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "cardboard box",
+          "alt": "A cardboard box",
+          "for": "hook"
+        },
+        {
+          "find": "lego bricks stacked",
+          "alt": "Lego bricks",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Volume of 12 cubes?",
+          "a": "12 cm³",
+          "mins": 1
+        },
+        {
+          "q": "4 × 3 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "12 × 2 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "5 × 4 × 2 = ?",
+          "a": "40",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count by layers",
+          "bullets": [
+            "Cubes in one layer: length × width.",
+            "Multiply by the number of layers."
+          ],
+          "table": {
+            "head": [
+              "Length",
+              "Width",
+              "Layers",
+              "Volume"
+            ],
+            "rows": [
+              [
+                "4",
+                "3",
+                "2",
+                "24 cm³"
+              ],
+              [
+                "5",
+                "2",
+                "3",
+                "30 cm³"
+              ],
+              [
+                "3",
+                "3",
+                "3",
+                "27 cm³"
+              ]
+            ]
+          },
+          "note": "Build with Lego or dice."
+        },
+        {
+          "heading": "Model",
+          "bullets": [
+            "Layer first, then layers."
+          ],
+          "model": {
+            "problem": "A cuboid 5 cm by 4 cm by 3 cm.",
+            "steps": [
+              "Layer: 5 × 4 = 20.",
+              "3 layers: 20 × 3 = 60."
+            ],
+            "answer": "60 cm³"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Compare",
+          "bullets": [
+            "Work out both volumes.",
+            "Then compare."
+          ],
+          "note": "Is 4 × 3 × 2 or 3 × 3 × 3 bigger? 24 < 27."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which has the larger volume?",
+            "options": [
+              "3 by 3 by 3",
+              "4 by 3 by 2",
+              "They are equal"
+            ],
+            "answer": 0,
+            "why": "27 cm³ against 24 cm³."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "6 by 2 by 2?",
+          "a": "24 cm³",
+          "mins": 2,
+          "model": "Teacher: layer 6 × 2 = 12, 2 layers: 24 cm³."
+        },
+        {
+          "q": "Volume of 10 by 1 by 1?",
+          "a": "10 cm³",
+          "mins": 2
+        },
+        {
+          "q": "Bigger: 2 by 5 by 3 or 4 by 4 by 2?",
+          "a": "4 by 4 by 2 (32 against 30)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the volumes: 3 × 2 × 4; 5 × 5 × 2; 6 × 3 × 3",
+          "a": "24 cm³; 50 cm³; 54 cm³",
+          "mins": 4,
+          "model": "Teacher does 3 × 2 = 6, × 4 = 24."
+        },
+        {
+          "q": "Extend: Order the three volumes, largest first.",
+          "a": "54, 50, 24",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find two different cuboids with a volume of 36 cm³.",
+          "a": "For example 3 × 3 × 4 and 6 × 6 × 1",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Volume of 2 by 3 by 4:",
+          "a": "A) 24 cm³",
+          "mins": 2,
+          "options": [
+            "24 cm³",
+            "9 cm³",
+            "20 cm³"
+          ]
+        },
+        {
+          "q": "Big question: how without counting every cube?",
+          "a": "Count one layer, then multiply by the number of layers.",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure a small box in cm and estimate how many 1 cm cubes would fill it.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a cuboid has volume 48 cm³, length 4 cm and width 3 cm. Height? (4 cm)",
+      "resources": [
+        "White Rose Maths Year 5, Measurement: volume block: small steps 'Compare volume' and 'Estimate volume' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Sugar cubes, dice or Lego bricks (about 30)",
+        "Ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 96 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 97,
+      "title": "Estimate volume and capacity",
+      "duration": 45,
+      "bigQuestion": "How much does your favourite cup hold?",
+      "objectives": [
+        "To understand how to estimate volume and capacity and link 1 ml to 1 cm³"
+      ],
+      "successCriteria": [
+        "All: estimate the capacity of a cup or jug",
+        "Most: know that 1 ml of water fills 1 cm³",
+        "Some: compare capacities by measuring"
+      ],
+      "crossCurricular": "Science: measuring liquids accurately",
+      "keywords": [
+        {
+          "term": "capacity",
+          "def": "how much a container can hold"
+        },
+        {
+          "term": "estimate",
+          "def": "a sensible guess using what we know"
+        },
+        {
+          "term": "cm³",
+          "def": "cubic centimetre"
+        },
+        {
+          "term": "ml",
+          "def": "millilitre: 1 ml fills 1 cm³"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A mug, a glass and a bowl: which holds the most? How could you check without guessing?",
+        "a": "Fill each from a measuring jug and read the scale."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug water",
+          "alt": "A measuring jug",
+          "for": "teach:2"
+        },
+        {
+          "find": "mug and glass",
+          "alt": "A mug and a glass",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 l = ? ml",
+          "a": "1,000",
+          "mins": 1
+        },
+        {
+          "q": "Volume 5 × 4 × 2?",
+          "a": "40 cm³",
+          "mins": 1
+        },
+        {
+          "q": "750 ml in l?",
+          "a": "0.75",
+          "mins": 1
+        },
+        {
+          "q": "1,000 ÷ 4 = ?",
+          "a": "250",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1 ml = 1 cm³",
+          "bullets": [
+            "A 1 cm cube holds 1 ml of water.",
+            "A 10 cm cube holds 1 litre."
+          ],
+          "note": "10 × 10 × 10 = 1,000 cm³ = 1,000 ml."
+        },
+        {
+          "heading": "Estimate, then measure",
+          "bullets": [
+            "Use a known amount: a cup of 250 ml."
+          ],
+          "model": {
+            "problem": "Estimate a bottle that fills 6 cups of 250 ml.",
+            "steps": [
+              "6 × 250 = 1,500 ml.",
+              "1,500 ml = 1.5 l."
+            ],
+            "answer": "About 1.5 l"
+          },
+          "note": "Model with real containers."
+        },
+        {
+          "heading": "Volume of a box",
+          "bullets": [
+            "A box 10 cm × 5 cm × 4 cm.",
+            "Volume 200 cm³: it could hold 200 ml."
+          ],
+          "note": "Link volume and capacity."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A box 10 × 10 × 10 cm holds about...",
+            "options": [
+              "1 litre",
+              "10 ml",
+              "100 litres"
+            ],
+            "answer": 0,
+            "why": "1,000 cm³ = 1,000 ml = 1 l."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Box 5 × 5 × 4 cm: capacity in ml?",
+          "a": "100 ml",
+          "mins": 2,
+          "model": "Teacher: 5 × 5 = 25, × 4 = 100 cm³ = 100 ml."
+        },
+        {
+          "q": "A cup holds 250 ml. Cups in 2 l?",
+          "a": "8",
+          "mins": 2
+        },
+        {
+          "q": "Estimate: a teaspoon holds 5 ml or 500 ml?",
+          "a": "5 ml",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: At home: estimate, then measure, 3 containers with a jug. Record both.",
+          "a": "Answers will vary",
+          "mins": 4,
+          "model": "Teacher estimates and measures a mug on camera."
+        },
+        {
+          "q": "Extend: Find the volume of a box 8 × 5 × 5 cm. How many ml could it hold?",
+          "a": "200 cm³; 200 ml",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A fish tank is 40 cm × 20 cm × 25 cm. How many litres?",
+          "a": "20,000 cm³ = 20 l",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 cm³ of water is...",
+          "a": "A) 1 ml",
+          "mins": 2,
+          "options": [
+            "1 ml",
+            "1 l",
+            "10 ml"
+          ]
+        },
+        {
+          "q": "Big question: how much does your cup hold?",
+          "a": "Answers will vary: measure with a jug.",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a table of 5 containers at home: estimate and measured capacity.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many 250 ml cups fill a box 20 cm × 10 cm × 5 cm? (1,000 cm³: 4 cups)",
+      "resources": [
+        "White Rose Maths Year 5, Measurement: volume block: small step 'Estimate capacity' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Measuring jug, cups and containers (household)",
+        "Ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 97 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 98,
+      "title": "End-of-year assessment: arithmetic",
+      "duration": 45,
+      "bigQuestion": "How accurately can I calculate on my own?",
+      "objectives": [
+        "To understand how accurately I can use Year 5 calculation methods on my own"
+      ],
+      "successCriteria": [
+        "All: answer addition and subtraction of large numbers and decimals",
+        "Most: answer short and long multiplication and short division",
+        "Some: answer fraction and percentage questions"
+      ],
+      "smsc": "Moral: honesty (amanah, أَمَانَة): our own work only",
+      "keywords": [
+        {
+          "term": "arithmetic",
+          "def": "calculating with numbers"
+        },
+        {
+          "term": "long multiplication",
+          "def": "a written method to multiply by a 2-digit number"
+        },
+        {
+          "term": "short division",
+          "def": "a written method to divide by a 1-digit number"
+        },
+        {
+          "term": "check",
+          "def": "use the inverse or an estimate"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What do you do first when you see a long calculation like 34 × 26?",
+        "a": "Estimate (about 30 × 25 = 750), then choose a written method."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pencil and paper",
+          "alt": "A pencil and paper",
+          "for": "hook"
+        },
+        {
+          "find": "timer",
+          "alt": "A timer",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "7² = ?",
+          "a": "49",
+          "mins": 1
+        },
+        {
+          "q": "4.5 × 100 = ?",
+          "a": "450",
+          "mins": 1
+        },
+        {
+          "q": "25% of 80?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Before we start",
+          "bullets": [
+            "Read carefully.",
+            "Estimate, calculate, check."
+          ],
+          "note": "Printed paper or portal quiz (secure mode)."
+        },
+        {
+          "heading": "Timing",
+          "bullets": [
+            "30 minutes.",
+            "Skip and come back if stuck."
+          ],
+          "note": "Teacher keeps time on screen."
+        },
+        {
+          "heading": "Model: long multiplication",
+          "bullets": [
+            "Multiply by the ones, then the tens."
+          ],
+          "model": {
+            "problem": "34 × 26",
+            "steps": [
+              "34 × 6 = 204.",
+              "34 × 20 = 680.",
+              "204 + 680 = 884."
+            ],
+            "answer": "884"
+          },
+          "note": "Model."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: 1,456 ÷ 7",
+          "a": "208",
+          "mins": 2,
+          "model": "Teacher: 14 ÷ 7 = 2; 5 ÷ 7 = 0 r 5; 56 ÷ 7 = 8: 208."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: End-of-year arithmetic paper (30 minutes). Sample: (a) 4,768 + 3,595 (b) 12,405 - 6,738 (c) 2,436 × 4 (d) 34 × 26 (e) 1,456 ÷ 7 (f) 3/4 + 1/8 (g) 2/3 × 6 (h) 6.3 - 2.75 (i) 25% of 80 (j) 0.6 × 1,000",
+          "a": "Sample answers: (a) 8,363 (b) 5,667 (c) 9,744 (d) 884 (e) 208 (f) 7/8 (g) 4 (h) 3.55 (i) 20 (j) 600",
+          "mins": 28,
+          "model": "Teacher models (a): 8 + 5 = 13, 6 + 9 + 1 = 16, 7 + 5 + 1 = 13, 4 + 3 + 1 = 8: 8,363. Pupils then work alone."
+        }
+      ],
+      "exit": [
+        {
+          "q": "2/3 × 6 =",
+          "a": "A) 4",
+          "mins": 1,
+          "options": [
+            "4",
+            "12",
+            "2"
+          ]
+        },
+        {
+          "q": "Big question: how accurate was I?",
+          "a": "Answers will vary: I estimated and checked",
+          "mins": 2
+        }
+      ],
+      "homework": "No homework: rest before the reasoning paper.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is 999 × 4? (3,996: 1,000 × 4 - 4)",
+      "resources": [
+        "White Rose Maths Year 5 end-of-year assessment: arithmetic paper (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed arithmetic paper or portal quiz (secure mode)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 98 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+      "n": 99,
+      "title": "End-of-year assessment: reasoning",
+      "duration": 45,
+      "bigQuestion": "Can I solve problems and explain my reasoning?",
+      "objectives": [
+        "To understand how well I can reason and solve problems with Year 5 maths"
+      ],
+      "successCriteria": [
+        "All: answer one-step problems on measures, negative numbers and shape",
+        "Most: solve multi-step problems",
+        "Some: explain an answer with a reason"
+      ],
+      "smsc": "Moral: honesty (amanah, أَمَانَة): our own work only",
+      "keywords": [
+        {
+          "term": "reasoning",
+          "def": "explaining how you know"
+        },
+        {
+          "term": "multi-step",
+          "def": "needs more than one calculation"
+        },
+        {
+          "term": "justify",
+          "def": "give a reason"
+        },
+        {
+          "term": "units",
+          "def": "cm, kg, ml, °C and so on"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which question type do you find hardest: measures, angles or fractions? What will you do when you meet one?",
+        "a": "Answers will vary: read twice, draw a diagram, convert units first."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "magnifying glass",
+          "alt": "A magnifying glass",
+          "for": "hook"
+        },
+        {
+          "find": "protractor",
+          "alt": "A protractor",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "-4 + 9 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "2.5 km in m?",
+          "a": "2,500",
+          "mins": 1
+        },
+        {
+          "q": "Volume 3 × 4 × 5?",
+          "a": "60 cm³",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read, plan, solve, check",
+          "bullets": [
+            "Underline the facts.",
+            "Convert units first.",
+            "Estimate."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Explain",
+          "bullets": [
+            "'It must be ... because ...'"
+          ],
+          "model": {
+            "problem": "A 2 l bottle fills 8 equal cups. How many ml in each? Is that more than 200 ml?",
+            "steps": [
+              "2 l = 2,000 ml.",
+              "2,000 ÷ 8 = 250 ml.",
+              "250 > 200."
+            ],
+            "answer": "250 ml; yes"
+          },
+          "note": "Model a multi-step problem."
+        },
+        {
+          "heading": "Paper rules",
+          "bullets": [
+            "28 minutes.",
+            "Show working.",
+            "Units on answers."
+          ],
+          "note": "Printed paper or portal quiz."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: angles on a straight line: 125° and ?",
+          "a": "55°",
+          "mins": 2,
+          "model": "Teacher: 180 - 125 = 55°."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Reasoning paper (28 minutes). Sample: (a) the temperature is -6 °C and rises 11 degrees: new temperature (b) 1.35 kg of rice and 850 g: total in kg (c) a cuboid 6 cm × 4 cm × 3 cm: volume (d) translate (3, 2) 4 right and 5 up (e) Sara says 0.45 > 0.5. Is she right? Explain (f) 3 books at £4.75 each: change from £20",
+          "a": "Sample answers: (a) 5 °C (b) 2.2 kg (c) 72 cm³ (d) (7, 7) (e) No: 0.5 = 0.50, and 50 hundredths > 45 hundredths (f) £5.75",
+          "mins": 28,
+          "model": "Teacher reads (a): -6 to 0 is 6, then 5 more: 5 °C. Pupils then work alone."
+        }
+      ],
+      "exit": [
+        {
+          "q": "Volume of 6 × 4 × 3 =",
+          "a": "A) 72 cm³",
+          "mins": 1,
+          "options": [
+            "72 cm³",
+            "13 cm³",
+            "48 cm³"
+          ]
+        },
+        {
+          "q": "Big question: can I explain my reasoning?",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "Summer: 10 minutes of maths a day; practise one target from your papers.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find a cuboid with volume 72 cm³ and all edges different. (for example 2 × 4 × 9)",
+      "resources": [
+        "White Rose Maths Year 5 end-of-year assessment: reasoning paper (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed reasoning paper or portal quiz (secure mode)",
+        "Ruler and protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 99 guided, independent and homework tasks"
       ]
     }
   ]
