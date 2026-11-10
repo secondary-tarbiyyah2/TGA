@@ -1300,6 +1300,380 @@
           "for": "hook"
         }
       ]
+    },
+    {
+      "unit": "Summer 1: Dear diary",
+      "n": 10,
+      "title": "Who helps me? Asking for help",
+      "duration": 30,
+      "bigQuestion": "If you got lost in a big shop, who would you ask for help?",
+      "objectives": [
+        "To understand who my trusted adults are and how to ask them for help"
+      ],
+      "successCriteria": [
+        "All: name two trusted adults",
+        "Most: say what to say when I need help",
+        "Some: explain why we keep asking until someone helps"
+      ],
+      "smsc": "Social: knowing who keeps us safe",
+      "keywords": [
+        {
+          "term": "trusted adult",
+          "def": "a grown-up who keeps you safe"
+        },
+        {
+          "term": "help",
+          "def": "what someone gives when you need it"
+        },
+        {
+          "term": "worry",
+          "def": "a feeling that something might go wrong"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you got lost in a big shop, who would you ask for help?",
+        "a": "A trusted adult: the person at the till or a family with children, and stay where you are."
+      },
+      "islamicLink": {
+        "text": "Allah loves people who help each other. Allah says: 'And cooperate in righteousness and piety' (Al-Ma'idah 5:2).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which is kind?",
+          "a": "Sharing a toy",
+          "mins": 1,
+          "options": [
+            "Sharing a toy",
+            "Snatching a toy"
+          ]
+        },
+        {
+          "q": "When we start a lesson we ...",
+          "a": "say salam and listen",
+          "mins": 1,
+          "options": [
+            "say salam and listen",
+            "shout"
+          ]
+        },
+        {
+          "q": "Say one thing that makes you happy.",
+          "a": "For example: playing with my sister.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "My helpers",
+          "bullets": [
+            "Mum, Dad or carer",
+            "My teacher",
+            "A grandparent or older family member"
+          ],
+          "note": "Children hold up fingers for each helper they can name."
+        },
+        {
+          "heading": "How to ask",
+          "bullets": [],
+          "note": "Practise the words together.",
+          "cycle": [
+            "Find a trusted adult",
+            "Say their name",
+            "'I need help, please'",
+            "Say what happened",
+            "If they don't help, ask another"
+          ]
+        },
+        {
+          "heading": "Helper or not?",
+          "bullets": [],
+          "note": "Children point to the right side.",
+          "sort": {
+            "columns": [
+              "Trusted adult",
+              "Not a helper for this"
+            ],
+            "cards": [
+              "My teacher",
+              "A stranger online",
+              "Grandma",
+              "Someone I don't know in the park"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "You fall and hurt your knee. Who do you tell?",
+            "options": [
+              "A trusted adult at home",
+              "Nobody",
+              "A stranger online"
+            ],
+            "answer": 0,
+            "why": "Trusted adults keep us safe."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say the help words with the teacher: 'I need help, please. I ...'",
+          "a": "'I need help, please. I hurt my knee.'",
+          "mins": 3,
+          "model": "I do: 'Excuse me, Miss. I need help, please. I can't find my pencil case.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: draw a hand and write or draw a trusted adult on each finger.",
+          "a": "Five helpers on the hand.",
+          "mins": 5,
+          "model": "The teacher draws the first finger: 'Mum'."
+        },
+        {
+          "q": "Extend: tell a grown-up at home who is on your hand.",
+          "a": "Shared with family.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "If the first adult does not help, you ...",
+          "a": "ask another trusted adult",
+          "mins": 1,
+          "options": [
+            "ask another trusted adult",
+            "give up"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you got lost in a big shop, who would you ask for help?",
+          "a": "A trusted adult: the person at the till or a family with children, and stay where you are.",
+          "mins": 1
+        }
+      ],
+      "homework": "Show your helping hand to a grown-up at home and stick it on the fridge.",
+      "send": "SEND: picture cards and one step at a time; a grown-up may help. EAL: key words with pictures. Stretch: explain your idea to the class in a full sentence.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary PSHE scheme (Ealing LA PSHE, Citizenship and SEAL spiral scheme, Year A), 'Dear diary' strand; RSE lessons left out",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes to the Designated Safeguarding Lead), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Hand outline drawing",
+          "alt": "A hand outline",
+          "for": "teach:1"
+        },
+        {
+          "find": "Help desk sign",
+          "alt": "A help sign",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dear diary",
+      "n": 11,
+      "title": "Proud and jealous: feelings we notice",
+      "duration": 30,
+      "bigQuestion": "Your friend gets a sticker and you don't. What feeling might pop up?",
+      "objectives": [
+        "To understand what proud and jealous feel like and a kind thing to do with each"
+      ],
+      "successCriteria": [
+        "All: say what makes me feel proud",
+        "Most: say what jealous feels like in my body",
+        "Some: say a kind thing to do when I feel jealous"
+      ],
+      "smsc": "Moral: being happy for others",
+      "keywords": [
+        {
+          "term": "proud",
+          "def": "a happy feeling when you did something well"
+        },
+        {
+          "term": "jealous",
+          "def": "a feeling of wanting what someone else has"
+        },
+        {
+          "term": "mashaAllah",
+          "def": "words we say when we like something Allah gave someone"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your friend gets a sticker and you don't. What feeling might pop up?",
+        "a": "Jealous. We can say 'mashaAllah' and keep trying for our own sticker."
+      },
+      "islamicLink": {
+        "text": "When we see something good with someone else, we say 'mashaAllah' and ask Allah to bless them. Being happy for others makes our hearts clean.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A trusted adult is ...",
+          "a": "someone who keeps you safe",
+          "mins": 1,
+          "options": [
+            "someone who keeps you safe",
+            "anyone online"
+          ]
+        },
+        {
+          "q": "To ask for help we say ...",
+          "a": "'I need help, please'",
+          "mins": 1,
+          "options": [
+            "'I need help, please'",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Show a happy face with your hands.",
+          "a": "Smile shown.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Proud",
+          "bullets": [
+            "I tried hard",
+            "I finished my work",
+            "Say alhamdulillah"
+          ],
+          "note": "Pupils share one proud moment."
+        },
+        {
+          "heading": "Jealous",
+          "bullets": [
+            "Tight tummy, cross face",
+            "Wanting what someone else has",
+            "It is a normal feeling, but we don't act unkindly"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "What can I do?",
+          "bullets": [],
+          "note": "Children choose the kind side.",
+          "sort": {
+            "columns": [
+              "Kind choice",
+              "Unkind choice"
+            ],
+            "cards": [
+              "Say mashaAllah",
+              "Take their sticker",
+              "Try hard next time",
+              "Say 'that's not fair!' and sulk"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "You feel jealous of a friend's new bike. What is kind?",
+            "options": [
+              "Say 'mashaAllah, it's lovely'",
+              "Say it is ugly",
+              "Push the bike"
+            ],
+            "answer": 0,
+            "why": "We are happy for others."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Finish the sentence: 'When I feel jealous, I can ...'",
+          "a": "'... say mashaAllah and try hard myself.'",
+          "mins": 3,
+          "model": "I do: 'When I feel jealous, I can take a deep breath and say mashaAllah.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: draw a time you felt proud and write one word about it.",
+          "a": "A proud picture with a word.",
+          "mins": 5,
+          "model": "The teacher draws a finished jigsaw: 'proud'."
+        },
+        {
+          "q": "Extend: say 'mashaAllah' to someone at home today.",
+          "a": "Said.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "When we see something good with a friend, we say ...",
+          "a": "mashaAllah",
+          "mins": 1,
+          "options": [
+            "mashaAllah",
+            "not fair"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your friend gets a sticker and you don't. What feeling might pop up?",
+          "a": "Jealous. We can say 'mashaAllah' and keep trying for our own sticker.",
+          "mins": 1
+        }
+      ],
+      "homework": "Tell a grown-up one thing you felt proud of this week.",
+      "send": "SEND: picture cards and one step at a time; a grown-up may help. EAL: key words with pictures. Stretch: explain your idea to the class in a full sentence.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary PSHE scheme (Ealing LA PSHE, Citizenship and SEAL spiral scheme, Year A), 'Dear diary' strand; RSE lessons left out",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Gold trophy",
+          "alt": "A trophy: feeling proud",
+          "for": "teach:1"
+        },
+        {
+          "find": "Shiny red bicycle",
+          "alt": "A new bike",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }

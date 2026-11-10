@@ -1450,6 +1450,994 @@
           "for": "hook"
         }
       ]
+    },
+    {
+      "unit": "Summer 1: Vector drawing and It's Cool to Be Kind",
+      "n": 10,
+      "title": "Online kindness: kind and truthful messages",
+      "duration": 45,
+      "bigQuestion": "Is it easier to be unkind online than face to face? Why?",
+      "objectives": [
+        "To understand how to send kind, truthful messages online and what to do if someone is unkind"
+      ],
+      "successCriteria": [
+        "All: tell kind and unkind messages apart",
+        "Most: rewrite an unkind message kindly",
+        "Some: explain the steps: save evidence, block, report, tell a trusted adult"
+      ],
+      "smsc": "Moral: kind speech online",
+      "keywords": [
+        {
+          "term": "cyberbullying",
+          "def": "bullying using technology"
+        },
+        {
+          "term": "report",
+          "def": "tell the platform or an adult"
+        },
+        {
+          "term": "block",
+          "def": "stop someone contacting you"
+        },
+        {
+          "term": "evidence",
+          "def": "proof, such as a screenshot"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it easier to be unkind online than face to face? Why?",
+        "a": "Often yes: you can't see the person's face. That is why we think before we type."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever believes in Allah and the Last Day, let him speak good or remain silent' (Bukhari and Muslim). This includes typing.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A strong password is ...",
+          "a": "long and hard to guess",
+          "mins": 1,
+          "options": [
+            "long and hard to guess",
+            "your pet's name"
+          ]
+        },
+        {
+          "q": "Name one way to keep safe online.",
+          "a": "Don't share personal information.",
+          "mins": 1
+        },
+        {
+          "q": "Online, we should ...",
+          "a": "think before we type",
+          "mins": 1,
+          "options": [
+            "think before we type",
+            "say anything"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Kind or unkind?",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Kind",
+              "Unkind"
+            ],
+            "cards": [
+              "'Great job on your project!'",
+              "'LOL you're so bad'",
+              "'Do you want to join our game?'",
+              "Leaving someone out on purpose"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "THINK before you post",
+          "bullets": [
+            "True?",
+            "Helpful?",
+            "Inspiring?",
+            "Necessary?",
+            "Kind?"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "If someone is unkind",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Don't reply",
+            "Screenshot (evidence)",
+            "Block",
+            "Report",
+            "Tell a trusted adult"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Someone keeps sending you mean messages. First you ...",
+            "options": [
+              "don't reply and save evidence",
+              "send mean messages back",
+              "delete everything"
+            ],
+            "answer": 0,
+            "why": "Then block, report, tell."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rewrite kindly: 'Your drawing is rubbish.'",
+          "a": "'I like your colours. Maybe try adding more detail?'",
+          "mins": 4,
+          "model": "I do: 'You're slow' becomes 'Take your time, you'll get there.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: five message scenarios; write a kind reply or the safe steps for each.",
+          "a": "Five kind replies or safety steps.",
+          "mins": 12,
+          "model": "The teacher does the first."
+        },
+        {
+          "q": "Extend: design a 'THINK' reminder card for your device.",
+          "a": "Card made.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Speak good or ...",
+          "a": "remain silent",
+          "mins": 1,
+          "options": [
+            "remain silent",
+            "shout"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is it easier to be unkind online than face to face? Why?",
+          "a": "Often yes: you can't see the person's face. That is why we think before we type.",
+          "mins": 2
+        }
+      ],
+      "homework": "Teach your family the THINK check.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 5: Vector Drawing with It's Cool to Be Kind), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults, the portal's 'Report a concern', Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Speech bubble kind words",
+          "alt": "Kind words",
+          "for": "hook"
+        },
+        {
+          "find": "Block icon",
+          "alt": "Block",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Vector drawing and It's Cool to Be Kind",
+      "n": 11,
+      "title": "Vector and bitmap images",
+      "duration": 45,
+      "bigQuestion": "Why does a logo look sharp on a giant banner, but a small photo looks blocky when stretched?",
+      "objectives": [
+        "To understand the difference between vector and bitmap images and why vectors scale without blur"
+      ],
+      "successCriteria": [
+        "All: say one difference between vector and bitmap",
+        "Most: explain why vectors don't blur when enlarged",
+        "Some: choose the right type for a logo or a photo"
+      ],
+      "smsc": "Spiritual: order and precision in shapes",
+      "keywords": [
+        {
+          "term": "vector",
+          "def": "an image made from shapes and lines described by maths"
+        },
+        {
+          "term": "bitmap",
+          "def": "an image made of pixels"
+        },
+        {
+          "term": "scale",
+          "def": "change size"
+        },
+        {
+          "term": "layer",
+          "def": "a level of a drawing that sits above or below others"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why does a logo look sharp on a giant banner, but a small photo looks blocky when stretched?",
+        "a": "The logo is a vector (shapes), the photo is a bitmap (pixels)."
+      },
+      "starter": [
+        {
+          "q": "Cyberbullying should be ...",
+          "a": "reported",
+          "mins": 1,
+          "options": [
+            "reported",
+            "ignored forever"
+          ]
+        },
+        {
+          "q": "What does the T in THINK stand for?",
+          "a": "True.",
+          "mins": 1
+        },
+        {
+          "q": "Evidence means ...",
+          "a": "proof, like a screenshot",
+          "mins": 1,
+          "options": [
+            "proof, like a screenshot",
+            "a rumour"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two kinds of image",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Bitmap",
+              "points": [
+                "Grid of pixels",
+                "Photos",
+                "Blurs when enlarged"
+              ]
+            },
+            "right": {
+              "title": "Vector",
+              "points": [
+                "Shapes and lines",
+                "Logos, icons",
+                "Sharp at any size"
+              ]
+            },
+            "label": "versus"
+          }
+        },
+        {
+          "heading": "Layers",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Background shape",
+            "Middle shapes",
+            "Top details",
+            "Move layers forward or back",
+            "Group when finished"
+          ]
+        },
+        {
+          "heading": "Which type?",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Job",
+              "Best type"
+            ],
+            "rows": [
+              [
+                "A photo of a garden",
+                "Bitmap"
+              ],
+              [
+                "A school logo",
+                "Vector"
+              ],
+              [
+                "An icon for an app",
+                "Vector"
+              ],
+              [
+                "A scanned painting",
+                "Bitmap"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which stays sharp when made huge?",
+            "options": [
+              "A vector",
+              "A bitmap",
+              "Both blur equally"
+            ],
+            "answer": 0,
+            "why": "Vectors are described by maths."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Draw a circle and a square in the vector tool; put the circle on top.",
+          "a": "Circle in front of the square.",
+          "mins": 4,
+          "model": "I do: Shape, circle; shape, square; select the circle, Order, Bring to front."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Make a simple object (a house or a tree) from at least six shapes on layers; scale it up and see it stay sharp; save to the portal.",
+          "a": "A layered shape picture that scales cleanly.",
+          "mins": 12,
+          "model": "The teacher builds the roof and walls."
+        },
+        {
+          "q": "Extend: group the shapes and duplicate the object.",
+          "a": "Grouped and duplicated.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A photo is usually a ...",
+          "a": "bitmap",
+          "mins": 1,
+          "options": [
+            "bitmap",
+            "vector"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why does a logo look sharp on a giant banner, but a small photo looks blocky when stretched?",
+          "a": "The logo is a vector (shapes), the photo is a bitmap (pixels).",
+          "mins": 2
+        }
+      ],
+      "homework": "Find a logo at home (on a box) and say why it is probably a vector.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 5: Vector Drawing with It's Cool to Be Kind), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "A free browser vector tool (for example Google Drawings through the school account; TO CONFIRM which the school licenses)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Pixelated image enlarged",
+          "alt": "A blurry enlarged bitmap",
+          "for": "hook"
+        },
+        {
+          "find": "Vector shapes icon",
+          "alt": "Vector shapes",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Vector drawing and It's Cool to Be Kind",
+      "n": 12,
+      "title": "Shapes and paths: an Islamic geometric star",
+      "duration": 45,
+      "bigQuestion": "Many masjids are decorated with stars and patterns, not pictures. Why do you think that is?",
+      "objectives": [
+        "To understand how to build an Islamic geometric star from rotated shapes in a vector tool"
+      ],
+      "successCriteria": [
+        "All: draw and rotate a square",
+        "Most: make an eight-pointed star from two squares",
+        "Some: add symmetry and colour to build a tile"
+      ],
+      "crossCurricular": "Maths: rotation, angles (45° and 90°) and symmetry",
+      "smsc": "Cultural: Islamic art and geometry",
+      "keywords": [
+        {
+          "term": "rotate",
+          "def": "turn around a point"
+        },
+        {
+          "term": "symmetry",
+          "def": "both sides matching"
+        },
+        {
+          "term": "node",
+          "def": "a point on a vector path"
+        },
+        {
+          "term": "geometric pattern",
+          "def": "a design made of repeated shapes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Many masjids are decorated with stars and patterns, not pictures. Why do you think that is?",
+        "a": "Islamic art avoids drawing living beings in worship spaces and uses geometry to show order and beauty."
+      },
+      "islamicLink": {
+        "text": "Islamic geometric art reflects order and balance in Allah's creation: 'Indeed, all things We created with predestination' (Al-Qamar 54:49).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A vector stays ...",
+          "a": "sharp when enlarged",
+          "mins": 1,
+          "options": [
+            "sharp when enlarged",
+            "blurry"
+          ]
+        },
+        {
+          "q": "What does 'bring to front' do?",
+          "a": "Puts a shape on the top layer.",
+          "mins": 1
+        },
+        {
+          "q": "A logo is usually a ...",
+          "a": "vector",
+          "mins": 1,
+          "options": [
+            "vector",
+            "bitmap"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The eight-pointed star",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Draw a square",
+            "Duplicate it",
+            "Rotate the copy by 45°",
+            "Line up the centres",
+            "Group and colour"
+          ]
+        },
+        {
+          "heading": "Angles",
+          "bullets": [
+            "A full turn is 360°",
+            "360 ÷ 8 = 45°",
+            "Two squares at 45° make 8 points"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "From star to tile",
+          "bullets": [
+            "Repeat the star in a grid",
+            "Use symmetry",
+            "Two or three colours"
+          ],
+          "note": "Show real tile photographs from masjids (no people)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "To make an eight-pointed star from two squares, rotate one by ...",
+            "options": [
+              "45°",
+              "90°",
+              "10°"
+            ],
+            "answer": 0,
+            "why": "360 ÷ 8 = 45."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make the eight-pointed star with the teacher.",
+          "a": "Two squares, one rotated 45°, centres aligned.",
+          "mins": 4,
+          "model": "I do: square, Ctrl+D, rotate 45°, Align centre horizontally and vertically, group."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build a tile: one star in the middle and four quarter stars or smaller shapes in the corners; colour it; save to the portal.",
+          "a": "A symmetric tile with an eight-pointed star.",
+          "mins": 12,
+          "model": "The teacher shows a finished tile."
+        },
+        {
+          "q": "Extend: repeat your tile four times to make a pattern.",
+          "a": "Pattern made.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "360 ÷ 8 = ...",
+          "a": "45",
+          "mins": 1,
+          "options": [
+            "45",
+            "40",
+            "90"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Many masjids are decorated with stars and patterns, not pictures. Why do you think that is?",
+          "a": "Islamic art avoids drawing living beings in worship spaces and uses geometry to show order and beauty.",
+          "mins": 2
+        }
+      ],
+      "homework": "Look for a geometric pattern at home or in a masjid photo and count its points.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 5: Vector Drawing with It's Cool to Be Kind), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "A free browser vector tool (for example Google Drawings through the school account; TO CONFIRM which the school licenses)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Islamic geometric tile pattern eight pointed star",
+          "alt": "An Islamic geometric tile",
+          "for": "hook"
+        },
+        {
+          "find": "Alhambra tilework",
+          "alt": "Geometric tilework",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Vector drawing and It's Cool to Be Kind",
+      "n": 13,
+      "title": "Editing vectors: copy, group, align and recolour",
+      "duration": 45,
+      "bigQuestion": "Is it faster to draw 20 identical stars or to draw one and copy it? What else could go wrong when drawing 20?",
+      "objectives": [
+        "To understand how copy, group, align, rotate and recolour make vector work quick and accurate"
+      ],
+      "successCriteria": [
+        "All: copy and recolour a shape",
+        "Most: align and group objects",
+        "Some: make a repeating pattern efficiently"
+      ],
+      "smsc": "Social: working efficiently and accurately",
+      "keywords": [
+        {
+          "term": "duplicate",
+          "def": "make an exact copy"
+        },
+        {
+          "term": "group",
+          "def": "join shapes so they move together"
+        },
+        {
+          "term": "align",
+          "def": "line shapes up exactly"
+        },
+        {
+          "term": "efficient",
+          "def": "doing a job well with less effort"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it faster to draw 20 identical stars or to draw one and copy it? What else could go wrong when drawing 20?",
+        "a": "Copy one: faster and every star is identical."
+      },
+      "starter": [
+        {
+          "q": "An eight-pointed star uses a rotation of ...",
+          "a": "45°",
+          "mins": 1,
+          "options": [
+            "45°",
+            "60°"
+          ]
+        },
+        {
+          "q": "What does 'group' do?",
+          "a": "Joins shapes so they move together.",
+          "mins": 1
+        },
+        {
+          "q": "Symmetry means ...",
+          "a": "both sides matching",
+          "mins": 1,
+          "options": [
+            "both sides matching",
+            "random"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Power tools",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Tool",
+              "Shortcut idea",
+              "Use"
+            ],
+            "rows": [
+              [
+                "Duplicate",
+                "Ctrl+D",
+                "Repeat shapes"
+              ],
+              [
+                "Group",
+                "Ctrl+G",
+                "Move as one"
+              ],
+              [
+                "Align",
+                "Arrange menu",
+                "Line up exactly"
+              ],
+              [
+                "Recolour",
+                "Fill colour",
+                "Change look"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Repeat a pattern",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Make one tile",
+            "Group it",
+            "Duplicate",
+            "Align in a row",
+            "Duplicate the row"
+          ]
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Lining shapes up by eye",
+            "right": "Use the align tools so they line up exactly"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "To line up four tiles exactly, use ...",
+            "options": [
+              "align",
+              "guessing",
+              "delete"
+            ],
+            "answer": 0,
+            "why": "Align is precise."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Duplicate your tile three times and align them in a row.",
+          "a": "Four aligned tiles.",
+          "mins": 4,
+          "model": "I do: select tile, duplicate three times, select all, Align middle, Distribute horizontally."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Make a 3 by 3 pattern from your tile with two colour versions alternating; save to the portal.",
+          "a": "A neat, aligned 3 by 3 pattern.",
+          "mins": 12,
+          "model": "The teacher starts the first row."
+        },
+        {
+          "q": "Extend: rotate every second tile by 45°.",
+          "a": "Rotated pattern.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Duplicating is efficient because ...",
+          "a": "copies are identical and quick",
+          "mins": 1,
+          "options": [
+            "copies are identical and quick",
+            "it deletes work"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is it faster to draw 20 identical stars or to draw one and copy it? What else could go wrong when drawing 20?",
+          "a": "Copy one: faster and every star is identical.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show your pattern to your family and explain how you made it.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 5: Vector Drawing with It's Cool to Be Kind), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "A free browser vector tool (for example Google Drawings through the school account; TO CONFIRM which the school licenses)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Repeating tile pattern",
+          "alt": "A repeating pattern",
+          "for": "hook"
+        },
+        {
+          "find": "Align tools icons",
+          "alt": "Align tools",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Vector drawing and It's Cool to Be Kind",
+      "n": 14,
+      "title": "Design a poster or logo for the allotment",
+      "duration": 45,
+      "bigQuestion": "What makes a logo easy to remember?",
+      "objectives": [
+        "To understand how to design a vector logo or poster for a purpose and an audience"
+      ],
+      "successCriteria": [
+        "All: make a logo from shapes and text",
+        "Most: choose colours and shapes that suit the audience",
+        "Some: evaluate my design against success criteria"
+      ],
+      "crossCurricular": "Science and geography: the Allotment project (growing food)",
+      "smsc": "Moral: caring for the environment",
+      "keywords": [
+        {
+          "term": "logo",
+          "def": "a simple symbol that represents a group or idea"
+        },
+        {
+          "term": "audience",
+          "def": "who the design is for"
+        },
+        {
+          "term": "design brief",
+          "def": "what the design must do"
+        },
+        {
+          "term": "evaluate",
+          "def": "judge how well something works"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes a logo easy to remember?",
+        "a": "It's simple, clear, uses few colours and suits what it represents."
+      },
+      "islamicLink": {
+        "text": "Looking after the earth is an amanah; the Prophet ﷺ said that if a Muslim plants a tree and a bird, a person or an animal eats from it, it is charity for him (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Align lines shapes up ...",
+          "a": "exactly",
+          "mins": 1,
+          "options": [
+            "exactly",
+            "roughly"
+          ]
+        },
+        {
+          "q": "Name a vector tool.",
+          "a": "Duplicate.",
+          "mins": 1
+        },
+        {
+          "q": "A logo is usually ...",
+          "a": "simple",
+          "mins": 1,
+          "options": [
+            "simple",
+            "very detailed"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The design brief",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Brief",
+              "Detail"
+            ],
+            "rows": [
+              [
+                "Client",
+                "Our class allotment"
+              ],
+              [
+                "Audience",
+                "Families and neighbours"
+              ],
+              [
+                "Must include",
+                "A plant or vegetable shape and the name"
+              ],
+              [
+                "Size",
+                "Must work small and large"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Design steps",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Sketch three ideas",
+            "Choose one",
+            "Build with shapes",
+            "Add text",
+            "Test small and large"
+          ]
+        },
+        {
+          "heading": "Success criteria",
+          "bullets": [
+            "Simple shapes",
+            "Two or three colours",
+            "Readable name",
+            "Sharp when scaled"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Why test the logo small and large?",
+            "options": [
+              "A logo is used at many sizes",
+              "To waste time",
+              "To blur it"
+            ],
+            "answer": 0,
+            "why": "Vectors scale; check it reads."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Sketch three quick logo ideas on the pupil PDF.",
+          "a": "Three simple sketches.",
+          "mins": 4,
+          "model": "I do: a carrot inside a circle; a leaf with the name under it; a watering can."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build your logo or poster in the vector tool; then write a two-sentence evaluation against the criteria; save both to the portal.",
+          "a": "A finished design and an evaluation.",
+          "mins": 12,
+          "model": "The teacher evaluates an example."
+        },
+        {
+          "q": "Extend: make a black-and-white version.",
+          "a": "Mono version made.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A design brief tells you ...",
+          "a": "what the design must do",
+          "mins": 1,
+          "options": [
+            "what the design must do",
+            "the answer"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What makes a logo easy to remember?",
+          "a": "It's simple, clear, uses few colours and suits what it represents.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show your logo to someone at home and ask what it makes them think of.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 5: Vector Drawing with It's Cool to Be Kind), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "A free browser vector tool (for example Google Drawings through the school account; TO CONFIRM which the school licenses)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Allotment project notes (teacher)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Allotment vegetable garden",
+          "alt": "An allotment",
+          "for": "hook"
+        },
+        {
+          "find": "Seedling sprout icon",
+          "alt": "A plant shape",
+          "for": "teach:1"
+        }
+      ]
     }
   ]
 }
