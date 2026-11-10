@@ -2,7 +2,7 @@
   "subject": "PSHE",
   "year": "y10",
   "board": "National Curriculum / PSHE Association",
-  "source": "National Curriculum / statutory Health Education guidance, taught as PSHE only; PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. No RSE: TGA teaches PSHE only (owner decision, 9 Nov 2026). Relationships are taught as law and citizenship, with the Islamic teaching alongside; puberty and its fiqh (bulugh) are taught in Year 7 only, to boys and girls separately, and parents can see all materials. | Spring 1 2027 (lessons 1, 3, 5 to 7, v3; lessons 1 and 5 are the Autumn 1 and Autumn 2 core weeks of 11 and 18 Jan): Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+  "source": "National Curriculum / statutory Health Education guidance, taught as PSHE only; PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. No RSE: TGA teaches PSHE only (owner decision, 9 Nov 2026). No relationships or sex education: keeping safe is taught as safeguarding and the law (citizenship), with the Islamic teaching on modesty and guarding oneself alongside; puberty and its fiqh (bulugh) are taught in Year 7 only, to boys and girls separately, and parents can see all materials. | Spring 1 2027 (lessons 1, 3, 5 to 7, v3; lessons 1 and 5 are the Autumn 1 and Autumn 2 core weeks of 11 and 18 Jan): Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE) | Summer 1 2027 (owner rule, no RSE): lessons 2 rewritten as safeguarding and the law: keeping safe online and offline, who to tell (TGA's DSL through the portal's 'Report a concern'), what the law protects in plain terms, and the Islamic teaching on haya' and guarding oneself; no sexual content",
   "lessons": [
     {
       "unit": "Autumn 1: Transition to Key Stage 4: study habits, revision and wellbeing",
@@ -226,110 +226,215 @@
       ]
     },
     {
-      "unit": "Unit 1: Health, wellbeing and relationships",
+      "unit": "Unit 1: Health, wellbeing and keeping safe",
       "n": 2,
-      "title": "Healthy relationships, marriage and the law",
+      "title": "Safeguarding and the law: what protects young people and who to tell",
       "duration": 50,
+      "bigQuestion": "Why do you think the law treats under-18s differently from adults?",
       "objectives": [
-        "Describe features of a healthy, committed relationship and the Islamic view of marriage",
-        "Explain that consent is essential in marriage and that forced marriage is illegal",
-        "Recognise domestic abuse and coercive control and know where to find help"
+        "To understand how UK law and Islamic teaching protect young people from harm and exploitation, and how to get help"
       ],
+      "successCriteria": [
+        "All: name four people or services that help young people stay safe",
+        "Most: explain three ways the law protects under-18s",
+        "Some: explain how the aims of the Shari'ah protect life, mind and dignity"
+      ],
+      "crossCurricular": "Citizenship: how UK law protects young people",
+      "smsc": "Moral and social: the law and faith protecting the vulnerable",
       "keywords": [
         {
-          "term": "marriage (nikah)",
-          "def": "a legal and spiritual contract between two consenting adults"
+          "term": "safeguarding",
+          "def": "protecting children and young people from harm"
+        },
+        {
+          "term": "exploitation",
+          "def": "using a young person for someone else's gain, such as crime or money"
         },
         {
           "term": "forced marriage",
-          "def": "a marriage without the full and free consent of both people"
+          "def": "a marriage without free consent: a crime in the UK"
         },
         {
-          "term": "coercive control",
-          "def": "a pattern of behaviour that dominates and isolates a person"
-        },
-        {
-          "term": "domestic abuse",
-          "def": "abusive behaviour by a family member, spouse or partner"
-        },
-        {
-          "term": "mawaddah and rahmah",
-          "def": "love and mercy, as in Qur'an 30:21"
+          "term": "maqasid",
+          "def": "the aims of the Shari'ah, including protecting life, mind and honour"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think the law treats under-18s differently from adults?",
+        "a": "Young people can be more easily pressured or exploited, so the law gives them extra protection."
+      },
+      "islamicLink": {
+        "text": "Scholars teach that the Shari'ah aims to protect religion, life, mind, lineage and wealth (the maqasid). The Prophet ﷺ said: 'There should be neither harming nor reciprocating harm' (Ibn Majah, graded hasan).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Define consent.",
-        "Name two signs of an unhealthy relationship.",
-        "Name one helpline for young people."
+        {
+          "q": "Net pay is ...",
+          "a": "take-home pay",
+          "mins": 1,
+          "options": [
+            "take-home pay",
+            "gross pay"
+          ]
+        },
+        {
+          "q": "Name one emergency number.",
+          "a": "999.",
+          "mins": 1
+        },
+        {
+          "q": "Childline's number is ...",
+          "a": "0800 1111",
+          "mins": 1,
+          "options": [
+            "0800 1111",
+            "111"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "What makes a healthy committed relationship?",
+          "heading": "Ground rules",
           "bullets": [
-            "Respect, trust and honesty",
-            "Communication and shared responsibility",
-            "Mutual consultation (shura) in decisions",
-            "Safety, kindness and support"
+            "Right to pass",
+            "No personal stories",
+            "Questions box"
           ],
-          "note": "Say bismillah. Teach in line with the TGA RSHE Policy, to boys and girls separately; parents have been informed and can see all materials. TGA pupils live in different countries: use UK law as the baseline and remind pupils that laws vary elsewhere. Cite plainly: Qur'an 30:21, that Allah placed love and mercy between spouses. Cite the hadith that the best of you are the best to your families (Tirmidhi). Link to the Tarbiyyah Compass values of Integrity and Excellence. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "Taught as safeguarding and law (citizenship); no sexual content and no relationships education (owner decision). Ground rules: right to pass, no personal stories, kindness. A pupil's worry is never promised secrecy: follow the Child Protection and Safeguarding Policy and tell the DSL the same day. TGA pupils live in different countries: UK law is the baseline; laws vary elsewhere."
         },
         {
-          "heading": "Marriage in Islam",
-          "bullets": [
-            "Marriage is a contract based on consent",
-            "Both parties must freely agree",
-            "Hadith: a woman must be consulted and give permission",
-            "Parents advise and support; they do not force"
-          ],
-          "note": "Cite plainly: the Prophet (peace be upon him) said that a previously married woman must not be married until she is consulted, and a virgin must not be married until her permission is sought (Bukhari and Muslim). Teach that Islam requires free consent. Explain that families can guide with wisdom, but forcing is not permitted. Misconception: forced marriage is a religious or cultural duty. It is not."
+          "heading": "The law protects you",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Area",
+              "What the law says (England and Wales)"
+            ],
+            "rows": [
+              [
+                "Exploitation for crime",
+                "Using young people to carry drugs or money (county lines) is a crime against them"
+              ],
+              [
+                "Money muling",
+                "Letting others use your bank account is a crime: say no"
+              ],
+              [
+                "Forced marriage",
+                "A crime; and no one under 18 can marry"
+              ],
+              [
+                "Online threats",
+                "Threats, blackmail and harassment are crimes"
+              ]
+            ]
+          }
         },
         {
-          "heading": "The law and forced marriage",
-          "bullets": [
-            "Forced marriage is a crime in England and Wales",
-            "The minimum age to marry is 18",
-            "Applies to religious ceremonies too",
-            "Forced Marriage Unit: 020 7008 0151"
-          ],
-          "note": "State clearly: since 2014 forcing someone to marry is a criminal offence in England and Wales, and since February 2023 the minimum age for marriage is 18, including for religious-only ceremonies. Explain that taking a child abroad to be married is also an offence. Pupils at risk can contact the Forced Marriage Unit, the DSL, Childline or the police. Reassure pupils that this is a protective law. If concerned about any pupil, follow safeguarding procedures the same day."
+          "heading": "Who to tell",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "A parent or family member",
+            "Any TGA teacher",
+            "TGA's DSL through 'Report a concern'",
+            "Childline 0800 1111; the Forced Marriage Unit (gov.uk)",
+            "999 if in danger now"
+          ]
         },
         {
-          "heading": "Domestic abuse and coercive control",
+          "heading": "Faith and safety",
           "bullets": [
-            "Abuse can be physical, emotional, financial or online",
-            "Coercive control: isolating, monitoring, threatening",
-            "Never the victim's fault and never acceptable",
-            "Hadith: do not harm or return harm"
+            "Protecting life and dignity is part of the Shari'ah",
+            "No harm and no reciprocating harm",
+            "Haya' and guarding oneself",
+            "Speaking up for others is a duty"
           ],
-          "note": "Define domestic abuse and coercive control with invented examples: a partner controls money, checks messages and cuts someone off from family. Cite the hadith ‘There should be neither harming nor reciprocating harm’ (Ibn Majah; Nawawi's Forty Hadith no. 32) and Qur'an 4:19 on treating spouses with kindness. Explain that abuse is not justified by religion or culture. Do not ask pupils to share their own experiences."
+          "note": ""
         },
         {
-          "heading": "Getting help",
-          "bullets": [
-            "National Domestic Abuse Helpline: 0808 2000 247",
-            "Childline: 0800 1111",
-            "TGA DSL and pastoral team",
-            "Emergency: 999"
-          ],
-          "note": "Share the helplines and explain they are confidential. Explain what to say: ‘I am worried about my safety or someone else's.’ Mention that FGM is also illegal in the UK and that anyone concerned should tell the DSL or contact the police; keep this factual. Close with a reminder that the school will always listen and act. Follow safeguarding procedures immediately if a concern arises."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Someone offers you £200 to 'just let money pass through' your bank account. This is ...",
+            "options": [
+              "money muling: a crime, say no and tell an adult",
+              "easy money",
+              "a fair job"
+            ],
+            "answer": 0,
+            "why": "It is exploitation."
+          }
         }
       ],
       "practice": [
-        "True or false? (a) In England and Wales the minimum age for marriage is 16. (b) Both people must freely consent to a marriage in Islam. (c) Coercive control can include monitoring someone's phone.",
-        "List three features of a healthy marriage from the lesson.",
-        "Write what you could say to a friend who tells you they are afraid of being forced to marry."
+        {
+          "q": "A classmate says an older contact wants them to carry a parcel across town for cash. Advise them.",
+          "a": "Don't do it; it could be criminal exploitation; tell a parent, teacher or the DSL.",
+          "mins": 4,
+          "model": "I do: 'That's how people get pulled into crime. You're not in trouble for being asked. Let's tell someone now.'"
+        }
       ],
       "independent": [
-        "Write a short advice leaflet: ‘Healthy relationships and the law’ with four key facts and two helplines.",
-        "Create a case study showing coercive control and the steps taken to seek help.",
-        "Write a paragraph on how Qur'an 30:21 and the hadith on consent shape Islamic marriage."
+        {
+          "q": "Pupil PDF: five scenarios; name the risk, what the law says in plain terms and who to tell.",
+          "a": "Five correct answers.",
+          "mins": 12,
+          "model": "The teacher does the first."
+        },
+        {
+          "q": "Extend: explain one of the maqasid and how it links to safeguarding.",
+          "a": "For example: protecting life links to keeping people from harm and exploitation.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Give two features of a healthy relationship.",
-        "What does UK law say about forced marriage?"
+        {
+          "q": "In England and Wales, the minimum age to marry is ...",
+          "a": "18",
+          "mins": 1,
+          "options": [
+            "18",
+            "16",
+            "14"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why do you think the law treats under-18s differently from adults?",
+          "a": "Young people can be more easily pressured or exploited, so the law gives them extra protection.",
+          "mins": 2
+        }
       ],
-      "homework": "Write down three qualities of a healthy relationship you would look for in the future, linked to Islamic teaching.",
-      "send": "SEND: provide key facts on cards and a visual of helplines. EAL: pre-teach legal vocabulary. Stretch: compare how UK law and Islamic principles each protect individuals in marriage."
+      "homework": "Talk with a parent about who you would go to if you were worried.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4 (Staying safe); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes straight to TGA's Designated Safeguarding Lead), Childline 0800 1111, 999 in an emergency"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Shield",
+          "alt": "Protection",
+          "for": "hook"
+        },
+        {
+          "find": "Scales of justice statue",
+          "alt": "The law",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Staying safe",
@@ -2323,6 +2428,1036 @@
         {
           "find": "Road ahead horizon",
           "alt": "The road ahead",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and choices",
+      "n": 13,
+      "title": "Earning, budgeting and saving",
+      "duration": 50,
+      "bigQuestion": "Your first job advert says £1,500 a month. Will £1,500 arrive in your bank?",
+      "objectives": [
+        "To understand how a payslip works and how to budget and save from earnings"
+      ],
+      "successCriteria": [
+        "All: name the main parts of a payslip",
+        "Most: build a monthly budget from take-home pay",
+        "Some: explain why saving before spending works"
+      ],
+      "crossCurricular": "Maths: percentages and deductions",
+      "smsc": "Moral: honest earning and responsible spending",
+      "keywords": [
+        {
+          "term": "gross pay",
+          "def": "pay before deductions"
+        },
+        {
+          "term": "net pay",
+          "def": "take-home pay after deductions"
+        },
+        {
+          "term": "income tax",
+          "def": "money paid to the government from earnings"
+        },
+        {
+          "term": "National Insurance",
+          "def": "payments that build entitlement to the state pension and some benefits"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your first job advert says £1,500 a month. Will £1,500 arrive in your bank?",
+        "a": "Usually less: tax and National Insurance are taken off before you are paid, if you earn above the thresholds."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Give the worker his wages before his sweat dries' (Ibn Majah, graded sahih by later scholars). Islam values fair pay and honest work.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Riba is ...",
+          "a": "interest on a loan",
+          "mins": 1,
+          "options": [
+            "interest on a loan",
+            "trade"
+          ]
+        },
+        {
+          "q": "Give one need and one want.",
+          "a": "Need: rent; want: a takeaway.",
+          "mins": 1
+        },
+        {
+          "q": "Zakah is ... of eligible savings",
+          "a": "2.5%",
+          "mins": 1,
+          "options": [
+            "2.5%",
+            "10%"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A payslip",
+          "bullets": [],
+          "note": "Example data, not real tax rates.",
+          "table": {
+            "head": [
+              "Line",
+              "£ (example)"
+            ],
+            "rows": [
+              [
+                "Gross pay",
+                "1,500"
+              ],
+              [
+                "Income tax",
+                "- 90"
+              ],
+              [
+                "National Insurance",
+                "- 40"
+              ],
+              [
+                "Net pay",
+                "1,370"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Pay yourself first",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Pay arrives",
+            "Zakah and sadaqah planned",
+            "Saving moved first",
+            "Bills paid",
+            "Spend what is left"
+          ]
+        },
+        {
+          "heading": "A monthly budget",
+          "bullets": [],
+          "note": "Example data.",
+          "chart": {
+            "kind": "pie",
+            "title": "A first-job budget (example data)",
+            "unit": "£",
+            "labels": [
+              "Rent share",
+              "Food",
+              "Transport",
+              "Saving",
+              "Sadaqah",
+              "Fun"
+            ],
+            "values": [
+              450,
+              250,
+              150,
+              300,
+              70,
+              150
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Net pay is ...",
+            "options": [
+              "take-home pay after deductions",
+              "pay before tax",
+              "a bonus"
+            ],
+            "answer": 0,
+            "why": "What actually arrives."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Gross £1,200; tax £60; NI £30. Net pay?",
+          "a": "£1,200 - £90 = £1,110.",
+          "mins": 4,
+          "model": "I do: £1,500 - £90 - £40 = £1,370."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: a budget from net pay of £1,370 including saving and sadaqah; it must balance.",
+          "a": "A balanced budget with saving first.",
+          "mins": 12,
+          "model": "The teacher allocates saving first."
+        },
+        {
+          "q": "Extend: what percentage of the example budget is saved?",
+          "a": "300 ÷ 1,370 × 100 ≈ 21.9%.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Income tax and National Insurance are taken from ...",
+          "a": "gross pay",
+          "mins": 1,
+          "options": [
+            "gross pay",
+            "net pay"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your first job advert says £1,500 a month. Will £1,500 arrive in your bank?",
+          "a": "Usually less: tax and National Insurance are taken off before you are paid, if you earn above the thresholds.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask a parent which deductions appear on a payslip (no real figures needed).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4 (Money and choices); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Calculator",
+        "Example payslip (pupil PDF; figures are example data)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Payslip document",
+          "alt": "A payslip",
+          "for": "teach:1"
+        },
+        {
+          "find": "Savings jar coins",
+          "alt": "Saving first",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and choices",
+      "n": 14,
+      "title": "Spending wisely; debt and honesty in money",
+      "duration": 50,
+      "bigQuestion": "An app offers 'buy now, pay in three'. What could go wrong?",
+      "objectives": [
+        "To understand how debt works, its risks, and the Islamic principles of honesty and avoiding riba in spending"
+      ],
+      "successCriteria": [
+        "All: explain what debt is",
+        "Most: describe the risks of 'buy now, pay later' and credit with interest",
+        "Some: plan honest, debt-free alternatives"
+      ],
+      "crossCurricular": "Maths: compound growth (as knowledge, not to take)",
+      "smsc": "Moral: honesty and avoiding harmful debt",
+      "keywords": [
+        {
+          "term": "debt",
+          "def": "money owed to someone"
+        },
+        {
+          "term": "credit",
+          "def": "buying now and paying later"
+        },
+        {
+          "term": "buy now, pay later",
+          "def": "splitting a payment over time; late fees can apply"
+        },
+        {
+          "term": "honesty",
+          "def": "truthfulness in dealings"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An app offers 'buy now, pay in three'. What could go wrong?",
+        "a": "Missed payments bring fees and can harm a credit record; some plans charge interest, which Muslims avoid."
+      },
+      "islamicLink": {
+        "text": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead. The Prophet ﷺ sought refuge in Allah from the burden of debt (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Net pay is ...",
+          "a": "take-home pay",
+          "mins": 1,
+          "options": [
+            "take-home pay",
+            "pay before tax"
+          ]
+        },
+        {
+          "q": "Gross £1,000, deductions £80. Net?",
+          "a": "£920.",
+          "mins": 1
+        },
+        {
+          "q": "Pay yourself first means ...",
+          "a": "save before spending",
+          "mins": 1,
+          "options": [
+            "save before spending",
+            "spend first"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How debt grows",
+          "bullets": [],
+          "note": "Taught as knowledge of how the wider economy works, never as something to take.",
+          "table": {
+            "head": [
+              "Month",
+              "Owed with 2% a month interest (example)"
+            ],
+            "rows": [
+              [
+                "0",
+                "£500"
+              ],
+              [
+                "1",
+                "£510"
+              ],
+              [
+                "2",
+                "£520.20"
+              ],
+              [
+                "3",
+                "£530.60"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Spending traps",
+          "bullets": [
+            "Impulse buys",
+            "Late fees on 'pay later'",
+            "Subscriptions you forget",
+            "Loans with interest"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Halal alternatives",
+          "bullets": [
+            "Save first, buy later",
+            "Qard hasan from family (no extra)",
+            "Second-hand or wait for need",
+            "Murabahah through an Islamic provider for big items"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which avoids riba?",
+            "options": [
+              "Saving up to buy",
+              "A credit card balance with interest",
+              "A payday loan"
+            ],
+            "answer": 0,
+            "why": "No interest involved."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "You want a £300 phone. Make a halal plan.",
+          "a": "Save £50 a month for 6 months, or buy a cheaper or second-hand model.",
+          "mins": 4,
+          "model": "I do: £240 laptop: save £40 a month for 6 months, check reviews, buy when ready."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: four spending scenarios; identify the risk and write an honest, debt-free alternative.",
+          "a": "Four alternatives with reasons.",
+          "mins": 12,
+          "model": "The teacher does the first."
+        },
+        {
+          "q": "Extend: explain why the debt table grows faster each month.",
+          "a": "Interest is charged on the growing total (compound).",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Prophet ﷺ sought refuge from ...",
+          "a": "the burden of debt",
+          "mins": 1,
+          "options": [
+            "the burden of debt",
+            "saving"
+          ]
+        },
+        {
+          "q": "Back to our ponder: An app offers 'buy now, pay in three'. What could go wrong?",
+          "a": "Missed payments bring fees and can harm a credit record; some plans charge interest, which Muslims avoid.",
+          "mins": 2
+        }
+      ],
+      "homework": "List your subscriptions or regular spending with a parent and cancel one you don't need.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4 (Money and choices); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Credit card and phone payment",
+          "alt": "Pay-later spending",
+          "for": "hook"
+        },
+        {
+          "find": "Shopping receipts",
+          "alt": "Receipts",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and choices",
+      "n": 15,
+      "title": "Pathways after Year 11: sixth form, college and apprenticeships",
+      "duration": 50,
+      "bigQuestion": "Is university the only route to a good career?",
+      "objectives": [
+        "To understand the main post-16 pathways and the qualifications each leads to"
+      ],
+      "successCriteria": [
+        "All: name three post-16 pathways",
+        "Most: compare A levels, T levels, vocational courses and apprenticeships",
+        "Some: explain which pathway fits a chosen career and why"
+      ],
+      "smsc": "Moral: planning a beneficial future",
+      "keywords": [
+        {
+          "term": "A level",
+          "def": "a two-year academic qualification, usually three subjects"
+        },
+        {
+          "term": "T level",
+          "def": "a two-year technical qualification with an industry placement"
+        },
+        {
+          "term": "apprenticeship",
+          "def": "paid work with training and a qualification"
+        },
+        {
+          "term": "participation age",
+          "def": "in England, young people stay in education or training until 18"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is university the only route to a good career?",
+        "a": "No: apprenticeships, T levels and vocational routes lead to good careers; the right route depends on you."
+      },
+      "islamicLink": {
+        "text": "Seeking beneficial knowledge is praised in Islam; the Prophet ﷺ made du'a for beneficial knowledge (Muslim). Choose a path that benefits you and others.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Debt is ...",
+          "a": "money owed",
+          "mins": 1,
+          "options": [
+            "money owed",
+            "money saved"
+          ]
+        },
+        {
+          "q": "Give one halal alternative to borrowing.",
+          "a": "For example: save first.",
+          "mins": 1
+        },
+        {
+          "q": "Riba is ...",
+          "a": "forbidden in Islam",
+          "mins": 1,
+          "options": [
+            "forbidden in Islam",
+            "encouraged"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The pathways",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Route",
+              "What it is",
+              "Leads to"
+            ],
+            "rows": [
+              [
+                "A levels (sixth form or college)",
+                "Academic, about 3 subjects",
+                "University, apprenticeships, work"
+              ],
+              [
+                "T levels",
+                "Technical, with placement",
+                "Skilled work, higher study"
+              ],
+              [
+                "Vocational (e.g. BTEC)",
+                "Practical, subject-based",
+                "Work, further study"
+              ],
+              [
+                "Apprenticeship",
+                "Paid job plus training",
+                "Qualified work"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Staying in learning to 18",
+          "bullets": [
+            "Full-time education",
+            "An apprenticeship or traineeship",
+            "Work or volunteering with part-time study"
+          ],
+          "note": "England's rule; families abroad check local rules."
+        },
+        {
+          "heading": "Choosing",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "What do I enjoy?",
+            "What am I good at?",
+            "What careers interest me?",
+            "Which route leads there?",
+            "What grades do I need?"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which route is paid work with training?",
+            "options": [
+              "An apprenticeship",
+              "A levels",
+              "University"
+            ],
+            "answer": 0,
+            "why": "Apprentices earn while they learn."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which route suits someone who wants to be an electrician?",
+          "a": "An apprenticeship or a T level in building services engineering.",
+          "mins": 4,
+          "model": "I do: a future doctor usually needs A levels including chemistry, then university."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: research two pathways for a career you like (online, with sources) and compare them in a table.",
+          "a": "A comparison with entry requirements and sources.",
+          "mins": 12,
+          "model": "The teacher compares two routes into engineering."
+        },
+        {
+          "q": "Extend: find one local college or sixth form course page.",
+          "a": "Course found and noted.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A T level includes ...",
+          "a": "an industry placement",
+          "mins": 1,
+          "options": [
+            "an industry placement",
+            "no work at all"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is university the only route to a good career?",
+          "a": "No: apprenticeships, T levels and vocational routes lead to good careers; the right route depends on you.",
+          "mins": 2
+        }
+      ],
+      "homework": "Discuss your pathway ideas with a parent.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4 (Money and choices); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "National Careers Service website (online research, no visits)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Signpost directions",
+          "alt": "Pathways",
+          "for": "hook"
+        },
+        {
+          "find": "Toolbox workshop",
+          "alt": "Technical routes",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and choices",
+      "n": 16,
+      "title": "Choosing and researching a pathway",
+      "duration": 50,
+      "bigQuestion": "How would you know if a course is right for you before you start?",
+      "objectives": [
+        "To understand how to research a pathway thoroughly and make an informed, prayerful decision"
+      ],
+      "successCriteria": [
+        "All: use two reliable sources to research a course",
+        "Most: list entry requirements and a deadline",
+        "Some: write an action plan for Year 11 applications"
+      ],
+      "smsc": "Spiritual: seeking Allah's guidance in decisions",
+      "keywords": [
+        {
+          "term": "entry requirements",
+          "def": "grades or skills needed to start a course"
+        },
+        {
+          "term": "deadline",
+          "def": "the last date to apply"
+        },
+        {
+          "term": "istikharah",
+          "def": "the prayer asking Allah to guide a decision"
+        },
+        {
+          "term": "reliable source",
+          "def": "official, up-to-date information"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How would you know if a course is right for you before you start?",
+        "a": "Research it, check entry requirements, ask people who know, and pray istikharah."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ taught the Companions the istikharah prayer for every important decision (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "An apprenticeship is ...",
+          "a": "paid work with training",
+          "mins": 1,
+          "options": [
+            "paid work with training",
+            "unpaid holiday"
+          ]
+        },
+        {
+          "q": "Name one post-16 route.",
+          "a": "For example: T levels.",
+          "mins": 1
+        },
+        {
+          "q": "In England you stay in learning until ...",
+          "a": "18",
+          "mins": 1,
+          "options": [
+            "18",
+            "16"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Research checklist",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Question",
+              "Where to find it"
+            ],
+            "rows": [
+              [
+                "Entry requirements",
+                "The course page"
+              ],
+              [
+                "Deadline",
+                "College or sixth form website"
+              ],
+              [
+                "What I'd study",
+                "Course outline"
+              ],
+              [
+                "Where it leads",
+                "National Careers Service"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reliable sources",
+          "bullets": [
+            "Official college and sixth form sites",
+            "National Careers Service",
+            "Gov.uk"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Decision steps",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Research",
+            "Consult parents and teachers (shura)",
+            "Pray istikharah",
+            "Decide",
+            "Act and trust Allah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Istikharah is ...",
+            "options": [
+              "a prayer asking Allah to guide a decision",
+              "a type of course",
+              "an exam"
+            ],
+            "answer": 0,
+            "why": "Bukhari."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn a vague goal into an action: 'I want to do something with computers.'",
+          "a": "Research Computer Science A level and digital T levels; list requirements; note deadlines.",
+          "mins": 4,
+          "model": "I do: 'something with animals' becomes: research animal care courses and the vet nurse apprenticeship."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: research one chosen course fully and write a Year 11 action plan with dates.",
+          "a": "Requirements, deadline and three dated actions.",
+          "mins": 12,
+          "model": "The teacher models one action."
+        },
+        {
+          "q": "Extend: learn the istikharah du'a with its meaning.",
+          "a": "Learned.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Shura means ...",
+          "a": "consulting others",
+          "mins": 1,
+          "options": [
+            "consulting others",
+            "deciding alone"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How would you know if a course is right for you before you start?",
+          "a": "Research it, check entry requirements, ask people who know, and pray istikharah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Share your action plan with a parent and add their advice.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4 (Money and choices); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "National Careers Service website"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Calendar planner",
+          "alt": "Deadlines",
+          "for": "teach:1"
+        },
+        {
+          "find": "Laptop research",
+          "alt": "Online research",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and choices",
+      "n": 17,
+      "title": "Resilience and revision habits for Year 11",
+      "duration": 50,
+      "bigQuestion": "Two pupils revise for 10 hours. One rereads notes; one tests herself. Who remembers more?",
+      "objectives": [
+        "To understand how to build resilience and effective revision habits for Year 11"
+      ],
+      "successCriteria": [
+        "All: name three effective revision methods",
+        "Most: plan a weekly revision timetable",
+        "Some: explain how tawakkul and effort work together"
+      ],
+      "smsc": "Spiritual: effort with trust in Allah",
+      "keywords": [
+        {
+          "term": "resilience",
+          "def": "bouncing back after setbacks"
+        },
+        {
+          "term": "retrieval practice",
+          "def": "testing yourself to strengthen memory"
+        },
+        {
+          "term": "spaced practice",
+          "def": "revising over time, not cramming"
+        },
+        {
+          "term": "tawakkul",
+          "def": "trusting Allah after doing your best"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two pupils revise for 10 hours. One rereads notes; one tests herself. Who remembers more?",
+        "a": "Usually the one who tests herself: retrieval practice strengthens memory."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Tie it, and then trust in Allah' (Tirmidhi, graded hasan). Effort and tawakkul go together.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Istikharah is ...",
+          "a": "a prayer for guidance",
+          "mins": 1,
+          "options": [
+            "a prayer for guidance",
+            "a course"
+          ]
+        },
+        {
+          "q": "Name a reliable careers source.",
+          "a": "National Careers Service.",
+          "mins": 1
+        },
+        {
+          "q": "Entry requirements are ...",
+          "a": "what you need to start a course",
+          "mins": 1,
+          "options": [
+            "what you need to start a course",
+            "the fees"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Methods that work",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Method",
+              "How"
+            ],
+            "rows": [
+              [
+                "Retrieval practice",
+                "Quizzes, flashcards, blank page"
+              ],
+              [
+                "Spaced practice",
+                "Little and often over weeks"
+              ],
+              [
+                "Past questions",
+                "Timed, then mark and fix"
+              ],
+              [
+                "Teach it",
+                "Explain to someone else"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Rereading vs testing",
+          "bullets": [],
+          "note": "Example data.",
+          "chart": {
+            "kind": "bar",
+            "title": "Recall after one week (example data)",
+            "unit": "%",
+            "labels": [
+              "Rereading",
+              "Highlighting",
+              "Self-testing"
+            ],
+            "values": [
+              35,
+              30,
+              70
+            ]
+          }
+        },
+        {
+          "heading": "Bouncing back",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Setback",
+            "Feel it, don't hide it",
+            "Learn the lesson",
+            "Make a small next step",
+            "Make du'a and keep going"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Spaced practice means ...",
+            "options": [
+              "revising little and often over time",
+              "cramming the night before",
+              "never revising"
+            ],
+            "answer": 0,
+            "why": "Spread it out."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn 'read chapter 3' into a retrieval task.",
+          "a": "Close the book, write everything you remember, then check and fix gaps.",
+          "mins": 4,
+          "model": "I do: 'reread biology notes' becomes '10 flashcard questions, then check'."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: a weekly revision timetable for Year 11 with salah, rest and retrieval tasks.",
+          "a": "A realistic timetable with rest and worship.",
+          "mins": 12,
+          "model": "The teacher fills Monday."
+        },
+        {
+          "q": "Extend: make five flashcards for one subject tonight.",
+          "a": "Flashcards made.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Tie it, and then ...'",
+          "a": "trust in Allah",
+          "mins": 1,
+          "options": [
+            "trust in Allah",
+            "forget it"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Two pupils revise for 10 hours. One rereads notes; one tests herself. Who remembers more?",
+          "a": "Usually the one who tests herself: retrieval practice strengthens memory.",
+          "mins": 2
+        }
+      ],
+      "homework": "Start your timetable this week and review it on Friday.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4 (Money and choices); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Flashcards or blank cards"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Flashcards study",
+          "alt": "Flashcards",
+          "for": "teach:1"
+        },
+        {
+          "find": "Bounce ball",
+          "alt": "Bouncing back",
           "for": "hook"
         }
       ]

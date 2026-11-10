@@ -2,219 +2,407 @@
   "subject": "PSHE",
   "year": "y9",
   "board": "National Curriculum / PSHE Association",
-  "source": "National Curriculum / statutory Health Education guidance, taught as PSHE only; PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. No RSE: TGA teaches PSHE only (owner decision, 9 Nov 2026). Relationships are taught as law and citizenship, with the Islamic teaching alongside; puberty and its fiqh (bulugh) are taught in Year 7 only, to boys and girls separately, and parents can see all materials. | Spring 1 2027 (lessons 3 to 7, v3): Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Money, careers and choices), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE). Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead.",
+  "source": "National Curriculum / statutory Health Education guidance, taught as PSHE only; PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. No RSE: TGA teaches PSHE only (owner decision, 9 Nov 2026). No relationships or sex education: keeping safe is taught as safeguarding and the law (citizenship), with the Islamic teaching on modesty and guarding oneself alongside; puberty and its fiqh (bulugh) are taught in Year 7 only, to boys and girls separately, and parents can see all materials. | Spring 1 2027 (lessons 3 to 7, v3): Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Money, careers and choices), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE). Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead. | Summer 1 2027 (owner rule, no RSE): lessons 1 and 2 rewritten as safeguarding and the law: keeping safe online and offline, who to tell (TGA's DSL through the portal's 'Report a concern'), what the law protects in plain terms, and the Islamic teaching on haya' and guarding oneself; no sexual content",
   "lessons": [
     {
-      "unit": "Unit 1: Respectful relationships and online safety",
+      "unit": "Unit 1: Keeping safe: safeguarding, online and the law",
       "n": 1,
-      "title": "Healthy and unhealthy relationships: respect, boundaries and consent",
+      "title": "Keeping safe offline: trusted adults, the DSL and what the law protects",
       "duration": 50,
+      "bigQuestion": "Someone you barely know gives you gifts and asks you to keep it 'just between us'. What should you think?",
       "objectives": [
-        "Explain consent as freely given, informed and able to be withdrawn, in everyday situations",
-        "Recognise controlling behaviour and pressure in relationships",
-        "Link respect, modesty (haya) and dignity to healthy relationships and know where to get help"
+        "To understand how to recognise when something is not right, who to tell, and how the law and Islam protect young people"
       ],
+      "successCriteria": [
+        "All: name three people or services to tell, including TGA's DSL",
+        "Most: recognise warning signs of someone trying to exploit a young person",
+        "Some: explain how haya' and guarding oneself help keep a Muslim safe"
+      ],
+      "smsc": "Moral: dignity, safety and speaking up",
       "keywords": [
         {
-          "term": "consent",
-          "def": "freely given agreement that can be withdrawn at any time"
+          "term": "safeguarding",
+          "def": "protecting children and young people from harm"
         },
         {
-          "term": "coercion",
-          "def": "pressuring or forcing someone to do something"
+          "term": "DSL",
+          "def": "Designated Safeguarding Lead: the person at TGA in charge of keeping pupils safe"
         },
         {
-          "term": "controlling behaviour",
-          "def": "trying to dominate what another person does or feels"
+          "term": "exploitation",
+          "def": "someone using a young person for their own gain"
         },
         {
-          "term": "haya",
-          "def": "modesty and a sense of shame about what is wrong"
-        },
-        {
-          "term": "dignity",
-          "def": "the right to be respected and valued"
+          "term": "haya' (حياء)",
+          "def": "modesty and a sense of shame that keeps us from wrong"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Someone you barely know gives you gifts and asks you to keep it 'just between us'. What should you think?",
+        "a": "That is a warning sign: secrets plus gifts from someone you barely know. Tell a trusted adult or the DSL."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Haya' is a branch of iman' (Bukhari and Muslim). Allah commands believers to lower their gaze and guard their modesty (An-Nur 24:30 to 31): a Muslim protects his or her dignity and keeps away from what leads to harm.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name two features of a healthy friendship.",
-        "Give an assertive phrase for refusing something.",
-        "What is a boundary?"
+        {
+          "q": "A trusted adult ...",
+          "a": "keeps you safe",
+          "mins": 1,
+          "options": [
+            "keeps you safe",
+            "is anyone online"
+          ]
+        },
+        {
+          "q": "Name one emergency number.",
+          "a": "999.",
+          "mins": 1
+        },
+        {
+          "q": "Childline's number is ...",
+          "a": "0800 1111",
+          "mins": 1,
+          "options": [
+            "0800 1111",
+            "101"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Healthy relationships",
+          "heading": "Ground rules",
           "bullets": [
-            "Respect, honesty, trust and equality",
-            "Both people have a voice",
-            "You feel safe and free to be yourself",
-            "Applies to family, friends and online contacts"
+            "Right to pass",
+            "No personal stories",
+            "Questions box"
           ],
-          "note": "Say bismillah. Explain that this lesson is about friendships, family and online contacts (in Islam, romantic relationships belong only within marriage), and is taught within the TGA RSHE Policy. Parents have been informed of the content. Revisit key features of healthy relationships. Link to Qur'an 30:21, which describes love and mercy between spouses as a sign from Allah, and to the hadith that the best of you are the best to their families (Tirmidhi). Link to the Tarbiyyah Compass value of Integrity. Taught to boys and girls separately. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "Taught as safeguarding and law (citizenship); no sexual content and no relationships education (owner decision). Ground rules: right to pass, no personal stories, kindness. A pupil's worry is never promised secrecy: follow the Child Protection and Safeguarding Policy and tell the DSL the same day."
         },
         {
-          "heading": "Consent in everyday life",
-          "bullets": [
-            "Consent is a clear, free ‘yes’",
-            "Silence or fear is not consent",
-            "You can change your mind any time",
-            "Applies to touch, photos, secrets and belongings"
-          ],
-          "note": "Begin with low-risk examples: borrowing a phone, hugging someone, taking and sharing a photo, reading private messages. Teach that consent must be freely given, informed and specific. Misconception: if someone did not say no, it is fine. Emphasise that we must stop and check if someone seems uncertain. Do not discuss sexual detail. Explain that the same principles apply in every relationship."
+          "heading": "Warning signs",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Sign",
+              "Why it matters"
+            ],
+            "rows": [
+              [
+                "Asked to keep secrets from parents",
+                "Secrecy isolates you"
+              ],
+              [
+                "Gifts, money or favours from someone you barely know",
+                "Creates a 'debt'"
+              ],
+              [
+                "Pressure to go somewhere or do something you're unsure of",
+                "Control"
+              ],
+              [
+                "Threats or blackmail",
+                "A crime; tell straight away"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Pressure, coercion and control",
+          "heading": "What the law protects",
           "bullets": [
-            "Guilt-tripping, threats and bribes",
-            "Checking your phone or tracking you",
-            "Cutting you off from friends and family",
-            "Humiliation, jealousy and anger used to control"
+            "Under-18s are protected by law as children",
+            "Adults who harm, exploit or threaten children commit crimes",
+            "It is never the young person's fault",
+            "The police and the school's DSL must act to protect you"
           ],
-          "note": "Use invented case studies of friendships and online contacts rather than romantic ones. Examples: a friend threatens to share a secret if you don't do what they say; an older contact flatters a pupil and asks them to keep their chats secret. Ask pupils to identify the red flags. Explain that anyone can experience coercive behaviour, and it is never the victim's fault."
+          "note": "Plain and age-appropriate; no sexual content."
         },
         {
-          "heading": "Values: haya, dignity and the law",
-          "bullets": [
-            "Qur'an 24:30: lower the gaze and guard modesty",
-            "Hadith: modesty is part of faith",
-            "Everyone's dignity must be protected",
-            "UK law protects young people; the age of consent is 16"
-          ],
-          "note": "Cite plainly: Qur'an 24:30 commands believers to lower their gaze and guard their modesty, and the Prophet (peace be upon him) taught that modesty is part of faith (Bukhari and Muslim). Explain that Islamic teaching places intimate relationships within marriage, and that the law in the UK also sets an age of consent to protect young people. Keep to the facts; do not discuss details. If pupils ask questions, redirect to the question box and speak to the PSHE Lead."
-        },
-        {
-          "heading": "Getting help",
-          "bullets": [
-            "Tell a trusted adult or the DSL",
+          "heading": "Who to tell",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "A parent or family member",
+            "Any TGA teacher",
+            "TGA's DSL: the portal's 'Report a concern'",
             "Childline 0800 1111",
-            "NSPCC Helpline 0808 800 5000",
-            "In danger, call 999"
-          ],
-          "note": "Make sure all pupils know the routes for help. Emphasise that no one will be blamed for reporting. Model what to say: ‘Something is happening that I'm not comfortable with and I need help.’ Explain that adults will take concerns seriously and act in the pupil's best interests. If a pupil discloses something during the lesson, follow safeguarding procedures and speak to the DSL the same day."
+            "999 if in danger now"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Someone says 'Don't tell your parents, they wouldn't understand.' This is ...",
+            "options": [
+              "a warning sign: tell a trusted adult",
+              "a normal request",
+              "a good secret"
+            ],
+            "answer": 0,
+            "why": "Secrecy is a red flag."
+          }
         }
       ],
       "practice": [
-        "Consent or not? (a) A friend says ‘ok’ after you keep asking five times. (b) A pupil says ‘yes, you can take the photo’ and later says ‘please delete it’. Explain each.",
-        "List three red flags of controlling behaviour.",
-        "Write two assertive sentences that set a boundary about sharing your phone."
+        {
+          "q": "A friend tells you an older person keeps messaging them and buying them things. What do you do?",
+          "a": "Don't promise secrecy; encourage them to tell an adult and tell one yourself (a parent, teacher or the DSL).",
+          "mins": 4,
+          "model": "I do: 'I'm glad you told me. This isn't OK and it's not your fault. Let's tell Mr X or use Report a concern now.'"
+        }
       ],
       "independent": [
-        "Write a short case study of an unhealthy friendship and how a pupil seeks help.",
-        "Create a poster: ‘Consent is…’ with five key points and a quotation from the lesson.",
-        "Write a paragraph explaining how haya and respect protect dignity."
+        {
+          "q": "Pupil PDF: four scenarios; for each, name the warning sign, the safest action and who to tell.",
+          "a": "Four scenarios with signs, actions and helpers.",
+          "mins": 12,
+          "model": "The teacher does the first."
+        },
+        {
+          "q": "Extend: explain in two sentences how haya' protects a person.",
+          "a": "Haya' makes us avoid what is wrong and careful about our dignity and privacy.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Give two features of consent.",
-        "Name two places to get help."
+        {
+          "q": "The person at TGA in charge of keeping pupils safe is the ...",
+          "a": "DSL",
+          "mins": 1,
+          "options": [
+            "DSL",
+            "IT technician"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Someone you barely know gives you gifts and asks you to keep it 'just between us'. What should you think?",
+          "a": "That is a warning sign: secrets plus gifts from someone you barely know. Tell a trusted adult or the DSL.",
+          "mins": 2
+        }
       ],
-      "homework": "Talk with a trusted adult about what respect looks like in a family relationship and write four sentences about their view.",
-      "send": "SEND: provide scenario cards with traffic-light responses and sentence frames. EAL: pre-teach ‘consent’, ‘coercion’ and ‘boundary’. Stretch: compare the idea of consent in UK law with Islamic ethical principles of respect and choice."
+      "homework": "Find the 'Report a concern' page in the portal with a parent.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Staying safe); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes straight to TGA's Designated Safeguarding Lead), Childline 0800 1111, 999 in an emergency",
+        "Anonymous questions box (portal form)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Shield",
+          "alt": "A shield: protection",
+          "for": "hook"
+        },
+        {
+          "find": "Padlock",
+          "alt": "Keeping safe",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Respectful relationships and online safety",
+      "unit": "Unit 1: Keeping safe: safeguarding, online and the law",
       "n": 2,
-      "title": "Sharing images and harmful content online",
+      "title": "Keeping safe online: private images, pressure and the law",
       "duration": 50,
+      "bigQuestion": "Once you send a picture or message, who controls it?",
       "objectives": [
-        "Explain the law and risks relating to nude or sexual images of under-18s",
-        "Describe how to respond to pressure, blackmail or harmful content and where to report",
-        "Evaluate misleading, extreme and sexually explicit content and why it is harmful"
+        "To understand how to protect privacy online, respond to pressure or threats, and where to report, knowing what the law says"
       ],
+      "successCriteria": [
+        "All: name three ways to protect privacy online",
+        "Most: explain the law on private images of under-18s in plain terms",
+        "Some: describe the steps to take if someone threatens to share something"
+      ],
+      "smsc": "Moral: protecting privacy and dignity",
       "keywords": [
         {
-          "term": "indecent image",
-          "def": "a nude or sexual image of a person"
+          "term": "privacy",
+          "def": "keeping personal information and images to yourself and family"
         },
         {
           "term": "blackmail",
-          "def": "threatening to share something unless a person does what is demanded"
+          "def": "threatening to share something unless you do what is demanded"
         },
         {
-          "term": "misinformation",
-          "def": "false or misleading information"
+          "term": "report",
+          "def": "telling a platform, adult or service so they can act"
         },
         {
-          "term": "radicalisation",
-          "def": "being drawn into extreme beliefs"
-        },
-        {
-          "term": "amanah",
+          "term": "amanah (أمانة)",
           "def": "a trust we must protect"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Once you send a picture or message, who controls it?",
+        "a": "Not you any more: it can be copied and shared. That is why privacy matters."
+      },
+      "islamicLink": {
+        "text": "Our privacy and dignity are an amanah. The Prophet ﷺ said: 'Haya' is a branch of iman' (Bukhari and Muslim). A Muslim keeps private what Allah has made private.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. What is a digital footprint?",
-        "Name two places to report an online problem.",
-        "What does ‘consent’ mean?"
+        {
+          "q": "DSL stands for ...",
+          "a": "Designated Safeguarding Lead",
+          "mins": 1,
+          "options": [
+            "Designated Safeguarding Lead",
+            "Digital Safety Lock"
+          ]
+        },
+        {
+          "q": "Name one warning sign of exploitation.",
+          "a": "Being asked to keep secrets.",
+          "mins": 1
+        },
+        {
+          "q": "Is it ever the young person's fault if an adult exploits them?",
+          "a": "No, never",
+          "mins": 1,
+          "options": [
+            "No, never",
+            "Sometimes"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Online risks",
+          "heading": "Ground rules",
           "bullets": [
-            "Pressure to share images",
-            "Strangers and fake profiles",
-            "Unrealistic or harmful content",
-            "Extreme views and false news"
+            "Right to pass",
+            "No personal stories",
+            "Questions box"
           ],
-          "note": "Say bismillah. Teach this lesson factually, without graphic detail, in line with the TGA RSHE Policy and Online Safety and Acceptable Use Policy. Parents have been informed. Explain the aim: to prepare pupils so that they can protect themselves and others. Reassure pupils that no one will be blamed if they ask for help. Link to the Tarbiyyah Compass value of Integrity and amanah. Taught to boys and girls separately. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "Taught as safeguarding and law (citizenship); no sexual content and no relationships education (owner decision). Ground rules: right to pass, no personal stories, kindness. A pupil's worry is never promised secrecy: follow the Child Protection and Safeguarding Policy and tell the DSL the same day."
         },
         {
-          "heading": "Images and the law",
+          "heading": "What the law says",
           "bullets": [
-            "It is illegal to take, share or keep nude images of under-18s",
-            "This includes images of yourself",
-            "Once sent, you lose control of it",
-            "Police focus on protecting young people"
+            "It is against the law to make, ask for, keep or share private or indecent images of anyone under 18, even of yourself",
+            "Threatening someone to get images or money is a crime",
+            "The law exists to protect young people; anyone who is pressured or threatened is a victim and will be helped"
           ],
-          "note": "State facts: in UK law a nude or sexual image of anyone under 18 is treated as an indecent image of a child. This applies even when a young person creates it themselves. The police have said they focus on safeguarding, not criminalising young people. Teach that images can be copied, shared and used to hurt. Link to the hadith that whoever conceals the fault of a Muslim, Allah will conceal him in this world and the next (Muslim)."
+          "note": "Keep to these plain statements; no further detail."
         },
         {
-          "heading": "Pressure and blackmail",
-          "bullets": [
-            "Stop contact and do not send more",
-            "Do not pay, and do not delete evidence",
-            "It is never your fault",
-            "Tell a trusted adult; report to CEOP"
-          ],
-          "note": "Explain that some people trick young people using fake profiles, flattery and then threats. Teach the steps: stop, save evidence, block, tell. Report Remove (Childline and the Internet Watch Foundation) can help get images taken down. Stress that adults will help without judgement. Role-play an invented chat in which a pupil receives pressure and chooses to tell an adult. Link to the Tarbiyyah Compass value of Resilience."
+          "heading": "If someone pressures or threatens you",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Stop replying",
+            "Don't pay or send anything",
+            "Save evidence (screenshots of the chat, not images)",
+            "Tell a trusted adult or the DSL",
+            "Report: CEOP; Childline's Report Remove tool"
+          ]
         },
         {
-          "heading": "Harmful content",
+          "heading": "Protect your privacy",
           "bullets": [
-            "Pornography presents a distorted picture",
-            "It can harm self-image and relationships",
-            "Extremist content uses emotion to recruit",
-            "Misinformation spreads fast: Qur'an 49:6"
+            "Private accounts",
+            "No location sharing with strangers",
+            "Think before posting",
+            "Block and report"
           ],
-          "note": "Keep this brief and non-graphic. Explain that pornography is harmful and haram: it is unrealistic, can become a habit that is hard to break, and distorts how people see themselves and others; Qur'an 24:30-31 commands believers to lower their gaze. Anyone who has seen it should not feel trapped: close it, turn to Allah in repentance and talk to a trusted adult. Explain that extremist groups may target young people online with simple answers and a sense of belonging. Cite plainly: Qur'an 49:6, to verify information before acting on it. Teach lateral reading: check who made it and what other trusted sources say. Refer to the Prevent policy for concerns."
+          "note": ""
         },
         {
-          "heading": "What to do",
-          "bullets": [
-            "Close the page, do not share it",
-            "Talk to a trusted adult",
-            "Use parental controls and filters",
-            "Report to the DSL, platform, CEOP, Childline"
-          ],
-          "note": "Summarise the key steps: close, tell, report. Explain that platforms have age restrictions and parents can set filters. Encourage pupils to build habits: ask whether it is true, kind and necessary before sharing. Close with a reminder that help is always available."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Someone online threatens to share something unless you pay. You ...",
+            "options": [
+              "stop, don't pay, save the chat and tell an adult",
+              "pay quickly",
+              "keep it secret"
+            ],
+            "answer": 0,
+            "why": "Never deal with them alone."
+          }
         }
       ],
       "practice": [
-        "True or false? (a) If you send a picture of yourself it cannot be illegal. (b) Blackmail is never your fault. (c) Report Remove can help get images taken down.",
-        "List the steps to take if someone pressures you to send a picture.",
-        "How can you check whether a shocking video is true?"
+        {
+          "q": "A friend says a stranger online is pressuring them for a photo. Write your advice.",
+          "a": "Say no, stop replying, block and report, tell a parent or the DSL; you are not in trouble.",
+          "mins": 4,
+          "model": "I do: 'You're not in trouble. Don't send anything. Block, screenshot the chat and let's tell an adult now.'"
+        }
       ],
       "independent": [
-        "Create a flowchart: ‘I have received a worrying message, what do I do?’",
-        "Write a short dialogue showing a pupil telling a trusted adult about online pressure.",
-        "Write a paragraph on how amanah and haya protect us online."
+        {
+          "q": "Pupil PDF: an online safety plan with privacy settings, three ways to say no, and four places to report.",
+          "a": "A complete plan.",
+          "mins": 12,
+          "model": "The teacher fills the reporting section."
+        },
+        {
+          "q": "Extend: explain how the idea of amanah applies to your online life.",
+          "a": "Privacy, dignity and others' information are trusts to protect.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Why is it dangerous to share nude images of under-18s?",
-        "Give two steps to take if you are being blackmailed."
+        {
+          "q": "If you're threatened online, you should ...",
+          "a": "tell an adult and report",
+          "mins": 1,
+          "options": [
+            "tell an adult and report",
+            "handle it alone"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Once you send a picture or message, who controls it?",
+          "a": "Not you any more: it can be copied and shared. That is why privacy matters.",
+          "mins": 2
+        }
       ],
-      "homework": "Find out how to set up parental controls or filters on one device with a parent or carer, and write three sentences about what you learned.",
-      "send": "SEND: provide flowchart templates and visual steps. EAL: pre-teach legal vocabulary. Stretch: research how the Online Safety Act 2023 requires platforms to protect children."
+      "homework": "Check your privacy settings on one app with a parent.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Staying safe); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes straight to TGA's Designated Safeguarding Lead), Childline 0800 1111, 999 in an emergency",
+        "CEOP (ceop.police.uk) and Childline Report Remove shown on the help slide"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Padlock on phone",
+          "alt": "Privacy",
+          "for": "hook"
+        },
+        {
+          "find": "Report button icon",
+          "alt": "Report",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Money, careers and choices",
@@ -2548,6 +2736,993 @@
           "find": "Road ahead horizon",
           "alt": "The road ahead",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Staying safe: risk and first aid",
+      "n": 14,
+      "title": "Risk and decisions",
+      "duration": 50,
+      "bigQuestion": "Crossing a road and jumping off a wall can both hurt you. Why do we accept one risk but not the other?",
+      "objectives": [
+        "To understand how to weigh up risk before making a decision"
+      ],
+      "successCriteria": [
+        "All: tell a hazard from a risk",
+        "Most: rate a risk by likelihood and severity",
+        "Some: explain how Islam guides us to avoid needless harm"
+      ],
+      "crossCurricular": "Maths: probability and risk ratings",
+      "smsc": "Moral: responsible choices",
+      "keywords": [
+        {
+          "term": "hazard",
+          "def": "something that could cause harm"
+        },
+        {
+          "term": "risk",
+          "def": "how likely harm is, and how bad"
+        },
+        {
+          "term": "likelihood",
+          "def": "how probable something is"
+        },
+        {
+          "term": "severity",
+          "def": "how serious the harm would be"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Crossing a road and jumping off a wall can both hurt you. Why do we accept one risk but not the other?",
+        "a": "We weigh benefit, likelihood and severity; some risks are worth it with care, others are not."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And do not throw [yourselves] with your [own] hands into destruction' (Al-Baqarah 2:195). Protecting life is one of the aims of the Shari'ah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Zakah is ...",
+          "a": "2.5%",
+          "mins": 1,
+          "options": [
+            "2.5%",
+            "50%"
+          ]
+        },
+        {
+          "q": "Name one Year 10 option subject.",
+          "a": "For example: Computer Science.",
+          "mins": 1
+        },
+        {
+          "q": "A trusted adult ...",
+          "a": "keeps you safe",
+          "mins": 1,
+          "options": [
+            "keeps you safe",
+            "is anyone online"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Hazard and risk",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Hazard",
+              "points": [
+                "A wet floor",
+                "A busy road"
+              ]
+            },
+            "right": {
+              "title": "Risk",
+              "points": [
+                "Chance of slipping and how bad",
+                "Chance of being hit and how bad"
+              ]
+            },
+            "label": "leads to"
+          }
+        },
+        {
+          "heading": "Rating a risk",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Likelihood \\ Severity",
+              "Minor",
+              "Serious"
+            ],
+            "rows": [
+              [
+                "Unlikely",
+                "Low",
+                "Medium"
+              ],
+              [
+                "Likely",
+                "Medium",
+                "High"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Decision steps",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Spot the hazard",
+            "Rate the risk",
+            "Reduce it",
+            "Decide",
+            "Review"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A risk that is likely and serious is ...",
+            "options": [
+              "high",
+              "low",
+              "zero"
+            ],
+            "answer": 0,
+            "why": "Top-right of the grid."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rate: cycling without a helmet on a main road.",
+          "a": "Likely to fall at some point; serious head injury: high; reduce with a helmet and a safer route.",
+          "mins": 4,
+          "model": "I do: using a kettle: unlikely to burn with care, but serious: medium; reduce by keeping it back from the edge."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: rate five everyday risks and write a way to reduce each.",
+          "a": "Five ratings with reductions.",
+          "mins": 12,
+          "model": "The teacher rates the first."
+        },
+        {
+          "q": "Extend: think of a risk worth taking (with care) and explain why.",
+          "a": "For example: trying out for a team.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Risk is about ...",
+          "a": "likelihood and severity",
+          "mins": 1,
+          "options": [
+            "likelihood and severity",
+            "colour"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Crossing a road and jumping off a wall can both hurt you. Why do we accept one risk but not the other?",
+          "a": "We weigh benefit, likelihood and severity; some risks are worth it with care, others are not.",
+          "mins": 2
+        }
+      ],
+      "homework": "With a parent, spot three hazards at home and agree how to reduce them.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Staying safe: risk and first aid); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Wet floor sign",
+          "alt": "A hazard sign",
+          "for": "teach:1"
+        },
+        {
+          "find": "Cycle helmet",
+          "alt": "Reducing risk",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Staying safe: risk and first aid",
+      "n": 15,
+      "title": "Staying safe at home and out",
+      "duration": 50,
+      "bigQuestion": "Most accidents to young people happen at home. Why might that be?",
+      "objectives": [
+        "To understand how to prevent common accidents at home and stay safe when out"
+      ],
+      "successCriteria": [
+        "All: name three home hazards and three outdoor ones",
+        "Most: describe how to prevent each",
+        "Some: make a family safety plan, including what to do in a fire"
+      ],
+      "smsc": "Moral: responsibility for self and family",
+      "keywords": [
+        {
+          "term": "fire safety",
+          "def": "preventing and escaping fires"
+        },
+        {
+          "term": "escape plan",
+          "def": "how everyone gets out safely"
+        },
+        {
+          "term": "location sharing",
+          "def": "letting trusted people know where you are"
+        },
+        {
+          "term": "prevention",
+          "def": "stopping harm before it happens"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Most accidents to young people happen at home. Why might that be?",
+        "a": "We relax and stop noticing hazards there; small habits prevent most accidents."
+      },
+      "islamicLink": {
+        "text": "Protecting life is an aim of the Shari'ah; the Prophet ﷺ told us to put out lamps and fires before sleeping (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Hazard means ...",
+          "a": "something that could cause harm",
+          "mins": 1,
+          "options": [
+            "something that could cause harm",
+            "a safe thing"
+          ]
+        },
+        {
+          "q": "Give an example of a high risk.",
+          "a": "For example: a busy road with no crossing.",
+          "mins": 1
+        },
+        {
+          "q": "2:195 tells us not to ...",
+          "a": "throw ourselves into destruction",
+          "mins": 1,
+          "options": [
+            "throw ourselves into destruction",
+            "help others"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "At home",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Hazard",
+              "Prevention"
+            ],
+            "rows": [
+              [
+                "Chargers under pillows",
+                "Charge on a hard surface"
+              ],
+              [
+                "Pans left on",
+                "Never leave cooking"
+              ],
+              [
+                "Medicines",
+                "Locked away"
+              ],
+              [
+                "Overloaded sockets",
+                "One plug per socket"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Fire escape plan",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Smoke alarm tested monthly",
+            "Know two ways out",
+            "Get out, stay out",
+            "Call 999",
+            "Meet at an agreed place"
+          ]
+        },
+        {
+          "heading": "When out",
+          "bullets": [
+            "Tell a parent where you are and when you'll be back",
+            "Keep your phone charged",
+            "Stay in public, well-lit places",
+            "Trust your instincts"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "If there is a fire, you should ...",
+            "options": [
+              "get out, stay out and call 999",
+              "collect your things first",
+              "hide upstairs"
+            ],
+            "answer": 0,
+            "why": "Escape first."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix the plan: 'I'll walk home through the park at night alone and my phone is on 3%.'",
+          "a": "Charge the phone, tell a parent, take the lit main road or get picked up.",
+          "mins": 4,
+          "model": "I do: I'd charge my phone, share my route with a parent and walk with a friend on lit streets."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: make a family fire escape plan and a 'going out' checklist, then agree them with a parent.",
+          "a": "A plan with two exits and a meeting point; a checklist.",
+          "mins": 12,
+          "model": "The teacher shows a sample plan."
+        },
+        {
+          "q": "Extend: test the smoke alarm with a parent.",
+          "a": "Alarm tested.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Smoke alarms should be tested ...",
+          "a": "monthly",
+          "mins": 1,
+          "options": [
+            "monthly",
+            "never"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Most accidents to young people happen at home. Why might that be?",
+          "a": "We relax and stop noticing hazards there; small habits prevent most accidents.",
+          "mins": 2
+        }
+      ],
+      "homework": "Agree your escape plan with your family this week.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Staying safe: risk and first aid); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Smoke alarm ceiling",
+          "alt": "A smoke alarm",
+          "for": "teach:2"
+        },
+        {
+          "find": "Street lights at night",
+          "alt": "Well-lit streets",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Staying safe: risk and first aid",
+      "n": 16,
+      "title": "Emergencies: who to call",
+      "duration": 50,
+      "bigQuestion": "Calling 999 for something that isn't an emergency could stop someone else getting help. How do you decide?",
+      "objectives": [
+        "To understand which number to call in different situations and what to say"
+      ],
+      "successCriteria": [
+        "All: know 999, 111 and 101",
+        "Most: choose the right number for a situation",
+        "Some: give a clear, calm emergency call"
+      ],
+      "smsc": "Moral: acting responsibly in emergencies",
+      "keywords": [
+        {
+          "term": "999",
+          "def": "emergency number for police, fire, ambulance, coastguard"
+        },
+        {
+          "term": "111",
+          "def": "NHS help for urgent but not life-threatening problems"
+        },
+        {
+          "term": "101",
+          "def": "police non-emergency number"
+        },
+        {
+          "term": "location",
+          "def": "exactly where you are"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Calling 999 for something that isn't an emergency could stop someone else getting help. How do you decide?",
+        "a": "Ask: is someone's life or safety at risk right now? If yes, 999; if urgent health but not life-threatening, 111."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'whoever saves one [life], it is as if he had saved mankind entirely' (Al-Ma'idah 5:32).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "In a fire: get out, stay out and ...",
+          "a": "call 999",
+          "mins": 1,
+          "options": [
+            "call 999",
+            "call a friend"
+          ]
+        },
+        {
+          "q": "Name a home hazard.",
+          "a": "For example: a pan left on the hob.",
+          "mins": 1
+        },
+        {
+          "q": "Test smoke alarms ...",
+          "a": "monthly",
+          "mins": 1,
+          "options": [
+            "monthly",
+            "yearly"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Which number?",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Number",
+              "When"
+            ],
+            "rows": [
+              [
+                "999 (or 112)",
+                "Life in danger, crime happening, fire"
+              ],
+              [
+                "111",
+                "Urgent health worry, not life-threatening"
+              ],
+              [
+                "101",
+                "Police, not an emergency"
+              ],
+              [
+                "Childline 0800 1111",
+                "A worry you want to talk about"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "What to say on 999",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Which service",
+            "Where you are",
+            "What happened",
+            "Who is hurt and how",
+            "Stay on the line"
+          ]
+        },
+        {
+          "heading": "Finding your location",
+          "bullets": [
+            "Road name, landmarks",
+            "Phone map apps",
+            "Stay calm and listen to the call handler"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A friend has a small cut that won't stop bleeding after pressure for 10 minutes. You call ...",
+            "options": [
+              "111 (or 999 if it is severe)",
+              "101",
+              "Nobody"
+            ],
+            "answer": 0,
+            "why": "Urgent health: 111; severe bleeding: 999."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Script a 999 call: a grandparent has collapsed and is not responding.",
+          "a": "'Ambulance please. My grandmother has collapsed and isn't responding. We are at [address]. She is breathing / not breathing.'",
+          "mins": 4,
+          "model": "I do: 'Fire service. There's smoke from the house next door at 12 ... Road. No one has come out.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: eight scenarios; choose 999, 111, 101 or none and write the first sentence you would say.",
+          "a": "Correct choices and clear first sentences.",
+          "mins": 12,
+          "model": "The teacher does the first."
+        },
+        {
+          "q": "Extend: write your home address and a landmark on a card for the phone.",
+          "a": "Card made.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Police non-emergency is ...",
+          "a": "101",
+          "mins": 1,
+          "options": [
+            "101",
+            "999",
+            "111"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Calling 999 for something that isn't an emergency could stop someone else getting help. How do you decide?",
+          "a": "Ask: is someone's life or safety at risk right now? If yes, 999; if urgent health but not life-threatening, 111.",
+          "mins": 2
+        }
+      ],
+      "homework": "Teach a younger family member when to call 999.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Staying safe: risk and first aid); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes straight to TGA's Designated Safeguarding Lead), Childline 0800 1111, 999 in an emergency"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Ambulance UK",
+          "alt": "An ambulance",
+          "for": "hook"
+        },
+        {
+          "find": "Phone keypad",
+          "alt": "Dialling for help",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Staying safe: risk and first aid",
+      "n": 17,
+      "title": "First aid basics: the primary survey and the recovery position",
+      "duration": 50,
+      "bigQuestion": "If someone collapsed in front of you, what would stop most people helping?",
+      "objectives": [
+        "To understand how to check a casualty safely and place an unresponsive breathing person in the recovery position"
+      ],
+      "successCriteria": [
+        "All: say the DRABC steps",
+        "Most: explain when to use the recovery position",
+        "Some: practise the recovery position on a cushion or with family, following the guide"
+      ],
+      "crossCurricular": "Science: the heart and lungs (Year 7 to 8 biology)",
+      "smsc": "Moral: courage to help",
+      "keywords": [
+        {
+          "term": "casualty",
+          "def": "the person who is hurt or ill"
+        },
+        {
+          "term": "DRABC",
+          "def": "Danger, Response, Airway, Breathing, Circulation"
+        },
+        {
+          "term": "recovery position",
+          "def": "a safe position for someone unresponsive but breathing"
+        },
+        {
+          "term": "CPR",
+          "def": "chest compressions and rescue breaths for someone not breathing"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If someone collapsed in front of you, what would stop most people helping?",
+        "a": "Fear of doing it wrong; knowing simple steps gives confidence, and calling 999 is always right."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'whoever saves one [life], it is as if he had saved mankind entirely' (Al-Ma'idah 5:32).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Life in danger: call ...",
+          "a": "999",
+          "mins": 1,
+          "options": [
+            "999",
+            "101"
+          ]
+        },
+        {
+          "q": "What do you say first on a 999 call?",
+          "a": "Which service you need.",
+          "mins": 1
+        },
+        {
+          "q": "111 is for ...",
+          "a": "urgent health worries",
+          "mins": 1,
+          "options": [
+            "urgent health worries",
+            "crime"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "DRABC",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Danger: is it safe?",
+            "Response: talk and tap shoulders",
+            "Airway: tilt head, lift chin",
+            "Breathing: look, listen, feel for 10 seconds",
+            "Call 999"
+          ]
+        },
+        {
+          "heading": "If breathing: recovery position",
+          "bullets": [
+            "Arm nearest you at a right angle",
+            "Back of the other hand to the cheek",
+            "Bend the far knee, roll towards you",
+            "Tilt the head to keep the airway open",
+            "Keep checking breathing"
+          ],
+          "note": "Live demonstration on a cushion or a family member who agrees, with the written guide."
+        },
+        {
+          "heading": "If not breathing",
+          "bullets": [
+            "Call 999 (speaker on)",
+            "CPR: push hard and fast in the centre of the chest, about 100 to 120 a minute",
+            "Use a defibrillator if one is brought"
+          ],
+          "note": "Hands-only CPR is shown; the full CPR course follows a recognised syllabus."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Someone is unresponsive but breathing normally. You ...",
+            "options": [
+              "put them in the recovery position and call 999",
+              "start CPR",
+              "leave them"
+            ],
+            "answer": 0,
+            "why": "Breathing: recovery position."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Order the DRABC cards.",
+          "a": "Danger, Response, Airway, Breathing, Circulation (call 999).",
+          "mins": 4,
+          "model": "I do: I always check for danger first so I don't become a casualty too."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Practical at home with the written guide: practise the recovery position with a cushion or a willing family member; tick each step on the pupil PDF.",
+          "a": "All steps ticked; a parent initials the sheet.",
+          "mins": 12,
+          "model": "The teacher demonstrates live on camera."
+        },
+        {
+          "q": "Extend: find out where your nearest public defibrillator is.",
+          "a": "Location noted.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The first D in DRABC stands for ...",
+          "a": "Danger",
+          "mins": 1,
+          "options": [
+            "Danger",
+            "Doctor"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If someone collapsed in front of you, what would stop most people helping?",
+          "a": "Fear of doing it wrong; knowing simple steps gives confidence, and calling 999 is always right.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show a family member DRABC and the recovery position.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Staying safe: risk and first aid); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "First aid guide (pupil PDF) following current NHS and UK Resuscitation Council guidance (TO CONFIRM: a recognised first aid syllabus and who checks the live demonstration)",
+        "A cushion",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes straight to TGA's Designated Safeguarding Lead), Childline 0800 1111, 999 in an emergency"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "First aid kit",
+          "alt": "A first aid kit",
+          "for": "hook"
+        },
+        {
+          "find": "Public defibrillator AED cabinet",
+          "alt": "A public defibrillator",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Staying safe: risk and first aid",
+      "n": 18,
+      "title": "Staying safe online and with friends",
+      "duration": 50,
+      "bigQuestion": "Your friends all share their live location on an app. Should you?",
+      "objectives": [
+        "To understand how to manage peer pressure and online risks such as location sharing and meeting online contacts"
+      ],
+      "successCriteria": [
+        "All: name three online risks",
+        "Most: use a strategy to resist peer pressure",
+        "Some: explain why we never meet online contacts alone and always tell a parent"
+      ],
+      "smsc": "Moral: wise choices under pressure",
+      "keywords": [
+        {
+          "term": "peer pressure",
+          "def": "feeling pushed by friends to do something"
+        },
+        {
+          "term": "location sharing",
+          "def": "showing where you are on an app"
+        },
+        {
+          "term": "privacy settings",
+          "def": "controls on who sees your information"
+        },
+        {
+          "term": "grooming",
+          "def": "someone building trust to exploit or harm a young person"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your friends all share their live location on an app. Should you?",
+        "a": "Not publicly: only with family you trust; your location is private information."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And do not throw [yourselves] with your [own] hands into destruction' (2:195). A Muslim guards himself and keeps away from what leads to harm.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "DRABC starts with ...",
+          "a": "Danger",
+          "mins": 1,
+          "options": [
+            "Danger",
+            "Breathing"
+          ]
+        },
+        {
+          "q": "When do we use the recovery position?",
+          "a": "Unresponsive but breathing.",
+          "mins": 1
+        },
+        {
+          "q": "Not breathing: call 999 and ...",
+          "a": "start CPR",
+          "mins": 1,
+          "options": [
+            "start CPR",
+            "wait"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Online risks",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Risk",
+              "Safer choice"
+            ],
+            "rows": [
+              [
+                "Public location sharing",
+                "Off, or family only"
+              ],
+              [
+                "Strangers in chats and games",
+                "Private settings; don't share details"
+              ],
+              [
+                "Meeting an online contact",
+                "Never alone; tell a parent; don't go"
+              ],
+              [
+                "Pressure to send photos or personal details",
+                "Refuse, block, report, tell an adult"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Resisting pressure",
+          "bullets": [
+            "'No thanks'",
+            "Give a reason or don't",
+            "Suggest something else",
+            "Walk away or log off"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Warning signs",
+          "bullets": [
+            "Someone asks you to keep chats secret",
+            "Gifts or promises from someone you don't know",
+            "Pressure to move to a private app"
+          ],
+          "note": "These are signs to tell a trusted adult or use 'Report a concern'."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "An online 'friend' you've never met asks to meet. You ...",
+            "options": [
+              "don't go, and tell a parent",
+              "go alone",
+              "go and tell no one"
+            ],
+            "answer": 0,
+            "why": "Never meet online contacts alone."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Reply to: 'Everyone's sharing their location, don't be boring.'",
+          "a": "'No thanks, I only share with my family.'",
+          "mins": 4,
+          "model": "I do: 'I'd rather not; my parents and I agreed. Let's just message.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: check the privacy settings on one app you use (with a parent) and write three changes you made.",
+          "a": "Three settings changed or confirmed.",
+          "mins": 12,
+          "model": "The teacher demonstrates on a sample account."
+        },
+        {
+          "q": "Extend: write a 'pressure plan' with three replies you can use.",
+          "a": "Three replies.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Someone asks you to keep an online chat secret from parents. That is ...",
+          "a": "a warning sign: tell an adult",
+          "mins": 1,
+          "options": [
+            "a warning sign: tell an adult",
+            "normal"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your friends all share their live location on an app. Should you?",
+          "a": "Not publicly: only with family you trust; your location is private information.",
+          "mins": 2
+        }
+      ],
+      "homework": "Review your location settings with a parent.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Staying safe: risk and first aid); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes straight to TGA's Designated Safeguarding Lead), Childline 0800 1111, 999 in an emergency",
+        "CEOP reporting (ceop.police.uk) shown on the help slide"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Map pin location icon",
+          "alt": "Location sharing",
+          "for": "hook"
+        },
+        {
+          "find": "Padlock on phone",
+          "alt": "Privacy settings",
+          "for": "teach:1"
         }
       ]
     }
