@@ -16,7 +16,7 @@ availability: Published on the Academy website and Parent Portal. Available in l
 
 ## 1. Purpose
 
-Integrity is one of our Tarbiyyah Compass values. Honest work is an act of worship and a matter of trust between pupil, teacher and family. This policy sets out what academic integrity means at Tarbiyyah Global Academy, how online assessments are secured, and what happens if a pupil is dishonest.
+Amanah (trustworthiness) is one of our Tarbiyyah Compass values. Honest work is an act of worship and a matter of trust between pupil, teacher and family. This policy sets out what academic integrity means at Tarbiyyah Global Academy, how online assessments are secured, and what happens if a pupil is dishonest.
 
 ## 2. What Counts as Academic Misconduct
 
