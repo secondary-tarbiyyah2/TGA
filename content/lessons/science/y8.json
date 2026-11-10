@@ -3,7 +3,7 @@
   "year": "y8",
   "board": "KS3 National Curriculum via Pearson Exploring Science, building to Edexcel International GCSE Biology, Chemistry and Physics",
   "boardShort": "KS3 Exploring Science",
-  "source": "School Science curriculum journey 2026–27 (Year 8 Term 1: 8A Food and nutrition; 8E Combustion) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 8Aa–8Ae, 8Ea–8Ee) and 8E assessment pack; practicals adapted for online lessons; INSET lesson standard. | Spring 1 2027 (lessons 9 to 14 and 16 upgraded, 17 to 24 new): Pearson Exploring Science 8E and 8J (school's Pearson five-year scheme) and Kerboodle Activate 2; home practicals with written safety guides",
+  "source": "School Science curriculum journey 2026–27 (Year 8 Term 1: 8A Food and nutrition; 8E Combustion) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 8Aa–8Ae, 8Ea–8Ee) and 8E assessment pack; practicals adapted for online lessons; INSET lesson standard. | Spring 1 2027 (lessons 9 to 14 and 16 upgraded, 17 to 24 new): Pearson Exploring Science 8E and 8J (school's Pearson five-year scheme) and Kerboodle Activate 2; home practicals with written safety guides | Spring 2 2027 (lessons 25 to 42): Pearson Exploring Science 8F and 8C, Kerboodle Activate (Matter; Ecosystem); teacher demonstrations on camera for Group 1, halogens and burning magnesium; home practicals with household items and written safety guides",
   "lessons": [
     {
       "unit": "8A: Food and nutrition",
@@ -4917,6 +4917,4358 @@
         {
           "find": "rainbow",
           "alt": "A rainbow",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 25,
+      "title": "Dalton's atoms and elements",
+      "duration": 50,
+      "bigQuestion": "Gold, oxygen and carbon look completely different. What could they possibly have in common?",
+      "objectives": [
+        "To understand how Dalton's atomic model explains elements and compounds"
+      ],
+      "successCriteria": [
+        "All: state that an element contains only one type of atom",
+        "Most: write symbols for ten common elements",
+        "Some: explain how Dalton's ideas differ from what we know today"
+      ],
+      "crossCurricular": "History: John Dalton and the Industrial Revolution in Manchester",
+      "smsc": "Spiritual: the building blocks of creation",
+      "keywords": [
+        {
+          "term": "atom",
+          "def": "the smallest particle of an element"
+        },
+        {
+          "term": "element",
+          "def": "a substance made of only one type of atom"
+        },
+        {
+          "term": "compound",
+          "def": "two or more elements chemically joined"
+        },
+        {
+          "term": "symbol",
+          "def": "one or two letters that stand for an element"
+        },
+        {
+          "term": "model",
+          "def": "a simplified idea that explains observations"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Gold, oxygen and carbon look completely different. What could they possibly have in common?",
+        "a": "All are made of atoms; each is an element with its own type of atom."
+      },
+      "starter": [
+        {
+          "q": "Which state has particles far apart and moving fast?",
+          "a": "Gas",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Liquid",
+            "Gas"
+          ]
+        },
+        {
+          "q": "Is salt water a pure substance?",
+          "a": "No, it is a mixture",
+          "mins": 1,
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "q": "Which nutrient is needed for growth and repair?",
+          "a": "Protein",
+          "mins": 1,
+          "options": [
+            "Protein",
+            "Fibre",
+            "Water"
+          ]
+        },
+        {
+          "q": "What separates salt from salty water?",
+          "a": "Evaporation",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Dalton's model (early 1800s)",
+          "bullets": [
+            "All matter is made of atoms",
+            "Atoms of one element are identical",
+            "Atoms join in fixed ratios to make compounds",
+            "Atoms cannot be made or destroyed"
+          ],
+          "note": "John Dalton, Manchester, about 1803 to 1808."
+        },
+        {
+          "heading": "Elements and symbols",
+          "bullets": [
+            "About 118 elements",
+            "First letter capital, second lower case"
+          ],
+          "note": "Copy the table.",
+          "table": {
+            "head": [
+              "Element",
+              "Symbol"
+            ],
+            "rows": [
+              [
+                "Hydrogen",
+                "H"
+              ],
+              [
+                "Oxygen",
+                "O"
+              ],
+              [
+                "Carbon",
+                "C"
+              ],
+              [
+                "Sodium",
+                "Na"
+              ],
+              [
+                "Iron",
+                "Fe"
+              ],
+              [
+                "Copper",
+                "Cu"
+              ],
+              [
+                "Chlorine",
+                "Cl"
+              ],
+              [
+                "Gold",
+                "Au"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Elements and compounds",
+          "bullets": [
+            "Element: one type of atom",
+            "Compound: different atoms joined",
+            "Water H₂O; carbon dioxide CO₂"
+          ],
+          "note": "Mixtures are not chemically joined.",
+          "sort": {
+            "columns": [
+              "Element",
+              "Compound",
+              "Mixture"
+            ],
+            "cards": [
+              "Oxygen",
+              "Water",
+              "Air",
+              "Iron",
+              "Carbon dioxide",
+              "Salt water",
+              "Gold",
+              "Sodium chloride"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Then and now",
+          "bullets": [
+            "Atoms can be split (into protons, neutrons, electrons)",
+            "Isotopes: atoms of one element can differ in mass",
+            "Dalton was mostly right"
+          ],
+          "note": "Science improves models with new evidence."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which is a compound?",
+            "options": [
+              "O₂",
+              "H₂O",
+              "Fe"
+            ],
+            "answer": 1,
+            "why": "H₂O has two different elements chemically joined; O₂ and Fe are elements."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is CO₂ an element or a compound? Explain.",
+          "a": "A compound: it has carbon and oxygen atoms chemically joined",
+          "mins": 2,
+          "model": "Count the types of atom: C and O, two types. Are they joined? Yes, in one molecule. So it is a compound."
+        },
+        {
+          "q": "Write the symbol for sodium.",
+          "a": "Na",
+          "mins": 1
+        },
+        {
+          "q": "How many atoms in one H₂O molecule?",
+          "a": "3 (two hydrogen, one oxygen)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Element hunt at home: list five household items and the elements they contain (labels, packets, an adult can help). Use a periodic table.",
+          "a": "For example: foil: aluminium (Al); salt: sodium and chlorine (Na, Cl); water: H and O; pencil lead: carbon (C); copper pipe: Cu",
+          "mins": 9,
+          "model": "Teacher does the first: kitchen foil, aluminium, Al."
+        },
+        {
+          "q": "Extend: Which of Dalton's ideas do we now know are not quite right? Explain one.",
+          "a": "Atoms can be split; atoms of one element are not all identical (isotopes).",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why did scientists keep Dalton's model even though parts were wrong?",
+          "a": "It explained many observations (fixed ratios in compounds) and was improved rather than thrown away.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "An element contains...",
+          "a": "One type of atom",
+          "mins": 1,
+          "options": [
+            "One type of atom",
+            "Two types of atom"
+          ]
+        },
+        {
+          "q": "Big question: what do gold, oxygen and carbon have in common?",
+          "a": "All are elements, made of their own type of atom.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the symbols of the first 20 elements for a quick test next lesson.",
+      "send": "SEND: symbol cards. EAL: atom, element, compound. Stretch: research why gold's symbol is Au (Latin aurum).",
+      "resources": [
+        "Pearson Exploring Science 8F The periodic table (the school's KS3 course): 8Fa",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (the periodic table)",
+        "Periodic table (portal printable, first 20 elements highlighted)",
+        "Element hunt sheet (portal worksheet)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "aluminium foil roll",
+          "alt": "Aluminium foil (an element)",
+          "for": "keywords"
+        },
+        {
+          "find": "gold nugget",
+          "alt": "A gold nugget",
+          "for": "hook"
+        },
+        {
+          "find": "copper pipe",
+          "alt": "Copper pipe",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 26,
+      "title": "Physical properties of metals and non-metals",
+      "duration": 50,
+      "bigQuestion": "Saucepans are metal but their handles are not. What does that tell you about metals and non-metals?",
+      "objectives": [
+        "To understand how physical properties are used to classify elements as metals or non-metals"
+      ],
+      "successCriteria": [
+        "All: list four properties of metals",
+        "Most: classify elements using data",
+        "Some: explain the exceptions mercury and graphite"
+      ],
+      "crossCurricular": "DT: choosing materials by their properties",
+      "smsc": "Spiritual: wonder at the variety of materials",
+      "keywords": [
+        {
+          "term": "physical property",
+          "def": "a feature you can observe without making a new substance"
+        },
+        {
+          "term": "malleable",
+          "def": "can be hammered into shape"
+        },
+        {
+          "term": "ductile",
+          "def": "can be pulled into wires"
+        },
+        {
+          "term": "conductor",
+          "def": "lets heat or electricity pass through"
+        },
+        {
+          "term": "brittle",
+          "def": "breaks easily when hit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Saucepans are metal but their handles are not. What does that tell you about metals and non-metals?",
+        "a": "Metals conduct heat well; plastics and non-metals are insulators, so handles stay cool."
+      },
+      "starter": [
+        {
+          "q": "H₂O is an element or a compound?",
+          "a": "Compound",
+          "mins": 1,
+          "options": [
+            "Element",
+            "Compound"
+          ]
+        },
+        {
+          "q": "Symbol for iron?",
+          "a": "Fe",
+          "mins": 1,
+          "options": [
+            "I",
+            "Fe",
+            "Ir"
+          ]
+        },
+        {
+          "q": "An element has ... type of atom.",
+          "a": "One",
+          "mins": 1
+        },
+        {
+          "q": "Name a mixture.",
+          "a": "For example: air, salt water",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Metals",
+          "bullets": [
+            "Shiny",
+            "Good conductors of heat and electricity",
+            "Malleable and ductile",
+            "Mostly high melting points",
+            "Sonorous: ring when hit"
+          ],
+          "note": "Iron, nickel and cobalt are also magnetic."
+        },
+        {
+          "heading": "Non-metals",
+          "bullets": [
+            "Usually dull",
+            "Poor conductors (insulators)",
+            "Brittle if solid",
+            "Mostly low melting points"
+          ],
+          "note": "Many are gases: oxygen, nitrogen."
+        },
+        {
+          "heading": "Exceptions",
+          "bullets": [
+            "Mercury: a metal, liquid at room temperature",
+            "Graphite (carbon): non-metal that conducts",
+            "Diamond (carbon): very high melting point"
+          ],
+          "note": "Classify by most properties, not one."
+        },
+        {
+          "heading": "Data detective",
+          "bullets": [
+            "Use the data to classify"
+          ],
+          "note": "Example data.",
+          "table": {
+            "head": [
+              "Element",
+              "Appearance",
+              "Conducts?",
+              "Melting point (°C)"
+            ],
+            "rows": [
+              [
+                "A",
+                "shiny grey",
+                "yes",
+                "1538"
+              ],
+              [
+                "B",
+                "yellow powder",
+                "no",
+                "115"
+              ],
+              [
+                "C",
+                "colourless gas",
+                "no",
+                "-219"
+              ],
+              [
+                "D",
+                "shiny silver liquid",
+                "yes",
+                "-39"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Element D is shiny, conducts, and melts at -39 °C. It is...",
+            "options": [
+              "A non-metal",
+              "A metal (mercury)",
+              "A gas"
+            ],
+            "answer": 1,
+            "why": "Shiny and conducting: metal. -39 °C fits mercury, the liquid metal."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Classify A, B and C from the table.",
+          "a": "A metal (iron); B non-metal (sulfur); C non-metal (oxygen)",
+          "mins": 3,
+          "model": "A: shiny and conducts, high melting point: metal. B: yellow, does not conduct: non-metal. C: gas, does not conduct: non-metal."
+        },
+        {
+          "q": "Why are electrical wires made of copper?",
+          "a": "It is a good electrical conductor and ductile",
+          "mins": 1
+        },
+        {
+          "q": "Give one property of non-metals.",
+          "a": "For example: poor conductors, brittle, dull",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Test five household items with a magnet and by tapping gently (look only for shine and ring) and decide metal or non-metal for each (portal table).",
+          "a": "Pupils' own; for example steel spoon: metal (shiny, rings, magnetic); pencil lead: non-metal (graphite) but conducts",
+          "mins": 9,
+          "model": "Teacher tests a steel spoon on camera: shiny, rings when tapped, magnetic: metal."
+        },
+        {
+          "q": "Extend: Why is 'conducts electricity' not enough on its own to prove an element is a metal?",
+          "a": "Graphite, a non-metal, also conducts.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Suggest why aeroplanes use aluminium, not iron.",
+          "a": "Aluminium is much less dense (lighter) and does not rust.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Metals are usually...",
+          "a": "Good conductors",
+          "mins": 1,
+          "options": [
+            "Good conductors",
+            "Insulators"
+          ]
+        },
+        {
+          "q": "Big question: why are saucepan handles not metal?",
+          "a": "Metals conduct heat well; non-metal handles are insulators and stay cool.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find two exceptions to the metal and non-metal rules and explain each.",
+      "send": "SEND: property cards to sort. EAL: shiny, dull, conductor. Stretch: research why tungsten is used in old lamp filaments.",
+      "resources": [
+        "Pearson Exploring Science 8F The periodic table (the school's KS3 course): 8Fb",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (the periodic table)",
+        "Periodic table (portal printable, first 20 elements highlighted)",
+        "Home practical guide and safety card: metal or non-metal (portal worksheet; tap gently, no sharp items)",
+        "A fridge magnet and five household items",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mercury metal liquid",
+          "alt": "Mercury: a liquid metal",
+          "for": "teach:3"
+        },
+        {
+          "find": "sulfur crystals",
+          "alt": "Sulfur, a yellow non-metal",
+          "for": "keywords"
+        },
+        {
+          "find": "copper saucepan",
+          "alt": "A copper pan",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 27,
+      "title": "Chemical properties: acidic and basic oxides",
+      "duration": 50,
+      "bigQuestion": "Acid rain damages buildings. Where does the acid come from, if rain is just water?",
+      "objectives": [
+        "To understand how metal and non-metal oxides differ in their chemical properties"
+      ],
+      "successCriteria": [
+        "All: write word equations for elements burning in oxygen",
+        "Most: state that metal oxides are basic and non-metal oxides are acidic",
+        "Some: use red cabbage indicator to test household substances"
+      ],
+      "crossCurricular": "Geography: acid rain and pollution",
+      "smsc": "Moral: our responsibility for clean air",
+      "keywords": [
+        {
+          "term": "oxide",
+          "def": "a compound of an element with oxygen"
+        },
+        {
+          "term": "chemical property",
+          "def": "how a substance reacts"
+        },
+        {
+          "term": "acid",
+          "def": "a solution with pH below 7"
+        },
+        {
+          "term": "alkali",
+          "def": "a soluble base, pH above 7"
+        },
+        {
+          "term": "indicator",
+          "def": "a substance that changes colour with pH"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Acid rain damages buildings. Where does the acid come from, if rain is just water?",
+        "a": "Non-metal oxides such as sulfur dioxide from burning fuels dissolve in rain to make acids."
+      },
+      "starter": [
+        {
+          "q": "Metals are good ... of electricity.",
+          "a": "Conductors",
+          "mins": 1,
+          "options": [
+            "Conductors",
+            "Insulators"
+          ]
+        },
+        {
+          "q": "Which non-metal conducts?",
+          "a": "Graphite",
+          "mins": 1,
+          "options": [
+            "Sulfur",
+            "Graphite",
+            "Oxygen"
+          ]
+        },
+        {
+          "q": "Neutral pH is...",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Name an acid at home.",
+          "a": "Vinegar or lemon juice",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Burning in oxygen",
+          "bullets": [
+            "Element + oxygen → oxide",
+            "magnesium + oxygen → magnesium oxide",
+            "sulfur + oxygen → sulfur dioxide"
+          ],
+          "note": "Teacher demonstration on camera in the school laboratory, or a recorded demonstration with no music: magnesium ribbon burns with a bright white flame (do not look straight at it)."
+        },
+        {
+          "heading": "Acidic or basic?",
+          "bullets": [
+            "Metal oxides: basic (alkaline if they dissolve)",
+            "Non-metal oxides: acidic"
+          ],
+          "note": "Example.",
+          "compare": {
+            "left": {
+              "title": "Metal oxides",
+              "points": [
+                "Magnesium oxide",
+                "Basic: neutralise acids",
+                "pH above 7 in water"
+              ]
+            },
+            "right": {
+              "title": "Non-metal oxides",
+              "points": [
+                "Carbon dioxide, sulfur dioxide",
+                "Acidic",
+                "pH below 7 in water"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Safety guide: red cabbage indicator",
+          "bullets": [
+            "An adult chops the cabbage and pours the hot water",
+            "Let the liquid cool before you use it",
+            "Use only vinegar, lemon juice, bicarbonate of soda and washing-up liquid",
+            "Never mix bleach or cleaning sprays",
+            "Do not drink any test; rinse spills"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Indicator colours",
+          "bullets": [
+            "Red cabbage juice changes colour"
+          ],
+          "note": "Approximate colours.",
+          "table": {
+            "head": [
+              "Substance",
+              "Colour",
+              "Acid or alkali?"
+            ],
+            "rows": [
+              [
+                "Lemon juice",
+                "red-pink",
+                "acid"
+              ],
+              [
+                "Vinegar",
+                "pink",
+                "acid"
+              ],
+              [
+                "Tap water",
+                "purple",
+                "neutral"
+              ],
+              [
+                "Bicarbonate of soda solution",
+                "blue-green",
+                "weak alkali"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Carbon dioxide dissolves in water. The solution is...",
+            "options": [
+              "Acidic",
+              "Alkaline",
+              "Neutral"
+            ],
+            "answer": 0,
+            "why": "Carbon dioxide is a non-metal oxide, so it is acidic."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the word equation for carbon burning in oxygen and say if the oxide is acidic or basic.",
+          "a": "carbon + oxygen → carbon dioxide; acidic",
+          "mins": 2,
+          "model": "Element plus oxygen gives the element's oxide: carbon + oxygen → carbon dioxide. Carbon is a non-metal, so the oxide is acidic."
+        },
+        {
+          "q": "Is copper oxide acidic or basic?",
+          "a": "Basic",
+          "mins": 1
+        },
+        {
+          "q": "What colour is red cabbage juice in vinegar?",
+          "a": "Pink or red",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make red cabbage indicator with an adult and test four household liquids. Record colour and acid, neutral or alkali.",
+          "a": "Lemon juice and vinegar pink (acid), water purple (neutral), bicarbonate solution blue-green (alkali)",
+          "mins": 10,
+          "model": "Teacher tests vinegar on camera: pink, so acid."
+        },
+        {
+          "q": "Extend: Explain how acid rain forms, using 'non-metal oxide'.",
+          "a": "Burning fuels with sulfur makes sulfur dioxide, a non-metal oxide, which dissolves in rain to make an acid.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Predict the colour of the indicator if you blow through a straw into it for a minute (adult present).",
+          "a": "It turns more red-pink as carbon dioxide (acidic) dissolves.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Non-metal oxides are...",
+          "a": "Acidic",
+          "mins": 1,
+          "options": [
+            "Acidic",
+            "Basic"
+          ]
+        },
+        {
+          "q": "Big question: where does the acid in acid rain come from?",
+          "a": "Non-metal oxides from burning fuels dissolve in rainwater.",
+          "mins": 2
+        }
+      ],
+      "homework": "Photograph your indicator results and upload them with your table.",
+      "send": "SEND: colour chart provided. EAL: acid, alkali, neutral, oxide. Stretch: find out what pH sea water is and why it is falling slightly.",
+      "resources": [
+        "Pearson Exploring Science 8F The periodic table (the school's KS3 course): 8Fb",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (the periodic table)",
+        "Teacher demonstration on camera in the school laboratory, or a recorded demonstration with no music (burning magnesium)",
+        "Home practical guide and safety card: red cabbage indicator (portal worksheet; adult chops and pours hot water, never use bleach)",
+        "Red cabbage, a jug, cups, vinegar, lemon juice, bicarbonate of soda",
+        "Results table (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "red cabbage indicator colours",
+          "alt": "Red cabbage indicator in different liquids",
+          "for": "teach:4"
+        },
+        {
+          "find": "acid rain damaged statue stone",
+          "alt": "Stone damaged by acid rain",
+          "for": "hook"
+        },
+        {
+          "find": "magnesium ribbon burning",
+          "alt": "Magnesium burning",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 28,
+      "title": "Mendeleev's periodic table",
+      "duration": 50,
+      "bigQuestion": "Mendeleev left empty boxes in his table in 1869. Why would leaving gaps make scientists trust him more?",
+      "objectives": [
+        "To understand how Mendeleev organised the elements and why his gaps made his table convincing"
+      ],
+      "successCriteria": [
+        "All: describe how Mendeleev ordered the elements",
+        "Most: explain why he left gaps",
+        "Some: evaluate how the discovery of germanium supported his table"
+      ],
+      "crossCurricular": "History: science in 19th-century Europe",
+      "smsc": "Spiritual: order and pattern in creation",
+      "keywords": [
+        {
+          "term": "periodic table",
+          "def": "a chart of all the elements in order"
+        },
+        {
+          "term": "atomic mass",
+          "def": "the mass of an atom compared with others"
+        },
+        {
+          "term": "prediction",
+          "def": "a statement of what will be found"
+        },
+        {
+          "term": "pattern",
+          "def": "a regular repeat in properties"
+        },
+        {
+          "term": "evidence",
+          "def": "observations that support or reject an idea"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Mendeleev left empty boxes in his table in 1869. Why would leaving gaps make scientists trust him more?",
+        "a": "He predicted the properties of undiscovered elements; when they were found and matched, his table was supported."
+      },
+      "starter": [
+        {
+          "q": "Metal oxides are...",
+          "a": "Basic",
+          "mins": 1,
+          "options": [
+            "Acidic",
+            "Basic"
+          ]
+        },
+        {
+          "q": "Symbol for copper?",
+          "a": "Cu",
+          "mins": 1,
+          "options": [
+            "Co",
+            "Cu",
+            "C"
+          ]
+        },
+        {
+          "q": "Name a non-metal gas.",
+          "a": "For example: oxygen, nitrogen",
+          "mins": 1
+        },
+        {
+          "q": "Element + oxygen → ...",
+          "a": "An oxide",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Before Mendeleev",
+          "bullets": [
+            "About 60 elements known",
+            "Scientists tried lists by mass",
+            "Patterns broke down"
+          ],
+          "note": "Several chemists tried."
+        },
+        {
+          "heading": "Mendeleev's idea (1869)",
+          "bullets": [
+            "Ordered by atomic mass",
+            "Grouped elements with similar properties",
+            "Swapped some to fit properties",
+            "Left gaps for undiscovered elements"
+          ],
+          "note": "Dmitri Mendeleev, Russia."
+        },
+        {
+          "heading": "The germanium test",
+          "bullets": [
+            "Prediction vs discovery"
+          ],
+          "note": "Germanium was found in 1886.",
+          "table": {
+            "head": [
+              "Property",
+              "Predicted (eka-silicon)",
+              "Germanium (found 1886)"
+            ],
+            "rows": [
+              [
+                "Atomic mass",
+                "about 72",
+                "72.6"
+              ],
+              [
+                "Density (g/cm³)",
+                "about 5.5",
+                "5.3"
+              ],
+              [
+                "Colour",
+                "grey metal",
+                "grey"
+              ],
+              [
+                "Oxide formula",
+                "XO₂",
+                "GeO₂"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Today's table",
+          "bullets": [
+            "Ordered by proton number",
+            "Columns: groups",
+            "Rows: periods"
+          ],
+          "note": "Next lesson in detail."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why did gaps make the table convincing?",
+            "options": [
+              "They looked neat",
+              "Predicted elements were later found with the predicted properties",
+              "They hid mistakes"
+            ],
+            "answer": 1,
+            "why": "Successful predictions are strong evidence for a scientific idea."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use the table: how close was the predicted atomic mass?",
+          "a": "Very close: 72 predicted, 72.6 found",
+          "mins": 2,
+          "model": "Find the row: predicted about 72, found 72.6. Difference 0.6: very close."
+        },
+        {
+          "q": "What did Mendeleev order the elements by?",
+          "a": "Atomic mass (and similar properties)",
+          "mins": 1
+        },
+        {
+          "q": "What is the modern table ordered by?",
+          "a": "Proton (atomic) number",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write a short account in the portal response box: what Mendeleev did, why he left gaps, and how germanium supported him. Starter: 'In 1869 Mendeleev...'",
+          "a": "In 1869 Mendeleev ordered the elements by atomic mass and grouped elements with similar properties. He left gaps for undiscovered elements and predicted their properties. When germanium was found in 1886 its properties matched, supporting his table.",
+          "mins": 10,
+          "model": "Teacher writes the first sentence on screen."
+        },
+        {
+          "q": "Extend: Why is making a prediction that could be wrong a sign of good science?",
+          "a": "It can be tested; if it comes true, it is strong evidence.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Mendeleev swapped tellurium and iodine against their masses. Why?",
+          "a": "Their properties fitted the other group better; we now know proton number gives the true order.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Mendeleev left gaps for...",
+          "a": "Undiscovered elements",
+          "mins": 1,
+          "options": [
+            "Mistakes",
+            "Undiscovered elements"
+          ]
+        },
+        {
+          "q": "Big question: why did the gaps make scientists trust him?",
+          "a": "His predictions for missing elements were later confirmed.",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a timeline of three discoveries in the history of the periodic table.",
+      "send": "SEND: account frame with starters. EAL: predict, evidence, group. Stretch: research gallium (eka-aluminium, 1875).",
+      "resources": [
+        "Pearson Exploring Science 8F The periodic table (the school's KS3 course): 8Fc",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (the periodic table)",
+        "Periodic table (portal printable, first 20 elements highlighted)",
+        "Account writing frame (portal response box)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mendeleev periodic table 1869",
+          "alt": "Mendeleev's 1869 table",
+          "for": "teach:2"
+        },
+        {
+          "find": "germanium",
+          "alt": "Germanium",
+          "for": "teach:3"
+        },
+        {
+          "find": "periodic table of elements",
+          "alt": "The modern periodic table",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 29,
+      "title": "Groups and periods",
+      "duration": 50,
+      "bigQuestion": "If you found a new element in the same column as sodium and potassium, what could you predict about it?",
+      "objectives": [
+        "To understand how the layout of the periodic table groups elements with similar properties"
+      ],
+      "successCriteria": [
+        "All: identify groups and periods",
+        "Most: locate metals and non-metals on the table",
+        "Some: use group position to predict an element's properties"
+      ],
+      "crossCurricular": "Maths: coordinates in a grid",
+      "smsc": "Social: scientists across nations built the table together",
+      "keywords": [
+        {
+          "term": "group",
+          "def": "a column of elements with similar properties"
+        },
+        {
+          "term": "period",
+          "def": "a row of the periodic table"
+        },
+        {
+          "term": "proton number",
+          "def": "the number of protons; orders the table"
+        },
+        {
+          "term": "metalloid",
+          "def": "an element with some metal and some non-metal properties"
+        },
+        {
+          "term": "staircase line",
+          "def": "the zigzag line separating metals from non-metals"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you found a new element in the same column as sodium and potassium, what could you predict about it?",
+        "a": "It would be a reactive soft metal that reacts with water to make an alkali, like other Group 1 elements."
+      },
+      "starter": [
+        {
+          "q": "Mendeleev ordered by...",
+          "a": "Atomic mass",
+          "mins": 1,
+          "options": [
+            "Atomic mass",
+            "Colour"
+          ]
+        },
+        {
+          "q": "The modern table is ordered by...",
+          "a": "Proton number",
+          "mins": 1,
+          "options": [
+            "Atomic mass",
+            "Proton number"
+          ]
+        },
+        {
+          "q": "Symbol for potassium?",
+          "a": "K",
+          "mins": 1
+        },
+        {
+          "q": "Germanium was discovered in...",
+          "a": "1886",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Groups and periods",
+          "bullets": [
+            "Groups: columns, numbered 1 to 7 and 0",
+            "Periods: rows",
+            "Same group: similar properties"
+          ],
+          "note": "Show on the printed table."
+        },
+        {
+          "heading": "Metals and non-metals",
+          "bullets": [
+            "Metals: left and middle",
+            "Non-metals: right",
+            "Staircase line between them"
+          ],
+          "note": "Hydrogen sits apart."
+        },
+        {
+          "heading": "Find them",
+          "bullets": [
+            "Use the periodic table"
+          ],
+          "note": "Practise locating.",
+          "table": {
+            "head": [
+              "Element",
+              "Group",
+              "Period",
+              "Metal?"
+            ],
+            "rows": [
+              [
+                "Sodium (Na)",
+                "1",
+                "3",
+                "yes"
+              ],
+              [
+                "Chlorine (Cl)",
+                "7",
+                "3",
+                "no"
+              ],
+              [
+                "Calcium (Ca)",
+                "2",
+                "4",
+                "yes"
+              ],
+              [
+                "Neon (Ne)",
+                "0",
+                "2",
+                "no"
+              ],
+              [
+                "Carbon (C)",
+                "4",
+                "2",
+                "no"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Named groups",
+          "bullets": [
+            "Group 1: alkali metals",
+            "Group 7: halogens",
+            "Group 0: noble gases"
+          ],
+          "note": "Coming in week 3."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which element is in the same group as fluorine?",
+            "options": [
+              "Oxygen",
+              "Chlorine",
+              "Neon"
+            ],
+            "answer": 1,
+            "why": "Fluorine and chlorine are both Group 7 halogens."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give the group and period of magnesium.",
+          "a": "Group 2, period 3",
+          "mins": 2,
+          "model": "Find Mg. Count columns: group 2. Count rows from the top: period 3."
+        },
+        {
+          "q": "Is sulfur a metal or non-metal?",
+          "a": "Non-metal (right of the staircase)",
+          "mins": 1
+        },
+        {
+          "q": "Name an element in the same group as lithium.",
+          "a": "Sodium or potassium",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Colour the blank periodic table sheet: metals one colour, non-metals another; label groups 1, 2, 7 and 0 and periods 1 to 4.",
+          "a": "Correctly coloured and labelled table",
+          "mins": 9,
+          "model": "Teacher colours group 1 on screen and labels it 'alkali metals'."
+        },
+        {
+          "q": "Extend: Rubidium is below potassium. Predict two properties.",
+          "a": "Soft metal, reacts very vigorously with water to make an alkali and hydrogen",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why does hydrogen not fit neatly into any group?",
+          "a": "It has one electron like Group 1 but is a non-metal gas.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A column is a...",
+          "a": "Group",
+          "mins": 1,
+          "options": [
+            "Group",
+            "Period"
+          ]
+        },
+        {
+          "q": "Big question: what could you predict about an element in sodium's column?",
+          "a": "A reactive soft metal that reacts with water to make an alkali.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the names of groups 1, 7 and 0 and three elements in each.",
+      "send": "SEND: blank table with first 20 symbols. EAL: group, period, column, row. Stretch: research the lanthanides.",
+      "resources": [
+        "Pearson Exploring Science 8F The periodic table (the school's KS3 course): 8Fd",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (the periodic table)",
+        "Periodic table (portal printable, first 20 elements highlighted)",
+        "Blank periodic table colouring sheet (portal worksheet)",
+        "Coloured pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "periodic table of elements",
+          "alt": "The periodic table",
+          "for": "teach:1"
+        },
+        {
+          "find": "neon sign",
+          "alt": "A neon sign (Group 0)",
+          "for": "keywords"
+        },
+        {
+          "find": "potassium metal",
+          "alt": "Potassium metal stored in oil",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 30,
+      "title": "Trends in the periodic table",
+      "duration": 50,
+      "bigQuestion": "Caesium melts in a warm hand, but lithium needs about 180 °C. What might explain the pattern down the group?",
+      "objectives": [
+        "To understand how properties change in a regular pattern down a group"
+      ],
+      "successCriteria": [
+        "All: read a trend from a table or graph",
+        "Most: describe the melting point trend in Group 1",
+        "Some: predict a missing value from a trend"
+      ],
+      "crossCurricular": "Maths: bar charts with negative values",
+      "smsc": "Spiritual: regular patterns in nature",
+      "keywords": [
+        {
+          "term": "trend",
+          "def": "a gradual change in a pattern"
+        },
+        {
+          "term": "melting point",
+          "def": "the temperature at which a solid melts"
+        },
+        {
+          "term": "boiling point",
+          "def": "the temperature at which a liquid boils"
+        },
+        {
+          "term": "predict",
+          "def": "use a pattern to say what is likely"
+        },
+        {
+          "term": "reactivity",
+          "def": "how quickly and vigorously something reacts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Caesium melts in a warm hand, but lithium needs about 180 °C. What might explain the pattern down the group?",
+        "a": "Melting point decreases down Group 1 as the atoms get bigger and the bonds weaker."
+      },
+      "starter": [
+        {
+          "q": "A row is a...",
+          "a": "Period",
+          "mins": 1,
+          "options": [
+            "Group",
+            "Period"
+          ]
+        },
+        {
+          "q": "Group 7 elements are called...",
+          "a": "Halogens",
+          "mins": 1,
+          "options": [
+            "Halogens",
+            "Noble gases",
+            "Alkali metals"
+          ]
+        },
+        {
+          "q": "Group of calcium?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "Metals are on the ... of the table.",
+          "a": "Left",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Trends",
+          "bullets": [
+            "Properties change gradually down a group",
+            "We can use them to predict"
+          ],
+          "note": "The same idea Mendeleev used."
+        },
+        {
+          "heading": "Group 1 melting points",
+          "bullets": [
+            "Decrease down the group"
+          ],
+          "note": "Data (°C).",
+          "chart": {
+            "kind": "bar",
+            "title": "Melting points of Group 1 metals",
+            "labels": [
+              "Li",
+              "Na",
+              "K",
+              "Rb",
+              "Cs"
+            ],
+            "values": [
+              181,
+              98,
+              63,
+              39,
+              28
+            ],
+            "unit": "°C"
+          }
+        },
+        {
+          "heading": "Group 7 boiling points",
+          "bullets": [
+            "Increase down the group",
+            "F and Cl gases; Br liquid; I solid"
+          ],
+          "note": "Opposite trend to Group 1 melting points.",
+          "table": {
+            "head": [
+              "Halogen",
+              "State at 20 °C",
+              "Boiling point (°C)"
+            ],
+            "rows": [
+              [
+                "Fluorine",
+                "gas",
+                "-188"
+              ],
+              [
+                "Chlorine",
+                "gas",
+                "-34"
+              ],
+              [
+                "Bromine",
+                "liquid",
+                "59"
+              ],
+              [
+                "Iodine",
+                "solid",
+                "184"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reactivity trends",
+          "bullets": [
+            "Group 1: more reactive down",
+            "Group 7: less reactive down"
+          ],
+          "note": "Explained at GCSE by electrons."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Potassium melts at 63 °C. Rubidium, below it, melts at about...",
+            "options": [
+              "98 °C",
+              "39 °C",
+              "181 °C"
+            ],
+            "answer": 1,
+            "why": "Melting point decreases down Group 1, so it is lower than potassium."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the trend in Group 1 melting points with data.",
+          "a": "It decreases down the group, from 181 °C for lithium to 28 °C for caesium",
+          "mins": 2,
+          "model": "Say the direction: decreases going down. Then give the first and last values as evidence: 181 °C to 28 °C."
+        },
+        {
+          "q": "What is the state of bromine at 20 °C?",
+          "a": "Liquid",
+          "mins": 1
+        },
+        {
+          "q": "Which is more reactive, sodium or potassium?",
+          "a": "Potassium",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a bar chart of Group 7 boiling points from the table (use a scale from -200 to 200 °C) and describe the trend.",
+          "a": "Bars rising from -188 to 184 °C; boiling point increases down the group",
+          "mins": 10,
+          "model": "Teacher sets out the axis with negative values and draws fluorine's bar down to -188."
+        },
+        {
+          "q": "Extend: Astatine is below iodine. Predict its state at 20 °C and its boiling point range.",
+          "a": "Solid; boiling point above 184 °C (actually about 300 °C)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why are predictions from trends only estimates?",
+          "a": "Trends are not perfectly regular; real values can differ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Down Group 1 melting point...",
+          "a": "Decreases",
+          "mins": 1,
+          "options": [
+            "Increases",
+            "Decreases"
+          ]
+        },
+        {
+          "q": "Big question: why does caesium melt in a warm hand?",
+          "a": "Melting point decreases down Group 1; caesium's is only 28 °C.",
+          "mins": 2
+        }
+      ],
+      "homework": "Answer the trends data questions sheet (6 questions) on the portal.",
+      "send": "SEND: pre-drawn axes. EAL: increase, decrease, trend. Stretch: compare Group 0 boiling points.",
+      "resources": [
+        "Pearson Exploring Science 8F The periodic table (the school's KS3 course): 8Fe",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (the periodic table)",
+        "Periodic table (portal printable, first 20 elements highlighted)",
+        "Trends data sheet and graph paper (portal worksheet)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bromine liquid",
+          "alt": "Bromine, a red-brown liquid halogen",
+          "for": "teach:3"
+        },
+        {
+          "find": "caesium metal ampoule",
+          "alt": "Caesium sealed in glass",
+          "for": "hook"
+        },
+        {
+          "find": "iodine crystals",
+          "alt": "Iodine crystals",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 31,
+      "title": "Group 1: the alkali metals",
+      "duration": 50,
+      "bigQuestion": "Why are these metals kept under oil, when most metals are kept in the open air?",
+      "objectives": [
+        "To understand how the alkali metals react with water and why reactivity increases down the group"
+      ],
+      "successCriteria": [
+        "All: describe what happens when lithium, sodium and potassium react with water",
+        "Most: write word equations for the reactions",
+        "Some: explain why they are stored in oil"
+      ],
+      "crossCurricular": "DT: safe storage and labelling",
+      "smsc": "Moral: following safety rules protects others",
+      "keywords": [
+        {
+          "term": "alkali metal",
+          "def": "a Group 1 metal"
+        },
+        {
+          "term": "reactive",
+          "def": "reacts quickly and vigorously"
+        },
+        {
+          "term": "hydroxide",
+          "def": "the alkali made when a Group 1 metal reacts with water"
+        },
+        {
+          "term": "hydrogen",
+          "def": "a flammable gas given off"
+        },
+        {
+          "term": "observation",
+          "def": "what you see, hear or feel"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why are these metals kept under oil, when most metals are kept in the open air?",
+        "a": "They react with oxygen and water vapour in air; oil keeps air out."
+      },
+      "starter": [
+        {
+          "q": "Down Group 1 melting point...",
+          "a": "Decreases",
+          "mins": 1,
+          "options": [
+            "Increases",
+            "Decreases"
+          ]
+        },
+        {
+          "q": "Bromine at 20 °C is a...",
+          "a": "Liquid",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Liquid",
+            "Gas"
+          ]
+        },
+        {
+          "q": "Metal oxides are...",
+          "a": "Basic",
+          "mins": 1
+        },
+        {
+          "q": "Group of sodium?",
+          "a": "1",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Properties",
+          "bullets": [
+            "Soft: cut with a knife",
+            "Shiny when freshly cut, tarnish quickly",
+            "Low density: Li, Na, K float"
+          ],
+          "note": "Teacher demonstration on camera in the school laboratory, or a recorded demonstration with no music: cutting sodium."
+        },
+        {
+          "heading": "With water",
+          "bullets": [
+            "Metal + water → metal hydroxide + hydrogen",
+            "Solution is alkaline",
+            "Reactivity increases down"
+          ],
+          "note": "Teacher demonstration on camera in the school laboratory, or a recorded demonstration with no music behind a safety screen. Never at home."
+        },
+        {
+          "heading": "Observations",
+          "bullets": [
+            "What the demonstration shows"
+          ],
+          "note": "Pupils record as they watch.",
+          "table": {
+            "head": [
+              "Metal",
+              "Observations"
+            ],
+            "rows": [
+              [
+                "Lithium",
+                "floats, fizzes steadily, slowly gets smaller"
+              ],
+              [
+                "Sodium",
+                "floats, melts into a ball, whizzes around, fizzes"
+              ],
+              [
+                "Potassium",
+                "floats, whizzes, burns with a lilac flame, may crackle"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Equations",
+          "bullets": [
+            "sodium + water → sodium hydroxide + hydrogen",
+            "Universal indicator turns purple: alkali"
+          ],
+          "note": "Write lithium and potassium too."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which reacts most vigorously with water?",
+            "options": [
+              "Lithium",
+              "Sodium",
+              "Potassium"
+            ],
+            "answer": 2,
+            "why": "Reactivity increases down Group 1."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the word equation for potassium and water.",
+          "a": "potassium + water → potassium hydroxide + hydrogen",
+          "mins": 2,
+          "model": "Metal + water gives metal hydroxide + hydrogen. So: potassium + water → potassium hydroxide + hydrogen."
+        },
+        {
+          "q": "Why does sodium melt into a ball?",
+          "a": "The reaction gives out heat and sodium has a low melting point",
+          "mins": 2
+        },
+        {
+          "q": "Why is the solution alkaline?",
+          "a": "A metal hydroxide is formed",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: From the demonstration, write observations and a word equation for each metal, then describe the reactivity trend.",
+          "a": "As in the table; reactivity increases Li < Na < K",
+          "mins": 9,
+          "model": "Teacher writes the lithium row on screen."
+        },
+        {
+          "q": "Extend: Predict what rubidium would do in water.",
+          "a": "React even more violently, possibly explosively, making rubidium hydroxide and hydrogen.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why are only tiny pieces used, behind a screen?",
+          "a": "The reactions give out heat and flammable hydrogen; bigger pieces can explode and spit alkali.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Group 1 metal + water gives a hydroxide and...",
+          "a": "Hydrogen",
+          "mins": 1,
+          "options": [
+            "Oxygen",
+            "Hydrogen"
+          ]
+        },
+        {
+          "q": "Big question: why are they stored under oil?",
+          "a": "Oil keeps out air and water, which they react with.",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a safety poster for a lab explaining why Group 1 metals are stored in oil.",
+      "send": "SEND: observation word bank (fizz, float, flame). EAL: react, float, fizz. Stretch: find a use of sodium in street lamps.",
+      "resources": [
+        "Pearson Exploring Science 8F The periodic table (the school's KS3 course): 8Fe",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (the periodic table)",
+        "Teacher demonstration on camera in the school laboratory, or a recorded demonstration with no music (lithium, sodium and potassium in water)",
+        "Observation table (portal worksheet)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sodium metal cut",
+          "alt": "Freshly cut sodium",
+          "for": "teach:1"
+        },
+        {
+          "find": "potassium water reaction lilac flame",
+          "alt": "Potassium reacting with water",
+          "for": "teach:3"
+        },
+        {
+          "find": "potassium metal",
+          "alt": "Potassium stored in oil",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 32,
+      "title": "Group 7 and Group 0",
+      "duration": 50,
+      "bigQuestion": "Chlorine is poisonous, yet we add a little to swimming pools and drinking water. Why?",
+      "objectives": [
+        "To understand the properties and uses of the halogens and the noble gases"
+      ],
+      "successCriteria": [
+        "All: describe the colours and states of the halogens",
+        "Most: explain a displacement reaction between halogens",
+        "Some: explain why noble gases are unreactive and how they are used"
+      ],
+      "crossCurricular": "PSHE: safe use of household chemicals",
+      "smsc": "Social: clean water as a public good",
+      "keywords": [
+        {
+          "term": "halogen",
+          "def": "a Group 7 element"
+        },
+        {
+          "term": "displacement",
+          "def": "a more reactive element pushes a less reactive one out of a compound"
+        },
+        {
+          "term": "noble gas",
+          "def": "a Group 0 element"
+        },
+        {
+          "term": "inert",
+          "def": "very unreactive"
+        },
+        {
+          "term": "salt",
+          "def": "a compound made when a halogen reacts with a metal"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Chlorine is poisonous, yet we add a little to swimming pools and drinking water. Why?",
+        "a": "In tiny amounts it kills harmful microorganisms, making water safe."
+      },
+      "starter": [
+        {
+          "q": "Group 1 + water → hydroxide + ...",
+          "a": "Hydrogen",
+          "mins": 1,
+          "options": [
+            "Hydrogen",
+            "Oxygen"
+          ]
+        },
+        {
+          "q": "Most reactive: Li, Na or K?",
+          "a": "K",
+          "mins": 1,
+          "options": [
+            "Li",
+            "Na",
+            "K"
+          ]
+        },
+        {
+          "q": "Down Group 7 boiling point...",
+          "a": "Increases",
+          "mins": 1
+        },
+        {
+          "q": "Iodine at 20 °C is a...",
+          "a": "Solid",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Halogens",
+          "bullets": [
+            "Fluorine: pale yellow gas",
+            "Chlorine: green gas",
+            "Bromine: red-brown liquid",
+            "Iodine: grey-black solid, purple vapour"
+          ],
+          "note": "All toxic; Teacher demonstration on camera in the school laboratory, or a recorded demonstration with no music."
+        },
+        {
+          "heading": "Reactivity and displacement",
+          "bullets": [
+            "Reactivity decreases down Group 7",
+            "Chlorine displaces bromine and iodine",
+            "chlorine + potassium bromide → potassium chloride + bromine"
+          ],
+          "note": "Solution turns orange as bromine forms."
+        },
+        {
+          "heading": "Noble gases",
+          "bullets": [
+            "Very unreactive (inert)",
+            "Exist as single atoms",
+            "Helium, neon, argon"
+          ],
+          "note": "Uses below.",
+          "table": {
+            "head": [
+              "Noble gas",
+              "Use",
+              "Why"
+            ],
+            "rows": [
+              [
+                "Helium",
+                "Balloons, airships",
+                "Light and unreactive"
+              ],
+              [
+                "Neon",
+                "Advertising signs",
+                "Glows red when electricity passes"
+              ],
+              [
+                "Argon",
+                "Welding, inside some light bulbs",
+                "Unreactive: stops metal burning"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Halogens in life",
+          "bullets": [
+            "Chlorine: water treatment",
+            "Fluoride: toothpaste",
+            "Iodine: antiseptic"
+          ],
+          "note": "Compounds are very different from the elements."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Will bromine displace chlorine from sodium chloride?",
+            "options": [
+              "Yes",
+              "No",
+              "Only if heated"
+            ],
+            "answer": 1,
+            "why": "Bromine is less reactive than chlorine, so it cannot displace it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chlorine water is added to potassium iodide. What happens and why?",
+          "a": "Iodine is displaced (solution turns brown) because chlorine is more reactive than iodine",
+          "mins": 3,
+          "model": "Compare reactivity: chlorine is higher up Group 7, so more reactive. More reactive displaces less reactive. So iodine is pushed out: brown colour."
+        },
+        {
+          "q": "Why is helium used in balloons?",
+          "a": "It is less dense than air and unreactive (not flammable)",
+          "mins": 1
+        },
+        {
+          "q": "Name the state of chlorine at room temperature.",
+          "a": "Gas",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the displacement grid on the sheet (Cl, Br, I with chloride, bromide, iodide solutions): tick where a reaction happens and write one word equation.",
+          "a": "Reactions: Cl with bromide and iodide; Br with iodide only; I with none",
+          "mins": 9,
+          "model": "Teacher fills the chlorine row on screen."
+        },
+        {
+          "q": "Extend: Why were noble gases the last group to be discovered?",
+          "a": "They are unreactive, colourless gases, so they do not form compounds that would reveal them.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Predict whether astatine displaces iodine.",
+          "a": "No: astatine is below iodine and less reactive.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Down Group 7 reactivity...",
+          "a": "Decreases",
+          "mins": 1,
+          "options": [
+            "Increases",
+            "Decreases"
+          ]
+        },
+        {
+          "q": "Big question: why is a little chlorine added to water?",
+          "a": "It kills harmful microorganisms in tiny, safe amounts.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the labels of toothpaste and a cleaning product (do not open or mix). Find any halogen compounds.",
+      "send": "SEND: colour cards for each halogen. EAL: displace, reactive, inert. Stretch: research why argon is used in double glazing.",
+      "resources": [
+        "Pearson Exploring Science 8F The periodic table (the school's KS3 course): 8Fe",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (the periodic table)",
+        "Teacher demonstration on camera in the school laboratory, or a recorded demonstration with no music (halogen displacement)",
+        "Displacement grid (portal worksheet)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "chlorine gas jar",
+          "alt": "Chlorine, a green gas",
+          "for": "teach:1"
+        },
+        {
+          "find": "neon sign",
+          "alt": "A neon sign",
+          "for": "teach:3"
+        },
+        {
+          "find": "swimming pool water",
+          "alt": "A swimming pool",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 33,
+      "title": "8F review and quiz: the periodic table",
+      "duration": 50,
+      "bigQuestion": "If you could add one element to Mendeleev's table yourself, what would you want to know first, and how would you find out?",
+      "objectives": [
+        "To understand how secure my knowledge of elements, the periodic table and its groups is"
+      ],
+      "successCriteria": [
+        "All: recall symbols, groups and periods",
+        "Most: use trends to make predictions",
+        "Some: explain a group's reactions in a 4-mark answer"
+      ],
+      "crossCurricular": "History: how scientific ideas change",
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "element",
+          "def": "one type of atom"
+        },
+        {
+          "term": "group",
+          "def": "a column"
+        },
+        {
+          "term": "period",
+          "def": "a row"
+        },
+        {
+          "term": "trend",
+          "def": "a gradual change"
+        },
+        {
+          "term": "displacement",
+          "def": "a more reactive element pushes out a less reactive one"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could add one element to Mendeleev's table yourself, what would you want to know first, and how would you find out?",
+        "a": "Its properties: test reactions, measure melting point, compare with its group."
+      },
+      "starter": [
+        {
+          "q": "Symbol for chlorine?",
+          "a": "Cl",
+          "mins": 1,
+          "options": [
+            "C",
+            "Cl",
+            "Ch"
+          ]
+        },
+        {
+          "q": "Noble gases are...",
+          "a": "Unreactive",
+          "mins": 1,
+          "options": [
+            "Very reactive",
+            "Unreactive"
+          ]
+        },
+        {
+          "q": "Most reactive halogen?",
+          "a": "Fluorine",
+          "mins": 1,
+          "options": [
+            "Fluorine",
+            "Iodine"
+          ]
+        },
+        {
+          "q": "Non-metal oxides are...",
+          "a": "Acidic",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Big ideas",
+          "bullets": [
+            "Dalton: atoms and elements",
+            "Mendeleev: order, gaps, predictions",
+            "Groups and periods",
+            "Group 1, 7 and 0"
+          ],
+          "note": "Rapid whiteboards."
+        },
+        {
+          "heading": "Opposite trends",
+          "bullets": [
+            "Group 1 vs Group 7"
+          ],
+          "note": "Remember both.",
+          "compare": {
+            "left": {
+              "title": "Group 1",
+              "points": [
+                "Reactivity increases down",
+                "Melting point decreases down"
+              ]
+            },
+            "right": {
+              "title": "Group 7",
+              "points": [
+                "Reactivity decreases down",
+                "Boiling point increases down"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "4-mark answer",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Describe and explain what you would see when sodium is added to water with universal indicator. [4 marks]",
+            "steps": [
+              "Floats, melts into a ball, moves about (1)",
+              "Fizzes: hydrogen gas made (1)",
+              "Indicator turns purple (1)",
+              "Sodium hydroxide, an alkali, forms (1)"
+            ],
+            "answer": "4 marks"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which pair react: bromine + potassium iodide, or iodine + potassium bromide?",
+            "options": [
+              "Bromine + potassium iodide",
+              "Iodine + potassium bromide",
+              "Neither"
+            ],
+            "answer": 0,
+            "why": "Bromine is more reactive than iodine, so it displaces it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Lithium is in group 1, period 2. Where is sodium?",
+          "a": "Group 1, period 3",
+          "mins": 2,
+          "model": "Same group (column) as lithium: 1. One row down: period 3."
+        },
+        {
+          "q": "Name the halogen that is a liquid at room temperature.",
+          "a": "Bromine",
+          "mins": 1
+        },
+        {
+          "q": "What did Mendeleev predict?",
+          "a": "Properties of undiscovered elements (for example germanium)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 8F quiz on the portal (12 questions, 15 minutes).",
+          "a": "Answer key on the teacher sheet; for example: Group 1 + water gives hydroxide and hydrogen; Cl displaces Br from bromides",
+          "mins": 15,
+          "model": "Teacher reads question 1 aloud and shows how to use the periodic table to answer."
+        },
+        {
+          "q": "Extend: Mark with the answer slide and set two targets.",
+          "a": "Pupils' own targets",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A column of the table is a...",
+          "a": "Group",
+          "mins": 1,
+          "options": [
+            "Group",
+            "Period"
+          ]
+        },
+        {
+          "q": "Big question: how would you find out about a new element?",
+          "a": "Test its properties and compare with its group.",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct every quiz mistake in green and redo two similar questions.",
+      "send": "SEND: periodic table allowed. EAL: key words list. Stretch: extra 6-mark question on Mendeleev's evidence.",
+      "resources": [
+        "Pearson Exploring Science 8F The periodic table (the school's KS3 course): 8F end-of-unit test (the school's scheme)",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (the periodic table)",
+        "Periodic table (portal printable, first 20 elements highlighted)",
+        "8F quiz with answer key (portal)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "periodic table of elements",
+          "alt": "The periodic table",
+          "for": "teach:1"
+        },
+        {
+          "find": "helium balloons",
+          "alt": "Helium balloons",
+          "for": "keywords"
+        },
+        {
+          "find": "bromine liquid",
+          "alt": "Bromine",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 34,
+      "title": "Aerobic respiration",
+      "duration": 50,
+      "bigQuestion": "You are breathing right now even while sitting still. What are your cells using the energy for?",
+      "objectives": [
+        "To understand how cells release energy from glucose using oxygen"
+      ],
+      "successCriteria": [
+        "All: write the word equation for aerobic respiration",
+        "Most: say that respiration happens in the mitochondria of every cell",
+        "Some: explain why respiration is not the same as breathing"
+      ],
+      "crossCurricular": "PSHE: food and exercise for a healthy body",
+      "smsc": "Spiritual: gratitude for the body's constant work",
+      "keywords": [
+        {
+          "term": "respiration",
+          "def": "a chemical reaction in cells that releases energy from glucose"
+        },
+        {
+          "term": "aerobic",
+          "def": "using oxygen"
+        },
+        {
+          "term": "glucose",
+          "def": "a sugar used as fuel by cells"
+        },
+        {
+          "term": "mitochondria",
+          "def": "the parts of a cell where aerobic respiration happens"
+        },
+        {
+          "term": "energy",
+          "def": "what cells need for movement, growth and warmth"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You are breathing right now even while sitting still. What are your cells using the energy for?",
+        "a": "Keeping warm, the heart beating, the brain working, growing and repairing cells."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And in yourselves: then will you not see?' (Adh-Dhariyat 51:21). Every breath and every cell respiring is a sign of Allah's care for us, given without us even thinking about it.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which organ system takes in oxygen?",
+          "a": "Respiratory (gas exchange) system",
+          "mins": 1,
+          "options": [
+            "Digestive",
+            "Respiratory (gas exchange) system"
+          ]
+        },
+        {
+          "q": "Which nutrient gives most energy?",
+          "a": "Carbohydrates",
+          "mins": 1,
+          "options": [
+            "Protein",
+            "Carbohydrates",
+            "Vitamins"
+          ]
+        },
+        {
+          "q": "Where does the heart pump blood from the right ventricle?",
+          "a": "To the lungs",
+          "mins": 1
+        },
+        {
+          "q": "Symbol for oxygen?",
+          "a": "O",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Respiration",
+          "bullets": [
+            "Happens in every living cell",
+            "Releases energy from glucose",
+            "Not the same as breathing"
+          ],
+          "note": "Breathing moves air; respiration is a reaction in cells.",
+          "misconception": {
+            "wrong": "Respiration is breathing.",
+            "right": "Respiration is a chemical reaction in cells; breathing moves air in and out of the lungs."
+          }
+        },
+        {
+          "heading": "The word equation",
+          "bullets": [
+            "glucose + oxygen → carbon dioxide + water",
+            "Energy is released"
+          ],
+          "note": "Energy is not a substance, so not in the equation as a product."
+        },
+        {
+          "heading": "Where the reactants come from",
+          "bullets": [
+            "Glucose: digested food, carried in blood plasma",
+            "Oxygen: lungs, carried by red blood cells",
+            "Products: CO₂ breathed out; water"
+          ],
+          "note": "Links to Y7 circulation.",
+          "cycle": [
+            "Food digested to glucose",
+            "Glucose and oxygen carried in blood",
+            "Respiration in mitochondria",
+            "Energy released",
+            "CO₂ carried to lungs and breathed out"
+          ]
+        },
+        {
+          "heading": "What the energy is for",
+          "bullets": [
+            "Muscle contraction",
+            "Keeping warm (37 °C)",
+            "Growth and repair",
+            "Nerve impulses"
+          ],
+          "note": "Even asleep we respire."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Where does aerobic respiration happen?",
+            "options": [
+              "Lungs only",
+              "Mitochondria in cells",
+              "Stomach"
+            ],
+            "answer": 1,
+            "why": "In the mitochondria of every cell."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why do muscle cells have many mitochondria?",
+          "a": "They need a lot of energy for contraction, released by respiration in mitochondria",
+          "mins": 2,
+          "model": "What do muscles need? Lots of energy. Where is energy released? Mitochondria. So more mitochondria, more energy."
+        },
+        {
+          "q": "What are the products of aerobic respiration?",
+          "a": "Carbon dioxide and water",
+          "mins": 1
+        },
+        {
+          "q": "Name one use of the energy released.",
+          "a": "For example: movement, warmth, growth",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Explain in the portal response box how a sandwich you eat helps your leg muscle move. Use: digestion, glucose, blood, oxygen, mitochondria. Starter: 'The bread is digested into...'",
+          "a": "The bread is digested into glucose, absorbed into the blood and carried to the muscle. Oxygen from the lungs is carried by red blood cells. In the mitochondria, glucose reacts with oxygen to release energy for contraction.",
+          "mins": 10,
+          "model": "Teacher writes the first link: 'The bread is digested into glucose in the small intestine.'"
+        },
+        {
+          "q": "Extend: Why does your breathing rate increase when you run?",
+          "a": "Muscles respire faster and need more oxygen and must remove more carbon dioxide.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Plants also respire. Write their word equation and say when they do it.",
+          "a": "glucose + oxygen → carbon dioxide + water; all the time, day and night.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Aerobic respiration uses...",
+          "a": "Oxygen",
+          "mins": 1,
+          "options": [
+            "Oxygen",
+            "Carbon dioxide"
+          ]
+        },
+        {
+          "q": "Big question: what are your cells using energy for while you sit?",
+          "a": "Warmth, the heartbeat, the brain, growth and repair.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the word equation for aerobic respiration. Write it from memory three times.",
+      "send": "SEND: equation cards to order. EAL: respire, glucose, oxygen. Stretch: research why red blood cells have no mitochondria.",
+      "resources": [
+        "Pearson Exploring Science 8C Breathing and respiration (the school's KS3 course): 8Ca",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (respiration)",
+        "Respiration equation card (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mitochondrion diagram",
+          "alt": "A mitochondrion diagram",
+          "for": "teach:3"
+        },
+        {
+          "find": "glucose molecule model",
+          "alt": "A model of glucose",
+          "for": "keywords"
+        },
+        {
+          "find": "bread loaf",
+          "alt": "Bread, a source of glucose",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 35,
+      "title": "The gas exchange system",
+      "duration": 50,
+      "bigQuestion": "Your lungs fit in your chest, yet their inner surface is roughly the size of a tennis court. Why would you need such a huge surface?",
+      "objectives": [
+        "To understand how the structure of the lungs is adapted for gas exchange"
+      ],
+      "successCriteria": [
+        "All: label the trachea, bronchi, bronchioles and alveoli",
+        "Most: describe how oxygen moves from alveoli into blood",
+        "Some: explain three adaptations of alveoli"
+      ],
+      "crossCurricular": "Maths: surface area",
+      "smsc": "Spiritual: the design of the lungs",
+      "keywords": [
+        {
+          "term": "trachea",
+          "def": "the windpipe"
+        },
+        {
+          "term": "bronchi",
+          "def": "the two tubes branching into the lungs"
+        },
+        {
+          "term": "alveoli",
+          "def": "tiny air sacs where gases are exchanged"
+        },
+        {
+          "term": "diffusion",
+          "def": "movement of particles from high to low concentration"
+        },
+        {
+          "term": "capillary",
+          "def": "a tiny blood vessel with very thin walls"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your lungs fit in your chest, yet their inner surface is roughly the size of a tennis court. Why would you need such a huge surface?",
+        "a": "A large surface lets lots of oxygen diffuse into the blood quickly."
+      },
+      "starter": [
+        {
+          "q": "Respiration word equation: glucose + oxygen → ...",
+          "a": "Carbon dioxide + water",
+          "mins": 1,
+          "options": [
+            "Carbon dioxide + water",
+            "Oxygen + water"
+          ]
+        },
+        {
+          "q": "Respiration happens in the...",
+          "a": "Mitochondria",
+          "mins": 1,
+          "options": [
+            "Mitochondria",
+            "Nucleus"
+          ]
+        },
+        {
+          "q": "Is breathing the same as respiration?",
+          "a": "No",
+          "mins": 1
+        },
+        {
+          "q": "Which blood cells carry oxygen?",
+          "a": "Red blood cells",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The pathway",
+          "bullets": [
+            "Nose and mouth",
+            "Trachea",
+            "Bronchi",
+            "Bronchioles",
+            "Alveoli"
+          ],
+          "note": "Rings of cartilage keep the trachea open."
+        },
+        {
+          "heading": "Gas exchange",
+          "bullets": [
+            "Oxygen diffuses: alveoli → blood",
+            "Carbon dioxide diffuses: blood → alveoli",
+            "High to low concentration"
+          ],
+          "note": "Recap Y7 diffusion."
+        },
+        {
+          "heading": "Adaptations of alveoli",
+          "bullets": [
+            "Huge surface area",
+            "Walls one cell thick",
+            "Rich blood supply",
+            "Moist lining"
+          ],
+          "note": "Each speeds up diffusion.",
+          "diagram": {
+            "centre": "Alveoli adaptations",
+            "items": [
+              "Millions of sacs: large surface area",
+              "Thin walls: short distance",
+              "Many capillaries",
+              "Moist: gases dissolve",
+              "Breathing keeps concentration high"
+            ]
+          }
+        },
+        {
+          "heading": "Breathing in",
+          "bullets": [
+            "Intercostal muscles lift ribs",
+            "Diaphragm contracts and flattens",
+            "Volume up, pressure down, air rushes in"
+          ],
+          "note": "Recap Y7 lesson 18."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why are alveolus walls one cell thick?",
+            "options": [
+              "To be strong",
+              "Short distance for diffusion",
+              "To store air"
+            ],
+            "answer": 1,
+            "why": "Thin walls mean gases diffuse quickly."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why a large surface area helps the lungs.",
+          "a": "More oxygen can diffuse into the blood at the same time, so gas exchange is faster",
+          "mins": 2,
+          "model": "What happens across the surface? Diffusion. More surface, more places for diffusion at once. So faster gas exchange."
+        },
+        {
+          "q": "Which way does carbon dioxide diffuse in the lungs?",
+          "a": "From the blood into the alveoli",
+          "mins": 1
+        },
+        {
+          "q": "Order: alveoli, trachea, bronchi, bronchioles.",
+          "a": "Trachea, bronchi, bronchioles, alveoli",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Label the gas exchange system diagram and, on the alveolus close-up, draw arrows for oxygen and carbon dioxide.",
+          "a": "Correct labels; oxygen arrow alveolus to capillary; CO₂ arrow capillary to alveolus",
+          "mins": 9,
+          "model": "Teacher labels the trachea first and adds the oxygen arrow."
+        },
+        {
+          "q": "Extend: Use the term concentration gradient to explain why breathing keeps gas exchange going.",
+          "a": "Breathing brings fresh air in and removes CO₂, keeping oxygen high in alveoli and low in blood.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Emphysema destroys alveolus walls, making fewer, larger sacs. Explain why patients are breathless.",
+          "a": "Smaller surface area, so less oxygen diffuses into the blood.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Gases cross the alveolus wall by...",
+          "a": "Diffusion",
+          "mins": 1,
+          "options": [
+            "Diffusion",
+            "Digestion"
+          ]
+        },
+        {
+          "q": "Big question: why do lungs need such a huge surface?",
+          "a": "So enough oxygen diffuses into the blood quickly.",
+          "mins": 2
+        }
+      ],
+      "homework": "Draw the journey of an oxygen particle from the air to a muscle cell in six steps.",
+      "send": "SEND: labels to drag. EAL: trachea, alveoli, diffusion. Stretch: compare surface area to volume ratio ideas.",
+      "resources": [
+        "Pearson Exploring Science 8C Breathing and respiration (the school's KS3 course): 8Cb",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (respiration)",
+        "Gas exchange system diagram (portal worksheet, printable or on a drawing tablet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "respiratory system diagram",
+          "alt": "A diagram of the gas exchange system",
+          "for": "teach:1"
+        },
+        {
+          "find": "alveolus capillary diagram gas exchange",
+          "alt": "Gas exchange in an alveolus",
+          "for": "teach:2"
+        },
+        {
+          "find": "tennis court aerial",
+          "alt": "A tennis court (lung surface area)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 36,
+      "title": "Measuring lung volume",
+      "duration": 50,
+      "bigQuestion": "Who do you think has bigger lungs, a swimmer or a non-swimmer? How could you test it fairly?",
+      "objectives": [
+        "To understand how to measure lung volume and why it varies between people"
+      ],
+      "successCriteria": [
+        "All: measure vital capacity with a bottle and bowl, or a balloon",
+        "Most: repeat and calculate a mean",
+        "Some: suggest why lung volume differs between people"
+      ],
+      "crossCurricular": "Maths: calculating a mean",
+      "smsc": "Social: comparing data respectfully",
+      "keywords": [
+        {
+          "term": "lung volume",
+          "def": "how much air the lungs hold"
+        },
+        {
+          "term": "vital capacity",
+          "def": "the most air you can breathe out after a deep breath"
+        },
+        {
+          "term": "mean",
+          "def": "the total divided by the number of results"
+        },
+        {
+          "term": "repeat",
+          "def": "do again to check"
+        },
+        {
+          "term": "variable",
+          "def": "something that can change"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Who do you think has bigger lungs, a swimmer or a non-swimmer? How could you test it fairly?",
+        "a": "Swimmers often have larger vital capacity; test by measuring many people the same way and comparing means."
+      },
+      "starter": [
+        {
+          "q": "Alveoli walls are...",
+          "a": "One cell thick",
+          "mins": 1,
+          "options": [
+            "Thick",
+            "One cell thick"
+          ]
+        },
+        {
+          "q": "Oxygen diffuses from alveoli into the...",
+          "a": "Blood",
+          "mins": 1,
+          "options": [
+            "Blood",
+            "Trachea"
+          ]
+        },
+        {
+          "q": "Order: trachea, bronchi, bronchioles, ...",
+          "a": "Alveoli",
+          "mins": 1
+        },
+        {
+          "q": "Breathing in: the diaphragm...",
+          "a": "Contracts and flattens",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Safety guide: lung volume",
+          "bullets": [
+            "Use your own clean straw or tube; never share",
+            "Sit down; stop if you feel dizzy",
+            "An adult helps fill and turn the bottle",
+            "Work over a sink or bowl; wipe spills",
+            "Do not do this if you have asthma symptoms today: use the class data"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Bottle method",
+          "bullets": [
+            "Fill a 2 L bottle with water; mark every 100 ml",
+            "Turn it upside down in a bowl of water",
+            "Breathe in deeply; breathe out through a tube into the bottle",
+            "Read the volume of air"
+          ],
+          "note": "Teacher demonstrates on camera."
+        },
+        {
+          "heading": "Example class results",
+          "bullets": [
+            "Vital capacity (litres)"
+          ],
+          "note": "Example data.",
+          "table": {
+            "head": [
+              "Person",
+              "Try 1",
+              "Try 2",
+              "Try 3",
+              "Mean"
+            ],
+            "rows": [
+              [
+                "A",
+                "2.4",
+                "2.6",
+                "2.5",
+                "2.5"
+              ],
+              [
+                "B",
+                "3.0",
+                "2.8",
+                "3.1",
+                "3.0"
+              ],
+              [
+                "C",
+                "2.1",
+                "2.3",
+                "2.2",
+                "2.2"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Why people differ",
+          "bullets": [
+            "Height and body size",
+            "Age",
+            "Training: swimmers, wind players",
+            "Smoking and illness reduce it"
+          ],
+          "note": "Many variables: compare carefully."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Results 2.4, 2.6, 2.5 L. The mean is...",
+            "options": [
+              "2.4 L",
+              "2.5 L",
+              "7.5 L"
+            ],
+            "answer": 1,
+            "why": "(2.4 + 2.6 + 2.5) ÷ 3 = 7.5 ÷ 3 = 2.5 L."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate the mean of 3.0, 2.8 and 3.1 L.",
+          "a": "2.97 L, about 3.0 L",
+          "mins": 2,
+          "model": "Add: 3.0 + 2.8 + 3.1 = 8.9. Divide by 3: 2.97. Round: 3.0 L."
+        },
+        {
+          "q": "Why repeat three times?",
+          "a": "To spot mistakes and find a more reliable mean",
+          "mins": 1
+        },
+        {
+          "q": "Name one factor that makes vital capacity larger.",
+          "a": "For example: being taller or doing regular exercise",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Measure your vital capacity three times (bottle method or by the class data if you cannot), record and calculate the mean.",
+          "a": "Pupils' own; typical Year 8 values about 2 to 3.5 L",
+          "mins": 10,
+          "model": "Teacher does try 1 on camera and reads 2.6 L from the marks."
+        },
+        {
+          "q": "Extend: Suggest one source of error in the bottle method.",
+          "a": "Not breathing out fully, water leaking, or misreading the scale.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Plan a fair test of 'Do taller pupils have bigger lung volumes?'",
+          "a": "Measure height and vital capacity of many pupils the same way, three repeats each, and plot a scatter graph.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Vital capacity is...",
+          "a": "The most air breathed out after a deep breath",
+          "mins": 1,
+          "options": [
+            "The most air breathed out after a deep breath",
+            "Normal breathing"
+          ]
+        },
+        {
+          "q": "Big question: how could you test swimmers' lungs fairly?",
+          "a": "Measure many swimmers and non-swimmers the same way and compare means.",
+          "mins": 2
+        }
+      ],
+      "homework": "Upload your results and mean to the class data sheet on the portal.",
+      "send": "SEND: example data to use instead. EAL: mean, repeat, volume. Stretch: plot class data as a scatter graph of height against vital capacity.",
+      "resources": [
+        "Pearson Exploring Science 8C Breathing and respiration (the school's KS3 course): 8Cb",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (respiration)",
+        "Home practical guide and safety card: lung volume bottle (portal worksheet; own straw, sit down, stop if dizzy)",
+        "A 2 L plastic bottle, a washing-up bowl, a bendy straw or clean tube, a marker",
+        "Results table (portal worksheet)",
+        "Calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "spirometer",
+          "alt": "A spirometer that measures lung volume",
+          "for": "keywords"
+        },
+        {
+          "find": "plastic bottle in water",
+          "alt": "A bottle upside down in water",
+          "for": "teach:2"
+        },
+        {
+          "find": "swimming pool lanes",
+          "alt": "A swimming pool",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 37,
+      "title": "Getting oxygen to cells: blood and haemoglobin",
+      "duration": 50,
+      "bigQuestion": "Why do climbers on very high mountains get tired so quickly, even when they rest?",
+      "objectives": [
+        "To understand how red blood cells carry oxygen from the lungs to respiring cells"
+      ],
+      "successCriteria": [
+        "All: describe the job of haemoglobin",
+        "Most: explain two adaptations of red blood cells",
+        "Some: explain how carbon monoxide reduces oxygen transport"
+      ],
+      "crossCurricular": "PSHE: home safety and CO alarms",
+      "smsc": "Moral: protecting family from hidden dangers",
+      "keywords": [
+        {
+          "term": "haemoglobin",
+          "def": "the red protein that carries oxygen"
+        },
+        {
+          "term": "red blood cell",
+          "def": "a cell that carries oxygen"
+        },
+        {
+          "term": "plasma",
+          "def": "the liquid part of blood"
+        },
+        {
+          "term": "oxyhaemoglobin",
+          "def": "haemoglobin joined to oxygen"
+        },
+        {
+          "term": "carbon monoxide",
+          "def": "a poisonous gas that blocks haemoglobin"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do climbers on very high mountains get tired so quickly, even when they rest?",
+        "a": "There is less oxygen in each breath, so less reaches the cells for respiration."
+      },
+      "starter": [
+        {
+          "q": "Mean of 2, 3 and 4?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "9",
+            "4"
+          ]
+        },
+        {
+          "q": "Respiration needs glucose and...",
+          "a": "Oxygen",
+          "mins": 1,
+          "options": [
+            "Oxygen",
+            "Nitrogen"
+          ]
+        },
+        {
+          "q": "Gases cross the alveoli by...",
+          "a": "Diffusion",
+          "mins": 1
+        },
+        {
+          "q": "Which side of the heart pumps to the body?",
+          "a": "Left",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Blood",
+          "bullets": [
+            "Plasma: carries glucose, CO₂, urea",
+            "Red cells: carry oxygen",
+            "White cells: fight disease",
+            "Platelets: clotting"
+          ],
+          "note": "Recap Y7."
+        },
+        {
+          "heading": "Haemoglobin",
+          "bullets": [
+            "In red blood cells",
+            "Joins with oxygen in the lungs",
+            "Releases it in respiring tissues"
+          ],
+          "note": "Oxyhaemoglobin is bright red.",
+          "cycle": [
+            "Lungs: haemoglobin picks up oxygen",
+            "Carried in arteries",
+            "Capillaries in tissues: oxygen released",
+            "Returns in veins",
+            "Back to the lungs"
+          ]
+        },
+        {
+          "heading": "Red cell adaptations",
+          "bullets": [
+            "No nucleus: more room for haemoglobin",
+            "Biconcave disc: large surface area",
+            "Small and flexible: squeeze through capillaries"
+          ],
+          "note": "Each helps carry oxygen."
+        },
+        {
+          "heading": "Carbon monoxide",
+          "bullets": [
+            "From faulty boilers, car exhaust, cigarettes",
+            "Binds to haemoglobin more strongly than oxygen",
+            "Less oxygen carried: can kill"
+          ],
+          "note": "CO alarms save lives at home."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why does a red blood cell have no nucleus?",
+            "options": [
+              "To be lighter",
+              "More space for haemoglobin",
+              "To divide faster"
+            ],
+            "answer": 1,
+            "why": "More haemoglobin means more oxygen carried."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why carbon monoxide is dangerous.",
+          "a": "It joins haemoglobin instead of oxygen, so less oxygen reaches cells for respiration",
+          "mins": 2,
+          "model": "What carries oxygen? Haemoglobin. What does CO do? Takes its place. So less oxygen gets to cells, and respiration slows."
+        },
+        {
+          "q": "Name the part of blood that carries glucose.",
+          "a": "Plasma",
+          "mins": 1
+        },
+        {
+          "q": "Give one adaptation of red blood cells.",
+          "a": "No nucleus, biconcave shape, or small and flexible",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a red blood cell (top and side view) and label three adaptations with their benefit.",
+          "a": "Biconcave disc (surface area), no nucleus (more haemoglobin), small and flexible (fits capillaries)",
+          "mins": 9,
+          "model": "Teacher draws the side view on screen: a disc thinner in the middle."
+        },
+        {
+          "q": "Extend: Why do people who live at high altitude often have more red blood cells?",
+          "a": "To carry enough oxygen when each breath has less oxygen.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why a CO alarm is needed near a gas boiler.",
+          "a": "Faulty burning makes CO, which has no smell or colour; an alarm detects it before people are harmed.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Haemoglobin carries...",
+          "a": "Oxygen",
+          "mins": 1,
+          "options": [
+            "Glucose",
+            "Oxygen"
+          ]
+        },
+        {
+          "q": "Big question: why do climbers tire quickly high up?",
+          "a": "Less oxygen per breath reaches their cells for respiration.",
+          "mins": 2
+        }
+      ],
+      "homework": "Check with an adult whether your home has a carbon monoxide alarm and where it is. Write why it is there.",
+      "send": "SEND: labelled diagram to copy. EAL: haemoglobin, oxygen, carry. Stretch: research sickle cell anaemia's effect on oxygen transport.",
+      "resources": [
+        "Pearson Exploring Science 8C Breathing and respiration (the school's KS3 course): 8Cc",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (respiration)",
+        "Red blood cell diagram sheet (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "red blood cells micrograph",
+          "alt": "Red blood cells under a microscope",
+          "for": "teach:3"
+        },
+        {
+          "find": "carbon monoxide alarm",
+          "alt": "A carbon monoxide alarm",
+          "for": "keywords"
+        },
+        {
+          "find": "Mount Everest",
+          "alt": "A very high mountain",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 38,
+      "title": "Gas exchange in other organisms",
+      "duration": 50,
+      "bigQuestion": "A fish drowns in air and you drown in water. Why can't each use the other's oxygen?",
+      "objectives": [
+        "To understand how fish, insects and plants exchange gases in different ways"
+      ],
+      "successCriteria": [
+        "All: describe how fish gills work",
+        "Most: describe spiracles and tracheae in insects",
+        "Some: explain how stomata let leaves exchange gases"
+      ],
+      "crossCurricular": "Geography: oxygen in rivers and fish health",
+      "smsc": "Spiritual: the variety of ways living things breathe",
+      "keywords": [
+        {
+          "term": "gills",
+          "def": "organs that take oxygen from water"
+        },
+        {
+          "term": "spiracle",
+          "def": "a small hole in an insect's body for air"
+        },
+        {
+          "term": "tracheae",
+          "def": "tubes carrying air inside an insect"
+        },
+        {
+          "term": "stomata",
+          "def": "tiny pores in a leaf"
+        },
+        {
+          "term": "guard cells",
+          "def": "cells that open and close stomata"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A fish drowns in air and you drown in water. Why can't each use the other's oxygen?",
+        "a": "Gills collapse in air and stick together; lungs cannot extract dissolved oxygen from water."
+      },
+      "starter": [
+        {
+          "q": "Haemoglobin carries...",
+          "a": "Oxygen",
+          "mins": 1,
+          "options": [
+            "Oxygen",
+            "Glucose"
+          ]
+        },
+        {
+          "q": "CO is dangerous because it...",
+          "a": "Blocks haemoglobin",
+          "mins": 1,
+          "options": [
+            "Blocks haemoglobin",
+            "Makes blood thicker"
+          ]
+        },
+        {
+          "q": "Alveoli have a large...",
+          "a": "Surface area",
+          "mins": 1
+        },
+        {
+          "q": "Plants make glucose by...",
+          "a": "Photosynthesis",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fish: gills",
+          "bullets": [
+            "Water in through the mouth, out over gills",
+            "Thin filaments, large surface area",
+            "Rich blood supply"
+          ],
+          "note": "Water flows one way; oxygen diffuses into the blood."
+        },
+        {
+          "heading": "Insects: spiracles and tracheae",
+          "bullets": [
+            "Holes along the body (spiracles)",
+            "Tubes take air straight to cells",
+            "No blood needed for oxygen"
+          ],
+          "note": "This limits insect size."
+        },
+        {
+          "heading": "Plants: stomata",
+          "bullets": [
+            "Pores mostly on the underside of leaves",
+            "CO₂ in for photosynthesis, O₂ out",
+            "Guard cells open and close them"
+          ],
+          "note": "Respiration too, day and night."
+        },
+        {
+          "heading": "Compare",
+          "bullets": [
+            "Same goal, different systems"
+          ],
+          "note": "Common features: large surface area, thin, moist.",
+          "table": {
+            "head": [
+              "Organism",
+              "Organ",
+              "Medium",
+              "Key adaptation"
+            ],
+            "rows": [
+              [
+                "Human",
+                "Lungs (alveoli)",
+                "Air",
+                "Huge surface, thin walls"
+              ],
+              [
+                "Fish",
+                "Gills",
+                "Water",
+                "Filaments, counter-flow"
+              ],
+              [
+                "Insect",
+                "Spiracles, tracheae",
+                "Air",
+                "Tubes direct to cells"
+              ],
+              [
+                "Plant",
+                "Stomata",
+                "Air",
+                "Guard cells control opening"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "What do all gas exchange surfaces share?",
+            "options": [
+              "Thick walls",
+              "Large surface area and thin surface",
+              "Bright colours"
+            ],
+            "answer": 1,
+            "why": "Large and thin surfaces make diffusion fast."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why are gill filaments thin and many?",
+          "a": "Large surface area and short distance for oxygen to diffuse into the blood",
+          "mins": 2,
+          "model": "Many filaments: large surface. Thin: short distance. Both speed diffusion of oxygen into the blood."
+        },
+        {
+          "q": "Where are most stomata?",
+          "a": "On the underside of leaves",
+          "mins": 1
+        },
+        {
+          "q": "How does air reach an insect's cells?",
+          "a": "Through spiracles and tracheae tubes",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Look at the underside of a leaf with a magnifying glass (or the class micrograph). Draw what you see and label stomata and guard cells from the micrograph.",
+          "a": "Drawing of leaf surface; stomata as pores between two guard cells",
+          "mins": 8,
+          "model": "Teacher shows the leaf micrograph on screen and labels one stoma."
+        },
+        {
+          "q": "Extend: Write a comparison paragraph in the portal response box: human lungs and fish gills. Starter: 'Both lungs and gills...'",
+          "a": "Both have a large surface area, thin surfaces and a rich blood supply; lungs take oxygen from air, gills from water.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why can't insects grow as large as a cat?",
+          "a": "Air must diffuse along the tracheae; tubes become too long for enough oxygen to reach the cells.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Leaves exchange gases through...",
+          "a": "Stomata",
+          "mins": 1,
+          "options": [
+            "Stomata",
+            "Roots"
+          ]
+        },
+        {
+          "q": "Big question: why can't a fish breathe in air?",
+          "a": "Gills collapse and stick together in air, so the surface area falls.",
+          "mins": 2
+        }
+      ],
+      "homework": "Paint clear nail varnish on the underside of a leaf with an adult, peel it with tape and look at the stomata print with a magnifying glass.",
+      "send": "SEND: labelled micrograph. EAL: gills, stomata. Stretch: research counter-current flow in gills.",
+      "resources": [
+        "Pearson Exploring Science 8C Breathing and respiration (the school's KS3 course): 8Cd",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (respiration)",
+        "Leaf from a houseplant or garden, magnifying glass (if available)",
+        "Stomata micrograph (portal slides)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "fish gills close up",
+          "alt": "Fish gills",
+          "for": "teach:1"
+        },
+        {
+          "find": "stomata micrograph",
+          "alt": "Stomata on a leaf under a microscope",
+          "for": "teach:3"
+        },
+        {
+          "find": "insect spiracles",
+          "alt": "Spiracles on an insect",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 39,
+      "title": "Smoking and the gas exchange system",
+      "duration": 50,
+      "bigQuestion": "If smoking is so harmful, why do people start, and why is it so hard to stop?",
+      "objectives": [
+        "To understand how smoking damages the gas exchange system and the rest of the body"
+      ],
+      "successCriteria": [
+        "All: name the harmful substances in cigarette smoke",
+        "Most: explain how tar, nicotine and carbon monoxide cause harm",
+        "Some: use data to describe the link between smoking and lung cancer"
+      ],
+      "crossCurricular": "PSHE: drugs, choices and health",
+      "smsc": "Moral: protecting the body Allah entrusted to us",
+      "keywords": [
+        {
+          "term": "tar",
+          "def": "a sticky substance in smoke that coats the lungs and can cause cancer"
+        },
+        {
+          "term": "nicotine",
+          "def": "an addictive drug in tobacco"
+        },
+        {
+          "term": "cilia",
+          "def": "tiny hairs that sweep mucus out of airways"
+        },
+        {
+          "term": "addictive",
+          "def": "hard to stop using"
+        },
+        {
+          "term": "carcinogen",
+          "def": "a substance that can cause cancer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If smoking is so harmful, why do people start, and why is it so hard to stop?",
+        "a": "Peer pressure, advertising and curiosity; nicotine is addictive."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And do not throw yourselves with your own hands into destruction' (Al-Baqarah 2:195), and 'do not kill yourselves' (An-Nisa 4:29). Many scholars rule smoking forbidden because of the harm it does to the smoker and to others.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Stomata are found on...",
+          "a": "Leaves",
+          "mins": 1,
+          "options": [
+            "Leaves",
+            "Roots"
+          ]
+        },
+        {
+          "q": "CO blocks...",
+          "a": "Haemoglobin",
+          "mins": 1,
+          "options": [
+            "Haemoglobin",
+            "Stomata"
+          ]
+        },
+        {
+          "q": "Fish exchange gases using...",
+          "a": "Gills",
+          "mins": 1
+        },
+        {
+          "q": "Alveoli need a ... surface area.",
+          "a": "Large",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is in smoke",
+          "bullets": [
+            "Tar",
+            "Nicotine",
+            "Carbon monoxide",
+            "Many other harmful chemicals"
+          ],
+          "note": "Over 70 known carcinogens."
+        },
+        {
+          "heading": "The damage",
+          "bullets": [
+            "Tar: coats alveoli, causes cancer",
+            "Smoke paralyses cilia: mucus builds up, 'smoker's cough'",
+            "CO: less oxygen carried",
+            "Nicotine: addiction, narrows blood vessels"
+          ],
+          "note": "Emphysema and heart disease too."
+        },
+        {
+          "heading": "The evidence",
+          "bullets": [
+            "Smokers are far more likely to get lung cancer"
+          ],
+          "note": "Approximate, from UK cancer statistics: about 7 in 10 lung cancer cases in the UK are caused by smoking.",
+          "chart": {
+            "kind": "pie",
+            "title": "UK lung cancer cases (approximate)",
+            "labels": [
+              "Caused by smoking",
+              "Other causes"
+            ],
+            "values": [
+              72,
+              28
+            ],
+            "unit": "%"
+          }
+        },
+        {
+          "heading": "Choosing well",
+          "bullets": [
+            "Say no to smoking and vaping",
+            "Second-hand smoke harms others",
+            "Help is available to quit"
+          ],
+          "note": "Vapes contain nicotine too and are illegal to sell to under-18s in the UK."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why do smokers often cough?",
+            "options": [
+              "Cilia are damaged so mucus builds up",
+              "Alveoli get bigger",
+              "Haemoglobin increases"
+            ],
+            "answer": 0,
+            "why": "Paralysed cilia cannot sweep mucus away, so the body coughs it up."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why smokers get breathless.",
+          "a": "Tar and damage reduce alveoli surface area, and CO lowers oxygen carried, so less oxygen reaches cells",
+          "mins": 3,
+          "model": "Two effects. Lungs: tar and damaged alveoli mean less surface for diffusion. Blood: CO takes haemoglobin's place. Both mean less oxygen to cells."
+        },
+        {
+          "q": "What makes cigarettes addictive?",
+          "a": "Nicotine",
+          "mins": 1
+        },
+        {
+          "q": "Name a carcinogen in smoke.",
+          "a": "Tar",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write a letter in the portal response box persuading an adult relative to stop smoking, using three scientific facts and kindness. Starter: 'I care about you, and I learnt that...'",
+          "a": "Pupils' own; facts such as tar causes cancer, CO reduces oxygen, about 7 in 10 lung cancers are caused by smoking; respectful tone",
+          "mins": 10,
+          "model": "Teacher writes the opening on screen: 'I care about you, and in science I learnt that tar in smoke coats the lungs.'"
+        },
+        {
+          "q": "Extend: Why is second-hand smoke harmful to children in the home?",
+          "a": "They breathe in the same tar, CO and carcinogens; their lungs are still developing.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why might the link between smoking and cancer take years to show?",
+          "a": "Cancers develop slowly after years of damage; long studies were needed.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Tar in smoke...",
+          "a": "Coats the lungs and can cause cancer",
+          "mins": 1,
+          "options": [
+            "Coats the lungs and can cause cancer",
+            "Adds oxygen"
+          ]
+        },
+        {
+          "q": "Big question: why is it hard to stop smoking?",
+          "a": "Nicotine is addictive.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find the NHS Smokefree help line or website with an adult and write one way it helps people quit.",
+      "send": "SEND: letter frame with fact bank. EAL: harm, addict, damage. Stretch: compare smoking and vaping evidence.",
+      "resources": [
+        "Pearson Exploring Science 8C Breathing and respiration (the school's KS3 course): 8Cb, 8Cd",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (respiration)",
+        "Letter writing frame (portal response box)",
+        "NHS information on smoking (nhs.uk, read with an adult)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "smoker lungs vs healthy lungs",
+          "alt": "A healthy lung and a smoker's lung specimen",
+          "for": "teach:2"
+        },
+        {
+          "find": "cilia micrograph",
+          "alt": "Cilia lining an airway",
+          "for": "keywords"
+        },
+        {
+          "find": "no smoking sign",
+          "alt": "A no smoking sign",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 40,
+      "title": "Anaerobic respiration in humans",
+      "duration": 50,
+      "bigQuestion": "After a 100 m sprint you keep panting for minutes, even though you have stopped. Why?",
+      "objectives": [
+        "To understand how muscles release energy without oxygen and why this causes an oxygen debt"
+      ],
+      "successCriteria": [
+        "All: write the word equation for anaerobic respiration in muscles",
+        "Most: compare aerobic and anaerobic respiration",
+        "Some: explain why we keep panting after exercise"
+      ],
+      "crossCurricular": "Maths: line graphs over time",
+      "smsc": "Moral: looking after health with sensible exercise",
+      "keywords": [
+        {
+          "term": "anaerobic",
+          "def": "without oxygen"
+        },
+        {
+          "term": "lactic acid",
+          "def": "the product of anaerobic respiration in muscles"
+        },
+        {
+          "term": "oxygen debt",
+          "def": "extra oxygen needed after exercise to break down lactic acid"
+        },
+        {
+          "term": "fatigue",
+          "def": "tiredness of muscles"
+        },
+        {
+          "term": "sprint",
+          "def": "a short, very fast run"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "After a 100 m sprint you keep panting for minutes, even though you have stopped. Why?",
+        "a": "Muscles respired anaerobically, making lactic acid; extra oxygen is needed to break it down (oxygen debt)."
+      },
+      "starter": [
+        {
+          "q": "Aerobic respiration products?",
+          "a": "Carbon dioxide and water",
+          "mins": 1,
+          "options": [
+            "Carbon dioxide and water",
+            "Lactic acid"
+          ]
+        },
+        {
+          "q": "Nicotine is...",
+          "a": "Addictive",
+          "mins": 1,
+          "options": [
+            "Addictive",
+            "A carcinogen gas"
+          ]
+        },
+        {
+          "q": "Where does aerobic respiration happen?",
+          "a": "Mitochondria",
+          "mins": 1
+        },
+        {
+          "q": "Haemoglobin carries...",
+          "a": "Oxygen",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "When oxygen runs short",
+          "bullets": [
+            "Hard exercise: not enough oxygen delivered",
+            "Muscles respire anaerobically",
+            "glucose → lactic acid"
+          ],
+          "note": "Energy released, but much less."
+        },
+        {
+          "heading": "Aerobic vs anaerobic",
+          "bullets": [
+            "Compare"
+          ],
+          "note": "Copy the table.",
+          "table": {
+            "head": [
+              "Feature",
+              "Aerobic",
+              "Anaerobic (muscles)"
+            ],
+            "rows": [
+              [
+                "Oxygen?",
+                "yes",
+                "no"
+              ],
+              [
+                "Products",
+                "carbon dioxide + water",
+                "lactic acid"
+              ],
+              [
+                "Energy released",
+                "a lot",
+                "much less"
+              ],
+              [
+                "When",
+                "all the time",
+                "hard, short exercise"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Oxygen debt",
+          "bullets": [
+            "Lactic acid builds up: fatigue, cramp",
+            "After exercise, keep breathing hard",
+            "Oxygen breaks down lactic acid"
+          ],
+          "note": "Heart rate stays high too."
+        },
+        {
+          "heading": "Example data",
+          "bullets": [
+            "Breathing rate during and after a sprint"
+          ],
+          "note": "Example data.",
+          "chart": {
+            "kind": "line",
+            "title": "Breaths per minute (example data)",
+            "labels": [
+              "Rest",
+              "Sprint",
+              "1 min after",
+              "3 min after",
+              "6 min after"
+            ],
+            "values": [
+              14,
+              40,
+              32,
+              22,
+              15
+            ],
+            "unit": "breaths/min"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Anaerobic respiration in muscles produces...",
+            "options": [
+              "Carbon dioxide",
+              "Lactic acid",
+              "Oxygen"
+            ],
+            "answer": 1,
+            "why": "glucose → lactic acid in human muscles."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use the chart: how long did breathing take to return to near rest?",
+          "a": "About 6 minutes",
+          "mins": 2,
+          "model": "Rest is 14. Read along: 6 minutes after, it is 15, almost back. So about 6 minutes."
+        },
+        {
+          "q": "Why do muscles get tired in a sprint?",
+          "a": "Lactic acid builds up",
+          "mins": 1
+        },
+        {
+          "q": "Which releases more energy per glucose: aerobic or anaerobic?",
+          "a": "Aerobic",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count your breaths for 1 minute at rest, then after 1 minute of gentle stepping on the bottom stair, then every minute for 4 minutes. Record and plot a line graph.",
+          "a": "Pupils' own; rate rises then falls back towards rest",
+          "mins": 10,
+          "model": "Teacher counts own resting breaths on camera: '15 per minute.'"
+        },
+        {
+          "q": "Extend: Explain your graph using 'oxygen debt'.",
+          "a": "Breathing stayed high after stepping to supply extra oxygen to break down lactic acid.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why do trained athletes recover faster?",
+          "a": "Stronger heart and lungs deliver oxygen faster, so less lactic acid builds and the debt is repaid sooner.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Anaerobic means...",
+          "a": "Without oxygen",
+          "mins": 1,
+          "options": [
+            "With oxygen",
+            "Without oxygen"
+          ]
+        },
+        {
+          "q": "Big question: why keep panting after a sprint?",
+          "a": "To repay the oxygen debt by breaking down lactic acid.",
+          "mins": 2
+        }
+      ],
+      "homework": "Explain oxygen debt to someone at home, using your graph.",
+      "send": "SEND: table pre-drawn. EAL: anaerobic, lactic acid. Stretch: research why marathon runners pace themselves.",
+      "resources": [
+        "Pearson Exploring Science 8C Breathing and respiration (the school's KS3 course): 8Ce",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (respiration)",
+        "Home practical guide and safety card: breathing rate (portal worksheet; gentle stepping on the bottom stair with an adult nearby, stop if unwell)",
+        "A timer",
+        "Graph paper (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sprint track",
+          "alt": "A running track",
+          "for": "hook"
+        },
+        {
+          "find": "muscle fibres micrograph",
+          "alt": "Muscle fibres",
+          "for": "keywords"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 41,
+      "title": "Fermentation: yeast, sugar and a balloon",
+      "duration": 50,
+      "bigQuestion": "Bread dough doubles in size in a warm kitchen but hardly rises in the fridge. What is the yeast doing differently?",
+      "objectives": [
+        "To understand how yeast respires anaerobically and how temperature affects the rate"
+      ],
+      "successCriteria": [
+        "All: write the word equation for fermentation",
+        "Most: set up the yeast and balloon practical",
+        "Some: explain the effect of temperature using the results"
+      ],
+      "crossCurricular": "DT: the science of bread making",
+      "smsc": "Spiritual: bread as a blessing",
+      "keywords": [
+        {
+          "term": "yeast",
+          "def": "a single-celled fungus"
+        },
+        {
+          "term": "fermentation",
+          "def": "anaerobic respiration in yeast"
+        },
+        {
+          "term": "ethanol",
+          "def": "a type of alcohol made by fermentation"
+        },
+        {
+          "term": "carbon dioxide",
+          "def": "the gas that makes bread rise"
+        },
+        {
+          "term": "enzyme",
+          "def": "a protein that speeds up reactions in cells"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Bread dough doubles in size in a warm kitchen but hardly rises in the fridge. What is the yeast doing differently?",
+        "a": "Yeast respires faster when warm, making more carbon dioxide; cold slows its enzymes."
+      },
+      "islamicLink": {
+        "text": "Fermentation is how bread rises, a blessing we eat every day. It also makes alcohol, which Allah has forbidden: 'intoxicants ... are defilement from the work of Satan, so avoid it' (Al-Ma'idah 5:90). In bread the small amount of ethanol is driven off in the oven.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Anaerobic respiration in muscles makes...",
+          "a": "Lactic acid",
+          "mins": 1,
+          "options": [
+            "Lactic acid",
+            "Ethanol"
+          ]
+        },
+        {
+          "q": "Oxygen debt is repaid by...",
+          "a": "Breathing hard after exercise",
+          "mins": 1,
+          "options": [
+            "Breathing hard after exercise",
+            "Eating"
+          ]
+        },
+        {
+          "q": "Aerobic respiration needs...",
+          "a": "Oxygen",
+          "mins": 1
+        },
+        {
+          "q": "Which gas turns limewater cloudy?",
+          "a": "Carbon dioxide",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fermentation",
+          "bullets": [
+            "Yeast respires anaerobically",
+            "glucose → ethanol + carbon dioxide",
+            "Used in baking bread"
+          ],
+          "note": "In bread the ethanol evaporates in the oven."
+        },
+        {
+          "heading": "Safety guide: yeast balloon",
+          "bullets": [
+            "Warm water from the tap (like a warm bath), never from the kettle",
+            "An adult helps stretch the balloon",
+            "Point bottles away from faces",
+            "Do not drink or taste the mixture; wash hands after",
+            "Do not seal bottles with a lid"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Method",
+          "bullets": [
+            "Three bottles: cold, warm, hot tap water",
+            "Same yeast (1 sachet), sugar (2 tsp), water (100 ml)",
+            "Balloon on each; measure circumference every 10 min"
+          ],
+          "note": "Teacher demonstrates on camera."
+        },
+        {
+          "heading": "Example results",
+          "bullets": [
+            "Balloon circumference after 30 minutes"
+          ],
+          "note": "Example data.",
+          "chart": {
+            "kind": "bar",
+            "title": "Balloon circumference after 30 min (example data)",
+            "labels": [
+              "Cold (10 °C)",
+              "Warm (35 °C)",
+              "Hot (60 °C)"
+            ],
+            "values": [
+              16,
+              32,
+              15
+            ],
+            "unit": "cm"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why did the hot bottle make little gas?",
+            "options": [
+              "Yeast enzymes were damaged by heat",
+              "There was too much sugar",
+              "The balloon leaked"
+            ],
+            "answer": 0,
+            "why": "High temperatures denature enzymes and kill yeast."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the word equation for fermentation.",
+          "a": "glucose → ethanol + carbon dioxide",
+          "mins": 2,
+          "model": "Reactant: glucose. Anaerobic in yeast gives two products: ethanol and carbon dioxide."
+        },
+        {
+          "q": "What is the variable you change?",
+          "a": "Temperature",
+          "mins": 1
+        },
+        {
+          "q": "Name two variables you keep the same.",
+          "a": "Amount of yeast, sugar, water",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Set up the three bottles with an adult, measure the balloons every 10 minutes for 30 minutes, record and draw a bar chart.",
+          "a": "Pupils' own; warm bottle inflates most",
+          "mins": 12,
+          "model": "Teacher sets up the warm bottle on camera and measures 15 cm at the start."
+        },
+        {
+          "q": "Extend: Explain the results using enzymes.",
+          "a": "Warm temperatures speed up enzymes so more CO₂ is made; cold slows them; hot denatures them.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why do bakers knead dough in a warm room but bake it in a very hot oven?",
+          "a": "Warm room: yeast makes CO₂ so dough rises; hot oven kills yeast, sets the bread and evaporates the ethanol.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Fermentation makes ethanol and...",
+          "a": "Carbon dioxide",
+          "mins": 1,
+          "options": [
+            "Oxygen",
+            "Carbon dioxide"
+          ]
+        },
+        {
+          "q": "Big question: why does dough rise in a warm kitchen but not the fridge?",
+          "a": "Yeast respires faster when warm, making more carbon dioxide.",
+          "mins": 2
+        }
+      ],
+      "homework": "Help an adult bake simple bread and watch the dough rise. Write what the yeast was doing.",
+      "send": "SEND: table pre-drawn. EAL: yeast, ferment, gas. Stretch: test the effect of sugar amount instead.",
+      "resources": [
+        "Pearson Exploring Science 8C Breathing and respiration (the school's KS3 course): 8Ce",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (respiration)",
+        "Home practical guide and safety card: yeast balloon (portal worksheet; warm tap water only, no lids, adult present)",
+        "Three small plastic bottles, dried yeast, sugar, three balloons, a jug, string and a ruler",
+        "Results table (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "yeast balloon experiment",
+          "alt": "Balloons inflated by yeast",
+          "for": "teach:3"
+        },
+        {
+          "find": "bread dough rising",
+          "alt": "Bread dough rising",
+          "for": "hook"
+        },
+        {
+          "find": "baker's yeast",
+          "alt": "Dried yeast",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The periodic table (8F); breathing and respiration (8C)",
+      "n": 42,
+      "title": "8C review and quiz: breathing and respiration",
+      "duration": 50,
+      "bigQuestion": "Respiration is happening in every one of your cells right now. Which fact from this unit amazes you most?",
+      "objectives": [
+        "To understand how secure my knowledge of respiration and gas exchange is"
+      ],
+      "successCriteria": [
+        "All: recall the word equations for aerobic and anaerobic respiration",
+        "Most: explain gas exchange adaptations",
+        "Some: answer a 4-mark data question on exercise"
+      ],
+      "crossCurricular": "Maths: interpreting data",
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "respiration",
+          "def": "releases energy from glucose in cells"
+        },
+        {
+          "term": "anaerobic",
+          "def": "without oxygen"
+        },
+        {
+          "term": "alveoli",
+          "def": "air sacs for gas exchange"
+        },
+        {
+          "term": "haemoglobin",
+          "def": "carries oxygen in red cells"
+        },
+        {
+          "term": "fermentation",
+          "def": "anaerobic respiration in yeast"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Respiration is happening in every one of your cells right now. Which fact from this unit amazes you most?",
+        "a": "Pupils' own."
+      },
+      "starter": [
+        {
+          "q": "glucose + oxygen → ?",
+          "a": "Carbon dioxide + water",
+          "mins": 1,
+          "options": [
+            "Carbon dioxide + water",
+            "Lactic acid"
+          ]
+        },
+        {
+          "q": "Yeast fermentation makes...",
+          "a": "Ethanol and carbon dioxide",
+          "mins": 1,
+          "options": [
+            "Ethanol and carbon dioxide",
+            "Lactic acid"
+          ]
+        },
+        {
+          "q": "Alveoli walls are...",
+          "a": "One cell thick",
+          "mins": 1
+        },
+        {
+          "q": "Tar in smoke can cause...",
+          "a": "Cancer",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three equations",
+          "bullets": [
+            "Aerobic: glucose + oxygen → carbon dioxide + water",
+            "Anaerobic (muscles): glucose → lactic acid",
+            "Fermentation (yeast): glucose → ethanol + carbon dioxide"
+          ],
+          "note": "Rapid recall."
+        },
+        {
+          "heading": "Gas exchange recap",
+          "bullets": [
+            "Lungs, gills, tracheae, stomata",
+            "Large, thin, moist, good supply"
+          ],
+          "note": "Rapid whiteboard checks."
+        },
+        {
+          "heading": "4-mark data answer",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Heart rate: rest 70, during exercise 150, 5 min after 85 beats/min. Explain the changes. [4 marks]",
+            "steps": [
+              "Rises during exercise: muscles respire faster (1)",
+              "More oxygen and glucose delivered, CO₂ removed (1)",
+              "Stays above rest after: oxygen debt (1)",
+              "Extra oxygen breaks down lactic acid (1)"
+            ],
+            "answer": "4 marks"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which organism uses spiracles?",
+            "options": [
+              "Fish",
+              "Insect",
+              "Plant"
+            ],
+            "answer": 1,
+            "why": "Insects take in air through spiracles."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give three adaptations of red blood cells.",
+          "a": "No nucleus, biconcave shape, flexible and small",
+          "mins": 2,
+          "model": "Think space, shape, size: no nucleus (space for haemoglobin), biconcave (surface area), small and flexible (capillaries)."
+        },
+        {
+          "q": "What is oxygen debt?",
+          "a": "Extra oxygen needed after exercise to break down lactic acid",
+          "mins": 1
+        },
+        {
+          "q": "Why does warm dough rise faster?",
+          "a": "Yeast enzymes work faster when warm",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 8C quiz on the portal (12 questions, 15 minutes).",
+          "a": "Answer key on the teacher sheet; for example fermentation products ethanol and CO₂; CO binds haemoglobin",
+          "mins": 15,
+          "model": "Teacher reads question 1 aloud and shows how to write a word equation with arrows."
+        },
+        {
+          "q": "Extend: Mark with the answer slide and set two targets.",
+          "a": "Pupils' own targets",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Anaerobic respiration releases ... energy than aerobic.",
+          "a": "Less",
+          "mins": 1,
+          "options": [
+            "More",
+            "Less"
+          ]
+        },
+        {
+          "q": "Big question: which fact amazes you most?",
+          "a": "Pupils' own.",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct every quiz mistake in green and redo two similar questions.",
+      "send": "SEND: equation card. EAL: key words list. Stretch: 6-mark question comparing gills and lungs.",
+      "resources": [
+        "Pearson Exploring Science 8C Breathing and respiration (the school's KS3 course): 8C end-of-unit test (the school's scheme)",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (respiration)",
+        "8C quiz with answer key (portal)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "respiratory system diagram",
+          "alt": "The gas exchange system",
+          "for": "teach:2"
+        },
+        {
+          "find": "baker's yeast",
+          "alt": "Yeast",
+          "for": "keywords"
+        },
+        {
+          "find": "red blood cells micrograph",
+          "alt": "Red blood cells",
           "for": "hook"
         }
       ]
