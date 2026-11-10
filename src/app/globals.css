@@ -35,6 +35,17 @@
   --color-teal-500: #3b9a93; /* fills, icons */
   --color-teal-100: #e3f2f0; /* soft backgrounds, chips */
 
+  /* Forest green: the portal's action colour (docs/portal-redesign.md). Defined
+     here so bg-forest-* / text-forest-* utilities exist; .portal sets the same values. */
+  --color-forest-900: #12321f;
+  --color-forest-800: #173f2c;
+  --color-forest-700: #1d4a37;
+  --color-forest-600: #255c45;
+  --color-forest-500: #3d7a5f;
+  --color-forest-200: #c9dcd1;
+  --color-forest-100: #e4eee8;
+  --color-forest-50: #f2f7f4;
+
   /* Back-compat aliases so the many existing gold/gold-light/ink/ink-light
      utility classes across the site automatically pick up the real palette
      without a full rewrite of every call site. */
@@ -66,6 +77,14 @@
   --color-teal-700: var(--color-teal-700);
   --color-teal-500: var(--color-teal-500);
   --color-teal-100: var(--color-teal-100);
+  --color-forest-900: var(--color-forest-900);
+  --color-forest-800: var(--color-forest-800);
+  --color-forest-700: var(--color-forest-700);
+  --color-forest-600: var(--color-forest-600);
+  --color-forest-500: var(--color-forest-500);
+  --color-forest-200: var(--color-forest-200);
+  --color-forest-100: var(--color-forest-100);
+  --color-forest-50: var(--color-forest-50);
 
   --color-ink: var(--color-ink);
   --color-gold: var(--color-gold);
@@ -182,18 +201,41 @@ button:not(:disabled),
   --color-cream: #f4f1ea; /* hover and tint surface */
   --portal-canvas: #f8f6f1; /* page background behind cards */
   --portal-hover: #f1ede4; /* row hover */
-  --portal-focus-ring: rgba(125, 100, 40, 0.28); /* logo gold (gold-700) at 28% */
-  --portal-hero-bg: #1b1e21; /* ink: the welcome banner on every dashboard */
-  /* Logo-gold portal: actions, links, focus and "you are here" use the gold of the
-     logo. teal-500 is deliberately left as the positive/"done" state colour. */
-  --color-teal-900: var(--color-gold-900);
-  --color-teal-700: var(--color-gold-700);
-  --color-teal-100: var(--color-gold-100);
-  --portal-shadow-rgb: 60, 48, 20; /* warm ink for card shadows */
-  --radius-2xl: 1rem;
-  --radius-xl: 0.75rem;
+  /* Redesign (owner brief, Nov 2026; docs/portal-redesign.md): forest green
+     does the work (actions, links, focus, "you are here"); heritage gold is a
+     restrained brand accent (logo, active-page marker, key figures), never a
+     button fill. The portal's teal-* utilities mean forest green, so every
+     existing page picks this up without edits. */
+  --color-forest-900: #12321f;
+  --color-forest-800: #173f2c;
+  --color-forest-700: #1d4a37; /* actions and links: 9.9:1 on white */
+  --color-forest-600: #255c45;
+  --color-forest-500: #3d7a5f;
+  --color-forest-200: #c9dcd1;
+  --color-forest-100: #e4eee8;
+  --color-forest-50: #f2f7f4;
+  --portal-focus-ring: rgba(29, 74, 55, 0.28); /* forest-700 at 28% */
+  --portal-hero-bg: #12321f; /* forest: the welcome strip on dashboards */
+  --portal-accent: var(--color-gold-500); /* the gold marker beside the page you're on */
+  --color-teal-900: var(--color-forest-900);
+  --color-teal-700: var(--color-forest-700);
+  --color-teal-600: var(--color-forest-600);
+  --color-teal-500: var(--color-forest-500);
+  --color-teal-100: var(--color-forest-100);
+  --color-teal-50: var(--color-forest-50);
+  --portal-shadow-rgb: 30, 36, 32; /* charcoal for the few floating shadows */
+  --radius-2xl: 0.75rem;
+  --radius-xl: 0.625rem;
   font-size: 15px;
   line-height: 1.55;
+}
+/* Gold is never a button fill in the portal: any solid gold-700/900 control
+   (older pages write the class by hand) becomes forest green. */
+.portal :is(.bg-gold-700) {
+  background-color: var(--color-forest-700);
+}
+.portal :is(.hover\:bg-gold-900:hover, .bg-gold-900) {
+  background-color: var(--color-forest-900);
 }
 /* Page canvas. Not on .fixed overlays (dialogs, drawers, the search
    palette), which reuse the .portal class for its tokens but must let their
@@ -335,9 +377,21 @@ button:not(:disabled),
 }
 .portal-nav-row--active,
 .portal-nav-row--active:hover {
-  background: var(--color-teal-100);
-  color: var(--color-teal-900);
+  position: relative;
+  background: var(--color-forest-100);
+  color: var(--color-forest-900);
   font-weight: 600;
+}
+/* The one place gold marks navigation: a short bar beside the page you're on. */
+.portal-nav-row--active::before {
+  content: "";
+  position: absolute;
+  left: -0.5rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--portal-accent);
 }
 .portal-nav-group {
   display: flex;
@@ -431,14 +485,20 @@ button:not(:disabled),
   }
 }
 
+/* Panels: a hairline and no resting shadow (shadows are for things that
+   float: menus, dialogs). A linked panel shows it is clickable by its border. */
 .portal .rounded-2xl.border.bg-white {
-  box-shadow: 0 1px 2px rgba(var(--portal-shadow-rgb), 0.05), 0 6px 18px -10px rgba(var(--portal-shadow-rgb), 0.12);
+  box-shadow: none;
   border-color: var(--color-gold-light);
-  transition: box-shadow 150ms, transform 150ms;
+  transition: border-color 120ms, background-color 120ms;
 }
 a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
-  box-shadow: 0 10px 24px -10px rgba(var(--portal-shadow-rgb), 0.25);
-  transform: translateY(-1px);
+  border-color: color-mix(in oklab, var(--color-forest-700) 45%, var(--color-gold-light));
+}
+/* A panel inside a panel loses its own frame (no cards inside cards). */
+.portal .rounded-2xl.border.bg-white .rounded-2xl.border.bg-white {
+  border-color: transparent;
+  background: var(--color-cream);
 }
 
 /* Faint ruled-paper lines for the Weekly Tarbiyah Note showcase card. */
@@ -676,7 +736,7 @@ html[data-dark] .portal {
   --portal-hover: #2d3135;
   --color-gold-light: #3c4044; /* hairlines */
   --portal-shadow-rgb: 0, 0, 0;
-  --portal-focus-ring: rgba(95, 194, 187, 0.35);
+  --portal-focus-ring: rgba(155, 211, 180, 0.35);
   --background: #16181a;
   --foreground: #e9e7e2;
 
@@ -694,11 +754,21 @@ html[data-dark] .portal {
   --color-gold: #c8a858;
   --color-gold-dark: #e8d194;
 
-  --color-teal-50: #1a2e2c;
-  --color-teal-100: #33290f; /* logo gold, dark surface */
-  --color-teal-500: #4fb3ab; /* positive state stays teal */
-  --color-teal-700: #e3c98f; /* logo gold, as text */
-  --color-teal-900: #f0dfb4;
+  --color-forest-50: #1a2620;
+  --color-forest-100: #1f3329; /* selected surface */
+  --color-forest-200: #2c4a3b;
+  --color-forest-500: #5fae86;
+  --color-forest-600: #7cc39e;
+  --color-forest-700: #9bd3b4; /* as text and links */
+  --color-forest-800: #b5e0c8;
+  --color-forest-900: #cdebda;
+  --portal-hero-bg: #16261e;
+  --color-teal-50: var(--color-forest-50);
+  --color-teal-100: var(--color-forest-100);
+  --color-teal-500: var(--color-forest-500);
+  --color-teal-600: var(--color-forest-600);
+  --color-teal-700: var(--color-forest-700);
+  --color-teal-900: var(--color-forest-900);
 
   --color-red-50: #3a2522;
   --color-red-100: #4a2d28;
@@ -723,17 +793,14 @@ html[data-dark] .portal {
 html[data-dark] .portal {
   --color-red-600: #c0594c;
 }
-html[data-dark] .portal :is(.bg-gold-700) {
-  background-color: #8a6f2e;
+html[data-dark] .portal :is(.bg-gold-700, .bg-teal-700) {
+  background-color: #2f6b51;
 }
-html[data-dark] .portal :is(.hover\:bg-gold-900:hover, .bg-gold-900) {
-  background-color: #6e5724;
-}
-html[data-dark] .portal :is(.bg-teal-700) {
-  background-color: #8a6f2e;
+html[data-dark] .portal :is(.hover\:bg-gold-900:hover, .bg-gold-900, .hover\:bg-teal-900:hover) {
+  background-color: #275a44;
 }
 html[data-dark] .portal :is(.bg-teal-600) {
-  background-color: #7d6428;
+  background-color: #2f6b51;
 }
 html[data-dark] .portal :is(.bg-red-700, .hover\:bg-red-800:hover) {
   background-color: #a8453a;
@@ -742,7 +809,7 @@ html[data-dark] .portal :is(.bg-gold-500) {
   background-color: #b08e45;
 }
 html[data-dark] .portal :is(.bg-teal-900) {
-  background-color: #5e4b1e;
+  background-color: #1f4a38;
 }
 /* The wordmark is ink-on-transparent; on a dark sidebar show it as white. */
 html[data-dark] .portal img[src*="ga-wordmark"] {
@@ -781,24 +848,24 @@ html[data-dark][data-reading] .portal:not(.fixed) {
   color: color-mix(in oklab, var(--color-ink) 55%, transparent);
 }
 .portal-nav-row:hover .portal-tile {
-  background: var(--tile-bg);
-  color: var(--tile-fg);
+  background: transparent;
+  color: var(--color-ink-900);
 }
 .portal-nav-row--active .portal-tile,
 .portal-nav-row--active:hover .portal-tile {
-  background: var(--tile-fg);
-  color: #ffffff;
+  background: transparent;
+  color: var(--color-forest-700);
 }
 /* Duotone icons: the outline plus a soft fill of the same colour, so tiles read as
    little badges rather than thin line drawings. Only inside tiles, where the fill is decorative. */
 .portal-tile > svg {
-  fill: color-mix(in srgb, currentColor 14%, transparent);
+  fill: none;
 }
 .portal-nav-row .portal-tile > svg {
   fill: none;
 }
 .portal-nav-row--active .portal-tile > svg {
-  fill: rgb(255 255 255 / 0.2);
+  fill: none;
 }
 /* The page-title tile: bigger, with a faint ring in its own hue. */
 .portal-tile--lg {
@@ -832,27 +899,19 @@ html[data-dark][data-reading] .portal:not(.fixed) {
   margin-top: 1.5rem;
   padding-top: 1.25rem;
 }
+/* Icon tiles: one quiet colour pair for every idea (the redesign drops the
+   eight-hue rainbow: colour is for status and actions, not decoration). The
+   class names stay so nothing else needs editing. Dark mode follows the forest tokens. */
 .portal {
-  --tile-gold-bg: #f5ecd6; --tile-gold-fg: #7d6428;
-  --tile-amber-bg: #f9ecd2; --tile-amber-fg: #96620f;
-  --tile-rose-bg: #f9e5e0; --tile-rose-fg: #a23b2a;
-  --tile-teal-bg: #ddeeec; --tile-teal-fg: #1f6f6b;
-  --tile-blue-bg: #e2ecf6; --tile-blue-fg: #2d5f86;
-  --tile-violet-bg: #eae6f5; --tile-violet-fg: #54468a;
-  --tile-emerald-bg: #ddeeea; --tile-emerald-fg: #0b4f45;
-  --tile-green-bg: #e2f0e6; --tile-green-fg: #2f6b45;
-  --tile-slate-bg: #eceae4; --tile-slate-fg: #585f66;
-}
-html[data-dark] .portal {
-  --tile-gold-bg: #38332a; --tile-gold-fg: #dcbc6c;
-  --tile-amber-bg: #3a3220; --tile-amber-fg: #e6c57e;
-  --tile-rose-bg: #3a2522; --tile-rose-fg: #f09a8d;
-  --tile-teal-bg: #1d3a37; --tile-teal-fg: #63c4bc;
-  --tile-blue-bg: #1d2d3f; --tile-blue-fg: #7eb3dc;
-  --tile-violet-bg: #2a2540; --tile-violet-fg: #b3a4e0;
-  --tile-emerald-bg: #1a2e2c; --tile-emerald-fg: #7cccc5;
-  --tile-green-bg: #20352a; --tile-green-fg: #93d5ab;
-  --tile-slate-bg: #2c3034; --tile-slate-fg: #a2a7ad;
+  --tile-gold-bg: var(--color-forest-50); --tile-gold-fg: var(--color-forest-700);
+  --tile-amber-bg: var(--color-forest-50); --tile-amber-fg: var(--color-forest-700);
+  --tile-rose-bg: var(--color-forest-50); --tile-rose-fg: var(--color-forest-700);
+  --tile-teal-bg: var(--color-forest-50); --tile-teal-fg: var(--color-forest-700);
+  --tile-blue-bg: var(--color-forest-50); --tile-blue-fg: var(--color-forest-700);
+  --tile-violet-bg: var(--color-forest-50); --tile-violet-fg: var(--color-forest-700);
+  --tile-emerald-bg: var(--color-forest-50); --tile-emerald-fg: var(--color-forest-700);
+  --tile-green-bg: var(--color-forest-50); --tile-green-fg: var(--color-forest-700);
+  --tile-slate-bg: var(--color-forest-50); --tile-slate-fg: var(--color-forest-700);
 }
 .tile-gold { --tile-bg: var(--tile-gold-bg); --tile-fg: var(--tile-gold-fg); }
 .tile-amber { --tile-bg: var(--tile-amber-bg); --tile-fg: var(--tile-amber-fg); }

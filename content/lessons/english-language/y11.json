@@ -5,7 +5,7 @@
   "boardShort": "AQA 8700",
   "exam": "Pearson Edexcel International GCSE (9-1) English Language B (4EB1)",
   "examShort": "Edexcel IGCSE 4EB1",
-  "source": "AQA GCSE English Language 8700 specification and Paper 2 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice sources are teacher-written originals, including 19th-century style pastiche. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y11.json (which covers P2 Q1-Q5 well); these lessons add modelling lessons around a new original source pair (Source A modern column, Source B 1871-style letter, both written for TGA) and cover the Spoken Language endorsement (SL), which existing lessons do not cover. | Gap-fill against AQA 8700 specification",
+  "source": "AQA GCSE English Language 8700 specification and Paper 2 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice sources are teacher-written originals, including 19th-century style pastiche. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y11.json (which covers P2 Q1-Q5 well); these lessons add modelling lessons around a new original source pair (Source A modern column, Source B 1871-style letter, both written for TGA) and cover the Spoken Language endorsement (SL), which existing lessons do not cover. | Gap-fill against AQA 8700 specification | Spring 1 founding year (Nov 2026, lessons v3), lessons 25 to 39: revision cycle 1 for pupils already on the course (11 Jan: Section A language and structure; 18 Jan: Section A writers' perspectives; 25 Jan: Section B directed writing; 1 Feb: Section C) and the mock week of 8 Feb, framed on Pearson Edexcel International GCSE English Language B (4EB1) with its own question numbers (Q1 to Q11; marks and AO splits checked against Pearson 4EB1 mark schemes), following the school's 2026-27 Year 11 HT1 and HT2 English Language schemes mapped to 4EB1. Text One 'The Last Ferry' and Text Two 'Advice to Those Who Travel by Sea' are teacher-written originals (Text Two in a nineteenth-century style), printed in full in lessons 25 and 28; all practice tasks and titles are original. Suggested section timings are a school guide based on marks.",
   "lessons": [
     {
       "unit": "Unit 1: Paper 2 Section A - Reading non-fiction (Q1-Q4)",
@@ -2899,6 +2899,3140 @@
       "duration": 50,
       "board": "AQA GCSE English Language (9-1) 8700",
       "boardShort": "AQA 8700"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 25,
+      "title": "Baseline feedback: the 4EB1 paper, my targets and the short reading questions",
+      "duration": 50,
+      "bigQuestion": "Where are my marks on the 3-hour paper, and how do I win the short ones every time?",
+      "objectives": [
+        "To understand how the 4EB1 paper is built and where my own marks were lost in the baseline paper"
+      ],
+      "successCriteria": [
+        "All: name the three sections, their marks and their assessment objectives",
+        "Most: answer 1- and 2-mark questions with precise, brief evidence",
+        "Some: set two personal targets from an error analysis of my baseline paper"
+      ],
+      "smsc": "Social: honest self-assessment and setting targets with a teacher",
+      "keywords": [
+        {
+          "term": "assessment objective",
+          "def": "the skill a question is marking (AO1 to AO5)"
+        },
+        {
+          "term": "retrieve",
+          "def": "find and write down a fact from the text"
+        },
+        {
+          "term": "error analysis",
+          "def": "sorting your mistakes to see their causes"
+        },
+        {
+          "term": "target",
+          "def": "the one thing you will do better next time"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had to give up 10 marks somewhere on the 3-hour paper, where would you least mind losing them, and why?"
+      },
+      "pictures": [
+        {
+          "find": "ferry harbour slipway",
+          "alt": "A small ferry harbour with a slipway",
+          "for": "hook"
+        },
+        {
+          "find": "exam hall desks empty",
+          "alt": "Rows of empty exam desks",
+          "for": "teach:1"
+        },
+        {
+          "find": "analog clock face",
+          "alt": "A clock face, for timing the paper",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT1 English Language scheme (timed practice, DIRT and personalised targets), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Baseline 4EB1-style paper (sat in induction week, 4 Jan) with teacher marking",
+        "Error analysis and personal target sheet (pupil PDF)",
+        "Text One 'The Last Ferry' (teacher-written modern travel memoir, pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "The 4EB1 paper lasts...",
+          "options": [
+            "2 hours",
+            "3 hours",
+            "1 hour 45 minutes"
+          ],
+          "a": "B) 3 hours",
+          "mins": 1
+        },
+        {
+          "q": "Section A is reading on...",
+          "options": [
+            "one novel",
+            "two unseen texts",
+            "the anthology"
+          ],
+          "a": "B) two unseen texts",
+          "mins": 1
+        },
+        {
+          "q": "A 1-mark question needs...",
+          "options": [
+            "a precise detail",
+            "a paragraph"
+          ],
+          "a": "A) a precise detail",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The paper at a glance",
+          "note": "Paper map from the specification and recent mark schemes. Section A: Questions 1 to 7 on Text One and Text Two. Section B: Question 8, directed writing that uses both texts. Section C: one task from Questions 9 to 11. Ask: which two questions carry the most reading marks? (Q7, then Q3 and Q6.)",
+          "table": {
+            "head": [
+              "Section",
+              "Questions",
+              "Marks",
+              "Skills (AOs)"
+            ],
+            "rows": [
+              [
+                "A: Reading",
+                "Q1, Q2, Q4 (1 each), Q5 (2)",
+                "5",
+                "AO1 retrieval"
+              ],
+              [
+                "A: Reading",
+                "Q3 and Q6 (10 each)",
+                "20",
+                "AO2 language and structure"
+              ],
+              [
+                "A: Reading",
+                "Q7 (comparison)",
+                "15",
+                "AO3 ideas and perspectives"
+              ],
+              [
+                "B: Reading and Writing",
+                "Q8 directed writing",
+                "30",
+                "AO1 10, AO4 12, AO5 8"
+              ],
+              [
+                "C: Writing",
+                "one of Q9 to Q11",
+                "30",
+                "AO4 20, AO5 10"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Error analysis: why marks were lost",
+          "note": "Pupils have their marked baseline paper. Sort each lost mark into a column on the target sheet. Most lost marks fall into a few causes; naming the cause tells you the fix. Answers: 'quoted a whole paragraph' = misread; 'ran out of time for Section C' = timing; 'feature spotting' = skill; 'comma splices' = accuracy.",
+          "sort": {
+            "columns": [
+              "Misread the question",
+              "Timing",
+              "Skill gap",
+              "Accuracy"
+            ],
+            "cards": [
+              "Quoted a whole paragraph for 1 mark",
+              "Section C unfinished",
+              "Named a simile but gave no effect",
+              "Comma splices throughout",
+              "Wrote about Text Two for a Text One question",
+              "Q7 only discussed one text"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "Short questions: precise and brief",
+          "note": "Text One in full: teacher-written for TGA, so it may be shown in full (also on the pupil PDF). Read it aloud once. Model on paragraph 1: 'Give one thing the writer notices about the harbour (1 mark).' A precise answer: it smelled of diesel (or wet rope). No need for a sentence of explanation. For a 2-mark 'give two' question, give two separate points on two lines.",
+          "quote": {
+            "text": "The harbour smelled of diesel and wet rope. The ferry was forty minutes late, and the six of us waiting on the slipway had stopped pretending to read. A gull stood on a bollard and stared at us as though we owed it money.\n\nWhen we finally cast off, the sea was the colour of wet slate, and it moved like something breathing in its sleep. Each wave lifted the bow, held it, and let it drop, as if the sea were weighing us and could not decide. Nobody spoke. The engine spoke for all of us.\n\nHalfway across, the light went. The mainland behind us shrank to a smudge; ahead there was nothing at all. I gripped the rail and thought, absurdly, of my own kitchen: the kettle, the clock, the ordinary safety I had been so keen to escape.\n\nThen, quite suddenly, the island was there: a low grey line, then a single lamp, then a door opening. Someone on the quay was holding out a hand. I have travelled a long way since, but I have never been so grateful to arrive anywhere.",
+            "source": "Text One, 'The Last Ferry' (teacher-written modern travel memoir for TGA)"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "'From paragraph 1, give one detail that shows the waiting has been long.' Best answer?",
+            "options": [
+              "The harbour smelled of diesel.",
+              "They had stopped pretending to read.",
+              "There were six people.",
+              "A gull stood on a bollard."
+            ],
+            "answer": 1,
+            "why": "Stopping 'pretending to read' shows boredom after a long wait; the other details are true but do not answer the focus."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read Text One (pupil PDF). Give one thing the writer compares the sea to in paragraph 2 (1 mark).",
+          "a": "Something breathing in its sleep (or: the colour of wet slate).",
+          "mins": 3,
+          "model": "Underline the focus (paragraph 2, compares). Scan only that paragraph. Write the detail, nothing more: 'Something breathing in its sleep.'"
+        },
+        {
+          "q": "Give two things the writer thinks about when the light goes (2 marks).",
+          "a": "Any two: her kitchen; the kettle; the clock; the ordinary safety she wanted to escape.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: complete the error analysis sheet for your baseline paper, then write two targets in the portal response box. Starter: 'In Section ___ I lost marks because... Next time I will...'",
+          "a": "Two specific targets tied to a cause, e.g. 'In Q3 I named techniques without effects; I will write one effect sentence for every quotation.'",
+          "mins": 15,
+          "model": "Teacher models with an anonymous answer: cause = Q7 discussed Text One only; target = 'Every Q7 paragraph will mention both texts and use a comparative connective.'"
+        },
+        {
+          "q": "Extend: rank your three weakest questions by the marks they are worth.",
+          "a": "Highest-mark weaknesses first (usually Q7, Q8, Section C).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: plan how you would split 180 minutes across the paper.",
+          "a": "For example: reading 15, Section A 60, Section B 50, Section C 50, final check 5.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which question compares both texts?",
+          "options": [
+            "Q3",
+            "Q6",
+            "Q7"
+          ],
+          "a": "C) Q7",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "For example: the 1-mark questions, because they are worth least; but they are also the easiest to secure, so it is better not to lose any.",
+          "mins": 1
+        }
+      ],
+      "homework": "Learn the paper map (sections, questions, marks, AOs) for a quiz next lesson; reread Text One twice.",
+      "send": "SEND: pre-filled error analysis sheet with columns. EAL: AO glossary with examples. Stretch: write a model 2-mark answer for a partner."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 26,
+      "title": "Section A language: analysing a writer's words in Text One",
+      "duration": 50,
+      "bigQuestion": "How does a writer's choice of words make me feel what they felt?",
+      "objectives": [
+        "To explain how a writer's language choices create effects on the reader in an unseen text"
+      ],
+      "successCriteria": [
+        "All: select short, precise quotations",
+        "Most: explain the connotations of a key word and its effect",
+        "Some: link several language choices to the writer's overall feeling"
+      ],
+      "keywords": [
+        {
+          "term": "connotation",
+          "def": "the ideas or feelings a word suggests"
+        },
+        {
+          "term": "simile",
+          "def": "a comparison using 'like' or 'as'"
+        },
+        {
+          "term": "personification",
+          "def": "giving a thing human actions or feelings"
+        },
+        {
+          "term": "effect",
+          "def": "what the words make the reader think or feel"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'The sea was the colour of wet slate.' What does 'slate' make you feel that 'grey' does not?"
+      },
+      "pictures": [
+        {
+          "find": "wet slate roof tiles",
+          "alt": "Wet grey slate tiles",
+          "for": "hook"
+        },
+        {
+          "find": "ferry bow in rough sea",
+          "alt": "The bow of a ferry rising on a wave",
+          "for": "teach:2"
+        },
+        {
+          "find": "rough grey sea waves",
+          "alt": "Rough grey sea",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT1 English Language scheme (language analysis of fiction and literary non-fiction), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Text One 'The Last Ferry' (teacher-written modern travel memoir, pupil PDF)",
+        "Language analysis paragraph frame (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Q3 and Q6 are worth...",
+          "options": [
+            "10 marks each",
+            "4 marks each",
+            "15 marks each"
+          ],
+          "a": "A) 10 marks each",
+          "mins": 1
+        },
+        {
+          "q": "AO2 is about...",
+          "options": [
+            "language and structure",
+            "comparison",
+            "spelling"
+          ],
+          "a": "A) language and structure",
+          "mins": 1
+        },
+        {
+          "q": "Section B is marked for...",
+          "options": [
+            "AO1, AO4 and AO5",
+            "AO2 only"
+          ],
+          "a": "A) AO1, AO4 and AO5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Zoom in on one word",
+          "note": "Model the thinking aloud. 'Slate' suggests cold, hard, heavy and dull; 'wet' adds chill and danger. The sea feels solid and threatening rather than beautiful. Then pupils try 'weighing'.",
+          "diagram": {
+            "centre": "wet slate",
+            "items": [
+              "cold",
+              "hard and heavy",
+              "grey and dull",
+              "roofs and gravestones",
+              "a hostile sea",
+              "the writer's unease"
+            ]
+          }
+        },
+        {
+          "heading": "Language that makes the sea alive",
+          "note": "Paragraph 2 of Text One. Ask: what kind of creature is the sea here? (A sleeping animal; it could wake.) Then: what does 'weighing us' suggest? (The sea is judging the passengers, as if deciding their fate.)",
+          "quote": {
+            "text": "it moved like something breathing in its sleep. Each wave lifted the bow, held it, and let it drop, as if the sea were weighing us and could not decide.",
+            "source": "Text One, 'The Last Ferry' (teacher-written for TGA), paragraph 2"
+          }
+        },
+        {
+          "heading": "Model: a language paragraph",
+          "note": "I do. Labelled: What (method), Evidence, Effect (with connotation), Writer's purpose. Avoid 'this makes the reader want to read on'.",
+          "model": {
+            "problem": "How does the writer use language to show the experience of the crossing?",
+            "steps": [
+              "What: the writer personifies the sea as a living creature",
+              "Evidence: 'breathing in its sleep' and 'weighing us'",
+              "Effect: 'sleep' suggests it could wake at any moment, so the calm feels fragile",
+              "Zoom: 'weighing' makes the sea a judge deciding the passengers' fate",
+              "Purpose: the reader shares the writer's sense of powerlessness"
+            ],
+            "answer": "The writer personifies the sea as a sleeping creature that 'could not decide' whether to spare them, so the reader feels the passengers' powerlessness."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which comment on 'Nobody spoke. The engine spoke for all of us.' is strongest?",
+            "options": [
+              "It uses short sentences.",
+              "The short sentences and the personified engine show a tense silence in which only the machine has a voice.",
+              "It is personification which is effective.",
+              "It makes the reader want to read on."
+            ],
+            "answer": 1,
+            "why": "It names the method and explains the effect; the others feature-spot or use an empty phrase."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the effect of 'the ordinary safety I had been so keen to escape' (paragraph 3).",
+          "a": "Irony: the writer now longs for the safety she once found boring, which shows how frightened she is.",
+          "mins": 4,
+          "model": "Method: contrast and irony. Evidence: 'ordinary safety' against 'keen to escape'. Effect: the dull home she fled now seems precious; fear has changed her values."
+        },
+        {
+          "q": "Find one word in paragraph 4 that changes the mood, and explain why.",
+          "a": "'grateful' (or 'lamp', 'opening'): relief and warmth replace fear.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write two language paragraphs: 'How does the writer use language to show the experience of the crossing?' Starter: 'The writer presents the sea as...'",
+          "a": "Two paragraphs, each with a method, a short quotation, the connotations of a key word and the effect on the reader.",
+          "mins": 15,
+          "model": "Teacher goes through paragraph 1 with the class (the sleeping-creature personification above), then pupils write paragraph 2 alone, for example on the kitchen, kettle and clock as symbols of safety."
+        },
+        {
+          "q": "Extend: add one sentence on how the language changes from paragraph 2 to paragraph 4.",
+          "a": "It moves from threat ('weighing us') to welcome ('a door opening').",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain an alternative reading of 'stared at us as though we owed it money'.",
+          "a": "Humour that eases tension, or a hint that even nature is unfriendly to the travellers.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A connotation is...",
+          "options": [
+            "what a word suggests",
+            "a type of sentence"
+          ],
+          "a": "A) what a word suggests",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "'Slate' adds hardness, cold and heaviness; the sea feels solid and threatening, not just a colour.",
+          "mins": 1
+        }
+      ],
+      "homework": "Pick three words from Text One and write the connotations of each in a word web.",
+      "send": "SEND: paragraph frame with sentence starters. EAL: glossary of 'slipway', 'bollard', 'bow', 'quay'. Stretch: analyse two methods in one sentence."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 27,
+      "title": "Section A structure: how Text One is shaped, and a full 10-mark answer",
+      "duration": 50,
+      "bigQuestion": "Why does the writer put things in this order?",
+      "objectives": [
+        "To explain how a writer structures a text to guide the reader's feelings, and combine language and structure in a 10-mark answer"
+      ],
+      "successCriteria": [
+        "All: track the shifts in focus across the text",
+        "Most: explain the effect of one structural choice",
+        "Some: write a balanced answer on language and structure"
+      ],
+      "keywords": [
+        {
+          "term": "structure",
+          "def": "the order and shape of a text"
+        },
+        {
+          "term": "shift",
+          "def": "a change of focus, time, place or mood"
+        },
+        {
+          "term": "cyclical",
+          "def": "ending where it began"
+        },
+        {
+          "term": "climax",
+          "def": "the point of highest tension"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Text One ends with arrival. Would it be more powerful if it ended in the dark, halfway across? Why?"
+      },
+      "pictures": [
+        {
+          "find": "lighthouse lamp at night island",
+          "alt": "A single lamp on an island at night",
+          "for": "hook"
+        },
+        {
+          "find": "ferry crossing route map island",
+          "alt": "A map of a short ferry crossing to an island",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT1 English Language scheme (structure analysis), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Text One 'The Last Ferry' (teacher-written modern travel memoir, pupil PDF)",
+        "Structure tracker and 10-mark answer planner (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "'Weighing us' personifies...",
+          "options": [
+            "the sea",
+            "the engine"
+          ],
+          "a": "A) the sea",
+          "mins": 1
+        },
+        {
+          "q": "Short sentences often create...",
+          "options": [
+            "tension or emphasis",
+            "humour only"
+          ],
+          "a": "A) tension or emphasis",
+          "mins": 1
+        },
+        {
+          "q": "Q3 asks about...",
+          "options": [
+            "language and structure",
+            "comparing both texts"
+          ],
+          "a": "A) language and structure",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tracking the shape",
+          "note": "Pupils label each paragraph with its focus and mood. The text moves from waiting (static, comic) to the crossing (tension) to darkness (climax of fear) to arrival (relief). Ask: where is the turning point? ('Then, quite suddenly'.)",
+          "timeline": [
+            {
+              "label": "Para 1",
+              "text": "Waiting in the harbour: boredom and humour"
+            },
+            {
+              "label": "Para 2",
+              "text": "Casting off: the sea as a threat; silence"
+            },
+            {
+              "label": "Para 3",
+              "text": "Darkness: fear and longing for home (climax)"
+            },
+            {
+              "label": "Para 4",
+              "text": "Sudden arrival: light, welcome, gratitude"
+            },
+            {
+              "label": "Last line",
+              "text": "Reflection from years later"
+            }
+          ]
+        },
+        {
+          "heading": "Structural methods and their effects",
+          "note": "Ask pupils to find each in Text One. The list in paragraph 4 ('a low grey line, then a single lamp, then a door opening') slows time and lets the island appear piece by piece, like the writer's eyes adjusting.",
+          "table": {
+            "head": [
+              "Method",
+              "Where",
+              "Effect"
+            ],
+            "rows": [
+              [
+                "Short sentences",
+                "'Nobody spoke.'",
+                "tension, silence"
+              ],
+              [
+                "Shift of time",
+                "'Halfway across, the light went.'",
+                "moves to the climax"
+              ],
+              [
+                "Discourse marker",
+                "'Then, quite suddenly'",
+                "a sudden turn to relief"
+              ],
+              [
+                "Building list",
+                "'a low grey line, then...'",
+                "the island appears slowly"
+              ],
+              [
+                "Reflective ending",
+                "'I have travelled a long way since'",
+                "a lesson learned"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: language and structure together",
+          "note": "I do. 10 marks reward both language and structure, so a strong answer weaves them. Label each part.",
+          "model": {
+            "problem": "How does the writer use language and structure to show the experience of the crossing? (10 marks)",
+            "steps": [
+              "Overview: the text moves from boredom to fear to gratitude",
+              "Structure: the darkness in paragraph 3 is the climax of fear",
+              "Language within it: 'shrank to a smudge' and 'nothing at all' empty the world",
+              "Structure: 'Then, quite suddenly' turns the text to relief",
+              "Language: the list 'line, lamp, door' moves from cold to human warmth",
+              "Ending: the reflection shows the journey taught gratitude"
+            ],
+            "answer": "A paragraph that names a structural choice, supports it with language and explains the effect on the reader."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Why does the writer end with 'I have travelled a long way since'?",
+            "options": [
+              "To describe more journeys",
+              "To show, from years later, how much the crossing mattered",
+              "To add a cliffhanger"
+            ],
+            "answer": 1,
+            "why": "The shift to reflection gives the experience lasting meaning; there is no cliffhanger."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the effect of the list in paragraph 4 ('a low grey line, then a single lamp, then a door opening').",
+          "a": "The island appears step by step, from cold shape to light to welcome, so the reader feels the relief growing.",
+          "mins": 4,
+          "model": "Method: a three-part list ordered from distant to close. Evidence: 'line', 'lamp', 'door opening'. Effect: the world fills with warmth and people again; relief builds with each item."
+        },
+        {
+          "q": "Where is the climax of fear? Give a reason.",
+          "a": "Paragraph 3, when the light goes and there is 'nothing at all' ahead.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 15 minutes): in the portal response box, answer the full 10-mark question: 'How does the writer use language and structure to show the experience of the crossing?' Starter: 'The writer takes the reader from...'",
+          "a": "An answer with an overview, three or four points covering both language and structure, short quotations and clear effects.",
+          "mins": 15,
+          "model": "Teacher goes through the opening overview and the first point with the class, using the model above, before pupils continue alone."
+        },
+        {
+          "q": "Extend: highlight language points in one colour and structure points in another. Is it balanced?",
+          "a": "Both colours appear in most paragraphs.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: comment on the humour in paragraph 1 as a structural contrast.",
+          "a": "The comic gull makes the later fear sharper by contrast.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Then, quite suddenly' is...",
+          "options": [
+            "a discourse marker that signals a turn",
+            "a simile"
+          ],
+          "a": "A) a discourse marker that signals a turn",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Ending in the dark would be more tense, but the arrival gives the text its message: fear turns to gratitude.",
+          "mins": 1
+        }
+      ],
+      "homework": "Self-assess your 10-mark answer against the planner checklist and redraft one paragraph.",
+      "send": "SEND: structure tracker partly completed. EAL: discourse marker bank. Stretch: write the answer in 12 minutes."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 28,
+      "title": "Text Two: reading a nineteenth-century writer's perspective",
+      "duration": 50,
+      "bigQuestion": "How can I tell what a writer from 1860 really thinks?",
+      "objectives": [
+        "To understand a nineteenth-century writer's ideas and perspective and how his language and structure convey it"
+      ],
+      "successCriteria": [
+        "All: translate difficult phrases into modern English",
+        "Most: state the writer's perspective with evidence",
+        "Some: explain how tone and sentence forms convey that perspective"
+      ],
+      "islamicLink": {
+        "text": "Islam teaches that patience (sabr, صَبْر) is a strength, not a weakness: 'O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient' (al-Baqarah 2:153). Both of today's texts are about waiting, discomfort and keeping steady on a hard journey, so pupils can test the writers' views against this teaching.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "perspective",
+          "def": "the writer's point of view and attitude"
+        },
+        {
+          "term": "imperative",
+          "def": "a command, such as 'Let him...' or 'Take...'"
+        },
+        {
+          "term": "irony",
+          "def": "saying one thing but meaning another, often for humour"
+        },
+        {
+          "term": "register",
+          "def": "how formal or informal the language is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'Patience is the first article of a traveller's luggage.' What would you pack first for a hard journey, and why?"
+      },
+      "pictures": [
+        {
+          "find": "19th century paddle steamer",
+          "alt": "A nineteenth-century paddle steamer",
+          "for": "hook"
+        },
+        {
+          "find": "Victorian travel trunk luggage",
+          "alt": "A Victorian travel trunk",
+          "for": "teach:1"
+        },
+        {
+          "find": "calm sea horizon line",
+          "alt": "A flat sea horizon",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT2 English Language scheme (non-fiction from different centuries), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Text Two 'Advice to Those Who Travel by Sea' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Nineteenth-century vocabulary glossary (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "The climax of Text One is...",
+          "options": [
+            "paragraph 1",
+            "paragraph 3",
+            "the title"
+          ],
+          "a": "B) paragraph 3",
+          "mins": 1
+        },
+        {
+          "q": "Q4 and Q5 ask about...",
+          "options": [
+            "Text Two",
+            "Text One"
+          ],
+          "a": "A) Text Two",
+          "mins": 1
+        },
+        {
+          "q": "A discourse marker...",
+          "options": [
+            "signals a shift",
+            "is a metaphor"
+          ],
+          "a": "A) signals a shift",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Text Two in full",
+          "note": "Read aloud slowly. Teacher-written in a nineteenth-century style for TGA, so it may be shown in full. Pupils underline any phrase they cannot translate. Glossary: steam-packet (a passenger steamship), drawing-room (a comfortable sitting room), sparingly (a little), mislay (lose), embarked (got on board).",
+          "quote": {
+            "text": "Let no traveller suppose that the sea will consult his convenience. She keeps her own hours, and the steam-packet, for all its iron and its puffing confidence, keeps them too. Patience is the first article of a traveller's luggage, and the last he should ever mislay.\n\nThe gentleman who complains loudly of the weather has mistaken a steamer for a drawing-room. Let him rather take a place near the middle of the vessel, where the motion is least; let him eat sparingly, keep the fresh air upon his face, and fix his eye upon the horizon, which is the only steady thing in the world on such a day.\n\nAbove all, let him observe his fellow passengers. He will learn more of mankind in one rough crossing than in a whole season of fine dinners: who is brave, who is kind, and who, at the first lurch, forgets every other soul aboard and thinks only of himself.\n\nThe sea, in short, is a stern schoolmaster; but those who attend to his lessons come ashore better travellers than they embarked.",
+            "source": "Text Two, 'Advice to Those Who Travel by Sea' (teacher-written in a nineteenth-century style for TGA)"
+          }
+        },
+        {
+          "heading": "What does he think?",
+          "note": "Build the perspective from evidence. Ask: is he afraid of the sea? (No: he respects it.) Is he serious? (Mostly, with dry humour at the complaining gentleman.)",
+          "compare": {
+            "left": {
+              "title": "His ideas",
+              "points": [
+                "The sea is in charge, not the traveller",
+                "Patience matters most",
+                "Rough crossings reveal character",
+                "Hardship improves us"
+              ]
+            },
+            "right": {
+              "title": "How he shows them",
+              "points": [
+                "Imperatives: 'Let him...'",
+                "Personification: the sea 'keeps her own hours'",
+                "Irony: 'mistaken a steamer for a drawing-room'",
+                "Metaphor: 'a stern schoolmaster'"
+              ]
+            },
+            "label": "idea and method"
+          }
+        },
+        {
+          "heading": "Model: perspective with method",
+          "note": "I do. Labelled.",
+          "model": {
+            "problem": "How does the writer present his advice to travellers? (10 marks)",
+            "steps": [
+              "Perspective: travellers must accept the sea's power with patience",
+              "Evidence: 'the sea will consult his convenience' (negated by 'Let no traveller suppose')",
+              "Method: the formal imperative gives the voice of experienced authority",
+              "Effect: the reader is warned, but gently mocked for expecting comfort",
+              "Development: the 'stern schoolmaster' metaphor turns hardship into education"
+            ],
+            "answer": "The writer presents his advice with the confident authority of experience, using formal imperatives and the metaphor of a 'stern schoolmaster' to show that hardship teaches."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "What is the tone of 'has mistaken a steamer for a drawing-room'?",
+            "options": [
+              "Frightened",
+              "Dryly mocking",
+              "Angry and violent",
+              "Sad"
+            ],
+            "answer": 1,
+            "why": "The ironic comparison laughs at travellers who expect home comforts at sea."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Q4 style (1 mark): where does the writer advise the traveller to sit?",
+          "a": "Near the middle of the vessel.",
+          "mins": 3,
+          "model": "Find 'take a place'. Write the detail only: 'near the middle of the vessel, where the motion is least'."
+        },
+        {
+          "q": "Q5 style (2 marks): give two things the traveller can learn by observing other passengers.",
+          "a": "Any two: who is brave; who is kind; who thinks only of himself.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write two paragraphs: 'How does the writer use language and structure to present his advice?' Starter: 'The writer speaks with the authority of...'",
+          "a": "Two paragraphs: one on imperatives and register; one on the structure (rules first, then observing people, then the summing-up 'in short').",
+          "mins": 15,
+          "model": "Teacher goes through paragraph 1 (the model above). Then shows how 'The sea, in short,' signals a concluding summary, the structural point for paragraph 2."
+        },
+        {
+          "q": "Extend: explain how the final sentence sums up the writer's perspective.",
+          "a": "Hardship is a lesson; those who learn it become 'better travellers'.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how might a modern reader respond to 'the gentleman' and 'his'?",
+          "a": "The text assumes travellers are men, which reflects its period.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The writer's main idea is...",
+          "options": [
+            "avoid the sea",
+            "accept hardship with patience",
+            "complain to the captain"
+          ],
+          "a": "B) accept hardship with patience",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder, linking it to Text Two.",
+          "a": "For example: patience, because, as Text Two says, the sea keeps its own hours and you cannot hurry it.",
+          "mins": 1
+        }
+      ],
+      "homework": "Rewrite paragraph 2 of Text Two in modern English (about 60 words).",
+      "send": "SEND: glossary and a paragraph-by-paragraph summary. EAL: modern translation of key phrases. Stretch: analyse the semicolon list in paragraph 2."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 29,
+      "title": "Comparing ideas and perspectives: planning the 15-mark comparison",
+      "duration": 50,
+      "bigQuestion": "What do these two writers agree and disagree about?",
+      "objectives": [
+        "To understand how to compare two writers' ideas and perspectives and how they are conveyed"
+      ],
+      "successCriteria": [
+        "All: find one similarity and one difference in ideas",
+        "Most: complete a comparison grid with evidence from both texts",
+        "Some: compare the methods each writer uses to convey their perspective"
+      ],
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "show how two things are alike and different"
+        },
+        {
+          "term": "ideas",
+          "def": "what the writer thinks about the topic"
+        },
+        {
+          "term": "comparative connective",
+          "def": "a linking word such as 'whereas' or 'similarly'"
+        },
+        {
+          "term": "integrated",
+          "def": "both texts in every paragraph"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Text One's writer is frightened; Text Two's writer is calm. Which one would you rather travel with, and why?"
+      },
+      "pictures": [
+        {
+          "find": "two paths diverging",
+          "alt": "Two paths dividing",
+          "for": "hook"
+        },
+        {
+          "find": "ship deck railing sea",
+          "alt": "A ship's rail above the sea",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "think-pair-share",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT2 English Language scheme (non-fiction comparison), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Text One 'The Last Ferry' (teacher-written modern travel memoir, pupil PDF)",
+        "Text Two 'Advice to Those Who Travel by Sea' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Comparison grid (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Q7 is worth...",
+          "options": [
+            "10 marks",
+            "15 marks",
+            "30 marks"
+          ],
+          "a": "B) 15 marks",
+          "mins": 1
+        },
+        {
+          "q": "Q7 tests...",
+          "options": [
+            "AO3",
+            "AO5"
+          ],
+          "a": "A) AO3",
+          "mins": 1
+        },
+        {
+          "q": "Text Two's 'stern schoolmaster' is...",
+          "options": [
+            "a metaphor",
+            "a list"
+          ],
+          "a": "A) a metaphor",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same journey, different views",
+          "note": "Q7 rewards comparing ideas AND how they are conveyed. An answer on only one text cannot reach the top levels.",
+          "compare": {
+            "left": {
+              "title": "Text One (modern memoir)",
+              "points": [
+                "The sea is threatening and alive",
+                "Fear, then relief and gratitude",
+                "Personal, first person 'I'",
+                "Arrival and welcome matter most"
+              ]
+            },
+            "right": {
+              "title": "Text Two (19th-century advice)",
+              "points": [
+                "The sea is powerful but a teacher",
+                "Patience and self-control",
+                "General, 'the traveller', 'him'",
+                "Hardship builds character"
+              ]
+            },
+            "label": "compare"
+          }
+        },
+        {
+          "heading": "The comparison grid",
+          "note": "Pupils complete the grid with short quotations. Prompt with one row filled.",
+          "table": {
+            "head": [
+              "Focus",
+              "Text One",
+              "Text Two",
+              "Link"
+            ],
+            "rows": [
+              [
+                "View of the sea",
+                "'weighing us'",
+                "'keeps her own hours'",
+                "both: the sea is in control"
+              ],
+              [
+                "Feeling",
+                "fear, gratitude",
+                "calm, amused",
+                "difference"
+              ],
+              [
+                "What travel teaches",
+                "gratitude for safety",
+                "character, patience",
+                "both: travel changes us"
+              ],
+              [
+                "Voice",
+                "first person, personal",
+                "imperatives, general",
+                "difference in method"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: an integrated paragraph",
+          "note": "I do. Label point, evidence from both, comparison of methods.",
+          "model": {
+            "problem": "Compare how the writers present their ideas and perspectives about travelling by sea. (15 marks)",
+            "steps": [
+              "Point: both writers see the sea as more powerful than people",
+              "Text One: personification, 'weighing us', makes the sea a frightening judge",
+              "Text Two: personification, 'keeps her own hours', makes it a confident mistress of time",
+              "Compare method: the same technique, but Text One creates fear, whereas Text Two creates respect",
+              "Link to perspective: one writer lived the fear; the other gives calm advice from experience"
+            ],
+            "answer": "Both writers present the sea as in control, but whereas Text One's personification ('weighing us') creates fear, Text Two's ('keeps her own hours') creates calm respect."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which opening for Q7 is strongest?",
+            "options": [
+              "Text One is about a ferry. Text Two is about advice.",
+              "Both writers describe the sea's power, but Text One fears it while Text Two treats it as a teacher.",
+              "I prefer Text One.",
+              "Text Two is old."
+            ],
+            "answer": 1,
+            "why": "It compares both perspectives in one sentence; the others list, give a preference or state a fact."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one comparative sentence about how each writer feels during the journey.",
+          "a": "Text One's writer is frightened, gripping the rail, whereas Text Two's writer is calm and even amused by complaining travellers.",
+          "mins": 4,
+          "model": "Frame: 'Text One's writer feels..., shown by..., whereas Text Two's writer feels..., shown by...'."
+        },
+        {
+          "q": "Find one similarity in what the journey teaches.",
+          "a": "Both show that travel changes people: gratitude in Text One, better character in Text Two.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: complete the comparison grid (four rows), then write an introduction and one integrated paragraph in the portal response box. Starter: 'Both writers...'",
+          "a": "A completed grid and an integrated paragraph comparing ideas and methods with evidence from both texts.",
+          "mins": 15,
+          "model": "Teacher completes row 1 of the grid and the introduction with the class before pupils continue alone."
+        },
+        {
+          "q": "Extend: add a second integrated paragraph on voice (first person and imperatives).",
+          "a": "Text One's 'I' draws us into one experience, whereas Text Two's imperatives instruct all travellers.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain how the difference in period helps explain their perspectives.",
+          "a": "A nineteenth-century guide expects stoicism; a modern memoir values honesty about fear.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An answer on only one text in Q7...",
+          "options": [
+            "cannot reach the top levels",
+            "is fine"
+          ],
+          "a": "A) cannot reach the top levels",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder with one reason from each text.",
+          "a": "For example: Text Two's writer, because his patience and calm ('fix his eye upon the horizon') would steady me.",
+          "mins": 1
+        }
+      ],
+      "homework": "Learn six comparative connectives and use each in a sentence about the two texts.",
+      "send": "SEND: grid with one row completed. EAL: comparative connective bank. Stretch: compare structure as well as language."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 30,
+      "title": "Question 7 timed: writing the comparison and DIRT",
+      "duration": 50,
+      "bigQuestion": "Can I write a full comparison in the time the exam gives me?",
+      "objectives": [
+        "To understand how to write a complete, balanced 15-mark comparison under timed conditions and improve it through feedback"
+      ],
+      "successCriteria": [
+        "All: write a comparison that covers both texts",
+        "Most: compare methods as well as ideas in each paragraph",
+        "Some: improve one paragraph after peer feedback (DIRT)"
+      ],
+      "keywords": [
+        {
+          "term": "DIRT",
+          "def": "dedicated improvement and reflection time: fixing your work"
+        },
+        {
+          "term": "balanced",
+          "def": "giving both texts fair attention"
+        },
+        {
+          "term": "perspective",
+          "def": "the writer's point of view and attitude"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes a comparison feel like one argument instead of two separate essays?"
+      },
+      "pictures": [
+        {
+          "find": "balance scales brass",
+          "alt": "A brass balance scale",
+          "for": "hook"
+        },
+        {
+          "find": "hourglass sand timer",
+          "alt": "An hourglass timer",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT2 English Language scheme (timed comparison and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Text One 'The Last Ferry' (teacher-written modern travel memoir, pupil PDF)",
+        "Text Two 'Advice to Those Who Travel by Sea' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Q7 success checklist and peer feedback sheet (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "'Whereas' is used to...",
+          "options": [
+            "contrast",
+            "add"
+          ],
+          "a": "A) contrast",
+          "mins": 1
+        },
+        {
+          "q": "Both writers see the sea as...",
+          "options": [
+            "powerful",
+            "harmless"
+          ],
+          "a": "A) powerful",
+          "mins": 1
+        },
+        {
+          "q": "Text Two's voice uses...",
+          "options": [
+            "imperatives",
+            "first-person fear"
+          ],
+          "a": "A) imperatives",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The timed task",
+          "bullets": [
+            "Q7: compare both texts, 15 marks",
+            "About 20 minutes in the exam",
+            "3 minutes plan, 15 writing, 2 checking",
+            "Every paragraph: both texts"
+          ],
+          "note": "Suggested timing on a 3-hour paper is a school guide, not a rule: a 15-mark answer deserves about 20 minutes. Pupils use yesterday's grid as the plan."
+        },
+        {
+          "heading": "Weak and strong",
+          "note": "Discuss why the right-hand version is stronger.",
+          "misconception": {
+            "wrong": "Text One is scared. Text Two is calm. They are different.",
+            "right": "While Text One's writer grips the rail in fear, Text Two's writer calmly advises the traveller to 'fix his eye upon the horizon', so one shows the experience of fear and the other the discipline that masters it."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "What should a Q7 conclusion do?",
+            "options": [
+              "Summarise the main similarity and difference in perspective",
+              "Retell Text One",
+              "Introduce a new quotation from Text Two only"
+            ],
+            "answer": 0,
+            "why": "A conclusion pulls the comparison together; retelling or a one-text quotation loses the focus."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn this list into one integrated sentence: 'Text One is personal. Text Two is general.'",
+          "a": "Text One's personal 'I' places us inside one frightened mind, whereas Text Two's general 'the traveller' offers rules for everyone.",
+          "mins": 3,
+          "model": "Add evidence to each half and a 'whereas' hinge: 'Text One's personal \"I\"..., whereas Text Two's general \"the traveller\"...'."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 20 minutes): in the portal response box, answer: 'Compare how the writers of Text One and Text Two present their ideas and perspectives about travelling by sea. Support your answer with detailed reference to both texts.' Starter: 'Both writers...'",
+          "a": "An integrated comparison of ideas, perspectives and methods with evidence from both texts and a conclusion.",
+          "mins": 20,
+          "model": "Teacher goes through the introduction and the first integrated paragraph from the previous lesson's model before the timer starts."
+        },
+        {
+          "q": "Extend (DIRT): swap with a partner using the checklist; rewrite one paragraph using their feedback (what went well, even better if).",
+          "a": "A redrafted paragraph with a clearer comparison of methods.",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: add a sentence comparing how each text ends.",
+          "a": "Text One ends in gratitude for arrival; Text Two ends with a lesson for all travellers.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A 15-mark Q7 answer deserves about...",
+          "options": [
+            "5 minutes",
+            "20 minutes",
+            "60 minutes"
+          ],
+          "a": "B) 20 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Integrated paragraphs with a comparative connective and evidence from both texts in each.",
+          "mins": 1
+        }
+      ],
+      "homework": "Finish your DIRT redraft and write your next Q7 target in your target sheet.",
+      "send": "SEND: paragraph frame and 25 minutes. EAL: connective bank. Stretch: aim for four integrated paragraphs."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 31,
+      "title": "Directed writing: decoding the task, audience, form and purpose",
+      "duration": 50,
+      "bigQuestion": "Who am I writing for, and how should I sound?",
+      "objectives": [
+        "To understand how to read a directed writing task and match form, tone and register to its audience and purpose"
+      ],
+      "successCriteria": [
+        "All: identify the audience, form and purpose of a task",
+        "Most: choose a suitable register and layout for the form",
+        "Some: plan a response that answers every bullet point"
+      ],
+      "keywords": [
+        {
+          "term": "audience",
+          "def": "the people who will read your writing"
+        },
+        {
+          "term": "form",
+          "def": "the type of text: article, letter, speech, guide"
+        },
+        {
+          "term": "purpose",
+          "def": "what your writing must do: advise, argue, inform"
+        },
+        {
+          "term": "register",
+          "def": "how formal or informal your language is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How would you explain a long, hard journey differently to a ten-year-old, a head teacher and a newspaper's readers?"
+      },
+      "pictures": [
+        {
+          "find": "school newsletter printed page",
+          "alt": "A printed school newsletter page",
+          "for": "hook"
+        },
+        {
+          "find": "railway station departure board",
+          "alt": "A station departure board",
+          "for": "teach:2"
+        },
+        {
+          "find": "envelope and letter paper",
+          "alt": "A letter and envelope",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT2 English Language scheme (directed writing: audience, form and purpose), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Text One 'The Last Ferry' (teacher-written modern travel memoir, pupil PDF)",
+        "Text Two 'Advice to Those Who Travel by Sea' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Directed writing task sheet and form conventions card (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Q8 is worth...",
+          "options": [
+            "15 marks",
+            "30 marks",
+            "40 marks"
+          ],
+          "a": "B) 30 marks",
+          "mins": 1
+        },
+        {
+          "q": "Q8 includes AO1, which rewards...",
+          "options": [
+            "using ideas from the texts",
+            "handwriting"
+          ],
+          "a": "A) using ideas from the texts",
+          "mins": 1
+        },
+        {
+          "q": "Text Two's main advice is...",
+          "options": [
+            "patience",
+            "speed"
+          ],
+          "a": "A) patience",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What Section B rewards",
+          "note": "Question 8: one directed writing task that uses ideas from both texts. 30 marks: AO1 10 (selecting and interpreting ideas from the texts), AO4 12 (form, tone and register for purpose and audience), AO5 8 (vocabulary, sentences, paragraphs, accuracy). Ask: what does it mean that a third of the marks are for reading?",
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "AO1 reading",
+              "AO4 communication",
+              "AO5 accuracy"
+            ],
+            "values": [
+              10,
+              12,
+              8
+            ],
+            "title": "Question 8: 30 marks"
+          }
+        },
+        {
+          "heading": "Decode the task",
+          "note": "Practice task (original): 'Your school website is publishing a guide for students who will travel alone for the first time. Write an article for the guide. In your article you should: explain the difficulties of travelling alone; give advice on how to cope; explain what can be gained from the experience. Use ideas from both texts and your own ideas.' Pupils highlight audience (students, families), form (article on a website), purpose (explain and advise) and the three bullet points.",
+          "bullets": [
+            "Audience: students and their families",
+            "Form: website article with a headline and subheadings",
+            "Purpose: explain and advise",
+            "Three bullets: difficulties, advice, gains"
+          ]
+        },
+        {
+          "heading": "Register for the audience",
+          "note": "Sort the sentences. Answers: semi-formal, friendly and confident fits a school website; slang and a stiff Victorian voice do not.",
+          "sort": {
+            "columns": [
+              "Fits the task",
+              "Does not fit"
+            ],
+            "cards": [
+              "Travelling alone for the first time can feel daunting, but it is a skill you can learn.",
+              "Bruh, trains are mad stressful.",
+              "Let no student suppose the railway will consult his convenience.",
+              "Here are five ways to stay calm when plans change.",
+              "Pack patience before your phone charger.",
+              "Whatever. Just go."
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which headline best fits the task?",
+            "options": [
+              "Travel",
+              "Going It Alone: Your Guide to a First Solo Journey",
+              "THE SEA IS A STERN SCHOOLMASTER",
+              "My Ferry"
+            ],
+            "answer": 1,
+            "why": "It names the audience's situation and the purpose; the others are too vague, copied or personal."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a headline and a strapline (subheading) for the guide.",
+          "a": "For example: 'Going It Alone: Your Guide to a First Solo Journey' / 'How to stay calm, safe and curious when you travel by yourself'.",
+          "mins": 4,
+          "model": "Headline: short, direct, names the topic. Strapline: one line that states the purpose (advise) and speaks to 'you'."
+        },
+        {
+          "q": "Write an opening sentence that speaks directly to the audience.",
+          "a": "For example: 'Your first journey alone may feel daunting, but every confident traveller once stood where you are standing.'",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, plan the article: headline, introduction, one paragraph for each bullet, conclusion. Note one idea from each text you will use. Starter: 'Paragraph 1 will explain...'",
+          "a": "A plan that covers all three bullets, uses at least one idea from each text and fits a semi-formal website register.",
+          "mins": 15,
+          "model": "Teacher plans paragraph 1 with the class: difficulty = delays and uncertainty (Text One's forty-minute wait; Text Two: the sea 'keeps her own hours')."
+        },
+        {
+          "q": "Extend: write your introduction in full.",
+          "a": "A short introduction that addresses the reader and previews the three areas.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: add one rhetorical question suited to the audience.",
+          "a": "For example: 'What will you do when the train is cancelled and nobody is there to decide for you?'",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A website article usually has...",
+          "options": [
+            "a headline and subheadings",
+            "'Dear Sir' and 'Yours faithfully'"
+          ],
+          "a": "A) a headline and subheadings",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "For example: simple and reassuring for a child, formal and reasoned for a head teacher, lively and informative for newspaper readers.",
+          "mins": 1
+        }
+      ],
+      "homework": "Learn the conventions of four forms (article, letter, speech, guide) from the form conventions card.",
+      "send": "SEND: plan frame with the three bullets as boxes. EAL: register examples. Stretch: plan the same task as a speech and note what changes."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 32,
+      "title": "Directed writing: using ideas from both texts in your own words",
+      "duration": 50,
+      "bigQuestion": "How do I use the texts without copying them?",
+      "objectives": [
+        "To understand how to select, adapt and develop ideas from both texts for a new audience (AO1 in Section B)"
+      ],
+      "successCriteria": [
+        "All: select relevant ideas from both texts",
+        "Most: rewrite ideas in my own words for the audience",
+        "Some: develop the texts' ideas with my own examples"
+      ],
+      "keywords": [
+        {
+          "term": "select",
+          "def": "choose only what fits the task"
+        },
+        {
+          "term": "adapt",
+          "def": "change an idea to suit a new audience"
+        },
+        {
+          "term": "develop",
+          "def": "add your own example or explanation"
+        },
+        {
+          "term": "lifting",
+          "def": "copying the text's words, which earns little credit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you borrow an idea from a book and put it in your own words, is it still the book's idea or yours?"
+      },
+      "pictures": [
+        {
+          "find": "suitcase packed travel",
+          "alt": "A packed suitcase",
+          "for": "hook"
+        },
+        {
+          "find": "ship horizon sunset sea",
+          "alt": "The horizon seen from a ship",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT2 English Language scheme (directed writing using source texts), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Text One 'The Last Ferry' (teacher-written modern travel memoir, pupil PDF)",
+        "Text Two 'Advice to Those Who Travel by Sea' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Idea selection table (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "AO1 in Q8 is worth...",
+          "options": [
+            "10 marks",
+            "20 marks"
+          ],
+          "a": "A) 10 marks",
+          "mins": 1
+        },
+        {
+          "q": "The audience for our guide is...",
+          "options": [
+            "students travelling alone",
+            "ship captains"
+          ],
+          "a": "A) students travelling alone",
+          "mins": 1
+        },
+        {
+          "q": "A suitable register is...",
+          "options": [
+            "semi-formal and friendly",
+            "Victorian"
+          ],
+          "a": "A) semi-formal and friendly",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Select, adapt, develop",
+          "note": "Teach the three moves. Lifting whole phrases gives little credit; ideas must be interpreted and used for the new purpose.",
+          "cycle": [
+            "Select an idea that fits a bullet",
+            "Adapt it to the audience",
+            "Develop it with your own example",
+            "Check it answers the bullet"
+          ]
+        },
+        {
+          "heading": "From text to task",
+          "note": "Pupils add rows. The right-hand column shows ideas transformed, not copied.",
+          "table": {
+            "head": [
+              "Text idea",
+              "Which bullet",
+              "Adapted for students"
+            ],
+            "rows": [
+              [
+                "Text One: the forty-minute wait",
+                "difficulties",
+                "delays are normal; plan for them"
+              ],
+              [
+                "Text Two: patience in your luggage",
+                "advice",
+                "pack patience before your phone charger"
+              ],
+              [
+                "Text Two: fix your eye on the horizon",
+                "advice",
+                "focus on one steady thing: the next step"
+              ],
+              [
+                "Text One: gratitude on arrival",
+                "gains",
+                "you will value home and help more"
+              ],
+              [
+                "Text Two: learn about people",
+                "gains",
+                "you notice who is kind, and learn to be kind"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: an advice paragraph",
+          "note": "I do. Labelled.",
+          "model": {
+            "problem": "Bullet 2: give advice on how to cope.",
+            "steps": [
+              "Topic sentence: the most useful thing to pack is patience",
+              "Adapted idea (Text Two): delays are part of travel; you cannot hurry a timetable",
+              "Developed with own example: a cancelled train, a long queue at a border",
+              "Practical advice: find one steady focus, like a traveller fixing his eye on the horizon",
+              "Link to audience: 'you' and a reassuring final sentence"
+            ],
+            "answer": "Before you pack your phone charger, pack patience. Delays are part of every journey: trains are cancelled, queues crawl. When plans change, find one steady thing to focus on, the next step, and take it calmly. You will be surprised how quickly the panic passes."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which uses Text One best for the 'gains' bullet?",
+            "options": [
+              "The harbour smelled of diesel and wet rope.",
+              "When you finally arrive, you will feel a gratitude for safety and kindness that you may never have felt at home.",
+              "Then, quite suddenly, the island was there.",
+              "Ferries are often late."
+            ],
+            "answer": 1,
+            "why": "It interprets Text One's ending for the new purpose; the others copy or retell."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Adapt Text Two's idea about observing passengers into one sentence of advice for students.",
+          "a": "For example: 'Watch the people around you: a long journey shows you who is patient and kind, and teaches you to be the same.'",
+          "mins": 4,
+          "model": "Select: 'observe his fellow passengers'. Adapt: modern 'you'. Develop: what you learn and how it changes you."
+        },
+        {
+          "q": "Spot the lifting: 'The sea is a stern schoolmaster so be patient.' Rewrite it.",
+          "a": "For example: 'Difficult journeys can teach you more than easy ones, if you stay patient.'",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write paragraphs 1 and 2 of the guide (difficulties and advice), using at least one idea from each text in your own words. Starter: 'Travelling alone for the first time...'",
+          "a": "Two paragraphs in a semi-formal register that adapt and develop ideas from both texts without lifting.",
+          "mins": 15,
+          "model": "Teacher goes through the advice paragraph above, then pupils write the difficulties paragraph alone."
+        },
+        {
+          "q": "Extend: underline every idea you took from a text. Is each one adapted?",
+          "a": "Each borrowed idea is reworded and developed.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: add a short anecdote of your own to make the advice vivid.",
+          "a": "A brief, relevant personal example.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Copying long phrases from the texts is called...",
+          "options": [
+            "lifting",
+            "adapting"
+          ],
+          "a": "A) lifting",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "It becomes yours when you interpret, adapt and develop it for a new purpose.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write paragraph 3 (what can be gained), using one idea from each text.",
+      "send": "SEND: idea table partly completed. EAL: modern equivalents for Text Two phrases. Stretch: vary sentence openings in every sentence."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 33,
+      "title": "Directed writing timed: a 30-mark response and self-assessment",
+      "duration": 50,
+      "bigQuestion": "Can I write a complete directed piece that answers every bullet in the time?",
+      "objectives": [
+        "To understand how to plan and write a complete directed writing response under timed conditions and judge it against the assessment objectives"
+      ],
+      "successCriteria": [
+        "All: complete a response covering all three bullets",
+        "Most: keep a consistent register and clear paragraphs",
+        "Some: self-assess against AO1, AO4 and AO5 and set a target"
+      ],
+      "keywords": [
+        {
+          "term": "cohesion",
+          "def": "how sentences and paragraphs link smoothly"
+        },
+        {
+          "term": "proofread",
+          "def": "check for errors before you finish"
+        },
+        {
+          "term": "self-assessment",
+          "def": "judging your own work against criteria"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which matters more in a guide for nervous travellers: what you say, or how you say it?"
+      },
+      "pictures": [
+        {
+          "find": "train ticket and timetable",
+          "alt": "A train ticket on a printed timetable",
+          "for": "hook"
+        },
+        {
+          "find": "checklist clipboard tick",
+          "alt": "A checklist with ticks",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT2 English Language scheme (timed directed writing), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Text One 'The Last Ferry' (teacher-written modern travel memoir, pupil PDF)",
+        "Text Two 'Advice to Those Who Travel by Sea' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Section B self-assessment grid (AO1, AO4, AO5) (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "'Pack patience before your phone charger' is...",
+          "options": [
+            "an adapted idea",
+            "lifted text"
+          ],
+          "a": "A) an adapted idea",
+          "mins": 1
+        },
+        {
+          "q": "AO4 rewards...",
+          "options": [
+            "form, tone and register",
+            "retrieval"
+          ],
+          "a": "A) form, tone and register",
+          "mins": 1
+        },
+        {
+          "q": "AO5 rewards...",
+          "options": [
+            "accurate, varied writing",
+            "comparison"
+          ],
+          "a": "A) accurate, varied writing",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The timed task",
+          "bullets": [
+            "Same task: the first solo journey guide",
+            "5 minutes plan",
+            "35 minutes writing",
+            "5 minutes proofreading"
+          ],
+          "note": "In the exam Section B deserves about 45 to 50 minutes. Pupils use their plan from lesson 31 and paragraphs from lesson 32 as preparation, then write fresh."
+        },
+        {
+          "heading": "What the top band looks like",
+          "note": "Discuss each column briefly before writing.",
+          "compare": {
+            "left": {
+              "title": "Content (AO1 and AO4)",
+              "points": [
+                "All three bullets developed",
+                "Ideas from both texts, adapted",
+                "Register fits students and families",
+                "Article features used naturally"
+              ]
+            },
+            "right": {
+              "title": "Accuracy (AO5)",
+              "points": [
+                "Paragraphs with clear topic sentences",
+                "Varied sentence openings and lengths",
+                "Accurate punctuation, no comma splices",
+                "Precise vocabulary"
+              ]
+            },
+            "label": "both matter"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "You have 5 minutes left and no conclusion. Best move?",
+            "options": [
+              "Write two sentences to conclude, then proofread",
+              "Start a new paragraph of advice",
+              "Rewrite the introduction neatly"
+            ],
+            "answer": 0,
+            "why": "A short conclusion completes the form; proofreading recovers AO5 marks."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a two-sentence conclusion that leaves the reader confident.",
+          "a": "For example: 'Your first journey alone will not be perfect, and it does not need to be. Pack patience, watch and learn, and you will arrive a more capable traveller than you set out.'",
+          "mins": 3,
+          "model": "Sentence 1: reassure. Sentence 2: echo the guide's key advice and end on the gain."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 25 minutes): in the portal response box (or on paper, then photographed), write the full guide article: headline, introduction, three developed paragraphs, conclusion. Starter: your own headline.",
+          "a": "A complete article covering all bullets, using adapted ideas from both texts, in a consistent semi-formal register with accurate writing.",
+          "mins": 25,
+          "model": "Teacher shows the first two lines of a model opening, then starts the timer."
+        },
+        {
+          "q": "Extend: proofread for five minutes using the AO5 checklist (capitals, full stops, commas, spelling, paragraphs).",
+          "a": "Errors corrected neatly.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: self-assess against the grid and write one target for AO1, AO4 or AO5.",
+          "a": "A precise target, for example 'adapt ideas instead of quoting them'.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Section B should take about...",
+          "options": [
+            "15 minutes",
+            "45 to 50 minutes",
+            "90 minutes"
+          ],
+          "a": "B) 45 to 50 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Both: content earns AO1 and AO4, but the register and accuracy decide whether a nervous reader trusts the advice.",
+          "mins": 1
+        }
+      ],
+      "homework": "Redraft your weakest paragraph and add your Section B target to your target sheet.",
+      "send": "SEND: plan frame and extra time; dictation software where agreed. EAL: sentence starters per paragraph. Stretch: rewrite the piece as a speech in 10 minutes."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 34,
+      "title": "Section C: choosing your task and planning a discursive essay",
+      "duration": 50,
+      "bigQuestion": "How do I build an argument that weighs both sides?",
+      "objectives": [
+        "To understand how to choose the right Section C task and plan a balanced discursive essay"
+      ],
+      "successCriteria": [
+        "All: choose the task that suits my strengths",
+        "Most: plan points for both sides with evidence",
+        "Some: reach a reasoned conclusion that answers the statement"
+      ],
+      "islamicLink": {
+        "text": "The Qur'an teaches courteous, reasoned discussion: 'Invite to the way of your Lord with wisdom and good instruction, and argue with them in a way that is best' (an-Nahl 16:125). A good discursive essay does the same: it weighs the other side fairly and persuades with reasons, not insults.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "discursive",
+          "def": "writing that discusses different sides of an issue"
+        },
+        {
+          "term": "counter-argument",
+          "def": "the opposing view"
+        },
+        {
+          "term": "rebuttal",
+          "def": "your reasoned reply to the opposing view"
+        },
+        {
+          "term": "conclusion",
+          "def": "your final, reasoned judgement"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'Travel teaches more than any classroom.' Agree or disagree? Give one reason before the lesson starts."
+      },
+      "pictures": [
+        {
+          "find": "world map old atlas",
+          "alt": "An old world map",
+          "for": "hook"
+        },
+        {
+          "find": "school classroom empty desks",
+          "alt": "An empty classroom",
+          "for": "teach:2"
+        },
+        {
+          "find": "signpost multiple directions",
+          "alt": "A signpost pointing in several directions",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "think-pair-share",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT2 English Language scheme (discursive writing: GSP, PEEDL, HEMPS and CA/CR frameworks), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Section C task choice card and discursive planner (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Section C is worth...",
+          "options": [
+            "30 marks",
+            "40 marks"
+          ],
+          "a": "A) 30 marks",
+          "mins": 1
+        },
+        {
+          "q": "Section C is marked for...",
+          "options": [
+            "AO4 and AO5",
+            "AO1 and AO3"
+          ],
+          "a": "A) AO4 and AO5",
+          "mins": 1
+        },
+        {
+          "q": "In Section C you answer...",
+          "options": [
+            "one task from three",
+            "all three tasks"
+          ],
+          "a": "A) one task from three",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choosing in two minutes",
+          "note": "Section C: one task from a choice of three (Questions 9 to 11), 30 marks: AO4 20, AO5 10. The choices usually include a discursive or argument task and imaginative tasks (narrative or descriptive); check the paper's wording. Choose the task you can plan fastest and sustain best, not the one that looks easiest.",
+          "table": {
+            "head": [
+              "Task type",
+              "Choose it if...",
+              "Watch out for..."
+            ],
+            "rows": [
+              [
+                "Discursive",
+                "you can think of points on both sides quickly",
+                "one-sided rants"
+              ],
+              [
+                "Narrative",
+                "you can see a clear shape: start, problem, change",
+                "too many events, no ending"
+              ],
+              [
+                "Descriptive",
+                "you can picture one place in detail",
+                "slipping into a story"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Both sides, then a judgement",
+          "note": "Plan for 'Travel teaches more than any classroom.' Pupils add one point each side.",
+          "compare": {
+            "left": {
+              "title": "For",
+              "points": [
+                "Real experience: patience, independence",
+                "Meeting different people and cultures",
+                "Problems must be solved on the spot"
+              ]
+            },
+            "right": {
+              "title": "Against",
+              "points": [
+                "Classrooms give knowledge travel cannot: maths, science",
+                "Travel is costly; not everyone can go",
+                "Learning needs reflection and a teacher"
+              ]
+            },
+            "label": "weigh"
+          }
+        },
+        {
+          "heading": "Model: a counter-argument and rebuttal paragraph",
+          "note": "I do. Label point, evidence, explain, develop, link (PEEDL), then the rebuttal.",
+          "model": {
+            "problem": "'Travel teaches more than any classroom.' Discuss.",
+            "steps": [
+              "Counter-argument: some argue a classroom gives knowledge travel cannot",
+              "Evidence: nobody learns algebra or chemistry from a train window",
+              "Concede: this is true; schools build foundations",
+              "Rebuttal: but character, patience and independence are learned by doing",
+              "Link: the best learning combines both, which answers the statement"
+            ],
+            "answer": "Some argue that a classroom gives knowledge no journey can: nobody learns algebra from a train window. That is true, and schools build the foundations. Yet patience, independence and courage are learned only by doing, which is why the wisest learners need both."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which conclusion is most effective?",
+            "options": [
+              "In conclusion, travel is good.",
+              "Travel cannot replace the classroom, but it teaches what the classroom cannot: so the statement is half true, and both are needed.",
+              "I have run out of time.",
+              "Some people like travel and some do not."
+            ],
+            "answer": 1,
+            "why": "It gives a clear, reasoned judgement on the statement; the others are vague or empty."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a thesis sentence for 'Travel teaches more than any classroom.'",
+          "a": "For example: 'Travel teaches lessons no classroom can, but it cannot replace one; the statement is only half true.'",
+          "mins": 4,
+          "model": "State your overall view and hint at the balance: 'X, but Y; therefore...'."
+        },
+        {
+          "q": "Write one 'for' point with a specific example.",
+          "a": "For example: 'A missed connection teaches you to ask for help and solve problems alone.'",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, plan the whole discursive essay (introduction with thesis, two 'for' paragraphs, one counter-argument and rebuttal paragraph, conclusion), then write the introduction in full. Starter: 'Many people believe...'",
+          "a": "A complete plan with both sides and a reasoned judgement, plus a clear introduction.",
+          "mins": 15,
+          "model": "Teacher plans the introduction and paragraph 1 aloud with the class before pupils continue."
+        },
+        {
+          "q": "Extend: write the counter-argument and rebuttal paragraph.",
+          "a": "A paragraph that concedes fairly and replies with reasons.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: add a rhetorical device (rule of three, question or anecdote) to your introduction.",
+          "a": "A purposeful device that suits a discursive register.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A rebuttal is...",
+          "options": [
+            "your reply to the other side",
+            "a summary"
+          ],
+          "a": "A) your reply to the other side",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder, now with a counter-argument.",
+          "a": "For example: travel teaches patience and courage, although the classroom teaches knowledge that travel cannot.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write one more paragraph of the discursive essay, using PEEDL.",
+      "send": "SEND: discursive planner with boxes. EAL: discursive phrase bank ('Some argue...', 'However...'). Stretch: plan a second statement in five minutes."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 35,
+      "title": "Section C: narrative and descriptive craft for 30 marks",
+      "duration": 50,
+      "bigQuestion": "How do I make a reader see, hear and feel a moment?",
+      "objectives": [
+        "To understand how to shape a short narrative or description and craft sentences for effect"
+      ],
+      "successCriteria": [
+        "All: plan a narrative with a clear beginning, turning point and ending",
+        "Most: use sensory detail and varied sentences for effect",
+        "Some: control pace by zooming in on one moment"
+      ],
+      "keywords": [
+        {
+          "term": "narrative",
+          "def": "a story with events and change"
+        },
+        {
+          "term": "descriptive",
+          "def": "writing that paints one place or moment"
+        },
+        {
+          "term": "pace",
+          "def": "how fast or slow the writing feels"
+        },
+        {
+          "term": "sensory detail",
+          "def": "what you see, hear, smell, touch, taste"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A story called 'The Crossing'. What is being crossed? Think beyond rivers and seas."
+      },
+      "pictures": [
+        {
+          "find": "stone bridge over river mist",
+          "alt": "A stone bridge over a misty river",
+          "for": "hook"
+        },
+        {
+          "find": "harbour in winter snow boats",
+          "alt": "A harbour with boats in winter",
+          "for": "teach:3"
+        },
+        {
+          "find": "lantern glowing dusk",
+          "alt": "A glowing lantern at dusk",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT1 English Language scheme (narrative and descriptive writing frameworks), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Narrative shape planner and descriptive senses grid (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "A discursive essay needs...",
+          "options": [
+            "both sides and a judgement",
+            "only one side"
+          ],
+          "a": "A) both sides and a judgement",
+          "mins": 1
+        },
+        {
+          "q": "AO4 in Section C is worth...",
+          "options": [
+            "20 marks",
+            "10 marks"
+          ],
+          "a": "A) 20 marks",
+          "mins": 1
+        },
+        {
+          "q": "A description should NOT...",
+          "options": [
+            "slip into a long story",
+            "use senses"
+          ],
+          "a": "A) slip into a long story",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A shape that fits 45 minutes",
+          "note": "Most weak narratives have too many events. Five beats are enough. Example for 'The Crossing': a boy must cross a busy city to bring medicine to his grandmother.",
+          "timeline": [
+            {
+              "label": "Hook",
+              "text": "Open in the moment, not with waking up"
+            },
+            {
+              "label": "Build",
+              "text": "A goal and an obstacle"
+            },
+            {
+              "label": "Turn",
+              "text": "One decision or surprise"
+            },
+            {
+              "label": "Zoom",
+              "text": "Slow down the key moment"
+            },
+            {
+              "label": "End",
+              "text": "A change, echoing the opening"
+            }
+          ]
+        },
+        {
+          "heading": "Pace: zoom in",
+          "note": "Slow the key moment with detail and short sentences; speed through travel with one sentence. Show the difference.",
+          "compare": {
+            "left": {
+              "title": "Fast (summary)",
+              "points": [
+                "He crossed the road and reached the shop.",
+                "One sentence covers minutes"
+              ]
+            },
+            "right": {
+              "title": "Slow (zoom)",
+              "points": [
+                "The lights changed. A bus sighed. He stepped out.",
+                "Three short sentences stretch seconds"
+              ]
+            },
+            "label": "control"
+          }
+        },
+        {
+          "heading": "Model: a descriptive opening",
+          "note": "I do. Original model for 'Describe a harbour in winter'. Label each method.",
+          "model": {
+            "problem": "Describe a harbour in winter. (30 marks)",
+            "steps": [
+              "Wide shot: 'The harbour held its breath under a sky the colour of pewter.' (personification, colour)",
+              "Sound: 'Ropes knocked against masts, a slow, wooden heartbeat.' (metaphor)",
+              "Smell and touch: 'Salt stung the air; the iron rail burned with cold.'",
+              "Zoom: 'On the quay, one forgotten glove lay palm up, as if asking for something.'",
+              "Short sentence: 'Nothing moved. Then the gulls.'"
+            ],
+            "answer": "A paragraph that moves from wide to close and uses several senses and varied sentences."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which opening is strongest for 'The Crossing'?",
+            "options": [
+              "I woke up and had breakfast.",
+              "The medicine bottle was warm in his fist, and the road in front of him roared.",
+              "This is a story about a crossing.",
+              "Once upon a time there was a boy."
+            ],
+            "answer": 1,
+            "why": "It starts in the moment with a goal and a threat; the others delay or announce."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write three sentences that slow down one moment of crossing a busy road.",
+          "a": "Short sentences with precise sensory detail that stretch seconds.",
+          "mins": 4,
+          "model": "Sentence 1: one sound. Sentence 2: one movement, very short. Sentence 3: one feeling shown, not told ('His fingers tightened on the bottle.')."
+        },
+        {
+          "q": "Plan 'The Crossing' in five beats.",
+          "a": "Hook, build, turn, zoom, end, with one line each.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write the opening two paragraphs of either 'The Crossing' (narrative) or 'Describe a harbour in winter' (descriptive). Starter: your own first sentence, in the moment.",
+          "a": "Two crafted paragraphs with sensory detail, varied sentences and controlled pace.",
+          "mins": 15,
+          "model": "Teacher goes through the descriptive model above before pupils choose and write."
+        },
+        {
+          "q": "Extend: underline three sentence types you used (short, complex, fronted adverbial).",
+          "a": "At least three different sentence forms.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write an ending that echoes your opening (cyclical structure).",
+          "a": "An ending that returns to an image from the first line, changed.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "To slow the pace, use...",
+          "options": [
+            "short sentences and detail",
+            "one long summary"
+          ],
+          "a": "A) short sentences and detail",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder with one idea.",
+          "a": "For example: a crossing from fear to courage, or from childhood to responsibility.",
+          "mins": 1
+        }
+      ],
+      "homework": "Finish your narrative or description (about 400 words).",
+      "send": "SEND: five-beat planner and senses grid. EAL: vocabulary bank of sounds and textures. Stretch: limit adjectives to make verbs do the work."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 36,
+      "title": "Section C timed: writing, proofreading and technical accuracy",
+      "duration": 50,
+      "bigQuestion": "How do I protect my 10 accuracy marks while writing fast?",
+      "objectives": [
+        "To understand how to write a complete Section C response under timed conditions and secure technical accuracy (AO5)"
+      ],
+      "successCriteria": [
+        "All: complete a planned response in the time",
+        "Most: use a range of punctuation accurately",
+        "Some: proofread and correct errors that cost marks"
+      ],
+      "keywords": [
+        {
+          "term": "comma splice",
+          "def": "joining two sentences with only a comma (an error)"
+        },
+        {
+          "term": "homophone",
+          "def": "words that sound the same but differ: there, their, they're"
+        },
+        {
+          "term": "semicolon",
+          "def": "joins two linked complete sentences"
+        },
+        {
+          "term": "technical accuracy",
+          "def": "correct spelling, punctuation and grammar"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which mistake would annoy an examiner most: a misspelt word, a missing full stop, or a paragraph that never ends?"
+      },
+      "pictures": [
+        {
+          "find": "red pen proofreading paper",
+          "alt": "A page with proofreading marks",
+          "for": "hook"
+        },
+        {
+          "find": "magnifying glass on text",
+          "alt": "A magnifying glass over printed text",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT1 English Language scheme (timed writing and technical accuracy), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Section C titles card and AO5 proofreading checklist (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "'He stepped out, the bus braked.' contains...",
+          "options": [
+            "a comma splice",
+            "no error"
+          ],
+          "a": "A) a comma splice",
+          "mins": 1
+        },
+        {
+          "q": "AO5 in Section C is worth...",
+          "options": [
+            "10 marks",
+            "20 marks"
+          ],
+          "a": "A) 10 marks",
+          "mins": 1
+        },
+        {
+          "q": "A narrative should end with...",
+          "options": [
+            "a change",
+            "'it was all a dream'"
+          ],
+          "a": "A) a change",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fix the common errors",
+          "note": "Pupils correct each before the reveal. Answers in the notes: 1) 'He stepped out; the bus braked.' 2) 'their' 3) 'Should have'. 4) Add a paragraph break at the change of time.",
+          "sort": {
+            "columns": [
+              "Punctuation",
+              "Spelling or grammar",
+              "Paragraphing"
+            ],
+            "cards": [
+              "He stepped out, the bus braked.",
+              "They left there bags on the quay.",
+              "We should of waited.",
+              "A story with no breaks for a page",
+              "its cold tonight",
+              "Dialogue with no new line for a new speaker"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              2,
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "The five-minute proofread",
+          "bullets": [
+            "Read the last paragraph first",
+            "Full stops and capitals",
+            "Commas: no splices",
+            "Homophones: there/their, its/it's",
+            "Paragraph breaks at time, place, speaker, topic"
+          ],
+          "note": "Reading from the end stops pupils skim-reading their own story. Corrections should be neat: one line through, the correct word above."
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which is correctly punctuated?",
+            "options": [
+              "The sea was grey, it was rough.",
+              "The sea was grey; it was rough.",
+              "The sea was grey it was rough.",
+              "the sea was grey; It was rough."
+            ],
+            "answer": 1,
+            "why": "A semicolon can join two linked complete sentences; the others are a comma splice, a run-on and wrong capitals."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct: 'its late, the station is empty and there train has gone.'",
+          "a": "It's late; the station is empty and their train has gone.",
+          "mins": 3,
+          "model": "Step 1: capital and apostrophe, 'It's'. Step 2: the comma splice becomes a semicolon. Step 3: 'there' becomes 'their' (belonging)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 25 minutes): choose ONE and write it in the portal response box: (a) 'Young people spend too much time looking at screens.' Discuss. (b) Write a story called 'The Last Train Home'. (c) Describe a place you know well as night falls.",
+          "a": "A complete, planned response suited to the task type, with crafted sentences and accurate punctuation.",
+          "mins": 25,
+          "model": "Teacher models the two-minute choice aloud (which task can I plan fastest?) and writes a five-line plan for (c) before the timer starts."
+        },
+        {
+          "q": "Extend: proofread for five minutes with the checklist; correct every error neatly.",
+          "a": "Errors corrected.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: improve three sentences by changing their openings.",
+          "a": "Varied openings: adverbial, participle, short sentence.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Their' means...",
+          "options": [
+            "belonging to them",
+            "in that place"
+          ],
+          "a": "A) belonging to them",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Any is fair, but run-on sentences and comma splices recur and cost the most AO5 marks.",
+          "mins": 1
+        }
+      ],
+      "homework": "Learn the five-minute proofread; correct ten sentences on the AO5 sheet.",
+      "send": "SEND: spelling list of common homophones; extra time. EAL: punctuation rules card. Stretch: use a colon, a semicolon and brackets for parenthesis correctly."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 37,
+      "title": "Mock week: the 3-hour paper, timing and exam-day routine",
+      "duration": 50,
+      "bigQuestion": "How do I spend 180 minutes so every section gets its marks?",
+      "objectives": [
+        "To understand how to plan time, order and stamina across the full 3-hour 4EB1 paper"
+      ],
+      "successCriteria": [
+        "All: state a time plan for each section",
+        "Most: practise reading two texts and planning answers in 15 minutes",
+        "Some: adjust the time plan to my own strengths and targets"
+      ],
+      "smsc": "Spiritual: calm, prepared effort (ihsan, إِحْسَان) rather than panic before an exam",
+      "keywords": [
+        {
+          "term": "stamina",
+          "def": "keeping your focus and energy for a long time"
+        },
+        {
+          "term": "time plan",
+          "def": "how many minutes you give each question"
+        },
+        {
+          "term": "annotate",
+          "def": "make short notes on a text as you read"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Three hours is a long time. What will you do at the halfway point to keep going well?"
+      },
+      "pictures": [
+        {
+          "find": "wall clock exam room",
+          "alt": "A wall clock",
+          "for": "hook"
+        },
+        {
+          "find": "pens pencils ruler on desk",
+          "alt": "Pens and a ruler on a desk",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT2 English Language scheme (mock preparation), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Mock week paper (4EB1 style, 3 hours) and timing card (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Q7 is worth...",
+          "options": [
+            "15 marks",
+            "10 marks"
+          ],
+          "a": "A) 15 marks",
+          "mins": 1
+        },
+        {
+          "q": "Section B uses...",
+          "options": [
+            "ideas from both texts",
+            "only your own ideas"
+          ],
+          "a": "A) ideas from both texts",
+          "mins": 1
+        },
+        {
+          "q": "Section C: you write...",
+          "options": [
+            "one task",
+            "two tasks"
+          ],
+          "a": "A) one task",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A time plan for 180 minutes",
+          "note": "A school guide based on marks (40 / 30 / 30), not a Pearson rule. Pupils may shift five minutes towards their weakest section.",
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "Read and annotate",
+              "Section A",
+              "Section B",
+              "Section C",
+              "Final check"
+            ],
+            "values": [
+              15,
+              60,
+              50,
+              50,
+              5
+            ],
+            "title": "Minutes on the 3-hour paper"
+          }
+        },
+        {
+          "heading": "Reading time is planning time",
+          "note": "Read the questions before the texts; annotate for Q3, Q6 and Q7 as you read; note two Section B ideas from each text. This saves time later.",
+          "cycle": [
+            "Read all questions first",
+            "Read Text One, annotate",
+            "Read Text Two, annotate",
+            "Note ideas for Q7 and Q8",
+            "Start with the short questions"
+          ]
+        },
+        {
+          "heading": "Exam-day routine (online mock)",
+          "bullets": [
+            "Camera on, desk clear, two pens",
+            "Paper printed or on the tablet",
+            "Water, no phone",
+            "Clock visible: write the finish time for each section"
+          ],
+          "note": "Mock week follows the school's online exam arrangements; the teacher confirms the start time and how answers are uploaded."
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "You are 70 minutes into Section A and Q7 is unfinished. Best move?",
+            "options": [
+              "Write a short conclusion for Q7 now and move to Section B",
+              "Keep going on Q7 for another 30 minutes",
+              "Skip Section B"
+            ],
+            "answer": 0,
+            "why": "Sections B and C carry 60 marks; protecting their time is worth more than polishing Q7."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write your personal time plan with clock times for a 9:00 start.",
+          "a": "For example: reading to 9:15, Section A to 10:15, Section B to 11:05, Section C to 11:55, check to 12:00.",
+          "mins": 4,
+          "model": "Add each section's minutes to the start time: 9:00 + 15 = 9:15; + 60 = 10:15; + 50 = 11:05; + 50 = 11:55; + 5 = 12:00."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 20 minutes): read the walking-talking mock extracts (Text One and Text Two again), annotate for Q3, Q6 and Q7, and write a bullet plan for Q7 and Q8 in the portal response box.",
+          "a": "Annotated texts and two bullet plans that cover both texts.",
+          "mins": 20,
+          "model": "Teacher annotates the first paragraph of Text One aloud, labelling a language point, a structural shift and a Q8 idea."
+        },
+        {
+          "q": "Extend: write your Section C choice rule ('I will choose... because...').",
+          "a": "A clear personal rule.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: list your three personal targets on one card to reread before the mock.",
+          "a": "Three targets from the target sheet.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Read the questions...",
+          "options": [
+            "before the texts",
+            "after Section C"
+          ],
+          "a": "A) before the texts",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "For example: check the clock, drink water and reread my targets before starting Section B.",
+          "mins": 1
+        }
+      ],
+      "homework": "Mock week: sit the full 3-hour paper at the time set; follow your time plan.",
+      "send": "SEND: access arrangements as agreed (extra time, rest breaks, reader); simplified timing card. EAL: question command-word card. Stretch: aim to leave 10 minutes for checking."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 38,
+      "title": "Mock section: Section C under exam conditions",
+      "duration": 50,
+      "bigQuestion": "Can I choose, plan and write a 30-mark piece in exam time?",
+      "objectives": [
+        "To understand how to apply choice, planning and accuracy routines to an unseen Section C task under exam conditions"
+      ],
+      "successCriteria": [
+        "All: choose a task within two minutes and plan it",
+        "Most: complete the piece in 40 minutes",
+        "Some: leave five minutes to proofread"
+      ],
+      "keywords": [
+        {
+          "term": "unseen task",
+          "def": "a question you have not practised before"
+        },
+        {
+          "term": "exam conditions",
+          "def": "silent, timed, no help"
+        },
+        {
+          "term": "plan",
+          "def": "short notes that shape your answer before writing"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you see three writing tasks, what do you look for in the first thirty seconds?"
+      },
+      "pictures": [
+        {
+          "find": "city street rain storm night",
+          "alt": "A city street in heavy rain",
+          "for": "hook"
+        },
+        {
+          "find": "blank lined paper notebook",
+          "alt": "A blank lined notebook",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT1 English Language scheme (timed writing under exam conditions), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Mock Section C task card (three unseen titles) (pupil PDF)",
+        "AO4 and AO5 checklist (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "A discursive task needs...",
+          "options": [
+            "both sides",
+            "a story"
+          ],
+          "a": "A) both sides",
+          "mins": 1
+        },
+        {
+          "q": "Proofreading takes about...",
+          "options": [
+            "5 minutes",
+            "30 minutes"
+          ],
+          "a": "A) 5 minutes",
+          "mins": 1
+        },
+        {
+          "q": "'its' with an apostrophe means...",
+          "options": [
+            "it is",
+            "belonging to it"
+          ],
+          "a": "A) it is",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Today's three titles (unseen)",
+          "bullets": [
+            "(a) 'Schools should not set homework.' Discuss.",
+            "(b) Write a story that begins: 'The letter had been on the table for three days.'",
+            "(c) Describe a city street during a sudden storm."
+          ],
+          "note": "Original practice titles in the 4EB1 Section C style. In the exam allow about two minutes to choose, five to plan, thirty-three to write and five to check; today the writing time is shortened to fit the lesson."
+        },
+        {
+          "heading": "Choose and plan",
+          "note": "Model the choice aloud: (a) both sides come quickly (rest, family time versus practice, independence); (b) a clear mystery and change; (c) one place, many senses. Show a five-line plan for each type.",
+          "table": {
+            "head": [
+              "Task",
+              "Five-line plan"
+            ],
+            "rows": [
+              [
+                "(a) Discursive",
+                "thesis; for x2; against and rebuttal; judgement"
+              ],
+              [
+                "(b) Narrative",
+                "hook with letter; build; turn; zoom; change"
+              ],
+              [
+                "(c) Descriptive",
+                "wide shot; sound; touch; zoom; after the storm"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "For (c), which plan risks losing marks?",
+            "options": [
+              "Wide shot, sounds, close detail, the storm passing",
+              "A long story about a character's whole day",
+              "Five senses across five paragraphs"
+            ],
+            "answer": 1,
+            "why": "A description should focus on one place and moment; a long plot drifts from the task."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a five-line plan for your chosen task.",
+          "a": "A plan in the shape shown for that task type.",
+          "mins": 4,
+          "model": "Teacher writes a five-line plan for (b): letter unopened; who it is from; the decision to open it; the moment of reading, slowed down; what changes."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam conditions, 28 minutes): write your chosen Section C piece in the portal response box or on paper.",
+          "a": "A complete piece suited to the task type with controlled structure and accurate writing.",
+          "mins": 28,
+          "model": "Teacher reads the first two sentences of a model opening for (a): 'Homework divides opinion like few other school rules. Yet the real question is not whether it should exist, but what kind is worth doing.'"
+        },
+        {
+          "q": "Extend: proofread with the AO5 checklist.",
+          "a": "Errors corrected neatly.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: write one sentence on what you would improve with ten more minutes.",
+          "a": "A specific improvement.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "First thirty seconds: look for...",
+          "options": [
+            "the task you can plan fastest",
+            "the shortest title"
+          ],
+          "a": "A) the task you can plan fastest",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Which task I can plan fastest and sustain best, and whether I know its form.",
+          "mins": 1
+        }
+      ],
+      "homework": "Mock week: complete the full 3-hour paper if not yet sat.",
+      "send": "SEND: access arrangements as agreed; planning frames available. EAL: discursive and descriptive word banks. Stretch: write within 30 minutes and spend the rest improving vocabulary."
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 39,
+      "title": "Mock review: mark scheme, common errors and a personal repair list",
+      "duration": 50,
+      "bigQuestion": "What exactly will I do differently in the real exam?",
+      "objectives": [
+        "To understand how my mock answers were marked and plan specific repairs for Spring 2"
+      ],
+      "successCriteria": [
+        "All: record my marks by question and section",
+        "Most: identify the common errors that cost me marks",
+        "Some: write a repair list with practice tasks for the Ramadan break"
+      ],
+      "smsc": "Moral: taking responsibility for improvement and using feedback honestly",
+      "keywords": [
+        {
+          "term": "mark scheme",
+          "def": "the guide examiners use to award marks"
+        },
+        {
+          "term": "repair list",
+          "def": "the skills you will practise to fix gaps"
+        },
+        {
+          "term": "gap",
+          "def": "the difference between your mark and your target"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a disappointing mock result bad news or useful news? Why?"
+      },
+      "pictures": [
+        {
+          "find": "toolbox with tools",
+          "alt": "An open toolbox",
+          "for": "hook"
+        },
+        {
+          "find": "bar chart paper printed",
+          "alt": "A printed bar chart",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 HT2 English Language scheme (mock feedback and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials",
+        "Marked mock paper, question-level analysis and repair list (pupil PDF)",
+        "Ramadan break revision set (Section A, B and C tasks) (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Q8 marks are AO1 10, AO4 12 and...",
+          "options": [
+            "AO5 8",
+            "AO3 8"
+          ],
+          "a": "A) AO5 8",
+          "mins": 1
+        },
+        {
+          "q": "Q3 and Q6 test...",
+          "options": [
+            "language and structure",
+            "comparison"
+          ],
+          "a": "A) language and structure",
+          "mins": 1
+        },
+        {
+          "q": "Section C AO4 is worth...",
+          "options": [
+            "20 marks",
+            "8 marks"
+          ],
+          "a": "A) 20 marks",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "My marks by section",
+          "note": "Pupils copy their marks into the analysis sheet. The example shows one anonymous pupil: strongest in Section C, weakest in Q7 and Q8 AO1. Ask: where would five extra marks be easiest to find?",
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "Short Qs (5)",
+              "Q3+Q6 (20)",
+              "Q7 (15)",
+              "Q8 (30)",
+              "Section C (30)"
+            ],
+            "values": [
+              4,
+              12,
+              6,
+              16,
+              21
+            ],
+            "title": "Example pupil: marks by part"
+          }
+        },
+        {
+          "heading": "Common errors across the class",
+          "note": "Teacher fills from the marking. Typical: Q7 on one text only; Q8 lifting from the texts; Section C unfinished; comma splices.",
+          "misconception": {
+            "wrong": "I lost marks because I am bad at English.",
+            "right": "I lost 6 marks on Q7 because two paragraphs only discussed Text One; I will practise integrated paragraphs."
+          }
+        },
+        {
+          "heading": "Model: a repair list",
+          "note": "I do. Each repair has a gap, a cause, a task and a date.",
+          "model": {
+            "problem": "Turn the example pupil's analysis into a repair list.",
+            "steps": [
+              "Gap 1: Q7 (6/15). Cause: one text per paragraph. Task: two integrated paragraphs a week",
+              "Gap 2: Q8 AO1. Cause: lifted phrases. Task: adapt three ideas from a new text pair",
+              "Gap 3: Q3 and Q6. Cause: no structure points. Task: a structure tracker for each practice text",
+              "Keep: Section C proofreading routine"
+            ],
+            "answer": "A three-line repair list with tasks for the Ramadan break and Spring 2."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which target is most useful?",
+            "options": [
+              "Try harder in English",
+              "In every Q7 paragraph, mention both texts and compare a method",
+              "Write more",
+              "Revise everything"
+            ],
+            "answer": 1,
+            "why": "It is specific and checkable; the others give no clear action."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rewrite your weakest mock paragraph using the feedback (DIRT).",
+          "a": "An improved paragraph that fixes the named cause.",
+          "mins": 6,
+          "model": "Teacher redrafts an anonymous Q7 paragraph live: add Text Two evidence, add 'whereas', add a comparison of methods."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: complete the question-level analysis and write your repair list (three gaps, causes, tasks) in the portal response box. Starter: 'My biggest gap is... because...'",
+          "a": "A complete analysis and a repair list with specific, dated tasks.",
+          "mins": 15,
+          "model": "Teacher completes the first line of the repair list with the class using the model above."
+        },
+        {
+          "q": "Extend: choose two tasks from the Ramadan break revision set that match your repair list.",
+          "a": "Two matched tasks named.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: rewrite one Section B paragraph to reach the next band.",
+          "a": "A paragraph with adapted ideas and a controlled register.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A useful target is...",
+          "options": [
+            "specific and checkable",
+            "general"
+          ],
+          "a": "A) specific and checkable",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Useful news: it shows exactly where the marks are, while there is still time to fix them.",
+          "mins": 1
+        }
+      ],
+      "homework": "Ramadan break (15 Feb to 12 Mar): one task from your repair list each week, uploaded to the portal.",
+      "send": "SEND: analysis sheet pre-filled with question numbers. EAL: feedback vocabulary card. Stretch: set a Section C target as well."
     }
   ]
 }

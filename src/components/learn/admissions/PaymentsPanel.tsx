@@ -14,6 +14,7 @@ import { Group, Pill, fieldCls, ghostBtn, primaryBtn } from "@/components/learn/
 import { ukToday } from "@/lib/learn/ukTime";
 import { btn } from "@/components/learn/ui";
 
+import { askConfirm } from "@/components/learn/kit";
 export const PAYMENTS_BUCKET = "admissions-payments";
 
 type Proof = {
@@ -176,7 +177,7 @@ export function PaymentsPanel({
   async function reset(p: Proof) {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (p.status === "verified" && !window.confirm("Reset this verified proof to pending? The fee-received flags stay ticked; untick them in Process > Offer & paperwork if needed.")) return;
+    if (p.status === "verified" && !(await askConfirm("Reset this verified proof to pending? The fee-received flags stay ticked; untick them in Process > Offer & paperwork if needed."))) return;
     setBusyId(p.id);
     const { error: err } = await supabase.from("admissions_payment_proofs").update({ status: "pending", verified_by: null, verified_at: null, amount_verified: null }).eq("id", p.id);
     setBusyId(null);

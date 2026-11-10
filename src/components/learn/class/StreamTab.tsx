@@ -12,6 +12,7 @@ import { RecordingChip, useRecordingLinks } from "@/components/learn/class/Lesso
 import { useNow } from "@/lib/learn/useNow";
 import { ukToday } from "@/lib/learn/ukTime";
 
+import { askConfirm } from "@/components/learn/kit";
 type AnnRow = {
   id: string;
   title: string;
@@ -81,7 +82,7 @@ function CommentThread({
 
   const remove = async (id: string) => {
     const supabase = getSupabaseClient();
-    if (!supabase || !window.confirm("Delete this comment?")) return;
+    if (!supabase || !(await askConfirm("Delete this comment?"))) return;
     await supabase.from("class_post_comments").update({ deleted_at: new Date().toISOString() }).eq("id", id);
     onChanged();
   };
@@ -209,7 +210,7 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
 
   const recall = async (id: string) => {
     const supabase = getSupabaseClient();
-    if (!supabase || !window.confirm("Recall this announcement? Families and pupils will no longer see it.")) return;
+    if (!supabase || !(await askConfirm("Recall this announcement? Families and pupils will no longer see it."))) return;
     await supabase.from("announcements").update({ recalled_at: new Date().toISOString() }).eq("id", id);
     load();
   };

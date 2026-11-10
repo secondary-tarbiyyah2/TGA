@@ -20,6 +20,7 @@ import {
   type Star,
 } from "./starData";
 
+import { askConfirm } from "@/components/learn/kit";
 /** Short, factual evidence lines for one pupil's week. */
 export function evidence(c: Candidate): string[] {
   const out: string[] = [];
@@ -135,7 +136,7 @@ export function StarWeek({ isHead, classId, className, weekStart, me, onChanged 
     setMsg(null);
     try {
       if (kind === "withdraw") {
-        if (!window.confirm("Withdraw this nomination?")) return;
+        if (!(await askConfirm("Withdraw this nomination?"))) return;
         const { error } = await supabase.from("star_of_the_week").delete().eq("id", star.id);
         if (error) throw new Error("Couldn't withdraw that nomination.");
         setMsg({ tone: "good", text: "Nomination withdrawn." });

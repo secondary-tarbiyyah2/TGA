@@ -9,6 +9,7 @@ import type { CurriculumLesson } from "@/lib/learn/curriculum";
 import { BLOCKS, HOOK_TYPES, ROUTINES, ROUTINE_SECTIONS, blockProblems, extrasProblems, lessonWarnings } from "@/lib/learn/lessonSchema.mjs";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 // The lesson as stored in curriculum_lessons.content: the lesson object from
 // content/lessons/<subject>/<year>.json (content/lessons/README.md). Fields this form does not
 // show (board, anything else) are kept as they are. Slide blocks (worked examples, charts…) are
@@ -268,8 +269,8 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
       return { ...x, teach: t };
     });
 
-  const close = () => {
-    if (dirty && !window.confirm("Close without saving your changes?")) return;
+  const close = async () => {
+    if (dirty && !(await askConfirm("Close without saving your changes?"))) return;
     onClose();
   };
 

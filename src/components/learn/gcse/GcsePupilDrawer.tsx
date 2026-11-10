@@ -17,6 +17,7 @@ import {
 import { BoundaryEditor, GcseStatusChip, GradeChip, TrendLine, gradeOptions, useBoundaries } from "@/components/learn/gcse/GcseParts";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 export type PupilSubjectRow = GcseRow & { subject_name: string };
 
 const fmtDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" });
@@ -114,7 +115,7 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
   }
 
   async function removeMock(h: GcseHistoryRow) {
-    if (!supabase || !window.confirm("Remove this mock exam result from the history?")) return;
+    if (!supabase || !(await askConfirm("Remove this mock exam result from the history?"))) return;
     const { error } = await supabase.from("gcse_grade_history").delete().eq("id", h.id);
     if (error) return setMsg({ ok: false, text: "Couldn't remove that result." });
     setMsg({ ok: true, text: "Mock result removed. The pupil's actual grade is unchanged; edit it in Enter grades if needed." });

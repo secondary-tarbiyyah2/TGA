@@ -19,6 +19,7 @@ import { PageHeader } from "@/components/learn/PageHeader";
 import { Button, ButtonLink, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Keyword = { id: string; phrase: string };
 
 function SafeguardingKeywordsAdmin() {
@@ -53,7 +54,7 @@ function SafeguardingKeywordsAdmin() {
     await load();
   };
   const remove = async (k: Keyword) => {
-    if (!supabase || !window.confirm(`Stop flagging messages that contain "${k.phrase}"?`)) return;
+    if (!supabase || !(await askConfirm(`Stop flagging messages that contain "${k.phrase}"?`))) return;
     setError(null);
     const { error: err } = await supabase.from("safeguarding_keywords").delete().eq("id", k.id);
     if (err) setError("Couldn't remove that phrase. Only the Safeguarding Lead can change this list.");

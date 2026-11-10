@@ -11,6 +11,7 @@ import { saveCsv, toCsv } from "@/lib/learn/csv";
 import { Button, Field, IconButton, StatusChip, btn, ui } from "@/components/learn/ui";
 import { fromUkDateTimeInput, shiftDateKey, ukDateTimeInput, ukDaysAgo, ukMinutesOfDay, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
 
+import { askConfirm } from "@/components/learn/kit";
 type Shift = {
   id: string;
   user_id: string;
@@ -192,7 +193,7 @@ function StaffAttendanceContent() {
   const closeShift = async (s: Shift) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!window.confirm(`Clock ${nameOf(s.user_id)} out now?`)) return;
+    if (!(await askConfirm(`Clock ${nameOf(s.user_id)} out now?`))) return;
     setBusyId(s.id);
     const { error: err } = await supabase
       .from("staff_shifts")

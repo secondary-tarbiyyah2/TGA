@@ -2,210 +2,1833 @@
   "subject": "Islamic Studies",
   "year": "y8",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme and the Edexcel spec content areas (1.4, 1.8, 2.2, 2.3, 2.6, 2.7), own knowledge, authentic sources only",
+  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme and the Edexcel spec content areas (1.4, 1.8, 2.2, 2.3, 2.6, 2.7), own knowledge, authentic sources only | Spring 1 2027 (lessons 1 to 7 and 10 upgraded, 13 and 14 new): Year 8 pack Islamic Studies Spring 1 weeks 1 to 4 and 6 (angels and books; messengers and the Isra and Mi'raj; the Hijrah and Madinah; Badr and lessons from the Seerah; zakah and the unit quiz); unit name from the syllabus yearMap; week 5 (sources of Shari'ah) not timetabled; hadith cited from Bukhari and Muslim or described (seerah reports from Ibn Ishaq named as such); approved seerah text TO CONFIRM",
   "lessons": [
     {
-      "unit": "Unit 1: The Pillars of Iman in depth",
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
       "n": 1,
       "title": "Belief in the angels",
       "duration": 50,
-      "objectives": ["Explain what Muslims believe about angels", "Describe the roles of Jibril, Mikail, Israfil and the angel of death", "Explain how belief in angels affects behaviour"],
+      "bigQuestion": "If angels are with us all the time but we cannot see them, how should that change the way we behave?",
+      "objectives": [
+        "To understand what Muslims believe about the angels and how this belief affects daily life"
+      ],
+      "successCriteria": [
+        "All: describe three qualities of angels from the Qur'an and Sunnah",
+        "Most: match named angels to their roles",
+        "Some: explain how belief in angels shapes a Muslim's behaviour"
+      ],
+      "smsc": "Spiritual: belief in the unseen (al-ghayb)",
       "keywords": [
-        { "term": "malaikah", "def": "angels: beings of light who obey Allah completely" },
-        { "term": "Jibril", "def": "the angel who brings revelation" },
-        { "term": "Kiraman Katibin", "def": "the noble recording angels" },
-        { "term": "ghayb", "def": "the unseen" }
+        {
+          "term": "mala'ikah (مَلَائِكَة)",
+          "def": "angels: created by Allah from light to obey Him"
+        },
+        {
+          "term": "al-ghayb (الْغَيْب)",
+          "def": "the unseen: what we cannot see but believe in"
+        },
+        {
+          "term": "Jibril (جِبْرِيل)",
+          "def": "the angel who brought revelation"
+        },
+        {
+          "term": "Kiraman Katibin (كِرَامًا كَاتِبِين)",
+          "def": "the noble angels who write our deeds"
+        },
+        {
+          "term": "wahy (وَحْي)",
+          "def": "revelation from Allah"
+        }
       ],
-      "starter": ["Name the six pillars of iman.", "What is the shahadah?", "Why do Muslims believe in things they cannot see?"],
+      "hook": {
+        "type": "ponder",
+        "text": "If angels are with us all the time but we cannot see them, how should that change the way we behave?",
+        "a": "Angels record our deeds (82:10-12), so a believer behaves well in private as in public."
+      },
+      "islamicLink": {
+        "text": "Allah describes the believers as those who believe in Allah, His angels, His books and His messengers (al-Baqarah 2:285). Belief in the angels is the second pillar of iman.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "How many pillars of iman are there?",
+          "a": "Six",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Six",
+            "Seven"
+          ]
+        },
+        {
+          "q": "What is tawhid?",
+          "a": "Believing Allah is One and worshipping Him alone",
+          "mins": 1,
+          "options": [
+            "Believing Allah is One and worshipping Him alone",
+            "Belief in the angels"
+          ]
+        },
+        {
+          "q": "Name the hadith that lists the pillars of iman.",
+          "a": "The hadith of Jibril (Muslim)",
+          "mins": 1,
+          "options": [
+            "The hadith of Jibril",
+            "The hadith on intentions"
+          ]
+        },
+        {
+          "q": "What is shirk?",
+          "a": "Associating partners with Allah",
+          "mins": 1
+        }
+      ],
       "teach": [
-        { "heading": "Angels in Islam", "bullets": ["Created from light (Sahih Muslim, Aisha)", "They obey Allah and never disobey (66:6)", "They do not eat, sleep or tire", "Belief in them is the second pillar of iman"], "note": "Begin with bismillah. Aisha reported that the Prophet ﷺ said angels were created from light, jinn from smokeless fire, and Adam from what has been described to you (Muslim). Qur’an 66:6 says the angels do not disobey Allah in what He commands and do what they are commanded. Misconception: angels are not female, not partners of Allah, not to be worshipped or called upon." },
-        { "heading": "Four angels and their roles", "bullets": ["Jibril: revelation to the prophets", "Mikail: rain and provision", "Israfil: will blow the trumpet", "The angel of death takes souls (32:11)"], "note": "Jibril and Mikail are named in Qur’an 2:97-98 (Edexcel passage). The Prophet ﷺ saw Jibril in his true form with a vast creation covering the horizon (Bukhari and Muslim). Israfil is named in authentic hadith as the one who will blow the Trumpet (for example in the supplication of the Prophet ﷺ in Muslim). Keep descriptions simple." },
-        { "heading": "Angels who record and protect", "bullets": ["“Over you are noble recording angels” (82:10-12)", "They write down every deed", "They also guard people by Allah’s command (13:11)"], "note": "Ask: how would you behave if a record of every deed were being kept? (It is: that is reality.) Emphasise the hopeful side: good deeds are multiplied. Avoid frightening pupils; talk of accountability with mercy." },
-        { "heading": "Effects of belief", "bullets": ["Taqwa: awareness that deeds are recorded", "Love for the angels who ask forgiveness for believers (40:7)", "Strength: Allah helped believers with angels at Badr (3:124-125)"], "note": "Connect to next week’s battle of Badr. Pupils write two sentences: ‘Belief in angels makes me ...’. Close by sending salam on the angels." }
+        {
+          "heading": "What are angels?",
+          "bullets": [
+            "Created from light (Muslim)",
+            "Never disobey Allah (66:6)",
+            "Do not tire of worship (21:20)",
+            "Part of the unseen: believed, not seen"
+          ],
+          "note": "Begin with Bismillah. The Prophet ﷺ said angels were created from light, jinn from smokeless fire, and Adam from what you have been told (Muslim). At-Tahrim 66:6: they do not disobey Allah in what He commands and do what they are commanded. Al-Anbiya 21:20: they glorify Him night and day and do not slacken. Al-Baqarah 2:3 praises those who believe in the unseen."
+        },
+        {
+          "heading": "Angels and their roles",
+          "bullets": [],
+          "note": "Israfil is named in hadith, not the Qur'an; the Horn is in the Qur'an (39:68). Munkar and Nakir are named in a hadith reported by at-Tirmidhi.",
+          "table": {
+            "head": [
+              "Angel",
+              "Role",
+              "Evidence"
+            ],
+            "rows": [
+              [
+                "Jibril",
+                "Brings revelation",
+                "Qur'an 2:97"
+              ],
+              [
+                "Mika'il",
+                "Rain and provision (as scholars explain)",
+                "Named in 2:98"
+              ],
+              [
+                "Israfil",
+                "Will blow the Horn",
+                "Hadith; Horn in 39:68"
+              ],
+              [
+                "Angel of Death",
+                "Takes souls at death",
+                "Qur'an 32:11"
+              ],
+              [
+                "Kiraman Katibin",
+                "Record our deeds",
+                "Qur'an 82:10-12"
+              ],
+              [
+                "Malik",
+                "Keeper of Hell",
+                "Qur'an 43:77"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Jibril and revelation",
+          "bullets": [
+            "Brought the Qur'an to the Prophet ﷺ",
+            "Came at Hira with 'Iqra'",
+            "Seen in his true form with 600 wings",
+            "Came in human form in the hadith of Jibril"
+          ],
+          "note": "The Prophet ﷺ saw Jibril in his true form with six hundred wings (Bukhari, from Ibn Mas'ud). Never show pictures of angels; describe only what the texts say.",
+          "check": {
+            "q": "Which angel brought revelation to the prophets?",
+            "options": [
+              "Jibril",
+              "Mika'il",
+              "Israfil",
+              "Malik"
+            ],
+            "answer": 0,
+            "why": "Jibril brought revelation (2:97). Mika'il is linked to rain and provision, Israfil to the Horn, Malik to Hell."
+          }
+        },
+        {
+          "heading": "How it changes how we live",
+          "bullets": [
+            "Every word written: guard the tongue (50:18)",
+            "Good company: angels love dhikr",
+            "Not alone: Allah's care through angels",
+            "Motivation to do good in private"
+          ],
+          "note": "Qaf 50:18: not a word does he utter except that there is an observer ready. Ask pupils for one change they could make knowing this."
+        }
       ],
-      "practice": ["Match each angel to their role.", "Quote or paraphrase 82:10-12.", "What is a misconception about angels that Islam corrects?"],
-      "independent": ["Create a fact file on Jibril using the Qur’an and Sunnah only.", "Write a paragraph on how belief in the recording angels can shape behaviour.", "Design a Venn diagram comparing angels and humans."],
-      "exit": ["What are angels created from?", "Give one effect of believing in angels."],
-      "homework": "Write six sentences about the angels with one Qur’an reference.",
-      "send": "SEND/EAL: matching cards with pictures; stretch: evaluate whether belief in unseen things is reasonable."
+      "practice": [
+        {
+          "q": "Match: Jibril, Angel of Death, Kiraman Katibin, Malik to: record deeds, revelation, Hell, taking souls.",
+          "a": "Jibril: revelation. Angel of Death: taking souls. Kiraman Katibin: record deeds. Malik: Hell.",
+          "mins": 3,
+          "model": "I do the first: 'Jibril brought the Qur'an, so Jibril matches revelation (2:97).' Pupils do the rest on whiteboards."
+        },
+        {
+          "q": "Angels were created from ...",
+          "a": "Light",
+          "mins": 1,
+          "options": [
+            "Light",
+            "Fire",
+            "Clay"
+          ]
+        },
+        {
+          "q": "Which ayah says angels do not disobey Allah?",
+          "a": "At-Tahrim 66:6",
+          "mins": 1,
+          "options": [
+            "66:6",
+            "2:255",
+            "112:1"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box write a PEEL paragraph: 'Explain how belief in the angels affects how a Muslim lives.'",
+          "a": "Point: they know deeds are recorded. Evidence: 82:10-12 or 50:18. Explain: e.g. careful speech and honesty in private. Link.",
+          "mins": 10,
+          "model": "Teacher models the Point and Evidence: 'Belief in angels makes a Muslim careful about what they say and do. Allah says noble angels record what we do (82:10-12).'"
+        },
+        {
+          "q": "Extend: why is belief in the unseen an important part of iman?",
+          "a": "Iman includes trusting Allah's word about things we cannot see; 2:3 praises those who believe in the unseen.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what is the difference between angels and humans in terms of free will?",
+          "a": "Angels always obey (66:6); humans have choice and are tested and held responsible.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which angel will blow the Horn?",
+          "a": "Israfil",
+          "mins": 1,
+          "options": [
+            "Israfil",
+            "Jibril",
+            "Mika'il"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how should unseen angels change our behaviour?",
+          "a": "Behave well in private and public because deeds and words are recorded.",
+          "mins": 2
+        }
+      ],
+      "homework": "For one day, notice your words: write down three things you chose not to say because the angels record every word.",
+      "send": "SEND: angel-role matching cards (words only, no images). EAL: key words with Arabic. Stretch: read 35:1 and 2:97-98 and summarise.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: angels and roles table and PEEL frame",
+        "Mushaf with translation (2:97-98, 66:6, 82:10-12)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "night sky Milky Way desert",
+          "alt": "The night sky: the vast creation of Allah",
+          "for": "hook"
+        },
+        {
+          "find": "rain clouds over fields",
+          "alt": "Rain falling, linked to provision",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: The Pillars of Iman in depth",
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
       "n": 2,
       "title": "Belief in the revealed books",
       "duration": 50,
-      "objectives": ["Name the revealed books and the prophets they came to", "Explain why the Qur’an is the final, preserved book", "Describe how the Qur’an was compiled"],
+      "bigQuestion": "If you had an instruction book from the person who made you, how carefully would you read it?",
+      "objectives": [
+        "To understand what Muslims believe about the books Allah revealed and why the Qur'an is special"
+      ],
+      "successCriteria": [
+        "All: match four books to the prophets who received them",
+        "Most: explain why the Qur'an is the final and protected book",
+        "Some: explain what 'muhaymin' (5:48) means for the earlier books"
+      ],
+      "crossCurricular": "History: how texts were preserved before printing, by memory and handwriting",
+      "smsc": "Spiritual: love for and respect of the Qur'an",
       "keywords": [
-        { "term": "Tawrah", "def": "revealed to Musa (peace be upon him)" },
-        { "term": "Zabur", "def": "revealed to Dawud (peace be upon him)" },
-        { "term": "Injil", "def": "revealed to Isa (peace be upon him)" },
-        { "term": "mushaf", "def": "the written, bound copy of the Qur’an" }
+        {
+          "term": "kutub (كُتُب)",
+          "def": "books revealed by Allah"
+        },
+        {
+          "term": "Tawrat (التَّوْرَاة)",
+          "def": "the book given to Musa"
+        },
+        {
+          "term": "Zabur (الزَّبُور)",
+          "def": "the book given to Dawud"
+        },
+        {
+          "term": "Injil (الإِنْجِيل)",
+          "def": "the book given to Isa"
+        },
+        {
+          "term": "Suhuf (صُحُف)",
+          "def": "the scrolls of Ibrahim and Musa"
+        },
+        {
+          "term": "muhaymin (مُهَيْمِن)",
+          "def": "a guardian and judge over what came before"
+        }
       ],
-      "starter": ["Name two angels and their jobs.", "What are the Kiraman Katibin?", "How many pillars of iman are there?"],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had an instruction book from the person who made you, how carefully would you read it?",
+        "a": "Allah, our Creator, sent books of guidance; the Qur'an is the final one, protected by Allah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, it is We who sent down the Reminder (the Qur'an), and indeed, We will guard it' (al-Hijr 15:9). Belief in the books is the third pillar of iman.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Angels were created from ...",
+          "a": "Light",
+          "mins": 1,
+          "options": [
+            "Light",
+            "Fire",
+            "Clay"
+          ]
+        },
+        {
+          "q": "Which angel brought revelation?",
+          "a": "Jibril",
+          "mins": 1,
+          "options": [
+            "Jibril",
+            "Malik"
+          ]
+        },
+        {
+          "q": "Which ayah says angels never disobey Allah?",
+          "a": "66:6",
+          "mins": 1,
+          "options": [
+            "66:6",
+            "50:18"
+          ]
+        },
+        {
+          "q": "What do the Kiraman Katibin do?",
+          "a": "Record our deeds",
+          "mins": 1
+        }
+      ],
       "teach": [
-        { "heading": "A chain of revelation", "bullets": ["Suhuf (scrolls) of Ibrahim", "Tawrah to Musa", "Zabur to Dawud", "Injil to Isa"], "note": "Begin with bismillah. Qur’an 4:163 (Edexcel passage) names Ibrahim, Isma’il, Is’haq, Ya’qub, Isa, Ayyub, Yunus, Harun, Sulayman and the Zabur to Dawud. Muslims believe the original revelations came from Allah and that the core message was Tawhid; Muslims do not claim that the present books are exactly the original revelation. Say this respectfully." },
-        { "heading": "The Qur’an: final and preserved", "bullets": ["Revealed to Muhammad ﷺ over about 23 years", "“We have sent down the Reminder and We will guard it” (15:9)", "It confirms and guards what came before (5:48)"], "note": "Link ‘guardian’ to 5:48: the Qur’an is the criterion. Ask: what does it mean that a book is ‘preserved’? Memorisation and writing both protected it." },
-        { "heading": "Compiling the Qur’an", "bullets": ["Revelation was memorised and written during the Prophet’s ﷺ lifetime", "After Yamamah, Abu Bakr had the pages gathered", "Zayd ibn Thabit led the team", "Uthman copied standard manuscripts and sent them to cities"], "note": "This is narrated in Sahih al-Bukhari (Zayd ibn Thabit). Umar suggested the collection as many reciters were killed at Yamamah. Zayd checked each verse against written copies and memorisers. Uthman’s copies unified the recitation. Ask: why was this careful method used?" },
-        { "heading": "Living with the Qur’an", "bullets": ["Recite with tajwid", "Understand the meaning", "Act on its teachings", "Teach it to others"], "note": "The Prophet ﷺ said the best of you is he who learns the Qur’an and teaches it (Bukhari, Uthman). Ask pupils for a goal: learn a new surah, understand a surah, apply a lesson." }
+        {
+          "heading": "Books of guidance",
+          "bullets": [
+            "Allah sent guidance to every people",
+            "Some books are named in the Qur'an",
+            "Muslims believe in all of them (2:285)",
+            "All taught tawhid"
+          ],
+          "note": "Begin with Bismillah. Al-Baqarah 2:285: the believers believe in Allah, His angels, His books and His messengers. Muslims believe in the original books as Allah revealed them."
+        },
+        {
+          "heading": "The named books",
+          "bullets": [],
+          "note": "An-Nisa 4:163: 'to Dawud We gave the Zabur'. Al-Ma'idah 5:46: Allah gave Isa the Injil. Al-A'la 87:18-19: the scrolls of Ibrahim and Musa.",
+          "table": {
+            "head": [
+              "Book",
+              "Prophet",
+              "Evidence"
+            ],
+            "rows": [
+              [
+                "Suhuf",
+                "Ibrahim (and Musa)",
+                "Qur'an 87:18-19"
+              ],
+              [
+                "Tawrat",
+                "Musa",
+                "Qur'an 5:44"
+              ],
+              [
+                "Zabur",
+                "Dawud",
+                "Qur'an 4:163"
+              ],
+              [
+                "Injil",
+                "Isa",
+                "Qur'an 5:46"
+              ],
+              [
+                "Qur'an",
+                "Muhammad ﷺ",
+                "Qur'an 15:9, 25:1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "What happened to the earlier books?",
+          "bullets": [
+            "Originals not preserved as revealed",
+            "Some words were changed by people (2:79)",
+            "The Qur'an confirms the truth in them",
+            "The Qur'an is the guardian over them (5:48)"
+          ],
+          "note": "Al-Baqarah 2:79 warns those who write the book with their own hands then say 'this is from Allah'. Al-Ma'idah 5:48 calls the Qur'an a confirmation of what came before and a muhaymin over it. Teach respectfully: Muslims respect Jews and Christians as People of the Book.",
+          "check": {
+            "q": "Which book did Allah promise to protect Himself (15:9)?",
+            "options": [
+              "The Qur'an",
+              "The Zabur",
+              "The Tawrat",
+              "The Suhuf"
+            ],
+            "answer": 0,
+            "why": "15:9 promises protection of the Qur'an (the Reminder). The earlier books were entrusted to their people and were not preserved as revealed."
+          }
+        },
+        {
+          "heading": "How the Qur'an is protected",
+          "bullets": [
+            "Memorised by huffadh in every age",
+            "Written in the Prophet's ﷺ lifetime",
+            "Gathered under Abu Bakr",
+            "Standard copies sent out by Uthman"
+          ],
+          "note": "After the Battle of Yamamah, Umar urged Abu Bakr to gather the Qur'an; Zayd ibn Thabit did it. Uthman later had copies made and sent to the main cities (both in Bukhari). Millions memorise it today, including children at TGA in hifdh."
+        }
       ],
-      "practice": ["Match each book to its prophet.", "Why is the Qur’an described as preserved?", "Who led the compilation under Abu Bakr?"],
-      "independent": ["Create a timeline of how the Qur’an was recorded.", "Write 100 words: ‘Why Muslims believe in all the revealed books but follow the Qur’an’.", "Make a revision card with four facts on Uthman’s copies."],
-      "exit": ["Name the book revealed to Dawud.", "Who gathered the Qur’an after Yamamah?"],
-      "homework": "Memorise 15:9 and write a short explanation of what it means.",
-      "send": "SEND/EAL: timeline strips; stretch: explain why the compilation under Abu Bakr and Uthman matters."
+      "practice": [
+        {
+          "q": "Match: Zabur, Injil, Tawrat, Suhuf to Musa, Isa, Dawud, Ibrahim.",
+          "a": "Zabur: Dawud. Injil: Isa. Tawrat: Musa. Suhuf: Ibrahim (and Musa).",
+          "mins": 3,
+          "model": "I do: 4:163 says 'to Dawud We gave the Zabur', so Zabur matches Dawud. Pupils match the rest on whiteboards."
+        },
+        {
+          "q": "Who compiled the Qur'an into one copy for Abu Bakr?",
+          "a": "Zayd ibn Thabit",
+          "mins": 1,
+          "options": [
+            "Zayd ibn Thabit",
+            "Bilal",
+            "Khalid"
+          ]
+        },
+        {
+          "q": "What does 'muhaymin' mean?",
+          "a": "Guardian and judge over what came before",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box write a PEEL paragraph: 'Explain why Muslims believe the Qur'an is the final and protected book.'",
+          "a": "Point: Allah promised to protect it. Evidence: 15:9. Explain: memorisation, writing, compilation under Abu Bakr and Uthman. Link: so it is unchanged and final guidance.",
+          "mins": 10,
+          "model": "Teacher models: 'Point: Muslims believe the Qur'an has been protected from change. Evidence: Allah says \"We will guard it\" (15:9). Explain: ...'"
+        },
+        {
+          "q": "Extend: how should a Muslim treat the Qur'an in daily life?",
+          "a": "Recite it, understand it, act on it, handle it with respect, learn by heart (hifdh).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why do Muslims believe in the earlier books but follow the Qur'an?",
+          "a": "The earlier books were true in their original form but were not preserved; the Qur'an is the final, protected guidance and confirms the truth in them (5:48).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which book was given to Isa?",
+          "a": "The Injil",
+          "mins": 1,
+          "options": [
+            "The Injil",
+            "The Tawrat",
+            "The Zabur"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how carefully should we read Allah's book?",
+          "a": "With great care: recite, understand and act on it, because it is guidance from our Creator.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the five books and their prophets, and recite one surah you know to a family member with its meaning.",
+      "send": "SEND: book and prophet matching cards. EAL: key words with Arabic. Stretch: read 5:44-48 in translation and note what each ayah says.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: books table and PEEL frame",
+        "Mushaf with translation (4:163, 5:46-48, 15:9, 87:18-19)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on stand",
+          "alt": "A mushaf open on a stand",
+          "for": "teach:4"
+        },
+        {
+          "find": "old scroll parchment",
+          "alt": "An ancient scroll",
+          "for": "keywords"
+        },
+        {
+          "find": "Topkapi Quran manuscript",
+          "alt": "An early handwritten copy of the Qur'an",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: The Pillars of Iman in depth",
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
       "n": 3,
-      "title": "Belief in the messengers",
+      "title": "Belief in the messengers: their qualities and their miracles",
       "duration": 50,
-      "objectives": ["Explain why prophets were sent", "Describe key prophets and their messages", "Explain the meaning of Seal of the Prophets"],
+      "bigQuestion": "Why do you think Allah chose human beings, not angels, to be His messengers to people?",
+      "objectives": [
+        "To understand what Muslims believe about the messengers, their qualities and the miracles that supported them"
+      ],
+      "successCriteria": [
+        "All: define nabi and rasul and name the five ulul 'azm",
+        "Most: describe the qualities all messengers share",
+        "Some: explain why the Qur'an is the lasting miracle of Muhammad ﷺ"
+      ],
+      "smsc": "Spiritual: love and respect for every prophet",
       "keywords": [
-        { "term": "nabi", "def": "prophet" },
-        { "term": "rasul", "def": "messenger with a revealed scripture or law" },
-        { "term": "ma’sum", "def": "protected by Allah from major sin and from wrongly conveying the message" },
-        { "term": "khatam an-nabiyyin", "def": "Seal of the Prophets" }
+        {
+          "term": "rasul (رَسُول)",
+          "def": "a messenger sent with a message to deliver"
+        },
+        {
+          "term": "nabi (نَبِيّ)",
+          "def": "a prophet who receives revelation"
+        },
+        {
+          "term": "mu'jizah (مُعْجِزَة)",
+          "def": "a miracle Allah gave a prophet as proof"
+        },
+        {
+          "term": "'ismah (عِصْمَة)",
+          "def": "Allah's protection of prophets in conveying the message"
+        },
+        {
+          "term": "ulul 'azm (أُولُو الْعَزْم)",
+          "def": "the messengers of great determination"
+        }
       ],
-      "starter": ["Name the book revealed to Isa.", "Who compiled the Qur’an under Abu Bakr?", "What does preserved mean?"],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think Allah chose human beings, not angels, to be His messengers to people?",
+        "a": "So people could see the message lived out by someone like them and follow a real example (18:110)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Muhammad is not the father of any of your men, but he is the Messenger of Allah and the Seal of the Prophets' (al-Ahzab 33:40), and 'We have not sent you except to all people' (Saba 34:28).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which book was given to Dawud?",
+          "a": "The Zabur",
+          "mins": 1,
+          "options": [
+            "The Zabur",
+            "The Injil",
+            "The Tawrat"
+          ]
+        },
+        {
+          "q": "Which ayah promises the Qur'an's protection?",
+          "a": "15:9",
+          "mins": 1,
+          "options": [
+            "15:9",
+            "2:79"
+          ]
+        },
+        {
+          "q": "Who gathered the Qur'an under Abu Bakr?",
+          "a": "Zayd ibn Thabit",
+          "mins": 1,
+          "options": [
+            "Zayd ibn Thabit",
+            "Umar"
+          ]
+        },
+        {
+          "q": "What does 'muhaymin' mean?",
+          "a": "A guardian over what came before",
+          "mins": 1
+        }
+      ],
       "teach": [
-        { "heading": "Why prophets?", "bullets": ["To call people to worship Allah alone (16:36)", "To teach how to live", "To be examples of character", "To give good news and warnings"], "note": "Begin with bismillah. Ask: if you wanted to know how to cook a new recipe, would a book be enough, or would you like a teacher? Prophets show us how to apply revelation." },
-        { "heading": "Prophets in the Qur’an", "bullets": ["Adam, Nuh and Ibrahim", "Musa, Dawud and Isa", "25 are named in the Qur’an", "We believe in all of them without distinction (2:285)"], "note": "Give brief profiles. Ibrahim: stood for Tawhid and built the Ka’bah with Isma’il. Musa: led his people from oppression. Isa: born miraculously to Maryam; a servant and messenger of Allah (4:171). Muslims love and honour all prophets and say ‘peace be upon him’." },
-        { "heading": "Their qualities", "bullets": ["Truthfulness", "Trustworthiness", "Conveying the message", "Intelligence and wisdom"], "note": "Ask: why must prophets be truthful and trustworthy? (Otherwise people could not rely on them.) These are classical qualities discussed by scholars. Prophets are human and do not share in Allah’s divinity (18:110)." },
-        { "heading": "The Seal of the Prophets", "bullets": ["“Muhammad is the Messenger of Allah and the Seal of the Prophets” (33:40)", "No prophet after him", "His message is for all humankind (34:28)", "We follow his Sunnah"], "note": "Edexcel 1.3 passage. Draw out: the Qur’an was preserved, so no new revelation is needed. Misconception: that finality means earlier prophets are less important. Ask: why do Muslims say ‘peace and blessings be upon him’?" }
+        {
+          "heading": "Nabi and rasul",
+          "bullets": [
+            "Allah sent messengers to every nation (16:36)",
+            "Many scholars: every rasul is a nabi",
+            "A rasul delivers a message to people",
+            "25 are named in the Qur'an"
+          ],
+          "note": "Begin with Bismillah. Explain the common scholarly distinction carefully; scholars word it differently. An-Nisa 4:164: some messengers' stories are told, others are not."
+        },
+        {
+          "heading": "Qualities of the messengers",
+          "bullets": [
+            "Human, not divine (18:110)",
+            "Truthful and trustworthy",
+            "Conveyed the whole message",
+            "Protected from error in conveying it"
+          ],
+          "note": "Al-Kahf 18:110: 'I am only a man like you, to whom it has been revealed that your god is one God.' 'Ismah: Allah protected them in conveying revelation and from major sins."
+        },
+        {
+          "heading": "Miracles as proof",
+          "bullets": [],
+          "note": "Miracles matched what their people valued. The Qur'an challenges people to produce a surah like it (2:23). Never show pictures of prophets.",
+          "table": {
+            "head": [
+              "Prophet",
+              "Miracle (from the Qur'an)",
+              "Reference"
+            ],
+            "rows": [
+              [
+                "Ibrahim",
+                "The fire became cool and safe",
+                "21:69"
+              ],
+              [
+                "Musa",
+                "The staff and the parting of the sea",
+                "26:63"
+              ],
+              [
+                "Isa",
+                "Healing and giving life by Allah's permission",
+                "5:110"
+              ],
+              [
+                "Muhammad ﷺ",
+                "The Qur'an: no one can produce its like",
+                "2:23"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The Seal for all people",
+          "bullets": [
+            "Ulul 'azm: Nuh, Ibrahim, Musa, Isa, Muhammad ﷺ",
+            "Muhammad ﷺ is the last prophet (33:40)",
+            "His message is for all people (34:28)"
+          ],
+          "note": "Al-Ahqaf 46:35 mentions the messengers of determination; they are commonly listed from 33:7 and 42:13. Saba 34:28 and al-A'raf 7:158: his message is for all mankind.",
+          "check": {
+            "q": "Why is the Qur'an called the 'lasting' miracle?",
+            "options": [
+              "It can still be read and tested today",
+              "It was only for one generation",
+              "It was a physical object",
+              "It replaced all other prophets"
+            ],
+            "answer": 0,
+            "why": "Earlier miracles were seen by those present; the Qur'an remains and its challenge (2:23) is still open."
+          }
+        }
       ],
-      "practice": ["Write three reasons Allah sent prophets.", "Name four prophets and one thing about each.", "Explain what ‘Seal of the Prophets’ means."],
-      "independent": ["Create a comparison chart of Ibrahim, Musa and Isa with their challenges and lessons.", "Write a paragraph on why prophets had to be role models.", "Prepare a short talk for a school assembly: ‘All the prophets, one message’."],
-      "exit": ["What was the main message of all the prophets?", "Which verse says Muhammad ﷺ is the last prophet?"],
-      "homework": "Research one prophet from the Qur’an and write six facts with the Qur’an reference.",
-      "send": "SEND/EAL: prophet fact cards with images; stretch: explain the difference between a nabi and a rasul."
+      "practice": [
+        {
+          "q": "Ibrahim's miracle in 21:69 shows what about Allah?",
+          "a": "That Allah controls all things: fire burns only by His will, and He protects His messengers.",
+          "mins": 3,
+          "model": "I do: 1) The event: Ibrahim was thrown into a fire. 2) Allah said 'O fire, be coolness and safety' (21:69). 3) So fire has no power of its own; Allah controls it and protects His messengers."
+        },
+        {
+          "q": "Name the five ulul 'azm.",
+          "a": "Nuh, Ibrahim, Musa, Isa, Muhammad ﷺ",
+          "mins": 1
+        },
+        {
+          "q": "Which ayah calls Muhammad ﷺ the Seal of the Prophets?",
+          "a": "33:40",
+          "mins": 1,
+          "options": [
+            "33:40",
+            "21:69",
+            "2:23"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box write a PEEL paragraph: 'Explain why belief in the messengers is important for Muslims.'",
+          "a": "Point: they bring Allah's guidance. Evidence: 16:36 or 2:285. Explain: we learn tawhid and how to live; they are examples. Link.",
+          "mins": 10,
+          "model": "Teacher models the Point and Evidence: 'Belief in the messengers matters because they are how Allah's guidance reaches people. Allah sent a messenger to every nation (16:36).'"
+        },
+        {
+          "q": "Extend: why does it matter that messengers were human?",
+          "a": "People can follow a human example; it guards against worshipping them (18:110).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain the challenge in 2:23 and why it is still a proof today.",
+          "a": "Allah challenges anyone in doubt to produce one surah like the Qur'an; it remains unmet, so the Qur'an still proves the message.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which prophet's sea was parted?",
+          "a": "Musa",
+          "mins": 1,
+          "options": [
+            "Musa",
+            "Isa",
+            "Nuh"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why humans, not angels?",
+          "a": "So people have a real example they can follow, someone like them (18:110).",
+          "mins": 2
+        }
+      ],
+      "homework": "Choose one of the ulul 'azm and write a short fact file (no pictures of the prophet): his people, his book or miracle, and one lesson for today.",
+      "send": "SEND: miracle and prophet matching cards. EAL: key words with Arabic. Stretch: compare 18:110 and 33:40.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: miracles table and PEEL frame",
+        "Mushaf with translation (16:36, 18:110, 21:69, 33:40, 2:23)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Red Sea coast",
+          "alt": "The Red Sea, linked to the story of Musa",
+          "for": "teach:3"
+        },
+        {
+          "find": "Quran calligraphy page",
+          "alt": "A page of the Qur'an, the lasting miracle",
+          "for": "teach:4"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Seerah - the road to Madinah",
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
       "n": 4,
-      "title": "The Isra and Mi’raj",
+      "title": "The Isra and Mi'raj",
       "duration": 50,
-      "objectives": ["Describe the Night Journey and the Ascension", "Explain the gift of the five daily prayers", "Understand the significance of al-Aqsa"],
+      "bigQuestion": "After the hardest year of his life, what gift did the Prophet ﷺ receive, and why do you think it came then?",
+      "objectives": [
+        "To understand the events of the Isra and Mi'raj and why salah is called its gift"
+      ],
+      "successCriteria": [
+        "All: sequence the main events of the night journey",
+        "Most: explain how the five prayers were given",
+        "Some: explain why Abu Bakr was called as-Siddiq"
+      ],
+      "crossCurricular": "Geography: locating Makkah and Jerusalem (al-Quds) on a map of the Middle East",
+      "smsc": "Spiritual: salah as the believer's meeting with Allah",
       "keywords": [
-        { "term": "Isra", "def": "the night journey from Makkah to Jerusalem" },
-        { "term": "Mi’raj", "def": "the ascension through the heavens" },
-        { "term": "al-Aqsa", "def": "the blessed mosque in Jerusalem" },
-        { "term": "Buraq", "def": "the creature on which the Prophet ﷺ travelled" }
+        {
+          "term": "Isra (الإِسْرَاء)",
+          "def": "the night journey from Makkah to Jerusalem"
+        },
+        {
+          "term": "Mi'raj (الْمِعْرَاج)",
+          "def": "the ascension through the heavens"
+        },
+        {
+          "term": "al-Masjid al-Aqsa (الْمَسْجِدُ الْأَقْصَى)",
+          "def": "the mosque in Jerusalem, the first qiblah"
+        },
+        {
+          "term": "Sidrat al-Muntaha (سِدْرَةُ الْمُنْتَهَى)",
+          "def": "the lote tree of the furthest boundary"
+        },
+        {
+          "term": "as-Siddiq (الصِّدِّيق)",
+          "def": "the one who always affirms the truth: Abu Bakr"
+        }
       ],
-      "starter": ["Who was the Seal of the Prophets?", "Name two things Ja’far told the Negus.", "What do we call patience in Arabic?"],
+      "hook": {
+        "type": "ponder",
+        "text": "After the hardest year of his life, what gift did the Prophet ﷺ receive, and why do you think it came then?",
+        "a": "The Isra and Mi'raj, with the gift of the five daily prayers: comfort and honour after the Year of Sorrow."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Glory be to the One who took His servant by night from al-Masjid al-Haram to al-Masjid al-Aqsa, whose surroundings We have blessed, to show him some of Our signs' (al-Isra 17:1).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Who is the Seal of the Prophets?",
+          "a": "Muhammad ﷺ",
+          "mins": 1,
+          "options": [
+            "Muhammad ﷺ",
+            "Isa"
+          ]
+        },
+        {
+          "q": "What is a mu'jizah?",
+          "a": "A miracle given to a prophet as proof",
+          "mins": 1,
+          "options": [
+            "A miracle given to a prophet",
+            "A book"
+          ]
+        },
+        {
+          "q": "Which two people died in the Year of Sorrow?",
+          "a": "Abu Talib and Khadijah",
+          "mins": 1,
+          "options": [
+            "Abu Talib and Khadijah",
+            "Abu Bakr and Umar"
+          ]
+        },
+        {
+          "q": "Which town rejected the Prophet ﷺ after the Year of Sorrow?",
+          "a": "Ta'if",
+          "mins": 1
+        }
+      ],
       "teach": [
-        { "heading": "A time of hardship", "bullets": ["Khadijah and Abu Talib died within a short time", "The Prophet ﷺ went to Ta’if and was rejected", "Then Allah honoured him with the Night Journey"], "note": "Begin with bismillah and salawat. The year is called the ‘Year of Sorrow’ in the seerah. The Prophet ﷺ was driven out of Ta’if and made a heartfelt du’a (reported in the seerah). Ask: how does Allah comfort the sincere? Date: say it was in the Makkan period; scholars differ on the exact date." },
-        { "heading": "The Night Journey", "bullets": ["“Glory to Him who took His servant by night from al-Masjid al-Haram to al-Masjid al-Aqsa” (17:1)", "He led the prophets in prayer at al-Aqsa", "He was taken on the Buraq"], "note": "Read 17:1 in English. Explain Buraq as mentioned in authentic hadith (Muslim, Anas) as a white animal smaller than a mule and bigger than a donkey. Ask: why is al-Aqsa special? (Qiblah for early Muslims, blessed land, linked with the prophets.)" },
-        { "heading": "The Ascension", "bullets": ["He ascended through the seven heavens", "He met prophets including Adam, Isa, Yusuf, Musa and Ibrahim", "He was shown Paradise and the Lote Tree of the Utmost Boundary"], "note": "Bukhari and Muslim narrate that he met Adam in the first heaven, Yahya and Isa in the second, Yusuf in the third, Idris in the fourth, Harun in the fifth, Musa in the sixth and Ibrahim in the seventh. Ask: what message is in meeting so many prophets? (One message.)" },
-        { "heading": "The gift of salah", "bullets": ["Fifty prayers were first prescribed", "Musa advised him to ask for reduction", "It became five prayers with the reward of fifty", "Salah is a direct gift from Allah"], "note": "From Bukhari and Muslim (Anas, Malik ibn Sa’sa’ah). Stress mercy and ease. Ask: why did Allah make salah a gift given in the heavens rather than only by Jibril? (Shows its status.) Link to Y6 salah lesson." },
-        { "heading": "Reactions and lessons", "bullets": ["Quraysh mocked it; Abu Bakr affirmed it", "Abu Bakr was called as-Siddiq, the truthful", "Test of faith: trust the word of the Prophet ﷺ"], "note": "The story that Abu Bakr affirmed it is widely reported in the seerah. Ask: how can a believer respond to things that seem surprising? (By trusting authentic revelation and recognising Allah’s power.)" }
+        {
+          "heading": "The Isra: Makkah to Jerusalem",
+          "bullets": [
+            "One night, by Allah's power (17:1)",
+            "Carried by al-Buraq",
+            "Led the prophets in prayer at al-Aqsa",
+            "Al-Aqsa: the first qiblah"
+          ],
+          "note": "Begin with Bismillah. Scholars differ on the exact date; it is commonly placed about a year before the Hijrah, after the Year of Sorrow and Ta'if. The Buraq is described in Bukhari and Muslim as a white animal smaller than a mule and larger than a donkey. No images."
+        },
+        {
+          "heading": "The Mi'raj: through the heavens",
+          "bullets": [],
+          "note": "From the narrations in Bukhari and Muslim: Jibril accompanied him through the seven heavens, where he met prophets. An-Najm 53:13-18 mentions Sidrat al-Muntaha and the greatest signs.",
+          "timeline": [
+            {
+              "label": "1st heaven",
+              "text": "Adam"
+            },
+            {
+              "label": "2nd",
+              "text": "Isa and Yahya"
+            },
+            {
+              "label": "3rd and 4th",
+              "text": "Yusuf; Idris"
+            },
+            {
+              "label": "5th and 6th",
+              "text": "Harun; Musa"
+            },
+            {
+              "label": "7th",
+              "text": "Ibrahim, by al-Bayt al-Ma'mur"
+            },
+            {
+              "label": "Beyond",
+              "text": "Sidrat al-Muntaha (53:14)"
+            }
+          ]
+        },
+        {
+          "heading": "The gift of salah",
+          "bullets": [
+            "Fifty prayers were first prescribed",
+            "Musa advised asking for less",
+            "Reduced to five, reward of fifty",
+            "Given directly, without an intermediary on earth"
+          ],
+          "note": "From the narrations in Bukhari and Muslim. The only pillar given in the heavens shows its importance. Ask: how should this change how we view our five prayers?",
+          "check": {
+            "q": "How many daily prayers were finally prescribed, and with what reward?",
+            "options": [
+              "Five, with the reward of fifty",
+              "Fifty, with the reward of five",
+              "Three, with the reward of five",
+              "Seven, with the reward of seventy"
+            ],
+            "answer": 0,
+            "why": "Fifty were reduced to five after Musa's advice, with the reward of fifty kept (Bukhari and Muslim)."
+          }
+        },
+        {
+          "heading": "The test of belief",
+          "bullets": [
+            "Quraysh mocked the journey",
+            "Some weak believers doubted",
+            "Abu Bakr: 'If he said it, it is true'",
+            "He was called as-Siddiq"
+          ],
+          "note": "Seerah reports describe Abu Bakr's immediate belief, after which he was known as as-Siddiq. The Prophet ﷺ described Jerusalem to the Quraysh, which he had not visited before (Bukhari and Muslim mention Allah showing him Jerusalem when questioned)."
+        }
       ],
-      "practice": ["What does Isra mean and what does Mi’raj mean?", "Explain how the number of prayers changed from fifty to five.", "Which verse describes the Night Journey?"],
-      "independent": ["Create a poster showing the stages of the journey with the prophets met.", "Write a paragraph: ‘Why is salah described as a gift?’", "Write a short speech on why al-Aqsa is important to Muslims."],
-      "exit": ["What did Allah give the Muslims through the Mi’raj?", "Which mosque was visited in the Isra?"],
-      "homework": "Memorise 17:1 and its meaning.",
-      "send": "SEND/EAL: sequencing pictures of the stages; stretch: evaluate the importance of the event for the early Muslim community."
+      "practice": [
+        {
+          "q": "Put in order: reduced to five prayers; Makkah to al-Aqsa; met prophets in the heavens; led the prophets in prayer.",
+          "a": "Makkah to al-Aqsa; led the prophets in prayer; met prophets in the heavens; reduced to five prayers",
+          "mins": 3,
+          "model": "I do: the Isra comes first, from Makkah to al-Aqsa. There he led the prophets in prayer. Then the Mi'raj through the heavens, meeting prophets. Last, the prayers were given and reduced to five."
+        },
+        {
+          "q": "Which ayah describes the Isra?",
+          "a": "Al-Isra 17:1",
+          "mins": 1,
+          "options": [
+            "17:1",
+            "53:14",
+            "2:183"
+          ]
+        },
+        {
+          "q": "Who advised asking for fewer prayers?",
+          "a": "Musa",
+          "mins": 1,
+          "options": [
+            "Musa",
+            "Ibrahim",
+            "Adam"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box write a PEEL paragraph: 'Explain why the Isra and Mi'raj is important to Muslims.'",
+          "a": "Point: it gave the five prayers. Evidence: 17:1; Bukhari and Muslim. Explain: comfort after hardship; honour of salah; link to al-Aqsa. Link.",
+          "mins": 10,
+          "model": "Teacher models: 'Point: the Isra and Mi'raj is important because it is when Allah gave the five daily prayers. Evidence: ...'"
+        },
+        {
+          "q": "Extend: why is al-Masjid al-Aqsa special to Muslims?",
+          "a": "The Isra was to it (17:1); the first qiblah; the prophets prayed there with him.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what can we learn from Abu Bakr's response?",
+          "a": "True iman trusts the Messenger's report even when the mind finds it amazing.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which prophet was in the seventh heaven?",
+          "a": "Ibrahim",
+          "mins": 1,
+          "options": [
+            "Ibrahim",
+            "Adam",
+            "Isa"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what was the gift, and why then?",
+          "a": "The five prayers; it came after the Year of Sorrow as comfort and honour.",
+          "mins": 2
+        }
+      ],
+      "homework": "Pray all five prayers on time for three days and write one sentence each day about how you prepared.",
+      "send": "SEND: event cards with place pictures (no people). EAL: map with key places labelled. Stretch: read 53:1-18 in translation.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: night journey sequence and PEEL frame",
+        "Map of Makkah and Jerusalem (on screen)",
+        "Mushaf with translation (17:1, 53:13-18)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Al-Aqsa Mosque Jerusalem qibli mosque",
+          "alt": "Al-Masjid al-Aqsa in Jerusalem",
+          "for": "teach:1"
+        },
+        {
+          "find": "Masjid al-Haram Makkah",
+          "alt": "Al-Masjid al-Haram in Makkah",
+          "for": "hook"
+        },
+        {
+          "find": "Ziziphus spina-christi tree",
+          "alt": "A lote tree (sidr)",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Seerah - the road to Madinah",
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
       "n": 5,
-      "title": "The Hijrah: plot, cave and journey",
+      "title": "The Hijrah: the plot, the cave and the journey",
       "duration": 50,
-      "objectives": ["Retell the events of the Hijrah", "Explain the roles of Abu Bakr, Ali, Asma and others", "Explain why the Hijrah was a turning point"],
+      "bigQuestion": "Would you leave your home, your belongings and your city for your beliefs? What would make you do it?",
+      "objectives": [
+        "To understand the events of the Hijrah and the planning and trust in Allah it shows"
+      ],
+      "successCriteria": [
+        "All: sequence the main events of the Hijrah",
+        "Most: describe the roles of Ali, Abu Bakr, Asma' and the guide",
+        "Some: explain how the Hijrah shows both planning and tawakkul"
+      ],
+      "crossCurricular": "History: chronology and the reasons for migration",
+      "smsc": "Moral: loyalty, courage and sacrifice for what is right",
       "keywords": [
-        { "term": "Hijrah", "def": "the migration of the Prophet ﷺ and Muslims from Makkah to Madinah" },
-        { "term": "Muhajirun", "def": "the emigrants from Makkah" },
-        { "term": "Thawr", "def": "the cave where the Prophet ﷺ and Abu Bakr hid" },
-        { "term": "tawakkul", "def": "trust in Allah" }
+        {
+          "term": "hijrah (هِجْرَة)",
+          "def": "migration from Makkah to Madinah in 622 CE"
+        },
+        {
+          "term": "Muhajirun (مُهَاجِرُون)",
+          "def": "the Muslims who migrated from Makkah"
+        },
+        {
+          "term": "Thawr (ثَوْر)",
+          "def": "the cave where they hid for three nights"
+        },
+        {
+          "term": "tawakkul (تَوَكُّل)",
+          "def": "trusting Allah after doing your best"
+        },
+        {
+          "term": "Dar an-Nadwah (دَارُ النَّدْوَة)",
+          "def": "the Quraysh meeting house where they plotted"
+        }
       ],
-      "starter": ["What gift was given at the Mi’raj?", "Why did Abu Bakr get the title as-Siddiq?", "What does Isra mean?"],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you leave your home, your belongings and your city for your beliefs? What would make you do it?",
+        "a": "The Muhajirun did, for Allah: the Hijrah of 622 CE, so important that the Islamic calendar starts from it."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'If you do not help him, Allah already helped him when the disbelievers drove him out, the second of two, when they were in the cave and he said to his companion, \"Do not grieve; indeed Allah is with us\"' (at-Tawbah 9:40).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which ayah describes the Isra?",
+          "a": "17:1",
+          "mins": 1,
+          "options": [
+            "17:1",
+            "9:40"
+          ]
+        },
+        {
+          "q": "Who was called as-Siddiq?",
+          "a": "Abu Bakr",
+          "mins": 1,
+          "options": [
+            "Abu Bakr",
+            "Umar",
+            "Uthman"
+          ]
+        },
+        {
+          "q": "What gift was given in the Mi'raj?",
+          "a": "The five daily prayers",
+          "mins": 1,
+          "options": [
+            "The five daily prayers",
+            "Fasting"
+          ]
+        },
+        {
+          "q": "What were the two pledges before the Hijrah called?",
+          "a": "The pledges of Aqabah",
+          "mins": 1
+        }
+      ],
       "teach": [
-        { "heading": "The pledges at Aqabah", "bullets": ["People of Yathrib accepted Islam", "They pledged to protect the Prophet ﷺ", "Mus’ab ibn Umayr taught them the Qur’an", "Muslims began to migrate to Yathrib"], "note": "Begin with bismillah. Explain that Yathrib became Madinah. Mus’ab was sent as a teacher and his da’wah was successful. Ask: why was a peaceful, welcoming city so important to the Muslims?" },
-        { "heading": "The plot to kill him", "bullets": ["Quraysh leaders gathered to plot", "They chose men from every tribe to strike together", "Allah informed His Prophet ﷺ", "Ali slept in his bed to deceive them"], "note": "Qur’an 8:30 refers to the plot: ‘when those who disbelieved plotted against you to restrain you or kill you or expel you... but Allah plans, and Allah is the best of planners.’ Ali risked his life. Ask: how did the trust (amanah) fit here? (Ali returned the people’s trusts.)" },
-        { "heading": "The cave of Thawr", "bullets": ["The Prophet ﷺ and Abu Bakr hid in a cave for three nights", "“Do not grieve; Allah is with us” (9:40)", "Asma bint Abi Bakr brought food", "Abdullah ibn Urayqit guided them by a coastal route"], "note": "The words ‘Do not grieve, indeed Allah is with us’ are in 9:40. Bukhari records Abu Bakr’s fear about the footprints and the Prophet’s reassurance. Asma’s bringing food (and the belt story) is in Bukhari. Ask: what does tawakkul look like when you are afraid?" },
-        { "heading": "Suraqah and the arrival", "bullets": ["Suraqah chased them for the reward", "His horse sank into the ground", "He asked for safety and turned back", "They reached Quba, then Madinah"], "note": "From Sahih al-Bukhari. Suraqah later accepted Islam. Ask pupils to compare the Quraysh plan with Allah’s plan. Misconception: the Hijrah was an escape; in fact it was a planned and organised migration with human effort plus trust in Allah." },
-        { "heading": "Why the Hijrah matters", "bullets": ["The Muslim community could practise freely", "The Islamic calendar begins from Hijrah", "It separated truth from falsehood", "It rewarded sacrifice for faith"], "note": "Umar later chose the Hijrah as the start of the calendar. Remind them of the hadith of intentions on migration. Ask: what would you sacrifice for your faith?" }
+        {
+          "heading": "Why leave Makkah?",
+          "bullets": [
+            "Years of persecution in Makkah",
+            "Pledges of Aqabah with people of Yathrib",
+            "Muslims left quietly in small groups",
+            "Quraysh plotted at Dar an-Nadwah (8:30)"
+          ],
+          "note": "Begin with Bismillah. Al-Anfal 8:30: 'when the disbelievers plotted against you to restrain you or kill you or evict you; they planned, and Allah planned, and Allah is the best of planners.'"
+        },
+        {
+          "heading": "The night of the plot",
+          "bullets": [
+            "Ali slept in the Prophet's ﷺ bed",
+            "Ali returned people's trusts",
+            "The Prophet ﷺ left safely",
+            "He met Abu Bakr; they went south to Thawr"
+          ],
+          "note": "Seerah reports (Ibn Ishaq and others) describe Ali staying behind and returning the items people had left in the Prophet's ﷺ keeping: even his enemies trusted him. Going south when Madinah is north was a deliberate plan to mislead the searchers."
+        },
+        {
+          "heading": "The cave and the journey",
+          "bullets": [],
+          "note": "Each person had a role. Abdullah ibn Urayqit was hired as the guide even though he was not Muslim: skill and trust mattered. Suraqah ibn Malik chased them but his horse's legs sank; he asked for safety (Bukhari).",
+          "timeline": [
+            {
+              "label": "Night 1",
+              "text": "Leave Makkah, go south to Cave Thawr"
+            },
+            {
+              "label": "3 nights",
+              "text": "Hide; 'Allah is with us' (9:40)"
+            },
+            {
+              "label": "Each day",
+              "text": "Abdullah brings news; Asma' brings food; Amir's sheep hide tracks"
+            },
+            {
+              "label": "Journey",
+              "text": "Guide leads by a coastal route; Suraqah's horse sinks"
+            },
+            {
+              "label": "Arrival",
+              "text": "Quba, then Madinah, 622 CE"
+            }
+          ]
+        },
+        {
+          "heading": "Planning and trust",
+          "bullets": [
+            "Plan: secret route, guide, supplies, helpers",
+            "Trust: 'Do not grieve, Allah is with us'",
+            "Both together: tie the camel and trust",
+            "The calendar begins at the Hijrah (1 AH)"
+          ],
+          "note": "Umar ibn al-Khattab chose the Hijrah as the start of the Islamic calendar. Asma' bint Abi Bakr tore her waist-belt in two to tie the food, and was called Dhat an-Nitaqayn (Bukhari).",
+          "check": {
+            "q": "Which detail shows TRUST in Allah rather than planning?",
+            "options": [
+              "'Do not grieve; Allah is with us' (9:40)",
+              "Hiring a skilled guide",
+              "Going south first",
+              "Asma' bringing food"
+            ],
+            "answer": 0,
+            "why": "9:40 is trust when danger was at the cave's mouth. The others are planning: route, guide, supplies."
+          }
+        }
       ],
-      "practice": ["Put the Hijrah events in order.", "What did the Prophet ﷺ say to Abu Bakr in the cave?", "Give two roles of Ali and Asma."],
-      "independent": ["Create a map and timeline of the Hijrah.", "Write the conversation in the cave between the Prophet ﷺ and Abu Bakr using 9:40.", "Write a paragraph: ‘Why was the Hijrah a turning point?’"],
-      "exit": ["Name the cave where they hid.", "Give one reason the Hijrah was important."],
-      "homework": "Write a diary entry of Asma bint Abi Bakr during the three days.",
-      "send": "SEND/EAL: map with labels; stretch: assess whether the Hijrah was a defeat or a victory."
+      "practice": [
+        {
+          "q": "Give the role of each: Ali, Asma', Abdullah ibn Abi Bakr, Abdullah ibn Urayqit.",
+          "a": "Ali: slept in the bed and returned trusts. Asma': brought food. Abdullah ibn Abi Bakr: brought news. Abdullah ibn Urayqit: the guide.",
+          "mins": 3,
+          "model": "I do: 'Ali slept in the Prophet's ﷺ bed so the plotters thought he was still there, then returned people's trusts.' Pupils do the other three."
+        },
+        {
+          "q": "Which cave did they hide in?",
+          "a": "Thawr",
+          "mins": 1,
+          "options": [
+            "Thawr",
+            "Hira",
+            "Uhud"
+          ]
+        },
+        {
+          "q": "In which year CE was the Hijrah?",
+          "a": "622",
+          "mins": 1,
+          "options": [
+            "610",
+            "622",
+            "632"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box write a PEEL paragraph: 'Explain how the Hijrah shows both careful planning and trust in Allah.'",
+          "a": "Point; evidence from the route, guide and helpers, and 9:40; explain both together; link to tawakkul.",
+          "mins": 10,
+          "model": "Teacher models the planning half: 'Point: the Hijrah was carefully planned. Evidence: they went south to Thawr although Madinah is north, and hired a skilled guide. Explain: ...'"
+        },
+        {
+          "q": "Extend: why did Umar choose the Hijrah to begin the calendar?",
+          "a": "It marked the start of the Muslim community and state in Madinah: a turning point.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what does returning the trusts tell us about the Prophet ﷺ?",
+          "a": "Even enemies trusted him (al-Amin); he kept his amanah while being persecuted.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What did the Prophet ﷺ say in the cave?",
+          "a": "'Do not grieve; Allah is with us'",
+          "mins": 1,
+          "options": [
+            "'Do not grieve; Allah is with us'",
+            "'Let us go back'",
+            "'We are lost'"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what made the Muhajirun leave?",
+          "a": "Faith in Allah and the need to practise Islam freely.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a diary entry as Asma' bint Abi Bakr (no drawings of people) describing one day of the Hijrah.",
+      "send": "SEND: role cards to match. EAL: map with route marked. Stretch: read 9:40 and explain 'second of two'.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: Hijrah roles and PEEL frame",
+        "Map of the route Makkah, Thawr, Quba, Madinah (on screen)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jabal Thawr Mecca",
+          "alt": "Mount Thawr, where the cave is",
+          "for": "teach:3"
+        },
+        {
+          "find": "Quba Mosque Medina",
+          "alt": "Quba Mosque near Madinah",
+          "for": "teach:4"
+        },
+        {
+          "find": "desert route Hejaz",
+          "alt": "The desert of the Hijaz",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Seerah - the road to Madinah",
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
       "n": 6,
-      "title": "Madinah: mosque, brotherhood and a new society",
+      "title": "Madinah: the mosque, the brotherhood and a new society",
       "duration": 50,
-      "objectives": ["Describe the welcome in Madinah", "Explain the building of the mosque and the brotherhood", "Evaluate the importance of the Ansar"],
+      "bigQuestion": "If you arrived in a new town with nothing, what would you need most from the people there?",
+      "objectives": [
+        "To understand how the Prophet ﷺ built a united society in Madinah"
+      ],
+      "successCriteria": [
+        "All: describe how Masjid an-Nabawi was built",
+        "Most: explain the brotherhood between the Muhajirun and the Ansar",
+        "Some: explain how the Charter of Madinah organised a mixed society"
+      ],
+      "crossCurricular": "History: how communities and rules for citizens develop",
+      "smsc": "Social: welcoming newcomers and living together with others",
       "keywords": [
-        { "term": "Ansar", "def": "the helpers of Madinah" },
-        { "term": "mu’akhah", "def": "the brotherhood between Muhajirun and Ansar" },
-        { "term": "Masjid an-Nabawi", "def": "the Prophet’s Mosque in Madinah" },
-        { "term": "Quba", "def": "the first mosque built in Islam" }
+        {
+          "term": "Ansar (أَنْصَار)",
+          "def": "the helpers: Muslims of Madinah"
+        },
+        {
+          "term": "mu'akhah (مُؤَاخَاة)",
+          "def": "the brotherhood joining Muhajirun and Ansar"
+        },
+        {
+          "term": "Masjid an-Nabawi (الْمَسْجِدُ النَّبَوِيّ)",
+          "def": "the Prophet's ﷺ mosque in Madinah"
+        },
+        {
+          "term": "Sahifat al-Madinah",
+          "def": "the Charter of Madinah: agreed rules for the city's communities"
+        },
+        {
+          "term": "ummah (أُمَّة)",
+          "def": "the community of believers"
+        }
       ],
-      "starter": ["What did the Prophet ﷺ say in the cave?", "Who were the Muhajirun?", "Name the guide of the Hijrah route."],
+      "hook": {
+        "type": "ponder",
+        "text": "If you arrived in a new town with nothing, what would you need most from the people there?",
+        "a": "Shelter, food, friendship and work: the Ansar gave the Muhajirun all of these through the brotherhood (mu'akhah)."
+      },
+      "islamicLink": {
+        "text": "Allah praises the Ansar: 'They love those who emigrated to them ... and give them preference over themselves, even though they are in need' (al-Hashr 59:9).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "In which cave did they hide?",
+          "a": "Thawr",
+          "mins": 1,
+          "options": [
+            "Thawr",
+            "Hira"
+          ]
+        },
+        {
+          "q": "Who was the guide on the Hijrah?",
+          "a": "Abdullah ibn Urayqit",
+          "mins": 1,
+          "options": [
+            "Abdullah ibn Urayqit",
+            "Suraqah"
+          ]
+        },
+        {
+          "q": "Which ayah records 'Allah is with us'?",
+          "a": "9:40",
+          "mins": 1,
+          "options": [
+            "9:40",
+            "17:1"
+          ]
+        },
+        {
+          "q": "What does Muhajirun mean?",
+          "a": "Those who migrated from Makkah",
+          "mins": 1
+        }
+      ],
       "teach": [
-        { "heading": "The joyful welcome", "bullets": ["Madinah welcomed the Prophet ﷺ with joy", "He stayed at Quba and founded its mosque", "His camel stopped where the Prophet’s Mosque was built"], "note": "Begin with bismillah. Explain that the first thing he did was build a mosque, showing priorities. Qur’an 9:108 refers to the mosque founded on taqwa from the first day. Ask: why build a mosque first?" },
-        { "heading": "The Prophet’s Mosque", "bullets": ["The Prophet ﷺ worked with the Companions to build it", "It was a place for prayer, learning and meetings", "It also housed the poor of the Muhajirun", "Simple walls and palm trunks"], "note": "Link to Edexcel 1.4: building of mosques on arrival. Ask: what functions do mosques have today? How can your masjid serve the community?" },
-        { "heading": "Brotherhood", "bullets": ["Muhajirun and Ansar were paired as brothers", "Sa’d ibn ar-Rabi’ offered half his wealth to Abd ar-Rahman ibn Awf", "Abd ar-Rahman asked only to be shown the market", "The Qur’an praises the Ansar (59:9)"], "note": "From Sahih al-Bukhari. Qur’an 59:9 says they prefer others over themselves even though they are in need. Ask: what is the difference between generosity and showing off? Compare with the dignity of Abd ar-Rahman." },
-        { "heading": "A shared society", "bullets": ["The community included Muslims and non-Muslim tribes", "The early agreement set out rights and duties", "Justice and defence were shared"], "note": "The document known as the Constitution or Charter of Madinah is recorded in early seerah sources. Say that historians study its details. Highlight the principle: the community protects all its members. Keep claims moderate." },
-        { "heading": "Companions who supported the Prophet ﷺ", "bullets": ["Abu Bakr: closest friend, first caliph", "Umar: strong, just, second caliph", "Uthman: generous, third caliph", "Ali: brave, scholar, fourth caliph"], "note": "Edexcel 1.4e. These are the four Rightly Guided Caliphs. Give one story each: Abu Bakr gave all for the Hijrah; Umar’s conversion strengthened the Muslims; Uthman funded Tabuk and the well of Rumah; Ali slept in the Prophet’s bed. Ask: which quality do you most admire?" }
+        {
+          "heading": "The welcome and the mosque",
+          "bullets": [
+            "The people of Madinah came out to welcome him",
+            "His camel knelt on land of two orphans",
+            "The land was bought, not taken",
+            "He carried bricks with the Companions"
+          ],
+          "note": "Begin with Bismillah. Bukhari reports the camel kneeling, the land belonging to two orphan boys, and the Prophet ﷺ insisting on paying. He worked alongside the Companions carrying bricks (Bukhari). Ask: what does that tell us about his leadership?"
+        },
+        {
+          "heading": "More than a place of prayer",
+          "bullets": [],
+          "note": "Masjid an-Nabawi was the centre of community life.",
+          "diagram": {
+            "centre": "Masjid an-Nabawi",
+            "items": [
+              "Prayer five times a day",
+              "Learning and teaching",
+              "Meeting and consultation",
+              "Welcoming visitors",
+              "Shelter for the poor (as-Suffah)"
+            ]
+          }
+        },
+        {
+          "heading": "The brotherhood (mu'akhah)",
+          "bullets": [
+            "Each Muhajir paired with an Ansari",
+            "Ansar shared homes, work and wealth",
+            "Sa'd ibn ar-Rabi' offered half his wealth",
+            "Abd ar-Rahman: 'Show me the market'"
+          ],
+          "note": "Bukhari reports Sa'd ibn ar-Rabi' offering half his wealth to Abd ar-Rahman ibn Awf, who thanked him and asked to be shown the market so he could trade. Lesson: generosity on one side, dignity and hard work on the other.",
+          "check": {
+            "q": "What did Abd ar-Rahman ibn Awf's reply 'show me the market' show?",
+            "options": [
+              "Self-reliance and dignity",
+              "He was ungrateful",
+              "He did not need help at all",
+              "He wanted to leave Madinah"
+            ],
+            "answer": 0,
+            "why": "He thanked Sa'd and chose to earn for himself: dignity and hard work, not ingratitude."
+          }
+        },
+        {
+          "heading": "The Charter of Madinah",
+          "bullets": [
+            "A written agreement for all groups",
+            "Muslims and Jewish tribes as one community for defence",
+            "Each group kept its religion",
+            "Disputes referred to the Prophet ﷺ"
+          ],
+          "note": "The Sahifah is recorded in the seerah (Ibn Ishaq) and early sources; historians discuss its exact text. Teach the main principles only: mutual defence, justice, freedom of religion for each group, and resolving disputes through the Prophet ﷺ."
+        }
       ],
-      "practice": ["What was the first building project in Madinah?", "Explain the story of Sa’d and Abd ar-Rahman.", "Match each caliph with a quality."],
-      "independent": ["Write a news report on the first Friday in Madinah.", "Create an infographic: Muhajirun and Ansar.", "Write a paragraph: ‘Why was brotherhood so important after the Hijrah?’"],
-      "exit": ["Who were the Ansar?", "Give one function of the Prophet’s Mosque."],
-      "homework": "Interview a family member about what their local masjid does for the community.",
-      "send": "SEND/EAL: matching Companion cards; stretch: compare Madinan society before and after Islam."
+      "practice": [
+        {
+          "q": "Explain why the Prophet ﷺ paid for the orphans' land.",
+          "a": "To be just: orphans' property must be protected; he did not use his position to take it.",
+          "mins": 3,
+          "model": "I do: 1) Who owned the land? Two orphans. 2) What does Islam teach about orphans' property? Protect it (4:10 warns against consuming it unjustly). 3) So he paid a fair price, showing justice."
+        },
+        {
+          "q": "The Ansar were ...",
+          "a": "The Muslims of Madinah who helped",
+          "mins": 1,
+          "options": [
+            "The Muslims of Madinah who helped",
+            "The Muslims who migrated"
+          ]
+        },
+        {
+          "q": "Which ayah praises the Ansar for preferring others?",
+          "a": "59:9",
+          "mins": 1,
+          "options": [
+            "59:9",
+            "9:40",
+            "2:285"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box write a PEEL paragraph: 'Explain how the Prophet ﷺ built a united society in Madinah.'",
+          "a": "Points: the mosque as a centre; the brotherhood; the Charter. Evidence: 59:9; Sa'd and Abd ar-Rahman. Explain unity and justice. Link.",
+          "mins": 10,
+          "model": "Teacher models the first point: 'Point: the Prophet ﷺ built the mosque first, as a centre for the whole community. Evidence: he helped carry bricks himself (Bukhari). Explain: ...'"
+        },
+        {
+          "q": "Extend: how could a school use the idea of mu'akhah for new pupils?",
+          "a": "Pair each new pupil with a buddy who helps them settle, shares notes and includes them.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why was a written charter important for a mixed city?",
+          "a": "Clear agreed rules protect everyone's rights, prevent conflict and make justice possible.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Who offered half his wealth to Abd ar-Rahman ibn Awf?",
+          "a": "Sa'd ibn ar-Rabi'",
+          "mins": 1,
+          "options": [
+            "Sa'd ibn ar-Rabi'",
+            "Abu Bakr",
+            "Bilal"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what did the Ansar give the newcomers?",
+          "a": "Homes, food, work and brotherhood.",
+          "mins": 2
+        }
+      ],
+      "homework": "Do one act of welcome this week (for example helping a new neighbour or classmate) and write what you did and why.",
+      "send": "SEND: picture cards of the mosque, market, homes (no people). EAL: sentence frames. Stretch: research as-Suffah.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: Madinah society organiser and PEEL frame",
+        "Mushaf with translation (59:9)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Al-Masjid an-Nabawi exterior",
+          "alt": "Masjid an-Nabawi in Madinah today",
+          "for": "teach:1"
+        },
+        {
+          "find": "mud brick wall",
+          "alt": "Mud bricks, like those of the first mosque",
+          "for": "teach:2"
+        },
+        {
+          "find": "date palm grove Medina",
+          "alt": "Date palms in Madinah",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Seerah - the road to Madinah",
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
       "n": 7,
       "title": "The Battle of Badr",
       "duration": 50,
-      "objectives": ["Explain why the Battle of Badr took place", "Describe the main events and outcome", "Evaluate its importance for the Muslim community"],
+      "bigQuestion": "Can a small group ever beat a much bigger one? What would they need?",
+      "objectives": [
+        "To understand the causes, events and importance of the Battle of Badr"
+      ],
+      "successCriteria": [
+        "All: give the date, place and numbers of the battle",
+        "Most: explain two reasons for the Muslim victory",
+        "Some: explain why Badr was a turning point"
+      ],
+      "crossCurricular": "History: causes, events and consequences of a significant battle",
+      "smsc": "Moral: mercy to prisoners and the ethics of conflict",
       "keywords": [
-        { "term": "Badr", "def": "the first major battle between Muslims and Quraysh, Ramadan 2 AH" },
-        { "term": "Furqan", "def": "criterion between truth and falsehood" },
-        { "term": "Abu Jahl", "def": "a leader of Quraysh who strongly opposed Islam" },
-        { "term": "ransom", "def": "payment for the release of prisoners" }
+        {
+          "term": "Badr (بَدْر)",
+          "def": "wells south-west of Madinah where the battle took place"
+        },
+        {
+          "term": "ghazwah (غَزْوَة)",
+          "def": "a military expedition the Prophet ﷺ led himself"
+        },
+        {
+          "term": "shura (شُورَى)",
+          "def": "consultation"
+        },
+        {
+          "term": "Yawm al-Furqan (يَوْمُ الْفُرْقَان)",
+          "def": "the Day of Criterion, a name for Badr (8:41)"
+        },
+        {
+          "term": "asra (أَسْرَى)",
+          "def": "prisoners of war"
+        }
       ],
-      "starter": ["What is mu’akhah?", "Name the four caliphs.", "Where did the Prophet ﷺ and Abu Bakr hide?"],
+      "hook": {
+        "type": "ponder",
+        "text": "Can a small group ever beat a much bigger one? What would they need?",
+        "a": "At Badr about 313 Muslims faced about 1,000: they had faith, unity, good counsel and Allah's help (3:123)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah had already given you victory at Badr while you were weak, so fear Allah that you may be grateful' (Al Imran 3:123).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What is mu'akhah?",
+          "a": "The brotherhood between Muhajirun and Ansar",
+          "mins": 1,
+          "options": [
+            "The brotherhood between Muhajirun and Ansar",
+            "A battle"
+          ]
+        },
+        {
+          "q": "In which year was the Hijrah?",
+          "a": "622 CE",
+          "mins": 1,
+          "options": [
+            "622 CE",
+            "610 CE",
+            "632 CE"
+          ]
+        },
+        {
+          "q": "Who said 'show me the market'?",
+          "a": "Abd ar-Rahman ibn Awf",
+          "mins": 1,
+          "options": [
+            "Abd ar-Rahman ibn Awf",
+            "Sa'd ibn ar-Rabi'"
+          ]
+        },
+        {
+          "q": "What is the Charter of Madinah?",
+          "a": "An agreement setting rules for the communities of Madinah",
+          "mins": 1
+        }
+      ],
       "teach": [
-        { "heading": "Why Badr?", "bullets": ["The Muslims had lost homes and property in Makkah", "A Quraysh caravan led by Abu Sufyan passed near Madinah", "The caravan escaped; the Quraysh army still marched", "The two forces met at Badr"], "note": "Begin with bismillah. Qur’an 22:39 gave permission to fight those who were wronged. Explain that the Muslims went out to intercept the caravan but Allah arranged a meeting with the army (8:7). Ask: why did Quraysh not return home once their caravan was safe? (Pride.)" },
-        { "heading": "The numbers", "bullets": ["About 313 Muslims", "About 1,000 Quraysh", "Few horses and camels on the Muslim side", "Quraysh had better weapons"], "note": "Numbers: around 313 Muslims and about 1,000 Quraysh are the common figures in the sources. Ask pupils to calculate the ratio: about 1:3. Qur’an 3:123: Allah gave you victory at Badr while you were weak." },
-        { "heading": "The battle", "bullets": ["The Prophet ﷺ prayed through the night", "Battle began with duels, then a general fight", "Allah sent angels in support (3:124-125)", "Muslims won decisively"], "note": "Reports mention Abu Jahl was killed at Badr and 14 Muslims were martyred. Roughly seventy of the Quraysh were killed and seventy captured. Emphasise that figures are approximate in the sources. Ask: how does du’a combine with effort?" },
-        { "heading": "The prisoners", "bullets": ["Prisoners were treated with kindness", "Many were released for a ransom", "Some literate prisoners taught Muslims to read", "“They give food, for love of Allah, to the poor, orphan and captive” (76:8)"], "note": "Reports in the seerah record that the Muslims shared their food with the captives. The ‘teach ten Muslims to read’ ransom is reported in Ahmad and the seerah. Use ‘reports state’. Ask: what does this show about Islamic treatment of prisoners?" },
-        { "heading": "Why Badr mattered", "bullets": ["The first great victory of the Muslims", "Confidence and credibility grew", "Quraysh were shaken but sought revenge", "Called ‘Yawm al-Furqan’, the Day of Criterion (8:41)"], "note": "Edexcel 1.8: reasons and importance. Ask: how might a small community feel after Badr? Also: how did it increase tension with Quraysh (leading to Uhud)? Provide pupils with a framework: reasons, events, outcome, importance." }
+        {
+          "heading": "Causes",
+          "bullets": [
+            "Muslims' homes and wealth taken in Makkah",
+            "Permission to fight given to the wronged (22:39)",
+            "Abu Sufyan's caravan returning from Syria",
+            "Quraysh sent an army of about 1,000"
+          ],
+          "note": "Begin with Bismillah. Al-Hajj 22:39: permission is given to those who are fought against because they were wronged. The caravan changed route and escaped; Abu Jahl insisted on marching to Badr anyway."
+        },
+        {
+          "heading": "The two sides",
+          "bullets": [
+            "17 Ramadan, 2 AH (624 CE)",
+            "Muslims about 313, few horses",
+            "Quraysh about 1,000, well armed"
+          ],
+          "note": "Bukhari reports the Muslims were about the number of Talut's army (310 and some). The bar chart shows the difference in size.",
+          "chart": {
+            "kind": "bar",
+            "title": "Approximate numbers at Badr",
+            "labels": [
+              "Muslims",
+              "Quraysh"
+            ],
+            "values": [
+              313,
+              1000
+            ],
+            "unit": "fighters"
+          }
+        },
+        {
+          "heading": "Why the Muslims won",
+          "bullets": [
+            "Shura: al-Hubab's advice on the wells",
+            "Du'a: the Prophet ﷺ prayed through the night",
+            "Angels sent as help (8:9)",
+            "Unity, courage and faith"
+          ],
+          "note": "Seerah reports al-Hubab ibn al-Mundhir asking whether the position was revelation or strategy, then advising control of the wells; the Prophet ﷺ accepted. Al-Anfal 8:9: 'I will reinforce you with a thousand angels following one another.' Bukhari and Muslim describe the Prophet's ﷺ intense du'a.",
+          "check": {
+            "q": "What does al-Hubab's advice about the wells show about the Prophet's ﷺ leadership?",
+            "options": [
+              "He consulted and accepted good advice",
+              "He never listened to others",
+              "He relied only on numbers",
+              "He avoided planning"
+            ],
+            "answer": 0,
+            "why": "He asked for and accepted good counsel (shura) while relying on Allah; the other options are the opposite of what happened."
+          }
+        },
+        {
+          "heading": "Results and lessons",
+          "bullets": [
+            "About 70 Quraysh killed, including Abu Jahl",
+            "14 Muslims martyred",
+            "Prisoners treated well; some freed for teaching reading",
+            "Called the Day of Criterion (8:41)"
+          ],
+          "note": "Seerah reports that literate prisoners could earn freedom by teaching ten Muslim children to read. Badr gave the Muslims confidence and showed Arabia that Islam would survive."
+        }
       ],
-      "practice": ["Calculate the ratio of Muslims to Quraysh at Badr.", "Give two reasons for the battle.", "Why is Badr called the Day of Criterion?"],
-      "independent": ["Write a battle report with a heading, reasons, events, outcome and importance.", "Write a diary entry from a Muslim who fought at Badr.", "Design a chart: Muslim treatment of prisoners and the lessons."],
-      "exit": ["When did the Battle of Badr take place (month and year AH)?", "Give one result of the battle."],
-      "homework": "Read 3:123-126 in English and write what it teaches about trust in Allah.",
-      "send": "SEND/EAL: timeline strip and word bank; stretch: evaluate whether Badr was mostly a military or a moral victory."
+      "practice": [
+        {
+          "q": "Give two reasons for the Muslim victory, each with evidence.",
+          "a": "1) Allah's help: 3:123 and 8:9. 2) Good leadership and shura: al-Hubab's advice on the wells. (Also du'a, unity, courage.)",
+          "mins": 3,
+          "model": "I do reason 1: 'One reason was Allah's help. Allah says He gave them victory at Badr while they were weak (3:123) and sent angels (8:9).' Pupils write reason 2."
+        },
+        {
+          "q": "Badr took place in ...",
+          "a": "Ramadan, 2 AH",
+          "mins": 1,
+          "options": [
+            "Ramadan, 2 AH",
+            "Muharram, 1 AH",
+            "Shawwal, 3 AH"
+          ]
+        },
+        {
+          "q": "How were literate prisoners able to gain freedom?",
+          "a": "By teaching Muslim children to read",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box answer: 'Explain why the Battle of Badr was important for the early Muslims.' Use PEEL with two developed points.",
+          "a": "Points: proved Allah's support and raised confidence; established the Muslims as a power in Arabia; showed mercy to prisoners. Evidence 3:123, 8:41. Link.",
+          "mins": 10,
+          "model": "Teacher models point 1: 'Point: Badr showed the Muslims that Allah was with them. Evidence: \"Allah had already given you victory at Badr while you were weak\" (3:123). Explain: ...'"
+        },
+        {
+          "q": "Extend: what does the treatment of prisoners teach about Islam's ethics of war?",
+          "a": "Prisoners have rights: kindness, food and a route to freedom; war has rules.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is Badr called the Day of Criterion?",
+          "a": "It distinguished truth from falsehood: the small believing army won by Allah's help (8:41).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "About how many Muslims fought at Badr?",
+          "a": "313",
+          "mins": 1,
+          "options": [
+            "313",
+            "1,000",
+            "10,000"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what did the small group need?",
+          "a": "Faith, unity, good planning and consultation, and Allah's help.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a short newspaper report (no pictures of people) on Badr: date, place, numbers, causes, result.",
+      "send": "SEND: fact-file frame with numbers given. EAL: key word list. Stretch: read 8:5-19 in translation and find two lessons.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: causes and results organiser and PEEL frame",
+        "Map of Madinah, Badr and Makkah (on screen)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Badr Saudi Arabia",
+          "alt": "The area of Badr today",
+          "for": "teach:1"
+        },
+        {
+          "find": "desert well",
+          "alt": "A desert well, like the wells of Badr",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Unit 3: Fiqh and the sources of Islamic law",
       "n": 8,
       "title": "The sources of Shari’ah",
       "duration": 50,
-      "objectives": ["Name the main sources of Islamic law", "Explain ijma and qiyas simply", "Explain the importance of following the Qur’an and Sunnah"],
+      "objectives": [
+        "Name the main sources of Islamic law",
+        "Explain ijma and qiyas simply",
+        "Explain the importance of following the Qur’an and Sunnah"
+      ],
       "keywords": [
-        { "term": "Shari’ah", "def": "the path of Islamic guidance and law from Allah" },
-        { "term": "ijma", "def": "agreement of the scholars on a ruling" },
-        { "term": "qiyas", "def": "analogy: applying a ruling to a similar new case" },
-        { "term": "ijtihad", "def": "scholarly effort to reach a ruling" }
+        {
+          "term": "Shari’ah",
+          "def": "the path of Islamic guidance and law from Allah"
+        },
+        {
+          "term": "ijma",
+          "def": "agreement of the scholars on a ruling"
+        },
+        {
+          "term": "qiyas",
+          "def": "analogy: applying a ruling to a similar new case"
+        },
+        {
+          "term": "ijtihad",
+          "def": "scholarly effort to reach a ruling"
+        }
       ],
-      "starter": ["Name the first two caliphs.", "What is a hadith?", "Why was the Qur’an compiled?"],
+      "starter": [
+        "Name the first two caliphs.",
+        "What is a hadith?",
+        "Why was the Qur’an compiled?"
+      ],
       "teach": [
-        { "heading": "What is Shari’ah?", "bullets": ["“We made for each a way” (5:48)", "The path to Allah’s pleasure", "Covers worship, character and dealings", "Aims to protect life, faith, mind, family and wealth"], "note": "Begin with bismillah. Edexcel 2.7 passage: 5:48. Note that Shari’ah is far wider than punishments. Ask: what rules guide a school? Compare with the purpose of Shari’ah: a guide for good." },
-        { "heading": "The Qur’an and Sunnah", "bullets": ["The Qur’an is the first source", "The Sunnah explains and applies it", "“Obey Allah and obey the Messenger” (4:59)", "Example: the Qur’an orders salah; the Sunnah shows how"], "note": "Also mention 59:7: ‘Whatever the Messenger gives you, take it, and whatever he forbids, abstain.’ Ask: what would we lose without the Sunnah? Give the example of how to pray or how to perform Hajj." },
-        { "heading": "Ijma: consensus", "bullets": ["Agreement of the scholars of a time on a ruling", "Example: the compilation of the Qur’an in one book", "It cannot contradict the Qur’an and Sunnah"], "note": "Keep it simple. The Prophet ﷺ said his Ummah would not agree upon misguidance (reported in Ibn Majah and elsewhere with varying grading; do not quote it as a precise text). Better: explain that scholars across time have agreed on core matters like the five prayers." },
-        { "heading": "Qiyas: analogy", "bullets": ["Applying a known ruling to a new, similar case", "Needs the same reason (illah)", "Example: drugs and alcohol, as both intoxicate"], "note": "Use the standard example: alcohol is forbidden because it intoxicates; scholars apply the same reason to other intoxicants. Ask pupils to think of a modern situation where scholars need to reason (new technology). Note that ordinary pupils do not make rulings; we ask qualified scholars." },
-        { "heading": "Following with humility", "bullets": ["We ask qualified scholars", "“Ask the people of knowledge if you do not know” (16:43)", "Scholars may differ in minor matters", "We keep respect and unity"], "note": "Mention the four schools in brief (Hanafi, Maliki, Shafi’i, Hanbali) as ways scholars systematised law; we will revisit in Year 9. Teach adab: no insulting people who follow another valid opinion." }
+        {
+          "heading": "What is Shari’ah?",
+          "bullets": [
+            "“We made for each a way” (5:48)",
+            "The path to Allah’s pleasure",
+            "Covers worship, character and dealings",
+            "Aims to protect life, faith, mind, family and wealth"
+          ],
+          "note": "Begin with bismillah. Edexcel 2.7 passage: 5:48. Note that Shari’ah is far wider than punishments. Ask: what rules guide a school? Compare with the purpose of Shari’ah: a guide for good."
+        },
+        {
+          "heading": "The Qur’an and Sunnah",
+          "bullets": [
+            "The Qur’an is the first source",
+            "The Sunnah explains and applies it",
+            "“Obey Allah and obey the Messenger” (4:59)",
+            "Example: the Qur’an orders salah; the Sunnah shows how"
+          ],
+          "note": "Also mention 59:7: ‘Whatever the Messenger gives you, take it, and whatever he forbids, abstain.’ Ask: what would we lose without the Sunnah? Give the example of how to pray or how to perform Hajj."
+        },
+        {
+          "heading": "Ijma: consensus",
+          "bullets": [
+            "Agreement of the scholars of a time on a ruling",
+            "Example: the compilation of the Qur’an in one book",
+            "It cannot contradict the Qur’an and Sunnah"
+          ],
+          "note": "Keep it simple. The Prophet ﷺ said his Ummah would not agree upon misguidance (reported in Ibn Majah and elsewhere with varying grading; do not quote it as a precise text). Better: explain that scholars across time have agreed on core matters like the five prayers."
+        },
+        {
+          "heading": "Qiyas: analogy",
+          "bullets": [
+            "Applying a known ruling to a new, similar case",
+            "Needs the same reason (illah)",
+            "Example: drugs and alcohol, as both intoxicate"
+          ],
+          "note": "Use the standard example: alcohol is forbidden because it intoxicates; scholars apply the same reason to other intoxicants. Ask pupils to think of a modern situation where scholars need to reason (new technology). Note that ordinary pupils do not make rulings; we ask qualified scholars."
+        },
+        {
+          "heading": "Following with humility",
+          "bullets": [
+            "We ask qualified scholars",
+            "“Ask the people of knowledge if you do not know” (16:43)",
+            "Scholars may differ in minor matters",
+            "We keep respect and unity"
+          ],
+          "note": "Mention the four schools in brief (Hanafi, Maliki, Shafi’i, Hanbali) as ways scholars systematised law; we will revisit in Year 9. Teach adab: no insulting people who follow another valid opinion."
+        }
       ],
-      "practice": ["List the four sources of Shari’ah.", "Explain qiyas using the alcohol example.", "Why do we need the Sunnah as well as the Qur’an?"],
-      "independent": ["Create a diagram with the four sources and an example for each.", "Write a paragraph on why qualified scholars are needed to answer fiqh questions.", "Write a short Q and A: ‘Why does Islam have a law?’"],
-      "exit": ["Name the first two sources of Shari’ah.", "What is qiyas?"],
+      "practice": [
+        "List the four sources of Shari’ah.",
+        "Explain qiyas using the alcohol example.",
+        "Why do we need the Sunnah as well as the Qur’an?"
+      ],
+      "independent": [
+        "Create a diagram with the four sources and an example for each.",
+        "Write a paragraph on why qualified scholars are needed to answer fiqh questions.",
+        "Write a short Q and A: ‘Why does Islam have a law?’"
+      ],
+      "exit": [
+        "Name the first two sources of Shari’ah.",
+        "What is qiyas?"
+      ],
       "homework": "Ask a trusted adult for one example of a ruling taken from the Qur’an and one from the Sunnah.",
       "send": "SEND/EAL: source cards to sort; stretch: discuss why a source hierarchy is needed."
     },
@@ -214,75 +1837,425 @@
       "n": 9,
       "title": "Halal, haram and the five rulings",
       "duration": 50,
-      "objectives": ["Define halal and haram", "Explain the five categories of rulings with examples", "Apply the categories to everyday situations"],
+      "objectives": [
+        "Define halal and haram",
+        "Explain the five categories of rulings with examples",
+        "Apply the categories to everyday situations"
+      ],
       "keywords": [
-        { "term": "fard", "def": "obligatory: rewarded for doing, sinful for leaving" },
-        { "term": "mustahabb", "def": "recommended: rewarded for doing, not sinful for leaving" },
-        { "term": "mubah", "def": "permitted: neither rewarded nor sinful" },
-        { "term": "makruh", "def": "disliked: better to avoid" },
-        { "term": "haram", "def": "forbidden: sinful to do" }
+        {
+          "term": "fard",
+          "def": "obligatory: rewarded for doing, sinful for leaving"
+        },
+        {
+          "term": "mustahabb",
+          "def": "recommended: rewarded for doing, not sinful for leaving"
+        },
+        {
+          "term": "mubah",
+          "def": "permitted: neither rewarded nor sinful"
+        },
+        {
+          "term": "makruh",
+          "def": "disliked: better to avoid"
+        },
+        {
+          "term": "haram",
+          "def": "forbidden: sinful to do"
+        }
       ],
-      "starter": ["Name the four sources of Shari’ah.", "What is qiyas?", "Where in the Qur’an is Shari’ah mentioned?"],
+      "starter": [
+        "Name the four sources of Shari’ah.",
+        "What is qiyas?",
+        "Where in the Qur’an is Shari’ah mentioned?"
+      ],
       "teach": [
-        { "heading": "Halal and haram", "bullets": ["“Eat of what is lawful and good on the earth” (2:168)", "Halal: permitted; haram: forbidden", "Allah permits what is good and forbids what is harmful", "Most things are halal unless prohibited"], "note": "Begin with bismillah. The principle that the default is permissibility is accepted in matters of dealings and food. Edexcel passage 5:3 lists forbidden meats. Ask: why does Allah forbid? (Protect us from harm.)" },
-        { "heading": "The five rulings", "bullets": ["Fard: five daily prayers", "Mustahabb: extra voluntary prayers", "Mubah: choosing which halal meal to eat", "Makruh: wasting water", "Haram: lying, stealing, riba, alcohol"], "note": "This is the Ahkam pentad in the Edexcel spec. Note that Hanafis also distinguish wajib from fard; keep to the five categories. Use a number line from ‘must do’ to ‘must not do’. Ask pupils to place examples." },
-        { "heading": "The doubtful matters", "bullets": ["“The halal is clear and the haram is clear”", "Between them are doubtful matters", "Whoever avoids them protects his religion", "Narrated by an-Nu’man ibn Bashir (Bukhari, Muslim)"], "note": "Explain with a practical example: a food product with an unfamiliar ingredient; check the label or ask someone knowledgeable. Ask: how can we avoid over-worry as well as carelessness?" },
-        { "heading": "Applying the categories", "bullets": ["Pray Fajr: fard", "Read extra Qur’an: mustahabb", "Choose a blue or red bag: mubah", "Gossip: haram"], "note": "Run a sorting game with real-life scenarios. Discuss edge cases (e.g. a game that wastes time: makruh? haram?). Stress that we refer complex issues to scholars." }
+        {
+          "heading": "Halal and haram",
+          "bullets": [
+            "“Eat of what is lawful and good on the earth” (2:168)",
+            "Halal: permitted; haram: forbidden",
+            "Allah permits what is good and forbids what is harmful",
+            "Most things are halal unless prohibited"
+          ],
+          "note": "Begin with bismillah. The principle that the default is permissibility is accepted in matters of dealings and food. Edexcel passage 5:3 lists forbidden meats. Ask: why does Allah forbid? (Protect us from harm.)"
+        },
+        {
+          "heading": "The five rulings",
+          "bullets": [
+            "Fard: five daily prayers",
+            "Mustahabb: extra voluntary prayers",
+            "Mubah: choosing which halal meal to eat",
+            "Makruh: wasting water",
+            "Haram: lying, stealing, riba, alcohol"
+          ],
+          "note": "This is the Ahkam pentad in the Edexcel spec. Note that Hanafis also distinguish wajib from fard; keep to the five categories. Use a number line from ‘must do’ to ‘must not do’. Ask pupils to place examples."
+        },
+        {
+          "heading": "The doubtful matters",
+          "bullets": [
+            "“The halal is clear and the haram is clear”",
+            "Between them are doubtful matters",
+            "Whoever avoids them protects his religion",
+            "Narrated by an-Nu’man ibn Bashir (Bukhari, Muslim)"
+          ],
+          "note": "Explain with a practical example: a food product with an unfamiliar ingredient; check the label or ask someone knowledgeable. Ask: how can we avoid over-worry as well as carelessness?"
+        },
+        {
+          "heading": "Applying the categories",
+          "bullets": [
+            "Pray Fajr: fard",
+            "Read extra Qur’an: mustahabb",
+            "Choose a blue or red bag: mubah",
+            "Gossip: haram"
+          ],
+          "note": "Run a sorting game with real-life scenarios. Discuss edge cases (e.g. a game that wastes time: makruh? haram?). Stress that we refer complex issues to scholars."
+        }
       ],
-      "practice": ["Place these in the five categories: eating halal chicken; praying Dhuhr; backbiting; fasting an extra Monday; wasting food.", "Define halal and haram.", "What should we do with doubtful matters?"],
-      "independent": ["Create a ‘Five Rulings’ table with two examples each.", "Write a paragraph on why Islam has categories of rulings.", "Design a poster for food-label checking."],
-      "exit": ["Name the five categories of rulings.", "Is a mubah action rewarded?"],
+      "practice": [
+        "Place these in the five categories: eating halal chicken; praying Dhuhr; backbiting; fasting an extra Monday; wasting food.",
+        "Define halal and haram.",
+        "What should we do with doubtful matters?"
+      ],
+      "independent": [
+        "Create a ‘Five Rulings’ table with two examples each.",
+        "Write a paragraph on why Islam has categories of rulings.",
+        "Design a poster for food-label checking."
+      ],
+      "exit": [
+        "Name the five categories of rulings.",
+        "Is a mubah action rewarded?"
+      ],
       "homework": "List five things you do daily and categorise them with explanations.",
       "send": "SEND/EAL: scenario cards with colours; stretch: explain the wisdom of having a middle category (mubah)."
     },
     {
-      "unit": "Unit 3: Fiqh and the sources of Islamic law",
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
       "n": 10,
       "title": "Zakah: purifying wealth",
       "duration": 50,
-      "objectives": ["Define zakah and explain its purpose", "State the conditions and rate", "Name the categories of those who receive zakah"],
+      "bigQuestion": "If everyone gave a small part of their savings every year to people in need, what would change in your town?",
+      "objectives": [
+        "To understand what zakah is, who pays it, who receives it and why it purifies wealth"
+      ],
+      "successCriteria": [
+        "All: state the conditions for paying zakah",
+        "Most: calculate zakah and name the eight groups who receive it",
+        "Some: explain how zakah purifies both wealth and the giver"
+      ],
+      "crossCurricular": "Maths: calculating 2.5% of an amount",
+      "smsc": "Social: responsibility for the poor in the community",
       "keywords": [
-        { "term": "zakah", "def": "obligatory yearly charity that purifies wealth" },
-        { "term": "nisab", "def": "the minimum wealth on which zakah is due" },
-        { "term": "hawl", "def": "one full lunar year" },
-        { "term": "sadaqah", "def": "voluntary charity" }
+        {
+          "term": "zakah (زَكَاة)",
+          "def": "obligatory charity: purification and growth"
+        },
+        {
+          "term": "nisab (نِصَاب)",
+          "def": "the minimum wealth before zakah is due"
+        },
+        {
+          "term": "hawl (حَوْل)",
+          "def": "one full lunar year of holding the wealth"
+        },
+        {
+          "term": "sadaqah (صَدَقَة)",
+          "def": "voluntary charity, given any time"
+        },
+        {
+          "term": "zakat al-fitr (زَكَاةُ الْفِطْر)",
+          "def": "a small charity paid before the Eid prayer at the end of Ramadan"
+        }
       ],
-      "starter": ["List the five rulings.", "Is fasting in Ramadan fard or mustahabb?", "Give an example of a mubah action."],
+      "hook": {
+        "type": "ponder",
+        "text": "If everyone gave a small part of their savings every year to people in need, what would change in your town?",
+        "a": "Poverty would fall, debts would be eased, people would feel cared for: the aims of zakah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Take from their wealth a charity by which you purify them and cause them to grow' (at-Tawbah 9:103). Zakah is one of the five pillars of Islam.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What does 59:9 praise the Ansar for?",
+          "a": "Preferring others over themselves",
+          "mins": 1,
+          "options": [
+            "Preferring others over themselves",
+            "Fighting at Badr"
+          ]
+        },
+        {
+          "q": "What percentage is zakah on savings?",
+          "a": "2.5%",
+          "mins": 1,
+          "options": [
+            "2.5%",
+            "10%",
+            "20%"
+          ]
+        },
+        {
+          "q": "Name the five pillars of Islam.",
+          "a": "Shahadah, salah, zakah, sawm, Hajj",
+          "mins": 1
+        },
+        {
+          "q": "Which battle took place in Ramadan 2 AH?",
+          "a": "Badr",
+          "mins": 1
+        }
+      ],
       "teach": [
-        { "heading": "What is zakah?", "bullets": ["The third pillar of Islam", "“Establish prayer and give zakah” (2:43)", "It purifies wealth and the heart", "It supports the poor and the community"], "note": "Begin with bismillah. The word zakah means purification and growth. Ask: if wealth is a trust from Allah, what do we owe? Link to 9:103, which tells the Prophet ﷺ to take charity to purify them." },
-        { "heading": "Who must pay and how much", "bullets": ["Muslims who hold wealth above the nisab for a year", "The rate is 2.5% on savings and gold or silver", "The nisab is linked to 85 g of gold or 595 g of silver", "Calculated on wealth after basic needs and debts"], "note": "Worked example: Aisha has £6,000 above the nisab for a full year. Zakah = 2.5% × 6,000 = £150. Say that tools such as the current nisab value should be checked with a trusted scholar or organisation because values change." },
-        { "heading": "Who receives it", "bullets": ["The poor and the needy", "Zakah collectors", "Those whose hearts are to be reconciled", "Freeing slaves, those in debt, the cause of Allah, the traveller"], "note": "The eight categories come from 9:60 (Edexcel 3.4 passage). Ask: why is it forbidden to give zakah to the Prophet’s family? (To protect their dignity; mention only if asked.) Discuss how a society with zakah reduces poverty." },
-        { "heading": "Zakat al-Fitr and sadaqah", "bullets": ["Zakat al-Fitr: paid before the Eid prayer", "Ibn Umar: one sa’ of food (Bukhari)", "Sadaqah can be given any time", "Even a kind word is charity"], "note": "Zakat al-Fitr purifies the fasting person and feeds the poor. Today it is often paid as money; scholars give the current amount. Ask for ways Year 8 pupils can give sadaqah." },
-        { "heading": "The wisdom of giving", "bullets": ["Reduces greed", "Builds love between rich and poor", "Protects wealth from misuse", "“Charity does not decrease wealth” - hadith in Muslim"], "note": "The hadith ‘Charity does not decrease wealth’ is in Sahih Muslim (Abu Hurayrah). Ask pupils to explain how this can be true spiritually. Encourage a class charity project." }
+        {
+          "heading": "What is zakah?",
+          "bullets": [
+            "Meaning: purification and growth",
+            "A pillar of Islam, often paired with salah (2:43)",
+            "Wealth belongs to Allah; we are trustees",
+            "A right of the poor, not a favour"
+          ],
+          "note": "Begin with Bismillah. Al-Baqarah 2:43: establish prayer and give zakah. 9:103: it purifies. Contrast with sadaqah, which is voluntary."
+        },
+        {
+          "heading": "Who pays, on what?",
+          "bullets": [
+            "A Muslim with wealth above the nisab",
+            "Held for one lunar year (hawl)",
+            "Cash, gold, silver, business stock: 2.5%",
+            "Crops and livestock have their own rules"
+          ],
+          "note": "The nisab is linked to 85 g of gold or 595 g of silver; families check today's value with their masjid. Crops are paid at harvest at different rates. Keep it simple: Year 8 focus is savings.",
+          "model": {
+            "problem": "Yahya has held £5,200 in savings, above the nisab, for one lunar year. How much zakah does he pay?",
+            "steps": [
+              "Zakah on savings is 2.5%",
+              "10% of £5,200 is £520",
+              "2.5% is a quarter of 10%",
+              "£520 ÷ 4 = £130"
+            ],
+            "answer": "£130"
+          }
+        },
+        {
+          "heading": "Who receives zakah? (9:60)",
+          "bullets": [],
+          "note": "At-Tawbah 9:60 names eight groups. Zakah cannot be given to one's own parents or children (whom one must support anyway), as scholars explain.",
+          "diagram": {
+            "centre": "Zakah recipients (9:60)",
+            "items": [
+              "The poor (fuqara')",
+              "The needy (masakin)",
+              "Zakah collectors",
+              "Those whose hearts are being brought together",
+              "Freeing captives",
+              "People in debt",
+              "In the cause of Allah",
+              "The stranded traveller"
+            ]
+          }
+        },
+        {
+          "heading": "Why zakah purifies",
+          "bullets": [
+            "Purifies wealth: the poor's share removed",
+            "Purifies the heart from greed",
+            "Builds love between rich and poor",
+            "Wealth grows with barakah"
+          ],
+          "note": "Ask: how could giving away money make wealth grow? (Barakah, a fairer society, and reward.)",
+          "check": {
+            "q": "Which of these can receive zakah according to 9:60?",
+            "options": [
+              "A person struggling with debt",
+              "A rich friend",
+              "Anyone who asks",
+              "Only the masjid building"
+            ],
+            "answer": 0,
+            "why": "Debtors are one of the eight groups. Zakah is for those named in 9:60, not the rich."
+          }
+        }
       ],
-      "practice": ["Calculate zakah on £4,000 held above the nisab for a year.", "List four categories of zakah recipients.", "State one difference between zakah and sadaqah."],
-      "independent": ["Make a leaflet ‘Zakah explained’.", "Calculate 2.5% of £800, £2,400 and £10,000 and show your working.", "Write a paragraph on why zakah is both worship and social justice."],
-      "exit": ["What is the rate of zakah on savings?", "Name two categories who can receive it."],
-      "homework": "Plan a charity action for the school community and explain how it follows Islamic teaching.",
-      "send": "SEND/EAL: calculation steps on cards; stretch: explain why zakah is not the same as taxes."
+      "practice": [
+        {
+          "q": "Calculate the zakah on £3,600 of savings held above the nisab for a lunar year.",
+          "a": "£90",
+          "mins": 3,
+          "model": "I do: 10% of £3,600 = £360. 2.5% is a quarter of 10%: £360 ÷ 4 = £90."
+        },
+        {
+          "q": "Zakah or sadaqah: giving £5 to a charity box on any day you choose.",
+          "a": "Sadaqah",
+          "mins": 1,
+          "options": [
+            "Zakah",
+            "Sadaqah"
+          ]
+        },
+        {
+          "q": "What is the hawl?",
+          "a": "One lunar year of holding the wealth",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Zakah problems (pupil PDF): a) £8,000 b) £12,400 c) £1,600 savings held a lunar year, all above the nisab. Then write two sentences in the portal response box on how zakah helps society.",
+          "a": "a) £200 b) £310 c) £40. Helps the poor and debtors, reduces inequality, builds unity.",
+          "mins": 10,
+          "model": "Teacher works a) first: 10% of £8,000 = £800; quarter of £800 = £200."
+        },
+        {
+          "q": "Extend: explain the difference between zakah, sadaqah and zakat al-fitr.",
+          "a": "Zakah: obligatory 2.5% yearly above the nisab. Sadaqah: voluntary, any time. Zakat al-fitr: small fixed charity before the Eid prayer.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how does zakah show that wealth is a trust from Allah?",
+          "a": "The owner must give the share Allah set to those He named; wealth is held for Allah, not owned absolutely.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which surah lists the eight groups of zakah?",
+          "a": "At-Tawbah (9:60)",
+          "mins": 1,
+          "options": [
+            "At-Tawbah (9:60)",
+            "Al-Ikhlas",
+            "Al-Fatihah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what would change in your town?",
+          "a": "Less poverty and debt, more care and unity.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask at home or at your masjid what today's nisab value is (in gold or silver) and write how it was worked out.",
+      "send": "SEND: calculator allowed; 10% then quarter method card. EAL: picture cards for the eight groups. Stretch: research how zakah on crops is calculated.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: zakah calculations",
+        "Calculator",
+        "Mushaf with translation (9:60, 9:103)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "gold coins pile",
+          "alt": "Gold coins",
+          "for": "keywords"
+        },
+        {
+          "find": "wheat harvest field",
+          "alt": "A wheat harvest: crops have their own zakah",
+          "for": "teach:2"
+        },
+        {
+          "find": "charity box",
+          "alt": "A collection box",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Hadith and Akhlaq",
       "n": 11,
       "title": "Hadith: the believers are like one body",
       "duration": 50,
-      "objectives": ["Explain the hadith of the body and the hadith on brotherhood", "Link them to Muslim unity and compassion", "Apply them to school and community"],
+      "objectives": [
+        "Explain the hadith of the body and the hadith on brotherhood",
+        "Link them to Muslim unity and compassion",
+        "Apply them to school and community"
+      ],
       "keywords": [
-        { "term": "ukhuwwah", "def": "brotherhood and sisterhood in faith" },
-        { "term": "rahmah", "def": "mercy and compassion" },
-        { "term": "ummah", "def": "the global Muslim community" },
-        { "term": "tarahum", "def": "mutual mercy" }
+        {
+          "term": "ukhuwwah",
+          "def": "brotherhood and sisterhood in faith"
+        },
+        {
+          "term": "rahmah",
+          "def": "mercy and compassion"
+        },
+        {
+          "term": "ummah",
+          "def": "the global Muslim community"
+        },
+        {
+          "term": "tarahum",
+          "def": "mutual mercy"
+        }
       ],
-      "starter": ["What is zakah?", "Name one category of zakah recipient.", "Why did the Ansar welcome the Muhajirun?"],
+      "starter": [
+        "What is zakah?",
+        "Name one category of zakah recipient.",
+        "Why did the Ansar welcome the Muhajirun?"
+      ],
       "teach": [
-        { "heading": "One body", "bullets": ["“The believers in their mutual love and mercy are like one body”", "“When one part is in pain, the whole body responds with sleeplessness and fever”", "Narrated by an-Nu’man ibn Bashir (Bukhari, Muslim)"], "note": "Begin with bismillah. Ask: when you stub a toe, who feels it? The whole person. Likewise, we feel for others’ pain. Link to current events: Muslims who suffer in different parts of the world. Encourage action: du’a, giving, awareness." },
-        { "heading": "A Muslim is the brother of a Muslim", "bullets": ["“He does not wrong him or hand him over”", "Allah helps the one who helps his brother", "Narrated by Ibn Umar (Bukhari, Muslim)", "Qur’an: “The believers are but brothers” (49:10)"], "note": "Full hadith: a Muslim is the brother of a Muslim; he does not wrong him or abandon him. Whoever fulfils his brother’s need, Allah fulfils his need; whoever removes a hardship, Allah removes a hardship from him on the Day of Judgment. Ask pupils to give practical examples at school." },
-        { "heading": "How to live it", "bullets": ["Greet with salam", "Help in need", "Forgive and settle disputes (49:9-10)", "Pray for each other"], "note": "Role play: two pupils disagree about a game; one applies 49:10. Show the steps of making peace: listen, apologise, forgive, restore. Link to Y6 love for your brother what you love for yourself." },
-        { "heading": "Brotherhood beyond differences", "bullets": ["Muslims come from many races and nations", "“The most noble of you is the one with most taqwa” (49:13)", "Racism and pride are rejected"], "note": "Edexcel 2.8 passage 49:11-13. Mention the Prophet’s farewell sermon later (Y9). Ask: what steps can a school take to include everyone?" }
+        {
+          "heading": "One body",
+          "bullets": [
+            "“The believers in their mutual love and mercy are like one body”",
+            "“When one part is in pain, the whole body responds with sleeplessness and fever”",
+            "Narrated by an-Nu’man ibn Bashir (Bukhari, Muslim)"
+          ],
+          "note": "Begin with bismillah. Ask: when you stub a toe, who feels it? The whole person. Likewise, we feel for others’ pain. Link to current events: Muslims who suffer in different parts of the world. Encourage action: du’a, giving, awareness."
+        },
+        {
+          "heading": "A Muslim is the brother of a Muslim",
+          "bullets": [
+            "“He does not wrong him or hand him over”",
+            "Allah helps the one who helps his brother",
+            "Narrated by Ibn Umar (Bukhari, Muslim)",
+            "Qur’an: “The believers are but brothers” (49:10)"
+          ],
+          "note": "Full hadith: a Muslim is the brother of a Muslim; he does not wrong him or abandon him. Whoever fulfils his brother’s need, Allah fulfils his need; whoever removes a hardship, Allah removes a hardship from him on the Day of Judgment. Ask pupils to give practical examples at school."
+        },
+        {
+          "heading": "How to live it",
+          "bullets": [
+            "Greet with salam",
+            "Help in need",
+            "Forgive and settle disputes (49:9-10)",
+            "Pray for each other"
+          ],
+          "note": "Role play: two pupils disagree about a game; one applies 49:10. Show the steps of making peace: listen, apologise, forgive, restore. Link to Y6 love for your brother what you love for yourself."
+        },
+        {
+          "heading": "Brotherhood beyond differences",
+          "bullets": [
+            "Muslims come from many races and nations",
+            "“The most noble of you is the one with most taqwa” (49:13)",
+            "Racism and pride are rejected"
+          ],
+          "note": "Edexcel 2.8 passage 49:11-13. Mention the Prophet’s farewell sermon later (Y9). Ask: what steps can a school take to include everyone?"
+        }
       ],
-      "practice": ["Explain the ‘one body’ hadith in your own words.", "Give three ways to help a classmate who is struggling.", "What does 49:10 say about believers?"],
-      "independent": ["Write a short captioned scene script showing the ‘one body’ hadith in a school setting.", "Write a paragraph: ‘What does brotherhood mean for the Ummah today?’", "Plan a small act of service you will do this week and explain the hadith behind it."],
-      "exit": ["What does ‘one body’ mean in the hadith?", "Give one rule of brotherhood from the hadith of Ibn Umar."],
+      "practice": [
+        "Explain the ‘one body’ hadith in your own words.",
+        "Give three ways to help a classmate who is struggling.",
+        "What does 49:10 say about believers?"
+      ],
+      "independent": [
+        "Write a short captioned scene script showing the ‘one body’ hadith in a school setting.",
+        "Write a paragraph: ‘What does brotherhood mean for the Ummah today?’",
+        "Plan a small act of service you will do this week and explain the hadith behind it."
+      ],
+      "exit": [
+        "What does ‘one body’ mean in the hadith?",
+        "Give one rule of brotherhood from the hadith of Ibn Umar."
+      ],
       "homework": "Do one act of help for someone at home and write what you learned.",
       "send": "SEND/EAL: scene script template; stretch: link the hadith to the story of the Ansar and Muhajirun."
     },
@@ -291,25 +2264,524 @@
       "n": 12,
       "title": "Akhlaq: truthfulness and avoiding lies",
       "duration": 50,
-      "objectives": ["Explain the hadith on truthfulness and lying", "State the signs of hypocrisy in the hadith", "Apply honesty to school and online life"],
+      "objectives": [
+        "Explain the hadith on truthfulness and lying",
+        "State the signs of hypocrisy in the hadith",
+        "Apply honesty to school and online life"
+      ],
       "keywords": [
-        { "term": "sidq", "def": "truthfulness" },
-        { "term": "kadhib", "def": "lying" },
-        { "term": "nifaq", "def": "hypocrisy: showing faith outwardly while hiding disbelief or insincerity" },
-        { "term": "amanah", "def": "trust" }
+        {
+          "term": "sidq",
+          "def": "truthfulness"
+        },
+        {
+          "term": "kadhib",
+          "def": "lying"
+        },
+        {
+          "term": "nifaq",
+          "def": "hypocrisy: showing faith outwardly while hiding disbelief or insincerity"
+        },
+        {
+          "term": "amanah",
+          "def": "trust"
+        }
       ],
-      "starter": ["Explain the one body hadith.", "What does 49:10 say?", "Name a good manner shown to a neighbour."],
+      "starter": [
+        "Explain the one body hadith.",
+        "What does 49:10 say?",
+        "Name a good manner shown to a neighbour."
+      ],
       "teach": [
-        { "heading": "Truthfulness leads to Paradise", "bullets": ["“Truthfulness leads to righteousness”", "“Righteousness leads to Paradise”", "“A man keeps being truthful until he is written truthful with Allah”", "Narrated by Ibn Mas’ud (Bukhari, Muslim)"], "note": "Begin with bismillah. The same hadith warns that lying leads to wickedness, and wickedness leads to the Fire; a man keeps lying until he is written as a liar with Allah. Ask: how does one small lie lead to another? Use a school example." },
-        { "heading": "Signs of the hypocrite", "bullets": ["When he speaks, he lies", "When he promises, he breaks it", "When trusted, he betrays", "Narrated by Abu Hurayrah (Bukhari, Muslim)"], "note": "Explain nifaq (hypocrisy in action) and that this hadith warns of traits to avoid; it does not mean we label individuals. Ask: which of the three traits do people find hardest to avoid? Discuss how to repair broken trust." },
-        { "heading": "Honesty in modern life", "bullets": ["Do not cheat in exams", "Do not share fake news or false quotes", "Keep promises to friends and family", "Admit mistakes and say sorry"], "note": "Link to hadith checking and online speech. The Prophet ﷺ taught that it is enough lying for a person to speak about everything he hears (Muslim, Abu Hurayrah). Ask: what should you do before forwarding a message?" },
-        { "heading": "Building a truthful character", "bullets": ["Keep the company of the truthful (9:119)", "Remember Allah is watching", "Speak good or keep silent", "Make du’a for a truthful tongue"], "note": "Qur’an 9:119: ‘O you who believe, fear Allah and be with the truthful.’ Pupils set personal honesty goals and share. Close with revision of the half-term and a short quiz." }
+        {
+          "heading": "Truthfulness leads to Paradise",
+          "bullets": [
+            "“Truthfulness leads to righteousness”",
+            "“Righteousness leads to Paradise”",
+            "“A man keeps being truthful until he is written truthful with Allah”",
+            "Narrated by Ibn Mas’ud (Bukhari, Muslim)"
+          ],
+          "note": "Begin with bismillah. The same hadith warns that lying leads to wickedness, and wickedness leads to the Fire; a man keeps lying until he is written as a liar with Allah. Ask: how does one small lie lead to another? Use a school example."
+        },
+        {
+          "heading": "Signs of the hypocrite",
+          "bullets": [
+            "When he speaks, he lies",
+            "When he promises, he breaks it",
+            "When trusted, he betrays",
+            "Narrated by Abu Hurayrah (Bukhari, Muslim)"
+          ],
+          "note": "Explain nifaq (hypocrisy in action) and that this hadith warns of traits to avoid; it does not mean we label individuals. Ask: which of the three traits do people find hardest to avoid? Discuss how to repair broken trust."
+        },
+        {
+          "heading": "Honesty in modern life",
+          "bullets": [
+            "Do not cheat in exams",
+            "Do not share fake news or false quotes",
+            "Keep promises to friends and family",
+            "Admit mistakes and say sorry"
+          ],
+          "note": "Link to hadith checking and online speech. The Prophet ﷺ taught that it is enough lying for a person to speak about everything he hears (Muslim, Abu Hurayrah). Ask: what should you do before forwarding a message?"
+        },
+        {
+          "heading": "Building a truthful character",
+          "bullets": [
+            "Keep the company of the truthful (9:119)",
+            "Remember Allah is watching",
+            "Speak good or keep silent",
+            "Make du’a for a truthful tongue"
+          ],
+          "note": "Qur’an 9:119: ‘O you who believe, fear Allah and be with the truthful.’ Pupils set personal honesty goals and share. Close with revision of the half-term and a short quiz."
+        }
       ],
-      "practice": ["Complete the chain: truthfulness leads to ______ which leads to ______.", "Give an example of breaking a promise and how to repair it.", "Why is sharing unchecked news a form of lying?"],
-      "independent": ["Write a short story where a pupil tells the truth when it is hard.", "Make a poster of the three signs of hypocrisy with positive opposites.", "Write a plan to build honesty in your daily life."],
-      "exit": ["State the three signs of hypocrisy from the hadith.", "What does 9:119 tell believers?"],
+      "practice": [
+        "Complete the chain: truthfulness leads to ______ which leads to ______.",
+        "Give an example of breaking a promise and how to repair it.",
+        "Why is sharing unchecked news a form of lying?"
+      ],
+      "independent": [
+        "Write a short story where a pupil tells the truth when it is hard.",
+        "Make a poster of the three signs of hypocrisy with positive opposites.",
+        "Write a plan to build honesty in your daily life."
+      ],
+      "exit": [
+        "State the three signs of hypocrisy from the hadith.",
+        "What does 9:119 tell believers?"
+      ],
       "homework": "Write a short apology or promise-repair letter for a real situation, or keep an honesty log for three days.",
       "send": "SEND/EAL: scenario cards with pictures; stretch: discuss when honesty is difficult and how to be both truthful and kind."
+    },
+    {
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
+      "n": 13,
+      "title": "Lessons from the Seerah: from Makkah to Badr",
+      "duration": 50,
+      "bigQuestion": "Which moment from Makkah to Badr teaches you the most about how to live today, and why?",
+      "objectives": [
+        "To understand the key lessons the Seerah from Makkah to Badr teaches about faith, character and leadership"
+      ],
+      "successCriteria": [
+        "All: link four events to the lesson each teaches",
+        "Most: support each lesson with evidence",
+        "Some: write a balanced answer on which lesson matters most today"
+      ],
+      "crossCurricular": "English (Year 8 non-fiction): writing a balanced argument with evidence",
+      "smsc": "Moral: applying the Prophet's ﷺ example to our own choices",
+      "keywords": [
+        {
+          "term": "sabr (صَبْر)",
+          "def": "patience and steadfastness"
+        },
+        {
+          "term": "tawakkul (تَوَكُّل)",
+          "def": "trusting Allah after doing your best"
+        },
+        {
+          "term": "ithar (إِيثَار)",
+          "def": "preferring others over yourself (59:9)"
+        },
+        {
+          "term": "shura (شُورَى)",
+          "def": "consultation"
+        },
+        {
+          "term": "uswah hasanah (أُسْوَة حَسَنَة)",
+          "def": "an excellent example (33:21)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which moment from Makkah to Badr teaches you the most about how to live today, and why?",
+        "a": "Any well-argued answer: e.g. the cave (trust), the brotherhood (generosity) or Badr (consultation)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'There has certainly been for you in the Messenger of Allah an excellent example, for whoever hopes in Allah and the Last Day and remembers Allah often' (al-Ahzab 33:21).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which ayah says Allah gave victory at Badr while you were weak?",
+          "a": "3:123",
+          "mins": 1,
+          "options": [
+            "3:123",
+            "9:40",
+            "17:1"
+          ]
+        },
+        {
+          "q": "Which Companion advised on the wells at Badr?",
+          "a": "Al-Hubab ibn al-Mundhir",
+          "mins": 1,
+          "options": [
+            "Al-Hubab ibn al-Mundhir",
+            "Abu Bakr"
+          ]
+        },
+        {
+          "q": "Who slept in the Prophet's ﷺ bed on the night of the Hijrah?",
+          "a": "Ali ibn Abi Talib",
+          "mins": 1,
+          "options": [
+            "Ali ibn Abi Talib",
+            "Umar"
+          ]
+        },
+        {
+          "q": "What is ithar?",
+          "a": "Preferring others over yourself",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four events, four lessons",
+          "bullets": [],
+          "note": "Begin with Bismillah. Build the table together; pupils suggest the lesson before you reveal it.",
+          "table": {
+            "head": [
+              "Event",
+              "Lesson",
+              "Evidence"
+            ],
+            "rows": [
+              [
+                "Isra and Mi'raj",
+                "Salah is a gift; ease after hardship",
+                "17:1; Bukhari and Muslim"
+              ],
+              [
+                "The Hijrah",
+                "Plan well, then trust Allah",
+                "9:40"
+              ],
+              [
+                "The brotherhood",
+                "Generosity and dignity",
+                "59:9; Sa'd and Abd ar-Rahman"
+              ],
+              [
+                "Badr",
+                "Consult, pray, stay united",
+                "3:123; 8:9"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sort: which lesson?",
+          "bullets": [],
+          "note": "Discuss each card; some could fit two columns, which is good for discussion.",
+          "sort": {
+            "columns": [
+              "Faith and trust",
+              "Character",
+              "Leadership"
+            ],
+            "cards": [
+              "A. 'Do not grieve; Allah is with us'",
+              "B. Returning the trusts of enemies",
+              "C. Accepting al-Hubab's advice",
+              "D. Abu Bakr believing the night journey",
+              "E. Paying the orphans for the land",
+              "F. Carrying bricks with the Companions"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "Living the lessons today",
+          "bullets": [
+            "Hard times: sabr and du'a",
+            "Big decisions: plan, consult, trust",
+            "New people: welcome and share",
+            "Responsibility: serve, do not just command"
+          ],
+          "note": "Ask for a real situation for each (exams, moving house, a new pupil, being a team captain).",
+          "check": {
+            "q": "A team captain helps set up the hall instead of only giving orders. Which Seerah moment does this follow?",
+            "options": [
+              "Carrying bricks for the mosque",
+              "Hiding in the cave",
+              "The night journey",
+              "Ta'if"
+            ],
+            "answer": 0,
+            "why": "He ﷺ carried bricks with the Companions: a leader who serves. The others teach trust and patience."
+          }
+        },
+        {
+          "heading": "Writing a balanced answer",
+          "bullets": [
+            "State your view",
+            "Give a reason with evidence",
+            "Consider another view",
+            "Reach a justified conclusion"
+          ],
+          "note": "This is the structure pupils will use for 12-mark 'assess this statement' answers in Years 10 and 11."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Statement: 'The Hijrah teaches more than Badr.' Write the first two sentences of a balanced answer.",
+          "a": "For example: 'Some would agree, because the Hijrah shows planning and tawakkul together (9:40). However, Badr teaches consultation and reliance on Allah when outnumbered (3:123).'",
+          "mins": 4,
+          "model": "I do: 'Some would agree, because the Hijrah shows careful planning and trust in Allah together: \"Do not grieve; indeed Allah is with us\" (9:40). However, others would argue that ...'"
+        },
+        {
+          "q": "Which event best teaches ithar?",
+          "a": "The brotherhood (59:9)",
+          "mins": 1,
+          "options": [
+            "The brotherhood",
+            "The cave",
+            "The Isra"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: 'The most important lesson from the Seerah for young Muslims today is patience.' Write a balanced answer of two paragraphs and a conclusion.",
+          "a": "View with evidence (Makkah, Ta'if, 9:40); another view (e.g. consultation at Badr, generosity of the Ansar); justified conclusion.",
+          "mins": 11,
+          "model": "Teacher models the first paragraph: 'Some would agree, because the Prophet ﷺ was patient through years of persecution in Makkah ... For example, in the cave he said ... (9:40). This shows ...'"
+        },
+        {
+          "q": "Extend: add a sentence linking your conclusion to 33:21.",
+          "a": "The Prophet ﷺ is the excellent example in every one of these qualities, so ...",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: which event surprised you most this unit and why?",
+          "a": "Personal, reasoned answer.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which ayah calls the Prophet ﷺ an excellent example?",
+          "a": "33:21",
+          "mins": 1,
+          "options": [
+            "33:21",
+            "3:123",
+            "59:9"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which moment teaches you most, and why?",
+          "a": "Reasoned answer with evidence.",
+          "mins": 2
+        }
+      ],
+      "homework": "Choose one lesson from the Seerah and put it into practice this week; write what you did in four sentences.",
+      "send": "SEND: event and lesson cards to match. EAL: balanced-answer frame with connectives (however, on the other hand). Stretch: use three events in your answer.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: events and lessons table and balanced-answer frame",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Al-Masjid an-Nabawi courtyard",
+          "alt": "Masjid an-Nabawi",
+          "for": "teach:1"
+        },
+        {
+          "find": "compass and map",
+          "alt": "A compass on a map: planning a route",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Iman and the sources of Shari'ah",
+      "n": 14,
+      "title": "Unit quiz and written reflection: iman and the road to Madinah",
+      "duration": 50,
+      "bigQuestion": "Which pillar of iman or Seerah event from this unit means the most to you personally, and why?",
+      "objectives": [
+        "To understand what I have mastered in this unit and how its lessons apply to my life"
+      ],
+      "successCriteria": [
+        "All: complete the unit quiz",
+        "Most: correct mistakes and explain the right answers",
+        "Some: write a thoughtful reflection linking belief and action"
+      ],
+      "smsc": "Spiritual: personal reflection on faith",
+      "keywords": [
+        {
+          "term": "iman (إِيمَان)",
+          "def": "belief in the heart, on the tongue and in actions"
+        },
+        {
+          "term": "seerah (سِيرَة)",
+          "def": "the life story of the Prophet ﷺ"
+        },
+        {
+          "term": "muraja'ah (مُرَاجَعَة)",
+          "def": "review"
+        },
+        {
+          "term": "reflection",
+          "def": "thinking carefully about what you learnt and how it changes you"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which pillar of iman or Seerah event from this unit means the most to you personally, and why?",
+        "a": "Personal reflection with a reason."
+      },
+      "islamicLink": {
+        "text": "Allah taught: 'My Lord, increase me in knowledge' (Ta Ha 20:114). رَبِّ زِدْنِي عِلْمًا",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Zakah on £2,400 above the nisab?",
+          "a": "£60",
+          "mins": 1,
+          "options": [
+            "£60",
+            "£240",
+            "£6"
+          ]
+        },
+        {
+          "q": "Which book was given to Musa?",
+          "a": "The Tawrat",
+          "mins": 1,
+          "options": [
+            "The Tawrat",
+            "The Injil"
+          ]
+        },
+        {
+          "q": "Which prophet was in the sixth heaven?",
+          "a": "Musa",
+          "mins": 1,
+          "options": [
+            "Musa",
+            "Ibrahim"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Quiz rules",
+          "bullets": [
+            "Bismillah and du'a first",
+            "Read every question twice",
+            "Answer every question",
+            "Your own work, no notes"
+          ],
+          "note": "Begin with Bismillah and Rabbi zidni 'ilma. Run the quiz as a Teams Form (independent task, 14 minutes)."
+        },
+        {
+          "heading": "Going through answers",
+          "bullets": [
+            "Mark in a different colour",
+            "Write why the right answer is right",
+            "Note topics to revisit"
+          ],
+          "note": "Share Forms results; reteach the two most-missed questions.",
+          "check": {
+            "q": "Re-check: which ayah lists the eight groups who receive zakah?",
+            "options": [
+              "9:60",
+              "9:40",
+              "3:123",
+              "17:1"
+            ],
+            "answer": 0,
+            "why": "9:60 lists the recipients. 9:40 is the cave, 3:123 Badr, 17:1 the Isra."
+          }
+        },
+        {
+          "heading": "Written reflection",
+          "bullets": [
+            "Choose one belief or event",
+            "What it teaches",
+            "How it changes one thing you do",
+            "A du'a or intention"
+          ],
+          "note": "Reflection in the portal response box. Spring 2: hadith and akhlaq (the believers like one body; truthfulness)."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Practice question: 'Give two roles of angels with evidence.'",
+          "a": "Jibril brings revelation (2:97); the Kiraman Katibin record deeds (82:10-12); the Angel of Death takes souls (32:11).",
+          "mins": 2,
+          "model": "I do: 'One role is bringing revelation: Jibril brought the Qur'an (2:97).'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Unit quiz (Teams Forms, 12 questions): 1) Angels are created from? 2) Role of Jibril? 3) Book given to Dawud? 4) Ayah promising the Qur'an's protection? 5) Name the ulul 'azm. 6) Ayah of the Isra? 7) How many prayers were finally given? 8) Cave of the Hijrah? 9) Ayah 'Allah is with us'? 10) What is mu'akhah? 11) Date of Badr? 12) Zakah on £4,800 above the nisab?",
+          "a": "1) Light 2) Brings revelation 3) Zabur 4) 15:9 5) Nuh, Ibrahim, Musa, Isa, Muhammad ﷺ 6) 17:1 7) Five 8) Thawr 9) 9:40 10) Brotherhood of Muhajirun and Ansar 11) 17 Ramadan 2 AH 12) £120",
+          "mins": 14,
+          "model": "Teacher answers a sample question aloud (not in the quiz): 'Who blows the Horn? Israfil, as described in hadith; the Horn is mentioned in 39:68.'"
+        },
+        {
+          "q": "Reflection in the portal response box: 'One belief or event from this unit that changes how I live.' Start: 'This half term I learnt ...'",
+          "a": "Names the belief or event, what it teaches, one concrete change, and an intention.",
+          "mins": 8
+        }
+      ],
+      "exit": [
+        {
+          "q": "Write your target for Spring 2 in the chat.",
+          "a": "A precise, achievable target.",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: which belief or event means most to you?",
+          "a": "Personal answer with a reason.",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct every quiz mistake with the reason, and revise the topic you scored lowest on.",
+      "send": "SEND: quiz read aloud, extra time, options for recall questions. EAL: glossary allowed. Stretch: reflection must include an ayah with reference.",
+      "resources": [
+        "Slides",
+        "Teams Forms unit quiz (12 questions, in the independent section)",
+        "Pupil PDF: corrections and reflection sheet",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pencil and paper exam",
+          "alt": "A pencil and paper for the quiz",
+          "for": "teach:1"
+        },
+        {
+          "find": "notebook journal writing",
+          "alt": "A journal for reflection",
+          "for": "teach:3"
+        }
+      ]
     }
   ]
 }

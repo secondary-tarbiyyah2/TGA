@@ -3,7 +3,7 @@
   "year": "y10",
   "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
   "boardShort": "Edexcel IGCSE 4IS1",
-  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.1-1.4 and Appendix 5 passages (66:1-3, 97:1-5, 33:38-40, Hijrah hadith); RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 1.5-1.7 and 3.1-3.5. Units 1.1-1.4 are already covered well in content/lessons/islamic-studies/y10.json (12 lessons) and are not duplicated here. | Gap-fill against Pearson Edexcel International GCSE Islamic Studies 4IS1 specification",
+  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.1-1.4 and Appendix 5 passages (66:1-3, 97:1-5, 33:38-40, Hijrah hadith); RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 1.5-1.7 and 3.1-3.5. Units 1.1-1.4 are already covered well in content/lessons/islamic-studies/y10.json (12 lessons) and are not duplicated here. | Gap-fill against Pearson Edexcel International GCSE Islamic Studies 4IS1 specification | Spring 1 2027 (lessons 13 to 17 upgraded, 34 to 38 new): Year 10 pack Islamic Studies founding year (bridge 1.1 and 1.2 week of 11 Jan; 1.3 and 1.4 week of 18 Jan; then Spring 1 w1, w3, w4: 1.5 the Sunnah, 1.6 justice and equality, with set-passage and 12-mark practice); set passages 66:1-3, 97:1-5, 33:38-40, the hadith on intention, 33:36 and the hadith on the just (Muslim); hadith from Bukhari and Muslim or named collections without numbers; Shia collections described factually; approved resources for Shia content TO CONFIRM",
   "lessons": [
     {
       "unit": "Unit 1: Section A - The Prophet's early life and the Revelation (spec 1.1-1.2)",
@@ -1249,743 +1249,1138 @@
       "boardShort": "Edexcel IGCSE 4IS1"
     },
     {
-      "unit": "Spec 1.5: The Sunnah of the Prophet (Section A)",
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
       "n": 13,
       "title": "1.5 The Sunnah: what it is and why it matters (Qur'an 33:36)",
       "duration": 50,
-      "bigQuestion": "Why do Muslims treat the Prophet's words and actions as a guide for life?",
+      "bigQuestion": "If the Qur'an is the word of Allah, why would Muslims also need the words and actions of the Prophet ﷺ?",
       "objectives": [
-        "Define Sunnah and hadith and the three forms of Sunnah",
-        "Explain why the Sunnah matters to Muslims",
-        "Analyse Qur'an 33:36 and link it to obedience"
+        "To understand what the Sunnah is and why it has authority for Muslims alongside the Qur'an"
       ],
       "successCriteria": [
-        "All: define Sunnah and give an example of a saying, an action and an approval",
-        "Most: explain two reasons the Sunnah is important, with a Qur'an reference",
-        "Some: evaluate how far Muslims could practise Islam without the Sunnah"
+        "All: define Sunnah and hadith and the three forms of Sunnah",
+        "Most: explain the set passage 33:36",
+        "Some: use 33:21, 4:80 and 59:7 to explain the authority of the Sunnah"
       ],
-      "crossCurricular": "English: distinguishing a source from a summary; History: types of source",
-      "smsc": "Spiritual: love and obedience expressed through following the example of the Messenger",
+      "crossCurricular": "History: primary sources and their reliability",
+      "smsc": "Spiritual: following the Prophet ﷺ as an act of love and obedience",
       "keywords": [
         {
-          "term": "Sunnah (سنة)",
-          "def": "the way of the Prophet: his sayings, deeds and approvals"
+          "term": "Sunnah (سُنَّة)",
+          "def": "the way of the Prophet ﷺ: his sayings, deeds and approvals"
         },
         {
-          "term": "hadith (حديث)",
-          "def": "a report that records what the Prophet said, did or approved"
+          "term": "hadith (حَدِيث)",
+          "def": "a report recording what he said, did or approved"
         },
         {
-          "term": "qawl / fi'l / taqrir",
-          "def": "saying / action / silent approval"
+          "term": "qawl, fi'l, taqrir",
+          "def": "saying, action, silent approval"
         },
         {
-          "term": "uswah hasanah (أسوة حسنة)",
-          "def": "a beautiful example"
+          "term": "uswah hasanah (أُسْوَة حَسَنَة)",
+          "def": "an excellent example (33:21)"
+        },
+        {
+          "term": "authority",
+          "def": "the right to be obeyed and followed"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If the Qur'an is the word of Allah, why would Muslims also need the words and actions of the Prophet ﷺ?",
+        "a": "The Qur'an itself commands following him (33:36, 4:80); the Sunnah explains and applies the Qur'an."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'It is not for a believing man or a believing woman, when Allah and His Messenger have decided a matter, that they should have any choice about their affair' (al-Ahzab 33:36). This is the set passage for 1.5.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name the five pillars of Islam.",
-        "Which pillar is Salah, and how many times a day is it performed?",
-        "Who compiled the Qur'an into one volume under Abu Bakr?"
+        {
+          "q": "Which set passage goes with 1.4?",
+          "a": "The hadith on intention",
+          "mins": 1,
+          "options": [
+            "The hadith on intention",
+            "33:36"
+          ]
+        },
+        {
+          "q": "Who slept in the Prophet's ﷺ bed on the night of the Hijrah?",
+          "a": "Ali",
+          "mins": 1,
+          "options": [
+            "Ali",
+            "Uthman"
+          ]
+        },
+        {
+          "q": "Which ayah calls him the Seal of the Prophets?",
+          "a": "33:40",
+          "mins": 1,
+          "options": [
+            "33:40",
+            "97:1"
+          ]
+        },
+        {
+          "q": "In which year CE was the Hijrah?",
+          "a": "622",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "What is the Sunnah?",
           "bullets": [
-            "Sunnah: the Prophet's way of life",
-            "Three forms: saying (qawl), action (fi'l), approval (taqrir)",
-            "Hadith: the report that carries the Sunnah",
-            "Qur'an is revelation; Sunnah explains and applies it"
+            "The Prophet's ﷺ whole way of life",
+            "Hadith: the report that carries it",
+            "Qur'an: Allah's words; Sunnah explains and applies them"
           ],
-          "note": "Begin with bismillah. Ask pupils for one thing the Prophet ﷺ did that they copy (for example, saying bismillah before food). Sort their answers into saying, action, approval. Make clear that hadith is the report and Sunnah is the practice reported. Note for the teacher: Muslim scholars use 'Sunnah' in several senses (for example, in fiqh it can also mean a recommended act). Here it means his whole way as the spec requires."
+          "note": "Begin with Bismillah. In fiqh 'sunnah' can also mean a recommended act; the specification uses it for his whole way."
         },
         {
-          "heading": "Three forms of Sunnah",
-          "bullets": [
-            "Saying: a spoken teaching",
-            "Action: what he was seen doing",
-            "Approval: he saw something and did not object"
-          ],
-          "note": "Give one example of each without needing a reference: a saying (teaching about good character), an action (how he prayed), an approval (Companions doing something in his presence and him allowing it). If the teacher wants a numbered hadith to quote, supply and verify it before the lesson; the three categories are the point.",
+          "heading": "Three forms",
+          "bullets": [],
+          "note": "Pupils need one example of each in exam answers.",
           "table": {
             "head": [
               "Form",
               "Meaning",
-              "Example to explain"
+              "Example"
             ],
             "rows": [
               [
                 "Qawl",
                 "What he said",
-                "A teaching on honesty"
+                "'Actions are only by intentions'"
               ],
               [
                 "Fi'l",
                 "What he did",
-                "The way he prayed"
+                "How he prayed: 'Pray as you have seen me pray' (Bukhari)"
               ],
               [
                 "Taqrir",
                 "What he approved",
-                "A Companion's action he allowed"
+                "Companions' actions he saw and allowed"
               ]
             ]
           }
         },
         {
-          "heading": "Why does it matter? Qur'an 33:36",
+          "heading": "Set passage: 33:36 and its support",
           "bullets": [
-            "Qur'an 33:36: when Allah ﷻ and His Messenger decide a matter, believers have no choice",
-            "Qur'an 33:21: the Messenger is a beautiful example",
-            "Qur'an 4:80: obeying the Messenger is obeying Allah ﷻ",
-            "Qur'an 59:7: take what the Messenger gives"
+            "33:36: no choice once Allah and His Messenger decide",
+            "33:21: an excellent example",
+            "4:80: obeying the Messenger is obeying Allah",
+            "59:7: take what the Messenger gives you"
           ],
-          "note": "33:36 is the set passage (spec 1.5). Ayat references here are ones the school can rely on: 33:36, 33:21, 4:80, 59:7. Read 33:36 slowly in Arabic then English: وَمَا كَانَ لِمُؤْمِنٍ وَلَا مُؤْمِنَةٍ إِذَا قَضَى اللَّهُ وَرَسُولُهُ أَمْرًا أَن يَكُونَ لَهُمُ الْخِيَرَةُ مِنْ أَمْرِهِمْ. Ask: what does 'no choice' mean? (No believer may set aside a ruling once clear; not that people cannot ask questions.) Teacher to check the Arabic text against a mushaf before display. Historical context: scholars mention an occasion about a marriage proposal arranged by the Prophet ﷺ; if used, give the source."
-        },
-        {
-          "heading": "Model answer: explain why the Sunnah matters",
-          "bullets": [
-            "Claim, reason, evidence",
-            "Link back to the question"
-          ],
-          "note": "Model how to write a 6-mark 'explain' answer using PEEL: Point, Evidence, Explain, Link.",
-          "model": {
-            "problem": "Explain two reasons why the Sunnah is important to Muslims. (6 marks)",
-            "steps": [
-              "Reason 1: it shows how to follow the Qur'an in practice, for example the Qur'an commands prayer but the Prophet ﷺ showed how to perform it.",
-              "Evidence: Qur'an 33:21 calls him a beautiful example, so Muslims copy his actions.",
-              "Reason 2: it is a source of authority; Qur'an 4:80 says obeying the Messenger is obeying Allah ﷻ.",
-              "Link: so a Muslim cannot practise Islam fully without learning and following the Sunnah."
-            ],
-            "answer": "Full marks need two developed reasons, each with a reference or example and an explanation of why it matters."
-          }
-        },
-        {
-          "heading": "Hinge question",
-          "bullets": [
-            "Choose the best answer on whiteboards"
-          ],
-          "note": "Show the check; cold-call two pupils to justify, then reveal.",
+          "note": "Read 33:36 slowly. 'No choice' means a believer does not set aside a clear ruling; questions to understand are still welcome. Teacher checks the Arabic in a mushaf if displayed.",
           "check": {
-            "q": "A Companion saw the Prophet ﷺ pray and prayed the same way. Which form of Sunnah did the Prophet's way of praying belong to?",
+            "q": "What does 33:36 teach about the Sunnah?",
             "options": [
-              "Qawl (saying)",
-              "Fi'l (action)",
-              "Taqrir (approval)",
-              "Qur'an (revelation)"
+              "Believers follow what Allah and His Messenger decide",
+              "Only the Qur'an must be followed",
+              "The Sunnah is optional",
+              "Each person may choose freely"
             ],
-            "answer": 1,
-            "why": "Fi'l: it is something he did. Qawl is something he said; taqrir is silent approval of someone else's act; the Qur'an is revelation recited, not the Sunnah."
+            "answer": 0,
+            "why": "33:36 joins Allah and His Messenger: a clear decision of the Messenger is binding. The other options contradict the ayah."
           }
+        },
+        {
+          "heading": "Why it matters today",
+          "bullets": [
+            "Shows how to perform worship",
+            "A model of character for every role",
+            "Unites Muslims in practice",
+            "Protects against misreading the Qur'an"
+          ],
+          "note": "12-mark statement: 'Muslims today need the Qur'an but do not need the Sunnah.' Some argue the Qur'an alone is enough; reply from the Qur'an itself (4:80, 16:44, 59:7) and from practice (salah, zakah, Hajj details)."
         }
       ],
       "practice": [
-        "Give one example each of qawl, fi'l and taqrir (teacher supplies prompts).",
-        "Identify the phrase in 33:36 that tells believers they do not have a choice.",
-        "Explain in two sentences the difference between Sunnah and hadith."
+        {
+          "q": "Explain two reasons why the Sunnah is important to Muslims.",
+          "a": "1) It explains the Qur'an in practice, e.g. salah (16:44). 2) It has authority: obeying the Messenger is obeying Allah (4:80; 33:36). Each developed.",
+          "mins": 4,
+          "model": "I do reason 1: 'Point: the Sunnah shows how to follow the Qur'an. Evidence: the Qur'an commands prayer, and the Prophet ﷺ said \"Pray as you have seen me pray\" (Bukhari). Explain: without the Sunnah, Muslims would not know the movements or number of rak'ahs. Link: so the Sunnah is essential to worship.'"
+        },
+        {
+          "q": "A Companion did something in front of the Prophet ﷺ and he stayed silent. Which form?",
+          "a": "Taqrir",
+          "mins": 1,
+          "options": [
+            "Taqrir",
+            "Qawl",
+            "Fi'l"
+          ]
+        }
       ],
       "independent": [
-        "Core: complete the sorting table of ten statements into qawl, fi'l and taqrir.",
-        "Extend: write a 6-mark answer 'Explain two reasons why the Sunnah matters to Muslims.'",
-        "Stretch: 'Muslims could follow the Qur'an without the Sunnah.' Write the opening of a 12-mark response with a counter-view."
+        {
+          "q": "In the portal response box, write a set-passage answer: 'Explain what Qur'an 33:36 teaches Muslims about the Sunnah.' Refer to the passage directly.",
+          "a": "Quotes or paraphrases 33:36; explains that the Messenger's decisions are binding; links to 4:80, 33:21; gives a practical example.",
+          "mins": 10,
+          "model": "Teacher models the opening: 'Qur'an 33:36 says that when Allah and His Messenger have decided a matter, believers have no choice. This teaches that ...'"
+        },
+        {
+          "q": "Extend: sort ten statements (pupil PDF) into qawl, fi'l and taqrir.",
+          "a": "As in the answer key on the pupil PDF.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: write the opening of a 12-mark answer to 'Muslims today need the Qur'an but do not need the Sunnah', giving the view of someone who agrees.",
+          "a": "Some argue the Qur'an is complete and preserved; Sunnah reports vary in strength. Then turn to the counter.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Define hadith in one sentence.",
-        "Name two Qur'an references that support following the Prophet ﷺ.",
-        "Big question: why do Muslims treat the Prophet's words and actions as a guide?"
+        {
+          "q": "Which ayah calls the Prophet ﷺ an excellent example?",
+          "a": "33:21",
+          "mins": 1,
+          "options": [
+            "33:21",
+            "33:36",
+            "33:40"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why do Muslims need the Sunnah?",
+          "a": "The Qur'an commands following him, and the Sunnah explains and applies the Qur'an.",
+          "mins": 2
+        }
       ],
-      "homework": "Learn the definitions of Sunnah, hadith, qawl, fi'l and taqrir and write one example of each.",
-      "send": "SEND/EAL: sentence starters and a pre-sorted example bank; stretch: compare how Sunnah is described in the main Muslim traditions (Sunni and Shia both follow the Prophet's Sunnah, differing in which chains of narrators they accept).",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
+      "homework": "Learn 33:36 and its meaning; write one example each of qawl, fi'l and taqrir.",
+      "send": "SEND: three-colour sort cards. EAL: glossary. Stretch: research how scholars use the term 'sunnah' in fiqh.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: three forms sort (ten statements) and set-passage frame",
+        "Mushaf with translation (33:21, 33:36, 4:80, 59:7)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Al-Masjid an-Nabawi green dome",
+          "alt": "Masjid an-Nabawi in Madinah",
+          "for": "hook"
+        },
+        {
+          "find": "Miswak",
+          "alt": "A miswak, a well-known Sunnah",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Spec 1.5: The Sunnah of the Prophet (Section A)",
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
       "n": 14,
       "title": "1.5 How the Sunnah was recorded and its role in belief and practice",
       "duration": 50,
-      "bigQuestion": "How do we know that a hadith really goes back to the Prophet ﷺ?",
+      "bigQuestion": "How can we be confident a saying from 1,400 years ago is accurate?",
       "objectives": [
-        "Describe how the Sunnah was memorised, written and collected",
-        "Explain isnad, matn and the grades of hadith",
-        "Explain the role of the Sunnah in establishing belief and practice"
+        "To understand how the Sunnah was recorded and checked, and its role in Muslim belief and practice"
       ],
       "successCriteria": [
-        "All: describe two ways the Sunnah was preserved",
-        "Most: explain isnad and how scholars tested a hadith",
-        "Some: assess whether the Sunnah is as reliable as the Qur'an, using the spec's key ideas"
+        "All: describe how the Sunnah was memorised, written and collected",
+        "Most: explain isnad, matn and the grades of hadith",
+        "Some: explain the Sunnah's role in belief and practice, including Shia and Sunni collections"
       ],
-      "crossCurricular": "History: evaluating chains of source evidence; English: reliability and bias",
-      "smsc": "Moral: honesty and trustworthiness (amanah) as the basis of knowledge",
+      "crossCurricular": "History: evaluating the reliability of sources",
+      "smsc": "Cultural: the Muslim tradition of scholarship",
       "keywords": [
         {
-          "term": "isnad (إسناد)",
-          "def": "the chain of narrators of a hadith"
+          "term": "isnad (إِسْنَاد)",
+          "def": "the chain of narrators"
         },
         {
-          "term": "matn (متن)",
-          "def": "the text of a hadith"
+          "term": "matn (مَتْن)",
+          "def": "the words of the report"
         },
         {
-          "term": "sahih (صحيح)",
-          "def": "authentic: reliable narrators and sound chain"
+          "term": "sahih (صَحِيح)",
+          "def": "authentic"
         },
         {
-          "term": "Sahih al-Bukhari",
-          "def": "one of the most trusted hadith collections, compiled by Imam al-Bukhari"
+          "term": "da'if (ضَعِيف)",
+          "def": "weak"
+        },
+        {
+          "term": "al-Kutub as-Sittah (الْكُتُبُ السِّتَّة)",
+          "def": "the six main Sunni hadith collections"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "How can we be confident a saying from 1,400 years ago is accurate?",
+        "a": "Chains of trusted narrators (isnad), memory and writing, grading by scholars, and the great collections."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'We revealed to you the Reminder so that you may make clear to the people what was sent down to them' (an-Nahl 16:44).",
+        "at": "start"
+      },
       "starter": [
-        "Define Sunnah.",
-        "Name the three forms of Sunnah.",
-        "Which Qur'an passage says believers have no choice once Allah ﷻ and His Messenger decide?"
+        {
+          "q": "Which set passage goes with 1.5?",
+          "a": "33:36",
+          "mins": 1,
+          "options": [
+            "33:36",
+            "33:40"
+          ]
+        },
+        {
+          "q": "Taqrir means ...",
+          "a": "Silent approval",
+          "mins": 1,
+          "options": [
+            "Silent approval",
+            "Saying"
+          ]
+        },
+        {
+          "q": "Which ayah: 'obeying the Messenger is obeying Allah'?",
+          "a": "4:80",
+          "mins": 1,
+          "options": [
+            "4:80",
+            "59:7"
+          ]
+        },
+        {
+          "q": "Name the three forms of Sunnah.",
+          "a": "Qawl, fi'l, taqrir",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Preserving the Sunnah",
           "bullets": [
-            "Memory: Companions learned and repeated what they heard",
-            "Practice: the community prayed, fasted and performed Hajj as he did",
-            "Writing: some Companions kept written notes",
-            "Collection: scholars gathered hadith in books"
+            "Memory: Companions learnt and repeated",
+            "Practice: the community lived it daily",
+            "Writing: e.g. Abdullah ibn Amr",
+            "Collection: scholars gathered books"
           ],
-          "note": "Stress that the Companions learned the Sunnah in lifetime and lived it. For writing, name Abdullah ibn Amr ibn al-As (known to have kept a written collection) and the Prophet's permission to write for Abu Shah after the Makkah conquest (Bukhari 2434 is the reference; teacher to verify the number before displaying). Explain that early on the Prophet ﷺ told people to write only the Qur'an so it would not be mixed (a report in Muslim); later writing was allowed. Do not worry if pupils find this a puzzle: scholars explain it by the stage of revelation."
+          "note": "Begin with Bismillah. Abu Dawud reports Abdullah ibn Amr writing with permission. Bukhari reports the Prophet ﷺ telling Companions to write a sermon for Abu Shah after the conquest of Makkah."
         },
         {
-          "heading": "Isnad and matn",
+          "heading": "Checking reports",
           "bullets": [
             "Isnad: who told whom, back to the Prophet ﷺ",
-            "Matn: the words of the report",
-            "Scholars checked memory, honesty and whether narrators could have met",
+            "Matn: the words, checked against the Qur'an",
+            "Narrators checked for honesty and accuracy",
             "Grades: sahih, hasan, da'if"
           ],
-          "note": "Draw a chain on the board: Prophet, Companion, Successor, collector. Ask: why would a chain matter? (It shows the source.) Explain that early scholars also checked that the text did not contradict the Qur'an or established facts. Mention the warning against lying about the Prophet ﷺ: 'Whoever lies about me on purpose, let him take his seat in the Fire' (Bukhari 1291 and Muslim 4); teacher to verify before quoting. This explains why scholars were so careful.",
-          "cycle": [
-            "Companion hears or sees",
-            "Tells Successor",
-            "Successor teaches students",
-            "Scholar checks the chain",
-            "Collector records it with the isnad"
-          ]
-        },
-        {
-          "heading": "The great collections",
-          "bullets": [
-            "Imam al-Bukhari (died 256 AH) and Imam Muslim (died 261 AH)",
-            "Abu Dawud, al-Tirmidhi, al-Nasa'i, Ibn Majah",
-            "Together: the six main Sunni collections",
-            "Shia scholars also collect hadith, including from the Imams of the Prophet's family"
-          ],
-          "note": "Keep neutral and factual. The Sunni six are called al-Kutub al-Sittah; Bukhari and Muslim are called the two Sahihs. Shia Muslims use their own major collections (for example, al-Kafi) and also revere the Prophet's Sunnah; difference lies in which narrators and chains are accepted. Say this plainly: the Academy follows the Sunni collections, and the Shia view is described accurately for the exam."
-        },
-        {
-          "heading": "Role of the Sunnah",
-          "bullets": [
-            "Explains the Qur'an: how to pray, how to perform Hajj",
-            "Gives details: amounts and conditions of zakah",
-            "Shows how to live Islam as a person, parent and leader",
-            "Qur'an 16:44: the Messenger was sent to explain"
-          ],
-          "note": "Model the argument: Qur'an says establish prayer; the Sunnah shows the how. Qur'an 16:44 states the Messenger explains what was sent down. Hadith 'Pray as you have seen me pray' (Bukhari 631) is a good link; verify before quoting. Ask: what would Hajj look like with no Sunnah?"
-        },
-        {
-          "heading": "Hinge question",
-          "bullets": [
-            "Whiteboards up"
-          ],
-          "note": "Reveal after discussion of the distractors.",
+          "note": "Ibn al-Mubarak: 'The isnad is part of the religion' (introduction to Sahih Muslim). The warning 'whoever lies about me deliberately, let him take his seat in the Fire' (Bukhari and Muslim) explains the care taken.",
           "check": {
-            "q": "What does the isnad of a hadith tell you?",
+            "q": "What is the isnad of a hadith?",
             "options": [
-              "The meaning of the hadith in modern English",
-              "The chain of people who passed it on",
-              "The book of the Qur'an it explains",
-              "The date of the Hijrah"
+              "The chain of narrators",
+              "The words reported",
+              "The grade given",
+              "The book's title"
             ],
-            "answer": 1,
-            "why": "The isnad is the chain of narrators. The matn is the text. The other options are not what an isnad shows."
+            "answer": 0,
+            "why": "Isnad is the chain; the matn is the words; the grade is the scholars' judgement of reliability."
           }
         },
         {
-          "heading": "Model answer: 'describe'",
-          "bullets": [
-            "Name the point",
-            "Develop with detail",
-            "Use correct terms"
-          ],
-          "note": "'Describe' means state the features and develop each. Model with the example below.",
-          "model": {
-            "problem": "Describe how the Sunnah was recorded. (4 marks)",
-            "steps": [
-              "Point: it was first memorised by the Companions, who also practised it.",
-              "Detail: some Companions wrote hadith down, for example in personal notebooks.",
-              "Detail: later scholars collected hadith with isnads into books, such as Sahih al-Bukhari and Sahih Muslim.",
-              "Use terms: scholars graded hadith by the reliability of the narrators in the isnad."
-            ],
-            "answer": "Four marks: four distinct, developed points with accurate terms."
+          "heading": "The collections",
+          "bullets": [],
+          "note": "Keep it factual and respectful. Shia Muslims revere the Sunnah and use their own major collections (for example al-Kafi), accepting narrations especially through the family of the Prophet ﷺ; the difference lies in which narrators and chains are accepted.",
+          "compare": {
+            "left": {
+              "title": "Sunni collections",
+              "points": [
+                "Sahih al-Bukhari (d. 256 AH)",
+                "Sahih Muslim (d. 261 AH)",
+                "Abu Dawud, at-Tirmidhi, an-Nasa'i, Ibn Majah"
+              ]
+            },
+            "right": {
+              "title": "Shia collections",
+              "points": [
+                "Al-Kafi and other major books",
+                "Narrations through the Imams of the Prophet's ﷺ family",
+                "Own methods for judging narrators"
+              ]
+            },
+            "label": "and"
           }
+        },
+        {
+          "heading": "Role in belief and practice",
+          "bullets": [
+            "Practice: salah, zakah amounts, Hajj rites",
+            "Belief: details of the unseen and the Hereafter",
+            "Character: a model for every role",
+            "Law: a source of Shari'ah after the Qur'an"
+          ],
+          "note": "Ask: what would Hajj look like with no Sunnah? The Prophet ﷺ said 'take your rites from me' (Muslim)."
         }
       ],
       "practice": [
-        "Say what isnad means and draw a three-person chain.",
-        "Name two of the six collections.",
-        "Why did scholars check the narrators?"
+        {
+          "q": "Describe how the Sunnah was preserved.",
+          "a": "Memorised and practised by the Companions, written by some (Abdullah ibn Amr), passed on with chains, checked and gathered into collections such as Bukhari and Muslim.",
+          "mins": 3,
+          "model": "I do: 'Describe' means give the features with detail: 'First, the Companions memorised his words and lived them daily. Second, some wrote them down, for example Abdullah ibn Amr ...'"
+        },
+        {
+          "q": "Which collection is regarded by Sunnis as the most authentic after the Qur'an?",
+          "a": "Sahih al-Bukhari",
+          "mins": 1,
+          "options": [
+            "Sahih al-Bukhari",
+            "Al-Kafi",
+            "The Muwatta'"
+          ]
+        }
       ],
       "independent": [
-        "Core: complete a timeline from the Prophet's lifetime to Imam al-Bukhari.",
-        "Extend: write a 'describe' answer on how the Sunnah was recorded (4 marks).",
-        "Stretch: 'The Sunnah is as important as the Qur'an.' Write a balanced paragraph using 4:80 and 16:44."
+        {
+          "q": "In the portal response box: 'Explain the role of the Sunnah in Muslim practice.' Give two developed points with examples.",
+          "a": "Points: shows how to worship (salah, Hajj); gives details of zakah; model of character; source of law. Examples and evidence (16:44; 'pray as you have seen me pray').",
+          "mins": 10,
+          "model": "Teacher models point 1: 'Point: the Sunnah shows Muslims how to carry out worship. Evidence: the Qur'an commands Hajj, but the Prophet ﷺ said \"take your rites from me\" (Muslim). Explain: ...'"
+        },
+        {
+          "q": "Extend: why did scholars check the matn as well as the isnad?",
+          "a": "A good-looking chain could still carry an error; the text must agree with the Qur'an and stronger reports.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain one similarity and one difference in how Sunni and Shia Muslims use hadith.",
+          "a": "Similarity: both revere the Sunnah as a source. Difference: they accept different chains and collections.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Give one reason scholars graded hadith.",
-        "Name the part of a hadith that is the text.",
-        "Big question: how do we know a hadith goes back to the Prophet ﷺ?"
+        {
+          "q": "Which grade means authentic?",
+          "a": "Sahih",
+          "mins": 1,
+          "options": [
+            "Sahih",
+            "Da'if",
+            "Mawdu'"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how can we be confident?",
+          "a": "Chains, checked narrators, memory and writing, grading and collections.",
+          "mins": 2
+        }
       ],
-      "homework": "Revise: write a 6-mark answer 'Explain the role of the Sunnah in establishing Islamic belief and practice.'",
-      "send": "SEND/EAL: chain-of-people diagram, key-word bank; stretch: research the differences in grading between sahih and hasan hadith.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
+      "homework": "Make a revision card for 1.5: definitions, three forms, 33:36, four supporting ayat, preservation, collections.",
+      "send": "SEND: chain diagram to label. EAL: glossary. Stretch: research the conditions of a sahih hadith.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: preservation organiser and explain frame",
+        "Mushaf with translation (16:44)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "old Arabic manuscript library",
+          "alt": "Old Arabic manuscripts",
+          "for": "teach:3"
+        },
+        {
+          "find": "Bukhara old city",
+          "alt": "Bukhara, home of Imam al-Bukhari",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Spec 1.6: Teachings and example of the Prophet on justice and equality (Section A)",
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
       "n": 15,
-      "title": "1.6 Social and economic justice in the Prophet's teaching and example",
+      "title": "1.6 Social and economic justice in the Prophet's ﷺ teaching and example",
       "duration": 50,
-      "bigQuestion": "What does it mean to be just in society, and how did the Prophet ﷺ live it?",
+      "bigQuestion": "Is a society fair if its laws are good but the powerful can escape them?",
       "objectives": [
-        "Define 'adl and explain Islamic teaching on social and economic justice",
-        "Describe the Prophet's example on fairness, wealth and the vulnerable",
-        "Analyse the hadith on justice and equality before the law"
+        "To understand the Prophet's ﷺ teaching and example on social and economic justice"
       ],
       "successCriteria": [
-        "All: define 'adl and give an example of fair treatment",
-        "Most: explain how zakah and fair trade promote economic justice",
-        "Some: assess whether the Prophet's example applies to modern society"
+        "All: define 'adl and zulm with Qur'anic evidence",
+        "Most: describe two examples of social and two of economic justice",
+        "Some: explain what these show about Muslim beliefs about society"
       ],
-      "crossCurricular": "PSHE: fairness and the rule of law; Citizenship: equality before the law",
-      "smsc": "Moral: justice, honesty and care for the vulnerable; Social: responsibility for the community",
+      "crossCurricular": "Business (4BS1 option): ethical business, fair wages and honest trading",
+      "smsc": "Moral: justice for the weak and equality before the law",
       "keywords": [
         {
-          "term": "'adl (عدل)",
-          "def": "justice; giving each their right"
+          "term": "'adl (عَدْل)",
+          "def": "justice: giving everyone their right"
         },
         {
-          "term": "zulm (ظلم)",
-          "def": "oppression or injustice"
+          "term": "zulm (ظُلْم)",
+          "def": "oppression, injustice"
         },
         {
-          "term": "zakah (زكاة)",
+          "term": "zakah (زَكَاة)",
           "def": "obligatory giving to those in need"
         },
         {
-          "term": "yatim (يتيم)",
-          "def": "an orphan"
+          "term": "riba (رِبَا)",
+          "def": "interest or usury, forbidden in Islam"
+        },
+        {
+          "term": "huquq (حُقُوق)",
+          "def": "rights"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a society fair if its laws are good but the powerful can escape them?",
+        "a": "No: the Prophet ﷺ warned that nations were destroyed for punishing the weak and sparing the noble (Bukhari and Muslim)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, stand firmly for justice as witnesses for Allah, even against yourselves, your parents and your relatives' (an-Nisa 4:135), and 'Allah commands justice and excellence' (an-Nahl 16:90).",
+        "at": "start"
+      },
       "starter": [
-        "Which pillar of Islam concerns giving to the poor?",
-        "Name one thing the Prophet ﷺ did in Madinah to unite the community.",
-        "What does 'Seal of the Prophets' mean?"
+        {
+          "q": "Name the two most authentic Sunni collections.",
+          "a": "Bukhari and Muslim",
+          "mins": 1,
+          "options": [
+            "Bukhari and Muslim",
+            "Al-Kafi and the Muwatta'"
+          ]
+        },
+        {
+          "q": "Isnad means ...",
+          "a": "The chain of narrators",
+          "mins": 1,
+          "options": [
+            "The chain of narrators",
+            "The words"
+          ]
+        },
+        {
+          "q": "Which ayah is the 1.5 set passage?",
+          "a": "33:36",
+          "mins": 1,
+          "options": [
+            "33:36",
+            "4:135"
+          ]
+        },
+        {
+          "q": "What is zakah?",
+          "a": "Obligatory giving of 2.5% of savings above the nisab",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "What is justice?",
           "bullets": [
-            "'Adl: giving every person what is due",
-            "Qur'an 4:135: stand firm for justice, even against yourselves",
-            "Qur'an 16:90: Allah ﷻ commands justice and kindness",
-            "Justice is part of why messengers were sent (Qur'an 57:25)"
+            "'Adl: giving every person their due",
+            "Stand for justice even against yourselves (4:135)",
+            "Be just even with those you dislike (5:8)",
+            "Messengers were sent so people uphold justice (57:25)"
           ],
-          "note": "Open with bismillah. Ask: is fairness the same as treating everyone identically? Explain 'adl as giving each person their right. The ayat 4:135, 16:90 and 57:25 are secure references; teacher to check them against a mushaf before display. Note 5:8 as well: justice even towards those you dislike. Check before use: Paraphrase of the hadith of the Makhzumi woman: Bukhari 3475, Muslim 1688 (teacher to verify wording)"
+          "note": "Begin with Bismillah. Ask: is fairness the same as treating everyone identically? Teacher checks the ayat in a mushaf before display."
         },
         {
           "heading": "Equality before the law",
-          "bullets": [
-            "A noble woman of Makhzum was caught stealing",
-            "Some asked the Prophet ﷺ to spare her",
-            "He said: nations before you were destroyed for punishing the weak and sparing the powerful",
-            "He said the same law applied even to his own daughter"
-          ],
-          "note": "This is a strong candidate for the spec's 'hadith on justice' (Bukhari 3475, Muslim 1688; teacher to verify the number and the exact wording and read it from a trusted translation). Because the spec lists the passage by reference only, check the printed Appendix 5 passage with the pupils. Annotate: who is protected, who is warned, what principle is established. Ask: does rank give immunity? (No.) Link to the rule of law in Britain.",
+          "bullets": [],
+          "note": "The hadith of the Makhzumi woman (Bukhari and Muslim). Read from a trusted translation and annotate: who is protected, who is warned, what principle is set.",
           "quote": {
-            "text": "The people before you were destroyed because when a noble stole they left him, but when a weak person stole they applied the punishment.",
-            "source": "Paraphrase of the hadith of the Makhzumi woman: Bukhari 3475, Muslim 1688"
+            "text": "Those before you were destroyed because when a noble person stole they left him, and when a weak person stole they punished him. By Allah, if Fatimah the daughter of Muhammad stole, I would cut off her hand.",
+            "source": "Bukhari and Muslim (meaning)"
           }
         },
         {
           "heading": "Economic justice",
           "bullets": [
-            "Qur'an 59:7: wealth must not circulate only among the rich",
-            "Zakah purifies wealth and supports the poor",
-            "Riba (interest) is forbidden (Qur'an 2:275)",
-            "The Prophet urged fair trade and honest weights"
+            "Wealth must not circulate only among the rich (59:7)",
+            "Zakah: the poor's right in wealth (9:60)",
+            "Riba forbidden; trade permitted (2:275)",
+            "Honest weights: woe to those who give short measure (83:1-3)"
           ],
-          "note": "Link with 3.4 (Zakah). Teach the principle: wealth is a trust from Allah ﷻ, with duties attached. For fair trade, describe honest measure and avoiding fraud (Qur'an 83:1-3 on those who give short measure is secure; teacher to verify). The Prophet's own trade with Khadijah was known for honesty (Unit 1.1). Ask pupils to give one modern example of unfair economic practice."
+          "note": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead.",
+          "check": {
+            "q": "Which teaching is about ECONOMIC justice?",
+            "options": [
+              "Wealth must not circulate only among the rich (59:7)",
+              "The noble and weak face the same law",
+              "Be just to those you dislike (5:8)",
+              "Stand for justice against yourselves"
+            ],
+            "answer": 0,
+            "why": "59:7 is about the flow of wealth. The others are about justice in law and relationships."
+          }
         },
         {
           "heading": "Care for the weak",
           "bullets": [
-            "Orphans: Qur'an 93:9 do not oppress the orphan",
-            "Workers: they are your brothers (Bukhari 30, Muslim 1661)",
-            "The Prophet warned against oppression on the Day of Judgment (Muslim 2578)",
-            "Freed slaves were honoured, for example Bilal"
+            "Orphans: do not oppress them (93:9)",
+            "Workers: 'they are your brothers' (Bukhari and Muslim)",
+            "Pay the worker his wage promptly (Ibn Majah)",
+            "Oppression is darkness on the Day of Judgement"
           ],
-          "note": "Teacher to verify the hadith numbers (Bukhari 30 on treating servants as brothers; Muslim 2578 on oppression being darkness on the Day of Resurrection). If not able to check, teach the ideas without numbers. Explain the context: slavery existed worldwide; Islam encouraged freeing slaves and demanded humane treatment. Do not over-claim. Ask: how does this show Muslim beliefs about society?"
-        },
-        {
-          "heading": "Model answer",
-          "bullets": [
-            "Use the passage",
-            "Name the principle",
-            "Explain the link to society"
-          ],
-          "note": "Model a 6-mark answer with evidence.",
-          "model": {
-            "problem": "Explain how the Prophet's teaching and example promoted justice. (6 marks)",
-            "steps": [
-              "Point 1: he applied the same law to everyone, shown when he refused to excuse a noble thief because of rank.",
-              "Explain: this teaches that no one is above the law, which creates fairness in society.",
-              "Point 2: he taught that wealth must reach the poor, through zakah and the ban on riba.",
-              "Explain: this reduces poverty and shows Muslims they are responsible for each other.",
-              "Link: so Muslim society is meant to be one of accountability and care."
-            ],
-            "answer": "Both points developed with an example and an explanation."
-          }
-        },
-        {
-          "heading": "Hinge question",
-          "bullets": [
-            "Mini-whiteboards"
-          ],
-          "note": "Reveal and discuss.",
-          "check": {
-            "q": "What does the hadith about the woman of Makhzum teach?",
-            "options": [
-              "Rich people may be forgiven for crimes",
-              "Punishment applies equally to everyone, whatever their rank",
-              "Only women may be excused",
-              "Stealing is only wrong in Makkah"
-            ],
-            "answer": 1,
-            "why": "The Prophet applied the law equally. The other options reverse the principle of equality before the law."
-          }
+          "note": "The hadith 'your servants are your brothers' (Abu Dharr) is in Bukhari and Muslim; 'oppression will be darkness on the Day of Resurrection' is in Bukhari and Muslim. The hadith on paying wages before the sweat dries is reported by Ibn Majah."
         }
       ],
       "practice": [
-        "Define 'adl in your own words.",
-        "Identify one economic teaching and its source.",
-        "Why did the Prophet ﷺ refuse to excuse the noble thief?"
+        {
+          "q": "Explain how the Prophet's ﷺ example promoted justice in society.",
+          "a": "1) Same law for all: the Makhzumi woman. 2) Wealth for the poor: zakah and the ban on riba. Each with explanation and link to Muslim belief about society.",
+          "mins": 4,
+          "model": "I do point 1: 'Point: he applied the law equally to everyone. Evidence: he refused to excuse a noble woman of Makhzum and said even Fatimah would face the same law (Bukhari and Muslim). Explain: no one is above the law, which builds trust and fairness. Link: Muslims believe a just society protects the weak.'"
+        },
+        {
+          "q": "Which ayah says 'Allah has permitted trade and forbidden riba'?",
+          "a": "2:275",
+          "mins": 1,
+          "options": [
+            "2:275",
+            "4:135",
+            "16:90"
+          ]
+        }
       ],
       "independent": [
-        "Core: complete a table: situation, injustice, what the Prophet ﷺ taught.",
-        "Extend: write a 6-mark answer on economic justice in Islam.",
-        "Stretch: write 8 lines on whether the Prophet's rule of equality applies in a British court."
+        {
+          "q": "Table task then paragraph (portal response box): for four situations (unpaid worker, rich thief, orphan's property, short measures) give the injustice, the Prophet's ﷺ teaching and the evidence. Then explain what these show about Muslim beliefs about society.",
+          "a": "Correct teaching and evidence for each (wage hadith, Makhzumi, 93:9 or 4:10, 83:1-3); conclusion: society built on 'adl, care for the weak and accountability.",
+          "mins": 10,
+          "model": "Teacher completes the first row: 'Unpaid worker: injustice to the worker; teaching: pay him promptly; evidence: hadith in Ibn Majah, and \"your servants are your brothers\" (Bukhari and Muslim).'"
+        },
+        {
+          "q": "Extend: why is riba seen as an economic injustice?",
+          "a": "It makes money grow from others' need without shared risk, concentrating wealth (59:7, 2:275).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: does the Prophet's ﷺ rule of equality apply in a British court? Give a reason.",
+          "a": "Yes in principle: the rule of law means everyone is equal before it, matching the Makhzumi hadith.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Give two Islamic sources on justice.",
-        "Define zulm.",
-        "Big question: what does it mean to be just in society?"
+        {
+          "q": "Zulm means ...",
+          "a": "Oppression, injustice",
+          "mins": 1,
+          "options": [
+            "Oppression, injustice",
+            "Charity",
+            "Prayer"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is a society fair if the powerful escape the law?",
+          "a": "No: justice means the same law for everyone.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a paragraph: 'The Prophet's example shows that justice is more than punishment.' Support it with two pieces of evidence.",
-      "send": "SEND/EAL: visual story map of the Makhzumi woman event; stretch: compare Islamic and British ideas of equality before the law.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
+      "homework": "Write a paragraph: 'The Prophet's ﷺ example shows that justice is more than punishment.' Use two pieces of evidence.",
+      "send": "SEND: situation cards with key words. EAL: glossary. Stretch: read 4:135 and 5:8 and compare them.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: justice table and explain frame",
+        "Mushaf with translation (4:135, 5:8, 16:90, 57:25, 59:7, 2:275, 83:1-3, 93:9)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "scales of justice",
+          "alt": "Scales, a sign of justice",
+          "for": "teach:1"
+        },
+        {
+          "find": "market weighing scale produce",
+          "alt": "Weighing goods at a market",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "Spec 1.6: Teachings and example of the Prophet on justice and equality (Section A)",
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
       "n": 16,
       "title": "1.6 Human rights and relations with people of other religions",
       "duration": 50,
-      "bigQuestion": "How should Muslims treat people whose beliefs differ from theirs?",
+      "bigQuestion": "Does every human being deserve respect, whatever they believe? Where does that idea come from in Islam?",
       "objectives": [
-        "Describe the Prophet's teaching and example on human rights",
-        "Describe his relationships with people of other religions",
-        "Explain what this shows about Muslim beliefs about society"
+        "To understand the Prophet's ﷺ teaching and example on human rights and on relations with people of other religions"
       ],
       "successCriteria": [
-        "All: name two rights the Prophet ﷺ protected",
-        "Most: explain his relations with Jews, Christians and others with examples",
-        "Some: assess how far the Prophet's example supports religious tolerance today"
+        "All: describe three rights protected in the Farewell Sermon and the Qur'an",
+        "Most: describe two examples of the Prophet's ﷺ relations with other faiths",
+        "Some: explain what these show about Muslim beliefs about society"
       ],
-      "crossCurricular": "Citizenship: human rights, freedom of belief; History: treaties and covenants",
-      "smsc": "Social: living respectfully in a diverse society; Cultural: understanding religious diversity",
+      "crossCurricular": "Citizenship (PSHE): human rights and freedom of religion in Britain",
+      "smsc": "Social: respect for people of all faiths and none",
       "keywords": [
         {
-          "term": "huquq (حقوق)",
-          "def": "rights"
+          "term": "karamah (كَرَامَة)",
+          "def": "human dignity"
         },
         {
-          "term": "dhimmi / ahl al-dhimmah",
-          "def": "non-Muslim citizens under Muslim protection (term used in early Muslim states)"
+          "term": "dhimmi / mu'ahad",
+          "def": "a non-Muslim living under a Muslim state's protection or covenant"
         },
         {
-          "term": "mithaq / sahifah",
-          "def": "covenant or constitution: the Madinah agreement"
+          "term": "Ahl al-Kitab (أَهْلُ الْكِتَاب)",
+          "def": "People of the Book: Jews and Christians"
         },
         {
-          "term": "karamah (كرامة)",
-          "def": "dignity"
+          "term": "la ikraha fid-din",
+          "def": "no compulsion in religion (2:256)"
+        },
+        {
+          "term": "Sahifat al-Madinah",
+          "def": "the Charter of Madinah"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Does every human being deserve respect, whatever they believe? Where does that idea come from in Islam?",
+        "a": "Yes: 'We have honoured the children of Adam' (17:70); the Prophet ﷺ stood for a passing funeral and said 'Is it not a soul?' (Bukhari and Muslim)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'We have certainly honoured the children of Adam' (al-Isra 17:70), and 'There is no compulsion in religion' (al-Baqarah 2:256).",
+        "at": "start"
+      },
       "starter": [
-        "Define 'adl.",
-        "Give one example of economic justice in Islam.",
-        "Name the hadith topic you annotated last lesson."
+        {
+          "q": "Which hadith collection reports 'the just on pulpits of light'?",
+          "a": "Muslim",
+          "mins": 1,
+          "options": [
+            "Muslim",
+            "Bukhari"
+          ]
+        },
+        {
+          "q": "What does a 12-mark conclusion need?",
+          "a": "A judgement with reasons",
+          "mins": 1,
+          "options": [
+            "A judgement with reasons",
+            "A quote only"
+          ]
+        },
+        {
+          "q": "Which ayah: 'wealth must not circulate only among the rich'?",
+          "a": "59:7",
+          "mins": 1,
+          "options": [
+            "59:7",
+            "2:275"
+          ]
+        },
+        {
+          "q": "Define 'adl.",
+          "a": "Justice: giving everyone their right",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Rights in the Farewell Sermon",
           "bullets": [
-            "Life, property and honour of every Muslim are sacred",
-            "The Prophet declared these rights in the sermon at Arafah",
-            "Qur'an 17:70: Allah ﷻ has honoured the children of Adam",
-            "Qur'an 5:32: killing one innocent life is like killing all"
+            "Life, property and honour are sacred",
+            "Declared at Arafah in 10 AH",
+            "All children of Adam are honoured (17:70)",
+            "Killing one innocent is like killing all (5:32)"
           ],
-          "note": "The sacredness of life, wealth and honour is in the Farewell Sermon (Bukhari 1739 and others; verify). Say clearly that 17:70 and 5:32 apply to people as people. Ask: what rights does the sermon protect? Tie to the modern idea of human rights while noting that the Islamic basis is the dignity given by Allah ﷻ. Avoid using this as a debate about modern charters; the spec asks about the Prophet's teaching."
+          "note": "Begin with Bismillah. The sacredness of blood, property and honour is in the Farewell Sermon (Bukhari and Muslim). The Islamic basis of rights is the dignity Allah gave every human."
         },
         {
-          "heading": "The covenant of Madinah",
+          "heading": "Relations with other faiths",
           "bullets": [
-            "After the Hijrah the Prophet ﷺ agreed a pact with Madinah's tribes",
-            "Muslims, Jews and others formed one political community",
-            "Each group kept its own religion",
-            "All would defend Madinah if attacked"
+            "No compulsion in religion (2:256)",
+            "'To you your religion, to me mine' (109:6)",
+            "Kindness to peaceful non-Muslims (60:8)",
+            "Stood for a Jewish funeral: 'Is it not a soul?'"
           ],
-          "note": "This is the document known as the Sahifah or Constitution of Madinah, recorded in the early Sira (Ibn Ishaq). Present as a historical agreement; scholars discuss details and wording, so keep to well-known points: religious freedom and mutual defence. Note for the teacher: a later breakdown with some tribes was about treason and breaking the agreement, not about faith (see Spec 1.7).",
+          "note": "The funeral hadith is in Bukhari and Muslim. Whoever kills a person under covenant (mu'ahad) will not smell the fragrance of Paradise (Bukhari). Muslims believe Islam is the truth and invite to it, while respecting others' right to their belief.",
+          "check": {
+            "q": "Why did the Prophet ﷺ stand for a Jewish man's funeral?",
+            "options": [
+              "'Is it not a soul?': respect for every human",
+              "He thought the man was Muslim",
+              "It was a law in Madinah",
+              "To be seen by others"
+            ],
+            "answer": 0,
+            "why": "He said 'Is it not a soul?' (Bukhari and Muslim): human dignity, not religion, was the reason."
+          }
+        },
+        {
+          "heading": "Examples from his life",
+          "bullets": [],
+          "note": "Keep to well-established points. The Charter is recorded in the early seerah (Ibn Ishaq); the Najran delegation is reported in the seerah.",
           "table": {
             "head": [
-              "Group",
-              "Rights under the covenant"
+              "Example",
+              "What happened",
+              "What it shows"
             ],
             "rows": [
               [
-                "Muslims",
-                "One community with duties of defence"
+                "Abyssinia",
+                "A Christian king protected Muslims",
+                "Good relations with just rulers"
               ],
               [
-                "Jewish tribes",
-                "Freedom of religion, allies in defence"
+                "Charter of Madinah",
+                "Jews and Muslims, one community for defence",
+                "Religious freedom and shared duties"
               ],
               [
-                "All signatories",
-                "Protection from attack, justice"
+                "Najran delegation",
+                "Christian visitors received in Madinah",
+                "Dialogue and hospitality"
+              ],
+              [
+                "Funeral",
+                "He stood for a Jewish funeral",
+                "Dignity of every soul"
               ]
             ]
           }
         },
         {
-          "heading": "Other faiths in his example",
+          "heading": "What this shows about society",
           "bullets": [
-            "No compulsion in religion (Qur'an 2:256)",
-            "Qur'an 109:6: you have your religion and I have mine",
-            "Kindness to peaceful non-Muslims (Qur'an 60:8)",
-            "He stood when a Jewish funeral passed (Bukhari 1312)"
+            "Rights come from Allah, not rulers",
+            "Dignity for every human",
+            "Freedom of belief protected",
+            "Justice owed to all, Muslim or not"
           ],
-          "note": "The ayah references are secure; verify 1312 and Muslim's parallel before quoting. Also describe the Christian delegation of Najran being received in Madinah (Sira). A well-known hadith warns against wronging a non-Muslim under covenant (Bukhari 3166); verify before displaying. Make clear: Muslims believe Islam is true but do not force belief."
-        },
-        {
-          "heading": "Model answer",
-          "bullets": [
-            "Evidence",
-            "Explanation",
-            "Wider belief"
-          ],
-          "note": "Model an 'Explain' answer.",
-          "model": {
-            "problem": "Explain how the Prophet's treatment of people of other religions shows Muslim beliefs about society. (6 marks)",
-            "steps": [
-              "Point: he agreed the Madinah covenant, giving Jews and others freedom to follow their religion.",
-              "Explain: this shows Muslims believe a society can include different faiths under shared rules.",
-              "Point: he stood for the funeral of a Jewish man, which shows respect for human life and dignity.",
-              "Explain: this shows Muslim belief that all people deserve respect because Allah ﷻ honoured human beings."
-            ],
-            "answer": "Two points, each with evidence and explanation linked to belief about society."
-          }
-        },
-        {
-          "heading": "Hinge question",
-          "bullets": [
-            "Whiteboards"
-          ],
-          "note": "Discuss before revealing.",
-          "check": {
-            "q": "Which statement best describes the Madinah covenant?",
-            "options": [
-              "It forced everyone to become Muslim",
-              "It set up a shared community where groups kept their religion and defended the city together",
-              "It ended all trade",
-              "It only applied to Makkah"
-            ],
-            "answer": 1,
-            "why": "The covenant protected religious freedom and agreed shared defence; compulsion is rejected by 2:256."
-          }
+          "note": "Bridge to evaluation: the spec asks what these teachings show about Muslim beliefs about society."
         }
       ],
       "practice": [
-        "Name two rights protected in the Farewell Sermon.",
-        "Which ayah says there is no compulsion in religion?",
-        "What was the covenant of Madinah?"
+        {
+          "q": "Describe the Prophet's ﷺ relations with people of other religions.",
+          "a": "Abyssinia (protected by a Christian king); the Charter of Madinah (shared defence, religious freedom); Najran delegation (dialogue); standing for a Jewish funeral; 60:8 kindness.",
+          "mins": 4,
+          "model": "I do: 'One example is the Charter of Madinah, which made Muslims and Jewish tribes one community for defence while each kept its own religion. This shows ...' Pupils add two more."
+        },
+        {
+          "q": "Which ayah says there is no compulsion in religion?",
+          "a": "2:256",
+          "mins": 1,
+          "options": [
+            "2:256",
+            "109:6",
+            "17:70"
+          ]
+        }
       ],
       "independent": [
-        "Core: write one sentence for each: life, property, honour, religious freedom.",
-        "Extend: write a 6-mark answer on his relationships with people of other religions.",
-        "Stretch: write 8 lines on whether the covenant of Madinah can inform life in modern Britain."
+        {
+          "q": "In the portal response box: 'Explain what the Prophet's ﷺ teaching on human rights shows about Muslim beliefs about society.' Two developed points.",
+          "a": "Points: dignity of every human (17:70, Farewell Sermon); freedom of belief (2:256, Charter); justice to all (60:8, mu'ahad hadith). Explained and linked.",
+          "mins": 10,
+          "model": "Teacher models point 1: 'Point: Muslims believe every human has dignity given by Allah. Evidence: \"We have honoured the children of Adam\" (17:70). Explain: ...'"
+        },
+        {
+          "q": "Extend: how do these teachings guide Muslims living in Britain today?",
+          "a": "Respect neighbours of all faiths, keep the law, defend others' rights, and invite to Islam with wisdom.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: plan a 12-mark answer: 'Muslims and non-Muslims can live together peacefully.'",
+          "a": "For: Charter, 60:8, 109:6, Abyssinia. Against: historical conflicts, misunderstandings. Conclusion.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Give one example of kindness to a non-Muslim.",
-        "Define huquq.",
-        "Big question: how should Muslims treat people whose beliefs differ?"
+        {
+          "q": "Which ayah honours the children of Adam?",
+          "a": "17:70",
+          "mins": 1,
+          "options": [
+            "17:70",
+            "2:256",
+            "5:32"
+          ]
+        },
+        {
+          "q": "Back to our ponder: does every human deserve respect?",
+          "a": "Yes: dignity from Allah (17:70), shown by the Prophet's ﷺ example.",
+          "mins": 2
+        }
       ],
-      "homework": "Prepare a 2-minute talk: 'Islam and respect for others'. Use two sources.",
-      "send": "SEND/EAL: sentence starters and a visual of the covenant; stretch: contrast the Madinah covenant with the Magna Carta as agreements about rights.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
+      "homework": "Revision card for 1.6 part 1: rights, ayat (17:70, 5:32, 2:256, 109:6, 60:8), four examples from his life.",
+      "send": "SEND: example cards matched to lessons. EAL: glossary. Stretch: compare the Farewell Sermon with a modern human rights declaration.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: rights and relations organiser and explain frame",
+        "Mushaf with translation (17:70, 5:32, 2:256, 109:6, 60:8)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mount Arafat",
+          "alt": "Mount Arafat, where the Farewell Sermon was given",
+          "for": "teach:1"
+        },
+        {
+          "find": "Aksum Ethiopia",
+          "alt": "Aksum, ancient capital of Abyssinia",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "Spec 1.6: Teachings and example of the Prophet on justice and equality (Section A)",
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
       "n": 17,
       "title": "1.6 Respect for mothers and women, and what the teachings show about Muslim society",
       "duration": 50,
-      "bigQuestion": "What do the Prophet's teachings on mothers and women show about the kind of society Muslims aim to build?",
+      "bigQuestion": "Why might the Prophet ﷺ have said 'your mother' three times before 'your father'?",
       "objectives": [
-        "Describe the Prophet's teaching and example on respect for mothers",
-        "Describe his teaching and example on respect for women",
-        "Evaluate what these teachings show about Muslim beliefs about society"
+        "To understand the Prophet's ﷺ teaching and example on respect for mothers and women and what it shows about Muslim society"
       ],
       "successCriteria": [
-        "All: say how the Prophet ﷺ taught Muslims to treat mothers",
-        "Most: explain two examples of his treatment of women",
-        "Some: evaluate a claim that Islam values women, with a balanced judgement"
+        "All: describe the hadith on the mother and two Qur'anic teachings",
+        "Most: describe rights Islam gave women, with evidence",
+        "Some: evaluate what these teachings show about Muslim beliefs about society"
       ],
-      "crossCurricular": "Citizenship: equality and rights; PSHE: respect in relationships",
-      "smsc": "Moral: kindness and respect; Social: the family as the basis of society",
+      "crossCurricular": "History: the status of women in sixth-century Arabia compared with the reforms of Islam",
+      "smsc": "Moral: respect and kindness in the family",
       "keywords": [
         {
-          "term": "birr al-walidayn (بر الوالدين)",
-          "def": "dutiful kindness to parents"
+          "term": "birr al-walidayn (بِرُّ الْوَالِدَيْن)",
+          "def": "goodness to parents"
         },
         {
-          "term": "ihsan (إحسان)",
-          "def": "doing good with excellence"
+          "term": "mahr (مَهْر)",
+          "def": "the marriage gift that belongs to the bride"
         },
         {
-          "term": "ummahat al-mu'minin",
-          "def": "Mothers of the Believers: the Prophet's wives"
+          "term": "mirath (مِيرَاث)",
+          "def": "inheritance"
         },
         {
-          "term": "mahr (مهر)",
-          "def": "the gift the husband gives the wife at marriage"
+          "term": "ridha (رِضَا)",
+          "def": "consent"
+        },
+        {
+          "term": "spiritual equality",
+          "def": "men and women equal before Allah in reward (33:35)"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might the Prophet ﷺ have said 'your mother' three times before 'your father'?",
+        "a": "To honour the hardship of pregnancy, birth and nursing (31:14, 46:15): mothers have the greatest claim to kindness."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Your Lord has decreed that you worship none but Him, and that you be good to parents' (al-Isra 17:23), and 'We have enjoined upon man goodness to his parents; his mother carried him with hardship and gave birth to him with hardship' (al-Ahqaf 46:15).",
+        "at": "start"
+      },
       "starter": [
-        "Which hadith did we use for equality before the law?",
-        "Give one right protected in the Farewell Sermon.",
-        "What does 'adl mean?"
+        {
+          "q": "Which ayah honours the children of Adam?",
+          "a": "17:70",
+          "mins": 1,
+          "options": [
+            "17:70",
+            "2:256"
+          ]
+        },
+        {
+          "q": "Which Christian king protected the Muslims?",
+          "a": "The Negus of Abyssinia",
+          "mins": 1,
+          "options": [
+            "The Negus of Abyssinia",
+            "Heraclius"
+          ]
+        },
+        {
+          "q": "What did the Prophet ﷺ say at the Jewish funeral?",
+          "a": "'Is it not a soul?'",
+          "mins": 1,
+          "options": [
+            "'Is it not a soul?'",
+            "'Move on'"
+          ]
+        },
+        {
+          "q": "Which ayah: 'no compulsion in religion'?",
+          "a": "2:256",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Mothers: the greatest claim",
           "bullets": [
-            "A man asked who deserved his best company",
-            "The Prophet said: your mother, three times, then your father",
-            "Qur'an 31:14 and 46:15 speak of the mother's hardship",
-            "Kindness to parents is ranked next to worship of Allah ﷻ (Qur'an 17:23)"
+            "'Your mother', three times, then 'your father'",
+            "The mother's hardship (31:14, 46:15)",
+            "Kindness to parents next to worship (17:23)"
           ],
-          "note": "Hadith: Bukhari 5971 and Muslim 2548 (Abu Hurayra); verify the wording before display. Ask: why does the mother come three times? (Pregnancy, childbirth, nursing; scholars comment on it.) Be sensitive to pupils whose mothers are absent or who live in hard circumstances; speak of the duty as kindness within what is possible. 46:15-18 is also the set passage in unit 3.8, so this can return then. Check before use: Hadith on best companionship: Bukhari 5971, Muslim 2548 (verify wording)",
+          "note": "Begin with Bismillah. The hadith is in Bukhari and Muslim (Abu Hurayrah). Be sensitive to pupils whose mothers have died or are absent; speak of duty and du'a.",
           "quote": {
-            "text": "Your mother, then your mother, then your mother, then your father.",
-            "source": "Hadith on best companionship: Bukhari 5971, Muslim 2548"
+            "text": "A man asked: who most deserves my good company? He said: your mother. He asked: then who? He said: your mother. Then who? Your mother. Then who? Your father.",
+            "source": "Bukhari and Muslim (meaning)"
           }
-        },
-        {
-          "heading": "Women in the Prophet's example",
-          "bullets": [
-            "Qur'an 33:35: believing men and women share the same promised reward",
-            "Qur'an 4:19: live with wives in kindness",
-            "He listened to the advice of Umm Salamah at Hudaybiyyah",
-            "He helped at home and treated his family gently"
-          ],
-          "note": "Teach accurately: spiritual equality of men and women before Allah ﷻ (33:35). The Prophet consulted Umm Salamah when the Companions were slow to carry out his instruction at Hudaybiyyah (Bukhari 2731-2732; verify). 'The best of you are the best to their wives' is reported in Tirmidhi and Ibn Majah and graded sahih; teacher to verify the number. Ask pupils: what does 'live with them in kindness' require in practice?"
         },
         {
           "heading": "Rights given to women",
           "bullets": [
-            "Right to own wealth and receive inheritance (Qur'an 4:7)",
-            "Consent is needed for marriage (Bukhari 5136, Muslim 1419)",
-            "Right to seek knowledge and take part in society",
-            "Mahr belongs to the bride"
+            "Own wealth and inherit (4:7)",
+            "Mahr belongs to the bride (4:4)",
+            "Consent needed for marriage (Bukhari and Muslim)",
+            "Seek knowledge and take part in society"
           ],
-          "note": "Present rights historically: before Islam many women could not inherit or choose. Say respectfully that Muslims and non-Muslims discuss how rights work in practice today and that cultures sometimes fall short of Islamic teaching; the spec asks what the Prophet ﷺ taught. Marriage consent hadith: verify numbers before quoting."
+          "note": "Teach historically: before Islam, many women could not inherit, and girls were sometimes buried alive (condemned in 81:8-9). Aisha was a leading scholar; she praised the women of the Ansar for not letting shyness stop them learning their religion."
         },
         {
-          "heading": "What does this show about society?",
+          "heading": "Women in his example",
           "bullets": [
-            "Family is the base of society",
-            "Respect is a religious duty",
-            "Women are partners in faith and community",
-            "Justice includes the home"
+            "Equal reward before Allah (33:35)",
+            "Live with wives in kindness (4:19)",
+            "Took Umm Salamah's advice at Hudaybiyyah",
+            "'The best of you are the best to their families' (at-Tirmidhi)"
           ],
-          "note": "Ask pupils to move from evidence to belief: what does a society look like that applies these teachings? Note that this slide is a bridge to the evaluative 12-mark skill: use evidence, then draw a conclusion about Muslim belief."
-        },
-        {
-          "heading": "Model answer (12 marks)",
-          "bullets": [
-            "Claim",
-            "Evidence",
-            "Counter-view",
-            "Judgement"
-          ],
-          "note": "Model a short plan.",
-          "model": {
-            "problem": "'The Prophet's teachings show that Muslims believe women should be respected.' Assess this statement. (12 marks)",
-            "steps": [
-              "For: he said mothers deserve the best company, three times over, and 33:35 gives women equal spiritual reward.",
-              "For: his example of consultation (Umm Salamah) and kindness at home shows respect in practice.",
-              "Counter-view: some cultures act differently, but Muslims say that is not the teaching.",
-              "Judgement: the sources strongly support respect; failures come from ignoring them, not from the teaching."
+          "note": "Whoever raises two daughters well until adulthood will be with the Prophet ﷺ on the Day of Judgement (Muslim). Acknowledge that cultures sometimes fall short of Islamic teaching; the spec asks what the Prophet ﷺ taught and did.",
+          "check": {
+            "q": "Which ayah shows that men and women receive equal reward from Allah?",
+            "options": [
+              "33:35",
+              "4:7",
+              "17:23",
+              "46:15"
             ],
-            "answer": "Level 4: balanced, uses sources, reaches a supported conclusion."
+            "answer": 0,
+            "why": "33:35 lists believing men and women together with the same reward. 4:7 is inheritance; 17:23 and 46:15 are about parents."
           }
         },
         {
-          "heading": "Hinge question",
-          "bullets": [
-            "Whiteboards"
-          ],
-          "note": "Discuss why the other options fail.",
-          "check": {
-            "q": "In the hadith about the best companion, who is named first?",
-            "options": [
-              "The father",
-              "The mother",
-              "The teacher",
-              "The neighbour"
-            ],
-            "answer": 1,
-            "why": "The mother is named three times before the father."
+          "heading": "What this shows about society",
+          "bullets": [],
+          "note": "Move from evidence to belief, ready for the 12-mark skill.",
+          "diagram": {
+            "centre": "Muslim beliefs about society",
+            "items": [
+              "Family is its foundation",
+              "Respect for parents is worship",
+              "Men and women equal before Allah",
+              "Women hold rights by divine law",
+              "Justice begins at home"
+            ]
           }
         }
       ],
       "practice": [
-        "Name one ayah about parents.",
-        "Give two rights women were given.",
-        "What does 'ihsan' mean?"
+        {
+          "q": "Describe the Prophet's ﷺ teaching on respect for mothers.",
+          "a": "The hadith 'your mother' three times then 'your father' (Bukhari and Muslim); the mother's hardship (31:14, 46:15); kindness to parents next to tawhid (17:23); serving parents as worship.",
+          "mins": 3,
+          "model": "I do: 'The Prophet ﷺ taught that the mother has the greatest right to good company. When asked who deserves it most, he said \"your mother\" three times before \"your father\" (Bukhari and Muslim). This is because ...'"
+        },
+        {
+          "q": "Which ayah gives women a share of inheritance?",
+          "a": "4:7",
+          "mins": 1,
+          "options": [
+            "4:7",
+            "4:4",
+            "33:35"
+          ]
+        }
       ],
       "independent": [
-        "Core: create a two-column table of teachings and examples.",
-        "Extend: write a 6-mark answer on respect for mothers.",
-        "Stretch: plan a 12-mark essay on the statement above."
+        {
+          "q": "In the portal response box (or a Forms long-answer question): 'The Prophet's ﷺ teachings improved the lives of women.' Assess this statement. Plan, then write the 'for' and 'against' paragraphs and a conclusion.",
+          "a": "For: inheritance, mahr, consent, ending infanticide (81:8-9), equal reward (33:35), honour of mothers. Against: some argue practice in some cultures has not matched the teaching, or modern views differ on roles. Justified conclusion distinguishing teaching from practice.",
+          "mins": 12,
+          "model": "Teacher models the 'for' opening: 'Many would agree, because the Prophet ﷺ taught rights that women in Arabia did not have before, such as inheritance (4:7) ...'"
+        },
+        {
+          "q": "Extend: how can a Year 10 pupil practise birr al-walidayn this week?",
+          "a": "Help at home without being asked, speak gently, make du'a for parents.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "State the hadith about mothers in your own words.",
-        "Give one example of the Prophet ﷺ consulting a woman.",
-        "Big question: what do these teachings show about Muslim society?"
+        {
+          "q": "Who did the Prophet ﷺ say most deserves our good company?",
+          "a": "Your mother",
+          "mins": 1,
+          "options": [
+            "Your mother",
+            "Your father",
+            "Your friend"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why 'your mother' three times?",
+          "a": "To honour her hardship in pregnancy, birth and nursing; her right is greatest.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a letter to a friend explaining why Islam teaches that mothers deserve great respect.",
-      "send": "SEND/EAL: sentence frames for evidence-explain; stretch: compare examples of the Prophet's family life across sources.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
+      "homework": "Revision card for 1.6 part 2 and one act of kindness to a parent or carer this week.",
+      "send": "SEND: evidence cards to match to rights. EAL: glossary. Stretch: include the hadith on raising daughters (Muslim) in the 12-mark answer.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: rights organiser and 12-mark frame",
+        "Mushaf with translation (17:23, 31:14, 46:15, 4:4, 4:7, 4:19, 33:35, 81:8-9)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "family home kitchen table",
+          "alt": "A family table at home",
+          "for": "hook"
+        },
+        {
+          "find": "Aisha mosque Tan'im",
+          "alt": "A masjid named after Aisha",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Spec 1.7: The Prophet as leader (Section A)",
@@ -4424,6 +4819,1188 @@
       ],
       "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
       "boardShort": "Edexcel IGCSE 4IS1"
+    },
+    {
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
+      "n": 34,
+      "title": "Bridge: 1.1 key events of the Prophet's ﷺ early life and marriage (Qur'an 66:1-3)",
+      "duration": 50,
+      "bigQuestion": "What would you need to know about someone's life before you trusted them with a message from God?",
+      "objectives": [
+        "To understand the key events of the Prophet's ﷺ early life and why they prepared him to be trusted with the message"
+      ],
+      "successCriteria": [
+        "All: sequence eight key events from birth to marriage",
+        "Most: explain how three events shaped his character",
+        "Some: explain what the set passage 66:1-3 shows about his family life"
+      ],
+      "crossCurricular": "History: chronology and change in sixth-century Arabia",
+      "smsc": "Moral: trustworthiness and good character in work and family",
+      "keywords": [
+        {
+          "term": "Quraysh (قُرَيْش)",
+          "def": "the leading tribe of Makkah"
+        },
+        {
+          "term": "Banu Hashim (بَنُو هَاشِم)",
+          "def": "the Prophet's ﷺ clan within Quraysh"
+        },
+        {
+          "term": "al-Amin (الْأَمِين)",
+          "def": "the trustworthy, his title before prophethood"
+        },
+        {
+          "term": "Bahira (بَحِيرَى)",
+          "def": "a Christian monk who recognised signs of prophethood"
+        },
+        {
+          "term": "Khadijah (خَدِيجَة)",
+          "def": "a respected businesswoman who became his first wife"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would you need to know about someone's life before you trusted them with a message from God?",
+        "a": "Their character and record: the Prophet ﷺ was known as al-Amin, the trustworthy, long before prophethood."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Did He not find you an orphan and give you shelter? And He found you lost and guided you, and found you in need and made you self-sufficient' (ad-Duha 93:6-8).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah describes the army with elephants?",
+          "a": "Al-Fil (105)",
+          "mins": 1,
+          "options": [
+            "Al-Fil (105)",
+            "Al-Ikhlas (112)",
+            "Al-Kawthar (108)"
+          ]
+        },
+        {
+          "q": "What is the Sunnah?",
+          "a": "The way of the Prophet ﷺ: sayings, actions and approvals",
+          "mins": 1,
+          "options": [
+            "The way of the Prophet ﷺ",
+            "A chapter of the Qur'an"
+          ]
+        },
+        {
+          "q": "Which month is the month of fasting?",
+          "a": "Ramadan",
+          "mins": 1,
+          "options": [
+            "Ramadan",
+            "Rajab"
+          ]
+        },
+        {
+          "q": "What does 'al-Amin' mean?",
+          "a": "The trustworthy",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Birth and childhood",
+          "bullets": [],
+          "note": "Begin with Bismillah. Bridge lesson: fast-teach of 1.1 (taught in Autumn in a normal year). Born in Makkah around 570 CE, the Year of the Elephant (Surah al-Fil). Bahira is reported in at-Tirmidhi. Set lesson 1 and 2 of this file as independent reading.",
+          "timeline": [
+            {
+              "label": "c. 570 CE",
+              "text": "Born in Makkah; father Abdullah already died"
+            },
+            {
+              "label": "Infancy",
+              "text": "Nursed by Halimah in the desert"
+            },
+            {
+              "label": "Age 6",
+              "text": "Mother Aminah dies"
+            },
+            {
+              "label": "Age 8",
+              "text": "Grandfather Abd al-Muttalib dies; Abu Talib cares for him"
+            },
+            {
+              "label": "c. 12",
+              "text": "Trade trip to Syria; monk Bahira"
+            }
+          ]
+        },
+        {
+          "heading": "Youth, work and character",
+          "bullets": [
+            "Shepherd, then trader",
+            "Known as al-Amin, the trustworthy",
+            "Joined Hilf al-Fudul to protect the wronged",
+            "Settled the Black Stone dispute at 35"
+          ],
+          "note": "Hilf al-Fudul: a pact of Makkan clans to help anyone wronged; he later said he would still answer such a call in Islam (reported in the seerah). Black Stone: he placed it on a cloak so every clan lifted it together."
+        },
+        {
+          "heading": "Khadijah and family life",
+          "bullets": [
+            "Traded Khadijah's goods to Syria honestly",
+            "She proposed marriage; he was 25",
+            "Children: Qasim, Zaynab, Ruqayyah, Umm Kulthum, Fatimah, Abdullah",
+            "A home of love and support"
+          ],
+          "note": "Ages are as commonly reported in the seerah (Khadijah is often said to have been 40). Their sons died young. Khadijah later supported him at the first revelation.",
+          "check": {
+            "q": "How did the Prophet ﷺ solve the dispute over the Black Stone?",
+            "options": [
+              "He placed it on a cloak so every clan lifted it",
+              "He chose the strongest clan",
+              "He placed it alone without asking",
+              "He delayed it for a year"
+            ],
+            "answer": 0,
+            "why": "Every clan shared the honour, which prevented fighting. This showed wisdom and fairness, part of why he was trusted."
+          }
+        },
+        {
+          "heading": "Set passage: Qur'an 66:1-3",
+          "bullets": [
+            "66:1: why forbid yourself what Allah made lawful?",
+            "66:2: Allah has given a way to release oaths",
+            "66:3: a private matter told to one wife was shared"
+          ],
+          "note": "Read the set passage from a trusted translation. Teach the spec focus: the Prophet ﷺ was human, with a real family; Allah guided him in family matters too; trust and confidentiality in marriage matter. Keep the tone respectful; avoid speculation about details."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how ONE event from his early life prepared him to be trusted with the message.",
+          "a": "For example: the Black Stone: his fair solution showed wisdom and trust, so people knew he was honest and fair before he brought the message.",
+          "mins": 3,
+          "model": "I do: 'Point: the Black Stone dispute showed he was trusted. Evidence: at 35 every clan accepted his plan of lifting it together on a cloak. Explain: Quraysh already saw him as fair and honest (al-Amin), so his later claim to be a prophet came from someone with a spotless record.'"
+        },
+        {
+          "q": "At what age did he marry Khadijah, as commonly reported?",
+          "a": "25",
+          "mins": 1,
+          "options": [
+            "25",
+            "40",
+            "12"
+          ]
+        },
+        {
+          "q": "Which set passage is linked to 1.1?",
+          "a": "Qur'an 66:1-3",
+          "mins": 1,
+          "options": [
+            "66:1-3",
+            "97:1-5",
+            "33:38-40"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timeline and explain (pupil PDF): place eight events from birth to marriage, then in the portal response box explain two ways his early life prepared him for prophethood.",
+          "a": "Accurate timeline; two developed explanations (orphanhood and trust in Allah, 93:6-8; honesty in trade; Hilf al-Fudul and justice; Black Stone and wisdom).",
+          "mins": 10,
+          "model": "Teacher places the first three events and models the first explanation: 'Being an orphan taught him to depend on Allah and to care for the weak (93:6-9).'"
+        },
+        {
+          "q": "Extend: what does 66:1-3 show about the Prophet's ﷺ family life?",
+          "a": "He was human with a real family; Allah guided him; trust in marriage matters.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why might Allah have chosen someone with a known honest record?",
+          "a": "So people could not accuse him of lying; his character was a proof of his truthfulness.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Who cared for him after his grandfather died?",
+          "a": "Abu Talib",
+          "mins": 1,
+          "options": [
+            "Abu Talib",
+            "Abu Lahab",
+            "Abu Bakr"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what made him trustworthy?",
+          "a": "His record: honesty in trade, fairness, keeping trusts, known as al-Amin.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: read portal lessons y10 1 and 2 and make a one-page 1.1 summary card with five dates and the 66:1-3 reference.",
+      "send": "SEND: timeline cards with dates given. EAL: key word list. Stretch: explain 93:6-8 in relation to his childhood.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: 1.1 timeline and explain frame",
+        "Portal lessons islamic-studies y10 1 and 2 (independent reading)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mecca valley mountains",
+          "alt": "The valley of Makkah",
+          "for": "hook"
+        },
+        {
+          "find": "Black Stone Kaaba silver frame",
+          "alt": "The silver frame of the Black Stone on the Ka'bah",
+          "for": "teach:3"
+        },
+        {
+          "find": "camel caravan desert",
+          "alt": "A camel caravan, like the trade journeys to Syria",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
+      "n": 35,
+      "title": "Bridge: 1.2 key events of the revelation and the Qur'an's compilation (Qur'an 97:1-5)",
+      "duration": 50,
+      "bigQuestion": "Why might the very first word revealed to the Prophet ﷺ have been 'Read'?",
+      "objectives": [
+        "To understand the key events of the first revelation and how the Qur'an was preserved and compiled"
+      ],
+      "successCriteria": [
+        "All: describe the first revelation in the cave of Hira",
+        "Most: explain the meaning of the set passage 97:1-5",
+        "Some: explain how the Qur'an was compiled under Abu Bakr and Uthman"
+      ],
+      "smsc": "Spiritual: the Night of Power and reverence for the Qur'an",
+      "keywords": [
+        {
+          "term": "Hira (حِرَاء)",
+          "def": "the cave on Jabal an-Nur where the first revelation came"
+        },
+        {
+          "term": "Laylat al-Qadr (لَيْلَةُ الْقَدْر)",
+          "def": "the Night of Power, when the Qur'an was sent down"
+        },
+        {
+          "term": "wahy (وَحْي)",
+          "def": "revelation"
+        },
+        {
+          "term": "mushaf (مُصْحَف)",
+          "def": "a written copy of the Qur'an"
+        },
+        {
+          "term": "Waraqah ibn Nawfal",
+          "def": "Khadijah's cousin, a Christian scholar who confirmed the revelation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might the very first word revealed to the Prophet ﷺ have been 'Read'?",
+        "a": "Islam is a religion of knowledge; revelation begins with reading 'in the name of your Lord' (96:1)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, We sent it down in the Night of Power. And what will make you know what the Night of Power is? The Night of Power is better than a thousand months' (al-Qadr 97:1-3).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which set passage goes with 1.1?",
+          "a": "66:1-3",
+          "mins": 1,
+          "options": [
+            "66:1-3",
+            "97:1-5"
+          ]
+        },
+        {
+          "q": "At what age did he marry Khadijah, as commonly reported?",
+          "a": "25",
+          "mins": 1,
+          "options": [
+            "25",
+            "35",
+            "40"
+          ]
+        },
+        {
+          "q": "Who was the monk on the Syria trip?",
+          "a": "Bahira",
+          "mins": 1,
+          "options": [
+            "Bahira",
+            "Waraqah"
+          ]
+        },
+        {
+          "q": "What did he do at 35?",
+          "a": "Settled the Black Stone dispute",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The first revelation (610 CE)",
+          "bullets": [
+            "Aged 40, in retreat at Hira in Ramadan",
+            "Jibril: 'Read!' 'I am not one who reads'",
+            "Squeezed three times; then 96:1-5",
+            "Returned trembling: 'Cover me'"
+          ],
+          "note": "Begin with Bismillah. The account is in Bukhari (the third hadith, from Aisha) and Muslim. Ask: why was he afraid? It was overwhelming and new."
+        },
+        {
+          "heading": "Khadijah and Waraqah",
+          "bullets": [
+            "Khadijah: 'Allah will never disgrace you'",
+            "Because you keep family ties, help the weak, honour guests",
+            "Waraqah: the same angel who came to Musa",
+            "Revelation paused, then resumed (74:1-5)"
+          ],
+          "note": "Khadijah's words list his good character (Bukhari). Waraqah called Jibril 'the Namus' who came to Musa and said his people would drive him out."
+        },
+        {
+          "heading": "Set passage: Qur'an 97:1-5",
+          "bullets": [],
+          "note": "Annotate each ayah: what it says, what it shows. Pupils should be able to quote and explain the main ideas.",
+          "table": {
+            "head": [
+              "Ayah",
+              "Meaning",
+              "What it shows"
+            ],
+            "rows": [
+              [
+                "97:1",
+                "We sent it down in the Night of Power",
+                "The Qur'an is from Allah"
+              ],
+              [
+                "97:2-3",
+                "Better than a thousand months",
+                "The night's immense value"
+              ],
+              [
+                "97:4",
+                "Angels and the Spirit descend",
+                "Heaven and earth connected"
+              ],
+              [
+                "97:5",
+                "Peace until dawn",
+                "A night of mercy and peace"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "From revelation to mushaf",
+          "bullets": [
+            "Revealed over about 23 years",
+            "Memorised and written by scribes such as Zayd ibn Thabit",
+            "Abu Bakr: gathered into one copy after Yamamah",
+            "Uthman: standard copies sent to the cities"
+          ],
+          "note": "Both compilations are reported in Bukhari. Umar urged Abu Bakr after many huffadh died at Yamamah; Zayd ibn Thabit led the work. Uthman had copies made in the Quraysh dialect and sent to the main cities.",
+          "check": {
+            "q": "Why did Abu Bakr gather the Qur'an into one copy?",
+            "options": [
+              "Many who had memorised it died at Yamamah",
+              "The Qur'an was being changed",
+              "Uthman ordered him to",
+              "The Prophet ﷺ had never had it written"
+            ],
+            "answer": 0,
+            "why": "The loss of huffadh at Yamamah worried Umar and Abu Bakr. It had been written in the Prophet's ﷺ lifetime; Uthman came later."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what 97:3 teaches about the Night of Power.",
+          "a": "It is better than a thousand months: worship on that night is worth more than a lifetime of nights, so Muslims seek it in the last ten nights of Ramadan.",
+          "mins": 3,
+          "model": "I do: 'Point: 97:3 says the Night of Power is better than a thousand months. Explain: a thousand months is over 83 years, so worship that night is worth more than a lifetime. Link: this is why Muslims seek it in the last ten nights of Ramadan.'"
+        },
+        {
+          "q": "What were the first words revealed?",
+          "a": "Iqra: 'Read in the name of your Lord' (96:1-5)",
+          "mins": 1,
+          "options": [
+            "96:1-5",
+            "1:1-7",
+            "112:1-4"
+          ]
+        },
+        {
+          "q": "Who led the compilation for Abu Bakr?",
+          "a": "Zayd ibn Thabit",
+          "mins": 1,
+          "options": [
+            "Zayd ibn Thabit",
+            "Ali",
+            "Bilal"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box, annotate the set passage 97:1-5 (meaning of each ayah) and then write a paragraph: 'Explain why the first revelation was important in establishing Islam.'",
+          "a": "Annotations as in the table; paragraph: beginning of the Qur'an and prophethood, the message of reading in Allah's name, Khadijah the first believer, start of 23 years of guidance.",
+          "mins": 10,
+          "model": "Teacher annotates 97:1 with the class: 'We sent it down: \"We\" is Allah; \"it\" is the Qur'an; so the Qur'an's source is Allah, revealed on a special night.'"
+        },
+        {
+          "q": "Extend: why is Uthman's compilation important today?",
+          "a": "It ensured one standard text in every city; the mushaf used today follows it.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what does Khadijah's reply show about the link between character and prophethood?",
+          "a": "His good deeds and character showed he was not someone Allah would disgrace; character supported the truth of his message.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which surah is the set passage for 1.2?",
+          "a": "Al-Qadr (97:1-5)",
+          "mins": 1,
+          "options": [
+            "Al-Qadr (97:1-5)",
+            "Al-Alaq (96:1-5)",
+            "Al-Muddaththir"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why 'Read'?",
+          "a": "Islam begins with knowledge, read in the name of Allah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: read portal lessons y10 3 to 5 and learn 97:1-5 with its meaning.",
+      "send": "SEND: set passage with key words highlighted. EAL: glossary. Stretch: compare Abu Bakr's and Uthman's compilations in a table.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: 97:1-5 annotation and paragraph frame",
+        "Mushaf with translation (96:1-5, 97:1-5)",
+        "Portal lessons islamic-studies y10 3 to 5 (independent reading)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jabal al-Nour Mecca",
+          "alt": "Jabal an-Nur, the mountain of the cave of Hira",
+          "for": "teach:1"
+        },
+        {
+          "find": "Quran manuscript early Hijazi script",
+          "alt": "An early handwritten Qur'an page",
+          "for": "teach:4"
+        },
+        {
+          "find": "night sky stars",
+          "alt": "A night sky",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
+      "n": 36,
+      "title": "Bridge: 1.3 prophethood and opposition in Makkah (Qur'an 33:38-40)",
+      "duration": 50,
+      "bigQuestion": "Why might powerful people oppose a message that calls for justice and the worship of One God?",
+      "objectives": [
+        "To understand the Prophet's ﷺ role as the Seal of the Prophets and why the Makkans opposed him"
+      ],
+      "successCriteria": [
+        "All: explain 'Seal of the Prophets' using 33:40",
+        "Most: describe four kinds of opposition in Makkah",
+        "Some: explain why the Quraysh opposed the message"
+      ],
+      "smsc": "Moral: courage and patience in the face of persecution",
+      "keywords": [
+        {
+          "term": "Khatam an-Nabiyyin (خَاتَمُ النَّبِيِّين)",
+          "def": "the Seal of the Prophets: the last prophet"
+        },
+        {
+          "term": "risalah (رِسَالَة)",
+          "def": "the message and mission of a messenger"
+        },
+        {
+          "term": "da'wah (دَعْوَة)",
+          "def": "calling people to Islam"
+        },
+        {
+          "term": "persecution",
+          "def": "cruel treatment because of beliefs"
+        },
+        {
+          "term": "Abyssinia (الْحَبَشَة)",
+          "def": "the Christian kingdom where Muslims found refuge"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might powerful people oppose a message that calls for justice and the worship of One God?",
+        "a": "It threatened their idols, trade from pilgrims, tribal pride and power over the weak."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Muhammad is not the father of any of your men, but he is the Messenger of Allah and the Seal of the Prophets, and Allah has full knowledge of all things' (al-Ahzab 33:40).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which set passage goes with 1.2?",
+          "a": "97:1-5",
+          "mins": 1,
+          "options": [
+            "97:1-5",
+            "66:1-3"
+          ]
+        },
+        {
+          "q": "Who said 'Allah will never disgrace you'?",
+          "a": "Khadijah",
+          "mins": 1,
+          "options": [
+            "Khadijah",
+            "Waraqah"
+          ]
+        },
+        {
+          "q": "Who standardised copies of the Qur'an?",
+          "a": "Uthman",
+          "mins": 1,
+          "options": [
+            "Uthman",
+            "Abu Bakr",
+            "Umar"
+          ]
+        },
+        {
+          "q": "In which year CE was the first revelation?",
+          "a": "610",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Set passage: Qur'an 33:38-40",
+          "bullets": [
+            "38: no blame for doing what Allah ordained",
+            "39: messengers convey and fear only Allah",
+            "40: Messenger of Allah and Seal of the Prophets"
+          ],
+          "note": "Begin with Bismillah. Bridge lesson: fast-teach of 1.3. Read from a trusted translation. 'Seal' means the last: no prophet after him, and his message is complete and for all people (34:28)."
+        },
+        {
+          "heading": "From private to public call",
+          "bullets": [
+            "About three years of private da'wah",
+            "First believers: Khadijah, Abu Bakr, Ali, Zayd",
+            "Public call on Mount Safa (26:214)",
+            "Abu Lahab's rejection (Surah al-Masad)"
+          ],
+          "note": "26:214: 'warn your closest kindred.' Bukhari reports the call from Safa and Abu Lahab's response, after which Surah al-Masad (111) was revealed."
+        },
+        {
+          "heading": "Kinds of opposition",
+          "bullets": [],
+          "note": "Bilal was tortured by Umayyah ibn Khalaf; Sumayyah was the first martyr in Islam. Quraysh pressured Abu Talib and offered wealth and status (seerah).",
+          "diagram": {
+            "centre": "Opposition in Makkah",
+            "items": [
+              "Mockery: called poet, madman, magician",
+              "Torture of the weak: Bilal, Sumayyah, Yasir",
+              "Pressure on Abu Talib",
+              "Bribes: offers of wealth and power",
+              "Boycott of Banu Hashim (1.4)"
+            ]
+          }
+        },
+        {
+          "heading": "Why oppose?",
+          "bullets": [
+            "Tawhid threatened the idols",
+            "Pilgrim trade at the Ka'bah",
+            "Equality threatened tribal pride",
+            "Fear of losing power"
+          ],
+          "note": "In 615 CE some Muslims migrated to Abyssinia, where the Negus protected them after Ja'far ibn Abi Talib recited from Surah Maryam (seerah reports). This shows the scale of the persecution.",
+          "check": {
+            "q": "Which reason for opposition was ECONOMIC?",
+            "options": [
+              "Losing trade from pilgrims to the idols",
+              "Tribal pride",
+              "Loyalty to ancestors' religion",
+              "Fear of new ideas"
+            ],
+            "answer": 0,
+            "why": "Pilgrims visiting the idols brought trade to Makkah. The others are religious or social reasons."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what 'Seal of the Prophets' means for Muslims.",
+          "a": "He is the final prophet; no prophet comes after him; his message is complete and for all people; Muslims reject claims of later prophets.",
+          "mins": 3,
+          "model": "I do: 'Point: Seal of the Prophets means the Prophet ﷺ is the last prophet. Evidence: 33:40. Explain: just as a seal closes a letter, prophethood is complete. Link: so Muslims follow his Sunnah until the end of time.'"
+        },
+        {
+          "q": "Who was the first martyr in Islam?",
+          "a": "Sumayyah",
+          "mins": 1,
+          "options": [
+            "Sumayyah",
+            "Bilal",
+            "Hamzah"
+          ]
+        },
+        {
+          "q": "Which surah was revealed about Abu Lahab?",
+          "a": "Al-Masad (111)",
+          "mins": 1,
+          "options": [
+            "Al-Masad (111)",
+            "Al-Fil (105)"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: 'Explain two reasons why the Quraysh opposed the Prophet ﷺ.' Use Point, Evidence, Explain, Link for each.",
+          "a": "Two developed reasons (religious: idols and tawhid; economic: pilgrim trade; social: equality vs pride; political: power), each with an example (Abu Lahab, Bilal, bribes).",
+          "mins": 10,
+          "model": "Teacher models reason 1: 'Point: Quraysh opposed the message because tawhid threatened their idols. Evidence: ... Explain: ... Link: ...'"
+        },
+        {
+          "q": "Extend: why did some Muslims go to Abyssinia?",
+          "a": "To escape persecution; the Christian king, the Negus, was just and protected them.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what does 33:39 teach about how messengers face opposition?",
+          "a": "They convey the message and fear only Allah, not people.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which set passage goes with 1.3?",
+          "a": "33:38-40",
+          "mins": 1,
+          "options": [
+            "33:38-40",
+            "97:1-5",
+            "66:1-3"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why did powerful people oppose the message?",
+          "a": "Threat to idols, trade, pride and power.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: read portal lessons y10 6 and 7 and make a mind map of opposition in Makkah.",
+      "send": "SEND: opposition cards to sort. EAL: glossary. Stretch: research the Negus and Ja'far's speech.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: opposition mind map and PEEL frame",
+        "Mushaf with translation (33:38-40, 26:214, 111)",
+        "Portal lessons islamic-studies y10 6 and 7 (independent reading)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Safa Marwa",
+          "alt": "The hill of Safa, where the public call was made",
+          "for": "teach:2"
+        },
+        {
+          "find": "Ethiopia highlands Aksum",
+          "alt": "The highlands of Abyssinia (Ethiopia)",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
+      "n": 37,
+      "title": "Bridge: 1.4 from the boycott to the Hijrah (the hadith on intention)",
+      "duration": 50,
+      "bigQuestion": "What turns a hard decision to leave home into an act of worship?",
+      "objectives": [
+        "To understand the events from the boycott to the Hijrah and why the Hijrah was important in establishing Islam"
+      ],
+      "successCriteria": [
+        "All: sequence the events from the boycott to arrival in Madinah",
+        "Most: explain the set passage on intention and its link to the Hijrah",
+        "Some: explain the support given by Abu Bakr, Ali, Uthman, Umar and the Ansar"
+      ],
+      "crossCurricular": "History: causes and consequences of migration",
+      "smsc": "Spiritual: sincerity of intention",
+      "keywords": [
+        {
+          "term": "hijrah (هِجْرَة)",
+          "def": "the migration to Madinah in 622 CE"
+        },
+        {
+          "term": "Ansar (أَنْصَار)",
+          "def": "the helpers: Muslims of Madinah"
+        },
+        {
+          "term": "Aqabah (الْعَقَبَة)",
+          "def": "the place of the two pledges with the people of Yathrib"
+        },
+        {
+          "term": "niyyah (نِيَّة)",
+          "def": "intention"
+        },
+        {
+          "term": "Mi'raj (مِعْرَاج)",
+          "def": "the ascension through the heavens"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What turns a hard decision to leave home into an act of worship?",
+        "a": "The intention: 'whoever's hijrah was for Allah and His Messenger, his hijrah is for Allah and His Messenger' (Bukhari and Muslim)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Actions are only by intentions ... whoever's hijrah was for Allah and His Messenger, his hijrah is for Allah and His Messenger' (Bukhari and Muslim). This is the set passage for 1.4.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which set passage goes with 1.3?",
+          "a": "33:38-40",
+          "mins": 1,
+          "options": [
+            "33:38-40",
+            "97:1-5"
+          ]
+        },
+        {
+          "q": "Who was the first martyr in Islam?",
+          "a": "Sumayyah",
+          "mins": 1,
+          "options": [
+            "Sumayyah",
+            "Khadijah"
+          ]
+        },
+        {
+          "q": "Where did some Muslims seek refuge in 615 CE?",
+          "a": "Abyssinia",
+          "mins": 1,
+          "options": [
+            "Abyssinia",
+            "Syria",
+            "Yemen"
+          ]
+        },
+        {
+          "q": "What does 'Seal of the Prophets' mean?",
+          "a": "The last prophet",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The road to the Hijrah",
+          "bullets": [],
+          "note": "Begin with Bismillah. Bridge lesson: fast-teach of 1.4. Dates are approximate as in the seerah.",
+          "timeline": [
+            {
+              "label": "c. 616 to 619",
+              "text": "Boycott of Banu Hashim in the valley of Abu Talib"
+            },
+            {
+              "label": "619",
+              "text": "Year of Sorrow: Abu Talib and Khadijah die; Ta'if"
+            },
+            {
+              "label": "c. 620 to 621",
+              "text": "Isra and Mi'raj; the five prayers"
+            },
+            {
+              "label": "621 and 622",
+              "text": "First and second pledges of Aqabah"
+            },
+            {
+              "label": "622",
+              "text": "The plot (8:30); the Hijrah; Quba; Madinah"
+            }
+          ]
+        },
+        {
+          "heading": "Set passage: the hadith on intention",
+          "bullets": [],
+          "note": "Narrated by Umar ibn al-Khattab. Link to the Hijrah: the Companions left homes and wealth for Allah; their reward depended on intention.",
+          "quote": {
+            "text": "Actions are only by intentions, and every person will have only what they intended. Whoever's hijrah was for Allah and His Messenger, his hijrah is for Allah and His Messenger; and whoever's hijrah was for worldly gain or a woman to marry, his hijrah is for what he migrated for.",
+            "source": "Bukhari and Muslim"
+          }
+        },
+        {
+          "heading": "Support for the Prophet ﷺ (1.4e, f)",
+          "bullets": [
+            "Abu Bakr: companion in the cave (9:40), spent his wealth",
+            "Ali: slept in his bed, returned the trusts",
+            "Uthman: generous with wealth for the community",
+            "Umar: his Islam strengthened the Muslims; migrated openly"
+          ],
+          "note": "Umar's open migration is reported in the seerah. The Ansar welcomed and shared with the Muhajirun (59:9). Pupils need examples for each person in 1.4.",
+          "check": {
+            "q": "Which Companion slept in the Prophet's ﷺ bed on the night of the Hijrah?",
+            "options": [
+              "Ali",
+              "Abu Bakr",
+              "Uthman",
+              "Umar"
+            ],
+            "answer": 0,
+            "why": "Ali stayed behind and returned the trusts. Abu Bakr travelled with the Prophet ﷺ; Uthman and Umar supported in other ways."
+          }
+        },
+        {
+          "heading": "Why the Hijrah mattered",
+          "bullets": [
+            "Freedom to practise Islam openly",
+            "The first Muslim community and mosque",
+            "The Prophet ﷺ as leader of Madinah",
+            "Start of the Islamic calendar (1 AH)"
+          ],
+          "note": "12-mark statement for the unit: 'The Hijrah was the most important event in establishing Islam.' Assess this statement. Pupils should be able to argue for (community, state, calendar) and against (the first revelation; the conquest of Makkah)."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the link between the hadith on intention and the Hijrah.",
+          "a": "The Companions migrated, leaving homes and wealth; the hadith teaches the reward depended on the intention: for Allah, or for worldly gain.",
+          "mins": 3,
+          "model": "I do: 'Point: the hadith shows the Hijrah's value depended on intention. Evidence: whoever's hijrah was for Allah and His Messenger ... Explain: two people could make the same journey with different rewards. Link: the Muhajirun are honoured because they migrated sincerely.'"
+        },
+        {
+          "q": "How many pledges of Aqabah were there?",
+          "a": "Two",
+          "mins": 1,
+          "options": [
+            "One",
+            "Two",
+            "Three"
+          ]
+        },
+        {
+          "q": "Which ayah describes the plot to kill the Prophet ﷺ?",
+          "a": "8:30",
+          "mins": 1,
+          "options": [
+            "8:30",
+            "9:40",
+            "97:1"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "12-mark practice plan in the portal response box: 'The Hijrah was the most important event in establishing Islam.' Write one paragraph for, one against, and a one-line conclusion.",
+          "a": "For: community, state, mosque, calendar, freedom. Against: first revelation began Islam; conquest of Makkah; Hudaybiyyah. Conclusion with justification.",
+          "mins": 11,
+          "model": "Teacher models the 'for' paragraph start: 'Some would agree, because the Hijrah allowed Muslims to form the first community where they could practise freely. For example, the Prophet ﷺ built Masjid an-Nabawi ...'"
+        },
+        {
+          "q": "Extend: describe how the Ansar supported the Muhajirun.",
+          "a": "Shared homes, wealth and work in the brotherhood (mu'akhah); 59:9 praises them.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which Companion was with the Prophet ﷺ in the cave?",
+          "a": "Abu Bakr",
+          "mins": 1,
+          "options": [
+            "Abu Bakr",
+            "Ali",
+            "Umar"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what makes leaving home an act of worship?",
+          "a": "The intention: doing it for Allah and His Messenger.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: read portal lessons y10 8 to 11; finish the 12-mark plan as a full answer.",
+      "send": "SEND: event cards with dates. EAL: 12-mark frame with connectives. Stretch: add a third perspective to the 12-mark answer.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: 1.4 timeline and 12-mark planning frame",
+        "Portal lessons islamic-studies y10 8 to 11 (independent reading)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Quba Mosque",
+          "alt": "Quba Mosque, the first mosque built in the Hijrah",
+          "for": "teach:4"
+        },
+        {
+          "find": "Jabal Thawr",
+          "alt": "Mount Thawr near Makkah",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: The Sunnah and justice (1.5, 1.6)",
+      "n": 38,
+      "title": "1.5 and 1.6 exam practice: set passages and a 12-mark 'Assess this statement' answer",
+      "duration": 50,
+      "bigQuestion": "What makes an argument convincing to someone who disagrees with you?",
+      "objectives": [
+        "To understand how to answer set-passage questions and build a 12-mark evaluation on the Sunnah and justice"
+      ],
+      "successCriteria": [
+        "All: explain a set passage using its exact meaning",
+        "Most: plan a 12-mark answer with arguments for and against",
+        "Some: write a justified conclusion that weighs the arguments"
+      ],
+      "crossCurricular": "English Language (4EB1): structuring an argument with evidence and counter-argument",
+      "smsc": "Social: debating respectfully and fairly",
+      "keywords": [
+        {
+          "term": "evaluate",
+          "def": "weigh up arguments to reach a judgement"
+        },
+        {
+          "term": "justify",
+          "def": "give reasons for your conclusion"
+        },
+        {
+          "term": "set passage",
+          "def": "a Qur'an or hadith text named in the specification"
+        },
+        {
+          "term": "counter-argument",
+          "def": "a view against your own, explained fairly"
+        },
+        {
+          "term": "conclusion",
+          "def": "your final judgement, with reasons"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes an argument convincing to someone who disagrees with you?",
+        "a": "Evidence, fair treatment of the other view, and a conclusion that follows from the reasons."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The just will be with Allah on pulpits of light ... those who are just in their judgements, with their families and in whatever they are put in charge of' (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which ayah forbids riba?",
+          "a": "2:275",
+          "mins": 1,
+          "options": [
+            "2:275",
+            "33:36"
+          ]
+        },
+        {
+          "q": "What does the hadith of the Makhzumi woman teach?",
+          "a": "Equality before the law",
+          "mins": 1,
+          "options": [
+            "Equality before the law",
+            "Charity"
+          ]
+        },
+        {
+          "q": "Which ayah: 'stand firmly for justice, even against yourselves'?",
+          "a": "4:135",
+          "mins": 1,
+          "options": [
+            "4:135",
+            "5:48"
+          ]
+        },
+        {
+          "q": "Name one Sunni hadith collection.",
+          "a": "Bukhari, Muslim, Abu Dawud, at-Tirmidhi, an-Nasa'i or Ibn Majah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Set-passage answers",
+          "bullets": [
+            "Quote or paraphrase the passage accurately",
+            "Explain what it means",
+            "Say what it shows Muslims believe",
+            "Link to practice today"
+          ],
+          "note": "Begin with Bismillah. Model with 33:36: quote the key phrase, explain 'no choice', show belief in the Messenger's authority, link to following the Sunnah today."
+        },
+        {
+          "heading": "Building a 12-mark answer",
+          "bullets": [],
+          "note": "The 12-mark question asks pupils to assess a statement: arguments for, arguments against, evidence and a justified conclusion. Use the school scheme's sample questions.",
+          "cycle": [
+            "Arguments for, with evidence",
+            "Arguments against, with evidence",
+            "Weigh: which is stronger and why?",
+            "Justified conclusion"
+          ]
+        },
+        {
+          "heading": "Model plan",
+          "bullets": [],
+          "note": "Talk through the plan aloud; pupils copy the structure, not the words.",
+          "model": {
+            "problem": "'Muslims today need the Qur'an but do not need the Sunnah.' Assess this statement.",
+            "steps": [
+              "For: the Qur'an is complete and protected (15:9); some hadith are weak",
+              "Against: the Qur'an commands obedience to the Messenger (33:36, 4:80, 59:7)",
+              "Against: salah, zakah and Hajj details come from the Sunnah (16:44)",
+              "Weigh: the 'for' view contradicts the Qur'an it relies on",
+              "Conclusion: disagree; the Qur'an itself makes the Sunnah necessary"
+            ],
+            "answer": "A balanced answer with evidence on both sides and a justified conclusion."
+          }
+        },
+        {
+          "heading": "Common mistakes",
+          "bullets": [
+            "Only one side argued",
+            "Evidence named but not explained",
+            "Conclusion just repeats the introduction",
+            "Running out of time: plan for 2 minutes"
+          ],
+          "note": "Share two anonymised sample paragraphs (teacher-written) and ask pupils to improve them.",
+          "check": {
+            "q": "Which is the strongest argument AGAINST the statement?",
+            "options": [
+              "The Qur'an itself commands following the Messenger (4:80)",
+              "Some people prefer hadith",
+              "The Sunnah is older than the Qur'an",
+              "Hadith are easier to read"
+            ],
+            "answer": 0,
+            "why": "It uses the Qur'an's own words, so it answers the statement directly. The other options are untrue or weak."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a set-passage answer: 'Explain what the hadith on the just (Muslim) teaches about justice.'",
+          "a": "The just are honoured by Allah; justice applies in judgements, families and any responsibility; so every Muslim with responsibility must be fair.",
+          "mins": 4,
+          "model": "I do: 'This hadith teaches that the just will be on pulpits of light with Allah, which shows that justice is greatly rewarded. It names three areas: judgements, families and anything a person is put in charge of. This means ...'"
+        },
+        {
+          "q": "In a 12-mark answer, what must the conclusion do?",
+          "a": "Give a judgement with reasons",
+          "mins": 1,
+          "options": [
+            "Give a judgement with reasons",
+            "Repeat the question",
+            "List quotes"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a full 12-mark answer in the portal response box (or a Forms long-answer question): 'The Prophet's ﷺ example on justice is the best guide for society today.' Assess this statement. Aim for 20 minutes' worth; finish at home if needed.",
+          "a": "For: equality before the law, zakah, ban on riba, care for workers and orphans, with evidence. Against: some argue modern laws and human rights frameworks are enough, or societies differ. Weighing and justified conclusion.",
+          "mins": 14,
+          "model": "Teacher writes the first two sentences: 'Many Muslims would agree with this statement, because the Prophet ﷺ applied the law equally to rich and poor. For example ...'"
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which collection reports the hadith on the just?",
+          "a": "Muslim",
+          "mins": 1,
+          "options": [
+            "Muslim",
+            "Al-Kafi",
+            "Ibn Majah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what makes an argument convincing?",
+          "a": "Evidence, fair counter-arguments and a justified conclusion.",
+          "mins": 2
+        }
+      ],
+      "homework": "Finish the 12-mark answer and self-assess with the checklist: both sides, evidence explained, justified conclusion.",
+      "send": "SEND: 12-mark frame with sentence starters. EAL: connectives bank. Stretch: include a Shia or Sunni perspective where relevant.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: set-passage frame and 12-mark planning grid",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) sample assessment materials, Question 2(d)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "debate lectern",
+          "alt": "A lectern, as for a debate",
+          "for": "hook"
+        },
+        {
+          "find": "balance scale",
+          "alt": "Scales: weighing arguments",
+          "for": "teach:2"
+        }
+      ]
     }
   ]
 }

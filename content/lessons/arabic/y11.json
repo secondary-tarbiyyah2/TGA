@@ -5,7 +5,7 @@
   "boardShort": "Edexcel GCSE 1AA0",
   "exam": "Pearson Edexcel International GCSE (9-1) Arabic (First Language) (4AA1)",
   "examShort": "Edexcel IGCSE 4AA1",
-  "source": "Edexcel spec data file (content/syllabus/ks4/arabic.json): units 3.1, 3.2, 4.1, 4.2, 4.3, 5.1, 5.2 as placed for Year 11, plus exam-skills lessons for Papers 1 to 4. Original lessons written for TGA; no existing Year 11 Arabic file. The Pearson grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read: structures follow well-established Modern Standard Arabic and the themes; teacher to cross-check against Appendices 2 and 3. All reading and listening texts are original, not board material. | Gap-fill against Pearson Edexcel GCSE Arabic 1AA0 specification",
+  "source": "Edexcel spec data file (content/syllabus/ks4/arabic.json): units 3.1, 3.2, 4.1, 4.2, 4.3, 5.1, 5.2 as placed for Year 11, plus exam-skills lessons for Papers 1 to 4. Original lessons written for TGA; no existing Year 11 Arabic file. The Pearson grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read: structures follow well-established Modern Standard Arabic and the themes; teacher to cross-check against Appendices 2 and 3. All reading and listening texts are original, not board material. | Gap-fill against Pearson Edexcel GCSE Arabic 1AA0 specification | Spring 1 2027 (lessons 18, 19, 21, 26 to 32): founding-year revision programme in the school's theme order (11 Jan Theme 1 and the 1AA0 conversation; 18 Jan Theme 2 and 4AA1 summary; 25 Jan Theme 3 and grammar with Arabic terms; 1 Feb extended writing, 1AA0 role play and picture task; 8 Feb mock week), from the Year 11 pack; all texts and questions are our own, exam-style, not board material; lessons v3",
   "lessons": [
     {
       "unit": "Unit 3.1: What school is like",
@@ -2967,289 +2967,439 @@
       "boardShort": "Edexcel GCSE 1AA0"
     },
     {
-      "unit": "Exam skills: Papers 1 to 4 (all five themes)",
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
       "n": 18,
-      "title": "Writing Paper: planning, accuracy and translation into Arabic",
-      "duration": 50,
-      "bigQuestion": "How do I write accurate Arabic to a word count and translate from English?",
+      "title": "Extended writing: planning, range and accuracy",
+      "bigQuestion": "How do I plan and write an extended piece that scores in the top bands?",
       "objectives": [
-        "Plan a written answer to cover all the bullet points",
-        "Check for accuracy: agreement, tense and spelling",
-        "Translate a short English passage into Arabic"
+        "To understand how to plan, write and check an extended Arabic piece that covers every bullet point with range and accuracy"
       ],
       "successCriteria": [
-        "All: write to the word count covering every bullet point",
-        "Most: self-check agreement, verb endings and spelling",
-        "Some: use varied structures (conditional, relative clause, passive) accurately"
+        "All: cover every bullet point in the task",
+        "Most: include three time frames, opinions with reasons and connectives",
+        "Some: check accuracy with a checklist and improve one paragraph"
       ],
-      "crossCurricular": "English: planning and proofreading; Computing: precise language",
-      "smsc": "Moral: ihsan (excellence) in work and care for accuracy",
+      "crossCurricular": "English: planning extended writing (4EB1 Section B and C)",
+      "smsc": "Moral: perseverance (sabr) in redrafting work",
       "keywords": [
         {
-          "term": "كِتَابَةٌ",
-          "def": "writing (kitāba)"
+          "term": "مَقَال (maqal)",
+          "def": "article, essay"
         },
         {
-          "term": "فَقْرَةٌ",
-          "def": "paragraph (faqra)"
+          "term": "خُطَّة (khuttah)",
+          "def": "plan"
         },
         {
-          "term": "مُرَاجَعَةٌ",
-          "def": "checking (murājaʿa)"
+          "term": "مُقَدِّمَة / خَاتِمَة",
+          "def": "introduction / conclusion"
         },
         {
-          "term": "إِمْلَاءٌ",
-          "def": "spelling (imlāʾ)"
+          "term": "مُرَاجَعَة (muraja'ah)",
+          "def": "checking, review"
         },
         {
-          "term": "تَطَابُقٌ",
-          "def": "agreement (taṭābuq)"
+          "term": "دِقَّة (diqqah)",
+          "def": "accuracy"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two pupils write 150 words. One scores far higher. Without reading them, what might the difference be?",
+        "a": "Covering all bullet points, range of structures, accuracy and organisation."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, Allah loves those who do good with excellence (al-muhsinin)' (al-Baqarah 2:195). We plan and check our writing with the same care.",
+        "at": "start"
+      },
       "starter": [
-        "Retrieval: write one sentence about what you did on holiday.",
-        "Write the Arabic for 'I hope to study medicine'.",
-        "Say a cause-and-effect sentence with بِسَبَبِ."
+        {
+          "q": "Bismillah. Predicate of كَانَ is: A) مَنْصُوب B) مَرْفُوع",
+          "a": "A) مَنْصُوب",
+          "mins": 1,
+          "options": [
+            "مَنْصُوب",
+            "مَرْفُوع"
+          ]
+        },
+        {
+          "q": "Give a connective for 'therefore'.",
+          "a": "لِذٰلِكَ",
+          "mins": 1
+        },
+        {
+          "q": "'It is forbidden to ...'?",
+          "a": "مِنَ المَمْنُوعِ أَنْ ...",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Plan before you write",
-          "bullets": [
-            "Underline each bullet point in the task",
-            "Choose a tense for each: past, present, future",
-            "Give each point two sentences plus a reason",
-            "Leave two minutes to check"
+          "heading": "Plan in two minutes",
+          "timeline": [
+            {
+              "label": "1",
+              "text": "Underline bullet points and tenses"
+            },
+            {
+              "label": "2",
+              "text": "One paragraph per bullet"
+            },
+            {
+              "label": "3",
+              "text": "Add: opinion, reason, connective, time frame"
+            },
+            {
+              "label": "4",
+              "text": "Write"
+            },
+            {
+              "label": "5",
+              "text": "Check with the list"
+            }
           ],
-          "note": "The spec file notes that Paper 4 instructions are in Arabic and vocalisation is not expected, so pupils must write unvowelled Arabic accurately. Teach the planning habit: bullet = one paragraph. Common penalty: missing a bullet. The Foundation and Higher papers have different question structure (see spec file); check the sample assessment materials for word counts and marks. Time pupils: 5 minutes to plan a 90-word answer."
+          "note": "Begin with bismillah. 1AA0 Paper 4 and 4AA1 Paper 2 both reward covering every bullet point; check word counts in the specifications. Model the plan for the task: اُكْتُبْ مَقَالًا عَنْ حَمْلَةٍ خَيْرِيَّةٍ فِي مَدْرَسَتِكَ."
+        },
+        {
+          "heading": "Model: one developed paragraph",
+          "model": {
+            "problem": "Bullet: what you did for the charity campaign.",
+            "steps": [
+              "فِي الشَّهْرِ المَاضِي نَظَّمْنَا حَمْلَةً لِجَمْعِ التَّبَرُّعَاتِ لِلْمُحْتَاجِينَ.",
+              "بِعْتُ الكَعْكَ مَعَ أَصْدِقَائِي، وَجَمَعْنَا مِئَتَيْ جُنَيْهٍ.",
+              "كَانَتْ تَجْرِبَةً رَائِعَةً لِأَنَّنَا سَاعَدْنَا غَيْرَنَا.",
+              "فِي المُسْتَقْبَلِ سَأُشَارِكُ فِي حَمَلَاتٍ أُخْرَى إِنْ شَاءَ اللّٰهُ."
+            ],
+            "answer": "Past narrative, detail with a number, opinion and reason, future"
+          },
+          "note": "Spec 5.1 campaigns and good causes; Islamic link to sadaqah."
         },
         {
           "heading": "Accuracy checklist",
-          "compare": {
-            "left": {
-              "title": "Careful",
-              "points": [
-                "الصَّيْفَ الْمَاضِيَ زُرْتُ مَدِينَةً جَمِيلَةً",
-                "Verb agrees; adjective matches the noun (feminine)",
-                "أَعْتَقِدُ أَنَّ الرِّحْلَةَ مُفِيدَةٌ",
-                "Case after أَنَّ is correct"
-              ]
-            },
-            "right": {
-              "title": "Careless",
-              "points": [
-                "الصَّيْفَ الْمَاضِيَ زُرْتُ مَدِينَةً جَمِيلًا",
-                "Adjective does not match the noun",
-                "أَعْتَقِدُ أَنَّ الرِّحْلَةُ مُفِيدَةٌ",
-                "Wrong case after أَنَّ"
-              ]
-            },
-            "label": "vs"
-          },
-          "note": "Hand out the checklist. Pupils use it to mark a shared draft. Emphasise that errors that change meaning cost more than missing a short vowel: so check the verb, the subject and the gender of adjectives first. Warn about Arabic keyboards and hamza spelling: إِلَى has hamza under alif, and the ending ة must not be written ه."
+          "bullets": [
+            "Agreement: gender, number, dual; non-human plurals",
+            "Verb forms: person, tense; أَنْ + fathah",
+            "Cases after كَانَ، إِنَّ، prepositions; numbers"
+          ],
+          "note": "Pupils keep this list for every piece."
         },
         {
-          "heading": "Spelling without vowels",
-          "misconception": {
-            "wrong": "ذهبت الى مدرسه كبيره",
-            "right": "ذهبت إلى مدرسة كبيرة - hamza under alif in إلى, and ة (not ه) at the end of feminine nouns and adjectives"
-          },
-          "note": "Show the typical unvowelled errors pupils make in typing and handwriting. Ask them to read each aloud to hear the difference. These are the kinds of slips that obscure meaning in a marked script. Pupils write ten words from the unit lists with the correct spelling."
-        },
-        {
-          "heading": "Model: translating English into Arabic",
-          "model": {
-            "problem": "Translate into Arabic: 'Last summer my family and I travelled to Jordan. We stayed in a small hotel near the sea. I hope to visit Jordan again next year.'",
-            "steps": [
-              "'Last summer my family and I travelled to Jordan' = الصَّيْفَ الْمَاضِيَ سَافَرْتُ أَنَا وَعَائِلَتِي إِلَى الْأُرْدُنِّ",
-              "'We stayed in a small hotel near the sea' = نَزَلْنَا فِي فُنْدُقٍ صَغِيرٍ قَرِيبٍ مِنَ الْبَحْرِ",
-              "'I hope to visit Jordan again next year' = آمُلُ أَنْ أَزُورَ الْأُرْدُنَّ مَرَّةً أُخْرَى الْعَامَ الْقَادِمَ"
-            ],
-            "answer": "الصَّيْفَ الْمَاضِيَ سَافَرْتُ أَنَا وَعَائِلَتِي إِلَى الْأُرْدُنِّ. نَزَلْنَا فِي فُنْدُقٍ صَغِيرٍ قَرِيبٍ مِنَ الْبَحْرِ. آمُلُ أَنْ أَزُورَ الْأُرْدُنَّ مَرَّةً أُخْرَى الْعَامَ الْقَادِمَ."
-          },
-          "note": "Show the thinking: choose the structure you KNOW, not a word-for-word copy. 'Last summer' becomes an accusative time phrase. 'We stayed' = نَزَلْنَا. 'I hope to visit' = آمُلُ أَنْ أَزُورَ. Note the Arabic is unvowelled in the exam; here the vowels are given for learning. Pupils then translate the second English sentence of their own."
-        },
-        {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "Which is spelt correctly (no vowels)?",
+            "q": "Which error is in: الحَمَلَاتُ مُفِيدُونَ?",
             "options": [
-              "ذهبت الى مدرسه",
-              "ذهبت إلى مدرسة",
-              "ذهبت الى مدرسة",
-              "ذهبت إلى مدرسه"
+              "Verb tense",
+              "Agreement with a non-human plural",
+              "Case after a preposition"
             ],
             "answer": 1,
-            "why": "Correct unvowelled spelling needs the hamza under the alif in إلى and the ة ending in مدرسة. A has neither, C lacks the hamza and D uses ه."
-          },
-          "note": "Mini-whiteboards. B uses ه for ة; C writes الى without hamza; D has the wrong ending for 'madrasa'. Ask pupils to say which is correct and why."
+            "why": "Non-human plural takes feminine singular: الحَمَلَاتُ مُفِيدَةٌ."
+          }
         }
       ],
       "practice": [
-        "Plan an answer to: 'Write about a trip: where you went, what you did, what you thought, where you will go next.' Underline each bullet.",
-        "Write two sentences for each bullet, each with a different tense.",
-        "Swap with a partner and use the checklist to mark each other's work."
-      ],
-      "independent": [
-        "Core: write 80 words about a trip (past, opinion, future).",
-        "Extend: translate the model's English passage back into Arabic without looking.",
-        "Stretch: write 120 words using a conditional, a relative clause and one passive."
-      ],
-      "exit": [
-        "Translate: 'I have been studying Arabic for three years.'",
-        "Name three things to check before you hand in your writing."
-      ],
-      "homework": "Write 90 words in Arabic (unvowelled) on a theme of your choice. Use the checklist and correct your own work in a different colour.",
-      "send": "EAL/SEND: give a bullet-by-bullet writing frame and a spelling card. Stretch: write under timed conditions with a self-marked checklist.",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
-    },
-    {
-      "unit": "Exam skills: Papers 1 to 4 (all five themes)",
-      "n": 19,
-      "title": "Speaking Paper: the conversation and unexpected questions",
-      "duration": 50,
-      "bigQuestion": "How do I keep going in the conversation when I am asked something I did not prepare?",
-      "objectives": [
-        "Develop answers using answer, reason, contrast and time",
-        "Use question words and repair phrases",
-        "Practise a two-theme conversation"
-      ],
-      "successCriteria": [
-        "All: give a reason with every answer",
-        "Most: add a contrast or a past or future link",
-        "Some: respond fluently to an unpredicted question using a repair phrase"
-      ],
-      "crossCurricular": "English and Drama: oral communication and listening; PSHE: confidence",
-      "smsc": "Spiritual and social: sincerity, confidence and courtesy in speech",
-      "keywords": [
         {
-          "term": "لِمَاذَا",
-          "def": "why? (limādhā)"
+          "q": "Correct: يَجِبُ أَنْ نُسَاعِدُ الفُقَرَاءِ.",
+          "a": "يَجِبُ أَنْ نُسَاعِدَ الفُقَرَاءَ.",
+          "mins": 2,
+          "model": "After أَنْ the verb takes fathah: نُسَاعِدَ.\nالفُقَرَاء is the object: fathah (الفُقَرَاءَ)."
         },
         {
-          "term": "دَعْنِي أُفَكِّرْ",
-          "def": "let me think (daʿnī ufakkir)"
-        },
-        {
-          "term": "هَلْ يُمْكِنُكَ أَنْ تُعِيدَ؟",
-          "def": "can you repeat? (hal yumkinuka an tuʿīda)"
-        },
-        {
-          "term": "مِنْ جِهَةٍ أُخْرَى",
-          "def": "on the other hand (min jihatin ukhrā)"
-        },
-        {
-          "term": "فِي رَأْيِي",
-          "def": "in my opinion (fī raʾyī)"
+          "q": "Write a conclusion sentence for a charity article.",
+          "a": "For example: فِي الخِتَامِ، أَنْصَحُ كُلَّ الطُّلَّابِ أَنْ يُشَارِكُوا فِي العَمَلِ الخَيْرِيِّ.",
+          "mins": 2
         }
       ],
+      "independent": [
+        {
+          "q": "Core (portal response box, timed 20 min): اُكْتُبْ مَقَالًا عَنْ حَمْلَةٍ خَيْرِيَّةٍ فِي مَدْرَسَتِكَ: what the campaign was; what you did; why good causes matter; what you will do next. Group B 100 to 130 words; Group A 150 words.",
+          "a": "Marked with the 1AA0 Paper 4 or 4AA1 Paper 2 style criteria: content, range, accuracy, organisation.",
+          "mins": 20,
+          "model": "Teacher writes the plan on screen and the first sentence."
+        },
+        {
+          "q": "Extend: Use the checklist to correct three errors in your own piece.",
+          "a": "Three corrected errors, each labelled with its rule",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Add a sentence with إِنَّ and one with لَيْسَ, correctly marked.",
+          "a": "For example: إِنَّ العَمَلَ الخَيْرِيَّ مُهِمٌّ. لَيْسَ الأَمْرُ صَعْبًا.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is مَقَال? A) article B) plan C) checklist",
+          "a": "A) article",
+          "mins": 1,
+          "options": [
+            "article",
+            "plan",
+            "checklist"
+          ]
+        },
+        {
+          "q": "Big question: what makes extended writing score highly?",
+          "a": "All bullets covered, range of structures and time frames, accuracy checked, clear organisation.",
+          "mins": 1
+        }
+      ],
+      "homework": "Draft 2 of today's article after marking, with every checklist error corrected.",
+      "send": "SEND: paragraph frames per bullet. EAL: vocabulary bank for 5.1. Stretch: 250 words with a counter-argument.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), extended writing (1 Feb); Theme 5.1 campaigns and good causes",
+        "Portal arabic y11 lessons 13, 14 and 18 (lesson 18 upgraded)",
+        "School's 1AA0 Speaking and Writing revision booklet (Draft 1, teacher marking, Draft 2) (Group B): writing tasks",
+        "Writing checklist (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "charity donation box",
+          "alt": "A charity collection box",
+          "for": "teach:2"
+        },
+        {
+          "find": "pen and lined paper",
+          "alt": "Pen and paper for writing",
+          "for": "keywords"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
+      "n": 19,
+      "title": "Speaking: the conversation and unexpected questions",
+      "bigQuestion": "How do I keep talking well when I am asked a question I did not expect?",
+      "objectives": [
+        "To understand how to develop conversation answers and handle unexpected questions in the 1AA0 speaking test"
+      ],
+      "successCriteria": [
+        "All: answer Theme 1 questions with three developed sentences",
+        "Most: use repair phrases to buy time and ask for repetition",
+        "Some: answer an unexpected question using a prepared structure bank"
+      ],
+      "crossCurricular": "English: spoken language and active listening",
+      "smsc": "Social: confident, polite conversation",
+      "keywords": [
+        {
+          "term": "مُحَادَثَة (muhadathah)",
+          "def": "conversation"
+        },
+        {
+          "term": "هَلْ يُمْكِنُ أَنْ تُعِيدَ السُّؤَالَ؟",
+          "def": "could you repeat the question?"
+        },
+        {
+          "term": "دَعْنِي أُفَكِّرُ (da'ni ufakkiru)",
+          "def": "let me think"
+        },
+        {
+          "term": "بِالنِّسْبَةِ لِي (bin-nisbati li)",
+          "def": "as for me"
+        },
+        {
+          "term": "سُؤَال غَيْر مُتَوَقَّع",
+          "def": "an unexpected question"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a conversation in English, what do you say when you need a second to think? Could the same trick work in Arabic?",
+        "a": "Yes: دَعْنِي أُفَكِّرُ، بِالنِّسْبَةِ لِي ... buy time naturally."
+      },
+      "islamicLink": {
+        "text": "Musa (peace be upon him) asked Allah: 'Untie the knot from my tongue so they may understand my speech' (Ta Ha 20:27-28). We can make this du'a before speaking tests.",
+        "at": "start"
+      },
       "starter": [
-        "Retrieval: say 'I find maths difficult but useful'.",
-        "Say 'I will study medicine at university'.",
-        "Say 'last year I volunteered'."
+        {
+          "q": "Bismillah. 'Let me think': A) دَعْنِي أُفَكِّرُ B) لَا أَعْرِفُ",
+          "a": "A) دَعْنِي أُفَكِّرُ",
+          "mins": 1,
+          "options": [
+            "دَعْنِي أُفَكِّرُ",
+            "لَا أَعْرِفُ"
+          ]
+        },
+        {
+          "q": "'When I was young I used to read' in Arabic?",
+          "a": "عِنْدَمَا كُنْتُ صَغِيرًا كُنْتُ أَقْرَأُ",
+          "mins": 2
+        },
+        {
+          "q": "Name three question words in Arabic.",
+          "a": "For example: مَاذَا، لِمَاذَا، مَتَى",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What the paper asks",
+          "heading": "The conversation task",
           "bullets": [
-            "Role play, picture task and conversation",
-            "The student picks the first conversation topic in advance",
-            "The second theme is set by Pearson",
-            "Answer in full sentences with reasons"
+            "Pupil chooses the first theme; the teacher-examiner chooses the second",
+            "Questions are not given in advance",
+            "Marks for communication, range, accuracy and spontaneity"
           ],
-          "note": "Per the spec file the speaking paper has a role play (10 marks), a picture-based task (24) and a conversation (36). The student chooses the first topic ahead of time and Pearson sets the second theme. Check the sample assessment materials for the exact timing and the sequence for the tier your pupils sit. Pupils need two prepared topics with 3 sentences each in the three tenses, and the ability to handle the second, which they have not chosen."
+          "note": "Begin with bismillah. Check the current 1AA0 specification and the school's booklet for timings by tier."
         },
         {
-          "heading": "Question words and repair phrases",
+          "heading": "Repair and time-buying phrases",
           "table": {
             "head": [
               "Arabic",
-              "Transliteration",
               "English"
             ],
             "rows": [
               [
-                "مَاذَا / لِمَاذَا؟",
-                "mādhā / limādhā?",
-                "what? / why?"
+                "هَلْ يُمْكِنُ أَنْ تُعِيدَ السُّؤَالَ؟",
+                "could you repeat the question?"
               ],
               [
-                "مَتَى / أَيْنَ؟",
-                "matā / ayna?",
-                "when? / where?"
+                "دَعْنِي أُفَكِّرُ ...",
+                "let me think ..."
               ],
               [
-                "كَيْفَ / كَمْ؟",
-                "kayfa / kam?",
-                "how? / how many?"
+                "سُؤَالٌ جَيِّدٌ!",
+                "good question!"
               ],
               [
-                "هَلْ يُمْكِنُكَ أَنْ تُعِيدَ السُّؤَالَ؟",
-                "hal yumkinuka an tuʿīda s-suʾāla?",
-                "can you repeat the question?"
-              ],
-              [
-                "دَعْنِي أُفَكِّرْ",
-                "daʿnī ufakkir",
-                "let me think"
-              ],
-              [
-                "لَا أَعْرِفُ، وَلَكِنْ أَعْتَقِدُ أَنَّ ...",
-                "lā aʿrifu, wa-lākin aʿtaqidu anna ...",
-                "I do not know, but I think that ..."
+                "بِالنِّسْبَةِ لِي ...",
+                "as for me ..."
               ]
             ]
           },
-          "note": "Teach pupils to understand the question first: identify the question word, the tense of the verb and the theme. Then give them rescue phrases for when they do not understand. Practise each phrase aloud ten times. A calm, polite repair is better than silence. Pairs play examiner and candidate."
+          "note": "Use them naturally, once or twice, not as a script."
         },
         {
-          "heading": "Model: ABCD answers",
+          "heading": "Model: the ABCD answer",
           "model": {
-            "problem": "Examiner: هَلْ تُحِبُّ مَدْرَسَتَكَ؟ (Do you like your school?) Answer with Answer, Because, Contrast and a past or future link.",
+            "problem": "مَا رَأْيُكَ فِي وَسَائِلِ التَّوَاصُلِ الاِجْتِمَاعِيِّ؟",
             "steps": [
-              "Answer: نَعَمْ، أُحِبُّ مَدْرَسَتِي",
-              "Because: لِأَنَّ الْمُعَلِّمِينَ لُطَفَاءُ",
-              "Contrast: وَلَكِنَّ الْوَاجِبَاتِ كَثِيرَةٌ",
-              "Time link: الْعَامَ الْمَاضِيَ فُزْتُ بِجَائِزَةٍ وَفِي الْمُسْتَقْبَلِ أَتَمَنَّى أَنْ أَدْرُسَ فِي جَامِعَةٍ جَيِّدَةٍ"
+              "Answer: أَعْتَقِدُ أَنَّهَا مُفِيدَةٌ،",
+              "Because: لِأَنَّهَا تُسَاعِدُنِي عَلَى التَّوَاصُلِ مَعَ أَقَارِبِي فِي مِصْرَ.",
+              "Contrast: لٰكِنْ يَجِبُ أَنْ نَحْذَرَ مِنْ تَضْيِيعِ الوَقْتِ.",
+              "Different time: أَمْسِ اسْتَخْدَمْتُهَا سَاعَةً وَاحِدَةً فَقَطْ."
             ],
-            "answer": "نَعَمْ، أُحِبُّ مَدْرَسَتِي لِأَنَّ الْمُعَلِّمِينَ لُطَفَاءُ، وَلَكِنَّ الْوَاجِبَاتِ كَثِيرَةٌ. الْعَامَ الْمَاضِيَ فُزْتُ بِجَائِزَةٍ وَفِي الْمُسْتَقْبَلِ أَتَمَنَّى أَنْ أَدْرُسَ فِي جَامِعَةٍ جَيِّدَةٍ."
+            "answer": "Answer, Because, Contrast, Different time frame"
           },
-          "note": "Show the ABCD structure: Answer, Because, Contrast, Detail (time or tense). Count how many parts the sample uses. Pupils then give their own answer to the same question in under 30 seconds. Use pupils' answers as discussion examples. Stress sounding natural and not memorised."
+          "note": "ABCD gives every answer range."
         },
         {
-          "heading": "Hinge question",
+          "heading": "Unexpected questions",
+          "bullets": [
+            "Listen for the question word and the tense",
+            "Reuse a prepared sentence and adapt it",
+            "Answer in the same tense as the question"
+          ],
+          "note": "مَاذَا فَعَلْتَ ...؟ needs the past; مَاذَا سَتَفْعَلُ ...؟ needs the future."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "Which asks the examiner to repeat the question?",
+            "q": "مَاذَا سَتَفْعَلُ فِي العُطْلَةِ؟ needs an answer in:",
             "options": [
-              "هَلْ يُمْكِنُكَ أَنْ تُجِيبَ؟",
-              "شُكْرًا جَزِيلًا",
-              "هَلْ يُمْكِنُكَ أَنْ تُعِيدَ السُّؤَالَ؟",
-              "لَا أُرِيدُ أَنْ أُجِيبَ"
+              "the past",
+              "the present",
+              "the future"
             ],
             "answer": 2,
-            "why": "تُعِيدَ السُّؤَالَ means 'repeat the question'. A asks the examiner to answer, B says thank you very much, D says 'I do not want to answer'."
-          },
-          "note": "Mini-whiteboards. B and D are not requests to repeat; C is a statement of thanks. Ask pupils to say it aloud with correct pronunciation."
+            "why": "سَتَفْعَلُ is future, so answer with سَـ / سَوْفَ."
+          }
         }
       ],
       "practice": [
-        "Answer three questions from Theme 3 using ABCD: Do you like your subjects? What do you do at break? What are the rules?",
-        "Answer two questions from your chosen conversation topic in the past tense.",
-        "Practise repair phrases: partner asks a fast question, you ask to repeat it."
+        {
+          "q": "Give an ABCD answer: هَلْ تُحِبُّ القِرَاءَةَ؟",
+          "a": "For example: نَعَمْ، أُحِبُّ القِرَاءَةَ كَثِيرًا لِأَنَّهَا تُعَلِّمُنِي أَشْيَاءَ جَدِيدَةً، لٰكِنِّي لَا أَجِدُ وَقْتًا كَافِيًا. الأُسْبُوعَ المَاضِي قَرَأْتُ كِتَابًا عَنْ تَارِيخِ الأَنْدَلُسِ.",
+          "mins": 3,
+          "model": "A: نَعَمْ، أُحِبُّ القِرَاءَةَ.\nB: لِأَنَّهَا ...\nC: لٰكِنِّي ...\nD: الأُسْبُوعَ المَاضِي قَرَأْتُ ..."
+        },
+        {
+          "q": "Ask the examiner to repeat the question.",
+          "a": "هَلْ يُمْكِنُ أَنْ تُعِيدَ السُّؤَالَ مِنْ فَضْلِكَ؟",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: prepare 3 answers (3 sentences each) for your chosen first topic.",
-        "Extend: add a contrast and a future for each answer.",
-        "Stretch: record a 3-minute conversation on two themes with a partner and mark it with the ABCD checklist."
+        {
+          "q": "Core (Group B): mock conversation in breakout pairs, Theme 1, five questions each, using ABCD; partner ticks a checklist. Group A: write ABCD answers to the same five questions in the portal response box.",
+          "a": "Checklist: opinion, reason, connective, second time frame, accuracy of verbs.",
+          "mins": 15,
+          "model": "Teacher and a confident pupil model one question and answer live."
+        },
+        {
+          "q": "Extend: Write two unexpected questions for Theme 1 and answer them.",
+          "a": "For example: مَنْ كَانَ صَدِيقَكَ المُفَضَّلَ فِي المَدْرَسَةِ الاِبْتِدَائِيَّةِ؟",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Re-record one answer adding a subjunctive (أَنْ + verb) and a conditional.",
+          "a": "For example: أُرِيدُ أَنْ أَقْرَأَ أَكْثَرَ، وَلَوْ كَانَ عِنْدِي وَقْتٌ لَقَرَأْتُ كُلَّ يَوْمٍ.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Say your repair phrase in Arabic.",
-        "Answer: 'ماذا تفعل في وقت الفراغ؟' with three parts."
+        {
+          "q": "What does D stand for in ABCD? A) a different time frame B) a definition C) a description",
+          "a": "A) a different time frame",
+          "mins": 1,
+          "options": [
+            "a different time frame",
+            "a definition",
+            "a description"
+          ]
+        },
+        {
+          "q": "Big question: what will you do if you get a question you did not expect?",
+          "a": "Use a time-buying phrase, listen for the tense, adapt a prepared sentence.",
+          "mins": 1
+        }
       ],
-      "homework": "Record a 90-second answer on your chosen topic. Count the number of reasons, contrasts and tenses you used.",
-      "send": "EAL/SEND: give answer frames and allow a practice card (not for the exam). Stretch: practise unexpected questions drawn at random from all five themes.",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "homework": "Group B: record (audio only) three Theme 1 answers with ABCD for Draft 1 in the booklet. Group A: write the same as practice for Paper 2.",
+      "send": "SEND: ABCD prompt card. EAL: phrase bank with English. Stretch: aim for 45 seconds per answer without notes.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), Theme 1 and the conversation (11 Jan)",
+        "Portal arabic y11 lesson 19, upgraded",
+        "School's 1AA0 Speaking and Writing revision booklet (Draft 1, teacher marking, Draft 2) (Group B): conversation questions, Theme 1",
+        "Conversation checklist (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "microphone recording",
+          "alt": "A microphone",
+          "for": "keywords"
+        },
+        {
+          "find": "speech bubbles",
+          "alt": "Speech bubbles",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Exam skills: Papers 1 to 4 (all five themes)",
@@ -3414,159 +3564,253 @@
       "boardShort": "Edexcel GCSE 1AA0"
     },
     {
-      "unit": "Exam skills: Papers 1 to 4 (all five themes)",
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
       "n": 21,
-      "title": "Revision: Higher structures and common errors across the themes",
-      "duration": 50,
-      "bigQuestion": "Which structures help me reach the top marks, and which errors do I still make?",
+      "title": "Grammar with Arabic terms: i'rab of nominal and verbal sentences",
+      "bigQuestion": "How do I explain why an Arabic word ends the way it does?",
       "objectives": [
-        "Review the main structures across Themes 1 to 5",
-        "Identify and correct common errors",
-        "Plan a revision route for all four papers"
+        "To understand how to analyse (i'rab) the main parts of nominal and verbal sentences, including كَانَ and إِنَّ, using Arabic terms"
       ],
       "successCriteria": [
-        "All: use past, present and future accurately",
-        "Most: use at least three higher structures with accuracy",
-        "Some: correct errors in a paragraph and explain the rule"
+        "All: label مُبْتَدَأ، خَبَر، فِعْل، فَاعِل، مَفْعُول بِهِ",
+        "Most: explain the case changes after كَانَ and إِنَّ",
+        "Some: write a full i'rab line for a word in exam style"
       ],
-      "crossCurricular": "All subjects: revision and self-assessment skills",
-      "smsc": "Spiritual and moral: perseverance (ṣabr), planning and reliance on Allah after effort",
+      "crossCurricular": "English: grammatical function (subject, object, complement)",
+      "smsc": "Cultural: the Arabic grammar tradition that protected correct reading of the Qur'an",
       "keywords": [
         {
-          "term": "قَاعِدَةٌ",
-          "def": "rule (qāʿida)"
+          "term": "إِعْرَاب (i'rab)",
+          "def": "grammatical analysis of word endings"
         },
         {
-          "term": "خَطَأٌ",
-          "def": "mistake (khaṭaʾ)"
+          "term": "مُبْتَدَأ / خَبَر (mubtada' / khabar)",
+          "def": "subject / predicate of a nominal sentence"
         },
         {
-          "term": "تَصْحِيحٌ",
-          "def": "correction (taṣḥīḥ)"
+          "term": "فَاعِل (fa'il)",
+          "def": "the doer of a verb"
         },
         {
-          "term": "مُرَاجَعَةٌ",
-          "def": "revision (murājaʿa)"
+          "term": "مَفْعُول بِهِ (maf'ul bihi)",
+          "def": "direct object"
         },
         {
-          "term": "اِمْتِحَانٌ تَجْرِيبِيٌّ",
-          "def": "mock exam (imtiḥān tajrībī)"
+          "term": "مَرْفُوع / مَنْصُوب / مَجْرُور",
+          "def": "nominative / accusative / genitive"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "In إِنَّ اللّٰهَ غَفُورٌ رَحِيمٌ, why does اللّٰهَ end with fathah when it usually starts a sentence with dammah?",
+        "a": "إِنَّ makes its noun accusative (اسم إنّ منصوب) and its predicate stays nominative."
+      },
+      "islamicLink": {
+        "text": "Arabic grammar was written down early in Islamic history so that the Qur'an would be read correctly. The phrase إِنَّ اللّٰهَ غَفُورٌ رَحِيمٌ appears many times in the Qur'an, for example al-Baqarah 2:173.",
+        "at": "start"
+      },
       "starter": [
-        "Retrieval: write one sentence with the past, one with the future.",
-        "Say the rule: what ending does a verb take after أَنْ?",
-        "Say the rule: what case follows أَنَّ?"
+        {
+          "q": "Bismillah. The doer of a verb is the: A) فَاعِل B) مَفْعُول بِهِ",
+          "a": "A) فَاعِل",
+          "mins": 1,
+          "options": [
+            "فَاعِل",
+            "مَفْعُول بِهِ"
+          ]
+        },
+        {
+          "q": "Ending after a preposition?",
+          "a": "مَجْرُور (genitive), usually kasrah",
+          "mins": 1
+        },
+        {
+          "q": "Ruling of the imperative اِذْهَبْ?",
+          "a": "مَبْنِيٌّ عَلَى السُّكُونِ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Structure bank",
+          "heading": "Nominal sentence",
           "table": {
             "head": [
-              "Structure",
-              "Example",
-              "English"
+              "Word",
+              "Role",
+              "Case"
             ],
             "rows": [
               [
-                "Past and كَانَ",
-                "كُنْتُ أَلْعَبُ كُلَّ يَوْمٍ",
-                "I used to play every day"
+                "الطَّالِبُ",
+                "مُبْتَدَأ",
+                "مَرْفُوع (ـُ)"
               ],
               [
-                "Future with سَـ",
-                "سَأُسَافِرُ الصَّيْفَ الْقَادِمَ",
-                "I will travel next summer"
-              ],
-              [
-                "أَنْ + subjunctive",
-                "أُرِيدُ أَنْ أَزُورَ مِصْرَ",
-                "I want to visit Egypt"
-              ],
-              [
-                "إِنَّ / أَنَّ + accusative",
-                "أَعْتَقِدُ أَنَّ الْجَوَّ حَارٌّ",
-                "I think the weather is hot"
-              ],
-              [
-                "Comparative",
-                "الشِّتَاءُ أَبْرَدُ مِنَ الصَّيْفِ",
-                "winter is colder than summer"
-              ],
-              [
-                "Relative clause",
-                "هُوَ الرَّجُلُ الَّذِي يُسَاعِدُنِي",
-                "he is the man who helps me"
-              ],
-              [
-                "Passive",
-                "كُرِّمَ الطُّلَّابُ",
-                "the students were honoured"
-              ],
-              [
-                "Conditional",
-                "إِذَا دَرَسْتُ فَسَأَنْجَحُ",
-                "if I study I will succeed"
+                "مُجْتَهِدٌ",
+                "خَبَر",
+                "مَرْفُوع (ـٌ)"
               ]
             ]
           },
-          "note": "Pupils use this as a revision checklist. For each structure they write an original sentence on a theme of their choice. Rank: which are secure? Tick, circle or cross. The spec file notes the grammar list (Appendix 2) was not read for this plan, so the teacher should cross-check the structures against the specification's grammar appendix and add any missing items."
+          "note": "Begin with bismillah. الطَّالِبُ مُجْتَهِدٌ: both nominative."
         },
         {
-          "heading": "The errors I keep making",
-          "misconception": {
-            "wrong": "أُرِيدُ أَنْ أَكُونَ طَبِيبٌ لِأَنَّ الْمُعَلِّمُ قَالَ إِنَّ الطِّبُّ مُفِيدٌ",
-            "right": "أُرِيدُ أَنْ أَكُونَ طَبِيبًا لِأَنَّ الْمُعَلِّمَ قَالَ إِنَّ الطِّبَّ مُفِيدٌ - the predicate after 'to be' and the nouns after لِأَنَّ / إِنَّ take the accusative"
+          "heading": "Verbal sentence",
+          "table": {
+            "head": [
+              "Word",
+              "Role",
+              "Case"
+            ],
+            "rows": [
+              [
+                "كَتَبَ",
+                "فِعْلٌ مَاضٍ",
+                "مَبْنِيّ عَلَى الفَتْحِ"
+              ],
+              [
+                "الطَّالِبُ",
+                "فَاعِل",
+                "مَرْفُوع"
+              ],
+              [
+                "الدَّرْسَ",
+                "مَفْعُول بِهِ",
+                "مَنْصُوب"
+              ]
+            ]
           },
-          "note": "Collect five typical errors from the class's own work (anonymised). Put them on the board and ask pupils to correct them and give the rule. These errors are the quickest marks to gain. Ask pupils to keep a personal 'error log' and review it weekly. The rule in each case should be said in a short sentence."
+          "note": "كَتَبَ الطَّالِبُ الدَّرْسَ: the student wrote the lesson."
         },
         {
-          "heading": "Model: correcting a paragraph",
+          "heading": "كَانَ and إِنَّ",
+          "compare": {
+            "left": {
+              "title": "كَانَ and its sisters",
+              "points": [
+                "كَانَ الجَوُّ بَارِدًا",
+                "اسمها مرفوع، خبرها منصوب"
+              ]
+            },
+            "right": {
+              "title": "إِنَّ and its sisters",
+              "points": [
+                "إِنَّ الجَوَّ بَارِدٌ",
+                "اسمها منصوب، خبرها مرفوع"
+              ]
+            },
+            "label": "opposite"
+          },
+          "note": "Sisters of كَانَ: أَصْبَحَ، لَيْسَ، مَا زَالَ. Sisters of إِنَّ: أَنَّ، لٰكِنَّ، لَعَلَّ."
+        },
+        {
+          "heading": "Model: an i'rab line",
           "model": {
-            "problem": "Correct three errors: أُرِيدُ أَنْ أَدْرُسُ الطِّبَّ لِأَنَّ الْمُعَلِّمُ قَالَ إِنَّ الطِّبَّ مُفِيدَةٌ",
+            "problem": "Analyse بَارِدًا in كَانَ الجَوُّ بَارِدًا.",
             "steps": [
-              "Verb after أَنْ must be subjunctive: أَنْ أَدْرُسَ",
-              "After لِأَنَّ the noun is accusative: لِأَنَّ الْمُعَلِّمَ",
-              "The adjective must agree with الطِّبَّ (masculine): مُفِيدٌ"
+              "Role: خَبَرُ كَانَ",
+              "Case: مَنْصُوبٌ",
+              "Sign: وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ (here with tanwin)",
+              "Full line: خَبَرُ كَانَ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ"
             ],
-            "answer": "أُرِيدُ أَنْ أَدْرُسَ الطِّبَّ لِأَنَّ الْمُعَلِّمَ قَالَ إِنَّ الطِّبَّ مُفِيدٌ."
+            "answer": "خَبَرُ كَانَ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ"
           },
-          "note": "Do this as a think-aloud. Find the verb and the subject first, then the object, then the adjectives. The errors are chosen from common mistakes in written work. Pupils then correct a partner's paragraph."
+          "note": "Role, case, sign: the exam pattern."
         },
         {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "Which sentence has NO error?",
+            "q": "In لَيْسَ الطَّرِيقُ طَوِيلًا, طَوِيلًا is:",
             "options": [
-              "أَعْتَقِدُ أَنَّ الْجَوُّ حَارٌّ",
-              "أَنْوِي أَنْ أَدْرُسُ الطِّبَّ",
-              "كَانَ أَخِي طَبِيبًا",
-              "أُرِيدُ أَنْ أَكُونَ مُعَلِّمٌ"
+              "خَبَرُ لَيْسَ مَنْصُوبٌ",
+              "خَبَرٌ مَرْفُوعٌ",
+              "مَفْعُولٌ بِهِ"
             ],
-            "answer": 2,
-            "why": "C is correct: كَانَ takes an accusative predicate. A should be الْجَوَّ, B should be أَدْرُسَ and D should be مُعَلِّمًا."
-          },
-          "note": "Mini-whiteboards. A has the wrong case after أَنَّ; B the wrong mood after أَنْ; D the wrong predicate case. Ask pupils to explain each error in a sentence."
+            "answer": 0,
+            "why": "لَيْسَ is a sister of كَانَ: its predicate is accusative."
+          }
         }
       ],
       "practice": [
-        "Write one example of each structure in the bank on a theme of your choice.",
-        "Correct: أَعْتَقِدُ أَنَّ الْمَطَرُ شَدِيدٌ. / يَجِبُ عَلَيْنَا أَنْ نَسْتَخْدِمُ الْمَاءَ بِحِكْمَةٍ.",
-        "Rank your confidence in each structure: secure, nearly, not yet."
+        {
+          "q": "Analyse الكِتَابَ in قَرَأَ أَحْمَدُ الكِتَابَ.",
+          "a": "مَفْعُولٌ بِهِ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ",
+          "mins": 2,
+          "model": "Find the verb: قَرَأَ; the doer: أَحْمَدُ.\nThe thing read: الكِتَابَ = object.\nRole, case, sign."
+        },
+        {
+          "q": "Add إِنَّ and fix the endings: المُعَلِّمُ لَطِيفٌ.",
+          "a": "إِنَّ المُعَلِّمَ لَطِيفٌ.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Core: write a 90-word paragraph using five structures from the bank.",
-        "Extend: swap with a partner and mark each other's error types.",
-        "Stretch: write a 120-word answer to a task with every higher structure used correctly."
+        {
+          "q": "Core (portal quiz, 4AA1 style): give the i'rab of the underlined words in six sentences (worksheet), e.g. أَصْبَحَ الطَّقْسُ مُمْطِرًا; لَعَلَّ الاِمْتِحَانَ سَهْلٌ.",
+          "a": "مُمْطِرًا: خَبَرُ أَصْبَحَ مَنْصُوبٌ...؛ الاِمْتِحَانَ: اسْمُ لَعَلَّ مَنْصُوبٌ...؛ سَهْلٌ: خَبَرُ لَعَلَّ مَرْفُوعٌ... (full key on the worksheet)",
+          "mins": 14,
+          "model": "Teacher does the first sentence fully, saying role, case and sign."
+        },
+        {
+          "q": "Extend (Group B, 1AA0): correct the endings in five sentences from your own writing (spot the case after كَانَ, إِنَّ, prepositions).",
+          "a": "Corrected sentences with reasons",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: analyse a dual and a sound masculine plural: إِنَّ الطَّالِبَيْنِ مُجْتَهِدَانِ.",
+          "a": "الطَّالِبَيْنِ: اسْمُ إِنَّ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ اليَاءُ لِأَنَّهُ مُثَنًّى؛ مُجْتَهِدَانِ: خَبَرُ إِنَّ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الأَلِفُ لِأَنَّهُ مُثَنًّى",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Correct: لَمْ أَذْهَبُ إِلَى الْمَدْرَسَةِ.",
-        "Name your most common error and the rule."
+        {
+          "q": "After إِنَّ, its noun is: A) مَنْصُوب B) مَرْفُوع C) مَجْرُور",
+          "a": "A) مَنْصُوب",
+          "mins": 1,
+          "options": [
+            "مَنْصُوب",
+            "مَرْفُوع",
+            "مَجْرُور"
+          ]
+        },
+        {
+          "q": "Big question: what three things does an i'rab line give?",
+          "a": "The word's role, its case and the sign of the case.",
+          "mins": 1
+        }
       ],
-      "homework": "Make a one-page revision sheet: three structures with example sentences, your top three errors with corrections, and a plan for each paper.",
-      "send": "EAL/SEND: give a pre-filled structure bank and an error checklist. Stretch: write a mock paper task on Theme 5 and mark it with the checklist.",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "homework": "Group A: i'rab of ten words from a past paper grammar section. Group B: ten-sentence ending correction sheet.",
+      "send": "SEND: role-case-sign frame. EAL: term glossary with English. Stretch: the five nouns (أَبُوكَ، أَخَاكَ) and their signs.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), grammar with Arabic terms (25 Jan)",
+        "Portal arabic y11 lesson 21, upgraded",
+        "Pearson Edexcel 4AA1 sample assessment materials (Paper 1 grammar section)",
+        "I'rab worksheet (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Arabic grammar book",
+          "alt": "An Arabic grammar book",
+          "for": "keywords"
+        },
+        {
+          "find": "Quran calligraphy page",
+          "alt": "A page of Qur'an calligraphy",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 3.1: What school is like",
@@ -4247,6 +4491,1544 @@
       ],
       "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
       "boardShort": "Edexcel GCSE 1AA0"
+    },
+    {
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
+      "n": 26,
+      "title": "Revision Theme 1: identity and culture: key structures",
+      "bigQuestion": "Which structures turn a simple Theme 1 answer into a top-band one?",
+      "objectives": [
+        "To understand how to use high-value structures (كَانَ + present, three time frames, justified opinions) across Theme 1 topics"
+      ],
+      "successCriteria": [
+        "All: answer Theme 1 questions in full sentences with an opinion",
+        "Most: use كُنْتُ + present verb for past habits",
+        "Some: combine three time frames and a comparison in one answer"
+      ],
+      "crossCurricular": "English: varying sentence structure for effect",
+      "smsc": "Social: family, friendship and role models in a Muslim life",
+      "keywords": [
+        {
+          "term": "كُنْتُ أَلْعَبُ (kuntu al'abu)",
+          "def": "I used to play"
+        },
+        {
+          "term": "عِنْدَمَا كُنْتُ صَغِيرًا ('indama kuntu saghiran)",
+          "def": "when I was young"
+        },
+        {
+          "term": "قُدْوَة (qudwah)",
+          "def": "role model"
+        },
+        {
+          "term": "عَلَاقَة ('alaqah)",
+          "def": "relationship"
+        },
+        {
+          "term": "أُعْجَبُ بِـ (u'jabu bi-)",
+          "def": "I admire"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Who is your role model, and what one quality of theirs would you most like to have?",
+        "a": "Any answer with a reason; the Qur'an calls the Prophet ﷺ the best example (al-Ahzab 33:21)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'There has certainly been for you in the Messenger of Allah an excellent example' (al-Ahzab 33:21). Theme 1 asks about role models; ours begins with him ﷺ.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'I used to play': A) كُنْتُ أَلْعَبُ B) سَأَلْعَبُ",
+          "a": "A) كُنْتُ أَلْعَبُ",
+          "mins": 1,
+          "options": [
+            "كُنْتُ أَلْعَبُ",
+            "سَأَلْعَبُ"
+          ]
+        },
+        {
+          "q": "'I have two sisters' (formal)?",
+          "a": "لَدَيَّ أُخْتَانِ",
+          "mins": 1
+        },
+        {
+          "q": "Name three Theme 1 topics.",
+          "a": "Who am I (family, friends, role models); daily life; cultural life (festivals, reading, sport)",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Theme 1 at a glance",
+          "diagram": {
+            "centre": "Theme 1",
+            "items": [
+              "1.1 family, friends, role models",
+              "1.1 when I was younger",
+              "1.2 routine, food, shopping",
+              "1.2 technology: pros and cons",
+              "1.3 Ramadan and the Eids",
+              "1.3 reading and sport"
+            ]
+          },
+          "note": "Begin with bismillah. About 90% of teaching in Arabic in Year 11."
+        },
+        {
+          "heading": "Past habits with كَانَ",
+          "bullets": [
+            "عِنْدَمَا كُنْتُ صَغِيرًا كُنْتُ أَلْعَبُ فِي الحَدِيقَةِ",
+            "كُنَّا نَزُورُ جَدَّتِي كُلَّ أُسْبُوعٍ",
+            "كَانَ أَبِي يَقْرَأُ لَنَا قَبْلَ النَّوْمِ"
+          ],
+          "note": "كَانَ (past) + present verb = used to. Agreement: كُنْتُ، كُنَّا، كَانَ، كَانَتْ."
+        },
+        {
+          "heading": "Model: a top-band answer",
+          "model": {
+            "problem": "مَنْ قُدْوَتُكَ؟ وَلِمَاذَا؟",
+            "steps": [
+              "قُدْوَتِي جَدِّي لِأَنَّهُ صَبُورٌ وَكَرِيمٌ جِدًّا.",
+              "عِنْدَمَا كُنْتُ صَغِيرًا، كَانَ يَأْخُذُنِي إِلَى المَسْجِدِ كُلَّ جُمُعَةٍ.",
+              "هُوَ أَكْثَرُ صَبْرًا مِنْ أَيِّ شَخْصٍ أَعْرِفُهُ.",
+              "فِي المُسْتَقْبَلِ سَأُحَاوِلُ أَنْ أَكُونَ مِثْلَهُ."
+            ],
+            "answer": "Opinion + reason, past habit, comparison, future"
+          },
+          "note": "Label the four moves; this works for 1AA0 Papers 2 and 4 and 4AA1 Paper 2."
+        },
+        {
+          "heading": "Technology: for and against",
+          "compare": {
+            "left": {
+              "title": "إِيجَابِيَّات",
+              "points": [
+                "يُسَاعِدُنَا الإِنْتَرْنِتُ فِي الدِّرَاسَةِ",
+                "نَتَوَاصَلُ مَعَ الأَقَارِبِ"
+              ]
+            },
+            "right": {
+              "title": "سَلْبِيَّات",
+              "points": [
+                "نُضَيِّعُ الوَقْتَ",
+                "قَدْ يَكُونُ خَطِيرًا"
+              ]
+            },
+            "label": "but"
+          },
+          "note": "A common Paper 4 and Paper 1 reading topic."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'We used to visit my grandmother':",
+            "options": [
+              "زُرْنَا جَدَّتِي",
+              "كُنَّا نَزُورُ جَدَّتِي",
+              "سَنَزُورُ جَدَّتِي"
+            ],
+            "answer": 1,
+            "why": "كُنَّا + present = past habit."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer with a past habit: مَاذَا كُنْتَ تَفْعَلُ فِي رَمَضَانَ عِنْدَمَا كُنْتَ صَغِيرًا؟",
+          "a": "For example: كُنْتُ أَصُومُ نِصْفَ يَوْمٍ وَكُنْتُ أُسَاعِدُ أُمِّي فِي الإِفْطَارِ.",
+          "mins": 3,
+          "model": "Start: عِنْدَمَا كُنْتُ صَغِيرًا.\nPast habit: كُنْتُ + أَصُومُ.\nAdd a second habit with وَكُنْتُ."
+        },
+        {
+          "q": "Translate: My friend is more patient than me.",
+          "a": "صَدِيقِي أَكْثَرُ صَبْرًا مِنِّي.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read the short text (worksheet) about a pupil's family and technology and answer six questions in Arabic (Group A) or English (Group B).",
+          "a": "Answers on the worksheet key; marked one mark per correct detail.",
+          "mins": 11,
+          "model": "Teacher answers question 1, underlining the key words in the text and the question."
+        },
+        {
+          "q": "Extend: Write 90 words: مَنْ قُدْوَتُكَ؟ with the four moves from the model.",
+          "a": "Marked for range (past habit, comparison, future) and accuracy.",
+          "mins": 7
+        },
+        {
+          "q": "Stretch (Group A): give the i'rab of صَغِيرًا in عِنْدَمَا كُنْتُ صَغِيرًا.",
+          "a": "خَبَرُ كَانَ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is قُدْوَة? A) role model B) relationship C) friend",
+          "a": "A) role model",
+          "mins": 1,
+          "options": [
+            "role model",
+            "relationship",
+            "friend"
+          ]
+        },
+        {
+          "q": "Big question: name two structures that lift a Theme 1 answer.",
+          "a": "كَانَ + present for past habits; a comparison; three time frames; justified opinions.",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a Theme 1 structure sheet: ten sentences you can adapt to any Theme 1 question.",
+      "send": "SEND: answer frame with the four moves. EAL: Theme 1 vocabulary list. Stretch: add a conditional with لَوْ.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), Theme 1 revision (11 Jan)",
+        "Portal arabic y10 lessons 1 to 17 and 27 to 31 for revision",
+        "Theme 1 reading text and questions (portal worksheet, our own text)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Masjid an-Nabawi exterior",
+          "alt": "Masjid an-Nabawi in Madinah",
+          "for": "hook"
+        },
+        {
+          "find": "smartphone on table",
+          "alt": "A smartphone (technology)",
+          "for": "teach:4"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
+      "n": 27,
+      "title": "Revision Theme 2: local area, holiday and travel: reading skills",
+      "bigQuestion": "How do I find answers in an Arabic text without understanding every word?",
+      "objectives": [
+        "To understand how to use roots, context and question words to answer reading questions on Theme 2"
+      ],
+      "successCriteria": [
+        "All: find specific details (who, where, when) in a Theme 2 text",
+        "Most: work out unknown words from their root and context",
+        "Some: answer inference questions with evidence from the text"
+      ],
+      "crossCurricular": "English: reading strategies: skimming, scanning, inference",
+      "smsc": "Cultural: travel, Umrah and visiting family abroad",
+      "keywords": [
+        {
+          "term": "نَصّ (nass)",
+          "def": "text"
+        },
+        {
+          "term": "عُطْلَة ('utlah)",
+          "def": "holiday"
+        },
+        {
+          "term": "سَافَرْتُ (safartu)",
+          "def": "I travelled"
+        },
+        {
+          "term": "فُنْدُق (funduq)",
+          "def": "hotel"
+        },
+        {
+          "term": "جَذْر (jadhr)",
+          "def": "root"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You meet the word مُسَافِرُونَ and do not know it. What clues inside the word could help you?",
+        "a": "Root س ف ر (travel), مُـ pattern for a person, ـُونَ plural: travellers."
+      },
+      "islamicLink": {
+        "text": "Allah describes the Hajj journey: people come on foot and on every lean camel from every distant pass (al-Hajj 22:27). Travel has always been part of Muslim life.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Hotel': A) فُنْدُق B) مَطْعَم",
+          "a": "A) فُنْدُق",
+          "mins": 1,
+          "options": [
+            "فُنْدُق",
+            "مَطْعَم"
+          ]
+        },
+        {
+          "q": "Imperative 'go' to a group?",
+          "a": "اِذْهَبُوا",
+          "mins": 1
+        },
+        {
+          "q": "'There is no airport in my town'?",
+          "a": "لَا يُوجَدُ مَطَارٌ فِي مَدِينَتِي",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Theme 2 at a glance",
+          "diagram": {
+            "centre": "Theme 2",
+            "items": [
+              "2.1 holiday preferences",
+              "2.1 experiences and destinations",
+              "2.2 travel and accommodation",
+              "2.2 directions, problems",
+              "2.2 eating out, shopping",
+              "2.3 town, region, weather"
+            ]
+          },
+          "note": "Begin with bismillah."
+        },
+        {
+          "heading": "The text",
+          "quote": {
+            "text": "سَافَرْتُ مَعَ أُسْرَتِي إِلَى الأُرْدُنِّ فِي الصَّيْفِ المَاضِي. نَزَلْنَا فِي فُنْدُقٍ صَغِيرٍ قَرِيبٍ مِنْ وَسَطِ عَمَّانَ. فِي اليَوْمِ الثَّانِي زُرْنَا البَتْرَاءَ، وَكَانَ الجَوُّ حَارًّا جِدًّا، لِذٰلِكَ اشْتَرَيْنَا مَاءً كَثِيرًا. أَعْجَبَنِي الطَّعَامُ، لٰكِنَّ المُشْكِلَةَ كَانَتِ الاِزْدِحَامَ فِي الشَّوَارِعِ. فِي السَّنَةِ القَادِمَةِ سَنَذْهَبُ إِلَى العُمْرَةِ إِنْ شَاءَ اللّٰهُ.",
+            "source": "Our own exam-style text for this lesson"
+          },
+          "note": "Read once for gist, once for detail. Meaning: I travelled with my family to Jordan last summer. We stayed in a small hotel near the centre of Amman. On the second day we visited Petra; it was very hot, so we bought lots of water. I liked the food, but the problem was the crowded streets. Next year we will go for Umrah, in sha' Allah."
+        },
+        {
+          "heading": "Strategies",
+          "bullets": [
+            "Underline the question word, then scan for it",
+            "Watch the tense: past, present or future?",
+            "Unknown word? Find the root and the pattern"
+          ],
+          "note": "Example: اشْتَرَيْنَا: root ش ر ي (buy), ـنَا = we: we bought."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Why did they buy lots of water?",
+            "options": [
+              "The food was salty",
+              "It was very hot",
+              "The hotel had none"
+            ],
+            "answer": 1,
+            "why": "كَانَ الجَوُّ حَارًّا جِدًّا، لِذٰلِكَ اشْتَرَيْنَا مَاءً كَثِيرًا."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "أَيْنَ نَزَلَتِ الأُسْرَةُ؟",
+          "a": "فِي فُنْدُقٍ صَغِيرٍ قَرِيبٍ مِنْ وَسَطِ عَمَّانَ (in a small hotel near central Amman)",
+          "mins": 2,
+          "model": "أَيْنَ asks where.\nFind نَزَلْنَا (we stayed).\nThe answer follows: فِي فُنْدُقٍ صَغِيرٍ ..."
+        },
+        {
+          "q": "What was the problem?",
+          "a": "Crowded streets (الاِزْدِحَامُ فِي الشَّوَارِعِ)",
+          "mins": 1
+        },
+        {
+          "q": "What are their plans for next year?",
+          "a": "To go for Umrah (سَنَذْهَبُ إِلَى العُمْرَةِ)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (worksheet): a second Theme 2 text (a hotel complaint) with eight questions: Group A in Arabic, Group B in English.",
+          "a": "Answers on the worksheet key.",
+          "mins": 14,
+          "model": "Teacher does question 1 aloud: underline the question word, scan, quote the short answer."
+        },
+        {
+          "q": "Extend: Find four words in today's text and give their roots and meanings.",
+          "a": "سَافَرْتُ (س ف ر travel); نَزَلْنَا (ن ز ل stay); اشْتَرَيْنَا (ش ر ي buy); القَادِمَة (ق د م coming)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Translate the last two sentences of the text into English.",
+          "a": "I liked the food, but the problem was the crowded streets. Next year we will go for Umrah, in sha' Allah.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "First step when an Arabic word is unknown: A) find the root B) skip the question",
+          "a": "A) find the root",
+          "mins": 1,
+          "options": [
+            "find the root",
+            "skip the question"
+          ]
+        },
+        {
+          "q": "Big question: how do you answer without understanding every word?",
+          "a": "Scan for the question's key words, check the tense, use roots and context.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write a 90-word holiday account (past, present opinion, future plan) for Paper 4 / Paper 2 practice.",
+      "send": "SEND: text with a glossary of six words. EAL: English questions. Stretch: write two inference questions on the text for a partner.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), Theme 2 revision (18 Jan)",
+        "Portal arabic y10 lessons 18 to 26 and 32 to 38 for revision",
+        "Theme 2 reading texts and questions (portal worksheet, our own texts)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Petra Treasury Jordan",
+          "alt": "Petra in Jordan",
+          "for": "teach:2"
+        },
+        {
+          "find": "suitcase luggage",
+          "alt": "A suitcase",
+          "for": "keywords"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
+      "n": 28,
+      "title": "4AA1 summary writing: the main ideas in my own words",
+      "bigQuestion": "How do I summarise an Arabic text accurately and in my own words?",
+      "objectives": [
+        "To understand how to select the main ideas of a text and write them as a concise summary in my own words"
+      ],
+      "successCriteria": [
+        "All: identify the main idea of each paragraph",
+        "Most: rephrase ideas in my own words without copying",
+        "Some: write a summary within the word limit, linked and accurate"
+      ],
+      "crossCurricular": "English: summarising non-fiction (4EB1 skills)",
+      "smsc": "Moral: representing other people's words fairly and accurately",
+      "keywords": [
+        {
+          "term": "تَلْخِيص (talkhis)",
+          "def": "summary"
+        },
+        {
+          "term": "فِكْرَة رَئِيسِيَّة (fikrah ra'isiyyah)",
+          "def": "main idea"
+        },
+        {
+          "term": "بِأُسْلُوبِكَ الخَاصِّ",
+          "def": "in your own words"
+        },
+        {
+          "term": "تَفَاصِيل (tafasil)",
+          "def": "details"
+        },
+        {
+          "term": "عَدَدُ الكَلِمَاتِ",
+          "def": "the number of words"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Someone asks what a long lecture was about, and you have one minute. What do you keep, and what do you leave out?",
+        "a": "Keep the main points; drop examples, repetition and minor details."
+      },
+      "islamicLink": {
+        "text": "Allah describes the Qur'an as a Book whose verses are perfected and then explained in detail (Hud 11:1). Summarising faithfully means keeping the meaning exactly.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Main idea': A) فِكْرَة رَئِيسِيَّة B) تَفَاصِيل",
+          "a": "A) فِكْرَة رَئِيسِيَّة",
+          "mins": 1,
+          "options": [
+            "فِكْرَة رَئِيسِيَّة",
+            "تَفَاصِيل"
+          ]
+        },
+        {
+          "q": "Root of سَافَرْتُ?",
+          "a": "س ف ر",
+          "mins": 1
+        },
+        {
+          "q": "Synonym for كَبِير?",
+          "a": "For example: ضَخْم، عَظِيم",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The task",
+          "bullets": [
+            "4AA1 Paper 1 has a summary of a third text",
+            "Read the instruction: what to summarise and the word limit",
+            "Marks for content (main points) and for your own words and accuracy"
+          ],
+          "note": "Begin with bismillah. Check the current 4AA1 specification and sample assessment materials for the exact word limit and marks."
+        },
+        {
+          "heading": "The text",
+          "quote": {
+            "text": "تُعَدُّ القِرَاءَةُ مِنْ أَهَمِّ عَادَاتِ الإِنْسَانِ، فَهِيَ تُوَسِّعُ مَعْرِفَتَهُ وَتُنَمِّي لُغَتَهُ. وَقَدْ أَصْبَحَ كَثِيرٌ مِنَ الشَّبَابِ يَقْضُونَ سَاعَاتٍ أَمَامَ الشَّاشَاتِ بَدَلًا مِنَ الكُتُبِ. وَلِذٰلِكَ يَنْصَحُ المُعَلِّمُونَ بِتَخْصِيصِ وَقْتٍ يَوْمِيٍّ لِلْقِرَاءَةِ، وَبِأَنْ يَقْرَأَ الآبَاءُ مَعَ أَبْنَائِهِمْ.",
+            "source": "Our own exam-style text for this lesson"
+          },
+          "note": "Meaning: Reading is one of the most important human habits; it widens knowledge and develops language. Many young people now spend hours in front of screens instead of books. So teachers advise setting a daily time for reading, and that parents read with their children."
+        },
+        {
+          "heading": "Model: from text to summary",
+          "model": {
+            "problem": "Summarise the text in about 25 words.",
+            "steps": [
+              "Idea 1: reading widens knowledge and language",
+              "Idea 2: young people prefer screens",
+              "Idea 3: advice: daily reading; parents read with children",
+              "Own words: لِلْقِرَاءَةِ فَوَائِدُ كَثِيرَةٌ لِلْعَقْلِ وَاللُّغَةِ، لٰكِنَّ الشَّبَابَ يُفَضِّلُونَ الشَّاشَاتِ، فَيَقْتَرِحُ المُعَلِّمُونَ قِرَاءَةً يَوْمِيَّةً بِمُشَارَكَةِ الأُسْرَةِ."
+            ],
+            "answer": "Three ideas, linked, rephrased"
+          },
+          "note": "Compare word by word: nothing copied in long chunks."
+        },
+        {
+          "heading": "Rephrasing tools",
+          "table": {
+            "head": [
+              "Text",
+              "My words"
+            ],
+            "rows": [
+              [
+                "تُوَسِّعُ مَعْرِفَتَهُ",
+                "تَزِيدُ عِلْمَهُ"
+              ],
+              [
+                "بَدَلًا مِنَ الكُتُبِ",
+                "وَيَتْرُكُونَ الكُتُبَ"
+              ],
+              [
+                "يَنْصَحُ المُعَلِّمُونَ",
+                "يَقْتَرِحُ المُعَلِّمُونَ"
+              ]
+            ]
+          },
+          "note": "Synonyms, a different structure, or a noun instead of a verb."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which belongs in a summary?",
+            "options": [
+              "A long quotation from the text",
+              "The main ideas in your own words",
+              "Your opinion of the writer"
+            ],
+            "answer": 1,
+            "why": "A summary gives the main ideas in your own words, without opinion or long quotation."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rephrase: يَقْضُونَ سَاعَاتٍ أَمَامَ الشَّاشَاتِ.",
+          "a": "For example: يَسْتَخْدِمُونَ الأَجْهِزَةَ وَقْتًا طَوِيلًا.",
+          "mins": 2,
+          "model": "Find the idea: a lot of time on screens.\nChange the verb: يَسْتَخْدِمُونَ.\nChange the noun: الأَجْهِزَةَ وَقْتًا طَوِيلًا."
+        },
+        {
+          "q": "What is the main idea of the second sentence?",
+          "a": "Young people spend more time on screens than on books.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (Group A, portal response box): summarise a new 150-word text on volunteering (worksheet) in about 50 words in your own words. Group B: answer the same text's questions in English (1AA0 Paper 3 style).",
+          "a": "Group A marked for main points (volunteering helps others and the volunteer; young people lack time; schools can organise it) and own words. Group B answers on the key.",
+          "mins": 16,
+          "model": "Teacher underlines the main idea of paragraph 1 and rephrases it aloud."
+        },
+        {
+          "q": "Extend: Swap summaries in a breakout pair and mark copying in a different colour.",
+          "a": "Peer feedback: copied phrases highlighted, one EBI",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Cut your summary to 40 words without losing a main idea.",
+          "a": "A 40-word version with all main points",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is تَلْخِيص? A) summary B) translation C) essay",
+          "a": "A) summary",
+          "mins": 1,
+          "options": [
+            "summary",
+            "translation",
+            "essay"
+          ]
+        },
+        {
+          "q": "Big question: what makes a good summary?",
+          "a": "Only the main ideas, in your own words, linked, within the word limit.",
+          "mins": 1
+        }
+      ],
+      "homework": "Summarise an Arabic news paragraph or a text from the revision pack in 40 words; underline your rephrasings.",
+      "send": "SEND: highlighted main ideas given; pupil rephrases two. EAL: synonym bank. Stretch: summarise a 250-word text in 60 words.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), Theme 2 and 4AA1 summary writing (18 Jan)",
+        "Pearson Edexcel 4AA1 specification and sample assessment materials (Paper 1 summary task)",
+        "Summary texts and frame (portal worksheet, our own texts)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stack of books library",
+          "alt": "Books in a library",
+          "for": "keywords"
+        },
+        {
+          "find": "highlighter pen on paper",
+          "alt": "A highlighter on a page",
+          "for": "teach:3"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
+      "n": 29,
+      "title": "Revision Theme 3: school: rules, pressures and success",
+      "bigQuestion": "How do I discuss school life with opinions, rules and pressures in Arabic?",
+      "objectives": [
+        "To understand how to discuss school life using rules (يَجِبُ، مَمْنُوعٌ), opinions and the passive"
+      ],
+      "successCriteria": [
+        "All: describe my school and subjects with opinions",
+        "Most: discuss rules with يَجِبُ أَنْ and مِنَ المَمْنُوعِ أَنْ",
+        "Some: discuss pressures and success with a balanced conclusion"
+      ],
+      "crossCurricular": "PSHE: exam stress and wellbeing",
+      "smsc": "Spiritual: tawakkul and effort before exams",
+      "keywords": [
+        {
+          "term": "قَوَانِين (qawanin)",
+          "def": "rules"
+        },
+        {
+          "term": "مِنَ المَمْنُوعِ أَنْ (mina l-mamnu'i an)",
+          "def": "it is forbidden to"
+        },
+        {
+          "term": "ضَغْط (daght)",
+          "def": "pressure"
+        },
+        {
+          "term": "نَجَاح (najah)",
+          "def": "success"
+        },
+        {
+          "term": "زِيّ مَدْرَسِيّ (ziyy madrasiyy)",
+          "def": "school uniform"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which school rule do you think is most important, and which would you change?",
+        "a": "Any answer with reasons; today we say it in Arabic."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And whoever relies upon Allah, then He is sufficient for him' (at-Talaq 65:3). Muslims work hard and then trust Allah with the results.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Summary': A) تَلْخِيص B) تَرْجَمَة",
+          "a": "A) تَلْخِيص",
+          "mins": 1,
+          "options": [
+            "تَلْخِيص",
+            "تَرْجَمَة"
+          ]
+        },
+        {
+          "q": "'In my opinion' in Arabic?",
+          "a": "فِي رَأْيِي",
+          "mins": 1
+        },
+        {
+          "q": "Name four subjects in Arabic.",
+          "a": "For example: الرِّيَاضِيَّات، العُلُوم، التَّارِيخ، الجُغْرَافِيَا",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Rules",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "يَجِبُ أَنْ نَلْبَسَ الزِّيَّ المَدْرَسِيَّ",
+                "we must wear uniform"
+              ],
+              [
+                "مِنَ المَمْنُوعِ أَنْ نَسْتَخْدِمَ الهَاتِفَ",
+                "it is forbidden to use phones"
+              ],
+              [
+                "يَجِبُ أَلَّا نَتَأَخَّرَ",
+                "we must not be late"
+              ],
+              [
+                "يُسْمَحُ لَنَا بِـ ...",
+                "we are allowed to ..."
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. أَلَّا = أَنْ + لَا."
+        },
+        {
+          "heading": "Pressures and success",
+          "bullets": [
+            "أَشْعُرُ بِالضَّغْطِ قَبْلَ الاِمْتِحَانَاتِ",
+            "يُكَافَأُ الطُّلَّابُ المُجْتَهِدُونَ (the passive: are rewarded)",
+            "نَحْتَفِلُ بِالنَّجَاحِ فِي نِهَايَةِ السَّنَةِ"
+          ],
+          "note": "Passive present: يُكَافَأُ (is rewarded), past: كُوفِئَ. Spec 3.1 'celebrating success'."
+        },
+        {
+          "heading": "Model: a balanced answer",
+          "model": {
+            "problem": "مَا رَأْيُكَ فِي قَوَانِينِ مَدْرَسَتِكَ؟",
+            "steps": [
+              "أَعْتَقِدُ أَنَّ مُعْظَمَ القَوَانِينِ عَادِلَةٌ،",
+              "فَمَثَلًا مِنَ المَمْنُوعِ أَنْ نَسْتَخْدِمَ الهَاتِفَ فِي الدَّرْسِ، وَهٰذَا يُسَاعِدُنَا عَلَى التَّرْكِيزِ.",
+              "لٰكِنْ فِي رَأْيِي يَجِبُ أَنْ تَكُونَ الاِسْتِرَاحَةُ أَطْوَلَ.",
+              "فِي العَامِ القَادِمِ سَأَدْرُسُ فِي كُلِّيَّةٍ، وَسَتَكُونُ القَوَانِينُ مُخْتَلِفَةً."
+            ],
+            "answer": "Opinion, example, contrast with suggestion, future"
+          },
+          "note": "Note أَطْوَلَ: predicate of تَكُونَ, accusative (diptote, fathah)."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'It is forbidden to eat in class':",
+            "options": [
+              "مِنَ المَمْنُوعِ أَنْ نَأْكُلَ فِي الصَّفِّ",
+              "يَجِبُ أَنْ نَأْكُلَ فِي الصَّفِّ",
+              "مَمْنُوعٌ نَأْكُلُ فِي الصَّفِّ"
+            ],
+            "answer": 0,
+            "why": "مِنَ المَمْنُوعِ أَنْ + subjunctive verb."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say a rule you agree with and why.",
+          "a": "For example: يَجِبُ أَنْ نَحْتَرِمَ المُعَلِّمِينَ لِأَنَّ ذٰلِكَ مِنْ أَخْلَاقِ المُسْلِمِ.",
+          "mins": 2,
+          "model": "Rule: يَجِبُ أَنْ + subjunctive: نَحْتَرِمَ.\nObject: المُعَلِّمِينَ.\nReason: لِأَنَّ ..."
+        },
+        {
+          "q": "Translate: I feel pressure before exams.",
+          "a": "أَشْعُرُ بِالضَّغْطِ قَبْلَ الاِمْتِحَانَاتِ.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write 100 to 120 words (portal response box): المَدْرَسَةُ: القَوَانِينُ وَالضُّغُوطُ. Include two rules, a pressure and how you deal with it, and a future plan.",
+          "a": "Marked as Paper 4 / Paper 2 style: content, range (subjunctive, passive or كَانَ), accuracy.",
+          "mins": 15,
+          "model": "Teacher writes the opening two sentences, then a rule with a reason."
+        },
+        {
+          "q": "Extend (Group B): answer three Theme 3 conversation questions aloud with ABCD.",
+          "a": "Developed answers with opinion, reason, contrast and another time frame",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Use the passive once: يُكَافَأُ / كُوفِئَ.",
+          "a": "For example: كُوفِئْتُ عَلَى نَتَائِجِي فِي الاِمْتِحَانِ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is ضَغْط? A) pressure B) success C) rule",
+          "a": "A) pressure",
+          "mins": 1,
+          "options": [
+            "pressure",
+            "success",
+            "rule"
+          ]
+        },
+        {
+          "q": "Big question: write one rule and one opinion about it.",
+          "a": "For example: مِنَ المَمْنُوعِ أَنْ نَسْتَخْدِمَ الهَاتِفَ، وَأَعْتَقِدُ أَنَّ هٰذَا عَادِلٌ.",
+          "mins": 1
+        }
+      ],
+      "homework": "Draft 1 of a Theme 3 piece (booklet task for Group B; Paper 2 style for Group A) for teacher marking.",
+      "send": "SEND: rules frame and word bank. EAL: English prompts. Stretch: add a conditional: لَوْ كُنْتُ مُدِيرَ المَدْرَسَةِ لَـ ...",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), Theme 3 revision (25 Jan)",
+        "Portal arabic y11 lessons 1 to 6 and 22 for revision",
+        "School's 1AA0 Speaking and Writing revision booklet (Draft 1, teacher marking, Draft 2) (Group B): Theme 3 tasks"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "school corridor lockers",
+          "alt": "A school corridor",
+          "for": "keywords"
+        },
+        {
+          "find": "graduation cap",
+          "alt": "A graduation cap (success)",
+          "for": "teach:2"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
+      "n": 30,
+      "title": "1AA0 role play and picture-based task",
+      "bigQuestion": "How do I complete the role play and picture task confidently and fully?",
+      "objectives": [
+        "To understand how to cover every prompt in the 1AA0 role play and describe and discuss a picture in the picture-based task"
+      ],
+      "successCriteria": [
+        "All: complete a role play covering every prompt, including asking a question",
+        "Most: describe a picture with يُوجَدُ، أَرَى and present continuous verbs",
+        "Some: give developed opinions to the follow-up questions"
+      ],
+      "crossCurricular": "English: speaking for a purpose; describing images",
+      "smsc": "Social: polite transactional language",
+      "keywords": [
+        {
+          "term": "لَعِبُ الأَدْوَارِ (la'ib al-adwar)",
+          "def": "role play"
+        },
+        {
+          "term": "صُورَة (surah)",
+          "def": "picture, photo"
+        },
+        {
+          "term": "فِي الصُّورَةِ أَرَى ...",
+          "def": "in the picture I see ..."
+        },
+        {
+          "term": "عَلَى اليَمِينِ / عَلَى اليَسَارِ",
+          "def": "on the right / on the left"
+        },
+        {
+          "term": "مِنْ فَضْلِكَ (min fadlika)",
+          "def": "please"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a role play you must ask a question (?) and answer one you have not seen (!). Which do you find harder, and why?",
+        "a": "Usually the unseen one; prepare likely questions for each theme."
+      },
+      "islamicLink": {
+        "text": "Allah tells us to speak to people with good words (al-Baqarah 2:83). Politeness phrases such as مِنْ فَضْلِكَ and شُكْرًا earn marks and reflect good adab.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Please' (to a man): A) مِنْ فَضْلِكَ B) عَفْوًا",
+          "a": "A) مِنْ فَضْلِكَ",
+          "mins": 1,
+          "options": [
+            "مِنْ فَضْلِكَ",
+            "عَفْوًا"
+          ]
+        },
+        {
+          "q": "Ask 'how much is this?'",
+          "a": "بِكَمْ هٰذَا؟",
+          "mins": 1
+        },
+        {
+          "q": "'There is' in Arabic?",
+          "a": "يُوجَدُ / هُنَاكَ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Role play: the rules",
+          "bullets": [
+            "Cover every bullet; keep answers short and clear",
+            "? = you ask a question",
+            "! = respond to something unexpected"
+          ],
+          "note": "Begin with bismillah. Check the current 1AA0 specification for preparation time and timings."
+        },
+        {
+          "heading": "Model role play: at a restaurant",
+          "table": {
+            "head": [
+              "Prompt",
+              "Pupil says"
+            ],
+            "rows": [
+              [
+                "Table for how many",
+                "طَاوِلَةٌ لِأَرْبَعَةِ أَشْخَاصٍ مِنْ فَضْلِكَ"
+              ],
+              [
+                "What you want to eat",
+                "أُرِيدُ دَجَاجًا مَعَ الأَرُزِّ"
+              ],
+              [
+                "! (What do you want to drink?)",
+                "عَصِيرَ بُرْتُقَالٍ، مِنْ فَضْلِكَ"
+              ],
+              [
+                "? Ask about the bill",
+                "كَمِ الحِسَابُ؟"
+              ]
+            ]
+          },
+          "note": "Spec 2.2 eating out. Teacher plays the waiter and asks the unexpected question."
+        },
+        {
+          "heading": "Picture task: describing",
+          "bullets": [
+            "فِي الصُّورَةِ أَرَى ... / هُنَاكَ ...",
+            "عَلَى اليَمِينِ ... وَعَلَى اليَسَارِ ...",
+            "يَبْدُو أَنَّ ... (it seems that ...)"
+          ],
+          "note": "Use present verbs: يَمْشُونَ، يَجْلِسُونَ. Our pictures show places and objects (a market, a park) rather than people; describe what is happening there."
+        },
+        {
+          "heading": "Model: picture of a market",
+          "model": {
+            "problem": "صِفِ الصُّورَةَ (a busy fruit market).",
+            "steps": [
+              "فِي الصُّورَةِ أَرَى سُوقًا مُزْدَحِمَةً فِي مَدِينَةٍ عَرَبِيَّةٍ.",
+              "عَلَى اليَمِينِ هُنَاكَ فَوَاكِهُ كَثِيرَةٌ، وَعَلَى اليَسَارِ مَحَلٌّ صَغِيرٌ.",
+              "يَبْدُو أَنَّ الجَوَّ حَارٌّ لِأَنَّ السَّمَاءَ صَافِيَةٌ.",
+              "أُحِبُّ الأَسْوَاقَ لِأَنَّ الأَسْعَارَ أَرْخَصُ."
+            ],
+            "answer": "What, where, inference, opinion"
+          },
+          "note": "سُوق can be masculine or feminine in Arabic."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "A '?' prompt means you must:",
+            "options": [
+              "answer an unexpected question",
+              "ask a question",
+              "describe a picture"
+            ],
+            "answer": 1,
+            "why": "? = ask a question; ! = respond to the unexpected."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Role play line: ask the receptionist if there is Wi-Fi in the room.",
+          "a": "هَلْ يُوجَدُ إِنْتَرْنِت فِي الغُرْفَةِ مِنْ فَضْلِكَ؟",
+          "mins": 2,
+          "model": "Question word: هَلْ.\nيُوجَدُ + thing: إِنْتَرْنِت.\nWhere: فِي الغُرْفَةِ + مِنْ فَضْلِكَ."
+        },
+        {
+          "q": "Begin a picture description of a park.",
+          "a": "فِي الصُّورَةِ أَرَى حَدِيقَةً كَبِيرَةً فِيهَا أَشْجَارٌ كَثِيرَةٌ.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (Group B, breakout pairs): two role plays from the booklet (hotel; shop) and one picture task with three follow-up questions; partner uses the checklist. Group A: write the picture description and answers in 120 words.",
+          "a": "Checklist: every prompt covered; question asked; unexpected answered; picture: what, where, inference, opinion.",
+          "mins": 16,
+          "model": "Teacher models the hotel role play with a pupil."
+        },
+        {
+          "q": "Extend: Prepare two likely unexpected questions for each Theme 2 role play and answer them.",
+          "a": "For example: كَمْ لَيْلَةً سَتَبْقَى؟ سَأَبْقَى ثَلَاثَ لَيَالٍ.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Add a past-tense comment to your picture task: last time I went to a market ...",
+          "a": "For example: فِي العُطْلَةِ المَاضِيَةِ زُرْتُ سُوقًا مِثْلَ هٰذِهِ وَاشْتَرَيْتُ تَمْرًا.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'In the picture I see': A) فِي الصُّورَةِ أَرَى B) يَبْدُو أَنَّ",
+          "a": "A) فِي الصُّورَةِ أَرَى",
+          "mins": 1,
+          "options": [
+            "فِي الصُّورَةِ أَرَى",
+            "يَبْدُو أَنَّ"
+          ]
+        },
+        {
+          "q": "Big question: what are the four moves of a picture description?",
+          "a": "What I see, where things are, an inference (يَبْدُو أَنَّ), an opinion.",
+          "mins": 1
+        }
+      ],
+      "homework": "Group B: Draft 1 of two booklet role plays and one picture task, recorded (audio only). Group A: a 150-word description of a place photo.",
+      "send": "SEND: prompt cards with sentence starters. EAL: picture task frame. Stretch: answer follow-ups with three time frames.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), 1AA0 role play and picture task (1 Feb)",
+        "School's 1AA0 Speaking and Writing revision booklet (Draft 1, teacher marking, Draft 2) (Group B): role plays and picture tasks",
+        "Picture task photos of places (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "fruit market stalls",
+          "alt": "A fruit market",
+          "for": "teach:4"
+        },
+        {
+          "find": "hotel reception desk",
+          "alt": "A hotel reception desk",
+          "for": "keywords"
+        },
+        {
+          "find": "restaurant table set",
+          "alt": "A restaurant table",
+          "for": "teach:2"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
+      "n": 31,
+      "title": "Mock week: exam technique and timing",
+      "bigQuestion": "How do I use the time in each paper to show everything I know?",
+      "objectives": [
+        "To understand how to plan timing and approach each section of the mock papers"
+      ],
+      "successCriteria": [
+        "All: know the papers, timings and marks for my group",
+        "Most: plan minutes per section and per mark",
+        "Some: complete a timed section within the plan"
+      ],
+      "crossCurricular": "Maths: dividing time in proportion to marks",
+      "smsc": "Spiritual: du'a, calm and tawakkul before exams",
+      "keywords": [
+        {
+          "term": "اِمْتِحَان (imtihan)",
+          "def": "exam"
+        },
+        {
+          "term": "وَقْت (waqt)",
+          "def": "time"
+        },
+        {
+          "term": "دَرَجَات (darajat)",
+          "def": "marks"
+        },
+        {
+          "term": "تَعْلِيمَات (ta'limat)",
+          "def": "instructions (rubric)"
+        },
+        {
+          "term": "رَاجِعْ إِجَابَاتِكَ",
+          "def": "check your answers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a paper lasts 2 hours 15 minutes for 75 marks, roughly how long should a 10-mark question take?",
+        "a": "About 18 minutes (135 ÷ 75 ≈ 1.8 minutes a mark)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, with hardship comes ease' (ash-Sharh 94:6). We prepare well, make du'a, and stay calm.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Check your answers': A) رَاجِعْ إِجَابَاتِكَ B) اِقْرَأِ النَّصَّ",
+          "a": "A) رَاجِعْ إِجَابَاتِكَ",
+          "mins": 1,
+          "options": [
+            "رَاجِعْ إِجَابَاتِكَ",
+            "اِقْرَأِ النَّصَّ"
+          ]
+        },
+        {
+          "q": "What does أَجِبْ عَنِ الأَسْئِلَةِ mean?",
+          "a": "Answer the questions",
+          "mins": 1
+        },
+        {
+          "q": "What does اِخْتَرْ mean?",
+          "a": "Choose",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Group A: 4AA1",
+          "table": {
+            "head": [
+              "Paper",
+              "Time",
+              "Marks"
+            ],
+            "rows": [
+              [
+                "Paper 1: Reading, Summary and Grammar",
+                "2 h 15 min",
+                "75 (60%)"
+              ],
+              [
+                "Paper 2: Writing",
+                "1 h 30 min",
+                "50 (40%)"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. From the Year 11 pack. Mock: Paper 1 and a Paper 2 task."
+        },
+        {
+          "heading": "Group B: 1AA0",
+          "bullets": [
+            "Paper 1 Listening and Paper 3 Reading (with translation)",
+            "Paper 4 Writing (translation into Arabic at both tiers)",
+            "Paper 2 Speaking: role play, picture task, conversation"
+          ],
+          "note": "Mock: Papers 1, 3 and 4 style. Check tier timings in the specification."
+        },
+        {
+          "heading": "Minutes per mark",
+          "chart": {
+            "kind": "bar",
+            "title": "4AA1 Paper 1 plan (minutes)",
+            "labels": [
+              "Reading text 1 and 2",
+              "Summary",
+              "Grammar",
+              "Checking"
+            ],
+            "values": [
+              75,
+              25,
+              25,
+              10
+            ],
+            "unit": "min"
+          },
+          "note": "A sample plan; adjust to the actual mark split on the paper. Always leave checking time."
+        },
+        {
+          "heading": "Rubric words",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "اِقْرَأِ النَّصَّ",
+                "read the text"
+              ],
+              [
+                "أَجِبْ عَنِ الأَسْئِلَةِ",
+                "answer the questions"
+              ],
+              [
+                "لَخِّصْ",
+                "summarise"
+              ],
+              [
+                "أَعْرِبْ مَا تَحْتَهُ خَطٌّ",
+                "give the i'rab of the underlined"
+              ],
+              [
+                "اُكْتُبْ حَوَالَيْ ... كَلِمَةً",
+                "write about ... words"
+              ]
+            ]
+          },
+          "note": "Arabic exam rubrics (Year 10 pack)."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What does لَخِّصْ ask you to do?",
+            "options": [
+              "Translate",
+              "Summarise",
+              "Give the i'rab"
+            ],
+            "answer": 1,
+            "why": "لَخِّصْ is the imperative of لَخَّصَ: summarise."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plan: a 20-mark writing task in a 90-minute paper worth 50 marks. How many minutes?",
+          "a": "About 36 minutes (90 ÷ 50 = 1.8 minutes a mark × 20)",
+          "mins": 2,
+          "model": "Minutes per mark: 90 ÷ 50 = 1.8.\n1.8 × 20 = 36 minutes.\nKeep 5 of them for checking."
+        },
+        {
+          "q": "Translate the rubric: أَجِبْ بِاللُّغَةِ العَرَبِيَّةِ.",
+          "a": "Answer in Arabic.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Timed section (25 min): Group A: one reading text with grammar questions (worksheet, our own exam-style text); Group B: Paper 3 style reading with a translation into English.",
+          "a": "Marked against the worksheet mark scheme.",
+          "mins": 20,
+          "model": "Teacher shows how to read the rubric and mark allocation for question 1 before starting the timer."
+        },
+        {
+          "q": "Extend: Note how long each question actually took and compare with your plan.",
+          "a": "Timing log with one adjustment for the mock",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Use spare time to check against your accuracy checklist and correct two errors.",
+          "a": "Two corrections labelled with the rule",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Leave time at the end to: A) check answers B) start a new question",
+          "a": "A) check answers",
+          "mins": 1,
+          "options": [
+            "check answers",
+            "start a new question"
+          ]
+        },
+        {
+          "q": "Big question: how will you use your time in the mock?",
+          "a": "Plan minutes per mark per section, follow the rubric, keep checking time.",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a personal timing card for each mock paper and revise your Theme 1 to 3 structure sheets.",
+      "send": "SEND: access arrangements as on the register (extra time, reader); timing card pre-filled. EAL: rubric glossary. Stretch: aim to finish with 10 minutes to check.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), mock week (8 Feb)",
+        "Pearson Edexcel 4AA1 and 1AA0 specifications and sample assessment materials",
+        "Mock papers prepared by the department; timed section (portal worksheet, our own text)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "exam hall desks",
+          "alt": "Exam desks",
+          "for": "keywords"
+        },
+        {
+          "find": "clock on wall",
+          "alt": "A clock: timing",
+          "for": "teach:3"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
+      "n": 32,
+      "title": "Mock review: mark schemes, common errors and repair lists",
+      "bigQuestion": "What exactly will I do differently before the real exams?",
+      "objectives": [
+        "To understand how to use the mark scheme to find my weakest skill and plan focused revision"
+      ],
+      "successCriteria": [
+        "All: identify three errors from my mock and correct them",
+        "Most: explain where I lost marks using the mark scheme",
+        "Some: write a repair list with specific, timed revision actions"
+      ],
+      "crossCurricular": "English: self-assessment against criteria",
+      "smsc": "Moral: honest reflection and perseverance",
+      "keywords": [
+        {
+          "term": "مُخَطَّطُ التَّصْحِيحِ",
+          "def": "mark scheme"
+        },
+        {
+          "term": "خَطَأ / أَخْطَاء (khata' / akhta')",
+          "def": "error / errors"
+        },
+        {
+          "term": "هَدَف (hadaf)",
+          "def": "target"
+        },
+        {
+          "term": "تَحَسُّن (tahassun)",
+          "def": "improvement"
+        },
+        {
+          "term": "نُقْطَةُ ضَعْفٍ",
+          "def": "a weak point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a mistake in a mock a bad thing or a gift? Why?",
+        "a": "A gift: it shows exactly what to fix before the real exam."
+      },
+      "islamicLink": {
+        "text": "Allah does not burden a soul beyond what it can bear (al-Baqarah 2:286). With effort and du'a, every weak point can be improved.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Target': A) هَدَف B) خَطَأ",
+          "a": "A) هَدَف",
+          "mins": 1,
+          "options": [
+            "هَدَف",
+            "خَطَأ"
+          ]
+        },
+        {
+          "q": "Correct: المَوَادُّ مُفِيدُونَ.",
+          "a": "المَوَادُّ مُفِيدَةٌ",
+          "mins": 1
+        },
+        {
+          "q": "Correct: يَجِبُ أَنْ نَذْهَبُ.",
+          "a": "يَجِبُ أَنْ نَذْهَبَ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Common errors in Arabic mocks",
+          "table": {
+            "head": [
+              "Error",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Non-human plural agreement",
+                "feminine singular adjective"
+              ],
+              [
+                "أَنْ + verb with dammah",
+                "fathah: أَنْ يَذْهَبَ"
+              ],
+              [
+                "Number and noun",
+                "3 to 10: plural, opposite gender; 11+: singular -an"
+              ],
+              [
+                "Case after كَانَ / إِنَّ",
+                "كَانَ: predicate -an; إِنَّ: noun -a"
+              ],
+              [
+                "Missing bullet point",
+                "tick each bullet as you write"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Adjust to the errors actually seen in this group's mocks."
+        },
+        {
+          "heading": "Using the mark scheme",
+          "bullets": [
+            "Find the band your answer reached",
+            "Read the next band up: what is missing?",
+            "Write one sentence that would reach it"
+          ],
+          "note": "Use the department's mark scheme for each mock paper."
+        },
+        {
+          "heading": "Model: a repair list",
+          "model": {
+            "problem": "Weakest skill: the subjunctive and summary copying.",
+            "steps": [
+              "Error: أَنْ + dammah (4 times)",
+              "Action: 10 أَنْ sentences a day for a week",
+              "Error: copied phrases in the summary",
+              "Action: one summary a week with a synonym list; teacher checks"
+            ],
+            "answer": "Specific, timed, checkable actions"
+          },
+          "note": "Avoid vague targets like 'revise more'."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is the best target?",
+            "options": [
+              "Revise Arabic more",
+              "Write 10 أَنْ + verb sentences daily this week and have them checked",
+              "Try harder in the exam"
+            ],
+            "answer": 1,
+            "why": "It is specific, timed and checkable."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct and explain: عِنْدِي ثَلَاثُ إِخْوَةٍ.",
+          "a": "عِنْدِي ثَلَاثَةُ إِخْوَةٍ: أَخ is masculine, so 3 takes the feminine form (ة).",
+          "mins": 2,
+          "model": "Find the noun: إِخْوَة, plural of أَخ (masculine).\nRule: 3 to 10 take the opposite gender.\nSo: ثَلَاثَةُ إِخْوَةٍ."
+        },
+        {
+          "q": "Correct: إِنَّ الطَّقْسُ جَمِيلٌ.",
+          "a": "إِنَّ الطَّقْسَ جَمِيلٌ",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Go through your marked mock (or timed sections): correct five errors in green, naming each rule; then write a three-item repair list in the portal response box.",
+          "a": "Five corrections with rules; repair list with specific, timed actions.",
+          "mins": 18,
+          "model": "Teacher corrects one anonymised sentence from the mocks on screen and adds it to a sample repair list."
+        },
+        {
+          "q": "Extend: Rewrite one weak answer (writing or speaking transcript) to reach the next band.",
+          "a": "Improved answer with the added feature labelled",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: Make a 10-question quiz on your own errors for a partner.",
+          "a": "Ten questions targeting common errors, with answers",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A good target is: A) specific and timed B) general",
+          "a": "A) specific and timed",
+          "mins": 1,
+          "options": [
+            "specific and timed",
+            "general"
+          ]
+        },
+        {
+          "q": "Big question: what will you do differently before the real exams?",
+          "a": "Pupils' own repair list actions.",
+          "mins": 1
+        }
+      ],
+      "homework": "Start your repair list actions this week; bring evidence to the first Spring 2 lesson.",
+      "send": "SEND: error list with examples to match. EAL: rule cards in English. Stretch: past paper question for the weakest skill under timed conditions.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work (Year 11 revision), mock feedback",
+        "Department mark schemes for the mock papers",
+        "Repair list template (portal worksheet)",
+        "Green pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "checklist with ticks",
+          "alt": "A checklist",
+          "for": "keywords"
+        },
+        {
+          "find": "green pen",
+          "alt": "A green pen for corrections",
+          "for": "teach:3"
+        }
+      ],
+      "duration": 50
     }
   ]
 }

@@ -2,7 +2,7 @@
   "subject": "Arabic",
   "year": "y4",
   "board": "School curriculum (Madinah-style progression)",
-  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (al-, sun and moon letters, prepositions); National Curriculum KS2 languages",
+  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (al-, sun and moon letters, prepositions); National Curriculum KS2 languages | Spring 1 2027 (lessons 2, 3, 5 to 7): founding-year bridge (11 and 18 Jan) and Spring 1 weeks 1 to 3 (the weekend and days; Basem in the village, with our own short text until the Kitabi text is checked; past and present verbs with the unit check), order from the Tarbiyyah Primary Year 4 curriculum map (2023-24); lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: The definite article",
@@ -111,221 +111,485 @@
       "send": "SEND: highlight al- in colour, use sentence strips. EAL: compare with 'the' in home language. Stretch: write four sentences linking two nouns with wa (e.g. الْبَابُ كَبِيرٌ وَالنَّافِذَةُ صَغِيرَةٌ)."
     },
     {
-      "unit": "Unit 1: The definite article",
+      "unit": "Spring 1: The weekend; Basem in the village; the little mouse and the lion",
       "n": 2,
-      "title": "Sun letters and moon letters",
-      "duration": 45,
+      "title": "Bridge: the word al-; sun and moon letters",
+      "bigQuestion": "Why do we sometimes not hear the 'l' in al-?",
       "objectives": [
-        "Pronounce al- correctly before sun and moon letters",
-        "Sort words into sun and moon groups",
-        "Read words such as ash-shams and al-qamar"
+        "To understand how al- makes a word definite and how sun and moon letters change its sound"
       ],
+      "successCriteria": [
+        "All: add ال (al-) to say 'the'",
+        "Most: sort words into sun letters and moon letters",
+        "Some: read sun letter words with shaddah correctly, e.g. الشَّمْس (ash-shams)"
+      ],
+      "crossCurricular": "English: 'a' and 'the' (indefinite and definite articles)",
+      "smsc": "Spiritual: reading the Qur'an correctly, where sun and moon letters are everywhere",
       "keywords": [
         {
-          "term": "حُرُوفٌ شَمْسِيَّةٌ (huroof shamsiyya)",
-          "def": "sun letters"
+          "term": "ال (al-)",
+          "def": "the"
         },
         {
-          "term": "حُرُوفٌ قَمَرِيَّةٌ (huroof qamariyya)",
-          "def": "moon letters"
+          "term": "حُرُوف شَمْسِيَّة (huruf shamsiyyah)",
+          "def": "sun letters: the l is silent"
         },
         {
-          "term": "الشَّمْسُ (ash-shams)",
+          "term": "حُرُوف قَمَرِيَّة (huruf qamariyyah)",
+          "def": "moon letters: the l is said"
+        },
+        {
+          "term": "الشَّمْس (ash-shams)",
           "def": "the sun"
         },
         {
-          "term": "الْقَمَرُ (al-qamar)",
+          "term": "القَمَر (al-qamar)",
           "def": "the moon"
-        },
-        {
-          "term": "شَدَّة (shadda)",
-          "def": "a mark that doubles a sound"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Say 'the sun' in Arabic: الشَّمْس. Can you hear the ل (lam)? Now say القَمَر (the moon). What is different?",
+        "a": "In ash-shams the l is silent; in al-qamar we say it."
+      },
+      "islamicLink": {
+        "text": "In Surah al-Fatihah we read الرَّحْمٰن (ar-Rahman) with a silent lam and الحَمْدُ (al-hamdu) with a clear lam. Knowing sun and moon letters helps us recite well.",
+        "at": "start"
+      },
       "starter": [
-        "Say 'the book' and 'the mosque' in Arabic.",
-        "Say 'the room is small' in Arabic.",
-        "What does the ending ـةٌ show?"
+        {
+          "q": "Bismillah. Plural of مُعَلِّمَة? A) مُعَلِّمَات B) مُعَلِّمُونَ",
+          "a": "A) مُعَلِّمَات",
+          "mins": 1,
+          "options": [
+            "مُعَلِّمَات",
+            "مُعَلِّمُونَ"
+          ]
+        },
+        {
+          "q": "What is أُسْرَة (usrah)?",
+          "a": "family",
+          "mins": 1
+        },
+        {
+          "q": "Say 'a book' in Arabic.",
+          "a": "كِتَاب (kitab)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Two ways to say al-",
-          "bullets": [
-            "الْقَمَرُ - al-qamar - the moon",
-            "الشَّمْسُ - ash-shams - the sun",
-            "The l is said or silent"
-          ],
-          "note": "Say both words. Ask: do you hear the 'l' in al-qamar? (yes). Do you hear 'l' in ash-shams? (no). This is the difference. Show the shadda over the first letter in ash-shams."
+          "heading": "A book, the book",
+          "compare": {
+            "left": {
+              "title": "a (no al-)",
+              "points": [
+                "كِتَابٌ (kitabun) a book",
+                "بَابٌ (babun) a door"
+              ]
+            },
+            "right": {
+              "title": "the (with al-)",
+              "points": [
+                "الكِتَابُ (al-kitabu) the book",
+                "البَابُ (al-babu) the door"
+              ]
+            },
+            "label": "add ال"
+          },
+          "note": "Begin with bismillah. al- is joined to the front of the word. The tanwin (-un) drops when al- is added."
         },
         {
           "heading": "Moon letters",
           "bullets": [
-            "The l is clear",
-            "الْبَابُ - al-baab",
-            "الْمَسْجِدُ - al-masjid"
+            "We say the ل: al-",
+            "القَمَر (al-qamar), البَاب (al-bab)",
+            "الكِتَاب (al-kitab)"
           ],
-          "note": "Teach: moon letters include ب ج ح خ ع غ ف ق ك م ه و ي and hamza/alif. You can say: if you hear the 'l' it is a moon letter. Do not require them to memorise all letters, but give 'baa, jeem, Haa, khaa, meem, qaaf, kaaf' as examples."
+          "note": "The lam has a sukun: الْ. Pupils say al-qamar slowly."
         },
         {
           "heading": "Sun letters",
           "bullets": [
-            "The l disappears",
-            "السَّيَّارَةُ - as-sayyaara",
-            "النَّافِذَةُ - an-naafidha"
+            "The ل is silent; the next letter doubles",
+            "الشَّمْس (ash-shams), السَّيَّارَة (as-sayyarah)",
+            "الدَّرْس (ad-dars) the lesson"
           ],
-          "note": "Teach: the l changes to match the next letter, which is doubled. Examples: ش س ن ت ط د ر ز ص ض ظ ث ذ ل. Make a mnemonic: sun letters are 'hot' and melt the l. Pupils repeat as-sayyaara, an-naafidha, at-taawila."
+          "note": "Show the shaddah ّ on the letter after the lam. The 14 sun letters: ت ث د ذ ر ز س ش ص ض ط ظ ل ن."
         },
         {
           "heading": "Sort the words",
-          "bullets": [
-            "الْكِتَابُ - moon",
-            "الطَّاوِلَةُ - sun",
-            "الْحَقِيبَةُ - moon"
-          ],
-          "note": "Use a two-column sorting task on screen. Pupils drag or call out which group. Check by reading aloud. Misconception: that spelling changes; it doesn't - only the pronunciation changes."
+          "sort": {
+            "columns": [
+              "Moon letter (say al-)",
+              "Sun letter (l silent)"
+            ],
+            "cards": [
+              "القَمَر",
+              "الشَّمْس",
+              "البَيْت",
+              "السَّبْت",
+              "المَسْجِد",
+              "النُّور",
+              "الكِتَاب",
+              "الدَّرْس"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Pupils show 1 or 2 fingers. Tip: if there is a shaddah after ال, it is a sun letter."
         },
         {
-          "heading": "Listen and say",
+          "heading": "Check",
           "bullets": [
-            "Teacher reads a word",
-            "Pupils say sun or moon",
-            "Then say the word"
+            "Vote in the Teams poll"
           ],
-          "note": "Play a listening game: read words aloud; pupils shout 'shams' or 'qamar'. Then reverse: show the word, pupils read it. Keep pace brisk and fun."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "How do we read السَّبْت (Saturday)?",
+            "options": [
+              "al-sabt",
+              "as-sabt",
+              "sabt-al"
+            ],
+            "answer": 1,
+            "why": "س is a sun letter, so the lam is silent and the س doubles: as-sabt."
+          }
         }
       ],
       "practice": [
-        "Turn these into 'the ...': bayt, qalam, hadeeqa.",
-        "Translate 'the garden is beautiful' into English.",
-        "Sort 10 words into sun and moon groups.",
-        "Read aloud ten words and say whether the l is heard."
+        {
+          "q": "Add al- and read: شَمْس",
+          "a": "الشَّمْس (ash-shams)",
+          "mins": 2,
+          "model": "Add ال to the front: الشمس.\nش is a sun letter, so the ل is silent.\nPut a shaddah on ش: الشَّمْس, ash-shams."
+        },
+        {
+          "q": "Add al- and read: قَلَم",
+          "a": "القَلَم (al-qalam)",
+          "mins": 1
+        },
+        {
+          "q": "Sun or moon letter: ن?",
+          "a": "Sun letter (النُّور an-nur)",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Sort: الْقَلَمُ، السَّيَّارَةُ، الْبَابُ، النَّافِذَةُ، الْمَسْجِدُ، الطَّاوِلَةُ.",
-        "Write the transliteration of each word with the right sound.",
-        "Make three sentences using words from each group."
+        {
+          "q": "Core: Add ال and write sun or moon: بَاب، سَيَّارَة، مَسْجِد، دَرْس، قَمَر، نُور.",
+          "a": "البَاب moon; السَّيَّارَة sun; المَسْجِد moon; الدَّرْس sun; القَمَر moon; النُّور sun",
+          "mins": 5,
+          "model": "Teacher does بَاب: البَاب. ب is a moon letter, so we say al-bab."
+        },
+        {
+          "q": "Extend: Read aloud to your partner in a breakout room: الشَّمْس، القَمَر، الكِتَاب، السَّبْت.",
+          "a": "ash-shams, al-qamar, al-kitab, as-sabt",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Find one sun letter word and one moon letter word in Surah al-Fatihah.",
+          "a": "For example: الرَّحْمٰن (sun), الحَمْدُ (moon)",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Is 'ash-shams' a sun or moon word?",
-        "Do you hear 'l' in al-baab?"
+        {
+          "q": "Which is a sun letter word? A) القَمَر B) الشَّمْس C) البَاب",
+          "a": "B) الشَّمْس",
+          "mins": 1,
+          "options": [
+            "القَمَر",
+            "الشَّمْس",
+            "البَاب"
+          ]
+        },
+        {
+          "q": "Big question: why do we sometimes not hear the l in al-?",
+          "a": "Before a sun letter the l is silent and the next letter is doubled with a shaddah.",
+          "mins": 2
+        }
       ],
-      "homework": "Find five Arabic words with al- at home or online and decide if each is sun or moon.",
-      "send": "SEND: colour-code sun and moon words and provide audio support. EAL: practise saying the doubled sound slowly. Stretch: find a rule for which letters are sun letters, using tongue position."
+      "homework": "Write five words with al- from your Qur'an reading and mark each one sun or moon.",
+      "send": "SEND: sun and moon letter strips. EAL: picture of sun and moon with the two rules. Stretch: explain why الرَّحْمٰن has a shaddah on ر.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 Arabic curriculum map (2023-24), Autumn 2 essentials (bridge)",
+        "Portal arabic y4 lessons 1 and 2 (al- and sun and moon letters), combined for the bridge",
+        "Kitabi: definite and indefinite (CHECK IN KITABI)",
+        "Sun and moon letter sort cards (portal worksheet)",
+        "Mushaf or Qaidah for Surah al-Fatihah"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "full moon night sky",
+          "alt": "The full moon (al-qamar)",
+          "for": "keywords"
+        },
+        {
+          "find": "sun over the horizon sunrise",
+          "alt": "The sun (ash-shams)",
+          "for": "hook"
+        }
+      ],
+      "duration": 45
     },
     {
-      "unit": "Unit 2: Days and places",
+      "unit": "Spring 1: The weekend; Basem in the village; the little mouse and the lion",
       "n": 3,
-      "title": "Days of the week",
-      "duration": 45,
+      "title": "The weekend and the days of the week",
+      "bigQuestion": "What do I do at the weekend, and how do I say the days in Arabic?",
       "objectives": [
-        "Say the seven days in Arabic",
-        "Say 'Today is ...'",
-        "Link the days to Jumu'ah"
+        "To understand how to name the days of the week and talk about the weekend"
       ],
+      "successCriteria": [
+        "All: say the seven days in order",
+        "Most: say which days are the weekend: السَّبْت and الأَحَد",
+        "Some: say what I do: فِي نِهَايَةِ الأُسْبُوعِ أَزُورُ جَدَّتِي"
+      ],
+      "crossCurricular": "Maths: days in a week and reading a calendar",
+      "smsc": "Social: using the weekend to visit family and help at home",
       "keywords": [
         {
-          "term": "الْأَحَدُ (al-ahad)",
-          "def": "Sunday"
+          "term": "نِهَايَةُ الأُسْبُوعِ (nihayat al-usbu')",
+          "def": "the weekend"
         },
         {
-          "term": "الِاثْنَيْنِ (al-ithnayn)",
-          "def": "Monday"
+          "term": "أُسْبُوع (usbu')",
+          "def": "a week"
         },
         {
-          "term": "الثُّلَاثَاءُ (ath-thulaathaa')",
-          "def": "Tuesday"
-        },
-        {
-          "term": "الْأَرْبِعَاءُ (al-arbi'aa')",
-          "def": "Wednesday"
-        },
-        {
-          "term": "الْخَمِيسُ (al-khamees)",
-          "def": "Thursday"
-        },
-        {
-          "term": "الْجُمُعَةُ (al-jumu'a)",
-          "def": "Friday"
-        },
-        {
-          "term": "السَّبْتُ (as-sabt)",
+          "term": "السَّبْت (as-sabt)",
           "def": "Saturday"
         },
         {
-          "term": "الْيَوْمُ (al-yawm)",
-          "def": "today / the day"
+          "term": "الأَحَد (al-ahad)",
+          "def": "Sunday"
+        },
+        {
+          "term": "أَزُورُ (azuru)",
+          "def": "I visit"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "In Britain the weekend is Saturday and Sunday. In some Arab countries it is Friday and Saturday. Why might that be?",
+        "a": "Friday is the day of Jumu'ah prayer, so some Muslim countries keep it as a day off."
+      },
+      "islamicLink": {
+        "text": "Allah made Friday special with the Jumu'ah prayer (al-Jumu'ah 62:9). Many Arabic day names are numbers: al-ahad comes from 'one', al-ithnayn from 'two'.",
+        "at": "start"
+      },
       "starter": [
-        "Say 'the moon' and 'the sun' in Arabic.",
-        "Is 'as-sayyaara' a sun or moon word?",
-        "How do you say 'the mosque is beautiful' in Arabic?"
+        {
+          "q": "Bismillah. How do we read الشَّمْس? A) al-shams B) ash-shams",
+          "a": "B) ash-shams",
+          "mins": 1,
+          "options": [
+            "al-shams",
+            "ash-shams"
+          ]
+        },
+        {
+          "q": "Is ق a sun letter or a moon letter?",
+          "a": "Moon letter (al-qamar)",
+          "mins": 1
+        },
+        {
+          "q": "Plural of كِتَاب?",
+          "a": "كُتُب (kutub)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Days of the week",
-          "bullets": [
-            "الْأَحَدُ - Sunday",
-            "الِاثْنَيْنِ - Monday",
-            "الثُّلَاثَاءُ - Tuesday"
-          ],
-          "note": "Say the first three days with a rhythm and clapping. Link to numbers: ahad = one, ithnayn = two, thulaathaa' = three. Pupils recall numbers 1 to 3."
+          "heading": "The days of the week",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "الأَحَد",
+                "al-ahad",
+                "Sunday"
+              ],
+              [
+                "الاِثْنَيْن",
+                "al-ithnayn",
+                "Monday"
+              ],
+              [
+                "الثُّلَاثَاء",
+                "ath-thulatha'",
+                "Tuesday"
+              ],
+              [
+                "الأَرْبِعَاء",
+                "al-arbi'a'",
+                "Wednesday"
+              ],
+              [
+                "الخَمِيس",
+                "al-khamis",
+                "Thursday"
+              ],
+              [
+                "الجُمُعَة",
+                "al-jumu'ah",
+                "Friday"
+              ],
+              [
+                "السَّبْت",
+                "as-sabt",
+                "Saturday"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. The Arabic week starts on Sunday. Spot the sun letters: ath-thulatha', as-sabt."
         },
         {
-          "heading": "More days",
+          "heading": "Days are numbers",
           "bullets": [
-            "الْأَرْبِعَاءُ - Wednesday",
-            "الْخَمِيسُ - Thursday",
-            "الْجُمُعَةُ - Friday"
+            "وَاحِد (wahid) one → الأَحَد",
+            "اِثْنَان (ithnan) two → الاِثْنَيْن",
+            "ثَلَاثَة (thalathah) three → الثُّلَاثَاء"
           ],
-          "note": "arbi'aa' = four, khamees = five. Jumu'a connects to gathering. Mention Surah al-Jumu'ah 62:9 as the Qur'an's mention of the call to the Friday prayer, in simple words. Ask: what do you do on Fridays?"
+          "note": "Help pupils remember: Sunday is day one, Monday day two, Tuesday day three."
         },
         {
-          "heading": "The week",
+          "heading": "The weekend",
           "bullets": [
-            "السَّبْتُ - Saturday",
-            "الْأَحَدُ - Sunday",
-            "Seven days in a week"
+            "نِهَايَةُ الأُسْبُوعِ (nihayat al-usbu')",
+            "In Britain: السَّبْت وَالأَحَد",
+            "Today is: اليَوْمُ يَوْمُ الاِثْنَيْنِ (al-yawm yawm al-ithnayn)"
           ],
-          "note": "Say all seven days in order from Sunday. Repeat as a chant. Misconception: the Arabic week starts on Sunday in many Arab countries; in the UK we often start on Monday. Compare."
+          "note": "Pupils say today's day each lesson from now on."
         },
         {
-          "heading": "What day is today?",
+          "heading": "What I do at the weekend",
           "bullets": [
-            "مَا الْيَوْمُ؟ - maa l-yawm?",
-            "الْيَوْمُ الْجُمُعَةُ",
-            "Today is Friday"
+            "أَزُورُ جَدَّتِي (azuru jaddati) I visit my grandmother",
+            "أُسَاعِدُ أُمِّي (usa'idu ummi) I help my mother",
+            "أَقْرَأُ القُرْآنَ (aqra'u l-qur'an) I read the Qur'an"
           ],
-          "note": "Model the question and answer. Ask pupils to answer for today (the lesson day). Draw a calendar on screen and have pupils point to the day. Practise in pairs."
+          "note": "Build: فِي نِهَايَةِ الأُسْبُوعِ (fi nihayati l-usbu') + verb."
         },
         {
-          "heading": "Days and activities",
+          "heading": "Check",
           "bullets": [
-            "يَوْمُ الْجُمُعَةِ - Friday",
-            "أَذْهَبُ إِلَى الْمَدْرَسَةِ",
-            "I go to school"
+            "Vote in the Teams poll"
           ],
-          "note": "Optional extension: link days with activities in Arabic, e.g. 'On Friday I pray in the mosque'. Keep simple; most pupils practise the days. Reinforce with chanting and call-and-response."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which day is الخَمِيس?",
+            "options": [
+              "Tuesday",
+              "Thursday",
+              "Saturday"
+            ],
+            "answer": 1,
+            "why": "الخَمِيس comes from خَمْسَة (five): the fifth day, Thursday."
+          }
         }
       ],
       "practice": [
-        "Count from one to five in Arabic.",
-        "Say 'the mosque is big' in Arabic.",
-        "Is 'al-qamar' a sun or moon word?",
-        "Order the seven days on a calendar.",
-        "Ask and answer 'maa l-yawm?' for different days."
+        {
+          "q": "Say 'At the weekend I help my mother.'",
+          "a": "فِي نِهَايَةِ الأُسْبُوعِ أُسَاعِدُ أُمِّي",
+          "mins": 2,
+          "model": "When first: فِي نِهَايَةِ الأُسْبُوعِ.\nThen the verb: أُسَاعِدُ (I help).\nThen who: أُمِّي (my mother)."
+        },
+        {
+          "q": "Which day comes after الجُمُعَة?",
+          "a": "السَّبْت (as-sabt)",
+          "mins": 1
+        },
+        {
+          "q": "What is الأَحَد?",
+          "a": "Sunday",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Make a weekly timetable with the Arabic day names.",
-        "Match numbers to days (ahad = 1, ithnayn = 2 ...).",
-        "Write a sentence: الْيَوْمُ ..."
+        {
+          "q": "Core: Write the seven days in Arabic in order, starting with الأَحَد.",
+          "a": "الأَحَد، الاِثْنَيْن، الثُّلَاثَاء، الأَرْبِعَاء، الخَمِيس، الجُمُعَة، السَّبْت",
+          "mins": 6,
+          "model": "Teacher writes الأَحَد and الاِثْنَيْن, saying each, and links them to one and two."
+        },
+        {
+          "q": "Extend: Write two sentences about your weekend, starting فِي نِهَايَةِ الأُسْبُوعِ.",
+          "a": "For example: فِي نِهَايَةِ الأُسْبُوعِ أَزُورُ جَدَّتِي. فِي نِهَايَةِ الأُسْبُوعِ أَقْرَأُ القُرْآنَ.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which day is your favourite, and why? Write it in English, then the day in Arabic.",
+          "a": "For example: الجُمُعَة, because I go to Jumu'ah.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What is 'al-jumu'a' in English?",
-        "How do you ask 'What day is it today?' in Arabic?"
+        {
+          "q": "What is the weekend in Arabic? A) نِهَايَةُ الأُسْبُوعِ B) يَوْمُ الجُمُعَةِ C) أُسْبُوع",
+          "a": "A) نِهَايَةُ الأُسْبُوعِ",
+          "mins": 1,
+          "options": [
+            "نِهَايَةُ الأُسْبُوعِ",
+            "يَوْمُ الجُمُعَةِ",
+            "أُسْبُوع"
+          ]
+        },
+        {
+          "q": "Big question: say one thing you do at the weekend in Arabic.",
+          "a": "For example: فِي نِهَايَةِ الأُسْبُوعِ أَزُورُ جَدَّتِي.",
+          "mins": 2
+        }
       ],
-      "homework": "Learn the days in order and perform the chant to someone at home.",
-      "send": "SEND: visual timetable with colour for each day; chant with actions. EAL: write the days in the home language beside the Arabic. Stretch: write sentences about what you do on three days."
+      "homework": "Say the day in Arabic every morning this week, and write one sentence about what you do at the weekend.",
+      "send": "SEND: days strip with numbers 1 to 7. EAL: calendar with English and Arabic. Stretch: use 'on Saturday': يَوْمَ السَّبْتِ (yawma s-sabt) + verb.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 Arabic curriculum map (2023-24), Spring 1 week 1",
+        "Portal arabic y4 lesson 3 (days of the week), upgraded",
+        "Kitabi: the weekend (CHECK IN KITABI)",
+        "Days of the week strip and calendar page (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wall calendar page",
+          "alt": "A calendar page",
+          "for": "keywords"
+        },
+        {
+          "find": "open Quran on a stand",
+          "alt": "A mushaf on a stand",
+          "for": "teach:4"
+        }
+      ],
+      "duration": 45
     },
     {
       "unit": "Unit 2: Days and places",
@@ -428,6 +692,738 @@
       ],
       "homework": "Write three sentences about where three things are in your home.",
       "send": "SEND: use real objects and drag-and-drop prepositions. EAL: label objects in two languages. Stretch: write a short description of a street with five places using bi-jaanibi."
+    },
+    {
+      "unit": "Spring 1: The weekend; Basem in the village; the little mouse and the lion",
+      "n": 5,
+      "title": "Bridge: my school, my family; one and many",
+      "bigQuestion": "How does an Arabic word change when there is more than one?",
+      "objectives": [
+        "To understand how Arabic nouns change from singular to plural"
+      ],
+      "successCriteria": [
+        "All: name four family members in Arabic",
+        "Most: say whether a word is مُفْرَد (singular) or جَمْع (plural)",
+        "Some: make plurals with ـُونَ (-un) and ـَات (-at)"
+      ],
+      "crossCurricular": "English: singular and plural nouns (book, books; child, children)",
+      "smsc": "Moral: kindness to parents and family",
+      "keywords": [
+        {
+          "term": "أُسْرَة (usrah)",
+          "def": "family"
+        },
+        {
+          "term": "مَدْرَسَة (madrasah)",
+          "def": "school"
+        },
+        {
+          "term": "مُفْرَد (mufrad)",
+          "def": "singular: one thing"
+        },
+        {
+          "term": "جَمْع (jam')",
+          "def": "plural: more than two"
+        },
+        {
+          "term": "مُعَلِّم (mu'allim)",
+          "def": "a male teacher"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In English we add 's' for more than one: book, books. Do you think Arabic does the same? How could we find out?",
+        "a": "Sometimes Arabic adds an ending, and sometimes the inside of the word changes."
+      },
+      "islamicLink": {
+        "text": "Allah commands us to be good to our parents (al-Isra 17:23). We start by learning to name our family in the language of the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What does هٰذِهِ (hadhihi) mean? A) this (girl word) B) that C) my",
+          "a": "A) this (girl word)",
+          "mins": 1,
+          "options": [
+            "this (girl word)",
+            "that",
+            "my"
+          ]
+        },
+        {
+          "q": "Say 'my name is ...'.",
+          "a": "اِسْمِي ... (ismi ...)",
+          "mins": 1
+        },
+        {
+          "q": "Is كِتَاب (kitab) a boy word or a girl word?",
+          "a": "Boy word (no ة)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "My family",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "أَب",
+                "ab",
+                "father"
+              ],
+              [
+                "أُمّ",
+                "umm",
+                "mother"
+              ],
+              [
+                "أَخ",
+                "akh",
+                "brother"
+              ],
+              [
+                "أُخْت",
+                "ukht",
+                "sister"
+              ],
+              [
+                "أُسْرَتِي",
+                "usrati",
+                "my family"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Pupils echo each word. Remind them that -i means my: أُمِّي (ummi) my mother."
+        },
+        {
+          "heading": "My school",
+          "bullets": [
+            "مَدْرَسَتِي (madrasati) my school",
+            "مُعَلِّم (mu'allim) teacher (m)",
+            "مُعَلِّمَة (mu'allimah) teacher (f)"
+          ],
+          "note": "Point out ة for the female teacher. Ask: boy word or girl word?"
+        },
+        {
+          "heading": "Plural with an ending",
+          "table": {
+            "head": [
+              "مُفْرَد singular",
+              "جَمْع plural",
+              "Ending"
+            ],
+            "rows": [
+              [
+                "مُعَلِّم",
+                "مُعَلِّمُونَ (mu'allimun)",
+                "ـُونَ for men"
+              ],
+              [
+                "مُعَلِّمَة",
+                "مُعَلِّمَات (mu'allimat)",
+                "ـَات for women"
+              ],
+              [
+                "سَيَّارَة",
+                "سَيَّارَات (sayyarat)",
+                "ـَات for things"
+              ]
+            ]
+          },
+          "note": "The ة drops off and ـَات is added."
+        },
+        {
+          "heading": "Plural from inside",
+          "bullets": [
+            "كِتَاب → كُتُب (kutub) books",
+            "قَلَم → أَقْلَام (aqlam) pens",
+            "مَدْرَسَة → مَدَارِس (madaris) schools"
+          ],
+          "note": "These are learnt one by one, like English mouse and mice."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What is the plural of مُعَلِّمَة (female teacher)?",
+            "options": [
+              "مُعَلِّمُونَ",
+              "مُعَلِّمَات",
+              "مُعَلِّمَةُونَ"
+            ],
+            "answer": 1,
+            "why": "The ة drops and ـَات is added: مُعَلِّمَات."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make the plural of سَيَّارَة (car).",
+          "a": "سَيَّارَات (sayyarat)",
+          "mins": 2,
+          "model": "سَيَّارَة ends in ة.\nTake off the ة.\nAdd ـَات: سَيَّارَات."
+        },
+        {
+          "q": "Singular or plural: كُتُب?",
+          "a": "Plural (books)",
+          "mins": 1
+        },
+        {
+          "q": "Say 'my mother'.",
+          "a": "أُمِّي (ummi)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Copy the table and write the plural: مُعَلِّم، مُعَلِّمَة، سَيَّارَة، كِتَاب.",
+          "a": "مُعَلِّمُونَ، مُعَلِّمَات، سَيَّارَات، كُتُب",
+          "mins": 5,
+          "model": "Teacher does مُعَلِّم: a man, so add ـُونَ: مُعَلِّمُونَ."
+        },
+        {
+          "q": "Extend: Write three sentences about your family with هٰذَا or هٰذِهِ, e.g. هٰذِهِ أُمِّي.",
+          "a": "For example: هٰذَا أَبِي. هٰذِهِ أُخْتِي. هٰذَا أَخِي.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write: In my school there are teachers: فِي مَدْرَسَتِي مُعَلِّمُونَ وَمُعَلِّمَات.",
+          "a": "فِي مَدْرَسَتِي مُعَلِّمُونَ وَمُعَلِّمَات",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does جَمْع (jam') mean? A) singular B) plural C) family",
+          "a": "B) plural",
+          "mins": 1,
+          "options": [
+            "singular",
+            "plural",
+            "family"
+          ]
+        },
+        {
+          "q": "Big question: how does an Arabic word change for more than one? Give an example.",
+          "a": "It adds an ending (مُعَلِّمَات) or changes inside (كِتَاب → كُتُب).",
+          "mins": 2
+        }
+      ],
+      "homework": "Name five family members in Arabic and make the plural of سَيَّارَة and كِتَاب.",
+      "send": "SEND: family word mat with pictures of objects only (no people), e.g. a house. EAL: table with English. Stretch: find the plural of بَيْت (house): بُيُوت (buyut).",
+      "resources": [
+        "Tarbiyyah Primary Year 4 Arabic curriculum map (2023-24), Autumn 1 essentials (bridge)",
+        "Kitabi: nouns, singular and plural (CHECK IN KITABI)",
+        "Singular and plural table (portal worksheet)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "school building exterior",
+          "alt": "A school building",
+          "for": "keywords"
+        },
+        {
+          "find": "stack of books",
+          "alt": "A pile of books (kutub)",
+          "for": "teach:4"
+        },
+        {
+          "find": "row of parked cars",
+          "alt": "A row of cars (sayyarat)",
+          "for": "teach:3"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: The weekend; Basem in the village; the little mouse and the lion",
+      "n": 6,
+      "title": "Reading: Basem in the village",
+      "bigQuestion": "How can I understand a short Arabic story?",
+      "objectives": [
+        "To understand a short vowelled Arabic text and answer questions about it"
+      ],
+      "successCriteria": [
+        "All: read the title بَاسِمٌ فِي القَرْيَةِ and five new words",
+        "Most: answer three questions on the text",
+        "Some: find the verbs in the text"
+      ],
+      "crossCurricular": "Geography: villages and towns, and how land is used for farming",
+      "smsc": "Spiritual: thanking Allah for animals and the food they give us",
+      "keywords": [
+        {
+          "term": "قَرْيَة (qaryah)",
+          "def": "a village"
+        },
+        {
+          "term": "جَدّ (jadd)",
+          "def": "grandfather"
+        },
+        {
+          "term": "بَقَرَة (baqarah)",
+          "def": "a cow"
+        },
+        {
+          "term": "حَقْل (haql)",
+          "def": "a field"
+        },
+        {
+          "term": "حَلِيب (halib)",
+          "def": "milk"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would you see, hear and do if you spent a day in a village with farm animals?",
+        "a": "Fields, cows, hens; we could drink fresh milk and help."
+      },
+      "islamicLink": {
+        "text": "Allah reminds us that from the bellies of cattle He gives us pure milk, pleasant for those who drink it (an-Nahl 16:66). Surah al-Baqarah, the longest surah, is named after the cow.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Which day is السَّبْت? A) Saturday B) Sunday",
+          "a": "A) Saturday",
+          "mins": 1,
+          "options": [
+            "Saturday",
+            "Sunday"
+          ]
+        },
+        {
+          "q": "What is نِهَايَةُ الأُسْبُوعِ?",
+          "a": "the weekend",
+          "mins": 1
+        },
+        {
+          "q": "Read: القَرْيَة. Sun or moon letter?",
+          "a": "al-qaryah, moon letter",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New words",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "قَرْيَة",
+                "qaryah",
+                "village"
+              ],
+              [
+                "جَدّ",
+                "jadd",
+                "grandfather"
+              ],
+              [
+                "بَقَرَة",
+                "baqarah",
+                "cow"
+              ],
+              [
+                "دَجَاجَة",
+                "dajajah",
+                "hen"
+              ],
+              [
+                "حَقْل",
+                "haql",
+                "field"
+              ],
+              [
+                "حَلِيب",
+                "halib",
+                "milk"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Pupils echo and do an action for each animal (no animal noises needed)."
+        },
+        {
+          "heading": "The text",
+          "quote": {
+            "text": "يَسْكُنُ جَدُّ بَاسِمٍ فِي قَرْيَةٍ صَغِيرَةٍ. فِي القَرْيَةِ بَقَرَةٌ وَدَجَاجَةٌ. يَشْرَبُ بَاسِمٌ الحَلِيبَ. يَلْعَبُ بَاسِمٌ فِي الحَقْلِ. القَرْيَةُ جَمِيلَةٌ.",
+            "source": "Our own short text for 'Basem in the village' (Kitabi version: CHECK IN KITABI)"
+          },
+          "note": "Read slowly, pupils follow with a finger. Then read together. Meaning: Basem's grandfather lives in a small village. In the village there is a cow and a hen. Basem drinks the milk. Basem plays in the field. The village is beautiful."
+        },
+        {
+          "heading": "Who, where, what?",
+          "bullets": [
+            "مَنْ؟ (man?) who?",
+            "أَيْنَ؟ (ayna?) where?",
+            "مَاذَا؟ (madha?) what?"
+          ],
+          "note": "Question words help us find answers in a text. Model: أَيْنَ يَسْكُنُ جَدُّ بَاسِمٍ؟ فِي قَرْيَةٍ."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What does Basem drink?",
+            "options": [
+              "مَاء (water)",
+              "حَلِيب (milk)",
+              "عَصِير (juice)"
+            ],
+            "answer": 1,
+            "why": "The text says يَشْرَبُ بَاسِمٌ الحَلِيبَ: Basem drinks the milk."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "أَيْنَ يَلْعَبُ بَاسِمٌ؟ (Where does Basem play?)",
+          "a": "فِي الحَقْلِ (in the field)",
+          "mins": 2,
+          "model": "Find the verb يَلْعَبُ in the text.\nRead what comes next: فِي الحَقْلِ.\nAnswer: fi l-haql, in the field."
+        },
+        {
+          "q": "Is the village big or small?",
+          "a": "Small: صَغِيرَة",
+          "mins": 1
+        },
+        {
+          "q": "Name the two animals in the village.",
+          "a": "بَقَرَة (cow) and دَجَاجَة (hen)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Copy the text neatly and draw the village (fields, a cow, a hen; no people).",
+          "a": "Neat copy with a labelled picture",
+          "mins": 6,
+          "model": "Teacher copies the first sentence slowly, showing how ة and ٍ (tanwin) are written."
+        },
+        {
+          "q": "Extend: Answer in Arabic: مَاذَا يَشْرَبُ بَاسِمٌ؟",
+          "a": "يَشْرَبُ بَاسِمٌ الحَلِيبَ.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Find the three verbs in the text (they start with يَـ).",
+          "a": "يَسْكُنُ، يَشْرَبُ، يَلْعَبُ",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is قَرْيَة? A) village B) field C) cow",
+          "a": "A) village",
+          "mins": 1,
+          "options": [
+            "village",
+            "field",
+            "cow"
+          ]
+        },
+        {
+          "q": "Big question: what helped you understand the story?",
+          "a": "Knowing the new words first, and using the question words who, where, what.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the text to someone at home and tell them what it means in English.",
+      "send": "SEND: text with pictures above key words. EAL: word list beside the text. Stretch: write one more sentence for the story, e.g. القَرْيَةُ جَمِيلَةٌ وَهَادِئَةٌ (beautiful and quiet).",
+      "resources": [
+        "Tarbiyyah Primary Year 4 Arabic curriculum map (2023-24), Spring 1 week 2",
+        "Kitabi reading: Basem in the village (CHECK IN KITABI); our own short text on the slides until checked",
+        "Text and question sheet (portal worksheet)",
+        "Coloured pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "dairy cow in a field",
+          "alt": "A cow in a field",
+          "for": "keywords"
+        },
+        {
+          "find": "hen chicken on a farm",
+          "alt": "A hen",
+          "for": "teach:1"
+        },
+        {
+          "find": "village with farm fields countryside",
+          "alt": "A small village with fields",
+          "for": "hook"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: The weekend; Basem in the village; the little mouse and the lion",
+      "n": 7,
+      "title": "Verbs in the past and present; unit check",
+      "bigQuestion": "How does an Arabic verb show that something has already happened?",
+      "objectives": [
+        "To understand how Arabic verbs change between the past and the present"
+      ],
+      "successCriteria": [
+        "All: say ذَهَبَ (he went) and يَذْهَبُ (he goes)",
+        "Most: match four past verbs with their present forms",
+        "Some: retell one sentence of Basem's story in the past"
+      ],
+      "crossCurricular": "English: past and present tense (went, goes)",
+      "smsc": "Moral: thinking about what we did yesterday and how we can do better today",
+      "keywords": [
+        {
+          "term": "فِعْل (fi'l)",
+          "def": "a verb, a doing word"
+        },
+        {
+          "term": "مَاضٍ (madin)",
+          "def": "past: it already happened"
+        },
+        {
+          "term": "مُضَارِع (mudari')",
+          "def": "present: it is happening now"
+        },
+        {
+          "term": "ذَهَبَ (dhahaba)",
+          "def": "he went"
+        },
+        {
+          "term": "يَذْهَبُ (yadhhabu)",
+          "def": "he goes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Yesterday Basem went to the village. Today he goes to school. Which words tell you when it happened?",
+        "a": "Went (past) and goes (present). Arabic changes the verb too."
+      },
+      "islamicLink": {
+        "text": "Allah swears by time in Surah al-'Asr (103:1). Muslims use past, present and future well: we learn from the past and do good today.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What is قَرْيَة? A) village B) field",
+          "a": "A) village",
+          "mins": 1,
+          "options": [
+            "village",
+            "field"
+          ]
+        },
+        {
+          "q": "Where does Basem play?",
+          "a": "فِي الحَقْلِ (in the field)",
+          "mins": 1
+        },
+        {
+          "q": "Say today's day in Arabic.",
+          "a": "For example: اليَوْمُ يَوْمُ الاِثْنَيْنِ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Past and present",
+          "compare": {
+            "left": {
+              "title": "مَاضٍ (past)",
+              "points": [
+                "ذَهَبَ (dhahaba) he went",
+                "لَعِبَ (la'iba) he played"
+              ]
+            },
+            "right": {
+              "title": "مُضَارِع (present)",
+              "points": [
+                "يَذْهَبُ (yadhhabu) he goes",
+                "يَلْعَبُ (yal'abu) he plays"
+              ]
+            },
+            "label": "now"
+          },
+          "note": "Begin with bismillah. The present adds يَـ (ya-) at the start for he."
+        },
+        {
+          "heading": "More verbs",
+          "table": {
+            "head": [
+              "Past (he)",
+              "Present (he)",
+              "English"
+            ],
+            "rows": [
+              [
+                "شَرِبَ (shariba)",
+                "يَشْرَبُ (yashrabu)",
+                "drank / drinks"
+              ],
+              [
+                "كَتَبَ (kataba)",
+                "يَكْتُبُ (yaktubu)",
+                "wrote / writes"
+              ],
+              [
+                "سَكَنَ (sakana)",
+                "يَسْكُنُ (yaskunu)",
+                "lived / lives"
+              ]
+            ]
+          },
+          "note": "Spot the three root letters in each pair: ش ر ب, ك ت ب, س ك ن."
+        },
+        {
+          "heading": "Basem in the past",
+          "bullets": [
+            "ذَهَبَ بَاسِمٌ إِلَى القَرْيَةِ",
+            "Basem went to the village",
+            "شَرِبَ بَاسِمٌ الحَلِيبَ: Basem drank the milk"
+          ],
+          "note": "Change يَشْرَبُ in the story to شَرِبَ. The meaning moves to the past."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which verb is in the past?",
+            "options": [
+              "يَكْتُبُ",
+              "كَتَبَ",
+              "يَلْعَبُ"
+            ],
+            "answer": 1,
+            "why": "كَتَبَ (he wrote) has no يَـ at the start: it is past."
+          }
+        },
+        {
+          "heading": "Unit check: our words",
+          "diagram": {
+            "centre": "Spring 1",
+            "items": [
+              "الأَحَد to السَّبْت",
+              "نِهَايَةُ الأُسْبُوعِ",
+              "قَرْيَة",
+              "بَقَرَة",
+              "ذَهَبَ / يَذْهَبُ",
+              "الشَّمْس / القَمَر"
+            ]
+          },
+          "note": "Quick review before the check task."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Change to the past: يَلْعَبُ بَاسِمٌ فِي الحَقْلِ.",
+          "a": "لَعِبَ بَاسِمٌ فِي الحَقْلِ.",
+          "mins": 2,
+          "model": "Find the verb: يَلْعَبُ.\nTake off the يَـ and use the past form: لَعِبَ.\nKeep the rest: لَعِبَ بَاسِمٌ فِي الحَقْلِ."
+        },
+        {
+          "q": "Past or present: يَشْرَبُ?",
+          "a": "Present",
+          "mins": 1
+        },
+        {
+          "q": "Present of ذَهَبَ?",
+          "a": "يَذْهَبُ (yadhhabu)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (unit check, portal response box or paper): 1) Match past and present: ذَهَبَ، كَتَبَ، شَرِبَ with يَشْرَبُ، يَذْهَبُ، يَكْتُبُ. 2) Write the weekend days. 3) Translate قَرْيَة and بَقَرَة.",
+          "a": "1) ذَهَبَ يَذْهَبُ؛ كَتَبَ يَكْتُبُ؛ شَرِبَ يَشْرَبُ 2) السَّبْت وَالأَحَد 3) village, cow",
+          "mins": 7,
+          "model": "Teacher matches ذَهَبَ with يَذْهَبُ: same letters ذ ه ب, one with يَـ."
+        },
+        {
+          "q": "Extend: Write two sentences about Basem in the past.",
+          "a": "For example: ذَهَبَ بَاسِمٌ إِلَى القَرْيَةِ. شَرِبَ بَاسِمٌ الحَلِيبَ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write what Basem does now and what he did yesterday with one verb.",
+          "a": "For example: يَكْتُبُ بَاسِمٌ الآنَ. كَتَبَ بَاسِمٌ أَمْسِ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does ذَهَبَ mean? A) he went B) he goes C) he plays",
+          "a": "A) he went",
+          "mins": 1,
+          "options": [
+            "he went",
+            "he goes",
+            "he plays"
+          ]
+        },
+        {
+          "q": "Big question: how does an Arabic verb show it already happened?",
+          "a": "The past form has no يَـ at the start, e.g. ذَهَبَ not يَذْهَبُ.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write three things you did yesterday, using ذَهَبْتُ (I went), شَرِبْتُ (I drank) or لَعِبْتُ (I played), with help from your verb table.",
+      "send": "SEND: verb cards in two colours (past, present). EAL: actions for each verb. Stretch: 'I went': ذَهَبْتُ (dhahabtu), adding ـتُ.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 Arabic curriculum map (2023-24), Spring 1 week 3 and the review (row 6 check)",
+        "Kitabi: past and present verbs (CHECK IN KITABI)",
+        "Verb table and unit check sheet (portal worksheet)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pen writing on paper notebook",
+          "alt": "A pen writing on paper (kataba)",
+          "for": "teach:2"
+        },
+        {
+          "find": "glass of milk",
+          "alt": "A glass of milk (shariba)",
+          "for": "teach:3"
+        }
+      ],
+      "duration": 45
     }
   ]
 }

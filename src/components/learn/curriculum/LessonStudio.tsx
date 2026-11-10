@@ -13,6 +13,7 @@ import { LESSON_COLUMNS, downloadDeck, fileNameFor, pathFor, saveBlob, yearLabel
 import { answerFeedback, loadFeedback, type LessonFeedback } from "@/lib/learn/lessonFeedback";
 import { BLOCKS } from "@/lib/learn/lessonSchema.mjs";
 
+import { askConfirm } from "@/components/learn/kit";
 // Edit a lesson directly on its slides (Tafweed T35). Every text box on the slide preview and in
 // the lesson plan is edited in place; Save stores the lesson exactly as the form editor does
 // (curriculum_save_lesson_content), then the quick build (workflow "Build one lesson") makes the
@@ -375,8 +376,8 @@ export function LessonStudio({
   const notesFor = (key: string) => notes.filter((f) => f.part === key && (f.status === "open" || f.status === "accepted")).length;
   const edit = mayEdit && !busy;
 
-  const close = () => {
-    if (dirty && !window.confirm("Close without saving your changes?")) return;
+  const close = async () => {
+    if (dirty && !(await askConfirm("Close without saving your changes?"))) return;
     onClose();
   };
 
@@ -751,7 +752,7 @@ export function LessonStudio({
             </button>
           )}
           {onOpenForm && mayEdit && (
-            <button type="button" className={btn} onClick={() => (!dirty || window.confirm("Open the full form without saving these changes?")) && onOpenForm()}>
+            <button type="button" className={btn} onClick={async () => (!dirty || (await askConfirm("Open the full form without saving these changes?"))) && onOpenForm()}>
               Full form
             </button>
           )}

@@ -8,6 +8,7 @@ import { SubmissionFeedback } from "@/components/learn/homework/SubmissionFeedba
 import { FILE_CATEGORY_LABEL, SUBMISSION_TYPE_LABEL, submissionFiles } from "@/lib/learn/homeworkFiles";
 import { attachmentsOf, describeAllowed, formatDue, formatEdited, type Homework } from "@/lib/learn/homework";
 
+import { askConfirm } from "@/components/learn/kit";
 export type { Homework } from "@/lib/learn/homework";
 
 type StatusRow = { child_id: string; status: string; submission_id: string | null };
@@ -117,7 +118,7 @@ export function HomeworkCard({
 
   const setArchived = async (on: boolean) => {
     if (!supabase) return;
-    if (on && !window.confirm(`Delete "${hw.title}"?\n\nPupils and families will no longer see it. Submissions, marks and feedback are kept, and you can restore it from "Show deleted".`)) return;
+    if (on && !(await askConfirm(`Delete "${hw.title}"?\n\nPupils and families will no longer see it. Submissions, marks and feedback are kept, and you can restore it from "Show deleted".`))) return;
     setBusy(true);
     setError(null);
     const { error: err } = await supabase.from("homework").update({ archived_at: on ? new Date().toISOString() : null }).eq("id", hw.id);

@@ -3,7 +3,7 @@
 import { Icon } from "@/components/learn/Icon";
 import Link from "next/link";
 
-import { useCallback, useEffect, useId, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnSession } from "@/lib/learn/session";
 import { Modal } from "@/components/learn/curriculum/Modal";
@@ -35,6 +35,8 @@ import {
   type CurriculumVersion,
 } from "@/lib/learn/curriculum";
 import { StatusChip, ui } from "@/components/learn/ui";
+import { useLessonPins } from "@/lib/learn/pins";
+import { ActionsMenu, WorkflowBadge, WorkspaceHeader, type MenuAction, type WorkflowStatus } from "@/components/learn/kit";
 import { allHubs, boardLabel, hubNodeLessons, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, syllabusFor } from "@/lib/learn/syllabusIndex";
 import { Select } from "@/components/learn/Select";
 
@@ -65,67 +67,22 @@ function yearFromName(name: string | null | undefined): string | null {
   return m && Number(m[1]) >= 1 && Number(m[1]) <= 11 ? `y${Number(m[1])}` : null;
 }
 
-/** Small drop-down menu of actions. */
-function ActionMenu({ label, items, align = "right" }: { label: React.ReactNode; items: { label: string; onClick: () => void; disabled?: boolean }[]; align?: "left" | "right" }) {
-  const [open, setOpen] = useState(false);
-  const id = useId();
-  useEffect(() => {
-    if (!open) return;
-    const close = (e: MouseEvent | KeyboardEvent) => {
-      if (e instanceof KeyboardEvent ? e.key === "Escape" : !(e.target as Element)?.closest?.(`[data-menu="${id}"]`)) setOpen(false);
-    };
-    document.addEventListener("mousedown", close);
-    document.addEventListener("keydown", close);
-    return () => {
-      document.removeEventListener("mousedown", close);
-      document.removeEventListener("keydown", close);
-    };
-  }, [open, id]);
-  return (
-    <div className="relative" data-menu={id}>
-      <button type="button" className={btn} aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
-        {label}
-      </button>
-      {open && (
-        <ul role="menu" className={`absolute z-20 mt-1 min-w-[15rem] rounded-xl border border-gold-light bg-white p-1 shadow-lg ${align === "right" ? "right-0" : "left-0"}`}>
-          {items.map((it) => (
-            <li key={it.label} role="none">
-              <button
-                type="button"
-                role="menuitem"
-                disabled={it.disabled}
-                onClick={() => {
-                  setOpen(false);
-                  it.onClick();
-                }}
-                className="block w-full rounded-lg px-3 py-2 text-left text-sm text-ink hover:bg-cream disabled:opacity-50"
-              >
-                {it.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-}
-
 type UnitGroup = { key: string; subject_slug: string; subject: string; board: string | null; unit: string; lessons: CurriculumLesson[] };
 type UnitTab = "lessons" | "spec" | "connections" | "revision" | "results";
 const FILTER_KEY = "tga-library-filters";
-type Signoff = { subject_slug: string; scope: "spec" | "lesson"; ref: string; status: "in_review" | "approved" | "changes_needed"; note: string | null; checked_name: string | null; checked_at: string };
-const SIGNOFF_LABEL: Record<Signoff["status"], string> = { in_review: "In review", approved: "Approved", changes_needed: "Changes needed" };
+type Signoff = { subject_slug: string; scope: "spec" | "lesson"; ref: string; status: WorkflowStatus; note: string | null; checked_name: string | null; checked_at: string };
+/** The one-step sign-off kept for spec units (lessons use the full review workflow in their workspace). */
+type LegacyStatus = "in_review" | "approved" | "changes_needed";
+const SIGNOFF_LABEL: Record<LegacyStatus, string> = { in_review: "In review", approved: "Approved", changes_needed: "Changes needed" };
+const isApproved = (s: Signoff | undefined) => s?.status === "approved" || s?.status === "published";
 const signKey = (slug: string, scope: string, ref: string) => `${slug}|${scope}|${ref}`;
 const when = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 
 /** A small chip showing who signed a unit or lesson off, or that nobody has yet. */
 function SignoffChip({ s }: { s: Signoff | undefined }) {
-  if (!s) return <span className="rounded-full bg-cream px-2 py-0.5 text-xs text-ink/65">Not signed off</span>;
-  const tone = s.status === "approved" ? "bg-teal-100 text-teal-900" : s.status === "changes_needed" ? "bg-red-100 text-red-900" : "bg-gold-100 text-gold-900";
   return (
-    <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${tone}`} title={s.note || undefined}>
-      {SIGNOFF_LABEL[s.status]}
-      {s.checked_name ? ` · ${s.checked_name}` : ""} · {when(s.checked_at)}
+    <span className="inline-flex items-center gap-1.5" title={s ? `${s.checked_name ? `${s.checked_name}, ` : ""}${when(s.checked_at)}${s.note ? `: ${s.note}` : ""}` : undefined}>
+      <WorkflowBadge status={s?.status} />
     </span>
   );
 }
@@ -133,7 +90,7 @@ function SignoffChip({ s }: { s: Signoff | undefined }) {
 /** Record a teacher's check of a specification unit or a lesson. Saved with their name and the date. */
 function SignoffDialog({ target, current, onClose, onDone }: { target: { slug: string; scope: "spec" | "lesson"; ref: string; label: string }; current: Signoff | undefined; onClose: () => void; onDone: () => void }) {
   const supabase = getSupabaseClient();
-  const [status, setStatus] = useState<Signoff["status"] | "">(current?.status || "approved");
+  const [status, setStatus] = useState<LegacyStatus | "">(current && current.status in SIGNOFF_LABEL ? (current.status as LegacyStatus) : "approved");
   const [note, setNote] = useState(current?.note || "");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -154,7 +111,7 @@ function SignoffDialog({ target, current, onClose, onDone }: { target: { slug: s
         </p>
         <fieldset className="space-y-1">
           <legend className="text-sm font-semibold text-ink">Result</legend>
-          {(Object.keys(SIGNOFF_LABEL) as Signoff["status"][]).map((k) => (
+          {(Object.keys(SIGNOFF_LABEL) as LegacyStatus[]).map((k) => (
             <label key={k} className="flex items-center gap-2 text-sm">
               <input type="radio" name="signoff-status" checked={status === k} onChange={() => setStatus(k)} />
               {SIGNOFF_LABEL[k]}
@@ -195,6 +152,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const supabase = getSupabaseClient();
   const { roles } = useLearnSession();
   const canEditLessons = roles.some((r) => r.role === "teacher" || r.role === "head_teacher" || r.role === "admin");
+  const { pinned, toggle: togglePin } = useLessonPins();
   const [editingLesson, setEditingLesson] = useState<CurriculumLesson | null>(null);
   // T34/T35: the click-to-edit lesson (optionally opened from a feedback note), feedback, and the Headteacher's queue.
   const isHead = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
@@ -353,7 +311,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   // Subjects, each with its units in teaching order.
   const allSubjects = useMemo(() => {
     const bySubject = new Map<string, { slug: string; name: string; units: Map<string, UnitGroup> }>();
-    (lessons || []).filter((l) => !approvedOnly || signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]?.status === "approved").forEach((l) => {
+    (lessons || []).filter((l) => !approvedOnly || isApproved(signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)])).forEach((l) => {
       const s = bySubject.get(l.subject_slug) || { slug: l.subject_slug, name: l.subject, units: new Map() };
       const u = l.unit || "Lessons";
       const k = unitKey(l.subject_slug, u);
@@ -487,79 +445,69 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     setOpenLesson(l.id);
   };
 
+  // One lesson in a unit (redesign, docs/portal-redesign.md): number, title and
+  // what it covers first; one obvious action (Open lesson, its workspace);
+  // previews as quiet text actions; everything occasional in the menu.
+  const lessonHref = (l: CurriculumLesson) => `/${area}/curriculum/lesson?id=${l.id}`;
   const lessonRow = (l: CurriculumLesson, showUnit = false) => {
     const expanded = openLesson === l.id;
+    const s = signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)];
+    const files = (Object.keys(KIND_LABEL) as LessonFileKind[]).filter((k) => pathFor(l, k));
+    const menu: MenuAction[] = [
+      ...((files.length ? [{ section: "Download", label: "" }, ...files.map((k) => ({ label: busyId === l.id + k ? "Downloading…" : KIND_LABEL[k], icon: "download", onSelect: () => download(l, k) }))] : []) as MenuAction[]),
+      { section: "Lesson", label: "" },
+      { label: pinned.has(l.id) ? "Unpin from my dashboard" : "Pin to my dashboard", icon: "star", onSelect: () => void togglePin(l.id) },
+      { label: "Share to a class", icon: "send", onSelect: () => setSharing(l), disabled: !l.deck_path },
+      { label: canEditLessons ? "Edit lesson" : "Look inside", icon: "pencil", onSelect: () => setStudio({ lesson: l }) },
+      { label: "Give feedback", icon: "messageSquarePlus", onSelect: () => setFeedbackFor({ lesson: l, part: "lesson" }) },
+      { label: "Review and approval", icon: "clipboardCheck", href: `${lessonHref(l)}#review` },
+      ...((canEditLessons ? [{ section: "More", label: "" }, { label: "Edit in the full form", icon: "fileText", onSelect: () => setEditingLesson(l) }, { label: "Upload my own slides", icon: "upload", onSelect: () => setReplacing(l) }] : []) as MenuAction[]),
+      { label: "Version history", icon: "refresh", onSelect: () => setHistory(l) },
+    ];
+    const objectives = l.objectives || [];
     return (
-      <li key={l.id} className="border-t border-gold-light/70 px-4 py-3 first:border-t-0">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-cream text-sm font-semibold tabular-nums text-ink">{l.lesson_no}</span>
-          <button type="button" onClick={() => setOpenLesson(expanded ? null : l.id)} aria-expanded={expanded} className="min-w-[12rem] flex-1 text-left">
-            <span className="block text-sm font-semibold text-ink">{l.title}</span>
-            <span className="block text-xs text-ink/65">
-              {showUnit ? `${l.subject} · ${l.unit || "Lessons"}` : ""}
-              {!showUnit && (l.objectives || []).length ? `${l.objectives.length} objective${l.objectives.length === 1 ? "" : "s"}` : ""}
-              {l.version > 1 && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 font-medium text-teal-900">{l.custom_deck ? "Own slides" : "Edited"} · v{l.version}</span>}
-              {l.rebuild_requested && <span className="ml-2 rounded-full bg-gold-100 px-2 py-0.5 font-medium text-gold-900">New slides on the way</span>}
-            </span>
-          </button>
-          <span className="flex items-center gap-1.5">
-            <SignoffChip s={signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]} />
-            <button type="button" className={btn} onClick={() => setSigning({ slug: l.subject_slug, scope: "lesson", ref: `${l.year}/${l.lesson_no}`, label: `${l.subject}, lesson ${l.lesson_no}: ${l.title}` })}>
-              Sign off
-            </button>
-          </span>
-          {l.deck_path ? (
-            <div className="flex flex-wrap items-center gap-1.5">
-              {l.pdf_path && (
-                <button type="button" className={btnPrimary} onClick={() => view(l, "slides-pdf")}>
-                  View slides
+      <li key={l.id} className="group border-t border-gold-light/70 first:border-t-0">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3.5 sm:flex-nowrap">
+          <span className="w-7 shrink-0 text-right text-sm font-semibold tabular-nums text-ink/45">{String(l.lesson_no).padStart(2, "0")}</span>
+          <div className="min-w-0 flex-1">
+            <Link href={lessonHref(l)} className="block text-[0.9375rem] font-semibold leading-snug text-ink hover:text-forest-700">
+              {l.title}
+            </Link>
+            <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink/60">
+              {showUnit && <span>{`${l.subject} · ${l.unit || "Lessons"}`}</span>}
+              {objectives.length > 0 && (
+                <button type="button" onClick={() => setOpenLesson(expanded ? null : l.id)} aria-expanded={expanded} className="hover:text-ink hover:underline">
+                  {objectives.length} learning objective{objectives.length === 1 ? "" : "s"}
                 </button>
               )}
-              {l.plan_pdf_path && (
-                <button type="button" className={btn} onClick={() => view(l, "plan-pdf")}>
-                  Lesson plan
-                </button>
-              )}
-              <ActionMenu
-                label={busyId?.startsWith(l.id) ? "Downloading…" : "Download"}
-                items={(Object.keys(KIND_LABEL) as LessonFileKind[]).filter((k) => pathFor(l, k)).map((k) => ({ label: KIND_LABEL[k], onClick: () => download(l, k) }))}
-              />
-              <button type="button" className={btn} onClick={() => setSharing(l)}>
-                Share to class
-              </button>
-              <button type="button" className={btn} onClick={() => setStudio({ lesson: l })}>
-                {canEditLessons ? "Edit lesson" : "Open lesson"}
-              </button>
-              <button type="button" className={btn} onClick={() => setFeedbackFor({ lesson: l, part: "lesson" })}>
-                Feedback
-              </button>
-              <ActionMenu
-                label={<span aria-label="More actions">⋯</span>}
-                items={[
-                  ...(canEditLessons ? [{ label: "Edit in the full form", onClick: () => setEditingLesson(l) }] : []),
-                  ...(canEditLessons ? [{ label: "Upload my own slides instead", onClick: () => setReplacing(l) }] : []),
-                  { label: "Version history", onClick: () => setHistory(l) },
-                ]}
-              />
-            </div>
-          ) : (
-            <span className="flex items-center gap-2 text-xs text-ink/65">
-              Slides not built yet
-              <button type="button" className={btn} onClick={() => setStudio({ lesson: l })}>
-                {canEditLessons ? "Edit lesson" : "Open lesson"}
-              </button>
-              <button type="button" className={btn} onClick={() => setFeedbackFor({ lesson: l, part: "lesson" })}>
-                Feedback
-              </button>
+              <SignoffChip s={s} />
+              {l.version > 1 && <span>{l.custom_deck ? "Own slides" : "Edited"} · v{l.version}</span>}
+              {l.rebuild_requested && <span className="text-gold-900">New slides on the way</span>}
             </span>
-          )}
+          </div>
+          <div className="flex shrink-0 items-center gap-1 pl-11 sm:pl-0">
+            {l.pdf_path && (
+              <button type="button" className={`hidden sm:inline-flex ${ui.btnLink} px-2`} onClick={() => view(l, "slides-pdf")}>
+                Slides
+              </button>
+            )}
+            {l.plan_pdf_path && (
+              <button type="button" className={`hidden sm:inline-flex ${ui.btnLink} px-2`} onClick={() => view(l, "plan-pdf")}>
+                Plan
+              </button>
+            )}
+            <Link href={lessonHref(l)} className={`${btn} ml-1`}>
+              Open lesson
+            </Link>
+            <ActionsMenu items={menu} label={`More actions for ${l.title}`} size="sm" />
+          </div>
         </div>
-        {expanded && (l.objectives || []).length > 0 && (
-          <ul className="ml-12 mt-2 list-disc space-y-0.5 pl-4 text-sm text-ink/80">
-            {l.objectives.map((o) => (
+        {expanded && objectives.length > 0 && (
+          <ol className="mb-3 ml-[3.75rem] mr-4 list-decimal space-y-0.5 pl-4 text-sm text-ink/80">
+            {objectives.map((o) => (
               <li key={o}>{o}</li>
             ))}
-          </ul>
+          </ol>
         )}
       </li>
     );
@@ -806,37 +754,59 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             ) : (
               current && (
                 <section aria-label={current.unit} className="space-y-3">
-                  <div className="rounded-2xl border border-gold-light bg-white p-4">
-                    <p className="text-xs text-ink/65">
-                      {current.subject}
-                      {current.board ? ` · ${current.board}` : ""}
-                    </p>
-                    <h2 className="text-h3 font-semibold text-ink">{current.unit}</h2>
-                    <div className="mt-2 flex flex-wrap items-center gap-2">
-                      <span className="text-xs text-ink/65">
-                        {current.lessons.length} lesson{current.lessons.length === 1 ? "" : "s"}
-                      </span>
-                      {currentPack && (
-                        <Link href={`/${area}/revision`} className="rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900 hover:bg-gold-300/60" title="Open the revision results">
-                          Revision pack · {currentPack.questions} quiz questions{currentPack.takers ? ` · ${currentPack.takers} pupils` : ""} →
-                        </Link>
-                      )}
-                      <span className="flex-1" />
-                      {current.lessons.length > 0 && (
-                        <ActionMenu
-                          label={busyId === `unit:${current.subject}:${current.unit}` ? "Preparing…" : "Download unit"}
-                          items={[
-                            { label: "Revision booklet (PDF)", onClick: () => downloadBooklet(current.lessons, current.unit) },
-                            { label: "PDFs: slides + lesson plans (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pdf", "plan-pdf"]) },
-                            { label: "PDFs: slides only (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pdf"]) },
-                            { label: "PDFs: lesson plans only (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["plan-pdf"]) },
-                            { label: "Editable: PowerPoint + Word (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pptx", "plan-docx"]) },
-                            { label: "Everything: PDFs + editable (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pdf", "plan-pdf", "slides-pptx", "plan-docx"]) },
-                          ]}
-                        />
-                      )}
-                    </div>
-                  </div>
+                  {(() => {
+                    const unitNo = current.unit.match(/\bunit\s*(\d+)/i)?.[1];
+                    const objectiveCount = current.lessons.reduce((n, l) => n + (l.objectives || []).length, 0);
+                    const reviews = current.lessons.map((l) => signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]);
+                    const approved = reviews.filter(isApproved).length;
+                    const waiting = reviews.filter((r) => r && (r.status === "submitted" || r.status === "in_review")).length;
+                    const dl = (label: string, kinds: LessonFileKind[]) => ({ label, icon: "download" as const, onSelect: () => downloadUnit(current.subject, current.unit, current.lessons, kinds) });
+                    const unitMenu: MenuAction[] = current.lessons.length
+                      ? [
+                          { section: "Download the unit", label: "" },
+                          { label: "Revision booklet (PDF)", icon: "download", onSelect: () => downloadBooklet(current.lessons, current.unit) },
+                          dl("Slides and plans (PDF, ZIP)", ["slides-pdf", "plan-pdf"]),
+                          dl("Slides only (PDF, ZIP)", ["slides-pdf"]),
+                          dl("Plans only (PDF, ZIP)", ["plan-pdf"]),
+                          dl("Editable: PowerPoint and Word (ZIP)", ["slides-pptx", "plan-docx"]),
+                          dl("Everything (ZIP)", ["slides-pdf", "plan-pdf", "slides-pptx", "plan-docx"]),
+                        ]
+                      : [];
+                    return (
+                      <WorkspaceHeader
+                        eyebrow={[{ label: current.subject }, { label: year ? yearLabel(year) : "" }]}
+                        title={current.unit.replace(/^(Autumn|Spring|Summer)\s*\d:\s*/i, "")}
+                        meta={
+                          <>
+                            {unitNo ? `Unit ${unitNo.padStart(2, "0")}` : (current.unit.match(/^(Autumn|Spring|Summer)\s*\d/i)?.[0] ?? "Unit")}
+                            {current.board ? ` · ${current.board}` : ""}
+                            {busyId === `unit:${current.subject}:${current.unit}` ? " · preparing download…" : ""}
+                          </>
+                        }
+                        status={
+                          currentPack ? (
+                            <Link href={`/${area}/revision`} className="text-xs font-medium text-forest-700 hover:underline" title="Open the revision results">
+                              Revision pack · {currentPack.questions} questions{currentPack.takers ? ` · ${currentPack.takers} pupils` : ""}
+                            </Link>
+                          ) : undefined
+                        }
+                        stats={[
+                          { value: String(current.lessons.length).padStart(2, "0"), label: current.lessons.length === 1 ? "Lesson" : "Lessons" },
+                          { value: String(objectiveCount).padStart(2, "0"), label: "Objectives" },
+                          { value: String(approved).padStart(2, "0"), label: "Approved" },
+                          { value: String(waiting).padStart(2, "0"), label: "Awaiting review" },
+                        ]}
+                        primary={
+                          current.lessons[0] ? (
+                            <Link href={lessonHref(current.lessons[0])} className={ui.btnPrimary}>
+                              Open first lesson
+                            </Link>
+                          ) : undefined
+                        }
+                        menu={unitMenu}
+                      />
+                    );
+                  })()}
                   <Tabs
                     items={[
                       { key: "lessons" as UnitTab, label: "Lessons", count: current.lessons.length },
@@ -864,7 +834,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                       subjectSlug={current.subject_slug}
                       unit={current.unit}
                       lessonCount={current.lessons.length}
-                      signedOff={current.lessons.filter((l) => signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]?.status === "approved").length}
+                      signedOff={current.lessons.filter((l) => isApproved(signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)])).length}
                       onChanged={load}
                       onBuild={() =>
                         setBuilding(currentPack ? { packId: currentPack.id } : { initial: { subject_slug: current.subject_slug, subject: current.subject, unit: current.unit } })
@@ -1400,7 +1370,7 @@ function ConnectionsPanel({ subject, unit, onOpenLesson }: { subject: string; un
   );
 }
 
-function ReplaceDialog({ lesson, onClose, onDone }: { lesson: CurriculumLesson; onClose: () => void; onDone: () => void }) {
+export function ReplaceDialog({ lesson, onClose, onDone }: { lesson: CurriculumLesson; onClose: () => void; onDone: () => void }) {
   const [pptx, setPptx] = useState<File | null>(null);
   const [pdf, setPdf] = useState<File | null>(null);
   const [note, setNote] = useState("");
@@ -1449,7 +1419,7 @@ function ReplaceDialog({ lesson, onClose, onDone }: { lesson: CurriculumLesson; 
   );
 }
 
-function HistoryDialog({ lesson, onClose, onChanged }: { lesson: CurriculumLesson; onClose: () => void; onChanged: () => void }) {
+export function HistoryDialog({ lesson, onClose, onChanged }: { lesson: CurriculumLesson; onClose: () => void; onChanged: () => void }) {
   const supabase = getSupabaseClient();
   const [versions, setVersions] = useState<CurriculumVersion[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -1504,7 +1474,7 @@ function HistoryDialog({ lesson, onClose, onChanged }: { lesson: CurriculumLesso
   );
 }
 
-function ShareDialog({ lesson, area, onClose, onDone }: { lesson: CurriculumLesson; area: "teach" | "admin"; onClose: () => void; onDone: (className: string) => void }) {
+export function ShareDialog({ lesson, area, onClose, onDone }: { lesson: CurriculumLesson; area: "teach" | "admin"; onClose: () => void; onDone: (className: string) => void }) {
   const supabase = getSupabaseClient();
   const [classes, setClasses] = useState<ClassOpt[] | null>(null);
   const [classId, setClassId] = useState("");

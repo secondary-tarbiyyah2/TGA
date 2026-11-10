@@ -19,6 +19,7 @@ import { MobileTabBar } from "@/components/learn/MobileTabBar";
 import { InstallAppSetup } from "@/components/learn/InstallApp";
 import { HubTabs } from "@/components/learn/PageHeader";
 import { ViewSettingsMenu } from "@/components/ViewSettings";
+import { ConfirmProvider } from "@/components/learn/kit";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -116,6 +117,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
+    <ConfirmProvider>
     <div className="portal min-h-screen">
       <ActivityRecorder />
       <InstallAppSetup />
@@ -160,5 +162,6 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
       </div>
       <MobileTabBar area={area} roles={roles.map((r) => r.role)} />
     </div>
+    </ConfirmProvider>
   );
 }

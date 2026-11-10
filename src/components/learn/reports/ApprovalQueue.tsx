@@ -7,6 +7,7 @@ import { ReportDocument } from "./ReportDocument";
 import { asNarrative } from "./summary";
 import { fmtDate } from "./data";
 
+import { askConfirm } from "@/components/learn/kit";
 type Item = {
   id: string;
   child_id: string;
@@ -66,7 +67,7 @@ export function ApprovalQueue({ me, onChanged }: { me: { id: string; name: strin
     const supabase = getSupabaseClient();
     if (!supabase || !me || ids.length === 0) return;
     const one = ids.length === 1 ? items?.find((x) => x.id === ids[0])?.children?.name : null;
-    if (!window.confirm(ids.length > 1 ? `Approve and issue ${ids.length} reports to families now?` : `Approve and issue ${one ? `${one}'s` : "this"} report to the family now?`)) return;
+    if (!(await askConfirm(ids.length > 1 ? `Approve and issue ${ids.length} reports to families now?` : `Approve and issue ${one ? `${one}'s` : "this"} report to the family now?`))) return;
     setBusy(true);
     setMsg(null);
     const { error } = await supabase.from("term_reports").update({ status: "released" }).in("id", ids);

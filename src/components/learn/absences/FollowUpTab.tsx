@@ -11,6 +11,7 @@ import { Modal, ReasonModal, modalFieldCls } from "./ReasonModal";
 import { formatDay, type Absence } from "./data";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type FStatus = "open" | "contacted" | "explained" | "escalated" | "closed";
 type Method = "call" | "sms" | "email";
 type Followup = {
@@ -264,8 +265,8 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
                     onContact={() => setContactRow(r)}
                     onExplain={() => setExplainRow(r)}
                     onEscalate={() => setEscalateRow(r)}
-                    onClose={() => {
-                      if (window.confirm(`Close the follow-up for ${r.abs.childName} without an explanation?`)) void setStatus(r, "closed", "Closed without an explanation.");
+                    onClose={async () => {
+                      if (await askConfirm(`Close the follow-up for ${r.abs.childName} without an explanation?`)) void setStatus(r, "closed", "Closed without an explanation.");
                     }}
                     onRetryNotify={() => void retryNotify(r)}
                   />

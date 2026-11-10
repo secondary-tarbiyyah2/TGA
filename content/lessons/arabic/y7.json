@@ -2,219 +2,520 @@
   "subject": "Arabic",
   "year": "y7",
   "board": "Pearson Edexcel (KS3 aligned to GCSE Arabic 1AA0)",
-  "source": "Drive: Curriculum/Arabic folder (GCSE-Arabic Scheme of Work, Pearson) and Secondary Lesson Plan - Arabic - Y8 (format, vocabulary approach and misconceptions); Edexcel GCSE Arabic (1AA0) themes as KS3 preparation",
+  "source": "Drive: Curriculum/Arabic folder (GCSE-Arabic Scheme of Work, Pearson) and Secondary Lesson Plan - Arabic - Y8 (format, vocabulary approach and misconceptions); Edexcel GCSE Arabic (1AA0) themes as KS3 preparation | Spring 1 2027 (lessons 1, 2, 9 to 16): founding-year bridge (11 Jan letters, vowels and signs; 18 Jan long vowels, greetings, days and months) and Spring 1 weeks 1 to 3 (numbers 1 to 20 and how many; colours; clothes, dictation and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3",
   "lessons": [
     {
-      "unit": "Unit 1: Meeting people",
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
       "n": 1,
-      "title": "Greetings and polite conversation",
-      "duration": 50,
+      "title": "Bridge: long vowels and greetings",
+      "bigQuestion": "How do Muslims greet each other, and why does it matter?",
       "objectives": [
-        "Use formal and informal greetings correctly",
-        "Hold a short polite conversation",
-        "Respond to greetings with adab"
+        "To understand how long vowels are written and how to greet and reply politely in Arabic"
       ],
+      "successCriteria": [
+        "All: read the long vowels ا و ي in words",
+        "Most: greet and reply for morning, evening and goodbye",
+        "Some: reply to a greeting with a better one"
+      ],
+      "crossCurricular": "PSHE: good manners and first impressions",
+      "smsc": "Social: spreading salam builds love and community",
       "keywords": [
         {
-          "term": "أَهْلًا وَسَهْلًا",
-          "def": "welcome"
+          "term": "حُرُوفُ المَدِّ (huruf al-madd)",
+          "def": "long vowel letters: ا و ي"
         },
         {
-          "term": "تَشَرَّفْنَا",
-          "def": "pleased to meet you"
+          "term": "اَلسَّلَامُ عَلَيْكُمْ (as-salamu 'alaykum)",
+          "def": "peace be upon you"
         },
         {
-          "term": "كَيْفَ حَالُكَ؟ / كَيْفَ حَالُكِ؟",
-          "def": "how are you? (to a boy / to a girl)"
+          "term": "صَبَاحُ الخَيْرِ (sabah al-khayr)",
+          "def": "good morning"
         },
         {
-          "term": "بِخَيْرٍ",
-          "def": "well, fine"
+          "term": "مَسَاءُ الخَيْرِ (masa' al-khayr)",
+          "def": "good evening"
         },
         {
-          "term": "الْحَمْدُ لِلَّهِ",
-          "def": "praise be to Allah"
-        },
-        {
-          "term": "مَعَ السَّلَامَةِ",
+          "term": "مَعَ السَّلَامَةِ (ma'a s-salamah)",
           "def": "goodbye"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Muslims all over the world greet with the same words. Why do you think one greeting matters so much?",
+        "a": "It is a du'a for peace; it unites Muslims; Allah tells us to return greetings well."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'When you are greeted with a greeting, greet with one better than it, or return it' (an-Nisa' 4:86).",
+        "at": "start"
+      },
       "starter": [
-        "Say 'I go to school' and 'she reads the book' in Arabic.",
-        "Give three question words in Arabic with English meanings.",
-        "Write the Arabic for 'my name is ...'."
+        {
+          "q": "Bismillah. How do we read كُتُب? A) kataba B) kutub",
+          "a": "B) kutub",
+          "mins": 1,
+          "options": [
+            "kataba",
+            "kutub"
+          ]
+        },
+        {
+          "q": "What does a shaddah do?",
+          "a": "Doubles the letter",
+          "mins": 1
+        },
+        {
+          "q": "Dictation: write قَلَمٌ.",
+          "a": "قَلَمٌ",
+          "mins": 2
+        }
       ],
       "teach": [
         {
-          "heading": "Bismillah and salaam",
-          "bullets": [
-            "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
-            "وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ",
-            "Reply with the same or better"
-          ],
-          "note": "Begin with bismillah. Qur'an 4:86: when greeted, reply with a better greeting or return it. Model the full greeting and reply. Ask why we add 'rahmatullah' (mercy of Allah). Pupils practise."
+          "heading": "Long vowels",
+          "table": {
+            "head": [
+              "Short",
+              "Long",
+              "Example"
+            ],
+            "rows": [
+              [
+                "بَ ba",
+                "بَا baa",
+                "بَاب (bab) door"
+              ],
+              [
+                "بُ bu",
+                "بُو buu",
+                "نُور (nur) light"
+              ],
+              [
+                "بِ bi",
+                "بِي bii",
+                "دِين (din) religion"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Hold the long vowel for two counts. The letter after the vowel (ا و ي) makes it long."
         },
         {
-          "heading": "Welcome and meeting",
-          "bullets": [
-            "أَهْلًا وَسَهْلًا - welcome",
-            "تَشَرَّفْنَا - pleased to meet you",
-            "أَهْلًا بِكَ / أَهْلًا بِكِ - welcome to you"
-          ],
-          "note": "Model: arrival of a guest. The -ka/-ki ending distinguishes male/female listener. Pupils use the correct ending for classmates. Misconception: mixing -ka and -ki; remind of ismuka/ismuki."
+          "heading": "Hear the difference",
+          "misconception": {
+            "wrong": "قَلَم and قَالَ sound the same",
+            "right": "قَلَم (qalam) has a short a; قَالَ (qala) has a long a written with ا"
+          },
+          "note": "Pupils hold up 1 finger for short, 2 for long as you read pairs."
         },
         {
-          "heading": "How are you?",
-          "bullets": [
-            "كَيْفَ حَالُكَ؟ - to a boy",
-            "كَيْفَ حَالُكِ؟ - to a girl",
-            "بِخَيْرٍ، الْحَمْدُ لِلَّهِ"
-          ],
-          "note": "Practise the question and responses. Add: وَأَنْتَ؟ (and you?). Model a short dialogue."
+          "heading": "Greetings and replies",
+          "table": {
+            "head": [
+              "Greeting",
+              "Reply"
+            ],
+            "rows": [
+              [
+                "اَلسَّلَامُ عَلَيْكُمْ",
+                "وَعَلَيْكُمُ السَّلَامُ"
+              ],
+              [
+                "صَبَاحُ الخَيْرِ (good morning)",
+                "صَبَاحُ النُّورِ"
+              ],
+              [
+                "مَسَاءُ الخَيْرِ (good evening)",
+                "مَسَاءُ النُّورِ"
+              ],
+              [
+                "كَيْفَ حَالُكَ؟",
+                "بِخَيْرٍ، وَالحَمْدُ لِلّٰهِ"
+              ],
+              [
+                "مَعَ السَّلَامَةِ (goodbye)",
+                "مَعَ السَّلَامَةِ / فِي أَمَانِ اللّٰهِ"
+              ]
+            ]
+          },
+          "note": "Spot the long vowels in each: سَلَام, صَبَاح, نُور."
         },
         {
-          "heading": "A short dialogue",
+          "heading": "A better reply",
           "bullets": [
-            "- السَّلَامُ عَلَيْكُمْ",
-            "- وَعَلَيْكُمُ السَّلَامُ. كَيْفَ حَالُكَ؟",
-            "- بِخَيْرٍ، الْحَمْدُ لِلَّهِ. وَأَنْتَ؟"
+            "اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ",
+            "وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهُ",
+            "Adding words follows an-Nisa' 4:86"
           ],
-          "note": "Read the dialogue as a class, then in pairs, swapping roles. Ask pupils to extend it with names and goodbye. Listen for pronunciation of ح and خ."
+          "note": "Pupils practise the full reply."
         },
         {
-          "heading": "Adab of speaking",
+          "heading": "Check",
           "bullets": [
-            "Greet first",
-            "Smile and look at the person",
-            "Speak kindly"
+            "Vote in the Teams poll"
           ],
-          "note": "Hadith: 'Whoever believes in Allah and the Last Day should speak good or keep silent' (Bukhari and Muslim). Link to politeness. Ask pupils what makes a good conversation partner."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "The reply to صَبَاحُ الخَيْرِ is:",
+            "options": [
+              "مَسَاءُ النُّورِ",
+              "صَبَاحُ النُّورِ",
+              "مَعَ السَّلَامَةِ"
+            ],
+            "answer": 1,
+            "why": "Morning greeting, morning reply: صَبَاحُ النُّورِ (morning of light)."
+          }
         }
       ],
       "practice": [
-        "Practise greeting and reply as a pair.",
-        "Choose -ka or -ki: كَيْفَ حَالُ___؟ (to a girl)",
-        "Role-play a meeting between two new students.",
-        "Correct the errors in the written dialogue."
-      ],
-      "independent": [
-        "Write a six-line dialogue with greeting, welcome, how are you and goodbye.",
-        "Record the dialogue with a partner.",
-        "Peer-assess pronunciation of ح and خ."
-      ],
-      "exit": [
-        "How do you say 'welcome' in Arabic?",
-        "How do you ask a girl 'how are you?'"
-      ],
-      "homework": "Write and rehearse a dialogue between you and a guest for the next lesson.",
-      "send": "SEND: dialogue cards with picture prompts. EAL: bilingual phrase bank. Stretch: add a formal dialogue with a teacher using اِسْمَحْ لِي / مِنْ فَضْلِكَ."
-    },
-    {
-      "unit": "Unit 1: Meeting people",
-      "n": 2,
-      "title": "Personal details and numbers 11-20",
-      "duration": 50,
-      "objectives": [
-        "Give your name, age, nationality and address in Arabic",
-        "Read and say numbers 11 to 20",
-        "Fill in a personal details form"
-      ],
-      "keywords": [
         {
-          "term": "الْعُنْوَانُ",
-          "def": "address"
+          "q": "Read and find the long vowel: نُور",
+          "a": "nur; the long vowel is و (uu)",
+          "mins": 2,
+          "model": "نُ = nu.\nThe و after a dammah makes it long: nuu.\nر = r.\nTogether: nur."
         },
         {
-          "term": "الْجِنْسِيَّةُ",
-          "def": "nationality"
+          "q": "Reply to مَسَاءُ الخَيْرِ.",
+          "a": "مَسَاءُ النُّورِ",
+          "mins": 1
         },
         {
-          "term": "الْعُمْرُ",
-          "def": "age"
-        },
-        {
-          "term": "إِحْدَى عَشْرَةَ سَنَةً",
-          "def": "eleven years (feminine noun)"
-        },
-        {
-          "term": "اثْنَتَا عَشْرَةَ سَنَةً",
-          "def": "twelve years"
-        },
-        {
-          "term": "أَسْكُنُ فِي",
-          "def": "I live in"
+          "q": "How do you say goodbye?",
+          "a": "مَعَ السَّلَامَةِ (ma'a s-salamah)",
+          "mins": 1
         }
       ],
+      "independent": [
+        {
+          "q": "Core: Write a six-line dialogue: salam and reply, how are you and reply, goodbye and reply.",
+          "a": "اَلسَّلَامُ عَلَيْكُمْ. وَعَلَيْكُمُ السَّلَامُ. كَيْفَ حَالُكَ؟ بِخَيْرٍ، وَالحَمْدُ لِلّٰهِ. مَعَ السَّلَامَةِ. مَعَ السَّلَامَةِ.",
+          "mins": 7,
+          "model": "Teacher writes the first two lines, reading them with a pupil."
+        },
+        {
+          "q": "Extend: Dictation: سَلَام، نُور، دِين، بَاب. Circle the long vowels.",
+          "a": "سَلَام (ا)، نُور (و)، دِين (ي)، بَاب (ا)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Perform your dialogue with a partner in a breakout room, using the better reply.",
+          "a": "Fluent dialogue with وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهُ",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which letter makes a long 'ii'? A) ا B) و C) ي",
+          "a": "C) ي",
+          "mins": 1,
+          "options": [
+            "ا",
+            "و",
+            "ي"
+          ]
+        },
+        {
+          "q": "Big question: how do Muslims greet each other, and why does it matter?",
+          "a": "With as-salamu 'alaykum; Allah tells us to return greetings with better (an-Nisa' 4:86), and it spreads peace.",
+          "mins": 2
+        }
+      ],
+      "homework": "Greet your family in Arabic every morning and evening this week; write the greetings in your book.",
+      "send": "SEND: greeting cards with replies on the back. EAL: transliteration and English on the cards. Stretch: explain why صَبَاحُ النُّورِ is a 'better' reply.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Autumn 2 essentials (bridge)",
+        "Portal arabic y7 lesson 1 (greetings and polite conversation), upgraded",
+        "Greeting cards and dictation sheet (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sunrise over desert",
+          "alt": "Morning sun (sabah)",
+          "for": "keywords"
+        },
+        {
+          "find": "evening sky sunset",
+          "alt": "Evening sky (masa')",
+          "for": "teach:3"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
+      "n": 2,
+      "title": "Numbers 1 to 20 and my age",
+      "bigQuestion": "How does Arabic build the numbers from 11 to 20?",
+      "objectives": [
+        "To understand how to say, read and write the numbers 1 to 20 and use them to give my age"
+      ],
+      "successCriteria": [
+        "All: count from 1 to 10 and read the digits ١ to ١٠",
+        "Most: say 11 to 20 using the pattern 'one-ten'",
+        "Some: give my age correctly: عُمْرِي اثْنَتَا عَشْرَةَ سَنَةً"
+      ],
+      "crossCurricular": "Maths: place value; the digits used in Britain spread to Europe from the Arabic-speaking world",
+      "smsc": "Cultural: Muslim mathematicians such as al-Khwarizmi and the spread of the number system",
+      "keywords": [
+        {
+          "term": "رَقْم (raqm)",
+          "def": "a digit, a number"
+        },
+        {
+          "term": "عَشَرَة ('asharah)",
+          "def": "ten"
+        },
+        {
+          "term": "أَحَدَ عَشَرَ (ahada 'ashar)",
+          "def": "eleven"
+        },
+        {
+          "term": "عِشْرُونَ ('ishrun)",
+          "def": "twenty"
+        },
+        {
+          "term": "عُمْرِي ('umri)",
+          "def": "my age"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In Arabic, 15 is 'five-ten' (خَمْسَةَ عَشَرَ). Which English numbers follow a similar pattern?",
+        "a": "The '-teen' numbers: fifteen is five + ten."
+      },
+      "islamicLink": {
+        "text": "Allah made the sun and moon so that we know the number of years and how to count time (Yunus 10:5). Counting in Arabic is a skill Muslims have used for prayer times, zakah and calendars.",
+        "at": "start"
+      },
       "starter": [
-        "Greet a classmate and ask how they are.",
-        "Say 'I am British' in Arabic.",
-        "Count from one to ten in Arabic."
+        {
+          "q": "Bismillah. Which is Friday? A) الجُمُعَة B) الخَمِيس",
+          "a": "A) الجُمُعَة",
+          "mins": 1,
+          "options": [
+            "الجُمُعَة",
+            "الخَمِيس"
+          ]
+        },
+        {
+          "q": "Say the Arabic for January.",
+          "a": "يَنَايِر (yanayir)",
+          "mins": 1
+        },
+        {
+          "q": "Count to five in Arabic.",
+          "a": "وَاحِد، اِثْنَان، ثَلَاثَة، أَرْبَعَة، خَمْسَة",
+          "mins": 2
+        }
       ],
       "teach": [
         {
-          "heading": "What do we say about ourselves?",
-          "bullets": [
-            "الاِسْمُ - name",
-            "الْعُمْرُ - age",
-            "الْجِنْسِيَّةُ - nationality"
-          ],
-          "note": "Show a form. Elicit questions: مَا اسْمُكَ؟ كَمْ عُمْرُكَ؟ مَا جِنْسِيَّتُكَ؟ Pupils match questions to categories. Introduce mā ('what') + word."
+          "heading": "1 to 10 (recap)",
+          "diagram": {
+            "centre": "١ to ١٠",
+            "items": [
+              "١ وَاحِد",
+              "٢ اِثْنَان",
+              "٣ ثَلَاثَة",
+              "٤ أَرْبَعَة",
+              "٥ خَمْسَة",
+              "٦ سِتَّة",
+              "٧ سَبْعَة",
+              "٨ ثَمَانِيَة"
+            ]
+          },
+          "note": "Begin with bismillah. Add ٩ تِسْعَة and ١٠ عَشَرَة aloud. Pupils show fingers."
         },
         {
-          "heading": "Numbers 11-20",
-          "bullets": [
-            "أَحَدَ عَشَرَ - 11",
-            "اثْنَا عَشَرَ - 12",
-            "ثَلَاثَةَ عَشَرَ - 13"
-          ],
-          "note": "Introduce numbers 11 to 15 first. Pattern: unit + عَشَرَ. Pupils write numerals ١١ ١٢ ١٣. Note that numbers 11-19 have two parts and the second part is always عَشَرَ."
+          "heading": "11 to 15",
+          "table": {
+            "head": [
+              "Digit",
+              "Arabic",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "١١",
+                "أَحَدَ عَشَرَ",
+                "ahada 'ashar"
+              ],
+              [
+                "١٢",
+                "اِثْنَا عَشَرَ",
+                "ithna 'ashar"
+              ],
+              [
+                "١٣",
+                "ثَلَاثَةَ عَشَرَ",
+                "thalathata 'ashar"
+              ],
+              [
+                "١٤",
+                "أَرْبَعَةَ عَشَرَ",
+                "arba'ata 'ashar"
+              ],
+              [
+                "١٥",
+                "خَمْسَةَ عَشَرَ",
+                "khamsata 'ashar"
+              ]
+            ]
+          },
+          "note": "Pattern: unit + عَشَرَ. 11 and 12 are special: أَحَدَ and اِثْنَا."
         },
         {
-          "heading": "More numbers",
-          "bullets": [
-            "أَرْبَعَةَ عَشَرَ - 14",
-            "خَمْسَةَ عَشَرَ - 15",
-            "عِشْرُونَ - 20"
-          ],
-          "note": "Add 16-19 (سِتَّةَ عَشَرَ ... تِسْعَةَ عَشَرَ). Pupils practise reading numerals aloud: ١٤، ١٥، ٢٠. Warning: for feminine counted nouns the unit changes (إِحْدَى). Teach only for age."
+          "heading": "16 to 20",
+          "table": {
+            "head": [
+              "Digit",
+              "Arabic",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "١٦",
+                "سِتَّةَ عَشَرَ",
+                "sittata 'ashar"
+              ],
+              [
+                "١٧",
+                "سَبْعَةَ عَشَرَ",
+                "sab'ata 'ashar"
+              ],
+              [
+                "١٨",
+                "ثَمَانِيَةَ عَشَرَ",
+                "thamaniyata 'ashar"
+              ],
+              [
+                "١٩",
+                "تِسْعَةَ عَشَرَ",
+                "tis'ata 'ashar"
+              ],
+              [
+                "٢٠",
+                "عِشْرُونَ",
+                "'ishrun"
+              ]
+            ]
+          },
+          "note": "20 is a new word: عِشْرُونَ."
         },
         {
           "heading": "My age",
           "bullets": [
-            "عُمْرِي إِحْدَى عَشْرَةَ سَنَةً",
-            "عُمْرِي اثْنَتَا عَشْرَةَ سَنَةً",
-            "عُمْرِي ثَلَاثَ عَشْرَةَ سَنَةً"
+            "كَمْ عُمْرُكَ؟ (kam 'umruka?) how old are you?",
+            "عُمْرِي اثْنَتَا عَشْرَةَ سَنَةً: I am twelve",
+            "عُمْرِي ثَلَاثَ عَشْرَةَ سَنَةً: I am thirteen"
           ],
-          "note": "Teach 11, 12, 13 as set phrases because 'sana' is feminine. Do not over-explain; say: for years we use the girl form. Pupils say their age. Model the sentence on the board."
+          "note": "سَنَة (year) is feminine, so the numbers change form. Learn your own age as a fixed phrase."
         },
         {
-          "heading": "Address and nationality",
+          "heading": "Check",
           "bullets": [
-            "أَسْكُنُ فِي لَنْدَنَ",
-            "أَنَا بِرِيطَانِيٌّ",
-            "أَنَا بِرِيطَانِيَّةٌ"
+            "Vote in the Teams poll"
           ],
-          "note": "Complete a personal profile. Pupils write four lines about themselves. Mention capital letters do not exist in Arabic. Check for gender agreement of nationality."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What is ١٧?",
+            "options": [
+              "سَبْعَةَ عَشَرَ",
+              "سِتَّةَ عَشَرَ",
+              "تِسْعَةَ عَشَرَ"
+            ],
+            "answer": 0,
+            "why": "١٧ is seven-ten: سَبْعَةَ عَشَرَ."
+          }
         }
       ],
       "practice": [
-        "Pupils ask each other 'What is your name?' and 'How old are you?' in Arabic.",
-        "Read the numerals ١١ to ١٥.",
-        "Complete a form with details.",
-        "Ask and answer three questions about yourself."
+        {
+          "q": "Say ١٤ in Arabic.",
+          "a": "أَرْبَعَةَ عَشَرَ (arba'ata 'ashar)",
+          "mins": 2,
+          "model": "١٤ is four and ten.\nFour: أَرْبَعَة, with -ata: أَرْبَعَةَ.\nAdd عَشَرَ: arba'ata 'ashar."
+        },
+        {
+          "q": "Write twenty in Arabic digits and words.",
+          "a": "٢٠ عِشْرُونَ",
+          "mins": 1
+        },
+        {
+          "q": "Ask a girl her age.",
+          "a": "كَمْ عُمْرُكِ؟ (kam 'umruki?)",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write a self-introduction (5-6 sentences).",
-        "Interview a partner and write down their details.",
-        "Match numbers 11-20 in numerals and words."
+        {
+          "q": "Core: Dictation of numbers: write the digits and words for 11, 13, 15, 18 and 20.",
+          "a": "١١ أَحَدَ عَشَرَ؛ ١٣ ثَلَاثَةَ عَشَرَ؛ ١٥ خَمْسَةَ عَشَرَ؛ ١٨ ثَمَانِيَةَ عَشَرَ؛ ٢٠ عِشْرُونَ",
+          "mins": 7,
+          "model": "Teacher says أَحَدَ عَشَرَ, writes ١١, then the words, sounding each letter."
+        },
+        {
+          "q": "Extend: Solve and write in Arabic words: ١٠ + ٦ = ? and ٢٠ − ٨ = ?",
+          "a": "سِتَّةَ عَشَرَ (16); اِثْنَا عَشَرَ (12)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write a short profile: name, age, where you live: اِسْمِي ... عُمْرِي ... أَسْكُنُ فِي ...",
+          "a": "For example: اِسْمِي سَارَةُ. عُمْرِي اثْنَتَا عَشْرَةَ سَنَةً. أَسْكُنُ فِي لَنْدَنَ.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "How do you say 'I am twelve years old' in Arabic?",
-        "What does الْجِنْسِيَّةُ mean?"
+        {
+          "q": "What is عِشْرُونَ? A) 12 B) 20 C) 10",
+          "a": "B) 20",
+          "mins": 1,
+          "options": [
+            "12",
+            "20",
+            "10"
+          ]
+        },
+        {
+          "q": "Big question: how does Arabic build 11 to 19?",
+          "a": "The unit number plus عَشَرَ (ten), e.g. خَمْسَةَ عَشَرَ = 15; 11 and 12 have special forms.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a profile of yourself: name, age, nationality, address, and one hobby.",
-      "send": "SEND: pre-filled form with word bank. EAL: bilingual number chart. Stretch: write a profile for a family member using هُوَ/هِيَ."
+      "homework": "Read the page numbers of a book aloud in Arabic up to 20, and write your age and two family members' ages in Arabic.",
+      "send": "SEND: number line ١ to ٢٠ with words. EAL: number cards with English. Stretch: count in twos to 20 in Arabic.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 1",
+        "Portal arabic y7 lesson 2 (personal details and numbers 11 to 20), upgraded",
+        "Number line ١ to ٢٠ and dictation sheet (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Eastern Arabic numerals",
+          "alt": "Arabic digits",
+          "for": "keywords"
+        },
+        {
+          "find": "al-Khwarizmi algebra manuscript page",
+          "alt": "A page from al-Khwarizmi's book on algebra",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 2: My family and me",
@@ -851,6 +1152,1997 @@
       ],
       "homework": "Redraft your paragraph and record yourself reading it aloud.",
       "send": "SEND: paragraph frame with sentence starters. EAL: bilingual criteria. Stretch: write a second paragraph about your friend using third-person forms."
+    },
+    {
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
+      "n": 9,
+      "title": "Bridge: the Arabic letters and how they join",
+      "bigQuestion": "Why do Arabic letters change shape?",
+      "objectives": [
+        "To understand how Arabic letters change shape at the start, middle and end of a word"
+      ],
+      "successCriteria": [
+        "All: write ب in its start, middle and end forms",
+        "Most: name the six letters that never join to the next letter",
+        "Some: join letters into a word and split a word into letters"
+      ],
+      "crossCurricular": "English: handwriting joins; Arabic, like joined-up English, links letters in a word",
+      "smsc": "Cultural: Arabic calligraphy as a great Muslim art",
+      "keywords": [
+        {
+          "term": "حَرْف (harf)",
+          "def": "a letter"
+        },
+        {
+          "term": "الحُرُوفُ الهِجَائِيَّةُ (al-huruf al-hija'iyyah)",
+          "def": "the 28 letters of the alphabet"
+        },
+        {
+          "term": "كَلِمَة (kalimah)",
+          "def": "a word"
+        },
+        {
+          "term": "إِمْلَاء (imla')",
+          "def": "dictation"
+        },
+        {
+          "term": "خَطّ (khatt)",
+          "def": "handwriting, calligraphy"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Arabic is written right to left and most letters hold hands with the next one. Which letters do you think refuse to hold hands, and why might that be?",
+        "a": "Six letters: ا د ذ ر ز و never join to the letter after them."
+      },
+      "islamicLink": {
+        "text": "The first revelation tells us that Allah 'taught by the pen, taught man what he did not know' (al-'Alaq 96:4-5). Writing Arabic well is a way to honour the language of the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. How many letters are in the Arabic alphabet? A) 26 B) 28 C) 30",
+          "a": "B) 28",
+          "mins": 1,
+          "options": [
+            "26",
+            "28",
+            "30"
+          ]
+        },
+        {
+          "q": "Which way is Arabic written?",
+          "a": "Right to left",
+          "mins": 1
+        },
+        {
+          "q": "Write any three Arabic letters you know.",
+          "a": "For example: ا ب ت",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Letters change shape",
+          "table": {
+            "head": [
+              "Alone",
+              "Start",
+              "Middle",
+              "End"
+            ],
+            "rows": [
+              [
+                "ب",
+                "بـ",
+                "ـبـ",
+                "ـب"
+              ],
+              [
+                "ع",
+                "عـ",
+                "ـعـ",
+                "ـع"
+              ],
+              [
+                "ه",
+                "هـ",
+                "ـهـ",
+                "ـه"
+              ],
+              [
+                "م",
+                "مـ",
+                "ـمـ",
+                "ـم"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Each letter has up to four forms. Most keep their 'head' and lose their 'tail' when joined."
+        },
+        {
+          "heading": "Letters that do not join forward",
+          "bullets": [
+            "ا د ذ ر ز و",
+            "They join to the letter before, never after",
+            "دَرْس (dars): د and ر stand apart from the next letter"
+          ],
+          "note": "Teach a memory phrase: 'six stubborn letters'. Show وَرْدَة (wardah, rose): و and ر break the word into pieces."
+        },
+        {
+          "heading": "Model: writing a word",
+          "model": {
+            "problem": "Write كَتَبَ (kataba, he wrote) from ك + ت + ب",
+            "steps": [
+              "ك at the start: كـ",
+              "ت in the middle: ـتـ",
+              "ب at the end: ـب",
+              "Join: كتب, then add the vowels: كَتَبَ"
+            ],
+            "answer": "كَتَبَ"
+          },
+          "note": "Write live on the Teams whiteboard or under the visualiser."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which letter never joins to the next letter?",
+            "options": [
+              "ب",
+              "ر",
+              "م",
+              "س"
+            ],
+            "answer": 1,
+            "why": "ر is one of the six: ا د ذ ر ز و."
+          }
+        },
+        {
+          "heading": "Dictation routine",
+          "bullets": [
+            "Listen twice, write once",
+            "Say the letters as you write",
+            "Check: dots, joins, vowels"
+          ],
+          "note": "From today every lesson has a short dictation (the school's Arabic intent). Words today: بَاب، دَرْس، قَلَم، وَرْدَة."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Join the letters: ق + ل + م",
+          "a": "قلم (qalam, pen)",
+          "mins": 2,
+          "model": "ق at the start: قـ.\nل in the middle: ـلـ.\nم at the end: ـم.\nJoined: قلم."
+        },
+        {
+          "q": "Split into letters: باب",
+          "a": "ب + ا + ب",
+          "mins": 1
+        },
+        {
+          "q": "Why is there a gap in دار?",
+          "a": "د and ا do not join to the next letter.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Dictation: write the four words the teacher reads (بَاب، دَرْس، قَلَم، وَرْدَة), then copy each three times neatly.",
+          "a": "بَاب، دَرْس، قَلَم، وَرْدَة",
+          "mins": 8,
+          "model": "Teacher reads بَاب, says the letters ب ا ب and writes it, pointing out that ا does not join forward."
+        },
+        {
+          "q": "Extend: Join: ك + ت + ا + ب and م + د + ر + س + ة.",
+          "a": "كتاب، مدرسة",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Find three words in Surah al-Ikhlas that have a non-joining letter.",
+          "a": "For example: أَحَد، الصَّمَدُ، يُولَدْ",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many forms can one Arabic letter have? A) 2 B) 4 C) 6",
+          "a": "B) 4 (alone, start, middle, end)",
+          "mins": 1,
+          "options": [
+            "2",
+            "4",
+            "6"
+          ]
+        },
+        {
+          "q": "Big question: why do Arabic letters change shape?",
+          "a": "Because letters join; their form depends on whether they are at the start, middle or end of a word.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write your name and three family names in Arabic letters, and list the non-joining letters you used.",
+      "send": "SEND: letter-form chart and tracing sheet. EAL: transliteration beside each word. Stretch (pupils who studied Arabic at KS2): write a full sentence from dictation: هٰذَا بَابٌ كَبِيرٌ.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Autumn 1 essentials (bridge)",
+        "Arabic Curriculum Intent (dictation and handwriting from week 1)",
+        "Letter-forms chart and handwriting sheet (portal worksheet)",
+        "Teams whiteboard or visualiser",
+        "Exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Arabic calligraphy thuluth",
+          "alt": "Arabic calligraphy",
+          "for": "hook"
+        },
+        {
+          "find": "reed pen qalam calligraphy",
+          "alt": "A reed pen (qalam)",
+          "for": "keywords"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
+      "n": 10,
+      "title": "Bridge: short vowels, sukun, shaddah and tanwin",
+      "bigQuestion": "How do the small marks above and below Arabic letters change how a word sounds?",
+      "objectives": [
+        "To understand how short vowels and signs tell us exactly how to read an Arabic word"
+      ],
+      "successCriteria": [
+        "All: read a letter with fathah, dammah and kasrah",
+        "Most: read words with sukun and shaddah",
+        "Some: read and write the three kinds of tanwin"
+      ],
+      "crossCurricular": "English: phonics, where letters and sounds are matched",
+      "smsc": "Spiritual: the signs (harakat) were added so that everyone could read the Qur'an correctly",
+      "keywords": [
+        {
+          "term": "فَتْحَة (fathah)",
+          "def": "a short 'a' mark above the letter"
+        },
+        {
+          "term": "ضَمَّة (dammah)",
+          "def": "a short 'u' mark above the letter"
+        },
+        {
+          "term": "كَسْرَة (kasrah)",
+          "def": "a short 'i' mark below the letter"
+        },
+        {
+          "term": "سُكُون (sukun)",
+          "def": "a small circle: no vowel"
+        },
+        {
+          "term": "شَدَّة (shaddah)",
+          "def": "a doubled letter"
+        },
+        {
+          "term": "تَنْوِين (tanwin)",
+          "def": "a double mark adding -n: -an, -un, -in"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "كتب can be read كَتَبَ (he wrote), كُتُب (books) or كُتِبَ (it was written). How could a reader know which one is meant?",
+        "a": "From the small vowel marks, or from the meaning of the sentence."
+      },
+      "islamicLink": {
+        "text": "Allah sent the Qur'an in clear Arabic (ash-Shu'ara' 26:195). Early Muslim scholars added dots and vowel marks to the mushaf so that new Muslims would not misread it.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Which letter does NOT join forward? A) د B) س C) ل",
+          "a": "A) د",
+          "mins": 1,
+          "options": [
+            "د",
+            "س",
+            "ل"
+          ]
+        },
+        {
+          "q": "Join: ب + ا + ب",
+          "a": "باب",
+          "mins": 1
+        },
+        {
+          "q": "Dictation: write دَرْس.",
+          "a": "دَرْس",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three short vowels",
+          "table": {
+            "head": [
+              "Mark",
+              "Name",
+              "Sound",
+              "Example"
+            ],
+            "rows": [
+              [
+                "بَ",
+                "fathah",
+                "ba",
+                "كَتَبَ (kataba)"
+              ],
+              [
+                "بُ",
+                "dammah",
+                "bu",
+                "كُتُب (kutub)"
+              ],
+              [
+                "بِ",
+                "kasrah",
+                "bi",
+                "بِنْت (bint)"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Pupils say ba, bu, bi with the mouth shapes: open, round, smile."
+        },
+        {
+          "heading": "Sukun and shaddah",
+          "bullets": [
+            "سُكُون ْ: no vowel: مِنْ (min), قُلْ (qul)",
+            "شَدَّة ّ: say it twice: رَبّ (rabb)",
+            "مُحَمَّد (Muhammad): the م is doubled"
+          ],
+          "note": "Pupils clap twice for a shaddah. Read: مُدَرِّس (mudarris, teacher)."
+        },
+        {
+          "heading": "Tanwin",
+          "table": {
+            "head": [
+              "Mark",
+              "Sound",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ـٌ",
+                "-un",
+                "كِتَابٌ (kitabun)"
+              ],
+              [
+                "ـً",
+                "-an",
+                "كِتَابًا (kitaban)"
+              ],
+              [
+                "ـٍ",
+                "-in",
+                "كِتَابٍ (kitabin)"
+              ]
+            ]
+          },
+          "note": "Tanwin marks a word as 'a' (indefinite). Note the extra alif with -an."
+        },
+        {
+          "heading": "Model: reading a word",
+          "model": {
+            "problem": "Read مُدَرِّسٌ",
+            "steps": [
+              "مُ: m + dammah = mu",
+              "دَ: d + fathah = da",
+              "رِّ: r + shaddah + kasrah = rri",
+              "سٌ: s + tanwin dammah = sun"
+            ],
+            "answer": "mudarrisun (a teacher)"
+          },
+          "note": "Build the word sound by sound, then say it smoothly."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "How do we read رَبّ?",
+            "options": [
+              "rab",
+              "rabb",
+              "rubb"
+            ],
+            "answer": 1,
+            "why": "Fathah on ر gives ra; the shaddah on ب doubles it: rabb."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read: قَلَمٌ",
+          "a": "qalamun (a pen)",
+          "mins": 2,
+          "model": "قَ = qa.\nلَ = la.\nمٌ = mun (tanwin dammah).\nTogether: qalamun."
+        },
+        {
+          "q": "Read: مِنْ",
+          "a": "min (from)",
+          "mins": 1
+        },
+        {
+          "q": "Which mark makes the letter double?",
+          "a": "شَدَّة (shaddah)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Dictation of six vowelled words (كَتَبَ، كُتُبٌ، مِنْ، رَبّ، مُدَرِّسٌ، بَابًا), then read them aloud to the teacher.",
+          "a": "كَتَبَ، كُتُبٌ، مِنْ، رَبّ، مُدَرِّسٌ، بَابًا",
+          "mins": 8,
+          "model": "Teacher reads كَتَبَ, writes ك ت ب, then adds three fathahs, saying ka-ta-ba."
+        },
+        {
+          "q": "Extend: Add the vowels you hear: محمد (Muhammad), مسجد (masjid).",
+          "a": "مُحَمَّد، مَسْجِد",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write كِتَاب with each tanwin and say when each might be used.",
+          "a": "كِتَابٌ، كِتَابًا، كِتَابٍ: they show the word's job in the sentence (subject, object, after a preposition)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which mark means 'no vowel'? A) fathah B) sukun C) kasrah",
+          "a": "B) sukun",
+          "mins": 1,
+          "options": [
+            "fathah",
+            "sukun",
+            "kasrah"
+          ]
+        },
+        {
+          "q": "Big question: how do the small marks change how a word sounds? Give one example.",
+          "a": "They give the vowels; e.g. كَتَبَ (kataba) and كُتُب (kutub) have the same letters but different vowels.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read five lines of your Qur'an reading slowly, naming each sign (fathah, dammah, kasrah, sukun, shaddah, tanwin) as you meet it.",
+      "send": "SEND: colour-coded vowel cards. EAL: sound cards with English letters. Stretch (KS2 Arabic): read a short unseen vowelled sentence: ذَهَبَ الوَلَدُ إِلَى المَسْجِدِ.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Autumn 1 essentials (bridge)",
+        "Arabic Curriculum Intent (dictation and handwriting from week 1)",
+        "Vowel and sign cards; dictation sheet (portal worksheet)",
+        "Mushaf or Qaidah",
+        "Exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Quran manuscript with vowel marks",
+          "alt": "An early mushaf page with vowel marks",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic diacritics harakat chart",
+          "alt": "Arabic vowel signs",
+          "for": "keywords"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
+      "n": 11,
+      "title": "Bridge: days of the week and months of the year",
+      "bigQuestion": "How do we say the date in Arabic?",
+      "objectives": [
+        "To understand how to name the days and months in Arabic and say today's day and month"
+      ],
+      "successCriteria": [
+        "All: say the seven days in order",
+        "Most: name the international months and three Hijri months",
+        "Some: say today's day and month in one sentence"
+      ],
+      "crossCurricular": "History: the Hijri calendar begins with the Prophet's ﷺ migration to Madinah",
+      "smsc": "Spiritual: Allah set the months for worship, such as Ramadan and Hajj",
+      "keywords": [
+        {
+          "term": "يَوْم (yawm)",
+          "def": "day"
+        },
+        {
+          "term": "أُسْبُوع (usbu')",
+          "def": "week"
+        },
+        {
+          "term": "شَهْر (shahr)",
+          "def": "month"
+        },
+        {
+          "term": "اليَوْمَ (al-yawma)",
+          "def": "today"
+        },
+        {
+          "term": "يَنَايِر (yanayir)",
+          "def": "January"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Today has two dates: one in January and one in an Islamic month. Why do Muslims need both calendars?",
+        "a": "The Hijri calendar for worship (Ramadan, Hajj); the international one for school and work."
+      },
+      "islamicLink": {
+        "text": "Allah says the number of months with Him is twelve, four of them sacred (at-Tawbah 9:36). The Hijri calendar counts from the Hijrah to Madinah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Reply to صَبَاحُ الخَيْرِ. A) صَبَاحُ النُّورِ B) مَسَاءُ النُّورِ",
+          "a": "A) صَبَاحُ النُّورِ",
+          "mins": 1,
+          "options": [
+            "صَبَاحُ النُّورِ",
+            "مَسَاءُ النُّورِ"
+          ]
+        },
+        {
+          "q": "Which letter makes a long 'uu'?",
+          "a": "و",
+          "mins": 1
+        },
+        {
+          "q": "Dictation: write نُور.",
+          "a": "نُور",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The days",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "الأَحَد",
+                "al-ahad",
+                "Sunday"
+              ],
+              [
+                "الاِثْنَيْن",
+                "al-ithnayn",
+                "Monday"
+              ],
+              [
+                "الثُّلَاثَاء",
+                "ath-thulatha'",
+                "Tuesday"
+              ],
+              [
+                "الأَرْبِعَاء",
+                "al-arbi'a'",
+                "Wednesday"
+              ],
+              [
+                "الخَمِيس",
+                "al-khamis",
+                "Thursday"
+              ],
+              [
+                "الجُمُعَة",
+                "al-jumu'ah",
+                "Friday"
+              ],
+              [
+                "السَّبْت",
+                "as-sabt",
+                "Saturday"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Sunday to Thursday come from the numbers one to five. Friday is the day of gathering (jumu'ah)."
+        },
+        {
+          "heading": "Months: January to June",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "يَنَايِر",
+                "yanayir",
+                "January"
+              ],
+              [
+                "فِبْرَايِر",
+                "fibrayir",
+                "February"
+              ],
+              [
+                "مَارِس",
+                "maris",
+                "March"
+              ],
+              [
+                "أَبْرِيل",
+                "abril",
+                "April"
+              ],
+              [
+                "مَايُو",
+                "mayu",
+                "May"
+              ],
+              [
+                "يُونْيُو",
+                "yunyu",
+                "June"
+              ]
+            ]
+          },
+          "note": "These names come from the English and French names, so they are easy to guess."
+        },
+        {
+          "heading": "Months: July to December",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "يُولْيُو",
+                "yulyu",
+                "July"
+              ],
+              [
+                "أَغُسْطُس",
+                "aghustus",
+                "August"
+              ],
+              [
+                "سِبْتَمْبِر",
+                "sibtambir",
+                "September"
+              ],
+              [
+                "أُكْتُوبَر",
+                "uktubar",
+                "October"
+              ],
+              [
+                "نُوفَمْبِر",
+                "nufambir",
+                "November"
+              ],
+              [
+                "دِيسَمْبِر",
+                "disambir",
+                "December"
+              ]
+            ]
+          },
+          "note": "Some Arab countries use other names (for example كَانُون الثَّانِي for January); we learn the common ones."
+        },
+        {
+          "heading": "Hijri months to know",
+          "bullets": [
+            "مُحَرَّم (Muharram): the first month",
+            "رَمَضَان (Ramadan): the ninth, the month of fasting",
+            "ذُو الحِجَّةِ (Dhu l-Hijjah): the twelfth, the month of Hajj"
+          ],
+          "note": "We are now in Sha'ban (شَعْبَان), the month before Ramadan."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is Thursday?",
+            "options": [
+              "الثُّلَاثَاء",
+              "الخَمِيس",
+              "السَّبْت"
+            ],
+            "answer": 1,
+            "why": "الخَمِيس comes from خَمْسَة, five: the fifth day."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: Today is Monday.",
+          "a": "اليَوْمَ يَوْمُ الاِثْنَيْنِ (al-yawma yawmu l-ithnayn)",
+          "mins": 2,
+          "model": "Start with اليَوْمَ (today).\nAdd يَوْمُ (the day of).\nAdd the day: الاِثْنَيْنِ."
+        },
+        {
+          "q": "Which month is فِبْرَايِر?",
+          "a": "February",
+          "mins": 1
+        },
+        {
+          "q": "Which Hijri month is the month of fasting?",
+          "a": "رَمَضَان",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write the seven days and twelve international months in Arabic (use the slides).",
+          "a": "الأَحَد ... السَّبْت; يَنَايِر ... دِيسَمْبِر",
+          "mins": 8,
+          "model": "Teacher writes الأَحَد and يَنَايِر, sounding each letter, then the class continues."
+        },
+        {
+          "q": "Extend: Write today's date in a sentence: اليَوْمَ يَوْمُ ... فِي شَهْرِ ...",
+          "a": "For example: اليَوْمَ يَوْمُ الاِثْنَيْنِ فِي شَهْرِ يَنَايِر.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write your birthday month and the Hijri month we are in now.",
+          "a": "For example: شَهْرُ مِيلَادِي مَايُو. نَحْنُ فِي شَهْرِ شَعْبَان.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is يَنَايِر? A) January B) June C) July",
+          "a": "A) January",
+          "mins": 1,
+          "options": [
+            "January",
+            "June",
+            "July"
+          ]
+        },
+        {
+          "q": "Big question: say today's day and month in Arabic.",
+          "a": "For example: اليَوْمَ يَوْمُ الاِثْنَيْنِ فِي شَهْرِ يَنَايِر.",
+          "mins": 2
+        }
+      ],
+      "homework": "Say the date in Arabic to someone at home each day this week; learn the months by heart.",
+      "send": "SEND: day and month cards to put in order. EAL: calendar with English beside each Arabic name. Stretch: learn all twelve Hijri months in order.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Autumn 2 essentials (bridge)",
+        "Day and month cards; Islamic calendar (portal worksheet)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wall calendar January",
+          "alt": "A wall calendar",
+          "for": "keywords"
+        },
+        {
+          "find": "crescent moon",
+          "alt": "A crescent moon: each Hijri month starts with it",
+          "for": "teach:4"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
+      "n": 12,
+      "title": "How many? Counting things with كَمْ",
+      "bigQuestion": "How do I ask and answer 'how many?' in Arabic?",
+      "objectives": [
+        "To understand how to ask how many with كَمْ and answer with a number and a noun"
+      ],
+      "successCriteria": [
+        "All: ask كَمْ ...؟ with a noun",
+        "Most: answer with 3 to 10 and a plural noun, e.g. عِنْدِي ثَلَاثَةُ كُتُبٍ",
+        "Some: answer with 11 to 20 and a singular noun, e.g. خَمْسَةَ عَشَرَ قَلَمًا"
+      ],
+      "crossCurricular": "Maths: counting and recording data in a tally",
+      "smsc": "Moral: being thankful for what we have and sharing it",
+      "keywords": [
+        {
+          "term": "كَمْ؟ (kam?)",
+          "def": "how many?"
+        },
+        {
+          "term": "عِنْدِي ('indi)",
+          "def": "I have"
+        },
+        {
+          "term": "عِنْدَكَ ('indaka)",
+          "def": "you have (to a boy)"
+        },
+        {
+          "term": "كُتُب (kutub)",
+          "def": "books (plural of كِتَاب)"
+        },
+        {
+          "term": "أَقْلَام (aqlam)",
+          "def": "pens (plural of قَلَم)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Count the books near you. Is it easy to say the number in Arabic? What else might change in the sentence?",
+        "a": "The noun changes too: after 3 to 10 it is plural; after 11 it is singular."
+      },
+      "islamicLink": {
+        "text": "Allah says that if you tried to count His blessings you could never count them all (Ibrahim 14:34). Counting what we have reminds us to say alhamdulillah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What is ١٥? A) خَمْسَةَ عَشَرَ B) خَمْسَة",
+          "a": "A) خَمْسَةَ عَشَرَ",
+          "mins": 1,
+          "options": [
+            "خَمْسَةَ عَشَرَ",
+            "خَمْسَة"
+          ]
+        },
+        {
+          "q": "Write twelve in Arabic digits.",
+          "a": "١٢",
+          "mins": 1
+        },
+        {
+          "q": "Plural of كِتَاب?",
+          "a": "كُتُب (kutub)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Asking how many",
+          "bullets": [
+            "كَمْ كِتَابًا عِنْدَكَ؟ (kam kitaban 'indaka?)",
+            "How many books do you have?",
+            "After كَمْ: one thing, ending -an"
+          ],
+          "note": "Begin with bismillah. The noun after كَمْ is singular with tanwin fathah."
+        },
+        {
+          "heading": "Answering: 3 to 10",
+          "table": {
+            "head": [
+              "Number",
+              "Noun (plural)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "عِنْدِي ثَلَاثَةُ",
+                "كُتُبٍ",
+                "I have three books"
+              ],
+              [
+                "عِنْدِي خَمْسَةُ",
+                "أَقْلَامٍ",
+                "I have five pens"
+              ],
+              [
+                "عِنْدِي عَشَرَةُ",
+                "دَفَاتِرَ",
+                "I have ten exercise books"
+              ]
+            ]
+          },
+          "note": "With 3 to 10 the noun is plural. These three nouns are masculine, so the number keeps its ة."
+        },
+        {
+          "heading": "Answering: 11 to 20",
+          "bullets": [
+            "عِنْدِي أَحَدَ عَشَرَ قَلَمًا: I have 11 pens",
+            "عِنْدِي عِشْرُونَ كِتَابًا: I have 20 books",
+            "11 and above: singular noun with -an"
+          ],
+          "note": "Most pupils: use the patterns as models. Most able: feminine nouns flip the number form: ثَلَاثُ سَيَّارَاتٍ."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is correct for 'I have four books'?",
+            "options": [
+              "عِنْدِي أَرْبَعَةُ كِتَابًا",
+              "عِنْدِي أَرْبَعَةُ كُتُبٍ",
+              "عِنْدِي أَرْبَعَةَ عَشَرَ كُتُبٍ"
+            ],
+            "answer": 1,
+            "why": "After 3 to 10 the noun is plural: كُتُبٍ."
+          }
+        },
+        {
+          "heading": "A tally in Arabic",
+          "chart": {
+            "kind": "bar",
+            "title": "Things on my desk",
+            "labels": [
+              "أَقْلَام",
+              "كُتُب",
+              "دَفَاتِر"
+            ],
+            "values": [
+              5,
+              3,
+              4
+            ]
+          },
+          "note": "Read the chart: كَمْ قَلَمًا؟ خَمْسَةُ أَقْلَامٍ. Pupils answer for books (ثَلَاثَةُ كُتُبٍ) and exercise books (أَرْبَعَةُ دَفَاتِرَ)."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer: كَمْ قَلَمًا عِنْدَكَ؟ (you have 6)",
+          "a": "عِنْدِي سِتَّةُ أَقْلَامٍ",
+          "mins": 2,
+          "model": "Start with عِنْدِي (I have).\n6 is between 3 and 10: سِتَّةُ.\nThen the plural noun: أَقْلَامٍ."
+        },
+        {
+          "q": "Ask a girl how many books she has.",
+          "a": "كَمْ كِتَابًا عِنْدَكِ؟",
+          "mins": 2
+        },
+        {
+          "q": "Say 'I have 15 pens'.",
+          "a": "عِنْدِي خَمْسَةَ عَشَرَ قَلَمًا",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count three kinds of things on your desk and write a question and answer for each (portal response box).",
+          "a": "For example: كَمْ قَلَمًا عِنْدَكَ؟ عِنْدِي أَرْبَعَةُ أَقْلَامٍ.",
+          "mins": 7,
+          "model": "Teacher counts books on their desk and writes: كَمْ كِتَابًا عِنْدَكَ؟ عِنْدِي ثَلَاثَةُ كُتُبٍ."
+        },
+        {
+          "q": "Extend: Translate: I have 8 books. I have 12 pens.",
+          "a": "عِنْدِي ثَمَانِيَةُ كُتُبٍ. عِنْدِي اثْنَا عَشَرَ قَلَمًا.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Use a feminine noun: I have three cars (سَيَّارَة).",
+          "a": "عِنْدِي ثَلَاثُ سَيَّارَاتٍ (the number loses ة with a feminine noun)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does كَمْ mean? A) how many B) where C) who",
+          "a": "A) how many",
+          "mins": 1,
+          "options": [
+            "how many",
+            "where",
+            "who"
+          ]
+        },
+        {
+          "q": "Big question: ask and answer 'how many pens?' in Arabic.",
+          "a": "كَمْ قَلَمًا عِنْدَكَ؟ عِنْدِي خَمْسَةُ أَقْلَامٍ.",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a tally of five kinds of things in your room and write a كَمْ question and answer for each.",
+      "send": "SEND: answer frame عِنْدِي ___ ___ with noun cards. EAL: picture cards for the nouns. Stretch: explain the 3 to 10 and 11 to 99 rules in English.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 1",
+        "Portal arabic y7 lesson 2 (numbers), for revision",
+        "Question and answer frame (portal worksheet)",
+        "Pens and books on the desk"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pile of exercise books",
+          "alt": "Exercise books (dafatir)",
+          "for": "keywords"
+        },
+        {
+          "find": "coloured pencils in a cup",
+          "alt": "Pens and pencils to count",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
+      "n": 13,
+      "title": "Colours: masculine and feminine forms",
+      "bigQuestion": "Why does a colour word in Arabic have two forms?",
+      "objectives": [
+        "To understand that Arabic colours have masculine and feminine forms and how they are made"
+      ],
+      "successCriteria": [
+        "All: name six colours in the masculine form",
+        "Most: give the feminine form, e.g. أَحْمَر → حَمْرَاء",
+        "Some: explain the pattern أَفْعَل → فَعْلَاء"
+      ],
+      "crossCurricular": "Art: primary and secondary colours",
+      "smsc": "Spiritual: the variety of colours in creation is a sign of Allah",
+      "keywords": [
+        {
+          "term": "لَوْن (lawn)",
+          "def": "colour"
+        },
+        {
+          "term": "أَحْمَر / حَمْرَاء (ahmar / hamra')",
+          "def": "red (m / f)"
+        },
+        {
+          "term": "أَزْرَق / زَرْقَاء (azraq / zarqa')",
+          "def": "blue (m / f)"
+        },
+        {
+          "term": "أَخْضَر / خَضْرَاء (akhdar / khadra')",
+          "def": "green (m / f)"
+        },
+        {
+          "term": "أَبْيَض / بَيْضَاء (abyad / bayda')",
+          "def": "white (m / f)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In English 'red' never changes. In Arabic a red pen and a red car need different words. Why might a language do that?",
+        "a": "Arabic adjectives agree with the noun's gender; قَلَم is masculine, سَيَّارَة is feminine."
+      },
+      "islamicLink": {
+        "text": "Allah says He brings out fruits of varying colours, and in the mountains are streaks of white and red of varying colours (Fatir 35:27). Colours are among His signs.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. كَمْ means: A) how many B) what",
+          "a": "A) how many",
+          "mins": 1,
+          "options": [
+            "how many",
+            "what"
+          ]
+        },
+        {
+          "q": "Say 'I have five pens'.",
+          "a": "عِنْدِي خَمْسَةُ أَقْلَامٍ",
+          "mins": 2
+        },
+        {
+          "q": "Is سَيَّارَة masculine or feminine?",
+          "a": "Feminine (ends in ة)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Colours",
+          "table": {
+            "head": [
+              "Masculine",
+              "Feminine",
+              "English"
+            ],
+            "rows": [
+              [
+                "أَحْمَرُ",
+                "حَمْرَاءُ",
+                "red"
+              ],
+              [
+                "أَزْرَقُ",
+                "زَرْقَاءُ",
+                "blue"
+              ],
+              [
+                "أَخْضَرُ",
+                "خَضْرَاءُ",
+                "green"
+              ],
+              [
+                "أَصْفَرُ",
+                "صَفْرَاءُ",
+                "yellow"
+              ],
+              [
+                "أَسْوَدُ",
+                "سَوْدَاءُ",
+                "black"
+              ],
+              [
+                "أَبْيَضُ",
+                "بَيْضَاءُ",
+                "white"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Hold up coloured objects; pupils say the masculine form."
+        },
+        {
+          "heading": "The pattern",
+          "model": {
+            "problem": "Make the feminine of أَحْمَر",
+            "steps": [
+              "Find the root letters: ح م ر",
+              "Masculine pattern أَفْعَل: أَحْمَر",
+              "Feminine pattern فَعْلَاء: حَمْرَاء"
+            ],
+            "answer": "حَمْرَاء (hamra')"
+          },
+          "note": "Every colour above follows the same pattern."
+        },
+        {
+          "heading": "Colours ending in ـِيّ",
+          "bullets": [
+            "بُنِّيّ / بُنِّيَّة (bunniyy / bunniyyah): brown",
+            "بُرْتُقَالِيّ / بُرْتُقَالِيَّة: orange",
+            "Feminine: add ة"
+          ],
+          "note": "These come from nouns: بُنّ (coffee beans), بُرْتُقَال (orange fruit)."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "The feminine of أَخْضَر is:",
+            "options": [
+              "أَخْضَرَة",
+              "خَضْرَاء",
+              "خُضْر"
+            ],
+            "answer": 1,
+            "why": "أَفْعَل → فَعْلَاء: خ ض ر gives خَضْرَاء."
+          }
+        },
+        {
+          "heading": "No tanwin on these colours",
+          "misconception": {
+            "wrong": "قَلَمٌ أَحْمَرٌ",
+            "right": "قَلَمٌ أَحْمَرُ: colours on the أَفْعَل and فَعْلَاء patterns never take tanwin"
+          },
+          "note": "Stretch point for most able; all pupils copy the correct form."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give the feminine of أَزْرَق.",
+          "a": "زَرْقَاء (zarqa')",
+          "mins": 2,
+          "model": "Root: ز ر ق.\nMasculine أَفْعَل: أَزْرَق.\nFeminine فَعْلَاء: زَرْقَاء."
+        },
+        {
+          "q": "What colour is أَصْفَر?",
+          "a": "yellow",
+          "mins": 1
+        },
+        {
+          "q": "Feminine of بُنِّيّ?",
+          "a": "بُنِّيَّة",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Copy and complete the table of six colours, masculine and feminine.",
+          "a": "أَحْمَر حَمْرَاء؛ أَزْرَق زَرْقَاء؛ أَخْضَر خَضْرَاء؛ أَصْفَر صَفْرَاء؛ أَسْوَد سَوْدَاء؛ أَبْيَض بَيْضَاء",
+          "mins": 7,
+          "model": "Teacher completes أَسْوَد → سَوْدَاء, showing the root س و د."
+        },
+        {
+          "q": "Extend: Dictation: write the colours the teacher reads: أَبْيَض، خَضْرَاء، أَزْرَق، صَفْرَاء.",
+          "a": "أَبْيَض، خَضْرَاء، أَزْرَق، صَفْرَاء",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: The colour of the dome of the Prophet's ﷺ Masjid is green. Which form (m or f) goes with قُبَّة (dome)? Write it.",
+          "a": "Feminine: قُبَّةٌ خَضْرَاءُ",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is the feminine of أَبْيَض? A) بَيْضَاء B) أَبْيَضَة",
+          "a": "A) بَيْضَاء",
+          "mins": 1,
+          "options": [
+            "بَيْضَاء",
+            "أَبْيَضَة"
+          ]
+        },
+        {
+          "q": "Big question: why does a colour have two forms in Arabic?",
+          "a": "Because adjectives agree with the noun's gender: masculine أَفْعَل, feminine فَعْلَاء.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find six coloured things at home and write each colour in the masculine and feminine form.",
+      "send": "SEND: colour cards with both forms. EAL: real coloured objects. Stretch: find the root letters of all six colours.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 2",
+        "Colour flashcards (portal worksheet)",
+        "Coloured objects for the camera"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "colour wheel",
+          "alt": "A colour wheel",
+          "for": "hook"
+        },
+        {
+          "find": "green dome Masjid an-Nabawi",
+          "alt": "The Green Dome in Madinah",
+          "for": "keywords"
+        },
+        {
+          "find": "coloured rock layers mountain",
+          "alt": "Rock layers of different colours",
+          "for": "teach:1"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
+      "n": 14,
+      "title": "Describing things with colours",
+      "bigQuestion": "How do I build a sentence that describes the colour of something?",
+      "objectives": [
+        "To understand how to place a colour after a noun so that it agrees in gender"
+      ],
+      "successCriteria": [
+        "All: say هٰذَا قَلَمٌ أَحْمَرُ",
+        "Most: choose the right form for masculine and feminine nouns",
+        "Some: describe with the definite: القَلَمُ أَحْمَرُ (the pen is red)"
+      ],
+      "crossCurricular": "English: adjective order (English puts colour before the noun; Arabic after)",
+      "smsc": "Social: describing things clearly helps others",
+      "keywords": [
+        {
+          "term": "صِفَة (sifah)",
+          "def": "an adjective, a describing word"
+        },
+        {
+          "term": "مَوْصُوف (mawsuf)",
+          "def": "the noun being described"
+        },
+        {
+          "term": "مُذَكَّر (mudhakkar)",
+          "def": "masculine"
+        },
+        {
+          "term": "مُؤَنَّث (mu'annath)",
+          "def": "feminine"
+        },
+        {
+          "term": "هٰذِهِ (hadhihi)",
+          "def": "this (feminine)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "English says 'a red car'. Arabic says 'a car red'. Which order seems more logical to you, and why?",
+        "a": "Arabic names the thing first, then describes it."
+      },
+      "islamicLink": {
+        "text": "Allah tells us that the variety of colours on the earth is a lesson for those who reflect (an-Nahl 16:13). Describing colours accurately trains us to notice His signs.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Feminine of أَحْمَر? A) حَمْرَاء B) أَحْمَرَة",
+          "a": "A) حَمْرَاء",
+          "mins": 1,
+          "options": [
+            "حَمْرَاء",
+            "أَحْمَرَة"
+          ]
+        },
+        {
+          "q": "What colour is أَسْوَد?",
+          "a": "black",
+          "mins": 1
+        },
+        {
+          "q": "Dictation: write زَرْقَاء.",
+          "a": "زَرْقَاء",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Noun first, colour second",
+          "compare": {
+            "left": {
+              "title": "Masculine",
+              "points": [
+                "هٰذَا قَلَمٌ أَحْمَرُ",
+                "This is a red pen"
+              ]
+            },
+            "right": {
+              "title": "Feminine",
+              "points": [
+                "هٰذِهِ سَيَّارَةٌ حَمْرَاءُ",
+                "This is a red car"
+              ]
+            },
+            "label": "agree"
+          },
+          "note": "Begin with bismillah. The colour copies the noun's gender."
+        },
+        {
+          "heading": "Model: a feminine noun",
+          "model": {
+            "problem": "This is a blue bag (حَقِيبَة).",
+            "steps": [
+              "حَقِيبَة ends in ة: feminine",
+              "So: هٰذِهِ, not هٰذَا",
+              "Blue feminine: زَرْقَاء",
+              "هٰذِهِ حَقِيبَةٌ زَرْقَاءُ"
+            ],
+            "answer": "هٰذِهِ حَقِيبَةٌ زَرْقَاءُ"
+          },
+          "note": "Talk through each choice."
+        },
+        {
+          "heading": "The thing is red",
+          "bullets": [
+            "القَلَمُ أَحْمَرُ (al-qalamu ahmaru): the pen is red",
+            "السَّيَّارَةُ بَيْضَاءُ: the car is white",
+            "al- on the noun, no al- on the colour: a full sentence"
+          ],
+          "note": "Compare: قَلَمٌ أَحْمَرُ (a red pen) and القَلَمُ أَحْمَرُ (the pen is red)."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is correct for 'this is a green book'?",
+            "options": [
+              "هٰذِهِ كِتَابٌ خَضْرَاءُ",
+              "هٰذَا كِتَابٌ أَخْضَرُ",
+              "هٰذَا أَخْضَرُ كِتَابٌ"
+            ],
+            "answer": 1,
+            "why": "كِتَاب is masculine: هٰذَا and أَخْضَرُ, colour after the noun."
+          }
+        },
+        {
+          "heading": "Sort: which colour form?",
+          "sort": {
+            "columns": [
+              "Masculine colour",
+              "Feminine colour"
+            ],
+            "cards": [
+              "قَلَم",
+              "سَيَّارَة",
+              "بَاب",
+              "حَقِيبَة",
+              "كِتَاب",
+              "طَاوِلَة",
+              "قَمِيص",
+              "وَرْدَة"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Pupils show 1 or 2 fingers for each noun."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: This is a white door (بَاب).",
+          "a": "هٰذَا بَابٌ أَبْيَضُ",
+          "mins": 2,
+          "model": "بَاب has no ة: masculine, so هٰذَا.\nWhite masculine: أَبْيَض.\nColour after the noun: هٰذَا بَابٌ أَبْيَضُ."
+        },
+        {
+          "q": "Say: This is a yellow flower (وَرْدَة).",
+          "a": "هٰذِهِ وَرْدَةٌ صَفْرَاءُ",
+          "mins": 2
+        },
+        {
+          "q": "Say: The table is brown.",
+          "a": "الطَّاوِلَةُ بُنِّيَّةٌ",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write five sentences describing things in your room with هٰذَا or هٰذِهِ and a colour.",
+          "a": "For example: هٰذَا كِتَابٌ أَزْرَقُ. هٰذِهِ حَقِيبَةٌ سَوْدَاءُ. هٰذَا بَابٌ أَبْيَضُ. هٰذِهِ طَاوِلَةٌ بُنِّيَّةٌ. هٰذَا قَلَمٌ أَحْمَرُ.",
+          "mins": 7,
+          "model": "Teacher holds up a black bag: feminine, so هٰذِهِ حَقِيبَةٌ سَوْدَاءُ."
+        },
+        {
+          "q": "Extend: Turn two of your sentences into 'the ... is ...' sentences.",
+          "a": "For example: الكِتَابُ أَزْرَقُ. الحَقِيبَةُ سَوْدَاءُ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Describe the flag of a Muslim country in Arabic (colours only).",
+          "a": "For example: عَلَمُ تُرْكِيَا أَحْمَرُ وَأَبْيَضُ.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Where does the colour go in Arabic? A) before the noun B) after the noun",
+          "a": "B) after the noun",
+          "mins": 1,
+          "options": [
+            "before the noun",
+            "after the noun"
+          ]
+        },
+        {
+          "q": "Big question: describe something near you with its colour in Arabic.",
+          "a": "For example: هٰذَا قَلَمٌ أَزْرَقُ.",
+          "mins": 2
+        }
+      ],
+      "homework": "Describe five things at home in Arabic sentences with colours; check the gender of each noun.",
+      "send": "SEND: two-colour frames: هٰذَا ___ ___ / هٰذِهِ ___ ___. EAL: noun picture cards. Stretch: two colours joined with وَ.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 2",
+        "Colour sentence frames and noun sort (portal worksheet)",
+        "Coloured objects for the camera"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "flag of Turkey",
+          "alt": "The flag of Turkey: red and white",
+          "for": "keywords"
+        },
+        {
+          "find": "yellow rose flower",
+          "alt": "A yellow rose (wardah safra')",
+          "for": "teach:5"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
+      "n": 15,
+      "title": "Clothes: naming and describing with a colour",
+      "bigQuestion": "How do I describe what I wear in Arabic?",
+      "objectives": [
+        "To understand how to name clothes and describe them with colours in sentences about what I wear"
+      ],
+      "successCriteria": [
+        "All: name six items of clothing",
+        "Most: say أَلْبَسُ ... (I wear ...) with an item",
+        "Some: add a colour that agrees: أَلْبَسُ قَمِيصًا أَبْيَضَ"
+      ],
+      "crossCurricular": "Design and technology: materials and fabrics for clothes",
+      "smsc": "Moral: modest, clean clothing and gratitude for what Allah provides",
+      "keywords": [
+        {
+          "term": "مَلَابِس (malabis)",
+          "def": "clothes"
+        },
+        {
+          "term": "قَمِيص (qamis)",
+          "def": "shirt"
+        },
+        {
+          "term": "ثَوْب (thawb)",
+          "def": "a long garment, thobe"
+        },
+        {
+          "term": "حِذَاء (hidha')",
+          "def": "shoe(s)"
+        },
+        {
+          "term": "مِعْطَف (mi'taf)",
+          "def": "coat"
+        },
+        {
+          "term": "أَلْبَسُ (albasu)",
+          "def": "I wear"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah calls one kind of clothing 'the best clothing'. What do you think it is?",
+        "a": "The clothing of taqwa, righteousness (al-A'raf 7:26)."
+      },
+      "islamicLink": {
+        "text": "Allah says He has sent down clothing to cover us and as adornment, 'but the clothing of righteousness: that is best' (al-A'raf 7:26).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'A red car' is: A) سَيَّارَةٌ حَمْرَاءُ B) سَيَّارَةٌ أَحْمَرُ",
+          "a": "A) سَيَّارَةٌ حَمْرَاءُ",
+          "mins": 1,
+          "options": [
+            "سَيَّارَةٌ حَمْرَاءُ",
+            "سَيَّارَةٌ أَحْمَرُ"
+          ]
+        },
+        {
+          "q": "Say 'this is a blue book'.",
+          "a": "هٰذَا كِتَابٌ أَزْرَقُ",
+          "mins": 2
+        },
+        {
+          "q": "Say ١٨ in Arabic.",
+          "a": "ثَمَانِيَةَ عَشَرَ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Clothes",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "قَمِيص",
+                "qamis",
+                "shirt"
+              ],
+              [
+                "ثَوْب",
+                "thawb",
+                "thobe, long garment"
+              ],
+              [
+                "سِرْوَال",
+                "sirwal",
+                "trousers"
+              ],
+              [
+                "حِذَاء",
+                "hidha'",
+                "shoe(s)"
+              ],
+              [
+                "مِعْطَف",
+                "mi'taf",
+                "coat"
+              ],
+              [
+                "جَوْرَب",
+                "jawrab",
+                "sock"
+              ],
+              [
+                "حِجَاب",
+                "hijab",
+                "headscarf"
+              ],
+              [
+                "قُبَّعَة",
+                "qubba'ah",
+                "hat, cap"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Pupils show one item on camera and name it."
+        },
+        {
+          "heading": "I wear",
+          "bullets": [
+            "أَلْبَسُ قَمِيصًا (albasu qamisan): I wear a shirt",
+            "أَلْبَسُ مِعْطَفًا فِي الشِّتَاءِ",
+            "After أَلْبَسُ: the item ends in -an"
+          ],
+          "note": "The item is the object of the verb, so it takes tanwin fathah."
+        },
+        {
+          "heading": "Model: adding a colour",
+          "model": {
+            "problem": "I wear a white thobe on Friday.",
+            "steps": [
+              "أَلْبَسُ (I wear)",
+              "ثَوْبًا (a thobe, object: -an)",
+              "أَبْيَضَ (white, masculine, object form, no tanwin)",
+              "يَوْمَ الجُمُعَةِ (on Friday)"
+            ],
+            "answer": "أَلْبَسُ ثَوْبًا أَبْيَضَ يَوْمَ الجُمُعَةِ"
+          },
+          "note": "Colours on the أَفْعَل pattern take fathah without tanwin."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What does أَلْبَسُ مِعْطَفًا mean?",
+            "options": [
+              "I wear a coat",
+              "I buy a coat",
+              "This is a coat"
+            ],
+            "answer": 0,
+            "why": "أَلْبَسُ = I wear; مِعْطَفًا = a coat."
+          }
+        },
+        {
+          "heading": "My clothes are ...",
+          "bullets": [
+            "قَمِيصِي أَزْرَقُ: my shirt is blue",
+            "حِذَائِي أَسْوَدُ: my shoes are black",
+            "قُبَّعَتِي حَمْرَاءُ: my cap is red (feminine)"
+          ],
+          "note": "Possessive -i (my) from Years 3 to 6; the colour agrees."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: I wear a black coat.",
+          "a": "أَلْبَسُ مِعْطَفًا أَسْوَدَ",
+          "mins": 2,
+          "model": "أَلْبَسُ.\nمِعْطَفًا (object).\nBlack masculine, object form: أَسْوَدَ."
+        },
+        {
+          "q": "Say: My shirt is white.",
+          "a": "قَمِيصِي أَبْيَضُ",
+          "mins": 2
+        },
+        {
+          "q": "What is جَوْرَب?",
+          "a": "sock",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write four sentences about what you wear for school and for the masjid (portal response box), with colours.",
+          "a": "For example: أَلْبَسُ قَمِيصًا أَبْيَضَ. أَلْبَسُ سِرْوَالًا أَسْوَدَ. أَلْبَسُ ثَوْبًا أَبْيَضَ لِلْمَسْجِدِ. أَلْبَسُ حِذَاءً أَسْوَدَ.",
+          "mins": 7,
+          "model": "Teacher writes: أَلْبَسُ قَمِيصًا أَزْرَقَ, labelling verb, item and colour."
+        },
+        {
+          "q": "Extend: Write what you wear in winter: فِي الشِّتَاءِ أَلْبَسُ ...",
+          "a": "For example: فِي الشِّتَاءِ أَلْبَسُ مِعْطَفًا وَقُبَّعَةً.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Describe one feminine item with a colour, e.g. a hat or a scarf.",
+          "a": "For example: أَلْبَسُ قُبَّعَةً زَرْقَاءَ. / قُبَّعَتِي زَرْقَاءُ.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is قَمِيص? A) shirt B) coat C) shoe",
+          "a": "A) shirt",
+          "mins": 1,
+          "options": [
+            "shirt",
+            "coat",
+            "shoe"
+          ]
+        },
+        {
+          "q": "Big question: describe what you are wearing now in one Arabic sentence.",
+          "a": "For example: أَلْبَسُ قَمِيصًا أَبْيَضَ.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write five sentences about clothes you wear in a week (school, masjid, winter), each with a colour.",
+      "send": "SEND: clothes picture cards (garments only, no people). EAL: word mat. Stretch: plural clothes with a colour: أَحْذِيَة سَوْدَاء (black shoes).",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 3",
+        "Clothes flashcards (garments only) and sentence frames (portal worksheet)",
+        "Pupils' own clothes items for the camera"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "white thobe on hanger",
+          "alt": "A white thobe on a hanger",
+          "for": "keywords"
+        },
+        {
+          "find": "winter coat on hanger",
+          "alt": "A coat (mi'taf)",
+          "for": "teach:2"
+        },
+        {
+          "find": "pair of black shoes",
+          "alt": "Black shoes",
+          "for": "teach:5"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
+      "n": 16,
+      "title": "Review, dictation and unit quiz",
+      "bigQuestion": "What can I now read, write and say in Arabic that I could not at the start of term?",
+      "objectives": [
+        "To understand what I have learnt this half term and show it in dictation and a unit quiz"
+      ],
+      "successCriteria": [
+        "All: write six dictated words correctly",
+        "Most: score at least half on the unit quiz",
+        "Some: write two full descriptive sentences without help"
+      ],
+      "crossCurricular": "English: proofreading for accuracy",
+      "smsc": "Moral: honesty in tests and pride in effort",
+      "keywords": [
+        {
+          "term": "مُرَاجَعَة (muraja'ah)",
+          "def": "review"
+        },
+        {
+          "term": "إِمْلَاء (imla')",
+          "def": "dictation"
+        },
+        {
+          "term": "اِخْتِبَار (ikhtibar)",
+          "def": "test, quiz"
+        },
+        {
+          "term": "صَحِيح (sahih)",
+          "def": "correct"
+        },
+        {
+          "term": "خَطَأ (khata')",
+          "def": "a mistake"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Think of the first lesson this term. What could you not do then that you can do now?",
+        "a": "Read vowelled words, count to 20, describe colours and clothes."
+      },
+      "islamicLink": {
+        "text": "Allah taught us to ask: 'My Lord, increase me in knowledge' (Ta Ha 20:114). We begin the quiz with this du'a.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What does أَلْبَسُ mean? A) I wear B) I have",
+          "a": "A) I wear",
+          "mins": 1,
+          "options": [
+            "I wear",
+            "I have"
+          ]
+        },
+        {
+          "q": "Feminine of أَسْوَد?",
+          "a": "سَوْدَاء",
+          "mins": 1
+        },
+        {
+          "q": "Which mark doubles a letter?",
+          "a": "شَدَّة (shaddah)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What we learnt",
+          "diagram": {
+            "centre": "Spring 1",
+            "items": [
+              "Letters and joins",
+              "Vowels and signs",
+              "Greetings",
+              "Days and months",
+              "Numbers 1 to 20, كَمْ",
+              "Colours m / f",
+              "Clothes, أَلْبَسُ"
+            ]
+          },
+          "note": "Begin with bismillah and the du'a. Quick-fire one question per bubble."
+        },
+        {
+          "heading": "Quiz tips",
+          "bullets": [
+            "Read every vowel",
+            "Check gender before choosing a colour",
+            "Leave no gaps: try every question"
+          ],
+          "note": "Remind pupils of common errors: tanwin on أَحْمَر, wrong number form."
+        },
+        {
+          "heading": "Model: a strong sentence",
+          "model": {
+            "problem": "Describe a school bag.",
+            "steps": [
+              "Noun: حَقِيبَة (feminine)",
+              "هٰذِهِ",
+              "Colour, feminine: سَوْدَاءُ",
+              "Add a number: فِيهَا خَمْسَةُ كُتُبٍ"
+            ],
+            "answer": "هٰذِهِ حَقِيبَةٌ سَوْدَاءُ، فِيهَا خَمْسَةُ كُتُبٍ."
+          },
+          "note": "Shows how several skills combine."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is correct?",
+            "options": [
+              "أَلْبَسُ قَمِيصًا أَبْيَضَ",
+              "أَلْبَسُ قَمِيصٌ أَبْيَضٌ",
+              "أَلْبَسُ أَبْيَضَ قَمِيصًا"
+            ],
+            "answer": 0,
+            "why": "Object with -an, colour after it in the object form without tanwin."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Dictation: write ثَوْب، حَمْرَاء، عِشْرُونَ.",
+          "a": "ثَوْب، حَمْرَاء، عِشْرُونَ",
+          "mins": 3,
+          "model": "Teacher reads ثَوْب twice, says ث و ب, writes it and adds the vowels.\nPupils write the next two alone."
+        },
+        {
+          "q": "Say: I have twelve pens.",
+          "a": "عِنْدِي اثْنَا عَشَرَ قَلَمًا",
+          "mins": 1
+        },
+        {
+          "q": "Reply to مَسَاءُ الخَيْرِ.",
+          "a": "مَسَاءُ النُّورِ",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (unit quiz, portal quiz or paper): 1) Dictation: مِعْطَف، أَزْرَق، سَبْعَة، الخَمِيس. 2) Write ١٥ and ٢٠ in words. 3) Feminine of أَبْيَض and أَخْضَر. 4) Label: قَمِيص، حِذَاء، جَوْرَب (shirt, shoe, sock). 5) Translate: This is a green bag.",
+          "a": "1) مِعْطَف، أَزْرَق، سَبْعَة، الخَمِيس 2) خَمْسَةَ عَشَرَ؛ عِشْرُونَ 3) بَيْضَاء؛ خَضْرَاء 4) قَمِيص shirt; حِذَاء shoe; جَوْرَب sock 5) هٰذِهِ حَقِيبَةٌ خَضْرَاءُ",
+          "mins": 15,
+          "model": "Teacher does question 4 for the first item: قَمِيص matches shirt, then pupils work alone."
+        },
+        {
+          "q": "Extend: Write three sentences about your clothes with colours and numbers.",
+          "a": "For example: عِنْدِي ثَلَاثَةُ قُمْصَانٍ. أَلْبَسُ قَمِيصًا أَبْيَضَ. حِذَائِي أَسْوَدُ.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Proofread and correct: هٰذَا سَيَّارَةٌ أَحْمَرٌ.",
+          "a": "هٰذِهِ سَيَّارَةٌ حَمْرَاءُ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Feminine of أَزْرَق? A) زَرْقَاء B) أَزْرَقَة",
+          "a": "A) زَرْقَاء",
+          "mins": 1,
+          "options": [
+            "زَرْقَاء",
+            "أَزْرَقَة"
+          ]
+        },
+        {
+          "q": "Big question: write one thing you can now do in Arabic that you could not before.",
+          "a": "For example: I can describe clothes with colours that agree.",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct any quiz mistakes in green pen and learn the words you got wrong for a re-check after the break.",
+      "send": "SEND: quiz with word banks and multiple choice for questions 2 and 3. EAL: pictures for question 4. Stretch: the extend and stretch tasks without the word bank.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 6 (dictation and unit quiz, taught in week 3)",
+        "Arabic Curriculum Intent (dictation and handwriting from week 1); unit quiz each half term",
+        "Unit quiz (portal quiz or printable)",
+        "Green pen for corrections"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pencil and paper test",
+          "alt": "A pencil on a test paper",
+          "for": "keywords"
+        },
+        {
+          "find": "open notebook with Arabic handwriting",
+          "alt": "Arabic handwriting in a notebook",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
     }
   ]
 }

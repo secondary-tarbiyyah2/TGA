@@ -57,6 +57,51 @@ Owner decisions, 9 Nov 2026:
 
 Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Studies / PSHE 1 (alternate weeks).
 
+## START HERE: handover (updated 9 Nov 2026, 17:30)
+Read this first; the sections further down are history.
+
+Live on main (merged and deployed): curriculum editor; syllabus v2 pages and pack; every subject aligned with the
+school's own files (Islamic Studies, Arabic, History, Geography, English, Maths, Science, Business, Computing, Art, PSHE,
+all primary subjects); owner decisions (no drawing people; PSHE relationships taught as law and citizenship; standard riba
+note); founding-year calendar (induction 4 to 8 Jan, live lessons from Mon 11 Jan, 20 weeks); slide builder v3 (#56,
+owner feedback: ponder hook, one objective, up to 3 criteria, pictures, polls, models, pupil PDF); lesson feedback and
+on-slide editing in the portal (#59); Tafweed website batch, pupils pages, Action centre, AI fix, revision packs,
+SENCo and SEND register, cover, security audit, policy outline, device requirement.
+
+Lessons written to v3 for Spring 1 (11 Jan to 8 Feb 2027) and merged: Maths Y1-11, English Y1-11, Science Y3-11,
+Islamic Studies Y1-11, Arabic Y3-11.
+
+Portal redesign (owner brief, 9 Nov 2026, evening): done first, before more lessons. PR #66 merged: design system,
+navigation, dashboards, lesson workspaces, review workflow (migration 0192), curriculum map, search. The plan, rules and
+what's left are in docs/portal-redesign.md; follow its design rules for every new page.
+
+Next, in this order (each one agent; briefs in docs/agent-briefs/):
+1. Spring 1 lessons still to write: Year 1-2 Topic and Year 1-2 science; History, Geography, Computing, Art and DT,
+   PSHE (Y1-11); Qur'an (Y1-11); Business and Computer Science options (Y10-11). (English Y7-11, Islamic Studies
+   Y1-11 and Arabic Y3-11 are done and merged.)
+2. Then Spring 2, Summer 1, Summer 2 the same way, subject by subject.
+3. Term resource lists (owner: "make those resources for everything"): for each term, list every resource the lessons
+   name; mark which come from the school's files, which the builder makes (pupil PDF/worksheet), and write the rest
+   (worksheets, revision sets, mock papers, printable graphs, knowledge organisers, writing frames) as printable PDFs
+   uploaded to the portal and linked from the lessons. Start with Spring 1.
+4. Consolidation pass (owner agreed): every old SOW, map and lesson marked keep / adapt / retire; retired lessons recorded in
+   content/retired-lessons.json and moved to an "Archive - do not teach from" area; renumber lessons into teaching order.
+5. Backlog docs/backlog/tafweed.md: T19 portal polish is folded into the redesign (docs/portal-redesign.md "Next"), T22 LADO (owner must say which local authority), T23 safeguarding mailbox (owner must create it in
+   Microsoft 365). Prospectus PDF still needs the tablet-or-printer line (tools: the prospectus patch script approach in
+   git history of public/prospectus).
+6. Small fixes: arrows (→) in poll options render as dashes (branch `builder-arrows-fix` may exist); make the website use
+   self-hosted fonts so builds don't fail when Google Fonts can't be reached.
+
+Owner's open questions (waiting on them): Kitabi book per primary Arabic topic; which pupils sit Arabic 1AA0 and where they
+take speaking; Khums framing in Islamic Studies; what the January Year 11 cohort has already covered; set-text suitability
+lists in each pack's "To confirm"; whether teacher puppets are allowed; the Year 8 hand study in Art; Cornerstones and White
+Rose logins (to check unit detail; credentials must never be written down anywhere).
+
+Working rules that matter: the owner is not a developer, wants plain English, no clarifying questions, work actually
+shipped (merge when checks pass, retry failures at once), small pushes, and this file kept current. Use GitHub REST via
+`gh api` (GraphQL is blocked). Migrations: take the next free number on origin/main just before merging. Run at most
+four or five agents at once (usage limits stop everything otherwise).
+
 ## Status
 
 ### Done
@@ -89,10 +134,6 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
   builds. **From now on the portal is the source of truth**: repo edits still flow in, but if a unit or lesson was
   also edited in the portal since the last sync, the portal's version wins. Before a big repo-side rewrite of a year
   (e.g. step 1 below), check the planner's "last change" line, or run the sync first.
-
-### In progress
-- In-portal curriculum editor: built, PR open from branch `curriculum-editor` (migration 0179), awaiting review and
-  merge. After merge: Deploy Supabase backend runs the migration, then the sync seeds the portal automatically.
 
 ### Lessons, slides and plans upgrade (owner request, 9 Nov 2026)
 Stages: (1) builder v2 on branch `lesson-builder-v2` (answers + answer-reveal slides, timers, online routines,
@@ -163,15 +204,9 @@ ready, and a device requirement (drawing tablet recommended; otherwise a printer
 information.
 
 ### Lessons status
+- 9 Nov 2026, English Years 7-11 Spring 1 (branch `lessons-english-ks34-s1`): 130 lessons for 11 Jan to 8 Feb 2027 (bridge weeks included), v3 rules. Upgraded / new: Y7 5/15; Y8 0/20; Y9 0/20; Y10 Language (4EB1) 3/12, Literature (4ET1) 0/10; Y11 Language (4EB1) 0/15 (revision cycle 1: Section A language and structure, writers' perspectives, Section B directed writing, Section C, then mock week), Literature (4ET1) 0/10 (anthology poems 1 to 16, unseen poetry, Of Mice and Men, then the Component 2 mock week). Y11 marks and AO splits checked against Pearson 4EB1 mark schemes; source texts and unseen poems are teacher-written originals. Also: the deck builder now keeps line breaks in quote blocks, so poems show their lines and stanzas. TO CONFIRM: which set texts each founding-year Year 11 pupil has studied.
 - 9 Nov 2026, Maths Years 7-11 Spring 1 (branch `lessons-maths-ks34-s1`): 100 lessons for 11 Jan to 8 Feb 2027 (bridge + Spring 1), v3 rules applied. Y7 4 upgraded, 16 new; Y8 20 new; Y9 5 upgraded, 15 new; Y10 12 upgraded, 8 new (4MA1); Y11 20 new (revision cycle 1 and mock week, 4MA1). Y10 and Y11 files now labelled 4MA1 (taught and examined). Uses v3 fields (ponder hook, item `model`, `pictures`, `islamicLink`), so validation passes only once `lesson-builder-v3` merges.
 - 9 Nov 2026, Science Years 3-11 Spring 1 (branch `lessons-science-s1`): 130 lessons for 11 Jan to 8 Feb 2027, v3 rules (ponder, one objective, Teams polls, I do models, pictures, Islamic foundation where Islam speaks to the topic), home practicals with written safety guides. Y3 10 new; Y4 4 upgraded, 6 new; Y5 10 new; Y6 10 new; Y7 15 new; Y8 7 upgraded, 8 new; Y9 6 upgraded, 9 new; Y10 (4SD0) 20 upgraded (bridge weeks + S1 w1 to w3), 5 new; Y11 (4SD0) 20 new revision lessons with own exam-style questions (mock week of 8 Feb not written as lessons). Y9 lessons 11 (composites) and 14 (LCA) are independent reading.
+- 9 Nov 2026, Islamic Studies Years 1-11 Spring 1 (branch `lessons-is-arabic-s1`): 74 lessons for 11 Jan to 8 Feb 2027 (bridge weeks included), v3 rules (ponder, one objective, Teams polls, I do models, pictures, islamicLink, set passages and 12-mark practice at KS4). Upgraded / new: Y1-2 3/3; Y3 3/2; Y4 4/1; Y5 3/2; Y6 1/4; Y7 3/7 (hadith and the Sunnah, unit quiz); Y8 8/2 (iman and the road to Madinah, zakah, unit quiz; week 5 sources of Shari'ah not timetabled); Y9 3/7 (Hudaybiyyah, conquest of Makkah, leadership, sawm); Y10 (4IS1) 5/5 (bridge 1.1 to 1.4, then 1.5 and 1.6 with a 12-mark lesson); Y11 (4IS1) 0/8 (fast-teach of Section B and 3.6 to 3.9 with portal lessons 8 to 34 as independent study; mock week of 8 Feb not written as lessons). Hadith cited only from Bukhari and Muslim or named collections without numbers; seerah-only reports are labelled as such; Shia content taught factually. TO CONFIRM: approved seerah and hadith texts; approved resources for Shia content; what the January Year 11 cohort has already covered.
+- 9 Nov 2026, Arabic Years 3-11 Spring 1 (branch `lessons-arabic-s1`): 70 lessons for 11 Jan to 8 Feb 2027 (bridge weeks included), v3 rules (ponder, one objective, Teams polls, I do models, pictures, islamicLink, Bismillah in starters). Upgraded / new: Y3 2/3; Y4 2/3; Y5 2/3; Y6 1/4 (one lesson a week); Y7 2/8 (bridge letters, vowels, greetings, days and months; numbers, colours, clothes, dictation and unit quiz); Y8 0/10 (bridge basics and About me; family, possessives, demonstratives, comparative, family paragraph and quiz); Y9 3/7 (bridge describing people, participles, town, weather; subjects, opinions, connectives, three tenses, informal email and quiz); Y10 7/3 (A1 and A2 core bridge, then 2.3 town and region, directions with the imperative, problems of my town, weather and unit quiz; Group A 4AA1 i'rab and summary tasks beside Group B 1AA0 speaking); Y11 3/7 (revision in theme order, 4AA1 summary and i'rab, 1AA0 conversation, role play and picture task, extended writing, mock week technique and review). Transliteration follows the syllabus style (hadha, ismi, 'id al-fitr). Kitabi readings for Years 4 and 6 (Basem in the village, the dialogues, the heater) are our own short texts until the Kitabi pages are checked; all KS4 texts are our own exam-style texts. TO CONFIRM: an Arabic specialist checks vowelling before delivery; Kitabi page references (CHECK IN KITABI); 4AA1 summary word limits against the current specification.
 
-### Work in flight (9 Nov 2026, 15:45), for whoever picks this up
-Branches pushed and unfinished (each is resumable; read its last commits):
-- `lesson-builder-v3`: slide builder v3 (owner feedback above). Not merged; needs owner sign-off of sample slides.
-- `lessons-maths-ks12-s1`, `lessons-english-ks12-s1`, `lessons-maths-ks34-s1`: Spring 1 founding-year lessons.
-- `claude/tafweed-T28-senco-cover` (T28 SENCO, T30 cover), `claude/tafweed-T21-policy-outline` (T21, T4, T5, T11),
-  `claude/tafweed-T20-security` (security audit), `claude/tafweed-lesson-feedback-editing` (lesson feedback, direct editing).
-Still to start: lessons for Science, humanities, Qur'an, Arabic, Islamic Studies, PSHE, Computing, Art, Business and English
-Years 7-11; term resource lists; consolidation register; T29 dropdowns and emojis; T19 portal polish; device requirement
-(drawing tablet recommended, otherwise a printer).
