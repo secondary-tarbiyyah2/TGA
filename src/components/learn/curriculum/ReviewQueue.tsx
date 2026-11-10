@@ -87,7 +87,7 @@ export function ReviewQueue({ area }: { area: "teach" | "admin" }) {
                 <li key={`${i.subject_slug}|${i.ref}`}>
                   {i.lesson ? (
                     <Link href={`/${area}/curriculum/lesson?id=${i.lesson.id}#review`} className="flex flex-wrap items-center gap-x-4 gap-y-1 px-4 py-3 hover:bg-cream sm:flex-nowrap">
-                      <span className="min-w-0 flex-1">
+                      <span className="min-w-[min(100%,16rem)] flex-1">
                         <span className="block text-sm font-semibold text-ink">{i.lesson.title}</span>
                         <span className="block text-xs text-ink/60">
                           {i.lesson.subject} · {yearLabel(i.lesson.year)} · lesson {i.lesson.lesson_no}
@@ -96,7 +96,7 @@ export function ReviewQueue({ area }: { area: "teach" | "admin" }) {
                         {i.status === "changes_needed" && i.note && <span className="mt-1 block text-xs text-red-800">{i.note}</span>}
                         {i.changed_since_approval && <span className="mt-1 block text-xs text-amber-900">Changed after approval</span>}
                       </span>
-                      <span className="flex shrink-0 items-center gap-3 text-xs text-ink/60">
+                      <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink/60 sm:shrink-0">
                         <WorkflowBadge status={i.status} />
                         <span>{i.submitted_name ? `${i.submitted_name}, ${when(i.submitted_at)}` : when(i.checked_at)}</span>
                       </span>

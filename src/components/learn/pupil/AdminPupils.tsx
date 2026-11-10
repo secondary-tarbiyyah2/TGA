@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { PageHeader } from "@/components/learn/PageHeader";
+import { WorkspaceHeader } from "@/components/learn/kit";
 import { DataTable, type Column } from "@/components/learn/DataTable";
 import { Icon } from "@/components/learn/Icon";
 import { Button, IconButton, Notice, StatusChip, ui } from "@/components/learn/ui";
@@ -340,16 +340,28 @@ export function AdminPupils() {
 
   return (
     <>
-      <PageHeader
-        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Pupils" }]}
-        title="Pupils"
-        subtitle="Click a pupil for their full record: details, medical, support, attendance, behaviour, reports and entry assessment."
-        action={
-          <Button variant="primary" icon="userRoundPlus" onClick={() => setAdding(true)}>
-            Add pupil
-          </Button>
-        }
-      />
+      <div className="mb-6">
+        <WorkspaceHeader
+          eyebrow={[{ label: "Home", href: "/admin/dashboard" }, { label: "Pupils" }]}
+          title="Pupils"
+          description="Click a pupil for their full record: details, medical, support, attendance, behaviour, reports and entry assessment."
+          stats={
+            pupils
+              ? [
+                  { value: summary.all, label: summary.all === 1 ? "pupil" : "pupils" },
+                  { value: summary.missing, label: "missing details" },
+                  { value: summary.alerts, label: "medical alerts" },
+                  { value: summary.support, label: "support plans" },
+                ]
+              : undefined
+          }
+          primary={
+            <Button variant="primary" icon="userRoundPlus" onClick={() => setAdding(true)}>
+              Add pupil
+            </Button>
+          }
+        />
+      </div>
       {error && (
         <div className="mb-4">
           <Notice tone="bad">Some of this couldn&apos;t load: {error}</Notice>

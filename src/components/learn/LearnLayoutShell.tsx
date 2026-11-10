@@ -128,10 +128,12 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
           <div className="flex h-[60px] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
             <Link href={homeHref} className="flex shrink-0 items-center lg:hidden" aria-label="Tarbiyyah Global Academy, your dashboard">
-              <Image src="/brand/ga-wordmark.png" alt="" width={110} height={33} priority className="h-[33px] w-[110px] max-w-none object-contain" />
+              {/* Very narrow phones (360px) get the square mark, so every top-bar button still fits. */}
+              <Image src="/brand/ga-wordmark.png" alt="" width={110} height={33} priority className="h-[33px] w-[110px] max-w-none object-contain max-[419px]:hidden" />
+              <Image src="/brand/ga-logo-square.png" alt="" width={34} height={34} className="hidden h-[34px] w-[34px] max-w-none object-contain max-[419px]:block" />
             </Link>
 
-            <div className="ml-auto flex items-center gap-1">
+            <div className="ml-auto flex items-center gap-0.5 sm:gap-1">
               <CommandPalette area={area} roles={roles.map((r) => r.role)} />
               <ClockChip userId={activeSession.user.id} roles={roles} />
               <ViewSettingsMenu variant="portal" />

@@ -2,7 +2,7 @@
   "subject": "Computing",
   "year": "y8",
   "board": "National Curriculum (aligned to Edexcel GCSE Computer Science 1CP2)",
-  "source": "Drive 'Computing Overview' Year 8 scheme and Compute-IT Year 8 (My Digital World: How to search smart, Copyrights and Copywrongs, Staying safe online, Evidence cyber abuse), National Curriculum KS3, aligned to Edexcel GCSE Computer Science 1CP2",
+  "source": "Drive 'Computing Overview' Year 8 scheme and Compute-IT Year 8 (My Digital World: How to search smart, Copyrights and Copywrongs, Staying safe online, Evidence cyber abuse), National Curriculum KS3, aligned to Edexcel GCSE Computer Science 1CP2 | Spring 1 2027 (lessons 3, 5 to 8, v3): Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (binary, safety and Boolean logic); CircuitVerse; building to Pearson Edexcel 4CP0",
   "lessons": [
     {
       "unit": "Unit 1: My Digital World",
@@ -184,95 +184,244 @@
       "send": "SEND/EAL: provide a sorting task (legal / not legal) with pictures and key words. Stretch: debate whether copyright laws are fair when someone cannot afford to buy a book or an app."
     },
     {
-      "unit": "Unit 1: My Digital World",
+      "unit": "Spring 1: Binary, safety and Boolean logic",
       "n": 3,
-      "title": "Staying safe online",
+      "title": "Staying safe online: risks, cyber abuse and keeping evidence",
       "duration": 50,
+      "bigQuestion": "If someone sends you something hurtful in a group chat and then deletes it, has it really gone?",
       "objectives": [
-        "Identify risks such as phishing, scams, grooming and oversharing",
-        "Describe strategies to stay safe online",
-        "Explain how to protect personal data and accounts"
+        "To understand how to protect our accounts and respond to cyber abuse safely and lawfully"
       ],
+      "successCriteria": [
+        "All: name three online risks and one way to protect against each",
+        "Most: describe how to collect evidence and report cyber abuse",
+        "Some: explain how UK law and Islamic teaching both protect people from online abuse"
+      ],
+      "crossCurricular": "Citizenship: the Malicious Communications Act 1988 and the Protection from Harassment Act 1997",
+      "smsc": "Moral: safety of others from our words and actions online",
       "keywords": [
         {
           "term": "phishing",
           "def": "a fake message that tricks you into giving private information"
         },
         {
-          "term": "personal data",
-          "def": "information that can identify a person"
-        },
-        {
           "term": "two-factor authentication",
-          "def": "using two proofs of identity to log in"
+          "def": "logging in with two proofs, such as a password and a code"
         },
         {
-          "term": "scam",
-          "def": "a trick to cheat people out of money or information"
+          "term": "cyber abuse",
+          "def": "using technology to threaten, harass or humiliate someone"
+        },
+        {
+          "term": "evidence",
+          "def": "proof such as screenshots, dates and usernames"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If someone sends you something hurtful in a group chat and then deletes it, has it really gone?",
+        "a": "Others may have seen, saved or screenshotted it; and you can keep evidence too before it is deleted."
+      },
+      "islamicLink": {
+        "text": "Allah forbids mocking others and calling them offensive names (al-Hujurat 49:11) and forbids spying and backbiting (al-Hujurat 49:12). The Prophet ﷺ said that a Muslim is the one from whose tongue and hand other Muslims are safe (al-Bukhari and Muslim). Our keyboards are part of our hands and tongues.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name one rule for a strong password.",
-        "What information is it unsafe to share with strangers online?",
-        "Have you ever received a message that did not seem right? What made you suspicious?"
+        {
+          "q": "What is a strong password made from?",
+          "a": "Three random words, ideally with numbers or symbols.",
+          "mins": 1,
+          "options": [
+            "Your name and birthday",
+            "Three random words",
+            "123456"
+          ]
+        },
+        {
+          "q": "What is personal information?",
+          "a": "Information that identifies you, such as your address or date of birth.",
+          "mins": 1
+        },
+        {
+          "q": "Name one sign that a message might be fake.",
+          "a": "Urgency, a strange link, spelling mistakes or a request for a password.",
+          "mins": 1
+        },
+        {
+          "q": "Who can you tell if something online worries you?",
+          "a": "A parent, a teacher or the school's safeguarding lead.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Common online risks",
+          "heading": "Risks and protections",
           "bullets": [
-            "Phishing emails and texts.",
-            "Scams and fake prizes.",
-            "Oversharing personal data.",
-            "Contact from strangers."
+            "Phishing: check before you click",
+            "Weak passwords: use three random words",
+            "Oversharing: think before you post"
           ],
-          "note": "Cover risks calmly without scaring pupils. Show a sample phishing email, with clues like urgent language, a strange sender address and spelling mistakes. Ask pupils to circle the clues."
+          "note": "Calm, practical tone. School staff never ask for passwords; never post one in Teams chat.",
+          "table": {
+            "head": [
+              "Risk",
+              "Protection"
+            ],
+            "rows": [
+              [
+                "Phishing",
+                "Check the sender; never type a password from a link"
+              ],
+              [
+                "Account hacking",
+                "Strong, unique passwords and two-factor authentication"
+              ],
+              [
+                "Oversharing",
+                "First name only; no address, school or location"
+              ],
+              [
+                "Strangers",
+                "Do not accept or reply; tell an adult"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Protecting accounts",
+          "heading": "Teams and portal behaviour",
           "bullets": [
-            "Strong, different passwords.",
-            "Two-factor authentication.",
-            "Keep software updated.",
-            "Log out on shared devices."
+            "Only school accounts for school",
+            "Chat is for learning, kept by the school",
+            "No screenshots of classmates",
+            "Leave and tell if something feels wrong"
           ],
-          "note": "Explain two-factor authentication: something you know (password) plus something you have (phone code). Misconception: pupils think their account is too unimportant to be hacked; attackers use automated tools."
+          "note": "TGA rule: camera background plain, first name, stay on the lesson window. Recording or screenshotting others is not allowed."
         },
         {
-          "heading": "People you meet online",
+          "heading": "Cyber abuse",
           "bullets": [
-            "People may not be who they say.",
-            "Never meet an online contact alone.",
-            "Do not share photos with strangers.",
-            "Tell a trusted adult."
+            "Threats, insults, exclusion",
+            "Sharing private information or images",
+            "Pretending to be someone"
           ],
-          "note": "Address grooming carefully in an age-appropriate way: some adults pretend to be children to gain trust. Emphasise that pupils are never to blame and should always tell a trusted adult. Share the CEOP Safety Centre and Childline (0800 1111) as places to get help."
+          "note": "Use fictional examples only. Some pupils may have experienced this: it is never the victim's fault."
         },
         {
-          "heading": "Privacy and data",
+          "heading": "Evidence and reporting",
           "bullets": [
-            "Check privacy settings.",
-            "Read what apps ask for.",
-            "UK data law: Data Protection Act 2018."
+            "Do not reply",
+            "Screenshot: message, username, date and time",
+            "Block and report on the platform",
+            "Tell a trusted adult"
           ],
-          "note": "Explain that companies must handle personal data lawfully under UK data protection law, and that people have rights over their data. Ask pupils whether a torch app needs access to contacts. Link to guarding amanah, the trust of private information."
+          "note": "In the UK, harassment and threatening messages can be crimes. CEOP and Childline (0800 1111) also help.",
+          "cycle": [
+            "Do not reply",
+            "Screenshot",
+            "Block",
+            "Report",
+            "Tell"
+          ]
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "What should a screenshot used as evidence show?",
+            "options": [
+              "Just the message",
+              "The message, username, date and time",
+              "Your reply",
+              "Only the profile picture"
+            ],
+            "answer": 1,
+            "why": "Without who and when, evidence is hard to act on; replying can make things worse."
+          }
         }
       ],
       "practice": [
-        "Spot three clues in this message: 'URGENT!!! Your account will be closed. Click http://bank-secure-login.example now to avoid losing money.'",
-        "A game friend asks for a photo of you. What should you do?",
-        "What are the two factors in two-factor authentication?"
+        {
+          "q": "A message: 'Your Microsoft account is locked. Log in here within 1 hour.' Name three warning signs.",
+          "a": "Urgency, a link to log in, an unexpected message (check the sender address too).",
+          "mins": 3,
+          "model": "Teacher underlines: '1 hour' (urgency), 'log in here' (link asking for credentials), not expected (check the real sender address)."
+        },
+        {
+          "q": "What is two-factor authentication?",
+          "a": "Logging in with two proofs, such as a password and a code from a phone.",
+          "mins": 1
+        },
+        {
+          "q": "Order: report, do not reply, screenshot, tell, block.",
+          "a": "Do not reply, screenshot, block, report, tell.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Design a poster or short slide deck for Year 7 with 'Five ways to stay safe online'.",
-        "Write a short dialogue where a pupil tells a trusted adult about an uncomfortable message.",
-        "Check your own privacy settings on one app and note two improvements."
+        {
+          "q": "Core: Read the three scenarios. For each, write the risk, what to do and who to tell, in the portal response box.",
+          "a": "Each answer names the risk, uses the evidence steps and names a trusted adult.",
+          "mins": 6,
+          "model": "Teacher completes scenario 1: risk (phishing), action (do not click, report), tell (parent and teacher)."
+        },
+        {
+          "q": "Extend: Write a paragraph: how does UK law protect people from online abuse? Start: 'In the UK, sending threatening messages...'",
+          "a": "In the UK, sending threatening or grossly offensive messages can be an offence (Malicious Communications Act 1988), and repeated harassment is a crime (Protection from Harassment Act 1997).",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain how Islamic teaching on speech and the evidence steps work together.",
+          "a": "Islam forbids harming others with words; the steps stop the harm, protect the victim and let adults act justly.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What is phishing?",
-        "Name two ways to keep an account secure."
+        {
+          "q": "Two-factor authentication uses... A) two passwords B) a password and a second proof such as a code C) two usernames",
+          "a": "B) a password and a second proof such as a code",
+          "mins": 1,
+          "options": [
+            "Two passwords",
+            "A password and a second proof",
+            "Two usernames"
+          ]
+        },
+        {
+          "q": "Big question: if a hurtful message is deleted, has it really gone? Why does it matter for evidence?",
+          "a": "Not necessarily: others may have saved it; screenshot quickly so adults can act.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a short guide for a family member on how to spot a phishing message, with three clues.",
-      "send": "SEND/EAL: provide annotated example messages and a sentence starter bank ('This message is suspicious because...'). Stretch: investigate how a password manager works and its advantages and risks."
+      "homework": "With a parent, turn on two-factor authentication or check privacy settings on one account you use (school or family).",
+      "send": "SEND: scenario cards with the steps printed. EAL: evidence, report, harassment glossary. Stretch: compare reporting tools on two platforms.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (no secondary scheme of work supplied)",
+        "Compute-IT Year 8 'My Digital World' (Staying safe online; Evidence cyber abuse): titles only, content paraphrased",
+        "Scenario cards (pupil PDF)",
+        "TGA online safety rules for Teams and the portal"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "padlock on computer keyboard",
+          "alt": "A padlock on a keyboard",
+          "for": "teach:1"
+        },
+        {
+          "find": "smartphone two-factor authentication code",
+          "alt": "A login code on a phone screen",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 1: My Digital World",
@@ -364,6 +513,1021 @@
       ],
       "homework": "Create a one-page checklist of the steps to take if you or a friend experience cyber abuse. Include who to tell and where to find support.",
       "send": "SEND/EAL: provide a visual step-by-step card with icons and a word bank; allow oral role-play. Stretch: research how a social media platform's reporting process works and evaluate it."
+    },
+    {
+      "unit": "Spring 1: Binary, safety and Boolean logic",
+      "n": 5,
+      "title": "Binary: bits, bytes and converting numbers",
+      "duration": 50,
+      "bigQuestion": "A light switch is either on or off. How could you count to 7 using only three switches?",
+      "objectives": [
+        "To understand how computers represent numbers in binary"
+      ],
+      "successCriteria": [
+        "All: explain why computers use binary (on/off)",
+        "Most: convert binary numbers up to 8 bits into denary",
+        "Some: convert denary numbers up to 255 into binary"
+      ],
+      "crossCurricular": "Maths: place value and powers of 2",
+      "smsc": "Cultural: the contribution of Muslim scholars such as al-Khwarizmi to number and algorithms",
+      "keywords": [
+        {
+          "term": "binary",
+          "def": "a number system using only 0 and 1 (base 2)"
+        },
+        {
+          "term": "bit",
+          "def": "one binary digit, 0 or 1"
+        },
+        {
+          "term": "byte",
+          "def": "a group of 8 bits"
+        },
+        {
+          "term": "denary",
+          "def": "our everyday number system with digits 0 to 9 (base 10)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A light switch is either on or off. How could you count to 7 using only three switches?",
+        "a": "Give the switches values 4, 2, 1 and add the ones that are on: 4 + 2 + 1 = 7."
+      },
+      "islamicLink": {
+        "text": "The numbers we use every day, 0 to 9 with place value, reached Europe through Muslim scholars: al-Khwarizmi's ninth-century work on Hindu numerals helped spread them, and the word 'algorithm' comes from his name. Binary uses the same idea of place value with only two digits.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What should evidence of cyber abuse show?",
+          "a": "The message, username, date and time.",
+          "mins": 1,
+          "options": [
+            "Just the message",
+            "Message, username, date and time",
+            "Your reply"
+          ]
+        },
+        {
+          "q": "What is 2 x 2 x 2?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "What is the value of the 3 in 352?",
+          "a": "300 (3 hundreds)",
+          "mins": 1
+        },
+        {
+          "q": "Name one input and one output device.",
+          "a": "For example keyboard (input), speaker (output).",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why binary?",
+          "bullets": [
+            "Computers are made of billions of switches (transistors)",
+            "Each is off (0) or on (1)",
+            "Two states: base 2"
+          ],
+          "note": "Everything (numbers, text, images) is stored as bits."
+        },
+        {
+          "heading": "Place value in binary",
+          "bullets": [
+            "Each column doubles",
+            "128, 64, 32, 16, 8, 4, 2, 1",
+            "8 bits = 1 byte"
+          ],
+          "note": "Compare with denary columns 1000, 100, 10, 1.",
+          "table": {
+            "head": [
+              "128",
+              "64",
+              "32",
+              "16",
+              "8",
+              "4",
+              "2",
+              "1"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1",
+                "1",
+                "0",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Binary to denary",
+          "bullets": [
+            "Write the place values",
+            "Add the columns with a 1",
+            "00001101 = 8 + 4 + 1 = 13"
+          ],
+          "note": "Model it.",
+          "model": {
+            "problem": "Convert 01010011 to denary.",
+            "steps": [
+              "Place values: 128 64 32 16 8 4 2 1",
+              "Bits:          0   1  0  1 0 0 1 1",
+              "Add where there is a 1: 64 + 16 + 2 + 1",
+              "= 83"
+            ],
+            "answer": "83"
+          }
+        },
+        {
+          "heading": "Denary to binary",
+          "bullets": [
+            "Start at 128",
+            "If it fits, write 1 and subtract",
+            "Else write 0; move right"
+          ],
+          "note": "Model 45: 32 fits (13 left), 16 no, 8 fits (5 left), 4 fits (1 left), 2 no, 1 fits: 00101101.",
+          "model": {
+            "problem": "Convert 45 to 8-bit binary.",
+            "steps": [
+              "128, 64: too big: 0 0",
+              "32 fits: 1, 45 - 32 = 13",
+              "16: 0; 8 fits: 1, 13 - 8 = 5",
+              "4 fits: 1, 5 - 4 = 1; 2: 0; 1 fits: 1"
+            ],
+            "answer": "00101101"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "What is 00000110 in denary?",
+            "options": [
+              "6",
+              "110",
+              "3",
+              "12"
+            ],
+            "answer": 0,
+            "why": "4 + 2 = 6. '110' reads the bits as a denary number, a common trap."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Convert 00010010 to denary.",
+          "a": "16 + 2 = 18",
+          "mins": 2,
+          "model": "Teacher writes place values above the bits and adds 16 and 2."
+        },
+        {
+          "q": "Convert 11111111 to denary.",
+          "a": "255",
+          "mins": 1
+        },
+        {
+          "q": "Convert 20 to 8-bit binary.",
+          "a": "00010100",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert these to denary: 00000101, 00011000, 01000001, 10000000.",
+          "a": "5, 24, 65, 128",
+          "mins": 5,
+          "model": "Teacher does 00000101 aloud: 4 + 1 = 5."
+        },
+        {
+          "q": "Extend: Convert to 8-bit binary: 9, 37, 100, 200.",
+          "a": "00001001, 00100101, 01100100, 11001000",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: What is the largest number one byte can store, and how many different values is that?",
+          "a": "255; 256 different values (0 to 255).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A byte is... A) 4 bits B) 8 bits C) 10 bits",
+          "a": "B) 8 bits",
+          "mins": 1,
+          "options": [
+            "4 bits",
+            "8 bits",
+            "10 bits"
+          ]
+        },
+        {
+          "q": "Convert 00001111 to denary.",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "homework": "Write your age and the day of the month you were born in 8-bit binary.",
+      "send": "SEND: printed place-value grid. EAL: binary, denary, bit, byte. Stretch: binary addition 00000101 + 00000011.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (no secondary scheme of work supplied)",
+        "8-bit place-value grid (pupil PDF)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "light switch",
+          "alt": "A light switch: on or off",
+          "for": "hook"
+        },
+        {
+          "find": "transistor electronic component",
+          "alt": "A transistor",
+          "for": "teach:1"
+        },
+        {
+          "find": "Khiva Itchan Kala old city",
+          "alt": "Khiva, Uzbekistan, in Khwarazm, the region al-Khwarizmi came from",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Binary, safety and Boolean logic",
+      "n": 6,
+      "title": "Boolean logic: true, false, AND, OR, NOT",
+      "duration": 50,
+      "bigQuestion": "'You can join the lesson if your camera works AND your microphone works.' What if only one works?",
+      "objectives": [
+        "To understand how Boolean operators combine true and false conditions"
+      ],
+      "successCriteria": [
+        "All: say whether a simple statement is true or false",
+        "Most: evaluate expressions with AND, OR and NOT",
+        "Some: write a Boolean condition for a real rule"
+      ],
+      "crossCurricular": "English: precise meaning of 'and', 'or' and 'not' in rules",
+      "smsc": "Moral: rules with conditions, such as the conditions for zakah (owning the nisab for a full year)",
+      "keywords": [
+        {
+          "term": "Boolean",
+          "def": "a value that is either true or false"
+        },
+        {
+          "term": "AND",
+          "def": "true only when both inputs are true"
+        },
+        {
+          "term": "OR",
+          "def": "true when at least one input is true"
+        },
+        {
+          "term": "NOT",
+          "def": "reverses true and false"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'You can join the lesson if your camera works AND your microphone works.' What if only one works?",
+        "a": "With AND, both must be true; one working is not enough."
+      },
+      "starter": [
+        {
+          "q": "Convert 00000111 to denary.",
+          "a": "7",
+          "mins": 1,
+          "options": [
+            "7",
+            "111",
+            "3"
+          ]
+        },
+        {
+          "q": "How many bits in a byte?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Convert 12 to binary (8 bits).",
+          "a": "00001100",
+          "mins": 1
+        },
+        {
+          "q": "What does 1 mean in a computer switch?",
+          "a": "On (true)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "True or false",
+          "bullets": [
+            "A Boolean has two values",
+            "True (1) or false (0)",
+            "Conditions in programs are Boolean"
+          ],
+          "note": "Statements: 'London is in England' (true); '5 > 9' (false)."
+        },
+        {
+          "heading": "AND, OR, NOT",
+          "bullets": [
+            "AND: both true",
+            "OR: at least one true",
+            "NOT: flips the value"
+          ],
+          "note": "Real rules.",
+          "table": {
+            "head": [
+              "Expression",
+              "Result"
+            ],
+            "rows": [
+              [
+                "true AND true",
+                "true"
+              ],
+              [
+                "true AND false",
+                "false"
+              ],
+              [
+                "false OR true",
+                "true"
+              ],
+              [
+                "false OR false",
+                "false"
+              ],
+              [
+                "NOT true",
+                "false"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Evaluating expressions",
+          "bullets": [
+            "Work out each part",
+            "Then combine",
+            "Brackets first"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "age = 14, hasPermission = false. Evaluate (age >= 13) AND hasPermission.",
+            "steps": [
+              "age >= 13: 14 >= 13 is true",
+              "hasPermission is false",
+              "true AND false",
+              "= false"
+            ],
+            "answer": "false"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "isRaining = false, isCold = true. What is isRaining OR isCold?",
+            "options": [
+              "true",
+              "false",
+              "both",
+              "neither"
+            ],
+            "answer": 0,
+            "why": "OR needs at least one true: isCold is true."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Evaluate: NOT (5 > 3).",
+          "a": "5 > 3 is true, so NOT true = false.",
+          "mins": 2,
+          "model": "Teacher: inside the brackets first, 5 > 3 is true; NOT flips it to false."
+        },
+        {
+          "q": "Evaluate: (2 = 2) AND (3 > 7).",
+          "a": "true AND false = false",
+          "mins": 1
+        },
+        {
+          "q": "Evaluate: (10 < 4) OR (6 = 6).",
+          "a": "false OR true = true",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Evaluate the 8 expressions on the worksheet.",
+          "a": "Answers on the teacher key; each shows the two parts and the result.",
+          "mins": 6,
+          "model": "Teacher does expression 1 in steps."
+        },
+        {
+          "q": "Extend: Write a Boolean condition for: 'A pupil may join the class Team if they have a school account and their parent has signed the agreement.'",
+          "a": "hasSchoolAccount AND agreementSigned",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write a condition for 'entry is free for under 5s or over 65s, but not on event days'.",
+          "a": "(age < 5 OR age > 65) AND NOT eventDay",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "true AND false = ? A) true B) false",
+          "a": "B) false",
+          "mins": 1,
+          "options": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "q": "Big question: camera works, microphone does not. Can you join with an AND rule? Why?",
+          "a": "No: AND needs both conditions true.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write three rules from home or school as Boolean conditions using AND, OR or NOT.",
+      "send": "SEND: true/false cards (1 and 0). EAL: true, false, both, either. Stretch: De Morgan: is NOT (A AND B) the same as NOT A OR NOT B? Test it.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (no secondary scheme of work supplied)",
+        "Boolean expressions worksheet (pupil PDF)",
+        "Mini-whiteboard with 1 and 0"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "on off switch",
+          "alt": "An on/off switch",
+          "for": "keywords"
+        },
+        {
+          "find": "railway points switch track",
+          "alt": "Railway points: a track that switches one way or the other",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Binary, safety and Boolean logic",
+      "n": 7,
+      "title": "Logic gates and truth tables",
+      "duration": 50,
+      "bigQuestion": "A car's interior light comes on if the driver's door OR the passenger's door is open. Which logic gate does that use?",
+      "objectives": [
+        "To understand how AND, OR and NOT gates process binary inputs, shown in truth tables"
+      ],
+      "successCriteria": [
+        "All: recognise the symbols for AND, OR and NOT gates",
+        "Most: complete truth tables for each gate",
+        "Some: use a truth table to describe a real situation"
+      ],
+      "crossCurricular": "Science: series and parallel circuits behave like AND and OR",
+      "smsc": "Social: safety systems built from simple logic (fire alarms, lift doors)",
+      "keywords": [
+        {
+          "term": "logic gate",
+          "def": "an electronic component that applies a Boolean operation"
+        },
+        {
+          "term": "truth table",
+          "def": "a table showing the output for every input combination"
+        },
+        {
+          "term": "input",
+          "def": "a 0 or 1 going into a gate"
+        },
+        {
+          "term": "output",
+          "def": "the 0 or 1 coming out of a gate"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A car's interior light comes on if the driver's door OR the passenger's door is open. Which logic gate does that use?",
+        "a": "An OR gate: either input being 1 gives an output of 1."
+      },
+      "starter": [
+        {
+          "q": "NOT true = ?",
+          "a": "false",
+          "mins": 1,
+          "options": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "q": "true OR false = ?",
+          "a": "true",
+          "mins": 1
+        },
+        {
+          "q": "Convert 00011001 to denary.",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "When is AND true?",
+          "a": "Only when both inputs are true.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Gates in hardware",
+          "bullets": [
+            "Built from transistors",
+            "Inputs and outputs are 0 or 1",
+            "Billions in a CPU"
+          ],
+          "note": "Gates are the physical form of Boolean logic."
+        },
+        {
+          "heading": "AND gate",
+          "bullets": [
+            "Output 1 only if A and B are 1",
+            "Symbol: D shape"
+          ],
+          "note": "Example: a microwave runs only if door is shut AND start pressed.",
+          "table": {
+            "head": [
+              "A",
+              "B",
+              "A AND B"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "1",
+                "1",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "OR gate",
+          "bullets": [
+            "Output 1 if A or B (or both) is 1",
+            "Symbol: curved shield shape"
+          ],
+          "note": "Interior car light.",
+          "table": {
+            "head": [
+              "A",
+              "B",
+              "A OR B"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "NOT gate",
+          "bullets": [
+            "One input",
+            "Output is the opposite",
+            "Symbol: triangle with a circle"
+          ],
+          "note": "A light that is on when it is NOT daytime.",
+          "table": {
+            "head": [
+              "A",
+              "NOT A"
+            ],
+            "rows": [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "An AND gate has inputs A = 1, B = 0. Output?",
+            "options": [
+              "0",
+              "1",
+              "2",
+              "10"
+            ],
+            "answer": 0,
+            "why": "AND needs both inputs to be 1."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Complete the AND truth table from memory.",
+          "a": "00:0, 01:0, 10:0, 11:1",
+          "mins": 2,
+          "model": "Teacher lists the four input rows in binary order 00, 01, 10, 11 and applies 'both must be 1'."
+        },
+        {
+          "q": "Which gate: 'the alarm sounds if the window OR the door is opened'?",
+          "a": "OR",
+          "mins": 1
+        },
+        {
+          "q": "NOT gate input 1. Output?",
+          "a": "0",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the truth tables for AND, OR and NOT on the worksheet and draw each symbol.",
+          "a": "Tables as on the slides; correct symbols.",
+          "mins": 6,
+          "model": "Teacher draws the AND symbol and fills its first row."
+        },
+        {
+          "q": "Extend: Build each gate in the CircuitVerse simulator with two switches and a light. Check every row.",
+          "a": "Each gate's light matches its truth table.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A vending machine gives a drink if a coin is inserted AND a button is pressed. Write its truth table and say which gate.",
+          "a": "AND: output 1 only for coin 1, button 1.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "OR gate, A = 0, B = 0. Output? A) 0 B) 1",
+          "a": "A) 0",
+          "mins": 1,
+          "options": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "q": "Big question: which gate does a car's interior light use, and why?",
+          "a": "OR: the light comes on if either door is open.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find two everyday devices that use AND or OR logic and write a truth table for one.",
+      "send": "SEND: gate symbol cards with the rule written inside. EAL: input, output, gate. Stretch: research the XOR gate.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (no secondary scheme of work supplied)",
+        "CircuitVerse logic simulator (circuitverse.org/simulator, free in the browser; saving work needs an account, made through the school: TO CONFIRM) or paper",
+        "Truth table worksheet (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "AND gate symbol",
+          "alt": "The AND gate symbol",
+          "for": "teach:2"
+        },
+        {
+          "find": "OR gate symbol",
+          "alt": "The OR gate symbol",
+          "for": "teach:3"
+        },
+        {
+          "find": "NOT gate symbol",
+          "alt": "The NOT gate symbol",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Binary, safety and Boolean logic",
+      "n": 8,
+      "title": "Combining gates; logic quiz",
+      "duration": 50,
+      "bigQuestion": "A safe opens only if the right code is entered AND it is NOT night time. How many gates do you need?",
+      "objectives": [
+        "To understand how logic gates combine into circuits and how to work out their output"
+      ],
+      "successCriteria": [
+        "All: follow inputs through a two-gate circuit",
+        "Most: complete a truth table for a combined circuit",
+        "Some: design a circuit from a written rule"
+      ],
+      "crossCurricular": "Maths: order of operations (brackets first)",
+      "smsc": "Moral: security systems protecting what is entrusted to us",
+      "keywords": [
+        {
+          "term": "logic circuit",
+          "def": "two or more gates joined together"
+        },
+        {
+          "term": "Boolean expression",
+          "def": "a written form of a circuit, such as (A AND B) OR C"
+        },
+        {
+          "term": "intermediate",
+          "def": "a value between gates, worked out first"
+        },
+        {
+          "term": "combination",
+          "def": "one set of input values"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A safe opens only if the right code is entered AND it is NOT night time. How many gates do you need?",
+        "a": "Two: a NOT gate on 'night', then an AND gate with 'code'."
+      },
+      "starter": [
+        {
+          "q": "AND gate, A = 1, B = 1. Output?",
+          "a": "1",
+          "mins": 1,
+          "options": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "q": "Which gate has one input?",
+          "a": "NOT",
+          "mins": 1
+        },
+        {
+          "q": "OR gate, A = 1, B = 0. Output?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "How many rows in a two-input truth table?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Joining gates",
+          "bullets": [
+            "The output of one gate is the input of the next",
+            "Work left to right",
+            "Label the in-between value"
+          ],
+          "note": "Example: Q = NOT (A AND B)."
+        },
+        {
+          "heading": "Model: a combined truth table",
+          "bullets": [
+            "Add a column for the middle value",
+            "Fill it first",
+            "Then the final output"
+          ],
+          "note": "Model for Q = (A AND B) OR C, first rows.",
+          "model": {
+            "problem": "Q = (A AND B) OR C. Find Q when A = 1, B = 0, C = 1.",
+            "steps": [
+              "A AND B: 1 AND 0 = 0",
+              "Then 0 OR C: 0 OR 1",
+              "= 1",
+              "Q = 1"
+            ],
+            "answer": "Q = 1"
+          }
+        },
+        {
+          "heading": "Three inputs, eight rows",
+          "bullets": [
+            "Rows count in binary 000 to 111",
+            "2 x 2 x 2 = 8 combinations"
+          ],
+          "note": "Truth table for Q = (A AND B) OR C.",
+          "table": {
+            "head": [
+              "A",
+              "B",
+              "C",
+              "A AND B",
+              "Q"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "1",
+                "0",
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Q = NOT (A OR B). A = 0, B = 0. Q?",
+            "options": [
+              "0",
+              "1",
+              "2"
+            ],
+            "answer": 1,
+            "why": "A OR B = 0, then NOT 0 = 1. Doing the NOT first is the trap."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Q = NOT A AND B. Find Q for A = 0, B = 1.",
+          "a": "NOT 0 = 1; 1 AND 1 = 1. Q = 1.",
+          "mins": 2,
+          "model": "Teacher: NOT applies to A only: NOT 0 = 1; then AND with B (1) gives 1."
+        },
+        {
+          "q": "Write the expression for: 'the light is on if switch A is on and switch B is off'.",
+          "a": "A AND NOT B",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the truth table for Q = NOT (A AND B) (4 rows) on the worksheet.",
+          "a": "00:1, 01:1, 10:1, 11:0",
+          "mins": 4,
+          "model": "Teacher completes row 00: A AND B = 0, NOT 0 = 1."
+        },
+        {
+          "q": "Extend: Build Q = (A AND B) OR C in CircuitVerse and check two rows of the slide table.",
+          "a": "Lights match the table rows tested.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Logic quiz (portal, 10 questions): binary conversions, Boolean expressions, gate truth tables and a combined circuit.",
+          "a": "Teacher marks in the portal.",
+          "mins": 12
+        },
+        {
+          "q": "Big question: how many gates for 'code correct AND NOT night', and which?",
+          "a": "Two: NOT and AND.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write the Boolean expression and truth table for: 'The fan turns on if it is hot and the window is not open.'",
+      "send": "SEND: truth tables with input columns filled in. EAL: expression, circuit, combination. Stretch: design a circuit for a majority vote of three switches.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (no secondary scheme of work supplied)",
+        "CircuitVerse logic simulator (circuitverse.org/simulator, free in the browser; saving work needs an account, made through the school: TO CONFIRM) or paper",
+        "Combined gates worksheet (pupil PDF)",
+        "Year 8 logic quiz in the portal (secure test mode, 10 questions)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "printed circuit board close up",
+          "alt": "A printed circuit board",
+          "for": "hook"
+        },
+        {
+          "find": "integrated circuit chip 7400",
+          "alt": "A logic gate chip",
+          "for": "keywords"
+        }
+      ]
     }
   ]
 }

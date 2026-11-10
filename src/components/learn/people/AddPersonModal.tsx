@@ -5,7 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import type { LearnRole } from "@/lib/learn/session";
 import { CredentialsCard } from "./StudentCredentials";
 import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
-import { ui } from "@/components/learn/ui";
+import { FormSection, ui } from "@/components/learn/ui";
 import { Icon, type IconName } from "@/components/learn/Icon";
 import { PupilPlacement } from "@/components/learn/pupil/PupilPlacement";
 import { GOLD_BUTTON, INPUT_CLASS, friendlyError, invite, type ClassOption, type InviteResult, type ParentOption, type YearGroup } from "./shared";
@@ -362,17 +362,31 @@ export function AddPersonModal({
 
               {type === "student" && (
                 <>
-                  <Field label="Student's full name">
-                    <input value={name} onChange={(e) => setName(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
-                  </Field>
-                  <div className="rounded-xl bg-gold-50 p-3">
-                    <div className="mb-2 flex gap-2 text-xs font-semibold">
+                  <FormSection title="The pupil" description="Their name as it should appear on registers and reports. The year group is suggested from the date of birth.">
+                    <Field label="Student's full name">
+                      <input value={name} onChange={(e) => setName(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
+                    </Field>
+                    <PupilPlacement
+                      idPrefix="add-pupil"
+                      part="placement"
+                      dob={dob}
+                      setDob={setDob}
+                      yearGroupId={yearGroupId}
+                      setYearGroupId={setYearGroupId}
+                      above={above}
+                      setAbove={setAbove}
+                      yearGroups={yearGroups}
+                    />
+                  </FormSection>
+
+                  <FormSection title="Parent" description="The parent or carer this pupil is linked to. They receive the login details and school emails.">
+                    <div className="flex flex-wrap gap-2">
                       {parents.length > 0 && (
-                        <button type="button" onClick={() => setParentMode("existing")} aria-pressed={parentMode === "existing"} className={`rounded-full px-3 py-1 ${parentMode === "existing" ? "bg-gold-500 text-ink" : "bg-white text-ink/70"}`}>
+                        <button type="button" onClick={() => setParentMode("existing")} aria-pressed={parentMode === "existing"} className={parentMode === "existing" ? ui.chipOn : ui.chip}>
                           Existing parent
                         </button>
                       )}
-                      <button type="button" onClick={() => setParentMode("new")} aria-pressed={parentMode === "new"} className={`rounded-full px-3 py-1 ${parentMode === "new" ? "bg-gold-500 text-ink" : "bg-white text-ink/70"}`}>
+                      <button type="button" onClick={() => setParentMode("new")} aria-pressed={parentMode === "new"} className={parentMode === "new" ? ui.chipOn : ui.chip}>
                         New parent
                       </button>
                     </div>
@@ -398,33 +412,39 @@ export function AddPersonModal({
                         </Field>
                       </div>
                     )}
-                  </div>
+                  </FormSection>
 
-                  <PupilPlacement
-                    idPrefix="add-pupil"
-                    dob={dob}
-                    setDob={setDob}
-                    yearGroupId={yearGroupId}
-                    setYearGroupId={setYearGroupId}
-                    above={above}
-                    setAbove={setAbove}
-                    yearGroups={yearGroups}
-                    classes={classes}
-                    classIds={classIds}
-                    setClassIds={setClassIds}
-                  />
-                  <Field label="Student's login" hint={loginMode === "username" ? "A username (firstname.lastname) and a temporary password are generated. The parent is emailed them, and you see them once. The student chooses their own password at first sign-in." : undefined}>
-                    <Select value={loginMode} onChange={(e) => setLoginMode(e.target.value as LoginMode)} className={INPUT_CLASS}>
-                      <option value="username">Username and password (no email needed)</option>
-                      <option value="email">Their own email address</option>
-                      <option value="none">No login yet</option>
-                    </Select>
-                  </Field>
-                  {loginMode === "email" && (
-                    <Field label="Student's email">
-                      <input type="email" value={studentEmail} onChange={(e) => setStudentEmail(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
+                  <FormSection title="Classes (optional)" description="You can add or change classes later from the pupil's record.">
+                    <PupilPlacement
+                      idPrefix="add-pupil"
+                      part="classes"
+                      dob={dob}
+                      setDob={setDob}
+                      yearGroupId={yearGroupId}
+                      setYearGroupId={setYearGroupId}
+                      above={above}
+                      setAbove={setAbove}
+                      yearGroups={yearGroups}
+                      classes={classes}
+                      classIds={classIds}
+                      setClassIds={setClassIds}
+                    />
+                  </FormSection>
+
+                  <FormSection title="Login" description="How the pupil signs in to the portal.">
+                    <Field label="Student's login" hint={loginMode === "username" ? "A username (firstname.lastname) and a temporary password are generated. The parent is emailed them, and you see them once. The student chooses their own password at first sign-in." : undefined}>
+                      <Select value={loginMode} onChange={(e) => setLoginMode(e.target.value as LoginMode)} className={INPUT_CLASS}>
+                        <option value="username">Username and password (no email needed)</option>
+                        <option value="email">Their own email address</option>
+                        <option value="none">No login yet</option>
+                      </Select>
                     </Field>
-                  )}
+                    {loginMode === "email" && (
+                      <Field label="Student's email">
+                        <input type="email" value={studentEmail} onChange={(e) => setStudentEmail(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
+                      </Field>
+                    )}
+                  </FormSection>
                 </>
               )}
 
@@ -490,7 +510,7 @@ export function AddPersonModal({
                 </Field>
               )}
 
-              <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+              <div className="sticky bottom-0 -mx-5 -mb-5 flex flex-wrap items-center justify-between gap-2 border-t border-gold-light bg-white px-5 py-3">
                 {initialType ? <span /> : (
                   <button type="button" onClick={() => { setType(null); setError(null); }} className={ui.btnGhost}>
                     ← Back

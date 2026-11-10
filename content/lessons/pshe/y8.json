@@ -2,219 +2,423 @@
   "subject": "PSHE",
   "year": "y8",
   "board": "National Curriculum / PSHE Association",
-  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials.",
+  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials. | Spring 1 2027 (lessons 1, 2, 5 to 7, v3): Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Respect, influence and risk), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
   "lessons": [
     {
-      "unit": "Unit 1: Respect, influence and risk",
+      "unit": "Spring 1: Respect, influence and risk",
       "n": 1,
       "title": "Bullying, prejudice and being an upstander",
       "duration": 50,
+      "bigQuestion": "If you watch bullying and say nothing, are you part of it?",
       "objectives": [
-        "Explain the forms and effects of bullying, including cyberbullying and discrimination",
-        "Describe how the Equality Act 2010 protects people from discrimination",
-        "Plan safe, effective ways to challenge prejudice and support others"
+        "To understand how bullying and prejudice cause harm and how an upstander can safely help"
       ],
+      "successCriteria": [
+        "All: define bullying and prejudice",
+        "Most: describe safe ways to be an upstander online and offline",
+        "Some: explain how UK law and Islamic teaching both oppose bullying"
+      ],
+      "crossCurricular": "Citizenship: the Equality Act 2010 and school anti-bullying duties",
+      "smsc": "Moral: standing up for justice",
       "keywords": [
         {
-          "term": "discrimination",
-          "def": "treating someone unfairly because of who they are"
+          "term": "bullying",
+          "def": "repeated, deliberate hurtful behaviour where there is an imbalance of power"
         },
         {
           "term": "prejudice",
-          "def": "an unfair opinion formed without knowing someone"
+          "def": "an unfair opinion formed without reason or knowledge"
         },
         {
-          "term": "protected characteristic",
-          "def": "a feature of a person protected by equality law"
-        },
-        {
-          "term": "cyberbullying",
-          "def": "bullying through phones, apps or online games"
+          "term": "bystander",
+          "def": "someone who sees but does nothing"
         },
         {
           "term": "upstander",
-          "def": "a person who safely supports someone being mistreated"
+          "def": "someone who acts safely to help"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you watch bullying and say nothing, are you part of it?",
+        "a": "Silence can encourage the bully; safe action helps."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Help your brother whether he is an oppressor or oppressed.' When asked how to help the oppressor, he said: 'By stopping him' (al-Bukhari). He also said whoever sees a wrong should change it with his hand, or his tongue, or at least hate it in his heart (Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Define bullying in your own words.",
-        "Name one way an upstander can help.",
-        "What does ‘respect’ mean?"
+        {
+          "q": "Netiquette means...",
+          "a": "Online good manners",
+          "mins": 1,
+          "options": [
+            "Online good manners",
+            "A website"
+          ]
+        },
+        {
+          "q": "Name a TGA rule for live lessons.",
+          "a": "Camera on, chat for learning, no screenshots.",
+          "mins": 1
+        },
+        {
+          "q": "What does al-Hujurat 49:13 teach?",
+          "a": "People are diverse so we know one another; nobility is by righteousness.",
+          "mins": 1
+        },
+        {
+          "q": "What is respect?",
+          "a": "Treating others as valuable.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Types and effects of bullying",
+          "heading": "What is bullying?",
           "bullets": [
-            "Physical, verbal, social and online",
-            "Targets someone repeatedly and on purpose",
-            "Can harm confidence, sleep and learning",
-            "Never the victim's fault"
+            "Repeated",
+            "Deliberate",
+            "An imbalance of power",
+            "Physical, verbal, social, online"
           ],
-          "note": "Say bismillah. Revise the definition: deliberate, repeated, hurtful, with an imbalance of power. Discuss forms including exclusion, spreading rumours, impersonation and sharing humiliating content. Explain that effects can last, and that bullying is a serious matter under the TGA Anti-Bullying and Cyberbullying Policy. Do not ask for personal experiences. Link to the Tarbiyyah Compass value of Integrity. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "One-off unkindness is wrong but may not be bullying."
         },
         {
-          "heading": "Prejudice and discrimination",
+          "heading": "Prejudice and bullying",
           "bullets": [
-            "Prejudice is an unfair opinion",
-            "Discrimination is unfair treatment",
-            "Equality Act 2010 protects nine characteristics",
-            "Includes race, religion, sex, disability and age"
+            "Prejudice: unfair views about a group",
+            "Prejudice-based bullying: race, religion, disability",
+            "It harms the whole community"
           ],
-          "note": "List the protected characteristics: age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, sexual orientation. Explain that the Act is the law in Great Britain. Pupils may have experienced prejudice, including Islamophobia, so create a safe space and allow pupils to pass. Teach that prejudice affects how people are treated, and that it is wrong. Ask: ‘How do stereotypes begin?’"
+          "note": "Use fictional examples only."
         },
         {
-          "heading": "What Islam teaches",
+          "heading": "Bystander or upstander",
           "bullets": [
-            "Qur'an 49:13: we were made into peoples to know each other",
-            "The most honoured is the most mindful of Allah",
-            "Qur'an 49:11: do not mock or insult",
-            "Hadith: do not harm or return harm"
+            "Do not join in or like it",
+            "Support the target privately",
+            "Report to a trusted adult",
+            "Keep evidence online"
           ],
-          "note": "Cite plainly: Qur'an 49:13 says that Allah created people into nations and tribes so that they may know one another, and the most honoured is the most mindful of Allah. Cite Qur'an 49:11 on mocking. Also cite the hadith ‘There should be neither harming nor reciprocating harm’ (Ibn Majah and Ahmad; Nawawi's Forty Hadith no. 32). Discuss how these teachings apply to our behaviour towards everyone, regardless of background."
+          "note": "Safety first: never put yourself in danger.",
+          "compare": {
+            "left": {
+              "title": "Bystander",
+              "points": [
+                "Watches",
+                "Laughs or shares",
+                "Says nothing"
+              ]
+            },
+            "right": {
+              "title": "Upstander",
+              "points": [
+                "Refuses to join",
+                "Supports the target",
+                "Reports safely"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Challenging unkindness safely",
+          "heading": "Check",
           "bullets": [
-            "Do not join in or share",
-            "Support the person privately",
-            "Calmly say: ‘That is not okay.’",
-            "Report to a trusted adult or DSL"
+            "Vote in the Teams poll"
           ],
-          "note": "Teach the ‘4 Ds’ in simple form: distract, delegate (tell an adult), delay (check in later), direct (speak up if it is safe). Emphasise that safety comes first. Practise: ‘That joke is not funny.’ Discuss why bystanders often do nothing and how one voice can change a group. Link to the Tarbiyyah Compass values of Integrity and Excellence."
-        },
-        {
-          "heading": "The law and reporting",
-          "bullets": [
-            "Some online behaviour can be a crime",
-            "Threats, harassment and hate crime are serious",
-            "Keep evidence: screenshots, dates",
-            "Report: TGA staff, platform, police, Childline"
-          ],
-          "note": "Explain that sending threatening or grossly offensive messages can be a criminal offence, and that hate crime is taken seriously. Remind pupils to save evidence rather than reply. Show how to report within an app. Emphasise that pupils will be supported and listened to. Remind them of Childline (0800 1111) and the TGA reporting routes."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which is the safest upstander action in a group chat?",
+            "options": [
+              "Insult the bully",
+              "Screenshot, message the target kindly, tell an adult",
+              "Leave and say nothing",
+              "Share it to show others"
+            ],
+            "answer": 1,
+            "why": "It supports the target and lets adults act, without escalating."
+          }
         }
       ],
       "practice": [
-        "Match the protected characteristic: (a) being treated unfairly because of a hijab (b) being mocked for needing a wheelchair (c) being excluded because of age.",
-        "Write a response a pupil could use if someone makes a hurtful joke about another pupil's background.",
-        "Is it bullying? Explain: ‘Bilal is left out of the group chat every day and the others post jokes about him.’"
+        {
+          "q": "Is this bullying? A one-off joke someone found upsetting.",
+          "a": "Not bullying on its own (not repeated), but still unkind; apologise.",
+          "mins": 2,
+          "model": "Teacher checks the three features: repeated? deliberate? imbalance of power?"
+        }
       ],
       "independent": [
-        "Write a short case study of an upstander making a safe choice, with three steps taken.",
-        "Create an anti-bullying pledge for the class that includes one reference to Qur'an 49:11 or 49:13.",
-        "Explain in a paragraph the difference between prejudice and discrimination, with examples."
+        {
+          "q": "Core: Scenarios (pupil PDF): decide if each is bullying and write an upstander action.",
+          "a": "Correct judgements and safe actions.",
+          "mins": 9,
+          "model": "Teacher does scenario 1."
+        },
+        {
+          "q": "Extend: In the portal response box, write a short message to support a target of bullying.",
+          "a": "'I saw what happened. It was not okay. I have told a teacher; you are not alone.'",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain how the Equality Act 2010 and the hadith 'help your brother' both oppose prejudice-based bullying.",
+          "a": "The law protects characteristics like race and religion; the hadith commands stopping wrongdoing.",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Name two protected characteristics under the Equality Act 2010.",
-        "Give one safe action an upstander can take."
+        {
+          "q": "Bullying is... A) one argument B) repeated, deliberate, with a power imbalance C) any disagreement",
+          "a": "B) repeated, deliberate, with a power imbalance",
+          "mins": 1,
+          "options": [
+            "One argument",
+            "Repeated, deliberate, with a power imbalance",
+            "Any disagreement"
+          ]
+        },
+        {
+          "q": "Big question: if you watch bullying and say nothing, are you part of it? Explain.",
+          "a": "Silence can encourage it; a safe upstander action helps stop it.",
+          "mins": 2
+        }
       ],
-      "homework": "Interview a trusted adult about how they handled unkindness at school or work, and write four sentences about their advice.",
-      "send": "SEND: provide scenario cards with sentence starters for responses. EAL: pre-teach key terms with examples. Stretch: research one historical example of a person who challenged discrimination and present how they did it."
+      "homework": "Write three upstander actions you could use online.",
+      "send": "SEND: bullying checklist (repeated, deliberate, power). EAL: bystander, upstander, prejudice. Stretch: research the school's anti-bullying policy.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Respect, influence and risk), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Portal pshe y8 lesson 1 (upgraded to v3)",
+        "Bullying scenarios (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "megaphone",
+          "alt": "A megaphone: speaking up",
+          "for": "teach:3"
+        },
+        {
+          "find": "smartphone group chat screen",
+          "alt": "A phone screen",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Respect, influence and risk",
+      "unit": "Spring 1: Respect, influence and risk",
       "n": 2,
-      "title": "Peer influence and risky substances: vaping, alcohol and drugs",
+      "title": "Peer influence and risky substances",
       "duration": 50,
+      "bigQuestion": "Why do some people do things in a group they would never do alone?",
       "objectives": [
-        "Explain how peer influence and social norms affect decisions about substances",
-        "Describe the health, legal and Islamic perspectives on vaping, alcohol and drugs",
-        "Use assertive strategies and know where to get help"
+        "To understand how peer influence works and the risks and laws around vaping, smoking, alcohol and drugs"
       ],
+      "successCriteria": [
+        "All: describe the health risks of vaping, smoking and alcohol",
+        "Most: state the UK laws on age limits and illegal drugs",
+        "Some: explain how peer influence works and use refusal strategies"
+      ],
+      "crossCurricular": "Science: drugs and their effects on the body",
+      "smsc": "Moral: courage to say no",
       "keywords": [
         {
-          "term": "addiction",
-          "def": "being unable to stop using something even when it harms you"
+          "term": "peer influence",
+          "def": "the effect friends and others our age have on our choices"
         },
         {
           "term": "nicotine",
-          "def": "an addictive drug in cigarettes and many vapes"
+          "def": "an addictive drug in cigarettes and most vapes"
         },
         {
-          "term": "social norm",
-          "def": "what most people actually do or think is normal"
+          "term": "addiction",
+          "def": "being unable to stop doing or using something"
         },
         {
-          "term": "intoxicant",
-          "def": "a substance that affects the mind, such as alcohol"
-        },
-        {
-          "term": "aql",
-          "def": "the intellect or reason"
+          "term": "Misuse of Drugs Act 1971",
+          "def": "the UK law that makes some drugs illegal"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do some people do things in a group they would never do alone?",
+        "a": "Wanting to fit in, fear of being left out, not wanting to look different."
+      },
+      "islamicLink": {
+        "text": "Allah says intoxicants and gambling are 'defilement from the work of Satan, so avoid it' (al-Ma'idah 5:90), and 'do not throw yourselves with your own hands into destruction' (al-Baqarah 2:195). The Prophet ﷺ said every intoxicant is khamr and every khamr is forbidden (Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name two assertive phrases for saying no.",
-        "What is peer pressure?",
-        "Why is it important to protect our health?"
+        {
+          "q": "Is religion a protected characteristic?",
+          "a": "Yes",
+          "mins": 1,
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "q": "Name one way to respond to discrimination.",
+          "a": "Report it, support the target.",
+          "mins": 1
+        },
+        {
+          "q": "What is an upstander?",
+          "a": "Someone who acts safely to help.",
+          "mins": 1
+        },
+        {
+          "q": "What is addiction?",
+          "a": "Being unable to stop using something.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Does everyone do it?",
+          "heading": "Risks",
           "bullets": [
-            "Most young people do not vape or drink",
-            "Perceived norms can be wrong",
-            "Influence comes from friends, media and social feeds",
-            "Choose the influences you follow"
+            "Smoking: cancer, heart and lung disease",
+            "Vaping: nicotine addiction; long-term effects still being studied",
+            "Alcohol: harms the developing brain, liver",
+            "Illegal drugs: health, law, exploitation"
           ],
-          "note": "Say bismillah. Begin with a poll question: ‘What percentage of young people your age do you think vape?’ Then explain that surveys consistently show a minority do, and that people overestimate what others do. Teach that the idea of ‘everyone does it’ is a pressure tactic. Link to the Tarbiyyah Compass value of Integrity. This lesson is factual and non-judgemental: never ask pupils about their own or their family's behaviour. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "Factual, calm."
         },
         {
-          "heading": "Vaping and tobacco",
+          "heading": "The law",
           "bullets": [
-            "Most vapes contain nicotine, which is addictive",
-            "Can affect concentration, mood and lungs",
-            "Illegal to sell to under 18s in the UK",
-            "Vapes are not harmless for young people"
+            "Illegal to sell tobacco or vapes to under-18s",
+            "Illegal to sell alcohol to under-18s",
+            "Many drugs are illegal for everyone (Misuse of Drugs Act 1971)"
           ],
-          "note": "Explain that vapes may help some adult smokers to quit but are not safe for children. Nicotine can lead to dependence and cravings, which can affect mood and concentration. Mention that long-term effects are still being studied. Do not exaggerate; use accurate facts. Link to the hadith that the Prophet (peace be upon him) said do not harm yourself or others (Ibn Majah and Ahmad). Misconception: vapes are just water vapour."
+          "note": "Possession of illegal drugs can lead to a criminal record."
         },
         {
-          "heading": "Alcohol and drugs",
+          "heading": "How peer influence works",
           "bullets": [
-            "Alcohol affects judgement and safety",
-            "Illegal drugs such as cannabis carry risk and legal penalties",
-            "Drugs are classed A, B or C by law",
-            "Addiction can start after only a few uses"
+            "Direct: 'Go on, try it'",
+            "Indirect: everyone seems to",
+            "Online: adverts and influencers"
           ],
-          "note": "Give accurate, age-appropriate facts: alcohol slows the brain and reduces judgement; illegal drugs are classified by the Misuse of Drugs Act 1971; cannabis is Class B; possession can lead to a criminal record. Teach that some medicines are drugs too and should be used only as directed. Do not give detail about how to use or obtain substances. Take questions through the question box."
+          "note": "Most young people do not vape or drink regularly: the 'everyone does it' idea is wrong."
         },
         {
-          "heading": "The Islamic perspective",
+          "heading": "Saying no",
           "bullets": [
-            "Qur'an 5:90: intoxicants are an abomination",
-            "Hadith: every intoxicant is khamr and haram",
-            "Protect the mind (aql) and the body",
-            "Choose good company and avoid harm"
+            "Be clear: 'No thanks'",
+            "Give a reason or not",
+            "Suggest something else",
+            "Walk away; choose good friends"
           ],
-          "note": "Cite plainly: Qur'an 5:90 states that intoxicants and gambling are abominations of Satan's handiwork and should be avoided. Cite the hadith: every intoxicant is khamr and every khamr is forbidden (Muslim). Explain that protecting the intellect is among the aims of Islamic law. Discuss that Islam encourages leaving what harms us. Link to the Tarbiyyah Compass values of Eeman and Integrity."
+          "note": "Model a refusal.",
+          "model": {
+            "problem": "A friend offers a vape: 'Everyone's doing it.'",
+            "steps": [
+              "Clear no: 'No thanks, I'm not into that.'",
+              "Reason: 'It's addictive and it's against my faith.'",
+              "Change subject: 'Want to play football instead?'",
+              "If pressure continues: leave and tell an adult"
+            ],
+            "answer": "A calm, clear refusal"
+          }
         },
         {
-          "heading": "Saying no and getting help",
+          "heading": "Check",
           "bullets": [
-            "Say no clearly and walk away",
-            "Suggest another activity",
-            "Leave and tell a trusted adult",
-            "FRANK: 0300 123 6600; Childline: 0800 1111"
+            "Vote in the Teams poll"
           ],
-          "note": "Practise three refusal styles: direct, with humour, with an excuse. Role-play in breakout rooms with an invented scenario of a friend offering a vape at a park. Remind pupils that they can contact FRANK (confidential drug advice) and Childline. Emphasise that asking for help for a friend is a caring act. If a pupil appears to be at risk, follow safeguarding procedures."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "The legal age to buy alcohol or vapes in the UK is...",
+            "options": [
+              "14",
+              "16",
+              "18",
+              "21"
+            ],
+            "answer": 2,
+            "why": "It is illegal to sell either to under-18s."
+          }
         }
       ],
       "practice": [
-        "True or false? (a) Most young people vape. (b) Nicotine is addictive. (c) It is legal for shops to sell vapes to under 18s.",
-        "Write two assertive responses to: ‘Just try it, everyone does.’",
-        "Explain in two sentences why protecting the mind is important in Islam."
+        {
+          "q": "Write a refusal line for 'Just try one sip.'",
+          "a": "'No thanks, I don't drink.' and change the subject.",
+          "mins": 2,
+          "model": "Teacher writes a short refusal and a subject change."
+        }
       ],
       "independent": [
-        "Create a fact sheet: ‘Seven facts about vaping and young people’.",
-        "Write a short script showing a pupil refusing a vape and suggesting something else.",
-        "Write a paragraph linking Qur'an 5:90 and the idea of aql to healthy choices."
+        {
+          "q": "Core: Pressure scenarios (pupil PDF): write a refusal and an exit for each.",
+          "a": "Clear refusals and safe exits.",
+          "mins": 8,
+          "model": "Teacher completes scenario 1."
+        },
+        {
+          "q": "Extend: In the portal response box, explain why 'everyone does it' is misleading. Start: 'Most young people...'",
+          "a": "Most young people do not vape or drink regularly; influence makes it seem more common than it is.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain how Islamic teaching and UK law both protect young people from substances.",
+          "a": "Islam forbids intoxicants and self-harm; UK law sets age limits and bans some drugs.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name two risks of vaping.",
-        "Give one assertive way to say no."
+        {
+          "q": "Nicotine is... A) a vitamin B) an addictive drug C) a type of water",
+          "a": "B) an addictive drug",
+          "mins": 1,
+          "options": [
+            "A vitamin",
+            "An addictive drug",
+            "A type of water"
+          ]
+        },
+        {
+          "q": "Big question: why do people do things in a group they would not do alone?",
+          "a": "To fit in and avoid being left out: peer influence.",
+          "mins": 2
+        }
       ],
-      "homework": "Research the NHS or FRANK website on vaping and write three facts you learned and one question.",
-      "send": "SEND: provide response cards and visuals for facts. EAL: pre-teach key words with images. Stretch: analyse an advert or social media post that glamorises substances and identify persuasion techniques."
+      "homework": "Discuss with a parent: what would you do if offered a vape? Write your plan.",
+      "send": "SEND: refusal phrases card. EAL: influence, addiction, refuse. Stretch: research recent UK laws on selling vapes.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Respect, influence and risk), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Portal pshe y8 lesson 2 (upgraded to v3)",
+        "Pressure scenarios (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "no smoking sign",
+          "alt": "A no smoking sign",
+          "for": "teach:1"
+        },
+        {
+          "find": "crowd of people silhouette road",
+          "alt": "A busy street",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Mental wellbeing and self-worth",
@@ -427,6 +631,655 @@
       ],
       "homework": "List three things your body helps you do and three things you are grateful for. Share one with a family member.",
       "send": "SEND: use cartoon or object examples for editing and visual prompt cards. EAL: pre-teach vocabulary with images. Stretch: research how advertisers use persuasion techniques and evaluate one advert."
+    },
+    {
+      "unit": "Spring 1: Respect, influence and risk",
+      "n": 5,
+      "title": "Our class rules online; respect and difference",
+      "duration": 50,
+      "bigQuestion": "In a live online lesson, what does respect look like when no one is in the same room?",
+      "objectives": [
+        "To understand how respect for difference shapes the way we behave in an online community"
+      ],
+      "successCriteria": [
+        "All: state TGA's rules for live lessons and the class chat",
+        "Most: explain how respect applies to differences of background, ability and opinion",
+        "Some: agree a class charter and justify each rule"
+      ],
+      "crossCurricular": "Citizenship: British values of mutual respect and tolerance",
+      "smsc": "Social and cultural: respect for diversity",
+      "keywords": [
+        {
+          "term": "respect",
+          "def": "treating others as valuable"
+        },
+        {
+          "term": "difference",
+          "def": "ways people are not the same: background, language, ability, opinion"
+        },
+        {
+          "term": "charter",
+          "def": "a set of agreed rules"
+        },
+        {
+          "term": "netiquette",
+          "def": "good manners online"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a live online lesson, what does respect look like when no one is in the same room?",
+        "a": "Cameras on, listening, kind chat, no screenshots of others, taking turns, valuing different views."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O mankind, We created you from a male and a female and made you peoples and tribes so that you may know one another. The most noble of you in the sight of Allah is the most righteous' (al-Hujurat 49:13). Respect for every person comes from this.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Name one British value.",
+          "a": "Democracy, rule of law, individual liberty, mutual respect, tolerance.",
+          "mins": 1,
+          "options": [
+            "Rule of law",
+            "Rudeness",
+            "Bullying"
+          ]
+        },
+        {
+          "q": "Name one right you have.",
+          "a": "For example: education, safety, free speech within the law.",
+          "mins": 1
+        },
+        {
+          "q": "What is a responsibility?",
+          "a": "A duty we must carry out.",
+          "mins": 1
+        },
+        {
+          "q": "Name one rule for our Teams chat.",
+          "a": "Chat is for learning only.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "TGA online rules",
+          "bullets": [
+            "Camera on, plain background",
+            "Mic muted until asked",
+            "Chat for learning only",
+            "No recording or screenshots of others",
+            "Stay on the lesson window"
+          ],
+          "note": "These rules protect privacy and learning."
+        },
+        {
+          "heading": "Respecting difference",
+          "bullets": [
+            "Background, language, ability",
+            "Opinions we disagree with",
+            "Disagree with ideas, never mock people"
+          ],
+          "note": "Model respectful disagreement.",
+          "compare": {
+            "left": {
+              "title": "Respectful",
+              "points": [
+                "'I see it differently because...'",
+                "Listens fully",
+                "Uses names correctly"
+              ]
+            },
+            "right": {
+              "title": "Disrespectful",
+              "points": [
+                "'That's stupid'",
+                "Laughing at accents",
+                "Spamming the chat"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "A class charter",
+          "bullets": [
+            "Agreed together",
+            "Clear, positive wording",
+            "Reviewed each half term"
+          ],
+          "note": "Model a rule with its reason.",
+          "model": {
+            "problem": "Turn 'don't be rude in the chat' into a charter rule.",
+            "steps": [
+              "Positive: 'We type kind, helpful messages'",
+              "Clear: 'only about the lesson'",
+              "Reason: 'so everyone feels safe to ask'"
+            ],
+            "answer": "We type kind, helpful messages about the lesson, so everyone feels safe to ask."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "A classmate gives a wrong answer and someone types 'lol'. Best response?",
+            "options": [
+              "Add another 'lol'",
+              "Ignore it",
+              "Type something encouraging and tell the teacher if it continues",
+              "Leave the lesson"
+            ],
+            "answer": 2,
+            "why": "Upstanding kindly protects the learner; adults deal with repeated behaviour."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rewrite as a positive charter rule: 'No talking over people.'",
+          "a": "We take turns and let people finish speaking.",
+          "mins": 2,
+          "model": "Teacher rewrites positively and adds a reason."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write five rules for our class charter with a reason for each (portal response box).",
+          "a": "Five positive, clear rules with reasons.",
+          "mins": 9,
+          "model": "Teacher writes rule 1 with its reason."
+        },
+        {
+          "q": "Extend: Write how you would disagree respectfully with someone's view in a discussion.",
+          "a": "'I understand your point; I see it differently because...'",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain how al-Hujurat 49:13 supports respect for difference.",
+          "a": "Allah made people diverse so we know each other; nobility is by righteousness, not background.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Netiquette means... A) online good manners B) a website C) a game",
+          "a": "A) online good manners",
+          "mins": 1,
+          "options": [
+            "Online good manners",
+            "A website",
+            "A game"
+          ]
+        },
+        {
+          "q": "Big question: what does respect look like in a live online lesson?",
+          "a": "Cameras on, kind chat, listening, no screenshots, valuing difference.",
+          "mins": 2
+        }
+      ],
+      "homework": "Share our class charter with your family and ask which rule they think matters most.",
+      "send": "SEND: rule cards to choose from. EAL: respect, difference, rule. Stretch: compare our charter with British values.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Respect, influence and risk), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "TGA online rules for live lessons",
+        "Class charter frame (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "laptop video call screen",
+          "alt": "A laptop on a desk",
+          "for": "hook"
+        },
+        {
+          "find": "handshake hands",
+          "alt": "Two hands shaking",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Respect, influence and risk",
+      "n": 6,
+      "title": "Tackling racism and religious discrimination",
+      "duration": 50,
+      "bigQuestion": "Have you ever been judged before someone knew you? How did it feel?",
+      "objectives": [
+        "To understand what racism and religious discrimination are, how UK law protects people, and how to respond"
+      ],
+      "successCriteria": [
+        "All: define racism and religious discrimination",
+        "Most: name protected characteristics under the Equality Act 2010",
+        "Some: explain how Islam's teaching on equality and UK law both oppose discrimination"
+      ],
+      "crossCurricular": "History: the Civil Rights movement and anti-discrimination law",
+      "smsc": "Moral and cultural: equality and justice",
+      "keywords": [
+        {
+          "term": "racism",
+          "def": "treating people unfairly because of race, colour or ethnicity"
+        },
+        {
+          "term": "discrimination",
+          "def": "treating someone unfairly because of who they are"
+        },
+        {
+          "term": "Equality Act 2010",
+          "def": "the UK law protecting people from discrimination"
+        },
+        {
+          "term": "protected characteristic",
+          "def": "a feature the Equality Act protects, such as race or religion"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Have you ever been judged before someone knew you? How did it feel?"
+      },
+      "islamicLink": {
+        "text": "In his Farewell Sermon the Prophet ﷺ taught that no Arab is better than a non-Arab, nor white better than black, except by taqwa (reported by Ahmad). Allah says the most noble are the most righteous (al-Hujurat 49:13). Bilal ibn Rabah, freed from slavery, was honoured to give the adhan.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bullying is repeated, deliberate and...",
+          "a": "With a power imbalance",
+          "mins": 1,
+          "options": [
+            "Funny",
+            "With a power imbalance",
+            "Always online"
+          ]
+        },
+        {
+          "q": "What is an upstander?",
+          "a": "Someone who acts safely to help.",
+          "mins": 1
+        },
+        {
+          "q": "What is prejudice?",
+          "a": "An unfair opinion formed without reason.",
+          "mins": 1
+        },
+        {
+          "q": "Name one safe upstander action.",
+          "a": "Report to a trusted adult.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Definitions",
+          "bullets": [
+            "Racism: unfair treatment due to race",
+            "Religious discrimination: due to faith or belief",
+            "Islamophobia and antisemitism are examples"
+          ],
+          "note": "Respect for every person; discrimination against anyone is wrong."
+        },
+        {
+          "heading": "The Equality Act 2010",
+          "bullets": [
+            "Nine protected characteristics",
+            "Includes race and religion or belief",
+            "Illegal to discriminate at work, school, services"
+          ],
+          "note": "Name them factually.",
+          "table": {
+            "head": [
+              "Protected characteristic",
+              "Protected characteristic"
+            ],
+            "rows": [
+              [
+                "Age",
+                "Disability"
+              ],
+              [
+                "Gender reassignment",
+                "Marriage and civil partnership"
+              ],
+              [
+                "Pregnancy and maternity",
+                "Race"
+              ],
+              [
+                "Religion or belief",
+                "Sex"
+              ],
+              [
+                "Sexual orientation",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Responding",
+          "bullets": [
+            "Do not retaliate",
+            "Record what happened",
+            "Report to school; the police for hate crimes",
+            "Support the person targeted"
+          ],
+          "note": "Hate crimes can be reported to the police or True Vision (official reporting site)."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Refusing someone a job because of their religion is...",
+            "options": [
+              "Legal",
+              "Discrimination, illegal under the Equality Act 2010",
+              "Fair",
+              "Only wrong online"
+            ],
+            "answer": 1,
+            "why": "Religion or belief is a protected characteristic."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Name three protected characteristics.",
+          "a": "For example: race, religion or belief, disability.",
+          "mins": 2,
+          "model": "Teacher names race and religion, linking to today's topic."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Case studies (pupil PDF, fictional): identify the discrimination, the protected characteristic and the right response.",
+          "a": "Correct identification and responses.",
+          "mins": 9,
+          "model": "Teacher does case 1."
+        },
+        {
+          "q": "Extend: In the portal response box, write a paragraph: 'Islam teaches equality because...'",
+          "a": "Islam teaches equality because Allah created all people and judges by righteousness, not race (49:13), as the Prophet ﷺ taught in the Farewell Sermon.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Explain why protecting others' rights also protects Muslims' rights.",
+          "a": "The same law that protects others' beliefs protects ours; justice must be for all.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Equality Act 2010 protects... A) only adults B) nine characteristics including race and religion C) only football teams",
+          "a": "B) nine characteristics including race and religion",
+          "mins": 1,
+          "options": [
+            "Only adults",
+            "Nine characteristics including race and religion",
+            "Only football teams"
+          ]
+        },
+        {
+          "q": "Big question: how should we respond to discrimination?",
+          "a": "Do not retaliate, record, report and support the target.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read about Bilal ibn Rabah and write three sentences on what his story teaches about equality.",
+      "send": "SEND: definitions card. EAL: racism, discrimination, equality. Stretch: research the Race Relations Act 1965.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Respect, influence and risk), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Discrimination case studies (pupil PDF)",
+        "Equality Act 2010 summary (on slides)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "scales of justice",
+          "alt": "Scales of justice",
+          "for": "keywords"
+        },
+        {
+          "find": "Houses of Parliament Westminster",
+          "alt": "The Houses of Parliament",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Respect, influence and risk",
+      "n": 7,
+      "title": "Making safe choices and saying no",
+      "duration": 50,
+      "bigQuestion": "How do you decide quickly when something feels wrong?",
+      "objectives": [
+        "To understand how to assess risk and make safe choices in everyday and online situations"
+      ],
+      "successCriteria": [
+        "All: identify risks in a situation",
+        "Most: use a decision-making model (stop, think, choose)",
+        "Some: plan an exit strategy and know who to contact"
+      ],
+      "crossCurricular": "Citizenship: rights and the law",
+      "smsc": "Moral: thinking about consequences",
+      "keywords": [
+        {
+          "term": "risk",
+          "def": "the chance of harm"
+        },
+        {
+          "term": "consequence",
+          "def": "what happens as a result of a choice"
+        },
+        {
+          "term": "assertive",
+          "def": "clear and respectful about what you will and will not do"
+        },
+        {
+          "term": "exit strategy",
+          "def": "a plan to leave a situation safely"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How do you decide quickly when something feels wrong?",
+        "a": "Trust the feeling, stop, think about consequences, choose the safe option."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Leave what makes you doubt for what does not make you doubt' (at-Tirmidhi and an-Nasa'i). A believer checks their choices and thinks about consequences.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Legal age to buy alcohol in the UK?",
+          "a": "18",
+          "mins": 1,
+          "options": [
+            "16",
+            "18",
+            "21"
+          ]
+        },
+        {
+          "q": "What is peer influence?",
+          "a": "The effect friends have on our choices.",
+          "mins": 1
+        },
+        {
+          "q": "Give a refusal line.",
+          "a": "'No thanks.'",
+          "mins": 1
+        },
+        {
+          "q": "Name a trusted adult at TGA.",
+          "a": "Form tutor, safeguarding lead.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Spotting risk",
+          "bullets": [
+            "Physical: roads, water, strangers",
+            "Online: sharing, meeting contacts",
+            "Social: pressure, secrets"
+          ],
+          "note": "Fictional examples."
+        },
+        {
+          "heading": "Stop, think, choose",
+          "bullets": [
+            "Stop: pause",
+            "Think: risks and consequences",
+            "Choose: the safest option",
+            "Check: tell someone"
+          ],
+          "note": "Model.",
+          "cycle": [
+            "Stop",
+            "Think",
+            "Choose",
+            "Check"
+          ]
+        },
+        {
+          "heading": "Being assertive",
+          "bullets": [
+            "Not passive, not aggressive",
+            "Clear 'no', calm voice",
+            "Body language: confident"
+          ],
+          "note": "Compare.",
+          "compare": {
+            "left": {
+              "title": "Passive or aggressive",
+              "points": [
+                "'Er, maybe...'",
+                "Shouting, insulting"
+              ]
+            },
+            "right": {
+              "title": "Assertive",
+              "points": [
+                "'No, I'm not doing that.'",
+                "Calm, firm, respectful"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Exit strategies",
+          "bullets": [
+            "Agree a code word with parents",
+            "Have a charged phone and a contact",
+            "Leave a group chat that turns bad"
+          ],
+          "note": "Know: 999 for emergencies, 101 non-emergency police."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "An online friend you have never met asks to meet alone. Safest choice?",
+            "options": [
+              "Go but stay in public",
+              "Say no and tell a parent",
+              "Go with a friend your age",
+              "Keep it secret"
+            ],
+            "answer": 1,
+            "why": "People online may not be who they say; a parent must know and decide."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use stop, think, choose for: 'A friend dares you to cross a busy road.'",
+          "a": "Stop; risk of injury; choose to refuse and walk to a crossing.",
+          "mins": 2,
+          "model": "Teacher talks through each step."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Risk scenarios (pupil PDF): apply stop, think, choose to each and write an exit strategy.",
+          "a": "Sensible choices and exits.",
+          "mins": 9,
+          "model": "Teacher completes scenario 1."
+        },
+        {
+          "q": "Extend: In the portal response box, write a reflection: who would you talk to after a risky situation, and why?",
+          "a": "Names a trusted adult and explains they can help.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Assertive means... A) shouting B) clear, calm and respectful C) agreeing to everything",
+          "a": "B) clear, calm and respectful",
+          "mins": 1,
+          "options": [
+            "Shouting",
+            "Clear, calm and respectful",
+            "Agreeing to everything"
+          ]
+        },
+        {
+          "q": "Big question: how do you decide quickly when something feels wrong?",
+          "a": "Stop, think about consequences, choose the safe option, tell someone.",
+          "mins": 2
+        }
+      ],
+      "homework": "Agree a code word with your parents for when you need to leave a situation.",
+      "send": "SEND: stop, think, choose card. EAL: risk, consequence, assertive. Stretch: research when to call 999 or 101.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Respect, influence and risk), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Risk scenarios (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pedestrian crossing road",
+          "alt": "A pedestrian crossing",
+          "for": "teach:1"
+        },
+        {
+          "find": "traffic light red",
+          "alt": "A red traffic light",
+          "for": "teach:2"
+        }
+      ]
     }
   ]
 }

@@ -2,113 +2,228 @@
   "subject": "PSHE",
   "year": "y10",
   "board": "National Curriculum / PSHE Association",
-  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials.",
+  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials. | Spring 1 2027 (lessons 1, 3, 5 to 7, v3; lessons 1 and 5 are the Autumn 1 and Autumn 2 core weeks of 11 and 18 Jan): Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
   "lessons": [
     {
-      "unit": "Unit 1: Health, wellbeing and relationships",
+      "unit": "Autumn 1: Transition to Key Stage 4: study habits, revision and wellbeing",
       "n": 1,
       "title": "Managing stress and exam pressure",
       "duration": 50,
+      "bigQuestion": "You have about 52 teaching weeks before your International GCSE exams. Is that a long time or a short time?",
       "objectives": [
-        "Explain the stress response and the difference between helpful and harmful stress",
-        "Plan revision using evidence-based techniques and a healthy routine",
-        "Apply practical and Islamic coping strategies and know when to seek help"
+        "To understand how to manage the pressure of a two-year GCSE course with effective study habits and wellbeing strategies"
       ],
+      "successCriteria": [
+        "All: name signs of exam stress and three coping strategies",
+        "Most: plan a weekly study routine with spaced retrieval practice",
+        "Some: explain why retrieval and spacing beat re-reading, and when to seek help"
+      ],
+      "crossCurricular": "All International GCSE subjects: revision techniques",
+      "smsc": "Spiritual: consistency and tawakkul",
       "keywords": [
         {
-          "term": "stress",
-          "def": "the body's reaction to pressure or demand"
-        },
-        {
-          "term": "active recall",
-          "def": "testing yourself from memory to strengthen learning"
+          "term": "retrieval practice",
+          "def": "recalling information from memory to strengthen it"
         },
         {
           "term": "spaced practice",
-          "def": "revisiting material over time rather than cramming"
+          "def": "revisiting topics over days and weeks"
         },
         {
-          "term": "perfectionism",
-          "def": "an unrealistic need for everything to be perfect"
+          "term": "stress",
+          "def": "the body's response to pressure"
         },
         {
-          "term": "tawakkul",
-          "def": "trusting Allah after doing your best"
+          "term": "wellbeing",
+          "def": "feeling healthy and able to cope"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have about 52 teaching weeks before your International GCSE exams. Is that a long time or a short time?",
+        "a": "Both: enough with steady habits from now; too short if left to the end."
+      },
+      "islamicLink": {
+        "text": "Allah does not burden a soul beyond its capacity (al-Baqarah 2:286). The Prophet ﷺ said that the most beloved deeds to Allah are those done regularly, even if small (al-Bukhari and Muslim): steady daily study beats last-minute cramming.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name two signs of stress.",
-        "What is a growth mindset?",
-        "Name one healthy coping strategy."
+        {
+          "q": "Which is better for memory? A) re-reading notes B) testing yourself",
+          "a": "B) testing yourself",
+          "mins": 1,
+          "options": [
+            "Re-reading notes",
+            "Testing yourself"
+          ]
+        },
+        {
+          "q": "Name one sign of stress.",
+          "a": "Poor sleep, headaches, irritability.",
+          "mins": 1
+        },
+        {
+          "q": "How much sleep do teenagers need?",
+          "a": "About 8 to 10 hours.",
+          "mins": 1
+        },
+        {
+          "q": "Name one exam you will sit in 2028.",
+          "a": "For example: 4MA1 Mathematics A.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What is stress?",
+          "heading": "The course ahead",
           "bullets": [
-            "A natural reaction to pressure",
-            "Adrenaline speeds up heart and breathing",
-            "A little stress can help performance",
-            "Too much for too long harms health"
+            "Two-year International GCSE courses",
+            "Exams summer 2028",
+            "Mocks in June 2027"
           ],
-          "note": "Say bismillah. Explain the fight-or-flight response with a simple diagram. Compare helpful stress (focus before a presentation) with overwhelming stress. Ask: ‘What are your main sources of pressure at this stage of GCSE?’ Allow pupils to answer anonymously. Link to the Tarbiyyah Compass value of Resilience. Cite plainly: Qur'an 2:286, that Allah does not burden a soul beyond its capacity. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "Founding year: content is front-loaded; an extra hour of independent study per subject per week."
         },
         {
-          "heading": "Signs and triggers",
+          "heading": "Study that works",
           "bullets": [
-            "Body: headaches, tiredness, tense muscles",
-            "Feelings: irritable, tearful, overwhelmed",
-            "Behaviour: avoiding work, poor sleep",
-            "Triggers: mock exams, deadlines, comparison online"
+            "Retrieval: quiz yourself, flashcards",
+            "Spacing: revisit after 1 day, 1 week, 1 month",
+            "Interleaving: mix topics",
+            "Exam questions with mark schemes"
           ],
-          "note": "Ask pupils to sort signs into body, feelings and behaviour. Discuss triggers specific to Year 10: option subjects, controlled assessments, mocks, comparison on social media. Teach that noticing early signs helps. Misconception: if you are not stressed you do not care. Reassure pupils that calm is also compatible with high standards."
+          "note": "Re-reading and highlighting feel productive but are weaker.",
+          "compare": {
+            "left": {
+              "title": "Feels good, works less",
+              "points": [
+                "Re-reading",
+                "Highlighting",
+                "Cramming"
+              ]
+            },
+            "right": {
+              "title": "Works",
+              "points": [
+                "Self-testing",
+                "Spaced practice",
+                "Past questions"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Study smart",
+          "heading": "Managing stress",
           "bullets": [
-            "Plan: timetable with fixed prayer times and breaks",
-            "Active recall: quiz yourself, use flashcards",
-            "Spaced practice: revisit after 1 day, 1 week, 1 month",
-            "Sleep 8 to 10 hours; rest helps memory"
+            "Sleep, exercise, food, prayer",
+            "Break work into blocks (25 minutes on, 5 off)",
+            "Talk early; make du'a"
           ],
-          "note": "Worked example: topic learned Monday, review on Tuesday, next Monday, and then in a month. Show a sample weekly plan with 30-40 minute work blocks and 10-minute breaks. Contrast rereading with practice questions. Mention that teenagers need around 8 to 10 hours of sleep. Link to the hadith that the most beloved deeds to Allah are the most consistent, even if small (Bukhari and Muslim). Link to the Tarbiyyah Compass value of Progress."
+          "note": "Model a weekly plan.",
+          "model": {
+            "problem": "Plan a weekday evening for a Year 10 pupil.",
+            "steps": [
+              "After Asr: 30-minute walk",
+              "Two 25-minute blocks: maths retrieval, science flashcards",
+              "After Maghrib: homework due tomorrow",
+              "Screens off 21:00; sleep by 22:00"
+            ],
+            "answer": "Balanced evening with spaced retrieval and rest"
+          }
         },
         {
-          "heading": "The coping toolkit",
+          "heading": "When to get help",
           "bullets": [
-            "Breathing, exercise, fresh air, talking",
-            "Prayer, dhikr, du'a and Qur'an",
-            "Qur'an 94:5-6: with hardship comes ease",
-            "Qur'an 65:3: whoever relies on Allah, He is sufficient"
+            "Stress stops sleep, eating or learning",
+            "Panic or hopelessness",
+            "Tell form tutor, parents, GP"
           ],
-          "note": "Practise a 2-minute breathing exercise (in for 4, hold for 4, out for 6). Cite plainly: Qur'an 94:5-6 and 65:3. Explain tawakkul as effort plus trust. Discuss that unhelpful strategies include all-night revision, caffeine overload, avoidance and endless scrolling. Link to the hadith: the strong believer is better and more beloved to Allah than the weak believer, while there is good in both (Muslim)."
+          "note": "Safeguarding: any thoughts of self-harm: tell someone today."
         },
         {
-          "heading": "Perfectionism, comparison and getting help",
+          "heading": "Check",
           "bullets": [
-            "Compare with your past self, not others",
-            "Aim for your best, not perfect",
-            "Ask for help if stress lasts or affects daily life",
-            "Shout: text 85258; Samaritans: 116 123"
+            "Vote in the Teams poll"
           ],
-          "note": "Discuss how perfectionism can lead to procrastination and anxiety. Remind pupils that grades do not measure worth. Explain how to seek help: form tutor, pastoral team, GP, NHS 111, Childline (0800 1111), Shout (text 85258), Samaritans (116 123). Emphasise that asking for help is a strength. If any pupil appears very distressed, follow safeguarding procedures."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which revision method is best supported by evidence?",
+            "options": [
+              "Highlighting",
+              "Re-reading",
+              "Self-testing with spaced practice",
+              "Copying notes neatly"
+            ],
+            "answer": 2,
+            "why": "Retrieval and spacing strengthen memory; the others feel easy but help less."
+          }
         }
       ],
       "practice": [
-        "Sort into body, feelings or behaviour: (a) trouble sleeping (b) feeling tearful (c) skipping homework (d) tight shoulders.",
-        "Plan a 7-day revision schedule for one subject using spaced practice, with times for prayer and rest.",
-        "Write two kind things you could say to yourself after a poor mock result."
+        {
+          "q": "Turn a page of notes into five flashcard questions.",
+          "a": "Five question and answer cards.",
+          "mins": 3,
+          "model": "Teacher turns a science paragraph into two flashcards."
+        }
       ],
       "independent": [
-        "Create a weekly revision timetable including breaks, prayers, exercise and sleep.",
-        "Write a letter to a Year 9 pupil with five tips for managing exam pressure.",
-        "Write a paragraph explaining how tawakkul and effort work together."
+        {
+          "q": "Core: Weekly study plan (pupil PDF): subjects, retrieval blocks, breaks, prayer, exercise and sleep.",
+          "a": "A realistic weekly plan with spacing.",
+          "mins": 9,
+          "model": "Teacher fills Monday."
+        },
+        {
+          "q": "Extend: In the portal response box, describe your warning signs of stress and your plan. Start: 'When I notice...'",
+          "a": "When I notice I'm not sleeping, I will reduce screen time, talk to my parents and use my plan.",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Give two signs of stress.",
-        "Name two evidence-based revision techniques."
+        {
+          "q": "Spaced practice means... A) cramming the night before B) revisiting topics over days and weeks C) never revising",
+          "a": "B) revisiting topics over days and weeks",
+          "mins": 1,
+          "options": [
+            "Cramming",
+            "Revisiting over days and weeks",
+            "Never revising"
+          ]
+        },
+        {
+          "q": "Big question: is 52 weeks a long time? What will you do this week?",
+          "a": "Enough with steady habits; for example, two retrieval blocks a day.",
+          "mins": 2
+        }
       ],
-      "homework": "Use active recall on one topic for 20 minutes and note how many questions you answered correctly. Plan a review for next week.",
-      "send": "SEND: provide a template timetable and visual breathing guide. EAL: pre-teach study vocabulary. Stretch: research the science of memory (the forgetting curve) and apply it to your revision."
+      "homework": "Follow your study plan for one week and tick each block.",
+      "send": "SEND: a plan with blocks pre-drawn. EAL: retrieval, spacing glossary. Stretch: research the 'forgetting curve'.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Portal pshe y10 lesson 1 (upgraded to v3; Autumn 1 core taught in the week of 11 Jan)",
+        "Weekly study plan (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111, NHS 111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "flashcards index cards",
+          "alt": "Flashcards",
+          "for": "teach:2"
+        },
+        {
+          "find": "weekly planner calendar desk",
+          "alt": "A weekly planner",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Health, wellbeing and relationships",
@@ -217,110 +332,213 @@
       "send": "SEND: provide key facts on cards and a visual of helplines. EAL: pre-teach legal vocabulary. Stretch: compare how UK law and Islamic principles each protect individuals in marriage."
     },
     {
-      "unit": "Unit 2: Staying safe and preparing for work",
+      "unit": "Spring 1: Staying safe",
       "n": 3,
-      "title": "Gambling, substances and exploitation: staying safe",
+      "title": "Gambling and risk: why it harms",
       "duration": 50,
+      "bigQuestion": "Betting adverts show winners. Why do gambling companies make billions if people keep winning?",
       "objectives": [
-        "Assess risk and explain why gambling, drugs and exploitation harm people",
-        "Explain how criminal exploitation (county lines) works and recognise warning signs",
-        "Know how to get help and report concerns"
+        "To understand how gambling is designed to make people lose money, the harm it causes, and why Islam forbids it"
       ],
+      "successCriteria": [
+        "All: define gambling and name forms of it, including in games",
+        "Most: explain the house edge and why gamblers lose over time",
+        "Some: explain the links between gaming loot boxes and gambling, and where to get help"
+      ],
+      "crossCurricular": "Maths: probability and expected value",
+      "smsc": "Moral: avoiding harm and addiction",
       "keywords": [
         {
           "term": "gambling",
-          "def": "risking money on an uncertain outcome"
-        },
-        {
-          "term": "addiction",
-          "def": "a compulsion to continue despite harm"
-        },
-        {
-          "term": "exploitation",
-          "def": "using someone unfairly for another's benefit"
-        },
-        {
-          "term": "county lines",
-          "def": "gangs using young people to move drugs between areas"
+          "def": "risking money on an uncertain result to win more"
         },
         {
           "term": "maysir",
-          "def": "gambling, forbidden in Islam"
+          "def": "gambling, forbidden in Islam (مَيْسِر)"
+        },
+        {
+          "term": "house edge",
+          "def": "the built-in advantage that makes the operator win over time"
+        },
+        {
+          "term": "loot box",
+          "def": "a paid random reward in a video game"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Betting adverts show winners. Why do gambling companies make billions if people keep winning?",
+        "a": "Because, over time, most people lose: the odds favour the operator."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, intoxicants, gambling (maysir), stone altars and divining arrows are defilement from the work of Satan, so avoid it that you may succeed' (al-Ma'idah 5:90), and that Satan wants to cause enmity through them and turn you from remembering Allah (5:91).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name two risks of vaping.",
-        "What is peer pressure?",
-        "Why might someone be scared to tell an adult about a problem?"
+        {
+          "q": "Probability of rolling a 6 on a fair dice?",
+          "a": "1/6",
+          "mins": 1,
+          "options": [
+            "1/2",
+            "1/6",
+            "1/3"
+          ]
+        },
+        {
+          "q": "What is harassment?",
+          "a": "Repeated behaviour causing alarm or distress.",
+          "mins": 1
+        },
+        {
+          "q": "Legal age for most gambling in the UK?",
+          "a": "18",
+          "mins": 1
+        },
+        {
+          "q": "What does al-Ma'idah 5:90 forbid?",
+          "a": "Intoxicants and gambling (among others).",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Thinking about risk",
+          "heading": "What counts as gambling?",
           "bullets": [
-            "Risk is the chance of harm",
-            "Weigh up consequences and alternatives",
-            "Pressure can cloud judgement",
-            "Pause, think, ask: who benefits?"
+            "Betting, casinos, scratchcards, lotteries",
+            "Online betting apps",
+            "Some game features feel similar: loot boxes"
           ],
-          "note": "Say bismillah. Teach a decision-making model: stop, list options, think about consequences for you and others, ask a trusted adult, decide. Ask: ‘Why do people take risks they know are harmful?’ Link to the Tarbiyyah Compass values of Integrity and Resilience. Ground rules matter especially here. Use invented case studies only. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "UK legal age for most gambling (including the National Lottery) is 18."
         },
         {
-          "heading": "Gambling and gambling-like games",
+          "heading": "The house edge",
           "bullets": [
-            "Illegal for under 18s in the UK",
-            "Odds favour the gambling company",
-            "Can lead to debt, stress and addiction",
-            "Loot boxes and betting-style games"
+            "Odds favour the operator",
+            "Short wins, long-term losses",
+            "Expected value is negative"
           ],
-          "note": "Worked example: a game offers a loot box for £2 with a 1% chance of a rare item. On average, a player would spend about £200 to get one. Link to Qur'an 5:90, which describes intoxicants and gambling (maysir) as abominations of Satan's handiwork. Explain that gambling harms families and finances. Misconception: you can ‘win it back’."
+          "note": "Model.",
+          "model": {
+            "problem": "A game: pay £1, 1 in 6 chance to win £5 (you keep the prize, not your £1). Expected result per go?",
+            "steps": [
+              "Expected winnings: 1/6 x £5 = about 83p",
+              "Cost: £1",
+              "Expected loss: about 17p per go",
+              "100 goes: lose about £17"
+            ],
+            "answer": "You lose about 17p each go on average"
+          }
         },
         {
-          "heading": "Substances: legal facts and consequences",
+          "heading": "The harm",
           "bullets": [
-            "Class A, B and C drugs: penalties can be severe",
-            "A criminal record affects work and travel",
-            "Addiction harms health and relationships",
-            "Alcohol and vapes are illegal for under 18s to buy"
+            "Addiction: chasing losses",
+            "Debt and family breakdown",
+            "Mental health"
           ],
-          "note": "Briefly revisit Y8 learning: nicotine and alcohol risks. Add legal consequences: possession and supply offences, and the way a criminal record can affect careers. Keep factual. Mention that 'legal highs' and some pills may be dangerous. Cite the hadith that Allah has prohibited whatever intoxicates (Muslim), as in Y8. Do not give detail about obtaining or using substances."
+          "note": "Signs: secrecy, borrowing, mood swings.",
+          "diagram": {
+            "centre": "Gambling harm",
+            "items": [
+              "Debt",
+              "Lies and secrecy",
+              "Family conflict",
+              "Stress and depression",
+              "Crime to fund it",
+              "Neglect of prayer and duties"
+            ]
+          }
         },
         {
-          "heading": "Criminal exploitation and county lines",
+          "heading": "Check",
           "bullets": [
-            "Gangs groom young people with gifts or attention",
-            "Debts and threats trap them",
-            "Warning signs: new items, secrecy, missing school",
-            "Victims are not to blame"
+            "Vote in the Teams poll"
           ],
-          "note": "Explain how exploitation can start: friendly attention, gifts, favours, then pressure and debt. Show invented warning signs of a pupil being groomed. Explain that young people used by gangs are victims. Cite Qur'an 5:2, which tells believers to cooperate in righteousness and piety, not in sin and aggression. Stress that exploiters may threaten but help is available. Refer to the DSL and Prevent policy where relevant."
-        },
-        {
-          "heading": "Getting help and reporting",
-          "bullets": [
-            "Tell the DSL, a parent or a trusted adult",
-            "Crimestoppers/Fearless: 0800 555 111 (anonymous)",
-            "Childline 0800 1111",
-            "Gambling: GamCare 0808 8020 133"
-          ],
-          "note": "Share routes for reporting and support. Emphasise anonymity of Crimestoppers and Fearless. GamCare’s National Gambling Helpline offers free support. Remind pupils that they will be believed and supported. Explain that anyone in immediate danger should call 999. Close by revisiting the Tarbiyyah Compass value of Integrity: choosing the path of safety and truth."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Why do gambling operators make profit overall?",
+            "options": [
+              "Luck",
+              "The odds give them an edge",
+              "They donate it",
+              "Players always win"
+            ],
+            "answer": 1,
+            "why": "The house edge means players lose on average over time."
+          }
         }
       ],
       "practice": [
-        "A game charges £1.50 per loot box. How much would 20 boxes cost? Why does the game company profit?",
-        "Spot the warning signs: ‘Sami has new trainers, a second phone and has been skipping lessons. He says a friend gives him jobs to do.’",
-        "Name two organisations that offer confidential support."
+        {
+          "q": "Pay £2 for a 1 in 10 chance of £15 (prize only). Expected loss per go?",
+          "a": "Expected winnings £1.50; loss 50p per go.",
+          "mins": 2,
+          "model": "Teacher works expected value step by step."
+        }
       ],
       "independent": [
-        "Write a short guide: ‘How to spot and avoid gambling traps in games’.",
-        "Create a flowchart showing what to do if you are being pressured to carry or sell something.",
-        "Write a paragraph linking Qur'an 5:90 with protecting wealth and family."
+        {
+          "q": "Core: Advert analysis (pupil PDF): identify three persuasion techniques in an invented betting advert and what it hides.",
+          "a": "Free bets, celebrity, 'win big'; hides losses and risks.",
+          "mins": 8,
+          "model": "Teacher identifies technique 1."
+        },
+        {
+          "q": "Extend: In the portal response box, explain whether loot boxes are like gambling. Start: 'Loot boxes are similar because...'",
+          "a": "Similar: pay for a random reward; can encourage repeated spending; Muslims should avoid chance-based paid rewards.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Where can someone get help with gambling harm?",
+          "a": "Parents, GP, the National Gambling Helpline (GamCare).",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Give one risk of gambling.",
-        "Name one warning sign of criminal exploitation."
+        {
+          "q": "Maysir means... A) charity B) gambling, forbidden in Islam C) trade",
+          "a": "B) gambling, forbidden in Islam",
+          "mins": 1,
+          "options": [
+            "Charity",
+            "Gambling, forbidden in Islam",
+            "Trade"
+          ]
+        },
+        {
+          "q": "Big question: why do companies make billions if adverts show winners?",
+          "a": "Most people lose over time because of the house edge.",
+          "mins": 2
+        }
       ],
-      "homework": "Research one support service from the lesson and write a short note describing how it helps and how to contact it.",
-      "send": "SEND: use scenario cards and visual flowcharts. EAL: pre-teach legal and risk vocabulary. Stretch: analyse how game design uses reward mechanisms and propose three ethical design changes."
+      "homework": "Count gambling adverts you see in one day (TV, online, sport shirts) and write how they try to persuade.",
+      "send": "SEND: expected value worked frame. EAL: odds, edge, addiction. Stretch: research UK rules on gambling adverts.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Portal pshe y10 lesson 3 (upgraded to v3)",
+        "Invented betting advert (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111, NHS 111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "dice",
+          "alt": "Dice",
+          "for": "hook"
+        },
+        {
+          "find": "slot machine",
+          "alt": "A slot machine",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Staying safe and preparing for work",
@@ -427,6 +645,635 @@
       ],
       "homework": "Complete your CV and ask a parent or carer to give one piece of feedback. Write what you changed.",
       "send": "SEND: provide a CV template and sentence starters. EAL: pre-teach CV vocabulary. Stretch: research one employer, prepare three interview questions and a STAR answer."
+    },
+    {
+      "unit": "Autumn 2: Relationships and respect (PSHE only)",
+      "n": 5,
+      "title": "Respect and responsibility",
+      "duration": 50,
+      "bigQuestion": "At 15 you have more freedom online. Does more freedom mean more responsibility?",
+      "objectives": [
+        "To understand how respect and responsibility apply in the family, with friends and online, and what the law expects"
+      ],
+      "successCriteria": [
+        "All: describe respectful behaviour at home, with friends and online",
+        "Most: explain legal responsibilities online (harassment, sharing others' information)",
+        "Some: explain how Islamic adab and UK law together shape responsible behaviour"
+      ],
+      "crossCurricular": "Citizenship: criminal responsibility from age 10 in England and Wales",
+      "smsc": "Moral and social: accountability",
+      "keywords": [
+        {
+          "term": "respect",
+          "def": "treating others as valuable"
+        },
+        {
+          "term": "responsibility",
+          "def": "being accountable for our actions"
+        },
+        {
+          "term": "adab",
+          "def": "good manners and conduct (أَدَب)"
+        },
+        {
+          "term": "harassment",
+          "def": "repeated behaviour that causes alarm or distress, a crime in the UK"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "At 15 you have more freedom online. Does more freedom mean more responsibility?",
+        "a": "Yes: freedom and accountability grow together, in law and in Islam."
+      },
+      "islamicLink": {
+        "text": "Allah commands kindness to parents (al-Isra 17:23-24) and justice even against ourselves (an-Nisa 4:135). The Prophet ﷺ said each of you is a shepherd and responsible for his flock (al-Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Retrieval practice means...",
+          "a": "Recalling information from memory",
+          "mins": 1,
+          "options": [
+            "Re-reading",
+            "Recalling from memory"
+          ]
+        },
+        {
+          "q": "What is adab?",
+          "a": "Good manners and conduct.",
+          "mins": 1
+        },
+        {
+          "q": "Age of criminal responsibility in England and Wales?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "Name a TGA online rule.",
+          "a": "No screenshots of others; chat for learning.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Respect at home",
+          "bullets": [
+            "Kindness to parents",
+            "Helping with responsibilities",
+            "Speaking well even when we disagree"
+          ],
+          "note": "17:23: not even saying 'uff' to parents."
+        },
+        {
+          "heading": "Respect with friends and online",
+          "bullets": [
+            "Disagree without insult",
+            "Do not share others' information or images",
+            "Think before posting"
+          ],
+          "note": "Respect for every person, whatever their background or beliefs."
+        },
+        {
+          "heading": "The law and responsibility",
+          "bullets": [
+            "Criminal responsibility from age 10",
+            "Harassment and threatening messages can be crimes",
+            "Sharing private images of under-18s is illegal",
+            "Data and privacy law protects personal information"
+          ],
+          "note": "Factual, no detail beyond the law.",
+          "table": {
+            "head": [
+              "Action",
+              "Possible consequence"
+            ],
+            "rows": [
+              [
+                "Repeated abusive messages",
+                "Harassment offence"
+              ],
+              [
+                "Threatening messages",
+                "Malicious Communications Act offence"
+              ],
+              [
+                "Sharing someone's address online",
+                "Privacy breach; safety risk"
+              ],
+              [
+                "Screenshotting a class call",
+                "School sanction; breach of privacy"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which shows responsibility online?",
+            "options": [
+              "Forwarding a rumour",
+              "Checking before sharing and refusing to spread gossip",
+              "Posting someone's photo without asking",
+              "Anonymous insults"
+            ],
+            "answer": 1,
+            "why": "Checking and refusing gossip follows both law and adab (49:6, 49:12)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rewrite respectfully: 'Your idea is stupid.'",
+          "a": "'I see it differently; here's why...'",
+          "mins": 2,
+          "model": "Teacher rewrites, separating the idea from the person."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Scenarios (pupil PDF): for five situations at home, with friends and online, write the respectful and responsible choice.",
+          "a": "Sensible choices with reasons.",
+          "mins": 9,
+          "model": "Teacher does scenario 1."
+        },
+        {
+          "q": "Extend: In the portal response box, explain how adab and UK law agree on online behaviour. Start: 'Both Islam and the law...'",
+          "a": "Both Islam and the law forbid harming others with words, spreading private information and harassment.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Explain the meaning of 'each of you is a shepherd' for a 15-year-old.",
+          "a": "We are responsible for our own conduct, siblings, and what we share.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Harassment in the UK is... A) legal B) a crime C) only rude",
+          "a": "B) a crime",
+          "mins": 1,
+          "options": [
+            "Legal",
+            "A crime",
+            "Only rude"
+          ]
+        },
+        {
+          "q": "Big question: does more freedom mean more responsibility? Why?",
+          "a": "Yes: we are accountable in law and before Allah for how we use it.",
+          "mins": 2
+        }
+      ],
+      "homework": "Do one extra responsibility at home this week without being asked and note how it went.",
+      "send": "SEND: scenario cards with choices. EAL: respect, responsibility, harassment. Stretch: research the Online Safety Act 2023.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Respect and responsibility scenarios (pupil PDF; Autumn 2 core taught in the week of 18 Jan; PSHE only, no RSE)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111, NHS 111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "scales of justice",
+          "alt": "Scales of justice",
+          "for": "teach:3"
+        },
+        {
+          "find": "family home front door",
+          "alt": "A front door",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Staying safe",
+      "n": 6,
+      "title": "Substances: harms, the law and getting help",
+      "duration": 50,
+      "bigQuestion": "Is giving a friend an illegal drug for free 'supplying'?",
+      "objectives": [
+        "To understand the effects of drugs and alcohol, how UK law classifies them, and how to get help"
+      ],
+      "successCriteria": [
+        "All: describe the short- and long-term harms of alcohol, cannabis and nitrous oxide",
+        "Most: explain the Misuse of Drugs Act classes and penalties",
+        "Some: explain how exploitation (county lines) uses young people, and where to get help"
+      ],
+      "crossCurricular": "Science: the nervous system and drugs",
+      "smsc": "Moral: protecting the mind and body",
+      "keywords": [
+        {
+          "term": "Class A, B, C",
+          "def": "the three legal classes of controlled drugs"
+        },
+        {
+          "term": "possession",
+          "def": "having an illegal drug"
+        },
+        {
+          "term": "supply",
+          "def": "giving or selling drugs, even to friends"
+        },
+        {
+          "term": "county lines",
+          "def": "gangs using young people to move drugs"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is giving a friend an illegal drug for free 'supplying'?",
+        "a": "Yes: in UK law, giving drugs to someone, even free, counts as supply."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Every intoxicant is khamr and every khamr is forbidden' (Muslim). Allah says: 'Do not throw yourselves with your own hands into destruction' (al-Baqarah 2:195). Protecting the mind ('aql) is one of the aims of the Shari'ah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Expected value of most gambling for the player is...",
+          "a": "Negative",
+          "mins": 1,
+          "options": [
+            "Positive",
+            "Negative"
+          ]
+        },
+        {
+          "q": "What is maysir?",
+          "a": "Gambling.",
+          "mins": 1
+        },
+        {
+          "q": "Legal age to buy alcohol in the UK?",
+          "a": "18",
+          "mins": 1
+        },
+        {
+          "q": "Name a refusal strategy.",
+          "a": "Clear 'no', change subject, leave.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Effects",
+          "bullets": [
+            "Alcohol: judgement, liver, brain development",
+            "Cannabis: memory, mental health, psychosis risk",
+            "Nitrous oxide: nerve damage, B12 deficiency"
+          ],
+          "note": "Factual and calm."
+        },
+        {
+          "heading": "The law: Misuse of Drugs Act 1971",
+          "bullets": [
+            "Class A: heroin, cocaine, ecstasy",
+            "Class B: cannabis, amphetamines",
+            "Class C: nitrous oxide (since 2023), some tranquillisers"
+          ],
+          "note": "Maximum penalties.",
+          "table": {
+            "head": [
+              "Class",
+              "Possession (max)",
+              "Supply (max)"
+            ],
+            "rows": [
+              [
+                "A",
+                "7 years",
+                "Life"
+              ],
+              [
+                "B",
+                "5 years",
+                "14 years"
+              ],
+              [
+                "C",
+                "2 years",
+                "14 years"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "County lines",
+          "bullets": [
+            "Gangs recruit young people to move drugs",
+            "Gifts, then debt and threats",
+            "Victims, not criminals: get help"
+          ],
+          "note": "Signs: unexplained money, new phones, missing from home. Tell the safeguarding lead."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Cannabis is which class?",
+            "options": [
+              "Class A",
+              "Class B",
+              "Class C",
+              "Legal"
+            ],
+            "answer": 1,
+            "why": "Cannabis is Class B in the UK."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Maximum sentence for possession of a Class B drug?",
+          "a": "5 years",
+          "mins": 1,
+          "model": "Teacher reads the table row and explains 'maximum'."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Case studies (pupil PDF, invented): identify the harm, the law and the help available.",
+          "a": "Correct harms, laws and help for each.",
+          "mins": 9,
+          "model": "Teacher does case 1."
+        },
+        {
+          "q": "Extend: In the portal response box, write advice to a younger sibling about a 'free gift' from an older stranger. Start: 'If someone...'",
+          "a": "If someone gives you gifts and then asks for favours, it may be grooming for county lines; tell a parent or teacher.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Explain why the law treats supply more seriously than possession.",
+          "a": "Supply spreads harm to others and fuels crime.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Giving a friend drugs for free is... A) legal B) supply C) nothing",
+          "a": "B) supply",
+          "mins": 1,
+          "options": [
+            "Legal",
+            "Supply",
+            "Nothing"
+          ]
+        },
+        {
+          "q": "Big question: where could a young person get help with drugs or exploitation?",
+          "a": "Parents, safeguarding lead, GP, Talk to FRANK, Childline.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the Talk to FRANK page on one drug with a parent and note two facts.",
+      "send": "SEND: table printed with key facts highlighted. EAL: possession, supply, exploitation. Stretch: research the Psychoactive Substances Act 2016.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Substance case studies (pupil PDF, invented)",
+        "Talk to FRANK website (free)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111, NHS 111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Houses of Parliament",
+          "alt": "The Houses of Parliament: UK law",
+          "for": "teach:2"
+        },
+        {
+          "find": "brain diagram",
+          "alt": "A diagram of the brain",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Staying safe",
+      "n": 7,
+      "title": "Online exploitation and grooming: spotting and reporting",
+      "duration": 50,
+      "bigQuestion": "Someone online is always kind, gives you gifts and says 'only I understand you'. Is that friendship?",
+      "objectives": [
+        "To understand how online grooming and exploitation work and how to report them"
+      ],
+      "successCriteria": [
+        "All: name warning signs of grooming",
+        "Most: explain the stages groomers use to build trust and control",
+        "Some: explain how to report to CEOP and why victims are never to blame"
+      ],
+      "crossCurricular": "Computing: privacy settings and online security",
+      "smsc": "Moral: protecting the vulnerable",
+      "keywords": [
+        {
+          "term": "grooming",
+          "def": "building trust with a young person in order to exploit them"
+        },
+        {
+          "term": "exploitation",
+          "def": "using someone for another's gain"
+        },
+        {
+          "term": "CEOP",
+          "def": "the National Crime Agency's child protection command, which takes reports online"
+        },
+        {
+          "term": "privacy settings",
+          "def": "controls over who sees and contacts you"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Someone online is always kind, gives you gifts and says 'only I understand you'. Is that friendship?",
+        "a": "It may be grooming: gifts, flattery and isolation are warning signs."
+      },
+      "islamicLink": {
+        "text": "Islam commands protecting the vulnerable and forbids deception. Allah says: 'Cooperate in righteousness and piety, but do not cooperate in sin and aggression' (al-Ma'idah 5:2). Telling an adult about exploitation protects you and others.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Cannabis is class...",
+          "a": "B",
+          "mins": 1,
+          "options": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "q": "What is county lines?",
+          "a": "Gangs using young people to move drugs.",
+          "mins": 1
+        },
+        {
+          "q": "Name one online privacy setting.",
+          "a": "Private account, who can message me.",
+          "mins": 1
+        },
+        {
+          "q": "Who is the safeguarding lead?",
+          "a": "The staff member responsible for keeping pupils safe.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is grooming?",
+          "bullets": [
+            "Building trust to exploit",
+            "Online or in person",
+            "Can be for crime, money or abuse"
+          ],
+          "note": "Age-appropriate and non-graphic. Groomers can pretend to be young."
+        },
+        {
+          "heading": "Common stages",
+          "bullets": [
+            "Friendship and flattery",
+            "Gifts and secrets",
+            "Isolation: 'don't tell your parents'",
+            "Control and threats"
+          ],
+          "note": "Recognise the pattern early.",
+          "cycle": [
+            "Target",
+            "Gain trust",
+            "Fill a need",
+            "Isolate",
+            "Control"
+          ]
+        },
+        {
+          "heading": "Warning signs",
+          "bullets": [
+            "Asks to move to a private app",
+            "Asks for secrets or images",
+            "Offers money or gifts",
+            "Threatens to share things"
+          ],
+          "note": "Never share images; if someone threatens, it is not your fault: tell someone."
+        },
+        {
+          "heading": "Reporting",
+          "bullets": [
+            "Do not reply or pay",
+            "Screenshot, block",
+            "Tell a parent or the safeguarding lead",
+            "Report to CEOP (ceop.police.uk)"
+          ],
+          "note": "Explain CEOP's online reporting button."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "An online contact says 'Keep our chats secret from your parents'. This is...",
+            "options": [
+              "Normal",
+              "A warning sign of grooming",
+              "Good privacy",
+              "Friendship"
+            ],
+            "answer": 1,
+            "why": "Isolation from trusted adults is a key grooming tactic."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "List three warning signs from the slides.",
+          "a": "Secrets, gifts, moving to a private app.",
+          "mins": 2,
+          "model": "Teacher lists one and explains why."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Chat analysis (pupil PDF, invented): highlight warning signs and write what the young person should do.",
+          "a": "Signs identified; stop, screenshot, block, tell, report.",
+          "mins": 8,
+          "model": "Teacher highlights the first warning sign."
+        },
+        {
+          "q": "Extend: Check your own privacy settings on one app with a parent and record two changes.",
+          "a": "Two privacy changes recorded.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: In the portal response box, explain why victims are never to blame. Start: 'Victims are never to blame because...'",
+          "a": "Victims are never to blame because groomers deliberately deceive and manipulate them.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "CEOP is... A) a game B) a place to report online child exploitation C) a social network",
+          "a": "B) a place to report online child exploitation",
+          "mins": 1,
+          "options": [
+            "A game",
+            "A place to report online exploitation",
+            "A social network"
+          ]
+        },
+        {
+          "q": "Big question: kind, gifts, 'only I understand you': friendship or grooming?",
+          "a": "Possibly grooming: these are warning signs; tell a trusted adult.",
+          "mins": 2
+        }
+      ],
+      "homework": "With a parent, review who can contact you on each app you use.",
+      "send": "SEND: warning signs checklist. EAL: grooming, exploit, report. Stretch: research how the Online Safety Act 2023 protects children.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Invented chat analysis (pupil PDF)",
+        "CEOP reporting page (ceop.police.uk)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111, NHS 111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "smartphone privacy settings screen",
+          "alt": "A phone settings screen",
+          "for": "teach:4"
+        },
+        {
+          "find": "padlock",
+          "alt": "A padlock",
+          "for": "keywords"
+        }
+      ]
     }
   ]
 }

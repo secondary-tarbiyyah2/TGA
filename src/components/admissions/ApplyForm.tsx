@@ -242,6 +242,20 @@ function Section({ title, intro, children }: { title: string; intro?: ReactNode;
   );
 }
 
+/**
+ * A titled part inside one child's card ("About your child", "School and
+ * learning", "Documents"), so the long card reads as a few short groups.
+ * Spans both columns of the card's grid; layout only.
+ */
+function SubSection({ title, hint, first }: { title: string; hint?: string; first?: boolean }) {
+  return (
+    <div className={`sm:col-span-2 ${first ? "" : "mt-2 border-t border-gold-light/50 pt-5"}`}>
+      <h3 className="text-base font-semibold text-ink">{title}</h3>
+      {hint && <p className="mt-0.5 text-sm text-ink/70">{hint}</p>}
+    </div>
+  );
+}
+
 function DocPicker({
   id, label, hint, optional, files, limit, error, disabled, onAdd, onRemove,
 }: {
@@ -993,6 +1007,7 @@ export function ApplyForm({
               {/* Floated so the heading sits inside the card, like the other sections. */}
               <legend className="float-left mb-1 w-full p-0 font-serif text-xl font-semibold text-ink">{kids.length > 1 ? `Child ${i + 1}${k.firstName.trim() ? `: ${k.firstName.trim()}` : ""}` : "Your child"}</legend>
               <div className="clear-left mt-4 grid gap-4 sm:grid-cols-2">
+                <SubSection first title={k.firstName.trim() ? `About ${k.firstName.trim()}` : "About your child"} hint="Their legal name, as on their passport or birth certificate." />
                 <Field id={`f-c${i}-firstName`} label="First name" error={errors[`c${i}-firstName`]}>
                   <input {...kidProps(i, "firstName")} type="text" autoComplete="off" maxLength={80} className={inputCls} />
                 </Field>
@@ -1069,6 +1084,7 @@ export function ApplyForm({
                     </>
                   );
                 })()}
+                <SubSection title="School and learning" hint="Where they learn now, and anything that helps us support them from day one." />
                 <Field id={`f-c${i}-currentSchool`} label="Current school" optional>
                   <input {...kidProps(i, "currentSchool")} type="text" maxLength={200} className={inputCls} />
                 </Field>
@@ -1086,6 +1102,7 @@ export function ApplyForm({
                   </Field>
                 </div>
 
+                <SubSection title="Documents" hint="Stored privately. Only admissions staff can open them." />
                 <div className="sm:col-span-2">
                   <DocPicker
                     id={`f-c${i}-doc-report`}
@@ -1114,6 +1131,7 @@ export function ApplyForm({
                   />
                 </div>
 
+                <SubSection title="Legal parent or guardian" hint="Who we contact about this child and who signs for them." />
                 <div className="rounded-xl bg-cream p-4 sm:col-span-2">
                   <p className="text-sm text-ink">
                     <span className="font-medium">Parent or guardian: </span>

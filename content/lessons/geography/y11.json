@@ -1,11 +1,9 @@
 {
   "subject": "Geography",
   "year": "y11",
-  "board": "AQA GCSE (9-1) Geography (8035)",
-  "boardShort": "AQA GCSE 8035",
-  "exam": "Pearson Edexcel International GCSE (9-1) Geography (4GE1)",
-  "examShort": "Edexcel IGCSE 4GE1",
-  "source": "AQA GCSE Geography (8035) Paper 2, 3.2.3 The challenge of resource management (water option); adapted from school Drive lesson plan 'Y11 Is the World Managing Resources Sustainably' (28/01/26), the Y10 KS4 curriculum map (resource management / water unit) and the AQA GCSE Geography 54321 water resources worksheet | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.2, 3.2.3.1 (UK demand and provision only), 3.2.3.2 (food option), 3.2.3.4 (energy option) and 3.3.1. Existing Y11 lessons already cover 3.2.3.1 global importance and inequality and the whole water option (3.2.3.3), so those are not re-taught. Case-study figures are approximate and flagged for teacher verification. | Gap-fill against AQA GCSE Geography 8035 specification",
+  "board": "Pearson Edexcel International GCSE (9-1) Geography (4GE1)",
+  "boardShort": "Edexcel IGCSE 4GE1",
+  "source": "AQA GCSE Geography (8035) Paper 2, 3.2.3 The challenge of resource management (water option); adapted from school Drive lesson plan 'Y11 Is the World Managing Resources Sustainably' (28/01/26), the Y10 KS4 curriculum map (resource management / water unit) and the AQA GCSE Geography 54321 water resources worksheet | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.2, 3.2.3.1 (UK demand and provision only), 3.2.3.2 (food option), 3.2.3.4 (energy option) and 3.3.1. Existing Y11 lessons already cover 3.2.3.1 global importance and inequality and the whole water option (3.2.3.3), so those are not re-taught. Case-study figures are approximate and flagged for teacher verification. | Gap-fill against AQA GCSE Geography 8035 specification | Spring 1 2027 (lessons 23 to 30): revision cycle 1 written to the Pearson Edexcel International GCSE Geography 4GE1 specification (Topics 1, 2, 4, 6 and Paper 1 Section B fieldwork) with own exam-style questions; mock week of 8 Feb not written as lessons. File relabelled: taught and examined as 4GE1 (earlier lessons 1 to 22 were written for AQA 8035)",
   "lessons": [
     {
       "unit": "Unit 1: Resource management (AQA 3.2.3 The challenge of resource management)",
@@ -3358,6 +3356,2011 @@
       ],
       "board": "AQA GCSE (9-1) Geography (8035)",
       "boardShort": "AQA GCSE 8035"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 23,
+      "title": "Revision: river environments (Paper 1, Topic 1)",
+      "bigQuestion": "Can you explain a river from source to mouth in five minutes?",
+      "objectives": [
+        "To understand how to retrieve and apply river knowledge to Paper 1 questions"
+      ],
+      "successCriteria": [
+        "All: recall key terms and landforms from Topic 1",
+        "Most: write sequenced explanations of landform formation",
+        "Some: answer an 8-mark question using a named case study"
+      ],
+      "crossCurricular": "Maths: time calculations",
+      "smsc": "Moral: honest self-assessment and setting targets",
+      "keywords": [
+        {
+          "term": "storm hydrograph",
+          "def": "a graph of rainfall and discharge after a storm"
+        },
+        {
+          "term": "long profile",
+          "def": "the gradient of a river from source to mouth"
+        },
+        {
+          "term": "meander",
+          "def": "a bend in a river"
+        },
+        {
+          "term": "flood risk",
+          "def": "the chance of a flood and the harm it would cause"
+        },
+        {
+          "term": "command word",
+          "def": "the instruction word that tells you how to answer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which river landform would you most like to see in real life, and could you explain how it formed?"
+      },
+      "starter": [
+        {
+          "q": "Lag time is the time between peak rainfall and:",
+          "a": "Peak discharge",
+          "mins": 1,
+          "options": [
+            "Peak discharge",
+            "Base flow"
+          ]
+        },
+        {
+          "q": "Interlocking spurs form in the:",
+          "a": "Upper course",
+          "mins": 1,
+          "options": [
+            "Upper course",
+            "Lower course"
+          ]
+        },
+        {
+          "q": "An oxbow lake forms from a:",
+          "a": "Meander",
+          "mins": 1,
+          "options": [
+            "Meander",
+            "Waterfall"
+          ]
+        },
+        {
+          "q": "Name one hard engineering flood defence.",
+          "a": "For example: dam, embankment, flood relief channel",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Topic 1 at a glance",
+          "bullets": [
+            "1.1 hydrological cycle, basins, hydrographs",
+            "1.2 processes and landforms",
+            "1.3 water use, flooding, management"
+          ],
+          "note": "Use this as a checklist. Pupils RAG-rate each sub-topic in the chat.",
+          "diagram": {
+            "centre": "river environments",
+            "items": [
+              "hydrological cycle",
+              "storm hydrographs",
+              "erosion, transport, deposition",
+              "upland landforms",
+              "lowland landforms",
+              "water supply and quality",
+              "flooding and management"
+            ]
+          }
+        },
+        {
+          "heading": "Changes downstream",
+          "bullets": [
+            "Gradient falls",
+            "Discharge, width, depth and velocity rise",
+            "Sediment gets smaller and rounder"
+          ],
+          "note": "Velocity often increases downstream because the channel is more efficient: a common surprise.",
+          "table": {
+            "head": [
+              "Feature",
+              "Upper course",
+              "Lower course"
+            ],
+            "rows": [
+              [
+                "gradient",
+                "steep",
+                "gentle"
+              ],
+              [
+                "discharge",
+                "low",
+                "high"
+              ],
+              [
+                "channel",
+                "narrow, shallow",
+                "wide, deep"
+              ],
+              [
+                "sediment",
+                "large, angular",
+                "small, rounded"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Answering 'explain the formation'",
+          "bullets": [
+            "Sequence with connectives",
+            "Name the processes",
+            "Add a labelled sketch"
+          ],
+          "note": "Model a 4-mark meander answer.",
+          "model": {
+            "problem": "Explain the formation of a meander. (4 marks)",
+            "steps": [
+              "Flow is faster on the outside of a bend: lateral erosion forms a river cliff",
+              "Slower flow on the inside: deposition forms a slip-off slope",
+              "Helicoidal flow carries sediment from outer to inner bank",
+              "Over time the bend becomes more pronounced and migrates"
+            ],
+            "answer": "Four linked, sequenced points with process names"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Which usually increases downstream?",
+            "options": [
+              "Gradient",
+              "Sediment size",
+              "Discharge"
+            ],
+            "answer": 2,
+            "why": "Discharge rises as tributaries join; gradient and sediment size fall."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate the lag time: peak rain 14:00, peak discharge 02:00 next day. (1 mark)",
+          "a": "12 hours",
+          "mins": 2,
+          "model": "14:00 to midnight = 10 hours.\nMidnight to 02:00 = 2 hours.\n10 + 2 = 12 hours."
+        },
+        {
+          "q": "Explain one human cause of flooding. (2 marks)",
+          "a": "Urbanisation (1): impermeable surfaces increase runoff so water reaches the river faster (1)",
+          "mins": 2
+        },
+        {
+          "q": "Describe one feature of a flood plain. (2 marks)",
+          "a": "Flat, wide land beside the river (1), made of deposited alluvium from floods (1)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Timed answer (10 minutes): 'Assess the success of river management in one named country you have studied.' (8 marks) Write in the portal response box.",
+          "a": "Named scheme and place; aims; successes and problems with evidence (for example, a flood relief channel or a large dam such as Three Gorges, China); substantiated judgement",
+          "mins": 12,
+          "model": "Teacher plans it first: name the scheme; P1 aims and what was built; P2 successes with evidence; P3 problems with evidence; conclusion: overall judgement using 'mostly' or 'partly'."
+        },
+        {
+          "q": "Extend: Peer-mark with the indicative mark points. Write one 'even better if' target.",
+          "a": "A specific target such as 'add a statistic' or 'make a clearer judgement'",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain how one physical and one human factor together increase flood risk. (4 marks)",
+          "a": "For example: saturated ground plus urbanisation: no infiltration and fast runoff combine to raise peak discharge",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Assess' means:",
+          "a": "Use evidence to judge the importance of factors",
+          "mins": 1,
+          "options": [
+            "Use evidence to judge the importance of factors",
+            "List facts"
+          ]
+        },
+        {
+          "q": "Big question: can you explain a river from source to mouth in five minutes?",
+          "a": "A sequence covering changes in gradient, discharge, processes and landforms from upper to lower course",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a one-page river revision map with one case study fact box (developed and developing or emerging).",
+      "send": "SEND: knowledge organiser and 8-mark frame. EAL: command word card. Stretch: write a second 8-mark answer for the other case study.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 1 (1.1 to 1.3)",
+        "Portal geography y10 lessons 27 to 29 and 53 to 56",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Case studies: the school's chosen developed and developing or emerging examples (TO CONFIRM); examples used here are suggestions"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "river long profile diagram",
+          "alt": "A river's long profile from source to mouth",
+          "for": "teach:2"
+        },
+        {
+          "find": "Three Gorges Dam",
+          "alt": "The Three Gorges Dam, China",
+          "for": "keywords"
+        },
+        {
+          "find": "meandering river aerial",
+          "alt": "A meandering lowland river",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 24,
+      "title": "Revision: coastal environments (Paper 1, Topic 2)",
+      "bigQuestion": "Should every coastline be defended?",
+      "objectives": [
+        "To understand how to retrieve coastal knowledge and use it in exam answers"
+      ],
+      "successCriteria": [
+        "All: recall coastal processes and landforms",
+        "Most: explain the formation of a landform and a coastal ecosystem's value",
+        "Some: evaluate coastal management using two contrasting case studies"
+      ],
+      "crossCurricular": "Biology: ecosystems and biodiversity",
+      "smsc": "Moral: protecting fragile coastal ecosystems",
+      "keywords": [
+        {
+          "term": "longshore drift",
+          "def": "zigzag movement of sediment along a coast"
+        },
+        {
+          "term": "mass movement",
+          "def": "downslope movement of rock and soil, such as slumping"
+        },
+        {
+          "term": "coral reef",
+          "def": "a marine ecosystem built by tiny animals in warm, clear, shallow water"
+        },
+        {
+          "term": "mangrove",
+          "def": "salt-tolerant trees growing on tropical coasts"
+        },
+        {
+          "term": "shoreline management plan",
+          "def": "a plan for managing each stretch of coast"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a beach a landform, a resource or a defence? Could it be all three?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'It is He who made the sea subject to you, so that you eat fresh meat from it and bring out ornaments to wear' (an-Nahl 16:14). Coral reefs and mangroves are part of that gift, and Muslims are trustees who must not destroy them (al-A'raf 7:56).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Destructive waves have a strong:",
+          "a": "Backwash",
+          "mins": 1,
+          "options": [
+            "Backwash",
+            "Swash"
+          ]
+        },
+        {
+          "q": "A spit forms by longshore drift and:",
+          "a": "Deposition",
+          "mins": 1,
+          "options": [
+            "Deposition",
+            "Hydraulic action"
+          ]
+        },
+        {
+          "q": "Rock armour is:",
+          "a": "Hard engineering",
+          "mins": 1,
+          "options": [
+            "Hard engineering",
+            "Soft engineering"
+          ]
+        },
+        {
+          "q": "What forms when an arch collapses?",
+          "a": "A stack",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Topic 2 at a glance",
+          "bullets": [
+            "2.1 processes and landforms",
+            "2.2 coastal ecosystems",
+            "2.3 conflicts and management"
+          ],
+          "note": "RAG-rate each in the chat.",
+          "diagram": {
+            "centre": "coastal environments",
+            "items": [
+              "waves and longshore drift",
+              "weathering and mass movement",
+              "headlands, caves, arches, stacks",
+              "beaches, spits, bars",
+              "coral reefs and mangroves",
+              "dunes and salt marshes",
+              "hard and soft engineering"
+            ]
+          }
+        },
+        {
+          "heading": "Coastal ecosystems",
+          "bullets": [
+            "Coral reefs: warm, clear, shallow water",
+            "Mangroves: tropical coasts, protect from storm surges",
+            "Threats: warming, pollution, development"
+          ],
+          "note": "Coral reefs and mangroves both protect coasts and support fisheries.",
+          "compare": {
+            "left": {
+              "title": "Value",
+              "points": [
+                "biodiversity",
+                "fisheries and tourism",
+                "natural defence"
+              ]
+            },
+            "right": {
+              "title": "Threats",
+              "points": [
+                "coral bleaching",
+                "clearing for shrimp farms",
+                "pollution"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Management and case studies",
+          "bullets": [
+            "Hard: sea walls, groynes, rock armour",
+            "Soft: nourishment, dunes, managed retreat",
+            "Compare a developed and a developing or emerging country"
+          ],
+          "note": "Suggested examples: Holderness (Mappleton, rock groynes and revetment, 1991, about 2 million pounds) and the Maldives (sea wall around Male). Confirm the school's case studies.",
+          "model": {
+            "problem": "Explain why managing one place can cause problems elsewhere. (3 marks)",
+            "steps": [
+              "Groynes trap sediment moving by longshore drift",
+              "Beaches downdrift receive less sand",
+              "Their cliffs erode faster (for example south of Mappleton)"
+            ],
+            "answer": "Three linked points"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Mangroves help coasts by:",
+            "options": [
+              "Increasing wave energy",
+              "Reducing wave energy and storm surge damage",
+              "Causing coral bleaching"
+            ],
+            "answer": 1,
+            "why": "Mangrove roots slow water and trap sediment, protecting the coast."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the formation of a stack. (4 marks)",
+          "a": "Crack in headland widened by hydraulic action and abrasion (1); cave forms (1); erosion through the headland forms an arch (1); roof collapses leaving a stack (1)",
+          "mins": 3,
+          "model": "Sequence: crack, cave, arch, stack.\nAt each stage name the process: hydraulic action, abrasion.\nFinish with the roof collapsing through weathering and erosion."
+        },
+        {
+          "q": "State two threats to coral reefs. (2 marks)",
+          "a": "Two of: ocean warming (bleaching), pollution, overfishing, tourism damage",
+          "mins": 2
+        },
+        {
+          "q": "Define 'managed retreat'. (1 mark)",
+          "a": "Allowing the coast to erode or flood in a controlled way",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Timed answer (10 minutes): 'Evaluate the effectiveness of coastal management in a developed and a developing or emerging country.' (8 marks) Portal response box.",
+          "a": "Two named places; strategies and outcomes; strengths and weaknesses with evidence; comparison; substantiated judgement",
+          "mins": 12,
+          "model": "Teacher plans: P1 developed example: strategy, success, problem; P2 developing or emerging example; P3 comparison (cost, technology, sustainability); conclusion."
+        },
+        {
+          "q": "Extend: Peer-mark and set one target.",
+          "a": "A precise target linked to the mark points",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Suggest why soft engineering is often more sustainable. (3 marks)",
+          "a": "Works with natural processes (1), lower cost and maintenance (1), less impact on other parts of the coast (1)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A shoreline management plan covers:",
+          "a": "A whole stretch of coast",
+          "mins": 1,
+          "options": [
+            "A whole stretch of coast",
+            "One house"
+          ]
+        },
+        {
+          "q": "Big question: should every coastline be defended?",
+          "a": "No: cost, effects downdrift and sustainability mean some areas are best left to managed retreat, while high-value places are protected",
+          "mins": 2
+        }
+      ],
+      "homework": "Make flashcards for every coastal landform with a formation sequence on the back.",
+      "send": "SEND: landform sequence cards; 8-mark frame. EAL: glossary. Stretch: compare coral reef and mangrove threats in one table.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (2.1 to 2.3)",
+        "Portal geography y10 lessons 24 to 26, 49, 50",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Case studies: the school's chosen developed and developing or emerging examples (TO CONFIRM); examples used here are suggestions"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mappleton rock groynes",
+          "alt": "Rock groynes at Mappleton, Holderness",
+          "for": "teach:3"
+        },
+        {
+          "find": "mangrove roots",
+          "alt": "Mangrove roots on a tropical coast",
+          "for": "teach:2"
+        },
+        {
+          "find": "coral reef aerial",
+          "alt": "A coral reef",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 25,
+      "title": "Revision: physical fieldwork enquiry design and data collection (Paper 1, Section B)",
+      "bigQuestion": "What makes a fieldwork enquiry trustworthy?",
+      "objectives": [
+        "To understand how to plan a physical fieldwork enquiry and collect reliable primary and secondary data"
+      ],
+      "successCriteria": [
+        "All: describe the stages of an enquiry",
+        "Most: justify a sampling method and data collection technique",
+        "Some: explain how to improve the reliability of data"
+      ],
+      "crossCurricular": "Maths: area, speed and means",
+      "smsc": "Moral: honesty in collecting and reporting data",
+      "keywords": [
+        {
+          "term": "hypothesis",
+          "def": "a statement you test with data"
+        },
+        {
+          "term": "sampling",
+          "def": "choosing which places or items to measure"
+        },
+        {
+          "term": "primary data",
+          "def": "data you collect yourself"
+        },
+        {
+          "term": "secondary data",
+          "def": "data collected by someone else"
+        },
+        {
+          "term": "reliability",
+          "def": "how far repeated measurements would give the same results"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you measured a river's speed once with a stick, would you trust the result? What would you change?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Do not follow that of which you have no knowledge' (al-Isra 17:36). Careful measurement and honest recording of data are part of seeking true knowledge.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Discharge is measured in:",
+          "a": "Cumecs",
+          "mins": 1,
+          "options": [
+            "Cumecs",
+            "Kilograms"
+          ]
+        },
+        {
+          "q": "Data you collect yourself is:",
+          "a": "Primary data",
+          "mins": 1,
+          "options": [
+            "Primary data",
+            "Secondary data"
+          ]
+        },
+        {
+          "q": "A spit is made by:",
+          "a": "Deposition",
+          "mins": 1,
+          "options": [
+            "Deposition",
+            "Erosion"
+          ]
+        },
+        {
+          "q": "Name one quantitative technique for rivers.",
+          "a": "For example: measuring width, depth or velocity",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Enquiry stages",
+          "bullets": [
+            "Question and hypothesis",
+            "Plan, sample, risk assess",
+            "Collect, present, analyse",
+            "Conclude and evaluate"
+          ],
+          "note": "4GE1 needs quantitative and qualitative primary data and at least two secondary sources.",
+          "cycle": [
+            "Question and hypothesis",
+            "Plan and risk assessment",
+            "Collect data",
+            "Present data",
+            "Analyse and conclude",
+            "Evaluate"
+          ]
+        },
+        {
+          "heading": "Sampling",
+          "bullets": [
+            "Random: avoids bias",
+            "Systematic: equal intervals",
+            "Stratified: in proportion to groups"
+          ],
+          "note": "Ask: which method would you use on a beach, and why?",
+          "table": {
+            "head": [
+              "Method",
+              "How",
+              "Strength",
+              "Weakness"
+            ],
+            "rows": [
+              [
+                "random",
+                "random numbers choose sites",
+                "least biased",
+                "may miss key areas"
+              ],
+              [
+                "systematic",
+                "every 50 m along a river",
+                "even coverage",
+                "may miss features between"
+              ],
+              [
+                "stratified",
+                "sites in each zone",
+                "represents each part",
+                "needs prior knowledge"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Techniques and safety",
+          "bullets": [
+            "River: width, depth, velocity (float method)",
+            "Coast: beach profile, sediment size and roundness",
+            "Qualitative: field sketches, annotated photos"
+          ],
+          "note": "TGA pupils do fieldwork at home or locally with an adult, a written guide and a risk assessment: never enter fast or deep water.",
+          "model": {
+            "problem": "A float travels 10 m in 25 s. Calculate the velocity.",
+            "steps": [
+              "Velocity = distance / time",
+              "10 / 25",
+              "= 0.4"
+            ],
+            "answer": "0.4 m/s"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Repeating each measurement three times and taking a mean improves:",
+            "options": [
+              "Reliability",
+              "The hypothesis",
+              "Secondary data"
+            ],
+            "answer": 0,
+            "why": "Repeats reduce the effect of one odd reading."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate discharge: width 3.0 m, mean depth 0.4 m, velocity 0.4 m/s. (2 marks)",
+          "a": "Area = 3.0 x 0.4 = 1.2 m2 (1); discharge = 1.2 x 0.4 = 0.48 cumecs (1)",
+          "mins": 3,
+          "model": "Step 1: cross-sectional area = width x mean depth = 3.0 x 0.4 = 1.2 m2.\nStep 2: discharge = area x velocity = 1.2 x 0.4 = 0.48 m3/s (cumecs)."
+        },
+        {
+          "q": "Write a hypothesis for a river enquiry. (1 mark)",
+          "a": "For example: Channel width increases with distance downstream",
+          "mins": 1
+        },
+        {
+          "q": "Name two secondary sources for a river enquiry. (2 marks)",
+          "a": "For example: Environment Agency river level data and an OS map (or geology map, rainfall data)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Exam-style Section B questions (12 marks) on the portal: justify a sampling method, describe a technique, explain one risk and how it was reduced, suggest one secondary source.",
+          "a": "Indicative mark points in the portal key",
+          "mins": 12,
+          "model": "Teacher does the first 3-marker: 'Justify your sampling method': name it (systematic, every 50 m), how it worked, and why it suited the aim (even coverage of the river's length)."
+        },
+        {
+          "q": "Extend: Explain how one technique could give unreliable data and how to improve it. (3 marks)",
+          "a": "For example: float method affected by wind (1); repeat three times and use the mean (1); use a flow meter (1)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why both quantitative and qualitative data strengthen an enquiry. (3 marks)",
+          "a": "Numbers allow analysis and comparison (1); sketches and photos explain context and processes (1); together they support stronger conclusions (1)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Systematic sampling means:",
+          "a": "At regular intervals",
+          "mins": 1,
+          "options": [
+            "At regular intervals",
+            "Random choice"
+          ]
+        },
+        {
+          "q": "Big question: what makes a fieldwork enquiry trustworthy?",
+          "a": "A clear hypothesis, suitable sampling, accurate and repeated measurements, safe methods and more than one data source",
+          "mins": 2
+        }
+      ],
+      "homework": "Write out your own physical enquiry: question, hypothesis, sampling, three techniques and two secondary sources.",
+      "send": "SEND: enquiry stages card and calculation steps. EAL: glossary. Stretch: design a stratified sampling plan for a beach.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (physical fieldwork)",
+        "Portal geography y10 lessons 43 to 45, 51, 52 (fieldwork)",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Home or local fieldwork guide and risk assessment (portal printable; adult supervision, no entering water)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "river fieldwork measuring tape",
+          "alt": "Equipment for measuring a river channel",
+          "for": "teach:3"
+        },
+        {
+          "find": "beach profile ranging poles",
+          "alt": "Ranging poles for a beach profile",
+          "for": "keywords"
+        },
+        {
+          "find": "small stream",
+          "alt": "A small, shallow stream",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 26,
+      "title": "Revision: fieldwork presentation, analysis and evaluation (Paper 1, Section B)",
+      "bigQuestion": "How do you turn numbers into a conclusion you can defend?",
+      "objectives": [
+        "To understand how to present, analyse and evaluate fieldwork data in exam answers"
+      ],
+      "successCriteria": [
+        "All: choose a suitable graph for a data set",
+        "Most: calculate the mean, median and range and describe a trend",
+        "Some: evaluate the reliability of conclusions"
+      ],
+      "crossCurricular": "Maths: averages and graphs",
+      "smsc": "Moral: honest treatment of anomalies",
+      "keywords": [
+        {
+          "term": "mean",
+          "def": "the total divided by the number of values"
+        },
+        {
+          "term": "median",
+          "def": "the middle value when ordered"
+        },
+        {
+          "term": "range",
+          "def": "the largest value minus the smallest"
+        },
+        {
+          "term": "anomaly",
+          "def": "a result that does not fit the pattern"
+        },
+        {
+          "term": "conclusion",
+          "def": "the answer to the enquiry question, backed by evidence"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If one result is very different from the rest, should you delete it? Why or why not?"
+      },
+      "starter": [
+        {
+          "q": "Velocity = distance divided by:",
+          "a": "Time",
+          "mins": 1,
+          "options": [
+            "Time",
+            "Depth"
+          ]
+        },
+        {
+          "q": "Systematic sampling is at:",
+          "a": "Regular intervals",
+          "mins": 1,
+          "options": [
+            "Regular intervals",
+            "Random points"
+          ]
+        },
+        {
+          "q": "Discharge = cross-sectional area x:",
+          "a": "Velocity",
+          "mins": 1,
+          "options": [
+            "Velocity",
+            "Width"
+          ]
+        },
+        {
+          "q": "What is reliability?",
+          "a": "How far repeated measurements give the same results",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choosing a graph",
+          "bullets": [
+            "Change over distance: line graph",
+            "Two variables: scatter graph",
+            "Categories: bar chart; places: located graphs"
+          ],
+          "note": "Example data: channel width at five sites downstream (made-up practice data).",
+          "chart": {
+            "kind": "line",
+            "title": "Practice data: channel width downstream (m)",
+            "labels": [
+              "Site 1",
+              "Site 2",
+              "Site 3",
+              "Site 4",
+              "Site 5"
+            ],
+            "values": [
+              1.2,
+              1.8,
+              2.1,
+              1.9,
+              3.0
+            ],
+            "unit": "m"
+          }
+        },
+        {
+          "heading": "Simple statistics",
+          "bullets": [
+            "Mean, median, range",
+            "Describe the trend with data",
+            "Identify anomalies"
+          ],
+          "note": "Site 4 is slightly narrower than site 3: a small anomaly to discuss.",
+          "model": {
+            "problem": "Widths 1.2, 1.8, 2.1, 1.9, 3.0 m. Find the mean, median and range.",
+            "steps": [
+              "Mean: 10.0 / 5 = 2.0 m",
+              "Order: 1.2, 1.8, 1.9, 2.1, 3.0, so median = 1.9 m",
+              "Range: 3.0 - 1.2 = 1.8 m"
+            ],
+            "answer": "Mean 2.0 m, median 1.9 m, range 1.8 m"
+          }
+        },
+        {
+          "heading": "Conclusions and evaluation",
+          "bullets": [
+            "Answer the question with data",
+            "Accept, reject or partly accept the hypothesis",
+            "Limits: sample size, timing, equipment"
+          ],
+          "note": "Evaluation questions ask how reliable the conclusions are, not just what went wrong."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Best graph to show if velocity increases with depth:",
+            "options": [
+              "Pie chart",
+              "Scatter graph",
+              "Bar chart"
+            ],
+            "answer": 1,
+            "why": "A scatter graph shows the relationship between two variables."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the trend in the practice width data. (2 marks)",
+          "a": "Width generally increases downstream from 1.2 m to 3.0 m (1), with an anomaly at site 4 (1.9 m) (1)",
+          "mins": 3,
+          "model": "Overall direction: increases downstream.\nUse data: 1.2 m at site 1 to 3.0 m at site 5.\nNote the anomaly: site 4 dips to 1.9 m."
+        },
+        {
+          "q": "Suggest one reason for the anomaly at site 4. (2 marks)",
+          "a": "For example: hard rock narrowing the channel (1), or a measuring error at that site (1)",
+          "mins": 2
+        },
+        {
+          "q": "Does the data support 'channel width increases downstream'? (1 mark)",
+          "a": "Mostly yes: the overall trend increases despite one anomaly",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Section B practice on unfamiliar data (12 marks) on the portal: complete a graph, calculate statistics, describe the pattern, evaluate the conclusion.",
+          "a": "Indicative mark points in the portal key",
+          "mins": 12,
+          "model": "Teacher does the first part: plot the missing point accurately and add the axis label with units."
+        },
+        {
+          "q": "Extend: 'Evaluate the reliability of your conclusions.' (6 marks) Plan in bullet points.",
+          "a": "Strengths: repeated measures, systematic sampling; weaknesses: few sites, one day, equipment error; overall judgement on reliability",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How could GIS or secondary data strengthen the conclusion? (2 marks)",
+          "a": "Compare with long-term gauge data or maps (1) to check the pattern is not just one day's result (1)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The median of 4, 7, 9, 10, 15 is:",
+          "a": "9",
+          "mins": 1,
+          "options": [
+            "9",
+            "10",
+            "11"
+          ]
+        },
+        {
+          "q": "Big question: how do you turn numbers into a conclusion you can defend?",
+          "a": "Present data clearly, use statistics to describe patterns and anomalies, answer the question with evidence and judge how reliable it is",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise two Section B unfamiliar data questions from the portal sheet.",
+      "send": "SEND: statistics method card. EAL: glossary: mean, median, range. Stretch: calculate the interquartile range for the practice data.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (physical fieldwork); skills (Appendix 4)",
+        "Portal geography y10 lessons 34 and 35 (graphical and statistical skills)",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Graph paper or the portal graph template"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "scatter graph example",
+          "alt": "A scatter graph",
+          "for": "teach:1"
+        },
+        {
+          "find": "field notebook data",
+          "alt": "A notebook with recorded field data",
+          "for": "hook"
+        },
+        {
+          "find": "river gauge station",
+          "alt": "A river gauging station that provides secondary data",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 27,
+      "title": "Revision: urbanisation trends and megacities (Paper 2, Topic 6.1)",
+      "bigQuestion": "Why are cities in some countries growing much faster than others?",
+      "objectives": [
+        "To understand urbanisation trends, the growth of megacities and the problems of rapid urbanisation"
+      ],
+      "successCriteria": [
+        "All: define urbanisation, suburbanisation and counter-urbanisation",
+        "Most: explain the factors affecting the rate of urbanisation",
+        "Some: compare urban trends in developed and developing or emerging countries"
+      ],
+      "crossCurricular": "Economics: migration and jobs",
+      "smsc": "Social: living well together in crowded cities",
+      "keywords": [
+        {
+          "term": "urbanisation",
+          "def": "an increasing share of people living in towns and cities"
+        },
+        {
+          "term": "megacity",
+          "def": "a city with more than 10 million people"
+        },
+        {
+          "term": "suburbanisation",
+          "def": "people moving from city centres to the edges"
+        },
+        {
+          "term": "counter-urbanisation",
+          "def": "people moving from cities to the countryside"
+        },
+        {
+          "term": "rural-urban migration",
+          "def": "people moving from the countryside to cities"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather grow up in a megacity or a village? What would you gain and lose?"
+      },
+      "islamicLink": {
+        "text": "The Prophet, peace be upon him, said: 'He is not a believer whose neighbour is not safe from his harm' (Sahih al-Bukhari, in meaning). Crowded cities test how well people care for their neighbours, share space and keep it clean.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The mean of 2, 4, 6 is:",
+          "a": "4",
+          "mins": 1,
+          "options": [
+            "4",
+            "6"
+          ]
+        },
+        {
+          "q": "A megacity has more than:",
+          "a": "10 million people",
+          "mins": 1,
+          "options": [
+            "10 million people",
+            "1 million people"
+          ]
+        },
+        {
+          "q": "Moving from the countryside to cities is:",
+          "a": "Rural-urban migration",
+          "mins": 1,
+          "options": [
+            "Rural-urban migration",
+            "Counter-urbanisation"
+          ]
+        },
+        {
+          "q": "What is urbanisation?",
+          "a": "An increasing share of people living in towns and cities",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Global trends",
+          "bullets": [
+            "Over half the world lives in urban areas",
+            "UN projects about two-thirds by 2050",
+            "Fastest growth in Africa and Asia"
+          ],
+          "note": "The UN estimated 55% urban in 2018 and about 68% by 2050.",
+          "chart": {
+            "kind": "bar",
+            "title": "World urban population share (UN, approx.)",
+            "labels": [
+              "1950",
+              "2018",
+              "2050 (projected)"
+            ],
+            "values": [
+              30,
+              55,
+              68
+            ],
+            "unit": "%"
+          }
+        },
+        {
+          "heading": "Why rates differ",
+          "bullets": [
+            "Push and pull factors",
+            "Natural increase in young cities",
+            "Industrialisation and investment"
+          ],
+          "note": "Pupils give a local or family example of migration where they can.",
+          "compare": {
+            "left": {
+              "title": "Push (rural)",
+              "points": [
+                "few jobs",
+                "poor services",
+                "drought, conflict"
+              ]
+            },
+            "right": {
+              "title": "Pull (urban)",
+              "points": [
+                "jobs, including informal work",
+                "schools and hospitals",
+                "hope of a better life"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Trends over 50 years",
+          "bullets": [
+            "Developed: suburbanisation, counter-urbanisation, re-urbanisation",
+            "Developing or emerging: rapid urbanisation",
+            "Megacities: Tokyo, Delhi, Shanghai, Lagos"
+          ],
+          "note": "Tokyo has been the largest urban area, at about 37 million (UN estimates)."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Counter-urbanisation is:",
+            "options": [
+              "Moving from rural areas to cities",
+              "Moving from cities to rural areas",
+              "City centres being rebuilt"
+            ],
+            "answer": 1,
+            "why": "Counter-urbanisation is the move out of cities to the countryside."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain two reasons for rapid urbanisation in developing countries. (4 marks)",
+          "a": "Rural-urban migration (1) because of push factors like few rural jobs and pull factors like urban work (1); natural increase (1) because many migrants are young, so birth rates are high (1)",
+          "mins": 3,
+          "model": "Reason 1: migration. Explain it with push and pull.\nReason 2: natural increase. Explain: young migrants have children.\nTwo reasons, each developed."
+        },
+        {
+          "q": "Define suburbanisation. (1 mark)",
+          "a": "Movement of people from the inner city to the edges of the city",
+          "mins": 1
+        },
+        {
+          "q": "Name a megacity in Africa. (1 mark)",
+          "a": "Lagos (or Cairo, Kinshasa)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 'Explain the problems caused by rapid urbanisation.' (6 marks) Portal response box. Use a named city.",
+          "a": "Congestion and transport, lack of housing (squatter settlements), unemployment and informal work, crime, pollution and waste; each explained with a named example",
+          "mins": 10,
+          "model": "Teacher plans: P1 housing shortage leads to squatter settlements; P2 transport and congestion; P3 environment: waste, air and water pollution; use one named city throughout."
+        },
+        {
+          "q": "Extend: Compare urban trends in a developed and a developing or emerging country. (4 marks)",
+          "a": "Developed: slow growth, suburbanisation and counter-urbanisation; developing: rapid growth from migration and natural increase; comparison words",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why might counter-urbanisation create problems in rural areas? (2 marks)",
+          "a": "House prices rise, pricing out locals (1); villages become commuter areas with fewer services used in the day (1)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Re-urbanisation means:",
+          "a": "People moving back into city centres",
+          "mins": 1,
+          "options": [
+            "People moving back into city centres",
+            "Building new villages"
+          ]
+        },
+        {
+          "q": "Big question: why are cities in some countries growing much faster than others?",
+          "a": "Developing countries have strong rural-urban migration and high natural increase; developed countries are already highly urban",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a fact file on your urban case study city for a developing or emerging country (TO CONFIRM which).",
+      "send": "SEND: push and pull cards; 6-mark frame. EAL: glossary. Stretch: research one city's growth since 1950.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 6 (6.1)",
+        "Portal geography y10 lessons 37 to 42 (AQA urban, adapted)",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Case studies: the school's chosen developed and developing or emerging examples (TO CONFIRM); examples used here are suggestions"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Tokyo skyline",
+          "alt": "Tokyo, a megacity",
+          "for": "hook"
+        },
+        {
+          "find": "Lagos city aerial",
+          "alt": "Lagos, Nigeria, from above",
+          "for": "teach:3"
+        },
+        {
+          "find": "commuter suburb houses",
+          "alt": "Suburban houses",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 28,
+      "title": "Revision: urban challenges and sustainable cities (Paper 2, Topics 6.2 and 6.3)",
+      "bigQuestion": "What would make your city more sustainable?",
+      "objectives": [
+        "To understand urban challenges in developed and developing or emerging countries and how cities can be managed sustainably"
+      ],
+      "successCriteria": [
+        "All: describe urban land use zones",
+        "Most: explain challenges in a developed and a developing or emerging city",
+        "Some: evaluate strategies for sustainable urban living"
+      ],
+      "crossCurricular": "Citizenship: local planning decisions",
+      "smsc": "Social: fairness for the urban poor",
+      "keywords": [
+        {
+          "term": "land use",
+          "def": "what land is used for, such as housing or industry"
+        },
+        {
+          "term": "squatter settlement",
+          "def": "housing built illegally on land people do not own"
+        },
+        {
+          "term": "informal economy",
+          "def": "work that is not officially recorded or taxed"
+        },
+        {
+          "term": "brownfield site",
+          "def": "previously developed land"
+        },
+        {
+          "term": "greenfield site",
+          "def": "land that has never been built on"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Should new homes be built on old factory sites or on fields at the edge of town?"
+      },
+      "starter": [
+        {
+          "q": "A megacity has over:",
+          "a": "10 million people",
+          "mins": 1,
+          "options": [
+            "10 million people",
+            "100,000 people"
+          ]
+        },
+        {
+          "q": "Counter-urbanisation is movement to:",
+          "a": "Rural areas",
+          "mins": 1,
+          "options": [
+            "Rural areas",
+            "City centres"
+          ]
+        },
+        {
+          "q": "Previously developed land is:",
+          "a": "Brownfield",
+          "mins": 1,
+          "options": [
+            "Brownfield",
+            "Greenfield"
+          ]
+        },
+        {
+          "q": "Name one problem of rapid urbanisation.",
+          "a": "For example: squatter settlements, congestion, pollution",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Urban land use",
+          "bullets": [
+            "CBD: shops, offices, high land values",
+            "Inner city, suburbs, rural-urban fringe",
+            "Location, accessibility, land values"
+          ],
+          "note": "Land values are highest in the accessible centre, falling outwards.",
+          "diagram": {
+            "centre": "urban land use",
+            "items": [
+              "CBD: high land values",
+              "inner city: older housing, regeneration",
+              "suburbs: housing, open space",
+              "rural-urban fringe: retail parks, greenfield housing",
+              "transport routes"
+            ]
+          }
+        },
+        {
+          "heading": "Challenges compared",
+          "bullets": [
+            "Developed and developing or emerging"
+          ],
+          "note": "Suggested examples: London and Mumbai (Dharavi, about a million people in about 2 square kilometres, estimates vary). Confirm the school's case studies.",
+          "compare": {
+            "left": {
+              "title": "Developed city",
+              "points": [
+                "resource demand and waste",
+                "housing costs",
+                "segregation",
+                "inner-city decline"
+              ]
+            },
+            "right": {
+              "title": "Developing or emerging city",
+              "points": [
+                "squatter settlements",
+                "informal economy",
+                "lack of services",
+                "pollution"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Sustainable management",
+          "bullets": [
+            "Brownfield first",
+            "Public transport, cycling",
+            "Green space, waste recycling, renewable energy"
+          ],
+          "note": "Planners, politicians, developers and industrialists all play a part (6.3).",
+          "table": {
+            "head": [
+              "Strategy",
+              "Benefit",
+              "Limitation"
+            ],
+            "rows": [
+              [
+                "brownfield housing",
+                "saves countryside",
+                "cleaning land is costly"
+              ],
+              [
+                "public transport",
+                "less congestion and pollution",
+                "expensive to build"
+              ],
+              [
+                "self-help schemes",
+                "improve squatter homes cheaply",
+                "slow; small scale"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Land values are usually highest in the:",
+            "options": [
+              "Suburbs",
+              "CBD",
+              "Rural-urban fringe"
+            ],
+            "answer": 1,
+            "why": "The CBD is most accessible, so demand and land values are highest."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one challenge of squatter settlements. (2 marks)",
+          "a": "Lack of clean water and sanitation (1) spreads disease such as cholera (1)",
+          "mins": 3,
+          "model": "Name the challenge: no clean water or sewers.\nExplain the effect: disease spreads.\nThat is a 2-mark answer: point plus development."
+        },
+        {
+          "q": "Give one advantage and one disadvantage of greenfield building. (2 marks)",
+          "a": "Advantage: cheaper and easier to build (1); disadvantage: loss of countryside and habitats (1)",
+          "mins": 2
+        },
+        {
+          "q": "What is the informal economy? (1 mark)",
+          "a": "Work not officially recorded or taxed, such as street selling",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 'Evaluate strategies to make urban living more sustainable in one named city.' (8 marks) Portal response box.",
+          "a": "Named city; two or three strategies; benefits and limitations with evidence; roles of different groups; substantiated judgement",
+          "mins": 10,
+          "model": "Teacher plans: intro names the city; P1 transport strategy; P2 housing (brownfield or self-help); P3 waste or energy; conclusion: which works best and why."
+        },
+        {
+          "q": "Extend: Compare urban challenges in your two case study cities. (4 marks)",
+          "a": "Both face housing pressure, but the developed city's issue is cost and the developing city's is informal housing without services; comparison words",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Explain the role of planners in sustainable urban management. (2 marks)",
+          "a": "They control land use and approve developments (1), so they can prioritise brownfield sites and transport (1)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A squatter settlement is housing built:",
+          "a": "On land people do not own",
+          "mins": 1,
+          "options": [
+            "On land people do not own",
+            "By the government"
+          ]
+        },
+        {
+          "q": "Big question: what would make your city more sustainable?",
+          "a": "Reasoned ideas such as brownfield housing, better public transport, green space, recycling and renewable energy",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete a case study comparison table for your two urban case studies.",
+      "send": "SEND: land use model card; 8-mark frame. EAL: glossary. Stretch: research one sustainable urban scheme.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 6 (6.2, 6.3)",
+        "Portal geography y10 lessons 37 to 42 and y11 lessons 1 to 19 where they fit",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Case studies: the school's chosen developed and developing or emerging examples (TO CONFIRM); examples used here are suggestions"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Dharavi Mumbai aerial",
+          "alt": "Dharavi, Mumbai, from above",
+          "for": "teach:2"
+        },
+        {
+          "find": "London Canary Wharf",
+          "alt": "Canary Wharf, London, built on former docks",
+          "for": "keywords"
+        },
+        {
+          "find": "city cycle lane",
+          "alt": "A city cycle lane",
+          "for": "teach:3"
+        },
+        {
+          "find": "brownfield site redevelopment",
+          "alt": "A brownfield site being redeveloped",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 29,
+      "title": "Revision: economic sectors, change and population theories (Paper 2, Topics 4.1 and 4.2)",
+      "bigQuestion": "Will the world run out of food, or will people always find a way?",
+      "objectives": [
+        "To understand economic sectors, the causes and impacts of sector change and the ideas of Malthus and Boserup"
+      ],
+      "successCriteria": [
+        "All: classify employment into four sectors",
+        "Most: explain changes in employment structure using the Clark Fisher model",
+        "Some: compare and evaluate the views of Malthus and Boserup"
+      ],
+      "crossCurricular": "Economics: population and resources",
+      "smsc": "Spiritual: trust in Allah's provision with effort and sharing",
+      "keywords": [
+        {
+          "term": "Clark Fisher model",
+          "def": "a model showing how employment shifts between sectors as countries develop"
+        },
+        {
+          "term": "informal employment",
+          "def": "work not officially recorded or taxed"
+        },
+        {
+          "term": "Malthus",
+          "def": "argued in 1798 that population would outgrow food supply"
+        },
+        {
+          "term": "Boserup",
+          "def": "argued in 1965 that population pressure drives new farming methods"
+        },
+        {
+          "term": "deindustrialisation",
+          "def": "the decline of manufacturing"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Do more people mean more problems or more ideas?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'There is no creature on earth except that its provision is with Allah' (Hud 11:6). Muslims trust in Allah's provision and also work hard, plan and share, avoiding waste. This balance answers both Malthus's fear and Boserup's hope.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Brownfield sites are:",
+          "a": "Previously developed land",
+          "mins": 1,
+          "options": [
+            "Previously developed land",
+            "Untouched countryside"
+          ]
+        },
+        {
+          "q": "A teacher works in the:",
+          "a": "Tertiary sector",
+          "mins": 1,
+          "options": [
+            "Tertiary sector",
+            "Secondary sector"
+          ]
+        },
+        {
+          "q": "Research and IT jobs are:",
+          "a": "Quaternary",
+          "mins": 1,
+          "options": [
+            "Quaternary",
+            "Primary"
+          ]
+        },
+        {
+          "q": "Name the four sectors.",
+          "a": "Primary, secondary, tertiary, quaternary",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The Clark Fisher model",
+          "bullets": [
+            "Pre-industrial: mostly primary",
+            "Industrial: secondary rises",
+            "Post-industrial: tertiary and quaternary dominate"
+          ],
+          "note": "Use the UK as post-industrial and a low-income country as pre-industrial. These are illustrative model values to show the shape, not data for a named country.",
+          "chart": {
+            "kind": "bar",
+            "title": "Model: share of jobs in a post-industrial country (illustrative)",
+            "labels": [
+              "Primary",
+              "Secondary",
+              "Tertiary",
+              "Quaternary"
+            ],
+            "values": [
+              2,
+              15,
+              70,
+              13
+            ],
+            "unit": "%"
+          }
+        },
+        {
+          "heading": "Why sectors change",
+          "bullets": [
+            "Raw materials run out or get cheaper elsewhere",
+            "Globalisation and TNCs",
+            "Mechanisation; government policy"
+          ],
+          "note": "Impacts in a developed country: job losses in old industrial areas; in a developing or emerging country: factory growth, rural-urban migration."
+        },
+        {
+          "heading": "Malthus and Boserup",
+          "bullets": [
+            "Two views on population and resources"
+          ],
+          "note": "Discuss which fits recent history better.",
+          "compare": {
+            "left": {
+              "title": "Malthus (1798)",
+              "points": [
+                "population grows faster than food",
+                "checks: famine, disease, war",
+                "pessimistic"
+              ]
+            },
+            "right": {
+              "title": "Boserup (1965)",
+              "points": [
+                "population pressure drives innovation",
+                "new farming methods raise food supply",
+                "optimistic"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Who argued that necessity drives farming innovation?",
+            "options": [
+              "Malthus",
+              "Boserup",
+              "Clark Fisher"
+            ],
+            "answer": 1,
+            "why": "Boserup (1965). Malthus predicted food shortages; Clark Fisher is about sectors."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one cause of the growth of the tertiary sector in developed countries. (2 marks)",
+          "a": "Rising incomes increase demand for services such as leisure and health (1), so more jobs are created in services (1)",
+          "mins": 3,
+          "model": "Cause: people earn more.\nEffect: they spend more on services.\nResult: tertiary jobs grow."
+        },
+        {
+          "q": "Give one characteristic of informal employment. (1 mark)",
+          "a": "For example: no contract, no tax paid, irregular income",
+          "mins": 1
+        },
+        {
+          "q": "State one piece of evidence that supports Boserup. (2 marks)",
+          "a": "The Green Revolution (1): new seeds, fertiliser and irrigation raised yields as population grew (1)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 'Assess the reasons for changes in employment structure in one named country.' (8 marks) Portal response box.",
+          "a": "Named country; reasons such as globalisation, mechanisation, resource depletion, policy, rising incomes; evidence; judgement on the most important reason",
+          "mins": 10,
+          "model": "Teacher plans: intro (named country and its change); P1 globalisation; P2 mechanisation and resources; P3 policy and incomes; conclusion: most important reason with justification."
+        },
+        {
+          "q": "Extend: Compare the views of Malthus and Boserup. (4 marks)",
+          "a": "Malthus: population outstrips food, leading to checks; Boserup: pressure brings innovation; evidence for each; comparison words",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Explain why informal employment is common in megacities in developing countries. (3 marks)",
+          "a": "Rapid migration brings more workers than formal jobs (1); low skills and few contracts (1); informal work is the only option to earn (1)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Malthus wrote in:",
+          "a": "1798",
+          "mins": 1,
+          "options": [
+            "1798",
+            "1965"
+          ]
+        },
+        {
+          "q": "Big question: will the world run out of food, or will people always find a way?",
+          "a": "A reasoned view using Malthus and Boserup, with evidence such as the Green Revolution and ongoing food insecurity",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a revision card on your economic activity case studies (developed and developing or emerging).",
+      "send": "SEND: sector and theory cards; 8-mark frame. EAL: glossary. Stretch: research the Green Revolution in India.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 4 (4.1, 4.2)",
+        "Portal geography y11 lessons 9 to 14 (AQA changing economic world, adapted)",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Case studies: the school's chosen developed and developing or emerging examples (TO CONFIRM); examples used here are suggestions"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Green Revolution wheat field India",
+          "alt": "Wheat fields in India",
+          "for": "teach:3"
+        },
+        {
+          "find": "street market stalls",
+          "alt": "Street market stalls (informal economy)",
+          "for": "keywords"
+        },
+        {
+          "find": "factory assembly line",
+          "alt": "A factory assembly line",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 30,
+      "title": "Revision: energy demand, sources and sustainable management (Paper 2, Topic 4.3)",
+      "bigQuestion": "Can the world have enough energy without harming the planet?",
+      "objectives": [
+        "To understand global energy demand, the advantages and disadvantages of energy sources and sustainable energy management"
+      ],
+      "successCriteria": [
+        "All: classify energy sources as renewable or non-renewable",
+        "Most: explain why energy demand varies globally",
+        "Some: evaluate energy management in two contrasting countries"
+      ],
+      "crossCurricular": "Physics: energy resources and efficiency",
+      "smsc": "Moral: responsible use of energy",
+      "keywords": [
+        {
+          "term": "energy mix",
+          "def": "the combination of energy sources a country uses"
+        },
+        {
+          "term": "energy security",
+          "def": "having a reliable, affordable supply of energy"
+        },
+        {
+          "term": "renewable",
+          "def": "energy that will not run out, such as wind or solar"
+        },
+        {
+          "term": "non-renewable",
+          "def": "energy that will run out, such as coal, oil and gas"
+        },
+        {
+          "term": "energy efficiency",
+          "def": "using less energy to do the same job"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If your country had no oil, coal or gas, how would you keep the lights on?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Eat and drink, but do not waste' (al-A'raf 7:31), and that He set up the balance so we do not transgress it (ar-Rahman 55:7 to 8). Using energy carefully and choosing cleaner sources is part of caring for Allah's creation.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Malthus was:",
+          "a": "Pessimistic about food supply",
+          "mins": 1,
+          "options": [
+            "Pessimistic about food supply",
+            "Optimistic"
+          ]
+        },
+        {
+          "q": "Wind power is:",
+          "a": "Renewable",
+          "mins": 1,
+          "options": [
+            "Renewable",
+            "Non-renewable"
+          ]
+        },
+        {
+          "q": "Clark Fisher shows employment shifting to:",
+          "a": "Tertiary and quaternary",
+          "mins": 1,
+          "options": [
+            "Tertiary and quaternary",
+            "Primary"
+          ]
+        },
+        {
+          "q": "Name one non-renewable energy source.",
+          "a": "Coal, oil or gas (or nuclear fuel)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why demand varies",
+          "bullets": [
+            "Wealth and development",
+            "Population and industry",
+            "Climate: heating and cooling"
+          ],
+          "note": "Richer countries use far more energy per person; emerging economies' demand is rising fast."
+        },
+        {
+          "heading": "Energy sources",
+          "bullets": [
+            "Advantages and disadvantages"
+          ],
+          "note": "Pupils add points.",
+          "table": {
+            "head": [
+              "Source",
+              "Advantage",
+              "Disadvantage"
+            ],
+            "rows": [
+              [
+                "coal",
+                "reliable, cheap where mined",
+                "highest CO2, air pollution"
+              ],
+              [
+                "natural gas",
+                "flexible, less CO2 than coal",
+                "still a fossil fuel"
+              ],
+              [
+                "nuclear",
+                "low carbon, reliable",
+                "waste, high cost, risk"
+              ],
+              [
+                "wind",
+                "renewable, low running cost",
+                "intermittent, visual impact"
+              ],
+              [
+                "solar",
+                "renewable, falling cost",
+                "needs sun, land or roof space"
+              ],
+              [
+                "hydro (HEP)",
+                "reliable renewable",
+                "dams flood land, displace people"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sustainable management",
+          "bullets": [
+            "Education and behaviour",
+            "Efficiency: insulation, LED lighting",
+            "Conservation and a renewable mix"
+          ],
+          "note": "The UK closed its last coal power station, Ratcliffe-on-Soar, in 2024; renewables supplied about half of UK electricity in 2024.",
+          "model": {
+            "problem": "Explain one way of managing energy sustainably. (2 marks)",
+            "steps": [
+              "Name the strategy: home insulation",
+              "Explain the effect: less heat lost, so less energy needed"
+            ],
+            "answer": "Point plus explained effect"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Energy security means:",
+            "options": [
+              "Guarding power stations",
+              "A reliable, affordable energy supply",
+              "Using only solar power"
+            ],
+            "answer": 1,
+            "why": "Security is about reliable, affordable supply, often by diversifying the mix."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one reason why energy demand is rising in emerging economies. (2 marks)",
+          "a": "Industrialisation (1) increases energy use in factories; rising incomes mean more cars and appliances (1)",
+          "mins": 3,
+          "model": "Cause: industry grows and people earn more.\nEffect: factories, cars and appliances use more energy.\nSo demand rises."
+        },
+        {
+          "q": "State one disadvantage of wind power. (1 mark)",
+          "a": "Intermittent: no electricity when the wind does not blow (or visual impact)",
+          "mins": 1
+        },
+        {
+          "q": "Give one benefit of a diverse energy mix. (1 mark)",
+          "a": "Greater energy security: less reliance on one source",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 'Evaluate the management of energy resources in a developed and a developing or emerging country.' (8 marks) Portal response box.",
+          "a": "Two named countries; strategies (mix, renewables, efficiency, imports); successes and problems with evidence; comparison; substantiated judgement",
+          "mins": 10,
+          "model": "Teacher plans: P1 developed country (for example the UK: coal phased out, more wind) with evidence; P2 developing or emerging country with evidence; P3 compare; conclusion."
+        },
+        {
+          "q": "Extend: Make a two-minute verbal summary of Paper 2 Section A topics for a partner (breakout room).",
+          "a": "Accurate summary of urban and economic activity and energy content",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why some countries keep using coal despite its impacts. (3 marks)",
+          "a": "Cheap and plentiful domestic supply (1); reliable for industry (1); jobs depend on it and renewables need investment (1)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is renewable?",
+          "a": "Solar",
+          "mins": 1,
+          "options": [
+            "Solar",
+            "Natural gas"
+          ]
+        },
+        {
+          "q": "Big question: can the world have enough energy without harming the planet?",
+          "a": "Reasoned view: possible with efficiency, conservation and a fast shift to renewables, but costly and uneven between countries",
+          "mins": 2
+        }
+      ],
+      "homework": "Mock week (8 Feb): revise Paper 1 and Paper 2 using your revision maps; bring a calculator and ruler.",
+      "send": "SEND: energy table and 8-mark frame. EAL: glossary. Stretch: research one energy case study country's energy mix since 2000.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 4 (4.3)",
+        "Portal geography y11 lessons 18, 19 and 21 (AQA energy, adapted)",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Case studies: the school's chosen developed and developing or emerging examples (TO CONFIRM); examples used here are suggestions"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "offshore wind farm",
+          "alt": "An offshore wind farm",
+          "for": "hook"
+        },
+        {
+          "find": "Ratcliffe-on-Soar power station",
+          "alt": "Ratcliffe-on-Soar, the UK's last coal power station (closed 2024)",
+          "for": "teach:3"
+        },
+        {
+          "find": "solar panels roof",
+          "alt": "Solar panels on a roof",
+          "for": "keywords"
+        }
+      ]
     }
   ]
 }
