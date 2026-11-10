@@ -6,14 +6,18 @@ import path from "node:path";
 import { ITEMS_DIR, TYPES, ROOT, loadLessonFiles } from "./lib.mjs";
 import { GRID_KINDS } from "./grids.mjs";
 
-const BLOCK_KEYS = ["h", "caption", "text", "bullets", "questions", "keywords", "panels", "table", "frame", "starters", "arabic", "grid", "cards", "picture", "practical", "passage", "model", "box", "timeline", "checklist", "tracker", "note", "pagebreak", "answers"];
+const BLOCK_KEYS = ["h", "caption", "trace", "text", "bullets", "questions", "keywords", "panels", "table", "frame", "starters", "arabic", "grid", "cards", "picture", "practical", "passage", "model", "box", "timeline", "checklist", "tracker", "note", "pagebreak", "answers"];
 const AMERICAN = /\b(color|colors|colored|coloring|center|centers|centered|favorite|favorites|organize|organized|organizing|organizer|analyze|analyzed|behavior|behaviors|neighbor|neighbors|liter|liters|fiber|practicing|labeled|labeling|traveled|traveling|defense|aluminum|cozy|jewelry|pajamas|mom|realize|realized|recognize|recognized|summarize|summarized|memorize|memorized)\b/;
 const PLACEHOLDER = /\b(TODO|TBC|lorem ipsum|xxx|\[placeholder\]|FIXME)\b/i;
 
 function textsOf(o, out = []) {
   if (typeof o === "string") out.push(o);
   else if (Array.isArray(o)) o.forEach((x) => textsOf(x, out));
-  else if (o && typeof o === "object") for (const [k, v] of Object.entries(o)) if (!["find", "file", "kind", "id", "subjectSlug", "year", "type", "item"].includes(k)) textsOf(v, out);
+  else if (o && typeof o === "object") {
+    // Quoted translations of the Qur'an (e.g. Saheeh International) are copied exactly, spelling and all.
+    if (o.head && Array.isArray(o.head) && o.head.some((h) => /translation|meaning/i.test(String(h)))) return out;
+    for (const [k, v] of Object.entries(o)) if (!["find", "file", "kind", "id", "subjectSlug", "year", "type", "item"].includes(k)) textsOf(v, out);
+  }
   return out;
 }
 

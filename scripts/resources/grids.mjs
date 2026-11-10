@@ -7,7 +7,7 @@ const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").
 const svg = (w, h, inner) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}mm" height="${h}mm" viewBox="0 0 ${w} ${h}" class="grid-svg">${inner}</svg>`;
 const LINE = "#B9B3A5";
 const INK = "#1B1E21";
-const txt = (x, y, s, o = {}) => `<text x="${x}" y="${y}" font-size="${o.size || 3.6}" text-anchor="${o.anchor || "middle"}" fill="${o.color || INK}" font-family="Carlito, Calibri, Arial, sans-serif"${o.bold ? ' font-weight="700"' : ""}>${esc(s)}</text>`;
+const txt = (x, y, s, o = {}) => `<text x="${x}" y="${y}" font-size="${o.size || 3.6}" text-anchor="${o.anchor || "middle"}" fill="${o.color || INK}" font-family="Carlito, Calibri, 'Amiri Pack', Arial, sans-serif"${o.bold ? ' font-weight="700"' : ""}>${esc(s)}</text>`;
 
 function squared({ size = 5, height = 230, width = W } = {}) {
   let s = "";
@@ -174,7 +174,7 @@ function fractionwall({ rows = [1, 2, 3, 4, 5, 6, 8, 10, 12], labels = true } = 
   rows.forEach((d, r) => {
     for (let k = 0; k < d; k++) {
       s += `<rect x="${1 + (k * w) / d}" y="${1 + r * rh}" width="${w / d}" height="${rh}" fill="${fills[r % fills.length]}" stroke="${INK}" stroke-width="0.35"/>`;
-      if (labels) s += d === 1 ? txt(1 + w / 2, 1 + r * rh + rh / 2 + 1.6, "1 whole", { size: 4.2, bold: true }) : `<text x="${1 + (k * w) / d + w / d / 2}" y="${1 + r * rh + rh / 2 - 0.5}" font-size="${d > 10 ? 3 : 3.6}" text-anchor="middle" font-family="Carlito, Calibri, Arial, sans-serif" fill="${INK}"><tspan>1</tspan><tspan x="${1 + (k * w) / d + w / d / 2}" dy="${d > 10 ? 3.6 : 4.2}">${d}</tspan></text><line x1="${1 + (k * w) / d + w / d / 2 - 2}" y1="${1 + r * rh + rh / 2}" x2="${1 + (k * w) / d + w / d / 2 + 2}" y2="${1 + r * rh + rh / 2}" stroke="${INK}" stroke-width="0.3"/>`;
+      if (labels) s += d === 1 ? txt(1 + w / 2, 1 + r * rh + rh / 2 + 1.6, "1 whole", { size: 4.2, bold: true }) : `<text x="${1 + (k * w) / d + w / d / 2}" y="${1 + r * rh + rh / 2 - 0.5}" font-size="${d > 10 ? 3 : 3.6}" text-anchor="middle" font-family="Carlito, Calibri, 'Amiri Pack', Arial, sans-serif" fill="${INK}"><tspan>1</tspan><tspan x="${1 + (k * w) / d + w / d / 2}" dy="${d > 10 ? 3.6 : 4.2}">${d}</tspan></text><line x1="${1 + (k * w) / d + w / d / 2 - 2}" y1="${1 + r * rh + rh / 2}" x2="${1 + (k * w) / d + w / d / 2 + 2}" y2="${1 + r * rh + rh / 2}" stroke="${INK}" stroke-width="0.3"/>`;
     }
   });
   return svg(W, rows.length * rh + 2, s);
@@ -257,7 +257,7 @@ function barchart({ cats = [], yMax = 10, yStep = 1, yLabel = "", xLabel = "" } 
   }
   s += `<line x1="${pad}" y1="${h - 14}" x2="${W - 4}" y2="${h - 14}" stroke="${INK}" stroke-width="0.5"/><line x1="${pad}" y1="6" x2="${pad}" y2="${h - 14}" stroke="${INK}" stroke-width="0.5"/>`;
   cats.forEach((c, i) => (s += txt(pad + cw * i + cw / 2, h - 8, c, { size: cats.length > 6 ? 2.6 : 3.2 })));
-  if (yLabel) s += `<text x="3" y="${h / 2}" font-size="3" transform="rotate(-90 3 ${h / 2})" text-anchor="middle" font-family="Carlito, Calibri, Arial, sans-serif">${esc(yLabel)}</text>`;
+  if (yLabel) s += `<text x="3" y="${h / 2}" font-size="3" transform="rotate(-90 3 ${h / 2})" text-anchor="middle" font-family="Carlito, Calibri, 'Amiri Pack', Arial, sans-serif">${esc(yLabel)}</text>`;
   if (xLabel) s += txt(W / 2, h - 1.5, xLabel, { size: 3.2 });
   return svg(W, h, s);
 }

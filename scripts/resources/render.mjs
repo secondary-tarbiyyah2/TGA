@@ -101,6 +101,15 @@ function blockHtml(b, ctx) {
     const text = a.spaced ? esc(a.text).split(/\s+/).join('<span class="gap"> </span>') : esc(a.text);
     return `<div class="arabic-block${a.quran ? " quran" : ""}"><p class="ar" dir="rtl" lang="ar" style="font-size:${a.size || (a.quran ? 22 : 18)}pt">${text}</p>${a.ref ? `<p class="ref">${t(a.ref)}</p>` : ""}${a.translation ? `<p class="tr">${t(a.translation)}</p>` : ""}</div>`;
   }
+  if (b.trace) {
+    // Arabic letters or words, large: pale to trace over (trace: true) or dark to read and colour, each with an empty box to copy into.
+    const tr = b.trace;
+    const cells = (tr.items || []).map((w) => `<td class="tr-cell${tr.trace === false ? " read" : ""}"><span class="ar" dir="rtl" lang="ar">${esc(w)}</span></td>${tr.copy === false ? "" : '<td class="tr-cell empty"></td>'}`);
+    const perRow = tr.cols || (tr.copy === false ? 4 : 2);
+    const rows = [];
+    for (let i = 0; i < cells.length; i += perRow) rows.push(`<tr>${cells.slice(i, i + perRow).join("")}</tr>`);
+    return `${tr.title ? `<h3>${t(tr.title)}</h3>` : ""}<table class="trace">${rows.join("")}</table>`;
+  }
   if (b.grid) return `<div class="fig${b.grid.kind === "periodic" ? " wide" : ""}">${gridSvg(b.grid)}</div>${b.caption ? `<p class="caption">${t(b.caption)}</p>` : ""}`;
   if (b.cards) return `${b.title ? `<h3>${t(b.title)}</h3>` : ""}<div class="fig">${gridSvg({ kind: "cards", items: b.cards, cols: b.cols || 3, height: b.height || 26, size: b.size || 4.6 })}</div><p class="caption">Cut out the cards along the dashed lines${b.task ? `, then ${t(b.task)}` : "."}</p>`;
   if (b.picture) return pictureHtml(b.picture, ctx);
@@ -240,6 +249,11 @@ td.blank{height:10mm;background:#fff!important}
 .check li{display:flex;gap:3mm;align-items:flex-start;margin-bottom:2mm}
 .tick{width:4.5mm;height:4.5mm;border:.7pt solid #1B1E21;border-radius:1mm;flex:none;margin-top:.5mm}
 .pb{break-after:page}
+table.trace{border-collapse:separate;border-spacing:2mm;margin:0 0 3mm}
+.tr-cell{border:.6pt dashed #B9B3A5!important;background:#fff!important;text-align:center;height:30mm;width:25%}
+.tr-cell .ar{font-size:44pt;color:#D2CCBE;line-height:1.3}
+.tr-cell.read .ar{color:#1B1E21;font-size:34pt}
+.tr-cell.empty{border-style:solid!important;border-color:#E3DED2!important}
 .ms .ans{background:#E4F3EA;border-radius:1.5mm;padding:1.5mm 3mm;margin:1mm 0 2mm 8.5mm}
 .ms .model-ans{background:${soft};border-radius:1.5mm;padding:1.5mm 3mm;margin:0 0 2mm 8.5mm;font-size:9.5pt}
 .ms .teacher{background:#FBF7EE;border:.6pt solid #E3DED2;border-radius:2mm;padding:2mm 3.5mm;margin-bottom:3mm}
