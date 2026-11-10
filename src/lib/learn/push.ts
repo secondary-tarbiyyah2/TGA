@@ -59,7 +59,13 @@ export async function enablePush(): Promise<PushState> {
   const { error } = await supabase
     .from("push_subscriptions")
     .insert({ endpoint: json.endpoint, p256dh: json.keys.p256dh, auth: json.keys.auth, user_agent: navigator.userAgent.slice(0, 300) });
-  return error ? "off" : "on";
+  if (error) {
+    // Not stored, so the school can't reach this device: don't leave the
+    // browser thinking it's on.
+    await sub.unsubscribe().catch(() => undefined);
+    return "off";
+  }
+  return "on";
 }
 
 /** Turns notifications off on this device. */
