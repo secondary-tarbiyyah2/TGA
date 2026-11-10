@@ -3,7 +3,7 @@
   "year": "y7",
   "board": "KS3 National Curriculum via Pearson Exploring Science, building to Edexcel International GCSE Biology, Chemistry and Physics",
   "boardShort": "KS3 Exploring Science",
-  "source": "School Science curriculum journey 2026–27 (Year 7 Term 1: 7A Cells, tissues, organs and systems; 7E Mixtures and separation) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 7Aa–7Ae, 7Ea–7Ee) and 7E assessments; practicals adapted for live online lessons; INSET lesson standard. | Spring 1 2027 (lessons 17 to 31): Pearson Exploring Science 7C and 7G (school's Pearson five-year scheme) and Kerboodle Activate 1; home practicals with written safety guides",
+  "source": "School Science curriculum journey 2026–27 (Year 7 Term 1: 7A Cells, tissues, organs and systems; 7E Mixtures and separation) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 7Aa–7Ae, 7Ea–7Ee) and 7E assessments; practicals adapted for live online lessons; INSET lesson standard. | Spring 1 2027 (lessons 17 to 31): Pearson Exploring Science 7C and 7G (school's Pearson five-year scheme) and Kerboodle Activate 1; home practicals with written safety guides | Spring 2 2027 (lessons 32 to 49): Pearson Exploring Science 7J and 7K, Kerboodle Activate (Electromagnets; Forces), circuit simulator, The Highway Code stopping distances; home practicals with household items and written safety guides; no mains work",
   "lessons": [
     {
       "unit": "7A: Cells, tissues, organs and systems",
@@ -5869,6 +5869,4255 @@
           "find": "hot air balloon",
           "alt": "A hot air balloon",
           "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 32,
+      "title": "Electric circuits and symbols",
+      "duration": 50,
+      "bigQuestion": "Your torch will not switch on. Think of every reason why, using what you know about circuits.",
+      "objectives": [
+        "To understand what an electric current is and how a complete circuit lets it flow"
+      ],
+      "successCriteria": [
+        "All: draw the symbols for a cell, battery, lamp, switch and wire",
+        "Most: explain why a circuit must be complete",
+        "Some: predict which circuits will light a lamp"
+      ],
+      "crossCurricular": "DT: circuits in products such as torches",
+      "smsc": "Moral: electrical safety at home",
+      "keywords": [
+        {
+          "term": "current",
+          "def": "the flow of electric charge round a circuit"
+        },
+        {
+          "term": "circuit",
+          "def": "a complete loop that current flows round"
+        },
+        {
+          "term": "cell",
+          "def": "a component that pushes current round a circuit"
+        },
+        {
+          "term": "component",
+          "def": "a part in a circuit, such as a lamp"
+        },
+        {
+          "term": "switch",
+          "def": "opens or closes a gap in a circuit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your torch will not switch on. Think of every reason why, using what you know about circuits.",
+        "a": "Flat cell, broken lamp, cell the wrong way, a gap or loose contact, switch faulty: the circuit is not complete."
+      },
+      "starter": [
+        {
+          "q": "The arrangement of particles in a solid is...",
+          "a": "Close together in a regular pattern",
+          "mins": 1,
+          "options": [
+            "Close together in a regular pattern",
+            "Far apart and random"
+          ]
+        },
+        {
+          "q": "Which organ system includes the heart?",
+          "a": "Circulatory system",
+          "mins": 1,
+          "options": [
+            "Circulatory system",
+            "Digestive system",
+            "Skeletal system"
+          ]
+        },
+        {
+          "q": "Name an electrical conductor.",
+          "a": "For example: copper or any metal",
+          "mins": 1
+        },
+        {
+          "q": "Name an electrical insulator.",
+          "a": "For example: plastic, rubber, wood",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Electric current",
+          "bullets": [
+            "A flow of charge",
+            "Needs a complete circuit",
+            "Measured in amps (A)"
+          ],
+          "note": "Charge is carried by tiny particles called electrons in the wires."
+        },
+        {
+          "heading": "Circuit symbols",
+          "bullets": [
+            "Scientists draw circuits with symbols",
+            "Straight lines, square corners"
+          ],
+          "note": "Draw each on the board; pupils copy.",
+          "table": {
+            "head": [
+              "Component",
+              "What it does"
+            ],
+            "rows": [
+              [
+                "Cell",
+                "Pushes the current"
+              ],
+              [
+                "Battery",
+                "Two or more cells joined"
+              ],
+              [
+                "Lamp",
+                "Lights up when current flows"
+              ],
+              [
+                "Switch (open)",
+                "Makes a gap: no current"
+              ],
+              [
+                "Switch (closed)",
+                "Closes the gap: current flows"
+              ],
+              [
+                "Wire",
+                "Connects components"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Complete or not?",
+          "bullets": [
+            "A gap stops the current everywhere",
+            "Switches make and break gaps"
+          ],
+          "note": "Build in the simulator on screen.",
+          "misconception": {
+            "wrong": "Current is used up by the lamp, so less comes back.",
+            "right": "Current is the same all round a series circuit; the lamp transfers energy, not current."
+          }
+        },
+        {
+          "heading": "Safety guide: electricity",
+          "bullets": [
+            "Never open plugs, sockets or appliances",
+            "Never put anything into a socket",
+            "Circuits are built in the simulator or by the teacher on camera",
+            "Batteries: never cut, heat or short-circuit them"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which circuit lights the lamp?",
+            "options": [
+              "Cell, lamp, open switch",
+              "Cell, lamp, closed switch",
+              "Lamp and closed switch, no cell"
+            ],
+            "answer": 1,
+            "why": "Only a complete circuit with a cell lets current flow."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Draw a circuit: one cell, one lamp, one closed switch.",
+          "a": "Rectangle loop with the cell, lamp and closed switch symbols",
+          "mins": 3,
+          "model": "Start with the cell symbol (long line, short line). Draw a wire round as a rectangle. Add the lamp (circle with a cross) on one side and the closed switch on another."
+        },
+        {
+          "q": "Why does opening a switch turn off the lamp?",
+          "a": "It makes a gap so the circuit is not complete; no current flows",
+          "mins": 2
+        },
+        {
+          "q": "What is a battery?",
+          "a": "Two or more cells joined together",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Build three circuits in the simulator and draw each with symbols: (a) one cell, one lamp; (b) add a switch; (c) two lamps in a line. Say whether each lamp lights.",
+          "a": "All lamps light when the switch is closed; diagrams with correct symbols and square corners",
+          "mins": 10,
+          "model": "Teacher builds circuit (a) in the simulator on screen and draws it: cell, wire, lamp, back to the cell."
+        },
+        {
+          "q": "Extend: Explain why a torch with one cell the wrong way round does not work.",
+          "a": "The cells push against each other, so there is little or no current.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: A string of lamps all go out when one breaks. What does that tell you about the circuit?",
+          "a": "They are in series: one break opens the only path.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Current is measured in...",
+          "a": "Amps",
+          "mins": 1,
+          "options": [
+            "Volts",
+            "Amps",
+            "Newtons"
+          ]
+        },
+        {
+          "q": "Big question: why might a torch not switch on?",
+          "a": "The circuit is incomplete: flat cell, broken lamp, gap, or cell the wrong way.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three things at home that use cells. Draw the circuit symbol for a cell and a lamp beside each.",
+      "send": "SEND: symbol card to copy. EAL: circuit, current, component. Stretch: find the symbol for a buzzer and a motor.",
+      "resources": [
+        "Pearson Exploring Science 7J Current electricity (the school's KS3 course): 7Ja",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Electromagnets (current, potential difference)",
+        "Free online circuit simulator (PhET Circuit Construction Kit: DC) shared on screen",
+        "Circuit symbols card (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "electric circuit symbols",
+          "alt": "Circuit symbols",
+          "for": "teach:2"
+        },
+        {
+          "find": "AA batteries",
+          "alt": "AA cells",
+          "for": "keywords"
+        },
+        {
+          "find": "flashlight torch",
+          "alt": "A torch",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 33,
+      "title": "Measuring current with an ammeter",
+      "duration": 50,
+      "bigQuestion": "If you measured the current before and after a lamp, would it be bigger, smaller or the same? Why?",
+      "objectives": [
+        "To understand how to measure current and what happens to it in a series circuit"
+      ],
+      "successCriteria": [
+        "All: connect an ammeter in series",
+        "Most: read current in amps from a meter",
+        "Some: show that current is the same everywhere in a series circuit"
+      ],
+      "crossCurricular": "Maths: decimals and reading scales",
+      "smsc": "Social: working accurately as a team",
+      "keywords": [
+        {
+          "term": "ammeter",
+          "def": "a meter that measures current"
+        },
+        {
+          "term": "amp (A)",
+          "def": "the unit of current"
+        },
+        {
+          "term": "series",
+          "def": "components in one loop, one after another"
+        },
+        {
+          "term": "reading",
+          "def": "the number shown on a meter"
+        },
+        {
+          "term": "charge",
+          "def": "what flows to make a current"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you measured the current before and after a lamp, would it be bigger, smaller or the same? Why?",
+        "a": "The same: current is not used up; the lamp transfers energy."
+      },
+      "starter": [
+        {
+          "q": "A gap in a circuit means...",
+          "a": "No current flows",
+          "mins": 1,
+          "options": [
+            "No current flows",
+            "More current flows"
+          ]
+        },
+        {
+          "q": "Which symbol has a long and a short line?",
+          "a": "A cell",
+          "mins": 1,
+          "options": [
+            "A cell",
+            "A lamp",
+            "A switch"
+          ]
+        },
+        {
+          "q": "What is a battery?",
+          "a": "Two or more cells",
+          "mins": 1
+        },
+        {
+          "q": "Current is the flow of...",
+          "a": "Charge",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The ammeter",
+          "bullets": [
+            "Measures current in amps (A)",
+            "Connected in series: in the loop",
+            "Symbol: circle with A"
+          ],
+          "note": "Like a turnstile counting people passing."
+        },
+        {
+          "heading": "Same everywhere",
+          "bullets": [
+            "Series: one path",
+            "Current same at every point"
+          ],
+          "note": "Simulator: ammeters before and after the lamp.",
+          "table": {
+            "head": [
+              "Ammeter position",
+              "Reading (A)"
+            ],
+            "rows": [
+              [
+                "Before the lamp",
+                "0.3"
+              ],
+              [
+                "Between lamps",
+                "0.3"
+              ],
+              [
+                "After the lamp",
+                "0.3"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "More cells, more lamps",
+          "bullets": [
+            "More cells: bigger current",
+            "More lamps in series: smaller current"
+          ],
+          "note": "Lamps get dimmer as we add more in series."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "An ammeter reads 0.4 A before a lamp. After the lamp it reads...",
+            "options": [
+              "0.2 A",
+              "0.4 A",
+              "0.8 A"
+            ],
+            "answer": 1,
+            "why": "Current is not used up in a series circuit."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Draw a series circuit with a cell, a lamp and an ammeter.",
+          "a": "One loop with cell, lamp and A-in-a-circle",
+          "mins": 3,
+          "model": "One loop only. Put the ammeter in the loop like any other component: cell, wire, ammeter, wire, lamp, wire back."
+        },
+        {
+          "q": "Two lamps in series: A1 reads 0.25 A. What does A2 read?",
+          "a": "0.25 A",
+          "mins": 1
+        },
+        {
+          "q": "What happens to the current if you add a second cell?",
+          "a": "It increases",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the simulator, build a series circuit with two lamps and three ammeters. Record the readings, then add a cell and record again.",
+          "a": "All three readings equal; all increase when a cell is added (exact values depend on the simulator)",
+          "mins": 10,
+          "model": "Teacher places the first ammeter on screen and reads it aloud: '0.30 A.'"
+        },
+        {
+          "q": "Extend: Explain why the lamps are dimmer with two in series than one.",
+          "a": "Two lamps give more resistance, so the current is smaller.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why must an ammeter have very low resistance?",
+          "a": "So it does not reduce the current it is measuring.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "An ammeter is connected...",
+          "a": "In series",
+          "mins": 1,
+          "options": [
+            "In series",
+            "In parallel"
+          ]
+        },
+        {
+          "q": "Big question: is current bigger, smaller or the same after a lamp?",
+          "a": "The same: current is not used up in a series circuit.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a 'myth buster' explaining why current is not used up by a lamp.",
+      "send": "SEND: pre-drawn circuit to add the ammeter. EAL: series, ammeter, reading. Stretch: research what an amp means (charge per second).",
+      "resources": [
+        "Pearson Exploring Science 7J Current electricity (the school's KS3 course): 7Jb",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Electromagnets (current, potential difference)",
+        "Free online circuit simulator (PhET Circuit Construction Kit: DC) shared on screen",
+        "Ammeter readings table (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ammeter analog",
+          "alt": "An ammeter",
+          "for": "keywords"
+        },
+        {
+          "find": "series circuit diagram",
+          "alt": "A series circuit diagram",
+          "for": "teach:2"
+        },
+        {
+          "find": "old fairy lights",
+          "alt": "A string of lamps in series",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 34,
+      "title": "Models for circuits",
+      "duration": 50,
+      "bigQuestion": "Nobody can see electrons moving in a wire. How could you explain a circuit to a Year 5?",
+      "objectives": [
+        "To understand how models help explain what happens in a circuit and where they break down"
+      ],
+      "successCriteria": [
+        "All: describe the rope or water model of a circuit",
+        "Most: match each part of a model to the real circuit",
+        "Some: evaluate one strength and one weakness of a model"
+      ],
+      "crossCurricular": "English: comparing using analogies",
+      "smsc": "Spiritual: using models to understand what we cannot see",
+      "keywords": [
+        {
+          "term": "model",
+          "def": "a simpler way to picture something real"
+        },
+        {
+          "term": "energy",
+          "def": "what the cell gives to the charge and the lamp transfers"
+        },
+        {
+          "term": "resistance",
+          "def": "how much a component slows the current"
+        },
+        {
+          "term": "analogy",
+          "def": "comparing two things to explain one of them"
+        },
+        {
+          "term": "evaluate",
+          "def": "judge the strengths and weaknesses"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Nobody can see electrons moving in a wire. How could you explain a circuit to a Year 5?",
+        "a": "Use a model: water in pipes, a rope loop or a delivery van."
+      },
+      "starter": [
+        {
+          "q": "Current in series is...",
+          "a": "The same everywhere",
+          "mins": 1,
+          "options": [
+            "The same everywhere",
+            "Used up"
+          ]
+        },
+        {
+          "q": "An ammeter goes in...",
+          "a": "Series",
+          "mins": 1,
+          "options": [
+            "Series",
+            "Parallel"
+          ]
+        },
+        {
+          "q": "Unit of current?",
+          "a": "Amp (A)",
+          "mins": 1
+        },
+        {
+          "q": "Adding cells makes the current...",
+          "a": "Bigger",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rope model",
+          "bullets": [
+            "A loop of rope through hands",
+            "Puller = cell",
+            "Hand gripping tight = lamp (gets warm)"
+          ],
+          "note": "Rope moves at the same speed everywhere: current the same everywhere."
+        },
+        {
+          "heading": "The water model",
+          "bullets": [
+            "Pump = cell",
+            "Pipes = wires",
+            "Narrow pipe = resistance",
+            "Water flow = current"
+          ],
+          "note": "No water is lost round the loop."
+        },
+        {
+          "heading": "Matching the model",
+          "bullets": [
+            "Real circuit vs rope model"
+          ],
+          "note": "Pupils copy.",
+          "table": {
+            "head": [
+              "Circuit",
+              "Rope model"
+            ],
+            "rows": [
+              [
+                "Cell",
+                "Person pulling the rope"
+              ],
+              [
+                "Current",
+                "Speed of the rope"
+              ],
+              [
+                "Lamp",
+                "Tight grip that gets warm"
+              ],
+              [
+                "Wires",
+                "The rope itself"
+              ],
+              [
+                "Switch",
+                "Grabbing to stop the rope"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Every model has limits",
+          "bullets": [
+            "Rope can go slack; current cannot",
+            "Cutting a rope loop is not like a switch",
+            "Models help, but are not the real thing"
+          ],
+          "note": "Evaluate: strengths and weaknesses."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "In the rope model, what is the cell?",
+            "options": [
+              "The rope",
+              "The person pulling",
+              "The tight grip"
+            ],
+            "answer": 1,
+            "why": "The cell pushes the charge, like the puller drives the rope."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "In the water model, what does a narrow pipe represent?",
+          "a": "Resistance (for example a lamp)",
+          "mins": 2,
+          "model": "What does a narrow pipe do? Slows the water. What slows current? Resistance. So the narrow pipe is a resistance."
+        },
+        {
+          "q": "Why is current the same all round the loop in the rope model?",
+          "a": "The rope moves at the same speed everywhere",
+          "mins": 2
+        },
+        {
+          "q": "Give one weakness of the rope model.",
+          "a": "For example: it does not show energy being carried from cell to lamp well",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw the water model of a series circuit with one cell and two lamps. Label each part with the circuit word.",
+          "a": "Pump labelled cell, pipes wires, two narrow sections lamps, arrows for flow",
+          "mins": 9,
+          "model": "Teacher draws the pump and labels it 'cell: pushes the current'."
+        },
+        {
+          "q": "Extend: Evaluate the water model in the portal response box: one strength, one weakness. Starter: 'The model is useful because...'",
+          "a": "Strength: shows current is not used up; weakness: a cut pipe leaks but a cut wire just stops.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Invent your own model (for example a train track) and match all five parts.",
+          "a": "Pupils' own, each part matched correctly",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A model is...",
+          "a": "A simpler way to picture something",
+          "mins": 1,
+          "options": [
+            "The real thing",
+            "A simpler way to picture something"
+          ]
+        },
+        {
+          "q": "Big question: how would you explain a circuit to a Year 5?",
+          "a": "With a model such as water in pipes: pump is the cell, flow is the current.",
+          "mins": 2
+        }
+      ],
+      "homework": "Explain the rope model to someone at home using a loop of string.",
+      "send": "SEND: model matching cards. EAL: model, represent. Stretch: research the 'electron' and who discovered it (J. J. Thomson, 1897).",
+      "resources": [
+        "Pearson Exploring Science 7J Current electricity (the school's KS3 course): 7Jb",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Electromagnets (current, potential difference)",
+        "Free online circuit simulator (PhET Circuit Construction Kit: DC) shared on screen",
+        "Water model diagram sheet (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "water pump pipes",
+          "alt": "A pump and pipes",
+          "for": "teach:2"
+        },
+        {
+          "find": "rope loop",
+          "alt": "A loop of rope",
+          "for": "teach:1"
+        },
+        {
+          "find": "copper wire coil",
+          "alt": "Copper wire",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 35,
+      "title": "Series and parallel circuits",
+      "duration": 50,
+      "bigQuestion": "In your home, switching off the kitchen light does not switch off the fridge. How must the circuit be built?",
+      "objectives": [
+        "To understand how current behaves differently in series and parallel circuits"
+      ],
+      "successCriteria": [
+        "All: draw a series and a parallel circuit",
+        "Most: state that current splits between parallel branches",
+        "Some: explain why homes are wired in parallel"
+      ],
+      "crossCurricular": "Maths: adding and subtracting decimals",
+      "smsc": "Social: safety with household electricity",
+      "keywords": [
+        {
+          "term": "series",
+          "def": "components in one loop"
+        },
+        {
+          "term": "parallel",
+          "def": "components on separate branches"
+        },
+        {
+          "term": "branch",
+          "def": "one path in a parallel circuit"
+        },
+        {
+          "term": "junction",
+          "def": "where a circuit splits or joins"
+        },
+        {
+          "term": "current",
+          "def": "the flow of charge"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In your home, switching off the kitchen light does not switch off the fridge. How must the circuit be built?",
+        "a": "In parallel: each appliance has its own branch and switch."
+      },
+      "starter": [
+        {
+          "q": "In the water model, the pump is the...",
+          "a": "Cell",
+          "mins": 1,
+          "options": [
+            "Cell",
+            "Lamp"
+          ]
+        },
+        {
+          "q": "Current in series is...",
+          "a": "The same everywhere",
+          "mins": 1,
+          "options": [
+            "The same everywhere",
+            "Bigger at the start"
+          ]
+        },
+        {
+          "q": "Ammeters go in...",
+          "a": "Series",
+          "mins": 1
+        },
+        {
+          "q": "Two lamps in series are ... than one.",
+          "a": "Dimmer",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Series vs parallel",
+          "bullets": [
+            "One loop vs many branches"
+          ],
+          "note": "Draw both side by side.",
+          "compare": {
+            "left": {
+              "title": "Series",
+              "points": [
+                "One path",
+                "Same current everywhere",
+                "One lamp breaks: all go out"
+              ]
+            },
+            "right": {
+              "title": "Parallel",
+              "points": [
+                "Several branches",
+                "Current splits at junctions",
+                "One lamp breaks: others stay on"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Current splits",
+          "bullets": [
+            "Total current splits at a junction",
+            "Branch currents add up to the total"
+          ],
+          "note": "Like traffic at a fork."
+        },
+        {
+          "heading": "Adding branch currents",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "A parallel circuit: supply current 0.9 A. Branch 1 carries 0.4 A. What is branch 2?",
+            "steps": [
+              "Branch currents add up to the total",
+              "0.4 + ? = 0.9",
+              "? = 0.9 - 0.4"
+            ],
+            "answer": "0.5 A"
+          }
+        },
+        {
+          "heading": "Parallel at home",
+          "bullets": [
+            "Each appliance on its own branch",
+            "Each can be switched separately",
+            "Each gets the full voltage"
+          ],
+          "note": "Never open sockets: this is from the diagrams only."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Total 1.2 A splits into two equal branches. Each branch carries...",
+            "options": [
+              "0.6 A",
+              "1.2 A",
+              "2.4 A"
+            ],
+            "answer": 0,
+            "why": "Branches share the total: 1.2 ÷ 2 = 0.6 A."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Total 1.5 A; branch A = 0.9 A. Branch B?",
+          "a": "0.6 A",
+          "mins": 2,
+          "model": "Branches add to the total. 1.5 - 0.9 = 0.6. So branch B is 0.6 A."
+        },
+        {
+          "q": "Which circuit keeps other lamps on if one breaks?",
+          "a": "Parallel",
+          "mins": 1
+        },
+        {
+          "q": "Draw one cell with two lamps in parallel.",
+          "a": "Cell; wire splits at a junction into two branches each with one lamp; rejoins",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the simulator, build two lamps in series, then in parallel, with ammeters. Record all readings and compare brightness.",
+          "a": "Series: same reading everywhere, dim lamps. Parallel: branch readings add to the total, bright lamps",
+          "mins": 10,
+          "model": "Teacher builds the parallel circuit on screen and shows the junction."
+        },
+        {
+          "q": "Extend: Three branches carry 0.2 A, 0.3 A and 0.5 A. What is the supply current?",
+          "a": "1.0 A",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Explain in the portal response box why homes use parallel circuits. Starter: 'Homes use parallel circuits because...'",
+          "a": "Each appliance can be switched on or off separately, gets the full voltage, and one fault does not switch everything off.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "At a junction, current...",
+          "a": "Splits",
+          "mins": 1,
+          "options": [
+            "Splits",
+            "Disappears",
+            "Doubles"
+          ]
+        },
+        {
+          "q": "Big question: how is a home wired so the fridge stays on?",
+          "a": "In parallel: each appliance has its own branch.",
+          "mins": 2
+        }
+      ],
+      "homework": "Draw a plan of your bedroom's lights and sockets as a parallel circuit diagram.",
+      "send": "SEND: partly drawn circuits. EAL: series, parallel, branch. Stretch: calculate a missing branch current in a three-branch circuit.",
+      "resources": [
+        "Pearson Exploring Science 7J Current electricity (the school's KS3 course): 7Jc",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Electromagnets (current, potential difference)",
+        "Free online circuit simulator (PhET Circuit Construction Kit: DC) shared on screen",
+        "Series and parallel results table (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "series and parallel circuit diagram",
+          "alt": "Series and parallel circuits",
+          "for": "teach:1"
+        },
+        {
+          "find": "road junction fork",
+          "alt": "A fork in a road",
+          "for": "teach:2"
+        },
+        {
+          "find": "kitchen appliances",
+          "alt": "Kitchen appliances",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 36,
+      "title": "Voltage: the push of a cell",
+      "duration": 50,
+      "bigQuestion": "A 1.5 V cell and a 9 V battery look different sizes. What does the bigger number tell you?",
+      "objectives": [
+        "To understand what voltage is, how to measure it and how it behaves in series and parallel"
+      ],
+      "successCriteria": [
+        "All: connect a voltmeter in parallel across a component",
+        "Most: add cell voltages in a battery",
+        "Some: explain how voltage shares out in series"
+      ],
+      "crossCurricular": "Maths: multiplying and dividing decimals",
+      "smsc": "Moral: respecting the danger of mains electricity",
+      "keywords": [
+        {
+          "term": "voltage",
+          "def": "the push that drives current, also called potential difference"
+        },
+        {
+          "term": "volt (V)",
+          "def": "the unit of voltage"
+        },
+        {
+          "term": "voltmeter",
+          "def": "a meter that measures voltage"
+        },
+        {
+          "term": "potential difference",
+          "def": "the energy given to or taken from the charge"
+        },
+        {
+          "term": "in parallel",
+          "def": "connected across a component"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A 1.5 V cell and a 9 V battery look different sizes. What does the bigger number tell you?",
+        "a": "The 9 V battery gives a bigger push to the charge, so more energy is transferred."
+      },
+      "starter": [
+        {
+          "q": "At a junction current...",
+          "a": "Splits",
+          "mins": 1,
+          "options": [
+            "Splits",
+            "Stops"
+          ]
+        },
+        {
+          "q": "Total 1.0 A; one branch 0.3 A; the other?",
+          "a": "0.7 A",
+          "mins": 1,
+          "options": [
+            "0.3 A",
+            "0.7 A",
+            "1.3 A"
+          ]
+        },
+        {
+          "q": "Which circuit do homes use?",
+          "a": "Parallel",
+          "mins": 1
+        },
+        {
+          "q": "Current is measured with an...",
+          "a": "Ammeter",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Voltage",
+          "bullets": [
+            "The push from the cell",
+            "Measured in volts (V)",
+            "Energy given to each bit of charge"
+          ],
+          "note": "1.5 V AA cell; 230 V UK mains (never touched)."
+        },
+        {
+          "heading": "Voltmeters",
+          "bullets": [
+            "Connected in parallel: across",
+            "Symbol: circle with V",
+            "Measures the difference either side"
+          ],
+          "note": "Ammeter in, voltmeter across."
+        },
+        {
+          "heading": "Cells add up",
+          "bullets": [
+            "Cells in series: voltages add",
+            "Two 1.5 V cells = 3 V",
+            "Series lamps share the voltage"
+          ],
+          "note": "Example readings.",
+          "table": {
+            "head": [
+              "Circuit",
+              "Voltage"
+            ],
+            "rows": [
+              [
+                "One cell",
+                "1.5 V"
+              ],
+              [
+                "Two cells in series",
+                "3.0 V"
+              ],
+              [
+                "Two equal lamps in series on 3 V",
+                "1.5 V each"
+              ],
+              [
+                "Two lamps in parallel on 3 V",
+                "3.0 V each"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Safety guide: voltage",
+          "bullets": [
+            "Never open plugs, sockets or appliances",
+            "Never put anything into a socket",
+            "Circuits are built in the simulator or by the teacher on camera",
+            "Batteries: never cut, heat or short-circuit them",
+            "Mains (230 V) can kill: never experiment with it"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Three 1.5 V cells in series give...",
+            "options": [
+              "1.5 V",
+              "3.0 V",
+              "4.5 V"
+            ],
+            "answer": 2,
+            "why": "Cell voltages in series add: 3 × 1.5 = 4.5 V."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Two identical lamps in series on a 6 V battery. Voltage across each?",
+          "a": "3 V",
+          "mins": 2,
+          "model": "In series the voltage is shared. Identical lamps share equally. 6 ÷ 2 = 3 V each."
+        },
+        {
+          "q": "How is a voltmeter connected?",
+          "a": "In parallel, across the component",
+          "mins": 1
+        },
+        {
+          "q": "Two lamps in parallel on 6 V. Voltage across each?",
+          "a": "6 V",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the simulator, measure the voltage across one lamp, then two lamps in series, then two in parallel (3 V battery). Record and write the rules.",
+          "a": "Series: 1.5 V each (shared); parallel: 3 V each (full)",
+          "mins": 10,
+          "model": "Teacher connects the voltmeter across one lamp on screen and reads '3.0 V'."
+        },
+        {
+          "q": "Extend: Why are lamps in parallel brighter than in series?",
+          "a": "Each gets the full voltage, so more energy per second is transferred.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: A torch needs 4.5 V. How many 1.5 V cells, and how are they connected?",
+          "a": "Three cells in series",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A voltmeter is connected...",
+          "a": "In parallel",
+          "mins": 1,
+          "options": [
+            "In series",
+            "In parallel"
+          ]
+        },
+        {
+          "q": "Big question: what does 9 V tell you compared with 1.5 V?",
+          "a": "A bigger push: more energy given to the charge.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the voltage on three batteries or chargers at home (do not open anything). List them.",
+      "send": "SEND: in/across reminder card. EAL: voltage, voltmeter, across. Stretch: research why mains is 230 V and why it is dangerous.",
+      "resources": [
+        "Pearson Exploring Science 7J Current electricity (the school's KS3 course): 7Jd",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Electromagnets (current, potential difference)",
+        "Free online circuit simulator (PhET Circuit Construction Kit: DC) shared on screen",
+        "Voltage results table (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "voltmeter multimeter",
+          "alt": "A meter for measuring voltage",
+          "for": "keywords"
+        },
+        {
+          "find": "9 volt battery",
+          "alt": "A 9 V battery",
+          "for": "hook"
+        },
+        {
+          "find": "AA batteries",
+          "alt": "AA cells",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 37,
+      "title": "Resistance",
+      "duration": 50,
+      "bigQuestion": "Why do wires in a toaster glow red hot, but the cable to the plug stays cool?",
+      "objectives": [
+        "To understand what resistance is and how to calculate it from voltage and current"
+      ],
+      "successCriteria": [
+        "All: say that resistance reduces current",
+        "Most: use R = V ÷ I to calculate resistance",
+        "Some: explain why long, thin wires have more resistance"
+      ],
+      "crossCurricular": "Maths: dividing decimals and using formulae",
+      "smsc": "Spiritual: order and laws in the natural world",
+      "keywords": [
+        {
+          "term": "resistance",
+          "def": "how much a component opposes current"
+        },
+        {
+          "term": "ohm (Ω)",
+          "def": "the unit of resistance"
+        },
+        {
+          "term": "resistor",
+          "def": "a component that adds resistance"
+        },
+        {
+          "term": "conductor",
+          "def": "a material with low resistance"
+        },
+        {
+          "term": "insulator",
+          "def": "a material with very high resistance"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do wires in a toaster glow red hot, but the cable to the plug stays cool?",
+        "a": "The toaster wire has high resistance, so it transfers lots of energy as heat; the cable has low resistance."
+      },
+      "starter": [
+        {
+          "q": "Two 1.5 V cells in series give...",
+          "a": "3 V",
+          "mins": 1,
+          "options": [
+            "1.5 V",
+            "3 V",
+            "6 V"
+          ]
+        },
+        {
+          "q": "A voltmeter is connected...",
+          "a": "In parallel",
+          "mins": 1,
+          "options": [
+            "In series",
+            "In parallel"
+          ]
+        },
+        {
+          "q": "Unit of voltage?",
+          "a": "Volt (V)",
+          "mins": 1
+        },
+        {
+          "q": "Current in series is...",
+          "a": "The same everywhere",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Resistance",
+          "bullets": [
+            "Opposes the current",
+            "More resistance: less current",
+            "Measured in ohms (Ω)"
+          ],
+          "note": "Narrow pipe in the water model."
+        },
+        {
+          "heading": "Calculating resistance",
+          "bullets": [
+            "R = V ÷ I",
+            "V in volts, I in amps, R in ohms"
+          ],
+          "note": "Formula triangle if helpful."
+        },
+        {
+          "heading": "Worked example",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "A lamp has 6 V across it and 0.5 A through it. Find its resistance.",
+            "steps": [
+              "Write the equation: R = V ÷ I",
+              "Substitute: R = 6 ÷ 0.5",
+              "Calculate: 12",
+              "Add the unit: Ω"
+            ],
+            "answer": "12 Ω"
+          }
+        },
+        {
+          "heading": "What affects a wire's resistance",
+          "bullets": [
+            "Longer wire: more resistance",
+            "Thinner wire: more resistance",
+            "Material matters: copper is low"
+          ],
+          "note": "Heating elements use long, thin, high-resistance wire."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "9 V across a resistor, 3 A through it. R = ?",
+            "options": [
+              "3 Ω",
+              "6 Ω",
+              "27 Ω"
+            ],
+            "answer": 0,
+            "why": "R = V ÷ I = 9 ÷ 3 = 3 Ω. 27 comes from multiplying by mistake."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "12 V across a heater, current 2 A. Resistance?",
+          "a": "6 Ω",
+          "mins": 2,
+          "model": "R = V ÷ I. Put in the numbers: 12 ÷ 2. That is 6. Unit: ohms. So 6 Ω."
+        },
+        {
+          "q": "What happens to current if resistance increases (same voltage)?",
+          "a": "It decreases",
+          "mins": 1
+        },
+        {
+          "q": "Which has more resistance: a short thick wire or a long thin wire?",
+          "a": "A long thin wire",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Calculate: (a) 3 V, 0.1 A; (b) 4.5 V, 0.3 A; (c) 230 V, 10 A; (d) 1.5 V, 0.25 A.",
+          "a": "(a) 30 Ω (b) 15 Ω (c) 23 Ω (d) 6 Ω",
+          "mins": 9,
+          "model": "Teacher does (a): R = 3 ÷ 0.1 = 30 Ω."
+        },
+        {
+          "q": "Extend: In the simulator, change the wire resistance and watch the ammeter. Describe the pattern.",
+          "a": "As resistance increases, current decreases.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A resistor is 20 Ω with 0.4 A through it. Rearrange to find the voltage.",
+          "a": "V = I × R = 0.4 × 20 = 8 V",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "R = V ÷ I: 10 V, 2 A gives...",
+          "a": "5 Ω",
+          "mins": 1,
+          "options": [
+            "5 Ω",
+            "12 Ω",
+            "20 Ω"
+          ]
+        },
+        {
+          "q": "Big question: why does a toaster wire glow but the cable stays cool?",
+          "a": "The element has high resistance, so it heats up; the cable has low resistance.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the resistance calculation sheet (6 questions) on the portal.",
+      "send": "SEND: formula triangle and calculator. EAL: resistance, opposes. Stretch: research superconductors (zero resistance when very cold).",
+      "resources": [
+        "Pearson Exploring Science 7J Current electricity (the school's KS3 course): 7Jd",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Electromagnets (current, potential difference)",
+        "Free online circuit simulator (PhET Circuit Construction Kit: DC) shared on screen",
+        "Resistance calculation sheet (portal worksheet)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "toaster heating element glowing",
+          "alt": "A toaster element glowing",
+          "for": "hook"
+        },
+        {
+          "find": "resistors electronic",
+          "alt": "Resistors",
+          "for": "keywords"
+        },
+        {
+          "find": "copper wire coil",
+          "alt": "Copper wire",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 38,
+      "title": "Using electricity safely at home",
+      "duration": 50,
+      "bigQuestion": "Why does a plug have a fuse inside it, when the lamp works fine without one?",
+      "objectives": [
+        "To understand how fuses, earth wires and safe habits protect people from mains electricity"
+      ],
+      "successCriteria": [
+        "All: name the live, neutral and earth wires",
+        "Most: explain how a fuse protects an appliance",
+        "Some: list five rules for using electricity safely"
+      ],
+      "crossCurricular": "PSHE: keeping safe at home",
+      "smsc": "Moral: protecting others from harm",
+      "keywords": [
+        {
+          "term": "mains",
+          "def": "the 230 V electricity supply in buildings"
+        },
+        {
+          "term": "fuse",
+          "def": "a thin wire that melts if the current is too big"
+        },
+        {
+          "term": "earth wire",
+          "def": "a safety wire that carries fault current to the ground"
+        },
+        {
+          "term": "live wire",
+          "def": "the wire at high voltage"
+        },
+        {
+          "term": "circuit breaker",
+          "def": "a switch that turns off if the current is too big"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why does a plug have a fuse inside it, when the lamp works fine without one?",
+        "a": "The fuse protects the cable and appliance if a fault makes the current too big."
+      },
+      "starter": [
+        {
+          "q": "R = V ÷ I: 6 V, 2 A gives...",
+          "a": "3 Ω",
+          "mins": 1,
+          "options": [
+            "3 Ω",
+            "12 Ω"
+          ]
+        },
+        {
+          "q": "Homes are wired in...",
+          "a": "Parallel",
+          "mins": 1,
+          "options": [
+            "Series",
+            "Parallel"
+          ]
+        },
+        {
+          "q": "UK mains voltage?",
+          "a": "230 V",
+          "mins": 1
+        },
+        {
+          "q": "Longer, thinner wires have ... resistance.",
+          "a": "More",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Mains can kill",
+          "bullets": [
+            "230 V: much higher than a cell",
+            "Water and electricity: never together",
+            "Never open plugs or sockets"
+          ],
+          "note": "Teacher shows a plug diagram only."
+        },
+        {
+          "heading": "Inside a plug (diagram)",
+          "bullets": [
+            "Live: brown",
+            "Neutral: blue",
+            "Earth: green and yellow",
+            "Fuse in the live wire"
+          ],
+          "note": "UK three-pin plug.",
+          "table": {
+            "head": [
+              "Wire",
+              "Colour",
+              "Job"
+            ],
+            "rows": [
+              [
+                "Live",
+                "Brown",
+                "Carries the high voltage"
+              ],
+              [
+                "Neutral",
+                "Blue",
+                "Completes the circuit"
+              ],
+              [
+                "Earth",
+                "Green and yellow",
+                "Safety: fault current to ground"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Fuses and earthing",
+          "bullets": [
+            "Fault: live touches metal case",
+            "Big current flows to earth",
+            "Fuse melts and cuts the supply"
+          ],
+          "note": "Circuit breakers in the fuse box do the same job and can be reset.",
+          "cycle": [
+            "Fault: live wire touches the metal case",
+            "Large current flows down the earth wire",
+            "Current is bigger than the fuse rating",
+            "Fuse melts",
+            "Supply cut: case is safe"
+          ]
+        },
+        {
+          "heading": "Safety guide: electricity at home",
+          "bullets": [
+            "Never touch switches with wet hands",
+            "Do not overload extension leads",
+            "Report damaged cables to an adult",
+            "Never poke anything into sockets or toasters",
+            "Keep drinks away from chargers and laptops"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why is the fuse in the live wire?",
+            "options": [
+              "It looks neat",
+              "When it melts the appliance is cut off from the high voltage",
+              "It makes the lamp brighter"
+            ],
+            "answer": 1,
+            "why": "Breaking the live connection makes the appliance safe."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A kettle's metal case becomes live by a fault. Explain how the earth wire helps.",
+          "a": "A large current flows through the earth wire to the ground; the fuse melts and cuts off the supply, so the case is safe to touch",
+          "mins": 3,
+          "model": "Step 1: live touches case. Step 2: big current flows down the low-resistance earth wire. Step 3: the fuse melts. Step 4: supply cut, no shock."
+        },
+        {
+          "q": "What colour is the neutral wire?",
+          "a": "Blue",
+          "mins": 1
+        },
+        {
+          "q": "Give one way to stay safe with extension leads.",
+          "a": "Do not plug in too many high-power appliances",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Do a safety check of one room at home with an adult (look only, touch nothing): list hazards and the rule that fixes each in the table.",
+          "a": "Pupils' own; for example overloaded extension lead: unplug some; drink by laptop: move it",
+          "mins": 9,
+          "model": "Teacher models with a photo of a kitchen: 'Hazard: kettle cable over the edge. Rule: keep cables tidy and back.'"
+        },
+        {
+          "q": "Extend: Why do plastic hairdryers not need an earth wire?",
+          "a": "They are double insulated: the case cannot become live.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why is a 13 A fuse wrong for a 1 A lamp?",
+          "a": "A fault current of a few amps would not melt it, so it would not protect the lamp or cable.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The earth wire is...",
+          "a": "Green and yellow",
+          "mins": 1,
+          "options": [
+            "Brown",
+            "Blue",
+            "Green and yellow"
+          ]
+        },
+        {
+          "q": "Big question: why does a plug have a fuse?",
+          "a": "To cut off the supply if a fault makes the current too big.",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a five-rule electrical safety card for your family. Put it on the fridge.",
+      "send": "SEND: wire colour cards. EAL: live, neutral, earth, fuse. Stretch: research residual current devices (RCDs).",
+      "resources": [
+        "Pearson Exploring Science 7J Current electricity (the school's KS3 course): 7Je",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Electromagnets (current, potential difference)",
+        "Plug diagram (portal slides; no real plugs are opened)",
+        "Home practical guide and safety card: room safety check (portal worksheet; look only, adult present)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "UK three pin plug wiring",
+          "alt": "The inside of a UK plug (diagram)",
+          "for": "teach:2"
+        },
+        {
+          "find": "cartridge fuse",
+          "alt": "A cartridge fuse",
+          "for": "keywords"
+        },
+        {
+          "find": "overloaded extension lead",
+          "alt": "An overloaded extension lead",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 39,
+      "title": "Paying for electricity",
+      "duration": 50,
+      "bigQuestion": "Which costs more to run: a kettle for 5 minutes or a phone charger all night? How could you find out?",
+      "objectives": [
+        "To understand how electricity is measured and paid for, and how to avoid waste"
+      ],
+      "successCriteria": [
+        "All: read the power of an appliance in watts and kilowatts",
+        "Most: calculate energy in kWh and its cost",
+        "Some: suggest ways to use less electricity"
+      ],
+      "crossCurricular": "Maths: multiplying decimals and money",
+      "smsc": "Moral: avoiding waste (israf)",
+      "keywords": [
+        {
+          "term": "power",
+          "def": "how fast energy is transferred, in watts (W)"
+        },
+        {
+          "term": "kilowatt (kW)",
+          "def": "1000 watts"
+        },
+        {
+          "term": "kilowatt-hour (kWh)",
+          "def": "the energy used by a 1 kW appliance in one hour"
+        },
+        {
+          "term": "meter",
+          "def": "the device that records electricity used"
+        },
+        {
+          "term": "tariff",
+          "def": "the price per kWh"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which costs more to run: a kettle for 5 minutes or a phone charger all night? How could you find out?",
+        "a": "Work out kWh for each: kettle 2 kW × 0.083 h ≈ 0.17 kWh; charger 0.005 kW × 8 h = 0.04 kWh. The kettle costs more."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, the wasteful are brothers of the devils' (Al-Isra 17:27). Islam teaches us not to waste; switching off what we do not need is part of being grateful for Allah's blessings.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The fuse is in the ... wire.",
+          "a": "Live",
+          "mins": 1,
+          "options": [
+            "Live",
+            "Neutral",
+            "Earth"
+          ]
+        },
+        {
+          "q": "R = 12 V ÷ 3 A = ?",
+          "a": "4 Ω",
+          "mins": 1,
+          "options": [
+            "4 Ω",
+            "36 Ω"
+          ]
+        },
+        {
+          "q": "1000 g = 1 kg, so 1000 W = ?",
+          "a": "1 kW",
+          "mins": 1
+        },
+        {
+          "q": "Name a high-power appliance.",
+          "a": "For example: kettle, oven, heater",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Power ratings",
+          "bullets": [
+            "Every appliance has a power rating",
+            "Watts (W) or kilowatts (kW)",
+            "Kettle about 2 kW; LED bulb about 10 W"
+          ],
+          "note": "Labels on the base, read with an adult."
+        },
+        {
+          "heading": "Energy in kWh",
+          "bullets": [
+            "Energy (kWh) = power (kW) × time (h)",
+            "Cost = kWh × price"
+          ],
+          "note": "Example price 25p per kWh (example only; real prices vary)."
+        },
+        {
+          "heading": "Worked example",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "A 2 kW heater runs for 3 hours. Electricity costs 25p per kWh. Find the cost.",
+            "steps": [
+              "Energy = 2 kW × 3 h",
+              "= 6 kWh",
+              "Cost = 6 × 25p",
+              "= 150p"
+            ],
+            "answer": "£1.50"
+          }
+        },
+        {
+          "heading": "Avoid waste",
+          "bullets": [
+            "Switch off lights and screens",
+            "Boil only the water you need",
+            "LED bulbs use far less"
+          ],
+          "note": "Saving money and resources."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "A 1.5 kW oven runs for 2 hours. Energy used?",
+            "options": [
+              "0.75 kWh",
+              "3 kWh",
+              "3.5 kWh"
+            ],
+            "answer": 1,
+            "why": "kWh = kW × h = 1.5 × 2 = 3 kWh."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 0.5 kW microwave runs for 0.2 h at 25p per kWh. Cost?",
+          "a": "2.5p",
+          "mins": 3,
+          "model": "Energy = 0.5 × 0.2 = 0.1 kWh. Cost = 0.1 × 25 = 2.5p."
+        },
+        {
+          "q": "Convert 60 W to kW.",
+          "a": "0.06 kW",
+          "mins": 1
+        },
+        {
+          "q": "How many hours is 30 minutes?",
+          "a": "0.5 h",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the power of three appliances at home with an adult (read labels only). Estimate daily use and calculate the daily cost at 25p per kWh.",
+          "a": "Pupils' own; for example kettle 2 kW × 0.2 h = 0.4 kWh = 10p",
+          "mins": 10,
+          "model": "Teacher does the kettle: 2 kW for 12 minutes a day (0.2 h): 0.4 kWh, 10p a day."
+        },
+        {
+          "q": "Extend: A 60 W bulb is swapped for a 10 W LED, used 5 h a day. How many kWh are saved in 30 days?",
+          "a": "50 W × 5 h × 30 = 7500 Wh = 7.5 kWh",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: How much money does that save at 25p per kWh?",
+          "a": "7.5 × 25 = 187.5p, about £1.88",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "kWh = kW × ...",
+          "a": "Hours",
+          "mins": 1,
+          "options": [
+            "Hours",
+            "Volts",
+            "Amps"
+          ]
+        },
+        {
+          "q": "Big question: kettle for 5 minutes or charger all night: which costs more?",
+          "a": "The kettle: about 0.17 kWh against about 0.04 kWh.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find your home's electricity meter with an adult and record the reading on two days. How many kWh were used?",
+      "send": "SEND: calculator and worked-example card. EAL: power, cost, waste. Stretch: compare standby use of five appliances.",
+      "resources": [
+        "Pearson Exploring Science 7J Current electricity (the school's KS3 course): 7Je",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Electromagnets (current, potential difference)",
+        "Appliance labels at home (adult present; never open or unplug appliances)",
+        "kWh and cost calculation sheet (portal worksheet)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "electricity meter",
+          "alt": "An electricity meter",
+          "for": "keywords"
+        },
+        {
+          "find": "appliance rating label",
+          "alt": "A power rating label",
+          "for": "teach:1"
+        },
+        {
+          "find": "LED light bulb",
+          "alt": "An LED bulb",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 40,
+      "title": "7J review and quiz: current electricity",
+      "duration": 50,
+      "bigQuestion": "Which idea in electricity is hardest to picture, and which model helps you most?",
+      "objectives": [
+        "To understand how secure my knowledge of circuits, current, voltage and resistance is"
+      ],
+      "successCriteria": [
+        "All: answer recall questions on symbols and meters",
+        "Most: solve current, voltage and resistance calculations",
+        "Some: explain a circuit fault in a 6-mark answer"
+      ],
+      "crossCurricular": "Maths: rearranging simple formulae",
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "current",
+          "def": "the flow of charge, in amps"
+        },
+        {
+          "term": "voltage",
+          "def": "the push, in volts"
+        },
+        {
+          "term": "resistance",
+          "def": "opposes current, in ohms"
+        },
+        {
+          "term": "series",
+          "def": "one loop"
+        },
+        {
+          "term": "parallel",
+          "def": "separate branches"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which idea in electricity is hardest to picture, and which model helps you most?",
+        "a": "Pupils' own; for example voltage, helped by the water pump model."
+      },
+      "starter": [
+        {
+          "q": "Ammeter: series or parallel?",
+          "a": "Series",
+          "mins": 1,
+          "options": [
+            "Series",
+            "Parallel"
+          ]
+        },
+        {
+          "q": "R = 8 V ÷ 2 A = ?",
+          "a": "4 Ω",
+          "mins": 1,
+          "options": [
+            "4 Ω",
+            "16 Ω",
+            "10 Ω"
+          ]
+        },
+        {
+          "q": "2 kW for 2 h = ?",
+          "a": "4 kWh",
+          "mins": 1,
+          "options": [
+            "1 kWh",
+            "4 kWh"
+          ]
+        },
+        {
+          "q": "Earth wire colour?",
+          "a": "Green and yellow",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Big ideas recap",
+          "bullets": [
+            "Complete circuits",
+            "Series: same current, shared voltage",
+            "Parallel: split current, same voltage"
+          ],
+          "note": "Rapid whiteboards.",
+          "compare": {
+            "left": {
+              "title": "Series",
+              "points": [
+                "Current same",
+                "Voltage shared"
+              ]
+            },
+            "right": {
+              "title": "Parallel",
+              "points": [
+                "Current splits",
+                "Voltage same"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Equations",
+          "bullets": [
+            "R = V ÷ I",
+            "kWh = kW × h",
+            "Cost = kWh × price"
+          ],
+          "note": "Units every time."
+        },
+        {
+          "heading": "6-mark answer",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Explain why one broken lamp turns off all the lamps in a series circuit but not in a parallel circuit. [4 marks]",
+            "steps": [
+              "Series: only one path for current (1)",
+              "Broken lamp makes a gap, so no current anywhere (1)",
+              "Parallel: each lamp on its own branch (1)",
+              "Current still flows in the other branches (1)"
+            ],
+            "answer": "4 marks: path, gap, branches, other branches still work"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Three branches: 0.2 A, 0.2 A, 0.4 A. Supply current?",
+            "options": [
+              "0.4 A",
+              "0.8 A",
+              "0.2 A"
+            ],
+            "answer": 1,
+            "why": "Branch currents add: 0.2 + 0.2 + 0.4 = 0.8 A."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Two identical lamps in series on 4.5 V. Voltage across each?",
+          "a": "2.25 V",
+          "mins": 2,
+          "model": "Series shares the voltage. Identical lamps share equally. 4.5 ÷ 2 = 2.25 V."
+        },
+        {
+          "q": "What does a fuse do?",
+          "a": "Melts and cuts the supply if the current is too big",
+          "mins": 1
+        },
+        {
+          "q": "Which unit is resistance measured in?",
+          "a": "Ohms (Ω)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 7J quiz on the portal (12 questions, 15 minutes): symbols, meters, series and parallel rules, R = V ÷ I, kWh cost, safety.",
+          "a": "Answer key on the teacher sheet; for example: R for 12 V, 4 A = 3 Ω; 3 kW for 2 h at 25p = £1.50",
+          "mins": 15,
+          "model": "Teacher reads question 1 aloud and shows how to set out a calculation: equation, numbers, answer, unit."
+        },
+        {
+          "q": "Extend: Mark your quiz with the answer slide and write your two targets.",
+          "a": "Pupils' own targets",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Voltage in parallel is...",
+          "a": "The same on each branch",
+          "mins": 1,
+          "options": [
+            "Shared",
+            "The same on each branch"
+          ]
+        },
+        {
+          "q": "Big question: which model helps you most and why?",
+          "a": "Pupils' own, with a reason.",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct every quiz mistake in green and redo two similar questions from the portal sheet.",
+      "send": "SEND: equation card and calculator allowed. EAL: key words list. Stretch: extra 6-mark question on earthing.",
+      "resources": [
+        "Pearson Exploring Science 7J Current electricity (the school's KS3 course): 7J end-of-unit test (the school's scheme)",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Electromagnets (current, potential difference)",
+        "7J quiz with answer key (portal)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "series and parallel circuit diagram",
+          "alt": "Circuit diagrams",
+          "for": "teach:1"
+        },
+        {
+          "find": "multimeter",
+          "alt": "A multimeter",
+          "for": "keywords"
+        },
+        {
+          "find": "power lines pylons",
+          "alt": "Electricity pylons",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 41,
+      "title": "Forces and their effects; weight and mass",
+      "duration": 50,
+      "bigQuestion": "An astronaut has the same mass on the Moon but feels lighter. How can both be true?",
+      "objectives": [
+        "To understand what forces do and the difference between mass and weight"
+      ],
+      "successCriteria": [
+        "All: name contact and non-contact forces",
+        "Most: draw force arrows",
+        "Some: calculate weight using weight = mass × 10 N/kg"
+      ],
+      "crossCurricular": "Maths: converting grams to kilograms",
+      "smsc": "Spiritual: gravity holding the universe in order",
+      "keywords": [
+        {
+          "term": "force",
+          "def": "a push or a pull, measured in newtons (N)"
+        },
+        {
+          "term": "newton (N)",
+          "def": "the unit of force"
+        },
+        {
+          "term": "mass",
+          "def": "the amount of matter in an object, in kilograms"
+        },
+        {
+          "term": "weight",
+          "def": "the force of gravity on a mass, in newtons"
+        },
+        {
+          "term": "gravitational field strength",
+          "def": "the force per kilogram, about 10 N/kg on Earth"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An astronaut has the same mass on the Moon but feels lighter. How can both be true?",
+        "a": "Mass (matter) is the same; weight (gravity's pull) is about one-sixth on the Moon."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, Allah holds the heavens and the earth, lest they cease' (Fatir 35:41). Forces such as gravity are part of the order Allah has placed in creation.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "kWh = kW × ...",
+          "a": "Hours",
+          "mins": 1,
+          "options": [
+            "Hours",
+            "Volts"
+          ]
+        },
+        {
+          "q": "A voltmeter goes in...",
+          "a": "Parallel",
+          "mins": 1,
+          "options": [
+            "Series",
+            "Parallel"
+          ]
+        },
+        {
+          "q": "Name a force.",
+          "a": "For example: gravity, friction, push",
+          "mins": 1
+        },
+        {
+          "q": "Unit of mass?",
+          "a": "Kilogram (kg)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What forces do",
+          "bullets": [
+            "Change speed",
+            "Change direction",
+            "Change shape"
+          ],
+          "note": "Drop, squash and kick examples."
+        },
+        {
+          "heading": "Contact and non-contact",
+          "bullets": [
+            "Sort the forces"
+          ],
+          "note": "Non-contact forces act at a distance.",
+          "sort": {
+            "columns": [
+              "Contact",
+              "Non-contact"
+            ],
+            "cards": [
+              "Friction",
+              "Gravity",
+              "Air resistance",
+              "Magnetism",
+              "Upthrust",
+              "Static electric force"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Mass and weight",
+          "bullets": [
+            "Mass in kg: same everywhere",
+            "Weight in N: depends on gravity",
+            "Weight = mass × g"
+          ],
+          "note": "g = 10 N/kg on Earth, 1.6 N/kg on the Moon."
+        },
+        {
+          "heading": "Worked example",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "A bag of rice has a mass of 2 kg. What is its weight on Earth?",
+            "steps": [
+              "Weight = mass × g",
+              "= 2 kg × 10 N/kg",
+              "= 20"
+            ],
+            "answer": "20 N"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "A 50 kg pupil's weight on Earth?",
+            "options": [
+              "50 N",
+              "500 N",
+              "5 N"
+            ],
+            "answer": 1,
+            "why": "W = m × g = 50 × 10 = 500 N."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 3 kg bag on the Moon (g = 1.6 N/kg). Weight?",
+          "a": "4.8 N",
+          "mins": 3,
+          "model": "Weight = mass × g. On the Moon g = 1.6. 3 × 1.6 = 4.8. So 4.8 N."
+        },
+        {
+          "q": "Is gravity a contact or non-contact force?",
+          "a": "Non-contact",
+          "mins": 1
+        },
+        {
+          "q": "Does mass change on the Moon?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Weigh three items at home with kitchen scales (grams). Convert to kg and calculate each weight in N.",
+          "a": "For example: 500 g rice = 0.5 kg = 5 N; 1 kg flour = 10 N; 250 g butter = 2.5 N",
+          "mins": 9,
+          "model": "Teacher does the first: 500 g = 0.5 kg; 0.5 × 10 = 5 N."
+        },
+        {
+          "q": "Extend: Draw force arrows on a book resting on a table and label them.",
+          "a": "Weight down (gravity), equal reaction force up from the table",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why do kitchen scales show grams, not newtons?",
+          "a": "They measure the push of weight but are set to show mass, assuming Earth's g.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Weight is measured in...",
+          "a": "Newtons",
+          "mins": 1,
+          "options": [
+            "Kilograms",
+            "Newtons"
+          ]
+        },
+        {
+          "q": "Big question: how can the astronaut's mass stay the same but weight change?",
+          "a": "Mass is the matter; weight depends on gravity, which is weaker on the Moon.",
+          "mins": 2
+        }
+      ],
+      "homework": "Work out your school bag's weight in newtons (weigh it on bathroom scales with an adult).",
+      "send": "SEND: weight = mass × 10 card. EAL: mass, weight, newton. Stretch: find g on Mars (3.7 N/kg) and calculate your weight there.",
+      "resources": [
+        "Pearson Exploring Science 7K Forces (the school's KS3 course): 7Ka",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Forces (contact forces, pressure)",
+        "Kitchen scales (adult present)",
+        "Weight calculation sheet (portal worksheet)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "kitchen scales",
+          "alt": "Kitchen scales",
+          "for": "keywords"
+        },
+        {
+          "find": "Apollo lunar module Moon surface",
+          "alt": "A spacecraft on the Moon",
+          "for": "hook"
+        },
+        {
+          "find": "newton meter spring balance",
+          "alt": "A newton meter",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 42,
+      "title": "Springs and stretching",
+      "duration": 50,
+      "bigQuestion": "Why does a spring balance work, but a stretched-out old hair band would not?",
+      "objectives": [
+        "To understand how springs stretch when forces act on them and what the elastic limit is"
+      ],
+      "successCriteria": [
+        "All: measure extension of a spring or band",
+        "Most: describe how extension changes with force",
+        "Some: explain the elastic limit"
+      ],
+      "crossCurricular": "Maths: proportion and straight-line graphs",
+      "smsc": "Social: safe testing",
+      "keywords": [
+        {
+          "term": "extension",
+          "def": "how much longer something gets when stretched"
+        },
+        {
+          "term": "elastic",
+          "def": "returns to its original shape"
+        },
+        {
+          "term": "elastic limit",
+          "def": "the point after which it no longer returns to shape"
+        },
+        {
+          "term": "proportional",
+          "def": "doubling one doubles the other"
+        },
+        {
+          "term": "deform",
+          "def": "change shape"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why does a spring balance work, but a stretched-out old hair band would not?",
+        "a": "A spring's extension is proportional to the force until its elastic limit; the hair band has been stretched beyond its limit."
+      },
+      "starter": [
+        {
+          "q": "Weight of 2 kg on Earth?",
+          "a": "20 N",
+          "mins": 1,
+          "options": [
+            "2 N",
+            "20 N",
+            "200 N"
+          ]
+        },
+        {
+          "q": "Is friction contact or non-contact?",
+          "a": "Contact",
+          "mins": 1,
+          "options": [
+            "Contact",
+            "Non-contact"
+          ]
+        },
+        {
+          "q": "Unit of force?",
+          "a": "Newton (N)",
+          "mins": 1
+        },
+        {
+          "q": "Forces can change speed, direction or...",
+          "a": "Shape",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Stretching",
+          "bullets": [
+            "Pull a spring: it extends",
+            "Extension = new length - original length"
+          ],
+          "note": "Measure from the same point each time."
+        },
+        {
+          "heading": "Worked example",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "A spring is 5.0 cm long. With a 2 N load it is 7.0 cm. Find the extension.",
+            "steps": [
+              "Extension = new length - original length",
+              "= 7.0 - 5.0"
+            ],
+            "answer": "2.0 cm"
+          }
+        },
+        {
+          "heading": "A pattern",
+          "bullets": [
+            "Double the force: double the extension",
+            "Until the elastic limit"
+          ],
+          "note": "Example data for a spring.",
+          "chart": {
+            "kind": "line",
+            "title": "Spring extension (example data)",
+            "labels": [
+              "0 N",
+              "1 N",
+              "2 N",
+              "3 N",
+              "4 N",
+              "5 N"
+            ],
+            "values": [
+              0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              6.5
+            ],
+            "unit": "cm"
+          }
+        },
+        {
+          "heading": "Elastic limit",
+          "bullets": [
+            "Below it: returns to shape",
+            "Beyond it: permanently stretched",
+            "The graph stops being a straight line"
+          ],
+          "note": "The 5 N point is beyond the limit."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Spring extends 1.5 cm for 1 N. For 3 N (below the limit)?",
+            "options": [
+              "1.5 cm",
+              "3 cm",
+              "4.5 cm"
+            ],
+            "answer": 2,
+            "why": "Proportional: 3 × 1.5 = 4.5 cm."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Original length 10 cm; stretched 14 cm. Extension?",
+          "a": "4 cm",
+          "mins": 2,
+          "model": "Extension = new - original = 14 - 10 = 4 cm."
+        },
+        {
+          "q": "What happens beyond the elastic limit?",
+          "a": "It does not return to its original shape",
+          "mins": 1
+        },
+        {
+          "q": "From the chart, extension at 3 N?",
+          "a": "3.0 cm",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Predict how a rubber band hanging from a ruler will stretch as you add 1, 2, 3, 4 bags of 100 g (1 N each). Write the table headings and predictions ready for next lesson.",
+          "a": "Table: load (N), length (cm), extension (cm); prediction: extension increases with load",
+          "mins": 8,
+          "model": "Teacher sets out the table on screen: load in N, length in cm, extension in cm."
+        },
+        {
+          "q": "Extend: Spring A: 2 cm per N. Spring B: 0.5 cm per N. Which is stiffer?",
+          "a": "Spring B: it stretches less per newton",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why are bungee cords tested far below their elastic limit?",
+          "a": "So they always return to shape and do not permanently stretch or snap.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Beyond the elastic limit a spring...",
+          "a": "Stays stretched",
+          "mins": 1,
+          "options": [
+            "Returns to shape",
+            "Stays stretched"
+          ]
+        },
+        {
+          "q": "Big question: why does a spring balance work but an old hair band would not?",
+          "a": "Springs stretch in proportion to force until the elastic limit; the band is past it.",
+          "mins": 2
+        }
+      ],
+      "homework": "Collect equipment for the home investigation: a rubber band, a ruler, a sandwich bag, and four 100 g items (adult checks).",
+      "send": "SEND: extension = new - original card. EAL: stretch, extension, limit. Stretch: research Robert Hooke and his law (1660s).",
+      "resources": [
+        "Pearson Exploring Science 7K Forces (the school's KS3 course): 7Kb",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Forces (contact forces, pressure)",
+        "Spring results table (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "coil spring",
+          "alt": "A metal spring",
+          "for": "keywords"
+        },
+        {
+          "find": "spring balance",
+          "alt": "A spring balance",
+          "for": "hook"
+        },
+        {
+          "find": "rubber bands",
+          "alt": "Rubber bands",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 43,
+      "title": "Home investigation: stretching a rubber band",
+      "duration": 50,
+      "bigQuestion": "If your results do not make a perfect straight line, does that mean the experiment failed?",
+      "objectives": [
+        "To understand how to carry out a fair investigation into how load affects extension"
+      ],
+      "successCriteria": [
+        "All: measure lengths accurately to the nearest millimetre",
+        "Most: draw a line graph of extension against load",
+        "Some: evaluate my results and method"
+      ],
+      "crossCurricular": "Maths: plotting line graphs",
+      "smsc": "Moral: honest recording of results",
+      "keywords": [
+        {
+          "term": "load",
+          "def": "the weight hung on the band, in newtons"
+        },
+        {
+          "term": "extension",
+          "def": "how much longer it gets"
+        },
+        {
+          "term": "line graph",
+          "def": "points joined to show a trend"
+        },
+        {
+          "term": "accurate",
+          "def": "close to the true value"
+        },
+        {
+          "term": "anomaly",
+          "def": "a result that does not fit the pattern"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If your results do not make a perfect straight line, does that mean the experiment failed?",
+        "a": "No: real measurements have errors; look for the trend, spot anomalies and repeat them."
+      },
+      "starter": [
+        {
+          "q": "Extension = new length - ...",
+          "a": "Original length",
+          "mins": 1,
+          "options": [
+            "Original length",
+            "Load"
+          ]
+        },
+        {
+          "q": "100 g has a weight of about...",
+          "a": "1 N",
+          "mins": 1,
+          "options": [
+            "1 N",
+            "10 N",
+            "100 N"
+          ]
+        },
+        {
+          "q": "Elastic limit means...",
+          "a": "After it, no return to shape",
+          "mins": 1
+        },
+        {
+          "q": "Double the force below the limit gives...",
+          "a": "Double the extension",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Safety guide: rubber band investigation",
+          "bullets": [
+            "Wear eye protection if you have it, or keep your face back from the band",
+            "Hang the band over a sturdy surface, loads over a cushion",
+            "Never stretch bands towards anyone",
+            "Stop if the band shows splits",
+            "Use packets (100 g), not glass jars"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Method",
+          "bullets": [
+            "Hang band from a ruler or hook",
+            "Measure original length",
+            "Add 100 g (1 N) at a time",
+            "Measure each time; repeat"
+          ],
+          "note": "Read at eye level."
+        },
+        {
+          "heading": "Record",
+          "bullets": [
+            "Example results"
+          ],
+          "note": "Example data for a typical band.",
+          "table": {
+            "head": [
+              "Load (N)",
+              "Length (cm)",
+              "Extension (cm)"
+            ],
+            "rows": [
+              [
+                "0",
+                "8.0",
+                "0.0"
+              ],
+              [
+                "1",
+                "9.1",
+                "1.1"
+              ],
+              [
+                "2",
+                "10.0",
+                "2.0"
+              ],
+              [
+                "3",
+                "11.2",
+                "3.2"
+              ],
+              [
+                "4",
+                "12.0",
+                "4.0"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Evaluate",
+          "bullets": [
+            "Was the band the same each time?",
+            "Read at eye level?",
+            "Any anomalies?"
+          ],
+          "note": "Improve: repeat and average."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which reading is most likely an anomaly: 1.1, 2.0, 3.2, 4.0 cm at 1 to 4 N?",
+            "options": [
+              "1.1",
+              "3.2",
+              "4.0"
+            ],
+            "answer": 1,
+            "why": "The pattern is about 1 cm per N, so 3.2 sits furthest off the trend."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate the extension: original 8.0 cm, length 10.6 cm.",
+          "a": "2.6 cm",
+          "mins": 2,
+          "model": "Extension = 10.6 - 8.0 = 2.6 cm."
+        },
+        {
+          "q": "Why read the ruler at eye level?",
+          "a": "To avoid parallax error and read accurately",
+          "mins": 1
+        },
+        {
+          "q": "Why add loads over a cushion?",
+          "a": "So falling loads are safe and nothing breaks",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Carry out the investigation with 0 to 4 N, record in the table, then plot extension against load on the graph sheet.",
+          "a": "Pupils' own table and graph; a rising, roughly straight line",
+          "mins": 14,
+          "model": "Teacher hangs the band on camera, measures 8.0 cm, adds the first 1 N packet and reads 9.1 cm."
+        },
+        {
+          "q": "Extend: Write a conclusion and one improvement in the portal response box. Starter: 'As the load increased...'",
+          "a": "As the load increased the extension increased roughly in proportion; I would repeat each reading and average.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "An anomaly is...",
+          "a": "A result that does not fit",
+          "mins": 1,
+          "options": [
+            "The best result",
+            "A result that does not fit"
+          ]
+        },
+        {
+          "q": "Big question: does a wobbly line mean failure?",
+          "a": "No: look at the trend, find anomalies and repeat.",
+          "mins": 2
+        }
+      ],
+      "homework": "Finish the graph and evaluation. Upload a photo to the portal.",
+      "send": "SEND: pre-drawn axes. EAL: load, extension, anomaly. Stretch: compare two different thickness bands on one graph.",
+      "resources": [
+        "Pearson Exploring Science 7K Forces (the school's KS3 course): 7Kb",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Forces (contact forces, pressure)",
+        "Home practical guide and safety card: rubber band stretch (portal worksheet; face back, loads over a cushion)",
+        "A rubber band, a 30 cm ruler, a sandwich bag, four 100 g packets",
+        "Results table and graph paper (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "rubber bands",
+          "alt": "Rubber bands",
+          "for": "keywords"
+        },
+        {
+          "find": "ruler centimetres millimetres",
+          "alt": "A ruler",
+          "for": "teach:2"
+        },
+        {
+          "find": "bungee cord",
+          "alt": "A bungee cord",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 44,
+      "title": "Friction and drag",
+      "duration": 50,
+      "bigQuestion": "Would life be easier or harder with no friction at all? Think about walking.",
+      "objectives": [
+        "To understand how friction and drag oppose motion and when they are useful"
+      ],
+      "successCriteria": [
+        "All: say that friction acts against motion",
+        "Most: give a useful and a problem example of friction",
+        "Some: explain how streamlining reduces drag"
+      ],
+      "crossCurricular": "Geography: why roads are gritted in winter",
+      "smsc": "Social: road safety and stopping distances",
+      "keywords": [
+        {
+          "term": "friction",
+          "def": "a force between surfaces that opposes motion"
+        },
+        {
+          "term": "drag",
+          "def": "friction from air or water"
+        },
+        {
+          "term": "air resistance",
+          "def": "drag in air"
+        },
+        {
+          "term": "streamlined",
+          "def": "shaped so air or water flows past easily"
+        },
+        {
+          "term": "lubricant",
+          "def": "a substance like oil that reduces friction"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would life be easier or harder with no friction at all? Think about walking.",
+        "a": "Harder: you could not walk, grip or stop; things would slide forever."
+      },
+      "starter": [
+        {
+          "q": "Extension = new - ...",
+          "a": "Original length",
+          "mins": 1,
+          "options": [
+            "Original length",
+            "Load"
+          ]
+        },
+        {
+          "q": "Weight of 5 kg on Earth?",
+          "a": "50 N",
+          "mins": 1,
+          "options": [
+            "5 N",
+            "50 N"
+          ]
+        },
+        {
+          "q": "An anomaly is...",
+          "a": "A result that does not fit",
+          "mins": 1
+        },
+        {
+          "q": "Friction is a ... force.",
+          "a": "Contact",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Friction",
+          "bullets": [
+            "Acts where surfaces touch",
+            "Opposes motion",
+            "Rough surfaces: more friction"
+          ],
+          "note": "Rub hands: they warm up."
+        },
+        {
+          "heading": "Useful or a problem?",
+          "bullets": [
+            "Sort the examples"
+          ],
+          "note": "Discuss each.",
+          "sort": {
+            "columns": [
+              "Useful",
+              "A problem"
+            ],
+            "cards": [
+              "Brakes on a bike",
+              "Worn-out shoe soles",
+              "Grip of tyres",
+              "A squeaky door hinge",
+              "Walking",
+              "Engine parts wearing"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Drag",
+          "bullets": [
+            "Air and water push back",
+            "Faster: more drag",
+            "Streamlined shapes reduce it"
+          ],
+          "note": "Falcons, fish, cars."
+        },
+        {
+          "heading": "Reducing friction",
+          "bullets": [
+            "Lubricants: oil, grease",
+            "Smooth surfaces",
+            "Wheels and ball bearings"
+          ],
+          "note": "Oil the bike chain."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which reduces drag on a cyclist?",
+            "options": [
+              "Sitting upright with a big coat",
+              "Crouching low",
+              "Riding faster"
+            ],
+            "answer": 1,
+            "why": "A low, streamlined shape lets air flow past more easily."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why a skydiver's parachute slows them down.",
+          "a": "Its large area makes a lot of air resistance, which opposes the fall",
+          "mins": 2,
+          "model": "What does the parachute do to the area? Makes it big. Bigger area, more air resistance. Air resistance pushes up, against the motion. So they slow down."
+        },
+        {
+          "q": "Name a lubricant.",
+          "a": "Oil or grease",
+          "mins": 1
+        },
+        {
+          "q": "Why do tyres have treads?",
+          "a": "To grip the road and push water away",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Home test: slide a shoe down a tray ramp (raised on books) with four surfaces taped on (paper, towel, foil, cardboard). Record which surface needs the highest ramp before the shoe slides.",
+          "a": "Pupils' own; the towel usually needs the steepest ramp (most friction), foil the least",
+          "mins": 10,
+          "model": "Teacher demonstrates on camera with paper: raise the ramp one book at a time until the shoe slides."
+        },
+        {
+          "q": "Extend: Name the variable you changed, measured and kept the same.",
+          "a": "Changed: surface; measured: ramp height (books); same: shoe, tray",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why do bobsleds have polished runners but grippy shoes for the start?",
+          "a": "Low friction runners go fast; grippy shoes push off without slipping.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Friction acts...",
+          "a": "Against motion",
+          "mins": 1,
+          "options": [
+            "With motion",
+            "Against motion"
+          ]
+        },
+        {
+          "q": "Big question: would life be easier with no friction?",
+          "a": "No: we could not walk, grip or stop.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three places at home where friction is useful and one where it is a problem.",
+      "send": "SEND: picture sort cards. EAL: friction, grip, slide. Stretch: research how ball bearings reduce friction.",
+      "resources": [
+        "Pearson Exploring Science 7K Forces (the school's KS3 course): 7Kc",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Forces (contact forces, pressure)",
+        "Home practical guide and safety card: shoe ramp (portal worksheet; ramp on the floor, keep fingers clear)",
+        "A tray, books, a shoe, paper, towel, foil and cardboard",
+        "Results table (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "peregrine falcon diving",
+          "alt": "A falcon diving (streamlined)",
+          "for": "teach:3"
+        },
+        {
+          "find": "bicycle chain oil",
+          "alt": "An oiled bicycle chain",
+          "for": "keywords"
+        },
+        {
+          "find": "tyre tread",
+          "alt": "A tyre tread",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 45,
+      "title": "Pressure",
+      "duration": 50,
+      "bigQuestion": "Why can you push a drawing pin into a board with your thumb, but not a pencil's flat end?",
+      "objectives": [
+        "To understand how pressure depends on force and area"
+      ],
+      "successCriteria": [
+        "All: state pressure = force ÷ area",
+        "Most: calculate pressure in N/m²",
+        "Some: explain why snowshoes and sharp knives work"
+      ],
+      "crossCurricular": "Maths: area and division",
+      "smsc": "Spiritual: how camels are designed for the desert",
+      "keywords": [
+        {
+          "term": "pressure",
+          "def": "how concentrated a force is on an area"
+        },
+        {
+          "term": "area",
+          "def": "the size of a surface, in m² or cm²"
+        },
+        {
+          "term": "N/m²",
+          "def": "newtons per square metre, the unit of pressure"
+        },
+        {
+          "term": "pascal (Pa)",
+          "def": "another name for N/m²"
+        },
+        {
+          "term": "concentrated",
+          "def": "squeezed into a small space"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why can you push a drawing pin into a board with your thumb, but not a pencil's flat end?",
+        "a": "The pin's point has a tiny area, so the same force gives a huge pressure."
+      },
+      "starter": [
+        {
+          "q": "Friction acts...",
+          "a": "Against motion",
+          "mins": 1,
+          "options": [
+            "Against motion",
+            "With motion"
+          ]
+        },
+        {
+          "q": "A lubricant ... friction.",
+          "a": "Reduces",
+          "mins": 1,
+          "options": [
+            "Reduces",
+            "Increases"
+          ]
+        },
+        {
+          "q": "Area of a 2 m by 3 m rectangle?",
+          "a": "6 m²",
+          "mins": 1
+        },
+        {
+          "q": "Name a way to reduce drag.",
+          "a": "Streamlining",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Pressure",
+          "bullets": [
+            "Pressure = force ÷ area",
+            "Large area: low pressure",
+            "Small area: high pressure"
+          ],
+          "note": "Units: N/m² (Pa) or N/cm²."
+        },
+        {
+          "heading": "Worked example",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "A 600 N box rests on an area of 2 m². Find the pressure.",
+            "steps": [
+              "Pressure = force ÷ area",
+              "= 600 ÷ 2",
+              "= 300"
+            ],
+            "answer": "300 N/m²"
+          }
+        },
+        {
+          "heading": "Low pressure on purpose",
+          "bullets": [
+            "Snowshoes",
+            "Tractor tyres on mud",
+            "Camels' wide feet"
+          ],
+          "note": "Spread the force."
+        },
+        {
+          "heading": "High pressure on purpose",
+          "bullets": [
+            "Knife blades",
+            "Drawing pins",
+            "Football studs"
+          ],
+          "note": "Concentrate the force.",
+          "compare": {
+            "left": {
+              "title": "Spread out (low P)",
+              "points": [
+                "Snowshoes",
+                "Wide tyres",
+                "Camel feet"
+              ]
+            },
+            "right": {
+              "title": "Concentrated (high P)",
+              "points": [
+                "Knife edge",
+                "Pin point",
+                "Studs"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Same 500 N force on 0.5 m² or 0.05 m². Which has the higher pressure?",
+            "options": [
+              "0.5 m²",
+              "0.05 m²",
+              "The same"
+            ],
+            "answer": 1,
+            "why": "Smaller area, higher pressure: 10 000 N/m² against 1000 N/m²."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 500 N pupil stands on 0.04 m² of shoe. Pressure?",
+          "a": "12 500 N/m²",
+          "mins": 3,
+          "model": "P = F ÷ A = 500 ÷ 0.04. Dividing by 0.04 is multiplying by 25: 12 500 N/m²."
+        },
+        {
+          "q": "Why do camels have wide feet?",
+          "a": "To spread their weight and not sink into sand",
+          "mins": 1
+        },
+        {
+          "q": "Unit of pressure?",
+          "a": "N/m² (pascal)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Calculate: (a) 200 N on 4 m²; (b) 50 N on 0.5 m²; (c) 1000 N on 0.1 m²; (d) 36 N on 9 cm² (answer in N/cm²).",
+          "a": "(a) 50 N/m² (b) 100 N/m² (c) 10 000 N/m² (d) 4 N/cm²",
+          "mins": 10,
+          "model": "Teacher does (a): 200 ÷ 4 = 50 N/m²."
+        },
+        {
+          "q": "Extend: Why does a sharp knife cut better than a blunt one?",
+          "a": "Smaller area at the edge, so the same force gives a higher pressure.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: A 30 N book makes 600 N/m² pressure. What area is it resting on?",
+          "a": "Area = F ÷ P = 30 ÷ 600 = 0.05 m²",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Pressure = force ÷ ...",
+          "a": "Area",
+          "mins": 1,
+          "options": [
+            "Area",
+            "Mass",
+            "Time"
+          ]
+        },
+        {
+          "q": "Big question: why does a pin go in but not the pencil's flat end?",
+          "a": "The pin's tiny area makes a much higher pressure for the same force.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three objects at home designed for high or low pressure. Explain each in one sentence.",
+      "send": "SEND: P = F ÷ A card and calculator. EAL: pressure, area, spread. Stretch: estimate the pressure under your feet (weight ÷ area of both soles).",
+      "resources": [
+        "Pearson Exploring Science 7K Forces (the school's KS3 course): 7Kd",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Forces (contact forces, pressure)",
+        "Pressure calculation sheet (portal worksheet)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "snowshoes",
+          "alt": "Snowshoes",
+          "for": "teach:3"
+        },
+        {
+          "find": "drawing pin",
+          "alt": "A drawing pin",
+          "for": "hook"
+        },
+        {
+          "find": "camel foot",
+          "alt": "A camel's wide foot",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 46,
+      "title": "Pressure at home: footprints and flour",
+      "duration": 50,
+      "bigQuestion": "Two identical tins sit on wet sand: one on its flat base, one on its narrow rim. Which sinks further?",
+      "objectives": [
+        "To understand how to test the link between area and pressure using a simple model"
+      ],
+      "successCriteria": [
+        "All: press the same load on different areas into flour",
+        "Most: measure the depth of each print",
+        "Some: use pressure = force ÷ area to explain the results"
+      ],
+      "crossCurricular": "Maths: area and division",
+      "smsc": "Social: sharing results and comparing methods",
+      "keywords": [
+        {
+          "term": "pressure",
+          "def": "force ÷ area"
+        },
+        {
+          "term": "area",
+          "def": "the size of a surface"
+        },
+        {
+          "term": "depth",
+          "def": "how deep something goes"
+        },
+        {
+          "term": "variable",
+          "def": "something that can change in a test"
+        },
+        {
+          "term": "conclusion",
+          "def": "what the results show"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two identical tins sit on wet sand: one on its flat base, one on its narrow rim. Which sinks further?",
+        "a": "The rim: the same weight on a smaller area gives a higher pressure."
+      },
+      "starter": [
+        {
+          "q": "Pressure = force ÷ ...",
+          "a": "Area",
+          "mins": 1,
+          "options": [
+            "Area",
+            "Mass"
+          ]
+        },
+        {
+          "q": "600 N on 3 m² = ?",
+          "a": "200 N/m²",
+          "mins": 1,
+          "options": [
+            "200 N/m²",
+            "1800 N/m²"
+          ]
+        },
+        {
+          "q": "Snowshoes give ... pressure.",
+          "a": "Low",
+          "mins": 1
+        },
+        {
+          "q": "Unit of pressure?",
+          "a": "N/m²",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Safety guide: flour prints",
+          "bullets": [
+            "Do it on a tray to catch mess",
+            "Do not breathe in the flour or throw it",
+            "Use a sealed food tin or a book, not glass",
+            "Wash hands after; throw used flour away"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Method",
+          "bullets": [
+            "Flatten 3 cm of flour in a tray",
+            "Press a tin on its base, then on its rim, with the same 2 kg on top",
+            "Measure each print's depth"
+          ],
+          "note": "Same load: only the area changes."
+        },
+        {
+          "heading": "Example results",
+          "bullets": [
+            "Same force, different areas"
+          ],
+          "note": "Example data.",
+          "table": {
+            "head": [
+              "Contact",
+              "Area (cm²)",
+              "Force (N)",
+              "Pressure (N/cm²)",
+              "Depth (mm)"
+            ],
+            "rows": [
+              [
+                "Tin base",
+                "50",
+                "20",
+                "0.4",
+                "2"
+              ],
+              [
+                "Tin rim",
+                "10",
+                "20",
+                "2.0",
+                "9"
+              ],
+              [
+                "Book face",
+                "300",
+                "20",
+                "0.07",
+                "under 1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which made the deepest print?",
+            "options": [
+              "Book face",
+              "Tin base",
+              "Tin rim"
+            ],
+            "answer": 2,
+            "why": "Smallest area, highest pressure (2.0 N/cm²), deepest print."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Check the table: why is the rim pressure 2.0 N/cm²?",
+          "a": "20 N ÷ 10 cm² = 2.0 N/cm²",
+          "mins": 2,
+          "model": "P = F ÷ A. Force 20 N, area 10 cm². 20 ÷ 10 = 2.0 N/cm²."
+        },
+        {
+          "q": "What variable did we change?",
+          "a": "The area",
+          "mins": 1
+        },
+        {
+          "q": "What did we keep the same?",
+          "a": "The force (load)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Do the flour test with three contact areas and the same load. Record depth, estimate areas, and calculate pressure.",
+          "a": "Pupils' own; smaller area gives deeper prints and higher pressure",
+          "mins": 13,
+          "model": "Teacher presses the tin base on camera and measures 2 mm with a ruler."
+        },
+        {
+          "q": "Extend: Write a conclusion in the portal response box with the equation. Starter: 'The smaller the area...'",
+          "a": "The smaller the area, the higher the pressure and the deeper the print, because P = F ÷ A with the same force.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why is depth only a rough measure of pressure?",
+          "a": "Flour is uneven and packs down; depth is not exactly proportional.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Same force, smaller area, ... pressure.",
+          "a": "Higher",
+          "mins": 1,
+          "options": [
+            "Higher",
+            "Lower"
+          ]
+        },
+        {
+          "q": "Big question: which tin sinks further in sand?",
+          "a": "The one on its rim: smaller area, higher pressure.",
+          "mins": 2
+        }
+      ],
+      "homework": "Look for footprints (yours, or a pet's or bird's) in mud or snow. Explain their depth using pressure.",
+      "send": "SEND: table with areas filled in. EAL: deep, shallow, area. Stretch: work out pressure in N/m² (1 m² = 10 000 cm²).",
+      "resources": [
+        "Pearson Exploring Science 7K Forces (the school's KS3 course): 7Kd",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Forces (contact forces, pressure)",
+        "Home practical guide and safety card: flour prints (portal worksheet; on a tray, wash hands)",
+        "A tray, plain flour, a sealed food tin, a book, a 2 kg bag of rice or sugar, a ruler",
+        "Results table (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "footprints in sand",
+          "alt": "Footprints in sand",
+          "for": "hook"
+        },
+        {
+          "find": "tin can",
+          "alt": "A tin can",
+          "for": "keywords"
+        },
+        {
+          "find": "plain flour",
+          "alt": "Plain flour",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 47,
+      "title": "Balanced and unbalanced forces",
+      "duration": 50,
+      "bigQuestion": "A car is moving at a steady 30 mph on a straight road. Are the forces on it balanced? How can it move if they are?",
+      "objectives": [
+        "To understand how balanced and unbalanced forces affect an object's motion"
+      ],
+      "successCriteria": [
+        "All: draw labelled force arrows on an object",
+        "Most: calculate the resultant force",
+        "Some: predict the motion from the resultant"
+      ],
+      "crossCurricular": "Maths: positive and negative directions",
+      "smsc": "Moral: balance and moderation in life",
+      "keywords": [
+        {
+          "term": "balanced",
+          "def": "forces equal in size, opposite in direction"
+        },
+        {
+          "term": "unbalanced",
+          "def": "forces that do not cancel out"
+        },
+        {
+          "term": "resultant force",
+          "def": "the single overall force"
+        },
+        {
+          "term": "equilibrium",
+          "def": "balanced: no change in motion"
+        },
+        {
+          "term": "accelerate",
+          "def": "speed up"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A car is moving at a steady 30 mph on a straight road. Are the forces on it balanced? How can it move if they are?",
+        "a": "Yes: driving force equals drag and friction; balanced forces keep it at a steady speed."
+      },
+      "starter": [
+        {
+          "q": "Pressure = force ÷ area: 40 N on 2 m²?",
+          "a": "20 N/m²",
+          "mins": 1,
+          "options": [
+            "20 N/m²",
+            "80 N/m²"
+          ]
+        },
+        {
+          "q": "Friction acts...",
+          "a": "Against motion",
+          "mins": 1,
+          "options": [
+            "Against motion",
+            "With motion"
+          ]
+        },
+        {
+          "q": "Weight of 1 kg on Earth?",
+          "a": "10 N",
+          "mins": 1
+        },
+        {
+          "q": "Arrows on force diagrams show size and...",
+          "a": "Direction",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Balanced forces",
+          "bullets": [
+            "Equal and opposite",
+            "Resultant force = 0",
+            "Still stays still; moving keeps the same speed"
+          ],
+          "note": "A book on a table; a car at steady speed."
+        },
+        {
+          "heading": "Unbalanced forces",
+          "bullets": [
+            "Resultant is not zero",
+            "Speeds up, slows down or changes direction"
+          ],
+          "note": "Kick a ball; brake a bike."
+        },
+        {
+          "heading": "Resultant force",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "A boat: engine 800 N forwards, drag 500 N backwards. Find the resultant and describe the motion.",
+            "steps": [
+              "Opposite directions: subtract",
+              "800 - 500 = 300 N",
+              "Direction of the bigger force: forwards",
+              "Unbalanced, so it speeds up"
+            ],
+            "answer": "300 N forwards; it accelerates"
+          }
+        },
+        {
+          "heading": "Steady speed",
+          "bullets": [
+            "Driving force = resistive forces",
+            "Balanced, so speed is constant"
+          ],
+          "note": "Not 'no forces': balanced forces.",
+          "misconception": {
+            "wrong": "If something is moving, there must be a bigger force forwards.",
+            "right": "At steady speed the forces are balanced; a bigger forward force would make it speed up."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Forward 200 N, backward 200 N, moving. It will...",
+            "options": [
+              "Speed up",
+              "Slow down",
+              "Keep the same speed"
+            ],
+            "answer": 2,
+            "why": "Balanced forces: resultant 0, so no change in motion."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A cyclist: pedal force 150 N, air resistance 90 N. Resultant?",
+          "a": "60 N forwards",
+          "mins": 2,
+          "model": "Opposite directions, so subtract: 150 - 90 = 60. Bigger force is forwards. 60 N forwards."
+        },
+        {
+          "q": "What happens if air resistance becomes 150 N?",
+          "a": "Forces balance; steady speed",
+          "mins": 1
+        },
+        {
+          "q": "Two people push a box the same way with 30 N and 40 N. Resultant?",
+          "a": "70 N",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw force diagrams and find the resultant for four cases (portal sheet): a lorry, a skydiver, a book on a table, a car braking.",
+          "a": "Lorry: 2000 - 1500 = 500 N forwards; skydiver: 700 - 700 = 0 (steady); book: 0; car: 3000 N backwards (slowing)",
+          "mins": 10,
+          "model": "Teacher draws the lorry: 2000 N forward arrow, 1500 N backward arrow, resultant 500 N forwards."
+        },
+        {
+          "q": "Extend: A skydiver opens the parachute. Explain what happens to the forces and speed.",
+          "a": "Air resistance becomes bigger than weight, so the resultant is upwards and they slow down until forces balance again.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why does a car need a bigger driving force to keep a steady speed at 70 mph than at 30 mph?",
+          "a": "Drag is much bigger at higher speed, so a bigger force is needed to balance it.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Balanced forces on a moving object: it...",
+          "a": "Keeps the same speed",
+          "mins": 1,
+          "options": [
+            "Stops",
+            "Keeps the same speed",
+            "Speeds up"
+          ]
+        },
+        {
+          "q": "Big question: how can a car move steadily with balanced forces?",
+          "a": "Balanced forces mean no change in motion, so it keeps its speed.",
+          "mins": 2
+        }
+      ],
+      "homework": "Draw a force diagram for something moving at home (a toy car, a falling feather). Label the forces.",
+      "send": "SEND: arrow templates. EAL: balanced, resultant, opposite. Stretch: research terminal velocity.",
+      "resources": [
+        "Pearson Exploring Science 7K Forces (the school's KS3 course): 7Ke",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Forces (contact forces, pressure)",
+        "Force diagram sheet (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tug of war rope",
+          "alt": "A rope pulled in both directions",
+          "for": "hook"
+        },
+        {
+          "find": "parachute descending",
+          "alt": "A parachute in the sky",
+          "for": "teach:4"
+        },
+        {
+          "find": "sailing boat",
+          "alt": "A sailing boat",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 48,
+      "title": "Forces in action: speed and stopping",
+      "duration": 50,
+      "bigQuestion": "Why is driving at 30 mph near a school so much safer than 40 mph?",
+      "objectives": [
+        "To understand how forces change speed and why stopping distances depend on speed"
+      ],
+      "successCriteria": [
+        "All: calculate speed = distance ÷ time",
+        "Most: describe what happens to forces when a car brakes",
+        "Some: explain why stopping distance grows with speed"
+      ],
+      "crossCurricular": "Maths: division and reading bar charts",
+      "smsc": "Moral: responsibility for others' safety on the road",
+      "keywords": [
+        {
+          "term": "speed",
+          "def": "how far something travels each second"
+        },
+        {
+          "term": "m/s",
+          "def": "metres per second, a unit of speed"
+        },
+        {
+          "term": "stopping distance",
+          "def": "how far a car travels from seeing danger to stopping"
+        },
+        {
+          "term": "reaction time",
+          "def": "time before the driver acts"
+        },
+        {
+          "term": "braking force",
+          "def": "friction from the brakes that slows a car"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why is driving at 30 mph near a school so much safer than 40 mph?",
+        "a": "At 40 mph the car travels further before reacting and needs much further to brake, so it hits harder and later."
+      },
+      "starter": [
+        {
+          "q": "Resultant of 500 N forward and 300 N back?",
+          "a": "200 N forward",
+          "mins": 1,
+          "options": [
+            "200 N forward",
+            "800 N forward"
+          ]
+        },
+        {
+          "q": "Balanced forces: speed...",
+          "a": "Stays the same",
+          "mins": 1,
+          "options": [
+            "Stays the same",
+            "Increases"
+          ]
+        },
+        {
+          "q": "Friction acts...",
+          "a": "Against motion",
+          "mins": 1
+        },
+        {
+          "q": "Unbalanced backward force: the object...",
+          "a": "Slows down",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Speed",
+          "bullets": [
+            "Speed = distance ÷ time",
+            "Units: m/s or km/h"
+          ],
+          "note": "Walking about 1.5 m/s."
+        },
+        {
+          "heading": "Worked example",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "A cyclist travels 300 m in 60 s. Find the speed.",
+            "steps": [
+              "Speed = distance ÷ time",
+              "= 300 ÷ 60",
+              "= 5"
+            ],
+            "answer": "5 m/s"
+          }
+        },
+        {
+          "heading": "Stopping distance",
+          "bullets": [
+            "Thinking distance + braking distance",
+            "Faster: both get bigger",
+            "Wet or icy roads: longer braking"
+          ],
+          "note": "Highway Code figures (approximate).",
+          "chart": {
+            "kind": "bar",
+            "title": "Typical stopping distances, dry road (Highway Code, approximate)",
+            "labels": [
+              "20 mph",
+              "30 mph",
+              "40 mph",
+              "50 mph"
+            ],
+            "values": [
+              12,
+              23,
+              36,
+              53
+            ],
+            "unit": "m"
+          }
+        },
+        {
+          "heading": "What makes it worse",
+          "bullets": [
+            "Tiredness, phones: slower reactions",
+            "Worn tyres and brakes",
+            "Rain and ice"
+          ],
+          "note": "Pedestrian safety: stop, look, listen."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which increases thinking distance?",
+            "options": [
+              "A tired driver",
+              "Wet roads",
+              "Worn tyres"
+            ],
+            "answer": 0,
+            "why": "Tiredness slows reactions; the others affect braking distance."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A car travels 150 m in 10 s. Speed?",
+          "a": "15 m/s",
+          "mins": 2,
+          "model": "Speed = distance ÷ time = 150 ÷ 10 = 15 m/s."
+        },
+        {
+          "q": "From the chart, how much further to stop at 40 mph than 30 mph?",
+          "a": "13 m (36 - 23)",
+          "mins": 1
+        },
+        {
+          "q": "Name one factor that increases braking distance.",
+          "a": "Wet or icy road, worn tyres or brakes",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Time yourself walking 10 m at home or in a garden (adult measures). Calculate your speed. Then answer the stopping-distance chart questions.",
+          "a": "Pupils' own speed, for example 10 m in 7 s ≈ 1.4 m/s; chart answers 12, 23, 36, 53 m",
+          "mins": 10,
+          "model": "Teacher shows: 10 m in 8 s; 10 ÷ 8 = 1.25 m/s."
+        },
+        {
+          "q": "Extend: Explain in the portal response box why a 20 mph zone outside schools saves lives. Starter: 'At lower speed...'",
+          "a": "At lower speed the stopping distance is shorter (12 m against 23 m at 30 mph), so a car is more likely to stop in time and any impact is less forceful.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A car at 13 m/s has a 0.7 s reaction time. Thinking distance?",
+          "a": "13 × 0.7 = 9.1 m",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Speed = distance ÷ ...",
+          "a": "Time",
+          "mins": 1,
+          "options": [
+            "Time",
+            "Mass"
+          ]
+        },
+        {
+          "q": "Big question: why is 30 mph near a school safer than 40 mph?",
+          "a": "The stopping distance is much shorter (23 m against 36 m).",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a road safety poster for younger children using one fact from today.",
+      "send": "SEND: equation card. EAL: speed, stop, distance. Stretch: why braking distance roughly quadruples when speed doubles.",
+      "resources": [
+        "Pearson Exploring Science 7K Forces (the school's KS3 course): 7Ke",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Forces (contact forces, pressure)",
+        "The Highway Code typical stopping distances (published by the UK government)",
+        "Home practical guide and safety card: walking speed (portal worksheet; indoors or a garden, never near roads)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "school zone 20 mph sign",
+          "alt": "A 20 mph sign",
+          "for": "hook"
+        },
+        {
+          "find": "car brake disc",
+          "alt": "A car brake disc",
+          "for": "keywords"
+        },
+        {
+          "find": "wet road",
+          "alt": "A wet road",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Current electricity (7J); forces (7K)",
+      "n": 49,
+      "title": "7K review and quiz: forces",
+      "duration": 50,
+      "bigQuestion": "Which force affects your day the most, and how would your day change without it?",
+      "objectives": [
+        "To understand how secure my knowledge of forces, springs, pressure and motion is"
+      ],
+      "successCriteria": [
+        "All: recall the units and equations for forces",
+        "Most: solve weight, pressure, speed and resultant force problems",
+        "Some: explain a forces situation in a 4-mark answer"
+      ],
+      "crossCurricular": "Maths: substituting into formulae",
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "newton",
+          "def": "the unit of force"
+        },
+        {
+          "term": "resultant force",
+          "def": "the overall force"
+        },
+        {
+          "term": "pressure",
+          "def": "force ÷ area"
+        },
+        {
+          "term": "extension",
+          "def": "how much longer something gets"
+        },
+        {
+          "term": "speed",
+          "def": "distance ÷ time"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which force affects your day the most, and how would your day change without it?",
+        "a": "Pupils' own; for example friction: we could not walk or hold a pen."
+      },
+      "starter": [
+        {
+          "q": "W = m × g: 4 kg?",
+          "a": "40 N",
+          "mins": 1,
+          "options": [
+            "4 N",
+            "40 N",
+            "400 N"
+          ]
+        },
+        {
+          "q": "P = F ÷ A: 90 N on 3 m²?",
+          "a": "30 N/m²",
+          "mins": 1,
+          "options": [
+            "30 N/m²",
+            "270 N/m²"
+          ]
+        },
+        {
+          "q": "Speed: 100 m in 20 s?",
+          "a": "5 m/s",
+          "mins": 1,
+          "options": [
+            "5 m/s",
+            "2000 m/s"
+          ]
+        },
+        {
+          "q": "Balanced forces mean...",
+          "a": "No change in motion",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Equations",
+          "bullets": [
+            "W = m × g",
+            "P = F ÷ A",
+            "Speed = d ÷ t",
+            "Extension = new - original"
+          ],
+          "note": "Units every time.",
+          "table": {
+            "head": [
+              "Quantity",
+              "Unit"
+            ],
+            "rows": [
+              [
+                "Force, weight",
+                "N"
+              ],
+              [
+                "Mass",
+                "kg"
+              ],
+              [
+                "Pressure",
+                "N/m² (Pa)"
+              ],
+              [
+                "Speed",
+                "m/s"
+              ],
+              [
+                "Extension",
+                "cm or m"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Ideas",
+          "bullets": [
+            "Contact and non-contact",
+            "Elastic limit",
+            "Friction useful and a problem",
+            "Balanced: steady; unbalanced: changes"
+          ],
+          "note": "Rapid whiteboard checks."
+        },
+        {
+          "heading": "4-mark answer",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Explain why a ball rolling on carpet slows down and stops. [4 marks]",
+            "steps": [
+              "Friction from the carpet acts on the ball (1)",
+              "It acts against the motion (1)",
+              "Forces are unbalanced; resultant is backwards (1)",
+              "So the ball decelerates until it stops (1)"
+            ],
+            "answer": "4 marks"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which unit is pressure?",
+            "options": [
+              "N",
+              "N/m²",
+              "kg"
+            ],
+            "answer": 1,
+            "why": "Pressure is force per area."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 60 kg pupil stands on 0.03 m². Pressure? (g = 10 N/kg)",
+          "a": "20 000 N/m²",
+          "mins": 3,
+          "model": "Weight first: 60 × 10 = 600 N. Then P = 600 ÷ 0.03 = 20 000 N/m²."
+        },
+        {
+          "q": "Spring: 4 cm to 7 cm. Extension?",
+          "a": "3 cm",
+          "mins": 1
+        },
+        {
+          "q": "Engine 1200 N, drag 1200 N. Motion?",
+          "a": "Steady speed",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 7K quiz on the portal (12 questions, 15 minutes): forces, weight, springs, friction, pressure, resultant force, speed.",
+          "a": "Answer key on the teacher sheet; for example weight of 3 kg = 30 N; 500 N on 0.25 m² = 2000 N/m²",
+          "mins": 15,
+          "model": "Teacher reads question 1 aloud and models the layout: equation, substitution, answer, unit."
+        },
+        {
+          "q": "Extend: Mark with the answer slide and write two targets in your book.",
+          "a": "Pupils' own targets",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Weight is measured in...",
+          "a": "Newtons",
+          "mins": 1,
+          "options": [
+            "Kilograms",
+            "Newtons"
+          ]
+        },
+        {
+          "q": "Big question: which force affects your day most?",
+          "a": "Pupils' own, explained.",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct every mistake in green and do two similar questions from the portal sheet.",
+      "send": "SEND: equation card and calculator. EAL: key words list. Stretch: extra question on terminal velocity.",
+      "resources": [
+        "Pearson Exploring Science 7K Forces (the school's KS3 course): 7K end-of-unit test (the school's scheme)",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Forces (contact forces, pressure)",
+        "7K quiz with answer key (portal)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tug of war rope",
+          "alt": "A rope pulled both ways",
+          "for": "hook"
+        },
+        {
+          "find": "snowshoes",
+          "alt": "Snowshoes",
+          "for": "keywords"
+        },
+        {
+          "find": "coil spring",
+          "alt": "A spring",
+          "for": "teach:2"
         }
       ]
     }

@@ -4,6 +4,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { leadRef, readRegisterInterest, type StoredRegisterInterest } from "@/lib/leadRef";
 import { COUNTRIES } from "@/lib/countries";
 import { Select } from "@/components/ui/Dropdown";
+import { PhoneField } from "@/components/ui/PhoneInput";
 
 const YEAR_GROUPS = [
   "Year 1 (age 5–6)", "Year 2 (age 6–7)", "Year 3 (age 7–8)", "Year 4 (age 8–9)",
@@ -97,10 +98,10 @@ export function ApplicationForm() {
             Email address
             <input name="email" type="email" required={step === 1} autoComplete="email" defaultValue={prefill?.email} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
           </label>
-          <label className="block text-sm font-medium text-ink">
-            Contact number
-            <input name="phone" type="tel" required={step === 1} autoComplete="tel" defaultValue={prefill?.phone} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
-          </label>
+          <div>
+            <label htmlFor="af-phone" className="block text-sm font-medium text-ink">Contact number</label>
+            <PhoneField key={prefill?.phone ?? ""} id="af-phone" name="phone" required={step === 1} defaultValue={prefill?.phone ?? ""} inputClassName="w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+          </div>
           <label className="block text-sm font-medium text-ink">
             Country you&apos;re based in
             <input name="country" type="text" list="application-countries" required={step === 1} autoComplete="country-name" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />

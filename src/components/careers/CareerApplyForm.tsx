@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent, ty
 import Link from "next/link";
 import { getEdgeFunctionUrl, getSupabaseClient } from "@/lib/supabase/client";
 import { Dropdown } from "@/components/ui/Dropdown";
+import { PhoneInput } from "@/components/ui/PhoneInput";
 import { COUNTRIES } from "@/lib/countries";
 import {
   DAYS,
@@ -143,7 +144,7 @@ function validateStep(step: number, v: Values, cv: File | null, docs: File[]): E
     req("lastName", "Please enter your last name.");
     if (!EMAIL_RE.test(v.email.trim())) e.email = "Please enter a valid email address.";
     if (v.emailConfirm.trim().toLowerCase() !== v.email.trim().toLowerCase()) e.emailConfirm = "The two email addresses don't match.";
-    if (v.phone.replace(/\D/g, "").length < 6) e.phone = "Please enter a phone number, including the country code if you are outside the UK.";
+    if (v.phone.replace(/\D/g, "").length < 8) e.phone = "Please enter your phone number.";
     req("country", "Please choose the country you live in.");
     req("rightToWork", "Please tell us about your right to work.");
   }
@@ -249,6 +250,9 @@ function TextInput({
         {label} {required ? <span className="text-red-700" aria-hidden="true">*</span> : <span className="font-normal text-ink/60">(optional)</span>}
       </label>
       {hint && <p id={`${id}-hint`} className="text-xs text-ink/65">{hint}</p>}
+      {type === "tel" ? (
+        <PhoneInput id={`f-${id}`} value={value} onChange={onChange} invalid={!!error} describedBy={describedBy} required={required} inputClassName={inputBase} />
+      ) : (
       <input
         id={`f-${id}`}
         type={type}
@@ -263,6 +267,7 @@ function TextInput({
         aria-required={required || undefined}
         className={inputCls}
       />
+      )}
       <Err id={id} msg={error} />
     </div>
   );
@@ -731,7 +736,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
               <TextInput id="email" label="Email" required type="email" inputMode="email" value={v.email} onChange={(x) => set("email", x)} error={errors.email} maxLength={254} autoComplete="email" />
               <TextInput id="emailConfirm" label="Email again" required type="email" inputMode="email" value={v.emailConfirm} onChange={(x) => set("emailConfirm", x)} error={errors.emailConfirm} maxLength={254} autoComplete="email" />
             </div>
-            <TextInput id="phone" label="Phone (with country code)" required type="tel" inputMode="tel" value={v.phone} onChange={(x) => set("phone", x)} error={errors.phone} maxLength={40} autoComplete="tel" placeholder="+44 7…" />
+            <TextInput id="phone" label="Phone" required type="tel" inputMode="tel" value={v.phone} onChange={(x) => set("phone", x)} error={errors.phone} maxLength={40} autoComplete="tel" />
             <Part title="Where you live and work" />
             <div className="grid gap-4 sm:grid-cols-2">
               <div>

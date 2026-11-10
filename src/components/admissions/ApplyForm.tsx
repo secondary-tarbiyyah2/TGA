@@ -28,9 +28,11 @@ import {
   type YearGroupSuggestion,
 } from "@/components/admissions/applicationShared";
 import { COUNTRIES } from "@/lib/countries";
-import { COUNTRY_ALIASES } from "@/components/admissions/countryCodes";
+import { COUNTRY_ALIASES, countryCode } from "@/components/admissions/countryCodes";
 import { Combobox, SelectBox } from "@/components/admissions/Combobox";
 import { AddressLookup } from "@/components/admissions/AddressLookup";
+import { PhoneInput } from "@/components/ui/PhoneInput";
+import { splitPhone } from "@/lib/dialCodes";
 import type { AddressFill, AddressSuggestion } from "@/components/admissions/addressLookup";
 import { bandForYearGroup } from "@/components/learn/admissions/paymentCalc";
 import type { FeeBand } from "@/content/seed";
@@ -43,6 +45,7 @@ import { formatGBP } from "@/lib/format";
 type ParentKey =
   | "parentName" | "parentEmail" | "parentPhone" | "relationship" | "preferredStart" | "howHeard"
   | "addressLine1" | "addressLine2" | "addressTown" | "addressPostcode" | "addressCountry"
+  | "livedInUk" | "lastUkPostcode" | "lastUkAddress"
   | "siblingDetails" | "declarationName" | "website" | "paymentPlan";
 type BoolKey = "sibling" | "consentContact" | "consentData";
 type Values = Record<ParentKey, string> & Record<BoolKey, boolean>;
@@ -65,6 +68,8 @@ type ChildForm = {
   currentSchoolYear: string;
   islamicEducation: string;
   sendNotes: string;
+  /** "yes" or "no": is this child a British citizen? */
+  britishNational: string;
   /** This child's legal parent or guardian is someone other than the contact above. */
   otherGuardian: boolean;
   guardianName: string;
@@ -75,7 +80,7 @@ type ChildForm = {
   docs: Record<ChildDocKind, File[]>;
 };
 type ChildTextKey =
-  | "firstName" | "lastName" | "dobDay" | "dobMonth" | "dobYear" | "gender" | "yearGroup" | "currentSchool" | "currentSchoolYear" | "islamicEducation" | "sendNotes"
+  | "firstName" | "lastName" | "dobDay" | "dobMonth" | "dobYear" | "gender" | "yearGroup" | "currentSchool" | "currentSchoolYear" | "islamicEducation" | "sendNotes" | "britishNational"
   | "guardianName" | "guardianRelationship" | "guardianEmail" | "guardianPhone" | "guardianAddress";
 
 /** Keys: a parent field ("parentName"), a document ("doc-parent_id"), or a child field ("c0-firstName", "c0-doc-child_id"). The element id is "f-" + key. */
@@ -83,12 +88,13 @@ type Errors = Record<string, string | undefined>;
 type Phase = "loading" | "closed" | "open" | "submitting" | "success";
 
 const MAX_CHILDREN = 6;
-const STEP_TITLES = ["About you", "Your children", "Fees and declaration"] as const;
+const STEP_TITLES = ["About you", "Address and ID", "Your children", "Documents", "Fees and declaration"] as const;
 const CHILD_LIMITS: Record<ChildDocKind, number> = { report: MAX_REPORT_FILES, child_id: MAX_ID_FILES, guardian_id: MAX_ID_FILES };
 
 const INITIAL: Values = {
   parentName: "", parentEmail: "", parentPhone: "", relationship: "", preferredStart: "", howHeard: "",
   addressLine1: "", addressLine2: "", addressTown: "", addressPostcode: "", addressCountry: "",
+  livedInUk: "", lastUkPostcode: "", lastUkAddress: "",
   siblingDetails: "", declarationName: "", website: "", paymentPlan: "",
   sibling: false, consentContact: false, consentData: false,
 };
@@ -97,7 +103,7 @@ function blankChild(key: string): ChildForm {
   return {
     key,
     firstName: "", lastName: "", dobDay: "", dobMonth: "", dobYear: "", gender: "", yearGroup: "", yearTouched: false,
-    currentSchool: "", currentSchoolYear: "", islamicEducation: "", sendNotes: "",
+    currentSchool: "", currentSchoolYear: "", islamicEducation: "", sendNotes: "", britishNational: "",
     otherGuardian: false, guardianName: "", guardianRelationship: "", guardianEmail: "", guardianPhone: "", guardianAddress: "",
     docs: { report: [], child_id: [], guardian_id: [] },
   };
@@ -109,6 +115,34 @@ const inputCls = `mt-1 ${inputBase}`;
 const secondaryButtonCls =
   "w-full whitespace-nowrap rounded-lg border border-gold-500 bg-white px-4 py-2 text-sm font-semibold text-ink hover:bg-cream disabled:opacity-60 sm:w-auto";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const UK_POSTCODE_RE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+
+/** True when the home address is in the UK. */
+function livesInUk(country: string): boolean {
+  return countryCode(country) === "GB";
+}
+
+/**
+ * The local council for a UK postcode (postcodes.io, free and open data), or
+ * null if it can't be found in time. Used so the school knows which local
+ * authority to contact about a pupil, including a family now living abroad.
+ */
+async function councilFor(postcode: string): Promise<string | null> {
+  const pc = postcode.replace(/\s/g, "");
+  if (!UK_POSTCODE_RE.test(postcode.trim())) return null;
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 4000);
+  try {
+    const res = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(pc)}`, { signal: ctrl.signal });
+    if (!res.ok) return null;
+    const data = (await res.json()) as { result?: { admin_district?: string | null } };
+    return data.result?.admin_district?.slice(0, 120) || null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 // ── validation ───────────────────────────────────────────────────────────
 
@@ -143,7 +177,7 @@ function dobError(k: ChildForm): string | undefined {
 
 function phoneError(phone: string, who: string): string | undefined {
   if (!phone.trim()) return `Please enter a phone number we can reach ${who} on.`;
-  if (phone.replace(/\D/g, "").length < 7) return "That phone number looks too short. Please include the full number with its country code if outside the UK.";
+  if (splitPhone(phone).local.replace(/\D/g, "").length < 6) return "That phone number looks too short. Please check the number and the country code.";
   return undefined;
 }
 
@@ -162,13 +196,22 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
     if (!v.parentEmail.trim()) put("parentEmail", "Please enter your email address.");
     else if (!EMAIL_RE.test(v.parentEmail.trim())) put("parentEmail", "That doesn't look like an email address. It should look like name@example.com.");
     put("parentPhone", phoneError(v.parentPhone, "you"));
+  }
+  if (step === 1) {
     put("addressCountry", v.addressCountry.trim() ? undefined : "Please enter the country your child lives in.");
     put("addressLine1", v.addressLine1.trim() ? undefined : "Please enter the first line of your child's home address.");
     put("addressTown", v.addressTown.trim() ? undefined : "Please enter the town or city.");
     put("addressPostcode", postcodeError(v.addressPostcode, v.addressCountry));
+    if (v.addressCountry.trim() && !livesInUk(v.addressCountry)) {
+      put("livedInUk", v.livedInUk ? undefined : "Please tell us whether your child has lived in the UK.");
+      if (v.livedInUk === "yes") {
+        if (!v.lastUkPostcode.trim()) put("lastUkPostcode", "Please enter the postcode of the last UK address.");
+        else if (!UK_POSTCODE_RE.test(v.lastUkPostcode.trim())) put("lastUkPostcode", "That doesn't look like a UK postcode. It should look like B10 0AB.");
+      }
+    }
     put("doc-parent_id", parentIds.length === 0 ? "Please upload photo ID for a parent or guardian." : undefined);
   }
-  if (step === 1) {
+  if (step === 2) {
     kids.forEach((k, i) => {
       const p = `c${i}-`;
       put(`${p}firstName`, k.firstName.trim() ? undefined : "Please enter your child's first name.");
@@ -176,6 +219,12 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
       put(`${p}dob`, dobError(k));
       put(`${p}gender`, k.gender === "Male" || k.gender === "Female" ? undefined : "Please choose Male or Female.");
       put(`${p}yearGroup`, k.yearGroup ? undefined : "Please choose the year group you are applying for.");
+      put(`${p}britishNational`, k.britishNational ? undefined : "Please tell us whether your child is a British citizen.");
+    });
+  }
+  if (step === 3) {
+    kids.forEach((k, i) => {
+      const p = `c${i}-`;
       put(`${p}doc-child_id`, k.docs.child_id.length === 0 ? "Please upload your child's passport or birth certificate." : undefined);
       if (k.otherGuardian) {
         put(`${p}guardianName`, k.guardianName.trim() ? undefined : "Please enter the legal parent or guardian's full name.");
@@ -186,7 +235,7 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
       }
     });
   }
-  if (step === 2) {
+  if (step === 4) {
     if (v.paymentPlan !== "annual" && v.paymentPlan !== "termly" && v.paymentPlan !== "monthly") put("paymentPlan", "Please choose the payment plan you expect to use. You can change it later.");
     put("consentContact", v.consentContact ? undefined : "Please tick the box to say we may contact you about this application.");
     put("consentData", v.consentData ? undefined : "Please tick the box to agree to us using your information for this application.");
@@ -232,10 +281,10 @@ function Field({ id, label, optional, error, hint, children }: { id: string; lab
  */
 function Section({ title, intro, children }: { title: string; intro?: ReactNode; children: ReactNode }) {
   return (
-    <fieldset className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
+    <fieldset className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-5 sm:p-6">
       <legend className="float-left mb-1 w-full p-0 font-serif text-xl font-semibold text-ink">{title}</legend>
       <div className="clear-left">
-        {intro && <p className="mb-5 text-sm text-ink/70">{intro}</p>}
+        {intro && <p className="mb-4 text-sm text-ink/70">{intro}</p>}
         <div className={`grid gap-4 sm:grid-cols-2 ${intro ? "" : "mt-4"}`}>{children}</div>
       </div>
     </fieldset>
@@ -247,6 +296,25 @@ function Section({ title, intro, children }: { title: string; intro?: ReactNode;
  * learning", "Documents"), so the long card reads as a few short groups.
  * Spans both columns of the card's grid; layout only.
  */
+/** A required Yes / No question as two radio buttons. The first radio carries the field id so errors can focus it. */
+function YesNo({ id, label, hint, value, error, disabled, onChange }: { id: string; label: string; hint?: string; value: string; error?: string; disabled: boolean; onChange: (v: "yes" | "no") => void }) {
+  return (
+    <div role="radiogroup" aria-labelledby={`l-${id}`} aria-describedby={error ? `e-${id}` : hint ? `h-${id}` : undefined}>
+      <p id={`l-${id}`} className="block text-sm font-medium text-ink">{label}</p>
+      {hint && <p id={`h-${id}`} className="text-xs text-ink/70">{hint}</p>}
+      <div className="mt-2 flex gap-6">
+        {(["yes", "no"] as const).map((opt, oi) => (
+          <label key={opt} className="flex items-center gap-2 text-ink">
+            <input id={oi === 0 ? id : undefined} type="radio" name={id} value={opt} checked={value === opt} disabled={disabled} onChange={() => onChange(opt)} />
+            {opt === "yes" ? "Yes" : "No"}
+          </label>
+        ))}
+      </div>
+      {error && <p id={`e-${id}`} role="alert" className="mt-1 text-sm text-red-700">{error}</p>}
+    </div>
+  );
+}
+
 function SubSection({ title, hint, first }: { title: string; hint?: string; first?: boolean }) {
   return (
     <div className={`sm:col-span-2 ${first ? "" : "mt-2 border-t border-gold-light/50 pt-5"}`}>
@@ -490,11 +558,32 @@ export function ApplyForm({
   const [errors, setErrors] = useState<Errors>({});
   const [submitError, setSubmitError] = useState(false);
   const [step, setStep] = useState(0);
+  /** Which child's card is open on the children and documents steps. */
+  const [activeKid, setActiveKid] = useState(0);
+  /** Local councils looked up from postcodes, shown to the family and saved with the application. */
+  const [councils, setCouncils] = useState<Record<string, string | null>>({});
   const [failedUploads, setFailedUploads] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState<{ names: string[]; email: string } | null>(null);
   /** The family chose to type the address rather than look it up. */
   const [manualAddress, setManualAddress] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+
+  const homePostcode = livesInUk(values.addressCountry) ? values.addressPostcode.trim().toUpperCase() : "";
+  const lastUkPostcode = values.livedInUk === "yes" ? values.lastUkPostcode.trim().toUpperCase() : "";
+  useEffect(() => {
+    let live = true;
+    for (const pc of [homePostcode, lastUkPostcode]) {
+      if (!UK_POSTCODE_RE.test(pc)) continue;
+      councilFor(pc).then((c) => {
+        if (live) setCouncils((m) => (pc in m ? m : { ...m, [pc]: c }));
+      });
+    }
+    return () => {
+      live = false;
+    };
+  }, [homePostcode, lastUkPostcode]);
+  const homeCouncil = councils[homePostcode] ?? null;
+  const lastUkCouncil = councils[lastUkPostcode] ?? null;
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -584,10 +673,13 @@ export function ApplyForm({
     "aria-describedby": errors[`c${i}-${k}`] ? `e-f-c${i}-${k}` : undefined,
   });
   function addKid() {
+    if (kids.length >= MAX_CHILDREN) return;
     setKids((list) => (list.length >= MAX_CHILDREN ? list : [...list, blankChild(crypto.randomUUID())]));
+    setActiveKid(kids.length);
   }
   function removeKid(i: number) {
     setKids((list) => (list.length <= 1 ? list : list.filter((_, j) => j !== i)));
+    setActiveKid((a) => Math.max(0, a >= i ? a - 1 : a));
     // Error keys are positional, so drop the children's errors rather than show them against the wrong child.
     setErrors((er) => Object.fromEntries(Object.entries(er).filter(([key]) => !/^c\d+-/.test(key))));
   }
@@ -640,7 +732,11 @@ export function ApplyForm({
   // ── navigation and submit ──
   function focusFirst(found: Errors) {
     const first = Object.keys(found).find((k) => found[k]);
-    if (first) formRef.current?.querySelector<HTMLElement>(`#f-${first}`)?.focus();
+    if (!first) return;
+    const kid = /^c(\d+)-/.exec(first);
+    if (kid) setActiveKid(Number(kid[1]));
+    // Wait a frame so a newly opened step or child card is on screen.
+    requestAnimationFrame(() => formRef.current?.querySelector<HTMLElement>(`#f-${first}`)?.focus());
   }
 
   function goNext() {
@@ -662,7 +758,7 @@ export function ApplyForm({
       if (Object.keys(found).length > 0) {
         setErrors(found);
         if (s !== step) setStep(s);
-        else focusFirst(found);
+        focusFirst(found);
         return;
       }
     }
@@ -700,6 +796,16 @@ export function ApplyForm({
       address_postcode: nullIfEmpty(values.addressPostcode),
       address_country: values.addressCountry.trim(),
     };
+    // Which council covers the child: their UK home, or for a family abroad the last UK address.
+    const inUk = livesInUk(values.addressCountry);
+    const hadUkHome = !inUk && values.livedInUk === "yes";
+    const ukLink = {
+      local_authority: inUk ? homeCouncil ?? (await councilFor(values.addressPostcode)) : null,
+      lived_in_uk: inUk ? true : values.livedInUk === "yes" ? true : values.livedInUk === "no" ? false : null,
+      last_uk_postcode: hadUkHome ? nullIfEmpty(values.lastUkPostcode.toUpperCase()) : null,
+      last_uk_address: hadUkHome ? nullIfEmpty(values.lastUkAddress) : null,
+      last_uk_local_authority: hadUkHome ? lastUkCouncil ?? (await councilFor(values.lastUkPostcode)) : null,
+    };
     // The one-line copy keeps the older free-text column (and anything reading it) filled.
     const address = addressOneLine(addressParts).slice(0, 500) || null;
     const { error: famErr } = await supabase.from("admissions_families").insert({
@@ -711,6 +817,7 @@ export function ApplyForm({
       relationship: nullIfEmpty(values.relationship),
       address,
       ...addressParts,
+      ...ukLink,
       children_count: kids.length,
       fee_snapshot: snapshot,
     });
@@ -731,6 +838,8 @@ export function ApplyForm({
         relationship: nullIfEmpty(values.relationship),
         address,
         ...addressParts,
+        ...ukLink,
+        british_national: k.britishNational === "yes" ? true : k.britishNational === "no" ? false : null,
         child_first_name: k.firstName.trim(),
         child_last_name: k.lastName.trim(),
         child_dob: kidDob(k),
@@ -857,7 +966,7 @@ export function ApplyForm({
   const childLabel = kids.length === 1 ? "your child" : "your children";
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate className="relative space-y-6" aria-busy={busy}>
+    <form ref={formRef} onSubmit={handleSubmit} noValidate className="relative scroll-mt-24 space-y-5" aria-busy={busy}>
       {/* Honeypot: off-screen (not display:none), skipped by keyboard and assistive tech. */}
       <div className="absolute h-px w-px overflow-hidden whitespace-nowrap [clip:rect(0,0,0,0)]" aria-hidden="true">
         <label>
@@ -866,15 +975,28 @@ export function ApplyForm({
         </label>
       </div>
 
-      <nav aria-label="Application steps">
-        <ol className="flex flex-wrap gap-2 text-sm">
+      <nav aria-label="Application steps" className="sticky top-20 z-10 -mx-1 rounded-2xl border border-gold-light/50 bg-white/95 px-4 py-3 backdrop-blur">
+        <p className="text-xs font-medium text-ink/70">
+          Step {step + 1} of {STEP_TITLES.length}: <span className="font-semibold text-ink">{STEP_TITLES[step]}</span>
+        </p>
+        <ol className="mt-2 grid gap-1.5" style={{ gridTemplateColumns: `repeat(${STEP_TITLES.length}, minmax(0, 1fr))` }}>
           {STEP_TITLES.map((t, i) => (
-            <li
-              key={t}
-              aria-current={i === step ? "step" : undefined}
-              className={`rounded-full px-3 py-1 font-medium ${i === step ? "bg-gold-500 text-ink-900" : i < step ? "bg-cream text-ink" : "bg-white text-ink/65 ring-1 ring-gold-light/50"}`}
-            >
-              {i + 1}. {t}
+            <li key={t} aria-current={i === step ? "step" : undefined}>
+              <button
+                type="button"
+                disabled={busy || i > step}
+                onClick={() => {
+                  setStep(i);
+                  formRef.current?.scrollIntoView({ block: "start" });
+                }}
+                className="group block w-full text-left disabled:cursor-default"
+              >
+                <span aria-hidden="true" className={`block h-1.5 rounded-full ${i <= step ? "bg-forest-700" : "bg-gold-light/60"}`} />
+                <span className={`mt-1 hidden truncate text-xs sm:block ${i === step ? "font-semibold text-ink" : i < step ? "text-ink/80 group-hover:underline" : "text-ink/55"}`}>
+                  {i + 1}. {t}
+                </span>
+                <span className="sr-only sm:hidden">{i + 1}. {t}</span>
+              </button>
             </li>
           ))}
         </ol>
@@ -893,7 +1015,7 @@ export function ApplyForm({
               <input {...props("parentEmail")} type="email" autoComplete="email" maxLength={254} className={inputCls} />
             </Field>
             <Field id="f-parentPhone" label="Phone number" error={errors.parentPhone}>
-              <input {...props("parentPhone")} type="tel" autoComplete="tel" maxLength={40} className={inputCls} />
+              <PhoneInput id="f-parentPhone" name="parentPhone" value={values.parentPhone} onChange={(v) => setText("parentPhone", v)} disabled={busy} invalid={!!errors.parentPhone} describedBy={errors.parentPhone ? "e-f-parentPhone" : undefined} inputClassName={inputBase} />
             </Field>
             <Field id="f-preferredStart" label="Preferred start" optional>
               <input {...props("preferredStart")} type="text" maxLength={120} placeholder="e.g. January 2027" className={inputCls} />
@@ -902,10 +1024,14 @@ export function ApplyForm({
               <input {...props("howHeard")} type="text" maxLength={300} className={inputCls} />
             </Field>
           </Section>
+        </>
+      )}
 
+      {step === 1 && (
+        <>
           <Section
             title={kids.length > 1 ? "Your children's home address" : "Your child's home address"}
-            intro="Where the child you are applying for lives. If you are applying for several children, use the address they live at with you. We will ask you for proof of this address."
+            intro="Where your child lives. For several children, use the address they live at with you."
           >
             <div className="sm:col-span-2">
               <Field id="f-addressCountry" label="Country" error={errors.addressCountry}>
@@ -960,11 +1086,44 @@ export function ApplyForm({
             <Field id="f-addressTown" label="Town or city" error={errors.addressTown}>
               <input {...props("addressTown")} type="text" autoComplete="address-level2" maxLength={80} className={inputCls} />
             </Field>
+            {values.addressCountry.trim() && !livesInUk(values.addressCountry) && (
+              <div className="rounded-xl bg-cream p-4 sm:col-span-2">
+                <YesNo
+                  id="f-livedInUk"
+                  label="Has your child ever lived in the UK?"
+                  hint="If so, we note the local council for that address, so we know who to contact if we ever need local support for your child."
+                  value={values.livedInUk}
+                  error={errors.livedInUk}
+                  disabled={busy}
+                  onChange={(v) => setText("livedInUk", v)}
+                />
+                {values.livedInUk === "yes" && (
+                  <div className="mt-4 grid gap-4 sm:grid-cols-[10rem_1fr]">
+                    <Field id="f-lastUkPostcode" label="Last UK postcode" error={errors.lastUkPostcode}>
+                      <input {...props("lastUkPostcode")} type="text" autoComplete="off" maxLength={10} placeholder="e.g. B10 0AB" className={inputCls} />
+                    </Field>
+                    <Field id="f-lastUkAddress" label="Last UK address" optional>
+                      <input {...props("lastUkAddress")} type="text" autoComplete="off" maxLength={200} placeholder="House number and street" className={inputCls} />
+                    </Field>
+                    {lastUkCouncil && (
+                      <p role="status" className="text-xs text-ink/75 sm:col-span-2">
+                        Local council: <strong className="font-semibold text-ink">{lastUkCouncil}</strong>
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+            {livesInUk(values.addressCountry) && homeCouncil && (
+              <p role="status" className="text-xs text-ink/75 sm:col-span-2">
+                Local council: <strong className="font-semibold text-ink">{homeCouncil}</strong>
+              </p>
+            )}
           </Section>
 
           <Section
             title="Proof of identity and address"
-            intro="Admissions is a safeguarding process, so we verify the identity of the adults with parental responsibility, and we need proof of identity and address for the pupil. Files are stored privately and only admissions staff can open them. We ask for these once and use them for every child you apply for. You upload each child's passport or birth certificate on the next step, where you can also add a different legal parent or guardian."
+            intro="We check the identity of adults with parental responsibility as part of safeguarding. Files are private to admissions staff, and you upload them once for every child. Each child's passport or birth certificate comes on the next step."
           >
             <div className="sm:col-span-2">
               <DocPicker
@@ -997,16 +1156,48 @@ export function ApplyForm({
         </>
       )}
 
-      {step === 1 && (
+      {(step === 2 || step === 3) && (
         <>
           <p className="text-sm text-ink/70">
-            Add a card for each child. Each child becomes their own application, and we link them as one family. Your details, home address, photo ID and proof of address are shared, so you do not repeat them.
+            {step === 2
+              ? "Add each child. Each becomes their own application, linked as one family, so you don't repeat your own details."
+              : "Upload each child's documents. Files are private to admissions staff."}
           </p>
-          {kids.map((k, i) => (
-            <fieldset key={k.key} className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
+          {(kids.length > 1 || (step === 2 && kids.length < MAX_CHILDREN)) && (
+            <div role="group" aria-label="Children" className="flex flex-wrap items-center gap-2">
+              {kids.map((k, i) => {
+                const hasError = Object.keys(errors).some((key) => key.startsWith(`c${i}-`) && errors[key]);
+                return (
+                  <button
+                    key={k.key}
+                    type="button"
+                    aria-pressed={i === activeKid}
+                    onClick={() => setActiveKid(i)}
+                    className={`min-h-10 rounded-full px-4 text-sm font-semibold ${i === activeKid ? "bg-forest-700 text-white" : "bg-white text-ink ring-1 ring-gold-light/60 hover:bg-cream"}`}
+                  >
+                    {k.firstName.trim() || `Child ${i + 1}`}
+                    {hasError && <span className="ml-1.5 text-red-700"><span aria-hidden="true">&#9679;</span><span className="sr-only"> (needs attention)</span></span>}
+                  </button>
+                );
+              })}
+              {step === 2 && kids.length < MAX_CHILDREN && (
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={addKid}
+                  className="min-h-10 rounded-full border border-dashed border-gold-500 bg-white px-4 text-sm font-semibold text-ink hover:bg-cream disabled:opacity-60"
+                >
+                  + Add another child
+                </button>
+              )}
+            </div>
+          )}
+          {kids.map((k, i) => i !== activeKid ? null : (
+            <fieldset key={k.key} className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-5 sm:p-6">
               {/* Floated so the heading sits inside the card, like the other sections. */}
               <legend className="float-left mb-1 w-full p-0 font-serif text-xl font-semibold text-ink">{kids.length > 1 ? `Child ${i + 1}${k.firstName.trim() ? `: ${k.firstName.trim()}` : ""}` : "Your child"}</legend>
               <div className="clear-left mt-4 grid gap-4 sm:grid-cols-2">
+                {step === 2 && (<>
                 <SubSection first title={k.firstName.trim() ? `About ${k.firstName.trim()}` : "About your child"} hint="Their legal name, as on their passport or birth certificate." />
                 <Field id={`f-c${i}-firstName`} label="First name" error={errors[`c${i}-firstName`]}>
                   <input {...kidProps(i, "firstName")} type="text" autoComplete="off" maxLength={80} className={inputCls} />
@@ -1041,6 +1232,14 @@ export function ApplyForm({
                   </div>
                   {errors[`c${i}-gender`] && <p id={`e-f-c${i}-gender`} role="alert" className="mt-1 text-sm text-red-700">{errors[`c${i}-gender`]}</p>}
                 </div>
+                <YesNo
+                  id={`f-c${i}-britishNational`}
+                  label={`Is ${k.firstName.trim() || "your child"} a British citizen?`}
+                  value={k.britishNational}
+                  error={errors[`c${i}-britishNational`]}
+                  disabled={busy}
+                  onChange={(v) => setKidText(i, "britishNational", v)}
+                />
                 {(() => {
                   const dob = kidDob(k);
                   const suggestion = dob ? suggestYearGroup(dob) : null;
@@ -1102,7 +1301,9 @@ export function ApplyForm({
                   </Field>
                 </div>
 
-                <SubSection title="Documents" hint="Stored privately. Only admissions staff can open them." />
+                </>)}
+                {step === 3 && (<>
+                <SubSection first title="Documents" hint="Stored privately. Only admissions staff can open them." />
                 <div className="sm:col-span-2">
                   <DocPicker
                     id={`f-c${i}-doc-report`}
@@ -1162,7 +1363,7 @@ export function ApplyForm({
                         <input {...kidProps(i, "guardianEmail")} type="email" maxLength={254} className={inputCls} />
                       </Field>
                       <Field id={`f-c${i}-guardianPhone`} label="Phone number" error={errors[`c${i}-guardianPhone`]}>
-                        <input {...kidProps(i, "guardianPhone")} type="tel" maxLength={40} className={inputCls} />
+                        <PhoneInput id={`f-c${i}-guardianPhone`} value={k.guardianPhone} onChange={(v) => setKidText(i, "guardianPhone", v)} disabled={busy} invalid={!!errors[`c${i}-guardianPhone`]} describedBy={errors[`c${i}-guardianPhone`] ? `e-f-c${i}-guardianPhone` : undefined} inputClassName={inputBase} />
                       </Field>
                       <div className="sm:col-span-2">
                         <Field id={`f-c${i}-guardianAddress`} label="Home address" optional>
@@ -1185,8 +1386,9 @@ export function ApplyForm({
                     </div>
                   )}
                 </div>
+                </>)}
               </div>
-              {kids.length > 1 && (
+              {step === 2 && kids.length > 1 && (
                 <div className="mt-4 text-right">
                   <button type="button" disabled={busy} onClick={() => removeKid(i)} className="text-sm font-semibold text-red-700 underline">
                     Remove {k.firstName.trim() || `child ${i + 1}`}
@@ -1195,25 +1397,15 @@ export function ApplyForm({
               )}
             </fieldset>
           ))}
-          {kids.length < MAX_CHILDREN && (
-            <div>
-              <button
-                type="button"
-                disabled={busy}
-                onClick={addKid}
-                className="rounded-full border border-gold-500 bg-white px-5 py-2.5 text-sm font-semibold text-ink hover:bg-cream disabled:opacity-60"
-              >
-                Add another child
-              </button>
-              <p className="mt-1 text-xs text-ink/70">
-                {sibPct > 0 ? `Siblings get ${sibPct}% off from the second child onwards.` : "Siblings may qualify for a discount."} You can add up to {MAX_CHILDREN} children.
-              </p>
-            </div>
+          {step === 2 && (
+            <p className="text-xs text-ink/70">
+              {sibPct > 0 ? `Siblings get ${sibPct}% off from the second child onwards.` : "Siblings may qualify for a discount."} You can add up to {MAX_CHILDREN} children.
+            </p>
           )}
         </>
       )}
 
-      {step === 2 && (
+      {step === 4 && (
         <>
           <Section title="Fees and plan" intro={`Here is what ${childLabel} would cost, with any sibling discount already applied.`}>
             <FeeSummary estimate={estimate} kids={kids} plan={chosenPlan} siblingPercent={sibPct} siblingNote={siblingDiscountNote} terms={terms} instalments={instalments} />
@@ -1315,12 +1507,15 @@ export function ApplyForm({
         </p>
       )}
 
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="sticky bottom-0 z-10 -mx-1 flex flex-wrap items-center gap-3 rounded-2xl border border-gold-light/50 bg-white/95 px-4 py-3 backdrop-blur">
         {step > 0 && (
           <button
             type="button"
             disabled={busy}
-            onClick={() => setStep(step - 1)}
+            onClick={() => {
+              setStep(step - 1);
+              formRef.current?.scrollIntoView({ block: "start" });
+            }}
             className="rounded-full border border-gold-light/70 bg-white px-6 py-3 text-sm font-semibold text-ink disabled:opacity-60"
           >
             Back
