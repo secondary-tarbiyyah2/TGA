@@ -214,9 +214,11 @@ export function TourHost({ area, roles, userId }: { area: PortalArea; roles: str
           {body}
         </p>
         <div className="mt-4 flex items-center gap-2">
-          <button type="button" onClick={finish} className="min-h-11 rounded-lg px-2 text-sm font-medium text-ink/70 underline-offset-2 hover:text-ink hover:underline sm:min-h-9">
-            {index === steps.length - 1 ? "Close" : tour.key.startsWith("tip:") ? "Skip tips" : "Skip tour"}
-          </button>
+          {index < steps.length - 1 && (
+            <button type="button" onClick={finish} className="min-h-11 rounded-lg px-2 text-sm font-medium text-ink/70 underline-offset-2 hover:text-ink hover:underline sm:min-h-9">
+              {tour.key.startsWith("tip:") ? "Skip tips" : "Skip tour"}
+            </button>
+          )}
           <span className="ml-auto" />
           {index > 0 && (
             <button type="button" onClick={() => go(-1)} className="min-h-11 rounded-lg border border-gold-light px-3 text-sm font-medium text-ink hover:bg-cream sm:min-h-9">
