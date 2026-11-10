@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y1",
   "board": "National Curriculum (KS1)",
-  "source": "National Curriculum (KS1 Year 1: number and place value; addition and subtraction within 10); Spring 1 founding year: White Rose Maths Year 1 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1-2), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 1 Spring blocks 3 Place value within 50, 4 Length and height and 5 Mass and volume (small-step titles only); Summer 1 founding year: White Rose Maths Year 1 Summer blocks Multiplication and division, Fractions and Position and direction (small-step titles only)",
+  "source": "National Curriculum (KS1 Year 1: number and place value; addition and subtraction within 10); Spring 1 founding year: White Rose Maths Year 1 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1-2), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 1 Spring blocks 3 Place value within 50, 4 Length and height and 5 Mass and volume (small-step titles only); Summer 1 founding year: White Rose Maths Year 1 Summer blocks Multiplication and division, Fractions and Position and direction (small-step titles only) | Summer 2 founding year (14 Jun to 9 Jul 2027): White Rose Maths Year 1 Summer blocks Place value within 100, Money and Time (small-step titles only), unit weeks 1, 3, 4 and 5 as the Year 1 plan says, with a short end-of-year check and the Autumn shape catch-up",
   "lessons": [
     {
       "unit": "Unit 1: Numbers to 10",
@@ -12944,6 +12944,3339 @@
         "5 toys or objects to line up",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 1 maths lesson 69 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 70,
+      "title": "Count from 50 to 100",
+      "duration": 30,
+      "bigQuestion": "How do we keep counting after 50?",
+      "objectives": [
+        "To understand how to count forwards and backwards from 50 to 100"
+      ],
+      "successCriteria": [
+        "All: count from 50 to 100 out loud",
+        "Most: read and write numbers from 50 to 100",
+        "Some: count back from any number to 50"
+      ],
+      "crossCurricular": "English: reading and writing number words (sixty, seventy)",
+      "smsc": "Social: taking turns to count in a chain",
+      "keywords": [
+        {
+          "term": "fifty",
+          "def": "50: five tens"
+        },
+        {
+          "term": "hundred",
+          "def": "100: ten tens"
+        },
+        {
+          "term": "count on",
+          "def": "say the next numbers"
+        },
+        {
+          "term": "count back",
+          "def": "say the numbers going down"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can you count all the way to 100 without stopping? Which number do you think is hardest to say?",
+        "a": "Numbers like 70 (seventy) and the jump from 99 to 100."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "hundred square",
+          "alt": "A hundred square",
+          "for": "teach:1"
+        },
+        {
+          "find": "pile of dried pasta",
+          "alt": "Dried pasta for counting",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count from 40 to 50.",
+          "a": "40, 41, 42, ... 50",
+          "mins": 1
+        },
+        {
+          "q": "What comes after 49?",
+          "a": "50",
+          "mins": 1
+        },
+        {
+          "q": "Count in 10s to 50.",
+          "a": "10, 20, 30, 40, 50",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Past 50",
+          "bullets": [
+            "50, 51, 52, 53 ...",
+            "The ones go 0 to 9."
+          ],
+          "numberline": {
+            "min": 50,
+            "max": 60,
+            "step": 1,
+            "marks": [
+              {
+                "at": 50,
+                "label": "50"
+              },
+              {
+                "at": 55
+              },
+              {
+                "at": 60,
+                "label": "60"
+              }
+            ]
+          },
+          "note": "Point to the hundred square row 51 to 60."
+        },
+        {
+          "heading": "The tens words",
+          "bullets": [
+            "60 sixty, 70 seventy.",
+            "80 eighty, 90 ninety, 100 one hundred."
+          ],
+          "table": {
+            "head": [
+              "60",
+              "70",
+              "80",
+              "90",
+              "100"
+            ],
+            "rows": [
+              [
+                "sixty",
+                "seventy",
+                "eighty",
+                "ninety",
+                "one hundred"
+              ]
+            ]
+          },
+          "note": "Say the tens words together. Spoken chant, no music."
+        },
+        {
+          "heading": "Crossing a ten",
+          "bullets": [
+            "69, then 70.",
+            "After 9 ones, a new ten."
+          ],
+          "model": {
+            "problem": "What comes after 79?",
+            "steps": [
+              "79 is 7 tens and 9 ones.",
+              "One more makes 8 tens."
+            ],
+            "answer": "80"
+          },
+          "note": "Model 79, 80 and 89, 90."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "What comes after 89?",
+            "options": [
+              "90",
+              "80",
+              "100"
+            ],
+            "answer": 0,
+            "why": "89 + 1 = 90. 80 is a ten back; 100 is too far."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What comes after 59?",
+          "a": "60",
+          "mins": 1,
+          "model": "Teacher points to 59 on the square, then moves one on: 60."
+        },
+        {
+          "q": "What comes before 71?",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "Count back from 65 to 60.",
+          "a": "65, 64, 63, 62, 61, 60",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fill the gaps: 56, 57, __, 59, __.",
+          "a": "58, 60",
+          "mins": 2,
+          "model": "Teacher counts on from 56 out loud first."
+        },
+        {
+          "q": "Extend: Count back from 83 to 77.",
+          "a": "83, 82, 81, 80, 79, 78, 77",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which number is between 99 and 101?",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "What comes after 99?",
+          "a": "A) 100",
+          "mins": 1,
+          "options": [
+            "100",
+            "90",
+            "910"
+          ]
+        },
+        {
+          "q": "Big question: how do we keep counting after 50?",
+          "a": "The ones count 0 to 9, then we move to the next ten.",
+          "mins": 1
+        }
+      ],
+      "homework": "Count from 50 to 100 with a grown-up, then count back.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: count back from 100 to 85. Which ten did you cross? (90)",
+      "resources": [
+        "White Rose Maths Year 1, Place value within 100 block: small step 'Count from 50 to 100' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Hundred square (printed or on screen)",
+        "A cup of dried pasta for counting",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 70 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 71,
+      "title": "Tens to 100",
+      "duration": 30,
+      "bigQuestion": "How many tens make 100?",
+      "objectives": [
+        "To understand that numbers like 70 are made of tens"
+      ],
+      "successCriteria": [
+        "All: count in 10s to 100",
+        "Most: say how many tens are in 40, 60 or 90",
+        "Some: know that 10 tens make 100"
+      ],
+      "crossCurricular": "Science: counting things in groups to make counting easier",
+      "keywords": [
+        {
+          "term": "ten",
+          "def": "a group of 10"
+        },
+        {
+          "term": "tens",
+          "def": "groups of ten"
+        },
+        {
+          "term": "hundred",
+          "def": "10 tens"
+        },
+        {
+          "term": "bundle",
+          "def": "things tied together in a group"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 10 bags with 10 dates in each. How many dates is that?",
+        "a": "100: ten tens."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bundles of sticks tied with string",
+          "alt": "Sticks tied in bundles of ten",
+          "for": "teach:1"
+        },
+        {
+          "find": "box of eggs ten",
+          "alt": "A box of eggs",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 10s to 50.",
+          "a": "10, 20, 30, 40, 50",
+          "mins": 1
+        },
+        {
+          "q": "5 + 5 = ?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "What comes after 69?",
+          "a": "70",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Bundles of ten",
+          "bullets": [
+            "10 sticks make 1 ten.",
+            "Count the bundles: 1 ten, 2 tens ..."
+          ],
+          "note": "Use 10 pencils with an elastic band."
+        },
+        {
+          "heading": "Count in tens",
+          "bullets": [
+            "10, 20, 30, 40, 50.",
+            "60, 70, 80, 90, 100."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "marks": [
+              {
+                "at": 30,
+                "label": "3 tens"
+              },
+              {
+                "at": 70,
+                "label": "7 tens"
+              },
+              {
+                "at": 100,
+                "label": "10 tens"
+              }
+            ]
+          },
+          "note": "Spoken chant together."
+        },
+        {
+          "heading": "How many tens?",
+          "bullets": [
+            "60 is 6 tens.",
+            "90 is 9 tens."
+          ],
+          "model": {
+            "problem": "How many tens in 80?",
+            "steps": [
+              "Count the bundles: 10, 20, 30 ... 80.",
+              "That is 8 bundles."
+            ],
+            "answer": "8 tens"
+          },
+          "note": "Show bundles on screen."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "10 tens make...",
+            "options": [
+              "100",
+              "10",
+              "110"
+            ],
+            "answer": 0,
+            "why": "Ten groups of ten is 100."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many tens in 40?",
+          "a": "4 tens",
+          "mins": 1,
+          "model": "Teacher counts 4 bundles: 10, 20, 30, 40."
+        },
+        {
+          "q": "7 tens is...",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "How many tens in 100?",
+          "a": "10 tens",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write the number: 5 tens, 9 tens, 3 tens.",
+          "a": "50, 90, 30",
+          "mins": 2,
+          "model": "Teacher shows 5 bundles and counts in 10s: 50."
+        },
+        {
+          "q": "Extend: How many tens in 60 and in 100?",
+          "a": "6 tens and 10 tens",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: I have 4 tens. How many more tens to make 100?",
+          "a": "6 tens",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many tens in 50?",
+          "a": "A) 5",
+          "mins": 1,
+          "options": [
+            "5",
+            "50",
+            "10"
+          ]
+        },
+        {
+          "q": "Big question: how many tens make 100?",
+          "a": "10 tens make 100.",
+          "mins": 1
+        }
+      ],
+      "homework": "Make bundles of 10 with pasta or pencils at home and count them in 10s.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: count back in 10s from 100 to 0.",
+      "resources": [
+        "White Rose Maths Year 1, Place value within 100 block: small step 'Tens to 100' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "10 pencils or straws and elastic bands to make bundles",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 71 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 72,
+      "title": "Partition into tens and ones",
+      "duration": 30,
+      "bigQuestion": "How can we split a number like 46?",
+      "objectives": [
+        "To understand that a 2-digit number is made of tens and ones"
+      ],
+      "successCriteria": [
+        "All: say the tens and ones in a number",
+        "Most: make a number with tens and ones",
+        "Some: write a number as tens + ones, like 46 = 40 + 6"
+      ],
+      "keywords": [
+        {
+          "term": "tens",
+          "def": "groups of 10"
+        },
+        {
+          "term": "ones",
+          "def": "single things"
+        },
+        {
+          "term": "partition",
+          "def": "split a number into parts"
+        },
+        {
+          "term": "digit",
+          "def": "one of the numbers 0 to 9 we write with"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "46 and 64 use the same digits. Are they the same number?",
+        "a": "No: 46 is 4 tens and 6 ones; 64 is 6 tens and 4 ones."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "base ten blocks",
+          "alt": "Tens and ones blocks",
+          "for": "teach:1"
+        },
+        {
+          "find": "lego bricks",
+          "alt": "Lego bricks",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "How many tens in 50?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Count in 10s to 70.",
+          "a": "10, 20, ... 70",
+          "mins": 1
+        },
+        {
+          "q": "4 + 6 = ?",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tens and ones",
+          "bullets": [
+            "Long sticks are tens.",
+            "Little cubes are ones."
+          ],
+          "table": {
+            "head": [
+              "Tens",
+              "Ones",
+              "Number"
+            ],
+            "rows": [
+              [
+                "3",
+                "5",
+                "35"
+              ],
+              [
+                "6",
+                "2",
+                "62"
+              ]
+            ]
+          },
+          "note": "Show 3 tens and 5 ones: 35."
+        },
+        {
+          "heading": "Partition",
+          "bullets": [
+            "46 = 40 + 6.",
+            "The 4 means 4 tens."
+          ],
+          "model": {
+            "problem": "Partition 58.",
+            "steps": [
+              "5 tens is 50.",
+              "8 ones is 8.",
+              "50 + 8."
+            ],
+            "answer": "58 = 50 + 8"
+          },
+          "note": "Split the blocks into two groups."
+        },
+        {
+          "heading": "Same digits",
+          "bullets": [
+            "46 is 4 tens, 6 ones.",
+            "64 is 6 tens, 4 ones."
+          ],
+          "misconception": {
+            "wrong": "46 and 64 are the same.",
+            "right": "The place of the digit changes its value."
+          },
+          "note": "Back to the ponder question."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "What is 7 tens and 3 ones?",
+            "options": [
+              "73",
+              "37",
+              "10"
+            ],
+            "answer": 0,
+            "why": "7 tens is 70, plus 3 is 73. 37 swaps them."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Partition 34.",
+          "a": "30 + 4",
+          "mins": 1,
+          "model": "Teacher: 3 tens is 30, 4 ones is 4. 34 = 30 + 4."
+        },
+        {
+          "q": "What is 6 tens and 1 one?",
+          "a": "61",
+          "mins": 1
+        },
+        {
+          "q": "How many ones in 85?",
+          "a": "5 ones",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Partition 27, 49 and 83.",
+          "a": "20 + 7, 40 + 9, 80 + 3",
+          "mins": 2,
+          "model": "Teacher partitions 27 with blocks first."
+        },
+        {
+          "q": "Extend: 50 + 6 = ?, 90 + 2 = ?",
+          "a": "56, 92",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Make the biggest number with the digits 3 and 8.",
+          "a": "83",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is 40 + 5?",
+          "a": "A) 45",
+          "mins": 1,
+          "options": [
+            "45",
+            "54",
+            "9"
+          ]
+        },
+        {
+          "q": "Big question: how can we split 46?",
+          "a": "Into 4 tens and 6 ones: 40 + 6.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find a number at home (a door, a page). Tell a grown-up its tens and ones.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: make two numbers with the digits 2 and 9 and say which is bigger. (92 > 29)",
+      "resources": [
+        "White Rose Maths Year 1, Place value within 100 block: small step 'Partition into tens and ones' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Lego bricks or pasta: towers of ten and single pieces",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 72 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 73,
+      "title": "The number line to 100",
+      "duration": 30,
+      "bigQuestion": "Where does 65 live on a number line?",
+      "objectives": [
+        "To understand how to find and place numbers on a number line to 100"
+      ],
+      "successCriteria": [
+        "All: read numbers on a 0 to 100 line marked in tens",
+        "Most: place a number between two tens",
+        "Some: estimate where a number goes on a line"
+      ],
+      "keywords": [
+        {
+          "term": "number line",
+          "def": "a line with numbers in order"
+        },
+        {
+          "term": "between",
+          "def": "in the middle of two things"
+        },
+        {
+          "term": "halfway",
+          "def": "the middle point"
+        },
+        {
+          "term": "estimate",
+          "def": "a careful guess"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "On a line from 0 to 100, is 48 nearer to 0 or to 100?",
+        "a": "Nearer to 0: 48 is less than 50, the halfway point."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tape measure",
+          "alt": "A tape measure: a number line",
+          "for": "hook"
+        },
+        {
+          "find": "metre stick ruler",
+          "alt": "A metre stick",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 10s from 0 to 100.",
+          "a": "0, 10, 20, ... 100",
+          "mins": 1
+        },
+        {
+          "q": "What is 5 tens?",
+          "a": "50",
+          "mins": 1
+        },
+        {
+          "q": "Partition 67.",
+          "a": "60 + 7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tens on the line",
+          "bullets": [
+            "Marks go up in 10s.",
+            "0, 10, 20 ... 100."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "marks": [
+              {
+                "at": 50,
+                "label": "50"
+              }
+            ]
+          },
+          "note": "Point to each mark."
+        },
+        {
+          "heading": "Between two tens",
+          "bullets": [
+            "65 is between 60 and 70.",
+            "It is halfway."
+          ],
+          "numberline": {
+            "min": 60,
+            "max": 70,
+            "step": 1,
+            "marks": [
+              {
+                "at": 60,
+                "label": "60"
+              },
+              {
+                "at": 65,
+                "label": "65"
+              },
+              {
+                "at": 70,
+                "label": "70"
+              }
+            ]
+          },
+          "note": "Zoom in on 60 to 70."
+        },
+        {
+          "heading": "Estimate",
+          "bullets": [
+            "Find the tens either side.",
+            "Is it nearer the start or the end?"
+          ],
+          "model": {
+            "problem": "Where does 48 go?",
+            "steps": [
+              "48 is between 40 and 50.",
+              "8 is near 10, so close to 50."
+            ],
+            "answer": "Just before 50"
+          },
+          "note": "Model 48."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which number is halfway between 30 and 40?",
+            "options": [
+              "35",
+              "34",
+              "50"
+            ],
+            "answer": 0,
+            "why": "35 is 5 from 30 and 5 from 40."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What number is halfway between 70 and 80?",
+          "a": "75",
+          "mins": 1,
+          "model": "Teacher counts from 70: 71 ... 75 is the middle."
+        },
+        {
+          "q": "Which two tens is 92 between?",
+          "a": "90 and 100",
+          "mins": 1
+        },
+        {
+          "q": "Is 23 nearer 20 or 30?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Which tens is each number between? 34, 57, 81",
+          "a": "30 and 40; 50 and 60; 80 and 90",
+          "mins": 2,
+          "model": "Teacher shows 34 on the line first."
+        },
+        {
+          "q": "Extend: Mark 25, 50 and 75 on a 0 to 100 line.",
+          "a": "A quarter, halfway and three quarters along",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: I am 3 less than 100. What am I?",
+          "a": "97",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Halfway between 0 and 100?",
+          "a": "A) 50",
+          "mins": 1,
+          "options": [
+            "50",
+            "10",
+            "100"
+          ]
+        },
+        {
+          "q": "Big question: where does 65 live?",
+          "a": "Between 60 and 70, halfway.",
+          "mins": 1
+        }
+      ],
+      "homework": "Draw a number line from 50 to 60 and mark 55.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: which number is 10 more than the halfway point between 0 and 100? (60)",
+      "resources": [
+        "White Rose Maths Year 1, Place value within 100 block: small step 'The number line to 100' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Tape measure or ruler (a real number line)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 73 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 74,
+      "title": "Unitising",
+      "duration": 30,
+      "bigQuestion": "Why is it quicker to count in tens?",
+      "objectives": [
+        "To understand that we can count groups as one thing, like one ten"
+      ],
+      "successCriteria": [
+        "All: count groups of 10 as 1 ten",
+        "Most: count groups of 2 and 5",
+        "Some: say how many in groups using tens and ones"
+      ],
+      "keywords": [
+        {
+          "term": "group",
+          "def": "things that go together"
+        },
+        {
+          "term": "ten",
+          "def": "one group of 10"
+        },
+        {
+          "term": "unitise",
+          "def": "count a group as one"
+        },
+        {
+          "term": "count in 10s",
+          "def": "10, 20, 30 ..."
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A box holds 10 pencils. There are 6 boxes. Do we need to count every pencil?",
+        "a": "No: count the boxes in 10s: 60."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "10p coins",
+          "alt": "10p coins",
+          "for": "teach:3"
+        },
+        {
+          "find": "egg boxes",
+          "alt": "Egg boxes holding eggs in groups",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 10s to 60.",
+          "a": "10, 20, 30, 40, 50, 60",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 10.",
+          "a": "2, 4, 6, 8, 10",
+          "mins": 1
+        },
+        {
+          "q": "How many tens in 70?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One group",
+          "bullets": [
+            "10 cubes in a tower.",
+            "We call the tower 1 ten."
+          ],
+          "note": "Hold up a tower of 10."
+        },
+        {
+          "heading": "Count the groups",
+          "bullets": [
+            "4 towers: 10, 20, 30, 40.",
+            "Count towers, not cubes."
+          ],
+          "model": {
+            "problem": "5 towers of 10. How many cubes?",
+            "steps": [
+              "Count the towers in 10s.",
+              "10, 20, 30, 40, 50."
+            ],
+            "answer": "50 cubes"
+          },
+          "note": "Model counting groups."
+        },
+        {
+          "heading": "Coins as groups",
+          "bullets": [
+            "A 10p coin is worth 10 pennies.",
+            "3 coins of 10p is 30p."
+          ],
+          "note": "Show 10p and 1p coins."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "8 bags of 10 apples. How many apples?",
+            "options": [
+              "80",
+              "18",
+              "8"
+            ],
+            "answer": 0,
+            "why": "Count the bags in 10s: 80."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "6 towers of 10. How many?",
+          "a": "60",
+          "mins": 1,
+          "model": "Teacher counts the towers: 10, 20, 30, 40, 50, 60."
+        },
+        {
+          "q": "3 tens and 4 ones?",
+          "a": "34",
+          "mins": 1
+        },
+        {
+          "q": "4 pairs of socks. How many socks?",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: How many? 2 tens; 7 tens; 9 tens",
+          "a": "20, 70, 90",
+          "mins": 2,
+          "model": "Teacher draws 2 towers and counts 10, 20."
+        },
+        {
+          "q": "Extend: 5 bags of 10 dates and 3 loose dates. How many?",
+          "a": "53",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: How many 10p coins make £1 (100p)?",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "4 towers of 10 is...",
+          "a": "A) 40",
+          "mins": 1,
+          "options": [
+            "40",
+            "14",
+            "4"
+          ]
+        },
+        {
+          "q": "Big question: why is it quicker to count in tens?",
+          "a": "We count each group as one ten, so fewer numbers to say.",
+          "mins": 1
+        }
+      ],
+      "homework": "Count pairs of shoes at home in 2s.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: how many 5p coins make 50p? (10)",
+      "resources": [
+        "White Rose Maths Year 1, Money block: small step 'Unitising' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Lego towers of ten or 10 pencils in bundles",
+        "A few 1p and 10p coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 74 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 75,
+      "title": "Recognise coins",
+      "duration": 30,
+      "bigQuestion": "How do we know what a coin is worth?",
+      "objectives": [
+        "To understand how to recognise each coin and its value"
+      ],
+      "successCriteria": [
+        "All: name the 1p, 2p and 5p coins",
+        "Most: name all eight coins",
+        "Some: say which coin is worth more"
+      ],
+      "smsc": "Moral: money belongs to people; we look after it and never take what is not ours",
+      "keywords": [
+        {
+          "term": "coin",
+          "def": "metal money"
+        },
+        {
+          "term": "penny",
+          "def": "1p, the smallest coin"
+        },
+        {
+          "term": "pence",
+          "def": "p: pennies"
+        },
+        {
+          "term": "pound",
+          "def": "£1 is 100 pence"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The 2p coin is bigger than the 5p coin. Is it worth more?",
+        "a": "No: the number on the coin tells its value, not its size."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "British coins 1p 2p 5p 10p 20p 50p",
+          "alt": "British coins",
+          "for": "teach:1"
+        },
+        {
+          "find": "one pound coin",
+          "alt": "A £1 coin",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 2s to 10.",
+          "a": "2, 4, 6, 8, 10",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 20.",
+          "a": "5, 10, 15, 20",
+          "mins": 1
+        },
+        {
+          "q": "How many tens in 50?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The coins",
+          "bullets": [
+            "1p, 2p, 5p, 10p.",
+            "20p, 50p, £1, £2."
+          ],
+          "table": {
+            "head": [
+              "Coin",
+              "Colour"
+            ],
+            "rows": [
+              [
+                "1p, 2p",
+                "brown"
+              ],
+              [
+                "5p, 10p, 20p, 50p",
+                "silver"
+              ],
+              [
+                "£1",
+                "gold"
+              ],
+              [
+                "£2",
+                "silver middle, gold edge"
+              ]
+            ]
+          },
+          "note": "Show each real coin to the camera."
+        },
+        {
+          "heading": "Look closely",
+          "bullets": [
+            "Find the number on the coin.",
+            "p is pence, £ is pound."
+          ],
+          "note": "Zoom in on the numbers."
+        },
+        {
+          "heading": "Size is not value",
+          "bullets": [
+            "2p is bigger than 5p.",
+            "5p is worth more."
+          ],
+          "misconception": {
+            "wrong": "Bigger coins are worth more.",
+            "right": "Read the number: 5p is worth more than 2p."
+          },
+          "note": "Back to the ponder question."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which coin is worth the most?",
+            "options": [
+              "50p",
+              "20p",
+              "2p"
+            ],
+            "answer": 0,
+            "why": "50 is the biggest number."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which is worth more: 10p or 5p?",
+          "a": "10p",
+          "mins": 1,
+          "model": "Teacher reads each number: 10 is more than 5."
+        },
+        {
+          "q": "Name the gold coin.",
+          "a": "£1",
+          "mins": 1
+        },
+        {
+          "q": "Which coin is worth 20 pennies?",
+          "a": "20p",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Put in order, smallest value first: 10p, 1p, 5p, 2p.",
+          "a": "1p, 2p, 5p, 10p",
+          "mins": 2,
+          "model": "Teacher orders 1p, 2p, 5p first."
+        },
+        {
+          "q": "Extend: Find a coin worth more than 20p but less than £1.",
+          "a": "50p",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which two coins make 15p?",
+          "a": "10p and 5p",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which coin is worth 1 penny?",
+          "a": "A) 1p",
+          "mins": 1,
+          "options": [
+            "1p",
+            "£1",
+            "10p"
+          ]
+        },
+        {
+          "q": "Big question: how do we know what a coin is worth?",
+          "a": "Read the number on it: size and colour do not tell us.",
+          "mins": 1
+        }
+      ],
+      "homework": "Look at coins at home with a grown-up and name each one.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: how many 2p coins make 10p? (5)",
+      "resources": [
+        "White Rose Maths Year 1, Money block: small step 'Recognise coins' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins (1p to £2) or printed coin cards",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 75 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 76,
+      "title": "Recognise notes",
+      "duration": 30,
+      "bigQuestion": "Why do we have notes as well as coins?",
+      "objectives": [
+        "To understand how to recognise notes and know they are worth more than coins"
+      ],
+      "successCriteria": [
+        "All: name the £5 and £10 notes",
+        "Most: name the £20 and £50 notes",
+        "Some: say how many £1 coins a £5 note is worth"
+      ],
+      "keywords": [
+        {
+          "term": "note",
+          "def": "paper money"
+        },
+        {
+          "term": "£5",
+          "def": "five pounds"
+        },
+        {
+          "term": "£10",
+          "def": "ten pounds"
+        },
+        {
+          "term": "value",
+          "def": "how much it is worth"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather carry ten £1 coins or one £10 note? Why?",
+        "a": "The note: same value, lighter and easier to carry."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "British five pound note",
+          "alt": "A £5 note",
+          "for": "teach:1"
+        },
+        {
+          "find": "British ten pound note",
+          "alt": "A £10 note",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Name the gold coin.",
+          "a": "£1",
+          "mins": 1
+        },
+        {
+          "q": "Which is worth more: 50p or 20p?",
+          "a": "50p",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 20.",
+          "a": "5, 10, 15, 20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The notes",
+          "bullets": [
+            "£5, £10, £20, £50.",
+            "Notes are worth more than coins."
+          ],
+          "note": "Show pictures of the notes."
+        },
+        {
+          "heading": "Notes and coins",
+          "bullets": [
+            "£5 is the same as five £1 coins.",
+            "£10 is ten £1 coins."
+          ],
+          "model": {
+            "problem": "How many £1 coins match a £5 note?",
+            "steps": [
+              "Count £1 coins: 1, 2, 3, 4, 5.",
+              "£5 = 5 × £1."
+            ],
+            "answer": "5 coins"
+          },
+          "note": "Line up £1 coins."
+        },
+        {
+          "heading": "Sort the money",
+          "bullets": [
+            "Coins or notes?"
+          ],
+          "sort": {
+            "columns": [
+              "Coin",
+              "Note"
+            ],
+            "cards": [
+              "£1",
+              "£5",
+              "50p",
+              "£20",
+              "£2",
+              "£10"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Pupils say coin or note."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is a note?",
+            "options": [
+              "£10",
+              "£2",
+              "50p"
+            ],
+            "answer": 0,
+            "why": "£2 and 50p are coins; £10 is paper money."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which is worth more: £5 or £10?",
+          "a": "£10",
+          "mins": 1,
+          "model": "Teacher: 10 is more than 5, so £10 is more."
+        },
+        {
+          "q": "Is £2 a coin or a note?",
+          "a": "a coin",
+          "mins": 1
+        },
+        {
+          "q": "How many £10 notes make £20?",
+          "a": "2",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Order the notes, smallest first: £20, £5, £50, £10.",
+          "a": "£5, £10, £20, £50",
+          "mins": 2,
+          "model": "Teacher orders £5 then £10."
+        },
+        {
+          "q": "Extend: Two £5 notes make which note?",
+          "a": "£10",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: How many £1 coins match £5 + £5?",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is worth the most?",
+          "a": "A) £50",
+          "mins": 1,
+          "options": [
+            "£50",
+            "£5",
+            "£2"
+          ]
+        },
+        {
+          "q": "Big question: why do we have notes?",
+          "a": "To carry bigger amounts easily.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find out which notes a grown-up has seen most (never take money without asking).",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: how many £5 notes make £20? (4)",
+      "resources": [
+        "White Rose Maths Year 1, Money block: small step 'Recognise notes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Pictures of £5, £10, £20 and £50 notes (printable)",
+        "£1 coins for matching",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 76 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 77,
+      "title": "Count in coins",
+      "duration": 30,
+      "bigQuestion": "How much is in the sadaqah jar?",
+      "objectives": [
+        "To understand how to count money by counting in 1s, 2s, 5s and 10s"
+      ],
+      "successCriteria": [
+        "All: count 1p coins",
+        "Most: count 2p, 5p or 10p coins in steps",
+        "Some: count a mix of coins, biggest first"
+      ],
+      "smsc": "Spiritual: sadaqah (صَدَقَة), giving to help others, is a good deed in Islam",
+      "keywords": [
+        {
+          "term": "sadaqah",
+          "def": "صَدَقَة: money or kindness given to help others"
+        },
+        {
+          "term": "total",
+          "def": "how much altogether"
+        },
+        {
+          "term": "count in steps",
+          "def": "count in 2s, 5s or 10s"
+        },
+        {
+          "term": "pence",
+          "def": "p: pennies"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your family fills a sadaqah jar with 10p coins. How could you count it quickly?",
+        "a": "Count in 10s: 10p, 20p, 30p ..."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "glass jar of coins",
+          "alt": "A jar of coins",
+          "for": "hook"
+        },
+        {
+          "find": "pile of 10p coins",
+          "alt": "10p coins",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 2s to 12.",
+          "a": "2, 4, 6, 8, 10, 12",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 30.",
+          "a": "5, 10, 15, 20, 25, 30",
+          "mins": 1
+        },
+        {
+          "q": "Name the coin worth 10 pennies.",
+          "a": "10p",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count the same coins",
+          "bullets": [
+            "Six 1p: 6p.",
+            "Five 2p: count in 2s."
+          ],
+          "model": {
+            "problem": "Count four 5p coins.",
+            "steps": [
+              "5p, 10p, 15p, 20p.",
+              "Say p at the end."
+            ],
+            "answer": "20p"
+          },
+          "note": "Model with real coins."
+        },
+        {
+          "heading": "Count in 10s",
+          "bullets": [
+            "Seven 10p coins.",
+            "10p, 20p ... 70p."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 70,
+            "step": 10,
+            "marks": [
+              {
+                "at": 70,
+                "label": "70p"
+              }
+            ]
+          },
+          "note": "Spoken count together."
+        },
+        {
+          "heading": "Biggest coin first",
+          "bullets": [
+            "10p, 10p, 5p, 2p.",
+            "Start at the biggest coin."
+          ],
+          "model": {
+            "problem": "10p, 10p, 5p, 1p",
+            "steps": [
+              "Start 10p, 20p.",
+              "Add 5p: 25p.",
+              "Add 1p: 26p."
+            ],
+            "answer": "26p"
+          },
+          "note": "Count 10p, 20p, 25p, 27p."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Three 10p coins and one 2p coin?",
+            "options": [
+              "32p",
+              "13p",
+              "40p"
+            ],
+            "answer": 0,
+            "why": "10, 20, 30, then 32."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count six 2p coins.",
+          "a": "12p",
+          "mins": 1,
+          "model": "Teacher: 2, 4, 6, 8, 10, 12. 12p."
+        },
+        {
+          "q": "Count three 5p coins.",
+          "a": "15p",
+          "mins": 1
+        },
+        {
+          "q": "Count 10p, 5p, 1p.",
+          "a": "16p",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count: five 10p; four 2p; three 5p.",
+          "a": "50p; 8p; 15p",
+          "mins": 2,
+          "model": "Teacher counts five 10p in 10s."
+        },
+        {
+          "q": "Extend: The jar has 10p, 10p, 10p, 5p, 2p, 1p. Total?",
+          "a": "38p",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Make 20p in two different ways.",
+          "a": "For example 10p + 10p; 5p + 5p + 10p",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Four 10p coins is...",
+          "a": "A) 40p",
+          "mins": 1,
+          "options": [
+            "40p",
+            "14p",
+            "4p"
+          ]
+        },
+        {
+          "q": "Big question: how much is in the jar?",
+          "a": "Count the biggest coins first, in steps.",
+          "mins": 1
+        }
+      ],
+      "homework": "Count some coins at home with a grown-up, biggest first.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: make 50p with exactly three coins. (20p + 20p + 10p)",
+      "resources": [
+        "White Rose Maths Year 1, Money block: small step 'Count in coins' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins (1p, 2p, 5p, 10p) or printed coin cards",
+        "A jar or cup as the sadaqah jar",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 77 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "In Islam we give sadaqah (صَدَقَة), charity, to help people in need. Counting the sadaqah jar carefully and honestly is part of looking after what is given.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 78,
+      "title": "Before and after",
+      "duration": 30,
+      "bigQuestion": "What do we do before and after Fajr?",
+      "objectives": [
+        "To understand how to order events in a day using before and after"
+      ],
+      "successCriteria": [
+        "All: use the words before and after",
+        "Most: order three events in a day",
+        "Some: use morning, afternoon and evening"
+      ],
+      "crossCurricular": "English: time words (first, next, then, after) in recounts",
+      "keywords": [
+        {
+          "term": "before",
+          "def": "earlier"
+        },
+        {
+          "term": "after",
+          "def": "later"
+        },
+        {
+          "term": "morning",
+          "def": "the start of the day"
+        },
+        {
+          "term": "evening",
+          "def": "the end of the day"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the very first thing you do after you wake up?",
+        "a": "Answers will vary: for example, say the waking-up dua, use the toilet, wash for Fajr."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sunrise over the sea",
+          "alt": "The sun rising: morning",
+          "for": "teach:1"
+        },
+        {
+          "find": "night sky with crescent moon",
+          "alt": "Night sky",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "What day is today?",
+          "a": "Answers will vary",
+          "mins": 1
+        },
+        {
+          "q": "Count back from 10.",
+          "a": "10, 9, 8, ... 0",
+          "mins": 1
+        },
+        {
+          "q": "What comes after 59?",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Parts of the day",
+          "bullets": [
+            "Morning: Fajr, breakfast.",
+            "Afternoon: Dhuhr, lunch.",
+            "Evening: Maghrib, dinner."
+          ],
+          "note": "Use the salah times as markers."
+        },
+        {
+          "heading": "Before and after",
+          "bullets": [
+            "I wash before I pray.",
+            "I sleep after Isha."
+          ],
+          "note": "Say the sentences together."
+        },
+        {
+          "heading": "Put in order",
+          "bullets": [
+            "Which comes first?"
+          ],
+          "sort": {
+            "columns": [
+              "1st",
+              "2nd",
+              "3rd",
+              "4th"
+            ],
+            "cards": [
+              "Pray Fajr",
+              "Wake up",
+              "Eat breakfast",
+              "Make wudu"
+            ],
+            "answer": [
+              2,
+              0,
+              3,
+              1
+            ]
+          },
+          "note": "Order the cards: wake up, wudu, Fajr, breakfast."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which comes first?",
+            "options": [
+              "Breakfast",
+              "Lunch",
+              "Dinner"
+            ],
+            "answer": 0,
+            "why": "Breakfast is in the morning."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Do we eat lunch before or after breakfast?",
+          "a": "after",
+          "mins": 1,
+          "model": "Teacher: breakfast is morning, lunch is later, so after."
+        },
+        {
+          "q": "Is Maghrib in the morning or evening?",
+          "a": "evening",
+          "mins": 1
+        },
+        {
+          "q": "What do you do before bed?",
+          "a": "Answers will vary: for example brush teeth",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Order: dinner, breakfast, lunch.",
+          "a": "breakfast, lunch, dinner",
+          "mins": 2,
+          "model": "Teacher orders breakfast first."
+        },
+        {
+          "q": "Extend: Finish: Before school I ... After school I ...",
+          "a": "Answers will vary",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Order the five daily prayers.",
+          "a": "Fajr, Dhuhr, Asr, Maghrib, Isha",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which prayer is in the morning?",
+          "a": "A) Fajr",
+          "mins": 1,
+          "options": [
+            "Fajr",
+            "Maghrib",
+            "Isha"
+          ]
+        },
+        {
+          "q": "Big question: what do we do before and after Fajr?",
+          "a": "For example: before, we make wudu; after, we eat breakfast.",
+          "mins": 1
+        }
+      ],
+      "homework": "Tell a grown-up 3 things you did today in order, using before and after.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: what comes after Asr? (Maghrib)",
+      "resources": [
+        "White Rose Maths Year 1, Time block: small step 'Before and after' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Picture cards: wake up, wudu, salah, breakfast, lunch, bed (printable)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 78 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "Allah made the day and night and the times of salah (Qur'an 4:103: prayer is prescribed at fixed times). The five prayers help us order our day.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 79,
+      "title": "Days of the week",
+      "duration": 30,
+      "bigQuestion": "Why is Friday special for Muslims?",
+      "objectives": [
+        "To understand the order of the days of the week"
+      ],
+      "successCriteria": [
+        "All: say the 7 days in order",
+        "Most: say the day before and after a day",
+        "Some: know that Jumu'ah is Friday"
+      ],
+      "keywords": [
+        {
+          "term": "week",
+          "def": "7 days"
+        },
+        {
+          "term": "weekend",
+          "def": "Saturday and Sunday"
+        },
+        {
+          "term": "Jumu'ah",
+          "def": "الجمعة: Friday, the day of the Friday prayer"
+        },
+        {
+          "term": "yesterday",
+          "def": "the day before today"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How many days are in a week? Which day comes after Sunday?",
+        "a": "7 days; Monday."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wall calendar",
+          "alt": "A calendar",
+          "for": "teach:1"
+        },
+        {
+          "find": "mosque dome and minaret",
+          "alt": "A masjid",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "How many days in a week?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "What comes after 6?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Is breakfast before or after lunch?",
+          "a": "before",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Seven days",
+          "bullets": [
+            "Monday, Tuesday, Wednesday, Thursday.",
+            "Friday, Saturday, Sunday."
+          ],
+          "table": {
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7"
+            ],
+            "rows": [
+              [
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat",
+                "Sun"
+              ]
+            ]
+          },
+          "note": "Spoken chant, no music."
+        },
+        {
+          "heading": "Jumu'ah",
+          "bullets": [
+            "Friday is Jumu'ah (الجمعة).",
+            "Men pray Jumu'ah at the masjid."
+          ],
+          "note": "Link to home routines."
+        },
+        {
+          "heading": "Before and after",
+          "bullets": [
+            "The day after Tuesday is Wednesday.",
+            "The day before Friday is Thursday."
+          ],
+          "model": {
+            "problem": "What day is 2 days after Friday?",
+            "steps": [
+              "After Friday is Saturday.",
+              "After Saturday is Sunday."
+            ],
+            "answer": "Sunday"
+          },
+          "note": "Model with the table."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which day comes after Thursday?",
+            "options": [
+              "Friday",
+              "Wednesday",
+              "Sunday"
+            ],
+            "answer": 0,
+            "why": "Thursday, then Friday."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What day comes before Monday?",
+          "a": "Sunday",
+          "mins": 1,
+          "model": "Teacher: the week goes round: Sunday, then Monday."
+        },
+        {
+          "q": "What day is after Saturday?",
+          "a": "Sunday",
+          "mins": 1
+        },
+        {
+          "q": "Which day is Jumu'ah?",
+          "a": "Friday",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fill in: Monday, __, Wednesday, __, Friday.",
+          "a": "Tuesday, Thursday",
+          "mins": 2,
+          "model": "Teacher says the days from Monday."
+        },
+        {
+          "q": "Extend: If today is Wednesday, what was yesterday?",
+          "a": "Tuesday",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: If today is Saturday, what day is it in 3 days?",
+          "a": "Tuesday",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many days in a week?",
+          "a": "A) 7",
+          "mins": 1,
+          "options": [
+            "7",
+            "5",
+            "12"
+          ]
+        },
+        {
+          "q": "Big question: why is Friday special?",
+          "a": "It is Jumu'ah, the day of the Friday prayer.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say the days of the week to a grown-up, then say what day tomorrow is.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: if today is Monday, what day is it in 7 days? (Monday)",
+      "resources": [
+        "White Rose Maths Year 1, Time block: small step 'Days of the week' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A family calendar",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 79 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "Friday is Jumu'ah (الجمعة), the day Muslims gather for the Friday prayer. Surah al-Jumu'ah (62:9) calls the believers to the prayer on Friday.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 80,
+      "title": "Months of the year",
+      "duration": 30,
+      "bigQuestion": "How many months are in a year, and why?",
+      "objectives": [
+        "To understand the order of the 12 months of the year"
+      ],
+      "successCriteria": [
+        "All: say the months in order",
+        "Most: say the month before and after",
+        "Some: know that the Islamic year also has 12 months"
+      ],
+      "keywords": [
+        {
+          "term": "month",
+          "def": "about 4 weeks"
+        },
+        {
+          "term": "year",
+          "def": "12 months"
+        },
+        {
+          "term": "calendar",
+          "def": "a chart of days and months"
+        },
+        {
+          "term": "moon",
+          "def": "the Islamic months follow the moon"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which month is your favourite? What happens in it?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "crescent moon",
+          "alt": "A new crescent moon",
+          "for": "keywords"
+        },
+        {
+          "find": "monthly calendar pages",
+          "alt": "Calendar pages",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "How many days in a week?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Which day is Jumu'ah?",
+          "a": "Friday",
+          "mins": 1
+        },
+        {
+          "q": "What comes after 11?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Twelve months",
+          "bullets": [
+            "January to June.",
+            "July to December."
+          ],
+          "table": {
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "rows": [
+              [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+              ],
+              [
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ]
+            ]
+          },
+          "note": "Spoken chant together."
+        },
+        {
+          "heading": "This month",
+          "bullets": [
+            "Find this month on the calendar.",
+            "Say the name of next month."
+          ],
+          "note": "Week of 28 Jun: June now, July on Thursday."
+        },
+        {
+          "heading": "Before and after",
+          "bullets": [
+            "Before March is February.",
+            "After December is January."
+          ],
+          "model": {
+            "problem": "Which month is 2 months after November?",
+            "steps": [
+              "After November is December.",
+              "After December is January."
+            ],
+            "answer": "January"
+          },
+          "note": "The year goes round."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which month comes after April?",
+            "options": [
+              "May",
+              "March",
+              "June"
+            ],
+            "answer": 0,
+            "why": "April, then May."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which month is before July?",
+          "a": "June",
+          "mins": 1,
+          "model": "Teacher points: June, then July."
+        },
+        {
+          "q": "How many months in a year?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Which month is first?",
+          "a": "January",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fill in: January, __, March, __, May.",
+          "a": "February, April",
+          "mins": 2,
+          "model": "Teacher says January to March."
+        },
+        {
+          "q": "Extend: Which month comes after September?",
+          "a": "October",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which month is 3 months before March?",
+          "a": "December",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many months in a year?",
+          "a": "A) 12",
+          "mins": 1,
+          "options": [
+            "12",
+            "7",
+            "4"
+          ]
+        },
+        {
+          "q": "Big question: how many months, and why?",
+          "a": "12: Allah set the number of months at twelve.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find your birthday month on a calendar and say the months before and after it.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: say the months backwards from December to July.",
+      "resources": [
+        "White Rose Maths Year 1, Time block: small step 'Months of the year' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A family calendar",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 80 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "Allah tells us the number of months is twelve (Qur'an 9:36). The Islamic months, like Ramadan, follow the moon; the months on our wall calendar follow the sun. Both years have 12 months.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 81,
+      "title": "Hours, minutes and seconds",
+      "duration": 30,
+      "bigQuestion": "Which takes longer: a minute or an hour?",
+      "objectives": [
+        "To understand that we measure time in seconds, minutes and hours"
+      ],
+      "successCriteria": [
+        "All: say which is longer: a second, a minute or an hour",
+        "Most: choose the right unit for an activity",
+        "Some: count how many times you can do something in a minute"
+      ],
+      "keywords": [
+        {
+          "term": "second",
+          "def": "a very short time, like a clap"
+        },
+        {
+          "term": "minute",
+          "def": "60 seconds"
+        },
+        {
+          "term": "hour",
+          "def": "60 minutes"
+        },
+        {
+          "term": "quicker",
+          "def": "takes less time"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How many times can you clap in one minute? Guess first!",
+        "a": "Answers will vary; check with the timer."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "teach:1"
+        },
+        {
+          "find": "sand timer hourglass",
+          "alt": "A sand timer",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Which month is after June?",
+          "a": "July",
+          "mins": 1
+        },
+        {
+          "q": "Is lunch before or after breakfast?",
+          "a": "after",
+          "mins": 1
+        },
+        {
+          "q": "Count in 10s to 60.",
+          "a": "10, 20, ... 60",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three units",
+          "bullets": [
+            "A second: one clap.",
+            "A minute: washing hands well.",
+            "An hour: a long walk."
+          ],
+          "note": "Act each one."
+        },
+        {
+          "heading": "Minute test",
+          "bullets": [
+            "Guess, then clap for 1 minute.",
+            "Count your claps."
+          ],
+          "note": "Teacher times 1 minute.",
+          "routine": "show-me"
+        },
+        {
+          "heading": "Which unit?",
+          "bullets": [
+            "Pick the best unit."
+          ],
+          "sort": {
+            "columns": [
+              "Seconds",
+              "Minutes",
+              "Hours"
+            ],
+            "cards": [
+              "Blink",
+              "Brush teeth",
+              "Sleep at night",
+              "Jump once",
+              "Make wudu",
+              "A school day"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Sort the cards."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is longest?",
+            "options": [
+              "An hour",
+              "A minute",
+              "A second"
+            ],
+            "answer": 0,
+            "why": "60 minutes make an hour."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Reading a story: seconds, minutes or hours?",
+          "a": "minutes",
+          "mins": 1,
+          "model": "Teacher: it is longer than a clap, shorter than a day, so minutes."
+        },
+        {
+          "q": "Which is quicker: a second or a minute?",
+          "a": "a second",
+          "mins": 1
+        },
+        {
+          "q": "How many seconds in a minute?",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Seconds, minutes or hours? Sneeze, eat dinner, a car trip to the coast.",
+          "a": "seconds, minutes, hours",
+          "mins": 2,
+          "model": "Teacher does 'sneeze: seconds'."
+        },
+        {
+          "q": "Extend: How many jumps can you do in 1 minute?",
+          "a": "Answers will vary",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which is longer: 50 seconds or 1 minute?",
+          "a": "1 minute (60 seconds)",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "60 minutes make...",
+          "a": "A) 1 hour",
+          "mins": 1,
+          "options": [
+            "1 hour",
+            "1 day",
+            "1 second"
+          ]
+        },
+        {
+          "q": "Big question: which takes longer?",
+          "a": "An hour: it is 60 minutes.",
+          "mins": 1
+        }
+      ],
+      "homework": "With a grown-up, time 1 minute and see how many star jumps you can do.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: which is longer: 2 minutes or 100 seconds? (2 minutes, 120 seconds)",
+      "resources": [
+        "White Rose Maths Year 1, Time block: small step 'Hours, minutes and seconds' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A timer or phone stopwatch (grown-up's)",
+        "Picture cards for sorting",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 81 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "Allah swears by time in Surah al-'Asr (103:1). Time is a gift, so we use it well.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 82,
+      "title": "Tell the time to the hour",
+      "duration": 30,
+      "bigQuestion": "How does a clock tell us it is 3 o'clock?",
+      "objectives": [
+        "To understand how to read and show o'clock times"
+      ],
+      "successCriteria": [
+        "All: name the hour hand and minute hand",
+        "Most: read o'clock times",
+        "Some: show an o'clock time on a clock"
+      ],
+      "crossCurricular": "Islamic Studies: salah times on the masjid timetable",
+      "keywords": [
+        {
+          "term": "clock",
+          "def": "it shows the time"
+        },
+        {
+          "term": "hour hand",
+          "def": "the short hand"
+        },
+        {
+          "term": "minute hand",
+          "def": "the long hand"
+        },
+        {
+          "term": "o'clock",
+          "def": "the minute hand points to 12"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A clock has two hands. Why do you think one is short and one is long?",
+        "a": "The short hand shows the hour; the long hand shows the minutes."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "A clock with hands",
+          "for": "teach:1"
+        },
+        {
+          "find": "paper plate clock craft",
+          "alt": "A paper plate clock",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count to 12.",
+          "a": "1, 2, 3, ... 12",
+          "mins": 1
+        },
+        {
+          "q": "Minutes in an hour?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "What comes after 7?",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two hands",
+          "bullets": [
+            "Short hand: hours.",
+            "Long hand: minutes."
+          ],
+          "note": "Use the paper plate clock."
+        },
+        {
+          "heading": "O'clock",
+          "bullets": [
+            "Long hand on 12.",
+            "Short hand on the hour."
+          ],
+          "model": {
+            "problem": "Short hand on 7, long hand on 12.",
+            "steps": [
+              "Long hand on 12: o'clock.",
+              "Short hand on 7."
+            ],
+            "answer": "7 o'clock"
+          },
+          "note": "Show 3 o'clock."
+        },
+        {
+          "heading": "Salah clock",
+          "bullets": [
+            "Dhuhr in summer is about 1 o'clock."
+          ],
+          "misconception": {
+            "wrong": "The long hand shows the hour.",
+            "right": "The short hand shows the hour."
+          },
+          "note": "Times are approximate; check the masjid timetable."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Long hand on 12, short hand on 9. Time?",
+            "options": [
+              "9 o'clock",
+              "12 o'clock",
+              "half past 9"
+            ],
+            "answer": 0,
+            "why": "The short hand gives the hour: 9."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show 4 o'clock.",
+          "a": "Long hand on 12, short hand on 4",
+          "mins": 1,
+          "model": "Teacher moves the long hand to 12 and the short hand to 4."
+        },
+        {
+          "q": "Short hand on 11, long hand on 12?",
+          "a": "11 o'clock",
+          "mins": 1
+        },
+        {
+          "q": "Where is the long hand at o'clock?",
+          "a": "On 12",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read: short hand on 2; on 6; on 10 (long hand on 12).",
+          "a": "2 o'clock, 6 o'clock, 10 o'clock",
+          "mins": 2,
+          "model": "Teacher reads 2 o'clock."
+        },
+        {
+          "q": "Extend: Draw the hands for 5 o'clock.",
+          "a": "Long hand to 12, short hand to 5",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: What time is 1 hour after 11 o'clock?",
+          "a": "12 o'clock",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "At o'clock the long hand points to...",
+          "a": "A) 12",
+          "mins": 1,
+          "options": [
+            "12",
+            "6",
+            "1"
+          ]
+        },
+        {
+          "q": "Big question: how does a clock show 3 o'clock?",
+          "a": "Long hand on 12, short hand on 3.",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a paper plate clock with a grown-up and show 3 o'clock times.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: what time is 3 hours after 10 o'clock? (1 o'clock)",
+      "resources": [
+        "White Rose Maths Year 1, Time block: small step 'Tell the time to the hour' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with a split pin (made at home)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 82 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 83,
+      "title": "Tell the time to the half hour",
+      "duration": 30,
+      "bigQuestion": "What does half past mean?",
+      "objectives": [
+        "To understand how to read and draw half past times"
+      ],
+      "successCriteria": [
+        "All: read half past times",
+        "Most: draw the hands for half past",
+        "Some: say the time half an hour later"
+      ],
+      "keywords": [
+        {
+          "term": "half past",
+          "def": "the long hand points to 6"
+        },
+        {
+          "term": "half an hour",
+          "def": "30 minutes"
+        },
+        {
+          "term": "o'clock",
+          "def": "the long hand points to 12"
+        },
+        {
+          "term": "between",
+          "def": "in the middle of two numbers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The long hand goes halfway round the clock. How much of an hour is that?",
+        "a": "Half an hour: 30 minutes."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clock showing half past",
+          "alt": "A clock at half past",
+          "for": "teach:1"
+        },
+        {
+          "find": "pizza cut in half",
+          "alt": "A whole cut in half",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Long hand 12, short hand 5?",
+          "a": "5 o'clock",
+          "mins": 1
+        },
+        {
+          "q": "Half of 10?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Minutes in an hour?",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Half way round",
+          "bullets": [
+            "Long hand on 6.",
+            "Half the clock is shaded."
+          ],
+          "fraction": {
+            "parts": 2,
+            "shaded": 1,
+            "label": "half the clock"
+          },
+          "note": "Show half the clock face."
+        },
+        {
+          "heading": "The short hand",
+          "bullets": [
+            "At half past 4 it is between 4 and 5.",
+            "It has moved half way."
+          ],
+          "note": "Move the hands slowly."
+        },
+        {
+          "heading": "Read and draw",
+          "bullets": [
+            "Long hand on 6.",
+            "Short hand just past the hour."
+          ],
+          "model": {
+            "problem": "Show half past 8.",
+            "steps": [
+              "Long hand to 6.",
+              "Short hand between 8 and 9."
+            ],
+            "answer": "Half past 8"
+          },
+          "note": "Model on the paper plate clock."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Long hand on 6, short hand between 2 and 3. Time?",
+            "options": [
+              "Half past 2",
+              "Half past 3",
+              "6 o'clock"
+            ],
+            "answer": 0,
+            "why": "Half past the hour it has just passed: 2."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show half past 1.",
+          "a": "Long hand on 6, short hand between 1 and 2",
+          "mins": 1,
+          "model": "Teacher shows it on the plate clock."
+        },
+        {
+          "q": "Long hand on 6, short hand between 10 and 11?",
+          "a": "Half past 10",
+          "mins": 1
+        },
+        {
+          "q": "What time is half an hour after 3 o'clock?",
+          "a": "Half past 3",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read: half past 5; half past 9; half past 12 from clocks.",
+          "a": "Half past 5, half past 9, half past 12",
+          "mins": 2,
+          "model": "Teacher reads half past 5."
+        },
+        {
+          "q": "Extend: Draw hands for half past 7.",
+          "a": "Long hand on 6, short hand between 7 and 8",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: What time is half an hour after half past 6?",
+          "a": "7 o'clock",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "At half past the long hand is on...",
+          "a": "A) 6",
+          "mins": 1,
+          "options": [
+            "6",
+            "12",
+            "3"
+          ]
+        },
+        {
+          "q": "Big question: what does half past mean?",
+          "a": "Half an hour (30 minutes) after o'clock.",
+          "mins": 1
+        }
+      ],
+      "homework": "Tell a grown-up when it is half past on the clock today.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: what time is 1 hour after half past 11? (half past 12)",
+      "resources": [
+        "White Rose Maths Year 1, Time block: small step 'Tell the time to the half hour' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with a split pin (made at home)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 83 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 84,
+      "title": "End-of-year check: number, money and time",
+      "duration": 30,
+      "bigQuestion": "What can I do now in maths?",
+      "objectives": [
+        "To understand how well I know my Year 1 maths and what to practise next"
+      ],
+      "successCriteria": [
+        "All: answer counting and place value questions",
+        "Most: answer adding, money and time questions",
+        "Some: say one thing to practise"
+      ],
+      "smsc": "Spiritual: shukr, thanking Allah for what we have learned this year",
+      "keywords": [
+        {
+          "term": "check",
+          "def": "a short test to see what we know"
+        },
+        {
+          "term": "tens and ones",
+          "def": "how we split a 2-digit number"
+        },
+        {
+          "term": "total",
+          "def": "how much altogether"
+        },
+        {
+          "term": "half past",
+          "def": "30 minutes after o'clock"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Think back to January. What can you do in maths now that you could not do then?",
+        "a": "Answers will vary: for example count to 100, tell the time."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "hundred square",
+          "alt": "A hundred square",
+          "for": "teach:1"
+        },
+        {
+          "find": "analogue clock",
+          "alt": "A clock",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 5s to 30.",
+          "a": "5, 10, 15, 20, 25, 30",
+          "mins": 1
+        },
+        {
+          "q": "Double 6?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Half of 8?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Number",
+          "bullets": [
+            "Count, read, write to 100.",
+            "Tens and ones."
+          ],
+          "table": {
+            "head": [
+              "Tens",
+              "Ones",
+              "Number"
+            ],
+            "rows": [
+              [
+                "4",
+                "7",
+                "47"
+              ],
+              [
+                "9",
+                "0",
+                "90"
+              ]
+            ]
+          },
+          "note": "Quick recap before the check."
+        },
+        {
+          "heading": "Add and subtract",
+          "bullets": [
+            "Bonds to 10 and 20.",
+            "Count on, count back."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Money and time",
+          "bullets": [
+            "Count coins, biggest first.",
+            "O'clock and half past."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Check rules",
+          "bullets": [
+            "Do your best on your own.",
+            "Show your answer to the camera."
+          ],
+          "note": "The teacher reads each question aloud; the printable check is on the portal."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "13 + 5 = ?",
+            "options": [
+              "18",
+              "8",
+              "17"
+            ],
+            "answer": 0,
+            "why": "Count on 5 from 13: 18."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Partition 63.",
+          "a": "60 + 3",
+          "mins": 1,
+          "model": "Teacher: 6 tens is 60, 3 ones: 60 + 3."
+        },
+        {
+          "q": "7 + 3 = ?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "20 - 6 = ?",
+          "a": "14",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: End-of-year check part 1 (teacher reads aloud): (a) count on from 67 to 72 (b) what is 1 more than 89? (c) 8 + 7 (d) 15 - 9 (e) partition 54",
+          "a": "(a) 67, 68, 69, 70, 71, 72 (b) 90 (c) 15 (d) 6 (e) 50 + 4",
+          "mins": 3,
+          "model": "Teacher models (a) on the hundred square, then pupils do the rest alone."
+        },
+        {
+          "q": "Extend: Check part 2: (a) half of 12 (b) a quarter of 8 (c) 10p + 5p + 2p (d) read half past 4 on a clock (e) which month is after May?",
+          "a": "(a) 6 (b) 2 (c) 17p (d) long hand on 6, short hand between 4 and 5 (e) June",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Check part 3: Sara has 20p. She spends 7p. How much is left?",
+          "a": "13p",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is a half past time?",
+          "a": "A) Long hand on 6",
+          "mins": 1,
+          "options": [
+            "Long hand on 6",
+            "Long hand on 12",
+            "Long hand on 3"
+          ]
+        },
+        {
+          "q": "Big question: one thing I can do and one to practise.",
+          "a": "Answers will vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Show a grown-up your check and practise one thing from it for 5 minutes.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: make 50 with two numbers that are both multiples of 10. (for example 20 + 30)",
+      "resources": [
+        "White Rose Maths Year 1 end-of-year assessment (number, money and time questions, used as a short written check as the Year 1 plan says) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed end-of-year check (school White Rose account)",
+        "Hundred square, coins and paper plate clock for the practical questions",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 84 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Place value within 100; money; time",
+      "n": 85,
+      "title": "Shape revisit: name and sort 2-D and 3-D shapes",
+      "duration": 30,
+      "bigQuestion": "How can we tell a flat shape from a solid shape?",
+      "objectives": [
+        "To understand how to name and sort 2-D and 3-D shapes"
+      ],
+      "successCriteria": [
+        "All: name a circle, triangle, square and rectangle",
+        "Most: name a cube, cuboid, sphere, cone and cylinder",
+        "Some: sort shapes and say the rule"
+      ],
+      "keywords": [
+        {
+          "term": "2-D",
+          "def": "a flat shape"
+        },
+        {
+          "term": "3-D",
+          "def": "a solid shape you can hold"
+        },
+        {
+          "term": "cube",
+          "def": "a box shape with all faces square"
+        },
+        {
+          "term": "sphere",
+          "def": "a ball shape"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A tin of beans and a ball both roll. How are they different?",
+        "a": "The tin (cylinder) has flat circle ends; the ball (sphere) is curved all over."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "food tin can",
+          "alt": "A tin: a cylinder",
+          "for": "teach:2"
+        },
+        {
+          "find": "dice cube",
+          "alt": "A dice: a cube",
+          "for": "keywords"
+        },
+        {
+          "find": "traffic cone",
+          "alt": "A cone",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "How many sides does a triangle have?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Half past 6: where is the long hand?",
+          "a": "On 6",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 20.",
+          "a": "2, 4, ... 20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Flat shapes",
+          "bullets": [
+            "Circle, triangle.",
+            "Square, rectangle."
+          ],
+          "table": {
+            "head": [
+              "Shape",
+              "Sides",
+              "Corners"
+            ],
+            "rows": [
+              [
+                "triangle",
+                "3",
+                "3"
+              ],
+              [
+                "square",
+                "4",
+                "4"
+              ],
+              [
+                "rectangle",
+                "4",
+                "4"
+              ],
+              [
+                "circle",
+                "1 curved",
+                "0"
+              ]
+            ]
+          },
+          "note": "Draw each on the whiteboard."
+        },
+        {
+          "heading": "Solid shapes",
+          "bullets": [
+            "Cube, cuboid, sphere.",
+            "Cone, cylinder, pyramid."
+          ],
+          "note": "Hold up household objects: dice, box, ball, tin."
+        },
+        {
+          "heading": "Sort",
+          "bullets": [
+            "Flat or solid?"
+          ],
+          "sort": {
+            "columns": [
+              "2-D (flat)",
+              "3-D (solid)"
+            ],
+            "cards": [
+              "circle",
+              "ball",
+              "square",
+              "tin",
+              "triangle",
+              "box"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Pupils sort."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A tin of beans is a...",
+            "options": [
+              "cylinder",
+              "cube",
+              "sphere"
+            ],
+            "answer": 0,
+            "why": "Two flat circle ends and a curved side."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A box of tissues is a...?",
+          "a": "cuboid",
+          "mins": 1,
+          "model": "Teacher: flat faces, rectangles: a cuboid."
+        },
+        {
+          "q": "A dice is a...?",
+          "a": "cube",
+          "mins": 1
+        },
+        {
+          "q": "A ball is a...?",
+          "a": "sphere",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find a cube, a sphere and a cylinder at home. Show the camera.",
+          "a": "For example dice, ball, tin",
+          "mins": 2,
+          "model": "Teacher shows a dice: cube."
+        },
+        {
+          "q": "Extend: Sort: triangle, cone, square, cuboid.",
+          "a": "2-D: triangle, square; 3-D: cone, cuboid",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which 3-D shape can roll and stack?",
+          "a": "A cylinder",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which shape is flat?",
+          "a": "A) square",
+          "mins": 1,
+          "options": [
+            "square",
+            "cube",
+            "cone"
+          ]
+        },
+        {
+          "q": "Big question: flat or solid?",
+          "a": "Flat shapes are 2-D; solid shapes you can hold are 3-D.",
+          "mins": 1
+        }
+      ],
+      "homework": "Go on a shape hunt at home and name 5 shapes.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: how many square faces does a cube have? (6)",
+      "resources": [
+        "White Rose Maths Year 1, Geometry: shape catch-up from the Autumn shape block (small steps 'Recognise and name 2-D and 3-D shapes', 'Sort 2-D and 3-D shapes'), as the Year 1 plan says (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Household 3-D objects: dice, box, ball, tin, ice-cream cone (paper)",
+        "Paper 2-D shapes (printable)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 85 guided, independent and homework tasks"
       ]
     }
   ]

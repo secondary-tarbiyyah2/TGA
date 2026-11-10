@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y2",
   "board": "National Curriculum (KS1)",
-  "source": "National Curriculum (KS1 Year 2: place value to 100; addition and subtraction); Spring 1 founding year: White Rose Maths Year 2 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Money and 2 Multiplication and division), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 2 Spring blocks 2 Multiplication and division, 3 Length and height and 4 Mass, capacity and temperature, with addition and subtraction with exchange (Autumn block 2) caught up in week 3 (small-step titles only); Summer 1 founding year: White Rose Maths Year 2 Summer blocks Fractions and Time (small-step titles only)",
+  "source": "National Curriculum (KS1 Year 2: place value to 100; addition and subtraction); Spring 1 founding year: White Rose Maths Year 2 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Money and 2 Multiplication and division), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 2 Spring blocks 2 Multiplication and division, 3 Length and height and 4 Mass, capacity and temperature, with addition and subtraction with exchange (Autumn block 2) caught up in week 3 (small-step titles only); Summer 1 founding year: White Rose Maths Year 2 Summer blocks Fractions and Time (small-step titles only) | Summer 2 founding year (14 Jun to 9 Jul 2027): White Rose Maths Year 2 Summer blocks Statistics, Position and direction and the Shape catch-up (small-step titles only), then the end-of-year assessment (number and reasoning papers), feedback and fluency, as the Year 2 plan says",
   "lessons": [
     {
       "unit": "Spring 1: Money; multiplication and division begins",
@@ -12908,6 +12908,3217 @@
         "Printed end-of-block check (school White Rose account)",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 2 maths lesson 67 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 68,
+      "title": "Make tally charts",
+      "duration": 30,
+      "bigQuestion": "Why do we draw tally marks in fives?",
+      "objectives": [
+        "To understand how to collect data and record it in a tally chart"
+      ],
+      "successCriteria": [
+        "All: draw tally marks for numbers to 10",
+        "Most: make a tally chart from a list",
+        "Some: read the totals and say which is most"
+      ],
+      "crossCurricular": "Science: recording observations in a table",
+      "keywords": [
+        {
+          "term": "tally",
+          "def": "a mark to count one thing"
+        },
+        {
+          "term": "data",
+          "def": "facts we collect, like numbers"
+        },
+        {
+          "term": "total",
+          "def": "how many altogether"
+        },
+        {
+          "term": "most popular",
+          "def": "chosen the most times"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How could you count the cars that go past your window without losing count?",
+        "a": "Make a mark for each car, and group the marks in fives."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tally marks on paper",
+          "alt": "Tally marks grouped in fives",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of fruit",
+          "alt": "A bowl of fruit",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 5s to 30.",
+          "a": "5, 10, 15, 20, 25, 30",
+          "mins": 1
+        },
+        {
+          "q": "5 + 3 = ?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Which is more: 12 or 21?",
+          "a": "21",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tally marks",
+          "bullets": [
+            "One mark for each thing.",
+            "The 5th mark crosses the four."
+          ],
+          "note": "Draw 1 to 5 live."
+        },
+        {
+          "heading": "Count tallies",
+          "bullets": [
+            "Count the gates in 5s.",
+            "Then count on the ones."
+          ],
+          "model": {
+            "problem": "Two gates of 5 and 3 more marks.",
+            "steps": [
+              "5, 10.",
+              "11, 12, 13."
+            ],
+            "answer": "13"
+          },
+          "note": "Model 12 as two gates and 2."
+        },
+        {
+          "heading": "A tally chart",
+          "bullets": [
+            "Favourite fruit (example data)."
+          ],
+          "table": {
+            "head": [
+              "Fruit",
+              "Tally",
+              "Total"
+            ],
+            "rows": [
+              [
+                "Apple",
+                "five and 2 (7 marks)",
+                "7"
+              ],
+              [
+                "Banana",
+                "four marks",
+                "4"
+              ],
+              [
+                "Dates",
+                "two fives (10 marks)",
+                "10"
+              ]
+            ]
+          },
+          "note": "Read each row."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which fruit got the most votes?",
+            "options": [
+              "Dates",
+              "Apple",
+              "Banana"
+            ],
+            "answer": 0,
+            "why": "Dates: 10 is the biggest total."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Draw 8 in tally marks.",
+          "a": "One gate of 5 and 3 marks",
+          "mins": 1,
+          "model": "Teacher draws 4 lines, crosses for 5, then adds 3."
+        },
+        {
+          "q": "A gate and 1 mark is...?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "How many more dates than bananas?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Tally these colours: red, blue, red, red, green, blue, red.",
+          "a": "Red 4, blue 2, green 1",
+          "mins": 2,
+          "model": "Teacher tallies the first three."
+        },
+        {
+          "q": "Extend: Ask your family their favourite fruit. Make a tally chart.",
+          "a": "Answers will vary",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: How many votes in the fruit chart altogether?",
+          "a": "21",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which shows 7?",
+          "a": "A) A gate and 2 marks",
+          "mins": 1,
+          "options": [
+            "A gate and 2 marks",
+            "7 gates",
+            "A gate and 7 marks"
+          ]
+        },
+        {
+          "q": "Big question: why do we tally in fives?",
+          "a": "Gates of 5 are quick to count in 5s.",
+          "mins": 1
+        }
+      ],
+      "homework": "Tally the cars, birds or buses you see from a window for 5 minutes.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: a tally has 3 gates and 4 marks. What number is it? (19)",
+      "resources": [
+        "White Rose Maths Year 2, Statistics block: small step 'Make tally charts' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable tally chart",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 68 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 69,
+      "title": "Draw pictograms",
+      "duration": 30,
+      "bigQuestion": "How can pictures show numbers?",
+      "objectives": [
+        "To understand how to draw a pictogram where one picture means one thing"
+      ],
+      "successCriteria": [
+        "All: draw a pictogram from a tally chart",
+        "Most: line pictures up neatly",
+        "Some: give the pictogram a title and a key"
+      ],
+      "keywords": [
+        {
+          "term": "pictogram",
+          "def": "a chart that uses pictures"
+        },
+        {
+          "term": "key",
+          "def": "tells what one picture means"
+        },
+        {
+          "term": "title",
+          "def": "says what the chart is about"
+        },
+        {
+          "term": "row",
+          "def": "a line going across"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If each picture of a book means one book, how would you show 5 books?",
+        "a": "Draw 5 book pictures in a row."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pictogram chart",
+          "alt": "A pictogram",
+          "for": "teach:2"
+        },
+        {
+          "find": "stack of books",
+          "alt": "A stack of books",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Tally 6.",
+          "a": "A gate and 1 mark",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 12.",
+          "a": "2, 4, 6, 8, 10, 12",
+          "mins": 1
+        },
+        {
+          "q": "How many in a gate?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One picture, one thing",
+          "bullets": [
+            "Each circle means 1 book.",
+            "Line them up in rows."
+          ],
+          "note": "Show a row of 4 circles."
+        },
+        {
+          "heading": "From tally to pictogram",
+          "bullets": [
+            "Books read this week (example data).",
+            "Ali 4, Huda 6, Musa 3."
+          ],
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "Ali",
+              "Huda",
+              "Musa"
+            ],
+            "values": [
+              4,
+              6,
+              3
+            ],
+            "title": "Books read (example data)",
+            "unit": "books"
+          },
+          "note": "Draw one circle for each book."
+        },
+        {
+          "heading": "Title and key",
+          "bullets": [
+            "Title: what it shows.",
+            "Key: one circle = 1 book."
+          ],
+          "model": {
+            "problem": "Huda read 6 books. Draw her row.",
+            "steps": [
+              "Key: 1 circle = 1 book.",
+              "Draw 6 circles in a line."
+            ],
+            "answer": "6 circles"
+          },
+          "note": "Point to where they go."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1 circle = 1 book. Musa has 3 circles. Books?",
+            "options": [
+              "3",
+              "6",
+              "1"
+            ],
+            "answer": 0,
+            "why": "Each circle is one book."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Draw a row for 5 books.",
+          "a": "5 circles in a line",
+          "mins": 1,
+          "model": "Teacher draws 5 circles, evenly spaced."
+        },
+        {
+          "q": "Who read the most?",
+          "a": "Huda",
+          "mins": 1
+        },
+        {
+          "q": "How many fewer did Musa read than Huda?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a pictogram: Hafs 2, Zayd 5, Amna 4 (1 circle = 1 book).",
+          "a": "Rows of 2, 5 and 4 circles with a title and key",
+          "mins": 2,
+          "model": "Teacher draws Hafs's row."
+        },
+        {
+          "q": "Extend: How many books in total?",
+          "a": "11",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Amna reads 2 more. How many circles now?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A pictogram must have a...",
+          "a": "A) key",
+          "mins": 1,
+          "options": [
+            "key",
+            "song",
+            "colour"
+          ]
+        },
+        {
+          "q": "Big question: how can pictures show numbers?",
+          "a": "Each picture stands for a number of things; the key tells us how many.",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a pictogram of 3 kinds of fruit in your kitchen.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: if one circle meant 2 books, how many circles would Huda need? (3)",
+      "resources": [
+        "White Rose Maths Year 2, Statistics block: small step 'Draw pictograms (1-1)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or the printable pictogram grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 69 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 70,
+      "title": "Interpret pictograms: 2, 5 and 10",
+      "duration": 30,
+      "bigQuestion": "What if one picture means more than one thing?",
+      "objectives": [
+        "To understand how to read pictograms where one picture means 2, 5 or 10"
+      ],
+      "successCriteria": [
+        "All: read a pictogram where one picture means 2",
+        "Most: read half pictures",
+        "Some: read keys of 5 and 10"
+      ],
+      "keywords": [
+        {
+          "term": "key",
+          "def": "tells what one picture is worth"
+        },
+        {
+          "term": "half",
+          "def": "half a picture is half the key"
+        },
+        {
+          "term": "interpret",
+          "def": "read and understand"
+        },
+        {
+          "term": "represent",
+          "def": "stand for"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "One star means 10 pupils. What could half a star mean?",
+        "a": "5 pupils."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "crescent moon and stars night",
+          "alt": "Night sky",
+          "for": "keywords"
+        },
+        {
+          "find": "pictogram with key",
+          "alt": "A pictogram with a key",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 2s to 16.",
+          "a": "2, 4, ... 16",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 40.",
+          "a": "5, 10, ... 40",
+          "mins": 1
+        },
+        {
+          "q": "Half of 10?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Key of 2",
+          "bullets": [
+            "1 picture = 2 things.",
+            "Count in 2s."
+          ],
+          "model": {
+            "problem": "Key: 1 apple = 2 apples. Row has 3 apples.",
+            "steps": [
+              "Each picture is worth 2.",
+              "Count in 2s: 2, 4, 6."
+            ],
+            "answer": "6 apples"
+          },
+          "note": "Model 4 pictures: 2, 4, 6, 8."
+        },
+        {
+          "heading": "Half pictures",
+          "bullets": [
+            "Half a picture is half the key.",
+            "Key 2: half = 1."
+          ],
+          "fraction": {
+            "parts": 2,
+            "shaded": 1,
+            "label": "half a picture"
+          },
+          "note": "Show 2 and a half pictures = 5."
+        },
+        {
+          "heading": "Key of 10",
+          "bullets": [
+            "Masjid visitors (example data)."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "Domes",
+              "People"
+            ],
+            "rows": [
+              [
+                "Friday",
+                "6",
+                "60"
+              ],
+              [
+                "Saturday",
+                "3 and a half",
+                "35"
+              ],
+              [
+                "Sunday",
+                "2",
+                "20"
+              ]
+            ]
+          },
+          "note": "1 dome = 10 people; 3 domes and a half is 35."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Key: 1 picture = 5. A row has 4 pictures. Total?",
+            "options": [
+              "20",
+              "4",
+              "9"
+            ],
+            "answer": 0,
+            "why": "Count in 5s: 5, 10, 15, 20."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Key 1 picture = 2. Row has 5 pictures?",
+          "a": "10",
+          "mins": 1,
+          "model": "Teacher counts in 2s: 2, 4, 6, 8, 10."
+        },
+        {
+          "q": "Key 10. Row has 2 and a half?",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "How many more on Friday than Sunday?",
+          "a": "40",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Key 1 picture = 5. Rows: 3, 6, 1 pictures. Totals?",
+          "a": "15, 30, 5",
+          "mins": 2,
+          "model": "Teacher counts 3 pictures: 5, 10, 15."
+        },
+        {
+          "q": "Extend: Key 1 = 2. Row has 4 and a half pictures?",
+          "a": "9",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Key 1 = 10. Show 45 in pictures.",
+          "a": "4 and a half pictures",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Key 1 picture = 10. Three pictures =",
+          "a": "A) 30",
+          "mins": 1,
+          "options": [
+            "30",
+            "3",
+            "13"
+          ]
+        },
+        {
+          "q": "Big question: what if one picture means more than one?",
+          "a": "Count in that step, like 2s, 5s or 10s.",
+          "mins": 1
+        }
+      ],
+      "homework": "Draw a pictogram where one picture means 2. Show 8 and 5.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: key 1 picture = 5. How many pictures show 35? (7)",
+      "resources": [
+        "White Rose Maths Year 2, Statistics block: small steps 'Draw pictograms (2, 5 and 10)' and 'Interpret pictograms (2, 5 and 10)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable pictogram sheet (example data)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 70 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 71,
+      "title": "Block diagrams and tables",
+      "duration": 30,
+      "bigQuestion": "Which is easier to read: a pictogram or a block diagram?",
+      "objectives": [
+        "To understand how to read and draw block diagrams and tables"
+      ],
+      "successCriteria": [
+        "All: read a block diagram",
+        "Most: draw a block diagram from a table",
+        "Some: answer how many more and how many altogether"
+      ],
+      "keywords": [
+        {
+          "term": "block diagram",
+          "def": "a chart made of blocks, one block for each thing"
+        },
+        {
+          "term": "table",
+          "def": "rows and columns of data"
+        },
+        {
+          "term": "altogether",
+          "def": "add them all"
+        },
+        {
+          "term": "difference",
+          "def": "how many more or fewer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Ten children choose a snack. How could you show their choices so anyone can read them quickly?",
+        "a": "A table, a tally chart, a pictogram or a block diagram."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "lego bricks stacked tower",
+          "alt": "Stacked Lego bricks",
+          "for": "teach:1"
+        },
+        {
+          "find": "fruit and vegetables",
+          "alt": "Fruit and vegetables",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Key 1 = 5. Two pictures?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "12 - 7 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "8 + 6 = ?",
+          "a": "14",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Block diagrams",
+          "bullets": [
+            "Each block is one thing.",
+            "Count the blocks in each column."
+          ],
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "Apple",
+              "Grapes",
+              "Melon",
+              "Plum"
+            ],
+            "values": [
+              5,
+              8,
+              3,
+              6
+            ],
+            "title": "Fruit chosen (example data)",
+            "unit": "children"
+          },
+          "note": "Build towers of Lego."
+        },
+        {
+          "heading": "Read and compare",
+          "bullets": [
+            "Grapes 8, melon 3.",
+            "Difference: 8 - 3 = 5."
+          ],
+          "model": {
+            "problem": "How many more chose grapes than plums?",
+            "steps": [
+              "Grapes 8, plums 6.",
+              "8 - 6 = 2."
+            ],
+            "answer": "2 more"
+          },
+          "note": "Model how many more."
+        },
+        {
+          "heading": "Tables",
+          "bullets": [
+            "A table gives the numbers.",
+            "We can draw the blocks from it."
+          ],
+          "table": {
+            "head": [
+              "Fruit",
+              "Apple",
+              "Grapes",
+              "Melon",
+              "Plum"
+            ],
+            "rows": [
+              [
+                "Children",
+                "5",
+                "8",
+                "3",
+                "6"
+              ]
+            ]
+          },
+          "note": "Copy the table into blocks."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many children altogether?",
+            "options": [
+              "22",
+              "8",
+              "20"
+            ],
+            "answer": 0,
+            "why": "5 + 8 + 3 + 6 = 22."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which fruit was chosen least?",
+          "a": "Melon",
+          "mins": 1,
+          "model": "Teacher points to the shortest column: melon, 3."
+        },
+        {
+          "q": "How many chose apple or plum?",
+          "a": "11",
+          "mins": 1
+        },
+        {
+          "q": "How many fewer chose melon than apple?",
+          "a": "2",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a block diagram: tea 4, milk 7, water 9.",
+          "a": "Columns of 4, 7 and 9 blocks, labelled",
+          "mins": 2,
+          "model": "Teacher draws the tea column."
+        },
+        {
+          "q": "Extend: How many more chose water than tea?",
+          "a": "5",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 3 more choose milk. Is milk the most now?",
+          "a": "Yes: 10 > 9",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Each block stands for...",
+          "a": "A) 1 thing",
+          "mins": 1,
+          "options": [
+            "1 thing",
+            "5 things",
+            "10 things"
+          ]
+        },
+        {
+          "q": "Big question: pictogram or block diagram?",
+          "a": "Answers will vary: blocks are quick to draw and count; a key lets a pictogram show bigger numbers.",
+          "mins": 1
+        }
+      ],
+      "homework": "Ask 6 people a question and draw a block diagram of the answers.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: if each block meant 2, how many blocks would 8 grapes need? (4)",
+      "resources": [
+        "White Rose Maths Year 2, Statistics block: small steps 'Block diagrams' and 'Tables' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Lego bricks or cubes for towers",
+        "Squared paper",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 71 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 72,
+      "title": "Describe position: left, right, up and down",
+      "duration": 30,
+      "bigQuestion": "How can we give clear directions?",
+      "objectives": [
+        "To understand how to describe position and movement on a grid"
+      ],
+      "successCriteria": [
+        "All: use left, right, up and down",
+        "Most: count squares to move on a grid",
+        "Some: give two-step directions"
+      ],
+      "keywords": [
+        {
+          "term": "left",
+          "def": "the side of the hand that makes an L"
+        },
+        {
+          "term": "right",
+          "def": "the other side"
+        },
+        {
+          "term": "position",
+          "def": "where something is"
+        },
+        {
+          "term": "direction",
+          "def": "the way something moves"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A robot only understands up, down, left and right. How would you get it from your door to your bed?",
+        "a": "Give steps such as 3 forwards then 2 right."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "grid paper",
+          "alt": "A square grid",
+          "for": "teach:2"
+        },
+        {
+          "find": "toy robot",
+          "alt": "A toy robot",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Hold up your right hand.",
+          "a": "Right hand up",
+          "mins": 1
+        },
+        {
+          "q": "What is 4 more than 3?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s from 10.",
+          "a": "10, 12, 14, 16",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Left and right",
+          "bullets": [
+            "Left hand makes an L.",
+            "Right is the other side."
+          ],
+          "note": "Hold up hands to the camera."
+        },
+        {
+          "heading": "Moving on a grid",
+          "bullets": [
+            "Count squares, not lines.",
+            "Up, down, left, right."
+          ],
+          "model": {
+            "problem": "Star at the start. Move 3 right, 2 up.",
+            "steps": [
+              "Count 3 squares right.",
+              "Then 2 squares up."
+            ],
+            "answer": "The counter ends 3 right and 2 up"
+          },
+          "note": "Move a counter on the grid."
+        },
+        {
+          "heading": "Two steps",
+          "bullets": [
+            "Say the number and the direction.",
+            "Do one step at a time."
+          ],
+          "misconception": {
+            "wrong": "Counting the lines.",
+            "right": "Count the squares you jump."
+          },
+          "note": "Pupils give directions to the teacher."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "The cat is 2 squares right of the dog. The dog moves...",
+            "options": [
+              "2 right",
+              "2 left",
+              "2 up"
+            ],
+            "answer": 0,
+            "why": "To reach the cat, go right."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Move 4 left, then 1 down.",
+          "a": "4 squares left, 1 square down",
+          "mins": 1,
+          "model": "Teacher moves the counter, counting each square."
+        },
+        {
+          "q": "Opposite of up?",
+          "a": "down",
+          "mins": 1
+        },
+        {
+          "q": "Opposite of left?",
+          "a": "right",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write the moves from the house to the masjid on the grid sheet.",
+          "a": "For example 3 right, 2 up",
+          "mins": 2,
+          "model": "Teacher does the first move."
+        },
+        {
+          "q": "Extend: Write the route back.",
+          "a": "2 down, 3 left",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Find a different route of the same length.",
+          "a": "For example 2 up, 3 right",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Opposite of right is...",
+          "a": "A) left",
+          "mins": 1,
+          "options": [
+            "left",
+            "up",
+            "down"
+          ]
+        },
+        {
+          "q": "Big question: how can we give clear directions?",
+          "a": "Say how many squares and which direction, one step at a time.",
+          "mins": 1
+        }
+      ],
+      "homework": "Give a grown-up directions to find a toy you have hidden.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: how many squares in all for 3 right, 2 up, 1 left? (6)",
+      "resources": [
+        "White Rose Maths Year 2, Position and direction block: small step 'Describe movement' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable grid with a house and a masjid",
+        "A counter or coin",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 72 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 73,
+      "title": "Describe turns",
+      "duration": 30,
+      "bigQuestion": "How far do we turn to face the other way?",
+      "objectives": [
+        "To understand quarter, half, three-quarter and full turns, clockwise and anticlockwise"
+      ],
+      "successCriteria": [
+        "All: make a quarter, half and full turn",
+        "Most: use clockwise and anticlockwise",
+        "Some: say where you face after a turn"
+      ],
+      "keywords": [
+        {
+          "term": "clockwise",
+          "def": "the way clock hands turn"
+        },
+        {
+          "term": "anticlockwise",
+          "def": "the other way"
+        },
+        {
+          "term": "quarter turn",
+          "def": "a right angle turn"
+        },
+        {
+          "term": "half turn",
+          "def": "turn to face the opposite way"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you stand and make a half turn, what will you see?",
+        "a": "What was behind you."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clock face",
+          "alt": "A clock face",
+          "for": "teach:1"
+        },
+        {
+          "find": "compass rose",
+          "alt": "A compass",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Hold up your left hand.",
+          "a": "Left hand up",
+          "mins": 1
+        },
+        {
+          "q": "Half of 4?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "How many quarters in a whole?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Clockwise",
+          "bullets": [
+            "The way clock hands go.",
+            "Anticlockwise is the other way."
+          ],
+          "note": "Show with the paper plate clock."
+        },
+        {
+          "heading": "Turns",
+          "bullets": [
+            "Quarter, half, three-quarter, full.",
+            "A full turn faces the start."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "quarter turn"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "half turn"
+            },
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "three-quarter turn"
+            }
+          ],
+          "note": "Pupils stand and turn on camera."
+        },
+        {
+          "heading": "Where do I face?",
+          "bullets": [
+            "Start facing the door.",
+            "Turn and say what you see."
+          ],
+          "model": {
+            "problem": "Arrow points up. Quarter turn clockwise.",
+            "steps": [
+              "Clockwise goes to the right.",
+              "Up turns to the right."
+            ],
+            "answer": "It points right"
+          },
+          "note": "Model with a toy."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Arrow up. Half turn. It points...",
+            "options": [
+              "down",
+              "left",
+              "up"
+            ],
+            "answer": 0,
+            "why": "A half turn faces the opposite way."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Arrow up. Quarter turn anticlockwise?",
+          "a": "left",
+          "mins": 1,
+          "model": "Teacher turns the arrow the other way from the clock: left."
+        },
+        {
+          "q": "Two quarter turns make...?",
+          "a": "a half turn",
+          "mins": 1
+        },
+        {
+          "q": "Arrow right. Full turn?",
+          "a": "right",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Arrow up. Draw it after: half turn; quarter turn clockwise; three-quarter turn clockwise.",
+          "a": "down; right; left",
+          "mins": 2,
+          "model": "Teacher does the half turn."
+        },
+        {
+          "q": "Extend: Is a three-quarter turn clockwise the same as a quarter turn anticlockwise?",
+          "a": "Yes: both end facing the same way",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: How many quarter turns in 2 full turns?",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A half turn is...",
+          "a": "A) 2 quarter turns",
+          "mins": 1,
+          "options": [
+            "2 quarter turns",
+            "1 quarter turn",
+            "4 quarter turns"
+          ]
+        },
+        {
+          "q": "Big question: how far to face the other way?",
+          "a": "A half turn.",
+          "mins": 1
+        }
+      ],
+      "homework": "Stand in your room. Make quarter turns and say what you face each time.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: you face north and make three quarter turns clockwise. Where do you face? (west)",
+      "resources": [
+        "White Rose Maths Year 2, Position and direction block: small step 'Describe turns' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A soft toy or arrow card to turn",
+        "Paper plate clock",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 73 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 74,
+      "title": "Describe movement and turns",
+      "duration": 30,
+      "bigQuestion": "Can you guide a robot to the prize?",
+      "objectives": [
+        "To understand how to give directions that use moves and turns"
+      ],
+      "successCriteria": [
+        "All: give moves forwards and backwards",
+        "Most: add a quarter turn to a route",
+        "Some: write a route for a friend to follow"
+      ],
+      "keywords": [
+        {
+          "term": "forwards",
+          "def": "the way you are facing"
+        },
+        {
+          "term": "backwards",
+          "def": "the way behind you"
+        },
+        {
+          "term": "route",
+          "def": "the way from one place to another"
+        },
+        {
+          "term": "instruction",
+          "def": "a step to follow"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A robot faces up. Can it reach a square to its right without turning?",
+        "a": "No: it must turn a quarter turn clockwise, then go forwards."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "maze puzzle",
+          "alt": "A maze",
+          "for": "hook"
+        },
+        {
+          "find": "toy robot",
+          "alt": "A toy robot",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Arrow up, quarter turn clockwise?",
+          "a": "right",
+          "mins": 1
+        },
+        {
+          "q": "Opposite of forwards?",
+          "a": "backwards",
+          "mins": 1
+        },
+        {
+          "q": "3 + 4 = ?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Moves and turns",
+          "bullets": [
+            "Forwards 2.",
+            "Quarter turn clockwise.",
+            "Forwards 3."
+          ],
+          "note": "Act it out with a toy on a grid."
+        },
+        {
+          "heading": "Follow a route",
+          "bullets": [
+            "Do one instruction at a time."
+          ],
+          "model": {
+            "problem": "Robot faces up. Forwards 2, quarter turn clockwise, forwards 1.",
+            "steps": [
+              "Up 2 squares.",
+              "Now facing right.",
+              "Right 1 square."
+            ],
+            "answer": "2 up and 1 right of the start"
+          },
+          "note": "Pupils follow the route."
+        },
+        {
+          "heading": "Write a route",
+          "bullets": [
+            "Start, moves, turns, end.",
+            "Check by doing it."
+          ],
+          "misconception": {
+            "wrong": "Turn and move in one step.",
+            "right": "Turn first; then move forwards."
+          },
+          "note": "Model writing it as a list."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Facing up, a quarter turn anticlockwise, forwards 2. Where now?",
+            "options": [
+              "2 left",
+              "2 right",
+              "2 up"
+            ],
+            "answer": 0,
+            "why": "Anticlockwise from up faces left."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Facing right: forwards 3, half turn, forwards 1. Where?",
+          "a": "2 squares right of the start",
+          "mins": 1,
+          "model": "Teacher: 3 right, turn to face left, back 1: 2 right."
+        },
+        {
+          "q": "Facing up: half turn. Facing?",
+          "a": "down",
+          "mins": 1
+        },
+        {
+          "q": "Which turn takes up to right?",
+          "a": "quarter turn clockwise",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Follow the route on the sheet. Which picture do you reach?",
+          "a": "The date palm (answer on the sheet key)",
+          "mins": 2,
+          "model": "Teacher follows the first two instructions."
+        },
+        {
+          "q": "Extend: Write a route from the start to the star.",
+          "a": "For example forwards 3, quarter turn clockwise, forwards 2",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Write a shorter route to the same star.",
+          "a": "Answers will vary; check by following",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Facing up, which turn faces down?",
+          "a": "A) half turn",
+          "mins": 1,
+          "options": [
+            "half turn",
+            "quarter turn",
+            "full turn"
+          ]
+        },
+        {
+          "q": "Big question: can you guide the robot?",
+          "a": "Yes: give moves and turns in order, one step at a time.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write a route around your home for a grown-up to follow.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: write a route that ends where it starts. (for example forwards 2, half turn, forwards 2)",
+      "resources": [
+        "White Rose Maths Year 2, Position and direction block: small steps 'Describe movement and turns' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable route grid with pictures (date palm, star, masjid)",
+        "A toy to move",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 74 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 75,
+      "title": "Shape patterns with turns",
+      "duration": 30,
+      "bigQuestion": "What comes next in a turning pattern?",
+      "objectives": [
+        "To understand how to make and continue patterns of shapes and turns"
+      ],
+      "successCriteria": [
+        "All: continue a repeating shape pattern",
+        "Most: spot a turn in a pattern",
+        "Some: make your own turning pattern"
+      ],
+      "smsc": "Cultural: geometric patterns in Islamic art",
+      "keywords": [
+        {
+          "term": "pattern",
+          "def": "something that repeats"
+        },
+        {
+          "term": "repeat",
+          "def": "happen again"
+        },
+        {
+          "term": "rotate",
+          "def": "turn"
+        },
+        {
+          "term": "next",
+          "def": "the one after"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Islamic tiles repeat shapes again and again. How do the makers know what comes next?",
+        "a": "They follow a rule: a shape and a turn repeated."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "islamic geometric tile pattern",
+          "alt": "Islamic tile pattern",
+          "for": "hook"
+        },
+        {
+          "find": "mosaic tiles",
+          "alt": "Mosaic tiles",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Arrow up, half turn?",
+          "a": "down",
+          "mins": 1
+        },
+        {
+          "q": "Continue: 2, 4, 6, __",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Name a 4-sided shape.",
+          "a": "square or rectangle",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Repeating patterns",
+          "bullets": [
+            "Circle, square, circle, square.",
+            "Find the part that repeats."
+          ],
+          "note": "Underline the repeating part."
+        },
+        {
+          "heading": "Turning patterns",
+          "bullets": [
+            "Arrow up, right, down, left.",
+            "Each is a quarter turn clockwise."
+          ],
+          "note": "Draw the arrows."
+        },
+        {
+          "heading": "What comes next?",
+          "bullets": [
+            "Find the rule.",
+            "Use it for the next one."
+          ],
+          "model": {
+            "problem": "Up, right, down, left, up, ?",
+            "steps": [
+              "Rule: quarter turn clockwise each time.",
+              "After up comes right."
+            ],
+            "answer": "right"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Triangle pointing up, then down, then up. Next?",
+            "options": [
+              "down",
+              "up",
+              "left"
+            ],
+            "answer": 0,
+            "why": "It turns a half turn each time."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Continue: star, moon, star, moon, __",
+          "a": "star",
+          "mins": 1,
+          "model": "Teacher circles the repeating part: star, moon."
+        },
+        {
+          "q": "Arrow up, down, up, __",
+          "a": "down",
+          "mins": 1
+        },
+        {
+          "q": "What turn takes up to down?",
+          "a": "half turn",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Continue each pattern on the sheet for 3 more.",
+          "a": "Answers on the sheet key",
+          "mins": 2,
+          "model": "Teacher continues pattern 1."
+        },
+        {
+          "q": "Extend: Make a pattern with a quarter turn rule.",
+          "a": "For example up, right, down, left",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: What is the 10th arrow in up, right, down, left?",
+          "a": "right (the pattern repeats every 4: 9th up, 10th right)",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Up, right, down, left. Next?",
+          "a": "A) up",
+          "mins": 1,
+          "options": [
+            "up",
+            "left",
+            "right"
+          ]
+        },
+        {
+          "q": "Big question: what comes next?",
+          "a": "Find the rule, then use it.",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a turning pattern with spoons or socks and photograph it.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: what is the 12th shape in circle, square, triangle, circle, square, triangle ...? (triangle)",
+      "resources": [
+        "White Rose Maths Year 2, Position and direction block: small step 'Shape patterns with turns' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable pattern sheet",
+        "Spoons, socks or paper arrows to make patterns",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 75 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 76,
+      "title": "Count sides and vertices on 2-D shapes",
+      "duration": 30,
+      "bigQuestion": "How can we tell shapes apart?",
+      "objectives": [
+        "To understand how to describe 2-D shapes by their sides and vertices"
+      ],
+      "successCriteria": [
+        "All: count sides and vertices",
+        "Most: name triangles, quadrilaterals, pentagons and hexagons",
+        "Some: draw a shape with a given number of sides"
+      ],
+      "keywords": [
+        {
+          "term": "side",
+          "def": "a straight edge of a flat shape"
+        },
+        {
+          "term": "vertex",
+          "def": "a corner where sides meet"
+        },
+        {
+          "term": "vertices",
+          "def": "more than one vertex"
+        },
+        {
+          "term": "hexagon",
+          "def": "a shape with 6 sides"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A honeycomb cell has 6 sides. What is that shape called?",
+        "a": "A hexagon."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "honeycomb close up",
+          "alt": "Honeycomb: hexagons",
+          "for": "hook"
+        },
+        {
+          "find": "stop sign octagon",
+          "alt": "A road sign shape",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "A triangle has how many sides?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Up, half turn?",
+          "a": "down",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 12.",
+          "a": "2, 4, ... 12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sides and vertices",
+          "bullets": [
+            "Count each straight side.",
+            "Count each corner."
+          ],
+          "table": {
+            "head": [
+              "Shape",
+              "Sides",
+              "Vertices"
+            ],
+            "rows": [
+              [
+                "triangle",
+                "3",
+                "3"
+              ],
+              [
+                "quadrilateral",
+                "4",
+                "4"
+              ],
+              [
+                "pentagon",
+                "5",
+                "5"
+              ],
+              [
+                "hexagon",
+                "6",
+                "6"
+              ],
+              [
+                "octagon",
+                "8",
+                "8"
+              ]
+            ]
+          },
+          "note": "Mark them on the screen."
+        },
+        {
+          "heading": "Count carefully",
+          "bullets": [
+            "Mark where you start.",
+            "Tick each side as you go."
+          ],
+          "model": {
+            "problem": "How many vertices on a pentagon?",
+            "steps": [
+              "Start at the top and tick.",
+              "1, 2, 3, 4, 5."
+            ],
+            "answer": "5 vertices"
+          },
+          "note": "Model on a hexagon."
+        },
+        {
+          "heading": "Not just squares",
+          "bullets": [
+            "Any 4-sided shape is a quadrilateral."
+          ],
+          "misconception": {
+            "wrong": "A tilted square is a diamond, not a square.",
+            "right": "It is still a square: 4 equal sides."
+          },
+          "note": "Show a tilted square and a long rectangle."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A shape has 6 vertices. It is a...",
+            "options": [
+              "hexagon",
+              "pentagon",
+              "octagon"
+            ],
+            "answer": 0,
+            "why": "6 sides and 6 vertices: hexagon."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many sides on an octagon?",
+          "a": "8",
+          "mins": 1,
+          "model": "Teacher ticks each side: 8."
+        },
+        {
+          "q": "4 sides and 4 vertices?",
+          "a": "quadrilateral",
+          "mins": 1
+        },
+        {
+          "q": "Vertices on a triangle?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count the sides and vertices of the 6 shapes on the sheet.",
+          "a": "Answers on the sheet key",
+          "mins": 2,
+          "model": "Teacher counts the first shape."
+        },
+        {
+          "q": "Extend: Draw a shape with 5 sides.",
+          "a": "Any pentagon",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Total vertices on a triangle and a hexagon?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A pentagon has...",
+          "a": "A) 5 sides",
+          "mins": 1,
+          "options": [
+            "5 sides",
+            "6 sides",
+            "4 sides"
+          ]
+        },
+        {
+          "q": "Big question: how can we tell shapes apart?",
+          "a": "Count the sides and vertices.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find 3 flat shapes at home. Count their sides and vertices.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: how many sides on 2 triangles and 1 square? (10)",
+      "resources": [
+        "White Rose Maths Year 2, Shape block: small steps 'Count sides on 2-D shapes' and 'Count vertices on 2-D shapes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable shape sheet",
+        "Ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 76 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 77,
+      "title": "Lines of symmetry",
+      "duration": 30,
+      "bigQuestion": "How can we check a shape is the same on both sides?",
+      "objectives": [
+        "To understand how to find a vertical line of symmetry"
+      ],
+      "successCriteria": [
+        "All: say if a shape has a vertical line of symmetry",
+        "Most: fold to check",
+        "Some: draw the other half of a symmetric shape"
+      ],
+      "smsc": "Cultural: symmetry in Islamic architecture",
+      "keywords": [
+        {
+          "term": "symmetry",
+          "def": "both halves match"
+        },
+        {
+          "term": "line of symmetry",
+          "def": "the fold line where halves match"
+        },
+        {
+          "term": "vertical",
+          "def": "straight up and down"
+        },
+        {
+          "term": "mirror",
+          "def": "shows the same shape flipped"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A butterfly's wings match. Can you think of something in your home that is the same on both sides?",
+        "a": "Answers will vary: a door, a plate, a window."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "butterfly wings spread",
+          "alt": "A butterfly",
+          "for": "hook"
+        },
+        {
+          "find": "mosque front symmetrical",
+          "alt": "A symmetrical masjid front",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Sides on a hexagon?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Half of 8?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Is a square a quadrilateral?",
+          "a": "yes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Matching halves",
+          "bullets": [
+            "Fold down the middle.",
+            "If the halves match, it has symmetry."
+          ],
+          "note": "Fold a paper heart or leaf shape."
+        },
+        {
+          "heading": "Vertical line",
+          "bullets": [
+            "The line goes up and down.",
+            "Each side mirrors the other."
+          ],
+          "note": "Draw a dashed line on a square."
+        },
+        {
+          "heading": "Complete the shape",
+          "bullets": [
+            "Count squares from the line.",
+            "Draw the same on the other side."
+          ],
+          "model": {
+            "problem": "Half a house is drawn. Line on the left edge.",
+            "steps": [
+              "Copy each point the same distance away.",
+              "Join the points."
+            ],
+            "answer": "A whole house that matches"
+          },
+          "note": "Model on a grid."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which letter has a vertical line of symmetry?",
+            "options": [
+              "A",
+              "F",
+              "J"
+            ],
+            "answer": 0,
+            "why": "A matches on both sides of a vertical fold."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Does a rectangle have a vertical line of symmetry?",
+          "a": "Yes",
+          "mins": 1,
+          "model": "Teacher folds a paper rectangle in half: the halves match."
+        },
+        {
+          "q": "Does the letter M?",
+          "a": "Yes",
+          "mins": 1
+        },
+        {
+          "q": "Does the letter R?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Tick the shapes on the sheet with a vertical line of symmetry.",
+          "a": "Answers on the sheet key",
+          "mins": 2,
+          "model": "Teacher does the first two."
+        },
+        {
+          "q": "Extend: Finish the half-drawn shapes on the grid.",
+          "a": "Matching halves",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which capital letters from A to H have a vertical line?",
+          "a": "A and H",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A line of symmetry shows...",
+          "a": "A) two halves that match",
+          "mins": 1,
+          "options": [
+            "two halves that match",
+            "a corner",
+            "a turn"
+          ]
+        },
+        {
+          "q": "Big question: how can we check?",
+          "a": "Fold on the line: if the halves match, it is symmetrical.",
+          "mins": 1
+        }
+      ],
+      "homework": "Fold paper, cut a shape on the fold and open it: draw the line of symmetry.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: how many vertical lines of symmetry does the number 8 have? (1)",
+      "resources": [
+        "White Rose Maths Year 2, Shape block: small step 'Lines of symmetry on shapes' (vertical lines) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper and child-safe scissors (with a grown-up)",
+        "Printable symmetry grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 77 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 78,
+      "title": "Faces, edges and vertices on 3-D shapes",
+      "duration": 30,
+      "bigQuestion": "How many faces does a box have?",
+      "objectives": [
+        "To understand how to describe 3-D shapes by faces, edges and vertices"
+      ],
+      "successCriteria": [
+        "All: count the faces on a cube",
+        "Most: count edges and vertices",
+        "Some: name 3-D shapes from their faces"
+      ],
+      "keywords": [
+        {
+          "term": "face",
+          "def": "a flat or curved surface"
+        },
+        {
+          "term": "edge",
+          "def": "where two faces meet"
+        },
+        {
+          "term": "vertex",
+          "def": "a corner where edges meet"
+        },
+        {
+          "term": "cuboid",
+          "def": "a box shape with rectangle faces"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Ka'bah (الكعبة) in Makkah is a 3-D shape. Which shape is it most like?",
+        "a": "A cuboid: a box shape."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kaaba Makkah",
+          "alt": "The Ka'bah in Makkah",
+          "for": "hook"
+        },
+        {
+          "find": "cardboard box",
+          "alt": "A box: a cuboid",
+          "for": "teach:1"
+        },
+        {
+          "find": "dice",
+          "alt": "A dice: a cube",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Name a ball shape.",
+          "a": "sphere",
+          "mins": 1
+        },
+        {
+          "q": "Sides on a square?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Is a tin a cylinder?",
+          "a": "yes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Faces",
+          "bullets": [
+            "Flat faces on a box.",
+            "Count them: 6."
+          ],
+          "note": "Hold up a cereal box; mark faces with stickers."
+        },
+        {
+          "heading": "Edges and vertices",
+          "bullets": [
+            "Edges: where faces meet.",
+            "Vertices: corners."
+          ],
+          "table": {
+            "head": [
+              "Shape",
+              "Faces",
+              "Edges",
+              "Vertices"
+            ],
+            "rows": [
+              [
+                "cube",
+                "6",
+                "12",
+                "8"
+              ],
+              [
+                "cuboid",
+                "6",
+                "12",
+                "8"
+              ],
+              [
+                "square-based pyramid",
+                "5",
+                "8",
+                "5"
+              ],
+              [
+                "cylinder",
+                "3",
+                "2",
+                "0"
+              ]
+            ]
+          },
+          "note": "Run a finger along the edges."
+        },
+        {
+          "heading": "Count a pyramid",
+          "bullets": [
+            "Count the base, then the sides."
+          ],
+          "model": {
+            "problem": "Faces on a square-based pyramid?",
+            "steps": [
+              "1 square base.",
+              "4 triangle faces."
+            ],
+            "answer": "5 faces"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many vertices on a cube?",
+            "options": [
+              "8",
+              "6",
+              "12"
+            ],
+            "answer": 0,
+            "why": "4 on top and 4 on the bottom."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Faces on a dice?",
+          "a": "6",
+          "mins": 1,
+          "model": "Teacher turns the dice: 1, 2, 3, 4, 5, 6 faces."
+        },
+        {
+          "q": "Edges on a cuboid?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Which shape has no vertices: cone or sphere?",
+          "a": "sphere",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count faces, edges and vertices on a box at home.",
+          "a": "6 faces, 12 edges, 8 vertices",
+          "mins": 2,
+          "model": "Teacher counts a cereal box's faces."
+        },
+        {
+          "q": "Extend: Which shape has 2 flat faces and 1 curved face?",
+          "a": "cylinder",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: How many edges on 2 cubes?",
+          "a": "24",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A cube has... faces",
+          "a": "A) 6",
+          "mins": 1,
+          "options": [
+            "6",
+            "8",
+            "4"
+          ]
+        },
+        {
+          "q": "Big question: how many faces does a box have?",
+          "a": "6.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find a box and a tin at home. Count their faces.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: a cone has how many faces? (2: one flat and one curved)",
+      "resources": [
+        "White Rose Maths Year 2, Shape block: small steps 'Count faces on 3-D shapes' and 'Count edges and vertices on 3-D shapes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Household 3-D objects: cereal box, dice, tin, ball",
+        "Stickers or sticky notes to mark faces",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 78 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "The Ka'bah (الكعبة) in Makkah is the house Muslims face in prayer. It is shaped like a cuboid.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 79,
+      "title": "Sort shapes and make patterns",
+      "duration": 30,
+      "bigQuestion": "How many ways can we sort the same shapes?",
+      "objectives": [
+        "To understand how to sort 2-D and 3-D shapes by their properties"
+      ],
+      "successCriteria": [
+        "All: sort shapes into 2-D and 3-D",
+        "Most: sort by number of sides or faces",
+        "Some: say the sorting rule"
+      ],
+      "keywords": [
+        {
+          "term": "sort",
+          "def": "put into groups"
+        },
+        {
+          "term": "rule",
+          "def": "how we decide the groups"
+        },
+        {
+          "term": "property",
+          "def": "something true about a shape"
+        },
+        {
+          "term": "curved",
+          "def": "bent, not straight"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A ball, a box, a tin and a dice: how could you sort them into two groups?",
+        "a": "For example: rolls or does not roll; curved faces or only flat faces."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "assorted 3D shapes wooden",
+          "alt": "Wooden 3-D shapes",
+          "for": "hook"
+        },
+        {
+          "find": "tangram pieces",
+          "alt": "Tangram shapes",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Faces on a cube?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Vertices on a hexagon?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Does an A have a vertical line of symmetry?",
+          "a": "yes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sort by a rule",
+          "bullets": [
+            "Pick a rule.",
+            "Every shape goes in one group."
+          ],
+          "sort": {
+            "columns": [
+              "Has a curved face",
+              "Only flat faces"
+            ],
+            "cards": [
+              "sphere",
+              "cube",
+              "cylinder",
+              "cuboid",
+              "cone",
+              "pyramid"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Sort by curved or straight."
+        },
+        {
+          "heading": "Guess my rule",
+          "bullets": [
+            "Look at each group.",
+            "What is the same?"
+          ],
+          "model": {
+            "problem": "Group 1: triangle, pentagon. Group 2: square, rectangle.",
+            "steps": [
+              "Count sides: 3, 5.",
+              "Count sides: 4, 4."
+            ],
+            "answer": "Rule: 4 sides or not"
+          },
+          "note": "Teacher sorts; pupils guess."
+        },
+        {
+          "heading": "Patterns",
+          "bullets": [
+            "Shapes can make repeating patterns."
+          ],
+          "note": "Make a tile pattern with paper shapes."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which shape goes with: cube, cuboid?",
+            "options": [
+              "pyramid",
+              "sphere",
+              "circle"
+            ],
+            "answer": 0,
+            "why": "Only flat faces; the circle is 2-D."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Sort: circle, sphere, square, cube into 2-D and 3-D.",
+          "a": "2-D: circle, square; 3-D: sphere, cube",
+          "mins": 1,
+          "model": "Teacher asks: can I hold it? Sphere and cube are solid."
+        },
+        {
+          "q": "Rule: 'can roll'. Which roll: tin, box, ball?",
+          "a": "tin, ball",
+          "mins": 1
+        },
+        {
+          "q": "Shape with 3 sides goes in which group: 3 sides or 4 sides?",
+          "a": "3 sides",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Sort the 8 shapes on the sheet by number of sides.",
+          "a": "Answers on the sheet key",
+          "mins": 2,
+          "model": "Teacher sorts the first two."
+        },
+        {
+          "q": "Extend: Sort household objects by 'has a curved face'.",
+          "a": "Answers will vary",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Sort the same shapes a second way and say the rule.",
+          "a": "Answers will vary",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is 3-D?",
+          "a": "A) cone",
+          "mins": 1,
+          "options": [
+            "cone",
+            "circle",
+            "triangle"
+          ]
+        },
+        {
+          "q": "Big question: how many ways can we sort?",
+          "a": "Many: by sides, faces, curved or flat, 2-D or 3-D.",
+          "mins": 1
+        }
+      ],
+      "homework": "Sort 6 things from the kitchen two different ways.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: find a shape that is in both 'curved face' and 'flat face' groups. (cylinder or cone)",
+      "resources": [
+        "White Rose Maths Year 2, Shape block: small steps 'Sort 2-D and 3-D shapes' and 'Make patterns with 2-D and 3-D shapes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Household 3-D objects",
+        "Paper 2-D shapes (printable)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 79 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 80,
+      "title": "End-of-year assessment: number and calculation",
+      "duration": 30,
+      "bigQuestion": "How much can I do on my own now?",
+      "objectives": [
+        "To understand how well I can use Year 2 number and calculation on my own"
+      ],
+      "successCriteria": [
+        "All: answer place value and counting questions",
+        "Most: add and subtract 2-digit numbers",
+        "Some: use the 2, 5 and 10 times tables"
+      ],
+      "smsc": "Moral: honesty (amanah, أَمَانَة): doing our own work",
+      "keywords": [
+        {
+          "term": "assessment",
+          "def": "a check of what we know"
+        },
+        {
+          "term": "tens and ones",
+          "def": "the value of each digit"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 10 ones for 1 ten"
+        },
+        {
+          "term": "check",
+          "def": "make sure an answer is right"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you get stuck in a test, what can you do?",
+        "a": "Read it again, draw it, try a different question and come back."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pencil and paper",
+          "alt": "A pencil and paper",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square",
+          "alt": "A hundred square",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "5 × 3 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "20 ÷ 2 = ?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "47 + 10 = ?",
+          "a": "57",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Our number skills",
+          "bullets": [
+            "Tens and ones to 100.",
+            "Add and subtract.",
+            "2, 5, 10 times tables."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Show your thinking",
+          "bullets": [
+            "Draw tens and ones.",
+            "Use a number line."
+          ],
+          "model": {
+            "problem": "36 + 27",
+            "steps": [
+              "30 + 20 = 50.",
+              "6 + 7 = 13.",
+              "50 + 13 = 63."
+            ],
+            "answer": "63"
+          },
+          "note": "Model a column of jumps."
+        },
+        {
+          "heading": "Assessment rules",
+          "bullets": [
+            "Work on your own.",
+            "Read every question.",
+            "Check your answers."
+          ],
+          "note": "Printable paper from the portal; teacher reads questions aloud if needed."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Partition 72.",
+          "a": "70 + 2",
+          "mins": 1,
+          "model": "Teacher: 7 tens and 2 ones: 70 + 2."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: End-of-year assessment paper (number, 20 minutes): (a) 6 + 8 (b) 15 - 7 (c) 34 + 25 (d) 63 - 28 (e) 5 × 7 (f) 40 ÷ 10 (g) write 86 in words (h) order 59, 95, 49 from smallest",
+          "a": "(a) 14 (b) 8 (c) 59 (d) 35 (e) 35 (f) 4 (g) eighty-six (h) 49, 59, 95",
+          "mins": 10,
+          "model": "Teacher reads (a) and shows counting on from 8: 9, 10, ... 14, then pupils work alone."
+        },
+        {
+          "q": "Extend: (a) 45 + __ = 100 (b) 2 × __ = 18 (c) Musa has 52p and spends 27p: change?",
+          "a": "(a) 55 (b) 9 (c) 25p",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: There are 35 sweets shared equally between 5 children. How many each?",
+          "a": "7",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "63 - 28 = ?",
+          "a": "A) 35",
+          "mins": 1,
+          "options": [
+            "35",
+            "45",
+            "91"
+          ]
+        },
+        {
+          "q": "Big question: what can I do on my own now?",
+          "a": "Answers will vary",
+          "mins": 1
+        }
+      ],
+      "homework": "No homework: rest, and tell a grown-up one question you were proud of.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: what is the biggest 2-digit number with digits that add to 10? (91)",
+      "resources": [
+        "White Rose Maths Year 2 end-of-year assessment: number and calculation questions (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed end-of-year assessment paper (school White Rose account)",
+        "Hundred square and number line",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 80 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 81,
+      "title": "End-of-year assessment: reasoning",
+      "duration": 30,
+      "bigQuestion": "Can I explain how I know?",
+      "objectives": [
+        "To understand how well I can reason about fractions, measures, shape and data"
+      ],
+      "successCriteria": [
+        "All: answer fractions and time questions",
+        "Most: answer measures, shape and data questions",
+        "Some: explain one answer in a full sentence"
+      ],
+      "smsc": "Moral: honesty (amanah, أَمَانَة): doing our own work",
+      "keywords": [
+        {
+          "term": "reason",
+          "def": "explain how you know"
+        },
+        {
+          "term": "fraction",
+          "def": "an equal part of a whole"
+        },
+        {
+          "term": "measure",
+          "def": "find how long, heavy or full"
+        },
+        {
+          "term": "explain",
+          "def": "say why"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is longer: 1 hour or 50 minutes? How do you know?",
+        "a": "1 hour: it is 60 minutes, which is more than 50."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug",
+          "alt": "A measuring jug",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler centimetres",
+          "alt": "A ruler",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Half of 18?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "A quarter of 12?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Faces on a cube?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What we will use",
+          "bullets": [
+            "Fractions, time, money.",
+            "Length, mass, capacity.",
+            "Shapes and data."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Explain how you know",
+          "bullets": [
+            "'I know ... because ...'",
+            "Use numbers in your reason."
+          ],
+          "model": {
+            "problem": "Is 3/4 of 8 more than 1/2 of 8?",
+            "steps": [
+              "1/4 of 8 is 2, so 3/4 is 6.",
+              "1/2 of 8 is 4.",
+              "6 is more than 4."
+            ],
+            "answer": "Yes, because 6 > 4"
+          },
+          "note": "Model a sentence."
+        },
+        {
+          "heading": "Assessment rules",
+          "bullets": [
+            "Work on your own.",
+            "Draw if it helps.",
+            "Check your units."
+          ],
+          "note": "Printable paper; teacher reads questions aloud."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show quarter past 3.",
+          "a": "Long hand on 3, short hand just past 3",
+          "mins": 1,
+          "model": "Teacher shows it on the plate clock."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Reasoning paper (20 minutes): (a) 1/4 of 20 (b) what time is 30 minutes after half past 4? (c) 50p + 20p + 5p (d) faces on a cuboid (e) read the scale: the jug shows 300 ml; add 200 ml: total? (f) block diagram: apples 6, pears 4: how many more apples?",
+          "a": "(a) 5 (b) 5 o'clock (c) 75p (d) 6 (e) 500 ml (f) 2",
+          "mins": 10,
+          "model": "Teacher reads (a): share 20 into 4 equal groups, 5 in each. Then pupils work alone."
+        },
+        {
+          "q": "Extend: Huda says 'a shape with 4 sides is always a square.' Is she right? Explain.",
+          "a": "No: a rectangle (or any quadrilateral) also has 4 sides.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: A ribbon is 40 cm. Ali cuts 15 cm off, then 10 cm. How long is it now?",
+          "a": "15 cm",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Half past 4 + 30 minutes =",
+          "a": "A) 5 o'clock",
+          "mins": 1,
+          "options": [
+            "5 o'clock",
+            "half past 5",
+            "4 o'clock"
+          ]
+        },
+        {
+          "q": "Big question: can I explain how I know?",
+          "a": "Answers will vary: 'I know ... because ...'",
+          "mins": 1
+        }
+      ],
+      "homework": "No homework: rest well. We go through the papers next lesson.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: a jug holds 1 litre. Three cups of 200 ml are poured out. How much is left? (400 ml)",
+      "resources": [
+        "White Rose Maths Year 2 end-of-year assessment: reasoning questions (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed end-of-year reasoning paper (school White Rose account)",
+        "Ruler, paper plate clock",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 81 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 82,
+      "title": "Feedback and filling gaps",
+      "duration": 30,
+      "bigQuestion": "What will I practise so I am ready for Year 3?",
+      "objectives": [
+        "To understand which questions I found hard and how to fix them"
+      ],
+      "successCriteria": [
+        "All: look at my marked paper with the teacher",
+        "Most: redo two questions I got wrong",
+        "Some: choose one next step"
+      ],
+      "smsc": "Spiritual: learning from mistakes and trying again with patience (sabr, صَبْر)",
+      "keywords": [
+        {
+          "term": "feedback",
+          "def": "what helps us improve"
+        },
+        {
+          "term": "mistake",
+          "def": "something to learn from"
+        },
+        {
+          "term": "next step",
+          "def": "what to practise"
+        },
+        {
+          "term": "method",
+          "def": "the way we work it out"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it good to make mistakes when we are learning? Why?",
+        "a": "Yes, if we learn from them: mistakes show us what to practise."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "green pen",
+          "alt": "A green pen for corrections",
+          "for": "hook"
+        },
+        {
+          "find": "number line",
+          "alt": "A number line",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "34 + 25 = ?",
+          "a": "59",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 20?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "5 × 7 = ?",
+          "a": "35",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Common mistakes",
+          "bullets": [
+            "63 - 28: we exchange a ten.",
+            "Read the question twice."
+          ],
+          "note": "Teacher shares anonymous examples from the class."
+        },
+        {
+          "heading": "Fix it: subtraction",
+          "bullets": [
+            "Exchange 1 ten for 10 ones."
+          ],
+          "model": {
+            "problem": "63 - 28",
+            "steps": [
+              "63 is 5 tens and 13 ones after exchange.",
+              "13 - 8 = 5.",
+              "5 tens - 2 tens = 3 tens."
+            ],
+            "answer": "35"
+          },
+          "note": "Model with tens and ones."
+        },
+        {
+          "heading": "Fix it: fractions",
+          "bullets": [
+            "Share into equal groups."
+          ],
+          "misconception": {
+            "wrong": "1/4 of 20 is 4.",
+            "right": "Share 20 into 4 groups: 5 in each."
+          },
+          "note": "Model 1/4 of 20 with 20 counters in 4 groups."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "72 - 35 = ?",
+            "options": [
+              "37",
+              "43",
+              "47"
+            ],
+            "answer": 0,
+            "why": "Exchange: 12 - 5 = 7, 6 tens - 3 tens = 3 tens: 37."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "54 - 27 = ?",
+          "a": "27",
+          "mins": 1,
+          "model": "Teacher exchanges: 14 - 7 = 7, 4 tens - 2 tens = 2 tens: 27."
+        },
+        {
+          "q": "1/3 of 15?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "10 × 8 = ?",
+          "a": "80",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Redo two questions you got wrong in green pen.",
+          "a": "Corrections checked by the teacher",
+          "mins": 2,
+          "model": "Teacher redoes one question from the paper with the class."
+        },
+        {
+          "q": "Extend: Try the 3 new questions like them on the sheet.",
+          "a": "Answers on the sheet key",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Write your own question for a friend and its answer.",
+          "a": "Answers will vary",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "81 - 46 = ?",
+          "a": "A) 35",
+          "mins": 1,
+          "options": [
+            "35",
+            "45",
+            "47"
+          ]
+        },
+        {
+          "q": "Big question: what will I practise?",
+          "a": "Answers will vary: one next step",
+          "mins": 1
+        }
+      ],
+      "homework": "Practise your next step for 5 minutes every day this week.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: find two numbers that add to 100 and have a difference of 20. (60 and 40)",
+      "resources": [
+        "White Rose Maths Year 2 end-of-year assessment: marked papers and question-level analysis (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Marked end-of-year papers (returned in the portal)",
+        "Green pen",
+        "Counters or pasta for sharing",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 82 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+      "n": 83,
+      "title": "Times tables and number bonds: ready for Year 3",
+      "duration": 30,
+      "bigQuestion": "Which facts do I know by heart?",
+      "objectives": [
+        "To understand which number facts I know instantly and how to keep them sharp"
+      ],
+      "successCriteria": [
+        "All: say bonds to 10 and 20 quickly",
+        "Most: say the 2, 5 and 10 times tables",
+        "Some: use a fact to find a related fact"
+      ],
+      "smsc": "Social: celebrating each other's progress at the end of Year 2",
+      "keywords": [
+        {
+          "term": "bond",
+          "def": "two numbers that make a total"
+        },
+        {
+          "term": "times table",
+          "def": "facts like 5 × 4 = 20"
+        },
+        {
+          "term": "fluent",
+          "def": "quick and correct"
+        },
+        {
+          "term": "related fact",
+          "def": "a fact made from one we know"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you know 7 + 3 = 10, what else do you know?",
+        "a": "3 + 7 = 10, 10 - 3 = 7, 70 + 30 = 100 and more."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "abacus",
+          "alt": "An abacus",
+          "for": "hook"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "8 + 2 = ?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "5 × 6 = ?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "13 + 7 = ?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Bonds to 10 and 20",
+          "bullets": [
+            "6 + 4 = 10, so 16 + 4 = 20."
+          ],
+          "table": {
+            "head": [
+              "To 10",
+              "To 20"
+            ],
+            "rows": [
+              [
+                "1 + 9",
+                "11 + 9"
+              ],
+              [
+                "3 + 7",
+                "13 + 7"
+              ],
+              [
+                "5 + 5",
+                "15 + 5"
+              ]
+            ]
+          },
+          "note": "Spoken chant, no music."
+        },
+        {
+          "heading": "Tables",
+          "bullets": [
+            "2s, 5s and 10s.",
+            "Division facts too: 30 ÷ 5 = 6."
+          ],
+          "note": "Count in steps together."
+        },
+        {
+          "heading": "Fact families",
+          "bullets": [
+            "One fact, many facts."
+          ],
+          "model": {
+            "problem": "5 × 4 = 20",
+            "steps": [
+              "4 × 5 = 20.",
+              "20 ÷ 5 = 4.",
+              "20 ÷ 4 = 5."
+            ],
+            "answer": "4 facts from 1"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Beat your score",
+          "bullets": [
+            "1 minute: how many facts?"
+          ],
+          "note": "Pupils record their score; try again next week."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "If 6 + 4 = 10, then 60 + 40 =",
+            "options": [
+              "100",
+              "10",
+              "64"
+            ],
+            "answer": 0,
+            "why": "6 tens and 4 tens make 10 tens."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "If 2 × 9 = 18, what is 18 ÷ 2?",
+          "a": "9",
+          "mins": 1,
+          "model": "Teacher: same fact family: 18 ÷ 2 = 9."
+        },
+        {
+          "q": "17 + __ = 20",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "10 × 7 = ?",
+          "a": "70",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1-minute fact sheet: bonds to 10 and 20.",
+          "a": "Answers on the sheet key",
+          "mins": 2,
+          "model": "Teacher does the first three out loud."
+        },
+        {
+          "q": "Extend: 1-minute fact sheet: 2, 5 and 10 times tables.",
+          "a": "Answers on the sheet key",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Write 4 facts from 3 × 10 = 30.",
+          "a": "10 × 3 = 30, 30 ÷ 3 = 10, 30 ÷ 10 = 3, 3 × 10 = 30",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is a bond to 20?",
+          "a": "A) 12 + 8",
+          "mins": 1,
+          "options": [
+            "12 + 8",
+            "12 + 9",
+            "10 + 9"
+          ]
+        },
+        {
+          "q": "Big question: which facts do I know by heart?",
+          "a": "Answers will vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Summer fluency: 5 minutes of bonds and tables each day with a grown-up.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: if 4 + 6 = 10, what is 40 + 60 and 400 + 600? (100 and 1,000)",
+      "resources": [
+        "White Rose Maths Year 2 fluency: number bonds and 2, 5, 10 times tables (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 1-minute fact sheets",
+        "A timer",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 83 guided, independent and homework tasks"
       ]
     }
   ]

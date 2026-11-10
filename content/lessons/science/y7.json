@@ -3,7 +3,7 @@
   "year": "y7",
   "board": "KS3 National Curriculum via Pearson Exploring Science, building to Edexcel International GCSE Biology, Chemistry and Physics",
   "boardShort": "KS3 Exploring Science",
-  "source": "School Science curriculum journey 2026–27 (Year 7 Term 1: 7A Cells, tissues, organs and systems; 7E Mixtures and separation) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 7Aa–7Ae, 7Ea–7Ee) and 7E assessments; practicals adapted for live online lessons; INSET lesson standard. | Spring 1 2027 (lessons 17 to 31): Pearson Exploring Science 7C and 7G (school's Pearson five-year scheme) and Kerboodle Activate 1; home practicals with written safety guides | Spring 2 2027 (lessons 32 to 49): Pearson Exploring Science 7J and 7K, Kerboodle Activate (Electromagnets; Forces), circuit simulator, The Highway Code stopping distances; home practicals with household items and written safety guides; no mains work | Summer 1 2027 (lessons 50 to 64): Pearson Exploring Science 7D and 7H, Kerboodle Activate (Ecosystem; Matter; Reactions); home practicals with household items and written safety guides; burning magnesium as a teacher demonstration only",
+  "source": "School Science curriculum journey 2026–27 (Year 7 Term 1: 7A Cells, tissues, organs and systems; 7E Mixtures and separation) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 7Aa–7Ae, 7Ea–7Ee) and 7E assessments; practicals adapted for live online lessons; INSET lesson standard. | Spring 1 2027 (lessons 17 to 31): Pearson Exploring Science 7C and 7G (school's Pearson five-year scheme) and Kerboodle Activate 1; home practicals with written safety guides | Spring 2 2027 (lessons 32 to 49): Pearson Exploring Science 7J and 7K, Kerboodle Activate (Electromagnets; Forces), circuit simulator, The Highway Code stopping distances; home practicals with household items and written safety guides; no mains work | Summer 1 2027 (lessons 50 to 64): Pearson Exploring Science 7D and 7H, Kerboodle Activate (Ecosystem; Matter; Reactions); home practicals with household items and written safety guides; burning magnesium as a teacher demonstration only | Summer 2 2027 (lessons 65 to 76 new; weeks of 14 Jun to 5 Jul, 3 a week): Pearson Exploring Science 7La to 7Le Sound, Kerboodle Activate (Waves; Enquiry processes); sound taught with everyday and animal examples, no music; AP3 end-of-year test with own questions and mark scheme; home muffling investigation with a written safety guide and live debrief; rows 5 and 6 (second investigation, year review) go to the Autumn 2027 review",
   "lessons": [
     {
       "unit": "7A: Cells, tissues, organs and systems",
@@ -13683,6 +13683,2902 @@
         {
           "find": "glass of water",
           "alt": "Water (a compound)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 65,
+      "title": "Making sounds: vibrations and animal sounds",
+      "duration": 50,
+      "bigQuestion": "A cricket has no voice, yet you can hear it across a field at night. How do you think it makes its sound?",
+      "objectives": [
+        "To understand that every sound is made by something vibrating"
+      ],
+      "successCriteria": [
+        "All: identify what vibrates to make a sound",
+        "Most: describe how three animals make sounds",
+        "Some: explain how a bigger vibration changes the sound"
+      ],
+      "crossCurricular": "Biology: animal communication",
+      "smsc": "Spiritual: the variety of sounds in creation",
+      "keywords": [
+        {
+          "term": "vibration",
+          "def": "a quick movement backwards and forwards"
+        },
+        {
+          "term": "source",
+          "def": "the object that makes the sound"
+        },
+        {
+          "term": "loudness",
+          "def": "how strong a sound is"
+        },
+        {
+          "term": "pitch",
+          "def": "how high or low a sound is"
+        },
+        {
+          "term": "vocal cords",
+          "def": "folds in the throat of mammals that vibrate to make sounds"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A cricket has no voice, yet you can hear it across a field at night. How do you think it makes its sound?",
+        "a": "It rubs its wings together; the vibrating wings make the sound."
+      },
+      "islamicLink": {
+        "text": "Allah tells us that Prophet Sulayman, peace be upon him, said: 'We have been taught the language of birds' (An-Naml 27:16). Animals communicate with sounds made in many different ways, each part of Allah's design.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "An atom of oxygen has the symbol...",
+          "a": "O",
+          "mins": 1,
+          "options": [
+            "O",
+            "Ox",
+            "Og"
+          ]
+        },
+        {
+          "q": "A producer in a food chain gets its energy from...",
+          "a": "The Sun (light)",
+          "mins": 1,
+          "options": [
+            "The Sun (light)",
+            "Eating plants"
+          ]
+        },
+        {
+          "q": "A material made of one type of atom is...",
+          "a": "An element",
+          "mins": 1,
+          "options": [
+            "An element",
+            "A compound"
+          ]
+        },
+        {
+          "q": "Name the force that slows a moving object when surfaces rub.",
+          "a": "Friction",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Every sound starts with a vibration",
+          "bullets": [
+            "Something moves back and forth quickly",
+            "Bigger vibrations: louder",
+            "Faster vibrations: higher pitch"
+          ],
+          "note": "Twang a ruler on a table edge on camera; then shorten the overhang."
+        },
+        {
+          "heading": "Animal sounds",
+          "bullets": [
+            "Each animal vibrates a different part"
+          ],
+          "note": "Read across each row.",
+          "table": {
+            "head": [
+              "Animal",
+              "What vibrates",
+              "How"
+            ],
+            "rows": [
+              [
+                "Cricket",
+                "Wings",
+                "Rubs one wing on the other"
+              ],
+              [
+                "Grasshopper",
+                "Wing edge",
+                "Rubs back legs against it"
+              ],
+              [
+                "Bird",
+                "Syrinx (voice box at the base of the windpipe)",
+                "Air from the lungs"
+              ],
+              [
+                "Frog",
+                "Vocal cords and vocal sac",
+                "Air pushed back and forth"
+              ],
+              [
+                "Dog",
+                "Vocal cords",
+                "Air from the lungs"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Seeing vibrations",
+          "bullets": [
+            "Rice on a stretched cling-film drum",
+            "A ruler twanging",
+            "Ripples when a vibrating object touches water"
+          ],
+          "note": "We often cannot see vibrations, but we can see their effects."
+        },
+        {
+          "heading": "Changing the sound",
+          "bullets": [
+            "Hit or pluck harder: bigger vibration, louder",
+            "Shorter or tighter: faster vibration, higher",
+            "Longer or looser: slower vibration, lower"
+          ],
+          "note": "Demonstrate with the ruler and an elastic band."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "You twang a ruler harder. What changes?",
+            "options": [
+              "It gets louder",
+              "It gets higher",
+              "It gets lower"
+            ],
+            "answer": 0,
+            "why": "A harder twang makes a bigger vibration, so louder. Pitch depends on how fast it vibrates, not how hard."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why a shorter ruler overhang gives a higher sound.",
+          "a": "The shorter part vibrates faster, so the pitch is higher",
+          "mins": 2,
+          "model": "Link change to vibration to sound: shorter overhang, so it vibrates faster, so higher pitch."
+        },
+        {
+          "q": "What vibrates when a dog barks?",
+          "a": "Its vocal cords",
+          "mins": 1
+        },
+        {
+          "q": "Which change makes a sound louder: harder or faster?",
+          "a": "Harder (bigger vibrations)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Twang a ruler on a table edge with 30 cm, 20 cm and 10 cm overhanging. Record pitch (higher or lower) and what you see in a table.",
+          "a": "A table: 30 cm low and slow, 20 cm medium, 10 cm high and fast vibrations",
+          "mins": 12,
+          "model": "Teacher twangs the ruler at 30 cm on camera and fills in the first row: low pitch, slow wide vibration."
+        },
+        {
+          "q": "Extend: Stretch an elastic band over an open box. Pluck it gently and harder. Describe both.",
+          "a": "Harder pluck: bigger vibration and louder; pitch about the same",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A bee's wings beat about 230 times a second and a mosquito's about 600. Which buzz is higher? Explain.",
+          "a": "The mosquito's, because its wings vibrate faster",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Pitch depends on how ... something vibrates.",
+          "a": "Fast",
+          "mins": 1,
+          "options": [
+            "Fast",
+            "Hard"
+          ]
+        },
+        {
+          "q": "Big question: how does a cricket make its sound?",
+          "a": "It rubs its wings together; the vibrating wings make the sound.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three sounds at home. For each, write what is vibrating.",
+      "send": "SEND: picture cards of sound sources. EAL: vibration, pitch, loudness, source. Stretch: research how a bird's syrinx can make two sounds at once.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): 7La Animal sounds",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Waves (sound, wave properties)",
+        "Ruler (30 cm), an elastic band, a small box",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "field cricket",
+          "alt": "A cricket",
+          "for": "hook"
+        },
+        {
+          "find": "ruler on table edge",
+          "alt": "A ruler on a table edge",
+          "for": "teach:3"
+        },
+        {
+          "find": "frog vocal sac",
+          "alt": "A frog with its vocal sac",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 66,
+      "title": "How sound travels",
+      "duration": 50,
+      "bigQuestion": "In films, spaceships explode with a huge bang. If you were floating in space nearby, what would you really hear?",
+      "objectives": [
+        "To understand how sound travels as vibrations passed from particle to particle"
+      ],
+      "successCriteria": [
+        "All: explain that sound needs a medium",
+        "Most: describe how particles pass on a sound wave",
+        "Some: explain why sound cannot travel through a vacuum"
+      ],
+      "crossCurricular": "Chemistry: the particle model of solids, liquids and gases",
+      "smsc": "Spiritual: the air that carries our words",
+      "keywords": [
+        {
+          "term": "medium",
+          "def": "a material that a wave travels through"
+        },
+        {
+          "term": "particle",
+          "def": "a tiny piece of matter"
+        },
+        {
+          "term": "vacuum",
+          "def": "a space with no particles at all"
+        },
+        {
+          "term": "longitudinal wave",
+          "def": "a wave where particles vibrate back and forth along the direction it travels"
+        },
+        {
+          "term": "compression",
+          "def": "a place where particles are squashed together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In films, spaceships explode with a huge bang. If you were floating in space nearby, what would you really hear?",
+        "a": "Nothing: space is almost a vacuum, so there are no particles to carry the sound."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And Allah has brought you out from the wombs of your mothers not knowing anything, and He gave you hearing and sight and hearts, so that you may be grateful' (An-Nahl 16:78). The air that carries every sound to our ears is part of this blessing.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Faster vibration gives a ... pitch.",
+          "a": "Higher",
+          "mins": 1,
+          "options": [
+            "Higher",
+            "Lower"
+          ]
+        },
+        {
+          "q": "What vibrates when a cricket chirps?",
+          "a": "Its wings",
+          "mins": 1,
+          "options": [
+            "Its wings",
+            "Its legs only"
+          ]
+        },
+        {
+          "q": "In which state are particles closest together?",
+          "a": "Solid",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Gas"
+          ]
+        },
+        {
+          "q": "Name the three states of matter.",
+          "a": "Solid, liquid, gas",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sound needs a medium",
+          "bullets": [
+            "Solids, liquids and gases carry sound",
+            "Particles pass on the vibration",
+            "No particles, no sound"
+          ],
+          "note": "Ask: how do you hear someone in the next room?"
+        },
+        {
+          "heading": "Particles passing it on",
+          "bullets": [
+            "Source pushes the particles next to it",
+            "They push the next ones",
+            "Squashed and spread-out regions move along"
+          ],
+          "note": "Use a slinky spring stretched along a table to show compressions moving.",
+          "cycle": [
+            "Source vibrates",
+            "Pushes nearby particles",
+            "Particles bump the next ones",
+            "Compressions travel outwards",
+            "Eardrum vibrates"
+          ]
+        },
+        {
+          "heading": "The bell jar demonstration",
+          "bullets": [
+            "An electric bell rings in a sealed jar",
+            "Air is pumped out",
+            "The sound fades to nothing"
+          ],
+          "note": "Teacher demonstration only (from the school's equipment or a silent clip): the bell is still vibrating but the sound cannot reach us."
+        },
+        {
+          "heading": "Longitudinal waves",
+          "bullets": [
+            "Particles vibrate along the direction of travel",
+            "Compressions and rarefactions",
+            "The particles do not travel with the wave"
+          ],
+          "note": "Each particle just jiggles back and forth on the spot.",
+          "compare": {
+            "left": {
+              "title": "Compression",
+              "points": [
+                "particles squashed together",
+                "higher pressure"
+              ]
+            },
+            "right": {
+              "title": "Rarefaction",
+              "points": [
+                "particles spread apart",
+                "lower pressure"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why is there no sound on the Moon's surface?",
+            "options": [
+              "There is no air to carry it",
+              "It is too cold",
+              "The Moon is too far from the Sun"
+            ],
+            "answer": 0,
+            "why": "With almost no particles, vibrations cannot be passed on."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why you can hear a knock through a wall.",
+          "a": "The wall's particles vibrate and pass the vibration on to the air on your side",
+          "mins": 2,
+          "model": "Trace the path: knock vibrates the wall's particles; they pass it through the wall; the air on your side vibrates; your ear detects it."
+        },
+        {
+          "q": "Do the air particles travel from the source to your ear?",
+          "a": "No, they vibrate on the spot and pass the energy on",
+          "mins": 1
+        },
+        {
+          "q": "What is a vacuum?",
+          "a": "A space with no particles",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a string telephone with two paper cups and 5 m of string. Test it with the string tight and then loose. Record what you hear and explain it.",
+          "a": "Tight string: clear sound because the string carries vibrations; loose: little or no sound",
+          "mins": 12,
+          "model": "Teacher shows the cup-and-string set-up on camera and explains that the string is the medium."
+        },
+        {
+          "q": "Extend: Pinch the string halfway. What happens and why?",
+          "a": "The sound stops: the vibration cannot pass the pinch",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain why astronauts talk by radio in space.",
+          "a": "Radio waves are electromagnetic and need no medium; sound needs particles",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Sound cannot travel through...",
+          "a": "A vacuum",
+          "mins": 1,
+          "options": [
+            "A vacuum",
+            "Water"
+          ]
+        },
+        {
+          "q": "Big question: what would you hear if a spaceship exploded near you in space?",
+          "a": "Nothing: there are no particles to carry the sound.",
+          "mins": 2
+        }
+      ],
+      "homework": "Draw a labelled diagram showing how sound from a door knock reaches your ear.",
+      "send": "SEND: particle diagram with arrows to complete. EAL: medium, vacuum, compression. Stretch: explain why sound travels slightly faster in warm air.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): 7Lb Sound in solids, liquids and gases",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Waves (sound, wave properties)",
+        "Home practical guide: string telephone (portal worksheet): two paper cups, 5 m of string, a pencil to make the holes (an adult helps)",
+        "Slinky spring (teacher)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bell jar vacuum pump",
+          "alt": "A bell jar on a vacuum pump",
+          "for": "teach:3"
+        },
+        {
+          "find": "slinky spring",
+          "alt": "A slinky spring",
+          "for": "teach:2"
+        },
+        {
+          "find": "Moon surface",
+          "alt": "The surface of the Moon",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 67,
+      "title": "The speed of sound",
+      "duration": 50,
+      "bigQuestion": "In a thunderstorm you see the flash, then count 3 seconds before the thunder. How far away was the lightning?",
+      "objectives": [
+        "To understand why sound travels at different speeds in different materials"
+      ],
+      "successCriteria": [
+        "All: compare the speed of sound in air, water and steel",
+        "Most: calculate distance from speed and time",
+        "Some: explain why we see lightning before we hear thunder"
+      ],
+      "crossCurricular": "Maths: rearranging a formula and calculating with units",
+      "smsc": "Spiritual: awe at lightning and thunder as signs",
+      "keywords": [
+        {
+          "term": "speed",
+          "def": "how far something travels in one second"
+        },
+        {
+          "term": "metres per second",
+          "def": "the unit of speed, m/s"
+        },
+        {
+          "term": "echo",
+          "def": "a sound reflected back to you"
+        },
+        {
+          "term": "delay",
+          "def": "the time between two events"
+        },
+        {
+          "term": "density",
+          "def": "how tightly packed a material's particles are"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a thunderstorm you see the flash, then count 3 seconds before the thunder. How far away was the lightning?",
+        "a": "About 1 km: sound travels about 340 m every second, so 3 × 340 = 1020 m."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'It is He who shows you the lightning, causing fear and hope, and He brings up the heavy clouds. And the thunder glorifies Him with His praise' (Ar-Ra'd 13:12-13). We study the light and sound of a storm as signs of Allah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Sound needs a...",
+          "a": "Medium",
+          "mins": 1,
+          "options": [
+            "Medium",
+            "Vacuum"
+          ]
+        },
+        {
+          "q": "In which state are particles furthest apart?",
+          "a": "Gas",
+          "mins": 1,
+          "options": [
+            "Gas",
+            "Solid"
+          ]
+        },
+        {
+          "q": "Speed = distance ÷ ...",
+          "a": "Time",
+          "mins": 1,
+          "options": [
+            "Time",
+            "Mass"
+          ]
+        },
+        {
+          "q": "A wave where particles vibrate along its direction is...",
+          "a": "Longitudinal",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Speed depends on the medium",
+          "bullets": [
+            "Fastest in solids",
+            "Slower in liquids",
+            "Slowest in gases"
+          ],
+          "note": "Particles closer together pass vibrations on faster.",
+          "chart": {
+            "kind": "bar",
+            "title": "Approximate speed of sound",
+            "labels": [
+              "Air",
+              "Water",
+              "Steel"
+            ],
+            "values": [
+              340,
+              1500,
+              5000
+            ],
+            "unit": "m/s"
+          }
+        },
+        {
+          "heading": "Light is much faster",
+          "bullets": [
+            "Light: 300 000 000 m/s",
+            "Sound in air: about 340 m/s",
+            "So we see lightning first"
+          ],
+          "note": "Light reaches us almost instantly."
+        },
+        {
+          "heading": "Model: how far away is the storm?",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "You count 5 s between the flash and the thunder. Speed of sound = 340 m/s. How far away was the lightning?",
+            "steps": [
+              "Write the formula: distance = speed × time",
+              "Substitute: 340 × 5",
+              "Calculate: 1700",
+              "Add the unit: 1700 m (1.7 km)"
+            ],
+            "answer": "1700 m"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "A sound travels 680 m in air at 340 m/s. How long does it take?",
+            "options": [
+              "2 s",
+              "0.5 s",
+              "1020 s"
+            ],
+            "answer": 0,
+            "why": "Time = distance ÷ speed = 680 ÷ 340 = 2 s."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A whale call travels 4500 m in water at 1500 m/s. How long does it take?",
+          "a": "4500 ÷ 1500 = 3 s",
+          "mins": 2,
+          "model": "Time = distance ÷ speed. Substitute 4500 ÷ 1500. Calculate: 3. Unit: seconds. So 3 s."
+        },
+        {
+          "q": "Why is sound faster in steel than in air?",
+          "a": "The particles are much closer, so they pass the vibration on faster",
+          "mins": 1
+        },
+        {
+          "q": "Count 2 s between flash and thunder. Distance?",
+          "a": "340 × 2 = 680 m",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Six questions on the worksheet: use distance = speed × time for sound in air (340 m/s), water (1500 m/s) and steel (5000 m/s). Show the formula, working and unit.",
+          "a": "Worked answers, e.g. 4 s in air: 1360 m; 0.2 s in steel: 1000 m; 3000 m in water: 2 s",
+          "mins": 13,
+          "model": "Teacher works question 1 on screen: 4 s in air, 340 × 4 = 1360 m."
+        },
+        {
+          "q": "Extend: Put your ear on a table while someone taps the far end. Then listen through the air. Which is louder and why?",
+          "a": "Through the table: solids carry sound well",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: A runner 100 m away hears the start signal. How long after it is made? Why could this matter in a race?",
+          "a": "100 ÷ 340 ≈ 0.29 s; runners further away would start later, so races use speakers by each lane or a light",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Sound is fastest in...",
+          "a": "Solids",
+          "mins": 1,
+          "options": [
+            "Solids",
+            "Gases"
+          ]
+        },
+        {
+          "q": "Big question: 3 s between flash and thunder: how far?",
+          "a": "About 1020 m (about 1 km).",
+          "mins": 2
+        }
+      ],
+      "homework": "Next storm (or with the practice sheet): count the seconds between flash and thunder and work out the distance.",
+      "send": "SEND: formula triangle and calculator. EAL: speed, delay, metres per second. Stretch: explain why sound travels faster in water than in air but light travels slower.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): 7Lb Speed of sound",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Waves (sound, wave properties)",
+        "Speed of sound calculation sheet with answers (portal worksheet)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "lightning storm",
+          "alt": "Lightning over a town",
+          "for": "hook"
+        },
+        {
+          "find": "steel railway track",
+          "alt": "A steel railway track",
+          "for": "keywords"
+        },
+        {
+          "find": "underwater ocean",
+          "alt": "Under the sea",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 68,
+      "title": "The ear: how we hear",
+      "duration": 50,
+      "bigQuestion": "Why do you think you can still hear a little when you put your fingers in your ears?",
+      "objectives": [
+        "To understand how the parts of the ear turn sound into signals for the brain"
+      ],
+      "successCriteria": [
+        "All: name the main parts of the ear",
+        "Most: describe the job of each part in order",
+        "Some: explain how damage to one part affects hearing"
+      ],
+      "crossCurricular": "Biology: nerves carrying signals to the brain",
+      "smsc": "Spiritual: hearing as a gift to be thankful for",
+      "keywords": [
+        {
+          "term": "eardrum",
+          "def": "a thin skin that vibrates when sound hits it"
+        },
+        {
+          "term": "ossicles",
+          "def": "three tiny bones that pass on and boost vibrations"
+        },
+        {
+          "term": "cochlea",
+          "def": "a coiled tube with hair cells that turn vibrations into signals"
+        },
+        {
+          "term": "auditory nerve",
+          "def": "carries signals from the ear to the brain"
+        },
+        {
+          "term": "pinna",
+          "def": "the outer ear that collects sound"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think you can still hear a little when you put your fingers in your ears?",
+        "a": "Vibrations travel through the bones of your skull to the inner ear as well as through the ear canal."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And Allah has brought you out from the wombs of your mothers not knowing anything, and He gave you hearing and sight and hearts, so that you may be grateful' (An-Nahl 16:78). The ear is mentioned first among these gifts.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Sound is fastest in...",
+          "a": "Solids",
+          "mins": 1,
+          "options": [
+            "Solids",
+            "Gases"
+          ]
+        },
+        {
+          "q": "Sound cannot travel through a...",
+          "a": "Vacuum",
+          "mins": 1,
+          "options": [
+            "Vacuum",
+            "Liquid"
+          ]
+        },
+        {
+          "q": "Distance for 2 s at 340 m/s?",
+          "a": "680 m",
+          "mins": 1,
+          "options": [
+            "680 m",
+            "170 m"
+          ]
+        },
+        {
+          "q": "What carries sound to our ears?",
+          "a": "Vibrations of air particles",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The parts of the ear",
+          "bullets": [
+            "Outer, middle and inner ear"
+          ],
+          "note": "Show the cross-section diagram.",
+          "table": {
+            "head": [
+              "Part",
+              "Job"
+            ],
+            "rows": [
+              [
+                "Pinna",
+                "Collects sound"
+              ],
+              [
+                "Ear canal",
+                "Channels sound inwards"
+              ],
+              [
+                "Eardrum",
+                "Vibrates"
+              ],
+              [
+                "Ossicles",
+                "Pass on and amplify vibrations"
+              ],
+              [
+                "Cochlea",
+                "Hair cells make electrical signals"
+              ],
+              [
+                "Auditory nerve",
+                "Carries signals to the brain"
+              ],
+              [
+                "Semicircular canals",
+                "Help balance, not hearing"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "From sound to signal",
+          "bullets": [
+            "Each part passes the vibration on"
+          ],
+          "note": "Trace the route on the diagram.",
+          "cycle": [
+            "Pinna collects sound",
+            "Eardrum vibrates",
+            "Ossicles amplify",
+            "Cochlea hair cells make signals",
+            "Auditory nerve to brain"
+          ]
+        },
+        {
+          "heading": "When hearing goes wrong",
+          "bullets": [
+            "Burst eardrum: cannot vibrate well",
+            "Damaged hair cells: do not grow back",
+            "Blocked canal: sound muffled"
+          ],
+          "note": "Hair cell damage from loud noise is permanent."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which part turns vibrations into electrical signals?",
+            "options": [
+              "Cochlea",
+              "Eardrum",
+              "Pinna"
+            ],
+            "answer": 0,
+            "why": "Hair cells in the cochlea make the signals; the eardrum only vibrates."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why a burst eardrum makes hearing worse.",
+          "a": "The eardrum cannot vibrate properly, so less vibration reaches the ossicles and cochlea",
+          "mins": 2,
+          "model": "Name the part, its job, and what happens when it fails: the eardrum vibrates; burst, it cannot; less vibration passes on."
+        },
+        {
+          "q": "What are the three ossicles called?",
+          "a": "Hammer, anvil and stirrup",
+          "mins": 1
+        },
+        {
+          "q": "Which part is for balance?",
+          "a": "Semicircular canals",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Label the ear diagram with seven parts and write the job of each.",
+          "a": "Seven correct labels and jobs as in the table",
+          "mins": 12,
+          "model": "Teacher labels the pinna and eardrum on screen and writes their jobs."
+        },
+        {
+          "q": "Extend: Write the path of a sound from the source to the brain as a flow chart.",
+          "a": "Source, air, pinna, canal, eardrum, ossicles, cochlea, nerve, brain",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why might an owl's face shape help it hear?",
+          "a": "The disc of feathers acts like a large pinna, collecting and directing sound to its ears",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The tiny bones are the...",
+          "a": "Ossicles",
+          "mins": 1,
+          "options": [
+            "Ossicles",
+            "Cochlea"
+          ]
+        },
+        {
+          "q": "Big question: why can you still hear with fingers in your ears?",
+          "a": "Vibrations travel through your skull bones to the inner ear.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the seven parts of the ear and their jobs for a quiz next lesson.",
+      "send": "SEND: diagram with a word bank. EAL: eardrum, cochlea, nerve, vibrate. Stretch: research how cochlear implants help some deaf people hear.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): 7Lc Detecting sounds",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Waves (sound, wave properties)",
+        "Ear diagram to label (portal worksheet)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "human ear anatomy diagram",
+          "alt": "A diagram of the parts of the ear",
+          "for": "teach:1"
+        },
+        {
+          "find": "cochlea diagram",
+          "alt": "A diagram of the cochlea",
+          "for": "keywords"
+        },
+        {
+          "find": "barn owl face",
+          "alt": "A barn owl's face",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 69,
+      "title": "Hearing range and protecting our hearing",
+      "duration": 50,
+      "bigQuestion": "Some dog whistles seem silent to us but make dogs come running. How can a sound be real but impossible for us to hear?",
+      "objectives": [
+        "To understand frequency, hearing range and how loud sounds damage hearing"
+      ],
+      "successCriteria": [
+        "All: define frequency and its unit",
+        "Most: compare human hearing range with other animals",
+        "Some: explain how to protect hearing from loud sounds"
+      ],
+      "crossCurricular": "PSHE: health and safety at work",
+      "smsc": "Moral: we are responsible for our hearing",
+      "keywords": [
+        {
+          "term": "frequency",
+          "def": "the number of vibrations each second"
+        },
+        {
+          "term": "hertz",
+          "def": "the unit of frequency, Hz: one vibration per second"
+        },
+        {
+          "term": "hearing range",
+          "def": "the frequencies an animal can hear"
+        },
+        {
+          "term": "decibel",
+          "def": "the unit for loudness, dB"
+        },
+        {
+          "term": "ultrasound",
+          "def": "sound too high for humans to hear, above 20 000 Hz"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some dog whistles seem silent to us but make dogs come running. How can a sound be real but impossible for us to hear?",
+        "a": "Its frequency is above about 20 000 Hz, outside our hearing range but inside a dog's."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, the hearing, the sight and the heart, about all of those one will be questioned' (Al-Isra 17:36). Our hearing is a trust (amanah), so we protect it and use it for good.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The tiny bones in the ear are the...",
+          "a": "Ossicles",
+          "mins": 1,
+          "options": [
+            "Ossicles",
+            "Cochlea"
+          ]
+        },
+        {
+          "q": "Which part makes electrical signals?",
+          "a": "Cochlea",
+          "mins": 1,
+          "options": [
+            "Cochlea",
+            "Pinna"
+          ]
+        },
+        {
+          "q": "Higher pitch means ... vibrations.",
+          "a": "Faster",
+          "mins": 1,
+          "options": [
+            "Faster",
+            "Bigger"
+          ]
+        },
+        {
+          "q": "Name the outer part of the ear.",
+          "a": "Pinna",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Frequency",
+          "bullets": [
+            "Vibrations per second",
+            "Measured in hertz (Hz)",
+            "Higher frequency: higher pitch"
+          ],
+          "note": "1000 Hz is 1000 vibrations each second."
+        },
+        {
+          "heading": "Hearing ranges",
+          "bullets": [
+            "Humans: about 20 Hz to 20 000 Hz",
+            "Our top limit falls with age"
+          ],
+          "note": "Approximate upper limits; ranges vary between individuals.",
+          "chart": {
+            "kind": "bar",
+            "title": "Approximate highest frequency heard",
+            "labels": [
+              "Human",
+              "Dog",
+              "Cat",
+              "Bat"
+            ],
+            "values": [
+              20,
+              45,
+              64,
+              110
+            ],
+            "unit": "kHz"
+          }
+        },
+        {
+          "heading": "Loudness in decibels",
+          "bullets": [
+            "Whisper: about 30 dB",
+            "Busy road: about 80 dB",
+            "Long periods above about 85 dB can damage hearing"
+          ],
+          "note": "Every 10 dB is roughly twice as loud to our ears.",
+          "table": {
+            "head": [
+              "Sound",
+              "About (dB)"
+            ],
+            "rows": [
+              [
+                "Whisper",
+                "30"
+              ],
+              [
+                "Talking",
+                "60"
+              ],
+              [
+                "Busy road",
+                "80"
+              ],
+              [
+                "Lawnmower",
+                "90"
+              ],
+              [
+                "Pneumatic drill nearby",
+                "110"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Protecting hearing",
+          "bullets": [
+            "Ear defenders or ear plugs",
+            "Turn volume down; take breaks",
+            "Move away from the source"
+          ],
+          "note": "Hair cells in the cochlea do not grow back."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "A sound of 30 000 Hz is...",
+            "options": [
+              "Ultrasound",
+              "Too quiet to hear",
+              "Very low pitched"
+            ],
+            "answer": 0,
+            "why": "Above 20 000 Hz is ultrasound: too high for humans, not too quiet."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A bat's call is 50 000 Hz. Can a human hear it? Explain.",
+          "a": "No: 50 000 Hz is above the human upper limit of about 20 000 Hz",
+          "mins": 2,
+          "model": "Compare the number with the range: our range is 20 to 20 000 Hz; 50 000 is higher; so it is ultrasound we cannot hear."
+        },
+        {
+          "q": "What is the unit of loudness?",
+          "a": "Decibel (dB)",
+          "mins": 1
+        },
+        {
+          "q": "Give one way to protect your hearing.",
+          "a": "Ear defenders, lower volume, move away",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use the chart and table to answer six questions on hearing range and loudness (portal worksheet).",
+          "a": "For example: a dog hears up to about 45 000 Hz; a lawnmower (90 dB) needs ear protection for long use",
+          "mins": 12,
+          "model": "Teacher answers question 1 on screen by reading the chart: the cat's upper limit is about 64 kHz, which is 64 000 Hz."
+        },
+        {
+          "q": "Extend: Design a poster for a workshop explaining why ear defenders are needed.",
+          "a": "Explains noise level, hair cell damage, and protection",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why do older people often not hear very high-pitched sounds?",
+          "a": "Hair cells that detect high frequencies are damaged over time, so the upper limit falls",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The unit of frequency is the...",
+          "a": "Hertz",
+          "mins": 1,
+          "options": [
+            "Hertz",
+            "Decibel"
+          ]
+        },
+        {
+          "q": "Big question: how can a dog whistle be real but silent to us?",
+          "a": "Its frequency is above our hearing range (over 20 000 Hz).",
+          "mins": 2
+        }
+      ],
+      "homework": "List five loud sounds in your life and one way to protect your hearing from each.",
+      "send": "SEND: chart with values labelled. EAL: frequency, hertz, decibel. Stretch: explain why elephants can communicate over long distances using infrasound.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): 7Lc Hearing ranges",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Waves (sound, wave properties)",
+        "Hearing range and loudness question sheet with answers (portal worksheet)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ear defenders",
+          "alt": "Ear defenders",
+          "for": "teach:4"
+        },
+        {
+          "find": "bat flying",
+          "alt": "A bat in flight",
+          "for": "keywords"
+        },
+        {
+          "find": "dog whistle",
+          "alt": "A dog whistle",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 70,
+      "title": "AP3: end-of-year science test",
+      "duration": 50,
+      "bigQuestion": "You have 27 minutes for 30 marks. When you reach a question you cannot start, what is the best thing to do?",
+      "objectives": [
+        "To understand what I can do under test conditions across Year 7 science"
+      ],
+      "successCriteria": [
+        "All: follow the timing of about a minute a mark",
+        "Most: answer calculation questions with formula, working and unit",
+        "Some: answer explain questions with linked points"
+      ],
+      "crossCurricular": "Maths: calculations with units",
+      "smsc": "Moral: honesty and integrity in tests",
+      "keywords": [
+        {
+          "term": "command word",
+          "def": "the instruction in a question, such as describe or explain"
+        },
+        {
+          "term": "describe",
+          "def": "say what happens"
+        },
+        {
+          "term": "explain",
+          "def": "say why or how, with 'because' or 'so'"
+        },
+        {
+          "term": "calculate",
+          "def": "work out a number, showing working"
+        },
+        {
+          "term": "unit",
+          "def": "what a number is measured in"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 27 minutes for 30 marks. When you reach a question you cannot start, what is the best thing to do?",
+        "a": "Mark it, move on, and come back at the end so you do not lose easy marks."
+      },
+      "starter": [
+        {
+          "q": "Unit of frequency?",
+          "a": "Hertz (Hz)",
+          "mins": 1,
+          "options": [
+            "Hertz (Hz)",
+            "Decibel (dB)"
+          ]
+        },
+        {
+          "q": "Speed = distance ÷ ...",
+          "a": "Time",
+          "mins": 1,
+          "options": [
+            "Time",
+            "Mass"
+          ]
+        },
+        {
+          "q": "Explain means...",
+          "a": "Say why or how",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Test instructions",
+          "bullets": [
+            "30 marks, 27 minutes",
+            "All Year 7 topics so far",
+            "Work alone in the portal test window, camera on"
+          ],
+          "note": "Read the front page together."
+        },
+        {
+          "heading": "Command words",
+          "bullets": [
+            "State: a short fact",
+            "Describe: what happens",
+            "Explain: why, with 'because'",
+            "Calculate: formula, working, unit"
+          ],
+          "note": "Underline the command word in every question."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "'Calculate the speed' needs...",
+            "options": [
+              "Formula, working and unit",
+              "A number only",
+              "A sentence"
+            ],
+            "answer": 0,
+            "why": "Marks are given for each step and the unit."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Model: calculate the speed of a cyclist who travels 120 m in 20 s.",
+          "a": "6 m/s",
+          "mins": 2,
+          "model": "Write speed = distance ÷ time; substitute 120 ÷ 20; answer 6; unit m/s."
+        },
+        {
+          "q": "What do you do if stuck?",
+          "a": "Move on and come back",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Q1 (2): Name the type of joint at the elbow and give the job of a tendon.",
+          "a": "Hinge joint (1); a tendon joins muscle to bone (1)",
+          "mins": 2,
+          "model": "Teacher reads Q1 aloud and shows how 2 marks means two separate points."
+        },
+        {
+          "q": "Q2 (2): Explain why a gas can be squashed but a solid cannot.",
+          "a": "Gas particles are far apart (1) so they can be pushed closer; solid particles are already touching (1)",
+          "mins": 2
+        },
+        {
+          "q": "Q3 (2): A current of 0.2 A flows in a series circuit. What is the current at each point? Why?",
+          "a": "0.2 A (1); current is the same everywhere in a series circuit (1)",
+          "mins": 2
+        },
+        {
+          "q": "Q4 (3): Calculate the resultant force on a box pushed with 30 N right while friction is 12 N left. State the direction.",
+          "a": "30 - 12 = 18 N (2) to the right (1)",
+          "mins": 3
+        },
+        {
+          "q": "Q5 (3): In grass → rabbit → fox, explain what happens to the grass if foxes are removed.",
+          "a": "Rabbits are not eaten so increase (1); they eat more grass (1); grass decreases (1)",
+          "mins": 3
+        },
+        {
+          "q": "Q6 (2): Give one difference between an element and a compound.",
+          "a": "An element has one type of atom (1); a compound has two or more types chemically joined (1)",
+          "mins": 2
+        },
+        {
+          "q": "Q7 (2): Write the word equation for iron reacting with oxygen.",
+          "a": "Iron + oxygen → iron oxide (2)",
+          "mins": 2
+        },
+        {
+          "q": "Q8 (3): Explain how sound from a door knock reaches your ear.",
+          "a": "The door vibrates (1); vibrations pass from particle to particle through the air (1); the eardrum vibrates (1)",
+          "mins": 3
+        },
+        {
+          "q": "Q9 (3): A thunderclap is heard 4 s after the flash. Speed of sound 340 m/s. How far away is the storm?",
+          "a": "Distance = speed × time (1); 340 × 4 (1); 1360 m (1)",
+          "mins": 3
+        },
+        {
+          "q": "Q10 (2): Name the part of the ear that vibrates first and the part that makes signals.",
+          "a": "Eardrum (1); cochlea (1)",
+          "mins": 2
+        },
+        {
+          "q": "Q11 (2): A mean temperature is needed from 21°C, 23°C and 22°C. Calculate it.",
+          "a": "(21 + 23 + 22) ÷ 3 (1) = 22°C (1)",
+          "mins": 2
+        },
+        {
+          "q": "Q12 (4): Explain how a polar bear is adapted to the Arctic (two adaptations).",
+          "a": "Thick fur (1) traps heat to keep warm (1); white fur (1) camouflages it on snow when hunting (1)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Explain answers need...",
+          "a": "Linked points",
+          "mins": 1,
+          "options": [
+            "Linked points",
+            "One word"
+          ]
+        },
+        {
+          "q": "Big question: what do you do when stuck?",
+          "a": "Mark it, move on, come back at the end.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write down three topics from the test you want to review over the summer.",
+      "send": "SEND: extra time and a reader as agreed in the SEND register; enlarged paper on request. EAL: command word mat. Stretch: attempt every 3 and 4-mark question fully.",
+      "resources": [
+        "AP3 Year 7 end-of-year science test (12 questions, 30 marks above, with mark scheme; portal test)",
+        "Pearson Exploring Science 7L Sound (the school's KS3 course) and the Year 7 units 7C, 7G, 7J, 7K, 7D, 7H",
+        "Command word mat (portal)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "exam paper pen",
+          "alt": "An exam paper and pen",
+          "for": "hook"
+        },
+        {
+          "find": "clock",
+          "alt": "A clock for timing",
+          "for": "teach:1"
+        },
+        {
+          "find": "calculator",
+          "alt": "A calculator",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 71,
+      "title": "Echoes and ultrasound",
+      "duration": 50,
+      "bigQuestion": "A bat can catch a moth in total darkness. How could it find the moth without seeing it?",
+      "objectives": [
+        "To understand how echoes and ultrasound are used to find distances and see inside things"
+      ],
+      "successCriteria": [
+        "All: explain what an echo is",
+        "Most: calculate a distance using an echo",
+        "Some: describe two uses of ultrasound"
+      ],
+      "crossCurricular": "Maths: multistep calculations",
+      "smsc": "Spiritual: wonder at the abilities of bats and dolphins",
+      "keywords": [
+        {
+          "term": "echo",
+          "def": "a sound reflected back from a surface"
+        },
+        {
+          "term": "reflect",
+          "def": "bounce back off a surface"
+        },
+        {
+          "term": "echolocation",
+          "def": "finding objects by listening to echoes"
+        },
+        {
+          "term": "sonar",
+          "def": "using sound echoes to find depth or objects under water"
+        },
+        {
+          "term": "ultrasound",
+          "def": "sound above 20 000 Hz, too high for humans"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bat can catch a moth in total darkness. How could it find the moth without seeing it?",
+        "a": "It sends out ultrasound calls and listens for the echoes from the moth: echolocation."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And in the creation of you and what He scatters of moving creatures are signs for people who are certain' (Al-Jathiyah 45:4). The bat's echolocation is one such sign, and people have learned from it to build sonar.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Humans hear up to about...",
+          "a": "20 000 Hz",
+          "mins": 1,
+          "options": [
+            "20 000 Hz",
+            "200 Hz"
+          ]
+        },
+        {
+          "q": "Unit of loudness?",
+          "a": "Decibel",
+          "mins": 1,
+          "options": [
+            "Decibel",
+            "Hertz"
+          ]
+        },
+        {
+          "q": "Distance = speed × ...",
+          "a": "Time",
+          "mins": 1,
+          "options": [
+            "Time",
+            "Mass"
+          ]
+        },
+        {
+          "q": "Sound in water travels at about...",
+          "a": "1500 m/s",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Echoes",
+          "bullets": [
+            "Sound reflects off hard surfaces",
+            "Smooth, hard walls: strong echoes",
+            "Soft materials absorb sound"
+          ],
+          "note": "Clap near a large wall outside and listen."
+        },
+        {
+          "heading": "Echolocation",
+          "bullets": [
+            "Bats and dolphins send out calls",
+            "Listen for the echo",
+            "Time tells them the distance"
+          ],
+          "note": "Show a bat photo."
+        },
+        {
+          "heading": "Model: a sonar depth",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "A ship's sonar pulse returns 2 s after it is sent. Speed of sound in water = 1500 m/s. How deep is the sea?",
+            "steps": [
+              "Distance there and back = speed × time = 1500 × 2 = 3000 m",
+              "The sound went down and back up",
+              "So depth = 3000 ÷ 2",
+              "Depth = 1500 m"
+            ],
+            "answer": "1500 m"
+          }
+        },
+        {
+          "heading": "Uses of ultrasound",
+          "bullets": [
+            "Medical scans of organs",
+            "Cleaning jewellery and tools",
+            "Breaking up kidney stones"
+          ],
+          "note": "Ultrasound is safe for scanning and gives pictures from echoes."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why do we halve the time in an echo calculation?",
+            "options": [
+              "The sound travels there and back",
+              "Sound slows down on the way back",
+              "Echoes are half as loud"
+            ],
+            "answer": 0,
+            "why": "The echo time covers the trip to the object and back, so the distance is half."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A shout echoes off a cliff after 3 s. Speed of sound 340 m/s. How far is the cliff?",
+          "a": "340 × 3 = 1020 m there and back; 1020 ÷ 2 = 510 m",
+          "mins": 2,
+          "model": "Distance there and back = 340 × 3 = 1020 m. Halve it for one way: 510 m."
+        },
+        {
+          "q": "Name an animal that uses echolocation.",
+          "a": "Bat or dolphin",
+          "mins": 1
+        },
+        {
+          "q": "Give one use of ultrasound.",
+          "a": "Medical scans, cleaning, breaking kidney stones",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Five echo and sonar calculations on the worksheet. Show distance = speed × time and halve for the echo.",
+          "a": "For example: sonar 4 s in water: 1500 × 4 ÷ 2 = 3000 m",
+          "mins": 12,
+          "model": "Teacher works the first question: echo from a wall after 0.5 s in air: 340 × 0.5 = 170, ÷ 2 = 85 m."
+        },
+        {
+          "q": "Extend: Why do concert halls and mosques use soft panels or carpets?",
+          "a": "Soft materials absorb sound and reduce echoes, so speech is clearer",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A dolphin's click returns from a fish after 0.04 s. How far is the fish?",
+          "a": "1500 × 0.04 = 60 m; ÷ 2 = 30 m",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A reflected sound is an...",
+          "a": "Echo",
+          "mins": 1,
+          "options": [
+            "Echo",
+            "Vacuum"
+          ]
+        },
+        {
+          "q": "Big question: how does a bat find a moth in the dark?",
+          "a": "It sends ultrasound and listens for echoes: echolocation.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find a place near home with a strong echo (with an adult). Describe the surfaces.",
+      "send": "SEND: step-by-step echo calculation frame. EAL: echo, reflect, ultrasound. Stretch: explain why bats use very high frequencies to find small insects.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): 7Ld Using sound",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Waves (sound, wave properties)",
+        "Echo and sonar calculation sheet with answers (portal worksheet)",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bat echolocation",
+          "alt": "A bat hunting",
+          "for": "hook"
+        },
+        {
+          "find": "dolphin",
+          "alt": "A dolphin",
+          "for": "teach:2"
+        },
+        {
+          "find": "ship sonar diagram",
+          "alt": "A diagram of ship sonar",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 72,
+      "title": "Sound waves: amplitude, frequency and wavelength",
+      "duration": 50,
+      "bigQuestion": "Two sounds have the same pitch but one is much louder. If you could see the sound waves, what would be different?",
+      "objectives": [
+        "To understand how the shape of a sound wave shows its loudness and pitch"
+      ],
+      "successCriteria": [
+        "All: label amplitude and wavelength on a wave trace",
+        "Most: link amplitude to loudness and frequency to pitch",
+        "Some: compare two wave traces and describe the sounds"
+      ],
+      "crossCurricular": "Maths: reading graphs and scales",
+      "smsc": "Spiritual: order and pattern in the natural world",
+      "keywords": [
+        {
+          "term": "amplitude",
+          "def": "the height of a wave from the middle line: bigger means louder"
+        },
+        {
+          "term": "wavelength",
+          "def": "the distance from one wave peak to the next"
+        },
+        {
+          "term": "frequency",
+          "def": "the number of waves each second, in hertz"
+        },
+        {
+          "term": "oscilloscope",
+          "def": "a device that shows a sound as a wave trace"
+        },
+        {
+          "term": "trace",
+          "def": "the line drawn on the screen"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two sounds have the same pitch but one is much louder. If you could see the sound waves, what would be different?",
+        "a": "The louder sound's wave would be taller (bigger amplitude); the waves would be the same distance apart."
+      },
+      "starter": [
+        {
+          "q": "A reflected sound is an...",
+          "a": "Echo",
+          "mins": 1,
+          "options": [
+            "Echo",
+            "Ultrasound"
+          ]
+        },
+        {
+          "q": "Unit of frequency?",
+          "a": "Hertz",
+          "mins": 1,
+          "options": [
+            "Hertz",
+            "Metre"
+          ]
+        },
+        {
+          "q": "Echo after 2 s, 340 m/s: distance to wall?",
+          "a": "340 m",
+          "mins": 1,
+          "options": [
+            "340 m",
+            "680 m"
+          ]
+        },
+        {
+          "q": "Sound waves are longitudinal or transverse?",
+          "a": "Longitudinal",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Seeing sound",
+          "bullets": [
+            "A microphone turns sound into a signal",
+            "An oscilloscope draws it as a wave",
+            "The trace shows loudness and pitch"
+          ],
+          "note": "Use a free oscilloscope app on the teacher's device with a steady tone (no music)."
+        },
+        {
+          "heading": "Parts of a wave",
+          "bullets": [
+            "Amplitude: height from the middle",
+            "Wavelength: peak to peak",
+            "Frequency: waves per second"
+          ],
+          "note": "Label a trace on screen."
+        },
+        {
+          "heading": "Reading traces",
+          "bullets": [
+            "Taller trace: louder",
+            "Waves closer together: higher pitch"
+          ],
+          "note": "Compare the two pairs.",
+          "table": {
+            "head": [
+              "Trace",
+              "Amplitude",
+              "Waves on screen",
+              "Sound"
+            ],
+            "rows": [
+              [
+                "A",
+                "Small",
+                "4",
+                "Quiet, low"
+              ],
+              [
+                "B",
+                "Large",
+                "4",
+                "Loud, low"
+              ],
+              [
+                "C",
+                "Small",
+                "8",
+                "Quiet, high"
+              ],
+              [
+                "D",
+                "Large",
+                "8",
+                "Loud, high"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Trace X has waves twice as close as trace Y. X sounds...",
+            "options": [
+              "Higher",
+              "Louder",
+              "Lower"
+            ],
+            "answer": 0,
+            "why": "Closer waves mean higher frequency, so higher pitch. Loudness depends on height."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A trace has 5 waves in 0.01 s. What is the frequency?",
+          "a": "5 ÷ 0.01 = 500 Hz",
+          "mins": 2,
+          "model": "Frequency = waves ÷ time = 5 ÷ 0.01 = 500 waves per second = 500 Hz."
+        },
+        {
+          "q": "What does a bigger amplitude mean?",
+          "a": "A louder sound",
+          "mins": 1
+        },
+        {
+          "q": "Wavelength is measured from ... to ...",
+          "a": "Peak to peak",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Sketch four wave traces on the worksheet grid: quiet low, loud low, quiet high, loud high. Label amplitude and wavelength on one.",
+          "a": "Four sketches matching the table; amplitude and wavelength labelled",
+          "mins": 12,
+          "model": "Teacher sketches 'quiet low' on screen and labels amplitude and wavelength."
+        },
+        {
+          "q": "Extend: Describe how the trace changes as a ruler twang fades away.",
+          "a": "Amplitude gets smaller; wavelength stays the same",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Sound travels at 340 m/s. Its frequency is 340 Hz. What is its wavelength?",
+          "a": "Wavelength = speed ÷ frequency = 1 m",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A louder sound has a bigger...",
+          "a": "Amplitude",
+          "mins": 1,
+          "options": [
+            "Amplitude",
+            "Wavelength"
+          ]
+        },
+        {
+          "q": "Big question: what is different about the louder wave?",
+          "a": "Taller (bigger amplitude); same spacing.",
+          "mins": 2
+        }
+      ],
+      "homework": "Draw and label a sound wave trace for a loud, high-pitched sound.",
+      "send": "SEND: pre-drawn grids with axes. EAL: amplitude, wavelength, trace. Stretch: research why a microphone is needed to show sound on an oscilloscope.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): 7Le Comparing waves",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Waves (sound, wave properties)",
+        "Wave trace sketching grid (portal worksheet)",
+        "Teacher's oscilloscope app with a steady tone (no music)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "oscilloscope sound wave",
+          "alt": "A sound wave on an oscilloscope",
+          "for": "teach:1"
+        },
+        {
+          "find": "microphone",
+          "alt": "A microphone",
+          "for": "keywords"
+        },
+        {
+          "find": "sine wave diagram",
+          "alt": "A wave diagram",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 73,
+      "title": "Comparing sound and light waves",
+      "duration": 50,
+      "bigQuestion": "Why can we see the Sun but not hear the huge explosions happening on it?",
+      "objectives": [
+        "To understand how sound waves and light waves are similar and different"
+      ],
+      "successCriteria": [
+        "All: give two similarities between sound and light",
+        "Most: give three differences",
+        "Some: explain an everyday event using both waves"
+      ],
+      "crossCurricular": "Physics: light topic (8J) next year",
+      "smsc": "Spiritual: the light of the Sun as a sign",
+      "keywords": [
+        {
+          "term": "transverse wave",
+          "def": "a wave where vibrations are at right angles to the direction it travels"
+        },
+        {
+          "term": "longitudinal wave",
+          "def": "a wave where vibrations are along the direction it travels"
+        },
+        {
+          "term": "reflection",
+          "def": "when a wave bounces off a surface"
+        },
+        {
+          "term": "medium",
+          "def": "a material a wave travels through"
+        },
+        {
+          "term": "vacuum",
+          "def": "a space with no particles"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why can we see the Sun but not hear the huge explosions happening on it?",
+        "a": "Light can travel through the vacuum of space; sound needs particles, so it cannot reach us."
+      },
+      "starter": [
+        {
+          "q": "Bigger amplitude means...",
+          "a": "Louder",
+          "mins": 1,
+          "options": [
+            "Louder",
+            "Higher"
+          ]
+        },
+        {
+          "q": "Light travels at about...",
+          "a": "300 000 000 m/s",
+          "mins": 1,
+          "options": [
+            "300 000 000 m/s",
+            "340 m/s"
+          ]
+        },
+        {
+          "q": "An echo is a ... sound.",
+          "a": "Reflected",
+          "mins": 1,
+          "options": [
+            "Reflected",
+            "Absorbed"
+          ]
+        },
+        {
+          "q": "Can sound travel through a vacuum?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sound and light compared",
+          "bullets": [
+            "Both are waves that transfer energy"
+          ],
+          "note": "Read across each row.",
+          "table": {
+            "head": [
+              "Feature",
+              "Sound",
+              "Light"
+            ],
+            "rows": [
+              [
+                "Type of wave",
+                "Longitudinal",
+                "Transverse"
+              ],
+              [
+                "Needs a medium?",
+                "Yes",
+                "No"
+              ],
+              [
+                "Speed in air",
+                "About 340 m/s",
+                "About 300 000 000 m/s"
+              ],
+              [
+                "Fastest in",
+                "Solids",
+                "A vacuum"
+              ],
+              [
+                "Reflects?",
+                "Yes (echo)",
+                "Yes (mirror)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Transverse and longitudinal",
+          "bullets": [
+            "Light: vibrations across the direction",
+            "Sound: vibrations along the direction"
+          ],
+          "note": "Use a slinky: shake sideways for transverse, push and pull for longitudinal."
+        },
+        {
+          "heading": "Everyday examples",
+          "bullets": [
+            "Lightning before thunder",
+            "Seeing a distant hammer hit before hearing it",
+            "Echo and mirror both reflect"
+          ],
+          "note": "Ask pupils for another example."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which travels through a vacuum?",
+            "options": [
+              "Light",
+              "Sound",
+              "Both"
+            ],
+            "answer": 0,
+            "why": "Light needs no particles. Sound does."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why a distant firework's flash is seen before the bang is heard.",
+          "a": "Light travels much faster than sound (300 000 000 m/s against 340 m/s), so it arrives first",
+          "mins": 2,
+          "model": "Compare the two speeds, then link: light is about a million times faster, so the flash reaches us first."
+        },
+        {
+          "q": "Which wave is transverse?",
+          "a": "Light",
+          "mins": 1
+        },
+        {
+          "q": "Give one similarity between sound and light.",
+          "a": "Both reflect / both are waves / both transfer energy",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write a comparison of sound and light in the portal response box: two similarities and three differences, using 'whereas'. Start: 'Sound and light are both...'",
+          "a": "For example: both are waves and both reflect; sound is longitudinal whereas light is transverse; sound needs a medium whereas light does not; light is much faster",
+          "mins": 12,
+          "model": "Teacher writes the first sentence: 'Sound and light are both waves that transfer energy.'"
+        },
+        {
+          "q": "Extend: A hammer hits a post 170 m away. How long after seeing it do you hear it?",
+          "a": "170 ÷ 340 = 0.5 s",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why is sound faster in solids but light slower in glass than in air?",
+          "a": "Sound depends on particles passing vibrations (closer is faster); light is slowed by the particles of materials",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Sound waves are...",
+          "a": "Longitudinal",
+          "mins": 1,
+          "options": [
+            "Longitudinal",
+            "Transverse"
+          ]
+        },
+        {
+          "q": "Big question: why can we see the Sun but not hear it?",
+          "a": "Light travels through the vacuum of space; sound cannot.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise 7L: make a one-page summary of sound with a diagram of the ear.",
+      "send": "SEND: comparison table to complete. EAL: transverse, longitudinal, whereas. Stretch: research why sound travels faster in water than in air.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): 7Le Comparing sound and light",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Waves (sound, wave properties)",
+        "Sound and light comparison table (portal worksheet)",
+        "Slinky spring (teacher)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "fireworks over city",
+          "alt": "Fireworks over a city",
+          "for": "hook"
+        },
+        {
+          "find": "Sun solar flare",
+          "alt": "The Sun with a solar flare",
+          "for": "teach:1"
+        },
+        {
+          "find": "slinky spring",
+          "alt": "A slinky spring",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 74,
+      "title": "Planning a home investigation: muffling sound",
+      "duration": 50,
+      "bigQuestion": "How does the number of layers of cloth around a beeping phone affect how far away it can be heard?",
+      "objectives": [
+        "To understand how to plan a fair, safe investigation with a clear hypothesis"
+      ],
+      "successCriteria": [
+        "All: identify the independent, dependent and control variables",
+        "Most: write a hypothesis with a scientific reason",
+        "Some: write a step-by-step method with a risk assessment"
+      ],
+      "crossCurricular": "Maths: planning a results table with units",
+      "smsc": "Moral: honest recording of what really happens",
+      "keywords": [
+        {
+          "term": "hypothesis",
+          "def": "a testable idea with a reason"
+        },
+        {
+          "term": "independent variable",
+          "def": "the thing you change"
+        },
+        {
+          "term": "dependent variable",
+          "def": "the thing you measure"
+        },
+        {
+          "term": "control variable",
+          "def": "a thing you keep the same to make it fair"
+        },
+        {
+          "term": "risk assessment",
+          "def": "the hazards and how to reduce them"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How does the number of layers of cloth around a beeping phone affect how far away it can be heard?",
+        "a": "More layers absorb more sound, so the distance gets shorter."
+      },
+      "starter": [
+        {
+          "q": "Sound waves are...",
+          "a": "Longitudinal",
+          "mins": 1,
+          "options": [
+            "Longitudinal",
+            "Transverse"
+          ]
+        },
+        {
+          "q": "Soft materials ... sound.",
+          "a": "Absorb",
+          "mins": 1,
+          "options": [
+            "Absorb",
+            "Speed up"
+          ]
+        },
+        {
+          "q": "A fair test changes how many variables?",
+          "a": "One",
+          "mins": 1,
+          "options": [
+            "One",
+            "Three"
+          ]
+        },
+        {
+          "q": "Name a unit of distance.",
+          "a": "Metre (m)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The question",
+          "bullets": [
+            "Layers of cloth around a beeping phone",
+            "Walk away until you cannot hear it",
+            "Measure that distance"
+          ],
+          "note": "Use a steady alarm beep or timer tone, never music."
+        },
+        {
+          "heading": "The variables",
+          "bullets": [
+            "Change one, measure one, control the rest"
+          ],
+          "note": "Pupils vote each card into a column.",
+          "sort": {
+            "columns": [
+              "Independent",
+              "Dependent",
+              "Control"
+            ],
+            "cards": [
+              "Number of layers",
+              "Distance when it cannot be heard",
+              "Type of cloth",
+              "Phone volume",
+              "Same listener",
+              "Same room"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              2,
+              2,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "Writing a hypothesis",
+          "bullets": [
+            "I think ... because ...",
+            "Use science from 7L",
+            "It must be testable"
+          ],
+          "note": "Model: 'I think more layers will make the distance shorter because cloth absorbs sound energy.'"
+        },
+        {
+          "heading": "Safety guide: the muffling investigation",
+          "bullets": [
+            "Clear the floor so you do not trip walking backwards",
+            "Keep the volume moderate: never hold the phone to your ear",
+            "Ask an adult before using their phone",
+            "Use a beep or alarm tone, not music"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which is the dependent variable?",
+            "options": [
+              "Distance it can be heard",
+              "Number of layers",
+              "Type of cloth"
+            ],
+            "answer": 0,
+            "why": "The dependent variable is what you measure."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a method step for 2 layers.",
+          "a": "Wrap the phone in 2 layers of the same tea towel, set the same beep, walk backwards in a straight line until you cannot hear it, measure the distance",
+          "mins": 2,
+          "model": "Each step says what to do and how: 'Wrap in 2 layers. Start the beep at the same volume. Walk back in a line. Stop when silent. Measure with a tape measure.'"
+        },
+        {
+          "q": "Why repeat each test three times?",
+          "a": "To check results and calculate a mean, making them more reliable",
+          "mins": 1
+        },
+        {
+          "q": "Name one control variable.",
+          "a": "Same cloth, volume, listener or room",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write your full plan in the portal response box: question, hypothesis with a reason, variables, method of at least six steps, results table with headings and units, risk assessment.",
+          "a": "A complete plan, e.g. layers 0 to 4, three repeats, distance in m",
+          "mins": 14,
+          "model": "Teacher writes the hypothesis and the results table headings on screen: layers | distance 1 (m) | distance 2 (m) | distance 3 (m) | mean (m)."
+        },
+        {
+          "q": "Extend: Explain how you will decide exactly when you 'cannot hear it'.",
+          "a": "For example: stop at the first step where you cannot hear three beeps in a row",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Predict the shape of your graph and explain.",
+          "a": "A curve going down that levels off: each extra layer absorbs a little less extra",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The thing you change is the...",
+          "a": "Independent variable",
+          "mins": 1,
+          "options": [
+            "Independent variable",
+            "Dependent variable"
+          ]
+        },
+        {
+          "q": "Big question: what do you predict will happen as layers increase?",
+          "a": "The distance will get shorter because more layers absorb more sound.",
+          "mins": 1
+        }
+      ],
+      "homework": "Carry out your investigation at home before the next lesson: 0 to 4 layers, three repeats each, results in your table.",
+      "send": "SEND: a partly completed planning frame. EAL: variable, hypothesis, method. Stretch: plan a second investigation comparing different materials.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): 7L investigation and working scientifically skills",
+        "Kerboodle Activate for AQA KS3: Enquiry processes (planning, variables)",
+        "Investigation planning frame (portal worksheet)",
+        "Home practical guide and safety card: muffling sound (portal worksheet)",
+        "A phone or kitchen timer with a beep (adult's permission), a tea towel, a tape measure",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tape measure",
+          "alt": "A tape measure",
+          "for": "teach:1"
+        },
+        {
+          "find": "folded tea towels",
+          "alt": "Folded tea towels",
+          "for": "keywords"
+        },
+        {
+          "find": "kitchen timer",
+          "alt": "A kitchen timer",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 75,
+      "title": "Results, means and graphs",
+      "duration": 50,
+      "bigQuestion": "Your three distances for 2 layers were 5.4 m, 5.8 m and 3.1 m. Which result would you trust least, and why?",
+      "objectives": [
+        "To understand how to process results and present them in a line graph"
+      ],
+      "successCriteria": [
+        "All: calculate a mean from three repeats",
+        "Most: identify an anomalous result",
+        "Some: draw a line graph with labelled axes and a line of best fit"
+      ],
+      "crossCurricular": "Maths: means and line graphs",
+      "smsc": "Moral: honest treatment of anomalous results",
+      "keywords": [
+        {
+          "term": "mean",
+          "def": "add the values and divide by how many there are"
+        },
+        {
+          "term": "anomaly",
+          "def": "a result that does not fit the pattern"
+        },
+        {
+          "term": "repeat",
+          "def": "doing a test again to check"
+        },
+        {
+          "term": "line of best fit",
+          "def": "a smooth line or curve through the middle of the points"
+        },
+        {
+          "term": "axis",
+          "def": "the line along the side or bottom of a graph"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your three distances for 2 layers were 5.4 m, 5.8 m and 3.1 m. Which result would you trust least, and why?",
+        "a": "3.1 m: it does not fit the other two, so it is probably an anomaly from a mistake."
+      },
+      "starter": [
+        {
+          "q": "The thing you measure is the...",
+          "a": "Dependent variable",
+          "mins": 1,
+          "options": [
+            "Dependent variable",
+            "Control variable"
+          ]
+        },
+        {
+          "q": "Mean of 2, 4 and 6?",
+          "a": "4",
+          "mins": 1,
+          "options": [
+            "4",
+            "12"
+          ]
+        },
+        {
+          "q": "Why repeat a test?",
+          "a": "To check results and calculate a mean",
+          "mins": 1,
+          "options": [
+            "To check results and calculate a mean",
+            "To change the variable"
+          ]
+        },
+        {
+          "q": "Name one control variable from your plan.",
+          "a": "Same cloth, volume, listener or room",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: calculate a mean",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Distances for 1 layer: 7.0 m, 7.4 m, 7.2 m. Find the mean.",
+            "steps": [
+              "Add: 7.0 + 7.4 + 7.2 = 21.6",
+              "Divide by the number of results: 21.6 ÷ 3",
+              "Mean = 7.2 m"
+            ],
+            "answer": "7.2 m"
+          }
+        },
+        {
+          "heading": "Spot the anomaly",
+          "bullets": [
+            "Does one result not fit?",
+            "Leave it out of the mean",
+            "Say why it might have happened"
+          ],
+          "note": "Example: 5.4, 5.8, 3.1: leave out 3.1; mean of 5.4 and 5.8 = 5.6 m."
+        },
+        {
+          "heading": "Example class results",
+          "bullets": [
+            "Mean distance for each number of layers"
+          ],
+          "note": "Example data from a class test.",
+          "chart": {
+            "kind": "line",
+            "title": "Example: mean distance a beep can be heard",
+            "labels": [
+              "0 layers",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "values": [
+              9.0,
+              7.2,
+              5.6,
+              4.4,
+              3.6
+            ],
+            "unit": "m"
+          }
+        },
+        {
+          "heading": "Drawing the line graph",
+          "bullets": [
+            "Independent variable on the x-axis",
+            "Dependent variable on the y-axis",
+            "Label axes with units; plot with crosses",
+            "Draw a smooth line of best fit"
+          ],
+          "note": "Model the axes on squared paper."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Results: 4.2, 4.6, 4.4 m. The mean is...",
+            "options": [
+              "4.4 m",
+              "13.2 m",
+              "4.6 m"
+            ],
+            "answer": 0,
+            "why": "4.2 + 4.6 + 4.4 = 13.2; 13.2 ÷ 3 = 4.4 m."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Distances for 3 layers: 4.5 m, 4.3 m, 4.4 m. Calculate the mean.",
+          "a": "(4.5 + 4.3 + 4.4) ÷ 3 = 13.2 ÷ 3 = 4.4 m",
+          "mins": 2,
+          "model": "Add the three: 13.2. Divide by 3: 4.4. Unit: m."
+        },
+        {
+          "q": "Which axis has the number of layers?",
+          "a": "The x-axis (horizontal)",
+          "mins": 1
+        },
+        {
+          "q": "What do you do with an anomaly?",
+          "a": "Leave it out of the mean and suggest a reason",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete your results table with means, then draw a line graph of mean distance against number of layers on squared paper (or use the example data if you could not do the test).",
+          "a": "Correct means; graph with labelled axes, units, plotted points and a smooth line of best fit",
+          "mins": 14,
+          "model": "Teacher plots the first two points of the example data on screen and labels both axes."
+        },
+        {
+          "q": "Extend: Circle any anomalies and suggest a cause.",
+          "a": "For example: walked at an angle, a noise in the house, volume changed",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Describe the pattern using numbers from your graph.",
+          "a": "For example: distance falls from 9.0 m to 3.6 m; the fall gets smaller with each extra layer",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A result that does not fit is an...",
+          "a": "Anomaly",
+          "mins": 1,
+          "options": [
+            "Anomaly",
+            "Average"
+          ]
+        },
+        {
+          "q": "Big question: which result would you trust least, and why?",
+          "a": "3.1 m: it does not fit the others, so it is probably an anomaly.",
+          "mins": 1
+        }
+      ],
+      "homework": "Finish your graph neatly and bring it to the debrief lesson.",
+      "send": "SEND: pre-drawn axes and a calculator. EAL: mean, anomaly, axis. Stretch: calculate the percentage fall in distance from 0 to 4 layers.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): working scientifically: results and graphs",
+        "Kerboodle Activate for AQA KS3: Enquiry processes (presenting data)",
+        "Results table and graph paper (portal worksheet), with example class data",
+        "Calculator",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "line graph paper",
+          "alt": "Graph paper",
+          "for": "keywords"
+        },
+        {
+          "find": "tape measure on floor",
+          "alt": "A tape measure on the floor",
+          "for": "hook"
+        },
+        {
+          "find": "calculator",
+          "alt": "A calculator",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sound (7L); working scientifically",
+      "n": 76,
+      "title": "Conclusions, evaluation and debrief",
+      "duration": 50,
+      "bigQuestion": "If two pupils got different results for the same investigation, does that mean one of them did it wrong?",
+      "objectives": [
+        "To understand how to write a conclusion and evaluate an investigation"
+      ],
+      "successCriteria": [
+        "All: write a conclusion that describes the pattern with data",
+        "Most: explain the pattern using science",
+        "Some: evaluate the method and suggest improvements"
+      ],
+      "crossCurricular": "English: writing a structured scientific report",
+      "smsc": "Social: sharing and comparing results respectfully",
+      "keywords": [
+        {
+          "term": "conclusion",
+          "def": "what the results show, with data and a scientific reason"
+        },
+        {
+          "term": "evaluate",
+          "def": "judge how good the method and results were"
+        },
+        {
+          "term": "reliable",
+          "def": "results that are similar when repeated"
+        },
+        {
+          "term": "improvement",
+          "def": "a change to make the investigation better"
+        },
+        {
+          "term": "evidence",
+          "def": "data that supports or does not support a hypothesis"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If two pupils got different results for the same investigation, does that mean one of them did it wrong?",
+        "a": "Not always: different rooms, cloths or hearing affect results. Repeats and controls help us judge."
+      },
+      "starter": [
+        {
+          "q": "Mean of 5.4 and 5.8?",
+          "a": "5.6",
+          "mins": 1,
+          "options": [
+            "5.6",
+            "11.2"
+          ]
+        },
+        {
+          "q": "A result that does not fit is an...",
+          "a": "Anomaly",
+          "mins": 1,
+          "options": [
+            "Anomaly",
+            "Average"
+          ]
+        },
+        {
+          "q": "The x-axis shows the...",
+          "a": "Independent variable",
+          "mins": 1,
+          "options": [
+            "Independent variable",
+            "Dependent variable"
+          ]
+        },
+        {
+          "q": "Soft materials ... sound.",
+          "a": "Absorb",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Writing a conclusion",
+          "bullets": [
+            "Describe the pattern",
+            "Quote data",
+            "Explain with science",
+            "Say if the hypothesis was supported"
+          ],
+          "note": "Use the frame: 'As ... increased, ... decreased. For example ... This is because ...'"
+        },
+        {
+          "heading": "Model conclusion",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Write a conclusion for the example data.",
+            "steps": [
+              "Pattern: as the number of layers increased, the distance decreased",
+              "Data: from 9.0 m with 0 layers to 3.6 m with 4 layers",
+              "Science: the cloth absorbs sound energy, so less reaches the listener",
+              "Hypothesis: supported"
+            ],
+            "answer": "As layers increased, distance decreased from 9.0 m to 3.6 m because the cloth absorbs sound energy; the hypothesis was supported."
+          }
+        },
+        {
+          "heading": "Evaluating",
+          "bullets": [
+            "Were repeats close? (reliable)",
+            "Were there anomalies?",
+            "What was hard to control?"
+          ],
+          "note": "Debrief: pupils share in the chat one problem they had."
+        },
+        {
+          "heading": "Improvements",
+          "bullets": [
+            "Use a sound meter app for loudness in dB",
+            "Test in a quiet room",
+            "Use the same listener every time"
+          ],
+          "note": "A better measurement makes results more precise."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which improvement best reduces errors from 'when can I hear it'?",
+            "options": [
+              "Use a sound meter app",
+              "Use more cloth",
+              "Walk faster"
+            ],
+            "answer": 0,
+            "why": "A meter gives a number, not a judgement by ear."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one evaluation sentence about your repeats.",
+          "a": "For example: my repeats for 2 layers were close (5.4, 5.6, 5.8 m), so these results are reliable",
+          "mins": 2,
+          "model": "Look at the spread of repeats. Close together: reliable. Far apart: less reliable. Quote the numbers."
+        },
+        {
+          "q": "Was the hypothesis supported by the example data?",
+          "a": "Yes: more layers, shorter distance",
+          "mins": 1
+        },
+        {
+          "q": "Give one control variable that was hard to keep the same.",
+          "a": "Background noise / the listener's attention",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write your conclusion and evaluation in the portal response box using the frame. Start: 'As the number of layers increased, ...'",
+          "a": "Pattern with data, scientific explanation, hypothesis judgement, two evaluation points and two improvements",
+          "mins": 14,
+          "model": "Teacher writes the conclusion for the example data on screen, labelling pattern, data, science and hypothesis."
+        },
+        {
+          "q": "Extend: Compare your results with a partner's in a breakout room. Explain any differences.",
+          "a": "For example: different cloth thickness or room size",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Suggest a new question this investigation leads to.",
+          "a": "For example: does the type of material matter more than the thickness?",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Results that are similar when repeated are...",
+          "a": "Reliable",
+          "mins": 1,
+          "options": [
+            "Reliable",
+            "Anomalous"
+          ]
+        },
+        {
+          "q": "Big question: does a different result mean someone was wrong?",
+          "a": "Not always: conditions differ; repeats and controls help us judge.",
+          "mins": 1
+        }
+      ],
+      "homework": "Summer task: write up the full investigation as a report (plan, results, graph, conclusion, evaluation); it will be marked in September.",
+      "send": "SEND: conclusion frame with sentence starters. EAL: conclude, evaluate, reliable. Stretch: calculate the range of each set of repeats and use it in your evaluation.",
+      "resources": [
+        "Pearson Exploring Science 7L Sound (the school's KS3 course): working scientifically: conclusions and evaluations",
+        "Kerboodle Activate for AQA KS3: Enquiry processes (evaluating)",
+        "Conclusion and evaluation writing frame (portal worksheet)",
+        "Investigation report mark scheme (portal)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sound level meter",
+          "alt": "A sound level meter",
+          "for": "teach:4"
+        },
+        {
+          "find": "notebook and pencil",
+          "alt": "A notebook",
+          "for": "keywords"
+        },
+        {
+          "find": "quiet room",
+          "alt": "A quiet room",
           "for": "hook"
         }
       ]
