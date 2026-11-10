@@ -17,6 +17,8 @@ import { HistoryDialog, ReplaceDialog, ShareDialog } from "@/components/learn/cu
 import { ReviewPanel } from "@/components/learn/curriculum/ReviewPanel";
 import { rememberLesson } from "@/components/learn/curriculum/RecentLessons";
 import { useLessonPins } from "@/lib/learn/pins";
+import { loadLessonResources, type CurriculumResource } from "@/lib/learn/resources";
+import { LessonResourceList } from "@/components/learn/curriculum/TermResources";
 
 type Sibling = Pick<CurriculumLesson, "id" | "lesson_no" | "title">;
 type Full = CurriculumLesson & { content?: LessonContent | null; content_updated_at?: string | null; content_updated_by_name?: string | null; pupil_pdf_path?: string | null };
@@ -81,7 +83,7 @@ function Material({ icon, title, detail, onOpen, openLabel = "Open", menu }: { i
  * notes from the lesson itself, the rest of its unit, and on the right the
  * review status with its history and the lesson's versions.
  */
-export function LessonWorkspace({ id, area }: { id: string; area: "teach" | "admin" }) {
+export function LessonWorkspace({ id, at, area }: { id: string; at?: { subject: string; year: string; n: number }; area: "teach" | "admin" }) {
   const supabase = getSupabaseClient();
   const { roles } = useLearnSession();
   const roleNames = roles.map((r) => r.role);
@@ -96,24 +98,34 @@ export function LessonWorkspace({ id, area }: { id: string; area: "teach" | "adm
   const [dialog, setDialog] = useState<"studio" | "form" | "share" | "feedback" | "history" | "replace" | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const { pinned, toggle: togglePin } = useLessonPins();
+  const [termResources, setTermResources] = useState<CurriculumResource[]>([]);
+  const atSubject = at?.subject;
+  const atYear = at?.year;
+  const atN = at?.n;
 
   const load = useCallback(async () => {
     if (!supabase) return;
     // Fall back to the older columns if a migration hasn't reached the database yet.
-    const full = await supabase.from("curriculum_lessons").select(`${LESSON_COLUMNS_EDITOR}, content, content_updated_at, content_updated_by_name, pupil_pdf_path`).eq("id", id).maybeSingle();
-    const data = full.error ? (await supabase.from("curriculum_lessons").select(LESSON_COLUMNS).eq("id", id).maybeSingle()).data : full.data;
+    // By id, or by subject, year and lesson number (links from the term resource list).
+    const one = async (cols: string) => {
+      const q = supabase.from("curriculum_lessons").select(cols);
+      return id || !atSubject ? q.eq("id", id).maybeSingle() : q.eq("subject_slug", atSubject).eq("year", atYear || "").eq("lesson_no", atN || 0).maybeSingle();
+    };
+    const full = await one(`${LESSON_COLUMNS_EDITOR}, content, content_updated_at, content_updated_by_name, pupil_pdf_path`);
+    const data = full.error ? (await one(LESSON_COLUMNS)).data : full.data;
     const l = data as unknown as Full | null;
     if (!l) return setState("missing");
     setLesson(l);
     setState("ready");
     rememberLesson({ id: l.id, title: l.title, subject: l.subject, year: l.year, unit: l.unit });
+    loadLessonResources(l.subject_slug, l.year, l.lesson_no).then(setTermResources);
     const [sib, reviews] = await Promise.all([
       supabase.from("curriculum_lessons").select("id, lesson_no, title, unit").eq("subject_slug", l.subject_slug).eq("year", l.year).order("lesson_no"),
       loadReviews(),
     ]);
     setSiblings(((sib.data as (Sibling & { unit: string | null })[] | null) || []).filter((s) => (s.unit || null) === (l.unit || null)));
     setReview(reviews[reviewKey(l.subject_slug, "lesson", lessonRef(l.year, l.lesson_no))]);
-  }, [supabase, id]);
+  }, [supabase, id, atSubject, atYear, atN]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- load the lesson when the id changes
@@ -232,6 +244,20 @@ export function LessonWorkspace({ id, area }: { id: string; area: "teach" | "adm
               {lesson.pupil_pdf_path && <Material icon="file" title="Pupil copy" detail="Everything pupils need, given at the start" onOpen={() => open("pupil", `Pupil copy: ${lesson.title}`)} openLabel="Preview" />}
             </ul>
           </Part>
+
+          {termResources.length > 0 && (
+            <Part
+              title="Resources this lesson uses"
+              id="lw-term-resources"
+              action={
+                <Link href={`${base}/resources`} className={ui.btnLink}>
+                  All term resources
+                </Link>
+              }
+            >
+              <LessonResourceList resources={termResources} area={area} />
+            </Part>
+          )}
 
           <Part title="Learning objectives" id="lw-objectives">
             {objectives.length === 0 ? (
