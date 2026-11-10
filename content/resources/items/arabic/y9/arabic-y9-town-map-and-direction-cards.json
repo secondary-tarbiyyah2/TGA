@@ -1,0 +1,300 @@
+{
+ "id": "arabic-y9-town-map-and-direction-cards",
+ "title": "Town map and direction cards",
+ "type": "printable graph/grid",
+ "subject": "Arabic",
+ "subjectSlug": "arabic",
+ "year": "y9",
+ "unit": "Spring 1: At school",
+ "lessons": [
+  15
+ ],
+ "source": "Written for arabic/y9 lesson 15 (Town map and direction cards (portal worksheet))",
+ "intro": "Lesson 15: Bridge: my town and giving directions. Read the Arabic aloud, then do the tasks. Write in Arabic with all the harakat.",
+ "blocks": [
+  {
+   "h": "Places in town"
+  },
+  {
+   "table": {
+    "head": [
+     "Arabic",
+     "Say it",
+     "English"
+    ],
+    "rows": [
+     [
+      "مَسْجِد",
+      "masjid",
+      "mosque"
+     ],
+     [
+      "مَكْتَبَة",
+      "maktabah",
+      "library, bookshop"
+     ],
+     [
+      "حَدِيقَة",
+      "hadiqah",
+      "park, garden"
+     ],
+     [
+      "مَحَطَّة",
+      "mahattah",
+      "station"
+     ],
+     [
+      "مُسْتَشْفَى",
+      "mustashfa",
+      "hospital"
+     ],
+     [
+      "سُوق",
+      "suq",
+      "market"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Directions"
+  },
+  {
+   "table": {
+    "head": [
+     "Arabic",
+     "English"
+    ],
+    "rows": [
+     [
+      "اِذْهَبْ مُسْتَقِيمًا",
+      "go straight on"
+     ],
+     [
+      "خُذِ الشَّارِعَ الأَوَّلَ",
+      "take the first street"
+     ],
+     [
+      "اِنْعَطِفْ يَمِينًا / يَسَارًا",
+      "turn right / left"
+     ],
+     [
+      "المَسْجِدُ عَلَى اليَمِينِ",
+      "the masjid is on the right"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Model: a route"
+  },
+  {
+   "model": {
+    "title": "From the station to the library.",
+    "parts": [
+     {
+      "text": "اِذْهَبْ مُسْتَقِيمًا."
+     },
+     {
+      "text": "خُذِ الشَّارِعَ الثَّانِيَ."
+     },
+     {
+      "text": "اِنْعَطِفْ يَسَارًا."
+     },
+     {
+      "text": "المَكْتَبَةُ عَلَى اليَمِينِ، بِجَانِبِ الحَدِيقَةِ."
+     },
+     {
+      "label": "Why it works",
+      "text": "Four clear steps"
+     }
+    ]
+   }
+  },
+  {
+   "panels": [
+    {
+     "title": "To a female",
+     "points": [
+      "اِذْهَبْ → اِذْهَبِي",
+      "اِنْعَطِفْ → اِنْعَطِفِي",
+      "خُذْ → خُذِي"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Flashcards"
+  },
+  {
+   "cards": [
+    "مَسْجِد\nmasjid\nmosque",
+    "مَكْتَبَة\nmaktabah\nlibrary, bookshop",
+    "حَدِيقَة\nhadiqah\npark, garden",
+    "مَحَطَّة\nmahattah\nstation",
+    "مُسْتَشْفَى\nmustashfa\nhospital",
+    "سُوق\nsuq\nmarket",
+    "اِذْهَبْ مُسْتَقِيمًا\ngo straight on",
+    "خُذِ الشَّارِعَ الأَوَّلَ\ntake the first street",
+    "المَسْجِدُ عَلَى اليَمِينِ\nthe masjid is on the right",
+    "مَدِينَة\nmadinah\ntown",
+    "اِذْهَبْ\nidhhab\ngo!",
+    "عَلَى اليَمِينِ\n'ala l-yamin\non the right",
+    "عَلَى اليَسَارِ\n'ala l-yasar\non the left",
+    "مُسْتَقِيمًا\nmustaqiman\nstraight on"
+   ],
+   "cols": 3,
+   "height": 30,
+   "size": 7,
+   "task": "say the Arabic, turn over and check, or play pairs with a partner."
+  },
+  {
+   "h": "Town map"
+  },
+  {
+   "grid": {
+    "kind": "gridmap",
+    "eastings": [
+     "01",
+     "02",
+     "03",
+     "04"
+    ],
+    "rows": [
+     [
+      "04",
+      "مَسْجِد",
+      "",
+      "مَكْتَبَة",
+      "حَدِيقَة"
+     ],
+     [
+      "03",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "02",
+      "سُوق",
+      "",
+      "مُسْتَشْفَى",
+      ""
+     ],
+     [
+      "01",
+      "Start",
+      "",
+      "",
+      "مَحَطَّة"
+     ]
+    ]
+   }
+  },
+  {
+   "text": "The roads run along the empty squares. Start at 0101. Write directions in Arabic to two places, using اِذْهَبْ مُسْتَقِيمًا، اِنْعَطِفْ يَمِينًا / يَسَارًا."
+  },
+  {
+   "box": {
+    "title": "My directions",
+    "lines": 5
+   }
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "مَدِينَة (madinah)",
+     "def": "town, city"
+    },
+    {
+     "term": "اِذْهَبْ (idhhab)",
+     "def": "go! (to a male)"
+    },
+    {
+     "term": "عَلَى اليَمِينِ ('ala l-yamin)",
+     "def": "on the right"
+    },
+    {
+     "term": "عَلَى اليَسَارِ ('ala l-yasar)",
+     "def": "on the left"
+    },
+    {
+     "term": "مُسْتَقِيمًا (mustaqiman)",
+     "def": "straight on"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Direct a boy: go straight on, then turn right.",
+     "a": "اِذْهَبْ مُسْتَقِيمًا، ثُمَّ اِنْعَطِفْ يَمِينًا."
+    },
+    {
+     "q": "Same to a girl.",
+     "a": "اِذْهَبِي مُسْتَقِيمًا، ثُمَّ اِنْعَطِفِي يَمِينًا."
+    },
+    {
+     "q": "What is مَحَطَّة?",
+     "a": "station"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Use the map on the worksheet. Write directions from the masjid to the park and from the station to the hospital.",
+     "a": "For example: اِذْهَبْ مُسْتَقِيمًا، خُذِ الشَّارِعَ الأَوَّلَ، اِنْعَطِفْ يَمِينًا، الحَدِيقَةُ عَلَى اليَسَارِ."
+    },
+    {
+     "q": "Extend: Write three sentences about your own town: فِي مَدِينَتِي ...",
+     "a": "For example: فِي مَدِينَتِي مَسْجِدٌ كَبِيرٌ وَمَكْتَبَةٌ. المَحَطَّةُ قَرِيبَةٌ مِنْ بَيْتِي."
+    },
+    {
+     "q": "Stretch: Write the directions to a female visitor.",
+     "a": "اِذْهَبِي مُسْتَقِيمًا، خُذِي الشَّارِعَ الأَوَّلَ، اِنْعَطِفِي يَمِينًا."
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "'Turn left' (to a male):",
+     "options": [
+      "اِنْعَطِفْ يَمِينًا",
+      "اِنْعَطِفْ يَسَارًا",
+      "اِذْهَبْ مُسْتَقِيمًا"
+     ],
+     "a": "B) اِنْعَطِفْ يَسَارًا. يَسَار = left; يَمِين = right."
+    },
+    {
+     "q": "What does اِذْهَبْ mean? A) go! B) take! C) turn!",
+     "a": "A) go!",
+     "options": [
+      "go!",
+      "take!",
+      "turn!"
+     ]
+    },
+    {
+     "q": "Big question: give a visitor a two-step direction in Arabic.",
+     "a": "For example: اِذْهَبْ مُسْتَقِيمًا ثُمَّ اِنْعَطِفْ يَسَارًا."
+    }
+   ]
+  }
+ ]
+}
