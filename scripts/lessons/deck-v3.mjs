@@ -594,7 +594,7 @@ export function makeV3(h) {
       out.push(slideNo());
       const first = g[0].label;
       const last = g[g.length - 1].label;
-      const title = g.length === 1 ? first : /^Section/.test(first) && /^Section/.test(last) ? `Sections ${g[0].short} to ${g[g.length - 1].short}` : /^Question/.test(first) && /^Question/.test(last) ? `Questions ${g[0].short} to ${g[g.length - 1].short}` : `${first} to ${last}`;
+      const title = g.length === 1 ? first : /^Section/.test(first) && /^Section/.test(last) ? `Sections ${g[0].short} ${g.length === 2 ? "and" : "to"} ${g[g.length - 1].short}` : /^Question/.test(first) && /^Question/.test(last) ? `Questions ${g[0].short} ${g.length === 2 ? "and" : "to"} ${g[g.length - 1].short}` : `${first} to ${last}`;
       const mins = g.map((r) => r.mins).filter((m) => m != null);
       header(s, ctx, title, `${a.label}${groups.length > 1 ? ` · part ${gi + 1} of ${groups.length}` : ""}`, 3, mins.length === g.length ? mins.reduce((x, y) => x + y, 0) : null, null);
       const top = 2.12;
