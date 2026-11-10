@@ -1,0 +1,64 @@
+{
+ "id": "mathematics-y11-revision-exam-style-question-set-portal-workshee-l90",
+ "title": "Revision exam-style question set (lesson 90)",
+ "type": "revision set",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4MA1 Higher",
+ "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+ "lessons": [
+  90
+ ],
+ "source": "Seeded from mathematics/y11 lesson 90 (Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers))",
+ "intro": "Lesson 90: Calculus: differentiation and gradients. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "20 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "(a) Differentiate y = 4x³ - 7x² + x [2] (b) Gradient of y = 2x³ - x at x = 3 [2] (c) Differentiate y = x² + 8/x [2] (d) Find the points on y = x³ - 12x + 1 where the gradient is 0 [3] (e) A curve y = ax² + 3x has gradient 15 at x = 2: find a [3]",
+     "a": "(a) 12x² - 14x + 1 (b) 53 (c) 2x - 8/x² (d) (2, -15) and (-2, 17) (e) a = 3",
+     "model": "(a) term by term. (b) 6x² - 1 at x = 3: 54 - 1. (c) 8x⁻¹ → -8x⁻². (d) 3x² - 12 = 0, x = ±2; y = 8 - 24 + 1 = -15, y = -8 + 24 + 1 = 17. (e) 2ax + 3 = 15 at x = 2: 4a = 12.",
+     "marks": 12
+    },
+    {
+     "q": "The volume of water in a tank is V = 2t³ - 3t² + 40 litres after t minutes. Find the rate of change of V when t = 4.",
+     "a": "dV/dt = 6t² - 6t = 96 - 24 = 72 litres per minute",
+     "marks": 3
+    },
+    {
+     "q": "Differentiate y = 2x⁵ - 3x + 8",
+     "a": "10x⁴ - 3",
+     "model": "2x⁵ → 10x⁴; -3x → -3; 8 → 0.",
+     "marks": 1
+    },
+    {
+     "q": "Find the gradient of y = x² + 3x at x = -1",
+     "a": "1",
+     "marks": 1
+    },
+    {
+     "q": "Differentiate y = 6/x³",
+     "a": "-18x⁻⁴ = -18/x⁴",
+     "marks": 1
+    },
+    {
+     "q": "Where does y = x² - 4x have gradient 2?",
+     "a": "2x - 4 = 2, x = 3, point (3, -3)",
+     "marks": 2
+    },
+    {
+     "q": "Differentiate y = x⁴.",
+     "a": "A) 4x³",
+     "options": [
+      "4x³",
+      "x³",
+      "4x⁴"
+     ],
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}
