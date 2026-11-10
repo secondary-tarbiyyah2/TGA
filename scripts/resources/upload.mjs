@@ -59,7 +59,7 @@ function rows() {
         source: r.source,
         status: r.status,
         wording: r.wording,
-        item: r.item ? path.join(path.dirname(RES_DIR), r.item) : null,
+        item: r.item ? path.join(RES_DIR, r.item) : null, // r.item is relative to content/resources
       });
     }
   }
