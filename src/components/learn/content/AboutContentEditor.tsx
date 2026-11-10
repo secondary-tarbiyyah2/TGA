@@ -92,10 +92,10 @@ export function AboutContentEditor() {
           <p className="mt-1 text-xs text-ink/70">
             Set by policy 23 (Tarbiyyah Compass Character Framework) so the website, reports and policies always agree. To change them, update the policy.
           </p>
-          <ul className="mt-2 grid gap-1 text-sm text-ink/80 sm:grid-cols-3">
-            {COMPASS.map((s) => (
-              <li key={s.strand}>
-                <span className="font-semibold text-ink">{s.strand}:</span> {s.values.map((v) => `${v.word} (${v.english})`).join(", ")}
+          <ul className="mt-2 grid gap-1 text-sm text-ink/80 sm:grid-cols-5">
+            {COMPASS.map((v) => (
+              <li key={v.letter}>
+                <span className="font-semibold text-ink">{v.letter}:</span> {v.word} ({v.gloss})
               </li>
             ))}
           </ul>

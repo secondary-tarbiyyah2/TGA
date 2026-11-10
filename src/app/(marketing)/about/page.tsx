@@ -5,10 +5,7 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { getAboutContent, getSiteSettings } from "@/lib/content";
-import { COMPASS, type CompassStrand } from "@/content/compass";
-import { Icon, type IconName } from "@/components/learn/Icon";
-
-const STRAND_ICON: Record<CompassStrand["strand"], IconName> = { Faith: "heart", Knowledge: "bookOpen", Character: "heartHandshake" };
+import { COMPASS, COMPASS_WORD, IHSAN_HALF_TERM } from "@/content/compass";
 
 export const metadata: Metadata = pageMetadata({
   title: "About Us",
@@ -61,37 +58,31 @@ export default async function AboutPage() {
           <Kicker>Our values: the Tarbiyyah Compass</Kicker>
           <h2 id="recipe-heading" className="text-h2 font-serif font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
           <p className="mt-3 max-w-2xl text-ink/75">
-            Six values in three strands: faith, knowledge and character. They are the Academy&apos;s own, taught by name and lived in every lesson.
+            Our five values spell <strong className="font-semibold text-ink">{COMPASS_WORD}</strong>: worshipping Allah as though you see Him. In an online school much of a pupil&apos;s day happens with no adult in the room, so this is the character we build, one letter at a time.
           </p>
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {COMPASS.map((s, si) => (
-              <section key={s.strand} aria-labelledby={`strand-${si}`} className="reveal rounded-2xl border border-gold-light/60 bg-white p-5 shadow-sm">
-                <div className="flex items-center gap-3">
-                  <span aria-hidden="true" className="flex h-10 w-10 items-center justify-center rounded-xl bg-ink-900 text-gold-300">
-                    <Icon name={STRAND_ICON[s.strand]} />
-                  </span>
-                  <div>
-                    <h3 id={`strand-${si}`} className="font-serif text-lg font-semibold text-ink">{s.strand}</h3>
-                    <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-gold-700">{s.summary}</p>
-                  </div>
+          {/* The letters run down the left in large type, so the word reads at a glance. */}
+          <ol className="mt-8 grid gap-3 lg:grid-cols-5" aria-label={`The ${COMPASS_WORD} values`}>
+            {COMPASS.map((v) => (
+              <li key={v.letter} className="reveal flex gap-4 rounded-2xl border border-gold-light/60 bg-white p-4 shadow-sm lg:flex-col lg:gap-3 lg:p-5">
+                <span aria-hidden="true" className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink-900 font-serif text-3xl font-semibold text-gold-300">
+                  {v.letter}
+                </span>
+                <div className="min-w-0">
+                  <h3 className="font-serif text-lg font-semibold text-ink">
+                    <span className="text-gold-700">{v.word.charAt(0)}</span>
+                    {v.word.slice(1)}
+                  </h3>
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-gold-700">{v.gloss}</p>
+                  <p className="mt-1.5 text-sm leading-snug text-ink/75">{v.body}</p>
+                  <p className="mt-2 inline-block rounded-full bg-gold-50 px-2 py-0.5 font-mono text-[0.68rem] text-ink/75">{v.halfTerm}</p>
                 </div>
-                <ul className="mt-4 divide-y divide-gold-light/50">
-                  {s.values.map((v) => (
-                    <li key={v.word} className="py-3">
-                      <p className="flex flex-wrap items-baseline justify-between gap-x-3">
-                        <span className="font-serif text-xl font-semibold text-ink">
-                          {v.word} <span className="text-base font-medium text-gold-700">{v.english}</span>
-                        </span>
-                        <span className="rounded-full bg-gold-50 px-2 py-0.5 font-mono text-[0.68rem] text-ink/75">{v.halfTerm}</span>
-                      </p>
-                      <p className="mt-1 text-sm leading-snug text-ink/75">{v.body}</p>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+              </li>
             ))}
-          </div>
-          <p className="mt-6 max-w-3xl text-sm text-ink/70">One value is the focus each half term (shown on each value), recognised with merits, a Compass Star in every class and a character comment on every report.</p>
+          </ol>
+          <p className="mt-4 rounded-xl border border-gold-light/60 bg-white/70 px-4 py-3 text-sm text-ink/80">
+            <strong className="font-semibold text-ink">{IHSAN_HALF_TERM}: Ihsan.</strong> The year ends with all five together, doing everything as well as we can because Allah sees us.
+          </p>
+          <p className="mt-6 max-w-3xl text-sm text-ink/70">One value is the focus each half term, recognised with merits, a Compass Star in every class and a character comment on every report.</p>
         </Container>
       </section>
 

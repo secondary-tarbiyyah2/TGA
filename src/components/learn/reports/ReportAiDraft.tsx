@@ -114,7 +114,7 @@ export function ReportAiDraft({
               <Select value={recipe} onChange={(e) => setRecipe(e.target.value)} className={`mt-1 ${ui.select}`}>
                 <option value="">None</option>
                 {RECIPE.map((r) => (
-                  <option key={r.word} value={r.word}>{`${r.word} (${r.english}), ${r.halfTerm}`}</option>
+                  <option key={r.letter} value={r.word}>{`${r.letter}: ${r.word} (${r.gloss}), ${r.halfTerm}`}</option>
                 ))}
               </Select>
             </label>

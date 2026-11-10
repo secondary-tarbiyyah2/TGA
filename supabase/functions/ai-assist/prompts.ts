@@ -22,15 +22,14 @@ export const LIMITS = {
   batchThreads: 10,
 } as const;
 
-// The Tarbiyyah Compass values (src/content/compass.ts, policy 23), with their English meaning for the prompt.
-export const RECIPE_VALUES = ["Ikhlas", "Shukr", "Ilm", "Itqan", "Adab", "Amanah"] as const;
+// The Tarbiyyah Compass IHSAN values (src/content/compass.ts, policy 23), with their meaning for the prompt.
+export const RECIPE_VALUES = ["Ilm", "Honesty", "Sabr and shukr", "Adab", "Niyyah"] as const;
 const COMPASS_MEANING: Record<string, string> = {
-  Ikhlas: "sincerity",
-  Shukr: "gratitude",
   Ilm: "love of learning",
-  Itqan: "care and mastery",
+  Honesty: "truthfulness and trustworthiness",
+  "Sabr and shukr": "patience and gratitude",
   Adab: "good manners",
-  Amanah: "trustworthiness",
+  Niyyah: "sincere intention",
 };
 
 export const CATEGORIES = [
