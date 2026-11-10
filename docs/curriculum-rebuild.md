@@ -123,6 +123,7 @@ How to carry on: docs/agent-briefs/BRIEF-RESOURCES.md ("How to continue").
 
 Log:
 - 10 Nov 2026: pipeline, portal page and registers for all four terms (PR "Term resources: pipeline and registers").
+- 10 Nov 2026: Spring 1 resources for Mathematics (80: 35 revision sets incl. 17 new Year 11 homework sets with worked mark schemes, 31 printable grids, 8 worksheets incl. KS2 homework sheets, 3 mock sections, 3 organisers incl. the formulae sheet and command words), Business (28: written case studies with data and justify / analyse / evaluate frames, cash-flow and ratio sheets, 4 retrieval quizzes, 2 Paper-style practice questions) and Art (22: colour wheels, tonal and mark-making grids, star construction, perspective grid, rubrics, home practical guides). Generator: Natural Earth outline maps, grid maps, colour wheels, perspective and star templates; Commons pictures resolved in the workflow.
 
 ## Status
 

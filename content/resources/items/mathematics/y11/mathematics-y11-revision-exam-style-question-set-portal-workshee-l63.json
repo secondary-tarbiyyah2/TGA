@@ -1,0 +1,69 @@
+{
+ "id": "mathematics-y11-revision-exam-style-question-set-portal-workshee-l63",
+ "title": "Revision exam-style question set (lesson 63)",
+ "type": "revision set",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4MA1 Higher",
+ "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+ "lessons": [
+  63
+ ],
+ "source": "Seeded from mathematics/y11 lesson 63 (Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers))",
+ "intro": "Lesson 63: Revision: functions. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "25 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Core: f(x) = 3x + 2, g(x) = x² − 1. Find (a) f(−4) (b) gf(1) (c) f⁻¹(x) (d) solve f(x) = g(x), to 2 d.p.",
+     "a": "(a) −10 (b) 24 (c) (x − 2)/3 (d) 3.79, −0.79",
+     "model": "(a) 3(−4) + 2 = −10. (b) f(1) = 5, g(5) = 24. (c) y = 3x + 2, x = (y − 2)/3. (d) x² − 3x − 3 = 0, x = (3 ± √21)/2 = 3.79 or −0.79.",
+     "marks": 2
+    },
+    {
+     "q": "Extend : f(x) = 2x − 5 and g(x) = (x + 1)/2. Show that gf(x) = x − 2 and explain why fg(x) = gf(x) has no solution.",
+     "a": "gf(x) = (2x − 5 + 1)/2 = x − 2; fg(x) = x + 1 − 5 = x − 4. x − 4 = x − 2 is never true",
+     "marks": 4
+    },
+    {
+     "q": "Stretch : f(x) = (x + 3)/(x − 1), x ≠ 1. Show that ff(x) = x. What does this tell you about f⁻¹?",
+     "a": "ff(x) = 4x/4 = x, so f is its own inverse: f⁻¹ = f",
+     "marks": 3
+    },
+    {
+     "q": "f(x) = 5 − 2x. Find f(−3) and f⁻¹(x).",
+     "a": "f(−3) = 11 (B1); y = 5 − 2x, x = (5 − y)/2 (M1); f⁻¹(x) = (5 − x)/2 (A1)",
+     "model": "f(−3) = 5 − 2(−3) = 11. Inverse: y = 5 − 2x, so 2x = 5 − y, x = (5 − y)/2. f⁻¹(x) = (5 − x)/2.",
+     "marks": 3
+    },
+    {
+     "q": "f(x) = x² − 1, g(x) = x + 3. Find fg(x) in simplest form.",
+     "a": "x² + 6x + 8",
+     "marks": 1
+    },
+    {
+     "q": "Which value is excluded from the domain of 4/(2x + 1)?",
+     "a": "x = −1/2",
+     "marks": 1
+    },
+    {
+     "q": "f(x) = 4x − 3. Solve f(x) = 13.",
+     "a": "x = 4",
+     "marks": 1
+    },
+    {
+     "q": "f(x) = 4x − 3. Find f⁻¹(x).",
+     "a": "(x + 3)/4",
+     "marks": 1
+    },
+    {
+     "q": "f(x) = x², g(x) = x − 2. Find fg(5).",
+     "a": "9",
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

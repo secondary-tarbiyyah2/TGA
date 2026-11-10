@@ -1,0 +1,76 @@
+{
+ "id": "art-y8-twelve-hue-colour-wheel-and-mixing-strip",
+ "title": "Twelve-hue colour wheel and analogous mixing strip",
+ "type": "worksheet",
+ "subject": "Art & Design",
+ "subjectSlug": "art",
+ "year": "y8",
+ "unit": "Spring 1: Abstract art, still life and analogous colour",
+ "lessons": [
+  4
+ ],
+ "source": "Written for art/y8 lesson 4 (Twelve-hue colour wheel and mixing strip (pupil PDF))",
+ "intro": "Lesson 4. Colour the twelve-hue wheel, then mix a seven-step analogous range and a tint and shade strip.",
+ "blocks": [
+  {
+   "grid": {
+    "kind": "wheel",
+    "segments": 12,
+    "labels": [
+     "yellow",
+     "yellow-orange",
+     "orange",
+     "red-orange",
+     "red",
+     "red-purple",
+     "purple",
+     "blue-purple",
+     "blue",
+     "blue-green",
+     "green",
+     "yellow-green"
+    ]
+   }
+  },
+  {
+   "h": "Seven-step analogous range"
+  },
+  {
+   "grid": {
+    "kind": "boxes",
+    "count": 7,
+    "cols": 7,
+    "height": 22
+   }
+  },
+  {
+   "h": "Tint and shade strip for the middle hue"
+  },
+  {
+   "grid": {
+    "kind": "boxes",
+    "count": 7,
+    "cols": 7,
+    "labels": [
+     "tint",
+     "",
+     "",
+     "pure hue",
+     "",
+     "",
+     "shade"
+    ],
+    "height": 22
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Name the two neighbours of orange on the twelve-hue wheel.",
+     "a": "Yellow-orange and red-orange",
+     "lines": 1
+    }
+   ]
+  }
+ ]
+}

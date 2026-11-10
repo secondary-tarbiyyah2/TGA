@@ -1,0 +1,47 @@
+{
+ "id": "mathematics-y2-paper-number-line-0-to-100-or-a-100-square",
+ "title": "Paper number line 0 to 100 or a 100 square",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y2",
+ "unit": "Spring 1: Money; multiplication and division begins",
+ "lessons": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  7,
+  9,
+  15
+ ],
+ "source": "Seeded from mathematics/y2 lessons 1, 2, 3, 4, 6, 7, 9, 15 (Paper number line 0 to 100 or a 100 square)",
+ "intro": "Used in lessons 1, 2, 3, 4, 6, 7, 9, 15.",
+ "blocks": [
+  {
+   "h": "Number lines 0 to 100"
+  },
+  {
+   "grid": {
+    "kind": "numberline",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "labelEvery": 10,
+    "count": 3
+   }
+  },
+  {
+   "text": "Cut out each number line, or use it on a drawing tablet."
+  },
+  {
+   "h": "100 square"
+  },
+  {
+   "grid": {
+    "kind": "hundred"
+   }
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "id": "mathematics-y11-revision-exam-style-question-set-portal-workshee-l62",
+ "title": "Revision exam-style question set (lesson 62)",
+ "type": "revision set",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4MA1 Higher",
+ "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+ "lessons": [
+  62
+ ],
+ "source": "Seeded from mathematics/y11 lesson 62 (Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers))",
+ "intro": "Lesson 62: Revision: arithmetic sequences and series. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "20 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Core: For 7, 10, 13, ... find (a) the 40th term (b) the sum of the first 40 terms (c) whether 301 is a term",
+     "a": "(a) 124 (b) 2620 (c) yes, the 99th term",
+     "model": "(a) 7 + 39 × 3 = 124. (b) S40 = 20(14 + 39 × 3) = 20 × 131 = 2620. (c) 3n + 4 = 301 gives n = 99, a whole number: yes.",
+     "marks": 2
+    },
+    {
+     "q": "Extend : An arithmetic series has first term 5 and the sum of its first 10 terms is 230. Find d.",
+     "a": "230 = 10/2(10 + 9d) (M1); 46 = 10 + 9d (M1); d = 4 (A1)",
+     "marks": 3
+    },
+    {
+     "q": "Stretch : Prove that the sum of the first n odd numbers is n².",
+     "a": "a = 1, d = 2: Sₙ = n/2(2 + 2(n − 1)) = n/2 × 2n = n²",
+     "marks": 3
+    },
+    {
+     "q": "Find the nth term of 11, 8, 5, ... and its 25th term.",
+     "a": "14 − 3n (B1); −61 (B1)",
+     "model": "d = −3, a = 11. uₙ = 11 − 3(n − 1) = 14 − 3n. u25 = 14 − 75 = −61.",
+     "marks": 2
+    },
+    {
+     "q": "Find the sum of the first 20 terms of 4, 10, 16, ...",
+     "a": "1220",
+     "marks": 1
+    },
+    {
+     "q": "How many terms of 2, 5, 8, ... are less than 200?",
+     "a": "3n − 1 < 200, n < 67: 66 terms",
+     "marks": 2
+    },
+    {
+     "q": "Is 301 a term of 3n + 4?",
+     "a": "Yes: n = 99",
+     "marks": 1
+    },
+    {
+     "q": "Find the sum of the first 6 terms of 2, 9, 16, ...",
+     "a": "117",
+     "marks": 1
+    },
+    {
+     "q": "Write the formula for the nth term of an arithmetic sequence.",
+     "a": "a + (n − 1)d",
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

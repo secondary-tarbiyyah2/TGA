@@ -1,0 +1,43 @@
+{
+ "id": "mathematics-y4-times-tables-grid",
+ "title": "Times tables grid",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y4",
+ "unit": "Spring 1: Multiplication and division (b); length and perimeter; fractions",
+ "lessons": [
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "source": "Seeded from mathematics/y4 lessons 21, 22, 23, 24, 25 (Times tables grid)",
+ "intro": "Used in lessons 21, 22, 23, 24, 25.",
+ "blocks": [
+  {
+   "h": "Times tables grid"
+  },
+  {
+   "grid": {
+    "kind": "times",
+    "size": 12
+   }
+  },
+  {
+   "pagebreak": true
+  },
+  {
+   "h": "Fill it in yourself"
+  },
+  {
+   "grid": {
+    "kind": "times",
+    "size": 12,
+    "blank": true
+   }
+  }
+ ],
+ "name": false
+}
