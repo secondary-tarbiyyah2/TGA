@@ -5,376 +5,1036 @@
   "source": "Continues the school Drive Quran folder progression (TPS Quran Tracker tajweed rules) into Year 11; classical tajweed (Hafs 'an 'Asim) and tadabbur method; Qur'an text per the Madinah mushaf",
   "lessons": [
     {
-      "unit": "Unit 1: Mastery of tajweed",
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
       "n": 1,
       "title": "The tajweed map: Al-Fatihah line by line",
       "duration": 50,
+      "bigQuestion": "You recite Al-Fatihah at least 17 times a day. If you audited it today, would it pass every rule?",
       "objectives": [
-        "Pull together all rule families from Years 7-10",
-        "Find every rule in Al-Fatihah",
-        "Choose personal priorities for the final year"
+        "To understand how the six families of tajweed rules fit together, using Al-Fatihah as the map"
       ],
+      "successCriteria": [
+        "All: name the six families of rules",
+        "Most: identify a rule from each family in Al-Fatihah",
+        "Some: recite Al-Fatihah with every rule named and applied"
+      ],
+      "smsc": "Spiritual: perfecting the surah we recite in every rak'ah",
       "keywords": [
         {
-          "term": "makharij",
-          "def": "the places from which letters are pronounced"
+          "term": "tajweed (تجويد)",
+          "def": "giving each letter its right and its rules"
         },
         {
-          "term": "sifat",
-          "def": "the qualities of letters"
+          "term": "al-sab' al-mathani (السبع المثاني)",
+          "def": "the seven often-repeated: Al-Fatihah"
         },
         {
-          "term": "ahkam",
-          "def": "the rules of tajweed"
+          "term": "muraja'a (مراجعة)",
+          "def": "revising what is already memorised"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "You recite Al-Fatihah at least 17 times a day. If you audited it today, would it pass every rule?",
+        "a": "Many find small slips (madd, heavy letters, ض). The most recited surah deserves the most care."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly given you seven of the often repeated and the great Qur'an' (Al-Hijr 15:87). The Prophet ﷺ called Al-Fatihah the seven often-repeated (al-sab' al-mathani) (Bukhari).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "Name the rule families: makharij, sifat, noon and meem, madd, raa and laam, waqf.",
-        "Recite Al-Fatihah from memory."
+        {
+          "q": "Which surah begins «تَبَٰرَكَ ٱلَّذِى ...»?",
+          "a": "Al-Mulk",
+          "mins": 1,
+          "options": [
+            "Al-Qalam",
+            "Al-Haqqah",
+            "Al-Mulk"
+          ]
+        },
+        {
+          "q": "Madd lazim is ...",
+          "a": "6 counts",
+          "mins": 1,
+          "options": [
+            "6 counts",
+            "2 counts",
+            "4 or 5"
+          ]
+        },
+        {
+          "q": "ۘ means ...",
+          "a": "must stop",
+          "mins": 1,
+          "options": [
+            "must stop",
+            "do not stop",
+            "either"
+          ]
+        },
+        {
+          "q": "Ikhfa shafawi is meem before ...",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "م",
+            "و"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Six families of rules",
-          "bullets": [
-            "Makharij and sifat: the letters",
-            "Noon sakinah, tanween and meem sakinah",
-            "Madd, raa and laam, waqf and ibtida'"
-          ],
-          "note": "Draw the map as six boxes on the board and ask pupils to add one rule to each from memory. Explain that Year 11 is about mastery and about passing the Qur'an on. Ask: which family do you find hardest?"
+          "bullets": [],
+          "note": "Bismillah. Year 11 is mastery: rules automatic, then passing the Qur'an on.",
+          "diagram": {
+            "centre": "Tajweed (تجويد)",
+            "items": [
+              "Makharij and sifat: the letters",
+              "Noon sakinah and tanween",
+              "Meem sakinah and ghunnah",
+              "Madd: 2, 4 or 5, 6",
+              "Raa and laam: heavy or light",
+              "Waqf and ibtida': stopping and starting"
+            ]
+          }
         },
         {
-          "heading": "Fatihah: first half",
-          "bullets": [
-            "lillahi rabbil-'alamin: light lam, light raa",
-            "Ar-Rahman: lam shamsiyyah, madd tabi'i",
-            "yawm: waw sakinah after fatha, soft, no madd"
-          ],
-          "note": "Recite the basmalah and verses 1-4. In لِلَّهِ the lam follows kasra so it is light. In رَبِّ the raa has kasra, so it is light. In الرَّحْمَٰنِ the lam merges into raa. In مَالِكِ the alif is madd tabi'i, 2 counts."
+          "heading": "Al-Fatihah: the map",
+          "bullets": [],
+          "note": "Name the family for each.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Family",
+              "Detail"
+            ],
+            "rows": [
+              [
+                "ٱلْحَمْدُ لِلَّهِ",
+                "Al-Fatihah 1:2",
+                "Laam",
+                "Light laam in لِلَّهِ (after kasrah)"
+              ],
+              [
+                "ٱلرَّحْمَٰنِ",
+                "Al-Fatihah 1:3",
+                "Sun letter; madd",
+                "ر sun letter; small alif 2"
+              ],
+              [
+                "إِيَّاكَ",
+                "Al-Fatihah 1:5",
+                "Shaddah; madd",
+                "Press the yaa; alif 2"
+              ],
+              [
+                "ٱلصِّرَٰطَ",
+                "Al-Fatihah 1:6",
+                "Heavy letters",
+                "ص ط full"
+              ],
+              [
+                "ٱلضَّآلِّينَ",
+                "Al-Fatihah 1:7",
+                "Madd lazim; ض",
+                "6 counts; ض from the side"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Fatihah: second half",
+          "heading": "Juz' Tabarak with the map",
           "bullets": [
-            "Iyyaka: shaddah on yaa, hold it",
-            "nasta'in: stop with madd 'arid",
-            "Ihdinas-sirat: start with kasra, sad is heavy"
+            "Pick an ayah of Al-Mulk",
+            "Name one rule from each family",
+            "Recite it with all six"
           ],
-          "note": "إِيَّاكَ: shaddah on yaa; do not shorten. نَسْتَعِينُ: on stopping, madd 'arid 2, 4 or 6. اهْدِنَا: starting on hamzat al-wasl, third letter has kasra so start with kasra. Ask pupils for the reason, not just the answer."
+          "note": "This week's revision: Juz' 29 (67 to 77)."
         },
         {
-          "heading": "Fatihah: last ayah",
-          "bullets": [
-            "an'amta: noon before 'ayn, izhar halqi",
-            "'alayhim ghayri: izhar shafawi",
-            "walad-dallin: madd lazim, 6 counts"
-          ],
-          "note": "أَنْعَمْتَ: noon sakin before 'ayn, clear. عَلَيْهِمْ غَيْرِ: meem sakin before ghayn, izhar shafawi, no merging. وَلَا الضَّالِّينَ: alif then a shaddah on lam, madd lazim kalimi muthaqqal, 6 counts. Misconception: shortening this madd."
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "ٱلضَّآلِّينَ with 2 counts and ض like د",
+            "right": "6 counts (madd lazim); ض from the side of the tongue"
+          }
         },
         {
-          "heading": "Priorities",
-          "bullets": [
-            "List the three rules you find hardest",
-            "Link each to a surah you know",
-            "Practise for ten minutes a day"
-          ],
-          "note": "Pupils copy the grid and rate every family: secure, nearly, not yet. They choose three priorities and put dates on the review. Close with a dua for steadfastness in the final year."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "The madd in «وَلَا ٱلضَّآلِّينَ» before the shaddah is ...",
+            "options": [
+              "Madd lazim: 6",
+              "Tabi'i: 2",
+              "Munfasil: 4 or 5"
+            ],
+            "answer": 0,
+            "why": "Alif followed by a letter with shaddah (a permanent sukoon) in the word: madd lazim kalimi, 6."
+          }
         }
       ],
       "practice": [
-        "Why is the lam light in لِلَّهِ?",
-        "What is the rule on the meem in عَلَيْهِمْ غَيْرِ?",
-        "How many counts in وَلَا الضَّالِّينَ and why?"
+        {
+          "q": "Map Al-Fatihah 1:4 «مَٰلِكِ يَوْمِ ٱلدِّينِ» to the six families.",
+          "a": "مَٰلِكِ: small alif madd 2; يَوْمِ: و sakin after fathah (leen when stopping only); ٱلدِّينِ: sun letter د, madd 'arid at the stop.",
+          "mins": 5,
+          "model": "I do: مَٰلِكِ: small alif, natural madd 2. يَوْمِ: the waw is leen; we are not stopping, so no lengthening. ٱلدِّينِ: د is a sun letter; stopping: 'arid 2, 4 or 6."
+        },
+        {
+          "q": "«لِلَّهِ»: the laam is ...",
+          "a": "light",
+          "mins": 1,
+          "options": [
+            "light",
+            "heavy"
+          ]
+        }
       ],
       "independent": [
-        "Mark all rules in Al-Fatihah on a printed copy",
-        "Sort rules by family on a map",
-        "Write three priorities with practice dates"
+        {
+          "q": "Map Al-Mulk 67:1 to 2 to the six families (pupil PDF). Today's rota group recites Juz' Tabarak placement surahs to the teacher.",
+          "a": "e.g. شَىْءٍۢ قَدِيرٌ ikhfa; ٱلْمُلْكُ moon letter; عَمَلًۭا ۚ وَهُوَ idgham if joined; ٱلْعَزِيزُ moon letter; ۚ ja'iz stop; قَدِيرٌ 'arid at a stop.",
+          "mins": 10,
+          "model": "The teacher maps تَبَٰرَكَ: small alif madd 2; ٱلَّذِى: sun letter laam."
+        },
+        {
+          "q": "Extend: name the family you find hardest and one practice for it.",
+          "a": "Personal target with a practice plan.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain the difference between madd lazim and madd 'arid.",
+          "a": "Lazim: permanent sukoon in the word, always 6; 'arid: sukoon only from stopping, 2, 4 or 6.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name one rule from each of two families.",
-        "Which of your priorities will you start tonight?"
+        {
+          "q": "How many families on the map?",
+          "a": "6",
+          "mins": 1,
+          "options": [
+            "6",
+            "4",
+            "17"
+          ]
+        },
+        {
+          "q": "Back to our ponder: You recite Al-Fatihah at least 17 times a day. If you audited it today, would it pass every rule?",
+          "a": "Many find small slips (madd, heavy letters, ض). The most recited surah deserves the most care.",
+          "mins": 2
+        }
       ],
-      "homework": "Practise your three priority rules daily with examples from three different surahs.",
-      "send": "SEND/EAL: map with sentence frames and colour codes. Stretch: build a one-page rule summary for a younger pupil."
+      "homework": "Recite Al-Fatihah slowly with the map once a day and revise Juz' Tabarak (two surahs a day); log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: The tajweed map rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Map of routes old",
+          "alt": "A map",
+          "for": "teach:1"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Mastery of tajweed",
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
       "n": 2,
       "title": "Mistakes in recitation: spotting and correcting kindly",
       "duration": 50,
+      "bigQuestion": "If someone corrects your recitation in front of others, how do you want them to do it?",
       "objectives": [
-        "Distinguish clear mistakes (lahn jali) from subtle ones (lahn khafi)",
-        "Spot common errors in Al-Fatihah",
-        "Give kind, accurate correction"
+        "To understand the difference between clear and hidden mistakes (lahn jali and lahn khafi) and correct them with good manners"
       ],
+      "successCriteria": [
+        "All: give one example of lahn jali and one of lahn khafi",
+        "Most: correct a partner's mistake precisely and kindly",
+        "Some: explain why lahn jali must be fixed first"
+      ],
+      "smsc": "Social: correcting others with kindness and accepting correction humbly",
       "keywords": [
         {
-          "term": "lahn jali",
-          "def": "a clear mistake that changes a letter or vowel"
+          "term": "lahn (لحن)",
+          "def": "a mistake in recitation: jali (clear) or khafi (hidden)"
         },
         {
-          "term": "lahn khafi",
-          "def": "a subtle mistake against the rules of tajweed"
+          "term": "lahn jali (لحن جلي)",
+          "def": "a clear mistake: letter or vowel changed"
         },
         {
-          "term": "nasihah",
-          "def": "sincere advice given for someone's benefit"
+          "term": "lahn khafi (لحن خفي)",
+          "def": "a hidden mistake: a rule not fully applied"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If someone corrects your recitation in front of others, how do you want them to do it?",
+        "a": "Gently, precisely and privately where possible; this is how we correct others too."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The one who is skilled in the Qur'an will be with the noble and righteous scribes, and the one who recites it with difficulty, stumbling, has two rewards' (Bukhari and Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "What was the difference between major and minor mistakes in Year 5?",
-        "Recite Ayat al-Kursi, first phrase."
+        {
+          "q": "Recite Al-Mulk 67:3 in your head. How does the next ayah begin?",
+          "a": "ثُمَّ ٱرْجِعِ",
+          "mins": 1,
+          "options": [
+            "وَأَسِرُّوا۟ قَوْلَكُمْ",
+            "أَمَّنْ هَٰذَا",
+            "ثُمَّ ٱرْجِعِ"
+          ]
+        },
+        {
+          "q": "How many families on the tajweed map?",
+          "a": "6",
+          "mins": 1,
+          "options": [
+            "6",
+            "4",
+            "10"
+          ]
+        },
+        {
+          "q": "«مَٰلِكِ» has ...",
+          "a": "a natural madd",
+          "mins": 1,
+          "options": [
+            "a natural madd",
+            "madd lazim",
+            "no madd"
+          ]
+        },
+        {
+          "q": "Ya-Sin is surah ...",
+          "a": "36",
+          "mins": 1,
+          "options": [
+            "36",
+            "18",
+            "67"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Two kinds of mistake",
-          "bullets": [
-            "Clear: letter or vowel changed",
-            "Subtle: rules not applied fully",
-            "Both matter, clear mistakes first"
-          ],
-          "note": "Link to Year 5. Lahn jali changes a letter or a vowel and can change the meaning. Lahn khafi is subtler: weak ghunnah, short madd, wrong heaviness. Ask: which should we fix first? Clear mistakes, then the subtle ones."
+          "bullets": [],
+          "note": "Bismillah.",
+          "compare": {
+            "left": {
+              "title": "Lahn jali (لحن جلي): clear",
+              "points": [
+                "A letter or vowel changed",
+                "Can change the meaning",
+                "Must be fixed"
+              ]
+            },
+            "right": {
+              "title": "Lahn khafi (لحن خفي): hidden",
+              "points": [
+                "A rule not fully applied",
+                "Weak ghunnah, short madd",
+                "Fix for excellence"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Clear mistakes: examples",
+          "heading": "Clear mistakes in Al-Fatihah",
           "bullets": [
-            "أَنْعَمْتَ read as أَنْعَمْتُ",
-            "Sin for sad in صِرَاطَ",
-            "Missing shaddah in إِيَّاكَ"
+            "أَنْعَمْتَ read أَنْعَمْتُ: 'You' becomes 'I'",
+            "ص said as س in ٱلصِّرَٰطَ",
+            "Shaddah dropped in إِيَّاكَ"
           ],
-          "note": "أَنْعَمْتَ means 'You have favoured', أَنْعَمْتُ would mean 'I have favoured', which changes the meaning. Say each aloud. Ask pupils why the shaddah in إِيَّاكَ matters. Collect other examples they know."
-        },
-        {
-          "heading": "Subtle mistakes: examples",
-          "bullets": [
-            "Weak ghunnah in inna",
-            "Madd tabi'i cut short",
-            "Heavy raa read light, light lam read heavy"
-          ],
-          "note": "Each subtle error is a loss of beauty and accuracy. Demonstrate: say إِنَّ with and without ghunnah. Say الرَّحْمَٰنِ with a heavy and a light raa. Ask pupils to identify which is correct and why. Be sensitive: use the teacher's voice as the model."
+          "note": "Each changes a letter or vowel. Say why each matters."
         },
         {
           "heading": "Correcting with adab",
           "bullets": [
-            "Begin with what is right",
-            "Give one correction at a time",
-            "Make dua for each other"
+            "Wait for the end of the ayah",
+            "Name the ayah, word and fix",
+            "Model it once, kindly",
+            "Thank the person who corrects you"
           ],
-          "note": "Teach nasihah: private, kind, specific. A model sentence: 'I loved your steady pace. One thing to check is the madd in الضَّالِّينَ.' Role-play in pairs. Remind pupils to accept correction humbly too."
+          "note": "Model a respectful correction."
         },
         {
-          "heading": "Error hunt",
-          "bullets": [
-            "Listen to three short recordings",
-            "Mark each error type",
-            "Suggest a kind correction"
-          ],
-          "note": "Play three short recordings you have made containing planted errors (for example a missing shaddah, a short madd, a light lam in a heavy position). Pupils note the error, the type and the correction. Discuss answers."
+          "heading": "Common mistake (in correcting)",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Interrupting mid-word and listing every slip",
+            "right": "Wait, then give one precise correction, starting with any lahn jali"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«أَنْعَمْتُ» instead of «أَنْعَمْتَ» is ...",
+            "options": [
+              "Lahn jali: it changes the meaning",
+              "Lahn khafi",
+              "Not a mistake"
+            ],
+            "answer": 0,
+            "why": "A changed vowel that changes 'You favoured' into 'I favoured' is a clear mistake."
+          }
         }
       ],
       "practice": [
-        "Is reading أَنْعَمْتُ for أَنْعَمْتَ lahn jali or khafi? Why?",
-        "Give one example of lahn khafi.",
-        "Write one kind sentence of correction."
+        {
+          "q": "Classify: (a) short muttasil in 36:6 ءَابَآؤُهُمْ; (b) ح said as ه in ٱلْحَكِيمِ (36:2).",
+          "a": "(a) lahn khafi (rule not fully applied); (b) lahn jali (letter changed).",
+          "mins": 5,
+          "model": "I do: (a) the words are right but the madd is short: hidden mistake. (b) ح became ه: a different letter: clear mistake, fix first."
+        },
+        {
+          "q": "Which to fix first?",
+          "a": "Lahn jali",
+          "mins": 1,
+          "options": [
+            "Lahn jali",
+            "Lahn khafi",
+            "Neither"
+          ]
+        }
       ],
       "independent": [
-        "Complete an error log with six errors, type and correction",
-        "Role-play a kind correction for a partner",
-        "Write a short guide: how to accept correction well"
+        {
+          "q": "Breakout pairs: recite Ya-Sin 36:1 to 12 (or read it from the mushaf if not yet memorised); your partner records any lahn jali and khafi on the pupil PDF. Today's rota group recites to the teacher.",
+          "a": "Partner sheet with mistakes classified and one correction given kindly.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model one round with a kind correction."
+        },
+        {
+          "q": "Extend: write your own three most common lahn and how you will fix them.",
+          "a": "Personal list.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain why a mistake of the tongue is forgiven but practice is still required.",
+          "a": "Two rewards for the one who struggles (Bukhari and Muslim), yet we strive to recite as revealed.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What is the difference between lahn jali and lahn khafi?",
-        "What makes correction an act of nasihah?"
+        {
+          "q": "Weak ghunnah is ...",
+          "a": "lahn khafi",
+          "mins": 1,
+          "options": [
+            "lahn khafi",
+            "lahn jali",
+            "correct"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If someone corrects your recitation in front of others, how do you want them to do it?",
+          "a": "Gently, precisely and privately where possible; this is how we correct others too.",
+          "mins": 2
+        }
       ],
-      "homework": "Record yourself reciting Al-Fatihah, find two errors and write how to fix them.",
-      "send": "SEND/EAL: error log with examples. Stretch: write five planted-error examples for the class."
+      "homework": "Recite Ya-Sin 36:1 to 12 to a parent; note one lahn khafi to fix; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Mistakes in recitation rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Pencil and eraser",
+          "alt": "A pencil and eraser for correcting",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Surat Al-Kahf, ayat 1-10",
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
       "n": 3,
-      "title": "Surat Al-Kahf 18:1-10: reading and rules",
+      "title": "Surat Al-Kahf 18:1-5: hear, understand and memorise",
       "duration": 50,
+      "bigQuestion": "The Prophet ﷺ told us that memorising the first ten ayat of Al-Kahf protects from the Dajjal. Why might these ayat protect?",
       "objectives": [
-        "Recite 18:1-10 accurately",
-        "Apply noon, tanween and silah rules in context",
-        "Use the sakta in ayah 1 correctly"
+        "To memorise Al-Kahf 18:1-5 accurately and recite it with its tajweed"
       ],
+      "successCriteria": [
+        "All: recite 18:1-5 after the teacher, word for word",
+        "Most: recite 18:1-5 from memory with no more than one prompt",
+        "Some: link 18:1-5 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: protection through firm belief and the Qur'an",
       "keywords": [
         {
-          "term": "sakta",
+          "term": "Al-Kahf (الكهف)",
+          "def": "the Cave: surah 18"
+        },
+        {
+          "term": "'iwaj (عوج)",
+          "def": "crookedness, deviance"
+        },
+        {
+          "term": "qayyim (قيم)",
+          "def": "straight, upright"
+        },
+        {
+          "term": "saktah (سكتة)",
           "def": "a short pause without breath"
-        },
-        {
-          "term": "ikhfa",
-          "def": "hiding the noon sound with ghunnah"
-        },
-        {
-          "term": "kahf",
-          "def": "a cave"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Prophet ﷺ told us that memorising the first ten ayat of Al-Kahf protects from the Dajjal. Why might these ayat protect?",
+        "a": "They affirm the straight Book, the reward of believers and the warning against false claims about Allah: firm belief protects (18:1 to 5)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever memorises ten ayat from the beginning of Surat Al-Kahf will be protected from the Dajjal' (Muslim). Allah says: 'All praise is due to Allah, who has sent down upon His Servant the Book and has not made therein any deviance' (Al-Kahf 18:1).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "Recite 67:1-4.",
-        "What is the rule for tanween before lam?"
+        {
+          "q": "Which surah begins «ٱلْحَمْدُ لِلَّهِ ...»?",
+          "a": "Al-Kahf",
+          "mins": 1,
+          "options": [
+            "Ya-Sin",
+            "Al-Mulk",
+            "Al-Kahf"
+          ]
+        },
+        {
+          "q": "Lahn khafi is ...",
+          "a": "a hidden mistake",
+          "mins": 1,
+          "options": [
+            "a hidden mistake",
+            "a clear mistake",
+            "a stop"
+          ]
+        },
+        {
+          "q": "Saktah means ...",
+          "a": "a short pause without breath",
+          "mins": 1,
+          "options": [
+            "a short pause without breath",
+            "a long stop",
+            "a sajdah"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Listen and recite",
+          "heading": "New ayat: Al-Kahf 18:1-5",
           "bullets": [
-            "Surat Al-Kahf is Surah 18",
-            "We read the first ten ayat",
-            "Echo in short phrases"
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
           ],
-          "note": "Recite ayah 1: الْحَمْدُ لِلَّهِ الَّذِي أَنزَلَ عَلَىٰ عَبْدِهِ الْكِتَابَ وَلَمْ يَجْعَل لَّهُ عِوَجَا. Pupils echo. Explain that these ten ayat begin the surah and we will learn them by heart in the coming weeks."
+          "note": "Begin with isti'adhah and Bismillah. Recite 18:1-5 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "ٱلْحَمْدُ لِلَّهِ ٱلَّذِىٓ أَنزَلَ عَلَىٰ عَبْدِهِ ٱلْكِتَٰبَ وَلَمْ يَجْعَل لَّهُۥ عِوَجَا ۜ (١) قَيِّمًۭا لِّيُنذِرَ بَأْسًۭا شَدِيدًۭا مِّن لَّدُنْهُ وَيُبَشِّرَ ٱلْمُؤْمِنِينَ ٱلَّذِينَ يَعْمَلُونَ ٱلصَّٰلِحَٰتِ أَنَّ لَهُمْ أَجْرًا حَسَنًۭا (٢) مَّٰكِثِينَ فِيهِ أَبَدًۭا (٣) وَيُنذِرَ ٱلَّذِينَ قَالُوا۟ ٱتَّخَذَ ٱللَّهُ وَلَدًۭا (٤) مَّا لَهُم بِهِۦ مِنْ عِلْمٍۢ وَلَا لِءَابَآئِهِمْ ۚ كَبُرَتْ كَلِمَةًۭ تَخْرُجُ مِنْ أَفْوَٰهِهِمْ ۚ إِن يَقُولُونَ إِلَّا كَذِبًۭا (٥)",
+            "source": "Surat Al-Kahf, 18:1-5"
+          }
         },
         {
-          "heading": "Ayat 1-3: rules",
+          "heading": "What the ayat mean",
           "bullets": [
-            "Sakta after 'iwaja, no breath, then qayyiman",
-            "'abdihil-kitab: no silah before hamzat wasl",
-            "qayyiman li-yundhira: idghaam, then ikhfa"
+            "This is a translation of the meaning, not the Qur'an itself"
           ],
-          "note": "In ayah 1 the mushaf marks a sakta after عِوَجَا: a short pause without breath before قَيِّمًا. قَيِّمًا لِّيُنذِرَ: tanween before lam, idghaam without ghunnah. يُنذِرَ: noon sakin before dhal, ikhfa. ayah 3: stop on أَبَدًا with madd 'iwad."
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "18:1",
+                "[All] praise is [due] to Allah, who has sent down upon His Servant the Book and has not made therein any deviance."
+              ],
+              [
+                "18:2",
+                "[He has made it] straight, to warn of severe punishment from Him and to give good tidings to the believers who do righteous deeds that they will have a good reward"
+              ],
+              [
+                "18:3",
+                "In which they will remain forever"
+              ],
+              [
+                "18:4",
+                "And to warn those who say, \"Allah has taken a son.\""
+              ],
+              [
+                "18:5",
+                "They have no knowledge of it, nor had their fathers. Grave is the word that comes out of their mouths; they speak not except a lie."
+              ]
+            ]
+          }
         },
         {
-          "heading": "Ayat 4-6: rules",
-          "bullets": [
-            "wa yundhira: ikhfa before dhal",
-            "bihi min 'ilmin: silah sughra, then izhar",
-            "bakhi'un nafsaka: idghaam with ghunnah"
-          ],
-          "note": "وَيُنذِرَ: ikhfa. بِهِ مِنْ عِلْمٍ: haa between two vowels, silah sughra; مِنْ عِلْمٍ: noon before 'ayn, izhar halqi. بَاخِعٌ نَّفْسَكَ: tanween then noon, idghaam bi-ghunnah. إِن لَّمْ يُؤْمِنُوا: noon before lam, idghaam without ghunnah."
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "عِوَجَا",
+                "Al-Kahf 18:1",
+                "Saktah ۜ (Hafs)",
+                "Pause without breath, then قَيِّمًا"
+              ],
+              [
+                "قَيِّمًۭا لِّيُنذِرَ",
+                "Al-Kahf 18:2",
+                "Idgham without ghunnah",
+                "qayyimal-liyundhira"
+              ],
+              [
+                "بَأْسًۭا شَدِيدًۭا",
+                "Al-Kahf 18:2",
+                "Ikhfa: ش",
+                "ba'san-shadeedaa"
+              ],
+              [
+                "كَلِمَةًۭ تَخْرُجُ",
+                "Al-Kahf 18:5",
+                "Ikhfa: ت",
+                "kalimatan-takhruju"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Ayat 7-10: rules",
-          "bullets": [
-            "zinatan laha: idghaam without ghunnah",
-            "sa'idan juruza: ikhfa before jim",
-            "min ladunka: idghaam, then ikhfa"
-          ],
-          "note": "زِينَةً لَّهَا: tanween then lam. صَعِيدًا جُرُزًا: tanween fatha then jim, ikhfa. أَمْ حَسِبْتَ: meem sakin before haa, izhar shafawi. مِن لَّدُنكَ: noon before lam, idghaam bila ghunnah, then the noon of لَدُنكَ before kaf, ikhfa. Ask pupils to explain why."
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 18:1-5 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
         },
         {
-          "heading": "Stops and practice",
-          "bullets": [
-            "Stop at ayah ends",
-            "Madd 'iwad on tanween fatha",
-            "Recite in pairs and check rules"
-          ],
-          "note": "Ayat ending with tanween fatha: أَبَدًا، وَلَدًا، أَسَفًا، عَمَلًا، رَشَدًا. At stops these end with a long alif, madd 'iwad. Pupils recite 1-5 in pairs and then 6-10. Partner ticks rules and stops."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "The saktah after «عِوَجَا» in 18:1 means ...",
+            "options": [
+              "A brief silent pause, no new breath",
+              "A full stop with breath",
+              "Join without pause"
+            ],
+            "answer": 0,
+            "why": "Saktah: a short pause without taking breath; it separates 'no deviance' from 'straight'."
+          }
         }
       ],
       "practice": [
-        "What is a sakta and where is it in ayah 1?",
-        "Which rule applies to صَعِيدًا جُرُزًا?",
-        "Why is there no silah in عَبْدِهِ الْكِتَابَ?"
+        {
+          "q": "Chunk and link Al-Kahf 18:1-5 together, ayah by ayah.",
+          "a": "The class recites 18:1-5 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 18:1-5. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«مِّن لَّدُنْهُ» (18:2) is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "idgham with ghunnah",
+            "ikhfa"
+          ]
+        }
       ],
       "independent": [
-        "Recite 18:1-5 and mark every rule",
-        "Recite 18:6-10 and mark every rule",
-        "Peer assess using the checklist"
+        {
+          "q": "Listening rota: today's group recites 18:1-5 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, explain what 18:4 to 5 warn against.",
+          "a": "Saying that Allah has taken a son: a grave word without knowledge.",
+          "mins": 2
+        },
+        {
+          "q": "Explain why the saktah protects the meaning of 18:1 to 2.",
+          "a": "Without it, قَيِّمًا could seem to describe 'deviance'; the pause makes clear 'straight' describes the Book.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name two ikhfa examples in the passage.",
-        "Why do we use madd 'iwad on أَبَدًا when we stop?"
+        {
+          "q": "Al-Kahf 18:3: «مَّٰكِثِينَ ...» Which word comes next?",
+          "a": "فِيهِ",
+          "mins": 1,
+          "options": [
+            "فِيهِ",
+            "فَٱبْعَثُوٓا۟",
+            "وَمَآ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The Prophet ﷺ told us that memorising the first ten ayat of Al-Kahf protects from the Dajjal. Why might these ayat protect?",
+          "a": "They affirm the straight Book, the reward of believers and the warning against false claims about Allah: firm belief protects (18:1 to 5).",
+          "mins": 2
+        }
       ],
-      "homework": "Learn 18:1-5 securely and begin 18:6-10.",
-      "send": "SEND/EAL: chunked audio, colour-coded rules. Stretch: explain the sakta and why it is used, then teach it to a partner."
+      "homework": "Recite Al-Kahf 18:1-5 to a parent three times a day and revise Juz' Tabarak (one surah) and Juz' 'Amma block of the day; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Kahf 18:1-5 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Cave entrance rocks",
+          "alt": "The entrance of a cave",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Surat Al-Kahf, ayat 1-10",
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
       "n": 4,
-      "title": "Surat Al-Kahf 18:1-10: meaning and reflection",
+      "title": "Surat Al-Kahf 18:6-10: hear, understand and memorise",
       "duration": 50,
+      "bigQuestion": "Young men left everything and took shelter in a cave, praying for mercy and guidance. What would make someone do that?",
       "objectives": [
-        "Explain the meaning of ayat 1-10",
-        "Link 18:7 with 67:2",
-        "Reflect on the dua of the youths in ayah 10"
+        "To memorise Al-Kahf 18:6-10 accurately and recite it with its tajweed"
       ],
+      "successCriteria": [
+        "All: recite 18:6-10 after the teacher, word for word",
+        "Most: recite 18:6-10 from memory with no more than one prompt",
+        "Some: link 18:6-10 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: young people holding firm to faith and turning to Allah in du'a",
       "keywords": [
         {
-          "term": "'iwaj",
-          "def": "crookedness, any fault"
+          "term": "fityah (فتية)",
+          "def": "youths, young men"
         },
         {
-          "term": "zinah",
-          "def": "adornment"
+          "term": "rashad (رشد)",
+          "def": "right guidance"
         },
         {
-          "term": "fityah",
-          "def": "young men"
+          "term": "ar-raqim (الرقيم)",
+          "def": "the inscription (or the name linked with the people of the cave)"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Young men left everything and took shelter in a cave, praying for mercy and guidance. What would make someone do that?",
+        "a": "Protecting their faith; they asked Allah for mercy and right guidance (18:10)."
+      },
+      "islamicLink": {
+        "text": "Allah says: '[Mention] when the youths retreated to the cave and said: Our Lord, grant us from Yourself mercy and prepare for us from our affair right guidance' (Al-Kahf 18:10).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "Recite 18:1-5.",
-        "What did 67:2 say about our test?"
+        {
+          "q": "Recite Al-Kahf 18:3 in your head. How does the next ayah begin?",
+          "a": "وَيُنذِرَ ٱلَّذِينَ",
+          "mins": 1,
+          "options": [
+            "ٱلَّذِينَ كَانَتْ",
+            "وَيُنذِرَ ٱلَّذِينَ",
+            "إِنَّ ٱلَّذِينَ"
+          ]
+        },
+        {
+          "q": "«بَأْسًۭا شَدِيدًۭا» is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "izhar",
+            "idgham"
+          ]
+        },
+        {
+          "q": "The saktah in 18:1 is after ...",
+          "a": "عِوَجَا",
+          "mins": 1,
+          "options": [
+            "عِوَجَا",
+            "ٱلْكِتَٰبَ",
+            "قَيِّمًا"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Ayat 1-3: Praise and guidance",
+          "heading": "New ayat: Al-Kahf 18:6-10",
           "bullets": [
-            "All praise is for Allah, who sent down the Book",
-            "He placed no crookedness in it",
-            "It warns of severe punishment and gives glad tidings"
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
           ],
-          "note": "Read the meanings of 18:1-3. The Book is straight, with no fault. It warns and gives good news: believers who do good deeds have a good reward, remaining in it forever. Ask: why do both warning and good news appear together?"
+          "note": "Begin with isti'adhah and Bismillah. Recite 18:6-10 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "فَلَعَلَّكَ بَٰخِعٌۭ نَّفْسَكَ عَلَىٰٓ ءَاثَٰرِهِمْ إِن لَّمْ يُؤْمِنُوا۟ بِهَٰذَا ٱلْحَدِيثِ أَسَفًا (٦) إِنَّا جَعَلْنَا مَا عَلَى ٱلْأَرْضِ زِينَةًۭ لَّهَا لِنَبْلُوَهُمْ أَيُّهُمْ أَحْسَنُ عَمَلًۭا (٧) وَإِنَّا لَجَٰعِلُونَ مَا عَلَيْهَا صَعِيدًۭا جُرُزًا (٨) أَمْ حَسِبْتَ أَنَّ أَصْحَٰبَ ٱلْكَهْفِ وَٱلرَّقِيمِ كَانُوا۟ مِنْ ءَايَٰتِنَا عَجَبًا (٩) إِذْ أَوَى ٱلْفِتْيَةُ إِلَى ٱلْكَهْفِ فَقَالُوا۟ رَبَّنَآ ءَاتِنَا مِن لَّدُنكَ رَحْمَةًۭ وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًۭا (١٠)",
+            "source": "Surat Al-Kahf, 18:6-10"
+          }
         },
         {
-          "heading": "Ayat 4-6: A grave claim",
+          "heading": "What the ayat mean",
           "bullets": [
-            "It warns those who say Allah has a child",
-            "They have no knowledge of this",
-            "The Prophet ﷺ was grieving over them"
+            "This is a translation of the meaning, not the Qur'an itself"
           ],
-          "note": "18:4-5 condemn the claim that Allah has taken a child. Ayah 6 is gentle toward the Prophet ﷺ: you might destroy yourself with grief over them if they do not believe. Ask: what does this show about his care for people?"
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "18:6",
+                "Then perhaps you would kill yourself through grief over them, [O Muhammad], if they do not believe in this message, [and] out of sorrow."
+              ],
+              [
+                "18:7",
+                "Indeed, We have made that which is on the earth adornment for it that We may test them [as to] which of them is best in deed."
+              ],
+              [
+                "18:8",
+                "And indeed, We will make that which is upon it [into] a barren ground."
+              ],
+              [
+                "18:9",
+                "Or have you thought that the companions of the cave and the inscription were, among Our signs, a wonder?"
+              ],
+              [
+                "18:10",
+                "[Mention] when the youths retreated to the cave and said, \"Our Lord, grant us from Yourself mercy and prepare for us from our affair right guidance.\""
+              ]
+            ]
+          }
         },
         {
-          "heading": "Ayat 7-8: The test of the earth",
-          "bullets": [
-            "Earth's beauty is an adornment",
-            "It is a test: who is best in deeds?",
-            "Everything on it will become barren ground"
-          ],
-          "note": "Link 18:7 to 67:2: both speak of ahsanu 'amalan. Ask: how does beauty become a test? The earth will become barren (sa'idan juruza). Discuss how this should affect the way we treat worldly things: use them, do not worship them."
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "بَٰخِعٌۭ نَّفْسَكَ",
+                "Al-Kahf 18:6",
+                "Idgham with ghunnah: ن",
+                "baakhi'un-nafsaka"
+              ],
+              [
+                "إِن لَّمْ",
+                "Al-Kahf 18:6",
+                "Idgham without ghunnah",
+                "il-lam"
+              ],
+              [
+                "صَعِيدًۭا جُرُزًا",
+                "Al-Kahf 18:8",
+                "Ikhfa: ج",
+                "sa'eedan-juruzaa"
+              ],
+              [
+                "رَحْمَةًۭ وَهَيِّئْ",
+                "Al-Kahf 18:10",
+                "Idgham with ghunnah: و",
+                "rahmataw-wa hayyi'"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Ayat 9-10: The cave",
-          "bullets": [
-            "The People of the Cave are one sign among many",
-            "The youths took refuge in the cave",
-            "They made dua for mercy and right guidance"
-          ],
-          "note": "These two ayat introduce the story; the rest comes later in the surah. Read the dua of ayah 10: Our Lord, grant us mercy from Yourself and prepare for us right guidance in our affair. Pupils copy it. Ask: when could you use this dua?"
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 18:6-10 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
         },
         {
-          "heading": "The protection",
-          "bullets": [
-            "Reported in Sahih Muslim by Abu al-Darda'",
-            "Memorising the first ten ayat protects from the Dajjal",
-            "Many Muslims also read Al-Kahf on Fridays"
-          ],
-          "note": "State the hadith carefully: in Sahih Muslim it is reported that whoever memorises the first ten ayat of Surat Al-Kahf is protected from the Dajjal. For the practice of reading the surah on Fridays, ask your teacher about the evidence and scholars' views. Close with the dua of ayah 10."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What did the youths ask for in 18:10?",
+            "options": [
+              "Mercy and right guidance",
+              "Wealth and power",
+              "To return home"
+            ],
+            "answer": 0,
+            "why": "18:10: 'grant us from Yourself mercy and prepare for us from our affair right guidance'."
+          }
         }
       ],
       "practice": [
-        "How does 18:7 link with 67:2?",
-        "What is the dua in 18:10?",
-        "What did Allah say to the Prophet ﷺ about his grief in 18:6?"
+        {
+          "q": "Chunk and link Al-Kahf 18:6-10 together, ayah by ayah.",
+          "a": "The class recites 18:6-10 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 18:6-10. Ayah 6: 3 times looking, 3 times without looking. Then ayah 7 the same way. Then link: recite 6 and 7 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«مِن لَّدُنكَ» (18:10) is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "ikhfa",
+            "izhar"
+          ]
+        }
       ],
       "independent": [
-        "Write the meaning of each ayah in your own words",
-        "Create a mind map of the themes of ayat 1-10",
-        "Write a tadabbur paragraph on the dua in ayah 10"
+        {
+          "q": "Listening rota: today's group recites 18:6-10 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, write the du'a of 18:10 in Arabic and its meaning, and when you might use it.",
+          "a": "رَبَّنَآ ءَاتِنَا مِن لَّدُنكَ رَحْمَةًۭ وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًۭا: before a decision or exam.",
+          "mins": 2
+        },
+        {
+          "q": "Recite 18:1 to 10 with the saktah.",
+          "a": "All ten ayat, no prompts.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "State two themes of Al-Kahf 18:1-10.",
-        "When will you use the dua of the youths?"
+        {
+          "q": "Al-Kahf 18:9: «أَمْ حَسِبْتَ أَنَّ ...» Which word comes next?",
+          "a": "أَصْحَٰبَ",
+          "mins": 1,
+          "options": [
+            "أَصْحَٰبَ",
+            "عَّلَيْهِ",
+            "وَيَسْتَغْفِرُوا۟"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Young men left everything and took shelter in a cave, praying for mercy and guidance. What would make someone do that?",
+          "a": "Protecting their faith; they asked Allah for mercy and right guidance (18:10).",
+          "mins": 2
+        }
       ],
-      "homework": "Write 150 words: what 18:7 teaches me about how to treat the beauty of this world.",
-      "send": "SEND/EAL: translation chart and picture prompts. Stretch: research one theme from the rest of Al-Kahf in a recognised tafsir."
+      "homework": "Recite Al-Kahf 18:6-10 to a parent three times a day and revise Al-Kahf 18:1 to 5 and Juz' Tabarak; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Kahf 18:6-10 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Cave entrance rocks",
+          "alt": "The entrance of a cave",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Unit 3: Understanding the Qur'an",
@@ -747,6 +1407,1495 @@
       ],
       "homework": "Share your plan with a parent or teacher and ask them to check in with you each month.",
       "send": "SEND/EAL: simplified rubric with sentence frames. Stretch: mentor a younger pupil on one rule."
+    },
+    {
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
+      "n": 9,
+      "title": "Juz' Tabarak revision check",
+      "duration": 50,
+      "bigQuestion": "Your final recitation assessment is in the summer. What would 'secure' look like for Juz' Tabarak by then?",
+      "objectives": [
+        "To understand how secure your Juz' Tabarak is and plan its revision up to the summer"
+      ],
+      "successCriteria": [
+        "All: recite your chosen Juz' Tabarak surah with no more than three prompts",
+        "Most: link the surahs in order",
+        "Some: start from any ayah of Al-Mulk on request"
+      ],
+      "smsc": "Spiritual: perseverance with the Qur'an through the exam year",
+      "keywords": [
+        {
+          "term": "muraja'a (مراجعة)",
+          "def": "revising what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "Juz' Tabarak (جزء تبارك)",
+          "def": "surahs 67 to 77"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your final recitation assessment is in the summer. What would 'secure' look like for Juz' Tabarak by then?",
+        "a": "Recited from any starting point with sound tajweed, revised weekly on a rota."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Keep refreshing your knowledge of the Qur'an, for it escapes faster than camels from their hobbles' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Mulk 67:1 in your head. How does the next ayah begin?",
+          "a": "ٱلَّذِى خَلَقَ",
+          "mins": 1,
+          "options": [
+            "قَالُوا۟ بَلَىٰ",
+            "وَقَالُوا۟ لَوْ",
+            "ٱلَّذِى خَلَقَ"
+          ]
+        },
+        {
+          "q": "Al-Fatihah is called ...",
+          "a": "the seven often-repeated",
+          "mins": 1,
+          "options": [
+            "the seven often-repeated",
+            "the heart of the Qur'an",
+            "the opening of Juz' 30"
+          ]
+        },
+        {
+          "q": "«ٱلضَّآلِّينَ» madd is ...",
+          "a": "6 counts",
+          "mins": 1,
+          "options": [
+            "6 counts",
+            "2 counts",
+            "4 counts"
+          ]
+        },
+        {
+          "q": "Juz' Tabarak is ...",
+          "a": "67 to 77",
+          "mins": 1,
+          "options": [
+            "67 to 77",
+            "78 to 114",
+            "36 to 45"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The eleven surahs",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "No.",
+              "Surah",
+              "Ayat"
+            ],
+            "rows": [
+              [
+                "67",
+                "Al-Mulk",
+                "30"
+              ],
+              [
+                "68",
+                "Al-Qalam",
+                "52"
+              ],
+              [
+                "69",
+                "Al-Haqqah",
+                "52"
+              ],
+              [
+                "70",
+                "Al-Ma'arij",
+                "44"
+              ],
+              [
+                "71",
+                "Nuh",
+                "28"
+              ],
+              [
+                "72 to 74",
+                "Al-Jinn, Al-Muzzammil, Al-Muddaththir",
+                "28, 20, 56"
+              ],
+              [
+                "75 to 77",
+                "Al-Qiyamah, Al-Insan, Al-Mursalat",
+                "40, 31, 50"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Revision to the summer",
+          "bullets": [
+            "One surah of Juz' Tabarak a day",
+            "Juz' 'Amma block of the day",
+            "Al-Kahf 1 to 10 daily from 25 Jan"
+          ],
+          "note": "TO CONFIRM: what the January Year 11 cohort has already memorised (placement shows it)."
+        },
+        {
+          "heading": "Start anywhere",
+          "bullets": [
+            "Teacher names an ayah",
+            "Pupil starts there",
+            "Three ayat with the map"
+          ],
+          "note": "Mics in turn."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Al-Mulk 67:1 to 10.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher corrects one point",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Surah 73 is ...",
+            "options": [
+              "Al-Muzzammil",
+              "Al-Muddaththir",
+              "Al-Jinn"
+            ],
+            "answer": 0,
+            "why": "72 Al-Jinn, 73 Al-Muzzammil, 74 Al-Muddaththir."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Start at Al-Mulk 67:15 and recite three ayat.",
+          "a": "No prompts; rules applied.",
+          "mins": 5,
+          "model": "I do: isti'adhah, then 67:15 هُوَ ٱلَّذِى جَعَلَ لَكُمُ ٱلْأَرْضَ ذَلُولًۭا ... and on to 67:17."
+        },
+        {
+          "q": "Al-Qalam has how many ayat?",
+          "a": "52",
+          "mins": 1,
+          "options": [
+            "52",
+            "30",
+            "44"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Revision check: today's rota group recites a Juz' Tabarak surah to the teacher. Everyone else: 'start anywhere' in breakout pairs with the pupil PDF list.",
+          "a": "Rubric scores and targets recorded; partner list of starts and prompts.",
+          "mins": 10,
+          "model": "The teacher models a 'start anywhere' turn."
+        },
+        {
+          "q": "Extend: write your revision plan to the summer in the portal log.",
+          "a": "Weekly plan by surah.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: recite the first ayah of each surah 67 to 77.",
+          "a": "All eleven openings.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Best evidence of secure hifdh?",
+          "a": "Starting anywhere with sound tajweed",
+          "mins": 1,
+          "options": [
+            "Starting anywhere with sound tajweed",
+            "Reading from the mushaf",
+            "Listening a lot"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your final recitation assessment is in the summer. What would 'secure' look like for Juz' Tabarak by then?",
+          "a": "Recited from any starting point with sound tajweed, revised weekly on a rota.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow your plan: one Juz' Tabarak surah a day; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Juz' Tabarak revision check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Calendar planner page",
+          "alt": "A planner",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
+      "n": 10,
+      "title": "Ya-Sin revision: what we know and how to keep it",
+      "duration": 50,
+      "bigQuestion": "Some of you know Ya-Sin by heart; some are reading it carefully. How can both groups help each other today?",
+      "objectives": [
+        "To understand how to revise Ya-Sin (or read it accurately for those who have not memorised it) using the tajweed map"
+      ],
+      "successCriteria": [
+        "All: read or recite Ya-Sin 36:1 to 12 accurately",
+        "Most: apply the opening-letter rules of يسٓ",
+        "Some: recite a longer portion of Ya-Sin from memory"
+      ],
+      "smsc": "Social: mixed groups helping each other",
+      "keywords": [
+        {
+          "term": "muraja'a (مراجعة)",
+          "def": "revising what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "huruf muqatta'ah (حروف مقطعة)",
+          "def": "separate opening letters"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some of you know Ya-Sin by heart; some are reading it carefully. How can both groups help each other today?",
+        "a": "Reciters model fluency; readers follow the mushaf and check accuracy: both learn."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Those to whom We have given the Book recite it with its true recital' (Al-Baqarah 2:121).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Ya-Sin 36:2 in your head. How does the next ayah begin?",
+          "a": "إِنَّكَ لَمِنَ",
+          "mins": 1,
+          "options": [
+            "وَٱمْتَٰزُوا۟ ٱلْيَوْمَ",
+            "إِنَّكَ لَمِنَ",
+            "وَإِن كُلٌّۭ"
+          ]
+        },
+        {
+          "q": "«يسٓ»: seen is ...",
+          "a": "6 counts",
+          "mins": 1,
+          "options": [
+            "6 counts",
+            "2",
+            "4"
+          ]
+        },
+        {
+          "q": "Lahn jali means ...",
+          "a": "a clear mistake",
+          "mins": 1,
+          "options": [
+            "a clear mistake",
+            "a hidden mistake",
+            "no mistake"
+          ]
+        },
+        {
+          "q": "How many ayat are in Surat Ya-Sin (سورة يس)?",
+          "a": "83",
+          "mins": 1,
+          "options": [
+            "88",
+            "83",
+            "77"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Ya-Sin 36:1 to 6",
+          "bullets": [
+            "Recite or read together",
+            "Mark rules with the map"
+          ],
+          "note": "Bismillah. TO CONFIRM: which pupils have Ya-Sin memorised (placement record).",
+          "quote": {
+            "text": "يسٓ (١) وَٱلْقُرْءَانِ ٱلْحَكِيمِ (٢) إِنَّكَ لَمِنَ ٱلْمُرْسَلِينَ (٣) عَلَىٰ صِرَٰطٍۢ مُّسْتَقِيمٍۢ (٤) تَنزِيلَ ٱلْعَزِيزِ ٱلرَّحِيمِ (٥) لِتُنذِرَ قَوْمًۭا مَّآ أُنذِرَ ءَابَآؤُهُمْ فَهُمْ غَٰفِلُونَ (٦)",
+            "source": "Surat Ya-Sin, 36:1-6"
+          }
+        },
+        {
+          "heading": "Rules to keep",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "Read"
+            ],
+            "rows": [
+              [
+                "يسٓ",
+                "Ya-Sin 36:1",
+                "Opening letters",
+                "yaa (2) seeeen (6)"
+              ],
+              [
+                "وَٱلْقُرْءَانِ",
+                "Ya-Sin 36:2",
+                "Izhar of the seen's noon (Hafs)",
+                "clear noon"
+              ],
+              [
+                "صِرَٰطٍۢ مُّسْتَقِيمٍۢ",
+                "Ya-Sin 36:4",
+                "Idgham with ghunnah",
+                "siraatim-mustaqeem"
+              ],
+              [
+                "ءَابَآؤُهُمْ",
+                "Ya-Sin 36:6",
+                "Muttasil",
+                "4 or 5"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Two groups, one class",
+          "bullets": [
+            "Reciters: from memory, partner checks",
+            "Readers: from the mushaf, partner checks",
+            "Swap roles"
+          ],
+          "note": "Breakout pairs mixing both."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "36:1 to 12.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher corrects one point",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«يسٓ وَٱلْقُرْءَانِ»: the noon of seen in Hafs is ...",
+            "options": [
+              "Clear (izhar)",
+              "Merged (idgham)",
+              "Hidden (ikhfa)"
+            ],
+            "answer": 0,
+            "why": "A Hafs detail: izhar, as also in نٓ وَٱلْقَلَمِ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite or read 36:9 and name the iqlab and the izhar.",
+          "a": "مِنۢ بَيْنِ: iqlab; وَمِنْ خَلْفِهِمْ: izhar.",
+          "mins": 5,
+          "model": "I do: وَجَعَلْنَا مِنۢ بَيْنِ: small meem, iqlab, lips touch lightly. وَمِنْ خَلْفِهِمْ: noon before خ, clear."
+        },
+        {
+          "q": "«سَدًّۭا وَمِنْ» (36:9) is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "ikhfa",
+            "izhar"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite or read 36:1 to 12 to a partner who marks the rubric (pupil PDF). Today's rota group recites to the teacher.",
+          "a": "Partner rubric and target; the teacher records rota scores.",
+          "mins": 10,
+          "model": "The teacher models one round."
+        },
+        {
+          "q": "Extend: set your Ya-Sin target for this term in the portal log.",
+          "a": "Realistic target (revise all, or memorise a set portion).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: recite 36:1 to 20 from memory.",
+          "a": "Fluent, rules applied.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ya-Sin has how many ayat?",
+          "a": "83",
+          "mins": 1,
+          "options": [
+            "83",
+            "77",
+            "88"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Some of you know Ya-Sin by heart; some are reading it carefully. How can both groups help each other today?",
+          "a": "Reciters model fluency; readers follow the mushaf and check accuracy: both learn.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise or read Ya-Sin 36:1 to 12 daily; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Ya-Sin revision rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Straight road desert",
+          "alt": "A straight road (36:4)",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
+      "n": 11,
+      "title": "Al-Kahf 18:1-5: meaning, tadabbur and the rules in detail",
+      "duration": 50,
+      "bigQuestion": "18:2 gives both a warning and good news. Why do you think the Qur'an so often puts the two together?",
+      "objectives": [
+        "To understand the message of Al-Kahf 18:1 to 5 and recite it with every rule secure, including the saktah"
+      ],
+      "successCriteria": [
+        "All: summarise 18:1 to 5 in three sentences",
+        "Most: recite 18:1 to 5 with all noon rules and the saktah",
+        "Some: explain how the meaning helps you stop and start correctly"
+      ],
+      "smsc": "Spiritual: balancing fear and hope",
+      "keywords": [
+        {
+          "term": "tadabbur (تدبر)",
+          "def": "reflecting deeply on meaning"
+        },
+        {
+          "term": "saktah (سكتة)",
+          "def": "a short pause without breath"
+        },
+        {
+          "term": "bushra (بشرى)",
+          "def": "good news"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "18:2 gives both a warning and good news. Why do you think the Qur'an so often puts the two together?",
+        "a": "Fear and hope balance the heart: warning keeps us careful, good news keeps us hopeful."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Then do they not reflect upon the Qur'an?' (An-Nisa' 4:82).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Kahf 18:2 in your head. How does the next ayah begin?",
+          "a": "مَّٰكِثِينَ فِيهِ",
+          "mins": 1,
+          "options": [
+            "قُلْ إِنَّمَآ",
+            "مَّٰكِثِينَ فِيهِ",
+            "ثُمَّ أَتْبَعَ"
+          ]
+        },
+        {
+          "q": "«قَيِّمًۭا لِّيُنذِرَ» is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "ikhfa",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Saktah: breath?",
+          "a": "No new breath",
+          "mins": 1,
+          "options": [
+            "No new breath",
+            "Take a breath",
+            "Hum"
+          ]
+        },
+        {
+          "q": "Al-Kahf 18:4: «وَيُنذِرَ ٱلَّذِينَ ...» Which word comes next?",
+          "a": "قَالُوا۟",
+          "mins": 1,
+          "options": [
+            "وَسَنَقُولُ",
+            "أَشْهَدتُّهُمْ",
+            "قَالُوا۟"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The message of 18:1 to 5",
+          "bullets": [],
+          "note": "Bismillah.",
+          "timeline": [
+            {
+              "label": "18:1",
+              "text": "Praise for Allah who sent down a Book with no deviance"
+            },
+            {
+              "label": "18:2-3",
+              "text": "A straight Book: warning and good news of a lasting reward"
+            },
+            {
+              "label": "18:4-5",
+              "text": "Warning to those who claim Allah has taken a son: a word without knowledge"
+            }
+          ]
+        },
+        {
+          "heading": "Rule map 18:1 to 5",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "Read"
+            ],
+            "rows": [
+              [
+                "أَنزَلَ",
+                "Al-Kahf 18:1",
+                "Ikhfa: ز",
+                "an-zala"
+              ],
+              [
+                "شَدِيدًۭا مِّن",
+                "Al-Kahf 18:2",
+                "Idgham with ghunnah",
+                "shadeedam-min"
+              ],
+              [
+                "أَجْرًا حَسَنًۭا",
+                "Al-Kahf 18:2",
+                "Izhar: ح",
+                "ajran hasanaa"
+              ],
+              [
+                "مِنْ عِلْمٍۢ",
+                "Al-Kahf 18:5",
+                "Izhar: ع",
+                "min 'ilm"
+              ],
+              [
+                "عِلْمٍۢ وَلَا",
+                "Al-Kahf 18:5",
+                "Idgham with ghunnah",
+                "'ilmiw-wa laa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Meaning guides stopping",
+          "bullets": [
+            "Stop where a thought is complete",
+            "Saktah in 18:1 keeps meanings apart",
+            "Restart at a sensible place"
+          ],
+          "note": "Model 18:5 with its ۚ marks."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "18:1 to 5.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher corrects one point",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«أَجْرًا حَسَنًۭا» (18:2) is ...",
+            "options": [
+              "Izhar",
+              "Idgham",
+              "Ikhfa"
+            ],
+            "answer": 0,
+            "why": "Tanween before ح, a throat letter: izhar."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "In the portal response box, summarise 18:1 to 5 in three sentences (starter: 'Al-Kahf opens by ...').",
+          "a": "Three accurate sentences matching the three parts.",
+          "mins": 5,
+          "model": "I do sentence 1: 'Al-Kahf opens by praising Allah, who sent down the Book to His Servant with no crookedness in it (18:1).'"
+        },
+        {
+          "q": "«عِلْمٍۢ وَلَا» (18:5) is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "izhar",
+            "ikhfa"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite 18:1 to 5 to a partner who marks every noon rule and the saktah (pupil PDF). Today's rota group recites 18:1 to 5 to the teacher.",
+          "a": "Partner sheet ticked; teacher records rota scores.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model one round."
+        },
+        {
+          "q": "Extend: find the other three saktat of Hafs (surah and ayah).",
+          "a": "36:52 مِن مَّرْقَدِنَا ۜ, 75:27 مَنْ ۜ رَاقٍ, 83:14 بَلْ ۜ رَانَ.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain 'a word without knowledge' (18:5) and why it is serious.",
+          "a": "A claim about Allah with no proof; speaking about Allah without knowledge is a grave sin.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many saktat in Hafs (Shatibiyyah)?",
+          "a": "4",
+          "mins": 1,
+          "options": [
+            "4",
+            "2",
+            "6"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 18:2 gives both a warning and good news. Why do you think the Qur'an so often puts the two together?",
+          "a": "Fear and hope balance the heart: warning keeps us careful, good news keeps us hopeful.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite 18:1 to 5 daily with the saktah; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Kahf 18 rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Cave entrance rocks",
+          "alt": "A cave",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
+      "n": 12,
+      "title": "Al-Kahf 1 to 10: the young people of the cave and reflection",
+      "duration": 50,
+      "bigQuestion": "The people of the cave were young. What tests (fitan) do young Muslims face today, and what did the youths do?",
+      "objectives": [
+        "To understand the lessons of Al-Kahf 18:1 to 10 for young Muslims and recite the ten ayat securely"
+      ],
+      "successCriteria": [
+        "All: recite 18:1 to 10 with no more than two prompts",
+        "Most: explain two lessons from the youths of the cave",
+        "Some: link the opening ayat to protection from fitnah"
+      ],
+      "smsc": "Moral: standing firm with good company; the world as a test",
+      "keywords": [
+        {
+          "term": "fitnah (فتنة)",
+          "def": "a trial or test of faith"
+        },
+        {
+          "term": "zinah (زينة)",
+          "def": "adornment"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The people of the cave were young. What tests (fitan) do young Muslims face today, and what did the youths do?",
+        "a": "Pressure on faith, distraction, wrong company; they turned to Allah, asked for mercy and guidance, and kept together."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever memorises ten ayat from the beginning of Surat Al-Kahf will be protected from the Dajjal' (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Kahf 18:7 in your head. How does the next ayah begin?",
+          "a": "وَإِنَّا لَجَٰعِلُونَ",
+          "mins": 1,
+          "options": [
+            "وَإِنَّا لَجَٰعِلُونَ",
+            "فَٱنطَلَقَا حَتَّىٰٓ",
+            "وَكَيْفَ تَصْبِرُ"
+          ]
+        },
+        {
+          "q": "«بَٰخِعٌۭ نَّفْسَكَ» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "ikhfa",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Al-Kahf is surah ...",
+          "a": "18",
+          "mins": 1,
+          "options": [
+            "18",
+            "36",
+            "67"
+          ]
+        },
+        {
+          "q": "Al-Kahf 18:10: «إِذْ أَوَى ٱلْفِتْيَةُ ...» Which word comes next?",
+          "a": "إِلَى",
+          "mins": 1,
+          "options": [
+            "يُبْدِلَهُمَا",
+            "إِلَى",
+            "ٱلَّذِىٓ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Lessons from 18:9 to 10",
+          "bullets": [
+            "Faith is worth protecting",
+            "Turn to Allah in du'a",
+            "Good company: they were together",
+            "Ask for mercy and right guidance"
+          ],
+          "note": "Bismillah. Keep to what the ayat say; the full story comes later in the surah."
+        },
+        {
+          "heading": "The du'a of the youths",
+          "bullets": [
+            "Learn it by heart",
+            "Use it before decisions and exams"
+          ],
+          "note": "",
+          "quote": {
+            "text": "إِذْ أَوَى ٱلْفِتْيَةُ إِلَى ٱلْكَهْفِ فَقَالُوا۟ رَبَّنَآ ءَاتِنَا مِن لَّدُنكَ رَحْمَةًۭ وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًۭا (١٠)",
+            "source": "Surat Al-Kahf, 18:10"
+          }
+        },
+        {
+          "heading": "Recite in turns",
+          "bullets": [
+            "Each pupil recites two ayat",
+            "Next pupil continues",
+            "Whole ten ayat round the class"
+          ],
+          "note": "Mics in turn."
+        },
+        {
+          "heading": "Listen and repeat: the joints",
+          "bullets": [],
+          "note": "18:5 to 6 and 18:8 to 9.",
+          "cycle": [
+            "Teacher recites across a joint",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher checks the link",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "18:7 says Allah made what is on the earth an adornment ...",
+            "options": [
+              "to test who is best in deeds",
+              "to keep forever",
+              "for the angels"
+            ],
+            "answer": 0,
+            "why": "18:7: 'that We may test them as to which of them is best in deed'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "In the portal response box, write a paragraph: 'How can the first ten ayat of Al-Kahf help a young Muslim today?' (Point, Evidence, Explain, Link).",
+          "a": "Point: they strengthen faith. Evidence: 18:10 du'a; 18:7 the test. Explain: turning to Allah and seeing the world as a test. Link: protection from fitnah.",
+          "mins": 5,
+          "model": "I do: 'Point: these ayat remind young Muslims that this world is a test. Evidence: Allah says He made what is on earth an adornment to test which of us is best in deeds (18:7). Explain: ... Link: ...'"
+        },
+        {
+          "q": "18:8 says the earth's adornment will become ...",
+          "a": "barren dust",
+          "mins": 1,
+          "options": [
+            "barren dust",
+            "gold",
+            "a garden"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Complete your paragraph, then recite 18:1 to 10 to a partner (pupil PDF rubric). Today's rota group recites 18:6 to 10 to the teacher.",
+          "a": "Paragraph complete; partner rubric with a target.",
+          "mins": 10,
+          "model": "The teacher finishes the model paragraph's 'Explain' sentence."
+        },
+        {
+          "q": "Extend: memorise the du'a of 18:10 with its meaning.",
+          "a": "Recited with meaning.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain 'which of them is best in deed' (18:7): best, not most.",
+          "a": "Quality and sincerity of deeds matter, not only quantity.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Memorising the first ten ayat of Al-Kahf protects from ...",
+          "a": "the Dajjal (Muslim)",
+          "mins": 1,
+          "options": [
+            "the Dajjal (Muslim)",
+            "illness",
+            "poverty"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The people of the cave were young. What tests (fitan) do young Muslims face today, and what did the youths do?",
+          "a": "Pressure on faith, distraction, wrong company; they turned to Allah, asked for mercy and guidance, and kept together.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite 18:1 to 10 daily and use the du'a of 18:10; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Kahf 1 to 10 rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Cave interior light",
+          "alt": "Light inside a cave",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
+      "n": 13,
+      "title": "Recitation rehearsal under mock conditions",
+      "duration": 50,
+      "bigQuestion": "This is mock week in every subject. How is a recitation assessment like a written exam, and how is it different?",
+      "objectives": [
+        "To understand how a formal recitation assessment runs and rehearse under those conditions"
+      ],
+      "successCriteria": [
+        "All: recite your chosen portion under check conditions",
+        "Most: act on one precise target in a second attempt",
+        "Some: recite from any starting point named by the examiner"
+      ],
+      "smsc": "Spiritual: calm and trust in Allah under pressure",
+      "keywords": [
+        {
+          "term": "muraja'a (مراجعة)",
+          "def": "revising what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "rubric",
+          "def": "the checklist used to assess recitation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "This is mock week in every subject. How is a recitation assessment like a written exam, and how is it different?",
+        "a": "Both need preparation and calm; recitation is spoken, live, and judged on accuracy, rules and adab."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, with hardship comes ease' (Ash-Sharh 94:6). Prepare well, then trust Allah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Kahf 18:8 in your head. How does the next ayah begin?",
+          "a": "أَمْ حَسِبْتَ",
+          "mins": 1,
+          "options": [
+            "وَمَنْ أَظْلَمُ",
+            "قَالَ أَرَءَيْتَ",
+            "أَمْ حَسِبْتَ"
+          ]
+        },
+        {
+          "q": "«صَعِيدًۭا جُرُزًا» is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "izhar",
+            "iqlab"
+          ]
+        },
+        {
+          "q": "Lahn jali must be ...",
+          "a": "fixed first",
+          "mins": 1,
+          "options": [
+            "fixed first",
+            "ignored",
+            "fixed last"
+          ]
+        },
+        {
+          "q": "The du'a of the youths is in ...",
+          "a": "18:10",
+          "mins": 1,
+          "options": [
+            "18:10",
+            "18:1",
+            "36:12"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Assessment conditions",
+          "bullets": [
+            "Camera on, mushaf closed",
+            "Isti'adhah and Bismillah",
+            "Examiner names the start",
+            "Steady pace; stop only at ayah ends"
+          ],
+          "note": "Bismillah."
+        },
+        {
+          "heading": "The rubric",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Portions",
+          "bullets": [
+            "Al-Kahf 18:1 to 10",
+            "A Juz' Tabarak surah",
+            "A Juz' 'Amma block"
+          ],
+          "note": "Each pupil recites one portion of each, as named."
+        },
+        {
+          "heading": "Listen and repeat: calm pace",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Breathe and settle",
+            "Isti'adhah and Bismillah",
+            "Recite the named start",
+            "Hear one target",
+            "Second attempt"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "If you lose your place in an assessment, the best step is ...",
+            "options": [
+              "Pause, restart from the beginning of the ayah",
+              "Skip to the next surah",
+              "Stop and give up"
+            ],
+            "answer": 0,
+            "why": "Restarting the ayah calmly is accepted; skipping loses marks."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rehearse: start at 18:6 and recite to 18:10 under conditions.",
+          "a": "Recited with no prompts and the rules applied.",
+          "mins": 5,
+          "model": "I do: isti'adhah, then 18:6 فَلَعَلَّكَ بَٰخِعٌۭ نَّفْسَكَ ... calm pace to 18:10 رَشَدًۭا (stop: rashadaa)."
+        },
+        {
+          "q": "Stopping on «رَشَدًۭا» gives ...",
+          "a": "rashadaa",
+          "mins": 1,
+          "options": [
+            "rashadaa",
+            "rashadan",
+            "rashad"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Mock rehearsal in breakout pairs: examiner and reciter swap, using the pupil PDF list of starts. Today's rota group rehearses with the teacher.",
+          "a": "Each pupil has two attempts and a written target.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model examiner and reciter."
+        },
+        {
+          "q": "Extend: list your three strongest portions and your weakest.",
+          "a": "Personal list.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: rehearse a Juz' Tabarak surah from a random start.",
+          "a": "Fluent from the named start.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Under assessment conditions the mushaf is ...",
+          "a": "closed",
+          "mins": 1,
+          "options": [
+            "closed",
+            "open",
+            "on screen"
+          ]
+        },
+        {
+          "q": "Back to our ponder: This is mock week in every subject. How is a recitation assessment like a written exam, and how is it different?",
+          "a": "Both need preparation and calm; recitation is spoken, live, and judged on accuracy, rules and adab.",
+          "mins": 2
+        }
+      ],
+      "homework": "Rehearse your three portions daily this week; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Recitation rehearsal under mock conditions rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Hourglass sand timer",
+          "alt": "An hourglass",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Tajweed mastery and Al-Kahf consolidation",
+      "n": 14,
+      "title": "Mock week recitation against the rubric",
+      "duration": 50,
+      "bigQuestion": "After this mock recitation, what one change would make the biggest difference before the summer?",
+      "objectives": [
+        "To show your current recitation level against the rubric and set targets for the final assessment"
+      ],
+      "successCriteria": [
+        "All: recite each named portion with no more than three prompts",
+        "Most: keep rules and the saktah correct",
+        "Some: score 4 on every row and write a plan to the final assessment"
+      ],
+      "smsc": "Spiritual: commitment to the Qur'an beyond school",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "muraja'a (مراجعة)",
+          "def": "revising what is already memorised"
+        },
+        {
+          "term": "rubric",
+          "def": "the checklist used to assess recitation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "After this mock recitation, what one change would make the biggest difference before the summer?",
+        "a": "Usually daily revision of the weakest portion and fixing one rule family."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The best of you are those who learn the Qur'an and teach it' (Bukhari). Year 11 ends with reciting, and with being ready to teach others.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Kahf 18:4 in your head. How does the next ayah begin?",
+          "a": "مَّا لَهُم",
+          "mins": 1,
+          "options": [
+            "مَّا لَهُم",
+            "وَدَخَلَ جَنَّتَهُۥ",
+            "فَأَرَدْنَآ أَن"
+          ]
+        },
+        {
+          "q": "The saktah in Al-Kahf is in ...",
+          "a": "18:1",
+          "mins": 1,
+          "options": [
+            "18:1",
+            "18:10",
+            "18:5"
+          ]
+        },
+        {
+          "q": "ۘ means ...",
+          "a": "must stop",
+          "mins": 1,
+          "options": [
+            "must stop",
+            "do not stop",
+            "either"
+          ]
+        },
+        {
+          "q": "Ramadan: the Qur'an was revealed in it (2:185)?",
+          "a": "Yes",
+          "mins": 1,
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How we are assessed",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The assessment",
+          "bullets": [
+            "Al-Kahf 18:1 to 10 from a named start",
+            "One Juz' Tabarak surah",
+            "One Juz' 'Amma block",
+            "One rule question"
+          ],
+          "note": "One by one; pupils assessed this week in the rota keep that score. Others revise in breakout pairs."
+        },
+        {
+          "heading": "Plan to the final assessment",
+          "bullets": [
+            "Weakest portion: daily",
+            "One rule family a week",
+            "Ramadan: daily Qur'an, logged"
+          ],
+          "note": "Pupils write the plan on the pupil PDF."
+        },
+        {
+          "heading": "Mistakes to avoid",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Taking a breath at the saktah in 18:1",
+            "right": "Pause briefly without breath: عِوَجَا ۜ قَيِّمًا"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "A saktah is ...",
+            "options": [
+              "a brief pause without breath",
+              "a full stop",
+              "a sajdah"
+            ],
+            "answer": 0,
+            "why": "Saktah: a short silent pause with no new breath."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Self-check: recite 18:1 to 5 and score each rubric row.",
+          "a": "Pupil scores and one target.",
+          "mins": 5,
+          "model": "I do: hifdh 4; makharij 4; rules 3 (ikhfa in بَأْسًۭا شَدِيدًۭا too clear); fluency 4. Target: hum the ikhfa."
+        },
+        {
+          "q": "Al-Kahf 18:1 to 10 protects from ...",
+          "a": "the Dajjal (Muslim)",
+          "mins": 1,
+          "options": [
+            "the Dajjal (Muslim)",
+            "sleep",
+            "the cold"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Mock recitation: recite the named portions to the teacher one by one. While waiting, write your plan to the final assessment on the pupil PDF.",
+          "a": "Rubric scores and targets recorded in the portal.",
+          "mins": 10,
+          "model": "The teacher runs the first assessment as a model."
+        },
+        {
+          "q": "Extend: write your Ramadan Qur'an plan.",
+          "a": "Daily plan, logged.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: plan a five-minute mini lesson to teach a younger pupil one rule.",
+          "a": "Plan with rule, example and a check question.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Year 11 Qur'an ends with ...",
+          "a": "the final recitation assessment",
+          "mins": 1,
+          "options": [
+            "the final recitation assessment",
+            "a written exam",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Back to our ponder: After this mock recitation, what one change would make the biggest difference before the summer?",
+          "a": "Usually daily revision of the weakest portion and fixing one rule family.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow your plan through Ramadan; log it daily.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Mock week recitation against the rubric rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Crescent moon dusk",
+          "alt": "The crescent moon",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
