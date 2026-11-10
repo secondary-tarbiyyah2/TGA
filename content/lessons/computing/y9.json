@@ -1653,6 +1653,1330 @@
           "for": "hook"
         }
       ]
+    },
+    {
+      "unit": "Spring 2: Databases and spreadsheets",
+      "n": 10,
+      "title": "Databases: fields, records and tables",
+      "duration": 50,
+      "bigQuestion": "A school has hundreds of pupils with the same first names. How does a computer tell them apart?",
+      "objectives": [
+        "To understand how a database organises data into tables of records and fields"
+      ],
+      "successCriteria": [
+        "All: label fields and records in a table",
+        "Most: choose data types for fields",
+        "Some: choose a primary key and explain why it must be unique"
+      ],
+      "crossCurricular": "Maths: data handling",
+      "smsc": "Moral: responsible handling of personal data",
+      "keywords": [
+        {
+          "term": "database",
+          "def": "an organised store of data"
+        },
+        {
+          "term": "record",
+          "def": "one row: all the data about one item"
+        },
+        {
+          "term": "field",
+          "def": "one column: one type of data"
+        },
+        {
+          "term": "primary key",
+          "def": "a field that uniquely identifies each record"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A school has hundreds of pupils with the same first names. How does a computer tell them apart?",
+        "a": "Each record has a unique ID (primary key), such as a pupil number."
+      },
+      "starter": [
+        {
+          "q": "In Python, what does len('salam') return?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "A variable stores ...",
+          "a": "data",
+          "mins": 1,
+          "options": [
+            "data",
+            "only numbers"
+          ]
+        },
+        {
+          "q": "'while' is a ...",
+          "a": "condition-controlled loop",
+          "mins": 1,
+          "options": [
+            "condition-controlled loop",
+            "count-controlled loop"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tables, records, fields",
+          "bullets": [],
+          "note": "Invented example data.",
+          "table": {
+            "head": [
+              "BookID",
+              "Title",
+              "Pages",
+              "Available"
+            ],
+            "rows": [
+              [
+                "B001",
+                "Tales of the Prophets",
+                "210",
+                "Yes"
+              ],
+              [
+                "B002",
+                "Atlas of the World",
+                "96",
+                "No"
+              ],
+              [
+                "B003",
+                "Python Basics",
+                "180",
+                "Yes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Data types",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Field",
+              "Type"
+            ],
+            "rows": [
+              [
+                "BookID",
+                "Text"
+              ],
+              [
+                "Title",
+                "Text"
+              ],
+              [
+                "Pages",
+                "Integer"
+              ],
+              [
+                "Available",
+                "Boolean"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Primary key",
+          "bullets": [
+            "Unique for every record",
+            "Never blank",
+            "Often an ID code"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "In the example table, how many records are there?",
+            "options": [
+              "3",
+              "4",
+              "12"
+            ],
+            "answer": 0,
+            "why": "Three rows of data = three records."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which field is the best primary key in the table, and why?",
+          "a": "BookID: unique for every book; titles could repeat.",
+          "mins": 4,
+          "model": "I do: check each field: could two records share it? Titles might; BookID never."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Design a table for a masjid library (pupil PDF): five fields, data types, a primary key and three invented records.",
+          "a": "A valid table design with three records.",
+          "mins": 15,
+          "model": "The teacher designs the first two fields."
+        },
+        {
+          "q": "Extend: which field could be a date type?",
+          "a": "DateBorrowed.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why should a database avoid storing the same data twice?",
+          "a": "Duplication wastes space and causes inconsistent updates.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A field is ...",
+          "a": "one column",
+          "mins": 1,
+          "options": [
+            "one column",
+            "one row"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A school has hundreds of pupils with the same first names. How does a computer tell them apart?",
+          "a": "Each record has a unique ID (primary key), such as a pupil number.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find one database you use (school portal, library) and name three of its fields.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (databases and spreadsheets; no secondary scheme of work supplied)",
+        "A free spreadsheet program (Excel online through the school's Microsoft 365, or Google Sheets; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Library card catalogue drawers",
+          "alt": "A card catalogue",
+          "for": "hook"
+        },
+        {
+          "find": "Spreadsheet table rows columns",
+          "alt": "A table of data",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Databases and spreadsheets",
+      "n": 11,
+      "title": "Searching a database: simple queries",
+      "duration": 50,
+      "bigQuestion": "How does a shopping website find 'blue shoes under £30' among millions of products?",
+      "objectives": [
+        "To understand how queries use criteria to find records in a database"
+      ],
+      "successCriteria": [
+        "All: filter a table by one criterion",
+        "Most: combine two criteria with AND or OR",
+        "Some: write a query in SQL-style form"
+      ],
+      "crossCurricular": "Maths: inequalities",
+      "smsc": "Intellectual: precise questioning",
+      "keywords": [
+        {
+          "term": "query",
+          "def": "a question that finds records"
+        },
+        {
+          "term": "criteria",
+          "def": "the conditions records must meet"
+        },
+        {
+          "term": "filter",
+          "def": "show only matching records"
+        },
+        {
+          "term": "SQL",
+          "def": "a language for querying databases"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How does a shopping website find 'blue shoes under £30' among millions of products?",
+        "a": "It runs a query with criteria: colour = blue AND type = shoes AND price < 30."
+      },
+      "starter": [
+        {
+          "q": "A record is ...",
+          "a": "one row",
+          "mins": 1,
+          "options": [
+            "one row",
+            "one column"
+          ]
+        },
+        {
+          "q": "What is a primary key?",
+          "a": "A unique ID field.",
+          "mins": 1
+        },
+        {
+          "q": "Boolean data is ...",
+          "a": "true or false",
+          "mins": 1,
+          "options": [
+            "true or false",
+            "text"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One criterion",
+          "bullets": [],
+          "note": "Invented example data.",
+          "table": {
+            "head": [
+              "BookID",
+              "Title",
+              "Pages",
+              "Available"
+            ],
+            "rows": [
+              [
+                "B001",
+                "Tales of the Prophets",
+                "210",
+                "Yes"
+              ],
+              [
+                "B002",
+                "Atlas of the World",
+                "96",
+                "No"
+              ],
+              [
+                "B003",
+                "Python Basics",
+                "180",
+                "Yes"
+              ],
+              [
+                "B004",
+                "Rivers and Coasts",
+                "130",
+                "Yes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Two criteria",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "AND",
+              "points": [
+                "Both must be true",
+                "Pages > 150 AND Available = Yes"
+              ]
+            },
+            "right": {
+              "title": "OR",
+              "points": [
+                "Either can be true",
+                "Pages < 100 OR Available = No"
+              ]
+            },
+            "label": "logic"
+          }
+        },
+        {
+          "heading": "SQL style",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "text",
+            "text": "SELECT Title\nFROM Books\nWHERE Pages > 150 AND Available = 'Yes'",
+            "output": "Tales of the Prophets\nPython Basics"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Pages > 150 AND Available = Yes returns how many books from the example?",
+            "options": [
+              "2",
+              "1",
+              "3"
+            ],
+            "answer": 0,
+            "why": "B001 (210, Yes) and B003 (180, Yes)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which books match Pages < 100 OR Available = No?",
+          "a": "Atlas of the World only (96 pages and not available).",
+          "mins": 4,
+          "model": "I do: check each record: B002 matches both; the others match neither."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Filter practice in a spreadsheet: use the 12-record example library data (portal file) to answer five queries and write each in SQL style.",
+          "a": "Five correct results with SQL-style queries.",
+          "mins": 15,
+          "model": "The teacher runs query 1 with a filter."
+        },
+        {
+          "q": "Extend: write a query to find books with 'Python' in the title.",
+          "a": "WHERE Title LIKE '%Python%'",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: sort the results by Pages, highest first.",
+          "a": "ORDER BY Pages DESC",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "OR returns records where ...",
+          "a": "either condition is true",
+          "mins": 1,
+          "options": [
+            "either condition is true",
+            "both must be true"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How does a shopping website find 'blue shoes under £30' among millions of products?",
+          "a": "It runs a query with criteria: colour = blue AND type = shoes AND price < 30.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write two queries you could run on your table design from last lesson.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (databases and spreadsheets; no secondary scheme of work supplied)",
+        "A free spreadsheet program (Excel online through the school's Microsoft 365, or Google Sheets; TO CONFIRM)",
+        "Example library data file (12 invented records, portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Magnifying glass",
+          "alt": "A magnifying glass: searching",
+          "for": "hook"
+        },
+        {
+          "find": "Filter funnel icon",
+          "alt": "A filter",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Databases and spreadsheets",
+      "n": 12,
+      "title": "Spreadsheets: formulas and functions",
+      "duration": 50,
+      "bigQuestion": "Why might a business use a spreadsheet instead of a calculator?",
+      "objectives": [
+        "To understand how spreadsheet formulas and functions calculate automatically"
+      ],
+      "successCriteria": [
+        "All: write a formula with cell references",
+        "Most: use SUM, AVERAGE, MAX and MIN",
+        "Some: use absolute references ($) correctly when copying formulas"
+      ],
+      "crossCurricular": "Maths: averages and percentages",
+      "smsc": "Moral: honest, accurate records",
+      "keywords": [
+        {
+          "term": "cell reference",
+          "def": "the address of a cell, such as B2"
+        },
+        {
+          "term": "formula",
+          "def": "a calculation starting with ="
+        },
+        {
+          "term": "function",
+          "def": "a built-in formula such as SUM"
+        },
+        {
+          "term": "absolute reference",
+          "def": "a reference that does not change when copied ($B$1)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might a business use a spreadsheet instead of a calculator?",
+        "a": "Formulas update automatically when data changes, and calculations can be copied and checked."
+      },
+      "starter": [
+        {
+          "q": "SQL WHERE sets ...",
+          "a": "the criteria",
+          "mins": 1,
+          "options": [
+            "the criteria",
+            "the table name"
+          ]
+        },
+        {
+          "q": "What does AND require?",
+          "a": "Both conditions true.",
+          "mins": 1
+        },
+        {
+          "q": "A query finds ...",
+          "a": "records",
+          "mins": 1,
+          "options": [
+            "records",
+            "fonts"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Formulas",
+          "bullets": [],
+          "note": "Invented example: a masjid bake sale.",
+          "table": {
+            "head": [
+              "Row",
+              "A Item",
+              "B Price (£)",
+              "C Sold",
+              "D Takings"
+            ],
+            "rows": [
+              [
+                "2",
+                "Cupcake",
+                "1.50",
+                "40",
+                "=B2*C2"
+              ],
+              [
+                "3",
+                "Brownie",
+                "2.00",
+                "25",
+                "=B3*C3"
+              ],
+              [
+                "4",
+                "Date ball",
+                "0.50",
+                "60",
+                "=B4*C4"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Functions",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Function",
+              "Example",
+              "Result"
+            ],
+            "rows": [
+              [
+                "SUM",
+                "=SUM(D2:D4)",
+                "140.00"
+              ],
+              [
+                "AVERAGE",
+                "=AVERAGE(C2:C4)",
+                "41.67 (2 d.p.)"
+              ],
+              [
+                "MAX",
+                "=MAX(C2:C4)",
+                "60"
+              ],
+              [
+                "MIN",
+                "=MIN(B2:B4)",
+                "0.50"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Absolute references",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "Add 20% of each takings figure to a charity column, with 20% in F1",
+            "steps": [
+              "Put 0.2 in F1",
+              "In E2 type =D2*$F$1",
+              "Copy down to E4",
+              "$F$1 stays fixed; D2 changes to D3, D4"
+            ],
+            "answer": "E2 = 12.00, E3 = 10.00, E4 = 6.00"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "D2 = 1.50 × 40. What is D2?",
+            "options": [
+              "60",
+              "41.5",
+              "6"
+            ],
+            "answer": 0,
+            "why": "1.50 × 40 = 60."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Work out D3 and D4, then SUM(D2:D4).",
+          "a": "D3 = 50, D4 = 30; SUM = 140.",
+          "mins": 4,
+          "model": "I do: D3 = 2.00 × 25 = 50; D4 = 0.50 × 60 = 30; 60 + 50 + 30 = 140."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build the bake sale spreadsheet (portal template): takings formulas, SUM, AVERAGE, MAX, MIN and a 20% sadaqah column with an absolute reference.",
+          "a": "Correct formulas; total £140; sadaqah £28.",
+          "mins": 15,
+          "model": "The teacher builds row 2 live."
+        },
+        {
+          "q": "Extend: what is AVERAGE(C2:C4) exactly?",
+          "a": "125 ÷ 3 = 41.666..., 41.67 to 2 d.p.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: use COUNTIF to count items that sold more than 30.",
+          "a": "=COUNTIF(C2:C4,\">30\") = 2",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Formulas start with ...",
+          "a": "=",
+          "mins": 1,
+          "options": [
+            "=",
+            "#",
+            "@"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why might a business use a spreadsheet instead of a calculator?",
+          "a": "Formulas update automatically when data changes, and calculations can be copied and checked.",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a small spreadsheet of your weekly screen time with SUM and AVERAGE.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (databases and spreadsheets; no secondary scheme of work supplied)",
+        "A free spreadsheet program (Excel online through the school's Microsoft 365, or Google Sheets; TO CONFIRM)",
+        "Bake sale spreadsheet template (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Cupcakes tray",
+          "alt": "Cupcakes",
+          "for": "hook"
+        },
+        {
+          "find": "Spreadsheet formula bar",
+          "alt": "A formula bar",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Databases and spreadsheets",
+      "n": 13,
+      "title": "Charts and modelling: what if?",
+      "duration": 50,
+      "bigQuestion": "If the bake sale price of cupcakes rose to £2, would the takings go up or down?",
+      "objectives": [
+        "To understand how charts present data and how spreadsheet models answer 'what if' questions"
+      ],
+      "successCriteria": [
+        "All: create a suitable chart from data",
+        "Most: change an input and explain the effect",
+        "Some: use a model to make a justified decision"
+      ],
+      "crossCurricular": "Business: pricing and revenue",
+      "smsc": "Moral: honest use of data in decisions",
+      "keywords": [
+        {
+          "term": "model",
+          "def": "a spreadsheet that represents a real situation"
+        },
+        {
+          "term": "input",
+          "def": "a value you can change"
+        },
+        {
+          "term": "output",
+          "def": "a result calculated from inputs"
+        },
+        {
+          "term": "what-if analysis",
+          "def": "changing inputs to see effects"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If the bake sale price of cupcakes rose to £2, would the takings go up or down?",
+        "a": "It depends on how many fewer are sold; a model lets us test it."
+      },
+      "starter": [
+        {
+          "q": "SUM adds ...",
+          "a": "a range of cells",
+          "mins": 1,
+          "options": [
+            "a range of cells",
+            "two letters"
+          ]
+        },
+        {
+          "q": "What does $F$1 mean?",
+          "a": "An absolute reference that doesn't change when copied.",
+          "mins": 1
+        },
+        {
+          "q": "D2 = 1.50 × 40 = ...",
+          "a": "60",
+          "mins": 1,
+          "options": [
+            "60",
+            "6"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choosing a chart",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Chart",
+              "Best for"
+            ],
+            "rows": [
+              [
+                "Bar",
+                "Comparing categories"
+              ],
+              [
+                "Line",
+                "Change over time"
+              ],
+              [
+                "Pie",
+                "Parts of a whole"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Bake sale takings",
+          "bullets": [],
+          "note": "From last lesson's example.",
+          "chart": {
+            "kind": "bar",
+            "title": "Takings by item (£)",
+            "labels": [
+              "Cupcake",
+              "Brownie",
+              "Date ball"
+            ],
+            "values": [
+              60,
+              50,
+              30
+            ],
+            "unit": "£"
+          }
+        },
+        {
+          "heading": "What if?",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "Cupcake price £2.00, but sales fall to 32. New cupcake takings?",
+            "steps": [
+              "Takings = price × sold",
+              "2.00 × 32 = 64",
+              "Old takings were 60",
+              "Change: +£4"
+            ],
+            "answer": "£64, up £4"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which chart best shows takings each month over a year?",
+            "options": [
+              "Line",
+              "Pie",
+              "None"
+            ],
+            "answer": 0,
+            "why": "Change over time: line chart."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Cupcake price £2.50 and sales fall to 20. New takings and change?",
+          "a": "2.50 × 20 = £50; down £10 from £60.",
+          "mins": 4,
+          "model": "I do: 2.50 × 20 = 50; 50 − 60 = −10."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Add a bar chart to your bake sale model and test three 'what if' prices; recommend the best price in the portal response box.",
+          "a": "Chart, three scenarios and a justified recommendation.",
+          "mins": 15,
+          "model": "The teacher tests £1.75 live."
+        },
+        {
+          "q": "Extend: why might the highest takings not be the best choice?",
+          "a": "Fewer people get a treat; goodwill matters for a charity sale.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: use Goal Seek (or trial and improvement) to find the sales needed for £80 cupcake takings at £2.",
+          "a": "40 sold.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A model input is ...",
+          "a": "a value you can change",
+          "mins": 1,
+          "options": [
+            "a value you can change",
+            "a chart title"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If the bake sale price of cupcakes rose to £2, would the takings go up or down?",
+          "a": "It depends on how many fewer are sold; a model lets us test it.",
+          "mins": 2
+        }
+      ],
+      "homework": "Model one 'what if' for a family decision (for example, a weekly food budget).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (databases and spreadsheets; no secondary scheme of work supplied)",
+        "A free spreadsheet program (Excel online through the school's Microsoft 365, or Google Sheets; TO CONFIRM)",
+        "Bake sale spreadsheet (from last lesson)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bar chart",
+          "alt": "A bar chart",
+          "for": "teach:2"
+        },
+        {
+          "find": "Price tag label",
+          "alt": "A price tag",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Databases and spreadsheets",
+      "n": 14,
+      "title": "Validation and lookup",
+      "duration": 50,
+      "bigQuestion": "Validation stops someone typing an age of 250. Can it stop someone typing the wrong (but possible) age?",
+      "objectives": [
+        "To understand how validation prevents bad data and how lookup functions find information"
+      ],
+      "successCriteria": [
+        "All: add a validation rule to a cell",
+        "Most: use a lookup to fetch a value from a table",
+        "Some: explain why validation does not guarantee accuracy"
+      ],
+      "crossCurricular": "Maths: inequalities and ranges",
+      "smsc": "Moral: honesty and accuracy in data",
+      "keywords": [
+        {
+          "term": "validation",
+          "def": "a check that data is sensible and allowed"
+        },
+        {
+          "term": "range check",
+          "def": "a value must be between limits"
+        },
+        {
+          "term": "lookup",
+          "def": "a function that finds a value in a table"
+        },
+        {
+          "term": "verification",
+          "def": "checking data matches the original"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Validation stops someone typing an age of 250. Can it stop someone typing the wrong (but possible) age?",
+        "a": "No: 14 instead of 15 passes validation. Verification (double-checking) is also needed."
+      },
+      "starter": [
+        {
+          "q": "A line chart shows ...",
+          "a": "change over time",
+          "mins": 1,
+          "options": [
+            "change over time",
+            "parts of a whole"
+          ]
+        },
+        {
+          "q": "£2.50 × 20 = ?",
+          "a": "£50",
+          "mins": 1
+        },
+        {
+          "q": "What-if analysis changes ...",
+          "a": "inputs",
+          "mins": 1,
+          "options": [
+            "inputs",
+            "titles"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Validation types",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Check",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Range",
+                "Age between 11 and 18"
+              ],
+              [
+                "Type",
+                "Must be a whole number"
+              ],
+              [
+                "Length",
+                "Postcode 6 to 8 characters"
+              ],
+              [
+                "List",
+                "Year group from a drop-down"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Lookup",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "text",
+            "text": "=XLOOKUP(\"B003\", A2:A13, B2:B13)\n(or =VLOOKUP(\"B003\", A2:D13, 2, FALSE))",
+            "output": "Python Basics"
+          }
+        },
+        {
+          "heading": "Validation vs verification",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Validation",
+              "points": [
+                "Is it sensible?",
+                "Automatic rules"
+              ]
+            },
+            "right": {
+              "title": "Verification",
+              "points": [
+                "Is it correct?",
+                "Double entry or checking"
+              ]
+            },
+            "label": "both"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is a range check?",
+            "options": [
+              "Age must be between 11 and 18",
+              "Name must be typed twice",
+              "Postcode must be text"
+            ],
+            "answer": 0,
+            "why": "Range: between limits."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a validation rule for 'pages' in the library table.",
+          "a": "Whole number between 1 and 2,000.",
+          "mins": 4,
+          "model": "I do: type check (whole number) plus range (1 to 2,000)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the library spreadsheet: add two validation rules and one lookup that returns a book title from its ID; test with good and bad data.",
+          "a": "Working rules and lookup, with tests recorded.",
+          "mins": 15,
+          "model": "The teacher adds the range rule live."
+        },
+        {
+          "q": "Extend: add a drop-down list for 'Available' (Yes/No).",
+          "a": "A list validation.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: explain why validation cannot prove data is correct.",
+          "a": "Plausible but wrong values still pass.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Verification checks ...",
+          "a": "data matches the original",
+          "mins": 1,
+          "options": [
+            "data matches the original",
+            "data is in range only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Validation stops someone typing an age of 250. Can it stop someone typing the wrong (but possible) age?",
+          "a": "No: 14 instead of 15 passes validation. Verification (double-checking) is also needed.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find a form online that uses validation (with a parent) and name the check.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (databases and spreadsheets; no secondary scheme of work supplied)",
+        "A free spreadsheet program (Excel online through the school's Microsoft 365, or Google Sheets; TO CONFIRM)",
+        "Example library data file (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Form validation error message",
+          "alt": "A form check",
+          "for": "hook"
+        },
+        {
+          "find": "Index cards lookup",
+          "alt": "Looking up data",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Databases and spreadsheets",
+      "n": 15,
+      "title": "Project: a household budget model",
+      "duration": 50,
+      "bigQuestion": "Why might a family with a good income still run out of money each month?",
+      "objectives": [
+        "To understand how to build a spreadsheet model of a household budget that supports good decisions"
+      ],
+      "successCriteria": [
+        "All: list income and expenses with formulas",
+        "Most: calculate the balance and a savings target",
+        "Some: test 'what if' scenarios and include zakah and sadaqah in the plan"
+      ],
+      "crossCurricular": "PSHE: budgeting (Spring 1); Maths: percentages",
+      "smsc": "Moral: balanced spending, saving and giving",
+      "keywords": [
+        {
+          "term": "budget",
+          "def": "a plan for income and spending"
+        },
+        {
+          "term": "balance",
+          "def": "income minus spending"
+        },
+        {
+          "term": "zakah",
+          "def": "obligatory charity on wealth above the nisab, 2.5% a lunar year"
+        },
+        {
+          "term": "scenario",
+          "def": "a 'what if' version of the plan"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might a family with a good income still run out of money each month?",
+        "a": "Without a plan, small spends add up; a budget shows where money goes."
+      },
+      "islamicLink": {
+        "text": "Allah says of the believers: 'And [they are] those who, when they spend, do so not excessively or sparingly but are ever, between that, [justly] moderate' (Al-Furqan 25:67). Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A range check ...",
+          "a": "keeps values between limits",
+          "mins": 1,
+          "options": [
+            "keeps values between limits",
+            "checks spelling"
+          ]
+        },
+        {
+          "q": "What does a lookup do?",
+          "a": "Finds a value in a table.",
+          "mins": 1
+        },
+        {
+          "q": "Zakah is ...",
+          "a": "2.5% of eligible wealth a lunar year",
+          "mins": 1,
+          "options": [
+            "2.5% of eligible wealth a lunar year",
+            "10% of income every week"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model structure",
+          "bullets": [],
+          "note": "Invented example figures.",
+          "table": {
+            "head": [
+              "Item",
+              "Monthly (£)"
+            ],
+            "rows": [
+              [
+                "Income",
+                "2,400"
+              ],
+              [
+                "Rent",
+                "950"
+              ],
+              [
+                "Food",
+                "450"
+              ],
+              [
+                "Bills",
+                "300"
+              ],
+              [
+                "Travel",
+                "150"
+              ],
+              [
+                "Sadaqah",
+                "50"
+              ],
+              [
+                "Balance",
+                "=B2-SUM(B3:B7) = 500"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Savings target",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "Save for a £1,200 laptop with the £500 balance, keeping £200 for emergencies",
+            "steps": [
+              "Available to save: 500 − 200 = 300 a month",
+              "1,200 ÷ 300 = 4",
+              "Saving for 4 months, no borrowing"
+            ],
+            "answer": "4 months, without interest-based credit"
+          }
+        },
+        {
+          "heading": "Scenarios",
+          "bullets": [
+            "Bills rise by 10%",
+            "Food falls by £50",
+            "Income drops one month"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Income £2,400, spending £1,900. Balance?",
+            "options": [
+              "£500",
+              "£4,300",
+              "£1,900"
+            ],
+            "answer": 0,
+            "why": "2,400 − 1,900 = 500."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Bills rise by 10% (from £300). New bills and new balance?",
+          "a": "£330; balance £470.",
+          "mins": 4,
+          "model": "I do: 10% of 300 = 30; 300 + 30 = 330; balance 500 − 30 = 470."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build the budget model (portal template): income, expenses, balance formula, a savings target and two scenarios; write a recommendation.",
+          "a": "A working model with scenarios and a recommendation.",
+          "mins": 15,
+          "model": "The teacher builds the balance formula live."
+        },
+        {
+          "q": "Extend: add a chart of spending by category.",
+          "a": "A pie or bar chart.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: add a zakah calculator: 2.5% of savings above an example nisab.",
+          "a": "Correct zakah formula, e.g. =IF(B10>B11, B10*0.025, 0).",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The balance is ...",
+          "a": "income minus spending",
+          "mins": 1,
+          "options": [
+            "income minus spending",
+            "income plus spending"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why might a family with a good income still run out of money each month?",
+          "a": "Without a plan, small spends add up; a budget shows where money goes.",
+          "mins": 2
+        }
+      ],
+      "homework": "Share your budget model with a parent and discuss one scenario.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (databases and spreadsheets; no secondary scheme of work supplied)",
+        "A free spreadsheet program (Excel online through the school's Microsoft 365, or Google Sheets; TO CONFIRM)",
+        "Household budget template (portal, invented figures)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Calculator and notebook budget",
+          "alt": "A budget notebook",
+          "for": "hook"
+        },
+        {
+          "find": "Piggy bank",
+          "alt": "Savings",
+          "for": "teach:2"
+        }
+      ]
     }
   ]
 }
