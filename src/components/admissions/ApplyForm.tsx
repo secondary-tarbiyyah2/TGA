@@ -28,7 +28,7 @@ import {
   type YearGroupSuggestion,
 } from "@/components/admissions/applicationShared";
 import { COUNTRIES } from "@/lib/countries";
-import { COUNTRY_ALIASES } from "@/components/admissions/countryCodes";
+import { COUNTRY_ALIASES, countryCode } from "@/components/admissions/countryCodes";
 import { Combobox, SelectBox } from "@/components/admissions/Combobox";
 import { AddressLookup } from "@/components/admissions/AddressLookup";
 import type { AddressFill, AddressSuggestion } from "@/components/admissions/addressLookup";
@@ -43,6 +43,7 @@ import { formatGBP } from "@/lib/format";
 type ParentKey =
   | "parentName" | "parentEmail" | "parentPhone" | "relationship" | "preferredStart" | "howHeard"
   | "addressLine1" | "addressLine2" | "addressTown" | "addressPostcode" | "addressCountry"
+  | "livedInUk" | "lastUkPostcode" | "lastUkAddress"
   | "siblingDetails" | "declarationName" | "website" | "paymentPlan";
 type BoolKey = "sibling" | "consentContact" | "consentData";
 type Values = Record<ParentKey, string> & Record<BoolKey, boolean>;
@@ -65,6 +66,8 @@ type ChildForm = {
   currentSchoolYear: string;
   islamicEducation: string;
   sendNotes: string;
+  /** "yes" or "no": is this child a British citizen? */
+  britishNational: string;
   /** This child's legal parent or guardian is someone other than the contact above. */
   otherGuardian: boolean;
   guardianName: string;
@@ -75,7 +78,7 @@ type ChildForm = {
   docs: Record<ChildDocKind, File[]>;
 };
 type ChildTextKey =
-  | "firstName" | "lastName" | "dobDay" | "dobMonth" | "dobYear" | "gender" | "yearGroup" | "currentSchool" | "currentSchoolYear" | "islamicEducation" | "sendNotes"
+  | "firstName" | "lastName" | "dobDay" | "dobMonth" | "dobYear" | "gender" | "yearGroup" | "currentSchool" | "currentSchoolYear" | "islamicEducation" | "sendNotes" | "britishNational"
   | "guardianName" | "guardianRelationship" | "guardianEmail" | "guardianPhone" | "guardianAddress";
 
 /** Keys: a parent field ("parentName"), a document ("doc-parent_id"), or a child field ("c0-firstName", "c0-doc-child_id"). The element id is "f-" + key. */
@@ -89,6 +92,7 @@ const CHILD_LIMITS: Record<ChildDocKind, number> = { report: MAX_REPORT_FILES, c
 const INITIAL: Values = {
   parentName: "", parentEmail: "", parentPhone: "", relationship: "", preferredStart: "", howHeard: "",
   addressLine1: "", addressLine2: "", addressTown: "", addressPostcode: "", addressCountry: "",
+  livedInUk: "", lastUkPostcode: "", lastUkAddress: "",
   siblingDetails: "", declarationName: "", website: "", paymentPlan: "",
   sibling: false, consentContact: false, consentData: false,
 };
@@ -97,7 +101,7 @@ function blankChild(key: string): ChildForm {
   return {
     key,
     firstName: "", lastName: "", dobDay: "", dobMonth: "", dobYear: "", gender: "", yearGroup: "", yearTouched: false,
-    currentSchool: "", currentSchoolYear: "", islamicEducation: "", sendNotes: "",
+    currentSchool: "", currentSchoolYear: "", islamicEducation: "", sendNotes: "", britishNational: "",
     otherGuardian: false, guardianName: "", guardianRelationship: "", guardianEmail: "", guardianPhone: "", guardianAddress: "",
     docs: { report: [], child_id: [], guardian_id: [] },
   };
@@ -109,6 +113,34 @@ const inputCls = `mt-1 ${inputBase}`;
 const secondaryButtonCls =
   "w-full whitespace-nowrap rounded-lg border border-gold-500 bg-white px-4 py-2 text-sm font-semibold text-ink hover:bg-cream disabled:opacity-60 sm:w-auto";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const UK_POSTCODE_RE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+
+/** True when the home address is in the UK. */
+function livesInUk(country: string): boolean {
+  return countryCode(country) === "GB";
+}
+
+/**
+ * The local council for a UK postcode (postcodes.io, free and open data), or
+ * null if it can't be found in time. Used so the school knows which local
+ * authority to contact about a pupil, including a family now living abroad.
+ */
+async function councilFor(postcode: string): Promise<string | null> {
+  const pc = postcode.replace(/\s/g, "");
+  if (!UK_POSTCODE_RE.test(postcode.trim())) return null;
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 4000);
+  try {
+    const res = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(pc)}`, { signal: ctrl.signal });
+    if (!res.ok) return null;
+    const data = (await res.json()) as { result?: { admin_district?: string | null } };
+    return data.result?.admin_district?.slice(0, 120) || null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 // ── validation ───────────────────────────────────────────────────────────
 
@@ -168,6 +200,13 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
     put("addressLine1", v.addressLine1.trim() ? undefined : "Please enter the first line of your child's home address.");
     put("addressTown", v.addressTown.trim() ? undefined : "Please enter the town or city.");
     put("addressPostcode", postcodeError(v.addressPostcode, v.addressCountry));
+    if (v.addressCountry.trim() && !livesInUk(v.addressCountry)) {
+      put("livedInUk", v.livedInUk ? undefined : "Please tell us whether your child has lived in the UK.");
+      if (v.livedInUk === "yes") {
+        if (!v.lastUkPostcode.trim()) put("lastUkPostcode", "Please enter the postcode of the last UK address.");
+        else if (!UK_POSTCODE_RE.test(v.lastUkPostcode.trim())) put("lastUkPostcode", "That doesn't look like a UK postcode. It should look like B10 0AB.");
+      }
+    }
     put("doc-parent_id", parentIds.length === 0 ? "Please upload photo ID for a parent or guardian." : undefined);
   }
   if (step === 2) {
@@ -178,6 +217,7 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
       put(`${p}dob`, dobError(k));
       put(`${p}gender`, k.gender === "Male" || k.gender === "Female" ? undefined : "Please choose Male or Female.");
       put(`${p}yearGroup`, k.yearGroup ? undefined : "Please choose the year group you are applying for.");
+      put(`${p}britishNational`, k.britishNational ? undefined : "Please tell us whether your child is a British citizen.");
     });
   }
   if (step === 3) {
@@ -254,6 +294,25 @@ function Section({ title, intro, children }: { title: string; intro?: ReactNode;
  * learning", "Documents"), so the long card reads as a few short groups.
  * Spans both columns of the card's grid; layout only.
  */
+/** A required Yes / No question as two radio buttons. The first radio carries the field id so errors can focus it. */
+function YesNo({ id, label, hint, value, error, disabled, onChange }: { id: string; label: string; hint?: string; value: string; error?: string; disabled: boolean; onChange: (v: "yes" | "no") => void }) {
+  return (
+    <div role="radiogroup" aria-labelledby={`l-${id}`} aria-describedby={error ? `e-${id}` : hint ? `h-${id}` : undefined}>
+      <p id={`l-${id}`} className="block text-sm font-medium text-ink">{label}</p>
+      {hint && <p id={`h-${id}`} className="text-xs text-ink/70">{hint}</p>}
+      <div className="mt-2 flex gap-6">
+        {(["yes", "no"] as const).map((opt, oi) => (
+          <label key={opt} className="flex items-center gap-2 text-ink">
+            <input id={oi === 0 ? id : undefined} type="radio" name={id} value={opt} checked={value === opt} disabled={disabled} onChange={() => onChange(opt)} />
+            {opt === "yes" ? "Yes" : "No"}
+          </label>
+        ))}
+      </div>
+      {error && <p id={`e-${id}`} role="alert" className="mt-1 text-sm text-red-700">{error}</p>}
+    </div>
+  );
+}
+
 function SubSection({ title, hint, first }: { title: string; hint?: string; first?: boolean }) {
   return (
     <div className={`sm:col-span-2 ${first ? "" : "mt-2 border-t border-gold-light/50 pt-5"}`}>
@@ -499,11 +558,39 @@ export function ApplyForm({
   const [step, setStep] = useState(0);
   /** Which child's card is open on the children and documents steps. */
   const [activeKid, setActiveKid] = useState(0);
+  /** Local councils looked up from postcodes, shown to the family and saved with the application. */
+  const [homeCouncil, setHomeCouncil] = useState<string | null>(null);
+  const [lastUkCouncil, setLastUkCouncil] = useState<string | null>(null);
   const [failedUploads, setFailedUploads] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState<{ names: string[]; email: string } | null>(null);
   /** The family chose to type the address rather than look it up. */
   const [manualAddress, setManualAddress] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+
+  const homePostcode = livesInUk(values.addressCountry) ? values.addressPostcode.trim() : "";
+  useEffect(() => {
+    let live = true;
+    if (!UK_POSTCODE_RE.test(homePostcode)) {
+      setHomeCouncil(null);
+      return;
+    }
+    councilFor(homePostcode).then((c) => live && setHomeCouncil(c));
+    return () => {
+      live = false;
+    };
+  }, [homePostcode]);
+  const lastUkPostcode = values.livedInUk === "yes" ? values.lastUkPostcode.trim() : "";
+  useEffect(() => {
+    let live = true;
+    if (!UK_POSTCODE_RE.test(lastUkPostcode)) {
+      setLastUkCouncil(null);
+      return;
+    }
+    councilFor(lastUkPostcode).then((c) => live && setLastUkCouncil(c));
+    return () => {
+      live = false;
+    };
+  }, [lastUkPostcode]);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -716,6 +803,16 @@ export function ApplyForm({
       address_postcode: nullIfEmpty(values.addressPostcode),
       address_country: values.addressCountry.trim(),
     };
+    // Which council covers the child: their UK home, or for a family abroad the last UK address.
+    const inUk = livesInUk(values.addressCountry);
+    const hadUkHome = !inUk && values.livedInUk === "yes";
+    const ukLink = {
+      local_authority: inUk ? homeCouncil ?? (await councilFor(values.addressPostcode)) : null,
+      lived_in_uk: inUk ? true : values.livedInUk === "yes" ? true : values.livedInUk === "no" ? false : null,
+      last_uk_postcode: hadUkHome ? nullIfEmpty(values.lastUkPostcode.toUpperCase()) : null,
+      last_uk_address: hadUkHome ? nullIfEmpty(values.lastUkAddress) : null,
+      last_uk_local_authority: hadUkHome ? lastUkCouncil ?? (await councilFor(values.lastUkPostcode)) : null,
+    };
     // The one-line copy keeps the older free-text column (and anything reading it) filled.
     const address = addressOneLine(addressParts).slice(0, 500) || null;
     const { error: famErr } = await supabase.from("admissions_families").insert({
@@ -727,6 +824,7 @@ export function ApplyForm({
       relationship: nullIfEmpty(values.relationship),
       address,
       ...addressParts,
+      ...ukLink,
       children_count: kids.length,
       fee_snapshot: snapshot,
     });
@@ -747,6 +845,8 @@ export function ApplyForm({
         relationship: nullIfEmpty(values.relationship),
         address,
         ...addressParts,
+        ...ukLink,
+        british_national: k.britishNational === "yes" ? true : k.britishNational === "no" ? false : null,
         child_first_name: k.firstName.trim(),
         child_last_name: k.lastName.trim(),
         child_dob: kidDob(k),
@@ -993,6 +1093,39 @@ export function ApplyForm({
             <Field id="f-addressTown" label="Town or city" error={errors.addressTown}>
               <input {...props("addressTown")} type="text" autoComplete="address-level2" maxLength={80} className={inputCls} />
             </Field>
+            {values.addressCountry.trim() && !livesInUk(values.addressCountry) && (
+              <div className="rounded-xl bg-cream p-4 sm:col-span-2">
+                <YesNo
+                  id="f-livedInUk"
+                  label="Has your child ever lived in the UK?"
+                  hint="If so, we note the local council for that address, so we know who to contact if we ever need local support for your child."
+                  value={values.livedInUk}
+                  error={errors.livedInUk}
+                  disabled={busy}
+                  onChange={(v) => setText("livedInUk", v)}
+                />
+                {values.livedInUk === "yes" && (
+                  <div className="mt-4 grid gap-4 sm:grid-cols-[10rem_1fr]">
+                    <Field id="f-lastUkPostcode" label="Last UK postcode" error={errors.lastUkPostcode}>
+                      <input {...props("lastUkPostcode")} type="text" autoComplete="off" maxLength={10} placeholder="e.g. B10 0AB" className={inputCls} />
+                    </Field>
+                    <Field id="f-lastUkAddress" label="Last UK address" optional>
+                      <input {...props("lastUkAddress")} type="text" autoComplete="off" maxLength={200} placeholder="House number and street" className={inputCls} />
+                    </Field>
+                    {lastUkCouncil && (
+                      <p role="status" className="text-xs text-ink/75 sm:col-span-2">
+                        Local council: <strong className="font-semibold text-ink">{lastUkCouncil}</strong>
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+            {livesInUk(values.addressCountry) && homeCouncil && (
+              <p role="status" className="text-xs text-ink/75 sm:col-span-2">
+                Local council: <strong className="font-semibold text-ink">{homeCouncil}</strong>
+              </p>
+            )}
           </Section>
 
           <Section
@@ -1106,6 +1239,14 @@ export function ApplyForm({
                   </div>
                   {errors[`c${i}-gender`] && <p id={`e-f-c${i}-gender`} role="alert" className="mt-1 text-sm text-red-700">{errors[`c${i}-gender`]}</p>}
                 </div>
+                <YesNo
+                  id={`f-c${i}-britishNational`}
+                  label={`Is ${k.firstName.trim() || "your child"} a British citizen?`}
+                  value={k.britishNational}
+                  error={errors[`c${i}-britishNational`]}
+                  disabled={busy}
+                  onChange={(v) => setKidText(i, "britishNational", v)}
+                />
                 {(() => {
                   const dob = kidDob(k);
                   const suggestion = dob ? suggestYearGroup(dob) : null;
