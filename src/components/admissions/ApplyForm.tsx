@@ -83,7 +83,7 @@ type Errors = Record<string, string | undefined>;
 type Phase = "loading" | "closed" | "open" | "submitting" | "success";
 
 const MAX_CHILDREN = 6;
-const STEP_TITLES = ["About you", "Your children", "Fees and declaration"] as const;
+const STEP_TITLES = ["About you", "Address and ID", "Your children", "Fees and declaration"] as const;
 const CHILD_LIMITS: Record<ChildDocKind, number> = { report: MAX_REPORT_FILES, child_id: MAX_ID_FILES, guardian_id: MAX_ID_FILES };
 
 const INITIAL: Values = {
@@ -162,13 +162,15 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
     if (!v.parentEmail.trim()) put("parentEmail", "Please enter your email address.");
     else if (!EMAIL_RE.test(v.parentEmail.trim())) put("parentEmail", "That doesn't look like an email address. It should look like name@example.com.");
     put("parentPhone", phoneError(v.parentPhone, "you"));
+  }
+  if (step === 1) {
     put("addressCountry", v.addressCountry.trim() ? undefined : "Please enter the country your child lives in.");
     put("addressLine1", v.addressLine1.trim() ? undefined : "Please enter the first line of your child's home address.");
     put("addressTown", v.addressTown.trim() ? undefined : "Please enter the town or city.");
     put("addressPostcode", postcodeError(v.addressPostcode, v.addressCountry));
     put("doc-parent_id", parentIds.length === 0 ? "Please upload photo ID for a parent or guardian." : undefined);
   }
-  if (step === 1) {
+  if (step === 2) {
     kids.forEach((k, i) => {
       const p = `c${i}-`;
       put(`${p}firstName`, k.firstName.trim() ? undefined : "Please enter your child's first name.");
@@ -186,7 +188,7 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
       }
     });
   }
-  if (step === 2) {
+  if (step === 3) {
     if (v.paymentPlan !== "annual" && v.paymentPlan !== "termly" && v.paymentPlan !== "monthly") put("paymentPlan", "Please choose the payment plan you expect to use. You can change it later.");
     put("consentContact", v.consentContact ? undefined : "Please tick the box to say we may contact you about this application.");
     put("consentData", v.consentData ? undefined : "Please tick the box to agree to us using your information for this application.");
@@ -232,10 +234,10 @@ function Field({ id, label, optional, error, hint, children }: { id: string; lab
  */
 function Section({ title, intro, children }: { title: string; intro?: ReactNode; children: ReactNode }) {
   return (
-    <fieldset className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
+    <fieldset className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-5 sm:p-6">
       <legend className="float-left mb-1 w-full p-0 font-serif text-xl font-semibold text-ink">{title}</legend>
       <div className="clear-left">
-        {intro && <p className="mb-5 text-sm text-ink/70">{intro}</p>}
+        {intro && <p className="mb-4 text-sm text-ink/70">{intro}</p>}
         <div className={`grid gap-4 sm:grid-cols-2 ${intro ? "" : "mt-4"}`}>{children}</div>
       </div>
     </fieldset>
@@ -857,7 +859,7 @@ export function ApplyForm({
   const childLabel = kids.length === 1 ? "your child" : "your children";
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate className="relative space-y-6" aria-busy={busy}>
+    <form ref={formRef} onSubmit={handleSubmit} noValidate className="relative scroll-mt-24 space-y-5" aria-busy={busy}>
       {/* Honeypot: off-screen (not display:none), skipped by keyboard and assistive tech. */}
       <div className="absolute h-px w-px overflow-hidden whitespace-nowrap [clip:rect(0,0,0,0)]" aria-hidden="true">
         <label>
@@ -866,15 +868,28 @@ export function ApplyForm({
         </label>
       </div>
 
-      <nav aria-label="Application steps">
-        <ol className="flex flex-wrap gap-2 text-sm">
+      <nav aria-label="Application steps" className="sticky top-20 z-10 -mx-1 rounded-2xl border border-gold-light/50 bg-white/95 px-4 py-3 backdrop-blur">
+        <p className="text-xs font-medium text-ink/70">
+          Step {step + 1} of {STEP_TITLES.length}: <span className="font-semibold text-ink">{STEP_TITLES[step]}</span>
+        </p>
+        <ol className="mt-2 grid gap-1.5" style={{ gridTemplateColumns: `repeat(${STEP_TITLES.length}, minmax(0, 1fr))` }}>
           {STEP_TITLES.map((t, i) => (
-            <li
-              key={t}
-              aria-current={i === step ? "step" : undefined}
-              className={`rounded-full px-3 py-1 font-medium ${i === step ? "bg-gold-500 text-ink-900" : i < step ? "bg-cream text-ink" : "bg-white text-ink/65 ring-1 ring-gold-light/50"}`}
-            >
-              {i + 1}. {t}
+            <li key={t} aria-current={i === step ? "step" : undefined}>
+              <button
+                type="button"
+                disabled={busy || i > step}
+                onClick={() => {
+                  setStep(i);
+                  formRef.current?.scrollIntoView({ block: "start" });
+                }}
+                className="group block w-full text-left disabled:cursor-default"
+              >
+                <span aria-hidden="true" className={`block h-1.5 rounded-full ${i <= step ? "bg-forest-700" : "bg-gold-light/60"}`} />
+                <span className={`mt-1 hidden truncate text-xs sm:block ${i === step ? "font-semibold text-ink" : i < step ? "text-ink/80 group-hover:underline" : "text-ink/55"}`}>
+                  {i + 1}. {t}
+                </span>
+                <span className="sr-only sm:hidden">{i + 1}. {t}</span>
+              </button>
             </li>
           ))}
         </ol>
@@ -902,10 +917,14 @@ export function ApplyForm({
               <input {...props("howHeard")} type="text" maxLength={300} className={inputCls} />
             </Field>
           </Section>
+        </>
+      )}
 
+      {step === 1 && (
+        <>
           <Section
             title={kids.length > 1 ? "Your children's home address" : "Your child's home address"}
-            intro="Where the child you are applying for lives. If you are applying for several children, use the address they live at with you. We will ask you for proof of this address."
+            intro="Where your child lives. For several children, use the address they live at with you."
           >
             <div className="sm:col-span-2">
               <Field id="f-addressCountry" label="Country" error={errors.addressCountry}>
@@ -964,7 +983,7 @@ export function ApplyForm({
 
           <Section
             title="Proof of identity and address"
-            intro="Admissions is a safeguarding process, so we verify the identity of the adults with parental responsibility, and we need proof of identity and address for the pupil. Files are stored privately and only admissions staff can open them. We ask for these once and use them for every child you apply for. You upload each child's passport or birth certificate on the next step, where you can also add a different legal parent or guardian."
+            intro="We check the identity of adults with parental responsibility as part of safeguarding. Files are private to admissions staff, and you upload them once for every child. Each child's passport or birth certificate comes on the next step."
           >
             <div className="sm:col-span-2">
               <DocPicker
@@ -997,7 +1016,7 @@ export function ApplyForm({
         </>
       )}
 
-      {step === 1 && (
+      {step === 2 && (
         <>
           <p className="text-sm text-ink/70">
             Add a card for each child. Each child becomes their own application, and we link them as one family. Your details, home address, photo ID and proof of address are shared, so you do not repeat them.
@@ -1213,7 +1232,7 @@ export function ApplyForm({
         </>
       )}
 
-      {step === 2 && (
+      {step === 3 && (
         <>
           <Section title="Fees and plan" intro={`Here is what ${childLabel} would cost, with any sibling discount already applied.`}>
             <FeeSummary estimate={estimate} kids={kids} plan={chosenPlan} siblingPercent={sibPct} siblingNote={siblingDiscountNote} terms={terms} instalments={instalments} />
@@ -1315,12 +1334,15 @@ export function ApplyForm({
         </p>
       )}
 
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="sticky bottom-0 z-10 -mx-1 flex flex-wrap items-center gap-3 rounded-2xl border border-gold-light/50 bg-white/95 px-4 py-3 backdrop-blur">
         {step > 0 && (
           <button
             type="button"
             disabled={busy}
-            onClick={() => setStep(step - 1)}
+            onClick={() => {
+              setStep(step - 1);
+              formRef.current?.scrollIntoView({ block: "start" });
+            }}
             className="rounded-full border border-gold-light/70 bg-white px-6 py-3 text-sm font-semibold text-ink disabled:opacity-60"
           >
             Back
