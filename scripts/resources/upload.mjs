@@ -1,7 +1,7 @@
 // Loads the term resource registers and the built resource files into the portal.
 //   node scripts/resources/upload.mjs plan   <outDir>   -> <outDir>/needed.json: items whose files must be (re)built
 //   node scripts/resources/upload.mjs upload <outDir>   -> uploads what build.mjs made and writes curriculum_resources
-// Needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY. Table and storage: migration 0200.
+// Needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY. Table and storage: migration 0201.
 //
 // A made item is rebuilt when its content or the generator changed (built_hash = item JSON + the
 // renderer's own files). Files live in the private lesson-decks bucket (staff read; pupils only get a
@@ -84,7 +84,7 @@ async function existing() {
 const all = rows();
 const have = await existing();
 if (!have) {
-  console.log("::notice::The portal database has not been updated yet (migration 0200). Nothing is uploaded this time; run this workflow again after the backend deploy.");
+  console.log("::notice::The portal database has not been updated yet (migration 0201). Nothing is uploaded this time; run this workflow again after the backend deploy.");
   if (mode === "plan") fs.writeFileSync(path.join(dir, "needed.json"), "[]");
   process.exit(0);
 }

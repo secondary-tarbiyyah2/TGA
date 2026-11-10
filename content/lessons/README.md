@@ -133,6 +133,31 @@ wrong answer reveals, from the check's `why`), misconceptions, the answer key, a
 (from `send`: label parts "SEND:", "EAL:", "Support:", "Stretch:"), assessment for learning,
 and an "after the lesson" box.
 
+## Tests, mocks and quizzes (`assessmentMode`, optional)
+
+`"assessmentMode": "test"` (or `"mock"`, `"quiz"`) builds the lesson as an assessment; the
+`independent` questions are the paper:
+
+- an exam-conditions slide before the questions: the timer, the total marks, and
+  "Cameras on, mics off, work alone, no other tabs", with how to answer (the portal response box);
+- the questions labelled Question 1, 2… (or Section A, B… for a mock, or the item's own
+  "Q3 …" / "Section B …"), each with its marks, not core / extend / stretch; a follow-on task in a
+  mock ("Extend: self-mark") is labelled "Extra", not a new section;
+- no answers to the test questions in the lesson or the pupil PDF. A test or mock also holds back the
+  starter, guided practice and poll answers; a quiz (often a review lesson with a quiz in it) shows those
+  as usual and holds back only the quiz questions' answers;
+- after the last slide, a "Teacher only: mark scheme (do not show)" divider, then the mark scheme
+  and the answers held back (and the exit ticket answers, as in every lesson); the lesson plan has the mark scheme too.
+
+Marks come from the question text: `"Q1 (2 marks): …"`, `"Q1 Rivers (16): …"`, `"a 30-mark paper"`,
+or part marks `"(a) … (1) (b) … (3)"` added up; or give an item `"marks": 4`. A question that is
+"an alternative to Q1 or Q2" is not added to the total.
+
+Left out, the mode is detected from the title (`detectAssessment` in `src/lib/learn/lessonSchema.mjs`:
+test, mock, assessment, quiz, end-of-year paper, timed section, practice paper, end-of-block check;
+not "test feedback", "mock review", "fair test", "risk assessment" and the like), and the validator
+warns until it is set. `"assessmentMode": false` means "not an assessment" whatever the title says.
+
 ## Teach slide blocks
 
 A teach slide can carry **one** block, which gets its own layout. Bullets are then

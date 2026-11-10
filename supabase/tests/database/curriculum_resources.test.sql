@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0200: the term resource register is staff-only and read-only for users.
+-- Run via `supabase test db`. Covers 0201: the term resource register is staff-only and read-only for users.
 begin;
 select plan(5);
 

@@ -260,6 +260,75 @@ function barchart({ cats = [], yMax = 10, yStep = 1, yLabel = "", xLabel = "" } 
   return svg(W, h, s);
 }
 
+/** A colour wheel of `segments` empty segments (6 or 12), optionally labelled outside, with an inner ring. */
+function wheel({ segments = 6, labels = [], ring = false } = {}) {
+  const cx = W / 2;
+  const R = 62;
+  const r0 = ring ? 30 : 0;
+  const cy = R + 12;
+  let s = "";
+  for (let i = 0; i < segments; i++) {
+    const a0 = ((i / segments) * 2 - 0.5) * Math.PI - Math.PI / segments;
+    const a1 = a0 + (2 * Math.PI) / segments;
+    const p = (r, a) => `${(cx + r * Math.cos(a)).toFixed(2)},${(cy + r * Math.sin(a)).toFixed(2)}`;
+    s += `<path d="M${p(r0 || 0.01, a0)} L${p(R, a0)} A${R},${R} 0 0 1 ${p(R, a1)} L${p(r0 || 0.01, a1)} ${r0 ? `A${r0},${r0} 0 0 0 ${p(r0, a0)}` : ""} Z" fill="#FFFFFF" stroke="${INK}" stroke-width="0.5"/>`;
+    const am = (a0 + a1) / 2;
+    if (labels[i]) s += txt(cx + (R + 7) * Math.cos(am), cy + (R + 7) * Math.sin(am) + 1.2, labels[i], { size: 3.4 });
+  }
+  return svg(W, 2 * R + 24, s);
+}
+/** A row (or grid) of empty boxes with labels under them: tonal scales, mark-making grids, mixing strips. */
+function boxes({ count = 7, cols = 7, labels = [], height = 22, gap = 2 } = {}) {
+  const bw = (W - gap * (cols - 1)) / cols;
+  const rows = Math.ceil(count / cols);
+  const rh = height + (labels.length ? 7 : 0) + 3;
+  let s = "";
+  for (let i = 0; i < count; i++) {
+    const x = (i % cols) * (bw + gap);
+    const y = Math.floor(i / cols) * rh;
+    s += `<rect x="${x + 0.3}" y="${y + 0.3}" width="${bw - 0.6}" height="${height}" fill="#FFFFFF" stroke="${INK}" stroke-width="0.45"/>`;
+    if (labels[i]) s += txt(x + bw / 2, y + height + 5, labels[i], { size: cols > 6 ? 2.8 : 3.4 });
+  }
+  return svg(W, rows * rh, s);
+}
+/** Two-point (or one-point) perspective guide: horizon line, vanishing points and faint guide lines. */
+function perspective({ points = 2, height = 150 } = {}) {
+  const hy = height * 0.42;
+  const vps = points === 1 ? [[W / 2, hy]] : [[6, hy], [W - 6, hy]];
+  let s = `<line x1="0" y1="${hy}" x2="${W}" y2="${hy}" stroke="${INK}" stroke-width="0.5"/>` + txt(W / 2, hy - 2, "horizon line", { size: 3, color: "#8C877C" });
+  for (const [vx, vy] of vps) {
+    for (let k = 0; k <= 12; k++) {
+      const ty = (height / 12) * k;
+      const tx = points === 1 ? (k % 2 ? 0 : W) : vx < W / 2 ? W : 0;
+      s += `<line x1="${vx}" y1="${vy}" x2="${tx}" y2="${ty}" stroke="#D9D3C5" stroke-width="0.25"/>`;
+    }
+    s += `<circle cx="${vx}" cy="${vy}" r="1.3" fill="#B8892B"/>` + txt(vx + (vx < W / 2 ? 2 : -2), vy + 6, "VP", { size: 3, anchor: vx < W / 2 ? "start" : "end" });
+  }
+  return svg(W, height, s);
+}
+/** Construction for an eight-pointed star (khatam): a circle, eight equal points and two overlapping squares, drawn faintly to go over. */
+function star8({ size = 130 } = {}) {
+  const c = size / 2 + 2;
+  const r = size / 2;
+  const pts = Array.from({ length: 8 }, (_, i) => [c + r * Math.cos((i * Math.PI) / 4 - Math.PI / 2), c + r * Math.sin((i * Math.PI) / 4 - Math.PI / 2)]);
+  let s = `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="#B9B3A5" stroke-width="0.4"/>`;
+  for (const [x, y] of pts) s += `<line x1="${c}" y1="${c}" x2="${x.toFixed(2)}" y2="${y.toFixed(2)}" stroke="#E3DED2" stroke-width="0.3"/>`;
+  const sq = (o) => `<polygon points="${[0, 2, 4, 6].map((i) => pts[(i + o) % 8].map((v) => v.toFixed(2)).join(",")).join(" ")}" fill="none" stroke="#B9B3A5" stroke-width="0.45" stroke-dasharray="1.6 1"/>`;
+  s += sq(0) + sq(1);
+  for (const [x, y] of pts) s += `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="1" fill="#B8892B"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size + 4}mm" height="${size + 4}mm" viewBox="0 0 ${size + 4} ${size + 4}" class="grid-svg">${s}</svg>`;
+}
+/** A simple schematic map: areas (circles), roads (lines) and places (labelled points). Not to scale unless it says so. */
+function schematic({ height = 120, areas = [], roads = [], places = [], scale = "", north = true } = {}) {
+  let s = `<rect x="0.3" y="0.3" width="${W - 0.6}" height="${height - 0.6}" fill="#FBF7EE" stroke="#B9B3A5" stroke-width="0.4"/>`;
+  for (const [x, y, r, label] of areas) s += `<circle cx="${x}" cy="${y}" r="${r}" fill="#F1EDE3" stroke="#B9B3A5" stroke-width="0.4"/>` + txt(x, y + 1.2, label, { size: 3.4, color: "#5B6168" });
+  for (const [x1, y1, x2, y2, label, wide] of roads) s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${wide ? "#2F5DA8" : "#8C877C"}" stroke-width="${wide ? 2.2 : 1}"/>` + (label ? txt((x1 + x2) / 2, (y1 + y2) / 2 - 2.5, label, { size: 3, color: wide ? "#2F5DA8" : "#5B6168" }) : "");
+  for (const [x, y, label, tone] of places) s += `<circle cx="${x}" cy="${y}" r="2.4" fill="${tone === "gold" ? "#B8892B" : "#1B1E21"}"/>` + txt(x, y - 4, label, { size: 3.6, bold: true });
+  if (scale) s += txt(W - 4, height - 4, scale, { size: 2.8, anchor: "end", color: "#5B6168" });
+  if (north) s += `<path d="M${W - 12},14 l3,-8 l3,8 l-3,-2 z" fill="${INK}"/>` + txt(W - 9, 19, "N", { size: 3.2, bold: true });
+  return svg(W, height, s);
+}
+
 // Periodic table (groups 1-7 and 0, transition metals; lanthanides and actinides left out as in GCSE data sheets).
 // [Z, symbol, name, relative atomic mass (rounded as on exam data sheets; [ ] = mass number of the most stable isotope)]
 const ELEMENTS = `1 H hydrogen 1;2 He helium 4;3 Li lithium 7;4 Be beryllium 9;5 B boron 11;6 C carbon 12;7 N nitrogen 14;8 O oxygen 16;9 F fluorine 19;10 Ne neon 20;11 Na sodium 23;12 Mg magnesium 24;13 Al aluminium 27;14 Si silicon 28;15 P phosphorus 31;16 S sulfur 32;17 Cl chlorine 35.5;18 Ar argon 40;19 K potassium 39;20 Ca calcium 40;21 Sc scandium 45;22 Ti titanium 48;23 V vanadium 51;24 Cr chromium 52;25 Mn manganese 55;26 Fe iron 56;27 Co cobalt 59;28 Ni nickel 59;29 Cu copper 63.5;30 Zn zinc 65;31 Ga gallium 70;32 Ge germanium 73;33 As arsenic 75;34 Se selenium 79;35 Br bromine 80;36 Kr krypton 84;37 Rb rubidium 85;38 Sr strontium 88;39 Y yttrium 89;40 Zr zirconium 91;41 Nb niobium 93;42 Mo molybdenum 96;43 Tc technetium [98];44 Ru ruthenium 101;45 Rh rhodium 103;46 Pd palladium 106;47 Ag silver 108;48 Cd cadmium 112;49 In indium 115;50 Sn tin 119;51 Sb antimony 122;52 Te tellurium 128;53 I iodine 127;54 Xe xenon 131;55 Cs caesium 133;56 Ba barium 137;57 La lanthanum 139;72 Hf hafnium 178;73 Ta tantalum 181;74 W tungsten 184;75 Re rhenium 186;76 Os osmium 190;77 Ir iridium 192;78 Pt platinum 195;79 Au gold 197;80 Hg mercury 201;81 Tl thallium 204;82 Pb lead 207;83 Bi bismuth 209;84 Po polonium [209];85 At astatine [210];86 Rn radon [222];87 Fr francium [223];88 Ra radium [226];89 Ac actinium [227]`
@@ -322,7 +391,7 @@ function periodic({ ar = true } = {}) {
   return svg(W, 6 + 7 * h + 6, s);
 }
 
-export const GRID_KINDS = { squared, dot, isometric, graph, numberline, hundred, times, placevalue, fractionwall, tenframe, cards, clock, barchart, periodic };
+export const GRID_KINDS = { squared, dot, isometric, graph, numberline, hundred, times, placevalue, fractionwall, tenframe, cards, clock, barchart, periodic, wheel, boxes, perspective, star8, schematic };
 export function gridSvg(spec = {}) {
   const f = GRID_KINDS[spec.kind];
   if (!f) throw new Error(`Unknown grid kind "${spec.kind}"`);

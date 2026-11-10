@@ -81,6 +81,7 @@ function pictureHtml(p, ctx) {
 function blockHtml(b, ctx) {
   if (b.h) return `<h2>${t(b.h)}</h2>${b.sub ? `<p class="sub">${t(b.sub)}</p>` : ""}`;
   if (b.text) return `<p class="txt">${t(b.text)}</p>`;
+  if (b.caption && !b.grid) return `<p class="caption">${t(b.caption)}</p>`;
   if (b.bullets) return `<ul class="bul">${b.bullets.map((x) => `<li>${t(x)}</li>`).join("")}</ul>`;
   if (b.questions) {
     return `<div class="qs">${b.questions.map((q) => questionHtml(q, ++ctx.qn, ctx)).join("")}</div>`;
@@ -290,7 +291,7 @@ export function markSchemeHtml(item) {
   }
   for (const x of item.markScheme || []) parts.push(`<div class="q"><div class="qline"><span class="qt"><b>${t(x.q)}</b></span>${x.marks ? `<span class="mk">(${x.marks} marks)</span>` : ""}</div><div class="ans">${t(x.a)}</div></div>`);
   const total = totalMarks(item);
-  return `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>${esc(item.title)}: mark scheme</title><style>${CSS(accent, soft, false)}</style></head><body class="ms">${header(item, "Mark scheme")}<p class="secret">Staff only: do not share with pupils before they sit it</p><h1>${t(item.title)}: mark scheme</h1>${total ? `<div class="intro"><p><span class="marks-total">Total: ${total} marks.</span> Award method marks (M) for a correct method even if the answer is wrong; accuracy marks (A) need the correct answer; B marks are independent.</p></div>` : ""}${parts.join("")}</body></html>`;
+  return `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>${esc(item.title)}: mark scheme</title><style>${CSS(accent, soft, false)}</style></head><body class="ms">${header(item, "Mark scheme")}<p class="secret">Staff only: do not share with pupils before they sit it</p><h1>${t(item.title)}: mark scheme</h1>${total ? `<div class="intro"><p><span class="marks-total">Total: ${total} marks.</span>${/\b[MAB]1\b/.test(JSON.stringify(item.blocks)) ? " Award method marks (M) for a correct method even if the answer is wrong; accuracy marks (A) need the correct answer; B marks are independent." : " Award marks for each correct point; for longer answers, use the levels given."}</p></div>` : ""}${parts.join("")}</body></html>`;
 }
 
 // ── PDF ──────────────────────────────────────────────────────────────────────────────────────

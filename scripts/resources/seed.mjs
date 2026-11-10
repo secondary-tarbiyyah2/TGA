@@ -77,7 +77,12 @@ const qsFrom = (lessons, sections, withMarks) =>
 const hinges = (lessons, withMarks) =>
   lessons.flatMap((l) => (l.teach || []).filter((t) => t.check).map((t) => ({ q: clean(t.check.q), options: t.check.options.map(clean), a: `${"ABCD"[t.check.answer]}) ${clean(t.check.options[t.check.answer])}${t.check.why ? `. ${clean(t.check.why)}` : ""}`, ...(withMarks ? { marks: 1 } : {}) })));
 const keywordsOf = (lessons, max = 16) => uniqBy(lessons.flatMap((l) => l.keywords || []).filter((k) => k && k.term && k.def), (k) => clean(k.term).toLowerCase()).slice(0, max).map((k) => ({ term: clean(k.term), def: clean(k.def) }));
-const quotesOf = (lessons) => uniqBy(lessons.flatMap((l) => (l.teach || []).filter((t) => t.quote).map((t) => ({ text: String(t.quote.text).trim(), source: clean(t.quote.source || t.heading) }))), (q) => q.text);
+const squash = (s) => clean(s).toLowerCase().replace(/[^a-z\u0600-\u06ff]+/g, "");
+/** The lesson's quoted texts, once each; an extract already inside a longer quote is left out. */
+const quotesOf = (lessons) => {
+  const all = uniqBy(lessons.flatMap((l) => (l.teach || []).filter((t) => t.quote).map((t) => ({ text: String(t.quote.text).trim(), source: clean(t.quote.source || t.heading) }))), (q) => q.text);
+  return all.filter((q) => !all.some((o) => o !== q && o.text.length > q.text.length && squash(o.text).includes(squash(q.text))));
+};
 const modelsOf = (lessons) => lessons.flatMap((l) => (l.teach || []).filter((t) => t.model).map((t) => ({ title: clean(t.heading), ...t.model })));
 const tablesOf = (lessons) => lessons.flatMap((l) => (l.teach || []).filter((t) => t.table).map((t) => ({ heading: clean(t.heading), ...t.table })));
 const sortsOf = (lessons) => lessons.flatMap((l) => (l.teach || []).filter((t) => t.sort).map((t) => ({ heading: clean(t.heading), ...t.sort })));
@@ -128,7 +133,9 @@ function gridFromTitle(title, year) {
   if (/isometric/.test(t)) return [{ grid: { kind: "isometric", size: 10, height: 230 } }];
   if (/clock/.test(t)) return [{ grid: { kind: "clock", count: 9 } }];
   if ((m = /curve y\s*=\s*([^()]+?)(?:\s*\(|$)/.exec(title))) return [{ grid: { kind: "graph", xMin: -3, xMax: 5, yMin: -5, yMax: 12, curve: m[1].trim() } }];
-  if (/graph (paper|grid|template)|graph sheet|graph grid/.test(t)) return [{ grid: { kind: "squared", size: 2, height: 240 } }];
+  const results = /results (table|grid)|scoring table/.test(t) ? [{ h: "Results table" }, { table: { head: ["Test or variable", "Reading 1", "Reading 2", "Reading 3", "Mean"], rows: [], blankRows: 6 } }] : [];
+  if (/bar chart/.test(t)) return [...results, { h: "Bar chart" }, { grid: { kind: "barchart", cats: ["", "", "", "", "", ""], yMax: 10, yStep: 1, yLabel: "", xLabel: "" } }, { text: "Label both axes, choose a scale, and draw the bars with a ruler, with gaps between them." }];
+  if (/graph (paper|grid|template)|graph sheet|graph grid/.test(t)) return [...results, { h: "Graph" }, { grid: { kind: "squared", size: 2, height: results.length ? 150 : 240 } }, ...(results.length ? [{ text: "Plot the independent variable on the x-axis and the dependent variable on the y-axis; label both with units; draw a line or curve of best fit." }] : [])];
   if (/squared paper|square grid|grid paper/.test(t)) return [{ grid: { kind: "squared", size: y <= 4 ? 10 : 5, height: 240 } }];
   return null;
 }
@@ -139,7 +146,7 @@ function base(entry, lessons) {
   const file = fileBy.get(`${entry.subjectSlug}/${entry.year}`);
   return {
     id: entry.id,
-    title: entry.title.replace(/\s*\((?:portal[^)]*|pupil pdf[^)]*|printable[^)]*)\)\s*/gi, " ").replace(/\s+/g, " ").trim(),
+    title: entry.title.replace(/\s*\((?:portal[^)]*|pupil pdf[^)]*|printable[^)]*)\)\s*/gi, " ").replace(/\s+([:,.;])/g, "$1").replace(/\s+/g, " ").trim(),
     type: entry.type,
     subject: entry.subject,
     subjectSlug: entry.subjectSlug,
@@ -152,8 +159,58 @@ function base(entry, lessons) {
 }
 const forLesson = (l) => `Lesson ${l.n}: ${clean(l.title)}.`;
 
+const CHECKLISTS = [
+  [/proofread/i, ["Capital letters for sentences and names", "Full stops, question marks and exclamation marks", "Commas in lists and after fronted adverbials", "Spellings checked (circle any you are not sure of)", "Every sentence makes sense when read aloud", "Paragraphs start on a new line"]],
+  [/editing/i, ["The same tense all the way through", "The same viewpoint (I or he/she/they)", "A new paragraph for a new time, place, topic or speaker", "Linking words join ideas (cohesion)", "Punctuation: capitals, full stops, commas, speech marks", "Better word choices: at least three improved"]],
+  [/report/i, ["A clear title", "An introduction that says what the report is about", "Headings or sub-headings for each section", "Present tense (or past tense for events)", "Topic sentences start each paragraph", "Technical words, with a glossary", "Facts, not opinions", "A conclusion"]],
+  [/explanation/i, ["A 'how' or 'why' title", "An introduction", "Steps in order with time or cause connectives (first, then, because, so)", "Present tense", "A labelled diagram", "A conclusion"]],
+  [/instruction/i, ["A 'How to' title", "Equipment or ingredients list", "Numbered steps in order", "Imperative (bossy) verbs at the start", "Time connectives", "A final tip"]],
+  [/script/i, ["Title and cast list", "Scene heading (where and when)", "Character name and a colon before each line", "Stage directions in brackets", "Present tense in directions", "No speech marks"]],
+  [/diary/i, ["Date and greeting (Dear Diary)", "First person (I, we)", "Past tense for what happened", "Feelings and why", "Informal, chatty tone", "Events in time order"]],
+  [/poster/i, ["A big, clear title", "A description", "Where it was last seen", "What to do if you find it", "Neat writing that is easy to read"]],
+  [/ao4 and ao5|ao5/i, ["AO4: the form, audience and purpose are clear", "AO4: a strong opening and a planned ending", "AO4: paragraphs linked with discourse markers", "AO5: a range of sentence types and lengths", "AO5: ambitious, precise vocabulary", "AO5: accurate spelling and punctuation, including ; : and ( )"]],
+  [/q7|success/i, ["Answers the question asked", "Uses evidence from both texts", "Explains the effect of language and structure", "Compares with connectives (similarly, whereas)", "Uses subject terminology accurately"]],
+  [/revision/i, ["Key quotations learned", "Themes and how they develop", "Context: when and why the text was written", "Character arcs", "Exam technique: plan, write, check"]],
+  [/writing checklist|checklist/i, ["A hook to open", "Paragraphs", "Interesting vocabulary", "Varied sentences", "Accurate punctuation", "A clear ending"]],
+];
+function checklistBlocks(entry) {
+  const w = entry.wording;
+  const inside = /:\s*([^()]+)$/.exec(w)?.[1] || /\(([^)]+,[^)]+)\)/.exec(w)?.[1];
+  let items = inside ? inside.split(/,\s*|;\s*/).map((s) => clean(s).replace(/^[a-z]/, (c) => c.toUpperCase())).filter((s) => s.length > 2) : null;
+  if (!items || items.length < 3) for (const [re, list] of CHECKLISTS) if (re.test(w)) {
+    items = list;
+    break;
+  }
+  return [{ h: "Checklist" }, { tracker: { corner: "Have I...?", cols: ["Me", "Partner"], rows: items } }, { h: "Target" }, { box: { title: "My target for next time", lines: 2 } }];
+}
+function wordMat(entry, lessons) {
+  const inside = /\(([^)]+)\)/.exec(entry.wording)?.[1];
+  const pairs = inside && /→/.test(inside) ? inside.split(/,\s*/).map((p) => p.split(/\s*→\s*/)) : null;
+  const words = inside && !pairs ? inside.split(/,\s*/).map(clean) : null;
+  const blocks = [];
+  if (pairs) blocks.push({ table: { head: ["Instead of (informal)", "Try (formal)"], rows: pairs.map(([a, b]) => [clean(a), clean(b || "")]) } });
+  if (words) blocks.push({ panels: [{ title: "Words to use", points: words }], cols: 1 });
+  const kws = keywordsOf(lessons, 12);
+  if (kws.length) blocks.push({ h: "Key words" }, { keywords: kws });
+  return blocks;
+}
+
 function worksheet(entry, lessons) {
   const t = entry.title.toLowerCase();
+  if (/checklist/.test(t) && !/report frame|frame:/.test(t)) {
+    const it = base(entry, lessons);
+    it.intro = `${lessons.length === 1 ? forLesson(lessons[0]) : ""} Tick each one when it is in your writing. Ask a partner to check too.`.trim();
+    it.blocks = checklistBlocks(entry);
+    return it;
+  }
+  if (/word mat/.test(t)) {
+    const it = base(entry, lessons);
+    it.type = "knowledge organiser";
+    it.intro = "Keep this beside you when you write.";
+    it.blocks = wordMat(entry, lessons);
+    it.name = false;
+    return it;
+  }
   const it = base(entry, lessons);
   const L = lessons;
   const blocks = [];
@@ -209,7 +266,9 @@ function resultsHead(t) {
 function revisionSet(entry, lessons, { type = "revision set", sections = ["independent", "practice", "exit"], max = 14 } = {}) {
   const it = base(entry, lessons);
   it.type = type;
-  let qs = qsFrom(lessons, sections, true).filter((q) => !/^(which question|how confident|what will you|one thing)/i.test(q.q));
+  // Homework sets lead with retrieval (hinge polls, starter and exit) so they differ from the lesson's own question set.
+  if (entry.via === "homework") sections = ["starter", "exit", "practice", "independent"];
+  let qs = (entry.via === "homework" ? [...hinges(lessons, true), ...qsFrom(lessons, sections, true)] : qsFrom(lessons, sections, true)).filter((q) => !/^(which question|how confident|what will you|one thing)/i.test(q.q));
   const n = Number((/\((\d+) questions?\)/i.exec(entry.wording) || [])[1]) || max;
   qs = qs.slice(0, n);
   if (qs.length < 4) qs = [...qs, ...hinges(lessons, true)].slice(0, n);
@@ -262,7 +321,10 @@ function testPaper(entry, lessons, type = "test paper") {
 }
 
 function knowledgeOrganiser(entry, lessons) {
-  const unit = /this topic|this unit|for this|organiser:?$|knowledge organiser$/i.test(entry.title) || lessons.length === 1 ? unitLessons(entry.subjectSlug, entry.year, lessons[0].unit) : lessons;
+  if (/word mat/i.test(entry.wording)) return worksheet(entry, lessons);
+  // A knowledge organiser covers the unit; a key words card or mat, or an organiser "for this topic", covers its own lessons.
+  const unitWide = /knowledge organiser/i.test(entry.wording) && !/this topic|this lesson/i.test(entry.wording) && lessons.length === 1;
+  const unit = unitWide ? unitLessons(entry.subjectSlug, entry.year, lessons[0].unit) : lessons;
   const L = unit.length ? unit : lessons;
   const it = base(entry, lessons);
   it.intro = `${clean(L[0].unit).replace(/^(spring|summer) \d:\s*/i, "")}: the big ideas, key words and examples on one sheet. Keep it in your book and use it to revise (cover, write, check).`;

@@ -42,6 +42,7 @@ export async function writeDocx(item, file) {
   for (const b of item.blocks || []) {
     if (b.h) kids.push(para([run(b.h.toUpperCase(), { bold: true, color: accent, size: 24 })], { before: 200, after: 100, keepNext: true }));
     if (b.text) kids.push(para([run(b.text)]));
+    if (b.caption && !b.grid) kids.push(para([run(b.caption, { italics: true, color: MUTED, size: 18 })]));
     if (b.bullets) for (const x of b.bullets) kids.push(para([run(`• ${x}`)], { indent: { left: 360 } }));
     if (b.questions)
       for (const q of b.questions) {

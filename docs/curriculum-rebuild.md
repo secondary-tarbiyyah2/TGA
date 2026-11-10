@@ -117,7 +117,7 @@ from each lesson's `resources` and `homework`; do not edit by hand). Each entry 
 deck builder, external, household, or "generated" = TGA makes it) and a status. The resources TGA makes are data in
 `content/resources/items/<subject>/<year>/<id>.json` and are built into branded A4 PDFs (plus a staff-only mark scheme
 and a Word copy where staff edit) by the workflow "Build term resources", which uploads them to the portal (table
-`curriculum_resources`, migration 0200). Staff: Curriculum > Resources (filters by term, subject, year, type, status)
+`curriculum_resources`, migration 0201). Staff: Curriculum > Resources (filters by term, subject, year, type, status)
 and "Resources this lesson uses" on each lesson page; pupils get a resource only when a teacher shares it to a class.
 How to carry on: docs/agent-briefs/BRIEF-RESOURCES.md ("How to continue").
 

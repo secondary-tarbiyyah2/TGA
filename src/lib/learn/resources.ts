@@ -1,4 +1,4 @@
-// Term resources (migration 0200): every resource the lessons name, per term, with the printable PDFs
+// Term resources (migration 0201): every resource the lessons name, per term, with the printable PDFs
 // TGA makes (worksheets, quizzes, tests and mocks with a separate mark scheme, knowledge organisers,
 // writing frames, printable grids, practical guides). Written by the "Build term resources" workflow
 // (scripts/resources); staff read only. Pupils get a resource when a teacher shares it to a class.

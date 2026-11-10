@@ -6,7 +6,7 @@ import path from "node:path";
 import { ITEMS_DIR, TYPES, ROOT, loadLessonFiles } from "./lib.mjs";
 import { GRID_KINDS } from "./grids.mjs";
 
-const BLOCK_KEYS = ["h", "text", "bullets", "questions", "keywords", "panels", "table", "frame", "starters", "arabic", "grid", "cards", "picture", "practical", "passage", "model", "box", "timeline", "checklist", "tracker", "note", "pagebreak", "answers"];
+const BLOCK_KEYS = ["h", "caption", "text", "bullets", "questions", "keywords", "panels", "table", "frame", "starters", "arabic", "grid", "cards", "picture", "practical", "passage", "model", "box", "timeline", "checklist", "tracker", "note", "pagebreak", "answers"];
 const AMERICAN = /\b(color|colors|colored|coloring|center|centers|centered|favorite|favorites|organize|organized|organizing|organizer|analyze|analyzed|behavior|behaviors|neighbor|neighbors|liter|liters|fiber|practicing|labeled|labeling|traveled|traveling|defense|aluminum|cozy|jewelry|pajamas|mom|realize|realized|recognize|recognized|summarize|summarized|memorize|memorized)\b/;
 const PLACEHOLDER = /\b(TODO|TBC|lorem ipsum|xxx|\[placeholder\]|FIXME)\b/i;
 

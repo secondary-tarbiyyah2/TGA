@@ -103,6 +103,8 @@ export function makeType(t) {
   if (/^mark scheme|mark schemes? for|\bmark scheme\b(?!.*(question|paper|set|sheet))/i.test(t) && !/question|paper|set|sheet/i.test(t)) return "mark scheme";
   if (/\b(end[- ]of[- ]unit|half[- ]term|unit) (test|assessment)\b|\btest paper\b|assessment paper|\bassessment\b.*\bpaper\b/i.test(t)) return "test paper";
   if (/\bquiz\b/i.test(t)) return "quiz";
+  if (/checklist/i.test(t)) return "worksheet";
+  if (/^[^:(]*\bframe\b/i.test(t)) return "writing frame";
   if (/knowledge organiser|key ?words? (card|mat|sheet|list)|vocabulary (sheet|list|mat|card)|word mat|fact sheet|glossary|formulae sheet|formula sheet|command words list|revision (page|map|notes)|quotation bank|key facts|timeline card|periodic table/i.test(t)) return /periodic table/i.test(t) ? "printable graph/grid" : "knowledge organiser";
   if (/frame\b|frames\b|planner|planning (sheet|grid)|scaffold|sentence starters|writing template|story map|story mountain|paragraph plan|answer plan|essay plan/i.test(t)) return "writing frame";
   if (/exam[- ]style|question set|practice set|revision set|retrieval (set|quiz|grid)|homework set|repair list|exam questions|question sheet|practice questions|\bset\b \(\d+ questions\)|mark points/i.test(t)) return "revision set";
@@ -121,7 +123,7 @@ export function classify(text) {
   // Portal features that already exist (revision log, secure test mode, response box, portal lessons).
   if (/^portal (revision log|secure test|response box|lesson|year \d+ lesson|half-term quiz \(secure|unit quiz \(secure)|revision log|secure test mode|^portal lessons?\b|^independent study: portal/i.test(t)) return { type: "external tool", source: "external" };
   // Pupils' own kit (even when it mentions a frame, chart or paper): egg-box ten frames, maths kits, counters.
-  if (/\(household\)|^maths kit|egg[- ]box|^counters|^place value counters|^lego|^dice|^real coins|^paper strip|^strip of paper|^paper plates|^a4 paper|^paper fraction strips \(cut|^paper to fold|^mini-?whiteboard|^exercise book|^calculator|^scientific calculator/i.test(t)) return { type: "equipment", source: "household" };
+  if (/\(household\)|^glue|scissors|a sheet of card|^maths kit|egg[- ]box|^counters|^place value counters|^lego|^dice|^real coins|^paper strip|^strip of paper|^paper plates|^a4 paper|^paper fraction strips \(cut|^paper to fold|^mini-?whiteboard|^exercise book|^calculator|^scientific calculator/i.test(t)) return { type: "equipment", source: "household" };
   // Named in the school's own schemes of work (English KS3/KS4 SOW: booklets, organisers, weekly quizzes).
   if (/grammar booklet|vocabulary booklet|knowledge organiser( and quotation banks?)? \(year \d|knowledge organisers and quotation banks \(year|weekly retrieval quiz|weekly progress check|baseline retrieval quiz|\(senco\)/i.test(t)) return { type: "school file", source: "school" };
   if (has.builderGeneric(t) && !/:\s*\S/.test(t.replace(/^printable worksheet \(or drawing tablet\):/i, ""))) return { type: /slides|teams whiteboard|on screen/i.test(t) ? "slides" : "worksheet", source: "builder" };
@@ -160,7 +162,7 @@ export function homeworkResource(hw) {
  */
 export function scopeOf(type, source, text, uses) {
   if (source !== "generated") return "year";
-  if (/this lesson|this lesson's|today's/i.test(text)) return "lesson";
+  if (/this lesson|this lesson's|today's|this topic/i.test(text)) return "lesson";
   if (uses.length <= 1) return "year";
   const units = new Set(uses.map((u) => u.unit));
   if (["knowledge organiser", "quiz", "test paper"].includes(type)) return units.size > 1 ? "unit" : "year";

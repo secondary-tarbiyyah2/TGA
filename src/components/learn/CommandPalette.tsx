@@ -2,16 +2,71 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchAllClasses, fetchChildClasses, fetchTeacherClasses, readRecentPages, type ClassSummary } from "@/lib/learn/classes";
-import { visiblePages, type PortalArea } from "@/lib/learn/nav";
+import { isGroupedArea, navPageFor, visiblePages, type PortalArea } from "@/lib/learn/nav";
+import { togglePin, usePortalPrefs } from "@/lib/learn/portalPrefs";
 import { Icon, type IconName } from "@/components/learn/Icon";
 
-type Item = { id: string; group: "Recent" | "Pages" | "Classes" | "Lessons" | "Pupils" | "People"; label: string; hint?: string; href: string; keywords?: string; icon: IconName };
+type Item = { id: string; group: "Pinned" | "Recent" | "Actions" | "Pages" | "Classes" | "Lessons" | "Pupils" | "People"; label: string; hint?: string; href?: string; run?: () => void; keywords?: string; icon: IconName };
 type PersonHit = { id: string; full_name: string | null; email: string | null };
 
-const GROUPS: Item["group"][] = ["Recent", "Pages", "Classes", "Lessons", "Pupils", "People"];
+const GROUPS: Item["group"][] = ["Pinned", "Recent", "Actions", "Pages", "Classes", "Lessons", "Pupils", "People"];
+
+/** Common jobs, in plain words, so search finds "take a register" or "pay fees"
+ * as well as page names. Each goes to the page where the job is done; one the
+ * person can't open is left out. */
+type QuickAction = { label: string; href: string; icon: IconName; keywords: string };
+const ACTIONS: Record<PortalArea, QuickAction[]> = {
+  admin: [
+    { label: "Add a pupil", href: "/admin/pupils", icon: "plus", keywords: "new student enrol child record" },
+    { label: "Take or check a register", href: "/admin/attendance", icon: "userCheck", keywords: "attendance present absent late" },
+    { label: "Arrange staff cover", href: "/admin/absences", icon: "calendarX", keywords: "teacher off sick absent cover lesson" },
+    { label: "Send an announcement", href: "/admin/announcements", icon: "megaphone", keywords: "notice all parents news post" },
+    { label: "Message a family", href: "/admin/messages", icon: "messageSquare", keywords: "send email parent contact" },
+    { label: "Invite someone to the portal", href: "/admin/people", icon: "idCard", keywords: "account login sign in password reset add staff parent" },
+    { label: "Review new applications", href: "/admin/admissions", icon: "userRoundPlus", keywords: "admissions apply enquiry" },
+    { label: "Approve lessons", href: "/admin/curriculum/review", icon: "clipboardCheck", keywords: "sign off review curriculum" },
+    { label: "Issue term reports", href: "/admin/reports", icon: "fileText", keywords: "approve publish reports" },
+  ],
+  teach: [
+    { label: "Take a register", href: "/teach/today", icon: "userCheck", keywords: "attendance present absent late lesson today" },
+    { label: "Set work for a class", href: "/teach/classes", icon: "notebookPen", keywords: "homework classwork assignment create" },
+    { label: "Mark work", href: "/teach/review", icon: "clipboardCheck", keywords: "marking feedback handed in submissions" },
+    { label: "Message a family", href: "/teach/messages", icon: "messageSquare", keywords: "send email parent contact" },
+    { label: "Log behaviour or praise", href: "/teach/behaviour", icon: "heartHandshake", keywords: "incident conduct sanction" },
+    { label: "Award house points", href: "/teach/stars", icon: "trophy", keywords: "merit reward star of the week" },
+    { label: "Write report comments", href: "/teach/reports", icon: "fileText", keywords: "term report" },
+    { label: "Edit a lesson", href: "/teach/curriculum", icon: "pencil", keywords: "slides lesson plan change" },
+  ],
+  family: [
+    { label: "Report an absence", href: "/family/absences", icon: "calendarX", keywords: "sick ill off away holiday" },
+    { label: "Pay fees", href: "/family/fees", icon: "wallet", keywords: "payment invoice bank money" },
+    { label: "Message a teacher", href: "/family/messages", icon: "messageSquare", keywords: "contact email ask office" },
+    { label: "Book a parent evening slot", href: "/family/parent-evenings", icon: "calendarClock", keywords: "appointment meeting" },
+    { label: "Update medical or contact details", href: "/family/child-details", icon: "contact", keywords: "address phone allergies consent" },
+    { label: "See homework", href: "/family/todo", icon: "listChecks", keywords: "due missing classwork" },
+  ],
+  student: [
+    { label: "Hand in homework", href: "/student/todo", icon: "listChecks", keywords: "submit classwork due upload" },
+    { label: "Revise a unit", href: "/student/revision", icon: "target", keywords: "quiz practice test" },
+    { label: "Join today's lessons", href: "/student/dashboard", icon: "monitor", keywords: "live lesson teams join" },
+  ],
+};
+const COMMON_ACTIONS: QuickAction[] = [
+  { label: "Report a concern", href: "/report-concern", icon: "shieldAlert", keywords: "safeguarding worry dsl unsafe" },
+  { label: "Account settings", href: "/account", icon: "userRound", keywords: "password email name sign in pin notifications" },
+  { label: "Install the app", href: "/install", icon: "download", keywords: "phone home screen app" },
+];
+
+/** Every word typed must appear somewhere in the item (in any order), so
+ * "register take" and "take a register" both find it. */
+function matches(haystack: string, words: string[]): boolean {
+  const h = haystack.toLowerCase();
+  return words.every((w) => h.includes(w));
+}
+const FILLER = new Set(["a", "an", "the", "to", "my", "of", "for", "and", "i", "how", "do", "where", "is", "page", "find"]);
 
 async function loadClasses(area: PortalArea, isHead: boolean): Promise<ClassSummary[]> {
   const supabase = getSupabaseClient();
@@ -43,6 +98,8 @@ function SearchIcon({ className }: { className: string }) {
 
 export function CommandPalette({ area, roles }: { area: PortalArea; roles: string[] }) {
   const router = useRouter();
+  const pathname = usePathname() || "";
+  const prefs = usePortalPrefs(null);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
@@ -184,8 +241,22 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
 
   const items = useMemo((): Item[] => {
     const q = query.trim().toLowerCase();
-    // Every page, hub tabs included: "Absences" shows as "Absences · Attendance".
-    const pages: Item[] = visiblePages(area, roles).map((p) => ({ id: `page:${p.href}`, group: "Pages", label: p.label, hint: p.parent, href: p.href, keywords: p.hint, icon: p.icon }));
+    const words = q.split(/\s+/).filter((w) => w && !FILLER.has(w));
+    // Every page, hub tabs and their sub-pages included: "Absences" shows with its category.
+    const pageList = visiblePages(area, roles);
+    const pages: Item[] = pageList.map((p) => ({ id: `page:${p.href}`, group: "Pages", label: p.label, hint: p.parent, href: p.href, keywords: `${p.hint || ""} ${p.keywords || ""}`, icon: p.icon }));
+    const canOpen = (href: string) => !href.startsWith(`/${area}/`) || pageList.some((p) => p.href === href);
+    const grouped = isGroupedArea(area);
+    const here = navPageFor(pathname, area);
+    const herePinned = !!here && prefs.pinned.includes(here.href);
+    const actions: Item[] = [
+      ...ACTIONS[area].filter((a) => canOpen(a.href)).map((a): Item => ({ id: `action:${a.label}`, group: "Actions", label: a.label, href: a.href, keywords: a.keywords, icon: a.icon })),
+      ...(grouped && here && canOpen(here.href)
+        ? [{ id: "action:pin", group: "Actions", label: herePinned ? `Unpin "${here.label}"` : `Pin "${here.label}" to the menu`, keywords: "pin favourite bookmark star shortcut unpin", icon: herePinned ? "pinOff" : "pin", run: () => togglePin(here.href) } as Item]
+        : []),
+      ...COMMON_ACTIONS.map((a): Item => ({ id: `action:${a.label}`, group: "Actions", label: a.label, href: a.href, keywords: a.keywords, icon: a.icon })),
+    ];
+    const pinned: Item[] = grouped ? prefs.pinned.flatMap((h) => pages.filter((p) => p.href === h).map((p) => ({ ...p, id: `pinned:${h}`, group: "Pinned" as const, icon: "pin" as IconName }))) : [];
     const cls: Item[] = (classes || []).map((c) => ({
       id: `class:${c.id}`,
       group: "Classes",
@@ -207,13 +278,14 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
       icon: "bookOpen",
     }));
     const pupilItems: Item[] = pupilHits.map((p) => ({ id: `pupil:${p.id}`, group: "Pupils", label: p.name, href: `/admin/pupils?id=${p.id}`, icon: "backpack" }));
-    if (!q) return [...recent.slice(0, 5), ...pages.slice(0, 8)];
-    const match = (i: Item) => `${i.label} ${i.hint || ""} ${i.keywords || ""}`.toLowerCase().includes(q);
-    // Pages whose name matches come before ones that only match their description.
-    const named = pages.filter((i) => `${i.label} ${i.hint || ""}`.toLowerCase().includes(q));
+    if (!q) return [...pinned, ...recent.slice(0, 5), ...actions.slice(0, 4), ...pages.slice(0, 6)];
+    const terms = words.length ? words : [q];
+    const match = (i: Item) => matches(`${i.label} ${i.hint || ""} ${i.keywords || ""}`, terms);
+    // Pages whose name matches come before ones that only match their description or keywords.
+    const named = pages.filter((i) => matches(`${i.label} ${i.hint || ""}`, terms));
     const described = pages.filter((i) => !named.includes(i) && match(i));
-    return [...[...named, ...described].slice(0, 8), ...cls.filter(match).slice(0, 6), ...lessonItems, ...pupilItems, ...ppl];
-  }, [query, area, roles, classes, people, recent, lessonHits, pupilHits]);
+    return [...actions.filter(match).slice(0, 4), ...[...named, ...described].slice(0, 8), ...cls.filter(match).slice(0, 6), ...lessonItems, ...pupilItems, ...ppl];
+  }, [query, area, roles, classes, people, recent, lessonHits, pupilHits, pathname, prefs]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- reset the highlighted result when the search text changes
@@ -226,7 +298,8 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
 
   const go = (item: Item) => {
     setOpen(false);
-    router.push(item.href);
+    if (item.run) item.run();
+    else if (item.href) router.push(item.href);
   };
 
   const onInputKey = (e: React.KeyboardEvent) => {
@@ -258,6 +331,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         onClick={openPalette}
         aria-label="Search"
         title="Search (Ctrl K)"
+        data-tour="search"
         className="flex h-11 w-11 items-center justify-center rounded-full text-ink/65 hover:bg-cream hover:text-ink md:hidden"
       >
         <SearchIcon className="h-5 w-5" />
@@ -265,11 +339,12 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
       <button
         type="button"
         onClick={openPalette}
-        aria-label="Search or jump to a page (Ctrl K)"
+        aria-label="Search pages and jobs (Ctrl K)"
+        data-tour="search"
         className="mr-1 hidden h-10 w-64 items-center gap-2.5 rounded-xl border border-gold-light bg-[var(--portal-canvas)] px-3.5 text-sm text-ink/65 transition-colors hover:border-ink/25 hover:bg-white hover:text-ink md:flex lg:w-80 xl:w-96"
       >
         <SearchIcon className="h-4 w-4" />
-        <span>Search or jump to a page</span>
+        <span>Search pages and jobs</span>
         <kbd className="ml-auto rounded border border-gold-light bg-white px-1.5 py-0.5 text-[11px] font-medium text-ink/65">Ctrl K</kbd>
       </button>
 
@@ -293,7 +368,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={onInputKey}
-                  placeholder={canSearchPeople ? "Search pages, classes, lessons, pupils and people…" : canSearchLessons ? "Search pages, classes and lessons…" : "Search pages and classes…"}
+                  placeholder={canSearchPeople ? "Search pages, jobs, classes, lessons and pupils…" : canSearchLessons ? "Search pages, jobs, classes and lessons…" : "Search pages, jobs and classes…"}
                   className="h-14 min-w-0 flex-1 bg-transparent text-base text-ink placeholder:text-ink/65 focus:outline-none"
                 />
                 <button type="button" onClick={closePalette} aria-label="Close search" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-xs font-medium text-ink/65 hover:bg-cream sm:min-h-8 sm:min-w-0 sm:border sm:border-gold-light">
@@ -304,7 +379,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
               <div ref={listRef} id="cmdk-list" role="listbox" aria-label="Results" className="overflow-y-auto p-2">
                 {items.length === 0 ? (
                   <p className="px-3 py-10 text-center text-sm text-ink/65">
-                    {loadingMore ? "Searching…" : searching ? `Nothing matches "${query.trim()}". Try a page, class${canSearchPeople ? " or person" : ""} name.` : "Start typing to search."}
+                    {loadingMore ? "Searching…" : searching ? `Nothing matches "${query.trim()}". Try a page name or a job, such as \"register\" or \"fees\".` : "Start typing to search."}
                   </p>
                 ) : (
                   GROUPS.map((g) => {
