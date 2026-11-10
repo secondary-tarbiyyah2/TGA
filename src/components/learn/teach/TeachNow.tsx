@@ -154,7 +154,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
         <section className="rounded-2xl border border-gold-light bg-white" aria-labelledby="today-heading">
           <div className="flex items-center justify-between px-5 pt-4">
             <h2 id="today-heading" className="font-serif text-h3 font-semibold text-ink">
-              Today&apos;s lessons
+              Your day
             </h2>
             <Link href="/teach/today" className="text-sm font-medium text-teal-700 hover:underline">
               Registers
@@ -166,31 +166,41 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
             ) : lessons.length === 0 ? (
               <p className="text-sm text-ink/65">No lessons today.</p>
             ) : (
-              <ul className="divide-y divide-gold-light">
+              <ul className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3" aria-label="Your day">
                 {lessons.map((l) => {
                   const done = now > hhmm(l.end);
                   const due = !l.registerTaken && now >= hhmm(l.start);
+                  const isNext = !done && l.id === lessons.find((x) => now <= hhmm(x.end))?.id;
                   return (
-                    <li key={l.id} className="flex flex-wrap items-center gap-3 py-2.5">
-                      <span className="w-24 shrink-0 whitespace-nowrap text-sm tabular-nums text-ink/65">
+                    <li key={l.id} className={`flex min-h-36 flex-col gap-2 rounded-2xl border p-4 ${isNext ? "border-forest-900 bg-forest-900 text-white" : due ? "border-red-200 bg-white" : "border-gold-light bg-white"}`}>
+                      <p className={`text-sm font-semibold tabular-nums ${isNext ? "text-gold-300" : "text-gold-700"}`}>
                         {hhmm(l.start)}–{hhmm(l.end)}
-                      </span>
-                      <Link href={`/teach/lessons/view?id=${l.id}`} className="min-w-[10rem] flex-1 truncate text-sm font-semibold text-ink hover:text-teal-700" title={l.className}>
+                        {isNext && <span className="ml-2 font-medium">{l.live ? "Live now" : now >= hhmm(l.start) ? "On now" : "Next"}</span>}
+                      </p>
+                      <Link href={`/teach/lessons/view?id=${l.id}`} className={`truncate text-base font-semibold hover:underline ${isNext ? "text-white" : "text-ink"}`} title={l.className}>
                         {l.className}
                       </Link>
-                      {l.live && <span className="rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">Live</span>}
-                      {l.registerTaken ? (
-                        <span className="rounded-full bg-green-50 px-2 py-0.5 text-xs font-medium text-green-800">Register taken</span>
-                      ) : due ? (
-                        <Link href="/teach/today" className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-900 hover:bg-amber-100">
-                          Take register
-                        </Link>
-                      ) : null}
-                      {!done && (
-                        <button type="button" onClick={() => join(l.id)} disabled={busy === l.id} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
-                          {busy === l.id ? "Starting…" : "Join"}
-                        </button>
-                      )}
+                      <div>
+                        {l.registerTaken ? (
+                          <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${isNext ? "bg-white/15 text-white" : "bg-forest-100 text-forest-900"}`}>Register taken</span>
+                        ) : due ? (
+                          <span className="rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-800">Register not taken</span>
+                        ) : done ? null : (
+                          <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${isNext ? "bg-white/15 text-white" : "bg-cream text-ink/70"}`}>Later</span>
+                        )}
+                      </div>
+                      <div className="mt-auto flex flex-wrap gap-2">
+                        {due && (
+                          <Link href="/teach/today" className={`${isNext ? "bg-white text-forest-900 hover:bg-cream" : "bg-forest-700 text-white hover:bg-forest-900"} inline-flex min-h-9 items-center rounded-lg px-3 text-sm font-semibold`}>
+                            Take register
+                          </Link>
+                        )}
+                        {!done && (
+                          <button type="button" onClick={() => join(l.id)} disabled={busy === l.id} className={`${isNext ? "bg-gold-300 text-forest-900 hover:bg-gold-100" : "border border-forest-200 bg-white text-forest-900 hover:bg-forest-50"} inline-flex min-h-9 items-center rounded-lg px-3 text-sm font-semibold disabled:opacity-60`}>
+                            {busy === l.id ? "Starting…" : "Start on Teams"}
+                          </button>
+                        )}
+                      </div>
                     </li>
                   );
                 })}

@@ -17,6 +17,8 @@ import { RecordSections, usePupilRecordData, type RecordChild } from "./PupilRec
 import { Fig, PupilAttendanceTab, PupilBehaviourTab, PupilReportsTab, attendanceFigures } from "./ProfileTabs";
 import { SupportPlanEditor } from "@/components/learn/send/SupportPlanEditor";
 import { EditPupilModal } from "./EditPupilModal";
+import { createAccountsFor } from "@/components/learn/admissions/accountsApi";
+import { askNotice } from "@/components/learn/kit";
 
 type ChildRaw = { id: string; name: string; dob: string | null; parent_user_id: string | null; year_groups?: { name: string } | null };
 type EnrolRaw = { classes?: { name: string } | null };
@@ -48,6 +50,9 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
   const printRef = useRef<HTMLDivElement>(null);
   const [editing, setEditing] = useState(false);
   const [above, setAbove] = useState(false);
+  // The accepted application this pupil came from, if any: "Fill in from application".
+  const [fromApp, setFromApp] = useState<{ id: string; child_first_name: string; child_last_name: string } | null>(null);
+  const [filling, setFilling] = useState(false);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -85,6 +90,36 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
       cancelled = true;
     };
   }, [id]);
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    let alive = true;
+    supabase
+      .from("admissions_applications")
+      .select("id, child_first_name, child_last_name")
+      .eq("child_id", id)
+      .eq("status", "accepted")
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .then(({ data }) => {
+        if (alive) setFromApp(((data as { id: string; child_first_name: string; child_last_name: string }[] | null) || [])[0] || null);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [id]);
+
+  /** Copies what the family wrote on the application into any EMPTY parts of the record (never overwrites). */
+  const fillFromApplication = async () => {
+    if (!fromApp) return;
+    setFilling(true);
+    const r = await createAccountsFor(fromApp, { createStudentLogin: false });
+    setFilling(false);
+    await askNotice(r.ok ? "Filled in from the application" : "Could not fill in from the application", r.notes.join(" ") || "Nothing new to copy.");
+    // Every section of the record loads its own data: reload so they all show what was copied.
+    if (r.ok) window.location.reload();
+  };
 
   const record = usePupilRecordData(id, { showAcks: true });
   const progress = useMemo(() => completeness(record.details, record.contacts.length, child ? child.dob : undefined), [record.details, record.contacts.length, child]);
@@ -151,9 +186,19 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
           title={child?.name || "Pupil"}
           subtitle="Pupil profile. Opening it is logged because it contains medical details."
           actions={
-            <button type="button" onClick={() => printElement(findPrintScope(printRef.current, "pupil-record"))} className={ui.btnSecondary}>
-              Print record
-            </button>
+            <>
+              {fromApp && (
+                <button type="button" onClick={fillFromApplication} disabled={filling} title="Copies the address, gender, previous school and parent contacts from the application into any empty parts of the record. Nothing already entered is changed." className={ui.btnSecondary}>
+                  {filling ? "Filling in…" : "Fill in from application"}
+                </button>
+              )}
+              <button type="button" onClick={() => printElement(findPrintScope(printRef.current, "pupil-record"))} className={ui.btnSecondary}>
+                Print record
+              </button>
+              <Link href={`/admin/pupils?id=${id}&edit=details`} className={ui.btnSecondary}>
+                Edit details
+              </Link>
+            </>
           }
           action={
             state === "ready" ? (
