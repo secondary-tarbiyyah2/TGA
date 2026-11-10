@@ -3936,6 +3936,2389 @@
       ],
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
       "boardShort": "Edexcel GCSE 1CP2"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 28,
+      "title": "Revision: data representation",
+      "duration": 50,
+      "bigQuestion": "Everything on your phone, text, photos, a recitation recording, is stored as 0s and 1s. How can two digits hold so much?",
+      "objectives": [
+        "To understand how to answer exam questions on binary, hexadecimal, two's complement, characters, images and sound accurately"
+      ],
+      "successCriteria": [
+        "All: convert between denary, binary and hexadecimal",
+        "Most: calculate image and sound file sizes",
+        "Some: explain overflow and the limits of fixed bits"
+      ],
+      "crossCurricular": "Maths: powers of 2 and place value",
+      "smsc": "Cultural: the Muslim mathematician al-Khwarizmi, whose name gives us the word 'algorithm'",
+      "keywords": [
+        {
+          "term": "two's complement",
+          "def": "a way of representing negative integers in binary"
+        },
+        {
+          "term": "overflow",
+          "def": "a result too large for the bits available"
+        },
+        {
+          "term": "colour depth",
+          "def": "the number of bits per pixel"
+        },
+        {
+          "term": "sample rate",
+          "def": "samples of sound taken each second"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Everything on your phone, text, photos, a recitation recording, is stored as 0s and 1s. How can two digits hold so much?",
+        "a": "By grouping bits: more bits give more combinations (2 to the power n), enough for characters, colours and sound samples."
+      },
+      "starter": [
+        {
+          "q": "10110110 in denary = ?",
+          "a": "182",
+          "mins": 1,
+          "options": [
+            "182",
+            "176",
+            "214"
+          ]
+        },
+        {
+          "q": "B6 in hexadecimal = ?",
+          "a": "182",
+          "mins": 1,
+          "options": [
+            "182",
+            "116",
+            "166"
+          ]
+        },
+        {
+          "q": "How many values can 8 bits represent?",
+          "a": "256",
+          "mins": 1,
+          "options": [
+            "256",
+            "255",
+            "128"
+          ]
+        },
+        {
+          "q": "1 kibibyte = ?",
+          "a": "1,024 bytes",
+          "mins": 1,
+          "options": [
+            "1,024 bytes",
+            "1,000 bytes",
+            "8 bits"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Number bases and two's complement",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Task",
+              "Method",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Binary to denary",
+                "Add place values",
+                "10110110 = 128+32+16+4+2 = 182"
+              ],
+              [
+                "Binary to hex",
+                "Split into nibbles",
+                "1011 0110 = B6"
+              ],
+              [
+                "Two's complement of −45",
+                "45 = 00101101; flip bits; add 1",
+                "11010011"
+              ],
+              [
+                "Left shift 2",
+                "× 4 (unsigned)",
+                "00010110 (22) → 01011000 (88)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: file sizes",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "An 800 × 600 image with 24-bit colour depth. Calculate its size in KiB.",
+            "steps": [
+              "Pixels = 800 × 600 = 480,000",
+              "Bits = 480,000 × 24 = 11,520,000",
+              "Bytes = ÷ 8 = 1,440,000",
+              "KiB = ÷ 1,024 = 1,406.25"
+            ],
+            "answer": "1,406.25 KiB"
+          }
+        },
+        {
+          "heading": "Sound and characters",
+          "bullets": [
+            "Sound size = sample rate × bit depth × seconds",
+            "44,100 Hz × 16 bits × 60 s = 42,336,000 bits",
+            "7-bit ASCII: 128 characters",
+            "Limits: fixed bits restrict range and precision"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Dividing bits by 1,024 to get bytes",
+            "right": "Bits ÷ 8 = bytes; then ÷ 1,024 for KiB"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Adding 01101100 and 01011010 (8-bit unsigned) gives ...",
+            "options": [
+              "11000110",
+              "10110110",
+              "100000110",
+              "11010110"
+            ],
+            "answer": 0,
+            "why": "108 + 90 = 198 = 11000110; no overflow because 198 < 256."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Convert −20 into 8-bit two's complement. (2)",
+          "a": "20 = 00010100 → flip 11101011 → add 1 → 11101100",
+          "mins": 5,
+          "model": "I do: 20 = 00010100. Flip every bit: 11101011. Add 1: 11101100. Check: −128 + 64 + 32 + 8 + 4 = −20."
+        },
+        {
+          "q": "Hex 3F = ?",
+          "a": "63",
+          "mins": 1,
+          "options": [
+            "63",
+            "48",
+            "315"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: 12 exam-style data questions (conversions, two's complement, shifts, overflow, image and sound sizes), written by the teacher, with marks.",
+          "a": "Answers in the plan's key (e.g. 11111111 + 00000001 overflows in 8 bits; a 30-second 8 kHz 8-bit mono clip = 240,000 bytes).",
+          "mins": 10,
+          "model": "The teacher does question 1: 01001101 = 64 + 8 + 4 + 1 = 77."
+        },
+        {
+          "q": "Extend: why do programmers use hexadecimal?",
+          "a": "Shorter and easier to read than binary; each digit is exactly one nibble.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain one effect of increasing the sample rate.",
+          "a": "Better quality (closer to the original) but a larger file.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A right shift of 1 on an unsigned integer ...",
+          "a": "halves it (integer)",
+          "mins": 1,
+          "options": [
+            "halves it (integer)",
+            "doubles it",
+            "negates it"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Everything on your phone, text, photos, a recitation recording, is stored as 0s and 1s. How can two digits hold so much?",
+          "a": "By grouping bits: more bits give more combinations (2 to the power n), enough for characters, colours and sound samples.",
+          "mins": 2
+        }
+      ],
+      "homework": "Pupil PDF data revision set B (10 questions) with self-marking.",
+      "send": "SEND: knowledge organiser and worked-example card; extra time as agreed. EAL: glossary of command words (state, describe, explain, discuss). Stretch: the 6-mark discuss question with a reasoned conclusion.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: 12 data-representation questions",
+        "Knowledge organiser (pupil PDF)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0) specification and sample assessment materials (format only)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Binary code digital",
+          "alt": "Binary digits",
+          "for": "hook"
+        },
+        {
+          "find": "Pixel art grid",
+          "alt": "Pixels in an image",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 29,
+      "title": "Revision: algorithms, searching, sorting and logic",
+      "duration": 50,
+      "bigQuestion": "Finding a word in a dictionary: do you start at 'a' and read every word? What do you do instead, and why is it faster?",
+      "objectives": [
+        "To understand how to trace, compare and complete algorithms and truth tables in exam questions"
+      ],
+      "successCriteria": [
+        "All: trace a linear and a binary search",
+        "Most: show one pass of bubble sort and the merge sort splits",
+        "Some: complete a three-input truth table and compare algorithm efficiency"
+      ],
+      "smsc": "Cultural: al-Khwarizmi and the history of algorithms",
+      "keywords": [
+        {
+          "term": "binary search",
+          "def": "repeatedly halving a sorted list to find an item"
+        },
+        {
+          "term": "bubble sort",
+          "def": "repeatedly swapping out-of-order neighbours"
+        },
+        {
+          "term": "merge sort",
+          "def": "splitting then merging lists in order"
+        },
+        {
+          "term": "truth table",
+          "def": "all input combinations and outputs of a logic expression"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Finding a word in a dictionary: do you start at 'a' and read every word? What do you do instead, and why is it faster?",
+        "a": "Open near the middle and halve the search each time: binary search, much faster on sorted data."
+      },
+      "starter": [
+        {
+          "q": "Binary search needs the list to be ...",
+          "a": "sorted",
+          "mins": 1,
+          "options": [
+            "sorted",
+            "short",
+            "unsorted"
+          ]
+        },
+        {
+          "q": "After one bubble-sort pass, [5, 2, 9, 1] becomes ...",
+          "a": "[2, 5, 1, 9]",
+          "mins": 1,
+          "options": [
+            "[2, 5, 1, 9]",
+            "[1, 2, 5, 9]",
+            "[2, 1, 5, 9]"
+          ]
+        },
+        {
+          "q": "NOT (True AND False) = ?",
+          "a": "True",
+          "mins": 1,
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "q": "A trace table records ...",
+          "a": "variable values as code runs",
+          "mins": 1,
+          "options": [
+            "variable values as code runs",
+            "errors only",
+            "the output only"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Searching",
+          "bullets": [],
+          "note": "Find 25 in [3, 8, 12, 19, 25, 31, 40].",
+          "table": {
+            "head": [
+              "Step",
+              "Middle item",
+              "Decision"
+            ],
+            "rows": [
+              [
+                "1",
+                "19 (index 3)",
+                "25 > 19: search right half"
+              ],
+              [
+                "2",
+                "31 (index 5)",
+                "25 < 31: search left part"
+              ],
+              [
+                "3",
+                "25 (index 4)",
+                "Found: 3 comparisons"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sorting",
+          "bullets": [
+            "Bubble: compare neighbours, swap, repeat passes",
+            "Merge: split to single items, merge in order",
+            "Merge is faster on large lists; bubble is simpler"
+          ],
+          "note": "Model merge sort on [6, 3, 8, 1]: [6,3][8,1] → [6][3][8][1] → [3,6][1,8] → [1,3,6,8]."
+        },
+        {
+          "heading": "Truth table: P = (A AND B) OR NOT C",
+          "bullets": [],
+          "note": "Pupils complete; answers here.",
+          "table": {
+            "head": [
+              "A",
+              "B",
+              "C",
+              "P"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "0",
+                "1",
+                "0"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Binary search works on any list",
+            "right": "The list must be sorted first"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Linear search on 1,000 unsorted items: worst case comparisons?",
+            "options": [
+              "1,000",
+              "10",
+              "500",
+              "1"
+            ],
+            "answer": 0,
+            "why": "Every item may need checking; binary search would need about 10 but only on sorted data."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show every pass of bubble sort on [7, 3, 5, 1]. (3)",
+          "a": "Pass 1: [3, 5, 1, 7]; pass 2: [3, 1, 5, 7]; pass 3: [1, 3, 5, 7]; pass 4: no swaps, stop.",
+          "mins": 5,
+          "model": "I do pass 1: 7>3 swap [3,7,5,1]; 7>5 swap [3,5,7,1]; 7>1 swap [3,5,1,7]."
+        },
+        {
+          "q": "Merge sort first ...",
+          "a": "splits the list into single items",
+          "mins": 1,
+          "options": [
+            "splits the list into single items",
+            "swaps neighbours",
+            "finds the middle item"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: 10 exam-style algorithm questions (trace tables, searches, sorts, truth tables, one 6-mark 'discuss' on choosing a sort).",
+          "a": "Answers in the plan's key.",
+          "mins": 10,
+          "model": "The teacher completes the first trace table row with the class."
+        },
+        {
+          "q": "Extend: complete the remaining two rows of the truth table on the slide (A=0,B=1,C=0; A=1,B=0,C=0).",
+          "a": "Both P = 1 (NOT C is 1).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why might a programmer still choose bubble sort?",
+          "a": "Simple to code and fine for very small or nearly sorted lists.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Binary search halves ...",
+          "a": "the remaining items each step",
+          "mins": 1,
+          "options": [
+            "the remaining items each step",
+            "the values",
+            "the time once"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Finding a word in a dictionary: do you start at 'a' and read every word? What do you do instead, and why is it faster?",
+          "a": "Open near the middle and halve the search each time: binary search, much faster on sorted data.",
+          "mins": 2
+        }
+      ],
+      "homework": "Pupil PDF: algorithms set B (trace two programs and complete one truth table).",
+      "send": "SEND: knowledge organiser and worked-example card; extra time as agreed. EAL: glossary of command words (state, describe, explain, discuss). Stretch: the 6-mark discuss question with a reasoned conclusion.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: 10 algorithm questions",
+        "Knowledge organiser (pupil PDF)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0) specification and sample assessment materials (format only)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Dictionary open book",
+          "alt": "A dictionary",
+          "for": "hook"
+        },
+        {
+          "find": "Logic gate diagram",
+          "alt": "Logic gates",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 30,
+      "title": "Revision: the CPU, memory and storage",
+      "duration": 50,
+      "bigQuestion": "Why does your device have both RAM and storage? Why not one big memory?",
+      "objectives": [
+        "To understand how to answer exam questions on the von Neumann architecture, the fetch-decode-execute cycle, memory and secondary storage"
+      ],
+      "successCriteria": [
+        "All: label the CPU components and buses",
+        "Most: describe the fetch-decode-execute cycle in order",
+        "Some: compare magnetic, optical and solid-state storage for a scenario"
+      ],
+      "smsc": "Spiritual: wonder at precise design, from processors to creation",
+      "keywords": [
+        {
+          "term": "von Neumann architecture",
+          "def": "a design where data and instructions share memory"
+        },
+        {
+          "term": "fetch-decode-execute",
+          "def": "the cycle the CPU repeats for each instruction"
+        },
+        {
+          "term": "volatile",
+          "def": "loses data when power is off"
+        },
+        {
+          "term": "embedded system",
+          "def": "a computer built into a larger device"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why does your device have both RAM and storage? Why not one big memory?",
+        "a": "RAM is fast but volatile and costly; storage is slower but keeps data when power is off and is cheaper per gigabyte."
+      },
+      "starter": [
+        {
+          "q": "Merge sort is faster than bubble sort on ...",
+          "a": "large lists",
+          "mins": 1,
+          "options": [
+            "large lists",
+            "two items",
+            "no lists"
+          ]
+        },
+        {
+          "q": "RAM is ...",
+          "a": "volatile",
+          "mins": 1,
+          "options": [
+            "volatile",
+            "non-volatile",
+            "read-only"
+          ]
+        },
+        {
+          "q": "The ALU does ...",
+          "a": "arithmetic and logic",
+          "mins": 1,
+          "options": [
+            "arithmetic and logic",
+            "storage",
+            "networking"
+          ]
+        },
+        {
+          "q": "An SSD stores data using ...",
+          "a": "flash memory",
+          "mins": 1,
+          "options": [
+            "flash memory",
+            "magnetism",
+            "lasers"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Von Neumann architecture (3.1.1)",
+          "bullets": [
+            "Stored program: data and instructions in the same memory",
+            "CPU: control unit, ALU, registers, clock",
+            "Buses: address, data, control"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Fetch-decode-execute",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "PC holds the next address; copied to MAR",
+            "Address bus to RAM; instruction to MDR via data bus",
+            "Instruction copied to CIR; PC increments",
+            "Control unit decodes",
+            "Execute (ALU if needed); repeat"
+          ]
+        },
+        {
+          "heading": "Secondary storage (3.1.2)",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Type",
+              "How",
+              "Strengths",
+              "Weaknesses"
+            ],
+            "rows": [
+              [
+                "Magnetic (HDD)",
+                "Magnetised platters",
+                "Cheap, large",
+                "Moving parts, slower"
+              ],
+              [
+                "Optical (DVD)",
+                "Laser reads pits",
+                "Portable, cheap",
+                "Small capacity, scratches"
+              ],
+              [
+                "Solid state (SSD)",
+                "Flash memory",
+                "Fast, robust, silent",
+                "Costlier per GB"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "RAM is storage that keeps your files",
+            "right": "RAM holds running programs and data; it loses them when power is off"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Which bus carries the memory location to read from?",
+            "options": [
+              "Address bus",
+              "Data bus",
+              "Control bus",
+              "USB"
+            ],
+            "answer": 0,
+            "why": "The address bus carries addresses; the data bus carries the data."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the fetch stage of the cycle. (3)",
+          "a": "The address in the PC is copied to the MAR; it is sent on the address bus; the instruction is returned on the data bus to the MDR; the PC is incremented.",
+          "mins": 5,
+          "model": "I do: PC → MAR; MAR → address bus → RAM; RAM → data bus → MDR; PC + 1."
+        },
+        {
+          "q": "An embedded system is ...",
+          "a": "a computer inside a larger device",
+          "mins": 1,
+          "options": [
+            "a computer inside a larger device",
+            "a laptop",
+            "a server farm"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: 8 exam-style questions on hardware and storage, including a 6-mark 'discuss' on storage for a mosque's audio-lecture archive.",
+          "a": "Answers in the plan's key; the discuss answer weighs capacity, cost, speed, durability for long-term archiving.",
+          "mins": 10,
+          "model": "The teacher plans the discuss answer: capacity (thousands of hours), cost, durability, access speed; conclusion."
+        },
+        {
+          "q": "Extend: give two examples of embedded systems.",
+          "a": "A washing machine controller; a car's engine management unit.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why does a faster clock speed not always mean a faster computer?",
+          "a": "Other factors: cores, cache, RAM, storage speed, heat.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The PC (program counter) holds ...",
+          "a": "the address of the next instruction",
+          "mins": 1,
+          "options": [
+            "the address of the next instruction",
+            "the result",
+            "the data"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why does your device have both RAM and storage? Why not one big memory?",
+          "a": "RAM is fast but volatile and costly; storage is slower but keeps data when power is off and is cheaper per gigabyte.",
+          "mins": 2
+        }
+      ],
+      "homework": "Pupil PDF: hardware revision set B.",
+      "send": "SEND: knowledge organiser and worked-example card; extra time as agreed. EAL: glossary of command words (state, describe, explain, discuss). Stretch: the 6-mark discuss question with a reasoned conclusion.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: 8 hardware and storage questions",
+        "Knowledge organiser (pupil PDF)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0) specification and sample assessment materials (format only)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "CPU processor chip",
+          "alt": "A CPU chip",
+          "for": "hook"
+        },
+        {
+          "find": "Solid state drive",
+          "alt": "A solid-state drive",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 31,
+      "title": "Revision: software, programming languages and translators",
+      "duration": 50,
+      "bigQuestion": "When you double-click an app, who decides which memory it gets and how it reaches the screen?",
+      "objectives": [
+        "To understand how to answer exam questions on operating systems, utilities, robust software, languages and translators"
+      ],
+      "successCriteria": [
+        "All: describe four functions of an operating system",
+        "Most: compare compilers and interpreters",
+        "Some: explain how audit trails and code reviews make software robust"
+      ],
+      "smsc": "Moral: honesty and accountability: audit trails and code reviews",
+      "keywords": [
+        {
+          "term": "operating system",
+          "def": "software that manages hardware and runs programs"
+        },
+        {
+          "term": "utility",
+          "def": "a small program that maintains the system"
+        },
+        {
+          "term": "compiler",
+          "def": "translates a whole program into machine code"
+        },
+        {
+          "term": "interpreter",
+          "def": "translates and runs code line by line"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you double-click an app, who decides which memory it gets and how it reaches the screen?",
+        "a": "The operating system: it manages processes, memory, files, peripherals and users."
+      },
+      "starter": [
+        {
+          "q": "The address bus carries ...",
+          "a": "memory addresses",
+          "mins": 1,
+          "options": [
+            "memory addresses",
+            "data",
+            "power"
+          ]
+        },
+        {
+          "q": "SSDs have ...",
+          "a": "no moving parts",
+          "mins": 1,
+          "options": [
+            "no moving parts",
+            "spinning platters",
+            "lasers"
+          ]
+        },
+        {
+          "q": "A compiler translates ...",
+          "a": "the whole program before it runs",
+          "mins": 1,
+          "options": [
+            "the whole program before it runs",
+            "one line at a time",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Defragmentation is a ...",
+          "a": "utility",
+          "mins": 1,
+          "options": [
+            "utility",
+            "protocol",
+            "language"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Operating system and utilities (3.2)",
+          "bullets": [
+            "OS: file, process, peripheral and user management",
+            "Utilities: repair, backup, compression, defragmentation, anti-malware",
+            "Robust software: audit trails, code reviews"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Compiler or interpreter? (3.3.2)",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Compiler",
+              "points": [
+                "Translates the whole program once",
+                "Produces an executable",
+                "Fast to run; errors listed at the end"
+              ]
+            },
+            "right": {
+              "title": "Interpreter",
+              "points": [
+                "Translates line by line each run",
+                "No executable",
+                "Stops at the first error: good for debugging"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Low-level and high-level (3.3.1)",
+          "bullets": [
+            "Low-level: close to machine code; fast, hard to read",
+            "High-level: English-like (Python); portable",
+            "Assembly needs an assembler"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Python programs are always compiled into an .exe",
+            "right": "Python is normally interpreted (via bytecode); compiled languages produce executables"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Which translator stops at the first error it finds?",
+            "options": [
+              "Interpreter",
+              "Compiler",
+              "Assembler only",
+              "Linker"
+            ],
+            "answer": 0,
+            "why": "An interpreter runs line by line, so it halts at the first error."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one benefit of a code review. (2)",
+          "a": "Other programmers spot errors and security weaknesses the author missed, making the software more robust.",
+          "mins": 5,
+          "model": "Point: fresh eyes find bugs. Development: a reviewer spots a missing validation check before release, preventing a security hole."
+        },
+        {
+          "q": "Low-level languages are ...",
+          "a": "close to machine code",
+          "mins": 1,
+          "options": [
+            "close to machine code",
+            "English-like",
+            "only for websites"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: 8 exam-style questions on software and languages, including a 6-mark 'discuss' on choosing a compiler or interpreter for a school app.",
+          "a": "Answers in the plan's key.",
+          "mins": 10,
+          "model": "The teacher plans the discuss answer with the class: development stage (interpreter) against distribution (compiler)."
+        },
+        {
+          "q": "Extend: give two utility programs and their purpose.",
+          "a": "Backup: copies data to recover after loss. Compression: reduces file size.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what is an audit trail and why does it help security?",
+          "a": "A record of who did what and when; it helps trace misuse or errors.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A compiler produces ...",
+          "a": "an executable file",
+          "mins": 1,
+          "options": [
+            "an executable file",
+            "nothing",
+            "a web page"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When you double-click an app, who decides which memory it gets and how it reaches the screen?",
+          "a": "The operating system: it manages processes, memory, files, peripherals and users.",
+          "mins": 2
+        }
+      ],
+      "homework": "Pupil PDF: software revision set B.",
+      "send": "SEND: knowledge organiser and worked-example card; extra time as agreed. EAL: glossary of command words (state, describe, explain, discuss). Stretch: the 6-mark discuss question with a reasoned conclusion.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: 8 software and languages questions",
+        "Knowledge organiser (pupil PDF)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0) specification and sample assessment materials (format only)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Computer desktop screen windows",
+          "alt": "A desktop screen",
+          "for": "hook"
+        },
+        {
+          "find": "Source code on screen",
+          "alt": "Program code",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 32,
+      "title": "Revision: networks, protocols and the TCP/IP model",
+      "duration": 50,
+      "bigQuestion": "When you send a message from London to Makkah, it arrives in under a second. What happens on the way?",
+      "objectives": [
+        "To understand how to answer exam questions on network types, connections, transmission calculations, protocols and the four-layer model"
+      ],
+      "successCriteria": [
+        "All: compare LAN and WAN and name four protocols",
+        "Most: calculate transmission time",
+        "Some: describe what each TCP/IP layer does"
+      ],
+      "crossCurricular": "Maths: unit conversion and rates",
+      "smsc": "Social: networks connect the ummah across the world",
+      "keywords": [
+        {
+          "term": "protocol",
+          "def": "a set of rules for communication"
+        },
+        {
+          "term": "packet",
+          "def": "a small unit of data sent across a network"
+        },
+        {
+          "term": "bandwidth",
+          "def": "the amount of data that can be sent per second"
+        },
+        {
+          "term": "TCP/IP model",
+          "def": "four layers: application, transport, internet, link"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you send a message from London to Makkah, it arrives in under a second. What happens on the way?",
+        "a": "It is split into packets, addressed with IP, routed across many networks, and reassembled: the TCP/IP model in action."
+      },
+      "starter": [
+        {
+          "q": "An interpreter translates ...",
+          "a": "line by line",
+          "mins": 1,
+          "options": [
+            "line by line",
+            "all at once",
+            "never"
+          ]
+        },
+        {
+          "q": "A LAN covers ...",
+          "a": "a small area like a school",
+          "mins": 1,
+          "options": [
+            "a small area like a school",
+            "the whole world",
+            "one computer"
+          ]
+        },
+        {
+          "q": "Which protocol sends email?",
+          "a": "SMTP",
+          "mins": 1,
+          "options": [
+            "SMTP",
+            "POP3",
+            "FTP"
+          ]
+        },
+        {
+          "q": "Bandwidth is measured in ...",
+          "a": "bits per second",
+          "mins": 1,
+          "options": [
+            "bits per second",
+            "bytes",
+            "hertz only"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: transmission time (4.1.5)",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "A 50 MB file (use 1 MB = 8 megabits) is sent at 40 Mbps. How long does it take?",
+            "steps": [
+              "Size in bits: 50 × 8 = 400 megabits",
+              "Time = size ÷ rate",
+              "400 ÷ 40 = 10"
+            ],
+            "answer": "10 seconds"
+          }
+        },
+        {
+          "heading": "Protocols (4.1.6)",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Protocol",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "HTTP / HTTPS",
+                "Web pages (HTTPS encrypted)"
+              ],
+              [
+                "FTP",
+                "Transfer files"
+              ],
+              [
+                "SMTP",
+                "Send email"
+              ],
+              [
+                "POP3 / IMAP",
+                "Receive email (IMAP keeps it on the server)"
+              ],
+              [
+                "Ethernet / Wi-Fi",
+                "Wired and wireless LAN data"
+              ],
+              [
+                "TCP/IP",
+                "Split, address and deliver packets"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Four-layer TCP/IP model (4.1.7)",
+          "bullets": [
+            "Application: HTTP, SMTP, FTP",
+            "Transport: TCP splits and reassembles; checks",
+            "Internet: IP addresses and routing",
+            "Link: physical transfer (Ethernet, Wi-Fi)"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Mbps means megabytes per second",
+            "right": "Mbps is megabits per second: convert bytes to bits (× 8) first"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Which layer uses IP addresses to route packets?",
+            "options": [
+              "Internet",
+              "Application",
+              "Transport",
+              "Link"
+            ],
+            "answer": 0,
+            "why": "The internet layer handles IP addressing and routing."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 2 GB video (1 GB = 8,000 megabits) is sent at 100 Mbps. Calculate the time. (2)",
+          "a": "2 × 8,000 = 16,000 megabits; 16,000 ÷ 100 = 160 seconds.",
+          "mins": 5,
+          "model": "I do: convert to bits first: 2 GB × 8,000 = 16,000 megabits. Time = 16,000 ÷ 100 = 160 s."
+        },
+        {
+          "q": "Star topology: if the central switch fails ...",
+          "a": "the whole network fails",
+          "mins": 1,
+          "options": [
+            "the whole network fails",
+            "nothing happens",
+            "only one device fails"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: 8 exam-style network questions (LAN/WAN, wired against wireless, topologies, protocols, layers, two transmission calculations).",
+          "a": "Answers in the plan's key.",
+          "mins": 10,
+          "model": "The teacher does the first calculation with the class."
+        },
+        {
+          "q": "Extend: give one advantage of a mesh topology.",
+          "a": "Many routes: if one link fails, data takes another.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why does IMAP suit someone who reads email on a phone and a laptop?",
+          "a": "Mail stays on the server, so both devices stay in sync.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "HTTPS differs from HTTP because it is ...",
+          "a": "encrypted",
+          "mins": 1,
+          "options": [
+            "encrypted",
+            "faster always",
+            "for email"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When you send a message from London to Makkah, it arrives in under a second. What happens on the way?",
+          "a": "It is split into packets, addressed with IP, routed across many networks, and reassembled: the TCP/IP model in action.",
+          "mins": 2
+        }
+      ],
+      "homework": "Pupil PDF: networks set B with two more transmission calculations.",
+      "send": "SEND: knowledge organiser and worked-example card; extra time as agreed. EAL: glossary of command words (state, describe, explain, discuss). Stretch: the 6-mark discuss question with a reasoned conclusion.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: 8 networks questions",
+        "Knowledge organiser (pupil PDF)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0) specification and sample assessment materials (format only)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Network switch cables",
+          "alt": "A network switch",
+          "for": "hook"
+        },
+        {
+          "find": "Fibre optic cable",
+          "alt": "Fibre-optic cable",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 33,
+      "title": "Revision: network security, cybersecurity and the impact of technology",
+      "duration": 50,
+      "bigQuestion": "Most cyber attacks start not with clever code but with a person being tricked. Why?",
+      "objectives": [
+        "To understand how to answer exam questions on threats, protection, and the environmental, ethical and legal impact of technology"
+      ],
+      "successCriteria": [
+        "All: describe four threats and four protections",
+        "Most: explain social engineering with an example",
+        "Some: write a balanced 6-mark 'discuss' answer on an ethical issue"
+      ],
+      "smsc": "Moral: amanah over data; avoiding harm to people and creation",
+      "keywords": [
+        {
+          "term": "malware",
+          "def": "software designed to harm or gain access"
+        },
+        {
+          "term": "social engineering",
+          "def": "tricking people into giving access or information"
+        },
+        {
+          "term": "encryption",
+          "def": "scrambling data so only key holders can read it"
+        },
+        {
+          "term": "e-waste",
+          "def": "discarded electronic devices"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Most cyber attacks start not with clever code but with a person being tricked. Why?",
+        "a": "People are easier to fool than systems: phishing and pretexting exploit trust, so training matters as much as firewalls."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And do not cause corruption upon the earth after its reformation' (Al-A'raf 7:56). Our use of technology should protect people and the environment.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "SMTP is used to ...",
+          "a": "send email",
+          "mins": 1,
+          "options": [
+            "send email",
+            "receive email",
+            "share files"
+          ]
+        },
+        {
+          "q": "A firewall ...",
+          "a": "filters network traffic",
+          "mins": 1,
+          "options": [
+            "filters network traffic",
+            "cleans the screen",
+            "speeds up the CPU"
+          ]
+        },
+        {
+          "q": "Ransomware ...",
+          "a": "encrypts files and demands payment",
+          "mins": 1,
+          "options": [
+            "encrypts files and demands payment",
+            "copies itself only",
+            "records keys"
+          ]
+        },
+        {
+          "q": "Penetration testing is ...",
+          "a": "authorised testing for weaknesses",
+          "mins": 1,
+          "options": [
+            "authorised testing for weaknesses",
+            "a crime",
+            "a backup"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Threats (5.3.1) and protection (5.3.2, 4.2.1)",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Threats",
+              "points": [
+                "Viruses, worms, Trojans",
+                "Ransomware, keyloggers",
+                "Unpatched software",
+                "Social engineering: phishing"
+              ]
+            },
+            "right": {
+              "title": "Protection",
+              "points": [
+                "Anti-malware, updates",
+                "Firewalls, access control",
+                "Encryption, backups",
+                "Training and acceptable use policies"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Impact of technology (5.1, 5.2)",
+          "bullets": [
+            "Environment: energy use, e-waste, rare materials",
+            "Ethics: privacy, AI bias, accountability",
+            "Law: data protection, copyright, patents, licences"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Model: a 6-mark 'discuss'",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "Discuss the use of facial-recognition cameras in a shopping centre. (6)",
+            "steps": [
+              "Benefit: identifies known shoplifters, deters crime",
+              "Concern: privacy; data collected without clear consent",
+              "Concern: bias and false matches; who is accountable?",
+              "Law: data protection rules on storing personal data",
+              "Conclusion: acceptable only with clear rules, consent signs, accuracy checks"
+            ],
+            "answer": "Balanced points plus a reasoned conclusion"
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "A 'discuss' answer lists only advantages",
+            "right": "Discuss needs both sides and a reasoned conclusion"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "An email pretending to be your bank asking you to 'confirm your password' is ...",
+            "options": [
+              "phishing",
+              "a worm",
+              "encryption",
+              "a firewall"
+            ],
+            "answer": 0,
+            "why": "A social-engineering trick by email: phishing."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how encryption protects data sent over a network. (2)",
+          "a": "Data is scrambled with a key, so anyone intercepting it cannot read it without the key.",
+          "mins": 5,
+          "model": "Point: data is scrambled. Development: only someone with the key can turn it back, so intercepted packets are useless."
+        },
+        {
+          "q": "Which helps recover from ransomware?",
+          "a": "Regular offline backups",
+          "mins": 1,
+          "options": [
+            "Regular offline backups",
+            "A faster CPU",
+            "A bigger screen"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal box: discuss the environmental impact of replacing school laptops every two years (6). Data on the pupil PDF.",
+          "a": "E-waste, energy and materials in manufacturing against benefits (efficiency, security updates); options: refurbish, recycle, longer cycles; conclusion.",
+          "mins": 10,
+          "model": "The teacher writes the first point: 'Manufacturing each laptop uses rare metals and energy, so a two-year cycle doubles this impact compared with four years ...'"
+        },
+        {
+          "q": "Extend: state the difference between copyright and a patent.",
+          "a": "Copyright protects creative work automatically; a patent protects an invention and must be applied for.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: who should be accountable when an AI system makes a harmful decision?",
+          "a": "Developers, deployers and users share responsibility; law and policy must set it clearly.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A keylogger ...",
+          "a": "records what you type",
+          "mins": 1,
+          "options": [
+            "records what you type",
+            "deletes files",
+            "blocks adverts"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Most cyber attacks start not with clever code but with a person being tricked. Why?",
+          "a": "People are easier to fool than systems: phishing and pretexting exploit trust, so training matters as much as firewalls.",
+          "mins": 2
+        }
+      ],
+      "homework": "Pupil PDF: security and impact set B including one 6-mark discuss question.",
+      "send": "SEND: knowledge organiser and worked-example card; extra time as agreed. EAL: glossary of command words (state, describe, explain, discuss). Stretch: the 6-mark discuss question with a reasoned conclusion.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: security case and discuss frame",
+        "Knowledge organiser (pupil PDF)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0) specification and sample assessment materials (format only)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Padlock",
+          "alt": "A padlock: security",
+          "for": "hook"
+        },
+        {
+          "find": "Electronic waste recycling",
+          "alt": "E-waste for recycling",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 34,
+      "title": "Python practical: decomposing a Paper 2 style task",
+      "duration": 50,
+      "bigQuestion": "Paper 2 is three hours on a computer. What is the danger of starting to type straight away?",
+      "objectives": [
+        "To understand how to plan a 3-hour practical task by decomposing it, choosing data structures and testing as you go"
+      ],
+      "successCriteria": [
+        "All: decompose a task into subprograms",
+        "Most: read data from a CSV file into a list",
+        "Some: plan tests for each subprogram"
+      ],
+      "smsc": "Moral: careful, honest handling of records about people",
+      "keywords": [
+        {
+          "term": "CSV",
+          "def": "comma-separated values: a simple text data file"
+        },
+        {
+          "term": "decomposition",
+          "def": "breaking a task into subprograms"
+        },
+        {
+          "term": "file handling",
+          "def": "opening, reading, writing and closing files"
+        },
+        {
+          "term": "test plan",
+          "def": "planned tests with expected results"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Paper 2 is three hours on a computer. What is the danger of starting to type straight away?",
+        "a": "You build the wrong thing; planning first (decompose, data structures, tests) saves time."
+      },
+      "starter": [
+        {
+          "q": "Phishing is ...",
+          "a": "a social-engineering trick",
+          "mins": 1,
+          "options": [
+            "a social-engineering trick",
+            "a virus",
+            "a protocol"
+          ]
+        },
+        {
+          "q": "A CSV file stores ...",
+          "a": "values separated by commas",
+          "mins": 1,
+          "options": [
+            "values separated by commas",
+            "images",
+            "sound"
+          ]
+        },
+        {
+          "q": "A function returns a value with ...",
+          "a": "return",
+          "mins": 1,
+          "options": [
+            "return",
+            "print",
+            "input"
+          ]
+        },
+        {
+          "q": "Boundary test for marks 0 to 100?",
+          "a": "100",
+          "mins": 1,
+          "options": [
+            "100",
+            "56",
+            "'abc'"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Today's task (pupil PDF)",
+          "bullets": [
+            "A file of madrasah attendance: name, sessions, attended",
+            "Output each pupil's attendance %",
+            "Flag anyone below 90%; write a report file"
+          ],
+          "note": "Fictional data on the pupil PDF; no real pupils."
+        },
+        {
+          "heading": "Decompose",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Attendance report",
+            "items": [
+              "read_file(name) → list of records",
+              "percent(attended, sessions) → float",
+              "flag(p) → True if below 90",
+              "write_report(records)",
+              "main(): call them in order"
+            ]
+          }
+        },
+        {
+          "heading": "Reading a CSV file (6.4.2)",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "def read_file(filename):\n    records = []\n    f = open(filename, 'r')\n    for line in f:\n        parts = line.strip().split(',')\n        records.append([parts[0], int(parts[1]), int(parts[2])])\n    f.close()\n    return records",
+            "output": "[['Amal', 40, 38], ['Bilal', 40, 33], ...]"
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Using the numbers from split() directly in sums",
+            "right": "split() gives strings: convert with int() before calculating"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "'Amal,40,38'.split(',') gives ...",
+            "options": [
+              "['Amal', '40', '38']",
+              "['Amal', 40, 38]",
+              "'Amal 40 38'",
+              "An error"
+            ],
+            "answer": 0,
+            "why": "split returns a list of strings; convert numbers with int()."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write percent(attended, sessions) and test it with (38, 40) and (33, 40).",
+          "a": "def percent(a, s): return a / s * 100 → 95.0 and 82.5",
+          "mins": 5,
+          "model": "I do: def percent(attended, sessions): return attended / sessions * 100. Tests: 38 / 40 × 100 = 95.0; 33 / 40 × 100 = 82.5."
+        },
+        {
+          "q": "percent(36, 40) = ?",
+          "a": "90.0",
+          "mins": 1,
+          "options": [
+            "90.0",
+            "36.0",
+            "111.1"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: write read_file, percent and flag, then a main() that prints each name, % and '*' if below 90. Use the provided attendance.csv.",
+          "a": "Output for the sample data in the plan's key (e.g. Amal 95.0; Bilal 82.5 *).",
+          "mins": 10,
+          "model": "The teacher writes flag(p): return p < 90."
+        },
+        {
+          "q": "Extend: write a test table for flag() including the boundary 90.",
+          "a": "89.9 → True; 90 → False; 95 → False.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what should happen if sessions is 0? Add a check.",
+          "a": "Avoid division by zero: return 0 or skip the record with a message.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Decomposition first helps because ...",
+          "a": "each part can be built and tested separately",
+          "mins": 1,
+          "options": [
+            "each part can be built and tested separately",
+            "it adds lines",
+            "it avoids testing"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Paper 2 is three hours on a computer. What is the danger of starting to type straight away?",
+          "a": "You build the wrong thing; planning first (decompose, data structures, tests) saves time.",
+          "mins": 2
+        }
+      ],
+      "homework": "Finish the attendance program and test it with the pupil PDF test table.",
+      "send": "SEND: knowledge organiser and worked-example card; extra time as agreed. EAL: glossary of command words (state, describe, explain, discuss). Stretch: the 6-mark discuss question with a reasoned conclusion.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: attendance task brief",
+        "Knowledge organiser (pupil PDF)",
+        "attendance.csv sample data file (fictional names)",
+        "Python 3 with IDLE",
+        "Pearson Edexcel International GCSE Computer Science (4CP0) specification and sample assessment materials (format only)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Spreadsheet table grid",
+          "alt": "A data table",
+          "for": "hook"
+        },
+        {
+          "find": "Source code on screen",
+          "alt": "Program code",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 35,
+      "title": "Python practical: timed task with files, validation and a report",
+      "duration": 50,
+      "bigQuestion": "Two programs both work. One has clear names and comments; the other is a jumble. Which earns more marks, and why?",
+      "objectives": [
+        "To understand how to complete a practical programming task under time pressure with readable, validated and tested code"
+      ],
+      "successCriteria": [
+        "All: produce a working program that reads the file and outputs results",
+        "Most: add validation and write a report file",
+        "Some: produce readable code with comments, meaningful names and a test log"
+      ],
+      "smsc": "Moral: integrity in timed work: our own code, no copying",
+      "keywords": [
+        {
+          "term": "readability",
+          "def": "how easy code is to understand"
+        },
+        {
+          "term": "validation",
+          "def": "checking input is sensible"
+        },
+        {
+          "term": "test log",
+          "def": "a record of tests run and results"
+        },
+        {
+          "term": "append",
+          "def": "add to the end of a file"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two programs both work. One has clear names and comments; the other is a jumble. Which earns more marks, and why?",
+        "a": "The readable one: Paper 2 rewards readable, maintainable code as well as working code."
+      },
+      "starter": [
+        {
+          "q": "split(',') returns ...",
+          "a": "a list of strings",
+          "mins": 1,
+          "options": [
+            "a list of strings",
+            "integers",
+            "a file"
+          ]
+        },
+        {
+          "q": "Closing a file ...",
+          "a": "saves and frees it",
+          "mins": 1,
+          "options": [
+            "saves and frees it",
+            "deletes it",
+            "renames it"
+          ]
+        },
+        {
+          "q": "Writing a file uses mode ...",
+          "a": "'w'",
+          "mins": 1,
+          "options": [
+            "'w'",
+            "'r'",
+            "'x'"
+          ]
+        },
+        {
+          "q": "A meaningful variable name is ...",
+          "a": "total_sessions",
+          "mins": 1,
+          "options": [
+            "total_sessions",
+            "x",
+            "a1"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Writing a report file",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "def write_report(records, filename):\n    f = open(filename, 'w')\n    for name, sessions, attended in records:\n        p = attended / sessions * 100\n        f.write(name + ',' + str(round(p, 1)) + '\\n')\n    f.close()",
+            "output": "report.csv: Amal,95.0 / Bilal,82.5 ..."
+          }
+        },
+        {
+          "heading": "Readable code (6.1.4)",
+          "bullets": [
+            "Comments explain why",
+            "Meaningful identifiers",
+            "Consistent indentation and white space",
+            "One job per subprogram"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Timed task rules",
+          "bullets": [
+            "40 minutes, silent, on your own",
+            "Save often with a clear file name",
+            "Test as you go; keep a short test log"
+          ],
+          "note": "Mirrors Paper 2 conditions (shortened)."
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Forgetting '\\n' when writing lines",
+            "right": "Add '\\n' so each record goes on its own line"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Which mode adds to the end of an existing file?",
+            "options": [
+              "'a'",
+              "'w'",
+              "'r'",
+              "'x'"
+            ],
+            "answer": 0,
+            "why": "'a' appends; 'w' overwrites; 'r' reads."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Add validation to the menu: keep asking until the user enters 1, 2 or 3.",
+          "a": "choice = input(); while choice not in ['1', '2', '3']: choice = input('Enter 1, 2 or 3: ')",
+          "mins": 4,
+          "model": "I do: choice = input('Choose 1, 2 or 3: '). while choice not in ['1', '2', '3']: print('Invalid'); choice = input('Choose 1, 2 or 3: ')."
+        },
+        {
+          "q": "'w' mode on an existing file ...",
+          "a": "overwrites it",
+          "mins": 1,
+          "options": [
+            "overwrites it",
+            "appends",
+            "reads it"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed practical (pupil PDF brief): extend the attendance program with a validated menu (view all, view flagged, write report) and a test log. Save as Surname_Task2.py.",
+          "a": "Marked against the practical mark scheme in the plan: functionality, validation, readability, testing.",
+          "mins": 11,
+          "model": "The teacher shows the menu structure for 2 minutes before the timer starts."
+        },
+        {
+          "q": "Extend: add an option to search for one pupil by name.",
+          "a": "Linear search through records; 'Not found' message.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: sort the report by percentage, lowest first.",
+          "a": "records.sort(key=...) or a bubble sort by the % field.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Paper 2 rewards working code and ...",
+          "a": "readable, tested code",
+          "mins": 1,
+          "options": [
+            "readable, tested code",
+            "the longest code",
+            "copied code"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Two programs both work. One has clear names and comments; the other is a jumble. Which earns more marks, and why?",
+          "a": "The readable one: Paper 2 rewards readable, maintainable code as well as working code.",
+          "mins": 2
+        }
+      ],
+      "homework": "Finish the task at home, complete the test log and upload it to the portal.",
+      "send": "SEND: extra time as agreed; code skeleton with function headers. EAL: glossary. Stretch: sorting and search extensions.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: timed practical brief and mark scheme",
+        "Knowledge organiser (pupil PDF)",
+        "attendance.csv sample data file (fictional names)",
+        "Python 3 with IDLE",
+        "Pearson Edexcel International GCSE Computer Science (4CP0) specification and sample assessment materials (format only)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Stopwatch",
+          "alt": "A stopwatch: timed task",
+          "for": "hook"
+        },
+        {
+          "find": "Source code on screen",
+          "alt": "Program code",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 36,
+      "title": "Mock practice: Paper 1 style questions, timed",
+      "duration": 50,
+      "bigQuestion": "Paper 1 is 2 hours for 80 marks. How long should a 6-mark question take?",
+      "objectives": [
+        "To understand how to manage time and answer Paper 1 style questions precisely across the specification"
+      ],
+      "successCriteria": [
+        "All: complete a 25-mark section in 30 minutes",
+        "Most: use command words correctly",
+        "Some: score well on a 6-mark 'discuss' question"
+      ],
+      "smsc": "Spiritual: calm effort and trust in Allah (tawakkul) in exams",
+      "keywords": [
+        {
+          "term": "command words",
+          "def": "state, describe, explain, discuss, calculate, complete: each asks for a different answer"
+        },
+        {
+          "term": "mark scheme",
+          "def": "the guide examiners use to award marks"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Paper 1 is 2 hours for 80 marks. How long should a 6-mark question take?",
+        "a": "About 1.5 minutes a mark: roughly 9 minutes."
+      },
+      "starter": [
+        {
+          "q": "'w' mode ...",
+          "a": "overwrites",
+          "mins": 1,
+          "options": [
+            "overwrites",
+            "appends",
+            "reads"
+          ]
+        },
+        {
+          "q": "10000000 in two's complement = ?",
+          "a": "−128",
+          "mins": 1,
+          "options": [
+            "−128",
+            "128",
+            "−127"
+          ]
+        },
+        {
+          "q": "Which is volatile?",
+          "a": "RAM",
+          "mins": 1,
+          "options": [
+            "RAM",
+            "SSD",
+            "DVD"
+          ]
+        },
+        {
+          "q": "FTP is for ...",
+          "a": "file transfer",
+          "mins": 1,
+          "options": [
+            "file transfer",
+            "email",
+            "web pages"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Command words",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Word",
+              "What to do"
+            ],
+            "rows": [
+              [
+                "State / give",
+                "A short fact"
+              ],
+              [
+                "Describe",
+                "Say what happens, in steps"
+              ],
+              [
+                "Explain",
+                "Give reasons: point and why"
+              ],
+              [
+                "Discuss",
+                "Both sides and a conclusion"
+              ],
+              [
+                "Calculate",
+                "Show working and units"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Timing plan",
+          "bullets": [
+            "About 1.5 minutes per mark",
+            "Answer what you know first",
+            "Leave 10 minutes to check"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Today's section (pupil PDF)",
+          "bullets": [
+            "25 marks across data, hardware, networks, security",
+            "One 6-mark discuss",
+            "30 minutes, silent"
+          ],
+          "note": "Teacher-written questions; mark scheme in the plan."
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Calculations without units or working",
+            "right": "Show each step and give the unit (bits, bytes, seconds)"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "'Describe the fetch stage' needs ...",
+            "options": [
+              "the steps in order",
+              "a definition only",
+              "a diagram only",
+              "an opinion"
+            ],
+            "answer": 0,
+            "why": "Describe: what happens, step by step."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Model question: 'Explain why a school might use an SSD rather than an HDD in laptops. (2)'",
+          "a": "SSDs have no moving parts, so they survive being dropped and boot faster for lessons.",
+          "mins": 4,
+          "model": "I do: point: no moving parts. Why: laptops are carried and dropped, so an SSD is less likely to fail; also faster to start."
+        },
+        {
+          "q": "6-mark discuss: about how many minutes?",
+          "a": "9",
+          "mins": 1,
+          "options": [
+            "9",
+            "2",
+            "20"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed (pupil PDF): complete the 25-mark Paper 1 style section in silence.",
+          "a": "Marked against the plan's mark scheme; scripts collected for feedback.",
+          "mins": 11,
+          "model": "The teacher reads the instructions aloud and starts the timer."
+        },
+        {
+          "q": "Extend: self-mark one question with the mark scheme and write a target.",
+          "a": "Score and one target.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: improve your discuss conclusion.",
+          "a": "A clearer, justified conclusion.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A calculation answer needs ...",
+          "a": "working and units",
+          "mins": 1,
+          "options": [
+            "working and units",
+            "a guess",
+            "a diagram"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Paper 1 is 2 hours for 80 marks. How long should a 6-mark question take?",
+          "a": "About 1.5 minutes a mark: roughly 9 minutes.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the feedback in the portal and redo the two questions you scored lowest on.",
+      "send": "SEND: extra time as agreed; reader if on the SEND register. EAL: command-word card. Stretch: aim for full marks on the discuss question.",
+      "resources": [
+        "Pupil PDF worksheet: 25-mark Paper 1 style section (mark scheme in the plan)",
+        "Slides",
+        "Calculator if permitted for practice (Paper 1 rules: check the current 4CP0 instructions)",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Exam hall desks",
+          "alt": "Exam desks",
+          "for": "hook"
+        },
+        {
+          "find": "Stopwatch",
+          "alt": "Timing",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1",
+      "n": 37,
+      "title": "Mock practice: Python task, timed, and feedback",
+      "duration": 50,
+      "bigQuestion": "What is the single change that would most improve your Computer Science marks before May?",
+      "objectives": [
+        "To understand how to apply feedback and complete a practical task under exam-style conditions"
+      ],
+      "successCriteria": [
+        "All: complete a short practical task that runs",
+        "Most: fix the weaknesses named in Paper 1 feedback",
+        "Some: produce validated, readable, tested code within the time"
+      ],
+      "smsc": "Moral: honest work under exam conditions",
+      "keywords": [
+        {
+          "term": "command words",
+          "def": "state, describe, explain, discuss, calculate, complete: each asks for a different answer"
+        },
+        {
+          "term": "readability",
+          "def": "how easy code is to understand"
+        },
+        {
+          "term": "test log",
+          "def": "a record of tests and results"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the single change that would most improve your Computer Science marks before May?",
+        "a": "Usually regular timed Python practice and learning precise definitions; each pupil names their own."
+      },
+      "starter": [
+        {
+          "q": "Discuss needs ...",
+          "a": "both sides and a conclusion",
+          "mins": 1,
+          "options": [
+            "both sides and a conclusion",
+            "one side",
+            "a definition"
+          ]
+        },
+        {
+          "q": "Mbps means ...",
+          "a": "megabits per second",
+          "mins": 1,
+          "options": [
+            "megabits per second",
+            "megabytes per second"
+          ]
+        },
+        {
+          "q": "int('7') + 1 = ?",
+          "a": "8",
+          "mins": 1,
+          "options": [
+            "8",
+            "'71'",
+            "Error"
+          ]
+        },
+        {
+          "q": "Phishing is ...",
+          "a": "a trick to get information",
+          "mins": 1,
+          "options": [
+            "a trick to get information",
+            "a backup",
+            "a protocol"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Feedback from Paper 1 practice",
+          "bullets": [
+            "Strength: binary conversions",
+            "Target: units in calculations",
+            "Target: discuss answers need a conclusion"
+          ],
+          "note": "Adapt to the actual scripts."
+        },
+        {
+          "heading": "Today's task (pupil PDF)",
+          "bullets": [
+            "A fictional masjid library: books.csv",
+            "Menu: list, search by title, books due back",
+            "Validate input; write overdue.csv"
+          ],
+          "note": "Mark scheme in the plan."
+        },
+        {
+          "heading": "Checklist before you stop",
+          "bullets": [
+            "It runs with the sample file",
+            "Input is validated",
+            "Names and comments are clear",
+            "Test log completed"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Saving only at the end",
+            "right": "Save every few minutes with a clear file name"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Which shows readable code?",
+            "options": [
+              "due_date = record[2]  # third field",
+              "d = r[2]",
+              "x=r[2];y=x",
+              "a1 = r[2]"
+            ],
+            "answer": 0,
+            "why": "A meaningful name and a short comment."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Model: write search_title(books, title) returning the record or None.",
+          "a": "for b in books: if b[0].lower() == title.lower(): return b; return None",
+          "mins": 4,
+          "model": "I do: def search_title(books, title): for b in books: if b[0].lower() == title.lower(): return b. After the loop: return None."
+        },
+        {
+          "q": "Comparing in lower case makes the search ...",
+          "a": "case-insensitive",
+          "mins": 1,
+          "options": [
+            "case-insensitive",
+            "slower only",
+            "invalid"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed practical (pupil PDF brief): build the masjid library program. Save as Surname_Mock2.py; complete the test log.",
+          "a": "Marked against the plan's practical mark scheme.",
+          "mins": 11,
+          "model": "The teacher shows the menu skeleton for 2 minutes, then starts the timer."
+        },
+        {
+          "q": "Extend: write three Spring 2 revision targets in the portal log.",
+          "a": "Three specific targets.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: add a count of overdue books by month.",
+          "a": "A dictionary or list of counts.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Before you stop, check that the program ...",
+          "a": "runs, validates and is readable",
+          "mins": 1,
+          "options": [
+            "runs, validates and is readable",
+            "is long",
+            "has no comments"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What is the single change that would most improve your Computer Science marks before May?",
+          "a": "Usually regular timed Python practice and learning precise definitions; each pupil names their own.",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise one Python task a week through the Ramadan break (pupil PDF list), 30 minutes each.",
+      "send": "SEND: extra time as agreed; skeleton code. EAL: glossary. Stretch: extension features.",
+      "resources": [
+        "Pupil PDF worksheet: masjid library practical brief and mark scheme",
+        "books.csv sample data file (fictional)",
+        "Python 3 with IDLE",
+        "Slides",
+        "Feedback from the Paper 1 practice"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Library bookshelves",
+          "alt": "A library",
+          "for": "hook"
+        },
+        {
+          "find": "Source code on screen",
+          "alt": "Program code",
+          "for": "teach:3"
+        }
+      ]
     }
   ]
 }

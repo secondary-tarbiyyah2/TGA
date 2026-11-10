@@ -1,7 +1,7 @@
 "use client";
 
 import { LearnGate } from "@/components/learn/LearnGate";
-import { PageHeader } from "@/components/learn/PageHeader";
+import { WorkspaceHeader } from "@/components/learn/kit";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
 import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
 
@@ -11,7 +11,18 @@ function TeachClassesContent() {
   const classes = useViewerClasses(VIEWER);
   return (
     <>
-      <PageHeader title="My classes" subtitle="Every class you teach or cover." />
+      <div className="mb-6">
+        <WorkspaceHeader
+          eyebrow={[{ label: "Home", href: "/teach/dashboard" }, { label: "Teaching" }]}
+          title="My classes"
+          description="Every class you teach or cover."
+          stats={classes ? [{ value: classes.length, label: classes.length === 1 ? "class" : "classes" }] : undefined}
+          menu={[
+            { label: "Gradebook", icon: "award", href: "/teach/assessment" },
+            { label: "Classwork to action", icon: "notebookPen", href: "/teach/homework" },
+          ]}
+        />
+      </div>
       <ClassGrid viewer={VIEWER} classes={classes} hrefFor={(c) => `/teach/class?id=${c.id}`} emptyLabel="You haven't been assigned to any classes yet." />
     </>
   );

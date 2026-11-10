@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y5",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 5: number and place value to 1,000,000, negative numbers, Roman numerals, addition and subtraction, multiples, factors, primes, squares and cubes); sequencing checked against the school's Drive Maths folder (Primary national curriculum material; no Y5-specific scheme found, so lessons written from the National Curriculum); Spring 1 founding year: White Rose Maths Year 5 small-step titles (bridge from Autumn blocks 1-4, then Spring blocks 1 Multiplication and division B and 2 Fractions B), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24",
+  "source": "National Curriculum (KS2 Year 5: number and place value to 1,000,000, negative numbers, Roman numerals, addition and subtraction, multiples, factors, primes, squares and cubes); sequencing checked against the school's Drive Maths folder (Primary national curriculum material; no Y5-specific scheme found, so lessons written from the National Curriculum); Spring 1 founding year: White Rose Maths Year 5 small-step titles (bridge from Autumn blocks 1-4, then Spring blocks 1 Multiplication and division B and 2 Fractions B), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 5 Spring blocks 3 Decimals and percentages, 4 Perimeter and area and 5 Statistics (small-step titles only)",
   "lessons": [
     {
       "unit": "Spring 1: Multiplication and division B; fractions B",
@@ -5766,6 +5766,5442 @@
         "Counters or pasta",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 5 maths lesson 31 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 32,
+      "title": "Decimals up to 2 decimal places",
+      "duration": 45,
+      "bigQuestion": "What is each digit in 4.36 worth?",
+      "objectives": [
+        "To understand the value of digits in decimals with up to 2 decimal places"
+      ],
+      "successCriteria": [
+        "All: read and write decimals with tenths and hundredths",
+        "Most: partition a 2-place decimal",
+        "Some: explain why 0.4 = 0.40"
+      ],
+      "crossCurricular": "Money: £4.36 is 4 pounds, 3 tens of pence and 6 pence",
+      "smsc": "Moral: careful handling of money is an amanah (trust)",
+      "keywords": [
+        {
+          "term": "tenths",
+          "def": "the first place after the point"
+        },
+        {
+          "term": "hundredths",
+          "def": "the second place after the point"
+        },
+        {
+          "term": "decimal place",
+          "def": "a place after the point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "£4.36 and £4.63: same digits. Which is more and by how much?",
+        "a": "£4.63, by 27p."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "pound coins and pence",
+          "alt": "British coins",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2/5 of 35?",
+          "a": "14",
+          "mins": 1
+        },
+        {
+          "q": "2 3/4 + 1 1/4 = ?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "436 ÷ 100 = ?",
+          "a": "4.36",
+          "mins": 1
+        },
+        {
+          "q": "7 × 1/4 as a mixed number?",
+          "a": "1 3/4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "On the chart",
+          "bullets": [
+            "4.36 = 4 ones, 3 tenths, 6 hundredths",
+            "4.36 = 4 + 0.3 + 0.06"
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "4",
+                ".",
+                "3",
+                "6"
+              ],
+              [
+                "0",
+                ".",
+                "0",
+                "8"
+              ],
+              [
+                "2",
+                ".",
+                "5",
+                "0"
+              ]
+            ]
+          },
+          "note": "Counters on the chart."
+        },
+        {
+          "heading": "Partition flexibly",
+          "bullets": [
+            "4.36 = 4 + 0.36",
+            "4.36 = 3 + 1.36",
+            "4.36 = 4.3 + 0.06"
+          ],
+          "diagram": {
+            "centre": "4.36",
+            "items": [
+              "4 + 0.3 + 0.06",
+              "4 + 0.36",
+              "3 + 1.36",
+              "4.2 + 0.16"
+            ]
+          },
+          "note": "Ask: another way? (4.2 + 0.16)."
+        },
+        {
+          "heading": "Trailing zeros",
+          "bullets": [
+            "0.4 = 0.40",
+            "4 tenths = 40 hundredths",
+            "But 0.04 is different."
+          ],
+          "misconception": {
+            "wrong": "0.04 = 0.4",
+            "right": "0.04 is 4 hundredths; 0.4 is 4 tenths, 10 times more"
+          },
+          "note": "Ask: 0.5 or 0.05: which is more? (0.5)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "The value of the 7 in 2.07 is...",
+            "options": [
+              "7 tenths",
+              "7 hundredths",
+              "7 ones"
+            ],
+            "answer": 1,
+            "why": "Second place after the point: hundredths."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write 5 ones, 2 tenths and 9 hundredths.",
+          "a": "5.29",
+          "mins": 2,
+          "model": "Teacher places counters 5, 2 and 9: 5.29."
+        },
+        {
+          "q": "Value of the 8 in 0.84?",
+          "a": "8 tenths (0.8)",
+          "mins": 2
+        },
+        {
+          "q": "6.07 = 6 + ?",
+          "a": "0.07",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: partition 3.45, 0.62 and 8.09.",
+          "a": "3 + 0.4 + 0.05; 0.6 + 0.02; 8 + 0.09",
+          "mins": 4,
+          "model": "Teacher: 3.45 = 3 + 0.4 + 0.05."
+        },
+        {
+          "q": "Extend: Extend: 0.01 more and 0.1 less than 4.99",
+          "a": "5.00; 4.89",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: I have 2 ones, 13 tenths and 5 hundredths. What number am I?",
+          "a": "3.35",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Value of the 3 in 6.43?",
+          "a": "3 hundredths",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what is each digit in 4.36 worth?",
+          "a": "4 ones, 3 tenths (0.3), 6 hundredths (0.06)",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 5 prices from a shop leaflet and partition each.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: write 15 tenths and 23 hundredths as one decimal (1.73).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Decimals up to 2 decimal places' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 32 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 33,
+      "title": "Thousandths as fractions and decimals",
+      "duration": 45,
+      "bigQuestion": "How small is a thousandth?",
+      "objectives": [
+        "To understand thousandths as fractions and as decimals"
+      ],
+      "successCriteria": [
+        "All: write 1/1000 as 0.001",
+        "Most: write thousandths fractions as decimals",
+        "Some: explain how a thousandth links to a hundredth"
+      ],
+      "crossCurricular": "Science: 1 g is 1/1000 of a kilogram; 1 ml is 1/1000 of a litre",
+      "smsc": "Spiritual: Allah knows even the weight of an atom (Qur'an 99:7-8)",
+      "keywords": [
+        {
+          "term": "thousandth",
+          "def": "one of 1,000 equal parts"
+        },
+        {
+          "term": "decimal place",
+          "def": "a place after the point"
+        },
+        {
+          "term": "1,000",
+          "def": "ten hundreds"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "1 ml is what fraction of a litre? Write it as a decimal.",
+        "a": "1/1000 of a litre: 0.001 l."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "islamicLink": {
+        "text": "Allah tells us that whoever does even an atom's weight of good will see it, and whoever does an atom's weight of evil will see it (Qur'an 99:7-8). Even tiny amounts count.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug in ml",
+          "for": "hook"
+        },
+        {
+          "find": "kitchen scales digital display",
+          "alt": "A digital scale",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Value of the 6 in 3.46?",
+          "a": "6 hundredths",
+          "mins": 1
+        },
+        {
+          "q": "1 kg = ? g",
+          "a": "1,000 g",
+          "mins": 1
+        },
+        {
+          "q": "0.4 = ?/100",
+          "a": "40/100",
+          "mins": 1
+        },
+        {
+          "q": "TT: 25 × 4 = ?",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Thousandths",
+          "bullets": [
+            "1 whole in 1,000 parts.",
+            "1/1000 = 0.001",
+            "Third place after the point."
+          ],
+          "table": {
+            "head": [
+              "Fraction",
+              "Decimal"
+            ],
+            "rows": [
+              [
+                "1/10",
+                "0.1"
+              ],
+              [
+                "1/100",
+                "0.01"
+              ],
+              [
+                "1/1000",
+                "0.001"
+              ],
+              [
+                "7/1000",
+                "0.007"
+              ]
+            ]
+          },
+          "note": "Divide a hundredth into 10."
+        },
+        {
+          "heading": "More thousandths",
+          "bullets": [
+            "253/1000 = 0.253",
+            "45/1000 = 0.045",
+            "Zeros hold the places."
+          ],
+          "misconception": {
+            "wrong": "45/1000 = 0.45",
+            "right": "0.45 is 45 hundredths. 45/1000 = 0.045"
+          },
+          "note": "Ask: 6/1000? (0.006)."
+        },
+        {
+          "heading": "Links",
+          "bullets": [
+            "10 thousandths = 1 hundredth",
+            "1 g = 0.001 kg",
+            "1 ml = 0.001 l"
+          ],
+          "note": "Ask: 250 g in kg? (0.25 kg)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "87/1000 as a decimal?",
+            "options": [
+              "0.87",
+              "0.087",
+              "8.7"
+            ],
+            "answer": 1,
+            "why": "87 thousandths: 0 tenths, 8 hundredths, 7 thousandths."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "31/1000 as a decimal?",
+          "a": "0.031",
+          "mins": 2,
+          "model": "Teacher: 31 thousandths is 3 hundredths and 1 thousandth: 0.031."
+        },
+        {
+          "q": "0.509 as a fraction?",
+          "a": "509/1000",
+          "mins": 2
+        },
+        {
+          "q": "9/1000 as a decimal?",
+          "a": "0.009",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write 140/1000, 3/1000 and 999/1000 as decimals.",
+          "a": "0.14 (0.140); 0.003; 0.999",
+          "mins": 4,
+          "model": "Teacher: 140 thousandths = 0.140 = 0.14."
+        },
+        {
+          "q": "Extend: Extend: write 375 g in kg and 60 ml in l.",
+          "a": "0.375 kg; 0.06 l",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 0.25 = ?/1000",
+          "a": "250/1000",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/1000 as a decimal?",
+          "a": "0.001",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how small is a thousandth?",
+          "a": "One of 1,000 equal parts: 10 of them make a hundredth",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 masses or volumes on packets and write them in kg or l as decimals.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: write 1 kg 45 g in kg (1.045 kg).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Thousandths as fractions and Thousandths as decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 33 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 34,
+      "title": "Thousandths on a place value chart",
+      "duration": 45,
+      "bigQuestion": "What is each digit in 2.457 worth?",
+      "objectives": [
+        "To understand the value of each digit in decimals with 3 decimal places"
+      ],
+      "successCriteria": [
+        "All: place a 3-place decimal on a chart",
+        "Most: say each digit's value",
+        "Some: partition and find 0.001 more or less"
+      ],
+      "crossCurricular": "Science: timing races to a thousandth of a second",
+      "smsc": "Social: checking a partner's work kindly",
+      "keywords": [
+        {
+          "term": "thousandths",
+          "def": "the third place after the point"
+        },
+        {
+          "term": "place value",
+          "def": "a digit's value from its place"
+        },
+        {
+          "term": "partition",
+          "def": "split into parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A race is won by 0.008 seconds. Is that more or less than 1 hundredth?",
+        "a": "Less: 0.008 < 0.010."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "45/1000 as a decimal?",
+          "a": "0.045",
+          "mins": 1
+        },
+        {
+          "q": "0.509 as a fraction?",
+          "a": "509/1000",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "375 g in kg?",
+          "a": "0.375 kg",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "On the chart",
+          "bullets": [
+            "2.457",
+            "2 ones, 4 tenths, 5 hundredths, 7 thousandths"
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths",
+              "Thousandths"
+            ],
+            "rows": [
+              [
+                "2",
+                ".",
+                "4",
+                "5",
+                "7"
+              ],
+              [
+                "0",
+                ".",
+                "0",
+                "3",
+                "8"
+              ],
+              [
+                "5",
+                ".",
+                "6",
+                "0",
+                "2"
+              ]
+            ]
+          },
+          "note": "Counters."
+        },
+        {
+          "heading": "Partition",
+          "bullets": [
+            "2.457 = 2 + 0.4 + 0.05 + 0.007"
+          ],
+          "diagram": {
+            "centre": "2.457",
+            "items": [
+              "2 ones",
+              "0.4",
+              "0.05",
+              "0.007",
+              "2.45 + 0.007"
+            ]
+          },
+          "note": "Ask: 5.602 = 5 + 0.6 + ? (0.002)."
+        },
+        {
+          "heading": "0.001 more",
+          "bullets": [
+            "2.457 + 0.001 = 2.458",
+            "2.459 + 0.001 = 2.460",
+            "Exchange 10 thousandths."
+          ],
+          "note": "Ask: 0.001 less than 3.000? (2.999)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "The value of the 6 in 1.036 is...",
+            "options": [
+              "6 tenths",
+              "6 hundredths",
+              "6 thousandths"
+            ],
+            "answer": 2,
+            "why": "Third place: thousandths."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write 3 ones, 0 tenths, 4 hundredths, 9 thousandths.",
+          "a": "3.049",
+          "mins": 2,
+          "model": "Teacher places counters: 3.049."
+        },
+        {
+          "q": "Value of the 2 in 0.428?",
+          "a": "2 hundredths",
+          "mins": 2
+        },
+        {
+          "q": "0.001 more than 4.099?",
+          "a": "4.100 (4.1)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: partition 6.384, 0.507 and 1.06.",
+          "a": "6 + 0.3 + 0.08 + 0.004; 0.5 + 0.007; 1 + 0.06",
+          "mins": 4,
+          "model": "Teacher: 6.384 = 6 + 0.3 + 0.08 + 0.004."
+        },
+        {
+          "q": "Extend: Extend: 0.01 more than 2.396; 0.1 less than 5.004",
+          "a": "2.406; 4.904",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: what is 2 tenths, 15 hundredths and 3 thousandths?",
+          "a": "0.353",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.001 less than 1?",
+          "a": "0.999",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what is each digit in 2.457 worth?",
+          "a": "2 ones, 4 tenths, 5 hundredths, 7 thousandths",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 4 three-place decimals and partition each.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: count on in thousandths from 0.995 to 1.004.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Thousandths on a place value chart' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 34 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 35,
+      "title": "Round to the nearest whole number",
+      "duration": 45,
+      "bigQuestion": "Is 3.5 nearer 3 or 4?",
+      "objectives": [
+        "To understand how to round decimals to the nearest whole number"
+      ],
+      "successCriteria": [
+        "All: find the two whole numbers either side",
+        "Most: use the tenths digit to round",
+        "Some: round in a measures context"
+      ],
+      "crossCurricular": "Science: rounding measurements",
+      "smsc": "Moral: estimating honestly",
+      "keywords": [
+        {
+          "term": "round",
+          "def": "change to a nearby simpler number"
+        },
+        {
+          "term": "nearest",
+          "def": "closest"
+        },
+        {
+          "term": "whole number",
+          "def": "a number with no decimal part"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bag weighs 3.5 kg. Should we say about 3 kg or 4 kg?",
+        "a": "4 kg: the rule is 5 or more rounds up."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bag of flour 1kg",
+          "alt": "A bag of flour",
+          "for": "hook"
+        },
+        {
+          "find": "ruler with centimetres close up",
+          "alt": "A ruler",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.001 less than 1?",
+          "a": "0.999",
+          "mins": 1
+        },
+        {
+          "q": "Round 47 to the nearest 10.",
+          "a": "50",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 9 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "Half way between 3 and 4?",
+          "a": "3.5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Either side",
+          "bullets": [
+            "3.7 is between 3 and 4.",
+            "It is nearer 4.",
+            "3.7 rounds to 4."
+          ],
+          "numberline": {
+            "min": 3,
+            "max": 4,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 3.2,
+                "label": "3.2"
+              },
+              {
+                "at": 3.5,
+                "label": "half way"
+              },
+              {
+                "at": 3.7,
+                "label": "3.7"
+              }
+            ]
+          },
+          "note": "Mark it on the line."
+        },
+        {
+          "heading": "The tenths digit",
+          "bullets": [
+            "0 to 4: round down.",
+            "5 to 9: round up.",
+            "6.48 rounds to 6."
+          ],
+          "note": "Ask: 12.51? (13)."
+        },
+        {
+          "heading": "Measures",
+          "bullets": [
+            "2.6 m is about 3 m.",
+            "9.49 kg is about 9 kg.",
+            "£4.50 is about £5."
+          ],
+          "misconception": {
+            "wrong": "6.48 rounds to 7 because 8 rounds up",
+            "right": "Look at the tenths digit only: 4, so 6.48 rounds to 6"
+          },
+          "note": "Ask: 19.8 l? (20 l)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Round 7.52 to the nearest whole number.",
+            "options": [
+              "7",
+              "8",
+              "7.5"
+            ],
+            "answer": 1,
+            "why": "Tenths digit 5: round up to 8."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Round 4.3.",
+          "a": "4",
+          "mins": 2,
+          "model": "Teacher: 4.3 is between 4 and 5; 3 tenths is less than 5, so 4."
+        },
+        {
+          "q": "Round 8.9.",
+          "a": "9",
+          "mins": 2
+        },
+        {
+          "q": "Round 15.5.",
+          "a": "16",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: round 2.7, 11.42 and 0.6.",
+          "a": "3; 11; 1",
+          "mins": 4,
+          "model": "Teacher: 2.7: tenths digit 7, round up to 3."
+        },
+        {
+          "q": "Extend: Extend: round 9.501, 19.95 and 99.49.",
+          "a": "10; 20; 99",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a number rounds to 5. What is the smallest it can be with one decimal place? The largest?",
+          "a": "4.5 and 5.4",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Round 6.5.",
+          "a": "7",
+          "mins": 2
+        },
+        {
+          "q": "Big question: is 3.5 nearer 3 or 4?",
+          "a": "Exactly half way; we round up, so 4",
+          "mins": 3
+        }
+      ],
+      "homework": "Round 6 lengths or masses from home to the nearest whole number.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: round 0.49 and 0.5 and explain.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Round to the nearest whole number' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 35 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 36,
+      "title": "Round to 1 decimal place",
+      "duration": 45,
+      "bigQuestion": "How do we round 3.47 to 1 decimal place?",
+      "objectives": [
+        "To understand how to round decimals to 1 decimal place"
+      ],
+      "successCriteria": [
+        "All: find the two tenths either side",
+        "Most: use the hundredths digit to round",
+        "Some: round money and measures to 1 decimal place"
+      ],
+      "crossCurricular": "Science: recording results to 1 decimal place",
+      "smsc": "Moral: being honest about how exact a measurement is",
+      "keywords": [
+        {
+          "term": "decimal place",
+          "def": "a place after the point"
+        },
+        {
+          "term": "round",
+          "def": "change to a nearby simpler number"
+        },
+        {
+          "term": "hundredths",
+          "def": "the second place after the point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "3.47 m of fabric. Is that nearer 3.4 m or 3.5 m?",
+        "a": "3.5 m: 7 hundredths rounds up."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "fabric roll measuring tape",
+          "alt": "A roll of fabric and a tape measure",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Round 6.5 to the nearest whole.",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Round 3.47 to the nearest whole.",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 12 = ?",
+          "a": "96",
+          "mins": 1
+        },
+        {
+          "q": "Half way between 3.4 and 3.5?",
+          "a": "3.45",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Either side",
+          "bullets": [
+            "3.47 is between 3.4 and 3.5.",
+            "Half way is 3.45.",
+            "3.47 rounds to 3.5."
+          ],
+          "numberline": {
+            "min": 3.4,
+            "max": 3.5,
+            "step": 0.01,
+            "marks": [
+              {
+                "at": 3.4,
+                "label": "3.4"
+              },
+              {
+                "at": 3.45,
+                "label": "half way"
+              },
+              {
+                "at": 3.47,
+                "label": "3.47"
+              },
+              {
+                "at": 3.5,
+                "label": "3.5"
+              }
+            ]
+          },
+          "note": "Zoom in on the line."
+        },
+        {
+          "heading": "The hundredths digit",
+          "bullets": [
+            "0 to 4: round down.",
+            "5 to 9: round up.",
+            "8.32 rounds to 8.3."
+          ],
+          "note": "Ask: 5.65? (5.7)."
+        },
+        {
+          "heading": "Crossing a whole",
+          "bullets": [
+            "2.96 rounds to 3.0",
+            "The 0 shows 1 decimal place."
+          ],
+          "misconception": {
+            "wrong": "2.96 rounds to 2.10",
+            "right": "Rounding up 2.9 by a tenth gives 3.0"
+          },
+          "note": "Ask: 9.97? (10.0)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Round 6.04 to 1 decimal place.",
+            "options": [
+              "6.1",
+              "6.0",
+              "6.4"
+            ],
+            "answer": 1,
+            "why": "Hundredths digit 4: round down to 6.0."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Round 1.83 to 1 d.p.",
+          "a": "1.8",
+          "mins": 2,
+          "model": "Teacher: between 1.8 and 1.9; hundredths digit 3, round down: 1.8."
+        },
+        {
+          "q": "Round 4.75 to 1 d.p.",
+          "a": "4.8",
+          "mins": 2
+        },
+        {
+          "q": "Round 0.98 to 1 d.p.",
+          "a": "1.0",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: round 5.26, 7.91 and 12.35 to 1 d.p.",
+          "a": "5.3; 7.9; 12.4",
+          "mins": 4,
+          "model": "Teacher: 5.26: hundredths digit 6, round up: 5.3."
+        },
+        {
+          "q": "Extend: Extend: round 3.049 to 1 d.p. and to the nearest whole.",
+          "a": "3.0; 3",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a number with 2 d.p. rounds to 4.6. Give the smallest and largest it could be.",
+          "a": "4.55 and 4.64",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Round 8.45 to 1 d.p.",
+          "a": "8.5",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we round 3.47 to 1 d.p.?",
+          "a": "It is between 3.4 and 3.5; the hundredths digit is 7, so round up to 3.5",
+          "mins": 3
+        }
+      ],
+      "homework": "Round 6 decimals to 1 d.p. and to the nearest whole number.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: round £12.96 to 1 d.p. and to the nearest pound.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Round to 1 decimal place' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 36 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 37,
+      "title": "Equivalent fractions and decimals: tenths and hundredths",
+      "duration": 45,
+      "bigQuestion": "How can 3/4 be written as a decimal?",
+      "objectives": [
+        "To understand how fractions with tenths and hundredths link to decimals"
+      ],
+      "successCriteria": [
+        "All: write tenths and hundredths as decimals",
+        "Most: convert halves, quarters and fifths to decimals",
+        "Some: explain using a 100 grid"
+      ],
+      "crossCurricular": "Money: 3/4 of £1 is £0.75",
+      "smsc": "Moral: sharing money exactly and fairly",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "decimal",
+          "def": "a number with a decimal point"
+        },
+        {
+          "term": "hundredth",
+          "def": "1/100 = 0.01"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "3/4 of £1 is how many pence? Write it in pounds.",
+        "a": "75p = £0.75."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "pound coins and pence",
+          "alt": "Coins",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Round 8.45 to 1 d.p.",
+          "a": "8.5",
+          "mins": 1
+        },
+        {
+          "q": "7/10 as a decimal?",
+          "a": "0.7",
+          "mins": 1
+        },
+        {
+          "q": "3/4 = ?/100",
+          "a": "75/100",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 25 = ?",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Out of 100",
+          "bullets": [
+            "37/100 = 0.37",
+            "7/10 = 70/100 = 0.7"
+          ],
+          "table": {
+            "head": [
+              "Fraction",
+              "Hundredths",
+              "Decimal"
+            ],
+            "rows": [
+              [
+                "1/2",
+                "50/100",
+                "0.5"
+              ],
+              [
+                "1/4",
+                "25/100",
+                "0.25"
+              ],
+              [
+                "3/4",
+                "75/100",
+                "0.75"
+              ],
+              [
+                "1/5",
+                "20/100",
+                "0.2"
+              ],
+              [
+                "2/5",
+                "40/100",
+                "0.4"
+              ]
+            ]
+          },
+          "note": "Shade a 100 grid."
+        },
+        {
+          "heading": "Make the denominator 100",
+          "bullets": [
+            "3/20 × 5/5 = 15/100 = 0.15",
+            "7/25 × 4/4 = 28/100 = 0.28"
+          ],
+          "note": "Ask: 9/50? (18/100 = 0.18)."
+        },
+        {
+          "heading": "Decimal to fraction",
+          "bullets": [
+            "0.6 = 6/10 = 3/5",
+            "0.35 = 35/100 = 7/20",
+            "Simplify."
+          ],
+          "note": "Ask: 0.8? (4/5)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which equals 0.25?",
+            "options": [
+              "1/4",
+              "2/5",
+              "25/10"
+            ],
+            "answer": 0,
+            "why": "1/4 = 25/100 = 0.25."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4/5 as a decimal?",
+          "a": "0.8",
+          "mins": 2,
+          "model": "Teacher: 4/5 = 8/10 = 0.8."
+        },
+        {
+          "q": "0.45 as a fraction in simplest form?",
+          "a": "9/20",
+          "mins": 2
+        },
+        {
+          "q": "13/50 as a decimal?",
+          "a": "0.26",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write 1/2, 3/5, 11/20 and 9/25 as decimals.",
+          "a": "0.5, 0.6, 0.55, 0.36",
+          "mins": 4,
+          "model": "Teacher: 11/20 × 5/5 = 55/100 = 0.55."
+        },
+        {
+          "q": "Extend: Extend: write 0.4, 0.75 and 0.05 as fractions in simplest form.",
+          "a": "2/5, 3/4, 1/20",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: order 0.7, 3/4, 7/20, 0.07",
+          "a": "0.07, 7/20 (0.35), 0.7, 3/4",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/4 as a decimal?",
+          "a": "0.25",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can 3/4 be written as a decimal?",
+          "a": "3/4 = 75/100 = 0.75",
+          "mins": 3
+        }
+      ],
+      "homework": "Shade 4 fractions on 100 grids and write each as a decimal.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: write 1/8 as a decimal (0.125).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Equivalent fractions and decimals (tenths) and (hundredths)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Printed 10 by 10 grids",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 37 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 38,
+      "title": "Equivalent fractions and decimals: thousandths",
+      "duration": 45,
+      "bigQuestion": "Why is 1/8 = 0.125?",
+      "objectives": [
+        "To understand how fractions convert to decimals with thousandths"
+      ],
+      "successCriteria": [
+        "All: write thousandths fractions as decimals",
+        "Most: convert eighths and fortieths using 1,000",
+        "Some: explain the steps"
+      ],
+      "crossCurricular": "Science: 125 g is 1/8 of 1 kg",
+      "smsc": "Moral: careful steps lead to the right answer",
+      "keywords": [
+        {
+          "term": "thousandth",
+          "def": "1/1000 = 0.001"
+        },
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "convert",
+          "def": "change to another form"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A 1 kg cake is cut into 8 equal slices. How many grams is each slice? Write it in kg.",
+        "a": "125 g = 0.125 kg."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "cake cut into slices",
+          "alt": "A cake in 8 slices",
+          "for": "hook"
+        },
+        {
+          "find": "kitchen scales digital display",
+          "alt": "A digital scale",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "9/20 as a decimal?",
+          "a": "0.45",
+          "mins": 1
+        },
+        {
+          "q": "0.6 as a fraction in simplest form?",
+          "a": "3/5",
+          "mins": 1
+        },
+        {
+          "q": "1,000 ÷ 8 = ?",
+          "a": "125",
+          "mins": 1
+        },
+        {
+          "q": "1 kg = ? g",
+          "a": "1,000 g",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Out of 1,000",
+          "bullets": [
+            "1/8 = 125/1000 = 0.125",
+            "3/8 = 375/1000 = 0.375"
+          ],
+          "table": {
+            "head": [
+              "Fraction",
+              "Thousandths",
+              "Decimal"
+            ],
+            "rows": [
+              [
+                "1/8",
+                "125/1000",
+                "0.125"
+              ],
+              [
+                "3/8",
+                "375/1000",
+                "0.375"
+              ],
+              [
+                "1/40",
+                "25/1000",
+                "0.025"
+              ],
+              [
+                "7/200",
+                "35/1000",
+                "0.035"
+              ]
+            ]
+          },
+          "note": "1,000 ÷ 8 = 125."
+        },
+        {
+          "heading": "Scale the denominator",
+          "bullets": [
+            "3/40: 40 × 25 = 1,000",
+            "3 × 25 = 75",
+            "75/1000 = 0.075"
+          ],
+          "note": "Ask: 9/250? (36/1000 = 0.036)."
+        },
+        {
+          "heading": "Decimal to fraction",
+          "bullets": [
+            "0.625 = 625/1000 = 5/8",
+            "Simplify by 125."
+          ],
+          "note": "Ask: 0.004? (4/1000 = 1/250)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "5/8 as a decimal?",
+            "options": [
+              "0.58",
+              "0.625",
+              "0.85"
+            ],
+            "answer": 1,
+            "why": "5 × 125 = 625: 0.625."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "7/8 as a decimal?",
+          "a": "0.875",
+          "mins": 2,
+          "model": "Teacher: 7 × 125 = 875, so 875/1000 = 0.875."
+        },
+        {
+          "q": "1/200 as a decimal?",
+          "a": "0.005",
+          "mins": 2
+        },
+        {
+          "q": "0.375 as a fraction?",
+          "a": "3/8",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write 1/8, 9/1000 and 21/500 as decimals.",
+          "a": "0.125; 0.009; 0.042",
+          "mins": 4,
+          "model": "Teacher: 21/500 × 2/2 = 42/1000 = 0.042."
+        },
+        {
+          "q": "Extend: Extend: write 0.25, 0.024 and 0.875 as fractions in simplest form.",
+          "a": "1/4; 3/125; 7/8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: order 3/8, 0.38, 0.308, 2/5",
+          "a": "0.308, 3/8 (0.375), 0.38, 2/5 (0.4)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "3/8 as a decimal?",
+          "a": "0.375",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is 1/8 = 0.125?",
+          "a": "1/8 = 125/1000 because 1,000 ÷ 8 = 125",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 1/8 to 8/8 as decimals.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: find 1/16 as a decimal (0.0625).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Equivalent fractions and decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 38 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 39,
+      "title": "Order and compare decimals",
+      "duration": 45,
+      "bigQuestion": "Is 0.5 bigger than 0.45 even though 45 is bigger than 5?",
+      "objectives": [
+        "To understand how to compare and order decimals with different numbers of places"
+      ],
+      "successCriteria": [
+        "All: compare decimals with the same number of places",
+        "Most: use zeros to compare 0.5 and 0.45",
+        "Some: order a set of decimals"
+      ],
+      "crossCurricular": "Science: comparing race times and masses",
+      "smsc": "Moral: fairness in judging a race",
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "decide which is greater"
+        },
+        {
+          "term": "decimal place",
+          "def": "a place after the point"
+        },
+        {
+          "term": "placeholder",
+          "def": "a 0 that holds a place"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sara says 0.45 > 0.5 because 45 > 5. Is she right?",
+        "a": "No: 0.5 = 0.50, and 50 hundredths > 45 hundredths."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/8 as a decimal?",
+          "a": "0.375",
+          "mins": 1
+        },
+        {
+          "q": "Round 2.46 to 1 d.p.",
+          "a": "2.5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 12 = ?",
+          "a": "108",
+          "mins": 1
+        },
+        {
+          "q": "0.5 = ?/100",
+          "a": "50/100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Line up the points",
+          "bullets": [
+            "Compare from the left.",
+            "0.5 vs 0.45: 5 tenths > 4 tenths.",
+            "0.5 > 0.45"
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths",
+              "Thousandths"
+            ],
+            "rows": [
+              [
+                "0",
+                ".",
+                "5",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                ".",
+                "4",
+                "5",
+                "0"
+              ],
+              [
+                "0",
+                ".",
+                "4",
+                "0",
+                "5"
+              ]
+            ]
+          },
+          "note": "Use the chart."
+        },
+        {
+          "heading": "Add zeros",
+          "bullets": [
+            "0.5 = 0.500",
+            "0.45 = 0.450",
+            "0.405 = 0.405"
+          ],
+          "misconception": {
+            "wrong": "0.45 > 0.5 because 45 > 5",
+            "right": "Compare place by place: 5 tenths > 4 tenths"
+          },
+          "note": "Now compare thousandths: 500 > 450 > 405."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "Smallest first:",
+            "0.405, 0.45, 0.5, 0.54"
+          ],
+          "note": "Ask: order 1.2, 1.02, 1.21 (1.02, 1.2, 1.21)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is largest?",
+            "options": [
+              "0.7",
+              "0.69",
+              "0.701"
+            ],
+            "answer": 2,
+            "why": "0.700 < 0.701; 0.69 is 0.690."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 0.3 _ 0.29",
+          "a": ">",
+          "mins": 2,
+          "model": "Teacher: compare tenths: 3 > 2, so 0.3 > 0.29."
+        },
+        {
+          "q": "Use < or >: 2.05 _ 2.5",
+          "a": "<",
+          "mins": 2
+        },
+        {
+          "q": "Order smallest first: 0.6, 0.06, 0.66",
+          "a": "0.06, 0.6, 0.66",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: order largest first: 3.14, 3.4, 3.041, 3.104",
+          "a": "3.4, 3.14, 3.104, 3.041",
+          "mins": 4,
+          "model": "Teacher: all 3 ones; tenths: 4 is largest, then 1, 1, 0."
+        },
+        {
+          "q": "Extend: Extend: race times 12.08 s, 12.8 s, 12.18 s. Who won (fastest)?",
+          "a": "12.08 s",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: find a decimal between 0.29 and 0.3.",
+          "a": "For example 0.295",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bigger: 0.08 or 0.1?",
+          "a": "0.1",
+          "mins": 2
+        },
+        {
+          "q": "Big question: is 0.5 bigger than 0.45?",
+          "a": "Yes: 0.5 = 0.50, and 5 tenths beat 4 tenths",
+          "mins": 3
+        }
+      ],
+      "homework": "Order 6 decimals from packets or a race result list.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: find 3 decimals between 1.9 and 2.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Order and compare decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 39 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 40,
+      "title": "Decimals on a number line",
+      "duration": 45,
+      "bigQuestion": "Where does 2.35 sit between 2 and 3?",
+      "objectives": [
+        "To understand how to place and read decimals on number lines"
+      ],
+      "successCriteria": [
+        "All: read tenths on a number line",
+        "Most: read hundredths on a zoomed-in line",
+        "Some: estimate where a decimal goes"
+      ],
+      "crossCurricular": "Geography: distances on a map scale",
+      "smsc": "Social: helping each other read scales",
+      "keywords": [
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        },
+        {
+          "term": "interval",
+          "def": "an equal gap"
+        },
+        {
+          "term": "estimate",
+          "def": "a careful guess"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "On a line from 2 to 3, is 2.35 before or after half way?",
+        "a": "Before: half way is 2.5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "road sign showing distance",
+          "alt": "A road sign with decimal distances",
+          "for": "hook"
+        },
+        {
+          "find": "ruler with millimetres close up",
+          "alt": "A ruler",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Bigger: 0.08 or 0.1?",
+          "a": "0.1",
+          "mins": 1
+        },
+        {
+          "q": "Half way between 2 and 3?",
+          "a": "2.5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 7 = ?",
+          "a": "77",
+          "mins": 1
+        },
+        {
+          "q": "Half way between 2.3 and 2.4?",
+          "a": "2.35",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tenths",
+          "bullets": [
+            "2 to 3 in 10 gaps: 0.1 each.",
+            "2.3 and 2.4 marked."
+          ],
+          "numberline": {
+            "min": 2,
+            "max": 3,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 2.3,
+                "label": "2.3"
+              },
+              {
+                "at": 2.35,
+                "label": "2.35"
+              },
+              {
+                "at": 2.5,
+                "label": "2.5"
+              }
+            ]
+          },
+          "note": "Count along."
+        },
+        {
+          "heading": "Zoom in",
+          "bullets": [
+            "2.3 to 2.4 in 10 gaps: 0.01 each.",
+            "2.35 is half way."
+          ],
+          "numberline": {
+            "min": 2.3,
+            "max": 2.4,
+            "step": 0.01,
+            "marks": [
+              {
+                "at": 2.35,
+                "label": "2.35"
+              },
+              {
+                "at": 2.38,
+                "label": "2.38"
+              }
+            ]
+          },
+          "note": "Zoom between two tenths."
+        },
+        {
+          "heading": "Find the interval",
+          "bullets": [
+            "0 to 0.5 in 5 gaps: 0.1 each.",
+            "0 to 1 in 4 gaps: 0.25 each."
+          ],
+          "note": "Ask: 0 to 2 in 8 gaps? (0.25)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "4 to 5 in 10 gaps. The pointer is 7 gaps from 4. Value?",
+            "options": [
+              "4.07",
+              "4.7",
+              "7.4"
+            ],
+            "answer": 1,
+            "why": "Each gap is 0.1: 4.7."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 to 2 in 10 gaps. 4 gaps from 1?",
+          "a": "1.4",
+          "mins": 2,
+          "model": "Teacher: each gap is 0.1, so 1.4."
+        },
+        {
+          "q": "0.6 to 0.7 in 10 gaps. 3 gaps from 0.6?",
+          "a": "0.63",
+          "mins": 2
+        },
+        {
+          "q": "0 to 1 in 4 gaps. 3rd mark?",
+          "a": "0.75",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: read: 5 to 6 in 10 gaps, 9 gaps on; 0.2 to 0.3 in 10 gaps, 1 gap on; 0 to 2 in 8 gaps, 5th mark",
+          "a": "5.9; 0.21; 1.25",
+          "mins": 4,
+          "model": "Teacher: 0 to 2 in 8 gaps: 2 ÷ 8 = 0.25 a gap; 5 gaps is 1.25."
+        },
+        {
+          "q": "Extend: Extend: estimate where 0.82 and 0.18 go on a 0 to 1 line.",
+          "a": "0.82 just after 0.8; 0.18 just before 0.2",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: what is half way between 1.6 and 1.7? Between 1.6 and 1.65?",
+          "a": "1.65; 1.625",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Half way between 3.4 and 3.5?",
+          "a": "3.45",
+          "mins": 2
+        },
+        {
+          "q": "Big question: where does 2.35 sit?",
+          "a": "Half way between 2.3 and 2.4, before half way between 2 and 3",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a zoomed-in line from 4.7 to 4.8 and mark 4.72 and 4.75.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: mark 0.125 on a 0 to 0.2 line.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: decimals on number lines (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 40 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 41,
+      "title": "Understand percentages",
+      "duration": 45,
+      "bigQuestion": "What does per cent mean?",
+      "objectives": [
+        "To understand per cent as parts per hundred"
+      ],
+      "successCriteria": [
+        "All: shade a percentage on a 100 grid",
+        "Most: write the percentage shaded and not shaded",
+        "Some: explain why the parts add to 100%"
+      ],
+      "crossCurricular": "Science: 100% battery; percentage of water in fruit",
+      "smsc": "Moral: giving 100% effort in our worship and work",
+      "keywords": [
+        {
+          "term": "per cent",
+          "def": "out of 100, %"
+        },
+        {
+          "term": "percentage",
+          "def": "a number of parts out of 100"
+        },
+        {
+          "term": "whole",
+          "def": "100%"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A phone shows 37% battery. How much has been used since it was full?",
+        "a": "63%."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "phone battery icon",
+          "alt": "A battery symbol showing a percentage",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 grid",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Half way between 3.4 and 3.5?",
+          "a": "3.45",
+          "mins": 1
+        },
+        {
+          "q": "0.37 = ?/100",
+          "a": "37/100",
+          "mins": 1
+        },
+        {
+          "q": "100 - 37 = ?",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 25 = ?",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Out of 100",
+          "bullets": [
+            "Per cent means out of 100.",
+            "37 squares of 100 = 37%",
+            "Not shaded: 63%."
+          ],
+          "note": "Shade 3 columns and 7 squares on the grid."
+        },
+        {
+          "heading": "The whole is 100%",
+          "bullets": [
+            "37% + 63% = 100%",
+            "50% is half.",
+            "100% is all of it."
+          ],
+          "chart": {
+            "kind": "pie",
+            "title": "Battery",
+            "labels": [
+              "Used",
+              "Left"
+            ],
+            "values": [
+              63,
+              37
+            ],
+            "unit": "%"
+          },
+          "note": "Ask: 82% shaded, how much not? (18%)."
+        },
+        {
+          "heading": "Bar of 100",
+          "bullets": [
+            "A bar split into 10 parts: each is 10%.",
+            "3 parts = 30%."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 3,
+              "label": "30%"
+            }
+          ],
+          "note": "Ask: 7 parts? (70%)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "45 of 100 squares are shaded. What percentage is NOT shaded?",
+            "options": [
+              "45%",
+              "55%",
+              "65%"
+            ],
+            "answer": 1,
+            "why": "100 - 45 = 55%."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What percentage is 12 squares out of 100?",
+          "a": "12%",
+          "mins": 2,
+          "model": "Teacher: per cent means out of 100, so 12 out of 100 is 12%."
+        },
+        {
+          "q": "70% done. How much is left?",
+          "a": "30%",
+          "mins": 2
+        },
+        {
+          "q": "Is 100% all or half?",
+          "a": "All",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: shade 25%, 60% and 8% of 100 grids. What is not shaded each time?",
+          "a": "75%, 40%, 92%",
+          "mins": 4,
+          "model": "Teacher shades 2 columns and 5 squares: 25%; not shaded 75%."
+        },
+        {
+          "q": "Extend: Extend: a bar in 10 equal parts has 4 shaded. What percentage? What if it had 20 parts and 4 shaded?",
+          "a": "40%; 20%",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 3 colours fill a grid: red 35%, blue 48%. What percentage is green?",
+          "a": "17%",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "100% - 64% = ?",
+          "a": "36%",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what does per cent mean?",
+          "a": "Out of 100: 37% means 37 out of every 100",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 percentages at home (labels, battery) and say what each means.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: show 50% of a grid in 3 different patterns.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Understand percentages' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Printed 10 by 10 grids",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 41 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 42,
+      "title": "Percentages as fractions",
+      "duration": 45,
+      "bigQuestion": "Why is 25% the same as 1/4?",
+      "objectives": [
+        "To understand how to write percentages as fractions"
+      ],
+      "successCriteria": [
+        "All: write a percentage as a fraction out of 100",
+        "Most: simplify the fraction",
+        "Some: know 50%, 25%, 75%, 10% and 1% as fractions"
+      ],
+      "crossCurricular": "Money: zakah is 2.5% (1/40) of savings held for a year above the nisab",
+      "smsc": "Moral: zakah purifies wealth and helps the poor",
+      "keywords": [
+        {
+          "term": "percentage",
+          "def": "parts out of 100"
+        },
+        {
+          "term": "simplify",
+          "def": "smaller numbers, same value"
+        },
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 25% of a pizza the same as a quarter?",
+        "a": "Yes: 25/100 = 1/4."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "islamicLink": {
+        "text": "Zakah is a pillar of Islam: a Muslim who has savings above the nisab for a full lunar year gives 2.5% to those Allah names in the Qur'an (9:60). Percentages help us work it out exactly.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into quarters",
+          "alt": "A pizza in quarters",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 grid",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "100% - 64% = ?",
+          "a": "36%",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 25/100.",
+          "a": "1/4",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 60/100.",
+          "a": "3/5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 5 × 20 = ?",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Out of 100",
+          "bullets": [
+            "37% = 37/100",
+            "Write over 100, then simplify."
+          ],
+          "table": {
+            "head": [
+              "Percentage",
+              "Out of 100",
+              "Simplest"
+            ],
+            "rows": [
+              [
+                "50%",
+                "50/100",
+                "1/2"
+              ],
+              [
+                "25%",
+                "25/100",
+                "1/4"
+              ],
+              [
+                "75%",
+                "75/100",
+                "3/4"
+              ],
+              [
+                "10%",
+                "10/100",
+                "1/10"
+              ],
+              [
+                "20%",
+                "20/100",
+                "1/5"
+              ],
+              [
+                "1%",
+                "1/100",
+                "1/100"
+              ]
+            ]
+          },
+          "note": "Ask: 9%? (9/100)."
+        },
+        {
+          "heading": "Simplify",
+          "bullets": [
+            "40% = 40/100 = 2/5",
+            "35% = 35/100 = 7/20"
+          ],
+          "note": "Ask: 80%? (4/5)."
+        },
+        {
+          "heading": "Zakah",
+          "bullets": [
+            "2.5% = 2.5/100 = 25/1000",
+            "= 1/40",
+            "£40 saved gives £1 zakah."
+          ],
+          "note": "Explain zakah in one line; only the rate is maths here."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is 20% in simplest form?",
+            "options": [
+              "1/5",
+              "2/10",
+              "20/10"
+            ],
+            "answer": 0,
+            "why": "20/100 = 1/5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "60% as a fraction in simplest form?",
+          "a": "3/5",
+          "mins": 2,
+          "model": "Teacher: 60/100, divide by 20: 3/5."
+        },
+        {
+          "q": "5% as a fraction?",
+          "a": "5/100 = 1/20",
+          "mins": 2
+        },
+        {
+          "q": "75% as a fraction?",
+          "a": "3/4",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write 30%, 45% and 90% as fractions in simplest form.",
+          "a": "3/10; 9/20; 9/10",
+          "mins": 4,
+          "model": "Teacher: 30/100 = 3/10."
+        },
+        {
+          "q": "Extend: Extend: which is greater: 3/5 or 65%?",
+          "a": "65% (3/5 = 60%)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 12% of a class is how many pupils out of 25?",
+          "a": "3",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "50% as a fraction?",
+          "a": "1/2",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is 25% the same as 1/4?",
+          "a": "25% = 25/100, which simplifies to 1/4",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 10%, 20% ... 100% as fractions in simplest form.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: write 12.5% as a fraction (1/8).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Percentages as fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Printed 10 by 10 grids",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 42 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 43,
+      "title": "Percentages as decimals",
+      "duration": 45,
+      "bigQuestion": "How is 7% different from 70%?",
+      "objectives": [
+        "To understand how to write percentages as decimals and decimals as percentages"
+      ],
+      "successCriteria": [
+        "All: write a percentage as a decimal",
+        "Most: write a decimal as a percentage",
+        "Some: explain 7% = 0.07"
+      ],
+      "crossCurricular": "Science: 0.75 of a battery is 75%",
+      "smsc": "Moral: honesty in reporting results",
+      "keywords": [
+        {
+          "term": "percentage",
+          "def": "parts out of 100"
+        },
+        {
+          "term": "decimal",
+          "def": "a number with a decimal point"
+        },
+        {
+          "term": "hundredths",
+          "def": "1/100 = 0.01 = 1%"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 0.7 the same as 7% or 70%?",
+        "a": "70%: 0.7 = 0.70 = 70/100."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "phone battery icon",
+          "alt": "A battery symbol",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "45% as a fraction?",
+          "a": "9/20",
+          "mins": 1
+        },
+        {
+          "q": "0.35 = ?/100",
+          "a": "35/100",
+          "mins": 1
+        },
+        {
+          "q": "1/4 as a decimal?",
+          "a": "0.25",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 33 = ?",
+          "a": "99",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "% to decimal",
+          "bullets": [
+            "35% = 35/100 = 0.35",
+            "7% = 7/100 = 0.07",
+            "70% = 0.7"
+          ],
+          "table": {
+            "head": [
+              "%",
+              "Fraction",
+              "Decimal"
+            ],
+            "rows": [
+              [
+                "35%",
+                "35/100",
+                "0.35"
+              ],
+              [
+                "7%",
+                "7/100",
+                "0.07"
+              ],
+              [
+                "70%",
+                "70/100",
+                "0.7"
+              ],
+              [
+                "100%",
+                "100/100",
+                "1"
+              ]
+            ]
+          },
+          "note": "Divide by 100."
+        },
+        {
+          "heading": "Decimal to %",
+          "bullets": [
+            "0.48 = 48%",
+            "0.9 = 0.90 = 90%",
+            "Multiply by 100."
+          ],
+          "misconception": {
+            "wrong": "0.9 = 9%",
+            "right": "0.9 = 0.90 = 90%"
+          },
+          "note": "Ask: 0.03? (3%)."
+        },
+        {
+          "heading": "Over 100%",
+          "bullets": [
+            "1.5 = 150%",
+            "More than the whole."
+          ],
+          "note": "Ask: 2 = ?% (200%)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "6% as a decimal?",
+            "options": [
+              "0.6",
+              "0.06",
+              "6.0"
+            ],
+            "answer": 1,
+            "why": "6 hundredths: 0.06."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "42% as a decimal?",
+          "a": "0.42",
+          "mins": 2,
+          "model": "Teacher: 42 hundredths: 0.42."
+        },
+        {
+          "q": "0.8 as a percentage?",
+          "a": "80%",
+          "mins": 2
+        },
+        {
+          "q": "4% as a decimal?",
+          "a": "0.04",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: as decimals: 15%, 60%, 2%; as percentages: 0.33, 0.5, 0.09",
+          "a": "0.15, 0.6, 0.02; 33%, 50%, 9%",
+          "mins": 4,
+          "model": "Teacher: 15% = 15/100 = 0.15."
+        },
+        {
+          "q": "Extend: Extend: order 0.4, 45%, 0.04, 14%",
+          "a": "0.04, 14%, 0.4, 45%",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: write 3/8 as a decimal and a percentage.",
+          "a": "0.375; 37.5%",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.25 as a percentage?",
+          "a": "25%",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how is 7% different from 70%?",
+          "a": "7% = 0.07; 70% = 0.7: ten times bigger",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 5 percentages from labels as decimals.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: write 120% as a decimal (1.2).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Percentages as decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 43 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 44,
+      "title": "EXTENSION: percentage problems and equivalence families",
+      "duration": 45,
+      "bigQuestion": "Which is greater: 3/5, 0.55 or 58%?",
+      "objectives": [
+        "To understand how to compare and solve problems using fractions, decimals and percentages"
+      ],
+      "successCriteria": [
+        "All: convert between all three forms",
+        "Most: compare and order mixed forms",
+        "Some: solve a simple percentage problem"
+      ],
+      "crossCurricular": "Money: test scores and discounts",
+      "smsc": "Moral: fair prices and honest discounts",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "benchmark",
+          "def": "a known value like 50% = 1/2 = 0.5"
+        },
+        {
+          "term": "convert",
+          "def": "change to another form"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A test: 18 out of 25. Is that more or less than 70%?",
+        "a": "More: 18/25 = 72/100 = 72%."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "test paper with score",
+          "alt": "A marked test paper (no names)",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 grid",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.25 as a percentage?",
+          "a": "25%",
+          "mins": 1
+        },
+        {
+          "q": "3/5 as a decimal?",
+          "a": "0.6",
+          "mins": 1
+        },
+        {
+          "q": "6% as a decimal?",
+          "a": "0.06",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 18 = ?",
+          "a": "72",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Families",
+          "bullets": [
+            "1/2 = 0.5 = 50%",
+            "1/4 = 0.25 = 25%",
+            "1/10 = 0.1 = 10%",
+            "1/5 = 0.2 = 20%"
+          ],
+          "diagram": {
+            "centre": "1/2",
+            "items": [
+              "0.5",
+              "50%",
+              "50/100",
+              "5/10",
+              "2/4"
+            ]
+          },
+          "note": "Benchmarks to know by heart."
+        },
+        {
+          "heading": "Compare mixed forms",
+          "bullets": [
+            "3/5 = 0.6 = 60%",
+            "0.55 = 55%",
+            "58%",
+            "Order: 0.55, 58%, 3/5"
+          ],
+          "note": "Change all to %."
+        },
+        {
+          "heading": "Scores as %",
+          "bullets": [
+            "18/25 = 72/100 = 72%",
+            "Make the denominator 100."
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Scores as %",
+            "labels": [
+              "Test A 18/25",
+              "Test B 9/20",
+              "Test C 7/10"
+            ],
+            "values": [
+              72,
+              45,
+              70
+            ],
+            "unit": "%"
+          },
+          "note": "Ask: 9/20? (45%)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is smallest?",
+            "options": [
+              "1/4",
+              "0.3",
+              "28%"
+            ],
+            "answer": 0,
+            "why": "1/4 = 25%; 0.3 = 30%; 28%."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Order: 0.4, 3/10, 35%",
+          "a": "3/10, 35%, 0.4",
+          "mins": 2,
+          "model": "Teacher: change to %: 40%, 30%, 35%; order 30, 35, 40."
+        },
+        {
+          "q": "17/20 as a percentage?",
+          "a": "85%",
+          "mins": 2
+        },
+        {
+          "q": "Which is bigger: 0.08 or 8%?",
+          "a": "Equal",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: complete families for 3/4, 1/5 and 7/10 (decimal and %).",
+          "a": "0.75, 75%; 0.2, 20%; 0.7, 70%",
+          "mins": 4,
+          "model": "Teacher: 3/4 = 75/100 = 0.75 = 75%."
+        },
+        {
+          "q": "Extend: Extend: Ali scored 21/25, Sara 82%, Bilal 0.8. Order the scores.",
+          "a": "Bilal 80%, Sara 82%, Ali 84%",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 40% of a garden is grass, 1/4 is a path, the rest is flowers. What percentage is flowers?",
+          "a": "35%",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bigger: 2/5 or 45%?",
+          "a": "45%",
+          "mins": 2
+        },
+        {
+          "q": "Big question: 3/5, 0.55 or 58%?",
+          "a": "3/5 = 60% is greatest",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a poster of 6 fraction, decimal and percentage families.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: find 1/3 as a percentage (about 33.3%).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: small step 'Equivalent fractions, decimals and percentages' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Printed 10 by 10 grids",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 44 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 45,
+      "title": "Consolidation: decimals, place value and rounding",
+      "duration": 45,
+      "bigQuestion": "What do I need to remember about decimals?",
+      "objectives": [
+        "To understand decimals more securely through mixed practice"
+      ],
+      "successCriteria": [
+        "All: say the value of digits to 3 decimal places",
+        "Most: round to the nearest whole and 1 d.p.",
+        "Some: compare and order decimals"
+      ],
+      "smsc": "Moral: steady practice builds strong understanding",
+      "keywords": [
+        {
+          "term": "decimal place",
+          "def": "a place after the point"
+        },
+        {
+          "term": "round",
+          "def": "change to a nearby simpler number"
+        },
+        {
+          "term": "compare",
+          "def": "decide which is greater"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which mistake do people make most with decimals? How can we avoid it?",
+        "a": "For example thinking 0.45 > 0.5; compare place by place."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Value of the 4 in 2.045?",
+          "a": "4 hundredths",
+          "mins": 1
+        },
+        {
+          "q": "Round 6.35 to 1 d.p.",
+          "a": "6.4",
+          "mins": 1
+        },
+        {
+          "q": "Order 0.7, 0.07, 0.17",
+          "a": "0.07, 0.17, 0.7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 12 = ?",
+          "a": "144",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Place value",
+          "bullets": [
+            "Ones . tenths hundredths thousandths",
+            "5.307 = 5 + 0.3 + 0.007"
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths",
+              "Thousandths"
+            ],
+            "rows": [
+              [
+                "5",
+                ".",
+                "3",
+                "0",
+                "7"
+              ],
+              [
+                "0",
+                ".",
+                "0",
+                "6",
+                "1"
+              ]
+            ]
+          },
+          "note": "Recap with counters."
+        },
+        {
+          "heading": "Rounding",
+          "bullets": [
+            "Nearest whole: look at tenths.",
+            "1 d.p.: look at hundredths."
+          ],
+          "note": "Ask: round 4.96 both ways (5; 5.0)."
+        },
+        {
+          "heading": "Common mistakes",
+          "bullets": [
+            "0.5 > 0.45",
+            "0.07 ≠ 0.7",
+            "2.96 to 1 d.p. is 3.0"
+          ],
+          "sort": {
+            "columns": [
+              "True",
+              "False"
+            ],
+            "cards": [
+              "0.5 > 0.45",
+              "0.07 = 0.7",
+              "3.04 rounds to 3.0",
+              "1.25 < 1.3",
+              "0.9 = 9%",
+              "0.125 = 1/8"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "note": "Pupils explain each."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Round 9.95 to 1 decimal place.",
+            "options": [
+              "9.9",
+              "10.0",
+              "9.10"
+            ],
+            "answer": 1,
+            "why": "Hundredths digit 5: round up 9.9 to 10.0."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Partition 8.096.",
+          "a": "8 + 0.09 + 0.006",
+          "mins": 2,
+          "model": "Teacher: 8 ones, 0 tenths, 9 hundredths, 6 thousandths."
+        },
+        {
+          "q": "Round 14.49 to the nearest whole.",
+          "a": "14",
+          "mins": 2
+        },
+        {
+          "q": "Use < or >: 0.62 _ 0.602",
+          "a": ">",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: round 3.08, 7.45 and 0.96 to 1 d.p.",
+          "a": "3.1; 7.5; 1.0",
+          "mins": 4,
+          "model": "Teacher: 3.08: hundredths digit 8, round up to 3.1."
+        },
+        {
+          "q": "Extend: Extend: order largest first: 4.4, 4.04, 4.404, 4.044",
+          "a": "4.404, 4.4, 4.044, 4.04",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: I round to 2.7 (1 d.p.) and to 3 (nearest whole). I have 2 d.p. and my digits add to 15. What am I?",
+          "a": "2.67 (2 + 6 + 7 = 15)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.01 more than 3.99?",
+          "a": "4.00 (4)",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what do I need to remember about decimals?",
+          "a": "Compare place by place; look at the next digit to round",
+          "mins": 3
+        }
+      ],
+      "homework": "Practise 10 mixed decimals questions from the worksheet.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: make a decimals quiz for a partner.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: consolidation of the decimals small steps (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 45 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 46,
+      "title": "Consolidation: fractions, decimals and percentages",
+      "duration": 45,
+      "bigQuestion": "How do we choose the easiest form to compare?",
+      "objectives": [
+        "To understand fractions, decimals and percentages more securely through mixed practice"
+      ],
+      "successCriteria": [
+        "All: convert benchmarks quickly",
+        "Most: compare mixed forms",
+        "Some: solve a short problem with percentages"
+      ],
+      "crossCurricular": "Money: sale prices",
+      "smsc": "Moral: honest advertising",
+      "keywords": [
+        {
+          "term": "percentage",
+          "def": "parts out of 100"
+        },
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "benchmark",
+          "def": "a known value like 25% = 1/4"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A shop says 'half price'. Another says '45% off'. Which is the better deal?",
+        "a": "Half price: 50% off is more than 45% off."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "price label shop",
+          "alt": "A price label",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 grid",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/4 as a %?",
+          "a": "75%",
+          "mins": 1
+        },
+        {
+          "q": "0.09 as a %?",
+          "a": "9%",
+          "mins": 1
+        },
+        {
+          "q": "40% as a fraction?",
+          "a": "2/5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 25 × 3 = ?",
+          "a": "75",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Quick conversions",
+          "table": {
+            "head": [
+              "Fraction",
+              "Decimal",
+              "%"
+            ],
+            "rows": [
+              [
+                "1/2",
+                "0.5",
+                "50%"
+              ],
+              [
+                "1/4",
+                "0.25",
+                "25%"
+              ],
+              [
+                "3/4",
+                "0.75",
+                "75%"
+              ],
+              [
+                "1/10",
+                "0.1",
+                "10%"
+              ],
+              [
+                "1/5",
+                "0.2",
+                "20%"
+              ],
+              [
+                "1/100",
+                "0.01",
+                "1%"
+              ]
+            ]
+          },
+          "note": "Fill the blanks together."
+        },
+        {
+          "heading": "Choose a form",
+          "bullets": [
+            "Most are %? Change all to %.",
+            "Most are decimals? Change all to decimals."
+          ],
+          "note": "Ask: order 0.6, 2/3, 65% (0.6, 65%, 2/3)."
+        },
+        {
+          "heading": "Is it true?",
+          "sort": {
+            "columns": [
+              "True",
+              "False"
+            ],
+            "cards": [
+              "1/5 = 20%",
+              "0.3 = 3%",
+              "3/4 = 0.75",
+              "45% > 1/2",
+              "0.05 = 5%",
+              "2/5 = 0.4"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          "note": "Pupils decide, then explain."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is NOT equal to the others?",
+            "options": [
+              "0.4",
+              "2/5",
+              "4%"
+            ],
+            "answer": 2,
+            "why": "4% = 0.04; the others are 40%."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Order smallest first: 0.35, 1/4, 30%",
+          "a": "1/4, 30%, 0.35",
+          "mins": 2,
+          "model": "Teacher: all as %: 35%, 25%, 30%."
+        },
+        {
+          "q": "7/20 as a %?",
+          "a": "35%",
+          "mins": 2
+        },
+        {
+          "q": "0.6 as a fraction in simplest form?",
+          "a": "3/5",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: complete the families for 9/10, 0.15 and 4%.",
+          "a": "0.9, 90%; 3/20, 15%; 1/25, 0.04",
+          "mins": 4,
+          "model": "Teacher: 9/10 = 0.9 = 90%."
+        },
+        {
+          "q": "Extend: Extend: order 0.7, 7/20, 77%, 3/4",
+          "a": "7/20, 0.7, 3/4, 77%",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a jug is 3/5 full. Ali pours out 15% of the jug. What percentage of the jug is still full?",
+          "a": "45%",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bigger: 0.3 or 1/4?",
+          "a": "0.3",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we choose the easiest form?",
+          "a": "Change them all to the form most of them are already in, often %",
+          "mins": 3
+        }
+      ],
+      "homework": "Make 3 matching card sets: a fraction, a decimal and a percentage.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: find 1/8 and 3/8 as percentages.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: consolidation of the percentages small steps (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 46 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 47,
+      "title": "Decimals and percentages: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "What do I know about decimals and percentages?",
+      "objectives": [
+        "To understand how secure I am with decimals and percentages"
+      ],
+      "successCriteria": [
+        "All: answer place value and rounding questions",
+        "Most: convert fractions, decimals and percentages",
+        "Some: compare and order mixed forms"
+      ],
+      "smsc": "Spiritual: shukr for learning; honest self-assessment",
+      "keywords": [
+        {
+          "term": "thousandth",
+          "def": "1/1000 = 0.001"
+        },
+        {
+          "term": "round",
+          "def": "change to a nearby simpler number"
+        },
+        {
+          "term": "per cent",
+          "def": "out of 100"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which question type do you feel most sure about? Least?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 grid",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Round 2.95 to 1 d.p.",
+          "a": "3.0",
+          "mins": 1
+        },
+        {
+          "q": "0.07 as a %?",
+          "a": "7%",
+          "mins": 1
+        },
+        {
+          "q": "3/20 as a decimal?",
+          "a": "0.15",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 12 = ?",
+          "a": "84",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Recap",
+          "bullets": [
+            "Place value to 3 d.p.",
+            "Rounding.",
+            "Fractions, decimals, percentages."
+          ],
+          "diagram": {
+            "centre": "Decimals and %",
+            "items": [
+              "2.457 = 2 + 0.4 + 0.05 + 0.007",
+              "3.47 to 1 d.p. = 3.5",
+              "1/8 = 0.125",
+              "0.5 > 0.45",
+              "35% = 0.35 = 7/20"
+            ]
+          },
+          "note": "Show-me recap."
+        },
+        {
+          "heading": "End-of-block check",
+          "bullets": [
+            "12 questions.",
+            "Work alone, then mark."
+          ],
+          "note": "Check on the worksheet; mark together."
+        },
+        {
+          "heading": "My next step",
+          "bullets": [
+            "What went well?",
+            "Even better if...?"
+          ],
+          "note": "Pupils write one EBI target."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is equal to 0.6?",
+            "options": [
+              "6%",
+              "3/5",
+              "6/100"
+            ],
+            "answer": 1,
+            "why": "3/5 = 6/10 = 0.6."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Value of the 9 in 4.109?",
+          "a": "9 thousandths",
+          "mins": 2,
+          "model": "Teacher: third place after the point: thousandths."
+        },
+        {
+          "q": "Round 12.48 to the nearest whole.",
+          "a": "12",
+          "mins": 2
+        },
+        {
+          "q": "85% as a fraction in simplest form?",
+          "a": "17/20",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: 0.001 more than 2.999; round 7.849 to 1 d.p.; 3/8 as a decimal",
+          "a": "3; 7.8; 0.375",
+          "mins": 4,
+          "model": "Teacher: 2.999 + 0.001 = 3.000."
+        },
+        {
+          "q": "Extend: Check: order 0.52, 1/2, 55%, 0.505",
+          "a": "1/2, 0.505, 0.52, 55%",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: 60% of the pupils walk to school. What fraction do not?",
+          "a": "2/5",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.4 as a %?",
+          "a": "40%",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what do I know?",
+          "a": "Answers will vary: one strength, one target",
+          "mins": 3
+        }
+      ],
+      "homework": "Practise your target from the check for 10 minutes.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenth, hundredth, thousandth, per cent); stem 'The digit ... is worth ...'. Stretch: write 3 tricky questions with answers for a partner.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 3: Decimals and percentages: end-of-block check (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Paper number lines (0 to 1 in tenths; zoomed in)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 47 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 48,
+      "title": "Perimeter of rectangles",
+      "duration": 45,
+      "bigQuestion": "Why can we find a rectangle's perimeter with only two measurements?",
+      "objectives": [
+        "To understand how to calculate the perimeter of rectangles"
+      ],
+      "successCriteria": [
+        "All: add all four sides",
+        "Most: use 2 × (length + width)",
+        "Some: find a missing side from the perimeter"
+      ],
+      "crossCurricular": "DT: framing a picture or edging a garden",
+      "smsc": "Moral: honest boundaries; respecting a neighbour's land",
+      "keywords": [
+        {
+          "term": "perimeter",
+          "def": "the distance all the way round"
+        },
+        {
+          "term": "length",
+          "def": "the longer side"
+        },
+        {
+          "term": "width",
+          "def": "the shorter side"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A rectangle has a perimeter of 20 cm. What could its sides be?",
+        "a": "For example 6 cm and 4 cm, or 7 cm and 3 cm."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "garden fence around a lawn",
+          "alt": "A fence round a lawn",
+          "for": "hook"
+        },
+        {
+          "find": "rectangle on squared paper",
+          "alt": "A rectangle on squared paper",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.4 as a %?",
+          "a": "40%",
+          "mins": 1
+        },
+        {
+          "q": "2 × (6 + 4) = ?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 7 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "Round 4.6 cm to the nearest cm.",
+          "a": "5 cm",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "All the way round",
+          "bullets": [
+            "8 cm + 3 cm + 8 cm + 3 cm",
+            "= 22 cm"
+          ],
+          "table": {
+            "head": [
+              "Side",
+              "Length"
+            ],
+            "rows": [
+              [
+                "Top",
+                "8 cm"
+              ],
+              [
+                "Right",
+                "3 cm"
+              ],
+              [
+                "Bottom",
+                "8 cm"
+              ],
+              [
+                "Left",
+                "3 cm"
+              ],
+              [
+                "Total",
+                "22 cm"
+              ]
+            ]
+          },
+          "note": "Trace the edge."
+        },
+        {
+          "heading": "A quicker way",
+          "bullets": [
+            "Opposite sides are equal.",
+            "2 × (8 + 3) = 22 cm",
+            "Or 2 × 8 + 2 × 3"
+          ],
+          "note": "Ask: 10 m by 4 m? (28 m)."
+        },
+        {
+          "heading": "Missing side",
+          "model": {
+            "problem": "A rectangle has perimeter 30 cm and length 9 cm. Find the width.",
+            "steps": [
+              "Half the perimeter: 15 cm = length + width",
+              "15 - 9 = 6"
+            ],
+            "answer": "6 cm"
+          },
+          "note": "Draw it."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A 12 cm by 5 cm rectangle. Perimeter?",
+            "options": [
+              "17 cm",
+              "34 cm",
+              "60 cm"
+            ],
+            "answer": 1,
+            "why": "2 × (12 + 5) = 34 cm. 60 is the area; 17 adds two sides."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "7 cm by 4 cm. Perimeter?",
+          "a": "22 cm",
+          "mins": 2,
+          "model": "Teacher: 2 × (7 + 4) = 2 × 11 = 22 cm."
+        },
+        {
+          "q": "A square with sides 6 m. Perimeter?",
+          "a": "24 m",
+          "mins": 2
+        },
+        {
+          "q": "Perimeter 40 cm, length 12 cm. Width?",
+          "a": "8 cm",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: perimeters of 9 cm by 2 cm; 15 m by 10 m; 3.5 cm by 2 cm",
+          "a": "22 cm; 50 m; 11 cm",
+          "mins": 4,
+          "model": "Teacher: 2 × (9 + 2) = 22 cm."
+        },
+        {
+          "q": "Extend: Extend: a garden 14 m by 6 m needs fencing at £5 a metre. Cost?",
+          "a": "£200",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: list all rectangles with whole-number sides and perimeter 16 cm.",
+          "a": "1 × 7, 2 × 6, 3 × 5, 4 × 4",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "10 cm by 3 cm. Perimeter?",
+          "a": "26 cm",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why only two measurements?",
+          "a": "Opposite sides of a rectangle are equal, so we double length + width",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure 3 rectangles at home (book, table, door) and find their perimeters.",
+      "send": "SEND: squared paper and shapes drawn on a grid, worked example kept on screen. EAL: key word cards with diagrams (perimeter, area, square unit). Stretch: find a rectangle with perimeter 24 cm and the largest area.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 4: Perimeter and area: small step 'Perimeter of rectangles' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Printed shapes on a centimetre grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 48 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 49,
+      "title": "Perimeter of rectilinear shapes",
+      "duration": 45,
+      "bigQuestion": "How do we find a missing side in an L-shape?",
+      "objectives": [
+        "To understand how to find the perimeter of rectilinear shapes, including missing sides"
+      ],
+      "successCriteria": [
+        "All: find missing side lengths",
+        "Most: add all sides of an L-shape",
+        "Some: check you have counted every side"
+      ],
+      "crossCurricular": "DT: edging an L-shaped room with skirting board",
+      "smsc": "Moral: careful, accurate work",
+      "keywords": [
+        {
+          "term": "rectilinear",
+          "def": "straight sides that meet at right angles"
+        },
+        {
+          "term": "perimeter",
+          "def": "the distance all the way round"
+        },
+        {
+          "term": "missing side",
+          "def": "a side we work out from others"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An L-shaped room: the outside sides are 8 m and 6 m. Is the perimeter the same as an 8 m by 6 m rectangle?",
+        "a": "Yes: the steps in an L move in but out again by the same amount, so the perimeter is still 28 m."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "floor plan of a room",
+          "alt": "A floor plan of an L-shaped room",
+          "for": "hook"
+        },
+        {
+          "find": "rectilinear shape on squared paper",
+          "alt": "An L-shape on squared paper",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "10 cm by 3 cm perimeter?",
+          "a": "26 cm",
+          "mins": 1
+        },
+        {
+          "q": "15 - 9 = ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 6 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "8 + 6 + 8 + 6 = ?",
+          "a": "28",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Missing sides",
+          "bullets": [
+            "Opposite sides add up.",
+            "Total width 8 m; one part 5 m.",
+            "Missing part: 3 m."
+          ],
+          "table": {
+            "head": [
+              "Side",
+              "Length"
+            ],
+            "rows": [
+              [
+                "Bottom",
+                "8 m"
+              ],
+              [
+                "Right",
+                "2 m"
+              ],
+              [
+                "Step across",
+                "3 m"
+              ],
+              [
+                "Step up",
+                "4 m"
+              ],
+              [
+                "Top",
+                "5 m"
+              ],
+              [
+                "Left",
+                "6 m"
+              ]
+            ]
+          },
+          "note": "Draw the L on squared paper."
+        },
+        {
+          "heading": "Add them all",
+          "bullets": [
+            "8 + 2 + 3 + 4 + 5 + 6",
+            "= 28 m",
+            "Tick each side as you add."
+          ],
+          "note": "Mark a dot where you start."
+        },
+        {
+          "heading": "Shortcut",
+          "bullets": [
+            "Push the steps out.",
+            "Same as an 8 by 6 rectangle.",
+            "2 × (8 + 6) = 28 m"
+          ],
+          "note": "Only for L-shapes without extra notches."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "An L-shape: the left side is 7 cm and the right side is 3 cm. How long is the step up?",
+            "options": [
+              "4 cm",
+              "10 cm",
+              "3 cm"
+            ],
+            "answer": 0,
+            "why": "The parts on the right add to the left side: 7 - 3 = 4 cm."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "L-shape: outer sides 9 cm and 5 cm. Perimeter?",
+          "a": "28 cm",
+          "mins": 2,
+          "model": "Teacher: same as a 9 by 5 rectangle: 2 × (9 + 5) = 28 cm."
+        },
+        {
+          "q": "Total length 12 cm; one part 7 cm. Missing part?",
+          "a": "5 cm",
+          "mins": 2
+        },
+        {
+          "q": "How many sides does an L-shape have?",
+          "a": "6",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: find the perimeter of an L-shape with sides 6, 2, 4, 3, 2 and 5 cm.",
+          "a": "22 cm",
+          "mins": 4,
+          "model": "Teacher adds each side and ticks it: 6 + 2 + 4 + 3 + 2 + 5 = 22 cm."
+        },
+        {
+          "q": "Extend: Extend: an L-shape is 10 m wide and 7 m tall overall. Perimeter?",
+          "a": "34 m",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: draw two different rectilinear shapes with perimeter 20 cm on squared paper.",
+          "a": "Answers will vary",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "L-shape outer sides 7 m and 4 m. Perimeter?",
+          "a": "22 m",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we find a missing side?",
+          "a": "Use opposite sides: the parts on one side add up to the whole on the other",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a plan of an L-shaped space (or a made-up one) and find its perimeter.",
+      "send": "SEND: squared paper and shapes drawn on a grid, worked example kept on screen. EAL: key word cards with diagrams (perimeter, area, square unit). Stretch: a T-shape: does the push-out shortcut still work? Explain.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 4: Perimeter and area: small step 'Perimeter of rectilinear shapes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Printed shapes on a centimetre grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 49 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 50,
+      "title": "Area by counting squares",
+      "duration": 45,
+      "bigQuestion": "What does area measure?",
+      "objectives": [
+        "To understand area as the number of squares that cover a shape"
+      ],
+      "successCriteria": [
+        "All: count squares to find area",
+        "Most: count half squares",
+        "Some: explain the difference between area and perimeter"
+      ],
+      "crossCurricular": "Art: tiling a floor or a mosaic",
+      "smsc": "Spiritual: prayer mats cover an area of the floor for each person in a row",
+      "keywords": [
+        {
+          "term": "area",
+          "def": "the space inside a shape"
+        },
+        {
+          "term": "square centimetre",
+          "def": "cm², a square 1 cm by 1 cm"
+        },
+        {
+          "term": "perimeter",
+          "def": "the distance round the edge"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A prayer mat covers 6 floor tiles. A rug covers 10. Which covers more area?",
+        "a": "The rug: 10 squares > 6 squares."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "prayer mat",
+          "alt": "A prayer mat (no people)",
+          "for": "hook"
+        },
+        {
+          "find": "floor tiles",
+          "alt": "Square floor tiles",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "L-shape outer 7 m by 4 m: perimeter?",
+          "a": "22 m",
+          "mins": 1
+        },
+        {
+          "q": "4 × 3 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 9 = ?",
+          "a": "81",
+          "mins": 1
+        },
+        {
+          "q": "Half of 6?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Cover with squares",
+          "bullets": [
+            "Count the squares inside.",
+            "Each is 1 cm².",
+            "This shape: 12 cm²."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "row 1: 4"
+            },
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "row 2: 4"
+            },
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "row 3: 4 = 12 cm²"
+            }
+          ],
+          "note": "Shade on squared paper."
+        },
+        {
+          "heading": "Halves",
+          "bullets": [
+            "2 half squares = 1 square.",
+            "10 whole + 4 halves = 12 cm²."
+          ],
+          "note": "Count halves, then pair them."
+        },
+        {
+          "heading": "Area vs perimeter",
+          "compare": {
+            "left": {
+              "title": "Area",
+              "points": [
+                "Space inside",
+                "Square units: cm², m²"
+              ]
+            },
+            "right": {
+              "title": "Perimeter",
+              "points": [
+                "Distance round the edge",
+                "Length units: cm, m"
+              ]
+            }
+          },
+          "note": "Same shape, two measures."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A shape covers 9 whole squares and 6 half squares. Area?",
+            "options": [
+              "15 cm²",
+              "12 cm²",
+              "9 cm²"
+            ],
+            "answer": 1,
+            "why": "6 halves = 3 wholes; 9 + 3 = 12 cm²."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 5 by 2 rectangle of squares. Area?",
+          "a": "10 cm²",
+          "mins": 2,
+          "model": "Teacher counts 5 in each row, 2 rows: 10 squares."
+        },
+        {
+          "q": "8 whole and 2 half squares?",
+          "a": "9 cm²",
+          "mins": 2
+        },
+        {
+          "q": "Is area measured in cm or cm²?",
+          "a": "cm²",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: draw 3 shapes of area 8 cm² on squared paper.",
+          "a": "Answers will vary",
+          "mins": 4,
+          "model": "Teacher draws a 4 by 2 rectangle: 8 squares."
+        },
+        {
+          "q": "Extend: Extend: find the area and perimeter of a 6 by 1 and a 3 by 2 rectangle.",
+          "a": "Both 6 cm²; perimeters 14 cm and 10 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: draw a shape with area 12 cm² and the largest perimeter you can.",
+          "a": "A 12 by 1 strip: 26 cm",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Area of a 3 by 3 square?",
+          "a": "9 cm²",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what does area measure?",
+          "a": "The space inside a shape, in square units",
+          "mins": 3
+        }
+      ],
+      "homework": "Count the tiles or squares that cover a mat, a tray or a page.",
+      "send": "SEND: squared paper and shapes drawn on a grid, worked example kept on screen. EAL: key word cards with diagrams (perimeter, area, square unit). Stretch: make two shapes with the same area but different perimeters.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 4: Perimeter and area: small steps on area by counting squares (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Printed shapes on a centimetre grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 50 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 51,
+      "title": "Area of rectangles and compound shapes",
+      "duration": 45,
+      "bigQuestion": "Why does length × width give the area?",
+      "objectives": [
+        "To understand how to calculate the area of rectangles and rectilinear shapes"
+      ],
+      "successCriteria": [
+        "All: use length × width for a rectangle",
+        "Most: split an L-shape into two rectangles",
+        "Some: find a missing length from the area"
+      ],
+      "crossCurricular": "DT: carpet for a room",
+      "smsc": "Moral: estimating costs honestly",
+      "keywords": [
+        {
+          "term": "area",
+          "def": "the space inside a shape"
+        },
+        {
+          "term": "compound shape",
+          "def": "a shape made of simpler shapes"
+        },
+        {
+          "term": "square metre",
+          "def": "m², a square 1 m by 1 m"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A rug is 3 m by 2 m. How many 1 m squares would cover it?",
+        "a": "6: 3 rows of 2 (or 2 rows of 3)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "carpet roll",
+          "alt": "A roll of carpet",
+          "for": "hook"
+        },
+        {
+          "find": "floor plan of a room",
+          "alt": "A floor plan",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Area of a 3 by 3 square?",
+          "a": "9 cm²",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 6 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "TT: 48 ÷ 6 = ?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Perimeter of 7 by 6?",
+          "a": "26",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Rows and columns",
+          "bullets": [
+            "7 cm by 6 cm",
+            "6 rows of 7 squares",
+            "7 × 6 = 42 cm²"
+          ],
+          "fraction": [
+            {
+              "parts": 7,
+              "shaded": 7,
+              "label": "7"
+            },
+            {
+              "parts": 7,
+              "shaded": 7,
+              "label": "7"
+            },
+            {
+              "parts": 7,
+              "shaded": 7,
+              "label": "... 6 rows: 42 cm²"
+            }
+          ],
+          "note": "Link to arrays."
+        },
+        {
+          "heading": "Missing side",
+          "bullets": [
+            "Area 48 cm², length 8 cm.",
+            "48 ÷ 8 = 6 cm wide."
+          ],
+          "note": "Ask: area 35, width 5? (7)."
+        },
+        {
+          "heading": "Split the shape",
+          "model": {
+            "problem": "L-shape: 8 m by 3 m on top of a 4 m by 2 m piece",
+            "steps": [
+              "Top: 8 × 3 = 24 m²",
+              "Bottom: 4 × 2 = 8 m²",
+              "Total: 24 + 8 = 32 m²"
+            ],
+            "answer": "32 m²"
+          },
+          "note": "Draw the cut line."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A 9 m by 4 m room. Area?",
+            "options": [
+              "13 m²",
+              "26 m²",
+              "36 m²"
+            ],
+            "answer": 2,
+            "why": "9 × 4 = 36 m². 26 is the perimeter; 13 adds."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "12 cm by 5 cm. Area?",
+          "a": "60 cm²",
+          "mins": 2,
+          "model": "Teacher: 12 × 5 = 60 cm²."
+        },
+        {
+          "q": "Area 54 m², length 9 m. Width?",
+          "a": "6 m",
+          "mins": 2
+        },
+        {
+          "q": "A square of side 8 cm. Area?",
+          "a": "64 cm²",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: areas of 11 m by 3 m; 25 cm by 4 cm; 7 cm by 7 cm",
+          "a": "33 m²; 100 cm²; 49 cm²",
+          "mins": 4,
+          "model": "Teacher: 11 × 3 = 33 m²."
+        },
+        {
+          "q": "Extend: Extend: L-shape: a 10 cm by 4 cm rectangle with a 3 cm by 2 cm rectangle attached. Total area?",
+          "a": "46 cm²",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: carpet costs £12 per m². A room is 5 m by 4 m. Cost?",
+          "a": "£240",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "6 m by 5 m area?",
+          "a": "30 m²",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why does length × width give the area?",
+          "a": "The squares form rows: width rows of length squares, like an array",
+          "mins": 3
+        }
+      ],
+      "homework": "Find the area of 3 rectangles at home (table, book, rug) in cm² or m².",
+      "send": "SEND: squared paper and shapes drawn on a grid, worked example kept on screen. EAL: key word cards with diagrams (perimeter, area, square unit). Stretch: a 12 m by 10 m garden has a 4 m by 3 m shed. Grass area? (108 m²).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 4: Perimeter and area: small step 'Area of rectangles and Area of compound shapes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Printed shapes on a centimetre grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 51 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 52,
+      "title": "Estimate area",
+      "duration": 45,
+      "bigQuestion": "How can we find the area of a leaf?",
+      "objectives": [
+        "To understand how to estimate the area of irregular shapes"
+      ],
+      "successCriteria": [
+        "All: count whole squares",
+        "Most: count squares that are half or more",
+        "Some: give an estimate and explain"
+      ],
+      "crossCurricular": "Science: comparing leaf sizes",
+      "smsc": "Spiritual: every leaf is created with its own shape",
+      "keywords": [
+        {
+          "term": "estimate",
+          "def": "a careful guess"
+        },
+        {
+          "term": "irregular",
+          "def": "not a regular shape; curved or uneven"
+        },
+        {
+          "term": "area",
+          "def": "the space inside a shape"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How could you find the area of your hand outline on squared paper?",
+        "a": "Count whole squares and squares that are half or more."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "leaf on squared paper",
+          "alt": "A leaf drawn on squared paper",
+          "for": "hook"
+        },
+        {
+          "find": "lake outline map",
+          "alt": "A map of a lake on a grid",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6 m by 5 m area?",
+          "a": "30 m²",
+          "mins": 1
+        },
+        {
+          "q": "Area 40, length 8: width?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 12 = ?",
+          "a": "96",
+          "mins": 1
+        },
+        {
+          "q": "Round 13.6 to the nearest whole.",
+          "a": "14",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rule",
+          "bullets": [
+            "Count whole squares.",
+            "Count squares half or more as 1.",
+            "Ignore less than half."
+          ],
+          "note": "Model on a leaf outline."
+        },
+        {
+          "heading": "Add up",
+          "bullets": [
+            "Whole squares: 14",
+            "Half or more: 6",
+            "Estimate: about 20 cm²"
+          ],
+          "table": {
+            "head": [
+              "Squares",
+              "Count"
+            ],
+            "rows": [
+              [
+                "Whole",
+                "14"
+              ],
+              [
+                "Half or more",
+                "6"
+              ],
+              [
+                "Less than half",
+                "ignored"
+              ],
+              [
+                "Estimate",
+                "about 20 cm²"
+              ]
+            ]
+          },
+          "note": "Ask: why is it an estimate? (parts are not exact)."
+        },
+        {
+          "heading": "Real maps",
+          "bullets": [
+            "A lake on a grid.",
+            "Each square is 1 km².",
+            "About 9 km²."
+          ],
+          "note": "Ask: what if each square were 4 km²? (about 36 km²)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "10 whole squares and 8 squares half or more. Estimate?",
+            "options": [
+              "10 cm²",
+              "14 cm²",
+              "18 cm²"
+            ],
+            "answer": 2,
+            "why": "10 + 8 = 18 cm²."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "12 whole and 5 half-or-more squares?",
+          "a": "About 17 cm²",
+          "mins": 2,
+          "model": "Teacher: 12 + 5 = 17 cm²."
+        },
+        {
+          "q": "Do we count a square that is a quarter covered?",
+          "a": "No",
+          "mins": 2
+        },
+        {
+          "q": "Why do two pupils get slightly different estimates?",
+          "a": "They judge the part squares differently",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: draw round a leaf or a spoon on squared paper and estimate its area.",
+          "a": "Answers will vary",
+          "mins": 4,
+          "model": "Teacher draws round a leaf: 14 whole + 6 half or more: about 20 cm²."
+        },
+        {
+          "q": "Extend: Extend: estimate the area of your hand outline. Is it more or less than 100 cm²?",
+          "a": "Answers will vary (often about 100 cm²)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: how could you make your estimate more accurate?",
+          "a": "Use smaller squares (e.g. 0.5 cm)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "8 whole + 4 half or more?",
+          "a": "About 12 cm²",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can we find the area of a leaf?",
+          "a": "Count whole squares and squares half or more covered, then add: an estimate",
+          "mins": 3
+        }
+      ],
+      "homework": "Estimate the area of 2 leaves on squared paper and compare.",
+      "send": "SEND: squared paper and shapes drawn on a grid, worked example kept on screen. EAL: key word cards with diagrams (perimeter, area, square unit). Stretch: estimate the area of a circle drawn with a cup.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 4: Perimeter and area: small step 'Estimate area' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Printed shapes on a centimetre grid",
+        "A leaf, a spoon or a cup to draw round",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 52 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 53,
+      "title": "Read and interpret line graphs",
+      "duration": 45,
+      "bigQuestion": "What story does a line graph tell?",
+      "objectives": [
+        "To understand how to read and interpret line graphs"
+      ],
+      "successCriteria": [
+        "All: read values from a line graph",
+        "Most: describe increases and decreases",
+        "Some: find a difference between two readings"
+      ],
+      "crossCurricular": "Science: how a temperature changes over a day",
+      "smsc": "Spiritual: the sun's daily path and the times of prayer",
+      "keywords": [
+        {
+          "term": "line graph",
+          "def": "a graph with points joined by lines"
+        },
+        {
+          "term": "axis",
+          "def": "the scale along the side or bottom"
+        },
+        {
+          "term": "trend",
+          "def": "the general direction"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A line goes up, flattens, then goes down. What could it show about a day's temperature?",
+        "a": "Rising in the morning, steady at midday, falling in the evening."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "line graph temperature over a day",
+          "alt": "A line graph of temperature",
+          "for": "teach:1"
+        },
+        {
+          "find": "thermometer showing degrees celsius",
+          "alt": "A thermometer",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Area of 8 by 4?",
+          "a": "32",
+          "mins": 1
+        },
+        {
+          "q": "Read: scale 0 to 20 in 4 gaps. Each gap?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 7 = ?",
+          "a": "49",
+          "mins": 1
+        },
+        {
+          "q": "14 - 9 = ?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read it",
+          "bullets": [
+            "Find the time on the x-axis.",
+            "Go up to the line.",
+            "Read across to the y-axis."
+          ],
+          "chart": {
+            "kind": "line",
+            "title": "Temperature on a spring day (example data)",
+            "labels": [
+              "6am",
+              "9am",
+              "12pm",
+              "3pm",
+              "6pm",
+              "9pm"
+            ],
+            "values": [
+              5,
+              9,
+              14,
+              15,
+              11,
+              7
+            ],
+            "unit": "°C"
+          },
+          "note": "Example data: a spring day."
+        },
+        {
+          "heading": "Describe it",
+          "bullets": [
+            "Rises from 6am to 3pm.",
+            "Falls after 3pm.",
+            "Highest: 15 °C at 3pm."
+          ],
+          "note": "Ask: when was it 9 °C? (9am)."
+        },
+        {
+          "heading": "Differences",
+          "bullets": [
+            "12pm to 6pm: 14 to 11.",
+            "A fall of 3 degrees."
+          ],
+          "note": "Ask: rise from 6am to 12pm? (9 degrees)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "By how much did it rise from 6am to 3pm?",
+            "options": [
+              "15 °C",
+              "10 °C",
+              "20 °C"
+            ],
+            "answer": 1,
+            "why": "15 - 5 = 10 degrees."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What was the temperature at 6pm?",
+          "a": "11 °C",
+          "mins": 2,
+          "model": "Teacher: find 6pm, go up to the line, read across: 11 °C."
+        },
+        {
+          "q": "When was it coldest?",
+          "a": "6am",
+          "mins": 2
+        },
+        {
+          "q": "Fall from 3pm to 9pm?",
+          "a": "8 degrees",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: read the temperature at 9am, 12pm and 9pm.",
+          "a": "9 °C, 14 °C, 7 °C",
+          "mins": 4,
+          "model": "Teacher reads 9am: up to the line, across: 9 °C."
+        },
+        {
+          "q": "Extend: Extend: between which two times was the biggest rise?",
+          "a": "9am to 12pm (5 degrees)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: estimate the temperature at 1pm. Explain.",
+          "a": "About 14 °C: between 14 and 15",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Highest temperature?",
+          "a": "15 °C",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what story does a line graph tell?",
+          "a": "How something changes over time: when it rises, falls and peaks",
+          "mins": 3
+        }
+      ],
+      "homework": "Find a weather forecast and draw a quick line graph of 5 temperatures.",
+      "send": "SEND: printed graph with gridlines, a ruler to read across, fewer questions. EAL: key word cards (axis, scale, interval); stem 'At ..., the value was ...'. Stretch: describe the graph in 3 sentences using rise, fall and peak.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 5: Statistics: small step 'Read and interpret line graphs' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed line graphs, tables and timetables (from the slides)",
+        "Graph paper and a ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 53 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 54,
+      "title": "Draw line graphs",
+      "duration": 45,
+      "bigQuestion": "How do we choose a good scale?",
+      "objectives": [
+        "To understand how to draw a line graph from a table"
+      ],
+      "successCriteria": [
+        "All: label the axes",
+        "Most: choose a scale that fits the data",
+        "Some: plot points accurately and join them"
+      ],
+      "crossCurricular": "Science: plotting the growth of a plant",
+      "smsc": "Moral: honest graphs that do not mislead",
+      "keywords": [
+        {
+          "term": "scale",
+          "def": "the steps on an axis"
+        },
+        {
+          "term": "plot",
+          "def": "mark a point"
+        },
+        {
+          "term": "axis",
+          "def": "the line along the side or bottom"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bean grew 2, 5, 9, 14 and 18 cm over 5 weeks. Would a scale in 1s, 2s or 10s be best on paper?",
+        "a": "2s fits well: 0 to 20 in 10 steps."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bean seedling growing in a pot",
+          "alt": "A bean seedling in a pot",
+          "for": "hook"
+        },
+        {
+          "find": "graph paper",
+          "alt": "Graph paper",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Highest temperature on Monday's graph?",
+          "a": "15 °C",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 20.",
+          "a": "2, 4, ... 20",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 9 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "18 - 14 = ?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The data",
+          "table": {
+            "head": [
+              "Week",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "rows": [
+              [
+                "Height (cm)",
+                "2",
+                "5",
+                "9",
+                "14",
+                "18"
+              ]
+            ]
+          },
+          "note": "Example data: a bean plant."
+        },
+        {
+          "heading": "Draw the axes",
+          "bullets": [
+            "x-axis: weeks.",
+            "y-axis: height, 0 to 20 in 2s.",
+            "Label both and add a title."
+          ],
+          "note": "Model on graph paper."
+        },
+        {
+          "heading": "Plot and join",
+          "bullets": [
+            "Plot each point carefully.",
+            "Join with straight lines."
+          ],
+          "chart": {
+            "kind": "line",
+            "title": "Bean plant height",
+            "labels": [
+              "Week 1",
+              "Week 2",
+              "Week 3",
+              "Week 4",
+              "Week 5"
+            ],
+            "values": [
+              2,
+              5,
+              9,
+              14,
+              18
+            ],
+            "unit": "cm"
+          },
+          "note": "Check each point."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Data goes up to 48. Which y-axis scale is best?",
+            "options": [
+              "0 to 10 in 1s",
+              "0 to 50 in 5s",
+              "0 to 1,000 in 100s"
+            ],
+            "answer": 1,
+            "why": "0 to 50 fits the data and uses the space."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which axis shows time?",
+          "a": "The x-axis (across)",
+          "mins": 2,
+          "model": "Teacher: time goes along the bottom, the thing we measure goes up the side."
+        },
+        {
+          "q": "Data from 0 to 90: suggest a scale.",
+          "a": "0 to 100 in 10s",
+          "mins": 2
+        },
+        {
+          "q": "In which week did the bean grow the most?",
+          "a": "Week 3 to 4 (5 cm)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: draw the bean graph from the table on graph paper.",
+          "a": "A labelled line graph with 5 points",
+          "mins": 4,
+          "model": "Teacher draws axes, labels and plots week 1 at 2 cm."
+        },
+        {
+          "q": "Extend: Extend: draw a graph of 6 temperatures: 8, 10, 13, 12, 9, 6 °C.",
+          "a": "A labelled line graph",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: why is a line graph good for growth but not for favourite fruits?",
+          "a": "Growth changes over time; favourite fruits are categories (use a bar chart)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which scale for data up to 18?",
+          "a": "0 to 20 in 2s",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we choose a good scale?",
+          "a": "Fit the biggest value and use equal steps that are easy to read",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure something that changes each day (a plant, a shadow, a temperature) and plan a graph.",
+      "send": "SEND: printed graph with gridlines, a ruler to read across, fewer questions. EAL: key word cards (axis, scale, interval); stem 'At ..., the value was ...'. Stretch: add a second line for a second plant and compare.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 5: Statistics: small step 'Draw line graphs' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed line graphs, tables and timetables (from the slides)",
+        "Graph paper and a ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 54 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 55,
+      "title": "Two-way tables",
+      "duration": 45,
+      "bigQuestion": "How can one table answer lots of questions?",
+      "objectives": [
+        "To understand how to read and complete two-way tables"
+      ],
+      "successCriteria": [
+        "All: read a value from a two-way table",
+        "Most: find totals across and down",
+        "Some: complete missing values"
+      ],
+      "crossCurricular": "Geography: how pupils travel to school",
+      "smsc": "Social: a class survey done respectfully",
+      "keywords": [
+        {
+          "term": "two-way table",
+          "def": "a table with rows and columns of groups"
+        },
+        {
+          "term": "total",
+          "def": "all together"
+        },
+        {
+          "term": "row",
+          "def": "goes across"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A table shows boys and girls who walk or come by car. How could you find how many walk altogether?",
+        "a": "Add the walkers in each row."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "table of data",
+          "alt": "A printed data table",
+          "for": "teach:1"
+        },
+        {
+          "find": "school bus",
+          "alt": "A school bus (no people)",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Which scale for data up to 18?",
+          "a": "0 to 20 in 2s",
+          "mins": 1
+        },
+        {
+          "q": "15 + 9 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 7 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "40 - 26 = ?",
+          "a": "14",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read it",
+          "table": {
+            "head": [
+              "Group",
+              "Walk",
+              "Car",
+              "Bus",
+              "Total"
+            ],
+            "rows": [
+              [
+                "Boys",
+                "8",
+                "5",
+                "2",
+                "15"
+              ],
+              [
+                "Girls",
+                "6",
+                "7",
+                "4",
+                "17"
+              ],
+              [
+                "Total",
+                "14",
+                "12",
+                "6",
+                "32"
+              ]
+            ]
+          },
+          "note": "Example data: Year 5 travel survey."
+        },
+        {
+          "heading": "Totals",
+          "bullets": [
+            "Across: boys 8 + 5 + 2 = 15.",
+            "Down: walk 8 + 6 = 14.",
+            "Grand total: 32."
+          ],
+          "note": "Check both ways give 32."
+        },
+        {
+          "heading": "Missing values",
+          "bullets": [
+            "Total girls 17; walk 6, car 7.",
+            "Bus: 17 - 6 - 7 = 4."
+          ],
+          "note": "Ask: total by car? (12)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many girls came by car?",
+            "options": [
+              "5",
+              "7",
+              "12"
+            ],
+            "answer": 1,
+            "why": "Girls row, Car column: 7."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many boys came by bus?",
+          "a": "2",
+          "mins": 2,
+          "model": "Teacher: find the boys row and the bus column: 2."
+        },
+        {
+          "q": "How many pupils walked?",
+          "a": "14",
+          "mins": 2
+        },
+        {
+          "q": "How many more girls than boys?",
+          "a": "2",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: complete the table: Boys walk 9, car 4, bus ?, total 15; Girls walk 5, car ?, bus 3, total 14.",
+          "a": "Boys bus 2; girls car 6; totals: walk 14, car 10, bus 5, all 29",
+          "mins": 4,
+          "model": "Teacher: boys: 15 - 9 - 4 = 2 by bus."
+        },
+        {
+          "q": "Extend: Extend: what fraction of all pupils came by bus?",
+          "a": "6/32 = 3/16",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: design a two-way table for favourite fruit by year group (with your own data).",
+          "a": "Answers will vary",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Total pupils?",
+          "a": "32",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can one table answer lots of questions?",
+          "a": "Rows and columns group the data two ways, with totals for each",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a two-way table of something at home (cups and plates by colour).",
+      "send": "SEND: printed graph with gridlines, a ruler to read across, fewer questions. EAL: key word cards (axis, scale, interval); stem 'At ..., the value was ...'. Stretch: what percentage of the class walked? (14/32, about 44%).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 5: Statistics: small step 'Two-way tables' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed line graphs, tables and timetables (from the slides)",
+        "Graph paper and a ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 55 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 56,
+      "title": "Read and interpret timetables",
+      "duration": 45,
+      "bigQuestion": "How long is the journey, and which bus should we catch?",
+      "objectives": [
+        "To understand how to read timetables and calculate durations"
+      ],
+      "successCriteria": [
+        "All: read times from a timetable",
+        "Most: find how long a journey takes",
+        "Some: choose a bus to arrive on time"
+      ],
+      "crossCurricular": "Geography: planning a journey",
+      "smsc": "Spiritual: planning journeys around prayer times; being punctual",
+      "keywords": [
+        {
+          "term": "timetable",
+          "def": "a table of times"
+        },
+        {
+          "term": "duration",
+          "def": "how long something lasts"
+        },
+        {
+          "term": "24-hour clock",
+          "def": "times from 00:00 to 23:59"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bus leaves at 14:35 and arrives at 15:10. How long is the journey?",
+        "a": "35 minutes."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bus timetable at bus stop",
+          "alt": "A bus timetable",
+          "for": "teach:1"
+        },
+        {
+          "find": "analogue clock face",
+          "alt": "A clock face",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Total pupils in the survey?",
+          "a": "32",
+          "mins": 1
+        },
+        {
+          "q": "60 - 35 = ?",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "14:35 in 12-hour time?",
+          "a": "2:35 pm",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 5 = ?",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read it",
+          "table": {
+            "head": [
+              "Stop",
+              "Bus A",
+              "Bus B",
+              "Bus C"
+            ],
+            "rows": [
+              [
+                "High Street",
+                "14:05",
+                "14:35",
+                "15:05"
+              ],
+              [
+                "Park Road",
+                "14:12",
+                "14:42",
+                "15:12"
+              ],
+              [
+                "Library",
+                "14:25",
+                "14:55",
+                "15:25"
+              ],
+              [
+                "Masjid",
+                "14:40",
+                "15:10",
+                "15:40"
+              ]
+            ]
+          },
+          "note": "Example timetable."
+        },
+        {
+          "heading": "Duration",
+          "bullets": [
+            "High Street 14:35 to Masjid 15:10.",
+            "14:35 to 15:00: 25 min.",
+            "15:00 to 15:10: 10 min. Total 35 min."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 40,
+            "step": 5,
+            "marks": [
+              {
+                "at": 0,
+                "label": "14:35"
+              },
+              {
+                "at": 25,
+                "label": "15:00"
+              },
+              {
+                "at": 35,
+                "label": "15:10"
+              }
+            ]
+          },
+          "note": "Count on to the hour."
+        },
+        {
+          "heading": "Choose a bus",
+          "bullets": [
+            "Need to reach the Masjid by 15:15.",
+            "Bus B arrives 15:10. Bus C at 15:40.",
+            "Catch Bus B."
+          ],
+          "note": "Ask: arrive by 14:45? (Bus A)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Bus C: Park Road 15:12 to Library 15:25. Journey time?",
+            "options": [
+              "13 min",
+              "17 min",
+              "23 min"
+            ],
+            "answer": 0,
+            "why": "15:12 to 15:25 is 13 minutes."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "When does Bus A reach the Library?",
+          "a": "14:25",
+          "mins": 2,
+          "model": "Teacher: find the Library row, Bus A column: 14:25."
+        },
+        {
+          "q": "How long is Bus A from High Street to the Masjid?",
+          "a": "35 min",
+          "mins": 2
+        },
+        {
+          "q": "Which bus leaves Park Road at 14:42?",
+          "a": "Bus B",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: Bus C: High Street to Library; Bus B: Park Road to Masjid. Durations?",
+          "a": "20 min; 28 min",
+          "mins": 4,
+          "model": "Teacher: 15:05 to 15:25 is 20 minutes."
+        },
+        {
+          "q": "Extend: Extend: you reach Park Road at 14:30. When is the next bus? When will you reach the Masjid?",
+          "a": "14:42 (Bus B); 15:10",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: the buses run every 30 minutes. When would Bus D leave High Street and reach the Masjid?",
+          "a": "15:35; 16:10",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "15:40 in 12-hour time?",
+          "a": "3:40 pm",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how long is the journey, and which bus?",
+          "a": "Count on from the start time to the end time; pick the bus that arrives before you need to be there",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a timetable for your day (school, prayer times, meals) and find 3 durations.",
+      "send": "SEND: printed graph with gridlines, a ruler to read across, fewer questions. EAL: key word cards (axis, scale, interval); stem 'At ..., the value was ...'. Stretch: plan a journey with a change of bus.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 5: Statistics: small step 'Read and interpret timetables' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed line graphs, tables and timetables (from the slides)",
+        "Graph paper and a ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 56 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+      "n": 57,
+      "title": "Mixed review and spring assessment",
+      "duration": 45,
+      "bigQuestion": "What have I learned in Spring 2, and what is next?",
+      "objectives": [
+        "To understand how secure I am with decimals, percentages, perimeter, area and statistics"
+      ],
+      "successCriteria": [
+        "All: answer decimals and percentages questions",
+        "Most: answer perimeter, area and graph questions",
+        "Some: set one target for Summer 1"
+      ],
+      "smsc": "Spiritual: shukr for learning; honest self-assessment",
+      "keywords": [
+        {
+          "term": "decimal",
+          "def": "a number with a decimal point"
+        },
+        {
+          "term": "area",
+          "def": "space inside a shape"
+        },
+        {
+          "term": "line graph",
+          "def": "points joined to show change"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which topic this half term did you enjoy most? Which needs most work?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "line graph temperature over a day",
+          "alt": "A line graph",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Round 4.65 to 1 d.p.",
+          "a": "4.7",
+          "mins": 1
+        },
+        {
+          "q": "30% as a fraction?",
+          "a": "3/10",
+          "mins": 1
+        },
+        {
+          "q": "Area of 9 by 6?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 9 = ?",
+          "a": "99",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Recap",
+          "bullets": [
+            "Decimals and percentages.",
+            "Perimeter and area.",
+            "Line graphs, tables, timetables."
+          ],
+          "diagram": {
+            "centre": "Spring 2",
+            "items": [
+              "2.457 place value",
+              "Rounding",
+              "1/8 = 0.125",
+              "35% = 0.35",
+              "Perimeter 2 × (l + w)",
+              "Area l × w",
+              "Line graphs",
+              "Timetables"
+            ]
+          },
+          "note": "Show-me recap."
+        },
+        {
+          "heading": "Assessment",
+          "bullets": [
+            "White Rose Year 5 spring assessment.",
+            "Work alone; show working."
+          ],
+          "note": "Assessment paper on the worksheet; mark together next lesson."
+        },
+        {
+          "heading": "My target",
+          "bullets": [
+            "What went well?",
+            "Even better if...?"
+          ],
+          "note": "Pupils write one EBI target for Summer 1."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A rectangle is 7 m by 3 m. Which is its area?",
+            "options": [
+              "10 m²",
+              "20 m²",
+              "21 m²"
+            ],
+            "answer": 2,
+            "why": "7 × 3 = 21 m². 20 is the perimeter."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "0.375 as a fraction?",
+          "a": "3/8",
+          "mins": 2,
+          "model": "Teacher: 375/1000, divide by 125: 3/8."
+        },
+        {
+          "q": "Order: 0.6, 58%, 3/5",
+          "a": "58%, 0.6 and 3/5 (equal)",
+          "mins": 2
+        },
+        {
+          "q": "Perimeter of 8 cm by 2.5 cm?",
+          "a": "21 cm",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Assessment: value of the 7 in 3.057; round 9.96 to 1 d.p.; 12% as a decimal",
+          "a": "7 thousandths; 10.0; 0.12",
+          "mins": 4,
+          "model": "Teacher: 3.057: the 7 is in the third place: 7 thousandths."
+        },
+        {
+          "q": "Extend: Assessment: area of an L-shape (6 m by 4 m with a 2 m by 2 m piece cut out)",
+          "a": "20 m²",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Assessment: a temperature rose from 6 °C to 13 °C, then fell by 4 °C. Final temperature?",
+          "a": "9 °C",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "45% as a decimal?",
+          "a": "0.45",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what have I learned, and what is next?",
+          "a": "Answers will vary",
+          "mins": 3
+        }
+      ],
+      "homework": "Practise your target for 10 minutes.",
+      "send": "SEND: printed graph with gridlines, a ruler to read across, fewer questions. EAL: key word cards (axis, scale, interval); stem 'At ..., the value was ...'. Stretch: write 3 mixed questions with answers for a partner.",
+      "resources": [
+        "White Rose Maths Year 5: half-termly spring assessment (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed line graphs, tables and timetables (from the slides)",
+        "Graph paper and a ruler",
+        "Squared paper (1 cm) and a ruler",
+        "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 57 guided, independent and homework tasks"
       ]
     }
   ]

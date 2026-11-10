@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { PageHeader, type Crumb } from "@/components/learn/PageHeader";
+import type { Crumb } from "@/components/learn/PageHeader";
+import { WorkspaceHeader } from "@/components/learn/kit";
 import { Tabs } from "@/components/learn/Tabs";
-import { Notice, ui } from "@/components/learn/ui";
+import { Button, Notice, ui } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { localDateKey } from "@/lib/learn/calendar";
 import { PrintStyles } from "./ReportDocument";
@@ -93,15 +94,23 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
     <div className="space-y-5">
       <PrintStyles />
       <div className="print:hidden">
-        <PageHeader
-          crumbs={view === "class" || view === "pupil" ? crumbs : undefined}
-          title={view === "class" && cls ? `${cls.name} reports` : "Progress reports"}
-          subtitle={
+        <WorkspaceHeader
+          eyebrow={(view === "class" || view === "pupil" ? crumbs.slice(0, -1) : crumbs.slice(0, 1)).map((c) => ({ label: c.label, href: c.href }))}
+          title={view === "class" && cls ? `${cls.name} reports` : view === "pupil" ? "Report" : "Progress reports"}
+          meta={view !== "settings" && term !== undefined ? termLabel : undefined}
+          description={
             view === "pupil"
               ? undefined
               : mode === "admin"
                 ? "Write, approve and issue end-of-term reports. Figures come from attendance, homework, merits, Qur'an and assessments already recorded."
                 : "Write your classes' end-of-term reports. Figures are filled in for you; add your judgement and a comment, then submit for approval."
+          }
+          primary={
+            mode === "admin" && view !== "approval" && (awaiting ?? 0) > 0 ? (
+              <Button variant="primary" icon="circleCheck" onClick={() => go({ view: "approval" })}>
+                Review approvals
+              </Button>
+            ) : undefined
           }
         />
       </div>

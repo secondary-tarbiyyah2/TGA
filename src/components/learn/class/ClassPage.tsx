@@ -6,6 +6,8 @@ import { useSearchParams } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
 import type { Crumb } from "@/components/learn/PageHeader";
+import { WorkspaceHeader, type MenuAction } from "@/components/learn/kit";
+import { ButtonLink } from "@/components/learn/ui";
 import { ParticipantsTab } from "@/components/learn/class/ParticipantsTab";
 import { CourseTab } from "@/components/learn/class/CourseTab";
 import { StreamTab } from "@/components/learn/class/StreamTab";
@@ -224,41 +226,50 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
     { label: viewer.kind === "student" ? "My classes" : "Classes", href: `${area}/classes${viewer.kind === "parent" ? `?child=${viewer.childId}` : ""}` },
     { label: cls.name },
   ];
-  const meta = [cls.subject, cls.yearGroup].filter(Boolean).join(" · ");
 
   return (
     <div>
-      {/* One plain header: title, subject line and the section tabs together */}
-      <header className="mb-6 overflow-hidden rounded-2xl border border-gold-light bg-white">
-        <div className="flex items-center gap-3 px-5 pb-3 pt-5">
-          <span aria-hidden="true" className="h-10 w-1.5 shrink-0 rounded-full bg-teal-700" />
-          <div className="min-w-0">
-            <h1 className="truncate text-xl font-semibold tracking-tight text-ink">{cls.name}</h1>
-            {meta && <p className="text-sm text-ink/65">{meta}</p>}
-          </div>
-          <Link href={crumbs[1].href as string} className="ml-auto shrink-0 text-sm text-ink/65 hover:text-teal-700 hover:underline">
-            All classes
-          </Link>
-        </div>
-        <nav aria-label="Class sections" className="flex gap-1 overflow-x-auto border-t border-gold-light/70 px-3">
+      {/* The redesign's workspace header (docs/portal-redesign.md): where you are, the class, one main action and a menu; then the class sections. */}
+      <WorkspaceHeader
+        eyebrow={[{ label: crumbs[1].label, href: crumbs[1].href }, ...(cls.subject ? [{ label: cls.subject }] : []), ...(cls.yearGroup ? [{ label: cls.yearGroup }] : [])]}
+        title={cls.name}
+        primary={
+          isStaff ? (
+            <ButtonLink href={classHref("classwork")} variant="primary" icon="plus">
+              Set work
+            </ButtonLink>
+          ) : undefined
+        }
+        menu={[
+          ...(isStaff
+            ? ([
+                { label: "Take the register", icon: "userCheck", href: classHref("attendance") },
+                { label: "Grades", icon: "chartColumnIncreasing", href: classHref("grades") },
+                { label: "Class settings", icon: "settings", href: classHref("settings") },
+              ] as MenuAction[])
+            : []),
+          { label: viewer.kind === "student" ? "All my classes" : "All classes", icon: "layoutGrid", href: crumbs[1].href as string },
+        ]}
+      />
+      <nav aria-label="Class sections" className="portal-tabs -mx-4 mb-6 mt-2 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+        <ul className="flex min-w-max gap-1 border-b border-gold-light">
           {tabs.map((t) => {
             const active = t === tab;
             return (
-              <Link
-                key={t}
-                href={classHref(t)}
-                scroll={false}
-                aria-current={active ? "page" : undefined}
-                className={`shrink-0 border-b-[3px] px-3 py-3 text-sm font-medium transition-colors ${
-                  active ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:text-ink"
-                }`}
-              >
-                {TAB_LABELS[t]}
-              </Link>
+              <li key={t}>
+                <Link
+                  href={classHref(t)}
+                  scroll={false}
+                  aria-current={active ? "page" : undefined}
+                  className={`-mb-px flex min-h-11 items-center border-b-2 px-3 text-sm font-medium transition-colors ${active ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:border-ink/20 hover:text-ink"}`}
+                >
+                  {TAB_LABELS[t]}
+                </Link>
+              </li>
             );
           })}
-        </nav>
-      </header>
+        </ul>
+      </nav>
 
       {viewer.kind !== "staff" && (
         <JoinLessonCard

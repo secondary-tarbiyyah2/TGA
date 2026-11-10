@@ -122,13 +122,13 @@ In the portal the old `teal-*` utilities now mean forest green, so existing page
 1a. [x] Pinned lessons (migration 0193 `lesson_pins`, own rows only): pin from a lesson row or workspace; "Your lessons"
    on the teacher and admin dashboards shows pins then recently opened.
 2. [x] The remaining hand-written menus now use `ActionsMenu`: the account menu (`LearnAccountMenu`: avatar trigger, a header with who is signed in, Switch area with "Current", and the View settings as a `content` block) and the class Classwork **Create** menu (`trigger="primary"`, items with a `hint` line). `ActionsMenu` gained, additively: `hint`, `aside` and `content` on items; `trigger="primary"`, `triggerContent`, `header`, `menuClassName`; it flips side and scrolls so it stays on a 360px screen.
-3. Apply `WorkspaceHeader` to the other hub pages that still open with a card header (Classes, a class page, Pupils,
-   Reports), and the "one primary action plus a menu" rule to their rows.
+3. [x] `WorkspaceHeader` with one primary action and a menu on Classes (admin: Add a class; menu Timetable, Classwork to action), My classes (teacher; menu Gradebook, Classwork to action), a class page (Set work; menu Take the register, Grades, Class settings, All classes; the class sections are a plain tab strip under it), Pupils (Add pupil; figures for pupils, missing details, medical alerts, support plans) and Progress reports (Review approvals when reports are waiting). Pupil rows keep one action (Edit) and open the record on click.
 4. Family and student dashboards: their own figures (as teacher and admin now have).
-5. A phone pass at 360px over the new pages (lesson workspace, map, review queue).
+5. [x] Phone pass at 360px (lesson workspace, curriculum map, lesson review queue and the pages above): `WorkspaceHeader` puts its actions under the title on narrow screens instead of squeezing the title to a few words a line; review queue rows wrap their status line; the top bar shows the square mark below 420px so every button (search, clock, display, feedback, report a concern, notifications) fits instead of being cut off. No sideways scrolling found.
 6. Later: curriculum analytics, connections visualiser.
 
 ## Log
+- 2026-11-10: Next 3 and 5 done (workspace headers on Classes, a class, Pupils, Reports; 360px pass).
 - 2026-11-10: Next 2 done (menus on `ActionsMenu`); long forms split into titled sections with `FormSection` (PR #72).
 - 2026-11-09 (late): confirmations and pinned lessons (PR "Portal redesign 2").
 - 2026-11-09: PR #66 merged. Design system, grouped sidebars, workspace dashboards, lesson workspace, unit header,

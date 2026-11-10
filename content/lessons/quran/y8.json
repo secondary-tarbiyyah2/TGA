@@ -84,251 +84,775 @@
       "send": "SEND/EAL: quiz with word bank and examples. Stretch: write extra quiz questions for the class."
     },
     {
-      "unit": "Unit 1: Noon and meem - complete rules",
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
       "n": 2,
-      "title": "Noon sakinah and tanween: in depth",
+      "title": "Noon sakinah and tanween in depth",
       "duration": 50,
+      "bigQuestion": "Why do you think the same 'n' sound changes in four different ways? What would recitation sound like without these rules?",
       "objectives": [
-        "Group the ikhfa letters by makhraj",
-        "Explain idgham with and without ghunnah",
-        "Apply the rules to longer passages"
+        "To understand the four rules of noon sakinah and tanween in full, including the exceptions, and apply them in Al-Haqqah"
       ],
+      "successCriteria": [
+        "All: classify any noon sakinah or tanween by its next letter",
+        "Most: explain the ghunnah in idgham, iqlab and ikhfa",
+        "Some: explain izhar mutlaq in words like ٱلدُّنْيَا"
+      ],
+      "smsc": "Spiritual: tajweed as care and respect for Allah's words",
       "keywords": [
         {
-          "term": "izhar mutlaq",
-          "def": "clear noon in the same word before yaa or waaw"
+          "term": "noon sakinah (نون ساكنة)",
+          "def": "a noon with sukoon"
         },
         {
-          "term": "ghunnah",
-          "def": "humming of two counts"
+          "term": "tanween (تنوين)",
+          "def": "a double vowel ending with an n sound"
+        },
+        {
+          "term": "izhar mutlaq (إظهار مطلق)",
+          "def": "a clear noon before ي or و in one word"
+        },
+        {
+          "term": "ghunnah (غنة)",
+          "def": "a nasal sound held for two counts"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think the same 'n' sound changes in four different ways? What would recitation sound like without these rules?",
+        "a": "The rules make the flow easy and beautiful; without them recitation would be choppy, and they are how the Qur'an was recited to the Prophet ﷺ."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation (tartil)' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
       "starter": [
-        "List the six izhar letters.",
-        "Name the idgham letters.",
-        "Which letter gives iqlab?"
+        {
+          "q": "Which surah begins «ٱلْحَآقَّةُ ...»?",
+          "a": "Al-Haqqah",
+          "mins": 1,
+          "options": [
+            "Al-Ma'arij",
+            "Al-Haqqah",
+            "Al-Qalam"
+          ]
+        },
+        {
+          "q": "How many ikhfa letters?",
+          "a": "15",
+          "mins": 1,
+          "options": [
+            "15",
+            "6",
+            "4"
+          ]
+        },
+        {
+          "q": "Iqlab is before ...",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "م",
+            "ل"
+          ]
+        },
+        {
+          "q": "Which surahs are Year 8's first targets?",
+          "a": "Al-Mulk and Al-Qalam",
+          "mins": 1,
+          "options": [
+            "Al-Mulk and Al-Qalam",
+            "Al-Fil and Quraysh",
+            "Ya-Sin"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The ikhfa letters by strength",
-          "bullets": [
-            "Heavy: ص ض ط ظ ق - fuller",
-            "Light: ت ث ج د ذ ز س ش ف ك",
-            "All with two counts of ghunnah",
-            "The mouth takes the shape of the next letter"
-          ],
-          "note": "Explain that ikhfa is neither clear nor merged; the tongue does not touch its place. Demonstrate مِن قَبْلِ vs مِن شَرِّ. Pupils copy and listen."
+          "heading": "The four rules at a glance",
+          "bullets": [],
+          "note": "Bismillah. Placement (induction week) showed where each group is; this recaps the full system.",
+          "table": {
+            "head": [
+              "Rule",
+              "Letters",
+              "Ghunnah",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Izhar (إظهار)",
+                "ء ه ع ح غ خ",
+                "No",
+                "مَنْ أُوتِىَ"
+              ],
+              [
+                "Idgham with ghunnah",
+                "ي ن م و",
+                "Yes, 2 counts",
+                "نَفْخَةٌۭ وَٰحِدَةٌۭ"
+              ],
+              [
+                "Idgham without ghunnah",
+                "ل ر",
+                "No",
+                "مِّن رَّبِّ"
+              ],
+              [
+                "Iqlab (إقلاب)",
+                "ب",
+                "Yes, hidden meem",
+                "مِّنۢ بَاقِيَةٍۢ"
+              ],
+              [
+                "Ikhfa (إخفاء)",
+                "15 others",
+                "Yes, 2 counts",
+                "وَمَن قَبْلَهُۥ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Idgham in detail",
+          "heading": "Exceptions to know",
           "bullets": [
-            "With ghunnah: ي ن م و",
-            "Without: ل ر",
-            "Needs two words",
-            "Exception: same word - the noon stays clear"
+            "Izhar mutlaq: noon and ي/و in one word",
+            "ٱلدُّنْيَا, صِنْوَانٌ, بُنْيَٰنٌ: no idgham",
+            "Idgham only across two words"
           ],
-          "note": "Examples: مَن يَقُولُ, مِّن رَّبِّهِمْ, الدُّنْيَا, صِنْوَانٌ. Pupils say why each is read as it is. Misconception: ghunnah with laam and raa."
+          "note": "These four words (دنيا, بنيان, صنوان, قنوان) keep the noon clear so the meaning is not confused with a doubled letter."
         },
         {
-          "heading": "Tanween and noon alike",
+          "heading": "Levels of ikhfa",
           "bullets": [
-            "Tanween behaves like noon sakinah",
-            "Mark the rule over the tanween",
-            "Stop at an end: rules do not apply"
+            "Near ط ض ص ظ ق ك: heavier hum",
+            "Near ت د ث: lighter hum",
+            "Prepare the tongue for the next letter"
           ],
-          "note": "Show خَيْرٌ لَّكَ and عَلِيمٌ حَكِيمٌ. If we stop on the tanween, there is no noon rule. Check with: هُدًى لِّلْمُتَّقِينَ."
+          "note": "Ikhfa is coloured by the next letter. Model مِنكُم (69:18) and وَمَن قَبْلَهُۥ (69:9)."
         },
         {
-          "heading": "Passage practice",
-          "bullets": [
-            "Read Al-Qadr",
-            "Label every noon and tanween",
-            "Recite with correct ghunnah"
-          ],
-          "note": "Use Al-Qadr: أَنزَلْنَاهُ (ikhfa), خَيْرٌ مِّنْ (idgham ghunnah), مِّن كُلِّ (ikhfa). Pupils label then recite. Praise good ghunnah length."
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "Pupils often add a clear noon in ikhfa.",
+          "misconception": {
+            "wrong": "minkum: a clear noon pressed on the gum",
+            "right": "min-kum: tongue does not touch for noon; hum from the nose, then ك"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«وَعَادٌۢ بِٱلْقَارِعَةِ» (69:4): which rule?",
+            "options": [
+              "Iqlab",
+              "Ikhfa",
+              "Idgham with ghunnah"
+            ],
+            "answer": 0,
+            "why": "Tanween before ب is always iqlab; the small meem in the mushaf shows it."
+          }
         }
       ],
       "practice": [
-        "Which rule applies in مِن قَبْلِ?",
-        "Why is الدُّنْيَا read with a clear noon?"
+        {
+          "q": "Classify every noon sakinah and tanween in 69:6 to 7.",
+          "a": "عَادٌۭ فَأُهْلِكُوا۟ ikhfa; بِرِيحٍۢ صَرْصَرٍ ikhfa; صَرْصَرٍ عَاتِيَةٍۢ izhar; لَيَالٍۢ وَثَمَٰنِيَةَ idgham with ghunnah; أَيَّامٍ حُسُومًۭا izhar; حُسُومًۭا فَتَرَى ikhfa; نَخْلٍ خَاوِيَةٍۢ izhar.",
+          "mins": 5,
+          "model": "I do: 69:6 عَادٌۭ then ف: ikhfa. بِرِيحٍۢ then ص: ikhfa (heavier hum). صَرْصَرٍ then ع: izhar, clear."
+        },
+        {
+          "q": "«ٱلدُّنْيَا» has ...",
+          "a": "izhar mutlaq",
+          "mins": 1,
+          "options": [
+            "izhar mutlaq",
+            "idgham with ghunnah",
+            "ikhfa"
+          ]
+        }
       ],
       "independent": [
-        "Label every noon and tanween in Al-Qadr",
-        "Sort 20 phrases by rule",
-        "Recite Al-Qadr and review with a partner"
+        {
+          "q": "Rule audit (pupil PDF): classify the noon sakinah and tanween in Al-Haqqah 69:40 to 52. Today's rota group recites Al-Mulk 67:1 to 10.",
+          "a": "رَسُولٍۢ كَرِيمٍۢ ikhfa; شَاعِرٍۢ قَلِيلًۭا ikhfa; قَلِيلًۭا مَّا idgham; تَنزِيلٌۭ ikhfa (in word) and مِّن idgham; مِّن رَّبِّ idgham no ghunnah; مِنْهُ izhar; مِنكُم ikhfa; مِّنْ أَحَدٍ izhar; أَحَدٍ عَنْهُ izhar; لَتَذْكِرَةٌۭ لِّلْمُتَّقِينَ idgham no ghunnah; لَحَسْرَةٌ عَلَى izhar.",
+          "mins": 10,
+          "model": "The teacher does 69:40: رَسُولٍۢ كَرِيمٍۢ: tanween before ك: ikhfa."
+        },
+        {
+          "q": "Extend: give the four izhar mutlaq words.",
+          "a": "ٱلدُّنْيَا, صِنْوَانٌ, قِنْوَانٌ, بُنْيَٰنٌ",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is ikhfa before ق heavier than before ت?",
+          "a": "The hum takes the colour of the next letter; ق is a heavy (isti'la) letter.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the ikhfa letters that are heavy.",
-        "Give an example of idgham without ghunnah."
+        {
+          "q": "«مِّن رَّبِّ» (69:43) is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "idgham with ghunnah",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why do you think the same 'n' sound changes in four different ways? What would recitation sound like without these rules?",
+          "a": "The rules make the flow easy and beautiful; without them recitation would be choppy, and they are how the Qur'an was recited to the Prophet ﷺ.",
+          "mins": 2
+        }
       ],
-      "homework": "Label every noon sakinah and tanween in a surah you are memorising.",
-      "send": "SEND/EAL: rule chart with colours. Stretch: find all four rules in 10 ayat."
+      "homework": "Revise Al-Mulk (manzil) and classify five noon sakinah in it; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Noon sakinah and tanween in depth rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Tajweed colour coded Quran",
+          "alt": "A colour-coded tajweed mushaf",
+          "for": "teach:1"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Noon and meem - complete rules",
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
       "n": 3,
       "title": "Meem sakinah and ghunnah in detail",
       "duration": 50,
+      "bigQuestion": "Your lips make both م and ب. What do you think happens when a meem sakinah meets a baa?",
       "objectives": [
-        "State the three rules of meem sakinah",
-        "Apply the rules in surahs",
-        "Explain meem and noon mushaddad"
+        "To understand the three rules of meem sakinah and the ghunnah of noon and meem with shaddah, and apply them accurately"
       ],
+      "successCriteria": [
+        "All: name the three meem sakinah rules",
+        "Most: read ikhfa shafawi with lips lightly closed",
+        "Some: explain why care is needed before و and ف"
+      ],
+      "smsc": "Cultural: the oral chain (isnad) of recitation passing these rules from teacher to pupil",
       "keywords": [
         {
-          "term": "idgham shafawi",
-          "def": "meem sakinah joins a meem"
+          "term": "meem sakinah (ميم ساكنة)",
+          "def": "a meem with sukoon"
         },
         {
-          "term": "ikhfa shafawi",
-          "def": "meem sakinah hidden before baa"
+          "term": "shafawi (شفوي)",
+          "def": "of the lips"
         },
         {
-          "term": "izhar shafawi",
-          "def": "meem sakinah clear"
+          "term": "ghunnah (غنة)",
+          "def": "a nasal sound held for two counts"
+        },
+        {
+          "term": "mithlayn (مثلين)",
+          "def": "two identical letters"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your lips make both م and ب. What do you think happens when a meem sakinah meets a baa?",
+        "a": "The meem is hidden with a two-count hum, lips lightly together: ikhfa shafawi."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The one who is skilled in the Qur'an will be with the noble and righteous scribes' (Bukhari and Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Name the three rules of meem sakinah.",
-        "How long is ghunnah?",
-        "What does shaddah mean?"
+        {
+          "q": "«وَمَن قَبْلَهُۥ» is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "izhar",
+            "iqlab"
+          ]
+        },
+        {
+          "q": "Recite Al-Haqqah 69:3 in your head. How does the next ayah begin?",
+          "a": "كَذَّبَتْ ثَمُودُ",
+          "mins": 1,
+          "options": [
+            "يَوْمَئِذٍۢ تُعْرَضُونَ",
+            "كَذَّبَتْ ثَمُودُ",
+            "إِنِّى ظَنَنتُ"
+          ]
+        },
+        {
+          "q": "Izhar mutlaq example?",
+          "a": "صِنْوَانٌ",
+          "mins": 1,
+          "options": [
+            "صِنْوَانٌ",
+            "مِن نِّعْمَةٍ",
+            "مِنۢ بَعْدِ"
+          ]
+        },
+        {
+          "q": "Ghunnah lasts ...",
+          "a": "2 counts",
+          "mins": 1,
+          "options": [
+            "2 counts",
+            "4 counts",
+            "6 counts"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The three rules",
-          "bullets": [
-            "Idgham: meem + meem",
-            "Ikhfa: meem + baa",
-            "Izhar: meem + any other letter"
-          ],
-          "note": "Revise from Year 2. Make a quick table on the board. Pupils give examples. Remind pupils that the rules involve the lips."
+          "heading": "Three rules of meem sakinah",
+          "bullets": [],
+          "note": "Bismillah. Shafawi means 'of the lips'.",
+          "table": {
+            "head": [
+              "Rule",
+              "Next letter",
+              "How",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Ikhfa shafawi",
+                "ب",
+                "Lips lightly together, hum",
+                "فَبَشِّرْهُم بِعَذَابٍ"
+              ],
+              [
+                "Idgham shafawi (mithlayn)",
+                "م",
+                "Merge, hum 2 counts",
+                "لَهُم مِّنۢ"
+              ],
+              [
+                "Izhar shafawi",
+                "All others",
+                "Clear meem, no hum",
+                "مِنكُمْ خَافِيَةٌۭ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Examples",
+          "heading": "Extra care: و and ف",
           "bullets": [
-            "كَم مِّن فِئَةٍ - idgham",
-            "تَرْمِيهِم بِحِجَارَةٍ - ikhfa",
-            "أَلَمْ تَرَ - izhar"
+            "Izhar shafawi is strongest before و and ف",
+            "Same lips, so meem may slip into them",
+            "Close fully for م, then open"
           ],
-          "note": "Al-Baqarah 2:249 and Al-Fil. Pupils recite each and describe what happens to the lips. For ikhfa, the lips hardly touch; for idgham, they join."
+          "note": "Model عَلَيْهِمْ وَلَا (1:7) and لَهُمْ فِيهَا."
         },
         {
-          "heading": "Extra care",
+          "heading": "Ghunnah with shaddah",
           "bullets": [
-            "Izhar before و and ف: do not hide the meem",
-            "Lips meet; do not merge",
-            "Keep ghunnah two counts"
+            "نّ and مّ: always two counts",
+            "إِنَّ, ثُمَّ, ٱلْجَنَّةِ",
+            "Full ghunnah, steady"
           ],
-          "note": "The lips must not blend into the waaw or faa. Pupils practise عَلَيْهِمْ وَلَا (Al-Fatihah, meem before waaw) and then find a meem before faa in the mushaf."
+          "note": "Al-Haqqah: إِنَّا (69:11), ثُمَّ (69:31)."
         },
         {
-          "heading": "Ghunnah mushaddad",
-          "bullets": [
-            "Noon and meem with shaddah",
-            "Full ghunnah: two counts",
-            "إِنَّ  /  ثُمَّ"
-          ],
-          "note": "Revise the highest level of ghunnah. Pupils recite words such as ثُمَّ and إِنَّ from the surahs. Take care to keep ghunnah steady and not too long."
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "Pressing the lips too hard in ikhfa shafawi.",
+          "misconception": {
+            "wrong": "fabash-shirhum-m-m bi'adhaab: lips pressed shut, a full meem",
+            "right": "Lips touch lightly, a gentle two-count hum, then ب"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«لَهُم مِّنۢ» (69:8) is ...",
+            "options": [
+              "Idgham shafawi",
+              "Ikhfa shafawi",
+              "Izhar shafawi"
+            ],
+            "answer": 0,
+            "why": "Meem sakinah before meem merges with ghunnah: idgham shafawi (mithlayn saghir)."
+          }
         }
       ],
       "practice": [
-        "Which rule is used before baa?",
-        "How long is ghunnah on a letter with shaddah?"
+        {
+          "q": "Read 69:7 to 8 and name every meem sakinah rule and ghunnah.",
+          "a": "سَخَّرَهَا عَلَيْهِمْ سَبْعَ izhar shafawi; كَأَنَّهُمْ أَعْجَازُ izhar shafawi and ghunnah on نّ; لَهُم مِّنۢ idgham shafawi.",
+          "mins": 5,
+          "model": "I do: عَلَيْهِمْ then س: izhar shafawi, close the lips and open. كَأَنَّهُمْ: نّ has a two-count ghunnah; then هُمْ before أ: izhar shafawi."
+        },
+        {
+          "q": "Ikhfa shafawi is before ...",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "م",
+            "و"
+          ]
+        }
       ],
       "independent": [
-        "Label all meem sakinah in Al-Fil and At-Takathur",
-        "Pair quiz on the three meem rules",
-        "Record yourself reciting Al-Fil"
+        {
+          "q": "Meem audit (pupil PDF): classify each meem sakinah in 69:18 to 30. Today's rota group recites Al-Qalam 68:1 to 16.",
+          "a": "مِنكُمْ خَافِيَةٌۭ (69:18), لَمْ أُوتَ (69:25), وَلَمْ أَدْرِ (69:26): all izhar shafawi. (هَآؤُمُ in 69:19 has a vowel, so no rule.)",
+          "mins": 10,
+          "model": "The teacher does 69:18: مِنكُمْ خَافِيَةٌۭ: meem sakinah before خ: izhar shafawi."
+        },
+        {
+          "q": "Extend: find one idgham shafawi in Al-Mulk or Al-Qalam.",
+          "a": "لَهُم مَّغْفِرَةٌۭ (67:12) or يَنصُرُكُم مِّن (67:20).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain why ikhfa shafawi has ghunnah but izhar shafawi does not.",
+          "a": "Before ب the meem is hidden, so its natural ghunnah shows; before other letters it is said clearly and complete.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the three meem rules.",
-        "What happens to the lips in idgham shafawi?"
+        {
+          "q": "«فَبَشِّرْهُم بِعَذَابٍ» (84:24) is ...",
+          "a": "ikhfa shafawi",
+          "mins": 1,
+          "options": [
+            "ikhfa shafawi",
+            "idgham shafawi",
+            "izhar shafawi"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your lips make both م and ب. What do you think happens when a meem sakinah meets a baa?",
+          "a": "The meem is hidden with a two-count hum, lips lightly together: ikhfa shafawi.",
+          "mins": 2
+        }
       ],
-      "homework": "Label every meem sakinah in Al-Fil and recite it with correct lip movement.",
-      "send": "SEND/EAL: lip diagrams and colour keys. Stretch: find meem sakinah rules in Surat Al-Baqarah 1-5."
+      "homework": "Revise Al-Qalam (manzil); find two izhar shafawi before و or ف; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Meem sakinah and ghunnah in detail rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Tajweed colour coded Quran",
+          "alt": "A colour-coded tajweed mushaf",
+          "for": "teach:1"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: When letters meet",
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
       "n": 4,
-      "title": "Identical, close and same-place letters",
+      "title": "When letters meet: identical, close and same-place letters",
       "duration": 50,
+      "bigQuestion": "When two people with the same name meet, how do we keep them apart? What happens when two identical letters meet?",
       "objectives": [
-        "Define mithlayn, mutajanisayn and mutaqaribayn",
-        "Read examples with correct merging",
-        "Explain the rule"
+        "To understand how letters that meet merge or stay clear (mithlayn, mutajanisayn, mutaqaribayn) and recite them correctly"
       ],
+      "successCriteria": [
+        "All: define mithlayn, mutajanisayn and mutaqaribayn",
+        "Most: read the common idgham pairs correctly",
+        "Some: explain the saktah in مَالِيَهْ ۜ هَلَكَ (69:28 to 29)"
+      ],
+      "smsc": "Cultural: the precision of the Hafs recitation passed down teacher to pupil",
       "keywords": [
         {
-          "term": "mithlayn",
-          "def": "two identical letters meeting"
+          "term": "mithlayn (مثلين)",
+          "def": "two identical letters"
         },
         {
-          "term": "mutajanisayn",
-          "def": "two letters from the same makhraj but different qualities"
+          "term": "mutajanisayn (متجانسين)",
+          "def": "same makhraj, different qualities"
         },
         {
-          "term": "mutaqaribayn",
-          "def": "two letters with close makharij"
+          "term": "mutaqaribayn (متقاربين)",
+          "def": "close in makhraj or qualities"
+        },
+        {
+          "term": "saktah (سكتة)",
+          "def": "a short silent pause without breath"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "When two people with the same name meet, how do we keep them apart? What happens when two identical letters meet?",
+        "a": "Identical letters usually merge into one with a shaddah (mithlayn): ٱضْرِب بِّعَصَاكَ."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Those to whom We have given the Book recite it with its true recital' (Al-Baqarah 2:121).",
+        "at": "start"
+      },
       "starter": [
-        "Name the idgham letters.",
-        "Say ط and ت.",
-        "What does a shaddah show?"
+        {
+          "q": "Ikhfa shafawi is before ...",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "م",
+            "ف"
+          ]
+        },
+        {
+          "q": "Recite Al-Haqqah 69:9 in your head. How does the next ayah begin?",
+          "a": "فَعَصَوْا۟ رَسُولَ",
+          "mins": 1,
+          "options": [
+            "فَعَصَوْا۟ رَسُولَ",
+            "قُطُوفُهَا دَانِيَةٌۭ",
+            "فِى جَنَّةٍ"
+          ]
+        },
+        {
+          "q": "Same makhraj means ...",
+          "a": "the same exit point",
+          "mins": 1,
+          "options": [
+            "the same exit point",
+            "the same vowel",
+            "the same surah"
+          ]
+        },
+        {
+          "q": "Which letters share ط د ت's makhraj?",
+          "a": "ط د ت (all three)",
+          "mins": 1,
+          "options": [
+            "ط د ت (all three)",
+            "ق ك",
+            "ب م"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "When letters meet",
-          "bullets": [
-            "First letter has a sukoon",
-            "Second letter has a vowel",
-            "The first letter merges into the second"
-          ],
-          "note": "Introduce the situation: a sukoon letter followed by a letter that is the same, close or from the same place. Ask pupils what they think happens."
+          "heading": "Three relationships",
+          "bullets": [],
+          "note": "Bismillah. Saghir: the first letter has sukoon and the second a vowel; then idgham happens in these cases.",
+          "table": {
+            "head": [
+              "Name",
+              "Meaning",
+              "Example",
+              "Reading"
+            ],
+            "rows": [
+              [
+                "Mithlayn (مثلين)",
+                "Identical letters",
+                "ٱضْرِب بِّعَصَاكَ",
+                "Merge: idrib-bi'asaaka"
+              ],
+              [
+                "Mutajanisayn (متجانسين)",
+                "Same makhraj, different sifat",
+                "قَد تَّبَيَّنَ",
+                "Merge: qat-tabayyana"
+              ],
+              [
+                "Mutaqaribayn (متقاربين)",
+                "Close makhraj or sifat",
+                "وَقُل رَّبِّ",
+                "Merge: qur-rabbi"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Mithlayn: identical",
-          "bullets": [
-            "اضْرِب بِّعَصَاكَ  (2:60)",
-            "The baa merges into the baa",
-            "Reads as one baa with shaddah"
-          ],
-          "note": "Say the phrase slowly then at pace. Pupils hear a single doubled baa. Other examples exist, e.g. in وَقَد دَّخَلُوا the dals merge."
+          "heading": "Same-place pairs that merge",
+          "bullets": [],
+          "note": "Read each slowly.",
+          "table": {
+            "head": [
+              "Pair",
+              "Example",
+              "Where"
+            ],
+            "rows": [
+              [
+                "ت into ط",
+                "قَالَت طَّآئِفَةٌۭ",
+                "33:13"
+              ],
+              [
+                "ذ into ظ",
+                "إِذ ظَّلَمُوٓا۟",
+                "4:64"
+              ],
+              [
+                "ث into ذ",
+                "يَلْهَث ۚ ذَّٰلِكَ",
+                "7:176"
+              ],
+              [
+                "ب into م",
+                "ٱرْكَب مَّعَنَا",
+                "11:42"
+              ],
+              [
+                "ق into ك",
+                "نَخْلُقكُّم",
+                "77:20"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Mutajanisayn: same place",
+          "heading": "When they do not merge",
           "bullets": [
-            "قَد تَّبَيَّنَ  (2:256)",
-            "Daal merges into taa",
-            "Same makhraj, different quality"
+            "A madd letter: فِى يَوْمٍ stays apart",
+            "The saktah: مَالِيَهْ ۜ هَلَكَ (69:28 to 29)",
+            "Ikhfa or izhar rules where they apply"
           ],
-          "note": "Daal and taa come from the same place. The first is voiced; the second whispered. The daal merges completely. Pupils recite and compare."
+          "note": "In 69:28 to 29 the mushaf shows ۜ: Hafs reads with a short silent pause (saktah) so the two haas stay apart; idgham is also narrated, but the pause is what we teach."
         },
         {
-          "heading": "Mutaqaribayn: close",
-          "bullets": [
-            "أَلَمْ نَخْلُقكُّم  (77:20)",
-            "قُل رَّبِّ  (17:24)",
-            "Qaaf and kaaf; laam and raa"
-          ],
-          "note": "Explain that qaaf and kaaf are close; laam and raa are close. Merge fully. Pupils note the shaddah that is written. Practise slowly."
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "qad tabayyana: a clear daal, then taa",
+            "right": "qat-tabayyana: the daal merges fully into the taa"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«قَالَت طَّآئِفَةٌۭ»: what kind of meeting?",
+            "options": [
+              "Mutajanisayn: same makhraj",
+              "Mithlayn: identical",
+              "Mutaqaribayn: close"
+            ],
+            "answer": 0,
+            "why": "ت and ط share a makhraj but differ in sifat, so mutajanisayn; the ت merges into ط."
+          }
         }
       ],
       "practice": [
-        "Which type is اضْرِب بِّعَصَاكَ?",
-        "What happens to the daal in قَد تَّبَيَّنَ?"
+        {
+          "q": "Read «يَلْهَث ذَّٰلِكَ» (7:176) and «وَقُل رَّبِّ» (17:24): name the meeting and how to read it.",
+          "a": "ث into ذ: mutajanisayn, yalhadh-dhaalik. ل into ر: mutaqaribayn, wa qur-rabbi.",
+          "mins": 5,
+          "model": "I do: يَلْهَث ذَّٰلِكَ: ث and ذ both come from the tongue tip with the edge of the top teeth, so same makhraj: mutajanisayn. The ث disappears into the ذ, which has a shaddah."
+        },
+        {
+          "q": "«عَلَيْهِم مُّؤْصَدَةٌ» is ...",
+          "a": "mithlayn",
+          "mins": 1,
+          "options": [
+            "mithlayn",
+            "mutaqaribayn",
+            "mutajanisayn"
+          ]
+        }
       ],
       "independent": [
-        "Sort 8 phrases into the three types",
-        "Read them with merging",
-        "Create a chart with the rules and examples"
+        {
+          "q": "Meeting-letters sort (pupil PDF): sort 9 examples into mithlayn, mutajanisayn, mutaqaribayn. Today's rota group recites 69:1 to 12.",
+          "a": "Mithlayn: ٱضْرِب بِّعَصَاكَ, عَلَيْهِم مُّؤْصَدَةٌ, رَبِحَت تِّجَٰرَتُهُمْ. Mutajanisayn: قَد تَّبَيَّنَ, قَالَت طَّآئِفَةٌ, إِذ ظَّلَمُوٓا۟. Mutaqaribayn: وَقُل رَّبِّ, نَخْلُقكُّم, and laam of al- before sun letters.",
+          "mins": 10,
+          "model": "The teacher sorts the first: ٱضْرِب بِّعَصَاكَ: ب and ب, identical: mithlayn."
+        },
+        {
+          "q": "Extend: find one mithlayn in Al-Mulk or Al-Qalam.",
+          "a": "Pupil gives an example (e.g. meem into meem) checked by the teacher.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why does the laam of al- merge into sun letters?",
+          "a": "Laam and the sun letters are close in makhraj (mutaqaribayn), so it merges.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What does mithlayn mean?",
-        "Give one example of mutaqaribayn."
+        {
+          "q": "ق into ك in «نَخْلُقكُّم» (77:20) is ...",
+          "a": "mutaqaribayn",
+          "mins": 1,
+          "options": [
+            "mutaqaribayn",
+            "mithlayn",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When two people with the same name meet, how do we keep them apart? What happens when two identical letters meet?",
+          "a": "Identical letters usually merge into one with a shaddah (mithlayn): ٱضْرِب بِّعَصَاكَ.",
+          "mins": 2
+        }
       ],
-      "homework": "Read the four examples every day and explain each to a family member.",
-      "send": "SEND/EAL: chart with examples and audio. Stretch: find more examples in the mushaf."
+      "homework": "Revise Al-Haqqah 69:1 to 12 and Al-Mulk; find one meeting-letters example in your manzil; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: When letters meet rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Two puzzle pieces joined",
+          "alt": "Two pieces fitting together",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 3: Stopping and starting well",
@@ -984,6 +1508,3048 @@
       ],
       "homework": "Practise your targets daily and record a new recitation next week.",
       "send": "SEND/EAL: simplified rubric and word bank. Stretch: peer-coach another pupil."
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 13,
+      "title": "Surat Al-Haqqah 69:1-12: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Al-Haqqah means 'the Inevitable Reality'. Why might the surah begin by asking three times what it is?",
+      "objectives": [
+        "To memorise Al-Haqqah 69:1-12 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 69:1-12 after the teacher, word for word",
+        "Most: recite 69:1-12 from memory with no more than one prompt",
+        "Some: link 69:1-12 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual and moral: lessons from nations who denied the truth",
+      "keywords": [
+        {
+          "term": "Al-Haqqah (الحاقة)",
+          "def": "the Inevitable Reality: a name of the Day of Judgement"
+        },
+        {
+          "term": "Thamud (ثمود)",
+          "def": "a nation destroyed for denying their messenger"
+        },
+        {
+          "term": "'Aad (عاد)",
+          "def": "a nation destroyed by a violent wind"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Haqqah means 'the Inevitable Reality'. Why might the surah begin by asking three times what it is?",
+        "a": "To make us feel its greatness and stop to think: the Day of Judgement will surely come (69:1 to 3)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'The Inevitable Reality. What is the Inevitable Reality? And what can make you know what is the Inevitable Reality?' (Al-Haqqah 69:1 to 3). The surah then reminds us of nations who denied it: Thamud, 'Aad and Fir'awn (69:4 to 10).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Mulk 67:1 in your head. How does the next ayah begin?",
+          "a": "ٱلَّذِى خَلَقَ",
+          "mins": 1,
+          "options": [
+            "قَالُوا۟ بَلَىٰ",
+            "وَقَالُوا۟ لَوْ",
+            "ٱلَّذِى خَلَقَ"
+          ]
+        },
+        {
+          "q": "«لَهُم مِّنۢ» is ...",
+          "a": "idgham shafawi",
+          "mins": 1,
+          "options": [
+            "idgham shafawi",
+            "ikhfa shafawi",
+            "izhar shafawi"
+          ]
+        },
+        {
+          "q": "Al-Haqqah is surah number ...",
+          "a": "69",
+          "mins": 1,
+          "options": [
+            "69",
+            "67",
+            "71"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Haqqah 69:1-6",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 69:1-6 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "ٱلْحَآقَّةُ (١) مَا ٱلْحَآقَّةُ (٢) وَمَآ أَدْرَىٰكَ مَا ٱلْحَآقَّةُ (٣) كَذَّبَتْ ثَمُودُ وَعَادٌۢ بِٱلْقَارِعَةِ (٤) فَأَمَّا ثَمُودُ فَأُهْلِكُوا۟ بِٱلطَّاغِيَةِ (٥) وَأَمَّا عَادٌۭ فَأُهْلِكُوا۟ بِرِيحٍۢ صَرْصَرٍ عَاتِيَةٍۢ (٦)",
+            "source": "Surat Al-Haqqah, 69:1-6"
+          }
+        },
+        {
+          "heading": "New ayat: Al-Haqqah 69:7-12",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 69:7-12 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "سَخَّرَهَا عَلَيْهِمْ سَبْعَ لَيَالٍۢ وَثَمَٰنِيَةَ أَيَّامٍ حُسُومًۭا فَتَرَى ٱلْقَوْمَ فِيهَا صَرْعَىٰ كَأَنَّهُمْ أَعْجَازُ نَخْلٍ خَاوِيَةٍۢ (٧) فَهَلْ تَرَىٰ لَهُم مِّنۢ بَاقِيَةٍۢ (٨) وَجَآءَ فِرْعَوْنُ وَمَن قَبْلَهُۥ وَٱلْمُؤْتَفِكَٰتُ بِٱلْخَاطِئَةِ (٩) فَعَصَوْا۟ رَسُولَ رَبِّهِمْ فَأَخَذَهُمْ أَخْذَةًۭ رَّابِيَةً (١٠) إِنَّا لَمَّا طَغَا ٱلْمَآءُ حَمَلْنَٰكُمْ فِى ٱلْجَارِيَةِ (١١) لِنَجْعَلَهَا لَكُمْ تَذْكِرَةًۭ وَتَعِيَهَآ أُذُنٌۭ وَٰعِيَةٌۭ (١٢)",
+            "source": "Surat Al-Haqqah, 69:7-12"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "69:1-2",
+                "The Inevitable Reality - What is the Inevitable Reality?"
+              ],
+              [
+                "69:3-4",
+                "And what can make you know what is the Inevitable Reality? Thamud and 'Aad denied the Striking Calamity."
+              ],
+              [
+                "69:5-6",
+                "So as for Thamud, they were destroyed by the overpowering [blast]. And as for 'Aad, they were destroyed by a screaming, violent wind"
+              ],
+              [
+                "69:7-8",
+                "Which Allah imposed upon them for seven nights and eight days in succession, so you would see the people therein fallen as if they were hollow trunks of palm trees. Then do you see of them any remains?"
+              ],
+              [
+                "69:9-10",
+                "And there came Pharaoh and those before him and the overturned cities with sin. And they disobeyed the messenger of their Lord, so He seized them with a seizure exceeding [in severity]."
+              ],
+              [
+                "69:11-12",
+                "Indeed, when the water overflowed, We carried your ancestors in the sailing ship That We might make it for you a reminder and [that] a conscious ear would be conscious of it."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 69:1-12 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which nations are named in 69:4 to 9?",
+            "options": [
+              "Thamud, 'Aad and Fir'awn",
+              "Quraysh and Ansar",
+              "The people of the cave"
+            ],
+            "answer": 0,
+            "why": "69:4 to 9 name Thamud, 'Aad, Fir'awn and those before him."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Haqqah 69:1-12 together, ayah by ayah.",
+          "a": "The class recites 69:1-12 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 69:1-12. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«ٱلْحَآقَّةُ»: how long is the madd?",
+          "a": "6 counts (madd lazim)",
+          "mins": 1,
+          "options": [
+            "6 counts (madd lazim)",
+            "2 counts",
+            "4 counts"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 69:1-12 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, write how each nation was destroyed (69:5 to 6).",
+          "a": "Thamud by the overpowering blast; 'Aad by a screaming, violent wind.",
+          "mins": 2
+        },
+        {
+          "q": "Find an iqlab and an idgham with ghunnah in 69:4 to 12.",
+          "a": "Iqlab: وَعَادٌۢ بِٱلْقَارِعَةِ (69:4), مِّنۢ بَاقِيَةٍۢ (69:8); idgham: لَيَالٍۢ وَثَمَٰنِيَةَ (69:7), أُذُنٌۭ وَٰعِيَةٌۭ (69:12).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Haqqah 69:5: «فَأَمَّا ثَمُودُ ...» Which word comes next?",
+          "a": "فَأُهْلِكُوا۟",
+          "mins": 1,
+          "options": [
+            "فَأُهْلِكُوا۟",
+            "خَافِيَةٌۭ",
+            "فَأَخَذَهُمْ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Haqqah means 'the Inevitable Reality'. Why might the surah begin by asking three times what it is?",
+          "a": "To make us feel its greatness and stop to think: the Day of Judgement will surely come (69:1 to 3).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Haqqah 69:1-12 to a parent three times a day and revise Al-Mulk and Al-Qalam (manzil for this half term); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Haqqah 69:1-12 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sandstorm desert wind",
+          "alt": "A strong wind over the desert",
+          "for": "hook"
+        },
+        {
+          "find": "Hollow palm trunks fallen",
+          "alt": "Fallen hollow palm trunks",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 14,
+      "title": "Surat Al-Haqqah 69:13-24: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Imagine being handed a book of everything you have ever done. What would you want it to say?",
+      "objectives": [
+        "To memorise Al-Haqqah 69:13-24 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 69:13-24 after the teacher, word for word",
+        "Most: recite 69:13-24 from memory with no more than one prompt",
+        "Some: link 69:13-24 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: hope in Allah's mercy and working for a good record",
+      "keywords": [
+        {
+          "term": "kitabiyah (كتابيه)",
+          "def": "my record"
+        },
+        {
+          "term": "yamin (يمين)",
+          "def": "right hand"
+        },
+        {
+          "term": "qutuf (قطوف)",
+          "def": "clusters of fruit"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Imagine being handed a book of everything you have ever done. What would you want it to say?",
+        "a": "The one given his book in his right hand says joyfully 'Here, read my record!' (69:19), because he expected his account (69:20)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So as for he who is given his record in his right hand, he will say: Here, read my record! Indeed, I was certain that I would be meeting my account' (Al-Haqqah 69:19 to 20). He will be in a pleasant life, in an elevated garden (69:21 to 22).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:10 in your head. How does the next ayah begin?",
+          "a": "إِنَّا لَمَّا",
+          "mins": 1,
+          "options": [
+            "وَٱلْمَلَكُ عَلَىٰٓ",
+            "وَلَوْ تَقَوَّلَ",
+            "إِنَّا لَمَّا"
+          ]
+        },
+        {
+          "q": "«قَد تَّبَيَّنَ» is ...",
+          "a": "mutajanisayn",
+          "mins": 1,
+          "options": [
+            "mutajanisayn",
+            "mithlayn",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Saktah means ...",
+          "a": "a short pause without breath",
+          "mins": 1,
+          "options": [
+            "a short pause without breath",
+            "a long stop",
+            "a hum"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Haqqah 69:13-18",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 69:13-18 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "فَإِذَا نُفِخَ فِى ٱلصُّورِ نَفْخَةٌۭ وَٰحِدَةٌۭ (١٣) وَحُمِلَتِ ٱلْأَرْضُ وَٱلْجِبَالُ فَدُكَّتَا دَكَّةًۭ وَٰحِدَةًۭ (١٤) فَيَوْمَئِذٍۢ وَقَعَتِ ٱلْوَاقِعَةُ (١٥) وَٱنشَقَّتِ ٱلسَّمَآءُ فَهِىَ يَوْمَئِذٍۢ وَاهِيَةٌۭ (١٦) وَٱلْمَلَكُ عَلَىٰٓ أَرْجَآئِهَا ۚ وَيَحْمِلُ عَرْشَ رَبِّكَ فَوْقَهُمْ يَوْمَئِذٍۢ ثَمَٰنِيَةٌۭ (١٧) يَوْمَئِذٍۢ تُعْرَضُونَ لَا تَخْفَىٰ مِنكُمْ خَافِيَةٌۭ (١٨)",
+            "source": "Surat Al-Haqqah, 69:13-18"
+          }
+        },
+        {
+          "heading": "New ayat: Al-Haqqah 69:19-24",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 69:19-24 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "فَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ بِيَمِينِهِۦ فَيَقُولُ هَآؤُمُ ٱقْرَءُوا۟ كِتَٰبِيَهْ (١٩) إِنِّى ظَنَنتُ أَنِّى مُلَٰقٍ حِسَابِيَهْ (٢٠) فَهُوَ فِى عِيشَةٍۢ رَّاضِيَةٍۢ (٢١) فِى جَنَّةٍ عَالِيَةٍۢ (٢٢) قُطُوفُهَا دَانِيَةٌۭ (٢٣) كُلُوا۟ وَٱشْرَبُوا۟ هَنِيٓـًٔۢا بِمَآ أَسْلَفْتُمْ فِى ٱلْأَيَّامِ ٱلْخَالِيَةِ (٢٤)",
+            "source": "Surat Al-Haqqah, 69:19-24"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "69:13-14",
+                "Then when the Horn is blown with one blast And the earth and the mountains are lifted and leveled with one blow -"
+              ],
+              [
+                "69:15-16",
+                "Then on that Day, the Resurrection will occur, And the heaven will split [open], for that Day it is infirm."
+              ],
+              [
+                "69:17-18",
+                "And the angels are at its edges. And there will bear the Throne of your Lord above them, that Day, eight [of them]. That Day, you will be exhibited [for judgement]; not hidden among you is anything concealed."
+              ],
+              [
+                "69:19-20",
+                "So as for he who is given his record in his right hand, he will say, \"Here, read my record! Indeed, I was certain that I would be meeting my account.\""
+              ],
+              [
+                "69:21-22",
+                "So he will be in a pleasant life - In an elevated garden,"
+              ],
+              [
+                "69:23-24",
+                "Its [fruit] to be picked hanging near. [They will be told], \"Eat and drink in satisfaction for what you put forth in the days past.\""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 69:13-24 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What does the one with the record in his right hand say (69:19)?",
+            "options": [
+              "Here, read my record!",
+              "I wish I had not been given my record",
+              "Where can I run?"
+            ],
+            "answer": 0,
+            "why": "69:19. The second option is what the one with the left hand says (69:25)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Haqqah 69:13-24 together, ayah by ayah.",
+          "a": "The class recites 69:13-24 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 69:13-24. Ayah 13: 3 times looking, 3 times without looking. Then ayah 14 the same way. Then link: recite 13 and 14 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«نَفْخَةٌۭ وَٰحِدَةٌۭ» (69:13) is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "izhar",
+            "ikhfa"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 69:13-24 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, list what the people of the garden enjoy in 69:21 to 24.",
+          "a": "A pleasant life, a lofty garden, fruit near at hand, eating and drinking in satisfaction.",
+          "mins": 2
+        },
+        {
+          "q": "Find the ikhfa examples in 69:17 to 18.",
+          "a": "يَوْمَئِذٍۢ ثَمَٰنِيَةٌۭ (69:17), يَوْمَئِذٍۢ تُعْرَضُونَ, مِنكُمْ (69:18).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Haqqah 69:22: «فِى جَنَّةٍ ...» Which word comes next?",
+          "a": "عَالِيَةٍۢ",
+          "mins": 1,
+          "options": [
+            "مِنكُم",
+            "عَالِيَةٍۢ",
+            "فَلَيْسَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Imagine being handed a book of everything you have ever done. What would you want it to say?",
+          "a": "The one given his book in his right hand says joyfully 'Here, read my record!' (69:19), because he expected his account (69:20).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Haqqah 69:13-24 to a parent three times a day and revise Al-Haqqah 69:1 to 12 (sabqi), Al-Mulk (manzil); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Haqqah 69:13-24 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Fruit trees orchard",
+          "alt": "Fruit hanging low in an orchard",
+          "for": "hook"
+        },
+        {
+          "find": "Open notebook blank pages",
+          "alt": "An open record book",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 15,
+      "title": "Muraja'ah: Al-Mulk, Al-Qalam and Al-Haqqah 1 to 24",
+      "duration": 50,
+      "bigQuestion": "Al-Mulk has 30 ayat, Al-Qalam 52, Al-Haqqah 52. How can you keep 134 ayat fresh at once?",
+      "objectives": [
+        "To understand how to keep earlier hifdh strong while adding new ayat, using a weekly revision cycle"
+      ],
+      "successCriteria": [
+        "All: recite Al-Haqqah 69:1 to 24 with no more than three prompts",
+        "Most: revise a manzil portion with a partner using the rubric",
+        "Some: identify and fix two weak links"
+      ],
+      "smsc": "Spiritual: perseverance with the Qur'an",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "manzil (منزل)",
+          "def": "older memorised portion on a rota"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Mulk has 30 ayat, Al-Qalam 52, Al-Haqqah 52. How can you keep 134 ayat fresh at once?",
+        "a": "Divide them: sabaq daily, sabqi weekly, manzil on a rota, logged so nothing is left for too long."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Keep refreshing your knowledge of the Qur'an, for it escapes faster than camels from their hobbles' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:17 in your head. How does the next ayah begin?",
+          "a": "يَوْمَئِذٍۢ تُعْرَضُونَ",
+          "mins": 1,
+          "options": [
+            "يَوْمَئِذٍۢ تُعْرَضُونَ",
+            "خُذُوهُ فَغُلُّوهُ",
+            "وَأَمَّا مَنْ"
+          ]
+        },
+        {
+          "q": "Al-Mulk has how many ayat?",
+          "a": "30",
+          "mins": 1,
+          "options": [
+            "30",
+            "52",
+            "44"
+          ]
+        },
+        {
+          "q": "«يَوْمَئِذٍۢ تُعْرَضُونَ» is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "izhar",
+            "idgham"
+          ]
+        },
+        {
+          "q": "Sabqi means ...",
+          "a": "recent ayat",
+          "mins": 1,
+          "options": [
+            "recent ayat",
+            "new ayat",
+            "older surahs"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "This half term's cycle",
+          "bullets": [],
+          "note": "Bismillah. Groups follow their placement; this is the default.",
+          "table": {
+            "head": [
+              "Day",
+              "Sabaq",
+              "Sabqi",
+              "Manzil"
+            ],
+            "rows": [
+              [
+                "Mon",
+                "Al-Haqqah new ayat",
+                "Last 12 ayat",
+                "Al-Mulk 1 to 15"
+              ],
+              [
+                "Tue",
+                "Link",
+                "Last 24 ayat",
+                "Al-Mulk 16 to 30"
+              ],
+              [
+                "Wed",
+                "Revise",
+                "Al-Haqqah so far",
+                "Al-Qalam 1 to 26"
+              ],
+              [
+                "Thu",
+                "Revise",
+                "Al-Haqqah so far",
+                "Al-Qalam 27 to 52"
+              ],
+              [
+                "Fri",
+                "Check",
+                "Al-Haqqah so far",
+                "Juz' 'Amma slice"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Weak links in Al-Haqqah",
+          "bullets": [
+            "69:19 and 69:25 both start فَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ",
+            "Right hand (69:19) against left hand (69:25)",
+            "Say the next word aloud to fix it"
+          ],
+          "note": "Practise 69:19 and 69:25 side by side until pupils can say which follows which."
+        },
+        {
+          "heading": "Partner check",
+          "bullets": [
+            "Partner holds the mushaf",
+            "Marks prompts and rule slips",
+            "One kind target"
+          ],
+          "note": "Breakout pairs, 4 minutes each way."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "69:13 to 24, one ayah at a time.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "Pupils listen, eyes on the mushaf",
+            "Three pupils repeat in turn",
+            "Teacher corrects one point",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "69:19 continues «فَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ ...» with ...",
+            "options": [
+              "بِيَمِينِهِۦ",
+              "بِشِمَالِهِۦ",
+              "وَرَآءَ ظَهْرِهِۦ"
+            ],
+            "answer": 0,
+            "why": "69:19: in his right hand. بِشِمَالِهِۦ is 69:25; وَرَآءَ ظَهْرِهِۦ is from Al-Inshiqaq 84:10."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix the weak link: recite 69:19 and 69:25 and explain how you remember the difference.",
+          "a": "69:19 بِيَمِينِهِۦ then 'Here, read my record'; 69:25 بِشِمَالِهِۦ then 'I wish I had not been given my record'.",
+          "mins": 5,
+          "model": "I do: right hand comes first in the surah, as in life we start with the right. Right hand: joy, هَآؤُمُ ٱقْرَءُوا۟. Left hand: regret, يَٰلَيْتَنِى."
+        },
+        {
+          "q": "Al-Qalam has how many ayat?",
+          "a": "52",
+          "mins": 1,
+          "options": [
+            "52",
+            "30",
+            "28"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite today's manzil to a partner who marks the rubric (pupil PDF). Today's rota group recites 69:1 to 24 to the teacher.",
+          "a": "Partner rubric with scores and one target; the teacher records rota scores.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model one round."
+        },
+        {
+          "q": "Extend: list your two weakest links in Al-Mulk or Al-Qalam.",
+          "a": "Pupil's own list with ayah numbers.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write a 5-day plan for your own manzil.",
+          "a": "A realistic plan logged in the portal.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The one given his record in his left hand says ...",
+          "a": "I wish I had not been given my record",
+          "mins": 1,
+          "options": [
+            "I wish I had not been given my record",
+            "Here, read my record",
+            "I am safe"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Mulk has 30 ayat, Al-Qalam 52, Al-Haqqah 52. How can you keep 134 ayat fresh at once?",
+          "a": "Divide them: sabaq daily, sabqi weekly, manzil on a rota, logged so nothing is left for too long.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow the cycle in the portal log; fix one weak link five times a day.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Hobbled camel resting",
+          "alt": "A camel resting",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 16,
+      "title": "Surat Al-Haqqah 69:25-36: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "The man given his record in his left hand says 'my wealth has not availed me, my authority has gone'. What does he realise too late?",
+      "objectives": [
+        "To memorise Al-Haqqah 69:25-36 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 69:25-36 after the teacher, word for word",
+        "Most: recite 69:25-36 from memory with no more than one prompt",
+        "Some: link 69:25-36 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: feeding the poor and not trusting in wealth or power",
+      "keywords": [
+        {
+          "term": "maliyah (ماليه)",
+          "def": "my wealth"
+        },
+        {
+          "term": "sultaniyah (سلطانيه)",
+          "def": "my authority"
+        },
+        {
+          "term": "miskin (مسكين)",
+          "def": "a poor person"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The man given his record in his left hand says 'my wealth has not availed me, my authority has gone'. What does he realise too late?",
+        "a": "That wealth and power cannot save anyone; he did not believe in Allah or encourage feeding the poor (69:33 to 34)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'My wealth has not availed me. Gone from me is my authority' (Al-Haqqah 69:28 to 29), and of that man: 'Indeed, he did not believe in Allah, the Most Great, nor did he encourage the feeding of the poor' (69:33 to 34).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:21 in your head. How does the next ayah begin?",
+          "a": "فِى جَنَّةٍ",
+          "mins": 1,
+          "options": [
+            "لَأَخَذْنَا مِنْهُ",
+            "وَإِنَّهُۥ لَتَذْكِرَةٌۭ",
+            "فِى جَنَّةٍ"
+          ]
+        },
+        {
+          "q": "«عِيشَةٍۢ رَّاضِيَةٍۢ» is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "idgham with ghunnah",
+            "ikhfa"
+          ]
+        },
+        {
+          "q": "The small seen (saktah) mark in 69:28 means ...",
+          "a": "saktah (short pause)",
+          "mins": 1,
+          "options": [
+            "saktah (short pause)",
+            "sajdah",
+            "end of surah"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Haqqah 69:25-30",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 69:25-30 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ بِشِمَالِهِۦ فَيَقُولُ يَٰلَيْتَنِى لَمْ أُوتَ كِتَٰبِيَهْ (٢٥) وَلَمْ أَدْرِ مَا حِسَابِيَهْ (٢٦) يَٰلَيْتَهَا كَانَتِ ٱلْقَاضِيَةَ (٢٧) مَآ أَغْنَىٰ عَنِّى مَالِيَهْ ۜ (٢٨) هَلَكَ عَنِّى سُلْطَٰنِيَهْ (٢٩) خُذُوهُ فَغُلُّوهُ (٣٠)",
+            "source": "Surat Al-Haqqah, 69:25-30"
+          }
+        },
+        {
+          "heading": "New ayat: Al-Haqqah 69:31-36",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 69:31-36 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "ثُمَّ ٱلْجَحِيمَ صَلُّوهُ (٣١) ثُمَّ فِى سِلْسِلَةٍۢ ذَرْعُهَا سَبْعُونَ ذِرَاعًۭا فَٱسْلُكُوهُ (٣٢) إِنَّهُۥ كَانَ لَا يُؤْمِنُ بِٱللَّهِ ٱلْعَظِيمِ (٣٣) وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ (٣٤) فَلَيْسَ لَهُ ٱلْيَوْمَ هَٰهُنَا حَمِيمٌۭ (٣٥) وَلَا طَعَامٌ إِلَّا مِنْ غِسْلِينٍۢ (٣٦)",
+            "source": "Surat Al-Haqqah, 69:31-36"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "69:25-26",
+                "But as for he who is given his record in his left hand, he will say, \"Oh, I wish I had not been given my record And had not known what is my account."
+              ],
+              [
+                "69:27-28",
+                "I wish my death had been the decisive one. My wealth has not availed me."
+              ],
+              [
+                "69:29-30",
+                "Gone from me is my authority.\" [Allah will say], \"Seize him and shackle him."
+              ],
+              [
+                "69:31-32",
+                "Then into Hellfire drive him. Then into a chain whose length is seventy cubits insert him.\""
+              ],
+              [
+                "69:33-34",
+                "Indeed, he did not used to believe in Allah, the Most Great, Nor did he encourage the feeding of the poor."
+              ],
+              [
+                "69:35-36",
+                "So there is not for him here this Day any devoted friend Nor any food except from the discharge of wounds;"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 69:25-36 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "69:34 says he did not encourage ...",
+            "options": [
+              "feeding the poor",
+              "reading",
+              "travelling"
+            ],
+            "answer": 0,
+            "why": "'Nor did he encourage the feeding of the poor' (69:34)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Haqqah 69:25-36 together, ayah by ayah.",
+          "a": "The class recites 69:25-36 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 69:25-36. Ayah 25: 3 times looking, 3 times without looking. Then ayah 26 the same way. Then link: recite 25 and 26 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«مِنْ غِسْلِينٍۢ» (69:36) is ...",
+          "a": "izhar",
+          "mins": 1,
+          "options": [
+            "izhar",
+            "ikhfa",
+            "idgham"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 69:25-36 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, write two reasons given in 69:33 to 34 for his punishment.",
+          "a": "He did not believe in Allah, the Most Great; he did not encourage feeding the poor.",
+          "mins": 2
+        },
+        {
+          "q": "Recite 69:28 to 29 with the saktah and explain it.",
+          "a": "مَالِيَهْ ۜ هَلَكَ: a short pause with no breath so the two haas stay apart (Hafs).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Haqqah 69:30: «خُذُوهُ ...» Which word comes next?",
+          "a": "فَغُلُّوهُ",
+          "mins": 1,
+          "options": [
+            "تَرَىٰ",
+            "أَحَدٍ",
+            "فَغُلُّوهُ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The man given his record in his left hand says 'my wealth has not availed me, my authority has gone'. What does he realise too late?",
+          "a": "That wealth and power cannot save anyone; he did not believe in Allah or encourage feeding the poor (69:33 to 34).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Haqqah 69:25-36 to a parent three times a day and revise Al-Haqqah 69:1 to 24, Al-Qalam (manzil); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Haqqah 69:25-36 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Coins pile",
+          "alt": "A pile of coins",
+          "for": "hook"
+        },
+        {
+          "find": "Bread loaves",
+          "alt": "Bread to feed the hungry",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 17,
+      "title": "Practice in Al-Haqqah: noon, meem and meeting letters together",
+      "duration": 50,
+      "bigQuestion": "A rule you can name is not yet a rule you can use. What turns knowing into doing?",
+      "objectives": [
+        "To understand how to apply noon, meem and meeting-letter rules together while reciting a passage from memory"
+      ],
+      "successCriteria": [
+        "All: recite 69:25 to 36 with noon and meem rules correct",
+        "Most: read the saktah in 69:28 to 29 correctly",
+        "Some: annotate a full ayah's rules in under two minutes"
+      ],
+      "smsc": "Social: precise, kind peer feedback",
+      "keywords": [
+        {
+          "term": "tilawah (تلاوة)",
+          "def": "recitation"
+        },
+        {
+          "term": "saktah (سكتة)",
+          "def": "a short pause without breath"
+        },
+        {
+          "term": "ghunnah (غنة)",
+          "def": "a nasal sound held for two counts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A rule you can name is not yet a rule you can use. What turns knowing into doing?",
+        "a": "Practice in real ayat, slowly, then at normal pace, with someone listening."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:26 in your head. How does the next ayah begin?",
+          "a": "يَٰلَيْتَهَا كَانَتِ",
+          "mins": 1,
+          "options": [
+            "يَٰلَيْتَهَا كَانَتِ",
+            "فَعَصَوْا۟ رَسُولَ",
+            "كُلُوا۟ وَٱشْرَبُوا۟"
+          ]
+        },
+        {
+          "q": "«قَد تَّبَيَّنَ» is ...",
+          "a": "mutajanisayn",
+          "mins": 1,
+          "options": [
+            "mutajanisayn",
+            "mithlayn",
+            "ikhfa"
+          ]
+        },
+        {
+          "q": "Ikhfa shafawi is before ...",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "م",
+            "ف"
+          ]
+        },
+        {
+          "q": "Al-Haqqah 69:33: «إِنَّهُۥ كَانَ لَا ...» Which word comes next?",
+          "a": "يُؤْمِنُ",
+          "mins": 1,
+          "options": [
+            "لَا",
+            "وَيَحْمِلُ",
+            "يُؤْمِنُ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Rule map: 69:25 to 36",
+          "bullets": [],
+          "note": "Bismillah. Pupils name the rule first.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "Read"
+            ],
+            "rows": [
+              [
+                "مَنْ أُوتِىَ",
+                "Al-Haqqah 69:25",
+                "Izhar",
+                "Clear noon"
+              ],
+              [
+                "وَلَمْ أَدْرِ",
+                "Al-Haqqah 69:26",
+                "Izhar shafawi",
+                "Clear meem"
+              ],
+              [
+                "مَالِيَهْ",
+                "Al-Haqqah 69:28",
+                "Saktah ۜ",
+                "Pause, no breath"
+              ],
+              [
+                "سِلْسِلَةٍۢ ذَرْعُهَا",
+                "Al-Haqqah 69:32",
+                "Ikhfa: ذ",
+                "Light hum"
+              ],
+              [
+                "ثُمَّ ٱلْجَحِيمَ",
+                "Al-Haqqah 69:31",
+                "Ghunnah on مّ",
+                "Two counts"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Slow, steady, normal",
+          "bullets": [
+            "1: slow, naming each rule",
+            "2: steady, rules only in the head",
+            "3: normal pace, no pauses mid-ayah"
+          ],
+          "note": "Model 69:30 to 32 at the three speeds."
+        },
+        {
+          "heading": "Annotate one ayah",
+          "bullets": [
+            "Underline noon sakinah and tanween",
+            "Circle meem sakinah",
+            "Box meeting letters and saktah"
+          ],
+          "note": "Pupils do 69:32 on the pupil PDF."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "69:25 to 36.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "Pupils listen for the rules",
+            "Three pupils repeat in turn",
+            "Teacher corrects one rule",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«سِلْسِلَةٍۢ ذَرْعُهَا» (69:32) is ...",
+            "options": [
+              "Ikhfa",
+              "Izhar",
+              "Idgham"
+            ],
+            "answer": 0,
+            "why": "Tanween before ذ: ذ is an ikhfa letter."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Annotate and read 69:32 «ثُمَّ فِى سِلْسِلَةٍۢ ذَرْعُهَا سَبْعُونَ ذِرَاعًۭا فَٱسْلُكُوهُ».",
+          "a": "ثُمَّ ghunnah on مّ; سِلْسِلَةٍۢ ذَرْعُهَا ikhfa; ذِرَاعًۭا فَٱسْلُكُوهُ ikhfa; raa in ذِرَاعًا heavy (fathah); qalqalah none.",
+          "mins": 5,
+          "model": "I do: ثُمَّ: two-count ghunnah. سِلْسِلَةٍۢ then ذ: ikhfa. سَبْعُونَ: clear. ذِرَاعًۭا then ف: ikhfa. ٱسْلُكُوهُ: joining from فَ, the alif is silent."
+        },
+        {
+          "q": "«وَلَمْ أَدْرِ» (69:26) is ...",
+          "a": "izhar shafawi",
+          "mins": 1,
+          "options": [
+            "izhar shafawi",
+            "ikhfa shafawi",
+            "idgham shafawi"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite 69:25 to 36 at normal pace; your partner ticks each rule on the rule map (pupil PDF). Today's rota group recites 69:13 to 30.",
+          "a": "Partner sheet ticked; teacher records rota scores and targets.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model one round at normal pace."
+        },
+        {
+          "q": "Extend: annotate 69:36 to 37.",
+          "a": "طَعَامٌ إِلَّا izhar; مِنْ غِسْلِينٍۢ izhar; 69:37 لَّا يَأْكُلُهُۥٓ إِلَّا: madd before hamza, 4 or 5 counts.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain why the raa in ذِرَاعًا is heavy.",
+          "a": "The raa has a fathah.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The three speeds end with ...",
+          "a": "normal pace, rules automatic",
+          "mins": 1,
+          "options": [
+            "normal pace, rules automatic",
+            "very fast",
+            "silent reading"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A rule you can name is not yet a rule you can use. What turns knowing into doing?",
+          "a": "Practice in real ayat, slowly, then at normal pace, with someone listening.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite 69:1 to 36 daily at the three speeds; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Practice in Al-Haqqah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Chain links metal",
+          "alt": "A chain (silsilah, 69:32)",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 18,
+      "title": "Muraja'ah: linking Al-Haqqah 1 to 36",
+      "duration": 50,
+      "bigQuestion": "Can you start Al-Haqqah from the middle? Why does that test your hifdh better than starting at ayah 1?",
+      "objectives": [
+        "To understand how to link sections of a long surah securely and recite Al-Haqqah 69:1 to 36 fluently"
+      ],
+      "successCriteria": [
+        "All: recite 69:1 to 36 with no more than three prompts",
+        "Most: move between sections without pausing",
+        "Some: recite any section on request ('start at 69:19')"
+      ],
+      "smsc": "Spiritual: carrying the Qur'an in the heart with confidence",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "joint",
+          "def": "the link between two sections of a surah"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can you start Al-Haqqah from the middle? Why does that test your hifdh better than starting at ayah 1?",
+        "a": "It shows each ayah is known, not just the chain from the start."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:29 in your head. How does the next ayah begin?",
+          "a": "خُذُوهُ فَغُلُّوهُ",
+          "mins": 1,
+          "options": [
+            "خُذُوهُ فَغُلُّوهُ",
+            "فَإِذَا نُفِخَ",
+            "وَمَا هُوَ"
+          ]
+        },
+        {
+          "q": "«ثُمَّ» has ...",
+          "a": "ghunnah on مّ",
+          "mins": 1,
+          "options": [
+            "ghunnah on مّ",
+            "ikhfa",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Which ayah has the saktah?",
+          "a": "69:28",
+          "mins": 1,
+          "options": [
+            "69:28",
+            "69:19",
+            "69:1"
+          ]
+        },
+        {
+          "q": "Al-Haqqah 69:36: «وَلَا طَعَامٌ ...» Which word comes next?",
+          "a": "إِلَّا",
+          "mins": 1,
+          "options": [
+            "إِلَّا",
+            "لَتَذْكِرَةٌۭ",
+            "نُفِخَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Joints between sections",
+          "bullets": [],
+          "note": "Bismillah. The joints are where hifdh breaks.",
+          "table": {
+            "head": [
+              "Joint",
+              "End of one",
+              "Start of next"
+            ],
+            "rows": [
+              [
+                "69:12 to 13",
+                "وَٰعِيَةٌۭ",
+                "فَإِذَا نُفِخَ"
+              ],
+              [
+                "69:24 to 25",
+                "ٱلْخَالِيَةِ",
+                "وَأَمَّا مَنْ"
+              ],
+              [
+                "69:30 to 31",
+                "فَغُلُّوهُ",
+                "ثُمَّ ٱلْجَحِيمَ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Start anywhere",
+          "bullets": [
+            "Teacher names an ayah number",
+            "Pupil starts there, isti'adhah first",
+            "Recite three ayat"
+          ],
+          "note": "Quick-fire with mics in turn."
+        },
+        {
+          "heading": "Partner check",
+          "bullets": [
+            "Partner names a start ayah",
+            "You recite three ayat",
+            "Swap"
+          ],
+          "note": "Breakout pairs."
+        },
+        {
+          "heading": "Listen and repeat: the joints",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher recites across a joint",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher checks the link",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "After 69:24 (… ٱلْخَالِيَةِ), the next ayah begins ...",
+            "options": [
+              "وَأَمَّا مَنْ أُوتِىَ",
+              "فَهُوَ فِى عِيشَةٍ",
+              "خُذُوهُ فَغُلُّوهُ"
+            ],
+            "answer": 0,
+            "why": "69:25 begins وَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ بِشِمَالِهِۦ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Start at 69:19 and recite to 69:24.",
+          "a": "Recited with no prompts.",
+          "mins": 5,
+          "model": "I do: isti'adhah, then 69:19 فَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ بِيَمِينِهِۦ ... to 69:24 ... ٱلْخَالِيَةِ, linking 69:21 to 22 carefully."
+        },
+        {
+          "q": "Al-Haqqah has how many ayat?",
+          "a": "52",
+          "mins": 1,
+          "options": [
+            "52",
+            "44",
+            "30"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: 'start anywhere' check across 69:1 to 36 (pupil PDF has the start ayat). Today's rota group recites 69:25 to 36 to the teacher.",
+          "a": "Partner records each start and any prompts; the teacher records rota scores.",
+          "mins": 10,
+          "model": "The teacher models one 'start anywhere' turn with a volunteer."
+        },
+        {
+          "q": "Extend: write the first two words of each ayah 69:25 to 36 from memory.",
+          "a": "69:25 وَأَمَّا مَنْ ... 69:36 وَلَا طَعَامٌ.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: recite 69:1 to 36 without stopping.",
+          "a": "Fluent with no prompts.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Best test of strong hifdh?",
+          "a": "Starting from any ayah",
+          "mins": 1,
+          "options": [
+            "Starting from any ayah",
+            "Reading from the mushaf",
+            "Listening only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Can you start Al-Haqqah from the middle? Why does that test your hifdh better than starting at ayah 1?",
+          "a": "It shows each ayah is known, not just the chain from the start.",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise 'start anywhere' with a parent for 69:1 to 36; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Bridge over river",
+          "alt": "A bridge joining two sides",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 19,
+      "title": "Surat Al-Haqqah 69:37-44: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Some said the Qur'an was poetry or fortune-telling. Why do you think 69:40 to 43 insist it is 'a revelation from the Lord of the worlds'?",
+      "objectives": [
+        "To memorise Al-Haqqah 69:37-44 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 69:37-44 after the teacher, word for word",
+        "Most: recite 69:37-44 from memory with no more than one prompt",
+        "Some: link 69:37-44 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: certainty that the Qur'an is Allah's revealed word",
+      "keywords": [
+        {
+          "term": "tanzil (تنزيل)",
+          "def": "revelation, sent down"
+        },
+        {
+          "term": "sha'ir (شاعر)",
+          "def": "poet"
+        },
+        {
+          "term": "kahin (كاهن)",
+          "def": "soothsayer, fortune-teller"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some said the Qur'an was poetry or fortune-telling. Why do you think 69:40 to 43 insist it is 'a revelation from the Lord of the worlds'?",
+        "a": "To answer those claims: it is the word of a noble Messenger, revealed by Allah, not poetry or soothsaying (69:41 to 43)."
+      },
+      "islamicLink": {
+        "text": "Allah says: '[That] indeed, the Qur'an is the word of a noble Messenger. And it is not the word of a poet; little do you believe. Nor the word of a soothsayer; little do you remember. It is a revelation from the Lord of the worlds' (Al-Haqqah 69:40 to 43).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:32 in your head. How does the next ayah begin?",
+          "a": "إِنَّهُۥ كَانَ",
+          "mins": 1,
+          "options": [
+            "إِنَّهُۥ كَانَ",
+            "وَأَمَّا عَادٌۭ",
+            "وَأَمَّا مَنْ"
+          ]
+        },
+        {
+          "q": "«مِنْ غِسْلِينٍۢ» is ...",
+          "a": "izhar",
+          "mins": 1,
+          "options": [
+            "izhar",
+            "ikhfa",
+            "iqlab"
+          ]
+        },
+        {
+          "q": "Al-Haqqah 69:35: «فَلَيْسَ لَهُ ...» Which word comes next?",
+          "a": "ٱلْيَوْمَ",
+          "mins": 1,
+          "options": [
+            "وَعَادٌۢ",
+            "مَا",
+            "ٱلْيَوْمَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Haqqah 69:37-44",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 69:37-44 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "لَّا يَأْكُلُهُۥٓ إِلَّا ٱلْخَٰطِـُٔونَ (٣٧) فَلَآ أُقْسِمُ بِمَا تُبْصِرُونَ (٣٨) وَمَا لَا تُبْصِرُونَ (٣٩) إِنَّهُۥ لَقَوْلُ رَسُولٍۢ كَرِيمٍۢ (٤٠) وَمَا هُوَ بِقَوْلِ شَاعِرٍۢ ۚ قَلِيلًۭا مَّا تُؤْمِنُونَ (٤١) وَلَا بِقَوْلِ كَاهِنٍۢ ۚ قَلِيلًۭا مَّا تَذَكَّرُونَ (٤٢) تَنزِيلٌۭ مِّن رَّبِّ ٱلْعَٰلَمِينَ (٤٣) وَلَوْ تَقَوَّلَ عَلَيْنَا بَعْضَ ٱلْأَقَاوِيلِ (٤٤)",
+            "source": "Surat Al-Haqqah, 69:37-44"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "69:37",
+                "None will eat it except the sinners."
+              ],
+              [
+                "69:38",
+                "So I swear by what you see"
+              ],
+              [
+                "69:39",
+                "And what you do not see"
+              ],
+              [
+                "69:40",
+                "[That] indeed, the Qur'an is the word of a noble Messenger."
+              ],
+              [
+                "69:41",
+                "And it is not the word of a poet; little do you believe."
+              ],
+              [
+                "69:42",
+                "Nor the word of a soothsayer; little do you remember."
+              ],
+              [
+                "69:43",
+                "[It is] a revelation from the Lord of the worlds."
+              ],
+              [
+                "69:44",
+                "And if Muhammad had made up about Us some [false] sayings,"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "رَسُولٍۢ كَرِيمٍۢ",
+                "Al-Haqqah 69:40",
+                "Ikhfa: ك",
+                "rasoolin-kareem"
+              ],
+              [
+                "قَلِيلًۭا مَّا",
+                "Al-Haqqah 69:41",
+                "Idgham with ghunnah: م",
+                "qaleelam-maa"
+              ],
+              [
+                "تَنزِيلٌۭ مِّن",
+                "Al-Haqqah 69:43",
+                "Ikhfa (ز) and idgham (م)",
+                "tan-zeelum-mir-rabb"
+              ],
+              [
+                "مِّن رَّبِّ",
+                "Al-Haqqah 69:43",
+                "Idgham without ghunnah: ر",
+                "mir-rabbil-'aalameen"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 69:37-44 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "69:41 to 42 say the Qur'an is NOT the word of ...",
+            "options": [
+              "a poet or a soothsayer",
+              "a noble Messenger",
+              "the Lord of the worlds"
+            ],
+            "answer": 0,
+            "why": "69:41 to 42 deny poet and soothsayer; 69:40 and 43 affirm the noble Messenger and the Lord of the worlds."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Haqqah 69:37-44 together, ayah by ayah.",
+          "a": "The class recites 69:37-44 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 69:37-44. Ayah 37: 3 times looking, 3 times without looking. Then ayah 38 the same way. Then link: recite 37 and 38 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«مِّن رَّبِّ» (69:43) is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "idgham with ghunnah",
+            "izhar"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 69:37-44 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, explain in two sentences why the Qur'an cannot be poetry.",
+          "a": "Its words are from Allah, revealed to the Prophet ﷺ; it does not follow the poets' metres or their aims.",
+          "mins": 2
+        },
+        {
+          "q": "Count the noon sakinah and tanween rules in 69:40 to 43.",
+          "a": "رَسُولٍۢ كَرِيمٍۢ ikhfa; شَاعِرٍۢ قَلِيلًۭا ikhfa; قَلِيلًۭا مَّا idgham (twice); كَاهِنٍۢ قَلِيلًۭا ikhfa; تَنزِيلٌۭ ikhfa and idgham; مِّن رَّبِّ idgham.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Haqqah 69:43: «تَنزِيلٌۭ مِّن ...» Which word comes next?",
+          "a": "رَّبِّ",
+          "mins": 1,
+          "options": [
+            "عَنِّى",
+            "رَّبِّ",
+            "فَعَصَوْا۟"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Some said the Qur'an was poetry or fortune-telling. Why do you think 69:40 to 43 insist it is 'a revelation from the Lord of the worlds'?",
+          "a": "To answer those claims: it is the word of a noble Messenger, revealed by Allah, not poetry or soothsaying (69:41 to 43).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Haqqah 69:37-44 to a parent three times a day and revise Al-Haqqah 69:1 to 36; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Haqqah 69:37-44 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "hook"
+        },
+        {
+          "find": "Reed pen calligraphy qalam",
+          "alt": "A reed pen",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 20,
+      "title": "Surat Al-Haqqah 69:45-52: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "The surah ends with 'So glorify the name of your Lord, the Most Great'. After everything in Al-Haqqah, why end with tasbih?",
+      "objectives": [
+        "To memorise Al-Haqqah 69:45-52 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 69:45-52 after the teacher, word for word",
+        "Most: recite 69:45-52 from memory with no more than one prompt",
+        "Some: link 69:45-52 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: tasbih as the response to the truth",
+      "keywords": [
+        {
+          "term": "haqq al-yaqin (حق اليقين)",
+          "def": "the truth of certainty"
+        },
+        {
+          "term": "sabbih (سبّح)",
+          "def": "glorify!"
+        },
+        {
+          "term": "al-'adhim (العظيم)",
+          "def": "the Most Great"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The surah ends with 'So glorify the name of your Lord, the Most Great'. After everything in Al-Haqqah, why end with tasbih?",
+        "a": "Because the truth of the Qur'an and the Day is certain (69:51); the right response is to glorify Allah (69:52)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And indeed, it is the truth of certainty. So glorify the name of your Lord, the Most Great' (Al-Haqqah 69:51 to 52). We say 'Subhana Rabbiyal-'Adheem' in ruku'.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:41 in your head. How does the next ayah begin?",
+          "a": "وَلَا بِقَوْلِ",
+          "mins": 1,
+          "options": [
+            "وَلَا بِقَوْلِ",
+            "كَذَّبَتْ ثَمُودُ",
+            "فَسَبِّحْ بِٱسْمِ"
+          ]
+        },
+        {
+          "q": "«رَسُولٍۢ كَرِيمٍۢ» is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "izhar",
+            "idgham"
+          ]
+        },
+        {
+          "q": "«قَلِيلًۭا مَّا» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "ikhfa",
+            "izhar"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Haqqah 69:45-52",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 69:45-52 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "لَأَخَذْنَا مِنْهُ بِٱلْيَمِينِ (٤٥) ثُمَّ لَقَطَعْنَا مِنْهُ ٱلْوَتِينَ (٤٦) فَمَا مِنكُم مِّنْ أَحَدٍ عَنْهُ حَٰجِزِينَ (٤٧) وَإِنَّهُۥ لَتَذْكِرَةٌۭ لِّلْمُتَّقِينَ (٤٨) وَإِنَّا لَنَعْلَمُ أَنَّ مِنكُم مُّكَذِّبِينَ (٤٩) وَإِنَّهُۥ لَحَسْرَةٌ عَلَى ٱلْكَٰفِرِينَ (٥٠) وَإِنَّهُۥ لَحَقُّ ٱلْيَقِينِ (٥١) فَسَبِّحْ بِٱسْمِ رَبِّكَ ٱلْعَظِيمِ (٥٢)",
+            "source": "Surat Al-Haqqah, 69:45-52"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "69:45",
+                "We would have seized him by the right hand;"
+              ],
+              [
+                "69:46",
+                "Then We would have cut from him the aorta."
+              ],
+              [
+                "69:47",
+                "And there is no one of you who could prevent [Us] from him."
+              ],
+              [
+                "69:48",
+                "And indeed, the Qur'an is a reminder for the righteous."
+              ],
+              [
+                "69:49",
+                "And indeed, We know that among you are deniers."
+              ],
+              [
+                "69:50",
+                "And indeed, it will be [a cause of] regret upon the disbelievers."
+              ],
+              [
+                "69:51",
+                "And indeed, it is the truth of certainty."
+              ],
+              [
+                "69:52",
+                "So exalt the name of your Lord, the Most Great."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "مِنكُم مِّنْ",
+                "Al-Haqqah 69:47",
+                "Ikhfa (ك); then idgham shafawi (م)",
+                "min-kum-min"
+              ],
+              [
+                "مِّنْ أَحَدٍ",
+                "Al-Haqqah 69:47",
+                "Izhar: ء",
+                "Clear noon"
+              ],
+              [
+                "لَتَذْكِرَةٌۭ لِّلْمُتَّقِينَ",
+                "Al-Haqqah 69:48",
+                "Idgham without ghunnah: ل",
+                "latadhkiratul-lil-muttaqeen"
+              ],
+              [
+                "مِنكُم مُّكَذِّبِينَ",
+                "Al-Haqqah 69:49",
+                "Idgham shafawi: م",
+                "minkum-mukadh-dhibeen"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 69:45-52 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "69:52 tells us to ...",
+            "options": [
+              "glorify the name of our Lord, the Most Great",
+              "travel the earth",
+              "stop reciting"
+            ],
+            "answer": 0,
+            "why": "'So glorify the name of your Lord, the Most Great' (69:52)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Haqqah 69:45-52 together, ayah by ayah.",
+          "a": "The class recites 69:45-52 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 69:45-52. Ayah 45: 3 times looking, 3 times without looking. Then ayah 46 the same way. Then link: recite 45 and 46 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«مِنكُم مُّكَذِّبِينَ» (69:49) has ...",
+          "a": "idgham shafawi",
+          "mins": 1,
+          "options": [
+            "idgham shafawi",
+            "ikhfa shafawi",
+            "izhar shafawi"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 69:45-52 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Write where Muslims say 'Subhana Rabbiyal-'Adheem' and why it links to 69:52.",
+          "a": "In ruku' of salah; it glorifies Allah, the Most Great, as 69:52 commands.",
+          "mins": 2
+        },
+        {
+          "q": "Recite the whole of Al-Haqqah (52 ayat).",
+          "a": "All 52 ayat with no more than three prompts.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Haqqah 69:51: «وَإِنَّهُۥ ...» Which word comes next?",
+          "a": "لَحَقُّ",
+          "mins": 1,
+          "options": [
+            "وَلَمْ",
+            "كَأَنَّهُمْ",
+            "لَحَقُّ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The surah ends with 'So glorify the name of your Lord, the Most Great'. After everything in Al-Haqqah, why end with tasbih?",
+          "a": "Because the truth of the Qur'an and the Day is certain (69:51); the right response is to glorify Allah (69:52).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Haqqah 69:45-52 to a parent three times a day and revise Al-Haqqah 69:1 to 44; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Haqqah 69:45-52 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Prayer mat sajjadah",
+          "alt": "A prayer mat",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 21,
+      "title": "Muraja'ah: Al-Mulk with the half term's rules",
+      "duration": 50,
+      "bigQuestion": "Al-Mulk was memorised before this term. What is the risk of 'old' surahs, and what is your plan?",
+      "objectives": [
+        "To understand how to keep Al-Mulk secure while applying this half term's noon, meem and meeting-letter rules to it"
+      ],
+      "successCriteria": [
+        "All: recite Al-Mulk 67:1 to 15 with no more than three prompts",
+        "Most: name five rules in Al-Mulk",
+        "Some: recite all of Al-Mulk with rules secure"
+      ],
+      "smsc": "Spiritual: Allah's dominion over all things",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "Al-Mulk (الملك)",
+          "def": "the Dominion: surah 67"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Mulk was memorised before this term. What is the risk of 'old' surahs, and what is your plan?",
+        "a": "They fade quietly. A fixed manzil day and a partner check keep them."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Blessed is He in whose hand is dominion, and He is over all things competent' (Al-Mulk 67:1).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:46 in your head. How does the next ayah begin?",
+          "a": "فَمَا مِنكُم",
+          "mins": 1,
+          "options": [
+            "فَمَا مِنكُم",
+            "ثُمَّ فِى",
+            "فَأَمَّا مَنْ"
+          ]
+        },
+        {
+          "q": "«مِنكُم مِّنْ» has ...",
+          "a": "ikhfa then idgham shafawi",
+          "mins": 1,
+          "options": [
+            "ikhfa then idgham shafawi",
+            "izhar twice",
+            "iqlab"
+          ]
+        },
+        {
+          "q": "Al-Mulk is surah ...",
+          "a": "67",
+          "mins": 1,
+          "options": [
+            "67",
+            "69",
+            "68"
+          ]
+        },
+        {
+          "q": "Al-Mulk 67:2: «ٱلَّذِى خَلَقَ ٱلْمَوْتَ ...» Which word comes next?",
+          "a": "وَٱلْحَيَوٰةَ",
+          "mins": 1,
+          "options": [
+            "وَٱلْحَيَوٰةَ",
+            "جَآءَنَا",
+            "فَٱمْشُوا۟"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Mulk: the opening",
+          "bullets": [
+            "Recite 67:1 to 2 together",
+            "Notice the rules as we go"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "تَبَٰرَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌ (١) ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًۭا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ (٢)",
+            "source": "Surat Al-Mulk, 67:1-2"
+          }
+        },
+        {
+          "heading": "Rules in Al-Mulk",
+          "bullets": [],
+          "note": "Pupils name each rule.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "شَىْءٍۢ قَدِيرٌ",
+                "Al-Mulk 67:1",
+                "Ikhfa: ق",
+                "shay'in-qadeer, heavier hum"
+              ],
+              [
+                "طِبَاقًۭا ۖ مَّا",
+                "Al-Mulk 67:3",
+                "Idgham with ghunnah: م",
+                "When joined: tibaaqam-maa"
+              ],
+              [
+                "مِن تَفَٰوُتٍۢ",
+                "Al-Mulk 67:3",
+                "Ikhfa: ت",
+                "min-tafaawut"
+              ],
+              [
+                "يَنقَلِبْ",
+                "Al-Mulk 67:4",
+                "Ikhfa (ق); qalqalah (ب)",
+                "yan-qalib, bounce on ب"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Partner check",
+          "bullets": [
+            "Partner holds the mushaf",
+            "Marks prompts and rule slips",
+            "One kind target"
+          ],
+          "note": "Breakout pairs."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "67:1 to 10.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher corrects one point",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«شَىْءٍۢ قَدِيرٌ» (67:1) is ...",
+            "options": [
+              "Ikhfa",
+              "Izhar",
+              "Iqlab"
+            ],
+            "answer": 0,
+            "why": "Tanween before ق: ikhfa."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 67:1 to 4 and name every noon sakinah and tanween rule.",
+          "a": "شَىْءٍۢ قَدِيرٌ ikhfa; عَمَلًۭا ۚ وَهُوَ idgham with ghunnah if joined; طِبَاقًۭا ۖ مَّا idgham with ghunnah if joined; مِن تَفَٰوُتٍۢ ikhfa; مِن فُطُورٍۢ ikhfa; يَنقَلِبْ ikhfa; خَاسِئًۭا وَهُوَ idgham with ghunnah.",
+          "mins": 5,
+          "model": "I do: 67:1 شَىْءٍۢ then ق: ikhfa. 67:2 عَمَلًۭا ۚ then وَ: if I join (no stop at ۚ), idgham with ghunnah; if I stop, عَمَلَا with a long aa."
+        },
+        {
+          "q": "Al-Mulk has how many ayat?",
+          "a": "30",
+          "mins": 1,
+          "options": [
+            "30",
+            "52",
+            "29"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite Al-Mulk to a partner who marks the rubric (pupil PDF). Today's rota group recites 69:37 to 52 to the teacher.",
+          "a": "Partner rubric with scores and one target; the teacher records rota scores.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model one round."
+        },
+        {
+          "q": "Extend: find an iqlab in Al-Mulk.",
+          "a": "عَلِيمٌۢ بِذَاتِ (67:13) or شَىْءٍۭ بَصِيرٌ (67:19).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: recite Al-Mulk and Al-Haqqah back to back.",
+          "a": "Both surahs fluently.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "«طِبَاقًۭا مَّا» (67:3) is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "ikhfa",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Mulk was memorised before this term. What is the risk of 'old' surahs, and what is your plan?",
+          "a": "They fade quietly. A fixed manzil day and a partner check keep them.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Mulk daily this week and Al-Haqqah 69:37 to 52; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Night sky stars Milky Way",
+          "alt": "The night sky (67:5 mentions lamps in the sky)",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 22,
+      "title": "Al-Haqqah as a whole: meaning and tadabbur",
+      "duration": 50,
+      "bigQuestion": "If you had to explain Al-Haqqah to a friend in four sentences, what would they be?",
+      "objectives": [
+        "To understand the structure and main message of Al-Haqqah and use it to strengthen recitation from memory"
+      ],
+      "successCriteria": [
+        "All: name the four parts of the surah",
+        "Most: explain one lesson from each part",
+        "Some: use the structure to recite any part on request"
+      ],
+      "smsc": "Spiritual: reflecting on the Qur'an's message and acting on it",
+      "keywords": [
+        {
+          "term": "tadabbur (تدبر)",
+          "def": "reflecting deeply on the meaning of the Qur'an"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had to explain Al-Haqqah to a friend in four sentences, what would they be?",
+        "a": "The Day is certain (1 to 3); nations who denied it were destroyed (4 to 12); the Day and the two records (13 to 37); the Qur'an is truth from Allah (38 to 52)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Then do they not reflect upon the Qur'an?' (An-Nisa' 4:82). Tadabbur, reflecting on meaning, is part of reciting.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:48 in your head. How does the next ayah begin?",
+          "a": "وَإِنَّا لَنَعْلَمُ",
+          "mins": 1,
+          "options": [
+            "وَحُمِلَتِ ٱلْأَرْضُ",
+            "وَإِنَّا لَنَعْلَمُ",
+            "لِنَجْعَلَهَا لَكُمْ"
+          ]
+        },
+        {
+          "q": "69:52 ends with ...",
+          "a": "ٱلْعَظِيمِ",
+          "mins": 1,
+          "options": [
+            "ٱلْعَظِيمِ",
+            "ٱلْيَقِينِ",
+            "ٱلْكَٰفِرِينَ"
+          ]
+        },
+        {
+          "q": "Who said 'Here, read my record'?",
+          "a": "The one given it in the right hand",
+          "mins": 1,
+          "options": [
+            "The one given it in the right hand",
+            "The one given it in the left hand",
+            "Fir'awn"
+          ]
+        },
+        {
+          "q": "How many ayat are in Surat Al-Haqqah (سورة الحاقة)?",
+          "a": "52",
+          "mins": 1,
+          "options": [
+            "44",
+            "56",
+            "52"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four parts of Al-Haqqah",
+          "bullets": [],
+          "note": "Bismillah.",
+          "timeline": [
+            {
+              "label": "69:1-3",
+              "text": "The Inevitable Reality: the Day is certain"
+            },
+            {
+              "label": "69:4-12",
+              "text": "Nations who denied it: Thamud, 'Aad, Fir'awn, Nuh's people"
+            },
+            {
+              "label": "69:13-37",
+              "text": "The Day: the Trumpet, the two records"
+            },
+            {
+              "label": "69:38-52",
+              "text": "The Qur'an is truth from the Lord of the worlds"
+            }
+          ]
+        },
+        {
+          "heading": "Lessons",
+          "bullets": [
+            "Denial of the truth has consequences",
+            "Our record is being written now",
+            "Feed the poor, believe in Allah",
+            "Glorify Allah, the Most Great"
+          ],
+          "note": "Link each lesson to an ayah number."
+        },
+        {
+          "heading": "Structure helps hifdh",
+          "bullets": [
+            "Know which part you are in",
+            "Each part has a theme",
+            "Themes stop jumps between similar ayat"
+          ],
+          "note": "Pupils recite the first ayah of each part."
+        },
+        {
+          "heading": "Listen and repeat: first ayah of each part",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher recites the first ayah of a part",
+            "Pupils name the part's theme",
+            "Three pupils continue three ayat",
+            "Teacher checks",
+            "Next part"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "69:38 to 52 are mainly about ...",
+            "options": [
+              "the truth of the Qur'an",
+              "the people of 'Aad",
+              "the Trumpet"
+            ],
+            "answer": 0,
+            "why": "The final part defends the Qur'an as revelation and ends with tasbih."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "In the portal response box, write a four-sentence summary of Al-Haqqah, one sentence per part (sentence starter: 'Al-Haqqah begins by ...').",
+          "a": "Four accurate sentences matching the four parts.",
+          "mins": 5,
+          "model": "I do part 1: 'Al-Haqqah begins by asking three times what the Inevitable Reality is, to show that the Day of Judgement is certain and great (69:1 to 3).'"
+        },
+        {
+          "q": "Which part names Thamud and 'Aad?",
+          "a": "69:4 to 12",
+          "mins": 1,
+          "options": [
+            "69:4 to 12",
+            "69:13 to 37",
+            "69:38 to 52"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Complete the summary in the portal box, then recite the first three ayat of each part to a partner. Today's rota group recites Al-Haqqah to the teacher.",
+          "a": "Summary complete; partner ticks each part.",
+          "mins": 10,
+          "model": "The teacher shows part 2's sentence as a second model."
+        },
+        {
+          "q": "Extend: choose one ayah that affects you most and explain why.",
+          "a": "Personal response linked to a correct ayah.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: find two other surahs that also describe the two records (right and left hand).",
+          "a": "Al-Inshiqaq (84:7 to 12) and Al-Waqi'ah or Al-Isra'; at least Al-Inshiqaq.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Tadabbur means ...",
+          "a": "reflecting on the meaning",
+          "mins": 1,
+          "options": [
+            "reflecting on the meaning",
+            "reciting fast",
+            "a tajweed rule"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you had to explain Al-Haqqah to a friend in four sentences, what would they be?",
+          "a": "The Day is certain (1 to 3); nations who denied it were destroyed (4 to 12); the Day and the two records (13 to 37); the Qur'an is truth from Allah (38 to 52).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Haqqah daily; read your summary to a parent; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Haqqah as a whole rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Mountains of Hejaz",
+          "alt": "Mountains in Arabia",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 23,
+      "title": "Recital rehearsal: peer checking Al-Haqqah",
+      "duration": 50,
+      "bigQuestion": "Athletes rehearse before a race. What does a good rehearsal for a recitation check look like?",
+      "objectives": [
+        "To understand how to prepare for a recitation assessment through rehearsal and precise peer feedback"
+      ],
+      "successCriteria": [
+        "All: recite half of Al-Haqqah to a partner",
+        "Most: give and act on one precise target",
+        "Some: recite the whole surah with rules secure"
+      ],
+      "smsc": "Social: honest, kind feedback",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "rubric",
+          "def": "the checklist used to assess recitation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Athletes rehearse before a race. What does a good rehearsal for a recitation check look like?",
+        "a": "Recite under check conditions, get one precise target, fix it, recite again."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The best of you are those who learn the Qur'an and teach it' (Bukhari). Helping a partner is part of this.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:38 in your head. How does the next ayah begin?",
+          "a": "وَمَا لَا",
+          "mins": 1,
+          "options": [
+            "لَأَخَذْنَا مِنْهُ",
+            "وَلَوْ تَقَوَّلَ",
+            "وَمَا لَا"
+          ]
+        },
+        {
+          "q": "Which part has the two records?",
+          "a": "69:13 to 37",
+          "mins": 1,
+          "options": [
+            "69:13 to 37",
+            "69:1 to 3",
+            "69:38 to 52"
+          ]
+        },
+        {
+          "q": "«ٱلْحَآقَّةُ» has madd of ...",
+          "a": "6 counts",
+          "mins": 1,
+          "options": [
+            "6 counts",
+            "2 counts",
+            "4 counts"
+          ]
+        },
+        {
+          "q": "Al-Haqqah 69:50: «وَإِنَّهُۥ لَحَسْرَةٌ ...» Which word comes next?",
+          "a": "عَلَى",
+          "mins": 1,
+          "options": [
+            "ظَنَنتُ",
+            "فَهِىَ",
+            "عَلَى"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Check conditions",
+          "bullets": [
+            "Camera on, mushaf closed",
+            "Isti'adhah and Bismillah",
+            "Steady pace, stop only at ayah ends"
+          ],
+          "note": "Bismillah."
+        },
+        {
+          "heading": "The rubric",
+          "bullets": [],
+          "note": "Partners use this.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Precise feedback",
+          "bullets": [
+            "Name the ayah",
+            "Name the word",
+            "Name the rule or makhraj",
+            "Model it"
+          ],
+          "note": "Example: '69:7, حُسُومًۭا فَتَرَى: ikhfa, you said a clear noon. Listen: husoomaa-fataraa'."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Any section pupils request.",
+          "cycle": [
+            "Teacher recites a requested ayah",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher corrects one point",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which is precise feedback?",
+            "options": [
+              "69:7, حُسُومًۭا فَتَرَى: ikhfa, not a clear noon",
+              "Good job",
+              "Some mistakes"
+            ],
+            "answer": 0,
+            "why": "Precise feedback names the ayah, word and rule so it can be fixed."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give precise feedback on this: a pupil says «مِنْ أُوتِىَ» in 69:19 instead of «مَنْ أُوتِىَ».",
+          "a": "69:19, مَنْ: the vowel is fathah (man), not kasrah (min); it changes the word from 'whoever' to 'from'.",
+          "mins": 5,
+          "model": "I do: 'Ayah 69:19. Word: مَنْ. Vowel: fathah, man, meaning whoever. You said min. Listen: fa ammaa man ootiya.'"
+        },
+        {
+          "q": "Check conditions: the mushaf is ...",
+          "a": "closed",
+          "mins": 1,
+          "options": [
+            "closed",
+            "open",
+            "on screen"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Rehearsal in breakout pairs: each recites half of Al-Haqqah under check conditions and receives one precise target (pupil PDF). Today's rota group recites to the teacher.",
+          "a": "Each pupil has one written target and a second attempt.",
+          "mins": 10,
+          "model": "The teacher rehearses with a volunteer, giving one precise target."
+        },
+        {
+          "q": "Extend: recite 69:1 to 52 to a parent tonight.",
+          "a": "Parent signs the log.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: lead a group of three, giving each a target.",
+          "a": "Three precise targets recorded.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Precise feedback names ...",
+          "a": "ayah, word and rule",
+          "mins": 1,
+          "options": [
+            "ayah, word and rule",
+            "only the surah",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Athletes rehearse before a race. What does a good rehearsal for a recitation check look like?",
+          "a": "Recite under check conditions, get one precise target, fix it, recite again.",
+          "mins": 2
+        }
+      ],
+      "homework": "Rehearse Al-Haqqah daily under check conditions; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Recital rehearsal rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Running track lanes",
+          "alt": "A running track, a place to rehearse",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Haqqah; noon and meem recap and when letters meet",
+      "n": 24,
+      "title": "Half-term hifdh check: Al-Haqqah against the rubric",
+      "duration": 50,
+      "bigQuestion": "Ramadan is the month of the Qur'an. How will you keep Al-Mulk, Al-Qalam and Al-Haqqah over the four-week break?",
+      "objectives": [
+        "To show secure memorisation of Al-Haqqah with noon, meem and meeting-letter rules applied"
+      ],
+      "successCriteria": [
+        "All: recite Al-Haqqah with no more than three prompts",
+        "Most: keep noon and meem rules correct throughout",
+        "Some: score 4 on every row and set a target for Al-Ma'arij"
+      ],
+      "smsc": "Spiritual: a Ramadan commitment to the Qur'an",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "rubric",
+          "def": "the checklist used to assess recitation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Ramadan is the month of the Qur'an. How will you keep Al-Mulk, Al-Qalam and Al-Haqqah over the four-week break?",
+        "a": "A slice of each daily, logged, and recite in salah where possible."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'The month of Ramadan in which the Qur'an was revealed, a guidance for the people' (Al-Baqarah 2:185).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:44 in your head. How does the next ayah begin?",
+          "a": "لَأَخَذْنَا مِنْهُ",
+          "mins": 1,
+          "options": [
+            "وَإِنَّهُۥ لَحَقُّ",
+            "لَأَخَذْنَا مِنْهُ",
+            "مَا ٱلْحَآقَّةُ"
+          ]
+        },
+        {
+          "q": "«مِنكُم مُّكَذِّبِينَ» has ...",
+          "a": "idgham shafawi",
+          "mins": 1,
+          "options": [
+            "idgham shafawi",
+            "izhar shafawi",
+            "ikhfa"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Haqqah?",
+          "a": "52",
+          "mins": 1,
+          "options": [
+            "52",
+            "30",
+            "44"
+          ]
+        },
+        {
+          "q": "Al-Haqqah 69:47: «فَمَا مِنكُم ...» Which word comes next?",
+          "a": "مِّنْ",
+          "mins": 1,
+          "options": [
+            "مِّنْ",
+            "جَنَّةٍ",
+            "عَلَى"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How we are checked",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The check",
+          "bullets": [
+            "Recite the section named",
+            "Answer one rule question",
+            "Hear your score and target"
+          ],
+          "note": "One by one, about 3 minutes each; pupils heard this week in the rota keep that score. Others revise in breakout pairs."
+        },
+        {
+          "heading": "Mistakes to avoid",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Swapping 69:19 (right hand) and 69:25 (left hand)",
+            "right": "Right hand: joy (69:19 to 24). Left hand: regret (69:25 to 29)"
+          }
+        },
+        {
+          "heading": "Break plan",
+          "bullets": [
+            "Al-Haqqah daily",
+            "Al-Mulk and Al-Qalam on alternate days",
+            "Log it; parent initials weekly"
+          ],
+          "note": "Pupils write the plan on the pupil PDF."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "69:31 begins ...",
+            "options": [
+              "ثُمَّ ٱلْجَحِيمَ",
+              "خُذُوهُ فَغُلُّوهُ",
+              "إِنَّهُۥ كَانَ"
+            ],
+            "answer": 0,
+            "why": "69:30 خُذُوهُ فَغُلُّوهُ; 69:31 ثُمَّ ٱلْجَحِيمَ صَلُّوهُ; 69:33 إِنَّهُۥ كَانَ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Self-check: recite 69:38 to 52 and score each rubric row.",
+          "a": "Pupil scores and one target.",
+          "mins": 5,
+          "model": "I do: I recite 69:38 to 52: hifdh 4; makharij 4; rules 3 (missed idgham in مِّن رَّبِّ); fluency 4. Target: merge noon into raa."
+        },
+        {
+          "q": "Next Year 8 surah after Al-Haqqah?",
+          "a": "Al-Ma'arij",
+          "mins": 1,
+          "options": [
+            "Al-Ma'arij",
+            "Nuh",
+            "Al-Jinn"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Hifdh check: recite to the teacher one by one. While waiting, revise your manzil in breakout pairs and write your break plan.",
+          "a": "Teacher records rubric scores and one target per pupil in the portal.",
+          "mins": 10,
+          "model": "The teacher runs the first check as a model."
+        },
+        {
+          "q": "Extend: write your break plan on the pupil PDF.",
+          "a": "Daily plan by surah, logged.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: read Al-Ma'arij 70:1 to 10 with the mushaf and mark the rules (no new hifdh until checked).",
+          "a": "Annotated ayat with rules named.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ramadan is the month the Qur'an was ...",
+          "a": "revealed (2:185)",
+          "mins": 1,
+          "options": [
+            "revealed (2:185)",
+            "compiled",
+            "translated"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Ramadan is the month of the Qur'an. How will you keep Al-Mulk, Al-Qalam and Al-Haqqah over the four-week break?",
+          "a": "A slice of each daily, logged, and recite in salah where possible.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow your break plan; log it daily.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Half-term hifdh check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Crescent moon dusk",
+          "alt": "The crescent moon at dusk",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
