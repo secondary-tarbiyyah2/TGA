@@ -7,41 +7,110 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Container } from "./Container";
 import { ViewSettingsMenu, ViewSettingsPanel } from "./ViewSettings";
+import { Icon, type IconName } from "@/components/learn/Icon";
 import { primaryNav, primaryCta, secondaryCta, portalCta, isNavGroup, type NavGroup } from "@/lib/nav";
 
-function DesktopDropdown({ group, open, onToggle, onClose }: { group: NavGroup; open: boolean; onToggle: () => void; onClose: () => void }) {
+/** The four things most visitors come for, as tiles at the top of the mobile menu. */
+const QUICK_LINKS: { href: string; label: string; icon: IconName }[] = [
+  { href: "/eligibility", label: "Is it right for us?", icon: "listChecks" },
+  { href: "/fees", label: "Fees", icon: "wallet" },
+  { href: "/open-evening", label: "Open evenings", icon: "presentation" },
+  { href: "/term-dates", label: "Term dates", icon: "calendarDays" },
+];
+
+function samePage(pathname: string, href: string): boolean {
+  const path = href.split("#")[0].replace(/\/$/, "") || "/";
+  return (pathname.replace(/\/$/, "") || "/") === path;
+}
+
+function DesktopDropdown({ group, open, onOpen, onToggle, onClose }: { group: NavGroup; open: boolean; onOpen: () => void; onToggle: () => void; onClose: () => void }) {
   const pathname = usePathname();
-  const active = group.items.some((i) => i.href === pathname);
+  const active = group.items.some((i) => samePage(pathname, i.href));
+  const panelId = `menu-${group.label.toLowerCase().replace(/[^a-z]+/g, "-")}`;
+  // Hover opens after a short pause and closes after a short grace period, so
+  // crossing the gap to the panel (or brushing past) doesn't flicker it.
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const enter = () => {
+    clearTimeout(timer.current);
+    timer.current = setTimeout(onOpen, 90);
+  };
+  const leave = () => {
+    clearTimeout(timer.current);
+    timer.current = setTimeout(onClose, 160);
+  };
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const wide = group.items.length > 4;
 
   return (
-    <div className="relative">
+    <div className="relative" onMouseEnter={enter} onMouseLeave={leave}>
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={open}
-        aria-haspopup="true"
-        className={`flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-2.5 text-sm font-medium transition-colors ${
+        aria-controls={panelId}
+        className={`nav-link relative flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2.5 text-sm font-medium transition-colors ${
           active || open ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
         }`}
+        data-active={active || undefined}
       >
         {group.label}
-        <svg viewBox="0 0 12 8" width="10" height="7" aria-hidden="true" className={`transition-transform ${open ? "rotate-180" : ""}`}>
+        <svg viewBox="0 0 12 8" width="10" height="7" aria-hidden="true" className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}>
           <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
       {open && (
-        <div role="menu" className="absolute left-0 top-full z-10 mt-2 min-w-[220px] rounded-2xl border border-gold-light/50 bg-white p-2 shadow-warm">
-          {group.items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              role="menuitem"
-              onClick={onClose}
-              className="block rounded-lg px-4 py-2.5 text-sm text-ink/80 hover:bg-cream hover:text-gold-700"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div
+          id={panelId}
+          className={`menu-panel absolute left-1/2 top-full z-10 mt-3 -translate-x-1/2 overflow-hidden rounded-2xl border border-gold-light/50 bg-white shadow-warm ${
+            group.feature ? (wide ? "w-[44rem]" : "w-[38rem]") : "w-72"
+          }`}
+        >
+          {/* A bridge over the gap so the pointer can travel from the button to the panel. */}
+          <span aria-hidden="true" className="absolute -top-3 left-0 right-0 h-3" />
+          <div className={`grid ${group.feature ? "grid-cols-[1fr_15rem]" : ""}`}>
+            <ul className={`grid gap-0.5 p-3 ${wide ? "grid-cols-2" : ""}`}>
+              {group.items.map((item) => {
+                const here = samePage(pathname, item.href);
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={onClose}
+                      aria-current={here ? "page" : undefined}
+                      className={`group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-cream ${here ? "bg-cream" : ""}`}
+                    >
+                      {item.icon && (
+                        <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-gold-light/60 bg-gold-50 text-gold-700 transition-colors group-hover:border-gold-500 group-hover:bg-gold-100">
+                          <Icon name={item.icon} size="sm" />
+                        </span>
+                      )}
+                      <span className="min-w-0">
+                        <span className="block text-sm font-semibold text-ink group-hover:text-gold-900">{item.label}</span>
+                        {item.desc && <span className="mt-0.5 block text-xs leading-snug text-ink/70">{item.desc}</span>}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            {group.feature && (
+              <Link
+                href={group.feature.href}
+                onClick={onClose}
+                className="geo-texture-dark group relative flex flex-col justify-between gap-4 bg-ink-900 p-5 text-white"
+              >
+                <span>
+                  <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-gold-300">{group.feature.eyebrow}</span>
+                  <span className="mt-2 block font-serif text-lg font-semibold leading-snug">{group.feature.title}</span>
+                  <span className="mt-1.5 block text-sm text-white/80">{group.feature.body}</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold-300">
+                  {group.feature.cta}
+                  <Icon name="arrowRight" size="sm" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            )}
+          </div>
         </div>
       )}
     </div>
@@ -155,6 +224,20 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
         </button>
       </div>
       <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 p-5">
+        <div className="mb-3 grid grid-cols-2 gap-2">
+          {QUICK_LINKS.map((q) => (
+            <Link
+              key={q.href}
+              href={q.href}
+              onClick={close}
+              className="flex items-center gap-2.5 rounded-xl border border-gold-light/60 bg-white px-3 py-3 text-sm font-semibold text-ink active:bg-gold-50"
+              style={{ touchAction: "manipulation" }}
+            >
+              <Icon name={q.icon} size="sm" className="h-4 w-4 text-gold-700" />
+              {q.label}
+            </Link>
+          ))}
+        </div>
         {primaryNav.map((entry) =>
           isNavGroup(entry) ? (
             <div key={entry.label} className="border-b border-gold-light/40">
@@ -180,10 +263,18 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
                       key={item.href}
                       href={item.href}
                       onClick={close}
-                      className="flex items-center px-2 text-ink/75"
-                      style={{ minHeight: 48, touchAction: "manipulation" }}
+                      className="flex items-center gap-3 rounded-xl px-2 py-1.5 text-ink/80 active:bg-gold-50"
+                      style={{ minHeight: 52, touchAction: "manipulation" }}
                     >
-                      {item.label}
+                      {item.icon && (
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-gold-light/60 bg-white text-gold-700">
+                          <Icon name={item.icon} size="sm" />
+                        </span>
+                      )}
+                      <span className="min-w-0">
+                        <span className="block text-[0.95rem] font-medium text-ink">{item.label}</span>
+                        {item.desc && <span className="block text-xs text-ink/65">{item.desc}</span>}
+                      </span>
                     </Link>
                   ))}
                 </div>
@@ -297,6 +388,7 @@ export function Header() {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing drawer visibility to an external change (the route), not a render-cycle self-sync
     setDrawerOpen(false);
+    setOpenDesktopMenu(null);
   }, [pathname]);
 
   return (
@@ -333,16 +425,18 @@ export function Header() {
                 key={entry.label}
                 group={entry}
                 open={openDesktopMenu === entry.label}
+                onOpen={() => setOpenDesktopMenu(entry.label)}
                 onToggle={() => setOpenDesktopMenu((cur) => (cur === entry.label ? null : entry.label))}
-                onClose={() => setOpenDesktopMenu(null)}
+                onClose={() => setOpenDesktopMenu((cur) => (cur === entry.label ? null : cur))}
               />
             ) : (
               <Link
                 key={entry.href}
                 href={entry.href}
-                aria-current={pathname === entry.href ? "page" : undefined}
-                className={`whitespace-nowrap rounded-md px-2 py-2.5 text-sm font-medium transition-colors ${
-                  pathname === entry.href ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
+                aria-current={samePage(pathname, entry.href) ? "page" : undefined}
+                data-active={samePage(pathname, entry.href) || undefined}
+                className={`nav-link relative whitespace-nowrap rounded-md px-2.5 py-2.5 text-sm font-medium transition-colors ${
+                  samePage(pathname, entry.href) ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
                 }`}
               >
                 {entry.label}

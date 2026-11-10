@@ -5,14 +5,17 @@ import { footerColumns } from "@/lib/nav";
 import { getSiteSettings } from "@/lib/content";
 import { LEARN_ORIGIN } from "@/lib/learn/origin";
 import { ViewSettingsMenu } from "./ViewSettings";
+import { StarMark } from "./StarMark";
 
 export async function Footer() {
   const settings = await getSiteSettings();
   const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
 
   return (
-    <footer className="geo-texture border-t border-gold-light/30 bg-ink text-cream/90">
-      <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr_1fr]">
+    <footer className="geo-texture-dark relative overflow-hidden border-t border-gold-light/30 bg-ink text-cream/90">
+      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-300 to-transparent" />
+      <StarMark className="pointer-events-none absolute -left-24 top-10 h-80 w-80 text-gold-300/10" />
+      <Container className="relative grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr_1fr]">
         <div>
           <Image src="/brand/ga-wordmark-white.png" alt="Tarbiyyah Global Academy" width={200} height={61} />
           <p className="mt-4 text-sm text-white/70">Part of the Tarbiyyah Education Trust.</p>
