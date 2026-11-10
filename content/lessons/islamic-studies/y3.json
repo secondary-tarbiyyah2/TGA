@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y3",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: blessings, gratitude, praying on time, the nafs delaying prayer, best deeds); National Curriculum RE (KS2) | Spring 1 2027 (lessons 1, 4, 5 upgraded, 13 and 14 new): Year 3 pack Islamic Studies Spring 1 weeks 1 to 5 (tawheed bridge; arrival in Madinah; first masjid; brotherhood; call to prayer); Bukhari reports on the Hijrah, the masjid land, the brotherhood and the adhan described, not quoted; school seerah text for children TO CONFIRM",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: blessings, gratitude, praying on time, the nafs delaying prayer, best deeds); National Curriculum RE (KS2) | Spring 1 2027 (lessons 1, 4, 5 upgraded, 13 and 14 new): Year 3 pack Islamic Studies Spring 1 weeks 1 to 5 (tawheed bridge; arrival in Madinah; first masjid; brotherhood; call to prayer); Bukhari reports on the Hijrah, the masjid land, the brotherhood and the adhan described, not quoted; school seerah text for children TO CONFIRM | Spring 2 2027 (lessons 8 and 9 upgraded, 15 to 18 new): Year 3 pack Islamic Studies Spring 2 weeks 1 to 6 (purity, steps of wudu, what breaks wudu and the du'a, the adhan, replying and the iqamah, review and practical); 5:6, 2:222; hadith from Bukhari and Muslim; adhan spoken, no melody; lessons v3",
   "lessons": [
     {
       "unit": "Spring 1: The Prophet in Madinah",
@@ -1056,194 +1056,453 @@
       "send": "SEND/EAL: table with pictures. Stretch: calculate the total fard rak'ahs and explain."
     },
     {
-      "unit": "Unit 3: Fiqh: purity and the call to prayer",
+      "unit": "Spring 2: Wudu and the adhan",
       "n": 8,
-      "title": "The adhan and iqamah",
+      "title": "Replying to the adhan, the iqamah and prayer times",
       "duration": 45,
+      "bigQuestion": "When someone calls your name, you answer. What should we do when we hear the adhan?",
       "objectives": [
-        "Say the words of the adhan",
-        "Explain how the adhan began",
-        "Know what to say in response"
+        "To understand how Muslims answer the adhan and how the iqamah and prayer times organise the day"
       ],
+      "successCriteria": [
+        "All: say what we reply to the adhan",
+        "Most: explain the difference between the adhan and the iqamah",
+        "Some: put the five prayer times in order with the time of day"
+      ],
+      "crossCurricular": "Science: the Sun's position changes through the day and the year",
+      "smsc": "Spiritual: answering the call; Social: the masjid gathers the community",
       "keywords": [
         {
-          "term": "adhan",
-          "def": "the call to prayer"
+          "term": "iqamah (الإِقَامَة)",
+          "def": "the second call when salah is about to start"
         },
         {
-          "term": "iqamah",
-          "def": "the second call before prayer starts"
+          "term": "qad qamati s-salah (قَدْ قَامَتِ الصَّلَاة)",
+          "def": "the prayer has begun"
         },
         {
-          "term": "mu'adhdhin",
-          "def": "the one who calls the adhan"
+          "term": "la hawla wa la quwwata illa billah",
+          "def": "there is no power or strength except with Allah"
+        },
+        {
+          "term": "prayer times",
+          "def": "the set times of the five prayers"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "When someone calls your name, you answer. What should we do when we hear the adhan?",
+        "a": "We answer it: we repeat the words quietly, as the Prophet ﷺ taught."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'When you hear the call, say what the mu'adhdhin says' (Bukhari and Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "How many rak'ahs in Fajr?",
-        "What is Qiblah?",
-        "Name the five prayers.",
-        "Who gave the first adhan?"
+        {
+          "q": "Bismillah. 'Hayya 'ala s-salah' means ...",
+          "a": "Come to prayer",
+          "mins": 1,
+          "options": [
+            "Come to prayer",
+            "Come to success"
+          ]
+        },
+        {
+          "q": "Which prayer adds 'prayer is better than sleep'?",
+          "a": "Fajr",
+          "mins": 1,
+          "options": [
+            "Fajr",
+            "Isha"
+          ]
+        },
+        {
+          "q": "Who calls the adhan?",
+          "a": "The mu'adhdhin",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "How the adhan began",
+          "heading": "Answering the adhan",
           "bullets": [
-            "Muslims wanted a way to call people",
-            "Abdullah ibn Zayd had a dream",
-            "The Prophet ﷺ told Bilal to call it"
+            "Repeat what the mu'adhdhin says",
+            "At 'hayya 'ala ...' say: la hawla wa la quwwata illa billah",
+            "Then make du'a"
           ],
-          "note": "Bismillah. Reported by Abu Dawud and at-Tirmidhi. The Prophet ﷺ said the dream was true and told Bilal to give the call because he had a beautiful voice. Keep wording: it was a true dream shown to the Companion."
+          "note": "Begin with Bismillah. Repeating: Bukhari and Muslim. The reply at 'hayya 'ala': Muslim."
         },
         {
-          "heading": "The words",
-          "bullets": [
-            "Allahu Akbar",
-            "Ash-hadu an la ilaha illa Allah",
-            "Hayya 'alas-salah, hayya 'alal-falah"
-          ],
-          "note": "Say the first lines and the call 'come to prayer, come to success'. In the Fajr adhan add 'As-salatu khayrun minan-nawm'. Echo and teach meaning."
+          "heading": "Adhan or iqamah?",
+          "bullets": [],
+          "note": "Compare the two calls.",
+          "compare": {
+            "left": {
+              "title": "Adhan",
+              "points": [
+                "Tells us the time has come",
+                "Called louder, lines repeated"
+              ]
+            },
+            "right": {
+              "title": "Iqamah",
+              "points": [
+                "Salah is starting now",
+                "Adds: qad qamati s-salah"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Responding",
-          "bullets": [
-            "Repeat after the mu'adhdhin",
-            "Say 'La hawla wa la quwwata illa billah' after hayya alas-salah",
-            "Make dua afterwards"
-          ],
-          "note": "The Prophet ﷺ said when you hear the mu'adhdhin say what he says (Bukhari and Muslim). The addition after the hayya lines is in Bukhari and Muslim. Dua after adhan: allahumma rabba hadhihid-da'watit-tammah... (Bukhari). Teach as a class if time."
+          "heading": "The five prayer times",
+          "bullets": [],
+          "note": "Use a real prayer timetable from the local masjid or an app (labelled example times).",
+          "timeline": [
+            {
+              "label": "Fajr",
+              "text": "Dawn, before sunrise"
+            },
+            {
+              "label": "Dhuhr",
+              "text": "Just after midday"
+            },
+            {
+              "label": "Asr",
+              "text": "Afternoon"
+            },
+            {
+              "label": "Maghrib",
+              "text": "Just after sunset"
+            },
+            {
+              "label": "Isha",
+              "text": "Night"
+            }
+          ]
         },
         {
-          "heading": "Iqamah",
+          "heading": "Quick check",
           "bullets": [
-            "Called just before the prayer begins",
-            "It is shorter",
-            "Lines straighten"
+            "Think, then vote"
           ],
-          "note": "Explain iqamah. Straighten lines: the Prophet ﷺ said straighten rows because straight rows are part of perfecting prayer (Bukhari and Muslim). Demonstrate lines on screen."
-        },
-        {
-          "heading": "Role play",
-          "bullets": [
-            "Be the mu'adhdhin",
-            "Be the listener",
-            "Respond correctly"
-          ],
-          "note": "Pairs practise the first four lines. Praise confident voices. Be mindful of children who are shy."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "What do we say when we hear 'hayya 'ala s-salah'?",
+            "options": [
+              "La hawla wa la quwwata illa billah",
+              "Allahu akbar",
+              "Nothing"
+            ],
+            "answer": 0,
+            "why": "The Prophet ﷺ taught this reply (Muslim): we ask Allah for the strength to go."
+          }
         }
       ],
       "practice": [
-        "Who was the first mu'adhdhin?",
-        "What does Allahu Akbar mean?",
-        "When is the Fajr prayer?",
-        "What is iqamah?"
+        {
+          "q": "Explain the difference between the adhan and the iqamah.",
+          "a": "The adhan says the time has come; the iqamah says the prayer is starting now.",
+          "mins": 3,
+          "model": "Teacher: The adhan is the first call: prayer time is here. The iqamah is the second call just before we stand: it says 'qad qamati s-salah', the prayer has begun."
+        },
+        {
+          "q": "Which prayer is just after sunset?",
+          "a": "Maghrib",
+          "mins": 1,
+          "options": [
+            "Maghrib",
+            "Asr",
+            "Fajr"
+          ]
+        },
+        {
+          "q": "What do we do after the adhan finishes?",
+          "a": "Make du'a",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write the first five lines of the adhan with meanings",
-        "Role-play response with a partner",
-        "Explain why the call is important"
+        {
+          "q": "Make a 'my prayer day' clock on the pupil PDF: write the five prayers at the right times of day and one sentence on answering the adhan.",
+          "a": "Fajr dawn, Dhuhr midday, Asr afternoon, Maghrib sunset, Isha night; I repeat the adhan words",
+          "mins": 8,
+          "model": "Teacher writes Fajr at dawn on the clock and the sentence: 'When I hear the adhan, I repeat the words.'"
+        },
+        {
+          "q": "Extend: which words are added in the iqamah?",
+          "a": "Qad qamati s-salah",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: why might the prayer times change through the year?",
+          "a": "Sunrise and sunset change with the seasons.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What do we say when we hear the adhan?",
-        "Who was Bilal?"
+        {
+          "q": "The iqamah means ...",
+          "a": "The prayer is starting now",
+          "mins": 1,
+          "options": [
+            "The prayer is starting now",
+            "The time has just begun"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what do we do when we hear the adhan?",
+          "a": "Repeat the words, say la hawla ... at 'hayya', then make du'a.",
+          "mins": 1
+        }
       ],
-      "homework": "Listen to the adhan this week and respond as you learned.",
-      "send": "SEND/EAL: adhan text in transliteration with meaning. Stretch: explain the extra line in Fajr."
+      "homework": "Find today's prayer times for your town (masjid timetable or app) and copy them into your book.",
+      "send": "SEND: adhan / iqamah picture cards. EAL: reply phrase card with meaning. Stretch: explain why times change with the seasons.",
+      "resources": [
+        "Slides",
+        "School-approved children's Islamic Studies book (TO CONFIRM title with the Islamic Studies lead)",
+        "Local masjid prayer timetable or prayer-times app (example times)",
+        "Pupil PDF worksheet: my prayer day clock"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sunrise over horizon",
+          "alt": "Sunrise: Fajr ends at sunrise",
+          "for": "teach:3"
+        },
+        {
+          "find": "sunset sky",
+          "alt": "Sunset: time for Maghrib",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 3: Fiqh: purity and the call to prayer",
+      "unit": "Spring 2: Wudu and the adhan",
       "n": 9,
-      "title": "Purity: wudu in depth",
+      "title": "Purity and why we make wudu",
       "duration": 45,
+      "bigQuestion": "Is being clean the same as being pure? What is the difference?",
       "objectives": [
-        "Explain why wudu is needed",
-        "State the obligatory parts of wudu",
-        "List what nullifies wudu"
+        "To understand why purity matters in Islam and why wudu needs a niyyah"
       ],
+      "successCriteria": [
+        "All: say what taharah and wudu mean",
+        "Most: explain why wudu is needed before salah",
+        "Some: explain the role of the niyyah"
+      ],
+      "crossCurricular": "Science: keeping clean and hygiene stop germs spreading",
+      "smsc": "Spiritual: purity as worship",
       "keywords": [
         {
-          "term": "obligatory",
-          "def": "must be done"
+          "term": "taharah (طَهَارَة)",
+          "def": "purity: being clean inside and out"
         },
         {
-          "term": "Sunnah",
-          "def": "extra actions the Prophet ﷺ did"
+          "term": "wudu (وُضُوء)",
+          "def": "the washing Allah asks for before prayer"
         },
         {
-          "term": "nullify",
-          "def": "break"
+          "term": "niyyah (نِيَّة)",
+          "def": "intention in the heart"
+        },
+        {
+          "term": "pure",
+          "def": "clean and ready for worship"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is being clean the same as being pure? What is the difference?",
+        "a": "Clean is about dirt; pure (taharah) is being ready for worship as Allah asks."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, Allah loves those who repent and loves those who purify themselves' (al-Baqarah 2:222).",
+        "at": "start"
+      },
       "starter": [
-        "Name the steps of wudu.",
-        "What do we say after wudu?",
-        "What is the importance of wudu?",
-        "Name two things that break wudu."
+        {
+          "q": "Bismillah. Who was the first mu'adhdhin in Madinah?",
+          "a": "Bilal",
+          "mins": 1,
+          "options": [
+            "Bilal",
+            "Abu Bakr",
+            "Umar"
+          ]
+        },
+        {
+          "q": "What was the first masjid in Madinah built for?",
+          "a": "Prayer and meeting together",
+          "mins": 1
+        },
+        {
+          "q": "The Ansar were ...",
+          "a": "The Muslims of Madinah who helped",
+          "mins": 1,
+          "options": [
+            "The Muslims of Madinah who helped",
+            "Travellers from Makkah"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Command in the Qur'an",
+          "heading": "Purity in Islam",
           "bullets": [
-            "Allah tells us to wash the face",
-            "Wash arms to elbows",
-            "Wipe head and wash feet to ankles"
+            "Allah loves those who keep pure",
+            "Purity is half of iman",
+            "Body, clothes and place of prayer are clean"
           ],
-          "note": "Bismillah. Qur'an 5:6. Read the verse in English: when you rise for prayer, wash your faces and your forearms to the elbows, wipe your heads, and wash your feet to the ankles. Explain these are the obligatory acts."
+          "note": "Begin with Bismillah. The Prophet ﷺ said: 'Purity is half of faith' (Muslim). Allah says He loves those who purify themselves (al-Baqarah 2:222)."
         },
         {
-          "heading": "Sunnah acts",
-          "bullets": [
-            "Say Bismillah",
-            "Wash hands first",
-            "Rinse mouth and nose, use siwak"
-          ],
-          "note": "Mention Sunnah acts from authentic reports, e.g., rinsing the mouth and nose (Bukhari and Muslim, Uthman's wudu). Using siwak is encouraged (Bukhari and Muslim). Do not list contested acts. Different madhhabs have different details; follow your school's guidance."
+          "heading": "Clean or pure?",
+          "bullets": [],
+          "note": "Discuss the difference with real examples.",
+          "compare": {
+            "left": {
+              "title": "Clean",
+              "points": [
+                "No dirt on hands",
+                "Can be done any time"
+              ]
+            },
+            "right": {
+              "title": "Pure (wudu)",
+              "points": [
+                "Washing as Allah taught",
+                "Done with niyyah before salah"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "What breaks wudu?",
+          "heading": "The niyyah",
           "bullets": [
-            "Anything from the front or back passage",
-            "Deep sleep",
-            "Loss of consciousness"
+            "Intend in the heart: I am making wudu",
+            "No words out loud are needed",
+            "Then say Bismillah and begin"
           ],
-          "note": "Explain these simply. Different scholars hold different views on other matters, such as touching; refer children to their parents' school of thought. Keep the lesson on the agreed points."
+          "note": "Link to 'Actions are only by intentions' (Bukhari and Muslim)."
         },
         {
-          "heading": "Is my prayer valid?",
+          "heading": "Quick check",
           "bullets": [
-            "Prayer needs purity",
-            "The Prophet ﷺ said Allah does not accept prayer without purification",
-            "Make wudu again when needed"
+            "Think, then vote"
           ],
-          "note": "Muslim (Ibn Umar). Ask: if I made wudu, then slept deeply, can I pray? No, repeat wudu. Practise with scenarios."
-        },
-        {
-          "heading": "Quick quiz",
-          "bullets": [
-            "Yes or no",
-            "Why?",
-            "Explain"
-          ],
-          "note": "Give 5 scenario cards. Children vote with thumbs. Discuss."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Why do we make wudu?",
+            "options": [
+              "To be pure for salah",
+              "Only to cool down",
+              "Because our hands are dirty"
+            ],
+            "answer": 0,
+            "why": "Wudu is worship: Allah commands it before prayer (5:6)."
+          }
         }
       ],
       "practice": [
-        "Where is wudu mentioned in the Qur'an?",
-        "What do we say at the start?",
-        "Name 3 parts of wudu.",
-        "Does eating break wudu?"
+        {
+          "q": "Explain why someone with clean hands still makes wudu before salah.",
+          "a": "Wudu is not only for dirt; Allah commands it to make us pure for prayer.",
+          "mins": 3,
+          "model": "Teacher: My hands may look clean, but wudu is worship. Allah tells us to make it before salah (5:6). With my niyyah, it makes me pure."
+        },
+        {
+          "q": "Where is the niyyah made?",
+          "a": "In the heart",
+          "mins": 1,
+          "options": [
+            "In the heart",
+            "Out loud only"
+          ]
+        },
+        {
+          "q": "Name three things that must be clean for salah.",
+          "a": "Body, clothes, place of prayer",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Write the obligatory parts of wudu in order",
-        "Complete scenario cards: needs wudu or not",
-        "Create a wudu reminder poster"
+        {
+          "q": "Write a short 'Why I make wudu' card on the pupil PDF: three sentences using taharah, niyyah and salah.",
+          "a": "For example: I make wudu to be pure for salah. My niyyah is in my heart. Allah loves those who keep pure.",
+          "mins": 8,
+          "model": "Teacher writes sentence 1: 'I make wudu because Allah tells us to be pure before salah.'"
+        },
+        {
+          "q": "Extend: which ayah tells us how to make wudu?",
+          "a": "Al-Ma'idah 5:6",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: what does 'purity is half of faith' teach us?",
+          "a": "Purity is a big part of being a Muslim, not a small extra.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name two things that break wudu.",
-        "Why do we need wudu?"
+        {
+          "q": "Taharah means ...",
+          "a": "Purity",
+          "mins": 1,
+          "options": [
+            "Purity",
+            "Prayer",
+            "Fasting"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what is the difference between clean and pure?",
+          "a": "Pure means ready for worship as Allah taught, with niyyah.",
+          "mins": 2
+        }
       ],
-      "homework": "Teach wudu to a younger sibling or family member and record how it went.",
-      "send": "SEND/EAL: step pictures; use scenario cards. Stretch: research the meaning of 'siwak'."
+      "homework": "Look at where you pray at home: is it clean? Tidy it and tell us next lesson.",
+      "send": "SEND: clean / pure picture sort. EAL: sentence starters on the card. Stretch: explain why the place of prayer must be clean.",
+      "resources": [
+        "Slides",
+        "School wudu poster (TO CONFIRM)",
+        "School-approved children's Islamic Studies book (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: 'Why I make wudu' card",
+        "Mushaf or printed al-Ma'idah 5:6 (translation of the meaning)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "water drop splash",
+          "alt": "A drop of clean water",
+          "for": "hook"
+        },
+        {
+          "find": "mosque wudu area taps",
+          "alt": "Taps in a mosque wudu area",
+          "for": "teach:1"
+        },
+        {
+          "find": "prayer mat clean",
+          "alt": "A clean prayer mat",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Hadith and akhlaq: intention, gratitude and character",
@@ -1964,6 +2223,878 @@
           "find": "old wall clock",
           "alt": "A clock: they had no clocks to tell prayer times",
           "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Wudu and the adhan",
+      "n": 15,
+      "title": "The steps of wudu in order",
+      "duration": 45,
+      "bigQuestion": "If you mixed up the steps of a recipe, would it still work? What about wudu?",
+      "objectives": [
+        "To understand the steps of wudu and which ones Allah commands in the Qur'an"
+      ],
+      "successCriteria": [
+        "All: show the steps of wudu in order",
+        "Most: name the four parts in al-Ma'idah 5:6",
+        "Some: explain why order matters"
+      ],
+      "smsc": "Spiritual: worship done carefully; Moral: not wasting water",
+      "keywords": [
+        {
+          "term": "fard (فَرْض)",
+          "def": "a must: something we have to do"
+        },
+        {
+          "term": "sunnah (سُنَّة)",
+          "def": "what the Prophet ﷺ did, which we love to copy"
+        },
+        {
+          "term": "elbow",
+          "def": "the middle joint of the arm"
+        },
+        {
+          "term": "ankle",
+          "def": "the joint where the foot meets the leg"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you mixed up the steps of a recipe, would it still work? What about wudu?",
+        "a": "Order matters: we follow the order Allah gave and the Prophet ﷺ showed."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, when you rise for prayer, wash your faces and your arms to the elbows, wipe your heads and wash your feet to the ankles' (al-Ma'idah 5:6).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Taharah means ...",
+          "a": "Purity",
+          "mins": 1,
+          "options": [
+            "Purity",
+            "Charity"
+          ]
+        },
+        {
+          "q": "Where is the niyyah?",
+          "a": "In the heart",
+          "mins": 1,
+          "options": [
+            "In the heart",
+            "On the mat"
+          ]
+        },
+        {
+          "q": "Which ayah tells us about wudu?",
+          "a": "Al-Ma'idah 5:6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Wudu step by step",
+          "bullets": [],
+          "note": "Teacher demonstrates at a sink or bowl to camera. Pupils with water at home copy (with a grown-up near).",
+          "cycle": [
+            "Niyyah and Bismillah",
+            "Hands, mouth, nose (three times each)",
+            "Face",
+            "Right arm then left to the elbows",
+            "Wipe head and ears",
+            "Right foot then left to the ankles"
+          ]
+        },
+        {
+          "heading": "Fard and sunnah parts",
+          "bullets": [],
+          "note": "Read 5:6 in translation. The four named parts are fard.",
+          "table": {
+            "head": [
+              "Step",
+              "Fard or sunnah?"
+            ],
+            "rows": [
+              [
+                "Washing the face",
+                "Fard (5:6)"
+              ],
+              [
+                "Arms to the elbows",
+                "Fard (5:6)"
+              ],
+              [
+                "Wiping the head",
+                "Fard (5:6)"
+              ],
+              [
+                "Feet to the ankles",
+                "Fard (5:6)"
+              ],
+              [
+                "Hands, mouth, nose; three times",
+                "Sunnah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Saving water",
+          "bullets": [
+            "The Prophet ﷺ used very little water",
+            "Turn the tap off between steps",
+            "Wasting is not loved by Allah"
+          ],
+          "note": "He made wudu with about a mudd: two cupped hands' worth (Bukhari and Muslim)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which is fard in wudu?",
+            "options": [
+              "Washing the feet to the ankles",
+              "Washing three times",
+              "Rinsing the nose"
+            ],
+            "answer": 0,
+            "why": "The feet are named in 5:6, so fard. Three times and the nose are sunnah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Put these in order: arms, face, feet, head.",
+          "a": "Face, arms, head, feet",
+          "mins": 2,
+          "model": "Teacher: In 5:6 Allah names the face first, then the arms to the elbows, then wiping the head, then the feet. So: face, arms, head, feet."
+        },
+        {
+          "q": "We wash the arms up to the ...",
+          "a": "Elbows",
+          "mins": 1,
+          "options": [
+            "Elbows",
+            "Wrists"
+          ]
+        },
+        {
+          "q": "Is washing three times fard or sunnah?",
+          "a": "Sunnah",
+          "mins": 1,
+          "options": [
+            "Fard",
+            "Sunnah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Practical: make wudu at home with a grown-up and show each step to the camera, or fill the wudu flow chart on the pupil PDF.",
+          "a": "All steps in order, right before left, little water",
+          "mins": 10,
+          "model": "Teacher shows the flow chart: box 1 'Niyyah and Bismillah' leads to box 2 'Hands three times'."
+        },
+        {
+          "q": "Extend: why do we start with the right?",
+          "a": "The Prophet ﷺ liked to start with the right in good things.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: how can you save water in wudu?",
+          "a": "Turn the tap off, use a jug, wash once if short of water",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Washing the face is ...",
+          "a": "Fard",
+          "mins": 1,
+          "options": [
+            "Fard",
+            "Sunnah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why does order matter in wudu?",
+          "a": "We follow the order Allah gave (5:6) and the Prophet ﷺ showed.",
+          "mins": 2
+        }
+      ],
+      "homework": "Make wudu for one prayer each day this week, saving water; tick each day on the chart.",
+      "send": "SEND: step cards with pictures of hands, face, arms (no faces drawn). EAL: fard / sunnah labels. Stretch: explain fard and sunnah with an example each.",
+      "resources": [
+        "Slides",
+        "School wudu poster (TO CONFIRM)",
+        "Pupil PDF worksheet: wudu flow chart and weekly tick chart",
+        "Water, a jug and a bowl or sink (at home with a grown-up)",
+        "Towel"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "water jug ewer",
+          "alt": "A jug for wudu",
+          "for": "teach:1"
+        },
+        {
+          "find": "closed water tap",
+          "alt": "A tap turned off to save water",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Wudu and the adhan",
+      "n": 16,
+      "title": "What breaks wudu, and the du'a after wudu",
+      "duration": 45,
+      "bigQuestion": "If you are not sure whether your wudu has broken, what should you do?",
+      "objectives": [
+        "To understand what breaks wudu and how to end wudu with the du'a the Prophet ﷺ taught"
+      ],
+      "successCriteria": [
+        "All: name two things that break wudu",
+        "Most: sort what breaks and what does not",
+        "Some: say the meaning of the du'a after wudu"
+      ],
+      "smsc": "Spiritual: worship without worry",
+      "keywords": [
+        {
+          "term": "break",
+          "def": "end: then we need a new wudu"
+        },
+        {
+          "term": "du'a (دُعَاء)",
+          "def": "asking Allah"
+        },
+        {
+          "term": "shahadah (شَهَادَة)",
+          "def": "bearing witness: there is no god but Allah"
+        },
+        {
+          "term": "doubt",
+          "def": "not being sure"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you are not sure whether your wudu has broken, what should you do?",
+        "a": "Stay with what you are sure of: unless you are certain it broke, it has not."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ taught that whoever makes wudu well and then says the shahadah, the eight gates of Paradise are opened for him (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Washing the face in wudu is ...",
+          "a": "Fard",
+          "mins": 1,
+          "options": [
+            "Fard",
+            "Sunnah"
+          ]
+        },
+        {
+          "q": "Put in order: feet, face, arms.",
+          "a": "Face, arms, feet",
+          "mins": 1
+        },
+        {
+          "q": "Why turn the tap off between steps?",
+          "a": "To save water",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What breaks wudu?",
+          "bullets": [
+            "Using the toilet",
+            "Passing wind",
+            "Deep sleep"
+          ],
+          "note": "Begin with Bismillah. Keep it simple and matter of fact."
+        },
+        {
+          "heading": "Breaks or not?",
+          "bullets": [],
+          "note": "Pupils show 1 or 2.",
+          "sort": {
+            "columns": [
+              "Breaks wudu",
+              "Does not break wudu"
+            ],
+            "cards": [
+              "Using the toilet",
+              "Eating an apple",
+              "Deep sleep",
+              "Laughing outside salah",
+              "Passing wind",
+              "Walking to the mat"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "When we are not sure",
+          "bullets": [
+            "Only certainty breaks wudu",
+            "A doubt does not",
+            "Stay calm and carry on"
+          ],
+          "note": "The Prophet ﷺ told someone unsure in prayer not to leave unless he heard a sound or noticed a smell (Bukhari and Muslim)."
+        },
+        {
+          "heading": "The du'a after wudu",
+          "bullets": [],
+          "note": "Pupils repeat after the teacher, line by line.",
+          "quote": {
+            "text": "Ash-hadu an la ilaha illallahu wahdahu la sharika lah, wa ash-hadu anna Muhammadan 'abduhu wa rasuluh. (I bear witness that there is no god but Allah alone, with no partner, and that Muhammad is His servant and Messenger.)",
+            "source": "Taught by the Prophet ﷺ after wudu (Muslim)"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Ali ate a sandwich after wudu. Does he need a new wudu? Explain.",
+          "a": "No: eating does not break wudu.",
+          "mins": 2,
+          "model": "Teacher: Wudu breaks with the toilet, passing wind or deep sleep. Eating is not one of them, so Ali's wudu is still fine."
+        },
+        {
+          "q": "Deep sleep ...",
+          "a": "Breaks wudu",
+          "mins": 1,
+          "options": [
+            "Breaks wudu",
+            "Does not break wudu"
+          ]
+        },
+        {
+          "q": "Whose servant and Messenger is Muhammad ﷺ in the du'a?",
+          "a": "Allah's",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Answer three 'Wudu helpdesk' questions on the pupil PDF: 1) I used the toilet; 2) I laughed at a joke; 3) I think I passed wind but I am not sure.",
+          "a": "1) New wudu; 2) still has wudu; 3) still has wudu unless certain",
+          "mins": 8,
+          "model": "Teacher answers question 1: 'Using the toilet breaks wudu, so make wudu again before salah.'"
+        },
+        {
+          "q": "Extend: write the du'a's meaning in your own words.",
+          "a": "For example: Only Allah is God and Muhammad ﷺ is His Messenger.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why does Islam say a doubt does not break wudu?",
+          "a": "Islam is easy and stops us worrying; only certainty counts.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Eating an apple ...",
+          "a": "Does not break wudu",
+          "mins": 1,
+          "options": [
+            "Breaks wudu",
+            "Does not break wudu"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what do you do if you are not sure your wudu broke?",
+          "a": "Stay with certainty: it has not broken.",
+          "mins": 1
+        }
+      ],
+      "homework": "Learn the du'a after wudu by heart and say it after each wudu this week.",
+      "send": "SEND: picture sort cards. EAL: du'a with transliteration and meaning side by side. Stretch: explain 'certainty is not removed by doubt' in a sentence.",
+      "resources": [
+        "Slides",
+        "School wudu poster (TO CONFIRM)",
+        "Pupil PDF worksheet: breaks or not sort and wudu helpdesk",
+        "Du'a after wudu card (Arabic, transliteration and meaning)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bed pillow",
+          "alt": "A pillow: deep sleep breaks wudu",
+          "for": "teach:2"
+        },
+        {
+          "find": "apple fruit",
+          "alt": "An apple: eating does not break wudu",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Wudu and the adhan",
+      "n": 17,
+      "title": "The adhan: its words and meaning",
+      "duration": 45,
+      "bigQuestion": "If you heard a call that said 'Come to success', would you stop what you are doing? Why?",
+      "objectives": [
+        "To understand the words of the adhan and what each one calls us to"
+      ],
+      "successCriteria": [
+        "All: say the first line of the adhan",
+        "Most: match the adhan lines to their meanings",
+        "Some: explain why the adhan begins with Allahu akbar"
+      ],
+      "smsc": "Spiritual: answering Allah's call",
+      "keywords": [
+        {
+          "term": "adhan (الأَذَان)",
+          "def": "the call to prayer"
+        },
+        {
+          "term": "mu'adhdhin (مُؤَذِّن)",
+          "def": "the person who calls the adhan"
+        },
+        {
+          "term": "falah (فَلَاح)",
+          "def": "success"
+        },
+        {
+          "term": "Allahu akbar (اللهُ أَكْبَر)",
+          "def": "Allah is the Greatest"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you heard a call that said 'Come to success', would you stop what you are doing? Why?",
+        "a": "Yes: the adhan calls us to salah, which is real success."
+      },
+      "islamicLink": {
+        "text": "When the time of prayer comes, the Prophet ﷺ said, one of you should call the adhan (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Name one thing that breaks wudu.",
+          "a": "Using the toilet, passing wind or deep sleep",
+          "mins": 1
+        },
+        {
+          "q": "Eating ... wudu.",
+          "a": "Does not break",
+          "mins": 1,
+          "options": [
+            "Breaks",
+            "Does not break"
+          ]
+        },
+        {
+          "q": "Who was the first mu'adhdhin?",
+          "a": "Bilal",
+          "mins": 1,
+          "options": [
+            "Bilal",
+            "Abu Bakr"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The call five times a day",
+          "bullets": [
+            "The adhan tells us salah time has come",
+            "The mu'adhdhin calls loudly and clearly",
+            "Bilal called the adhan in Madinah"
+          ],
+          "note": "Begin with Bismillah. Calmly read the adhan, spoken, not sung: no melody."
+        },
+        {
+          "heading": "The words and meanings",
+          "bullets": [],
+          "note": "Say each line; pupils repeat.",
+          "table": {
+            "head": [
+              "Words",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Allahu akbar (4 times)",
+                "Allah is the Greatest"
+              ],
+              [
+                "Ash-hadu an la ilaha illallah (2)",
+                "I bear witness there is no god but Allah"
+              ],
+              [
+                "Ash-hadu anna Muhammadan rasulullah (2)",
+                "I bear witness Muhammad is Allah's Messenger"
+              ],
+              [
+                "Hayya 'ala s-salah (2)",
+                "Come to prayer"
+              ],
+              [
+                "Hayya 'ala l-falah (2)",
+                "Come to success"
+              ],
+              [
+                "Allahu akbar (2); La ilaha illallah (1)",
+                "Allah is the Greatest; there is no god but Allah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "At Fajr",
+          "bullets": [
+            "One extra line: as-salatu khayrun mina n-nawm",
+            "Meaning: prayer is better than sleep",
+            "Said twice after 'come to success'"
+          ],
+          "note": "Ask: why does Fajr need this reminder?"
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "'Hayya 'ala l-falah' means ...",
+            "options": [
+              "Come to success",
+              "Come to prayer",
+              "Allah is the Greatest"
+            ],
+            "answer": 0,
+            "why": "Falah is success; salah is prayer."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What does 'Ash-hadu an la ilaha illallah' mean?",
+          "a": "I bear witness that there is no god but Allah",
+          "mins": 2,
+          "model": "Teacher: Ash-hadu = I bear witness. La ilaha = no god. Illallah = except Allah. So: I bear witness there is no god but Allah."
+        },
+        {
+          "q": "How many times is 'Allahu akbar' said at the start?",
+          "a": "Four",
+          "mins": 1,
+          "options": [
+            "Four",
+            "Two",
+            "One"
+          ]
+        },
+        {
+          "q": "Which prayer has 'prayer is better than sleep'?",
+          "a": "Fajr",
+          "mins": 1,
+          "options": [
+            "Fajr",
+            "Maghrib"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Match the six adhan lines to their meanings on the pupil PDF, then write the line you like most and why.",
+          "a": "Correct matches; for example: 'Come to success' because salah brings real success",
+          "mins": 8,
+          "model": "Teacher matches line 1: 'Allahu akbar' to 'Allah is the Greatest'."
+        },
+        {
+          "q": "Extend: why do you think the adhan begins and ends by praising Allah?",
+          "a": "To remind us Allah is greater than anything we are doing",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is salah called 'success'?",
+          "a": "It pleases Allah and leads to Paradise.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "The person who calls the adhan is the ...",
+          "a": "Mu'adhdhin",
+          "mins": 1,
+          "options": [
+            "Mu'adhdhin",
+            "Imam only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: would you stop for a call to success? Why?",
+          "a": "Yes: salah is the real success.",
+          "mins": 1
+        }
+      ],
+      "homework": "Listen to the adhan at home or from a prayer-times app (spoken adhan only) and say what one line means to your family.",
+      "send": "SEND: line and meaning cards to match. EAL: meanings in simple English. Stretch: learn all the adhan words by heart.",
+      "resources": [
+        "Slides",
+        "School-approved children's Islamic Studies book (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: adhan match",
+        "Adhan words card (Arabic, transliteration, meaning)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "minaret",
+          "alt": "A minaret, where the adhan was called",
+          "for": "hook"
+        },
+        {
+          "find": "alarm clock morning",
+          "alt": "An alarm clock: prayer is better than sleep",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Wudu and the adhan",
+      "n": 18,
+      "title": "Review: wudu practical and the adhan check",
+      "duration": 45,
+      "bigQuestion": "Which is harder: knowing the steps of wudu or doing them carefully every time? Why?",
+      "objectives": [
+        "To understand how well I can make wudu and explain the adhan, and what to practise next"
+      ],
+      "successCriteria": [
+        "All: show wudu in order to the camera",
+        "Most: answer quiz questions on wudu and the adhan",
+        "Some: explain fard, sunnah and the iqamah accurately"
+      ],
+      "smsc": "Spiritual: ihsan in worship",
+      "keywords": [
+        {
+          "term": "review",
+          "def": "looking back to check what we know"
+        },
+        {
+          "term": "practical",
+          "def": "showing it by doing it"
+        },
+        {
+          "term": "fard (فَرْض)",
+          "def": "a must"
+        },
+        {
+          "term": "iqamah (الإِقَامَة)",
+          "def": "the call when salah starts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is harder: knowing the steps of wudu or doing them carefully every time? Why?",
+        "a": "Doing them carefully every time: it takes practice and ihsan."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said that whoever makes wudu well, his sins leave his body (Muslim). Doing it carefully is ihsan.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Which ayah describes wudu?",
+          "a": "Al-Ma'idah 5:6",
+          "mins": 1,
+          "options": [
+            "Al-Ma'idah 5:6",
+            "Al-Ikhlas 112:1"
+          ]
+        },
+        {
+          "q": "Deep sleep ... wudu.",
+          "a": "Breaks",
+          "mins": 1,
+          "options": [
+            "Breaks",
+            "Does not break"
+          ]
+        },
+        {
+          "q": "'Hayya 'ala l-falah' means ...",
+          "a": "Come to success",
+          "mins": 1,
+          "options": [
+            "Come to success",
+            "Come to prayer"
+          ]
+        },
+        {
+          "q": "The iqamah adds ...",
+          "a": "Qad qamati s-salah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What we learned",
+          "bullets": [],
+          "note": "Pupils add one thing to each branch in the chat.",
+          "diagram": {
+            "centre": "Wudu and the adhan",
+            "items": [
+              "Purity and niyyah",
+              "Steps in order (5:6)",
+              "What breaks wudu",
+              "Du'a after wudu",
+              "Adhan words",
+              "Iqamah and times"
+            ]
+          }
+        },
+        {
+          "heading": "Practical check",
+          "bullets": [
+            "Show each step to the camera",
+            "Right before left",
+            "Use little water"
+          ],
+          "note": "Teacher ticks the checklist for each pupil (or reviews a short recording sent by the parent)."
+        },
+        {
+          "heading": "Common mistakes",
+          "bullets": [],
+          "note": "Talk through the fix.",
+          "misconception": {
+            "wrong": "Wiping the arms quickly up to the wrist",
+            "right": "Wash each arm fully, up to and including the elbow"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which is sunnah, not fard?",
+            "options": [
+              "Rinsing the mouth",
+              "Washing the face",
+              "Washing the feet"
+            ],
+            "answer": 0,
+            "why": "Mouth and nose are sunnah; face and feet are named in 5:6."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show me the steps of wudu in order, saying each one.",
+          "a": "Niyyah and Bismillah, hands, mouth, nose, face, arms, head and ears, feet",
+          "mins": 3,
+          "model": "Teacher shows the full sequence once more, slowly, naming each step."
+        },
+        {
+          "q": "Is a doubt enough to break wudu?",
+          "a": "No",
+          "mins": 1,
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Wudu and adhan quiz on the pupil PDF (eight questions), then the wudu practical with the teacher's checklist.",
+          "a": "Quiz answers from the lesson; practical ticked step by step",
+          "mins": 12,
+          "model": "Teacher does question 1 aloud: 'What does wudu need first? Niyyah and Bismillah.'"
+        },
+        {
+          "q": "Extend: write the adhan lines in order.",
+          "a": "Allahu akbar; ash-hadu an la ilaha illallah; ash-hadu anna Muhammadan rasulullah; hayya 'ala s-salah; hayya 'ala l-falah; Allahu akbar; la ilaha illallah",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain fard and sunnah using two wudu steps.",
+          "a": "Face is fard (named in 5:6); rinsing the mouth is sunnah (the Prophet ﷺ did it).",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "We wash the feet up to the ...",
+          "a": "Ankles",
+          "mins": 1,
+          "options": [
+            "Ankles",
+            "Knees"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what will you practise so your wudu is careful every time?",
+          "a": "For example: washing the elbows fully, saving water, saying the du'a",
+          "mins": 1
+        }
+      ],
+      "homework": "Practise the step you found hardest every day this week and say the du'a after wudu.",
+      "send": "SEND: picture checklist for the practical; quiz read aloud. EAL: word bank on the quiz. Stretch: teach a younger sibling the steps.",
+      "resources": [
+        "Slides",
+        "School wudu poster (TO CONFIRM)",
+        "Pupil PDF worksheet: wudu and adhan quiz (8 questions)",
+        "Wudu practical checklist (teacher)",
+        "Water, jug and bowl at home with a grown-up"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "checklist ticks",
+          "alt": "A checklist",
+          "for": "teach:2"
+        },
+        {
+          "find": "water jug ewer",
+          "alt": "A jug for wudu",
+          "for": "keywords"
         }
       ]
     }

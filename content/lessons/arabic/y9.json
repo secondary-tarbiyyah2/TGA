@@ -2,7 +2,7 @@
   "subject": "Arabic",
   "year": "y9",
   "board": "TGA Arabic scheme (KS3)",
-  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for KS3-to-GCSE progression: school, daily life, plans, shopping); continuity from TGA Y7-Y8 Arabic files | Spring 1 2027 (lessons 1, 2, 4, 13 to 19): founding-year bridge (11 Jan describing people and participles; 18 Jan my town, directions and weather with the future) and Spring 1 weeks 1 to 3 (school subjects; opinions and connectives; my school day in three tenses, informal email and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3",
+  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for KS3-to-GCSE progression: school, daily life, plans, shopping); continuity from TGA Y7-Y8 Arabic files | Spring 1 2027 (lessons 1, 2, 4, 13 to 19): founding-year bridge (11 Jan describing people and participles; 18 Jan my town, directions and weather with the future) and Spring 1 weeks 1 to 3 (school subjects; opinions and connectives; my school day in three tenses, informal email and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3 | Spring 2 2027 (lesson 3 upgraded, 20 to 29 new): Year 9 pack Arabic Spring 2 Transport weeks 1 to 6 (means of transport with 16:8; بِـ and journeys; adjectives and non-human plural agreement; a past journey; comparatives and preference; pros and cons with 7:56; a writing piece; sound and broken plurals; plurals with numbers; review and unit quiz); our own texts; lessons v3",
   "lessons": [
     {
       "unit": "Spring 1: At school",
@@ -465,113 +465,240 @@
       "duration": 50
     },
     {
-      "unit": "Unit 1: My school and my opinions",
+      "unit": "Spring 2: Transport",
       "n": 3,
-      "title": "Plurals and the dual",
+      "title": "Sound and broken plurals",
       "duration": 50,
+      "bigQuestion": "In English 'man' becomes 'men', not 'mans'. Does Arabic have 'irregular' plurals too?",
       "objectives": [
-        "Form the dual of a noun",
-        "Recognise sound masculine and feminine plurals",
-        "Learn common broken plurals"
+        "To understand the difference between sound and broken plurals and use common ones"
+      ],
+      "successCriteria": [
+        "All: make sound plurals with ـَاتٌ and ـُونَ",
+        "Most: recognise common broken plurals",
+        "Some: use plurals with correct adjective agreement"
       ],
       "keywords": [
         {
-          "term": "مُفْرَدٌ",
-          "def": "singular (mufradun)"
+          "term": "جَمْعُ مُذَكَّرٍ سَالِمٌ",
+          "def": "sound masculine plural (ـُونَ / ـِينَ)"
         },
         {
-          "term": "مُثَنَّى",
-          "def": "dual (muthannā)"
+          "term": "جَمْعُ مُؤَنَّثٍ سَالِمٌ",
+          "def": "sound feminine plural (ـَاتٌ)"
         },
         {
-          "term": "جَمْعٌ",
-          "def": "plural (jamʿun)"
+          "term": "جَمْعُ تَكْسِيرٍ (jam' taksir)",
+          "def": "broken plural: the word changes inside"
         },
         {
-          "term": "كُتُبٌ",
-          "def": "books (kutubun)"
-        },
-        {
-          "term": "طُلَّابٌ",
-          "def": "students (ṭullābun)"
-        },
-        {
-          "term": "مُعَلِّمُونَ",
-          "def": "teachers (m) (muʿallimūna)"
+          "term": "مُثَنًّى (muthanna)",
+          "def": "dual: two"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "In English 'man' becomes 'men', not 'mans'. Does Arabic have 'irregular' plurals too?",
+        "a": "Yes, many: broken plurals like كِتَاب → كُتُب."
+      },
       "starter": [
-        "Say 'I prefer science to history' in Arabic.",
-        "What are the words for 'because' and 'but'?",
-        "Give two opinion adjectives in Arabic."
+        {
+          "q": "Bismillah. خَاتِمَة means ...",
+          "a": "Conclusion",
+          "mins": 1,
+          "options": [
+            "Conclusion",
+            "Advantage"
+          ]
+        },
+        {
+          "q": "Plural of سَيَّارَة?",
+          "a": "سَيَّارَات",
+          "mins": 1,
+          "options": [
+            "سَيَّارَات",
+            "سَيَّارُونَ"
+          ]
+        },
+        {
+          "q": "Say 'two cars'.",
+          "a": "سَيَّارَتَانِ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The dual",
-          "bullets": [
-            "كِتَابٌ → كِتَابَانِ - kitābāni - two books",
-            "قَلَمٌ → قَلَمَانِ - qalamāni - two pens",
-            "مَدْرَسَةٌ → مَدْرَسَتَانِ - madrasatāni - two schools",
-            "الْكِتَابَانِ - al-kitābāni - the two books"
-          ],
-          "note": "Begin with bismillah. Arabic has a special form for exactly two. Add -āni for nominative and -ayni for other cases. For feminine nouns the ة becomes ت before the ending. Misconception: using the number اثْنَانِ plus the plural. Pupils form the dual of five words."
-        },
-        {
           "heading": "Sound plurals",
-          "bullets": [
-            "مُعَلِّمٌ → مُعَلِّمُونَ - muʿallimūna - teachers (m)",
-            "مُعَلِّمَةٌ → مُعَلِّمَاتٌ - muʿallimātun - teachers (f)",
-            "مُسْلِمٌ → مُسْلِمُونَ - muslimūna - Muslims (m)",
-            "مُسْلِمَةٌ → مُسْلِمَاتٌ - muslimātun - Muslims (f)"
-          ],
-          "note": "The sound plurals are regular: add -ūna (masculine) or -ātun (feminine). Note that the ة drops before -āt. Explain that -ūna becomes -īna in the accusative and genitive: رَأَيْتُ مُعَلِّمِينَ. Present this as extension. Practise five masculine and five feminine words."
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "Type"
+            ],
+            "rows": [
+              [
+                "مُعَلِّم",
+                "مُعَلِّمُونَ",
+                "sound masculine"
+              ],
+              [
+                "مُعَلِّمَة",
+                "مُعَلِّمَات",
+                "sound feminine"
+              ],
+              [
+                "سَيَّارَة",
+                "سَيَّارَات",
+                "sound feminine"
+              ],
+              [
+                "حَافِلَة",
+                "حَافِلَات",
+                "sound feminine"
+              ]
+            ]
+          }
         },
         {
           "heading": "Broken plurals",
-          "bullets": [
-            "كِتَابٌ → كُتُبٌ - kutubun - books",
-            "طَالِبٌ → طُلَّابٌ - ṭullābun - students",
-            "قَلَمٌ → أَقْلَامٌ - aqlāmun - pens",
-            "مَدْرَسَةٌ → مَدَارِسُ - madārisu - schools"
-          ],
-          "note": "Broken plurals change the internal pattern of the word and must be learnt with the word. Create a plural wall: pupils add one word every lesson. Stress that dictionaries show the plural next to the singular. Misconception: adding -ūna to words like كِتَاب."
+          "bullets": [],
+          "note": "Learn them as pairs.",
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "English"
+            ],
+            "rows": [
+              [
+                "كِتَاب",
+                "كُتُب",
+                "books"
+              ],
+              [
+                "سَفِينَة",
+                "سُفُن",
+                "ships"
+              ],
+              [
+                "طَرِيق",
+                "طُرُق",
+                "roads"
+              ],
+              [
+                "وَلَد",
+                "أَوْلَاد",
+                "boys"
+              ],
+              [
+                "مَدِينَة",
+                "مُدُن",
+                "cities"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Using plurals in sentences",
+          "heading": "Agreement reminder",
           "bullets": [
-            "فِي صَفِّنَا خَمْسَةَ عَشَرَ طَالِبًا - fī ṣaffinā khamsata ʿashara ṭāliban",
-            "عِنْدِي ثَلَاثَةُ كُتُبٍ - ʿindī thalāthatu kutubin - I have three books",
-            "الْمُعَلِّمُونَ لُطَفَاءُ - the teachers are kind"
-          ],
-          "note": "Our classes have a maximum of fifteen pupils, so this sentence is real for TGA. Numbers 11–99 are followed by a singular noun in the accusative: خَمْسَةَ عَشَرَ طَالِبًا. Numbers 3–10 are followed by a plural genitive: ثَلَاثَةُ كُتُبٍ. Do not go deeper into number rules yet."
+            "People: الطُّلَّابُ مُجْتَهِدُونَ",
+            "Things: الكُتُبُ جَدِيدَةٌ",
+            "Things in the plural take feminine singular"
+          ]
         },
         {
-          "heading": "Plural adjectives",
+          "heading": "Quick check",
           "bullets": [
-            "بُيُوتٌ جَمِيلَةٌ - houses (things) beautiful",
-            "مُعَلِّمُونَ كِبَارٌ - muʿallimūna kibārun - older teachers",
-            "مُعَلِّمَاتٌ صَالِحَاتٌ - righteous teachers (f)"
+            "Vote in the Teams poll"
           ],
-          "note": "Remind pupils: plural nouns for things take a feminine singular adjective. Plural nouns for people take a plural adjective. Link to the adab of respect for teachers. Pupils create two phrases with plural adjectives."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Plural of مَدِينَة is ...",
+            "options": [
+              "مُدُن",
+              "مَدِينَات",
+              "مَدِينُونَ"
+            ],
+            "answer": 0,
+            "why": "A broken plural: مُدُن."
+          }
         }
       ],
       "practice": [
-        "Make the dual: كِتَابٌ, مَدْرَسَةٌ, طَالِبٌ.",
-        "Make the plural: مُعَلِّمٌ, مُعَلِّمَةٌ, قَلَمٌ.",
-        "Translate: 'There are fifteen students in my class'.",
-        "Correct: كُتُبٌ جَمِيلٌ."
+        {
+          "q": "Make plural and describe: the ship is big.",
+          "a": "السُّفُنُ كَبِيرَةٌ",
+          "mins": 2,
+          "model": "Teacher: سَفِينَة → سُفُن (broken). Ships are things, so adjective is feminine singular: السُّفُنُ كَبِيرَةٌ."
+        },
+        {
+          "q": "Plural of طَرِيق?",
+          "a": "طُرُق",
+          "mins": 1,
+          "options": [
+            "طُرُق",
+            "طَرِيقَات"
+          ]
+        }
       ],
       "independent": [
-        "Write a table of ten nouns with singular, dual and plural.",
-        "Write eight sentences using plurals with correct adjectives.",
-        "Make a flashcard set for broken plurals and test a partner."
+        {
+          "q": "Plural sort and sentences on the pupil PDF: sort twelve words into sound or broken and write their plurals; then write four plural sentences with correct agreement.",
+          "a": "Correct sort and plurals; agreement correct",
+          "mins": 18,
+          "model": "Teacher sorts كِتَاب (broken: كُتُب) and مُهَنْدِس (sound: مُهَنْدِسُونَ)."
+        },
+        {
+          "q": "Extend: find three broken plurals in a mushaf page (with the teacher's list).",
+          "a": "e.g. أَنْهَار، جِبَال، قُلُوب",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write the dual and plural of كِتَابٌ.",
-        "What is the difference between مُعَلِّمُونَ and مُعَلِّمَاتٌ?"
+        {
+          "q": "Sound feminine plural ends in ...",
+          "a": "ـَات",
+          "mins": 1,
+          "options": [
+            "ـَات",
+            "ـُونَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: does Arabic have irregular plurals?",
+          "a": "Yes: broken plurals like كُتُب.",
+          "mins": 2
+        }
       ],
-      "homework": "Learn 12 plurals (six regular, six broken) and write a sentence for each.",
-      "send": "SEND: plural pattern cards with pictures. EAL: table with English. Stretch: use the dual of verbs (يَذْهَبَانِ - they two go)."
+      "homework": "Learn ten broken plurals with flash cards.",
+      "send": "SEND: plural pair cards. EAL: table. Stretch: patterns فُعُل and أَفْعَال.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 5",
+        "Portal arabic y9 lesson 3 (this lesson)",
+        "Pupil PDF worksheet: plural sort"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stack of books",
+          "alt": "Books: كُتُب",
+          "for": "keywords"
+        },
+        {
+          "find": "harbour ships",
+          "alt": "Ships: سُفُن",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Spring 1: At school",
@@ -3257,6 +3384,2023 @@
         }
       ],
       "duration": 50
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 20,
+      "title": "Means of transport",
+      "duration": 50,
+      "bigQuestion": "How did people travel 1,400 years ago, and how is it different now?",
+      "objectives": [
+        "To understand and use the Arabic words for means of transport with their plurals"
+      ],
+      "successCriteria": [
+        "All: name eight means of transport",
+        "Most: say which transport I use and how often",
+        "Some: use sound and broken plurals of transport words"
+      ],
+      "smsc": "Spiritual: transport as a blessing",
+      "keywords": [
+        {
+          "term": "وَسَائِلُ النَّقْلِ (wasa'il an-naql)",
+          "def": "means of transport"
+        },
+        {
+          "term": "سَيَّارَة (sayyarah)",
+          "def": "car"
+        },
+        {
+          "term": "حَافِلَة (hafilah)",
+          "def": "bus"
+        },
+        {
+          "term": "قِطَار (qitar)",
+          "def": "train"
+        },
+        {
+          "term": "دَرَّاجَة (darrajah)",
+          "def": "bicycle"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How did people travel 1,400 years ago, and how is it different now?",
+        "a": "On camels, horses and on foot; now cars, trains and planes. Allah mentions both in 16:8."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And (He created) horses, mules and donkeys for you to ride and as adornment. And He creates that which you do not know' (an-Nahl 16:8).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'My favourite subject' is ...",
+          "a": "مَادَّتِي المُفَضَّلَةُ",
+          "mins": 1,
+          "options": [
+            "مَادَّتِي المُفَضَّلَةُ",
+            "مَدْرَسَتِي"
+          ]
+        },
+        {
+          "q": "'Uniform' is ...",
+          "a": "زِيّ مَدْرَسِيّ",
+          "mins": 1,
+          "options": [
+            "زِيّ مَدْرَسِيّ",
+            "مَلْعَب"
+          ]
+        },
+        {
+          "q": "Say 'I will study' (future).",
+          "a": "سَأَدْرُسُ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Transport words",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "سَيَّارَة",
+                "car"
+              ],
+              [
+                "حَافِلَة",
+                "bus"
+              ],
+              [
+                "قِطَار",
+                "train"
+              ],
+              [
+                "طَائِرَة",
+                "plane"
+              ],
+              [
+                "دَرَّاجَة",
+                "bicycle"
+              ],
+              [
+                "سَفِينَة",
+                "ship"
+              ],
+              [
+                "مِتْرُو",
+                "underground train"
+              ],
+              [
+                "سَيْرًا عَلَى الأَقْدَامِ",
+                "on foot"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "In the Qur'an",
+          "bullets": [
+            "Horses, mules and donkeys to ride (16:8)",
+            "'And He creates what you do not know'",
+            "Scholars note this includes new transport"
+          ]
+        },
+        {
+          "heading": "How often?",
+          "bullets": [
+            "دَائِمًا: always",
+            "أَحْيَانًا: sometimes",
+            "أَبَدًا: never (with لَا)"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "حَافِلَة is ...",
+            "options": [
+              "A bus",
+              "A bicycle",
+              "A train"
+            ],
+            "answer": 0,
+            "why": "حَافِلَة = bus."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: I sometimes take the bus.",
+          "a": "أَرْكَبُ الحَافِلَةَ أَحْيَانًا",
+          "mins": 2,
+          "model": "Teacher: I ride = أَرْكَبُ; the bus = الحَافِلَةَ (object -a); sometimes = أَحْيَانًا."
+        },
+        {
+          "q": "دَرَّاجَة is ...",
+          "a": "A bicycle",
+          "mins": 1,
+          "options": [
+            "A bicycle",
+            "A car"
+          ]
+        },
+        {
+          "q": "Say 'on foot'.",
+          "a": "سَيْرًا عَلَى الأَقْدَامِ",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Transport survey on the pupil PDF: for six means of transport write how often you use them (دَائِمًا / أَحْيَانًا / لَا ... أَبَدًا), then a short paragraph about your family's transport.",
+          "a": "Six correct sentences; paragraph with frequency words",
+          "mins": 16,
+          "model": "Teacher writes: أَرْكَبُ القِطَارَ دَائِمًا. لَا أَرْكَبُ الطَّائِرَةَ أَبَدًا."
+        },
+        {
+          "q": "Extend: learn three plurals: سَيَّارَات، حَافِلَات، قِطَارَات.",
+          "a": "Plurals",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: translate 16:8's opening in your own words.",
+          "a": "And (He created) horses, mules and donkeys for you to ride and as adornment.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "قِطَار is ...",
+          "a": "A train",
+          "mins": 1,
+          "options": [
+            "A train",
+            "A plane"
+          ]
+        },
+        {
+          "q": "Back to our ponder: then and now?",
+          "a": "Animals and on foot then; cars, trains and planes now.",
+          "mins": 2
+        }
+      ],
+      "homework": "Note every means of transport you see this week in Arabic.",
+      "send": "SEND: transport picture cards. EAL: word grid. Stretch: plurals for all eight.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 1",
+        "Pupil PDF worksheet: transport survey"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "red London bus",
+          "alt": "A London bus: حَافِلَة",
+          "for": "keywords"
+        },
+        {
+          "find": "train station platform",
+          "alt": "A train: قِطَار",
+          "for": "teach:1"
+        },
+        {
+          "find": "camel caravan",
+          "alt": "Camels: travel in the past",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 21,
+      "title": "Travelling by: بِـ and going to places",
+      "duration": 50,
+      "bigQuestion": "Describe your last long journey: how many kinds of transport did you use?",
+      "objectives": [
+        "To understand how to say how and where I travel using بِـ and إِلَى"
+      ],
+      "successCriteria": [
+        "All: say أَذْهَبُ إِلَى ... بِـ ...",
+        "Most: ask and answer كَيْفَ تَذْهَبُ إِلَى ...؟",
+        "Some: describe a journey with three stages using ثُمَّ"
+      ],
+      "keywords": [
+        {
+          "term": "بِـ (bi-)",
+          "def": "by (means of)"
+        },
+        {
+          "term": "إِلَى (ila)",
+          "def": "to"
+        },
+        {
+          "term": "مِنْ ... إِلَى (min ... ila)",
+          "def": "from ... to"
+        },
+        {
+          "term": "رِحْلَة (rihlah)",
+          "def": "journey, trip"
+        },
+        {
+          "term": "مَحَطَّة (mahattah)",
+          "def": "station"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Describe your last long journey: how many kinds of transport did you use?",
+        "a": "Often more than one: by car to the station, then by train ... ثُمَّ ..."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. حَافِلَة is ...",
+          "a": "A bus",
+          "mins": 1,
+          "options": [
+            "A bus",
+            "A ship"
+          ]
+        },
+        {
+          "q": "أَحْيَانًا means ...",
+          "a": "Sometimes",
+          "mins": 1,
+          "options": [
+            "Sometimes",
+            "Always"
+          ]
+        },
+        {
+          "q": "Say 'I ride the train'.",
+          "a": "أَرْكَبُ القِطَارَ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "By and to",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "أَذْهَبُ إِلَى المَسْجِدِ بِالسَّيَّارَةِ",
+                "I go to the masjid by car"
+              ],
+              [
+                "أُسَافِرُ إِلَى مِصْرَ بِالطَّائِرَةِ",
+                "I travel to Egypt by plane"
+              ],
+              [
+                "أَذْهَبُ إِلَى المَحَطَّةِ سَيْرًا",
+                "I walk to the station"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Asking",
+          "bullets": [
+            "كَيْفَ تَذْهَبُ إِلَى ...؟",
+            "مِنْ أَيْنَ ... وَإِلَى أَيْنَ؟",
+            "كَمْ سَاعَةً تَسْتَغْرِقُ الرِّحْلَةُ؟"
+          ]
+        },
+        {
+          "heading": "Model journey",
+          "bullets": [],
+          "note": "Three stages with ثُمَّ.",
+          "model": {
+            "problem": "My journey to my grandmother's",
+            "steps": [
+              "أَذْهَبُ إِلَى المَحَطَّةِ بِالسَّيَّارَةِ",
+              "ثُمَّ أُسَافِرُ بِالقِطَارِ إِلَى بِرْمِنْغْهَام",
+              "ثُمَّ أَرْكَبُ الحَافِلَةَ إِلَى بَيْتِهَا"
+            ],
+            "answer": "A three-stage journey"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'I travel by ship' is ...",
+            "options": [
+              "أُسَافِرُ بِالسَّفِينَةِ",
+              "أُسَافِرُ إِلَى السَّفِينَةِ",
+              "أُسَافِرُ مِنَ السَّفِينَةِ"
+            ],
+            "answer": 0,
+            "why": "بِـ = by."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer: كَيْفَ تَذْهَبُ إِلَى المَسْجِدِ؟",
+          "a": "For example: أَذْهَبُ إِلَى المَسْجِدِ سَيْرًا عَلَى الأَقْدَامِ",
+          "mins": 2,
+          "model": "Teacher answers for themselves: أَذْهَبُ إِلَى المَسْجِدِ بِالسَّيَّارَةِ."
+        },
+        {
+          "q": "مَحَطَّة is ...",
+          "a": "A station",
+          "mins": 1,
+          "options": [
+            "A station",
+            "A journey"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a three-stage journey in the portal response box (real or imagined, e.g. to 'Umrah) with مِنْ، إِلَى، بِـ and ثُمَّ; then ask a partner two كَيْفَ questions in a breakout.",
+          "a": "Three-stage journey correctly built; questions asked",
+          "mins": 17,
+          "model": "Teacher writes stage 1 of a journey to 'Umrah: أُسَافِرُ مِنْ لَنْدَن إِلَى جُدَّةَ بِالطَّائِرَةِ."
+        },
+        {
+          "q": "Extend: add how long it takes: تَسْتَغْرِقُ الرِّحْلَةُ سِتَّ سَاعَاتٍ.",
+          "a": "Sentence added",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "إِلَى means ...",
+          "a": "To",
+          "mins": 1,
+          "options": [
+            "To",
+            "By"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how many kinds of transport?",
+          "a": "Pupils' own with ثُمَّ",
+          "mins": 2
+        }
+      ],
+      "homework": "Describe your route to a place you often visit in four Arabic sentences.",
+      "send": "SEND: journey frame. EAL: preposition cards. Stretch: add times with السَّاعَة.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 1",
+        "Pupil PDF worksheet: my journey"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "King's Cross station",
+          "alt": "A railway station: مَحَطَّة",
+          "for": "keywords"
+        },
+        {
+          "find": "Jeddah airport",
+          "alt": "An airport for 'Umrah journeys",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 22,
+      "title": "Describing modes of transport",
+      "duration": 50,
+      "bigQuestion": "Which matters most to you when you travel: speed, price or comfort?",
+      "objectives": [
+        "To understand how to describe transport with adjectives and make them agree"
+      ],
+      "successCriteria": [
+        "All: describe transport with two adjectives",
+        "Most: make adjectives agree with masculine and feminine nouns",
+        "Some: use non-human plural agreement (السَّيَّارَاتُ سَرِيعَةٌ)"
+      ],
+      "keywords": [
+        {
+          "term": "سَرِيع (sari')",
+          "def": "fast"
+        },
+        {
+          "term": "بَطِيء (bati')",
+          "def": "slow"
+        },
+        {
+          "term": "رَخِيص (rakhis)",
+          "def": "cheap"
+        },
+        {
+          "term": "غَالٍ (ghalin)",
+          "def": "expensive"
+        },
+        {
+          "term": "مُرِيح (murih)",
+          "def": "comfortable"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which matters most to you when you travel: speed, price or comfort?",
+        "a": "Pupils' own; e.g. السُّرْعَةُ (speed) because I don't like waiting."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'By car' is ...",
+          "a": "بِالسَّيَّارَةِ",
+          "mins": 1,
+          "options": [
+            "بِالسَّيَّارَةِ",
+            "إِلَى السَّيَّارَةِ"
+          ]
+        },
+        {
+          "q": "مَحَطَّة is ...",
+          "a": "A station",
+          "mins": 1,
+          "options": [
+            "A station",
+            "A ticket"
+          ]
+        },
+        {
+          "q": "Say 'then'.",
+          "a": "ثُمَّ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Adjectives",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Masculine",
+              "Feminine",
+              "English"
+            ],
+            "rows": [
+              [
+                "سَرِيع",
+                "سَرِيعَة",
+                "fast"
+              ],
+              [
+                "بَطِيء",
+                "بَطِيئَة",
+                "slow"
+              ],
+              [
+                "رَخِيص",
+                "رَخِيصَة",
+                "cheap"
+              ],
+              [
+                "غَالٍ",
+                "غَالِيَة",
+                "expensive"
+              ],
+              [
+                "مُرِيح",
+                "مُرِيحَة",
+                "comfortable"
+              ],
+              [
+                "خَطِير",
+                "خَطِيرَة",
+                "dangerous"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Agreement",
+          "bullets": [
+            "القِطَارُ سَرِيعٌ",
+            "الحَافِلَةُ بَطِيئَةٌ",
+            "Non-human plural → feminine singular: السَّيَّارَاتُ غَالِيَةٌ"
+          ]
+        },
+        {
+          "heading": "Spot the mistake",
+          "bullets": [],
+          "note": "Common error.",
+          "misconception": {
+            "wrong": "الحَافِلَاتُ بَطِيئُونَ",
+            "right": "الحَافِلَاتُ بَطِيئَةٌ (non-human plural takes feminine singular)"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'The plane is expensive' is ...",
+            "options": [
+              "الطَّائِرَةُ غَالِيَةٌ",
+              "الطَّائِرَةُ غَالٍ",
+              "الطَّائِرَةُ رَخِيصٌ"
+            ],
+            "answer": 0,
+            "why": "طَائِرَة is feminine: غَالِيَةٌ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: the bicycle is cheap and slow.",
+          "a": "الدَّرَّاجَةُ رَخِيصَةٌ وَبَطِيئَةٌ",
+          "mins": 2,
+          "model": "Teacher: دَرَّاجَة is feminine, so both adjectives take ة: رَخِيصَةٌ وَبَطِيئَةٌ."
+        },
+        {
+          "q": "مُرِيح means ...",
+          "a": "Comfortable",
+          "mins": 1,
+          "options": [
+            "Comfortable",
+            "Dangerous"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Describe six means of transport on the pupil PDF with two adjectives each, then three sentences about plurals (e.g. القِطَارَاتُ سَرِيعَةٌ).",
+          "a": "Correct agreement in singular and non-human plural",
+          "mins": 17,
+          "model": "Teacher writes: القِطَارُ سَرِيعٌ وَمُرِيحٌ. القِطَارَاتُ سَرِيعَةٌ."
+        },
+        {
+          "q": "Extend: add جِدًّا or قَلِيلًا.",
+          "a": "e.g. الطَّائِرَةُ غَالِيَةٌ جِدًّا",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Non-human plurals take ...",
+          "a": "Feminine singular adjectives",
+          "mins": 1,
+          "options": [
+            "Feminine singular adjectives",
+            "Masculine plural adjectives"
+          ]
+        },
+        {
+          "q": "Back to our ponder: speed, price or comfort?",
+          "a": "Pupils' own",
+          "mins": 2
+        }
+      ],
+      "homework": "Write five sentences describing transport in your town.",
+      "send": "SEND: adjective cards in two colours. EAL: adjective table. Stretch: three non-human plural sentences.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 2",
+        "Pupil PDF worksheet: describing transport"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "high speed train",
+          "alt": "A fast train: سَرِيع",
+          "for": "keywords"
+        },
+        {
+          "find": "bicycle",
+          "alt": "A bicycle",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 23,
+      "title": "Describing a journey in the past",
+      "duration": 50,
+      "bigQuestion": "What makes a journey memorable: the place, the transport or something that went wrong?",
+      "objectives": [
+        "To understand how to describe a past journey with past-tense verbs and adjectives"
+      ],
+      "successCriteria": [
+        "All: write two past sentences about a journey",
+        "Most: use كَانَ with an adjective (كَانَ القِطَارُ مُزْدَحِمًا)",
+        "Some: write a five-sentence account with opinions"
+      ],
+      "smsc": "Moral: patience when things go wrong",
+      "keywords": [
+        {
+          "term": "سَافَرْتُ (safartu)",
+          "def": "I travelled"
+        },
+        {
+          "term": "رَكِبْتُ (rakibtu)",
+          "def": "I rode, I took"
+        },
+        {
+          "term": "وَصَلْتُ (wasaltu)",
+          "def": "I arrived"
+        },
+        {
+          "term": "تَأَخَّرَ (ta'akhkhara)",
+          "def": "it was late"
+        },
+        {
+          "term": "مُزْدَحِم (muzdahim)",
+          "def": "crowded"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes a journey memorable: the place, the transport or something that went wrong?",
+        "a": "Often something unexpected, like a late train."
+      },
+      "islamicLink": {
+        "text": "When travelling, the Prophet ﷺ taught a du'a beginning with the words of az-Zukhruf 43:13: 'Glory be to the One who has made this serve us' (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Slow' (feminine) is ...",
+          "a": "بَطِيئَة",
+          "mins": 1,
+          "options": [
+            "بَطِيئَة",
+            "بَطِيء"
+          ]
+        },
+        {
+          "q": "'The cars are expensive' is ...",
+          "a": "السَّيَّارَاتُ غَالِيَةٌ",
+          "mins": 1,
+          "options": [
+            "السَّيَّارَاتُ غَالِيَةٌ",
+            "السَّيَّارَاتُ غَالُونَ"
+          ]
+        },
+        {
+          "q": "Say 'comfortable'.",
+          "a": "مُرِيح",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Past verbs",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "He",
+              "I"
+            ],
+            "rows": [
+              [
+                "سَافَرَ",
+                "سَافَرْتُ"
+              ],
+              [
+                "رَكِبَ",
+                "رَكِبْتُ"
+              ],
+              [
+                "وَصَلَ",
+                "وَصَلْتُ"
+              ],
+              [
+                "اِنْتَظَرَ (waited)",
+                "اِنْتَظَرْتُ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "كَانَ + adjective",
+          "bullets": [
+            "كَانَ القِطَارُ مُزْدَحِمًا",
+            "كَانَتِ الرِّحْلَةُ طَوِيلَةً",
+            "The adjective ends in -an"
+          ]
+        },
+        {
+          "heading": "Model account",
+          "bullets": [],
+          "note": "Labelled: when, how, problem, arrival, opinion.",
+          "quote": {
+            "text": "فِي الأُسْبُوعِ المَاضِي سَافَرْتُ إِلَى مَانْشِسْتَر بِالقِطَارِ.\nتَأَخَّرَ القِطَارُ سَاعَةً، وَكَانَ مُزْدَحِمًا جِدًّا.\nاِنْتَظَرْتُ فِي المَحَطَّةِ وَقَرَأْتُ كِتَابًا.\nوَصَلْتُ فِي المَسَاءِ.\nكَانَتِ الرِّحْلَةُ مُتْعِبَةً، لٰكِنِّي صَبَرْتُ.",
+            "source": "Teacher's model"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Correct: 'the journey was long'",
+            "options": [
+              "كَانَتِ الرِّحْلَةُ طَوِيلَةً",
+              "كَانَ الرِّحْلَةُ طَوِيلٌ",
+              "الرِّحْلَةُ كَانَ طَوِيلَةٌ"
+            ],
+            "answer": 0,
+            "why": "Feminine كَانَتْ, adjective -an."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: the bus was late.",
+          "a": "تَأَخَّرَتِ الحَافِلَةُ",
+          "mins": 2,
+          "model": "Teacher: تَأَخَّرَ + feminine subject → تَأَخَّرَتْ (with kasrah before ال): تَأَخَّرَتِ الحَافِلَةُ."
+        },
+        {
+          "q": "وَصَلْتُ means ...",
+          "a": "I arrived",
+          "mins": 1,
+          "options": [
+            "I arrived",
+            "I waited"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a five-sentence account of a journey in the portal response box (when, how, a problem, arrival, opinion), using كَانَ + adjective at least once.",
+          "a": "Five correct sentences with past verbs and كَانَ agreement",
+          "mins": 17,
+          "model": "Teacher writes the first sentence of a new example."
+        },
+        {
+          "q": "Extend: add a sentence with لِأَنَّ.",
+          "a": "e.g. كُنْتُ سَعِيدًا لِأَنَّنِي وَصَلْتُ بِسَلَامٍ",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "رَكِبْتُ means ...",
+          "a": "I took (rode)",
+          "mins": 1,
+          "options": [
+            "I took (rode)",
+            "I arrived"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what makes a journey memorable?",
+          "a": "Pupils' own",
+          "mins": 2
+        }
+      ],
+      "homework": "Tell a family member about a journey in Arabic (five sentences).",
+      "send": "SEND: account frame. EAL: verb table. Stretch: use كَانَ with feminine and plural subjects.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 2",
+        "Pupil PDF worksheet: journey account frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "crowded train",
+          "alt": "A crowded train carriage (no faces)",
+          "for": "teach:3"
+        },
+        {
+          "find": "departure board delayed",
+          "alt": "A board showing delays",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 24,
+      "title": "Preferences and comparatives: أُفَضِّلُ ... لِأَنَّهُ أَسْرَعُ",
+      "duration": 50,
+      "bigQuestion": "Is the fastest way always the best way? When might slower be better?",
+      "objectives": [
+        "To understand how to compare modes of transport and give a preference with reasons"
+      ],
+      "successCriteria": [
+        "All: say أُفَضِّلُ with a mode of transport",
+        "Most: compare two modes with أَفْعَلُ مِنْ",
+        "Some: justify a preference with two comparatives"
+      ],
+      "crossCurricular": "Geography: sustainable transport choices",
+      "keywords": [
+        {
+          "term": "أُفَضِّلُ (ufaddilu)",
+          "def": "I prefer"
+        },
+        {
+          "term": "أَسْرَعُ مِنْ (asra'u min)",
+          "def": "faster than"
+        },
+        {
+          "term": "أَرْخَصُ مِنْ (arkhasu min)",
+          "def": "cheaper than"
+        },
+        {
+          "term": "أَغْلَى مِنْ (aghla min)",
+          "def": "more expensive than"
+        },
+        {
+          "term": "أَكْثَرُ رَاحَةً (akthar rahatan)",
+          "def": "more comfortable"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is the fastest way always the best way? When might slower be better?",
+        "a": "No: slower can be cheaper, safer or better for the environment."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'I arrived' is ...",
+          "a": "وَصَلْتُ",
+          "mins": 1,
+          "options": [
+            "وَصَلْتُ",
+            "رَكِبْتُ"
+          ]
+        },
+        {
+          "q": "'The journey was long' is ...",
+          "a": "كَانَتِ الرِّحْلَةُ طَوِيلَةً",
+          "mins": 1,
+          "options": [
+            "كَانَتِ الرِّحْلَةُ طَوِيلَةً",
+            "كَانَ الرِّحْلَةُ طَوِيلٌ"
+          ]
+        },
+        {
+          "q": "Say 'cheap'.",
+          "a": "رَخِيص",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The comparative",
+          "bullets": [],
+          "note": "Begin with Bismillah. Pattern أَفْعَلُ, same for masculine and feminine.",
+          "table": {
+            "head": [
+              "Adjective",
+              "Comparative"
+            ],
+            "rows": [
+              [
+                "سَرِيع",
+                "أَسْرَعُ مِنْ"
+              ],
+              [
+                "بَطِيء",
+                "أَبْطَأُ مِنْ"
+              ],
+              [
+                "رَخِيص",
+                "أَرْخَصُ مِنْ"
+              ],
+              [
+                "غَالٍ",
+                "أَغْلَى مِنْ"
+              ],
+              [
+                "مُرِيح",
+                "أَكْثَرُ رَاحَةً مِنْ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Preference",
+          "bullets": [
+            "أُفَضِّلُ القِطَارَ عَلَى الحَافِلَةِ",
+            "لِأَنَّهُ أَسْرَعُ وَأَكْثَرُ رَاحَةً",
+            "أُفَضِّلُ X عَلَى Y: I prefer X to Y"
+          ]
+        },
+        {
+          "heading": "Model",
+          "bullets": [],
+          "note": "Build a full answer.",
+          "model": {
+            "problem": "Which do you prefer: the bus or the bicycle?",
+            "steps": [
+              "Preference: أُفَضِّلُ الدَّرَّاجَةَ عَلَى الحَافِلَةِ",
+              "Reason 1: لِأَنَّهَا أَرْخَصُ",
+              "Reason 2: وَهِيَ أَفْضَلُ لِلْبِيئَةِ",
+              "But: لٰكِنَّهَا أَبْطَأُ"
+            ],
+            "answer": "A preference with two reasons and a 'but'"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'The plane is faster than the train' is ...",
+            "options": [
+              "الطَّائِرَةُ أَسْرَعُ مِنَ القِطَارِ",
+              "الطَّائِرَةُ سَرِيعَةٌ مِنَ القِطَارِ",
+              "الطَّائِرَةُ أَسْرَعَةُ القِطَارِ"
+            ],
+            "answer": 0,
+            "why": "Comparative أَسْرَعُ مِنْ, no feminine change."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Compare the car and the bus (price).",
+          "a": "السَّيَّارَةُ أَغْلَى مِنَ الحَافِلَةِ / الحَافِلَةُ أَرْخَصُ مِنَ السَّيَّارَةِ",
+          "mins": 2,
+          "model": "Teacher: price: رَخِيص → أَرْخَصُ مِنْ. The bus is cheaper than the car: الحَافِلَةُ أَرْخَصُ مِنَ السَّيَّارَةِ."
+        },
+        {
+          "q": "أُفَضِّلُ means ...",
+          "a": "I prefer",
+          "mins": 1,
+          "options": [
+            "I prefer",
+            "I travel"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Preference paragraph in the portal response box: compare three modes of transport using at least three comparatives and give your preference with two reasons. Start: 'أُفَضِّلُ ... عَلَى ... لِأَنَّ ...'",
+          "a": "Correct comparatives; justified preference",
+          "mins": 18,
+          "model": "Teacher writes: أُفَضِّلُ القِطَارَ عَلَى السَّيَّارَةِ لِأَنَّهُ أَسْرَعُ وَأَكْثَرُ رَاحَةً."
+        },
+        {
+          "q": "Extend: the superlative: القِطَارُ أَسْرَعُ وَسِيلَةٍ.",
+          "a": "The train is the fastest means",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "أَرْخَصُ مِنْ means ...",
+          "a": "Cheaper than",
+          "mins": 1,
+          "options": [
+            "Cheaper than",
+            "Faster than"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is the fastest always best?",
+          "a": "No: slower can be cheaper, safer or greener.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask a family member which transport they prefer and why; write it with comparatives.",
+      "send": "SEND: comparative cards. EAL: table of forms. Stretch: superlatives with أَفْعَلُ + noun.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 3",
+        "Pupil PDF worksheet: comparatives and preference"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bicycle lane city",
+          "alt": "A cycle lane",
+          "for": "teach:3"
+        },
+        {
+          "find": "speedometer",
+          "alt": "A speedometer: faster",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 25,
+      "title": "Pros and cons with لٰكِنْ",
+      "duration": 50,
+      "bigQuestion": "Cars are useful but cause pollution. How should a Muslim think about that?",
+      "objectives": [
+        "To understand how to give advantages and disadvantages of transport using لٰكِنْ and مِيزَة / عَيْب"
+      ],
+      "successCriteria": [
+        "All: give one pro and one con",
+        "Most: link them with لٰكِنْ / لٰكِنَّ",
+        "Some: weigh pros and cons to reach a conclusion"
+      ],
+      "crossCurricular": "Geography: transport and pollution",
+      "smsc": "Moral: caring for the environment",
+      "keywords": [
+        {
+          "term": "مِيزَة (mizah)",
+          "def": "advantage"
+        },
+        {
+          "term": "عَيْب ('ayb)",
+          "def": "disadvantage"
+        },
+        {
+          "term": "لٰكِنْ / لٰكِنَّ (lakin / lakinna)",
+          "def": "but"
+        },
+        {
+          "term": "البِيئَة (al-bi'ah)",
+          "def": "the environment"
+        },
+        {
+          "term": "تَلَوُّث (talawwuth)",
+          "def": "pollution"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Cars are useful but cause pollution. How should a Muslim think about that?",
+        "a": "Use them wisely: Allah made us caretakers of the earth and forbids corruption on it."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And do not cause corruption on the earth after its reformation' (al-A'raf 7:56).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Faster than' is ...",
+          "a": "أَسْرَعُ مِنْ",
+          "mins": 1,
+          "options": [
+            "أَسْرَعُ مِنْ",
+            "سَرِيعٌ مِنْ"
+          ]
+        },
+        {
+          "q": "أُفَضِّلُ ... عَلَى ... means ...",
+          "a": "I prefer ... to ...",
+          "mins": 1,
+          "options": [
+            "I prefer ... to ...",
+            "I travel ... by ..."
+          ]
+        },
+        {
+          "q": "Say 'more comfortable'.",
+          "a": "أَكْثَرُ رَاحَةً",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Pros and cons",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "compare": {
+            "left": {
+              "title": "مِيزَة",
+              "points": [
+                "السَّيَّارَةُ مُرِيحَةٌ",
+                "القِطَارُ سَرِيعٌ"
+              ]
+            },
+            "right": {
+              "title": "عَيْب",
+              "points": [
+                "السَّيَّارَةُ تُسَبِّبُ التَّلَوُّثَ",
+                "القِطَارُ غَالٍ"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Using لٰكِنْ",
+          "bullets": [
+            "السَّيَّارَةُ مُرِيحَةٌ لٰكِنَّهَا غَالِيَةٌ",
+            "لٰكِنَّ + pronoun ending",
+            "لٰكِنْ before a verb or full sentence"
+          ]
+        },
+        {
+          "heading": "Caretakers of the earth",
+          "bullets": [
+            "'Do not cause corruption on the earth' (7:56)",
+            "Walk or cycle when you can",
+            "Waste is disliked in Islam"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "عَيْب means ...",
+            "options": [
+              "Disadvantage",
+              "Advantage",
+              "Environment"
+            ],
+            "answer": 0,
+            "why": "عَيْب = disadvantage."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give a pro and a con of the plane linked with لٰكِنَّ.",
+          "a": "الطَّائِرَةُ سَرِيعَةٌ لٰكِنَّهَا غَالِيَةٌ",
+          "mins": 2,
+          "model": "Teacher: pro سَرِيعَة; con غَالِيَة; link: الطَّائِرَةُ سَرِيعَةٌ لٰكِنَّهَا غَالِيَةٌ."
+        },
+        {
+          "q": "تَلَوُّث is ...",
+          "a": "Pollution",
+          "mins": 1,
+          "options": [
+            "Pollution",
+            "Speed"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pros and cons table on the pupil PDF for four modes, then a paragraph in the portal response box weighing two of them and ending with a conclusion (فِي رَأْيِي ...).",
+          "a": "Table and paragraph with لٰكِنْ / لٰكِنَّ and a conclusion",
+          "mins": 18,
+          "model": "Teacher fills the bicycle row: مِيزَة: رَخِيصَةٌ وَصِحِّيَّةٌ؛ عَيْب: بَطِيئَةٌ."
+        },
+        {
+          "q": "Extend: add a sentence about the environment.",
+          "a": "e.g. الدَّرَّاجَةُ أَفْضَلُ لِلْبِيئَةِ",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "فِي رَأْيِي means ...",
+          "a": "In my opinion",
+          "mins": 1,
+          "options": [
+            "In my opinion",
+            "In the future"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how should a Muslim think about pollution?",
+          "a": "Use transport wisely; we are caretakers and must not spread corruption (7:56).",
+          "mins": 2
+        }
+      ],
+      "homework": "Write your paragraph neatly: it is the draft for next lesson's writing piece.",
+      "send": "SEND: pros/cons cards. EAL: table frame. Stretch: three-paragraph balanced piece.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 4",
+        "Pupil PDF worksheet: pros and cons table"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "traffic jam exhaust",
+          "alt": "Traffic and pollution",
+          "for": "teach:1"
+        },
+        {
+          "find": "cycle path park",
+          "alt": "A cycle path",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 26,
+      "title": "Writing: the best way to travel",
+      "duration": 50,
+      "bigQuestion": "What makes a piece of writing in another language impressive?",
+      "objectives": [
+        "To understand how to plan and write a short, structured piece on transport"
+      ],
+      "successCriteria": [
+        "All: write 50 words on transport",
+        "Most: include a comparative, a past journey and لٰكِنْ",
+        "Some: write 80 to 100 words with a balanced conclusion"
+      ],
+      "keywords": [
+        {
+          "term": "مُقَدِّمَة (muqaddimah)",
+          "def": "introduction"
+        },
+        {
+          "term": "خَاتِمَة (khatimah)",
+          "def": "conclusion"
+        },
+        {
+          "term": "فِي رَأْيِي (fi ra'yi)",
+          "def": "in my opinion"
+        },
+        {
+          "term": "أَوَّلًا / ثَانِيًا (awwalan / thaniyan)",
+          "def": "firstly / secondly"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes a piece of writing in another language impressive?",
+        "a": "Range (different tenses and structures), accuracy and a clear order."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. مِيزَة means ...",
+          "a": "Advantage",
+          "mins": 1,
+          "options": [
+            "Advantage",
+            "Disadvantage"
+          ]
+        },
+        {
+          "q": "'But it is expensive' is ...",
+          "a": "لٰكِنَّهَا غَالِيَةٌ",
+          "mins": 1,
+          "options": [
+            "لٰكِنَّهَا غَالِيَةٌ",
+            "لِأَنَّهَا غَالِيَةٌ"
+          ]
+        },
+        {
+          "q": "Say 'in my opinion'.",
+          "a": "فِي رَأْيِي",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Plan",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "cycle": [
+            "مُقَدِّمَة: how I travel",
+            "Compare two modes",
+            "A past journey (كَانَ)",
+            "Pros and cons (لٰكِنْ)",
+            "خَاتِمَة: my opinion"
+          ]
+        },
+        {
+          "heading": "Range checklist",
+          "bullets": [
+            "Present: أَذْهَبُ / أُفَضِّلُ",
+            "Past: سَافَرْتُ / كَانَ",
+            "Future: سَأُسَافِرُ"
+          ]
+        },
+        {
+          "heading": "Model opening",
+          "bullets": [],
+          "note": "Labelled model.",
+          "quote": {
+            "text": "عَادَةً أَذْهَبُ إِلَى المَسْجِدِ سَيْرًا عَلَى الأَقْدَامِ، لٰكِنِّي أُسَافِرُ إِلَى جَدِّي بِالقِطَارِ.\nفِي رَأْيِي القِطَارُ أَسْرَعُ مِنَ الحَافِلَةِ وَأَكْثَرُ رَاحَةً.",
+            "source": "Teacher's model (introduction and comparison)"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write an introduction sentence about how you usually travel.",
+          "a": "e.g. عَادَةً أَذْهَبُ إِلَى ... بِـ ...",
+          "mins": 2,
+          "model": "Teacher reads the model opening line and points out عَادَةً (usually)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write 80 to 100 words in the portal response box following the plan and checklist (title: أَفْضَلُ وَسِيلَةِ نَقْلٍ).",
+          "a": "Structured piece with three time frames, comparatives, لٰكِنْ and a conclusion",
+          "mins": 26,
+          "model": "Teacher shows the plan boxes filled in briefly for their own topic."
+        },
+        {
+          "q": "Extend: underline each structure from the checklist in your writing.",
+          "a": "Structures marked",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "خَاتِمَة means ...",
+          "a": "Conclusion",
+          "mins": 1,
+          "options": [
+            "Conclusion",
+            "Introduction"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what makes writing impressive?",
+          "a": "Range, accuracy and order.",
+          "mins": 2
+        }
+      ],
+      "homework": "Redraft your piece using the teacher's comments.",
+      "send": "SEND: paragraph frame with gaps. EAL: word bank. Stretch: 120 words with a superlative.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 4 (writing piece)",
+        "Pupil PDF worksheet: writing plan"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "notebook pen",
+          "alt": "Writing",
+          "for": "keywords"
+        },
+        {
+          "find": "train window view",
+          "alt": "A train window",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 27,
+      "title": "Plurals in context: transport and the city",
+      "duration": 50,
+      "bigQuestion": "London has hundreds of bus routes. How would you describe a city's transport in Arabic?",
+      "objectives": [
+        "To understand how to use plurals of transport and city words accurately in longer sentences"
+      ],
+      "successCriteria": [
+        "All: use five transport plurals",
+        "Most: describe a city's transport with plural agreement",
+        "Some: use numbers with plurals (3 to 10 and 11+)"
+      ],
+      "keywords": [
+        {
+          "term": "وَسَائِل (wasa'il)",
+          "def": "means (plural of وَسِيلَة)"
+        },
+        {
+          "term": "شَوَارِع (shawari')",
+          "def": "streets (plural of شَارِع)"
+        },
+        {
+          "term": "مَحَطَّات (mahattat)",
+          "def": "stations"
+        },
+        {
+          "term": "كَثِير / كَثِيرَة (kathir / kathirah)",
+          "def": "many, a lot"
+        },
+        {
+          "term": "مَدِينَة / مُدُن",
+          "def": "city / cities"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "London has hundreds of bus routes. How would you describe a city's transport in Arabic?",
+        "a": "With plurals: فِي لَنْدَن حَافِلَاتٌ كَثِيرَةٌ وَمَحَطَّاتٌ كَثِيرَةٌ."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Plural of كِتَاب?",
+          "a": "كُتُب",
+          "mins": 1,
+          "options": [
+            "كُتُب",
+            "كِتَابَات"
+          ]
+        },
+        {
+          "q": "Things in the plural take ...",
+          "a": "Feminine singular adjectives",
+          "mins": 1,
+          "options": [
+            "Feminine singular adjectives",
+            "Masculine plural"
+          ]
+        },
+        {
+          "q": "Plural of سَفِينَة?",
+          "a": "سُفُن",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "City plurals",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Singular",
+              "Plural"
+            ],
+            "rows": [
+              [
+                "شَارِع",
+                "شَوَارِع"
+              ],
+              [
+                "مَحَطَّة",
+                "مَحَطَّات"
+              ],
+              [
+                "وَسِيلَة",
+                "وَسَائِل"
+              ],
+              [
+                "قِطَار",
+                "قِطَارَات"
+              ],
+              [
+                "جِسْر (bridge)",
+                "جُسُور"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Numbers with plurals",
+          "bullets": [
+            "3 to 10: plural noun: ثَلَاثُ مَحَطَّاتٍ",
+            "11 and above: singular -an: عِشْرُونَ مَحَطَّةً",
+            "Number gender: opposite for 3 to 10"
+          ]
+        },
+        {
+          "heading": "Model description",
+          "bullets": [],
+          "note": "Our own text.",
+          "quote": {
+            "text": "فِي مَدِينَتِي وَسَائِلُ نَقْلٍ كَثِيرَةٌ.\nالحَافِلَاتُ رَخِيصَةٌ، وَالقِطَارَاتُ سَرِيعَةٌ.\nفِيهَا خَمْسُ مَحَطَّاتٍ وَشَوَارِعُ كَثِيرَةٌ.",
+            "source": "Teacher's model"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'Twelve stations' is ...",
+            "options": [
+              "اِثْنَتَا عَشْرَةَ مَحَطَّةً",
+              "اِثْنَا عَشَرَ مَحَطَّاتٍ",
+              "اِثْنَتَا عَشْرَةَ مَحَطَّاتٌ"
+            ],
+            "answer": 0,
+            "why": "11+ takes a singular noun with -an; مَحَطَّة is feminine."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: in my city there are many buses.",
+          "a": "فِي مَدِينَتِي حَافِلَاتٌ كَثِيرَةٌ",
+          "mins": 2,
+          "model": "Teacher: فِي مَدِينَتِي + plural حَافِلَات + feminine singular adjective كَثِيرَة."
+        },
+        {
+          "q": "Plural of شَارِع?",
+          "a": "شَوَارِع",
+          "mins": 1,
+          "options": [
+            "شَوَارِع",
+            "شَارِعَات"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Describe your town's or London's transport in the portal response box: six sentences with at least four plurals, two numbers and correct agreement.",
+          "a": "Correct plurals, number rules and agreement",
+          "mins": 18,
+          "model": "Teacher writes: فِي لَنْدَن مَحَطَّاتٌ كَثِيرَةٌ جِدًّا."
+        },
+        {
+          "q": "Extend: use a broken plural with a number 3 to 10.",
+          "a": "e.g. ثَلَاثَةُ جُسُورٍ",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Five stations' is ...",
+          "a": "خَمْسُ مَحَطَّاتٍ",
+          "mins": 1,
+          "options": [
+            "خَمْسُ مَحَطَّاتٍ",
+            "خَمْسَةُ مَحَطَّةٍ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how would you describe a city's transport?",
+          "a": "With plurals and كَثِيرَة.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise transport vocabulary, comparatives and plurals for the review and quiz.",
+      "send": "SEND: plural table on screen. EAL: description frame. Stretch: three numbers with correct gender.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 5",
+        "Pupil PDF worksheet: my city's transport"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Tower Bridge",
+          "alt": "A bridge: جِسْر",
+          "for": "keywords"
+        },
+        {
+          "find": "busy city street buses",
+          "alt": "City streets with buses",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 28,
+      "title": "Review: transport",
+      "duration": 50,
+      "bigQuestion": "Which grammar point from this unit trips you up most? Why?",
+      "objectives": [
+        "To understand how the unit's vocabulary and grammar fit together and fix my weak points"
+      ],
+      "successCriteria": [
+        "All: recall twenty transport words",
+        "Most: correct errors in agreement, comparatives and plurals",
+        "Some: answer exam-style reading and writing questions"
+      ],
+      "keywords": [
+        {
+          "term": "مُرَاجَعَة (muraja'ah)",
+          "def": "review"
+        },
+        {
+          "term": "خَطَأ (khata')",
+          "def": "error"
+        },
+        {
+          "term": "تَصْحِيح (tashih)",
+          "def": "correction"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which grammar point from this unit trips you up most? Why?",
+        "a": "Pupils' own, often non-human plural agreement or comparatives."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Plural of مَحَطَّة?",
+          "a": "مَحَطَّات",
+          "mins": 1,
+          "options": [
+            "مَحَطَّات",
+            "مَحَاطِط"
+          ]
+        },
+        {
+          "q": "'Cheaper than' is ...",
+          "a": "أَرْخَصُ مِنْ",
+          "mins": 1,
+          "options": [
+            "أَرْخَصُ مِنْ",
+            "رَخِيصٌ مِنْ"
+          ]
+        },
+        {
+          "q": "عَيْب means ...",
+          "a": "Disadvantage",
+          "mins": 1,
+          "options": [
+            "Disadvantage",
+            "Advantage"
+          ]
+        },
+        {
+          "q": "Say 'I travelled by train'.",
+          "a": "سَافَرْتُ بِالقِطَارِ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Unit map",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "diagram": {
+            "centre": "النَّقْل (transport)",
+            "items": [
+              "Vocabulary",
+              "بِـ and إِلَى",
+              "Adjectives and agreement",
+              "Past journey",
+              "Comparatives",
+              "Pros and cons",
+              "Plurals"
+            ]
+          }
+        },
+        {
+          "heading": "Fix the errors",
+          "bullets": [],
+          "note": "Pupils correct in the chat.",
+          "table": {
+            "head": [
+              "Error",
+              "Correct"
+            ],
+            "rows": [
+              [
+                "السَّيَّارَاتُ سَرِيعُونَ",
+                "السَّيَّارَاتُ سَرِيعَةٌ"
+              ],
+              [
+                "الطَّائِرَةُ أَسْرَعَةُ مِنَ القِطَارِ",
+                "الطَّائِرَةُ أَسْرَعُ مِنَ القِطَارِ"
+              ],
+              [
+                "كَانَ القِطَارُ مُزْدَحِمٌ",
+                "كَانَ القِطَارُ مُزْدَحِمًا"
+              ],
+              [
+                "ثَلَاثُ قِطَارَاتٍ",
+                "ثَلَاثَةُ قِطَارَاتٍ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reading practice",
+          "bullets": [],
+          "note": "Our own short text.",
+          "quote": {
+            "text": "يَسْكُنُ سَامِرٌ فِي مَدِينَةٍ كَبِيرَةٍ. يَذْهَبُ إِلَى عَمَلِهِ بِالمِتْرُو لِأَنَّهُ أَسْرَعُ مِنَ الحَافِلَةِ.\nأَمْسِ تَأَخَّرَ المِتْرُو، فَرَكِبَ دَرَّاجَتَهُ. كَانَتِ الرِّحْلَةُ طَوِيلَةً لٰكِنَّهَا مُفِيدَةٌ لِلصِّحَّةِ.",
+            "source": "Our own text"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Why does Samir take the metro?",
+            "options": [
+              "It is faster than the bus",
+              "It is cheaper",
+              "It is near his house"
+            ],
+            "answer": 0,
+            "why": "لِأَنَّهُ أَسْرَعُ مِنَ الحَافِلَةِ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What happened yesterday (أَمْسِ)? Answer in Arabic.",
+          "a": "تَأَخَّرَ المِتْرُو فَرَكِبَ دَرَّاجَتَهُ",
+          "mins": 2,
+          "model": "Teacher finds أَمْسِ and reads the sentence; answers in full."
+        },
+        {
+          "q": "Why is قِطَارَات preceded by ثَلَاثَة, not ثَلَاث?",
+          "a": "قِطَار is masculine, so 3 to 10 take the opposite (feminine) form",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Revision quiz in the portal (20 questions), then correct in green and list your three weakest points.",
+          "a": "Answers from the unit; three targets",
+          "mins": 20,
+          "model": "Teacher answers question 1."
+        },
+        {
+          "q": "Extend: write three sentences using your weakest points correctly.",
+          "a": "Correct sentences",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Your weakest point?",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: which point trips you up?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Revise your three weakest points for the unit quiz.",
+      "send": "SEND: unit organiser. EAL: glossary. Stretch: translate the reading text into English.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 6",
+        "Portal revision quiz: transport (20 questions)",
+        "Green pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "underground metro train",
+          "alt": "A metro train",
+          "for": "teach:3"
+        },
+        {
+          "find": "checklist",
+          "alt": "A checklist",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Transport",
+      "n": 29,
+      "title": "Unit quiz: transport",
+      "duration": 50,
+      "bigQuestion": "What will you check twice before you submit?",
+      "objectives": [
+        "To understand how well I know this unit and what to improve before assessment point 2"
+      ],
+      "successCriteria": [
+        "All: complete the unit quiz",
+        "Most: score 70% or more",
+        "Some: write a paragraph with three time frames and a comparative"
+      ],
+      "keywords": [
+        {
+          "term": "اِخْتِبَار (ikhtibar)",
+          "def": "test"
+        },
+        {
+          "term": "هَدَف (hadaf)",
+          "def": "target"
+        },
+        {
+          "term": "دِقَّة (diqqah)",
+          "def": "accuracy"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What will you check twice before you submit?",
+        "a": "Agreement, comparatives and plural forms."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Twenty stations' is ...",
+          "a": "عِشْرُونَ مَحَطَّةً",
+          "mins": 1,
+          "options": [
+            "عِشْرُونَ مَحَطَّةً",
+            "عِشْرُونَ مَحَطَّاتٍ"
+          ]
+        },
+        {
+          "q": "لٰكِنْ means ...",
+          "a": "But",
+          "mins": 1,
+          "options": [
+            "But",
+            "Because"
+          ]
+        },
+        {
+          "q": "Say 'I prefer the train to the bus'.",
+          "a": "أُفَضِّلُ القِطَارَ عَلَى الحَافِلَةِ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The quiz",
+          "bullets": [
+            "Part A: 20 questions (vocabulary and grammar)",
+            "Part B: reading (8)",
+            "Part C: writing 60 to 80 words (12)"
+          ],
+          "note": "Begin with Bismillah. Portal quiz; cameras on."
+        },
+        {
+          "heading": "Check twice",
+          "bullets": [
+            "Adjective agreement (including non-human plurals)",
+            "Comparative أَفْعَلُ مِنْ",
+            "Numbers with plurals"
+          ]
+        },
+        {
+          "heading": "Part C plan",
+          "bullets": [],
+          "note": "Plan only.",
+          "model": {
+            "problem": "Part C: how I travel",
+            "steps": [
+              "Present: how I usually travel",
+              "Past: a journey (كَانَ)",
+              "Comparison and preference",
+              "Future: سَأُسَافِرُ ..."
+            ],
+            "answer": "Three time frames and a comparative"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct: كَانَتِ الحَافِلَةُ بَطِيءٌ.",
+          "a": "كَانَتِ الحَافِلَةُ بَطِيئَةً",
+          "mins": 2,
+          "model": "Teacher: feminine noun, adjective with ة, and -an after كَانَتْ."
+        },
+        {
+          "q": "Future 'I will travel' is ...",
+          "a": "سَأُسَافِرُ",
+          "mins": 1,
+          "options": [
+            "سَأُسَافِرُ",
+            "سَافَرْتُ"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Unit quiz in the portal: Parts A, B and C.",
+          "a": "Answers from the unit",
+          "mins": 28,
+          "model": "Teacher reads question 1 aloud."
+        },
+        {
+          "q": "Extend: check Part C against the plan.",
+          "a": "Pupils' own",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Your target for assessment point 2 (week of 26 Apr)?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct the quiz in green and practise your target daily.",
+      "send": "SEND: read aloud, extra time. EAL: Part C frame. Stretch: 100 words in Part C.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 6 (unit quiz)",
+        "Portal unit quiz: transport (Parts A to C)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pen and paper test",
+          "alt": "Quiz paper",
+          "for": "teach:1"
+        },
+        {
+          "find": "target archery",
+          "alt": "A target",
+          "for": "keywords"
+        }
+      ]
     }
   ]
 }

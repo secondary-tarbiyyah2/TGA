@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y1",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quizzes EYFS-KS1/KS2: blessings, gratitude, amanah, best act after the shahadah, praying on time); National Curriculum RE (KS1) | Spring 1 2027 (lessons 7 and 8 upgraded, 13 new): TGA Year 1 Curriculum Pack (Islamic Studies Spring 1 weeks 1, 3, 5); hadith of the five pillars (Bukhari 8, Muslim 16); school-approved children's Islamic Studies texts TO CONFIRM",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quizzes EYFS-KS1/KS2: blessings, gratitude, amanah, best act after the shahadah, praying on time); National Curriculum RE (KS1) | Spring 1 2027 (lessons 7 and 8 upgraded, 13 new): TGA Year 1 Curriculum Pack (Islamic Studies Spring 1 weeks 1, 3, 5); hadith of the five pillars (Bukhari 8, Muslim 16); school-approved children's Islamic Studies texts TO CONFIRM | Spring 2 2027 (lesson 9 upgraded, 14 and 15 new): Year 1 syllabus yearMap Spring 2 (wudu, salah positions, ikhlas), IS weeks of 15 Mar, 31 Mar and 12 Apr (alternating with PSHE); hadith from Bukhari and Muslim only; lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: Allah, the One and Only",
@@ -998,97 +998,203 @@
       ]
     },
     {
-      "unit": "Unit 3: The pillars of Islam and salah",
+      "unit": "Spring 2: Wudu, salah and sincerity",
       "n": 9,
-      "title": "Wudu step by step",
+      "title": "Taharah: the steps of wudu",
       "duration": 30,
+      "bigQuestion": "Why do you think Muslims wash before they pray, even when they are already clean?",
       "objectives": [
-        "Say the steps of wudu in order",
-        "Know why we make wudu",
-        "Say the dua after wudu"
+        "To understand why Muslims make wudu and the order of its steps"
       ],
+      "successCriteria": [
+        "All: say what wudu is for",
+        "Most: show four steps of wudu in order",
+        "Some: say which parts Allah names in the Qur'an"
+      ],
+      "smsc": "Spiritual: getting ready to stand before Allah",
       "keywords": [
         {
-          "term": "wudu",
-          "def": "washing in a set order to get ready to pray"
+          "term": "taharah (طَهَارَة)",
+          "def": "being clean and pure"
         },
         {
-          "term": "order",
-          "def": "one after another in the right place"
+          "term": "wudu (وُضُوء)",
+          "def": "washing parts of the body before we pray"
         },
         {
-          "term": "three times",
-          "def": "each main part is washed three times"
+          "term": "niyyah (نِيَّة)",
+          "def": "what we mean to do in our heart"
+        },
+        {
+          "term": "Bismillah (بِسْمِ اللهِ)",
+          "def": "in the name of Allah"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think Muslims wash before they pray, even when they are already clean?",
+        "a": "We get ready to stand before Allah. Wudu makes us pure, not just clean."
+      },
+      "islamicLink": {
+        "text": "Allah tells the believers to wash the face, the arms to the elbows, to wipe the head and wash the feet before prayer (al-Ma'idah 5:6).",
+        "at": "start"
+      },
       "starter": [
-        "Name the five daily prayers.",
-        "What do we say at the start of wudu?",
-        "Why do we wash before salah?"
+        {
+          "q": "Bismillah. How many prayers do we pray each day?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Two",
+            "Ten"
+          ]
+        },
+        {
+          "q": "Which pillar is the prayer?",
+          "a": "Salah",
+          "mins": 1,
+          "options": [
+            "Salah",
+            "Zakah"
+          ]
+        },
+        {
+          "q": "Which prayer comes first in the day?",
+          "a": "Fajr",
+          "mins": 1,
+          "options": [
+            "Fajr",
+            "Isha"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Wudu: Part 1",
+          "heading": "Getting ready for salah",
           "bullets": [
-            "Say Bismillah",
-            "Wash hands three times",
-            "Rinse the mouth three times"
+            "Wudu is washing to get ready",
+            "We say Bismillah first",
+            "We mean it in our heart: niyyah"
           ],
-          "note": "Demonstrate with a bowl or video. Each washing is three times. The Prophet ﷺ taught wudu by doing it (Bukhari and Muslim, Uthman). Do not rush."
+          "note": "Begin with Bismillah. Show a jug and bowl. Explain: Allah loves those who keep pure. Keep the words short."
         },
         {
-          "heading": "Wudu: Part 2",
-          "bullets": [
-            "Sniff water into the nose",
-            "Wash the face three times",
-            "Wash arms to the elbows"
-          ],
-          "note": "Right then left for arms. Emphasise gentle. Check hair, nose and elbows are included."
+          "heading": "The steps in order",
+          "bullets": [],
+          "note": "Teacher mimes each step with a little water to camera. Pupils copy the actions with dry hands.",
+          "cycle": [
+            "Hands three times",
+            "Mouth and nose",
+            "Face",
+            "Arms to the elbows",
+            "Wipe the head and ears",
+            "Feet to the ankles"
+          ]
         },
         {
-          "heading": "Wudu: Part 3",
+          "heading": "Quick check",
           "bullets": [
-            "Wipe over the head once",
-            "Wipe the ears",
-            "Wash feet to the ankles"
+            "Think, then vote"
           ],
-          "note": "Children mime. The head is wiped, not washed. Right then left for feet. Misconception: washing the head like the face; we wipe it with wet hands."
-        },
-        {
-          "heading": "After wudu",
-          "bullets": [
-            "Say the shahadah",
-            "'Ash-hadu an la ilaha illa Allah'",
-            "'wa ash-hadu anna Muhammadan abduhu wa rasuluhu'"
-          ],
-          "note": "The Prophet ﷺ taught that whoever makes wudu well and then says the shahadah has the gates of Jannah opened (Muslim). Say it simply. Echo the words."
-        },
-        {
-          "heading": "Wudu relay",
-          "bullets": [
-            "Say each step",
-            "Act it out",
-            "Check the order"
-          ],
-          "note": "Pairs: one acts, one checks the order with a card set. Switch roles. Collect any errors for review."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "What do we wash straight after the arms?",
+            "options": [
+              "We wipe the head",
+              "The feet",
+              "The face again"
+            ],
+            "answer": 0,
+            "why": "After the arms we wipe the head and ears, then wash the feet."
+          }
         }
       ],
       "practice": [
-        "Name the 5 prayers.",
-        "Show the first step of wudu.",
-        "Why do we say Bismillah?"
+        {
+          "q": "Show me the first three steps of wudu with your hands.",
+          "a": "Hands, mouth and nose, face",
+          "mins": 2,
+          "model": "Teacher: Bismillah. I wash my hands three times. I rinse my mouth and nose. I wash my face. Now you."
+        },
+        {
+          "q": "We wash our arms up to the ...",
+          "a": "Elbows",
+          "mins": 1,
+          "options": [
+            "Elbows",
+            "Fingers"
+          ]
+        }
       ],
       "independent": [
-        "Put the wudu steps in order (8 cards)",
-        "Draw and label one step of wudu",
-        "Say the dua after wudu to a partner"
+        {
+          "q": "Draw a jug and write the steps 1 to 6 on the pupil PDF wudu ladder.",
+          "a": "Hands, mouth and nose, face, arms, head and ears, feet",
+          "mins": 5,
+          "model": "Teacher fills step 1 on screen: 1 hands. Pupils finish the ladder."
+        },
+        {
+          "q": "Extend: what do we say before wudu?",
+          "a": "Bismillah",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: why do we wash in order?",
+          "a": "The Prophet ﷺ did it in order, and we follow him.",
+          "mins": 1
+        }
       ],
       "exit": [
-        "What do we do first in wudu?",
-        "What do we say after wudu?"
+        {
+          "q": "Wudu is done before ...",
+          "a": "Salah",
+          "mins": 1,
+          "options": [
+            "Salah",
+            "Lunch",
+            "Bedtime"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why wash when we are already clean?",
+          "a": "To be pure and ready to meet Allah in salah.",
+          "mins": 1
+        }
       ],
-      "homework": "Make wudu with an adult and say the steps in order.",
-      "send": "SEND/EAL: step cards with pictures; mime. Stretch: say the dua in Arabic and English."
+      "homework": "Make wudu at home with a grown-up and say each step out loud.",
+      "send": "SEND: picture step cards to hold up. EAL: one word per step (hands, face, arms). Stretch: say the steps without the pictures.",
+      "resources": [
+        "Slides",
+        "School-approved children's Islamic Studies book (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: wudu ladder (six steps)",
+        "A small jug and bowl of water (teacher)",
+        "Colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "water jug and bowl",
+          "alt": "A jug and bowl of water for wudu",
+          "for": "hook"
+        },
+        {
+          "find": "water tap running",
+          "alt": "Clean water from a tap",
+          "for": "keywords"
+        },
+        {
+          "find": "prayer mat",
+          "alt": "A prayer mat ready for salah",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Good character",
@@ -1582,6 +1688,421 @@
           "find": "British coins pile",
           "alt": "Coins for the zakah example",
           "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Wudu, salah and sincerity",
+      "n": 14,
+      "title": "The positions of salah",
+      "duration": 30,
+      "bigQuestion": "If you could talk to Allah five times every day, what would you want to say?",
+      "objectives": [
+        "To understand the main positions of salah and what each one means"
+      ],
+      "successCriteria": [
+        "All: name standing and sujud",
+        "Most: show the four positions in order",
+        "Some: say which way Muslims face to pray"
+      ],
+      "smsc": "Spiritual: salah as time with Allah",
+      "keywords": [
+        {
+          "term": "qiblah (قِبْلَة)",
+          "def": "the way we face to pray, towards the Ka'bah"
+        },
+        {
+          "term": "ruku' (رُكُوع)",
+          "def": "bowing with hands on knees"
+        },
+        {
+          "term": "sujud (سُجُود)",
+          "def": "putting our forehead on the floor"
+        },
+        {
+          "term": "qiyam (قِيَام)",
+          "def": "standing"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could talk to Allah five times every day, what would you want to say?",
+        "a": "Thank you, help me, forgive me. Salah is our special time with Allah."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Pray as you have seen me praying' (Bukhari). We learn salah from his example.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What do we do before salah?",
+          "a": "Wudu",
+          "mins": 1,
+          "options": [
+            "Wudu",
+            "Eat",
+            "Sleep"
+          ]
+        },
+        {
+          "q": "What do we wash first in wudu?",
+          "a": "Our hands",
+          "mins": 1,
+          "options": [
+            "Our hands",
+            "Our feet"
+          ]
+        },
+        {
+          "q": "What do we say before wudu?",
+          "a": "Bismillah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "We face the qiblah",
+          "bullets": [
+            "All Muslims face the Ka'bah in Makkah",
+            "This way is called the qiblah",
+            "We stand still and calm"
+          ],
+          "note": "Begin with Bismillah. Show a compass or a qiblah app picture. Muslims all over the world face the same place."
+        },
+        {
+          "heading": "Four positions",
+          "bullets": [],
+          "note": "Teacher shows each position to camera. Pupils stand and copy. Calm, slow movements.",
+          "table": {
+            "head": [
+              "Position",
+              "What we do"
+            ],
+            "rows": [
+              [
+                "Qiyam",
+                "Stand and recite"
+              ],
+              [
+                "Ruku'",
+                "Bow, hands on knees"
+              ],
+              [
+                "Sujud",
+                "Forehead, nose, hands, knees, toes on the floor"
+              ],
+              [
+                "Julus",
+                "Sit between and at the end"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which position puts our forehead on the floor?",
+            "options": [
+              "Sujud",
+              "Ruku'",
+              "Qiyam"
+            ],
+            "answer": 0,
+            "why": "Sujud: the closest we are to Allah. Ruku' is bowing; qiyam is standing."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show me ruku' and say its name.",
+          "a": "Bow with hands on knees: ruku'",
+          "mins": 2,
+          "model": "Teacher: Allahu akbar. I bow, back straight, hands on knees. This is ruku'. Now you show me."
+        },
+        {
+          "q": "We face the ... to pray.",
+          "a": "Qiblah",
+          "mins": 1,
+          "options": [
+            "Qiblah",
+            "Window"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "On the pupil PDF, put the four position pictures (prayer mat outlines, no people) in order: stand, bow, sujud, sit.",
+          "a": "Qiyam, ruku', sujud, julus",
+          "mins": 5,
+          "model": "Teacher numbers the first box: 1 qiyam, standing."
+        },
+        {
+          "q": "Extend: say 'Allahu akbar' and tell me when we say it.",
+          "a": "When we move to a new position",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: why do Muslims all face one way?",
+          "a": "We all face the Ka'bah; it shows we are one ummah.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bowing is called ...",
+          "a": "Ruku'",
+          "mins": 1,
+          "options": [
+            "Ruku'",
+            "Sujud"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what would you say to Allah in salah?",
+          "a": "For example: thank You, Allah, for my family.",
+          "mins": 1
+        }
+      ],
+      "homework": "Pray one salah at home next to a grown-up and name each position.",
+      "send": "SEND: move with the teacher, one position at a time. EAL: label cards (stand, bow, sujud, sit). Stretch: count the sujud in one rak'ah (two).",
+      "resources": [
+        "Slides",
+        "School-approved children's Islamic Studies book (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: positions in order (prayer mat outlines)",
+        "Prayer mat"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "compass",
+          "alt": "A compass for finding the direction of the qiblah",
+          "for": "teach:1"
+        },
+        {
+          "find": "prayer rug",
+          "alt": "A prayer mat",
+          "for": "hook"
+        },
+        {
+          "find": "Kaaba kiswah embroidery close-up",
+          "alt": "The cloth covering of the Ka'bah, the qiblah",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Wudu, salah and sincerity",
+      "n": 15,
+      "title": "Ikhlas: actions are by intentions",
+      "duration": 30,
+      "bigQuestion": "Two children both tidy their room. One does it to please Allah, one only for a sweet. Is it the same?",
+      "objectives": [
+        "To understand that Allah rewards us for what we mean in our hearts"
+      ],
+      "successCriteria": [
+        "All: say what niyyah means",
+        "Most: give a good intention for an action",
+        "Some: say why we do good for Allah and not to show off"
+      ],
+      "smsc": "Spiritual: sincerity; Moral: doing good for the right reason",
+      "keywords": [
+        {
+          "term": "ikhlas (إِخْلَاص)",
+          "def": "doing good only for Allah"
+        },
+        {
+          "term": "niyyah (نِيَّة)",
+          "def": "what we mean in our heart"
+        },
+        {
+          "term": "reward",
+          "def": "a good gift from Allah for good deeds"
+        },
+        {
+          "term": "show off",
+          "def": "doing something only so people praise us"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two children both tidy their room. One does it to please Allah, one only for a sweet. Is it the same?",
+        "a": "Allah looks at our hearts: the first child gets reward from Allah."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Actions are only by intentions, and every person will have what they intended' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Bowing in salah is called ...",
+          "a": "Ruku'",
+          "mins": 1,
+          "options": [
+            "Ruku'",
+            "Sujud"
+          ]
+        },
+        {
+          "q": "Which way do we face to pray?",
+          "a": "The qiblah",
+          "mins": 1,
+          "options": [
+            "The qiblah",
+            "Any way"
+          ]
+        },
+        {
+          "q": "Name one step of wudu.",
+          "a": "For example: washing the face",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is in my heart?",
+          "bullets": [
+            "Niyyah is what we mean inside",
+            "Allah knows what is in every heart",
+            "Good intention: I do it for Allah"
+          ],
+          "note": "Begin with Bismillah. Hold a hand on your heart. Say: I am helping because Allah loves helpers."
+        },
+        {
+          "heading": "A famous hadith",
+          "bullets": [],
+          "note": "Say it slowly. Pupils repeat the first line together.",
+          "quote": {
+            "text": "Actions are only by intentions.",
+            "source": "The Prophet ﷺ (Bukhari and Muslim)"
+          }
+        },
+        {
+          "heading": "Good intention or showing off?",
+          "bullets": [],
+          "note": "Pupils show 1 for 'for Allah' or 2 for 'to show off'.",
+          "sort": {
+            "columns": [
+              "For Allah",
+              "To show off"
+            ],
+            "cards": [
+              "I help Grandma because Allah loves it",
+              "I pray only when people watch",
+              "I share my snack to make my friend happy",
+              "I give so everyone says I am the best"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Where is the niyyah?",
+            "options": [
+              "In the heart",
+              "On paper",
+              "In my pocket"
+            ],
+            "answer": 0,
+            "why": "Niyyah is in the heart; Allah knows it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give a good intention for brushing your teeth.",
+          "a": "For example: to stay clean, as the Prophet ﷺ liked",
+          "mins": 1,
+          "model": "Teacher: I brush my teeth because Allah loves cleanliness and the Prophet ﷺ used the siwak."
+        },
+        {
+          "q": "Doing good only for Allah is called ...",
+          "a": "Ikhlas",
+          "mins": 1,
+          "options": [
+            "Ikhlas",
+            "Sujud"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Draw a heart on the pupil PDF and write one good deed inside with 'for Allah'.",
+          "a": "For example: I help Mum for Allah.",
+          "mins": 4,
+          "model": "Teacher draws a heart and writes: I share my toys for Allah."
+        },
+        {
+          "q": "Extend: say the hadith 'Actions are only by intentions'.",
+          "a": "Actions are only by intentions.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: can sleeping be rewarded? How?",
+          "a": "Yes, if we sleep to be strong for Fajr and to obey Allah.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Allah rewards us for our ...",
+          "a": "Intention",
+          "mins": 1,
+          "options": [
+            "Intention",
+            "Shoes"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which child gets reward from Allah?",
+          "a": "The one who tidied to please Allah.",
+          "mins": 1
+        }
+      ],
+      "homework": "Before one good deed this week, say 'I am doing this for Allah' in your heart, then tell your family.",
+      "send": "SEND: thumbs up or down for each card. EAL: sentence frame 'I ... for Allah'. Stretch: explain why showing off spoils a good deed.",
+      "resources": [
+        "Slides",
+        "School-approved children's Islamic Studies book (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: my heart of good intentions",
+        "Colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "red heart shape paper",
+          "alt": "A paper heart",
+          "for": "teach:1"
+        },
+        {
+          "find": "toothbrush",
+          "alt": "A toothbrush",
+          "for": "keywords"
         }
       ]
     }

@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y9",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme as a bridge to the Edexcel spec (1.9, 2.1, 2.4, 2.5, 3.3), own knowledge, authentic sources only | Spring 1 2027 (lessons 5, 6, 10 upgraded, 13 to 19 new): Year 9 pack Islamic Studies Spring 1 weeks 1 to 5 (Hudaybiyyah events, terms, wisdom and results; the Conquest of Makkah and forgiveness; leadership; sawm rules and spirit with the short quiz); Hudaybiyyah, Abu Basir, the Makhzumi woman and fasting hadith from Bukhari and Muslim; the safety declarations (Muslim); the conquest address and az-Zuhri's observation named as seerah reports; approved seerah text TO CONFIRM",
+  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme as a bridge to the Edexcel spec (1.9, 2.1, 2.4, 2.5, 3.3), own knowledge, authentic sources only | Spring 1 2027 (lessons 5, 6, 10 upgraded, 13 to 19 new): Year 9 pack Islamic Studies Spring 1 weeks 1 to 5 (Hudaybiyyah events, terms, wisdom and results; the Conquest of Makkah and forgiveness; leadership; sawm rules and spirit with the short quiz); Hudaybiyyah, Abu Basir, the Makhzumi woman and fasting hadith from Bukhari and Muslim; the safety declarations (Muslim); the conquest address and az-Zuhri's observation named as seerah reports; approved seerah text TO CONFIRM | Spring 2 2027 (lessons 7, 8 and 9 upgraded, 20 to 27 new): Year 9 pack Islamic Studies Spring 2 weeks 1 to 6 (Farewell Pilgrimage; the sermon on life, wealth, riba, women, equality and the Qur'an; how hadith were collected and graded; the four schools; usul and qiyas; etiquette of differing; fiqh and UK law review; unit quiz); 5:3, 2:275, 49:13, 5:90, 17:23, 4:59, 8:46, 3:103, 5:1; sermon content from Bukhari and Muslim only; standard riba note; lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: Aqeedah - knowing Allah, the Last Day and al-Qadr",
@@ -906,308 +906,690 @@
       ]
     },
     {
-      "unit": "Unit 2: Seerah - the Prophet as leader",
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
       "n": 7,
-      "title": "The Farewell Pilgrimage and Sermon",
+      "title": "The Farewell Pilgrimage",
       "duration": 50,
+      "bigQuestion": "If you knew it was your last chance to teach the people you love, what would you make sure to tell them?",
       "objectives": [
-        "Describe the Prophet’s ﷺ last Hajj",
-        "State the main themes of the Farewell Sermon",
-        "Explain the significance of 5:3"
+        "To understand the events of the Farewell Pilgrimage and why it completed the teaching of Hajj"
       ],
+      "successCriteria": [
+        "All: describe three events of the Farewell Pilgrimage",
+        "Most: explain the significance of 5:3 being revealed at Arafah",
+        "Some: explain why it is called the Hajj of farewell"
+      ],
+      "smsc": "Spiritual: the completion of the religion",
       "keywords": [
         {
-          "term": "Arafat",
-          "def": "the plain where the pilgrims gather on the 9th of Dhu’l-Hijjah"
+          "term": "Hajjat al-Wada' (حَجَّةُ الوَدَاع)",
+          "def": "the Farewell Pilgrimage, 10 AH"
         },
         {
-          "term": "Khutbat al-Wada’",
-          "def": "the Farewell Sermon"
+          "term": "Arafah (عَرَفَة)",
+          "def": "the plain where pilgrims stand on the 9th of Dhul-Hijjah"
         },
         {
-          "term": "riba",
-          "def": "interest or usury"
+          "term": "manasik (مَنَاسِك)",
+          "def": "the rites of Hajj"
         },
         {
-          "term": "taqwa",
-          "def": "God-consciousness"
+          "term": "10 AH / 632 CE",
+          "def": "the year of the Farewell Pilgrimage"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you knew it was your last chance to teach the people you love, what would you make sure to tell them?",
+        "a": "The most important things: as the Prophet ﷺ did in the Farewell Pilgrimage."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'This day I have perfected for you your religion' (al-Ma'idah 5:3), revealed on the day of Arafah (Bukhari and Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Name two lessons from the conquest of Makkah.",
-        "What does amnesty mean?",
-        "Which pillar is Hajj?"
+        {
+          "q": "Bismillah. The Treaty of Hudaybiyyah was in ...",
+          "a": "6 AH",
+          "mins": 1,
+          "options": [
+            "6 AH",
+            "10 AH",
+            "1 AH"
+          ]
+        },
+        {
+          "q": "What did the Prophet ﷺ do with the people of Makkah at the conquest?",
+          "a": "Forgave them",
+          "mins": 1,
+          "options": [
+            "Forgave them",
+            "Expelled them"
+          ]
+        },
+        {
+          "q": "Name one leadership quality of the Prophet ﷺ.",
+          "a": "For example: mercy, consultation, justice",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The last Hajj",
+          "heading": "The only Hajj",
           "bullets": [
-            "In 10 AH the Prophet ﷺ performed Hajj",
-            "Thousands of Muslims joined him",
-            "He taught the rituals: “Take your rites from me”",
-            "The details of Hajj were taught through his example"
+            "10 AH: the Prophet's ﷺ only Hajj",
+            "Over a hundred thousand are reported to have joined",
+            "'Take your rites from me'"
           ],
-          "note": "Begin with bismillah. Jabir’s long hadith in Sahih Muslim describes the Hajj. ‘Take your rites from me’ is also in Muslim. Ask: why is it important that the Prophet ﷺ taught directly? Link to Sunnah as explanation."
+          "note": "Begin with Bismillah. 'Take your rites from me' is reported by Muslim (Jabir)."
         },
         {
-          "heading": "The sermon at Arafat",
-          "bullets": [
-            "Your lives and wealth are sacred",
-            "The riba of the days of ignorance is abolished",
-            "Treat women with kindness and fear Allah regarding them",
-            "Hold fast to the Book of Allah"
-          ],
-          "note": "From Muslim (Jabir). He said that the blood and wealth are sacred as this day, this month, this city. He abolished pre-Islamic blood feuds and riba. He asked: have I conveyed? and the people replied yes, and he said ‘O Allah, bear witness’."
+          "heading": "The journey of Hajj",
+          "bullets": [],
+          "note": "Order of key events.",
+          "timeline": [
+            {
+              "label": "8 Dhul-Hijjah",
+              "text": "Mina"
+            },
+            {
+              "label": "9",
+              "text": "Standing at Arafah; the sermon"
+            },
+            {
+              "label": "Night",
+              "text": "Muzdalifah"
+            },
+            {
+              "label": "10",
+              "text": "Stoning, sacrifice, shaving, tawaf"
+            },
+            {
+              "label": "11 to 13",
+              "text": "Days in Mina"
+            }
+          ]
         },
         {
-          "heading": "Equality and justice",
-          "bullets": [
-            "“No Arab is superior to a non-Arab” except by taqwa (Ahmad)",
-            "All people descend from Adam",
-            "No racism or tribal pride",
-            "Everyone is accountable to Allah"
-          ],
-          "note": "This wording is in Musnad Ahmad and is graded authentic. Link to 49:13. Ask: how does the sermon challenge racism today? Edexcel 1.6: human rights and equality."
+          "heading": "Religion completed",
+          "bullets": [],
+          "note": "Umar reported this was revealed on the day of Arafah, a Friday (Bukhari and Muslim).",
+          "quote": {
+            "text": "This day I have perfected for you your religion and completed My favour upon you and have approved for you Islam as religion.",
+            "source": "Qur'an, al-Ma'idah 5:3 (translation of the meaning)"
+          }
         },
         {
-          "heading": "The religion is complete",
+          "heading": "Quick check",
           "bullets": [
-            "“Today I have perfected your religion for you” (5:3)",
-            "Revealed on the day of Arafat",
-            "The message was complete and delivered",
-            "Revealed while the Prophet ﷺ was at Arafat"
+            "Vote in the Teams poll"
           ],
-          "note": "Edexcel passage 5:3. Bukhari reports that a Jewish man told Umar of this verse and Umar said we know the day and place where it was revealed: Arafat on a Friday. Ask: what does ‘perfected’ mean? (No new revelation or religion will be added.)"
-        },
-        {
-          "heading": "After the sermon",
-          "bullets": [
-            "The Prophet ﷺ returned to Madinah",
-            "Soon after, he became ill",
-            "He passed away in the home of Aisha in 11 AH",
-            "Muslims were devastated; Abu Bakr steadied them with the Qur’an"
-          ],
-          "note": "Abu Bakr’s words in Bukhari: ‘Whoever worshipped Muhammad, Muhammad has died; whoever worships Allah, Allah is ever-living and never dies,’ then he recited 3:144. Treat with respect. Ask: how did this strengthen the community's faith?"
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Where was 5:3 revealed?",
+            "options": [
+              "At Arafah",
+              "In the Cave of Hira",
+              "At Badr"
+            ],
+            "answer": 0,
+            "why": "On the day of Arafah in the Farewell Pilgrimage (Bukhari and Muslim)."
+          }
         }
       ],
       "practice": [
-        "List four themes of the Farewell Sermon.",
-        "Explain what 5:3 teaches about the religion.",
-        "Why did Abu Bakr quote 3:144?"
+        {
+          "q": "Explain why the Farewell Pilgrimage was important for Muslims.",
+          "a": "The Prophet ﷺ showed the rites of Hajj in full, gave his final sermon and 5:3 announced the religion was complete.",
+          "mins": 3,
+          "model": "Point: it completed Hajj and the religion. Evidence: 'Take your rites from me' (Muslim); 5:3 revealed at Arafah (Bukhari and Muslim). Explain: Muslims learned Hajj exactly, and Allah declared Islam complete. Link: months later the Prophet ﷺ died."
+        },
+        {
+          "q": "The Farewell Pilgrimage was in ...",
+          "a": "10 AH",
+          "mins": 1,
+          "options": [
+            "10 AH",
+            "8 AH"
+          ]
+        },
+        {
+          "q": "On which day do pilgrims stand at Arafah?",
+          "a": "The 9th of Dhul-Hijjah",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write a 150-word summary of the sermon highlighting human rights.",
-        "Prepare a 6-mark style answer: ‘Explain why the Farewell Sermon is important for Muslims.’",
-        "Create a poster showing equality in the sermon."
+        {
+          "q": "Hajj map task on the pupil PDF: label Mina, Arafah and Muzdalifah, add the days and what happened, then in the portal response box: 'The Farewell Pilgrimage matters because ...' (one PEEL paragraph).",
+          "a": "Correct map and days; paragraph with 5:3 and 'take your rites from me'",
+          "mins": 12,
+          "model": "Teacher labels Arafah: '9 Dhul-Hijjah: standing and the sermon; 5:3 revealed.'"
+        },
+        {
+          "q": "Extend: why is it called 'farewell'?",
+          "a": "The Prophet ﷺ hinted he might not meet them again and died about three months later.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what does 'perfected your religion' (5:3) mean for adding new acts of worship?",
+          "a": "Islam is complete: nothing new is added to worship.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Where was the sermon delivered?",
-        "Name one right mentioned in the sermon."
+        {
+          "q": "'Take your rites from me' refers to ...",
+          "a": "Hajj",
+          "mins": 1,
+          "options": [
+            "Hajj",
+            "Salah only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what did the Prophet ﷺ make sure to tell them?",
+          "a": "The rites, and the core messages of his sermon.",
+          "mins": 2
+        }
       ],
-      "homework": "Compare one theme of the sermon with a modern human-rights principle and explain similarities.",
-      "send": "SEND/EAL: simplified sermon extracts and glossary; stretch: evaluate how the sermon summarises the Prophet’s ﷺ achievements."
+      "homework": "Read the sermon summary (portal) ready for next lesson.",
+      "send": "SEND: map with labels to drag. EAL: timeline with picture prompts (tents, mountain, pebbles). Stretch: research the hadith of Jabir describing the Hajj (Muslim).",
+      "resources": [
+        "Slides",
+        "School-approved seerah text (TO CONFIRM)",
+        "Portal islamic-studies y9 lesson 7 (this lesson)",
+        "Pupil PDF worksheet: Hajj map",
+        "Mushaf or printed al-Ma'idah 5:3"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mount Arafat",
+          "alt": "Mount Arafat (Jabal ar-Rahmah)",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mina tents",
+          "alt": "The tents of Mina",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Unit 3: Hadith, fiqh and the law",
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
       "n": 8,
       "title": "How hadith were collected and graded",
       "duration": 50,
+      "bigQuestion": "How could you check whether a quote on social media is really from a famous person, 1,400 years later?",
       "objectives": [
-        "Explain how hadith were preserved and recorded",
-        "State the conditions for an authentic hadith",
-        "Name the major collections and their compilers"
+        "To understand how scholars collected hadith and judged their authenticity"
       ],
+      "successCriteria": [
+        "All: name the two parts of a hadith and the main grades",
+        "Most: explain how scholars checked narrators",
+        "Some: explain why the six books matter and how Bukhari and Muslim were compiled"
+      ],
+      "crossCurricular": "History: evaluating sources for reliability and provenance",
+      "smsc": "Spiritual: preserving the Sunnah; Moral: honesty in reporting",
       "keywords": [
         {
-          "term": "rijal",
-          "def": "the study of narrators"
+          "term": "isnad (إِسْنَاد)",
+          "def": "the chain of narrators"
         },
         {
-          "term": "sahih",
-          "def": "authentic: connected chain of upright, accurate narrators, without hidden defect"
+          "term": "sahih (صَحِيح)",
+          "def": "authentic"
         },
         {
-          "term": "mutawatir",
-          "def": "narrated by so many that agreement on lying is impossible"
+          "term": "hasan (حَسَن)",
+          "def": "good: acceptable"
         },
         {
-          "term": "Kutub as-Sittah",
-          "def": "the six major collections"
+          "term": "da'if (ضَعِيف)",
+          "def": "weak: not relied on for rulings"
+        },
+        {
+          "term": "mawdu' (مَوْضُوع)",
+          "def": "fabricated"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "How could you check whether a quote on social media is really from a famous person, 1,400 years later?",
+        "a": "Trace the chain of who reported it and check each person: the method of hadith scholars."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever lies about me on purpose, let him take his seat in the Fire' (Bukhari and Muslim). This is why hadith were checked so carefully.",
+        "at": "start"
+      },
       "starter": [
-        "Define hadith, isnad and matn.",
-        "Name two collections.",
-        "Why do we not share unchecked quotes?"
+        {
+          "q": "Bismillah. 'Let the one present inform the absent' is in ...",
+          "a": "Bukhari",
+          "mins": 1,
+          "options": [
+            "Bukhari",
+            "Muslim only"
+          ]
+        },
+        {
+          "q": "Equality in 49:13 is by ...",
+          "a": "Taqwa",
+          "mins": 1,
+          "options": [
+            "Taqwa",
+            "Wealth"
+          ]
+        },
+        {
+          "q": "The text of a hadith is the ...",
+          "a": "Matn",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Preserving the Sunnah",
-          "bullets": [
-            "Companions memorised and acted on the Sunnah",
-            "Some, like Abdullah ibn Amr, wrote hadith down",
-            "Umar ibn Abd al-Aziz encouraged official compilation",
-            "Scholars travelled for a single narration"
-          ],
-          "note": "Begin with bismillah. Abdullah ibn Amr’s written book is mentioned in Bukhari (Abu Hurayrah). Ask: why would scholars travel for one hadith? (To check its chain.) Edexcel 1.5b: recording the Sunnah."
+          "heading": "From memory to books",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "timeline": [
+            {
+              "label": "Companions",
+              "text": "Memorised and some wrote hadith"
+            },
+            {
+              "label": "Early 2nd c. AH",
+              "text": "Umar ibn Abd al-Aziz encouraged recording"
+            },
+            {
+              "label": "3rd c. AH",
+              "text": "Bukhari (d. 256 AH) and Muslim (d. 261 AH) compiled the sahih collections"
+            },
+            {
+              "label": "Later",
+              "text": "Abu Dawud, Tirmidhi, Nasa'i, Ibn Majah: the six books"
+            }
+          ]
         },
         {
-          "heading": "Conditions of a sahih hadith",
+          "heading": "Checking the narrators",
           "bullets": [
-            "A connected chain",
-            "Narrators upright in character",
-            "Narrators with accurate memory",
-            "No hidden defect and no conflict with stronger reports"
+            "Honest and upright ('adl)",
+            "Accurate memory (dabt)",
+            "Connected chain, no hidden faults"
           ],
-          "note": "Write the five conditions: ittisal, ‘adalah, dabt, no shudhudh, no illah. Keep the Arabic terms for stretch pupils. Use a courtroom analogy: witnesses must be honest and accurate."
+          "note": "This is the science of 'ilm ar-rijal."
         },
         {
-          "heading": "Collections and compilers",
-          "bullets": [
-            "Bukhari (d. 256 AH) and Muslim (d. 261 AH)",
-            "Abu Dawud, Tirmidhi, Nasa’i, Ibn Majah",
-            "Malik’s Muwatta’ and Ahmad’s Musnad",
-            "Bukhari and Muslim did not include every authentic hadith"
-          ],
-          "note": "Imam Bukhari reportedly selected from hundreds of thousands of narrations; say ‘reportedly’. Ask: how do you think a collection is organised? (By chapters/topics.) Show how to cite a hadith, for example ‘Sahih al-Bukhari, hadith 1’."
+          "heading": "The grades",
+          "bullets": [],
+          "note": "Show the scale.",
+          "table": {
+            "head": [
+              "Grade",
+              "Meaning",
+              "Used for rulings?"
+            ],
+            "rows": [
+              [
+                "Sahih",
+                "Authentic",
+                "Yes"
+              ],
+              [
+                "Hasan",
+                "Good",
+                "Yes"
+              ],
+              [
+                "Da'if",
+                "Weak",
+                "No"
+              ],
+              [
+                "Mawdu'",
+                "Fabricated",
+                "Never: not to be quoted as hadith"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Dealing with weak and fabricated reports",
+          "heading": "Quick check",
           "bullets": [
-            "“Whoever lies about me deliberately, let him take his seat in the Fire”",
-            "Fabricated reports are not Sunnah",
-            "Be careful with quotes in social media",
-            "Ask: where is it from? Is it graded?"
+            "Vote in the Teams poll"
           ],
-          "note": "The hadith is mutawatir (Bukhari, Muslim). Provide a method: 1) find the source; 2) find the grading by a reliable scholar; 3) if unsure, do not share. Never invent reports."
-        },
-        {
-          "heading": "Using hadith in an exam",
-          "bullets": [
-            "Quote briefly and accurately",
-            "Name the narrator or collection if you know it",
-            "Explain meaning and relevance",
-            "Link to a belief or practice"
-          ],
-          "note": "Edexcel questions use given passages; practise a short paragraph: quote, explain, apply. Model on the board."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "A narrator known for lying makes a hadith ...",
+            "options": [
+              "Weak or fabricated",
+              "Sahih",
+              "Hasan"
+            ],
+            "answer": 0,
+            "why": "Honesty is a condition; a liar's report is rejected."
+          }
         }
       ],
       "practice": [
-        "List the conditions of a sahih hadith.",
-        "Name two scholars who compiled authentic hadith.",
-        "Explain why the isnad system is important."
-      ],
-      "independent": [
-        "Create a flow chart: how to check a hadith before sharing.",
-        "Write a 6-mark style answer: ‘Explain how the Sunnah was recorded.’",
-        "Prepare a mini-biography of Imam al-Bukhari or Imam Muslim from reliable sources."
-      ],
-      "exit": [
-        "Name two conditions of a sahih hadith.",
-        "What should you do before sharing a hadith online?"
-      ],
-      "homework": "Find one hadith quoted in a book or website and trace its collection and grading.",
-      "send": "SEND/EAL: vocabulary matching; stretch: discuss how modern technology helps or harms hadith verification."
-    },
-    {
-      "unit": "Unit 3: Hadith, fiqh and the law",
-      "n": 9,
-      "title": "The four schools of fiqh and the etiquette of differing",
-      "duration": 50,
-      "objectives": [
-        "Name the four Sunni schools and their founders",
-        "Explain why scholars differ",
-        "Show respect for valid differences"
-      ],
-      "keywords": [
         {
-          "term": "madhhab",
-          "def": "a school of Islamic jurisprudence"
+          "q": "Explain how scholars decided a hadith was sahih.",
+          "a": "Every narrator honest and precise, the chain connected back to the Prophet ﷺ, and no hidden defect or contradiction.",
+          "mins": 3,
+          "model": "Point: sahih needs a strong chain and text. Evidence: scholars checked honesty ('adl), memory (dabt) and connection. Explain: one weak link lowers the grade. Link: this is why Bukhari and Muslim are trusted."
         },
         {
-          "term": "faqih",
-          "def": "a jurist expert in fiqh"
+          "q": "Imam al-Bukhari died in ...",
+          "a": "256 AH",
+          "mins": 1,
+          "options": [
+            "256 AH",
+            "10 AH"
+          ]
         },
         {
-          "term": "ikhtilaf",
-          "def": "difference of opinion"
-        },
-        {
-          "term": "taqlid",
-          "def": "following a qualified scholar’s ruling without knowing the evidence"
+          "q": "A fabricated hadith is called ...",
+          "a": "Mawdu'",
+          "mins": 1,
+          "options": [
+            "Mawdu'",
+            "Hasan"
+          ]
         }
       ],
+      "independent": [
+        {
+          "q": "Grade-the-chain task on the pupil PDF: four invented example chains (not real hadith) with narrator notes; decide each grade and give the reason.",
+          "a": "Grades with reasons based on honesty, memory and connection",
+          "mins": 13,
+          "model": "Teacher does chain 1: 'Narrator C is known for poor memory, so the chain is weak (da'if).'"
+        },
+        {
+          "q": "Extend: why must Muslims not share a mawdu' report as hadith?",
+          "a": "It is lying about the Prophet ﷺ, which is a grave sin (Bukhari and Muslim).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why did hadith need recording after the Companions' time?",
+          "a": "Narrators were dying, the ummah spread far, and some began fabricating.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A hasan hadith is ...",
+          "a": "Acceptable",
+          "mins": 1,
+          "options": [
+            "Acceptable",
+            "Rejected"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how could you check a 1,400-year-old quote?",
+          "a": "Trace and check the chain of narrators, as hadith scholars did.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find the full name of Imam al-Bukhari and one fact about his journeys to collect hadith.",
+      "send": "SEND: grade scale with colours. EAL: key word cards. Stretch: research how Imam Muslim arranged his Sahih.",
+      "resources": [
+        "Slides",
+        "School-approved KS3 text on hadith sciences and the madhhabs (TO CONFIRM)",
+        "Portal islamic-studies y9 lesson 8 (this lesson)",
+        "Pupil PDF worksheet: grade-the-chain (example chains only)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "old manuscript Arabic",
+          "alt": "An old Arabic manuscript",
+          "for": "teach:1"
+        },
+        {
+          "find": "chain links",
+          "alt": "A chain: the isnad",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+      "n": 9,
+      "title": "The four schools of fiqh",
+      "duration": 50,
+      "bigQuestion": "If four expert doctors look at the same evidence, could they reach slightly different answers and all be respected? Why?",
+      "objectives": [
+        "To understand who founded the four schools of fiqh and why they exist"
+      ],
+      "successCriteria": [
+        "All: name the four imams and their schools",
+        "Most: explain why the schools developed",
+        "Some: explain the imams' respect for each other and for evidence"
+      ],
+      "smsc": "Cultural: the rich tradition of Muslim scholarship",
+      "keywords": [
+        {
+          "term": "fiqh (فِقْه)",
+          "def": "understanding and applying Islamic law"
+        },
+        {
+          "term": "madhhab (مَذْهَب)",
+          "def": "a school of fiqh"
+        },
+        {
+          "term": "imam (إِمَام)",
+          "def": "here: a great scholar who founded a school"
+        },
+        {
+          "term": "ijtihad (اِجْتِهَاد)",
+          "def": "a scholar's careful effort to reach a ruling from the evidence"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If four expert doctors look at the same evidence, could they reach slightly different answers and all be respected? Why?",
+        "a": "Yes: honest experts can differ in understanding; the four imams did, with respect."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And if you disagree over anything, refer it to Allah and the Messenger' (an-Nisa' 4:59): the imams built on this.",
+        "at": "start"
+      },
       "starter": [
-        "Name the four sources of Shari’ah.",
-        "What is ijma?",
-        "Who can give a fatwa?"
+        {
+          "q": "Bismillah. A sahih hadith is ...",
+          "a": "Authentic",
+          "mins": 1,
+          "options": [
+            "Authentic",
+            "Weak"
+          ]
+        },
+        {
+          "q": "Bukhari died in ...",
+          "a": "256 AH",
+          "mins": 1,
+          "options": [
+            "256 AH",
+            "10 AH"
+          ]
+        },
+        {
+          "q": "What did narrators need besides honesty?",
+          "a": "An accurate memory",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "The four imams",
-          "bullets": [
-            "Abu Hanifa (d. 150 AH)",
-            "Malik ibn Anas (d. 179 AH)",
-            "Ash-Shafi’i (d. 204 AH)",
-            "Ahmad ibn Hanbal (d. 241 AH)"
-          ],
-          "note": "Begin with bismillah. The four schools: Hanafi, Maliki, Shafi’i, Hanbali. Malik wrote the Muwatta’ in Madinah; Ahmad compiled the Musnad. Each used the Qur’an, Sunnah and consensus, with differing methods. Ask: where do your families’ practices come from?"
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "School",
+              "Imam",
+              "Died",
+              "Where it grew"
+            ],
+            "rows": [
+              [
+                "Hanafi",
+                "Abu Hanifah",
+                "150 AH (767 CE)",
+                "Kufa, Iraq"
+              ],
+              [
+                "Maliki",
+                "Malik ibn Anas",
+                "179 AH (795 CE)",
+                "Madinah"
+              ],
+              [
+                "Shafi'i",
+                "Muhammad ibn Idris ash-Shafi'i",
+                "204 AH (820 CE)",
+                "Iraq and Egypt"
+              ],
+              [
+                "Hanbali",
+                "Ahmad ibn Hanbal",
+                "241 AH (855 CE)",
+                "Baghdad"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Why do scholars differ?",
-          "bullets": [
-            "Different readings of the Arabic wording",
-            "A hadith reached one scholar, but not another",
-            "Different grading of a hadith",
-            "Different ways to combine texts"
-          ],
-          "note": "Give a simple example: whether touching a spouse breaks wudu. Different scholars understood the evidence differently. These are secondary matters; core beliefs (Tawhid, salah, fasting) are agreed upon."
+          "heading": "Teachers and students",
+          "bullets": [],
+          "note": "A chain of learning.",
+          "cycle": [
+            "Abu Hanifah",
+            "Malik taught ash-Shafi'i",
+            "Ash-Shafi'i taught Ahmad",
+            "Each respected the others"
+          ]
         },
         {
-          "heading": "A lesson from the Prophet ﷺ",
+          "heading": "Why schools developed",
           "bullets": [
-            "At Banu Qurayzah, the Prophet ﷺ said: “Let none pray Asr except at Banu Qurayzah”",
-            "Some prayed on the way; others delayed",
-            "He did not blame either group (Bukhari, Muslim)"
-          ],
-          "note": "Use this to teach adab of ikhtilaf. Both groups acted from sincere understanding. Ask: how should this shape the way we speak about people who follow another valid opinion?"
+            "New questions as Islam spread",
+            "Different hadith reached different cities",
+            "Different ways of understanding the evidence"
+          ]
         },
         {
-          "heading": "Adab of disagreement",
+          "heading": "Quick check",
           "bullets": [
-            "Respect scholars of other schools",
-            "Do not mock or insult",
-            "Distinguish core beliefs from open questions",
-            "Ask qualified scholars"
+            "Vote in the Teams poll"
           ],
-          "note": "Differences in aqeedah foundations are not the same as differences in minor fiqh; ahl as-sunnah hold firm on fundamentals while tolerating valid differences in branches. Make this clear to pupils but keep it simple."
-        },
-        {
-          "heading": "Applying this",
-          "bullets": [
-            "At home, follow your family’s school as a learner",
-            "Do not argue about small differences at the masjid",
-            "Focus on shared duties: salah, honesty, kindness"
-          ],
-          "note": "Role play: two pupils pray with different hand positions; how do they speak? Show a gentle response."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Who taught Ahmad ibn Hanbal?",
+            "options": [
+              "Ash-Shafi'i",
+              "Abu Hanifah",
+              "Bukhari"
+            ],
+            "answer": 0,
+            "why": "Ahmad studied with ash-Shafi'i; ash-Shafi'i studied with Malik."
+          }
         }
       ],
       "practice": [
-        "Match each school with its founder.",
-        "Give two reasons scholars differ.",
-        "What lesson do we learn from the Banu Qurayzah hadith?"
+        {
+          "q": "Explain two reasons why the four schools developed.",
+          "a": "Hadith reached different cities at different times, and scholars understood words and evidence differently through ijtihad.",
+          "mins": 3,
+          "model": "Point: the schools grew for good reasons. Evidence: Malik in Madinah had access to the practice of its people; Abu Hanifah in Kufa met new questions. Explain: ijtihad on the same sources can lead to different results. Link: all four rely on the Qur'an and Sunnah."
+        },
+        {
+          "q": "Imam Malik taught in ...",
+          "a": "Madinah",
+          "mins": 1,
+          "options": [
+            "Madinah",
+            "Baghdad"
+          ]
+        }
       ],
       "independent": [
-        "Create a fact file on one imam from reliable sources.",
-        "Write a 6-mark style response: ‘Explain why Muslims may follow different schools of law.’",
-        "Write dialogue showing good manners when disagreeing."
+        {
+          "q": "Imam profile cards on the pupil PDF (four cards: name, dates, city, teacher or student, one famous book or fact), then one sentence on what they had in common.",
+          "a": "Accurate cards (e.g. Malik: al-Muwatta'; Ahmad: al-Musnad); common: following the Qur'an and Sunnah",
+          "mins": 14,
+          "model": "Teacher fills Malik's card: 'Madinah, d. 179 AH, wrote al-Muwatta', taught ash-Shafi'i.'"
+        },
+        {
+          "q": "Extend: why is ijtihad only for qualified scholars?",
+          "a": "It needs deep knowledge of Arabic, the Qur'an, Sunnah and principles.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: which school is most followed in your family or community, and where is it common worldwide?",
+          "a": "Pupils' own; e.g. Hanafi in South Asia and Turkey, Shafi'i in East Africa and South-East Asia",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the four schools.",
-        "Give one rule for respectful disagreement."
+        {
+          "q": "Abu Hanifah's school is the ...",
+          "a": "Hanafi",
+          "mins": 1,
+          "options": [
+            "Hanafi",
+            "Maliki"
+          ]
+        },
+        {
+          "q": "Back to our ponder: can experts differ and all be respected?",
+          "a": "Yes, when they follow evidence honestly, like the four imams.",
+          "mins": 2
+        }
       ],
-      "homework": "Ask a family member which school they follow and what they know about its founder.",
-      "send": "SEND/EAL: timeline of the four imams; stretch: discuss when disagreement is acceptable and when it is not."
+      "homework": "Ask a family member which madhhab they follow, if any, and why.",
+      "send": "SEND: profile cards with gaps. EAL: key word cards. Stretch: research one famous saying of an imam about following the hadith (from an approved source).",
+      "resources": [
+        "Slides",
+        "School-approved KS3 text on hadith sciences and the madhhabs (TO CONFIRM)",
+        "Portal islamic-studies y9 lesson 9 (this lesson)",
+        "Pupil PDF worksheet: imam profile cards",
+        "Atlas or online map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Baghdad map historical",
+          "alt": "A map of the Abbasid lands",
+          "for": "teach:1"
+        },
+        {
+          "find": "old Arabic books",
+          "alt": "Old books of fiqh",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Spring 1: The Prophet as leader and sawm",
@@ -3243,6 +3625,1603 @@
         {
           "find": "crescent moon night",
           "alt": "The new crescent moon",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+      "n": 20,
+      "title": "The Farewell Sermon: life, property and the end of riba",
+      "duration": 50,
+      "bigQuestion": "Why do you think the Prophet ﷺ started his last great sermon with people's lives and property?",
+      "objectives": [
+        "To understand the first messages of the Farewell Sermon about the sanctity of life and property and the end of riba"
+      ],
+      "successCriteria": [
+        "All: name two rights the sermon protects",
+        "Most: explain why the Prophet ﷺ compared them to the sacred day, month and city",
+        "Some: explain why riba and blood feuds were ended"
+      ],
+      "crossCurricular": "Citizenship: rights and the rule of law",
+      "smsc": "Moral: sanctity of life and property; Social: justice",
+      "keywords": [
+        {
+          "term": "khutbah (خُطْبَة)",
+          "def": "a sermon"
+        },
+        {
+          "term": "haram (حَرَام)",
+          "def": "sacred / forbidden"
+        },
+        {
+          "term": "riba (رِبَا)",
+          "def": "interest or usury, forbidden in Islam"
+        },
+        {
+          "term": "blood feud",
+          "def": "revenge passed down families"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think the Prophet ﷺ started his last great sermon with people's lives and property?",
+        "a": "Because protecting life and property is the basis of a just society."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah has permitted trade and has forbidden riba' (al-Baqarah 2:275).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 5:3 was revealed at ...",
+          "a": "Arafah",
+          "mins": 1,
+          "options": [
+            "Arafah",
+            "Mina"
+          ]
+        },
+        {
+          "q": "The Farewell Pilgrimage was in ...",
+          "a": "10 AH",
+          "mins": 1,
+          "options": [
+            "10 AH",
+            "6 AH"
+          ]
+        },
+        {
+          "q": "'Take your rites from me' refers to ...",
+          "a": "Hajj",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sacred like this day",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "quote": {
+            "text": "Your blood and your wealth are sacred to you, like the sacredness of this day of yours, in this month of yours, in this land of yours.",
+            "source": "Bukhari and Muslim"
+          }
+        },
+        {
+          "heading": "Ending the old ways",
+          "bullets": [
+            "Blood feuds of the time of ignorance are ended",
+            "Riba of the time of ignorance is ended",
+            "He began with his own family's claims"
+          ],
+          "note": "Reported by Muslim in Jabir's long hadith of the Hajj."
+        },
+        {
+          "heading": "Riba in Islam",
+          "bullets": [
+            "Allah has permitted trade and forbidden riba (2:275)",
+            "Islamic finance shares profit and risk",
+            "Interest is taught as knowledge, never to take"
+          ],
+          "note": "Standard school riba note: partnership (musharakah) and cost-plus sale (murabahah) instead of interest."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Why compare life and wealth to the sacred day?",
+            "options": [
+              "To show they must never be violated",
+              "Because it was hot",
+              "To end the sermon"
+            ],
+            "answer": 0,
+            "why": "The day, month and city were all sacred; so are a Muslim's life and property."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why the Prophet ﷺ ended blood feuds.",
+          "a": "They caused endless revenge killings; ending them protected life and united the community.",
+          "mins": 3,
+          "model": "Point: ending feuds protected life. Evidence: 'Your blood and your wealth are sacred' (Bukhari and Muslim); feuds of ignorance were ended (Muslim). Explain: revenge passed down generations; the sermon stopped it. Link: justice replaces revenge."
+        },
+        {
+          "q": "Which ayah says trade is permitted and riba forbidden?",
+          "a": "2:275",
+          "mins": 1,
+          "options": [
+            "2:275",
+            "5:3"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Sermon notes on the pupil PDF: for each message (life, property, feuds, riba) write the meaning, why it mattered then, and one example of it today.",
+          "a": "Accurate meanings, context and modern examples (e.g. knife crime, theft, payday loans)",
+          "mins": 13,
+          "model": "Teacher fills 'Life: sacred like the day of Arafah. Then: tribal revenge killings. Today: violence on the streets.'"
+        },
+        {
+          "q": "Extend: why start with his own family's claims?",
+          "a": "To lead by example and show the rule applies to everyone.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how does Islamic finance avoid riba?",
+          "a": "Sharing profit and risk (musharakah) or a fixed cost-plus sale (murabahah).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Riba is ...",
+          "a": "Forbidden",
+          "mins": 1,
+          "options": [
+            "Forbidden",
+            "Recommended"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why start with life and property?",
+          "a": "They are the basis of a just and safe society.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write three rules for a safe community based on today's sermon messages.",
+      "send": "SEND: sermon message cards with icons. EAL: notes frame. Stretch: compare the sermon with a modern human rights document.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text (TO CONFIRM)",
+        "Pupil PDF worksheet: sermon notes",
+        "Mushaf or printed al-Baqarah 2:275"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jabal ar-Rahmah Arafat",
+          "alt": "The Mount of Mercy at Arafah",
+          "for": "hook"
+        },
+        {
+          "find": "scales of justice",
+          "alt": "Scales of justice",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+      "n": 21,
+      "title": "The Farewell Sermon: women, equality and holding to the Qur'an",
+      "duration": 50,
+      "bigQuestion": "Some say people are better because of their family, colour or money. What does Islam say?",
+      "objectives": [
+        "To understand the sermon's teaching on women's rights, equality and holding to the Qur'an"
+      ],
+      "successCriteria": [
+        "All: name the three messages of this lesson",
+        "Most: explain each with evidence",
+        "Some: explain why 'let the one present inform the absent' gives Muslims a duty today"
+      ],
+      "smsc": "Moral: equality and rights; Cultural: one ummah of many peoples",
+      "keywords": [
+        {
+          "term": "taqwa (تَقْوَى)",
+          "def": "awareness of Allah: the measure of honour"
+        },
+        {
+          "term": "equality",
+          "def": "no one is better by race or wealth"
+        },
+        {
+          "term": "rights",
+          "def": "what people are owed"
+        },
+        {
+          "term": "tabligh (تَبْلِيغ)",
+          "def": "conveying the message"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some say people are better because of their family, colour or money. What does Islam say?",
+        "a": "The most honoured with Allah is the one with most taqwa (49:13)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, the most noble of you in the sight of Allah is the most righteous of you' (al-Hujurat 49:13).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Your blood and your wealth are sacred' is in ...",
+          "a": "Bukhari and Muslim",
+          "mins": 1,
+          "options": [
+            "Bukhari and Muslim",
+            "Only the Qur'an"
+          ]
+        },
+        {
+          "q": "Which ayah forbids riba?",
+          "a": "2:275",
+          "mins": 1,
+          "options": [
+            "2:275",
+            "5:3"
+          ]
+        },
+        {
+          "q": "What were blood feuds?",
+          "a": "Revenge passed down families",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Rights of women",
+          "bullets": [
+            "'Fear Allah concerning women'",
+            "They were entrusted to men by Allah",
+            "Both have rights over each other"
+          ],
+          "note": "Begin with Bismillah. Reported by Muslim in Jabir's hadith of the Hajj. Taught as rights and responsibilities in the family; no RSE content."
+        },
+        {
+          "heading": "Equality by taqwa",
+          "bullets": [],
+          "note": "Read 49:13 in translation.",
+          "quote": {
+            "text": "O mankind, We created you from a male and a female and made you peoples and tribes that you may know one another. Indeed, the most noble of you in the sight of Allah is the most righteous of you.",
+            "source": "Qur'an, al-Hujurat 49:13 (translation of the meaning)"
+          }
+        },
+        {
+          "heading": "Hold to the Book",
+          "bullets": [
+            "'I have left among you the Book of Allah'",
+            "Hold fast and you will not go astray",
+            "'Let the one present inform the absent'"
+          ],
+          "note": "The Book of Allah: Muslim (Jabir). 'Let the one present inform the absent': Bukhari."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "According to 49:13, who is most noble with Allah?",
+            "options": [
+              "The most righteous",
+              "The richest",
+              "The oldest family"
+            ],
+            "answer": 0,
+            "why": "Nobility is by taqwa, not race or wealth."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what the sermon and 49:13 teach about racism.",
+          "a": "No one is better by race; Allah made peoples to know one another; honour is by taqwa.",
+          "mins": 3,
+          "model": "Point: Islam rejects racism. Evidence: 49:13: 'the most noble of you ... is the most righteous'. Explain: colour and tribe are for knowing each other, not ranking. Link: the sermon taught this to over a hundred thousand people of many tribes."
+        },
+        {
+          "q": "'Let the one present inform the absent' is in ...",
+          "a": "Bukhari",
+          "mins": 1,
+          "options": [
+            "Bukhari",
+            "No collection"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box, write a 12-mark style practice: 'The Farewell Sermon is still relevant today.' Give two reasons for, one against, and a conclusion. Start: 'Some would agree because ...'",
+          "a": "For: equality (49:13), sanctity of life, women's rights, holding to the Qur'an; against: some issues (e.g. blood feuds) belong to that time; conclusion with justification",
+          "mins": 14,
+          "model": "Teacher writes the first 'for' paragraph opening: 'Some would agree because the sermon's teaching on equality answers racism today: 49:13 says ...'"
+        },
+        {
+          "q": "Extend: what is your duty from 'let the one present inform the absent'?",
+          "a": "To pass on what we learn of Islam accurately.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: how did early Muslims carry out this command?",
+          "a": "They taught others, recorded hadith and spread to new lands.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Equality in Islam is measured by ...",
+          "a": "Taqwa",
+          "mins": 1,
+          "options": [
+            "Taqwa",
+            "Wealth",
+            "Tribe"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what does Islam say about being 'better'?",
+          "a": "Only taqwa raises a person with Allah (49:13).",
+          "mins": 2
+        }
+      ],
+      "homework": "Teach one message of the sermon to a family member: 'let the one present inform the absent'.",
+      "send": "SEND: 12-mark frame with sentence starters. EAL: key word cards. Stretch: add a Shari'ah example to the 'for' side.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text (TO CONFIRM)",
+        "Pupil PDF worksheet: 12-mark planning frame",
+        "Mushaf or printed al-Hujurat 49:13"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "world map",
+          "alt": "A world map: peoples and tribes",
+          "for": "teach:2"
+        },
+        {
+          "find": "open Quran book",
+          "alt": "The Book of Allah",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+      "n": 22,
+      "title": "Messages for all time: applying the Farewell Sermon",
+      "duration": 50,
+      "bigQuestion": "Which message from the Farewell Sermon do you think your town needs most right now? Why?",
+      "objectives": [
+        "To understand how the messages of the Farewell Sermon apply to Muslims in modern Britain"
+      ],
+      "successCriteria": [
+        "All: match sermon messages to modern situations",
+        "Most: explain how a Muslim would act in each",
+        "Some: evaluate which message is most needed today, with reasons"
+      ],
+      "crossCurricular": "Citizenship: equality law and challenging racism",
+      "smsc": "Social and moral: applying faith to modern life",
+      "keywords": [
+        {
+          "term": "application",
+          "def": "using a teaching in real life"
+        },
+        {
+          "term": "relevance",
+          "def": "how much something matters now"
+        },
+        {
+          "term": "sanctity",
+          "def": "being sacred and protected"
+        },
+        {
+          "term": "ummah (أُمَّة)",
+          "def": "the worldwide Muslim community"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which message from the Farewell Sermon do you think your town needs most right now? Why?",
+        "a": "Pupils' own: for example equality, safety of life, or honest money."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And hold firmly to the rope of Allah all together and do not become divided' (Al 'Imran 3:103).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 49:13 teaches nobility by ...",
+          "a": "Taqwa",
+          "mins": 1,
+          "options": [
+            "Taqwa",
+            "Tribe"
+          ]
+        },
+        {
+          "q": "'Fear Allah concerning women' is about ...",
+          "a": "Women's rights",
+          "mins": 1,
+          "options": [
+            "Women's rights",
+            "Trade"
+          ]
+        },
+        {
+          "q": "What did the Prophet ﷺ leave so we would not go astray?",
+          "a": "The Book of Allah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Then and now",
+          "bullets": [],
+          "note": "Begin with Bismillah. Pupils add examples.",
+          "table": {
+            "head": [
+              "Message",
+              "Then",
+              "Now"
+            ],
+            "rows": [
+              [
+                "Life is sacred",
+                "Tribal revenge",
+                "Violence, knife crime"
+              ],
+              [
+                "Wealth is sacred",
+                "Raids, theft",
+                "Fraud, scams"
+              ],
+              [
+                "Riba ended",
+                "Usury in Makkah",
+                "High-interest debt"
+              ],
+              [
+                "Equality",
+                "Tribal pride",
+                "Racism"
+              ],
+              [
+                "Women's rights",
+                "Women denied rights",
+                "Respect and fairness at home"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Case study",
+          "bullets": [],
+          "note": "Model one case.",
+          "model": {
+            "problem": "A classmate makes racist jokes about a new pupil. What does the sermon teach?",
+            "steps": [
+              "Message: equality by taqwa (49:13)",
+              "Action: speak up kindly, support the pupil",
+              "Report to a trusted adult",
+              "Show the Islamic reason when asked"
+            ],
+            "answer": "Stand for equality, gently and firmly"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "A friend offers a 'quick loan' with high interest. Which message applies?",
+            "options": [
+              "Riba is ended",
+              "Blood feuds are ended",
+              "Take your rites from me"
+            ],
+            "answer": 0,
+            "why": "Riba was ended in the sermon (Muslim); 2:275."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Apply the message on sanctity of property to online scams.",
+          "a": "Taking people's money by deceit violates the sanctity of wealth; Muslims never scam and help protect others.",
+          "mins": 3,
+          "model": "Point: scams break the sanctity of wealth. Evidence: 'Your blood and your wealth are sacred' (Bukhari and Muslim). Explain: tricking people out of money is theft. Link: Muslims protect others' property."
+        },
+        {
+          "q": "Which message answers racism?",
+          "a": "Equality (49:13)",
+          "mins": 1,
+          "options": [
+            "Equality (49:13)",
+            "Riba ended"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a short Youth Club talk in the portal response box: 'The Farewell Sermon in 2027'. Choose two messages, give evidence and a modern example for each, and end with a challenge. Start: 'Over fourteen centuries ago ...'",
+          "a": "Two messages with evidence and modern examples; a practical challenge",
+          "mins": 15,
+          "model": "Teacher writes the opening and first message: 'Over fourteen centuries ago, the Prophet ﷺ declared life sacred (Bukhari and Muslim). Today ...'"
+        },
+        {
+          "q": "Extend: which message is hardest for young people to live today? Why?",
+          "a": "Pupils' own reasoned view",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "High-interest debt links to which message?",
+          "a": "Riba ended",
+          "mins": 1,
+          "options": [
+            "Riba ended",
+            "Women's rights"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which message does your town need most?",
+          "a": "Pupils' own reasoned choice",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise your talk aloud to a family member and ask for one improvement.",
+      "send": "SEND: talk frame with examples. EAL: then / now matching cards. Stretch: add a counter-argument and answer it.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text (TO CONFIRM)",
+        "Pupil PDF worksheet: then and now table and talk planner"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "city skyline UK",
+          "alt": "A British city",
+          "for": "hook"
+        },
+        {
+          "find": "handshake hands only",
+          "alt": "Hands shaking: equality and trust",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+      "n": 23,
+      "title": "How the madhhabs reach rulings: Qur'an, Sunnah, ijma and qiyas",
+      "duration": 50,
+      "bigQuestion": "The Qur'an forbids wine. It does not mention modern drugs. How do scholars know drugs are haram?",
+      "objectives": [
+        "To understand the sources the schools use to reach rulings and how qiyas works"
+      ],
+      "successCriteria": [
+        "All: name the four sources in order",
+        "Most: explain ijma and qiyas with an example",
+        "Some: explain why scholars may still differ using the same sources"
+      ],
+      "smsc": "Moral: reasoning about right and wrong",
+      "keywords": [
+        {
+          "term": "ijma' (إِجْمَاع)",
+          "def": "consensus of the scholars"
+        },
+        {
+          "term": "qiyas (قِيَاس)",
+          "def": "analogy: applying a ruling to a new case with the same reason"
+        },
+        {
+          "term": "'illah (عِلَّة)",
+          "def": "the reason behind a ruling"
+        },
+        {
+          "term": "usul al-fiqh (أُصُولُ الفِقْه)",
+          "def": "the principles for deriving rulings"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Qur'an forbids wine. It does not mention modern drugs. How do scholars know drugs are haram?",
+        "a": "Qiyas: the reason (intoxication) is the same, so the ruling is the same."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, intoxicants, gambling ... are defilement from the work of Satan, so avoid it' (al-Ma'idah 5:90).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Imam Malik taught in ...",
+          "a": "Madinah",
+          "mins": 1,
+          "options": [
+            "Madinah",
+            "Kufa"
+          ]
+        },
+        {
+          "q": "Who taught Ahmad ibn Hanbal?",
+          "a": "Ash-Shafi'i",
+          "mins": 1,
+          "options": [
+            "Ash-Shafi'i",
+            "Abu Hanifah"
+          ]
+        },
+        {
+          "q": "What is ijtihad?",
+          "a": "A scholar's effort to reach a ruling from the evidence",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four sources",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "cycle": [
+            "Qur'an",
+            "Sunnah",
+            "Ijma' (consensus)",
+            "Qiyas (analogy)"
+          ]
+        },
+        {
+          "heading": "Qiyas step by step",
+          "bullets": [],
+          "note": "Model the four parts of qiyas.",
+          "model": {
+            "problem": "Are modern drugs that intoxicate haram?",
+            "steps": [
+              "Original case: wine (5:90)",
+              "Ruling: haram",
+              "Reason ('illah): it intoxicates",
+              "New case: drugs intoxicate too",
+              "So: same ruling, haram"
+            ],
+            "answer": "Haram by qiyas; the Prophet ﷺ also said 'every intoxicant is haram' (Muslim)"
+          }
+        },
+        {
+          "heading": "Ijma'",
+          "bullets": [
+            "When all qualified scholars of an age agree",
+            "Example: the five daily prayers are obligatory",
+            "Ijma' rests on the Qur'an and Sunnah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Applying a ruling to a new case with the same reason is ...",
+            "options": [
+              "Qiyas",
+              "Ijma'",
+              "Isnad"
+            ],
+            "answer": 0,
+            "why": "Qiyas uses the shared 'illah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use qiyas: the Qur'an forbids saying 'uff' to parents (17:23). What about hitting them? Explain.",
+          "a": "Even more forbidden: the reason is harm and disrespect, which is greater in hitting.",
+          "mins": 3,
+          "model": "Teacher: Original: saying 'uff' (17:23), forbidden. Reason: disrespect and hurt. New case: hitting, which is far more hurtful. So: even more strongly forbidden."
+        },
+        {
+          "q": "Consensus of scholars is ...",
+          "a": "Ijma'",
+          "mins": 1,
+          "options": [
+            "Ijma'",
+            "Qiyas"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Qiyas practice on the pupil PDF: four new cases (e-cigarettes that intoxicate, online gambling, energy drinks, missing Jumu'ah for a football match): identify the original case, reason and ruling, or explain why qiyas does not apply.",
+          "a": "Reasoned answers; e.g. online gambling: same as maysir (5:90), haram; energy drinks: no intoxication, so not by that qiyas",
+          "mins": 14,
+          "model": "Teacher does online gambling: 'Original: maysir (5:90), haram. Reason: chance winnings and losses, enmity. New: online gambling has the same reason, so haram.'"
+        },
+        {
+          "q": "Extend: why must qiyas be done by scholars?",
+          "a": "The reason must be identified correctly from the evidence.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: how can two scholars differ using the same source?",
+          "a": "They may identify a different 'illah or know different hadith.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The reason behind a ruling is the ...",
+          "a": "'Illah",
+          "mins": 1,
+          "options": [
+            "'Illah",
+            "Matn"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how do scholars know drugs are haram?",
+          "a": "By qiyas on wine: the same reason, intoxication; and 'every intoxicant is haram' (Muslim).",
+          "mins": 2
+        }
+      ],
+      "homework": "Explain qiyas to a family member using the wine and drugs example.",
+      "send": "SEND: qiyas four-box frame. EAL: key words with Arabic. Stretch: research istihsan or maslahah as other methods used by some schools.",
+      "resources": [
+        "Slides",
+        "School-approved KS3 text on hadith sciences and the madhhabs (TO CONFIRM)",
+        "Pupil PDF worksheet: qiyas practice cases",
+        "Mushaf or printed al-Ma'idah 5:90 and al-Isra 17:23"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "balance scale",
+          "alt": "A balance: comparing cases",
+          "for": "teach:2"
+        },
+        {
+          "find": "grapes vine",
+          "alt": "Grapes: the source of wine",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+      "n": 24,
+      "title": "The etiquette of differing (adab al-ikhtilaf)",
+      "duration": 50,
+      "bigQuestion": "Two friends pray slightly differently: one raises his hands in ruku', one does not. Should they argue about it? Why?",
+      "objectives": [
+        "To understand how Muslims should behave when scholars and people differ on matters of fiqh"
+      ],
+      "successCriteria": [
+        "All: name two rules of good manners in disagreement",
+        "Most: tell apart acceptable and unacceptable difference",
+        "Some: explain how the imams showed respect when they differed"
+      ],
+      "smsc": "Social: respect and unity in a diverse community",
+      "keywords": [
+        {
+          "term": "ikhtilaf (اِخْتِلَاف)",
+          "def": "difference of opinion"
+        },
+        {
+          "term": "adab (أَدَب)",
+          "def": "good manners"
+        },
+        {
+          "term": "ijtihadi matter",
+          "def": "an issue where qualified scholars can differ"
+        },
+        {
+          "term": "tolerance",
+          "def": "accepting others' valid views"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two friends pray slightly differently: one raises his hands in ruku', one does not. Should they argue about it? Why?",
+        "a": "No: it is a valid difference among the schools; they should respect each other."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And do not dispute and lose courage and your strength would depart' (al-Anfal 8:46).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Qiyas means ...",
+          "a": "Analogy",
+          "mins": 1,
+          "options": [
+            "Analogy",
+            "Consensus"
+          ]
+        },
+        {
+          "q": "What is the 'illah?",
+          "a": "The reason behind a ruling",
+          "mins": 1,
+          "options": [
+            "The reason behind a ruling",
+            "A narrator"
+          ]
+        },
+        {
+          "q": "Name the four sources of rulings.",
+          "a": "Qur'an, Sunnah, ijma', qiyas",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two kinds of difference",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "compare": {
+            "left": {
+              "title": "Acceptable",
+              "points": [
+                "Details of fiqh with evidence",
+                "E.g. hands in ruku', saying Amin aloud",
+                "Respect both"
+              ]
+            },
+            "right": {
+              "title": "Not acceptable",
+              "points": [
+                "Against clear texts or ijma'",
+                "E.g. denying salah is obligatory",
+                "Not followed"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Rules of good manners",
+          "bullets": [
+            "Sincerity: seek the truth, not victory",
+            "Knowledge: speak with evidence",
+            "Gentleness and good opinion of others"
+          ]
+        },
+        {
+          "heading": "The Companions differed",
+          "bullets": [
+            "'Do not pray Asr except at Banu Qurayzah'",
+            "Some prayed on the way, some waited",
+            "The Prophet ﷺ blamed neither group"
+          ],
+          "note": "Reported in Bukhari."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is an acceptable difference?",
+            "options": [
+              "Where to place the hands in salah",
+              "Whether salah is obligatory",
+              "Whether Allah is One"
+            ],
+            "answer": 0,
+            "why": "Hand placement is an ijtihadi matter; the others are fixed by clear texts and ijma'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what the story of Asr at Banu Qurayzah teaches about differing.",
+          "a": "Both groups tried to obey; the Prophet ﷺ did not blame either, so honest difference in understanding is accepted.",
+          "mins": 3,
+          "model": "Point: honest difference is accepted. Evidence: the Prophet ﷺ blamed neither group (Bukhari). Explain: one group took the words literally, the other the purpose. Link: we should respect valid differences today."
+        },
+        {
+          "q": "Whether salah is obligatory is ...",
+          "a": "Fixed by ijma'",
+          "mins": 1,
+          "options": [
+            "Fixed by ijma'",
+            "An acceptable difference"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Online forum rewrite on the pupil PDF: three harsh replies (example posts) about raising hands, Amin aloud and hands on the chest. Rewrite each with adab: evidence, gentleness and respect.",
+          "a": "Rewritten replies using evidence, gentle words, good opinion of others",
+          "mins": 14,
+          "model": "Teacher rewrites reply 1: 'JazakAllahu khayran for sharing. The Hanafi school does not raise the hands here, based on its evidence; the Shafi'i and Hanbali schools do. Both are followed by great scholars.'"
+        },
+        {
+          "q": "Extend: why does difference in fiqh not split the ummah if handled well?",
+          "a": "It is a mercy and flexibility; unity is on the fundamentals.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: when should a Muslim not follow a 'different opinion'?",
+          "a": "When it contradicts a clear text or ijma', or is from someone unqualified.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Who blamed neither group at Banu Qurayzah?",
+          "a": "The Prophet ﷺ",
+          "mins": 1,
+          "options": [
+            "The Prophet ﷺ",
+            "Abu Bakr"
+          ]
+        },
+        {
+          "q": "Back to our ponder: should the friends argue?",
+          "a": "No: it is a valid difference; respect each other.",
+          "mins": 2
+        }
+      ],
+      "homework": "Notice one difference in how people pray at your masjid or home; ask politely which evidence they follow.",
+      "send": "SEND: acceptable / not acceptable sort. EAL: polite phrase bank. Stretch: research how Imam ash-Shafi'i described his opinion and others' (from an approved source).",
+      "resources": [
+        "Slides",
+        "School-approved KS3 text on hadith sciences and the madhhabs (TO CONFIRM)",
+        "Pupil PDF worksheet: forum rewrite (example posts)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "two paths in forest",
+          "alt": "Two paths in a forest",
+          "for": "hook"
+        },
+        {
+          "find": "prayer mats in row",
+          "alt": "Prayer mats in a row",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+      "n": 25,
+      "title": "Differing in practice: case studies",
+      "duration": 50,
+      "bigQuestion": "In a masjid where people follow different schools, what keeps the congregation united?",
+      "objectives": [
+        "To understand how valid differences appear in Muslims' worship and how to respond well"
+      ],
+      "successCriteria": [
+        "All: describe two common differences in salah",
+        "Most: explain the reasons for one difference",
+        "Some: advise a Muslim community on handling differences"
+      ],
+      "smsc": "Social: unity in diversity",
+      "keywords": [
+        {
+          "term": "dalil (دَلِيل)",
+          "def": "evidence"
+        },
+        {
+          "term": "muqallid (مُقَلِّد)",
+          "def": "someone who follows a qualified school or scholar"
+        },
+        {
+          "term": "unity (وَحْدَة)",
+          "def": "being one community"
+        },
+        {
+          "term": "congregation (جَمَاعَة)",
+          "def": "praying together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a masjid where people follow different schools, what keeps the congregation united?",
+        "a": "Following the imam, shared fundamentals and good manners."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And hold firmly to the rope of Allah all together and do not become divided' (Al 'Imran 3:103).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Acceptable difference is on ...",
+          "a": "Details of fiqh with evidence",
+          "mins": 1,
+          "options": [
+            "Details of fiqh with evidence",
+            "The pillars of iman"
+          ]
+        },
+        {
+          "q": "Who blamed neither group at Banu Qurayzah?",
+          "a": "The Prophet ﷺ",
+          "mins": 1,
+          "options": [
+            "The Prophet ﷺ",
+            "Umar"
+          ]
+        },
+        {
+          "q": "Name one rule of adab in disagreement.",
+          "a": "For example: speak with evidence",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Common differences",
+          "bullets": [],
+          "note": "Begin with Bismillah. State positions neutrally; teachers check details in an approved text.",
+          "table": {
+            "head": [
+              "Issue",
+              "Example positions"
+            ],
+            "rows": [
+              [
+                "Raising hands in ruku'",
+                "Hanafi: no; Shafi'i and Hanbali: yes"
+              ],
+              [
+                "Hands in qiyam",
+                "Below the navel, on the chest, or by the sides (Maliki)"
+              ],
+              [
+                "Saying Amin",
+                "Aloud or quietly"
+              ],
+              [
+                "Wudu after touching the private part",
+                "Breaks it (most) or does not (Hanafi)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Why the difference?",
+          "bullets": [
+            "Different hadith reached different scholars",
+            "Different strength given to narrations",
+            "Different understanding of wording"
+          ]
+        },
+        {
+          "heading": "Following the imam",
+          "bullets": [
+            "The imam is followed in the congregation",
+            "Small differences do not break unity",
+            "Pray together, discuss with respect"
+          ],
+          "note": "'The imam is appointed to be followed' (Bukhari and Muslim)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Who keeps his hands by his sides in qiyam?",
+            "options": [
+              "Many Malikis",
+              "All Hanafis",
+              "Nobody"
+            ],
+            "answer": 0,
+            "why": "Many Malikis pray with the hands at the sides; it is a known valid position."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why the Hanafi school does not raise the hands in ruku'.",
+          "a": "It relies on narrations it judged stronger showing raising only at the opening takbir; others rely on hadith showing raising (Bukhari and Muslim).",
+          "mins": 3,
+          "model": "Point: the difference comes from evidence. Evidence: Ibn Umar reported raising the hands at ruku' (Bukhari and Muslim); Hanafis relied on other narrations. Explain: scholars weighed the reports differently. Link: both are valid positions."
+        },
+        {
+          "q": "'The imam is appointed to be followed' is in ...",
+          "a": "Bukhari and Muslim",
+          "mins": 1,
+          "options": [
+            "Bukhari and Muslim",
+            "Not in any collection"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Advice letter in the portal response box: a new masjid committee asks how to keep unity when members follow different schools. Give three pieces of advice with evidence. Start: 'Dear committee, ...'",
+          "a": "Advice: focus on fundamentals, follow the imam (Bukhari and Muslim), teach adab al-ikhtilaf, refer to scholars (4:59)",
+          "mins": 14,
+          "model": "Teacher writes advice 1: 'Dear committee, first, remind everyone that the imam is followed in the prayer (Bukhari and Muslim).'"
+        },
+        {
+          "q": "Extend: what is a muqallid and why is following a school reasonable?",
+          "a": "Someone who follows qualified scholars because they cannot derive rulings themselves.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: when is it wrong to 'pick and choose' easy opinions?",
+          "a": "When it is done to follow desires rather than evidence.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "In congregation we follow the ...",
+          "a": "Imam",
+          "mins": 1,
+          "options": [
+            "Imam",
+            "Loudest person"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what keeps the congregation united?",
+          "a": "Following the imam, shared fundamentals and good manners.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write one line of advice from today on a card for the masjid noticeboard (no names).",
+      "send": "SEND: table with icons. EAL: advice frame. Stretch: compare how the four schools pray witr (approved source).",
+      "resources": [
+        "Slides",
+        "School-approved KS3 text on hadith sciences and the madhhabs (TO CONFIRM)",
+        "Pupil PDF worksheet: differences table and advice planner"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mosque interior prayer hall",
+          "alt": "A mosque prayer hall",
+          "for": "hook"
+        },
+        {
+          "find": "prayer mat",
+          "alt": "A prayer mat",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+      "n": 26,
+      "title": "Fiqh and the law: review",
+      "duration": 50,
+      "bigQuestion": "Can a Muslim live by fiqh and keep the laws of the UK at the same time? How?",
+      "objectives": [
+        "To understand how fiqh guides Muslims living under UK law and review the unit"
+      ],
+      "successCriteria": [
+        "All: give examples where fiqh and UK law agree",
+        "Most: explain how Muslims live by fiqh within the law",
+        "Some: evaluate how hadith science and fiqh protect the religion"
+      ],
+      "crossCurricular": "Citizenship: the rule of law in the UK",
+      "smsc": "Social: Muslims as responsible citizens",
+      "keywords": [
+        {
+          "term": "Shari'ah (شَرِيعَة)",
+          "def": "Allah's guidance for life"
+        },
+        {
+          "term": "fiqh (فِقْه)",
+          "def": "scholars' understanding of the Shari'ah"
+        },
+        {
+          "term": "rule of law",
+          "def": "everyone follows the same laws"
+        },
+        {
+          "term": "contract ('aqd)",
+          "def": "an agreement Muslims must honour"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can a Muslim live by fiqh and keep the laws of the UK at the same time? How?",
+        "a": "Yes, in most matters: Islam commands keeping agreements and doing good; personal worship is free."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, fulfil your contracts' (al-Ma'idah 5:1).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Qiyas uses the shared ...",
+          "a": "'Illah (reason)",
+          "mins": 1,
+          "options": [
+            "'Illah (reason)",
+            "Isnad"
+          ]
+        },
+        {
+          "q": "The imam is to be ...",
+          "a": "Followed",
+          "mins": 1,
+          "options": [
+            "Followed",
+            "Corrected loudly"
+          ]
+        },
+        {
+          "q": "Name the four imams.",
+          "a": "Abu Hanifah, Malik, ash-Shafi'i, Ahmad",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Shari'ah and fiqh",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "compare": {
+            "left": {
+              "title": "Shari'ah",
+              "points": [
+                "From Allah",
+                "Perfect and complete (5:3)"
+              ]
+            },
+            "right": {
+              "title": "Fiqh",
+              "points": [
+                "Scholars' understanding",
+                "Can differ on details"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Living in the UK",
+          "bullets": [
+            "Keep agreements: 'fulfil contracts' (5:1)",
+            "Most laws protect life and property, as Islam does",
+            "Freedom to pray, fast and dress modestly"
+          ],
+          "note": "Where a law seems to clash, Muslims seek scholars' guidance; we do not take the law into our own hands."
+        },
+        {
+          "heading": "The unit on one page",
+          "bullets": [],
+          "note": "Pupils add an example to each branch.",
+          "diagram": {
+            "centre": "Farewell Pilgrimage, hadith and fiqh",
+            "items": [
+              "5:3 at Arafah",
+              "Sermon: life, wealth, riba",
+              "Equality (49:13)",
+              "Grading hadith",
+              "Four imams",
+              "Ijma' and qiyas",
+              "Adab al-ikhtilaf"
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which ayah commands fulfilling contracts?",
+            "options": [
+              "5:1",
+              "5:3",
+              "49:13"
+            ],
+            "answer": 0,
+            "why": "Al-Ma'idah 5:1: 'O you who believe, fulfil your contracts.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the difference between Shari'ah and fiqh.",
+          "a": "Shari'ah is Allah's perfect guidance; fiqh is the scholars' understanding of it, which can differ in details.",
+          "mins": 3,
+          "model": "Point: Shari'ah and fiqh are not the same. Evidence: the Shari'ah is complete (5:3); the four imams differed in fiqh. Explain: differences are in understanding, not in Allah's guidance. Link: this is why adab in differing matters."
+        },
+        {
+          "q": "Fulfilling contracts is commanded in ...",
+          "a": "5:1",
+          "mins": 1,
+          "options": [
+            "5:1",
+            "2:275"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Revision quiz in the portal (15 questions) on the unit, then correct in green and list three things to revise.",
+          "a": "Answers from the unit; three revision targets",
+          "mins": 14,
+          "model": "Teacher answers question 1 and shows correction with evidence."
+        },
+        {
+          "q": "Extend: give two examples where UK law and Islam agree.",
+          "a": "For example: murder and theft are crimes; contracts must be kept.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how do hadith science and fiqh together protect Islam from change?",
+          "a": "Authentic sources are checked; rulings come from them by sound methods.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Fiqh is ...",
+          "a": "Scholars' understanding of the Shari'ah",
+          "mins": 1,
+          "options": [
+            "Scholars' understanding of the Shari'ah",
+            "A collection of hadith"
+          ]
+        },
+        {
+          "q": "Back to our ponder: can a Muslim live by fiqh and UK law?",
+          "a": "Yes in most matters; keep agreements and seek scholars where unsure.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise for the unit quiz using your revision targets.",
+      "send": "SEND: unit organiser. EAL: glossary. Stretch: write a paragraph on Muslims as law-abiding citizens with evidence.",
+      "resources": [
+        "Slides",
+        "School-approved KS3 text on hadith sciences and the madhhabs (TO CONFIRM)",
+        "School-approved seerah text (TO CONFIRM)",
+        "Portal revision quiz: Farewell Pilgrimage, hadith and fiqh (15 questions)",
+        "Green pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Houses of Parliament London",
+          "alt": "The Houses of Parliament, where UK law is made",
+          "for": "teach:2"
+        },
+        {
+          "find": "scales of justice",
+          "alt": "Scales of justice",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+      "n": 27,
+      "title": "Unit quiz: Farewell Pilgrimage, hadith and fiqh",
+      "duration": 50,
+      "bigQuestion": "Why do scholars say knowledge comes before speech and action?",
+      "objectives": [
+        "To understand how well I know this unit and what to improve before assessment point 2"
+      ],
+      "successCriteria": [
+        "All: complete the unit quiz",
+        "Most: score 70% or more",
+        "Some: write a full 12-mark style answer with evidence on both sides"
+      ],
+      "smsc": "Moral: honesty in assessment",
+      "keywords": [
+        {
+          "term": "assessment",
+          "def": "a check of learning"
+        },
+        {
+          "term": "evaluate",
+          "def": "weigh up both sides and judge"
+        },
+        {
+          "term": "justify",
+          "def": "give reasons for your judgement"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do scholars say knowledge comes before speech and action?",
+        "a": "Because acting or speaking without knowledge leads to mistakes; we learn first."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So know that there is no god but Allah' (Muhammad 47:19): scholars note that knowledge is mentioned before action.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Bukhari died in ...",
+          "a": "256 AH",
+          "mins": 1,
+          "options": [
+            "256 AH",
+            "150 AH"
+          ]
+        },
+        {
+          "q": "49:13 nobility is by ...",
+          "a": "Taqwa",
+          "mins": 1,
+          "options": [
+            "Taqwa",
+            "Tribe"
+          ]
+        },
+        {
+          "q": "Applying a ruling by shared reason is ...",
+          "a": "Qiyas",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The quiz",
+          "bullets": [
+            "Part A: 15 questions (15 marks)",
+            "Part B: 12-mark answer",
+            "Honest work; no notes"
+          ],
+          "note": "Begin with Bismillah. Quiz in the portal; cameras on."
+        },
+        {
+          "heading": "Part B",
+          "bullets": [
+            "'Differences between the schools of fiqh weaken the Muslim community.' Evaluate. (12)",
+            "For, against, and a justified conclusion",
+            "Use evidence: Banu Qurayzah, 4:59, 3:103"
+          ]
+        },
+        {
+          "heading": "Model plan",
+          "bullets": [],
+          "note": "Plan only; pupils write their own.",
+          "model": {
+            "problem": "Plan for Part B",
+            "steps": [
+              "For: arguments and division when adab is missing (8:46)",
+              "Against: the Companions differed without blame (Bukhari)",
+              "Against: unity on fundamentals; follow the imam",
+              "Conclusion: difference is not weakness; bad manners are"
+            ],
+            "answer": "Balanced answer with a justified judgement"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Practice: give one piece of evidence that the Companions differed without blame.",
+          "a": "The Asr prayer at Banu Qurayzah (Bukhari)",
+          "mins": 2,
+          "model": "Teacher: some prayed on the way, some waited; the Prophet ﷺ blamed neither group (Bukhari)."
+        },
+        {
+          "q": "'Hold firmly to the rope of Allah' is ...",
+          "a": "3:103",
+          "mins": 1,
+          "options": [
+            "3:103",
+            "5:1"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Unit quiz in the portal: Part A (15) and Part B in the response box. Start: 'Some people argue that differences weaken the community because ...'",
+          "a": "Part A from the unit; Part B balanced with evidence and a justified conclusion",
+          "mins": 26,
+          "model": "Teacher reads the start sentence and points to the plan."
+        },
+        {
+          "q": "Extend: check that every paragraph has evidence.",
+          "a": "Pupils' own check",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: add a modern example to Part B.",
+          "a": "For example: a masjid where several schools pray together under one imam",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which part of the unit will you revise before assessment point 2 (week of 26 Apr)?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct your quiz in green and set one target for assessment point 2.",
+      "send": "SEND: quiz read aloud, extra time, Part B frame. EAL: evaluative phrase bank. Stretch: three pieces of evidence on each side.",
+      "resources": [
+        "Slides",
+        "School-approved KS3 text on hadith sciences and the madhhabs (TO CONFIRM)",
+        "School-approved seerah text (TO CONFIRM)",
+        "Portal unit quiz: Farewell Pilgrimage, hadith and fiqh (Part A 15, Part B 12)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pen and paper test",
+          "alt": "Pen and paper for the quiz",
+          "for": "teach:1"
+        },
+        {
+          "find": "balance scale",
+          "alt": "Weighing both sides",
           "for": "keywords"
         }
       ]

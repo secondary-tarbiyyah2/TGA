@@ -3,7 +3,7 @@
   "year": "y10",
   "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
   "boardShort": "Edexcel IGCSE 4IS1",
-  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.1-1.4 and Appendix 5 passages (66:1-3, 97:1-5, 33:38-40, Hijrah hadith); RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 1.5-1.7 and 3.1-3.5. Units 1.1-1.4 are already covered well in content/lessons/islamic-studies/y10.json (12 lessons) and are not duplicated here. | Gap-fill against Pearson Edexcel International GCSE Islamic Studies 4IS1 specification | Spring 1 2027 (lessons 13 to 17 upgraded, 34 to 38 new): Year 10 pack Islamic Studies founding year (bridge 1.1 and 1.2 week of 11 Jan; 1.3 and 1.4 week of 18 Jan; then Spring 1 w1, w3, w4: 1.5 the Sunnah, 1.6 justice and equality, with set-passage and 12-mark practice); set passages 66:1-3, 97:1-5, 33:38-40, the hadith on intention, 33:36 and the hadith on the just (Muslim); hadith from Bukhari and Muslim or named collections without numbers; Shia collections described factually; approved resources for Shia content TO CONFIRM",
+  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.1-1.4 and Appendix 5 passages (66:1-3, 97:1-5, 33:38-40, Hijrah hadith); RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 1.5-1.7 and 3.1-3.5. Units 1.1-1.4 are already covered well in content/lessons/islamic-studies/y10.json (12 lessons) and are not duplicated here. | Gap-fill against Pearson Edexcel International GCSE Islamic Studies 4IS1 specification | Spring 1 2027 (lessons 13 to 17 upgraded, 34 to 38 new): Year 10 pack Islamic Studies founding year (bridge 1.1 and 1.2 week of 11 Jan; 1.3 and 1.4 week of 18 Jan; then Spring 1 w1, w3, w4: 1.5 the Sunnah, 1.6 justice and equality, with set-passage and 12-mark practice); set passages 66:1-3, 97:1-5, 33:38-40, the hadith on intention, 33:36 and the hadith on the just (Muslim); hadith from Bukhari and Muslim or named collections without numbers; Shia collections described factually; approved resources for Shia content TO CONFIRM | Spring 2 2027 (lessons 18 to 24 upgraded, 39 to 42 new): Year 10 pack Islamic Studies Spring 2 (1.7 the Prophet ﷺ as leader; 3.1 Shahadah; 3.2 Salah) in the week-by-week order (15 Mar 1.7a; 22 Mar 1.7b to d; 31 Mar 3.1; 5 Apr 3.2; 12 Apr how salah is performed; 19 Apr Jummah and exemptions), two lessons a week scaled to the short weeks; set passages: the hadith on obeying those in authority (Bukhari and Muslim), 3:18-19, 62:9-11; 12-mark statements from the school scheme of work; exam-style questions are our own; lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: Section A - The Prophet's early life and the Revelation (spec 1.1-1.2)",
@@ -2383,684 +2383,1166 @@
       ]
     },
     {
-      "unit": "Spec 1.7: The Prophet as leader (Section A)",
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
       "n": 18,
-      "title": "1.7 The Prophet as leader: establishing the Shari'ah in Madinah",
+      "title": "1.7 The Prophet ﷺ as leader: establishing the Shari'ah in Madinah",
       "duration": 50,
-      "bigQuestion": "How did the Prophet ﷺ build a lawful community in Madinah?",
+      "bigQuestion": "What does a new community need first: laws, leaders or shared beliefs? What did the Prophet ﷺ build in Madinah?",
       "objectives": [
-        "Define Shari'ah and ummah",
-        "Describe how the Prophet ﷺ established the Shari'ah after the Hijrah",
-        "Explain his role as judge, lawgiver and guide"
+        "To understand the Prophet's ﷺ role in establishing the Shari'ah as leader of the community in Madinah"
       ],
       "successCriteria": [
-        "All: define Shari'ah and give an example of a Madinan rule",
-        "Most: explain how the Prophet ﷺ established law and order in Madinah",
-        "Some: assess why Madinah was the turning point for Islamic law"
+        "All: describe two ways the Prophet ﷺ led the community in Madinah",
+        "Most: explain how rulings were revealed and applied in Madinah, with evidence",
+        "Some: explain why his authority as judge mattered (4:65, 33:36)"
       ],
-      "crossCurricular": "History: how leaders form states; Citizenship: law-making and justice",
-      "smsc": "Social: community, justice and responsibility; Moral: following guidance from Allah ﷻ",
+      "crossCurricular": "History: how new states establish laws and authority",
+      "smsc": "Social: law and community",
       "keywords": [
         {
-          "term": "Shari'ah (شريعة)",
-          "def": "the way or law that Allah has laid down"
+          "term": "Shari'ah (شَرِيعَة)",
+          "def": "the path of Islamic law and guidance from Allah"
         },
         {
-          "term": "ummah (أمة)",
-          "def": "the global community of Muslims"
+          "term": "ummah (أُمَّة)",
+          "def": "the Muslim community"
         },
         {
-          "term": "qiblah (قبلة)",
-          "def": "direction of prayer"
+          "term": "Sahifat al-Madinah (صَحِيفَةُ المَدِينَة)",
+          "def": "the Charter of Madinah: agreement between the groups of the city"
         },
         {
-          "term": "qadi",
+          "term": "qadi (قَاضٍ)",
           "def": "a judge"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What does a new community need first: laws, leaders or shared beliefs? What did the Prophet ﷺ build in Madinah?",
+        "a": "All three: a shared faith, the Prophet ﷺ as leader and judge, and laws revealed step by step."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'It is not for a believing man or woman, when Allah and His Messenger have decided a matter, to have any choice' (al-Ahzab 33:36).",
+        "at": "start"
+      },
       "starter": [
-        "Why did the Prophet ﷺ migrate to Madinah?",
-        "Name one thing the Prophet ﷺ built in Madinah.",
-        "Who were the Ansar?"
+        {
+          "q": "Bismillah. Which passage is set for 1.5?",
+          "a": "33:36",
+          "mins": 1,
+          "options": [
+            "33:36",
+            "3:18-19"
+          ]
+        },
+        {
+          "q": "1.6: the just will be seated on ...",
+          "a": "Pulpits of light",
+          "mins": 1,
+          "options": [
+            "Pulpits of light",
+            "Thrones of gold"
+          ]
+        },
+        {
+          "q": "When was the Hijrah?",
+          "a": "622 CE (1 AH)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "From Makkah to Madinah",
+          "heading": "A new community, 1 AH",
           "bullets": [
-            "Makkah: belief in Allah ﷻ, patience, character",
-            "Madinah: community, law, trade, defence",
-            "The Prophet was guide and head of state",
-            "Revelation continued to give detailed rules"
+            "Masjid an-Nabawi at the centre",
+            "Brotherhood of Muhajirun and Ansar",
+            "The Charter of Madinah between the groups"
           ],
-          "note": "Bismillah. Explain that Makkan revelation emphasised belief and good character; Madinan revelation included the detailed laws. Be careful: lots of worship was introduced earlier (prayer in Makkah). Use the idea of 'stages'.",
-          "compare": {
-            "left": {
-              "title": "Makkah",
-              "points": [
-                "Belief in Allah",
-                "endurance",
-                "moral teaching",
-                "persecution"
-              ]
-            },
-            "right": {
-              "title": "Madinah",
-              "points": [
-                "Community and law",
-                "zakah and fasting",
-                "defence",
-                "relations with neighbours"
-              ]
-            },
-            "label": "vs"
-          }
+          "note": "Begin with Bismillah. The Charter is reported in the seerah (Ibn Ishaq): Muslims and the Jewish tribes as one community for defence, each keeping its religion."
         },
         {
-          "heading": "Developing the Shari'ah",
-          "bullets": [
-            "Qibla changed to the Ka'bah (Qur'an 2:142-150)",
-            "Fasting in Ramadan prescribed (Qur'an 2:183)",
-            "Zakah organised as a duty",
-            "Alcohol prohibited in stages (Qur'an 2:219, 4:43, 5:90-91)"
-          ],
-          "note": "Teach the examples: change of qiblah in 2 AH; fasting also in 2 AH; zakah system; gradual prohibition of alcohol. Hajj became obligatory by a later point (scholars differ on the exact year; teacher can say 'by 9 or 10 AH'). Give the verses as support and ask pupils to check. Link to the Shari'ah being gradual and merciful."
-        },
-        {
-          "heading": "Judge and leader",
-          "bullets": [
-            "Qur'an 4:65: they do not believe until they accept your judgement",
-            "People brought disputes to him",
-            "He consulted his Companions (shura) in many matters",
-            "He made agreements and treaties"
-          ],
-          "note": "4:65 is secure; verify the wording. Ask: what does it mean for a leader to be judge as well as guide? Give an example of consulting on strategy (Badr, Uhud) which pupils know from Y11 lessons later. The Prophet is not a king: he is a Messenger, guided by revelation."
-        },
-        {
-          "heading": "Model answer",
-          "bullets": [
-            "Define",
-            "Give evidence",
-            "Explain significance"
-          ],
-          "note": "Model an exam answer.",
-          "model": {
-            "problem": "Explain how the Prophet ﷺ established the Shari'ah in Madinah. (6 marks)",
-            "steps": [
-              "Point: he received revelation giving detailed rules, for example fasting in Ramadan and the change of qiblah.",
-              "Explain: these gave the Muslims clear practices which unified the community.",
-              "Point: he acted as judge, settling disputes with justice.",
-              "Explain: this showed that the law applied to everyone and created order after years of tribal rivalry."
-            ],
-            "answer": "Two developed points, linked to establishing law."
-          }
-        },
-        {
-          "heading": "Hinge question",
-          "bullets": [
-            "Whiteboards"
-          ],
-          "note": "Reveal.",
-          "check": {
-            "q": "Which of these was prescribed in Madinah?",
-            "options": [
-              "The change of qiblah to the Ka'bah",
-              "The Night Journey",
-              "The first revelation",
-              "The emigration to Abyssinia"
-            ],
-            "answer": 0,
-            "why": "The qiblah changed to Makkah in Madinah. The other events were in Makkah."
-          }
-        }
-      ],
-      "practice": [
-        "Define Shari'ah.",
-        "Name two rules developed in Madinah.",
-        "Why is the Prophet's role as judge important?"
-      ],
-      "independent": [
-        "Core: complete a table of Makkan and Madinan emphasis.",
-        "Extend: write a 6-mark answer on how the Shari'ah was established.",
-        "Stretch: argue why Madinah was the turning point for the development of Islamic law."
-      ],
-      "exit": [
-        "Give one example of a ruling given in Madinah.",
-        "What is the ummah?",
-        "Big question: how did the Prophet ﷺ build a lawful community?"
-      ],
-      "homework": "Create a mind map of the Prophet's roles in Madinah: Messenger, judge, leader, neighbour.",
-      "send": "SEND/EAL: timeline with icons; stretch: compare Madinah with a modern nation-state.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
-    },
-    {
-      "unit": "Spec 1.7: The Prophet as leader (Section A)",
-      "n": 19,
-      "title": "1.7 Consolidation and expansion: treaties, conquest and the Year of Delegations",
-      "duration": 50,
-      "bigQuestion": "How did Islam spread and become secure after the Hijrah?",
-      "objectives": [
-        "Describe the consolidation of Islam in Madinah",
-        "Describe the expansion through Hudaybiyyah, the conquest of Makkah and the delegations",
-        "Explain the importance of these events for Islam"
-      ],
-      "successCriteria": [
-        "All: place five key events in order",
-        "Most: explain how treaties and diplomacy helped Islam",
-        "Some: assess whether the conquest of Makkah showed strength or mercy"
-      ],
-      "crossCurricular": "History: chronology and causation; Geography: Makkah and Madinah",
-      "smsc": "Moral: mercy in victory; Social: peace-making",
-      "keywords": [
-        {
-          "term": "Hudaybiyyah (الحديبية)",
-          "def": "the treaty of 6 AH between the Prophet and Quraysh"
-        },
-        {
-          "term": "fath Makkah (فتح مكة)",
-          "def": "the conquest of Makkah in 8 AH"
-        },
-        {
-          "term": "wufud",
-          "def": "delegations that visited Madinah"
-        },
-        {
-          "term": "Najashi",
-          "def": "the Negus: Christian king of Abyssinia"
-        }
-      ],
-      "starter": [
-        "Define Shari'ah.",
-        "Where did the Prophet's followers first emigrate for safety?",
-        "Which three battles do we study in Year 11?"
-      ],
-      "teach": [
-        {
-          "heading": "Timeline",
-          "bullets": [
-            "Madinah consolidated (1-5 AH)",
-            "Hudaybiyyah 6 AH",
-            "Conquest of Makkah 8 AH",
-            "Year of Delegations 9 AH"
-          ],
-          "note": "Let pupils place events. Dates: Hijrah 1 AH (622 CE); Badr 2 AH; Uhud 3; Trench 5; Hudaybiyyah 6; Khaybar 7; conquest 8; Tabuk and delegations 9; Farewell Hajj 10 AH; death 11 AH. Teachers should confirm dates with a trusted Sira text, as some scholars differ slightly.",
+          "heading": "Rulings revealed in Madinah",
+          "bullets": [],
+          "note": "Step-by-step law.",
           "timeline": [
             {
-              "label": "1 AH",
-              "text": "Hijrah; mosque and pact in Madinah"
+              "label": "2 AH",
+              "text": "Qiblah changed to the Ka'bah (2:144); fasting Ramadan prescribed (2:183)"
             },
             {
-              "label": "6 AH",
-              "text": "Hudaybiyyah: ten-year truce"
+              "label": "2 AH",
+              "text": "Zakah al-fitr and the Eid prayers"
             },
             {
-              "label": "8 AH",
-              "text": "Makkah opens peacefully"
+              "label": "Later",
+              "text": "Zakah on wealth organised; laws of trade, family and inheritance"
             },
             {
-              "label": "9 AH",
-              "text": "Delegations from across Arabia"
+              "label": "Stages",
+              "text": "Intoxicants forbidden in stages, ending with 5:90"
             }
           ]
         },
         {
-          "heading": "Hudaybiyyah",
-          "bullets": [
-            "Muslims set out for umrah; Quraysh blocked them",
-            "Terms: truce for ten years; return the following year",
-            "Many Companions found the terms hard",
-            "Qur'an called it a clear victory (Qur'an 48:1)"
-          ],
-          "note": "The treaty looked unfavourable on the surface; Umar and others were troubled, but the truce allowed da'wah and growth. 48:1 is secure; verify the wording. Ask: how can a pause in fighting help a community? Emphasise trust in the Prophet's leadership."
-        },
-        {
-          "heading": "The conquest of Makkah",
-          "bullets": [
-            "Quraysh's ally broke the truce",
-            "The Prophet marched with a large army",
-            "Makkah entered with almost no fighting",
-            "He declared general amnesty and cleansed the Ka'bah of idols"
-          ],
-          "note": "Teach the well-known facts: ten thousand marched; near-bloodless; the idols were removed from the Ka'bah. The Prophet's address to Quraysh promising 'Go, you are free' is widely reported in Sira sources; no hadith number is given here and teacher to verify before quoting. Ask: what does his treatment of people who had persecuted him for years show about his leadership?"
-        },
-        {
-          "heading": "Delegations and expansion",
-          "bullets": [
-            "Tribes from across Arabia sent delegations",
-            "Letters were sent to rulers inviting to Islam",
-            "Tabuk expedition 9 AH to meet the threat from the north",
-            "By his death most of Arabia was united"
-          ],
-          "note": "Note the sensitivity: expansion was political and religious; pupils should know both. Present sources: Hudaybiyyah, conquest, delegations are well documented. Ask: why did tribes come after Makkah opened? (Quraysh was the leading tribe.)"
-        },
-        {
-          "heading": "Model answer",
-          "bullets": [
-            "Cause",
-            "Event",
-            "Effect"
-          ],
-          "note": "Model a 6-mark answer.",
-          "model": {
-            "problem": "Explain why the conquest of Makkah was important for Islam. (6 marks)",
-            "steps": [
-              "Point: it removed the centre of opposition and gave Muslims control of the Haram.",
-              "Explain: with Quraysh no longer hostile, other tribes felt free to join.",
-              "Point: the Prophet's forgiveness showed Islam's character in victory.",
-              "Explain: this turned former enemies into supporters and set a model for later Muslim rulers."
-            ],
-            "answer": "Developed reasoning shown in both strands: political and moral."
+          "heading": "Leader and judge",
+          "bullets": [],
+          "note": "Read in translation.",
+          "quote": {
+            "text": "But no, by your Lord, they will not truly believe until they make you judge concerning that over which they dispute among themselves.",
+            "source": "Qur'an, an-Nisa' 4:65 (translation of the meaning)"
           }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Exam focus",
           "bullets": [
-            "Whiteboards"
+            "Command words: describe, explain, assess",
+            "Use evidence: Qur'an, hadith, events",
+            "Link to 1.5: the Sunnah as a source of law"
           ],
-          "note": "Reveal.",
+          "note": "Remind pupils of the 12-mark statement for 1.7."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "What was the main effect of the treaty of Hudaybiyyah?",
+            "q": "Which change in 2 AH shows the Shari'ah being established in Madinah?",
             "options": [
-              "It began a long war",
-              "It created a ten-year truce which allowed peaceful growth",
-              "It ended Islam in Makkah",
-              "It made the Prophet leave Arabia"
+              "The qiblah changed to the Ka'bah",
+              "The first revelation",
+              "The boycott"
             ],
-            "answer": 1,
-            "why": "The truce allowed contact, da'wah and growth. The other options are false."
+            "answer": 0,
+            "why": "2:144: the qiblah change; the first revelation and the boycott were in Makkah."
           }
         }
       ],
       "practice": [
-        "Put Hudaybiyyah, conquest of Makkah and Tabuk in order.",
-        "What did the Prophet ﷺ do at the Ka'bah in Makkah?",
-        "Why was Hudaybiyyah called a clear victory?"
+        {
+          "q": "Explain two ways the Prophet ﷺ established the Shari'ah in Madinah. (4 marks, our own question)",
+          "a": "He received and taught rulings step by step (qiblah, fasting, zakah) and judged disputes as the community's judge (4:65).",
+          "mins": 4,
+          "model": "Point 1: he taught the rulings revealed in Madinah. Develop: e.g. fasting Ramadan (2:183) and the qiblah change (2:144). Point 2: he judged between people. Develop: 4:65 says believers must accept his judgement, which made his Sunnah law."
+        },
+        {
+          "q": "The Charter of Madinah joined which groups?",
+          "a": "Muslims and the Jewish tribes of Madinah",
+          "mins": 1,
+          "options": [
+            "Muslims and the Jewish tribes of Madinah",
+            "Makkah and Ta'if"
+          ]
+        }
       ],
       "independent": [
-        "Core: complete a cause-and-effect chart for the conquest.",
-        "Extend: write a 6-mark answer on why Makkah was important.",
-        "Stretch: compare Hudaybiyyah and the conquest as two forms of success."
+        {
+          "q": "In the portal response box: 'Describe the Prophet's ﷺ role in establishing the Shari'ah' (our own exam-style question). Write two developed paragraphs. Start: 'The Prophet ﷺ established the Shari'ah by ...'",
+          "a": "Developed paragraphs on revelation of rulings, teaching by example (Sunnah), judging disputes, the Charter",
+          "mins": 12,
+          "model": "Teacher writes paragraph 1 opening: 'The Prophet ﷺ established the Shari'ah by teaching the rulings Allah revealed in Madinah, for example fasting in Ramadan (2:183) ...'"
+        },
+        {
+          "q": "Extend: why were some rulings, like the ban on intoxicants, revealed in stages?",
+          "a": "To make change easier for people and build strong iman first.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: link 33:36 (1.5) to 1.7.",
+          "a": "When Allah and His Messenger decide a matter, believers have no choice but to obey: the Prophet's ﷺ rulings were binding.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Give one result of the conquest.",
-        "Define wufud.",
-        "Big question: how did Islam become secure?"
+        {
+          "q": "4:65 is about the Prophet ﷺ as ...",
+          "a": "Judge",
+          "mins": 1,
+          "options": [
+            "Judge",
+            "Trader",
+            "Poet"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what did the Prophet ﷺ build in Madinah?",
+          "a": "Faith, leadership and law together: a community under the Shari'ah.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a news report from Makkah on the day of the conquest, with accuracy and mercy.",
-      "send": "SEND/EAL: map of Arabia with key places; stretch: evaluate sources on the conquest.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
+      "homework": "Independent study: read portal lessons y10 12 to 17 summaries; make a 1.7 knowledge organiser page.",
+      "send": "SEND: timeline cards. EAL: command word glossary. Stretch: research the Charter of Madinah's main clauses in the approved text.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work)",
+        "Pupil PDF worksheet: 1.7a timeline and paragraph frame",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Al-Masjid an-Nabawi green dome",
+          "alt": "Masjid an-Nabawi in Madinah",
+          "for": "teach:1"
+        },
+        {
+          "find": "Masjid al-Qiblatayn",
+          "alt": "Masjid al-Qiblatayn, linked to the change of qiblah",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Spec 1.7: The Prophet as leader (Section A)",
-      "n": 20,
-      "title": "1.7 Opponents, prisoners and relations with other communities and countries (hadith on obedience to rulers)",
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
+      "n": 19,
+      "title": "1.7 Consolidation and expansion: treaties, conquest and the Year of Delegations",
       "duration": 50,
-      "bigQuestion": "How did the Prophet ﷺ treat his enemies and deal with other nations, and why should Muslims obey a leader?",
+      "bigQuestion": "Can a peace treaty that looks like a loss turn out to be a great victory? How?",
       "objectives": [
-        "Describe his treatment of opponents and prisoners",
-        "Describe his relations with other communities and states",
-        "Analyse the hadith on obedience to rulers and its limits"
+        "To understand how Islam was consolidated and expanded after the Hijrah"
       ],
       "successCriteria": [
-        "All: give two examples of how he treated prisoners or enemies",
-        "Most: explain his diplomacy with other rulers",
-        "Some: assess the limits of obedience to leaders in the hadith, with evidence"
+        "All: order the key events from Hudaybiyyah to the Year of Delegations",
+        "Most: explain how treaties and the conquest of Makkah consolidated Islam",
+        "Some: assess which event did most to expand Islam"
       ],
-      "crossCurricular": "Citizenship: rule of law, rights of prisoners; History: diplomacy",
-      "smsc": "Moral: mercy and justice; Social: responsibilities of citizens and rulers",
+      "crossCurricular": "History: diplomacy, treaties and the growth of states",
+      "smsc": "Moral: peace-making and patience",
       "keywords": [
         {
-          "term": "asir (أسير)",
+          "term": "consolidation",
+          "def": "making something strong and secure"
+        },
+        {
+          "term": "Hudaybiyyah (الحُدَيْبِيَة)",
+          "def": "the treaty with the Quraysh, 6 AH"
+        },
+        {
+          "term": "Fath Makkah (فَتْحُ مَكَّة)",
+          "def": "the conquest of Makkah, 8 AH"
+        },
+        {
+          "term": "Year of Delegations (عَامُ الوُفُود)",
+          "def": "9 AH, when tribes came to accept Islam"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can a peace treaty that looks like a loss turn out to be a great victory? How?",
+        "a": "Yes: Hudaybiyyah looked unfair, but peace let Islam spread; Allah called it a clear victory (48:1)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, We have given you a clear conquest' (al-Fath 48:1), revealed after Hudaybiyyah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 4:65 shows the Prophet ﷺ as ...",
+          "a": "Judge",
+          "mins": 1,
+          "options": [
+            "Judge",
+            "Poet"
+          ]
+        },
+        {
+          "q": "When did the qiblah change?",
+          "a": "2 AH",
+          "mins": 1,
+          "options": [
+            "2 AH",
+            "8 AH"
+          ]
+        },
+        {
+          "q": "What was the Charter of Madinah?",
+          "a": "An agreement between the groups of Madinah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "From danger to security",
+          "bullets": [],
+          "note": "Begin with Bismillah. 1.8 covers the battles; here focus on consolidation.",
+          "timeline": [
+            {
+              "label": "6 AH",
+              "text": "Treaty of Hudaybiyyah: ten years' truce"
+            },
+            {
+              "label": "7 AH",
+              "text": "Letters to rulers (Heraclius, Persia, Egypt, Abyssinia)"
+            },
+            {
+              "label": "8 AH",
+              "text": "Quraysh break the treaty; Makkah opened almost without fighting"
+            },
+            {
+              "label": "9 AH",
+              "text": "Year of Delegations: tribes come to Madinah"
+            },
+            {
+              "label": "10 AH",
+              "text": "Farewell Pilgrimage"
+            }
+          ]
+        },
+        {
+          "heading": "A clear victory",
+          "bullets": [
+            "Hudaybiyyah: terms seemed harsh",
+            "Peace allowed people to meet Muslims freely",
+            "48:1: 'We have given you a clear conquest'"
+          ],
+          "note": "The treaty is reported in Bukhari. Many accepted Islam in the two years of peace."
+        },
+        {
+          "heading": "Letters to rulers",
+          "bullets": [
+            "Invited kings to Islam peacefully",
+            "Heraclius questioned Abu Sufyan about the Prophet ﷺ",
+            "Islam reached beyond Arabia"
+          ],
+          "note": "Heraclius and Abu Sufyan: Bukhari."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Why was Hudaybiyyah called a victory?",
+            "options": [
+              "Peace let Islam spread widely",
+              "The Muslims won a battle",
+              "Makkah was opened that day"
+            ],
+            "answer": 0,
+            "why": "48:1; in peacetime many people accepted Islam."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how the conquest of Makkah consolidated Islam. (4 marks, our own question)",
+          "a": "The Ka'bah was cleared of idols, the Quraysh's opposition ended, and Arabia's tribes saw Islam's strength and mercy, leading to the Year of Delegations.",
+          "mins": 4,
+          "model": "Point 1: it removed the main enemy. Develop: the Quraysh, leaders of opposition, accepted the Prophet ﷺ. Point 2: the Ka'bah returned to tawheed. Develop: the idols were destroyed (17:81: truth has come), making Makkah the centre of Islam."
+        },
+        {
+          "q": "The Year of Delegations was in ...",
+          "a": "9 AH",
+          "mins": 1,
+          "options": [
+            "9 AH",
+            "2 AH",
+            "6 AH"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Ranking task on the pupil PDF: rank five events (Charter, Hudaybiyyah, letters, conquest, delegations) by how much each expanded Islam, with a reason each; then a 'most important' paragraph in the portal response box.",
+          "a": "Reasoned ranking; paragraph with evidence (e.g. Hudaybiyyah via 48:1 and growth in peace)",
+          "mins": 12,
+          "model": "Teacher ranks Hudaybiyyah first and gives a reason: 'It brought peace, so many could hear Islam; Allah called it a clear victory (48:1).'"
+        },
+        {
+          "q": "Extend: why did the Prophet ﷺ write to rulers and not just send armies?",
+          "a": "Islam is spread by invitation; there is no compulsion in religion (2:256).",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: link consolidation to the 12-mark statement on opponents and prisoners.",
+          "a": "Mercy at the conquest and in treaties won hearts, supporting the statement.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Makkah was opened in ...",
+          "a": "8 AH",
+          "mins": 1,
+          "options": [
+            "8 AH",
+            "10 AH"
+          ]
+        },
+        {
+          "q": "Back to our ponder: can a treaty that looks like a loss be a victory?",
+          "a": "Yes: Hudaybiyyah's peace let Islam spread (48:1).",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: make flash cards for 6 AH to 10 AH with one consequence each.",
+      "send": "SEND: event cards with dates. EAL: sentence starters for ranking. Stretch: compare Hudaybiyyah with a modern peace process.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work)",
+        "Pupil PDF worksheet: ranking task",
+        "Mushaf or printed al-Fath 48:1"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kaaba",
+          "alt": "The Ka'bah, cleared of idols at the conquest",
+          "for": "teach:1"
+        },
+        {
+          "find": "old letter seal wax",
+          "alt": "A sealed letter",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
+      "n": 20,
+      "title": "1.7 Opponents, prisoners and other communities; the hadith on obeying those in authority",
+      "duration": 50,
+      "bigQuestion": "Should a leader always be obeyed? Where is the line?",
+      "objectives": [
+        "To understand how the Prophet ﷺ treated opponents, prisoners and other communities, and what the set passage teaches about authority"
+      ],
+      "successCriteria": [
+        "All: give two examples of the Prophet's ﷺ treatment of prisoners or opponents",
+        "Most: explain the set passage and its limit",
+        "Some: explain how his relations with other communities show Islamic principles"
+      ],
+      "smsc": "Moral: mercy to opponents; Social: authority and its limits",
+      "keywords": [
+        {
+          "term": "asir (أَسِير)",
           "def": "a prisoner of war"
         },
         {
-          "term": "fidyah (فدية)",
-          "def": "ransom"
+          "term": "'afw (عَفْو)",
+          "def": "pardon, forgiveness"
         },
         {
-          "term": "mu'ahad (معاهد)",
-          "def": "a person under a treaty of peace"
-        },
-        {
-          "term": "ta'ah (طاعة)",
+          "term": "ta'ah (طَاعَة)",
           "def": "obedience"
+        },
+        {
+          "term": "ahl al-kitab (أَهْلُ الكِتَاب)",
+          "def": "People of the Book: Jews and Christians"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Should a leader always be obeyed? Where is the line?",
+        "a": "Obey in what is right; never in disobedience to Allah (the set passage)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, obey Allah and obey the Messenger and those in authority among you' (an-Nisa' 4:59).",
+        "at": "start"
+      },
       "starter": [
-        "Name the treaty of 6 AH.",
-        "What happened at Makkah in 8 AH?",
-        "Define ummah."
+        {
+          "q": "Bismillah. Hudaybiyyah was in ...",
+          "a": "6 AH",
+          "mins": 1,
+          "options": [
+            "6 AH",
+            "8 AH"
+          ]
+        },
+        {
+          "q": "48:1 calls Hudaybiyyah ...",
+          "a": "A clear conquest",
+          "mins": 1,
+          "options": [
+            "A clear conquest",
+            "A defeat"
+          ]
+        },
+        {
+          "q": "The Year of Delegations was ...",
+          "a": "9 AH",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Treatment of prisoners",
-          "bullets": [
-            "Badr prisoners were housed and treated kindly",
-            "Some literate prisoners earned freedom by teaching Muslim children",
-            "Thumamah ibn Uthal was held in the mosque, then freed and accepted Islam (Bukhari 462)",
-            "Qur'an 76:8: feeding the captive"
-          ],
-          "note": "Badr prisoners: ransom or teaching reading and writing is well known in Sira; verify before quoting. The Thumamah story is in Bukhari (verify number). 76:8 'they feed, for love of Allah ﷻ, the poor, the orphan and the captive' is secure. Ask: what does this show about treatment of prisoners? Link to the Geneva Convention only as modern parallel for pupils' interest, not as a claim."
-        },
-        {
-          "heading": "Opponents",
-          "bullets": [
-            "Mercy at Makkah: amnesty for Quraysh",
-            "Hypocrites in Madinah were not executed for their lack of faith",
-            "Some tribes that broke treaties faced consequences",
-            "Banu Qurayzah: arbitration after betrayal during the Trench"
-          ],
-          "note": "SENSITIVE: teach accurately and calmly. Banu Qurayzah broke their agreement during the siege (Trench, 5 AH); the judgement was given by Sa'd ibn Mu'adh, their chosen arbiter, according to their own law (Torah) as many Sira sources state; scholars discuss the sources. Present as a political and military matter of treason, not a religious judgement on Jews, and reject any use of the event to justify hatred. Teachers should pre-read and keep this factual. For safeguarding, invite questions but do not allow stereotyping. Mention that other Jewish tribes were exiled after breaking the pact, rather than killed."
-        },
-        {
-          "heading": "Relations with other countries",
-          "bullets": [
-            "Letters invited rulers to Islam: Heraclius, Negus, Khosrau",
-            "Heraclius's reply was respectful (Bukhari 7)",
-            "The Negus gave refuge to the early Muslims",
-            "Envoys were treated with respect"
-          ],
-          "note": "Bukhari 7 is the narration of the letter to Heraclius and Abu Sufyan's replies (verify). Keep to the secure points: letters were sent; the Negus protected the emigrants; diplomacy was used. Ask: why use letters rather than force? (Da'wah and diplomacy.)"
-        },
-        {
-          "heading": "Obedience to rulers",
-          "bullets": [
-            "Qur'an 4:59: obey Allah ﷻ, the Messenger and those in authority",
-            "Hadith: obey your leader in what is good",
-            "No obedience in what is sinful (Bukhari 7257, Muslim 1840)",
-            "The ruler is also accountable: each is a shepherd (Bukhari 893, Muslim 1829)"
-          ],
-          "note": "The spec passage is a hadith on obedience to rulers, printed in Appendix 5. Teacher should read the printed hadith and annotate with pupils. Two secure principles: obedience in what is good only, and accountability of leaders. Verify the numbers. Frame for British context: Muslims obey the law of the land they live in as part of their covenant of security; obedience never includes sin; and extremist violence is never justified by this hadith. Flag for safeguarding."
-        },
-        {
-          "heading": "Model answer",
-          "bullets": [
-            "Plan",
-            "Evidence",
-            "Evaluate"
-          ],
-          "note": "Model a 12-mark approach.",
-          "model": {
-            "problem": "'Muslims must always obey their rulers.' Assess this statement. (12 marks)",
-            "steps": [
-              "For: Qur'an 4:59 commands obedience to those in authority, and the hadith stresses hearing and obeying.",
-              "For: order and unity are valued; the Prophet ﷺ established leadership.",
-              "Against: obedience is in what is good only (Bukhari 7257, Muslim 1840), so no obedience in sin.",
-              "Judgement: Muslims should obey just authority within limits; this is neither blind obedience nor rebellion."
-            ],
-            "answer": "Level 4: clear for/against with specific sources and a reasoned conclusion."
-          }
-        },
-        {
-          "heading": "Hinge question",
-          "bullets": [
-            "Whiteboards"
-          ],
-          "note": "Reveal.",
-          "check": {
-            "q": "What limit does the hadith set on obedience to a ruler?",
-            "options": [
-              "There is no limit",
-              "Obedience is only in what is good",
-              "Obedience is only in Makkah",
-              "Obedience is only in wartime"
-            ],
-            "answer": 1,
-            "why": "Obedience is in what is good; there is none in disobedience of Allah ﷻ."
-          }
-        }
-      ],
-      "practice": [
-        "Give two examples of mercy to prisoners.",
-        "Name two rulers who received letters.",
-        "What does Qur'an 4:59 command?"
-      ],
-      "independent": [
-        "Core: summarise the hadith in two sentences and underline its limit.",
-        "Extend: write a 6-mark answer on the Prophet's treatment of prisoners.",
-        "Stretch: plan the 12-mark answer above."
-      ],
-      "exit": [
-        "Define fidyah.",
-        "State the limit on obedience.",
-        "Big question: how should leaders and followers behave?"
-      ],
-      "homework": "Revise Section A: choose one of the Section A units we have learned and write five key facts.",
-      "send": "SEND/EAL: annotated hadith with glossary; stretch: compare the roles of obedience and accountability.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
-    },
-    {
-      "unit": "Spec 3.1: Shahadah (Section C)",
-      "n": 21,
-      "title": "3.1 The Shahadah: nature, role and use in Muslim life (Qur'an 3:18-19)",
-      "duration": 50,
-      "bigQuestion": "Why is a single sentence the foundation of a Muslim's faith?",
-      "objectives": [
-        "State the Shahadah in Arabic and English and explain its two parts",
-        "Explain the importance of reciting the Shahadah",
-        "Describe how the Shahadah is used in practice, from birth to death"
-      ],
-      "successCriteria": [
-        "All: recite and translate the Shahadah",
-        "Most: explain what each part commits a Muslim to",
-        "Some: evaluate whether saying the Shahadah is enough to be a Muslim"
-      ],
-      "crossCurricular": "Arabic: reading and translating the kalimah; PSHE: identity and belonging",
-      "smsc": "Spiritual: sincerity of belief; Cultural: how a single declaration unites a diverse ummah",
-      "keywords": [
-        {
-          "term": "Shahadah (شهادة)",
-          "def": "the declaration of faith: the first pillar"
-        },
-        {
-          "term": "la ilaha illa Allah (لا إله إلا الله)",
-          "def": "there is no god but Allah"
-        },
-        {
-          "term": "Muhammadun rasulullah (محمد رسول الله)",
-          "def": "Muhammad is the Messenger of Allah"
-        },
-        {
-          "term": "ikhlas (إخلاص)",
-          "def": "sincerity"
-        }
-      ],
-      "starter": [
-        "Name the five pillars in order.",
-        "Which pillar do the others depend on?",
-        "What is the meaning of Tawhid?"
-      ],
-      "teach": [
-        {
-          "heading": "The words and meaning",
-          "bullets": [
-            "أشهد أن لا إله إلا الله وأشهد أن محمدا رسول الله",
-            "I bear witness that there is no god but Allah ﷻ",
-            "and I bear witness that Muhammad ﷺ is the Messenger of Allah ﷻ",
-            "Part one: Tawhid. Part two: Risalah"
-          ],
-          "note": "Bismillah. Have pupils say the Shahadah aloud together. Break it into negation (no god) and affirmation (but Allah ﷻ). Link to Tawhid in Year 11 unit 2.1 and risalah. Explain that a Muslim's testimony includes belief in the heart, speech by tongue and action by limbs; scholars give conditions of the Shahadah, which can be taught as understanding, sincerity and acceptance. Verify the Arabic script in the mushaf before display."
-        },
-        {
-          "heading": "Qur'an 3:18-19",
-          "bullets": [
-            "Allah ﷻ bears witness that there is no god but Him",
-            "The angels and people of knowledge also bear witness",
-            "He upholds justice",
-            "The true religion with Allah ﷻ is Islam (submission)"
-          ],
-          "note": "This is the set passage. 3:18: شَهِدَ اللَّهُ أَنَّهُ لَا إِلَٰهَ إِلَّا هُوَ... 3:19: إِنَّ الدِّينَ عِندَ اللَّهِ الْإِسْلَامُ. Teacher to check the wording from the mushaf and a trusted translation. Note: 'Islam' here means submission to Allah ﷻ; scholars explain it as the way of all prophets. Do not push exclusivist readings; present the text and how Muslims understand it. Ask: who is a witness in this ayah? Why is Allah's own testimony powerful?"
-        },
-        {
-          "heading": "Importance of reciting it",
-          "bullets": [
-            "Entry into Islam: said sincerely with understanding",
-            "The first thing whispered to a newborn (adhan)",
-            "Repeated in the call to prayer and in every prayer",
-            "Said at the end of life when possible"
-          ],
-          "note": "Describe how the Shahadah is used: conversion (said before witnesses, no minimum ritual beyond sincerity), adhan and iqamah, tashahhud in salah, and the encouragement to say it at the end of life (verify any hadith number before quoting; do not quote 'whoever's last words' without checking its grading). Hadith of Mu'adh: Prophet told him to call people first to the Shahadah (Bukhari 1395, Muslim 19; verify). Ask pupils which of these they hear in daily life.",
+          "heading": "Prisoners and opponents",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
           "table": {
             "head": [
-              "Occasion",
-              "How the Shahadah appears"
+              "Event",
+              "Treatment",
+              "Source"
             ],
             "rows": [
               [
-                "Conversion",
-                "Declared with sincerity, ideally before witnesses"
+                "Badr prisoners",
+                "Ransomed; some freed for teaching children to read",
+                "Seerah reports"
               ],
               [
-                "Adhan",
-                "The caller proclaims both parts"
+                "Thumamah ibn Uthal",
+                "Released; then accepted Islam",
+                "Bukhari and Muslim"
               ],
               [
-                "Salah",
-                "Recited in the tashahhud"
+                "Conquest of Makkah",
+                "General pardon for old enemies",
+                "Seerah reports"
               ],
               [
-                "Death",
-                "Encouraged as last words"
+                "Hind and others",
+                "Forgiven despite past hostility",
+                "Seerah reports"
               ]
             ]
           }
         },
         {
-          "heading": "Model answer",
+          "heading": "Other communities",
           "bullets": [
-            "Meaning",
-            "Role",
-            "Importance"
+            "Charter of Madinah with the Jewish tribes",
+            "Delegation of Christians from Najran",
+            "Abyssinia's Christian king protected Muslims"
           ],
-          "note": "Model an exam answer.",
-          "model": {
-            "problem": "Explain why the Shahadah is the most important pillar. (6 marks)",
-            "steps": [
-              "Point: it expresses Tawhid, the core belief of Islam, that only Allah ﷻ is worshipped.",
-              "Explain: without it the other pillars have no foundation.",
-              "Point: it also affirms Muhammad ﷺ as Messenger, so Muslims follow his Sunnah.",
-              "Explain: this guides how every act of worship is performed, and it unites Muslims of all backgrounds."
-            ],
-            "answer": "Two developed points; keeps the focus on 'why most important'."
+          "note": "Seerah reports. Treaties broken by some tribes led to consequences; teach factually."
+        },
+        {
+          "heading": "Set passage (1.7)",
+          "bullets": [],
+          "note": "Read the set passage as printed in Appendix 5; this translation is of the same hadith (Ibn Umar).",
+          "quote": {
+            "text": "Listening and obeying is binding on the Muslim, in what he likes and dislikes, as long as he is not commanded to disobey Allah. If he is commanded to disobey Allah, there is no listening and no obeying.",
+            "source": "Bukhari and Muslim"
           }
         },
         {
-          "heading": "Hinge question",
+          "heading": "The limit",
           "bullets": [
-            "Whiteboards"
+            "Obey leaders in what is right (ma'ruf)",
+            "No obedience in sin",
+            "'Obedience is only in what is right' (Bukhari and Muslim)"
           ],
-          "note": "Reveal.",
+          "note": "Link to 4:59: obey Allah, the Messenger and those in authority."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "Which belief does the first half of the Shahadah express?",
+            "q": "According to the set passage, when is obedience to a leader not allowed?",
             "options": [
-              "Risalah",
-              "Tawhid",
-              "Hajj",
-              "Zakah"
+              "When commanded to disobey Allah",
+              "When the order is hard",
+              "When we dislike it"
             ],
-            "answer": 1,
-            "why": "The first half affirms the oneness of Allah ﷻ. The second half affirms the prophethood of Muhammad ﷺ (risalah)."
+            "answer": 0,
+            "why": "Obey in what you like and dislike, but not in disobedience to Allah."
           }
         }
       ],
       "practice": [
-        "Say the Shahadah in Arabic and translate.",
-        "Identify two occasions where the Shahadah is spoken.",
-        "What does 3:18 say about who bears witness?"
-      ],
-      "independent": [
-        "Core: complete a diagram linking the two halves to Tawhid and Risalah.",
-        "Extend: write a 6-mark answer on the importance of the Shahadah.",
-        "Stretch: write 8 lines responding to 'Saying the Shahadah is enough to be a Muslim' with scholarly views noted."
-      ],
-      "exit": [
-        "State the Shahadah in English.",
-        "Give one place the Shahadah appears in salah.",
-        "Big question: why does one sentence found a Muslim's faith?"
-      ],
-      "homework": "Write a paragraph for a non-Muslim friend explaining what the Shahadah means and how Muslims use it.",
-      "send": "SEND/EAL: audio of the Shahadah, transliteration and picture cards; stretch: explore conditions of the Shahadah and how scholars differ on its minimum requirements.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
-    },
-    {
-      "unit": "Spec 3.2: Salah (Section C)",
-      "n": 22,
-      "title": "3.2 Salah: nature, significance and importance",
-      "duration": 50,
-      "bigQuestion": "Why do Muslims stop what they are doing five times a day?",
-      "objectives": [
-        "Describe the nature and purpose of Salah",
-        "Explain its significance and importance in Muslim life",
-        "Link to the Qur'an and Sunnah"
-      ],
-      "successCriteria": [
-        "All: name the five daily prayers and when they occur",
-        "Most: explain three reasons Salah matters",
-        "Some: evaluate the claim that Salah is the most important pillar after the Shahadah"
-      ],
-      "crossCurricular": "PSHE: routine, wellbeing and mindfulness; Geography: times of prayer through the year",
-      "smsc": "Spiritual: connection with Allah ﷻ; Social: community and discipline",
-      "keywords": [
         {
-          "term": "Salah (صلاة)",
-          "def": "the five daily prayers"
+          "q": "Explain what the set passage teaches about obedience to those in authority. (4 marks, our own question)",
+          "a": "Muslims must obey leaders even in things they dislike, which keeps order; but obedience stops at anything that disobeys Allah.",
+          "mins": 4,
+          "model": "Point 1: obedience is a duty. Develop: 'in what he likes and dislikes', so society stays stable. Point 2: it has a limit. Develop: 'if commanded to disobey Allah, there is no listening and no obeying': Allah's law is above any ruler."
         },
         {
-          "term": "Fajr / Dhuhr / 'Asr / Maghrib / 'Isha'",
-          "def": "the five prayers"
-        },
-        {
-          "term": "dhikr (ذكر)",
-          "def": "remembrance of Allah"
-        },
-        {
-          "term": "khushu' (خشوع)",
-          "def": "humility and focus in prayer"
+          "q": "Thumamah ibn Uthal was ...",
+          "a": "Released and then accepted Islam",
+          "mins": 1,
+          "options": [
+            "Released and then accepted Islam",
+            "Executed"
+          ]
         }
       ],
+      "independent": [
+        {
+          "q": "In the portal response box: 'Explain how the Prophet's ﷺ treatment of opponents and prisoners shows Islamic values.' Two developed paragraphs with evidence. Start: 'The Prophet ﷺ showed mercy to opponents, for example ...'",
+          "a": "Paragraphs on mercy (conquest pardon, Thumamah), justice (prisoner ransom, teaching), keeping treaties, with sources labelled",
+          "mins": 12,
+          "model": "Teacher writes the first sentence and evidence: 'The Prophet ﷺ showed mercy to opponents, for example he released Thumamah ibn Uthal, who then accepted Islam (Bukhari and Muslim).'"
+        },
+        {
+          "q": "Extend: how does 4:59 support the set passage?",
+          "a": "It commands obeying those in authority after Allah and the Messenger, and referring disputes to them.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: how might a Muslim in Britain apply the set passage?",
+          "a": "Obey the law in what is right; if asked to do something sinful, refuse peacefully.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "At the conquest of Makkah the Prophet ﷺ ...",
+          "a": "Pardoned his old enemies",
+          "mins": 1,
+          "options": [
+            "Pardoned his old enemies",
+            "Took revenge"
+          ]
+        },
+        {
+          "q": "Back to our ponder: where is the line?",
+          "a": "Obey in what is right; no obedience in disobedience to Allah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the set passage for 1.7 (Appendix 5 wording) and write it out from memory.",
+      "send": "SEND: table with sources highlighted. EAL: obedience / limit diagram. Stretch: evaluate whether mercy or strength did more to spread Islam.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work)",
+        "Pupil PDF worksheet: 1.7 evidence table and paragraph frame",
+        "Set passage card (1.7)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kaaba",
+          "alt": "The Ka'bah in Makkah",
+          "for": "teach:1"
+        },
+        {
+          "find": "old key",
+          "alt": "A key: Makkah's keys returned at the conquest",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
+      "n": 21,
+      "title": "3.1 The Shahadah: nature, role and use in Muslim life (Qur'an 3:18-19)",
+      "duration": 50,
+      "bigQuestion": "Why might a few words, said sincerely, change the whole of a person's life?",
+      "objectives": [
+        "To understand the nature and importance of the Shahadah and how it is used in Muslim life"
+      ],
+      "successCriteria": [
+        "All: say the Shahadah in Arabic and English",
+        "Most: explain what 3:18-19 teaches about the Shahadah",
+        "Some: explain how the Shahadah is used through a Muslim's life"
+      ],
+      "smsc": "Spiritual: the declaration at the heart of Islam",
+      "keywords": [
+        {
+          "term": "Shahadah (شَهَادَة)",
+          "def": "the declaration of faith: bearing witness"
+        },
+        {
+          "term": "Tawhid (تَوْحِيد)",
+          "def": "the oneness of Allah"
+        },
+        {
+          "term": "risalah (رِسَالَة)",
+          "def": "prophethood: the message"
+        },
+        {
+          "term": "adhan (أَذَان)",
+          "def": "the call to prayer, which contains the Shahadah"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might a few words, said sincerely, change the whole of a person's life?",
+        "a": "The Shahadah is a commitment: to worship Allah alone and follow the Prophet ﷺ in everything."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah witnesses that there is no deity except Him, and so do the angels and those of knowledge' (Al 'Imran 3:18).",
+        "at": "start"
+      },
       "starter": [
-        "Which pillar comes after Shahadah?",
-        "How many rak'ahs are in Fajr?",
-        "What is the direction of prayer?"
+        {
+          "q": "Bismillah. 1.7: the set passage limit on obedience is ...",
+          "a": "No obedience in disobedience to Allah",
+          "mins": 1,
+          "options": [
+            "No obedience in disobedience to Allah",
+            "Always obey"
+          ]
+        },
+        {
+          "q": "48:1 refers to ...",
+          "a": "Hudaybiyyah",
+          "mins": 1,
+          "options": [
+            "Hudaybiyyah",
+            "Badr"
+          ]
+        },
+        {
+          "q": "What is Tawhid?",
+          "a": "The oneness of Allah",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What Salah is",
+          "heading": "The words",
+          "bullets": [
+            "Ash-hadu an la ilaha illa Allah",
+            "Wa ash-hadu anna Muhammadan rasulullah",
+            "I bear witness ... and I bear witness ..."
+          ],
+          "note": "Begin with Bismillah. Two halves: Tawhid and risalah."
+        },
+        {
+          "heading": "Set passage: 3:18-19",
+          "bullets": [],
+          "note": "Read in translation; underline 'witness' and 'religion'.",
+          "quote": {
+            "text": "Allah witnesses that there is no deity except Him, and so do the angels and those of knowledge, maintaining justice. There is no deity except Him, the Mighty, the Wise. Indeed, the religion in the sight of Allah is Islam.",
+            "source": "Qur'an, Al 'Imran 3:18-19 (translation of the meaning)"
+          }
+        },
+        {
+          "heading": "Using the Shahadah",
+          "bullets": [],
+          "note": "Pupils add examples.",
+          "diagram": {
+            "centre": "The Shahadah in life",
+            "items": [
+              "Said to become Muslim",
+              "In the adhan and iqamah",
+              "In every tashahhud",
+              "Whispered to a newborn (adhan)",
+              "Hoped as last words",
+              "Shown in daily choices"
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "In 3:18, who bears witness to Allah's oneness?",
+            "options": [
+              "Allah, the angels and those of knowledge",
+              "Only the prophets",
+              "Only the angels"
+            ],
+            "answer": 0,
+            "why": "3:18 names Allah, the angels and people of knowledge."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what 3:18-19 teaches about the Shahadah. (4 marks, our own question)",
+          "a": "Allah Himself, the angels and people of knowledge bear witness there is no god but Him, so Muslims join this witness; and the true religion with Allah is Islam.",
+          "mins": 4,
+          "model": "Point 1: the Shahadah is the greatest witness. Develop: Allah, the angels and the people of knowledge testify to His oneness (3:18). Point 2: it marks the true religion. Develop: 'the religion in the sight of Allah is Islam' (3:19), so saying it enters a person into Islam."
+        },
+        {
+          "q": "The second half of the Shahadah is about ...",
+          "a": "Muhammad ﷺ being Allah's Messenger",
+          "mins": 1,
+          "options": [
+            "Muhammad ﷺ being Allah's Messenger",
+            "The angels"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: 'Describe how the Shahadah is used in a Muslim's life from birth to death.' Use at least four uses. Start: 'From the moment a Muslim is born, ...'",
+          "a": "Adhan at birth, salah and tashahhud, adhan, conversion, daily choices, last words hoped at death",
+          "mins": 13,
+          "model": "Teacher writes: 'From the moment a Muslim is born, many families say the adhan, which contains the Shahadah, in the baby's ear.'"
+        },
+        {
+          "q": "Extend: why must the Shahadah be said with knowledge and sincerity?",
+          "a": "Words alone are not enough; it must be believed and acted on (the hypocrites said it without belief).",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: what does Tawhid in the Shahadah rule out?",
+          "a": "Shirk: worshipping or calling on anything besides Allah.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which set passage goes with 3.1?",
+          "a": "3:18-19",
+          "mins": 1,
+          "options": [
+            "3:18-19",
+            "62:9-11"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why can a few words change a life?",
+          "a": "The Shahadah commits a person to Tawhid and following the Prophet ﷺ in everything.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn 3:18-19 in translation and write five uses of the Shahadah from memory.",
+      "send": "SEND: Shahadah card with Arabic and transliteration. EAL: 'witness' vocabulary. Stretch: link the Shahadah to 2.1 (Tawhid) and 2.2 (risalah).",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work) (3.1 activities)",
+        "Pupil PDF worksheet: Shahadah in life diagram",
+        "Mushaf or printed Al 'Imran 3:18-19"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Shahada calligraphy",
+          "alt": "The Shahadah in Arabic calligraphy",
+          "for": "hook"
+        },
+        {
+          "find": "minaret",
+          "alt": "A minaret: the adhan contains the Shahadah",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
+      "n": 22,
+      "title": "3.2 Salah: nature, significance and importance",
+      "duration": 50,
+      "bigQuestion": "Five times a day, every day, for life. Is that a burden or a gift? Why?",
+      "objectives": [
+        "To understand the nature of salah and why it is so important in Muslim life"
+      ],
+      "successCriteria": [
+        "All: describe what salah is and when it is prayed",
+        "Most: explain three reasons salah is important, with evidence",
+        "Some: explain how salah shapes a Muslim's character and community"
+      ],
+      "smsc": "Spiritual: daily worship; Social: equality in congregation",
+      "keywords": [
+        {
+          "term": "salah (صَلَاة)",
+          "def": "the five daily prayers, the second pillar"
+        },
+        {
+          "term": "fard (فَرْض)",
+          "def": "obligatory"
+        },
+        {
+          "term": "khushu' (خُشُوع)",
+          "def": "humble focus in prayer"
+        },
+        {
+          "term": "dhikr (ذِكْر)",
+          "def": "remembrance of Allah"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Five times a day, every day, for life. Is that a burden or a gift? Why?",
+        "a": "A gift: a direct meeting with Allah that brings peace and discipline."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, I am Allah. There is no deity except Me, so worship Me and establish prayer for My remembrance' (Ta Ha 20:14).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Which passage is set for 3.1?",
+          "a": "3:18-19",
+          "mins": 1,
+          "options": [
+            "3:18-19",
+            "33:36"
+          ]
+        },
+        {
+          "q": "Name one use of the Shahadah in life.",
+          "a": "For example: in the adhan",
+          "mins": 1
+        },
+        {
+          "q": "Where were the five prayers given?",
+          "a": "In the Mi'raj",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is salah?",
           "bullets": [
             "The second pillar of Islam",
-            "Five prescribed prayers each day",
-            "A direct link between the servant and Allah ﷻ",
-            "Fixed times: Qur'an 4:103"
+            "Five set prayers: Fajr, Dhuhr, Asr, Maghrib, Isha",
+            "Given directly in the Mi'raj"
           ],
-          "note": "Bismillah. Mention that the five prayers were prescribed at the Mi'raj (a link back to Unit 1.4). Hadith: 'Islam is built on five' (Bukhari 8, Muslim 16; verify). Qur'an 4:103: prayer is prescribed for believers at fixed times (secure; check mushaf). Ask pupils what they know of the daily structure of prayers."
+          "note": "Begin with Bismillah. Five prayers with the reward of fifty (Bukhari and Muslim)."
         },
         {
           "heading": "Why it matters",
-          "bullets": [
-            "Reminds Muslims of Allah ﷻ during the day",
-            "Teaches discipline and equality: all stand in lines",
-            "Cleanses the heart and prevents wrongdoing (Qur'an 29:45)",
-            "Five prayers are like a river at the door, washing away dirt (Muslim 668)"
-          ],
-          "note": "29:45 'prayer prevents immorality and wrongdoing' secure; the river hadith is in Muslim 668 (verify wording). Ask: how might repeated prayer shape a person? Compare to athletic training. The hadith that abandoning prayer is the difference between a person and disbelief (Muslim 82) is a serious warning and scholars differ on its meaning; teacher to handle with care and avoid frightening pupils."
+          "bullets": [],
+          "note": "Pupils add evidence.",
+          "table": {
+            "head": [
+              "Reason",
+              "Evidence"
+            ],
+            "rows": [
+              [
+                "Remembrance of Allah",
+                "'Establish prayer for My remembrance' (20:14)"
+              ],
+              [
+                "Keeps from wrong",
+                "'Prayer prohibits immorality' (29:45)"
+              ],
+              [
+                "At set times",
+                "4:103"
+              ],
+              [
+                "Separates belief from disbelief",
+                "Abandoning prayer (Muslim)"
+              ],
+              [
+                "Unites the ummah",
+                "Facing one qiblah; congregation"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Salah in numbers",
+          "heading": "Character and community",
           "bullets": [
-            "Fajr 2 rak'ahs, Dhuhr 4, 'Asr 4",
-            "Maghrib 3, 'Isha' 4 (fard)",
-            "Extra prayers: sunnah and nafl",
-            "Jummah replaces Dhuhr on Friday"
+            "Discipline: punctual, organised days",
+            "Equality: rich and poor in one line",
+            "Calm and focus: khushu' (23:1-2)"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
           ],
-          "note": "Give pupils the numbers as a table to memorise. Note that Hanafi and other schools differ over classifications such as wajib for witr; the spec asks for the main pattern. Keep neutral.",
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'Prayer prohibits immorality and wrongdoing' is ...",
+            "options": [
+              "29:45",
+              "20:14",
+              "62:9"
+            ],
+            "answer": 0,
+            "why": "Al-'Ankabut 29:45."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain two reasons why salah is important to Muslims. (4 marks, our own question)",
+          "a": "It is a pillar commanded by Allah for His remembrance (20:14); it keeps a Muslim from wrongdoing (29:45).",
+          "mins": 4,
+          "model": "Point 1: it is a direct command for remembering Allah. Develop: 'establish prayer for My remembrance' (20:14). Point 2: it protects from sin. Develop: 'prayer prohibits immorality' (29:45), so regular prayer shapes behaviour."
+        },
+        {
+          "q": "How many daily prayers are fard?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Three"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: 'Explain how salah affects the life of a Muslim teenager.' Two developed paragraphs (personal discipline; community and character). Start: 'Salah shapes a Muslim teenager's day because ...'",
+          "a": "Paragraphs on timetable and discipline, avoiding wrong (29:45), equality in the line, khushu'",
+          "mins": 13,
+          "model": "Teacher writes: 'Salah shapes a Muslim teenager's day because the five times (4:103) mean planning homework and sleep around Fajr and Isha.'"
+        },
+        {
+          "q": "Extend: what does the hadith in Muslim about abandoning prayer show?",
+          "a": "Salah is the dividing line between belief and disbelief, showing its importance.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: how is salah different from du'a?",
+          "a": "Salah is a set ritual with conditions and pillars; du'a is personal asking at any time.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Establish prayer for My remembrance' is ...",
+          "a": "20:14",
+          "mins": 1,
+          "options": [
+            "20:14",
+            "29:45"
+          ]
+        },
+        {
+          "q": "Back to our ponder: burden or gift?",
+          "a": "A gift: a direct meeting with Allah bringing peace and discipline.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: read portal lesson y10 22 (this lesson) and track your five prayers for a week.",
+      "send": "SEND: evidence cards to match. EAL: paragraph frame. Stretch: research khushu' in 23:1-2 and write how to build it.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work) (3.2 activities)",
+        "Pupil PDF worksheet: salah importance table",
+        "Mushaf or printed 20:14, 29:45"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer mats in row",
+          "alt": "Prayer mats in a row: equality",
+          "for": "teach:3"
+        },
+        {
+          "find": "clock face",
+          "alt": "A clock: prayers at set times",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
+      "n": 23,
+      "title": "3.2 How Salah is performed: wudu, times and qiblah",
+      "duration": 50,
+      "bigQuestion": "Why do you think Islam asks Muslims to prepare body, place and direction before praying?",
+      "objectives": [
+        "To understand how Muslims prepare for salah: wudu, the prayer times and facing the qiblah"
+      ],
+      "successCriteria": [
+        "All: describe the steps of wudu",
+        "Most: explain the times of the five prayers",
+        "Some: explain why preparation is part of the worship"
+      ],
+      "crossCurricular": "Geography: bearings and the great-circle direction to Makkah",
+      "smsc": "Spiritual: preparation as worship; Social: one qiblah for the ummah",
+      "keywords": [
+        {
+          "term": "wudu (وُضُوء)",
+          "def": "ablution before prayer"
+        },
+        {
+          "term": "qiblah (قِبْلَة)",
+          "def": "the direction of the Ka'bah"
+        },
+        {
+          "term": "awqat (أَوْقَات)",
+          "def": "the times of prayer"
+        },
+        {
+          "term": "rak'ah (رَكْعَة)",
+          "def": "a unit of prayer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think Islam asks Muslims to prepare body, place and direction before praying?",
+        "a": "Salah is meeting Allah: preparation brings purity, focus and unity."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So turn your face toward al-Masjid al-Haram, and wherever you are, turn your faces toward it' (al-Baqarah 2:144).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 20:14 says establish prayer for ...",
+          "a": "My remembrance",
+          "mins": 1,
+          "options": [
+            "My remembrance",
+            "Wealth"
+          ]
+        },
+        {
+          "q": "How many daily prayers are fard?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Seven"
+          ]
+        },
+        {
+          "q": "Which passage is set for 3.2?",
+          "a": "62:9-11",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Wudu (5:6)",
+          "bullets": [],
+          "note": "Begin with Bismillah. Fard parts named in 5:6; others sunnah.",
+          "cycle": [
+            "Niyyah and Bismillah",
+            "Hands, mouth, nose",
+            "Face",
+            "Arms to elbows",
+            "Wipe head and ears",
+            "Feet to ankles"
+          ]
+        },
+        {
+          "heading": "The five times",
+          "bullets": [],
+          "note": "Use a real timetable as an example.",
           "table": {
             "head": [
               "Prayer",
-              "Time (approx.)",
-              "Fard rak'ahs"
+              "Time",
+              "Rak'ahs (fard)"
             ],
             "rows": [
               [
@@ -3074,7 +3556,7 @@
                 "4"
               ],
               [
-                "'Asr",
+                "Asr",
                 "Afternoon",
                 "4"
               ],
@@ -3084,7 +3566,7 @@
                 "3"
               ],
               [
-                "'Isha'",
+                "Isha",
                 "Night",
                 "4"
               ]
@@ -3092,387 +3574,348 @@
           }
         },
         {
-          "heading": "Model answer",
+          "heading": "The qiblah",
           "bullets": [
-            "Point",
-            "Evidence",
-            "Explain"
-          ],
-          "note": "Model a 6-mark answer.",
-          "model": {
-            "problem": "Explain why Salah is important for Muslims. (6 marks)",
-            "steps": [
-              "Point: it is a pillar of Islam, so Muslims must perform it.",
-              "Evidence: the Qur'an says prayer is prescribed at fixed times (4:103).",
-              "Explain: regular prayer keeps a Muslim conscious of Allah ﷻ throughout the day.",
-              "Point: congregational prayer builds unity.",
-              "Explain: when Muslims stand shoulder to shoulder, differences in wealth or race are set aside."
-            ],
-            "answer": "Two reasons, each developed with Islamic evidence."
-          }
+            "Face the Ka'bah in Makkah (2:144)",
+            "From the UK, roughly south-east",
+            "One direction unites the ummah"
+          ]
         },
         {
-          "heading": "Hinge question",
+          "heading": "Quick check",
           "bullets": [
-            "Whiteboards"
+            "Vote in the Teams poll"
           ],
-          "note": "Reveal.",
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "How many fard rak'ahs are there in Maghrib?",
+            "q": "How many fard rak'ahs is Maghrib?",
             "options": [
-              "2",
               "3",
               "4",
-              "5"
+              "2"
             ],
-            "answer": 1,
-            "why": "Maghrib has three. Fajr has two; Dhuhr, Asr and Isha have four."
+            "answer": 0,
+            "why": "Maghrib has three fard rak'ahs."
           }
         }
       ],
       "practice": [
-        "List the five prayers in order.",
-        "Give two benefits of Salah.",
-        "Which ayah says prayer prevents wrongdoing?"
-      ],
-      "independent": [
-        "Core: fill the table of five prayers and rak'ahs.",
-        "Extend: write a 6-mark answer on the importance of Salah.",
-        "Stretch: write a short reflection on how daily prayer could shape discipline in your own life."
-      ],
-      "exit": [
-        "Name the prayer with three rak'ahs.",
-        "Give one Qur'an reference on prayer.",
-        "Big question: why do Muslims stop five times a day?"
-      ],
-      "homework": "Interview a family member or friend about their experience of Salah and write a short summary.",
-      "send": "SEND/EAL: visual timeline of the day with prayer times; stretch: investigate how prayer times are calculated in the UK across the year.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
-    },
-    {
-      "unit": "Spec 3.2: Salah (Section C)",
-      "n": 23,
-      "title": "3.2 How Salah is performed: wudu, times, qiblah, movements and recitations",
-      "duration": 50,
-      "bigQuestion": "What does a Muslim do, step by step, when praying?",
-      "objectives": [
-        "Describe wudu and when it is needed",
-        "Describe the times, direction, movements and recitations of Salah",
-        "Explain the meaning behind the main parts"
-      ],
-      "successCriteria": [
-        "All: put the stages of salah in order",
-        "Most: describe wudu and qiblah accurately",
-        "Some: explain the meaning of key recitations and postures"
-      ],
-      "crossCurricular": "Arabic: reading the key phrases; PE: posture and movement",
-      "smsc": "Spiritual: humility; Moral: cleanliness and discipline",
-      "keywords": [
         {
-          "term": "wudu (وضوء)",
-          "def": "ablution before prayer"
+          "q": "Describe how a Muslim prepares for salah. (4 marks, our own question)",
+          "a": "Wudu as in 5:6; clean body, clothes and place; cover the body modestly; check the prayer time; face the qiblah; make the niyyah.",
+          "mins": 4,
+          "model": "Point 1: purification. Develop: wudu washing face, arms, wiping head and washing feet (5:6). Point 2: the right time and direction. Develop: each prayer has set times (4:103) and Muslims face the qiblah (2:144)."
         },
         {
-          "term": "qiblah (قبلة)",
-          "def": "the direction of the Ka'bah"
-        },
-        {
-          "term": "ruku' (ركوع)",
-          "def": "bowing"
-        },
-        {
-          "term": "sujud (سجود)",
-          "def": "prostration"
-        },
-        {
-          "term": "tashahhud (تشهد)",
-          "def": "the sitting testimony"
-        }
-      ],
-      "starter": [
-        "Name the five prayers.",
-        "Why do Muslims face Makkah?",
-        "State the Shahadah."
-      ],
-      "teach": [
-        {
-          "heading": "Wudu and purity",
-          "bullets": [
-            "Wash hands, mouth and nose",
-            "Face, arms to the elbows",
-            "Wipe the head, wash ears and feet",
-            "Qur'an 5:6; ghusl and tayammum when needed"
-          ],
-          "note": "Qur'an 5:6 describes wudu: face, arms to the elbows, wiping the head, feet. Many scholars add the details of hands, mouth and nose from the Sunnah. Mention tayammum when no water. Schools differ on what breaks wudu; here give the common points (using the toilet, sleep, passing wind). Exam note: Shia wudu involves wiping the feet instead of washing, based on their reading of 5:6; the Academy teaches washing the feet, as Ahl al-Sunnah hold from the authentic Sunnah.",
-          "cycle": [
-            "Intention",
-            "Wash hands, mouth, nose",
-            "Wash face and arms",
-            "Wipe head and ears",
-            "Wash feet"
+          "q": "Facing the Ka'bah is commanded in ...",
+          "a": "2:144",
+          "mins": 1,
+          "options": [
+            "2:144",
+            "62:9"
           ]
         },
         {
-          "heading": "Times and direction",
-          "bullets": [
-            "Prayer times are set by the sun",
-            "Face the Ka'bah in Makkah (Qur'an 2:144)",
-            "The qiblah unites Muslims worldwide",
-            "Travel and missed prayers have concessions"
-          ],
-          "note": "2:144 'turn your face towards the Sacred Mosque' secure; check wording. Note: the Prophet ﷺ first faced Jerusalem before the change in Madinah. For missed prayers: Bukhari 597 (pray when remembered; verify). For travel: shortening is allowed (4:101); neutral on duration since schools differ."
+          "q": "Fajr has how many fard rak'ahs?",
+          "a": "Two",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: 'Explain why preparation for salah is part of worship.' Two developed paragraphs with evidence. Start: 'Preparation is part of worship because ...'",
+          "a": "Purity is commanded (5:6) and loved by Allah (2:222); times show obedience (4:103); qiblah unites (2:144); niyyah makes it worship",
+          "mins": 13,
+          "model": "Teacher writes: 'Preparation is part of worship because Allah Himself commands wudu before prayer (5:6) ...'"
         },
         {
-          "heading": "The movements and words",
-          "bullets": [
-            "Takbir 'Allahu akbar' (الله أكبر)",
-            "Standing: recite al-Fatihah and a short surah",
-            "Ruku', then standing, then two sujud with a sitting between",
-            "Tashahhud and salam: السلام عليكم ورحمة الله"
-          ],
-          "note": "Be careful to describe the common core. Words: Subhana Rabbiyal 'Adhim in ruku'; Sami'a Allahu liman hamidah; Subhana Rabbiyal A'la in sujud. A rak'ah is one cycle. Note that some schools place the hands differently and some say 'amin' aloud (and Shia Muslims may keep arms at the sides or use a clay tablet for the forehead); teach neutrally as 'differences of practice' and avoid ranking. Hadith: 'Pray as you have seen me pray' (Bukhari 631; verify).",
-          "timeline": [
-            {
-              "label": "1",
-              "text": "Intention and takbir"
-            },
-            {
-              "label": "2",
-              "text": "Qiyam: Fatihah and a surah"
-            },
-            {
-              "label": "3",
-              "text": "Ruku' then standing"
-            },
-            {
-              "label": "4",
-              "text": "Two sujud, sitting between"
-            },
-            {
-              "label": "5",
-              "text": "Tashahhud and salam"
-            }
+          "q": "Extend: total the fard rak'ahs in a day.",
+          "a": "17",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what does the change of qiblah (2 AH) teach about obedience?",
+          "a": "The Companions turned at once in obedience; worship follows Allah's command.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Daily fard rak'ahs total ...",
+          "a": "17",
+          "mins": 1,
+          "options": [
+            "17",
+            "20",
+            "12"
           ]
         },
         {
-          "heading": "Model answer",
-          "bullets": [
-            "Order",
-            "Detail",
-            "Meaning"
-          ],
-          "note": "Model a 'describe' answer.",
-          "model": {
-            "problem": "Describe how a Muslim performs one rak'ah of Salah. (4 marks)",
-            "steps": [
-              "Stands facing qiblah, says 'Allahu akbar', and recites al-Fatihah and a short surah.",
-              "Bows in ruku', saying words of glorification.",
-              "Stands up, then goes into sujud, forehead on the ground.",
-              "Sits briefly, performs a second sujud, and rises."
-            ],
-            "answer": "Four accurate, ordered stages with correct terms."
-          }
-        },
-        {
-          "heading": "Hinge question",
-          "bullets": [
-            "Whiteboards"
-          ],
-          "note": "Reveal.",
-          "check": {
-            "q": "What is sujud?",
-            "options": [
-              "Standing",
-              "Bowing at the waist",
-              "Prostration with the forehead on the ground",
-              "Sitting for tashahhud"
-            ],
-            "answer": 2,
-            "why": "Sujud is prostration. Ruku' is bowing; qiyam is standing; tashahhud is the sitting testimony."
-          }
+          "q": "Back to our ponder: why prepare?",
+          "a": "Salah is meeting Allah: preparation brings purity, focus and unity.",
+          "mins": 2
         }
       ],
-      "practice": [
-        "Put the steps of wudu in order.",
-        "What does 'Allahu akbar' mean?",
-        "Name two reasons a Muslim performs wudu."
+      "homework": "Independent study: read portal lesson y10 23 (this lesson); learn the table of times and rak'ahs.",
+      "send": "SEND: picture wudu cycle; times table with icons. EAL: key words. Stretch: explain why prayer times move through the year in the UK.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work) (3.2 activities)",
+        "Pupil PDF worksheet: preparation for salah",
+        "Local prayer timetable (example times)"
       ],
-      "independent": [
-        "Core: label the postures of a rak'ah.",
-        "Extend: write a 4-mark answer describing one rak'ah.",
-        "Stretch: explain the meaning behind sujud as the closest a servant is to Allah ﷻ (teacher supplies the verified hadith)."
-      ],
-      "exit": [
-        "What is the qiblah?",
-        "Name the posture of bowing.",
-        "Big question: what does a Muslim do, step by step, when praying?"
-      ],
-      "homework": "Learn the Arabic words for four postures and write what each means.",
-      "send": "SEND/EAL: picture sequence with transliteration; stretch: compare practices of prayer across schools of thought.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "qibla compass",
+          "alt": "A qiblah compass",
+          "for": "teach:3"
+        },
+        {
+          "find": "mosque ablution area",
+          "alt": "An ablution area",
+          "for": "teach:1"
+        }
+      ]
     },
     {
-      "unit": "Spec 3.2: Salah (Section C)",
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
       "n": 24,
-      "title": "3.2 Salah in the home, the mosque and Jummah (Qur'an 62:9-11); exemptions",
+      "title": "3.2 Salah at home, in the mosque and at Jummah (Qur'an 62:9-11); exemptions",
       "duration": 50,
-      "bigQuestion": "Where and when do Muslims pray, and who is excused?",
+      "bigQuestion": "Your boss says a big sale is happening at 1 pm on Friday. What does 62:9-11 tell a Muslim to do?",
       "objectives": [
-        "Compare prayer at home, in the mosque and at Friday prayer",
-        "Analyse Qur'an 62:9-11",
-        "Describe exemptions and concessions in Salah"
+        "To understand where Muslims pray, the importance of Jummah, and who is exempt from salah"
       ],
       "successCriteria": [
-        "All: say what is special about Jummah",
-        "Most: explain the value of congregational prayer",
-        "Some: evaluate how far exemptions show the flexibility of Islam"
+        "All: describe salah at home, in the mosque and at Jummah",
+        "Most: explain what 62:9-11 teaches about leaving trade for Jummah",
+        "Some: explain the exemptions and concessions and what they show about Islam"
       ],
-      "crossCurricular": "Citizenship: religious practice in a multi-faith society; Geography: mosques and communities",
-      "smsc": "Social: community cohesion; Moral: balance of worship and work",
+      "crossCurricular": "Citizenship: religious freedom at work and school",
+      "smsc": "Spiritual and social: congregation and community; Moral: balance of work and worship",
       "keywords": [
         {
-          "term": "Jummah (جمعة)",
-          "def": "Friday congregational prayer"
+          "term": "Jummah (جُمُعَة)",
+          "def": "the Friday congregational prayer"
         },
         {
-          "term": "khutbah (خطبة)",
+          "term": "khutbah (خُطْبَة)",
           "def": "the sermon before Jummah"
         },
         {
-          "term": "jama'ah (جماعة)",
+          "term": "jama'ah (جَمَاعَة)",
           "def": "congregation"
         },
         {
-          "term": "imam (إمام)",
-          "def": "prayer leader"
-        },
-        {
-          "term": "qasr",
-          "def": "shortening prayer when travelling"
+          "term": "qasr (قَصْر)",
+          "def": "shortening four-rak'ah prayers when travelling"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your boss says a big sale is happening at 1 pm on Friday. What does 62:9-11 tell a Muslim to do?",
+        "a": "Leave trade for Jummah, then go back to seek Allah's bounty after the prayer."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah does not burden a soul beyond that it can bear' (al-Baqarah 2:286).",
+        "at": "start"
+      },
       "starter": [
-        "Name the stages of wudu.",
-        "What is a rak'ah?",
-        "How many rak'ahs in Dhuhr?"
+        {
+          "q": "Bismillah. The closest position to Allah is ...",
+          "a": "Sujud",
+          "mins": 1,
+          "options": [
+            "Sujud",
+            "Ruku'"
+          ]
+        },
+        {
+          "q": "What is said in sujud?",
+          "a": "Subhana rabbiya l-a'la",
+          "mins": 1,
+          "options": [
+            "Subhana rabbiya l-a'la",
+            "Subhana rabbiya l-'azim"
+          ]
+        },
+        {
+          "q": "The prayer ends with ...",
+          "a": "Taslim",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Home or mosque?",
+          "heading": "Home and mosque",
           "bullets": [
-            "Prayer may be offered at home alone",
-            "Prayer in congregation carries extra reward (Bukhari 645, Muslim 650)",
-            "The mosque is a centre for learning and community",
-            "Men are strongly encouraged to attend; women may pray at home or at the mosque"
+            "Home: anywhere clean; sunnah prayers loved at home",
+            "Mosque: congregation, 27 times the reward",
+            "Imam leads; lines straight; follow the imam"
           ],
-          "note": "The reward of congregation (27 degrees) is reported in Bukhari 645 and Muslim 650; verify. Note differences: many scholars regard congregation as obligatory for men and others as strongly recommended; Hanafis and others differ on women. Present neutrally. In Britain many mosques provide space for women. Ask: what are the benefits of praying together?",
-          "compare": {
-            "left": {
-              "title": "At home",
-              "points": [
-                "Flexible, private",
-                "sunnah prayers often prayed here",
-                "family prayer"
-              ]
-            },
-            "right": {
-              "title": "In the mosque",
-              "points": [
-                "Congregation, community, learning, imam"
-              ]
-            },
-            "label": "vs"
-          }
+          "note": "Begin with Bismillah. Twenty-seven times: Bukhari and Muslim."
         },
         {
-          "heading": "Qur'an 62:9-11",
-          "bullets": [
-            "When called to Friday prayer, hasten to the remembrance of Allah ﷻ",
-            "Leave off business",
-            "After the prayer, disperse and seek Allah's bounty",
-            "Do not abandon the khutbah for trade or amusement"
-          ],
-          "note": "62:9 يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَىٰ ذِكْرِ اللَّهِ وَذَرُوا الْبَيْعَ. Teacher to verify the Arabic. 62:11 speaks of people leaving the Prophet ﷺ standing in the khutbah when a caravan arrived. Ask: what balance between work and worship does the passage give? (Stop for the prayer, then return to work.)"
+          "heading": "Set passage: 62:9-11",
+          "bullets": [],
+          "note": "Read in translation; underline 'leave trade' and 'disperse'.",
+          "quote": {
+            "text": "O you who believe, when the call is made for prayer on Friday, hasten to the remembrance of Allah and leave trade. That is better for you, if you only knew. And when the prayer is finished, disperse in the land and seek from the bounty of Allah, and remember Allah often that you may succeed. But when they saw trade or amusement, they rushed to it and left you standing. Say: what is with Allah is better than amusement and trade, and Allah is the best of providers.",
+            "source": "Qur'an, al-Jumu'ah 62:9-11 (translation of the meaning)"
+          }
         },
         {
           "heading": "Jummah",
           "bullets": [
-            "Two parts: khutbah then two rak'ahs",
-            "Held at midday on Friday, replacing Dhuhr",
-            "Obligatory for adult men; women may attend",
-            "Teaches the community, gives reminders and unity"
-          ],
-          "note": "Describe the day: ghusl, clean clothes, early arrival, khutbah in two parts, two rak'ahs led by the imam. Mention that British workplaces and schools may accommodate Jummah; many pupils will have experience. Exemptions: women, travellers, sick people, children (not required)."
+            "Replaces Dhuhr: khutbah then two rak'ahs",
+            "Obligatory on adult men; others may attend",
+            "Ghusl, best clothes, arrive early"
+          ]
         },
         {
           "heading": "Exemptions and concessions",
-          "bullets": [
-            "Sick: pray sitting or lying (Bukhari 1117)",
-            "Travellers may shorten and combine (4:101)",
-            "Menstruation and postnatal bleeding: no prayer and no make-up",
-            "Children below puberty and those who lose capacity are not obliged"
-          ],
-          "note": "Bukhari 1117: pray standing, if not able sit, if not able on your side (verify). Women's exemption is well known; note that prayer missed during menses is not made up (Aisha's report; verify). Safeguarding: be matter-of-fact and age-appropriate; invite questions privately. Combining prayers: Hanafi and Shia approaches differ from others; teach the concession neutrally."
-        },
-        {
-          "heading": "Model answer",
-          "bullets": [
-            "Evidence",
-            "Evaluate",
-            "Judgement"
-          ],
-          "note": "Model a 12-mark plan.",
-          "model": {
-            "problem": "'Praying in the mosque is more important than praying at home.' Assess this statement. (12 marks)",
-            "steps": [
-              "For: congregation brings greater reward (Bukhari 645) and unites the community.",
-              "For: Jummah in the mosque is a duty for men, so it can only be done there.",
-              "Against: the Prophet ﷺ taught that the earth was made a place of prayer, so prayer is valid anywhere.",
-              "Judgement: both are valid; mosque prayer is especially valued but home prayer is essential for daily flexibility."
+          "bullets": [],
+          "note": "Matter-of-fact.",
+          "table": {
+            "head": [
+              "Situation",
+              "Ruling"
             ],
-            "answer": "Level 4: balanced and uses sources."
+            "rows": [
+              [
+                "Children before puberty",
+                "Not yet obligatory; taught from age seven"
+              ],
+              [
+                "Illness",
+                "Pray sitting or lying as able (Bukhari)"
+              ],
+              [
+                "Travel",
+                "Shorten four to two (4:101); may combine"
+              ],
+              [
+                "Women during menstruation",
+                "Exempt; not made up"
+              ],
+              [
+                "Loss of reason or unconscious",
+                "Exempt"
+              ]
+            ]
           }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Quick check",
           "bullets": [
-            "Whiteboards"
+            "Vote in the Teams poll"
           ],
-          "note": "Reveal.",
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "Which of these is a valid concession in Salah?",
+            "q": "According to 62:10, after Jummah Muslims should ...",
             "options": [
-              "Skipping all prayers while at work",
-              "Praying sitting if unable to stand",
-              "Praying facing any direction always",
-              "Praying only on Friday"
+              "Seek Allah's bounty and remember Him",
+              "Stay in the masjid all day",
+              "Close their shops for the day"
             ],
-            "answer": 1,
-            "why": "Illness allows sitting or lying. The others are not valid concessions."
+            "answer": 0,
+            "why": "62:10: disperse and seek Allah's bounty, remembering Him often."
           }
         }
       ],
       "practice": [
-        "What happens at Jummah?",
-        "Give two groups exempt from Salah.",
-        "What does 62:9 tell believers to do?"
+        {
+          "q": "Explain what 62:9-11 teaches about Jummah and work. (4 marks, our own question)",
+          "a": "Muslims must leave trade at the call for Jummah because worship comes first, but may return to work afterwards, remembering Allah.",
+          "mins": 4,
+          "model": "Point 1: worship comes before business. Develop: 'leave trade. That is better for you' (62:9). Point 2: work is also good. Develop: 'disperse in the land and seek from the bounty of Allah' (62:10), so Islam balances worship and earning."
+        },
+        {
+          "q": "Congregational prayer is ... times the reward.",
+          "a": "27",
+          "mins": 1,
+          "options": [
+            "27",
+            "10",
+            "2"
+          ]
+        },
+        {
+          "q": "Shortening prayers when travelling is in ...",
+          "a": "4:101",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: complete a table comparing home, mosque and Jummah.",
-        "Extend: write a 6-mark answer on the value of Jummah.",
-        "Stretch: plan the 12-mark answer above."
+        {
+          "q": "In the portal response box: 'Explain how Islam makes salah possible for everyone.' Use three exemptions or concessions with evidence. Start: 'Islam never asks more than a person can bear, so ...'",
+          "a": "Illness (Bukhari), travel (4:101), children, menstruation, with 2:286",
+          "mins": 13,
+          "model": "Teacher writes: 'Islam never asks more than a person can bear (2:286), so someone who is ill may pray sitting (Bukhari).'"
+        },
+        {
+          "q": "Extend: describe what happens at Jummah.",
+          "a": "Adhan, khutbah in two parts, two rak'ahs led by the imam.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: how could a Muslim pupil in a UK school attend Jummah?",
+          "a": "Ask for a timetable adjustment or a prayer room; the Equality Act protects religious practice.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name two parts of Jummah.",
-        "Give one concession for a traveller.",
-        "Big question: where and when do Muslims pray?"
+        {
+          "q": "Which set passage goes with 3.2?",
+          "a": "62:9-11",
+          "mins": 1,
+          "options": [
+            "62:9-11",
+            "3:18-19"
+          ]
+        },
+        {
+          "q": "Back to our ponder: big sale at 1 pm on Friday: what to do?",
+          "a": "Leave trade for Jummah (62:9), then return to seek Allah's bounty (62:10).",
+          "mins": 2
+        }
       ],
-      "homework": "Find out which mosque nearest to you holds Jummah and what time it starts, and write what you learned.",
-      "send": "SEND/EAL: Jummah sequence cards; stretch: evaluate how schools and workplaces can support Jummah.",
-      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
-      "boardShort": "Edexcel IGCSE 4IS1"
+      "homework": "Learn 62:9-11 in translation. Unit quiz next lesson: revise 1.7, 3.1 and 3.2.",
+      "send": "SEND: exemptions table with icons. EAL: Jummah sequence cards. Stretch: evaluate whether Jummah is more important than daily salah (preparation for next lesson).",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work) (3.2 activities)",
+        "Pupil PDF worksheet: home, mosque, Jummah and exemptions",
+        "Set passage card (3.2)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Friday mosque minbar",
+          "alt": "A minbar, where the khutbah is given",
+          "for": "teach:3"
+        },
+        {
+          "find": "mosque prayer hall",
+          "alt": "A mosque prayer hall",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Spec 3.3: Sawm (Section C)",
@@ -5999,6 +6442,838 @@
           "find": "balance scale",
           "alt": "Scales: weighing arguments",
           "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
+      "n": 39,
+      "title": "1.7 12-mark practice: treatment of opponents and prisoners",
+      "duration": 50,
+      "bigQuestion": "Did mercy or strength do more to spread Islam? Could it be both?",
+      "objectives": [
+        "To understand how to write a balanced, evidenced 12-mark answer on the Prophet ﷺ as leader"
+      ],
+      "successCriteria": [
+        "All: plan a 12-mark answer with points for and against",
+        "Most: develop points with accurate evidence",
+        "Some: reach a justified conclusion that weighs the arguments"
+      ],
+      "smsc": "Moral: weighing arguments fairly",
+      "keywords": [
+        {
+          "term": "assess",
+          "def": "weigh up arguments and make a judgement"
+        },
+        {
+          "term": "develop",
+          "def": "explain a point further with evidence"
+        },
+        {
+          "term": "counter-argument",
+          "def": "a point for the other side"
+        },
+        {
+          "term": "justify",
+          "def": "give a reason for your judgement"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Did mercy or strength do more to spread Islam? Could it be both?",
+        "a": "Both: strength gave security; mercy won hearts. A good answer weighs them."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'There is no compulsion in religion' (al-Baqarah 2:256): Islam spread by invitation.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. The set passage for 1.7 is about ...",
+          "a": "Obeying those in authority except in sin",
+          "mins": 1,
+          "options": [
+            "Obeying those in authority except in sin",
+            "Intention and hijrah"
+          ]
+        },
+        {
+          "q": "Who was released and then accepted Islam?",
+          "a": "Thumamah ibn Uthal",
+          "mins": 1,
+          "options": [
+            "Thumamah ibn Uthal",
+            "Abu Jahl"
+          ]
+        },
+        {
+          "q": "What did the Prophet ﷺ do at the conquest of Makkah?",
+          "a": "Pardoned his enemies",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The statement",
+          "bullets": [
+            "'The Prophet's ﷺ treatment of opponents and prisoners was the main reason Islam spread.'",
+            "Assess this statement (12 marks)",
+            "Agree, disagree, conclude"
+          ],
+          "note": "Begin with Bismillah. School scheme of work 12-mark statement for 1.7."
+        },
+        {
+          "heading": "Points for and against",
+          "bullets": [],
+          "note": "Pupils add evidence in the chat.",
+          "compare": {
+            "left": {
+              "title": "For",
+              "points": [
+                "Conquest pardon won Makkah's hearts",
+                "Thumamah accepted Islam after release",
+                "Badr prisoners treated well; some taught reading"
+              ]
+            },
+            "right": {
+              "title": "Against",
+              "points": [
+                "Hudaybiyyah's peace spread Islam (48:1)",
+                "The Qur'an and the message itself",
+                "Letters, delegations and da'wah"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Model paragraph",
+          "bullets": [],
+          "note": "Labelled model.",
+          "model": {
+            "problem": "A developed 'for' paragraph",
+            "steps": [
+              "Point: mercy to opponents drew people to Islam",
+              "Evidence: Thumamah was released and accepted Islam (Bukhari and Muslim)",
+              "Explain: kindness to an enemy showed Islam's truth",
+              "Link: so treatment of opponents helped Islam spread"
+            ],
+            "answer": "One developed paragraph"
+          }
+        },
+        {
+          "heading": "Writing a conclusion",
+          "bullets": [
+            "Make a judgement",
+            "Say which side is stronger and why",
+            "Do not just repeat"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is the strongest conclusion?",
+            "options": [
+              "Mercy helped greatly, but the message and peace (48:1) did more, so I partly agree",
+              "I agree",
+              "Both sides have points"
+            ],
+            "answer": 0,
+            "why": "It judges and justifies."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one 'against' paragraph using Hudaybiyyah.",
+          "a": "Point: peace was the main reason. Evidence: 48:1; many accepted Islam in the truce. Explain: people could meet Muslims and hear the Qur'an. Link: so treatment of prisoners was not the main reason.",
+          "mins": 4,
+          "model": "Teacher models the 'against' Point and Evidence, then pupils finish Explain and Link."
+        },
+        {
+          "q": "A conclusion must ...",
+          "a": "Make a justified judgement",
+          "mins": 1,
+          "options": [
+            "Make a justified judgement",
+            "Repeat the introduction"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Full 12-mark answer in the portal response box (12-mark frame: For (two developed points with evidence), Against (two), Conclusion (judgement with a reason)). Start: 'Some would agree with this statement because ...'",
+          "a": "Balanced answer: for (mercy at Makkah, Thumamah, prisoners), against (Hudaybiyyah 48:1, the Qur'an, letters), justified conclusion",
+          "mins": 18,
+          "model": "Teacher reads the start sentence and shows the frame boxes."
+        },
+        {
+          "q": "Extend: peer-mark a partner's answer against the frame (breakout pair).",
+          "a": "Feedback: one strength, one target",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A 12-mark answer needs ...",
+          "a": "Both sides and a justified conclusion",
+          "mins": 1,
+          "options": [
+            "Both sides and a justified conclusion",
+            "One side only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: mercy or strength?",
+          "a": "Both mattered; a strong answer weighs them and judges.",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: improve your 12-mark answer using the feedback; read portal lessons y10 18 to 20.",
+      "send": "SEND: 12-mark frame with sentence starters. EAL: connective bank (however, therefore). Stretch: add a third 'against' point on the Year of Delegations.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work)",
+        "Pupil PDF worksheet: 12-mark planning frame",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "balance scale",
+          "alt": "Weighing two sides",
+          "for": "teach:2"
+        },
+        {
+          "find": "fountain pen writing",
+          "alt": "Writing an extended answer",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
+      "n": 40,
+      "title": "3.1 12-mark practice: 'Saying the Shahadah is the most important act for a Muslim'",
+      "duration": 50,
+      "bigQuestion": "Is it possible to say the Shahadah and not live by it? What does that tell us?",
+      "objectives": [
+        "To understand how to evaluate the importance of the Shahadah against other acts of worship"
+      ],
+      "successCriteria": [
+        "All: give one reason for and one against the statement",
+        "Most: develop each point with evidence",
+        "Some: reach a justified conclusion that considers belief and action together"
+      ],
+      "smsc": "Spiritual: belief and action together",
+      "keywords": [
+        {
+          "term": "evaluate",
+          "def": "weigh up arguments and judge"
+        },
+        {
+          "term": "pillar (رُكْن)",
+          "def": "an essential foundation"
+        },
+        {
+          "term": "sincerity (إِخْلَاص)",
+          "def": "doing it for Allah alone"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it possible to say the Shahadah and not live by it? What does that tell us?",
+        "a": "Yes (the hypocrites did): words need belief and action, which helps answer the statement."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, the religion in the sight of Allah is Islam' (Al 'Imran 3:19).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 29:45 says prayer ...",
+          "a": "Prohibits immorality",
+          "mins": 1,
+          "options": [
+            "Prohibits immorality",
+            "Is optional"
+          ]
+        },
+        {
+          "q": "Which passage is set for 3.1?",
+          "a": "3:18-19",
+          "mins": 1,
+          "options": [
+            "3:18-19",
+            "62:9-11"
+          ]
+        },
+        {
+          "q": "What are the two halves of the Shahadah?",
+          "a": "Tawhid and risalah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The statement",
+          "bullets": [
+            "'Saying the Shahadah is the most important act for a Muslim.'",
+            "Assess this statement (12 marks)",
+            "Plan for, against, conclusion"
+          ],
+          "note": "Begin with Bismillah. School scheme of work statement for 3.1."
+        },
+        {
+          "heading": "For and against",
+          "bullets": [],
+          "note": "Pupils add evidence.",
+          "compare": {
+            "left": {
+              "title": "For",
+              "points": [
+                "It is the first pillar; others rest on it",
+                "3:19: the religion with Allah is Islam",
+                "Without it, other acts are not accepted"
+              ]
+            },
+            "right": {
+              "title": "Against",
+              "points": [
+                "Saying it without living it is hypocrisy",
+                "Salah is the dividing line (Muslim)",
+                "Iman is belief, words and actions together"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Set-passage skill",
+          "bullets": [],
+          "note": "Show how to use the passage inside the answer.",
+          "model": {
+            "problem": "Using 3:18-19 in an answer",
+            "steps": [
+              "Quote briefly: 'Allah witnesses that there is no deity except Him'",
+              "Explain: Muslims join Allah's own witness",
+              "Apply: so the Shahadah is the foundation",
+              "Link to the statement"
+            ],
+            "answer": "The passage supports the 'for' side"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which evidence best supports the 'against' side?",
+            "options": [
+              "The hypocrites said the words without belief",
+              "3:18",
+              "The Shahadah is said at birth"
+            ],
+            "answer": 0,
+            "why": "Words without belief and action are not enough."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one developed 'against' paragraph using salah.",
+          "a": "Point: actions matter as much as words. Evidence: abandoning prayer separates belief and disbelief (Muslim). Explain: a Shahadah not lived out is empty. Link: so saying it alone is not the most important act.",
+          "mins": 4,
+          "model": "Teacher models the Point and Evidence; pupils add Explain and Link."
+        },
+        {
+          "q": "Which pillar of Islam is first?",
+          "a": "The Shahadah",
+          "mins": 1,
+          "options": [
+            "The Shahadah",
+            "Salah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Full 12-mark answer in the portal response box (12-mark frame: For (two developed points with evidence), Against (two), Conclusion (judgement with a reason)), using 3:18-19 at least once. Start: 'Some Muslims would agree because the Shahadah is ...'",
+          "a": "Balanced, evidenced answer; set passage used accurately; justified conclusion (e.g. most important as foundation, but must be lived)",
+          "mins": 20,
+          "model": "Teacher reads the start sentence and points to the frame."
+        },
+        {
+          "q": "Extend: peer-mark with a partner (breakout) for one strength and one target.",
+          "a": "Feedback given",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A 12-mark conclusion should ...",
+          "a": "Judge and justify",
+          "mins": 1,
+          "options": [
+            "Judge and justify",
+            "List points again"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what does saying but not living the Shahadah tell us?",
+          "a": "Words need belief and action; that is key to evaluating the statement.",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: redraft your 12-mark answer using your target.",
+      "send": "SEND: 12-mark frame with sentence starters. EAL: evaluative phrase bank. Stretch: include a Shia perspective on the Shahadah factually (the spec allows different Muslim views).",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work)",
+        "Pupil PDF worksheet: 12-mark frame",
+        "Set passage card (3.1)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Shahada calligraphy",
+          "alt": "The Shahadah in calligraphy",
+          "for": "teach:3"
+        },
+        {
+          "find": "balance scale",
+          "alt": "Weighing both sides",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
+      "n": 41,
+      "title": "3.2 How Salah is performed: movements and recitations",
+      "duration": 50,
+      "bigQuestion": "Why might bowing and putting your forehead on the ground say more than words?",
+      "objectives": [
+        "To understand the movements and recitations of salah and their meaning"
+      ],
+      "successCriteria": [
+        "All: describe the movements of one rak'ah in order",
+        "Most: explain the meaning of key recitations",
+        "Some: explain how the movements express submission"
+      ],
+      "smsc": "Spiritual: humility and closeness to Allah",
+      "keywords": [
+        {
+          "term": "takbir (تَكْبِير)",
+          "def": "saying Allahu akbar"
+        },
+        {
+          "term": "ruku' (رُكُوع)",
+          "def": "bowing"
+        },
+        {
+          "term": "sujud (سُجُود)",
+          "def": "prostration"
+        },
+        {
+          "term": "tashahhud (تَشَهُّد)",
+          "def": "the testimony said while sitting"
+        },
+        {
+          "term": "taslim (تَسْلِيم)",
+          "def": "ending the prayer with salam"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might bowing and putting your forehead on the ground say more than words?",
+        "a": "The body itself shows submission: in sujud a person is closest to Allah."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The closest a servant is to his Lord is when he is in sujud, so increase in du'a' (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Maghrib has how many fard rak'ahs?",
+          "a": "Three",
+          "mins": 1,
+          "options": [
+            "Three",
+            "Four"
+          ]
+        },
+        {
+          "q": "Facing the Ka'bah is in ...",
+          "a": "2:144",
+          "mins": 1,
+          "options": [
+            "2:144",
+            "20:14"
+          ]
+        },
+        {
+          "q": "Name the fard parts of wudu.",
+          "a": "Face, arms, wipe head, feet",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One rak'ah",
+          "bullets": [],
+          "note": "Begin with Bismillah. Describe; no images of people.",
+          "timeline": [
+            {
+              "label": "Qiyam",
+              "text": "Takbir; al-Fatihah and a surah"
+            },
+            {
+              "label": "Ruku'",
+              "text": "Subhana rabbiya l-'azim"
+            },
+            {
+              "label": "I'tidal",
+              "text": "Sami'a Allahu liman hamidah; Rabbana wa laka l-hamd"
+            },
+            {
+              "label": "Sujud",
+              "text": "Subhana rabbiya l-a'la, twice with sitting between"
+            },
+            {
+              "label": "Julus",
+              "text": "Tashahhud; taslim at the end"
+            }
+          ]
+        },
+        {
+          "heading": "Key recitations",
+          "bullets": [],
+          "note": "Meanings.",
+          "table": {
+            "head": [
+              "Recitation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Allahu akbar",
+                "Allah is the Greatest"
+              ],
+              [
+                "Al-Fatihah",
+                "Praise, worship and asking for guidance"
+              ],
+              [
+                "Subhana rabbiya l-'azim",
+                "Glory be to my Lord, the Most Great"
+              ],
+              [
+                "Subhana rabbiya l-a'la",
+                "Glory be to my Lord, the Most High"
+              ],
+              [
+                "As-salamu 'alaykum wa rahmatullah",
+                "Peace and Allah's mercy be upon you"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Closest to Allah",
+          "bullets": [
+            "'The closest a servant is to his Lord is in sujud'",
+            "So increase du'a in it",
+            "Al-Fatihah in every rak'ah"
+          ],
+          "note": "Sujud hadith: Muslim. 'No prayer without al-Fatihah': Bukhari and Muslim."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What is said in ruku'?",
+            "options": [
+              "Subhana rabbiya l-'azim",
+              "Subhana rabbiya l-a'la",
+              "Allahu akbar only"
+            ],
+            "answer": 0,
+            "why": "'Azim in ruku'; a'la in sujud."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why sujud is significant in salah. (4 marks, our own question)",
+          "a": "It is the position closest to Allah (Muslim) and shows total submission: the forehead, the highest part, on the ground.",
+          "mins": 4,
+          "model": "Point 1: it brings closeness to Allah. Develop: 'the closest a servant is to his Lord is in sujud' (Muslim). Point 2: it shows humility. Develop: the forehead on the ground expresses submission, the meaning of Islam."
+        },
+        {
+          "q": "Al-Fatihah is recited in ...",
+          "a": "Every rak'ah",
+          "mins": 1,
+          "options": [
+            "Every rak'ah",
+            "Only the first rak'ah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: 'Describe how a Muslim performs two rak'ahs of Fajr.' Include movements and recitations in order. Start: 'After making wudu and facing the qiblah, ...'",
+          "a": "Correct sequence: niyyah, takbir, Fatihah and surah, ruku', i'tidal, two sujud, second rak'ah, tashahhud, taslim",
+          "mins": 13,
+          "model": "Teacher writes the opening: 'After making wudu and facing the qiblah, the Muslim makes the niyyah and says Allahu akbar, raising the hands.'"
+        },
+        {
+          "q": "Extend: what does each movement show about the relationship with Allah?",
+          "a": "Standing: readiness; bowing: respect; sujud: submission; sitting: calm testimony.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why is al-Fatihah called the 'mother of the Book'?",
+          "a": "It sums up the Qur'an's themes: praise, worship, guidance.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The prayer ends with ...",
+          "a": "Taslim",
+          "mins": 1,
+          "options": [
+            "Taslim",
+            "Ruku'"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why do movements say more than words?",
+          "a": "The body shows submission; sujud is closest to Allah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: learn the meanings of the recitations; read portal lesson y10 23.",
+      "send": "SEND: rak'ah sequence cards. EAL: recitation and meaning cards. Stretch: compare a Sunni and Shia practice difference factually (e.g. praying on a turbah), as the spec allows.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work) (3.2 activities)",
+        "Pupil PDF worksheet: rak'ah sequence and meanings"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer rug",
+          "alt": "A prayer mat",
+          "for": "teach:1"
+        },
+        {
+          "find": "Surah al-Fatihah calligraphy",
+          "alt": "Al-Fatihah in calligraphy",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: The Prophet ﷺ as leader; Shahadah and Salah (1.7, 3.1, 3.2)",
+      "n": 42,
+      "title": "Unit quiz and 12-mark: 'Friday prayer is more important than the daily Salah'",
+      "duration": 50,
+      "bigQuestion": "If Jummah is once a week and daily salah is thirty-five times a week, which matters more? Is that the right question?",
+      "objectives": [
+        "To understand how well I know 1.7, 3.1 and 3.2 and how to write a strong 12-mark answer on Jummah"
+      ],
+      "successCriteria": [
+        "All: complete the unit quiz",
+        "Most: write a balanced 12-mark answer with evidence",
+        "Some: use the set passage 62:9-11 to support a justified conclusion"
+      ],
+      "smsc": "Moral: honest assessment; Spiritual: the place of Jummah",
+      "keywords": [
+        {
+          "term": "assess",
+          "def": "weigh and judge"
+        },
+        {
+          "term": "set passage",
+          "def": "a specified text pupils must know and use"
+        },
+        {
+          "term": "justify",
+          "def": "give reasons for your judgement"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If Jummah is once a week and daily salah is thirty-five times a week, which matters more? Is that the right question?",
+        "a": "Both are fard; Jummah has special status, daily salah is the constant pillar: a good answer weighs this."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, when the call is made for prayer on Friday, hasten to the remembrance of Allah' (al-Jumu'ah 62:9).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 62:9 tells Muslims to leave ...",
+          "a": "Trade",
+          "mins": 1,
+          "options": [
+            "Trade",
+            "Their homes"
+          ]
+        },
+        {
+          "q": "Which passage is set for 3.1?",
+          "a": "3:18-19",
+          "mins": 1,
+          "options": [
+            "3:18-19",
+            "33:36"
+          ]
+        },
+        {
+          "q": "The set passage for 1.7 is about ...",
+          "a": "Obeying those in authority except in sin",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The quiz",
+          "bullets": [
+            "Part A: 15 questions on 1.7, 3.1, 3.2 (15 marks)",
+            "Part B: 12-mark answer",
+            "Honest work; no notes"
+          ],
+          "note": "Begin with Bismillah. Quiz in the portal."
+        },
+        {
+          "heading": "Part B plan",
+          "bullets": [],
+          "note": "Plan together; pupils write alone.",
+          "compare": {
+            "left": {
+              "title": "For",
+              "points": [
+                "Named in the Qur'an with a command to leave trade (62:9)",
+                "Khutbah teaches the community",
+                "Gathers the whole community weekly"
+              ]
+            },
+            "right": {
+              "title": "Against",
+              "points": [
+                "Daily salah is the second pillar, five times",
+                "Jummah replaces Dhuhr: it is one of the daily prayers",
+                "Women and travellers are not required to attend Jummah"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Conclusion",
+          "bullets": [
+            "Judge, do not sit on the fence",
+            "For example: both fard; Jummah special but rests on daily salah",
+            "Justify with evidence"
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a one-sentence justified conclusion for Part B.",
+          "a": "For example: Jummah has special status (62:9), but it replaces Dhuhr and depends on the daily salah, so I disagree that it is more important.",
+          "mins": 3,
+          "model": "Teacher: 'Overall, I disagree, because although Jummah is commanded in 62:9, it replaces Dhuhr, and the daily salah is the pillar every Muslim must keep five times a day.'"
+        },
+        {
+          "q": "Who is required to attend Jummah?",
+          "a": "Adult men who are not travelling",
+          "mins": 1,
+          "options": [
+            "Adult men who are not travelling",
+            "Everyone including children"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Unit quiz in the portal: Part A (15) and Part B in the response box (12-mark frame: For (two developed points with evidence), Against (two), Conclusion (judgement with a reason)). Start: 'Some Muslims would agree that Friday prayer is more important because ...'",
+          "a": "Part A answers from 1.7, 3.1, 3.2; Part B balanced with 62:9-11 used and a justified conclusion",
+          "mins": 26,
+          "model": "Teacher reads the start sentence and points to the plan."
+        },
+        {
+          "q": "Extend: check each paragraph has evidence.",
+          "a": "Pupils' own check",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which area will you revise first?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: correct the quiz in green; redraft Part B. Summer 1 continues with 3.3 Sawm.",
+      "send": "SEND: quiz read aloud, extra time, frame for Part B. EAL: evaluative phrase bank. Stretch: add a Shia perspective on Jummah factually.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Islamic Studies KS4 SOW (school scheme of work)",
+        "Portal unit quiz: 1.7, 3.1, 3.2 (Part A 15, Part B 12)",
+        "Set passage cards (1.7, 3.1, 3.2)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Friday mosque",
+          "alt": "A mosque on Friday",
+          "for": "hook"
+        },
+        {
+          "find": "pen and paper test",
+          "alt": "Pen and paper",
+          "for": "keywords"
         }
       ]
     }
