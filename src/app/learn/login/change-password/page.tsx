@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -54,7 +55,7 @@ export default function ChangePasswordPage() {
     router.replace("/");
   }
 
-  if (session === "loading") return <p className="text-ink/65">Loading…</p>;
+  if (session === "loading") return <Loading label="Loading…" bare />;
   if (!session) {
     return (
       <section className="app-pad">

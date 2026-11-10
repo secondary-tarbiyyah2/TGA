@@ -14,7 +14,7 @@ import {
 } from "@/lib/learn/quran";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 /** A child's Qur'an targets (RLS-scoped), soonest deadline first. */
 export function useQuranTargets(childId: string) {
   const supabase = getSupabaseClient();
@@ -171,7 +171,7 @@ export function QuranTargetsPanel({ childId, classId, entries, canEdit }: { chil
       )}
       {error && <p className="mt-2 text-sm text-red-700">{error}</p>}
       <div className="mt-3">
-        {targets === null ? <p className="text-sm text-ink/65">Loading targets…</p> : <TargetList targets={targets} entries={entries} onDelete={canEdit ? remove : undefined} />}
+        {targets === null ? <Loading label="Loading targets…" bare /> : <TargetList targets={targets} entries={entries} onDelete={canEdit ? remove : undefined} />}
       </div>
     </div>
   );

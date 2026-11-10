@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { TargetList, useQuranTargets } from "@/components/learn/QuranTargets";
@@ -73,7 +74,7 @@ export function QuranProgressWidget({ childId, limit = 5 }: { childId: string; l
   const achieved = milestones.filter((m) => m.achieved);
   const next = milestones.find((m) => !m.achieved && !m.id.startsWith("target-"));
 
-  if (rows === null) return <p className="text-sm text-ink/65">Loading Qur&apos;an &amp; Islamic Studies progress…</p>;
+  if (rows === null) return <Loading label="Loading Qur&apos;an &amp; Islamic Studies progress…" bare />;
   if (rows.length === 0 && (targets || []).length === 0)
     return (
       <div>

@@ -7,7 +7,7 @@ import { CLOSURE_LABEL, type ClosureKind, type ClosureRow, type TermRow, type Ye
 import { ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 const GREG = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 function parse(k: string): Date {
@@ -423,7 +423,7 @@ export function TermsManager({
         )}
 
         {terms === null ? (
-          <p className="px-4 py-3 text-sm text-ink/65">Loading…</p>
+          <Loading label="Loading…" bare />
         ) : terms.length === 0 ? (
           <p className="px-4 py-3 text-sm text-ink/65">No terms have been set up yet.{canManage ? " Use “Add term year” to create this year’s three terms in one go." : ""}</p>
         ) : (

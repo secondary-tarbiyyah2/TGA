@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Fragment, useMemo, useState } from "react";
 import { formatDay, type Absence } from "./data";
 
@@ -70,7 +71,7 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
         <p className="text-xs text-ink/65">{periodLabel}. Select a class to see who was away.</p>
       </div>
       {absences === null ? (
-        <p className="px-4 py-6 text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : classes.length === 0 ? (
         <div className="px-4 py-8 text-center">
           <p className="font-medium text-ink">No absences in this period</p>

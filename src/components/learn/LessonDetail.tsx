@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -97,7 +98,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase, lessonInstanceId]);
 
-  if (lesson === undefined) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (lesson === undefined) return <Loading label="Loading…" bare />;
   if (lesson === null) return <p className="text-sm text-ink/65">Lesson not found, or you don&apos;t have access to it.</p>;
 
   const slot = lesson.timetable_slots;

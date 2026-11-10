@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { LoadProblem, SaveBar } from "./SaveBar";
@@ -74,7 +75,7 @@ export function AboutContentEditor() {
   }
 
   if (loadFailed) return <LoadProblem what="About page content" />;
-  if (!row) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (!row) return <Loading label="Loading…" bare />;
   const dirty = JSON.stringify(row) !== savedJson;
 
   return (

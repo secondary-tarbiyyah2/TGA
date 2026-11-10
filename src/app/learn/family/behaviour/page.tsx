@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -150,7 +151,7 @@ export default function FamilyBehaviourPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
-          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
+          <Suspense fallback={<Loading label="Loading…" bare />}>
             <FamilyBehaviourContent />
           </Suspense>
         </LearnShell>

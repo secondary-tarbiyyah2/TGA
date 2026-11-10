@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -39,7 +40,7 @@ export function SafeguardingLeadsBanner({ canManage = false }: { canManage?: boo
     <section aria-label="Designated Safeguarding Lead" className="rounded-2xl border-2 border-teal-200 bg-teal-50 p-5">
       <p className="text-xs font-semibold uppercase tracking-wider text-teal-900/70">Designated Safeguarding Lead</p>
       {leads === null ? (
-        <p className="mt-1 text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare className="mt-1" />
       ) : dsl.length > 0 ? (
         <p className="mt-1 font-serif text-h3 font-semibold text-ink">{joinNames(dsl)}</p>
       ) : (

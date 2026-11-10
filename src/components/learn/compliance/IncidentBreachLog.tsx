@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
@@ -117,7 +118,7 @@ export function IncidentBreachLog() {
       {formErr && <p role="alert" className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{formErr}</p>}
       <p className="mt-1 text-xs text-ink/65">Every incident gets a structured ICO-notification checklist with a live 72-hour countdown from the moment it was logged as discovered.</p>
       <ul className="mt-3 space-y-2">
-        {incidents === null && <p className="text-sm text-ink/65">Loading…</p>}
+        {incidents === null && <Loading label="Loading…" bare />}
         {(incidents || []).map((i) => <IncidentCard key={i.id} incident={i} />)}
         {incidents?.length === 0 && <p className="text-sm text-ink/65">No incidents logged.</p>}
       </ul>

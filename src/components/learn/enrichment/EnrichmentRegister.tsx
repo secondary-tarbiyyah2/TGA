@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { ukToday } from "@/lib/learn/ukTime";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { localDateKey } from "@/lib/learn/calendar";
@@ -107,7 +108,7 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
     setTicks((prev) => [...prev.filter((t) => !(t.period_id === pid && childIds.includes(t.child_id))), ...childIds.map((child_id) => ({ period_id: pid, child_id, present }))]);
   };
 
-  if (periods === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (periods === null) return <Loading label="Loading…" bare />;
 
   return (
     <div className="space-y-4">

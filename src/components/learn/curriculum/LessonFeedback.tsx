@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useCallback, useEffect, useId, useState } from "react";
 import { Modal } from "@/components/learn/curriculum/Modal";
 import { Dropdown } from "@/components/ui/Dropdown";
@@ -226,7 +227,7 @@ export function FeedbackQueue({ onClose, onEdit }: { onClose: () => void; onEdit
         </div>
         <ScrollArea label="Lesson feedback" className="min-h-0 flex-1 p-4">
           {all === null ? (
-            <p className="text-sm text-ink/65">Loading…</p>
+            <Loading label="Loading…" bare />
           ) : list.length === 0 ? (
             <p className="rounded-2xl border border-dashed border-gold-light p-8 text-center text-sm text-ink/70">{show === "waiting" ? "Nothing waiting. Staff feedback on lessons appears here." : "No lesson feedback yet."}</p>
           ) : (

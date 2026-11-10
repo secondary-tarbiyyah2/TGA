@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Suspense, useMemo } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -66,7 +67,7 @@ export default function FamilyClassesPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
-        <Suspense fallback={<p className="text-sm text-ink/65">Loading…</p>}>
+        <Suspense fallback={<Loading label="Loading…" bare />}>
           <FamilyClassesContent />
         </Suspense>
       </LearnGate>

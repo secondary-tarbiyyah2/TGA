@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { Button, Notice, ui } from "@/components/learn/ui";
-import { WorkflowBadge, WORKFLOW, type WorkflowStatus } from "@/components/learn/kit";
+import { WorkflowBadge, WORKFLOW, type WorkflowStatus, Loading } from "@/components/learn/kit";
 import { loadReviewHistory, nextSteps, reviewStep, type ReviewEvent, type ReviewRow } from "@/lib/learn/curriculumReview";
 
 const when = (iso: string) => new Date(iso).toLocaleString("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
@@ -114,7 +114,7 @@ export function ReviewPanel({
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-wider text-ink/55">History</h3>
           {history === null ? (
-            <p className="mt-2 text-sm text-ink/60">Loading…</p>
+            <Loading label="Loading…" bare className="mt-2" />
           ) : history.length === 0 ? (
             <p className="mt-2 text-sm text-ink/60">No review steps yet.</p>
           ) : (

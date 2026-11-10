@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -238,7 +239,7 @@ export function FamilyAbsences() {
             <h2 className="text-base font-semibold text-ink">Your notes{notes && notes.length > 0 ? <span className="font-normal text-ink/60"> · {notes.length}</span> : null}</h2>
             {withdrawError && <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{withdrawError}</p>}
             {notes === null ? (
-              <p className="mt-3 text-sm text-ink/65">Loading…</p>
+              <Loading label="Loading…" bare className="mt-3" />
             ) : notes.length === 0 ? (
               <p className="mt-3 text-sm text-ink/65">No notes yet. When you report an absence it will appear here, with the school&apos;s reply.</p>
             ) : (
