@@ -5,7 +5,7 @@
   "boardShort": "AQA 8700",
   "exam": "Pearson Edexcel International GCSE (9-1) English Language B (4EB1)",
   "examShort": "Edexcel IGCSE 4EB1",
-  "source": "AQA GCSE English Language 8700 specification and Paper 1 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice extracts are teacher-written originals. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y10.json (which covers P1 Q1-Q5 well); these lessons add modelling lessons with new, original texts and cover the uncovered subject-content units SC-R and SC-W. Texts: original teacher-written extracts; the only quoted extracts are two sentences from Dickens, A Christmas Carol (1843, public domain). | Gap-fill against AQA 8700 specification | Spring 1 founding year (Nov 2026, lessons v3): lessons 16, 22 and 23 upgraded and 28 to 39 added for the bridge (11 and 18 Jan: reading core; language and structure core) and Spring 1 'Comparing writers' views' weeks 1 to 3, framed on Pearson Edexcel International GCSE English Language B (4EB1) Section A with no AQA question numbers, following the school's 2026-27 Year 10 English Language schemes and frameworks (PETZAAL, PESTAL, comparison method). Source texts A, B and C are teacher-written originals (Text B in a nineteenth-century style).",
+  "source": "AQA GCSE English Language 8700 specification and Paper 1 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice extracts are teacher-written originals. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y10.json (which covers P1 Q1-Q5 well); these lessons add modelling lessons with new, original texts and cover the uncovered subject-content units SC-R and SC-W. Texts: original teacher-written extracts; the only quoted extracts are two sentences from Dickens, A Christmas Carol (1843, public domain). | Gap-fill against AQA 8700 specification | Spring 1 founding year (Nov 2026, lessons v3): lessons 16, 22 and 23 upgraded and 28 to 39 added for the bridge (11 and 18 Jan: reading core; language and structure core) and Spring 1 'Comparing writers' views' weeks 1 to 3, framed on Pearson Edexcel International GCSE English Language B (4EB1) Section A with no AQA question numbers, following the school's 2026-27 Year 10 English Language schemes and frameworks (PETZAAL, PESTAL, comparison method). Source texts A, B and C are teacher-written originals (Text B in a nineteenth-century style). | Spring 2 founding year (Nov 2026, lessons v3): Narrative and descriptive writing for 4EB1 Section C, all six weeks (15 Mar to 23 Apr; 3, 2, 2, 2, 3, 3 lessons for the 3 Language lessons a week scaled to the days taught). Lessons 8 to 12, 18, 19, 21 and 25 upgraded in place (AQA question numbers dropped); lessons 40 to 45 new. Uses the school's CLOSER, STASS, APPS, TCCC, SOSCHAAMPS and TIPTOP frameworks; all task titles, models and paragraphs are teacher-written; AO4 and AO5 level descriptions are paraphrased summaries of the 4EB1 mark scheme.",
   "lessons": [
     {
       "unit": "Unit 1: Paper 1 Section A - Reading literary fiction (Q1-Q3)",
@@ -717,509 +717,1098 @@
       "boardShort": "AQA 8700"
     },
     {
-      "unit": "Unit 3: Paper 1 Section B - Creative writing (Q5)",
+      "unit": "Spring 2: Narrative and descriptive writing",
       "n": 8,
-      "title": "Descriptive writing: planning and sensory detail",
+      "title": "Description: planning from a prompt or image with the CLOSER lens",
       "duration": 50,
+      "bigQuestion": "How does a writer control what the reader sees?",
       "objectives": [
-        "Understand how Question 5 is marked",
-        "Plan a descriptive piece from a picture or prompt",
-        "Use all five senses to show rather than tell"
+        "To understand how to plan a descriptive piece that guides the reader's eye with one controlled viewpoint"
       ],
+      "successCriteria": [
+        "All: turn a prompt or image into a five-part CLOSER plan",
+        "Most: choose one dominant atmosphere for the whole piece",
+        "Some: write an opening paragraph that captures the wider view"
+      ],
+      "crossCurricular": "Art: composition and the viewer's eye moving from foreground to background",
+      "smsc": "Spiritual: noticing the signs in the natural world and in ordinary places",
       "keywords": [
         {
-          "term": "show, don't tell",
-          "def": "reveal feelings through detail instead of naming them"
+          "term": "viewpoint",
+          "def": "where the describer stands and what they can notice"
         },
         {
-          "term": "sensory detail",
-          "def": "description using sight, sound, smell, taste and touch"
+          "term": "atmosphere",
+          "def": "the mood a place creates"
         },
         {
-          "term": "register",
-          "def": "the level of formality in your writing"
+          "term": "dominant impression",
+          "def": "the single feeling the whole description builds"
         },
         {
-          "term": "audience",
-          "def": "the people you are writing for"
+          "term": "sensory",
+          "def": "to do with sight, sound, smell, touch or taste"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Picture a market at dawn before anyone arrives. What is the first thing you notice, and why that?"
+      },
+      "pictures": [
+        {
+          "find": "empty market stalls at dawn",
+          "alt": "Empty market stalls in early light",
+          "for": "hook"
+        },
+        {
+          "find": "harbour at dawn fishing boats mist",
+          "alt": "A misty harbour at dawn",
+          "for": "teach:2"
+        },
+        {
+          "find": "camera lens close up",
+          "alt": "A camera lens, for 'leading the lens'",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "CLOSER Descriptive Writing One Stop Poster (school display)",
+        "Photographs for description: harbour at dawn, railway station at night (pupil PDF)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)"
+      ],
       "starter": [
-        "Name two ways a writer can build tension.",
-        "Rewrite 'It was a nice day' with three sensory details.",
-        "Why is planning worth five minutes in an exam?"
+        {
+          "q": "4EB1 Section C is worth...",
+          "options": [
+            "40 marks",
+            "30 marks",
+            "10 marks"
+          ],
+          "a": "B) 30 marks",
+          "mins": 1
+        },
+        {
+          "q": "Section C offers...",
+          "options": [
+            "one task",
+            "a choice of three tasks"
+          ],
+          "a": "B) a choice of three tasks",
+          "mins": 1
+        },
+        {
+          "q": "A whereas sentence is used to...",
+          "options": [
+            "contrast",
+            "list"
+          ],
+          "a": "A) contrast",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "How Question 5 is marked",
+          "heading": "What Section C asks",
           "bullets": [
-            "40 marks: 24 for content and organisation, 16 for technical accuracy",
-            "You choose one task, often a picture-based description or a story",
-            "Spend about 45 minutes in total, including 5 for planning",
-            "Aim for about 450-700 words, with quality over length"
+            "One piece from a choice of three",
+            "Discursive, narrative or descriptive",
+            "30 marks: AO4 20 (communication), AO5 10 (accuracy)",
+            "About 45 minutes in the exam"
           ],
-          "note": "Begin with bismillah. Stress that technical accuracy is a full 16 marks, which is 40% of the question. Mention the tasks usually include an image. The examiner wants controlled, crafted writing."
+          "note": "Year 10 builds narrative and description this half term; discursive writing is the Year 11 focus. Description has no plot: all the marks go on control, imagery and atmosphere."
         },
         {
-          "heading": "Show, don't tell",
-          "bullets": [
-            "Telling: 'The harbour was busy and noisy'",
-            "Showing: gulls screaming, ropes slapping, diesel hanging in the air",
-            "Pick details that suggest mood, not just list objects",
-            "One precise image beats three vague ones"
-          ],
-          "note": "Ask pupils to say how the harbour feels from the second version. Elicit noise, smell, movement. Point out that the showing version never uses the word 'busy' but still conveys it."
+          "heading": "The CLOSER lens",
+          "note": "Walk through the school poster.",
+          "table": {
+            "head": [
+              "Step",
+              "Job"
+            ],
+            "rows": [
+              [
+                "C: Capture the wider view",
+                "place, time, first impression"
+              ],
+              [
+                "L: Lead the lens",
+                "wide, then medium, then close"
+              ],
+              [
+                "O: Observe a significant object",
+                "one detail with meaning"
+              ],
+              [
+                "S: Select sensory details",
+                "two or three senses, not five lists"
+              ],
+              [
+                "E: Evolve the atmosphere",
+                "the mood shifts slightly"
+              ],
+              [
+                "R: Return differently",
+                "end where you began, changed"
+              ]
+            ]
+          }
         },
         {
-          "heading": "A plan for a description",
-          "bullets": [
-            "Choose a focus and a mood: calm, eerie, joyful",
-            "Divide into 4-5 paragraphs, each with its own focus",
-            "Move like a camera: wide view, closer, detail, wide again",
-            "Add one sense per paragraph"
-          ],
-          "note": "Model a plan for 'a harbour at dawn': paragraph 1 wide view of grey water and light; 2 sounds; 3 smells and touch; 4 a fisherman close up; 5 the sun rising, echoing paragraph 1."
+          "heading": "Model: a CLOSER plan",
+          "note": "Plan aloud for the harbour image.",
+          "model": {
+            "problem": "Describe a harbour at dawn.",
+            "steps": [
+              "C: grey light, still water, gulls asleep on posts",
+              "L: water, then the moored boats, then one rope",
+              "O: a frayed rope creaking against a post",
+              "S: diesel smell, cold rail, a single gull's cry",
+              "E and R: the sun breaks through; the same water now gold"
+            ],
+            "answer": "A six-line plan with one dominant impression: stillness before work begins."
+          }
         },
         {
-          "heading": "Choose your register and tone",
-          "bullets": [
-            "Descriptive writing can be lyrical and reflective",
-            "Keep tone consistent: don't swing from serious to silly",
-            "Use first or third person, but stay in one",
-            "Avoid listing; build a picture with a point of view"
-          ],
-          "note": "Take a quick poll: first person or third person for the harbour? Both can work. Explain that switching viewpoint mid-piece loses marks for organisation."
-        },
-        {
-          "heading": "Quick-plan practice",
-          "bullets": [
-            "Prompt: describe a market just before closing time",
-            "Write mood, five paragraph focuses and five senses",
-            "Spend three minutes only"
-          ],
-          "note": "Set a three-minute timer. Ask two pupils to share plans. Praise precise selections, such as 'trodden fruit' or 'stallholders counting coins', over generic ones."
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which plan risks losing AO4 marks for a description?",
+            "options": [
+              "One object that carries the mood",
+              "A long story about a fisherman's whole day",
+              "Wide view, close-up, the light changing"
+            ],
+            "answer": 1,
+            "why": "Description should stay in one place and moment; a plot drifts off task."
+          }
         }
       ],
       "practice": [
-        "Rewrite each telling sentence as a showing sentence: (a) The classroom was freezing. (b) The old man was tired. (c) The street was empty.",
-        "Complete the sensory grid for 'a school hall before an assembly': sight, sound, smell, touch, taste (if suitable)."
+        {
+          "q": "Write a CLOSER plan for: 'Describe a railway station late at night.'",
+          "a": "Six short lines, one dominant impression (e.g. loneliness), wide to close.",
+          "mins": 5,
+          "model": "C: one platform lit, the rest dark | L: platform, then the bench, then the clock | O: the clock's second hand jerking | S: hum of lights, cold metal bench, smell of rain | E: a train's light grows | R: the platform empty again, but warmer for a moment."
+        },
+        {
+          "q": "Choose a dominant impression for your plan and give two details that build it.",
+          "a": "For example: loneliness: one figure-free bench, an echo of footsteps.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Plan: 'Write a description of a harbour at dawn.' Produce a five-paragraph plan with mood, focus and one sensory detail for each paragraph.",
-        "Write your first paragraph (about 100 words) starting with a wide view.",
-        "Underline two showing-not-telling details in your paragraph and annotate their effect."
+        {
+          "q": "Core: in the portal response box, write the opening paragraph of your station description (C and L only). Starter: 'At this hour, the station...'",
+          "a": "A controlled opening: place, time, wide view, then a lead into one area, with one dominant mood.",
+          "mins": 13,
+          "model": "Capture: At this hour, the station belongs to the lights. | Lead the lens: They hum above the empty platform, buzzing over a bench nobody wants, and further along, the departure board blinks its last few names. | Atmosphere: Everything waits, and nothing comes."
+        },
+        {
+          "q": "Extend: add one sentence that zooms to a significant object (O).",
+          "a": "For example: Above the bench, the clock's second hand jerks forward as if it, too, were tired.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: rewrite your first sentence to be shorter and sharper.",
+          "a": "A short, controlled opening sentence.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Give one rule for showing rather than telling.",
-        "Why is the camera-shift structure useful in a description?"
+        {
+          "q": "CLOSER starts with...",
+          "options": [
+            "a close-up",
+            "Capture the wider view"
+          ],
+          "a": "B) Capture the wider view",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder: what would you notice first, and why?",
+          "a": "Answers vary; the first detail should set the dominant impression.",
+          "mins": 2
+        }
       ],
-      "homework": "Finish writing paragraphs 2 and 3 of your harbour description (about 200 words), keeping the mood consistent.",
-      "send": "SEND/EAL: provide the plan template with picture prompts and sentence starters; allow bullet notes. Stretch: write the opening paragraph with a deliberate change of mood in the final sentence.",
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Plan a CLOSER description for 'Describe a city street after rain' (six lines).",
+      "send": "SEND: CLOSER grid with picture prompts. EAL: word bank of place nouns and light verbs. Stretch: plan a return (R) that reverses the opening mood."
     },
     {
-      "unit": "Unit 3: Paper 1 Section B - Creative writing (Q5)",
+      "unit": "Spring 2: Narrative and descriptive writing",
       "n": 9,
-      "title": "Descriptive writing: vocabulary and figurative language",
+      "title": "Language for effect: figurative language and precise vocabulary",
       "duration": 50,
+      "bigQuestion": "How do skilled writers make every word count?",
       "objectives": [
-        "Choose precise vocabulary instead of vague words",
-        "Craft fresh similes, metaphors and personification",
-        "Write an extended descriptive paragraph with a clear shape"
+        "To understand how precise vocabulary and controlled figurative language create effects without overwriting"
+      ],
+      "successCriteria": [
+        "All: replace vague words with precise nouns and verbs",
+        "Most: use simile, metaphor and personification with purpose",
+        "Some: remove overwritten imagery"
       ],
       "keywords": [
         {
-          "term": "precise verb",
-          "def": "a specific action word that does the work of an adverb"
+          "term": "simile",
+          "def": "a comparison using 'like' or 'as'"
         },
         {
-          "term": "cliche",
-          "def": "an overused phrase that has lost its force"
+          "term": "metaphor",
+          "def": "saying one thing is another"
         },
         {
-          "term": "motif",
-          "def": "an image or idea that repeats to build meaning"
+          "term": "personification",
+          "def": "giving human qualities to non-human things"
         },
         {
-          "term": "pathetic fallacy",
-          "def": "weather or setting that mirrors a mood"
+          "term": "overwriting",
+          "def": "piling up adjectives and images until meaning is lost"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is one perfect verb worth more than three adjectives?"
+      },
+      "pictures": [
+        {
+          "find": "autumn leaves falling in park",
+          "alt": "Autumn leaves falling in a park",
+          "for": "hook"
+        },
+        {
+          "find": "old clock mechanism gears",
+          "alt": "The gears of an old clock",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "SOSCHAAMPS KS3 Fiction Language Poster A3 (school display)",
+        "Overwritten paragraph for editing (pupil PDF)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)"
+      ],
       "starter": [
-        "Write a showing sentence for 'The street was silent'.",
-        "Replace 'walked quickly' with one stronger verb.",
-        "What proportion of Q5's marks is for technical accuracy?"
+        {
+          "q": "CLOSER ends with...",
+          "options": [
+            "Rest",
+            "Return differently"
+          ],
+          "a": "B) Return differently",
+          "mins": 1
+        },
+        {
+          "q": "Pathetic fallacy links...",
+          "options": [
+            "weather and mood",
+            "speech and action"
+          ],
+          "a": "A) weather and mood",
+          "mins": 1
+        },
+        {
+          "q": "AO4 in Section C is worth...",
+          "options": [
+            "5 marks",
+            "20 marks"
+          ],
+          "a": "B) 20 marks",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Strong verbs and precise nouns",
-          "bullets": [
-            "Replace 'walked slowly' with trudged, shuffled or drifted",
-            "Replace 'a tree' with a cedar, a bent hawthorn",
-            "Pick words that carry the mood",
-            "Do not stuff sentences with long words"
-          ],
-          "note": "Begin with bismillah. Give pupils 'He looked at the sea' and ask for five alternatives for 'looked' (gazed, glared, peered, squinted, stared). Discuss what each suggests. Warn: ambitious means accurate, not obscure."
+          "heading": "Precise beats decorated",
+          "note": "Show the swap.",
+          "table": {
+            "head": [
+              "Vague",
+              "Precise"
+            ],
+            "rows": [
+              [
+                "walked slowly",
+                "shuffled, trudged, crept"
+              ],
+              [
+                "a big tree",
+                "an oak"
+              ],
+              [
+                "very cold",
+                "bitter, raw"
+              ],
+              [
+                "looked at",
+                "glared at, studied, glanced at"
+              ],
+              [
+                "made a noise",
+                "rattled, hissed, groaned"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Fresh figurative language",
+          "heading": "Figurative language with purpose",
           "bullets": [
-            "Avoid cliches such as 'as white as snow'",
-            "Compare unlike things: the sea 'folded' like laundry",
-            "Link each image to the mood of the piece",
-            "One extended metaphor can hold a paragraph together"
+            "Every image must fit the mood",
+            "Extend one image rather than mix five",
+            "Personification makes settings feel alive",
+            "Check: does the reader see it at once?"
           ],
-          "note": "Ask pupils to rewrite 'as cold as ice' as something personal and surprising. Collect two. Discuss why a school-related or local image might feel fresh and credible."
+          "note": "Example of an extended metaphor: 'The fog swallowed the street, chewed the lamp-posts to stumps and spat out only the sound of footsteps.'"
         },
         {
-          "heading": "Pathetic fallacy and motif",
-          "bullets": [
-            "Weather and light can echo a character's feelings",
-            "Dawn light might suggest hope, a pale sun could suggest unease",
-            "Repeat one image to give the piece unity",
-            "Return to it in the final paragraph"
-          ],
-          "note": "Link back to the harbour plan: the gulls could be a repeating motif. Clarify pathetic fallacy as setting reflecting mood; avoid overusing it."
+          "heading": "Overwriting",
+          "note": "Cut back.",
+          "misconception": {
+            "wrong": "The extremely dark, gloomy, shadowy, frightening, black night was like a monster like a beast like a void.",
+            "right": "The night pressed against the windows like a held breath."
+          }
         },
         {
-          "heading": "Model paragraph: Harbour at dawn",
-          "bullets": [
-            "Opens with a wide, quiet view of grey water",
-            "Moves to close sound: rope slapping against wood",
-            "Includes a metaphor for the light",
-            "Ends with a sentence that links back to the opening"
-          ],
-          "note": "Model text: 'Dawn crept into the harbour like a tide of pale milk. Boats nodded on their ropes, their hulls knocking softly against the quay, and the first gulls began their scratchy complaints. A fisherman hauled a net the colour of old rust, each heave steaming in the cold. Slowly, the grey softened to gold.' Read it aloud and annotate."
-        },
-        {
-          "heading": "Write with control",
-          "bullets": [
-            "Vary sentence length for rhythm",
-            "Keep paragraphs focused and linked",
-            "Proofread for spelling and punctuation",
-            "Cut anything that does not serve the mood"
-          ],
-          "note": "Remind pupils about the 16 marks for technical accuracy. Their model paragraph demonstrates varied sentences: long, short, then a short closing sentence."
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which sentence is most controlled?",
+            "options": [
+              "The very thick, grey, damp, cold fog was everywhere.",
+              "The fog was like a blanket like a wall like a ghost.",
+              "The fog swallowed the street."
+            ],
+            "answer": 2,
+            "why": "One strong verb does the work; the others overwrite."
+          }
         }
       ],
       "practice": [
-        "Upgrade these phrases with precise verbs and nouns: 'a bird flew' / 'she ate her food' / 'he went into the room'.",
-        "Write one fresh simile for the sound of a school bell and explain what it suggests."
+        {
+          "q": "Upgrade with one precise verb: 'The wind went through the trees making a loud noise.'",
+          "a": "For example: The wind tore through the trees.",
+          "mins": 3,
+          "model": "Find the weak verb ('went') and the vague phrase ('making a loud noise'). Choose one verb that does both: 'tore'. Result: 'The wind tore through the trees.'"
+        },
+        {
+          "q": "Write a personification of a clock in an exam hall.",
+          "a": "For example: The clock on the wall counted every second out loud, as if it enjoyed it.",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Write 150-200 words of a description of a market just before closing time. Include one precise-verb sentence, one fresh simile or metaphor, and one short sentence for emphasis.",
-        "Underline your best word choice and write one sentence explaining why it is effective.",
-        "Edit your paragraph to remove any cliche."
+        {
+          "q": "Core: in the portal response box, rewrite the overwritten paragraph on the pupil PDF using precise verbs and one extended image. Starter: 'The fog...'",
+          "a": "A controlled paragraph with precise vocabulary and one sustained image.",
+          "mins": 12,
+          "model": "Overwritten: 'The fog was really really thick and grey and it was everywhere and it was scary.' Rewritten: 'The fog crept up from the river and swallowed the street, lamp-post by lamp-post, until only the sound of my own footsteps proved I was still there.'"
+        },
+        {
+          "q": "Extend: label each image and explain its effect in one line.",
+          "a": "Images labelled with effects.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write a sentence where the metaphor carries the mood without any adjectives.",
+          "a": "For example: The house sulked behind its hedge.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Give two ways to improve vocabulary beyond making it longer.",
-        "Replace 'as white as snow' with your own fresh image."
+        {
+          "q": "Overwriting means...",
+          "options": [
+            "too many adjectives and images",
+            "too few words"
+          ],
+          "a": "A) too many adjectives and images",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Often yes: a precise verb shows the action and the mood at once.",
+          "mins": 2
+        }
       ],
-      "homework": "Rewrite your harbour description paragraph 1 and 2, adding a repeated image (motif) and a stronger final sentence.",
-      "send": "SEND/EAL: provide a vocabulary ladder (look, glance, peer, glare) with pictures. Stretch: build one extended metaphor through the whole paragraph.",
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Find five vague verbs in an old piece of your writing and replace each with a precise one.",
+      "send": "SEND: precise verb bank grouped by movement and sound. EAL: picture-supported vocabulary cards. Stretch: sustain one extended metaphor across a paragraph."
     },
     {
-      "unit": "Unit 3: Paper 1 Section B - Creative writing (Q5)",
+      "unit": "Spring 2: Narrative and descriptive writing",
       "n": 10,
-      "title": "Narrative writing: structure, openings and endings",
+      "title": "Narrative: structure, openings and shaping a short story",
       "duration": 50,
+      "bigQuestion": "How do writers shape a story that fits the time?",
       "objectives": [
-        "Plan a focused short narrative with a clear shape",
-        "Write an engaging opening and a controlled ending",
-        "Keep a consistent viewpoint and limit the cast"
+        "To understand how to shape a short narrative for the exam with a controlled structure and a gripping opening"
+      ],
+      "successCriteria": [
+        "All: plan a story in five stages (exposition to resolution)",
+        "Most: write an opening hook using one of four methods",
+        "Some: keep the story small enough for 45 minutes"
       ],
       "keywords": [
         {
-          "term": "narrative",
-          "def": "a story with events, characters and a shape"
+          "term": "exposition",
+          "def": "the opening that sets up character and situation"
+        },
+        {
+          "term": "climax",
+          "def": "the moment of greatest tension"
+        },
+        {
+          "term": "resolution",
+          "def": "how the story's problem ends"
         },
         {
           "term": "in medias res",
           "def": "starting in the middle of the action"
-        },
-        {
-          "term": "turning point",
-          "def": "the moment the story changes direction"
-        },
-        {
-          "term": "resolution",
-          "def": "how the story's problem is settled or left open"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the smallest story you could tell that would still change someone?"
+      },
+      "pictures": [
+        {
+          "find": "train platform with suitcase",
+          "alt": "A suitcase left on a platform",
+          "for": "hook"
+        },
+        {
+          "find": "winding mountain road",
+          "alt": "A winding road, like a story's shape",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "Creative Writing STASS, APPS, TCCC Framework A3 and the school's Complete Creative and Descriptive Writing Framework (school display)",
+        "Narrative planning sheet (pupil PDF)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)"
+      ],
       "starter": [
-        "Give one example of pathetic fallacy.",
-        "Rewrite 'It was scary' to show fear instead.",
-        "Why is it a good idea to keep the cast of a short story small?"
+        {
+          "q": "A fragment gives...",
+          "options": [
+            "emphasis",
+            "explanation"
+          ],
+          "a": "A) emphasis",
+          "mins": 1
+        },
+        {
+          "q": "A fronted adverbial comes...",
+          "options": [
+            "at the end",
+            "at the start"
+          ],
+          "a": "B) at the start",
+          "mins": 1
+        },
+        {
+          "q": "Section C narrative is marked on AO4 and...",
+          "options": [
+            "AO5",
+            "AO1"
+          ],
+          "a": "A) AO5",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Shape of a short story",
-          "bullets": [
-            "Hook: draw the reader in quickly",
-            "Build: one problem grows or one secret deepens",
-            "Turning point: a choice, discovery or shock",
-            "Ending: resolve, twist or leave it open on purpose"
-          ],
-          "note": "Begin with bismillah. Draw the shape as a simple curve. Stress that exam stories are short: 500-700 words, so one event, one place, one or two characters. Ambitious plots usually collapse."
+          "heading": "The shape of a short story",
+          "note": "One character, one place, one change.",
+          "timeline": [
+            {
+              "label": "Exposition",
+              "text": "who, where, what is normal"
+            },
+            {
+              "label": "Tension",
+              "text": "a problem or desire"
+            },
+            {
+              "label": "Crisis",
+              "text": "a decision or discovery"
+            },
+            {
+              "label": "Climax",
+              "text": "the peak moment, slowed down"
+            },
+            {
+              "label": "Resolution",
+              "text": "what has changed"
+            }
+          ]
         },
         {
-          "heading": "Openings that hook",
-          "bullets": [
-            "Start in the action: a sound, a decision, a strange object",
-            "Start with a sensory detail that raises a question",
-            "Avoid openings like 'One day I woke up'",
-            "Keep the first paragraph short and purposeful"
-          ],
-          "note": "Offer two openings: 'The key was still warm.' versus 'My name is Zayd and I like football.' Ask which makes you read on. Elicit that the first creates a question."
+          "heading": "Four ways to open",
+          "note": "Each with a model first line.",
+          "table": {
+            "head": [
+              "Method",
+              "Model opening"
+            ],
+            "rows": [
+              [
+                "In medias res",
+                "The suitcase was still on the platform when the train pulled away."
+              ],
+              [
+                "Dialogue",
+                "'Don't open it,' Gran said, and left the room."
+              ],
+              [
+                "Setting with mood",
+                "The village had been quiet for three days, which was two days too many."
+              ],
+              [
+                "A question",
+                "How long can a secret stay in a locked drawer?"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Pace and tension",
-          "bullets": [
-            "Slow down at tense moments with detail",
-            "Speed up with short sentences for action",
-            "Use dialogue sparingly and punctuate correctly",
-            "Plant one clue early that pays off later"
-          ],
-          "note": "Teach quick dialogue punctuation: new line for new speaker, comma before closing quotation mark, capital letter for each new sentence of speech. Offer a model line."
+          "heading": "The resolution trap",
+          "note": "Size the story to the time.",
+          "misconception": {
+            "wrong": "Ten characters, three countries, a war and a twist ending, all in 45 minutes.",
+            "right": "One character, one afternoon, one choice, told in detail with a slowed-down climax."
+          }
         },
         {
-          "heading": "Endings that land",
-          "bullets": [
-            "Cyclical: echo the opening image or line",
-            "Twist: a fact that reframes the story",
-            "Open: leave a deliberate question, not a mess",
-            "Avoid 'it was all a dream'"
-          ],
-          "note": "Take a class vote on which ending type works best for the key story (a lost key, a late bus). Insist on connecting ending to opening for unity."
-        },
-        {
-          "heading": "Plan a story together",
-          "bullets": [
-            "Prompt: write a story that begins with a locked door",
-            "Character: Layla, nervous, newly arrived at the school",
-            "Problem: the key in her pocket does not belong to her",
-            "Choose: turning point and ending"
-          ],
-          "note": "Co-plan on the board in five lines: hook, build, turning point, ending image, link to opening. Let pupils choose the ending. Emphasise the plan is the roadmap, not a script."
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which plan best fits a 45-minute Section C story?",
+            "options": [
+              "One character deciding whether to open a letter",
+              "A family's history over a hundred years",
+              "A space war across three planets"
+            ],
+            "answer": 0,
+            "why": "Small situations can be told in depth; the others are too big."
+          }
         }
       ],
       "practice": [
-        "Choose the stronger opening and explain why: (a) 'The bell had stopped ringing, but nobody was leaving.' (b) 'It was a normal day at school.'",
-        "Write a one-sentence ending for the locked-door story that echoes its opening."
+        {
+          "q": "Plan a five-stage story for the title 'The Key'.",
+          "a": "Five short lines from exposition to resolution with one character and one change.",
+          "mins": 5,
+          "model": "Exposition: Yusuf finds an old key in his late grandfather's coat. | Tension: no door in the house fits it. | Crisis: in the shed, a locked box. | Climax: the lid lifts slowly: letters, decades old. | Resolution: he understands his grandfather's quiet kindness, and keeps writing to the people in the letters."
+        },
+        {
+          "q": "Write two different first lines for 'The Key' using two methods.",
+          "a": "For example: In medias res and dialogue openings.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Plan a story based on the prompt: 'Write the opening of a story about a journey that does not go to plan.' Include hook, build, turning point and ending.",
-        "Write the opening paragraph (80-100 words) in the plan's viewpoint.",
-        "Annotate your paragraph: mark one sensory detail and one hook."
+        {
+          "q": "Core: in the portal response box, write the opening two paragraphs of 'The Key' (exposition and tension). Starter: choose one of your first lines.",
+          "a": "A gripping opening with a hook, a clear character and setting, and the first sign of tension.",
+          "mins": 13,
+          "model": "Hook: The key was cold, colder than metal should be. | Exposition: Yusuf found it in the inside pocket of his grandfather's coat, the one that still smelled of rain and peppermint. | Tension: He tried every door in the house. None of them were the right shape for it."
+        },
+        {
+          "q": "Extend: underline where your tension first appears.",
+          "a": "Tension identified.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: plant one detail in the opening that pays off in the resolution.",
+          "a": "For example: the smell of peppermint returns when he opens the box.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name two features of a strong opening.",
-        "Why is a smaller cast of characters better for exam stories?"
+        {
+          "q": "The climax is...",
+          "options": [
+            "the opening",
+            "the moment of greatest tension"
+          ],
+          "a": "B) the moment of greatest tension",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Answers vary; a small moment of choice or discovery can change a character.",
+          "mins": 2
+        }
       ],
-      "homework": "Write the full first draft of your journey story (about 400 words), focusing on one clear turning point.",
-      "send": "SEND/EAL: provide a story mountain template and a bank of opening lines to adapt. Stretch: experiment with a non-linear or reflective narrator.",
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Plan a second story for 'The Last Train' using the five-stage shape.",
+      "send": "SEND: five-box story planner. EAL: opening line frames. Stretch: use a cyclical structure (end echoes the opening)."
     },
     {
-      "unit": "Unit 3: Paper 1 Section B - Creative writing (Q5)",
+      "unit": "Spring 2: Narrative and descriptive writing",
       "n": 11,
-      "title": "Technical accuracy: punctuation, sentences and spelling",
+      "title": "Technical accuracy: punctuation for control",
       "duration": 50,
+      "bigQuestion": "How does accuracy make writing trustworthy?",
       "objectives": [
-        "Use a range of punctuation accurately and for effect",
-        "Avoid comma splices and fragments",
-        "Proofread systematically for spelling errors"
+        "To understand how accurate punctuation, including commas, semi-colons, apostrophes and speech marks, earns AO5 marks"
+      ],
+      "successCriteria": [
+        "All: fix comma splices three ways",
+        "Most: use apostrophes for possession and omission correctly",
+        "Some: punctuate dialogue accurately"
       ],
       "keywords": [
         {
           "term": "comma splice",
-          "def": "two complete sentences wrongly joined by a comma"
+          "def": "two sentences wrongly joined with only a comma"
         },
         {
-          "term": "semi-colon",
-          "def": "joins two closely linked complete sentences"
+          "term": "apostrophe of possession",
+          "def": "shows ownership: the boy's coat"
         },
         {
-          "term": "colon",
-          "def": "introduces a list, explanation or reveal"
+          "term": "apostrophe of omission",
+          "def": "shows missing letters: don't"
         },
         {
-          "term": "proofread",
-          "def": "check writing carefully for errors"
+          "term": "dialogue",
+          "def": "words spoken by characters, in speech marks"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which punctuation error do you think costs Year 10 writers the most marks?"
+      },
+      "pictures": [
+        {
+          "find": "typewriter keys punctuation",
+          "alt": "Typewriter keys with punctuation marks",
+          "for": "hook"
+        },
+        {
+          "find": "red pen editing paper",
+          "alt": "A pen editing a page",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "Year 10 grammar and accuracy booklet (portal, punctuation)",
+        "Error-correction paragraph (pupil PDF)",
+        "Personal error log (pupil PDF)"
+      ],
       "starter": [
-        "Correct: 'The door opened, she stepped inside.'",
-        "Add apostrophes: 'The boys books were in Hamzas bag.'",
-        "Give a sentence that uses a colon correctly."
+        {
+          "q": "A cyclical ending...",
+          "options": [
+            "adds a twist",
+            "echoes the opening"
+          ],
+          "a": "B) echoes the opening",
+          "mins": 1
+        },
+        {
+          "q": "AO5 is about...",
+          "options": [
+            "accuracy and range",
+            "ideas only"
+          ],
+          "a": "A) accuracy and range",
+          "mins": 1
+        },
+        {
+          "q": "'its' (no apostrophe) means...",
+          "options": [
+            "it is",
+            "belonging to it"
+          ],
+          "a": "B) belonging to it",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Why accuracy matters",
-          "bullets": [
-            "16 of the 40 marks in Q5 are for technical accuracy",
-            "Examiners look at spelling, punctuation, grammar and vocabulary",
-            "Accuracy needs both correctness and ambition",
-            "A short piece, accurately written, can still score well"
-          ],
-          "note": "Begin with bismillah. Explain that ambitious punctuation used wrongly is worse than simple punctuation used correctly. Encourage pupils to master a small toolkit rather than a large messy one."
+          "heading": "Fixing a comma splice",
+          "note": "Three fixes for the same error.",
+          "table": {
+            "head": [
+              "Fix",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Wrong",
+                "The rain stopped, the street was silent."
+              ],
+              [
+                "Full stop",
+                "The rain stopped. The street was silent."
+              ],
+              [
+                "Semi-colon",
+                "The rain stopped; the street was silent."
+              ],
+              [
+                "Conjunction",
+                "When the rain stopped, the street was silent."
+              ]
+            ]
+          }
         },
         {
-          "heading": "The punctuation toolkit",
-          "bullets": [
-            "Full stop and capital letters, every time",
-            "Comma: lists, clauses, after fronted adverbials",
-            "Semi-colon: 'The sea was calm; the sky was not.'",
-            "Colon: 'She saw one thing: the open window.'",
-            "Dash or brackets for an aside"
-          ],
-          "note": "Model each with a sentence. Ask pupils to create their own using one of the toolkit items. Reinforce the semi-colon rule: both sides must be able to stand alone."
+          "heading": "Apostrophes",
+          "note": "Two jobs only.",
+          "compare": {
+            "left": {
+              "title": "Possession",
+              "points": [
+                "the girl's bag (one girl)",
+                "the girls' bags (many girls)",
+                "the children's toys",
+                "its = belonging to it (no apostrophe)"
+              ]
+            },
+            "right": {
+              "title": "Omission",
+              "points": [
+                "don't = do not",
+                "it's = it is",
+                "they're = they are",
+                "never for plurals: apples, not apple's"
+              ]
+            },
+            "label": "and"
+          }
         },
         {
-          "heading": "Fix the comma splice",
+          "heading": "Punctuating dialogue",
           "bullets": [
-            "Wrong: 'He ran, the bus left.'",
-            "Fix 1: full stop. 'He ran. The bus left.'",
-            "Fix 2: semi-colon. 'He ran; the bus left.'",
-            "Fix 3: conjunction. 'He ran, but the bus left.'"
+            "New speaker, new line",
+            "Punctuation inside the speech marks",
+            "'I'm here,' she said. (comma before 'she said')",
+            "'Where?' he asked. (no comma after ? or !)"
           ],
-          "note": "Comma splices are the most common error. Give three more for the class to fix verbally. Remind them that a splice sometimes reads naturally in speech but not in exam writing."
+          "note": "Model on the board with a two-line exchange from 'The Key'."
         },
         {
-          "heading": "Sentence variety",
-          "bullets": [
-            "Simple: 'The tide turned.'",
-            "Compound: 'The tide turned and the boats rocked.'",
-            "Complex: 'As the tide turned, the boats began to rock.'",
-            "Use a short sentence after a long one for impact"
-          ],
-          "note": "Ask pupils to label three sentences and then combine two simple sentences into a complex one. Variety should be deliberate, not forced."
-        },
-        {
-          "heading": "Spelling and proofreading",
-          "bullets": [
-            "Learn common traps: separate, definitely, necessary, receive",
-            "Check homophones: there, their, they're; to, too, two",
-            "Read your work backwards, sentence by sentence",
-            "Use the last 3 minutes to proofread"
-          ],
-          "note": "Give a quick spelling test of five tricky words. Introduce the 'backwards proofread' trick: reading the last sentence first helps spot errors. Mention the apostrophe rules."
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which sentence is correct?",
+            "options": [
+              "The dog wagged its' tail.",
+              "The dog wagged its tail.",
+              "The dog wagged it's tail."
+            ],
+            "answer": 1,
+            "why": "'its' shows possession without an apostrophe; 'it's' means 'it is'."
+          }
         }
       ],
       "practice": [
-        "Correct the punctuation: 'I opened the box inside was a small brass key it was cold to the touch.'",
-        "Combine into one complex sentence: 'The rain fell. The harbour emptied. The fishermen went home.'"
+        {
+          "q": "Fix: 'I opened the door, the room was empty.'",
+          "a": "I opened the door. The room was empty. (or a semi-colon, or 'When I opened the door, the room was empty.')",
+          "mins": 3,
+          "model": "Spot the splice: two main clauses ('I opened the door' / 'the room was empty') with only a comma. Choose a fix: full stop for drama: 'I opened the door. The room was empty.'"
+        },
+        {
+          "q": "Punctuate: where are you going said Gran dont be late",
+          "a": "'Where are you going?' said Gran. 'Don't be late.'",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Proofread this paragraph and correct at least eight errors: 'Their was a strange silence in the hall, Layla didnt know weather to go in or not. She could here her heart, it was loud. Definately she should of turned back but the door was allready open.'",
-        "Write a four-sentence description of a cold morning using a semi-colon, a colon and a dash correctly.",
-        "Record three words you misspelt this term and write a mnemonic for each."
+        {
+          "q": "Core: in the portal response box, correct the 12 errors in the paragraph on the pupil PDF, then write a 6-line dialogue with correct punctuation. Starter: 'Don't open it,' ...",
+          "a": "All 12 errors fixed (splices, apostrophes, speech) and a correctly punctuated dialogue.",
+          "mins": 12,
+          "model": "Error: 'Gran said dont open it' | Fix: 'Don't open it,' Gran said. | Error: 'the boxs lid' | Fix: the box's lid | Error: 'it was old, it smelled of dust' | Fix: It was old; it smelled of dust."
+        },
+        {
+          "q": "Extend: write the rule for each error type you fixed.",
+          "a": "Rules for splices, apostrophes and speech.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: use a semi-colon and a colon correctly in one paragraph.",
+          "a": "Correct semi-colon and colon.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Which punctuation mark can join two linked complete sentences?",
-        "Correct: 'The boys went to there school, it was late.'"
+        {
+          "q": "'The girls' coats' means...",
+          "options": [
+            "coats of many girls",
+            "one girl's coat"
+          ],
+          "a": "A) coats of many girls",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder with your own most common error.",
+          "a": "Answers vary; comma splices are the most common.",
+          "mins": 2
+        }
       ],
-      "homework": "Proofread your journey story draft from Lesson 10 and list every error you corrected, with the rule.",
-      "send": "SEND/EAL: provide a punctuation mat with example sentences and highlight one error type at a time. Stretch: add a dash or parenthesis to create a deliberate aside and evaluate its effect.",
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Proofread your 'Last Train' story for comma splices and apostrophes; log every error in your personal error log.",
+      "send": "SEND: punctuation rule cards. EAL: model dialogue to copy and adapt. Stretch: use dashes and brackets for parenthesis correctly."
     },
     {
-      "unit": "Unit 3: Paper 1 Section B - Creative writing (Q5)",
+      "unit": "Spring 2: Narrative and descriptive writing",
       "n": 12,
-      "title": "Timed Question 5 and self-assessment",
+      "title": "Timed Section C: what the mark scheme rewards and a walking-talking run",
       "duration": 50,
+      "bigQuestion": "What makes writing outstanding?",
       "objectives": [
-        "Plan and write a timed piece of creative writing",
-        "Assess your own work against content and accuracy criteria",
-        "Set precise targets for improvement"
+        "To understand what the AO4 and AO5 levels reward and how to manage 45 minutes for a Section C piece"
+      ],
+      "successCriteria": [
+        "All: explain what moves a piece from the middle to the top levels",
+        "Most: follow the 45-minute timing plan",
+        "Some: write a top-level opening with the teacher"
       ],
       "keywords": [
         {
-          "term": "criterion",
-          "def": "a standard used to judge quality"
+          "term": "level",
+          "def": "a mark band on the mark scheme"
         },
         {
-          "term": "target",
-          "def": "a specific action to improve your next piece"
+          "term": "AO4",
+          "def": "communicating effectively: ideas, form, tone, structure"
         },
         {
-          "term": "redraft",
-          "def": "to rewrite a section to improve it"
+          "term": "AO5",
+          "def": "accurate writing with a range of vocabulary and sentences"
         },
         {
-          "term": "success criteria",
-          "def": "a checklist of what a strong answer includes"
+          "term": "walking-talking",
+          "def": "a practice where the teacher talks through each step"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What do you think separates a good piece from an outstanding one?"
+      },
+      "pictures": [
+        {
+          "find": "mountain path summit view",
+          "alt": "A mountain path to the summit",
+          "for": "hook"
+        },
+        {
+          "find": "analog clock",
+          "alt": "A clock face",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)",
+        "Mid-level paragraph for analysis (pupil PDF)"
+      ],
       "starter": [
-        "Name three tools in your punctuation toolkit.",
-        "How many marks in Q5 are for technical accuracy?",
-        "Give one way to start a story with a hook."
+        {
+          "q": "The five-minute routine starts with...",
+          "options": [
+            "first and last lines",
+            "the title"
+          ],
+          "a": "A) first and last lines",
+          "mins": 1
+        },
+        {
+          "q": "A high-value edit is...",
+          "options": [
+            "rewriting everything",
+            "small and gains marks"
+          ],
+          "a": "B) small and gains marks",
+          "mins": 1
+        },
+        {
+          "q": "AO4 in Section C is worth...",
+          "options": [
+            "20",
+            "10"
+          ],
+          "a": "A) 20",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Today's timed task",
-          "bullets": [
-            "Choose a description or a story",
-            "5 minutes plan, 30 minutes write, 5 minutes proofread",
-            "Aim for around 400-500 words",
-            "Use the toolkit you have built"
-          ],
-          "note": "Begin with bismillah and a brief du'a for focus if the class is comfortable. Explain the shortened timing: exam is 45 minutes, today 40 because of teaching time. Offer two prompts: (a) describe a school corridor after everyone has left; (b) write a story that begins with an unexpected message."
+          "heading": "What the levels reward (summary)",
+          "note": "Paraphrased from the 4EB1 Section C mark scheme: five levels for each AO.",
+          "table": {
+            "head": [
+              "Objective",
+              "Middle levels",
+              "Top levels"
+            ],
+            "rows": [
+              [
+                "AO4 (20)",
+                "clear, appropriate tone; some structure",
+                "perceptive, subtle; sharply focused on purpose and reader; controlled structure"
+              ],
+              [
+                "AO5 (10)",
+                "mostly accurate; some range",
+                "extensive vocabulary used strategically; varied sentences; consistently accurate"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Success criteria: content",
-          "bullets": [
-            "A clear viewpoint and consistent tone",
-            "Varied sentences, with vocabulary chosen for effect",
-            "Paragraphs with a purpose and clear links",
-            "A memorable opening and a controlled ending"
-          ],
-          "note": "Display the checklist for pupils to tick off. Ask each pupil to identify one criterion they want to focus on in this piece."
+          "heading": "The 45 minutes",
+          "note": "The school's timing guide for Section C.",
+          "table": {
+            "head": [
+              "Step",
+              "Minutes"
+            ],
+            "rows": [
+              [
+                "Choose",
+                "2"
+              ],
+              [
+                "Plan",
+                "5"
+              ],
+              [
+                "Write",
+                "33"
+              ],
+              [
+                "Edit and proofread",
+                "5"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Success criteria: accuracy",
-          "bullets": [
-            "Sentences demarcated correctly with full stops",
-            "A range of punctuation used accurately",
-            "Spelling of common and ambitious words secure",
-            "Standard English except in dialogue"
-          ],
-          "note": "Remind pupils of comma splices and apostrophes. Suggest they leave three minutes at the end purely for proofreading."
+          "heading": "Walking-talking: an opening",
+          "note": "Teacher writes live with pupils.",
+          "model": {
+            "problem": "Task: 'Describe a place at the moment a storm arrives.'",
+            "steps": [
+              "Choose: one place: a harbour",
+              "Plan: wide, lens, object, senses, return",
+              "Opening: one striking sentence",
+              "Second sentence: lead the lens",
+              "Check: no splice, varied opening"
+            ],
+            "answer": "The harbour knew before we did. Boats tugged at their ropes, gulls rose in a single white sheet, and far out, the horizon had turned the colour of a bruise."
+          }
         },
         {
-          "heading": "How to self-assess",
-          "bullets": [
-            "Highlight your strongest sentence green",
-            "Highlight an error you found yellow",
-            "Write two targets starting 'Next time I will...'",
-            "Be specific: not 'use better words'"
-          ],
-          "note": "Model one target: 'Next time I will check every comma for splices.' Pupils will complete the self-assessment in the exit section after writing."
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which is most likely to lift a piece to the top AO4 level?",
+            "options": [
+              "More words",
+              "Lots of dialogue",
+              "Deliberate structure and tone sharply suited to the task"
+            ],
+            "answer": 2,
+            "why": "Control and focus are rewarded, not length or dialogue for its own sake."
+          }
         }
       ],
       "practice": [
-        "Spend 5 minutes writing a plan: mood or problem, four paragraph focuses, one hook idea, one ending idea.",
-        "Write your opening sentence and read it aloud to check it hooks the reader."
+        {
+          "q": "Read the mid-level paragraph on the pupil PDF: name one AO4 and one AO5 improvement.",
+          "a": "For example: AO4: a clearer dominant mood; AO5: fix the comma splices and vary sentence openings.",
+          "mins": 3,
+          "model": "AO4: the paragraph lists details with no single mood; fix by choosing 'menace'. AO5: two comma splices and four sentences starting 'The'."
+        },
+        {
+          "q": "Write your personal 45-minute timing plan.",
+          "a": "Choose 2, plan 5, write 33, edit 5 (or a justified variation).",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Write your timed piece (30 minutes) from your plan, then proofread for 5 minutes.",
-        "Highlight your best sentence and one error you corrected.",
-        "Complete the self-assessment checklist and write two precise targets."
+        {
+          "q": "Core: walking-talking practice in the portal response box: plan (5 minutes) and write the first two paragraphs (13 minutes) for 'Describe a place at the moment a storm arrives.' Starter: 'The ... knew before we did.'",
+          "a": "A plan and two controlled paragraphs at the top-level standard.",
+          "mins": 18,
+          "model": "Plan: harbour; boats, gulls, horizon; a loose rope; salt, wind, first drops; after the storm, the same boats, calm. Paragraph 1 as in the teacher model; paragraph 2: 'The first drops were fat and slow, leaving dark coins on the stone...'"
+        },
+        {
+          "q": "Extend: check your two paragraphs with the success ladder.",
+          "a": "A self-assessed level with a reason.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: write your final line now, before the middle.",
+          "a": "A planned ending.",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Write one target for your next piece of creative writing.",
-        "What is the most common error you found in your own work?"
+        {
+          "q": "In 45 minutes, writing time is about...",
+          "options": [
+            "10 minutes",
+            "33 minutes"
+          ],
+          "a": "B) 33 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Control: every choice of structure, word and sentence is deliberate and suits the task.",
+          "mins": 1
+        }
       ],
-      "homework": "Redraft your weakest paragraph from today's timed piece, applying one of your targets, and submit both versions.",
-      "send": "SEND/EAL: allow a scaffolded plan and a word bank; consider extra time. Stretch: add a deliberate structural device such as a flashback, and evaluate its effect in a short note.",
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Revise the three plan shapes and your personal error log for the timed piece next lesson.",
+      "send": "SEND: access arrangements as agreed; timing card. EAL: task vocabulary list. Stretch: plan in three minutes."
     },
     {
       "unit": "SC-R: Subject content: reading across the course",
@@ -1941,269 +2530,417 @@
       "boardShort": "AQA 8700"
     },
     {
-      "unit": "P1-B-Q5: Paper 1 Section B: Question 5, descriptive or narrative writing",
-      "title": "Question 5: writing a description from an image (modelled paragraph)",
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 18,
+      "title": "Description: sensory detail, imagery and one clear viewpoint",
       "duration": 50,
-      "bigQuestion": "How can I make a reader see a place without telling them what to feel?",
+      "bigQuestion": "How does a writer make a reader feel they are standing there?",
       "objectives": [
-        "Plan a description with a clear viewpoint and movement",
-        "Use the senses, precise vocabulary and varied sentence lengths for effect",
-        "Revise a draft paragraph to improve vocabulary and punctuation"
+        "To understand how selected sensory detail and imagery build atmosphere from one fixed viewpoint"
       ],
       "successCriteria": [
-        "All: write a description with at least three senses",
-        "Most: use figurative language and varied sentences with accurate punctuation",
-        "Some: control tone and structure so the description shifts deliberately"
+        "All: select two or three senses that fit the atmosphere",
+        "Most: turn a plain detail into an image",
+        "Some: keep the viewpoint consistent through a paragraph"
       ],
-      "crossCurricular": "Art and Geography: landscape and coast",
-      "smsc": "Spiritual: noticing beauty and fragility in creation",
       "keywords": [
         {
-          "term": "viewpoint",
-          "def": "the position from which the reader sees"
+          "term": "imagery",
+          "def": "language that creates a picture in the reader's mind"
         },
         {
-          "term": "sensory detail",
-          "def": "detail from the five senses"
+          "term": "selection",
+          "def": "choosing only the details that matter"
         },
         {
-          "term": "figurative language",
-          "def": "imagery such as simile and metaphor"
+          "term": "pathetic fallacy",
+          "def": "weather or setting reflecting a mood"
         },
         {
-          "term": "tone",
-          "def": "the mood of the writing"
-        },
-        {
-          "term": "cohesion",
-          "def": "how parts of the writing link"
+          "term": "consistent",
+          "def": "staying the same throughout"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which sense do writers forget most often, and what do they lose by forgetting it?"
+      },
+      "pictures": [
+        {
+          "find": "rain on window night city lights",
+          "alt": "Rain on a window with city lights behind",
+          "for": "hook"
+        },
+        {
+          "find": "spices market colourful sacks",
+          "alt": "Sacks of colourful spices at a market",
+          "for": "teach:2"
+        },
+        {
+          "find": "old wooden door weathered",
+          "alt": "A weathered wooden door",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "CLOSER Descriptive Writing One Stop Poster (school display)",
+        "SOSCHAAMPS KS3 Fiction Language Poster A3 (school display)",
+        "Photographs for description: spice market, rain on a window (pupil PDF)"
+      ],
       "starter": [
-        "Bismillah. Retrieval: what are the two mark totals in Question 5 and what does each assess?",
-        "Write a sentence using a sound and a smell only.",
-        "What is the difference between 'show' and 'tell'?"
+        {
+          "q": "The 'O' in CLOSER is...",
+          "options": [
+            "Observe a significant object",
+            "Open with dialogue"
+          ],
+          "a": "A) Observe a significant object",
+          "mins": 1
+        },
+        {
+          "q": "A dominant impression is...",
+          "options": [
+            "a list of senses",
+            "one feeling the piece builds"
+          ],
+          "a": "B) one feeling the piece builds",
+          "mins": 1
+        },
+        {
+          "q": "Description in Section C needs...",
+          "options": [
+            "control of atmosphere",
+            "a plot twist"
+          ],
+          "a": "B) a plot twist",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The image prompt",
-          "bullets": [
-            "Imagine: an empty seaside pier on a winter afternoon.",
-            "Spot: one lit lamp, closed arcade, grey, restless sea.",
-            "Write: a description of the scene (24 + 16 marks).",
-            "Time: plan for 5 minutes, write for 25."
-          ],
-          "note": "Pupils imagine the image (a photograph of an empty seaside pier in winter: wooden boards, one lit lamp, a grey sea, closed arcade). Cultural context: a British pier is a long walkway built out over the sea in the 19th century, with amusements and cafés that close out of season. 'Out of season' means not holiday time. Ask: what is missing from this picture? The task is 'Write a description suggested by this picture.' (40 marks)."
+          "heading": "Select, do not list",
+          "note": "Show the difference.",
+          "misconception": {
+            "wrong": "I could see stalls. I could hear people. I could smell spices. I could feel the heat. I could taste dust.",
+            "right": "The spice sacks slumped open like tired mouths, breathing cumin into air already thick with heat."
+          }
         },
         {
-          "heading": "Plan with a camera",
-          "cycle": [
-            "Wide shot: sea, sky, pier",
-            "Middle: boards, railings, arcade",
-            "Detail: one lamp or one gull",
-            "Close with a link back to the wide view"
-          ],
-          "note": "Show the camera plan as a cycle: wide, middle, detail, wide again. Say that moving through the scene gives structure. Ask pupils to place senses at each stage."
-        },
-        {
-          "heading": "Worked model: a descriptive paragraph",
-          "model": {
-            "problem": "Write a description suggested by this picture of an empty seaside pier in winter.",
-            "steps": [
-              "Open with a wide shot using a metaphor for the sea.",
-              "Add the senses: sound of wind, taste of salt, touch of cold railing.",
-              "Move to the detail: one lamp, one gull.",
-              "Vary sentence length: a short sentence for impact.",
-              "Close by echoing the opening image."
+          "heading": "Upgrading a detail into an image",
+          "note": "Three moves.",
+          "table": {
+            "head": [
+              "Plain",
+              "Precise",
+              "Image"
             ],
-            "answer": "The sea heaved like a sleeping animal under a sky the colour of old pewter. Wind combed the pier, whistling through the gaps in the weathered boards, and each railing was so cold that it seemed to bite back. The arcade stood shuttered, its painted lights dead. Salt stung the tongue. At the far end, a single lamp glowed, a small, stubborn yellow. A gull perched beneath it, motionless. Nothing else moved. Beyond the lamp, the grey sea breathed in and out, patient, unhurried, as if waiting for the summer to return."
-          },
-          "note": "Read the model; pupils tick the techniques: personification, simile, senses, short sentence, repeated sound (sibilance). Say the paragraph is 95 words, ideal for a timed task, and it does not tell the reader to feel lonely; it shows with details."
+            "rows": [
+              [
+                "The door was old.",
+                "The door was cracked and grey.",
+                "The door had gone grey with waiting, its paint peeling like old skin."
+              ],
+              [
+                "It was raining.",
+                "Rain hit the window.",
+                "Rain needled the window, then slid away in silver threads."
+              ],
+              [
+                "The market was busy.",
+                "Carts jostled for space.",
+                "Carts jostled like impatient cattle at a gate."
+              ]
+            ]
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "One viewpoint",
+          "bullets": [
+            "Decide where you stand",
+            "Only describe what you could notice from there",
+            "Move the lens, not the body",
+            "Avoid 'suddenly I teleported to...' shifts"
+          ],
+          "note": "Model: standing at the market's edge, we can zoom in, but we do not jump to the roof."
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
           "check": {
-            "q": "Which sentence is the strongest description?",
+            "q": "Which sentence has the best selected sensory detail?",
             "options": [
-              "The pier was very lonely and sad.",
-              "A single lamp glowed, a small, stubborn yellow, above a motionless gull.",
-              "The pier was big, grey, cold, old and empty."
+              "I could see rain and hear rain and feel cold.",
+              "It was a very rainy and wet and cold night.",
+              "Rain needled the window, then slid away in silver threads."
             ],
-            "answer": 1,
-            "why": "B shows loneliness through specific details and controlled rhythm. A tells; C piles up adjectives without a unifying effect."
-          },
-          "note": "Mini-whiteboards. The answer is B. A is telling; C is a list of adjectives with no effect."
-        },
-        {
-          "heading": "Sentence and punctuation variety",
-          "bullets": [
-            "Short sentence for impact: Nothing else moved.",
-            "Complex sentence with participle: Wind combed the pier, whistling ...",
-            "Use a semi-colon between linked ideas.",
-            "Check commas, capitals and spelling in the last five minutes."
-          ],
-          "note": "Say AO6 is worth 16 marks: show semi-colons, dashes, short sentences. Warn about comma splices. EAL support: sentence stems."
+            "answer": 2,
+            "why": "It chooses two senses and turns them into an image; the others list or repeat."
+          }
         }
       ],
       "practice": [
-        "Write an opening sentence using a metaphor for the sea.",
-        "Add one sentence with two senses (not sight).",
-        "Rewrite 'The sky was grey' using a simile or personification."
+        {
+          "q": "Upgrade into an image: 'The street was quiet.'",
+          "a": "For example: The street held its breath; only a loose sign ticked against its post.",
+          "mins": 3,
+          "model": "Plain: quiet. Precise: what makes the quiet noticeable? One small sound. Image: personify the street: 'The street held its breath; only a loose sign ticked against its post.'"
+        },
+        {
+          "q": "Write one sentence of pathetic fallacy for a tense mood.",
+          "a": "For example: Clouds pressed down on the rooftops like a lid on a pot about to boil.",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Core: Write the first paragraph of a description for the pier prompt (80 words).",
-        "Extend: Write three paragraphs that move from wide to detail to wide, using at least three senses.",
-        "Stretch: Write a 300-word description with a deliberate shift in tone and a final echo of the opening."
+        {
+          "q": "Core: in the portal response box, write a paragraph describing a spice market at midday from one viewpoint, using two senses and two images. Starter: 'From the shade of the archway...'",
+          "a": "One viewpoint, two senses, two images, a consistent mood.",
+          "mins": 12,
+          "model": "Viewpoint: From the shade of the archway, the market looks like a furnace. | Sense 1 (sight) and image: Sacks of turmeric glow like small suns. | Sense 2 (smell) and image: cumin and cardamom drift towards me in warm, heavy waves. | Close-up: one brass scale tips and settles. | Mood: everything is slow, heavy, golden."
+        },
+        {
+          "q": "Extend: underline each image and name the method (simile, metaphor, personification).",
+          "a": "Methods labelled correctly.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: add a sound that contrasts with the main mood.",
+          "a": "For example: a sudden clatter of a dropped tray that breaks the heavy stillness.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name two ways to give a description structure.",
-        "Rewrite 'It was cold' with a precise image.",
-        "Big question: how can I make a reader see without telling them what to feel?"
+        {
+          "q": "Pathetic fallacy uses...",
+          "options": [
+            "a list",
+            "weather or setting to reflect mood"
+          ],
+          "a": "B) weather or setting to reflect mood",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Often smell or touch; without them description feels flat and only visual.",
+          "mins": 2
+        }
       ],
-      "homework": "Describe in 120 words the view from your window at an unusual time of day, using at least three senses and one simile.",
-      "send": "SEND: provide a four-box camera planner and a word bank (weathered, shuttered, stubborn, pewter). EAL/international: pre-teach 'pier', 'arcade', 'out of season', 'weathered', 'shuttered'; idiom 'the calm before the storm' = quiet just before trouble; stems: 'In the distance there was ...', 'The air smelled of ...', 'It looked as if ...'. Cultural note: seaside holiday towns and piers, winter closures. Stretch: write in the second person to alter the viewpoint.",
-      "n": 18,
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Write a 120-word description of your own street at dusk from your window, using two senses.",
+      "send": "SEND: sense grid with example images. EAL: SOSCHAAMPS bank of similes and verbs. Stretch: describe the same place in a contrasting mood."
     },
     {
-      "unit": "P1-B-Q5: Paper 1 Section B: Question 5, descriptive or narrative writing",
-      "title": "Question 5: narrative writing with a controlled structure",
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 19,
+      "title": "Narrative: tension, pace and satisfying endings",
       "duration": 50,
-      "bigQuestion": "How do I shape a short story so that it feels complete in 40 minutes?",
+      "bigQuestion": "How do writers make a reader need to know what happens?",
       "objectives": [
-        "Plan a short narrative with one focus and a clear ending",
-        "Open and close a story with deliberate effect",
-        "Use dialogue, thought and pace to show character rather than explain it"
+        "To understand how to build tension, slow the climax and write an ending that shows change"
       ],
       "successCriteria": [
-        "All: write a story with an opening, a problem and an ending",
-        "Most: control pace, using sentence length and paragraphs",
-        "Some: echo a motif from the beginning at the end to create shape"
+        "All: build tension with withheld information",
+        "Most: slow the climax with cinematic focus",
+        "Some: write an ending that shows how the character has changed"
       ],
-      "crossCurricular": "Drama: character and suspense",
-      "smsc": "Moral: honesty and consequences",
       "keywords": [
         {
-          "term": "narrative",
-          "def": "a story or account of events"
+          "term": "tension",
+          "def": "the reader's feeling of suspense or worry"
         },
         {
-          "term": "motif",
-          "def": "an image or idea that is repeated"
+          "term": "cinematic focus",
+          "def": "zooming in on one detail at a key moment"
         },
         {
-          "term": "dialogue",
-          "def": "spoken words between characters"
+          "term": "withhold",
+          "def": "keep information back from the reader"
         },
         {
-          "term": "flashback",
-          "def": "a scene from an earlier time"
-        },
-        {
-          "term": "resolution",
-          "def": "the way the problem is dealt with at the end"
+          "term": "cyclical ending",
+          "def": "an ending that echoes the opening"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a surprise twist ending better than an ending that feels right?"
+      },
+      "pictures": [
+        {
+          "find": "door slightly open light beyond",
+          "alt": "A door left slightly open with light beyond",
+          "for": "hook"
+        },
+        {
+          "find": "old wooden box with lid",
+          "alt": "An old wooden box with a lid",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "Creative Writing STASS, APPS, TCCC Framework A3 and the school's Complete Creative and Descriptive Writing Framework (school display)",
+        "Teacher-written climax model (pupil PDF)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)"
+      ],
       "starter": [
-        "Bismillah. Retrieval: name the four stages of the camera plan from the last lesson.",
-        "Write an opening sentence that starts in the middle of an action.",
-        "Define 'cliffhanger'."
+        {
+          "q": "In medias res means starting...",
+          "options": [
+            "at birth",
+            "in the middle of the action"
+          ],
+          "a": "B) in the middle of the action",
+          "mins": 1
+        },
+        {
+          "q": "The resolution trap is...",
+          "options": [
+            "a story too big for the time",
+            "a short story"
+          ],
+          "a": "A) a story too big for the time",
+          "mins": 1
+        },
+        {
+          "q": "Exposition sets up...",
+          "options": [
+            "the twist",
+            "character and situation"
+          ],
+          "a": "B) character and situation",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The task",
+          "heading": "Building tension",
           "bullets": [
-            "Task: a story about a moment of waiting for news.",
-            "Choose: one place, one character, one problem.",
-            "Write about 450-600 words in 30 minutes.",
-            "Plan for five minutes; check for five."
+            "Withhold: hint, do not tell",
+            "Delay: one more obstacle",
+            "Sensory zoom: one sound in silence",
+            "Short sentences at the peak"
           ],
-          "note": "Task: 'Write a story about a moment when someone is waiting for news.' (40 marks). Remind pupils that Paper 1 Section B has one task, either descriptive or narrative; pupils choose the one they can do best. Cultural context: in the UK, news may arrive by phone, letter or doorbell; any culture's version is welcome."
+          "note": "Read a teacher-written example: 'The lid did not want to move. He pushed again. Something inside shifted, softly, like paper.'"
         },
         {
-          "heading": "A five-point plan",
-          "timeline": [
-            {
-              "label": "1. Open",
-              "text": "start in the moment, with a precise detail (the motif)"
-            },
-            {
-              "label": "2. Build",
-              "text": "show waiting: time, small actions, thoughts"
-            },
-            {
-              "label": "3. Twist",
-              "text": "a sound, a message or a decision changes things"
-            },
-            {
-              "label": "4. Climax",
-              "text": "the news arrives, in few words"
-            },
-            {
-              "label": "5. Close",
-              "text": "echo the motif; end with a feeling or image"
-            }
-          ],
-          "note": "Say that short stories do not cover long periods. A tight timeline gives control. Ask pupils to pick an unusual starting point (the news just arrived, or an object on a table). Introduce a motif as the 'thread' to link the opening to the ending."
-        },
-        {
-          "heading": "Worked model: opening and ending",
+          "heading": "Model: slowing the climax",
+          "note": "Turn one second into a paragraph.",
           "model": {
-            "problem": "Write the opening and the ending of a story about a moment of waiting for news.",
+            "problem": "Climax: Yusuf opens the box.",
             "steps": [
-              "Opening: start with a concrete motif, the kettle, and a time.",
-              "Show the waiting through small actions rather than saying 'she was nervous'.",
-              "Ending: bring back the kettle, but changed by what has happened.",
-              "Keep the final sentence short."
+              "Zoom in on hands: thumbs on the lid",
+              "One sound: the hinge",
+              "One sense: dust and old paper",
+              "Delay: he stops, breathes",
+              "Reveal: the first letter's handwriting"
             ],
-            "answer": "OPENING: The kettle clicked off for the third time, and still Nadia did not pour. The phone lay face down on the table like a card she was afraid to turn over. ... ENDING: The phone rang. She listened; she said, 'Yes. Yes. Thank you.' Then she lifted the kettle, and for the first time that day her hands were steady."
-          },
-          "note": "Note that the motif of the kettle returns at the end with a changed meaning. Also note that the opening starts in the moment and the ending is short. Ask: what has changed in the final kettle? Draw out that repetition with a difference gives shape."
+            "answer": "His thumbs found the edge of the lid. The hinge gave a small, dry cough. Dust, and something else: old paper, and peppermint. He stopped. Breathed. Then he lifted it, and saw his grandfather's handwriting on the first envelope."
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Endings that show change",
+          "note": "Compare.",
+          "compare": {
+            "left": {
+              "title": "Weak endings",
+              "points": [
+                "'It was all a dream'",
+                "a sudden unexplained twist",
+                "everyone lives happily ever after"
+              ]
+            },
+            "right": {
+              "title": "Strong endings",
+              "points": [
+                "a small action that shows change",
+                "an echo of the opening, changed",
+                "a final image that carries the meaning"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
           "check": {
-            "q": "Which opening is strongest for this task?",
+            "q": "Which ending best shows change?",
             "options": [
-              "The kettle clicked off for the third time, and still Nadia did not pour.",
-              "Nadia was very nervous and could not wait any longer for the news.",
-              "On Monday Nadia woke up, had breakfast, went to school and then waited."
+              "Yusuf put the key back in the coat pocket, but this time he left the coat on.",
+              "Then Yusuf woke up and it was a dream.",
+              "Suddenly aliens arrived."
             ],
             "answer": 0,
-            "why": "A begins in the moment with a concrete motif and implies tension. B tells the emotion; C lists a day and loses focus."
-          },
-          "note": "Mini-whiteboards. The answer is A; C tells emotions; B is a list of events rather than a moment."
-        },
-        {
-          "heading": "Dialogue and punctuation",
-          "misconception": {
-            "wrong": "\"I am waiting\" said Nadia, \"for the call.\" She said it nervous.",
-            "right": "\"I'm waiting for the call,\" said Nadia, her fingers tight round the mug."
-          },
-          "note": "Say direct speech needs a new line for each speaker and accurate punctuation. Idiom: 'to be on edge' = to be tense and nervous."
+            "why": "His small action shows new closeness to his grandfather; the others avoid the story."
+          }
         }
       ],
       "practice": [
-        "Choose a motif and write your opening sentence.",
-        "Write three sentences showing waiting through small actions only.",
-        "Write the closing sentence using the same motif with a changed meaning."
+        {
+          "q": "Slow down one second: a phone screen lights up with an unknown number.",
+          "a": "A short paragraph zooming in on one detail, one sound, a delay and a reveal.",
+          "mins": 4,
+          "model": "Zoom: the phone buzzed against the table. | Sound: once, twice. | Detail: the number was not saved. | Delay: he watched it, thumb hovering. | Reveal: the third buzz, and he answered."
+        },
+        {
+          "q": "Write a cyclical ending for 'The Key'.",
+          "a": "For example: an ending that echoes the cold key, now warm in his hand.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Core: Write the opening and ending paragraphs for the task.",
-        "Extend: Write the full story in four paragraphs with the five-point plan.",
-        "Stretch: Rewrite your story using a flashback in paragraph two and explain the effect."
+        {
+          "q": "Core: in the portal response box, write the climax and resolution of 'The Key' (or your own plan). Starter: 'His thumbs...'",
+          "a": "A slowed climax with cinematic focus and an ending that shows change through a small action or image.",
+          "mins": 13,
+          "model": "Climax: His thumbs found the edge of the lid... | Reveal: letters to people his grandfather had helped, each one answered. | Resolution: That evening, Yusuf took a pen and a clean sheet of paper. The key, warm now from his pocket, sat beside him on the desk."
+        },
+        {
+          "q": "Extend: highlight one place where you withhold information.",
+          "a": "Withholding identified.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: cut the last sentence; does the ending become stronger?",
+          "a": "Often yes: endings land harder without explaining.",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Name the five stages of the plan.",
-        "What is a motif and why is it useful?",
-        "Big question: how do I make a short story feel complete?"
+        {
+          "q": "Cinematic focus means...",
+          "options": [
+            "zooming in on one detail",
+            "describing everything"
+          ],
+          "a": "A) zooming in on one detail",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "An ending that feels right usually scores better, because it shows control and change.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a 200-word story ending that echoes an object introduced at the opening, then annotate where it returns.",
-      "send": "SEND: provide a plan template with five numbered boxes and a bank of 'small actions' (tapping, pacing, checking). EAL/international: pre-teach 'motif', 'kettle', 'steady', 'on edge', 'echo'; idiom 'to hold your breath' = to wait anxiously; stems: 'She could not stop ...', 'The silence seemed ...', 'At last, ...'. Cultural note: a kettle and tea are common in UK homes at stressful moments; use any familiar object. Stretch: write in first person present tense and keep it consistent.",
-      "n": 19,
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Write a complete 450-word story for 'The Last Train' using your plan.",
+      "send": "SEND: tension toolkit card. EAL: sentence starters for climax and ending. Stretch: tell the story with a time shift (begin at the end)."
     },
     {
       "unit": "SC-W: Subject content: writing across the course",
@@ -2377,161 +3114,220 @@
       "boardShort": "AQA 8700"
     },
     {
-      "unit": "SC-W: Subject content: writing across the course",
-      "title": "Standard English, grammar and punctuation for technical accuracy",
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 21,
+      "title": "Technical accuracy: Standard English, agreement, spelling and paragraphing",
       "duration": 50,
-      "bigQuestion": "How can accurate writing add marks without making my writing dull?",
+      "bigQuestion": "How does accuracy make writing trustworthy?",
       "objectives": [
-        "Use Standard English grammar in formal writing",
-        "Punctuate complex sentences, avoiding comma splices",
-        "Vary sentence structures for effect"
+        "To understand how Standard English, subject-verb agreement, accurate spelling and clear paragraphing secure the AO5 marks"
       ],
       "successCriteria": [
-        "All: write in complete sentences with capital letters and full stops",
-        "Most: use commas, apostrophes and semi-colons correctly",
-        "Some: vary sentence openings and lengths deliberately for effect"
+        "All: correct non-standard forms and agreement errors",
+        "Most: spell commonly confused and tricky words",
+        "Some: paragraph with TIPTOP"
       ],
-      "crossCurricular": "MFL and Arabic: comparing sentence structures across languages",
-      "smsc": "Social: respect for different dialects while using Standard English where needed",
       "keywords": [
         {
           "term": "Standard English",
-          "def": "the grammar and vocabulary used in formal writing across the UK, not an accent"
+          "def": "the accepted grammar of formal English"
         },
         {
-          "term": "comma splice",
-          "def": "two main clauses wrongly joined by only a comma"
+          "term": "agreement",
+          "def": "the verb matching its subject: 'they were', not 'they was'"
         },
         {
-          "term": "semi-colon",
-          "def": "joins two closely linked main clauses"
+          "term": "homophone",
+          "def": "words that sound the same but differ: there, their, they're"
         },
         {
-          "term": "apostrophe",
-          "def": "shows possession or missing letters"
-        },
-        {
-          "term": "subject-verb agreement",
-          "def": "the verb matches the subject: they were, not they was"
+          "term": "TIPTOP",
+          "def": "new paragraph for a change of time, place, topic or person"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might a brilliant story still score low for accuracy?"
+      },
+      "pictures": [
+        {
+          "find": "dictionary open page",
+          "alt": "An open dictionary",
+          "for": "keywords"
+        },
+        {
+          "find": "stacked building blocks paragraphs",
+          "alt": "Stacked blocks, like paragraphs",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "TIPTOP paragraphing posters (school display)",
+        "Year 10 grammar and accuracy booklet (portal, Standard English and spelling)",
+        "Personal error log (pupil PDF)"
+      ],
       "starter": [
-        "Bismillah. Retrieval: what is the difference between a main clause and a subordinate clause?",
-        "Correct: 'We was late for school'.",
-        "Add a full stop and capital letter to: it was raining we stayed in."
+        {
+          "q": "A comma splice joins two sentences with...",
+          "options": [
+            "a full stop",
+            "only a comma"
+          ],
+          "a": "B) only a comma",
+          "mins": 1
+        },
+        {
+          "q": "'Don't' is an apostrophe of...",
+          "options": [
+            "omission",
+            "possession"
+          ],
+          "a": "A) omission",
+          "mins": 1
+        },
+        {
+          "q": "New speaker means...",
+          "options": [
+            "same line",
+            "new line"
+          ],
+          "a": "B) new line",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Standard English: grammar, not accent",
+          "heading": "Standard English fixes",
+          "note": "Common non-standard forms.",
           "table": {
             "head": [
               "Non-standard",
-              "Standard English"
+              "Standard"
             ],
             "rows": [
               [
-                "We was late.",
-                "We were late."
+                "we was",
+                "we were"
               ],
               [
-                "I done my homework.",
-                "I did my homework."
+                "I done it",
+                "I did it / I have done it"
               ],
               [
-                "They ain't coming.",
-                "They are not coming."
+                "should of",
+                "should have"
               ],
               [
-                "Me and him went.",
-                "He and I went."
+                "them books",
+                "those books"
               ],
               [
-                "Could of gone.",
-                "Could have gone."
+                "me and him went",
+                "he and I went"
               ]
             ]
-          },
-          "note": "Say clearly: Standard English is about grammar and vocabulary, not accent; every accent is welcome. Dialect or non-standard forms may appear in dialogue for effect, but narration and formal writing use Standard English. For international pupils, note that some forms (we was, I done it) are common in speech around the UK but not in exam writing."
+          }
         },
         {
-          "heading": "Fix the comma splice",
-          "compare": {
-            "left": {
-              "title": "Comma splice (wrong)",
-              "points": [
-                "The sea was calm, the boats stayed in the harbour.",
-                "I was tired, I kept writing."
-              ]
-            },
-            "right": {
-              "title": "Fixed (right)",
-              "points": [
-                "The sea was calm; the boats stayed in the harbour.",
-                "I was tired, but I kept writing.",
-                "I was tired. I kept writing."
-              ]
-            },
-            "label": "fixed by"
-          },
-          "note": "Show three fixes: full stop, semi-colon, conjunction. Ask pupils to decide which gives the best rhythm. Point out that fixing is easy once you spot two complete sentences."
+          "heading": "Spelling: the usual suspects",
+          "note": "Pupils test each other.",
+          "diagram": {
+            "centre": "Commonly misspelt",
+            "items": [
+              "there / their / they're",
+              "where / were / wear",
+              "definitely",
+              "separate",
+              "necessary",
+              "beginning",
+              "atmosphere",
+              "disappear"
+            ]
+          }
         },
         {
-          "heading": "Worked model: upgrading a paragraph",
-          "model": {
-            "problem": "Improve this paragraph for technical accuracy and variety: 'it was dark we walked home. we was cold. the streetlights was flickering the road was wet.'",
-            "steps": [
-              "Fix capitals and full stops.",
-              "Correct 'we was' and 'the streetlights was'.",
-              "Split or join the comma splice with a semi-colon or conjunction.",
-              "Vary the openings and add one short sentence."
-            ],
-            "answer": "It was dark when we walked home. We were cold. The streetlights were flickering; the road was wet and shone like black glass. Nobody spoke."
-          },
-          "note": "Read the draft aloud, then the model. Ask pupils to count the techniques added: variety of openings, a semi-colon, a participle phrase, a short sentence. Emphasise accuracy as well as variety."
+          "heading": "TIPTOP paragraphing",
+          "bullets": [
+            "Time changes",
+            "Place changes",
+            "Topic changes",
+            "Person (new speaker) changes"
+          ],
+          "note": "Use the school TIPTOP poster. A story with no paragraphs cannot reach the top AO5 level."
         },
         {
-          "heading": "Hinge question",
+          "heading": "Hinge",
+          "note": "Poll.",
           "check": {
-            "q": "Which sentence is punctuated correctly?",
+            "q": "Which sentence is Standard English?",
             "options": [
-              "The rain stopped, we went out.",
-              "The rain stopped; we went out.",
-              "The rain stopped we went out."
+              "We was going to leave.",
+              "We should of left.",
+              "We were going to leave."
             ],
-            "answer": 1,
-            "why": "B uses a semi-colon to join two linked main clauses. A is a comma splice; C has no punctuation at all."
-          },
-          "note": "Mini-whiteboards. The answer is B. A is a splice; C is non-standard."
-        },
-        {
-          "heading": "Apostrophes at a glance",
-          "misconception": {
-            "wrong": "The dog wagged it's tail, and the childrens' coats were wet.",
-            "right": "The dog wagged its tail, and the children's coats were wet."
-          },
-          "note": "Run a quick quiz. Remind pupils: its (belonging) versus it's (it is)."
+            "answer": 2,
+            "why": "'We were' agrees; 'was' does not; 'should of' should be 'should have'."
+          }
         }
       ],
       "practice": [
-        "Correct five non-standard sentences supplied by the teacher.",
-        "Fix three comma splices in three different ways.",
-        "Write one sentence with a semi-colon and one with a participle opening."
+        {
+          "q": "Correct: 'Me and my cousin was walking home, we should of took the bus.'",
+          "a": "My cousin and I were walking home; we should have taken the bus.",
+          "mins": 3,
+          "model": "Three errors: 'Me and my cousin' becomes 'My cousin and I'; 'was' becomes 'were'; 'should of took' becomes 'should have taken'. Fix the splice with a semi-colon."
+        },
+        {
+          "q": "Mark where new paragraphs should start in the unbroken story on the pupil PDF (TIPTOP).",
+          "a": "Breaks at the time shift, the change of place and each new speaker.",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Core: Edit a 60-word paragraph with ten errors planted by your teacher.",
-        "Extend: Rewrite your own earlier paragraph to improve sentence variety and accuracy.",
-        "Stretch: Write a 150-word paragraph with at least five different sentence types, all accurately punctuated."
+        {
+          "q": "Core: in the portal response box, proofread and redraft your 'Last Train' story opening (150 words): Standard English, agreement, spelling and TIPTOP paragraphs. Starter: paste your opening, then improve it.",
+          "a": "A redraft with all Standard English, agreement and spelling errors fixed and paragraphs broken by TIPTOP.",
+          "mins": 12,
+          "model": "Before: 'The train was late, me and Dad was waiting their for ages.' After: 'The train was late. Dad and I had been waiting there for nearly an hour.' (New paragraph: a change of time.) 'At last, a light appeared down the line.'"
+        },
+        {
+          "q": "Extend: add the errors you found to your personal error log.",
+          "a": "Errors logged with the rule.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write a five-word spelling test of your own tricky words for a partner.",
+          "a": "A personal spelling list.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Is Standard English an accent? Explain.",
-        "Fix: 'It was late, we went home.'",
-        "Big question: how can accuracy add marks without making writing dull?"
+        {
+          "q": "TIPTOP: a new paragraph when...",
+          "options": [
+            "time, place, topic or person changes",
+            "every sentence"
+          ],
+          "a": "A) time, place, topic or person changes",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Because AO5 rewards accuracy separately: errors cost up to 10 marks.",
+          "mins": 2
+        }
       ],
-      "homework": "Proofread a page of your own writing from this half-term, correct at least ten errors and list your three most common mistakes.",
-      "send": "SEND: give a colour-coded proofreading checklist and allow a word processor with spellcheck for drafts. EAL/international: pre-teach 'splice', 'apostrophe', 'agreement'; idioms 'to get your facts straight', 'a slip of the pen'; stems: 'The correct form is ...', 'This is a comma splice because ...'. Cultural note: UK regional dialects are valued; Standard English is a shared formal code. Stretch: study how a published writer uses fragments for effect and imitate it.",
-      "n": 21,
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Learn the ten commonly misspelt words for a quick test; complete section 2 of the accuracy booklet.",
+      "send": "SEND: Standard English swap card. EAL: agreement table (I was / we were). Stretch: use paragraphing for effect (a one-line paragraph)."
     },
     {
       "unit": "Autumn 1: Reading non-fiction: meaning and evidence",
@@ -3067,156 +3863,208 @@
       "boardShort": "AQA 8700"
     },
     {
-      "unit": "P1-B-Q5: Paper 1 Section B: Question 5, descriptive or narrative writing",
-      "covers": [
-        "P1-B-Q5.2",
-        "P1-B-Q5.4"
-      ],
-      "title": "Question 5: choosing your task, and controlling tone, style, register and cohesion",
-      "bigQuestion": "How do I make my writing sound right for the task and hold together from start to finish?",
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 25,
+      "title": "Section C: choosing your task from three",
+      "duration": 50,
+      "bigQuestion": "How do I choose the task that shows my best writing?",
       "objectives": [
-        "Choose between describing and narrating from the written prompt or image given",
-        "Control tone, style and register for the stated audience and purpose",
-        "Organise paragraphs so that the piece is coherent and cohesive"
+        "To understand how to choose the Section C task that lets me show my best writing within the time"
       ],
       "successCriteria": [
-        "All: choose a task and keep one consistent tone",
-        "Most: use connectives and links that guide the reader",
-        "Some: shape tone, register and structure deliberately for effect"
+        "All: read three tasks for form, audience and purpose",
+        "Most: choose a task in under two minutes using three questions",
+        "Some: explain why a task suits my strengths"
       ],
-      "crossCurricular": "Art: composition and the viewer's eye",
-      "smsc": "Cultural: seeing everyday scenes with fresh eyes",
       "keywords": [
         {
-          "term": "tone",
-          "def": "the attitude or mood of the writing"
+          "term": "form",
+          "def": "the type of writing: story, description, essay"
+        },
+        {
+          "term": "audience",
+          "def": "who the writing is for"
+        },
+        {
+          "term": "purpose",
+          "def": "why it is written: to describe, narrate, discuss"
         },
         {
           "term": "register",
-          "def": "how formal or informal the language is"
-        },
-        {
-          "term": "coherence",
-          "def": "the piece makes sense as a whole"
-        },
-        {
-          "term": "cohesion",
-          "def": "ideas are linked smoothly between sentences and paragraphs"
-        },
-        {
-          "term": "narrative",
-          "def": "a story; description paints a picture"
+          "def": "the level of formality"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you see three tasks, which do you choose: the one you like, or the one you can plan fastest?"
+      },
+      "pictures": [
+        {
+          "find": "three doors choice",
+          "alt": "Three doors side by side",
+          "for": "hook"
+        },
+        {
+          "find": "signpost directions",
+          "alt": "A signpost pointing three ways",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "Section C practice task bank (teacher-written titles, pupil PDF)",
+        "Creative Writing STASS, APPS, TCCC Framework A3 and the school's Complete Creative and Descriptive Writing Framework (school display)",
+        "CLOSER Descriptive Writing One Stop Poster (school display)"
+      ],
       "starter": [
-        "Bismillah. Name one feature of descriptive writing and one of narrative writing.",
-        "Is 'It was proper rubbish' formal or informal?",
-        "Retrieval: how many marks are given for content and organisation in Question 5?"
+        {
+          "q": "'We was' should be...",
+          "options": [
+            "we is",
+            "we were"
+          ],
+          "a": "B) we were",
+          "mins": 1
+        },
+        {
+          "q": "TIPTOP includes...",
+          "options": [
+            "time and place",
+            "title only"
+          ],
+          "a": "A) time and place",
+          "mins": 1
+        },
+        {
+          "q": "Section C time in the exam is about...",
+          "options": [
+            "10 minutes",
+            "45 minutes"
+          ],
+          "a": "B) 45 minutes",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "One extended task",
+          "heading": "Three tasks (practice set)",
           "bullets": [
-            "Question 5 is one extended task of 40 marks",
-            "Choose to describe or narrate, from a prompt or an image",
-            "The statement before the task sets audience and purpose",
-            "Commit to your choice within the first two minutes"
+            "(a) 'Young people spend too much time indoors.' Discuss.",
+            "(b) Write a story with the title 'The Storm'.",
+            "(c) Describe a busy place as it closes for the night."
           ],
-          "note": "AQA offers a choice of tasks; check the specimen paper for the exact layout this year (verify). Stress that either option can reach the top marks. Ask who prefers images and who prefers words, then discuss strengths. Note that 24 marks are for content and organisation and 16 for technical accuracy."
+          "note": "Original practice titles in the 4EB1 Section C style. Discursive writing is taught fully in Year 11; you may still choose it."
         },
         {
-          "heading": "Tone, style and register",
+          "heading": "Three questions to choose",
+          "note": "Ask these in under two minutes.",
           "table": {
             "head": [
-              "Feature",
-              "What it means",
-              "Example"
+              "Question",
+              "Why it matters"
             ],
             "rows": [
               [
-                "Tone",
-                "The mood or attitude",
-                "Calm, nostalgic, tense"
+                "Can I plan it in five minutes?",
+                "no plan, no structure (AO4)"
               ],
               [
-                "Style",
-                "Your choices of words and sentences",
-                "Short blunt sentences or flowing ones"
+                "Do I know the form well?",
+                "form, audience and register earn AO4"
               ],
               [
-                "Register",
-                "How formal the language is",
-                "'Departed' (formal) versus 'left' (neutral)"
-              ],
-              [
-                "Audience",
-                "Who you write for",
-                "A local magazine editor"
+                "Can I show varied vocabulary and sentences?",
+                "range earns AO5"
               ]
             ]
-          },
-          "note": "Show how the same moment changes with tone: 'The train left.' versus 'The train slipped away, leaving silence on the platform.' Ask: which register suits a magazine competition entry? Stress consistency; avoid slipping into slang unless dialogue calls for it."
+          }
         },
         {
-          "heading": "Coherence and cohesion",
-          "cycle": [
-            "Open with a clear scene or situation",
-            "Link each paragraph to the last (time, place, contrast)",
-            "Develop one idea per paragraph",
-            "Return to an image or motif at the end"
-          ],
-          "note": "Coherence is the whole piece making sense; cohesion is the stitching between sentences. Model discourse markers such as 'Meanwhile', 'Moments later', 'Beyond the window'. Warn against starting every paragraph with 'Then'. A circular structure (return to the opening image) delivers cohesion."
-        },
-        {
-          "heading": "Model: a tightly controlled opening",
+          "heading": "Model: choosing aloud",
+          "note": "Teacher thinks aloud.",
           "model": {
-            "problem": "Write the opening of a description of a railway station at dusk (audience: a school magazine). Use a calm, observant tone and formal-neutral register.",
+            "problem": "Choose from (a), (b), (c).",
             "steps": [
-              "Open with a precise setting detail rather than 'It was a station'.",
-              "Use one controlled metaphor and one sensory detail.",
-              "Vary sentence length and keep the tone steady.",
-              "End the paragraph with a link that leads to the next idea."
+              "(a): ideas come, but I need both sides and a judgement",
+              "(b): a storm story risks a big plot; I would make it one room, one night",
+              "(c): one place, a clear shift from busy to empty: perfect for CLOSER",
+              "Decision: (c), because I can plan it fastest and show range"
             ],
-            "answer": "Dusk settled over the station like a grey blanket. Beneath the clock, a lone porter swept the same square of platform, patient as a metronome. The air smelled of cold iron and damp coats. Somewhere beyond the signal lamps, a train was breathing its way towards us. And yet nobody looked up."
-          },
-          "note": "Read it twice. Ask pupils to identify tone (calm, observant), register (formal-neutral) and the linking device ('And yet'). Stress that the standard is not long words but controlled, deliberate choices. Original model written for TGA."
+            "answer": "Choice made in under two minutes, with a reason."
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Hinge",
+          "note": "Poll.",
           "check": {
-            "q": "Which sentence breaks the register of a calm magazine description?",
+            "q": "Which is the best reason to choose a task?",
             "options": [
-              "The porter swept patiently beneath the clock.",
-              "The platform was totally mega boring, mate.",
-              "Dusk settled over the station."
+              "I can plan it quickly and control its form",
+              "It has the shortest title",
+              "My friend chose it"
             ],
-            "answer": 1,
-            "why": "B slides into slang that clashes with the controlled, formal-neutral tone. A and C fit."
-          },
-          "note": "Mini-whiteboards. If pupils pick A or C, ask them to say what tone each sentence achieves."
+            "answer": 0,
+            "why": "Planning speed and control of form win marks."
+          }
         }
       ],
       "practice": [
-        "Rewrite 'The sky was dark and I was scared' in a formal-neutral register with one metaphor.",
-        "Add a linking phrase to join these: 'The hall was silent.' 'A door opened.'",
-        "Choose a task (description or narrative) and write its first sentence with a clear tone."
+        {
+          "q": "Choose a task from the practice set and write your two-minute reason.",
+          "a": "A choice with a reason linked to planning and form.",
+          "mins": 3,
+          "model": "Teacher's reason: '(c), because CLOSER gives me a ready structure and the shift from busy to empty gives me an evolving atmosphere.'"
+        },
+        {
+          "q": "Identify form, audience and purpose for task (a).",
+          "a": "Form: discursive essay; audience: general reader or examiner; purpose: to explore both sides and judge.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Core: Write a five-sentence description of a street at dawn, keeping one tone.",
-        "Extend: Add two different linking devices and underline them.",
-        "Stretch: Write two openings of the same scene in two contrasting tones and explain how register shifts."
+        {
+          "q": "Core: in the portal response box, plan all three tasks in three minutes each (a five-line plan for each). Starter: '(a) thesis: ...'",
+          "a": "Three five-line plans showing the different shapes: discursive, narrative, descriptive.",
+          "mins": 13,
+          "model": "(a) Thesis: indoor time is not the problem; how it is used is | for: health, nature | against: learning, family time | judgement. (b) One night, one room, the power fails | tension | crisis | climax | change. (c) Market at 6 pm, wide | stalls folding | one lantern | smells fade | empty, quiet, changed."
+        },
+        {
+          "q": "Extend: circle the plan you could write best and say why.",
+          "a": "A reasoned choice.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write the first sentence for each task.",
+          "a": "Three strong openings.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Define 'register' in your own words.",
-        "Write one linking phrase you could use between paragraphs.",
-        "Big question: how do tone and linking help your writing sound controlled?"
+        {
+          "q": "The first question to ask is...",
+          "options": [
+            "can I plan it in five minutes?",
+            "which is longest?"
+          ],
+          "a": "A) can I plan it in five minutes?",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "The one I can plan fastest and control best, even if another seems more fun.",
+          "mins": 2
+        }
       ],
-      "homework": "Choose one of the Question 5 tasks from your specimen paper. Plan it in five bullet points, naming your tone, register and the three links between paragraphs.",
-      "send": "SEND: give a paragraph frame and a link-words mat. EAL/international: pre-teach 'dusk', 'porter', 'metronome', 'signal lamps'; model the distinction between formal and informal with a two-column list. Stretch: write an extra paragraph that deliberately shifts tone and justify the shift.",
-      "n": 25,
-      "duration": 50,
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Plan three new Section C tasks from the practice bank (pupil PDF), five lines each.",
+      "send": "SEND: planning frames for each form. EAL: form, audience, purpose glossary. Stretch: plan under two minutes each."
     },
     {
       "unit": "P1-B-Q5: Paper 1 Section B: Question 5, descriptive or narrative writing",
@@ -5847,6 +6695,1144 @@
       ],
       "homework": "Independent study (weeks 4 to 6): read one nineteenth-century and one modern article on the same topic and write a comparison grid.",
       "send": "SEND: frames; extra time. EAL: glossary. Stretch: third paragraph on tone."
+    },
+    {
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 40,
+      "title": "Description: writing and improving a full descriptive piece",
+      "duration": 50,
+      "bigQuestion": "How can description change mood without a plot?",
+      "objectives": [
+        "To understand how to sustain a descriptive piece from a CLOSER plan and improve it against the AO4 and AO5 criteria"
+      ],
+      "successCriteria": [
+        "All: write a full descriptive piece from a plan",
+        "Most: evolve the atmosphere across paragraphs",
+        "Some: make three improvements using the success ladder"
+      ],
+      "keywords": [
+        {
+          "term": "cohesion",
+          "def": "how the paragraphs link together"
+        },
+        {
+          "term": "evolve",
+          "def": "change gradually"
+        },
+        {
+          "term": "AO4",
+          "def": "communication: ideas, tone, structure (20 marks in Section C)"
+        },
+        {
+          "term": "AO5",
+          "def": "accuracy: vocabulary, sentences, spelling and punctuation (10 marks)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How do you end a description that has no plot?"
+      },
+      "pictures": [
+        {
+          "find": "sunrise over mountains valley",
+          "alt": "Sunrise over a valley",
+          "for": "hook"
+        },
+        {
+          "find": "lighthouse at dusk",
+          "alt": "A lighthouse at dusk",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "CLOSER Descriptive Writing One Stop Poster (school display)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)",
+        "Teacher-written model description (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "'Rain needled the window' uses...",
+          "options": [
+            "a metaphor",
+            "a list"
+          ],
+          "a": "A) a metaphor",
+          "mins": 1
+        },
+        {
+          "q": "AO5 in Section C is worth...",
+          "options": [
+            "20 marks",
+            "10 marks"
+          ],
+          "a": "B) 10 marks",
+          "mins": 1
+        },
+        {
+          "q": "'R' in CLOSER means...",
+          "options": [
+            "Return differently",
+            "Repeat"
+          ],
+          "a": "A) Return differently",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Endings without plot",
+          "bullets": [
+            "Return to the opening image, changed",
+            "Let the light or weather shift",
+            "Close on one small detail",
+            "Avoid 'and then I woke up'"
+          ],
+          "note": "This is R in CLOSER. Ask: what has changed between the first and last paragraph?"
+        },
+        {
+          "heading": "Model: a full short description (labelled)",
+          "note": "Read aloud; pupils label C, L, O, S, E, R on the pupil PDF.",
+          "quote": {
+            "text": "[C] The lighthouse stands alone at the end of the land, white against a bruised sky.\n[L] Below it, the rocks crouch in the surf; nearer, the path is slick with spray; at my feet, a rusted gate swings on one hinge.\n[O] The gate creaks open and shut, open and shut, like something trying to speak.\n[S] Salt stings my lips. The wind smells of iron and weed.\n[E] Then the lamp wakes. A blade of light sweeps the water, and the sea, for a moment, is silver.\n[R] When the beam passes, the rocks are darker than before, but I know now that they are watched.",
+            "source": "Teacher-written model description for TGA"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "What does the final line of the model do?",
+            "options": [
+              "Returns to the opening place with a changed feeling",
+              "Starts a new story",
+              "Lists more senses"
+            ],
+            "answer": 0,
+            "why": "It closes the circle with a shift in mood: R in CLOSER."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Label the six CLOSER steps in the model and explain how the atmosphere evolves.",
+          "a": "C, L, O, S, E, R as labelled; mood moves from bleak and lonely to watched and safe.",
+          "mins": 4,
+          "model": "Find the wide view (first line), the lens moving closer (rocks, path, gate), the gate as the object, salt and iron as senses, the lamp as the change, and the return to the rocks."
+        },
+        {
+          "q": "Which single word in the model does the most work? Why?",
+          "a": "For example: 'bruised', which personifies the sky as hurt and sets a heavy mood.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a full description from your CLOSER plan ('Describe a city street after rain'), 20 minutes. Starter: 'The street...'",
+          "a": "Four to six paragraphs following CLOSER with one dominant impression and a changed return.",
+          "mins": 20,
+          "model": "Teacher writes the first two lines live: 'The street shines like a blade after the rain. Gutters gurgle, and every window is doubled in the puddles below it.'"
+        },
+        {
+          "q": "Extend: make three improvements with the success ladder (one AO4, two AO5).",
+          "a": "Three marked improvements, e.g. a stronger verb, a fixed comma splice, a varied sentence opening.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: cut ten unnecessary words.",
+          "a": "A tighter piece.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A description should end by...",
+          "options": [
+            "'I woke up'",
+            "returning, changed"
+          ],
+          "a": "B) returning, changed",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "By returning to the opening image with a changed atmosphere.",
+          "mins": 1
+        }
+      ],
+      "homework": "Finish and polish your description; highlight your best image and your best sentence.",
+      "send": "SEND: CLOSER writing frame with sentence starters. EAL: word bank for wet streets and light. Stretch: write the piece in 18 minutes."
+    },
+    {
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 41,
+      "title": "Language for effect: varied sentence forms and syntax",
+      "duration": 50,
+      "bigQuestion": "How does syntax control the reader?",
+      "objectives": [
+        "To understand how varied sentence forms and deliberate syntax control pace and emphasis in creative writing"
+      ],
+      "successCriteria": [
+        "All: use four sentence forms deliberately",
+        "Most: vary sentence openings",
+        "Some: rewrite a paragraph so its syntax matches its mood"
+      ],
+      "keywords": [
+        {
+          "term": "syntax",
+          "def": "the order and arrangement of words in a sentence"
+        },
+        {
+          "term": "fronted adverbial",
+          "def": "a phrase at the start that tells how, when or where"
+        },
+        {
+          "term": "fragment",
+          "def": "an incomplete sentence used for effect"
+        },
+        {
+          "term": "pace",
+          "def": "how fast or slow writing feels to read"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How can the length of a sentence make a reader's heart beat faster?"
+      },
+      "pictures": [
+        {
+          "find": "running water stream rocks",
+          "alt": "Water rushing over rocks",
+          "for": "hook"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch, for pace",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "Creative Writing STASS, APPS, TCCC Framework A3 and the school's Complete Creative and Descriptive Writing Framework (school display)",
+        "Year 10 grammar and accuracy booklet (portal, sentence forms)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "'The fog swallowed the street' uses...",
+          "options": [
+            "a list",
+            "personification"
+          ],
+          "a": "B) personification",
+          "mins": 1
+        },
+        {
+          "q": "A precise verb usually replaces...",
+          "options": [
+            "a vague verb plus adverb",
+            "a noun"
+          ],
+          "a": "A) a vague verb plus adverb",
+          "mins": 1
+        },
+        {
+          "q": "Overwriting loses...",
+          "options": [
+            "nothing",
+            "clarity"
+          ],
+          "a": "B) clarity",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sentence forms and their jobs",
+          "note": "Read each aloud.",
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "Effect"
+            ],
+            "rows": [
+              [
+                "Short simple",
+                "The door opened.",
+                "tension, shock"
+              ],
+              [
+                "Long cumulative",
+                "The corridor stretched ahead, lined with doors, each one closed, each one silent.",
+                "builds dread, slows pace"
+              ],
+              [
+                "Fragment",
+                "Nothing.",
+                "sudden emphasis"
+              ],
+              [
+                "Question",
+                "Who had left the light on?",
+                "mystery"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Varying openings",
+          "bullets": [
+            "Fronted adverbial: 'Without warning, ...'",
+            "Verb: 'Shivering, she...'",
+            "Prepositional: 'Beneath the stairs, ...'",
+            "Avoid three sentences starting 'I' or 'The'"
+          ],
+          "note": "Pupils check one paragraph of their own: how many sentences start with 'I' or 'The'?"
+        },
+        {
+          "heading": "Model: syntax that matches mood",
+          "note": "Rewrite a calm paragraph into a tense one.",
+          "model": {
+            "problem": "Make it tense: 'I walked down the corridor and I heard a noise and I stopped and I turned around and there was nothing there.'",
+            "steps": [
+              "Cut the 'and' chain into separate sentences",
+              "Use a long sentence to build the corridor",
+              "Use short sentences at the noise",
+              "End on a fragment"
+            ],
+            "answer": "The corridor stretched ahead, lined with doors, each one closed. Then a sound. I stopped. Turned. Nothing."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which version builds the most tension?",
+            "options": [
+              "There was nothing there when I turned.",
+              "I turned. Nothing. Only the hum of the lights.",
+              "I turned around and there was nothing there except the lights which were humming."
+            ],
+            "answer": 1,
+            "why": "Short forms and a fragment slow the moment and create suspense."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rewrite with varied openings: 'I opened the gate. I walked up the path. I knocked on the door.'",
+          "a": "For example: Pushing the gate open, I crept up the path. At the door, I hesitated. Then I knocked.",
+          "mins": 3,
+          "model": "Change the first to a verb opening ('Pushing the gate open, I...'), the second to a prepositional opening ('At the door, ...'), and make the last short for tension ('Then I knocked.')."
+        },
+        {
+          "q": "Write a three-sentence moment that goes long, short, fragment.",
+          "a": "For example: The rain had been falling for hours, filling the gutters and drumming on every roof. It stopped. Silence.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a 150-word moment of tension (a power cut at home) using all four forms and three different openings. Starter: 'Without warning, ...'",
+          "a": "A tense paragraph with deliberate syntax: long build, short sentences and a fragment at the peak.",
+          "mins": 12,
+          "model": "Without warning, the house went dark. The fridge stopped humming, the clock on the oven blinked out, and the whole street outside seemed to hold its breath. I waited. Somewhere upstairs, a door clicked. Who else was home? Nobody. Nobody should be."
+        },
+        {
+          "q": "Extend: mark each sentence form in the margin.",
+          "a": "Forms labelled.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain one deliberate syntax choice in a sentence.",
+          "a": "For example: The fragment 'Nobody.' isolates the fear.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A fragment is used for...",
+          "options": [
+            "sudden emphasis",
+            "long explanation"
+          ],
+          "a": "A) sudden emphasis",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Short sentences speed the reader up and make each beat land like a heartbeat.",
+          "mins": 2
+        }
+      ],
+      "homework": "Redraft your Week 1 description, varying sentence forms and openings in every paragraph.",
+      "send": "SEND: sentence form cards with colour codes. EAL: list of fronted adverbials. Stretch: use a long cumulative sentence to slow a moment of calm."
+    },
+    {
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 42,
+      "title": "Section C: planning under time",
+      "duration": 50,
+      "bigQuestion": "Why does a good plan matter in an exam?",
+      "objectives": [
+        "To understand how a fast, structured plan leads to a coherent piece under exam conditions"
+      ],
+      "successCriteria": [
+        "All: write a five-line plan in five minutes",
+        "Most: build paragraph-by-paragraph progression into the plan",
+        "Some: use the plan to write a strong first paragraph"
+      ],
+      "keywords": [
+        {
+          "term": "plan",
+          "def": "brief notes that shape an answer before writing"
+        },
+        {
+          "term": "coherent",
+          "def": "logical and well connected"
+        },
+        {
+          "term": "progression",
+          "def": "how the piece moves forward paragraph by paragraph"
+        },
+        {
+          "term": "discursive",
+          "def": "exploring different views on a topic"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is time spent planning time lost from writing?"
+      },
+      "pictures": [
+        {
+          "find": "architect blueprint plan",
+          "alt": "An architect's plan",
+          "for": "hook"
+        },
+        {
+          "find": "kitchen timer",
+          "alt": "A kitchen timer",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "Section C practice task bank (teacher-written titles, pupil PDF)",
+        "Creative Writing STASS, APPS, TCCC Framework A3 and the school's Complete Creative and Descriptive Writing Framework (school display)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Choose a task you can plan in...",
+          "options": [
+            "five minutes",
+            "twenty minutes"
+          ],
+          "a": "A) five minutes",
+          "mins": 1
+        },
+        {
+          "q": "A discursive piece needs...",
+          "options": [
+            "a plot",
+            "both sides and a judgement"
+          ],
+          "a": "B) both sides and a judgement",
+          "mins": 1
+        },
+        {
+          "q": "Register means...",
+          "options": [
+            "level of formality",
+            "length"
+          ],
+          "a": "A) level of formality",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three plan shapes",
+          "note": "Learn the shapes, not the content.",
+          "table": {
+            "head": [
+              "Form",
+              "Five lines"
+            ],
+            "rows": [
+              [
+                "Discursive",
+                "thesis | point for | point for | point against and rebuttal | judgement"
+              ],
+              [
+                "Narrative",
+                "hook | tension | crisis | slowed climax | change"
+              ],
+              [
+                "Descriptive",
+                "wide | lead the lens | object | senses | return, changed"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: a plan in five minutes",
+          "note": "Timer on the screen. Teacher plans aloud.",
+          "model": {
+            "problem": "Task: 'Write a story with the title The Storm.'",
+            "steps": [
+              "Hook: the lights flicker; Gran's radio goes silent",
+              "Tension: the river at the end of the garden is rising",
+              "Crisis: the neighbour's elderly cat is stranded",
+              "Climax (slowed): wading out, the water at the knees",
+              "Change: the boy who hated getting wet is the one who went"
+            ],
+            "answer": "A narrative plan in five minutes, small and controlled."
+          }
+        },
+        {
+          "heading": "From plan to paragraph",
+          "bullets": [
+            "Each line becomes one paragraph",
+            "First line: hook, never 'One day'",
+            "Vary paragraph length",
+            "Leave space for the ending"
+          ],
+          "note": "Show how the first plan line becomes the opening paragraph."
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "What does a plan mostly protect?",
+            "options": [
+              "Spelling",
+              "Handwriting",
+              "Structure and coherence (AO4)"
+            ],
+            "answer": 2,
+            "why": "Planning secures the piece's shape; accuracy needs proofreading."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Five minutes, timed: plan 'Describe a school corridor after everyone has gone home.'",
+          "a": "A five-line descriptive plan.",
+          "mins": 5,
+          "model": "Wide: the corridor stretches, lights on timers | Lens: lockers, a noticeboard, one open classroom door | Object: a forgotten scarf on a peg | Senses: floor polish, the hum of a drinks machine | Return: lights click off one by one; the scarf still there."
+        },
+        {
+          "q": "Swap and check a partner's plan against the shape.",
+          "a": "Feedback on missing steps.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, plan 'Schools should replace homework with reading.' Discuss (5 minutes), then write the first two paragraphs (12 minutes). Starter: 'Homework divides opinion...'",
+          "a": "A discursive plan and an opening that states a thesis and makes the first point.",
+          "mins": 17,
+          "model": "Plan: thesis: reading builds more than worksheets | for: vocabulary and empathy | for: choice motivates | against: practice is needed in maths | judgement: a balance. Opening: 'Homework divides opinion like few other school rules, yet the real question is not whether pupils work at home, but what kind of work is worth their evening.'"
+        },
+        {
+          "q": "Extend: check each paragraph follows your plan.",
+          "a": "Plan and paragraphs match.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: cut your plan to five words per line.",
+          "a": "A tighter plan.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A five-line plan takes about...",
+          "options": [
+            "twenty minutes",
+            "five minutes"
+          ],
+          "a": "B) five minutes",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "No: five minutes of planning saves time and protects structure.",
+          "mins": 1
+        }
+      ],
+      "homework": "Plan two more Section C tasks (one of each form you have not yet planned) in five minutes each.",
+      "send": "SEND: three plan templates. EAL: discourse markers for discursive writing. Stretch: plan in three minutes."
+    },
+    {
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 43,
+      "title": "Section C: editing and redrafting under time",
+      "duration": 50,
+      "bigQuestion": "How can five minutes of editing raise my mark?",
+      "objectives": [
+        "To understand how to edit a draft efficiently to raise both AO4 and AO5 marks"
+      ],
+      "successCriteria": [
+        "All: use a five-minute editing routine",
+        "Most: make high-value edits (verbs, openings, splices)",
+        "Some: redraft one paragraph to reach the next level"
+      ],
+      "keywords": [
+        {
+          "term": "edit",
+          "def": "improve a draft by changing words and sentences"
+        },
+        {
+          "term": "redraft",
+          "def": "rewrite a section to improve it"
+        },
+        {
+          "term": "proofread",
+          "def": "check for and correct errors"
+        },
+        {
+          "term": "high-value edit",
+          "def": "a small change that gains marks"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had five spare minutes at the end of the exam, how would you use them?"
+      },
+      "pictures": [
+        {
+          "find": "pencil eraser shavings",
+          "alt": "A pencil and eraser",
+          "for": "keywords"
+        },
+        {
+          "find": "polished stone smooth",
+          "alt": "A polished stone",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)",
+        "Practice draft for editing (pupil PDF)",
+        "Personal error log (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "A plan mainly protects...",
+          "options": [
+            "spelling",
+            "structure"
+          ],
+          "a": "B) structure",
+          "mins": 1
+        },
+        {
+          "q": "Each plan line becomes...",
+          "options": [
+            "a paragraph",
+            "a word"
+          ],
+          "a": "A) a paragraph",
+          "mins": 1
+        },
+        {
+          "q": "'Should of' should be...",
+          "options": [
+            "should off",
+            "should have"
+          ],
+          "a": "B) should have",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The five-minute routine",
+          "note": "In this order.",
+          "cycle": [
+            "Read the first and last lines: strong?",
+            "Hunt comma splices",
+            "Check apostrophes and homophones",
+            "Swap two weak verbs",
+            "Add one paragraph break if needed"
+          ]
+        },
+        {
+          "heading": "High-value edits",
+          "note": "Small change, big gain.",
+          "table": {
+            "head": [
+              "Edit",
+              "Before",
+              "After"
+            ],
+            "rows": [
+              [
+                "Verb",
+                "went quickly",
+                "darted"
+              ],
+              [
+                "Opening",
+                "I walked in.",
+                "Cold air met me at the door."
+              ],
+              [
+                "Splice",
+                "It was late, I was tired.",
+                "It was late; I was tired."
+              ],
+              [
+                "Ending",
+                "Then I went home.",
+                "Behind me, the lights clicked off."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: redrafting a paragraph",
+          "note": "Live edit.",
+          "model": {
+            "problem": "Redraft: 'The market was closing, the people were leaving and it was getting dark and the stalls were empty.'",
+            "steps": [
+              "Fix the splice",
+              "Replace 'people were leaving' with a precise image",
+              "Vary sentence length",
+              "End on one detail"
+            ],
+            "answer": "The market was closing. Stallholders folded their awnings like tired wings, and the light drained from the square. One lantern swung on its hook. Then that, too, went out."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which edit gains most in five minutes?",
+            "options": [
+              "Fixing three comma splices",
+              "Copying the piece out neatly",
+              "Adding a title"
+            ],
+            "answer": 0,
+            "why": "Fixing splices raises AO5 at once; the others gain nothing."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Five-minute routine on the practice draft (pupil PDF).",
+          "a": "Edits marked: splices fixed, two verbs swapped, apostrophes corrected, a paragraph break added.",
+          "mins": 5,
+          "model": "Teacher does the first two steps aloud: 'First line: \"It was a normal day\": weak. Swap: \"Nothing about the morning warned me.\" Splice in line 3: change the comma to a full stop.'"
+        },
+        {
+          "q": "Name the three highest-value edits you made.",
+          "a": "Three edits with the mark they protect.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, redraft the middle paragraph of your description or story (from Weeks 1 to 3) to reach the next level on the success ladder. Starter: paste the paragraph, then improve it.",
+          "a": "A redraft with precise verbs, varied sentences, no splices and a stronger final line.",
+          "mins": 14,
+          "model": "Before: 'The street was wet and it was shiny and the cars was going past.' After: 'Rain had polished the street to a black mirror. Cars hissed past, dragging their lights through the puddles.'"
+        },
+        {
+          "q": "Extend: explain which level your paragraph now reaches and why.",
+          "a": "A level with evidence from the ladder.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: redraft the ending as well.",
+          "a": "A stronger ending.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Proofreading checks...",
+          "options": [
+            "errors",
+            "the plan"
+          ],
+          "a": "A) errors",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Run the five-minute routine: splices, apostrophes, verbs, first and last lines.",
+          "mins": 2
+        }
+      ],
+      "homework": "Prepare for the timed piece: learn the three plan shapes and the five-minute editing routine.",
+      "send": "SEND: editing checklist card. EAL: list of precise verbs to swap in. Stretch: redraft in 10 minutes instead of 14."
+    },
+    {
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 44,
+      "title": "Timed Section C piece (45 minutes)",
+      "duration": 50,
+      "bigQuestion": "Can I write my best piece in 45 minutes?",
+      "objectives": [
+        "To understand how well I can choose, plan, write and edit a Section C piece independently in 45 minutes"
+      ],
+      "successCriteria": [
+        "All: choose and plan within seven minutes",
+        "Most: write a complete, controlled piece",
+        "Some: leave five minutes to edit and proofread"
+      ],
+      "keywords": [
+        {
+          "term": "exam conditions",
+          "def": "silent, timed, independent work"
+        },
+        {
+          "term": "stamina",
+          "def": "keeping quality high for the whole time"
+        },
+        {
+          "term": "proofread",
+          "def": "check for and correct errors"
+        },
+        {
+          "term": "independent",
+          "def": "without help"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What will you do in the first two minutes after you see the three tasks?"
+      },
+      "pictures": [
+        {
+          "find": "quiet desk with paper and pen",
+          "alt": "A quiet desk ready for writing",
+          "for": "hook"
+        },
+        {
+          "find": "hourglass",
+          "alt": "An hourglass",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "independent": "hands-down"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "Timed Section C task card (three teacher-written titles, pupil PDF)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)",
+        "Access arrangement cards (SENCo)"
+      ],
+      "starter": [
+        {
+          "q": "Plan time is about...",
+          "options": [
+            "5 minutes",
+            "15 minutes"
+          ],
+          "a": "A) 5 minutes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Today's three tasks",
+          "bullets": [
+            "(a) 'Everyone should learn to cook before leaving school.' Discuss.",
+            "(b) Write a story that begins: 'Nobody had opened the gate for years.'",
+            "(c) Describe a road during the first snow of winter."
+          ],
+          "note": "Original practice titles in the 4EB1 Section C style. Exam conditions start now: silence, no help, portal or paper. Writing time is 30 minutes to fit the lesson (the exam allows about 33)."
+        },
+        {
+          "heading": "Timing",
+          "note": "Timer on the screen.",
+          "table": {
+            "head": [
+              "Step",
+              "Minutes"
+            ],
+            "rows": [
+              [
+                "Choose",
+                "2"
+              ],
+              [
+                "Plan",
+                "5"
+              ],
+              [
+                "Write",
+                "33"
+              ],
+              [
+                "Edit and proofread",
+                "5"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Before you start",
+          "bullets": [
+            "Choose the task you can plan fastest",
+            "Plan in five lines",
+            "Watch for comma splices",
+            "Leave five minutes to edit"
+          ],
+          "note": "Start the timer."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Choose your task and write a five-line plan (7 minutes).",
+          "a": "A choice and a five-line plan in the right shape.",
+          "mins": 6,
+          "model": "Teacher's reminder only: 'Two minutes to choose, five to plan. Use the shape for your form.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam conditions, 30 minutes): write your Section C piece in the portal response box or on paper.",
+          "a": "A complete piece in the chosen form with controlled structure and accurate writing (marked with the 4EB1 Section C criteria).",
+          "mins": 30,
+          "model": "No model during the timed piece; a model answer is shared in the feedback lesson."
+        },
+        {
+          "q": "Edit and proofread with the five-minute routine.",
+          "a": "Corrections made neatly.",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "One word in the chat: how did the timing feel?",
+          "a": "An honest word.",
+          "mins": 1
+        }
+      ],
+      "homework": "No homework: rest. Bring your error log to the feedback lesson.",
+      "send": "SEND: access arrangements as agreed (extra time, word processor). EAL: task vocabulary list allowed. Stretch: aim to finish writing with seven minutes to edit."
+    },
+    {
+      "unit": "Spring 2: Narrative and descriptive writing",
+      "n": 45,
+      "title": "Self-assessment against the mark scheme and DIRT",
+      "duration": 50,
+      "bigQuestion": "What is my next step as a writer?",
+      "objectives": [
+        "To understand where my timed Section C piece sits on the AO4 and AO5 levels and what will raise it"
+      ],
+      "successCriteria": [
+        "All: self-assess my piece against the success ladder",
+        "Most: compare it with a top-level model",
+        "Some: redraft one paragraph and set one target"
+      ],
+      "smsc": "Moral: honest self-assessment and perseverance",
+      "keywords": [
+        {
+          "term": "self-assessment",
+          "def": "judging your own work against criteria"
+        },
+        {
+          "term": "DIRT",
+          "def": "dedicated improvement and reflection time"
+        },
+        {
+          "term": "target",
+          "def": "the one thing to do better next time"
+        },
+        {
+          "term": "model answer",
+          "def": "an example of a top-level piece"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is harder: spotting what is good in your writing or what is weak?"
+      },
+      "pictures": [
+        {
+          "find": "mirror reflection lake",
+          "alt": "A lake reflecting the sky",
+          "for": "hook"
+        },
+        {
+          "find": "staircase steps",
+          "alt": "Steps, for levels",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 English Language (creative writing), mapped to 4EB1 Section C",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section C)",
+        "4EB1 Section C success ladder: AO4 (20 marks) and AO5 (10 marks) in student-friendly words (pupil PDF)",
+        "Marked timed Section C pieces (teacher marking)",
+        "Teacher-written top-level model (pupil PDF)",
+        "Personal error log (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "AO5 rewards...",
+          "options": [
+            "the plot",
+            "accuracy and range"
+          ],
+          "a": "B) accuracy and range",
+          "mins": 1
+        },
+        {
+          "q": "Edit time in Section C is...",
+          "options": [
+            "about 5 minutes",
+            "none"
+          ],
+          "a": "A) about 5 minutes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Top-level model opening (task c)",
+          "note": "Read aloud; pupils annotate what makes it top level.",
+          "quote": {
+            "text": "The snow came in the night, quietly, as if it did not want to wake anyone. By morning the road had vanished. Where there had been tarmac, potholes and the grey scar of a patched-up trench, there was only white, smooth as a page nobody had written on.\n\nNothing moved. Then, far off, a single car crept round the bend, its tyres whispering, leaving two dark lines behind it like the first words of a sentence.",
+            "source": "Teacher-written model for TGA (Section C, task c)"
+          }
+        },
+        {
+          "heading": "What makes it top level",
+          "note": "Build the list with the class.",
+          "diagram": {
+            "centre": "Top-level features",
+            "items": [
+              "One sustained image (the page)",
+              "Controlled shift: still to moving",
+              "Precise verbs: crept, whispering",
+              "Varied sentences: 'Nothing moved.'",
+              "Accurate punctuation",
+              "An ending that echoes the opening"
+            ]
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "What is the strongest feature of the model?",
+            "options": [
+              "Its length",
+              "The number of adjectives",
+              "A sustained image that carries the whole piece"
+            ],
+            "answer": 2,
+            "why": "The page image links opening and ending; length and adjectives are not the point."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Self-assess your timed piece: one AO4 level and one AO5 level, each with a reason.",
+          "a": "Levels with evidence from the piece and the ladder.",
+          "mins": 4,
+          "model": "Teacher models with an anonymous piece: 'AO4: middle level: clear mood, but the structure drifts in paragraph 3. AO5: middle level: varied vocabulary, but four comma splices.'"
+        },
+        {
+          "q": "Find one thing the model does that your piece does not.",
+          "a": "For example: a sustained image or a short sentence for emphasis.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: DIRT in the portal response box. Redraft your weakest paragraph to reach the next level. Starter: paste the paragraph, then improve it.",
+          "a": "A redraft showing a clear AO4 or AO5 improvement.",
+          "mins": 15,
+          "model": "Before: 'The road was white and cold and snowy, it was quiet.' After: 'The road had vanished under the snow. Nothing moved. Even the wind seemed to have gone home.'"
+        },
+        {
+          "q": "Extend: write your Section C target for Summer 1.",
+          "a": "A precise target, e.g. 'One sustained image in every piece.'",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: rewrite your opening sentence to be as striking as the model's.",
+          "a": "A stronger opening.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "How confident are you with Section C now?",
+          "options": [
+            "very",
+            "quite",
+            "not yet"
+          ],
+          "a": "A) very",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Answers vary; most find weaknesses easier, so we use the ladder to see strengths too.",
+          "mins": 2
+        }
+      ],
+      "homework": "Add your target and two errors to your personal error log; read one short story or descriptive essay of your choice for the reading journal.",
+      "send": "SEND: success ladder with ticks. EAL: model annotated with vocabulary. Stretch: redraft the whole ending."
     }
   ]
 }
