@@ -167,88 +167,259 @@
       "send": "SEND/EAL: mouth-position pictures and audio. Stretch: write a tip to help another pupil with one pair."
     },
     {
-      "unit": "Unit 1: Mastering the sounds",
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
       "n": 3,
-      "title": "Letter qualities: whispered, voiced, strong, flowing",
+      "title": "Letter qualities: whispered and voiced letters (hams and jahr)",
       "duration": 45,
+      "bigQuestion": "Hold a tissue in front of your mouth and say 'at' then 'ad'. Which one moves the tissue?",
       "objectives": [
-        "Know that letters have qualities as well as places",
-        "Name the whispered letters",
-        "Name the strong (stopping) letters"
+        "To understand the sifat of hams (whispered, breath flows) and jahr (voiced, breath held) and hear them in recitation"
       ],
+      "successCriteria": [
+        "All: say the ten hams letters using the phrase",
+        "Most: hear the breath on a hams letter with sukoon",
+        "Some: explain why a missing breath on ت changes the sound"
+      ],
+      "crossCurricular": "Science: sound, vibration and breath (Year 4 sound)",
+      "smsc": "Spiritual: care for every detail of Allah's words",
       "keywords": [
         {
-          "term": "hams",
-          "def": "a whispered letter: breath continues"
+          "term": "sifat (صفات)",
+          "def": "the qualities of a letter's sound (singular sifah)"
         },
         {
-          "term": "jahr",
-          "def": "a voiced letter: breath is held"
+          "term": "hams (همس)",
+          "def": "whispered: the breath flows with the letter"
         },
         {
-          "term": "shiddah",
-          "def": "a letter where the sound stops"
+          "term": "jahr (جهر)",
+          "def": "voiced: the breath is held back"
+        },
+        {
+          "term": "makhraj (مخرج)",
+          "def": "where a letter is made"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Hold a tissue in front of your mouth and say 'at' then 'ad'. Which one moves the tissue?",
+        "a": "'At' (ت) lets a little breath out: hams. 'Ad' (د) holds the breath: jahr."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation (tartil)' (Al-Muzzammil 73:4). Knowing each letter's qualities is part of reciting it as it was revealed.",
+        "at": "start"
+      },
       "starter": [
-        "Name the five makharij areas.",
-        "Which letters are heavy?",
-        "Say ث and س."
+        {
+          "q": "Recite Al-Inshiqaq 84:2 in your head. How does the next ayah begin?",
+          "a": "وَإِذَا ٱلْأَرْضُ",
+          "mins": 1,
+          "options": [
+            "وَٱللَّهُ أَعْلَمُ",
+            "يَٰٓأَيُّهَا ٱلْإِنسَٰنُ",
+            "وَإِذَا ٱلْأَرْضُ"
+          ]
+        },
+        {
+          "q": "Which letters come from the lips?",
+          "a": "ب م و ف",
+          "mins": 1,
+          "options": [
+            "ب م و ف",
+            "ء ه",
+            "ق ك"
+          ]
+        },
+        {
+          "q": "Where does ghunnah come from?",
+          "a": "The nose",
+          "mins": 1,
+          "options": [
+            "The nose",
+            "The throat",
+            "The lips"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Place and quality",
+          "heading": "What are sifat?",
           "bullets": [
-            "Makhraj: the place of a letter",
-            "Sifat: the quality of the sound",
-            "Both together make a letter correct"
+            "Makhraj: where a letter is made",
+            "Sifah: how it sounds there",
+            "Two letters, same place, different sifat: ت and د"
           ],
-          "note": "Use an analogy: two instruments can be played in the same room but sound different. Tajweed teaches both place and quality. Today: three qualities."
+          "note": "Bismillah. Pupils learned makharij in Year 5. Sifat tell us the quality: whispered or voiced, strong or flowing, raised or lowered."
         },
         {
-          "heading": "Whispered letters",
-          "bullets": [
-            "فَحَثَّهُ شَخْصٌ سَكَتْ",
-            "10 letters: ف ح ث ه ش خ ص س ك ت",
-            "Breath flows with these letters"
-          ],
-          "note": "Teach the phrase and the ten letters. Pupils say ت and ث with a hand in front of the mouth to feel breath. The other letters are voiced (jahr)."
+          "heading": "Hams and jahr",
+          "bullets": [],
+          "note": "The ten hams letters are in the phrase فَحَثَّهُ شَخْصٌ سَكَتَ. All other letters are jahr.",
+          "compare": {
+            "left": {
+              "title": "Hams (همس): whispered",
+              "points": [
+                "Breath flows out",
+                "ف ح ث ه ش خ ص س ك ت",
+                "فَحَثَّهُ شَخْصٌ سَكَتَ"
+              ]
+            },
+            "right": {
+              "title": "Jahr (جهر): voiced",
+              "points": [
+                "Breath is held back",
+                "All the other 19 letters",
+                "For example: د ب ج"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Strong letters",
-          "bullets": [
-            "أَجِدُكَ قَطَبْتَ",
-            "8 letters: أ ج د ق ط ب ك ت",
-            "The sound stops fully"
-          ],
-          "note": "Teach the phrase and the eight letters. Contrast ب (stop) with ف (flowing). Pupils say 'ba' and 'fa' and hear the difference. Link to qalqalah letters: five of them are in this group."
+          "heading": "Hear it in Al-Inshiqaq",
+          "bullets": [],
+          "note": "A hams letter with sukoon, especially ت and ك, needs a little breath. Model ٱنشَقَّتْ with and without.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Letter",
+              "Quality"
+            ],
+            "rows": [
+              [
+                "ٱنشَقَّتْ",
+                "Al-Inshiqaq 84:1",
+                "ت with sukoon",
+                "Hams: a little breath"
+              ],
+              [
+                "وَحُقَّتْ",
+                "Al-Inshiqaq 84:2",
+                "ت with sukoon",
+                "Hams: a little breath"
+              ],
+              [
+                "كَدْحًۭا",
+                "Al-Inshiqaq 84:6",
+                "د with sukoon",
+                "Jahr: breath held, bounce (qalqalah)"
+              ],
+              [
+                "ٱلسَّمَآءُ",
+                "Al-Inshiqaq 84:1",
+                "س",
+                "Hams: breath flows"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Apply",
-          "bullets": [
-            "Say فَ  /  بَ",
-            "Say سَ  /  دَ",
-            "Name hamsing or voiced",
-            "Name stop or flow"
-          ],
-          "note": "Quick-fire drill: teacher says a letter; pupils say whispered or voiced, stop or flow. Keep the pace playful and then slow down for accuracy."
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "Without the breath, ت can sound like د.",
+          "misconception": {
+            "wrong": "inshaqqad: the final ت closed with no breath",
+            "right": "inshaqqat: a light breath after the ت"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which letter is hams (whispered)?",
+            "options": [
+              "س",
+              "د",
+              "ب"
+            ],
+            "answer": 0,
+            "why": "س is in فَحَثَّهُ شَخْصٌ سَكَتَ. د and ب are jahr."
+          }
         }
       ],
       "practice": [
-        "Name three whispered letters.",
-        "Is ب strong (stopping) or flowing?"
+        {
+          "q": "Say «وَحُقَّتْ» (84:2) and show the breath on the ت.",
+          "a": "wa huq-qat: a light breath after the final ت (hams).",
+          "mins": 3,
+          "model": "I do: I hold a tissue up. وَحُقَّ: the qaf is strong and heavy. تْ: I stop the sound and let a light breath out: the tissue moves."
+        },
+        {
+          "q": "How many hams letters?",
+          "a": "10",
+          "mins": 1,
+          "options": [
+            "10",
+            "7",
+            "19"
+          ]
+        }
       ],
       "independent": [
-        "Sort the 28 letters in a table: whispered/voiced",
-        "Place the eight strong letters in a list and say each aloud",
-        "Read Al-Falaq and mark whispered letters in ayah 1"
+        {
+          "q": "Tissue test (pupil PDF): say 10 letters with sukoon (اَتْ اَدْ اَسْ ...) and write H or J for each. Today's rota group recites 84:1 to 5 in turn.",
+          "a": "Hams: ت س ك ف ه ش ح; jahr: د ب ج (from the list on the sheet).",
+          "mins": 8,
+          "model": "The teacher does the first: 'at': the tissue moves, so H."
+        },
+        {
+          "q": "Extend: write the hams phrase from memory.",
+          "a": "فَحَثَّهُ شَخْصٌ سَكَتَ",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: ت and د are made in the same place. What makes them different?",
+          "a": "ت is hams (breath flows); د is jahr (breath held).",
+          "mins": 2
+        }
       ],
       "exit": [
-        "How many whispered letters are there?",
-        "What is the phrase for strong letters?"
+        {
+          "q": "ت with sukoon needs ...",
+          "a": "a light breath",
+          "mins": 1,
+          "options": [
+            "a light breath",
+            "a bounce",
+            "a hum"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Hold a tissue in front of your mouth and say 'at' then 'ad'. Which one moves the tissue?",
+          "a": "'At' (ت) lets a little breath out: hams. 'Ad' (د) holds the breath: jahr.",
+          "mins": 2
+        }
       ],
-      "homework": "Say the two memory phrases to a family member and demonstrate one letter from each.",
-      "send": "SEND/EAL: colour-coded letter chart. Stretch: find a letter that is both whispered and strong (ت ك)."
+      "homework": "Do the tissue test with a parent for the ten hams letters, then recite 84:1 to 5; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Letter qualities rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Recitation with beauty and care",
@@ -650,6 +821,2355 @@
       ],
       "homework": "Follow your plan for a week and record how many days you revised.",
       "send": "SEND/EAL: visual planner and audio recordings. Stretch: design a revision poster for younger pupils."
+    },
+    {
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
+      "n": 9,
+      "title": "Surat Al-Inshiqaq 84:1-5: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "What would it look like if the sky split open? Why does the Qur'an describe the Day of Judgement so vividly?",
+      "objectives": [
+        "To memorise Al-Inshiqaq 84:1-5 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 84:1-5 after the teacher, word for word",
+        "Most: recite 84:1-5 from memory with no more than one prompt",
+        "Some: link 84:1-5 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: the sky and the earth obey Allah; we choose to obey Him too",
+      "keywords": [
+        {
+          "term": "Al-Inshiqaq (الانشقاق)",
+          "def": "the splitting open"
+        },
+        {
+          "term": "adhinat (أذنت)",
+          "def": "listened and obeyed"
+        },
+        {
+          "term": "muddat (مدت)",
+          "def": "was spread out"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would it look like if the sky split open? Why does the Qur'an describe the Day of Judgement so vividly?",
+        "a": "So that we remember it and prepare: the sky and the earth obey their Lord on that Day (84:1 to 5)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'When the sky has split open, and has listened to its Lord and was obligated' (Al-Inshiqaq 84:1 to 2). The whole creation obeys Allah; we choose to obey Him now.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «وَٱلسَّمَآءِ ذَاتِ ...»?",
+          "a": "Al-Burooj",
+          "mins": 1,
+          "options": [
+            "At-Tariq",
+            "Al-A'la",
+            "Al-Burooj"
+          ]
+        },
+        {
+          "q": "Where is ع made?",
+          "a": "The middle of the throat",
+          "mins": 1,
+          "options": [
+            "The middle of the throat",
+            "The lips",
+            "The nose"
+          ]
+        },
+        {
+          "q": "«بِسْمِ ٱللَّهِ»: the laam is ...",
+          "a": "light",
+          "mins": 1,
+          "options": [
+            "light",
+            "heavy"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Inshiqaq 84:1-5",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 84:1-5 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "إِذَا ٱلسَّمَآءُ ٱنشَقَّتْ (١) وَأَذِنَتْ لِرَبِّهَا وَحُقَّتْ (٢) وَإِذَا ٱلْأَرْضُ مُدَّتْ (٣) وَأَلْقَتْ مَا فِيهَا وَتَخَلَّتْ (٤) وَأَذِنَتْ لِرَبِّهَا وَحُقَّتْ (٥)",
+            "source": "Surat Al-Inshiqaq, 84:1-5"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "84:1",
+                "When the sky has split [open]"
+              ],
+              [
+                "84:2",
+                "And has responded to its Lord and was obligated [to do so]"
+              ],
+              [
+                "84:3",
+                "And when the earth has been extended"
+              ],
+              [
+                "84:4",
+                "And has cast out that within it and relinquished [it]"
+              ],
+              [
+                "84:5",
+                "And has responded to its Lord and was obligated [to do so] -"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "ٱنشَقَّتْ",
+                "Al-Inshiqaq 84:1",
+                "Ikhfa: ش",
+                "Light hidden noon; the ت at the end breathes out"
+              ],
+              [
+                "مُدَّتْ",
+                "Al-Inshiqaq 84:3",
+                "Shaddah on د",
+                "Press the daal: mud-dat, breath on the final ت"
+              ],
+              [
+                "ٱلسَّمَآءُ",
+                "Al-Inshiqaq 84:1",
+                "Sun letter: س",
+                "as-samaa'u: the laam is not said"
+              ],
+              [
+                "لِرَبِّهَا",
+                "Al-Inshiqaq 84:2",
+                "Raa with fathah: heavy",
+                "li-rab-bihaa, full raa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 84:1-5 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "84:2 says the sky ... its Lord.",
+            "options": [
+              "listened to and obeyed",
+              "ignored",
+              "hid from"
+            ],
+            "answer": 0,
+            "why": "84:2: 'and has listened to its Lord and was obligated', meaning it obeyed."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Inshiqaq 84:1-5 together, ayah by ayah.",
+          "a": "The class recites 84:1-5 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 84:1-5. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "Which ayah repeats 84:2 word for word?",
+          "a": "84:5",
+          "mins": 1,
+          "options": [
+            "84:5",
+            "84:3",
+            "84:4"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 84:1-5 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "On the pupil PDF, write what the earth does in 84:3 to 4.",
+          "a": "It is spread out, throws out what is in it and becomes empty.",
+          "mins": 2
+        },
+        {
+          "q": "84:2 and 84:5 are the same words. How can a repeated ayah help or trick your memory?",
+          "a": "It helps (one ayah learned twice) but can trick you into skipping 84:3 to 4; link 84:4 to 84:5 carefully.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Inshiqaq 84:3: «وَإِذَا ٱلْأَرْضُ ...» Which word comes next?",
+          "a": "مُدَّتْ",
+          "mins": 1,
+          "options": [
+            "مُدَّتْ",
+            "وَأَمَّا",
+            "لَّن"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What would it look like if the sky split open? Why does the Qur'an describe the Day of Judgement so vividly?",
+          "a": "So that we remember it and prepare: the sky and the earth obey their Lord on that Day (84:1 to 5).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Inshiqaq 84:1-5 to a parent three times a day and revise Surahs 114 to 85 on the rota (today's group); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Inshiqaq 84:1-5 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Dramatic clouds sky",
+          "alt": "A dramatic cloudy sky",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
+      "n": 10,
+      "title": "Surat Al-Inshiqaq 84:6-10: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "Everyone is working hard towards something. 84:6 says we are all labouring towards our Lord. What does that mean for your day?",
+      "objectives": [
+        "To memorise Al-Inshiqaq 84:6-10 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 84:6-10 after the teacher, word for word",
+        "Most: recite 84:6-10 from memory with no more than one prompt",
+        "Some: link 84:6-10 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: our deeds are recorded; we try to fill our book with good",
+      "keywords": [
+        {
+          "term": "kadih (كادح)",
+          "def": "working hard, labouring"
+        },
+        {
+          "term": "kitab (كتاب)",
+          "def": "a book; here a person's record of deeds"
+        },
+        {
+          "term": "yamin (يمين)",
+          "def": "the right hand"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Everyone is working hard towards something. 84:6 says we are all labouring towards our Lord. What does that mean for your day?",
+        "a": "Every effort leads to meeting Allah; so we make our efforts good. Some will receive their book in the right hand, others behind their backs (84:7 to 10)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O mankind, indeed you are labouring toward your Lord with great exertion and will meet it' (Al-Inshiqaq 84:6). Then He describes receiving one's record in the right hand, and an easy account (84:7 to 9).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Inshiqaq 84:3 in your head. How does the next ayah begin?",
+          "a": "وَأَلْقَتْ مَا",
+          "mins": 1,
+          "options": [
+            "إِنَّهُۥ كَانَ",
+            "وَأَلْقَتْ مَا",
+            "وَٱللَّهُ أَعْلَمُ"
+          ]
+        },
+        {
+          "q": "Which letter is hams?",
+          "a": "ت",
+          "mins": 1,
+          "options": [
+            "ت",
+            "د",
+            "ج"
+          ]
+        },
+        {
+          "q": "«ٱنشَقَّتْ»: the noon is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "izhar",
+            "idgham"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Inshiqaq 84:6-10",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 84:6-10 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "يَٰٓأَيُّهَا ٱلْإِنسَٰنُ إِنَّكَ كَادِحٌ إِلَىٰ رَبِّكَ كَدْحًۭا فَمُلَٰقِيهِ (٦) فَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ بِيَمِينِهِۦ (٧) فَسَوْفَ يُحَاسَبُ حِسَابًۭا يَسِيرًۭا (٨) وَيَنقَلِبُ إِلَىٰٓ أَهْلِهِۦ مَسْرُورًۭا (٩) وَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ وَرَآءَ ظَهْرِهِۦ (١٠)",
+            "source": "Surat Al-Inshiqaq, 84:6-10"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "84:6",
+                "O mankind, indeed you are laboring toward your Lord with [great] exertion and will meet it."
+              ],
+              [
+                "84:7",
+                "Then as for he who is given his record in his right hand,"
+              ],
+              [
+                "84:8",
+                "He will be judged with an easy account"
+              ],
+              [
+                "84:9",
+                "And return to his people in happiness."
+              ],
+              [
+                "84:10",
+                "But as for he who is given his record behind his back,"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "كَادِحٌ إِلَىٰ",
+                "Al-Inshiqaq 84:6",
+                "Izhar: ء (tanween)",
+                "Clear 'un' before hamza"
+              ],
+              [
+                "كَدْحًۭا فَمُلَٰقِيهِ",
+                "Al-Inshiqaq 84:6",
+                "Ikhfa: ف",
+                "Light hum before faa"
+              ],
+              [
+                "حِسَابًۭا يَسِيرًۭا",
+                "Al-Inshiqaq 84:8",
+                "Idgham with ghunnah: ي",
+                "hisaabay-yaseeraa, hum"
+              ],
+              [
+                "مَنْ أُوتِىَ",
+                "Al-Inshiqaq 84:7",
+                "Izhar: ء",
+                "Clear noon"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 84:6-10 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "The one who receives the book in the right hand will have ...",
+            "options": [
+              "an easy account",
+              "no account",
+              "a hard account"
+            ],
+            "answer": 0,
+            "why": "84:8: 'He will be judged with an easy account'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Inshiqaq 84:6-10 together, ayah by ayah.",
+          "a": "The class recites 84:6-10 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 84:6-10. Ayah 6: 3 times looking, 3 times without looking. Then ayah 7 the same way. Then link: recite 6 and 7 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«حِسَابًۭا يَسِيرًۭا» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "ikhfa",
+            "izhar"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 84:6-10 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Write two things you can do this week that you would be happy to see in your book.",
+          "a": "For example: pray on time; help a parent without being asked.",
+          "mins": 2
+        },
+        {
+          "q": "Contrast 84:7 to 9 with 84:10 in one sentence.",
+          "a": "Some receive their record in the right hand and return happy; others receive it behind their backs.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Inshiqaq 84:8: «فَسَوْفَ يُحَاسَبُ ...» Which word comes next?",
+          "a": "حِسَابًۭا",
+          "mins": 1,
+          "options": [
+            "كَفَرُوا۟",
+            "بِهِۦ",
+            "حِسَابًۭا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Everyone is working hard towards something. 84:6 says we are all labouring towards our Lord. What does that mean for your day?",
+          "a": "Every effort leads to meeting Allah; so we make our efforts good. Some will receive their book in the right hand, others behind their backs (84:7 to 10).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Inshiqaq 84:6-10 to a parent three times a day and revise Al-Inshiqaq 84:1 to 5 and today's rota surah; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Inshiqaq 84:6-10 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Open notebook blank pages",
+          "alt": "An open book",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
+      "n": 11,
+      "title": "Strong, flowing and in-between letters (shiddah, rakhawah, tawassut)",
+      "duration": 45,
+      "bigQuestion": "Say 'ab' and 'as' and hold the end as long as you can. Which one can you hold? Why?",
+      "objectives": [
+        "To understand how the sound stops, flows or sits in between for each letter, and to hear it in recitation"
+      ],
+      "successCriteria": [
+        "All: say the eight letters of shiddah",
+        "Most: name the five in-between letters",
+        "Some: explain why qalqalah letters are both shiddah and jahr"
+      ],
+      "smsc": "Social: teaching a partner patiently, as the Prophet ﷺ praised those who teach the Qur'an",
+      "keywords": [
+        {
+          "term": "sifat (صفات)",
+          "def": "the qualities of a letter's sound (singular sifah)"
+        },
+        {
+          "term": "shiddah (شدة)",
+          "def": "strong: the sound stops at once"
+        },
+        {
+          "term": "rakhawah (رخاوة)",
+          "def": "flowing: the sound runs on"
+        },
+        {
+          "term": "tawassut (توسط)",
+          "def": "in between strong and flowing"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Say 'ab' and 'as' and hold the end as long as you can. Which one can you hold? Why?",
+        "a": "'As' flows (rakhawah); 'ab' stops at once (shiddah). Some letters sit in between, like 'al'."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The best of you are those who learn the Qur'an and teach it' (Bukhari). Learning these details helps us one day teach others correctly.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Inshiqaq 84:7 in your head. How does the next ayah begin?",
+          "a": "فَسَوْفَ يُحَاسَبُ",
+          "mins": 1,
+          "options": [
+            "وَأَذِنَتْ لِرَبِّهَا",
+            "فَسَوْفَ يُحَاسَبُ",
+            "بَلِ ٱلَّذِينَ"
+          ]
+        },
+        {
+          "q": "Hams phrase?",
+          "a": "فَحَثَّهُ شَخْصٌ سَكَتَ",
+          "mins": 1,
+          "options": [
+            "فَحَثَّهُ شَخْصٌ سَكَتَ",
+            "ابْغِ حَجَّكَ",
+            "يَرْمَلُونَ"
+          ]
+        },
+        {
+          "q": "«كَادِحٌ إِلَىٰ» is ...",
+          "a": "izhar",
+          "mins": 1,
+          "options": [
+            "izhar",
+            "ikhfa",
+            "iqlab"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three ways a sound ends",
+          "bullets": [],
+          "note": "Bismillah. Say each with a sukoon after a hamza: أَبْ, أَسْ, أَلْ.",
+          "table": {
+            "head": [
+              "Quality",
+              "What happens",
+              "Letters"
+            ],
+            "rows": [
+              [
+                "Shiddah (شدة): strong",
+                "Sound stops at once",
+                "أَجِدْ قَطٍ بَكَتْ: أ ج د ق ط ب ك ت"
+              ],
+              [
+                "Tawassut (توسط): in between",
+                "Sound flows a little",
+                "لِنْ عُمَرْ: ل ن ع م ر"
+              ],
+              [
+                "Rakhawah (رخاوة): flowing",
+                "Sound flows on",
+                "All the others, for example س ش ف"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Why qalqalah bounces",
+          "bullets": [
+            "Qalqalah letters: ق ط ب ج د",
+            "They are shiddah: sound stops",
+            "And jahr: breath held",
+            "So we release them with a bounce"
+          ],
+          "note": "This links Year 2 qalqalah to the sifat. ك and ت are shiddah but hams, so they release with breath, not a bounce."
+        },
+        {
+          "heading": "In Al-Inshiqaq",
+          "bullets": [],
+          "note": "Read each word; pupils say strong, flowing or in between.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Letter with sukoon",
+              "Quality"
+            ],
+            "rows": [
+              [
+                "كَدْحًۭا",
+                "Al-Inshiqaq 84:6",
+                "د",
+                "Shiddah + jahr: bounce"
+              ],
+              [
+                "يَدْعُوا۟",
+                "Al-Inshiqaq 84:11",
+                "د",
+                "Shiddah + jahr: bounce"
+              ],
+              [
+                "أُقْسِمُ",
+                "Al-Inshiqaq 84:16",
+                "ق",
+                "Shiddah + jahr: bounce"
+              ],
+              [
+                "ٱلسَّمَآءُ",
+                "Al-Inshiqaq 84:1",
+                "س (with vowel)",
+                "Rakhawah: flows"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "Adding a vowel after a qalqalah letter.",
+          "misconception": {
+            "wrong": "uq-sima: a little 'a' added after the qaf",
+            "right": "uqsimu: a short bounce on ق, no added vowel"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which letter is in between (tawassut)?",
+            "options": [
+              "ن",
+              "ب",
+              "س"
+            ],
+            "answer": 0,
+            "why": "ن is in لِنْ عُمَرْ. ب is strong (shiddah); س is flowing (rakhawah)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read «يَدْعُوا۟ ثُبُورًۭا» (84:11) and name the quality of the د.",
+          "a": "د with sukoon is shiddah and jahr, so it bounces: yad'oo.",
+          "mins": 3,
+          "model": "I do: يَدْ: the daal has sukoon. Daal is in أَجِدْ قَطٍ بَكَتْ (strong) and it is voiced, so it bounces: 'yad-'oo thubooraa'."
+        },
+        {
+          "q": "Which letter flows (rakhawah)?",
+          "a": "ش",
+          "mins": 1,
+          "options": [
+            "ش",
+            "ق",
+            "ط"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Sifat sort (pupil PDF): sort 12 letters into strong, in between and flowing. Today's rota group recites 84:6 to 10 in turn.",
+          "a": "Strong: ق ط ب د ك ت; in between: ل ن م ر; flowing: س ش.",
+          "mins": 8,
+          "model": "The teacher sorts the first: ق: sound stops, so strong (shiddah)."
+        },
+        {
+          "q": "Extend: write the shiddah phrase and the tawassut phrase.",
+          "a": "أَجِدْ قَطٍ بَكَتْ; لِنْ عُمَرْ",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why does ك not bounce, though it is strong?",
+          "a": "ك is hams: the breath flows out, so it is released with breath, not a bounce.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Qalqalah letters are ...",
+          "a": "strong and voiced",
+          "mins": 1,
+          "options": [
+            "strong and voiced",
+            "flowing and whispered",
+            "nasal"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Say 'ab' and 'as' and hold the end as long as you can. Which one can you hold? Why?",
+          "a": "'As' flows (rakhawah); 'ab' stops at once (shiddah). Some letters sit in between, like 'al'.",
+          "mins": 2
+        }
+      ],
+      "homework": "Say أَبْ, أَسْ, أَلْ to a parent and explain the three qualities; recite 84:1 to 10; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Strong, flowing and in-between letters (shiddah, rakhawah, tawassut) rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Bouncing ball",
+          "alt": "A bouncing ball, like the bounce of qalqalah",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
+      "n": 12,
+      "title": "Surat Al-Inshiqaq 84:11-15: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "Someone is happy and careless now, sure he will never return to Allah. What is he forgetting?",
+      "objectives": [
+        "To memorise Al-Inshiqaq 84:11-15 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 84:11-15 after the teacher, word for word",
+        "Most: recite 84:11-15 from memory with no more than one prompt",
+        "Some: link 84:11-15 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: ihsan: Allah sees us at every moment",
+      "keywords": [
+        {
+          "term": "thubur (ثبور)",
+          "def": "destruction"
+        },
+        {
+          "term": "sa'ir (سعير)",
+          "def": "a blazing fire"
+        },
+        {
+          "term": "basir (بصير)",
+          "def": "All-Seeing"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Someone is happy and careless now, sure he will never return to Allah. What is he forgetting?",
+        "a": "That his Lord was always seeing him (84:15). Being joyful is fine; forgetting Allah is the problem (84:13 to 14)."
+      },
+      "islamicLink": {
+        "text": "Allah says of the one who denied: 'Indeed, he thought he would never return (to Allah). But yes! Indeed, his Lord was ever, of him, Seeing' (Al-Inshiqaq 84:14 to 15).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Inshiqaq 84:8 in your head. How does the next ayah begin?",
+          "a": "وَيَنقَلِبُ إِلَىٰٓ",
+          "mins": 1,
+          "options": [
+            "وَأَذِنَتْ لِرَبِّهَا",
+            "وَيَنقَلِبُ إِلَىٰٓ",
+            "فَمَا لَهُمْ"
+          ]
+        },
+        {
+          "q": "Strong letters phrase?",
+          "a": "أَجِدْ قَطٍ بَكَتْ",
+          "mins": 1,
+          "options": [
+            "أَجِدْ قَطٍ بَكَتْ",
+            "لِنْ عُمَرْ",
+            "فَحَثَّهُ شَخْصٌ سَكَتَ"
+          ]
+        },
+        {
+          "q": "Which is in between (tawassut)?",
+          "a": "م",
+          "mins": 1,
+          "options": [
+            "م",
+            "ب",
+            "ف"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Inshiqaq 84:11-15",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 84:11-15 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "فَسَوْفَ يَدْعُوا۟ ثُبُورًۭا (١١) وَيَصْلَىٰ سَعِيرًا (١٢) إِنَّهُۥ كَانَ فِىٓ أَهْلِهِۦ مَسْرُورًا (١٣) إِنَّهُۥ ظَنَّ أَن لَّن يَحُورَ (١٤) بَلَىٰٓ إِنَّ رَبَّهُۥ كَانَ بِهِۦ بَصِيرًۭا (١٥)",
+            "source": "Surat Al-Inshiqaq, 84:11-15"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "84:11",
+                "He will cry out for destruction"
+              ],
+              [
+                "84:12",
+                "And [enter to] burn in a Blaze."
+              ],
+              [
+                "84:13",
+                "Indeed, he had [once] been among his people in happiness;"
+              ],
+              [
+                "84:14",
+                "Indeed, he had thought he would never return [to Allah]."
+              ],
+              [
+                "84:15",
+                "But yes! Indeed, his Lord was ever of him, Seeing."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "أَن لَّن",
+                "Al-Inshiqaq 84:14",
+                "Idgham without ghunnah: ل",
+                "al-lan, no hum"
+              ],
+              [
+                "لَّن يَحُورَ",
+                "Al-Inshiqaq 84:14",
+                "Idgham with ghunnah: ي",
+                "lay-yahoor, hum"
+              ],
+              [
+                "يَدْعُوا۟",
+                "Al-Inshiqaq 84:11",
+                "Qalqalah: د",
+                "yad-'oo, bounce"
+              ],
+              [
+                "بَلَىٰٓ إِنَّ",
+                "Al-Inshiqaq 84:15",
+                "Madd before hamza",
+                "Stretch 4 or 5 counts"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 84:11-15 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "84:15 says his Lord was ...",
+            "options": [
+              "always seeing him",
+              "far away",
+              "asleep"
+            ],
+            "answer": 0,
+            "why": "'Indeed, his Lord was ever, of him, Seeing' (84:15)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Inshiqaq 84:11-15 together, ayah by ayah.",
+          "a": "The class recites 84:11-15 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 84:11-15. Ayah 11: 3 times looking, 3 times without looking. Then ayah 12 the same way. Then link: recite 11 and 12 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«أَن لَّن» (84:14) is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "idgham with ghunnah",
+            "izhar"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 84:11-15 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Write what 'his Lord was always seeing him' means for how we behave when alone.",
+          "a": "We behave well even when no one is watching, because Allah sees us.",
+          "mins": 2
+        },
+        {
+          "q": "In 84:14 find two different idgham next to each other and explain them.",
+          "a": "أَن لَّن: noon into laam, no hum; لَّن يَحُورَ: noon into yaa, with hum.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Inshiqaq 84:13: «إِنَّهُۥ كَانَ ...» Which word comes next?",
+          "a": "فِىٓ",
+          "mins": 1,
+          "options": [
+            "إِذَا",
+            "فِىٓ",
+            "ٱتَّسَقَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Someone is happy and careless now, sure he will never return to Allah. What is he forgetting?",
+          "a": "That his Lord was always seeing him (84:15). Being joyful is fine; forgetting Allah is the problem (84:13 to 14).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Inshiqaq 84:11-15 to a parent three times a day and revise Al-Inshiqaq 84:1 to 10 and today's rota surah; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Inshiqaq 84:11-15 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Night sky stars Milky Way",
+          "alt": "The night sky full of stars",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
+      "n": 13,
+      "title": "Sifat in our ayat: practising the qualities in Al-Inshiqaq",
+      "duration": 45,
+      "bigQuestion": "A good reciter is like a careful builder. Which 'brick' (letter quality) do you most often get wrong?",
+      "objectives": [
+        "To understand how the sifat learned so far sound together in real ayat, and to correct them in recitation"
+      ],
+      "successCriteria": [
+        "All: show breath on ت and a bounce on ق or د",
+        "Most: recite 84:1 to 15 with hams, jahr and qalqalah clear",
+        "Some: give a partner one precise sifat correction"
+      ],
+      "smsc": "Social: giving and receiving correction with good manners",
+      "keywords": [
+        {
+          "term": "sifat (صفات)",
+          "def": "the qualities of a letter's sound (singular sifah)"
+        },
+        {
+          "term": "qalqalah (قلقلة)",
+          "def": "a bounce on ق ط ب ج د with sukoon"
+        },
+        {
+          "term": "hams (همس)",
+          "def": "whispered: the breath flows"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A good reciter is like a careful builder. Which 'brick' (letter quality) do you most often get wrong?",
+        "a": "Often the breath on ت, or adding a vowel after a qalqalah letter. Naming it helps us fix it."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Those to whom We have given the Book recite it with its true recital' (Al-Baqarah 2:121).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Inshiqaq 84:12 in your head. How does the next ayah begin?",
+          "a": "إِنَّهُۥ كَانَ",
+          "mins": 1,
+          "options": [
+            "فَسَوْفَ يَدْعُوا۟",
+            "وَإِذَا قُرِئَ",
+            "إِنَّهُۥ كَانَ"
+          ]
+        },
+        {
+          "q": "ك is ...",
+          "a": "strong and whispered",
+          "mins": 1,
+          "options": [
+            "strong and whispered",
+            "flowing and voiced",
+            "in between"
+          ]
+        },
+        {
+          "q": "«لَّن يَحُورَ» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "idgham without ghunnah",
+            "izhar"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Qualities map: 84:1 to 15",
+          "bullets": [],
+          "note": "Bismillah. Point to each in the mushaf; pupils say the sifat first.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Listen for",
+              "Sifat"
+            ],
+            "rows": [
+              [
+                "ٱنشَقَّتْ",
+                "Al-Inshiqaq 84:1",
+                "Breath on final ت",
+                "Hams + shiddah"
+              ],
+              [
+                "كَدْحًۭا",
+                "Al-Inshiqaq 84:6",
+                "Bounce on د",
+                "Jahr + shiddah (qalqalah)"
+              ],
+              [
+                "مَسْرُورًۭا",
+                "Al-Inshiqaq 84:9",
+                "Flowing س",
+                "Hams + rakhawah"
+              ],
+              [
+                "بَصِيرًۭا",
+                "Al-Inshiqaq 84:15",
+                "Full ص",
+                "Isti'la (raised) + hams"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Record, listen, improve",
+          "bullets": [
+            "Record 84:11 to 15 on your device",
+            "Listen with the mushaf open",
+            "Circle one sifat to fix",
+            "Record again"
+          ],
+          "note": "Pupils use a phone or tablet at home only with a parent's permission; in class they listen to the teacher's live recitation instead."
+        },
+        {
+          "heading": "Peer listening in pairs",
+          "bullets": [
+            "Listen to the end",
+            "Praise one thing",
+            "Name one word and one quality",
+            "Recite it together"
+          ],
+          "note": "Breakout pairs. Model: 'Your bounce on كَدْحًا was clear. In ٱنشَقَّتْ, add a little breath on the ت'."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Work through 84:11 to 15 one ayah at a time.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "Pupils listen for one quality",
+            "Three pupils repeat in turn",
+            "Teacher names one sifah to fix",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "In «بَصِيرًۭا» the ص is ...",
+            "options": [
+              "raised (isti'la) and whispered (hams)",
+              "lowered and voiced",
+              "in between"
+            ],
+            "answer": 0,
+            "why": "ص is a heavy (isti'la) letter and in the hams phrase (شَخْصٌ)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 84:1 to 2 and say every sifat you hear on the last letter of each ayah.",
+          "a": "ٱنشَقَّتْ: ت hams, breath; وَحُقَّتْ: ت hams, breath.",
+          "mins": 3,
+          "model": "I do: إِذَا ٱلسَّمَآءُ ٱنشَقَّتْ: the last letter ت has sukoon; it is strong (sound stops) and whispered, so I stop then let a light breath out."
+        },
+        {
+          "q": "Which needs a bounce?",
+          "a": "د with sukoon",
+          "mins": 1,
+          "options": [
+            "د with sukoon",
+            "ت with sukoon",
+            "س with sukoon"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite 84:1 to 15 to each other and write one sifat correction for your partner on the pupil PDF. Today's rota group recites to the teacher.",
+          "a": "Each pupil gets one precise correction, e.g. 'breath on ت in 84:2'.",
+          "mins": 8,
+          "model": "The teacher and a volunteer model one round with a kind, precise correction."
+        },
+        {
+          "q": "Extend: find a qalqalah letter in 84:16.",
+          "a": "ق in أُقْسِمُ, and ق at the end of ٱلشَّفَقِ when stopping.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: which is strongest, a qalqalah letter in the middle of a word or at a stop?",
+          "a": "At a stop (the bounce is strongest at the end of an ayah).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A kind correction names ...",
+          "a": "one word and one quality",
+          "mins": 1,
+          "options": [
+            "one word and one quality",
+            "every mistake",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A good reciter is like a careful builder. Which 'brick' (letter quality) do you most often get wrong?",
+          "a": "Often the breath on ت, or adding a vowel after a qalqalah letter. Naming it helps us fix it.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite 84:1 to 15 to a parent and ask them to listen for the breath on ت; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Sifat in our ayat rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Bricks wall construction",
+          "alt": "Bricks laid carefully one by one",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
+      "n": 14,
+      "title": "Surat Al-Inshiqaq 84:16-20: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "The twilight, the night and the full moon change step by step. 84:19 says people also pass from stage to stage. What stages will you pass through?",
+      "objectives": [
+        "To memorise Al-Inshiqaq 84:16-20 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 84:16-20 after the teacher, word for word",
+        "Most: recite 84:16-20 from memory with no more than one prompt",
+        "Some: link 84:16-20 to the ayat before and name the tajweed rules in them"
+      ],
+      "crossCurricular": "Science: phases of the moon (Year 5 Earth and space)",
+      "smsc": "Spiritual: life is a journey of stages towards meeting Allah",
+      "keywords": [
+        {
+          "term": "shafaq (شفق)",
+          "def": "the redness in the sky after sunset"
+        },
+        {
+          "term": "ittasaq (اتسق)",
+          "def": "became full (the moon)"
+        },
+        {
+          "term": "tabaq (طبق)",
+          "def": "a stage"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The twilight, the night and the full moon change step by step. 84:19 says people also pass from stage to stage. What stages will you pass through?",
+        "a": "Childhood, youth, old age, death and the Hereafter: 'You will surely embark upon stage after stage' (84:19)."
+      },
+      "islamicLink": {
+        "text": "Allah swears by the twilight, the night and the moon when it becomes full, then says: 'You will surely embark upon stage after stage' (Al-Inshiqaq 84:16 to 19). Then He asks why some do not believe (84:20).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Inshiqaq 84:13 in your head. How does the next ayah begin?",
+          "a": "إِنَّهُۥ ظَنَّ",
+          "mins": 1,
+          "options": [
+            "إِنَّهُۥ ظَنَّ",
+            "وَٱلْقَمَرِ إِذَا",
+            "وَإِذَا ٱلْأَرْضُ"
+          ]
+        },
+        {
+          "q": "ص is ...",
+          "a": "heavy (isti'la)",
+          "mins": 1,
+          "options": [
+            "heavy (isti'la)",
+            "light",
+            "nasal"
+          ]
+        },
+        {
+          "q": "Which letter bounces?",
+          "a": "ق with sukoon",
+          "mins": 1,
+          "options": [
+            "ق with sukoon",
+            "ك with sukoon",
+            "س with sukoon"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Inshiqaq 84:16-20",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 84:16-20 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "فَلَآ أُقْسِمُ بِٱلشَّفَقِ (١٦) وَٱلَّيْلِ وَمَا وَسَقَ (١٧) وَٱلْقَمَرِ إِذَا ٱتَّسَقَ (١٨) لَتَرْكَبُنَّ طَبَقًا عَن طَبَقٍۢ (١٩) فَمَا لَهُمْ لَا يُؤْمِنُونَ (٢٠)",
+            "source": "Surat Al-Inshiqaq, 84:16-20"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "84:16",
+                "So I swear by the twilight glow"
+              ],
+              [
+                "84:17",
+                "And [by] the night and what it envelops"
+              ],
+              [
+                "84:18",
+                "And [by] the moon when it becomes full"
+              ],
+              [
+                "84:19",
+                "[That] you will surely experience state after state."
+              ],
+              [
+                "84:20",
+                "So what is [the matter] with them [that] they do not believe,"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "أُقْسِمُ",
+                "Al-Inshiqaq 84:16",
+                "Qalqalah: ق",
+                "uq-simu, bounce"
+              ],
+              [
+                "طَبَقًا عَن",
+                "Al-Inshiqaq 84:19",
+                "Izhar: ع",
+                "Clear 'an' before 'ayn"
+              ],
+              [
+                "عَن طَبَقٍۢ",
+                "Al-Inshiqaq 84:19",
+                "Ikhfa: ط",
+                "'an-tabaq, light hum, heavy ط"
+              ],
+              [
+                "ٱتَّسَقَ",
+                "Al-Inshiqaq 84:18",
+                "Qalqalah at a stop",
+                "ittasaq: strongest bounce"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 84:16-20 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What does 'stage after stage' (84:19) describe?",
+            "options": [
+              "The stages of a person's life and the Hereafter",
+              "The steps of a staircase",
+              "The phases of the sun"
+            ],
+            "answer": 0,
+            "why": "The ayah is about people passing from one state to another; the moon in 84:18 is a picture of change."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Inshiqaq 84:16-20 together, ayah by ayah.",
+          "a": "The class recites 84:16-20 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 84:16-20. Ayah 16: 3 times looking, 3 times without looking. Then ayah 17 the same way. Then link: recite 16 and 17 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«عَن طَبَقٍۢ» (84:19) is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "izhar",
+            "idgham"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 84:16-20 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Write the three things Allah swears by in 84:16 to 18.",
+          "a": "The twilight (shafaq), the night and what it gathers, and the moon when it becomes full.",
+          "mins": 2
+        },
+        {
+          "q": "Recite 84:1 to 20 to a partner.",
+          "a": "All 20 ayat in order with no more than two prompts.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Inshiqaq 84:17: «وَٱلَّيْلِ ...» Which word comes next?",
+          "a": "وَمَا",
+          "mins": 1,
+          "options": [
+            "لِرَبِّهَا",
+            "حِسَابًۭا",
+            "وَمَا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The twilight, the night and the full moon change step by step. 84:19 says people also pass from stage to stage. What stages will you pass through?",
+          "a": "Childhood, youth, old age, death and the Hereafter: 'You will surely embark upon stage after stage' (84:19).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Inshiqaq 84:16-20 to a parent three times a day and revise Al-Inshiqaq 84:1 to 15; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Inshiqaq 84:16-20 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sunset twilight red sky",
+          "alt": "The red sky after sunset (shafaq)",
+          "for": "hook"
+        },
+        {
+          "find": "Full moon",
+          "alt": "The full moon",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
+      "n": 15,
+      "title": "Raised and lowered letters (isti'la and istifal)",
+      "duration": 45,
+      "bigQuestion": "In Year 4 you learned heavy letters. What does the back of your tongue do on ق that it does not do on ك?",
+      "objectives": [
+        "To understand which letters are raised (isti'la) and lowered (istifal) and how this links to heavy and light letters"
+      ],
+      "successCriteria": [
+        "All: say the seven isti'la letters",
+        "Most: explain that isti'la letters are always heavy",
+        "Some: find isti'la letters in Al-Inshiqaq and read them full"
+      ],
+      "smsc": "Cultural: the precision of the Arabic language, preserved by reciters for centuries",
+      "keywords": [
+        {
+          "term": "sifat (صفات)",
+          "def": "the qualities of a letter's sound (singular sifah)"
+        },
+        {
+          "term": "isti'la (استعلاء)",
+          "def": "raising the back of the tongue: heavy letters"
+        },
+        {
+          "term": "istifal (استفال)",
+          "def": "the tongue stays low: light letters"
+        },
+        {
+          "term": "itbaq (إطباق)",
+          "def": "the tongue presses up like a lid: ص ض ط ظ"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In Year 4 you learned heavy letters. What does the back of your tongue do on ق that it does not do on ك?",
+        "a": "It rises towards the roof of the mouth: isti'la (raising). That raising is what makes the letter heavy."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, We have sent it down as an Arabic Qur'an so that you might understand' (Yusuf 12:2).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Inshiqaq 84:16 in your head. How does the next ayah begin?",
+          "a": "وَٱلَّيْلِ وَمَا",
+          "mins": 1,
+          "options": [
+            "وَٱلْقَمَرِ إِذَا",
+            "وَٱلَّيْلِ وَمَا",
+            "إِنَّهُۥ ظَنَّ"
+          ]
+        },
+        {
+          "q": "«ٱتَّسَقَ» at a stop has ...",
+          "a": "a strong bounce on ق",
+          "mins": 1,
+          "options": [
+            "a strong bounce on ق",
+            "a hum",
+            "no sound"
+          ]
+        },
+        {
+          "q": "Flowing (rakhawah) letter?",
+          "a": "ف",
+          "mins": 1,
+          "options": [
+            "ف",
+            "د",
+            "ب"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Isti'la and istifal",
+          "bullets": [],
+          "note": "Bismillah. Isti'la: the back of the tongue rises. Istifal: it stays low. These are the same seven heavy letters from Year 4.",
+          "compare": {
+            "left": {
+              "title": "Isti'la (استعلاء): raised",
+              "points": [
+                "خ ص ض غ ط ق ظ",
+                "خُصَّ ضَغْطٍ قِظْ",
+                "Always heavy"
+              ]
+            },
+            "right": {
+              "title": "Istifal (استفال): lowered",
+              "points": [
+                "All the other letters",
+                "Light",
+                "Raa and laam can change"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Itbaq: the strongest four",
+          "bullets": [
+            "ص ض ط ظ",
+            "Tongue presses up like a lid",
+            "Heaviest of all"
+          ],
+          "note": "Itbaq (إطباق) means closing like a lid. Mention it briefly for the most able."
+        },
+        {
+          "heading": "In Al-Inshiqaq",
+          "bullets": [],
+          "note": "Read each; pupils show a raised hand for isti'la.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Isti'la letter",
+              "Read it"
+            ],
+            "rows": [
+              [
+                "ٱنشَقَّتْ",
+                "Al-Inshiqaq 84:1",
+                "ق",
+                "Full qaf"
+              ],
+              [
+                "ظَهْرِهِۦ",
+                "Al-Inshiqaq 84:10",
+                "ظ",
+                "Full dhaa"
+              ],
+              [
+                "ظَنَّ",
+                "Al-Inshiqaq 84:14",
+                "ظ",
+                "Full, then a hum on نّ"
+              ],
+              [
+                "طَبَقًا",
+                "Al-Inshiqaq 84:19",
+                "ط and ق",
+                "Both full"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "A heavy letter makes the next vowel full; a light letter must not.",
+          "misconception": {
+            "wrong": "ظَنَّ with a thin 'a', like 'than'",
+            "right": "ظَنَّ: raised tongue, full 'a': dhan-na"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which is an isti'la letter?",
+            "options": [
+              "غ",
+              "ع",
+              "ه"
+            ],
+            "answer": 0,
+            "why": "غ is in خُصَّ ضَغْطٍ قِظْ. ع and ه are throat letters but light."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read «طَبَقًا عَن طَبَقٍۢ» (84:19) and name every raised letter.",
+          "a": "ط and ق in both words (four raised letters).",
+          "mins": 3,
+          "model": "I do: طَ: raised and pressed (itbaq): full. بَ: light. قًا: raised: full. Then عَن: light, ikhfa before ط, then طَبَقٍ again with two raised letters."
+        },
+        {
+          "q": "Itbaq letters?",
+          "a": "ص ض ط ظ",
+          "mins": 1,
+          "options": [
+            "ص ض ط ظ",
+            "ق ك",
+            "ل ر"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Raised-letter hunt (pupil PDF): circle every isti'la letter in 84:16 to 25. Today's rota group recites 84:16 to 20 in turn.",
+          "a": "ق أُقْسِمُ, ق ٱلشَّفَقِ (84:16); ق وَسَقَ (84:17); ق ٱلْقَمَرِ, ق ٱتَّسَقَ (84:18); ط ق طَبَقًا, ط ق طَبَقٍ (84:19); ق قُرِئَ, ق ٱلْقُرْءَانُ (84:21); غ غَيْرُ (84:25).",
+          "mins": 8,
+          "model": "The teacher circles the first: ق in أُقْسِمُ (84:16)."
+        },
+        {
+          "q": "Extend: write the isti'la phrase and the four itbaq letters.",
+          "a": "خُصَّ ضَغْطٍ قِظْ; ص ض ط ظ",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is خ heavy but not as heavy as ط?",
+          "a": "خ is raised but not itbaq; ط is raised and pressed like a lid (itbaq), so it is heavier.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Isti'la letters are always ...",
+          "a": "heavy",
+          "mins": 1,
+          "options": [
+            "heavy",
+            "light",
+            "nasal"
+          ]
+        },
+        {
+          "q": "Back to our ponder: In Year 4 you learned heavy letters. What does the back of your tongue do on ق that it does not do on ك?",
+          "a": "It rises towards the roof of the mouth: isti'la (raising). That raising is what makes the letter heavy.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite 84:1 to 20 to a parent and point to three raised letters; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Raised and lowered letters (isti'la and istifal) rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic letter ta calligraphy",
+          "alt": "The Arabic letter taa",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
+      "n": 16,
+      "title": "Surat Al-Inshiqaq 84:21-25: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "When the Qur'an is recited, what should a believer's heart and body do?",
+      "objectives": [
+        "To memorise Al-Inshiqaq 84:21-25 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 84:21-25 after the teacher, word for word",
+        "Most: recite 84:21-25 from memory with no more than one prompt",
+        "Some: link 84:21-25 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: humility when the Qur'an is recited; the sajdah of recitation",
+      "keywords": [
+        {
+          "term": "sajdah (سجدة)",
+          "def": "prostration"
+        },
+        {
+          "term": "ajr (أجر)",
+          "def": "reward"
+        },
+        {
+          "term": "mamnun (ممنون)",
+          "def": "cut off; 'ghayru mamnun' means never ending"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When the Qur'an is recited, what should a believer's heart and body do?",
+        "a": "Listen and humble themselves; 84:21 blames those who do not prostrate when the Qur'an is recited. There is a sajdah here."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And when the Qur'an is recited to them, they do not prostrate' (Al-Inshiqaq 84:21). This is one of the places of sajdat at-tilawah (۩): the Prophet ﷺ prostrated when reciting this surah (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Inshiqaq 84:17 in your head. How does the next ayah begin?",
+          "a": "وَٱلْقَمَرِ إِذَا",
+          "mins": 1,
+          "options": [
+            "وَٱلْقَمَرِ إِذَا",
+            "وَأَذِنَتْ لِرَبِّهَا",
+            "فَبَشِّرْهُم بِعَذَابٍ"
+          ]
+        },
+        {
+          "q": "Itbaq letters?",
+          "a": "ص ض ط ظ",
+          "mins": 1,
+          "options": [
+            "ص ض ط ظ",
+            "خ غ ق",
+            "ب م"
+          ]
+        },
+        {
+          "q": "«عَن طَبَقٍۢ» is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "izhar",
+            "iqlab"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Inshiqaq 84:21-25",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 84:21-25 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَإِذَا قُرِئَ عَلَيْهِمُ ٱلْقُرْءَانُ لَا يَسْجُدُونَ ۩ (٢١) بَلِ ٱلَّذِينَ كَفَرُوا۟ يُكَذِّبُونَ (٢٢) وَٱللَّهُ أَعْلَمُ بِمَا يُوعُونَ (٢٣) فَبَشِّرْهُم بِعَذَابٍ أَلِيمٍ (٢٤) إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ لَهُمْ أَجْرٌ غَيْرُ مَمْنُونٍۭ (٢٥)",
+            "source": "Surat Al-Inshiqaq, 84:21-25"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "84:21",
+                "And when the Qur'an is recited to them, they do not prostrate [to Allah]?"
+              ],
+              [
+                "84:22",
+                "But those who have disbelieved deny,"
+              ],
+              [
+                "84:23",
+                "And Allah is most knowing of what they keep within themselves."
+              ],
+              [
+                "84:24",
+                "So give them tidings of a painful punishment,"
+              ],
+              [
+                "84:25",
+                "Except for those who believe and do righteous deeds. For them is a reward uninterrupted."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word. At ۩ (end of 84:21) explain: this is a place of sajdat at-tilawah; the reciter may prostrate once, saying Allahu Akbar. It is a Sunnah; pupils practise it at home with a parent.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "فَبَشِّرْهُم بِعَذَابٍ",
+                "Al-Inshiqaq 84:24",
+                "Meem before ب: ikhfa shafawi",
+                "Lips close lightly, hum"
+              ],
+              [
+                "بِعَذَابٍ أَلِيمٍ",
+                "Al-Inshiqaq 84:24",
+                "Izhar: ء",
+                "Clear 'in' before hamza"
+              ],
+              [
+                "أَجْرٌ غَيْرُ",
+                "Al-Inshiqaq 84:25",
+                "Izhar: غ",
+                "Clear 'un' before ghayn"
+              ],
+              [
+                "يَسْجُدُونَ",
+                "Al-Inshiqaq 84:21",
+                "Sajdah sign ۩",
+                "A place of prostration"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 84:21-25 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What does the sign ۩ at 84:21 show?",
+            "options": [
+              "A place of prostration (sajdah)",
+              "The end of the surah",
+              "Stop and do not continue"
+            ],
+            "answer": 0,
+            "why": "۩ marks a sajdah of recitation. The surah ends at 84:25; stopping signs look different."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Inshiqaq 84:21-25 together, ayah by ayah.",
+          "a": "The class recites 84:21-25 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 84:21-25. Ayah 21: 3 times looking, 3 times without looking. Then ayah 22 the same way. Then link: recite 21 and 22 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«أَجْرٌ غَيْرُ» (84:25) is ...",
+          "a": "izhar",
+          "mins": 1,
+          "options": [
+            "izhar",
+            "ikhfa",
+            "idgham"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 84:21-25 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Write who is excepted in 84:25 and what they receive.",
+          "a": "Those who believe and do righteous deeds: a reward never ending.",
+          "mins": 2
+        },
+        {
+          "q": "Recite all 25 ayat to a partner and stop at the ۩.",
+          "a": "All 25 ayat; the pupil points out the sajdah at 84:21.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Inshiqaq 84:23: «وَٱللَّهُ أَعْلَمُ ...» Which word comes next?",
+          "a": "بِمَا",
+          "mins": 1,
+          "options": [
+            "يُكَذِّبُونَ",
+            "بِمَا",
+            "ٱنشَقَّتْ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When the Qur'an is recited, what should a believer's heart and body do?",
+          "a": "Listen and humble themselves; 84:21 blames those who do not prostrate when the Qur'an is recited. There is a sajdah here.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Inshiqaq 84:21-25 to a parent three times a day and revise Al-Inshiqaq 84:1 to 20; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Inshiqaq 84:21-25 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Prayer mat sajjadah",
+          "alt": "A prayer mat",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Inshiqaq and the sifat of strength",
+      "n": 17,
+      "title": "Al-Inshiqaq hifdh test and sifat check",
+      "duration": 45,
+      "bigQuestion": "What helped you most this half term to memorise 25 ayat? What will you keep doing in Ramadan?",
+      "objectives": [
+        "To show secure memorisation of Al-Inshiqaq and correct sifat in recitation"
+      ],
+      "successCriteria": [
+        "All: recite Al-Inshiqaq with no more than three prompts",
+        "Most: show two sifat clearly (breath on ت, bounce on ق or د)",
+        "Some: score 4 on every rubric row and plan the break"
+      ],
+      "smsc": "Spiritual: keeping the Qur'an close in Ramadan, the month it was sent down",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "sifat (صفات)",
+          "def": "the qualities of a letter's sound (singular sifah)"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what we have learned"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What helped you most this half term to memorise 25 ayat? What will you keep doing in Ramadan?",
+        "a": "Chunking, the listening rota and daily revision; keep 10 minutes a day through the break."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Keep refreshing your knowledge of the Qur'an, for it escapes faster than camels from their hobbles' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Inshiqaq 84:22 in your head. How does the next ayah begin?",
+          "a": "وَٱللَّهُ أَعْلَمُ",
+          "mins": 1,
+          "options": [
+            "إِنَّهُۥ كَانَ",
+            "وَيَنقَلِبُ إِلَىٰٓ",
+            "وَٱللَّهُ أَعْلَمُ"
+          ]
+        },
+        {
+          "q": "Where is the sajdah in Al-Inshiqaq?",
+          "a": "84:21",
+          "mins": 1,
+          "options": [
+            "84:21",
+            "84:25",
+            "84:1"
+          ]
+        },
+        {
+          "q": "Hams letter?",
+          "a": "ك",
+          "mins": 1,
+          "options": [
+            "ك",
+            "ق",
+            "ج"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How we are checked",
+          "bullets": [],
+          "note": "Bismillah. Explain each row; pupils self-check before reciting.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Two sifat the teacher listens for",
+          "bullets": [
+            "Breath on ت with sukoon: ٱنشَقَّتْ",
+            "Bounce on ق or د: أُقْسِمُ, كَدْحًا",
+            "Full raised letters: طَبَقًا"
+          ],
+          "note": "Each pupil also answers one sifat question after reciting."
+        },
+        {
+          "heading": "Mistakes to avoid",
+          "bullets": [],
+          "note": "84:2 and 84:5 are identical; pupils often jump from 84:2 to 84:6.",
+          "misconception": {
+            "wrong": "After وَأَذِنَتْ لِرَبِّهَا وَحُقَّتْ (84:2), going straight to 84:6",
+            "right": "84:2 is followed by 84:3 (وَإِذَا ٱلْأَرْضُ مُدَّتْ); 84:5 is followed by 84:6"
+          }
+        },
+        {
+          "heading": "Break plan",
+          "bullets": [
+            "10 minutes a day",
+            "Day 1: 84:1 to 12; Day 2: 84:13 to 25",
+            "Day 3: rota surah; tick the log"
+          ],
+          "note": "Pupils write their plan on the pupil PDF."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "After 84:2, the next ayah begins ...",
+            "options": [
+              "وَإِذَا ٱلْأَرْضُ",
+              "يَٰٓأَيُّهَا ٱلْإِنسَٰنُ",
+              "فَأَمَّا مَنْ"
+            ],
+            "answer": 0,
+            "why": "84:3: وَإِذَا ٱلْأَرْضُ مُدَّتْ. 84:6 begins يَٰٓأَيُّهَا, which follows the repeated 84:5."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Self-check: recite 84:1 to 6 to yourself and score each rubric row.",
+          "a": "Pupil scores each row 2 to 4 and writes one target.",
+          "mins": 3,
+          "model": "I do: I recite 84:1 to 6, carefully linking 84:2 to 84:3 and 84:5 to 84:6, and score myself: hifdh 4, sifat 3 (breath on ت needs work)."
+        },
+        {
+          "q": "How many ayat in Al-Inshiqaq?",
+          "a": "25",
+          "mins": 1,
+          "options": [
+            "25",
+            "22",
+            "17"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Hifdh test: recite Al-Inshiqaq (or the part the teacher chooses) to the teacher one by one. While waiting, revise in breakout pairs.",
+          "a": "Teacher records rubric scores and a target for each pupil in the portal; pupils heard this week in the rota keep that score.",
+          "mins": 8,
+          "model": "The teacher shows the order with the first pupil: isti'adhah, Bismillah, recite, one sifat question, score and target."
+        },
+        {
+          "q": "Extend: write your break plan on the pupil PDF.",
+          "a": "10 minutes a day, surahs by day, log ticked.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: name the sifat of ق in four words.",
+          "a": "Jahr, shiddah, isti'la, and qalqalah when it has sukoon.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Best way to keep hifdh in Ramadan?",
+          "a": "A little every day",
+          "mins": 1,
+          "options": [
+            "A little every day",
+            "Only once a week",
+            "Wait until school starts"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What helped you most this half term to memorise 25 ayat? What will you keep doing in Ramadan?",
+          "a": "Chunking, the listening rota and daily revision; keep 10 minutes a day through the break.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow your break plan: Al-Inshiqaq and your rota surah, 10 minutes a day; tick the log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Inshiqaq hifdh test and sifat check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Calendar planner page",
+          "alt": "A blank calendar page for a plan",
+          "for": "teach:4"
+        }
+      ]
     }
   ]
 }

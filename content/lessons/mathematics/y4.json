@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y4",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 4: place value to 10,000, rounding, Roman numerals, negative numbers; addition and subtraction; times tables to 12 x 12); Spring 1 founding year: White Rose Maths Year 4 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Multiplication and division B, 2 Length and perimeter and 3 Fractions), weekly times tables (TT) practice, Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24",
+  "source": "National Curriculum (KS2 Year 4: place value to 10,000, rounding, Roman numerals, negative numbers; addition and subtraction; times tables to 12 x 12); Spring 1 founding year: White Rose Maths Year 4 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Multiplication and division B, 2 Length and perimeter and 3 Fractions), weekly times tables (TT) practice, Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 4 Spring blocks 3 Fractions and 4 Decimals A (small-step titles only), weekly times tables (TT) practice",
   "lessons": [
     {
       "unit": "Spring 1: Multiplication and division (b); length and perimeter; fractions",
@@ -6266,6 +6266,5369 @@
         "Counters, pasta or buttons (for sets)",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 4 maths lesson 35 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 36,
+      "title": "Fractions of a quantity: unit fractions",
+      "duration": 45,
+      "bigQuestion": "Why does finding 1/5 of 35 mean dividing by 5?",
+      "objectives": [
+        "To understand how to find a unit fraction of an amount"
+      ],
+      "successCriteria": [
+        "All: find a unit fraction of an amount with a bar model",
+        "Most: use division facts to find unit fractions",
+        "Some: find the whole when a unit fraction is known"
+      ],
+      "crossCurricular": "Cooking: sharing a tray of samosas",
+      "smsc": "Moral: sharing zakah and sadaqah fairly between people",
+      "keywords": [
+        {
+          "term": "quantity",
+          "def": "an amount of something"
+        },
+        {
+          "term": "unit fraction",
+          "def": "one equal part, like 1/5"
+        },
+        {
+          "term": "denominator",
+          "def": "how many equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sadaqah of £60 is shared equally between 5 families. What fraction does each family get? How much?",
+        "a": "1/5 each: £12."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "tray of samosas",
+          "alt": "A tray of samosas",
+          "for": "hook"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "TT: 7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "TT: 63 ÷ 9 = ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 6 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "1/2 of 30?",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Bar model",
+          "bullets": [
+            "1/5 of 35",
+            "Split the bar into 5 equal parts.",
+            "35 ÷ 5 = 7"
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 1,
+              "label": "1/5 of 35 = 7"
+            }
+          ],
+          "note": "Draw the bar."
+        },
+        {
+          "heading": "Use tables",
+          "bullets": [
+            "1/8 of 48 = 48 ÷ 8 = 6",
+            "1/12 of 84 = 84 ÷ 12 = 7",
+            "Divide by the denominator."
+          ],
+          "note": "Ask: 1/9 of 54? (6)."
+        },
+        {
+          "heading": "Find the whole",
+          "model": {
+            "problem": "1/4 of a number is 9. What is the number?",
+            "steps": [
+              "One part is 9",
+              "4 parts: 4 × 9",
+              "= 36"
+            ],
+            "answer": "36"
+          },
+          "note": "Draw the bar: 4 parts of 9."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/6 of 42 = ?",
+            "options": [
+              "7",
+              "36",
+              "252"
+            ],
+            "answer": 0,
+            "why": "42 ÷ 6 = 7. 36 is 42 - 6; 252 multiplies."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/3 of 27 = ?",
+          "a": "9",
+          "mins": 2,
+          "model": "Teacher draws a bar in 3 equal parts: 27 ÷ 3 = 9 in each."
+        },
+        {
+          "q": "1/7 of 56 = ?",
+          "a": "8",
+          "mins": 2
+        },
+        {
+          "q": "1/5 of a number is 11. The number?",
+          "a": "55",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 1/4 of 44; 1/9 of 81; 1/11 of 132",
+          "a": "11; 9; 12",
+          "mins": 4,
+          "model": "Teacher: 44 ÷ 4 = 11."
+        },
+        {
+          "q": "Extend: Extend: a 120 cm ribbon. 1/10 is cut off. How much is left?",
+          "a": "108 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 1/6 of A = 1/4 of 24. What is A?",
+          "a": "36",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/8 of 72 = ?",
+          "a": "9",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why does 1/5 of 35 mean dividing by 5?",
+          "a": "We split 35 into 5 equal parts; each part is 35 ÷ 5",
+          "mins": 3
+        }
+      ],
+      "homework": "TT: 12 × 12 practice; find 1/2, 1/3, 1/4 and 1/6 of 60.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find 1/3 of 1/2 of 60.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: small steps on fractions of a set and of a quantity (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 36 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 37,
+      "title": "Fractions of a quantity: non-unit fractions",
+      "duration": 45,
+      "bigQuestion": "How do we find 3/4 of 28?",
+      "objectives": [
+        "To understand how to find a non-unit fraction of an amount"
+      ],
+      "successCriteria": [
+        "All: find a unit fraction first",
+        "Most: multiply to find a non-unit fraction",
+        "Some: solve a word problem with a non-unit fraction"
+      ],
+      "crossCurricular": "Geography: oceans cover about 7/10 of the Earth's surface",
+      "smsc": "Moral: giving most of what we have to help others",
+      "keywords": [
+        {
+          "term": "non-unit fraction",
+          "def": "more than one part, like 3/4"
+        },
+        {
+          "term": "numerator",
+          "def": "how many parts we take"
+        },
+        {
+          "term": "quantity",
+          "def": "an amount"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A class has 28 pupils. 3/4 walk to the park. Is that more or less than 20 pupils?",
+        "a": "More: 1/4 is 7, so 3/4 is 21."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:1"
+        },
+        {
+          "find": "box of dates",
+          "alt": "A box of dates",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/4 of 28?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 3 = ?",
+          "a": "21",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 7 = ?",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "1/5 of a number is 8. The number?",
+          "a": "40",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two steps",
+          "bullets": [
+            "Divide by the denominator.",
+            "Multiply by the numerator.",
+            "3/4 of 28: 28 ÷ 4 = 7, 7 × 3 = 21"
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "3/4 of 28 = 21"
+            }
+          ],
+          "note": "Bar of 4 parts, shade 3."
+        },
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "5/8 of 40",
+            "steps": [
+              "40 ÷ 8 = 5 (one eighth)",
+              "5 × 5 = 25 (five eighths)"
+            ],
+            "answer": "25"
+          },
+          "note": "Say: find one part, then the parts we need."
+        },
+        {
+          "heading": "Check with a bar",
+          "bullets": [
+            "3/5 of 45: one fifth is 9.",
+            "Three fifths is 27.",
+            "Two fifths left: 18."
+          ],
+          "note": "Ask: does 27 + 18 make 45? (yes)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2/3 of 18 = ?",
+            "options": [
+              "6",
+              "12",
+              "27"
+            ],
+            "answer": 1,
+            "why": "18 ÷ 3 = 6; 6 × 2 = 12. 6 is only one third."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3/5 of 20 = ?",
+          "a": "12",
+          "mins": 2,
+          "model": "Teacher: 20 ÷ 5 = 4 in each fifth; 3 fifths is 12."
+        },
+        {
+          "q": "2/7 of 35 = ?",
+          "a": "10",
+          "mins": 2
+        },
+        {
+          "q": "5/6 of 36 = ?",
+          "a": "30",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 3/4 of 32; 4/9 of 45; 7/10 of 80",
+          "a": "24; 20; 56",
+          "mins": 4,
+          "model": "Teacher: 32 ÷ 4 = 8, 8 × 3 = 24."
+        },
+        {
+          "q": "Extend: Extend: a box of 48 dates. 5/12 are eaten. How many are left?",
+          "a": "28",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 3/4 of a number is 27. What is the number?",
+          "a": "36",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2/5 of 30 = ?",
+          "a": "12",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we find 3/4 of 28?",
+          "a": "Divide by 4 to find one quarter (7), then multiply by 3 (21)",
+          "mins": 3
+        }
+      ],
+      "homework": "TT: 12 × 12 practice; find 2/3, 3/4 and 5/6 of 24.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 3/8 of a number is 15. Find 5/8 of it.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: small steps on fractions of a set and of a quantity (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 37 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 38,
+      "title": "Fraction problems: find the whole and compare amounts",
+      "duration": 45,
+      "bigQuestion": "If we know a part, how do we find the whole?",
+      "objectives": [
+        "To understand how to solve problems with fractions of amounts"
+      ],
+      "successCriteria": [
+        "All: find the whole from a unit fraction",
+        "Most: find the whole from a non-unit fraction",
+        "Some: compare fractions of different amounts"
+      ],
+      "crossCurricular": "Geography: distances on a journey",
+      "smsc": "Social: planning a fair food share for a class",
+      "keywords": [
+        {
+          "term": "whole",
+          "def": "the full amount"
+        },
+        {
+          "term": "part",
+          "def": "a piece of the whole"
+        },
+        {
+          "term": "bar model",
+          "def": "a bar split into equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is more: 1/3 of 36 or 1/4 of 44?",
+        "a": "1/3 of 36 = 12; 1/4 of 44 = 11. So 1/3 of 36."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "road sign showing distance",
+          "alt": "A road sign with distances",
+          "for": "hook"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/4 of 32?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "1/6 of 54?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 8 = ?",
+          "a": "88",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 4 = ?",
+          "a": "48",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Whole from one part",
+          "bullets": [
+            "1/5 of a number is 9.",
+            "5 parts of 9: 45."
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 1,
+              "label": "one part = 9; whole = 45"
+            }
+          ],
+          "note": "Bar of 5 with 9 in one part."
+        },
+        {
+          "heading": "Whole from a non-unit fraction",
+          "model": {
+            "problem": "2/3 of a journey is 24 km. How long is the whole journey?",
+            "steps": [
+              "2 parts = 24 km",
+              "1 part = 12 km",
+              "3 parts = 36 km"
+            ],
+            "answer": "36 km"
+          },
+          "note": "Divide by the numerator, multiply by the denominator."
+        },
+        {
+          "heading": "Compare amounts",
+          "bullets": [
+            "1/3 of 36 = 12",
+            "1/4 of 44 = 11",
+            "12 > 11"
+          ],
+          "note": "Ask: 3/5 of 20 or 2/3 of 15? (12 vs 10)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3/4 of a number is 30. What is the number?",
+            "options": [
+              "40",
+              "22",
+              "120"
+            ],
+            "answer": 0,
+            "why": "30 ÷ 3 = 10 per quarter; 4 × 10 = 40."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/7 of a number is 6. The number?",
+          "a": "42",
+          "mins": 2,
+          "model": "Teacher: 7 equal parts of 6: 7 × 6 = 42."
+        },
+        {
+          "q": "2/5 of a number is 16. The number?",
+          "a": "40",
+          "mins": 2
+        },
+        {
+          "q": "More: 1/2 of 50 or 3/4 of 32?",
+          "a": "1/2 of 50 (25 > 24)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 1/8 of a number is 7; 3/10 of a number is 21. Find each number.",
+          "a": "56; 70",
+          "mins": 4,
+          "model": "Teacher: 8 parts of 7: 56."
+        },
+        {
+          "q": "Extend: Extend: a bag of 60 sweets. 1/3 to Ali, 1/4 to Sara. How many are left?",
+          "a": "25",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: which is greatest: 2/3 of 63, 3/4 of 48 or 5/6 of 42?",
+          "a": "2/3 of 63 = 42 (the others are 36 and 35)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/9 of a number is 5. The number?",
+          "a": "45",
+          "mins": 2
+        },
+        {
+          "q": "Big question: if we know a part, how do we find the whole?",
+          "a": "Find one part, then multiply by the number of parts in the whole",
+          "mins": 3
+        }
+      ],
+      "homework": "TT: 12 × 12 practice; solve 3 'find the whole' problems.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: make up a find-the-whole problem with 5/6.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: fractions of a quantity problem solving (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 38 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 39,
+      "title": "Compare and order fractions",
+      "duration": 45,
+      "bigQuestion": "How can we compare 3/4 and 5/8?",
+      "objectives": [
+        "To understand how to compare and order fractions using equivalents"
+      ],
+      "successCriteria": [
+        "All: compare fractions with the same denominator",
+        "Most: compare fractions with the same numerator",
+        "Some: change one fraction to compare 3/4 and 5/8"
+      ],
+      "smsc": "Moral: being fair when comparing shares",
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "decide which is greater"
+        },
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "denominator",
+          "def": "how many equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 3/4 or 5/8 of a pizza more?",
+        "a": "3/4 = 6/8, which is more than 5/8."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        },
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza in 8 slices",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2/3 of a number is 24. The number?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "1/2 = ?/8",
+          "a": "4/8",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 9 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "TT: 72 ÷ 8 = ?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same denominator",
+          "bullets": [
+            "Same-size parts.",
+            "7/10 > 3/10"
+          ],
+          "note": "Ask: 5/12 or 7/12? (7/12)."
+        },
+        {
+          "heading": "Same numerator",
+          "bullets": [
+            "Same number of parts.",
+            "Bigger parts win.",
+            "3/5 > 3/8"
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 3,
+              "label": "3/5"
+            },
+            {
+              "parts": 8,
+              "shaded": 3,
+              "label": "3/8"
+            }
+          ],
+          "note": "Ask: 2/7 or 2/9? (2/7)."
+        },
+        {
+          "heading": "Make the same denominator",
+          "bullets": [
+            "3/4 = 6/8",
+            "6/8 > 5/8",
+            "So 3/4 > 5/8"
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "3/4"
+            },
+            {
+              "parts": 8,
+              "shaded": 6,
+              "label": "6/8"
+            },
+            {
+              "parts": 8,
+              "shaded": 5,
+              "label": "5/8"
+            }
+          ],
+          "note": "Use the fraction wall."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is greatest?",
+            "options": [
+              "2/3",
+              "5/6",
+              "1/2"
+            ],
+            "answer": 1,
+            "why": "In sixths: 4/6, 5/6, 3/6. 5/6 is greatest."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 2/3 _ 7/12",
+          "a": ">",
+          "mins": 2,
+          "model": "Teacher: 2/3 = 8/12, and 8/12 > 7/12."
+        },
+        {
+          "q": "Use < or >: 4/9 _ 4/7",
+          "a": "<",
+          "mins": 2
+        },
+        {
+          "q": "Order smallest first: 3/8, 1/4, 1/2",
+          "a": "1/4, 3/8, 1/2",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: use < or >: 3/5 _ 7/10; 5/6 _ 2/3; 1/4 _ 3/12",
+          "a": "<; >; =",
+          "mins": 4,
+          "model": "Teacher: 3/5 = 6/10, and 6/10 < 7/10."
+        },
+        {
+          "q": "Extend: Extend: order largest first: 5/8, 3/4, 1/2, 7/8",
+          "a": "7/8, 3/4, 5/8, 1/2",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: find a fraction between 1/2 and 3/4.",
+          "a": "For example 5/8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bigger: 4/5 or 7/10?",
+          "a": "4/5 (8/10)",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can we compare 3/4 and 5/8?",
+          "a": "Change 3/4 to 6/8, then compare eighths: 6/8 > 5/8",
+          "mins": 3
+        }
+      ],
+      "homework": "TT: 12 × 12 practice; order 5 fractions using a fraction wall.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: order 2/3, 3/5 and 7/10 using thirtieths.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: compare and order fractions (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 39 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 40,
+      "title": "Compare and order mixed numbers",
+      "duration": 45,
+      "bigQuestion": "Which is bigger: 2 1/4 or 1 7/8?",
+      "objectives": [
+        "To understand how to compare and order mixed numbers"
+      ],
+      "successCriteria": [
+        "All: compare the wholes first",
+        "Most: compare the fractions when the wholes match",
+        "Some: order a set of mixed numbers on a number line"
+      ],
+      "crossCurricular": "Cooking: 1 1/2 or 1 3/4 cups of flour",
+      "smsc": "Social: fair measures in a shared recipe",
+      "keywords": [
+        {
+          "term": "mixed number",
+          "def": "wholes and a fraction"
+        },
+        {
+          "term": "whole",
+          "def": "a complete one"
+        },
+        {
+          "term": "compare",
+          "def": "decide which is greater"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 1 7/8 more than 2? Is 2 1/4 more than 2?",
+        "a": "1 7/8 is less than 2; 2 1/4 is more. So 2 1/4 is bigger."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "measuring cups and spoons",
+          "alt": "Measuring cups",
+          "for": "hook"
+        },
+        {
+          "find": "ruler with centimetres close up",
+          "alt": "A ruler",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Use < or >: 3/4 _ 5/8",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "1 = ?/4",
+          "a": "4/4",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 12 = ?",
+          "a": "96",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 11 = ?",
+          "a": "121",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Wholes first",
+          "bullets": [
+            "2 1/4 has 2 wholes.",
+            "1 7/8 has 1 whole.",
+            "2 1/4 > 1 7/8"
+          ],
+          "note": "Ask: 3 1/5 or 2 4/5? (3 1/5)."
+        },
+        {
+          "heading": "On a number line",
+          "bullets": [
+            "1 1/2, 1 3/4, 2, 2 1/4"
+          ],
+          "numberline": {
+            "min": 1,
+            "max": 3,
+            "step": 1,
+            "marks": [
+              {
+                "at": 1.5,
+                "label": "1 1/2"
+              },
+              {
+                "at": 1.75,
+                "label": "1 3/4"
+              },
+              {
+                "at": 2.25,
+                "label": "2 1/4"
+              }
+            ]
+          },
+          "note": "Mark each point."
+        },
+        {
+          "heading": "Same wholes",
+          "bullets": [
+            "3 2/5 and 3 4/5.",
+            "Compare the fractions: 4/5 > 2/5.",
+            "So 3 4/5 > 3 2/5."
+          ],
+          "note": "Ask: 2 1/3 or 2 1/6? (2 1/3)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is the smallest?",
+            "options": [
+              "2 1/2",
+              "1 5/6",
+              "2 1/8"
+            ],
+            "answer": 1,
+            "why": "1 5/6 has only 1 whole."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 4 1/3 _ 3 2/3",
+          "a": ">",
+          "mins": 2,
+          "model": "Teacher: compare wholes: 4 > 3, so 4 1/3 is bigger."
+        },
+        {
+          "q": "Use < or >: 2 3/8 _ 2 5/8",
+          "a": "<",
+          "mins": 2
+        },
+        {
+          "q": "Order smallest first: 1 1/2, 1 1/4, 1 3/4",
+          "a": "1 1/4, 1 1/2, 1 3/4",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: order smallest first: 3 1/5, 2 4/5, 3 3/5, 2 1/5",
+          "a": "2 1/5, 2 4/5, 3 1/5, 3 3/5",
+          "mins": 4,
+          "model": "Teacher: sort by wholes, then by fifths."
+        },
+        {
+          "q": "Extend: Extend: use < or >: 1 3/4 _ 1 5/8; 2 1/3 _ 2 2/6",
+          "a": ">; =",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: which mixed number is half way between 1 1/4 and 1 3/4?",
+          "a": "1 1/2",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bigger: 5 1/2 or 4 9/10?",
+          "a": "5 1/2",
+          "mins": 2
+        },
+        {
+          "q": "Big question: which is bigger, 2 1/4 or 1 7/8?",
+          "a": "2 1/4: it has more wholes",
+          "mins": 3
+        }
+      ],
+      "homework": "TT: 12 × 12 practice; order 5 mixed numbers.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: order 7/4, 1 1/2 and 2 (change 7/4 to 1 3/4).",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: small step 'Compare and order mixed numbers' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Paper number line 0 to 3 in quarters",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 40 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 41,
+      "title": "Equivalent fractions on a number line",
+      "duration": 45,
+      "bigQuestion": "Why do 1/2, 2/4 and 4/8 sit at the same point?",
+      "objectives": [
+        "To understand how equivalent fractions sit at the same point on a number line"
+      ],
+      "successCriteria": [
+        "All: find 1/2 on lines of quarters, sixths and eighths",
+        "Most: name equivalents from stacked number lines",
+        "Some: find a missing numerator or denominator"
+      ],
+      "smsc": "Social: different names, the same thing",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        },
+        {
+          "term": "interval",
+          "def": "an equal gap on the line"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "On a line split into 8, where is 1/4?",
+        "a": "At 2/8: a quarter is two eighths."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler with centimetres close up",
+          "alt": "A ruler as a number line",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Bigger: 2 1/3 or 1 5/6?",
+          "a": "2 1/3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 54 ÷ 6 = ?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 7 = ?",
+          "a": "49",
+          "mins": 1
+        },
+        {
+          "q": "1/2 = ?/10",
+          "a": "5/10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Stacked lines",
+          "bullets": [
+            "Halves, quarters, eighths.",
+            "1/2 = 2/4 = 4/8"
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "2/4"
+            },
+            {
+              "parts": 8,
+              "shaded": 4,
+              "label": "4/8"
+            }
+          ],
+          "note": "Line them up one under another."
+        },
+        {
+          "heading": "Thirds and sixths",
+          "bullets": [
+            "1/3 = 2/6",
+            "2/3 = 4/6",
+            "3/3 = 6/6"
+          ],
+          "fraction": [
+            {
+              "parts": 3,
+              "shaded": 2,
+              "label": "2/3"
+            },
+            {
+              "parts": 6,
+              "shaded": 4,
+              "label": "4/6"
+            },
+            {
+              "parts": 12,
+              "shaded": 8,
+              "label": "8/12"
+            }
+          ],
+          "note": "Ask: 2/3 = ?/12 (8/12)."
+        },
+        {
+          "heading": "Find the missing number",
+          "bullets": [
+            "3/4 = ?/8",
+            "4 to 8: × 2",
+            "3 × 2 = 6: 6/8"
+          ],
+          "misconception": {
+            "wrong": "3/4 = 7/8 because we add 4 to the bottom and the top",
+            "right": "Multiply both by 2: 3/4 = 6/8"
+          },
+          "note": "Do the same to top and bottom."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is equivalent to 3/5?",
+            "options": [
+              "6/10",
+              "3/10",
+              "5/3"
+            ],
+            "answer": 0,
+            "why": "Multiply top and bottom by 2: 6/10."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/4 = ?/12",
+          "a": "3/12",
+          "mins": 2,
+          "model": "Teacher: 4 to 12 is × 3, so 1 × 3 = 3: 3/12."
+        },
+        {
+          "q": "5/6 = ?/12",
+          "a": "10/12",
+          "mins": 2
+        },
+        {
+          "q": "2/5 = 4/?",
+          "a": "10",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 1/3 = ?/9; 3/4 = ?/12; 4/5 = ?/10",
+          "a": "3/9; 9/12; 8/10",
+          "mins": 4,
+          "model": "Teacher: 3 to 9 is × 3: 1/3 = 3/9."
+        },
+        {
+          "q": "Extend: Extend: mark 1/2, 3/4 and 1/4 on a line in eighths.",
+          "a": "4/8, 6/8, 2/8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: find 3 fractions equal to 2/3.",
+          "a": "For example 4/6, 6/9, 8/12",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/2 = ?/12",
+          "a": "6/12",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why do 1/2, 2/4 and 4/8 sit at the same point?",
+          "a": "They are equal in value: the whole is split into more parts, and we take more of them",
+          "mins": 3
+        }
+      ],
+      "homework": "TT: division facts; draw 3 stacked number lines to show equivalents of 1/2 and 1/4.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: mark 2/3 and 5/6 on one line in twelfths.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: small step 'Equivalent fractions on a number line' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Paper number lines 0 to 1 (quarters, sixths, eighths, twelfths)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 41 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 42,
+      "title": "Equivalent fraction families",
+      "duration": 45,
+      "bigQuestion": "How can we make a whole family of fractions equal to 1/3?",
+      "objectives": [
+        "To understand how to generate families of equivalent fractions"
+      ],
+      "successCriteria": [
+        "All: multiply top and bottom by the same number",
+        "Most: write a family of 4 equivalents",
+        "Some: spot a fraction that does not belong"
+      ],
+      "crossCurricular": "Art: tessellating tiles in equal parts",
+      "smsc": "Spiritual: patterns in Islamic art repeat in equal families",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "family",
+          "def": "a set of fractions all equal to each other"
+        },
+        {
+          "term": "factor",
+          "def": "a number that divides exactly"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "1/3, 2/6, 3/9, 4/12... what comes next? Why?",
+        "a": "5/15: multiply top and bottom by 5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "islamic geometric tile pattern",
+          "alt": "An Islamic tile pattern",
+          "for": "hook"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/4 = ?/12",
+          "a": "9/12",
+          "mins": 1
+        },
+        {
+          "q": "2/5 = 4/?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 6 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "TT: 132 ÷ 11 = ?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Make a family",
+          "bullets": [
+            "1/3 = 2/6 = 3/9 = 4/12",
+            "× 2, × 3, × 4",
+            "Same to top and bottom."
+          ],
+          "table": {
+            "head": [
+              "× 1",
+              "× 2",
+              "× 3",
+              "× 4",
+              "× 5"
+            ],
+            "rows": [
+              [
+                "1/3",
+                "2/6",
+                "3/9",
+                "4/12",
+                "5/15"
+              ],
+              [
+                "3/4",
+                "6/8",
+                "9/12",
+                "12/16",
+                "15/20"
+              ]
+            ]
+          },
+          "note": "Build it on the wall."
+        },
+        {
+          "heading": "Divide too",
+          "bullets": [
+            "8/12 = 4/6 = 2/3",
+            "÷ 2, ÷ 4",
+            "Same to top and bottom."
+          ],
+          "note": "Ask: 6/9 = ?/3 (2/3)."
+        },
+        {
+          "heading": "Odd one out",
+          "bullets": [
+            "2/5, 4/10, 6/15, 8/18",
+            "8/18 does not belong.",
+            "2/5 × 4 = 8/20"
+          ],
+          "sort": {
+            "columns": [
+              "Equal to 1/2",
+              "Not equal to 1/2"
+            ],
+            "cards": [
+              "3/6",
+              "4/10",
+              "6/12",
+              "5/8",
+              "7/14",
+              "9/16"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Check each by multiplying."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is NOT in the family of 3/5?",
+            "options": [
+              "6/10",
+              "9/15",
+              "12/25"
+            ],
+            "answer": 2,
+            "why": "3/5 × 5 = 15/25, not 12/25."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write 3 equivalents of 1/4.",
+          "a": "For example 2/8, 3/12, 4/16",
+          "mins": 2,
+          "model": "Teacher multiplies top and bottom by 2, 3 and 4."
+        },
+        {
+          "q": "2/7 = ?/14 = ?/21",
+          "a": "4/14, 6/21",
+          "mins": 2
+        },
+        {
+          "q": "10/12 = ?/6",
+          "a": "5/6",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write 4 equivalents of 2/3 and of 1/5.",
+          "a": "4/6, 6/9, 8/12, 10/15; 2/10, 3/15, 4/20, 5/25",
+          "mins": 4,
+          "model": "Teacher: 2/3 × 2 = 4/6, × 3 = 6/9..."
+        },
+        {
+          "q": "Extend: Extend: odd one out: 3/4, 6/8, 9/12, 12/15",
+          "a": "12/15 (3/4 = 12/16)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a fraction equal to 3/4 has a numerator of 18. What is it?",
+          "a": "18/24",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/6 = ?/24",
+          "a": "4/24",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can we make a family equal to 1/3?",
+          "a": "Multiply top and bottom by 2, 3, 4...: 2/6, 3/9, 4/12",
+          "mins": 3
+        }
+      ],
+      "homework": "TT: division facts; write fraction families for 1/2, 1/4 and 3/5.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find the family member of 3/8 with denominator 40.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: small step 'Equivalent fraction families' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 42 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 43,
+      "title": "Simplify fractions",
+      "duration": 45,
+      "bigQuestion": "Why is 6/8 the same as 3/4, and why is 3/4 simpler?",
+      "objectives": [
+        "To understand how to simplify fractions by dividing by a common factor"
+      ],
+      "successCriteria": [
+        "All: divide numerator and denominator by 2",
+        "Most: find a common factor to simplify",
+        "Some: simplify fully and explain"
+      ],
+      "smsc": "Moral: saying things simply and clearly",
+      "keywords": [
+        {
+          "term": "simplify",
+          "def": "write with smaller numbers, same value"
+        },
+        {
+          "term": "common factor",
+          "def": "a number that divides both"
+        },
+        {
+          "term": "simplest form",
+          "def": "cannot be simplified any more"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "12/16 of a cake. Can you say the same amount with smaller numbers?",
+        "a": "3/4: divide both by 4."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "cake cut into slices",
+          "alt": "A cake in equal slices",
+          "for": "hook"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/6 = ?/24",
+          "a": "4/24",
+          "mins": 1
+        },
+        {
+          "q": "Factors of 12?",
+          "a": "1, 2, 3, 4, 6, 12",
+          "mins": 1
+        },
+        {
+          "q": "TT: 48 ÷ 8 = ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 9 = ?",
+          "a": "81",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Divide both",
+          "bullets": [
+            "6/8: both divide by 2.",
+            "6 ÷ 2 = 3; 8 ÷ 2 = 4",
+            "6/8 = 3/4"
+          ],
+          "fraction": [
+            {
+              "parts": 8,
+              "shaded": 6,
+              "label": "6/8"
+            },
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "3/4"
+            }
+          ],
+          "note": "Same value, fewer parts."
+        },
+        {
+          "heading": "Common factors",
+          "bullets": [
+            "12/18: 2, 3 and 6 divide both.",
+            "Use the biggest: 6.",
+            "12/18 = 2/3"
+          ],
+          "note": "Ask: 10/15? (2/3: ÷ 5)."
+        },
+        {
+          "heading": "Step by step",
+          "model": {
+            "problem": "Simplify 16/24",
+            "steps": [
+              "÷ 2: 8/12",
+              "÷ 2: 4/6",
+              "÷ 2: 2/3"
+            ],
+            "answer": "2/3"
+          },
+          "note": "Or ÷ 8 in one go."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Simplest form of 9/12?",
+            "options": [
+              "3/4",
+              "9/12",
+              "1/3"
+            ],
+            "answer": 0,
+            "why": "Divide both by 3: 3/4."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Simplify 4/10.",
+          "a": "2/5",
+          "mins": 2,
+          "model": "Teacher: both even, ÷ 2: 2/5. Nothing else divides 2 and 5."
+        },
+        {
+          "q": "Simplify 5/20.",
+          "a": "1/4",
+          "mins": 2
+        },
+        {
+          "q": "Simplify 8/12.",
+          "a": "2/3",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: simplify 3/9; 6/10; 14/21",
+          "a": "1/3; 3/5; 2/3",
+          "mins": 4,
+          "model": "Teacher: 3 divides 3 and 9: 1/3."
+        },
+        {
+          "q": "Extend: Extend: simplify 18/24; 20/30; 25/100",
+          "a": "3/4; 2/3; 1/4",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: which of these are in simplest form: 7/9, 6/15, 11/12, 9/21?",
+          "a": "7/9 and 11/12",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Simplify 12/16.",
+          "a": "3/4",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is 6/8 the same as 3/4, and why is 3/4 simpler?",
+          "a": "Dividing top and bottom by 2 keeps the value; 3/4 uses smaller numbers",
+          "mins": 3
+        }
+      ],
+      "homework": "TT: division facts; simplify 6 fractions.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: simplify 36/48 in one step.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: equivalent fractions, simplifying (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 43 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 44,
+      "title": "Equivalent fractions: problems and division facts",
+      "duration": 45,
+      "bigQuestion": "How do times tables help us with equivalent fractions?",
+      "objectives": [
+        "To understand how to use times tables to solve equivalent fraction problems"
+      ],
+      "successCriteria": [
+        "All: use a times table to find an equivalent",
+        "Most: solve a missing number problem",
+        "Some: reason about which fraction is larger"
+      ],
+      "crossCurricular": "Cooking: doubling and halving a recipe",
+      "smsc": "Social: explaining your reasoning kindly to a partner",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "multiple",
+          "def": "a number in a times table"
+        },
+        {
+          "term": "reason",
+          "def": "explain why"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 15/20 bigger or smaller than 2/3?",
+        "a": "Bigger: 15/20 = 3/4, and 3/4 > 2/3."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "times tables grid",
+          "alt": "A multiplication grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "measuring cups and spoons",
+          "alt": "Measuring cups",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Simplify 10/15.",
+          "a": "2/3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 12 = ?",
+          "a": "84",
+          "mins": 1
+        },
+        {
+          "q": "TT: 84 ÷ 7 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "3/4 = ?/16",
+          "a": "12/16",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Use the grid",
+          "bullets": [
+            "Rows of the 3 and 4 tables.",
+            "3/4, 6/8, 9/12, 12/16, 15/20",
+            "Read down two rows."
+          ],
+          "table": {
+            "head": [
+              "Table",
+              "× 1",
+              "× 2",
+              "× 3",
+              "× 4",
+              "× 5"
+            ],
+            "rows": [
+              [
+                "3s",
+                "3",
+                "6",
+                "9",
+                "12",
+                "15"
+              ],
+              [
+                "4s",
+                "4",
+                "8",
+                "12",
+                "16",
+                "20"
+              ]
+            ]
+          },
+          "note": "Point at the multiplication grid."
+        },
+        {
+          "heading": "Missing numbers",
+          "bullets": [
+            "2/? = 10/35",
+            "2 × 5 = 10, so ? × 5 = 35",
+            "? = 7"
+          ],
+          "note": "Ask: ?/9 = 20/36 (5)."
+        },
+        {
+          "heading": "Reasoning",
+          "bullets": [
+            "Is 15/20 > 2/3?",
+            "15/20 = 3/4 = 9/12; 2/3 = 8/12",
+            "Yes, 9/12 > 8/12"
+          ],
+          "note": "Pupils explain to a partner."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "4/? = 12/27",
+            "options": [
+              "9",
+              "15",
+              "3"
+            ],
+            "answer": 0,
+            "why": "4 × 3 = 12, so ? × 3 = 27: 9."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3/? = 15/40",
+          "a": "8",
+          "mins": 2,
+          "model": "Teacher: 3 × 5 = 15, so ? × 5 = 40: 8."
+        },
+        {
+          "q": "?/6 = 20/24",
+          "a": "5",
+          "mins": 2
+        },
+        {
+          "q": "Use < or >: 9/12 _ 5/8",
+          "a": ">",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 5/? = 25/30; ?/7 = 12/21; 6/11 = ?/44",
+          "a": "6; 4; 24",
+          "mins": 4,
+          "model": "Teacher: 5 × 5 = 25, so ? × 5 = 30: 6."
+        },
+        {
+          "q": "Extend: Extend: a recipe uses 3/4 cup of oil. Ali uses 6/8 cup. Sara uses 5/8 cup. Who used the same as the recipe?",
+          "a": "Ali",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: TT check: 9 × 8, 12 × 7, 72 ÷ 6, 121 ÷ 11",
+          "a": "72, 84, 12, 11",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2/? = 14/63",
+          "a": "9",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do times tables help?",
+          "a": "Equivalent fractions follow two times tables: read the multiples down together",
+          "mins": 3
+        }
+      ],
+      "homework": "TT: division facts quiz; 6 missing-number fraction problems.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: make your own missing-number problem using the 7 and 9 tables.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: equivalent fraction families (problem solving) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Printed multiplication grid to 12 × 12",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 44 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 45,
+      "title": "Add two or more fractions",
+      "duration": 45,
+      "bigQuestion": "Why do we add the numerators but not the denominators?",
+      "objectives": [
+        "To understand how to add fractions with the same denominator"
+      ],
+      "successCriteria": [
+        "All: shade a bar to add 2/7 and 3/7",
+        "Most: add three fractions",
+        "Some: write an answer greater than 1 as a mixed number"
+      ],
+      "crossCurricular": "Cooking: adding cups of ingredients",
+      "smsc": "Social: adding up shares of work in a team",
+      "keywords": [
+        {
+          "term": "numerator",
+          "def": "how many parts"
+        },
+        {
+          "term": "denominator",
+          "def": "the size of the parts"
+        },
+        {
+          "term": "sum",
+          "def": "the answer to an addition"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Bilal says 1/5 + 2/5 = 3/10. What did he do wrong?",
+        "a": "He added the denominators. The parts stay fifths: 3/5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bar of chocolate ten pieces",
+          "alt": "A bar in equal pieces",
+          "for": "hook"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2/? = 14/63",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 6/9.",
+          "a": "2/3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 9 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "1 = ?/7",
+          "a": "7/7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Add the parts",
+          "bullets": [
+            "2/7 + 3/7 = 5/7",
+            "2 sevenths and 3 sevenths: 5 sevenths.",
+            "The size of the parts stays the same."
+          ],
+          "fraction": [
+            {
+              "parts": 7,
+              "shaded": 2,
+              "label": "2/7"
+            },
+            {
+              "parts": 7,
+              "shaded": 3,
+              "label": "3/7"
+            },
+            {
+              "parts": 7,
+              "shaded": 5,
+              "label": "5/7"
+            }
+          ],
+          "note": "Shade a bar."
+        },
+        {
+          "heading": "Three fractions",
+          "bullets": [
+            "1/9 + 4/9 + 2/9 = 7/9",
+            "Add all the numerators."
+          ],
+          "misconception": {
+            "wrong": "1/5 + 2/5 = 3/10",
+            "right": "Fifths stay fifths: 1/5 + 2/5 = 3/5"
+          },
+          "note": "Ask: 1/10 + 3/10 + 5/10? (9/10)."
+        },
+        {
+          "heading": "More than 1",
+          "bullets": [
+            "5/8 + 6/8 = 11/8",
+            "8/8 = 1, so 11/8 = 1 3/8"
+          ],
+          "fraction": [
+            {
+              "parts": 8,
+              "shaded": 8,
+              "label": "1"
+            },
+            {
+              "parts": 8,
+              "shaded": 3,
+              "label": "3/8: 1 3/8"
+            }
+          ],
+          "note": "Use two strips."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3/10 + 4/10 = ?",
+            "options": [
+              "7/20",
+              "7/10",
+              "12/10"
+            ],
+            "answer": 1,
+            "why": "Add the tenths: 7/10. 7/20 adds the denominators."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2/9 + 5/9 = ?",
+          "a": "7/9",
+          "mins": 2,
+          "model": "Teacher: 2 ninths and 5 ninths make 7 ninths."
+        },
+        {
+          "q": "1/6 + 2/6 + 2/6 = ?",
+          "a": "5/6",
+          "mins": 2
+        },
+        {
+          "q": "4/5 + 3/5 = ?",
+          "a": "7/5 = 1 2/5",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 3/8 + 4/8; 2/11 + 5/11 + 3/11; 7/12 + 3/12",
+          "a": "7/8; 10/11; 10/12",
+          "mins": 4,
+          "model": "Teacher: 3 eighths and 4 eighths: 7/8."
+        },
+        {
+          "q": "Extend: Extend: 5/6 + 4/6; 7/10 + 6/10",
+          "a": "1 3/6 (1 1/2); 1 3/10",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: three fractions with denominator 9 sum to 1. Two are 2/9 and 4/9. Find the third.",
+          "a": "3/9",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "4/7 + 2/7 = ?",
+          "a": "6/7",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why add numerators but not denominators?",
+          "a": "The denominator is the size of the parts; that does not change, we just have more of them",
+          "mins": 3
+        }
+      ],
+      "homework": "TT quiz; 6 additions of fractions with the same denominator.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: simplify the answers where you can.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: small step 'Add two or more fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 45 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 46,
+      "title": "Subtract two fractions",
+      "duration": 45,
+      "bigQuestion": "What is 1 - 3/8?",
+      "objectives": [
+        "To understand how to subtract fractions with the same denominator, including from 1"
+      ],
+      "successCriteria": [
+        "All: subtract fractions with the same denominator",
+        "Most: subtract a fraction from 1",
+        "Some: find a missing fraction"
+      ],
+      "crossCurricular": "Cooking: how much of a pie is left",
+      "smsc": "Moral: not taking more than our fair share",
+      "keywords": [
+        {
+          "term": "subtract",
+          "def": "take away"
+        },
+        {
+          "term": "difference",
+          "def": "how much more or less"
+        },
+        {
+          "term": "whole",
+          "def": "1 = all the parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A pie is cut into 8 slices. 3 are eaten. What fraction is left?",
+        "a": "5/8: 1 - 3/8 = 8/8 - 3/8."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "pie cut into slices",
+          "alt": "A pie in equal slices",
+          "for": "hook"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/8 + 4/8 = ?",
+          "a": "7/8",
+          "mins": 1
+        },
+        {
+          "q": "1 = ?/8",
+          "a": "8/8",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 12 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "5/6 + 4/6 = ?",
+          "a": "1 3/6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Take away parts",
+          "bullets": [
+            "7/9 - 3/9 = 4/9",
+            "The parts stay ninths."
+          ],
+          "fraction": [
+            {
+              "parts": 9,
+              "shaded": 7,
+              "label": "7/9"
+            },
+            {
+              "parts": 9,
+              "shaded": 4,
+              "label": "after - 3/9: 4/9"
+            }
+          ],
+          "note": "Cross out 3 shaded parts."
+        },
+        {
+          "heading": "From 1",
+          "bullets": [
+            "1 = 8/8",
+            "8/8 - 3/8 = 5/8"
+          ],
+          "fraction": [
+            {
+              "parts": 8,
+              "shaded": 5,
+              "label": "5/8 left"
+            }
+          ],
+          "note": "Ask: 1 - 2/5? (3/5)."
+        },
+        {
+          "heading": "Missing fractions",
+          "bullets": [
+            "9/10 - ? = 4/10",
+            "? = 5/10"
+          ],
+          "misconception": {
+            "wrong": "1 - 3/8 = 2/8",
+            "right": "Write 1 as 8/8: 8/8 - 3/8 = 5/8"
+          },
+          "note": "Count on or count back."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1 - 4/7 = ?",
+            "options": [
+              "3/7",
+              "5/7",
+              "4/7"
+            ],
+            "answer": 0,
+            "why": "7/7 - 4/7 = 3/7."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "5/6 - 2/6 = ?",
+          "a": "3/6",
+          "mins": 2,
+          "model": "Teacher: 5 sixths take 2 sixths: 3/6."
+        },
+        {
+          "q": "1 - 1/4 = ?",
+          "a": "3/4",
+          "mins": 2
+        },
+        {
+          "q": "11/12 - ? = 7/12",
+          "a": "4/12",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 8/11 - 5/11; 1 - 7/10; 6/7 - 6/7",
+          "a": "3/11; 3/10; 0",
+          "mins": 4,
+          "model": "Teacher: 8 elevenths take 5: 3/11."
+        },
+        {
+          "q": "Extend: Extend: a bottle is 9/10 full. 4/10 is poured out. Then 2/10 is drunk. How full is it now?",
+          "a": "3/10",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 2 - 3/5 (use 10/5)",
+          "a": "7/5 = 1 2/5",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 - 5/9 = ?",
+          "a": "4/9",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what is 1 - 3/8?",
+          "a": "5/8, because 1 = 8/8",
+          "mins": 3
+        }
+      ],
+      "homework": "TT quiz; 6 subtractions of fractions, two of them from 1.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 3 - 1 3/4 using quarters.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: small step 'Subtract two fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 46 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 47,
+      "title": "EXTENSION: improper fractions and mixed numbers",
+      "duration": 45,
+      "bigQuestion": "How can 11/4 and 2 3/4 be the same?",
+      "objectives": [
+        "To understand how to convert between improper fractions and mixed numbers"
+      ],
+      "successCriteria": [
+        "All: say what makes a fraction improper",
+        "Most: convert an improper fraction to a mixed number",
+        "Some: convert a mixed number to an improper fraction"
+      ],
+      "crossCurricular": "Cooking: 7/4 cups of flour is 1 3/4 cups",
+      "smsc": "Social: two ways of saying the same thing",
+      "keywords": [
+        {
+          "term": "improper fraction",
+          "def": "numerator bigger than the denominator, like 7/4"
+        },
+        {
+          "term": "mixed number",
+          "def": "wholes and a fraction"
+        },
+        {
+          "term": "convert",
+          "def": "change the form, not the value"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 11 quarter-pieces of naan. How many whole naans is that?",
+        "a": "2 whole naans and 3 quarters: 2 3/4."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "flatbread cut into quarters",
+          "alt": "Flatbread cut into quarters",
+          "for": "hook"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 - 5/9 = ?",
+          "a": "4/9",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 ÷ 4 = ? r ?",
+          "a": "2 r 3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 5 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "4/5 + 3/5 = ?",
+          "a": "7/5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Improper to mixed",
+          "bullets": [
+            "11/4: how many 4/4 make wholes?",
+            "11 ÷ 4 = 2 r 3",
+            "11/4 = 2 3/4"
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "1"
+            },
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "2"
+            },
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "3/4: 2 3/4"
+            }
+          ],
+          "note": "Make wholes with strips."
+        },
+        {
+          "heading": "Mixed to improper",
+          "bullets": [
+            "2 3/5: each whole is 5/5.",
+            "2 × 5 = 10 fifths, + 3 = 13",
+            "2 3/5 = 13/5"
+          ],
+          "note": "Ask: 1 5/6? (11/6)."
+        },
+        {
+          "heading": "Same point",
+          "bullets": [
+            "7/4 = 1 3/4",
+            "Same place on the line."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 3,
+            "step": 1,
+            "marks": [
+              {
+                "at": 1.75,
+                "label": "7/4 = 1 3/4"
+              },
+              {
+                "at": 2.75,
+                "label": "11/4 = 2 3/4"
+              }
+            ]
+          },
+          "note": "Mark both on the line."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "17/5 = ?",
+            "options": [
+              "3 2/5",
+              "2 7/5",
+              "1 7/5"
+            ],
+            "answer": 0,
+            "why": "17 ÷ 5 = 3 r 2: 3 2/5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "9/4 as a mixed number?",
+          "a": "2 1/4",
+          "mins": 2,
+          "model": "Teacher: 9 ÷ 4 = 2 r 1, so 2 wholes and 1 quarter."
+        },
+        {
+          "q": "3 1/3 as an improper fraction?",
+          "a": "10/3",
+          "mins": 2
+        },
+        {
+          "q": "13/6 as a mixed number?",
+          "a": "2 1/6",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 7/3; 15/4; 23/10 as mixed numbers",
+          "a": "2 1/3; 3 3/4; 2 3/10",
+          "mins": 4,
+          "model": "Teacher: 7 ÷ 3 = 2 r 1: 2 1/3."
+        },
+        {
+          "q": "Extend: Extend: 4 2/5; 3 5/8 as improper fractions",
+          "a": "22/5; 29/8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: order 13/4, 3 1/2, 10/3",
+          "a": "13/4 (3 1/4), 10/3 (3 1/3), 3 1/2",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "5/2 = ?",
+          "a": "2 1/2",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can 11/4 and 2 3/4 be the same?",
+          "a": "11 quarters make 2 wholes (8/4) and 3 more quarters",
+          "mins": 3
+        }
+      ],
+      "homework": "TT quiz; convert 4 improper fractions and 4 mixed numbers.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: convert 47/12 and back again.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: small steps 'Understand improper fractions', 'Convert mixed numbers to improper fractions' and 'Convert improper fractions to mixed numbers' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 47 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 48,
+      "title": "Tenths as fractions",
+      "duration": 45,
+      "bigQuestion": "How many tenths make a whole?",
+      "objectives": [
+        "To understand tenths as fractions of a whole"
+      ],
+      "successCriteria": [
+        "All: show tenths on a strip and a 10 by 10 grid",
+        "Most: count in tenths past 1",
+        "Some: make a whole from tenths"
+      ],
+      "crossCurricular": "Science: 1/10 of a metre is 10 cm",
+      "smsc": "Moral: sharing equally so each person gets their fair part",
+      "keywords": [
+        {
+          "term": "tenth",
+          "def": "one of 10 equal parts"
+        },
+        {
+          "term": "whole",
+          "def": "10 tenths"
+        },
+        {
+          "term": "partition",
+          "def": "split into parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "10 friends share 1 kg of dates equally. What fraction of a kilogram does each get?",
+        "a": "1/10 of a kilogram (100 g)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bar of chocolate ten pieces",
+          "alt": "A bar in 10 equal pieces",
+          "for": "hook"
+        },
+        {
+          "find": "metre stick",
+          "alt": "A metre stick",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "5/2 = ?",
+          "a": "2 1/2",
+          "mins": 1
+        },
+        {
+          "q": "TT: 10 × 7 = ?",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "1/10 of 50?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "1 = ?/10",
+          "a": "10/10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One tenth",
+          "bullets": [
+            "1 whole in 10 equal parts.",
+            "Each is 1/10."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 1,
+              "label": "1/10"
+            },
+            {
+              "parts": 10,
+              "shaded": 7,
+              "label": "7/10"
+            }
+          ],
+          "note": "Show a strip of 10."
+        },
+        {
+          "heading": "Make a whole",
+          "bullets": [
+            "3/10 + 7/10 = 10/10 = 1",
+            "Number bonds to 10!"
+          ],
+          "note": "Ask: 4/10 + ? = 1 (6/10)."
+        },
+        {
+          "heading": "Count past 1",
+          "bullets": [
+            "8/10, 9/10, 1, 1 1/10, 1 2/10",
+            "12/10 = 1 2/10"
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "1"
+            },
+            {
+              "parts": 10,
+              "shaded": 2,
+              "label": "2/10: 1 2/10"
+            }
+          ],
+          "note": "Count with two strips."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which makes 1 whole?",
+            "options": [
+              "6/10 + 3/10",
+              "6/10 + 4/10",
+              "6/10 + 6/10"
+            ],
+            "answer": 1,
+            "why": "6 + 4 = 10 tenths."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2/10 + ? = 1",
+          "a": "8/10",
+          "mins": 2,
+          "model": "Teacher: 2 and 8 make 10, so 8/10."
+        },
+        {
+          "q": "15/10 as a mixed number?",
+          "a": "1 5/10",
+          "mins": 2
+        },
+        {
+          "q": "Count back in tenths from 1 2/10 to 9/10.",
+          "a": "1 1/10, 1, 9/10",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write the fraction for 3, 9 and 13 shaded tenths.",
+          "a": "3/10, 9/10, 1 3/10",
+          "mins": 4,
+          "model": "Teacher: 13 tenths is 10 tenths and 3 more: 1 3/10."
+        },
+        {
+          "q": "Extend: Extend: 1/10 of 1 kg in grams; 3/10 of 1 m in cm",
+          "a": "100 g; 30 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 7/10 + 6/10 + 9/10 as a mixed number",
+          "a": "2 2/10",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "10 tenths = ?",
+          "a": "1",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how many tenths make a whole?",
+          "a": "10 tenths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; shade 6 tenths strips and write each as a fraction.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: find 4/10 of 1 litre in ml.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: small step 'Tenths as fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Paper fraction strips in tenths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 48 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 49,
+      "title": "Tenths as decimals",
+      "duration": 45,
+      "bigQuestion": "What does the dot in 0.7 tell us?",
+      "objectives": [
+        "To understand how tenths can be written as decimals"
+      ],
+      "successCriteria": [
+        "All: write 3/10 as 0.3",
+        "Most: write a mixed number of tenths as a decimal",
+        "Some: explain the decimal point"
+      ],
+      "crossCurricular": "Science: measuring 0.5 m and 1.2 m",
+      "smsc": "Moral: precise, honest measuring",
+      "keywords": [
+        {
+          "term": "decimal",
+          "def": "a number with a decimal point"
+        },
+        {
+          "term": "decimal point",
+          "def": "the dot between ones and tenths"
+        },
+        {
+          "term": "tenths",
+          "def": "the first place after the point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A ruler shows 0.7 m. Is that more or less than 1 metre? How much less?",
+        "a": "Less: 3 tenths of a metre (30 cm) less."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "metre stick",
+          "alt": "A metre stick",
+          "for": "hook"
+        },
+        {
+          "find": "digital kitchen scale display",
+          "alt": "A digital scale showing a decimal",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "10 tenths = ?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "1 3/10 = ?/10",
+          "a": "13/10",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 6 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "1/10 of 1 m?",
+          "a": "10 cm",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same value",
+          "bullets": [
+            "1/10 = 0.1",
+            "3/10 = 0.3",
+            "7/10 = 0.7"
+          ],
+          "table": {
+            "head": [
+              "Fraction",
+              "1/10",
+              "3/10",
+              "5/10",
+              "7/10",
+              "10/10"
+            ],
+            "rows": [
+              [
+                "Decimal",
+                "0.1",
+                "0.3",
+                "0.5",
+                "0.7",
+                "1.0"
+              ]
+            ]
+          },
+          "note": "Say: zero point seven."
+        },
+        {
+          "heading": "The point",
+          "bullets": [
+            "Ones . tenths",
+            "1.4 = 1 whole and 4 tenths",
+            "1.4 = 1 4/10"
+          ],
+          "note": "Ask: 2 6/10 as a decimal? (2.6)."
+        },
+        {
+          "heading": "On a line",
+          "bullets": [
+            "0, 0.1, 0.2 ... 0.9, 1"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 0.3,
+                "label": "0.3 = 3/10"
+              },
+              {
+                "at": 0.7,
+                "label": "0.7"
+              }
+            ]
+          },
+          "note": "Count along in tenths."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "8/10 as a decimal?",
+            "options": [
+              "8.10",
+              "0.8",
+              "8.0"
+            ],
+            "answer": 1,
+            "why": "8 tenths: 0.8. 8.10 is a common slip."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "5/10 as a decimal?",
+          "a": "0.5",
+          "mins": 2,
+          "model": "Teacher: 5 tenths, 0 ones: 0.5."
+        },
+        {
+          "q": "0.9 as a fraction?",
+          "a": "9/10",
+          "mins": 2
+        },
+        {
+          "q": "3 2/10 as a decimal?",
+          "a": "3.2",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write 4/10, 9/10, 1 1/10 and 12/10 as decimals.",
+          "a": "0.4, 0.9, 1.1, 1.2",
+          "mins": 4,
+          "model": "Teacher: 12/10 = 1 2/10 = 1.2."
+        },
+        {
+          "q": "Extend: Extend: write 0.6, 2.3 and 4.0 as fractions or mixed numbers.",
+          "a": "6/10, 2 3/10, 4",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a ribbon is 1.5 m. How many tenths of a metre is that?",
+          "a": "15 tenths",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.4 = ?/10",
+          "a": "4/10",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what does the dot in 0.7 tell us?",
+          "a": "It separates the ones from the tenths: 0 ones and 7 tenths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; find 3 decimals on packets or a ruler and write them as fractions.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: write 27/10 as a decimal.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: small step 'Tenths as decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 49 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 50,
+      "title": "Tenths on a place value chart and number line",
+      "duration": 45,
+      "bigQuestion": "Where does 2.6 sit between 2 and 3?",
+      "objectives": [
+        "To understand tenths on a place value chart and a number line"
+      ],
+      "successCriteria": [
+        "All: show a decimal with counters on a chart",
+        "Most: place tenths on a number line",
+        "Some: partition a decimal in more than one way"
+      ],
+      "crossCurricular": "Geography: distances like 2.6 km",
+      "smsc": "Social: helping a partner check a reading",
+      "keywords": [
+        {
+          "term": "place value chart",
+          "def": "columns for ones, tenths and more"
+        },
+        {
+          "term": "partition",
+          "def": "split into parts"
+        },
+        {
+          "term": "tenths",
+          "def": "the first place after the point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A walk is 2.6 km. Is it nearer 2 km or 3 km?",
+        "a": "Nearer 3 km: 2.6 is past 2.5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "road sign showing distance",
+          "alt": "A road sign with distances",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "8/10 as a decimal?",
+          "a": "0.8",
+          "mins": 1
+        },
+        {
+          "q": "2 3/10 as a decimal?",
+          "a": "2.3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 4 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "Half way between 2 and 3?",
+          "a": "2.5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "On the chart",
+          "bullets": [
+            "2.6 = 2 ones and 6 tenths.",
+            "Counters: 2 in ones, 6 in tenths."
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths"
+            ],
+            "rows": [
+              [
+                "2",
+                ".",
+                "6"
+              ],
+              [
+                "0",
+                ".",
+                "9"
+              ],
+              [
+                "3",
+                ".",
+                "0"
+              ]
+            ]
+          },
+          "note": "Place counters."
+        },
+        {
+          "heading": "On a line",
+          "bullets": [
+            "2 to 3 in 10 gaps.",
+            "Each gap is 0.1.",
+            "2.6 is 6 gaps after 2."
+          ],
+          "numberline": {
+            "min": 2,
+            "max": 3,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 2.5,
+                "label": "2.5"
+              },
+              {
+                "at": 2.6,
+                "label": "2.6"
+              }
+            ]
+          },
+          "note": "Count from 2."
+        },
+        {
+          "heading": "Partition",
+          "bullets": [
+            "2.6 = 2 + 0.6",
+            "2.6 = 1 + 1.6",
+            "2.6 = 2.3 + 0.3"
+          ],
+          "diagram": {
+            "centre": "2.6",
+            "items": [
+              "2 + 0.6",
+              "1 + 1.6",
+              "2.3 + 0.3",
+              "2.5 + 0.1"
+            ]
+          },
+          "note": "Ask: one more way? (2.4 + 0.2)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is 4 ones and 3 tenths?",
+            "options": [
+              "4.3",
+              "3.4",
+              "43"
+            ],
+            "answer": 0,
+            "why": "Ones, then tenths after the point: 4.3."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 one and 7 tenths?",
+          "a": "1.7",
+          "mins": 2,
+          "model": "Teacher puts 1 counter in ones and 7 in tenths: 1.7."
+        },
+        {
+          "q": "On a 0 to 1 line in tenths, 4 gaps along?",
+          "a": "0.4",
+          "mins": 2
+        },
+        {
+          "q": "3.8 = 3 + ?",
+          "a": "0.8",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write the decimals: 5 ones 2 tenths; 0 ones 9 tenths; 7 ones 0 tenths",
+          "a": "5.2; 0.9; 7.0",
+          "mins": 4,
+          "model": "Teacher: 5 in ones, 2 in tenths: 5.2."
+        },
+        {
+          "q": "Extend: Extend: partition 4.7 in 3 different ways.",
+          "a": "For example 4 + 0.7; 3 + 1.7; 4.5 + 0.2",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: what number is 0.3 more than 1.8?",
+          "a": "2.1",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Nearer 4 or 5: 4.2?",
+          "a": "4",
+          "mins": 2
+        },
+        {
+          "q": "Big question: where does 2.6 sit?",
+          "a": "6 tenths past 2, just past half way to 3",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; draw a 0 to 2 line in tenths and mark 0.4, 1.1 and 1.9.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: count back in tenths from 2.3 to 1.6.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: small steps 'Tenths on a place value chart' and 'Tenths on a number line' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 50 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 51,
+      "title": "Divide a 1- or 2-digit number by 10",
+      "duration": 45,
+      "bigQuestion": "What happens to the digits when we divide by 10?",
+      "objectives": [
+        "To understand how dividing by 10 moves digits one place to the right"
+      ],
+      "successCriteria": [
+        "All: divide a 1-digit number by 10",
+        "Most: divide a 2-digit number by 10",
+        "Some: explain the digit movement"
+      ],
+      "crossCurricular": "Cooking: sharing 7 litres of soup into 10 bowls",
+      "smsc": "Moral: sharing equally among many",
+      "keywords": [
+        {
+          "term": "divide",
+          "def": "share equally"
+        },
+        {
+          "term": "place value",
+          "def": "the value of a digit from its place"
+        },
+        {
+          "term": "tenths",
+          "def": "the place after the point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "7 ÷ 10: will the answer be bigger or smaller than 1?",
+        "a": "Smaller: 0.7."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "pot of soup and bowls",
+          "alt": "A pot of soup and bowls",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "4 ones 3 tenths?",
+          "a": "4.3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 70 ÷ 10 = ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 7 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "0.3 more than 1.8?",
+          "a": "2.1",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Digits move right",
+          "bullets": [
+            "7 ÷ 10 = 0.7",
+            "The 7 moves from ones to tenths."
+          ],
+          "table": {
+            "head": [
+              "Tens",
+              "Ones",
+              ".",
+              "Tenths"
+            ],
+            "rows": [
+              [
+                "0",
+                "7",
+                ".",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                ".",
+                "7"
+              ]
+            ]
+          },
+          "note": "Slide the digit on the chart."
+        },
+        {
+          "heading": "2-digit numbers",
+          "bullets": [
+            "35 ÷ 10 = 3.5",
+            "Tens to ones, ones to tenths."
+          ],
+          "table": {
+            "head": [
+              "Tens",
+              "Ones",
+              ".",
+              "Tenths"
+            ],
+            "rows": [
+              [
+                "3",
+                "5",
+                ".",
+                "0"
+              ],
+              [
+                "0",
+                "3",
+                ".",
+                "5"
+              ]
+            ]
+          },
+          "note": "Ask: 82 ÷ 10? (8.2)."
+        },
+        {
+          "heading": "In context",
+          "bullets": [
+            "7 l ÷ 10 = 0.7 l",
+            "56 cm ÷ 10 = 5.6 cm"
+          ],
+          "misconception": {
+            "wrong": "35 ÷ 10 = 3.05",
+            "right": "Each digit moves one place: 3.5"
+          },
+          "note": "Ask: 40 ÷ 10? (4)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "64 ÷ 10 = ?",
+            "options": [
+              "6.4",
+              "0.64",
+              "640"
+            ],
+            "answer": 0,
+            "why": "Each digit moves one place right: 6.4."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "9 ÷ 10 = ?",
+          "a": "0.9",
+          "mins": 2,
+          "model": "Teacher slides 9 from ones to tenths: 0.9."
+        },
+        {
+          "q": "47 ÷ 10 = ?",
+          "a": "4.7",
+          "mins": 2
+        },
+        {
+          "q": "30 ÷ 10 = ?",
+          "a": "3",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 3 ÷ 10; 28 ÷ 10; 91 ÷ 10",
+          "a": "0.3; 2.8; 9.1",
+          "mins": 4,
+          "model": "Teacher: 28 ÷ 10: 2 tens become 2 ones, 8 ones become 8 tenths: 2.8."
+        },
+        {
+          "q": "Extend: Extend: ? ÷ 10 = 5.6; ? ÷ 10 = 0.4",
+          "a": "56; 4",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 75 cm of ribbon cut into 10 equal pieces. How long is each?",
+          "a": "7.5 cm",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "85 ÷ 10 = ?",
+          "a": "8.5",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what happens to the digits?",
+          "a": "They move one place to the right; they become 10 times smaller",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; divide 6 numbers by 10.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: divide 4 by 10, then the answer by 10 again.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: small step 'Divide a 1-digit number by 10 and Divide a 2-digit number by 10' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 51 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 52,
+      "title": "Hundredths as fractions",
+      "duration": 45,
+      "bigQuestion": "What is a hundredth, and how is it linked to a tenth?",
+      "objectives": [
+        "To understand hundredths as fractions and their link to tenths"
+      ],
+      "successCriteria": [
+        "All: shade hundredths on a 100 grid",
+        "Most: write hundredths as fractions",
+        "Some: explain that 1/10 = 10/100"
+      ],
+      "crossCurricular": "Money: 1p is 1/100 of £1",
+      "smsc": "Moral: every penny counts when we give sadaqah",
+      "keywords": [
+        {
+          "term": "hundredth",
+          "def": "one of 100 equal parts"
+        },
+        {
+          "term": "tenth",
+          "def": "one of 10 equal parts, = 10 hundredths"
+        },
+        {
+          "term": "grid",
+          "def": "squares in rows and columns"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "£1 = 100p. What fraction of £1 is 1p? And 10p?",
+        "a": "1p is 1/100; 10p is 10/100 = 1/10."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "hundred square grid",
+          "alt": "A 10 by 10 grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "one penny coin",
+          "alt": "A 1p coin",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "85 ÷ 10 = ?",
+          "a": "8.5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 10 × 10 = ?",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "1/10 of 100?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "0.3 = ?/10",
+          "a": "3/10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A 100 grid",
+          "bullets": [
+            "100 equal squares.",
+            "1 square = 1/100.",
+            "1 column = 10/100 = 1/10."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 1,
+              "label": "1 column of 10 = 1/10"
+            }
+          ],
+          "note": "Shade one square, then one column."
+        },
+        {
+          "heading": "Hundredths",
+          "bullets": [
+            "23 squares: 23/100",
+            "2 columns and 3 squares.",
+            "2/10 and 3/100"
+          ],
+          "note": "Ask: 47 squares? (47/100)."
+        },
+        {
+          "heading": "Tenths and hundredths",
+          "bullets": [
+            "1/10 = 10/100",
+            "3/10 = 30/100",
+            "7/10 = 70/100"
+          ],
+          "table": {
+            "head": [
+              "Tenths",
+              "1/10",
+              "3/10",
+              "5/10",
+              "7/10"
+            ],
+            "rows": [
+              [
+                "Hundredths",
+                "10/100",
+                "30/100",
+                "50/100",
+                "70/100"
+              ]
+            ]
+          },
+          "note": "Ask: 50/100 = ?/10 (5/10)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which equals 4/10?",
+            "options": [
+              "4/100",
+              "40/100",
+              "14/100"
+            ],
+            "answer": 1,
+            "why": "Each tenth is 10 hundredths: 40/100."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Shade 36/100 of a 100 grid.",
+          "a": "3 columns and 6 squares",
+          "mins": 2,
+          "model": "Teacher shades 3 full columns (30) and 6 more squares: 36/100."
+        },
+        {
+          "q": "8/10 = ?/100",
+          "a": "80/100",
+          "mins": 2
+        },
+        {
+          "q": "What fraction of £1 is 25p?",
+          "a": "25/100",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write as hundredths: 6/10; 9/10; 1/10 + 4/100",
+          "a": "60/100; 90/100; 14/100",
+          "mins": 4,
+          "model": "Teacher: 6 tenths is 60 hundredths."
+        },
+        {
+          "q": "Extend: Extend: 100/100 - 37/100 = ?",
+          "a": "63/100",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 3/10 + 25/100 = ?/100",
+          "a": "55/100",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/10 = ?/100",
+          "a": "10/100",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what is a hundredth?",
+          "a": "One of 100 equal parts; 10 hundredths make 1 tenth",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; shade 4 amounts on a 100 grid and write each as a fraction.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: find 45/100 of £1 and of 1 m.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: small step 'Hundredths as fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Printed 10 by 10 grids",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 52 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 53,
+      "title": "Hundredths as decimals",
+      "duration": 45,
+      "bigQuestion": "How do we write 23/100 as a decimal?",
+      "objectives": [
+        "To understand how to write hundredths as decimals"
+      ],
+      "successCriteria": [
+        "All: write 23/100 as 0.23",
+        "Most: write a decimal with hundredths as a fraction",
+        "Some: explain 0.5 = 0.50"
+      ],
+      "crossCurricular": "Money: £0.23 is 23p",
+      "smsc": "Moral: honest prices and correct change",
+      "keywords": [
+        {
+          "term": "hundredths",
+          "def": "the second place after the point"
+        },
+        {
+          "term": "decimal",
+          "def": "a number with a decimal point"
+        },
+        {
+          "term": "decimal place",
+          "def": "a place after the point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A price says £0.07. Ali reads it as 70p. Is he right?",
+        "a": "No: 0.07 is 7 hundredths of £1: 7p."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "price label shop",
+          "alt": "A price label",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A 10 by 10 grid",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/10 = ?/100",
+          "a": "10/100",
+          "mins": 1
+        },
+        {
+          "q": "36/100 = ? tenths and ? hundredths",
+          "a": "3 and 6",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 8 = ?",
+          "a": "96",
+          "mins": 1
+        },
+        {
+          "q": "0.7 = ?/10",
+          "a": "7/10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two places",
+          "bullets": [
+            "23/100 = 0.23",
+            "0 ones, 2 tenths, 3 hundredths."
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "0",
+                ".",
+                "2",
+                "3"
+              ],
+              [
+                "0",
+                ".",
+                "0",
+                "7"
+              ],
+              [
+                "0",
+                ".",
+                "5",
+                "0"
+              ]
+            ]
+          },
+          "note": "Shade 23 squares."
+        },
+        {
+          "heading": "Small hundredths",
+          "bullets": [
+            "7/100 = 0.07",
+            "The 0 holds the tenths place."
+          ],
+          "misconception": {
+            "wrong": "7/100 = 0.7",
+            "right": "0.7 is 7 tenths; 7 hundredths is 0.07"
+          },
+          "note": "Ask: 4/100? (0.04)."
+        },
+        {
+          "heading": "Same value",
+          "bullets": [
+            "0.5 = 0.50",
+            "5 tenths = 50 hundredths"
+          ],
+          "note": "Ask: 0.3 = 0.?0 (0.30)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "45/100 as a decimal?",
+            "options": [
+              "4.5",
+              "0.45",
+              "0.045"
+            ],
+            "answer": 1,
+            "why": "4 tenths and 5 hundredths: 0.45."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "62/100 as a decimal?",
+          "a": "0.62",
+          "mins": 2,
+          "model": "Teacher: 6 tenths, 2 hundredths: 0.62."
+        },
+        {
+          "q": "9/100 as a decimal?",
+          "a": "0.09",
+          "mins": 2
+        },
+        {
+          "q": "0.38 as a fraction?",
+          "a": "38/100",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write 17/100, 80/100, 3/100 as decimals.",
+          "a": "0.17, 0.80 (0.8), 0.03",
+          "mins": 4,
+          "model": "Teacher: 17 hundredths is 1 tenth and 7 hundredths: 0.17."
+        },
+        {
+          "q": "Extend: Extend: write 1 25/100 and 2 6/100 as decimals.",
+          "a": "1.25; 2.06",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: write £0.75, £0.05 and £1.50 in pence.",
+          "a": "75p; 5p; 150p",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.04 = ?/100",
+          "a": "4/100",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we write 23/100 as a decimal?",
+          "a": "0.23: 2 tenths and 3 hundredths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; find 3 prices and write them as fractions of £1.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: write 0.4, 0.04 and 0.44 as fractions and order them.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: small step 'Hundredths as decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Printed 10 by 10 grids",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 53 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 54,
+      "title": "Hundredths on a place value chart",
+      "duration": 45,
+      "bigQuestion": "What is each digit in 3.47 worth?",
+      "objectives": [
+        "To understand the value of each digit in a number with hundredths"
+      ],
+      "successCriteria": [
+        "All: place 3.47 on a chart with counters",
+        "Most: say the value of each digit",
+        "Some: partition a decimal into ones, tenths and hundredths"
+      ],
+      "crossCurricular": "Science: reading 1.25 kg on a digital scale",
+      "smsc": "Social: checking each other's chart",
+      "keywords": [
+        {
+          "term": "ones",
+          "def": "the place before the point"
+        },
+        {
+          "term": "tenths",
+          "def": "the first place after the point"
+        },
+        {
+          "term": "hundredths",
+          "def": "the second place after the point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In 3.47 and 3.74, the digits are the same. Are the numbers the same?",
+        "a": "No: 3.74 has 7 tenths, 3.47 has 4 tenths. 3.74 is bigger."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "digital kitchen scale display",
+          "alt": "A digital scale display",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.04 = ?/100",
+          "a": "4/100",
+          "mins": 1
+        },
+        {
+          "q": "45/100 as a decimal?",
+          "a": "0.45",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 9 = ?",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "2 6/100 as a decimal?",
+          "a": "2.06",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "On the chart",
+          "bullets": [
+            "3.47",
+            "3 ones, 4 tenths, 7 hundredths"
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "3",
+                ".",
+                "4",
+                "7"
+              ],
+              [
+                "3",
+                ".",
+                "7",
+                "4"
+              ],
+              [
+                "0",
+                ".",
+                "0",
+                "9"
+              ]
+            ]
+          },
+          "note": "Counters in each column."
+        },
+        {
+          "heading": "Partition",
+          "bullets": [
+            "3.47 = 3 + 0.4 + 0.07",
+            "3.47 = 3 + 0.47"
+          ],
+          "diagram": {
+            "centre": "3.47",
+            "items": [
+              "3 ones = 3",
+              "4 tenths = 0.4",
+              "7 hundredths = 0.07",
+              "3 + 0.47"
+            ]
+          },
+          "note": "Ask: 5.26 = 5 + 0.2 + ? (0.06)."
+        },
+        {
+          "heading": "Digit values",
+          "bullets": [
+            "In 6.08 the 8 is 8 hundredths.",
+            "In 6.80 the 8 is 8 tenths."
+          ],
+          "note": "Ask: value of 5 in 2.53? (5 tenths)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "The value of the 9 in 4.29 is...",
+            "options": [
+              "9",
+              "9 tenths",
+              "9 hundredths"
+            ],
+            "answer": 2,
+            "why": "The second place after the point: 9 hundredths."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write: 2 ones, 5 tenths, 1 hundredth.",
+          "a": "2.51",
+          "mins": 2,
+          "model": "Teacher places counters 2, 5 and 1: 2.51."
+        },
+        {
+          "q": "Value of the 6 in 0.64?",
+          "a": "6 tenths",
+          "mins": 2
+        },
+        {
+          "q": "1.38 = 1 + 0.3 + ?",
+          "a": "0.08",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: partition 4.56, 0.73 and 7.09.",
+          "a": "4 + 0.5 + 0.06; 0.7 + 0.03; 7 + 0.09",
+          "mins": 4,
+          "model": "Teacher: 4.56 = 4 + 0.5 + 0.06."
+        },
+        {
+          "q": "Extend: Extend: what number is 0.01 more than 3.29? 0.1 more than 3.29?",
+          "a": "3.30; 3.39",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: make the largest and smallest numbers with digits 5, 0 and 8 in ones, tenths and hundredths.",
+          "a": "8.50; 0.58",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Value of the 3 in 5.03?",
+          "a": "3 hundredths",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what is each digit in 3.47 worth?",
+          "a": "3 ones, 4 tenths, 7 hundredths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; write 4 decimals from packets and partition each.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: make 1.25 three ways with counters.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: small step 'Hundredths on a place value chart' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 54 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 55,
+      "title": "Hundredths on a number line",
+      "duration": 45,
+      "bigQuestion": "Where is 0.35 on a number line?",
+      "objectives": [
+        "To understand how to place hundredths on a number line"
+      ],
+      "successCriteria": [
+        "All: read hundredths on a 0 to 0.1 line",
+        "Most: place a decimal between two tenths",
+        "Some: estimate where a hundredth goes on a 0 to 1 line"
+      ],
+      "crossCurricular": "Science: a race timed to hundredths of a second",
+      "smsc": "Moral: patience and care when measuring",
+      "keywords": [
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        },
+        {
+          "term": "interval",
+          "def": "an equal gap on the line"
+        },
+        {
+          "term": "hundredth",
+          "def": "one of 100 equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A race is won by 0.05 seconds. Is that more or less than a tenth of a second?",
+        "a": "Less: 0.05 is half of 0.1."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "ruler with millimetres close up",
+          "alt": "A ruler with small marks",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Value of the 3 in 5.03?",
+          "a": "3 hundredths",
+          "mins": 1
+        },
+        {
+          "q": "0.01 more than 3.29?",
+          "a": "3.30",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 6 = ?",
+          "a": "66",
+          "mins": 1
+        },
+        {
+          "q": "Half of 0.1?",
+          "a": "0.05",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Zoom in",
+          "bullets": [
+            "Between 0.3 and 0.4: 10 gaps.",
+            "Each gap is 0.01.",
+            "0.35 is half way."
+          ],
+          "numberline": {
+            "min": 0.3,
+            "max": 0.4,
+            "step": 0.01,
+            "marks": [
+              {
+                "at": 0.3,
+                "label": "0.3"
+              },
+              {
+                "at": 0.35,
+                "label": "0.35"
+              },
+              {
+                "at": 0.38,
+                "label": "0.38"
+              },
+              {
+                "at": 0.4,
+                "label": "0.4"
+              }
+            ]
+          },
+          "note": "Zoom between two tenths."
+        },
+        {
+          "heading": "Read the mark",
+          "bullets": [
+            "1.2 to 1.3 in 10 gaps.",
+            "The mark is 7 gaps on.",
+            "1.27"
+          ],
+          "numberline": {
+            "min": 1.2,
+            "max": 1.3,
+            "step": 0.01,
+            "marks": [
+              {
+                "at": 1.27,
+                "label": "?"
+              }
+            ]
+          },
+          "note": "Count the gaps."
+        },
+        {
+          "heading": "Estimate on 0 to 1",
+          "bullets": [
+            "0.35 is between 0.3 and 0.4.",
+            "A bit before half way to 1."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 0.35,
+                "label": "0.35"
+              },
+              {
+                "at": 0.5,
+                "label": "half"
+              }
+            ]
+          },
+          "note": "Mark tenths first, then estimate."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Between 0.6 and 0.7 there are 10 gaps. The pointer is 4 gaps after 0.6. Number?",
+            "options": [
+              "0.64",
+              "0.4",
+              "6.4"
+            ],
+            "answer": 0,
+            "why": "Each gap is 0.01: 0.6 + 0.04 = 0.64."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Between 0.1 and 0.2, 3 gaps after 0.1?",
+          "a": "0.13",
+          "mins": 2,
+          "model": "Teacher: each gap is 0.01, so 3 gaps is 0.03: 0.13."
+        },
+        {
+          "q": "Which two tenths is 0.58 between?",
+          "a": "0.5 and 0.6",
+          "mins": 2
+        },
+        {
+          "q": "Half way between 0.2 and 0.3?",
+          "a": "0.25",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: read 3 marks: 8 gaps after 0.4; 2 gaps after 1.9; 5 gaps after 0",
+          "a": "0.48; 1.92; 0.05",
+          "mins": 4,
+          "model": "Teacher: 0.4 and 8 hundredths: 0.48."
+        },
+        {
+          "q": "Extend: Extend: which is nearer 1: 0.91 or 0.19?",
+          "a": "0.91",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: what is half way between 0.4 and 0.5? What is 0.5 - 0.03?",
+          "a": "0.45; 0.47",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Between 0.8 and 0.9, 6 gaps on?",
+          "a": "0.86",
+          "mins": 2
+        },
+        {
+          "q": "Big question: where is 0.35?",
+          "a": "Half way between 0.3 and 0.4",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; draw a line from 2.5 to 2.6 and mark 2.53 and 2.58.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: order 0.7, 0.07, 0.17 and 0.71 on a line.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: hundredths (number lines from the Year 4 programme of study) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Paper number lines zoomed in (e.g. 0.3 to 0.4)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 55 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 56,
+      "title": "Tenths and hundredths: mixed practice",
+      "duration": 45,
+      "bigQuestion": "How do tenths, hundredths, fractions and decimals all fit together?",
+      "objectives": [
+        "To understand the links between tenths and hundredths as fractions and decimals"
+      ],
+      "successCriteria": [
+        "All: convert between fractions and decimals",
+        "Most: count in tenths and hundredths",
+        "Some: solve a money or length problem with decimals"
+      ],
+      "crossCurricular": "Money: pounds and pence",
+      "smsc": "Moral: careful money handling is a trust (amanah)",
+      "keywords": [
+        {
+          "term": "tenth",
+          "def": "1/10 = 0.1"
+        },
+        {
+          "term": "hundredth",
+          "def": "1/100 = 0.01"
+        },
+        {
+          "term": "decimal",
+          "def": "a number with a decimal point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is more: 3 tenths or 25 hundredths?",
+        "a": "3 tenths = 30 hundredths, so 3 tenths."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "pound coins and pence",
+          "alt": "British coins",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 grid",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Between 0.8 and 0.9, 6 gaps on?",
+          "a": "0.86",
+          "mins": 1
+        },
+        {
+          "q": "0.7 = ?/100",
+          "a": "70/100",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 9 = ?",
+          "a": "108",
+          "mins": 1
+        },
+        {
+          "q": "47 ÷ 10 = ?",
+          "a": "4.7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four ways",
+          "bullets": [
+            "3/10 = 0.3 = 30/100 = 0.30"
+          ],
+          "diagram": {
+            "centre": "0.3",
+            "items": [
+              "3/10",
+              "30/100",
+              "0.30",
+              "3 columns of a 100 grid"
+            ]
+          },
+          "note": "Show each on the grid."
+        },
+        {
+          "heading": "Counting",
+          "bullets": [
+            "In tenths: 0.8, 0.9, 1.0, 1.1",
+            "In hundredths: 0.98, 0.99, 1.00, 1.01"
+          ],
+          "note": "Count aloud together."
+        },
+        {
+          "heading": "Money",
+          "bullets": [
+            "£1 = 100p",
+            "£0.45 = 45p",
+            "£2.05 = 205p"
+          ],
+          "table": {
+            "head": [
+              "Pence",
+              "45p",
+              "5p",
+              "130p",
+              "205p"
+            ],
+            "rows": [
+              [
+                "Pounds",
+                "£0.45",
+                "£0.05",
+                "£1.30",
+                "£2.05"
+              ]
+            ]
+          },
+          "note": "Ask: 130p in pounds? (£1.30)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is the same as 0.6?",
+            "options": [
+              "6/100",
+              "60/100",
+              "0.06"
+            ],
+            "answer": 1,
+            "why": "6 tenths = 60 hundredths."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write 0.47 as a fraction.",
+          "a": "47/100",
+          "mins": 2,
+          "model": "Teacher: 4 tenths and 7 hundredths: 47 hundredths."
+        },
+        {
+          "q": "Count on in hundredths: 2.97, 2.98, ?, ?",
+          "a": "2.99, 3.00",
+          "mins": 2
+        },
+        {
+          "q": "75p in pounds?",
+          "a": "£0.75",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: complete: 9/10 = 0.? ; 9/100 = 0.?? ; 1 3/100 = ?",
+          "a": "0.9; 0.09; 1.03",
+          "mins": 4,
+          "model": "Teacher: 9 tenths: 0.9."
+        },
+        {
+          "q": "Extend: Extend: Use < or >: 0.4 _ 0.38; 0.09 _ 0.1",
+          "a": ">; <",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a book costs £3.65. You pay £5. Change in pence?",
+          "a": "135p",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 = ? hundredths",
+          "a": "100",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do they all fit together?",
+          "a": "1 = 10 tenths = 100 hundredths; fractions and decimals are two ways to write the same value",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; write 5 prices in pounds and in pence.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: order 0.5, 0.45, 0.54 and 0.405.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: consolidation of tenths and hundredths small steps (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 56 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 57,
+      "title": "Divide a 1-digit number by 100",
+      "duration": 45,
+      "bigQuestion": "What happens to 7 when we divide it by 100?",
+      "objectives": [
+        "To understand how dividing by 100 moves digits two places to the right"
+      ],
+      "successCriteria": [
+        "All: divide a 1-digit number by 100",
+        "Most: explain why we need a placeholder 0",
+        "Some: link ÷ 100 to hundredths"
+      ],
+      "crossCurricular": "Money: 3p is £0.03",
+      "smsc": "Moral: sharing among many people fairly",
+      "keywords": [
+        {
+          "term": "divide",
+          "def": "share equally"
+        },
+        {
+          "term": "placeholder",
+          "def": "a 0 that holds a place"
+        },
+        {
+          "term": "hundredths",
+          "def": "the second place after the point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "£3 shared equally between 100 people. How much each?",
+        "a": "3p each: £0.03."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "one penny coin",
+          "alt": "A 1p coin",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 = ? hundredths",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "7 ÷ 10 = ?",
+          "a": "0.7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 300 ÷ 100 = ?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "0.07 = ?/100",
+          "a": "7/100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two places right",
+          "bullets": [
+            "7 ÷ 100 = 0.07",
+            "7 ones become 7 hundredths."
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "7",
+                ".",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                ".",
+                "0",
+                "7"
+              ]
+            ]
+          },
+          "note": "Slide 2 places on the chart."
+        },
+        {
+          "heading": "Placeholder",
+          "bullets": [
+            "0.07 not 0.7.",
+            "The 0 holds the tenths place."
+          ],
+          "misconception": {
+            "wrong": "7 ÷ 100 = 0.7",
+            "right": "0.7 is 7 ÷ 10. 7 ÷ 100 = 0.07"
+          },
+          "note": "Ask: 4 ÷ 100? (0.04)."
+        },
+        {
+          "heading": "Two steps of ÷ 10",
+          "bullets": [
+            "7 ÷ 10 = 0.7",
+            "0.7 ÷ 10 = 0.07",
+            "÷ 100 is ÷ 10 twice."
+          ],
+          "note": "Ask: 9 ÷ 100? (0.09)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "5 ÷ 100 = ?",
+            "options": [
+              "0.5",
+              "0.05",
+              "500"
+            ],
+            "answer": 1,
+            "why": "Two places right: 0.05."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3 ÷ 100 = ?",
+          "a": "0.03",
+          "mins": 2,
+          "model": "Teacher slides 3 two places right: 0.03."
+        },
+        {
+          "q": "8 ÷ 100 = ?",
+          "a": "0.08",
+          "mins": 2
+        },
+        {
+          "q": "? ÷ 100 = 0.06",
+          "a": "6",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 1 ÷ 100; 9 ÷ 100; 2 ÷ 100",
+          "a": "0.01; 0.09; 0.02",
+          "mins": 4,
+          "model": "Teacher: 1 one becomes 1 hundredth: 0.01."
+        },
+        {
+          "q": "Extend: Extend: £6 ÷ 100 in pounds and in pence",
+          "a": "£0.06; 6p",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 4 ÷ 10 and 4 ÷ 100. How many times bigger is the first answer?",
+          "a": "0.4 and 0.04: 10 times bigger",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "6 ÷ 100 = ?",
+          "a": "0.06",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what happens to 7 when we divide by 100?",
+          "a": "It moves 2 places right to become 0.07, 7 hundredths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; divide 6 single digits by 10 and by 100.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: find 0.09 × 100.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: small step 'Divide a 1- or 2-digit number by 100' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 57 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 58,
+      "title": "Divide a 2-digit number by 100",
+      "duration": 45,
+      "bigQuestion": "Why is 45 ÷ 100 = 0.45?",
+      "objectives": [
+        "To understand how to divide 2-digit numbers by 100"
+      ],
+      "successCriteria": [
+        "All: divide a 2-digit number by 100",
+        "Most: use money to explain",
+        "Some: find a missing number in ÷ 100"
+      ],
+      "crossCurricular": "Money: 45p is £0.45",
+      "smsc": "Moral: honest change",
+      "keywords": [
+        {
+          "term": "divide",
+          "def": "share equally"
+        },
+        {
+          "term": "hundredths",
+          "def": "the second place after the point"
+        },
+        {
+          "term": "place value",
+          "def": "the value of a digit from its place"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "45 ÷ 100: is the answer more or less than 1? More or less than 0.5?",
+        "a": "Less than 1 and less than 0.5: 0.45."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "pound coins and pence",
+          "alt": "Coins",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6 ÷ 100 = ?",
+          "a": "0.06",
+          "mins": 1
+        },
+        {
+          "q": "45 ÷ 10 = ?",
+          "a": "4.5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 11 = ?",
+          "a": "99",
+          "mins": 1
+        },
+        {
+          "q": "45p in pounds?",
+          "a": "£0.45",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two places right",
+          "bullets": [
+            "45 ÷ 100 = 0.45",
+            "Tens become tenths.",
+            "Ones become hundredths."
+          ],
+          "table": {
+            "head": [
+              "Tens",
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "4",
+                "5",
+                ".",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                ".",
+                "4",
+                "5"
+              ]
+            ]
+          },
+          "note": "Slide both digits."
+        },
+        {
+          "heading": "With zeros",
+          "bullets": [
+            "30 ÷ 100 = 0.3",
+            "50 ÷ 100 = 0.5",
+            "10 ÷ 100 = 0.1"
+          ],
+          "note": "Ask: 70 ÷ 100? (0.7)."
+        },
+        {
+          "heading": "Money",
+          "bullets": [
+            "99p = £0.99",
+            "99 ÷ 100 = 0.99"
+          ],
+          "note": "Ask: 25p in pounds? (£0.25)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "83 ÷ 100 = ?",
+            "options": [
+              "8.3",
+              "0.83",
+              "0.083"
+            ],
+            "answer": 1,
+            "why": "Two places right: 0.83."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "27 ÷ 100 = ?",
+          "a": "0.27",
+          "mins": 2,
+          "model": "Teacher slides 2 tens to tenths and 7 ones to hundredths: 0.27."
+        },
+        {
+          "q": "60 ÷ 100 = ?",
+          "a": "0.6",
+          "mins": 2
+        },
+        {
+          "q": "? ÷ 100 = 0.38",
+          "a": "38",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 19 ÷ 100; 72 ÷ 100; 40 ÷ 100",
+          "a": "0.19; 0.72; 0.4",
+          "mins": 4,
+          "model": "Teacher: 19 ÷ 100 = 0.19."
+        },
+        {
+          "q": "Extend: Extend: ? ÷ 100 = 0.5; ? ÷ 10 = 3.6",
+          "a": "50; 36",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 64 ÷ 10 ÷ 10 = ? Explain.",
+          "a": "0.64: ÷ 10 twice is ÷ 100",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "91 ÷ 100 = ?",
+          "a": "0.91",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is 45 ÷ 100 = 0.45?",
+          "a": "Each digit moves 2 places right: 4 tens become 4 tenths, 5 ones become 5 hundredths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; divide 6 two-digit numbers by 100 and write them as money.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: how many times smaller is 0.45 than 45?",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: small step 'Divide a 1- or 2-digit number by 100' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 58 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 59,
+      "title": "Divide by 10 and 100: problems",
+      "duration": 45,
+      "bigQuestion": "How do we choose ÷ 10 or ÷ 100 in a problem?",
+      "objectives": [
+        "To understand how to solve problems by dividing by 10 and 100"
+      ],
+      "successCriteria": [
+        "All: choose ÷ 10 or ÷ 100",
+        "Most: convert cm to m and p to £",
+        "Some: solve a two-step problem"
+      ],
+      "crossCurricular": "Science: converting cm to m",
+      "smsc": "Social: sharing a class fund fairly",
+      "keywords": [
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        },
+        {
+          "term": "divide",
+          "def": "share equally"
+        },
+        {
+          "term": "decimal",
+          "def": "a number with a decimal point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A 1 m ribbon is cut into 100 equal pieces. How long is each piece in metres? In cm?",
+        "a": "0.01 m; 1 cm."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "tape measure",
+          "alt": "A tape measure",
+          "for": "hook"
+        },
+        {
+          "find": "pound coins and pence",
+          "alt": "Coins",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "91 ÷ 100 = ?",
+          "a": "0.91",
+          "mins": 1
+        },
+        {
+          "q": "8 ÷ 10 = ?",
+          "a": "0.8",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 12 = ?",
+          "a": "84",
+          "mins": 1
+        },
+        {
+          "q": "100 cm = ? m",
+          "a": "1",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Which one?",
+          "bullets": [
+            "10 equal parts: ÷ 10",
+            "100 equal parts or p to £: ÷ 100",
+            "cm to m: ÷ 100"
+          ],
+          "sort": {
+            "columns": [
+              "÷ 10",
+              "÷ 100"
+            ],
+            "cards": [
+              "Share 30 between 10",
+              "65p in pounds",
+              "45 cm in metres",
+              "7 m cut into 10",
+              "8p in pounds",
+              "56 shared by 10"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ]
+          },
+          "note": "Pupils decide first."
+        },
+        {
+          "heading": "Units",
+          "bullets": [
+            "65p = £0.65",
+            "45 cm = 0.45 m",
+            "7 m ÷ 10 = 0.7 m"
+          ],
+          "note": "Ask: 9 cm in m? (0.09 m)."
+        },
+        {
+          "heading": "Two steps",
+          "model": {
+            "problem": "£48 shared between 10 people, then each gives half to charity. How much each to charity?",
+            "steps": [
+              "48 ÷ 10 = £4.80",
+              "Half of £4.80 = £2.40"
+            ],
+            "answer": "£2.40"
+          },
+          "note": "Model aloud."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "36 cm in metres?",
+            "options": [
+              "3.6 m",
+              "0.36 m",
+              "0.036 m"
+            ],
+            "answer": 1,
+            "why": "cm to m: ÷ 100: 0.36 m."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "52p in pounds?",
+          "a": "£0.52",
+          "mins": 2,
+          "model": "Teacher: 52 ÷ 100 = 0.52: £0.52."
+        },
+        {
+          "q": "9 litres shared into 10 bottles?",
+          "a": "0.9 l each",
+          "mins": 2
+        },
+        {
+          "q": "85 cm in metres?",
+          "a": "0.85 m",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 7p in pounds; 23 cm in metres; 64 ÷ 10",
+          "a": "£0.07; 0.23 m; 6.4",
+          "mins": 4,
+          "model": "Teacher: 7 ÷ 100 = 0.07: £0.07."
+        },
+        {
+          "q": "Extend: Extend: 10 pencils cost £6. One pencil costs?",
+          "a": "£0.60 (60p)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a class collects 96p in 1p coins each day. After 10 days, how much in pounds?",
+          "a": "£9.60",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "4 cm in metres?",
+          "a": "0.04 m",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we choose ÷ 10 or ÷ 100?",
+          "a": "Count the equal parts, or think about the units: 100p = £1, 100 cm = 1 m",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice; write 4 lengths in cm as metres and 4 prices in pence as pounds.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: write your own two-step ÷ 100 problem.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: divide by 10 and 100 (problem solving) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Ruler and real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 59 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 60,
+      "title": "Fractions: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "What do I know about fractions, and what is my next step?",
+      "objectives": [
+        "To understand how secure I am with this half term's fractions"
+      ],
+      "successCriteria": [
+        "All: find fractions of amounts and compare fractions",
+        "Most: find equivalent and simplified fractions",
+        "Some: add and subtract fractions"
+      ],
+      "smsc": "Spiritual: shukr for learning; honest self-assessment",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "simplify",
+          "def": "smaller numbers, same value"
+        },
+        {
+          "term": "mixed number",
+          "def": "wholes and a fraction"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which fraction skill would you teach a younger pupil? Which do you need to practise?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/4 of 24?",
+          "a": "18",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 8/12.",
+          "a": "2/3",
+          "mins": 1
+        },
+        {
+          "q": "2/9 + 5/9 = ?",
+          "a": "7/9",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 7 = ?",
+          "a": "56",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Recap",
+          "bullets": [
+            "Fractions of amounts.",
+            "Compare, equivalents, simplify.",
+            "Add and subtract."
+          ],
+          "diagram": {
+            "centre": "Fractions",
+            "items": [
+              "3/4 of 28 = 21",
+              "3/4 > 5/8",
+              "1/3 = 2/6 = 3/9",
+              "6/8 = 3/4",
+              "2/7 + 3/7 = 5/7",
+              "1 - 3/8 = 5/8"
+            ]
+          },
+          "note": "Show-me recap."
+        },
+        {
+          "heading": "End-of-block check",
+          "bullets": [
+            "12 questions.",
+            "Work alone, then mark."
+          ],
+          "note": "Check on the worksheet; mark together."
+        },
+        {
+          "heading": "My next step",
+          "bullets": [
+            "What went well?",
+            "Even better if...?"
+          ],
+          "note": "Pupils write one EBI target."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2/3 of 27 = ?",
+            "options": [
+              "9",
+              "18",
+              "54"
+            ],
+            "answer": 1,
+            "why": "27 ÷ 3 = 9; 9 × 2 = 18."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/7 of 63 = ?",
+          "a": "9",
+          "mins": 2,
+          "model": "Teacher: 63 ÷ 7 = 9."
+        },
+        {
+          "q": "Use < or >: 5/6 _ 3/4",
+          "a": ">",
+          "mins": 2
+        },
+        {
+          "q": "10/15 simplified?",
+          "a": "2/3",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: 5/8 of 48; 3/5 = ?/20; order 2 1/3, 1 5/6, 2 1/6",
+          "a": "30; 12/20; 1 5/6, 2 1/6, 2 1/3",
+          "mins": 4,
+          "model": "Teacher: 48 ÷ 8 = 6, 6 × 5 = 30."
+        },
+        {
+          "q": "Extend: Check: 4/9 + 7/9; 1 - 5/12; simplify 15/20",
+          "a": "1 2/9; 7/12; 3/4",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: 2/5 of a number is 14. What is the number?",
+          "a": "35",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/4 = ?/16",
+          "a": "4/16",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what do I know and what is my next step?",
+          "a": "Answers will vary",
+          "mins": 3
+        }
+      ],
+      "homework": "TT check practice; your target from today for 10 minutes.",
+      "send": "SEND: concrete first (strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: write 3 tricky questions for a partner with answers.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 3: Fractions: end-of-block check (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4) and a printed fraction wall",
+        "Counters, pasta or buttons (for sets)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 60 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions; decimals (a)",
+      "n": 61,
+      "title": "Decimals: end-of-block check and times tables check",
+      "duration": 45,
+      "bigQuestion": "How confident am I with tenths, hundredths and my tables?",
+      "objectives": [
+        "To understand how secure I am with Decimals A and the times tables"
+      ],
+      "successCriteria": [
+        "All: write tenths and hundredths as fractions and decimals",
+        "Most: divide by 10 and 100",
+        "Some: recall 12 × 12 facts quickly"
+      ],
+      "smsc": "Moral: steady daily practice builds strong habits",
+      "keywords": [
+        {
+          "term": "tenths",
+          "def": "first place after the point"
+        },
+        {
+          "term": "hundredths",
+          "def": "second place after the point"
+        },
+        {
+          "term": "decimal point",
+          "def": "separates ones from tenths"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which times table do you find hardest? How will you learn it?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "times tables grid",
+          "alt": "A multiplication grid",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.4 = ?/100",
+          "a": "40/100",
+          "mins": 1
+        },
+        {
+          "q": "38 ÷ 100 = ?",
+          "a": "0.38",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 8 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 12 = ?",
+          "a": "132",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Recap",
+          "bullets": [
+            "1/10 = 0.1; 1/100 = 0.01",
+            "÷ 10: one place right.",
+            "÷ 100: two places right."
+          ],
+          "table": {
+            "head": [
+              "Fraction",
+              "Decimal",
+              "Words"
+            ],
+            "rows": [
+              [
+                "3/10",
+                "0.3",
+                "3 tenths"
+              ],
+              [
+                "7/100",
+                "0.07",
+                "7 hundredths"
+              ],
+              [
+                "45/100",
+                "0.45",
+                "4 tenths 5 hundredths"
+              ],
+              [
+                "1 2/10",
+                "1.2",
+                "1 and 2 tenths"
+              ]
+            ]
+          },
+          "note": "Show-me recap."
+        },
+        {
+          "heading": "Times tables check",
+          "bullets": [
+            "25 facts.",
+            "5 minutes."
+          ],
+          "note": "Check: mixed 12 × 12 facts; mark and record on the tracker."
+        },
+        {
+          "heading": "End-of-block check",
+          "bullets": [
+            "10 decimals questions.",
+            "Then write a target."
+          ],
+          "note": "Check on the worksheet; mark together."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is the largest?",
+            "options": [
+              "0.5",
+              "0.45",
+              "0.09"
+            ],
+            "answer": 0,
+            "why": "0.5 = 0.50, which is more than 0.45 and 0.09."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "62/100 as a decimal?",
+          "a": "0.62",
+          "mins": 2,
+          "model": "Teacher: 6 tenths and 2 hundredths: 0.62."
+        },
+        {
+          "q": "5 ÷ 10 = ?",
+          "a": "0.5",
+          "mins": 2
+        },
+        {
+          "q": "TT: 9 × 7 = ?",
+          "a": "63",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: 0.8 as a fraction; 3/100 as a decimal; 74 ÷ 100; 74 ÷ 10",
+          "a": "8/10; 0.03; 0.74; 7.4",
+          "mins": 4,
+          "model": "Teacher: 0.8 is 8 tenths: 8/10."
+        },
+        {
+          "q": "Extend: Check: value of the 6 in 2.06; partition 5.38",
+          "a": "6 hundredths; 5 + 0.3 + 0.08",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: 1.2 m in cm; 45p in pounds",
+          "a": "120 cm; £0.45",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "TT: 12 × 7 = ?",
+          "a": "84",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how confident am I?",
+          "a": "Answers will vary: one strength and one target",
+          "mins": 3
+        }
+      ],
+      "homework": "Practise the tables you missed today for 5 minutes a day.",
+      "send": "SEND: place value counters and a printed place value chart, worked example kept on screen. EAL: key word cards (tenth, hundredth, decimal point); stem 'The digit ... is worth ...'. Stretch: order 0.6, 0.06, 0.66 and 6.",
+      "resources": [
+        "White Rose Maths Year 4, Spring block 4: Decimals A: end-of-block check; times tables check (12 × 12) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Printed times tables tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 61 guided, independent and homework tasks"
       ]
     }
   ]
