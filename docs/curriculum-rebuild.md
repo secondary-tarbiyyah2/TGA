@@ -98,8 +98,9 @@ Next, in this order (each one agent; briefs in docs/agent-briefs/):
 5. Backlog docs/backlog/tafweed.md: T19 portal polish is folded into the redesign (docs/portal-redesign.md "Next"), T22 LADO (owner must say which local authority), T23 safeguarding mailbox (owner must create it in
    Microsoft 365). Prospectus PDF tablet-or-printer line: owner said not to do it (10 Nov). (Old note: the prospectus patch script approach in
    git history of public/prospectus).
-6. Small fixes: arrows (→) in poll options render as dashes (branch `builder-arrows-fix` may exist); make the website use
-   self-hosted fonts so builds don't fail when Google Fonts can't be reached.
+6. (done) Arrows on slides (#62), Qur'anic and Arabic fonts (#90), self-hosted website fonts (#93).
+   Running 10 Nov evening: portal navigation + guided tour (`claude/portal-nav-tour`), assessment mode for test
+   lessons (`builder-assessment-mode`), term resources pipeline + Spring 1 resources.
 
 Owner's open questions (waiting on them): Kitabi book per primary Arabic topic; which pupils sit Arabic 1AA0 and where they
 take speaking; Khums framing in Islamic Studies; what the January Year 11 cohort has already covered; set-text suitability
