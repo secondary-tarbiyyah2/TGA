@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLearnSession, dashboardPathForRole } from "@/lib/learn/session";
 import { LearnAccountMenu } from "@/components/learn/LearnAccountMenu";
 import { NotificationBell } from "@/components/learn/NotificationBell";
@@ -20,6 +20,7 @@ import { InstallAppSetup } from "@/components/learn/InstallApp";
 import { HubTabs } from "@/components/learn/PageHeader";
 import { ViewSettingsMenu } from "@/components/ViewSettings";
 import { ConfirmProvider } from "@/components/learn/kit";
+import { TourHost } from "@/components/learn/tour/TourHost";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -84,6 +85,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
       return !c;
     });
   const activeSession = session && session !== "loading" ? session : null;
+  const roleNames = useMemo(() => roles.map((r) => r.role), [roles]);
   // The entry assessment is a full-screen, distraction-free page of its own (no portal chrome).
   if (/^\/(learn\/)?assessment(\/|$)/.test(pathname || "")) return <div className="portal">{children}</div>;
   const signedIn = !!(activeSession && rolesLoaded && roles.length > 0);
@@ -145,12 +147,17 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
                 href="/report-concern"
                 title="Report a concern"
                 aria-label="Report a concern"
+                data-tour="concern"
                 className="portal-topbar-btn ml-1 whitespace-nowrap text-sm font-medium text-red-700 hover:!bg-red-50"
               >
                 <Icon name="shieldAlert" className="h-[18px] w-[18px]" />
                 <span className="hidden sm:inline">Report a concern</span>
               </Link>
-              {roles.some((r) => ADMIN_ISH_ROLES.includes(r.role)) && <NotificationBell userId={activeSession.user.id} />}
+              {roles.some((r) => ADMIN_ISH_ROLES.includes(r.role)) && (
+                <span data-tour="notifications" className="inline-flex">
+                  <NotificationBell userId={activeSession.user.id} />
+                </span>
+              )}
             </div>
           </div>
         </header>
@@ -166,6 +173,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
         </main>
       </div>
       <MobileTabBar area={area} roles={roles.map((r) => r.role)} />
+      <TourHost area={area} roles={roleNames} userId={activeSession.user.id} />
     </div>
     </ConfirmProvider>
   );

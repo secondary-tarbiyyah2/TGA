@@ -584,6 +584,28 @@ html[data-readable-font] .portal .portal-display {
     transition: none;
   }
 }
+/* Guided tour (tour/TourHost.tsx): the page dims, with a cut-out round the thing being explained. */
+.tour-spotlight {
+  position: absolute;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 0 9999px color-mix(in oklab, var(--color-ink-900) 58%, transparent);
+  outline: 2px solid var(--portal-accent, var(--color-gold-500));
+  outline-offset: 0;
+  pointer-events: none;
+  transition: top 200ms ease-out, left 200ms ease-out, width 200ms ease-out, height 200ms ease-out;
+}
+.tour-dim {
+  background: color-mix(in oklab, var(--color-ink-900) 58%, transparent);
+}
+.tour-card {
+  transition: top 200ms ease-out, left 200ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tour-spotlight,
+  .tour-card {
+    transition: none;
+  }
+}
 /* Plain text links (the "Switch portal" list). */
 .portal-nav-sub {
   display: flex;

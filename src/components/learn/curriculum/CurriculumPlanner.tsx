@@ -39,6 +39,7 @@ import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Moda
 import { Select } from "@/components/learn/Select";
 
 import { askConfirm } from "@/components/learn/kit";
+import { usePageTips } from "@/components/learn/tour/usePageTips";
 const YEAR_KEY = "tga-planner-year";
 const btn = `${ui.btnSecondary} ${ui.sm}`;
 const isKs4 = (y: string) => y === "y10" || y === "y11";
@@ -127,6 +128,8 @@ export function CurriculumPlanner() {
     return [...m.entries()].map(([slug, name]) => ({ slug, name })).sort((a, b) => a.name.localeCompare(b.name));
   }, [units, kind]);
   const forYear = useMemo(() => (units || []).filter((u) => u.year === year && u.kind === kind), [units, year, kind]);
+  // First visit: three short tips (pick a year, open a unit, saved for everyone).
+  usePageTips("planner", !!units && subjects.length > 0);
   const showUnplaced = forYear.some((u) => columnOf(u) === NOT_PLACED);
   const allColumns = showUnplaced ? [...columns, { key: NOT_PLACED, label: ks4 ? "Other" : "Not placed yet" }] : columns;
   const lastEdit = forYear.reduce<CurriculumUnit | null>((a, u) => (!a || u.updated_at > a.updated_at ? u : a), null);
@@ -216,14 +219,16 @@ export function CurriculumPlanner() {
   return (
     <div className="space-y-4">
       <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4">
-        <Tabs variant="switch" items={YEARS.map((y) => ({ key: y, label: yearLabel(y).replace("Year ", "Y") }))} value={year} onChange={setYear} label="Year group" />
+        <div data-tour="planner-years">
+          <Tabs variant="switch" items={YEARS.map((y) => ({ key: y, label: yearLabel(y).replace("Year ", "Y") }))} value={year} onChange={setYear} label="Year group" />
+        </div>
         <p className="text-sm text-ink/75">
           {ks4
             ? "Years 10 and 11 follow the exam board's specification: each unit sits in the term the board suggests. Open a unit to change its points or add a week-by-week plan."
             : "Each subject's units for the year, half term by half term. Open a unit to change what it covers or plan it week by week."}{" "}
           {canEdit ? "Changes save for everyone straight away." : "You can look but not change the plan."}
         </p>
-        <p className="text-xs text-ink/65" aria-live="polite">
+        <p data-tour="planner-status" className="text-xs text-ink/65" aria-live="polite">
           {lastEdit?.updated_by_name ? `Last change in ${yearLabel(year)}: ${lastEdit.updated_by_name}, ${when(lastEdit.updated_at)}. ` : ""}
           {pending ? "Waiting to be copied to the syllabus pack. " : ""}
           {sync ? `Last copied to the syllabus pack and slides: ${when(sync.finished_at || sync.started_at)}${sync.ok ? "" : " (that run did not finish; it will try again)"}.` : "Not yet copied to the syllabus pack."}
@@ -256,7 +261,7 @@ export function CurriculumPlanner() {
       )}
 
       {units && subjects.length > 0 && (
-        <div className="overflow-hidden rounded-2xl border border-gold-light bg-white">
+        <div data-tour="planner-grid" className="overflow-hidden rounded-2xl border border-gold-light bg-white">
           {/* Column headings: only on wide screens, where the grid shows. */}
           <div className="hidden border-b border-gold-light bg-cream lg:grid" style={{ gridTemplateColumns: `10rem repeat(${allColumns.length}, minmax(0, 1fr))` }}>
             <span className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Subject</span>

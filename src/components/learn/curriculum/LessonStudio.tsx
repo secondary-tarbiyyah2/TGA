@@ -14,6 +14,7 @@ import { answerFeedback, loadFeedback, type LessonFeedback } from "@/lib/learn/l
 import { BLOCKS } from "@/lib/learn/lessonSchema.mjs";
 
 import { askConfirm } from "@/components/learn/kit";
+import { usePageTips } from "@/components/learn/tour/usePageTips";
 // Edit a lesson directly on its slides (Tafweed T35). Every text box on the slide preview and in
 // the lesson plan is edited in place; Save stores the lesson exactly as the form editor does
 // (curriculum_save_lesson_content), then the quick build (workflow "Build one lesson") makes the
@@ -373,6 +374,8 @@ export function LessonStudio({
       return y;
     });
   const slides = useMemo(() => (c ? slideList(c) : []), [c]);
+  // First time in the editor: three short tips (Slides or plan, edit in place, Save).
+  usePageTips("lesson-editor", !!c && mayEdit);
   const notesFor = (key: string) => notes.filter((f) => f.part === key && (f.status === "open" || f.status === "accepted")).length;
   const edit = mayEdit && !busy;
 
@@ -736,14 +739,14 @@ export function LessonStudio({
               {loaded?.content_updated_by_name && realEditAt(loaded.content_updated_by_name, loaded.content_updated_at) ? ` · last changed by ${loaded.content_updated_by_name}, ${when(loaded.content_updated_at!)}` : ""}
             </p>
           </div>
-          <div role="tablist" aria-label="Show" className="inline-flex rounded-lg border border-gold-light p-0.5">
+          <div role="tablist" aria-label="Show" data-tour="studio-views" className="inline-flex rounded-lg border border-gold-light p-0.5">
             {(["slides", "plan"] as const).map((t) => (
               <button key={t} role="tab" type="button" aria-selected={tab === t} onClick={() => setTab(t)} className={`rounded-md px-3 py-1.5 text-sm font-medium ${tab === t ? "bg-teal-700 text-white" : "text-ink/75 hover:bg-cream"}`}>
                 {t === "slides" ? "Slides" : "Lesson plan"}
               </button>
             ))}
           </div>
-          <button type="button" className={btn} onClick={() => printElement(printRef.current)} disabled={!c}>
+          <button type="button" data-tour="studio-pdf" className={btn} onClick={() => printElement(printRef.current)} disabled={!c}>
             <Icon name="printer" size="sm" /> Download PDF of this lesson
           </button>
           {onFeedback && (
@@ -757,7 +760,7 @@ export function LessonStudio({
             </button>
           )}
           {mayEdit && (
-            <button type="button" className={`${ui.btnPrimary} ${ui.sm}`} onClick={save} disabled={busy || !c || (!dirty && !rebuild)}>
+            <button type="button" data-tour="studio-save" className={`${ui.btnPrimary} ${ui.sm}`} onClick={save} disabled={busy || !c || (!dirty && !rebuild)}>
               {busy ? "Saving…" : "Save"}
             </button>
           )}
@@ -817,7 +820,7 @@ export function LessonStudio({
           )}
 
           {/* The editable preview (also what "Download PDF" prints) */}
-          <div className="min-h-0 flex-1 overflow-y-auto bg-gold-50/60 p-3 sm:p-5">
+          <div data-tour="studio-preview" className="min-h-0 flex-1 overflow-y-auto bg-gold-50/60 p-3 sm:p-5">
             {!c && !error && <p className="text-sm text-ink/65">Opening…</p>}
             {openNotes.length > 0 && (
               <details className="mx-auto mb-4 max-w-4xl rounded-xl border border-amber-200 bg-white p-3 lg:hidden" open={!!feedback}>

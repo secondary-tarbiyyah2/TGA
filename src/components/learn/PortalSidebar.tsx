@@ -13,6 +13,7 @@ import { Icon } from "@/components/learn/Icon";
 import { InstallAppLink } from "@/components/learn/InstallApp";
 import { NavBadge, useNavBadges, type NavBadges } from "@/lib/learn/navBadges";
 import { setCategoryOpen, togglePin, usePortalPrefs, type PortalPrefs } from "@/lib/learn/portalPrefs";
+import { startTour } from "@/lib/learn/tours";
 
 const AREA_NAMES: Record<string, string> = {
   "/admin/dashboard": "School administration",
@@ -119,7 +120,7 @@ function NavSection({ section, isOpen, onToggle, pathname, onNavigate, badges, p
   const holdsActive = section.items.some((i) => isSidebarItemActive(pathname, i));
   return (
     <div>
-      <button type="button" onClick={onToggle} aria-expanded={isOpen} aria-controls={panelId} className={`portal-nav-cat ${holdsActive ? "portal-nav-cat--here" : ""}`}>
+      <button type="button" onClick={onToggle} aria-expanded={isOpen} aria-controls={panelId} data-tour-cat={section.label} className={`portal-nav-cat ${holdsActive ? "portal-nav-cat--here" : ""}`}>
         <span className={`portal-tile ${tileFor(section.icon)}`} aria-hidden="true">
           <Icon name={section.icon} />
         </span>
@@ -281,17 +282,28 @@ function SidebarBody({
                   <p className="portal-nav-label">Home</p>
                 </li>
               )}
-              {entries.map((e, idx) => (
-                <li key={e.kind === "link" ? e.item.id || e.item.href : e.section.label} className={e.kind === "section" && entries[idx - 1]?.kind === "link" ? "pt-3" : undefined} data-tour={e.kind === "section" && entries[idx - 1]?.kind === "link" ? "categories" : undefined}>
-                  {e.kind === "section" && entries[idx - 1]?.kind === "link" && <p className="portal-nav-label !pt-0">Categories</p>}
-                  {e.kind === "link" ? (
-                    <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} collapsed={false} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} pin={grouped ? { pinned: prefs.pinned.includes(e.item.href) } : undefined} />
-                  ) : (
-                    <NavSection section={e.section} isOpen={isOpen(e.section.label)} onToggle={() => toggle(e.section.label)} pathname={pathname} onNavigate={onNavigate} badges={badges} pinned={prefs.pinned} />
-                  )}
-                </li>
-              ))}
+              {entries.flatMap((e) =>
+                e.kind === "link"
+                  ? [
+                      <li key={e.item.id || e.item.href}>
+                        <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} collapsed={false} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} pin={grouped ? { pinned: prefs.pinned.includes(e.item.href) } : undefined} />
+                      </li>,
+                    ]
+                  : [],
+              )}
             </ul>
+            {sections.length > 0 && (
+              <div data-tour="categories" className="mt-3">
+                <p className="portal-nav-label !pt-0">Categories</p>
+                <ul className="space-y-0.5">
+                  {sections.map((s) => (
+                    <li key={s.label}>
+                      <NavSection section={s} isOpen={isOpen(s.label)} onToggle={() => toggle(s.label)} pathname={pathname} onNavigate={onNavigate} badges={badges} pinned={prefs.pinned} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </>
         )}
 
@@ -305,6 +317,12 @@ function SidebarBody({
                 <span className="min-w-0 flex-1 truncate">All admin pages</span>
               </Link>
             )}
+            <button type="button" data-tour="help" onClick={() => startTour()} className="portal-nav-row w-full text-left">
+              <span className="portal-tile tile-slate" aria-hidden="true">
+                <Icon name="compass" />
+              </span>
+              <span className="min-w-0 flex-1 truncate">Take the tour</span>
+            </button>
             <InstallAppLink onNavigate={onNavigate} />
           </div>
         )}
@@ -317,6 +335,11 @@ function SidebarBody({
                 </span>
               </Link>
             )}
+            <button type="button" data-tour="help" onClick={() => startTour()} title="Take the tour" aria-label="Take the tour" className="portal-nav-row w-full justify-center !px-0">
+              <span className="portal-tile tile-slate" aria-hidden="true">
+                <Icon name="compass" />
+              </span>
+            </button>
             <InstallAppLink onNavigate={onNavigate} compact />
           </div>
         )}
