@@ -121,7 +121,7 @@ In the portal the old `teal-*` utilities now mean forest green, so existing page
    files). Use `askConfirm`/`useConfirm` for any new confirmation.
 1a. [x] Pinned lessons (migration 0193 `lesson_pins`, own rows only): pin from a lesson row or workspace; "Your lessons"
    on the teacher and admin dashboards shows pins then recently opened.
-2. Move the remaining hand-written menus (`LearnAccountMenu`, `ClassworkTab`) onto `ActionsMenu`.
+2. [x] The remaining hand-written menus now use `ActionsMenu`: the account menu (`LearnAccountMenu`: avatar trigger, a header with who is signed in, Switch area with "Current", and the View settings as a `content` block) and the class Classwork **Create** menu (`trigger="primary"`, items with a `hint` line). `ActionsMenu` gained, additively: `hint`, `aside` and `content` on items; `trigger="primary"`, `triggerContent`, `header`, `menuClassName`; it flips side and scrolls so it stays on a 360px screen.
 3. Apply `WorkspaceHeader` to the other hub pages that still open with a card header (Classes, a class page, Pupils,
    Reports), and the "one primary action plus a menu" rule to their rows.
 4. Family and student dashboards: their own figures (as teacher and admin now have).
@@ -129,6 +129,7 @@ In the portal the old `teal-*` utilities now mean forest green, so existing page
 6. Later: curriculum analytics, connections visualiser.
 
 ## Log
+- 2026-11-10: Next 2 done (menus on `ActionsMenu`); long forms split into titled sections with `FormSection` (PR #72).
 - 2026-11-09 (late): confirmations and pinned lessons (PR "Portal redesign 2").
 - 2026-11-09: PR #66 merged. Design system, grouped sidebars, workspace dashboards, lesson workspace, unit header,
   lesson rows, review workflow (0192) with Lesson review queue, Curriculum map, lessons and pupils in ⌘K search.

@@ -17,7 +17,7 @@
 import Link from "next/link";
 import { createContext, useCallback, useContext, useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { Icon, type IconName } from "@/components/learn/Icon";
-import { Button } from "@/components/learn/ui";
+import { btn, Button } from "@/components/learn/ui";
 
 // ── ActionsMenu ───────────────────────────────────────────────────────
 
@@ -31,6 +31,12 @@ export type MenuAction = {
   danger?: boolean;
   /** A heading line that groups the items after it. */
   section?: string;
+  /** A second, quieter line under the label ("Work to hand in, marked by you"). */
+  hint?: string;
+  /** A short note on the right of the item ("Current"). */
+  aside?: string;
+  /** Not an action: a block drawn as-is in the menu (e.g. display settings), with a hairline above it. */
+  content?: ReactNode;
 };
 
 /**
@@ -43,20 +49,34 @@ export function ActionsMenu({
   trigger,
   align = "right",
   size = "md",
+  triggerContent,
+  triggerClassName,
+  header,
+  menuClassName = "min-w-[13.5rem]",
 }: {
   items: MenuAction[];
-  /** Accessible name; also the visible text when `trigger` is "text". */
+  /** Accessible name; also the visible text when `trigger` is "text" or "primary". */
   label?: string;
-  /** "icon" (three dots, default) or "text" (label and a chevron). */
-  trigger?: "icon" | "text";
+  /** "icon" (three dots, default), "text" (label and a chevron) or "primary" (the page's main button, with a chevron). */
+  trigger?: "icon" | "text" | "primary";
   align?: "left" | "right";
   size?: "sm" | "md";
+  /** A custom trigger (e.g. the account avatar); `label` stays its accessible name. */
+  triggerContent?: ReactNode;
+  triggerClassName?: string;
+  /** A non-interactive block at the top of the menu (e.g. who is signed in). */
+  header?: ReactNode;
+  /** Width of the open menu. */
+  menuClassName?: string;
 }) {
   const [open, setOpen] = useState(false);
+  // The side the menu opens to: `align`, flipped when that would run off a phone screen.
+  const [side, setSide] = useState(align);
   const id = useId();
   const btnRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
-  const shown = items.filter((i) => i.section || i.onSelect || i.href);
+  const shown = items.filter((i) => i.section || i.onSelect || i.href || i.content);
+  const hasIcons = shown.some((i) => i.icon);
 
   const focusItem = (n: number) => {
     const els = listRef.current?.querySelectorAll<HTMLElement>("[role=menuitem]:not([aria-disabled=true])");
@@ -71,7 +91,13 @@ export function ActionsMenu({
     };
     document.addEventListener("mousedown", onDown);
     // Move focus into the menu once it has rendered.
-    const t = window.setTimeout(() => listRef.current?.querySelector<HTMLElement>("[role=menuitem]:not([aria-disabled=true])")?.focus(), 0);
+    const t = window.setTimeout(() => {
+      const list = listRef.current;
+      const r = list?.getBoundingClientRect();
+      if (r && r.left < 8) setSide("left");
+      else if (r && r.right > window.innerWidth - 8) setSide("right");
+      list?.querySelector<HTMLElement>("[role=menuitem]:not([aria-disabled=true])")?.focus();
+    }, 0);
     return () => {
       window.clearTimeout(t);
       document.removeEventListener("mousedown", onDown);
@@ -81,6 +107,8 @@ export function ActionsMenu({
   const onListKey = (e: React.KeyboardEvent) => {
     const els = Array.from(listRef.current?.querySelectorAll<HTMLElement>("[role=menuitem]:not([aria-disabled=true])") || []);
     const i = els.indexOf(document.activeElement as HTMLElement);
+    // Inside a `content` block (its own buttons and switches), keys behave as usual; only Escape closes.
+    if (i < 0 && e.key !== "Escape" && (e.target as HTMLElement).closest?.("[data-menu-content]")) return;
     const move: Record<string, number> = { ArrowDown: i + 1, ArrowUp: i - 1, Home: 0, End: -1 };
     if (e.key in move) {
       e.preventDefault();
@@ -99,9 +127,12 @@ export function ActionsMenu({
         type="button"
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label={trigger === "text" ? undefined : label}
-        title={trigger === "text" ? undefined : label}
-        onClick={() => setOpen((o) => !o)}
+        aria-label={trigger === "text" || trigger === "primary" ? undefined : label}
+        title={trigger === "text" || trigger === "primary" || triggerContent ? undefined : label}
+        onClick={() => {
+          setSide(align);
+          setOpen((o) => !o);
+        }}
         onKeyDown={(e) => {
           if (e.key === "ArrowDown") {
             e.preventDefault();
@@ -109,12 +140,18 @@ export function ActionsMenu({
           }
         }}
         className={
-          trigger === "text"
+          triggerContent
+            ? triggerClassName || "inline-flex items-center rounded-lg hover:bg-cream"
+            : trigger === "primary"
+              ? `${btn("primary", small ? "sm" : "md")}`
+              : trigger === "text"
             ? `inline-flex min-h-11 items-center gap-1 rounded-lg border border-gold-light bg-white px-3 text-sm font-medium text-ink hover:bg-cream ${small ? "sm:min-h-8" : "sm:min-h-10"}`
             : `inline-flex ${small ? "h-11 w-11 sm:h-8 sm:w-8" : "h-11 w-11 sm:h-10 sm:w-10"} shrink-0 items-center justify-center rounded-lg text-ink/65 hover:bg-cream hover:text-ink`
         }
       >
-        {trigger === "text" ? (
+        {triggerContent ? (
+          triggerContent
+        ) : trigger === "text" || trigger === "primary" ? (
           <>
             {label}
             <Icon name="chevronDown" size="sm" />
@@ -129,9 +166,20 @@ export function ActionsMenu({
           role="menu"
           aria-label={label}
           onKeyDown={onListKey}
-          className={`absolute top-full z-40 mt-1 min-w-[13.5rem] rounded-xl border border-gold-light bg-white p-1 shadow-lg ${align === "right" ? "right-0" : "left-0"}`}
+          className={`absolute top-full z-40 mt-1 max-h-[min(80vh,40rem)] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-xl border border-gold-light bg-white p-1 shadow-lg ${menuClassName} ${side === "right" ? "right-0" : "left-0"}`}
         >
+          {header && (
+            <div role="presentation" className="-mx-1 -mt-1 mb-1 border-b border-gold-light px-4 py-3">
+              {header}
+            </div>
+          )}
           {shown.map((it, i) => {
+            if (it.content)
+              return (
+                <div key={`c${i}`} role="none" data-menu-content="" className="-mx-1 my-1 border-t border-gold-light px-1 pt-1">
+                  {it.content}
+                </div>
+              );
             if (it.section)
               return (
                 <p key={`s${i}`} role="presentation" className="px-3 pb-1 pt-2 text-[0.6875rem] font-semibold uppercase tracking-wider text-ink/55">
@@ -143,8 +191,16 @@ export function ActionsMenu({
             } ${it.disabled ? "pointer-events-none opacity-45" : ""}`;
             const inner = (
               <>
-                {it.icon ? <Icon name={it.icon} size="sm" className="h-4 w-4 opacity-70" /> : <span className="w-4" aria-hidden="true" />}
-                {it.label}
+                {it.icon ? <Icon name={it.icon} size="sm" className="h-4 w-4 shrink-0 opacity-70" /> : hasIcons ? <span className="w-4 shrink-0" aria-hidden="true" /> : null}
+                {it.hint ? (
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-medium">{it.label}</span>
+                    <span className="block text-xs text-ink/65">{it.hint}</span>
+                  </span>
+                ) : (
+                  <span className="min-w-0 flex-1">{it.label}</span>
+                )}
+                {it.aside && <span className="shrink-0 text-xs font-medium text-teal-700">{it.aside}</span>}
               </>
             );
             const divider = it.danger && i > 0 && !shown[i - 1].danger ? <hr className="my-1 border-gold-light" /> : null;
