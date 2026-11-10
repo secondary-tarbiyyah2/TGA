@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y6",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 6: number and place value to 10,000,000, negative numbers, written methods for the four operations, order of operations, common factors, multiples and primes); Drive Maths folder checked (national curriculum documents only for KS2), lessons written from the National Curriculum; Spring 1 founding year: White Rose Maths Year 6 small-step titles (bridge from Autumn blocks 1-2, then Fractions A and B and Converting units), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 6 Spring blocks 1 Ratio, 2 Algebra, 3 Decimals and 4 Fractions, decimals and percentages (small-step titles only)",
+  "source": "National Curriculum (KS2 Year 6: number and place value to 10,000,000, negative numbers, written methods for the four operations, order of operations, common factors, multiples and primes); Drive Maths folder checked (national curriculum documents only for KS2), lessons written from the National Curriculum; Spring 1 founding year: White Rose Maths Year 6 small-step titles (bridge from Autumn blocks 1-2, then Fractions A and B and Converting units), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 6 Spring blocks 1 Ratio, 2 Algebra, 3 Decimals and 4 Fractions, decimals and percentages (small-step titles only); Summer 1 founding year: White Rose Maths Year 6 blocks Fractions, decimals and percentages (percentages), Area, perimeter and volume, Statistics and Shape (small-step titles only)",
   "lessons": [
     {
       "unit": "Spring 1: Place value and the operations bridge; fractions; converting units",
@@ -10900,6 +10900,4781 @@
         "Counters in two colours (or two kinds of pasta)",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 6 maths lesson 55 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 56,
+      "title": "Percentage of an amount: multi-step",
+      "duration": 45,
+      "bigQuestion": "How can 10%, 5% and 1% build any percentage?",
+      "objectives": [
+        "To understand how to find any percentage of an amount by building it from known percentages"
+      ],
+      "successCriteria": [
+        "All: find 10%, 5% and 1% of an amount",
+        "Most: build percentages such as 35% and 65%",
+        "Some: choose an efficient method, such as 100% - 1% for 99%"
+      ],
+      "crossCurricular": "Geography: land use on farms",
+      "smsc": "Moral: using numbers honestly",
+      "keywords": [
+        {
+          "term": "percentage",
+          "def": "parts per hundred"
+        },
+        {
+          "term": "10%",
+          "def": "one tenth: divide by 10"
+        },
+        {
+          "term": "1%",
+          "def": "one hundredth: divide by 100"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 35% of 80 more or less than a third of 80? Estimate first.",
+        "a": "35% of 80 is 28; a third is about 26.7, so 35% is a little more."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sale sign in a shop",
+          "alt": "A sale sign (no people)",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 square",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "10% of 70?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "50% of 46?",
+          "a": "23",
+          "mins": 1
+        },
+        {
+          "q": "1% of 300?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Half of 7?",
+          "a": "3.5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Building blocks",
+          "bullets": [
+            "10%: ÷ 10.",
+            "5%: half of 10%.",
+            "1%: ÷ 100."
+          ],
+          "table": {
+            "head": [
+              "%",
+              "Of 80"
+            ],
+            "rows": [
+              [
+                "100%",
+                "80"
+              ],
+              [
+                "10%",
+                "8"
+              ],
+              [
+                "5%",
+                "4"
+              ],
+              [
+                "1%",
+                "0.8"
+              ]
+            ]
+          },
+          "note": "Table for 80."
+        },
+        {
+          "heading": "35% of 80",
+          "model": {
+            "problem": "35% of 80",
+            "steps": [
+              "10% = 8",
+              "30% = 3 × 8 = 24",
+              "5% = 4",
+              "35% = 24 + 4"
+            ],
+            "answer": "28"
+          }
+        },
+        {
+          "heading": "65% of 240",
+          "model": {
+            "problem": "65% of 240",
+            "steps": [
+              "50% = 120",
+              "10% = 24",
+              "5% = 12",
+              "120 + 24 + 12"
+            ],
+            "answer": "156"
+          }
+        },
+        {
+          "heading": "Efficient",
+          "bullets": [
+            "99% = 100% - 1%.",
+            "99% of 300 = 300 - 3 = 297."
+          ],
+          "note": "Ask: 95% of 60? (57)"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "15% of 60?",
+            "options": [
+              "9",
+              "6",
+              "15"
+            ],
+            "answer": 0,
+            "why": "10% = 6, 5% = 3, total 9."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "45% of 120?",
+          "a": "54",
+          "mins": 2,
+          "model": "Teacher: 50% = 60, take 5% = 6: 54."
+        },
+        {
+          "q": "12% of 50?",
+          "a": "6",
+          "mins": 2
+        },
+        {
+          "q": "75% of 64?",
+          "a": "48",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find: 35% of 140; 22% of 300; 95% of 80",
+          "a": "49; 66; 76",
+          "mins": 4,
+          "model": "Teacher: 10% of 140 = 14, 30% = 42, 5% = 7: 49."
+        },
+        {
+          "q": "Extend: A field is 2,400 m². 65% is wheat. How many m² is wheat?",
+          "a": "1,560 m²",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which is bigger: 40% of 85 or 85% of 40? Explain.",
+          "a": "Equal: both are 34 (40 × 85 ÷ 100)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "30% of 90? A) 27 B) 3 C) 30",
+          "a": "A) 27",
+          "mins": 2,
+          "options": [
+            "27",
+            "3",
+            "30"
+          ]
+        },
+        {
+          "q": "Big question: how do 10%, 5% and 1% build any percentage?",
+          "a": "Find them by dividing, then add or subtract them to make the percentage needed",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 15%, 35% and 99% of 3 prices from a leaflet.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find 17.5% of £240 (£42).",
+      "resources": [
+        "White Rose Maths Year 6, Fractions, decimals and percentages block: small step 'Percentage of an amount: multi-step' (finishing the block) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "100-square grid and squared paper (1 cm)",
+        "Printed percentage bar (0% to 100%)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 56 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 57,
+      "title": "Percentages: missing values",
+      "duration": 45,
+      "bigQuestion": "If we know a percentage of a number, can we find the number?",
+      "objectives": [
+        "To understand how to find a missing whole or a missing percentage"
+      ],
+      "successCriteria": [
+        "All: find the whole from 10% or 25%",
+        "Most: find the whole from any percentage",
+        "Some: find what percentage one number is of another"
+      ],
+      "crossCurricular": "Science: percentages in nutrition labels",
+      "smsc": "Social: comparing methods",
+      "keywords": [
+        {
+          "term": "whole",
+          "def": "100%"
+        },
+        {
+          "term": "missing value",
+          "def": "the number we must find"
+        },
+        {
+          "term": "bar model",
+          "def": "a bar split into equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "30% of a number is 24. What is the number?",
+        "a": "80: 10% is 8, so 100% is 80."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bar model diagram",
+          "alt": "A bar model",
+          "for": "teach:1"
+        },
+        {
+          "find": "piggy bank",
+          "alt": "A money box",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "35% of 60?",
+          "a": "21",
+          "mins": 1
+        },
+        {
+          "q": "10% of ? = 7",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 9 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "25% = ? as a fraction",
+          "a": "1/4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Find the whole",
+          "bullets": [
+            "Draw a bar of 10 parts, each 10%."
+          ],
+          "model": {
+            "problem": "30% is 24",
+            "steps": [
+              "30% = 24",
+              "10% = 24 ÷ 3 = 8",
+              "100% = 8 × 10"
+            ],
+            "answer": "80"
+          }
+        },
+        {
+          "heading": "From 25%",
+          "model": {
+            "problem": "25% is 12",
+            "steps": [
+              "25% is a quarter",
+              "100% = 4 × 12"
+            ],
+            "answer": "48"
+          }
+        },
+        {
+          "heading": "Missing percentage",
+          "model": {
+            "problem": "What % of 50 is 15?",
+            "steps": [
+              "15 out of 50",
+              "= 30 out of 100"
+            ],
+            "answer": "30%"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "40% of a number is 36. The number?",
+            "options": [
+              "90",
+              "144",
+              "76"
+            ],
+            "answer": 0,
+            "why": "10% = 9, 100% = 90."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "10% of a number is 13. Find it.",
+          "a": "130",
+          "mins": 2,
+          "model": "Teacher: 100% is 10 lots of 10%: 130."
+        },
+        {
+          "q": "20% is 9. Find the whole.",
+          "a": "45",
+          "mins": 2
+        },
+        {
+          "q": "What % of 80 is 20?",
+          "a": "25%",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the whole: 5% is 4; 60% is 42; 75% is 27",
+          "a": "80; 70; 36",
+          "mins": 4,
+          "model": "Teacher: 5% is 4, so 100% is 20 × 4 = 80."
+        },
+        {
+          "q": "Extend: Maryam has read 45% of her book: 54 pages. How many pages in the book?",
+          "a": "120",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: What percentage: 18 out of 24; 35 out of 140",
+          "a": "75%; 25%",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "25% is 15. The whole? A) 60 B) 40 C) 375",
+          "a": "A) 60",
+          "mins": 2,
+          "options": [
+            "60",
+            "40",
+            "375"
+          ]
+        },
+        {
+          "q": "Big question: can we find the number?",
+          "a": "Yes: find 1% or 10% from the part, then scale up to 100%",
+          "mins": 3
+        }
+      ],
+      "homework": "Make 3 'find the whole' percentage puzzles and solve them.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: after a 20% discount a bag costs £36. What was the original price? (£45)",
+      "resources": [
+        "White Rose Maths Year 6, Fractions, decimals and percentages block: small step 'Percentages: missing values' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed bar model template",
+        "100-square grid and squared paper (1 cm)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 57 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 58,
+      "title": "Percentage problems: discounts and zakah",
+      "duration": 45,
+      "bigQuestion": "How much zakah is due on savings?",
+      "objectives": [
+        "To understand how to solve real-life percentage problems, including discounts and zakah"
+      ],
+      "successCriteria": [
+        "All: find a discount and the sale price",
+        "Most: find 2.5% of an amount",
+        "Some: solve a two-step percentage problem"
+      ],
+      "crossCurricular": "Religious education link: zakah in Islamic Studies",
+      "smsc": "Spiritual and moral: zakah purifies wealth and helps those in need",
+      "keywords": [
+        {
+          "term": "discount",
+          "def": "money taken off a price"
+        },
+        {
+          "term": "zakah (زكاة)",
+          "def": "the yearly obligatory charity, usually 2.5% of savings"
+        },
+        {
+          "term": "2.5%",
+          "def": "one fortieth"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Zakah on savings is usually 2.5%. If someone has £4,000 saved for a full year, how much zakah do they give?",
+        "a": "£100."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sadaqah box",
+          "alt": "A charity collection box",
+          "for": "hook"
+        },
+        {
+          "find": "price tag sale",
+          "alt": "A sale label",
+          "for": "teach:1"
+        }
+      ],
+      "islamicLink": {
+        "text": "Allah says: 'And establish prayer and give zakah' (al-Baqarah 2:43). Zakah is one of the five pillars of Islam. On savings above the nisab held for a lunar year, it is usually 2.5%, one fortieth. Scholars explain the full rules; here we practise the maths.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "10% of 4,000?",
+          "a": "400",
+          "mins": 1
+        },
+        {
+          "q": "Half of 10%?",
+          "a": "5%",
+          "mins": 1
+        },
+        {
+          "q": "Half of 5%?",
+          "a": "2.5%",
+          "mins": 1
+        },
+        {
+          "q": "20% of £45?",
+          "a": "£9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Discount",
+          "model": {
+            "problem": "£120 coat, 15% off",
+            "steps": [
+              "10% = £12, 5% = £6",
+              "15% = £18 off",
+              "£120 - £18"
+            ],
+            "answer": "Pay £102"
+          }
+        },
+        {
+          "heading": "Zakah at 2.5%",
+          "model": {
+            "problem": "2.5% of £4,000",
+            "steps": [
+              "10% = £400",
+              "5% = £200",
+              "2.5% = £100"
+            ],
+            "answer": "£100"
+          }
+        },
+        {
+          "heading": "Another way",
+          "bullets": [
+            "2.5% = 1/40.",
+            "£4,000 ÷ 40 = £100."
+          ],
+          "note": "Check both ways agree."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2.5% of £1,200?",
+            "options": [
+              "£30",
+              "£300",
+              "£25"
+            ],
+            "answer": 0,
+            "why": "10% = 120, 5% = 60, 2.5% = 30."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "20% off £45. Sale price?",
+          "a": "£36",
+          "mins": 2,
+          "model": "Teacher: 10% = £4.50, 20% = £9; £45 - £9 = £36."
+        },
+        {
+          "q": "2.5% of £8,000?",
+          "a": "£200",
+          "mins": 2
+        },
+        {
+          "q": "2.5% of £600?",
+          "a": "£15",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Sale prices: £80 with 25% off; £36 with 10% off; £250 with 30% off",
+          "a": "£60; £32.40; £175",
+          "mins": 4,
+          "model": "Teacher: 25% of £80 = £20; £80 - £20 = £60."
+        },
+        {
+          "q": "Extend: A family's savings of £6,400 have been kept a full lunar year above the nisab. Zakah at 2.5%?",
+          "a": "£160",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Shop A: £50 with 20% off. Shop B: £45 with 10% off. Which is cheaper?",
+          "a": "Shop A: £40 (Shop B £40.50)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2.5% of £2,000? A) £50 B) £500 C) £25",
+          "a": "A) £50",
+          "mins": 2,
+          "options": [
+            "£50",
+            "£500",
+            "£25"
+          ]
+        },
+        {
+          "q": "Big question: how much zakah is due?",
+          "a": "Usually 2.5% (one fortieth) of savings above the nisab kept for a lunar year",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 sale items in a leaflet and work out the sale prices; find 2.5% of £3,000.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: after a 25% discount, a bike costs £180. What was the full price? (£240)",
+      "resources": [
+        "White Rose Maths Year 6, Fractions, decimals and percentages block: percentage problems in context (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Shopping leaflet or printed price list",
+        "100-square grid and squared paper (1 cm)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 58 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 59,
+      "title": "Shapes with the same area",
+      "duration": 45,
+      "bigQuestion": "Can shapes that look different have the same area?",
+      "objectives": [
+        "To understand that different shapes can have the same area"
+      ],
+      "successCriteria": [
+        "All: find area by counting squares",
+        "Most: draw rectangles with the same area",
+        "Some: make a compound shape with a given area"
+      ],
+      "crossCurricular": "Design and technology: planning a floor",
+      "smsc": "Spiritual: rows of prayer mats in a masjid",
+      "keywords": [
+        {
+          "term": "area",
+          "def": "the space inside a 2-D shape, in square units"
+        },
+        {
+          "term": "cm²",
+          "def": "square centimetres"
+        },
+        {
+          "term": "compound shape",
+          "def": "a shape made of smaller shapes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A carpet has an area of 12 m². Must it be a rectangle 3 m by 4 m? What else could it be?",
+        "a": "No: 2 by 6, 1 by 12, or an L-shape of 12 squares."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer mat",
+          "alt": "A rectangular prayer mat",
+          "for": "hook"
+        },
+        {
+          "find": "floor tiles squares",
+          "alt": "Square floor tiles",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2.5% of £400?",
+          "a": "£10",
+          "mins": 1
+        },
+        {
+          "q": "Area of a 3 cm by 4 cm rectangle?",
+          "a": "12 cm²",
+          "mins": 1
+        },
+        {
+          "q": "Factors of 12?",
+          "a": "1, 2, 3, 4, 6, 12",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count the squares",
+          "bullets": [
+            "Each square is 1 cm².",
+            "Count whole squares."
+          ],
+          "note": "On squared paper."
+        },
+        {
+          "heading": "Same area, different shape",
+          "bullets": [
+            "1 × 12, 2 × 6, 3 × 4.",
+            "All 12 cm²."
+          ],
+          "table": {
+            "head": [
+              "Length",
+              "Width",
+              "Area"
+            ],
+            "rows": [
+              [
+                "12 cm",
+                "1 cm",
+                "12 cm²"
+              ],
+              [
+                "6 cm",
+                "2 cm",
+                "12 cm²"
+              ],
+              [
+                "4 cm",
+                "3 cm",
+                "12 cm²"
+              ]
+            ]
+          },
+          "note": "Factor pairs give rectangles."
+        },
+        {
+          "heading": "Compound shape",
+          "model": {
+            "problem": "An L-shape: 4 × 2 and 2 × 2",
+            "steps": [
+              "4 × 2 = 8",
+              "2 × 2 = 4",
+              "8 + 4 = 12"
+            ],
+            "answer": "12 cm²"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which has area 18 cm²?",
+            "options": [
+              "3 cm by 6 cm",
+              "9 cm by 9 cm",
+              "4 cm by 5 cm"
+            ],
+            "answer": 0,
+            "why": "3 × 6 = 18."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Draw 2 rectangles with area 16 cm².",
+          "a": "For example 2 × 8 and 4 × 4",
+          "mins": 2,
+          "model": "Teacher: factor pairs of 16: 1 × 16, 2 × 8, 4 × 4."
+        },
+        {
+          "q": "Area of an L-shape: 5 × 2 and 3 × 3?",
+          "a": "19 cm²",
+          "mins": 3
+        },
+        {
+          "q": "How many rectangles with whole sides have area 24 cm²?",
+          "a": "4 (1 × 24, 2 × 12, 3 × 8, 4 × 6)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw 3 different shapes (not all rectangles) with area 10 cm².",
+          "a": "Checked by counting",
+          "mins": 4,
+          "model": "Teacher draws a 2 × 5 rectangle first."
+        },
+        {
+          "q": "Extend: Find the areas of the 3 compound shapes on the sheet. Which two are equal?",
+          "a": "14 cm², 14 cm², 15 cm²: the first two",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Can a shape with area 7 cm² be a rectangle with whole-number sides? Explain.",
+          "a": "Only 1 × 7, since 7 is prime",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "4 cm by 5 cm and 2 cm by 10 cm: A) same area B) different area",
+          "a": "A) same area",
+          "mins": 2,
+          "options": [
+            "same area",
+            "different area"
+          ]
+        },
+        {
+          "q": "Big question: can different shapes have the same area?",
+          "a": "Yes: the area counts squares inside, not the shape's look",
+          "mins": 3
+        }
+      ],
+      "homework": "On squared paper, draw 4 different shapes with area 20 cm².",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find a shape with area 12 cm² and the largest perimeter possible on the grid.",
+      "resources": [
+        "White Rose Maths Year 6, Area, perimeter and volume block: small step 'Shapes: same area' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Printed compound shapes sheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 59 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 60,
+      "title": "Area and perimeter",
+      "duration": 45,
+      "bigQuestion": "If two rectangles have the same perimeter, do they have the same area?",
+      "objectives": [
+        "To understand how area and perimeter are different and how they change"
+      ],
+      "successCriteria": [
+        "All: find the area and perimeter of a rectangle",
+        "Most: find rectangles with the same perimeter but different areas",
+        "Some: explain which rectangle has the largest area"
+      ],
+      "crossCurricular": "Design and technology: planning a garden bed",
+      "smsc": "Moral: using land and resources wisely",
+      "keywords": [
+        {
+          "term": "perimeter",
+          "def": "the distance around the edge"
+        },
+        {
+          "term": "area",
+          "def": "the space inside"
+        },
+        {
+          "term": "compare",
+          "def": "decide which is greater"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 20 m of fence for a vegetable patch. Which rectangle gives the biggest patch?",
+        "a": "A 5 m by 5 m square: 25 m²."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "vegetable garden rows",
+          "alt": "A vegetable patch",
+          "for": "hook"
+        },
+        {
+          "find": "garden fence",
+          "alt": "A garden fence",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Area of 6 × 2?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Perimeter of 6 × 2?",
+          "a": "16",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 9 = ?",
+          "a": "81",
+          "mins": 1
+        },
+        {
+          "q": "20 ÷ 2 = ?",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Different things",
+          "bullets": [
+            "Perimeter: around, in cm.",
+            "Area: inside, in cm²."
+          ],
+          "note": "Show both on a rectangle."
+        },
+        {
+          "heading": "Same perimeter, different area",
+          "bullets": [
+            "Perimeter 20: length + width = 10."
+          ],
+          "table": {
+            "head": [
+              "Length × width",
+              "Perimeter",
+              "Area"
+            ],
+            "rows": [
+              [
+                "9 × 1",
+                "20",
+                "9"
+              ],
+              [
+                "8 × 2",
+                "20",
+                "16"
+              ],
+              [
+                "7 × 3",
+                "20",
+                "21"
+              ],
+              [
+                "6 × 4",
+                "20",
+                "24"
+              ],
+              [
+                "5 × 5",
+                "20",
+                "25"
+              ]
+            ]
+          },
+          "note": "Table."
+        },
+        {
+          "heading": "The pattern",
+          "bullets": [
+            "The closer to a square, the bigger the area."
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Area of rectangles with perimeter 20 m",
+            "labels": [
+              "9×1",
+              "8×2",
+              "7×3",
+              "6×4",
+              "5×5"
+            ],
+            "values": [
+              9,
+              16,
+              21,
+              24,
+              25
+            ],
+            "unit": "m²"
+          },
+          "note": "Bar chart."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Rectangle 7 cm by 2 cm. Area and perimeter?",
+            "options": [
+              "14 cm², 18 cm",
+              "18 cm², 14 cm",
+              "9 cm², 14 cm"
+            ],
+            "answer": 0,
+            "why": "7 × 2 = 14; 2 × (7 + 2) = 18."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Area and perimeter: 8 cm by 3 cm",
+          "a": "24 cm²; 22 cm",
+          "mins": 2,
+          "model": "Teacher: 8 × 3 = 24 cm²; 2 × 11 = 22 cm."
+        },
+        {
+          "q": "Perimeter 16: list rectangles with whole sides.",
+          "a": "7 × 1, 6 × 2, 5 × 3, 4 × 4",
+          "mins": 3
+        },
+        {
+          "q": "Which of those has the largest area?",
+          "a": "4 × 4 = 16",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Area and perimeter: 12 cm by 5 cm; 9 m by 9 m",
+          "a": "60 cm², 34 cm; 81 m², 36 m",
+          "mins": 4,
+          "model": "Teacher: 12 × 5 = 60; 2 × 17 = 34."
+        },
+        {
+          "q": "Extend: Two rectangles both have area 36 cm². One is 9 × 4. Find another and compare perimeters.",
+          "a": "For example 6 × 6: perimeter 24 cm vs 26 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: True or false: a bigger perimeter always means a bigger area.",
+          "a": "False: 9 × 1 has perimeter 20, area 9; 4 × 4 has perimeter 16, area 16",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Same perimeter means same area? A) not always B) always",
+          "a": "A) not always",
+          "mins": 2,
+          "options": [
+            "not always",
+            "always"
+          ]
+        },
+        {
+          "q": "Big question: same perimeter, same area?",
+          "a": "No: with a fixed perimeter, a square gives the biggest area",
+          "mins": 3
+        }
+      ],
+      "homework": "With 24 matchsticks or straws, make as many rectangles as you can and find each area.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: with 36 m of fence against a wall (3 sides fenced), which rectangle gives the most area? (18 m by 9 m: 162 m²)",
+      "resources": [
+        "White Rose Maths Year 6, Area, perimeter and volume block: small step 'Area and perimeter' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Straws or matchsticks (24)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 60 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 61,
+      "title": "Area of a triangle: counting squares",
+      "duration": 45,
+      "bigQuestion": "How do we count part squares fairly?",
+      "objectives": [
+        "To understand how to estimate and find the area of a triangle by counting squares"
+      ],
+      "successCriteria": [
+        "All: count whole squares",
+        "Most: count half and part squares sensibly",
+        "Some: see that a triangle is half a rectangle"
+      ],
+      "crossCurricular": "Art: triangle shapes in Islamic tiling",
+      "smsc": "Moral: fair estimates",
+      "keywords": [
+        {
+          "term": "estimate",
+          "def": "a close answer"
+        },
+        {
+          "term": "half square",
+          "def": "1/2 cm²"
+        },
+        {
+          "term": "triangle",
+          "def": "a 3-sided shape"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A triangle is drawn on squared paper. Some squares are cut. How could you count fairly?",
+        "a": "Count wholes, pair halves, count more-than-half squares as 1."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "triangular flag",
+          "alt": "A triangular pennant flag",
+          "for": "hook"
+        },
+        {
+          "find": "roof gable triangle",
+          "alt": "A triangular roof end",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Area of 6 × 4?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "Half of 24?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 7 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "Perimeter of a 5 by 5 square?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count the squares",
+          "bullets": [
+            "Whole squares: 1 each.",
+            "Halves: pair them.",
+            "More than half: count 1; less: 0."
+          ],
+          "note": "On the shared grid."
+        },
+        {
+          "heading": "Right-angled triangle",
+          "model": {
+            "problem": "Base 6, height 4 on squares",
+            "steps": [
+              "Whole squares: 9",
+              "Half squares: 6, so 3",
+              "9 + 3 = 12"
+            ],
+            "answer": "12 cm²"
+          }
+        },
+        {
+          "heading": "Half a rectangle",
+          "bullets": [
+            "The rectangle is 6 × 4 = 24.",
+            "The triangle is half: 12."
+          ],
+          "fraction": {
+            "parts": 2,
+            "shaded": 1,
+            "label": "triangle = 1/2 of the rectangle"
+          },
+          "note": "Fold a paper rectangle along a diagonal."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Triangle half of a 5 × 4 rectangle. Area?",
+            "options": [
+              "10 cm²",
+              "20 cm²",
+              "9 cm²"
+            ],
+            "answer": 0,
+            "why": "5 × 4 = 20, half is 10."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count triangle A on the sheet.",
+          "a": "8 cm²",
+          "mins": 2,
+          "model": "Teacher counts whole squares, then pairs the halves."
+        },
+        {
+          "q": "Count triangle B.",
+          "a": "6 cm²",
+          "mins": 2
+        },
+        {
+          "q": "Estimate triangle C (part squares).",
+          "a": "About 10 cm²",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the area of triangles D, E, F by counting.",
+          "a": "D 15 cm²; E 9 cm²; F about 12 cm²",
+          "mins": 4,
+          "model": "Teacher counts D with the class."
+        },
+        {
+          "q": "Extend: Draw a rectangle around each triangle. Is each triangle half? Check.",
+          "a": "D and E: yes (30 and 18); F: about half",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw 2 different triangles with area 6 cm².",
+          "a": "For example base 4 height 3, base 6 height 2",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A right-angled triangle is... of its rectangle. A) half B) a quarter C) double",
+          "a": "A) half",
+          "mins": 2,
+          "options": [
+            "half",
+            "a quarter",
+            "double"
+          ]
+        },
+        {
+          "q": "Big question: how do we count part squares fairly?",
+          "a": "Pair halves, count more than half as 1 and less than half as 0",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw 3 triangles on squared paper and find each area by counting.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: draw a triangle that is not right-angled and show it is still half of its surrounding rectangle.",
+      "resources": [
+        "White Rose Maths Year 6, Area, perimeter and volume block: small step 'Area of a triangle: counting squares' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Printed triangles sheet (A to F)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 61 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 62,
+      "title": "Area of a right-angled triangle",
+      "duration": 45,
+      "bigQuestion": "Why is the area of a triangle half of base times height?",
+      "objectives": [
+        "To understand how to calculate the area of a right-angled triangle"
+      ],
+      "successCriteria": [
+        "All: identify the base and height",
+        "Most: use half of base × height",
+        "Some: find a missing length from the area"
+      ],
+      "crossCurricular": "Design and technology: cutting fabric for a sail or a flag",
+      "smsc": "Moral: not wasting material (avoiding israf)",
+      "keywords": [
+        {
+          "term": "base",
+          "def": "the side the triangle sits on"
+        },
+        {
+          "term": "height",
+          "def": "the distance straight up from the base"
+        },
+        {
+          "term": "formula",
+          "def": "a rule written with letters: A = 1/2 × b × h"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A sail is a right-angled triangle 6 m along the bottom and 4 m tall. How much cloth is needed?",
+        "a": "12 m²."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sailing boat triangular sail",
+          "alt": "A sailing boat (no people)",
+          "for": "hook"
+        },
+        {
+          "find": "set square",
+          "alt": "A set square",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Half of 6 × 4?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Area of 8 × 5?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 6 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "Half of 35?",
+          "a": "17.5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Half a rectangle",
+          "bullets": [
+            "Rectangle: base × height.",
+            "Triangle: half of that."
+          ],
+          "fraction": {
+            "parts": 2,
+            "shaded": 1,
+            "label": "1/2 × b × h"
+          },
+          "note": "Fold a rectangle along its diagonal."
+        },
+        {
+          "heading": "Calculate",
+          "model": {
+            "problem": "Base 8 cm, height 5 cm",
+            "steps": [
+              "b × h = 8 × 5 = 40",
+              "Half: 40 ÷ 2"
+            ],
+            "answer": "20 cm²"
+          }
+        },
+        {
+          "heading": "Formula",
+          "bullets": [
+            "A = 1/2 × b × h",
+            "Units: cm²."
+          ],
+          "note": "Write it in the book."
+        },
+        {
+          "heading": "Missing side",
+          "model": {
+            "problem": "Area 18 cm², base 6 cm",
+            "steps": [
+              "1/2 × 6 × h = 18",
+              "3 × h = 18",
+              "h = 6"
+            ],
+            "answer": "6 cm"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Base 10 cm, height 7 cm?",
+            "options": [
+              "35 cm²",
+              "70 cm²",
+              "17 cm²"
+            ],
+            "answer": 0,
+            "why": "10 × 7 = 70, half is 35."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Base 6 cm, height 4 cm?",
+          "a": "12 cm²",
+          "mins": 2,
+          "model": "Teacher: 6 × 4 = 24, half is 12 cm²."
+        },
+        {
+          "q": "Base 9 cm, height 2 cm?",
+          "a": "9 cm²",
+          "mins": 2
+        },
+        {
+          "q": "Base 5 m, height 3 m?",
+          "a": "7.5 m²",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Areas: b 12, h 4; b 7, h 6; b 11, h 5 (all cm)",
+          "a": "24 cm²; 21 cm²; 27.5 cm²",
+          "mins": 4,
+          "model": "Teacher: 12 × 4 = 48, half is 24."
+        },
+        {
+          "q": "Extend: Area 30 cm², height 5 cm. Base?",
+          "a": "12 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A square of side 8 cm is cut along a diagonal. Area of each triangle?",
+          "a": "32 cm²",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "b 4 cm, h 6 cm? A) 12 cm² B) 24 cm² C) 10 cm²",
+          "a": "A) 12 cm²",
+          "mins": 2,
+          "options": [
+            "12 cm²",
+            "24 cm²",
+            "10 cm²"
+          ]
+        },
+        {
+          "q": "Big question: why half of base × height?",
+          "a": "A right-angled triangle is exactly half of the rectangle around it",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 2 right-angled triangles at home (a set square, a folded napkin), measure and find the areas.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: put two right-angled triangles (base 6 cm, height 4 cm) together to make a rectangle. Its area? (24 cm²)",
+      "resources": [
+        "White Rose Maths Year 6, Area, perimeter and volume block: small step 'Area of a right-angled triangle' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Paper rectangles to fold and cut",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 62 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 63,
+      "title": "Area of any triangle",
+      "duration": 45,
+      "bigQuestion": "Does the formula still work if the triangle leans over?",
+      "objectives": [
+        "To understand how to find the area of any triangle using its perpendicular height"
+      ],
+      "successCriteria": [
+        "All: find the perpendicular height",
+        "Most: calculate area with 1/2 × b × h",
+        "Some: explain why a slanted side is not the height"
+      ],
+      "crossCurricular": "Design and technology: triangular frames",
+      "smsc": "Social: explaining to a partner why the slant is not the height",
+      "keywords": [
+        {
+          "term": "perpendicular",
+          "def": "at a right angle"
+        },
+        {
+          "term": "perpendicular height",
+          "def": "the straight-up distance from the base to the top vertex"
+        },
+        {
+          "term": "slant side",
+          "def": "a sloping side, not the height"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two triangles have the same base and the same height, but one leans over. Which has the bigger area?",
+        "a": "Neither: the areas are equal."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "triangular road sign",
+          "alt": "A triangular road sign",
+          "for": "hook"
+        },
+        {
+          "find": "pyramid shape",
+          "alt": "A pyramid face (triangle)",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "b 8, h 3 right-angled: area?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Half of 9 × 6?",
+          "a": "27",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 12 = ?",
+          "a": "84",
+          "mins": 1
+        },
+        {
+          "q": "Perpendicular means?",
+          "a": "At a right angle",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Perpendicular height",
+          "bullets": [
+            "Straight up from the base.",
+            "Meets the base at 90°.",
+            "Not the slant side."
+          ],
+          "note": "Draw the height with a set square."
+        },
+        {
+          "heading": "Calculate",
+          "model": {
+            "problem": "Base 9 cm, perpendicular height 6 cm",
+            "steps": [
+              "9 × 6 = 54",
+              "Half: 27"
+            ],
+            "answer": "27 cm²"
+          }
+        },
+        {
+          "heading": "Misconception",
+          "bullets": [
+            "Use the height, not the slope."
+          ],
+          "misconception": {
+            "wrong": "Base 12, slant side 7: area = 1/2 × 12 × 7 = 42",
+            "right": "Use the perpendicular height 5: 1/2 × 12 × 5 = 30"
+          },
+          "note": "Discuss."
+        },
+        {
+          "heading": "Same base, same height",
+          "bullets": [
+            "Same area, whatever the lean."
+          ],
+          "note": "Shear a triangle on screen."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Base 7 cm, height 4 cm?",
+            "options": [
+              "14 cm²",
+              "28 cm²",
+              "11 cm²"
+            ],
+            "answer": 0,
+            "why": "7 × 4 = 28, half is 14."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Base 10 cm, height 3 cm?",
+          "a": "15 cm²",
+          "mins": 2,
+          "model": "Teacher: 10 × 3 = 30, half: 15 cm²."
+        },
+        {
+          "q": "Base 6 m, height 5 m?",
+          "a": "15 m²",
+          "mins": 2
+        },
+        {
+          "q": "Base 12 cm, slant 13 cm, height 5 cm?",
+          "a": "30 cm²",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Areas: b 14, h 6; b 9, h 9; b 15, h 4 (cm)",
+          "a": "42 cm²; 40.5 cm²; 30 cm²",
+          "mins": 4,
+          "model": "Teacher: 14 × 6 = 84, half: 42."
+        },
+        {
+          "q": "Extend: A triangle has area 45 cm² and base 10 cm. Perpendicular height?",
+          "a": "9 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw 2 different triangles on squared paper, both with base 6 and area 12. What do they share?",
+          "a": "Height 4 cm",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which length do we use? A) perpendicular height B) slant side C) longest side",
+          "a": "A) perpendicular height",
+          "mins": 2,
+          "options": [
+            "perpendicular height",
+            "slant side",
+            "longest side"
+          ]
+        },
+        {
+          "q": "Big question: does the formula work when it leans?",
+          "a": "Yes, if we use the perpendicular height",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw 3 triangles, mark the perpendicular heights and find the areas.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a triangle has base 8 cm and area 28 cm². What is its height? (7 cm)",
+      "resources": [
+        "White Rose Maths Year 6, Area, perimeter and volume block: small step 'Area of any triangle' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Set square or the corner of a sheet of paper",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 63 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 64,
+      "title": "Area of a parallelogram",
+      "duration": 45,
+      "bigQuestion": "How can a parallelogram become a rectangle?",
+      "objectives": [
+        "To understand how to find the area of a parallelogram using base × perpendicular height"
+      ],
+      "successCriteria": [
+        "All: see a parallelogram rearranged into a rectangle",
+        "Most: calculate area = base × height",
+        "Some: find a missing base or height"
+      ],
+      "crossCurricular": "Art: parallelograms in tiling and brickwork",
+      "smsc": "Cultural: geometric tiling in Islamic architecture",
+      "keywords": [
+        {
+          "term": "parallelogram",
+          "def": "4 sides, opposite sides parallel and equal"
+        },
+        {
+          "term": "base",
+          "def": "the side it stands on"
+        },
+        {
+          "term": "perpendicular height",
+          "def": "the straight-up distance between the parallel sides"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Cut a triangle off one end of a parallelogram and move it to the other end. What shape do you get?",
+        "a": "A rectangle with the same area."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "parallelogram shape paper",
+          "alt": "A parallelogram",
+          "for": "teach:1"
+        },
+        {
+          "find": "brick wall pattern",
+          "alt": "A brick pattern",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Triangle b 10, h 6?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "8 × 5 = ?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "12 × 3.5 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "48 ÷ 8 = ?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Cut and move",
+          "bullets": [
+            "Cut a triangle off one end.",
+            "Slide it to the other end.",
+            "A rectangle!"
+          ],
+          "note": "Do it with paper."
+        },
+        {
+          "heading": "Calculate",
+          "model": {
+            "problem": "Base 8 cm, height 5 cm",
+            "steps": [
+              "Area = b × h",
+              "8 × 5"
+            ],
+            "answer": "40 cm²"
+          }
+        },
+        {
+          "heading": "Not the slant side",
+          "bullets": [
+            "Use the height between the parallel sides."
+          ],
+          "note": "Mark it with a set square."
+        },
+        {
+          "heading": "Missing height",
+          "model": {
+            "problem": "Area 48 cm², base 8 cm",
+            "steps": [
+              "8 × h = 48",
+              "h = 48 ÷ 8"
+            ],
+            "answer": "6 cm"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Base 12 cm, height 3.5 cm?",
+            "options": [
+              "42 cm²",
+              "21 cm²",
+              "15.5 cm²"
+            ],
+            "answer": 0,
+            "why": "12 × 3.5 = 42. 21 is half (that is a triangle)."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Base 9 cm, height 4 cm?",
+          "a": "36 cm²",
+          "mins": 2,
+          "model": "Teacher: 9 × 4 = 36 cm²."
+        },
+        {
+          "q": "Base 7 m, height 6 m?",
+          "a": "42 m²",
+          "mins": 2
+        },
+        {
+          "q": "Area 60 cm², height 5 cm: base?",
+          "a": "12 cm",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Areas: b 15, h 4; b 6.5, h 2; b 11, h 11 (cm)",
+          "a": "60 cm²; 13 cm²; 121 cm²",
+          "mins": 4,
+          "model": "Teacher: 15 × 4 = 60."
+        },
+        {
+          "q": "Extend: A parallelogram and a triangle have the same base (10 cm) and height (6 cm). Compare the areas.",
+          "a": "60 cm² and 30 cm²: the triangle is half",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw two different parallelograms with area 24 cm² on squared paper.",
+          "a": "For example base 6 height 4; base 8 height 3",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Area of a parallelogram = A) b × h B) 1/2 × b × h C) b + h",
+          "a": "A) b × h",
+          "mins": 2,
+          "options": [
+            "b × h",
+            "1/2 × b × h",
+            "b + h"
+          ]
+        },
+        {
+          "q": "Big question: how does it become a rectangle?",
+          "a": "Cut a triangle off one end and move it to the other: same base and height",
+          "mins": 3
+        }
+      ],
+      "homework": "Cut a parallelogram from paper, then cut and move a triangle to make a rectangle. Measure and find both areas.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a parallelogram has sides 10 cm and 6 cm and height 5 cm on the 10 cm side. Area? Perimeter? (50 cm²; 32 cm)",
+      "resources": [
+        "White Rose Maths Year 6, Area, perimeter and volume block: small step 'Area of a parallelogram' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Paper and scissors (with an adult)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 64 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 65,
+      "title": "Volume: counting cubes",
+      "duration": 45,
+      "bigQuestion": "How much space does a box take up?",
+      "objectives": [
+        "To understand volume as the number of cubes that fill a 3-D shape"
+      ],
+      "successCriteria": [
+        "All: count cubes in a shape",
+        "Most: count by layers",
+        "Some: build different shapes with the same volume"
+      ],
+      "crossCurricular": "Science: capacity and volume of containers",
+      "smsc": "Spiritual: the vastness of Allah's creation compared with our small boxes",
+      "keywords": [
+        {
+          "term": "volume",
+          "def": "the space a 3-D shape takes up"
+        },
+        {
+          "term": "cubic centimetre (cm³)",
+          "def": "a cube 1 cm on each side"
+        },
+        {
+          "term": "layer",
+          "def": "one flat level of cubes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A dice is about 1 cm³. How many dice would fill a matchbox? Estimate.",
+        "a": "Answers will vary; count layers to check."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sugar cubes",
+          "alt": "Sugar cubes",
+          "for": "hook"
+        },
+        {
+          "find": "stack of wooden blocks",
+          "alt": "A stack of cubes",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Parallelogram b 6, h 4?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "2 × 3 × 2 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 6 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "Area of 3 × 4?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Volume",
+          "bullets": [
+            "Space taken up.",
+            "Counted in cubes: cm³."
+          ],
+          "note": "Hold up a sugar cube."
+        },
+        {
+          "heading": "Count by layers",
+          "model": {
+            "problem": "A shape 3 cubes long, 2 wide, 2 high",
+            "steps": [
+              "One layer: 3 × 2 = 6",
+              "2 layers: 6 × 2"
+            ],
+            "answer": "12 cm³"
+          }
+        },
+        {
+          "heading": "Same volume",
+          "bullets": [
+            "12 cubes: 12 × 1 × 1, 6 × 2 × 1, 3 × 2 × 2.",
+            "Different shapes, same volume."
+          ],
+          "note": "Build two."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3 layers of 8 cubes?",
+            "options": [
+              "24 cm³",
+              "11 cm³",
+              "38 cm³"
+            ],
+            "answer": 0,
+            "why": "3 × 8 = 24."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count shape A on the sheet.",
+          "a": "8 cm³",
+          "mins": 2,
+          "model": "Teacher counts the top layer (4) and the bottom layer (4): 8."
+        },
+        {
+          "q": "Count shape B (hidden cubes!).",
+          "a": "18 cm³",
+          "mins": 3
+        },
+        {
+          "q": "Build a shape with volume 10 cm³.",
+          "a": "Checked by counting",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count shapes C, D, E.",
+          "a": "C 12 cm³; D 27 cm³; E 20 cm³",
+          "mins": 4,
+          "model": "Teacher counts C by layers."
+        },
+        {
+          "q": "Extend: Build 3 different cuboids with 24 cubes. Write length × width × height.",
+          "a": "For example 4 × 3 × 2, 6 × 2 × 2, 8 × 3 × 1",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which takes more space: a 2 × 2 × 2 cube or a 3 × 3 × 1 slab?",
+          "a": "The slab: 9 cm³ vs 8 cm³",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Volume is measured in... A) cm³ B) cm² C) cm",
+          "a": "A) cm³",
+          "mins": 2,
+          "options": [
+            "cm³",
+            "cm²",
+            "cm"
+          ]
+        },
+        {
+          "q": "Big question: how much space does a box take up?",
+          "a": "Count the cubes that fill it, layer by layer",
+          "mins": 3
+        }
+      ],
+      "homework": "Build shapes from sugar cubes, dice or Lego and record their volumes.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many 1 cm cubes fit in a 10 cm cube? (1,000)",
+      "resources": [
+        "White Rose Maths Year 6, Area, perimeter and volume block: small step 'Volume: counting cubes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Sugar cubes, dice or Lego bricks (about 30) for building cuboids",
+        "Printed cube shapes sheet (A to E)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 65 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 66,
+      "title": "Volume of a cuboid",
+      "duration": 45,
+      "bigQuestion": "Why is volume length × width × height?",
+      "objectives": [
+        "To understand how to calculate the volume of a cuboid"
+      ],
+      "successCriteria": [
+        "All: use l × w × h",
+        "Most: find volumes in cm³ and m³",
+        "Some: find a missing length from the volume"
+      ],
+      "crossCurricular": "Science: capacity in litres",
+      "smsc": "Moral: not wasting water (a tank's litres)",
+      "keywords": [
+        {
+          "term": "cuboid",
+          "def": "a box shape with 6 rectangular faces"
+        },
+        {
+          "term": "length, width, height",
+          "def": "the three measurements of a cuboid"
+        },
+        {
+          "term": "m³",
+          "def": "cubic metre"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A box is 10 cm long, 4 cm wide and 3 cm high. How many 1 cm cubes fit inside?",
+        "a": "120."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "cardboard box",
+          "alt": "A cardboard box",
+          "for": "hook"
+        },
+        {
+          "find": "shipping container",
+          "alt": "A shipping container",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Layers: 2 layers of 6?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "5 × 3 × 2 = ?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 5 = ?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "60 ÷ 20 = ?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Layers again",
+          "bullets": [
+            "Bottom layer: l × w.",
+            "Number of layers: h.",
+            "Volume = l × w × h."
+          ],
+          "note": "Link to counting."
+        },
+        {
+          "heading": "Calculate",
+          "model": {
+            "problem": "10 cm × 4 cm × 3 cm",
+            "steps": [
+              "10 × 4 = 40 (one layer)",
+              "40 × 3 = 120"
+            ],
+            "answer": "120 cm³"
+          }
+        },
+        {
+          "heading": "Big volumes",
+          "bullets": [
+            "Rooms and containers: m³.",
+            "2 m × 3 m × 2 m = 12 m³."
+          ],
+          "note": "Units matter."
+        },
+        {
+          "heading": "Missing length",
+          "model": {
+            "problem": "Volume 60 cm³, 5 cm × 4 cm × ?",
+            "steps": [
+              "5 × 4 = 20",
+              "60 ÷ 20 = 3"
+            ],
+            "answer": "3 cm"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "6 cm × 5 cm × 2 cm?",
+            "options": [
+              "60 cm³",
+              "13 cm³",
+              "30 cm³"
+            ],
+            "answer": 0,
+            "why": "6 × 5 = 30, × 2 = 60."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "5 cm × 3 cm × 2 cm?",
+          "a": "30 cm³",
+          "mins": 2,
+          "model": "Teacher: 5 × 3 = 15, 15 × 2 = 30 cm³."
+        },
+        {
+          "q": "A cube of side 4 cm?",
+          "a": "64 cm³",
+          "mins": 2
+        },
+        {
+          "q": "Volume 48 cm³, 4 cm × 3 cm × ?",
+          "a": "4 cm",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Volumes: 8 × 5 × 2 cm; 12 × 3 × 10 cm; 2.5 × 4 × 10 m",
+          "a": "80 cm³; 360 cm³; 100 m³",
+          "mins": 4,
+          "model": "Teacher: 8 × 5 = 40, × 2 = 80."
+        },
+        {
+          "q": "Extend: A fish tank is 50 cm × 30 cm × 40 cm. Volume? (1,000 cm³ = 1 litre) How many litres?",
+          "a": "60,000 cm³; 60 litres",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find two cuboids with volume 36 cm³ and different heights.",
+          "a": "For example 3 × 3 × 4 and 6 × 3 × 2",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Volume of a cuboid = A) l × w × h B) l + w + h C) 2 × (l + w)",
+          "a": "A) l × w × h",
+          "mins": 2,
+          "options": [
+            "l × w × h",
+            "l + w + h",
+            "2 × (l + w)"
+          ]
+        },
+        {
+          "q": "Big question: why l × w × h?",
+          "a": "l × w cubes make one layer, and there are h layers",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure 2 boxes at home (cereal, tissues) and work out their volumes.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a cuboid has volume 120 cm³, length 6 cm and width 4 cm. Height? (5 cm)",
+      "resources": [
+        "White Rose Maths Year 6, Area, perimeter and volume block: small step 'Volume of a cuboid' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Sugar cubes, dice or Lego bricks (about 30) for building cuboids",
+        "Ruler and 2 boxes from home",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 66 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 67,
+      "title": "Area, perimeter and volume: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "Which formula do I need?",
+      "objectives": [
+        "To understand how well I can find areas, perimeters and volumes"
+      ],
+      "successCriteria": [
+        "All: find area and perimeter of rectangles and compound shapes",
+        "Most: find areas of triangles and parallelograms",
+        "Some: find volumes of cuboids"
+      ],
+      "smsc": "Spiritual: shukr for learning",
+      "keywords": [
+        {
+          "term": "area",
+          "def": "space inside, cm²"
+        },
+        {
+          "term": "perimeter",
+          "def": "distance round, cm"
+        },
+        {
+          "term": "volume",
+          "def": "space taken up, cm³"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Area, perimeter or volume: which would a builder need for paint, a fence and a water tank?",
+        "a": "Area for paint, perimeter for a fence, volume for a tank."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "garden fence",
+          "alt": "A fence",
+          "for": "teach:1"
+        },
+        {
+          "find": "cardboard box",
+          "alt": "A box",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Triangle b 6, h 5?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "Parallelogram b 7, h 4?",
+          "a": "28",
+          "mins": 1
+        },
+        {
+          "q": "Cuboid 2 × 3 × 4?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "Perimeter of 7 × 3?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Which one?",
+          "bullets": [
+            "Perimeter: around (cm).",
+            "Area: inside (cm²).",
+            "Volume: space (cm³)."
+          ],
+          "sort": {
+            "columns": [
+              "Perimeter",
+              "Area",
+              "Volume"
+            ],
+            "cards": [
+              "Fence a garden",
+              "Carpet a floor",
+              "Fill a tank",
+              "Frame a picture",
+              "Paint a wall",
+              "Pack a box"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Sort real situations."
+        },
+        {
+          "heading": "Formulae",
+          "bullets": [
+            "Rectangle: l × w.",
+            "Triangle: 1/2 × b × h.",
+            "Parallelogram: b × h."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Volume",
+          "bullets": [
+            "Cuboid: l × w × h."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Area of a triangle b 8, h 7?",
+            "options": [
+              "28 cm²",
+              "56 cm²",
+              "15 cm²"
+            ],
+            "answer": 0,
+            "why": "8 × 7 = 56, half is 28."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Area and perimeter of 9 × 4.",
+          "a": "36 cm²; 26 cm",
+          "mins": 2,
+          "model": "Teacher: 9 × 4 = 36; 2 × 13 = 26."
+        },
+        {
+          "q": "Parallelogram b 11, h 6?",
+          "a": "66 cm²",
+          "mins": 2
+        },
+        {
+          "q": "Cuboid 5 × 5 × 3?",
+          "a": "75 cm³",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: areas of a triangle (b 16, h 5) and a parallelogram (b 9, h 7)",
+          "a": "40 cm²; 63 cm²",
+          "mins": 4,
+          "model": "Teacher: 16 × 5 = 80, half: 40."
+        },
+        {
+          "q": "Extend: Check: rectangles with perimeter 24 and whole sides: which has the largest area?",
+          "a": "6 × 6: 36 cm²",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: volume of a 7 × 4 × 5 cuboid; height of a cuboid 3 × 4 × ? with volume 84",
+          "a": "140 cm³; 7 cm",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Paint a wall: A) area B) perimeter C) volume",
+          "a": "A) area",
+          "mins": 2,
+          "options": [
+            "area",
+            "perimeter",
+            "volume"
+          ]
+        },
+        {
+          "q": "Big question: one strength, one target",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct your check in green pen; redo the questions you got wrong.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a room is 5 m × 4 m × 2.5 m. Floor area? Volume? (20 m²; 50 m³)",
+      "resources": [
+        "White Rose Maths Year 6, Area, perimeter and volume block: end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper (1 cm) and a ruler",
+        "Sugar cubes, dice or Lego bricks (about 30) for building cuboids",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 67 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 68,
+      "title": "Read and interpret line graphs",
+      "duration": 45,
+      "bigQuestion": "What story does a line graph tell?",
+      "objectives": [
+        "To understand how to read and interpret line graphs"
+      ],
+      "successCriteria": [
+        "All: read values from a line graph",
+        "Most: find differences and changes",
+        "Some: describe the trend in words"
+      ],
+      "crossCurricular": "Science and geography: weather and temperature",
+      "smsc": "Spiritual: changes in the day as Allah's signs (sunrise to sunset)",
+      "keywords": [
+        {
+          "term": "line graph",
+          "def": "points joined to show change over time"
+        },
+        {
+          "term": "axis",
+          "def": "a line with a scale"
+        },
+        {
+          "term": "trend",
+          "def": "the general pattern"
+        },
+        {
+          "term": "interval",
+          "def": "the gap between scale marks"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A graph shows the temperature rising all morning then falling. What time of day might be hottest?",
+        "a": "Early afternoon."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "thermometer outdoor",
+          "alt": "An outdoor thermometer",
+          "for": "hook"
+        },
+        {
+          "find": "weather station",
+          "alt": "A weather station",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Cuboid 4 × 3 × 2?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "21 - 15 = ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 8 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "Scale goes up in 5s: 3rd mark?",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read the graph",
+          "bullets": [
+            "Time along the bottom.",
+            "Temperature up the side."
+          ],
+          "chart": {
+            "kind": "line",
+            "title": "Temperature on a June day (°C, example data)",
+            "labels": [
+              "6 am",
+              "9 am",
+              "12 pm",
+              "3 pm",
+              "6 pm"
+            ],
+            "values": [
+              12,
+              15,
+              21,
+              23,
+              18
+            ],
+            "unit": "°C"
+          },
+          "note": "Example data."
+        },
+        {
+          "heading": "Change",
+          "model": {
+            "problem": "From 9 am to 12 pm",
+            "steps": [
+              "9 am: 15°C",
+              "12 pm: 21°C",
+              "21 - 15 = 6"
+            ],
+            "answer": "Rose by 6°C"
+          }
+        },
+        {
+          "heading": "Between points",
+          "bullets": [
+            "Lines show the change between readings.",
+            "At 10:30 am it was about 18°C."
+          ],
+          "note": "Estimate between points."
+        },
+        {
+          "heading": "Trend",
+          "bullets": [
+            "Rises in the morning.",
+            "Peaks at 3 pm.",
+            "Falls in the evening."
+          ],
+          "note": "Describe in words."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Hottest time?",
+            "options": [
+              "3 pm",
+              "12 pm",
+              "6 pm"
+            ],
+            "answer": 0,
+            "why": "23°C is the highest point."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Temperature at 6 pm?",
+          "a": "18°C",
+          "mins": 2,
+          "model": "Teacher: go up from 6 pm to the line, across to 18."
+        },
+        {
+          "q": "Fall from 3 pm to 6 pm?",
+          "a": "5°C",
+          "mins": 2
+        },
+        {
+          "q": "Difference between 6 am and 3 pm?",
+          "a": "11°C",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: When did the temperature rise fastest? How do you know?",
+          "a": "9 am to 12 pm: steepest line (+6°C)",
+          "mins": 4,
+          "model": "Teacher: compare each change: +3, +6, +2, -5."
+        },
+        {
+          "q": "Extend: Estimate the temperature at 7:30 am.",
+          "a": "About 13.5°C",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write 3 sentences describing the graph using 'rose', 'peaked' and 'fell'.",
+          "a": "For example it rose from 12°C to 23°C, peaked at 3 pm and fell to 18°C",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Temperature at 12 pm? A) 21°C B) 15°C C) 23°C",
+          "a": "A) 21°C",
+          "mins": 2,
+          "options": [
+            "21°C",
+            "15°C",
+            "23°C"
+          ]
+        },
+        {
+          "q": "Big question: what story does a line graph tell?",
+          "a": "How something changes over time: rises, peaks and falls",
+          "mins": 3
+        }
+      ],
+      "homework": "Find a line graph in a newspaper or online (with an adult) and write 2 facts from it.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: if the line continued falling by the same amount every 3 hours, what would 9 pm be? (13°C)",
+      "resources": [
+        "White Rose Maths Year 6, Statistics block: small step 'Read and interpret line graphs' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed line graph sheet (example data)",
+        "Ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 68 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 69,
+      "title": "Draw line graphs",
+      "duration": 45,
+      "bigQuestion": "How do we choose a good scale?",
+      "objectives": [
+        "To understand how to draw an accurate line graph from data"
+      ],
+      "successCriteria": [
+        "All: choose and label a sensible scale",
+        "Most: plot points accurately",
+        "Some: join the points and give the graph a title"
+      ],
+      "crossCurricular": "Science: recording plant growth",
+      "smsc": "Spiritual: Allah makes the seed grow",
+      "keywords": [
+        {
+          "term": "scale",
+          "def": "the numbers on an axis, in equal steps"
+        },
+        {
+          "term": "plot",
+          "def": "mark a point"
+        },
+        {
+          "term": "label",
+          "def": "words that say what an axis shows"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A plant grows 2, 4, 7, 11 and 14 cm in 5 weeks. Would a scale of 1s, 2s or 10s work best? Why?",
+        "a": "2s: fits the page and is easy to read."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bean seedling growing",
+          "alt": "A bean seedling",
+          "for": "hook"
+        },
+        {
+          "find": "graph paper",
+          "alt": "Graph paper",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Read: 3 pm on yesterday's graph?",
+          "a": "23°C",
+          "mins": 1
+        },
+        {
+          "q": "14 ÷ 2 = ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 4 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "Which axis shows time?",
+          "a": "The horizontal (x) axis",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Plan",
+          "bullets": [
+            "Time on the horizontal axis.",
+            "Height on the vertical axis.",
+            "Scale in equal steps."
+          ],
+          "table": {
+            "head": [
+              "Week",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "rows": [
+              [
+                "Height (cm)",
+                "2",
+                "4",
+                "7",
+                "11",
+                "14"
+              ]
+            ]
+          },
+          "note": "Example data table."
+        },
+        {
+          "heading": "Draw it",
+          "model": {
+            "problem": "Plant height graph",
+            "steps": [
+              "Draw and label both axes",
+              "Scale: 0 to 16 in 2s",
+              "Plot each point with a small cross",
+              "Join with straight lines, add a title"
+            ],
+            "answer": "A line graph"
+          }
+        },
+        {
+          "heading": "The finished graph",
+          "bullets": [
+            "Check every point."
+          ],
+          "chart": {
+            "kind": "line",
+            "title": "Bean plant height (cm, example data)",
+            "labels": [
+              "Week 0",
+              "Week 1",
+              "Week 2",
+              "Week 3",
+              "Week 4"
+            ],
+            "values": [
+              2,
+              4,
+              7,
+              11,
+              14
+            ],
+            "unit": "cm"
+          },
+          "note": "Compare with yours."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Height 11 cm, scale in 2s. Where do you plot?",
+            "options": [
+              "Half way between 10 and 12",
+              "On 11 exactly marked",
+              "On 12"
+            ],
+            "answer": 0,
+            "why": "11 is half way between 10 and 12."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Choose a scale for values 0 to 45.",
+          "a": "For example 5s",
+          "mins": 2,
+          "model": "Teacher: 45 ÷ 5 = 9 steps: fits the page."
+        },
+        {
+          "q": "Plot week 2 (7 cm).",
+          "a": "Half way between 6 and 8",
+          "mins": 2
+        },
+        {
+          "q": "What title would you give?",
+          "a": "Bean plant height over 4 weeks",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a line graph of the bean data.",
+          "a": "Checked against the model",
+          "mins": 5,
+          "model": "Teacher draws the axes with the class."
+        },
+        {
+          "q": "Extend: Draw a line graph: Maghrib time on 5 Saturdays (example data): 20:30, 20:45, 20:58, 21:08, 21:15.",
+          "a": "Points rising and levelling off; scale in 15 minutes",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Between which weeks did the bean grow most? How does the graph show it?",
+          "a": "Weeks 2 to 3 (4 cm): the steepest line",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A good scale is... A) equal steps B) any numbers C) only 1s",
+          "a": "A) equal steps",
+          "mins": 2,
+          "options": [
+            "equal steps",
+            "any numbers",
+            "only 1s"
+          ]
+        },
+        {
+          "q": "Big question: how do we choose a good scale?",
+          "a": "Equal steps that fit the largest value on the page and are easy to read",
+          "mins": 3
+        }
+      ],
+      "homework": "Record the temperature at 3 times today (or use the example data) and draw a line graph.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: draw both the bean and a second plant (2, 3, 5, 8, 12 cm) on the same axes. Compare.",
+      "resources": [
+        "White Rose Maths Year 6, Statistics block: line graphs: draw (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Graph paper or printed axes",
+        "Ruler and sharp pencil",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 69 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 70,
+      "title": "Dual bar charts",
+      "duration": 45,
+      "bigQuestion": "How can one chart compare two groups?",
+      "objectives": [
+        "To understand how to read and interpret dual bar charts"
+      ],
+      "successCriteria": [
+        "All: read both bars for each category",
+        "Most: compare the two groups",
+        "Some: find totals and differences"
+      ],
+      "crossCurricular": "English: reading for pleasure",
+      "smsc": "Spiritual: seeking knowledge is valued in Islam",
+      "keywords": [
+        {
+          "term": "dual bar chart",
+          "def": "two bars side by side for each category"
+        },
+        {
+          "term": "key",
+          "def": "shows which colour is which group"
+        },
+        {
+          "term": "category",
+          "def": "a group the data is sorted into"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Year 5 and Year 6 both counted pages read each month. How could one chart show both?",
+        "a": "Two bars per month with a key."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stack of books",
+          "alt": "A stack of books",
+          "for": "hook"
+        },
+        {
+          "find": "library shelves",
+          "alt": "Library shelves",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Scale 0 to 60 in 10s: how many steps?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "45 - 38 = ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 8 = ?",
+          "a": "64",
+          "mins": 1
+        },
+        {
+          "q": "Mean of 2 and 4?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two bars",
+          "bullets": [
+            "Same category, two groups.",
+            "Use the key."
+          ],
+          "table": {
+            "head": [
+              "Month",
+              "Year 5",
+              "Year 6"
+            ],
+            "rows": [
+              [
+                "January",
+                "24",
+                "30"
+              ],
+              [
+                "February",
+                "28",
+                "26"
+              ],
+              [
+                "March",
+                "35",
+                "40"
+              ],
+              [
+                "April",
+                "30",
+                "38"
+              ]
+            ]
+          },
+          "note": "Example data: books read."
+        },
+        {
+          "heading": "Year 5 chart",
+          "bullets": [
+            "Year 5 books read (example data)."
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Year 5 books read (example data)",
+            "labels": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr"
+            ],
+            "values": [
+              24,
+              28,
+              35,
+              30
+            ],
+            "unit": "books"
+          },
+          "note": "One group at a time."
+        },
+        {
+          "heading": "Compare",
+          "model": {
+            "problem": "March",
+            "steps": [
+              "Year 5: 35",
+              "Year 6: 40",
+              "40 - 35 = 5"
+            ],
+            "answer": "Year 6 read 5 more"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which month did Year 5 read more than Year 6?",
+            "options": [
+              "February",
+              "March",
+              "April"
+            ],
+            "answer": 0,
+            "why": "28 > 26 in February."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Year 6 in April?",
+          "a": "38",
+          "mins": 2,
+          "model": "Teacher: find April, the Year 6 bar, read across: 38."
+        },
+        {
+          "q": "Total for January?",
+          "a": "54",
+          "mins": 2
+        },
+        {
+          "q": "Difference in April?",
+          "a": "8",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Total books for Year 5 over 4 months; for Year 6",
+          "a": "117; 134",
+          "mins": 4,
+          "model": "Teacher: 24 + 28 + 35 + 30 = 117."
+        },
+        {
+          "q": "Extend: Which month had the biggest difference between the years?",
+          "a": "April (8)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write 2 statements comparing the years, one using 'more' and one using 'total'.",
+          "a": "For example Year 6 read more in 3 of 4 months; Year 6 read 134 in total, 17 more than Year 5",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A dual bar chart needs a... A) key B) pie C) line",
+          "a": "A) key",
+          "mins": 2,
+          "options": [
+            "key",
+            "pie",
+            "line"
+          ]
+        },
+        {
+          "q": "Big question: how can one chart compare two groups?",
+          "a": "Two bars side by side for each category, with a key",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a dual bar chart of two family members' daily reading minutes for 4 days.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find the mean books per month for each year (29.25; 33.5).",
+      "resources": [
+        "White Rose Maths Year 6, Statistics block: small step 'Dual bar charts' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed dual bar chart (example data)",
+        "Coloured pencils",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 70 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 71,
+      "title": "Read and interpret pie charts",
+      "duration": 45,
+      "bigQuestion": "Why is a pie chart a circle?",
+      "objectives": [
+        "To understand how to read pie charts using fractions and angles"
+      ],
+      "successCriteria": [
+        "All: say what the whole circle shows",
+        "Most: use fractions of the circle to find amounts",
+        "Some: use angles to find amounts"
+      ],
+      "crossCurricular": "Geography: travel surveys",
+      "smsc": "Social: walking to the masjid together",
+      "keywords": [
+        {
+          "term": "pie chart",
+          "def": "a circle split into sectors to show parts of a whole"
+        },
+        {
+          "term": "sector",
+          "def": "a slice of the pie chart"
+        },
+        {
+          "term": "360°",
+          "def": "the whole circle"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A pie chart shows how 24 pupils travel to the masjid. Half the circle is 'walk'. How many walk?",
+        "a": "12."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pie chart example",
+          "alt": "A pie chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "pizza cut into slices",
+          "alt": "A pizza in slices",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Full turn?",
+          "a": "360°",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 24?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 4 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "360 ÷ 24 = ?",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The whole",
+          "bullets": [
+            "The circle = everyone.",
+            "Each sector is a fraction."
+          ],
+          "chart": {
+            "kind": "pie",
+            "title": "How 24 pupils travel to the masjid (example data)",
+            "labels": [
+              "Walk",
+              "Car",
+              "Bus",
+              "Cycle"
+            ],
+            "values": [
+              12,
+              6,
+              4,
+              2
+            ]
+          },
+          "note": "Example: 24 pupils travel to the masjid."
+        },
+        {
+          "heading": "Use fractions",
+          "model": {
+            "problem": "Car sector is a right angle",
+            "steps": [
+              "90° is a quarter of 360°",
+              "1/4 of 24 = 6"
+            ],
+            "answer": "6 pupils"
+          }
+        },
+        {
+          "heading": "Use angles",
+          "model": {
+            "problem": "Bus sector is 60°",
+            "steps": [
+              "60° out of 360° = 1/6",
+              "1/6 of 24 = 4"
+            ],
+            "answer": "4 pupils"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Walk sector is 180°. How many walk?",
+            "options": [
+              "12",
+              "18",
+              "6"
+            ],
+            "answer": 0,
+            "why": "180° is half: half of 24 is 12."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Cycle sector is 30°. How many cycle?",
+          "a": "2",
+          "mins": 2,
+          "model": "Teacher: 30/360 = 1/12; 24 ÷ 12 = 2."
+        },
+        {
+          "q": "What fraction travel by car?",
+          "a": "1/4",
+          "mins": 2
+        },
+        {
+          "q": "Do the pupils total 24?",
+          "a": "Yes: 12 + 6 + 4 + 2",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: A pie chart of 36 pupils: sectors 90°, 120°, 150°. How many in each?",
+          "a": "9, 12, 15",
+          "mins": 4,
+          "model": "Teacher: 90° is 1/4 of 36: 9."
+        },
+        {
+          "q": "Extend: Two pie charts: class A (20 pupils) and class B (40 pupils). Both show 'dates' as half. Do the same number like dates?",
+          "a": "No: 10 and 20",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A sector is 72°. What fraction of the circle?",
+          "a": "1/5",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A quarter of a pie chart is... A) 90° B) 25° C) 180°",
+          "a": "A) 90°",
+          "mins": 2,
+          "options": [
+            "90°",
+            "25°",
+            "180°"
+          ]
+        },
+        {
+          "q": "Big question: why a circle?",
+          "a": "The whole circle is the whole group (360°), so each part is a fraction of it",
+          "mins": 3
+        }
+      ],
+      "homework": "Ask 12 family members or friends their favourite fruit and show it as fractions of a circle.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a sector of 45° shows 5 people. How many in the whole pie chart? (40)",
+      "resources": [
+        "White Rose Maths Year 6, Statistics block: small step 'Read and interpret pie charts' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed pie charts (example data)",
+        "Printable 360° protractor (paper) or a school protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 71 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 72,
+      "title": "Pie charts with percentages",
+      "duration": 45,
+      "bigQuestion": "How do percentages fit on a pie chart?",
+      "objectives": [
+        "To understand how to read pie charts labelled with percentages"
+      ],
+      "successCriteria": [
+        "All: say the whole is 100%",
+        "Most: find an amount from a percentage sector",
+        "Some: link percentages to angles"
+      ],
+      "crossCurricular": "Geography and science: surveying trees in a park",
+      "smsc": "Spiritual: trees as part of Allah's creation; caring for them",
+      "keywords": [
+        {
+          "term": "percentage",
+          "def": "parts per hundred"
+        },
+        {
+          "term": "100%",
+          "def": "the whole circle"
+        },
+        {
+          "term": "25%",
+          "def": "a quarter: 90°"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A pie chart says 25% of 200 trees in a park are oak. How many oak trees?",
+        "a": "50."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "oak tree",
+          "alt": "An oak tree",
+          "for": "hook"
+        },
+        {
+          "find": "pie chart example",
+          "alt": "A pie chart",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "25% of 40?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "Half of 360?",
+          "a": "180",
+          "mins": 1
+        },
+        {
+          "q": "10% of 200?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 12 = ?",
+          "a": "108",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "100% is the whole",
+          "bullets": [
+            "Sectors add to 100%."
+          ],
+          "chart": {
+            "kind": "pie",
+            "title": "Trees in a park, 200 trees (example data)",
+            "labels": [
+              "Oak 25%",
+              "Beech 40%",
+              "Ash 20%",
+              "Other 15%"
+            ],
+            "values": [
+              25,
+              40,
+              20,
+              15
+            ]
+          },
+          "note": "Example: 200 trees."
+        },
+        {
+          "heading": "Amount from %",
+          "model": {
+            "problem": "40% of 200 trees",
+            "steps": [
+              "10% = 20",
+              "40% = 80"
+            ],
+            "answer": "80 beech trees"
+          }
+        },
+        {
+          "heading": "% and angles",
+          "bullets": [
+            "50% = 180°.",
+            "25% = 90°.",
+            "10% = 36°."
+          ],
+          "note": "1% = 3.6°."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Ash is 20%. How many ash trees?",
+            "options": [
+              "40",
+              "20",
+              "80"
+            ],
+            "answer": 0,
+            "why": "10% of 200 = 20, 20% = 40."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many oak trees?",
+          "a": "50",
+          "mins": 2,
+          "model": "Teacher: 25% is a quarter: 200 ÷ 4 = 50."
+        },
+        {
+          "q": "How many 'other'?",
+          "a": "30",
+          "mins": 2
+        },
+        {
+          "q": "Check the total.",
+          "a": "50 + 80 + 40 + 30 = 200",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: A survey of 80 pupils: 45% walk, 30% car, 25% bus. How many each?",
+          "a": "36; 24; 20",
+          "mins": 4,
+          "model": "Teacher: 10% of 80 = 8, 45% = 36."
+        },
+        {
+          "q": "Extend: The angle of a 30% sector?",
+          "a": "108°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Yusuf says: 'Class A's 50% is always more people than class B's 25%.' True? Explain.",
+          "a": "Not always: it depends on the totals (50% of 20 = 10, 25% of 80 = 20)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "50% of a pie chart is... A) 180° B) 50° C) 90°",
+          "a": "A) 180°",
+          "mins": 2,
+          "options": [
+            "180°",
+            "50°",
+            "90°"
+          ]
+        },
+        {
+          "q": "Big question: how do percentages fit?",
+          "a": "The whole circle is 100%; find each percentage of the total",
+          "mins": 3
+        }
+      ],
+      "homework": "Find a pie chart with percentages online (with an adult) and work out amounts for a total of 200.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: if 15% of the trees is 30, how many trees are there? (200)",
+      "resources": [
+        "White Rose Maths Year 6, Statistics block: small step 'Pie charts with percentages' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed pie charts with percentages (example data)",
+        "100-square grid and squared paper (1 cm)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 72 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 73,
+      "title": "The mean",
+      "duration": 45,
+      "bigQuestion": "How can one number represent a whole set of data?",
+      "objectives": [
+        "To understand how to calculate and use the mean as an average"
+      ],
+      "successCriteria": [
+        "All: find the mean by adding and dividing",
+        "Most: use the mean to compare two sets",
+        "Some: find a missing value from the mean"
+      ],
+      "crossCurricular": "Science: averaging repeated readings",
+      "smsc": "Moral: fair sharing; the mean as a fair share",
+      "keywords": [
+        {
+          "term": "mean",
+          "def": "add all the values, divide by how many"
+        },
+        {
+          "term": "average",
+          "def": "a typical value"
+        },
+        {
+          "term": "total",
+          "def": "all the values added"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Five friends have 4, 6, 8, 10 and 12 dates. If they share them out equally, how many each?",
+        "a": "8: total 40, 40 ÷ 5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "stack of coins",
+          "alt": "Stacks of coins",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "4 + 6 + 8 + 10 + 12 = ?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "40 ÷ 5 = ?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 5 = ?",
+          "a": "35",
+          "mins": 1
+        },
+        {
+          "q": "24 ÷ 4 = ?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Levelling out",
+          "bullets": [
+            "The mean is a fair share.",
+            "Move from big piles to small piles."
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Dates each friend has (example data)",
+            "labels": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "values": [
+              4,
+              6,
+              8,
+              10,
+              12
+            ],
+            "unit": "dates"
+          },
+          "note": "Use cubes or coin stacks."
+        },
+        {
+          "heading": "Calculate",
+          "model": {
+            "problem": "Mean of 3, 7, 5, 9",
+            "steps": [
+              "Total: 3 + 7 + 5 + 9 = 24",
+              "How many: 4",
+              "24 ÷ 4 = 6"
+            ],
+            "answer": "6"
+          }
+        },
+        {
+          "heading": "Missing value",
+          "model": {
+            "problem": "Mean of 5 numbers is 7. Four are 6, 8, 5, 9.",
+            "steps": [
+              "Total = 5 × 7 = 35",
+              "6 + 8 + 5 + 9 = 28",
+              "35 - 28 = 7"
+            ],
+            "answer": "7"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Mean of 10, 20, 30?",
+            "options": [
+              "20",
+              "60",
+              "30"
+            ],
+            "answer": 0,
+            "why": "60 ÷ 3 = 20."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Mean of 2, 4, 9?",
+          "a": "5",
+          "mins": 2,
+          "model": "Teacher: total 15, 3 values: 15 ÷ 3 = 5."
+        },
+        {
+          "q": "Mean of 12, 15, 18, 15?",
+          "a": "15",
+          "mins": 2
+        },
+        {
+          "q": "Mean of 4 numbers is 10. Total?",
+          "a": "40",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Means: 7, 8, 9, 10, 11; 25, 30, 35; 1.5, 2.5, 3, 5",
+          "a": "9; 30; 3",
+          "mins": 4,
+          "model": "Teacher: total 45, ÷ 5 = 9."
+        },
+        {
+          "q": "Extend: Mean daily Qur'an reading: Week 1 (minutes) 10, 15, 20, 15, 10, 20, 15; Week 2 mean 14. Which week was higher?",
+          "a": "Week 1: total 105, mean 15 > 14",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Mean of 6 numbers is 12. Five are 10, 14, 11, 13, 12. Find the sixth.",
+          "a": "12",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Mean of 4, 5, 6? A) 5 B) 15 C) 6",
+          "a": "A) 5",
+          "mins": 2,
+          "options": [
+            "5",
+            "15",
+            "6"
+          ]
+        },
+        {
+          "q": "Big question: how can one number represent a set?",
+          "a": "The mean shares the total equally between all the values",
+          "mins": 3
+        }
+      ],
+      "homework": "Record minutes of reading for 5 days and find your mean.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: add a value of 20 to 4, 6, 8, 10, 12. What is the new mean? (10)",
+      "resources": [
+        "White Rose Maths Year 6, Statistics block: small steps 'The mean' (understand and calculate) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Sugar cubes, dice or Lego bricks (about 30) for building cuboids",
+        "Printed data sheet (example data)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 73 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 74,
+      "title": "Draw pie charts",
+      "duration": 45,
+      "bigQuestion": "How do we turn data into angles?",
+      "objectives": [
+        "To understand how to draw a pie chart by calculating angles"
+      ],
+      "successCriteria": [
+        "All: find the angle for one item (360° ÷ total)",
+        "Most: calculate each sector angle",
+        "Some: draw the sectors with a protractor and label them"
+      ],
+      "crossCurricular": "Science: presenting survey results",
+      "smsc": "Moral: presenting data honestly",
+      "keywords": [
+        {
+          "term": "sector angle",
+          "def": "the angle of a slice"
+        },
+        {
+          "term": "360° ÷ total",
+          "def": "degrees for one item"
+        },
+        {
+          "term": "protractor",
+          "def": "a tool to measure and draw angles"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "30 pupils chose a favourite fruit. How many degrees would one pupil get on a pie chart?",
+        "a": "12°: 360 ÷ 30."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "fruit market stall",
+          "alt": "Fruit on a market stall (no people)",
+          "for": "hook"
+        },
+        {
+          "find": "protractor",
+          "alt": "A protractor",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "360 ÷ 30 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "9 × 12 = ?",
+          "a": "108",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 12 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "Mean of 2, 3, 7?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The data",
+          "bullets": [
+            "Favourite fruit of 30 pupils (example data)."
+          ],
+          "table": {
+            "head": [
+              "Fruit",
+              "Pupils",
+              "Angle"
+            ],
+            "rows": [
+              [
+                "Apples",
+                "9",
+                "9 × 12 = 108°"
+              ],
+              [
+                "Bananas",
+                "6",
+                "6 × 12 = 72°"
+              ],
+              [
+                "Dates",
+                "12",
+                "12 × 12 = 144°"
+              ],
+              [
+                "Grapes",
+                "3",
+                "3 × 12 = 36°"
+              ],
+              [
+                "Total",
+                "30",
+                "360°"
+              ]
+            ]
+          },
+          "note": "Table with angles."
+        },
+        {
+          "heading": "Angles",
+          "model": {
+            "problem": "30 pupils",
+            "steps": [
+              "360 ÷ 30 = 12° per pupil",
+              "Multiply each count by 12",
+              "Check: angles add to 360°"
+            ],
+            "answer": "108°, 72°, 144°, 36°"
+          }
+        },
+        {
+          "heading": "Draw",
+          "bullets": [
+            "Draw a circle and a radius.",
+            "Measure the first angle from the radius.",
+            "Measure the next from the new line."
+          ],
+          "note": "Model with the protractor."
+        },
+        {
+          "heading": "Result",
+          "bullets": [
+            "Label each sector."
+          ],
+          "chart": {
+            "kind": "pie",
+            "title": "Favourite fruit of 30 pupils (example data)",
+            "labels": [
+              "Apples",
+              "Bananas",
+              "Dates",
+              "Grapes"
+            ],
+            "values": [
+              108,
+              72,
+              144,
+              36
+            ]
+          },
+          "note": "Finished chart."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "36 pupils. Degrees per pupil?",
+            "options": [
+              "10°",
+              "36°",
+              "12°"
+            ],
+            "answer": 0,
+            "why": "360 ÷ 36 = 10."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "20 pupils: degrees per pupil?",
+          "a": "18°",
+          "mins": 2,
+          "model": "Teacher: 360 ÷ 20 = 18°."
+        },
+        {
+          "q": "With 18° per pupil, angle for 5 pupils?",
+          "a": "90°",
+          "mins": 2
+        },
+        {
+          "q": "Check the fruit angles total 360°.",
+          "a": "108 + 72 + 144 + 36 = 360",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw the fruit pie chart.",
+          "a": "Angles 108°, 72°, 144°, 36° within 2°",
+          "mins": 5,
+          "model": "Teacher draws the first sector (108°)."
+        },
+        {
+          "q": "Extend: Survey of 60 people: 15 walk, 25 car, 20 bus. Find the angles.",
+          "a": "90°, 150°, 120°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why must the angles add to 360°?",
+          "a": "The whole circle shows everyone, and a full turn is 360°",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "24 pupils: degrees per pupil? A) 15° B) 24° C) 10°",
+          "a": "A) 15°",
+          "mins": 2,
+          "options": [
+            "15°",
+            "24°",
+            "10°"
+          ]
+        },
+        {
+          "q": "Big question: how do we turn data into angles?",
+          "a": "Divide 360° by the total, then multiply by each count",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a pie chart of the fruit survey you did at home (scale to 360°).",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a survey of 45 people: what angle for 1 person? For 7 people? (8°; 56°)",
+      "resources": [
+        "White Rose Maths Year 6, Statistics block: small step 'Draw pie charts' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 360° protractor (paper) or a school protractor",
+        "Compass or a round lid to draw a circle",
+        "Ruler and pencil",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 74 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 75,
+      "title": "Statistics: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "Which chart would I choose, and why?",
+      "objectives": [
+        "To understand how well I can read, draw and interpret graphs and find the mean"
+      ],
+      "successCriteria": [
+        "All: read line graphs and dual bar charts",
+        "Most: read and draw pie charts",
+        "Some: calculate and use the mean"
+      ],
+      "smsc": "Spiritual: shukr for learning",
+      "keywords": [
+        {
+          "term": "line graph",
+          "def": "change over time"
+        },
+        {
+          "term": "pie chart",
+          "def": "parts of a whole"
+        },
+        {
+          "term": "mean",
+          "def": "total ÷ how many"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Line graph, bar chart or pie chart: which would you use to show how a plant grows over 6 weeks?",
+        "a": "A line graph: change over time."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pie chart example",
+          "alt": "A pie chart",
+          "for": "teach:2"
+        },
+        {
+          "find": "thermometer outdoor",
+          "alt": "A thermometer",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Mean of 6, 8, 10?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "360 ÷ 40 = ?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "25% of 120?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 12 = ?",
+          "a": "144",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Line graphs",
+          "bullets": [
+            "Change over time.",
+            "Read across and up."
+          ],
+          "chart": {
+            "kind": "line",
+            "title": "Rainfall each month (mm, example data)",
+            "labels": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May"
+            ],
+            "values": [
+              80,
+              60,
+              55,
+              45,
+              50
+            ],
+            "unit": "mm"
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Pie charts",
+          "bullets": [
+            "Whole = 360° or 100%.",
+            "Angle = 360 ÷ total × count."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Choose a chart",
+          "bullets": [
+            "Over time: line.",
+            "Compare groups: bar.",
+            "Parts of a whole: pie."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Rain fell most in...",
+            "options": [
+              "January",
+              "May",
+              "March"
+            ],
+            "answer": 0,
+            "why": "80 mm is the highest point."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rain in April?",
+          "a": "45 mm",
+          "mins": 2,
+          "model": "Teacher: go up from April to the line: 45 mm."
+        },
+        {
+          "q": "Mean rainfall over the 5 months?",
+          "a": "58 mm",
+          "mins": 2
+        },
+        {
+          "q": "A 120° sector of 30 pupils?",
+          "a": "10 pupils",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: from the rainfall graph, the biggest fall between two months and the change from April to May",
+          "a": "Jan to Feb (20 mm); up 5 mm",
+          "mins": 4,
+          "model": "Teacher: Jan to Feb: 80 - 60 = 20."
+        },
+        {
+          "q": "Extend: Check: 40 pupils: 10 tea, 16 milk, 14 water. Find the pie chart angles.",
+          "a": "90°, 144°, 126°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: mean of 5 scores is 16. Four are 14, 18, 15, 17. The fifth?",
+          "a": "16",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Best chart for parts of a whole? A) pie chart B) line graph",
+          "a": "A) pie chart",
+          "mins": 2,
+          "options": [
+            "pie chart",
+            "line graph"
+          ]
+        },
+        {
+          "q": "Big question: one strength, one target",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct your check; draw one chart from data you collect at home.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: explain why the mean can be a number that is not in the data set.",
+      "resources": [
+        "White Rose Maths Year 6, Statistics block: end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 360° protractor (paper) or a school protractor",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 75 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 76,
+      "title": "Measure and classify angles",
+      "duration": 45,
+      "bigQuestion": "Why does a protractor have two scales, and how do we measure a reflex angle?",
+      "objectives": [
+        "To understand how to measure and classify angles, including reflex angles"
+      ],
+      "successCriteria": [
+        "All: classify angles as acute, right, obtuse, straight or reflex",
+        "Most: measure angles to the nearest degree",
+        "Some: measure a reflex angle"
+      ],
+      "crossCurricular": "Geography: bearings",
+      "smsc": "Spiritual: finding the qiblah",
+      "keywords": [
+        {
+          "term": "acute",
+          "def": "less than 90°"
+        },
+        {
+          "term": "obtuse",
+          "def": "between 90° and 180°"
+        },
+        {
+          "term": "reflex",
+          "def": "between 180° and 360°"
+        },
+        {
+          "term": "protractor",
+          "def": "a tool to measure angles"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A clock at 8 o'clock shows a reflex angle between the hands. How big is it?",
+        "a": "240° (the small angle is 120°)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "A clock",
+          "for": "hook"
+        },
+        {
+          "find": "protractor",
+          "alt": "A protractor",
+          "for": "keywords"
+        }
+      ],
+      "islamicLink": {
+        "text": "From London, the qiblah is about 119° clockwise from north. Measuring angles accurately is one way Muslims find the direction of the Ka'bah for salah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Classify 135°.",
+          "a": "Obtuse",
+          "mins": 1
+        },
+        {
+          "q": "360 - 120 = ?",
+          "a": "240",
+          "mins": 1
+        },
+        {
+          "q": "Right angle?",
+          "a": "90°",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 12 = ?",
+          "a": "96",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Classify",
+          "bullets": [
+            "Acute < 90°, right = 90°.",
+            "Obtuse 90° to 180°, straight = 180°.",
+            "Reflex 180° to 360°."
+          ],
+          "sort": {
+            "columns": [
+              "Acute",
+              "Obtuse",
+              "Reflex"
+            ],
+            "cards": [
+              "40°",
+              "170°",
+              "190°",
+              "89°",
+              "91°",
+              "359°"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Card sort."
+        },
+        {
+          "heading": "Measure",
+          "bullets": [
+            "Centre on the vertex.",
+            "0 on one arm.",
+            "Count from 0 on that scale."
+          ],
+          "note": "Estimate first."
+        },
+        {
+          "heading": "Reflex",
+          "model": {
+            "problem": "A reflex angle",
+            "steps": [
+              "Measure the small angle: 125°",
+              "360 - 125"
+            ],
+            "answer": "235°"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Small angle 70°. Reflex angle?",
+            "options": [
+              "290°",
+              "110°",
+              "70°"
+            ],
+            "answer": 0,
+            "why": "360 - 70 = 290."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Measure angle A.",
+          "a": "64°",
+          "mins": 2,
+          "model": "Teacher: centre, 0 on the arm, read 64°; it looks acute ✓."
+        },
+        {
+          "q": "Measure angle B.",
+          "a": "148°",
+          "mins": 2
+        },
+        {
+          "q": "Measure reflex angle C.",
+          "a": "215° (small angle 145°)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Measure and classify D, E, F.",
+          "a": "D 37° acute; E 102° obtuse; F 260° reflex",
+          "mins": 4,
+          "model": "Teacher measures D: 37°."
+        },
+        {
+          "q": "Extend: Draw the qiblah from London: 119° clockwise from north. Classify it.",
+          "a": "Obtuse",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Clock hands at 10 o'clock: the small and the reflex angle?",
+          "a": "60° and 300°",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "250° is... A) reflex B) obtuse C) acute",
+          "a": "A) reflex",
+          "mins": 2,
+          "options": [
+            "reflex",
+            "obtuse",
+            "acute"
+          ]
+        },
+        {
+          "q": "Big question: how do we measure a reflex angle?",
+          "a": "Measure the small angle and subtract it from 360°",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure and classify 4 angles on the homework sheet, including one reflex angle.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: measure a reflex angle directly with a 360° protractor and check by subtraction.",
+      "resources": [
+        "White Rose Maths Year 6, Shape block: small step 'Measure and classify angles' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 360° protractor (paper) or a school protractor",
+        "Printed angle sheet (A to F)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 76 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 77,
+      "title": "Calculate angles",
+      "duration": 45,
+      "bigQuestion": "Can we find angles without measuring?",
+      "objectives": [
+        "To understand how to calculate angles on a straight line, around a point and vertically opposite"
+      ],
+      "successCriteria": [
+        "All: use angles on a line = 180° and around a point = 360°",
+        "Most: use vertically opposite angles are equal",
+        "Some: explain each step with a reason"
+      ],
+      "crossCurricular": "Geography: road junctions on maps",
+      "smsc": "Social: clear reasoning helps others follow",
+      "keywords": [
+        {
+          "term": "vertically opposite",
+          "def": "angles across from each other where two lines cross; they are equal"
+        },
+        {
+          "term": "straight line",
+          "def": "angles add to 180°"
+        },
+        {
+          "term": "around a point",
+          "def": "angles add to 360°"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two straight roads cross. One angle is 40°. Can you find the other three without a protractor?",
+        "a": "140°, 40°, 140°."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "road junction aerial",
+          "alt": "Two roads crossing",
+          "for": "hook"
+        },
+        {
+          "find": "scissors open",
+          "alt": "Open scissors make crossing lines",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "On a line: 65° and ?",
+          "a": "115°",
+          "mins": 1
+        },
+        {
+          "q": "Around a point: 100°, 150° and ?",
+          "a": "110°",
+          "mins": 1
+        },
+        {
+          "q": "Reflex for 30°?",
+          "a": "330°",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 6 = ?",
+          "a": "54",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Facts",
+          "bullets": [
+            "Line: 180°.",
+            "Point: 360°.",
+            "Vertically opposite: equal."
+          ],
+          "table": {
+            "head": [
+              "Fact",
+              "Rule"
+            ],
+            "rows": [
+              [
+                "Angles on a straight line",
+                "add to 180°"
+              ],
+              [
+                "Angles around a point",
+                "add to 360°"
+              ],
+              [
+                "Vertically opposite angles",
+                "are equal"
+              ]
+            ]
+          },
+          "note": "Table."
+        },
+        {
+          "heading": "Crossing lines",
+          "model": {
+            "problem": "One angle 40°",
+            "steps": [
+              "Next to it: 180 - 40 = 140° (line)",
+              "Opposite 40°: 40° (vertically opposite)",
+              "Opposite 140°: 140°"
+            ],
+            "answer": "40°, 140°, 40°, 140°"
+          }
+        },
+        {
+          "heading": "Give reasons",
+          "bullets": [
+            "Write the fact you used.",
+            "'Angles on a line add to 180°.'"
+          ],
+          "note": "Model reasoning sentences."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Lines cross; one angle 75°. The opposite angle?",
+            "options": [
+              "75°",
+              "105°",
+              "285°"
+            ],
+            "answer": 0,
+            "why": "Vertically opposite angles are equal."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Lines cross; one angle 120°. Find the others.",
+          "a": "60°, 120°, 60°",
+          "mins": 2,
+          "model": "Teacher: 180 - 120 = 60 (line); opposite angles equal."
+        },
+        {
+          "q": "Around a point: 90°, 85°, ? and 110°.",
+          "a": "75°",
+          "mins": 2
+        },
+        {
+          "q": "On a line: 2 equal angles and 50°.",
+          "a": "65° each",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find a, b, c on the sheet (crossing lines with 35°).",
+          "a": "a = 145°, b = 35°, c = 145°",
+          "mins": 4,
+          "model": "Teacher: a is on a line with 35°: 145°."
+        },
+        {
+          "q": "Extend: Three lines meet at a point: angles 2x, 3x and 4x. Find x and each angle.",
+          "a": "x = 40°: 80°, 120°, 160°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain why vertically opposite angles are equal using angles on a line.",
+          "a": "Each one plus the same neighbour makes 180°, so they must be equal",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Lines cross at 50°. Next angle? A) 130° B) 50° C) 310°",
+          "a": "A) 130°",
+          "mins": 2,
+          "options": [
+            "130°",
+            "50°",
+            "310°"
+          ]
+        },
+        {
+          "q": "Big question: can we find angles without measuring?",
+          "a": "Yes: use angle facts and give a reason for each step",
+          "mins": 3
+        }
+      ],
+      "homework": "Solve the angle puzzles on the homework sheet, writing a reason for each step.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: two lines cross: one angle is x + 20 and the opposite is 2x - 10. Find x (30) and the angle (50°).",
+      "resources": [
+        "White Rose Maths Year 6, Shape block: small steps 'Calculate angles' and 'Vertically opposite angles' (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed angle puzzle sheet",
+        "Printable 360° protractor (paper) or a school protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 77 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+      "n": 78,
+      "title": "Summer 1 check: percentages, area, volume, statistics and angles",
+      "duration": 45,
+      "bigQuestion": "What have I learned this half term, and what will I practise next?",
+      "objectives": [
+        "To understand how well I know the Summer 1 topics and what my next step is"
+      ],
+      "successCriteria": [
+        "All: answer percentage and area questions",
+        "Most: answer volume, statistics and angle questions",
+        "Some: set one next step"
+      ],
+      "smsc": "Spiritual: shukr for learning; setting a goal (niyyah) to improve",
+      "keywords": [
+        {
+          "term": "percentage",
+          "def": "parts per hundred"
+        },
+        {
+          "term": "volume",
+          "def": "space a 3-D shape takes up"
+        },
+        {
+          "term": "mean",
+          "def": "total ÷ how many"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which topic this half term felt hardest at first but easier now?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "cardboard box",
+          "alt": "A box",
+          "for": "teach:2"
+        },
+        {
+          "find": "pie chart example",
+          "alt": "A pie chart",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "35% of 60?",
+          "a": "21",
+          "mins": 1
+        },
+        {
+          "q": "Triangle b 10, h 4?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "Cuboid 3 × 4 × 5?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "Mean of 5, 7, 9?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Percentages",
+          "bullets": [
+            "10%, 5%, 1% build any percentage.",
+            "Find the whole from a part."
+          ],
+          "table": {
+            "head": [
+              "%",
+              "Of 240"
+            ],
+            "rows": [
+              [
+                "10%",
+                "24"
+              ],
+              [
+                "5%",
+                "12"
+              ],
+              [
+                "2.5%",
+                "6"
+              ]
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Area and volume",
+          "bullets": [
+            "Triangle: 1/2 × b × h.",
+            "Parallelogram: b × h.",
+            "Cuboid: l × w × h."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Statistics and angles",
+          "bullets": [
+            "Pie chart angle = 360 ÷ total × count.",
+            "Line 180°, point 360°, opposite equal."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "My next step",
+          "bullets": [
+            "What did I find easy?",
+            "What needs practice?"
+          ],
+          "note": "Pupils write one target in the response box."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Lines cross at 110°. The opposite angle?",
+            "options": [
+              "110°",
+              "70°",
+              "250°"
+            ],
+            "answer": 0,
+            "why": "Vertically opposite angles are equal."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2.5% of £3,200?",
+          "a": "£80",
+          "mins": 2,
+          "model": "Teacher: 10% = 320, 5% = 160, 2.5% = 80."
+        },
+        {
+          "q": "Parallelogram b 9, h 8?",
+          "a": "72 cm²",
+          "mins": 2
+        },
+        {
+          "q": "20 pupils: degrees per pupil?",
+          "a": "18°",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: 65% of 80; 30% is 21, find the whole; 20% off £55",
+          "a": "52; 70; £44",
+          "mins": 4,
+          "model": "Teacher: 50% = 40, 10% = 8, 5% = 4: 52."
+        },
+        {
+          "q": "Extend: Check: area of a triangle b 13, h 6; volume 6 × 5 × 4; height of a cuboid 8 × 3 × ? = 72",
+          "a": "39 cm²; 120 cm³; 3 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: mean of 12, 15, 9, 14; reflex angle for 85°; angles on a line 47° and ?",
+          "a": "12.5; 275°; 133°",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Volume unit? A) cm³ B) cm² C) %",
+          "a": "A) cm³",
+          "mins": 1,
+          "options": [
+            "cm³",
+            "cm²",
+            "%"
+          ]
+        },
+        {
+          "q": "Big question: one thing I learned, one next step",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct your check in green pen and practise your next step for 15 minutes.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a cuboid's volume is 2.5% of 4,800 cm³ and its base is 4 cm by 5 cm. Height? (6 cm: 120 ÷ 20)",
+      "resources": [
+        "White Rose Maths Year 6, Summer 1 check (percentages, area, perimeter and volume, statistics, angles), as in the Year 6 plan (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 360° protractor (paper) or a school protractor",
+        "Sugar cubes, dice or Lego bricks (about 30) for building cuboids",
+        "Printed Summer 1 check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 78 guided, independent and homework tasks"
       ]
     }
   ]

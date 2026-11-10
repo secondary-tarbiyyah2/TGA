@@ -36,6 +36,11 @@ RewriteOptions IgnoreInherit
 # confirmed working for a real staff member — see SETUP.md.
 RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 
+# Policy 05 was renamed and filed under safeguarding (migration 0196); keep
+# the old addresses working.
+RewriteRule ^policies/05-no-platform-for-extremism-prevent/?$ /policies/05-safeguarding-extremism-and-radicalisation/ [R=301,L]
+RewriteRule ^policies/05-no-platform-for-extremism-prevent\.pdf$ /policies/05-safeguarding-extremism-and-radicalisation.pdf [R=301,L]
+
 # ── PRE-LAUNCH (October 2026) ────────────────────────────────────────────────
 # Two separate sites from the same files, chosen by the address:
 #

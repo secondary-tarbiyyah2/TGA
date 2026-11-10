@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y1",
   "board": "National Curriculum (KS1)",
-  "source": "National Curriculum (KS1 Year 1: number and place value; addition and subtraction within 10); Spring 1 founding year: White Rose Maths Year 1 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1-2), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 1 Spring blocks 3 Place value within 50, 4 Length and height and 5 Mass and volume (small-step titles only)",
+  "source": "National Curriculum (KS1 Year 1: number and place value; addition and subtraction within 10); Spring 1 founding year: White Rose Maths Year 1 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1-2), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 1 Spring blocks 3 Place value within 50, 4 Length and height and 5 Mass and volume (small-step titles only); Summer 1 founding year: White Rose Maths Year 1 Summer blocks Multiplication and division, Fractions and Position and direction (small-step titles only)",
   "lessons": [
     {
       "unit": "Unit 1: Numbers to 10",
@@ -9473,6 +9473,3477 @@
         "Ruler and coat-hanger balance",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 1 maths lesson 51 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 52,
+      "title": "Count in 2s",
+      "duration": 30,
+      "bigQuestion": "Why is counting in 2s quicker than counting in 1s?",
+      "objectives": [
+        "To understand how to count in 2s to find how many"
+      ],
+      "successCriteria": [
+        "All: say the 2s count to 20",
+        "Most: count pairs of socks in 2s",
+        "Some: count back in 2s from 20"
+      ],
+      "crossCurricular": "Science: animals with 2 legs or 2 wings",
+      "smsc": "Social: taking turns to count aloud",
+      "keywords": [
+        {
+          "term": "count in 2s",
+          "def": "say every second number: 2, 4, 6"
+        },
+        {
+          "term": "pair",
+          "def": "a set of 2 the same"
+        },
+        {
+          "term": "total",
+          "def": "how many altogether"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How many shoes are by the door at home if 5 people are inside? How could you count them fast?",
+        "a": "10: count in 2s, 2, 4, 6, 8, 10."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pair of shoes",
+          "alt": "A pair of shoes",
+          "for": "hook"
+        },
+        {
+          "find": "pair of socks",
+          "alt": "A pair of socks",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count on from 15 to 20.",
+          "a": "15, 16, 17, 18, 19, 20",
+          "mins": 1
+        },
+        {
+          "q": "Double 3?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "What comes after 9?",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Pairs",
+          "bullets": [
+            "A pair is 2.",
+            "Shoes, socks, gloves come in pairs."
+          ],
+          "note": "Show two socks. Ask: how many socks in 1 pair?"
+        },
+        {
+          "heading": "Jump in 2s",
+          "bullets": [
+            "0, 2, 4, 6, 8, 10",
+            "Every jump is 2."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 20,
+            "step": 2,
+            "marks": [
+              {
+                "at": 2,
+                "label": "2"
+              },
+              {
+                "at": 4,
+                "label": "4"
+              },
+              {
+                "at": 10,
+                "label": "10"
+              }
+            ]
+          },
+          "note": "Count the jumps together, spoken not sung."
+        },
+        {
+          "heading": "Count back",
+          "bullets": [
+            "20, 18, 16, 14...",
+            "Back in 2s gets smaller."
+          ],
+          "note": "Count back from 20 to 0 together."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many socks in 4 pairs?",
+            "options": [
+              "4",
+              "8",
+              "6"
+            ],
+            "answer": 1,
+            "why": "Count in 2s 4 times: 2, 4, 6, 8. 4 counts the pairs, not the socks."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count 3 pairs of socks in 2s.",
+          "a": "2, 4, 6: 6 socks",
+          "mins": 2,
+          "model": "Teacher points at each pair: 2, 4, 6. 6 socks."
+        },
+        {
+          "q": "What comes next: 8, 10, 12, ?",
+          "a": "14",
+          "mins": 1
+        },
+        {
+          "q": "Count back: 10, 8, 6, ?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count 6 pairs of shoes in 2s.",
+          "a": "2, 4, 6, 8, 10, 12: 12 shoes",
+          "mins": 2,
+          "model": "Teacher counts 2 pairs first: 2, 4."
+        },
+        {
+          "q": "Extend: Fill the gaps: 2, 4, _, 8, _, 12",
+          "a": "6; 10",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 7 pairs of gloves. How many gloves?",
+          "a": "14",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is the 2s count? A) 2, 4, 6 B) 2, 3, 4 C) 1, 3, 4",
+          "a": "A) 2, 4, 6",
+          "mins": 1,
+          "options": [
+            "2, 4, 6",
+            "2, 3, 4",
+            "1, 3, 4"
+          ]
+        },
+        {
+          "q": "Big question: why is counting in 2s quicker?",
+          "a": "Each count adds 2, so we say fewer numbers",
+          "mins": 1
+        }
+      ],
+      "homework": "Count the pairs of shoes at home in 2s with a grown-up.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: count in 2s from 1: 1, 3, 5, 7. What do you notice?",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: small step 'Count in 2s' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "Pairs of socks or shoes from home",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 52 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 53,
+      "title": "Count in 10s",
+      "duration": 30,
+      "bigQuestion": "How do tens help us count big amounts fast?",
+      "objectives": [
+        "To understand how to count in 10s to find how many"
+      ],
+      "successCriteria": [
+        "All: say the 10s count to 100",
+        "Most: count bundles of 10 straws",
+        "Some: count back in 10s from 100"
+      ],
+      "crossCurricular": "Science: counting our 10 fingers and 10 toes",
+      "smsc": "Spiritual: thanking Allah for our hands",
+      "keywords": [
+        {
+          "term": "count in 10s",
+          "def": "say 10, 20, 30 and on"
+        },
+        {
+          "term": "ten",
+          "def": "a group of 10"
+        },
+        {
+          "term": "bundle",
+          "def": "things tied in a group"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 10 fingers. How many fingers in your whole family? How would you count them?",
+        "a": "Count in 10s: 10 for each person."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bundle of drinking straws",
+          "alt": "Straws in a bundle",
+          "for": "teach:1"
+        },
+        {
+          "find": "egg box with ten eggs",
+          "alt": "A box of 10 eggs",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 2s to 10.",
+          "a": "2, 4, 6, 8, 10",
+          "mins": 1
+        },
+        {
+          "q": "How many fingers on 2 hands?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "What is 10 + 10?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Bundles of 10",
+          "bullets": [
+            "Tie 10 straws in a bundle.",
+            "1 bundle is 10."
+          ],
+          "note": "Show a bundle. Count the straws in 1s once."
+        },
+        {
+          "heading": "Jump in 10s",
+          "bullets": [
+            "10, 20, 30, 40, 50...",
+            "All end in 0."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "marks": [
+              {
+                "at": 30,
+                "label": "30"
+              },
+              {
+                "at": 50,
+                "label": "50"
+              },
+              {
+                "at": 100,
+                "label": "100"
+              }
+            ]
+          },
+          "note": "Count together to 100."
+        },
+        {
+          "heading": "Count back",
+          "bullets": [
+            "100, 90, 80, 70...",
+            "1 bundle less each time."
+          ],
+          "note": "Count back from 100 to 0."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many straws in 3 bundles of 10?",
+            "options": [
+              "13",
+              "30",
+              "3"
+            ],
+            "answer": 1,
+            "why": "10, 20, 30. 13 mixes 1 ten and 3 ones; 3 counts bundles."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count 4 bundles of 10.",
+          "a": "10, 20, 30, 40: 40",
+          "mins": 2,
+          "model": "Teacher taps each bundle: 10, 20, 30, 40."
+        },
+        {
+          "q": "Next: 50, 60, 70, ?",
+          "a": "80",
+          "mins": 1
+        },
+        {
+          "q": "Back: 90, 80, 70, ?",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count 6 bundles of 10.",
+          "a": "60",
+          "mins": 2,
+          "model": "Teacher counts 2 bundles first: 10, 20."
+        },
+        {
+          "q": "Extend: Fill the gaps: 10, 20, _, 40, _",
+          "a": "30; 50",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 8 people, 10 fingers each. How many fingers?",
+          "a": "80",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "5 tens is... A) 15 B) 50 C) 5",
+          "a": "B) 50",
+          "mins": 1,
+          "options": [
+            "15",
+            "50",
+            "5"
+          ]
+        },
+        {
+          "q": "Big question: how do tens help us count fast?",
+          "a": "One count adds 10, so we reach big numbers quickly",
+          "mins": 1
+        }
+      ],
+      "homework": "Make bundles of 10 with spoons or pencils and count them in 10s.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: start at 7 and count on in 10s: 7, 17, 27. What stays the same?",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: small step 'Count in 10s' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Drinking straws or pencils and elastic bands (bundles of 10)",
+        "Paper number line 0 to 100 in tens",
+        "Egg box of 10 (optional)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 53 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 54,
+      "title": "Count in 5s",
+      "duration": 30,
+      "bigQuestion": "Where do we see 5s around us?",
+      "objectives": [
+        "To understand how to count in 5s to find how many"
+      ],
+      "successCriteria": [
+        "All: say the 5s count to 50",
+        "Most: count hands in 5s",
+        "Some: spot that 5s end in 5 or 0"
+      ],
+      "crossCurricular": "Science: 5 fingers and 5 toes on each hand and foot",
+      "smsc": "Social: counting together in turns",
+      "keywords": [
+        {
+          "term": "count in 5s",
+          "def": "say 5, 10, 15 and on"
+        },
+        {
+          "term": "five",
+          "def": "the number of fingers on one hand"
+        },
+        {
+          "term": "pattern",
+          "def": "something that repeats"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A hand has 5 fingers. How many fingers on 4 hands? Can you count without counting every finger?",
+        "a": "20: 5, 10, 15, 20."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "five pence coin",
+          "alt": "A 5p coin",
+          "for": "keywords"
+        },
+        {
+          "find": "tally marks five",
+          "alt": "Tally marks in fives",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 10s to 50.",
+          "a": "10, 20, 30, 40, 50",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 12.",
+          "a": "2, 4, 6, 8, 10, 12",
+          "mins": 1
+        },
+        {
+          "q": "How many fingers on 1 hand?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Jump in 5s",
+          "bullets": [
+            "5, 10, 15, 20, 25...",
+            "Each jump is 5."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 50,
+            "step": 5,
+            "marks": [
+              {
+                "at": 5,
+                "label": "5"
+              },
+              {
+                "at": 25,
+                "label": "25"
+              },
+              {
+                "at": 50,
+                "label": "50"
+              }
+            ]
+          },
+          "note": "Count together to 50."
+        },
+        {
+          "heading": "The pattern",
+          "bullets": [
+            "5s end in 5 or 0.",
+            "5, 10, 15, 20"
+          ],
+          "note": "Ask: will 35 be in the 5s count? Yes, it ends in 5."
+        },
+        {
+          "heading": "Count hands and 5p coins",
+          "bullets": [
+            "3 hands: 5, 10, 15.",
+            "4 coins of 5p: 20p."
+          ],
+          "note": "Show 5p coins if you have them."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which number is in the 5s count?",
+            "options": [
+              "12",
+              "25",
+              "18"
+            ],
+            "answer": 1,
+            "why": "5s end in 5 or 0; 25 ends in 5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count 3 hands in 5s.",
+          "a": "5, 10, 15: 15 fingers",
+          "mins": 2,
+          "model": "Teacher holds up hands one at a time: 5, 10, 15."
+        },
+        {
+          "q": "Next: 20, 25, 30, ?",
+          "a": "35",
+          "mins": 1
+        },
+        {
+          "q": "Back: 50, 45, 40, ?",
+          "a": "35",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count 6 hands in 5s.",
+          "a": "30",
+          "mins": 2,
+          "model": "Teacher counts 2 hands first: 5, 10."
+        },
+        {
+          "q": "Extend: Fill the gaps: 5, 10, _, 20, _",
+          "a": "15; 25",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Is 42 in the 5s count? Why?",
+          "a": "No: 5s end in 5 or 0",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Next in 5s: 35, 40, ? A) 41 B) 45 C) 50",
+          "a": "B) 45",
+          "mins": 1,
+          "options": [
+            "41",
+            "45",
+            "50"
+          ]
+        },
+        {
+          "q": "Big question: where do we see 5s?",
+          "a": "For example fingers on a hand, 5p coins, tally marks",
+          "mins": 1
+        }
+      ],
+      "homework": "Count the fingers of everyone at home in 5s.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: count in 5s back from 50 to 0 without help.",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: small step 'Count in 5s' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "5p coins (real or paper)",
+        "Paper number line 0 to 50 in fives",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 54 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 55,
+      "title": "Recognise equal groups",
+      "duration": 30,
+      "bigQuestion": "How can we tell if groups are equal?",
+      "objectives": [
+        "To understand what makes groups equal"
+      ],
+      "successCriteria": [
+        "All: say if groups are equal or not",
+        "Most: make 3 equal groups of pasta",
+        "Some: fix unequal groups to make them equal"
+      ],
+      "crossCurricular": "Cooking: sharing dates at iftar so everyone has the same",
+      "smsc": "Moral: being fair ('adl) when we share",
+      "keywords": [
+        {
+          "term": "equal",
+          "def": "the same amount"
+        },
+        {
+          "term": "unequal",
+          "def": "not the same amount"
+        },
+        {
+          "term": "group",
+          "def": "a set of things together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two plates: one has 3 dates, one has 5. Is that fair? How could you make it fair?",
+        "a": "Not fair; move 1 date so each has 4."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "egg box with six eggs",
+          "alt": "An egg box with equal rows",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 2s to 10.",
+          "a": "2, 4, 6, 8, 10",
+          "mins": 1
+        },
+        {
+          "q": "Which is more: 4 or 6?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 20.",
+          "a": "5, 10, 15, 20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Equal groups",
+          "bullets": [
+            "Every group has the same.",
+            "3 plates, 2 dates each."
+          ],
+          "table": {
+            "head": [
+              "2",
+              "2",
+              "2"
+            ],
+            "rows": [
+              [
+                "● ●",
+                "● ●",
+                "● ●"
+              ]
+            ]
+          },
+          "note": "Show 3 plates with 2 pasta each."
+        },
+        {
+          "heading": "Unequal groups",
+          "bullets": [
+            "Groups are not the same.",
+            "2, 4 and 3: unequal."
+          ],
+          "note": "Show unequal plates. Ask: what is wrong?"
+        },
+        {
+          "heading": "Make them equal",
+          "bullets": [
+            "Move one from the biggest.",
+            "Count each group again."
+          ],
+          "note": "Move pasta until each plate has 3."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which are equal groups?",
+            "options": [
+              "3, 3, 3",
+              "3, 2, 3",
+              "1, 3, 5"
+            ],
+            "answer": 0,
+            "why": "Every group has 3; the others are not all the same."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Are 4, 4, 4 equal groups?",
+          "a": "Yes",
+          "mins": 1,
+          "model": "Teacher counts each plate: 4, 4, 4. All the same, so equal."
+        },
+        {
+          "q": "Are 5, 2, 5 equal groups?",
+          "a": "No",
+          "mins": 1
+        },
+        {
+          "q": "Make 2 equal groups with 6 pasta.",
+          "a": "3 and 3",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make 3 equal groups of 2 pasta.",
+          "a": "2, 2, 2",
+          "mins": 2,
+          "model": "Teacher puts 2 pasta on the first plate."
+        },
+        {
+          "q": "Extend: Plates have 4, 2, 3. Make them equal.",
+          "a": "3, 3, 3",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Can 7 pasta make 2 equal groups?",
+          "a": "No: 3 and 4, 1 too many",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Equal groups? 5, 5, 5. A) yes B) no",
+          "a": "A) yes",
+          "mins": 1,
+          "options": [
+            "yes",
+            "no"
+          ]
+        },
+        {
+          "q": "Big question: how can we tell if groups are equal?",
+          "a": "Count each group: they all have the same",
+          "mins": 1
+        }
+      ],
+      "homework": "Put 12 spoons into equal groups and tell a grown-up how many in each.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: find 3 different ways to make equal groups with 12 pasta.",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: small step 'Recognise equal groups' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "3 or 4 plates or bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 55 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 56,
+      "title": "Add equal groups",
+      "duration": 30,
+      "bigQuestion": "How can adding help us count equal groups?",
+      "objectives": [
+        "To understand how to add equal groups to find a total"
+      ],
+      "successCriteria": [
+        "All: count 3 groups of 2",
+        "Most: write 2 + 2 + 2 = 6",
+        "Some: say '3 groups of 2 is 6'"
+      ],
+      "crossCurricular": "Science: legs on animals (2 legs on each bird)",
+      "smsc": "Social: working with a partner to check totals",
+      "keywords": [
+        {
+          "term": "add",
+          "def": "put together to find how many"
+        },
+        {
+          "term": "groups of",
+          "def": "how many in each, how many groups"
+        },
+        {
+          "term": "total",
+          "def": "how many altogether"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "4 cups each hold 5 sweets. How many sweets? Can you add to find out?",
+        "a": "5 + 5 + 5 + 5 = 20."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "four cups on a table",
+          "alt": "Cups in a row",
+          "for": "teach:1"
+        },
+        {
+          "find": "box of crayons",
+          "alt": "Crayons in boxes",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 5s to 20.",
+          "a": "5, 10, 15, 20",
+          "mins": 1
+        },
+        {
+          "q": "2 + 2 = ?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Are 3, 3, 3 equal groups?",
+          "a": "Yes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Groups of 2",
+          "bullets": [
+            "3 cups, 2 in each.",
+            "2 + 2 + 2 = 6"
+          ],
+          "table": {
+            "head": [
+              "2",
+              "2",
+              "2"
+            ],
+            "rows": [
+              [
+                "● ●",
+                "● ●",
+                "● ●"
+              ]
+            ]
+          },
+          "note": "Put 2 pasta in each of 3 cups."
+        },
+        {
+          "heading": "Say it, add it",
+          "model": {
+            "problem": "4 groups of 5",
+            "steps": [
+              "5",
+              "5 + 5 = 10",
+              "10 + 5 = 15",
+              "15 + 5 = 20"
+            ],
+            "answer": "4 groups of 5 is 20"
+          }
+        },
+        {
+          "heading": "Count in jumps",
+          "bullets": [
+            "Add 10 each time: 10, 20, 30.",
+            "3 groups of 10 is 30."
+          ],
+          "note": "Link to counting in 10s."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3 groups of 5?",
+            "options": [
+              "8",
+              "15",
+              "35"
+            ],
+            "answer": 1,
+            "why": "5 + 5 + 5 = 15. 8 adds 3 and 5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2 groups of 10?",
+          "a": "20",
+          "mins": 1,
+          "model": "Teacher: 10 + 10 = 20. 2 groups of 10 is 20."
+        },
+        {
+          "q": "5 + 5 + 5 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "4 groups of 2?",
+          "a": "8",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 3 groups of 10?",
+          "a": "30",
+          "mins": 2,
+          "model": "Teacher: 10, 20, 30."
+        },
+        {
+          "q": "Extend: Write the addition for 5 groups of 2.",
+          "a": "2 + 2 + 2 + 2 + 2 = 10",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which is more: 2 groups of 5 or 5 groups of 2?",
+          "a": "The same: both are 10",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "2 + 2 + 2 + 2 = ? A) 8 B) 6 C) 4",
+          "a": "A) 8",
+          "mins": 1,
+          "options": [
+            "8",
+            "6",
+            "4"
+          ]
+        },
+        {
+          "q": "Big question: how can adding help?",
+          "a": "Add the same number again for each group",
+          "mins": 1
+        }
+      ],
+      "homework": "Make 3 groups of 5 with pasta and write the addition.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: write 6 groups of 2 as an addition and find the total (12).",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: small step 'Add equal groups' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "4 cups or bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 56 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 57,
+      "title": "Make arrays",
+      "duration": 30,
+      "bigQuestion": "How do rows and columns help us count?",
+      "objectives": [
+        "To understand how an array shows equal groups"
+      ],
+      "successCriteria": [
+        "All: make an array of 2 rows of 5",
+        "Most: count an array in rows",
+        "Some: count the same array in columns"
+      ],
+      "crossCurricular": "Art: patterns in rows and columns, like tiles",
+      "smsc": "Spiritual: rows in salah are straight and equal",
+      "keywords": [
+        {
+          "term": "array",
+          "def": "things set out in equal rows"
+        },
+        {
+          "term": "row",
+          "def": "a line going across"
+        },
+        {
+          "term": "column",
+          "def": "a line going up and down"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Look at an egg box. How many eggs fit? Can you count without counting one by one?",
+        "a": "2 rows of 6: 6, 12. Or 6 columns of 2."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "egg box with twelve eggs",
+          "alt": "An egg box: an array",
+          "for": "hook"
+        },
+        {
+          "find": "muffin tin empty",
+          "alt": "A muffin tray in rows",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3 groups of 2?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 15.",
+          "a": "5, 10, 15",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 8.",
+          "a": "2, 4, 6, 8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "An array",
+          "bullets": [
+            "Rows across, columns down.",
+            "Every row is the same."
+          ],
+          "table": {
+            "head": [
+              "col 1",
+              "col 2",
+              "col 3",
+              "col 4",
+              "col 5"
+            ],
+            "rows": [
+              [
+                "●",
+                "●",
+                "●",
+                "●",
+                "●"
+              ],
+              [
+                "●",
+                "●",
+                "●",
+                "●",
+                "●"
+              ]
+            ]
+          },
+          "note": "Show a muffin tray or 2 rows of pasta."
+        },
+        {
+          "heading": "Count the rows",
+          "bullets": [
+            "2 rows of 5.",
+            "5, 10.",
+            "10 altogether."
+          ],
+          "note": "Count each row in 5s."
+        },
+        {
+          "heading": "Count the columns",
+          "bullets": [
+            "5 columns of 2.",
+            "2, 4, 6, 8, 10.",
+            "Same total!"
+          ],
+          "note": "Count each column in 2s."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3 rows of 2 dots. How many?",
+            "options": [
+              "5",
+              "6",
+              "32"
+            ],
+            "answer": 1,
+            "why": "2, 4, 6. 5 adds 3 and 2."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make 2 rows of 3 pasta. How many?",
+          "a": "6",
+          "mins": 2,
+          "model": "Teacher lays 3 in a row, then 3 under it: 3, 6."
+        },
+        {
+          "q": "4 rows of 2. How many?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "How many columns in 2 rows of 3?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make 2 rows of 10. How many?",
+          "a": "20",
+          "mins": 2,
+          "model": "Teacher counts rows in 10s: 10, 20."
+        },
+        {
+          "q": "Extend: Make 3 rows of 5. Count in rows.",
+          "a": "15",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Make 12 pasta into an array 2 different ways.",
+          "a": "For example 2 rows of 6 and 3 rows of 4",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "2 rows of 5 is... A) 7 B) 10 C) 25",
+          "a": "B) 10",
+          "mins": 1,
+          "options": [
+            "7",
+            "10",
+            "25"
+          ]
+        },
+        {
+          "q": "Big question: how do rows and columns help?",
+          "a": "We count each row or column in jumps, not one by one",
+          "mins": 1
+        }
+      ],
+      "homework": "Find an array at home (an egg box, a window, a tray) and count it in rows.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: make an array with 10 pasta in as many ways as you can.",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: small step 'Make arrays' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "Egg box or muffin tray (optional)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 57 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 58,
+      "title": "Make doubles",
+      "duration": 30,
+      "bigQuestion": "What happens when we double a number?",
+      "objectives": [
+        "To understand that doubling is adding two equal groups"
+      ],
+      "successCriteria": [
+        "All: double numbers to 5",
+        "Most: show a double with pasta",
+        "Some: double numbers to 10"
+      ],
+      "crossCurricular": "Science: symmetry in butterflies and leaves",
+      "smsc": "Spiritual: Allah made many creatures with matching sides",
+      "keywords": [
+        {
+          "term": "double",
+          "def": "add the same number again"
+        },
+        {
+          "term": "equal",
+          "def": "the same"
+        },
+        {
+          "term": "mirror",
+          "def": "shows the same thing again"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A butterfly has the same spots on each wing. If one wing has 4 spots, how many spots altogether?",
+        "a": "8: double 4."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "butterfly with open wings",
+          "alt": "A butterfly with matching wings",
+          "for": "hook"
+        },
+        {
+          "find": "dice showing double six",
+          "alt": "Two dice showing the same",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2 rows of 3?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "4 + 4 = ?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 10.",
+          "a": "2, 4, 6, 8, 10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Double means two groups",
+          "bullets": [
+            "Double 3: 3 and 3.",
+            "3 + 3 = 6"
+          ],
+          "table": {
+            "head": [
+              "3",
+              "3"
+            ],
+            "rows": [
+              [
+                "● ● ●",
+                "● ● ●"
+              ]
+            ]
+          },
+          "note": "Show 3 pasta, then 3 more."
+        },
+        {
+          "heading": "Doubles to 5",
+          "bullets": [
+            "1+1=2, 2+2=4, 3+3=6",
+            "4+4=8, 5+5=10"
+          ],
+          "note": "Say them as a spoken chant, not sung."
+        },
+        {
+          "heading": "Doubles to 10",
+          "bullets": [
+            "6+6=12, 7+7=14",
+            "10+10=20"
+          ],
+          "note": "Use 2 hands of 5 and some more."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Double 5?",
+            "options": [
+              "10",
+              "5",
+              "55"
+            ],
+            "answer": 0,
+            "why": "5 + 5 = 10. 55 writes 5 twice."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Double 4?",
+          "a": "8",
+          "mins": 1,
+          "model": "Teacher: 4 and 4 more. 4 + 4 = 8."
+        },
+        {
+          "q": "Double 2?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Double 6?",
+          "a": "12",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Double 3, double 1, double 5",
+          "a": "6; 2; 10",
+          "mins": 2,
+          "model": "Teacher: double 3 is 3 + 3 = 6."
+        },
+        {
+          "q": "Extend: Double 7 and double 8",
+          "a": "14; 16",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: I doubled a number and got 18. What was it?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Double 4 is... A) 6 B) 8 C) 44",
+          "a": "B) 8",
+          "mins": 1,
+          "options": [
+            "6",
+            "8",
+            "44"
+          ]
+        },
+        {
+          "q": "Big question: what happens when we double?",
+          "a": "We add the same number again, so it gets two times as big",
+          "mins": 1
+        }
+      ],
+      "homework": "Roll a dice, double the number and say the double out loud. Do it 5 times.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: double 10, double 20, double 50.",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: small step 'Make doubles' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "A dice",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 58 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 59,
+      "title": "Make equal groups: grouping",
+      "duration": 30,
+      "bigQuestion": "How many groups can we make?",
+      "objectives": [
+        "To understand how to put things into equal groups to find how many groups"
+      ],
+      "successCriteria": [
+        "All: put 10 pasta into groups of 2",
+        "Most: count how many groups",
+        "Some: say if there are any left over"
+      ],
+      "crossCurricular": "Science: sorting animals into groups",
+      "smsc": "Social: tidying the home by putting things in pairs and sets",
+      "keywords": [
+        {
+          "term": "group",
+          "def": "put into sets of the same size"
+        },
+        {
+          "term": "how many groups",
+          "def": "count the sets"
+        },
+        {
+          "term": "left over",
+          "def": "not enough for another group"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "12 shoes. How many pairs? How did you work it out?",
+        "a": "6 pairs: make groups of 2."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "shoe rack with pairs of shoes",
+          "alt": "Pairs of shoes on a rack",
+          "for": "hook"
+        },
+        {
+          "find": "egg box with six eggs",
+          "alt": "Eggs in a box of 6",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Double 5?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 12.",
+          "a": "2, 4, 6, 8, 10, 12",
+          "mins": 1
+        },
+        {
+          "q": "3 groups of 2?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Group in 2s",
+          "bullets": [
+            "10 pasta.",
+            "Put 2 in each cup.",
+            "5 cups: 5 groups."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 2,
+            "marks": [
+              {
+                "at": 2,
+                "label": "1"
+              },
+              {
+                "at": 4,
+                "label": "2"
+              },
+              {
+                "at": 6,
+                "label": "3"
+              },
+              {
+                "at": 8,
+                "label": "4"
+              },
+              {
+                "at": 10,
+                "label": "5 groups"
+              }
+            ]
+          },
+          "note": "Group the pasta in 2s on screen."
+        },
+        {
+          "heading": "Group in 5s",
+          "model": {
+            "problem": "15 pasta in groups of 5",
+            "steps": [
+              "Take 5: 1 group",
+              "Take 5 more: 2 groups",
+              "Take 5 more: 3 groups",
+              "None left"
+            ],
+            "answer": "3 groups"
+          }
+        },
+        {
+          "heading": "Left over",
+          "bullets": [
+            "7 pasta in 2s.",
+            "3 groups, 1 left over."
+          ],
+          "note": "Ask: can 1 make a group of 2? No."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "20 pasta in groups of 10. How many groups?",
+            "options": [
+              "10",
+              "2",
+              "20"
+            ],
+            "answer": 1,
+            "why": "10 and 10: 2 groups. 10 is how many in each group."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "8 pasta in groups of 2. How many groups?",
+          "a": "4",
+          "mins": 2,
+          "model": "Teacher takes 2 at a time: 1, 2, 3, 4 groups."
+        },
+        {
+          "q": "10 pasta in groups of 5?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "9 pasta in groups of 2?",
+          "a": "4 groups, 1 left over",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 12 pasta in groups of 2.",
+          "a": "6 groups",
+          "mins": 2,
+          "model": "Teacher makes the first 2 groups."
+        },
+        {
+          "q": "Extend: 20 pasta in groups of 5.",
+          "a": "4 groups",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 11 pasta in groups of 5.",
+          "a": "2 groups, 1 left over",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "6 in groups of 2 is... A) 3 groups B) 2 groups C) 4 groups",
+          "a": "A) 3 groups",
+          "mins": 1,
+          "options": [
+            "3 groups",
+            "2 groups",
+            "4 groups"
+          ]
+        },
+        {
+          "q": "Big question: how many groups can we make?",
+          "a": "Take out equal groups and count them",
+          "mins": 1
+        }
+      ],
+      "homework": "Put 10 socks into pairs. How many pairs?",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: find how many groups of 2, 5 and 10 you can make from 30.",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: small step 'Make equal groups: grouping' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "Pairs of socks from home",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 59 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 60,
+      "title": "Make equal groups: sharing",
+      "duration": 30,
+      "bigQuestion": "How do we share so everyone gets the same?",
+      "objectives": [
+        "To understand how to share fairly into equal groups"
+      ],
+      "successCriteria": [
+        "All: share 6 between 2",
+        "Most: share one at a time",
+        "Some: check each group has the same"
+      ],
+      "crossCurricular": "Cooking: sharing food at mealtimes",
+      "smsc": "Moral: sharing fairly, as Muslims share food with family and neighbours",
+      "keywords": [
+        {
+          "term": "share",
+          "def": "give out so all get the same"
+        },
+        {
+          "term": "fair",
+          "def": "everyone gets the same"
+        },
+        {
+          "term": "each",
+          "def": "every one of them"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "8 dates, 2 people. How many each? How do you know it is fair?",
+        "a": "4 each; count each pile."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "plate of dates",
+          "alt": "A plate of dates",
+          "for": "hook"
+        },
+        {
+          "find": "two empty plates",
+          "alt": "Two plates",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "10 in groups of 2?",
+          "a": "5 groups",
+          "mins": 1
+        },
+        {
+          "q": "Double 3?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Are 2, 3, 2 equal?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One at a time",
+          "bullets": [
+            "One for you, one for you.",
+            "Keep going until none are left."
+          ],
+          "note": "Share 6 pasta onto 2 plates live."
+        },
+        {
+          "heading": "Share 6 between 2",
+          "bullets": [
+            "3 each.",
+            "3 and 3: equal."
+          ],
+          "table": {
+            "head": [
+              "Plate 1: 3",
+              "Plate 2: 3"
+            ],
+            "rows": [
+              [
+                "● ● ●",
+                "● ● ●"
+              ]
+            ]
+          },
+          "note": "Count each plate."
+        },
+        {
+          "heading": "Share between 3",
+          "bullets": [
+            "9 dates, 3 plates.",
+            "3 each."
+          ],
+          "note": "Share 9 onto 3 plates."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Share 10 between 2. How many each?",
+            "options": [
+              "5",
+              "2",
+              "8"
+            ],
+            "answer": 0,
+            "why": "5 and 5. 2 is the number of people; 8 is 10 - 2."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Share 4 between 2.",
+          "a": "2 each",
+          "mins": 1,
+          "model": "Teacher: one, one, one, one. 2 each."
+        },
+        {
+          "q": "Share 8 between 2.",
+          "a": "4 each",
+          "mins": 1
+        },
+        {
+          "q": "Share 6 between 3.",
+          "a": "2 each",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Share 12 between 2.",
+          "a": "6 each",
+          "mins": 2,
+          "model": "Teacher gives one to each plate in turn."
+        },
+        {
+          "q": "Extend: Share 15 between 3.",
+          "a": "5 each",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Share 7 between 2. Is it fair?",
+          "a": "3 each and 1 left over: not fair until we cut the last one",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Share 8 between 4. A) 2 each B) 4 each C) 3 each",
+          "a": "A) 2 each",
+          "mins": 1,
+          "options": [
+            "2 each",
+            "4 each",
+            "3 each"
+          ]
+        },
+        {
+          "q": "Big question: how do we share fairly?",
+          "a": "One at a time until none are left; check each has the same",
+          "mins": 1
+        }
+      ],
+      "homework": "Share a snack fairly with your family and count how many each person gets.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: share 20 between 2, 4 and 5. What do you notice?",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: small step 'Make equal groups: sharing' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "2 or 3 plates",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 60 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 61,
+      "title": "Multiplication and division: end-of-block check",
+      "duration": 30,
+      "bigQuestion": "What can I do now with equal groups?",
+      "objectives": [
+        "To understand how well I can count, group and share"
+      ],
+      "successCriteria": [
+        "All: count in 2s, 5s and 10s",
+        "Most: add equal groups and arrays",
+        "Some: group and share to solve a problem"
+      ],
+      "smsc": "Spiritual: shukr, thanking Allah for what we have learned",
+      "keywords": [
+        {
+          "term": "equal groups",
+          "def": "groups with the same amount"
+        },
+        {
+          "term": "array",
+          "def": "equal rows"
+        },
+        {
+          "term": "share",
+          "def": "give out fairly"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the best way to count 30 pasta? In 1s, 2s, 5s or 10s?",
+        "a": "10s is fastest: 10, 20, 30."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "egg box with twelve eggs",
+          "alt": "An egg box array",
+          "for": "teach:2"
+        },
+        {
+          "find": "five pence coin",
+          "alt": "5p coins",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 5s to 30.",
+          "a": "5, 10, 15, 20, 25, 30",
+          "mins": 1
+        },
+        {
+          "q": "Double 6?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Share 6 between 2?",
+          "a": "3 each",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Counting",
+          "bullets": [
+            "2s, 5s and 10s.",
+            "Fill gaps in a count."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 50,
+            "step": 5,
+            "marks": [
+              {
+                "at": 10,
+                "label": "10"
+              },
+              {
+                "at": 25,
+                "label": "?"
+              }
+            ]
+          },
+          "note": "Quick recap on show-me boards."
+        },
+        {
+          "heading": "Groups and arrays",
+          "bullets": [
+            "3 groups of 5 = 15.",
+            "2 rows of 4 = 8."
+          ],
+          "note": "Recap with pasta."
+        },
+        {
+          "heading": "Group and share",
+          "bullets": [
+            "Group: how many groups?",
+            "Share: how many each?"
+          ],
+          "note": "Recap one of each."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2 rows of 10?",
+            "options": [
+              "12",
+              "20",
+              "210"
+            ],
+            "answer": 1,
+            "why": "10, 20. 12 adds 2 and 10."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count in 10s from 40 to 80.",
+          "a": "40, 50, 60, 70, 80",
+          "mins": 1,
+          "model": "Teacher: add 1 ten each time."
+        },
+        {
+          "q": "4 groups of 2?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Share 10 between 5?",
+          "a": "2 each",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: fill the gaps 10, 15, _, 25; 2, 4, _, 8",
+          "a": "20; 6",
+          "mins": 2,
+          "model": "Teacher: in 5s, 15 then 20."
+        },
+        {
+          "q": "Extend: Check: 3 rows of 5? 12 in groups of 2?",
+          "a": "15; 6 groups",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Check: 9 dates shared between 2. How many each? Left over?",
+          "a": "4 each, 1 left over",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "5 groups of 2? A) 7 B) 10 C) 52",
+          "a": "B) 10",
+          "mins": 1,
+          "options": [
+            "7",
+            "10",
+            "52"
+          ]
+        },
+        {
+          "q": "Big question: one thing I can do now?",
+          "a": "Answers will vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Count the spoons at home in 2s and share them between 2 drawers.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: write your own sharing story for a partner.",
+      "resources": [
+        "White Rose Maths Year 1, Multiplication and division block: end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 61 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 62,
+      "title": "Recognise and find a half of an object or a shape",
+      "duration": 30,
+      "bigQuestion": "When is a half really a half?",
+      "objectives": [
+        "To understand that a half is one of two equal parts"
+      ],
+      "successCriteria": [
+        "All: say if a shape is cut into 2 equal parts",
+        "Most: fold paper in half",
+        "Some: find a half of a shape in more than one way"
+      ],
+      "crossCurricular": "Cooking: cutting food in half fairly",
+      "smsc": "Moral: halves are fair, both people get the same",
+      "keywords": [
+        {
+          "term": "half",
+          "def": "one of 2 equal parts"
+        },
+        {
+          "term": "halves",
+          "def": "2 halves make a whole"
+        },
+        {
+          "term": "whole",
+          "def": "all of it"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can you cut a sandwich into 2 pieces that are NOT halves? How?",
+        "a": "Yes: if the pieces are different sizes they are not halves."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "orange cut in half",
+          "alt": "An orange cut in half",
+          "for": "hook"
+        },
+        {
+          "find": "folded sheet of paper",
+          "alt": "Paper folded in half",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Share 8 between 2?",
+          "a": "4 each",
+          "mins": 1
+        },
+        {
+          "q": "Double 4?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Are 3 and 3 equal?",
+          "a": "Yes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two equal parts",
+          "bullets": [
+            "A half is 1 of 2 equal parts.",
+            "Both parts are the same size."
+          ],
+          "fraction": {
+            "parts": 2,
+            "shaded": 1,
+            "label": "1/2"
+          },
+          "note": "Show a paper square folded."
+        },
+        {
+          "heading": "Not a half",
+          "bullets": [
+            "2 parts, different sizes.",
+            "That is not a half."
+          ],
+          "note": "Show a big piece and a small piece."
+        },
+        {
+          "heading": "Fold to find a half",
+          "bullets": [
+            "Fold so edges meet.",
+            "Open: 2 halves."
+          ],
+          "note": "Fold a square 2 ways."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which shows a half?",
+            "options": [
+              "2 equal parts, 1 shaded",
+              "2 different parts, 1 shaded",
+              "3 parts, 1 shaded"
+            ],
+            "answer": 0,
+            "why": "A half needs 2 equal parts."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fold a paper square in half.",
+          "a": "2 equal parts",
+          "mins": 2,
+          "model": "Teacher folds corner to corner, presses, opens: 2 equal parts."
+        },
+        {
+          "q": "Is a big piece and a small piece halves?",
+          "a": "No",
+          "mins": 1
+        },
+        {
+          "q": "How many halves make a whole?",
+          "a": "2",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fold and colour half of a paper circle.",
+          "a": "1 of 2 equal parts coloured",
+          "mins": 2,
+          "model": "Teacher folds the circle edge to edge."
+        },
+        {
+          "q": "Extend: Find half of a square 2 different ways.",
+          "a": "For example across and corner to corner",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Can a half be bigger than the other half?",
+          "a": "No: halves are equal",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A half is... A) 1 of 2 equal parts B) any piece C) 2 pieces",
+          "a": "A) 1 of 2 equal parts",
+          "mins": 1,
+          "options": [
+            "1 of 2 equal parts",
+            "any piece",
+            "2 pieces"
+          ]
+        },
+        {
+          "q": "Big question: when is a half really a half?",
+          "a": "When the 2 parts are equal",
+          "mins": 1
+        }
+      ],
+      "homework": "Fold a piece of paper or a tissue in half. Check the parts match.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: fold a square to find half in 4 different ways.",
+      "resources": [
+        "White Rose Maths Year 1, Fractions block: small steps 'Recognise a half of an object or a shape' and 'Find a half of an object or a shape' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper squares and circles to fold (cut from A4)",
+        "Crayons",
+        "A real fruit to cut with an adult (optional)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 62 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 63,
+      "title": "Recognise and find a half of a quantity",
+      "duration": 30,
+      "bigQuestion": "How do we find half of a group of things?",
+      "objectives": [
+        "To understand how to find a half of a quantity by sharing into 2 equal groups"
+      ],
+      "successCriteria": [
+        "All: share 6 into 2 equal groups",
+        "Most: say half of 6 is 3",
+        "Some: find half of numbers to 20"
+      ],
+      "crossCurricular": "Cooking: half the dates for each person",
+      "smsc": "Moral: sharing equally with a brother or sister",
+      "keywords": [
+        {
+          "term": "half of",
+          "def": "share into 2 equal groups"
+        },
+        {
+          "term": "quantity",
+          "def": "an amount of things"
+        },
+        {
+          "term": "share",
+          "def": "give out fairly"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 10 dates. You give half to your brother. How many do you keep?",
+        "a": "5."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "plate of dates",
+          "alt": "Dates on a plate",
+          "for": "hook"
+        },
+        {
+          "find": "two bowls",
+          "alt": "Two bowls",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Double 5?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "Share 8 between 2?",
+          "a": "4 each",
+          "mins": 1
+        },
+        {
+          "q": "Is this a half: 2 equal parts?",
+          "a": "Yes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Half of 8",
+          "bullets": [
+            "Share 8 into 2 groups.",
+            "4 in each.",
+            "Half of 8 is 4."
+          ],
+          "table": {
+            "head": [
+              "4",
+              "4"
+            ],
+            "rows": [
+              [
+                "● ● ● ●",
+                "● ● ● ●"
+              ]
+            ]
+          },
+          "note": "Share pasta into 2 bowls."
+        },
+        {
+          "heading": "Halving and doubling",
+          "bullets": [
+            "Double 4 is 8.",
+            "Half of 8 is 4."
+          ],
+          "note": "Halving undoes doubling."
+        },
+        {
+          "heading": "Half of 12",
+          "model": {
+            "problem": "Half of 12",
+            "steps": [
+              "Share 12 into 2 bowls",
+              "6 in each bowl"
+            ],
+            "answer": "6"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Half of 10?",
+            "options": [
+              "5",
+              "2",
+              "20"
+            ],
+            "answer": 0,
+            "why": "5 and 5 make 10. 20 is double."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Half of 6?",
+          "a": "3",
+          "mins": 1,
+          "model": "Teacher shares 6 into 2 bowls: 3 each."
+        },
+        {
+          "q": "Half of 4?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "Half of 14?",
+          "a": "7",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Half of 2, half of 8, half of 10",
+          "a": "1; 4; 5",
+          "mins": 2,
+          "model": "Teacher: double 1 is 2, so half of 2 is 1."
+        },
+        {
+          "q": "Extend: Half of 16 and half of 20",
+          "a": "8; 10",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Can you find half of 7 pasta?",
+          "a": "No, not without cutting: 3 each and 1 left",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Half of 12 is... A) 6 B) 24 C) 10",
+          "a": "A) 6",
+          "mins": 1,
+          "options": [
+            "6",
+            "24",
+            "10"
+          ]
+        },
+        {
+          "q": "Big question: how do we find half of a group?",
+          "a": "Share it into 2 equal groups",
+          "mins": 1
+        }
+      ],
+      "homework": "Find half of 10 spoons, then half of 20 pasta.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: half of 30 and half of 50.",
+      "resources": [
+        "White Rose Maths Year 1, Fractions block: small steps 'Recognise a half of a quantity' and 'Find a half of a quantity' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "2 bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 63 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 64,
+      "title": "Recognise and find a quarter of an object or a shape",
+      "duration": 30,
+      "bigQuestion": "How is a quarter different from a half?",
+      "objectives": [
+        "To understand that a quarter is one of four equal parts"
+      ],
+      "successCriteria": [
+        "All: say if a shape has 4 equal parts",
+        "Most: fold paper into quarters",
+        "Some: say a quarter is smaller than a half"
+      ],
+      "crossCurricular": "Cooking: cutting a flatbread into quarters",
+      "smsc": "Moral: fair shares for 4 people",
+      "keywords": [
+        {
+          "term": "quarter",
+          "def": "one of 4 equal parts"
+        },
+        {
+          "term": "quarters",
+          "def": "4 quarters make a whole"
+        },
+        {
+          "term": "equal parts",
+          "def": "parts the same size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A pizza is cut into 4 equal slices. You eat 1 slice. What part did you eat?",
+        "a": "A quarter."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into four slices",
+          "alt": "A pizza in 4 slices",
+          "for": "hook"
+        },
+        {
+          "find": "folded sheet of paper",
+          "alt": "Paper folded twice",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Half of 10?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "How many halves make a whole?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "Double 2?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four equal parts",
+          "bullets": [
+            "A quarter is 1 of 4 equal parts.",
+            "4 quarters make a whole."
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 1,
+            "label": "1/4"
+          },
+          "note": "Show a square in 4 equal parts."
+        },
+        {
+          "heading": "Fold twice",
+          "bullets": [
+            "Fold in half.",
+            "Fold in half again.",
+            "Open: 4 quarters."
+          ],
+          "note": "Fold a paper square live."
+        },
+        {
+          "heading": "Half or quarter?",
+          "bullets": [
+            "A half: 2 parts.",
+            "A quarter: 4 parts, smaller."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "1/4"
+            }
+          ],
+          "note": "Compare the two."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is a quarter?",
+            "options": [
+              "1 of 4 equal parts",
+              "1 of 2 equal parts",
+              "1 of 4 different parts"
+            ],
+            "answer": 0,
+            "why": "A quarter needs 4 equal parts."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fold a paper square into quarters.",
+          "a": "4 equal parts",
+          "mins": 2,
+          "model": "Teacher folds in half, then in half again, then opens it."
+        },
+        {
+          "q": "How many quarters make a whole?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Is a quarter bigger than a half?",
+          "a": "No, smaller",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fold a paper circle into quarters and colour 1 quarter.",
+          "a": "1 of 4 equal parts coloured",
+          "mins": 2,
+          "model": "Teacher folds the circle twice."
+        },
+        {
+          "q": "Extend: Find a quarter of a square 2 different ways.",
+          "a": "For example 4 squares or 4 triangles",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Would you rather have a half or a quarter of a cake? Why?",
+          "a": "A half: it is bigger",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A quarter is 1 of... A) 4 equal parts B) 2 equal parts C) 4 parts of any size",
+          "a": "A) 4 equal parts",
+          "mins": 1,
+          "options": [
+            "4 equal parts",
+            "2 equal parts",
+            "4 parts of any size"
+          ]
+        },
+        {
+          "q": "Big question: how is a quarter different from a half?",
+          "a": "A quarter is 1 of 4 equal parts, so it is smaller than a half",
+          "mins": 1
+        }
+      ],
+      "homework": "Fold a piece of paper into quarters and colour each quarter a different colour.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: colour 2 quarters. What else could you call it? (a half)",
+      "resources": [
+        "White Rose Maths Year 1, Fractions block: small steps 'Recognise a quarter of an object or a shape' and 'Find a quarter of an object or a shape' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper squares and circles to fold (cut from A4)",
+        "Crayons",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 64 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 65,
+      "title": "Recognise and find a quarter of a quantity",
+      "duration": 30,
+      "bigQuestion": "How do we find a quarter of a group of things?",
+      "objectives": [
+        "To understand how to find a quarter of a quantity by sharing into 4 equal groups"
+      ],
+      "successCriteria": [
+        "All: share 8 into 4 equal groups",
+        "Most: say a quarter of 8 is 2",
+        "Some: find a quarter by halving twice"
+      ],
+      "crossCurricular": "Cooking: sharing fruit between 4",
+      "smsc": "Social: sharing with siblings so no one is left out",
+      "keywords": [
+        {
+          "term": "quarter of",
+          "def": "share into 4 equal groups"
+        },
+        {
+          "term": "halve",
+          "def": "split into 2 equal parts"
+        },
+        {
+          "term": "quantity",
+          "def": "an amount of things"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "12 strawberries for 4 children. How many each? What fraction does each child get?",
+        "a": "3 each; a quarter."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bowl of strawberries",
+          "alt": "A bowl of strawberries",
+          "for": "hook"
+        },
+        {
+          "find": "four bowls",
+          "alt": "Four bowls",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Half of 12?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "How many quarters in a whole?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Share 8 between 2?",
+          "a": "4 each",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A quarter of 8",
+          "bullets": [
+            "Share 8 into 4 bowls.",
+            "2 in each.",
+            "A quarter of 8 is 2."
+          ],
+          "table": {
+            "head": [
+              "2",
+              "2",
+              "2",
+              "2"
+            ],
+            "rows": [
+              [
+                "● ●",
+                "● ●",
+                "● ●",
+                "● ●"
+              ]
+            ]
+          },
+          "note": "Share pasta into 4 bowls."
+        },
+        {
+          "heading": "Halve, then halve again",
+          "model": {
+            "problem": "A quarter of 12",
+            "steps": [
+              "Half of 12 is 6",
+              "Half of 6 is 3"
+            ],
+            "answer": "3"
+          }
+        },
+        {
+          "heading": "Half and quarter",
+          "bullets": [
+            "Half of 8 is 4.",
+            "A quarter of 8 is 2."
+          ],
+          "note": "A quarter is half of a half."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A quarter of 4?",
+            "options": [
+              "1",
+              "2",
+              "4"
+            ],
+            "answer": 0,
+            "why": "Share 4 into 4 bowls: 1 each. 2 is a half."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A quarter of 8?",
+          "a": "2",
+          "mins": 1,
+          "model": "Teacher shares 8 into 4 bowls: 2 each."
+        },
+        {
+          "q": "A quarter of 4?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "A quarter of 20?",
+          "a": "5",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: A quarter of 12 and a quarter of 16",
+          "a": "3; 4",
+          "mins": 2,
+          "model": "Teacher: half of 12 is 6, half of 6 is 3."
+        },
+        {
+          "q": "Extend: Half of 20 and a quarter of 20",
+          "a": "10; 5",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Can you find a quarter of 10 pasta without cutting?",
+          "a": "No: 2 each and 2 left over",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A quarter of 8 is... A) 2 B) 4 C) 8",
+          "a": "A) 2",
+          "mins": 1,
+          "options": [
+            "2",
+            "4",
+            "8"
+          ]
+        },
+        {
+          "q": "Big question: how do we find a quarter of a group?",
+          "a": "Share it into 4 equal groups, or halve it twice",
+          "mins": 1
+        }
+      ],
+      "homework": "Share 12 pieces of pasta into 4 equal groups.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: a quarter of 40.",
+      "resources": [
+        "White Rose Maths Year 1, Fractions block: small steps 'Recognise a quarter of a quantity' and 'Find a quarter of a quantity' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "4 bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 65 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 66,
+      "title": "Fractions: end-of-block check",
+      "duration": 30,
+      "bigQuestion": "What do I know about halves and quarters?",
+      "objectives": [
+        "To understand how well I can find halves and quarters"
+      ],
+      "successCriteria": [
+        "All: find a half and a quarter of a shape",
+        "Most: find half of a number",
+        "Some: find a quarter of a number"
+      ],
+      "smsc": "Spiritual: shukr, thanking Allah for what we have learned",
+      "keywords": [
+        {
+          "term": "half",
+          "def": "1 of 2 equal parts"
+        },
+        {
+          "term": "quarter",
+          "def": "1 of 4 equal parts"
+        },
+        {
+          "term": "equal parts",
+          "def": "parts the same size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather have half of 8 dates or a quarter of 12 dates?",
+        "a": "Half of 8 is 4; a quarter of 12 is 3. Half of 8 is more."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "orange cut in half",
+          "alt": "An orange in halves",
+          "for": "teach:1"
+        },
+        {
+          "find": "pizza cut into four slices",
+          "alt": "A pizza in quarters",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Half of 6?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "A quarter of 8?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "Double 7?",
+          "a": "14",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Shapes",
+          "bullets": [
+            "Half: 2 equal parts.",
+            "Quarter: 4 equal parts."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "1/4"
+            }
+          ],
+          "note": "Quick recap with paper."
+        },
+        {
+          "heading": "Amounts",
+          "bullets": [
+            "Half: share into 2.",
+            "Quarter: share into 4."
+          ],
+          "note": "Recap with pasta."
+        },
+        {
+          "heading": "Check my answer",
+          "bullets": [
+            "Count each group.",
+            "Are they equal?"
+          ],
+          "note": "Pupils check one answer with a partner."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Half of 16?",
+            "options": [
+              "8",
+              "4",
+              "32"
+            ],
+            "answer": 0,
+            "why": "8 + 8 = 16. 4 is a quarter; 32 is double."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Half of 14?",
+          "a": "7",
+          "mins": 1,
+          "model": "Teacher: double 7 is 14, so half of 14 is 7."
+        },
+        {
+          "q": "A quarter of 12?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Is 1 of 4 different parts a quarter?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: half of 10, half of 18, a quarter of 4",
+          "a": "5; 9; 1",
+          "mins": 2,
+          "model": "Teacher: half of 10 is 5."
+        },
+        {
+          "q": "Extend: Check: a quarter of 16; a quarter of 20",
+          "a": "4; 5",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Check: Sam ate a quarter of 8 grapes. How many are left?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is bigger? A) a half B) a quarter",
+          "a": "A) a half",
+          "mins": 1,
+          "options": [
+            "a half",
+            "a quarter"
+          ]
+        },
+        {
+          "q": "Big question: one thing I know about halves and quarters?",
+          "a": "For example a quarter is 1 of 4 equal parts",
+          "mins": 1
+        }
+      ],
+      "homework": "Find half and a quarter of 8 things at home.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: find a quarter of 100.",
+      "resources": [
+        "White Rose Maths Year 1, Fractions block: end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or plates",
+        "Paper shapes to fold",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 66 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 67,
+      "title": "Describe turns",
+      "duration": 30,
+      "bigQuestion": "How far does a quarter turn go?",
+      "objectives": [
+        "To understand how to describe whole, half, quarter and three-quarter turns"
+      ],
+      "successCriteria": [
+        "All: make a whole turn and a half turn",
+        "Most: make a quarter turn",
+        "Some: say where a toy faces after a turn"
+      ],
+      "crossCurricular": "PSHE: keeping safe when turning and moving at home",
+      "smsc": "Spiritual: Muslims turn to face the qiblah to pray",
+      "keywords": [
+        {
+          "term": "whole turn",
+          "def": "turn all the way round"
+        },
+        {
+          "term": "half turn",
+          "def": "turn to face the other way"
+        },
+        {
+          "term": "quarter turn",
+          "def": "turn a quarter of the way round"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Stand up and face the door. Turn all the way round. What are you facing now?",
+        "a": "The door again: a whole turn."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "weather vane",
+          "alt": "A weather vane that turns",
+          "for": "hook"
+        },
+        {
+          "find": "clock face",
+          "alt": "A clock face",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "A quarter of 4?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "How many quarters in a whole?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Half of 2?",
+          "a": "1",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Whole and half turns",
+          "bullets": [
+            "Whole turn: back to the start.",
+            "Half turn: face the other way."
+          ],
+          "note": "Turn a toy on screen."
+        },
+        {
+          "heading": "Quarter turns",
+          "bullets": [
+            "A quarter of the way round.",
+            "2 quarter turns = a half turn."
+          ],
+          "note": "Turn the toy a quarter turn, then another."
+        },
+        {
+          "heading": "Three-quarter turn",
+          "bullets": [
+            "3 quarter turns.",
+            "One more makes a whole turn."
+          ],
+          "note": "Use the clock hand to show."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Facing the window. A half turn. Now facing...",
+            "options": [
+              "the window",
+              "the other way",
+              "the floor"
+            ],
+            "answer": 1,
+            "why": "A half turn faces the opposite way."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make a whole turn.",
+          "a": "Back to the start",
+          "mins": 1,
+          "model": "Teacher turns a toy all the way round: it faces the start again."
+        },
+        {
+          "q": "Make a half turn.",
+          "a": "Facing the other way",
+          "mins": 1
+        },
+        {
+          "q": "How many quarter turns make a whole turn?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Turn your toy a quarter turn. Then another. What turn is that?",
+          "a": "A half turn",
+          "mins": 2,
+          "model": "Teacher turns the toy one quarter turn first."
+        },
+        {
+          "q": "Extend: How many quarter turns make a three-quarter turn?",
+          "a": "3",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: A toy faces the door. It turns 2 whole turns. What does it face?",
+          "a": "The door",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "2 quarter turns make... A) a half turn B) a whole turn C) a quarter turn",
+          "a": "A) a half turn",
+          "mins": 1,
+          "options": [
+            "a half turn",
+            "a whole turn",
+            "a quarter turn"
+          ]
+        },
+        {
+          "q": "Big question: how far does a quarter turn go?",
+          "a": "A quarter of the way round",
+          "mins": 1
+        }
+      ],
+      "homework": "Stand facing your bed. Make a quarter, half and whole turn and say what you face.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: say which way you face after a three-quarter turn and then a quarter turn.",
+      "resources": [
+        "White Rose Maths Year 1, Position and direction block: small step 'Describe turns' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A soft toy",
+        "Paper plate clock",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 67 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 68,
+      "title": "Describe position: left, right, forwards, backwards, above, below",
+      "duration": 30,
+      "bigQuestion": "How can we tell someone exactly where something is?",
+      "objectives": [
+        "To understand how to use position words to describe where things are"
+      ],
+      "successCriteria": [
+        "All: say left and right",
+        "Most: move forwards and backwards",
+        "Some: say above, below, in front and behind"
+      ],
+      "crossCurricular": "Geography: giving directions around the home",
+      "smsc": "Moral: Muslims eat and drink with the right hand",
+      "keywords": [
+        {
+          "term": "left",
+          "def": "the side of your left hand"
+        },
+        {
+          "term": "right",
+          "def": "the side of your right hand"
+        },
+        {
+          "term": "above",
+          "def": "higher than"
+        },
+        {
+          "term": "below",
+          "def": "lower than"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your toy is hiding in your room. Can you give clues using only position words so a friend finds it?",
+        "a": "For example: below the bed, left of the box."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bookshelf with books",
+          "alt": "A bookshelf",
+          "for": "teach:3"
+        },
+        {
+          "find": "arrow sign pointing left",
+          "alt": "An arrow pointing left",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "A half turn faces...?",
+          "a": "The other way",
+          "mins": 1
+        },
+        {
+          "q": "How many quarter turns in a whole?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Which is your right hand?",
+          "a": "The hand we eat with",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Left and right",
+          "bullets": [
+            "We eat with the right hand.",
+            "The other hand is the left."
+          ],
+          "note": "Hold up the right hand, then the left."
+        },
+        {
+          "heading": "Forwards and backwards",
+          "bullets": [
+            "Forwards: the way you face.",
+            "Backwards: the way behind you."
+          ],
+          "note": "Move a toy 3 steps forwards."
+        },
+        {
+          "heading": "Above and below",
+          "bullets": [
+            "The cup is above the plate.",
+            "The plate is below the cup."
+          ],
+          "note": "Use a shelf or a table."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "The book is on top of the box. The book is...",
+            "options": [
+              "below the box",
+              "above the box",
+              "left of the box"
+            ],
+            "answer": 1,
+            "why": "On top means higher: above."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Put your pencil above your book.",
+          "a": "Pencil higher than the book",
+          "mins": 1,
+          "model": "Teacher holds the pencil over the book: above."
+        },
+        {
+          "q": "Hold up your right hand.",
+          "a": "The eating hand",
+          "mins": 1
+        },
+        {
+          "q": "Move your toy 2 steps backwards.",
+          "a": "Toy moves towards you",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Put a cup to the left of a plate.",
+          "a": "Cup on the left side",
+          "mins": 2,
+          "model": "Teacher puts the cup on the left side of the plate."
+        },
+        {
+          "q": "Extend: Say where 3 things are using above, below, left or right.",
+          "a": "For example the lamp is above the table",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Give 2 clues so a partner finds a hidden toy.",
+          "a": "For example under the chair, right of the door",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "We eat with our... A) right hand B) left hand",
+          "a": "A) right hand",
+          "mins": 1,
+          "options": [
+            "right hand",
+            "left hand"
+          ]
+        },
+        {
+          "q": "Big question: how can we say where something is?",
+          "a": "Use position words: left, right, above, below, forwards, backwards",
+          "mins": 1
+        }
+      ],
+      "homework": "Hide a toy and give a grown-up 3 position clues to find it.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: give directions using forwards, backwards and quarter turns.",
+      "resources": [
+        "White Rose Maths Year 1, Position and direction block: small step 'Describe position' (left and right, forwards and backwards, above and below) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A soft toy",
+        "Cup and plate",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 68 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+      "n": 69,
+      "title": "Ordinal numbers",
+      "duration": 30,
+      "bigQuestion": "Why do we need words like first, second and third?",
+      "objectives": [
+        "To understand how ordinal numbers tell us the order of things"
+      ],
+      "successCriteria": [
+        "All: say first, second and third",
+        "Most: use ordinal numbers to tenth",
+        "Some: describe the position of a toy in a line"
+      ],
+      "crossCurricular": "English: ordinal words in recounts (first, next, last)",
+      "smsc": "Social: waiting your turn in a line",
+      "keywords": [
+        {
+          "term": "first",
+          "def": "number 1 in order"
+        },
+        {
+          "term": "second",
+          "def": "number 2 in order"
+        },
+        {
+          "term": "third",
+          "def": "number 3 in order"
+        },
+        {
+          "term": "last",
+          "def": "the end of the line"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Five toys are in a line. Which one is first? Does it change if you look from the other end?",
+        "a": "It depends on where you start counting."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "row of colourful toy cars",
+          "alt": "Toy cars in a line",
+          "for": "hook"
+        },
+        {
+          "find": "podium first second third",
+          "alt": "A podium with 1, 2 and 3",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Hold up your left hand.",
+          "a": "The other hand from the eating hand",
+          "mins": 1
+        },
+        {
+          "q": "Count to 10.",
+          "a": "1 to 10",
+          "mins": 1
+        },
+        {
+          "q": "What comes after 3?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Order words",
+          "bullets": [
+            "1st first, 2nd second, 3rd third.",
+            "4th fourth, 5th fifth."
+          ],
+          "note": "Line up 5 toys."
+        },
+        {
+          "heading": "Up to tenth",
+          "bullets": [
+            "6th sixth, 7th seventh.",
+            "8th eighth, 9th ninth, 10th tenth."
+          ],
+          "table": {
+            "head": [
+              "1st",
+              "2nd",
+              "3rd",
+              "4th",
+              "5th"
+            ],
+            "rows": [
+              [
+                "car",
+                "bus",
+                "boat",
+                "train",
+                "plane"
+              ]
+            ]
+          },
+          "note": "Say them together."
+        },
+        {
+          "heading": "Where do we start?",
+          "bullets": [
+            "Say where we count from.",
+            "First from the left."
+          ],
+          "note": "Count from the left, then from the right."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "The bus is 2nd. Which toy is 1st?",
+            "options": [
+              "car",
+              "boat",
+              "train"
+            ],
+            "answer": 0,
+            "why": "From the table: the car is 1st."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which toy is 3rd in the table?",
+          "a": "boat",
+          "mins": 1,
+          "model": "Teacher counts from the left: car 1st, bus 2nd, boat 3rd."
+        },
+        {
+          "q": "Which toy is 5th?",
+          "a": "plane",
+          "mins": 1
+        },
+        {
+          "q": "What is the train?",
+          "a": "4th (fourth)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Line up 5 toys. Say the 1st, 3rd and 5th.",
+          "a": "Answers will vary",
+          "mins": 2,
+          "model": "Teacher lines up 3 toys and names 1st, 2nd, 3rd."
+        },
+        {
+          "q": "Extend: Write first to tenth as 1st to 10th.",
+          "a": "1st, 2nd, 3rd, 4th, 5th, 6th, 7th, 8th, 9th, 10th",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: In a line of 5, the 1st from the left is which from the right?",
+          "a": "5th",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which comes after 2nd? A) 3rd B) 1st C) 4th",
+          "a": "A) 3rd",
+          "mins": 1,
+          "options": [
+            "3rd",
+            "1st",
+            "4th"
+          ]
+        },
+        {
+          "q": "Big question: why do we need first, second, third?",
+          "a": "To say the order or position of things",
+          "mins": 1
+        }
+      ],
+      "homework": "Line up 5 things at home and tell a grown-up which is 1st to 5th.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: what day of the week is the 6th day if Monday is 1st? (Saturday)",
+      "resources": [
+        "White Rose Maths Year 1, Position and direction block: ordinal numbers (first, second, third), as in the Year 1 pack (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "5 toys or objects to line up",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 69 guided, independent and homework tasks"
       ]
     }
   ]

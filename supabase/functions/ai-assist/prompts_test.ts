@@ -67,12 +67,12 @@ Deno.test("report input: requires a name and something to write from", () => {
 });
 
 Deno.test("report input: surname dropped, numbers range-checked, RECIPE matched", () => {
-  const v = validateReportInput({ first_name: "Hafsa Begum", notes: "neat work", attendance_pct: 140, assessment_avg: 72.456, recipe_value: "integrity", want_recipe_line: true });
+  const v = validateReportInput({ first_name: "Hafsa Begum", notes: "neat work", attendance_pct: 140, assessment_avg: 72.456, recipe_value: "honesty", want_recipe_line: true });
   assert(v.ok);
   assertEquals(v.input.first_name, "Hafsa");
   assertEquals(v.input.attendance_pct, null);
   assertEquals(v.input.assessment_avg, 72.5);
-  assertEquals(v.input.recipe_value, "Integrity");
+  assertEquals(v.input.recipe_value, "Honesty");
   assert(v.input.want_recipe_line);
   const bad = validateReportInput({ first_name: "Hafsa", notes: "neat", recipe_value: "Kindness", want_recipe_line: true });
   assert(bad.ok && !bad.input.want_recipe_line && bad.input.recipe_value === "");
@@ -93,7 +93,7 @@ Deno.test("report prompt carries only the facts given, and the house rules", () 
 });
 
 Deno.test("report prompt: shorter and RECIPE variants", () => {
-  const v = validateReportInput({ first_name: "Zayd", notes: "kind", recipe_value: "Resilience", want_recipe_line: true, variant: "shorter", current_draft: "Zayd has had a good term." });
+  const v = validateReportInput({ first_name: "Zayd", notes: "kind", recipe_value: "Adab", want_recipe_line: true, variant: "shorter", current_draft: "Zayd has had a good term." });
   assert(v.ok);
   const p = buildReportPrompt(v.input);
   assert(p.system.includes("40 to 80 words"));
@@ -102,13 +102,13 @@ Deno.test("report prompt: shorter and RECIPE variants", () => {
 });
 
 Deno.test("report output: word range enforced and dashes cleaned", () => {
-  const v = validateReportInput({ first_name: "Zayd", notes: "kind", recipe_value: "Eeman", want_recipe_line: true });
+  const v = validateReportInput({ first_name: "Zayd", notes: "kind", recipe_value: "Niyyah", want_recipe_line: true });
   assert(v.ok);
   assertEquals(validateReportOutput({ comment: words(10) }, v.input), null);
   assertEquals(validateReportOutput({ comment: words(300) }, v.input), null);
-  const ok = validateReportOutput({ comment: `Zayd \u2014 a kind boy. ${words(80)}`, recipe_line: "Zayd showed Eeman by leading dua." }, v.input);
+  const ok = validateReportOutput({ comment: `Zayd \u2014 a kind boy. ${words(80)}`, recipe_line: "Zayd showed sincere niyyah by leading dua." }, v.input);
   assert(ok && !hasEmDash(ok.comment));
-  assertEquals(ok?.recipe_line, "Zayd showed Eeman by leading dua.");
+  assertEquals(ok?.recipe_line, "Zayd showed sincere niyyah by leading dua.");
   assertEquals(validateReportOutput({ comment: 5 }, v.input), null);
 });
 

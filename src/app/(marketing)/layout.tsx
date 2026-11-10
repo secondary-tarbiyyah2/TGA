@@ -4,6 +4,8 @@ import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { BreadcrumbSchema, Breadcrumbs } from "@/components/BreadcrumbSchema";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { StaffPreviewBadge } from "@/components/prelaunch/StaffPreviewBadge";
+import { JourneyBar, JourneyNext } from "@/components/JourneyBar";
+import { SiteSearch } from "@/components/SiteSearch";
 
 // The public marketing site's chrome, every route in this `(marketing)`
 // group (the homepage plus About/Admissions/Fees/etc.) gets this Header and
@@ -18,13 +20,16 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
       <Header />
       <main id="main" className="flex-1">
         <Breadcrumbs />
+        <JourneyBar />
         {children}
+        <JourneyNext />
         <RelatedLinks />
       </main>
       <Footer />
       <MobileCtaBar />
       <BreadcrumbSchema />
       <StaffPreviewBadge />
+      <SiteSearch />
     </>
   );
 }

@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y4",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 4: place value to 10,000, rounding, Roman numerals, negative numbers; addition and subtraction; times tables to 12 x 12); Spring 1 founding year: White Rose Maths Year 4 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Multiplication and division B, 2 Length and perimeter and 3 Fractions), weekly times tables (TT) practice, Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 4 Spring blocks 3 Fractions and 4 Decimals A (small-step titles only), weekly times tables (TT) practice",
+  "source": "National Curriculum (KS2 Year 4: place value to 10,000, rounding, Roman numerals, negative numbers; addition and subtraction; times tables to 12 x 12); Spring 1 founding year: White Rose Maths Year 4 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Multiplication and division B, 2 Length and perimeter and 3 Fractions), weekly times tables (TT) practice, Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 4 Spring blocks 3 Fractions and 4 Decimals A (small-step titles only), weekly times tables (TT) practice; Summer 1 founding year: White Rose Maths Year 4 Summer blocks Decimals B, Money and Time (small-step titles only), weekly times tables (TT) practice and the 12 x 12 recall check",
   "lessons": [
     {
       "unit": "Spring 1: Multiplication and division (b); length and perimeter; fractions",
@@ -11629,6 +11629,4846 @@
         "Printed times tables tracker",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 4 maths lesson 61 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 62,
+      "title": "Make a whole with tenths and hundredths",
+      "duration": 45,
+      "bigQuestion": "How many ways can we make 1 whole with decimals?",
+      "objectives": [
+        "To understand how tenths and hundredths combine to make one whole"
+      ],
+      "successCriteria": [
+        "All: find the tenths that make 1",
+        "Most: find the hundredths that make 1",
+        "Some: use number bonds to 100 to solve decimal bonds"
+      ],
+      "crossCurricular": "Science: measuring liquids in litres",
+      "smsc": "Social: sharing methods with a partner",
+      "keywords": [
+        {
+          "term": "tenth",
+          "def": "1 of 10 equal parts: 0.1"
+        },
+        {
+          "term": "hundredth",
+          "def": "1 of 100 equal parts: 0.01"
+        },
+        {
+          "term": "whole",
+          "def": "1, all the parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A jug holds 1 litre. 0.65 litres of water is in it. How much more fills it?",
+        "a": "0.35 litres: 65 + 35 = 100."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug with water",
+          "alt": "A 1 litre measuring jug",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A hundred square",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.1 = ? hundredths",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "63 + ? = 100",
+          "a": "37",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 6 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "7/10 as a decimal?",
+          "a": "0.7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tenths to 1",
+          "bullets": [
+            "0.7 + 0.3 = 1",
+            "Like 7 + 3 = 10."
+          ],
+          "fraction": {
+            "parts": 10,
+            "shaded": 7,
+            "label": "0.7 + 0.3 = 1"
+          },
+          "note": "Shade a bar of 10."
+        },
+        {
+          "heading": "Hundredths to 1",
+          "bullets": [
+            "0.65 + 0.35 = 1",
+            "Like 65 + 35 = 100."
+          ],
+          "note": "Shade a hundred square."
+        },
+        {
+          "heading": "Use bonds to 100",
+          "model": {
+            "problem": "0.42 + ? = 1",
+            "steps": [
+              "42 + 58 = 100",
+              "So 0.42 + 0.58 = 1"
+            ],
+            "answer": "0.58"
+          }
+        },
+        {
+          "heading": "Misconception",
+          "bullets": [
+            "Hundredths make 100, not 10."
+          ],
+          "misconception": {
+            "wrong": "0.42 + 0.68 = 1",
+            "right": "0.42 + 0.58 = 1 (42 + 58 = 100)"
+          },
+          "note": "Show why 0.42 + 0.68 is not 1."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "0.26 + ? = 1",
+            "options": [
+              "0.74",
+              "0.84",
+              "0.64"
+            ],
+            "answer": 0,
+            "why": "26 + 74 = 100."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "0.9 + ? = 1",
+          "a": "0.1",
+          "mins": 2,
+          "model": "Teacher: 9 tenths and 1 tenth make 10 tenths, 1 whole."
+        },
+        {
+          "q": "0.35 + ? = 1",
+          "a": "0.65",
+          "mins": 2
+        },
+        {
+          "q": "0.07 + ? = 1",
+          "a": "0.93",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the missing part: 0.4; 0.81; 0.19; 0.5",
+          "a": "0.6; 0.19; 0.81; 0.5",
+          "mins": 4,
+          "model": "Teacher: 4 tenths needs 6 tenths: 0.6."
+        },
+        {
+          "q": "Extend: A ribbon is 1 m. 0.37 m is used. How much is left?",
+          "a": "0.63 m",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Make 1 with three decimals, each with hundredths. Find 2 ways.",
+          "a": "For example 0.25 + 0.35 + 0.4; 0.11 + 0.22 + 0.67",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.55 + ? = 1 A) 0.45 B) 0.55 C) 0.5",
+          "a": "A) 0.45",
+          "mins": 2,
+          "options": [
+            "0.45",
+            "0.55",
+            "0.5"
+          ]
+        },
+        {
+          "q": "Big question: how many ways can we make 1?",
+          "a": "Many: any two hundredths whose digits make 100, like 0.3 + 0.7 or 0.62 + 0.38",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (6s and 7s); write 5 pairs of decimals that make 1.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 0.125 + ? = 1 (0.875)",
+      "resources": [
+        "White Rose Maths Year 4, Decimals B block: small steps 'Make a whole with tenths' and 'Make a whole with hundredths' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed hundred square (10 by 10 grid) to shade",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 62 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 63,
+      "title": "Partition decimals",
+      "duration": 45,
+      "bigQuestion": "What is each digit in 3.47 really worth?",
+      "objectives": [
+        "To understand how to partition decimals into ones, tenths and hundredths"
+      ],
+      "successCriteria": [
+        "All: say the value of each digit",
+        "Most: split 3.47 into 3 + 0.4 + 0.07",
+        "Some: write a decimal from its parts"
+      ],
+      "crossCurricular": "Science: reading measurements on scales",
+      "smsc": "Social: explaining value to a partner",
+      "keywords": [
+        {
+          "term": "partition",
+          "def": "split a number into parts"
+        },
+        {
+          "term": "decimal point",
+          "def": "separates ones from tenths"
+        },
+        {
+          "term": "place value",
+          "def": "what a digit is worth by its place"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is the 4 in 3.47 worth 4, 0.4 or 0.04? How do you know?",
+        "a": "0.4: it is in the tenths column."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimals",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "digital scales display",
+          "alt": "Scales showing a decimal",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.3 + ? = 1",
+          "a": "0.7",
+          "mins": 1
+        },
+        {
+          "q": "347 = 300 + 40 + ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 7 = ?",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "0.01 × 10 = ?",
+          "a": "0.1",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Place value chart",
+          "bullets": [
+            "Ones . tenths hundredths",
+            "3.47: 3 ones, 4 tenths, 7 hundredths"
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "3",
+                "4",
+                "7"
+              ]
+            ]
+          },
+          "note": "Counters on the chart."
+        },
+        {
+          "heading": "Partition",
+          "model": {
+            "problem": "3.47",
+            "steps": [
+              "3 ones = 3",
+              "4 tenths = 0.4",
+              "7 hundredths = 0.07"
+            ],
+            "answer": "3 + 0.4 + 0.07"
+          }
+        },
+        {
+          "heading": "Zero as a place holder",
+          "bullets": [
+            "5.06 = 5 + 0.06",
+            "No tenths: write 0."
+          ],
+          "note": "Ask: what is 5.6?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Value of the 8 in 2.18?",
+            "options": [
+              "0.08",
+              "0.8",
+              "8"
+            ],
+            "answer": 0,
+            "why": "The 8 is in the hundredths place."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Partition 6.25",
+          "a": "6 + 0.2 + 0.05",
+          "mins": 2,
+          "model": "Teacher: 6 ones, 2 tenths, 5 hundredths."
+        },
+        {
+          "q": "Write 4 + 0.3 + 0.09",
+          "a": "4.39",
+          "mins": 2
+        },
+        {
+          "q": "Partition 12.38",
+          "a": "10 + 2 + 0.3 + 0.08",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Partition: 7.52; 0.94; 9.07",
+          "a": "7 + 0.5 + 0.02; 0.9 + 0.04; 9 + 0.07",
+          "mins": 4,
+          "model": "Teacher: 7.52 is 7 ones, 5 tenths, 2 hundredths."
+        },
+        {
+          "q": "Extend: Write the number: 20 + 4 + 0.08; 0.6 + 0.01",
+          "a": "24.08; 0.61",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: I have 3 tenths and 15 hundredths. What number am I?",
+          "a": "0.45",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The 6 in 1.65 is worth... A) 0.6 B) 0.06 C) 6",
+          "a": "A) 0.6",
+          "mins": 2,
+          "options": [
+            "0.6",
+            "0.06",
+            "6"
+          ]
+        },
+        {
+          "q": "Big question: what is each digit in 3.47 worth?",
+          "a": "3 ones, 4 tenths (0.4) and 7 hundredths (0.07)",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (9s); partition 4 decimals from food labels or receipts.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: partition 30.03 and explain each zero.",
+      "resources": [
+        "White Rose Maths Year 4, Decimals B block: small step 'Partition decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 63 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 64,
+      "title": "Flexibly partition decimals",
+      "duration": 45,
+      "bigQuestion": "Can we split 2.56 in more than one way?",
+      "objectives": [
+        "To understand how decimals can be partitioned in different ways"
+      ],
+      "successCriteria": [
+        "All: partition into ones, tenths and hundredths",
+        "Most: exchange a tenth for 10 hundredths",
+        "Some: find several ways to partition one decimal"
+      ],
+      "crossCurricular": "Money: making £2.56 with different coins",
+      "smsc": "Social: accepting there is more than one right way",
+      "keywords": [
+        {
+          "term": "flexible",
+          "def": "more than one way"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 1 tenth for 10 hundredths"
+        },
+        {
+          "term": "partition",
+          "def": "split into parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "2.56 = 2 + 0.5 + 0.06. Can you make 2.56 using 1.5 as one of the parts?",
+        "a": "Yes: 1 + 1.5 + 0.06."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "place value counters",
+          "alt": "Place value counters",
+          "for": "teach:2"
+        },
+        {
+          "find": "coins pile",
+          "alt": "A pile of coins",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Partition 4.73",
+          "a": "4 + 0.7 + 0.03",
+          "mins": 1
+        },
+        {
+          "q": "1 tenth = ? hundredths",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 6 = ?",
+          "a": "66",
+          "mins": 1
+        },
+        {
+          "q": "56 = 40 + ?",
+          "a": "16",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Standard",
+          "bullets": [
+            "2.56 = 2 + 0.5 + 0.06"
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "2",
+                "5",
+                "6"
+              ],
+              [
+                "2",
+                "4",
+                "16"
+              ],
+              [
+                "1",
+                "15",
+                "6"
+              ]
+            ]
+          },
+          "note": "Show counters."
+        },
+        {
+          "heading": "Exchange a tenth",
+          "model": {
+            "problem": "2.56 another way",
+            "steps": [
+              "Take 1 tenth from 0.5: 0.4",
+              "Make it 10 hundredths: 0.16",
+              "2 + 0.4 + 0.16"
+            ],
+            "answer": "2.56"
+          }
+        },
+        {
+          "heading": "Exchange a one",
+          "bullets": [
+            "1 one = 10 tenths.",
+            "2.56 = 1 + 1.5 + 0.06"
+          ],
+          "note": "Check by adding back."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "0.73 = 0.6 + ?",
+            "options": [
+              "0.13",
+              "0.7",
+              "0.03"
+            ],
+            "answer": 0,
+            "why": "0.6 + 0.13 = 0.73."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3.48 = 3 + 0.3 + ?",
+          "a": "0.18",
+          "mins": 2,
+          "model": "Teacher: 0.4 is 0.3 + 0.1, and 0.1 + 0.08 = 0.18."
+        },
+        {
+          "q": "1.92 = 0.9 + 1 + ?",
+          "a": "0.02",
+          "mins": 2
+        },
+        {
+          "q": "4.25 = 3 + ? + 0.05",
+          "a": "1.2",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fill: 5.67 = 5 + 0.5 + ?; 0.84 = 0.7 + ?; 6.3 = 5 + ?",
+          "a": "0.17; 0.14; 1.3",
+          "mins": 4,
+          "model": "Teacher: 0.6 = 0.5 + 0.1, so 0.1 + 0.07 = 0.17."
+        },
+        {
+          "q": "Extend: Write 3.15 in 3 different ways.",
+          "a": "For example 3 + 0.1 + 0.05; 3 + 0.15; 2 + 1.1 + 0.05",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Ayesha says 1.6 = 1 + 0.5 + 0.01. Explain her mistake.",
+          "a": "0.5 + 0.01 = 0.51, not 0.6; it should be 1 + 0.5 + 0.1",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1.34 = 1 + 0.2 + ? A) 0.14 B) 0.04 C) 0.32",
+          "a": "A) 0.14",
+          "mins": 2,
+          "options": [
+            "0.14",
+            "0.04",
+            "0.32"
+          ]
+        },
+        {
+          "q": "Big question: can we split 2.56 in more than one way?",
+          "a": "Yes, by exchanging ones for tenths or tenths for hundredths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (11s); write 4.36 in 4 different ways.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: write 10.1 as the sum of three decimals, each with hundredths.",
+      "resources": [
+        "White Rose Maths Year 4, Decimals B block: small step 'Flexibly partition decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 64 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 65,
+      "title": "Compare decimals",
+      "duration": 45,
+      "bigQuestion": "Is a longer decimal always bigger?",
+      "objectives": [
+        "To understand how to compare decimals using place value"
+      ],
+      "successCriteria": [
+        "All: compare decimals with the same number of places",
+        "Most: compare 0.5 and 0.45",
+        "Some: explain with a place value chart"
+      ],
+      "crossCurricular": "Science: comparing race times",
+      "smsc": "Moral: being careful before judging",
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "decide which is greater"
+        },
+        {
+          "term": "greater than (>)",
+          "def": "bigger than"
+        },
+        {
+          "term": "less than (<)",
+          "def": "smaller than"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is bigger: 0.5 or 0.45? Many people say 0.45. Why might they be wrong?",
+        "a": "0.5 = 0.50, which is more than 0.45."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ruler with millimetres close up",
+          "alt": "A ruler with small marks",
+          "for": "teach:3"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.6 = ? hundredths",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "2.56 = 2 + 0.4 + ?",
+          "a": "0.16",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 4 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 0.3 _ 0.7",
+          "a": "<",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Line up the columns",
+          "bullets": [
+            "Compare ones first.",
+            "Then tenths, then hundredths."
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "0",
+                "5",
+                "0"
+              ],
+              [
+                "0",
+                "4",
+                "5"
+              ]
+            ]
+          },
+          "note": "Use a place value chart."
+        },
+        {
+          "heading": "Compare",
+          "model": {
+            "problem": "0.5 and 0.45",
+            "steps": [
+              "Ones: both 0",
+              "Tenths: 5 > 4",
+              "Stop: 0.5 is greater"
+            ],
+            "answer": "0.5 > 0.45"
+          }
+        },
+        {
+          "heading": "On a number line",
+          "bullets": [
+            "Further right is greater."
+          ],
+          "numberline": {
+            "min": 0.4,
+            "max": 0.6,
+            "step": 0.01,
+            "marks": [
+              {
+                "at": 0.45,
+                "label": "0.45"
+              },
+              {
+                "at": 0.5,
+                "label": "0.5"
+              }
+            ]
+          },
+          "note": "Mark both."
+        },
+        {
+          "heading": "Misconception",
+          "bullets": [
+            "More digits does not mean bigger."
+          ],
+          "misconception": {
+            "wrong": "3.07 > 3.7 because 07 looks bigger",
+            "right": "3.7 > 3.07: 7 tenths > 0 tenths"
+          },
+          "note": "Discuss."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is greater?",
+            "options": [
+              "4.31",
+              "4.13",
+              "They are equal"
+            ],
+            "answer": 0,
+            "why": "Same ones; tenths 3 > 1."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 0.8 _ 0.78",
+          "a": ">",
+          "mins": 2,
+          "model": "Teacher: tenths first: 8 > 7, so 0.8 > 0.78."
+        },
+        {
+          "q": "Use <, > or =: 1.2 _ 1.20",
+          "a": "=",
+          "mins": 2
+        },
+        {
+          "q": "Use < or >: 6.09 _ 6.1",
+          "a": "<",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use < or >: 2.35 _ 2.53; 0.9 _ 0.19; 7.04 _ 7.4",
+          "a": "<; >; <",
+          "mins": 4,
+          "model": "Teacher: tenths 3 < 5, so 2.35 < 2.53."
+        },
+        {
+          "q": "Extend: Find a decimal between 0.4 and 0.5.",
+          "a": "For example 0.45",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Bilal says 0.25 > 0.3 because 25 > 3. Explain why he is wrong.",
+          "a": "Compare tenths: 2 < 3, so 0.25 < 0.3 (0.30)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Greater: A) 0.6 B) 0.59",
+          "a": "A) 0.6",
+          "mins": 2,
+          "options": [
+            "0.6",
+            "0.59"
+          ]
+        },
+        {
+          "q": "Big question: is a longer decimal always bigger?",
+          "a": "No: compare place by place from the left",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (12s); compare 5 pairs of prices or measurements at home.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: order 0.7, 0.07, 0.77 and 0.17 (0.07, 0.17, 0.7, 0.77).",
+      "resources": [
+        "White Rose Maths Year 4, Decimals B block: small step 'Compare decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0.4 to 0.6 in hundredths",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 65 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 66,
+      "title": "Compare decimals in measures",
+      "duration": 45,
+      "bigQuestion": "Which is longer: 1.35 m or 1.5 m?",
+      "objectives": [
+        "To understand how to compare decimals in lengths, masses and money"
+      ],
+      "successCriteria": [
+        "All: compare two lengths in metres",
+        "Most: compare masses in kilograms",
+        "Some: compare amounts of money"
+      ],
+      "crossCurricular": "Science: plant growth (Summer 1 habitats work)",
+      "smsc": "Spiritual: Allah makes plants grow from small seeds",
+      "keywords": [
+        {
+          "term": "metre (m)",
+          "def": "100 cm"
+        },
+        {
+          "term": "kilogram (kg)",
+          "def": "1,000 g"
+        },
+        {
+          "term": "measure",
+          "def": "find the size of something"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two plants: one is 1.35 m tall and one is 1.5 m tall. Which is taller? By how much?",
+        "a": "1.5 m, by 0.15 m (15 cm)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sunflower tall",
+          "alt": "A tall sunflower",
+          "for": "hook"
+        },
+        {
+          "find": "kitchen scales",
+          "alt": "Kitchen scales",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Use < or >: 0.5 _ 0.45",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "1.5 m = ? cm",
+          "a": "150",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 9 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "1.35 m = ? cm",
+          "a": "135",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Length",
+          "model": {
+            "problem": "1.35 m or 1.5 m?",
+            "steps": [
+              "Same ones: 1",
+              "Tenths: 3 < 5"
+            ],
+            "answer": "1.5 m is longer"
+          }
+        },
+        {
+          "heading": "Mass",
+          "bullets": [
+            "0.8 kg and 0.75 kg.",
+            "Tenths: 8 > 7.",
+            "0.8 kg is heavier."
+          ],
+          "note": "Read the scales."
+        },
+        {
+          "heading": "Money",
+          "bullets": [
+            "£2.09 and £2.90.",
+            "Tenths: 0 < 9.",
+            "£2.90 is more."
+          ],
+          "note": "Count coins."
+        },
+        {
+          "heading": "Chart",
+          "bullets": [
+            "Heights of 4 example plants."
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Plant heights (m, example data)",
+            "labels": [
+              "Bean",
+              "Sunflower",
+              "Tomato",
+              "Pea"
+            ],
+            "values": [
+              1.35,
+              1.5,
+              0.95,
+              0.6
+            ],
+            "unit": "m"
+          },
+          "note": "Which is tallest?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Heaviest?",
+            "options": [
+              "2.4 kg",
+              "2.35 kg",
+              "2.09 kg"
+            ],
+            "answer": 0,
+            "why": "Same ones; tenths 4 > 3 > 0."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Longer: 0.7 m or 0.65 m?",
+          "a": "0.7 m",
+          "mins": 2,
+          "model": "Teacher: tenths 7 > 6, so 0.7 m."
+        },
+        {
+          "q": "More: £4.50 or £4.05?",
+          "a": "£4.50",
+          "mins": 2
+        },
+        {
+          "q": "Which plant in the chart is shortest?",
+          "a": "Pea (0.6 m)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use < or >: 3.8 kg _ 3.75 kg; £1.09 _ £1.90; 0.45 m _ 0.5 m",
+          "a": ">; <; <",
+          "mins": 4,
+          "model": "Teacher: tenths 8 > 7, so 3.8 kg is heavier."
+        },
+        {
+          "q": "Extend: Order the plants from the chart, tallest first.",
+          "a": "Sunflower 1.5, bean 1.35, tomato 0.95, pea 0.6",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: The bean grows 0.2 m. Is it now taller than the sunflower?",
+          "a": "Yes: 1.55 m > 1.5 m",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Heavier: A) 1.6 kg B) 1.06 kg",
+          "a": "A) 1.6 kg",
+          "mins": 2,
+          "options": [
+            "1.6 kg",
+            "1.06 kg"
+          ]
+        },
+        {
+          "q": "Big question: which is longer, 1.35 m or 1.5 m?",
+          "a": "1.5 m: 5 tenths is more than 3 tenths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (mixed); find 3 packet masses in the kitchen and order them.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find the difference between 1.5 m and 0.95 m (0.55 m).",
+      "resources": [
+        "White Rose Maths Year 4, Decimals B block: comparing decimals, applied to measures and money (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Tape measure or metre stick",
+        "Kitchen scales (with an adult)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 66 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 67,
+      "title": "Order decimals",
+      "duration": 45,
+      "bigQuestion": "How do we put decimals in order without getting tricked?",
+      "objectives": [
+        "To understand how to order decimals with up to two decimal places"
+      ],
+      "successCriteria": [
+        "All: order decimals with the same number of places",
+        "Most: order decimals with different numbers of places",
+        "Some: check an order on a number line"
+      ],
+      "crossCurricular": "Science: ordering race times",
+      "smsc": "Social: fair results in a race",
+      "keywords": [
+        {
+          "term": "order",
+          "def": "put in size order"
+        },
+        {
+          "term": "ascending",
+          "def": "smallest to largest"
+        },
+        {
+          "term": "descending",
+          "def": "largest to smallest"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Put 0.6, 0.06 and 0.66 in order. Which one is the trickiest?",
+        "a": "0.06, 0.6, 0.66; 0.06 and 0.6 look alike."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "measuring tape close up",
+          "alt": "A measuring tape",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Use < or >: 2.7 _ 2.69",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "0.6 = 0.?0",
+          "a": "0.60",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "Smallest: 4.2, 4.02, 4.22?",
+          "a": "4.02",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same number of places",
+          "bullets": [
+            "0.16, 0.61, 0.06",
+            "Tenths first, then hundredths."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Ones",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "0.6",
+                "0",
+                "6",
+                "0"
+              ],
+              [
+                "0.06",
+                "0",
+                "0",
+                "6"
+              ],
+              [
+                "0.66",
+                "0",
+                "6",
+                "6"
+              ],
+              [
+                "0.16",
+                "0",
+                "1",
+                "6"
+              ]
+            ]
+          },
+          "note": "Place value chart."
+        },
+        {
+          "heading": "Order ascending",
+          "model": {
+            "problem": "0.6, 0.06, 0.66, 0.16",
+            "steps": [
+              "Write as hundredths: 60, 6, 66, 16",
+              "6 < 16 < 60 < 66"
+            ],
+            "answer": "0.06, 0.16, 0.6, 0.66"
+          }
+        },
+        {
+          "heading": "Number line check",
+          "bullets": [
+            "Place each one.",
+            "Read left to right."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 0.06,
+                "label": "0.06"
+              },
+              {
+                "at": 0.16,
+                "label": "0.16"
+              },
+              {
+                "at": 0.6,
+                "label": "0.6"
+              },
+              {
+                "at": 0.66,
+                "label": "0.66"
+              }
+            ]
+          },
+          "note": "Mark them."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Smallest?",
+            "options": [
+              "2.03",
+              "2.3",
+              "2.32"
+            ],
+            "answer": 0,
+            "why": "Tenths: 0 is the smallest."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Ascending: 3.5, 3.05, 3.55",
+          "a": "3.05, 3.5, 3.55",
+          "mins": 2,
+          "model": "Teacher: all 3 ones; tenths 0, 5, 5; hundredths 0, 5 for the 3.5s."
+        },
+        {
+          "q": "Descending: 0.9, 0.09, 0.99",
+          "a": "0.99, 0.9, 0.09",
+          "mins": 2
+        },
+        {
+          "q": "Ascending: 2.3, 2.03, 3.2, 2.32",
+          "a": "2.03, 2.3, 2.32, 3.2",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Ascending: 1.45, 1.5, 1.4, 1.54",
+          "a": "1.4, 1.45, 1.5, 1.54",
+          "mins": 4,
+          "model": "Teacher: write as hundredths: 145, 150, 140, 154."
+        },
+        {
+          "q": "Extend: Race times (s): 12.7, 12.07, 13.1, 12.75. Order fastest first.",
+          "a": "12.07, 12.7, 12.75, 13.1",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Make 4 decimals using the digits 3, 0 and 5 once each with one decimal point. Order them.",
+          "a": "For example 0.35, 0.53, 3.05, 5.03 (already in order)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Largest: A) 0.8 B) 0.78 C) 0.08",
+          "a": "A) 0.8",
+          "mins": 2,
+          "options": [
+            "0.8",
+            "0.78",
+            "0.08"
+          ]
+        },
+        {
+          "q": "Big question: how do we avoid being tricked?",
+          "a": "Compare tenths before hundredths; write all as hundredths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (7s and 8s); order 5 prices from a shopping receipt.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: order 1.9, 1.09, 1.99, 1.91 descending (1.99, 1.91, 1.9, 1.09).",
+      "resources": [
+        "White Rose Maths Year 4, Decimals B block: small step 'Order decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Paper number line 0 to 1 in tenths",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 67 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 68,
+      "title": "Round to the nearest whole number",
+      "duration": 45,
+      "bigQuestion": "Is 6.5 nearer to 6 or to 7?",
+      "objectives": [
+        "To understand how to round decimals to the nearest whole number"
+      ],
+      "successCriteria": [
+        "All: find the two whole numbers either side",
+        "Most: use the tenths digit to round",
+        "Some: round in a real-life context"
+      ],
+      "crossCurricular": "Science: estimating masses",
+      "smsc": "Moral: honest estimates",
+      "keywords": [
+        {
+          "term": "round",
+          "def": "find the nearest whole number"
+        },
+        {
+          "term": "nearest",
+          "def": "closest"
+        },
+        {
+          "term": "half way",
+          "def": "exactly in the middle: .5 rounds up"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bag weighs 3.4 kg. Would you say it is about 3 kg or 4 kg? Why?",
+        "a": "About 3 kg: 3.4 is nearer to 3."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bag of potatoes",
+          "alt": "A bag of potatoes",
+          "for": "hook"
+        },
+        {
+          "find": "bathroom scales",
+          "alt": "Scales",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Smallest: 5.6, 5.06, 6.5?",
+          "a": "5.06",
+          "mins": 1
+        },
+        {
+          "q": "Round 47 to nearest 10.",
+          "a": "50",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 8 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "What is half way between 3 and 4?",
+          "a": "3.5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Number line",
+          "bullets": [
+            "3.4 is between 3 and 4.",
+            "Nearer to 3."
+          ],
+          "numberline": {
+            "min": 3,
+            "max": 4,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 3.4,
+                "label": "3.4"
+              },
+              {
+                "at": 3.5,
+                "label": "half way"
+              }
+            ]
+          },
+          "note": "Mark it."
+        },
+        {
+          "heading": "Use the tenths",
+          "bullets": [
+            "0 to 4 tenths: round down.",
+            "5 to 9 tenths: round up."
+          ],
+          "note": "3.5 rounds to 4."
+        },
+        {
+          "heading": "Hundredths",
+          "model": {
+            "problem": "6.72 to the nearest whole",
+            "steps": [
+              "Between 6 and 7",
+              "Tenths digit 7: round up"
+            ],
+            "answer": "7"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "9.49 to the nearest whole?",
+            "options": [
+              "9",
+              "10",
+              "9.5"
+            ],
+            "answer": 0,
+            "why": "Tenths digit 4: round down. Do not round twice."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Round 5.8",
+          "a": "6",
+          "mins": 2,
+          "model": "Teacher: between 5 and 6; 8 tenths, so round up to 6."
+        },
+        {
+          "q": "Round 12.5",
+          "a": "13",
+          "mins": 2
+        },
+        {
+          "q": "Round 0.38",
+          "a": "0",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Round: 4.2; 7.65; 19.5; 3.09",
+          "a": "4; 8; 20; 3",
+          "mins": 4,
+          "model": "Teacher: 4.2 has 2 tenths, round down to 4."
+        },
+        {
+          "q": "Extend: Round each price to the nearest pound: £2.45, £6.70, £9.50",
+          "a": "£2; £7; £10",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write 3 numbers with two decimal places that round to 8.",
+          "a": "For example 7.5, 7.83, 8.49 (any 7.50 to 8.49)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "6.5 rounds to... A) 7 B) 6 C) 6.5",
+          "a": "A) 7",
+          "mins": 2,
+          "options": [
+            "7",
+            "6",
+            "6.5"
+          ]
+        },
+        {
+          "q": "Big question: is 6.5 nearer 6 or 7?",
+          "a": "It is half way; by the rule we round up to 7",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (9s); round 5 food weights or prices at home to the nearest whole.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is the smallest number with 2 decimal places that rounds to 10? (9.50)",
+      "resources": [
+        "White Rose Maths Year 4, Decimals B block: small step 'Round to the nearest whole number' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper number lines in tenths",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 68 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 69,
+      "title": "Halves and quarters as decimals",
+      "duration": 45,
+      "bigQuestion": "Why is a quarter written as 0.25?",
+      "objectives": [
+        "To understand how halves and quarters are written as decimals"
+      ],
+      "successCriteria": [
+        "All: say 1/2 = 0.5",
+        "Most: say 1/4 = 0.25 and 3/4 = 0.75",
+        "Some: write mixed numbers with halves and quarters as decimals"
+      ],
+      "crossCurricular": "Cooking: reading 0.5 kg and 0.75 litres in recipes",
+      "smsc": "Social: sharing food in halves and quarters",
+      "keywords": [
+        {
+          "term": "half",
+          "def": "1/2 = 0.5"
+        },
+        {
+          "term": "quarter",
+          "def": "1/4 = 0.25"
+        },
+        {
+          "term": "three quarters",
+          "def": "3/4 = 0.75"
+        },
+        {
+          "term": "equivalent",
+          "def": "the same value"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A recipe says 0.75 kg of flour. Your scales show fractions. What fraction is 0.75?",
+        "a": "3/4."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "british fifty pence coin",
+          "alt": "A 50p coin",
+          "for": "teach:1"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A hundred square",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Round 4.6",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "1/2 of 100?",
+          "a": "50",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 100?",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 3 = ?",
+          "a": "36",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A half",
+          "bullets": [
+            "1/2 = 5/10 = 0.5",
+            "50p is half of £1: £0.50."
+          ],
+          "fraction": {
+            "parts": 10,
+            "shaded": 5,
+            "label": "1/2 = 0.5"
+          },
+          "note": "Shade half a bar of 10."
+        },
+        {
+          "heading": "A quarter",
+          "bullets": [
+            "1/4 of 100 squares = 25.",
+            "1/4 = 25/100 = 0.25"
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 1,
+            "label": "1/4 = 0.25"
+          },
+          "note": "Shade a hundred square."
+        },
+        {
+          "heading": "Three quarters",
+          "bullets": [
+            "3 × 25 = 75.",
+            "3/4 = 0.75"
+          ],
+          "note": "Shade 3 quarters."
+        },
+        {
+          "heading": "Mixed numbers",
+          "model": {
+            "problem": "3 1/4 as a decimal",
+            "steps": [
+              "3 wholes = 3",
+              "1/4 = 0.25"
+            ],
+            "answer": "3.25"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "0.75 = ?",
+            "options": [
+              "3/4",
+              "7/5",
+              "1/4"
+            ],
+            "answer": 0,
+            "why": "75 hundredths = 3 quarters."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2 1/2 as a decimal?",
+          "a": "2.5",
+          "mins": 2,
+          "model": "Teacher: 2 wholes and a half: 2.5."
+        },
+        {
+          "q": "0.25 as a fraction?",
+          "a": "1/4",
+          "mins": 2
+        },
+        {
+          "q": "5 3/4 as a decimal?",
+          "a": "5.75",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write as decimals: 1/2; 4 1/4; 7 3/4",
+          "a": "0.5; 4.25; 7.75",
+          "mins": 4,
+          "model": "Teacher: 1/2 is 5 tenths: 0.5."
+        },
+        {
+          "q": "Extend: Write as fractions: 0.75 kg; 1.5 litres; 2.25 m",
+          "a": "3/4 kg; 1 1/2 litres; 2 1/4 m",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which is more: 0.3 or 1/4? Explain.",
+          "a": "0.3: 1/4 is 0.25 and 0.30 > 0.25",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/4 = ? A) 0.25 B) 0.4 C) 1.4",
+          "a": "A) 0.25",
+          "mins": 2,
+          "options": [
+            "0.25",
+            "0.4",
+            "1.4"
+          ]
+        },
+        {
+          "q": "Big question: why is a quarter 0.25?",
+          "a": "A quarter of 100 hundredths is 25 hundredths",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (mixed); find 3 food labels in kg or litres and write them as fractions.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: write 1/5 and 3/5 as decimals (0.2; 0.6).",
+      "resources": [
+        "White Rose Maths Year 4, Decimals B block: small step 'Halves and quarters as decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed hundred square (10 by 10 grid) to shade",
+        "Real coins and notes or printed play money",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 69 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 70,
+      "title": "Decimals: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "How well do I understand decimals now?",
+      "objectives": [
+        "To understand how well I can partition, compare, order and round decimals"
+      ],
+      "successCriteria": [
+        "All: partition and make a whole with decimals",
+        "Most: compare and order decimals",
+        "Some: round and convert halves and quarters"
+      ],
+      "smsc": "Spiritual: shukr for learning; patience in practice",
+      "keywords": [
+        {
+          "term": "tenth",
+          "def": "0.1"
+        },
+        {
+          "term": "hundredth",
+          "def": "0.01"
+        },
+        {
+          "term": "round",
+          "def": "find the nearest whole number"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which decimal fact do you know best? Which one still trips you up?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimals",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.38 + ? = 1",
+          "a": "0.62",
+          "mins": 1
+        },
+        {
+          "q": "Round 7.5",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "3/4 = ?",
+          "a": "0.75",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 9 = ?",
+          "a": "99",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Place value",
+          "bullets": [
+            "Ones . tenths hundredths",
+            "Exchange 1 tenth for 10 hundredths."
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "4",
+                "0",
+                "8"
+              ]
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Compare and order",
+          "bullets": [
+            "Tenths before hundredths.",
+            "0.5 > 0.45"
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Round and convert",
+          "bullets": [
+            "Tenths digit decides.",
+            "1/2 = 0.5, 1/4 = 0.25, 3/4 = 0.75"
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Value of the 8 in 4.08?",
+            "options": [
+              "8 hundredths",
+              "8 tenths",
+              "8 ones"
+            ],
+            "answer": 0,
+            "why": "The 0 holds the tenths place."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Partition 5.36",
+          "a": "5 + 0.3 + 0.06",
+          "mins": 2,
+          "model": "Teacher: 5 ones, 3 tenths, 6 hundredths."
+        },
+        {
+          "q": "Order ascending: 0.4, 0.44, 0.04",
+          "a": "0.04, 0.4, 0.44",
+          "mins": 2
+        },
+        {
+          "q": "Round 2.51",
+          "a": "3",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: 0.71 + ? = 1; 6.3 = 5 + ?; value of 9 in 3.09",
+          "a": "0.29; 1.3; 9 hundredths",
+          "mins": 4,
+          "model": "Teacher: 71 + 29 = 100."
+        },
+        {
+          "q": "Extend: Check: use < or >: 1.6 _ 1.59; order 8.1, 8.01, 8.11, 8.0",
+          "a": ">; 8.0, 8.01, 8.1, 8.11",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: round 14.49 and 14.5; write 6 3/4 as a decimal",
+          "a": "14; 15; 6.75",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.5 = ? A) 1/2 B) 1/5 C) 5/100",
+          "a": "A) 1/2",
+          "mins": 2,
+          "options": [
+            "1/2",
+            "1/5",
+            "5/100"
+          ]
+        },
+        {
+          "q": "Big question: one thing I am sure of, one to practise",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "TT practice (mixed); correct your check and redo any question you got wrong.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find a decimal that rounds to 5 and is between 4.7 and 4.8.",
+      "resources": [
+        "White Rose Maths Year 4, Decimals B block: end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters (or paper discs)",
+        "Printed end-of-block check (school White Rose account)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 70 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 71,
+      "title": "Write money using decimals",
+      "duration": 45,
+      "bigQuestion": "Why does £4.05 have a zero in it?",
+      "objectives": [
+        "To understand how to write amounts of money using decimal notation"
+      ],
+      "successCriteria": [
+        "All: read pounds and pence in decimal notation",
+        "Most: write amounts with a zero place holder",
+        "Some: explain what each digit is worth"
+      ],
+      "crossCurricular": "PSHE: reading prices when shopping",
+      "smsc": "Moral: honesty in trade",
+      "keywords": [
+        {
+          "term": "pound (£)",
+          "def": "100 pence"
+        },
+        {
+          "term": "decimal point",
+          "def": "separates pounds from pence"
+        },
+        {
+          "term": "place holder",
+          "def": "a zero that keeps digits in their place"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A price label says £4.5. Is that £4 and 5p or £4 and 50p?",
+        "a": "£4 and 50p; we write it £4.50."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "price tag",
+          "alt": "A price label",
+          "for": "hook"
+        },
+        {
+          "find": "british coins",
+          "alt": "UK coins",
+          "for": "keywords"
+        }
+      ],
+      "islamicLink": {
+        "text": "Allah tells us to give full measure and weigh with an even balance (al-Isra 17:35). Writing and reading prices correctly is part of honest trade.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "1/4 = 0.?",
+          "a": "0.25",
+          "mins": 1
+        },
+        {
+          "q": "£1 = ?p",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 7 = ?",
+          "a": "49",
+          "mins": 1
+        },
+        {
+          "q": "Value of the 5 in 3.05?",
+          "a": "5 hundredths",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Pounds and pence",
+          "bullets": [
+            "£3.45: 3 pounds, 45 pence.",
+            "Pence are hundredths of a pound."
+          ],
+          "table": {
+            "head": [
+              "£",
+              ".",
+              "10p",
+              "1p"
+            ],
+            "rows": [
+              [
+                "3",
+                ".",
+                "4",
+                "5"
+              ],
+              [
+                "4",
+                ".",
+                "0",
+                "5"
+              ]
+            ]
+          },
+          "note": "Show coins."
+        },
+        {
+          "heading": "Zero place holder",
+          "model": {
+            "problem": "4 pounds and 5 pence",
+            "steps": [
+              "Pounds: 4",
+              "Pence: 5 = 05"
+            ],
+            "answer": "£4.05"
+          }
+        },
+        {
+          "heading": "Two digits after the point",
+          "bullets": [
+            "£4.50 not £4.5.",
+            "Always 2 digits for pence."
+          ],
+          "note": "Discuss shop labels."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "7 pounds and 8 pence?",
+            "options": [
+              "£7.08",
+              "£7.8",
+              "£78"
+            ],
+            "answer": 0,
+            "why": "8 pence goes in the hundredths: 08."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write 6 pounds and 25 pence.",
+          "a": "£6.25",
+          "mins": 2,
+          "model": "Teacher: 6 pounds, then 25 pence after the point."
+        },
+        {
+          "q": "Write 2 pounds and 9 pence.",
+          "a": "£2.09",
+          "mins": 2
+        },
+        {
+          "q": "£10.60 in words?",
+          "a": "10 pounds and 60 pence",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write: 12 pounds 40 pence; 3 pounds 3 pence; 50 pence",
+          "a": "£12.40; £3.03; £0.50",
+          "mins": 4,
+          "model": "Teacher: 12 pounds, 40 pence: £12.40."
+        },
+        {
+          "q": "Extend: Count the coins: £2 + £1 + 50p + 20p + 5p. Write in £.",
+          "a": "£3.75",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain the difference between £5.07 and £5.70.",
+          "a": "£5.07 is 5 pounds 7 pence; £5.70 is 5 pounds 70 pence",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "£4 and 5p = A) £4.05 B) £4.5 C) £4.50",
+          "a": "A) £4.05",
+          "mins": 2,
+          "options": [
+            "£4.05",
+            "£4.5",
+            "£4.50"
+          ]
+        },
+        {
+          "q": "Big question: why does £4.05 have a zero?",
+          "a": "The zero holds the 10p place, so the 5 stays as 5 pence",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (6s); write 5 prices from a receipt in words and in £.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: write 1,005 pence in pounds (£10.05).",
+      "resources": [
+        "White Rose Maths Year 4, Money block: small step 'Write money using decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 71 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 72,
+      "title": "Convert between pounds and pence",
+      "duration": 45,
+      "bigQuestion": "How many pence is £12.50?",
+      "objectives": [
+        "To understand how to convert between pounds and pence"
+      ],
+      "successCriteria": [
+        "All: convert pounds to pence",
+        "Most: convert pence to pounds",
+        "Some: convert in a problem"
+      ],
+      "crossCurricular": "Science: multiplying and dividing by 100 in measures (cm and m)",
+      "smsc": "Moral: giving sadaqah, counting it carefully",
+      "keywords": [
+        {
+          "term": "convert",
+          "def": "change into another unit"
+        },
+        {
+          "term": "× 100",
+          "def": "pounds to pence"
+        },
+        {
+          "term": "÷ 100",
+          "def": "pence to pounds"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A sadaqah jar holds 1,250 pennies. How many pounds is that?",
+        "a": "£12.50."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "jar of coins",
+          "alt": "A jar of coins",
+          "for": "hook"
+        },
+        {
+          "find": "british one pound coin",
+          "alt": "A £1 coin",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "£3 and 7p in £?",
+          "a": "£3.07",
+          "mins": 1
+        },
+        {
+          "q": "6 × 100 = ?",
+          "a": "600",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 7 = ?",
+          "a": "84",
+          "mins": 1
+        },
+        {
+          "q": "450 ÷ 100 = ?",
+          "a": "4.5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "£ to p",
+          "bullets": [
+            "£1 = 100p",
+            "£3.45 = 345p",
+            "Multiply by 100."
+          ],
+          "table": {
+            "head": [
+              "Pounds",
+              "Pence"
+            ],
+            "rows": [
+              [
+                "£1",
+                "100p"
+              ],
+              [
+                "£3.45",
+                "345p"
+              ],
+              [
+                "£2.08",
+                "208p"
+              ],
+              [
+                "£0.60",
+                "60p"
+              ]
+            ]
+          },
+          "note": "Digits move 2 places left."
+        },
+        {
+          "heading": "p to £",
+          "model": {
+            "problem": "1,250p",
+            "steps": [
+              "Divide by 100",
+              "1,250 ÷ 100 = 12.5"
+            ],
+            "answer": "£12.50"
+          }
+        },
+        {
+          "heading": "Watch the zeros",
+          "bullets": [
+            "208p = £2.08 not £2.8.",
+            "60p = £0.60."
+          ],
+          "note": "Check by reading aloud."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "£5.30 = ?",
+            "options": [
+              "530p",
+              "53p",
+              "5,300p"
+            ],
+            "answer": 0,
+            "why": "5.30 × 100 = 530."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "£7.15 in pence?",
+          "a": "715p",
+          "mins": 2,
+          "model": "Teacher: × 100: 715p."
+        },
+        {
+          "q": "365p in pounds?",
+          "a": "£3.65",
+          "mins": 2
+        },
+        {
+          "q": "£0.09 in pence?",
+          "a": "9p",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert to pence: £4.70; £12.06; £0.85",
+          "a": "470p; 1,206p; 85p",
+          "mins": 4,
+          "model": "Teacher: £4.70 × 100 = 470p."
+        },
+        {
+          "q": "Extend: Convert to pounds: 905p; 2,030p; 99p",
+          "a": "£9.05; £20.30; £0.99",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Ali has 640p and Sana has £6.04. Who has more? By how much?",
+          "a": "Ali, by 36p",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "402p = ? A) £4.02 B) £4.20 C) £40.2",
+          "a": "A) £4.02",
+          "mins": 2,
+          "options": [
+            "£4.02",
+            "£4.20",
+            "£40.2"
+          ]
+        },
+        {
+          "q": "Big question: how many pence is £12.50?",
+          "a": "1,250p",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (12s); count coins in a jar with an adult and write the total in pence and pounds.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many 20p coins make £12.40? (62)",
+      "resources": [
+        "White Rose Maths Year 4, Money block: converting pounds and pence (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 72 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 73,
+      "title": "Compare and order amounts of money",
+      "duration": 45,
+      "bigQuestion": "How do we find the best value?",
+      "objectives": [
+        "To understand how to compare and order amounts of money in pounds and pence"
+      ],
+      "successCriteria": [
+        "All: compare two amounts",
+        "Most: order four amounts in mixed units",
+        "Some: explain which is cheaper and by how much"
+      ],
+      "crossCurricular": "PSHE: being a careful shopper",
+      "smsc": "Moral: avoiding waste (israf) with money",
+      "keywords": [
+        {
+          "term": "cheaper",
+          "def": "costs less"
+        },
+        {
+          "term": "more expensive",
+          "def": "costs more"
+        },
+        {
+          "term": "ascending",
+          "def": "smallest first"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Shop A sells a pen for £1.09. Shop B sells the same pen for 119p. Which is cheaper?",
+        "a": "Shop A: £1.09 = 109p."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "price tag",
+          "alt": "Price labels",
+          "for": "hook"
+        },
+        {
+          "find": "fruit market prices",
+          "alt": "Market prices (no people)",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "£3.08 = ?p",
+          "a": "308p",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 1.9 _ 1.09",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 11 = ?",
+          "a": "121",
+          "mins": 1
+        },
+        {
+          "q": "750p = £?",
+          "a": "£7.50",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same units first",
+          "bullets": [
+            "£3.05 and 350p.",
+            "305p < 350p."
+          ],
+          "note": "Convert, then compare."
+        },
+        {
+          "heading": "Order",
+          "model": {
+            "problem": "£1.99, £1.09, £1.90, 119p",
+            "steps": [
+              "In pence: 199, 109, 190, 119",
+              "109 < 119 < 190 < 199"
+            ],
+            "answer": "£1.09, 119p, £1.90, £1.99"
+          }
+        },
+        {
+          "heading": "Price chart",
+          "bullets": [
+            "Same rice bag, 4 shops."
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Price of 1 kg rice (£, example data)",
+            "labels": [
+              "Shop A",
+              "Shop B",
+              "Shop C",
+              "Shop D"
+            ],
+            "values": [
+              1.85,
+              2.1,
+              1.79,
+              2.05
+            ],
+            "unit": "£"
+          },
+          "note": "Read the chart."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Cheapest?",
+            "options": [
+              "£2.09",
+              "£2.90",
+              "290p"
+            ],
+            "answer": 0,
+            "why": "£2.09 = 209p; the others are 290p."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: £4.50 _ 405p",
+          "a": ">",
+          "mins": 2,
+          "model": "Teacher: £4.50 = 450p; 450 > 405."
+        },
+        {
+          "q": "Cheapest shop in the chart?",
+          "a": "Shop C (£1.79)",
+          "mins": 2
+        },
+        {
+          "q": "Which pairs are equal: £3.30, 303p, £3.03, 330p?",
+          "a": "303p = £3.03; 330p = £3.30",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Order ascending: £6.50, 605p, £6.05, 650p, £5.60",
+          "a": "£5.60, 605p and £6.05 (equal), £6.50 and 650p (equal)",
+          "mins": 4,
+          "model": "Teacher: change all to pence first."
+        },
+        {
+          "q": "Extend: How much cheaper is Shop C than Shop B?",
+          "a": "31p (£2.10 - £1.79)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write 3 amounts between £2.45 and £2.50.",
+          "a": "For example £2.46, £2.47, £2.48",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "More: A) £8.08 B) 880p",
+          "a": "B) 880p",
+          "mins": 2,
+          "options": [
+            "£8.08",
+            "880p"
+          ]
+        },
+        {
+          "q": "Big question: how do we find the best value?",
+          "a": "Change to the same units, compare, and check the item is the same",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (11s); compare the price of one item in 2 leaflets or websites with an adult.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: which is better value: 2 kg for £3.40 or 1 kg for £1.65? (2 kg works out at £1.70 a kg, so the 1 kg bag is cheaper per kg)",
+      "resources": [
+        "White Rose Maths Year 4, Money block: comparing amounts of money (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Shopping leaflet or printed price list",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 73 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 74,
+      "title": "Estimate with money",
+      "duration": 45,
+      "bigQuestion": "Do I have enough money? How can I tell quickly?",
+      "objectives": [
+        "To understand how to estimate totals and change by rounding amounts of money"
+      ],
+      "successCriteria": [
+        "All: round amounts to the nearest pound",
+        "Most: estimate a total",
+        "Some: decide if an answer is sensible"
+      ],
+      "crossCurricular": "PSHE: budgeting",
+      "smsc": "Moral: planning spending wisely",
+      "keywords": [
+        {
+          "term": "estimate",
+          "def": "a close, quick answer"
+        },
+        {
+          "term": "round",
+          "def": "find the nearest pound"
+        },
+        {
+          "term": "about (≈)",
+          "def": "nearly equal"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have £10. Your basket: £2.85, £4.10 and £1.95. Do you have enough? Decide in 10 seconds.",
+        "a": "About £3 + £4 + £2 = £9: yes."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "shopping basket empty",
+          "alt": "An empty shopping basket",
+          "for": "hook"
+        },
+        {
+          "find": "british ten pound note",
+          "alt": "A £10 note",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Round £6.70 to the nearest £.",
+          "a": "£7",
+          "mins": 1
+        },
+        {
+          "q": "Cheaper: £2.40 or 204p?",
+          "a": "204p",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 6 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "3 + 4 + 2 = ?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Round each price",
+          "bullets": [
+            "£2.85 ≈ £3",
+            "£4.10 ≈ £4",
+            "£1.95 ≈ £2"
+          ],
+          "numberline": {
+            "min": 2,
+            "max": 3,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 2.85,
+                "label": "£2.85"
+              },
+              {
+                "at": 2.5,
+                "label": "half way"
+              }
+            ]
+          },
+          "note": "Use the pence: 50p or more rounds up."
+        },
+        {
+          "heading": "Estimate the total",
+          "model": {
+            "problem": "£2.85 + £4.10 + £1.95",
+            "steps": [
+              "≈ £3 + £4 + £2",
+              "≈ £9"
+            ],
+            "answer": "About £9 (exact £8.90)"
+          }
+        },
+        {
+          "heading": "Is it sensible?",
+          "bullets": [
+            "Exact answer near the estimate?",
+            "£8.90 is near £9 ✓"
+          ],
+          "note": "Use estimates to check."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Estimate £5.10 + £2.90",
+            "options": [
+              "£8",
+              "£7",
+              "£9"
+            ],
+            "answer": 0,
+            "why": "£5 + £3 = £8."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Estimate £3.95 + £1.20",
+          "a": "£4 + £1 = £5",
+          "mins": 2,
+          "model": "Teacher: £3.95 rounds to £4, £1.20 to £1."
+        },
+        {
+          "q": "Estimate change from £10 for £6.80",
+          "a": "About £3",
+          "mins": 2
+        },
+        {
+          "q": "Exact: £3.95 + £1.20",
+          "a": "£5.15",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Estimate, then calculate: £4.60 + £2.35; £7.15 - £3.90",
+          "a": "£7, £6.95; £3, £3.25",
+          "mins": 4,
+          "model": "Teacher: £4.60 ≈ £5, £2.35 ≈ £2: about £7."
+        },
+        {
+          "q": "Extend: Zainab estimates £12.49 + £3.49 ≈ £15. Is that a good estimate? Exact?",
+          "a": "Yes: £12 + £3 = £15; exact £15.98, so a little under",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: You have £20. Estimate if you can buy 3 items at £6.75 each.",
+          "a": "No: about 3 × £7 = £21 (exact £20.25)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "£3.49 ≈ ? A) £3 B) £4 C) £3.50",
+          "a": "A) £3",
+          "mins": 2,
+          "options": [
+            "£3",
+            "£4",
+            "£3.50"
+          ]
+        },
+        {
+          "q": "Big question: how can I tell quickly if I have enough?",
+          "a": "Round each price to the nearest pound and add",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (mixed); estimate a family shopping total before checking the receipt.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: when might rounding every price down cause a problem? (You may not have enough money)",
+      "resources": [
+        "White Rose Maths Year 4, Money block: estimating with money (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Shopping leaflet or printed price list",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 74 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 75,
+      "title": "Calculate with money: four operations",
+      "duration": 45,
+      "bigQuestion": "When do we multiply or divide with money?",
+      "objectives": [
+        "To understand how to use all four operations to solve money problems"
+      ],
+      "successCriteria": [
+        "All: add and subtract money with exchange",
+        "Most: multiply and divide money by a 1-digit number",
+        "Some: solve a two-step money problem"
+      ],
+      "crossCurricular": "PSHE: sharing costs fairly",
+      "smsc": "Moral: fairness when sharing costs",
+      "keywords": [
+        {
+          "term": "total",
+          "def": "add"
+        },
+        {
+          "term": "each",
+          "def": "often means multiply or divide"
+        },
+        {
+          "term": "change",
+          "def": "money paid minus the cost"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "4 friends share a £10 pizza equally. How much does each pay?",
+        "a": "£2.50."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pizza whole",
+          "alt": "A whole pizza",
+          "for": "hook"
+        },
+        {
+          "find": "shop receipt",
+          "alt": "A shop receipt",
+          "for": "teach:4"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Estimate £4.85 + £3.20",
+          "a": "About £8",
+          "mins": 1
+        },
+        {
+          "q": "3 × 125 = ?",
+          "a": "375",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 12 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "1,000 ÷ 4 = ?",
+          "a": "250",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Add and subtract",
+          "bullets": [
+            "£3.60 + £4.75 = £8.35",
+            "£6.40 - £2.75 = £3.65"
+          ],
+          "note": "Use pence or columns, line up the points."
+        },
+        {
+          "heading": "Multiply",
+          "model": {
+            "problem": "3 bottles at £1.25",
+            "steps": [
+              "£1.25 = 125p",
+              "3 × 125p = 375p"
+            ],
+            "answer": "£3.75"
+          }
+        },
+        {
+          "heading": "Divide",
+          "model": {
+            "problem": "£10 shared by 4",
+            "steps": [
+              "£10 = 1,000p",
+              "1,000 ÷ 4 = 250p"
+            ],
+            "answer": "£2.50"
+          }
+        },
+        {
+          "heading": "Two steps",
+          "bullets": [
+            "3 pens at 85p, change from £5.",
+            "3 × 85p = £2.55",
+            "£5 - £2.55 = £2.45"
+          ],
+          "note": "Bar model and receipt."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2 books at £4.50. Total?",
+            "options": [
+              "£9.00",
+              "£8.10",
+              "£6.50"
+            ],
+            "answer": 0,
+            "why": "2 × 450p = 900p = £9."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "£2.45 + £3.80",
+          "a": "£6.25",
+          "mins": 2,
+          "model": "Teacher: 245 + 380 = 625p = £6.25."
+        },
+        {
+          "q": "4 × £1.20",
+          "a": "£4.80",
+          "mins": 2
+        },
+        {
+          "q": "£6 ÷ 4",
+          "a": "£1.50",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: £8.25 - £3.50; 5 × 60p; £9 ÷ 3",
+          "a": "£4.75; £3.00; £3.00",
+          "mins": 4,
+          "model": "Teacher: 825 - 350 = 475p = £4.75."
+        },
+        {
+          "q": "Extend: A notebook is £1.35. Hafsa buys 4. Change from £10?",
+          "a": "£4.60 (4 × £1.35 = £5.40)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 3 friends share the cost of a £7.50 gift. How much each? Check by multiplying.",
+          "a": "£2.50; 3 × £2.50 = £7.50",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "£5 ÷ 2 = ? A) £2.50 B) £2.05 C) £3",
+          "a": "A) £2.50",
+          "mins": 2,
+          "options": [
+            "£2.50",
+            "£2.05",
+            "£3"
+          ]
+        },
+        {
+          "q": "Big question: when do we multiply or divide?",
+          "a": "Multiply for many of the same price; divide when sharing a cost equally",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (12s); work out the cost of 3 of something your family buys each week.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 6 cups cost £8.70. What does 1 cost? (£1.45)",
+      "resources": [
+        "White Rose Maths Year 4, Money block: four operations with money (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Household items with price labels (pretend shop)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 75 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 76,
+      "title": "Hours, minutes and seconds",
+      "duration": 45,
+      "bigQuestion": "How many seconds are in an hour?",
+      "objectives": [
+        "To understand how to convert between hours, minutes and seconds"
+      ],
+      "successCriteria": [
+        "All: say 60 seconds in a minute and 60 minutes in an hour",
+        "Most: convert hours to minutes and minutes to seconds",
+        "Some: convert back using division and remainders"
+      ],
+      "crossCurricular": "Science: timing a fair test",
+      "smsc": "Moral: using time well",
+      "keywords": [
+        {
+          "term": "second",
+          "def": "a very short unit of time"
+        },
+        {
+          "term": "minute",
+          "def": "60 seconds"
+        },
+        {
+          "term": "hour",
+          "def": "60 minutes"
+        },
+        {
+          "term": "convert",
+          "def": "change units"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How many seconds are in one hour? Estimate first.",
+        "a": "3,600."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "hourglass sand timer",
+          "alt": "A sand timer",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "4 × £1.25?",
+          "a": "£5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 60 = ?",
+          "a": "360",
+          "mins": 1
+        },
+        {
+          "q": "Minutes in 2 hours?",
+          "a": "120",
+          "mins": 1
+        },
+        {
+          "q": "150 - 120 = ?",
+          "a": "30",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The facts",
+          "bullets": [
+            "60 seconds = 1 minute.",
+            "60 minutes = 1 hour.",
+            "60 × 60 = 3,600 seconds."
+          ],
+          "table": {
+            "head": [
+              "Hours",
+              "Minutes",
+              "Seconds"
+            ],
+            "rows": [
+              [
+                "1",
+                "60",
+                "3,600"
+              ],
+              [
+                "2",
+                "120",
+                "7,200"
+              ]
+            ]
+          },
+          "note": "Say together."
+        },
+        {
+          "heading": "Hours to minutes",
+          "model": {
+            "problem": "2 hours 15 minutes",
+            "steps": [
+              "2 × 60 = 120",
+              "120 + 15 = 135"
+            ],
+            "answer": "135 minutes"
+          }
+        },
+        {
+          "heading": "Minutes to hours",
+          "model": {
+            "problem": "200 minutes",
+            "steps": [
+              "3 × 60 = 180, so 3 whole hours",
+              "200 - 180 = 20 minutes left"
+            ],
+            "answer": "3 hours 20 minutes"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "150 seconds = ?",
+            "options": [
+              "2 minutes 30 seconds",
+              "1 minute 50 seconds",
+              "15 minutes"
+            ],
+            "answer": 0,
+            "why": "120 s is 2 minutes, 30 s left."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3 minutes in seconds?",
+          "a": "180",
+          "mins": 2,
+          "model": "Teacher: 3 × 60 = 180 seconds."
+        },
+        {
+          "q": "1 hour 40 minutes in minutes?",
+          "a": "100",
+          "mins": 2
+        },
+        {
+          "q": "95 seconds in minutes and seconds?",
+          "a": "1 minute 35 seconds",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 5 minutes to seconds; 4 hours to minutes; 130 minutes to hours and minutes",
+          "a": "300; 240; 2 hours 10 minutes",
+          "mins": 4,
+          "model": "Teacher: 5 × 60 = 300 seconds."
+        },
+        {
+          "q": "Extend: A Teams lesson is 45 minutes. How many seconds is that?",
+          "a": "2,700",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which is longer: 3 hours or 190 minutes? By how much?",
+          "a": "190 minutes, by 10 minutes",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 hour = ? A) 3,600 seconds B) 600 seconds C) 360 seconds",
+          "a": "A) 3,600 seconds",
+          "mins": 2,
+          "options": [
+            "3,600 seconds",
+            "600 seconds",
+            "360 seconds"
+          ]
+        },
+        {
+          "q": "Big question: how many seconds in an hour?",
+          "a": "60 × 60 = 3,600",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (6s); time 3 jobs at home in seconds and convert to minutes and seconds.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many minutes in a day? (1,440)",
+      "resources": [
+        "White Rose Maths Year 4, Time block: small step 'Hours, minutes and seconds' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Stopwatch or phone timer (with an adult)",
+        "Paper plate clock with minute marks (printable template)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 76 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 77,
+      "title": "Convert between analogue and digital times",
+      "duration": 45,
+      "bigQuestion": "Is 8:35 the same as 25 to 9?",
+      "objectives": [
+        "To understand how to convert between analogue and 12-hour digital times"
+      ],
+      "successCriteria": [
+        "All: read an analogue clock to the minute",
+        "Most: write it as a digital time",
+        "Some: change a digital time into words"
+      ],
+      "crossCurricular": "Science: reading a stopwatch and a clock",
+      "smsc": "Spiritual: checking prayer times on any clock",
+      "keywords": [
+        {
+          "term": "analogue",
+          "def": "a clock with hands"
+        },
+        {
+          "term": "digital",
+          "def": "a clock with numbers only"
+        },
+        {
+          "term": "minutes past",
+          "def": "after the hour"
+        },
+        {
+          "term": "minutes to",
+          "def": "before the next hour"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A digital clock shows 8:35. What would the hands on an analogue clock show?",
+        "a": "Minute hand on 7, hour hand between 8 and 9: 25 to 9."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "An analogue clock",
+          "for": "teach:1"
+        },
+        {
+          "find": "digital alarm clock",
+          "alt": "A digital clock",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "200 minutes = ?",
+          "a": "3 hours 20 minutes",
+          "mins": 1
+        },
+        {
+          "q": "60 - 35 = ?",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 9 = ?",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "Minute hand on 4 = ? minutes",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Analogue to digital",
+          "bullets": [
+            "20 past 3 → 3:20",
+            "Minutes after the hour."
+          ],
+          "note": "Read hours, then minutes."
+        },
+        {
+          "heading": "Minutes to",
+          "model": {
+            "problem": "14 minutes to 11",
+            "steps": [
+              "60 - 14 = 46",
+              "Hour is still 10"
+            ],
+            "answer": "10:46"
+          }
+        },
+        {
+          "heading": "Digital to words",
+          "model": {
+            "problem": "6:52",
+            "steps": [
+              "60 - 52 = 8",
+              "Next hour is 7"
+            ],
+            "answer": "8 minutes to 7"
+          }
+        },
+        {
+          "heading": "Zero place holder",
+          "bullets": [
+            "5 past 4 → 4:05",
+            "not 4:5"
+          ],
+          "table": {
+            "head": [
+              "Words",
+              "Digital"
+            ],
+            "rows": [
+              [
+                "5 past 4",
+                "4:05"
+              ],
+              [
+                "quarter to 2",
+                "1:45"
+              ],
+              [
+                "25 to 9",
+                "8:35"
+              ]
+            ]
+          },
+          "note": "Two digits for minutes."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Quarter past 7 in digital?",
+            "options": [
+              "7:15",
+              "7:25",
+              "7:45"
+            ],
+            "answer": 0,
+            "why": "Quarter past is 15 minutes."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "10 to 6 in digital?",
+          "a": "5:50",
+          "mins": 2,
+          "model": "Teacher: 60 - 10 = 50; the hour is still 5: 5:50."
+        },
+        {
+          "q": "9:20 in words?",
+          "a": "20 past 9",
+          "mins": 2
+        },
+        {
+          "q": "11:38 in words?",
+          "a": "22 minutes to 12",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write in digital: 25 past 1; 7 minutes to 4; half past 12",
+          "a": "1:25; 3:53; 12:30",
+          "mins": 4,
+          "model": "Teacher: 25 past 1 is 1:25."
+        },
+        {
+          "q": "Extend: Write in words: 2:05; 4:44; 10:59",
+          "a": "5 past 2; 16 minutes to 5; 1 minute to 11",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw hands for 3:47. Where is the hour hand?",
+          "a": "Minute hand 2 marks after 9; hour hand nearly at 4",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "8:35 is... A) 25 to 9 B) 35 to 8 C) 25 to 8",
+          "a": "A) 25 to 9",
+          "mins": 2,
+          "options": [
+            "25 to 9",
+            "35 to 8",
+            "25 to 8"
+          ]
+        },
+        {
+          "q": "Big question: is 8:35 the same as 25 to 9?",
+          "a": "Yes: 35 minutes past 8 leaves 25 minutes to 9",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (9s); read 3 analogue clocks at home and write the digital times.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: write 13 minutes to 1 in digital (12:47).",
+      "resources": [
+        "White Rose Maths Year 4, Time block: small step 'Convert between analogue and digital times' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with minute marks (printable template)",
+        "Printed clock faces to draw hands on",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 77 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 78,
+      "title": "a.m. and p.m. on 12-hour clocks",
+      "duration": 45,
+      "bigQuestion": "How do we know if 6:00 is morning or evening?",
+      "objectives": [
+        "To understand how to use a.m. and p.m. with 12-hour digital times"
+      ],
+      "successCriteria": [
+        "All: say what a.m. and p.m. mean",
+        "Most: label times as a.m. or p.m.",
+        "Some: order a day's events using a.m. and p.m."
+      ],
+      "crossCurricular": "Science: day and night as the Earth turns",
+      "smsc": "Spiritual: the five daily prayers across the day",
+      "keywords": [
+        {
+          "term": "a.m.",
+          "def": "from midnight to midday"
+        },
+        {
+          "term": "p.m.",
+          "def": "from midday to midnight"
+        },
+        {
+          "term": "midday",
+          "def": "12 noon"
+        },
+        {
+          "term": "midnight",
+          "def": "12 at night"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your alarm says 6:00. Is it time to wake up or time for dinner? What would help?",
+        "a": "We need a.m. or p.m."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sunrise over fields",
+          "alt": "A sunrise",
+          "for": "hook"
+        },
+        {
+          "find": "night sky with crescent moon",
+          "alt": "The night sky",
+          "for": "teach:1"
+        }
+      ],
+      "islamicLink": {
+        "text": "Allah decreed prayer at set times (an-Nisa 4:103). Fajr is in the a.m., before sunrise; Dhuhr is just after midday; Asr, Maghrib and Isha are p.m. times.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "7 minutes to 4 in digital?",
+          "a": "3:53",
+          "mins": 1
+        },
+        {
+          "q": "Hours in a day?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 6 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "Half of 24?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two halves of the day",
+          "bullets": [
+            "a.m.: midnight to midday.",
+            "p.m.: midday to midnight."
+          ],
+          "timeline": [
+            {
+              "label": "12:00 a.m.",
+              "text": "Midnight"
+            },
+            {
+              "label": "4:30 a.m.",
+              "text": "Fajr (example)"
+            },
+            {
+              "label": "12:00 p.m.",
+              "text": "Midday"
+            },
+            {
+              "label": "1:15 p.m.",
+              "text": "Dhuhr (example)"
+            },
+            {
+              "label": "9:30 p.m.",
+              "text": "Maghrib (example)"
+            }
+          ],
+          "note": "Show a day timeline."
+        },
+        {
+          "heading": "Midday and midnight",
+          "bullets": [
+            "12:00 p.m. is midday.",
+            "12:00 a.m. is midnight."
+          ],
+          "note": "These two confuse adults too."
+        },
+        {
+          "heading": "Label it",
+          "model": {
+            "problem": "Lunch at 12:30",
+            "steps": [
+              "After midday",
+              "So p.m."
+            ],
+            "answer": "12:30 p.m."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Breakfast at 7:30 is...",
+            "options": [
+              "7:30 a.m.",
+              "7:30 p.m.",
+              "17:30"
+            ],
+            "answer": 0,
+            "why": "Breakfast is in the morning: a.m."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Bedtime 8:15: a.m. or p.m.?",
+          "a": "p.m.",
+          "mins": 2,
+          "model": "Teacher: bedtime is in the evening, after midday: p.m."
+        },
+        {
+          "q": "School lesson at 9:00: a.m. or p.m.?",
+          "a": "a.m.",
+          "mins": 2
+        },
+        {
+          "q": "Is 11:59 a.m. before or after midday?",
+          "a": "Before (1 minute before)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Label a.m. or p.m.: wake up 6:45; Asr 5:30; Isha 10:45",
+          "a": "a.m.; p.m.; p.m.",
+          "mins": 4,
+          "model": "Teacher: waking is morning: a.m."
+        },
+        {
+          "q": "Extend: Order: 3:10 p.m., 9:40 a.m., 12:05 p.m., 7:00 a.m.",
+          "a": "7:00 a.m., 9:40 a.m., 12:05 p.m., 3:10 p.m.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How long from 10:30 a.m. to 1:15 p.m.?",
+          "a": "2 hours 45 minutes",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Midday is... A) 12:00 p.m. B) 12:00 a.m.",
+          "a": "A) 12:00 p.m.",
+          "mins": 2,
+          "options": [
+            "12:00 p.m.",
+            "12:00 a.m."
+          ]
+        },
+        {
+          "q": "Big question: how do we know morning or evening?",
+          "a": "a.m. is before midday, p.m. is after midday",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (12s); write 5 things you do tomorrow with a.m. or p.m. times.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how long from 9:20 p.m. to 6:05 a.m.? (8 hours 45 minutes)",
+      "resources": [
+        "White Rose Maths Year 4, Time block: 12-hour analogue and digital times with a.m. and p.m. (as in the Year 4 pack) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with minute marks (printable template)",
+        "A masjid prayer timetable (printed or on screen)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 78 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 79,
+      "title": "Durations in hours and minutes",
+      "duration": 45,
+      "bigQuestion": "How long is it from 10:45 a.m. to 1:20 p.m.?",
+      "objectives": [
+        "To understand how to find durations that cross the hour and midday"
+      ],
+      "successCriteria": [
+        "All: find a duration within an hour",
+        "Most: find a duration across hours using a number line",
+        "Some: find a start or end time"
+      ],
+      "crossCurricular": "Geography: planning a journey",
+      "smsc": "Moral: punctuality and keeping promises",
+      "keywords": [
+        {
+          "term": "duration",
+          "def": "how long something lasts"
+        },
+        {
+          "term": "start time",
+          "def": "when it begins"
+        },
+        {
+          "term": "end time",
+          "def": "when it finishes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A trip to grandma starts at 10:45 a.m. and ends at 1:20 p.m. How long is the journey?",
+        "a": "2 hours 35 minutes."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "road map",
+          "alt": "A road map",
+          "for": "hook"
+        },
+        {
+          "find": "analogue wall clock",
+          "alt": "A clock",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Bedtime 8:30 is a.m. or p.m.?",
+          "a": "p.m.",
+          "mins": 1
+        },
+        {
+          "q": "60 - 45 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 7 = ?",
+          "a": "77",
+          "mins": 1
+        },
+        {
+          "q": "135 minutes = ?",
+          "a": "2 hours 15 minutes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count on in jumps",
+          "model": {
+            "problem": "10:45 a.m. to 1:20 p.m.",
+            "steps": [
+              "10:45 to 11:00: 15 min",
+              "11:00 to 1:00: 2 hours",
+              "1:00 to 1:20: 20 min",
+              "Total: 2 h 35 min"
+            ],
+            "answer": "2 hours 35 minutes"
+          }
+        },
+        {
+          "heading": "Number line",
+          "bullets": [
+            "Jump to the next hour first.",
+            "Then whole hours.",
+            "Then the minutes left."
+          ],
+          "numberline": {
+            "min": 10,
+            "max": 14,
+            "step": 0.25,
+            "marks": [
+              {
+                "at": 10.75,
+                "label": "10:45"
+              },
+              {
+                "at": 11,
+                "label": "11:00"
+              },
+              {
+                "at": 13,
+                "label": "1:00"
+              },
+              {
+                "at": 13.33,
+                "label": "1:20"
+              }
+            ]
+          },
+          "note": "Draw the jumps."
+        },
+        {
+          "heading": "End time",
+          "model": {
+            "problem": "Starts 2:35 p.m., lasts 1 h 40 min",
+            "steps": [
+              "2:35 + 1 h = 3:35",
+              "3:35 + 25 min = 4:00",
+              "4:00 + 15 min = 4:15"
+            ],
+            "answer": "4:15 p.m."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "9:40 a.m. to 11:10 a.m.?",
+            "options": [
+              "1 hour 30 minutes",
+              "1 hour 70 minutes",
+              "2 hours 30 minutes"
+            ],
+            "answer": 0,
+            "why": "20 min to 10:00, 1 hour to 11:00, 10 min: 1 h 30 min."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "8:50 to 9:35?",
+          "a": "45 minutes",
+          "mins": 2,
+          "model": "Teacher: 10 to 9:00, then 35: 45 minutes."
+        },
+        {
+          "q": "11:30 a.m. to 2:00 p.m.?",
+          "a": "2 hours 30 minutes",
+          "mins": 2
+        },
+        {
+          "q": "Starts 4:20 p.m., lasts 55 minutes. Ends?",
+          "a": "5:15 p.m.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Durations: 7:15 to 8:50; 11:45 a.m. to 1:05 p.m.; 3:30 p.m. to 6:10 p.m.",
+          "a": "1 h 35 min; 1 h 20 min; 2 h 40 min",
+          "mins": 4,
+          "model": "Teacher: 7:15 to 8:15 is 1 hour, then 35 min."
+        },
+        {
+          "q": "Extend: A cake needs 1 hour 25 minutes. It goes in at 4:50 p.m. When is it ready?",
+          "a": "6:15 p.m.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A film ends at 7:05 p.m. and lasts 1 h 50 min. When did it start?",
+          "a": "5:15 p.m.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1:15 p.m. to 2:45 p.m.? A) 1 h 30 min B) 1 h 15 min C) 2 h 30 min",
+          "a": "A) 1 h 30 min",
+          "mins": 2,
+          "options": [
+            "1 h 30 min",
+            "1 h 15 min",
+            "2 h 30 min"
+          ]
+        },
+        {
+          "q": "Big question: how long from 10:45 a.m. to 1:20 p.m.?",
+          "a": "2 hours 35 minutes",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (11s); time a family journey or meal and write the start, end and duration.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how long from 9:50 p.m. to 6:20 a.m.? (8 h 30 min)",
+      "resources": [
+        "White Rose Maths Year 4, Time block: solving problems with 12-hour time (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with minute marks (printable template)",
+        "Printed number lines for time",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 79 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 80,
+      "title": "Convert to the 24-hour clock",
+      "duration": 45,
+      "bigQuestion": "Why do trains and planes use the 24-hour clock?",
+      "objectives": [
+        "To understand how to convert 12-hour times to 24-hour times"
+      ],
+      "successCriteria": [
+        "All: write a.m. times in 24-hour form",
+        "Most: add 12 to p.m. hours",
+        "Some: convert midday and midnight correctly"
+      ],
+      "crossCurricular": "Geography: reading travel timetables",
+      "smsc": "Spiritual: prayer timetables use 24-hour times",
+      "keywords": [
+        {
+          "term": "24-hour clock",
+          "def": "hours from 00 to 23"
+        },
+        {
+          "term": "four digits",
+          "def": "24-hour times use 4 digits, like 09:05"
+        },
+        {
+          "term": "midnight",
+          "def": "00:00"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A train leaves at 7:30. Is it morning or evening? How could a timetable stop the mix-up?",
+        "a": "Use 24-hour time: 07:30 or 19:30."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "railway departure board",
+          "alt": "A departure board",
+          "for": "hook"
+        },
+        {
+          "find": "digital clock 24 hour",
+          "alt": "A 24-hour digital clock",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2:35 p.m. + 1 h 40 min?",
+          "a": "4:15 p.m.",
+          "mins": 1
+        },
+        {
+          "q": "3 + 12 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 9 = ?",
+          "a": "81",
+          "mins": 1
+        },
+        {
+          "q": "Midday is 12:00 a.m. or p.m.?",
+          "a": "p.m.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "a.m. times",
+          "bullets": [
+            "Keep the hour, 4 digits.",
+            "9:05 a.m. = 09:05"
+          ],
+          "note": "Add a zero in front."
+        },
+        {
+          "heading": "p.m. times",
+          "bullets": [
+            "Add 12 to the hour.",
+            "3:45 p.m. = 15:45",
+            "11:20 p.m. = 23:20"
+          ],
+          "table": {
+            "head": [
+              "12-hour",
+              "24-hour"
+            ],
+            "rows": [
+              [
+                "9:05 a.m.",
+                "09:05"
+              ],
+              [
+                "12:30 p.m.",
+                "12:30"
+              ],
+              [
+                "3:45 p.m.",
+                "15:45"
+              ],
+              [
+                "11:20 p.m.",
+                "23:20"
+              ],
+              [
+                "12:10 a.m.",
+                "00:10"
+              ]
+            ]
+          },
+          "note": "Table."
+        },
+        {
+          "heading": "Midday and midnight",
+          "bullets": [
+            "12:30 p.m. stays 12:30.",
+            "12:10 a.m. becomes 00:10."
+          ],
+          "note": "The two tricky ones."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "6:40 p.m. in 24-hour?",
+            "options": [
+              "18:40",
+              "06:40",
+              "16:40"
+            ],
+            "answer": 0,
+            "why": "6 + 12 = 18."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4:15 p.m.?",
+          "a": "16:15",
+          "mins": 2,
+          "model": "Teacher: p.m., so 4 + 12 = 16: 16:15."
+        },
+        {
+          "q": "8:50 a.m.?",
+          "a": "08:50",
+          "mins": 2
+        },
+        {
+          "q": "12:05 a.m.?",
+          "a": "00:05",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 7:25 a.m.; 2:00 p.m.; 10:55 p.m.; 12:45 p.m.",
+          "a": "07:25; 14:00; 22:55; 12:45",
+          "mins": 4,
+          "model": "Teacher: 7:25 a.m. is 07:25."
+        },
+        {
+          "q": "Extend: Write your school day: lessons at 9:00 a.m., lunch at 12:15 p.m., end at 3:30 p.m.",
+          "a": "09:00; 12:15; 15:30",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why can 24-hour time not use a.m. or p.m.?",
+          "a": "Every hour has its own number, so it is never unclear",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "9:30 p.m. = A) 21:30 B) 09:30 C) 19:30",
+          "a": "A) 21:30",
+          "mins": 2,
+          "options": [
+            "21:30",
+            "09:30",
+            "19:30"
+          ]
+        },
+        {
+          "q": "Big question: why do trains and planes use it?",
+          "a": "No mix-up between morning and evening",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (9s); write today's 5 prayer times from the masjid timetable in 24-hour time.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: convert 11:59 p.m. and 12:01 a.m. (23:59; 00:01).",
+      "resources": [
+        "White Rose Maths Year 4, Time block: small step 'Convert to the 24-hour clock' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with minute marks (printable template)",
+        "A masjid prayer timetable (printed or on screen)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 80 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 81,
+      "title": "Convert from the 24-hour clock; timetables",
+      "duration": 45,
+      "bigQuestion": "How long does the train take?",
+      "objectives": [
+        "To understand how to convert 24-hour times to 12-hour times and read timetables"
+      ],
+      "successCriteria": [
+        "All: take 12 from hours after 12",
+        "Most: write a.m. or p.m. correctly",
+        "Some: find a journey time on a timetable"
+      ],
+      "crossCurricular": "Geography: travel in the UK",
+      "smsc": "Social: being on time for others",
+      "keywords": [
+        {
+          "term": "timetable",
+          "def": "a table of times"
+        },
+        {
+          "term": "depart",
+          "def": "leave"
+        },
+        {
+          "term": "arrive",
+          "def": "get there"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A train departs at 14:35 and arrives at 16:10. How long is the journey?",
+        "a": "1 hour 35 minutes."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "railway timetable",
+          "alt": "A printed timetable",
+          "for": "teach:3"
+        },
+        {
+          "find": "train at a station platform",
+          "alt": "A train at a platform (no people)",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3:45 p.m. in 24-hour?",
+          "a": "15:45",
+          "mins": 1
+        },
+        {
+          "q": "17 - 12 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 8 = ?",
+          "a": "96",
+          "mins": 1
+        },
+        {
+          "q": "00:10 is a.m. or p.m.?",
+          "a": "a.m.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Take away 12",
+          "bullets": [
+            "17:40 → 5:40 p.m.",
+            "13:05 → 1:05 p.m."
+          ],
+          "note": "Hours 13 to 23: subtract 12."
+        },
+        {
+          "heading": "Morning and midnight",
+          "bullets": [
+            "08:20 → 8:20 a.m.",
+            "00:25 → 12:25 a.m."
+          ],
+          "note": "Hour 00 is 12 a.m."
+        },
+        {
+          "heading": "A timetable",
+          "bullets": [
+            "Read across a row."
+          ],
+          "table": {
+            "head": [
+              "Station",
+              "Train 1",
+              "Train 2"
+            ],
+            "rows": [
+              [
+                "Leeds",
+                "14:35",
+                "17:50"
+              ],
+              [
+                "York",
+                "15:05",
+                "18:20"
+              ],
+              [
+                "Hull",
+                "16:10",
+                "19:25"
+              ]
+            ]
+          },
+          "note": "Example timetable."
+        },
+        {
+          "heading": "Journey time",
+          "model": {
+            "problem": "Train 1: Leeds 14:35 to Hull 16:10",
+            "steps": [
+              "14:35 to 15:00: 25 min",
+              "15:00 to 16:00: 1 h",
+              "16:00 to 16:10: 10 min"
+            ],
+            "answer": "1 hour 35 minutes"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "19:25 in 12-hour?",
+            "options": [
+              "7:25 p.m.",
+              "9:25 p.m.",
+              "7:25 a.m."
+            ],
+            "answer": 0,
+            "why": "19 - 12 = 7, and it is p.m."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "21:10 in 12-hour?",
+          "a": "9:10 p.m.",
+          "mins": 2,
+          "model": "Teacher: 21 - 12 = 9, after midday so p.m."
+        },
+        {
+          "q": "Train 2: Leeds to York?",
+          "a": "30 minutes",
+          "mins": 2
+        },
+        {
+          "q": "06:45 in 12-hour?",
+          "a": "6:45 a.m.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 15:20; 00:40; 11:05; 23:55",
+          "a": "3:20 p.m.; 12:40 a.m.; 11:05 a.m.; 11:55 p.m.",
+          "mins": 4,
+          "model": "Teacher: 15 - 12 = 3, so 3:20 p.m."
+        },
+        {
+          "q": "Extend: Train 2: how long from Leeds to Hull?",
+          "a": "1 hour 35 minutes",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: You must be in Hull by 6:30 p.m. Which train do you take? Explain.",
+          "a": "Train 1: it arrives at 16:10 (4:10 p.m.); Train 2 arrives 19:25, too late",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "16:00 = A) 4 p.m. B) 6 p.m. C) 4 a.m.",
+          "a": "A) 4 p.m.",
+          "mins": 2,
+          "options": [
+            "4 p.m.",
+            "6 p.m.",
+            "4 a.m."
+          ]
+        },
+        {
+          "q": "Big question: how long does the train take?",
+          "a": "Count on from depart to arrive: 1 h 35 min for both trains",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (12s); with an adult, find a bus or train timetable online and work out one journey time.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: Train 1 is 25 minutes late at York. When does it reach York? (15:30)",
+      "resources": [
+        "White Rose Maths Year 4, Time block: small step 'Convert from the 24-hour clock' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with minute marks (printable template)",
+        "Printed train timetable extract (free online, example times)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 81 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 82,
+      "title": "Years, months, weeks and days",
+      "duration": 45,
+      "bigQuestion": "How many days old are you?",
+      "objectives": [
+        "To understand how to convert between years, months, weeks and days, including leap years"
+      ],
+      "successCriteria": [
+        "All: say the facts: 7 days, 12 months, 365 or 366 days",
+        "Most: convert weeks to days and days to weeks",
+        "Some: solve a problem with leap years"
+      ],
+      "crossCurricular": "Science: the Earth's orbit of the Sun",
+      "smsc": "Spiritual: the lunar Islamic calendar and Ramadan",
+      "keywords": [
+        {
+          "term": "leap year",
+          "def": "366 days; February has 29"
+        },
+        {
+          "term": "decade",
+          "def": "10 years"
+        },
+        {
+          "term": "century",
+          "def": "100 years"
+        },
+        {
+          "term": "convert",
+          "def": "change units"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You are 9 years old. Roughly how many days have you been alive?",
+        "a": "About 9 × 365 = 3,285, plus 2 or 3 leap days."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wall calendar",
+          "alt": "A wall calendar",
+          "for": "hook"
+        },
+        {
+          "find": "crescent moon",
+          "alt": "A crescent moon",
+          "for": "teach:4"
+        }
+      ],
+      "islamicLink": {
+        "text": "Allah made the sun and the moon so that we know the number of years and how to count time (Yunus 10:5). The Islamic year has 12 lunar months (at-Tawbah 9:36) of 29 or 30 days, about 354 days.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "16:45 = ? p.m.",
+          "a": "4:45 p.m.",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 12 = ?",
+          "a": "84",
+          "mins": 1
+        },
+        {
+          "q": "Days in a week?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "4 × 365 = ?",
+          "a": "1,460",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The facts",
+          "bullets": [
+            "1 week = 7 days.",
+            "1 year = 12 months = 52 weeks and 1 day.",
+            "Leap year: 366 days."
+          ],
+          "table": {
+            "head": [
+              "Unit",
+              "Equals"
+            ],
+            "rows": [
+              [
+                "1 week",
+                "7 days"
+              ],
+              [
+                "1 year",
+                "365 days (366 leap)"
+              ],
+              [
+                "1 decade",
+                "10 years"
+              ],
+              [
+                "1 century",
+                "100 years"
+              ]
+            ]
+          },
+          "note": "Say together."
+        },
+        {
+          "heading": "Weeks and days",
+          "model": {
+            "problem": "100 days",
+            "steps": [
+              "14 × 7 = 98, so 14 whole weeks",
+              "100 - 98 = 2 days left"
+            ],
+            "answer": "14 weeks and 2 days"
+          }
+        },
+        {
+          "heading": "Leap years",
+          "bullets": [
+            "Usually every 4 years.",
+            "2024, 2028, 2032."
+          ],
+          "note": "Divisible by 4 (with a few century exceptions)."
+        },
+        {
+          "heading": "Lunar months",
+          "bullets": [
+            "Islamic months: 29 or 30 days.",
+            "Ramadan is about 11 days earlier each year."
+          ],
+          "note": "Link to the moon."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many months in 4 years?",
+            "options": [
+              "48",
+              "40",
+              "52"
+            ],
+            "answer": 0,
+            "why": "4 × 12 = 48."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "5 weeks = ? days",
+          "a": "35",
+          "mins": 2,
+          "model": "Teacher: 5 × 7 = 35 days."
+        },
+        {
+          "q": "30 days = ? weeks and days",
+          "a": "4 weeks 2 days",
+          "mins": 2
+        },
+        {
+          "q": "Is 2030 a leap year?",
+          "a": "No (2028 and 2032 are)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 9 weeks to days; 60 months to years; 3 decades to years",
+          "a": "63; 5; 30",
+          "mins": 4,
+          "model": "Teacher: 9 × 7 = 63."
+        },
+        {
+          "q": "Extend: How many days in the year 2028? In February 2028?",
+          "a": "366; 29",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: From 1 March to 31 May, how many days?",
+          "a": "92 (31 + 30 + 31)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A leap year has... A) 366 days B) 356 days C) 365 days",
+          "a": "A) 366 days",
+          "mins": 2,
+          "options": [
+            "366 days",
+            "356 days",
+            "365 days"
+          ]
+        },
+        {
+          "q": "Big question: how many days old are you?",
+          "a": "Years × 365 plus a day for each leap year (answers will vary)",
+          "mins": 3
+        }
+      ],
+      "homework": "TT practice (mixed); work out how many days old you are with an adult.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many weeks in a century, roughly? (about 5,200)",
+      "resources": [
+        "White Rose Maths Year 4, Time block: small step 'Years, months, weeks and days' (week 5 folded into week 6) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed 2027 calendar",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 82 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 83,
+      "title": "12 × 12 times tables recall check",
+      "duration": 45,
+      "bigQuestion": "Which times table facts do I know instantly?",
+      "objectives": [
+        "To understand which multiplication facts I can recall quickly and how to practise the rest"
+      ],
+      "successCriteria": [
+        "All: answer facts within about 6 seconds",
+        "Most: use a known fact to work out an unknown one",
+        "Some: set a practice target for my weakest table"
+      ],
+      "crossCurricular": "Science: fast recall helps with measuring and calculating",
+      "smsc": "Moral: honest marking of our own work",
+      "keywords": [
+        {
+          "term": "recall",
+          "def": "remember straight away"
+        },
+        {
+          "term": "fact",
+          "def": "a multiplication we know, like 7 × 8 = 56"
+        },
+        {
+          "term": "commutative",
+          "def": "7 × 8 = 8 × 7"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you know 7 × 8, how many other facts do you also know?",
+        "a": "8 × 7 = 56, 56 ÷ 7 = 8, 56 ÷ 8 = 7."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "multiplication table grid",
+          "alt": "A multiplication grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6 × 7 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "9 × 8 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "12 × 11 = ?",
+          "a": "132",
+          "mins": 1
+        },
+        {
+          "q": "7 × 7 = ?",
+          "a": "49",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The check",
+          "bullets": [
+            "25 questions.",
+            "About 6 seconds each.",
+            "Internal: it helps us plan."
+          ],
+          "note": "Same format as the national check, for our practice only."
+        },
+        {
+          "heading": "Tricky facts",
+          "bullets": [
+            "6 × 8 = 48",
+            "7 × 8 = 56",
+            "8 × 12 = 96"
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Facts most often wrong (example data)",
+            "labels": [
+              "6×8",
+              "7×8",
+              "8×12",
+              "9×7",
+              "12×7"
+            ],
+            "values": [
+              6,
+              8,
+              5,
+              4,
+              7
+            ],
+            "unit": "pupils"
+          },
+          "note": "Chart of example class results."
+        },
+        {
+          "heading": "Use a known fact",
+          "model": {
+            "problem": "9 × 7",
+            "steps": [
+              "10 × 7 = 70",
+              "Take one 7: 70 - 7 = 63"
+            ],
+            "answer": "63"
+          }
+        },
+        {
+          "heading": "Inverse facts",
+          "bullets": [
+            "56 ÷ 8 = 7",
+            "One fact gives four."
+          ],
+          "note": "Fact family."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "8 × 12 = ?",
+            "options": [
+              "96",
+              "86",
+              "108"
+            ],
+            "answer": 0,
+            "why": "8 × 10 = 80, 8 × 2 = 16, 80 + 16 = 96."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "12 × 6 = ?",
+          "a": "72",
+          "mins": 1,
+          "model": "Teacher: 10 × 6 = 60, 2 × 6 = 12, 60 + 12 = 72."
+        },
+        {
+          "q": "9 × 6 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "8 × 6 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "84 ÷ 7 = ?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check (25 facts in 3 minutes, from the printed sheet). First: 4 × 9; 7 × 12; 11 × 7",
+          "a": "36; 84; 77",
+          "mins": 6,
+          "model": "Teacher reads the first 3 aloud at check speed."
+        },
+        {
+          "q": "Extend: Mark your sheet. Which table had most mistakes?",
+          "a": "Answers will vary",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: For your weakest fact, write the fact family and a known-fact trick.",
+          "a": "For example 7 × 8 = 56: 7 × 4 = 28, double is 56",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "9 × 9 = ? A) 81 B) 72 C) 99",
+          "a": "A) 81",
+          "mins": 1,
+          "options": [
+            "81",
+            "72",
+            "99"
+          ]
+        },
+        {
+          "q": "Big question: which facts do I know instantly?",
+          "a": "Answers will vary; pupils name their target table",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise your target table for 5 minutes a day; a parent tests you on Friday.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 12 × 13 using 12 × 12 = 144 (156).",
+      "resources": [
+        "White Rose Maths Year 4, Times tables: 12 x 12 recall check in the week of 7 June (Year 4 plan; internal check in the format of the national multiplication tables check) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed 25-question recall check and answer sheet",
+        "Stopwatch or phone timer",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 83 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Decimals (b); money; time",
+      "n": 84,
+      "title": "Money and time: end-of-block checks",
+      "duration": 45,
+      "bigQuestion": "What can I do now with money and time?",
+      "objectives": [
+        "To understand how well I can solve money and time problems"
+      ],
+      "successCriteria": [
+        "All: write, convert and compare money",
+        "Most: convert times and read 24-hour clocks",
+        "Some: solve a two-step money or time problem"
+      ],
+      "smsc": "Spiritual: shukr for learning; patience to improve",
+      "keywords": [
+        {
+          "term": "convert",
+          "def": "change units"
+        },
+        {
+          "term": "duration",
+          "def": "how long"
+        },
+        {
+          "term": "estimate",
+          "def": "a close, quick answer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is harder for you: money or time? What would help you most?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "british coins",
+          "alt": "UK coins",
+          "for": "teach:1"
+        },
+        {
+          "find": "railway departure board",
+          "alt": "A departure board",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "£2.06 = ?p",
+          "a": "206p",
+          "mins": 1
+        },
+        {
+          "q": "17:30 = ?",
+          "a": "5:30 p.m.",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 7 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "3 hours = ? minutes",
+          "a": "180",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Money",
+          "bullets": [
+            "£ and p with decimals.",
+            "Convert × or ÷ 100.",
+            "Estimate, then calculate."
+          ],
+          "table": {
+            "head": [
+              "£",
+              "p"
+            ],
+            "rows": [
+              [
+                "£3.45",
+                "345p"
+              ],
+              [
+                "£0.60",
+                "60p"
+              ]
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Time",
+          "bullets": [
+            "60 s, 60 min, 24 h.",
+            "a.m., p.m. and 24-hour.",
+            "Durations: count on."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Check my answers",
+          "bullets": [
+            "Inverse: add back the change.",
+            "Is it sensible?"
+          ],
+          "note": "Model a check."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Change from £5 for £3.65?",
+            "options": [
+              "£1.35",
+              "£2.35",
+              "£1.45"
+            ],
+            "answer": 0,
+            "why": "£3.65 to £4 is 35p, then £1: £1.35."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4 × £2.25?",
+          "a": "£9",
+          "mins": 2,
+          "model": "Teacher: 4 × 225p = 900p = £9."
+        },
+        {
+          "q": "08:55 to 10:20?",
+          "a": "1 hour 25 minutes",
+          "mins": 2
+        },
+        {
+          "q": "Order ascending: £4.40, 414p, £4.04, 441p",
+          "a": "£4.04, 414p, £4.40, 441p",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: £12.70 - £4.85; £8 ÷ 5; estimate £3.90 + £6.15",
+          "a": "£7.85; £1.60; about £10",
+          "mins": 4,
+          "model": "Teacher: 1,270 - 485 = 785p = £7.85."
+        },
+        {
+          "q": "Extend: Check: 7:40 p.m. in 24-hour; 250 seconds in minutes and seconds; days in 6 weeks",
+          "a": "19:40; 4 minutes 10 seconds; 42",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: a bus leaves at 13:45 and the trip takes 1 h 35 min. When does it arrive in 12-hour time?",
+          "a": "3:20 p.m.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "100 minutes = ? A) 1 h 40 min B) 1 h C) 10 h",
+          "a": "A) 1 h 40 min",
+          "mins": 2,
+          "options": [
+            "1 h 40 min",
+            "1 h",
+            "10 h"
+          ]
+        },
+        {
+          "q": "Big question: one thing I can do now, one to practise",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "TT practice (target table); correct your checks with a green pen.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 5 bus tickets at £2.35 and change from £20 (£11.75; £8.25).",
+      "resources": [
+        "White Rose Maths Year 4, Money and Time blocks: end-of-block checks (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Paper plate clock with minute marks (printable template)",
+        "Printed end-of-block checks (school White Rose account)",
+        "Times tables practice sheet (6, 7, 9, 11 and 12) and tracker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 84 guided, independent and homework tasks"
       ]
     }
   ]

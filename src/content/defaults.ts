@@ -56,15 +56,6 @@ export const aboutDefaults = {
   safeguarding_body:
     "The safety and wellbeing of every child is our first responsibility, with safer-recruitment vetting for every member of staff (enhanced DBS in the UK, overseas checks abroad) and a named Designated Safeguarding Lead.",
   recipe_intro: "Building akhlaq alongside attainment.",
-  // The six values exactly as the Tarbiyyah Compass Character Framework (policy 23) names them.
-  recipe_items: [
-    { letter: "R", word: "Resilience", body: "Persevering through difficulty with patience." },
-    { letter: "E", word: "Eeman", body: "Faith that shapes action." },
-    { letter: "C", word: "Contentment", body: "Gratitude and inner peace." },
-    { letter: "I", word: "Integrity", body: "Honesty and trustworthiness." },
-    { letter: "P", word: "Progress", body: "Always seeking to improve." },
-    { letter: "E", word: "Excellence", body: "Doing everything as well as possible." },
-  ] as RecipeItem[],
   family_heading: "10+ years, three established schools.",
   family_body:
     "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools: Tarbiyyah Primary, Tarbiyyah Secondary School for Boys and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world.",

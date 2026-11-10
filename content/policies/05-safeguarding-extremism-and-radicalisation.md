@@ -1,13 +1,13 @@
 ---
 number: "05"
-title: No Platform for Extremism (Prevent) Policy
+title: Safeguarding: Extremism and Radicalisation Policy
 subtitle: Protecting pupils from radicalisation across every Academy platform
-policyName: No Platform for Extremism (Prevent) Policy 2026–2027
+policyName: Safeguarding: Extremism and Radicalisation Policy 2026–2027
 appliesTo: All staff, pupils, parents, trustees, virtual guest speakers, and any individual or organisation using Academy platforms or resources
-owner: Designated Safeguarding Lead (Prevent Lead)
+owner: Designated Safeguarding Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2, updated 10 November 2026: renamed and filed under safeguarding; the duties are unchanged)
 nextReview: 31 August 2027
 basis: Updated from the Tarbiyyah Global Academy draft (September 2026) and the Tarbiyyah Secondary No Platform for Extremism Policy 2025–26
 readAlongside: Child Protection and Safeguarding Policy; Online Safety and Acceptable Use Policy; Tarbiyyah Compass Character Framework; Behaviour and Online Conduct Policy
@@ -16,12 +16,11 @@ availability: Published on the Academy website and Parent Portal. Available in l
 
 ## 1. Policy Statement
 
-Tarbiyyah Global Academy is committed to providing a safe online environment in which pupils learn free from exposure to extremist views or ideologies, and in which they develop the knowledge and confidence to challenge them. Our Islamic ethos teaches justice, mercy, the sanctity of life and respect for others; these values are the strongest foundation for resisting those who would misuse faith, or any ideology, to justify hatred or violence. This policy explains how the Academy has regard to the Prevent duty in an online setting, how we keep our platforms free from extremist content, and how concerns are referred.
+Tarbiyyah Global Academy is committed to providing a safe online environment in which pupils learn free from exposure to extremist views or ideologies, and in which they develop the knowledge and confidence to challenge them. Our Islamic ethos teaches justice, mercy, the sanctity of life and respect for others; these values are the strongest foundation for resisting those who would misuse faith, or any ideology, to justify hatred or violence. This policy is part of our safeguarding arrangements. It explains how the Academy meets its duty to protect pupils from being drawn into extremism in an online setting, how we keep our platforms free from extremist content, and how concerns are referred.
 
 ## 2. Legal Framework
 
-- Counter-Terrorism and Security Act 2015, section 26 (the Prevent duty), as good practice
-- Prevent Duty Guidance: England and Wales (2023)
+- Counter-Terrorism and Security Act 2015, section 26, and its statutory guidance for England and Wales (2023), as good practice
 - Terrorism Act 2000 and Terrorism Act 2006
 - Keeping Children Safe in Education (current edition)
 - Online Education Accreditation Scheme (OEAS) standards, used as a benchmark of good practice
@@ -31,7 +30,7 @@ Tarbiyyah Global Academy is committed to providing a safe online environment in 
 
 | Term | Meaning |
 | --- | --- |
-| Extremism | The Academy has regard to the government's 2024 definition: the promotion or advancement of an ideology based on violence, hatred or intolerance that aims to negate or destroy the fundamental rights and freedoms of others, or to undermine, overturn or replace the UK's system of liberal parliamentary democracy and democratic rights, or to intentionally create a permissive environment for others to achieve those results. For Prevent purposes, staff also recognise vocal or active opposition to the fundamental British values of democracy, the rule of law, individual liberty and mutual respect and tolerance of different faiths and beliefs. |
+| Extremism | The Academy has regard to the government's 2024 definition: the promotion or advancement of an ideology based on violence, hatred or intolerance that aims to negate or destroy the fundamental rights and freedoms of others, or to undermine, overturn or replace the UK's system of liberal parliamentary democracy and democratic rights, or to intentionally create a permissive environment for others to achieve those results. For safeguarding purposes, staff also recognise vocal or active opposition to the fundamental British values of democracy, the rule of law, individual liberty and mutual respect and tolerance of different faiths and beliefs. |
 | Radicalisation | The process by which a person comes to support terrorism and extremist ideologies associated with terrorist groups. Online radicalisation can happen through social media algorithms, gaming platforms, video sites and private messaging. |
 | Terrorism | An action that endangers or causes serious violence, damage or disruption and is intended to influence the government or intimidate the public, for the purpose of advancing a political, religious or ideological cause. |
 | Proscribed organisation | An organisation banned under the Terrorism Act 2000. No proscribed organisation or its representatives will be given access to Academy platforms, events or resources. |
@@ -78,14 +77,14 @@ None of these alone proves radicalisation; each is a reason to talk to the DSL.
 
 All staff report any concern to the DSL on the same day, using the online concern form. The DSL will consider the concern alongside other information, speak to the family where appropriate, and decide whether to refer:
 
-- for pupils in England and Wales, to the local authority Prevent team and, where appropriate, to Channel;
+- for pupils in England and Wales, to the local authority's safeguarding team, which can arrange specialist support where appropriate;
 - for pupils living abroad, to the appropriate local authority, and to the police where there is a risk of harm.
 
 In an emergency, staff call the police (999 in the UK) or the local emergency number. The DfE counter-extremism helpline (020 7340 7264, counter.extremism@education.gov.uk) is available for non-emergency advice.
 
 ## 8. Staff Training
 
-All staff complete Prevent awareness training at induction and refresh it annually. The DSL completes enhanced Prevent training. Training covers online radicalisation, recognising indicators in live lessons and written work, and making referrals.
+All staff complete training on extremism and radicalisation as part of safeguarding training at induction, refreshed annually. The DSL completes enhanced training. Training covers online radicalisation, recognising indicators in live lessons and written work, and making referrals.
 
 ## 9. Teaching Pupils to be Resilient
 
@@ -96,9 +95,9 @@ All staff complete Prevent awareness training at induction and refresh it annual
 
 Lessons provide a safe space, chaired by a teacher, to discuss difficult questions so that pupils do not seek answers from unsafe sources.
 
-## 10. Prevent Risk Assessment
+## 10. Extremism Risk Assessment
 
-The DSL maintains an Academy Prevent Risk Assessment, reviewed annually, covering online platforms, guest speakers, the curriculum, staff training and the Academy's international pupil population. The first Prevent risk assessment is completed before live lessons begin on 11 January 2027 and is reviewed annually.
+As part of the safeguarding risk assessment, the DSL maintains an extremism risk assessment, reviewed annually, covering online platforms, guest speakers, the curriculum, staff training and the Academy's international pupil population. The first is completed before live lessons begin on 11 January 2027 and is reviewed annually.
 
 ## 11. Monitoring and Review
 

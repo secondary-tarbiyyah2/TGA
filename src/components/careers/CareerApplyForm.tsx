@@ -461,8 +461,9 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
       firstRender.current = false;
       return;
     }
-    headingRef.current?.focus();
-    headingRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    // The heading sits in the sticky bar, so scroll the form itself to the top of the screen.
+    headingRef.current?.focus({ preventScroll: true });
+    headingRef.current?.closest("form")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [step, done]);
 
   const roleOptions = useMemo(
@@ -661,7 +662,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
   const progress = Math.round(((step + 1) / STEPS.length) * 100);
 
   return (
-    <form onSubmit={submit} noValidate className="rounded-2xl border border-gold-light/60 bg-white">
+    <form onSubmit={submit} noValidate className="relative scroll-mt-24 rounded-2xl border border-gold-light/60 bg-white">
       {/* Honeypot: hidden from people and screen readers; bots fill it in. */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label>
@@ -670,17 +671,18 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
         </label>
       </div>
 
-      <div className="border-b border-gold-light/60 p-5 sm:p-6">
+      {/* Step, title and progress stay in view while the step scrolls (as on the admissions form). */}
+      <div className="sticky top-20 z-10 rounded-t-2xl border-b border-gold-light/60 bg-white/95 px-5 py-4 backdrop-blur sm:px-6">
         <p className="text-sm font-medium text-gold-700">
           Step {step + 1} of {STEPS.length}
         </p>
-        <h2 ref={headingRef} tabIndex={-1} className="mt-1 font-serif text-xl font-semibold text-ink focus:outline-none sm:text-2xl">
+        <h2 ref={headingRef} tabIndex={-1} className="mt-0.5 font-serif text-lg font-semibold text-ink focus:outline-none sm:text-xl">
           {STEPS[step]}
         </h2>
-        <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-gold-100" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} aria-label="Application progress">
+        <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-gold-100" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} aria-label="Application progress">
           <div className="h-full rounded-full bg-gold-500 transition-[width]" style={{ width: `${progress}%` }} />
         </div>
-        <ol className="mt-3 hidden flex-wrap gap-x-4 gap-y-1 text-xs text-ink/65 md:flex" aria-label="Steps">
+        <ol className="mt-2.5 hidden flex-wrap gap-x-4 gap-y-1 text-xs text-ink/65 md:flex" aria-label="Steps">
           {STEPS.map((s, i) => (
             <li key={s} aria-current={i === step ? "step" : undefined} className={i === step ? "font-semibold text-ink" : i < step ? "text-ink/80" : ""}>
               {i < step ? "✓ " : `${i + 1}. `}
@@ -995,7 +997,8 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
         )}
       </div>
 
-      <div className="flex flex-col-reverse gap-3 border-t border-gold-light/60 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+      {/* Back and Next stay in view at the bottom of the screen, so there is no scrolling to find them. */}
+      <div className="sticky bottom-0 z-10 flex flex-col-reverse gap-3 rounded-b-2xl border-t border-gold-light/60 bg-white/95 px-5 py-4 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:px-6">
         {step > 0 ? (
           <button type="button" onClick={back} className={secondaryBtn} disabled={phase === "submitting"}>
             Back
