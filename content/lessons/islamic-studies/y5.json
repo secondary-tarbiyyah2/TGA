@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y5",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: nafs, sincerity, praying on time, best deeds; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2) | Spring 1 2027 (lessons 4, 5, 8 upgraded, 13 and 14 new): Year 5 pack Islamic Studies Spring 1 weeks 1 to 5 (year of sorrow; Ta'if; Isra and Mi'raj; sawm; rules of fasting); Ta'if (Bukhari, Book of the Beginning of Creation; Muslim, Book of Jihad), the five prayers (Bukhari, Book of Salah; Muslim, Book of Faith) and fasting hadith (Bukhari, Book of Fasting) described or cited; school-approved seerah TO CONFIRM | Spring 2 2027 (lessons 6 and 7 upgraded, 15 to 18 new): Year 5 pack Islamic Studies Spring 2 weeks 1 to 6 (zakat al-fitr; Aqabah; the Hijrah; Quba and Madinah, condensed in the week of 5 Apr; zakah and nisab; recipients and sadaqah); 87:14-15, 17:34, 8:30, 9:40, 9:103, 9:60; example zakah figures only; lessons v3 | Summer 1 2027 (lesson 9 upgraded, 19 to 22 new): Year 5 pack Islamic Studies Summer 1 weeks 1 to 5 (Hajj and Ibrahim; rites of Hajj and the first ten days before the Eid al-Adha half term; Eid al-Adha after it; truthful speech; promises and trusts); 3:97, 2:127, 22:27, 37:102-107, 22:37, 33:70, 17:34; hadith on the ten days (Bukhari), Arafah (Muslim), the two rams (Bukhari and Muslim), truthfulness and the hypocrite (Bukhari and Muslim); lessons v3",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: nafs, sincerity, praying on time, best deeds; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2) | Spring 1 2027 (lessons 4, 5, 8 upgraded, 13 and 14 new): Year 5 pack Islamic Studies Spring 1 weeks 1 to 5 (year of sorrow; Ta'if; Isra and Mi'raj; sawm; rules of fasting); Ta'if (Bukhari, Book of the Beginning of Creation; Muslim, Book of Jihad), the five prayers (Bukhari, Book of Salah; Muslim, Book of Faith) and fasting hadith (Bukhari, Book of Fasting) described or cited; school-approved seerah TO CONFIRM | Spring 2 2027 (lessons 6 and 7 upgraded, 15 to 18 new): Year 5 pack Islamic Studies Spring 2 weeks 1 to 6 (zakat al-fitr; Aqabah; the Hijrah; Quba and Madinah, condensed in the week of 5 Apr; zakah and nisab; recipients and sadaqah); 87:14-15, 17:34, 8:30, 9:40, 9:103, 9:60; example zakah figures only; lessons v3 | Summer 1 2027 (lesson 9 upgraded, 19 to 22 new): Year 5 pack Islamic Studies Summer 1 weeks 1 to 5 (Hajj and Ibrahim; rites of Hajj and the first ten days before the Eid al-Adha half term; Eid al-Adha after it; truthful speech; promises and trusts); 3:97, 2:127, 22:27, 37:102-107, 22:37, 33:70, 17:34; hadith on the ten days (Bukhari), Arafah (Muslim), the two rams (Bukhari and Muslim), truthfulness and the hypocrite (Bukhari and Muslim); lessons v3 | Summer 2 2027: Y5 pack weeks 1 to 4 (49:6 online, Abu Bakr, Bilal, year quiz)",
   "lessons": [
     {
       "unit": "Unit 1: Aqeedah: Tawheed and Qadar",
@@ -1786,99 +1786,199 @@
       "send": "SEND/EAL: scenario cards with images. Stretch: write advice to a friend who gossips."
     },
     {
-      "unit": "Unit 4: Hadith and akhlaq: advice, speech and truth online",
+      "unit": "Summer 2: Online truthfulness and the Companions",
       "n": 12,
-      "title": "Adab online: truth, kindness and verification",
+      "title": "Truthful online: checking news before we share",
       "duration": 45,
+      "bigQuestion": "A message says: 'Forward this to ten people or something bad will happen!' What should you do, and why?",
       "objectives": [
-        "Explain verification of news (49:6)",
-        "Explain the hadith about narrating all you hear",
-        "Apply adab to online learning and messaging"
+        "To understand why Islam tells us to verify news and how to check something online before sharing it"
       ],
+      "successCriteria": [
+        "All: say what Allah commands in al-Hujurat 49:6",
+        "Most: use three checks on a post before sharing",
+        "Some: explain how sharing a rumour can make us part of a lie"
+      ],
+      "smsc": "Moral: honesty and responsibility online",
       "keywords": [
         {
-          "term": "verify",
-          "def": "check if something is true"
+          "term": "tabayyun (تَبَيُّن)",
+          "def": "checking that news is true"
         },
         {
           "term": "rumour",
-          "def": "unchecked news"
+          "def": "a story passed on without proof"
         },
         {
-          "term": "digital adab",
-          "def": "good manners online"
+          "term": "source",
+          "def": "where information comes from"
+        },
+        {
+          "term": "verify",
+          "def": "to check that something is true"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A message says: 'Forward this to ten people or something bad will happen!' What should you do, and why?",
+        "a": "Do not forward it: it is unchecked, it scares people and it has no proof."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who have believed, if there comes to you a disobedient one with news, investigate, lest you harm a people out of ignorance' (al-Hujurat 49:6).",
+        "at": "start"
+      },
       "starter": [
-        "Define backbiting.",
-        "What is truthfulness?",
-        "What is naseehah?",
-        "What is amanah?"
+        {
+          "q": "Bismillah. Truthful speech is ... (from Summer 1)",
+          "a": "Telling the truth in what we say",
+          "mins": 1,
+          "options": [
+            "Telling the truth in what we say",
+            "Speaking loudly"
+          ]
+        },
+        {
+          "q": "What did the Prophet ﷺ teach about promises?",
+          "a": "Keep them",
+          "mins": 1
+        },
+        {
+          "q": "Which month do Muslims go to Hajj?",
+          "a": "Dhul-Hijjah",
+          "mins": 1,
+          "options": [
+            "Dhul-Hijjah",
+            "Ramadan"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The verse",
+          "heading": "Allah's command: check first",
           "bullets": [
-            "If a wicked person brings news, verify it",
-            "49:6",
-            "So you do not harm people unknowingly"
+            "News may come from someone unreliable",
+            "Check before acting",
+            "Or you may harm people"
           ],
-          "note": "Bismillah. Read 49:6. Ask: how can false news cause harm? Examples from school messages, group chats. Emphasise verifying before sharing."
+          "note": "Begin with Bismillah. Allah says in al-Hujurat 49:6: if someone unreliable brings you news, verify it, lest you harm a people out of ignorance.",
+          "quote": {
+            "text": "يَا أَيُّهَا الَّذِينَ آمَنُوا إِنْ جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا",
+            "source": "al-Hujurat 49:6"
+          }
         },
         {
-          "heading": "The hadith",
+          "heading": "Passing on everything",
           "bullets": [
-            "It is enough lying to narrate all you hear",
-            "Muslim (Abu Hurairah)",
-            "Do not repeat everything"
+            "Passing on all we hear spreads lies",
+            "Some of it is false",
+            "So we stop and check"
           ],
-          "note": "The Prophet ﷺ said it is enough lying for a man to narrate everything he hears. Discuss: forwarding messages, screenshots, posts. Link to amanah."
+          "note": "The Prophet ﷺ said: 'It is enough of a lie for a person to speak of everything he hears' (Muslim, introduction)."
         },
         {
-          "heading": "Kind communication",
-          "bullets": [
-            "Speak good or be silent",
-            "No mocking",
-            "No bullying"
-          ],
-          "note": "Qur'an 49:11: do not mock; do not insult by nicknames. Teams chat rules in school. Review TGA online expectations. Report concerns to a trusted adult."
+          "heading": "Three checks before sharing",
+          "bullets": [],
+          "note": "Model with a made-up example post.",
+          "cycle": [
+            "Who posted it? Is the source trusted?",
+            "Is it recent, and do trusted sites say the same?",
+            "Is it kind and useful? If unsure, ask an adult and do not share"
+          ]
         },
         {
-          "heading": "Privacy and protection",
+          "heading": "Hinge",
           "bullets": [
-            "Keep personal details private",
-            "Do not share others' pictures",
-            "Tell an adult if unsure"
+            "Vote in the Teams poll"
           ],
-          "note": "Link to amanah and safeguarding. The Prophet ﷺ taught modesty and privacy. Do not require pupils to share personal examples."
-        },
-        {
-          "heading": "My online code",
-          "bullets": [
-            "Pause",
-            "Check",
-            "Speak good"
-          ],
-          "note": "Pairs create a three-point code of adab online. Display."
+          "check": {
+            "q": "A post says a famous shop is giving free tablets to the first 100 people. Best action?",
+            "options": [
+              "Check the shop's real website and ask an adult",
+              "Share it with everyone fast",
+              "Enter your details straight away"
+            ],
+            "answer": 0,
+            "why": "It could be a scam; check the real source."
+          }
         }
       ],
       "practice": [
-        "What does verify mean?",
-        "What is amanah?",
-        "Say 49:6 in English.",
-        "What does Bismillah mean?"
+        {
+          "q": "Apply the three checks to this example post: 'BREAKING: schools closed all next week!' shared by an unknown account.",
+          "a": "Unknown source; no trusted site says so; not useful to share; check the school portal and ask an adult",
+          "mins": 4,
+          "model": "Teacher: 'Check 1: who posted it? An unknown account, so not trusted. Check 2: the school portal says nothing. So I do not share.'"
+        },
+        {
+          "q": "Tabayyun means ...",
+          "a": "Checking news is true",
+          "mins": 1,
+          "options": [
+            "Checking news is true",
+            "Sharing quickly"
+          ]
+        }
       ],
       "independent": [
-        "Check three claims: decide how to verify each",
-        "Write online adab rules for class chat",
-        "Rewrite unkind messages kindly"
+        {
+          "q": "Fact or rumour? On the pupil PDF, apply the three checks to five example posts and decide: share, check more, or do not share.",
+          "a": "Answers with reasons, for example: post 3 (chain message) do not share: no source, scary",
+          "mins": 13,
+          "model": "Teacher does post 1 (a weather warning from the Met Office's real account): trusted source, recent, useful: fine to tell family."
+        },
+        {
+          "q": "Extend: how can sharing a rumour make you part of a lie?",
+          "a": "If it is false, you passed on a lie, even if you did not start it",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Why verify news?",
-        "Name one rule for online adab."
+        {
+          "q": "Which surah tells us to verify news?",
+          "a": "Al-Hujurat (49:6)",
+          "mins": 1,
+          "options": [
+            "Al-Hujurat (49:6)",
+            "Al-Ikhlas"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what do you do with the chain message?",
+          "a": "Do not forward it; it has no proof",
+          "mins": 1
+        }
       ],
-      "homework": "Show an adult your online code and discuss how to follow it.",
-      "send": "SEND/EAL: scenario cards and sentence starters. Stretch: write a short guide for younger pupils."
+      "homework": "Teach your family the three checks and stick them by the computer.",
+      "send": "SEND: three-check card with icons. EAL: phrase bank (source, recent, kind). Stretch: write your own fake post and swap it with a partner to check.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: fact or rumour? five example posts",
+        "Three-check card (printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "smartphone screen notification",
+          "alt": "A message on a phone",
+          "for": "hook"
+        },
+        {
+          "find": "magnifying glass newspaper",
+          "alt": "Checking the facts",
+          "for": "teach:3"
+        },
+        {
+          "find": "laptop keyboard",
+          "alt": "Online",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Ta'if, Isra and Mi'raj, and sawm",
@@ -4029,6 +4129,614 @@
           "find": "padlock key",
           "alt": "A lock and key: keeping a trust safe",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Online truthfulness and the Companions",
+      "n": 23,
+      "title": "Abu Bakr as-Siddiq: the truthful friend",
+      "duration": 45,
+      "bigQuestion": "Is it harder to tell the truth or to believe the truth when everyone around you is laughing at it?",
+      "objectives": [
+        "To understand why Abu Bakr was called as-Siddiq and what his truthfulness teaches us"
+      ],
+      "successCriteria": [
+        "All: say what as-Siddiq means",
+        "Most: give two events that show Abu Bakr's truthfulness and loyalty",
+        "Some: explain how believing the truth even when others mock takes courage"
+      ],
+      "smsc": "Moral: loyalty and standing by the truth",
+      "keywords": [
+        {
+          "term": "as-Siddiq (الصِّدِّيق)",
+          "def": "the one who always affirms the truth"
+        },
+        {
+          "term": "sidq (صِدْق)",
+          "def": "truthfulness"
+        },
+        {
+          "term": "loyal",
+          "def": "staying faithful to someone in hard times"
+        },
+        {
+          "term": "Thawr (ثَوْر)",
+          "def": "the cave where the Prophet ﷺ and Abu Bakr hid"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it harder to tell the truth or to believe the truth when everyone around you is laughing at it?",
+        "a": "Both can be hard; Abu Bakr did both and stood by the truth."
+      },
+      "islamicLink": {
+        "text": "Allah says: '... the second of two, when they were in the cave and he said to his companion, Do not grieve; indeed Allah is with us' (at-Tawbah 9:40).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 49:6 tells us to ...",
+          "a": "Check news before acting on it",
+          "mins": 1,
+          "options": [
+            "Check news before acting on it",
+            "Share it quickly"
+          ]
+        },
+        {
+          "q": "Name one of the three checks.",
+          "a": "Who posted it? Is it recent? Is it kind and useful?",
+          "mins": 1
+        },
+        {
+          "q": "Who was with the Prophet ﷺ on the Hijrah?",
+          "a": "Abu Bakr",
+          "mins": 1,
+          "options": [
+            "Abu Bakr",
+            "Bilal"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Who was Abu Bakr?",
+          "bullets": [
+            "A close friend of the Prophet ﷺ",
+            "Among the very first to accept Islam",
+            "Freed slaves who were tortured"
+          ],
+          "note": "Begin with Bismillah. No pictures of prophets, Companions or people: objects and places only."
+        },
+        {
+          "heading": "'He speaks the truth'",
+          "bullets": [
+            "When people said 'you lie'",
+            "Abu Bakr said 'he speaks the truth'",
+            "He supported him with himself and his wealth"
+          ],
+          "note": "The Prophet ﷺ said that when he was sent, people said 'you lie' but Abu Bakr said 'he has spoken the truth' (Bukhari)."
+        },
+        {
+          "heading": "The second of two",
+          "bullets": [
+            "They hid in the cave of Thawr",
+            "Abu Bakr worried for the Prophet ﷺ",
+            "'Do not grieve; Allah is with us'"
+          ],
+          "note": "Allah mentions this in at-Tawbah 9:40. Seerah books report that Abu Bakr also at once believed the news of the Night Journey (a seerah report).",
+          "quote": {
+            "text": "... the second of two, when they were in the cave and he said to his companion, 'Do not grieve; indeed Allah is with us.'",
+            "source": "at-Tawbah 9:40"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "check": {
+            "q": "As-Siddiq means ...",
+            "options": [
+              "The one who always affirms the truth",
+              "The strong one",
+              "The first caliph"
+            ],
+            "answer": 0,
+            "why": "Siddiq comes from sidq, truthfulness."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give two events that show Abu Bakr's truthfulness or loyalty.",
+          "a": "He said 'he speaks the truth' when others said 'you lie'; he stayed with the Prophet ﷺ in the cave of Thawr",
+          "mins": 3,
+          "model": "Teacher: 'Event one: in Makkah people called the Prophet ﷺ a liar, but Abu Bakr said he spoke the truth (Bukhari).'"
+        },
+        {
+          "q": "Which ayah mentions 'the second of two'?",
+          "a": "At-Tawbah 9:40",
+          "mins": 1,
+          "options": [
+            "At-Tawbah 9:40",
+            "Al-Hujurat 49:6"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a short profile of Abu Bakr as-Siddiq on the pupil PDF in the portal response box: who he was, two events, what his title means and one lesson for you.",
+          "a": "Four short paragraphs with accurate events and a personal lesson",
+          "mins": 14,
+          "model": "Teacher writes the first line: 'Abu Bakr was the Prophet's ﷺ closest friend and one of the first Muslims.'"
+        },
+        {
+          "q": "Extend: why does truthfulness take courage when others mock?",
+          "a": "You may be laughed at or lose friends, but you stand with what is right",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Where did Abu Bakr and the Prophet ﷺ hide?",
+          "a": "The cave of Thawr",
+          "mins": 1,
+          "options": [
+            "The cave of Thawr",
+            "The cave of Hira"
+          ]
+        },
+        {
+          "q": "Back to our ponder: harder to tell or to believe the truth?",
+          "a": "Pupils' own, with reasons",
+          "mins": 1
+        }
+      ],
+      "homework": "Tell your family how Abu Bakr earned the title as-Siddiq.",
+      "send": "SEND: profile frame with sentence starters. EAL: timeline cards. Stretch: research (from the school seerah book) one more act of Abu Bakr's generosity.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: Abu Bakr profile frame",
+        "School-approved seerah book for children (TO CONFIRM title with the Islamic Studies lead)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jabal Thawr mountain Makkah",
+          "alt": "Mount Thawr near Makkah",
+          "for": "teach:3"
+        },
+        {
+          "find": "desert mountains Hejaz",
+          "alt": "The route of the Hijrah",
+          "for": "hook"
+        },
+        {
+          "find": "old manuscript book",
+          "alt": "Seerah books",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Online truthfulness and the Companions",
+      "n": 24,
+      "title": "Bilal ibn Rabah: steadfast in faith",
+      "duration": 45,
+      "bigQuestion": "What would make someone keep saying one word even while being hurt for it?",
+      "objectives": [
+        "To understand how Bilal stayed steadfast under torture and what steadfastness looks like for us"
+      ],
+      "successCriteria": [
+        "All: say who Bilal was and what he suffered",
+        "Most: explain how Bilal was freed and honoured",
+        "Some: compare Bilal's steadfastness with a challenge Muslims face today"
+      ],
+      "smsc": "Spiritual: steadfastness; Social: equality of all believers",
+      "keywords": [
+        {
+          "term": "steadfast",
+          "def": "staying firm and not giving up"
+        },
+        {
+          "term": "sabr (صَبْر)",
+          "def": "patience for Allah"
+        },
+        {
+          "term": "mu'adhdhin (مُؤَذِّن)",
+          "def": "the person who calls the adhan"
+        },
+        {
+          "term": "Ahad (أَحَد)",
+          "def": "One: Bilal's word for Allah"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would make someone keep saying one word even while being hurt for it?",
+        "a": "Strong iman: Bilal kept saying 'Ahad' because he believed Allah is One."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, the most noble of you in the sight of Allah is the most righteous of you' (al-Hujurat 49:13). Bilal's honour came from his taqwa.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. As-Siddiq means ...",
+          "a": "The one who always affirms the truth",
+          "mins": 1,
+          "options": [
+            "The one who always affirms the truth",
+            "The brave one"
+          ]
+        },
+        {
+          "q": "Which ayah mentions the cave?",
+          "a": "At-Tawbah 9:40",
+          "mins": 1
+        },
+        {
+          "q": "Tabayyun means ...",
+          "a": "Checking news is true",
+          "mins": 1,
+          "options": [
+            "Checking news is true",
+            "Patience"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Bilal in Makkah",
+          "bullets": [
+            "An enslaved man in Makkah",
+            "He accepted Islam early",
+            "His master tortured him in the hot sun"
+          ],
+          "note": "Begin with Bismillah. Seerah books report he kept saying 'Ahad, Ahad' (a seerah report). No pictures of prophets, Companions or people: objects and places only."
+        },
+        {
+          "heading": "Freed and honoured",
+          "bullets": [
+            "Abu Bakr bought and freed him",
+            "Umar called Bilal 'our master'",
+            "Freed by our master, Abu Bakr"
+          ],
+          "note": "Umar said: 'Abu Bakr is our master and he freed our master', meaning Bilal (Bukhari)."
+        },
+        {
+          "heading": "The voice of the adhan",
+          "bullets": [
+            "The Prophet ﷺ told Bilal to call the prayer",
+            "His footsteps were heard in Paradise",
+            "From slave to honoured Companion"
+          ],
+          "note": "Hadith: 'O Bilal, get up and call for the prayer' (Bukhari). The Prophet ﷺ heard Bilal's footsteps ahead of him in Paradise (Bukhari and Muslim).",
+          "timeline": [
+            {
+              "label": "Makkah",
+              "text": "Tortured, says 'Ahad'"
+            },
+            {
+              "label": "Freed",
+              "text": "By Abu Bakr"
+            },
+            {
+              "label": "Madinah",
+              "text": "Calls the adhan"
+            },
+            {
+              "label": "Honour",
+              "text": "Footsteps in Paradise"
+            }
+          ]
+        },
+        {
+          "heading": "Hinge",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "check": {
+            "q": "Who freed Bilal?",
+            "options": [
+              "Abu Bakr",
+              "Umar",
+              "Abu Jahl"
+            ],
+            "answer": 0,
+            "why": "Umar's words in Bukhari confirm it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how Bilal went from enslaved to honoured.",
+          "a": "He stayed firm, Abu Bakr freed him, the Prophet ﷺ made him the caller to prayer",
+          "mins": 3,
+          "model": "Teacher: 'Step one: he stayed firm on tawheed. Step two: Abu Bakr freed him. Step three: he became the mu'adhdhin.'"
+        },
+        {
+          "q": "Bilal's word under torture was ...",
+          "a": "Ahad (One)",
+          "mins": 1,
+          "options": [
+            "Ahad (One)",
+            "Salam"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a diary-style reflection (in the portal response box) as a pupil learning about Bilal: what he faced, how he stayed firm and one challenge you face where you can be steadfast (for example praying on time, telling the truth).",
+          "a": "Accurate events and a realistic personal challenge with a plan",
+          "mins": 14,
+          "model": "Teacher models the opening: 'Today I learnt that Bilal stayed firm even in the burning sun ...'"
+        },
+        {
+          "q": "Extend: why did Umar call a former slave 'our master'?",
+          "a": "In Islam honour comes from taqwa, not birth or colour",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What job did the Prophet ﷺ give Bilal?",
+          "a": "Calling the adhan",
+          "mins": 1,
+          "options": [
+            "Calling the adhan",
+            "Leading the army"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what kept Bilal saying 'Ahad'?",
+          "a": "Strong iman in Allah, the One",
+          "mins": 1
+        }
+      ],
+      "homework": "Listen to the adhan at home this week and remember Bilal; tell your family his story.",
+      "send": "SEND: story cards in order. EAL: diary frame with starters. Stretch: link Bilal to 49:13 (the most honoured is the most righteous).",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: Bilal timeline and reflection frame",
+        "School-approved seerah book for children (TO CONFIRM title with the Islamic Studies lead)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mosque minaret sky",
+          "alt": "A minaret, where the adhan is called",
+          "for": "teach:3"
+        },
+        {
+          "find": "desert sand hot sun",
+          "alt": "The hot sun of Makkah",
+          "for": "teach:1"
+        },
+        {
+          "find": "chains broken",
+          "alt": "Freedom",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Online truthfulness and the Companions",
+      "n": 25,
+      "title": "Review of the year and end-of-year Islamic Studies quiz",
+      "duration": 45,
+      "bigQuestion": "Which person you learnt about this year would you most like to be like, and why?",
+      "objectives": [
+        "To understand how the year's seerah, worship and character topics connect, and show my learning in the quiz"
+      ],
+      "successCriteria": [
+        "All: answer questions from each half term",
+        "Most: explain one pillar (zakah, sawm or Hajj) in detail",
+        "Some: link a seerah event to a lesson for life today"
+      ],
+      "smsc": "Spiritual: reflecting on role models from the Seerah",
+      "keywords": [
+        {
+          "term": "Hijrah (هِجْرَة)",
+          "def": "the migration from Makkah to Madinah"
+        },
+        {
+          "term": "zakah (زَكَاة)",
+          "def": "the yearly due on savings: 2.5%"
+        },
+        {
+          "term": "sawm (صَوْم)",
+          "def": "fasting from dawn to sunset"
+        },
+        {
+          "term": "Hajj (حَجّ)",
+          "def": "the pilgrimage to Makkah"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which person you learnt about this year would you most like to be like, and why?",
+        "a": "Answers vary: Abu Bakr's truthfulness, Bilal's steadfastness, the Ansar's generosity."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And say: My Lord, increase me in knowledge' (Ta-Ha 20:114).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Who freed Bilal?",
+          "a": "Abu Bakr",
+          "mins": 1,
+          "options": [
+            "Abu Bakr",
+            "Umar"
+          ]
+        },
+        {
+          "q": "49:6 teaches ...",
+          "a": "Check news before sharing",
+          "mins": 1
+        },
+        {
+          "q": "Zakah is what percentage of savings?",
+          "a": "2.5%",
+          "mins": 1,
+          "options": [
+            "2.5%",
+            "10%"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Our year",
+          "bullets": [],
+          "note": "Begin with Bismillah. Pupils add one fact to each stage.",
+          "timeline": [
+            {
+              "label": "Spring 1",
+              "text": "Ta'if, Isra and Mi'raj, sawm"
+            },
+            {
+              "label": "Spring 2",
+              "text": "Aqabah, the Hijrah, zakah"
+            },
+            {
+              "label": "Summer 1",
+              "text": "Hajj, truthful speech"
+            },
+            {
+              "label": "Summer 2",
+              "text": "Online truth, Abu Bakr, Bilal"
+            }
+          ]
+        },
+        {
+          "heading": "Pillars we studied",
+          "bullets": [],
+          "note": "Quick recall table.",
+          "table": {
+            "head": [
+              "Pillar",
+              "Who",
+              "Key fact"
+            ],
+            "rows": [
+              [
+                "Sawm",
+                "Adult, healthy Muslims",
+                "Dawn to sunset in Ramadan"
+              ],
+              [
+                "Zakah",
+                "Those whose savings reach the nisab",
+                "2.5% each year"
+              ],
+              [
+                "Hajj",
+                "Those able, once in a lifetime",
+                "In Dhul-Hijjah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Hinge",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "check": {
+            "q": "Which event came first?",
+            "options": [
+              "The journey to Ta'if",
+              "The Hijrah",
+              "Arriving in Quba"
+            ],
+            "answer": 0,
+            "why": "Ta'if was before the pledges at Aqabah and the Hijrah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one pillar in detail: who, when and why.",
+          "a": "For example: zakah is 2.5% of savings above the nisab, paid yearly, to purify wealth and help the poor",
+          "mins": 3,
+          "model": "Teacher does sawm: 'Who: adult, healthy Muslims. When: Ramadan, dawn to sunset. Why: to gain taqwa (2:183).'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "End-of-year Islamic Studies quiz (portal form, 15 questions, our own) across the year.",
+          "a": "Marked automatically; written answers reviewed by the teacher",
+          "mins": 20,
+          "model": "Teacher reads question 1 aloud and shows how to check the answer."
+        },
+        {
+          "q": "Extend: write one lesson for life from a seerah event.",
+          "a": "For example: Ta'if teaches patience and forgiveness",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which pillar did we learn just before Eid al-Adha?",
+          "a": "Hajj",
+          "mins": 1,
+          "options": [
+            "Hajj",
+            "Sawm"
+          ]
+        },
+        {
+          "q": "Back to our ponder: who would you most like to be like?",
+          "a": "Pupils' own, with a reason",
+          "mins": 1
+        }
+      ],
+      "homework": "Tell your family the person from this year you most admire and why.",
+      "send": "SEND: quiz read aloud; fewer options. EAL: key word mat. Stretch: answer the written questions with an ayah or hadith.",
+      "resources": [
+        "Slides",
+        "End-of-year Islamic Studies quiz (portal form, our own questions)",
+        "Pupil PDF: year review page"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kaaba pilgrims aerial Masjid al-Haram",
+          "alt": "Hajj in Makkah",
+          "for": "teach:2"
+        },
+        {
+          "find": "dates and water iftar",
+          "alt": "Breaking the fast",
+          "for": "keywords"
+        },
+        {
+          "find": "calendar months",
+          "alt": "Our year",
+          "for": "teach:1"
         }
       ]
     }

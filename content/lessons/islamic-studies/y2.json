@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y2",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quizzes EYFS-KS1/KS2: gratitude, patience, the Prophet's teaching on salah and the Companions); National Curriculum RE (KS1) | Spring 1 2027 (lessons 1 and 2 upgraded, 13 new): Year 2 pack Islamic Studies Spring 1 weeks 1, 3, 5 (six pillars of iman); hadith of Jibril (Muslim 8); school-approved children's iman books TO CONFIRM | Spring 2 2027 (lessons 5 and 6 upgraded, 14 new): Year 2 pack Islamic Studies Spring 2 weeks 1, 3, 5 (Nuh; Ibrahim; Yunus and Yusuf); ayat 29:14, 19:41, 21:69, 21:87-88, 12:92; no pictures of prophets; lessons v3 | Summer 1 2027 (lessons 7 and 9 upgraded, 15 new): Year 2 pack Islamic Studies Summer 1 weeks 1, 3, 5 (Makkah before revelation; first revelation and early Muslims; the Hijrah), IS weeks of 26 Apr, 24 May, 7 Jun; seerah reports labelled; 68:4, 96:1, 9:40; Bukhari and Muslim on 'two when Allah is their third'; lessons v3",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quizzes EYFS-KS1/KS2: gratitude, patience, the Prophet's teaching on salah and the Companions); National Curriculum RE (KS1) | Spring 1 2027 (lessons 1 and 2 upgraded, 13 new): Year 2 pack Islamic Studies Spring 1 weeks 1, 3, 5 (six pillars of iman); hadith of Jibril (Muslim 8); school-approved children's iman books TO CONFIRM | Spring 2 2027 (lessons 5 and 6 upgraded, 14 new): Year 2 pack Islamic Studies Spring 2 weeks 1, 3, 5 (Nuh; Ibrahim; Yunus and Yusuf); ayat 29:14, 19:41, 21:69, 21:87-88, 12:92; no pictures of prophets; lessons v3 | Summer 1 2027 (lessons 7 and 9 upgraded, 15 new): Year 2 pack Islamic Studies Summer 1 weeks 1, 3, 5 (Makkah before revelation; first revelation and early Muslims; the Hijrah), IS weeks of 26 Apr, 24 May, 7 Jun; seerah reports labelled; 68:4, 96:1, 9:40; Bukhari and Muslim on 'two when Allah is their third'; lessons v3 | Summer 2 2027: Y2 pack weeks 1 and 3 (purity and wudu; prayer and good speech, with the wudu and speech check)",
   "lessons": [
     {
       "unit": "Spring 1: The six pillars of iman",
@@ -1460,190 +1460,420 @@
       ]
     },
     {
-      "unit": "Unit 4: Purity, prayer and good speech",
+      "unit": "Summer 2: Purity, prayer and good speech",
       "n": 10,
-      "title": "Purity: what breaks wudu",
+      "title": "Purity: cleanliness and wudu in order",
       "duration": 30,
+      "bigQuestion": "Why do you think Allah wants us to be clean before we talk to Him in salah?",
       "objectives": [
-        "Remember the steps of wudu",
-        "Know some things that break wudu",
-        "Know we need wudu for salah"
+        "To understand why Muslims keep clean and how to make wudu in the right order"
       ],
+      "successCriteria": [
+        "All: say why we make wudu",
+        "Most: show the wudu steps in order",
+        "Some: name the four parts Allah tells us to wash or wipe"
+      ],
+      "smsc": "Spiritual: preparing body and heart for worship",
       "keywords": [
         {
-          "term": "wudu",
-          "def": "washing parts of the body to pray"
+          "term": "tahara (طَهَارَة)",
+          "def": "being clean and pure"
         },
         {
-          "term": "breaks wudu",
-          "def": "makes us need to make wudu again"
+          "term": "wudu (وُضُوء)",
+          "def": "washing parts of the body before salah"
         },
         {
-          "term": "purity",
-          "def": "being clean for worship"
+          "term": "najis (نَجِس)",
+          "def": "dirty in a way that must be washed off"
+        },
+        {
+          "term": "niyyah (نِيَّة)",
+          "def": "the intention in our heart"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think Allah wants us to be clean before we talk to Him in salah?",
+        "a": "Salah is a meeting with Allah; we come clean and ready, inside and out."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who have believed, when you rise to pray, wash your faces and your forearms to the elbows, wipe over your heads and wash your feet to the ankles' (al-Ma'idah 5:6).",
+        "at": "start"
+      },
       "starter": [
-        "Name the steps of wudu.",
-        "What do we say after wudu?",
-        "Name the five prayers."
+        {
+          "q": "Bismillah. What do we call the city where the Prophet ﷺ was born?",
+          "a": "Makkah",
+          "mins": 1,
+          "options": [
+            "Makkah",
+            "Madinah"
+          ]
+        },
+        {
+          "q": "Which journey did the Prophet ﷺ make to Madinah?",
+          "a": "The Hijrah",
+          "mins": 1,
+          "options": [
+            "The Hijrah",
+            "The Hajj"
+          ]
+        },
+        {
+          "q": "Who was with the Prophet ﷺ in the cave?",
+          "a": "Abu Bakr",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Why wudu?",
+          "heading": "Islam loves cleanliness",
           "bullets": [
-            "We need wudu to pray",
-            "The Prophet ﷺ said Allah does not accept prayer without purification",
-            "Wudu is also a reward"
+            "We wash after the toilet",
+            "We keep clothes and places clean",
+            "We make wudu before salah"
           ],
-          "note": "The hadith is in Sahih Muslim (Ibn Umar). Say it simply. Also the Prophet ﷺ said sins fall away with the water when a believer makes wudu (Muslim). Keep the tone gentle."
+          "note": "Begin with Bismillah. The Prophet ﷺ said: 'Purity is half of faith' (Muslim)."
         },
         {
-          "heading": "Wudu step review",
-          "bullets": [
+          "heading": "The wudu steps",
+          "bullets": [],
+          "note": "Teacher shows each step with a jug and bowl on camera; pupils copy the actions in the air.",
+          "cycle": [
+            "Niyyah and Bismillah",
             "Hands, mouth, nose",
-            "Face, arms",
-            "Head, ears, feet"
-          ],
-          "note": "Quick mime of all steps. Check order. Praise correct sequence."
+            "Face, then arms to the elbows",
+            "Wipe the head and ears",
+            "Feet to the ankles"
+          ]
         },
         {
-          "heading": "What breaks wudu?",
+          "heading": "What Allah tells us to wash",
           "bullets": [
-            "Using the toilet",
-            "Passing wind",
-            "Deep sleep"
+            "The face",
+            "The arms to the elbows",
+            "Wipe the head",
+            "The feet to the ankles"
           ],
-          "note": "At this age keep to the clear ones: anything that exits the private parts, and deep sleep. Say that older classes will learn more. Be matter of fact and respectful; avoid embarrassment."
-        },
-        {
-          "heading": "Staying pure",
-          "bullets": [
-            "Wash after the toilet",
-            "Keep clean clothes",
-            "Make wudu again when needed"
-          ],
-          "note": "Link to cleanliness being half of faith. Ask: how do you know you need wudu again? Answer using the examples above."
-        },
-        {
-          "heading": "Wudu quiz",
-          "bullets": [
-            "Do I need wudu?",
-            "Yes or no",
-            "Why?"
-          ],
-          "note": "Show quick scenarios: you ate a sandwich, you used the toilet, you drank water. Children signal thumbs up/down. Correct misconceptions: eating or drinking does not break wudu."
+          "note": "These four are in the Qur'an (al-Ma'idah 5:6).",
+          "check": {
+            "q": "Which comes first in wudu?",
+            "options": [
+              "Washing the hands",
+              "Washing the feet",
+              "Wiping the head"
+            ],
+            "answer": 0,
+            "why": "We start with the hands after the niyyah and Bismillah."
+          }
         }
       ],
       "practice": [
-        "Name the first step of wudu.",
-        "Which prayer is at sunset?",
-        "What do we say after wudu?"
+        {
+          "q": "Say and show the wudu steps in order with me.",
+          "a": "Niyyah and Bismillah, hands, mouth, nose, face, arms, head and ears, feet",
+          "mins": 3,
+          "model": "Teacher says each step and shows it in the air; pupils copy, then do it together."
+        },
+        {
+          "q": "What do we wipe, not wash?",
+          "a": "The head (and ears)",
+          "mins": 1,
+          "options": [
+            "The head",
+            "The face"
+          ]
+        }
       ],
       "independent": [
-        "Sort the scenarios: need wudu / do not need wudu",
-        "Write the steps of wudu in order (from cards)",
-        "Make a numbered wudu chart with labelled steps (words and a water jug, no drawn people)"
+        {
+          "q": "On the pupil PDF, number the six wudu pictures (a tap, hands, face, arms, head, feet) from 1 to 6.",
+          "a": "Tap 1, hands 2, face 3, arms 4, head 5, feet 6",
+          "mins": 6,
+          "model": "Teacher numbers the first two: the tap and Bismillah first, then the hands."
+        },
+        {
+          "q": "Stretch: tell a partner which steps Allah names in the Qur'an.",
+          "a": "Face, arms, head, feet",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Name something that breaks wudu.",
-        "Does eating break wudu?"
+        {
+          "q": "Why do we make wudu?",
+          "a": "To be clean and ready for salah",
+          "mins": 1,
+          "options": [
+            "To be clean and ready for salah",
+            "To cool down"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why come clean to salah?",
+          "a": "Salah is a meeting with Allah",
+          "mins": 1
+        }
       ],
-      "homework": "Show an adult your wudu steps and ask them to check the order.",
-      "send": "SEND/EAL: picture cards; sentence frames 'Yes, because ___'. Stretch: explain two reasons wudu is important."
+      "homework": "Make wudu at home with a parent watching and tick each step on the wudu card.",
+      "send": "SEND: wudu picture strip to follow. EAL: word mat with body parts. Stretch: say what breaks wudu (toilet, passing wind, deep sleep).",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: wudu pictures to number",
+        "Wudu step card for home",
+        "A jug of water and a bowl for the teacher's demonstration (household)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "water tap running clean",
+          "alt": "A tap with clean water",
+          "for": "teach:2"
+        },
+        {
+          "find": "water jug and bowl",
+          "alt": "A jug and bowl for wudu",
+          "for": "keywords"
+        },
+        {
+          "find": "mosque wudu area taps",
+          "alt": "A wudu area in a masjid",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 4: Purity, prayer and good speech",
+      "unit": "Summer 2: Purity, prayer and good speech",
       "n": 11,
-      "title": "How to pray: the actions of salah",
+      "title": "Salah basics and good speech; wudu and speech check",
       "duration": 30,
+      "bigQuestion": "Are words like seeds? What could grow from a kind word, and from an unkind one?",
       "objectives": [
-        "Name the actions of salah in order",
-        "Know the Prophet ﷺ taught us to pray",
-        "Know the words 'Allahu Akbar' and 'Subhana rabbiyal-adheem'"
+        "To understand the five daily prayers and the rules of good speech, and show what we have learnt"
       ],
+      "successCriteria": [
+        "All: name the five daily prayers",
+        "Most: show wudu in order and give two rules of good speech",
+        "Some: explain why a Muslim speaks good or stays silent"
+      ],
+      "smsc": "Moral: truthful, gentle speech",
       "keywords": [
         {
-          "term": "takbir",
-          "def": "saying Allahu Akbar"
+          "term": "salah (صَلَاة)",
+          "def": "the prayer, five times a day"
         },
         {
-          "term": "ruku",
-          "def": "bowing"
+          "term": "rak'ah (رَكْعَة)",
+          "def": "one unit of the prayer"
         },
         {
-          "term": "sujood",
-          "def": "putting the forehead on the ground"
+          "term": "sidq (صِدْق)",
+          "def": "telling the truth"
+        },
+        {
+          "term": "kind words",
+          "def": "words that help and do not hurt"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Are words like seeds? What could grow from a kind word, and from an unkind one?",
+        "a": "Kind words grow friendship and good deeds; unkind words grow hurt."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever believes in Allah and the Last Day, let him speak good or remain silent' (Bukhari and Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Name the five prayers.",
-        "What breaks wudu?",
-        "Show me a bow."
+        {
+          "q": "Bismillah. In wudu, what do we wipe?",
+          "a": "The head",
+          "mins": 1,
+          "options": [
+            "The head",
+            "The feet"
+          ]
+        },
+        {
+          "q": "What do we say first in wudu?",
+          "a": "Bismillah",
+          "mins": 1,
+          "options": [
+            "Bismillah",
+            "Alhamdulillah"
+          ]
+        },
+        {
+          "q": "Show me washing the arms to the elbows.",
+          "a": "Right arm then left, up to the elbow",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Pray as you saw me",
-          "bullets": [
-            "The Prophet ﷺ said: pray as you have seen me pray",
-            "We learn by watching and copying",
-            "We pray with calm hearts"
-          ],
-          "note": "Bukhari (Malik ibn al-Huwayrith). Say it in English and Arabic: sallu kama ra'aytumuni usalli. Link to learning from a teacher."
+          "heading": "Five prayers a day",
+          "bullets": [],
+          "note": "Begin with Bismillah. Say each name; pupils say the rak'ahs back.",
+          "table": {
+            "head": [
+              "Prayer",
+              "When",
+              "Rak'ahs"
+            ],
+            "rows": [
+              [
+                "Fajr (الفَجْر)",
+                "Dawn",
+                "2"
+              ],
+              [
+                "Dhuhr (الظُّهْر)",
+                "After midday",
+                "4"
+              ],
+              [
+                "'Asr (العَصْر)",
+                "Afternoon",
+                "4"
+              ],
+              [
+                "Maghrib (المَغْرِب)",
+                "Sunset",
+                "3"
+              ],
+              [
+                "'Isha' (العِشَاء)",
+                "Night",
+                "4"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Standing",
+          "heading": "Speak good or be silent",
           "bullets": [
-            "Face the Qiblah",
-            "Say 'Allahu Akbar'",
-            "Recite Al-Fatihah"
+            "Tell the truth",
+            "Use gentle words",
+            "If it is not good, stay quiet"
           ],
-          "note": "Show the Qiblah direction. Hands: follow the school's madhhab or family custom; do not argue. Fatihah is recited in every rak'ah (Bukhari and Muslim)."
+          "note": "The Prophet ﷺ said: 'Whoever believes in Allah and the Last Day, let him speak good or remain silent' (Bukhari and Muslim).",
+          "sort": {
+            "columns": [
+              "Good speech",
+              "Not good speech"
+            ],
+            "cards": [
+              "Thank you",
+              "You are silly",
+              "Can I help?",
+              "Telling a lie",
+              "Salam 'alaykum",
+              "Shouting at my brother"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
         },
         {
-          "heading": "Bowing and standing",
+          "heading": "Show what you know",
           "bullets": [
-            "Bow: 'Subhana rabbiyal-adheem'",
-            "Stand: 'Sami'allahu liman hamidah'",
-            "Say 'Rabbana lakal hamd'"
+            "Wudu in order",
+            "Two rules of good speech",
+            "One prayer and its rak'ahs"
           ],
-          "note": "Teach the sayings with actions. The first means Glory to my Lord the Mighty. The second: Allah hears the one who praises Him. The Prophet ﷺ is reported to say them."
-        },
-        {
-          "heading": "Sujood and sitting",
-          "bullets": [
-            "Sujood: 'Subhana rabbiyal-a'la'",
-            "Sit between the two sujood",
-            "Finish with salam"
-          ],
-          "note": "Subhana rabbiyal-a'la: Glory to my Lord the Most High. The Prophet ﷺ said the closest a servant is to his Lord is in sujood, so make plenty of dua (Muslim). Show how to sit and give salam to right and left."
-        },
-        {
-          "heading": "Practice time",
-          "bullets": [
-            "Show each action",
-            "Say the dhikr",
-            "Check each other"
-          ],
-          "note": "Children demonstrate on camera. Praise attention to calm movements. Gentle correction for rushing."
+          "note": "Assessment: each pupil shows wudu and says two rules; record secure, developing or not yet."
         }
       ],
       "practice": [
-        "Which direction do we face?",
-        "Show a sujood.",
-        "What do we say at the start?"
+        {
+          "q": "Sort the six cards with me: good speech or not good speech?",
+          "a": "Good: thank you, can I help?, salam; not good: you are silly, a lie, shouting",
+          "mins": 3,
+          "model": "Teacher sorts 'Thank you' into good speech: 'It is kind and true.'"
+        },
+        {
+          "q": "How many rak'ahs in Maghrib?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "4"
+          ]
+        }
       ],
       "independent": [
-        "Number the salah actions in order (cards)",
-        "Write what we say in ruku and sujood",
-        "Teach a partner the actions"
+        {
+          "q": "Assessment in turns on camera: show the wudu steps in order and say two rules of good speech. Others draw a kind-word seed growing into a plant on the pupil PDF.",
+          "a": "Wudu in order; two rules such as tell the truth and use gentle words",
+          "mins": 6,
+          "model": "Teacher goes first: shows wudu in order and says 'Tell the truth; if it is not good, stay quiet.'"
+        },
+        {
+          "q": "Stretch: tell the class a kind sentence you said this week.",
+          "a": "For example: 'Shall I help you carry that?'",
+          "mins": 1
+        }
       ],
       "exit": [
-        "What do we say when we bow?",
-        "How do we finish the prayer?"
+        {
+          "q": "How many daily prayers are there?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Three"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what grows from a kind word?",
+          "a": "Friendship and good deeds",
+          "mins": 1
+        }
       ],
-      "homework": "Pray one salah with an adult and practise the words you learned.",
-      "send": "SEND/EAL: action cards and slow demo; choose a seated option if needed. Stretch: explain the meaning of the dhikr."
+      "homework": "Pray one prayer at home with your family on time, and say three kind sentences today.",
+      "send": "SEND: wudu picture strip allowed in the check. EAL: sentence starters for kind words. Stretch: say what to do if you hear someone tell a lie (tell them gently, or tell an adult).",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: good speech card sort and kind-word plant",
+        "Wudu and good speech check record sheet",
+        "Prayer mat (household)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer mat folded",
+          "alt": "A prayer mat",
+          "for": "teach:1"
+        },
+        {
+          "find": "seedling growing soil",
+          "alt": "A seed growing: kind words grow good",
+          "for": "hook"
+        },
+        {
+          "find": "sunrise dawn sky",
+          "alt": "Dawn: the time of Fajr",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Purity, prayer and good speech",

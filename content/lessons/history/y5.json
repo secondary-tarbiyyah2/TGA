@@ -2,7 +2,7 @@
   "subject": "History",
   "year": "y5",
   "board": "National Curriculum",
-  "source": "National Curriculum KS2 (Britain's settlement by Anglo-Saxons and Scots; the Viking and Anglo-Saxon struggle for the Kingdom of England); no school Drive history material found for Y5, written from scratch | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 5 curriculum map and History Long Term Plan 2023-24 (Cornerstones Dynamic Dynasties: early civilisations and Shang China); TGA Year 5 pack | Spring 2 2027: TGA Year 5 pack, History and geography, Ground-Breaking Greeks (ancient Greece) | Summer 1 2027 (lessons 16 to 20): TGA Year 5 pack, History and geography, Peasants, Princes & Pestilence (medieval England and the wider world, feudal system, village, Black Death, Peasants' Revolt with an assessed source question)",
+  "source": "National Curriculum KS2 (Britain's settlement by Anglo-Saxons and Scots; the Viking and Anglo-Saxon struggle for the Kingdom of England); no school Drive history material found for Y5, written from scratch | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 5 curriculum map and History Long Term Plan 2023-24 (Cornerstones Dynamic Dynasties: early civilisations and Shang China); TGA Year 5 pack | Spring 2 2027: TGA Year 5 pack, History and geography, Ground-Breaking Greeks (ancient Greece) | Summer 1 2027 (lessons 16 to 20): TGA Year 5 pack, History and geography, Peasants, Princes & Pestilence (medieval England and the wider world, feudal system, village, Black Death, Peasants' Revolt with an assessed source question) | Summer 2 2027 (lessons 21 to 24): TGA Year 5 pack, History and geography, Off with Her Head! (Tudors 1485 to 1603; Henry VIII taught for political reasons only; Mary Rose sources; Armada; end-of-year timeline task and written answer in week 4)",
   "lessons": [
     {
       "unit": "Unit 1: Anglo-Saxons and Vikings",
@@ -4176,6 +4176,954 @@
         {
           "find": "Tower of London",
           "alt": "The Tower of London, where the king stayed",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The Tudors (Off with Her Head!)",
+      "n": 21,
+      "title": "The Tudors on the timeline: Henry VII wins the crown",
+      "bigQuestion": "How does a family that is not royal end up ruling a country for over 100 years?",
+      "objectives": [
+        "To understand when the Tudors ruled and how Henry VII became king"
+      ],
+      "successCriteria": [
+        "All: place the Tudor period, 1485 to 1603, on a timeline",
+        "Most: explain how Henry VII won the crown at Bosworth",
+        "Some: name the five Tudor monarchs in order"
+      ],
+      "crossCurricular": "Maths: subtracting dates and using a scale",
+      "smsc": "Moral: ending a conflict by uniting rivals",
+      "keywords": [
+        {
+          "term": "Tudor",
+          "def": "the family that ruled England from 1485 to 1603"
+        },
+        {
+          "term": "monarch",
+          "def": "a king or queen"
+        },
+        {
+          "term": "crown",
+          "def": "the power to rule as king or queen"
+        },
+        {
+          "term": "Wars of the Roses",
+          "def": "a long fight between two families for the throne"
+        },
+        {
+          "term": "chronology",
+          "def": "putting events in time order"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If two families had been fighting over a crown for 30 years, what would you do to stop the fighting for good?"
+      },
+      "starter": [
+        {
+          "q": "The Peasants' Revolt happened in:",
+          "a": "1381",
+          "mins": 1,
+          "options": [
+            "1381",
+            "1066"
+          ]
+        },
+        {
+          "q": "The Black Death reached England in:",
+          "a": "1348",
+          "mins": 1,
+          "options": [
+            "1348",
+            "1485"
+          ]
+        },
+        {
+          "q": "Name one way the Black Death changed life for peasants.",
+          "a": "Fewer workers, so peasants could ask for higher wages or more freedom",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The Tudor period",
+          "bullets": [
+            "1485 to 1603",
+            "Five monarchs",
+            "After the Middle Ages"
+          ],
+          "note": "Place it after the Black Death and the Peasants' Revolt on the class timeline.",
+          "timeline": [
+            {
+              "label": "1348",
+              "text": "Black Death"
+            },
+            {
+              "label": "1381",
+              "text": "Peasants' Revolt"
+            },
+            {
+              "label": "1485",
+              "text": "Tudors begin"
+            },
+            {
+              "label": "1603",
+              "text": "Tudors end"
+            }
+          ]
+        },
+        {
+          "heading": "The Wars of the Roses",
+          "bullets": [
+            "The House of York: white rose",
+            "The House of Lancaster: red rose",
+            "They fought on and off for about 30 years"
+          ],
+          "note": "Both families claimed the right to the throne."
+        },
+        {
+          "heading": "Bosworth, 1485",
+          "bullets": [
+            "Henry Tudor fought King Richard III",
+            "Richard III died in the battle",
+            "Henry became Henry VII"
+          ],
+          "note": "We keep battle details short."
+        },
+        {
+          "heading": "Joining two families",
+          "bullets": [
+            "Henry married Elizabeth of York",
+            "The Tudor rose: red and white",
+            "A sign of peace between the houses"
+          ],
+          "note": "Joining the two families made it harder for anyone to fight over the crown again."
+        },
+        {
+          "heading": "The five Tudor monarchs",
+          "bullets": [
+            "Henry VII, Henry VIII, Edward VI",
+            "Mary I, Elizabeth I",
+            "Elizabeth had no children, so the Tudors ended"
+          ],
+          "note": "Lady Jane Grey was queen for only nine days in 1553; most lists show the five."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The Tudor rose joined the colours of:",
+            "options": [
+              "York and Lancaster",
+              "England and France",
+              "Rome and Spain"
+            ],
+            "answer": 0,
+            "why": "The red rose of Lancaster and the white rose of York were joined."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "How long did the Tudors rule? (1603 - 1485)",
+          "a": "118 years",
+          "mins": 1,
+          "model": "I subtract the start from the end.\n1603 - 1485.\n1603 - 1500 = 103, then add 15: 118 years."
+        },
+        {
+          "q": "Who did Henry Tudor defeat at Bosworth?",
+          "a": "Richard III",
+          "mins": 1
+        },
+        {
+          "q": "Who was the last Tudor monarch?",
+          "a": "Elizabeth I",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a Tudor timeline from 1485 to 1603 with the five monarchs and Bosworth, using a scale of 1 cm for 5 years.",
+          "a": "Bosworth 1485; Henry VII 1485-1509; Henry VIII 1509-1547; Edward VI 1547-1553; Mary I 1553-1558; Elizabeth I 1558-1603",
+          "mins": 12,
+          "model": "Teacher marks 1485 at 0 cm and 1509 at 4.8 cm and explains the scale."
+        },
+        {
+          "q": "Extend: Add two events from elsewhere: the Mughal Empire founded (1526) and Suleiman becomes Ottoman sultan (1520).",
+          "a": "1520 and 1526 placed in Henry VIII's reign",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why did Henry VII marry Elizabeth of York?",
+          "a": "To unite York and Lancaster so his crown was safer and the wars would stop",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Tudors ruled from:",
+          "a": "1485 to 1603",
+          "mins": 1,
+          "options": [
+            "1485 to 1603",
+            "1066 to 1154"
+          ]
+        },
+        {
+          "q": "Henry VII won the crown at the Battle of:",
+          "a": "Bosworth",
+          "mins": 1,
+          "options": [
+            "Bosworth",
+            "Hastings"
+          ]
+        },
+        {
+          "q": "Big question: how did a non-royal family come to rule?",
+          "a": "Henry Tudor won at Bosworth, then married Elizabeth of York to join the two rival families",
+          "mins": 1
+        }
+      ],
+      "homework": "Draw and colour the Tudor rose and write one sentence about what it stood for.",
+      "send": "SEND: timeline with dates marked and monarch cards to place. EAL: monarch, crown, battle with pictures. Stretch: find out how Henry VII kept the crown safe once he had won it.",
+      "resources": [
+        "Tarbiyyah Primary Year 5 curriculum map and history and geography long-term plans 2023-24; TGA Year 5 pack, History and geography, Summer 2 Off with Her Head! and Time Traveller (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Tudor timeline strip with 1 cm = 5 years scale (portal printable)",
+        "Ruler and coloured pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Tudor rose",
+          "alt": "The Tudor rose",
+          "for": "teach:4"
+        },
+        {
+          "find": "Bosworth battlefield",
+          "alt": "The battlefield at Bosworth today",
+          "for": "teach:3"
+        },
+        {
+          "find": "Hampton Court Palace",
+          "alt": "Hampton Court Palace, a Tudor palace",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The Tudors (Off with Her Head!)",
+      "n": 22,
+      "title": "Henry VIII: power, an heir and the Church",
+      "bigQuestion": "Why would a king be so worried about who would rule after him?",
+      "objectives": [
+        "To understand why Henry VIII wanted a son and how that changed the Church in England"
+      ],
+      "successCriteria": [
+        "All: explain why an heir mattered to a Tudor king",
+        "Most: describe how Henry VIII broke with the Pope",
+        "Some: explain what happened to the monasteries"
+      ],
+      "crossCurricular": "RE and citizenship: who leads a country's faith communities",
+      "smsc": "Moral: how one person's power can change many lives",
+      "keywords": [
+        {
+          "term": "heir",
+          "def": "the person who will rule next"
+        },
+        {
+          "term": "reign",
+          "def": "the time a monarch rules"
+        },
+        {
+          "term": "Pope",
+          "def": "the leader of the Catholic Church, in Rome"
+        },
+        {
+          "term": "Church of England",
+          "def": "the Church with the monarch as its head"
+        },
+        {
+          "term": "monastery",
+          "def": "a building where monks live and pray"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What problems could happen if a ruler dies and nobody knows who should be next?"
+      },
+      "starter": [
+        {
+          "q": "The last Tudor monarch was:",
+          "a": "Elizabeth I",
+          "mins": 1,
+          "options": [
+            "Elizabeth I",
+            "Henry VII"
+          ]
+        },
+        {
+          "q": "Old maps help us see:",
+          "a": "How places changed",
+          "mins": 1,
+          "options": [
+            "How places changed",
+            "Tomorrow's weather"
+          ]
+        },
+        {
+          "q": "What were the Wars of the Roses?",
+          "a": "A long fight between the families of York and Lancaster for the throne",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "King Henry VIII",
+          "bullets": [
+            "Reigned 1509 to 1547",
+            "Powerful and wealthy",
+            "His big worry: an heir"
+          ],
+          "note": "He was the son of Henry VII."
+        },
+        {
+          "heading": "Why an heir?",
+          "bullets": [
+            "Memories of the Wars of the Roses",
+            "A clear heir stops fights",
+            "Tudors expected a king, not a queen"
+          ],
+          "note": "This is a political reason: keeping the country stable."
+        },
+        {
+          "heading": "The break with Rome",
+          "bullets": [
+            "The Pope refused Henry's request to end his first marriage",
+            "Henry made himself head of the Church",
+            "Act of Supremacy, 1534"
+          ],
+          "note": "Henry married six times in all, hoping for a son. We focus on the political reasons.",
+          "timeline": [
+            {
+              "label": "1509",
+              "text": "Henry VIII becomes king"
+            },
+            {
+              "label": "1534",
+              "text": "Act of Supremacy"
+            },
+            {
+              "label": "1536-1541",
+              "text": "Monasteries closed"
+            },
+            {
+              "label": "1547",
+              "text": "Edward VI, his son, becomes king"
+            }
+          ]
+        },
+        {
+          "heading": "Closing the monasteries",
+          "bullets": [
+            "About 800 monasteries were closed",
+            "Their land and wealth went to the king",
+            "Many buildings fell into ruins"
+          ],
+          "note": "Many ruined abbeys you can visit today were closed by Henry."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Henry VIII wanted a son mainly to:",
+            "options": [
+              "Keep the country stable",
+              "Win a race",
+              "Build ships"
+            ],
+            "answer": 0,
+            "why": "A clear male heir would, he believed, prevent another fight for the throne."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why did the Pope's refusal matter so much?",
+          "a": "Henry could not end his marriage without it, so he broke with Rome",
+          "mins": 1,
+          "model": "Henry needed the Pope to agree.\nThe Pope said no.\nSo Henry made himself head of the Church instead."
+        },
+        {
+          "q": "What did the Act of Supremacy (1534) do?",
+          "a": "Made the king head of the Church of England",
+          "mins": 1
+        },
+        {
+          "q": "Who got the monasteries' wealth?",
+          "a": "The king",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write a cause and consequence chain in the portal response box: Henry wants an heir, so ..., so ..., so .... Use the chain frame.",
+          "a": "Wants a son, so asks the Pope; Pope refuses, so Henry breaks with Rome (1534); becomes head of the Church, so he closes the monasteries and takes their wealth",
+          "mins": 12,
+          "model": "Teacher writes the first link: 'Henry wanted a son to rule after him, so he asked the Pope to end his first marriage.'"
+        },
+        {
+          "q": "Extend: Give one reason why closing the monasteries helped Henry.",
+          "a": "He gained land and money to spend on his wars and palaces, and removed rivals to his power",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Who lost out when the monasteries closed?",
+          "a": "Monks and nuns, and poor and sick people who had been helped by them",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An heir is the:",
+          "a": "Next ruler",
+          "mins": 1,
+          "options": [
+            "Next ruler",
+            "First ruler"
+          ]
+        },
+        {
+          "q": "The Act of Supremacy was in:",
+          "a": "1534",
+          "mins": 1,
+          "options": [
+            "1534",
+            "1066"
+          ]
+        },
+        {
+          "q": "Big question: why was Henry VIII so worried about an heir?",
+          "a": "He feared another war over the crown, like the Wars of the Roses, if there was no clear heir",
+          "mins": 1
+        }
+      ],
+      "homework": "Find a ruined abbey on a map of England (such as Tintern or Rievaulx) and find out when it was closed.",
+      "send": "SEND: cause and consequence chain with picture cards. EAL: heir, Pope, Church, monastery with pictures. Stretch: compare how power passed in Tudor England and in an Islamic caliphate.",
+      "resources": [
+        "Tarbiyyah Primary Year 5 curriculum map and history and geography long-term plans 2023-24; TGA Year 5 pack, History and geography, Summer 2 Off with Her Head! and Time Traveller (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Cause and consequence chain frame (portal printable)",
+        "Map of ruined abbeys in England (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Rievaulx Abbey ruins",
+          "alt": "The ruins of Rievaulx Abbey",
+          "for": "teach:4"
+        },
+        {
+          "find": "Hampton Court Palace Great Hall",
+          "alt": "Henry VIII's palace at Hampton Court",
+          "for": "teach:1"
+        },
+        {
+          "find": "Tintern Abbey",
+          "alt": "Tintern Abbey, closed in the 1530s",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The Tudors (Off with Her Head!)",
+      "n": 23,
+      "title": "Tudor ships and the Mary Rose: what the sources tell us",
+      "bigQuestion": "What could a ship that sank nearly 500 years ago tell us about the people on board?",
+      "objectives": [
+        "To understand how historians use objects and pictures as sources about Tudor ships"
+      ],
+      "successCriteria": [
+        "All: describe the Mary Rose and what happened to it",
+        "Most: infer facts from Mary Rose artefacts",
+        "Some: compare an object source and a picture source"
+      ],
+      "crossCurricular": "Science: how silt protected materials from decay",
+      "smsc": "Cultural: everyday life of Tudor sailors",
+      "keywords": [
+        {
+          "term": "source",
+          "def": "something that gives information about the past"
+        },
+        {
+          "term": "artefact",
+          "def": "an object made by people long ago"
+        },
+        {
+          "term": "infer",
+          "def": "work something out from clues"
+        },
+        {
+          "term": "warship",
+          "def": "a ship built for fighting at sea"
+        },
+        {
+          "term": "exploration",
+          "def": "travelling to find out about new places"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If your bedroom sank under the sea and was found in 500 years, what would people learn about you?"
+      },
+      "starter": [
+        {
+          "q": "Henry VIII reigned from:",
+          "a": "1509 to 1547",
+          "mins": 1,
+          "options": [
+            "1509 to 1547",
+            "1485 to 1509"
+          ]
+        },
+        {
+          "q": "An airport is which land use?",
+          "a": "Transport",
+          "mins": 1,
+          "options": [
+            "Transport",
+            "Agricultural"
+          ]
+        },
+        {
+          "q": "What happened to the monasteries?",
+          "a": "Henry VIII closed them and took their land and wealth",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The Mary Rose",
+          "bullets": [
+            "Henry VIII's warship, built 1510 to 1511",
+            "Sank in the Solent in 1545",
+            "During a battle with a French fleet"
+          ],
+          "note": "Most of the crew did not survive. We focus on what the ship tells us."
+        },
+        {
+          "heading": "Found again",
+          "bullets": [
+            "Raised from the seabed in 1982",
+            "Silt had protected one side",
+            "Now in a museum in Portsmouth"
+          ],
+          "note": "About 19,000 objects have been recovered."
+        },
+        {
+          "heading": "Clues from objects",
+          "bullets": [
+            "Longbows and arrows: archers on board",
+            "Navigation tools: skilled sailors",
+            "Cooking pots, combs, games"
+          ],
+          "note": "Infer: what does each object tell us about life on board?",
+          "table": {
+            "head": [
+              "Artefact",
+              "We can infer"
+            ],
+            "rows": [
+              [
+                "Longbows",
+                "Archers fought on board"
+              ],
+              [
+                "Compass and sundials",
+                "Sailors needed to find their way and the time"
+              ],
+              [
+                "Cooking pots",
+                "Food was cooked on the ship"
+              ],
+              [
+                "Combs",
+                "People cared for their hair and kept clean"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "A picture source",
+          "bullets": [
+            "The Anthony Roll, 1546",
+            "A list of navy ships with pictures",
+            "It shows the Mary Rose with guns and flags"
+          ],
+          "note": "Compare: the picture is made by an artist; the objects are the real things."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Longbows found on the Mary Rose tell us:",
+            "options": [
+              "Archers fought on board",
+              "The ship was a farm",
+              "The crew were children"
+            ],
+            "answer": 0,
+            "why": "Bows and arrows were weapons for archers, so archers sailed and fought on the ship."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A comb was found. What can we infer?",
+          "a": "People on board looked after their hair and tried to keep clean",
+          "mins": 1,
+          "model": "I ask what the object is for.\nA comb is for hair.\nSo I infer people on the ship cared for their hair and cleanliness."
+        },
+        {
+          "q": "When was the Mary Rose raised?",
+          "a": "1982",
+          "mins": 1
+        },
+        {
+          "q": "Which is the real thing: the artefact or the Anthony Roll picture?",
+          "a": "The artefact",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the source table for six Mary Rose artefacts: what it is, what we can infer, and one question it raises.",
+          "a": "Six rows with sensible inferences and questions",
+          "mins": 12,
+          "model": "Teacher completes the longbow row: 'Archers fought on board. How far could they shoot?'"
+        },
+        {
+          "q": "Extend: Which source is more useful for knowing what the ship looked like: the artefacts or the Anthony Roll? Why?",
+          "a": "The Anthony Roll, because it shows the whole ship; artefacts show small details",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why are shipwrecks such good evidence?",
+          "a": "Everything sank at one moment and was protected by silt, so ordinary objects survived",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Mary Rose sank in:",
+          "a": "1545",
+          "mins": 1,
+          "options": [
+            "1545",
+            "1588"
+          ]
+        },
+        {
+          "q": "To infer means to:",
+          "a": "Work out from clues",
+          "mins": 1,
+          "options": [
+            "Work out from clues",
+            "Copy a fact"
+          ]
+        },
+        {
+          "q": "Big question: what can a sunken ship tell us?",
+          "a": "How people fought, sailed, cooked, ate and lived on board in Tudor times",
+          "mins": 1
+        }
+      ],
+      "homework": "Look at the Mary Rose Museum's online collection with an adult and choose one object to describe.",
+      "send": "SEND: source table with pictures and sentence starters. EAL: artefact names with pictures. Stretch: write a question you would ask a Tudor sailor about one object.",
+      "resources": [
+        "Tarbiyyah Primary Year 5 curriculum map and history and geography long-term plans 2023-24; TGA Year 5 pack, History and geography, Summer 2 Off with Her Head! and Time Traveller (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Mary Rose artefact cards and source table (portal printable)",
+        "Mary Rose Museum online collection (with an adult)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mary Rose hull museum Portsmouth",
+          "alt": "The hull of the Mary Rose in Portsmouth",
+          "for": "teach:2"
+        },
+        {
+          "find": "Mary Rose Anthony Roll",
+          "alt": "The Mary Rose in the Anthony Roll",
+          "for": "teach:4"
+        },
+        {
+          "find": "Tudor longbow",
+          "alt": "A longbow",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The Tudors (Off with Her Head!)",
+      "n": 24,
+      "title": "Elizabeth I and the Spanish Armada; our year on a timeline",
+      "bigQuestion": "How did a smaller navy defeat the most powerful fleet in Europe?",
+      "objectives": [
+        "To understand why the Spanish Armada failed and to show what I have learned in history this year"
+      ],
+      "successCriteria": [
+        "All: explain three reasons the Armada failed",
+        "Most: build a timeline of the year's history",
+        "Some: write a short answer using dates and evidence"
+      ],
+      "crossCurricular": "Geography: the English Channel and coasts of Britain",
+      "smsc": "Moral: courage and planning under pressure",
+      "keywords": [
+        {
+          "term": "Armada",
+          "def": "a large fleet of warships"
+        },
+        {
+          "term": "Elizabeth I",
+          "def": "Tudor queen who reigned from 1558 to 1603"
+        },
+        {
+          "term": "fireship",
+          "def": "an old ship set on fire and sent towards enemy ships"
+        },
+        {
+          "term": "fleet",
+          "def": "a group of ships"
+        },
+        {
+          "term": "chronology",
+          "def": "putting events in time order"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What matters most in winning at sea: more ships, better ships, clever plans or the weather?"
+      },
+      "starter": [
+        {
+          "q": "The Mary Rose was raised in:",
+          "a": "1982",
+          "mins": 1,
+          "options": [
+            "1982",
+            "1545"
+          ]
+        },
+        {
+          "q": "Henry VIII broke with Rome in:",
+          "a": "1534",
+          "mins": 1,
+          "options": [
+            "1534",
+            "1588"
+          ]
+        },
+        {
+          "q": "Who was the first Tudor king?",
+          "a": "Henry VII",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Elizabeth I",
+          "bullets": [
+            "Queen from 1558 to 1603",
+            "The last Tudor",
+            "England and Spain became rivals"
+          ],
+          "note": "King Philip II of Spain wanted to invade England."
+        },
+        {
+          "heading": "The Armada, 1588",
+          "bullets": [
+            "About 130 Spanish ships",
+            "Plan: collect an army from the Netherlands",
+            "Then invade England"
+          ],
+          "note": "Trace the route up the English Channel on the map."
+        },
+        {
+          "heading": "Why did it fail?",
+          "bullets": [
+            "English fireships broke up the fleet at Calais",
+            "Faster English ships with long-range guns",
+            "Storms wrecked ships round Scotland and Ireland"
+          ],
+          "note": "Many Spanish ships were wrecked; only some returned to Spain.",
+          "diagram": {
+            "centre": "Why the Armada failed",
+            "items": [
+              "fireships",
+              "faster English ships",
+              "long-range guns",
+              "storms",
+              "army could not join the fleet"
+            ]
+          }
+        },
+        {
+          "heading": "Our year in history",
+          "bullets": [
+            "Shang China and early civilisations",
+            "Ancient Greece",
+            "Medieval England and the Tudors"
+          ],
+          "note": "Order the year before the task.",
+          "timeline": [
+            {
+              "label": "about 1600 BC",
+              "text": "Shang kingdom begins"
+            },
+            {
+              "label": "about 500 BC",
+              "text": "Athens' early democracy"
+            },
+            {
+              "label": "1348",
+              "text": "Black Death"
+            },
+            {
+              "label": "1485",
+              "text": "Tudors begin"
+            },
+            {
+              "label": "1588",
+              "text": "Spanish Armada"
+            }
+          ]
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which was a reason the Armada failed?",
+            "options": [
+              "Storms",
+              "Spain had no ships",
+              "The English had no navy"
+            ],
+            "answer": 0,
+            "why": "Storms wrecked many Spanish ships on the way home."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Put in order: Black Death, Armada, Bosworth.",
+          "a": "Black Death (1348), Bosworth (1485), Armada (1588)",
+          "mins": 1,
+          "model": "I write each date.\n1348, 1485, 1588.\nSmallest first: Black Death, Bosworth, Armada."
+        },
+        {
+          "q": "What is a fireship?",
+          "a": "An old ship set on fire and sent towards enemy ships",
+          "mins": 1
+        },
+        {
+          "q": "Who sent the Armada?",
+          "a": "Philip II of Spain",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: End-of-year timeline task: place ten events from the year on the timeline sheet, then answer in the portal response box: 'Which event this year changed people's lives most? Explain with dates and evidence.' Start: 'I think ... changed lives most because ...'.",
+          "a": "Ten events in correct order with dates; an answer naming an event, two pieces of evidence and a reason",
+          "mins": 16,
+          "model": "Teacher places the first two events and writes the opening sentence for the Black Death."
+        },
+        {
+          "q": "Extend: Which reason for the Armada's failure was most important? Explain.",
+          "a": "Any reason with support, for example: the fireships, because they broke the Spanish formation",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: How was England's victory used to make Elizabeth look strong?",
+          "a": "Pictures and stories celebrated the victory to show her as a powerful queen",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Elizabeth I reigned from:",
+          "a": "1558 to 1603",
+          "mins": 1,
+          "options": [
+            "1558 to 1603",
+            "1509 to 1547"
+          ]
+        },
+        {
+          "q": "Big question: how did a smaller navy defeat the Armada?",
+          "a": "Fireships, faster ships with long-range guns, and storms that wrecked the Spanish fleet",
+          "mins": 1
+        }
+      ],
+      "homework": "Choose your favourite history topic from Year 5 and tell an adult three facts about it.",
+      "send": "SEND: timeline with five events and picture cards; answer frame. EAL: date and event word mat. Stretch: add one event from the Islamic world to the timeline.",
+      "resources": [
+        "Tarbiyyah Primary Year 5 curriculum map and history and geography long-term plans 2023-24; TGA Year 5 pack, History and geography, Summer 2 Off with Her Head! and Time Traveller (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Year 5 end-of-year timeline task and written answer frame (portal printable and response box)",
+        "Armada route map (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Spanish Armada route map",
+          "alt": "The route of the Spanish Armada",
+          "for": "teach:2"
+        },
+        {
+          "find": "Tudor galleon model",
+          "alt": "A model of a Tudor sailing warship",
+          "for": "keywords"
+        },
+        {
+          "find": "English Channel from space",
+          "alt": "The English Channel",
           "for": "hook"
         }
       ]

@@ -3,7 +3,7 @@
   "year": "y10",
   "board": "Pearson Edexcel International GCSE (9-1) Geography (4GE1)",
   "boardShort": "Edexcel IGCSE 4GE1",
-  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data. | Gap-fill against AQA GCSE Geography 8035 specification | Spring 1 2027 (bridge hazards and fragile environments cores, lessons 2, 7, 10, 14 upgraded; rivers 1.1 to 1.3, lessons 28, 29 upgraded and 53 to 56 new): Pearson Edexcel International GCSE Geography 4GE1 specification and Pearson Paper 1 scheme of work; school Geography Curriculum Intent; own exam-style questions. File relabelled: taught and examined as 4GE1 (earlier lessons 1 to 52 were written for AQA 8035) | Spring 2 2027 (4GE1 Topic 2, coastal environments: lessons 24, 25, 26, 49, 50 upgraded and new lessons): TGA Year 10 pack | Summer 1 2027 (4GE1 Paper 1 Section B physical fieldwork enquiry: lessons 43 and 44 upgraded, 63 to 70 new): home infiltration and run-off enquiry with a written guide and risk assessment; example data and own exam-style questions; TGA Year 10 pack",
+  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data. | Gap-fill against AQA GCSE Geography 8035 specification | Spring 1 2027 (bridge hazards and fragile environments cores, lessons 2, 7, 10, 14 upgraded; rivers 1.1 to 1.3, lessons 28, 29 upgraded and 53 to 56 new): Pearson Edexcel International GCSE Geography 4GE1 specification and Pearson Paper 1 scheme of work; school Geography Curriculum Intent; own exam-style questions. File relabelled: taught and examined as 4GE1 (earlier lessons 1 to 52 were written for AQA 8035) | Spring 2 2027 (4GE1 Topic 2, coastal environments: lessons 24, 25, 26, 49, 50 upgraded and new lessons): TGA Year 10 pack | Summer 1 2027 (4GE1 Paper 1 Section B physical fieldwork enquiry: lessons 43 and 44 upgraded, 63 to 70 new): home infiltration and run-off enquiry with a written guide and risk assessment; example data and own exam-style questions; TGA Year 10 pack | Summer 2 2027 (lessons 71 to 78): 4GE1 revision of Topics 1, 2, 3 and 7 with own timed questions (weeks of 14 and 21 Jun), Year 10 mock in two parts with own questions and mark schemes (week of 28 Jun), feedback and bridge to Year 11 urban environments (week of 5 Jul); TGA Year 10 pack",
   "lessons": [
     {
       "unit": "Unit 1: Weather hazards (AQA 3.1.1 The challenge of natural hazards)",
@@ -13631,6 +13631,1762 @@
           "find": "meandering river lowland",
           "alt": "A wide lowland river",
           "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Revision and Year 10 mock",
+      "n": 71,
+      "title": "Revision: river environments (Topic 1) with timed answers",
+      "bigQuestion": "In a 4-mark 'explain' question, what turns a list of facts into full marks?",
+      "objectives": [
+        "To understand how to recall river processes and case studies and use them in timed exam answers"
+      ],
+      "successCriteria": [
+        "All: recall river processes, landforms and flood causes accurately",
+        "Most: read a storm hydrograph with figures",
+        "Some: write a timed 4-mark and 8-mark answer"
+      ],
+      "smsc": "Moral: perseverance in revision",
+      "keywords": [
+        {
+          "term": "discharge",
+          "def": "the volume of water passing a point each second, in cumecs"
+        },
+        {
+          "term": "lag time",
+          "def": "the time between peak rainfall and peak discharge"
+        },
+        {
+          "term": "hydraulic action",
+          "def": "the force of water breaking rock apart"
+        },
+        {
+          "term": "meander",
+          "def": "a bend in a river"
+        },
+        {
+          "term": "hard engineering",
+          "def": "built structures to control rivers, such as dams and embankments"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which river landform could you explain to a Year 7 in four steps without notes?"
+      },
+      "starter": [
+        {
+          "q": "Lag time is the gap between:",
+          "a": "Peak rainfall and peak discharge",
+          "mins": 1,
+          "options": [
+            "Peak rainfall and peak discharge",
+            "Source and mouth"
+          ]
+        },
+        {
+          "q": "Discharge is measured in:",
+          "a": "Cumecs",
+          "mins": 1,
+          "options": [
+            "Cumecs",
+            "Kilometres"
+          ]
+        },
+        {
+          "q": "Name the four processes of river erosion.",
+          "a": "Hydraulic action, abrasion, attrition, solution",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The hydrological cycle and drainage basins",
+          "bullets": [
+            "Inputs: precipitation",
+            "Flows: infiltration, throughflow, surface run-off",
+            "Outputs: evaporation, transpiration, river discharge"
+          ],
+          "note": "Topic 1.1. A drainage basin is an open system."
+        },
+        {
+          "heading": "Landforms: upper and lower course",
+          "bullets": [
+            "Waterfalls and gorges; interlocking spurs",
+            "Meanders and ox-bow lakes",
+            "Flood plains and levees"
+          ],
+          "note": "Each landform answer is a chain of processes.",
+          "cycle": [
+            "erosion on the outer bend",
+            "deposition on the inner bend",
+            "neck narrows",
+            "flood cuts through",
+            "deposition seals the ox-bow lake"
+          ]
+        },
+        {
+          "heading": "Storm hydrographs",
+          "bullets": [
+            "Rising limb, peak, falling limb",
+            "Short lag time: steep, urban, impermeable",
+            "Long lag time: forested, gentle, permeable"
+          ],
+          "note": "Example data, not a real river: rain peaks at 09:00; discharge peaks at 21:00; lag time 12 hours."
+        },
+        {
+          "heading": "Timing: a minute a mark",
+          "bullets": [
+            "4-mark explain: two developed points",
+            "8-mark assess: both sides and a judgement",
+            "Always name your case study"
+          ],
+          "note": "Model a 4-mark answer.",
+          "model": {
+            "problem": "Explain two physical causes of river flooding. (4)",
+            "steps": [
+              "Point 1: prolonged rain saturates the soil",
+              "Develop: no more infiltration, so run-off rises fast",
+              "Point 2: steep slopes",
+              "Develop: water reaches the channel quickly, shortening lag time"
+            ],
+            "answer": "Two causes, each developed with 'so': 4 marks"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which gives a SHORT lag time?",
+            "options": [
+              "Urban surfaces and steep slopes",
+              "Forest and permeable rock",
+              "Gentle slopes and dry soil"
+            ],
+            "answer": 0,
+            "why": "Impermeable surfaces and steep slopes send water to the river quickly."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how a waterfall forms. (4)",
+          "a": "Hard rock lies over soft rock (1); the soft rock erodes faster, undercutting the hard rock (1); the overhang collapses into the plunge pool (1); the waterfall retreats upstream, leaving a gorge (1)",
+          "mins": 3,
+          "model": "Point: a band of hard rock over soft rock.\nDevelop: hydraulic action and abrasion erode the soft rock faster, making an overhang.\nDevelop: the overhang collapses into the plunge pool.\nLink: repeated collapse makes the waterfall retreat, leaving a gorge."
+        },
+        {
+          "q": "Example data: rain peaks at 09:00, discharge at 21:00. What is the lag time?",
+          "a": "12 hours",
+          "mins": 1
+        },
+        {
+          "q": "Give one hard and one soft engineering method.",
+          "a": "Hard: dam, embankment or flood wall; soft: afforestation, flood plain zoning or washlands",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 18 minutes): (a) Describe two features of a storm hydrograph. (2) (b) Explain how an ox-bow lake forms. (4) (c) Explain two human causes of flooding. (4) (d) Assess the success of river management in a named area. (8)",
+          "a": "(a) e.g. rising limb, peak discharge, lag time (b) erosion on outer bends, neck narrows, flood breaks through, deposition seals (c) urbanisation increases run-off; deforestation reduces interception (d) named scheme, successes, limits, judgement",
+          "mins": 18,
+          "model": "Teacher reads question (a) aloud, then starts the timer."
+        },
+        {
+          "q": "Extend: Self-mark with the mark scheme in green and add one missing point to (d).",
+          "a": "A corrected answer with the added point",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Rewrite (b) in exactly four sentences that each earn a mark.",
+          "a": "Four precise, linked steps",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An 8-mark assess answer needs:",
+          "a": "Both sides and a judgement",
+          "mins": 1,
+          "options": [
+            "Both sides and a judgement",
+            "Only one side"
+          ]
+        },
+        {
+          "q": "Big question: what turns a list into full marks?",
+          "a": "Developing each point with 'so' or 'because' and linking it to the question",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: complete the river environments retrieval quiz in the portal and redo any question below 70%.",
+      "send": "SEND: extra time on the timed task as in the SEND register; landform step cards. EAL: command word mat. Stretch: answer (d) with two named schemes.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification (Paper 1 Topics 1 to 3 and Section B; Paper 2 Topic 7) and sample assessment materials for question styles",
+        "TGA Year 10 pack, Geography (4GE1), Summer 2: Revision and mock",
+        "Rivers revision mat and retrieval quiz (portal printable and Forms quiz)",
+        "Own exam-style questions with mark scheme (above)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "waterfall plunge pool gorge",
+          "alt": "A waterfall with a plunge pool",
+          "for": "teach:2"
+        },
+        {
+          "find": "ox-bow lake aerial",
+          "alt": "An ox-bow lake",
+          "for": "keywords"
+        },
+        {
+          "find": "flood embankment river UK",
+          "alt": "A river flood embankment",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Revision and Year 10 mock",
+      "n": 72,
+      "title": "Revision: coastal environments (Topic 2) with timed answers",
+      "bigQuestion": "Why do some exam answers on coasts score 3 out of 8 even when every fact is right?",
+      "objectives": [
+        "To understand how to recall coastal processes, ecosystems and management and use them in timed answers"
+      ],
+      "successCriteria": [
+        "All: recall coastal processes and landforms in sequence",
+        "Most: explain threats to coastal ecosystems",
+        "Some: evaluate coastal management with named case studies"
+      ],
+      "smsc": "Social: protecting communities on vulnerable coasts",
+      "keywords": [
+        {
+          "term": "longshore drift",
+          "def": "movement of sediment along a coast by waves at an angle"
+        },
+        {
+          "term": "constructive wave",
+          "def": "a low wave with a strong swash that builds beaches"
+        },
+        {
+          "term": "spit",
+          "def": "a ridge of sand or shingle extending from the coast"
+        },
+        {
+          "term": "mangrove",
+          "def": "trees that grow in salty water on tropical coasts"
+        },
+        {
+          "term": "managed retreat",
+          "def": "letting the sea flood low land on purpose"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Holderness or Bangladesh: which coast faces the bigger challenge, and how would you prove it?"
+      },
+      "starter": [
+        {
+          "q": "Constructive waves have a strong:",
+          "a": "Swash",
+          "mins": 1,
+          "options": [
+            "Swash",
+            "Backwash"
+          ]
+        },
+        {
+          "q": "Mappleton is protected by:",
+          "a": "Rock groynes and a rock revetment",
+          "mins": 1,
+          "options": [
+            "Rock groynes and a rock revetment",
+            "A dam"
+          ]
+        },
+        {
+          "q": "Name a depositional landform.",
+          "a": "Beach, spit, bar or sand dune",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Processes and landforms",
+          "bullets": [
+            "Erosion: hydraulic action, abrasion",
+            "Transport: longshore drift",
+            "Landforms: cave, arch, stack, stump; spit, bar"
+          ],
+          "note": "Topic 2.1. Write landforms as a sequence.",
+          "cycle": [
+            "crack in headland",
+            "cave",
+            "arch",
+            "stack",
+            "stump"
+          ]
+        },
+        {
+          "heading": "Coastal ecosystems",
+          "bullets": [
+            "Coral reefs, mangroves, salt marshes, dunes",
+            "Threats: warming, pollution, development",
+            "Mangroves protect against storm surges"
+          ],
+          "note": "Topic 2.2."
+        },
+        {
+          "heading": "Case studies",
+          "bullets": [
+            "Holderness: fast erosion; groynes at Mappleton",
+            "Bangladesh: embankments, cyclone shelters, mangroves",
+            "Cyclone Sidr, 2007: about 3,400 deaths"
+          ],
+          "note": "Recall the Spring 2 lessons.",
+          "compare": {
+            "left": {
+              "title": "Holderness (developed)",
+              "points": [
+                "Hard engineering at Mappleton",
+                "Erosion moved down the coast"
+              ]
+            },
+            "right": {
+              "title": "Bangladesh (developing)",
+              "points": [
+                "Embankments and shelters",
+                "Mangrove planting"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Why 3 out of 8?",
+          "bullets": [
+            "Facts without evaluation",
+            "No judgement",
+            "No named place"
+          ],
+          "note": "Model the evaluation sentence.",
+          "model": {
+            "problem": "Evaluate groynes at Mappleton.",
+            "steps": [
+              "Strength: beach built up, village protected",
+              "Weakness: less sediment reaches the south",
+              "Evidence: faster erosion further south",
+              "Judgement: success locally, problem regionally"
+            ],
+            "answer": "Groynes worked for Mappleton but shifted the problem down the coast, so their success depends on the scale you judge."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Longshore drift is driven by:",
+            "options": [
+              "Waves approaching at an angle",
+              "Rivers",
+              "Tides only"
+            ],
+            "answer": 0,
+            "why": "The prevailing wind sends waves in at an angle, so swash moves sediment along the coast."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how a spit forms. (4)",
+          "a": "Longshore drift carries sediment along the coast (1); where the coast changes direction, deposition continues out to sea (1); the spit grows (1); wind and waves curve its end and a salt marsh forms behind (1)",
+          "mins": 3,
+          "model": "Point: longshore drift moves sand along the coast.\nDevelop: at a bend, sediment keeps being dropped into the sea.\nDevelop: the ridge grows out.\nLink: wave direction changes curve the end; a salt marsh forms in its shelter."
+        },
+        {
+          "q": "Give one threat to coral reefs.",
+          "a": "Warming and bleaching, acidification, pollution or tourism damage",
+          "mins": 1
+        },
+        {
+          "q": "Name one coastal management method used in Bangladesh.",
+          "a": "Embankments, cyclone shelters or mangrove planting",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 18 minutes): (a) State two features of a destructive wave. (2) (b) Explain how a stack forms. (4) (c) Explain two benefits of mangroves. (4) (d) Evaluate coastal management in a named developing country. (8)",
+          "a": "(a) tall, steep, strong backwash, frequent (b) crack, cave, arch, collapse, stack (c) protect from storm surges; habitats or timber and fish (d) Bangladesh: embankments, shelters, mangroves; successes and limits; judgement",
+          "mins": 18,
+          "model": "Teacher reads question (a) aloud, then starts the timer."
+        },
+        {
+          "q": "Extend: Self-mark (d) and add an evaluation sentence using the model steps.",
+          "a": "A corrected answer with evaluation",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write a 2-sentence judgement comparing Holderness and Bangladesh.",
+          "a": "A comparison with a reasoned judgement",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Evaluation means:",
+          "a": "Strengths, weaknesses and a judgement",
+          "mins": 1,
+          "options": [
+            "Strengths, weaknesses and a judgement",
+            "Describing"
+          ]
+        },
+        {
+          "q": "Big question: why do correct facts score 3 out of 8?",
+          "a": "Without evaluation, a named place and a judgement, answers stay in the lower levels",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: complete the coasts retrieval quiz in the portal and make a case study card for Holderness and Bangladesh.",
+      "send": "SEND: landform sequence cards; extra time as in the SEND register. EAL: coastal word mat. Stretch: add a third case study of your own.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification (Paper 1 Topics 1 to 3 and Section B; Paper 2 Topic 7) and sample assessment materials for question styles",
+        "TGA Year 10 pack, Geography (4GE1), Summer 2: Revision and mock",
+        "Coasts revision mat and retrieval quiz (portal printable and Forms quiz)",
+        "Case study cards template (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Old Harry Rocks stack",
+          "alt": "Old Harry Rocks, Dorset",
+          "for": "teach:1"
+        },
+        {
+          "find": "Mappleton groynes Holderness",
+          "alt": "Groynes at Mappleton",
+          "for": "teach:3"
+        },
+        {
+          "find": "Sundarbans mangroves",
+          "alt": "Mangroves in the Sundarbans",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Revision and Year 10 mock",
+      "n": 73,
+      "title": "Revision: hazardous environments (Topic 3) with timed answers",
+      "bigQuestion": "Why did a smaller earthquake in one country kill fewer people than you might expect, and a similar one elsewhere kill thousands?",
+      "objectives": [
+        "To understand how to recall hazard causes, measurement and management and use case studies in timed answers"
+      ],
+      "successCriteria": [
+        "All: recall the causes and distribution of cyclones, earthquakes and volcanoes",
+        "Most: use the measurement scales accurately",
+        "Some: compare earthquake case studies in a developed and a developing country"
+      ],
+      "smsc": "Moral: the duty to help people in disasters",
+      "keywords": [
+        {
+          "term": "tropical cyclone",
+          "def": "a powerful storm that forms over warm tropical seas"
+        },
+        {
+          "term": "Saffir-Simpson scale",
+          "def": "a 1 to 5 scale for cyclone strength by wind speed"
+        },
+        {
+          "term": "moment magnitude",
+          "def": "a scale measuring the energy released by an earthquake"
+        },
+        {
+          "term": "vulnerability",
+          "def": "how likely people are to be harmed by a hazard"
+        },
+        {
+          "term": "preparedness",
+          "def": "steps taken before a hazard to reduce harm"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which matters more in a disaster: the size of the hazard or how ready people are?"
+      },
+      "islamicLink": {
+        "text": "Allah tells us we will be tested with some fear, hunger and loss, and to give glad tidings to the patient (Al-Baqarah 2:155). Helping those hit by disasters is part of our duty.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Tropical cyclones need sea temperatures of at least about:",
+          "a": "26.5 °C",
+          "mins": 1,
+          "options": [
+            "26.5 °C",
+            "10 °C"
+          ]
+        },
+        {
+          "q": "The Nepal earthquake of 2015 had a magnitude of:",
+          "a": "7.8",
+          "mins": 1,
+          "options": [
+            "7.8",
+            "5.0"
+          ]
+        },
+        {
+          "q": "Name a scale for measuring volcanic eruptions.",
+          "a": "The Volcanic Explosivity Index (VEI)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Causes and distribution",
+          "bullets": [
+            "Cyclones: 5° to 30° from the Equator, warm seas",
+            "Earthquakes and volcanoes: plate boundaries",
+            "Hotspots such as Hawaii"
+          ],
+          "note": "Topic 3.1."
+        },
+        {
+          "heading": "Measurement",
+          "bullets": [
+            "Saffir-Simpson: categories 1 to 5",
+            "Moment magnitude: each whole number about 32 times more energy",
+            "Mercalli: effects I to XII; VEI 0 to 8"
+          ],
+          "note": "Use the right scale name in answers."
+        },
+        {
+          "heading": "Earthquake case studies",
+          "bullets": [
+            "Christchurch, Feb 2011: magnitude 6.3, 185 deaths",
+            "Nepal, April 2015: magnitude 7.8, about 9,000 deaths",
+            "Development shapes impacts and responses"
+          ],
+          "note": "These were the suggested case studies in our Spring 2 lessons; use the ones your class studied.",
+          "table": {
+            "head": [
+              "Factor",
+              "Christchurch 2011",
+              "Nepal 2015"
+            ],
+            "rows": [
+              [
+                "Magnitude",
+                "6.3",
+                "7.8"
+              ],
+              [
+                "Deaths",
+                "185",
+                "about 9,000"
+              ],
+              [
+                "Building codes",
+                "Strict, but older buildings fell",
+                "Weak; many brick and stone houses"
+              ],
+              [
+                "Response",
+                "Fast national response",
+                "International aid; hard to reach mountain villages"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Comparing well",
+          "bullets": [
+            "Point about each place",
+            "Use 'whereas' and figures",
+            "Explain why: development"
+          ],
+          "note": "Model a comparison sentence.",
+          "model": {
+            "problem": "Compare deaths in Christchurch and Nepal.",
+            "steps": [
+              "Give both figures",
+              "Use 'whereas'",
+              "Explain with building codes and poverty",
+              "Link to development"
+            ],
+            "answer": "185 people died in Christchurch, whereas about 9,000 died in Nepal, partly because Nepal's poorer, rural communities lived in buildings not designed for earthquakes."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Each whole number on the moment magnitude scale releases about:",
+            "options": [
+              "32 times more energy",
+              "2 times more energy",
+              "The same energy"
+            ],
+            "answer": 0,
+            "why": "The scale is logarithmic: one step is about 32 times more energy."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain two reasons why earthquakes cause more deaths in developing countries. (4)",
+          "a": "Weaker building codes, so houses collapse (2); fewer resources for rescue and health care, so injured people go untreated (2)",
+          "mins": 3,
+          "model": "Point 1: building codes are weaker.\nDevelop: so more houses collapse on people.\nPoint 2: less money for emergency services.\nDevelop: so rescue is slower and more injured people die."
+        },
+        {
+          "q": "Which scale measures cyclone strength?",
+          "a": "Saffir-Simpson",
+          "mins": 1
+        },
+        {
+          "q": "Why do cyclones weaken over land?",
+          "a": "They lose their supply of warm, moist air from the sea",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 18 minutes): (a) Describe the global distribution of tropical cyclones. (2) (b) Explain how a cyclone forms. (4) (c) Compare the effects of earthquakes in two countries at different levels of development. (4) (d) Assess the importance of preparation in reducing earthquake deaths. (8)",
+          "a": "(a) 5 to 30 degrees from the Equator over warm oceans (b) warm sea, rising moist air, condensation releases heat, spin, eye (c) Christchurch and Nepal figures with whereas (d) building codes, drills, warnings against magnitude, location and time of day; judgement",
+          "mins": 18,
+          "model": "Teacher reads question (a) aloud, then starts the timer."
+        },
+        {
+          "q": "Extend: Self-mark and add one figure to (c).",
+          "a": "A corrected answer with a figure",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Add a counter-argument to (d): when is preparation not enough?",
+          "a": "Very large magnitudes, shallow focus or secondary hazards like landslides can overwhelm preparation",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Vulnerability means:",
+          "a": "How likely people are to be harmed",
+          "mins": 1,
+          "options": [
+            "How likely people are to be harmed",
+            "The size of the hazard"
+          ]
+        },
+        {
+          "q": "Big question: size or readiness?",
+          "a": "Both matter, but readiness and development often decide how many die, as Christchurch and Nepal show",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: complete the hazards retrieval quiz in the portal and learn your two earthquake case study cards.",
+      "send": "SEND: case study table pre-filled to learn. EAL: hazard word mat. Stretch: add a volcano case study to your revision.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification (Paper 1 Topics 1 to 3 and Section B; Paper 2 Topic 7) and sample assessment materials for question styles",
+        "TGA Year 10 pack, Geography (4GE1), Summer 2: Revision and mock",
+        "Hazards revision mat and retrieval quiz (portal printable and Forms quiz)",
+        "Earthquake case study comparison table (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tropical cyclone satellite image eye",
+          "alt": "A tropical cyclone from space",
+          "for": "teach:1"
+        },
+        {
+          "find": "Christchurch Cathedral Square",
+          "alt": "Christchurch city centre",
+          "for": "teach:3"
+        },
+        {
+          "find": "Kathmandu Durbar Square temples",
+          "alt": "Kathmandu, Nepal",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Revision and Year 10 mock",
+      "n": 74,
+      "title": "Revision: fragile environments and climate change (Topic 7)",
+      "bigQuestion": "How do you write 12 marks' worth of judgement on climate change in 12 minutes?",
+      "objectives": [
+        "To understand how to recall Topic 7 and plan a longer Paper 2 Section C answer"
+      ],
+      "successCriteria": [
+        "All: recall the causes of desertification, deforestation and climate change",
+        "Most: explain impacts on fragile environments",
+        "Some: plan a 12-mark evaluate answer with a judgement"
+      ],
+      "smsc": "Moral: our responsibility to future generations",
+      "keywords": [
+        {
+          "term": "fragile environment",
+          "def": "an environment easily damaged and slow to recover"
+        },
+        {
+          "term": "desertification",
+          "def": "land turning into desert"
+        },
+        {
+          "term": "enhanced greenhouse effect",
+          "def": "extra warming caused by human greenhouse gas emissions"
+        },
+        {
+          "term": "mitigation",
+          "def": "reducing the causes of climate change"
+        },
+        {
+          "term": "adaptation",
+          "def": "changing how we live to cope with climate change"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which response to climate change would you fund first with limited money: mitigation or adaptation?"
+      },
+      "islamicLink": {
+        "text": "Allah says corruption has appeared on land and sea because of what people's hands have earned (Ar-Rum 30:41). Islam asks us to act as trustworthy stewards of the earth.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Burning fossil fuels releases:",
+          "a": "Carbon dioxide",
+          "mins": 1,
+          "options": [
+            "Carbon dioxide",
+            "Oxygen"
+          ]
+        },
+        {
+          "q": "Milankovitch cycles are a:",
+          "a": "Natural cause of climate change",
+          "mins": 1,
+          "options": [
+            "Natural cause of climate change",
+            "Human cause"
+          ]
+        },
+        {
+          "q": "Name a cause of desertification.",
+          "a": "Drought, overgrazing, overcultivation, fuelwood collection or population growth",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fragile environments and causes",
+          "bullets": [
+            "Deserts, rainforests, mountains, polar lands, reefs",
+            "Desertification: drought, overgrazing",
+            "Deforestation: ranching, soy, logging, mining"
+          ],
+          "note": "Topic 7.1."
+        },
+        {
+          "heading": "Climate change: causes",
+          "bullets": [
+            "Natural: orbit, solar output, volcanoes",
+            "Human: CO2 from fossil fuels; methane",
+            "Recent rapid warming is mainly human"
+          ],
+          "note": "Teach the specification accurately: both natural and enhanced greenhouse effect."
+        },
+        {
+          "heading": "Impacts and responses",
+          "bullets": [
+            "Impacts: drought, sea level rise, species loss",
+            "Mitigation: renewables, Paris Agreement",
+            "Adaptation: flood defences, drought crops"
+          ],
+          "note": "Topic 7.2 and 7.3.",
+          "compare": {
+            "left": {
+              "title": "Mitigation",
+              "points": [
+                "Renewables",
+                "Reforestation",
+                "Global agreements"
+              ]
+            },
+            "right": {
+              "title": "Adaptation",
+              "points": [
+                "Sea walls",
+                "Drought-resistant crops",
+                "Water storage"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Planning 12 marks",
+          "bullets": [
+            "Introduction: define and state your line",
+            "Two to three paragraphs, each evaluated",
+            "Conclusion: judgement that answers the question"
+          ],
+          "note": "A minute a mark: 2 minutes to plan, 10 to write.",
+          "model": {
+            "problem": "Evaluate the view that local responses are more effective than global ones in tackling climate change. (12)",
+            "steps": [
+              "Define local and global responses",
+              "Global: Paris Agreement sets targets but relies on countries",
+              "Local: tree planting, renewables, adaptation work now",
+              "Judge: both needed; global sets the scale, local delivers"
+            ],
+            "answer": "A plan with three evaluated paragraphs and a clear judgement"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Planting drought-resistant crops is:",
+            "options": [
+              "Adaptation",
+              "Mitigation",
+              "Desertification"
+            ],
+            "answer": 0,
+            "why": "It helps people cope with the effects, so it is adaptation."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain two causes of deforestation. (4)",
+          "a": "Cattle ranching clears land for pasture (2); logging for timber, or mining and roads opening the forest (2)",
+          "mins": 3,
+          "model": "Point 1: cattle ranching.\nDevelop: forest is cleared and burned for pasture, especially in the Amazon.\nPoint 2: logging.\nDevelop: valuable trees are cut and roads open the forest to more clearance."
+        },
+        {
+          "q": "Give one impact of climate change on a fragile environment.",
+          "a": "Coral bleaching, glacier melt, drought in deserts or species loss",
+          "mins": 1
+        },
+        {
+          "q": "Is the Paris Agreement mitigation or adaptation?",
+          "a": "Mitigation",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 16 minutes): (a) Explain two natural causes of climate change. (4) (b) Evaluate the effectiveness of global agreements in reducing climate change. (12) Write (b) in the portal response box.",
+          "a": "(a) Milankovitch cycles; solar output or volcanic eruptions, each developed (b) Paris Agreement aims and limits, national targets, enforcement, examples, a judgement",
+          "mins": 16,
+          "model": "Teacher shows the plan from the model slide, then starts the timer."
+        },
+        {
+          "q": "Extend: Self-mark (b) against the levels and add one more evaluative sentence.",
+          "a": "An improved answer",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Rewrite your conclusion so it clearly answers 'how effective'.",
+          "a": "A conclusion with a clear degree of effectiveness and reason",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Mitigation means:",
+          "a": "Reducing the causes",
+          "mins": 1,
+          "options": [
+            "Reducing the causes",
+            "Coping with effects"
+          ]
+        },
+        {
+          "q": "Big question: how do you write 12 marks in 12 minutes?",
+          "a": "Plan for 2 minutes, write two or three evaluated paragraphs and finish with a judgement",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: complete the Topic 7 retrieval quiz in the portal; the mock is next week.",
+      "send": "SEND: paragraph frame for 12-mark answers; extra time as in the SEND register. EAL: climate word mat. Stretch: use a named country's climate policy as evidence.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification (Paper 1 Topics 1 to 3 and Section B; Paper 2 Topic 7) and sample assessment materials for question styles",
+        "TGA Year 10 pack, Geography (4GE1), Summer 2: Revision and mock",
+        "Topic 7 revision mat and retrieval quiz (portal printable and Forms quiz)",
+        "12-mark planning frame (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sahel desertification land",
+          "alt": "Dry land in the Sahel",
+          "for": "teach:1"
+        },
+        {
+          "find": "Amazon deforestation aerial",
+          "alt": "Deforestation in the Amazon",
+          "for": "keywords"
+        },
+        {
+          "find": "wind farm",
+          "alt": "A wind farm",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Revision and Year 10 mock",
+      "n": 75,
+      "title": "Year 10 mock, part 1: Paper 1 Section A (physical geography)",
+      "bigQuestion": "In a real exam you choose two of three environments. How will you decide in the first minute?",
+      "objectives": [
+        "To understand what I can do on Paper 1 Section A under timed conditions"
+      ],
+      "successCriteria": [
+        "All: choose two of three environment questions wisely",
+        "Most: answer short, data and extended questions accurately",
+        "Some: manage time at a mark a minute"
+      ],
+      "smsc": "Moral: honesty and integrity in exams",
+      "keywords": [
+        {
+          "term": "Section A",
+          "def": "the part of Paper 1 on two physical environments"
+        },
+        {
+          "term": "resource booklet",
+          "def": "maps, graphs and photos used to answer questions"
+        },
+        {
+          "term": "command word",
+          "def": "the instruction in a question"
+        },
+        {
+          "term": "level",
+          "def": "a band of marks for extended answers"
+        },
+        {
+          "term": "mark a minute",
+          "def": "the timing rule for 4GE1 papers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a real exam you choose two of three environments. How will you decide in the first minute?"
+      },
+      "starter": [
+        {
+          "q": "Paper 1 is how long?",
+          "a": "1 hour 10 minutes",
+          "mins": 1,
+          "options": [
+            "1 hour 10 minutes",
+            "2 hours"
+          ]
+        },
+        {
+          "q": "In Section A you answer:",
+          "a": "Two of three environments",
+          "mins": 1,
+          "options": [
+            "Two of three environments",
+            "All three"
+          ]
+        },
+        {
+          "q": "Assess means:",
+          "a": "Weigh factors and judge which matters most",
+          "mins": 1,
+          "options": [
+            "Weigh factors and judge which matters most",
+            "List"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "This mock",
+          "bullets": [
+            "Choose two of Q1 rivers, Q2 coasts, Q3 hazards",
+            "Each question 16 marks; 32 minutes",
+            "Shortened from the real 25 marks each"
+          ],
+          "note": "A mark a minute, as in the real paper (70 marks in 70 minutes). Portal test window, camera on."
+        },
+        {
+          "heading": "Choosing",
+          "bullets": [
+            "Scan all three for 1 minute",
+            "Pick your strongest case studies",
+            "Check the 8-mark question before choosing"
+          ],
+          "note": "Do not change your mind halfway."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "If you finish a question early you should:",
+            "options": [
+              "Check figures and add evaluation",
+              "Start a third question",
+              "Stop"
+            ],
+            "answer": 0,
+            "why": "Only two count; use spare time to improve them."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Model: choosing. Which question has the 8-mark topic you know best?",
+          "a": "Any choice with a reason, for example coasts because I know Holderness well",
+          "mins": 1,
+          "model": "I read each 8-mark question first.\nI pick the two where I can name a case study."
+        },
+        {
+          "q": "How long for each question?",
+          "a": "16 minutes",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Q1 Rivers (16): (a) Define 'lag time'. (1) (b) Using the example hydrograph (rain peak 10:00, discharge peak 18:00), calculate the lag time. (1) (c) Explain how a levee forms. (3) (d) Explain two ways urbanisation increases flood risk. (3) (e) Assess the effectiveness of hard engineering in reducing flood risk in a named area. (8)",
+          "a": "(a) time between peak rainfall and peak discharge (b) 8 hours (c) flooding, friction slows water, heavier sediment deposited near the channel, repeated floods build banks (d) impermeable surfaces increase run-off; drains speed water to rivers (e) named scheme, benefits and costs, judgement",
+          "mins": 16,
+          "model": "Teacher reads the instructions and starts the 32-minute timer."
+        },
+        {
+          "q": "Q2 Coasts (16): (a) Define 'longshore drift'. (1) (b) Name one landform of coastal deposition. (1) (c) Explain how a wave-cut platform forms. (3) (d) Explain two threats to coastal ecosystems. (3) (e) Evaluate the management of a named coastline. (8)",
+          "a": "(a) sediment moved along the coast by waves at an angle (b) spit, bar, beach or dune (c) undercutting at high tide forms a notch, the cliff collapses and retreats, leaving a rocky platform (d) development and pollution, each developed (e) e.g. Holderness or Bangladesh, strengths, weaknesses, judgement",
+          "mins": 16
+        },
+        {
+          "q": "Q3 Hazards (16, an alternative to Q1 or Q2 in the same 16 minutes): (a) Name the scale used to measure tropical cyclones. (1) (b) State the latitude band where cyclones form. (1) (c) Explain why earthquakes happen at destructive plate boundaries. (3) (d) Explain two primary effects of a named earthquake. (3) (e) Assess the role of development in the impacts of earthquakes. (8)",
+          "a": "(a) Saffir-Simpson (b) about 5 to 30 degrees north and south (c) plates converge, one subducts, friction builds stress, sudden release (d) named, e.g. Nepal 2015: collapsed buildings, deaths (e) compare developed and developing case studies, judgement"
+        }
+      ],
+      "exit": [
+        {
+          "q": "In Section A of the real paper, how many environments do you answer?",
+          "a": "Two",
+          "mins": 1,
+          "options": [
+            "Two",
+            "Three"
+          ]
+        },
+        {
+          "q": "Big question: how did you choose in the first minute?",
+          "a": "By checking which 8-mark questions I could answer with a named case study",
+          "mins": 1
+        }
+      ],
+      "homework": "No homework: rest before part 2.",
+      "send": "SEND: extra time, a reader or a word processor as agreed in the SEND register. EAL: command word mat allowed. Stretch: answer the third question at home for extra feedback.",
+      "resources": [
+        "TGA Year 10 geography mock 2027 (own questions, mark scheme and resource booklet; portal test), part 1: Paper 1 Section A, three 16-mark questions, answer two",
+        "Pearson Edexcel International GCSE Geography 4GE1 specification (Paper 1 Topics 1 to 3 and Section B; Paper 2 Topic 7) and sample assessment materials for question styles",
+        "Calculator, pen and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "exam paper and pen",
+          "alt": "A test paper and pen",
+          "for": "hook"
+        },
+        {
+          "find": "wall clock",
+          "alt": "A clock for timing",
+          "for": "teach:1"
+        },
+        {
+          "find": "river levee",
+          "alt": "A river levee",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Revision and Year 10 mock",
+      "n": 76,
+      "title": "Year 10 mock, part 2: fieldwork (Section B) and a Topic 7 extended question",
+      "bigQuestion": "Your own enquiry is the one topic no one else can answer for you. How will you show you did it?",
+      "objectives": [
+        "To understand what I can do on fieldwork and extended Section C questions under timed conditions"
+      ],
+      "successCriteria": [
+        "All: answer questions on my own physical enquiry with specific detail",
+        "Most: interpret unfamiliar fieldwork data",
+        "Some: write a 12-mark evaluate answer with a judgement"
+      ],
+      "smsc": "Moral: honesty and integrity in exams",
+      "keywords": [
+        {
+          "term": "Section B",
+          "def": "fieldwork questions on Paper 1 and Paper 2"
+        },
+        {
+          "term": "Section C",
+          "def": "the global issue questions on Paper 2"
+        },
+        {
+          "term": "primary data",
+          "def": "data you collected yourself"
+        },
+        {
+          "term": "reliability",
+          "def": "whether repeating the method gives similar results"
+        },
+        {
+          "term": "judgement",
+          "def": "a decision backed by evidence"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your own enquiry is the one topic no one else can answer for you. How will you show you did it?"
+      },
+      "starter": [
+        {
+          "q": "Infiltration is water:",
+          "a": "Soaking into the ground",
+          "mins": 1,
+          "options": [
+            "Soaking into the ground",
+            "Flowing over the surface"
+          ]
+        },
+        {
+          "q": "Primary data is:",
+          "a": "Data you collect yourself",
+          "mins": 1,
+          "options": [
+            "Data you collect yourself",
+            "Data from books"
+          ]
+        },
+        {
+          "q": "Name one way to improve reliability.",
+          "a": "Repeat readings and take an average",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "This mock",
+          "bullets": [
+            "Section B style: 14 marks, 14 minutes",
+            "Section C style on Topic 7: 18 marks, 18 minutes",
+            "A mark a minute"
+          ],
+          "note": "Portal test window, camera on."
+        },
+        {
+          "heading": "Fieldwork answers",
+          "bullets": [
+            "Name your site, method and equipment",
+            "Quote your own figures",
+            "Evaluate: reliability and accuracy"
+          ],
+          "note": "Generic answers lose marks."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "A strong fieldwork answer includes:",
+            "options": [
+              "Your own site, method and figures",
+              "A textbook definition only",
+              "No numbers"
+            ],
+            "answer": 0,
+            "why": "Examiners reward detail that shows you did the enquiry."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Model: describe one method from your enquiry. (2)",
+          "a": "Infiltration timed with a ring (cut-off tin) and 500 ml of water at 5 sites (1); timed until all water soaked in, repeated 3 times (1)",
+          "mins": 1,
+          "model": "State the equipment, how it was used, and how many repeats."
+        },
+        {
+          "q": "How long for Section C?",
+          "a": "18 minutes",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Section B (14): (a) State the aim of your physical enquiry. (1) (b) Describe one primary data collection method you used. (2) (c) Example data: infiltration times at 5 sites were 40, 55, 60, 210 and 65 seconds. Calculate the mean and identify the anomaly. (3) (d) Explain one way you presented your data and why it was suitable. (2) (e) Evaluate the reliability of your conclusions. (6)",
+          "a": "(a) own aim (b) method with equipment and repeats (c) mean 86 seconds; anomaly 210 s (d) e.g. bar chart to compare sites (e) sample size, repeats, conditions, anomalies, judgement",
+          "mins": 14,
+          "model": "Teacher reads the instructions and starts the timer."
+        },
+        {
+          "q": "Section C (18): (a) Explain two impacts of climate change on a named fragile environment. (6) (b) Evaluate the view that adaptation is more important than mitigation in responding to climate change. (12) Write (b) in the response box.",
+          "a": "(a) e.g. Arctic: sea ice loss, permafrost thaw, each developed with effects (b) mitigation tackles causes, adaptation protects people now; examples; supported judgement",
+          "mins": 18
+        }
+      ],
+      "exit": [
+        {
+          "q": "The mean of 40, 55, 60, 210 and 65 is:",
+          "a": "86",
+          "mins": 1,
+          "options": [
+            "86",
+            "60"
+          ]
+        },
+        {
+          "q": "Big question: how did you show you did your enquiry?",
+          "a": "By naming my site, method, equipment and quoting my own data",
+          "mins": 1
+        }
+      ],
+      "homework": "Write down the question you found hardest in the whole mock; feedback comes next week.",
+      "send": "SEND: extra time, a reader or a word processor as agreed in the SEND register. EAL: command word mat allowed. Stretch: draw a graph of the example data at home.",
+      "resources": [
+        "TGA Year 10 geography mock 2027 (own questions, mark scheme and resource booklet; portal test), part 2: Section B style (14 marks) and Section C style on Topic 7 (18 marks)",
+        "Pearson Edexcel International GCSE Geography 4GE1 specification (Paper 1 Topics 1 to 3 and Section B; Paper 2 Topic 7) and sample assessment materials for question styles",
+        "Own fieldwork notes are NOT allowed; calculator, pen and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "exam paper and pen",
+          "alt": "A test paper and pen",
+          "for": "hook"
+        },
+        {
+          "find": "soil infiltration ring test",
+          "alt": "An infiltration ring on soil",
+          "for": "keywords"
+        },
+        {
+          "find": "Arctic sea ice melting",
+          "alt": "Melting Arctic sea ice",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Revision and Year 10 mock",
+      "n": 77,
+      "title": "Mock feedback and repair: Paper 1 Sections A and B",
+      "bigQuestion": "Which one change to how you answer would gain you the most marks next time?",
+      "objectives": [
+        "To understand where I lost marks on Paper 1 and how to repair them"
+      ],
+      "successCriteria": [
+        "All: analyse my marks by question type",
+        "Most: repair one extended answer using a model",
+        "Some: set two precise targets"
+      ],
+      "smsc": "Moral: learning from mistakes with patience",
+      "keywords": [
+        {
+          "term": "gap analysis",
+          "def": "finding where and why marks were lost"
+        },
+        {
+          "term": "level descriptor",
+          "def": "what an answer must do to reach a band of marks"
+        },
+        {
+          "term": "evaluation",
+          "def": "weighing strengths and weaknesses"
+        },
+        {
+          "term": "target",
+          "def": "a specific, checkable improvement"
+        },
+        {
+          "term": "anomaly",
+          "def": "a result that does not fit the pattern"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which one change to how you answer would gain you the most marks next time?"
+      },
+      "starter": [
+        {
+          "q": "The mean of 40, 55, 60, 210, 65 is:",
+          "a": "86",
+          "mins": 1,
+          "options": [
+            "86",
+            "70"
+          ]
+        },
+        {
+          "q": "A levee forms by:",
+          "a": "Deposition during floods",
+          "mins": 1,
+          "options": [
+            "Deposition during floods",
+            "Erosion"
+          ]
+        },
+        {
+          "q": "What does an 8-mark assess answer need?",
+          "a": "Both sides and a judgement",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Class headlines",
+          "bullets": [
+            "Strong: definitions and calculations",
+            "Weaker: 8-mark evaluation",
+            "Weaker: specific fieldwork detail"
+          ],
+          "note": "Shared from the marking; no names."
+        },
+        {
+          "heading": "Gap analysis",
+          "bullets": [
+            "Knowledge marks lost?",
+            "Skills marks lost?",
+            "Evaluation marks lost?"
+          ],
+          "note": "Pupils fill in the gap analysis grid from their marked script.",
+          "table": {
+            "head": [
+              "Question type",
+              "Marks available",
+              "My marks"
+            ],
+            "rows": [
+              [
+                "Short knowledge",
+                "about 8",
+                "from script"
+              ],
+              [
+                "Data and skills",
+                "about 6",
+                "from script"
+              ],
+              [
+                "Explain (3 to 4)",
+                "about 6",
+                "from script"
+              ],
+              [
+                "Assess or evaluate (6 to 8)",
+                "about 14",
+                "from script"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Repairing an 8-mark answer",
+          "bullets": [
+            "Name the place",
+            "Strength with evidence",
+            "Weakness with evidence",
+            "Judgement that answers the question"
+          ],
+          "note": "Model the repair of Q2(e).",
+          "model": {
+            "problem": "Improve: 'Holderness has groynes which stop erosion. This is good.'",
+            "steps": [
+              "Name: Mappleton, Holderness",
+              "Strength: beach built up, village saved",
+              "Weakness: erosion increased to the south",
+              "Judgement: locally effective, regionally harmful"
+            ],
+            "answer": "A Level 3 answer with evidence on both sides and a clear judgement"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "A good target is:",
+            "options": [
+              "Name a case study and give two figures in every 8-mark answer",
+              "Try harder",
+              "Revise more"
+            ],
+            "answer": 0,
+            "why": "It is specific and checkable."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct your lowest short answer.",
+          "a": "The correct answer from the mark scheme",
+          "mins": 2,
+          "model": "I find the question.\nI read the mark scheme.\nI write the correct answer in green and say why I missed it."
+        },
+        {
+          "q": "Which question type cost you most marks?",
+          "a": "From the pupil's own gap analysis",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the gap analysis grid, then rewrite your weakest 8-mark answer in the portal response box using the repair steps.",
+          "a": "Completed grid; a rewritten answer with a named place, evidence on both sides and a judgement",
+          "mins": 20,
+          "model": "Teacher shows the first line of the repaired answer."
+        },
+        {
+          "q": "Extend: Rewrite your fieldwork evaluation (Section B (e)) with two specific limitations from your enquiry.",
+          "a": "Two specific limitations, for example only 5 sites, all on one dry day",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Write a model answer to the question you did not choose in Section A.",
+          "a": "A full answer marked against the scheme",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Gap analysis means:",
+          "a": "Finding where and why marks were lost",
+          "mins": 1,
+          "options": [
+            "Finding where and why marks were lost",
+            "Counting pages"
+          ]
+        },
+        {
+          "q": "Big question: what one change gains most marks?",
+          "a": "From the pupil's analysis, for example adding a judgement to every 8-mark answer",
+          "mins": 1
+        }
+      ],
+      "homework": "Write your two targets on your revision plan for the summer.",
+      "send": "SEND: gap analysis grid pre-filled with question types. EAL: level descriptors in plain English. Stretch: mark a partner's anonymised answer against the levels.",
+      "resources": [
+        "TGA Year 10 geography mock 2027 (own questions, mark scheme and resource booklet; portal test) (marked scripts and mark scheme)",
+        "Gap analysis grid and repair steps (portal printable)",
+        "Pearson Edexcel International GCSE Geography 4GE1 specification (Paper 1 Topics 1 to 3 and Section B; Paper 2 Topic 7) and sample assessment materials for question styles"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "red pen marking",
+          "alt": "A marked script",
+          "for": "hook"
+        },
+        {
+          "find": "Mappleton Holderness cliffs",
+          "alt": "The Holderness coast",
+          "for": "teach:3"
+        },
+        {
+          "find": "checklist clipboard",
+          "alt": "A checklist for targets",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Revision and Year 10 mock",
+      "n": 78,
+      "title": "Mock feedback: Section C, and a bridge to Year 11 urban environments",
+      "bigQuestion": "By 2050 about two in three people may live in cities. What will that mean for the places you know?",
+      "objectives": [
+        "To understand how to improve my extended Section C answers and begin Year 11's urban environments topic"
+      ],
+      "successCriteria": [
+        "All: repair my 12-mark answer using the level descriptors",
+        "Most: describe global urbanisation trends",
+        "Some: set a summer plan for Year 11"
+      ],
+      "smsc": "Social: the people who move to cities in search of a better life",
+      "keywords": [
+        {
+          "term": "urbanisation",
+          "def": "a growing share of people living in towns and cities"
+        },
+        {
+          "term": "megacity",
+          "def": "a city with over 10 million people"
+        },
+        {
+          "term": "rural-urban migration",
+          "def": "people moving from the countryside to cities"
+        },
+        {
+          "term": "natural increase",
+          "def": "births minus deaths"
+        },
+        {
+          "term": "judgement",
+          "def": "a decision backed by evidence"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "By 2050 about two in three people may live in cities. What will that mean for the places you know?"
+      },
+      "starter": [
+        {
+          "q": "Mitigation means:",
+          "a": "Reducing the causes of climate change",
+          "mins": 1,
+          "options": [
+            "Reducing the causes of climate change",
+            "Coping with effects"
+          ]
+        },
+        {
+          "q": "A megacity has over:",
+          "a": "10 million people",
+          "mins": 1,
+          "options": [
+            "10 million people",
+            "1 million people"
+          ]
+        },
+        {
+          "q": "Name a Section C topic.",
+          "a": "Fragile environments and climate change",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Section C headlines",
+          "bullets": [
+            "Strong: causes and impacts",
+            "Weaker: evaluation and judgement",
+            "Some ran out of time"
+          ],
+          "note": "Shared from the marking; no names."
+        },
+        {
+          "heading": "Repairing a 12-mark answer",
+          "bullets": [
+            "Introduction states your line",
+            "Each paragraph: point, evidence, evaluate",
+            "Conclusion answers 'how far' or 'how effective'"
+          ],
+          "note": "Model the repair.",
+          "model": {
+            "problem": "Improve: 'Mitigation is good because it stops climate change. Adaptation is also good.'",
+            "steps": [
+              "State your line: both needed, mitigation more important long term",
+              "Mitigation: renewables cut CO2, but slow and global",
+              "Adaptation: sea walls protect now, but costly and treat effects",
+              "Judge: adaptation is urgent, mitigation decides the scale of future impacts"
+            ],
+            "answer": "A Level 3 to 4 answer with evaluation and a clear judgement"
+          }
+        },
+        {
+          "heading": "Year 11: urban environments",
+          "bullets": [
+            "Over half the world's people live in urban areas",
+            "About two thirds by 2050 (UN projection)",
+            "Growth fastest in Africa and Asia"
+          ],
+          "note": "Topic 6: urbanisation, challenges, sustainable cities.",
+          "chart": {
+            "kind": "line",
+            "title": "Share of world population living in urban areas (UN, rounded)",
+            "labels": [
+              "1950",
+              "1980",
+              "2000",
+              "2020",
+              "2050 (projected)"
+            ],
+            "values": [
+              30,
+              39,
+              47,
+              56,
+              68
+            ],
+            "unit": "%"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Urbanisation means:",
+            "options": [
+              "A growing share of people living in cities",
+              "Cities getting smaller",
+              "Building in the countryside"
+            ],
+            "answer": 0,
+            "why": "It is about the proportion of people in urban areas rising."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the trend in the chart. (2)",
+          "a": "The urban share rises steadily (1) from about 30% in 1950 to about 56% in 2020, projected 68% by 2050 (1)",
+          "mins": 2,
+          "model": "Direction: it rises.\nData: about 30% in 1950 to about 56% in 2020.\nProjection: about 68% by 2050."
+        },
+        {
+          "q": "Give one cause of urbanisation.",
+          "a": "Rural-urban migration or natural increase",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Rewrite your Section C 12-mark answer in the portal response box using the repair steps.",
+          "a": "A rewritten answer with a clear line, evaluated paragraphs and a judgement",
+          "mins": 18,
+          "model": "Teacher shows the repaired introduction."
+        },
+        {
+          "q": "Extend: Explain two causes of urbanisation in developing countries. (4)",
+          "a": "Rural-urban migration for jobs and services (2); natural increase because of a young population (2)",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Plan your summer: three Year 10 topics to keep fresh and one urban case study city to read about.",
+          "a": "A specific plan with topics and a city",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "By 2050 the UN projects that the urban share will be about:",
+          "a": "68%",
+          "mins": 1,
+          "options": [
+            "68%",
+            "30%"
+          ]
+        },
+        {
+          "q": "Big question: what will city growth mean for places you know?",
+          "a": "More people, housing and transport pressure, and a need for sustainable planning",
+          "mins": 1
+        }
+      ],
+      "homework": "Summer task: read about one megacity (for example Lagos, Mumbai or Dhaka) and note three facts for Year 11 Topic 6.",
+      "send": "SEND: 12-mark frame; extra time as in the SEND register. EAL: urban word mat. Stretch: compare urbanisation in the UK and Nigeria.",
+      "resources": [
+        "TGA Year 10 geography mock 2027 (own questions, mark scheme and resource booklet; portal test) (marked Section C and mark scheme)",
+        "Pearson Edexcel International GCSE Geography 4GE1 specification (Paper 1 Topics 1 to 3 and Section B; Paper 2 Topic 7) and sample assessment materials for question styles; Topic 6 urban environments",
+        "UN World Urbanization Prospects figures, rounded (teacher sheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Lagos skyline",
+          "alt": "Lagos, a fast-growing megacity",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mumbai skyline",
+          "alt": "Mumbai",
+          "for": "keywords"
+        },
+        {
+          "find": "Dhaka city aerial",
+          "alt": "Dhaka from above",
+          "for": "hook"
         }
       ]
     }

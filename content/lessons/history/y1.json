@@ -2,7 +2,7 @@
   "subject": "History",
   "year": "y1",
   "board": "National Curriculum",
-  "source": "National Curriculum KS1 (changes within living memory); no school Drive history material found for Y1, written from scratch | Spring 1 2027 (lesson 5): Tarbiyyah Primary Year 1 curriculum map and History Long Term Plan 2023-24 (Cornerstones Moon Zoom!), TGA Year 1 Curriculum Pack (Topic) | Spring 2 2027 (lessons 2 to 4 upgraded): TGA Year 1 Curriculum Pack, Topic, Memory Box | Summer 1 2027 (lesson 6): TGA Year 1 Curriculum Pack, Topic, Bright Lights, Big City (Great Fire of London)",
+  "source": "National Curriculum KS1 (changes within living memory); no school Drive history material found for Y1, written from scratch | Spring 1 2027 (lesson 5): Tarbiyyah Primary Year 1 curriculum map and History Long Term Plan 2023-24 (Cornerstones Moon Zoom!), TGA Year 1 Curriculum Pack (Topic) | Spring 2 2027 (lessons 2 to 4 upgraded): TGA Year 1 Curriculum Pack, Topic, Memory Box | Summer 1 2027 (lesson 6): TGA Year 1 Curriculum Pack, Topic, Bright Lights, Big City (Great Fire of London) | Summer 2 2027 (lesson 7): TGA Year 1 Curriculum Pack, Topic, Splendid Skies (Francis Beaufort; unit week 2 set as home learning)",
   "lessons": [
     {
       "unit": "Unit 1: Then and now",
@@ -1189,6 +1189,240 @@
         {
           "find": "timber framed houses medieval street",
           "alt": "Old wooden houses close together",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Francis Beaufort and the wind scale (Splendid Skies)",
+      "n": 7,
+      "title": "Francis Beaufort and the wind scale",
+      "bigQuestion": "How could a sailor tell other sailors how strong the wind was, long before weather apps?",
+      "objectives": [
+        "To understand why Francis Beaufort is remembered for his way of measuring wind"
+      ],
+      "successCriteria": [
+        "All: say who Francis Beaufort was",
+        "Most: explain what the wind scale shows",
+        "Some: put Beaufort and Neil Armstrong on a timeline"
+      ],
+      "crossCurricular": "Geography: adding wind to our weather chart",
+      "smsc": "Social: sharing knowledge to keep other people safe",
+      "keywords": [
+        {
+          "term": "Francis Beaufort",
+          "def": "a sailor in the Royal Navy who made a wind scale"
+        },
+        {
+          "term": "wind scale",
+          "def": "numbers that show how strong the wind is"
+        },
+        {
+          "term": "breeze",
+          "def": "a gentle wind"
+        },
+        {
+          "term": "gale",
+          "def": "a very strong wind"
+        },
+        {
+          "term": "timeline",
+          "def": "a line that shows when things happened"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How can you tell how windy it is without feeling the wind?"
+      },
+      "starter": [
+        {
+          "q": "A cloud with drops is the symbol for:",
+          "a": "Rain",
+          "mins": 1,
+          "options": [
+            "Rain",
+            "Sun"
+          ]
+        },
+        {
+          "q": "Neil Armstrong walked on the:",
+          "a": "Moon",
+          "mins": 1,
+          "options": [
+            "Moon",
+            "Sun"
+          ]
+        },
+        {
+          "q": "Name one season.",
+          "a": "Spring, summer, autumn or winter",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A sailor called Francis Beaufort",
+          "bullets": [
+            "Born in Ireland in 1774",
+            "He was a sailor in the Royal Navy",
+            "Ships need wind to sail"
+          ],
+          "note": "Wind was very important for sailing ships. Too little and they stopped; too much and they were in danger."
+        },
+        {
+          "heading": "The wind scale",
+          "bullets": [
+            "In 1805 he wrote a wind scale",
+            "Numbers from 0 to 12",
+            "0 is calm; 12 is the strongest"
+          ],
+          "note": "Sailors could say 'force 6' and everyone knew what it meant. It is still used today.",
+          "numberline": {
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "marks": [
+              {
+                "at": 0,
+                "label": "calm"
+              },
+              {
+                "at": 4,
+                "label": "breeze"
+              },
+              {
+                "at": 8,
+                "label": "gale"
+              },
+              {
+                "at": 12,
+                "label": "strongest"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "Two famous people",
+          "bullets": [
+            "Beaufort: wind scale, 1805",
+            "Neil Armstrong: the Moon, 1969",
+            "Both helped us learn about the world"
+          ],
+          "note": "Beaufort lived long before Neil Armstrong. Show them on a timeline.",
+          "timeline": [
+            {
+              "label": "1666",
+              "text": "Great Fire of London"
+            },
+            {
+              "label": "1805",
+              "text": "Beaufort's wind scale"
+            },
+            {
+              "label": "1969",
+              "text": "First Moon landing"
+            }
+          ]
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Beaufort's wind scale goes from:",
+            "options": [
+              "0 to 12",
+              "1 to 3",
+              "0 to 100"
+            ],
+            "answer": 0,
+            "why": "His scale has 13 steps, from 0 (calm) to 12."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What number on the wind scale means calm?",
+          "a": "0",
+          "mins": 1,
+          "model": "The scale starts at 0.\n0 means no wind at all.\nSo calm is 0."
+        },
+        {
+          "q": "Was Francis Beaufort a sailor or an astronaut?",
+          "a": "A sailor",
+          "mins": 1
+        },
+        {
+          "q": "Who lived first: Beaufort or Neil Armstrong?",
+          "a": "Beaufort",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a paper windsock with an adult and rate the wind from the window: 0 still, 1 leaves move, 2 branches move, 3 hard to walk.",
+          "a": "A windsock and a wind score from 0 to 3 with what was seen",
+          "mins": 6,
+          "model": "Teacher shows a windsock made from a paper tube with streamers and how it hangs, lifts or blows straight."
+        },
+        {
+          "q": "Extend: Put three cards in order on a timeline: Great Fire, wind scale, Moon landing.",
+          "a": "Great Fire (1666), wind scale (1805), Moon landing (1969)",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: Why was the wind scale useful to sailors?",
+          "a": "They could tell each other how strong the wind was and stay safe",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A gale is a:",
+          "a": "Very strong wind",
+          "mins": 1,
+          "options": [
+            "Very strong wind",
+            "Gentle wind"
+          ]
+        },
+        {
+          "q": "Big question: how could sailors share how strong the wind was?",
+          "a": "By using Beaufort's numbers from 0 to 12",
+          "mins": 1
+        }
+      ],
+      "homework": "Rate the wind each day this week from 0 to 3 using your windsock and add it to your weather chart.",
+      "send": "SEND: windsock template to cut and stick. EAL: calm, breeze, gale with pictures. Stretch: find out what force 12 is called (hurricane force).",
+      "resources": [
+        "Tarbiyyah Primary Year 1 curriculum map and long-term plans 2023-24; TGA Year 1 Curriculum Pack, Topic, Summer 2 Splendid Skies (companion: Chop, Slice & Mash) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Founding year: set as home learning (unit week 2), worked through with the pupil PDF and a parent",
+        "Wind scale card and timeline cards (portal printable)",
+        "Household items: paper, sticky tape, a cardboard tube, ribbon or paper strips"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Beaufort wind scale table",
+          "alt": "A table of the Beaufort wind scale",
+          "for": "teach:2"
+        },
+        {
+          "find": "windsock",
+          "alt": "A windsock showing which way the wind blows",
+          "for": "hook"
+        },
+        {
+          "find": "sailing ship at sea",
+          "alt": "A sailing ship that needs wind",
           "for": "teach:1"
         }
       ]
