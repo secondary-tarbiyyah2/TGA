@@ -5,7 +5,7 @@
   "boardShort": "AQA 8700",
   "exam": "Pearson Edexcel International GCSE (9-1) English Language B (4EB1)",
   "examShort": "Edexcel IGCSE 4EB1",
-  "source": "AQA GCSE English Language 8700 specification and Paper 2 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice sources are teacher-written originals, including 19th-century style pastiche. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y11.json (which covers P2 Q1-Q5 well); these lessons add modelling lessons around a new original source pair (Source A modern column, Source B 1871-style letter, both written for TGA) and cover the Spoken Language endorsement (SL), which existing lessons do not cover. | Gap-fill against AQA 8700 specification | Spring 1 founding year (Nov 2026, lessons v3), lessons 25 to 39: revision cycle 1 for pupils already on the course (11 Jan: Section A language and structure; 18 Jan: Section A writers' perspectives; 25 Jan: Section B directed writing; 1 Feb: Section C) and the mock week of 8 Feb, framed on Pearson Edexcel International GCSE English Language B (4EB1) with its own question numbers (Q1 to Q11; marks and AO splits checked against Pearson 4EB1 mark schemes), following the school's 2026-27 Year 11 HT1 and HT2 English Language schemes mapped to 4EB1. Text One 'The Last Ferry' and Text Two 'Advice to Those Who Travel by Sea' are teacher-written originals (Text Two in a nineteenth-century style), printed in full in lessons 25 and 28; all practice tasks and titles are original. Suggested section timings are a school guide based on marks.",
+  "source": "AQA GCSE English Language 8700 specification and Paper 2 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice sources are teacher-written originals, including 19th-century style pastiche. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y11.json (which covers P2 Q1-Q5 well); these lessons add modelling lessons around a new original source pair (Source A modern column, Source B 1871-style letter, both written for TGA) and cover the Spoken Language endorsement (SL), which existing lessons do not cover. | Gap-fill against AQA 8700 specification | Spring 1 founding year (Nov 2026, lessons v3), lessons 25 to 39: revision cycle 1 for pupils already on the course (11 Jan: Section A language and structure; 18 Jan: Section A writers' perspectives; 25 Jan: Section B directed writing; 1 Feb: Section C) and the mock week of 8 Feb, framed on Pearson Edexcel International GCSE English Language B (4EB1) with its own question numbers (Q1 to Q11; marks and AO splits checked against Pearson 4EB1 mark schemes), following the school's 2026-27 Year 11 HT1 and HT2 English Language schemes mapped to 4EB1. Text One 'The Last Ferry' and Text Two 'Advice to Those Who Travel by Sea' are teacher-written originals (Text Two in a nineteenth-century style), printed in full in lessons 25 and 28; all practice tasks and titles are original. Suggested section timings are a school guide based on marks. | Spring 2 founding year (Nov 2026, lessons v3), lessons 40 to 54: revision cycle 2 for the 24 May 2027 paper (15 Mar: mock feedback and repair; 22 Mar: Section B timed with peer marking; 31 Mar: Section C timed and technical accuracy; 5 Apr: Section A timed and the 3-hour time plan; 12 Apr: a second full 4EB1-style paper in four timed sittings (three lessons and one 20-minute home sitting for Q7; TO CONFIRM a single 3-hour sitting); 19 Apr: feedback and repair). Lessons a week: 3, 2, 2, 2, 3, 3. New practice pair 'Why I Walk' and 'A Night Walk Through the City' and Paper 2 pair 'The Night the River Came In' and 'Letter from a Flooded Valley' are teacher-written originals printed in full; all questions, tasks, mark scheme points and model answers are our own in the 4EB1 style.",
   "lessons": [
     {
       "unit": "Unit 1: Paper 2 Section A - Reading non-fiction (Q1-Q4)",
@@ -6033,6 +6033,2771 @@
       ],
       "homework": "Ramadan break (15 Feb to 12 Mar): one task from your repair list each week, uploaded to the portal.",
       "send": "SEND: analysis sheet pre-filled with question numbers. EAL: feedback vocabulary card. Stretch: set a Section C target as well."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 40,
+      "title": "Mock feedback: my marks by section and the short reading questions",
+      "duration": 50,
+      "bigQuestion": "Where are my marks, and how do I win more?",
+      "objectives": [
+        "To understand where I gained and lost marks in the February mock and how to secure the reading marks in Section A"
+      ],
+      "successCriteria": [
+        "All: record my marks by question and section",
+        "Most: identify the cause of each lost mark",
+        "Some: rewrite one Q3 or Q6 paragraph to the next level"
+      ],
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "question-level analysis",
+          "def": "a record of marks for every question"
+        },
+        {
+          "term": "cause",
+          "def": "the reason a mark was lost"
+        },
+        {
+          "term": "repair",
+          "def": "a planned task that fixes a gap"
+        },
+        {
+          "term": "weave",
+          "def": "analyse language and structure together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Ten weeks before the exam, where are the easiest five extra marks for you?"
+      },
+      "pictures": [
+        {
+          "find": "compass on a map",
+          "alt": "A compass on a map",
+          "for": "hook"
+        },
+        {
+          "find": "calendar page May",
+          "alt": "A calendar page",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Marked February mock paper (4EB1 style) and question-level analysis (pupil PDF)",
+        "Personal repair list and question-level analysis (pupil PDF)",
+        "Text One 'The Last Ferry' (Spring 1, pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "The 4EB1 paper lasts...",
+          "options": [
+            "2 hours",
+            "90 minutes",
+            "3 hours"
+          ],
+          "a": "C) 3 hours",
+          "mins": 1
+        },
+        {
+          "q": "Section A is worth...",
+          "options": [
+            "30 marks",
+            "40 marks"
+          ],
+          "a": "B) 40 marks",
+          "mins": 1
+        },
+        {
+          "q": "Q7 compares...",
+          "options": [
+            "both texts",
+            "Text One only"
+          ],
+          "a": "A) both texts",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The paper map (reminder)",
+          "note": "Pupils copy their own marks into each row.",
+          "table": {
+            "head": [
+              "Section",
+              "Questions",
+              "Marks",
+              "Focus"
+            ],
+            "rows": [
+              [
+                "A",
+                "Q1, Q2, Q4 (1 each), Q5 (2)",
+                "5",
+                "retrieval (AO1)"
+              ],
+              [
+                "A",
+                "Q3 and Q6 (10 each)",
+                "20",
+                "language and structure (AO2)"
+              ],
+              [
+                "A",
+                "Q7",
+                "15",
+                "comparison (AO3)"
+              ],
+              [
+                "B",
+                "Q8 directed writing",
+                "30",
+                "AO1 10, AO4 12, AO5 8"
+              ],
+              [
+                "C",
+                "one of Q9 to Q11",
+                "30",
+                "AO4 20, AO5 10"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common causes in the mock",
+          "note": "From the teacher's marking.",
+          "sort": {
+            "columns": [
+              "Misread",
+              "Timing",
+              "Skill",
+              "Accuracy"
+            ],
+            "cards": [
+              "Q5 answered with one detail",
+              "Section C unfinished",
+              "Q3: techniques named, no effect",
+              "Comma splices in Q8",
+              "Q6 written about Text One",
+              "Q7 rushed in 8 minutes"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Model: Q3 paragraph that weaves",
+          "note": "Use the Spring 1 Text One 'The Last Ferry'.",
+          "model": {
+            "problem": "How does the writer use language and structure to create tension? (10 marks)",
+            "steps": [
+              "Language: 'as if the sea were weighing us' personifies the sea as a judge",
+              "Effect: the travellers feel powerless",
+              "Structure: 'Halfway across, the light went' shifts time to the climax",
+              "Effect: tension peaks in darkness before relief",
+              "Link both: language and structure build to the turn 'Then, quite suddenly'"
+            ],
+            "answer": "A paragraph that analyses a language choice and a structural shift together, each with its effect."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which repair fits 'Q3: techniques named, no effect'?",
+            "options": [
+              "Write one effect sentence for every quotation",
+              "Write faster",
+              "Learn more technique names"
+            ],
+            "answer": 0,
+            "why": "The gap is explanation of effect, not speed or terminology."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fill in your question-level analysis and circle your three biggest losses.",
+          "a": "Marks recorded and three losses identified with causes.",
+          "mins": 5,
+          "model": "Teacher models with an anonymous paper: 'Q3 5/10: named a simile, no effect. Q7 6/15: Text Two barely used. Section C 14/30: unfinished. Biggest gains: Q7 and Section C.'"
+        },
+        {
+          "q": "Name the cause of each of your three losses (misread, timing, skill, accuracy).",
+          "a": "Three causes named.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, rewrite your mock Q3 or Q6 answer opening (one paragraph) so it weaves language, structure and effect. Starter: 'The writer uses ... to ...; this ...'",
+          "a": "One paragraph analysing a language choice and a structural feature, each with a clear effect on the reader.",
+          "mins": 14,
+          "model": "Before: 'The writer uses a simile. It is effective.' After: 'The writer personifies the sea as a judge, \"weighing us\", which makes the passengers seem powerless; structurally, the short sentence \"Nobody spoke.\" then stops the reader, so the silence itself becomes tense.'"
+        },
+        {
+          "q": "Extend: add your top three repairs to your repair list with dates.",
+          "a": "Three repairs, each with a gap, cause, task and date.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: rehearse a 1-mark and a 2-mark answer from the mock in under one minute each.",
+          "a": "Brief, precise answers.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A good repair names...",
+          "options": [
+            "only the mark",
+            "gap, cause, task and date"
+          ],
+          "a": "B) gap, cause, task and date",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Answers vary, e.g. the short questions and Q7 comparison.",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete your repair list for all sections; reread 'The Last Ferry' and your mock Q3 answer.",
+      "send": "SEND: pre-filled analysis sheet. EAL: AO glossary with examples. Stretch: write a model 2-mark answer for a partner."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 41,
+      "title": "Mock repair: Q7 comparison and Section B ideas in your own words",
+      "duration": 50,
+      "bigQuestion": "How do I use two texts well in Q7 and Q8?",
+      "objectives": [
+        "To understand how to raise my Q7 and Q8 marks by comparing both texts throughout and transforming ideas from the texts"
+      ],
+      "successCriteria": [
+        "All: write a Q7 paragraph that uses both texts and both ideas and methods",
+        "Most: turn a text idea into my own words for Q8",
+        "Some: explain how AO1 is rewarded in Section B"
+      ],
+      "keywords": [
+        {
+          "term": "perspective",
+          "def": "a writer's viewpoint shaped by time and experience"
+        },
+        {
+          "term": "transform",
+          "def": "change an idea into your own words and purpose"
+        },
+        {
+          "term": "lift",
+          "def": "copy words from the text: loses AO1 marks"
+        },
+        {
+          "term": "integrated",
+          "def": "both texts in every paragraph"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might copying a good line from the text lose you marks in Section B?"
+      },
+      "pictures": [
+        {
+          "find": "two rivers merging",
+          "alt": "Two rivers merging",
+          "for": "hook"
+        },
+        {
+          "find": "seed growing into sapling",
+          "alt": "A seed growing into a young plant",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Spring 1 practice texts 'The Last Ferry' and 'Advice to Those Who Travel by Sea' (pupil PDF)",
+        "TAPS and PEMACS Comparison Framework A3 (school display)",
+        "Personal repair list and question-level analysis (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Q8 AO1 is worth...",
+          "options": [
+            "30 marks",
+            "10 marks"
+          ],
+          "a": "B) 10 marks",
+          "mins": 1
+        },
+        {
+          "q": "Q7 is worth...",
+          "options": [
+            "15 marks",
+            "10 marks"
+          ],
+          "a": "A) 15 marks",
+          "mins": 1
+        },
+        {
+          "q": "Lifting means...",
+          "options": [
+            "quoting in Q3",
+            "copying from the text"
+          ],
+          "a": "B) copying from the text",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Q7: integrated comparison",
+          "note": "Show the difference.",
+          "misconception": {
+            "wrong": "Text One feels scared. Text Two is calm. (Two separate paragraphs, no methods.)",
+            "right": "Both writers present the sea as in control, although Text One's personal fear contrasts with Text Two's amused calm; the first-person memoir draws us into fear, whereas the imperatives of Text Two lecture the reader."
+          }
+        },
+        {
+          "heading": "Section B: transform, do not lift",
+          "note": "Use the Spring 1 practice texts.",
+          "table": {
+            "head": [
+              "Text idea",
+              "Lifted (loses AO1)",
+              "Transformed (gains AO1)"
+            ],
+            "rows": [
+              [
+                "the sea 'weighing us'",
+                "the sea was weighing us",
+                "nature does not care about our plans, so prepare for delays"
+              ],
+              [
+                "patience as a lesson of travel",
+                "travel teaches patience",
+                "you will learn to wait without panic: a skill for exams as well as ferries"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: a Q7 paragraph (PEMACS)",
+          "note": "Labelled model.",
+          "model": {
+            "problem": "Compare how the writers present the experience of sea travel. (15 marks)",
+            "steps": [
+              "P: both present the sea as powerful, although one fears it and one accepts it",
+              "E: 'weighing us' / 'keeps her own hours'",
+              "M: personification in both; first person versus imperatives",
+              "A: fear draws us in; advice keeps us at a distance",
+              "C and S: travel teaches humility in both"
+            ],
+            "answer": "An integrated paragraph with both texts, both ideas and methods, and a judgement."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which Q8 sentence earns AO1 best?",
+            "options": [
+              "The sea was the colour of wet slate.",
+              "You may face long delays, so pack patience as well as a book.",
+              "The ferry was forty minutes late."
+            ],
+            "answer": 1,
+            "why": "It transforms an idea from the texts for the new audience; the others lift details."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Transform this text idea into advice for a Year 9 audience: 'the ordinary safety I had been so keen to escape'.",
+          "a": "For example: You may feel homesick on your first trip; that feeling shows how much home matters, and it passes.",
+          "mins": 3,
+          "model": "Idea: the writer missed home's safety. Audience: Year 9. Purpose: advise. Transform: 'Homesickness is normal: it shows what home gives you, and it fades within days.'"
+        },
+        {
+          "q": "Write the P and E of a Q7 paragraph on the writers' attitudes to travel.",
+          "a": "P: both value what travel teaches, although... E: one short quotation from each text.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, rewrite your weakest mock Q7 or Q8 paragraph using today's models. Starter (Q7): 'Both writers present..., although...' or (Q8): 'If you are...'",
+          "a": "A repaired paragraph: integrated comparison with methods (Q7), or transformed ideas for audience and purpose (Q8).",
+          "mins": 14,
+          "model": "Q7 before: 'Text One is scared. Text Two gives advice.' After: 'Both writers present the sea as beyond human control, although the memoir's writer is terrified while the letter-writer is amused; the first-person present moment draws us into fear, whereas the imperatives of Text Two keep a confident distance.'"
+        },
+        {
+          "q": "Extend: highlight every comparative connective (Q7) or transformed idea (Q8).",
+          "a": "Highlights showing integration or transformation.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write a conclusion sentence that synthesises both texts.",
+          "a": "For example: Ultimately, both writers suggest that the sea teaches humility, though only one learns it through fear.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Integrated means...",
+          "options": [
+            "both texts in every paragraph",
+            "one text at a time"
+          ],
+          "a": "A) both texts in every paragraph",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Because AO1 in Section B rewards using ideas in your own words for a new purpose, not copying.",
+          "mins": 1
+        }
+      ],
+      "homework": "Repair task from your list: one Q7 paragraph or one Q8 paragraph rewritten (portal).",
+      "send": "SEND: PEMACS frame; transform table. EAL: comparative connective bank. Stretch: compare perspectives across time (modern versus nineteenth century)."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 42,
+      "title": "Mock repair: Section C, technical accuracy and my plan to 24 May",
+      "duration": 50,
+      "bigQuestion": "How do I turn feedback into a plan that gets me to 24 May?",
+      "objectives": [
+        "To understand how to finish a Section C piece in time with secure accuracy, and plan my revision to the exam"
+      ],
+      "successCriteria": [
+        "All: use the 45-minute Section C routine",
+        "Most: fix my three most common accuracy errors",
+        "Some: build a week-by-week revision plan to 24 May"
+      ],
+      "keywords": [
+        {
+          "term": "routine",
+          "def": "a fixed sequence of steps you always follow"
+        },
+        {
+          "term": "AO5",
+          "def": "accuracy and range of vocabulary and sentences"
+        },
+        {
+          "term": "error log",
+          "def": "a record of your repeated mistakes"
+        },
+        {
+          "term": "revision plan",
+          "def": "a dated schedule of repair tasks"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If Section C was unfinished in the mock, what is the real reason?"
+      },
+      "pictures": [
+        {
+          "find": "calendar planner pages",
+          "alt": "A paper planner",
+          "for": "keywords"
+        },
+        {
+          "find": "finish line track",
+          "alt": "A running track finish line",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Personal repair list and question-level analysis (pupil PDF)",
+        "Personal error log and revision plan template (pupil PDF)",
+        "Section C practice task bank (teacher-written titles, pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Section C is worth...",
+          "options": [
+            "30 marks",
+            "15 marks"
+          ],
+          "a": "A) 30 marks",
+          "mins": 1
+        },
+        {
+          "q": "The exam date is...",
+          "options": [
+            "Fri 4 June",
+            "Mon 24 May 2027"
+          ],
+          "a": "B) Mon 24 May 2027",
+          "mins": 1
+        },
+        {
+          "q": "A comma splice joins two sentences with...",
+          "options": [
+            "a comma",
+            "a full stop"
+          ],
+          "a": "A) a comma",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The 45-minute Section C routine",
+          "note": "The school's timing guide.",
+          "table": {
+            "head": [
+              "Step",
+              "Minutes"
+            ],
+            "rows": [
+              [
+                "Choose",
+                "2"
+              ],
+              [
+                "Plan (five lines)",
+                "5"
+              ],
+              [
+                "Write",
+                "33"
+              ],
+              [
+                "Proofread",
+                "5"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Top accuracy errors from the mock",
+          "note": "Pupils tick their own.",
+          "diagram": {
+            "centre": "Most common AO5 errors",
+            "items": [
+              "comma splices",
+              "its / it's",
+              "there / their / they're",
+              "missing paragraph breaks",
+              "should of",
+              "tense shifts in narrative"
+            ]
+          }
+        },
+        {
+          "heading": "Model: a revision plan",
+          "note": "Dated weeks to the exam.",
+          "model": {
+            "problem": "Plan from 15 Mar to 24 May.",
+            "steps": [
+              "Weeks 1 to 2: Q7 and Q8 repairs (biggest losses)",
+              "Week 3: Section C timed twice",
+              "Week 4: Section A timed",
+              "Week 5: full paper",
+              "Weeks 6 to 9: weakest section, then exam technique"
+            ],
+            "answer": "A dated plan that matches the school's revision cycle and each pupil's repairs."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Section C was unfinished. The most likely fix is...",
+            "options": [
+              "Write faster without planning",
+              "Choose the longest task",
+              "Plan in five lines and keep the story small"
+            ],
+            "answer": 2,
+            "why": "Unfinished pieces usually come from over-large plots and no plan."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Proofread the mock Section C paragraph on the pupil PDF; fix every error.",
+          "a": "Splices, homophones, apostrophes and paragraphing corrected.",
+          "mins": 4,
+          "model": "Teacher fixes the first two aloud: 'It was late, the street was empty' becomes 'It was late. The street was empty.'; 'there coats' becomes 'their coats'."
+        },
+        {
+          "q": "Write your top three errors into your error log with the rule.",
+          "a": "Three errors with rules.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write your personal revision plan to 24 May (one line a week) and one Section C five-line plan for 'Describe a market as it closes for the night.' Starter: 'Week of 15 Mar: ...'",
+          "a": "A dated weekly plan linked to repairs, and a controlled five-line plan.",
+          "mins": 14,
+          "model": "Week of 15 Mar: Q7 repair (two paragraphs). Week of 22 Mar: Section B timed. Week of 31 Mar: Section C timed. Week of 5 Apr: Section A timed. Week of 12 Apr: full paper. Week of 19 Apr: repair weakest section. Then: weekly timed section and error log review to 24 May. | Plan: wide square; stalls folding; one lantern; smells fading; empty, quiet."
+        },
+        {
+          "q": "Extend: add one daily ten-minute habit (e.g. spelling or a reading article).",
+          "a": "A specific habit.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write your Section C opening sentence.",
+          "a": "A strong first line.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Proofreading time in Section C is about...",
+          "options": [
+            "none",
+            "5 minutes"
+          ],
+          "a": "B) 5 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Usually no plan and a story too big for the time.",
+          "mins": 1
+        }
+      ],
+      "homework": "Follow week 1 of your revision plan; complete the error-log spelling test.",
+      "send": "SEND: revision plan template with weeks filled in. EAL: error log with examples. Stretch: add timings for every section of the full paper."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 43,
+      "title": "Section B: reading a new text pair and planning the directed writing",
+      "duration": 50,
+      "bigQuestion": "How do I turn two texts into one persuasive piece of my own?",
+      "objectives": [
+        "To understand how to gather ideas from two texts and plan a directed writing response for a given audience, form and purpose"
+      ],
+      "successCriteria": [
+        "All: read both practice texts and gather six ideas",
+        "Most: decode the task for audience, form and purpose",
+        "Some: plan a speech that transforms ideas from both texts"
+      ],
+      "keywords": [
+        {
+          "term": "directed writing",
+          "def": "writing for a set task, audience and form using ideas from the texts"
+        },
+        {
+          "term": "audience",
+          "def": "who the writing is for"
+        },
+        {
+          "term": "form",
+          "def": "the type of text: speech, article, letter"
+        },
+        {
+          "term": "register",
+          "def": "how formal the language is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would persuade your year group to walk to school once a week?"
+      },
+      "pictures": [
+        {
+          "find": "city street early morning pavement",
+          "alt": "A city pavement in the early morning",
+          "for": "hook"
+        },
+        {
+          "find": "gas lamp street Victorian",
+          "alt": "An old gas street lamp",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Practice Text One 'Why I Walk' (teacher-written modern column, pupil PDF)",
+        "Practice Text Two 'A Night Walk Through the City' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Section B task sheet and form conventions card (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Q8 AO4 rewards...",
+          "options": [
+            "quotations",
+            "form, tone and register"
+          ],
+          "a": "B) form, tone and register",
+          "mins": 1
+        },
+        {
+          "q": "Transforming an idea means...",
+          "options": [
+            "using it in your own words for a new purpose",
+            "copying it"
+          ],
+          "a": "A) using it in your own words for a new purpose",
+          "mins": 1
+        },
+        {
+          "q": "Q8 total is...",
+          "options": [
+            "40 marks",
+            "30 marks"
+          ],
+          "a": "B) 30 marks",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Text One (practice)",
+          "note": "Read aloud once; pupils annotate ideas for Q8 in the margin.",
+          "quote": {
+            "text": "Three years ago I sold my car. Friends assumed I had lost my job or my mind. In fact, I had simply noticed that I was spending forty minutes a day in traffic, shouting at strangers through glass.\n\nNow I walk the two miles to work. It takes longer, of course: thirty-five minutes in good weather, forty when the rain comes sideways off the river. But those minutes are mine. I have learned the names of the streets I used to blur past. I know which bakery opens first, which tree flowers earliest in spring, which corner smells of coffee and which of wet dogs.\n\nWalking has not made me fitter overnight; it has made me slower, and slowness turns out to be a kind of wealth. When I arrive at my desk, my head is clear.\n\nI am not telling you to sell your car. I am asking you to try, once a week, arriving somewhere on your own two feet. You may find, as I did, that the journey was the point.",
+            "source": "Text One, 'Why I Walk' (teacher-written modern column for TGA)"
+          }
+        },
+        {
+          "heading": "Text Two (practice)",
+          "note": "Read aloud once; pupils annotate.",
+          "quote": {
+            "text": "My dear Brother,\nYou ask how I bear the noise of London. I will confess a secret: I bear it by walking through it when it is asleep. Last night, being unable to rest, I set out at midnight and did not return until the milk-carts began their rounds.\n\nThe streets at that hour belong to a different nation. The gas-lamps burn with a sickly yellow patience; the river breathes a cold fog over the bridges; and every doorway seems to hold its breath. I passed a coffee-stall where three cab-men warmed their hands, and a watchman who wished me good night as gravely as a bishop.\n\nI do not pretend the walk was wholly pleasant. My boots were soaked by the second mile, and twice I was startled by footsteps that proved to be my own echo. Yet I came home with a mind scrubbed clean.\n\nTry it, dear Brother, when your country fields grow dull. A city at night will teach you more of your fellow men than a month of its daylight.\nYour affectionate sister, Margaret",
+            "source": "Text Two, 'A Night Walk Through the City' (teacher-written in a nineteenth-century style for TGA)"
+          }
+        },
+        {
+          "heading": "The task",
+          "bullets": [
+            "Your school is starting a 'Walk to Learn' week.",
+            "Write a speech for a school assembly.",
+            "Persuade students to walk more.",
+            "Include: benefits; difficulties and how to cope; what walking teaches."
+          ],
+          "note": "Original Q8-style task. Use ideas from both texts and your own. Audience: students; form: speech; purpose: persuade; register: semi-formal, warm."
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which idea from the texts is transformed best for the assembly?",
+            "options": [
+              "Ten minutes on foot can clear your head before a test.",
+              "The gas-lamps burn with a sickly yellow patience.",
+              "I sold my car three years ago."
+            ],
+            "answer": 0,
+            "why": "It turns 'my head is clear' into advice for students; the others copy details."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Gather six ideas (three from each text) into a grid: idea, how I will use it.",
+          "a": "For example: slowness as wealth; noticing streets; mind 'scrubbed clean'; discomfort (wet boots); learning about people; walking as a weekly habit.",
+          "mins": 6,
+          "model": "Text One: 'slowness... a kind of wealth' becomes: walking gives you time back from screens. Text Two: 'a mind scrubbed clean' becomes: a walk before school clears the mind. Text Two: 'soaked boots' becomes: the difficulty; answer: good shoes, a short route."
+        },
+        {
+          "q": "Decode the task: audience, form, purpose, register.",
+          "a": "Students; speech; persuade; semi-formal and warm.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, plan your speech (five sections) and write the opening paragraph. Starter: 'Good morning, everyone. How many of you...'",
+          "a": "A five-part plan covering all three bullets with ideas from both texts, and a speech opening with direct address and a hook.",
+          "mins": 13,
+          "model": "Plan: hook (rhetorical question) | benefits: clear head, noticing your town | difficulties: weather, time; answers | what walking teaches: patience, knowing your neighbours | call to action. Opening: 'Good morning, everyone. How many of you could name the street behind the mosque? Most of us rush past the places we live in...'"
+        },
+        {
+          "q": "Extend: mark where each bullet point is covered in your plan.",
+          "a": "All three bullets mapped.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: add one counter-argument and its answer.",
+          "a": "For example: 'It takes too long.' Answer: start once a week.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A speech uses...",
+          "options": [
+            "direct address",
+            "footnotes"
+          ],
+          "a": "A) direct address",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Answers vary, with an idea transformed from the texts.",
+          "mins": 1
+        }
+      ],
+      "homework": "Reread both texts and learn your five-line plan; the timed Section B is next lesson.",
+      "send": "SEND: ideas grid partly filled; speech frame. EAL: speech phrase bank (Good morning; Imagine; Together). Stretch: plan a version for a different audience (parents)."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 44,
+      "title": "Section B timed with peer marking",
+      "duration": 50,
+      "bigQuestion": "Can I write a 30-mark directed response under time?",
+      "objectives": [
+        "To understand how well I can write a 30-mark directed writing response under time and judge one against the criteria"
+      ],
+      "successCriteria": [
+        "All: write a complete speech in 30 minutes",
+        "Most: peer-mark a response against AO1, AO4 and AO5",
+        "Some: set one target from the feedback"
+      ],
+      "smsc": "Social: giving fair and kind feedback",
+      "keywords": [
+        {
+          "term": "peer marking",
+          "def": "assessing a classmate's work against criteria"
+        },
+        {
+          "term": "criteria",
+          "def": "the standards used to judge work"
+        },
+        {
+          "term": "AO1",
+          "def": "using ideas from the texts (10 marks in Q8)"
+        },
+        {
+          "term": "WWW and EBI",
+          "def": "what went well and even better if"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the first thing you will look for when you mark a partner's speech?"
+      },
+      "pictures": [
+        {
+          "find": "hourglass",
+          "alt": "An hourglass",
+          "for": "hook"
+        },
+        {
+          "find": "checklist on clipboard",
+          "alt": "A checklist",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "independent": "think-pair-share"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Practice Text One 'Why I Walk' (teacher-written modern column, pupil PDF)",
+        "Practice Text Two 'A Night Walk Through the City' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Section B peer-marking sheet (pupil PDF)",
+        "Access arrangement cards (SENCo)"
+      ],
+      "starter": [
+        {
+          "q": "Q8 audience today is...",
+          "options": [
+            "students",
+            "parents"
+          ],
+          "a": "A) students",
+          "mins": 1
+        },
+        {
+          "q": "AO5 in Q8 is worth...",
+          "options": [
+            "20 marks",
+            "8 marks"
+          ],
+          "a": "B) 8 marks",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Timed conditions",
+          "bullets": [
+            "Task: the 'Walk to Learn' assembly speech",
+            "Texts and your plan in front of you",
+            "30 minutes writing, 3 to check",
+            "Then peer marking"
+          ],
+          "note": "In the exam allow about 50 minutes for Section B including planning; today the plan was done last lesson."
+        },
+        {
+          "heading": "Peer-marking criteria (student-friendly)",
+          "note": "Summarised from the 4EB1 Q8 mark scheme.",
+          "table": {
+            "head": [
+              "AO",
+              "Marks",
+              "Look for"
+            ],
+            "rows": [
+              [
+                "AO1",
+                "10",
+                "ideas from both texts, transformed, covering all bullets"
+              ],
+              [
+                "AO4",
+                "12",
+                "speech form, direct address, persuasive tone for students"
+              ],
+              [
+                "AO5",
+                "8",
+                "varied sentences, precise vocabulary, accurate punctuation"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "A speech copies three sentences from Text Two. Which AO suffers most?",
+            "options": [
+              "None",
+              "AO1: ideas are lifted, not transformed",
+              "AO5: spelling"
+            ],
+            "answer": 1,
+            "why": "AO1 rewards selecting and transforming ideas; copying shows neither."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Start the timer: write your speech (portal response box or paper).",
+          "a": "Begun under timed conditions.",
+          "mins": 1,
+          "model": "Teacher reminder only: 'Use your plan. Cover all three bullets. Speak to your audience.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 30 minutes): in the portal response box, write your 'Walk to Learn' assembly speech. Starter: 'Good morning, everyone.'",
+          "a": "A complete speech: all bullets covered with transformed ideas from both texts; speech form and persuasive register; accurate writing.",
+          "mins": 30,
+          "model": "No model during the timed write. Shared afterwards: 'Good morning, everyone. How many of you could name the street behind our mosque? ... Walking will not make you fitter overnight, but it will give you something rarer: time to think...'"
+        },
+        {
+          "q": "Check (3 minutes): splices, homophones, paragraph breaks.",
+          "a": "Corrections made.",
+          "mins": 3
+        },
+        {
+          "q": "Peer mark a partner's speech (breakout pair): one WWW and one EBI per AO.",
+          "a": "Three WWW and three EBI linked to AO1, AO4, AO5.",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Write one Section B target in the chat.",
+          "a": "A precise target.",
+          "mins": 1
+        }
+      ],
+      "homework": "Redraft the weakest paragraph of your speech from your partner's EBI.",
+      "send": "SEND: access arrangements as agreed; speech frame allowed. EAL: phrase bank allowed. Stretch: finish with five minutes to improve vocabulary."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 45,
+      "title": "Section C timed: choose, plan, write",
+      "duration": 50,
+      "bigQuestion": "Can I plan and write my best 30-mark piece under time?",
+      "objectives": [
+        "To understand how well I can choose, plan and write a Section C piece within the time"
+      ],
+      "successCriteria": [
+        "All: choose and plan in seven minutes",
+        "Most: write a complete piece in about 30 minutes",
+        "Some: leave time to proofread"
+      ],
+      "keywords": [
+        {
+          "term": "discursive",
+          "def": "exploring different views on a topic"
+        },
+        {
+          "term": "narrative",
+          "def": "a story"
+        },
+        {
+          "term": "descriptive",
+          "def": "writing that creates a picture of a place or moment"
+        },
+        {
+          "term": "exam conditions",
+          "def": "silent, timed, independent work"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which of the three forms do you trust yourself with most, and why?"
+      },
+      "pictures": [
+        {
+          "find": "stormy sky over town rooftops",
+          "alt": "A stormy sky over rooftops",
+          "for": "hook"
+        },
+        {
+          "find": "hourglass",
+          "alt": "An hourglass",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "independent": "hands-down"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Section C timed task card (three teacher-written titles, pupil PDF)",
+        "Personal error log (pupil PDF)",
+        "Access arrangement cards (SENCo)"
+      ],
+      "starter": [
+        {
+          "q": "Section C AO4 is worth...",
+          "options": [
+            "10 marks",
+            "20 marks"
+          ],
+          "a": "B) 20 marks",
+          "mins": 1
+        },
+        {
+          "q": "Plan time is about...",
+          "options": [
+            "5 minutes",
+            "15 minutes"
+          ],
+          "a": "A) 5 minutes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Today's three tasks",
+          "bullets": [
+            "(a) 'Teenagers are too busy to be bored, and that is a problem.' Discuss.",
+            "(b) Write a story with the title 'The Long Way Home'.",
+            "(c) Describe a town during a sudden power cut."
+          ],
+          "note": "Original practice titles in the 4EB1 Section C style. Writing time is shortened to 28 minutes to fit the lesson."
+        },
+        {
+          "heading": "Plan shapes (reminder)",
+          "note": "Five lines each.",
+          "table": {
+            "head": [
+              "Form",
+              "Five lines"
+            ],
+            "rows": [
+              [
+                "Discursive",
+                "thesis | for | for | against and rebuttal | judgement"
+              ],
+              [
+                "Narrative",
+                "hook | tension | crisis | slowed climax | change"
+              ],
+              [
+                "Descriptive",
+                "wide | lens | object | senses | return, changed"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Start",
+          "bullets": [
+            "Choose in two minutes",
+            "Plan in five",
+            "Write for 28",
+            "Proofread for five"
+          ],
+          "note": "Start the timer."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Choose and plan (7 minutes).",
+          "a": "A choice and a five-line plan in the right shape.",
+          "mins": 7,
+          "model": "Teacher reminder only: 'Which can you plan fastest? Five lines, then write.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 28 minutes): write your Section C piece in the portal response box or on paper.",
+          "a": "A complete piece in the chosen form, marked with the 4EB1 Section C criteria (AO4 20, AO5 10).",
+          "mins": 28,
+          "model": "No model during the timed write; models are shared next lesson."
+        },
+        {
+          "q": "Proofread (5 minutes) with your error log.",
+          "a": "Corrections made.",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "One word in the chat: how did the timing feel?",
+          "a": "An honest word.",
+          "mins": 1
+        }
+      ],
+      "homework": "Keep your piece; next lesson you will proofread and polish it for AO5.",
+      "send": "SEND: access arrangements as agreed; plan frames allowed. EAL: task vocabulary list. Stretch: aim for seven minutes to proofread."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 46,
+      "title": "Technical accuracy: proofreading and polishing for AO5",
+      "duration": 50,
+      "bigQuestion": "How does polishing turn a good piece into a strong one?",
+      "objectives": [
+        "To understand how targeted proofreading and polishing raise the AO5 mark of a timed piece"
+      ],
+      "successCriteria": [
+        "All: find and fix my errors with the error log",
+        "Most: upgrade vocabulary and vary sentences in one paragraph",
+        "Some: compare my piece with a top-level model"
+      ],
+      "keywords": [
+        {
+          "term": "polish",
+          "def": "improve the quality of words and sentences"
+        },
+        {
+          "term": "range",
+          "def": "variety of vocabulary and sentence types"
+        },
+        {
+          "term": "precision",
+          "def": "exact word choice"
+        },
+        {
+          "term": "proofread",
+          "def": "check for and correct errors"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could only fix one thing in your Section C piece, which would gain the most?"
+      },
+      "pictures": [
+        {
+          "find": "polished wooden surface",
+          "alt": "A polished wooden surface",
+          "for": "hook"
+        },
+        {
+          "find": "magnifying glass on text",
+          "alt": "A magnifying glass on text",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Teacher-written top-level model (pupil PDF)",
+        "Personal error log (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "AO5 in Section C is worth...",
+          "options": [
+            "10 marks",
+            "20 marks"
+          ],
+          "a": "A) 10 marks",
+          "mins": 1
+        },
+        {
+          "q": "'Should of' should be...",
+          "options": [
+            "should off",
+            "should have"
+          ],
+          "a": "B) should have",
+          "mins": 1
+        },
+        {
+          "q": "A fragment is used for...",
+          "options": [
+            "emphasis",
+            "explanation"
+          ],
+          "a": "A) emphasis",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Top-level model opening (task c)",
+          "note": "Read aloud; annotate AO5 features.",
+          "quote": {
+            "text": "At 7.42 the town went out. Not slowly, the way evening usually comes, but all at once, as if someone had pulled a plug from the sky. The traffic lights died mid-blink. Fridges fell silent. In the sudden dark, the high street stopped being a street and became a rumour: footsteps, a dog, someone laughing nervously behind a shop door.\n\nThen the candles began.",
+            "source": "Teacher-written model for TGA (Section C, task c)"
+          }
+        },
+        {
+          "heading": "AO5 polishing moves",
+          "note": "Small changes, big effect.",
+          "table": {
+            "head": [
+              "Move",
+              "Before",
+              "After"
+            ],
+            "rows": [
+              [
+                "Precise verb",
+                "the lights went off",
+                "the lights died mid-blink"
+              ],
+              [
+                "Varied opening",
+                "The street was dark.",
+                "In the sudden dark, the street..."
+              ],
+              [
+                "Short sentence",
+                "and then people lit candles",
+                "Then the candles began."
+              ],
+              [
+                "Accuracy",
+                "its suddenly dark, every one panicked",
+                "It is suddenly dark; everyone panics."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which edit adds the most AO5 range?",
+            "options": [
+              "Replacing three plain verbs with precise ones and adding a short sentence",
+              "Adding more adjectives",
+              "Writing a longer title"
+            ],
+            "answer": 0,
+            "why": "Precision and sentence variety show range; extra adjectives often weaken writing."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Proofread your timed piece using your error log; count and fix your errors.",
+          "a": "Errors found and corrected; a count recorded.",
+          "mins": 6,
+          "model": "Teacher models on an anonymous paragraph: 'Line 2: comma splice: full stop. Line 4: \"there\" should be \"their\". Line 6: tense shift from past to present: change to past.'"
+        },
+        {
+          "q": "Find two features in the model that show AO5 range.",
+          "a": "For example: 'died mid-blink' (precise verb); 'Then the candles began.' (short sentence).",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, polish your weakest paragraph with the four AO5 moves. Starter: paste the paragraph, then improve it.",
+          "a": "A polished paragraph with precise verbs, a varied opening, a short sentence and no errors.",
+          "mins": 14,
+          "model": "Before: 'The power went off and it was dark and people was scared, there was no lights.' After: 'Without warning, the power died. Darkness poured into the street. People froze; nobody spoke. Not a single light remained.'"
+        },
+        {
+          "q": "Extend: rewrite your opening sentence for impact.",
+          "a": "A stronger opening.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: cut ten unnecessary words from your piece.",
+          "a": "A tighter piece.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Proofreading checks for...",
+          "options": [
+            "the plan",
+            "errors"
+          ],
+          "a": "B) errors",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Answers vary; usually fixing comma splices or upgrading verbs.",
+          "mins": 2
+        }
+      ],
+      "homework": "Redraft your whole Section C piece with the four moves and submit it in the portal.",
+      "send": "SEND: AO5 checklist card. EAL: precise verb bank. Stretch: add one sustained image."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 47,
+      "title": "Section A timed: planning the three hours and Text One (Q1 to Q3)",
+      "duration": 50,
+      "bigQuestion": "How do I spend three hours wisely?",
+      "objectives": [
+        "To understand how to plan my time across the paper and answer the Text One questions under time"
+      ],
+      "successCriteria": [
+        "All: follow a time plan for the 3-hour paper",
+        "Most: answer Q1 and Q2 precisely and briefly",
+        "Some: write a 10-mark Q3 answer in 15 minutes"
+      ],
+      "keywords": [
+        {
+          "term": "time plan",
+          "def": "how many minutes each section gets"
+        },
+        {
+          "term": "selection",
+          "def": "choosing the best evidence"
+        },
+        {
+          "term": "structure",
+          "def": "how a text is organised and develops"
+        },
+        {
+          "term": "effect",
+          "def": "what a choice makes the reader think or feel"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you have three hours and 100 marks, how many minutes is each mark worth?"
+      },
+      "pictures": [
+        {
+          "find": "analog clock face",
+          "alt": "A clock face",
+          "for": "hook"
+        },
+        {
+          "find": "pavement street walking",
+          "alt": "A city pavement",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "teams-poll",
+        "independent": "hands-down"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Practice Text One 'Why I Walk' (teacher-written modern column, pupil PDF)",
+        "Section A practice questions and mark scheme points (pupil PDF)",
+        "Time plan card (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "The paper is worth...",
+          "options": [
+            "80 marks",
+            "100 marks"
+          ],
+          "a": "B) 100 marks",
+          "mins": 1
+        },
+        {
+          "q": "Q3 is worth...",
+          "options": [
+            "10 marks",
+            "2 marks"
+          ],
+          "a": "A) 10 marks",
+          "mins": 1
+        },
+        {
+          "q": "Q1 answers should be...",
+          "options": [
+            "a paragraph",
+            "brief and precise"
+          ],
+          "a": "B) brief and precise",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A time plan for 180 minutes",
+          "note": "A school guide based on marks, not a Pearson rule.",
+          "table": {
+            "head": [
+              "Section",
+              "Minutes"
+            ],
+            "rows": [
+              [
+                "Reading both texts and questions",
+                "15"
+              ],
+              [
+                "Section A (Q1 to Q7)",
+                "60"
+              ],
+              [
+                "Section B (Q8)",
+                "50"
+              ],
+              [
+                "Section C",
+                "50"
+              ],
+              [
+                "Final check",
+                "5"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Text One (practice): 'Why I Walk'",
+          "note": "Pupils reread on the pupil PDF; today's questions are on the slide after this.",
+          "quote": {
+            "text": "Three years ago I sold my car. Friends assumed I had lost my job or my mind. In fact, I had simply noticed that I was spending forty minutes a day in traffic, shouting at strangers through glass.\n\nNow I walk the two miles to work. It takes longer, of course: thirty-five minutes in good weather, forty when the rain comes sideways off the river. But those minutes are mine. I have learned the names of the streets I used to blur past. I know which bakery opens first, which tree flowers earliest in spring, which corner smells of coffee and which of wet dogs.\n\nWalking has not made me fitter overnight; it has made me slower, and slowness turns out to be a kind of wealth. When I arrive at my desk, my head is clear.\n\nI am not telling you to sell your car. I am asking you to try, once a week, arriving somewhere on your own two feet. You may find, as I did, that the journey was the point.",
+            "source": "Text One, 'Why I Walk' (teacher-written modern column for TGA)"
+          }
+        },
+        {
+          "heading": "Today's Text One questions",
+          "bullets": [
+            "Q1: From paragraph 1, give one reason the writer sold the car. (1)",
+            "Q2: How long does the walk take in good weather? (1)",
+            "Q3: How do language and structure show the benefits of walking? (10)"
+          ],
+          "note": "Original questions in the 4EB1 style. Suggested time: Q1 and Q2 two minutes; Q3 fifteen minutes."
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which is the best Q1 answer?",
+            "options": [
+              "They lost their job.",
+              "They spent forty minutes a day in traffic.",
+              "Because cars are bad for the planet and expensive and they wanted to walk."
+            ],
+            "answer": 1,
+            "why": "It is precise and from paragraph 1; the second is invented; the third is what friends wrongly assumed."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Q1 and Q2 (2 minutes).",
+          "a": "Q1: they spent forty minutes a day in traffic (or were shouting at strangers through glass). Q2: thirty-five minutes.",
+          "mins": 2,
+          "model": "Underline 'paragraph 1' and 'reason'. Scan, find 'forty minutes a day in traffic', write it in a few words. Q2: scan for 'good weather': thirty-five minutes."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 15 minutes): in the portal response box, answer Q3. Starter: 'The writer presents walking as...'",
+          "a": "Mark scheme points: list of sensory details ('bakery', 'coffee', 'wet dogs') shows noticing; metaphor 'slowness... a kind of wealth'; contrast of traffic anger with clear head; structure from past (car) to present (walking) to direct appeal; final line 'the journey was the point' as a reflective ending. Top answers weave language and structure with effects.",
+          "mins": 15,
+          "model": "Model opening shared after: 'The writer presents walking as a gift of time. The metaphor \"slowness turns out to be a kind of wealth\" reverses our usual idea that speed is valuable; structurally, the column moves from the angry past (\"shouting at strangers through glass\") to a calm present, so the reader feels the change.'"
+        },
+        {
+          "q": "Self-mark Q3 with the mark scheme points; add one missing point.",
+          "a": "A self-mark and one improvement.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: write the structural point you missed in one sentence.",
+          "a": "For example: The final direct appeal turns a personal story into advice for the reader.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "In the time plan, Section A gets about...",
+          "options": [
+            "60 minutes",
+            "20 minutes"
+          ],
+          "a": "A) 60 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "About 1.8 minutes a mark: so a 1-mark question gets under two minutes.",
+          "mins": 2
+        }
+      ],
+      "homework": "Reread Text Two 'A Night Walk Through the City' twice and annotate it for language and structure.",
+      "send": "SEND: questions read aloud; Q3 paragraph frame. EAL: glossary of 'blur', 'wealth'. Stretch: finish Q3 in 12 minutes."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 48,
+      "title": "Section A timed: Text Two (Q4 to Q6) and the Q7 comparison",
+      "duration": 50,
+      "bigQuestion": "Can I manage all of Section A in the time?",
+      "objectives": [
+        "To understand how to answer the Text Two questions and the 15-mark comparison under time"
+      ],
+      "successCriteria": [
+        "All: answer Q4 and Q5 precisely",
+        "Most: write a Q6 answer in 12 minutes",
+        "Some: plan and write Q7 in 15 minutes"
+      ],
+      "keywords": [
+        {
+          "term": "nineteenth-century text",
+          "def": "a text written in the 1800s, often formal and long-sentenced"
+        },
+        {
+          "term": "perspective",
+          "def": "a viewpoint shaped by time and experience"
+        },
+        {
+          "term": "comparison",
+          "def": "showing similarities and differences"
+        },
+        {
+          "term": "methods",
+          "def": "the language and structural choices writers make"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How might a walk at midnight in the 1860s feel different from a walk to work today?"
+      },
+      "pictures": [
+        {
+          "find": "Victorian gas lamp foggy night",
+          "alt": "A gas lamp in the fog",
+          "for": "hook"
+        },
+        {
+          "find": "Thames bridge at night",
+          "alt": "A Thames bridge at night",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "independent": "hands-down"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Practice Text One 'Why I Walk' (teacher-written modern column, pupil PDF)",
+        "Practice Text Two 'A Night Walk Through the City' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Section A practice questions and mark scheme points (pupil PDF)",
+        "TAPS and PEMACS Comparison Framework A3 (school display)"
+      ],
+      "starter": [
+        {
+          "q": "Q5 asks for...",
+          "options": [
+            "two details",
+            "one paragraph"
+          ],
+          "a": "A) two details",
+          "mins": 1
+        },
+        {
+          "q": "Q7 needs...",
+          "options": [
+            "Text Two only",
+            "both texts"
+          ],
+          "a": "B) both texts",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Text Two (practice)",
+          "note": "Pupils reread on the pupil PDF.",
+          "quote": {
+            "text": "My dear Brother,\nYou ask how I bear the noise of London. I will confess a secret: I bear it by walking through it when it is asleep. Last night, being unable to rest, I set out at midnight and did not return until the milk-carts began their rounds.\n\nThe streets at that hour belong to a different nation. The gas-lamps burn with a sickly yellow patience; the river breathes a cold fog over the bridges; and every doorway seems to hold its breath. I passed a coffee-stall where three cab-men warmed their hands, and a watchman who wished me good night as gravely as a bishop.\n\nI do not pretend the walk was wholly pleasant. My boots were soaked by the second mile, and twice I was startled by footsteps that proved to be my own echo. Yet I came home with a mind scrubbed clean.\n\nTry it, dear Brother, when your country fields grow dull. A city at night will teach you more of your fellow men than a month of its daylight.\nYour affectionate sister, Margaret",
+            "source": "Text Two, 'A Night Walk Through the City' (teacher-written in a nineteenth-century style for TGA)"
+          }
+        },
+        {
+          "heading": "Today's questions",
+          "bullets": [
+            "Q4: At what time did Margaret set out? (1)",
+            "Q5: Give two things Margaret sees or meets on her walk. (2)",
+            "Q6: How do language and structure present the city at night? (10)",
+            "Q7: Compare how the writers present their experiences of walking. (15)"
+          ],
+          "note": "Original questions in the 4EB1 style. Suggested times: Q4 and Q5 two minutes; Q6 twelve; Q7 eighteen."
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which Q7 opening is strongest?",
+            "options": [
+              "Text One is about walking. Text Two is about walking.",
+              "I prefer Text Two.",
+              "Both writers find that walking clears the mind, although one walks to escape traffic and the other to escape sleeplessness."
+            ],
+            "answer": 2,
+            "why": "It compares ideas with a precise difference; the others only state or give a preference."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Q4 and Q5 (2 minutes).",
+          "a": "Q4: midnight. Q5 any two: gas-lamps; fog over the bridges; a coffee-stall with three cab-men; a watchman; milk-carts (on her return).",
+          "mins": 2,
+          "model": "Q4: scan for a time: 'at midnight'. Q5: two separate details on two lines: 'a coffee-stall with cab-men'; 'a watchman'."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 12 minutes): Q6 in the portal response box. Starter: 'The writer presents the city at night as...'",
+          "a": "Mark scheme points: personification ('every doorway seems to hold its breath', 'the river breathes'); 'sickly yellow patience'; metaphor 'a different nation'; humour ('as gravely as a bishop'); structure: from the secret, through discomfort ('I do not pretend'), to the lesson and direct appeal.",
+          "mins": 12,
+          "model": "Model opening shared after: 'The writer presents the city at night as a strange, living place. Personification in \"every doorway seems to hold its breath\" makes the streets feel watchful and tense; structurally, the honest turn \"I do not pretend the walk was wholly pleasant\" makes her final advice more trustworthy.'"
+        },
+        {
+          "q": "Core (timed, 18 minutes): Q7 in the portal response box. Starter: 'Both writers present walking as...'",
+          "a": "Mark scheme points: both say walking clears the mind ('my head is clear' / 'a mind scrubbed clean'); both notice small details of their city; both end with a direct appeal; differences: daily routine versus a midnight adventure; modern column versus private letter; noticing places versus noticing people; tone light and reflective versus vivid and slightly comic.",
+          "mins": 18
+        },
+        {
+          "q": "Self-check: did every Q7 paragraph mention both texts?",
+          "a": "Yes or a repair noted.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "One word in the chat: which question felt hardest under time?",
+          "a": "An honest answer.",
+          "mins": 1
+        }
+      ],
+      "homework": "Self-mark Q6 and Q7 with the mark scheme points (pupil PDF) and add one repair to your list.",
+      "send": "SEND: questions read aloud; PEMACS frame for Q7. EAL: glossary of 'cab-men', 'gravely', 'scrubbed'. Stretch: Q7 in 15 minutes."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 49,
+      "title": "Paper 2, sitting 1: reading both texts and Q1 to Q6",
+      "duration": 50,
+      "bigQuestion": "Can I read two unseen texts well under pressure?",
+      "objectives": [
+        "To understand how well I can read two unseen texts and answer Q1 to Q6 under exam conditions"
+      ],
+      "successCriteria": [
+        "All: use reading time to annotate for Q3, Q6 and Q7",
+        "Most: answer the short questions precisely",
+        "Some: complete Q3 and Q6 within the time"
+      ],
+      "keywords": [
+        {
+          "term": "unseen",
+          "def": "a text you have not read before"
+        },
+        {
+          "term": "annotate",
+          "def": "mark up a text with notes as you read"
+        },
+        {
+          "term": "stamina",
+          "def": "keeping quality high for a long time"
+        },
+        {
+          "term": "exam conditions",
+          "def": "silent, timed, independent"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What will you underline first as you read an unseen text?"
+      },
+      "pictures": [
+        {
+          "find": "river flooding over banks",
+          "alt": "A river overflowing its banks",
+          "for": "hook"
+        },
+        {
+          "find": "rowing boat on flood water",
+          "alt": "A rowing boat on flood water",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "independent": "hands-down"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Paper 2 Text One 'The Night the River Came In' (teacher-written modern memoir, pupil PDF)",
+        "Paper 2 Text Two 'Letter from a Flooded Valley' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Paper 2 question paper and mark scheme (teacher-written, 4EB1 style, portal)",
+        "Access arrangement cards (SENCo)"
+      ],
+      "starter": [
+        {
+          "q": "Reading time is for...",
+          "options": [
+            "resting",
+            "annotating for the big questions"
+          ],
+          "a": "B) annotating for the big questions",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How this week's paper works",
+          "bullets": [
+            "The full paper is sat in four timed sittings this week",
+            "Sitting 1 (today): reading and Q1 to Q6",
+            "Sitting 2: Section B; sitting 3: Section C",
+            "Home sitting: Q7 (20 minutes, timed in the portal)"
+          ],
+          "note": "TO CONFIRM: a single 3-hour sitting if the timetable allows. All texts and questions are original, in the 4EB1 style."
+        },
+        {
+          "heading": "Today's questions",
+          "note": "Also on the paper.",
+          "table": {
+            "head": [
+              "Q",
+              "Question",
+              "Marks"
+            ],
+            "rows": [
+              [
+                "1",
+                "From paragraph 1, what made people start to worry?",
+                "1"
+              ],
+              [
+                "2",
+                "At what time did the father wake the family?",
+                "1"
+              ],
+              [
+                "3",
+                "How does the writer use language and structure to present the experience of the flood?",
+                "10"
+              ],
+              [
+                "4",
+                "For how many days had the rain fallen?",
+                "1"
+              ],
+              [
+                "5",
+                "Give two things the water carried away.",
+                "2"
+              ],
+              [
+                "6",
+                "How does the writer use language and structure to present the people of the valley?",
+                "10"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Start",
+          "bullets": [
+            "Read the questions first",
+            "Annotate for Q3, Q6 and Q7 as you read",
+            "Note two Section B ideas from each text",
+            "Watch the clock"
+          ],
+          "note": "Start the timer."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Reading time (7 minutes): read Text One and Text Two on the paper and annotate.",
+          "a": "Annotations for Q3, Q6, Q7 and Section B.",
+          "mins": 7,
+          "model": "Teacher reminder only: 'Questions first, then texts. Mark language and structure for Q3 and Q6; mark people and kindness for Q7.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 30 minutes): answer Q1 to Q6 on the paper or in the portal response box.",
+          "a": "Mark scheme: Q1 the drains began to gurgle backwards; Q2 two in the morning; Q4 nine days; Q5 any two of a cart, two pigs, the baker's woodpile. Q3 points: calm 'Shoes on' more frightening than shouting; personification of water carrying a leaf 'as if... going somewhere important'; senses 'mud and petrol'; structure from rising tension to the turn 'What I remember most' and the reflective final line. Q6 points: contrast of terror ('a roar like a great train') with conduct; the chain across the bridge; 'fed forty souls without asking a penny'; formal letter voice; structure from disaster to pride and an appeal.",
+          "mins": 30,
+          "model": "No model during the sitting; model answers are shared in the feedback lesson."
+        },
+        {
+          "q": "Check (3 minutes): short answers precise; both 10-markers cover language and structure.",
+          "a": "Checks made.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "One word in the chat: how did reading time help?",
+          "a": "An honest answer.",
+          "mins": 1
+        }
+      ],
+      "homework": "Home sitting: Q7 'Compare how the writers present the community's response to the flood' (20 minutes, timed in the portal) before sitting 3.",
+      "send": "SEND: access arrangements as agreed (extra time, reader, word processor). EAL: glossary of 'befell', 'torrent', 'conduct' allowed. Stretch: finish with time to improve Q3."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 50,
+      "title": "Paper 2, sitting 2: Section B directed writing",
+      "duration": 50,
+      "bigQuestion": "Can I turn two texts into a strong speech under time?",
+      "objectives": [
+        "To understand how well I can write a 30-mark directed writing response from two texts under exam conditions"
+      ],
+      "successCriteria": [
+        "All: plan using ideas from both flood texts",
+        "Most: write a complete speech for the audience and purpose",
+        "Some: proofread for AO5"
+      ],
+      "smsc": "Social: community, neighbourliness and service",
+      "islamicLink": {
+        "text": "Islam commands believers to 'cooperate in righteousness and piety' (al-Ma'idah 5:2), and good treatment of neighbours is part of faith. The flood texts show strangers and old rivals helping one another: ideas you can use in your speech.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "directed writing",
+          "def": "writing for a set task using ideas from the texts"
+        },
+        {
+          "term": "community",
+          "def": "people who live and work together"
+        },
+        {
+          "term": "transform",
+          "def": "use an idea in your own words for a new purpose"
+        },
+        {
+          "term": "register",
+          "def": "how formal the language is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What does a community owe its neighbours in an emergency?"
+      },
+      "pictures": [
+        {
+          "find": "sandbags flood defence",
+          "alt": "Sandbags stacked against flooding",
+          "for": "hook"
+        },
+        {
+          "find": "tea flask and blankets",
+          "alt": "A flask and blankets",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "independent": "hands-down"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Paper 2 Text One 'The Night the River Came In' (teacher-written modern memoir, pupil PDF)",
+        "Paper 2 Text Two 'Letter from a Flooded Valley' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Paper 2 question paper and mark scheme (teacher-written, 4EB1 style, portal)",
+        "Access arrangement cards (SENCo)"
+      ],
+      "starter": [
+        {
+          "q": "Q8 AO1 rewards...",
+          "options": [
+            "using ideas from both texts",
+            "spelling"
+          ],
+          "a": "A) using ideas from both texts",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Question 8 (30 marks)",
+          "bullets": [
+            "Write an assembly speech: how communities can help each other in emergencies.",
+            "Include: what happens in emergencies; how people help; why it matters.",
+            "Use ideas from both texts and your own ideas.",
+            "AO1 10, AO4 12, AO5 8"
+          ],
+          "note": "Original Q8-style task. Islamic link on the slide: helping one another in goodness is a duty."
+        },
+        {
+          "heading": "Timing today",
+          "note": "Exam conditions.",
+          "table": {
+            "head": [
+              "Step",
+              "Minutes"
+            ],
+            "rows": [
+              [
+                "Plan (ideas grid)",
+                "5"
+              ],
+              [
+                "Write",
+                "30"
+              ],
+              [
+                "Proofread",
+                "3"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Start",
+          "bullets": [
+            "Ideas from both texts, transformed",
+            "Speech form: direct address",
+            "Cover all three bullets",
+            "Leave three minutes to proofread"
+          ],
+          "note": "Start the timer."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plan (5 minutes): six ideas, three from each text, in your own words.",
+          "a": "For example: strangers become helpers; calm leadership; sharing food; children saved first; old grudges forgotten; pride in home.",
+          "mins": 5,
+          "model": "Teacher reminder only: 'Mr Hale's loaf and the innkeeper's forty souls are the same idea: sharing. Transform it for students.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 30 minutes): write your speech on the paper or in the portal response box. Starter: 'Good morning, everyone.'",
+          "a": "Marked with the 4EB1 Q8 criteria: ideas from both texts transformed (AO1); speech form and register for students (AO4); accurate, varied writing (AO5).",
+          "mins": 30,
+          "model": "No model during the sitting; shared in feedback: 'Good morning, everyone. Imagine waking at two in the morning to water sliding under your front door...'"
+        },
+        {
+          "q": "Proofread (3 minutes).",
+          "a": "Corrections made.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "One word in the chat: which bullet was hardest to cover?",
+          "a": "An honest answer.",
+          "mins": 1
+        }
+      ],
+      "homework": "If not yet done, complete the Q7 home sitting (20 minutes, timed in the portal).",
+      "send": "SEND: access arrangements as agreed; speech frame allowed. EAL: phrase bank allowed. Stretch: include a counter-argument and its answer."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 51,
+      "title": "Paper 2, sitting 3: Section C",
+      "duration": 50,
+      "bigQuestion": "Can I keep my writing sharp to the end of the paper?",
+      "objectives": [
+        "To understand how well I can choose, plan and write a Section C piece as the final part of a full paper"
+      ],
+      "successCriteria": [
+        "All: choose and plan within seven minutes",
+        "Most: write a controlled piece in about 30 minutes",
+        "Some: proofread for five minutes"
+      ],
+      "keywords": [
+        {
+          "term": "stamina",
+          "def": "keeping quality high to the end"
+        },
+        {
+          "term": "discursive",
+          "def": "exploring different views"
+        },
+        {
+          "term": "control",
+          "def": "deliberate choices in structure and language"
+        },
+        {
+          "term": "proofread",
+          "def": "check for and correct errors"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "At the end of a long paper, what will keep your writing sharp?"
+      },
+      "pictures": [
+        {
+          "find": "town street after storm puddles morning",
+          "alt": "A town street after a storm",
+          "for": "hook"
+        },
+        {
+          "find": "hourglass",
+          "alt": "An hourglass",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "independent": "hands-down"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Paper 2 question paper and mark scheme (teacher-written, 4EB1 style, portal)",
+        "Personal error log (pupil PDF)",
+        "Access arrangement cards (SENCo)"
+      ],
+      "starter": [
+        {
+          "q": "Section C plan time is about...",
+          "options": [
+            "20 minutes",
+            "5 minutes"
+          ],
+          "a": "B) 5 minutes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Section C (30 marks): choose one",
+          "bullets": [
+            "Q9: 'Strangers are only friends we have not met.' Discuss.",
+            "Q10: Write a story with the title 'High Water'.",
+            "Q11: Describe a town the morning after a storm."
+          ],
+          "note": "Original titles in the 4EB1 Section C style, linked in theme to the paper. Writing time is shortened to fit the lesson."
+        },
+        {
+          "heading": "Timing",
+          "note": "Exam conditions.",
+          "table": {
+            "head": [
+              "Step",
+              "Minutes"
+            ],
+            "rows": [
+              [
+                "Choose and plan",
+                "7"
+              ],
+              [
+                "Write",
+                "28"
+              ],
+              [
+                "Proofread",
+                "5"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Start",
+          "bullets": [
+            "Choose the task you can plan fastest",
+            "Five-line plan",
+            "Keep a story small",
+            "Proofread with your error log"
+          ],
+          "note": "Start the timer."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Choose and plan (7 minutes).",
+          "a": "A choice and a five-line plan.",
+          "mins": 7,
+          "model": "Teacher reminder only: 'Two minutes to choose, five to plan.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 28 minutes): write your Section C piece on the paper or in the portal response box.",
+          "a": "Marked with the 4EB1 Section C criteria (AO4 20, AO5 10).",
+          "mins": 28,
+          "model": "No model during the sitting; shared in feedback."
+        },
+        {
+          "q": "Proofread (5 minutes).",
+          "a": "Corrections made.",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "One word in the chat: how was your stamina?",
+          "a": "An honest answer.",
+          "mins": 1
+        }
+      ],
+      "homework": "Make sure the Q7 home sitting is submitted; rest before feedback.",
+      "send": "SEND: access arrangements as agreed; plan frames allowed. EAL: task vocabulary list. Stretch: proofread with seven minutes left."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 52,
+      "title": "Paper 2 feedback: marks by section and model answers for Section A",
+      "duration": 50,
+      "bigQuestion": "How have I improved, and what is left to repair?",
+      "objectives": [
+        "To understand my Paper 2 marks and what top-level Section A answers do differently"
+      ],
+      "successCriteria": [
+        "All: compare my Paper 2 and mock marks by section",
+        "Most: annotate model answers for Q3, Q6 and Q7",
+        "Some: choose my weakest section for repair"
+      ],
+      "keywords": [
+        {
+          "term": "progress",
+          "def": "improvement between two attempts"
+        },
+        {
+          "term": "model answer",
+          "def": "an example of a top-level answer"
+        },
+        {
+          "term": "perceptive",
+          "def": "showing deep, sharp understanding"
+        },
+        {
+          "term": "sustained",
+          "def": "kept up throughout"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which section improved most since February, and why?"
+      },
+      "pictures": [
+        {
+          "find": "upward line graph paper",
+          "alt": "A graph rising upwards",
+          "for": "keywords"
+        },
+        {
+          "find": "river after flood calm",
+          "alt": "A calm river after a flood",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Paper 2 Text One 'The Night the River Came In' (teacher-written modern memoir, pupil PDF)",
+        "Paper 2 Text Two 'Letter from a Flooded Valley' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Marked Paper 2 and model answers (pupil PDF)",
+        "Personal repair list and question-level analysis (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Q7 top answers compare...",
+          "options": [
+            "ideas and methods throughout",
+            "one text"
+          ],
+          "a": "A) ideas and methods throughout",
+          "mins": 1
+        },
+        {
+          "q": "Q5 needed...",
+          "options": [
+            "a paragraph",
+            "two separate details"
+          ],
+          "a": "B) two separate details",
+          "mins": 1
+        },
+        {
+          "q": "The innkeeper fed...",
+          "options": [
+            "forty souls",
+            "four people"
+          ],
+          "a": "A) forty souls",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Mock to Paper 2",
+          "note": "Pupils fill in their own rows.",
+          "table": {
+            "head": [
+              "Section",
+              "Mock",
+              "Paper 2",
+              "Change"
+            ],
+            "rows": [
+              [
+                "A (40)",
+                "...",
+                "...",
+                "..."
+              ],
+              [
+                "B (30)",
+                "...",
+                "...",
+                "..."
+              ],
+              [
+                "C (30)",
+                "...",
+                "...",
+                "..."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model Q7 paragraph (labelled)",
+          "note": "Read aloud; label the moves.",
+          "quote": {
+            "text": "Both writers present the flood as a disaster that reveals unexpected kindness, although the memoir focuses on one street while the letter speaks for a whole valley. [Point] The memoir's Mr Hale, who 'complained about our football for years', hands over a loaf, whereas the letter praises mill-hands who 'formed a chain across the bridge'. [Evidence] The modern writer uses a single, gently comic example, while the nineteenth-century writer uses formal, public praise. [Methods] Both suggest that crisis can turn neighbours and workers into a community. [Concept] Ultimately, the memoir's final line, that some neighbours 'never went back to being strangers', makes the change feel lasting, while the letter ends with an appeal for help. [Synthesis]",
+            "source": "Model answer written for TGA"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "What lifts the model to the top level?",
+            "options": [
+              "Comparison of ideas and methods in every sentence",
+              "Long quotations",
+              "A summary of both texts"
+            ],
+            "answer": 0,
+            "why": "Sustained, integrated comparison is what Q7 rewards."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Annotate the Q3 model points: which language and which structural features does it use?",
+          "a": "Language: 'Shoes on' calm speech, personified water, senses; structure: tension builds to the turn 'What I remember most', reflective final line.",
+          "mins": 4,
+          "model": "Teacher annotates the first two sentences: language point ('very calmly' more frightening than shouting) and its effect; then the structural turn to kindness."
+        },
+        {
+          "q": "Fill in your mock-to-Paper-2 table and name your weakest section.",
+          "a": "Table completed and weakest section named.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, rewrite your weakest Section A answer (Q3, Q6 or Q7) using the model. Starter: 'The writer...' or 'Both writers...'",
+          "a": "An improved answer showing the top-level features of the model.",
+          "mins": 15,
+          "model": "Q6 before: 'The people are kind. The innkeeper feeds them.' After: 'The writer presents the people as heroic in their ordinary goodness: the mill-hands, \"who had every reason to save their own poor goods\", choose others first, and the formal, measured voice gives their courage dignity.'"
+        },
+        {
+          "q": "Extend: add your new targets to your repair list.",
+          "a": "Updated repair list.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write one Q7 sentence comparing perspectives across time.",
+          "a": "For example: The nineteenth-century writer's public formality contrasts with the memoir's personal, wry voice.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Sustained comparison means...",
+          "options": [
+            "a final sentence only",
+            "both texts throughout"
+          ],
+          "a": "B) both texts throughout",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Answers vary, with a reason.",
+          "mins": 2
+        }
+      ],
+      "homework": "Choose your repair station for next lesson (reading or writing) and bring your marked paper.",
+      "send": "SEND: model answers with highlighted features. EAL: glossary of evaluative terms. Stretch: write a full Q7 introduction from the model."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 53,
+      "title": "Repair the weakest section: reading (Q3, Q6, Q7)",
+      "duration": 50,
+      "bigQuestion": "How do I close my biggest reading gap?",
+      "objectives": [
+        "To understand how to close my biggest gap in Section A with a focused repair task"
+      ],
+      "successCriteria": [
+        "All: identify the exact skill behind my weakest reading answer",
+        "Most: practise that skill on a fresh extract",
+        "Some: check my repair against the model features"
+      ],
+      "keywords": [
+        {
+          "term": "repair",
+          "def": "a task that fixes a specific gap"
+        },
+        {
+          "term": "skill",
+          "def": "a specific thing you can do, such as comparing methods"
+        },
+        {
+          "term": "deliberate practice",
+          "def": "practising the hardest part, with feedback"
+        },
+        {
+          "term": "feedback",
+          "def": "information on how to improve"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it better to practise what you are good at or what you are bad at?"
+      },
+      "pictures": [
+        {
+          "find": "toolbox tools",
+          "alt": "A toolbox",
+          "for": "keywords"
+        },
+        {
+          "find": "bridge repair construction",
+          "alt": "A bridge under repair",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "think-pair-share",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Repair station cards and teacher-written practice extract (pupil PDF)",
+        "Personal repair list and question-level analysis (pupil PDF)",
+        "TAPS and PEMACS Comparison Framework A3 (school display)"
+      ],
+      "starter": [
+        {
+          "q": "Q6 is about...",
+          "options": [
+            "comparison",
+            "Text Two's language and structure"
+          ],
+          "a": "B) Text Two's language and structure",
+          "mins": 1
+        },
+        {
+          "q": "Deliberate practice targets...",
+          "options": [
+            "the hardest part",
+            "the easiest part"
+          ],
+          "a": "A) the hardest part",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three repair stations",
+          "note": "Pupils go to the station that matches their weakest answer.",
+          "table": {
+            "head": [
+              "Station",
+              "Gap",
+              "Task"
+            ],
+            "rows": [
+              [
+                "1: Effects",
+                "names features, no effects",
+                "five quotations, one effect sentence each"
+              ],
+              [
+                "2: Structure",
+                "language only",
+                "map the text's shifts and explain two"
+              ],
+              [
+                "3: Comparison",
+                "texts separate",
+                "two integrated PEMACS paragraphs"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Fresh extract (teacher-written)",
+          "note": "Short practice text for all stations.",
+          "quote": {
+            "text": "The library closed at six, but nobody told the rain. It kept on, steady and grey, as the last readers buttoned their coats. Inside, the lights went off one row at a time, like a house putting its children to bed.\n\nThen, at the very end of the hall, one lamp stayed on. Under it sat a boy with a dictionary, his finger moving slowly down the page, as if the words might run away.",
+            "source": "Teacher-written practice extract for TGA"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which sentence explains a structural effect?",
+            "options": [
+              "The text is about a library.",
+              "The shift from the closing building to one lit lamp focuses our attention on the boy.",
+              "There is a simile."
+            ],
+            "answer": 1,
+            "why": "It names a structural shift and its effect; the others name or summarise."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Station work, part 1: complete your station's task on the fresh extract.",
+          "a": "Station 1: five effect sentences. Station 2: a map of shifts (closing, lights off, one lamp, the boy) with two explanations. Station 3: comparison of this extract with Text One 'Why I Walk' (noticing small things).",
+          "mins": 10,
+          "model": "Teacher models one example per station: effect ('like a house putting its children to bed' makes the library tender and safe); structure (the final zoom to one lamp); comparison (both writers notice small details that others pass by)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write one full answer paragraph for your station's question on the fresh extract. Starter: 'The writer...'",
+          "a": "A paragraph that clearly shows the repaired skill.",
+          "mins": 15,
+          "model": "Structure station: 'The writer structures the extract like a camera closing in: the whole building, then the rows of lights going off, then one lamp and one boy. This narrowing makes the boy's quiet determination the emotional centre.'"
+        },
+        {
+          "q": "Extend: swap and check with a partner from the same station.",
+          "a": "One WWW and one EBI.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: write a second paragraph using a different skill.",
+          "a": "A second paragraph.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Has your gap narrowed?",
+          "options": [
+            "partly",
+            "not yet",
+            "yes"
+          ],
+          "a": "C) yes",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "What you are bad at, deliberately, with feedback.",
+          "mins": 2
+        }
+      ],
+      "homework": "Do one more station task at home on the Spring 1 texts and log it on your repair list.",
+      "send": "SEND: station task cards with sentence starters. EAL: glossary for the extract. Stretch: complete two stations."
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2",
+      "n": 54,
+      "title": "Repair the weakest section: writing (Q8 and Section C), and my plan to 24 May",
+      "duration": 50,
+      "bigQuestion": "Am I ready for 24 May, and what will I do in the final weeks?",
+      "objectives": [
+        "To understand how to raise my writing marks with a focused repair and plan the final weeks before the exam"
+      ],
+      "successCriteria": [
+        "All: redraft my weakest writing paragraph to the next level",
+        "Most: rehearse my exam-day routine for Sections B and C",
+        "Some: finalise my revision plan to 24 May"
+      ],
+      "smsc": "Spiritual: trust, effort and calm before the exam",
+      "keywords": [
+        {
+          "term": "redraft",
+          "def": "rewrite a section to improve it"
+        },
+        {
+          "term": "routine",
+          "def": "a fixed sequence you always follow"
+        },
+        {
+          "term": "exam-day checklist",
+          "def": "the steps to follow on the day"
+        },
+        {
+          "term": "final revision",
+          "def": "the last weeks of focused practice"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What will you do in the first five minutes of the real exam on 24 May?"
+      },
+      "pictures": [
+        {
+          "find": "calendar May page",
+          "alt": "A calendar page for May",
+          "for": "keywords"
+        },
+        {
+          "find": "sunrise over road ahead",
+          "alt": "A road ahead at sunrise",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 11 English Language (revision, timed practice and DIRT), mapped to 4EB1",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification, past papers and mark schemes",
+        "Paper 2 Text One 'The Night the River Came In' (teacher-written modern memoir, pupil PDF)",
+        "Paper 2 Text Two 'Letter from a Flooded Valley' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Model Q8 opening and exam-day checklist (pupil PDF)",
+        "Personal repair list and question-level analysis (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Q8 AO4 is worth...",
+          "options": [
+            "12 marks",
+            "20 marks"
+          ],
+          "a": "A) 12 marks",
+          "mins": 1
+        },
+        {
+          "q": "Section C AO5 is worth...",
+          "options": [
+            "8 marks",
+            "10 marks"
+          ],
+          "a": "B) 10 marks",
+          "mins": 1
+        },
+        {
+          "q": "The exam is on...",
+          "options": [
+            "Mon 24 May",
+            "Wed 12 May"
+          ],
+          "a": "A) Mon 24 May",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: Q8 opening (flood speech)",
+          "note": "Read aloud; annotate AO1, AO4, AO5.",
+          "quote": {
+            "text": "Good morning, everyone. Imagine waking at two in the morning to the sound of water where water should never be. In moments like that, a street is either a row of locked doors or a community. When a river burst into one town, it was not the council that arrived first, but farmers in canoes with flasks of tea. When a dam broke in another valley, mill-workers formed a human chain to carry children to safety. None of them had to. All of them chose to.",
+            "source": "Model answer written for TGA"
+          }
+        },
+        {
+          "heading": "Exam-day routine",
+          "note": "Rehearse it now.",
+          "cycle": [
+            "Read questions first (2 min)",
+            "Read and annotate both texts",
+            "Section A to the time plan",
+            "Section B: plan, write, proofread",
+            "Section C: choose, plan, write, proofread",
+            "Final check: names, numbers, errors"
+          ]
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "What makes the model opening strong for AO1?",
+            "options": [
+              "It quotes the texts at length",
+              "It summarises the texts",
+              "Ideas from both texts are transformed into examples for the audience"
+            ],
+            "answer": 2,
+            "why": "It uses both texts' ideas in its own words for its own purpose."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Annotate the model: one AO1, one AO4 and one AO5 feature.",
+          "a": "AO1: farmers and mill-workers from both texts; AO4: direct address, rhetorical contrast; AO5: short final sentences 'None of them had to. All of them chose to.'",
+          "mins": 4,
+          "model": "Teacher annotates the first line: 'Good morning, everyone' (AO4: speech form); 'Imagine' (direct address); 'water where water should never be' (AO5: precise, memorable phrasing)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, redraft your weakest Q8 or Section C paragraph from Paper 2 to the next level. Starter: paste the paragraph, then improve it.",
+          "a": "A redraft showing a clear gain in AO1 and AO4 (Q8) or AO4 and AO5 (Section C).",
+          "mins": 15,
+          "model": "Q8 before: 'In Text One people helped. In Text Two people helped too.' After: 'When the water rose, strangers became neighbours: farmers rowed from window to window, and mill-workers passed children hand to hand. Kindness, in other words, is a choice we can practise before any emergency arrives.'"
+        },
+        {
+          "q": "Extend: finalise your revision plan to 24 May (portal).",
+          "a": "A dated weekly plan covering the weakest section, timed sections and the error log.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: write your personal exam-day checklist in six lines.",
+          "a": "A six-line checklist.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "How ready do you feel for 24 May?",
+          "options": [
+            "very",
+            "quite",
+            "not yet"
+          ],
+          "a": "A) very",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one sentence.",
+          "a": "Read the questions first and plan my time.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow your revision plan; Summer 1 weeks of 26 Apr and 3 May focus on your weakest section and exam-day technique.",
+      "send": "SEND: exam-day checklist template; access arrangements confirmed with the SENCo. EAL: phrase banks for Q8 forms. Stretch: write a full Q8 response at home under time."
     }
   ]
 }
