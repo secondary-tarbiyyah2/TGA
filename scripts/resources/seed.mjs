@@ -92,6 +92,19 @@ const misconceptionsOf = (lessons) => lessons.flatMap((l) => (l.teach || []).fil
 const AR = /[\u0600-\u06FF]/;
 const isQuranic = (s) => /surat|surah|qur'an|ayah|ayat|\d+:\d+/i.test(s);
 
+/** Split text into at most `max` lines of about `n` characters (the last line keeps the rest). */
+function wrap(text, n, max) {
+  const out = [];
+  let line = "";
+  for (const w of clean(text).split(" ")) {
+    if (line && (line + " " + w).length > n && out.length < max - 1) {
+      out.push(line);
+      line = w;
+    } else line = line ? `${line} ${w}` : w;
+  }
+  if (line) out.push(line);
+  return out;
+}
 function sortCards(s) {
   const cards = s.cards.map(clean);
   const answer = Array.isArray(s.answer) ? s.columns.map((c, ci) => `${clean(c)}: ${cards.filter((_, i) => s.answer[i] === ci).join("; ") || "none"}`).join(". ") : null;
@@ -146,12 +159,12 @@ function base(entry, lessons) {
   const file = fileBy.get(`${entry.subjectSlug}/${entry.year}`);
   return {
     id: entry.id,
-    title: entry.title.replace(/\s*\((?:portal[^)]*|pupil pdf[^)]*|printable[^)]*)\)\s*/gi, " ").replace(/\s+([:,.;])/g, "$1").replace(/\s+/g, " ").trim(),
+    title: entry.title.replace(/^pupil pdf( worksheet)?:\s*/i, "").replace(/^[a-z]/, (c) => c.toUpperCase()).replace(/\s*\((?:portal[^)]*|pupil pdf[^)]*|printable[^)]*)\)\s*/gi, " ").replace(/\s+([:,.;])/g, "$1").replace(/\s+/g, " ").trim(),
     type: entry.type,
     subject: entry.subject,
     subjectSlug: entry.subjectSlug,
     year: entry.year,
-    ...(file?.data.boardShort && yearNum(entry.year) >= 10 ? { board: file.data.boardShort } : {}),
+    ...((file?.data.examShort || file?.data.boardShort) && yearNum(entry.year) >= 10 ? { board: file.data.examShort || file.data.boardShort } : {}),
     unit: first?.unit || entry.units[0],
     lessons: lessons.map((l) => l.n),
     source: `Seeded from ${entry.subjectSlug}/${entry.year} lesson${lessons.length > 1 ? "s" : ""} ${lessons.map((l) => l.n).join(", ")} (${entry.wording})`,
@@ -220,7 +233,7 @@ function worksheet(entry, lessons) {
   if (grid) blocks.push(...grid);
   // Texts pupils read, annotate or learn (Arabic and Qur'an exactly as in the lesson).
   const quotes = quotesOf(L);
-  if (quotes.length && /text|read|ayat|ayah|surah|words spaced|extract|source|passage|poem|article|annotat|hadith|quotation/i.test(t + " " + entry.wording)) {
+  if (quotes.length && /text|read|ayat|ayah|surah|words spaced|extract|source|passage|poem|article|annotat|hadith|quotation|mushaf|printed|\d+:\d+/i.test(t + " " + entry.wording)) {
     blocks.push({ h: "Read" });
     for (const q of quotes) blocks.push(AR.test(q.text) ? { arabic: { text: q.text, ref: q.source, spaced: /spaced/i.test(entry.wording), quran: isQuranic(q.source) } } : { passage: { title: q.source, paras: q.text.split(/\n+/).map(clean) } });
     const meaning = tablesOf(L).find((x) => /translation|meaning/i.test(x.head.join(" ")));
@@ -238,7 +251,12 @@ function worksheet(entry, lessons) {
     blocks.push({ h: models.length > 1 ? "Worked examples" : "Worked example" });
     for (const m of models.slice(0, 3)) blocks.push({ model: { title: clean(m.problem || m.title), parts: [...(m.steps || []).map((s, i) => ({ label: `Step ${i + 1}`, text: clean(s) })), ...(m.answer ? [{ label: "Answer", text: clean(m.answer) }] : [])] } });
   }
-  for (const s of sortsOf(L)) if (/sort|cards|classif|group/i.test(t)) blocks.push({ h: clean(s.heading) || "Card sort" }, sortCards(s));
+  const sorts = sortsOf(L);
+  for (const s of sorts) if (/sort|cards|classif|group/i.test(t)) blocks.push({ h: clean(s.heading) || "Card sort" }, sortCards(s));
+  // Flashcards and word cards: the lesson's key words, the word on one line and its meaning below.
+  if (/flash ?cards|word cards|vocabulary cards|picture cards|\bcards\b/i.test(t) && !(sorts.length && /sort/i.test(t)) && kws.length >= 3) {
+    blocks.push({ h: "Cards" }, { cards: keywordsOf(L, 16).map((k) => [k.term, ...wrap(k.def, 30, 2)].join("\n")), cols: 3, height: 28, size: 6, task: "use them to test yourself or a partner." });
+  }
   for (const tb of tablesOf(L)) if (/table|compar|chart|data|record/i.test(t) && !/translation|meaning/i.test(tb.head.join(" "))) blocks.push({ h: tb.heading || "Table" }, { table: { head: tb.head, rows: tb.rows } });
   for (const c of comparesOf(L)) if (/compar|venn|table/i.test(t)) blocks.push({ h: c.heading || "Compare" }, { table: { head: [clean(c.left.title), clean(c.right.title)], rows: Array.from({ length: Math.max(c.left.points.length, c.right.points.length) }, (_, i) => [clean(c.left.points[i] || ""), clean(c.right.points[i] || "")]), blankRows: 2 } });
   for (const tl of timelinesOf(L)) if (/timeline/i.test(t)) blocks.push({ h: tl.heading || "Timeline" }, { timeline: tl.items.map((x) => ({ label: clean(x.label), text: clean(x.text) })) });

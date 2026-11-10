@@ -85,6 +85,7 @@ export async function writeDocx(item, file) {
       if (b.box.title) kids.push(para([run(b.box.title, { bold: true })]));
       for (let k = 0; k < (b.box.lines || 6); k++) kids.push(writeLine());
     }
+    if (b.trace) kids.push(para([run((b.trace.items || []).join("   "), { size: 44 })], { align: AlignmentType.CENTER, rtl: true }));
     if (b.grid || b.cards || b.picture) kids.push(para([run("(Printable grid, cards or picture: see the PDF copy.)", { italics: true, color: MUTED, size: 18 })]));
   }
   const doc = new Document({
