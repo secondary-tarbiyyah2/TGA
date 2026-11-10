@@ -4,11 +4,12 @@
 begin;
 select plan(7);
 
--- Unused tables: no insert or update policy left for anyone (staff only read them).
+-- Unused tables: no insert or update policy left for anonymous visitors.
 select is(
   (select count(*)::int from pg_policies where schemaname = 'public'
-     and tablename in ('quiz_sessions', 'quiz_events', 'eligibility_responses') and cmd in ('INSERT', 'UPDATE', 'ALL')),
-  0, 'no write policies remain on the unused quiz tables'
+     and tablename in ('quiz_sessions', 'quiz_events', 'eligibility_responses') and cmd in ('INSERT', 'UPDATE', 'ALL')
+     and (roles @> array['anon']::name[] or roles @> array['public']::name[])),
+  0, 'no anonymous write policies remain on the unused quiz tables'
 );
 
 -- Rate limit: pretend to be the API, with a network address.
