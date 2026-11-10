@@ -156,6 +156,8 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       tabs: [
         { href: "/admin/classes", label: "Classes", hint: "Every class: stream, classwork, people and grades", headOnly: true, matchPrefixes: ["/admin/class"] },
         { href: "/admin/lessons", label: "Timetable", hint: "Lessons by week, live lessons and recordings", icon: "layoutDashboard", headOnly: true },
+        { href: "/admin/lessons/generate", label: "Make the timetable", hint: "Match staff availability with what each class needs, then place every lesson", icon: "calendarCheck", headOnly: true },
+        { href: "/admin/academic/meeting-links", label: "Teams links", hint: "The Teams meeting link for each class's live lessons", icon: "monitor", headOnly: true },
         { href: "/admin/homework", label: "Classwork to action", hint: "To mark, missing and late, with links into each class", icon: "notebookPen", headOnly: true },
       ],
     },
@@ -191,7 +193,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       tabs: [
         { href: "/admin/staff", label: "Staff", hint: "Teacher profiles and compliance dates", headOnly: true },
         { href: "/admin/staff-attendance", label: "Staff hours", hint: "Clock-ins, hours and late arrivals", icon: "clock", headOnly: true },
-        { href: "/admin/recruitment", label: "Recruitment", hint: "Vacancies and job applications", icon: "briefcase", headOnly: true },
+        { href: "/admin/recruitment", label: "Job applications", hint: "Vacancies and applications from the website's Apply for a job form", icon: "briefcase", headOnly: true },
         { href: "/admin/handbook", label: "Handbook", hint: "Policies and how-tos for staff", icon: "bookOpen" },
       ],
     },
@@ -540,7 +542,8 @@ export function hubFor(pathname: string, roles: string[]): { item: SidebarItem; 
   // Only on the hub's own pages: a single class page (a matchPrefix of the
   // classes hub) has its own tabs and doesn't repeat the hub's.
   const p = normalisePortalPath(pathname);
-  const active = item.tabs.find((t) => p === t.href || p.startsWith(t.href + "/")) || null;
+  // The most specific tab wins (Timetable at /admin/lessons, "Make the timetable" at /admin/lessons/generate).
+  const active = activeTab(p, item.tabs);
   if (!active) return null;
   return { item, tabs: item.tabs, active };
 }

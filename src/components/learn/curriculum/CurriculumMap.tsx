@@ -6,6 +6,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { YEARS, yearLabel } from "@/lib/learn/curriculum";
 import { loadReviews, reviewKey, type ReviewRow } from "@/lib/learn/curriculumReview";
 import { EmptyState, LoadingState, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 const HALF_TERMS = [
   { key: "autumn1", label: "Autumn 1" },
@@ -55,6 +56,8 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
   const [lessons, setLessons] = useState<LessonLite[]>([]);
   const [reviews, setReviews] = useState<Record<string, ReviewRow>>({});
   const [error, setError] = useState<string | null>(null);
+  const [view, setView] = useState<"subject" | "year">("subject");
+  const [subject, setSubject] = useState<string | null>(null);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -105,14 +108,46 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
     }
   };
 
+  const statsFor = (u: UnitRow) => {
+    const ls = lessonsFor(u);
+    const approved = ls.filter((l) => {
+      const st = reviews[reviewKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]?.status;
+      return st === "approved" || st === "published";
+    }).length;
+    const waiting = ls.filter((l) => {
+      const st = reviews[reviewKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]?.status;
+      return st === "submitted" || st === "in_review";
+    }).length;
+    return { total: ls.length, approved, waiting, libUnit: ls[0]?.unit || null };
+  };
+  const hrefFor = (u: UnitRow, libUnit: string | null) => `/${area}/curriculum?year=${year}&subject=${encodeURIComponent(u.subject_slug)}${libUnit ? `&unit=${encodeURIComponent(libUnit)}` : ""}`;
+  const chosen = subjects.find((x) => x.slug === subject) || subjects[0] || null;
+
   return (
     <div className="space-y-5">
-      <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Year group">
-        {YEARS.map((y) => (
-          <button key={y} type="button" aria-pressed={year === y} onClick={() => pick(y)} className={year === y ? ui.chipOn : ui.chip}>
-            {yearLabel(y)}
-          </button>
-        ))}
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <label className="block text-sm font-medium text-ink">
+          Year group
+          <Select value={year} onChange={(e) => pick(e.target.value)} className={`${ui.select} mt-1 min-w-40`}>
+            {YEARS.map((y) => (
+              <option key={y} value={y}>
+                {yearLabel(y)}
+              </option>
+            ))}
+          </Select>
+        </label>
+        <div role="group" aria-label="Show" className="inline-flex gap-0.5 rounded-xl bg-gold-100/70 p-1">
+          {(
+            [
+              ["subject", "One subject"],
+              ["year", "Whole year"],
+            ] as const
+          ).map(([k, label]) => (
+            <button key={k} type="button" aria-pressed={view === k} onClick={() => setView(k)} className={`min-h-9 rounded-lg px-3 text-sm font-medium transition-colors ${view === k ? "bg-white text-forest-900 shadow-sm" : "text-ink/70 hover:text-ink"}`}>
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {units === null ? (
@@ -121,6 +156,8 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
         <EmptyState title={`No units planned for ${yearLabel(year)} yet`} icon="layoutGrid">
           {error || "Units appear here once they're placed in half terms in the Curriculum planner."}
         </EmptyState>
+      ) : view === "subject" ? (
+        <SubjectView subjects={subjects} chosen={chosen} onChoose={setSubject} statsFor={statsFor} hrefFor={hrefFor} now={now} />
       ) : (
         <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
           <table className="w-full min-w-[60rem] border-collapse text-left text-sm">
@@ -184,7 +221,122 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
           </table>
         </div>
       )}
-      <p className="text-xs text-ink/60">Hover a unit to see what it builds on and leads to. The bar shows how many of its lessons are approved.</p>
+      {view === "year" && <p className="text-xs text-ink/60">Hover a unit to see what it builds on and leads to. The bar shows how many of its lessons are approved.</p>}
+    </div>
+  );
+}
+
+type SubjectRow = { slug: string; name: string; cells: Record<string, UnitRow[]>; unplaced: UnitRow[] };
+type Stats = { total: number; approved: number; waiting: number; libUnit: string | null };
+
+/**
+ * One subject at a time (owner, Nov 2026: the full grid was too crowded): the
+ * subjects down the side with lessons approved out of planned, and the chosen
+ * subject's year as one list of half terms, each with one clear next step.
+ */
+function SubjectView({
+  subjects,
+  chosen,
+  onChoose,
+  statsFor,
+  hrefFor,
+  now,
+}: {
+  subjects: SubjectRow[];
+  chosen: SubjectRow | null;
+  onChoose: (slug: string) => void;
+  statsFor: (u: UnitRow) => Stats;
+  hrefFor: (u: UnitRow, libUnit: string | null) => string;
+  now: HalfTerm;
+}) {
+  const totals = (s: SubjectRow) => {
+    let total = 0;
+    let approved = 0;
+    for (const u of [...Object.values(s.cells).flat(), ...s.unplaced]) {
+      const st = statsFor(u);
+      total += st.total;
+      approved += st.approved;
+    }
+    return { total, approved };
+  };
+  return (
+    <div className="flex flex-col gap-5 lg:flex-row lg:items-start">
+      <nav aria-label="Subjects" className="lg:w-64 lg:shrink-0">
+        <ul className="flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:gap-1 lg:overflow-visible">
+          {subjects.map((s) => {
+            const on = chosen?.slug === s.slug;
+            const t = totals(s);
+            return (
+              <li key={s.slug} className="shrink-0">
+                <button type="button" aria-current={on ? "true" : undefined} onClick={() => onChoose(s.slug)} className={`flex w-full min-w-40 flex-col gap-1.5 rounded-xl px-3.5 py-2.5 text-left transition-colors ${on ? "bg-forest-100 text-forest-900" : "text-ink hover:bg-cream"}`}>
+                  <span className="flex items-center justify-between gap-3 text-sm font-semibold">
+                    {s.name}
+                    <span className="text-xs font-medium text-ink/65">{t.total ? `${t.approved}/${t.total}` : "No lessons"}</span>
+                  </span>
+                  <span aria-hidden="true" className="block h-1 overflow-hidden rounded-full bg-gold-light/70">
+                    <span className="block h-full rounded-full bg-forest-700" style={{ width: `${t.total ? Math.round((t.approved / t.total) * 100) : 0}%` }} />
+                  </span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+        <p className="mt-2 hidden px-1 text-xs text-ink/60 lg:block">Lessons approved out of lessons written.</p>
+      </nav>
+
+      {chosen && (
+        <section aria-labelledby="map-subject" className="min-w-0 flex-1 rounded-2xl border border-gold-light bg-white p-5 sm:p-6">
+          <h2 id="map-subject" className="font-serif text-h3 font-semibold text-forest-900">
+            {chosen.name}
+          </h2>
+          <ol className="mt-3">
+            {HALF_TERMS.map((h) => {
+              const list = chosen.cells[h.key] || [];
+              return (
+                <li key={h.key} className="flex flex-col gap-3 border-t border-gold-light/70 py-4 sm:flex-row sm:items-start">
+                  <span className={`w-24 shrink-0 text-sm font-semibold ${h.key === now ? "text-forest-700" : "text-gold-700"}`}>
+                    {h.label}
+                    {h.key === now && <span className="ml-1.5 rounded-full bg-forest-100 px-1.5 py-0.5 text-[0.625rem] text-forest-800">Now</span>}
+                  </span>
+                  {list.length === 0 ? (
+                    <p className="flex-1 text-sm text-ink/60">Nothing planned yet</p>
+                  ) : (
+                    <ul className="flex-1 space-y-3">
+                      {list.map((u) => {
+                        const st = statsFor(u);
+                        const pct = st.total ? Math.round((st.approved / st.total) * 100) : 0;
+                        const label = st.waiting ? `Review ${st.waiting}` : "Open";
+                        const tone = !st.total ? "bg-gold-100 text-gold-900" : st.approved === st.total ? "bg-forest-100 text-forest-900" : st.waiting ? "bg-teal-100 text-teal-900" : "bg-gold-100 text-gold-900";
+                        const status = !st.total ? "No lessons yet" : st.approved === st.total ? "All approved" : st.waiting ? `${st.waiting} waiting for approval` : "Being written";
+                        return (
+                          <li key={u.id} className="flex flex-wrap items-center gap-3">
+                            <div className="min-w-0 flex-1 basis-60">
+                              <p className="text-base font-semibold text-ink">{u.title}</p>
+                              {st.total > 0 && (
+                                <p className="mt-1 flex items-center gap-2 text-xs text-ink/70">
+                                  <span aria-hidden="true" className="block h-1.5 w-32 overflow-hidden rounded-full bg-gold-light/70">
+                                    <span className="block h-full rounded-full bg-forest-700" style={{ width: `${pct}%` }} />
+                                  </span>
+                                  {st.approved} of {st.total} lessons approved
+                                </p>
+                              )}
+                            </div>
+                            <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${tone}`}>{status}</span>
+                            <Link href={hrefFor(u, st.libUnit)} className={`${st.waiting ? ui.btnPrimary : ui.btnSecondary} ${ui.sm} min-w-20`}>
+                              {label}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+          {chosen.unplaced.length > 0 && <p className="mt-2 text-xs text-ink/60">{chosen.unplaced.length} unit{chosen.unplaced.length === 1 ? " isn't" : "s aren't"} placed in a half term yet. Place them in the Planner.</p>}
+        </section>
+      )}
     </div>
   );
 }
