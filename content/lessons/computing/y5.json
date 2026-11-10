@@ -2,7 +2,7 @@
   "subject": "Computing",
   "year": "y5",
   "board": "National Curriculum",
-  "source": "National Curriculum KS2 Computing (variables, repetition and selection, designing and debugging programs); Scratch game-making sequence adapted from the school's Drive Scratch Game Maker resources (Y7-Y9 computing overview)",
+  "source": "National Curriculum KS2 Computing (variables, repetition and selection, designing and debugging programs); Scratch game-making sequence adapted from the school's Drive Scratch Game Maker resources (Y7-Y9 computing overview) | Spring 1 2027 (lessons 5 to 9, v3): Tarbiyyah Primary computing long-term plan 2023-24 Year 5 Spring 1 (Selection in Physical Computing; Secure Your Secrets), NCCE Teach Computing based; MakeCode micro:bit simulator",
   "lessons": [
     {
       "unit": "Unit 1: Variables and game programming",
@@ -15,10 +15,22 @@
         "Trace the value of a variable through a short algorithm"
       ],
       "keywords": [
-        { "term": "variable", "def": "a named box that stores a value which can change" },
-        { "term": "value", "def": "the information stored in a variable" },
-        { "term": "set", "def": "give a variable a starting value" },
-        { "term": "change by", "def": "add to or take away from a variable" }
+        {
+          "term": "variable",
+          "def": "a named box that stores a value which can change"
+        },
+        {
+          "term": "value",
+          "def": "the information stored in a variable"
+        },
+        {
+          "term": "set",
+          "def": "give a variable a starting value"
+        },
+        {
+          "term": "change by",
+          "def": "add to or take away from a variable"
+        }
       ],
       "starter": [
         "Bismillah. Say what an if-then-else does.",
@@ -28,22 +40,39 @@
       "teach": [
         {
           "heading": "A variable is a labelled box",
-          "bullets": ["The label is the name: score.", "The box holds a value: 0.", "The value can change; the name stays."],
+          "bullets": [
+            "The label is the name: score.",
+            "The box holds a value: 0.",
+            "The value can change; the name stays."
+          ],
           "note": "Use real boxes or a drawn box with a sticky note. Write score on the label and 0 inside. Change the number inside. Ask what stayed the same and what changed. Misconception: pupils think a variable name and its value are the same thing."
         },
         {
           "heading": "Set and change",
-          "bullets": ["set score to 0 (start of game).", "change score by 1 (a point).", "change score by -1 (lose a point)."],
+          "bullets": [
+            "set score to 0 (start of game).",
+            "change score by 1 (a point).",
+            "change score by -1 (lose a point)."
+          ],
           "note": "Act it out: pupils hold a whiteboard with the variable name and a number; you give instructions and they update. Ask: after set score to 0, change by 3, change by 2, what is score? (5)."
         },
         {
           "heading": "Trace it",
-          "bullets": ["set lives to 3.", "change lives by -1.", "change lives by -1.", "lives is now 1."],
+          "bullets": [
+            "set lives to 3.",
+            "change lives by -1.",
+            "change lives by -1.",
+            "lives is now 1."
+          ],
           "note": "Show a trace table with a column per line of the algorithm and a row for the value. Teach pupils to fill it in line by line. This is the foundation for trace tables later in secondary computing."
         },
         {
           "heading": "Variables in real life",
-          "bullets": ["Game scores and lives.", "Shopping basket total.", "Battery percentage on a phone."],
+          "bullets": [
+            "Game scores and lives.",
+            "Shopping basket total.",
+            "Battery percentage on a phone."
+          ],
           "note": "Ask pupils to give their own examples of something that changes and a computer must remember. Example: the number of steps counted by a fitness watch."
         }
       ],
@@ -75,9 +104,18 @@
         "Show a variable on the stage and test it"
       ],
       "keywords": [
-        { "term": "make a variable", "def": "the button in Scratch that creates a new variable" },
-        { "term": "show variable", "def": "makes the variable's value visible on the stage" },
-        { "term": "global", "def": "a variable that all sprites can use" }
+        {
+          "term": "make a variable",
+          "def": "the button in Scratch that creates a new variable"
+        },
+        {
+          "term": "show variable",
+          "def": "makes the variable's value visible on the stage"
+        },
+        {
+          "term": "global",
+          "def": "a variable that all sprites can use"
+        }
       ],
       "starter": [
         "Bismillah. set score to 2, change score by 5. What is score?",
@@ -87,22 +125,38 @@
       "teach": [
         {
           "heading": "Make a variable",
-          "bullets": ["Open the Variables palette.", "Click 'Make a Variable'.", "Name it score; choose 'For all sprites'."],
+          "bullets": [
+            "Open the Variables palette.",
+            "Click 'Make a Variable'.",
+            "Name it score; choose 'For all sprites'."
+          ],
           "note": "Share the screen and make the variable step by step. Pupils follow on their own machines. Explain that a name like score tells us what the variable is for, so choose names that make sense."
         },
         {
           "heading": "Start at zero",
-          "bullets": ["When green flag clicked.", "set score to 0.", "This resets the game."],
+          "bullets": [
+            "When green flag clicked.",
+            "set score to 0.",
+            "This resets the game."
+          ],
           "note": "Show what happens if you forget to set score to 0: the score continues from last time. Misconception: pupils think Scratch resets variables automatically; it does not."
         },
         {
           "heading": "Change the score",
-          "bullets": ["When a sprite is clicked.", "change score by 1.", "Score appears on the stage."],
+          "bullets": [
+            "When a sprite is clicked.",
+            "change score by 1.",
+            "Score appears on the stage."
+          ],
           "note": "Build a clicker game: click the star sprite to add 1 to the score. Run it and click five times. Ask for predictions: what will the score be after 10 clicks? Check."
         },
         {
           "heading": "Lives and sensing",
-          "bullets": ["set lives to 3.", "If touching the rock: change lives by -1.", "If lives = 0: say 'Game over'."],
+          "bullets": [
+            "set lives to 3.",
+            "If touching the rock: change lives by -1.",
+            "If lives = 0: say 'Game over'."
+          ],
           "note": "Preview the selection with variables. Do not build all of it now. Ask pupils what blocks they will need and in what order. Connect to selection from Year 4."
         }
       ],
@@ -134,9 +188,18 @@
         "Explain the difference between a count-controlled and a condition-controlled loop"
       ],
       "keywords": [
-        { "term": "forever", "def": "a loop which never stops until the program ends" },
-        { "term": "repeat until", "def": "a loop which stops when its condition becomes true" },
-        { "term": "touching", "def": "a sensing block that checks if sprites meet" }
+        {
+          "term": "forever",
+          "def": "a loop which never stops until the program ends"
+        },
+        {
+          "term": "repeat until",
+          "def": "a loop which stops when its condition becomes true"
+        },
+        {
+          "term": "touching",
+          "def": "a sensing block that checks if sprites meet"
+        }
       ],
       "starter": [
         "Bismillah. How do you make a sprite move 10 steps five times without writing the block five times?",
@@ -146,22 +209,38 @@
       "teach": [
         {
           "heading": "Counting loops",
-          "bullets": ["repeat 10 runs exactly 10 times.", "We know how many times.", "Good for drawing shapes."],
+          "bullets": [
+            "repeat 10 runs exactly 10 times.",
+            "We know how many times.",
+            "Good for drawing shapes."
+          ],
           "note": "Recap repeat from Year 3 with a quick square. Ask pupils how they would know how many times to repeat if they did not know the number in advance."
         },
         {
           "heading": "Repeat until",
-          "bullets": ["repeat until touching the edge.", "The loop stops when the condition is true.", "We do not need to know how many."],
+          "bullets": [
+            "repeat until touching the edge.",
+            "The loop stops when the condition is true.",
+            "We do not need to know how many."
+          ],
           "note": "Demonstrate a sprite moving 5 steps repeat until touching the edge. Change the starting position and show the loop still works. Misconception: pupils think the loop stops immediately when the condition is first checked; it checks every time round."
         },
         {
           "heading": "Forever and if",
-          "bullets": ["forever keeps checking.", "if touching star: change score by 1.", "The game keeps responding."],
+          "bullets": [
+            "forever keeps checking.",
+            "if touching star: change score by 1.",
+            "The game keeps responding."
+          ],
           "note": "Build a catch game: a basket sprite moves with the arrow keys; inside a forever loop an if block checks touching star. Explain that a loop with a condition inside is how games check what is happening. Show what happens without the forever loop (the check only happens once)."
         },
         {
           "heading": "Choosing the right loop",
-          "bullets": ["Know how many times: repeat.", "Know when to stop: repeat until.", "Keep going all game: forever."],
+          "bullets": [
+            "Know how many times: repeat.",
+            "Know when to stop: repeat until.",
+            "Keep going all game: forever."
+          ],
           "note": "Give three scenarios and ask which loop fits: draw a hexagon, walk until you reach the wall, keep checking for key presses. Take answers using thumbs signals."
         }
       ],
@@ -193,9 +272,18 @@
         "Test, evaluate and improve the game"
       ],
       "keywords": [
-        { "term": "design", "def": "plan what your program will do" },
-        { "term": "evaluate", "def": "decide how well something works and how to improve it" },
-        { "term": "game rule", "def": "what happens when something occurs in the game" }
+        {
+          "term": "design",
+          "def": "plan what your program will do"
+        },
+        {
+          "term": "evaluate",
+          "def": "decide how well something works and how to improve it"
+        },
+        {
+          "term": "game rule",
+          "def": "what happens when something occurs in the game"
+        }
       ],
       "starter": [
         "Bismillah. Name the three kinds of loop block we have used.",
@@ -205,22 +293,38 @@
       "teach": [
         {
           "heading": "Design first",
-          "bullets": ["Who or what is the player?", "What do you catch or avoid?", "What are the variables and rules?"],
+          "bullets": [
+            "Who or what is the player?",
+            "What do you catch or avoid?",
+            "What are the variables and rules?"
+          ],
           "note": "Show a design template: sprites, variables, rules, extras. Model filling it in for a fruit-catching game with dates. Explain why designers plan before building. Tidy and careful work is part of excellence (ihsan)."
         },
         {
           "heading": "Build in steps",
-          "bullets": ["Step 1: move the player.", "Step 2: make items fall.", "Step 3: score and lives."],
+          "bullets": [
+            "Step 1: move the player.",
+            "Step 2: make items fall.",
+            "Step 3: score and lives."
+          ],
           "note": "Decompose the project into steps (callback to Year 3) and display them. Pupils should test after each step. Encourage them to save their project often."
         },
         {
           "heading": "Test with a checklist",
-          "bullets": ["Does the player move?", "Does the score go up when caught?", "Does the game end at 0 lives?"],
+          "bullets": [
+            "Does the player move?",
+            "Does the score go up when caught?",
+            "Does the game end at 0 lives?"
+          ],
           "note": "Give a checklist to tick off. Explain that a good tester tries unexpected things too, such as holding two keys. Typical bug: the score keeps rising while the item is touching the player; fix with a move-back or hide."
         },
         {
           "heading": "Evaluate",
-          "bullets": ["What works well?", "What would you change?", "Ask a friend to play your game."],
+          "bullets": [
+            "What works well?",
+            "What would you change?",
+            "Ask a friend to play your game."
+          ],
           "note": "Teach evaluation sentences: 'My game works well because... To improve it I would...'. Encourage honest and gentle peer feedback. Give a few minutes for pupils to play each other's games via shared links."
         }
       ],
@@ -240,6 +344,1112 @@
       ],
       "homework": "Add one improvement to your game (a new level, a timer, or sounds) and write one sentence about how it changes the game.",
       "send": "SEND/EAL: provide a starter project with sprites and backdrop; give sentence starters for the design and evaluation. Stretch: add a second type of falling object that takes points away."
+    },
+    {
+      "unit": "Spring 1: Selection in physical computing and Secure Your Secrets",
+      "n": 5,
+      "title": "Secure your secrets: passwords, personal information and phishing",
+      "duration": 45,
+      "bigQuestion": "A message says 'You have won a tablet! Click here and type your password.' What would make you suspicious?",
+      "objectives": [
+        "To understand how to keep personal information secure and spot a phishing message"
+      ],
+      "successCriteria": [
+        "All: name three pieces of personal information to keep private",
+        "Most: spot two warning signs in a phishing message",
+        "Some: explain what to do and who to tell when a message looks suspicious"
+      ],
+      "crossCurricular": "PSHE: keeping safe and asking for help",
+      "smsc": "Moral: checking before acting (al-Hujurat 49:6)",
+      "keywords": [
+        {
+          "term": "personal information",
+          "def": "facts that identify you, like your address or password"
+        },
+        {
+          "term": "phishing",
+          "def": "a fake message that tries to trick you into giving information"
+        },
+        {
+          "term": "secure",
+          "def": "protected and safe"
+        },
+        {
+          "term": "password",
+          "def": "a secret that unlocks your account"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A message says 'You have won a tablet! Click here and type your password.' What would make you suspicious?",
+        "a": "You did not enter a competition; it asks for a password; it rushes you: all signs of phishing."
+      },
+      "islamicLink": {
+        "text": "Islam teaches us to check news before we act on it: Allah says that if someone untrustworthy brings you news, verify it (al-Hujurat 49:6). Online, we check a message before we click.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which password is strongest? A) 123456 B) ali2015 C) RiverLampCarrot",
+          "a": "C) RiverLampCarrot",
+          "mins": 1,
+          "options": [
+            "123456",
+            "ali2015",
+            "RiverLampCarrot"
+          ]
+        },
+        {
+          "q": "What is a loop?",
+          "a": "Instructions that repeat.",
+          "mins": 1
+        },
+        {
+          "q": "Who should know your password?",
+          "a": "Only you and your parents.",
+          "mins": 1
+        },
+        {
+          "q": "What should you do if something online worries you?",
+          "a": "Tell a trusted adult.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Personal information",
+          "bullets": [
+            "Full name, address, school",
+            "Passwords and login codes",
+            "Photos that show where you live"
+          ],
+          "note": "These stay private. In Teams, use your first name only and never post your login in the chat."
+        },
+        {
+          "heading": "What is phishing?",
+          "bullets": [
+            "A fake message pretending to be real",
+            "Wants your password or details",
+            "Like fishing: it uses bait"
+          ],
+          "note": "Bait: prizes, scares ('your account will close'), or a friend's name."
+        },
+        {
+          "heading": "Warning signs",
+          "bullets": [
+            "Too good to be true",
+            "Hurry! Act now!",
+            "Asks for a password",
+            "Odd spelling or a strange link"
+          ],
+          "note": "Sort the messages.",
+          "sort": {
+            "columns": [
+              "Probably safe",
+              "Probably phishing"
+            ],
+            "cards": [
+              "Teacher's homework post in your class Team",
+              "'You won! Send your password'",
+              "'Your account closes today, click here'",
+              "Portal reminder of tomorrow's lesson",
+              "'Free game coins, log in here'",
+              "Message from your parent at home"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "What to do",
+          "bullets": [
+            "Do not click or reply",
+            "Do not type a password",
+            "Tell a parent or your teacher",
+            "They can report and delete it"
+          ],
+          "note": "School staff never ask for your password."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "A message from 'Teams Support' asks for your password to 'fix your account'. What do you do?",
+            "options": [
+              "Reply with it",
+              "Click the link to check",
+              "Do not reply and tell a trusted adult",
+              "Send it to a friend"
+            ],
+            "answer": 2,
+            "why": "Real support never asks for a password; clicking can also be unsafe."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find two warning signs: 'URGENT!!! Your acount will be deleted. Type your password here.'",
+          "a": "Urgency and a request for the password (also the spelling 'acount').",
+          "mins": 2,
+          "model": "Teacher reads it aloud and underlines: 'URGENT' (rushing you), 'acount' (spelling mistake), 'type your password' (asks for a secret)."
+        },
+        {
+          "q": "Is your favourite colour personal information to keep private?",
+          "a": "Not usually: it does not identify you or unlock anything.",
+          "mins": 1
+        },
+        {
+          "q": "Who do you tell about a phishing message?",
+          "a": "A parent or your teacher.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read the three messages on the worksheet. Mark each 'safe' or 'phishing' and give one reason.",
+          "a": "1 phishing (prize and password), 2 safe (lesson reminder), 3 phishing (urgent link).",
+          "mins": 4,
+          "model": "Teacher does message 1 aloud."
+        },
+        {
+          "q": "Extend: Write a 'Secure your secrets' rule card with 4 rules in the portal response box.",
+          "a": "For example: never share passwords; check before clicking; first name only in Teams; tell a trusted adult.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write a reply plan for a friend who has clicked a phishing link.",
+          "a": "Tell a parent now, change the password with a parent, tell the teacher, do not click again.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Phishing is... A) a hobby B) a fake message that tricks you C) a strong password",
+          "a": "B) a fake message that tricks you",
+          "mins": 1,
+          "options": [
+            "A hobby",
+            "A fake message that tricks you",
+            "A strong password"
+          ]
+        },
+        {
+          "q": "Name one warning sign of phishing.",
+          "a": "For example: asks for a password, rushes you, too good to be true.",
+          "mins": 1
+        }
+      ],
+      "homework": "Show a parent the four warning signs and together check that your school account password is strong.",
+      "send": "SEND: messages read aloud with signs pre-highlighted. EAL: suspicious, urgent, link, private. Stretch: explain why phishing messages often use fear.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 5 Spring 1 (Selection in Physical Computing with Secure Your Secrets), built on the NCCE Teach Computing Curriculum (Secure Your Secrets)",
+        "Phishing messages worksheet (pupil PDF; all messages invented by the school)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "padlock",
+          "alt": "A padlock",
+          "for": "keywords"
+        },
+        {
+          "find": "fishing hook bait",
+          "alt": "A fishing hook",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Selection in physical computing and Secure Your Secrets",
+      "n": 6,
+      "title": "Selection: if... then rules",
+      "duration": 45,
+      "bigQuestion": "Every morning you choose: coat or no coat? What question do you ask yourself first?",
+      "objectives": [
+        "To understand how selection lets a program choose what to do using a condition"
+      ],
+      "successCriteria": [
+        "All: say the condition and the action in an if... then rule",
+        "Most: write if... then... else rules for everyday situations",
+        "Some: decide whether a condition is true or false for given inputs"
+      ],
+      "crossCurricular": "Maths: comparing numbers (greater than, less than)",
+      "keywords": [
+        {
+          "term": "selection",
+          "def": "a program choosing what to do"
+        },
+        {
+          "term": "condition",
+          "def": "a question that is true or false"
+        },
+        {
+          "term": "if... then",
+          "def": "if the condition is true, then do this"
+        },
+        {
+          "term": "else",
+          "def": "what to do when the condition is false"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Every morning you choose: coat or no coat? What question do you ask yourself first?",
+        "a": "'Is it cold or raining?' That question is a condition; the choice is selection."
+      },
+      "starter": [
+        {
+          "q": "Phishing is a... A) fake message B) game C) loop",
+          "a": "A) fake message",
+          "mins": 1,
+          "options": [
+            "Fake message",
+            "Game",
+            "Loop"
+          ]
+        },
+        {
+          "q": "What does a loop do?",
+          "a": "Repeats instructions.",
+          "mins": 1
+        },
+        {
+          "q": "What is an algorithm?",
+          "a": "A set of steps in order.",
+          "mins": 1
+        },
+        {
+          "q": "Is '5 is bigger than 3' true or false?",
+          "a": "True",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choices in programs",
+          "bullets": [
+            "Programs make decisions",
+            "They check a condition",
+            "Then choose an action"
+          ],
+          "note": "Examples: a game checks if you touched the edge; a door opens if it senses someone."
+        },
+        {
+          "heading": "If... then... else",
+          "bullets": [
+            "IF it is raining",
+            "THEN take an umbrella",
+            "ELSE wear a cap"
+          ],
+          "note": "Condition: a question with a true or false answer.",
+          "compare": {
+            "left": {
+              "title": "Condition true",
+              "points": [
+                "Do the THEN part",
+                "Skip the ELSE part"
+              ]
+            },
+            "right": {
+              "title": "Condition false",
+              "points": [
+                "Skip the THEN part",
+                "Do the ELSE part"
+              ]
+            },
+            "label": "or"
+          }
+        },
+        {
+          "heading": "Condition cards",
+          "bullets": [
+            "Read the card",
+            "Is it true or false?",
+            "Follow the right arm"
+          ],
+          "note": "Unplugged: pupils hold up T or F on whiteboards.",
+          "model": {
+            "problem": "IF the number is more than 10 THEN clap ELSE stamp. The number is 7.",
+            "steps": [
+              "Condition: is 7 more than 10?",
+              "No: false",
+              "Skip 'clap'",
+              "Do the ELSE: stamp"
+            ],
+            "answer": "Stamp"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "IF the time is after Maghrib THEN put on the light ELSE keep it off. It is after Maghrib. What happens?",
+            "options": [
+              "Light off",
+              "Light on",
+              "Nothing",
+              "Both"
+            ],
+            "answer": 1,
+            "why": "The condition is true, so the THEN part runs."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "IF score is 10 or more THEN say 'Well done' ELSE say 'Try again'. Score is 12.",
+          "a": "Say 'Well done'.",
+          "mins": 2,
+          "model": "Teacher: condition 'is 12 at least 10?' Yes, true, so the THEN part: 'Well done'."
+        },
+        {
+          "q": "Same rule, score is 9.",
+          "a": "Say 'Try again' (false, so ELSE).",
+          "mins": 1
+        },
+        {
+          "q": "Write an if... then... else rule for a plant: water it or not.",
+          "a": "IF the soil is dry THEN water it ELSE leave it.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the condition cards worksheet: 6 rules, decide true or false and the action for each.",
+          "a": "Answers on the teacher key (one per card).",
+          "mins": 5,
+          "model": "Teacher completes card 1 aloud with the four model steps."
+        },
+        {
+          "q": "Extend: Write three if... then... else rules for a robot helper at home.",
+          "a": "For example: IF the bin is full THEN empty it ELSE check tomorrow.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write a rule with 'and': IF it is a school day AND it is 8:30 THEN log on to Teams. When is it false?",
+          "a": "False on a weekend, or on a school day at any other time.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A condition is... A) always true B) a question that is true or false C) a loop",
+          "a": "B) a question that is true or false",
+          "mins": 1,
+          "options": [
+            "Always true",
+            "A question that is true or false",
+            "A loop"
+          ]
+        },
+        {
+          "q": "When does the ELSE part run?",
+          "a": "When the condition is false.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write two if... then... else rules you follow at home (for example before going out).",
+      "send": "SEND: T and F cards with pictures. EAL: if, then, else, true, false. Stretch: a rule with 'or'.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 5 Spring 1 (Selection in Physical Computing with Secure Your Secrets), built on the NCCE Teach Computing Curriculum",
+        "Condition cards worksheet (pupil PDF, 6 cards)",
+        "Mini-whiteboard with T and F"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "road junction sign arrows",
+          "alt": "A road sign showing a choice of two ways",
+          "for": "hook"
+        },
+        {
+          "find": "umbrella",
+          "alt": "An umbrella",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Selection in physical computing and Secure Your Secrets",
+      "n": 7,
+      "title": "A simulated micro-controller: button input, LED output",
+      "duration": 45,
+      "bigQuestion": "Microwaves, washing machines and alarm clocks all have tiny computers inside. What do their buttons tell them?",
+      "objectives": [
+        "To understand how a micro-controller program links an input to an output"
+      ],
+      "successCriteria": [
+        "All: name the input and the output on a micro:bit",
+        "Most: program button A to show an icon",
+        "Some: use buttons A and B to choose different outputs"
+      ],
+      "crossCurricular": "Science: electrical circuits, switches and bulbs (Year 4)",
+      "keywords": [
+        {
+          "term": "micro-controller",
+          "def": "a tiny computer inside a device"
+        },
+        {
+          "term": "input",
+          "def": "information going in, like a button press"
+        },
+        {
+          "term": "output",
+          "def": "what the device does, like lighting LEDs"
+        },
+        {
+          "term": "simulator",
+          "def": "an on-screen copy of a real device"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Microwaves, washing machines and alarm clocks all have tiny computers inside. What do their buttons tell them?"
+      },
+      "starter": [
+        {
+          "q": "When does the ELSE part run?",
+          "a": "When the condition is false.",
+          "mins": 1,
+          "options": [
+            "When it is true",
+            "When it is false",
+            "Always"
+          ]
+        },
+        {
+          "q": "Is a keyboard an input or output?",
+          "a": "Input",
+          "mins": 1
+        },
+        {
+          "q": "Is a screen an input or output?",
+          "a": "Output",
+          "mins": 1
+        },
+        {
+          "q": "Write an if... then rule for a doorbell.",
+          "a": "IF the button is pressed THEN ring.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Inside everyday devices",
+          "bullets": [
+            "A micro-controller is a tiny computer",
+            "It runs one program",
+            "It reads inputs, controls outputs"
+          ],
+          "note": "Show the micro:bit picture: buttons A and B, 25 LEDs, sensors."
+        },
+        {
+          "heading": "Inputs and outputs",
+          "bullets": [
+            "Inputs: buttons, light, temperature",
+            "Outputs: LEDs, sound, motors",
+            "Today: buttons and LEDs only"
+          ],
+          "note": "We will not use the speaker (no music).",
+          "table": {
+            "head": [
+              "Device",
+              "Input",
+              "Output"
+            ],
+            "rows": [
+              [
+                "Doorbell",
+                "Button",
+                "Chime"
+              ],
+              [
+                "Night light",
+                "Light sensor",
+                "Lamp"
+              ],
+              [
+                "micro:bit today",
+                "Button A",
+                "LED icon"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "MakeCode",
+          "bullets": [
+            "Open makecode.microbit.org",
+            "Input blocks: on button A pressed",
+            "Basic blocks: show icon"
+          ],
+          "note": "Share screen; no login is needed. The simulator on the left acts like a real micro:bit.",
+          "code": {
+            "lang": "makecode",
+            "text": "on button A pressed\n  show icon (tick)\non button B pressed\n  clear screen",
+            "output": "Press A: a tick lights up. Press B: the LEDs go off."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "In 'on button A pressed, show icon', which part is the input?",
+            "options": [
+              "show icon",
+              "button A pressed",
+              "the LEDs",
+              "the simulator"
+            ],
+            "answer": 1,
+            "why": "The button press goes in; the icon on the LEDs is the output."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Program button A to show a tick.",
+          "a": "on button A pressed: show icon (tick).",
+          "mins": 2,
+          "model": "Teacher drags 'on button A pressed' from Input and 'show icon' from Basic, chooses the tick, clicks A on the simulator."
+        },
+        {
+          "q": "Program button B to clear the screen.",
+          "a": "on button B pressed: clear screen.",
+          "mins": 2
+        },
+        {
+          "q": "What is the output in your program?",
+          "a": "The LEDs showing the icon.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a 'yes / no' answer box: A shows a tick, B shows a cross, A+B clears.",
+          "a": "on A: tick; on B: cross; on A+B: clear screen.",
+          "mins": 5,
+          "model": "Teacher builds A and B, pupils add A+B."
+        },
+        {
+          "q": "Extend: Use 'show LEDs' to design your own 5 by 5 picture of a crescent moon or a star for button A.",
+          "a": "Any correct show LEDs pattern on button A.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Use 'show number' and a button to count presses. Which block stores the count?",
+          "a": "A variable: set count to 0; on A: change count by 1, show number count.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "An LED lighting up is... A) an input B) an output C) a condition",
+          "a": "B) an output",
+          "mins": 1,
+          "options": [
+            "An input",
+            "An output",
+            "A condition"
+          ]
+        },
+        {
+          "q": "Name one input on a micro:bit.",
+          "a": "Button A, button B, light sensor or temperature sensor.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find one device at home with a micro-controller. Write its inputs and outputs.",
+      "send": "SEND: block screenshots to copy. EAL: input, output, press, show. Stretch: count presses with a variable.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 5 Spring 1 (Selection in Physical Computing with Secure Your Secrets), built on the NCCE Teach Computing Curriculum",
+        "Microsoft MakeCode for micro:bit with its on-screen simulator (makecode.microbit.org, free in the browser, no account needed; a real micro:bit is not required)",
+        "Input and output table (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "BBC micro:bit board",
+          "alt": "A BBC micro:bit board with buttons and LEDs",
+          "for": "teach:1"
+        },
+        {
+          "find": "microwave oven control panel buttons",
+          "alt": "Buttons on a microwave control panel",
+          "for": "hook"
+        },
+        {
+          "find": "light-emitting diode LED",
+          "alt": "An LED",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Selection in physical computing and Secure Your Secrets",
+      "n": 8,
+      "title": "Selection with sensors",
+      "duration": 45,
+      "bigQuestion": "How does a street light know when to switch on?",
+      "objectives": [
+        "To understand how a sensor reading and a condition decide what a device does"
+      ],
+      "successCriteria": [
+        "All: name the light and temperature sensors on a micro:bit",
+        "Most: use if... then... else with a light reading",
+        "Some: choose and justify a threshold value for the condition"
+      ],
+      "crossCurricular": "Science: light and dark (Year 3) and thermometers",
+      "keywords": [
+        {
+          "term": "sensor",
+          "def": "a part that measures the world, like light or heat"
+        },
+        {
+          "term": "condition",
+          "def": "a true or false question the program checks"
+        },
+        {
+          "term": "threshold",
+          "def": "the value where the decision changes"
+        },
+        {
+          "term": "test",
+          "def": "try it with different inputs to check"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How does a street light know when to switch on?",
+        "a": "A light sensor measures how dark it is; below a threshold, the light turns on."
+      },
+      "starter": [
+        {
+          "q": "An LED is an... A) input B) output",
+          "a": "B) output",
+          "mins": 1,
+          "options": [
+            "Input",
+            "Output"
+          ]
+        },
+        {
+          "q": "When does ELSE run?",
+          "a": "When the condition is false.",
+          "mins": 1
+        },
+        {
+          "q": "Which block runs code when button A is pressed?",
+          "a": "on button A pressed",
+          "mins": 1
+        },
+        {
+          "q": "What does a simulator do?",
+          "a": "Copies a real device on screen.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sensors as inputs",
+          "bullets": [
+            "Light level: 0 (dark) to 255 (bright)",
+            "Temperature in °C",
+            "The program reads them"
+          ],
+          "note": "In the simulator, drag the light slider to change the reading."
+        },
+        {
+          "heading": "Light-controlled night light",
+          "bullets": [
+            "Check the light again and again",
+            "If dark, show LEDs",
+            "Else clear"
+          ],
+          "note": "'forever' keeps checking.",
+          "code": {
+            "lang": "makecode",
+            "text": "forever\n  if light level < 50 then\n    show icon (small diamond)\n  else\n    clear screen",
+            "output": "When it is dark (below 50) the LEDs light; when bright they go off."
+          }
+        },
+        {
+          "heading": "Choosing a threshold",
+          "bullets": [
+            "Test in light and dark",
+            "Pick a value between",
+            "Test again"
+          ],
+          "note": "Model with the slider.",
+          "numberline": {
+            "min": 0,
+            "max": 250,
+            "step": 25,
+            "marks": [
+              {
+                "at": 25,
+                "label": "dark room"
+              },
+              {
+                "at": 50,
+                "label": "threshold"
+              },
+              {
+                "at": 200,
+                "label": "daylight"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "'if light level < 50 then show icon'. The light level is 120. What happens?",
+            "options": [
+              "Icon shows",
+              "Screen clears (else)",
+              "Error",
+              "It counts"
+            ],
+            "answer": 1,
+            "why": "120 is not less than 50, so the condition is false and the else part runs."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Build the night light and test with the slider.",
+          "a": "forever: if light level < 50 then show icon else clear screen.",
+          "mins": 3,
+          "model": "Teacher builds it, then tests at 10 (icon shows), at 50 (clear, as 50 is not less than 50), and at 200 (clear)."
+        },
+        {
+          "q": "At light level 49, what happens?",
+          "a": "The icon shows (49 < 50).",
+          "mins": 1
+        },
+        {
+          "q": "Why is 'forever' needed?",
+          "a": "So the micro:bit keeps checking the light, not just once.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a temperature warning: if temperature > 25 show a sun icon, else show a tick. Test with the slider.",
+          "a": "forever: if temperature > 25 then show icon (sun-like) else show icon (tick).",
+          "mins": 5,
+          "model": "Teacher swaps the light block for the temperature block in the night light script."
+        },
+        {
+          "q": "Extend: Write a test table: three temperatures, what you expect, what happened.",
+          "a": "For example 20: tick, tick; 26: sun, sun; 25: tick, tick.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why 25 is a sensible threshold for a 'too warm' room.",
+          "a": "Most rooms feel comfortable around 18 to 22 °C; above about 25 °C feels too warm.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A street light uses which sensor? A) temperature B) light C) button",
+          "a": "B) light",
+          "mins": 1,
+          "options": [
+            "Temperature",
+            "Light",
+            "Button"
+          ]
+        },
+        {
+          "q": "What is a threshold?",
+          "a": "The value where the decision changes.",
+          "mins": 1
+        }
+      ],
+      "homework": "Name two devices at home that use a sensor to decide something (for example a fridge light, an oven thermostat).",
+      "send": "SEND: script screenshots and a slider guide. EAL: sensor, light level, temperature, threshold. Stretch: use 'and' for a light and temperature condition.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 5 Spring 1 (Selection in Physical Computing with Secure Your Secrets), built on the NCCE Teach Computing Curriculum",
+        "Microsoft MakeCode for micro:bit with its on-screen simulator (makecode.microbit.org, free in the browser, no account needed; a real micro:bit is not required)",
+        "Test table (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "street light at dusk",
+          "alt": "A street light switching on at dusk",
+          "for": "hook"
+        },
+        {
+          "find": "light sensor photoresistor",
+          "alt": "A light sensor (photoresistor)",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Selection in physical computing and Secure Your Secrets",
+      "n": 9,
+      "title": "Design and build a device; selection quiz",
+      "duration": 45,
+      "bigQuestion": "If you could build one helpful device for your home with a micro:bit, what would it do?",
+      "objectives": [
+        "To understand how to design, build and test a device that uses selection"
+      ],
+      "successCriteria": [
+        "All: write the input, condition and output for a device",
+        "Most: build and test the device in the simulator",
+        "Some: debug it using a test table and improve it"
+      ],
+      "crossCurricular": "Islamic Studies: the five daily prayer times",
+      "smsc": "Spiritual: a reminder that helps a family pray on time",
+      "keywords": [
+        {
+          "term": "design",
+          "def": "plan what something will do before making it"
+        },
+        {
+          "term": "device",
+          "def": "a machine made for a job"
+        },
+        {
+          "term": "algorithm",
+          "def": "the steps the device follows"
+        },
+        {
+          "term": "debug",
+          "def": "find and fix mistakes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could build one helpful device for your home with a micro:bit, what would it do?"
+      },
+      "starter": [
+        {
+          "q": "'if temperature > 25'. Temperature is 25. True or false?",
+          "a": "False (25 is not more than 25).",
+          "mins": 1,
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "q": "Which block keeps checking a sensor?",
+          "a": "forever",
+          "mins": 1
+        },
+        {
+          "q": "What is a threshold?",
+          "a": "The value where the decision changes.",
+          "mins": 1
+        },
+        {
+          "q": "Name one warning sign of phishing.",
+          "a": "Asks for a password, rushes you, too good to be true.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choose a device",
+          "bullets": [
+            "Night light",
+            "Reaction timer",
+            "Prayer-time reminder (button shows the next prayer)"
+          ],
+          "note": "No sound blocks: outputs are LEDs and text."
+        },
+        {
+          "heading": "Design first",
+          "bullets": [
+            "Input: what goes in?",
+            "Condition: what is checked?",
+            "Output: what happens?"
+          ],
+          "note": "Fill the design frame before any blocks.",
+          "table": {
+            "head": [
+              "Device",
+              "Input",
+              "Condition",
+              "Output"
+            ],
+            "rows": [
+              [
+                "Night light",
+                "Light sensor",
+                "light level < 50",
+                "Show LEDs"
+              ],
+              [
+                "Prayer reminder",
+                "Button A",
+                "button pressed",
+                "Scroll 'Asr 3:15'"
+              ],
+              [
+                "Reaction timer",
+                "Button A",
+                "pressed after the icon",
+                "Show 'Fast!'"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Build, test, debug",
+          "bullets": [
+            "Build one part",
+            "Test it",
+            "Fix, then add the next"
+          ],
+          "note": "Same debugging cycle as in Year 4.",
+          "cycle": [
+            "Design",
+            "Build",
+            "Test",
+            "Debug",
+            "Improve"
+          ]
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Your night light never turns on, even in the dark. First thing to check?",
+            "options": [
+              "The colour of the icon",
+              "The condition and threshold",
+              "The name of the project",
+              "The screen size"
+            ],
+            "answer": 1,
+            "why": "If the condition is never true (for example 'light level < 0') the output never runs."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fill the design frame for a night light.",
+          "a": "Input: light sensor; condition: light level < 50; output: show LEDs; else clear.",
+          "mins": 2,
+          "model": "Teacher fills the night light row aloud, linking each box to a block."
+        },
+        {
+          "q": "For the prayer reminder, what is the input and the output?",
+          "a": "Input: button A; output: scrolling the next prayer time.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Design, build and test your chosen device in MakeCode. Share the project link in the portal.",
+          "a": "A working device with input, condition and output, tested.",
+          "mins": 8,
+          "model": "Teacher builds the first block of the night light from the design frame."
+        },
+        {
+          "q": "Extend: Add a test table with three tests and results.",
+          "a": "Three tests with expected and actual results.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Improve the device (for example two thresholds, or button B for another prayer).",
+          "a": "A clear improvement explained.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Selection quiz (portal, 4 questions): conditions, true or false, input and output.",
+          "a": "Teacher marks in the portal.",
+          "mins": 5
+        },
+        {
+          "q": "Big question: what would your device do and which sensor or button does it use?",
+          "a": "For example: my night light uses the light sensor and lights the LEDs when it is dark.",
+          "mins": 1
+        }
+      ],
+      "homework": "Show your device to your family in the simulator and explain its input, condition and output.",
+      "send": "SEND: the night light as a starter project to adapt. EAL: design frame with picture labels. Stretch: reaction timer with a variable.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 5 Spring 1 (Selection in Physical Computing with Secure Your Secrets), built on the NCCE Teach Computing Curriculum",
+        "Microsoft MakeCode for micro:bit with its on-screen simulator (makecode.microbit.org, free in the browser, no account needed; a real micro:bit is not required)",
+        "Device design frame and test table (pupil PDF)",
+        "Selection quiz in the portal (4 questions)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "BBC micro:bit LED display",
+          "alt": "A micro:bit showing LEDs",
+          "for": "teach:1"
+        },
+        {
+          "find": "bedside night light lamp",
+          "alt": "A small night light",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }

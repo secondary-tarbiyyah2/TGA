@@ -2,7 +2,7 @@
   "subject": "PSHE",
   "year": "y3",
   "board": "PSHE Association / statutory Relationships and Health Education guidance",
-  "source": "National Curriculum / statutory guidance (Relationships Education and Health Education only); PSHE Association programme of study themes; TGA RSHE Policy 2026-27 and TGA Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y1-Y2 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. No RSE or sex education in Years 1 to 6 (owner decision, October 2026): body-safety safeguarding only, taught at a non-sexual level.",
+  "source": "National Curriculum / statutory guidance (Relationships Education and Health Education only); PSHE Association programme of study themes; TGA RSHE Policy 2026-27 and TGA Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y1-Y2 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. No RSE or sex education in Years 1 to 6 (owner decision, October 2026): body-safety safeguarding only, taught at a non-sexual level. | Spring 1 2027 (lessons 3, 4, 5, 6, 7, v3): Tarbiyyah Primary PSHE scheme: Ealing LA PSHE, Citizenship and SEAL spiral curriculum (Year A), 'Living long, living strong' strand (school's 'PSHE Spiral Curriculum EYFS & Primary with Objectives'); RSE lessons left out",
   "lessons": [
     {
       "unit": "Unit 1: Friendship and kindness",
@@ -197,196 +197,1070 @@
       "send": "SEND: provide visual steps cards. EAL: key phrases ‘Stop’, ‘Tell’, ‘Sorry’ with pictures. Stretch: write advice for a younger child about handling a falling out."
     },
     {
-      "unit": "Unit 2: Staying safe and healthy",
+      "unit": "Spring 1: Living long, living strong",
       "n": 3,
-      "title": "Staying safe online: sharing, strangers and telling someone",
+      "title": "Keeping safe at home and online; trusted adults",
       "duration": 45,
+      "bigQuestion": "A pop-up says 'Click here for free game coins!'. What would you do?",
       "objectives": [
-        "Explain what personal information is and why we protect it",
-        "Know what to do if something online feels wrong",
-        "Use ‘Stop, Block, Tell’"
+        "To understand how to keep safe at home and online and who our trusted adults are"
       ],
+      "successCriteria": [
+        "All: name two trusted adults",
+        "Most: spot dangers at home and online and say what to do",
+        "Some: explain the online rules for our Teams lessons and why they keep us safe"
+      ],
+      "smsc": "Moral: making safe choices",
       "keywords": [
         {
-          "term": "personal information",
-          "def": "facts that can identify you, such as your name, address or school"
+          "term": "trusted adult",
+          "def": "a grown-up who keeps you safe and listens"
+        },
+        {
+          "term": "danger",
+          "def": "something that could hurt you"
         },
         {
           "term": "private",
-          "def": "not to be shared with everyone"
+          "def": "kept to yourself, not shared"
         },
         {
-          "term": "stranger",
-          "def": "someone you do not know"
-        },
-        {
-          "term": "block",
-          "def": "to stop someone contacting you"
-        },
-        {
-          "term": "report",
-          "def": "to tell a grown-up or the app that something is wrong"
+          "term": "online",
+          "def": "using the internet"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A pop-up says 'Click here for free game coins!'. What would you do?",
+        "a": "Do not click; tell a trusted adult."
+      },
+      "islamicLink": {
+        "text": "Islam asks us to protect ourselves from harm. Allah says: 'Do not throw yourselves with your own hands into destruction' (al-Baqarah 2:195). Asking a trusted adult for help is a wise and brave choice.",
+        "at": "start"
+      },
       "starter": [
-        "Name a trusted adult.",
-        "What should you do if someone is unkind to you?",
-        "What does upstander mean?"
+        {
+          "q": "What helps hearts find rest? A) remembering Allah B) shouting C) staying up late",
+          "a": "A) remembering Allah",
+          "mins": 1,
+          "options": [
+            "Remembering Allah",
+            "Shouting",
+            "Staying up late"
+          ]
+        },
+        {
+          "q": "Name a calm-down strategy.",
+          "a": "Slow breathing, counting to 5.",
+          "mins": 1
+        },
+        {
+          "q": "How do germs spread?",
+          "a": "Sneezes, dirty hands, surfaces.",
+          "mins": 1
+        },
+        {
+          "q": "Who is someone who looks after you?",
+          "a": "For example: mum, dad, grandparent.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Fun and safe online",
+          "heading": "Safe at home",
           "bullets": [
-            "Games, videos and lessons are useful",
-            "The internet has rules for safety",
-            "Ask a grown-up before you click",
-            "Use only age-appropriate games"
+            "Medicines only from a grown-up",
+            "Cleaning products are not drinks",
+            "Hot things: kettle, oven",
+            "Plugs and sockets"
           ],
-          "note": "Say bismillah. Begin by validating pupils' enjoyment of online games and videos. Explain that safe use means rules and trusted adults. Mention age limits: many apps are for ages 13 and over, and games have age ratings (PEGI). Misconception: a rule is there because adults want to spoil fun. It is there to protect. Ask: ‘What rules do you follow at home?’ Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "Sort.",
+          "sort": {
+            "columns": [
+              "Safe",
+              "Ask a grown-up first"
+            ],
+            "cards": [
+              "Drinking water",
+              "Taking medicine",
+              "Using the kettle",
+              "Reading a book",
+              "Bleach bottle",
+              "Plugging in a charger"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              0,
+              1,
+              1
+            ]
+          }
         },
         {
-          "heading": "Private information",
+          "heading": "Safe online",
           "bullets": [
-            "Do not share your full name",
-            "Do not share your address or school",
-            "Do not share passwords or photos",
-            "Only trusted adults can help share"
+            "Keep personal information private",
+            "Only use school accounts for lessons",
+            "Do not click pop-ups",
+            "Tell if something worries you"
           ],
-          "note": "Use a ‘secret box’ visual: private items go in; public ones are okay. Sort examples: favourite colour (okay), home address (private), school uniform photo (private). Passwords are like a key; only share with a parent or carer. Ask pupils to say what could go wrong if a stranger knew their address."
+          "note": "Teams rules: first name, camera on in a shared room, chat only for learning, never share a password or address."
         },
         {
-          "heading": "People online are not always who they say",
+          "heading": "Trusted adults",
           "bullets": [
-            "Anyone can pretend to be a child",
-            "Do not chat with strangers",
-            "Do not meet someone you met online",
-            "Tell an adult straight away"
+            "At home: parents, grandparents",
+            "At school: your teacher",
+            "They listen and help"
           ],
-          "note": "Explain calmly that some people online pretend to be someone else. Avoid frightening details. Teach the rule: if someone you do not know contacts you, do not reply, tell a grown-up. Ask: ‘Who would you tell?’ Reinforce that pupils are never in trouble for telling."
+          "note": "If one adult does not listen, tell another."
         },
         {
-          "heading": "Stop, Block, Tell",
+          "heading": "Check",
           "bullets": [
-            "Stop: do not reply",
-            "Block: stop the person or account",
-            "Tell: a trusted adult",
-            "Keep the evidence: do not delete"
+            "Vote in the Teams poll"
           ],
-          "note": "Practise the words together. Reassure pupils that they will not lose their device for reporting. For worrying content or contact, they or a parent can use CEOP Safety Centre at ceop.police.uk. Remind pupils of Childline on 0800 1111 as a free, confidential helpline. Share tips with parents in the follow-up message."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Someone you do not know messages you in a game. What do you do?",
+            "options": [
+              "Reply and chat",
+              "Do not reply and tell a trusted adult",
+              "Send your address",
+              "Keep it secret"
+            ],
+            "answer": 1,
+            "why": "Strangers online may not be who they say; a trusted adult helps you stay safe."
+          }
         }
       ],
       "practice": [
-        "Sort into private or okay to share: (a) your favourite colour (b) your address (c) your password (d) your pet's name.",
-        "A stranger messages you in a game chat: ‘What school do you go to?’ What do you do?",
-        "Put in order: Tell / Stop / Block."
+        {
+          "q": "Is it safe to tell a game player your school's name?",
+          "a": "No: it is personal information.",
+          "mins": 1,
+          "model": "Teacher asks: could it help a stranger find me? Yes, so keep it private."
+        },
+        {
+          "q": "Name two trusted adults.",
+          "a": "For example: my mum and my teacher.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Make a mini poster: ‘Stop, Block, Tell’ with one picture for each step.",
-        "Write three rules for staying safe online.",
-        "Role-play telling a trusted adult about an unkind message."
+        {
+          "q": "Core: Draw a 'helping hand' outline of your own hand and write a trusted adult on each finger (pupil PDF).",
+          "a": "Five trusted adults named.",
+          "mins": 5,
+          "model": "Teacher writes 'Mum' and 'my teacher' on two fingers."
+        },
+        {
+          "q": "Extend: Write three online safety rules for our Teams lessons.",
+          "a": "For example: first name only; chat for learning; never share a password.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain what you would do if something online made you feel worried, and why.",
+          "a": "Stop, do not reply, tell a trusted adult, because they can help keep me safe.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Give two examples of personal information we should not share.",
-        "What are the three steps if something online feels wrong?"
+        {
+          "q": "A pop-up offers free coins. You should... A) click it B) not click and tell an adult C) give your password",
+          "a": "B) not click and tell an adult",
+          "mins": 1,
+          "options": [
+            "Click it",
+            "Not click and tell an adult",
+            "Give your password"
+          ]
+        },
+        {
+          "q": "Big question: who are your trusted adults?",
+          "a": "For example: parents, grandparents and my teacher.",
+          "mins": 1
+        }
       ],
-      "homework": "Teach your family the ‘Stop, Block, Tell’ rule and ask them to help you make a family online safety rule.",
-      "send": "SEND: use symbol cards and a sorting game. EAL: key vocabulary ‘private’, ‘stranger’, ‘block’. Stretch: write advice for a younger child about being safe in game chats."
+      "homework": "Show your helping hand to your family and put it near where you use your device.",
+      "send": "SEND: picture cards for home dangers. EAL: safe, danger, private, trusted. Stretch: what to do if a trusted adult is busy.",
+      "resources": [
+        "Tarbiyyah Primary PSHE scheme: Ealing LA PSHE, Citizenship and SEAL spiral curriculum (Year A), 'Living long, living strong' strand (school's 'PSHE Spiral Curriculum EYFS & Primary with Objectives'); RSE lessons left out",
+        "Helping hand sheet (pupil PDF)",
+        "TGA online safety rules for Teams lessons"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "electric kettle",
+          "alt": "A kettle (hot)",
+          "for": "teach:1"
+        },
+        {
+          "find": "medicine bottle",
+          "alt": "A medicine bottle",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Staying safe and healthy",
+      "unit": "Spring 1: Living long, living strong",
       "n": 4,
-      "title": "Healthy habits: food, sleep, movement and screen balance",
+      "title": "Exercise, rest and sleep at home",
       "duration": 45,
+      "bigQuestion": "We learn on screens at our online school. How can we make sure our bodies still move enough?",
       "objectives": [
-        "Name habits that keep our bodies healthy",
-        "Explain why sleep, food and exercise matter",
-        "Make a plan for balanced screen time"
+        "To understand why our bodies need exercise, rest and sleep, and how to fit them into a day at home"
       ],
+      "successCriteria": [
+        "All: name three ways to be active at home",
+        "Most: say how much sleep children need and why",
+        "Some: plan a healthy daily routine with activity, learning and sleep"
+      ],
+      "crossCurricular": "Science: the skeleton and muscles (Year 3)",
+      "smsc": "Moral: using time well",
       "keywords": [
         {
-          "term": "healthy",
-          "def": "good for your body and mind"
-        },
-        {
-          "term": "balance",
-          "def": "giving the right amount of time to different things"
-        },
-        {
-          "term": "sleep",
-          "def": "rest your body needs each night"
-        },
-        {
           "term": "exercise",
-          "def": "movement that keeps your body strong"
+          "def": "moving our body to make it stronger"
+        },
+        {
+          "term": "rest",
+          "def": "a break to let the body recover"
+        },
+        {
+          "term": "routine",
+          "def": "the things we do at the same times each day"
         },
         {
           "term": "screen time",
-          "def": "time spent using a phone, tablet, TV or computer"
+          "def": "time spent looking at a screen"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "We learn on screens at our online school. How can we make sure our bodies still move enough?",
+        "a": "Plan active breaks: stretch between lessons, play outside, help at home."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said that two blessings many people waste are good health and free time (al-Bukhari). Moving our bodies, resting well and sleeping after Isha help us use both well.",
+        "at": "start"
+      },
       "starter": [
-        "Name one rule for being safe online.",
-        "What are the three steps if something feels wrong online?",
-        "Give an example of private information."
+        {
+          "q": "Biggest part of a balanced plate?",
+          "a": "Fruit and vegetables",
+          "mins": 1,
+          "options": [
+            "Sweets",
+            "Fruit and vegetables",
+            "Oil"
+          ]
+        },
+        {
+          "q": "What does tayyib mean?",
+          "a": "Good and wholesome.",
+          "mins": 1
+        },
+        {
+          "q": "Name a protein food.",
+          "a": "For example: beans, eggs, fish.",
+          "mins": 1
+        },
+        {
+          "q": "What is the best drink?",
+          "a": "Water",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "A healthy body is an amanah",
+          "heading": "Why exercise?",
           "bullets": [
-            "Our bodies are a trust from Allah",
-            "Look after your body",
-            "Healthy food, rest and movement",
-            "Prophet (peace be upon him): your body has a right over you"
+            "Stronger heart and muscles",
+            "Better mood and sleep",
+            "About an hour of activity a day"
           ],
-          "note": "Say bismillah. Cite plainly: the Prophet (peace be upon him) taught that your body has a right over you (Bukhari). Ask: ‘What does it mean to look after something you have been given?’ Take answers. Keep language gentle; avoid body shaming; foods are not ‘good’ or ‘bad’, but some are for everyday and some for sometimes. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "UK guidance for children: an average of at least 60 minutes of activity a day."
         },
         {
-          "heading": "Eating well",
+          "heading": "Active at home",
           "bullets": [
-            "Fruit and vegetables every day",
-            "Water is the best drink",
-            "Sugary treats only sometimes",
-            "Eat slowly and stop when comfortably full"
+            "Stretch between lessons",
+            "Skipping, star jumps, walking",
+            "Helping: tidying, gardening"
           ],
-          "note": "Cite plainly: the Prophet (peace be upon him) taught one-third food, one-third drink and one-third for air (Tirmidhi and Ibn Majah). Show a simple plate with half vegetables and fruit, a quarter starchy food, a quarter protein. Be sensitive to families' circumstances and food choices. Ask: ‘What is one food that gives you energy?’"
+          "note": "Quick 1-minute stretch together now (no music)."
         },
         {
-          "heading": "Sleep and movement",
+          "heading": "Sleep",
           "bullets": [
-            "Children need about 9-11 hours of sleep",
-            "Good sleep helps learning and mood",
-            "Move for at least 60 minutes a day",
-            "Play outside when you can"
+            "Children need about 9 to 11 hours",
+            "Screens off before bed",
+            "Sleep early after Isha, wake for Fajr"
           ],
-          "note": "Explain that sleep helps the brain remember and the body grow. Suggest a bedtime routine: wash, dua, book, lights out. The 60 minutes of daily activity is NHS guidance for children. Ask: ‘How do you feel after a good night's sleep?’ Link to adab of sleeping and waking."
+          "note": "A regular bedtime helps the body clock.",
+          "table": {
+            "head": [
+              "Time",
+              "Routine"
+            ],
+            "rows": [
+              [
+                "7:00",
+                "Wake, wash, breakfast"
+              ],
+              [
+                "9:00 to 12:00",
+                "Live lessons with stretch breaks"
+              ],
+              [
+                "16:00",
+                "Play outside or active game"
+              ],
+              [
+                "19:30",
+                "Screens off, read"
+              ],
+              [
+                "20:00",
+                "Sleep"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Balancing screen time",
+          "heading": "Check",
           "bullets": [
-            "Screens are fun but can take over",
-            "Take breaks every 30 minutes",
-            "No screens just before bed",
-            "Make time for family, prayer, play, reading"
+            "Vote in the Teams poll"
           ],
-          "note": "Ask pupils how many hours they spend on screens; this is private, so use a show of fingers (0-1, 2-3, more). Discuss balance, not shame. Create a class ‘balance wheel’ with sections: learning, family, worship, play, rest, screens. Emphasise that balance is a Muslim virtue: moderation in everything."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "About how much sleep do children your age need?",
+            "options": [
+              "5 hours",
+              "9 to 11 hours",
+              "15 hours",
+              "3 hours"
+            ],
+            "answer": 1,
+            "why": "Children aged 6 to 12 need about 9 to 12 hours."
+          }
         }
       ],
       "practice": [
-        "Sort into everyday or sometimes: (a) apple (b) fizzy drink (c) water (d) crisps (e) vegetables.",
-        "Fill in: ‘I need about ___ hours of sleep because…’",
-        "Why is it better to stop screens before bedtime?"
+        {
+          "q": "Show me: name three ways to be active indoors.",
+          "a": "For example: star jumps, skipping, stretching, tidying.",
+          "mins": 2,
+          "model": "Teacher lists three and does a star jump."
+        },
+        {
+          "q": "Why should screens go off before bed?",
+          "a": "Screens keep the brain awake and make it harder to sleep.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Design a healthy day plan: breakfast, school, exercise, family time, prayer, screens, bedtime. Add times.",
-        "Write three goals for staying healthy this week.",
-        "Draw a balance wheel with six parts and add one activity to each."
+        {
+          "q": "Core: Fill in your own daily routine sheet with lessons, activity, meals, prayer times and bedtime (pupil PDF).",
+          "a": "A routine with at least 60 minutes of activity and 9 or more hours of sleep.",
+          "mins": 7,
+          "model": "Teacher fills the morning rows."
+        },
+        {
+          "q": "Extend: Add three 2-minute stretch breaks between lessons to your routine.",
+          "a": "Three breaks marked.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain how sleep helps your learning.",
+          "a": "The brain rests and stores what we learned; we concentrate better.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name two healthy habits.",
-        "Why do we need balance in how we use our time?"
+        {
+          "q": "How much activity should children get each day? A) 10 minutes B) about 60 minutes C) none",
+          "a": "B) about 60 minutes",
+          "mins": 1,
+          "options": [
+            "10 minutes",
+            "About 60 minutes",
+            "None"
+          ]
+        },
+        {
+          "q": "Big question: how will you move enough on online school days?",
+          "a": "For example: stretch breaks and play outside after lessons.",
+          "mins": 2
+        }
       ],
-      "homework": "Choose one goal from your plan and try it every day this week. Tick a chart each day.",
-      "send": "SEND: provide picture-based plans and a visual timetable. EAL: key words with pictures. Stretch: research one healthy food from different cultures and share why it is healthy."
+      "homework": "Follow your routine for three days and tick each activity and bedtime.",
+      "send": "SEND: routine sheet with pictures. EAL: wake, sleep, exercise. Stretch: count your active minutes for a day.",
+      "resources": [
+        "Tarbiyyah Primary PSHE scheme: Ealing LA PSHE, Citizenship and SEAL spiral curriculum (Year A), 'Living long, living strong' strand (school's 'PSHE Spiral Curriculum EYFS & Primary with Objectives'); RSE lessons left out",
+        "Daily routine sheet (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "skipping rope",
+          "alt": "A skipping rope",
+          "for": "teach:2"
+        },
+        {
+          "find": "alarm clock bedside",
+          "alt": "An alarm clock",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Living long, living strong",
+      "n": 5,
+      "title": "Healthy eating: a balanced plate",
+      "duration": 45,
+      "bigQuestion": "Could you be healthy eating only chips, even if they were halal?",
+      "objectives": [
+        "To understand how a balanced plate gives our bodies what they need"
+      ],
+      "successCriteria": [
+        "All: name the main food groups",
+        "Most: build a balanced plate with the right amounts",
+        "Some: explain why we eat sugary and fatty foods only a little"
+      ],
+      "crossCurricular": "Science: animals including humans: nutrition (Year 3)",
+      "smsc": "Spiritual: thanking Allah for food, saying Bismillah and Alhamdulillah",
+      "keywords": [
+        {
+          "term": "balanced",
+          "def": "the right amount of each kind of food"
+        },
+        {
+          "term": "food group",
+          "def": "foods that do a similar job, like fruit and vegetables"
+        },
+        {
+          "term": "halal",
+          "def": "allowed in Islam (حَلَال)"
+        },
+        {
+          "term": "tayyib",
+          "def": "good and wholesome (طَيِّب)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Could you be healthy eating only chips, even if they were halal?",
+        "a": "No: food should be halal and tayyib (good), and balanced."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O mankind, eat from whatever is on earth that is lawful and good' (al-Baqarah 2:168). Muslims choose food that is halal and also tayyib: good for the body.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "How long should we wash our hands? A) 2 seconds B) 20 seconds C) 2 minutes",
+          "a": "B) 20 seconds",
+          "mins": 1,
+          "options": [
+            "2 seconds",
+            "20 seconds",
+            "2 minutes"
+          ]
+        },
+        {
+          "q": "What is a need?",
+          "a": "Something we must have to live.",
+          "mins": 1
+        },
+        {
+          "q": "What do we say before eating?",
+          "a": "Bismillah",
+          "mins": 1
+        },
+        {
+          "q": "Name a fruit.",
+          "a": "For example: apple, orange, banana.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The food groups",
+          "bullets": [
+            "Fruit and vegetables",
+            "Starchy foods: bread, rice, potatoes",
+            "Protein: beans, eggs, fish, halal meat",
+            "Dairy, and a little oil"
+          ],
+          "note": "Use the Eatwell Guide picture."
+        },
+        {
+          "heading": "A balanced plate",
+          "bullets": [
+            "Biggest part: fruit and vegetables",
+            "Next: starchy foods",
+            "Then protein and dairy"
+          ],
+          "note": "Rough shares of the Eatwell Guide (about a third fruit and veg, a third starchy foods).",
+          "chart": {
+            "kind": "pie",
+            "title": "A balanced plate (approximate)",
+            "labels": [
+              "Fruit and vegetables",
+              "Starchy foods",
+              "Protein",
+              "Dairy",
+              "Oils"
+            ],
+            "values": [
+              39,
+              37,
+              12,
+              8,
+              1
+            ],
+            "unit": "%"
+          }
+        },
+        {
+          "heading": "Sugary and fatty foods",
+          "bullets": [
+            "Only a little, sometimes",
+            "Too much harms teeth and heart",
+            "Water is the best drink"
+          ],
+          "note": "Sweets and fizzy drinks are not on the main plate."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which should be the biggest part of our plate?",
+            "options": [
+              "Sweets",
+              "Fruit and vegetables",
+              "Cheese",
+              "Oil"
+            ],
+            "answer": 1,
+            "why": "Fruit and vegetables are the largest part of a balanced plate."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which food group is rice in?",
+          "a": "Starchy foods.",
+          "mins": 1,
+          "model": "Teacher asks: does it fill us with energy like bread and potatoes? Yes, so starchy foods."
+        },
+        {
+          "q": "Name two protein foods.",
+          "a": "For example: beans, eggs, lentils, fish, halal chicken.",
+          "mins": 2
+        },
+        {
+          "q": "Is a fizzy drink an every-day drink?",
+          "a": "No: water is best; fizzy drinks only sometimes.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a balanced plate for your dinner with the right amounts of each group (pupil PDF).",
+          "a": "Half fruit and veg, starchy food, some protein, a little dairy.",
+          "mins": 6,
+          "model": "Teacher draws a plate with rice, lentil dal and salad and labels each group."
+        },
+        {
+          "q": "Extend: Write a menu for one healthy day: breakfast, lunch, dinner, a snack.",
+          "a": "A balanced day with fruit and vegetables at most meals.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Explain why a plate of only chips is not tayyib for our body.",
+          "a": "It has too much fat and starch and no fruit, vegetables or protein.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Halal and tayyib means food that is... A) allowed and good B) only tasty C) only sweet",
+          "a": "A) allowed and good",
+          "mins": 1,
+          "options": [
+            "Allowed and good",
+            "Only tasty",
+            "Only sweet"
+          ]
+        },
+        {
+          "q": "Big question: could you be healthy eating only chips? Why?",
+          "a": "No: our body needs a balance of food groups.",
+          "mins": 2
+        }
+      ],
+      "homework": "Help prepare one balanced meal at home and draw your plate.",
+      "send": "SEND: food picture cards to place on a plate. EAL: food group names with pictures. Stretch: compare two lunchboxes.",
+      "resources": [
+        "Tarbiyyah Primary PSHE scheme: Ealing LA PSHE, Citizenship and SEAL spiral curriculum (Year A), 'Living long, living strong' strand (school's 'PSHE Spiral Curriculum EYFS & Primary with Objectives'); RSE lessons left out",
+        "Eatwell Guide (NHS, picture on the slides)",
+        "Balanced plate sheet (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Eatwell Guide plate",
+          "alt": "The Eatwell Guide plate",
+          "for": "teach:2"
+        },
+        {
+          "find": "bowl of lentils dal",
+          "alt": "A bowl of lentils",
+          "for": "keywords"
+        },
+        {
+          "find": "chips french fries",
+          "alt": "A plate of chips",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Living long, living strong",
+      "n": 6,
+      "title": "Staying healthy: hand washing, teeth and germs",
+      "duration": 45,
+      "bigQuestion": "You sneeze into your hand and then open the fridge. Where are the germs now?",
+      "objectives": [
+        "To understand how germs spread and how hygiene stops them"
+      ],
+      "successCriteria": [
+        "All: show the steps of good handwashing",
+        "Most: explain two ways germs spread",
+        "Some: explain how wudu and good habits help keep us clean"
+      ],
+      "crossCurricular": "Science: microorganisms (link to Year 6 classification)",
+      "smsc": "Spiritual: taharah as part of worship",
+      "keywords": [
+        {
+          "term": "germ",
+          "def": "a tiny living thing that can cause illness"
+        },
+        {
+          "term": "spread",
+          "def": "pass from one place or person to another"
+        },
+        {
+          "term": "hygiene",
+          "def": "keeping clean to stay healthy"
+        },
+        {
+          "term": "plaque",
+          "def": "a sticky layer of germs on teeth"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You sneeze into your hand and then open the fridge. Where are the germs now?",
+        "a": "On your hand and on the fridge handle, ready for the next person."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said that cleanliness (purity) is half of faith (Muslim). Muslims wash for wudu before prayer, use the miswak, and wash hands before and after eating.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "How many hours of sleep do children need? A) 4 B) about 10 C) 16",
+          "a": "B) about 10",
+          "mins": 1,
+          "options": [
+            "4",
+            "About 10",
+            "16"
+          ]
+        },
+        {
+          "q": "Name one way to be active at home.",
+          "a": "For example: star jumps, skipping.",
+          "mins": 1
+        },
+        {
+          "q": "When should screens go off?",
+          "a": "Before bed.",
+          "mins": 1
+        },
+        {
+          "q": "What is a balanced plate?",
+          "a": "The right amount of each food group.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How germs spread",
+          "bullets": [
+            "Coughs and sneezes",
+            "Dirty hands",
+            "Touching surfaces"
+          ],
+          "note": "Pepper experiment (at home with a grown-up): pepper on water, touch with a soapy finger, the pepper rushes away.",
+          "diagram": {
+            "centre": "Germs spread by",
+            "items": [
+              "Sneezes and coughs",
+              "Unwashed hands",
+              "Door handles",
+              "Sharing cups",
+              "Uncovered food"
+            ]
+          }
+        },
+        {
+          "heading": "Stopping germs",
+          "bullets": [
+            "Catch it, bin it, kill it",
+            "Wash hands with soap for 20 seconds",
+            "Do not share cups"
+          ],
+          "note": "Catch a sneeze in a tissue, bin it, wash hands."
+        },
+        {
+          "heading": "Teeth",
+          "bullets": [
+            "Brush twice a day for 2 minutes",
+            "Miswak and toothbrush",
+            "Sugar feeds plaque"
+          ],
+          "note": "Plaque germs make acid that harms teeth."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "You need to sneeze. Best thing to do?",
+            "options": [
+              "Sneeze into your hand",
+              "Catch it in a tissue, bin it, wash hands",
+              "Sneeze at the screen",
+              "Hold it in forever"
+            ],
+            "answer": 1,
+            "why": "Catch it, bin it, kill it stops germs reaching hands and surfaces."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Put in order: rinse, wet, soap, dry, rub for 20 seconds.",
+          "a": "Wet, soap, rub for 20 seconds, rinse, dry.",
+          "mins": 2,
+          "model": "Teacher mimes each step aloud."
+        },
+        {
+          "q": "Name two ways germs spread.",
+          "a": "For example: sneezes and dirty hands.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a 'Stop the germs' poster with four rules (words and pictures of objects, no people).",
+          "a": "Four rules: wash hands, catch sneezes, brush teeth, do not share cups.",
+          "mins": 7,
+          "model": "Teacher writes rule 1 with a soap picture."
+        },
+        {
+          "q": "Extend: With a grown-up, try the pepper and soap experiment and write what happened.",
+          "a": "The pepper moved away from the soap.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain how wudu helps keep us clean.",
+          "a": "We wash our hands, mouth, nose, face, arms and feet several times a day.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Plaque is... A) a toothbrush B) a sticky layer of germs on teeth C) a type of food",
+          "a": "B) a sticky layer of germs on teeth",
+          "mins": 1,
+          "options": [
+            "A toothbrush",
+            "A sticky layer of germs on teeth",
+            "A type of food"
+          ]
+        },
+        {
+          "q": "Big question: after a sneeze into your hand and touching the fridge, where are the germs?",
+          "a": "On your hand and the fridge handle.",
+          "mins": 2
+        }
+      ],
+      "homework": "Teach someone at home 'Catch it, bin it, kill it'.",
+      "send": "SEND: step cards with pictures. EAL: germ, spread, sneeze. Stretch: find out why soap works better than water alone.",
+      "resources": [
+        "Tarbiyyah Primary PSHE scheme: Ealing LA PSHE, Citizenship and SEAL spiral curriculum (Year A), 'Living long, living strong' strand (school's 'PSHE Spiral Curriculum EYFS & Primary with Objectives'); RSE lessons left out",
+        "Poster sheet (pupil PDF)",
+        "Pepper, bowl of water, washing-up liquid (home demonstration with a grown-up)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "soap bar",
+          "alt": "A bar of soap",
+          "for": "teach:2"
+        },
+        {
+          "find": "box of tissues",
+          "alt": "A box of tissues",
+          "for": "keywords"
+        },
+        {
+          "find": "miswak",
+          "alt": "A miswak",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Living long, living strong",
+      "n": 7,
+      "title": "Feeling happy: what helps us feel good",
+      "duration": 45,
+      "bigQuestion": "What is one small thing that made you smile this week?",
+      "objectives": [
+        "To understand which things help us feel happy and calm, and what to do when we feel sad"
+      ],
+      "successCriteria": [
+        "All: name three things that make you feel happy",
+        "Most: describe a way to calm down when upset",
+        "Some: explain how helping others and remembering Allah can make us feel good"
+      ],
+      "smsc": "Spiritual: gratitude (shukr) and dhikr",
+      "keywords": [
+        {
+          "term": "feelings",
+          "def": "how we feel inside, like happy, sad or worried"
+        },
+        {
+          "term": "calm",
+          "def": "peaceful and relaxed"
+        },
+        {
+          "term": "gratitude",
+          "def": "being thankful (shukr, شُكْر)"
+        },
+        {
+          "term": "kindness",
+          "def": "doing good for others"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is one small thing that made you smile this week?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Verily, in the remembrance of Allah do hearts find rest' (ar-Ra'd 13:28). Saying Alhamdulillah for our blessings and helping others are ways to feel content.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What should you do when you sneeze?",
+          "a": "Catch it in a tissue, bin it, wash hands.",
+          "mins": 1,
+          "options": [
+            "Sneeze into your hand",
+            "Catch it, bin it, kill it",
+            "Hold it"
+          ]
+        },
+        {
+          "q": "How long should we brush our teeth?",
+          "a": "2 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Name a feeling.",
+          "a": "For example: happy, sad, angry, worried.",
+          "mins": 1
+        },
+        {
+          "q": "What do we say when something good happens?",
+          "a": "Alhamdulillah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "All feelings are normal",
+          "bullets": [
+            "Happy, sad, cross, worried",
+            "Feelings come and go",
+            "We can choose what we do"
+          ],
+          "note": "Feelings are not good or bad; actions can be."
+        },
+        {
+          "heading": "Things that help us feel good",
+          "bullets": [
+            "Gratitude: Alhamdulillah",
+            "Being active and outdoors",
+            "Helping someone",
+            "Talking to someone we trust"
+          ],
+          "note": "Ask for examples.",
+          "diagram": {
+            "centre": "Feeling good",
+            "items": [
+              "Saying Alhamdulillah",
+              "Playing outside",
+              "Helping at home",
+              "Time with family",
+              "Enough sleep",
+              "Talking it through"
+            ]
+          }
+        },
+        {
+          "heading": "When we feel upset",
+          "bullets": [
+            "Stop and breathe slowly",
+            "Count to 5",
+            "Talk to a trusted adult",
+            "Make du'a"
+          ],
+          "note": "Practise slow breathing: in for 4, out for 4."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "You feel cross. What is a good first step?",
+            "options": [
+              "Shout",
+              "Stop and breathe slowly",
+              "Throw something",
+              "Hide forever"
+            ],
+            "answer": 1,
+            "why": "Breathing slowly calms the body so we can choose what to do next."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show me three things that make you happy.",
+          "a": "Any three (for example: playing with my brother, reading, helping cook).",
+          "mins": 2,
+          "model": "Teacher shares three of their own: a walk, reading Qur'an, cooking with family."
+        },
+        {
+          "q": "Show me the breathing: in for 4, out for 4.",
+          "a": "Slow breathing done together.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a 'happy jar' sheet: write or draw five things you are grateful for (pupil PDF).",
+          "a": "Five blessings listed.",
+          "mins": 6,
+          "model": "Teacher writes the first: 'my family'."
+        },
+        {
+          "q": "Extend: Write one kind thing you will do for someone this week.",
+          "a": "For example: help set the table.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why helping others can make us feel good too.",
+          "a": "It brings us closer to others and to Allah, and we feel useful.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Shukr means... A) thankfulness B) anger C) sleep",
+          "a": "A) thankfulness",
+          "mins": 1,
+          "options": [
+            "Thankfulness",
+            "Anger",
+            "Sleep"
+          ]
+        },
+        {
+          "q": "Big question: name one thing that helps you feel good.",
+          "a": "For example: helping someone, saying Alhamdulillah.",
+          "mins": 1
+        }
+      ],
+      "homework": "Each night this week, tell your family one thing you are grateful for.",
+      "send": "SEND: feelings cards with symbols (no faces: weather symbols for feelings). EAL: happy, sad, calm. Stretch: write a short du'a of thanks.",
+      "resources": [
+        "Tarbiyyah Primary PSHE scheme: Ealing LA PSHE, Citizenship and SEAL spiral curriculum (Year A), 'Living long, living strong' strand (school's 'PSHE Spiral Curriculum EYFS & Primary with Objectives'); RSE lessons left out",
+        "Happy jar sheet (pupil PDF)",
+        "Feelings weather symbols (sun, cloud, storm)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "glass jar",
+          "alt": "A glass jar",
+          "for": "teach:2"
+        },
+        {
+          "find": "sunny sky clouds",
+          "alt": "Sun behind clouds: feelings change like weather",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }

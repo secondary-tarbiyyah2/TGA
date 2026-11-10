@@ -2,7 +2,7 @@
   "subject": "Computing",
   "year": "y7",
   "board": "National Curriculum (aligned to Edexcel GCSE Computer Science 1CP2)",
-  "source": "Drive 'Computing Overview' Year 7 scheme (Intro to Scratch: Introduction, Variables and IF statements, Variables and operators, The Scratch Calculator), National Curriculum KS3, aligned to Edexcel GCSE Computer Science 1CP2",
+  "source": "Drive 'Computing Overview' Year 7 scheme (Intro to Scratch: Introduction, Variables and IF statements, Variables and operators, The Scratch Calculator), National Curriculum KS3, aligned to Edexcel GCSE Computer Science 1CP2 | Spring 1 2027 (lessons 5 to 9, v3): Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (Think like a computer: algorithms); diagrams.net; building to Pearson Edexcel 4CP0",
   "lessons": [
     {
       "unit": "Unit 1: Introduction to Scratch",
@@ -15,10 +15,22 @@
         "Explain the terms sequence, event and input"
       ],
       "keywords": [
-        { "term": "sprite", "def": "an object or character that a Scratch program controls" },
-        { "term": "sequence", "def": "instructions carried out one after another in order" },
-        { "term": "event", "def": "something that triggers a script, such as a key press" },
-        { "term": "input", "def": "data given to a program by the user or a device" }
+        {
+          "term": "sprite",
+          "def": "an object or character that a Scratch program controls"
+        },
+        {
+          "term": "sequence",
+          "def": "instructions carried out one after another in order"
+        },
+        {
+          "term": "event",
+          "def": "something that triggers a script, such as a key press"
+        },
+        {
+          "term": "input",
+          "def": "data given to a program by the user or a device"
+        }
       ],
       "starter": [
         "Bismillah. What is an algorithm?",
@@ -28,22 +40,38 @@
       "teach": [
         {
           "heading": "The Scratch environment",
-          "bullets": ["Stage: where the program runs.", "Sprites: the objects we control.", "Blocks palette and script area."],
+          "bullets": [
+            "Stage: where the program runs.",
+            "Sprites: the objects we control.",
+            "Blocks palette and script area."
+          ],
           "note": "Share your screen with Scratch open. Show how to add a sprite, change the backdrop and drag blocks. Pupils should have a free Scratch account or use the offline editor. Remind them to save regularly."
         },
         {
           "heading": "Events and sequence",
-          "bullets": ["'When green flag clicked' starts a script.", "Blocks run top to bottom.", "Order changes the result."],
+          "bullets": [
+            "'When green flag clicked' starts a script.",
+            "Blocks run top to bottom.",
+            "Order changes the result."
+          ],
           "note": "Build: when flag clicked, go to x:0 y:0, say Hello for 2 seconds, move 50 steps. Swap two blocks and run it again to show that order matters. Ask pupils to predict the result before each run."
         },
         {
           "heading": "Keyboard input",
-          "bullets": ["'When right arrow key pressed' is an event.", "change x by 10 moves right.", "change x by -10 moves left."],
+          "bullets": [
+            "'When right arrow key pressed' is an event.",
+            "change x by 10 moves right.",
+            "change x by -10 moves left."
+          ],
           "note": "Demonstrate four scripts for the arrow keys using change x and change y. Introduce the coordinates: the stage centre is (0,0), x goes left to right, y goes bottom to top. Misconception: pupils confuse x and y; ask them to point along each axis."
         },
         {
           "heading": "Debug a script",
-          "bullets": ["Test every key.", "Compare with what you expected.", "Fix one problem at a time."],
+          "bullets": [
+            "Test every key.",
+            "Compare with what you expected.",
+            "Fix one problem at a time."
+          ],
           "note": "Show a script where up and down are swapped. Ask pupils to find the bug. Reinforce the habit of testing and tracing. Mention that patience and carefulness are part of good character (sabr and ihsan) when we debug."
         }
       ],
@@ -75,10 +103,22 @@
         "Build a guessing game that uses selection"
       ],
       "keywords": [
-        { "term": "variable", "def": "a named store for data that can change while a program runs" },
-        { "term": "selection", "def": "choosing which instructions to run based on a condition" },
-        { "term": "condition", "def": "a statement that is either true or false" },
-        { "term": "random", "def": "chosen by chance, with no pattern" }
+        {
+          "term": "variable",
+          "def": "a named store for data that can change while a program runs"
+        },
+        {
+          "term": "selection",
+          "def": "choosing which instructions to run based on a condition"
+        },
+        {
+          "term": "condition",
+          "def": "a statement that is either true or false"
+        },
+        {
+          "term": "random",
+          "def": "chosen by chance, with no pattern"
+        }
       ],
       "starter": [
         "Bismillah. What is the output of: set score to 3, change score by 4?",
@@ -88,22 +128,38 @@
       "teach": [
         {
           "heading": "Variables store data",
-          "bullets": ["Make a variable called secret.", "set secret to a random number.", "The value can change as the program runs."],
+          "bullets": [
+            "Make a variable called secret.",
+            "set secret to a random number.",
+            "The value can change as the program runs."
+          ],
           "note": "Create the variable and show it on the stage. Use pick random 1 to 10. Run several times to show different values. Link to Year 5 learning: variable = labelled box."
         },
         {
           "heading": "Ask and answer",
-          "bullets": ["'ask' and 'wait' takes input.", "'answer' holds what was typed.", "Store it: set guess to answer."],
+          "bullets": [
+            "'ask' and 'wait' takes input.",
+            "'answer' holds what was typed.",
+            "Store it: set guess to answer."
+          ],
           "note": "Show that answer changes each time something is asked, so we store it in a variable called guess if we need it later. This is a misconception many pupils have: answer is overwritten by the next ask."
         },
         {
           "heading": "IF and IF-ELSE",
-          "bullets": ["IF guess = secret THEN say 'Correct'.", "ELSE say 'Wrong, try again'.", "The condition is true or false."],
+          "bullets": [
+            "IF guess = secret THEN say 'Correct'.",
+            "ELSE say 'Wrong, try again'.",
+            "The condition is true or false."
+          ],
           "note": "Build the guessing game. Run it with a right and wrong guess. Show also guess > secret to give hints (too high). Introduce comparison operators: <, >, =."
         },
         {
           "heading": "Test thoroughly",
-          "bullets": ["Test a correct guess.", "Test a guess that is too high.", "Test a guess that is too low."],
+          "bullets": [
+            "Test a correct guess.",
+            "Test a guess that is too high.",
+            "Test a guess that is too low."
+          ],
           "note": "Create a test table on screen: input, expected output, actual output. This is a skill needed at GCSE. Ask pupils to find a test case which might break the game (e.g. typing text)."
         }
       ],
@@ -135,10 +191,22 @@
         "Combine conditions using AND, OR and NOT"
       ],
       "keywords": [
-        { "term": "operator", "def": "a symbol or block that performs a calculation or comparison" },
-        { "term": "AND", "def": "true only if both conditions are true" },
-        { "term": "OR", "def": "true if at least one condition is true" },
-        { "term": "NOT", "def": "reverses true to false and false to true" }
+        {
+          "term": "operator",
+          "def": "a symbol or block that performs a calculation or comparison"
+        },
+        {
+          "term": "AND",
+          "def": "true only if both conditions are true"
+        },
+        {
+          "term": "OR",
+          "def": "true if at least one condition is true"
+        },
+        {
+          "term": "NOT",
+          "def": "reverses true to false and false to true"
+        }
       ],
       "starter": [
         "Bismillah. What is the value of x after: set x to 2, change x by 3?",
@@ -148,22 +216,38 @@
       "teach": [
         {
           "heading": "Arithmetic operators",
-          "bullets": ["+ add, - subtract.", "* multiply, / divide.", "mod gives the remainder."],
+          "bullets": [
+            "+ add, - subtract.",
+            "* multiply, / divide.",
+            "mod gives the remainder."
+          ],
           "note": "Build a small script which asks two numbers and says the total. Test with 3 and 4 (7). Point out the difference between the + operator (3 and 4 make 7) and the 'join' block (3 and 4 make 34). Misconception: pupils use join when they mean add."
         },
         {
           "heading": "Two variables",
-          "bullets": ["Variable 'a' stores the first number.", "Variable 'b' stores the second.", "Variable 'total' stores a + b."],
+          "bullets": [
+            "Variable 'a' stores the first number.",
+            "Variable 'b' stores the second.",
+            "Variable 'total' stores a + b."
+          ],
           "note": "Rebuild the script using a, b and total. Explain why storing values in variables is better than using answer directly. Pupils should trace the program with a trace table for inputs 6 and 9."
         },
         {
           "heading": "Combining conditions",
-          "bullets": ["age >= 11 AND age <= 16.", "day = Friday OR day = Saturday.", "NOT (score > 50)."],
+          "bullets": [
+            "age >= 11 AND age <= 16.",
+            "day = Friday OR day = Saturday.",
+            "NOT (score > 50)."
+          ],
           "note": "Use a truth table with two inputs. Ask pupils when 'A AND B' is true (only when both are). Link to logic gates covered later at GCSE. Misconception: pupils think OR means exactly one is true; it also includes both."
         },
         {
           "heading": "Mod: remainders",
-          "bullets": ["7 mod 2 = 1.", "8 mod 2 = 0.", "If n mod 2 = 0 then n is even."],
+          "bullets": [
+            "7 mod 2 = 1.",
+            "8 mod 2 = 0.",
+            "If n mod 2 = 0 then n is even."
+          ],
           "note": "Demonstrate an even-or-odd checker. Explain mod gives the remainder after division. This idea returns in GCSE programming as the modulus operator."
         }
       ],
@@ -195,10 +279,22 @@
         "Test and evaluate a program against its design"
       ],
       "keywords": [
-        { "term": "flowchart", "def": "a diagram that shows the steps of an algorithm using symbols" },
-        { "term": "terminator", "def": "the start or end symbol (rounded box) in a flowchart" },
-        { "term": "decision", "def": "a diamond symbol with a yes/no question" },
-        { "term": "process", "def": "a rectangle showing an action or calculation" }
+        {
+          "term": "flowchart",
+          "def": "a diagram that shows the steps of an algorithm using symbols"
+        },
+        {
+          "term": "terminator",
+          "def": "the start or end symbol (rounded box) in a flowchart"
+        },
+        {
+          "term": "decision",
+          "def": "a diamond symbol with a yes/no question"
+        },
+        {
+          "term": "process",
+          "def": "a rectangle showing an action or calculation"
+        }
       ],
       "starter": [
         "Bismillah. Work out 15 mod 4.",
@@ -208,22 +304,40 @@
       "teach": [
         {
           "heading": "Flowchart symbols",
-          "bullets": ["Rounded box: start or end.", "Parallelogram: input or output.", "Rectangle: process.", "Diamond: decision."],
+          "bullets": [
+            "Rounded box: start or end.",
+            "Parallelogram: input or output.",
+            "Rectangle: process.",
+            "Diamond: decision."
+          ],
           "note": "Draw each symbol on screen and give an example. These symbols are used in GCSE Computer Science exams. Ask pupils to say which symbol would show 'ask for number 1'. Parallelogram."
         },
         {
           "heading": "Flowchart for a calculator",
-          "bullets": ["Start.", "Input number 1, number 2 and operator.", "Decision: is operator '+'?", "Output result. End."],
+          "bullets": [
+            "Start.",
+            "Input number 1, number 2 and operator.",
+            "Decision: is operator '+'?",
+            "Output result. End."
+          ],
           "note": "Build the flowchart step by step. Show how decisions chain: if not +, check -, then *, then /. Ask pupils to trace through with 8, 2 and '*' (16)."
         },
         {
           "heading": "Build the calculator",
-          "bullets": ["Ask for two numbers and an operator.", "IF operator = '+' THEN add.", "ELSE IF operator = '-' THEN subtract."],
+          "bullets": [
+            "Ask for two numbers and an operator.",
+            "IF operator = '+' THEN add.",
+            "ELSE IF operator = '-' THEN subtract."
+          ],
           "note": "Convert the flowchart to Scratch blocks. Point out how each diamond becomes an IF block. Take care with division by zero: ask what should happen if number 2 is 0 and let pupils suggest adding a check."
         },
         {
           "heading": "Test and improve",
-          "bullets": ["Test each operator.", "Test unusual input like 0.", "Compare the result with the flowchart."],
+          "bullets": [
+            "Test each operator.",
+            "Test unusual input like 0.",
+            "Compare the result with the flowchart."
+          ],
           "note": "Use the test table again: input, expected, actual. Ask: does the program do what the design says? Invite pupils to describe one improvement. Linking to honesty in work: we check our work thoroughly rather than just hoping it is right."
         }
       ],
@@ -243,6 +357,1201 @@
       ],
       "homework": "Draw a flowchart for a program that decides whether a number typed by the user is positive, negative or zero.",
       "send": "SEND/EAL: provide a flowchart with missing text to complete and a symbol key. Stretch: draw the flowchart for a program that works out the area of either a rectangle or a triangle."
+    },
+    {
+      "unit": "Spring 1: Think like a computer: algorithms",
+      "n": 5,
+      "title": "What is an algorithm?",
+      "duration": 50,
+      "bigQuestion": "Is a recipe an algorithm? What would make a recipe fail for someone who has never cooked?",
+      "objectives": [
+        "To understand what an algorithm is and why it must be precise, ordered and unambiguous"
+      ],
+      "successCriteria": [
+        "All: define an algorithm and give an everyday example",
+        "Most: write an unambiguous algorithm for a simple task",
+        "Some: explain how an ambiguous instruction leads to a different result"
+      ],
+      "crossCurricular": "Maths: the written method for long multiplication is an algorithm",
+      "smsc": "Spiritual: the ordered steps of wudu and salah, done precisely and in sequence",
+      "keywords": [
+        {
+          "term": "algorithm",
+          "def": "a precise sequence of steps to solve a problem"
+        },
+        {
+          "term": "unambiguous",
+          "def": "having only one possible meaning"
+        },
+        {
+          "term": "instruction",
+          "def": "a single step that tells someone what to do"
+        },
+        {
+          "term": "input",
+          "def": "data given to an algorithm"
+        },
+        {
+          "term": "output",
+          "def": "the result an algorithm produces"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a recipe an algorithm? What would make a recipe fail for someone who has never cooked?",
+        "a": "Yes: it is ordered steps. Vague steps ('cook until done') fail a beginner; precise ones do not."
+      },
+      "starter": [
+        {
+          "q": "Which is an input device?",
+          "a": "Keyboard",
+          "mins": 1,
+          "options": [
+            "Keyboard",
+            "Monitor",
+            "Speaker"
+          ]
+        },
+        {
+          "q": "Name one input device and one output device.",
+          "a": "For example: keyboard (input), monitor (output).",
+          "mins": 1
+        },
+        {
+          "q": "In block coding, what does a repeat block do?",
+          "a": "Repeats the blocks inside it.",
+          "mins": 1
+        },
+        {
+          "q": "What is a bug in a program?",
+          "a": "A mistake that makes it go wrong.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Algorithms everywhere",
+          "bullets": [
+            "A sequence of steps to solve a problem",
+            "Recipes, directions, maths methods",
+            "Computers follow them exactly"
+          ],
+          "note": "A computer cannot guess what you meant: it follows every step literally. An algorithm is the plan; a program is the algorithm written in code."
+        },
+        {
+          "heading": "Precise and unambiguous",
+          "bullets": [
+            "Each step has one meaning",
+            "Steps are in the right order",
+            "It must finish"
+          ],
+          "note": "Unplugged: the teacher follows pupils' 'make a jam sandwich' steps literally on camera (with real bread) and gets it wrong on purpose.",
+          "misconception": {
+            "wrong": "'Put jam on the bread' is a clear instruction",
+            "right": "It is ambiguous: open the jar? which side? how much? spread with what? Precise steps say each one"
+          }
+        },
+        {
+          "heading": "Input, process, output",
+          "bullets": [
+            "Input: what goes in",
+            "Process: the steps",
+            "Output: the result"
+          ],
+          "note": "Example: making tea.",
+          "table": {
+            "head": [
+              "Algorithm",
+              "Input",
+              "Output"
+            ],
+            "rows": [
+              [
+                "Recipe",
+                "Ingredients",
+                "A meal"
+              ],
+              [
+                "Sat nav route",
+                "Start and destination",
+                "Directions"
+              ],
+              [
+                "Average of marks",
+                "List of marks",
+                "The mean"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: an unambiguous algorithm",
+          "bullets": [
+            "Number each step",
+            "One action per step",
+            "Test it by following it literally"
+          ],
+          "note": "Write it with the class.",
+          "model": {
+            "problem": "Algorithm: find the largest of three numbers 4, 9, 6.",
+            "steps": [
+              "Set largest to the first number (4)",
+              "Compare with the next (9): bigger, so largest = 9",
+              "Compare with the next (6): not bigger, keep 9",
+              "Output largest"
+            ],
+            "answer": "9"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which instruction is unambiguous?",
+            "options": [
+              "Add some sugar",
+              "Stir for a while",
+              "Add 2 teaspoons of sugar",
+              "Cook it properly"
+            ],
+            "answer": 2,
+            "why": "Only '2 teaspoons' has one meaning; 'some', 'a while' and 'properly' can be read many ways."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rewrite 'walk to the door' as precise steps for a robot in your room.",
+          "a": "For example: stand, turn left 90 degrees, walk 4 steps forward, stop.",
+          "mins": 3,
+          "model": "Teacher writes: '1. Stand up. 2. Turn right 90 degrees. 3. Walk forward 3 steps. 4. Stop.' and explains each is one action with numbers."
+        },
+        {
+          "q": "Find the ambiguity: 'Take the second left after the big tree.'",
+          "a": "Which tree counts as big? Is a footpath a 'left'?",
+          "mins": 2
+        },
+        {
+          "q": "Give the input and output of 'count the vowels in a word'.",
+          "a": "Input: a word; output: the number of vowels.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write an unambiguous algorithm (6 to 10 numbered steps) to make a cup of tea in the portal response box.",
+          "a": "Numbered single actions with quantities and order: fill kettle, boil, teabag in cup, pour, wait 3 minutes, remove bag, add milk.",
+          "mins": 6,
+          "model": "Teacher writes steps 1 and 2: '1. Fill the kettle with 300 ml of water. 2. Switch the kettle on and wait until it switches off.'"
+        },
+        {
+          "q": "Extend: Write an algorithm to find the smallest of five numbers. Test it on 7, 3, 9, 1, 5.",
+          "a": "Set smallest to first; compare each next number; replace if smaller; output smallest = 1.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain why a computer needs more precise instructions than a person.",
+          "a": "A person uses common sense to fill gaps; a computer only does exactly what it is told.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "An algorithm is... A) a computer B) a precise sequence of steps C) a programming language",
+          "a": "B) a precise sequence of steps",
+          "mins": 1,
+          "options": [
+            "A computer",
+            "A precise sequence of steps",
+            "A programming language"
+          ]
+        },
+        {
+          "q": "Big question: is a recipe an algorithm? Give one reason a recipe might fail.",
+          "a": "Yes; it fails if a step is ambiguous, such as 'cook until done'.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write the algorithm for getting from your front door to the nearest shop or masjid in at most 10 precise steps.",
+      "send": "SEND: step frame with numbered boxes. EAL: precise, ambiguous, sequence with examples. Stretch: write the 'smallest number' algorithm so it works for any list length.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (algorithms unit; no secondary scheme of work supplied)",
+        "Slice of bread, jam and a spoon for the teacher's live demonstration",
+        "Algorithm writing frame (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "cup of tea kettle",
+          "alt": "A kettle and a cup of tea",
+          "for": "teach:4"
+        },
+        {
+          "find": "recipe card handwritten",
+          "alt": "A written recipe",
+          "for": "hook"
+        },
+        {
+          "find": "satellite navigation device car",
+          "alt": "A sat nav device",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Think like a computer: algorithms",
+      "n": 6,
+      "title": "Decomposition and abstraction",
+      "duration": 50,
+      "bigQuestion": "The London Underground map is not accurate: distances and bends are wrong. Why is it still so useful?",
+      "objectives": [
+        "To understand how decomposition and abstraction make a large problem easier to solve"
+      ],
+      "successCriteria": [
+        "All: break a problem into smaller parts",
+        "Most: remove unnecessary detail from a problem (abstraction)",
+        "Some: apply both to plan a solution to a real problem"
+      ],
+      "crossCurricular": "Geography: the London Underground map is an abstraction of real geography",
+      "smsc": "Social: planning a family task (a dinner for guests) together by sharing the parts",
+      "keywords": [
+        {
+          "term": "decomposition",
+          "def": "breaking a problem into smaller parts"
+        },
+        {
+          "term": "abstraction",
+          "def": "removing detail that does not matter"
+        },
+        {
+          "term": "computational thinking",
+          "def": "ways of thinking to solve problems like a computer scientist"
+        },
+        {
+          "term": "sub-problem",
+          "def": "one smaller part of a big problem"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The London Underground map is not accurate: distances and bends are wrong. Why is it still so useful?",
+        "a": "It keeps only what travellers need (lines, stations, order): that is abstraction."
+      },
+      "starter": [
+        {
+          "q": "What is an algorithm?",
+          "a": "A precise sequence of steps to solve a problem.",
+          "mins": 1,
+          "options": [
+            "A computer",
+            "A precise sequence of steps",
+            "A website"
+          ]
+        },
+        {
+          "q": "What does unambiguous mean?",
+          "a": "Having only one possible meaning.",
+          "mins": 1
+        },
+        {
+          "q": "Give the input and output of a sat nav.",
+          "a": "Input: start and destination; output: directions.",
+          "mins": 1
+        },
+        {
+          "q": "Make precise: 'add a bit of salt'.",
+          "a": "For example: add 1/4 teaspoon of salt.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Decomposition",
+          "bullets": [
+            "Break a big problem into parts",
+            "Solve each part",
+            "Put them together"
+          ],
+          "note": "Example: planning a school open day online: invitations, timetable, slides, tech check.",
+          "diagram": {
+            "centre": "Host an iftar for 10 guests",
+            "items": [
+              "Guest list",
+              "Menu",
+              "Shopping",
+              "Cooking times",
+              "Setting the table",
+              "Prayer space"
+            ]
+          }
+        },
+        {
+          "heading": "Abstraction",
+          "bullets": [
+            "Keep what matters",
+            "Remove what does not",
+            "Make a simpler model"
+          ],
+          "note": "The Tube map: keeps lines, stations and order; drops real distances and streets."
+        },
+        {
+          "heading": "Which details matter?",
+          "bullets": [
+            "Depends on the problem",
+            "Route planning: stops matter",
+            "Colour of the train does not"
+          ],
+          "note": "Sort as a class.",
+          "sort": {
+            "columns": [
+              "Keep",
+              "Remove"
+            ],
+            "cards": [
+              "Station names",
+              "Order of stations",
+              "Interchanges",
+              "Exact distance in metres",
+              "Colour of seats",
+              "Which line"
+            ],
+            "answer": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "Model: both together",
+          "bullets": [
+            "Problem: a quiz app",
+            "Decompose into parts",
+            "Abstract each part"
+          ],
+          "note": "Talk it through.",
+          "model": {
+            "problem": "Plan a times-table quiz program.",
+            "steps": [
+              "Decompose: ask a question, get the answer, check it, keep score, show score",
+              "Abstract: a question is just two numbers and their product",
+              "Ignore: colours, sounds, the user's name",
+              "Each part becomes a small algorithm"
+            ],
+            "answer": "Five sub-problems, each modelled with only the numbers that matter"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Removing unnecessary detail from a problem is called...",
+            "options": [
+              "Decomposition",
+              "Abstraction",
+              "Iteration",
+              "Debugging"
+            ],
+            "answer": 1,
+            "why": "Decomposition breaks a problem up; abstraction removes detail that does not matter."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Decompose 'getting ready for school online' into at least four parts.",
+          "a": "For example: wake for Fajr, breakfast, set up the device and log in to Teams, prepare books and pens.",
+          "mins": 3,
+          "model": "Teacher decomposes 'make breakfast' into: choose food, prepare it, eat, tidy, and shows each part could be split again."
+        },
+        {
+          "q": "A map for a fire drill: which details would you keep?",
+          "a": "Exits, routes, the meeting point; not furniture colours.",
+          "mins": 2
+        },
+        {
+          "q": "Is the Tube map decomposition or abstraction?",
+          "a": "Abstraction.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Decompose 'plan a family trip to the park' into at least five sub-problems in the portal response box.",
+          "a": "For example: date and weather, transport, food, prayer times and place, what to bring.",
+          "mins": 5,
+          "model": "Teacher writes the first two sub-problems and why each is separate."
+        },
+        {
+          "q": "Extend: For one sub-problem, list the details to keep and to remove (abstraction).",
+          "a": "Transport: keep start, destination, bus number, times; remove bus colour, driver's name.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why programmers decompose before they code.",
+          "a": "Small parts are easier to solve, test and share between people; mistakes are easier to find.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Breaking a problem into smaller parts is... A) abstraction B) decomposition C) output",
+          "a": "B) decomposition",
+          "mins": 1,
+          "options": [
+            "Abstraction",
+            "Decomposition",
+            "Output"
+          ]
+        },
+        {
+          "q": "Big question: why is the Tube map useful even though it is not accurate?",
+          "a": "It is an abstraction: it keeps only lines, stations and order, which is all a traveller needs.",
+          "mins": 2
+        }
+      ],
+      "homework": "Decompose one household job (for example preparing for Jumu'ah) into sub-problems and underline the details that matter.",
+      "send": "SEND: partly filled decomposition diagram. EAL: decompose, abstract, detail with pictures. Stretch: decompose a game into sub-problems.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (algorithms unit; no secondary scheme of work supplied)",
+        "Decomposition frame (pupil PDF)",
+        "London Underground map (picture on the slides)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "London Underground tube map",
+          "alt": "The London Underground map",
+          "for": "hook"
+        },
+        {
+          "find": "jigsaw puzzle pieces",
+          "alt": "Jigsaw pieces: parts of a whole",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Think like a computer: algorithms",
+      "n": 7,
+      "title": "Sequence, selection and iteration",
+      "duration": 50,
+      "bigQuestion": "Every program ever written is built from just three ideas. What do you think they are?",
+      "objectives": [
+        "To understand how sequence, selection and iteration are the building blocks of every algorithm"
+      ],
+      "successCriteria": [
+        "All: identify sequence, selection and iteration in an algorithm",
+        "Most: write an algorithm that uses all three",
+        "Some: trace an algorithm with a loop and a condition to find its output"
+      ],
+      "crossCurricular": "Islamic Studies: the rak'ahs of salah follow a sequence and repeat, with set choices (for example the number of rak'ahs)",
+      "smsc": "Moral: making good decisions (selection) in daily life",
+      "keywords": [
+        {
+          "term": "sequence",
+          "def": "steps carried out in order"
+        },
+        {
+          "term": "selection",
+          "def": "a decision: IF a condition is true, do one thing, ELSE another"
+        },
+        {
+          "term": "iteration",
+          "def": "repeating steps, also called a loop"
+        },
+        {
+          "term": "condition",
+          "def": "a statement that is true or false"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Every program ever written is built from just three ideas. What do you think they are?",
+        "a": "Doing steps in order, making decisions and repeating: sequence, selection, iteration."
+      },
+      "starter": [
+        {
+          "q": "Removing unnecessary detail is called...",
+          "a": "Abstraction",
+          "mins": 1,
+          "options": [
+            "Decomposition",
+            "Abstraction",
+            "Sequence"
+          ]
+        },
+        {
+          "q": "What is decomposition?",
+          "a": "Breaking a problem into smaller parts.",
+          "mins": 1
+        },
+        {
+          "q": "Give one feature of a good algorithm.",
+          "a": "Precise, ordered, unambiguous, finishes.",
+          "mins": 1
+        },
+        {
+          "q": "What is the output of 'find the largest of 3, 8, 5'?",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sequence",
+          "bullets": [
+            "Steps in order",
+            "Change the order, change the result",
+            "Example: wudu"
+          ],
+          "note": "Wudu has a set order; doing it out of order is a different algorithm."
+        },
+        {
+          "heading": "Selection",
+          "bullets": [
+            "IF a condition is true",
+            "THEN do this",
+            "ELSE do that"
+          ],
+          "note": "Condition: a true or false question.",
+          "code": {
+            "lang": "pseudocode",
+            "text": "INPUT temperature\nIF temperature < 10 THEN\n    OUTPUT \"Wear a coat\"\nELSE\n    OUTPUT \"No coat needed\"\nENDIF",
+            "output": "temperature 6 gives 'Wear a coat'"
+          }
+        },
+        {
+          "heading": "Iteration",
+          "bullets": [
+            "Repeat steps",
+            "A set number of times (FOR)",
+            "Or until a condition (WHILE)"
+          ],
+          "note": "Two kinds of loop.",
+          "code": {
+            "lang": "pseudocode",
+            "text": "total = 0\nFOR i = 1 TO 5\n    total = total + i\nNEXT i\nOUTPUT total",
+            "output": "15 (1 + 2 + 3 + 4 + 5)"
+          }
+        },
+        {
+          "heading": "Model: trace it",
+          "bullets": [
+            "Track each variable",
+            "One row per loop",
+            "Read the output"
+          ],
+          "note": "Trace table with the class.",
+          "table": {
+            "head": [
+              "i",
+              "total"
+            ],
+            "rows": [
+              [
+                "start",
+                "0"
+              ],
+              [
+                "1",
+                "1"
+              ],
+              [
+                "2",
+                "3"
+              ],
+              [
+                "3",
+                "6"
+              ],
+              [
+                "4",
+                "10"
+              ],
+              [
+                "5",
+                "15"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "'Keep stirring until the sugar dissolves' is an example of...",
+            "options": [
+              "Sequence",
+              "Selection",
+              "Iteration",
+              "Abstraction"
+            ],
+            "answer": 2,
+            "why": "It repeats until a condition is met: a loop. It has a condition, but the action repeats, so it is iteration."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Label each line: 'Fill kettle. IF kettle is full THEN switch on. Repeat: check if boiled.'",
+          "a": "Sequence (fill), selection (IF full), iteration (repeat check).",
+          "mins": 2,
+          "model": "Teacher labels line by line: one action in order = sequence; IF = selection; repeat = iteration."
+        },
+        {
+          "q": "What does this output? FOR i = 1 TO 3: OUTPUT i * 2",
+          "a": "2, 4, 6",
+          "mins": 2
+        },
+        {
+          "q": "Write an IF... THEN... ELSE for a prayer reminder: if time is 13:00 or later and Dhuhr not prayed, remind.",
+          "a": "IF time >= 13:00 AND prayed = false THEN OUTPUT 'Pray Dhuhr' ELSE OUTPUT 'Well done'.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write an algorithm for a 'guess the number' game that uses sequence, selection and iteration. Label each.",
+          "a": "Set secret; REPEAT input guess; IF guess = secret THEN 'Correct' ELSE IF guess < secret 'Higher' ELSE 'Lower'; UNTIL guess = secret.",
+          "mins": 6,
+          "model": "Teacher writes the first two lines: 'secret = 7' (sequence) and 'REPEAT' (iteration), naming each."
+        },
+        {
+          "q": "Extend: Trace: total = 0; FOR i = 2 TO 8 STEP 2: total = total + i. Output?",
+          "a": "2 + 4 + 6 + 8 = 20",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain the difference between a FOR loop and a WHILE loop, with an example of each.",
+          "a": "FOR repeats a set number of times (count to 10); WHILE repeats until a condition changes (while not boiled).",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "IF... THEN... ELSE is... A) sequence B) selection C) iteration",
+          "a": "B) selection",
+          "mins": 1,
+          "options": [
+            "Sequence",
+            "Selection",
+            "Iteration"
+          ]
+        },
+        {
+          "q": "Big question: name the three building blocks of every algorithm.",
+          "a": "Sequence, selection and iteration.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find one example of sequence, selection and iteration in your daily routine and write each as a line of pseudocode.",
+      "send": "SEND: colour-coded labels (sequence blue, selection orange, iteration green). EAL: sentence frames 'This is selection because...'. Stretch: nested selection inside a loop.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (algorithms unit; no secondary scheme of work supplied)",
+        "Trace table template (pupil PDF)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "road fork junction",
+          "alt": "A fork in a road: a choice",
+          "for": "teach:2"
+        },
+        {
+          "find": "water cycle diagram",
+          "alt": "The water cycle: a process that repeats",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Think like a computer: algorithms",
+      "n": 8,
+      "title": "Flowcharts and pseudocode",
+      "duration": 50,
+      "bigQuestion": "Why would a programmer draw a diagram before writing any code?",
+      "objectives": [
+        "To understand how flowcharts and pseudocode represent the same algorithm"
+      ],
+      "successCriteria": [
+        "All: name the flowchart symbols (terminal, process, decision, input/output)",
+        "Most: draw a flowchart with a decision",
+        "Some: convert a flowchart into pseudocode and back"
+      ],
+      "crossCurricular": "Science: following a key (yes/no questions) to identify plants or animals",
+      "smsc": "Social: planning clearly so others can understand and check our work",
+      "keywords": [
+        {
+          "term": "flowchart",
+          "def": "a diagram that shows an algorithm with symbols and arrows"
+        },
+        {
+          "term": "pseudocode",
+          "def": "an algorithm written in structured English, like code"
+        },
+        {
+          "term": "decision",
+          "def": "a diamond symbol with a yes/no question"
+        },
+        {
+          "term": "terminal",
+          "def": "the start or stop symbol (rounded box)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why would a programmer draw a diagram before writing any code?",
+        "a": "To see the whole plan, spot mistakes early and share it with others who do not read code."
+      },
+      "starter": [
+        {
+          "q": "'Repeat until full' is...",
+          "a": "Iteration",
+          "mins": 1,
+          "options": [
+            "Sequence",
+            "Selection",
+            "Iteration"
+          ]
+        },
+        {
+          "q": "Output of FOR i = 1 TO 4: OUTPUT i * i?",
+          "a": "1, 4, 9, 16",
+          "mins": 1
+        },
+        {
+          "q": "What are the two kinds of loop?",
+          "a": "FOR (count-controlled) and WHILE (condition-controlled).",
+          "mins": 1
+        },
+        {
+          "q": "What is a condition?",
+          "a": "A statement that is true or false.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Flowchart symbols",
+          "bullets": [
+            "Terminal: start and stop",
+            "Process: an action",
+            "Decision: a yes/no question",
+            "Input/output: parallelogram"
+          ],
+          "note": "Draw each symbol live in diagrams.net.",
+          "table": {
+            "head": [
+              "Symbol",
+              "Shape",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Terminal",
+                "Rounded rectangle",
+                "Start / Stop"
+              ],
+              [
+                "Process",
+                "Rectangle",
+                "total = total + 1"
+              ],
+              [
+                "Decision",
+                "Diamond",
+                "Is age >= 13?"
+              ],
+              [
+                "Input / output",
+                "Parallelogram",
+                "INPUT age"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "A flowchart with a decision",
+          "bullets": [
+            "Arrows show the flow",
+            "A decision has two exits: Yes and No",
+            "Every path reaches Stop"
+          ],
+          "note": "Model the 'Can I use this app?' flowchart (age 13 rule).",
+          "model": {
+            "problem": "Flowchart: can a pupil create an account on an app with a minimum age of 13?",
+            "steps": [
+              "Start",
+              "Input age",
+              "Decision: age >= 13?",
+              "Yes: output 'You may ask a parent to set it up'",
+              "No: output 'Not yet'",
+              "Stop"
+            ],
+            "answer": "Start, input, decision with two outputs, stop"
+          }
+        },
+        {
+          "heading": "The same in pseudocode",
+          "bullets": [
+            "Each symbol becomes a line",
+            "Decision becomes IF",
+            "A loop back becomes WHILE or REPEAT"
+          ],
+          "note": "Compare side by side.",
+          "code": {
+            "lang": "pseudocode",
+            "text": "INPUT age\nIF age >= 13 THEN\n    OUTPUT \"You may ask a parent to set it up\"\nELSE\n    OUTPUT \"Not yet\"\nENDIF",
+            "output": "age 12 gives 'Not yet'"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which flowchart symbol holds a yes/no question?",
+            "options": [
+              "Rectangle",
+              "Diamond",
+              "Parallelogram",
+              "Rounded rectangle"
+            ],
+            "answer": 1,
+            "why": "Diamonds are decisions; rectangles are processes; parallelograms are input and output; rounded rectangles are start and stop."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Draw a flowchart: input a number, output 'even' or 'odd'.",
+          "a": "Start; input n; decision: n MOD 2 = 0?; yes: output 'even'; no: output 'odd'; stop.",
+          "mins": 3,
+          "model": "Teacher draws it in diagrams.net, saying the symbol name before each shape."
+        },
+        {
+          "q": "Write the even/odd flowchart as pseudocode.",
+          "a": "INPUT n; IF n MOD 2 = 0 THEN OUTPUT 'even' ELSE OUTPUT 'odd' ENDIF",
+          "mins": 2
+        },
+        {
+          "q": "Which symbol is 'total = total + 5'?",
+          "a": "Process (rectangle).",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a flowchart in diagrams.net (or on paper) for a password check: allow 3 tries, then lock. Paste a picture into the portal.",
+          "a": "Start; tries = 0; loop: input password; decision correct? yes: 'Welcome', stop; no: tries + 1; decision tries = 3? yes: 'Locked', stop; no: back to input.",
+          "mins": 7,
+          "model": "Teacher draws the first three symbols: Start, 'tries = 0', 'INPUT password'."
+        },
+        {
+          "q": "Extend: Write your flowchart as pseudocode.",
+          "a": "tries = 0; REPEAT INPUT p; tries = tries + 1 UNTIL p = correct OR tries = 3; IF p = correct THEN 'Welcome' ELSE 'Locked'.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain one advantage of a flowchart and one of pseudocode.",
+          "a": "Flowchart: shows the flow visually for anyone; pseudocode: closer to code, quicker to turn into a program.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Start and stop use the... A) diamond B) rounded rectangle C) parallelogram",
+          "a": "B) rounded rectangle",
+          "mins": 1,
+          "options": [
+            "Diamond",
+            "Rounded rectangle",
+            "Parallelogram"
+          ]
+        },
+        {
+          "q": "Big question: give one reason to draw a flowchart before coding.",
+          "a": "To plan and check the logic and spot mistakes before writing code.",
+          "mins": 2
+        }
+      ],
+      "homework": "Draw a flowchart for deciding whether to take an umbrella (check the forecast; if rain is likely, take it).",
+      "send": "SEND: symbol cards to drag into place. EAL: symbol names with shapes. Stretch: flowchart with a loop and a counter.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (algorithms unit; no secondary scheme of work supplied)",
+        "diagrams.net flowchart tool (app.diagrams.net, free in the browser, no account needed) or PowerPoint shapes in the school Microsoft 365 account",
+        "Flowchart symbol card (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "flowchart diagram example",
+          "alt": "An example flowchart",
+          "for": "teach:1"
+        },
+        {
+          "find": "blueprint plan architecture",
+          "alt": "An architect's plan drawn before building",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Think like a computer: algorithms",
+      "n": 9,
+      "title": "Testing and debugging algorithms; unit quiz",
+      "duration": 50,
+      "bigQuestion": "An exam grader gives a 'pass' for 50 and above. Which single score would you test first, and why?",
+      "objectives": [
+        "To understand how testing with normal, boundary and invalid data finds errors in an algorithm"
+      ],
+      "successCriteria": [
+        "All: find an error in an algorithm by tracing it",
+        "Most: choose normal, boundary and invalid test data",
+        "Some: fix a logic error and prove the fix with a test"
+      ],
+      "crossCurricular": "Maths: inequalities (> and >=)",
+      "smsc": "Moral: honesty in checking our own work carefully (amanah in what we produce)",
+      "keywords": [
+        {
+          "term": "test data",
+          "def": "values chosen to check an algorithm works"
+        },
+        {
+          "term": "boundary",
+          "def": "a value at the edge of what is allowed"
+        },
+        {
+          "term": "logic error",
+          "def": "a mistake that gives the wrong result without crashing"
+        },
+        {
+          "term": "debug",
+          "def": "find and fix errors"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An exam grader gives a 'pass' for 50 and above. Which single score would you test first, and why?",
+        "a": "50: the boundary. It is where mistakes like > instead of >= hide."
+      },
+      "starter": [
+        {
+          "q": "Which symbol is a decision?",
+          "a": "Diamond",
+          "mins": 1,
+          "options": [
+            "Diamond",
+            "Rectangle",
+            "Parallelogram"
+          ]
+        },
+        {
+          "q": "Name the three building blocks of algorithms.",
+          "a": "Sequence, selection, iteration",
+          "mins": 1
+        },
+        {
+          "q": "What is abstraction?",
+          "a": "Removing detail that does not matter.",
+          "mins": 1
+        },
+        {
+          "q": "Output of FOR i = 1 TO 3: total = total + i (total starts 0)?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why test?",
+          "bullets": [
+            "Algorithms can look right and be wrong",
+            "Testing finds errors early",
+            "Trace by hand before coding"
+          ],
+          "note": "A logic error does not crash: it quietly gives the wrong answer."
+        },
+        {
+          "heading": "Three kinds of test data",
+          "bullets": [
+            "Normal: typical values",
+            "Boundary: the edges",
+            "Invalid: values that should be rejected"
+          ],
+          "note": "Pass mark 50, scores 0 to 100.",
+          "table": {
+            "head": [
+              "Type",
+              "Example",
+              "Expected"
+            ],
+            "rows": [
+              [
+                "Normal",
+                "72",
+                "Pass"
+              ],
+              [
+                "Boundary",
+                "50",
+                "Pass"
+              ],
+              [
+                "Boundary",
+                "49",
+                "Fail"
+              ],
+              [
+                "Invalid",
+                "-5 or 'abc'",
+                "Error message"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Find the bug",
+          "bullets": [
+            "Trace with boundary data",
+            "Compare expected and actual",
+            "Fix and re-test"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "IF score > 50 THEN OUTPUT 'Pass' ELSE OUTPUT 'Fail'. Test with 50.",
+            "steps": [
+              "Expected: Pass (50 and above passes)",
+              "Trace: is 50 > 50? No",
+              "Actual: Fail, so there is a logic error",
+              "Fix: IF score >= 50; re-test 50 gives Pass"
+            ],
+            "answer": "Change > to >="
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Ages 11 to 16 are allowed. Which is boundary test data?",
+            "options": [
+              "13",
+              "16",
+              "25",
+              "'eleven'"
+            ],
+            "answer": 1,
+            "why": "16 is at the edge of the allowed range; 13 is normal; 25 and 'eleven' are invalid."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give normal, boundary and invalid data for 'enter a month number 1 to 12'.",
+          "a": "Normal 6; boundary 1 and 12 (and 0, 13); invalid 'May' or -3.",
+          "mins": 2,
+          "model": "Teacher writes the range on a number line and marks the edges 1 and 12, then picks a middle value and a nonsense value."
+        },
+        {
+          "q": "Find the bug: 'FOR i = 1 TO 10: OUTPUT i' should output 1 to 9.",
+          "a": "The loop runs to 10; change to FOR i = 1 TO 9.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write a test plan (4 tests) for the password-lock flowchart from last lesson.",
+          "a": "Correct first time; wrong then right; 3 wrong (locked); empty password.",
+          "mins": 5,
+          "model": "Teacher writes test 1: 'Input correct password first time; expected: Welcome'."
+        },
+        {
+          "q": "Extend: Trace the faulty algorithm on the worksheet and fix its logic error.",
+          "a": "The counter is never increased, so it never locks; add tries = tries + 1.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Unit quiz (portal secure test mode, 10 questions): algorithms, decomposition, abstraction, building blocks, flowcharts, testing.",
+          "a": "Teacher marks in the portal.",
+          "mins": 12
+        },
+        {
+          "q": "Big question: which score would you test first for a pass mark of 50, and why?",
+          "a": "50, because it is the boundary where > and >= give different results.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write three test values (normal, boundary, invalid) for an app that only allows ages 13 and over.",
+      "send": "SEND: test plan with types already listed. EAL: normal, boundary, invalid with number line. Stretch: test a nested IF algorithm for grades.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (algorithms unit; no secondary scheme of work supplied)",
+        "Faulty algorithm worksheet and test plan template (pupil PDF)",
+        "Year 7 algorithms unit quiz in the portal (secure test mode, 10 questions)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "magnifying glass",
+          "alt": "A magnifying glass",
+          "for": "keywords"
+        },
+        {
+          "find": "ruler measuring scale",
+          "alt": "A ruler: the edges matter",
+          "for": "teach:2"
+        }
+      ]
     }
   ]
 }

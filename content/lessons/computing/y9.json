@@ -2,7 +2,7 @@
   "subject": "Computing",
   "year": "y9",
   "board": "National Curriculum (aligned to Edexcel GCSE Computer Science 1CP2)",
-  "source": "Drive 'Computing Overview' Year 9 (Python Programming Revisited) and the Y9 lesson plan example 'Programming basics: data types and operations' (AQA 8525 Unit 2A style), adapted to Python and to the Edexcel 1CP2 Topic 6 style (pseudo-code and Python)",
+  "source": "Drive 'Computing Overview' Year 9 (Python Programming Revisited) and the Y9 lesson plan example 'Programming basics: data types and operations' (AQA 8525 Unit 2A style), adapted to Python and to the Edexcel 1CP2 Topic 6 style (pseudo-code and Python) | Spring 1 2027 (lessons 5 to 9, v3): Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (computer systems and architecture), previewing Pearson Edexcel 4CP0 Topic 3; weekly Python retrieval starter",
   "lessons": [
     {
       "unit": "Unit 1: Python programming revisited",
@@ -15,11 +15,26 @@
         "Name and use the data types integer, real (float), Boolean, character and string"
       ],
       "keywords": [
-        { "term": "variable", "def": "a named location in memory that stores a value" },
-        { "term": "data type", "def": "the kind of data stored, such as integer or string" },
-        { "term": "integer", "def": "a whole number, for example 7" },
-        { "term": "string", "def": "a sequence of characters, for example 'Salam'" },
-        { "term": "casting", "def": "changing data from one type to another" }
+        {
+          "term": "variable",
+          "def": "a named location in memory that stores a value"
+        },
+        {
+          "term": "data type",
+          "def": "the kind of data stored, such as integer or string"
+        },
+        {
+          "term": "integer",
+          "def": "a whole number, for example 7"
+        },
+        {
+          "term": "string",
+          "def": "a sequence of characters, for example 'Salam'"
+        },
+        {
+          "term": "casting",
+          "def": "changing data from one type to another"
+        }
       ],
       "starter": [
         "Bismillah. What is a variable in Scratch? Give an example from last year.",
@@ -29,22 +44,39 @@
       "teach": [
         {
           "heading": "Print and input",
-          "bullets": ["print('Salam') shows text.", "name = input('Your name? ') stores a reply.", "Input always returns a string."],
+          "bullets": [
+            "print('Salam') shows text.",
+            "name = input('Your name? ') stores a reply.",
+            "Input always returns a string."
+          ],
           "note": "Open IDLE or an online Python editor. Type the two lines and run them. Colour coding in IDLE helps pupils spot strings. Misconception: input() gives a number if the user types digits; it always returns a string, so casting is needed."
         },
         {
           "heading": "Data types",
-          "bullets": ["Integer: 42.", "Real/float: 3.14.", "Boolean: True or False.", "Character and string: 'a', 'hello'."],
+          "bullets": [
+            "Integer: 42.",
+            "Real/float: 3.14.",
+            "Boolean: True or False.",
+            "Character and string: 'a', 'hello'."
+          ],
           "note": "Show type(x) in the shell for each. Note: Python has no separate character type; a character is a string of length 1, but in exam questions a character is one symbol. A string can contain digits but is not a number: '5' is not 5."
         },
         {
           "heading": "Casting",
-          "bullets": ["int('5') gives 5.", "float('2.5') gives 2.5.", "str(5) gives '5'."],
+          "bullets": [
+            "int('5') gives 5.",
+            "float('2.5') gives 2.5.",
+            "str(5) gives '5'."
+          ],
           "note": "Live-code: age = input('Age? ') then age + 1 causes an error. Fix with int(age) + 1. Ask pupils to read the error message. Debugging is a skill: read the message from the bottom up."
         },
         {
           "heading": "Pseudo-code and Python",
-          "bullets": ["OUTPUT 'Hello' becomes print('Hello').", "name ← USERINPUT becomes name = input().", "Constants: use capital letters."],
+          "bullets": [
+            "OUTPUT 'Hello' becomes print('Hello').",
+            "name ← USERINPUT becomes name = input().",
+            "Constants: use capital letters."
+          ],
           "note": "Show pseudo-code beside Python for the same program. At GCSE, algorithms in written papers appear as flowcharts and pseudo-code while programming is in Python, so we practise translating. Keep names meaningful: total_price rather than x."
         }
       ],
@@ -76,10 +108,22 @@
         "Solve problems using DIV and MOD"
       ],
       "keywords": [
-        { "term": "integer division (DIV)", "def": "division that gives only the whole-number part, written // in Python" },
-        { "term": "modulus (MOD)", "def": "the remainder after division, written % in Python" },
-        { "term": "operator", "def": "a symbol that carries out an operation" },
-        { "term": "exponent", "def": "raising to a power, written ** in Python" }
+        {
+          "term": "integer division (DIV)",
+          "def": "division that gives only the whole-number part, written // in Python"
+        },
+        {
+          "term": "modulus (MOD)",
+          "def": "the remainder after division, written % in Python"
+        },
+        {
+          "term": "operator",
+          "def": "a symbol that carries out an operation"
+        },
+        {
+          "term": "exponent",
+          "def": "raising to a power, written ** in Python"
+        }
       ],
       "starter": [
         "Bismillah. What is the output of: x = 4, y = 3, print(x * y)?",
@@ -89,22 +133,39 @@
       "teach": [
         {
           "heading": "Operators in Python",
-          "bullets": ["+ - * / as in maths.", "/ always gives a decimal.", "** means power: 2 ** 3 = 8."],
+          "bullets": [
+            "+ - * / as in maths.",
+            "/ always gives a decimal.",
+            "** means power: 2 ** 3 = 8."
+          ],
           "note": "Run 7 / 2 (3.5) and 8 / 2 (4.0) in the shell. Misconception: pupils expect 8 / 2 to be an integer; in Python 3 it is a float 4.0."
         },
         {
           "heading": "DIV and MOD",
-          "bullets": ["31 DIV 7 = 4 (whole sevens in 31).", "31 MOD 7 = 3 (remainder).", "Python: 31 // 7 and 31 % 7."],
+          "bullets": [
+            "31 DIV 7 = 4 (whole sevens in 31).",
+            "31 MOD 7 = 3 (remainder).",
+            "Python: 31 // 7 and 31 % 7."
+          ],
           "note": "Use a 'how many full weeks in 31 days' context. 31 days is 4 full weeks and 3 days left. Mod gives remainder, not a percentage: a common misconception, especially because the symbol % looks like percent. Ensure pupils know DIV and MOD as exam words even though Python writes // and %."
         },
         {
           "heading": "Real uses of MOD",
-          "bullets": ["Even or odd: n % 2 == 0.", "Convert minutes: 135 minutes is 2 h 15 min.", "Clock: (hour + 5) % 24."],
+          "bullets": [
+            "Even or odd: n % 2 == 0.",
+            "Convert minutes: 135 minutes is 2 h 15 min.",
+            "Clock: (hour + 5) % 24."
+          ],
           "note": "Work the minutes example on screen: hours = 135 // 60, minutes = 135 % 60. Use prayer-time style questions: Fajr is at 05:30 and Dhuhr at 13:05, so how many minutes between? 455 minutes, 7 h 35 min. Pupils practise converting."
         },
         {
           "heading": "Order of operations",
-          "bullets": ["Brackets first.", "Then powers.", "Then * / // % left to right.", "Then + -."],
+          "bullets": [
+            "Brackets first.",
+            "Then powers.",
+            "Then * / // % left to right.",
+            "Then + -."
+          ],
           "note": "Use the example 2 + 3 * 4 = 14 and (2 + 3) * 4 = 20. Show that expressions are evaluated by precedence in Python as in maths. Ask pupils to predict before running."
         }
       ],
@@ -136,10 +197,22 @@
         "Write programs using if, elif and else"
       ],
       "keywords": [
-        { "term": "selection", "def": "a program structure that chooses between paths based on a condition" },
-        { "term": "Boolean expression", "def": "a condition that evaluates to True or False" },
-        { "term": "nested", "def": "one structure placed inside another" },
-        { "term": "indentation", "def": "spaces at the start of a line which show which block of code it belongs to" }
+        {
+          "term": "selection",
+          "def": "a program structure that chooses between paths based on a condition"
+        },
+        {
+          "term": "Boolean expression",
+          "def": "a condition that evaluates to True or False"
+        },
+        {
+          "term": "nested",
+          "def": "one structure placed inside another"
+        },
+        {
+          "term": "indentation",
+          "def": "spaces at the start of a line which show which block of code it belongs to"
+        }
       ],
       "starter": [
         "Bismillah. What is 22 % 5?",
@@ -149,22 +222,40 @@
       "teach": [
         {
           "heading": "Comparison operators",
-          "bullets": ["== equal to.", "!= not equal to.", "< > less than, greater than.", "<= >= with equals."],
+          "bullets": [
+            "== equal to.",
+            "!= not equal to.",
+            "< > less than, greater than.",
+            "<= >= with equals."
+          ],
           "note": "Emphasise that = assigns and == compares. This is one of the most common syntax errors. Run quick shell checks: 5 == 5, 5 != 5, 7 >= 7."
         },
         {
           "heading": "if, elif, else",
-          "bullets": ["if checks the first condition.", "elif checks another if the first is False.", "else catches everything left."],
+          "bullets": [
+            "if checks the first condition.",
+            "elif checks another if the first is False.",
+            "else catches everything left."
+          ],
           "note": "Live-code a grade program: score >= 70 'Distinction', score >= 50 'Merit', else 'Pass'. Explain that Python checks from the top and stops at the first True condition. Indentation is part of the syntax: four spaces."
         },
         {
           "heading": "AND, OR, NOT",
-          "bullets": ["and: both must be True.", "or: at least one True.", "not: reverses True and False."],
+          "bullets": [
+            "and: both must be True.",
+            "or: at least one True.",
+            "not: reverses True and False."
+          ],
           "note": "Use a truth table. Example: if age >= 11 and age <= 16: print('Secondary pupil'). Python also allows 11 <= age <= 16, but stay with the 'and' form because it works in other languages and in exam pseudo-code. Link to logic gates which appear later in the course."
         },
         {
           "heading": "Pseudo-code version",
-          "bullets": ["IF score >= 50 THEN", "OUTPUT 'Pass'", "ELSE OUTPUT 'Try again'", "END IF"],
+          "bullets": [
+            "IF score >= 50 THEN",
+            "OUTPUT 'Pass'",
+            "ELSE OUTPUT 'Try again'",
+            "END IF"
+          ],
           "note": "Show pseudo-code and Python side by side. Ask pupils to trace it for scores 49, 50 and 51. Boundary values (49, 50, 51) are the key test cases. Introduce the idea of test data: normal, boundary and erroneous."
         }
       ],
@@ -196,10 +287,22 @@
         "Trace a loop and use it to validate input"
       ],
       "keywords": [
-        { "term": "iteration", "def": "repeating a set of instructions" },
-        { "term": "while loop", "def": "repeats while a condition is True" },
-        { "term": "for loop", "def": "repeats a set number of times" },
-        { "term": "infinite loop", "def": "a loop which never stops because its condition never becomes False" }
+        {
+          "term": "iteration",
+          "def": "repeating a set of instructions"
+        },
+        {
+          "term": "while loop",
+          "def": "repeats while a condition is True"
+        },
+        {
+          "term": "for loop",
+          "def": "repeats a set number of times"
+        },
+        {
+          "term": "infinite loop",
+          "def": "a loop which never stops because its condition never becomes False"
+        }
       ],
       "starter": [
         "Bismillah. Write an if statement that prints 'Adult' when age >= 18.",
@@ -209,22 +312,38 @@
       "teach": [
         {
           "heading": "For loops",
-          "bullets": ["for i in range(5): runs 5 times.", "i takes 0, 1, 2, 3, 4.", "range(1, 6) gives 1 to 5."],
+          "bullets": [
+            "for i in range(5): runs 5 times.",
+            "i takes 0, 1, 2, 3, 4.",
+            "range(1, 6) gives 1 to 5."
+          ],
           "note": "Run for i in range(1, 6): print(i). Ask pupils what range(1, 6) gives: 1 to 5, not 6. Misconception: the end value is included; it is not. Count-controlled iteration is used when the number of repeats is known."
         },
         {
           "heading": "While loops",
-          "bullets": ["while condition: repeats.", "The condition is checked first.", "Change something inside so it can end."],
+          "bullets": [
+            "while condition: repeats.",
+            "The condition is checked first.",
+            "Change something inside so it can end."
+          ],
           "note": "Live-code a password loop or a countdown: count = 3, while count > 0: print(count), count = count - 1. Show the effect of forgetting count = count - 1 (infinite loop, stop with Ctrl+C). Link to Year 5 'repeat until'."
         },
         {
           "heading": "Validating input",
-          "bullets": ["Ask for a number from 1 to 10.", "While the number is outside the range:", "Ask again."],
+          "bullets": [
+            "Ask for a number from 1 to 10.",
+            "While the number is outside the range:",
+            "Ask again."
+          ],
           "note": "Write: n = int(input('1-10? ')), while n < 1 or n > 10: n = int(input('Try again: ')). Introduce validation as checking that input is sensible. Say input validation is not the same as verification (checking it is correct). Use the example of an age field."
         },
         {
           "heading": "Tracing a loop",
-          "bullets": ["total = 0.", "for i in range(1, 4): total = total + i.", "Trace table: i = 1, 2, 3; total = 1, 3, 6."],
+          "bullets": [
+            "total = 0.",
+            "for i in range(1, 4): total = total + i.",
+            "Trace table: i = 1, 2, 3; total = 1, 3, 6."
+          ],
           "note": "Draw the trace table on screen with columns i and total. Pupils fill it with you. Teach that careful tracing is the key skill for finding bugs and is tested in written exams."
         }
       ],
@@ -244,6 +363,1296 @@
       ],
       "homework": "Write a program using a loop to print the first 10 square numbers (1, 4, 9 ... 100). Include a comment explaining each line.",
       "send": "SEND/EAL: provide code skeletons with blanks and a trace table template. Stretch: write a nested loop that prints a 5 by 5 multiplication grid."
+    },
+    {
+      "unit": "Spring 1: Computer systems and architecture",
+      "n": 5,
+      "title": "Hardware and software; input, output and storage",
+      "duration": 50,
+      "bigQuestion": "A smartphone, a washing machine and a car all contain computers. What do they have in common?",
+      "objectives": [
+        "To understand how hardware and software work together in a computer system"
+      ],
+      "successCriteria": [
+        "All: sort examples into hardware and software",
+        "Most: classify devices as input, output or storage",
+        "Some: explain the difference between system software and application software"
+      ],
+      "crossCurricular": "Science: sensors and electrical signals",
+      "smsc": "Moral: e-waste and the amanah of the earth's resources when devices are thrown away",
+      "keywords": [
+        {
+          "term": "hardware",
+          "def": "the physical parts of a computer you can touch"
+        },
+        {
+          "term": "software",
+          "def": "programs and data that run on the hardware"
+        },
+        {
+          "term": "input device",
+          "def": "hardware that sends data into a computer"
+        },
+        {
+          "term": "output device",
+          "def": "hardware that presents results from a computer"
+        },
+        {
+          "term": "storage",
+          "def": "keeping data so it can be used again later"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A smartphone, a washing machine and a car all contain computers. What do they have in common?",
+        "a": "Each has hardware, runs software, takes input, processes it and gives output."
+      },
+      "starter": [
+        {
+          "q": "Python: what does print(7 // 2) output?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "3.5",
+            "1"
+          ]
+        },
+        {
+          "q": "Python: what does print(7 % 2) output?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "What is an algorithm?",
+          "a": "A precise sequence of steps to solve a problem.",
+          "mins": 1
+        },
+        {
+          "q": "Convert 00001010 to denary.",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Hardware and software",
+          "bullets": [
+            "Hardware: physical parts",
+            "Software: programs and data",
+            "Neither is useful alone"
+          ],
+          "note": "A laptop with no software is a box of parts; software needs hardware to run on."
+        },
+        {
+          "heading": "Input, process, output, storage",
+          "bullets": [
+            "Input: keyboard, microphone, sensor",
+            "Process: CPU",
+            "Output: screen, speaker, printer",
+            "Storage: SSD, hard disk"
+          ],
+          "note": "Model of a computer system.",
+          "cycle": [
+            "Input",
+            "Process",
+            "Output",
+            "Storage"
+          ]
+        },
+        {
+          "heading": "Sort the devices",
+          "bullets": [
+            "Some devices do both",
+            "A touchscreen is input and output"
+          ],
+          "note": "Card sort.",
+          "sort": {
+            "columns": [
+              "Input",
+              "Output",
+              "Storage"
+            ],
+            "cards": [
+              "Keyboard",
+              "Webcam",
+              "Monitor",
+              "Speaker",
+              "SSD",
+              "Microphone",
+              "Printer",
+              "USB flash drive"
+            ],
+            "answer": [
+              0,
+              0,
+              1,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "Two kinds of software",
+          "bullets": [
+            "System software runs the computer: operating system, utilities",
+            "Application software does a user's task: word processor, browser"
+          ],
+          "note": "Teams is application software; Windows is system software.",
+          "compare": {
+            "left": {
+              "title": "System software",
+              "points": [
+                "Operating system",
+                "Utilities (antivirus, backup)",
+                "Manages the hardware"
+              ]
+            },
+            "right": {
+              "title": "Application software",
+              "points": [
+                "Word processor",
+                "Web browser",
+                "Teams",
+                "Does a task for the user"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which is application software?",
+            "options": [
+              "Windows 11",
+              "A web browser",
+              "A device driver",
+              "Disk defragmenter"
+            ],
+            "answer": 1,
+            "why": "A browser does a task for the user; the others manage the computer (system software)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is a touchscreen input, output or both? Explain.",
+          "a": "Both: it detects touches (input) and displays images (output).",
+          "mins": 2,
+          "model": "Teacher asks two questions of the device: does data go in? yes, touches. Does data come out? yes, the display. So both."
+        },
+        {
+          "q": "Classify: spreadsheet program, antivirus, operating system.",
+          "a": "Application; system (utility); system.",
+          "mins": 2
+        },
+        {
+          "q": "Name the part of the system that processes data.",
+          "a": "The CPU (processor).",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: For a smart doorbell, list its inputs, process, outputs and storage in the portal response box.",
+          "a": "Inputs: button, camera, microphone; process: chip decides to notify; outputs: chime, phone alert; storage: saved clips.",
+          "mins": 5,
+          "model": "Teacher completes the inputs row aloud."
+        },
+        {
+          "q": "Extend: Explain why a computer needs both hardware and software, using an example.",
+          "a": "Hardware provides the physical means to compute; software gives the instructions. A laptop with no OS cannot run Teams.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A device driver is system software. Explain what it does.",
+          "a": "It lets the operating system communicate with a specific piece of hardware, such as a printer.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A webcam is... A) an output device B) an input device C) storage",
+          "a": "B) an input device",
+          "mins": 1,
+          "options": [
+            "An output device",
+            "An input device",
+            "Storage"
+          ]
+        },
+        {
+          "q": "Big question: what do a smartphone, washing machine and car computer have in common?",
+          "a": "Hardware running software, with input, processing, output and storage.",
+          "mins": 2
+        }
+      ],
+      "homework": "List five devices at home that contain a computer and name one input and one output for each.",
+      "send": "SEND: device picture cards for the sort. EAL: hardware, software, input, output glossary. Stretch: research embedded systems.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (computer systems; no secondary scheme of work supplied)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0), Topic 3 Computers: content previewed at KS3 level",
+        "Device sort cards (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "computer motherboard",
+          "alt": "A computer motherboard",
+          "for": "teach:1"
+        },
+        {
+          "find": "solid state drive SSD",
+          "alt": "A solid state drive",
+          "for": "keywords"
+        },
+        {
+          "find": "smart doorbell",
+          "alt": "A smart doorbell",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Computer systems and architecture",
+      "n": 6,
+      "title": "The CPU and the fetch-decode-execute cycle",
+      "duration": 50,
+      "bigQuestion": "A 3 GHz processor does 3 billion cycles every second. What is it actually doing in each one?",
+      "objectives": [
+        "To understand how the CPU carries out instructions using the fetch-decode-execute cycle"
+      ],
+      "successCriteria": [
+        "All: name the parts of the CPU (control unit, ALU, registers)",
+        "Most: describe the three stages of the cycle in order",
+        "Some: explain how clock speed and the number of cores affect performance"
+      ],
+      "crossCurricular": "Maths: standard form for billions (3 x 10^9)",
+      "smsc": "Spiritual: reflecting on the precision in creation compared with the best human-made machines (al-Mulk 67:3-4)",
+      "keywords": [
+        {
+          "term": "CPU",
+          "def": "central processing unit: carries out instructions"
+        },
+        {
+          "term": "ALU",
+          "def": "arithmetic logic unit: does calculations and logic"
+        },
+        {
+          "term": "control unit",
+          "def": "directs the flow of data and decodes instructions"
+        },
+        {
+          "term": "register",
+          "def": "a tiny, very fast store inside the CPU"
+        },
+        {
+          "term": "clock speed",
+          "def": "how many cycles the CPU does per second, in GHz"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A 3 GHz processor does 3 billion cycles every second. What is it actually doing in each one?",
+        "a": "Fetching, decoding and executing instructions, one small step at a time."
+      },
+      "starter": [
+        {
+          "q": "Python: what is the data type of 3.5?",
+          "a": "float",
+          "mins": 1,
+          "options": [
+            "int",
+            "float",
+            "str"
+          ]
+        },
+        {
+          "q": "Is a printer input or output?",
+          "a": "Output",
+          "mins": 1
+        },
+        {
+          "q": "Name one piece of system software.",
+          "a": "For example: an operating system.",
+          "mins": 1
+        },
+        {
+          "q": "What does the CPU do?",
+          "a": "Processes instructions.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Inside the CPU",
+          "bullets": [
+            "Control unit: directs and decodes",
+            "ALU: calculations and comparisons",
+            "Registers: tiny fast stores"
+          ],
+          "note": "Registers to name: program counter (PC, address of next instruction), memory address register (MAR), memory data register (MDR), accumulator.",
+          "diagram": {
+            "centre": "CPU",
+            "items": [
+              "Control unit",
+              "ALU",
+              "Registers: PC, MAR, MDR, ACC",
+              "Clock",
+              "Cache"
+            ]
+          }
+        },
+        {
+          "heading": "Fetch",
+          "bullets": [
+            "PC holds the next address",
+            "Address copied to MAR",
+            "Instruction fetched from RAM to MDR",
+            "PC increases by 1"
+          ],
+          "note": "Emphasise the PC increasing so the next instruction is ready."
+        },
+        {
+          "heading": "Decode and execute",
+          "bullets": [
+            "Control unit decodes the instruction",
+            "Execute: ALU calculates, or data is moved",
+            "Then fetch again"
+          ],
+          "note": "Repeats billions of times a second.",
+          "cycle": [
+            "Fetch",
+            "Decode",
+            "Execute"
+          ]
+        },
+        {
+          "heading": "Performance",
+          "bullets": [
+            "Clock speed: more cycles per second",
+            "Cores: more instructions at once",
+            "Cache: fast memory close to the CPU"
+          ],
+          "note": "More cores help only if software can split the work.",
+          "table": {
+            "head": [
+              "Factor",
+              "Effect"
+            ],
+            "rows": [
+              [
+                "Clock speed 2 GHz to 4 GHz",
+                "Up to twice as many cycles per second"
+              ],
+              [
+                "2 cores to 4 cores",
+                "More tasks at the same time"
+              ],
+              [
+                "Bigger cache",
+                "Fewer slow trips to RAM"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which register holds the address of the next instruction?",
+            "options": [
+              "MDR",
+              "Program counter",
+              "Accumulator",
+              "ALU"
+            ],
+            "answer": 1,
+            "why": "The PC points to the next instruction; the MDR holds the data fetched; the ALU is not a register."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the fetch stage in two sentences.",
+          "a": "The address in the PC is copied to the MAR and the instruction at that address is fetched from RAM into the MDR. The PC is increased by 1.",
+          "mins": 3,
+          "model": "Teacher writes it in two sentences, naming each register as it is used."
+        },
+        {
+          "q": "Which part of the CPU adds two numbers?",
+          "a": "The ALU.",
+          "mins": 1
+        },
+        {
+          "q": "What does 3.2 GHz mean?",
+          "a": "3.2 billion cycles per second.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Put the 6 cards of the cycle in order and write one sentence for each stage (worksheet).",
+          "a": "PC to MAR; fetch to MDR; PC + 1; decode in CU; execute; repeat.",
+          "mins": 5,
+          "model": "Teacher places card 1 (PC address copied to MAR) and explains it."
+        },
+        {
+          "q": "Extend: Explain why doubling the cores does not always double the speed.",
+          "a": "Some tasks cannot be split into parts that run at the same time, and cores share memory.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why cache makes a CPU faster.",
+          "a": "Cache stores frequently used data close to the CPU, so it waits less for slower RAM.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The stages in order are... A) decode, fetch, execute B) fetch, decode, execute C) execute, fetch, decode",
+          "a": "B) fetch, decode, execute",
+          "mins": 1,
+          "options": [
+            "Decode, fetch, execute",
+            "Fetch, decode, execute",
+            "Execute, fetch, decode"
+          ]
+        },
+        {
+          "q": "Big question: what is the CPU doing in each cycle?",
+          "a": "Fetching an instruction from memory, decoding it and executing it.",
+          "mins": 2
+        }
+      ],
+      "homework": "Look up your home computer or phone's processor: clock speed and number of cores. Write what each tells you.",
+      "send": "SEND: cycle cards with pictures. EAL: fetch, decode, execute glossary. Stretch: research von Neumann architecture.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (computer systems; no secondary scheme of work supplied)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0), Topic 3 Computers: content previewed at KS3 level",
+        "Fetch-decode-execute card sort (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "CPU processor chip",
+          "alt": "A CPU chip",
+          "for": "teach:1"
+        },
+        {
+          "find": "CPU die shot",
+          "alt": "The inside of a processor chip under magnification",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Computer systems and architecture",
+      "n": 7,
+      "title": "Memory and storage: RAM, ROM and secondary storage",
+      "duration": 50,
+      "bigQuestion": "When the power cuts out, your unsaved essay is lost but your saved files are not. Why?",
+      "objectives": [
+        "To understand the different roles of RAM, ROM and secondary storage"
+      ],
+      "successCriteria": [
+        "All: state that RAM is volatile and ROM is non-volatile",
+        "Most: compare magnetic, solid state and optical storage",
+        "Some: choose suitable storage for a scenario and justify it"
+      ],
+      "crossCurricular": "Science: magnetism (hard disks) and light (optical discs)",
+      "smsc": "Moral: backing up and keeping others' data safe as a trust",
+      "keywords": [
+        {
+          "term": "RAM",
+          "def": "random access memory: holds programs and data in use; volatile"
+        },
+        {
+          "term": "ROM",
+          "def": "read-only memory: holds the start-up instructions; non-volatile"
+        },
+        {
+          "term": "volatile",
+          "def": "loses its contents when the power is off"
+        },
+        {
+          "term": "secondary storage",
+          "def": "keeps data permanently, such as an SSD or hard disk"
+        },
+        {
+          "term": "capacity",
+          "def": "how much data a device can store"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When the power cuts out, your unsaved essay is lost but your saved files are not. Why?",
+        "a": "Unsaved work is in RAM, which is volatile; saved files are on secondary storage, which is not."
+      },
+      "starter": [
+        {
+          "q": "Python: what does len('Salaam') return?",
+          "a": "6",
+          "mins": 1,
+          "options": [
+            "5",
+            "6",
+            "7"
+          ]
+        },
+        {
+          "q": "What are the three stages of the CPU cycle?",
+          "a": "Fetch, decode, execute",
+          "mins": 1
+        },
+        {
+          "q": "Which register holds the address of the next instruction?",
+          "a": "The program counter",
+          "mins": 1
+        },
+        {
+          "q": "What does the ALU do?",
+          "a": "Calculations and logic comparisons.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Main memory",
+          "bullets": [
+            "RAM: programs and data in use",
+            "ROM: start-up (boot) instructions",
+            "The CPU reads from both"
+          ],
+          "note": "More RAM lets more programs run at once.",
+          "compare": {
+            "left": {
+              "title": "RAM",
+              "points": [
+                "Volatile",
+                "Read and write",
+                "Holds what is running now",
+                "Gigabytes"
+              ]
+            },
+            "right": {
+              "title": "ROM",
+              "points": [
+                "Non-volatile",
+                "Read only",
+                "Holds boot instructions",
+                "Small"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Why secondary storage?",
+          "bullets": [
+            "RAM is volatile",
+            "We need to keep files and programs",
+            "Secondary storage is non-volatile"
+          ],
+          "note": "Save to OneDrive (school Microsoft 365) as well as the device."
+        },
+        {
+          "heading": "Types of secondary storage",
+          "bullets": [
+            "Magnetic: hard disk drive",
+            "Solid state: SSD, USB stick, SD card",
+            "Optical: CD, DVD, Blu-ray"
+          ],
+          "note": "Compare.",
+          "table": {
+            "head": [
+              "Type",
+              "Speed",
+              "Durability",
+              "Typical use"
+            ],
+            "rows": [
+              [
+                "Magnetic (HDD)",
+                "Medium",
+                "Moving parts can fail",
+                "Large cheap storage"
+              ],
+              [
+                "Solid state (SSD)",
+                "Fast",
+                "No moving parts",
+                "Laptops, phones"
+              ],
+              [
+                "Optical (DVD)",
+                "Slow",
+                "Scratches",
+                "Distribution, archive"
+              ],
+              [
+                "Cloud (OneDrive)",
+                "Depends on internet",
+                "Backed up by provider",
+                "Sharing, backup"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which memory loses its contents when the power is off?",
+            "options": [
+              "ROM",
+              "SSD",
+              "RAM",
+              "DVD"
+            ],
+            "answer": 2,
+            "why": "RAM is volatile; ROM, SSD and DVD keep their data."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why is the boot program stored in ROM, not RAM?",
+          "a": "ROM is non-volatile, so the start-up instructions are there when the power comes on.",
+          "mins": 2,
+          "model": "Teacher reasons: when the computer starts, RAM is empty because it is volatile; the CPU needs instructions at once, so they must be in non-volatile ROM."
+        },
+        {
+          "q": "Which storage for a phone: HDD or SSD? Why?",
+          "a": "SSD: small, fast, no moving parts so it survives drops.",
+          "mins": 2
+        },
+        {
+          "q": "Give one advantage of cloud storage.",
+          "a": "Access from any device; backed up off-site.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Choose storage for: a photographer's 4 TB archive; a pupil carrying homework; a school laptop. Justify each in the portal response box.",
+          "a": "HDD (cheap per GB, large); USB flash drive or OneDrive (portable); SSD (fast, robust).",
+          "mins": 6,
+          "model": "Teacher justifies the photographer: large capacity needed, cost matters more than speed, so HDD."
+        },
+        {
+          "q": "Extend: Explain why adding RAM can make a computer faster.",
+          "a": "More programs and data fit in RAM, so less is swapped to slower secondary storage (virtual memory).",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Compare SSD and HDD on speed, durability, capacity and cost.",
+          "a": "SSD faster and more durable; HDD larger and cheaper per gigabyte.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "ROM is... A) volatile B) non-volatile",
+          "a": "B) non-volatile",
+          "mins": 1,
+          "options": [
+            "Volatile",
+            "Non-volatile"
+          ]
+        },
+        {
+          "q": "Big question: why is unsaved work lost in a power cut?",
+          "a": "It is held in RAM, which is volatile.",
+          "mins": 2
+        }
+      ],
+      "homework": "Check the storage on a family device: its type (if shown), capacity and how much is free. Back up one important file to OneDrive.",
+      "send": "SEND: RAM/ROM comparison table half-filled. EAL: volatile, capacity glossary. Stretch: research virtual memory.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (computer systems; no secondary scheme of work supplied)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0), Topic 3 Computers: content previewed at KS3 level",
+        "Storage scenarios worksheet (pupil PDF)",
+        "OneDrive in the school Microsoft 365 account"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "RAM memory module DDR4",
+          "alt": "A RAM module",
+          "for": "teach:1"
+        },
+        {
+          "find": "hard disk drive internals platter",
+          "alt": "Inside a hard disk drive",
+          "for": "teach:3"
+        },
+        {
+          "find": "optical disc DVD",
+          "alt": "An optical disc",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Computer systems and architecture",
+      "n": 8,
+      "title": "Binary, data units and logic gates",
+      "duration": 50,
+      "bigQuestion": "A film is 4 GB and a text message about 100 bytes. Roughly how many messages fit in the space of one film?",
+      "objectives": [
+        "To understand how data is measured in units and processed by logic gates"
+      ],
+      "successCriteria": [
+        "All: order data units from bit to terabyte",
+        "Most: convert between units and between binary and denary",
+        "Some: complete a truth table for a two-gate circuit"
+      ],
+      "crossCurricular": "Maths: powers of 10 and 2, standard form",
+      "smsc": "Social: digital storage lets knowledge (including the Qur'an and hadith collections) be shared worldwide",
+      "keywords": [
+        {
+          "term": "bit",
+          "def": "a single 0 or 1"
+        },
+        {
+          "term": "byte",
+          "def": "8 bits"
+        },
+        {
+          "term": "kilobyte",
+          "def": "1000 bytes (KB); 1024 bytes in the binary convention (KiB)"
+        },
+        {
+          "term": "logic gate",
+          "def": "a component that applies AND, OR or NOT to binary inputs"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A film is 4 GB and a text message about 100 bytes. Roughly how many messages fit in the space of one film?",
+        "a": "4 GB is 4 000 000 000 bytes, so about 40 million messages."
+      },
+      "starter": [
+        {
+          "q": "Python: what does print(2 ** 3) output?",
+          "a": "8",
+          "mins": 1,
+          "options": [
+            "6",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "q": "Which memory is volatile?",
+          "a": "RAM",
+          "mins": 1
+        },
+        {
+          "q": "Name one type of secondary storage.",
+          "a": "HDD, SSD, USB stick, DVD.",
+          "mins": 1
+        },
+        {
+          "q": "AND gate, inputs 1 and 0. Output?",
+          "a": "0",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Data units",
+          "bullets": [
+            "8 bits = 1 byte",
+            "1000 bytes = 1 KB",
+            "1000 KB = 1 MB; 1000 MB = 1 GB; 1000 GB = 1 TB"
+          ],
+          "note": "Binary prefixes use 1024: 1 KiB = 1024 bytes, 1 MiB = 1024 KiB. Pearson's computer science specifications use the binary prefixes; teach both and use 1024 for exam questions (TO CONFIRM against the 4CP0 specification).",
+          "table": {
+            "head": [
+              "Unit",
+              "Size"
+            ],
+            "rows": [
+              [
+                "Bit",
+                "0 or 1"
+              ],
+              [
+                "Nibble",
+                "4 bits"
+              ],
+              [
+                "Byte",
+                "8 bits"
+              ],
+              [
+                "Kilobyte (KB)",
+                "1000 bytes"
+              ],
+              [
+                "Megabyte (MB)",
+                "1000 KB"
+              ],
+              [
+                "Gigabyte (GB)",
+                "1000 MB"
+              ],
+              [
+                "Terabyte (TB)",
+                "1000 GB"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Converting units",
+          "bullets": [
+            "Bigger unit to smaller: multiply",
+            "Smaller to bigger: divide",
+            "Bits to bytes: divide by 8"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "How many 5 MB photos fit on a 2 GB card?",
+            "steps": [
+              "2 GB = 2 x 1000 MB = 2000 MB",
+              "2000 / 5 = 400",
+              "Answer: 400 photos"
+            ],
+            "answer": "400"
+          }
+        },
+        {
+          "heading": "Binary refresher",
+          "bullets": [
+            "Place values 128 to 1",
+            "Add where there is a 1",
+            "Biggest 8-bit value: 255"
+          ],
+          "note": "Quick: 10010001 = 128 + 16 + 1 = 145."
+        },
+        {
+          "heading": "Gates together",
+          "bullets": [
+            "AND: both 1",
+            "OR: at least one 1",
+            "NOT: flips"
+          ],
+          "note": "Q = (A OR B) AND NOT C.",
+          "table": {
+            "head": [
+              "A",
+              "B",
+              "C",
+              "A OR B",
+              "NOT C",
+              "Q"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "0",
+                "0",
+                "1",
+                "1",
+                "1"
+              ],
+              [
+                "0",
+                "1",
+                "1",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "1",
+                "1",
+                "0",
+                "1",
+                "1",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "How many bits are in 3 bytes?",
+            "options": [
+              "3",
+              "11",
+              "24",
+              "38"
+            ],
+            "answer": 2,
+            "why": "3 x 8 = 24."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many 4 MB audio lectures fit on a 1 GB drive?",
+          "a": "1000 / 4 = 250",
+          "mins": 2,
+          "model": "Teacher converts 1 GB to 1000 MB first, then divides by 4."
+        },
+        {
+          "q": "Convert 10100000 to denary.",
+          "a": "128 + 32 = 160",
+          "mins": 1
+        },
+        {
+          "q": "Convert 2 500 KB to MB.",
+          "a": "2.5 MB",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the unit conversions and binary questions on the worksheet (8 questions).",
+          "a": "Answers on the teacher key.",
+          "mins": 6,
+          "model": "Teacher completes question 1: 3 GB to MB = 3000 MB."
+        },
+        {
+          "q": "Extend: Complete the 8-row truth table for Q = (A OR B) AND NOT C.",
+          "a": "Q = 1 for rows 010, 100, 110; 0 otherwise.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A 1920 x 1080 image uses 3 bytes per pixel. Estimate its size in MB.",
+          "a": "1920 x 1080 x 3 = 6 220 800 bytes, about 6.2 MB.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is the largest? A) 2000 MB B) 1.5 GB C) 1 TB",
+          "a": "C) 1 TB",
+          "mins": 1,
+          "options": [
+            "2000 MB",
+            "1.5 GB",
+            "1 TB"
+          ]
+        },
+        {
+          "q": "Big question: roughly how many 100-byte messages fit in a 4 GB film's space?",
+          "a": "About 40 million.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find the size of three files on a device (a document, a photo, a video) and order them in bytes.",
+      "send": "SEND: unit ladder with arrows (x 1000, / 1000). EAL: unit names spoken. Stretch: use 1024 and compare answers.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (computer systems; no secondary scheme of work supplied)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0), Topic 3 Computers: content previewed at KS3 level",
+        "Data units and logic worksheet (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "USB flash drive",
+          "alt": "A USB flash drive",
+          "for": "keywords"
+        },
+        {
+          "find": "SD memory card",
+          "alt": "A memory card",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Computer systems and architecture",
+      "n": 9,
+      "title": "Operating systems and utility software",
+      "duration": 50,
+      "bigQuestion": "You have Teams, a browser and a document open at once, but only one processor. How does it cope?",
+      "objectives": [
+        "To understand the functions of an operating system and why utility software is needed"
+      ],
+      "successCriteria": [
+        "All: name three jobs of an operating system",
+        "Most: explain what antivirus, backup and compression utilities do",
+        "Some: explain how the operating system manages memory and multitasking"
+      ],
+      "crossCurricular": "PSHE: protecting devices and data from viruses and scams",
+      "smsc": "Moral: responsibility for protecting shared systems (the school network) from harm",
+      "keywords": [
+        {
+          "term": "operating system",
+          "def": "system software that manages hardware and runs programs"
+        },
+        {
+          "term": "user interface",
+          "def": "how a user interacts with the computer, such as a GUI"
+        },
+        {
+          "term": "utility software",
+          "def": "programs that maintain and protect the computer"
+        },
+        {
+          "term": "multitasking",
+          "def": "running more than one program at a time"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have Teams, a browser and a document open at once, but only one processor. How does it cope?",
+        "a": "The operating system shares the CPU and memory between programs very quickly (multitasking)."
+      },
+      "starter": [
+        {
+          "q": "Python: what does 'TGA'.lower() return?",
+          "a": "'tga'",
+          "mins": 1,
+          "options": [
+            "'TGA'",
+            "'tga'",
+            "'Tga'"
+          ]
+        },
+        {
+          "q": "How many MB in 3 GB?",
+          "a": "3000",
+          "mins": 1
+        },
+        {
+          "q": "Is an operating system system or application software?",
+          "a": "System software",
+          "mins": 1
+        },
+        {
+          "q": "Why is the boot program in ROM?",
+          "a": "ROM is non-volatile.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Jobs of an operating system",
+          "bullets": [
+            "Manages memory and the CPU",
+            "Manages files and folders",
+            "Controls devices (drivers)",
+            "Provides the user interface",
+            "Handles users and security"
+          ],
+          "note": "Examples: Windows, macOS, Android, iOS, Linux.",
+          "diagram": {
+            "centre": "Operating system",
+            "items": [
+              "Memory management",
+              "Multitasking",
+              "File management",
+              "Peripherals and drivers",
+              "User interface",
+              "User accounts and security"
+            ]
+          }
+        },
+        {
+          "heading": "Multitasking and memory",
+          "bullets": [
+            "Programs take turns on the CPU",
+            "Each gets memory space",
+            "Virtual memory when RAM is full"
+          ],
+          "note": "Turns are so quick it feels simultaneous."
+        },
+        {
+          "heading": "Utility software",
+          "bullets": [
+            "Antivirus: finds and removes malware",
+            "Backup: copies files to keep them safe",
+            "Compression: makes files smaller",
+            "Disk defragmentation (HDD only)"
+          ],
+          "note": "Defragmentation is not needed for SSDs.",
+          "table": {
+            "head": [
+              "Utility",
+              "What it does",
+              "Why"
+            ],
+            "rows": [
+              [
+                "Antivirus",
+                "Scans and removes malware",
+                "Protects data"
+              ],
+              [
+                "Backup",
+                "Copies files elsewhere",
+                "Recovers from loss"
+              ],
+              [
+                "Compression",
+                "Reduces file size",
+                "Faster sending, less space"
+              ],
+              [
+                "Defragmenter",
+                "Rearranges file parts on an HDD",
+                "Faster access"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which utility makes a file smaller to email it?",
+            "options": [
+              "Antivirus",
+              "Compression",
+              "Backup",
+              "Defragmenter"
+            ],
+            "answer": 1,
+            "why": "Compression reduces file size; the others protect or organise files."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Name three functions of an operating system.",
+          "a": "For example: memory management, file management, user interface.",
+          "mins": 2,
+          "model": "Teacher links each function to something pupils did today: logging in (security), opening Teams (memory and CPU), saving (file management)."
+        },
+        {
+          "q": "Why might a school run backups every night?",
+          "a": "So work can be recovered if a device fails or files are deleted.",
+          "mins": 2
+        },
+        {
+          "q": "Why is defragmentation not used on SSDs?",
+          "a": "SSDs have no moving parts, so access is fast anyway, and it wears the drive.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Explain how an operating system lets you use Teams, a browser and a document at once, in the portal response box. Start: 'The operating system...'",
+          "a": "The operating system shares CPU time between the programs in quick turns and gives each its own memory space; if RAM fills, it uses virtual memory.",
+          "mins": 6,
+          "model": "Teacher writes the first sentence: 'The operating system gives each program a turn on the CPU...'"
+        },
+        {
+          "q": "Extend: Compare a GUI and a command-line interface: one advantage of each.",
+          "a": "GUI: easy for beginners; command line: fast and powerful for experts, uses fewer resources.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why antivirus software must be updated regularly.",
+          "a": "New malware appears all the time; updates add new signatures so it can be recognised.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is NOT a job of an operating system? A) memory management B) writing essays C) file management",
+          "a": "B) writing essays",
+          "mins": 1,
+          "options": [
+            "Memory management",
+            "Writing essays",
+            "File management"
+          ]
+        },
+        {
+          "q": "Big question: how does one processor run three programs at once?",
+          "a": "The OS shares CPU time between them in very quick turns (multitasking).",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise the unit (hardware, CPU, memory, data units, OS) for the portal quiz after half term, using the knowledge organiser in the portal.",
+      "send": "SEND: OS function cards with icons. EAL: manage, utility, multitask glossary. Stretch: research how a phone's OS manages battery.",
+      "resources": [
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (computer systems; no secondary scheme of work supplied)",
+        "Pearson Edexcel International GCSE Computer Science (4CP0), Topic 3 Computers: content previewed at KS3 level",
+        "Computer systems knowledge organiser (portal, made with this unit)",
+        "OS and utilities worksheet (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "computer file folders icons",
+          "alt": "File folders on a computer",
+          "for": "teach:1"
+        },
+        {
+          "find": "server room racks",
+          "alt": "Servers in a data centre",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
