@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y6",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 6: number and place value to 10,000,000, negative numbers, written methods for the four operations, order of operations, common factors, multiples and primes); Drive Maths folder checked (national curriculum documents only for KS2), lessons written from the National Curriculum; Spring 1 founding year: White Rose Maths Year 6 small-step titles (bridge from Autumn blocks 1-2, then Fractions A and B and Converting units), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24",
+  "source": "National Curriculum (KS2 Year 6: number and place value to 10,000,000, negative numbers, written methods for the four operations, order of operations, common factors, multiples and primes); Drive Maths folder checked (national curriculum documents only for KS2), lessons written from the National Curriculum; Spring 1 founding year: White Rose Maths Year 6 small-step titles (bridge from Autumn blocks 1-2, then Fractions A and B and Converting units), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 6 Spring blocks 1 Ratio, 2 Algebra, 3 Decimals and 4 Fractions, decimals and percentages (small-step titles only)",
   "lessons": [
     {
       "unit": "Spring 1: Place value and the operations bridge; fractions; converting units",
@@ -5557,6 +5557,5349 @@
         "Food packets showing g, kg, ml and l",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 6 maths lesson 29 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 30,
+      "title": "Ratio language and the ratio symbol",
+      "duration": 45,
+      "bigQuestion": "What does 'for every 2 red there are 3 blue' tell us?",
+      "objectives": [
+        "To understand how to describe relationships using ratio language and the ratio symbol"
+      ],
+      "successCriteria": [
+        "All: describe a set with 'for every ... there are ...'",
+        "Most: write a ratio with the : symbol",
+        "Some: explain why 2 : 3 is not the same as 3 : 2"
+      ],
+      "crossCurricular": "Cooking: 1 cup of rice for every 2 cups of water",
+      "smsc": "Moral: fairness ('adl) in sharing",
+      "keywords": [
+        {
+          "term": "ratio",
+          "def": "compares one part with another part"
+        },
+        {
+          "term": "for every",
+          "def": "the language of ratio"
+        },
+        {
+          "term": ":",
+          "def": "the ratio symbol, said 'to'"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Rice: 1 cup of rice for every 2 cups of water. For 3 cups of rice, how much water?",
+        "a": "6 cups: the ratio stays 1 : 2."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "rice in a measuring cup",
+          "alt": "Rice in a measuring cup",
+          "for": "hook"
+        },
+        {
+          "find": "red and blue counters",
+          "alt": "Red and blue counters in a row",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "45% as a decimal?",
+          "a": "0.45",
+          "mins": 1
+        },
+        {
+          "q": "3/4 of 48?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 12/18.",
+          "a": "2/3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "For every",
+          "bullets": [
+            "Red, red, blue, blue, blue...",
+            "For every 2 red there are 3 blue."
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 2,
+              "label": "2 red : 3 blue"
+            },
+            {
+              "parts": 5,
+              "shaded": 2,
+              "label": "2 red : 3 blue"
+            }
+          ],
+          "note": "Show counters in repeating groups."
+        },
+        {
+          "heading": "The symbol",
+          "bullets": [
+            "red : blue = 2 : 3",
+            "Say '2 to 3'.",
+            "Order matters: blue : red = 3 : 2."
+          ],
+          "misconception": {
+            "wrong": "2 : 3 is the same as 3 : 2",
+            "right": "The order matches the words: red : blue = 2 : 3, blue : red = 3 : 2"
+          },
+          "note": "Ask: write blue : red for 4 blue, 1 red (4 : 1)."
+        },
+        {
+          "heading": "Ratio grows",
+          "bullets": [
+            "2 groups: 4 red, 6 blue.",
+            "Still 2 : 3."
+          ],
+          "table": {
+            "head": [
+              "Groups",
+              "Red",
+              "Blue"
+            ],
+            "rows": [
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              [
+                "2",
+                "4",
+                "6"
+              ],
+              [
+                "3",
+                "6",
+                "9"
+              ],
+              [
+                "5",
+                "10",
+                "15"
+              ]
+            ]
+          },
+          "note": "Ask: 5 groups? (10 red, 15 blue)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "For every 3 apples there are 5 oranges. apples : oranges =",
+            "options": [
+              "5 : 3",
+              "3 : 5",
+              "3 : 8"
+            ],
+            "answer": 1,
+            "why": "Apples first: 3 : 5. 3 : 8 compares apples with the total."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "For every 1 dog there are 4 cats. dogs : cats?",
+          "a": "1 : 4",
+          "mins": 2,
+          "model": "Teacher: dogs first, so 1 : 4."
+        },
+        {
+          "q": "Write squares : circles for 6 squares and 7 circles.",
+          "a": "6 : 7",
+          "mins": 2
+        },
+        {
+          "q": "1 : 2 rice to water. 4 cups of rice. Water?",
+          "a": "8 cups",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write the ratio for 5 red and 2 green beads (red : green and green : red).",
+          "a": "5 : 2 and 2 : 5",
+          "mins": 4,
+          "model": "Teacher: red first: 5 : 2."
+        },
+        {
+          "q": "Extend: Extend: for every 2 boys there are 3 girls. 12 boys. How many girls?",
+          "a": "18",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a pattern is 3 black : 1 white. 20 tiles in all. How many black?",
+          "a": "15",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "For every 4 pens there are 3 pencils. pens : pencils?",
+          "a": "4 : 3",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what does 'for every 2 red there are 3 blue' tell us?",
+          "a": "In each group of 5, 2 are red and 3 are blue: red : blue = 2 : 3",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 ratios at home (spoons to forks, plates to bowls) and write them with :",
+      "send": "SEND: counters in two colours and a bar model, worked example kept on screen, fewer items. EAL: key word cards (ratio, for every, scale factor); stem 'For every ..., there are ...'. Stretch: write a ratio of three things: red : blue : green.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 1: Ratio: small step 'Use ratio language and Introduction to the ratio symbol' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Counters in two colours (or two kinds of pasta)",
+        "Squared paper and a ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 30 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 31,
+      "title": "Ratio and fractions",
+      "duration": 45,
+      "bigQuestion": "If red : blue = 2 : 3, what fraction is red?",
+      "objectives": [
+        "To understand the link between ratios and fractions"
+      ],
+      "successCriteria": [
+        "All: write a fraction from a ratio",
+        "Most: explain why 2 : 3 gives 2/5, not 2/3",
+        "Some: use fractions to answer ratio questions"
+      ],
+      "crossCurricular": "Science: mixing a solution in a ratio",
+      "smsc": "Social: sharing jobs in a ratio fairly",
+      "keywords": [
+        {
+          "term": "ratio",
+          "def": "part to part"
+        },
+        {
+          "term": "fraction",
+          "def": "part of the whole"
+        },
+        {
+          "term": "total",
+          "def": "all the parts together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "2 red beads for every 3 blue. Is red 2/3 of the beads?",
+        "a": "No: there are 5 in each group, so red is 2/5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "red and blue beads",
+          "alt": "Red and blue beads",
+          "for": "hook"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "For every 2 red there are 3 blue. red : blue?",
+          "a": "2 : 3",
+          "mins": 1
+        },
+        {
+          "q": "2/5 of 20?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 6 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 10/15.",
+          "a": "2/3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Part and whole",
+          "bullets": [
+            "red : blue = 2 : 3",
+            "Parts in each group: 5.",
+            "Red = 2/5, blue = 3/5"
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 2,
+              "label": "red 2/5"
+            },
+            {
+              "parts": 5,
+              "shaded": 3,
+              "label": "blue 3/5"
+            }
+          ],
+          "note": "Bar model with 5 boxes."
+        },
+        {
+          "heading": "Ratio vs fraction",
+          "compare": {
+            "left": {
+              "title": "Ratio",
+              "points": [
+                "Part : part",
+                "red : blue = 2 : 3"
+              ]
+            },
+            "right": {
+              "title": "Fraction",
+              "points": [
+                "Part out of the whole",
+                "red = 2/5 of all"
+              ]
+            }
+          },
+          "note": "Point to the difference."
+        },
+        {
+          "heading": "Use it",
+          "model": {
+            "problem": "40 beads, red : blue = 2 : 3. How many red?",
+            "steps": [
+              "Total parts: 2 + 3 = 5",
+              "One part: 40 ÷ 5 = 8",
+              "Red: 2 × 8 = 16"
+            ],
+            "answer": "16 red"
+          },
+          "note": "Check: blue 24, total 40."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "cats : dogs = 1 : 3. What fraction are cats?",
+            "options": [
+              "1/3",
+              "1/4",
+              "3/4"
+            ],
+            "answer": 1,
+            "why": "1 + 3 = 4 parts: cats are 1/4. 1/3 is the ratio, not the fraction."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "boys : girls = 3 : 4. Fraction that are boys?",
+          "a": "3/7",
+          "mins": 2,
+          "model": "Teacher: 3 + 4 = 7 parts in all; boys are 3 of them: 3/7."
+        },
+        {
+          "q": "Fraction that are girls?",
+          "a": "4/7",
+          "mins": 2
+        },
+        {
+          "q": "1/5 of the fruit is apples, the rest pears. apples : pears?",
+          "a": "1 : 4",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: red : green = 5 : 3. Fraction red? Fraction green?",
+          "a": "5/8; 3/8",
+          "mins": 4,
+          "model": "Teacher: 5 + 3 = 8 parts."
+        },
+        {
+          "q": "Extend: Extend: 35 counters, blue : yellow = 4 : 3. How many blue?",
+          "a": "20",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 3/10 of a class walk; the rest come by car. walkers : car?",
+          "a": "3 : 7",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2 : 5. Fraction for the first part?",
+          "a": "2/7",
+          "mins": 2
+        },
+        {
+          "q": "Big question: if red : blue = 2 : 3, what fraction is red?",
+          "a": "2/5: red is 2 of every 5 parts",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 4 ratios and the matching fractions of the whole.",
+      "send": "SEND: counters in two colours and a bar model, worked example kept on screen, fewer items. EAL: key word cards (ratio, for every, scale factor); stem 'For every ..., there are ...'. Stretch: a ratio of 2 : 3 : 5. What fraction is each part?",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 1: Ratio: small step 'Ratio and fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Counters in two colours (or two kinds of pasta)",
+        "Squared paper and a ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 31 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 32,
+      "title": "Scale drawing",
+      "duration": 45,
+      "bigQuestion": "How can a map show a whole country on one page?",
+      "objectives": [
+        "To understand how scale drawings use a ratio between drawing and real life"
+      ],
+      "successCriteria": [
+        "All: use a scale like 1 cm to 2 m",
+        "Most: find a real length from a drawing",
+        "Some: draw a simple scale drawing"
+      ],
+      "crossCurricular": "Geography: map scales",
+      "smsc": "Spiritual: maps of the Haramain and the vastness of Allah's creation",
+      "keywords": [
+        {
+          "term": "scale",
+          "def": "how a drawing length links to the real length"
+        },
+        {
+          "term": "scale drawing",
+          "def": "an accurate drawing, bigger or smaller"
+        },
+        {
+          "term": "real length",
+          "def": "the actual size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "On a map, 1 cm stands for 1 km. Two towns are 7 cm apart. How far apart are they really?",
+        "a": "7 km."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "floor plan of a room",
+          "alt": "A floor plan with a scale",
+          "for": "teach:1"
+        },
+        {
+          "find": "map with scale bar",
+          "alt": "A map with a scale bar",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2 : 5. Fraction first part?",
+          "a": "2/7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 25 = ?",
+          "a": "200",
+          "mins": 1
+        },
+        {
+          "q": "3.5 × 2 = ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "100 cm = ? m",
+          "a": "1",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read the scale",
+          "bullets": [
+            "1 cm : 2 m",
+            "Every 1 cm on paper is 2 m in real life."
+          ],
+          "table": {
+            "head": [
+              "Drawing",
+              "Real"
+            ],
+            "rows": [
+              [
+                "1 cm",
+                "2 m"
+              ],
+              [
+                "3 cm",
+                "6 m"
+              ],
+              [
+                "4.5 cm",
+                "9 m"
+              ],
+              [
+                "10 cm",
+                "20 m"
+              ]
+            ]
+          },
+          "note": "Look at the plan."
+        },
+        {
+          "heading": "Real to drawing",
+          "bullets": [
+            "A room is 8 m long.",
+            "8 ÷ 2 = 4 cm on paper."
+          ],
+          "note": "Ask: 5 m? (2.5 cm)."
+        },
+        {
+          "heading": "Draw it",
+          "bullets": [
+            "A 12 m by 6 m garden.",
+            "Scale 1 cm : 3 m.",
+            "Draw 4 cm by 2 cm."
+          ],
+          "note": "Model on squared paper."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Scale 1 cm : 5 m. A wall is 3 cm on the plan. Real length?",
+            "options": [
+              "8 m",
+              "15 m",
+              "3 m"
+            ],
+            "answer": 1,
+            "why": "3 × 5 = 15 m."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Scale 1 cm : 4 m. 6 cm on the plan?",
+          "a": "24 m",
+          "mins": 2,
+          "model": "Teacher: each cm is 4 m, so 6 × 4 = 24 m."
+        },
+        {
+          "q": "Scale 1 cm : 10 km. 35 km in real life?",
+          "a": "3.5 cm",
+          "mins": 2
+        },
+        {
+          "q": "Scale 1 cm : 2 m. 7.5 cm?",
+          "a": "15 m",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: draw a 10 m by 6 m room at 1 cm : 2 m.",
+          "a": "A 5 cm by 3 cm rectangle",
+          "mins": 4,
+          "model": "Teacher: 10 ÷ 2 = 5 cm and 6 ÷ 2 = 3 cm."
+        },
+        {
+          "q": "Extend: Extend: on a map 1 cm : 25 km. Two cities are 8 cm apart. Real distance?",
+          "a": "200 km",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a plan is 4 cm by 3 cm for a 20 m by 15 m hall. What is the scale?",
+          "a": "1 cm : 5 m",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Scale 1 cm : 3 m. 4 cm?",
+          "a": "12 m",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can a map show a country on one page?",
+          "a": "Every length is shrunk by the same scale, like 1 cm to 10 km",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a plan of your room using 1 cm : 50 cm.",
+      "send": "SEND: counters in two colours and a bar model, worked example kept on screen, fewer items. EAL: key word cards (ratio, for every, scale factor); stem 'For every ..., there are ...'. Stretch: draw your table at 1 : 20 and check by measuring.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 1: Ratio: small step 'Scale drawing' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Counters in two colours (or two kinds of pasta)",
+        "Squared paper and a ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 32 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 33,
+      "title": "Scale factors and similar shapes",
+      "duration": 45,
+      "bigQuestion": "What changes, and what stays the same, when we enlarge a shape?",
+      "objectives": [
+        "To understand how scale factors enlarge shapes to make similar shapes"
+      ],
+      "successCriteria": [
+        "All: enlarge a shape by a scale factor on squared paper",
+        "Most: find a scale factor from two similar shapes",
+        "Some: explain that angles stay the same"
+      ],
+      "crossCurricular": "Art: enlarging a design for a tile",
+      "smsc": "Spiritual: Islamic patterns repeat the same shape at different sizes",
+      "keywords": [
+        {
+          "term": "scale factor",
+          "def": "how many times bigger"
+        },
+        {
+          "term": "enlarge",
+          "def": "make bigger by a scale factor"
+        },
+        {
+          "term": "similar",
+          "def": "same shape, different size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A triangle has sides 3, 4 and 5 cm. You make one with sides 6, 8 and 10 cm. What is the scale factor?",
+        "a": "2: every side doubled."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "islamic geometric tile pattern",
+          "alt": "Islamic tiles at different sizes",
+          "for": "hook"
+        },
+        {
+          "find": "rectangle on squared paper",
+          "alt": "Shapes on squared paper",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Scale 1 cm : 3 m. 4 cm?",
+          "a": "12 m",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 4 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "TT: 36 ÷ 4 = ?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "Double 3.5?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Enlarge",
+          "bullets": [
+            "A 3 by 2 rectangle.",
+            "Scale factor 2: 6 by 4.",
+            "Every length × 2."
+          ],
+          "table": {
+            "head": [
+              "Shape",
+              "Length",
+              "Width"
+            ],
+            "rows": [
+              [
+                "Original",
+                "3 cm",
+                "2 cm"
+              ],
+              [
+                "× 2",
+                "6 cm",
+                "4 cm"
+              ],
+              [
+                "× 3",
+                "9 cm",
+                "6 cm"
+              ]
+            ]
+          },
+          "note": "Draw both."
+        },
+        {
+          "heading": "Find the factor",
+          "bullets": [
+            "Original side 4; new side 12.",
+            "12 ÷ 4 = 3",
+            "Scale factor 3."
+          ],
+          "misconception": {
+            "wrong": "A 3 by 2 rectangle enlarged by 2 is 5 by 4 (add 2)",
+            "right": "Multiply, do not add: 6 by 4"
+          },
+          "note": "Check every side."
+        },
+        {
+          "heading": "Similar shapes",
+          "bullets": [
+            "Same angles.",
+            "Sides in the same ratio.",
+            "Different size."
+          ],
+          "note": "Ask: is a 4 by 3 rectangle similar to 8 by 5? (no)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A 5 cm by 2 cm rectangle, scale factor 3. New size?",
+            "options": [
+              "8 by 5",
+              "15 by 6",
+              "15 by 2"
+            ],
+            "answer": 1,
+            "why": "Both sides × 3: 15 by 6."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Enlarge a 4 by 1 rectangle by scale factor 2.",
+          "a": "8 by 2",
+          "mins": 2,
+          "model": "Teacher: 4 × 2 = 8 and 1 × 2 = 2."
+        },
+        {
+          "q": "Sides 2, 3 become 10, 15. Scale factor?",
+          "a": "5",
+          "mins": 2
+        },
+        {
+          "q": "Are 2 by 3 and 4 by 9 similar?",
+          "a": "No (× 2 and × 3)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: draw a 2 by 3 rectangle enlarged by scale factors 2 and 3.",
+          "a": "4 by 6 and 6 by 9",
+          "mins": 4,
+          "model": "Teacher draws 2 by 3, then multiplies each side by 2."
+        },
+        {
+          "q": "Extend: Extend: triangles with sides 3, 5, 6 and 12, 20, ?. Missing side?",
+          "a": "24 (scale factor 4)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a shape is enlarged by scale factor 2. What happens to its perimeter? Its area?",
+          "a": "Perimeter doubles; area is 4 times as big",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Scale factor from 7 cm to 21 cm?",
+          "a": "3",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what changes and what stays the same?",
+          "a": "Lengths multiply by the scale factor; angles and shape stay the same",
+          "mins": 3
+        }
+      ],
+      "homework": "Enlarge a simple Islamic star or a letter shape on squared paper by scale factor 2.",
+      "send": "SEND: counters in two colours and a bar model, worked example kept on screen, fewer items. EAL: key word cards (ratio, for every, scale factor); stem 'For every ..., there are ...'. Stretch: enlarge by scale factor 1/2.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 1: Ratio: small step 'Use scale factors and Similar shapes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Counters in two colours (or two kinds of pasta)",
+        "Squared paper and a ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 33 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 34,
+      "title": "Ratio problems; ratio check",
+      "duration": 45,
+      "bigQuestion": "How does a bar model solve ratio problems?",
+      "objectives": [
+        "To understand how to solve ratio problems with bar models"
+      ],
+      "successCriteria": [
+        "All: share an amount in a ratio",
+        "Most: find a total from one part",
+        "Some: solve a recipe problem"
+      ],
+      "crossCurricular": "Cooking: scaling a recipe for guests",
+      "smsc": "Moral: sharing fairly in a ratio agreed by both",
+      "keywords": [
+        {
+          "term": "ratio",
+          "def": "compares parts"
+        },
+        {
+          "term": "share",
+          "def": "split in the ratio"
+        },
+        {
+          "term": "bar model",
+          "def": "boxes for equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two brothers share £45 in the ratio 4 : 5. Who gets more? How much?",
+        "a": "The second: one part is £5, so £20 and £25."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of dates",
+          "alt": "Dates for sharing",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Scale factor from 7 to 21?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "45 ÷ 9 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 7 = ?",
+          "a": "28",
+          "mins": 1
+        },
+        {
+          "q": "2 : 3. Fraction for 2?",
+          "a": "2/5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Share in a ratio",
+          "model": {
+            "problem": "Share £45 in the ratio 4 : 5",
+            "steps": [
+              "Total parts: 9",
+              "One part: 45 ÷ 9 = £5",
+              "4 × 5 = £20; 5 × 5 = £25"
+            ],
+            "answer": "£20 and £25"
+          },
+          "note": "Draw 4 boxes and 5 boxes."
+        },
+        {
+          "heading": "Know one part",
+          "bullets": [
+            "red : blue = 3 : 7; there are 21 red.",
+            "3 parts = 21, so 1 part = 7.",
+            "Blue: 7 × 7 = 49; total 70."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 3,
+              "label": "red 3 parts = 21"
+            }
+          ],
+          "note": "Ask: how many altogether? (70)."
+        },
+        {
+          "heading": "Recipes",
+          "bullets": [
+            "Serves 4: 200 g flour, 2 eggs.",
+            "Serves 10: × 2.5",
+            "500 g flour, 5 eggs."
+          ],
+          "table": {
+            "head": [
+              "Serves",
+              "Flour",
+              "Eggs"
+            ],
+            "rows": [
+              [
+                "4",
+                "200 g",
+                "2"
+              ],
+              [
+                "2",
+                "100 g",
+                "1"
+              ],
+              [
+                "6",
+                "300 g",
+                "3"
+              ],
+              [
+                "10",
+                "500 g",
+                "5"
+              ]
+            ]
+          },
+          "note": "Ask: serves 6? (300 g, 3 eggs)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Share 36 sweets in the ratio 1 : 2. The larger share?",
+            "options": [
+              "12",
+              "18",
+              "24"
+            ],
+            "answer": 2,
+            "why": "3 parts; 1 part = 12; larger = 24."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Share 30 in the ratio 2 : 3.",
+          "a": "12 and 18",
+          "mins": 2,
+          "model": "Teacher: 5 parts, 30 ÷ 5 = 6; 2 × 6 = 12 and 3 × 6 = 18."
+        },
+        {
+          "q": "cats : dogs = 2 : 5. 10 cats. How many dogs?",
+          "a": "25",
+          "mins": 2
+        },
+        {
+          "q": "Serves 4 needs 6 dates. Serves 10?",
+          "a": "15 dates",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: share £60 in the ratio 7 : 5.",
+          "a": "£35 and £25",
+          "mins": 4,
+          "model": "Teacher: 12 parts, £5 each; 7 × 5 = £35, 5 × 5 = £25."
+        },
+        {
+          "q": "Extend: Extend: boys : girls = 4 : 5. There are 8 more girls than boys. How many pupils?",
+          "a": "72",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch (ratio check): orange paint is red : yellow = 2 : 3. You need 4 litres of orange. How much of each?",
+          "a": "1.6 l red and 2.4 l yellow",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Share 20 in the ratio 1 : 4.",
+          "a": "4 and 16",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how does a bar model solve ratio problems?",
+          "a": "Each box is one part: find what one box is worth, then multiply",
+          "mins": 3
+        }
+      ],
+      "homework": "Scale a family recipe for half the people and for twice the people.",
+      "send": "SEND: counters in two colours and a bar model, worked example kept on screen, fewer items. EAL: key word cards (ratio, for every, scale factor); stem 'For every ..., there are ...'. Stretch: share 100 in the ratio 1 : 2 : 2.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 1: Ratio: small steps 'Ratio problems', 'Proportion problems' and 'Recipes'; end-of-block check (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Counters in two colours (or two kinds of pasta)",
+        "Squared paper and a ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 34 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 35,
+      "title": "Function machines: one and two steps",
+      "duration": 45,
+      "bigQuestion": "How can we work backwards through a machine?",
+      "objectives": [
+        "To understand how one-step and two-step function machines work, forwards and backwards"
+      ],
+      "successCriteria": [
+        "All: find outputs of a one-step machine",
+        "Most: find outputs of a two-step machine",
+        "Some: find an input using inverse operations"
+      ],
+      "crossCurricular": "Computing: inputs, processes and outputs",
+      "smsc": "Moral: actions have consequences, like inputs and outputs",
+      "keywords": [
+        {
+          "term": "input",
+          "def": "what goes in"
+        },
+        {
+          "term": "output",
+          "def": "what comes out"
+        },
+        {
+          "term": "inverse",
+          "def": "the opposite operation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A machine does × 3 then + 4. The output is 19. What went in?",
+        "a": "5: 19 - 4 = 15, 15 ÷ 3 = 5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "function machine diagram",
+          "alt": "A function machine diagram",
+          "for": "teach:1"
+        },
+        {
+          "find": "vending machine",
+          "alt": "A vending machine (no people)",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Share 20 in 1 : 4.",
+          "a": "4 and 16",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 6 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "42 - 6 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "36 ÷ 4 = ?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One step",
+          "bullets": [
+            "Input 7, rule × 4.",
+            "Output 28."
+          ],
+          "table": {
+            "head": [
+              "Input",
+              "Rule",
+              "Output"
+            ],
+            "rows": [
+              [
+                "7",
+                "× 4",
+                "28"
+              ],
+              [
+                "10",
+                "× 4",
+                "40"
+              ],
+              [
+                "?",
+                "× 4",
+                "36"
+              ]
+            ]
+          },
+          "note": "Draw the machine."
+        },
+        {
+          "heading": "Two steps",
+          "bullets": [
+            "Input 5: × 2 then + 3.",
+            "5 × 2 = 10, 10 + 3 = 13."
+          ],
+          "misconception": {
+            "wrong": "× 2 then + 3 is the same as + 3 then × 2",
+            "right": "Input 5: 13 one way, 16 the other way"
+          },
+          "note": "Order matters."
+        },
+        {
+          "heading": "Backwards",
+          "model": {
+            "problem": "× 3 then + 4 gives 19. Input?",
+            "steps": [
+              "Work backwards: - 4: 19 - 4 = 15",
+              "÷ 3: 15 ÷ 3 = 5"
+            ],
+            "answer": "5"
+          },
+          "note": "Undo in reverse order."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Rule: ÷ 2 then - 1. Input 20. Output?",
+            "options": [
+              "9",
+              "10",
+              "19"
+            ],
+            "answer": 0,
+            "why": "20 ÷ 2 = 10; 10 - 1 = 9."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rule × 5. Input 8?",
+          "a": "40",
+          "mins": 2,
+          "model": "Teacher: 8 × 5 = 40."
+        },
+        {
+          "q": "Rule + 6 then × 2. Input 4?",
+          "a": "20",
+          "mins": 2
+        },
+        {
+          "q": "Rule × 3. Output 27. Input?",
+          "a": "9",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: rule × 4 then - 3. Inputs 2, 5, 10.",
+          "a": "5, 17, 37",
+          "mins": 4,
+          "model": "Teacher: 2 × 4 = 8, 8 - 3 = 5."
+        },
+        {
+          "q": "Extend: Extend: rule ÷ 5 then + 7. Output 15. Input?",
+          "a": "40",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a two-step machine turns 3 into 11 and 5 into 17. Find the rule.",
+          "a": "× 3 then + 2",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Rule - 2 then × 10. Input 7?",
+          "a": "50",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can we work backwards?",
+          "a": "Use the inverse operations in reverse order",
+          "mins": 3
+        }
+      ],
+      "homework": "Make up 3 two-step machines and test a partner (or a grown-up).",
+      "send": "SEND: a function machine drawn on paper, cups for unknowns, worked example kept on screen. EAL: key word cards (expression, equation, substitute); stem 'If n is ..., then ...'. Stretch: find a rule that turns 4 into 9 and 6 into 13.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 2: Algebra: small step '1-step function machines and 2-step function machines' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Function machine diagram on paper",
+        "Cups and counters (cups hide the unknown)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 35 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 36,
+      "title": "Form expressions",
+      "duration": 45,
+      "bigQuestion": "How can a letter stand for a number?",
+      "objectives": [
+        "To understand how to write expressions using letters for unknown numbers"
+      ],
+      "successCriteria": [
+        "All: write n + 3 and 4n from words",
+        "Most: write an expression for a function machine",
+        "Some: explain what 2n + 1 means"
+      ],
+      "crossCurricular": "Computing: variables in a program",
+      "smsc": "Social: finding a rule that works for everyone",
+      "keywords": [
+        {
+          "term": "expression",
+          "def": "numbers, letters and operations, with no equals sign"
+        },
+        {
+          "term": "variable",
+          "def": "a letter that stands for a number"
+        },
+        {
+          "term": "term",
+          "def": "one part, like 4n"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A pack holds n pencils. You buy 3 packs and 2 loose pencils. Write the total.",
+        "a": "3n + 2."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "packs of pencils",
+          "alt": "Packs of pencils",
+          "for": "hook"
+        },
+        {
+          "find": "function machine diagram",
+          "alt": "A function machine",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Rule × 3 then + 2. Input 4?",
+          "a": "14",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 9 = ?",
+          "a": "27",
+          "mins": 1
+        },
+        {
+          "q": "Double 8 plus 1?",
+          "a": "17",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 5 = ?",
+          "a": "30",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Letters for numbers",
+          "bullets": [
+            "n + 3: a number add 3.",
+            "4n: 4 lots of n (4 × n).",
+            "n ÷ 2 or n/2: half of n."
+          ],
+          "table": {
+            "head": [
+              "Words",
+              "Expression"
+            ],
+            "rows": [
+              [
+                "a number add 5",
+                "n + 5"
+              ],
+              [
+                "6 times a number",
+                "6n"
+              ],
+              [
+                "a number take 4",
+                "n - 4"
+              ],
+              [
+                "double a number add 1",
+                "2n + 1"
+              ]
+            ]
+          },
+          "note": "We do not write the × sign."
+        },
+        {
+          "heading": "From a machine",
+          "bullets": [
+            "Input n, × 3 then - 2.",
+            "Output: 3n - 2."
+          ],
+          "note": "Ask: × 2 then + 7? (2n + 7)."
+        },
+        {
+          "heading": "Same or different?",
+          "bullets": [
+            "2n + 1: double then add 1.",
+            "2(n + 1): add 1 then double.",
+            "Different!"
+          ],
+          "note": "Try n = 4: 9 and 10."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is '5 more than 3 times a number'?",
+            "options": [
+              "5n + 3",
+              "3n + 5",
+              "8n"
+            ],
+            "answer": 1,
+            "why": "3 times the number is 3n; add 5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write: a number times 7.",
+          "a": "7n",
+          "mins": 2,
+          "model": "Teacher: 7 lots of n, written 7n."
+        },
+        {
+          "q": "Write: a number subtract 9.",
+          "a": "n - 9",
+          "mins": 2
+        },
+        {
+          "q": "Machine: × 4 then + 1. Output for input n?",
+          "a": "4n + 1",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write expressions for: 10 less than a number; a number halved; 8 lots of a number add 3.",
+          "a": "n - 10; n/2; 8n + 3",
+          "mins": 4,
+          "model": "Teacher: 10 less than n is n - 10."
+        },
+        {
+          "q": "Extend: Extend: a box has b dates. Write an expression for 5 boxes with 2 dates eaten.",
+          "a": "5b - 2",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a rectangle is x cm long and 3 cm wide. Write its perimeter and area.",
+          "a": "2x + 6; 3x",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Write: 4 more than a number.",
+          "a": "n + 4",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can a letter stand for a number?",
+          "a": "The letter is a variable: it can be any number in the rule",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 5 expressions from everyday situations (packs, boxes, ages).",
+      "send": "SEND: a function machine drawn on paper, cups for unknowns, worked example kept on screen. EAL: key word cards (expression, equation, substitute); stem 'If n is ..., then ...'. Stretch: write an expression for the perimeter of a square of side s.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 2: Algebra: small step 'Form expressions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Function machine diagram on paper",
+        "Cups and counters (cups hide the unknown)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 36 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 37,
+      "title": "Substitution",
+      "duration": 45,
+      "bigQuestion": "If n = 6, what is 3n + 2?",
+      "objectives": [
+        "To understand how to substitute values into expressions"
+      ],
+      "successCriteria": [
+        "All: substitute into a one-step expression",
+        "Most: substitute into a two-step expression",
+        "Some: substitute two letters"
+      ],
+      "crossCurricular": "Science: using a rule to predict results",
+      "smsc": "Moral: rules give the same result for everyone",
+      "keywords": [
+        {
+          "term": "substitute",
+          "def": "put a number in place of a letter"
+        },
+        {
+          "term": "expression",
+          "def": "numbers, letters and operations"
+        },
+        {
+          "term": "value",
+          "def": "the number we get"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "3n + 2: if n = 6, Bilal says 38. Why might he think that?",
+        "a": "He wrote 3n as 36. 3n means 3 × 6 = 18; 18 + 2 = 20."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "calculator",
+          "alt": "A calculator",
+          "for": "keywords"
+        },
+        {
+          "find": "function machine diagram",
+          "alt": "A function machine",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Write: 4 more than n.",
+          "a": "n + 4",
+          "mins": 1
+        },
+        {
+          "q": "3 × 6 + 2 = ?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 9 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "(10 - 4) × 2 = ?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Swap the letter",
+          "bullets": [
+            "n = 6",
+            "3n + 2 = 3 × 6 + 2",
+            "= 18 + 2 = 20"
+          ],
+          "misconception": {
+            "wrong": "3n with n = 6 is 36",
+            "right": "3n means 3 × n = 18"
+          },
+          "note": "Write the × back in."
+        },
+        {
+          "heading": "Two letters",
+          "bullets": [
+            "a = 4, b = 5",
+            "2a + b = 8 + 5 = 13",
+            "ab = 4 × 5 = 20"
+          ],
+          "table": {
+            "head": [
+              "Expression",
+              "a = 4, b = 5"
+            ],
+            "rows": [
+              [
+                "a + b",
+                "9"
+              ],
+              [
+                "2a + b",
+                "13"
+              ],
+              [
+                "ab",
+                "20"
+              ],
+              [
+                "b - a",
+                "1"
+              ]
+            ]
+          },
+          "note": "Ask: a + 3b? (19)."
+        },
+        {
+          "heading": "Brackets first",
+          "bullets": [
+            "n = 3",
+            "2(n + 4) = 2 × 7 = 14"
+          ],
+          "note": "Order of operations."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "If x = 5, what is 4x - 3?",
+            "options": [
+              "17",
+              "42",
+              "23"
+            ],
+            "answer": 0,
+            "why": "4 × 5 = 20; 20 - 3 = 17."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "n = 7. 5n?",
+          "a": "35",
+          "mins": 2,
+          "model": "Teacher: 5n means 5 × 7 = 35."
+        },
+        {
+          "q": "n = 7. n + 12?",
+          "a": "19",
+          "mins": 2
+        },
+        {
+          "q": "n = 7. 2n - 4?",
+          "a": "10",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: y = 9: find 3y, y - 5, 2y + 1, y/3",
+          "a": "27, 4, 19, 3",
+          "mins": 4,
+          "model": "Teacher: 3y = 3 × 9 = 27."
+        },
+        {
+          "q": "Extend: Extend: a = 6, b = 2: a + b, ab, 3a - b, a/b",
+          "a": "8, 12, 16, 3",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: for which value of n are 2n + 3 and n + 7 equal?",
+          "a": "n = 4 (both 11)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "n = 10. 4n + 6?",
+          "a": "46",
+          "mins": 2
+        },
+        {
+          "q": "Big question: if n = 6, what is 3n + 2?",
+          "a": "3 × 6 + 2 = 20",
+          "mins": 3
+        }
+      ],
+      "homework": "Substitute n = 1, 2, 3, 4, 5 into 2n + 1. What pattern do you see?",
+      "send": "SEND: a function machine drawn on paper, cups for unknowns, worked example kept on screen. EAL: key word cards (expression, equation, substitute); stem 'If n is ..., then ...'. Stretch: substitute decimals: n = 2.5 into 4n - 1.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 2: Algebra: small step 'Substitution' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Function machine diagram on paper",
+        "Cups and counters (cups hide the unknown)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 37 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 38,
+      "title": "Formulae",
+      "duration": 45,
+      "bigQuestion": "How does a formula help us calculate quickly?",
+      "objectives": [
+        "To understand how to use and write simple formulae"
+      ],
+      "successCriteria": [
+        "All: use a formula in words",
+        "Most: use a formula with letters",
+        "Some: write a formula for a situation"
+      ],
+      "crossCurricular": "DT: costing materials for a project",
+      "smsc": "Moral: fair pricing that customers can check",
+      "keywords": [
+        {
+          "term": "formula",
+          "def": "a rule linking quantities, with an equals sign"
+        },
+        {
+          "term": "substitute",
+          "def": "put in the numbers"
+        },
+        {
+          "term": "cost",
+          "def": "how much we pay"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A taxi costs £3 plus £2 for every mile. Write a rule for the cost of a journey of m miles.",
+        "a": "C = 3 + 2m."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "taxi meter",
+          "alt": "A taxi meter",
+          "for": "hook"
+        },
+        {
+          "find": "rectangle on squared paper",
+          "alt": "A rectangle",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "n = 10. 4n + 6?",
+          "a": "46",
+          "mins": 1
+        },
+        {
+          "q": "Area of 7 by 4?",
+          "a": "28",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 3 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "3 + 2 × 5 = ?",
+          "a": "13",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Formulae you know",
+          "bullets": [
+            "Area of a rectangle: A = l × w",
+            "Perimeter: P = 2(l + w)"
+          ],
+          "table": {
+            "head": [
+              "Formula",
+              "l = 9, w = 4"
+            ],
+            "rows": [
+              [
+                "A = lw",
+                "36"
+              ],
+              [
+                "P = 2(l + w)",
+                "26"
+              ]
+            ]
+          },
+          "note": "Ask: l = 9, w = 4: A? (36), P? (26)."
+        },
+        {
+          "heading": "Use a formula",
+          "bullets": [
+            "Cost C = 3 + 2m",
+            "m = 5: C = 3 + 10 = 13",
+            "£13"
+          ],
+          "note": "Ask: m = 12? (£27)."
+        },
+        {
+          "heading": "Write a formula",
+          "bullets": [
+            "Hire a hall: £20 plus £15 an hour.",
+            "C = 20 + 15h"
+          ],
+          "note": "Ask: write a formula for n tickets at £4 (C = 4n)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "C = 5 + 3n. Find C when n = 4.",
+            "options": [
+              "32",
+              "17",
+              "12"
+            ],
+            "answer": 1,
+            "why": "3 × 4 = 12; 5 + 12 = 17. 32 adds first."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A = lw. l = 8, w = 6. A?",
+          "a": "48",
+          "mins": 2,
+          "model": "Teacher: A = 8 × 6 = 48."
+        },
+        {
+          "q": "P = 4s for a square. s = 7. P?",
+          "a": "28",
+          "mins": 2
+        },
+        {
+          "q": "C = 10 + 2n. n = 9. C?",
+          "a": "28",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: C = 3 + 2m. Find C for m = 2, 7 and 15.",
+          "a": "£7, £17, £33",
+          "mins": 4,
+          "model": "Teacher: m = 2: 3 + 4 = £7."
+        },
+        {
+          "q": "Extend: Extend: write a formula for the number of legs L on c chairs with 4 legs and one 3-legged stool.",
+          "a": "L = 4c + 3",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: C = 3 + 2m. A journey cost £21. How many miles?",
+          "a": "9 miles",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "P = 2(l + w). l = 5, w = 3?",
+          "a": "16",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how does a formula help?",
+          "a": "It gives a rule we can use for any values, quickly and the same each time",
+          "mins": 3
+        }
+      ],
+      "homework": "Write a formula for the cost of n bus journeys at £1.75 each, and work out 4 journeys.",
+      "send": "SEND: a function machine drawn on paper, cups for unknowns, worked example kept on screen. EAL: key word cards (expression, equation, substitute); stem 'If n is ..., then ...'. Stretch: rearrange C = 3 + 2m to find m from C.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 2: Algebra: small step 'Formulae' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Function machine diagram on paper",
+        "Cups and counters (cups hide the unknown)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 38 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 39,
+      "title": "Form and solve one-step equations",
+      "duration": 45,
+      "bigQuestion": "How do we find the value of a hidden number?",
+      "objectives": [
+        "To understand how to form and solve one-step equations"
+      ],
+      "successCriteria": [
+        "All: solve an equation using the inverse",
+        "Most: form an equation from words",
+        "Some: check a solution by substituting"
+      ],
+      "crossCurricular": "Science: finding an unknown mass on a balance",
+      "smsc": "Moral: balance and justice: what we do to one side we do to the other",
+      "keywords": [
+        {
+          "term": "equation",
+          "def": "two expressions with an equals sign"
+        },
+        {
+          "term": "solve",
+          "def": "find the value of the letter"
+        },
+        {
+          "term": "inverse",
+          "def": "the opposite operation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A balance has a bag of x sweets and 4 more on one side, and 11 on the other. What is x?",
+        "a": "7."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "pan balance scale",
+          "alt": "A balance scale",
+          "for": "hook"
+        },
+        {
+          "find": "function machine diagram",
+          "alt": "A function machine",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "P = 2(l + w). l = 5, w = 3?",
+          "a": "16",
+          "mins": 1
+        },
+        {
+          "q": "? + 4 = 11",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 6 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "48 ÷ 6 = ?",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Keep it balanced",
+          "bullets": [
+            "x + 4 = 11",
+            "Take 4 from both sides.",
+            "x = 7"
+          ],
+          "table": {
+            "head": [
+              "Equation",
+              "Do to both sides",
+              "Solution"
+            ],
+            "rows": [
+              [
+                "x + 4 = 11",
+                "- 4",
+                "x = 7"
+              ],
+              [
+                "y - 5 = 9",
+                "+ 5",
+                "y = 14"
+              ],
+              [
+                "6n = 48",
+                "÷ 6",
+                "n = 8"
+              ],
+              [
+                "m/3 = 5",
+                "× 3",
+                "m = 15"
+              ]
+            ]
+          },
+          "note": "Cups and counters."
+        },
+        {
+          "heading": "Form it",
+          "bullets": [
+            "I think of a number and multiply by 6. I get 48.",
+            "6n = 48",
+            "n = 8"
+          ],
+          "note": "Ask: a number take 12 is 30 (n - 12 = 30, n = 42)."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Put the answer back in.",
+            "6 × 8 = 48. Yes!"
+          ],
+          "note": "Always check."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Solve 5a = 35.",
+            "options": [
+              "a = 30",
+              "a = 7",
+              "a = 175"
+            ],
+            "answer": 1,
+            "why": "Divide both sides by 5: a = 7."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "x + 9 = 20",
+          "a": "x = 11",
+          "mins": 2,
+          "model": "Teacher: subtract 9 from both sides: x = 11. Check: 11 + 9 = 20."
+        },
+        {
+          "q": "4y = 36",
+          "a": "y = 9",
+          "mins": 2
+        },
+        {
+          "q": "n - 8 = 15",
+          "a": "n = 23",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: solve p + 17 = 40; 7q = 63; r/4 = 6",
+          "a": "p = 23; q = 9; r = 24",
+          "mins": 4,
+          "model": "Teacher: 40 - 17 = 23. Check: 23 + 17 = 40."
+        },
+        {
+          "q": "Extend: Extend: form and solve: 9 boxes hold 72 pens. How many in each box?",
+          "a": "9b = 72; b = 8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: solve 2.5k = 10.",
+          "a": "k = 4",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Solve 3t = 27.",
+          "a": "t = 9",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we find a hidden number?",
+          "a": "Use the inverse on both sides to keep the balance, then check",
+          "mins": 3
+        }
+      ],
+      "homework": "Make 4 'I think of a number' puzzles and solve them with equations.",
+      "send": "SEND: a function machine drawn on paper, cups for unknowns, worked example kept on screen. EAL: key word cards (expression, equation, substitute); stem 'If n is ..., then ...'. Stretch: solve 0.5x = 7.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 2: Algebra: small step 'Solve 1-step equations' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Function machine diagram on paper",
+        "Cups and counters (cups hide the unknown)",
+        "Coat-hanger balance (optional)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 39 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 40,
+      "title": "Solve two-step equations",
+      "duration": 45,
+      "bigQuestion": "Which step do we undo first?",
+      "objectives": [
+        "To understand how to solve two-step equations"
+      ],
+      "successCriteria": [
+        "All: solve 2x + 3 = 15 in two steps",
+        "Most: form a two-step equation from words",
+        "Some: check the answer"
+      ],
+      "crossCurricular": "Money: a fixed fee plus a price for each item",
+      "smsc": "Moral: patient, careful steps",
+      "keywords": [
+        {
+          "term": "two-step equation",
+          "def": "an equation needing two inverse steps"
+        },
+        {
+          "term": "solve",
+          "def": "find the value of the letter"
+        },
+        {
+          "term": "check",
+          "def": "substitute to make sure"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "I think of a number, double it and add 3. I get 15. What was my number?",
+        "a": "6."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "pan balance scale",
+          "alt": "A balance scale",
+          "for": "teach:1"
+        },
+        {
+          "find": "taxi meter",
+          "alt": "A meter showing a fee",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Solve 3t = 27.",
+          "a": "t = 9",
+          "mins": 1
+        },
+        {
+          "q": "15 - 3 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "12 ÷ 2 = ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 7 = ?",
+          "a": "49",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two steps",
+          "model": {
+            "problem": "2x + 3 = 15",
+            "steps": [
+              "Subtract 3 from both sides: 2x = 12",
+              "Divide both sides by 2: x = 6",
+              "Check: 2 × 6 + 3 = 15"
+            ],
+            "answer": "x = 6"
+          },
+          "note": "Undo the + 3 first, then the × 2."
+        },
+        {
+          "heading": "Another",
+          "bullets": [
+            "5y - 4 = 31",
+            "Add 4: 5y = 35",
+            "Divide by 5: y = 7"
+          ],
+          "note": "Ask: check it (35 - 4 = 31)."
+        },
+        {
+          "heading": "Form it",
+          "bullets": [
+            "A hall costs £20 plus £15 an hour. Total £80.",
+            "20 + 15h = 80",
+            "15h = 60, h = 4 hours"
+          ],
+          "note": "Ask: what does h stand for? (hours)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Solve 3n + 5 = 26.",
+            "options": [
+              "n = 7",
+              "n = 31/3",
+              "n = 10"
+            ],
+            "answer": 0,
+            "why": "26 - 5 = 21; 21 ÷ 3 = 7."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4x + 1 = 29",
+          "a": "x = 7",
+          "mins": 2,
+          "model": "Teacher: subtract 1: 4x = 28; divide by 4: x = 7. Check: 29."
+        },
+        {
+          "q": "6y - 2 = 40",
+          "a": "y = 7",
+          "mins": 2
+        },
+        {
+          "q": "2n + 9 = 25",
+          "a": "n = 8",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: solve 3a + 4 = 19; 7b - 6 = 50; 10c + 5 = 85",
+          "a": "a = 5; b = 8; c = 8",
+          "mins": 4,
+          "model": "Teacher: 19 - 4 = 15; 15 ÷ 3 = 5."
+        },
+        {
+          "q": "Extend: Extend: form and solve: 5 books and a £3 bag cost £33. Price of a book?",
+          "a": "5b + 3 = 33; b = £6",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: solve (x + 4) ÷ 3 = 6.",
+          "a": "x = 14",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Solve 2k + 7 = 19.",
+          "a": "k = 6",
+          "mins": 2
+        },
+        {
+          "q": "Big question: which step do we undo first?",
+          "a": "The last thing done to the letter: undo + or - first, then × or ÷",
+          "mins": 3
+        }
+      ],
+      "homework": "Write and solve 4 two-step 'I think of a number' puzzles.",
+      "send": "SEND: a function machine drawn on paper, cups for unknowns, worked example kept on screen. EAL: key word cards (expression, equation, substitute); stem 'If n is ..., then ...'. Stretch: solve 3(x - 2) = 21.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 2: Algebra: small step 'Solve 2-step equations' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Function machine diagram on paper",
+        "Cups and counters (cups hide the unknown)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 40 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 41,
+      "title": "Find pairs of values; algebra check",
+      "duration": 45,
+      "bigQuestion": "Can an equation have more than one answer?",
+      "objectives": [
+        "To understand how equations with two unknowns can have many solutions"
+      ],
+      "successCriteria": [
+        "All: find pairs of values for a + b = 10",
+        "Most: list pairs for 2x + y = 12 systematically",
+        "Some: use a clue to find the one pair that fits"
+      ],
+      "crossCurricular": "Money: different coin combinations for the same total",
+      "smsc": "Social: many ways to reach the same goal",
+      "keywords": [
+        {
+          "term": "unknown",
+          "def": "a value we do not know yet"
+        },
+        {
+          "term": "pair",
+          "def": "two values that go together"
+        },
+        {
+          "term": "systematic",
+          "def": "in an order so none is missed"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "a + b = 10. Find as many pairs of whole numbers as you can.",
+        "a": "0 + 10, 1 + 9, ... 10 + 0: 11 pairs."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "coins in a pile",
+          "alt": "A pile of coins",
+          "for": "hook"
+        },
+        {
+          "find": "table of data",
+          "alt": "A table of values",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Solve 2k + 7 = 19.",
+          "a": "k = 6",
+          "mins": 1
+        },
+        {
+          "q": "12 - 2 × 4 = ?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "TT: 5 × 9 = ?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "C = 5 + 3n, n = 4?",
+          "a": "17",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Many answers",
+          "bullets": [
+            "a + b = 10",
+            "a = 3, b = 7",
+            "a = 6, b = 4 ..."
+          ],
+          "note": "One equation, two unknowns."
+        },
+        {
+          "heading": "Work systematically",
+          "bullets": [
+            "2x + y = 12 (whole numbers)",
+            "Start with x = 0 and go up."
+          ],
+          "table": {
+            "head": [
+              "x",
+              "2x",
+              "y"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "12"
+              ],
+              [
+                "1",
+                "2",
+                "10"
+              ],
+              [
+                "2",
+                "4",
+                "8"
+              ],
+              [
+                "3",
+                "6",
+                "6"
+              ],
+              [
+                "4",
+                "8",
+                "4"
+              ],
+              [
+                "5",
+                "10",
+                "2"
+              ],
+              [
+                "6",
+                "12",
+                "0"
+              ]
+            ]
+          },
+          "note": "Fill the table."
+        },
+        {
+          "heading": "Use a clue",
+          "bullets": [
+            "2x + y = 12 and x = y.",
+            "From the table: x = 4, y = 4.",
+            "One pair fits both."
+          ],
+          "note": "Ask: and y is double x? (x = 3, y = 6)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which pair fits 3x + y = 10?",
+            "options": [
+              "x = 2, y = 4",
+              "x = 3, y = 4",
+              "x = 4, y = 2"
+            ],
+            "answer": 0,
+            "why": "3 × 2 + 4 = 10. The others make 13 and 14."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find 3 pairs for a + b = 7.",
+          "a": "For example 1 and 6, 2 and 5, 3 and 4",
+          "mins": 2,
+          "model": "Teacher starts at a = 0, b = 7, then a = 1, b = 6..."
+        },
+        {
+          "q": "x + y = 5 and x = 4. y?",
+          "a": "1",
+          "mins": 2
+        },
+        {
+          "q": "2x + y = 12 and y = 0. x?",
+          "a": "6",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: list all whole-number pairs for x + 2y = 8.",
+          "a": "(8, 0), (6, 1), (4, 2), (2, 3), (0, 4)",
+          "mins": 4,
+          "model": "Teacher: y = 0 gives x = 8; y = 1 gives x = 6..."
+        },
+        {
+          "q": "Extend: Extend (algebra check): solve 4m - 7 = 25; substitute n = 3 into 5n + 2; write an expression for 'a number trebled, take 1'.",
+          "a": "m = 8; 17; 3n - 1",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: pens cost £2 and rulers £3. Ali spends exactly £13. Find all possible numbers of each.",
+          "a": "5 pens and 1 ruler, or 2 pens and 3 rulers",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "a + b = 9 and a = b + 1. a and b?",
+          "a": "a = 5, b = 4",
+          "mins": 2
+        },
+        {
+          "q": "Big question: can an equation have more than one answer?",
+          "a": "Yes: with two unknowns there can be many pairs, unless a second clue narrows them",
+          "mins": 3
+        }
+      ],
+      "homework": "Find all ways to make 50p with only 5p and 10p coins.",
+      "send": "SEND: a function machine drawn on paper, cups for unknowns, worked example kept on screen. EAL: key word cards (expression, equation, substitute); stem 'If n is ..., then ...'. Stretch: find all pairs for 3x + 2y = 20.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 2: Algebra: small steps 'Find pairs of values' and 'Solve problems with two unknowns'; end-of-block check (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Function machine diagram on paper",
+        "Cups and counters (cups hide the unknown)",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 41 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 42,
+      "title": "Place value within 1",
+      "duration": 45,
+      "bigQuestion": "What is each digit in 0.358 worth?",
+      "objectives": [
+        "To understand the value of digits in decimals up to 3 decimal places"
+      ],
+      "successCriteria": [
+        "All: say the value of tenths, hundredths and thousandths",
+        "Most: partition a decimal in different ways",
+        "Some: find 0.01 and 0.001 more or less"
+      ],
+      "crossCurricular": "Science: measuring 0.358 kg on a digital scale",
+      "smsc": "Spiritual: Allah knows even the weight of an atom (Qur'an 99:7-8)",
+      "keywords": [
+        {
+          "term": "tenths",
+          "def": "first place after the point"
+        },
+        {
+          "term": "hundredths",
+          "def": "second place"
+        },
+        {
+          "term": "thousandths",
+          "def": "third place"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A digital scale shows 0.358 kg. How many grams is that?",
+        "a": "358 g."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "digital kitchen scale display",
+          "alt": "A digital scale",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Solve 4m - 7 = 25.",
+          "a": "m = 8",
+          "mins": 1
+        },
+        {
+          "q": "358 ÷ 1,000 = ?",
+          "a": "0.358",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 8 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "1 kg = ? g",
+          "a": "1,000 g",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The chart",
+          "bullets": [
+            "0.358 = 3 tenths, 5 hundredths, 8 thousandths",
+            "= 0.3 + 0.05 + 0.008"
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths",
+              "Thousandths"
+            ],
+            "rows": [
+              [
+                "0",
+                ".",
+                "3",
+                "5",
+                "8"
+              ],
+              [
+                "0",
+                ".",
+                "0",
+                "4",
+                "7"
+              ],
+              [
+                "0",
+                ".",
+                "6",
+                "0",
+                "2"
+              ]
+            ]
+          },
+          "note": "Counters."
+        },
+        {
+          "heading": "Partition flexibly",
+          "bullets": [
+            "0.358 = 0.35 + 0.008",
+            "= 0.3 + 0.058",
+            "= 358 thousandths"
+          ],
+          "diagram": {
+            "centre": "0.358",
+            "items": [
+              "0.3 + 0.05 + 0.008",
+              "0.35 + 0.008",
+              "0.3 + 0.058",
+              "358/1000"
+            ]
+          },
+          "note": "Ask: another way? (0.2 + 0.158)."
+        },
+        {
+          "heading": "More and less",
+          "bullets": [
+            "0.001 more than 0.358: 0.359",
+            "0.01 more than 0.395: 0.405"
+          ],
+          "note": "Exchange across places."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "The value of the 7 in 0.047 is...",
+            "options": [
+              "7 tenths",
+              "7 hundredths",
+              "7 thousandths"
+            ],
+            "answer": 2,
+            "why": "Third place after the point."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Partition 0.624.",
+          "a": "0.6 + 0.02 + 0.004",
+          "mins": 2,
+          "model": "Teacher: 6 tenths, 2 hundredths, 4 thousandths."
+        },
+        {
+          "q": "0.01 less than 0.5?",
+          "a": "0.49",
+          "mins": 2
+        },
+        {
+          "q": "Write 3 tenths and 9 thousandths.",
+          "a": "0.309",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: partition 0.817, 0.06 and 0.409.",
+          "a": "0.8 + 0.01 + 0.007; 0.06; 0.4 + 0.009",
+          "mins": 4,
+          "model": "Teacher: 0.817 = 0.8 + 0.01 + 0.007."
+        },
+        {
+          "q": "Extend: Extend: 0.001 less than 0.6; 0.1 more than 0.95",
+          "a": "0.599; 1.05",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 0.4 + 0.15 + 0.035 = ?",
+          "a": "0.585",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.001 more than 0.299?",
+          "a": "0.3",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what is each digit in 0.358 worth?",
+          "a": "3 tenths, 5 hundredths, 8 thousandths",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 decimal masses or volumes on packets and partition each.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: count back in 0.005 from 0.03 to 0.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 3: Decimals: small step 'Place value within 1' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 42 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 43,
+      "title": "Round decimals",
+      "duration": 45,
+      "bigQuestion": "Is 2.649 nearer 2.6 or 2.7?",
+      "objectives": [
+        "To understand how to round decimals to a whole number, 1 d.p. and 2 d.p."
+      ],
+      "successCriteria": [
+        "All: round to the nearest whole number",
+        "Most: round to 1 decimal place",
+        "Some: round to 2 decimal places"
+      ],
+      "crossCurricular": "Science: recording measurements sensibly",
+      "smsc": "Moral: honesty about how exact our answers are",
+      "keywords": [
+        {
+          "term": "round",
+          "def": "change to a nearby simpler number"
+        },
+        {
+          "term": "decimal place",
+          "def": "a place after the point"
+        },
+        {
+          "term": "nearest",
+          "def": "closest"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A race time is 12.649 seconds. Should a newspaper say 12.6 or 12.7?",
+        "a": "12.6: 2.649 is below 2.65."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "ruler with millimetres close up",
+          "alt": "A ruler",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.001 more than 0.299?",
+          "a": "0.3",
+          "mins": 1
+        },
+        {
+          "q": "Round 47.5 to the nearest whole.",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 7 = ?",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "Half way between 2.6 and 2.7?",
+          "a": "2.65",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Look at the next digit",
+          "bullets": [
+            "Round to 1 d.p.: look at hundredths.",
+            "2.649: hundredths digit 4: round down.",
+            "2.6"
+          ],
+          "numberline": {
+            "min": 2.6,
+            "max": 2.7,
+            "step": 0.01,
+            "marks": [
+              {
+                "at": 2.6,
+                "label": "2.6"
+              },
+              {
+                "at": 2.649,
+                "label": "2.649"
+              },
+              {
+                "at": 2.65,
+                "label": "half way"
+              },
+              {
+                "at": 2.7,
+                "label": "2.7"
+              }
+            ]
+          },
+          "note": "Zoom on the line."
+        },
+        {
+          "heading": "Three ways",
+          "table": {
+            "head": [
+              "Number",
+              "Whole",
+              "1 d.p.",
+              "2 d.p."
+            ],
+            "rows": [
+              [
+                "2.649",
+                "3",
+                "2.6",
+                "2.65"
+              ],
+              [
+                "7.384",
+                "7",
+                "7.4",
+                "7.38"
+              ],
+              [
+                "0.995",
+                "1",
+                "1.0",
+                "1.00"
+              ]
+            ]
+          },
+          "note": "Same number, three roundings."
+        },
+        {
+          "heading": "Watch out",
+          "bullets": [
+            "2.649 to 1 d.p. is NOT 2.7.",
+            "Only the next digit matters."
+          ],
+          "misconception": {
+            "wrong": "2.649 rounds to 2.65, then to 2.7",
+            "right": "Round once: the hundredths digit 4 gives 2.6"
+          },
+          "note": "Do not round twice."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Round 5.276 to 2 d.p.",
+            "options": [
+              "5.27",
+              "5.28",
+              "5.3"
+            ],
+            "answer": 1,
+            "why": "Thousandths digit 6: round up to 5.28."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Round 3.47 to 1 d.p.",
+          "a": "3.5",
+          "mins": 2,
+          "model": "Teacher: hundredths digit 7: round up: 3.5."
+        },
+        {
+          "q": "Round 8.123 to 2 d.p.",
+          "a": "8.12",
+          "mins": 2
+        },
+        {
+          "q": "Round 9.5 to the nearest whole.",
+          "a": "10",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: round 4.718 to the nearest whole, 1 d.p. and 2 d.p.",
+          "a": "5; 4.7; 4.72",
+          "mins": 4,
+          "model": "Teacher: whole: tenths digit 7, round up: 5."
+        },
+        {
+          "q": "Extend: Extend: round 0.0549 to 2 d.p. and 3 d.p.",
+          "a": "0.05; 0.055",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a number with 3 d.p. rounds to 6.4 (1 d.p.) and 6.37 (2 d.p.). Give two possible numbers.",
+          "a": "For example 6.365 and 6.374",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Round 12.649 to 1 d.p.",
+          "a": "12.6",
+          "mins": 2
+        },
+        {
+          "q": "Big question: is 2.649 nearer 2.6 or 2.7?",
+          "a": "2.6: it is below the half way point 2.65",
+          "mins": 3
+        }
+      ],
+      "homework": "Round 5 decimals from packets to 1 d.p.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: explain why 1.995 rounds to 2.00 at 2 d.p.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 3: Decimals: small step 'Round decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 43 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 44,
+      "title": "Add and subtract decimals",
+      "duration": 45,
+      "bigQuestion": "Why must the decimal points line up?",
+      "objectives": [
+        "To understand how to add and subtract decimals with different numbers of places"
+      ],
+      "successCriteria": [
+        "All: line up the decimal points",
+        "Most: add zeros as placeholders",
+        "Some: solve a money or measures problem"
+      ],
+      "crossCurricular": "Money: totals and change",
+      "smsc": "Moral: giving correct change honestly",
+      "keywords": [
+        {
+          "term": "decimal point",
+          "def": "separates ones and tenths"
+        },
+        {
+          "term": "placeholder",
+          "def": "a zero that holds a place"
+        },
+        {
+          "term": "column method",
+          "def": "adding place by place"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sara works out 4.5 + 2.35 = 2.80. What went wrong?",
+        "a": "She lined up the last digits. Line up the points: 4.50 + 2.35 = 6.85."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "shopping receipt",
+          "alt": "A shopping receipt (no names)",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Round 12.649 to 1 d.p.",
+          "a": "12.6",
+          "mins": 1
+        },
+        {
+          "q": "0.5 = 0.5?",
+          "a": "0.50",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 4 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "1 - 0.35 = ?",
+          "a": "0.65",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Line up the points",
+          "bullets": [
+            "4.50",
+            "+ 2.35",
+            "= 6.85"
+          ],
+          "table": {
+            "head": [
+              "Ones",
+              ".",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "4",
+                ".",
+                "5",
+                "0"
+              ],
+              [
+                "2",
+                ".",
+                "3",
+                "5"
+              ],
+              [
+                "6",
+                ".",
+                "8",
+                "5"
+              ]
+            ]
+          },
+          "note": "Fill the gap with 0."
+        },
+        {
+          "heading": "Subtract with zeros",
+          "model": {
+            "problem": "8 - 3.46",
+            "steps": [
+              "Write 8 as 8.00",
+              "Exchange: 7 ones, 9 tenths, 10 hundredths",
+              "8.00 - 3.46 = 4.54"
+            ],
+            "answer": "4.54"
+          },
+          "note": "Check: 4.54 + 3.46 = 8."
+        },
+        {
+          "heading": "In context",
+          "bullets": [
+            "A book £6.75 and a pen £1.40.",
+            "Total: £8.15",
+            "Change from £10: £1.85"
+          ],
+          "note": "Ask: change from £20? (£11.85)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "5.6 + 1.27 = ?",
+            "options": [
+              "1.83",
+              "6.87",
+              "6.33"
+            ],
+            "answer": 1,
+            "why": "5.60 + 1.27 = 6.87. 1.83 lines up the last digits."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3.4 + 2.58 = ?",
+          "a": "5.98",
+          "mins": 2,
+          "model": "Teacher: 3.40 + 2.58: hundredths 0 + 8 = 8, tenths 4 + 5 = 9, ones 3 + 2 = 5: 5.98."
+        },
+        {
+          "q": "7.2 - 4.65 = ?",
+          "a": "2.55",
+          "mins": 2
+        },
+        {
+          "q": "10 - 6.3 = ?",
+          "a": "3.7",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 12.6 + 4.375; 9.04 - 3.8; 15 - 7.62",
+          "a": "16.975; 5.24; 7.38",
+          "mins": 4,
+          "model": "Teacher: 12.600 + 4.375 = 16.975."
+        },
+        {
+          "q": "Extend: Extend: a 2 l bottle. 0.65 l and 0.8 l are poured out. How much is left?",
+          "a": "0.55 l",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: two numbers add to 10 and differ by 2.5. What are they?",
+          "a": "6.25 and 3.75",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "6.3 + 2.45 = ?",
+          "a": "8.75",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why must the points line up?",
+          "a": "So we add tenths to tenths and hundredths to hundredths",
+          "mins": 3
+        }
+      ],
+      "homework": "Add up 3 prices from a receipt and find the change from £20.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: find the missing number: 3.7 + ? = 10.05.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 3: Decimals: small step 'Add and subtract decimals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 44 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 45,
+      "title": "Multiply and divide by 10, 100 and 1,000",
+      "duration": 45,
+      "bigQuestion": "Does the decimal point move, or do the digits?",
+      "objectives": [
+        "To understand how multiplying and dividing by 10, 100 and 1,000 changes the value of digits"
+      ],
+      "successCriteria": [
+        "All: multiply decimals by 10, 100 and 1,000",
+        "Most: divide by 10, 100 and 1,000",
+        "Some: convert units using these facts"
+      ],
+      "crossCurricular": "Science: converting kg to g and m to mm",
+      "smsc": "Moral: accuracy in measures used in trade",
+      "keywords": [
+        {
+          "term": "digit",
+          "def": "one of 0 to 9"
+        },
+        {
+          "term": "place value",
+          "def": "a digit's value from its place"
+        },
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "3.25 kg in grams? 450 ml in litres?",
+        "a": "3,250 g; 0.45 l."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "bag of flour 1kg",
+          "alt": "A 1 kg bag",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6.3 + 2.45 = ?",
+          "a": "8.75",
+          "mins": 1
+        },
+        {
+          "q": "TT: 100 × 10 = ?",
+          "a": "1,000",
+          "mins": 1
+        },
+        {
+          "q": "1 m = ? mm",
+          "a": "1,000 mm",
+          "mins": 1
+        },
+        {
+          "q": "45 ÷ 10 = ?",
+          "a": "4.5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Digits move",
+          "bullets": [
+            "× 10: one place left.",
+            "× 100: two places left.",
+            "× 1,000: three places left."
+          ],
+          "table": {
+            "head": [
+              "Calculation",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "3.25 × 10",
+                "32.5"
+              ],
+              [
+                "3.25 × 100",
+                "325"
+              ],
+              [
+                "3.25 × 1,000",
+                "3,250"
+              ],
+              [
+                "3.25 ÷ 10",
+                "0.325"
+              ]
+            ]
+          },
+          "note": "The point stays; digits move."
+        },
+        {
+          "heading": "Divide",
+          "bullets": [
+            "÷ 10: one place right.",
+            "45 ÷ 100 = 0.45",
+            "7 ÷ 1,000 = 0.007"
+          ],
+          "misconception": {
+            "wrong": "3.25 × 10 = 3.250",
+            "right": "Adding a zero after the point does not change the value: 3.25 × 10 = 32.5"
+          },
+          "note": "Ask: 60 ÷ 1,000? (0.06)."
+        },
+        {
+          "heading": "Units",
+          "bullets": [
+            "kg to g: × 1,000",
+            "g to kg: ÷ 1,000",
+            "cm to m: ÷ 100"
+          ],
+          "note": "Ask: 2.4 m in cm? (240 cm)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "0.68 × 100 = ?",
+            "options": [
+              "6.8",
+              "68",
+              "0.0068"
+            ],
+            "answer": 1,
+            "why": "Two places left: 68."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4.7 × 100 = ?",
+          "a": "470",
+          "mins": 2,
+          "model": "Teacher: digits move 2 places left: 4.7 becomes 470."
+        },
+        {
+          "q": "36 ÷ 1,000 = ?",
+          "a": "0.036",
+          "mins": 2
+        },
+        {
+          "q": "1.5 kg in g?",
+          "a": "1,500 g",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 0.9 × 10; 2.05 × 1,000; 81 ÷ 100",
+          "a": "9; 2,050; 0.81",
+          "mins": 4,
+          "model": "Teacher: 2.05 × 1,000: three places left: 2,050."
+        },
+        {
+          "q": "Extend: Extend: convert 750 g to kg; 3.6 l to ml; 45 mm to cm",
+          "a": "0.75 kg; 3,600 ml; 4.5 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: ? × 100 = 7; ? ÷ 1,000 = 0.204",
+          "a": "0.07; 204",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "5.6 ÷ 10 = ?",
+          "a": "0.56",
+          "mins": 2
+        },
+        {
+          "q": "Big question: does the point move, or do the digits?",
+          "a": "The digits move; the decimal point stays where it is",
+          "mins": 3
+        }
+      ],
+      "homework": "Convert 6 measures from packets (kg to g, l to ml).",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: find 0.3 × 1,000 ÷ 100.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 3: Decimals: small step 'Multiply by 10, 100 and 1,000 and Divide by 10, 100 and 1,000' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 45 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 46,
+      "title": "Multiply decimals by integers",
+      "duration": 45,
+      "bigQuestion": "How can 4 × 3 help us find 0.4 × 3?",
+      "objectives": [
+        "To understand how to multiply decimals by whole numbers"
+      ],
+      "successCriteria": [
+        "All: use a known fact to multiply a decimal",
+        "Most: use short multiplication with decimals",
+        "Some: estimate to check"
+      ],
+      "crossCurricular": "Money: buying several items at the same price",
+      "smsc": "Moral: honest totals at the till",
+      "keywords": [
+        {
+          "term": "integer",
+          "def": "a whole number"
+        },
+        {
+          "term": "product",
+          "def": "the answer to a multiplication"
+        },
+        {
+          "term": "estimate",
+          "def": "a rough answer to check"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Dates cost £2.35 a box. Is 4 boxes more or less than £10?",
+        "a": "Less: 2.35 × 4 = £9.40."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "box of dates",
+          "alt": "A box of dates",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "5.6 ÷ 10 = ?",
+          "a": "0.56",
+          "mins": 1
+        },
+        {
+          "q": "235 × 4 = ?",
+          "a": "940",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 4 = ?",
+          "a": "28",
+          "mins": 1
+        },
+        {
+          "q": "0.7 × 10 = ?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Use a fact",
+          "bullets": [
+            "4 × 3 = 12",
+            "0.4 × 3 = 1.2",
+            "0.04 × 3 = 0.12"
+          ],
+          "table": {
+            "head": [
+              "Fact",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "4 × 3 = 12",
+                "0.4 × 3 = 1.2",
+                "0.04 × 3 = 0.12"
+              ],
+              [
+                "7 × 6 = 42",
+                "0.7 × 6 = 4.2",
+                "0.07 × 6 = 0.42"
+              ]
+            ]
+          },
+          "note": "Tenths × 3 gives tenths."
+        },
+        {
+          "heading": "Short multiplication",
+          "model": {
+            "problem": "2.35 × 4",
+            "steps": [
+              "Estimate: 2 × 4 = 8 (a bit more)",
+              "235 × 4 = 940",
+              "2 decimal places: 9.40"
+            ],
+            "answer": "9.40"
+          },
+          "note": "Or line up and exchange in columns."
+        },
+        {
+          "heading": "Check with an estimate",
+          "bullets": [
+            "3.8 × 7 is about 4 × 7 = 28.",
+            "Exact: 26.6"
+          ],
+          "note": "Ask: is 266 sensible? (no)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1.6 × 5 = ?",
+            "options": [
+              "8",
+              "0.8",
+              "80"
+            ],
+            "answer": 0,
+            "why": "16 × 5 = 80; 1 decimal place: 8.0."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "0.9 × 4 = ?",
+          "a": "3.6",
+          "mins": 2,
+          "model": "Teacher: 9 × 4 = 36, so 0.9 × 4 = 3.6."
+        },
+        {
+          "q": "3.2 × 3 = ?",
+          "a": "9.6",
+          "mins": 2
+        },
+        {
+          "q": "0.06 × 8 = ?",
+          "a": "0.48",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 4.7 × 6; 1.25 × 8; 0.35 × 3",
+          "a": "28.2; 10; 1.05",
+          "mins": 4,
+          "model": "Teacher: 47 × 6 = 282, 1 d.p.: 28.2."
+        },
+        {
+          "q": "Extend: Extend: a pen costs £1.45. How much for 7?",
+          "a": "£10.15",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 3.6 × 25 (hint: × 100 ÷ 4)",
+          "a": "90",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2.5 × 4 = ?",
+          "a": "10",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can 4 × 3 help us find 0.4 × 3?",
+          "a": "0.4 is 4 tenths, so the answer is 12 tenths: 1.2",
+          "mins": 3
+        }
+      ],
+      "homework": "Find the cost of 3, 5 and 8 of an item priced £1.65.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: find 0.125 × 8.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 3: Decimals: small step 'Multiply decimals by integers' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 46 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 47,
+      "title": "Divide decimals by integers",
+      "duration": 45,
+      "bigQuestion": "How do we share £8.40 equally between 3?",
+      "objectives": [
+        "To understand how to divide decimals by whole numbers"
+      ],
+      "successCriteria": [
+        "All: use a known fact to divide a decimal",
+        "Most: use short division with decimals",
+        "Some: check with multiplication"
+      ],
+      "crossCurricular": "Money: sharing a bill equally",
+      "smsc": "Moral: sharing costs fairly",
+      "keywords": [
+        {
+          "term": "divide",
+          "def": "share equally"
+        },
+        {
+          "term": "quotient",
+          "def": "the answer to a division"
+        },
+        {
+          "term": "short division",
+          "def": "the bus stop method"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Three friends share £8.40 for a gift. How much each?",
+        "a": "£2.80."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "pound coins and pence",
+          "alt": "Coins",
+          "for": "hook"
+        },
+        {
+          "find": "short division bus stop",
+          "alt": "The bus stop method on paper",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2.5 × 4 = ?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "84 ÷ 3 = ?",
+          "a": "28",
+          "mins": 1
+        },
+        {
+          "q": "TT: 56 ÷ 7 = ?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "0.8 × 3 = ?",
+          "a": "2.4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Use a fact",
+          "bullets": [
+            "12 ÷ 3 = 4",
+            "1.2 ÷ 3 = 0.4",
+            "0.12 ÷ 3 = 0.04"
+          ],
+          "table": {
+            "head": [
+              "Fact",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "12 ÷ 3 = 4",
+                "1.2 ÷ 3 = 0.4",
+                "0.12 ÷ 3 = 0.04"
+              ],
+              [
+                "35 ÷ 5 = 7",
+                "3.5 ÷ 5 = 0.7",
+                "0.35 ÷ 5 = 0.07"
+              ]
+            ]
+          },
+          "note": "Same digits, same place."
+        },
+        {
+          "heading": "Short division",
+          "model": {
+            "problem": "8.40 ÷ 3",
+            "steps": [
+              "8 ÷ 3 = 2 r 2: write 2",
+              "24 tenths ÷ 3 = 8 tenths",
+              "0 hundredths ÷ 3 = 0: 2.80"
+            ],
+            "answer": "2.80"
+          },
+          "note": "Keep the point lined up."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "2.80 × 3 = 8.40",
+            "Multiplication undoes division."
+          ],
+          "note": "Ask: check 6.5 ÷ 5 = 1.3."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "4.8 ÷ 4 = ?",
+            "options": [
+              "1.2",
+              "12",
+              "0.12"
+            ],
+            "answer": 0,
+            "why": "48 ÷ 4 = 12, so 4.8 ÷ 4 = 1.2."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2.4 ÷ 6 = ?",
+          "a": "0.4",
+          "mins": 2,
+          "model": "Teacher: 24 ÷ 6 = 4, so 2.4 ÷ 6 = 0.4."
+        },
+        {
+          "q": "9.6 ÷ 3 = ?",
+          "a": "3.2",
+          "mins": 2
+        },
+        {
+          "q": "0.56 ÷ 7 = ?",
+          "a": "0.08",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 7.5 ÷ 5; 13.2 ÷ 4; 0.81 ÷ 9",
+          "a": "1.5; 3.3; 0.09",
+          "mins": 4,
+          "model": "Teacher: 75 ÷ 5 = 15, so 1.5."
+        },
+        {
+          "q": "Extend: Extend: 6 equal pieces from a 4.5 m rope. Length of each?",
+          "a": "0.75 m",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 7 ÷ 4 as a decimal",
+          "a": "1.75",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "6.3 ÷ 7 = ?",
+          "a": "0.9",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we share £8.40 between 3?",
+          "a": "Short division with the point lined up: £2.80 each",
+          "mins": 3
+        }
+      ],
+      "homework": "Share 3 prices equally between 2, 4 and 5 people.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: find 1 ÷ 8 as a decimal (0.125).",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 3: Decimals: small step 'Divide decimals by integers' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 47 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 48,
+      "title": "Decimals in context; decimals check",
+      "duration": 45,
+      "bigQuestion": "How do we choose the right operation in a decimal problem?",
+      "objectives": [
+        "To understand how to solve multi-step problems involving decimals"
+      ],
+      "successCriteria": [
+        "All: choose the operations",
+        "Most: solve a two-step decimal problem",
+        "Some: check the answer is sensible"
+      ],
+      "crossCurricular": "Money: planning a shopping list for an iftar",
+      "smsc": "Social: planning an iftar for guests on a budget",
+      "keywords": [
+        {
+          "term": "multi-step",
+          "def": "needs more than one calculation"
+        },
+        {
+          "term": "estimate",
+          "def": "a rough answer to check"
+        },
+        {
+          "term": "budget",
+          "def": "money we can spend"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have £20 for an iftar. Dates £3.45, milk £1.25, samosas £6.80. Is there enough for a £7.99 cake?",
+        "a": "Yes: 3.45 + 1.25 + 6.80 = 11.50; 20 - 11.50 = 8.50, which is more than 7.99."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "box of dates",
+          "alt": "A box of dates",
+          "for": "hook"
+        },
+        {
+          "find": "shopping receipt",
+          "alt": "A receipt (no names)",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6.3 ÷ 7 = ?",
+          "a": "0.9",
+          "mins": 1
+        },
+        {
+          "q": "3.45 + 1.25 = ?",
+          "a": "4.7",
+          "mins": 1
+        },
+        {
+          "q": "20 - 11.5 = ?",
+          "a": "8.5",
+          "mins": 1
+        },
+        {
+          "q": "1.2 × 3 = ?",
+          "a": "3.6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Plan it",
+          "bullets": [
+            "What do we know?",
+            "What do we need?",
+            "Which operations? In what order?"
+          ],
+          "diagram": {
+            "centre": "Decimal problem",
+            "items": [
+              "Read twice",
+              "Estimate first",
+              "Choose + - × ÷",
+              "Line up points",
+              "Check the answer"
+            ]
+          },
+          "note": "Use a bar model."
+        },
+        {
+          "heading": "Two steps",
+          "model": {
+            "problem": "3 boxes of dates at £3.45 and 2 milk at £1.25. Change from £20?",
+            "steps": [
+              "3 × 3.45 = £10.35",
+              "2 × 1.25 = £2.50",
+              "10.35 + 2.50 = £12.85",
+              "20 - 12.85 = £7.15"
+            ],
+            "answer": "£7.15"
+          },
+          "note": "Estimate: about £13, so change about £7."
+        },
+        {
+          "heading": "Measures",
+          "bullets": [
+            "A 1.5 l jug fills 6 equal glasses.",
+            "1.5 ÷ 6 = 0.25 l",
+            "= 250 ml each"
+          ],
+          "note": "Ask: 8 glasses? (0.1875 l, about 190 ml)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "4 tins at £0.85 each. Total?",
+            "options": [
+              "£3.40",
+              "£34",
+              "£4.85"
+            ],
+            "answer": 0,
+            "why": "85p × 4 = 340p = £3.40."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 2.4 m plank cut into 4 equal parts. Each part?",
+          "a": "0.6 m",
+          "mins": 2,
+          "model": "Teacher: 24 ÷ 4 = 6, so 2.4 ÷ 4 = 0.6 m."
+        },
+        {
+          "q": "£5 - (2 × £1.35) = ?",
+          "a": "£2.30",
+          "mins": 2
+        },
+        {
+          "q": "0.75 kg + 1.4 kg = ?",
+          "a": "2.15 kg",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 5 bottles of 0.75 l. How much in total? How much more to make 5 l?",
+          "a": "3.75 l; 1.25 l",
+          "mins": 4,
+          "model": "Teacher: 0.75 × 5 = 3.75 l; 5 - 3.75 = 1.25 l."
+        },
+        {
+          "q": "Extend: Extend (decimals check): round 3.456 to 2 d.p.; 4.6 × 100; 7.2 ÷ 8; 10 - 2.34",
+          "a": "3.46; 460; 0.9; 7.66",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a taxi costs £2.50 plus £1.80 a mile. The fare is £13.30. How many miles?",
+          "a": "6 miles",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "£10 - 3 × £2.15?",
+          "a": "£3.55",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we choose the right operation?",
+          "a": "Work out what we know and need, estimate, then choose and order the operations",
+          "mins": 3
+        }
+      ],
+      "homework": "Plan an iftar shopping list for £15 and work out the change.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: write a 3-step decimal problem for a partner.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 3: Decimals: small step 'Solve problems with decimals'; end-of-block check (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 48 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 49,
+      "title": "Fractions, decimals and percentages: equivalents",
+      "duration": 45,
+      "bigQuestion": "How many ways can we write one half?",
+      "objectives": [
+        "To understand equivalent fractions, decimals and percentages"
+      ],
+      "successCriteria": [
+        "All: convert benchmarks quickly",
+        "Most: convert any fraction with denominator a factor of 100",
+        "Some: use equivalents to compare"
+      ],
+      "crossCurricular": "Money: zakah at 2.5%",
+      "smsc": "Moral: zakah: giving 2.5% purifies wealth",
+      "keywords": [
+        {
+          "term": "percentage",
+          "def": "parts per hundred"
+        },
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "convert",
+          "def": "change to another form"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Write 1/2 in as many ways as you can.",
+        "a": "0.5, 50%, 2/4, 5/10, 50/100, 0.50..."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "islamicLink": {
+        "text": "Zakah is a pillar of Islam: a Muslim with savings above the nisab for a full lunar year gives 2.5% to the groups named in the Qur'an (9:60). Knowing 2.5% = 1/40 lets us work it out exactly.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "pie chart",
+          "alt": "A pie chart",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "£10 - 3 × £2.15?",
+          "a": "£3.55",
+          "mins": 1
+        },
+        {
+          "q": "3/5 = ?/100",
+          "a": "60/100",
+          "mins": 1
+        },
+        {
+          "q": "0.07 as a %?",
+          "a": "7%",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 25 = ?",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Benchmarks",
+          "table": {
+            "head": [
+              "Fraction",
+              "Decimal",
+              "%"
+            ],
+            "rows": [
+              [
+                "1/2",
+                "0.5",
+                "50%"
+              ],
+              [
+                "1/4",
+                "0.25",
+                "25%"
+              ],
+              [
+                "3/4",
+                "0.75",
+                "75%"
+              ],
+              [
+                "1/5",
+                "0.2",
+                "20%"
+              ],
+              [
+                "1/10",
+                "0.1",
+                "10%"
+              ],
+              [
+                "1/8",
+                "0.125",
+                "12.5%"
+              ]
+            ]
+          },
+          "note": "Learn by heart."
+        },
+        {
+          "heading": "Make it out of 100",
+          "bullets": [
+            "7/20 = 35/100 = 0.35 = 35%",
+            "13/25 = 52/100 = 0.52 = 52%"
+          ],
+          "note": "Ask: 9/50? (18%)."
+        },
+        {
+          "heading": "Zakah",
+          "bullets": [
+            "2.5% = 0.025 = 1/40",
+            "£400 of savings: £10 zakah."
+          ],
+          "note": "Only the rate is maths here."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is equal to 0.6?",
+            "options": [
+              "6%",
+              "3/5",
+              "1/6"
+            ],
+            "answer": 1,
+            "why": "3/5 = 6/10 = 0.6. 6% = 0.06."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "17/20 as a decimal and %?",
+          "a": "0.85; 85%",
+          "mins": 2,
+          "model": "Teacher: × 5: 85/100 = 0.85 = 85%."
+        },
+        {
+          "q": "0.04 as a fraction and %?",
+          "a": "1/25; 4%",
+          "mins": 2
+        },
+        {
+          "q": "72% as a fraction in simplest form?",
+          "a": "18/25",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: complete the families for 3/10, 0.45 and 8%.",
+          "a": "0.3, 30%; 9/20, 45%; 2/25, 0.08",
+          "mins": 4,
+          "model": "Teacher: 3/10 = 0.3 = 30%."
+        },
+        {
+          "q": "Extend: Extend: order 2/5, 0.38, 41%, 3/8",
+          "a": "3/8 (0.375), 0.38, 2/5 (0.4), 41%",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: find 2.5% of £600 (zakah on £600).",
+          "a": "£15",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/4 as a %?",
+          "a": "25%",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how many ways can we write one half?",
+          "a": "Many: 1/2, 0.5, 50%, 2/4, 50/100 and more",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a matching game: 8 fractions, decimals and percentages.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: write 1/3 and 2/3 as decimals and percentages (to 1 d.p.).",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 4: Fractions, decimals and percentages: small step 'Decimal and fraction equivalents and Understand percentages' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 49 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 50,
+      "title": "Fractions as division",
+      "duration": 45,
+      "bigQuestion": "Why is 3 ÷ 4 the same as 3/4?",
+      "objectives": [
+        "To understand that a fraction can be read as a division"
+      ],
+      "successCriteria": [
+        "All: write a division as a fraction",
+        "Most: share wholes to see 3 ÷ 4 = 3/4",
+        "Some: write the answer as a mixed number or decimal"
+      ],
+      "crossCurricular": "Cooking: sharing 3 pizzas between 4 people",
+      "smsc": "Moral: sharing food fairly",
+      "keywords": [
+        {
+          "term": "division",
+          "def": "sharing equally"
+        },
+        {
+          "term": "fraction",
+          "def": "a part of a whole"
+        },
+        {
+          "term": "mixed number",
+          "def": "wholes and a fraction"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "3 pizzas shared between 4 people. How much pizza does each get?",
+        "a": "3/4 of a pizza each."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into quarters",
+          "alt": "Pizzas cut into quarters",
+          "for": "hook"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/4 as a %?",
+          "a": "25%",
+          "mins": 1
+        },
+        {
+          "q": "12 ÷ 4 = ?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "3 ÷ 4 as a decimal?",
+          "a": "0.75",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 4 = ?",
+          "a": "36",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Share the pizzas",
+          "bullets": [
+            "Cut each pizza into 4.",
+            "Each person gets 1/4 from each of 3 pizzas.",
+            "3 ÷ 4 = 3/4"
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "pizza 1: 1/4 each"
+            },
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "pizza 2"
+            },
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "pizza 3: total 3/4"
+            }
+          ],
+          "note": "Model with paper circles."
+        },
+        {
+          "heading": "Numerator ÷ denominator",
+          "bullets": [
+            "a/b = a ÷ b",
+            "5/8 = 5 ÷ 8 = 0.625"
+          ],
+          "note": "Ask: 7 ÷ 10 as a fraction? (7/10)."
+        },
+        {
+          "heading": "More than 1",
+          "bullets": [
+            "11 ÷ 4 = 11/4 = 2 3/4",
+            "= 2.75"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 3,
+            "step": 0.25,
+            "marks": [
+              {
+                "at": 2.75,
+                "label": "11 ÷ 4"
+              }
+            ]
+          },
+          "note": "Ask: 9 ÷ 2? (4 1/2 = 4.5)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "5 ÷ 8 = ?",
+            "options": [
+              "8/5",
+              "5/8",
+              "1 3/5"
+            ],
+            "answer": 1,
+            "why": "The first number is the numerator: 5/8."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2 ÷ 5 as a fraction?",
+          "a": "2/5",
+          "mins": 2,
+          "model": "Teacher: 2 shared between 5: each gets 2/5."
+        },
+        {
+          "q": "7 ÷ 3 as a mixed number?",
+          "a": "2 1/3",
+          "mins": 2
+        },
+        {
+          "q": "3/8 as a decimal (3 ÷ 8)?",
+          "a": "0.375",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: write as fractions: 4 ÷ 7; 9 ÷ 10; 13 ÷ 5 (as a mixed number)",
+          "a": "4/7; 9/10; 2 3/5",
+          "mins": 4,
+          "model": "Teacher: 13 ÷ 5 = 2 r 3: 2 3/5."
+        },
+        {
+          "q": "Extend: Extend: 5 cakes shared by 6 people. How much each? As a decimal to 2 d.p.?",
+          "a": "5/6; 0.83",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: 7/8 as a decimal using short division",
+          "a": "0.875",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "3 ÷ 5 as a fraction?",
+          "a": "3/5",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is 3 ÷ 4 the same as 3/4?",
+          "a": "Sharing 3 wholes between 4 gives each one quarter of each whole: 3 quarters",
+          "mins": 3
+        }
+      ],
+      "homework": "Share 3 pieces of paper (as pizzas) between 4 and show 3/4 each.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: write 1/6 as a decimal to 3 d.p.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 4: Fractions, decimals and percentages: small step 'Fractions as division' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Paper circles to cut and share",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 50 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 51,
+      "title": "Order fractions, decimals and percentages",
+      "duration": 45,
+      "bigQuestion": "How can we order 0.6, 5/8 and 62%?",
+      "objectives": [
+        "To understand how to compare and order fractions, decimals and percentages"
+      ],
+      "successCriteria": [
+        "All: convert to one form",
+        "Most: order a mixed set",
+        "Some: explain the method"
+      ],
+      "crossCurricular": "Science: comparing results from experiments",
+      "smsc": "Moral: fair comparisons in judging",
+      "keywords": [
+        {
+          "term": "order",
+          "def": "put in size order"
+        },
+        {
+          "term": "convert",
+          "def": "change to another form"
+        },
+        {
+          "term": "compare",
+          "def": "decide which is greater"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Three shops: 0.6 off, 5/8 off and 62% off. Which discount is biggest?",
+        "a": "5/8 = 62.5%, the biggest."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "price label shop",
+          "alt": "A price label",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart decimal",
+          "alt": "A place value chart",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3 ÷ 5 as a fraction?",
+          "a": "3/5",
+          "mins": 1
+        },
+        {
+          "q": "5/8 as a decimal?",
+          "a": "0.625",
+          "mins": 1
+        },
+        {
+          "q": "62% as a decimal?",
+          "a": "0.62",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 8 = ?",
+          "a": "64",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One form",
+          "bullets": [
+            "0.6 = 0.600",
+            "5/8 = 0.625",
+            "62% = 0.620"
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "As decimals",
+            "labels": [
+              "0.6",
+              "62%",
+              "5/8"
+            ],
+            "values": [
+              0.6,
+              0.62,
+              0.625
+            ]
+          },
+          "note": "Decimals to 3 places are easiest."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "0.6, 62%, 5/8",
+            "smallest to largest"
+          ],
+          "note": "Ask: order 1/3, 0.3, 35% (0.3, 1/3, 35%)."
+        },
+        {
+          "heading": "Benchmarks",
+          "bullets": [
+            "Close to 1/2?",
+            "Above or below?",
+            "Then fine-tune."
+          ],
+          "note": "Use 1/2, 1/4, 3/4 as anchors."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is largest?",
+            "options": [
+              "0.45",
+              "4/9",
+              "44%"
+            ],
+            "answer": 0,
+            "why": "4/9 ≈ 0.444; 44% = 0.44; 0.45 is largest."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Order: 0.7, 3/4, 72%",
+          "a": "0.7, 72%, 3/4",
+          "mins": 2,
+          "model": "Teacher: all as decimals: 0.70, 0.75, 0.72."
+        },
+        {
+          "q": "Use < or >: 2/5 _ 38%",
+          "a": ">",
+          "mins": 2
+        },
+        {
+          "q": "Use < or >: 0.09 _ 9%",
+          "a": "= (equal)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: order smallest first: 1/5, 0.25, 18%, 0.2",
+          "a": "18%, 1/5 and 0.2 (equal), 0.25",
+          "mins": 4,
+          "model": "Teacher: 0.2, 0.25, 0.18, 0.2."
+        },
+        {
+          "q": "Extend: Extend: order largest first: 7/8, 0.8, 85%, 0.875",
+          "a": "7/8 and 0.875 (equal), 85%, 0.8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: find a fraction between 60% and 2/3.",
+          "a": "For example 13/20 (65%)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bigger: 3/8 or 0.4?",
+          "a": "0.4",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can we order 0.6, 5/8 and 62%?",
+          "a": "Change all to decimals: 0.600, 0.625, 0.620; order 0.6, 62%, 5/8",
+          "mins": 3
+        }
+      ],
+      "homework": "Order 6 values from shop signs or results tables.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: order 2/3, 0.67, 66% and 0.666.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 4: Fractions, decimals and percentages: small step 'Order fractions, decimals and percentages' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 51 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 52,
+      "title": "Percentage of an amount",
+      "duration": 45,
+      "bigQuestion": "How does 10% help us find any percentage?",
+      "objectives": [
+        "To understand how to find percentages of amounts using 50%, 25%, 10% and 1%"
+      ],
+      "successCriteria": [
+        "All: find 50%, 25% and 10%",
+        "Most: build other percentages from 10% and 1%",
+        "Some: solve a discount problem"
+      ],
+      "crossCurricular": "Money: sale discounts",
+      "smsc": "Moral: honest advertising of discounts",
+      "keywords": [
+        {
+          "term": "percentage",
+          "def": "parts per hundred"
+        },
+        {
+          "term": "discount",
+          "def": "money taken off the price"
+        },
+        {
+          "term": "10%",
+          "def": "one tenth"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A £60 coat has 35% off. How much is saved?",
+        "a": "£21: 10% is £6, 30% is £18, 5% is £3."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "sale sign in a shop",
+          "alt": "A sale sign (no people)",
+          "for": "hook"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Bigger: 3/8 or 0.4?",
+          "a": "0.4",
+          "mins": 1
+        },
+        {
+          "q": "1/10 of 60?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 80?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 7 = ?",
+          "a": "42",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Key percentages",
+          "bullets": [
+            "50%: halve.",
+            "25%: halve again.",
+            "10%: ÷ 10.",
+            "1%: ÷ 100."
+          ],
+          "table": {
+            "head": [
+              "%",
+              "Of £60"
+            ],
+            "rows": [
+              [
+                "50%",
+                "£30"
+              ],
+              [
+                "25%",
+                "£15"
+              ],
+              [
+                "10%",
+                "£6"
+              ],
+              [
+                "5%",
+                "£3"
+              ],
+              [
+                "1%",
+                "£0.60"
+              ]
+            ]
+          },
+          "note": "Use £60."
+        },
+        {
+          "heading": "Build it",
+          "model": {
+            "problem": "35% of £60",
+            "steps": [
+              "10% = £6",
+              "30% = £18",
+              "5% = £3",
+              "35% = £18 + £3 = £21"
+            ],
+            "answer": "£21"
+          },
+          "note": "Add the parts."
+        },
+        {
+          "heading": "Discounts",
+          "bullets": [
+            "Price £60, 35% off.",
+            "Save £21.",
+            "Pay £60 - £21 = £39."
+          ],
+          "note": "Ask: 20% off £45? (pay £36)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "10% of 350 = ?",
+            "options": [
+              "3.5",
+              "35",
+              "340"
+            ],
+            "answer": 1,
+            "why": "350 ÷ 10 = 35."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "25% of 120?",
+          "a": "30",
+          "mins": 2,
+          "model": "Teacher: half of 120 is 60, half again is 30."
+        },
+        {
+          "q": "10% of £85?",
+          "a": "£8.50",
+          "mins": 2
+        },
+        {
+          "q": "1% of 400?",
+          "a": "4",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 50% of 72; 25% of 48; 10% of 230; 1% of 900",
+          "a": "36; 12; 23; 9",
+          "mins": 4,
+          "model": "Teacher: 50% of 72 is half: 36."
+        },
+        {
+          "q": "Extend: Extend: 15% of £40; 60% of 25 kg",
+          "a": "£6; 15 kg",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: a £80 bag is 30% off, then a further 10% off the new price. Final price?",
+          "a": "£50.40",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "20% of 50?",
+          "a": "10",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how does 10% help us find any percentage?",
+          "a": "10% is a tenth; we can double, halve or add it with 1% to build any percentage",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 10%, 20% and 5% of 3 prices from a leaflet.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: find 17.5% of £200.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 4: Fractions, decimals and percentages: small step 'Percentages of an amount' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 52 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 53,
+      "title": "Percentages: missing values and problems",
+      "duration": 45,
+      "bigQuestion": "If 10% is 7, what is the whole?",
+      "objectives": [
+        "To understand how to solve percentage problems, including finding the whole"
+      ],
+      "successCriteria": [
+        "All: find any percentage of an amount",
+        "Most: find the whole from a percentage",
+        "Some: solve a zakah or discount problem"
+      ],
+      "crossCurricular": "Money: zakah on savings",
+      "smsc": "Moral: zakah, the right of the poor in our wealth",
+      "keywords": [
+        {
+          "term": "whole",
+          "def": "100%"
+        },
+        {
+          "term": "missing value",
+          "def": "the number we work out"
+        },
+        {
+          "term": "percentage",
+          "def": "parts per hundred"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "10% of a number is 7. What is the number?",
+        "a": "70: 10 lots of 10% make 100%."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "hundred square grid",
+          "alt": "A 100 grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "20% of 50?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "35% of 60?",
+          "a": "21",
+          "mins": 1
+        },
+        {
+          "q": "1% of 300?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 10 = ?",
+          "a": "70",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Find the whole",
+          "bullets": [
+            "10% is 7.",
+            "100% is 10 × 7 = 70."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 1,
+              "label": "10% = 7; whole = 70"
+            }
+          ],
+          "note": "Bar of 10 parts."
+        },
+        {
+          "heading": "From 25%",
+          "model": {
+            "problem": "25% of a number is 18. What is the number?",
+            "steps": [
+              "25% is 1/4",
+              "4 × 18 = 72"
+            ],
+            "answer": "72"
+          },
+          "note": "Draw 4 parts."
+        },
+        {
+          "heading": "Zakah",
+          "bullets": [
+            "2.5% of £800",
+            "10% = £80; 2.5% = £80 ÷ 4 = £20",
+            "Zakah: £20"
+          ],
+          "note": "Only the calculation; the fiqh details belong in Islamic Studies."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "50% of a number is 45. The number?",
+            "options": [
+              "22.5",
+              "90",
+              "95"
+            ],
+            "answer": 1,
+            "why": "Double it: 90."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "20% of a number is 12. The number?",
+          "a": "60",
+          "mins": 2,
+          "model": "Teacher: 20% is 1/5, so 5 × 12 = 60."
+        },
+        {
+          "q": "1% of a number is 3. The number?",
+          "a": "300",
+          "mins": 2
+        },
+        {
+          "q": "75% of 40?",
+          "a": "30",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 10% is 9; 25% is 11; 5% is 4. Find each whole.",
+          "a": "90; 44; 80",
+          "mins": 4,
+          "model": "Teacher: 10% is 9, so 100% is 90."
+        },
+        {
+          "q": "Extend: Extend: zakah on £1,200 of savings (2.5%)?",
+          "a": "£30",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Stretch: after a 20% discount a book costs £12. What was the full price?",
+          "a": "£15",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "10% is 4.5. Whole?",
+          "a": "45",
+          "mins": 2
+        },
+        {
+          "q": "Big question: if 10% is 7, what is the whole?",
+          "a": "70: multiply by 10 to make 100%",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 2.5% of 3 amounts (£400, £1,000, £2,400).",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: 40% of a number is 26. Find 65% of it.",
+      "resources": [
+        "White Rose Maths Year 6, Spring block 4: Fractions, decimals and percentages: small steps 'Percentages of an amount' and 'Percentages: missing values' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 53 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 54,
+      "title": "Spring assessment: arithmetic",
+      "duration": 45,
+      "bigQuestion": "How accurate and fluent is my arithmetic?",
+      "objectives": [
+        "To understand how secure my arithmetic is across the four operations, fractions, decimals and percentages"
+      ],
+      "successCriteria": [
+        "All: answer short arithmetic questions accurately",
+        "Most: use efficient methods",
+        "Some: check answers and find my errors"
+      ],
+      "smsc": "Moral: honesty: working alone in an assessment",
+      "keywords": [
+        {
+          "term": "arithmetic",
+          "def": "calculating with numbers"
+        },
+        {
+          "term": "efficient",
+          "def": "quick and accurate"
+        },
+        {
+          "term": "check",
+          "def": "make sure it is right"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which method do you trust most for 3.6 × 7? Why?",
+        "a": "Answers will vary: for example 36 × 7 = 252, then 25.2."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "pencil and paper test",
+          "alt": "A test paper and pencil (no people)",
+          "for": "teach:2"
+        },
+        {
+          "find": "calculator",
+          "alt": "A calculator (not used today)",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "10% is 4.5. Whole?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "3.6 × 7 = ?",
+          "a": "25.2",
+          "mins": 1
+        },
+        {
+          "q": "5/8 - 1/4 = ?",
+          "a": "3/8",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 11 = ?",
+          "a": "132",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Get ready",
+          "bullets": [
+            "Read each question carefully.",
+            "Estimate first.",
+            "Show working where it helps."
+          ],
+          "note": "Arithmetic paper: 25 questions, 30 minutes split across this lesson and home."
+        },
+        {
+          "heading": "Methods",
+          "table": {
+            "head": [
+              "Question type",
+              "Method"
+            ],
+            "rows": [
+              [
+                "2,456 × 34",
+                "Long multiplication"
+              ],
+              [
+                "8,736 ÷ 24",
+                "Long or short division"
+              ],
+              [
+                "3/4 + 5/6",
+                "Common denominator"
+              ],
+              [
+                "4.5 - 2.37",
+                "Line up the points"
+              ],
+              [
+                "15% of 340",
+                "10% + 5%"
+              ]
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Use the inverse.",
+            "Is it sensible?"
+          ],
+          "note": "Mark together; pupils correct in green."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "4.5 - 2.37 = ?",
+            "options": [
+              "2.13",
+              "2.22",
+              "2.18"
+            ],
+            "answer": 0,
+            "why": "4.50 - 2.37 = 2.13."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2,456 × 34 = ?",
+          "a": "83,504",
+          "mins": 2,
+          "model": "Teacher: 2,456 × 4 = 9,824; 2,456 × 30 = 73,680; total 83,504."
+        },
+        {
+          "q": "3/4 + 5/6 = ?",
+          "a": "1 7/12",
+          "mins": 2
+        },
+        {
+          "q": "15% of 340 = ?",
+          "a": "51",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Assessment: 8,736 ÷ 24; 0.6 × 9; 2/3 × 3/5",
+          "a": "364; 5.4; 2/5",
+          "mins": 4,
+          "model": "Teacher: 24 × 300 = 7,200; 1,536 left; 24 × 64 = 1,536: 364."
+        },
+        {
+          "q": "Extend: Assessment: 7 - 3.58; 1 1/2 ÷ 3; 45% of 80",
+          "a": "3.42; 1/2; 36",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Assessment: 12 + 8 × 3 - 6 ÷ 2",
+          "a": "33",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "6.3 ÷ 9 = ?",
+          "a": "0.7",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how accurate and fluent is my arithmetic?",
+          "a": "Answers will vary: name a strength and a type of question to practise",
+          "mins": 3
+        }
+      ],
+      "homework": "Correct any errors from the paper and redo 5 similar questions.",
+      "send": "SEND: place value chart and counters, worked example kept on screen, fewer items. EAL: key word cards (tenths, hundredths, thousandths); stem 'The digit ... is worth ...'. Stretch: time yourself on 10 mixed questions and beat your score.",
+      "resources": [
+        "White Rose Maths Year 6: spring arithmetic assessment (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 54 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Ratio; algebra; decimals",
+      "n": 55,
+      "title": "Spring assessment: reasoning and review",
+      "duration": 45,
+      "bigQuestion": "Can I explain my reasoning as well as get the answer?",
+      "objectives": [
+        "To understand how well I can reason about ratio, algebra, decimals and percentages"
+      ],
+      "successCriteria": [
+        "All: solve one-step reasoning problems",
+        "Most: solve multi-step problems",
+        "Some: explain a method in words"
+      ],
+      "smsc": "Spiritual: shukr for learning; setting an intention (niyyah) for Summer 1",
+      "keywords": [
+        {
+          "term": "reason",
+          "def": "explain why"
+        },
+        {
+          "term": "multi-step",
+          "def": "needs more than one calculation"
+        },
+        {
+          "term": "explain",
+          "def": "say how and why"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which topic from this half term will help you most in Year 7? Why?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "pencil and paper test",
+          "alt": "A test paper and pencil (no people)",
+          "for": "teach:2"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "15% of 340?",
+          "a": "51",
+          "mins": 1
+        },
+        {
+          "q": "Solve 3x - 4 = 17.",
+          "a": "x = 7",
+          "mins": 1
+        },
+        {
+          "q": "Share 42 in 2 : 5.",
+          "a": "12 and 30",
+          "mins": 1
+        },
+        {
+          "q": "Round 6.348 to 1 d.p.",
+          "a": "6.3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Reasoning steps",
+          "bullets": [
+            "Read: what do we know and need?",
+            "Draw: bar model or table.",
+            "Calculate, then explain in a sentence."
+          ],
+          "diagram": {
+            "centre": "Reasoning",
+            "items": [
+              "Ratio: bar model",
+              "Algebra: equation",
+              "Decimals: line up points",
+              "Percentages: 10% and 1%",
+              "Explain in a sentence"
+            ]
+          },
+          "note": "Model one question."
+        },
+        {
+          "heading": "Assessment",
+          "bullets": [
+            "Reasoning paper.",
+            "Work alone; show working."
+          ],
+          "note": "Spring reasoning paper on the worksheet; mark together."
+        },
+        {
+          "heading": "My next step",
+          "bullets": [
+            "What went well?",
+            "Even better if...?"
+          ],
+          "note": "Pupils write one EBI target for Summer 1."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "red : blue = 3 : 5. There are 20 blue. How many red?",
+            "options": [
+              "12",
+              "15",
+              "33"
+            ],
+            "answer": 0,
+            "why": "5 parts = 20, so 1 part = 4; red = 3 × 4 = 12."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A rectangle has perimeter 2x + 16 and x = 7. Perimeter?",
+          "a": "30",
+          "mins": 2,
+          "model": "Teacher: 2 × 7 + 16 = 14 + 16 = 30."
+        },
+        {
+          "q": "Which is greater: 3/8 or 0.38? Explain.",
+          "a": "0.38: 3/8 = 0.375",
+          "mins": 2
+        },
+        {
+          "q": "40% of the pupils are boys. There are 18 girls. How many pupils?",
+          "a": "30",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Reasoning: n + n + n = 4.5. What is n + 2?",
+          "a": "3.5",
+          "mins": 4,
+          "model": "Teacher: 3n = 4.5, n = 1.5; 1.5 + 2 = 3.5."
+        },
+        {
+          "q": "Extend: Reasoning: a map scale is 1 cm : 5 km. Two towns are 37.5 km apart. Map distance?",
+          "a": "7.5 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Reasoning: a shop has 25% off. Ali pays £36. What was the original price? Explain.",
+          "a": "£48: £36 is 75%, so 25% is £12, and 100% is £48",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Explain how to share 35 in 3 : 4.",
+          "a": "7 parts; 5 each; 15 and 20",
+          "mins": 2
+        },
+        {
+          "q": "Big question: can I explain my reasoning?",
+          "a": "Answers will vary",
+          "mins": 3
+        }
+      ],
+      "homework": "Correct any errors and write one sentence explaining each correction.",
+      "send": "SEND: counters in two colours and a bar model, worked example kept on screen, fewer items. EAL: key word cards (ratio, for every, scale factor); stem 'For every ..., there are ...'. Stretch: write a reasoning question for each block for a partner.",
+      "resources": [
+        "White Rose Maths Year 6: spring reasoning assessment (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones to thousandths) and place value counters",
+        "100-square grid",
+        "Counters in two colours (or two kinds of pasta)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 55 guided, independent and homework tasks"
       ]
     }
   ]
