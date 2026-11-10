@@ -228,15 +228,21 @@
       ]
     },
     {
-      "unit": "Unit 1: Next steps and financial capability",
+      "unit": "Spring 2: Health, safety and responsibility",
       "n": 2,
-      "title": "Money: payslips, tax and borrowing",
+      "title": "Money: payslips and tax recap (with a riba note)",
       "duration": 50,
+      "bigQuestion": "Your first job advert says £20,000 a year. Is that what reaches your bank account?",
       "objectives": [
-        "Calculate take-home pay from a gross salary using income tax and National Insurance",
-        "Explain how interest, APR and debt work",
-        "Describe riba and halal alternatives and make informed financial decisions"
+        "To understand how to read a payslip, how income tax and National Insurance are worked out, and the Islamic position on borrowing with interest"
       ],
+      "successCriteria": [
+        "All: label gross pay, deductions and net pay",
+        "Most: calculate income tax and NI on a simple salary",
+        "Some: explain why Muslims avoid interest-based borrowing and the alternatives"
+      ],
+      "crossCurricular": "Maths: percentages",
+      "smsc": "Moral: honesty in tax and avoiding riba",
       "keywords": [
         {
           "term": "gross pay",
@@ -244,94 +250,185 @@
         },
         {
           "term": "net pay",
-          "def": "pay after tax and other deductions"
+          "def": "take-home pay after deductions"
         },
         {
           "term": "National Insurance",
-          "def": "a contribution from earnings that funds state benefits"
-        },
-        {
-          "term": "APR",
-          "def": "the yearly cost of borrowing as a percentage"
+          "def": "a contribution that pays for state benefits and the State Pension"
         },
         {
           "term": "riba",
-          "def": "interest or increase on a loan, forbidden in Islam"
+          "def": "interest on loans: forbidden in Islam"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your first job advert says £20,000 a year. Is that what reaches your bank account?",
+        "a": "No: income tax and National Insurance are taken first, so take-home pay is lower."
+      },
+      "islamicLink": {
+        "text": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. What is a budget?",
-        "Name two signs of a scam.",
-        "What is the difference between income and expenditure?"
+        {
+          "q": "British values include ...",
+          "a": "the rule of law",
+          "mins": 1,
+          "options": [
+            "the rule of law",
+            "one religion only"
+          ]
+        },
+        {
+          "q": "Name one warning sign of radicalisation.",
+          "a": "Secretive contacts justifying violence.",
+          "mins": 1
+        },
+        {
+          "q": "Extremism should be ...",
+          "a": "reported to safeguarding",
+          "mins": 1,
+          "options": [
+            "reported to safeguarding",
+            "ignored"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "From gross pay to take-home pay",
-          "bullets": [
-            "Gross pay: before deductions",
-            "Income tax and National Insurance are deducted",
-            "Net pay: what you take home",
-            "Pension contributions may also be taken"
-          ],
-          "note": "Say bismillah. Show a simplified payslip. Explain that tax pays for public services. Use 2026-27 rates in England: personal allowance £12,570; basic rate 20% on income above this up to £50,270; employee National Insurance of 8% on earnings between £12,570 and £50,270 (teachers should check gov.uk for any changes). Link to the Tarbiyyah Compass value of Integrity: honesty in paying what is due. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "heading": "A payslip",
+          "bullets": [],
+          "note": "Example figures for 2026-27; check current thresholds on GOV.UK.",
+          "table": {
+            "head": [
+              "Item",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Gross pay",
+                "Before deductions"
+              ],
+              [
+                "Income tax (PAYE)",
+                "20% above the personal allowance (£12,570)"
+              ],
+              [
+                "National Insurance",
+                "8% on earnings between £12,570 and £50,270"
+              ],
+              [
+                "Net pay",
+                "What you take home"
+              ]
+            ]
+          }
         },
         {
           "heading": "Worked example: £20,000 a year",
-          "bullets": [
-            "Taxable income: £20,000 − £12,570 = £7,430",
-            "Income tax at 20%: £1,486",
-            "National Insurance at 8%: £594.40",
-            "Net pay: £17,919.60 a year"
-          ],
-          "note": "Walk through the calculation step by step: 7,430 × 0.20 = 1,486; 7,430 × 0.08 = 594.40; 20,000 − 1,486 − 594.40 = 17,919.60. Divide by 12 for about £1,493.30 a month. Pupils should use calculators. Misconception: tax is taken on the whole salary at 20%; only income above the allowance is taxed. Check understanding with a second example in practice."
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "Salary £20,000. Find tax, NI and take-home pay.",
+            "steps": [
+              "Taxable: £20,000 − £12,570 = £7,430",
+              "Tax: 20% × £7,430 = £1,486",
+              "NI: 8% × £7,430 = £594.40",
+              "Take-home: £20,000 − £1,486 − £594.40 = £17,919.60"
+            ],
+            "answer": "£17,919.60 a year (about £1,493 a month)"
+          }
         },
         {
-          "heading": "Borrowing and interest",
+          "heading": "Borrowing",
           "bullets": [
-            "Credit cards, loans, overdrafts, buy-now-pay-later",
-            "Interest increases what you repay",
-            "APR: compare the true yearly cost",
-            "Missed payments harm your credit score"
+            "Interest-based loans and credit cards charge riba",
+            "Islam forbids riba (2:275)",
+            "Alternatives: saving first, qard hasan, Islamic finance"
           ],
-          "note": "Worked example: borrowing £1,000 at 20% APR for one year costs about £200 extra. If only minimum payments are made the cost can rise quickly. Explain credit scores and why they matter for renting and loans. Cite plainly: Qur'an 2:282, which tells believers to write down debts with a fixed term. Link to the hadith that the soul of a believer is held back by their debt until it is paid (Tirmidhi)."
+          "note": "Taught as knowledge of how the wider economy works, never as something to take."
         },
         {
-          "heading": "Riba and halal alternatives",
-          "bullets": [
-            "Qur'an 2:275: trade is lawful, riba is forbidden",
-            "Interest-based loans are riba",
-            "Islamic finance: profit-sharing, cost-plus sale, leasing",
-            "Seek advice from qualified scholars"
-          ],
-          "note": "Cite plainly: Qur'an 2:275-279 on riba. Explain simply how some Islamic products work: a bank buys an item and sells it at an agreed higher price (murabaha); partners share profit and loss (musharakah, mudarabah); leasing (ijara). Note that scholars discuss specific products such as student finance and mortgages; encourage pupils to consult family and qualified scholars for personal decisions. Present scholars' views respectfully."
-        },
-        {
-          "heading": "Spending wisely",
-          "bullets": [
-            "Needs before wants",
-            "Save a little regularly",
-            "Give sadaqah",
-            "Hadith: asked about wealth, how earned and spent"
-          ],
-          "note": "Cite plainly: the hadith that a person will be asked about their wealth, how it was earned and how it was spent (Tirmidhi); and Qur'an 25:67 on moderation. Discuss priorities: rent, food, transport, savings, giving. Ask: ‘What would you cut if income fell by 10%?’ Mention free sources of guidance: MoneyHelper (gov.uk). Link to the Tarbiyyah Compass value of Contentment."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Net pay is ...",
+            "options": [
+              "pay after tax and NI",
+              "pay before deductions",
+              "the hourly rate"
+            ],
+            "answer": 0,
+            "why": "Net = take-home."
+          }
         }
       ],
       "practice": [
-        "Calculate net pay for a salary of £24,000: tax at 20% and NI at 8% on the amount above £12,570.",
-        "You borrow £500 at 24% APR for a year. Approximately how much interest is charged?",
-        "Explain the difference between gross and net pay."
+        {
+          "q": "Salary £15,000: taxable amount, tax, NI and take-home?",
+          "a": "Taxable £2,430; tax £486; NI £194.40; take-home £14,319.60.",
+          "mins": 4,
+          "model": "I do: 15,000 − 12,570 = 2,430. Tax 20% = 486. NI 8% = 194.40. 15,000 − 486 − 194.40 = 14,319.60."
+        }
       ],
       "independent": [
-        "Create a monthly budget for someone earning £1,600 net in their first job, including rent, food, transport, savings and sadaqah.",
-        "Write a leaflet: ‘Borrowing: what to know before you sign’.",
-        "Write a paragraph explaining how Islamic finance differs from interest-based borrowing."
+        {
+          "q": "Payslip set (pupil PDF): work out take-home pay for £18,000 and £24,000 salaries.",
+          "a": "£18,000: taxable £5,430, tax £1,086, NI £434.40, take-home £16,479.60. £24,000: taxable £11,430, tax £2,286, NI £914.40, take-home £20,799.60.",
+          "mins": 13,
+          "model": "The teacher does the £18,000 taxable amount step."
+        },
+        {
+          "q": "Extend: explain one halal alternative to buying something with an interest-based loan.",
+          "a": "Save first; qard hasan (interest-free loan); murabahah through an Islamic bank.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What is the difference between gross and net pay?",
-        "Name one halal alternative to an interest-based loan."
+        {
+          "q": "Riba is ...",
+          "a": "forbidden in Islam",
+          "mins": 1,
+          "options": [
+            "forbidden in Islam",
+            "allowed if small"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your first job advert says £20,000 a year. Is that what reaches your bank account?",
+          "a": "No: income tax and National Insurance are taken first, so take-home pay is lower.",
+          "mins": 2
+        }
       ],
-      "homework": "Calculate the take-home pay for a job offering £18,000 a year and write one decision you would make with the money.",
-      "send": "SEND: provide a step-by-step calculation template and allow a calculator. EAL: pre-teach finance vocabulary. Stretch: compare the total repaid on a £5,000 loan at 8% and 15% APR over three years."
+      "homework": "With a parent, look at a real (or sample) payslip and find gross, deductions and net.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4; checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "GOV.UK income tax and National Insurance rates 2026-27 (checked by the teacher)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Payslip document",
+          "alt": "A payslip",
+          "for": "teach:1"
+        },
+        {
+          "find": "Coins and notes British",
+          "alt": "Money",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Spring 1: First aid",
@@ -562,110 +659,219 @@
       ]
     },
     {
-      "unit": "Unit 2: Health, safety and responsibility",
+      "unit": "Spring 2: Health, safety and responsibility",
       "n": 4,
-      "title": "Consent, modesty and the law: protecting dignity and health",
+      "title": "Health and safety at home and online",
       "duration": 50,
+      "bigQuestion": "At 16 you will be responsible for more: younger siblings, your own accounts, maybe a job. Which risk do you think is most often ignored?",
       "objectives": [
-        "Explain consent and the law, including the age of consent and sexual harassment",
-        "Describe, in factual terms, sexual health risks and where to find confidential help",
-        "Explain the Islamic teaching that intimacy belongs only within marriage, and how modesty and responsibility protect dignity"
+        "To understand how to manage risks to health and safety at home and online as a young adult"
       ],
+      "successCriteria": [
+        "All: name three home hazards and three online risks",
+        "Most: describe how to reduce each risk",
+        "Some: explain my growing responsibility for others' safety"
+      ],
+      "crossCurricular": "Computing: cybersecurity (4CP0 Topic 5)",
+      "smsc": "Moral: responsibility for our own and others' safety",
       "keywords": [
         {
-          "term": "consent",
-          "def": "freely given agreement that can be withdrawn at any time"
+          "term": "hazard",
+          "def": "something that could cause harm"
         },
         {
-          "term": "STI",
-          "def": "an infection that can pass on through sexual contact"
+          "term": "risk",
+          "def": "how likely harm is"
         },
         {
-          "term": "sexual harassment",
-          "def": "unwanted sexual behaviour that makes someone feel uncomfortable or unsafe"
+          "term": "scam",
+          "def": "a trick to steal money or data"
         },
         {
-          "term": "chastity ('iffah)",
-          "def": "keeping intimacy for marriage only, as Islam teaches"
-        },
-        {
-          "term": "responsibility",
-          "def": "being accountable for your choices and their effects"
+          "term": "two-factor authentication",
+          "def": "a second check when logging in"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "At 16 you will be responsible for more: younger siblings, your own accounts, maybe a job. Which risk do you think is most often ignored?",
+        "a": "Often online scams and fire safety (chargers, cooking); small habits prevent big harm."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And do not throw [yourselves] with your [own] hands into destruction' (Al-Baqarah 2:195). Protecting life and wellbeing is one of the aims of the Shari'ah.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Define consent.",
-        "Name two people or services you can ask for help.",
-        "What does haya mean?"
+        {
+          "q": "A mock result is ...",
+          "a": "a snapshot",
+          "mins": 1,
+          "options": [
+            "a snapshot",
+            "a verdict"
+          ]
+        },
+        {
+          "q": "Name something in your control before exams.",
+          "a": "Revision plan; sleep.",
+          "mins": 1
+        },
+        {
+          "q": "Tawakkul means ...",
+          "a": "trust in Allah after effort",
+          "mins": 1,
+          "options": [
+            "trust in Allah after effort",
+            "no effort"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Setting the scene",
-          "bullets": [
-            "Factual health and law for Year 11",
-            "Taught to boys and girls separately",
-            "Parents have seen all the materials",
-            "Questions go to the anonymous question box"
-          ],
-          "note": "Say bismillah. Teacher note: this lesson is part of RSE taught from an Islamic perspective, to boys and girls separately, in line with the TGA RSHE Policy. Parents are told in advance and can see all materials on the Parent Portal. Pupils learn the law and basic health facts so that they can protect themselves and others and recognise abuse; the Islamic position, that intimacy belongs only within marriage, is taught clearly and without shaming anyone. Follow the policy on any parental withdrawal request. Take questions through the box only. Link to the Tarbiyyah Compass value of Integrity and amanah. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "heading": "Home hazards",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Fire",
+              "Other"
+            ],
+            "cards": [
+              "Charging a phone under a pillow",
+              "Pan left on the hob",
+              "Wet kitchen floor",
+              "Medicines in reach of children",
+              "Overloaded extension lead",
+              "Trailing cables on stairs"
+            ],
+            "answer": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              1
+            ]
+          }
         },
         {
-          "heading": "Consent and the law",
-          "bullets": [
-            "Consent must be free, informed and can be withdrawn",
-            "The age of consent in the UK is 16",
-            "Sexual harassment and assault are crimes",
-            "Silence, pressure or being intoxicated is not consent"
-          ],
-          "note": "Revisit consent from Y9. State the law factually: sexual activity without consent is a crime, and the age of consent is 16 in England and Wales. Explain that pressure, threats and incapacity through alcohol or drugs mean there is no consent. Explain that sexual harassment, including online, is unacceptable. If a pupil is a victim, it is never their fault. Rape Crisis: 0808 500 2222; Childline: 0800 1111."
+          "heading": "Online risks",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Risk",
+              "Reduce it"
+            ],
+            "rows": [
+              [
+                "Phishing and scams",
+                "Check sender; never share codes"
+              ],
+              [
+                "Weak passwords",
+                "Long passphrases; a password manager"
+              ],
+              [
+                "Account takeover",
+                "Two-factor authentication"
+              ],
+              [
+                "Oversharing",
+                "Privacy settings; think before posting"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Islamic teaching on relationships",
+          "heading": "Responsibility for others",
           "bullets": [
-            "Qur'an 17:32: do not go near zina",
-            "Qur'an 24:30-31: lower the gaze and guard modesty",
-            "Marriage is the context for intimacy",
-            "Qur'an 30:21: love and mercy within marriage"
+            "Younger siblings online",
+            "Elderly relatives and scams",
+            "Know emergency numbers: 999 and 111"
           ],
-          "note": "Cite plainly: Qur'an 17:32 tells believers not to approach unlawful sexual intercourse; 24:30-31 on lowering the gaze and guarding chastity; and 30:21 on love and mercy within marriage. State clearly that the Islamic position is that intimate relationships belong within marriage. Teach respectfully and avoid shaming. Emphasise Allah's mercy, and that anyone who has erred can turn back in repentance. Link to the Tarbiyyah Compass value of Eeman."
+          "note": ""
         },
         {
-          "heading": "Sexual health facts",
-          "bullets": [
-            "STIs can pass on through sexual contact",
-            "Some have no symptoms; many are treatable",
-            "Abstinence outside marriage is the only certain protection",
-            "NHS services are confidential and free"
-          ],
-          "note": "Give factual, brief information: STIs such as chlamydia can have no symptoms and can be treated; HIV and hepatitis B are serious but manageable with treatment; testing is available through sexual health clinics and GPs and is confidential. The HPV vaccine is offered through schools in England. Do not teach contraceptive methods. If pupils ask, say that family planning within marriage is a matter scholars have discussed (the narration about ‘azl, Bukhari and Muslim) and that married couples ask a qualified scholar and a doctor. Do not give practical instructions."
-        },
-        {
-          "heading": "Where to get help",
-          "bullets": [
-            "Talk to a parent or trusted adult first",
-            "GP or NHS 111",
-            "Childline 0800 1111",
-            "TGA DSL and pastoral team"
-          ],
-          "note": "Encourage pupils to talk to their parents first. Explain factually that NHS services, including GPs, give confidential advice to young people, though a professional must tell someone if a young person is at risk of harm. Remind pupils that they can talk to the DSL at any time. Revisit the importance of intentions, responsibility and choosing safe paths. Close with a du'a for guidance and purity of heart."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A text says your parcel is held and asks for card details. It is most likely ...",
+            "options": [
+              "a scam",
+              "genuine",
+              "a prize"
+            ],
+            "answer": 0,
+            "why": "Unexpected requests for payment details are classic phishing."
+          }
         }
       ],
       "practice": [
-        "True or false? (a) Consent can be withdrawn at any time. (b) The age of consent in England and Wales is 18. (c) NHS sexual health services are confidential.",
-        "Write one sentence explaining why consent cannot be given under pressure.",
-        "Name two places a young person can go for confidential health advice."
+        {
+          "q": "An elderly relative gets a call 'from the bank' asking to move money. What should they do?",
+          "a": "Hang up, call the bank on the number on their card, never move money on request.",
+          "mins": 4,
+          "model": "I do: banks never ask you to move money; hang up; call back on a known number; tell family."
+        }
       ],
       "independent": [
-        "Create a fact sheet: ‘Know your rights and responsibilities’ with six facts and three services.",
-        "Write a response to a friend who says they are being pressured by someone online.",
-        "Write a paragraph explaining how Islamic teaching on modesty, marriage and responsibility supports safety and dignity."
+        {
+          "q": "Safety audit (pupil PDF): check five home and five online risks for your household and write one action for each (with a parent).",
+          "a": "Ten risks with actions.",
+          "mins": 13,
+          "model": "The teacher audits one home and one online risk."
+        },
+        {
+          "q": "Extend: set up two-factor authentication on one account (with a parent).",
+          "a": "2FA enabled.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Give two features of consent.",
-        "Name one person or service you could go to for confidential help."
+        {
+          "q": "Two-factor authentication adds ...",
+          "a": "a second check when logging in",
+          "mins": 1,
+          "options": [
+            "a second check when logging in",
+            "a second password hint"
+          ]
+        },
+        {
+          "q": "Back to our ponder: At 16 you will be responsible for more: younger siblings, your own accounts, maybe a job. Which risk do you think is most often ignored?",
+          "a": "Often online scams and fire safety (chargers, cooking); small habits prevent big harm.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a paragraph explaining how the law on consent and the Islamic teaching on modesty and marriage each protect people from harm.",
-      "send": "SEND: provide fact cards and a simple glossary; offer a private check-in. EAL: pre-teach vocabulary with simple definitions. Stretch: research the Online Safety Act 2023 and how it protects young people from harmful content."
+      "homework": "Complete the safety audit with your family.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4; checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Smoke alarm ceiling",
+          "alt": "A smoke alarm",
+          "for": "teach:1"
+        },
+        {
+          "find": "Padlock on laptop",
+          "alt": "A padlock on a laptop",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Spring 1: First aid",
@@ -1294,6 +1500,803 @@
           "find": "water bottle clear",
           "alt": "A clear water bottle",
           "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Health, safety and responsibility",
+      "n": 8,
+      "title": "Learning from the mock: managing feelings",
+      "duration": 50,
+      "bigQuestion": "A mock result is a snapshot, not a verdict. What is the difference?",
+      "objectives": [
+        "To understand how to respond to mock results with balance, and turn feelings into a plan"
+      ],
+      "successCriteria": [
+        "All: name the feelings mock results can bring",
+        "Most: separate what I can control from what I cannot",
+        "Some: turn feedback into three specific actions"
+      ],
+      "smsc": "Spiritual: patience and tawakkul after setbacks",
+      "keywords": [
+        {
+          "term": "resilience",
+          "def": "bouncing back from setbacks"
+        },
+        {
+          "term": "growth mindset",
+          "def": "believing ability grows with effort"
+        },
+        {
+          "term": "feedback",
+          "def": "information on how to improve"
+        },
+        {
+          "term": "tawakkul",
+          "def": "trusting Allah after effort"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A mock result is a snapshot, not a verdict. What is the difference?",
+        "a": "A snapshot shows where you are now; a verdict says where you will end. Mocks show what to fix."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah does not burden a soul beyond that it can bear' (Al-Baqarah 2:286). We do our best, then trust Allah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "CPR stands for ...",
+          "a": "cardiopulmonary resuscitation",
+          "mins": 1,
+          "options": [
+            "cardiopulmonary resuscitation",
+            "careful patient rest"
+          ]
+        },
+        {
+          "q": "Name one first aid step for bleeding (Spring 1).",
+          "a": "Apply firm pressure with a clean pad.",
+          "mins": 1
+        },
+        {
+          "q": "Mock exams show ...",
+          "a": "what to improve",
+          "mins": 1,
+          "options": [
+            "what to improve",
+            "final grades"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Feelings are normal",
+          "bullets": [
+            "Relief, disappointment, worry, pride",
+            "Name them; do not be ruled by them",
+            "Talk to someone"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Control circle",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "I can control",
+              "points": [
+                "Revision plan",
+                "Sleep",
+                "Asking for help",
+                "Past paper practice"
+              ]
+            },
+            "right": {
+              "title": "I cannot control",
+              "points": [
+                "The mock result now",
+                "Others' grades",
+                "Exam questions"
+              ]
+            },
+            "label": "focus left"
+          }
+        },
+        {
+          "heading": "Feedback to action",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read the feedback",
+            "Find patterns",
+            "Pick three actions",
+            "Schedule them",
+            "Check weekly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is in your control?",
+            "options": [
+              "Your revision plan",
+              "Other pupils' grades",
+              "Which questions come up"
+            ],
+            "answer": 0,
+            "why": "Focus on what you can control."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn 'I'm bad at maths' into a specific action from feedback.",
+          "a": "'Practise ten circle theorem questions a week; ask the teacher about proof questions.'",
+          "mins": 4,
+          "model": "I do: feedback said 'lost marks on circle theorems'; action: ten questions a week, check answers, ask about errors."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Mock action plan (pupil PDF): for three subjects, write one strength, one gap and one specific action with a time.",
+          "a": "Three rows with specific, timed actions.",
+          "mins": 13,
+          "model": "The teacher completes the English row."
+        },
+        {
+          "q": "Extend: write a du'a for exam season.",
+          "a": "For example: 'Rabbi zidni 'ilma (O my Lord, increase me in knowledge)' (Ta-Ha 20:114).",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A mock result is ...",
+          "a": "a snapshot to learn from",
+          "mins": 1,
+          "options": [
+            "a snapshot to learn from",
+            "a final verdict"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A mock result is a snapshot, not a verdict. What is the difference?",
+          "a": "A snapshot shows where you are now; a verdict says where you will end. Mocks show what to fix.",
+          "mins": 2
+        }
+      ],
+      "homework": "Share your mock action plan with a parent.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4; checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Camera snapshot",
+          "alt": "A camera: a snapshot",
+          "for": "hook"
+        },
+        {
+          "find": "Circle diagram",
+          "alt": "A circle of control",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Health, safety and responsibility",
+      "n": 9,
+      "title": "British values, community cohesion and challenging extremism",
+      "duration": 50,
+      "bigQuestion": "Why do extremist groups often target young people online?",
+      "objectives": [
+        "To understand British values, how communities stay united, and how to recognise and challenge extremism"
+      ],
+      "successCriteria": [
+        "All: name the four British values",
+        "Most: explain what extremism is and its warning signs",
+        "Some: explain how Islam's teaching of moderation rejects extremism"
+      ],
+      "crossCurricular": "Citizenship: democracy and law",
+      "smsc": "Social: citizenship, cohesion and the rule of law",
+      "keywords": [
+        {
+          "term": "British values",
+          "def": "democracy, rule of law, individual liberty, mutual respect and tolerance"
+        },
+        {
+          "term": "cohesion",
+          "def": "people living together well"
+        },
+        {
+          "term": "extremism",
+          "def": "vocal or active opposition to British values, including calls for violence"
+        },
+        {
+          "term": "radicalisation",
+          "def": "the process of being drawn into extremism"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do extremist groups often target young people online?",
+        "a": "Young people may feel angry, lonely or unheard; extremists offer false belonging and simple answers."
+      },
+      "islamicLink": {
+        "text": "Allah describes the Muslims as 'a just community' (Al-Baqarah 2:143) and says: 'whoever kills a soul unless for a soul or for corruption [done] in the land - it is as if he had slain mankind entirely. And whoever saves one - it is as if he had saved mankind entirely.' (Al-Ma'idah 5:32). Islam forbids killing innocents and calls for balance.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Phishing is ...",
+          "a": "a scam to steal data",
+          "mins": 1,
+          "options": [
+            "a scam to steal data",
+            "a sport"
+          ]
+        },
+        {
+          "q": "Name one home fire risk.",
+          "a": "Charging under a pillow.",
+          "mins": 1
+        },
+        {
+          "q": "2:195 tells us not to ...",
+          "a": "throw ourselves into destruction",
+          "mins": 1,
+          "options": [
+            "throw ourselves into destruction",
+            "eat"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "British values",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Value",
+              "In daily life"
+            ],
+            "rows": [
+              [
+                "Democracy",
+                "Voting, having a say"
+              ],
+              [
+                "Rule of law",
+                "Laws apply to everyone"
+              ],
+              [
+                "Individual liberty",
+                "Freedom of belief and speech within the law"
+              ],
+              [
+                "Mutual respect and tolerance",
+                "Respecting different faiths and beliefs"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Warning signs of radicalisation",
+          "bullets": [
+            "Isolation; new secretive online contacts",
+            "Us-versus-them language",
+            "Justifying violence"
+          ],
+          "note": "Report concerns to the safeguarding lead (TO CONFIRM); Prevent duty applies to schools."
+        },
+        {
+          "heading": "Islam and moderation",
+          "bullets": [
+            "A middle (just) community (2:143)",
+            "Killing one innocent is like killing all humanity (5:32)",
+            "Seek knowledge from qualified scholars"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Challenging extremist ideas",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Question the source",
+            "Check with reliable scholars and teachers",
+            "Refuse to share",
+            "Report concerns",
+            "Support friends"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is a warning sign of radicalisation?",
+            "options": [
+              "Secretive new online contacts who justify violence",
+              "Joining a football club",
+              "Reading the Qur'an daily"
+            ],
+            "answer": 0,
+            "why": "Secrecy plus justifying violence are key warning signs."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A post says 'Muslims can never be British.' How would you challenge it respectfully?",
+          "a": "Muslims are part of British society; Islam teaches respect and keeping agreements; the law protects religion or belief.",
+          "mins": 4,
+          "model": "I do: name the false claim, give facts (millions of British Muslims), Islamic teaching (5:8, keep covenants), and legal protection."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Paragraph (portal response box): 'How can young British Muslims help build community cohesion?' Use one British value and one Islamic teaching. Start: 'Young British Muslims can ...'",
+          "a": "A paragraph with a value, a teaching and an example.",
+          "mins": 13,
+          "model": "The teacher writes the opening sentence."
+        },
+        {
+          "q": "Extend: explain why extremist groups twist religious texts.",
+          "a": "To recruit by claiming false authority; context and scholarship expose the distortion.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Concerns about radicalisation should be reported to ...",
+          "a": "the school safeguarding lead",
+          "mins": 1,
+          "options": [
+            "the school safeguarding lead",
+            "nobody"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why do extremist groups often target young people online?",
+          "a": "Young people may feel angry, lonely or unheard; extremists offer false belonging and simple answers.",
+          "mins": 2
+        }
+      ],
+      "homework": "Discuss with your family how your community works with others locally.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4; checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111",
+        "Prevent duty guidance summary (GOV.UK, checked by the teacher)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Houses of Parliament London",
+          "alt": "Parliament",
+          "for": "teach:1"
+        },
+        {
+          "find": "Bridge over river",
+          "alt": "A bridge: connecting communities",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Health, safety and responsibility",
+      "n": 10,
+      "title": "Looking after friends",
+      "duration": 50,
+      "bigQuestion": "During exams everyone is stressed. How can you tell when a friend needs more than a pep talk?",
+      "objectives": [
+        "To understand how to notice when a friend is struggling during exam season and how to support them safely"
+      ],
+      "successCriteria": [
+        "All: name signs that a friend may be struggling",
+        "Most: use good listening and signposting",
+        "Some: explain when confidentiality must be broken"
+      ],
+      "smsc": "Social: care for friends and responsibility",
+      "keywords": [
+        {
+          "term": "signposting",
+          "def": "pointing someone to the right help"
+        },
+        {
+          "term": "confidentiality",
+          "def": "keeping things private, unless someone is at risk"
+        },
+        {
+          "term": "empathy",
+          "def": "understanding another's feelings"
+        },
+        {
+          "term": "burnout",
+          "def": "exhaustion from long stress"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "During exams everyone is stressed. How can you tell when a friend needs more than a pep talk?",
+        "a": "Lasting changes: not eating or sleeping, withdrawing, talking about giving up: these need an adult's help."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'None of you truly believes until he loves for his brother what he loves for himself' (al-Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Net pay is ...",
+          "a": "take-home pay",
+          "mins": 1,
+          "options": [
+            "take-home pay",
+            "pay before tax"
+          ]
+        },
+        {
+          "q": "What is 20% of £7,430?",
+          "a": "£1,486",
+          "mins": 1
+        },
+        {
+          "q": "Riba is ...",
+          "a": "forbidden",
+          "mins": 1,
+          "options": [
+            "forbidden",
+            "allowed"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Signs to notice",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "A friend may be struggling if ...",
+            "items": [
+              "Not eating or sleeping",
+              "Withdrawing from everyone",
+              "Very irritable or tearful",
+              "Talking about giving up",
+              "Missing lessons"
+            ]
+          }
+        },
+        {
+          "heading": "Listen and signpost",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Choose a private moment",
+            "Listen without judging",
+            "Reflect back",
+            "Suggest help: teacher, GP, helpline",
+            "Check in again"
+          ]
+        },
+        {
+          "heading": "Confidentiality limits",
+          "bullets": [
+            "Privacy is respected",
+            "But risk of harm must be told",
+            "Tell a trusted adult the same day"
+          ],
+          "note": "Childline 0800 1111; Samaritans 116 123."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A friend says they want to give up on everything and asks you not to tell. You ...",
+            "options": [
+              "tell a trusted adult the same day",
+              "keep the secret",
+              "post about it"
+            ],
+            "answer": 0,
+            "why": "Risk of harm overrides confidentiality."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write what you would say to start a caring conversation.",
+          "a": "'You've seemed really tired lately. I'm here if you want to talk.'",
+          "mins": 4,
+          "model": "I do: notice, show care, open the door: 'I've noticed ... I'm here.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Scenarios (pupil PDF): for three exam-season situations, write what you would say, what help you would suggest, and whether an adult must be told.",
+          "a": "Three responses with correct judgements.",
+          "mins": 13,
+          "model": "The teacher does scenario 1."
+        },
+        {
+          "q": "Extend: plan one thing your friendship group could do to support each other in exam season.",
+          "a": "For example: a weekly online study session with breaks and du'a.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Signposting means ...",
+          "a": "pointing someone to the right help",
+          "mins": 1,
+          "options": [
+            "pointing someone to the right help",
+            "solving it alone"
+          ]
+        },
+        {
+          "q": "Back to our ponder: During exams everyone is stressed. How can you tell when a friend needs more than a pep talk?",
+          "a": "Lasting changes: not eating or sleeping, withdrawing, talking about giving up: these need an adult's help.",
+          "mins": 2
+        }
+      ],
+      "homework": "Save two support numbers in your phone and share them with a friend.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4; checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111",
+        "Samaritans 116 123"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Two cups of tea",
+          "alt": "Two cups of tea",
+          "for": "hook"
+        },
+        {
+          "find": "Signpost directions",
+          "alt": "A signpost",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Health, safety and responsibility",
+      "n": 11,
+      "title": "Review: health, safety and responsibility",
+      "duration": 50,
+      "bigQuestion": "After Year 11, nobody will timetable your PSHE. What will you take with you?",
+      "objectives": [
+        "To understand what I have learned this half term and how I will look after myself and others through the exams"
+      ],
+      "successCriteria": [
+        "All: recall one key point from each lesson",
+        "Most: write my personal exam-season wellbeing plan",
+        "Some: explain how responsibility grows after 16"
+      ],
+      "smsc": "Moral: responsibility for self and others",
+      "keywords": [
+        {
+          "term": "responsibility",
+          "def": "a duty you carry"
+        },
+        {
+          "term": "wellbeing",
+          "def": "being well in body, mind and spirit"
+        },
+        {
+          "term": "plan",
+          "def": "a set of steps you will take"
+        },
+        {
+          "term": "reflect",
+          "def": "think back carefully"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "After Year 11, nobody will timetable your PSHE. What will you take with you?",
+        "a": "Habits and knowledge: managing feelings, safety, money, values and caring for others."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Each of you is a shepherd and each of you is responsible for his flock' (al-Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Confidentiality is broken when ...",
+          "a": "someone is at risk of harm",
+          "mins": 1,
+          "options": [
+            "someone is at risk of harm",
+            "never"
+          ]
+        },
+        {
+          "q": "Give one sign a friend is struggling.",
+          "a": "Not sleeping; withdrawing.",
+          "mins": 1
+        },
+        {
+          "q": "Samaritans' number is ...",
+          "a": "116 123",
+          "mins": 1,
+          "options": [
+            "116 123",
+            "999 000"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Our unit",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Health, safety, responsibility",
+            "items": [
+              "Learning from the mock",
+              "Home and online safety",
+              "British values and extremism",
+              "Payslips, tax, riba",
+              "Looking after friends"
+            ]
+          }
+        },
+        {
+          "heading": "Exam-season wellbeing plan",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Area",
+              "My plan"
+            ],
+            "rows": [
+              [
+                "Sleep",
+                "Same bedtime, phone out"
+              ],
+              [
+                "Food and water",
+                "Regular meals"
+              ],
+              [
+                "Movement",
+                "Daily walk"
+              ],
+              [
+                "Faith",
+                "Salah on time, Qur'an slot"
+              ],
+              [
+                "Support",
+                "Who I will talk to"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Responsibility after 16",
+          "bullets": [
+            "Your own accounts and money",
+            "Younger family members",
+            "Community and citizenship"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "'Each of you is a shepherd' means ...",
+            "options": [
+              "everyone is responsible for those in their care",
+              "only teachers are responsible",
+              "nobody is responsible"
+            ],
+            "answer": 0,
+            "why": "Responsibility is shared by all."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one specific line for each area of your wellbeing plan.",
+          "a": "Five specific lines.",
+          "mins": 4,
+          "model": "I do: Sleep: 'Lights out by 10:30 pm on school nights.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Reflection (Forms long answer): what I learned, my wellbeing plan, and one responsibility I will take on after 16. Start: 'This half term taught me ...'",
+          "a": "A reflection with learning, plan and a responsibility.",
+          "mins": 13,
+          "model": "The teacher writes a sample opening."
+        },
+        {
+          "q": "Extend: write a du'a for your exams.",
+          "a": "For example: 'O Allah, there is no ease except what You make easy.'",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A good wellbeing plan is ...",
+          "a": "specific",
+          "mins": 1,
+          "options": [
+            "specific",
+            "vague"
+          ]
+        },
+        {
+          "q": "Back to our ponder: After Year 11, nobody will timetable your PSHE. What will you take with you?",
+          "a": "Habits and knowledge: managing feelings, safety, money, values and caring for others.",
+          "mins": 2
+        }
+      ],
+      "homework": "Put your wellbeing plan on your wall and share it with your family.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4; checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Planner notebook",
+          "alt": "A planner",
+          "for": "teach:2"
+        },
+        {
+          "find": "Road ahead horizon",
+          "alt": "The road ahead",
+          "for": "hook"
         }
       ]
     }
