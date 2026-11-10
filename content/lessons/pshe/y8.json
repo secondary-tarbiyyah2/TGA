@@ -421,216 +421,417 @@
       ]
     },
     {
-      "unit": "Unit 2: Mental wellbeing and self-worth",
+      "unit": "Spring 2: Mental wellbeing and self-worth",
       "n": 3,
       "title": "Mental health: when feelings become too much",
       "duration": 50,
+      "bigQuestion": "Why might someone hide that they are struggling, even from people who love them?",
       "objectives": [
-        "Recognise circumstances that can lead to intense emotions",
-        "Explain a range of healthy strategies and why some strategies are unhelpful",
-        "Assess whom, how and why to ask for support"
+        "To understand the difference between everyday stress and mental health difficulties, and where to get help"
       ],
+      "successCriteria": [
+        "All: describe signs of stress and anxiety",
+        "Most: list helpful and unhelpful coping strategies",
+        "Some: explain when and how to seek professional help"
+      ],
+      "smsc": "Spiritual: hope, dhikr and seeking help together",
       "keywords": [
         {
+          "term": "mental health",
+          "def": "the health of our mind and emotions"
+        },
+        {
+          "term": "stress",
+          "def": "pressure that can be helpful or harmful"
+        },
+        {
           "term": "anxiety",
-          "def": "persistent worry that is hard to control"
-        },
-        {
-          "term": "low mood",
-          "def": "feeling sad or flat for a long time"
-        },
-        {
-          "term": "trigger",
-          "def": "something that sets off a strong emotion"
+          "def": "worry that is strong and lasting"
         },
         {
           "term": "support network",
-          "def": "the people and services who can help you"
-        },
-        {
-          "term": "tawakkul",
-          "def": "trusting Allah after doing your best"
+          "def": "people who can help"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might someone hide that they are struggling, even from people who love them?",
+        "a": "Shame, not wanting to worry others, thinking it will pass; but asking for help is strength."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Verily, in the remembrance of Allah do hearts find rest' (Ar-Ra'd 13:28). Faith and dhikr help, and seeking treatment is also encouraged: the Prophet ﷺ said Allah has not sent down a disease without sending down a cure (al-Bukhari).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name three coping strategies.",
-        "What does stigma mean?",
-        "Name two people you could talk to when stressed."
+        {
+          "q": "'Name it to tame it' means ...",
+          "a": "naming feelings helps manage them",
+          "mins": 1,
+          "options": [
+            "naming feelings helps manage them",
+            "hiding feelings"
+          ]
+        },
+        {
+          "q": "Give a precise word for 'sad'.",
+          "a": "Lonely, disappointed, grieving.",
+          "mins": 1
+        },
+        {
+          "q": "Regulating a feeling means ...",
+          "a": "managing it",
+          "mins": 1,
+          "options": [
+            "managing it",
+            "ignoring it"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "When feelings become intense",
+          "heading": "Stress curve",
           "bullets": [
-            "Big events: exams, loss, conflict, change",
-            "Hormones and growing up affect mood",
-            "Feeling low or anxious sometimes is normal",
-            "Seek help if it lasts or stops daily life"
+            "A little stress can help us focus",
+            "Too much for too long harms"
           ],
-          "note": "Say bismillah. Teach that everyone faces times of intense emotion: moving, a falling-out, exams, grief, illness. This lesson draws on the PSHE Association KS3 lesson ‘Healthy coping strategies’. Read the PSHE Association guidance ‘Preparing to teach about mental health’ before teaching. Do not ask for personal stories; use invented case studies. Keep language careful and avoid any detail of self-harm methods. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "",
+          "chart": {
+            "kind": "line",
+            "title": "Pressure and performance (illustration)",
+            "labels": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Too high"
+            ],
+            "values": [
+              2,
+              5,
+              9,
+              6,
+              2
+            ]
+          }
         },
         {
-          "heading": "Unhelpful and helpful strategies",
+          "heading": "Signs to notice",
           "bullets": [
-            "Unhelpful: bottling up, isolating, endless scrolling",
-            "Unhelpful: unkindness to others or risky habits",
-            "Helpful: talking, sleep, exercise, nature, creativity",
-            "Helpful: prayer, dhikr, du'a, Qur'an"
+            "Sleep changes",
+            "Withdrawing from friends",
+            "Losing interest",
+            "Constant worry"
           ],
-          "note": "Use the invented case of Maryam, who stops replying to friends and stays up late scrolling after a bad test result. Ask: ‘Why might she do this? What are the short-term and long-term effects?’ Explain that unhelpful strategies may bring short-term relief but make things worse later. Pupils should identify a better plan for Maryam. Stress that if a strategy involves harming oneself, the right step is to tell a trusted adult."
+          "note": "Lasting for weeks: talk to someone."
         },
         {
-          "heading": "Signs that someone needs support",
-          "bullets": [
-            "Changes in sleep, appetite or energy",
-            "Withdrawing from friends and activities",
-            "Feeling hopeless or very anxious for weeks",
-            "Feeling unsafe or thinking of self-harm: tell someone today"
-          ],
-          "note": "Teach pupils to notice changes in themselves and in friends. Keep this factual and calm. Explain that physical symptoms can also be signs of worry. Stress that no one should have to cope alone and that a friend who is struggling needs an adult, not just a secret. Provide the line: ‘I am worried about you and I'm going to tell someone who can help because I care.’"
+          "heading": "Helpful or unhelpful?",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Helpful",
+              "Unhelpful"
+            ],
+            "cards": [
+              "Talking to someone",
+              "Hiding in your room for days",
+              "Salah and dhikr",
+              "Scrolling all night",
+              "Exercise",
+              "Bottling it up"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
         },
         {
-          "heading": "Islamic perspectives on hardship and help",
-          "bullets": [
-            "Qur'an 2:286: Allah does not burden beyond capacity",
-            "Qur'an 94:5-6: with hardship comes ease",
-            "Hadith: every disease has a cure",
-            "Seeking help is part of tawakkul"
-          ],
-          "note": "Cite plainly: Qur'an 2:286 and 94:5-6. Cite the hadith that Allah has not sent down a disease without sending down its cure (Bukhari). Explain that faith practices bring comfort and are part of a healthy routine, and that they go alongside talking to people and professional support when needed. Misconception: struggling means weak faith. Prophets experienced grief and hardship. Link to the Tarbiyyah Compass value of Resilience."
+          "heading": "Getting help",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Tell a trusted adult",
+            "GP (doctor)",
+            "School safeguarding lead",
+            "Childline 0800 1111"
+          ]
         },
         {
-          "heading": "Building your support network",
-          "bullets": [
-            "Family and trusted adults",
-            "TGA pastoral team and DSL",
-            "GP and NHS 111",
-            "Childline 0800 1111; Shout: text 85258"
-          ],
-          "note": "Ask pupils to draw their personal support network without sharing names. Show how to reach Childline and Shout (text 85258, free 24/7). Practise a sentence to start a conversation. Explain that in an emergency or if someone is in immediate danger they should call 999. Remind pupils to follow up and tell another adult if the first does not help."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is a sign someone may need support?",
+            "options": [
+              "Withdrawing from friends for weeks",
+              "Laughing at a joke",
+              "Feeling nervous once before a test"
+            ],
+            "answer": 0,
+            "why": "Lasting changes are a sign to seek support."
+          }
         }
       ],
       "practice": [
-        "Sort into helpful or unhelpful: (a) going for a walk (b) staying up all night scrolling (c) talking to a trusted adult (d) ignoring friends for weeks.",
-        "Write what you would say to a friend who has been withdrawn and tired for a month.",
-        "Name three people or services you can contact for support."
+        {
+          "q": "A friend says they haven't slept well for weeks and feel low. What two things could you do?",
+          "a": "Listen without judging; encourage them to tell a trusted adult or GP.",
+          "mins": 4,
+          "model": "I do: listen, show care, don't promise secrecy if they are at risk, help them reach a trusted adult."
+        }
       ],
       "independent": [
-        "Write a plan for Maryam with three helpful steps and the people who can support her.",
-        "Create a leaflet: ‘Looking after your mind’ with five strategies and two helplines.",
-        "Write a paragraph explaining how faith and seeking help work together."
+        {
+          "q": "Support network map (pupil PDF): five people or services you could go to, and when.",
+          "a": "Five named supports with when to use them.",
+          "mins": 13,
+          "model": "The teacher fills one: 'Form tutor: if worries affect school.'"
+        },
+        {
+          "q": "Extend: explain how faith and professional help work together.",
+          "a": "Dhikr and du'a bring calm; doctors and counsellors treat illness; both are encouraged.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Give one helpful and one unhelpful way to cope.",
-        "Where can you get free, confidential support?"
+        {
+          "q": "Asking for help is ...",
+          "a": "a strength",
+          "mins": 1,
+          "options": [
+            "a strength",
+            "a weakness"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why might someone hide that they are struggling, even from people who love them?",
+          "a": "Shame, not wanting to worry others, thinking it will pass; but asking for help is strength.",
+          "mins": 2
+        }
       ],
-      "homework": "Write three self-care activities you can do this week and which trusted adult you would talk to if worried.",
-      "send": "SEND: use a visual traffic-light strategy sort and allow breaks. EAL: provide vocabulary for emotions. Stretch: evaluate three mental health websites for reliability."
+      "homework": "Save one helpline and talk about your support map with a parent.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Mental wellbeing and self-worth); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Support network diagram",
+          "alt": "A support network",
+          "for": "teach:4"
+        },
+        {
+          "find": "Sunrise",
+          "alt": "A sunrise: hope",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Mental wellbeing and self-worth",
+      "unit": "Spring 2: Mental wellbeing and self-worth",
       "n": 4,
       "title": "Body image, media and self-worth",
       "duration": 50,
+      "bigQuestion": "If almost every image you see online has been edited, what does that do to how people see themselves?",
       "objectives": [
-        "Explain how filters, advertising and social media can distort body image",
-        "Develop strategies for healthy self-esteem and critical media literacy",
-        "Link contentment and gratitude to self-worth"
+        "To understand how edited images and comparison affect body image, and how Islam grounds self-worth"
       ],
+      "successCriteria": [
+        "All: explain what body image is",
+        "Most: explain how images are edited and why",
+        "Some: use two strategies to protect self-worth online"
+      ],
+      "crossCurricular": "Computing: how image editing works (pixels, filters)",
+      "smsc": "Spiritual: gratitude for the body as a trust (amanah)",
       "keywords": [
         {
           "term": "body image",
           "def": "how you think and feel about your body"
         },
         {
-          "term": "filter",
-          "def": "a tool that alters how a photo or video looks"
+          "term": "edited",
+          "def": "changed digitally to look different"
         },
         {
-          "term": "influencer",
-          "def": "a person who is paid to promote products online"
+          "term": "comparison",
+          "def": "measuring yourself against others"
         },
         {
-          "term": "self-esteem",
-          "def": "how you value yourself"
-        },
-        {
-          "term": "qana'ah",
-          "def": "contentment with what Allah has given"
+          "term": "self-worth",
+          "def": "your value as a person"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If almost every image you see online has been edited, what does that do to how people see themselves?",
+        "a": "It sets an impossible standard and can make people feel worse; real worth is not in looks."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'We have certainly created man in the best of stature;' (At-Tin 95:4). Our worth comes from Allah's creation and our taqwa, not from filters.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. What is the difference between fact and opinion?",
-        "Name one way adverts persuade people.",
-        "What does contentment mean?"
+        {
+          "q": "Childline's number is ...",
+          "a": "0800 1111",
+          "mins": 1,
+          "options": [
+            "0800 1111",
+            "999 999"
+          ]
+        },
+        {
+          "q": "Name one sign that someone may need support.",
+          "a": "Withdrawing for weeks.",
+          "mins": 1
+        },
+        {
+          "q": "Asking for help is ...",
+          "a": "a strength",
+          "mins": 1,
+          "options": [
+            "a strength",
+            "a weakness"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "What is body image?",
+          "heading": "Edited images",
           "bullets": [
-            "How we see and feel about our bodies",
-            "Affected by family, friends and media",
-            "Boys and girls can both feel pressure",
-            "Can change over time"
+            "Filters and apps change shape and skin",
+            "Lighting and angles",
+            "Adverts often heavily edited"
           ],
-          "note": "Say bismillah. Define body image. Emphasise that many young people feel unsure about their appearance, and this is common. Discuss the pressure on boys (muscle, height) as well as girls. Do not use images of real people. Do not ask pupils to share their feelings about their bodies. Link to the Tarbiyyah Compass value of Contentment. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "Show an edited landscape or product photo (no people) as an example of editing."
         },
         {
-          "heading": "What you see is not always real",
-          "bullets": [
-            "Filters, editing and lighting change images",
-            "Influencers are paid to sell products",
-            "Highlights are not everyday life",
-            "Ask: who gains if I feel unhappy?"
-          ],
-          "note": "Show examples of edited images from stock or cartoon sources rather than real people. Explain that filters can change shape, skin and size. Ask pupils how they could check if an image is edited. Teach critical questions: Who made this? What do they want me to buy or believe? What is left out? Misconception: if lots of people look like that online, it must be normal."
+          "heading": "Comparison trap",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "See an edited image",
+            "Compare yourself",
+            "Feel worse",
+            "Try to change or hide",
+            "Repeat"
+          ]
         },
         {
-          "heading": "Comparison and its effects",
+          "heading": "Worth in Islam",
           "bullets": [
-            "Constant comparison can lower mood",
-            "Unrealistic ideals can affect eating and exercise",
-            "Extreme diets and supplements can harm",
-            "Talk to a trusted adult or GP if worried"
+            "Best stature (95:4)",
+            "Allah looks at hearts and deeds (Muslim)",
+            "Gratitude and care for the body"
           ],
-          "note": "Explain that comparing ourselves to edited images can make us feel worse. Mention that health professionals advise young people not to diet; they need a balanced intake to grow. Avoid details about eating disorders; simply state that worrying about food or weight that begins to take over is a reason to speak to a trusted adult or GP. Mention muscle-building supplements marketed to teenagers are not recommended."
+          "note": ""
         },
         {
-          "heading": "Islamic teaching on worth and gratitude",
+          "heading": "Protect yourself online",
           "bullets": [
-            "Qur'an 95:4: created in the best of forms",
-            "Hadith: Allah looks at hearts and deeds",
-            "Shukr: be grateful for what you have",
-            "Real worth is character and taqwa"
+            "Curate your feed",
+            "Limit time",
+            "Remember: edited",
+            "Talk about it"
           ],
-          "note": "Cite plainly: Qur'an 95:4 says that Allah created the human being in the best stature. Cite the hadith: Allah does not look at your appearance or wealth but at your hearts and deeds (Muslim). Link with Qur'an 49:13 on honour being linked to taqwa. Ask: ‘How is a person's worth measured?’ Link to the Tarbiyyah Compass value of Contentment (shukr)."
+          "note": ""
         },
         {
-          "heading": "Building healthy self-esteem",
-          "bullets": [
-            "Focus on what your body can do",
-            "Limit time with accounts that make you feel bad",
-            "Practise kind self-talk",
-            "Spend time on strengths, faith and service"
-          ],
-          "note": "Teach pupils to unfollow or mute accounts that harm their mood. Practise reframing: ‘I look wrong’ becomes ‘My body helps me pray, learn and play.’ Encourage gratitude lists and acts of service as boosts to self-worth. Remind pupils that the pastoral team is available for private chats. Close with a short du'a of thanks."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Why are many online images misleading?",
+            "options": [
+              "They are often edited",
+              "Cameras cannot lie",
+              "Everyone looks like that"
+            ],
+            "answer": 0,
+            "why": "Editing changes what we see."
+          }
         }
       ],
       "practice": [
-        "Spot the clues that an image has been edited. Write three questions you could ask about it.",
-        "Rewrite this self-talk: ‘I will never look as good as him.’",
-        "True or false? (a) Everyone online looks the way they do in their posts. (b) Influencers are often paid. (c) Worth depends on appearance in Islam."
+        {
+          "q": "Rewrite this thought to protect self-worth: 'I'll never look like them.'",
+          "a": "'Their picture is probably edited; my worth is in my character and faith.'",
+          "mins": 4,
+          "model": "I do: spot the comparison; remember editing; reframe to character and gratitude."
+        }
       ],
       "independent": [
-        "Create a ‘Media detective’ checklist with five questions to ask about any image or advert.",
-        "Write a note to a younger pupil about being content and confident.",
-        "Write a paragraph explaining how Qur'an 95:4 and the hadith about hearts and deeds support healthy self-worth."
+        {
+          "q": "Advice post (portal response box): write a short, kind post for Year 7 about body image and social media, with two strategies and one Islamic point.",
+          "a": "A post with two strategies and one Islamic point.",
+          "mins": 13,
+          "model": "The teacher writes the first line."
+        },
+        {
+          "q": "Extend: list three things you are grateful your body can do.",
+          "a": "For example: walk, pray, read.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name two ways that images can be unrealistic.",
-        "Give one habit that builds healthy self-esteem."
+        {
+          "q": "Self-worth in Islam comes from ...",
+          "a": "Allah's creation and our taqwa",
+          "mins": 1,
+          "options": [
+            "Allah's creation and our taqwa",
+            "likes and followers"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If almost every image you see online has been edited, what does that do to how people see themselves?",
+          "a": "It sets an impossible standard and can make people feel worse; real worth is not in looks.",
+          "mins": 2
+        }
       ],
-      "homework": "List three things your body helps you do and three things you are grateful for. Share one with a family member.",
-      "send": "SEND: use cartoon or object examples for editing and visual prompt cards. EAL: pre-teach vocabulary with images. Stretch: research how advertisers use persuasion techniques and evaluate one advert."
+      "homework": "Unfollow or mute one account that makes you feel worse; tell a parent why.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Mental wellbeing and self-worth); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Smartphone screen social media",
+          "alt": "A phone screen",
+          "for": "hook"
+        },
+        {
+          "find": "Photo editing software sliders",
+          "alt": "Photo editing tools",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Respect, influence and risk",
@@ -1278,6 +1479,789 @@
           "find": "traffic light red",
           "alt": "A red traffic light",
           "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Mental wellbeing and self-worth",
+      "n": 8,
+      "title": "Understanding feelings and emotions",
+      "duration": 50,
+      "bigQuestion": "Is anger always a bad emotion? When might it be useful?",
+      "objectives": [
+        "To understand how emotions work, why all emotions are normal, and how to name them precisely"
+      ],
+      "successCriteria": [
+        "All: name eight emotions",
+        "Most: explain the link between thoughts, feelings and actions",
+        "Some: use precise emotion words to describe a situation"
+      ],
+      "smsc": "Spiritual: understanding feelings in the light of faith",
+      "keywords": [
+        {
+          "term": "emotion",
+          "def": "a feeling such as joy, anger or fear"
+        },
+        {
+          "term": "wellbeing",
+          "def": "feeling well in body, mind and spirit"
+        },
+        {
+          "term": "trigger",
+          "def": "something that sets off a feeling"
+        },
+        {
+          "term": "regulate",
+          "def": "manage a feeling so it does not control you"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is anger always a bad emotion? When might it be useful?",
+        "a": "Emotions are signals; anger at injustice can push us to act rightly, but it must be controlled."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ wept when his son Ibrahim died and said: 'The eyes shed tears and the heart grieves, and we say only what pleases our Lord' (al-Bukhari). Feelings are natural; how we act on them matters.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Respect means ...",
+          "a": "treating others as valuable",
+          "mins": 1,
+          "options": [
+            "treating others as valuable",
+            "agreeing with everyone"
+          ]
+        },
+        {
+          "q": "Name one thing that helps you feel calm.",
+          "a": "For example: salah, a walk, talking to family.",
+          "mins": 1
+        },
+        {
+          "q": "A trusted adult can ...",
+          "a": "help with worries",
+          "mins": 1,
+          "options": [
+            "help with worries",
+            "keep harmful secrets"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Emotion vocabulary",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Basic",
+              "More precise"
+            ],
+            "rows": [
+              [
+                "Happy",
+                "content, proud, relieved"
+              ],
+              [
+                "Sad",
+                "lonely, disappointed, grieving"
+              ],
+              [
+                "Angry",
+                "frustrated, irritated, furious"
+              ],
+              [
+                "Scared",
+                "anxious, nervous, overwhelmed"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Thoughts, feelings, actions",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Event",
+            "Thought about it",
+            "Feeling",
+            "Action",
+            "Result"
+          ]
+        },
+        {
+          "heading": "Regulating",
+          "bullets": [
+            "Name it to tame it",
+            "Pause and breathe",
+            "When angry: say A'udhu billah (al-Bukhari) and sit down (Abu Dawud)"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "'Name it to tame it' means ...",
+            "options": [
+              "naming a feeling precisely helps you manage it",
+              "ignore feelings",
+              "tell everyone online"
+            ],
+            "answer": 0,
+            "why": "Precise naming reduces the feeling's grip."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Replace 'I'm fine' with a precise emotion: you didn't get picked for a team.",
+          "a": "'I feel disappointed and a bit left out.'",
+          "mins": 4,
+          "model": "I do: event: not picked; thought: 'they don't rate me'; feeling: disappointed, left out."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Emotion log (pupil PDF): describe two recent events using event, thought, feeling, action and a better action next time.",
+          "a": "Two completed chains with a better action.",
+          "mins": 13,
+          "model": "The teacher completes one chain about missing a bus."
+        },
+        {
+          "q": "Extend: choose two precise words for 'scared' and say when each fits.",
+          "a": "Nervous before a test; overwhelmed with too much to do.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Emotions are ...",
+          "a": "normal signals we can manage",
+          "mins": 1,
+          "options": [
+            "normal signals we can manage",
+            "always wrong"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is anger always a bad emotion? When might it be useful?",
+          "a": "Emotions are signals; anger at injustice can push us to act rightly, but it must be controlled.",
+          "mins": 2
+        }
+      ],
+      "homework": "Keep a three-day emotion log with precise words.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Mental wellbeing and self-worth); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Weather icons sun cloud storm",
+          "alt": "Weather as a picture of moods",
+          "for": "hook"
+        },
+        {
+          "find": "Calm lake reflection",
+          "alt": "A calm lake",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Mental wellbeing and self-worth",
+      "n": 9,
+      "title": "Coping tools: routine, dhikr, sleep and exercise",
+      "duration": 50,
+      "bigQuestion": "If you could change one daily habit to feel better, what would make the biggest difference?",
+      "objectives": [
+        "To understand how daily habits build resilience and choose tools that work for me"
+      ],
+      "successCriteria": [
+        "All: name four coping tools",
+        "Most: explain how each helps mind and body",
+        "Some: build a realistic weekly wellbeing plan"
+      ],
+      "crossCurricular": "Science: sleep and exercise in human health",
+      "smsc": "Spiritual: dhikr and salah as anchors for the day",
+      "keywords": [
+        {
+          "term": "resilience",
+          "def": "bouncing back from difficulty"
+        },
+        {
+          "term": "routine",
+          "def": "a regular pattern of daily activities"
+        },
+        {
+          "term": "dhikr",
+          "def": "remembrance of Allah"
+        },
+        {
+          "term": "sleep hygiene",
+          "def": "habits that help good sleep"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could change one daily habit to feel better, what would make the biggest difference?",
+        "a": "Often sleep: going to bed earlier, screens off; or praying on time to anchor the day."
+      },
+      "islamicLink": {
+        "text": "The five daily prayers give our day a routine; and Allah says: 'Verily, in the remembrance of Allah do hearts find rest' (Ar-Ra'd 13:28).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Body image is ...",
+          "a": "how you think and feel about your body",
+          "mins": 1,
+          "options": [
+            "how you think and feel about your body",
+            "your weight"
+          ]
+        },
+        {
+          "q": "Give one way to protect self-worth online.",
+          "a": "Curate your feed; limit time.",
+          "mins": 1
+        },
+        {
+          "q": "Edited images are ...",
+          "a": "often misleading",
+          "mins": 1,
+          "options": [
+            "often misleading",
+            "always real"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four tools",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Resilience",
+            "items": [
+              "Routine (salah times)",
+              "Dhikr and du'a",
+              "Sleep: enough for your age (NHS guidance)",
+              "Exercise 60 minutes a day",
+              "Talking to someone"
+            ]
+          }
+        },
+        {
+          "heading": "Sleep hygiene",
+          "bullets": [
+            "Screens off an hour before bed",
+            "Same bedtime",
+            "Wudu and adhkar before sleep"
+          ],
+          "note": "Adhkar before sleep are a sunnah practice."
+        },
+        {
+          "heading": "A wellbeing week",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Day",
+              "Tool"
+            ],
+            "rows": [
+              [
+                "Mon",
+                "Walk after Asr"
+              ],
+              [
+                "Tue",
+                "Phone out of bedroom"
+              ],
+              [
+                "Wed",
+                "Morning adhkar"
+              ],
+              [
+                "Thu",
+                "Call a relative"
+              ],
+              [
+                "Fri",
+                "Al-Kahf and rest"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which habit most helps sleep?",
+            "options": [
+              "Screens off an hour before bed",
+              "Gaming until midnight",
+              "Energy drinks in the evening"
+            ],
+            "answer": 0,
+            "why": "Screen light and stimulation delay sleep."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plan one realistic change to your evening routine.",
+          "a": "For example: phone charging in the kitchen from 9 pm.",
+          "mins": 4,
+          "model": "I do: current: phone in bed until late; change: phone charges downstairs at 9 pm; benefit: better sleep and Fajr."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Wellbeing plan (pupil PDF): a seven-day plan with one tool a day and how you will check it.",
+          "a": "Seven realistic actions with a check method.",
+          "mins": 13,
+          "model": "The teacher fills Monday and Tuesday."
+        },
+        {
+          "q": "Extend: explain why routine helps when you feel low.",
+          "a": "It gives structure and small wins when motivation is low.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Resilience means ...",
+          "a": "bouncing back from difficulty",
+          "mins": 1,
+          "options": [
+            "bouncing back from difficulty",
+            "never feeling sad"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you could change one daily habit to feel better, what would make the biggest difference?",
+          "a": "Often sleep: going to bed earlier, screens off; or praying on time to anchor the day.",
+          "mins": 2
+        }
+      ],
+      "homework": "Try your wellbeing plan for a week and note what helped.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Mental wellbeing and self-worth); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Alarm clock bedside",
+          "alt": "An alarm clock",
+          "for": "teach:2"
+        },
+        {
+          "find": "Running shoes",
+          "alt": "Running shoes",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Mental wellbeing and self-worth",
+      "n": 10,
+      "title": "Helping a friend",
+      "duration": 50,
+      "bigQuestion": "Your friend says 'Promise you won't tell anyone.' Should you always promise?",
+      "objectives": [
+        "To understand how to support a friend who is struggling and when to involve an adult"
+      ],
+      "successCriteria": [
+        "All: describe good listening",
+        "Most: say what to do and not do when a friend opens up",
+        "Some: explain why some things cannot be kept secret"
+      ],
+      "smsc": "Social: compassion and responsibility for friends",
+      "keywords": [
+        {
+          "term": "listen",
+          "def": "give full attention to understand"
+        },
+        {
+          "term": "empathy",
+          "def": "understanding how someone feels"
+        },
+        {
+          "term": "confidential",
+          "def": "kept private, unless someone is at risk"
+        },
+        {
+          "term": "signpost",
+          "def": "point someone to help"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your friend says 'Promise you won't tell anyone.' Should you always promise?",
+        "a": "No: if they are at risk of harm, a true friend tells a trusted adult."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The believers, in their mutual love and mercy, are like one body: when one part aches, the whole body responds' (al-Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Resilience means ...",
+          "a": "bouncing back",
+          "mins": 1,
+          "options": [
+            "bouncing back",
+            "never sad"
+          ]
+        },
+        {
+          "q": "Name one coping tool.",
+          "a": "Sleep, exercise, dhikr, routine, talking.",
+          "mins": 1
+        },
+        {
+          "q": "Screens before bed ...",
+          "a": "delay sleep",
+          "mins": 1,
+          "options": [
+            "delay sleep",
+            "help sleep"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Good listening",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Give full attention",
+            "Don't interrupt",
+            "Reflect back: 'It sounds like ...'",
+            "Ask: 'How can I help?'"
+          ]
+        },
+        {
+          "heading": "Do and don't",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Do",
+              "points": [
+                "Listen",
+                "Show you care",
+                "Encourage them to talk to an adult"
+              ]
+            },
+            "right": {
+              "title": "Don't",
+              "points": [
+                "Judge or joke",
+                "Promise total secrecy",
+                "Try to fix it alone"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "When to tell an adult",
+          "bullets": [
+            "If they or someone else could be harmed",
+            "If it is serious or lasting",
+            "If you feel out of your depth"
+          ],
+          "note": "Signpost: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A friend says they're being hurt at home and asks you to keep it secret. You should ...",
+            "options": [
+              "Tell a trusted adult",
+              "Keep the secret",
+              "Post about it"
+            ],
+            "answer": 0,
+            "why": "Risk of harm must be told."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Reflect back: your friend says 'I'm so stressed, I can't keep up with work.'",
+          "a": "'It sounds like you're feeling overwhelmed with work. Do you want to talk about which bits?'",
+          "mins": 4,
+          "model": "I do: repeat the feeling, then ask a helpful question."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Scenario cards (pupil PDF): for three situations, write what you would say, and whether to involve an adult.",
+          "a": "Three responses with correct judgements.",
+          "mins": 13,
+          "model": "The teacher does scenario 1."
+        },
+        {
+          "q": "Extend: write a kind message you could send to a friend who seems down.",
+          "a": "'Hey, noticed you seem quiet. I'm here if you want to talk.'",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Signposting means ...",
+          "a": "pointing someone to help",
+          "mins": 1,
+          "options": [
+            "pointing someone to help",
+            "ignoring them"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your friend says 'Promise you won't tell anyone.' Should you always promise?",
+          "a": "No: if they are at risk of harm, a true friend tells a trusted adult.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the support contacts and share them with your family.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Mental wellbeing and self-worth); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Two cups of tea",
+          "alt": "Two cups of tea: time to talk",
+          "for": "hook"
+        },
+        {
+          "find": "Signpost directions",
+          "alt": "A signpost",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Mental wellbeing and self-worth",
+      "n": 11,
+      "title": "Reflection: mental wellbeing and self-worth",
+      "duration": 50,
+      "bigQuestion": "Looking after your mind is like looking after your body. What is your 'daily exercise' for the mind?",
+      "objectives": [
+        "To understand what I have learned about wellbeing and plan how to keep looking after my mind"
+      ],
+      "successCriteria": [
+        "All: recall one key idea from each lesson",
+        "Most: name my top two coping tools",
+        "Some: write a personal wellbeing commitment with a check-in plan"
+      ],
+      "smsc": "Spiritual: steady habits for a healthy heart and mind",
+      "keywords": [
+        {
+          "term": "reflect",
+          "def": "think back carefully"
+        },
+        {
+          "term": "commitment",
+          "def": "a promise to yourself"
+        },
+        {
+          "term": "wellbeing",
+          "def": "being well in body, mind and spirit"
+        },
+        {
+          "term": "check-in",
+          "def": "a regular moment to see how you are"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Looking after your mind is like looking after your body. What is your 'daily exercise' for the mind?",
+        "a": "Salah and dhikr, sleep, movement, talking, limiting screens."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The most beloved of deeds to Allah are those done regularly, even if small' (al-Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "If a friend is at risk, you ...",
+          "a": "tell a trusted adult",
+          "mins": 1,
+          "options": [
+            "tell a trusted adult",
+            "keep it secret"
+          ]
+        },
+        {
+          "q": "Give one good listening skill.",
+          "a": "Reflect back.",
+          "mins": 1
+        },
+        {
+          "q": "Empathy means ...",
+          "a": "understanding how someone feels",
+          "mins": 1,
+          "options": [
+            "understanding how someone feels",
+            "pity"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Our unit",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Mental wellbeing and self-worth",
+            "items": [
+              "Naming emotions",
+              "When feelings become too much",
+              "Body image",
+              "Coping tools",
+              "Helping a friend"
+            ]
+          }
+        },
+        {
+          "heading": "My toolkit",
+          "bullets": [
+            "Top two tools",
+            "Who I talk to",
+            "Warning signs to notice"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Commitment",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Choose one habit",
+            "Make it specific",
+            "Check in weekly",
+            "Adjust and keep going"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which commitment is most specific?",
+            "options": [
+              "'Phone out of my room from 9 pm on school nights'",
+              "'Be healthier'",
+              "'Sleep more sometimes'"
+            ],
+            "answer": 0,
+            "why": "Specific commitments are easier to keep."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn 'Be calmer' into a specific commitment.",
+          "a": "'After Maghrib I will do ten minutes of dhikr without my phone.'",
+          "mins": 4,
+          "model": "I do: what, when, how long: 'After Fajr I will walk for 15 minutes.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Reflection (Forms long answer): what I learned, my top tools, my commitment and check-in plan. Start: 'This unit helped me ...'",
+          "a": "A reflection with learning, tools, commitment and check-in.",
+          "mins": 13,
+          "model": "The teacher writes a sample opening."
+        },
+        {
+          "q": "Extend: write a short du'a for wellbeing.",
+          "a": "For example: 'O Allah, grant me a calm heart.'",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A check-in is ...",
+          "a": "a regular moment to see how you are",
+          "mins": 1,
+          "options": [
+            "a regular moment to see how you are",
+            "a test"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Looking after your mind is like looking after your body. What is your 'daily exercise' for the mind?",
+          "a": "Salah and dhikr, sleep, movement, talking, limiting screens.",
+          "mins": 2
+        }
+      ],
+      "homework": "Share your commitment with a parent and check in each Friday.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Mental wellbeing and self-worth); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Support contacts slide: TGA safeguarding lead (TO CONFIRM), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Toolbox",
+          "alt": "A toolbox",
+          "for": "teach:2"
+        },
+        {
+          "find": "Notebook reflection pen",
+          "alt": "A notebook",
+          "for": "hook"
         }
       ]
     }
