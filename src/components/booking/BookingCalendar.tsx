@@ -8,6 +8,7 @@ import { formatTime, formatWhenWithUk as formatWhen, sameAsUk, UK_TIME_ZONE } fr
 import { countryByCode, initialPlace, placeTimeName, savePlace, type Place } from "@/lib/place";
 import { PlacePicker } from "@/components/booking/PlacePicker";
 import { Select } from "@/components/ui/Dropdown";
+import { PhoneField } from "@/components/ui/PhoneInput";
 import { Combobox } from "@/components/admissions/Combobox";
 
 type Slot = { slot_start: string; slot_end: string };
@@ -451,10 +452,10 @@ export function BookingCalendar() {
                     Email
                     <input name="email" defaultValue={params.get("email") || ""} type="email" required autoComplete="email" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
                   </label>
-                  <label className="block text-sm font-medium text-ink">
-                    Phone / WhatsApp
-                    <input name="phone" type="tel" required autoComplete="tel" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
-                  </label>
+                  <div>
+                    <label htmlFor="booking-phone" className="block text-sm font-medium text-ink">Phone / WhatsApp</label>
+                    <PhoneField id="booking-phone" name="phone" required defaultCountry={place.country ?? "GB"} inputClassName="w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+                  </div>
                   <div>
                     <label htmlFor="booking-country" className="block text-sm font-medium text-ink">Country</label>
                     <Combobox

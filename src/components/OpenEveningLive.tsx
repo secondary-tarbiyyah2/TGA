@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getLiveSiteSettings } from "@/lib/content";
 import { getEdgeFunctionUrl, getSupabaseClient } from "@/lib/supabase/client";
 import { Select } from "@/components/ui/Dropdown";
+import { PhoneField } from "@/components/ui/PhoneInput";
 
 type Session = {
   id: string;
@@ -244,10 +245,12 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
                             Email
                             <input name="email" type="email" required autoComplete="email" maxLength={254} className={`${inputCls} ${bad("email")}`} />
                           </label>
-                          <label className="block text-sm font-medium text-ink">
-                            Phone <span className="font-normal text-ink/65">(optional)</span>
-                            <input name="phone" type="tel" autoComplete="tel" maxLength={40} className={`${inputCls} ${bad("phone")}`} />
-                          </label>
+                          <div>
+                            <label htmlFor="oe-phone" className="block text-sm font-medium text-ink">
+                              Phone <span className="font-normal text-ink/65">(optional)</span>
+                            </label>
+                            <PhoneField id="oe-phone" name="phone" inputClassName={`w-full rounded-lg border border-gold-light/60 px-3 py-2 ${bad("phone")}`} />
+                          </div>
                           <label className="block text-sm font-medium text-ink">
                             Number of people attending
                             <Select name="attendees" defaultValue="1" className={`${inputCls} ${bad("attendees")}`}>

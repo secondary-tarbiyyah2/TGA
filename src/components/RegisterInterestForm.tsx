@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { leadRef, saveRegisterInterest } from "@/lib/leadRef";
+import { PhoneField } from "@/components/ui/PhoneInput";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -59,10 +60,10 @@ export function RegisterInterestForm() {
           Email address
           <input name="email" type="email" required autoComplete="email" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
         </label>
-        <label className="block text-sm font-medium text-ink">
-          Contact number
-          <input name="phone" type="tel" required autoComplete="tel" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
-        </label>
+        <div>
+          <label htmlFor="rif-phone" className="block text-sm font-medium text-ink">Contact number</label>
+          <PhoneField id="rif-phone" name="phone" required inputClassName="w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+        </div>
         <label className="block text-sm font-medium text-ink">
           Child&apos;s year group
           <input name="yeargroup" type="text" required className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
