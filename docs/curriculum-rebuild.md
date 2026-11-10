@@ -82,19 +82,18 @@ Portal redesign (owner brief, 9 Nov 2026, evening): done first, before more less
 navigation, dashboards, lesson workspaces, review workflow (migration 0192), curriculum map, search. The plan, rules and
 what's left are in docs/portal-redesign.md; follow its design rules for every new page.
 
+Founding-year lessons: DONE for every subject, Spring 1 to Summer 2 (11 Jan to 9 Jul 2027), all v3, merged by
+10 Nov 2026 (PRs #52 to #130). Open questions are in each PR and in the packs' "To confirm" lists.
+
 Next, in this order (each one agent; briefs in docs/agent-briefs/):
-(10 Nov 2026, 06:00: running now on branches `lessons-humanities-s1`, `lessons-comp-art-pshe-s1`,
-`lessons-quran-options-s1` (all of item 1 except Year 1-2 science, which sits in Topic) and `claude/tafweed-T19-polish`
-(long forms in titled sections, redesign Next items 2, 3 and 5). If a session stops, resume from those branches.)
-1. Spring 1 lessons still to write: Year 1-2 Topic and Year 1-2 science; History, Geography, Computing, Art and DT,
-   PSHE (Y1-11); Qur'an (Y1-11); Business and Computer Science options (Y10-11). (English Y7-11, Islamic Studies
-   Y1-11 and Arabic Y3-11 are done and merged.)
-2. Then Spring 2, Summer 1, Summer 2 the same way, subject by subject.
+1. (done) Founding-year lessons.
+2. (done) Spring 2, Summer 1, Summer 2.
 3. Term resource lists (owner: "make those resources for everything"): for each term, list every resource the lessons
    name; mark which come from the school's files, which the builder makes (pupil PDF/worksheet), and write the rest
    (worksheets, revision sets, mock papers, printable graphs, knowledge organisers, writing frames) as printable PDFs
    uploaded to the portal and linked from the lessons. Start with Spring 1.
-4. Consolidation pass (owner agreed): every old SOW, map and lesson marked keep / adapt / retire; retired lessons recorded in
+4. Consolidation pass (owner agreed; start only after the resources pipeline is merged, because renumbering must keep
+   resource links working: use stable lesson ids or update the register in the same PR): every old SOW, map and lesson marked keep / adapt / retire; retired lessons recorded in
    content/retired-lessons.json and moved to an "Archive - do not teach from" area; renumber lessons into teaching order.
 5. Backlog docs/backlog/tafweed.md: T19 portal polish is folded into the redesign (docs/portal-redesign.md "Next"), T22 LADO (owner must say which local authority), T23 safeguarding mailbox (owner must create it in
    Microsoft 365). Prospectus PDF tablet-or-printer line: owner said not to do it (10 Nov). (Old note: the prospectus patch script approach in
