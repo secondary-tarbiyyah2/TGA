@@ -51,15 +51,15 @@ export function DashboardHero({ subtitle, chips = [], area }: { subtitle?: strin
 
   return (
     <section aria-labelledby="dash-greeting" className="pt-1">
-      <p className="text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-ink/55">
+      <p className="text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-gold-700">
         {weekday} {date}
         {area ? <> · {AREA_WORKSPACE[area]}</> : null}
       </p>
-      <h1 id="dash-greeting" className="mt-1 text-[1.625rem] font-semibold leading-tight tracking-tight text-ink">
+      <h1 id="dash-greeting" className="portal-display mt-1 text-[1.75rem] font-semibold leading-tight text-forest-900 sm:text-[2.125rem]">
         {greeting}
         {firstName ? `, ${firstName}` : ""}
       </h1>
-      {subtitle && <p className="mt-1 text-sm text-ink/70">{subtitle}</p>}
+      {subtitle && <p className="mt-1.5 text-[0.95rem] text-ink/75">{subtitle}</p>}
       {chips.length > 0 && (
         <StatStrip className="mt-5">
           {chips.map((c) => (

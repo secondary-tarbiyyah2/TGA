@@ -133,8 +133,11 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
               <Image src="/brand/ga-logo-square.png" alt="" width={34} height={34} className="hidden h-[34px] w-[34px] max-w-none object-contain max-[419px]:block" />
             </Link>
 
-            <div className="ml-auto flex items-center gap-0.5 sm:gap-1">
+            {/* One search for the whole portal: a wide field on the left on desktop, an icon on phones. */}
+            <div className="flex items-center max-md:order-last">
               <CommandPalette area={area} roles={roles.map((r) => r.role)} />
+            </div>
+            <div className="ml-auto flex items-center gap-0.5 sm:gap-1">
               <ClockChip userId={activeSession.user.id} roles={roles} />
               <ViewSettingsMenu variant="portal" />
               <FeedbackButton />
