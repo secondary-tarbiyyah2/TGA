@@ -1,3 +1,5 @@
+import { createRequire } from "node:module";
+
 // Printable grids and diagrams for term resources, drawn as SVG (exact, scalable, light on ink).
 // Every function returns an SVG string sized in millimetres for an A4 page (182 mm text width).
 const W = 182;
@@ -329,6 +331,159 @@ function schematic({ height = 120, areas = [], roads = [], places = [], scale = 
   return svg(W, height, s);
 }
 
+/**
+ * A grid map for four-figure grid references: rows from the top (highest northing first), each a list of
+ * [northing, feature, feature, ...]; eastings along the bottom. Cells whose feature says sea, ice or lake
+ * are tinted. With no rows, a blank numbered grid for pupils to draw their own map.
+ */
+function gridmap({ eastings = ["01", "02", "03", "04"], rows = [], northings = [], cell = 36, labels = true } = {}) {
+  const north = rows.length ? rows.map((r) => r[0]) : northings.length ? northings : [...eastings].reverse();
+  const pad = 9;
+  const w = pad + eastings.length * cell + 2;
+  const h = north.length * cell + pad + 2;
+  const tint = (f) => (/sea|lake|river|water|ocean/i.test(f) ? "#DCEDF3" : /ice|glacier|snow/i.test(f) ? "#EEF5F8" : /forest|wood/i.test(f) ? "#E4F3EA" : /beach|sand/i.test(f) ? "#FBF1D9" : /mountain|tor|hill|cliff/i.test(f) ? "#F5ECE0" : "#FFFFFF");
+  let s = "";
+  north.forEach((n, r) => {
+    eastings.forEach((e, c) => {
+      const f = rows[r]?.[c + 1] || "";
+      const x = pad + c * cell;
+      const y = r * cell;
+      s += `<rect x="${x}" y="${y}" width="${cell}" height="${cell}" fill="${tint(f)}" stroke="#6E6A60" stroke-width="0.4"/>`;
+      if (labels && f) {
+        const words = f.split(" ");
+        const lines = words.length > 2 ? [words.slice(0, 2).join(" "), words.slice(2).join(" ")] : words.length === 2 && f.length > 12 ? words : [f];
+        lines.forEach((ln, i) => (s += txt(x + cell / 2, y + cell / 2 + 1.3 + (i - (lines.length - 1) / 2) * 4.2, ln, { size: 3.4 })));
+      }
+    });
+    s += txt(pad - 2, r * cell + cell / 2 + 1.3, n, { size: 3.2, anchor: "end", bold: true });
+  });
+  eastings.forEach((e, c) => (s += txt(pad + c * cell + cell / 2, north.length * cell + 6, e, { size: 3.2, bold: true })));
+  return svg(w, h, s);
+}
+
+// ── Outline maps from Natural Earth (public domain) via the world-atlas package (ISC) ──────────
+// Modern borders only. Regions are lon/lat windows (equirectangular, scaled by cos(latitude)) or a
+// polar view (azimuthal equidistant) for the Arctic and Antarctica.
+const REGIONS = {
+  world: { lon: [-180, 180], lat: [-60, 84] },
+  europe: { lon: [-12, 42], lat: [34, 66] },
+  uk: { lon: [-11, 2.5], lat: [49.8, 61] },
+  "british-isles": { lon: [-11, 2.5], lat: [49.8, 61] },
+  mediterranean: { lon: [-6, 50], lat: [24, 48] },
+  "south-asia": { lon: [60, 95], lat: [5, 38] },
+  china: { lon: [72, 136], lat: [17, 54] },
+  "middle-east": { lon: [20, 62], lat: [12, 44] },
+  "western-front": { lon: [-1.5, 8.5], lat: [47.5, 52.2] },
+  arctic: { polar: "north", radius: 30 },
+  antarctica: { polar: "south", radius: 32 },
+};
+// Approximate land borders inside the UK (England-Scotland, England-Wales), for primary blank maps.
+const UK_INTERNAL = [
+  [[-3.05, 54.98], [-2.85, 55.05], [-2.6, 55.15], [-2.35, 55.3], [-2.2, 55.45], [-2.03, 55.79]],
+  [[-3.05, 53.25], [-2.95, 52.95], [-3.1, 52.6], [-3.05, 52.3], [-2.85, 52.0], [-2.7, 51.8], [-2.65, 51.62]],
+];
+let atlas = null;
+function loadAtlas() {
+  if (atlas) return atlas;
+  const req = createRequire(import.meta.url);
+  const topo = req("world-atlas/countries-50m.json");
+  const { feature } = req("topojson-client");
+  atlas = feature(topo, topo.objects.countries).features;
+  return atlas;
+}
+function worldmap({ region = "world", height = 150, graticule = 0, lines = [], labels = [], points = [], highlight = [], ukBorders = false, rivers = [] } = {}) {
+  const R = REGIONS[region] || REGIONS.world;
+  const countries = loadAtlas();
+  let project;
+  let w = W;
+  let h = height;
+  if (R.polar) {
+    const north = R.polar === "north";
+    const r = Math.min(W, height) / 2 - 2;
+    w = 2 * r + 4;
+    h = 2 * r + 4;
+    project = ([lon, lat]) => {
+      const dist = north ? 90 - lat : 90 + lat;
+      if (dist > R.radius + 2) return null;
+      const a = (lon * Math.PI) / 180;
+      const rr = (dist / R.radius) * r;
+      // North: Greenwich meridian at the bottom; south: at the top (the usual atlas views).
+      return [w / 2 + rr * Math.sin(a), h / 2 + (north ? 1 : -1) * rr * Math.cos(a)];
+    };
+  } else {
+    const k = Math.cos((((R.lat[0] + R.lat[1]) / 2) * Math.PI) / 180);
+    const spanX = (R.lon[1] - R.lon[0]) * k;
+    const spanY = R.lat[1] - R.lat[0];
+    const scale = Math.min(W / spanX, height / spanY);
+    w = spanX * scale;
+    h = spanY * scale;
+    project = ([lon, lat]) => [(lon - R.lon[0]) * k * scale, (R.lat[1] - lat) * scale];
+  }
+  const inWin = ([lon, lat]) => (R.polar ? true : lon >= R.lon[0] - 20 && lon <= R.lon[1] + 20 && lat >= R.lat[0] - 15 && lat <= R.lat[1] + 15);
+  const ring = (coords) => {
+    let d = "";
+    let pen = false;
+    let prevLon = null;
+    for (const c of coords) {
+      const p = inWin(c) ? project(c) : null;
+      if (!p || (prevLon !== null && Math.abs(c[0] - prevLon) > 180)) {
+        pen = false;
+        prevLon = c[0];
+        if (!p) continue;
+      }
+      d += `${pen ? "L" : "M"}${p[0].toFixed(1)},${p[1].toFixed(1)}`;
+      pen = true;
+      prevLon = c[0];
+    }
+    return d;
+  };
+  let s = `<defs><clipPath id="clip-${region}"><rect x="0" y="0" width="${w.toFixed(1)}" height="${h.toFixed(1)}"/></clipPath></defs><rect x="0" y="0" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="#EEF5F8" stroke="#8C877C" stroke-width="0.4"/><g clip-path="url(#clip-${region})">`;
+  for (const f of countries) {
+    const polys = f.geometry?.type === "Polygon" ? [f.geometry.coordinates] : f.geometry?.type === "MultiPolygon" ? f.geometry.coordinates : [];
+    let d = "";
+    for (const poly of polys) for (const rg of poly) d += `${ring(rg)}Z`;
+    if (!d.replace(/Z/g, "")) continue;
+    const hi = highlight.includes(f.properties?.name);
+    s += `<path d="${d}" fill="${hi ? "#F5ECE0" : "#FFFFFF"}" stroke="#6E6A60" stroke-width="${hi ? 0.45 : 0.25}" fill-rule="evenodd"/>`;
+  }
+  for (const [coords, label] of rivers) {
+    s += `<path d="${ring(coords)}" fill="none" stroke="#2F7A8C" stroke-width="0.9"/>`;
+    const mid = coords[Math.floor(coords.length / 2)];
+    const p = project(mid);
+    if (label && p) s += txt(p[0] + 2, p[1] - 2, label, { size: 2.8, anchor: "start", color: "#0E3540" });
+  }
+  if (ukBorders) for (const b of UK_INTERNAL) s += `<path d="${ring(b)}" fill="none" stroke="#6E6A60" stroke-width="0.35" stroke-dasharray="1.2 0.8"/>`;
+  const latLine = (lat, label, dash) => {
+    const pts = [];
+    for (let lon = -180; lon <= 180; lon += 2) pts.push([lon, lat]);
+    s += `<path d="${ring(pts)}" fill="none" stroke="${dash ? "#B8892B" : "#2F7A8C"}" stroke-width="0.45" ${dash ? 'stroke-dasharray="2 1.2"' : ""}/>`;
+    if (label && !R.polar) {
+      const p = project([R.lon[0] + 1, lat]);
+      if (p && p[1] > 3 && p[1] < h - 2) s += txt(p[0] + 1, p[1] - 1, label, { size: 2.6, anchor: "start", color: dash ? "#7D6428" : "#0E3540" });
+    }
+  };
+  if (graticule) {
+    for (let lat = -80; lat <= 80; lat += graticule) latLine(lat, R.polar ? "" : `${Math.abs(lat)}°${lat > 0 ? "N" : lat < 0 ? "S" : ""}`, false);
+    for (let lon = -180; lon < 180; lon += graticule) {
+      const pts = [];
+      for (let lat = -88; lat <= 88; lat += 2) pts.push([lon, lat]);
+      s += `<path d="${ring(pts)}" fill="none" stroke="#9FC3CE" stroke-width="0.25"/>`;
+    }
+  }
+  const named = { equator: [0, "Equator"], "tropic-cancer": [23.44, "Tropic of Cancer"], "tropic-capricorn": [-23.44, "Tropic of Capricorn"], "arctic-circle": [66.56, "Arctic Circle"], "antarctic-circle": [-66.56, "Antarctic Circle"] };
+  for (const l of lines) if (named[l]) latLine(named[l][0], named[l][1], l !== "equator");
+  s += "</g>";
+  for (const [lon, lat, label] of points) {
+    const p = project([lon, lat]);
+    if (p) s += `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="1" fill="#B8892B"/>` + (label ? txt(p[0] + 1.6, p[1] + 1, label, { size: 2.8, anchor: "start" }) : "");
+  }
+  for (const [lon, lat, label] of labels) {
+    const p = project([lon, lat]);
+    if (p) s += txt(p[0], p[1], label, { size: 3, color: "#0E3540", bold: true });
+  }
+  return svg(Number(w.toFixed(1)), Number(h.toFixed(1)), s);
+}
+
 // Periodic table (groups 1-7 and 0, transition metals; lanthanides and actinides left out as in GCSE data sheets).
 // [Z, symbol, name, relative atomic mass (rounded as on exam data sheets; [ ] = mass number of the most stable isotope)]
 const ELEMENTS = `1 H hydrogen 1;2 He helium 4;3 Li lithium 7;4 Be beryllium 9;5 B boron 11;6 C carbon 12;7 N nitrogen 14;8 O oxygen 16;9 F fluorine 19;10 Ne neon 20;11 Na sodium 23;12 Mg magnesium 24;13 Al aluminium 27;14 Si silicon 28;15 P phosphorus 31;16 S sulfur 32;17 Cl chlorine 35.5;18 Ar argon 40;19 K potassium 39;20 Ca calcium 40;21 Sc scandium 45;22 Ti titanium 48;23 V vanadium 51;24 Cr chromium 52;25 Mn manganese 55;26 Fe iron 56;27 Co cobalt 59;28 Ni nickel 59;29 Cu copper 63.5;30 Zn zinc 65;31 Ga gallium 70;32 Ge germanium 73;33 As arsenic 75;34 Se selenium 79;35 Br bromine 80;36 Kr krypton 84;37 Rb rubidium 85;38 Sr strontium 88;39 Y yttrium 89;40 Zr zirconium 91;41 Nb niobium 93;42 Mo molybdenum 96;43 Tc technetium [98];44 Ru ruthenium 101;45 Rh rhodium 103;46 Pd palladium 106;47 Ag silver 108;48 Cd cadmium 112;49 In indium 115;50 Sn tin 119;51 Sb antimony 122;52 Te tellurium 128;53 I iodine 127;54 Xe xenon 131;55 Cs caesium 133;56 Ba barium 137;57 La lanthanum 139;72 Hf hafnium 178;73 Ta tantalum 181;74 W tungsten 184;75 Re rhenium 186;76 Os osmium 190;77 Ir iridium 192;78 Pt platinum 195;79 Au gold 197;80 Hg mercury 201;81 Tl thallium 204;82 Pb lead 207;83 Bi bismuth 209;84 Po polonium [209];85 At astatine [210];86 Rn radon [222];87 Fr francium [223];88 Ra radium [226];89 Ac actinium [227]`
@@ -391,7 +546,7 @@ function periodic({ ar = true } = {}) {
   return svg(W, 6 + 7 * h + 6, s);
 }
 
-export const GRID_KINDS = { squared, dot, isometric, graph, numberline, hundred, times, placevalue, fractionwall, tenframe, cards, clock, barchart, periodic, wheel, boxes, perspective, star8, schematic };
+export const GRID_KINDS = { squared, dot, isometric, graph, numberline, hundred, times, placevalue, fractionwall, tenframe, cards, clock, barchart, periodic, wheel, boxes, perspective, star8, schematic, worldmap, gridmap };
 export function gridSvg(spec = {}) {
   const f = GRID_KINDS[spec.kind];
   if (!f) throw new Error(`Unknown grid kind "${spec.kind}"`);

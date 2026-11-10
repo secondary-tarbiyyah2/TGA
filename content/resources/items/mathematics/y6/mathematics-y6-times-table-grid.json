@@ -1,0 +1,43 @@
+{
+ "id": "mathematics-y6-times-table-grid",
+ "title": "Times-table grid",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y6",
+ "unit": "Spring 1: Place value and the operations bridge; fractions; converting units",
+ "lessons": [
+  6,
+  8,
+  10,
+  11,
+  14
+ ],
+ "source": "Seeded from mathematics/y6 lessons 6, 8, 10, 11, 14 (Times-table grid)",
+ "intro": "Used in lessons 6, 8, 10, 11, 14.",
+ "blocks": [
+  {
+   "h": "Times tables grid"
+  },
+  {
+   "grid": {
+    "kind": "times",
+    "size": 12
+   }
+  },
+  {
+   "pagebreak": true
+  },
+  {
+   "h": "Fill it in yourself"
+  },
+  {
+   "grid": {
+    "kind": "times",
+    "size": 12,
+    "blank": true
+   }
+  }
+ ],
+ "name": false
+}

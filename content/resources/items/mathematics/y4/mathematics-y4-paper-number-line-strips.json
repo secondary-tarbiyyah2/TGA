@@ -1,0 +1,39 @@
+{
+ "id": "mathematics-y4-paper-number-line-strips",
+ "title": "Paper number line strips",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y4",
+ "unit": "Spring 1: Multiplication and division (b); length and perimeter; fractions",
+ "lessons": [
+  4
+ ],
+ "source": "Seeded from mathematics/y4 lesson 4 (Paper number line strips)",
+ "intro": "Lesson 4: Bridge: round to the nearest 10 and 100.",
+ "blocks": [
+  {
+   "h": "Number lines"
+  },
+  {
+   "grid": {
+    "kind": "numberline",
+    "min": 0,
+    "max": 20,
+    "count": 3
+   }
+  },
+  {
+   "h": "Blank number lines to label"
+  },
+  {
+   "grid": {
+    "kind": "numberline",
+    "min": 0,
+    "max": 10,
+    "blank": true,
+    "count": 3
+   }
+  }
+ ]
+}

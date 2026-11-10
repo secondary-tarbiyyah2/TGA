@@ -1,0 +1,32 @@
+{
+ "id": "art-y8-eight-pointed-star-grid-template",
+ "title": "Eight-pointed star: construction template",
+ "type": "printable graph/grid",
+ "subject": "Art & Design",
+ "subjectSlug": "art",
+ "year": "y8",
+ "unit": "Spring 1: Abstract art, still life and analogous colour",
+ "lessons": [
+  6
+ ],
+ "source": "Written for art/y8 lesson 6 (Eight-pointed star grid template (pupil PDF))",
+ "intro": "Lesson 6. Go over the two dashed squares with a ruler to make the eight-pointed star (khatam). Then repeat it in the grid below to make a pattern.",
+ "blocks": [
+  {
+   "grid": {
+    "kind": "star8",
+    "size": 120
+   }
+  },
+  {
+   "h": "Repeat the star in a grid"
+  },
+  {
+   "grid": {
+    "kind": "squared",
+    "size": 10,
+    "height": 80
+   }
+  }
+ ]
+}

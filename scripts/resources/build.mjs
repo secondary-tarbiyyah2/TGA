@@ -32,17 +32,24 @@ async function preparePicture(p) {
   if (!e || e.none || !e.thumb) return;
   const ext = /\.jpe?g($|\?)/i.test(e.thumb) ? "jpg" : "png";
   const local = path.join(PIC_DIR, `${Buffer.from(e.file).toString("hex").slice(0, 40)}.${ext}`);
-  if (!fs.existsSync(local)) {
+  for (let attempt = 0; !fs.existsSync(local) && attempt < 3; attempt++) {
     try {
       const res = await fetch(e.thumb, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(30000) });
+      if (res.status === 429) throw Object.assign(new Error("HTTP 429"), { retry: true });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       fs.mkdirSync(PIC_DIR, { recursive: true });
       fs.writeFileSync(local, Buffer.from(await res.arrayBuffer()));
+      await new Promise((r) => setTimeout(r, 250)); // be gentle with Wikimedia
     } catch (err) {
+      if (err.retry && attempt < 2) {
+        await new Promise((r) => setTimeout(r, 4000 * (attempt + 1)));
+        continue;
+      }
       console.log(`::warning::picture "${p.find || p.file}" not downloaded (${err.message}); a drawing box is used instead`);
       return;
     }
   }
+  if (!fs.existsSync(local)) return;
   picData.set(keyOf(p), { src: `data:image/${ext === "jpg" ? "jpeg" : "png"};base64,${fs.readFileSync(local).toString("base64")}`, credit: [e.credit, e.licence].filter(Boolean).join(", ").slice(0, 120) });
 }
 const pictures = (p) => picData.get(keyOf(p)) || null;
