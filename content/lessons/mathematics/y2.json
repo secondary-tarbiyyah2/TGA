@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y2",
   "board": "National Curriculum (KS1)",
-  "source": "National Curriculum (KS1 Year 2: place value to 100; addition and subtraction); Spring 1 founding year: White Rose Maths Year 2 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Money and 2 Multiplication and division), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24",
+  "source": "National Curriculum (KS1 Year 2: place value to 100; addition and subtraction); Spring 1 founding year: White Rose Maths Year 2 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Money and 2 Multiplication and division), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 2 Spring blocks 2 Multiplication and division, 3 Length and height and 4 Mass, capacity and temperature, with addition and subtraction with exchange (Autumn block 2) caught up in week 3 (small-step titles only)",
   "lessons": [
     {
       "unit": "Spring 1: Money; multiplication and division begins",
@@ -1722,83 +1722,225 @@
       "send": "SEND: use place value counters in a column grid. Stretch: add three 2-digit numbers."
     },
     {
-      "unit": "Unit 2: Addition",
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
       "n": 11,
-      "title": "Adding with exchange",
+      "title": "Add two 2-digit numbers with exchange",
       "duration": 30,
+      "bigQuestion": "What do we do when the ones add up to more than 9?",
       "objectives": [
-        "Add two 2-digit numbers when the ones make 10 or more",
-        "Exchange ten ones for one ten"
+        "To understand how to add two 2-digit numbers when the ones cross a ten"
       ],
+      "successCriteria": [
+        "All: add the ones, then the tens",
+        "Most: exchange 10 ones for 1 ten",
+        "Some: explain an exchange with pasta cups"
+      ],
+      "crossCurricular": "Everyday life: adding the cost of two items",
+      "smsc": "Social: helping a friend add up the cost of food for a guest",
       "keywords": [
         {
           "term": "exchange",
-          "def": "swap ten ones for one ten (or ten tens for one hundred)"
+          "def": "swap 10 ones for 1 ten"
         },
         {
-          "term": "carry",
-          "def": "move the new ten into the tens column"
+          "term": "tens",
+          "def": "groups of 10"
+        },
+        {
+          "term": "ones",
+          "def": "single things"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "27 + 15. The ones make 12. Can we write 12 in the ones column?",
+        "a": "No: 12 ones is 1 ten and 2 ones; exchange to get 42."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "base ten blocks rods and cubes",
+          "alt": "Rods of ten and cubes",
+          "for": "teach:1"
+        },
+        {
+          "find": "place value chart tens ones",
+          "alt": "A tens and ones chart",
+          "for": "teach:2"
         }
       ],
       "starter": [
-        "Bismillah. 25 + 43 = ?",
-        "7 + 6 = ?",
-        "How many ones make one ten?"
+        {
+          "q": "23 + 4 = ?",
+          "a": "27",
+          "mins": 1
+        },
+        {
+          "q": "30 + 40 = ?",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "8 + 7 = ?",
+          "a": "15",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "More than ten ones",
+          "heading": "Ones first",
           "bullets": [
-            "36 + 27.",
-            "6 ones + 7 ones = 13 ones.",
-            "13 ones = 1 ten and 3 ones."
+            "27 + 15",
+            "Ones: 7 + 5 = 12.",
+            "12 ones: exchange!"
           ],
-          "note": "Use place value counters. Ask: what can we do when we have 13 ones?"
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 7,
+              "label": "7 ones"
+            },
+            {
+              "parts": 10,
+              "shaded": 5,
+              "label": "+ 5 ones = 12"
+            }
+          ],
+          "note": "Show 2 cups and 7 pasta, 1 cup and 5 pasta."
         },
         {
           "heading": "Exchange",
           "bullets": [
-            "Swap 10 ones for 1 ten.",
-            "Put the 1 ten in the tens column.",
-            "3 ones are left."
+            "12 ones = 1 ten and 2 ones.",
+            "Put 10 pasta in a cup.",
+            "Now add the tens."
           ],
-          "note": "Physically move ten cubes to make a rod. Show the 'carry' digit written under the tens."
+          "table": {
+            "head": [
+              "Step",
+              "Tens",
+              "Ones"
+            ],
+            "rows": [
+              [
+                "27",
+                "2",
+                "7"
+              ],
+              [
+                "15",
+                "1",
+                "5"
+              ],
+              [
+                "Exchange",
+                "+1 ten",
+                "12 = 10 + 2"
+              ],
+              [
+                "Total",
+                "4",
+                "2"
+              ]
+            ]
+          },
+          "note": "Teacher fills a cup with 10 ones."
         },
         {
-          "heading": "Add the tens",
-          "bullets": [
-            "Tens: 3 + 2 + 1 = 6 tens.",
-            "Answer: 6 tens and 3 ones.",
-            "36 + 27 = 63."
-          ],
-          "note": "Show the full column method. Check the answer by estimating: 36 + 27 is about 40 + 30 = 70."
+          "heading": "Model",
+          "model": {
+            "problem": "36 + 28",
+            "steps": [
+              "Ones: 6 + 8 = 14",
+              "Exchange: 1 ten and 4 ones",
+              "Tens: 3 + 2 + 1 = 6",
+              "Answer: 64"
+            ],
+            "answer": "64"
+          },
+          "note": "Model with pasta, then the chart."
         },
         {
-          "heading": "Another example",
-          "bullets": [
-            "48 + 35.",
-            "Ones: 8 + 5 = 13.",
-            "Answer: 83."
-          ],
-          "note": "Children work through it with a partner. Common error: forgetting to add the carried ten."
+          "heading": "Check",
+          "check": {
+            "q": "45 + 37 = ?",
+            "options": [
+              "72",
+              "82",
+              "712"
+            ],
+            "answer": 1,
+            "why": "5 + 7 = 12: exchange; 4 + 3 + 1 = 8 tens: 82. 72 forgets the exchange; 712 writes 12 in the ones."
+          },
+          "note": "Teams poll."
         }
       ],
       "practice": [
-        "Solve 29 + 16.",
-        "Solve 55 + 38.",
-        "Estimate 47 + 26 first."
+        {
+          "q": "18 + 24 = ?",
+          "a": "42",
+          "mins": 1,
+          "model": "Teacher: 8 + 4 = 12, exchange 10 ones for a ten; 1 + 2 + 1 = 4 tens: 42."
+        },
+        {
+          "q": "39 + 25 = ?",
+          "a": "64",
+          "mins": 1
+        },
+        {
+          "q": "47 + 36 = ?",
+          "a": "83",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Solve: 17 + 25, 38 + 44, 56 + 27, 69 + 23.",
-        "Solve: 45 + 45. What do you notice?",
-        "Check 28 + 34 = 62 with a different method."
+        {
+          "q": "Core: 26 + 17; 54 + 29",
+          "a": "43; 83",
+          "mins": 2,
+          "model": "Teacher: 6 + 7 = 13, exchange; 2 + 1 + 1 = 4 tens: 43."
+        },
+        {
+          "q": "Extend: 38 + 38; 65 + 27",
+          "a": "76; 92",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Find two 2-digit numbers that need an exchange and total 50.",
+          "a": "For example 27 + 23 or 18 + 32",
+          "mins": 1
+        }
       ],
       "exit": [
-        "47 + 36 = ?",
-        "What do you do when the ones make more than 9?"
+        {
+          "q": "19 + 23 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what do we do when the ones add up to more than 9?",
+          "a": "Exchange 10 ones for 1 ten and add it to the tens",
+          "mins": 1
+        }
       ],
-      "homework": "Solve six sums needing exchange and check each by estimating first.",
-      "send": "SEND: physical exchange with base ten. Stretch: add 3-digit and 2-digit numbers with exchange."
+      "homework": "Add 4 pairs of 2-digit numbers with an exchange, using pasta to check.",
+      "send": "SEND: tens and ones with pasta cups and a place value chart, one step at a time. EAL: stem 'First I add the ones...'. Stretch: explain why 46 + 28 needs an exchange but 46 + 23 does not.",
+      "resources": [
+        "White Rose Maths Year 2, Autumn block 2: Addition and subtraction: small step 'Add two 2-digit numbers (across a 10)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: pasta in cups of 10 and loose pasta (tens and ones)",
+        "Printed tens and ones place value chart",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 11 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 3: Subtraction",
@@ -1955,79 +2097,237 @@
       "send": "SEND: use base ten on a place value mat. Stretch: three-digit subtraction with no exchange."
     },
     {
-      "unit": "Unit 3: Subtraction",
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
       "n": 14,
-      "title": "Subtracting with exchange",
+      "title": "Subtract two 2-digit numbers with exchange",
       "duration": 30,
+      "bigQuestion": "What do we do when there are not enough ones to take away?",
       "objectives": [
-        "Subtract 2-digit numbers when exchange is needed",
-        "Exchange one ten for ten ones"
+        "To understand how to subtract a 2-digit number when we need to exchange a ten"
       ],
+      "successCriteria": [
+        "All: subtract the ones, then the tens",
+        "Most: exchange 1 ten for 10 ones",
+        "Some: explain why 52 - 27 needs an exchange"
+      ],
+      "crossCurricular": "Everyday life: finding change from 50p",
+      "smsc": "Moral: giving the right change honestly",
       "keywords": [
         {
           "term": "exchange",
-          "def": "swap one ten for ten ones so you can subtract"
+          "def": "swap 1 ten for 10 ones"
+        },
+        {
+          "term": "subtract",
+          "def": "take away"
+        },
+        {
+          "term": "difference",
+          "def": "how much more or less"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "52 - 27. We have 2 ones and need to take away 7. What can we do?",
+        "a": "Exchange a ten for 10 ones: 12 - 7 = 5, then 4 - 2 = 2 tens: 25."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "base ten blocks rods and cubes",
+          "alt": "Rods of ten and cubes",
+          "for": "teach:1"
+        },
+        {
+          "find": "pound coins and pence",
+          "alt": "British coins",
+          "for": "hook"
         }
       ],
       "starter": [
-        "Bismillah. 68 - 35 = ?",
-        "How many ones in one ten?",
-        "Partition 42 as 30 + __."
+        {
+          "q": "46 + 28 = ?",
+          "a": "74",
+          "mins": 1
+        },
+        {
+          "q": "12 - 7 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "50 - 20 = ?",
+          "a": "30",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Not enough ones",
           "bullets": [
-            "52 - 27.",
-            "We cannot take 7 from 2 ones.",
-            "Exchange 1 ten for 10 ones."
+            "52 - 27",
+            "2 ones: cannot take 7.",
+            "Exchange a ten."
           ],
-          "note": "Show 5 rods and 2 cubes. Break one rod into ten cubes. Now there are 4 rods and 12 cubes."
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "10"
+            },
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "20"
+            },
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "30"
+            },
+            {
+              "parts": 10,
+              "shaded": 2,
+              "label": "...50 and 2 ones"
+            }
+          ],
+          "note": "Show 5 cups and 2 pasta."
         },
         {
-          "heading": "Now subtract",
+          "heading": "Exchange",
           "bullets": [
-            "12 ones - 7 ones = 5 ones.",
-            "4 tens - 2 tens = 2 tens.",
-            "52 - 27 = 25."
+            "5 tens 2 ones becomes 4 tens 12 ones.",
+            "12 - 7 = 5",
+            "4 - 2 = 2 tens"
           ],
-          "note": "Work through the column method with the exchange shown by crossing out and rewriting. Check by 25 + 27 = 52."
+          "table": {
+            "head": [
+              "Step",
+              "Tens",
+              "Ones"
+            ],
+            "rows": [
+              [
+                "52",
+                "5",
+                "2"
+              ],
+              [
+                "Exchange",
+                "4",
+                "12"
+              ],
+              [
+                "- 27",
+                "2",
+                "7"
+              ],
+              [
+                "Answer",
+                "2",
+                "5"
+              ]
+            ]
+          },
+          "note": "Teacher empties a cup into the ones."
         },
         {
-          "heading": "Another example",
-          "bullets": [
-            "63 - 38.",
-            "Exchange: 5 tens and 13 ones.",
-            "13 - 8 = 5, 5 - 3 = 2: 25."
-          ],
-          "note": "Children work along and explain each step. Common mistake: forgetting to reduce the tens by one."
+          "heading": "Model",
+          "model": {
+            "problem": "63 - 38",
+            "steps": [
+              "3 ones: cannot take 8",
+              "Exchange: 5 tens and 13 ones",
+              "13 - 8 = 5",
+              "5 - 3 = 2 tens",
+              "Answer: 25"
+            ],
+            "answer": "25"
+          },
+          "note": "Model with pasta, then the chart."
         },
         {
-          "heading": "Check it",
-          "bullets": [
-            "Add the answer to the number subtracted.",
-            "25 + 38 = 63.",
-            "It matches!"
-          ],
-          "note": "Reinforce checking. Ask: why does this work? Because addition and subtraction are inverses."
+          "heading": "Check",
+          "check": {
+            "q": "41 - 16 = ?",
+            "options": [
+              "35",
+              "25",
+              "36"
+            ],
+            "answer": 1,
+            "why": "Exchange: 11 - 6 = 5, 3 - 1 = 2 tens: 25. 35 forgets to take the exchanged ten."
+          },
+          "note": "Teams poll."
         }
       ],
       "practice": [
-        "Solve 41 - 16 with exchange.",
-        "Solve 73 - 29.",
-        "Solve 80 - 47."
+        {
+          "q": "34 - 18 = ?",
+          "a": "16",
+          "mins": 1,
+          "model": "Teacher: 4 - 8 cannot; exchange: 14 - 8 = 6; 2 - 1 = 1 ten: 16."
+        },
+        {
+          "q": "50 - 23 = ?",
+          "a": "27",
+          "mins": 1
+        },
+        {
+          "q": "72 - 45 = ?",
+          "a": "27",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Solve: 52 - 18, 64 - 37, 91 - 45, 70 - 23.",
-        "Check 82 - 49 = 33 with addition.",
-        "Write a subtraction that needs exchange and solve it."
+        {
+          "q": "Core: 43 - 27; 61 - 34",
+          "a": "16; 27",
+          "mins": 2,
+          "model": "Teacher: 13 - 7 = 6, then 3 - 2 = 1 ten: 16."
+        },
+        {
+          "q": "Extend: 80 - 46; 95 - 58",
+          "a": "34; 37",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: I paid with 50p for a 26p apple. What change?",
+          "a": "24p",
+          "mins": 1
+        }
       ],
       "exit": [
-        "62 - 38 = ?",
-        "How do you know you need to exchange?"
+        {
+          "q": "32 - 15 = ?",
+          "a": "17",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what do we do when there are not enough ones?",
+          "a": "Exchange 1 ten for 10 ones, then subtract",
+          "mins": 1
+        }
       ],
-      "homework": "Solve six subtractions needing exchange and check each one by addition.",
-      "send": "SEND: use place value counters on a mat to exchange. Stretch: exchange with 3-digit numbers."
+      "homework": "Do 4 subtractions with an exchange, using pasta to check.",
+      "send": "SEND: tens and ones with pasta cups and a place value chart, one step at a time. EAL: stem 'First I add the ones...'. Stretch: find a subtraction with an exchange that has the answer 19.",
+      "resources": [
+        "White Rose Maths Year 2, Autumn block 2: Addition and subtraction: small step 'Subtract two 2-digit numbers (across a 10)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: pasta in cups of 10 and loose pasta (tens and ones)",
+        "Printed tens and ones place value chart",
+        "Real or paper coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 14 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Spring 1: Money; multiplication and division begins",
@@ -4830,6 +5130,4260 @@
         "Paper number line 0 to 30",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 2 maths lesson 28 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 29,
+      "title": "The 5 times table",
+      "duration": 30,
+      "bigQuestion": "What patterns can we find in the 5 times table?",
+      "objectives": [
+        "To understand the patterns in the 5 times table"
+      ],
+      "successCriteria": [
+        "All: count in 5s to 60",
+        "Most: recall facts like 7 × 5",
+        "Some: explain why every answer ends in 0 or 5"
+      ],
+      "crossCurricular": "Science: 5 fingers on each hand",
+      "smsc": "Spiritual: 5 daily prayers each day, 35 in a week",
+      "keywords": [
+        {
+          "term": "multiple",
+          "def": "a number in a times table"
+        },
+        {
+          "term": "times table",
+          "def": "facts for counting in equal jumps"
+        },
+        {
+          "term": "pattern",
+          "def": "something that repeats"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "We pray 5 times a day. How many prayers is that in a week?",
+        "a": "7 × 5 = 35."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "open hand palm five fingers outline",
+          "alt": "A hand print: 5 fingers",
+          "for": "hook"
+        },
+        {
+          "find": "five pence coin",
+          "alt": "A 5p coin",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2 × 6 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Count in 10s to 60.",
+          "a": "10, 20, 30, 40, 50, 60",
+          "mins": 1
+        },
+        {
+          "q": "3 equal groups of 2?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count in 5s",
+          "bullets": [
+            "5, 10, 15, 20, 25, 30",
+            "35, 40, 45, 50, 55, 60"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 60,
+            "step": 5,
+            "marks": [
+              {
+                "at": 20,
+                "label": "4 × 5"
+              },
+              {
+                "at": 35,
+                "label": "7 × 5"
+              },
+              {
+                "at": 50,
+                "label": "10 × 5"
+              }
+            ]
+          },
+          "note": "Spoken chant, then jump on the line. Ask: 4 jumps of 5? (20)."
+        },
+        {
+          "heading": "The facts",
+          "table": {
+            "head": [
+              "Fact",
+              "Answer",
+              "Fact",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "1 × 5",
+                "5",
+                "7 × 5",
+                "35"
+              ],
+              [
+                "2 × 5",
+                "10",
+                "8 × 5",
+                "40"
+              ],
+              [
+                "3 × 5",
+                "15",
+                "9 × 5",
+                "45"
+              ],
+              [
+                "4 × 5",
+                "20",
+                "10 × 5",
+                "50"
+              ],
+              [
+                "5 × 5",
+                "25",
+                "11 × 5",
+                "55"
+              ],
+              [
+                "6 × 5",
+                "30",
+                "12 × 5",
+                "60"
+              ]
+            ]
+          },
+          "note": "Read across. Ask: 6 × 5? (30)."
+        },
+        {
+          "heading": "The pattern",
+          "bullets": [
+            "Answers end in 5 or 0.",
+            "Odd groups end in 5.",
+            "Even groups end in 0."
+          ],
+          "note": "Ask: is 42 in the 5 times table? (no, it ends in 2)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "7 × 5 = ?",
+            "options": [
+              "35",
+              "12",
+              "75"
+            ],
+            "answer": 0,
+            "why": "Seven 5s is 35. 12 adds them; 75 writes them side by side."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3 × 5 = ?",
+          "a": "15",
+          "mins": 1,
+          "model": "Teacher counts 3 jumps of 5 on the line: 5, 10, 15."
+        },
+        {
+          "q": "8 × 5 = ?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "? × 5 = 50",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 4 × 5, 6 × 5, 9 × 5",
+          "a": "20, 30, 45",
+          "mins": 2,
+          "model": "Teacher counts in 5s on fingers four times: 20."
+        },
+        {
+          "q": "Extend: Extend: 5 × 5, 11 × 5, 12 × 5",
+          "a": "25, 55, 60",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Stretch: 7 hands. How many fingers?",
+          "a": "35",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "5 × 5 = ?",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "Big question: name one pattern in the 5 times table.",
+          "a": "The answers end in 5 or 0; they go up in 5s",
+          "mins": 1
+        }
+      ],
+      "homework": "Say the 5 times table as a spoken chant every day this week.",
+      "send": "SEND: use real objects and a number line, one step at a time. EAL: picture cards for key words. Stretch: count back in 5s from 60.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 2: Multiplication and division: small step 'The 5 times table' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper number line 0 to 60",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 29 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 30,
+      "title": "The 10 times table: link 5s and 10s",
+      "duration": 30,
+      "bigQuestion": "Why is 10 × 6 double 5 × 6?",
+      "objectives": [
+        "To understand the 10 times table and how it links to the 5 times table"
+      ],
+      "successCriteria": [
+        "All: count in 10s to 120",
+        "Most: recall facts like 8 × 10",
+        "Some: explain why a 10s fact is double a 5s fact"
+      ],
+      "crossCurricular": "Science: 10 toes, 10 fingers",
+      "smsc": "Moral: 10 good deeds for one, a mercy from Allah",
+      "keywords": [
+        {
+          "term": "multiple",
+          "def": "a number in a times table"
+        },
+        {
+          "term": "double",
+          "def": "add the same number again"
+        },
+        {
+          "term": "ten",
+          "def": "a group of 10"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "5 × 4 = 20. What is 10 × 4? How do you know without counting?",
+        "a": "40: it is double 20."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "ten pence coins",
+          "alt": "10p coins",
+          "for": "hook"
+        },
+        {
+          "find": "egg box with ten eggs",
+          "alt": "An egg box of 10",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6 × 5 = ?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "Double 15?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "Count in 10s to 50.",
+          "a": "10, 20, 30, 40, 50",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count in 10s",
+          "bullets": [
+            "10, 20, 30, 40, 50, 60",
+            "...up to 120."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 120,
+            "step": 10,
+            "marks": [
+              {
+                "at": 30,
+                "label": "3 × 10"
+              },
+              {
+                "at": 70,
+                "label": "7 × 10"
+              },
+              {
+                "at": 120,
+                "label": "12 × 10"
+              }
+            ]
+          },
+          "note": "Spoken chant. Ask: 7 tens? (70)."
+        },
+        {
+          "heading": "5s and 10s",
+          "table": {
+            "head": [
+              "Groups",
+              "× 5",
+              "× 10"
+            ],
+            "rows": [
+              [
+                "2",
+                "10",
+                "20"
+              ],
+              [
+                "3",
+                "15",
+                "30"
+              ],
+              [
+                "4",
+                "20",
+                "40"
+              ],
+              [
+                "6",
+                "30",
+                "60"
+              ],
+              [
+                "8",
+                "40",
+                "80"
+              ]
+            ]
+          },
+          "note": "Point out: the 10s answer is double."
+        },
+        {
+          "heading": "Double it",
+          "bullets": [
+            "5 × 6 = 30.",
+            "10 × 6 is double: 60.",
+            "10s answers end in 0."
+          ],
+          "note": "Ask: 5 × 9 = 45, so 10 × 9? (90)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "5 × 7 = 35. So 10 × 7 = ?",
+            "options": [
+              "70",
+              "45",
+              "17"
+            ],
+            "answer": 0,
+            "why": "10s are double 5s: double 35 is 70."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4 × 10 = ?",
+          "a": "40",
+          "mins": 1,
+          "model": "Teacher counts 4 jumps of 10: 10, 20, 30, 40."
+        },
+        {
+          "q": "5 × 8 = 40, so 10 × 8 = ?",
+          "a": "80",
+          "mins": 1
+        },
+        {
+          "q": "? × 10 = 110",
+          "a": "11",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 3 × 10, 9 × 10, 12 × 10",
+          "a": "30, 90, 120",
+          "mins": 2,
+          "model": "Teacher counts in tens three times: 10, 20, 30."
+        },
+        {
+          "q": "Extend: Extend: fill in: 5 × 6 = _, 10 × 6 = _",
+          "a": "30, 60",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Stretch: 10 × 5 and 5 × 10. What do you notice?",
+          "a": "Both are 50",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "6 × 10 = ?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "Big question: why is 10 × 6 double 5 × 6?",
+          "a": "10 is double 5, so 6 tens is double 6 fives",
+          "mins": 1
+        }
+      ],
+      "homework": "Count in 5s and 10s to 60 with a grown-up and spot the doubles.",
+      "send": "SEND: use real objects and a number line, one step at a time. EAL: picture cards for key words. Stretch: use 10s facts to find 20s: 20 × 3.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 2: Multiplication and division: small step 'The 10 times table' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper number line 0 to 60",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 30 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 31,
+      "title": "Make equal groups: sharing and grouping",
+      "duration": 30,
+      "bigQuestion": "Is sharing the same as grouping?",
+      "objectives": [
+        "To understand the two ways of making equal groups to divide"
+      ],
+      "successCriteria": [
+        "All: share 12 into 3 equal groups",
+        "Most: group 12 into 2s",
+        "Some: explain the difference between sharing and grouping"
+      ],
+      "crossCurricular": "Cooking: sharing dates equally at iftar",
+      "smsc": "Moral: sharing fairly is part of good character",
+      "keywords": [
+        {
+          "term": "share",
+          "def": "give out one at a time so all get the same"
+        },
+        {
+          "term": "group",
+          "def": "put into sets of the same size"
+        },
+        {
+          "term": "equal",
+          "def": "the same amount"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "12 dates, 3 plates. How many on each plate? Now: 12 dates, 3 on each plate. How many plates?",
+        "a": "4 on each plate; 4 plates."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "plates on a table",
+          "alt": "Empty plates",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "4 × 5 = ?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "Double 6?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "3 groups of 4?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sharing",
+          "bullets": [
+            "12 dates, 3 plates.",
+            "One for you, one for you...",
+            "4 each."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "Plate 1: 4"
+            },
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "Plate 2: 4"
+            },
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "Plate 3: 4"
+            }
+          ],
+          "note": "Teacher shares pasta onto 3 plates."
+        },
+        {
+          "heading": "Grouping",
+          "bullets": [
+            "12 dates, 3 on each plate.",
+            "Make groups of 3.",
+            "4 plates."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 12,
+            "step": 3,
+            "marks": [
+              {
+                "at": 3,
+                "label": "1 group"
+              },
+              {
+                "at": 6,
+                "label": "2"
+              },
+              {
+                "at": 9,
+                "label": "3"
+              },
+              {
+                "at": 12,
+                "label": "4 groups"
+              }
+            ]
+          },
+          "note": "Teacher groups pasta in 3s."
+        },
+        {
+          "heading": "Same sum, two stories",
+          "bullets": [
+            "12 ÷ 3 = 4",
+            "Sharing: how many each?",
+            "Grouping: how many groups?"
+          ],
+          "note": "Ask: 10 sweets in 2s: how many groups? (5)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "15 pasta into groups of 5. How many groups?",
+            "options": [
+              "5",
+              "3",
+              "10"
+            ],
+            "answer": 1,
+            "why": "15 ÷ 5 = 3 groups. 10 is 15 - 5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Share 10 pasta between 2 bowls.",
+          "a": "5 each",
+          "mins": 1,
+          "model": "Teacher gives one to each bowl in turn until all are gone: 5 each."
+        },
+        {
+          "q": "Group 10 pasta into 5s. How many groups?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "Share 8 between 4.",
+          "a": "2 each",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Share 20 pasta between 4 bowls.",
+          "a": "5 each",
+          "mins": 2,
+          "model": "Teacher shares one at a time into 4 bowls: 5 each."
+        },
+        {
+          "q": "Extend: Group 18 pasta into 2s. How many groups?",
+          "a": "9",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 14 dates: can you share them equally between 3 plates?",
+          "a": "No: 4 each and 2 left over",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "12 shared between 2?",
+          "a": "6 each",
+          "mins": 1
+        },
+        {
+          "q": "Big question: is sharing the same as grouping?",
+          "a": "No: sharing finds how many in each group; grouping finds how many groups",
+          "mins": 1
+        }
+      ],
+      "homework": "Share 12 spoons or socks fairly between 2, 3 and 4 people.",
+      "send": "SEND: use real objects and a number line, one step at a time. EAL: picture cards for key words. Stretch: find all the ways to share 12 equally.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 2: Multiplication and division: small step 'Make equal groups (sharing) and Make equal groups (grouping)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper number line 0 to 60",
+        "3 or 4 plates or bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 31 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 32,
+      "title": "Divide by 2, 5 and 10",
+      "duration": 30,
+      "bigQuestion": "How do times tables help us divide?",
+      "objectives": [
+        "To understand how to use times tables facts to divide by 2, 5 and 10"
+      ],
+      "successCriteria": [
+        "All: divide by 2 using doubles",
+        "Most: divide by 5 and 10 using the tables",
+        "Some: write the related multiplication for a division"
+      ],
+      "smsc": "Moral: sharing fairly",
+      "keywords": [
+        {
+          "term": "divide",
+          "def": "share or group equally"
+        },
+        {
+          "term": "÷",
+          "def": "the divide sign"
+        },
+        {
+          "term": "related fact",
+          "def": "a fact that uses the same numbers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "We know 6 × 5 = 30. What is 30 ÷ 5?",
+        "a": "6."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "ten pence coins",
+          "alt": "10p coins",
+          "for": "teach:3"
+        },
+        {
+          "find": "pairs of socks",
+          "alt": "Socks in pairs",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "8 × 5 = ?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "12 shared between 2?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "7 × 10 = ?",
+          "a": "70",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Divide by 2",
+          "bullets": [
+            "16 ÷ 2 = 8",
+            "Think: what doubled makes 16?",
+            "8 + 8 = 16"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 16,
+            "step": 2,
+            "marks": [
+              {
+                "at": 8,
+                "label": "8"
+              },
+              {
+                "at": 16,
+                "label": "16"
+              }
+            ]
+          },
+          "note": "Ask: 14 ÷ 2? (7)."
+        },
+        {
+          "heading": "Divide by 5",
+          "bullets": [
+            "35 ÷ 5 = ?",
+            "Count in 5s to 35: 7 jumps.",
+            "35 ÷ 5 = 7"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 35,
+            "step": 5,
+            "marks": [
+              {
+                "at": 35,
+                "label": "7 jumps"
+              }
+            ]
+          },
+          "note": "Ask: 45 ÷ 5? (9)."
+        },
+        {
+          "heading": "Divide by 10",
+          "bullets": [
+            "80 ÷ 10 = 8",
+            "8 × 10 = 80",
+            "Use the fact backwards."
+          ],
+          "note": "Ask: 120 ÷ 10? (12)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "50 ÷ 5 = ?",
+            "options": [
+              "10",
+              "45",
+              "55"
+            ],
+            "answer": 0,
+            "why": "10 × 5 = 50, so 50 ÷ 5 = 10."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "20 ÷ 2 = ?",
+          "a": "10",
+          "mins": 1,
+          "model": "Teacher: what doubled makes 20? 10, because 10 + 10 = 20."
+        },
+        {
+          "q": "25 ÷ 5 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "60 ÷ 10 = ?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 18 ÷ 2, 40 ÷ 5, 90 ÷ 10",
+          "a": "9, 8, 9",
+          "mins": 2,
+          "model": "Teacher: 9 + 9 = 18, so 18 ÷ 2 = 9."
+        },
+        {
+          "q": "Extend: Extend: 55 ÷ 5, 24 ÷ 2, 110 ÷ 10",
+          "a": "11, 12, 11",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Stretch: 30 pence in 5p coins. How many coins?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "70 ÷ 10 = ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how do times tables help us divide?",
+          "a": "We use the fact backwards: 6 × 5 = 30, so 30 ÷ 5 = 6",
+          "mins": 1
+        }
+      ],
+      "homework": "Write 3 division facts for each of the 2, 5 and 10 times tables.",
+      "send": "SEND: use real objects and a number line, one step at a time. EAL: picture cards for key words. Stretch: write the fact family for 4 × 5 = 20.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 2: Multiplication and division: small step 'Divide by 2, Divide by 5 and Divide by 10' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper number line 0 to 60",
+        "Real or paper 2p, 5p and 10p coins",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 32 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 33,
+      "title": "Odd and even numbers",
+      "duration": 30,
+      "bigQuestion": "How can we tell if a number is odd or even without counting?",
+      "objectives": [
+        "To understand how to recognise odd and even numbers"
+      ],
+      "successCriteria": [
+        "All: sort numbers to 20 into odd and even",
+        "Most: use the ones digit to decide",
+        "Some: explain why an odd number has one left over in pairs"
+      ],
+      "crossCurricular": "Science: pairs of eyes, ears and hands",
+      "smsc": "Spiritual: Allah created everything in pairs (Qur'an 51:49)",
+      "keywords": [
+        {
+          "term": "even",
+          "def": "ends in 0, 2, 4, 6 or 8; makes pairs"
+        },
+        {
+          "term": "odd",
+          "def": "ends in 1, 3, 5, 7 or 9; one left over"
+        },
+        {
+          "term": "pair",
+          "def": "a group of 2"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 1,000,001 odd or even? How do you know without counting?",
+        "a": "Odd: it ends in 1."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "islamicLink": {
+        "text": "Allah tells us He created everything in pairs (Qur'an 51:49). Even numbers make pairs with none left over.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "pair of shoes",
+          "alt": "A pair of shoes",
+          "for": "keywords"
+        },
+        {
+          "find": "pairs of socks",
+          "alt": "Socks in pairs",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "16 ÷ 2 = ?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 20.",
+          "a": "2, 4, 6, ... 20",
+          "mins": 1
+        },
+        {
+          "q": "5 × 5 = ?",
+          "a": "25",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Make pairs",
+          "bullets": [
+            "8 pasta: 4 pairs, none left.",
+            "7 pasta: 3 pairs and 1 left.",
+            "8 is even. 7 is odd."
+          ],
+          "note": "Teacher pairs pasta on camera."
+        },
+        {
+          "heading": "Look at the ones",
+          "bullets": [
+            "Even: 0, 2, 4, 6, 8",
+            "Odd: 1, 3, 5, 7, 9",
+            "34 is even; 47 is odd."
+          ],
+          "sort": {
+            "columns": [
+              "Odd",
+              "Even"
+            ],
+            "cards": [
+              "13",
+              "20",
+              "36",
+              "41",
+              "8",
+              "55"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ]
+          },
+          "note": "Ask: is 58 odd or even? (even)."
+        },
+        {
+          "heading": "2 times table",
+          "bullets": [
+            "The 2 times table is all even.",
+            "Even numbers divide by 2 exactly."
+          ],
+          "note": "Ask: 15 ÷ 2 exactly? (no, it is odd)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which number is odd?",
+            "options": [
+              "24",
+              "37",
+              "50"
+            ],
+            "answer": 1,
+            "why": "37 ends in 7, so it is odd."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is 12 odd or even?",
+          "a": "Even",
+          "mins": 1,
+          "model": "Teacher pairs 12 pasta: 6 pairs, none left, so even."
+        },
+        {
+          "q": "Is 19 odd or even?",
+          "a": "Odd",
+          "mins": 1
+        },
+        {
+          "q": "Write the next even number after 38.",
+          "a": "40",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Sort: 6, 11, 23, 30, 45, 52",
+          "a": "Odd: 11, 23, 45; Even: 6, 30, 52",
+          "mins": 2,
+          "model": "Teacher: 6 ends in 6, so even."
+        },
+        {
+          "q": "Extend: Write 3 odd numbers between 40 and 50.",
+          "a": "For example 41, 43, 47",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Odd + odd: is the answer odd or even? Try 3 + 5 and 7 + 9.",
+          "a": "Even: 8 and 16",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Is 29 odd or even?",
+          "a": "Odd",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how can we tell without counting?",
+          "a": "Look at the ones digit: 0, 2, 4, 6, 8 is even",
+          "mins": 1
+        }
+      ],
+      "homework": "Find the house numbers on your road (or in a book) and say odd or even.",
+      "send": "SEND: use real objects and a number line, one step at a time. EAL: picture cards for key words. Stretch: explain odd + even (try 3 + 4).",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 2: Multiplication and division: small step 'Odd and even numbers' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper number line 0 to 60",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 33 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 34,
+      "title": "Multiplication in any order",
+      "duration": 30,
+      "bigQuestion": "Is 2 × 5 the same as 5 × 2?",
+      "objectives": [
+        "To understand that multiplication can be done in any order but division cannot"
+      ],
+      "successCriteria": [
+        "All: show 2 × 5 and 5 × 2 with an array",
+        "Most: use one fact to find another",
+        "Some: explain why 10 ÷ 2 is not the same as 2 ÷ 10"
+      ],
+      "smsc": "Social: looking at a problem from another side",
+      "keywords": [
+        {
+          "term": "array",
+          "def": "rows and columns of the same number"
+        },
+        {
+          "term": "commutative",
+          "def": "can swap the order and get the same answer"
+        },
+        {
+          "term": "row",
+          "def": "a line going across"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Turn an array of 2 rows of 5 on its side. How many rows now? Same total?",
+        "a": "5 rows of 2; still 10."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "egg box with ten eggs",
+          "alt": "An egg box: 2 rows of 5",
+          "for": "hook"
+        },
+        {
+          "find": "muffin baking tray",
+          "alt": "A muffin tray: rows and columns",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Is 27 odd or even?",
+          "a": "Odd",
+          "mins": 1
+        },
+        {
+          "q": "4 × 5 = ?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "30 ÷ 10 = ?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Turn the array",
+          "bullets": [
+            "2 rows of 5 = 10",
+            "5 rows of 2 = 10",
+            "2 × 5 = 5 × 2"
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 5,
+              "label": "row 1"
+            },
+            {
+              "parts": 5,
+              "shaded": 5,
+              "label": "row 2: 2 × 5 = 10"
+            }
+          ],
+          "note": "Show an egg box, then turn it."
+        },
+        {
+          "heading": "Use what you know",
+          "bullets": [
+            "10 × 7 = 70",
+            "So 7 × 10 = 70.",
+            "One fact, two facts."
+          ],
+          "note": "Ask: 5 × 3 = 15, so 3 × 5? (15)."
+        },
+        {
+          "heading": "Division does not swap",
+          "bullets": [
+            "10 ÷ 2 = 5",
+            "2 ÷ 10 is not 5.",
+            "Start with the whole."
+          ],
+          "misconception": {
+            "wrong": "10 ÷ 2 = 2 ÷ 10",
+            "right": "10 ÷ 2 = 5. Division must start with the whole: you cannot swap."
+          },
+          "note": "Ask: 12 ÷ 2 or 2 ÷ 12: which is 6? (12 ÷ 2)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "9 × 2 = 18. Which is also true?",
+            "options": [
+              "2 × 9 = 18",
+              "2 ÷ 9 = 18",
+              "9 × 18 = 2"
+            ],
+            "answer": 0,
+            "why": "Multiplication can swap: 2 × 9 = 18."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3 × 10 = 30, so 10 × 3 = ?",
+          "a": "30",
+          "mins": 1,
+          "model": "Teacher turns a 3 by 10 array: 10 rows of 3 is still 30."
+        },
+        {
+          "q": "Write the swap for 5 × 6 = 30.",
+          "a": "6 × 5 = 30",
+          "mins": 1
+        },
+        {
+          "q": "Is 20 ÷ 5 the same as 5 ÷ 20?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write 2 multiplication facts for an array of 4 rows of 5.",
+          "a": "4 × 5 = 20 and 5 × 4 = 20",
+          "mins": 2,
+          "model": "Teacher counts rows of 5: 5, 10, 15, 20, then turns it: 4 rows of 5 or 5 rows of 4."
+        },
+        {
+          "q": "Extend: Write 2 division facts for the same array.",
+          "a": "20 ÷ 4 = 5 and 20 ÷ 5 = 4",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Fill in: 2 × _ = 7 × 2",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "6 × 2 = 2 × ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Big question: is 2 × 5 the same as 5 × 2?",
+          "a": "Yes: both are 10; multiplication can swap, division cannot",
+          "mins": 1
+        }
+      ],
+      "homework": "Find 2 arrays at home (egg box, window, tray) and write 2 facts for each.",
+      "send": "SEND: use real objects and a number line, one step at a time. EAL: picture cards for key words. Stretch: write all 4 facts in the fact family for 3 × 5.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 2: Multiplication and division: small steps 'Use arrays' and 'Multiplication sentences' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper number line 0 to 60",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 34 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 35,
+      "title": "Bar models: multiplication and division problems",
+      "duration": 30,
+      "bigQuestion": "How does a bar model help us choose × or ÷?",
+      "objectives": [
+        "To understand how to use a bar model to solve multiplication and division problems"
+      ],
+      "successCriteria": [
+        "All: draw a bar for equal groups",
+        "Most: choose × or ÷ for a word problem",
+        "Some: explain the model in a sentence"
+      ],
+      "crossCurricular": "Cooking: packing samosas into boxes",
+      "smsc": "Social: giving out food parcels fairly",
+      "keywords": [
+        {
+          "term": "bar model",
+          "def": "a picture of a problem in boxes"
+        },
+        {
+          "term": "total",
+          "def": "the whole amount"
+        },
+        {
+          "term": "equal parts",
+          "def": "boxes the same size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "5 boxes with 4 eggs each. Or 20 eggs in boxes of 4. Which needs ×? Which needs ÷?",
+        "a": "The first is 5 × 4 = 20; the second is 20 ÷ 4 = 5."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "egg box",
+          "alt": "An egg box",
+          "for": "hook"
+        },
+        {
+          "find": "samosas on a plate",
+          "alt": "Samosas on a plate",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2 × 9 = 9 × ?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "45 ÷ 5 = ?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "Is 31 odd or even?",
+          "a": "Odd",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Find the total",
+          "bullets": [
+            "3 boxes, 5 samosas each.",
+            "3 × 5 = 15",
+            "Total: 15."
+          ],
+          "fraction": [
+            {
+              "parts": 3,
+              "shaded": 3,
+              "label": "5 | 5 | 5: total 15"
+            }
+          ],
+          "note": "Draw 3 equal boxes with 5 in each."
+        },
+        {
+          "heading": "Find one part",
+          "bullets": [
+            "20 dates in 2 bags.",
+            "20 ÷ 2 = 10",
+            "10 in each bag."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 2,
+              "label": "20: 10 and 10"
+            }
+          ],
+          "note": "Draw the whole, split into 2."
+        },
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "40 pencils in packs of 10. How many packs?",
+            "steps": [
+              "Draw the whole: 40",
+              "Split into tens: 10, 10, 10, 10",
+              "40 ÷ 10 = 4"
+            ],
+            "answer": "4 packs"
+          },
+          "note": "Model aloud."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "6 bags with 2 apples each. How many apples?",
+            "options": [
+              "8",
+              "12",
+              "3"
+            ],
+            "answer": 1,
+            "why": "6 equal groups of 2: 6 × 2 = 12. 8 adds; 3 divides."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4 plates with 5 grapes each. How many grapes?",
+          "a": "20",
+          "mins": 1,
+          "model": "Teacher draws 4 boxes, writes 5 in each: 4 × 5 = 20."
+        },
+        {
+          "q": "30 pence in 5p coins. How many coins?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "18 socks in pairs. How many pairs?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 7 boxes, 10 pens each. How many pens?",
+          "a": "70",
+          "mins": 2,
+          "model": "Teacher draws 7 boxes of 10: 7 × 10 = 70."
+        },
+        {
+          "q": "Extend: 35 children in teams of 5. How many teams?",
+          "a": "7",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: A pack of 10 pens costs £2. How much for 3 packs? How many pens?",
+          "a": "£6; 30 pens",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "12 shared between 2?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how does a bar model help us choose × or ÷?",
+          "a": "If we know the parts, multiply to find the total; if we know the total, divide to find a part",
+          "mins": 1
+        }
+      ],
+      "homework": "Make up one × story and one ÷ story about food at home and draw the bar.",
+      "send": "SEND: use real objects and a number line, one step at a time. EAL: picture cards for key words. Stretch: write your own two-step problem.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 2: Multiplication and division: small step 'Bar modelling (grouping and sharing) and Solve problems with multiplication and division' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper number line 0 to 60",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 35 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 36,
+      "title": "Times tables check and mixed practice",
+      "duration": 30,
+      "bigQuestion": "Which times tables facts do I know by heart?",
+      "objectives": [
+        "To understand how secure I am with the 2, 5 and 10 times tables"
+      ],
+      "successCriteria": [
+        "All: answer 2 and 10 times tables facts",
+        "Most: answer 5 times table and division facts",
+        "Some: use facts to solve a word problem"
+      ],
+      "smsc": "Moral: practising daily, little and often, is a good habit",
+      "keywords": [
+        {
+          "term": "multiple",
+          "def": "a number in a times table"
+        },
+        {
+          "term": "divide",
+          "def": "share or group equally"
+        },
+        {
+          "term": "recall",
+          "def": "remember quickly"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is harder: 7 × 5 or 35 ÷ 5? Why?",
+        "a": "Many find division harder; both use the same fact."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "times tables grid",
+          "alt": "A multiplication grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "five pence coin",
+          "alt": "A 5p coin",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "8 × 2 = ?",
+          "a": "16",
+          "mins": 1
+        },
+        {
+          "q": "9 × 10 = ?",
+          "a": "90",
+          "mins": 1
+        },
+        {
+          "q": "6 × 5 = ?",
+          "a": "30",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Know it, use it",
+          "bullets": [
+            "Say the fact.",
+            "Swap it.",
+            "Divide with it."
+          ],
+          "diagram": {
+            "centre": "4 × 5 = 20",
+            "items": [
+              "5 × 4 = 20",
+              "20 ÷ 5 = 4",
+              "20 ÷ 4 = 5"
+            ]
+          },
+          "note": "Recap 4 × 5 = 20, 5 × 4 = 20, 20 ÷ 5 = 4."
+        },
+        {
+          "heading": "Times tables check",
+          "bullets": [
+            "12 quick questions.",
+            "One minute each set."
+          ],
+          "note": "Check: the 2, 5 and 10 tables and division facts; mark together."
+        },
+        {
+          "heading": "Use it",
+          "bullets": [
+            "8 tables, 5 chairs each.",
+            "8 × 5 = 40 chairs."
+          ],
+          "note": "Ask: 40 chairs in rows of 10? (4 rows)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which fact helps with 45 ÷ 5?",
+            "options": [
+              "9 × 5 = 45",
+              "4 × 5 = 20",
+              "45 + 5 = 50"
+            ],
+            "answer": 0,
+            "why": "9 × 5 = 45, so 45 ÷ 5 = 9."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "7 × 2 = ?",
+          "a": "14",
+          "mins": 1,
+          "model": "Teacher counts in 2s seven times: 14."
+        },
+        {
+          "q": "60 ÷ 10 = ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "11 × 5 = ?",
+          "a": "55",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: 3 × 5, 12 × 2, 8 × 10, 40 ÷ 5, 22 ÷ 2, 90 ÷ 10",
+          "a": "15, 24, 80, 8, 11, 9",
+          "mins": 2,
+          "model": "Teacher does 3 × 5: 5, 10, 15."
+        },
+        {
+          "q": "Extend: Fill in: _ × 5 = 25; 2 × _ = 18; _ ÷ 10 = 4",
+          "a": "5; 9; 40",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 5 prayers a day. How many in 6 days? In 8 days?",
+          "a": "30; 40",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "12 × 5 = ?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "Big question: which facts do I know by heart?",
+          "a": "Answers will vary: name the facts to practise",
+          "mins": 1
+        }
+      ],
+      "homework": "Practise the facts you missed today for 5 minutes a day.",
+      "send": "SEND: use real objects and a number line, one step at a time. EAL: picture cards for key words. Stretch: make up 3 trick questions for a partner.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 2: Multiplication and division: end-of-block check (times tables check: 2, 5 and 10) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper number line 0 to 60",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 36 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 37,
+      "title": "Check with the inverse",
+      "duration": 30,
+      "bigQuestion": "How can we check an answer is right?",
+      "objectives": [
+        "To understand how addition and subtraction undo each other so we can check"
+      ],
+      "successCriteria": [
+        "All: check an addition with a subtraction",
+        "Most: check a subtraction with an addition",
+        "Some: find a missing number using the inverse"
+      ],
+      "smsc": "Moral: checking our work honestly",
+      "keywords": [
+        {
+          "term": "inverse",
+          "def": "the opposite that undoes it"
+        },
+        {
+          "term": "check",
+          "def": "make sure it is right"
+        },
+        {
+          "term": "fact family",
+          "def": "facts made from the same 3 numbers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Bilal says 53 - 27 = 36. How could you check without doing it again?",
+        "a": "Add 36 + 27 = 63, not 53, so he is wrong. The answer is 26."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "part whole model diagram",
+          "alt": "A part-whole model",
+          "for": "teach:1"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "45 + 37 = ?",
+          "a": "82",
+          "mins": 1
+        },
+        {
+          "q": "63 - 38 = ?",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "Odd or even: 46?",
+          "a": "Even",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Undo it",
+          "bullets": [
+            "38 + 25 = 63",
+            "So 63 - 25 = 38.",
+            "Subtraction undoes addition."
+          ],
+          "diagram": {
+            "centre": "63",
+            "items": [
+              "38",
+              "25",
+              "38 + 25 = 63",
+              "63 - 25 = 38"
+            ]
+          },
+          "note": "Draw a part-whole model."
+        },
+        {
+          "heading": "Check a subtraction",
+          "bullets": [
+            "71 - 26 = 45?",
+            "Check: 45 + 26 = 71. Yes!"
+          ],
+          "note": "Model the check in columns with pasta."
+        },
+        {
+          "heading": "Missing numbers",
+          "bullets": [
+            "_ + 19 = 52",
+            "52 - 19 = 33",
+            "So the missing number is 33."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 2,
+              "label": "52: 33 and 19"
+            }
+          ],
+          "note": "Ask: 40 - _ = 17? (23)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which checks 64 - 28 = 36?",
+            "options": [
+              "36 + 28",
+              "64 + 28",
+              "36 - 28"
+            ],
+            "answer": 0,
+            "why": "Add the answer and the part taken away: 36 + 28 = 64."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Check 47 + 35 = 82 with a subtraction.",
+          "a": "82 - 35 = 47: right",
+          "mins": 1,
+          "model": "Teacher: 82 - 35. 2 - 5 cannot, exchange: 12 - 5 = 7, 7 - 3 = 4 tens: 47. It matches."
+        },
+        {
+          "q": "Is 60 - 24 = 46? Check.",
+          "a": "No: 46 + 24 = 70; it is 36",
+          "mins": 1
+        },
+        {
+          "q": "_ + 28 = 55",
+          "a": "27",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: 29 + 46 = 75; 81 - 37 = 44",
+          "a": "Both right: 75 - 46 = 29; 44 + 37 = 81",
+          "mins": 2,
+          "model": "Teacher: 75 - 46: exchange, 15 - 6 = 9, 6 - 4 = 2: 29. Right."
+        },
+        {
+          "q": "Extend: Missing: _ - 18 = 27; 63 - _ = 35",
+          "a": "45; 28",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Write the fact family for 34 + 19 = 53.",
+          "a": "19 + 34 = 53, 53 - 19 = 34, 53 - 34 = 19",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Check 52 - 17 = 35.",
+          "a": "35 + 17 = 52: right",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how can we check an answer?",
+          "a": "Use the inverse: undo it and see if we get back",
+          "mins": 1
+        }
+      ],
+      "homework": "Do 3 calculations with exchange and check each one with the inverse.",
+      "send": "SEND: tens and ones with pasta cups and a place value chart, one step at a time. EAL: stem 'First I add the ones...'. Stretch: make up a wrong answer for a partner to catch.",
+      "resources": [
+        "White Rose Maths Year 2, Autumn block 2: Addition and subtraction: small step 'Missing number problems' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: pasta in cups of 10 and loose pasta (tens and ones)",
+        "Printed tens and ones place value chart",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 37 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 38,
+      "title": "Measure length in centimetres",
+      "duration": 30,
+      "bigQuestion": "Why must we start at 0 on a ruler?",
+      "objectives": [
+        "To understand how to measure and draw lengths in centimetres"
+      ],
+      "successCriteria": [
+        "All: measure an object to the nearest cm",
+        "Most: draw a line of a given length",
+        "Some: explain what goes wrong if we start at 1"
+      ],
+      "crossCurricular": "Science: measuring leaves and growth of plants",
+      "smsc": "Moral: honest measures (Qur'an 17:35)",
+      "keywords": [
+        {
+          "term": "centimetre",
+          "def": "a small unit of length, cm"
+        },
+        {
+          "term": "ruler",
+          "def": "a tool to measure length"
+        },
+        {
+          "term": "length",
+          "def": "how long something is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two pupils measure the same pencil. One says 13 cm, one says 14 cm. How could that happen?",
+        "a": "One may have started at 1, not 0, or not read the end carefully."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "islamicLink": {
+        "text": "Allah tells us to give full measure and weigh with an even balance (Qur'an 17:35). Reading a ruler carefully is part of honest measuring.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "ruler with centimetres close up",
+          "alt": "A ruler in centimetres",
+          "for": "teach:1"
+        },
+        {
+          "find": "leaf on a ruler",
+          "alt": "A leaf next to a ruler",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Check 36 + 27 = 63 with the inverse.",
+          "a": "63 - 27 = 36: right",
+          "mins": 1
+        },
+        {
+          "q": "10 × 4 = ?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "Which is longer, 18 cm or 81 cm?",
+          "a": "81 cm",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Start at 0",
+          "bullets": [
+            "Line up the end with 0.",
+            "Read the number at the other end.",
+            "Write cm."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 15,
+            "step": 1,
+            "marks": [
+              {
+                "at": 0,
+                "label": "0: start"
+              },
+              {
+                "at": 11,
+                "label": "11 cm"
+              }
+            ]
+          },
+          "note": "Measure a crayon on camera."
+        },
+        {
+          "heading": "Not starting at 0",
+          "bullets": [
+            "Starts at 3, ends at 10.",
+            "10 - 3 = 7 cm."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "marks": [
+              {
+                "at": 3,
+                "label": "start"
+              },
+              {
+                "at": 10,
+                "label": "end: 7 cm"
+              }
+            ]
+          },
+          "note": "Ask: starts at 2, ends at 9? (7 cm)."
+        },
+        {
+          "heading": "Draw a line",
+          "bullets": [
+            "Put the pencil on 0.",
+            "Draw to 8.",
+            "8 cm line."
+          ],
+          "note": "Teacher draws an 8 cm line."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "A pencil starts at 0 and ends at 14. How long?",
+            "options": [
+              "13 cm",
+              "14 cm",
+              "15 cm"
+            ],
+            "answer": 1,
+            "why": "Start at 0, read 14: 14 cm."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Measure a rubber in cm.",
+          "a": "Answers will vary",
+          "mins": 1,
+          "model": "Teacher puts the end on 0 and reads the other end: 5 cm."
+        },
+        {
+          "q": "Starts at 0, ends at 12. How long?",
+          "a": "12 cm",
+          "mins": 1
+        },
+        {
+          "q": "Starts at 4, ends at 13. How long?",
+          "a": "9 cm",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Measure a spoon, a fork and a sock in cm.",
+          "a": "Answers will vary",
+          "mins": 2,
+          "model": "Teacher measures a spoon: 0 to 16: 16 cm."
+        },
+        {
+          "q": "Extend: Draw lines of 6 cm and 13 cm.",
+          "a": "Lines of 6 cm and 13 cm",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: A ribbon starts at 5 and ends at 19. How long?",
+          "a": "14 cm",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Starts at 0, ends at 7. How long?",
+          "a": "7 cm",
+          "mins": 1
+        },
+        {
+          "q": "Big question: why must we start at 0?",
+          "a": "So the number at the end is the length; starting at 1 adds 1 cm too many",
+          "mins": 1
+        }
+      ],
+      "homework": "Measure 5 things in your pencil case or kitchen in cm.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: measure a curved line using string and a ruler.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 3: Length and height: small step 'Measure in centimetres' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Ruler marked in centimetres (or the printed paper ruler)",
+        "Household objects: spoon, fork, sock, rubber",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 38 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 39,
+      "title": "Measure length in metres",
+      "duration": 30,
+      "bigQuestion": "When do we use metres instead of centimetres?",
+      "objectives": [
+        "To understand when to measure in metres and how big a metre is"
+      ],
+      "successCriteria": [
+        "All: say if cm or m is better",
+        "Most: measure something in metres",
+        "Some: explain that a metre is 100 cm"
+      ],
+      "crossCurricular": "Geography: measuring a room or garden",
+      "smsc": "Social: working together to measure a long distance",
+      "keywords": [
+        {
+          "term": "metre",
+          "def": "a long unit of length, m"
+        },
+        {
+          "term": "centimetre",
+          "def": "a small unit, 100 make 1 m"
+        },
+        {
+          "term": "estimate",
+          "def": "a careful guess"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you measure a door in centimetres or metres? A pencil?",
+        "a": "A door in metres (about 2 m); a pencil in cm."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "metre stick",
+          "alt": "A metre stick",
+          "for": "teach:1"
+        },
+        {
+          "find": "tape measure",
+          "alt": "A tape measure",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Starts at 0, ends at 15. How long?",
+          "a": "15 cm",
+          "mins": 1
+        },
+        {
+          "q": "Which is longer: 9 cm or 19 cm?",
+          "a": "19 cm",
+          "mins": 1
+        },
+        {
+          "q": "10 × 10 = ?",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A metre",
+          "bullets": [
+            "1 m = 100 cm.",
+            "About one big stride.",
+            "We write m."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "marks": [
+              {
+                "at": 0,
+                "label": "0"
+              },
+              {
+                "at": 50,
+                "label": "50 cm"
+              },
+              {
+                "at": 100,
+                "label": "100 cm = 1 m"
+              }
+            ]
+          },
+          "note": "Show a tape measure stretched to 1 m."
+        },
+        {
+          "heading": "cm or m?",
+          "sort": {
+            "columns": [
+              "Centimetres",
+              "Metres"
+            ],
+            "cards": [
+              "A pencil",
+              "A room",
+              "A spoon",
+              "A garden",
+              "A book",
+              "A bus"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Ask pupils to choose before revealing."
+        },
+        {
+          "heading": "Measure in m",
+          "bullets": [
+            "Lay a 1 m string along the floor.",
+            "Count the metres.",
+            "The room is about 4 m long."
+          ],
+          "note": "Teacher shows a 1 m string."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which is best measured in metres?",
+            "options": [
+              "a crayon",
+              "a football pitch",
+              "a coin"
+            ],
+            "answer": 1,
+            "why": "A pitch is very long; metres fit it."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "cm or m: a bed?",
+          "a": "m",
+          "mins": 1,
+          "model": "Teacher: a bed is about 2 strides long, so metres."
+        },
+        {
+          "q": "cm or m: a rubber?",
+          "a": "cm",
+          "mins": 1
+        },
+        {
+          "q": "1 m is how many cm?",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a 1 m string with a ruler (10 cm ten times). Measure a room in metres.",
+          "a": "Answers will vary",
+          "mins": 2,
+          "model": "Teacher lays the string end to end: 1 m, 2 m, 3 m and a bit: about 3 m."
+        },
+        {
+          "q": "Extend: Estimate, then measure a table in m (or cm).",
+          "a": "Answers will vary",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which is longer, 1 m or 90 cm? Why?",
+          "a": "1 m: it is 100 cm",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A door is about 2 _ (cm or m)",
+          "a": "m",
+          "mins": 1
+        },
+        {
+          "q": "Big question: when do we use metres?",
+          "a": "For long things like rooms and gardens",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a 1 m string and find 3 things longer and 3 shorter than it.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: estimate the length of a car (about 4 m).",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 3: Length and height: small step 'Measure in metres' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Ruler or tape measure; a piece of string 1 m long",
+        "Scissors (with a grown-up)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 39 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 40,
+      "title": "Compare and order lengths and heights",
+      "duration": 30,
+      "bigQuestion": "Which is longer: 1 m or 90 cm?",
+      "objectives": [
+        "To understand how to compare and order lengths in cm and m"
+      ],
+      "successCriteria": [
+        "All: use < and > with lengths",
+        "Most: order 3 lengths",
+        "Some: compare a length in m with one in cm"
+      ],
+      "crossCurricular": "Science: comparing how tall plants are",
+      "smsc": "Spiritual: the tallest mountains and smallest seeds are made by Allah",
+      "keywords": [
+        {
+          "term": "longer",
+          "def": "goes further from end to end"
+        },
+        {
+          "term": "taller",
+          "def": "higher from the bottom"
+        },
+        {
+          "term": "order",
+          "def": "put in a line by size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A sunflower is 2 m tall. A cat is 40 cm tall. Which is taller? How do you know?",
+        "a": "The sunflower: 2 m is 200 cm."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "sunflower plant tall",
+          "alt": "A tall sunflower",
+          "for": "hook"
+        },
+        {
+          "find": "tape measure",
+          "alt": "A tape measure",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 m = _ cm",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "cm or m: a car?",
+          "a": "m",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 45 _ 54",
+          "a": "<",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Compare",
+          "bullets": [
+            "17 cm > 12 cm",
+            "3 m < 5 m"
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Plant heights",
+            "labels": [
+              "Cress",
+              "Bean",
+              "Tomato"
+            ],
+            "values": [
+              6,
+              25,
+              60
+            ],
+            "unit": "cm"
+          },
+          "note": "Ask: 30 cm _ 23 cm? (>)."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "Shortest to longest:",
+            "8 cm, 15 cm, 51 cm"
+          ],
+          "note": "Ask: tallest plant on the chart? (tomato)."
+        },
+        {
+          "heading": "cm and m",
+          "bullets": [
+            "1 m = 100 cm",
+            "1 m > 90 cm",
+            "2 m > 150 cm"
+          ],
+          "misconception": {
+            "wrong": "90 cm > 1 m because 90 is bigger than 1",
+            "right": "1 m is 100 cm, so 1 m > 90 cm"
+          },
+          "note": "Change both to cm first."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which is the shortest?",
+            "options": [
+              "1 m",
+              "75 cm",
+              "2 m"
+            ],
+            "answer": 1,
+            "why": "75 cm is less than 100 cm (1 m)."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 28 cm _ 31 cm",
+          "a": "<",
+          "mins": 1,
+          "model": "Teacher: same units, compare the numbers: 28 is less than 31."
+        },
+        {
+          "q": "Order: 9 m, 3 m, 12 m (shortest first)",
+          "a": "3 m, 9 m, 12 m",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 1 m _ 99 cm",
+          "a": ">",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Order: 45 cm, 54 cm, 4 cm, 40 cm",
+          "a": "4 cm, 40 cm, 45 cm, 54 cm",
+          "mins": 2,
+          "model": "Teacher compares tens first, then ones."
+        },
+        {
+          "q": "Extend: Use < or >: 2 m _ 180 cm; 50 cm _ 1 m",
+          "a": ">; <",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Ali is 1 m 20 cm. Sara is 115 cm. Who is taller?",
+          "a": "Ali: 1 m 20 cm is 120 cm",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Shortest: 60 cm, 1 m, 6 cm?",
+          "a": "6 cm",
+          "mins": 1
+        },
+        {
+          "q": "Big question: which is longer: 1 m or 90 cm?",
+          "a": "1 m, because it is 100 cm",
+          "mins": 1
+        }
+      ],
+      "homework": "Measure 3 plants or toys and order them by height.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: order 4 lengths mixing m and cm.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 3: Length and height: small step 'Compare lengths and Order lengths' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Ruler or tape measure",
+        "Household objects of different lengths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 40 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 41,
+      "title": "Four operations with lengths",
+      "duration": 30,
+      "bigQuestion": "How can we add, subtract, multiply and divide lengths?",
+      "objectives": [
+        "To understand how to solve problems with lengths"
+      ],
+      "successCriteria": [
+        "All: add and subtract lengths in cm",
+        "Most: find a length that is several times as long",
+        "Some: solve a two-step length problem"
+      ],
+      "crossCurricular": "DT: cutting ribbon and card to size",
+      "smsc": "Social: sharing string fairly",
+      "keywords": [
+        {
+          "term": "total",
+          "def": "all together"
+        },
+        {
+          "term": "difference",
+          "def": "how much longer or shorter"
+        },
+        {
+          "term": "equal parts",
+          "def": "pieces the same length"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A 20 cm ribbon is cut into 4 equal pieces. How long is each piece?",
+        "a": "5 cm, because 20 ÷ 4 = 5."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "ribbon on a ruler",
+          "alt": "A ribbon measured on a ruler",
+          "for": "hook"
+        },
+        {
+          "find": "ball of string",
+          "alt": "String",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Order: 7 cm, 70 cm, 17 cm",
+          "a": "7 cm, 17 cm, 70 cm",
+          "mins": 1
+        },
+        {
+          "q": "45 + 28 = ?",
+          "a": "73",
+          "mins": 1
+        },
+        {
+          "q": "20 ÷ 5 = ?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Add and subtract",
+          "bullets": [
+            "15 cm + 23 cm = 38 cm",
+            "40 cm - 18 cm = 22 cm"
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 2,
+              "label": "38 cm: 15 cm and 23 cm"
+            }
+          ],
+          "note": "Use a bar model."
+        },
+        {
+          "heading": "Multiply and divide",
+          "bullets": [
+            "3 sticks of 10 cm: 30 cm.",
+            "30 cm cut into 5: 6 cm each."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 30,
+            "step": 6,
+            "marks": [
+              {
+                "at": 6,
+                "label": "6 cm"
+              },
+              {
+                "at": 12,
+                "label": "12"
+              },
+              {
+                "at": 30,
+                "label": "30 cm"
+              }
+            ]
+          },
+          "note": "Ask: 4 pieces of 5 cm? (20 cm)."
+        },
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "A 50 cm string. Cut off 2 pieces of 10 cm. How much is left?",
+            "steps": [
+              "2 × 10 = 20 cm",
+              "50 - 20 = 30 cm"
+            ],
+            "answer": "30 cm"
+          },
+          "note": "Two steps: draw the bar."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "A 12 cm pencil and a 9 cm crayon. How much longer is the pencil?",
+            "options": [
+              "21 cm",
+              "3 cm",
+              "4 cm"
+            ],
+            "answer": 1,
+            "why": "12 - 9 = 3 cm. 21 adds them."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 26 cm and a 17 cm ribbon end to end. Total?",
+          "a": "43 cm",
+          "mins": 1,
+          "model": "Teacher: 26 + 17: 6 + 7 = 13, exchange; 2 + 1 + 1 = 4 tens: 43 cm."
+        },
+        {
+          "q": "60 cm cut into 10 equal pieces?",
+          "a": "6 cm each",
+          "mins": 1
+        },
+        {
+          "q": "A 35 cm stick. Cut off 12 cm. How much is left?",
+          "a": "23 cm",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 5 pieces of 10 cm ribbon. Total length?",
+          "a": "50 cm",
+          "mins": 2,
+          "model": "Teacher: 5 × 10 = 50 cm."
+        },
+        {
+          "q": "Extend: A plant was 18 cm. It grew 7 cm. How tall now?",
+          "a": "25 cm",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: A 1 m string. Cut 3 pieces of 20 cm. How much is left?",
+          "a": "40 cm",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "40 cm shared into 2 equal pieces?",
+          "a": "20 cm each",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how can we calculate with lengths?",
+          "a": "Use +, -, × and ÷ like numbers, and keep the units",
+          "mins": 1
+        }
+      ],
+      "homework": "Measure 2 things and find the total and the difference.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: write a two-step length problem for a partner.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 3: Length and height: small step 'Four operations with lengths' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Ruler, string and scissors (with a grown-up)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 41 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 42,
+      "title": "Compare mass",
+      "duration": 30,
+      "bigQuestion": "Can a small thing be heavier than a big thing?",
+      "objectives": [
+        "To understand how to compare and order masses using a balance"
+      ],
+      "successCriteria": [
+        "All: read a balance to say heavier or lighter",
+        "Most: order 3 objects by mass",
+        "Some: use < and > with masses"
+      ],
+      "crossCurricular": "Science: materials and why some are heavy",
+      "smsc": "Moral: honest weighing (Qur'an 55:9)",
+      "keywords": [
+        {
+          "term": "mass",
+          "def": "how heavy something is"
+        },
+        {
+          "term": "heavier",
+          "def": "has more mass"
+        },
+        {
+          "term": "lighter",
+          "def": "has less mass"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A big cushion and a small tin of beans. Which is heavier? Why might you be surprised?",
+        "a": "The tin: small things can be heavy."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "islamicLink": {
+        "text": "Allah says: establish weight in justice and do not make the balance short (Qur'an 55:9). Comparing masses fairly is honest trade.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "pan balance scale",
+          "alt": "A balance scale",
+          "for": "teach:1"
+        },
+        {
+          "find": "tin of beans",
+          "alt": "A tin of beans",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "26 cm + 17 cm = ?",
+          "a": "43 cm",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 38 _ 83",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "5 × 6 = ?",
+          "a": "30",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A balance",
+          "bullets": [
+            "Heavier side goes down.",
+            "Lighter side goes up.",
+            "Level: equal mass."
+          ],
+          "note": "Use a coat-hanger balance."
+        },
+        {
+          "heading": "Use < and >",
+          "bullets": [
+            "Tin > cushion (mass).",
+            "Apple < book."
+          ],
+          "note": "Ask: which sign? Bag of flour _ feather (>)."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "Lightest: grape.",
+            "Then apple.",
+            "Heaviest: melon."
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Mass in cubes",
+            "labels": [
+              "Grape",
+              "Apple",
+              "Melon"
+            ],
+            "values": [
+              2,
+              15,
+              40
+            ],
+            "unit": "cubes"
+          },
+          "note": "Ask: is order by size the same as order by mass? (not always)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Pan A goes down. Pan B goes up. Which is heavier?",
+            "options": [
+              "A",
+              "B",
+              "Same"
+            ],
+            "answer": 0,
+            "why": "The heavier pan goes down."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Shoe or sock: which is heavier?",
+          "a": "Shoe",
+          "mins": 1,
+          "model": "Teacher puts them on the balance: the shoe side goes down."
+        },
+        {
+          "q": "Use < or >: apple _ melon (mass)",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "Level balance means...",
+          "a": "the same mass",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Order 3 objects from your home by mass using a balance.",
+          "a": "Answers will vary",
+          "mins": 2,
+          "model": "Teacher orders a spoon, an apple and a tin."
+        },
+        {
+          "q": "Extend: A pear is 12 cubes, an orange 18 cubes. How many more cubes is the orange?",
+          "a": "6",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: The book is heavier than the cup. The cup is heavier than the pen. Order lightest first.",
+          "a": "Pen, cup, book",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Lighter: a feather or a coin?",
+          "a": "A feather",
+          "mins": 1
+        },
+        {
+          "q": "Big question: can a small thing be heavier?",
+          "a": "Yes: a small tin can be heavier than a big cushion",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a coat-hanger balance and compare 3 pairs of objects.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: find two things that balance level.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 4: Mass, capacity and temperature: small step 'Compare mass' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Coat hanger, 2 carrier bags and string (home balance)",
+        "Household objects: tin, cushion, fruit, book",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 42 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 43,
+      "title": "Measure mass in grams and kilograms",
+      "duration": 30,
+      "bigQuestion": "How heavy is 1 kilogram?",
+      "objectives": [
+        "To understand how to measure mass in grams and kilograms on scales"
+      ],
+      "successCriteria": [
+        "All: read kitchen scales in kg",
+        "Most: read scales in g",
+        "Some: choose g or kg for an object"
+      ],
+      "crossCurricular": "Cooking: weighing flour for bread",
+      "smsc": "Moral: shopkeepers must weigh honestly",
+      "keywords": [
+        {
+          "term": "gram",
+          "def": "a small unit of mass, g"
+        },
+        {
+          "term": "kilogram",
+          "def": "a bigger unit of mass, kg; 1 kg = 1,000 g"
+        },
+        {
+          "term": "scale",
+          "def": "a tool to weigh things"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bag of sugar is 1 kg. Is a paper clip about 1 g or 1 kg?",
+        "a": "About 1 g."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "kitchen weighing scales dial",
+          "alt": "Kitchen scales with a dial",
+          "for": "teach:1"
+        },
+        {
+          "find": "bag of flour 1kg",
+          "alt": "A 1 kg bag of flour",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Heavier pan goes...",
+          "a": "down",
+          "mins": 1
+        },
+        {
+          "q": "10 × 5 = ?",
+          "a": "50",
+          "mins": 1
+        },
+        {
+          "q": "Count in 10s from 50 to 100.",
+          "a": "50, 60, 70, 80, 90, 100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Kilograms",
+          "bullets": [
+            "A bag of sugar: 1 kg.",
+            "A bag of potatoes: about 2 kg.",
+            "We write kg."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 5,
+            "step": 1,
+            "marks": [
+              {
+                "at": 2,
+                "label": "2 kg"
+              }
+            ]
+          },
+          "note": "Show scales reading 2 kg."
+        },
+        {
+          "heading": "Grams",
+          "bullets": [
+            "A paper clip: about 1 g.",
+            "An apple: about 100 g.",
+            "We write g."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 200,
+            "step": 20,
+            "marks": [
+              {
+                "at": 100,
+                "label": "100 g"
+              },
+              {
+                "at": 160,
+                "label": "160 g"
+              }
+            ]
+          },
+          "note": "Show scales counting in 10 g."
+        },
+        {
+          "heading": "g or kg?",
+          "sort": {
+            "columns": [
+              "Grams",
+              "Kilograms"
+            ],
+            "cards": [
+              "A paper clip",
+              "A bag of rice",
+              "An apple",
+              "A watermelon",
+              "A pencil",
+              "A bag of potatoes"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Pupils choose first."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Scales count in 10s. The pointer is on 40. Mass?",
+            "options": [
+              "4 g",
+              "40 g",
+              "14 g"
+            ],
+            "answer": 1,
+            "why": "Count in 10s: 40 g."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "The arrow is on 3 on a kg scale. Mass?",
+          "a": "3 kg",
+          "mins": 1,
+          "model": "Teacher counts the marks: 1, 2, 3: 3 kg."
+        },
+        {
+          "q": "g or kg: a car?",
+          "a": "kg",
+          "mins": 1
+        },
+        {
+          "q": "g or kg: a grape?",
+          "a": "g",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read: arrow on 5 kg; arrow on 70 g (scale in 10s); arrow on 120 g (scale in 20s)",
+          "a": "5 kg; 70 g; 120 g",
+          "mins": 2,
+          "model": "Teacher counts 10, 20, ... 70: 70 g."
+        },
+        {
+          "q": "Extend: Weigh 3 foods at home (with a grown-up) and write the masses.",
+          "a": "Answers will vary",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: A scale counts in 5 g. The pointer is on the mark after 15 g. Mass?",
+          "a": "20 g",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "g or kg: a dog?",
+          "a": "kg",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how heavy is 1 kilogram?",
+          "a": "Like a bag of sugar: 1,000 g",
+          "mins": 1
+        }
+      ],
+      "homework": "Find the mass written on 3 food packets in the kitchen.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: read a scale that counts in 50 g.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 4: Mass, capacity and temperature: small step 'Measure in grams and Measure in kilograms' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Kitchen scales (with a grown-up), or the scales pictures on the slides",
+        "Food packets showing g and kg",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 43 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 44,
+      "title": "Compare volume and capacity",
+      "duration": 30,
+      "bigQuestion": "Is volume the same as capacity?",
+      "objectives": [
+        "To understand the difference between volume and capacity"
+      ],
+      "successCriteria": [
+        "All: say full, half full and empty",
+        "Most: compare the volume of water in two jugs",
+        "Some: explain volume and capacity in your own words"
+      ],
+      "crossCurricular": "Science: liquids and their shape",
+      "smsc": "Moral: not wasting water, even for wudu at a river",
+      "keywords": [
+        {
+          "term": "capacity",
+          "def": "how much a container can hold"
+        },
+        {
+          "term": "volume",
+          "def": "how much liquid is in it now"
+        },
+        {
+          "term": "half full",
+          "def": "filled to the middle"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A jug can hold 1 litre. It has a little water in it now. Which is the capacity and which is the volume?",
+        "a": "Capacity: 1 litre it can hold; volume: the little bit inside."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug with water",
+          "alt": "A measuring jug of water",
+          "for": "teach:1"
+        },
+        {
+          "find": "empty glass jar",
+          "alt": "An empty jar",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "g or kg: an apple?",
+          "a": "g",
+          "mins": 1
+        },
+        {
+          "q": "Half of 10?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 46 _ 64",
+          "a": "<",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two words",
+          "bullets": [
+            "Capacity: how much it CAN hold.",
+            "Volume: how much is IN it."
+          ],
+          "compare": {
+            "left": {
+              "title": "Capacity",
+              "points": [
+                "The most it can hold",
+                "Stays the same"
+              ]
+            },
+            "right": {
+              "title": "Volume",
+              "points": [
+                "How much is in it now",
+                "Changes when we pour"
+              ]
+            }
+          },
+          "note": "Show the same jug, half full."
+        },
+        {
+          "heading": "Describe it",
+          "bullets": [
+            "Full, nearly full.",
+            "Half full.",
+            "Nearly empty, empty."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "full"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "half full"
+            },
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "quarter full"
+            },
+            {
+              "parts": 4,
+              "shaded": 0,
+              "label": "empty"
+            }
+          ],
+          "note": "Pour water slowly."
+        },
+        {
+          "heading": "Compare",
+          "bullets": [
+            "Same jugs: higher level, more volume.",
+            "Different jugs: pour into one jug."
+          ],
+          "note": "Ask: why the same jug? (fair test)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "A bottle holds 2 litres but has 1 litre in it. Its volume is...",
+            "options": [
+              "2 litres",
+              "1 litre",
+              "3 litres"
+            ],
+            "answer": 1,
+            "why": "Volume is what is in it now: 1 litre."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A cup is nearly full. Is the volume near the capacity?",
+          "a": "Yes",
+          "mins": 1,
+          "model": "Teacher: nearly full means the water almost reaches the most it can hold."
+        },
+        {
+          "q": "Which has more volume: a full cup or a half full cup (same cups)?",
+          "a": "The full cup",
+          "mins": 1
+        },
+        {
+          "q": "Does capacity change when we pour water out?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fill 3 same cups: full, half full, quarter full. Order by volume.",
+          "a": "Quarter, half, full",
+          "mins": 2,
+          "model": "Teacher fills and orders them on camera."
+        },
+        {
+          "q": "Extend: A big jug half full and a small cup full: which might have more volume? How can you check?",
+          "a": "Probably the jug; pour both into the same measuring jug",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Explain volume and capacity to a grown-up.",
+          "a": "Capacity is what it can hold; volume is what is in it",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A glass to the top is...",
+          "a": "full",
+          "mins": 1
+        },
+        {
+          "q": "Big question: is volume the same as capacity?",
+          "a": "No: capacity is what it can hold; volume is what is in it",
+          "mins": 1
+        }
+      ],
+      "homework": "Fill a cup to show full, half full and empty to a grown-up.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: make two different cups hold the same volume.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 4: Mass, capacity and temperature: small step 'Compare volume and capacity' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "3 identical clear cups, a jug of water (over a sink or tray)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 44 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 45,
+      "title": "Measure capacity in millilitres and litres",
+      "duration": 30,
+      "bigQuestion": "How many millilitres fill a cup?",
+      "objectives": [
+        "To understand how to measure capacity and volume in millilitres and litres"
+      ],
+      "successCriteria": [
+        "All: read a jug in litres",
+        "Most: read a jug in ml",
+        "Some: choose ml or l for a container"
+      ],
+      "crossCurricular": "Cooking: measuring water for rice",
+      "smsc": "Moral: using only the water we need",
+      "keywords": [
+        {
+          "term": "millilitre",
+          "def": "a small unit of capacity, ml"
+        },
+        {
+          "term": "litre",
+          "def": "a bigger unit, l; 1 l = 1,000 ml"
+        },
+        {
+          "term": "measuring jug",
+          "def": "a jug with a scale on the side"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A teaspoon holds about 5 ml. Is a bath about 100 ml or 100 litres?",
+        "a": "About 100 litres (often more)."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug in ml",
+          "for": "teach:2"
+        },
+        {
+          "find": "teaspoon",
+          "alt": "A teaspoon",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Volume is what is _ the container.",
+          "a": "in",
+          "mins": 1
+        },
+        {
+          "q": "Count in 100s to 500.",
+          "a": "100, 200, 300, 400, 500",
+          "mins": 1
+        },
+        {
+          "q": "5 × 10 = ?",
+          "a": "50",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Litres",
+          "bullets": [
+            "A big bottle of water: 1 l or 2 l.",
+            "We write l."
+          ],
+          "note": "Show a 2 l bottle."
+        },
+        {
+          "heading": "Millilitres",
+          "bullets": [
+            "A spoon: about 5 ml.",
+            "A cup: about 250 ml.",
+            "We write ml."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 500,
+            "step": 50,
+            "marks": [
+              {
+                "at": 250,
+                "label": "250 ml"
+              },
+              {
+                "at": 400,
+                "label": "400 ml"
+              }
+            ]
+          },
+          "note": "Read the jug at eye level."
+        },
+        {
+          "heading": "ml or l?",
+          "sort": {
+            "columns": [
+              "Millilitres",
+              "Litres"
+            ],
+            "cards": [
+              "A teaspoon",
+              "A bath",
+              "A cup",
+              "A bucket",
+              "A medicine spoon",
+              "A fish tank"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Pupils decide first."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "A jug counts in 100s. Water is on the 300 mark. Volume?",
+            "options": [
+              "3 ml",
+              "300 ml",
+              "30 ml"
+            ],
+            "answer": 1,
+            "why": "Count in 100s: 300 ml."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Water on the 200 mark (jug in 100s).",
+          "a": "200 ml",
+          "mins": 1,
+          "model": "Teacher counts the marks: 100, 200: 200 ml."
+        },
+        {
+          "q": "ml or l: a swimming pool?",
+          "a": "l",
+          "mins": 1
+        },
+        {
+          "q": "ml or l: a spoon?",
+          "a": "ml",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read: water on 4 (litre jug); on 150 ml (jug in 50s); on 450 ml",
+          "a": "4 l; 150 ml; 450 ml",
+          "mins": 2,
+          "model": "Teacher counts 50, 100, 150: 150 ml."
+        },
+        {
+          "q": "Extend: Measure how many ml a cup holds at home.",
+          "a": "Answers will vary (often 200 to 300 ml)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: A jug has 300 ml. Pour in 200 ml more. How much now?",
+          "a": "500 ml",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "ml or l: a bucket?",
+          "a": "l",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how many ml fill a cup?",
+          "a": "Answers will vary: about 250 ml",
+          "mins": 1
+        }
+      ],
+      "homework": "Use a measuring jug (with a grown-up) to find how much a mug holds.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: find how many 5 ml spoons fill 50 ml.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 4: Mass, capacity and temperature: small step 'Measure in millilitres and Measure in litres' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Measuring jug and water (over a sink or tray), or the jug pictures on the slides",
+        "A teaspoon, a cup and a bottle",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 45 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 46,
+      "title": "Temperature in degrees Celsius",
+      "duration": 30,
+      "bigQuestion": "How can we tell how hot or cold something is?",
+      "objectives": [
+        "To understand how temperature is measured in degrees Celsius"
+      ],
+      "successCriteria": [
+        "All: say hotter or colder",
+        "Most: read a thermometer that counts in 10s",
+        "Some: explain what 0 °C and 100 °C mean"
+      ],
+      "crossCurricular": "Science: ice melting and water boiling",
+      "smsc": "Spiritual: Allah sends hot and cold seasons in turn",
+      "keywords": [
+        {
+          "term": "temperature",
+          "def": "how hot or cold"
+        },
+        {
+          "term": "degrees Celsius",
+          "def": "the unit, °C"
+        },
+        {
+          "term": "thermometer",
+          "def": "a tool to measure temperature"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Ice is 0 °C. A warm day is about 20 °C. What might a hot cup of tea be?",
+        "a": "Much hotter, about 80 °C."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "thermometer showing degrees celsius",
+          "alt": "A thermometer in °C",
+          "for": "teach:2"
+        },
+        {
+          "find": "ice cubes",
+          "alt": "Ice cubes",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "A jug in 100s shows 300. Volume?",
+          "a": "300 ml",
+          "mins": 1
+        },
+        {
+          "q": "Count in 10s to 100.",
+          "a": "10, 20, ... 100",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 20 _ 30",
+          "a": "<",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Hot and cold",
+          "bullets": [
+            "Ice: very cold.",
+            "A warm day.",
+            "Hot water: very hot."
+          ],
+          "note": "Ask: which is hotter, soup or ice cream? (soup)."
+        },
+        {
+          "heading": "A thermometer",
+          "bullets": [
+            "Read where the red line stops.",
+            "This one counts in 10s.",
+            "20 °C"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "marks": [
+              {
+                "at": 0,
+                "label": "0 °C ice"
+              },
+              {
+                "at": 20,
+                "label": "20 °C warm"
+              },
+              {
+                "at": 100,
+                "label": "100 °C boiling"
+              }
+            ]
+          },
+          "note": "Show the scale."
+        },
+        {
+          "heading": "Higher is hotter",
+          "bullets": [
+            "30 °C is hotter than 10 °C.",
+            "Water freezes at 0 °C.",
+            "Water boils at 100 °C."
+          ],
+          "note": "Ask: is 5 °C hot or cold? (cold)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which is the coldest?",
+            "options": [
+              "25 °C",
+              "5 °C",
+              "15 °C"
+            ],
+            "answer": 1,
+            "why": "5 °C is the lowest temperature."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "The line stops on 30. Temperature?",
+          "a": "30 °C",
+          "mins": 1,
+          "model": "Teacher counts the marks in 10s: 10, 20, 30: 30 °C."
+        },
+        {
+          "q": "Hotter: 15 °C or 50 °C?",
+          "a": "50 °C",
+          "mins": 1
+        },
+        {
+          "q": "Water freezes at...",
+          "a": "0 °C",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read: line on 40; line on 70; line on 10 (scale in 10s)",
+          "a": "40 °C; 70 °C; 10 °C",
+          "mins": 2,
+          "model": "Teacher counts 10, 20, 30, 40: 40 °C."
+        },
+        {
+          "q": "Extend: Order coldest first: 35 °C, 3 °C, 18 °C",
+          "a": "3 °C, 18 °C, 35 °C",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Yesterday was 12 °C. Today is 5 °C warmer. What is it today?",
+          "a": "17 °C",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Colder: 0 °C or 20 °C?",
+          "a": "0 °C",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how can we tell how hot or cold?",
+          "a": "Use a thermometer and read °C",
+          "mins": 1
+        }
+      ],
+      "homework": "Find the temperature on a weather forecast for 3 days and order them.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: read a thermometer that counts in 5s.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 4: Mass, capacity and temperature: small step 'Temperature' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Thermometer pictures on the slides (or a kitchen or garden thermometer)",
+        "Ice cube and a cup of warm water (with a grown-up)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 46 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 47,
+      "title": "Read a thermometer",
+      "duration": 30,
+      "bigQuestion": "What does each small mark on a thermometer mean?",
+      "objectives": [
+        "To understand how to read thermometers with different scales"
+      ],
+      "successCriteria": [
+        "All: read a thermometer counting in 5s",
+        "Most: read a thermometer counting in 2s",
+        "Some: find how much hotter one temperature is"
+      ],
+      "crossCurricular": "Geography: the weather in different countries",
+      "smsc": "Social: checking a sick person's temperature to care for them",
+      "keywords": [
+        {
+          "term": "scale",
+          "def": "the marks and numbers on a tool"
+        },
+        {
+          "term": "degrees Celsius",
+          "def": "the unit, °C"
+        },
+        {
+          "term": "warmer",
+          "def": "a bit hotter"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A thermometer has numbers 0, 10, 20 and one small mark between each. What is the small mark between 10 and 20?",
+        "a": "15 °C."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "thermometer showing degrees celsius",
+          "alt": "A thermometer",
+          "for": "teach:1"
+        },
+        {
+          "find": "weather map with temperatures",
+          "alt": "A weather map with temperatures (no people)",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Water freezes at...",
+          "a": "0 °C",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 40.",
+          "a": "5, 10, ... 40",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 20.",
+          "a": "2, 4, ... 20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count in 5s",
+          "bullets": [
+            "Numbers: 0, 10, 20, 30.",
+            "One mark in between: 5s.",
+            "The line is on 25 °C."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 40,
+            "step": 5,
+            "marks": [
+              {
+                "at": 25,
+                "label": "25 °C"
+              }
+            ]
+          },
+          "note": "Count the marks aloud."
+        },
+        {
+          "heading": "Count in 2s",
+          "bullets": [
+            "Numbers: 0, 10, 20.",
+            "Marks: 2, 4, 6, 8.",
+            "The line is on 14 °C."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 20,
+            "step": 2,
+            "marks": [
+              {
+                "at": 14,
+                "label": "14 °C"
+              }
+            ]
+          },
+          "note": "Count in 2s from 10."
+        },
+        {
+          "heading": "How much hotter?",
+          "bullets": [
+            "Monday 12 °C, Tuesday 18 °C.",
+            "Count on: 6 degrees hotter."
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Midday temperature",
+            "labels": [
+              "Mon",
+              "Tue",
+              "Wed"
+            ],
+            "values": [
+              12,
+              18,
+              15
+            ],
+            "unit": "°C"
+          },
+          "note": "Ask: 20 °C and 25 °C? (5 degrees)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Marks count in 5s. The line is one mark above 20. Temperature?",
+            "options": [
+              "21 °C",
+              "25 °C",
+              "30 °C"
+            ],
+            "answer": 1,
+            "why": "One mark is 5 more: 25 °C."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Scale in 5s. Line one mark above 10.",
+          "a": "15 °C",
+          "mins": 1,
+          "model": "Teacher: each mark is 5, so 10 and one mark is 15 °C."
+        },
+        {
+          "q": "Scale in 2s. Line two marks above 10.",
+          "a": "14 °C",
+          "mins": 1
+        },
+        {
+          "q": "Which day on the chart was warmest?",
+          "a": "Tuesday",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: draw the line on three thermometers: 35 °C (scale in 5s), 16 °C (scale in 2s), 8 °C (scale in 2s).",
+          "a": "Lines on 35, 16 and 8",
+          "mins": 2,
+          "model": "Teacher counts 5s on the first: 5, 10, ... 35, and draws the line there."
+        },
+        {
+          "q": "Extend: How much hotter is 18 °C than 12 °C?",
+          "a": "6 degrees",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: It was 9 °C. It got 4 degrees colder. What is it now?",
+          "a": "5 °C",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Scale in 5s. Line on the mark after 30.",
+          "a": "35 °C",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what does each small mark mean?",
+          "a": "Work out the count: find what each mark goes up by",
+          "mins": 1
+        }
+      ],
+      "homework": "Draw a thermometer counting in 5s and show today's temperature.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: find the difference between the hottest and coldest days on a forecast.",
+      "resources": [
+        "White Rose Maths Year 2, Spring block 4: Mass, capacity and temperature: small step 'Temperature' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Thermometer pictures on the slides (or a kitchen or garden thermometer)",
+        "Weather forecast (newspaper or website, with a grown-up)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 47 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 48,
+      "title": "Measures: end-of-block check",
+      "duration": 30,
+      "bigQuestion": "Which unit and tool do we use for each measure?",
+      "objectives": [
+        "To understand how to choose units and read scales for length, mass, capacity and temperature"
+      ],
+      "successCriteria": [
+        "All: match the unit to the measure",
+        "Most: read a ruler, a scale, a jug and a thermometer",
+        "Some: solve a measure word problem"
+      ],
+      "smsc": "Moral: honest measures in buying and selling",
+      "keywords": [
+        {
+          "term": "cm and m",
+          "def": "units of length"
+        },
+        {
+          "term": "g and kg",
+          "def": "units of mass"
+        },
+        {
+          "term": "ml and l",
+          "def": "units of capacity"
+        },
+        {
+          "term": "°C",
+          "def": "the unit of temperature"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A recipe says 200 g, 300 ml and 180 °C. What does each number measure?",
+        "a": "Mass of flour, volume of milk, oven temperature."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "kitchen weighing scales dial",
+          "alt": "Kitchen scales",
+          "for": "teach:1"
+        },
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Which unit for a bath?",
+          "a": "l",
+          "mins": 1
+        },
+        {
+          "q": "Which unit for an apple?",
+          "a": "g",
+          "mins": 1
+        },
+        {
+          "q": "1 m = _ cm",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Which unit?",
+          "sort": {
+            "columns": [
+              "Length",
+              "Mass",
+              "Capacity",
+              "Temperature"
+            ],
+            "cards": [
+              "cm",
+              "kg",
+              "ml",
+              "°C",
+              "m",
+              "g",
+              "l",
+              "degrees"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "note": "Pupils sort before the reveal."
+        },
+        {
+          "heading": "Read the scale",
+          "bullets": [
+            "Find what each mark is worth.",
+            "Count from 0.",
+            "Write the unit."
+          ],
+          "note": "Recap the four tools."
+        },
+        {
+          "heading": "End-of-block check",
+          "bullets": [
+            "10 questions.",
+            "Show your working."
+          ],
+          "note": "Check: units, scales, comparing and problems; mark together."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which is the right unit for a jug of milk?",
+            "options": [
+              "kg",
+              "l",
+              "cm"
+            ],
+            "answer": 1,
+            "why": "Milk is a liquid: capacity in litres."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A pencil from 0 to 13. Length?",
+          "a": "13 cm",
+          "mins": 1,
+          "model": "Teacher: start at 0, read 13: 13 cm."
+        },
+        {
+          "q": "Scales in 100s, arrow on 400. Mass?",
+          "a": "400 g",
+          "mins": 1
+        },
+        {
+          "q": "Thermometer in 10s, line on 30.",
+          "a": "30 °C",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: order 2 kg, 500 g, 1 kg (lightest first)",
+          "a": "500 g, 1 kg, 2 kg",
+          "mins": 2,
+          "model": "Teacher: 1 kg is 1,000 g, so 500 g is lightest."
+        },
+        {
+          "q": "Extend: Check: a 45 cm ribbon; cut off 18 cm. How much is left?",
+          "a": "27 cm",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Check: a jug has 350 ml. Pour out 150 ml, then add 300 ml. How much now?",
+          "a": "500 ml",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Unit for temperature?",
+          "a": "°C",
+          "mins": 1
+        },
+        {
+          "q": "Big question: which unit and tool for each measure?",
+          "a": "Length: ruler, cm or m; mass: scales, g or kg; capacity: jug, ml or l; temperature: thermometer, °C",
+          "mins": 1
+        }
+      ],
+      "homework": "Find 4 numbers with units on food packets and say what each one measures.",
+      "send": "SEND: hands-on with real scales, rulers and jugs first; reduced set. EAL: picture cards for units. Stretch: make a measures quiz for a partner.",
+      "resources": [
+        "White Rose Maths Year 2, Spring blocks 3 and 4: Length and height; Mass, capacity and temperature: end-of-block checks (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Ruler, kitchen scales and measuring jug (or the pictures on the slides)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 48 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Multiplication and division; length, mass, capacity and temperature",
+      "n": 49,
+      "title": "Spring 2 quiz: multiplication, division and measures",
+      "duration": 30,
+      "bigQuestion": "What have I learned this half term, and what will I practise?",
+      "objectives": [
+        "To understand how secure I am with this half term's maths"
+      ],
+      "successCriteria": [
+        "All: answer times table and division facts",
+        "Most: add and subtract with exchange",
+        "Some: say one target to practise"
+      ],
+      "smsc": "Spiritual: shukr, thanking Allah for what we have learned",
+      "keywords": [
+        {
+          "term": "multiply",
+          "def": "add equal groups"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 10 ones for 1 ten"
+        },
+        {
+          "term": "measure",
+          "def": "find the size with a unit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which was hardest this half term: tables, exchange or measures? What helped you?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "times tables grid",
+          "alt": "A multiplication grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler with centimetres close up",
+          "alt": "A ruler",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "7 × 5 = ?",
+          "a": "35",
+          "mins": 1
+        },
+        {
+          "q": "62 - 27 = ?",
+          "a": "35",
+          "mins": 1
+        },
+        {
+          "q": "Is 35 odd or even?",
+          "a": "Odd",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "This half term",
+          "bullets": [
+            "2, 5 and 10 times tables.",
+            "Exchange in + and -.",
+            "Length, mass, capacity, temperature."
+          ],
+          "diagram": {
+            "centre": "Spring 2",
+            "items": [
+              "5 and 10 times tables",
+              "Odd and even",
+              "Add with exchange",
+              "Subtract with exchange",
+              "cm and m",
+              "g and kg",
+              "ml and l",
+              "°C"
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Quiz",
+          "bullets": [
+            "12 questions.",
+            "Work alone, then mark."
+          ],
+          "note": "Half-term quiz on the worksheet."
+        },
+        {
+          "heading": "My target",
+          "bullets": [
+            "Which questions did I miss?",
+            "What will I practise?"
+          ],
+          "note": "Pupils write one target."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "38 + 46 = ?",
+            "options": [
+              "74",
+              "84",
+              "714"
+            ],
+            "answer": 1,
+            "why": "8 + 6 = 14: exchange; 3 + 4 + 1 = 8: 84."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "40 ÷ 5 = ?",
+          "a": "8",
+          "mins": 1,
+          "model": "Teacher: 8 × 5 = 40, so 40 ÷ 5 = 8."
+        },
+        {
+          "q": "53 - 18 = ?",
+          "a": "35",
+          "mins": 1
+        },
+        {
+          "q": "Unit for a dog's mass?",
+          "a": "kg",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Quiz: 6 × 10, 9 × 5, 18 ÷ 2, 70 ÷ 10, 27 + 36, 71 - 45",
+          "a": "60, 45, 9, 7, 63, 26",
+          "mins": 2,
+          "model": "Teacher: 6 × 10, count in tens six times: 60."
+        },
+        {
+          "q": "Extend: Quiz: order 1 m, 45 cm, 120 cm (shortest first); read a thermometer at 25 °C",
+          "a": "45 cm, 1 m, 120 cm; 25 °C",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Quiz: 4 bags with 5 apples. 3 are eaten. How many are left?",
+          "a": "17",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "12 × 2 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "Big question: one thing I learned and one target?",
+          "a": "Answers will vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Practise your target from today for 5 minutes a day.",
+      "send": "SEND: use real objects and a number line, one step at a time. EAL: picture cards for key words. Stretch: write 3 questions for next week's starter.",
+      "resources": [
+        "White Rose Maths Year 2, Spring blocks 2 to 4: half-term quiz drawn from the end-of-block checks (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper number line 0 to 60",
+        "Ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 49 guided, independent and homework tasks"
       ]
     }
   ]
