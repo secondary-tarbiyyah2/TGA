@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useMemo, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { useLearnSession } from "@/lib/learn/session";
@@ -142,7 +143,7 @@ export function TeachPupils() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Pupils" }]}
+        crumbs={[{ label: "Today", href: "/teach/dashboard" }, { label: "Pupils" }]}
         title="Pupils"
         subtitle="Everyone you teach: who is away today and why, attendance, and the medical and additional-needs information to read."
       />
@@ -175,7 +176,7 @@ export function TeachPupils() {
         />
 
         {pupils === null ? (
-          <p className="text-sm text-ink/65">Loading…</p>
+          <Loading label="Loading…" bare />
         ) : rows.length === 0 ? (
           <p className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/65">No pupils to show.</p>
         ) : (

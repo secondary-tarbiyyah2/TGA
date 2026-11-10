@@ -14,7 +14,7 @@ function AdminClassesContent() {
     <>
       <div className="mb-6">
         <WorkspaceHeader
-          eyebrow={[{ label: "Home", href: "/admin/dashboard" }, { label: "Teaching" }]}
+          eyebrow={[{ label: "Today", href: "/admin/dashboard" }, { label: "Teaching" }]}
           title="Classes"
           description="Every class in the school. Open one to see its week-by-week course page."
           stats={classes ? [{ value: classes.length, label: classes.length === 1 ? "class" : "classes" }, { value: new Set(classes.map((c) => c.yearGroup).filter(Boolean)).size, label: "year groups" }] : undefined}

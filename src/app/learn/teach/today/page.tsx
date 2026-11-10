@@ -167,7 +167,7 @@ function TodayContent() {
   const dateLabel = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
   return (
     <>
-      <PageHeader title="Today" subtitle={`${dateLabel}. Your lessons and their registers; the current lesson's register opens by itself.`} />
+      <PageHeader title="Lessons and registers" subtitle={`${dateLabel}. Your lessons and their registers; the current lesson's register opens by itself.`} />
       {lessons === null ? (
         <div className="h-48 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : lessons.length === 0 ? (

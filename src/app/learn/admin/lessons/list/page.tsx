@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
@@ -102,7 +103,7 @@ function ListContent() {
               ))}
             </div>
             {rows === null ? (
-              <p className="mt-4 text-sm text-ink/65">Loading…</p>
+              <Loading label="Loading…" bare className="mt-4" />
             ) : rows.length === 0 ? (
               <p className="mt-4 text-sm text-ink/65">{upcoming ? "No lessons in this range yet. Create them from the published timetable above." : "No past lessons yet."}</p>
             ) : (

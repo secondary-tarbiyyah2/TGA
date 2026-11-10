@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -18,7 +19,7 @@ export default function TeachLessonPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
-          <Suspense fallback={<p className="text-sm text-ink/65">Loading…</p>}>
+          <Suspense fallback={<Loading label="Loading…" bare />}>
             <TeachLessonContent />
           </Suspense>
         </LearnShell>

@@ -408,7 +408,7 @@ function SummaryContent() {
       <PrintSheet />
       <div className="print:hidden">
       <PageHeader
-        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "School summary" }]}
+        crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "School summary" }]}
         title="School summary"
         subtitle="School-wide attendance, fees, homework and lessons, with a per-class breakdown."
         actions={

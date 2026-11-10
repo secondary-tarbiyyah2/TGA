@@ -14,8 +14,8 @@ export type Crumb = { label: string; href?: string };
  * the title and a one-line description, with the page's actions on the
  * right. Sits on the page background, not inside a card.
  *
- * Crumbs are worked out from the sidebar when none are given: Home › Hub ›
- * Page. Pass `crumbs` only for deeper pages (Home › Classes › 7A Maths).
+ * Crumbs are worked out from the sidebar when none are given: Today › Hub ›
+ * Page. Pass `crumbs` only for deeper pages (Today › Classes › 7A Maths).
  *
  * Actions: give the screen's one main action as `action` (it goes last, on
  * the right, where people look for it); anything else goes in `actions`.
@@ -49,7 +49,7 @@ export function PageHeader({
 
   let trail: Crumb[] = crumbs || [];
   if (!crumbs && nav) {
-    trail = [{ label: "Home", href: home || undefined }];
+    trail = [{ label: "Today", href: home || undefined }];
     const t = title.toLowerCase();
     const same = (label: string) => {
       const l = label.toLowerCase();
@@ -63,12 +63,12 @@ export function PageHeader({
     // Families and pupils: on one of a hub's own pages the hub link is only
     // its first tab (a sibling, already in the tab strip), so "back" goes Home.
     const siblingHub = !!nav.tab && (nav.area === "family" || nav.area === "student");
-    if (nav.item.label !== "Home" && !same(nav.item.label) && !isHere(nav.item.href) && !siblingHub) trail.push({ label: nav.item.label, href: nav.item.href });
+    if (nav.item.label !== "Today" && !same(nav.item.label) && !isHere(nav.item.href) && !siblingHub) trail.push({ label: nav.item.label, href: nav.item.href });
     if (nav.tab && !same(nav.tab.label) && nav.tab.label !== nav.item.label && !isHere(nav.tab.href)) trail.push({ label: nav.tab.label, href: nav.tab.href });
     trail.push({ label: title });
-  } else if (crumbs && crumbs[0] && /^(admin|site administration|overview|dashboard)$/i.test(crumbs[0].label)) {
-    // Older pages named the root differently; it is always "Home".
-    trail = [{ label: "Home", href: home || crumbs[0].href }, ...crumbs.slice(1)];
+  } else if (crumbs && crumbs[0] && /^(home|admin|site administration|overview|dashboard)$/i.test(crumbs[0].label)) {
+    // Older pages named the root differently; it is always "Today".
+    trail = [{ label: "Today", href: home || crumbs[0].href }, ...crumbs.slice(1)];
   }
 
   // A crumb that links to the page you are already on (a hub whose first tab

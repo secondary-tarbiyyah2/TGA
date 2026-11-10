@@ -226,7 +226,7 @@ export function PolicyDirectory({ initialPolicies, initialSettings, showIntro = 
       {keyDocuments.length > 0 && !q && (
         <section aria-labelledby="key-documents-heading" className="mt-10 first:mt-0">
           <h2 id="key-documents-heading" className="font-serif text-xl font-semibold text-ink">Key documents</h2>
-          <p className="mt-1 text-sm text-ink/70">The policies parents ask for most often.</p>
+          <p className="mt-1 text-sm text-ink/70">Start here: the {keyDocuments.length === 1 ? "policy" : `${keyDocuments.length} policies`} every family should read. The full list follows below.</p>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
             {keyDocuments.map((p) => (
               <li key={p._id}>

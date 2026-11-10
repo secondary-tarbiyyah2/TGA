@@ -9,7 +9,7 @@ import { CHIP_STYLES, GOLD_BUTTON, INPUT_CLASS, friendlyError, initials, invite,
 import { Tabs } from "@/components/learn/Tabs";
 import { btn as btnClass, ui } from "@/components/learn/ui";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 type Tab = "staff" | "families";
 type Chip = { id: string; label: string; roles: LearnRole[] };
 
@@ -154,6 +154,12 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
           <p className="truncate text-xs text-ink/65">{[person.username ? `Username: ${person.username}` : null, person.email, ...meta].filter(Boolean).join(" · ") || "–"}</p>
         </div>
         <div className="flex flex-wrap gap-2">
+          {/* One pupil record: a pupil's sign-in row links straight to their record. */}
+          {person.childId && (
+            <a className={btn} href={`/admin/pupils?id=${person.childId}`}>
+              Pupil record
+            </a>
+          )}
           {person.profileId && person.roles.some((r) => r === "teacher" || r === "teaching_assistant_cover" || r === "head_teacher" || r === "admin") && (
             <a className={btn} href={`/admin/staff?user=${person.profileId}`}>
               Profile &amp; compliance
@@ -315,7 +321,7 @@ export function PeopleList({
       </div>
 
       {loading ? (
-        <p className="p-6 text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : error ? (
         <p role="alert" className="m-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>
       ) : people.length === 0 ? (

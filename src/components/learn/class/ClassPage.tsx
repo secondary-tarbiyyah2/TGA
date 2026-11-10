@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
 import type { Crumb } from "@/components/learn/PageHeader";
-import { WorkspaceHeader, type MenuAction } from "@/components/learn/kit";
+import { WorkspaceHeader, type MenuAction, Loading } from "@/components/learn/kit";
 import { ButtonLink } from "@/components/learn/ui";
 import { ParticipantsTab } from "@/components/learn/class/ParticipantsTab";
 import { CourseTab } from "@/components/learn/class/CourseTab";
@@ -81,7 +81,7 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
       );
   }, [classId, childId]);
 
-  if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (rows === null) return <Loading label="Loading…" bare />;
   if (rows.length === 0) return <p className="text-sm text-ink/65">No grades recorded for this class yet.</p>;
   const teacher = !childId;
   const overall =

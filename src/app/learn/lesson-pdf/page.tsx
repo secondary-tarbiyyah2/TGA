@@ -5,6 +5,7 @@
 // learn.tarbiyyah.co.uk/lesson-pdf/?s=<subject>&y=<year>&n=<lesson>. Staff can open any lesson's
 // PDF; a pupil can open the lessons of their own year (migration 0189).
 
+import { Loading } from "@/components/learn/kit";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -67,7 +68,7 @@ export default function LessonPdfPage() {
           <h1 className="font-serif text-h3 font-semibold text-ink">Today&apos;s lesson PDF</h1>
           <p className="mt-1 text-sm text-ink/70">The lesson slides and a worksheet. Print it, or write on it with a drawing tablet.</p>
           <div className="mt-4">
-            <Suspense fallback={<p className="text-sm text-ink/70">Loading…</p>}>
+            <Suspense fallback={<Loading label="Loading…" bare />}>
               <OpenPdf />
             </Suspense>
           </div>

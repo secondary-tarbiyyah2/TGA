@@ -20,7 +20,7 @@ import { isoToUkLocal, ukLocalToIso } from "@/lib/learn/openEvening";
 import { useNow } from "@/lib/learn/useNow";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 type Teacher = { id: string; name: string; cover: boolean };
 type TeacherOption = { user_id: string; full_name: string; role: string };
 type EveningRow = ParentEvening & { parent_evening_teachers: { teacher_id: string }[] };
@@ -184,7 +184,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
           <div>
             <p className="text-sm font-medium text-ink">Bookings</p>
             {bookings === null ? (
-              <p className="mt-1 text-sm text-ink/65">Loading…</p>
+              <Loading label="Loading…" bare className="mt-1" />
             ) : bookings.length === 0 ? (
               <p className="mt-1 text-sm text-ink/65">No bookings yet.</p>
             ) : (
@@ -420,7 +420,7 @@ export function AdminParentEvenings() {
       )}
 
       {evenings === null ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : evenings.length === 0 ? (
         <p className="rounded-2xl border border-gold-light/50 bg-white p-6 text-sm text-ink/65">No parent evenings yet. Use &ldquo;+ New parent evening&rdquo; to set one up.</p>
       ) : (

@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -148,7 +149,7 @@ export function AnnouncementsFeed({
         </div>
       )}
       {items === null ? (
-        <p className="mt-3 text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare className="mt-3" />
       ) : items.length === 0 ? (
         <p className="mt-3 text-sm text-ink/65">No announcements yet.</p>
       ) : (

@@ -41,7 +41,7 @@ jobs:
     steps:
       - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
-          version: latest
+          version: 2.122.1
 
       - name: Find the project ref
         id: project

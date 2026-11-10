@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { GCSE_HISTORY_COLUMNS, downloadCsv, toCsv, type GcseHistoryRow } from "@/lib/learn/gcse";
@@ -85,7 +86,7 @@ export function GcseMocks() {
       )
     );
 
-  if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (rows === null) return <Loading label="Loading…" bare />;
   if (loadError) return <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800">Mock exam results couldn&apos;t be loaded. Refresh the page to try again.</p>;
 
   return (

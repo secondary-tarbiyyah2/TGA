@@ -23,6 +23,9 @@ async function requireAdmin(authHeader: string | null) {
   const callerClient = createClient(supabaseUrl, anonKey, { global: { headers: { Authorization: authHeader } } });
   const { data: userData } = await callerClient.auth.getUser();
   if (!userData?.user) return false;
+  // Security audit L9: the current role model first, the old profiles.role flag still accepted.
+  const { data: hasRole } = await callerClient.rpc("current_has_role", { roles: ["head_teacher", "admin"] });
+  if (hasRole === true) return true;
   const { data: profile } = await callerClient.from("profiles").select("role").eq("id", userData.user.id).single();
   return profile?.role === "admin";
 }

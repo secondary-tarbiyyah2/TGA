@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
@@ -140,7 +141,7 @@ export function SiteSettingsEditor() {
   }
 
   if (loadFailed) return <LoadProblem what="site settings" />;
-  if (!row) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (!row) return <Loading label="Loading…" bare />;
   const dirty = JSON.stringify(row) !== savedJson;
 
   const field = (f: FieldDef) => (

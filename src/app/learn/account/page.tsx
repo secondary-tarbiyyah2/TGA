@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useState } from "react";
 import Link from "next/link";
 import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
@@ -118,7 +119,7 @@ export default function LearnAccountPage() {
 
   return (
     <section className="app-pad">
-      {session === "loading" && <p className="text-ink/65">Loading…</p>}
+      {session === "loading" && <Loading label="Loading…" bare />}
       {session === null && (
         <p className="text-ink/65">
           Please <Link href="/login" className="text-gold-700 underline">sign in</Link> to manage your account.

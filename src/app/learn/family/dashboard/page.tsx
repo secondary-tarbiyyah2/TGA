@@ -1,5 +1,7 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
+import { useNavBadges } from "@/lib/learn/navBadges";
 import { UpNextCard } from "@/components/learn/UpNextCard";
 import { Icon } from "@/components/learn/Icon";
 import { DashboardHero } from "@/components/learn/DashboardHero";
@@ -60,7 +62,7 @@ function ChildTimetable({ classIds, yearGroup }: { classIds: string[] | null; ye
     ).then(({ data }) => setSlots((data as unknown as TimetableSlot[]) || []));
   }, [supabase, classIds]);
 
-  if (slots === null) return <p className="text-sm text-ink/65">Loading timetable…</p>;
+  if (slots === null) return <Loading label="Loading timetable…" bare />;
   return <TimetableGrid slots={slots} yearGroups={yearGroup ? [yearGroup] : undefined} />;
 }
 
@@ -199,6 +201,7 @@ function FamilyContent() {
   }, [supabase, childKey]);
 
   const hasChildren = !!children && children.length > 0;
+  const badges = useNavBadges("family");
   const current = children?.find((c) => c.id === chosen) || children?.[0];
 
   // What a parent needs first: anything waiting on them, then what's next
@@ -207,7 +210,16 @@ function FamilyContent() {
   return (
     <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }} wideOnly>
       <div className="space-y-6">
-        <DashboardHero area="family" subtitle="Your children's school life in one place" />
+        <DashboardHero
+          area="family"
+          subtitle="Your children's school life in one place"
+          chips={[
+            { label: "Homework due or missing", value: badges.todo ?? "…", tone: badges.todo ? "pink" : undefined, href: "/family/todo" },
+            { label: "Waiting for you", value: badges.actions ?? "…", tone: badges.actions ? "pink" : undefined, href: "/family/actions" },
+            { label: "Unread messages", value: badges.messages ?? "…", tone: badges.messages ? "pink" : undefined, href: "/family/messages" },
+            { label: children && children.length === 1 ? "Child" : "Children", value: children === null ? "…" : children.length, href: "/family/classes" },
+          ]}
+        />
 
         {hasChildren && (
           <nav aria-label="Quick actions" className="flex flex-wrap gap-2 print:hidden">

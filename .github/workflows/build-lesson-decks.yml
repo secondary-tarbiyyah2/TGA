@@ -51,7 +51,7 @@ jobs:
     env:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 2
 
@@ -69,7 +69,7 @@ jobs:
           fi
           echo "force=$FORCE" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
 
@@ -83,7 +83,7 @@ jobs:
 
       # Pictures (lessons v3): downloaded images are cached between runs; the choices are in the repo.
       - name: Cache downloaded lesson pictures
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .cache/lesson-pictures
           key: lesson-pictures-${{ hashFiles('content/lesson-pictures.json') }}
@@ -96,7 +96,7 @@ jobs:
 
       - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
-          version: latest
+          version: 2.122.1
 
       - name: Find the project ref and service-role key
         id: keys
@@ -140,7 +140,7 @@ jobs:
 
       # Scheherazade New (OFL) for Qur'an text; Noto Naskh Arabic (other Arabic) comes with fonts-noto-core.
       - name: Cache the Qur'an font
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: ~/.local/share/fonts/quran
           key: quran-font-${{ hashFiles('scripts/lessons/install-quran-font.sh') }}

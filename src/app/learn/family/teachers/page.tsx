@@ -10,7 +10,7 @@ export default function FamilyTeachersPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
-          <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Meet the teachers" }]} title="Meet your teachers" subtitle="Who teaches your children, in their own words." />
+          <PageHeader crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Meet the teachers" }]} title="Meet your teachers" subtitle="Who teaches your children, in their own words." />
           <MeetYourTeachers bare messageHref="/family/messages" />
         </LearnShell>
       </LearnGate>

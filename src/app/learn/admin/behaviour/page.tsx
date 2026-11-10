@@ -140,7 +140,7 @@ function BehaviourContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Behaviour" }]}
+        crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Behaviour" }]}
         title="Behaviour"
         subtitle="Merits, demerits, incidents, online follow-up sessions and badges across the school."
         actions={

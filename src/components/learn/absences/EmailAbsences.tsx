@@ -5,6 +5,7 @@
 // confidence wait here: staff can confirm the suggestion, edit the child,
 // dates or reason first, or dismiss. Recorded ones are listed too.
 
+import { Loading } from "@/components/learn/kit";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
@@ -392,7 +393,7 @@ export function EmailAbsences({ onChanged }: { onChanged: () => void }) {
       <div className="px-4 py-4">
         {error && <p className="mb-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">Couldn&apos;t load the emails: {error}</p>}
         {rows === null ? (
-          <p className="text-sm text-ink/65">Loading…</p>
+          <Loading label="Loading…" bare />
         ) : shown.length === 0 ? (
           <div className="py-4 text-center">
             <p className="font-medium text-ink">{filter === "review" ? "Nothing waiting for review" : "No emails here"}</p>

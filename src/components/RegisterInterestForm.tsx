@@ -9,11 +9,12 @@ import { YEAR_GROUP_OPTIONS } from "@/components/admissions/applicationShared";
 import { Icon } from "@/components/learn/Icon";
 
 type Status = "idle" | "submitting" | "success" | "error";
-type Values = { parent_name: string; email: string; phone: string; yeargroup: string; message: string; consent: boolean; company: string };
+type Enquiry = "interest" | "question" | "current";
+type Values = { enquiry: Enquiry; parent_name: string; email: string; phone: string; yeargroup: string; message: string; consent: boolean; company: string };
 type Errors = Partial<Record<keyof Values, string>>;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const INITIAL: Values = { parent_name: "", email: "", phone: "", yeargroup: "", message: "", consent: false, company: "" };
+const INITIAL: Values = { enquiry: "interest", parent_name: "", email: "", phone: "", yeargroup: "", message: "", consent: false, company: "" };
 const inputBase =
   "w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-ink transition-shadow focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-300/70 aria-[invalid=true]:border-red-600";
 
@@ -23,7 +24,8 @@ function validate(v: Values): Errors {
   if (!v.email.trim()) e.email = "Please enter your email address.";
   else if (!EMAIL_RE.test(v.email.trim())) e.email = "That doesn't look like an email address. It should look like name@example.com.";
   if (v.phone.replace(/\D/g, "").length < 8) e.phone = "Please enter a phone number we can reach you on.";
-  if (!v.yeargroup) e.yeargroup = "Please choose your child's year group.";
+  if (v.enquiry === "interest" && !v.yeargroup) e.yeargroup = "Please choose your child's year group.";
+  if (v.enquiry !== "interest" && !v.message.trim()) e.message = "Please write your question.";
   if (!v.consent) e.consent = "Please tick the box so we can contact you.";
   return e;
 }
@@ -45,7 +47,7 @@ function Field({ id, label, optional, error, children }: { id: string; label: st
 }
 
 /** `heading={false}` where the page already titles the form. */
-export function RegisterInterestForm({ heading = true }: { heading?: boolean } = {}) {
+export function RegisterInterestForm({ heading = true, enquiryChoice = false }: { heading?: boolean; enquiryChoice?: boolean } = {}) {
   const [status, setStatus] = useState<Status>("idle");
   const [v, setV] = useState<Values>(INITIAL);
   const [errors, setErrors] = useState<Errors>({});
@@ -73,6 +75,7 @@ export function RegisterInterestForm({ heading = true }: { heading?: boolean } =
       phone: v.phone.trim(),
       yeargroup: v.yeargroup,
       message: v.message.trim(),
+      enquiry: v.enquiry,
       consent: "yes",
       company: v.company,
     };
@@ -88,7 +91,7 @@ export function RegisterInterestForm({ heading = true }: { heading?: boolean } =
       // it on this device) pre-fill and carry the same lead reference, see
       // src/lib/leadRef.ts for why this is the honest limit of "one lead"
       // linking given this site's stateless PHP mail backend.
-      saveRegisterInterest({ parent_name: data.parent_name, email: data.email, phone: data.phone, yeargroup: data.yeargroup, lead_ref: ref });
+      if (v.enquiry === "interest") saveRegisterInterest({ parent_name: data.parent_name, email: data.email, phone: data.phone, yeargroup: data.yeargroup, lead_ref: ref });
       setStatus("success");
     } catch {
       setStatus("error");
@@ -102,7 +105,7 @@ export function RegisterInterestForm({ heading = true }: { heading?: boolean } =
           <Icon name="circleCheck" size="lg" />
         </span>
         <h3 className="mt-4 font-serif text-xl font-semibold text-ink">Thank you, {v.parent_name.trim().split(/\s+/)[0]}.</h3>
-        <p className="mt-2 text-ink/70">Your interest is registered. We&apos;ll be in touch as places open.</p>
+        <p className="mt-2 text-ink/70">{v.enquiry === "interest" ? "Your interest is registered. We'll be in touch as places open." : "We have your message and will reply within one working day."}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link href="/eligibility" className="inline-flex min-h-11 items-center rounded-full border-[1.5px] border-gold-500 px-5 text-sm font-semibold text-ink-900 hover:bg-gold-100">
             Is it right for us?
@@ -128,7 +131,27 @@ export function RegisterInterestForm({ heading = true }: { heading?: boolean } =
         </>
       )}
 
-      <fieldset className={heading ? "mt-6" : ""}>
+      {enquiryChoice && (
+        <fieldset className={heading ? "mt-6" : ""}>
+          <legend className="text-sm font-semibold text-ink">What is this about?</legend>
+          <div className="mt-2 grid gap-2 sm:grid-cols-3">
+            {(
+              [
+                ["interest", "A place for my child"],
+                ["question", "A general question"],
+                ["current", "I'm a current family"],
+              ] as [Enquiry, string][]
+            ).map(([val, label]) => (
+              <label key={val} className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-sm ${v.enquiry === val ? "border-ink-900 bg-cream font-semibold text-ink" : "border-gold-light/70 text-ink/80"}`}>
+                <input type="radio" name="enquiry" value={val} checked={v.enquiry === val} onChange={() => set("enquiry", val)} />
+                {label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )}
+
+      <fieldset className={heading || enquiryChoice ? "mt-6" : ""}>
         <legend className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-700">About you</legend>
         <div className="mt-3 grid gap-4 sm:grid-cols-2">
           <Field id="rif-parent_name" label="Your full name" error={errors.parent_name}>
@@ -146,8 +169,9 @@ export function RegisterInterestForm({ heading = true }: { heading?: boolean } =
       </fieldset>
 
       <fieldset className="mt-6">
-        <legend className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-700">Your child</legend>
+        <legend className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-700">{v.enquiry === "interest" ? "Your child" : "Your message"}</legend>
         <div className="mt-3 grid gap-4">
+          {v.enquiry === "interest" && (
           <Field id="rif-yeargroup" label="Year group applying for" error={errors.yeargroup}>
             <Select
               id="rif-yeargroup"
@@ -165,8 +189,9 @@ export function RegisterInterestForm({ heading = true }: { heading?: boolean } =
               ))}
             </Select>
           </Field>
-          <Field id="rif-message" label="Anything you'd like to ask?" optional>
-            <textarea id="rif-message" name="message" rows={3} maxLength={2000} value={v.message} onChange={(e) => set("message", e.target.value)} className={`mt-1 ${inputBase}`} />
+          )}
+          <Field id="rif-message" label={v.enquiry === "interest" ? "Anything you'd like to ask?" : "Your question"} optional={v.enquiry === "interest"} error={errors.message}>
+            <textarea id="rif-message" name="message" rows={3} maxLength={2000} value={v.message} onChange={(e) => set("message", e.target.value)} aria-invalid={!!errors.message || undefined} aria-describedby={describe("message")} className={`mt-1 ${inputBase}`} />
           </Field>
         </div>
       </fieldset>
@@ -196,7 +221,7 @@ export function RegisterInterestForm({ heading = true }: { heading?: boolean } =
       )}
 
       <button type="submit" disabled={busy} className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-60">
-        {busy ? "Sending…" : "Register interest"}
+        {busy ? "Sending…" : v.enquiry === "interest" ? "Register interest" : "Send message"}
         {!busy && <Icon name="arrowRight" size="sm" className="h-4 w-4" />}
       </button>
       {status === "error" && (

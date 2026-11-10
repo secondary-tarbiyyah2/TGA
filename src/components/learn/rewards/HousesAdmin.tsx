@@ -10,7 +10,7 @@ import { fetchAllClasses, type ClassSummary } from "@/lib/learn/classes";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 // Headteacher/Admin tools for houses (0073): define houses (name, colour),
 // assign children, and award bonus points. Merits add house points
 // automatically, so nothing here has to be re-entered when merits are logged.
@@ -255,7 +255,7 @@ export function HousesAdmin() {
 
   const editHouse = (id: string, patch: Partial<House>) => setHouses((hs) => (hs || []).map((h) => (h.id === id ? { ...h, ...patch } : h)));
 
-  if (houses === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (houses === null) return <Loading label="Loading…" bare />;
 
   return (
     <div className="space-y-6">

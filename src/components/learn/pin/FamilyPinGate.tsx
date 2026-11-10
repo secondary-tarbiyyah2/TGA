@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { useLearnSession } from "@/lib/learn/session";
@@ -138,7 +139,7 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
   // Not a parent (or still working it out): never block. Parent roles load
   // before the RPC, so hold the page back only while we genuinely don't know.
   if (!user || !rolesLoaded || !isParent) return <>{children}</>;
-  if (!loaded) return <p className="py-10 text-center text-sm text-ink/65">Loading…</p>;
+  if (!loaded) return <Loading label="Loading…" bare />;
 
   // Optional (since Oct 2026): with no PIN the family area simply opens. Parents
   // who share a device with their children can turn one on in Account.

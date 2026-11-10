@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
@@ -376,7 +377,7 @@ export function ChildDetailsForm() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Child details" }]}
+        crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Child details" }]}
         title="Child details"
         subtitle="Home, health, emergency contacts and consents. Each section saves as you go."
       />
@@ -465,7 +466,7 @@ export function ChildDetailsForm() {
           {saved && !error && <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-800">{saved}</p>}
 
           {loading ? (
-            <p className="text-sm text-ink/65">Loading…</p>
+            <Loading label="Loading…" bare />
           ) : (
             <div className="rounded-2xl border border-gold-light bg-white p-4">
               {step === "basics" && (
