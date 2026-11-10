@@ -1022,97 +1022,219 @@
       "send": "SEND/EAL: translation chart with key words and a visual plan template. Stretch: compare 67:2 with another ayah on trials."
     },
     {
-      "unit": "Unit 5: Recital and reflection",
+      "unit": "Summer 2: Ya-Sin, ayat 71 to 83; recital",
       "n": 8,
-      "title": "Recital assessment and reflection",
+      "title": "Recital assessment 1: Ya-Sin against the rubric",
       "duration": 50,
+      "bigQuestion": "Your recital is during mock week. How will you make sure your Qur'an does not get squeezed out by revision for exams?",
       "objectives": [
-        "Recite Ayat al-Kursi or Al-Mulk 67:1-4 with accuracy",
-        "Self-assess and peer-assess with the rubric",
-        "Set targets for the next half term"
+        "To understand how well I can recite Ya-Sin from memory against the rubric, and what my targets are"
       ],
+      "successCriteria": [
+        "All: recite a passage of Ya-Sin 1 to 48 to the teacher",
+        "Most: recite with saktah, waqf and the noon rules correct",
+        "Some: recite from any starting point in 1 to 78 fluently"
+      ],
+      "smsc": "Spiritual: keeping the Qur'an first in a busy week",
       "keywords": [
         {
+          "term": "tasmi' (تسميع)",
+          "def": "reciting from memory to a listener who checks"
+        },
+        {
           "term": "rubric",
-          "def": "a set of criteria for judging quality"
+          "def": "the criteria and levels the teacher uses to mark recitation"
         },
         {
-          "term": "fluency",
-          "def": "reading smoothly without hesitation"
-        },
-        {
-          "term": "target",
-          "def": "a clear goal for improvement"
+          "term": "saktah (سكتة)",
+          "def": "a brief pause without taking a breath"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your recital is during mock week. How will you make sure your Qur'an does not get squeezed out by revision for exams?",
+        "a": "Keep the daily manzil short and fixed (for example after Fajr), and recite Ya-Sin in salah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "Recite the isti'adha and basmalah.",
-        "Which passage will you recite and why?"
+        {
+          "q": "Which surah begins «يسٓ ...»?",
+          "a": "Ya-Sin",
+          "mins": 1,
+          "options": [
+            "Al-Kahf",
+            "Ya-Sin",
+            "Al-Mulk"
+          ]
+        },
+        {
+          "q": "Recite Ya-Sin 36:52 in your head. How does the next ayah begin?",
+          "a": "إِن كَانَتْ",
+          "mins": 1,
+          "options": [
+            "إِن كَانَتْ",
+            "وَمَا لِىَ",
+            "وَإِذَا قِيلَ"
+          ]
+        },
+        {
+          "q": "The saktah in Ya-Sin is at ...",
+          "a": "36:52",
+          "mins": 1,
+          "options": [
+            "36:52",
+            "36:1",
+            "36:83"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Prepare",
-          "bullets": [
-            "Choose Ayat al-Kursi or 67:1-4",
-            "Check silah, ikhfa and madd",
-            "Make wudu if possible and take a calm breath"
-          ],
-          "note": "Give pupils five minutes to prepare. Remind them of adab from last week: sincere intention, calm place, a short dua. Reduce nerves with encouragement."
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "Show the rubric. Pupils choose the row they most want to improve and note it.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Rubric",
-          "bullets": [
-            "Letters and makharij",
-            "Tajweed rules",
-            "Madd lengths and stops",
-            "Fluency and calm voice"
-          ],
-          "note": "Share the rubric with levels. Pupils recite individually or in breakout pairs. Use the rubric to mark accuracy and consistency. Stress that feedback is one strength, one target, one action."
+          "heading": "Order of turns",
+          "bullets": [],
+          "note": "Half the register (about 3 minutes each); starting ayat in Ya-Sin 1 to 48 (the founding-year minimum), with stronger reciters asked for 49 to 78.",
+          "cycle": [
+            "Teacher calls your name",
+            "Mic on: isti'adhah",
+            "Recite from the ayah the teacher names",
+            "Teacher marks the rubric",
+            "Target in the portal"
+          ]
         },
         {
-          "heading": "Recite and give feedback",
+          "heading": "While you wait",
           "bullets": [
-            "Recite with tarteel",
-            "Listen and note one strength",
-            "Give one kind target"
+            "Mic muted, mushaf closed",
+            "Revise your next passage silently",
+            "No chat during turns: respect the reciter"
           ],
-          "note": "Pupils recite and listen in turn. Use sentence stems: 'One strength was...', 'One target is...'. Keep the atmosphere supportive. Praise improvements since the audit."
+          "note": "The rota is on screen. Pupils not reciting revise, then complete the self-assessment on the pupil PDF."
         },
         {
-          "heading": "Look back",
-          "bullets": [
-            "Compare with the Lesson 1 audit",
-            "Which targets did I meet?",
-            "Which rule is still hard?"
-          ],
-          "note": "Pupils return to their audit grid from Lesson 1 and tick progress. Share a few successes aloud. Discuss strategies for the remaining rules."
-        },
-        {
-          "heading": "Reflect",
-          "bullets": [
-            "What improved this half term?",
-            "What is still difficult?",
-            "What is my next goal?"
-          ],
-          "note": "Pupils write a short reflection and three targets. Close with a dua for sincerity and steadfastness with the Qur'an."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "In Hafs the saktah in 36:52 comes after ...",
+            "options": [
+              "«مِن مَّرْقَدِنَا»",
+              "«يسٓ»",
+              "«كُن»"
+            ],
+            "answer": 0,
+            "why": "A short breathless pause after «مَّرْقَدِنَا»."
+          }
         }
       ],
       "practice": [
-        "Which rule is most secure for you?",
-        "Which rule needs more work?"
+        {
+          "q": "Warm-up: recite Ya-Sin 36:1 to 5 together.",
+          "a": "Recited together.",
+          "mins": 4,
+          "model": "I do: «يسٓ» with madd laazim, then «وَٱلْقُرْءَانِ ٱلْحَكِيمِ»."
+        }
       ],
       "independent": [
-        "Recite your chosen passage for assessment",
-        "Complete peer feedback with the rubric",
-        "Write a reflection and three targets"
+        {
+          "q": "Assessment turns for this lesson's half of the register. Everyone else revises silently and completes the self-assessment.",
+          "a": "Rubric marks recorded in the portal.",
+          "mins": 18,
+          "model": "The teacher reads out the order of names and models the first 20 seconds of a turn."
+        },
+        {
+          "q": "Extend: write your target from the self-assessment.",
+          "a": "A specific target.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name one strength.",
-        "Name one target."
+        {
+          "q": "My target is recorded ...",
+          "a": "in the portal",
+          "mins": 1,
+          "options": [
+            "in the portal",
+            "nowhere",
+            "in the chat"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your recital is during mock week. How will you make sure your Qur'an does not get squeezed out by revision for exams?",
+          "a": "Keep the daily manzil short and fixed (for example after Fajr), and recite Ya-Sin in salah.",
+          "mins": 2
+        }
       ],
-      "homework": "Practise your targets daily and record a new recitation next week.",
-      "send": "SEND/EAL: simplified rubric with sentence stems. Stretch: coach a partner on one rule."
+      "homework": "Practise your target; keep the daily manzil during mock week; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Recitation rubric and self-assessment (pupil PDF)",
+        "Portal assessment record",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A mark of careful reciting",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Ya-Sin, ayat 1 to 24",
@@ -8705,6 +8827,1679 @@
           "find": "Gold star sticker",
           "alt": "A star for the recitation",
           "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Ya-Sin, ayat 71 to 83; recital",
+      "n": 39,
+      "title": "Surat Ya-Sin 36:68-71: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "36:69 says the Prophet ﷺ was not taught poetry. Why does it matter that the Qur'an is not poetry?",
+      "objectives": [
+        "To memorise Ya-Sin 36:68-71 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 36:68-71 after the teacher, word for word",
+        "Most: recite 36:68-71 from memory with no more than one prompt",
+        "Some: link 36:68-71 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: the Qur'an as truth, not imagination",
+      "keywords": [
+        {
+          "term": "shi'r (شعر)",
+          "def": "poetry"
+        },
+        {
+          "term": "an'am (أنعام)",
+          "def": "grazing livestock"
+        },
+        {
+          "term": "iqlab (إقلاب)",
+          "def": "noon or tanween turning into a hidden meem before ب"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "36:69 says the Prophet ﷺ was not taught poetry. Why does it matter that the Qur'an is not poetry?",
+        "a": "Poetry can be imagination; the Qur'an is a clear reminder and truth from Allah (36:69 to 70)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We did not give Prophet Muhammad, knowledge of poetry, nor is it befitting for him. It is not but a message and a clear Qur'an' (Ya-Sin 36:69).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Ya-Sin 36:65 in your head. How does the next ayah begin?",
+          "a": "وَلَوْ نَشَآءُ",
+          "mins": 1,
+          "options": [
+            "وَلَوْ نَشَآءُ",
+            "وَءَايَةٌۭ لَّهُمْ",
+            "وَمَن نُّعَمِّرْهُ"
+          ]
+        },
+        {
+          "q": "Saktah in Hafs is ...",
+          "a": "a short pause without breath",
+          "mins": 1,
+          "options": [
+            "a short pause without breath",
+            "a long stop",
+            "a madd"
+          ]
+        },
+        {
+          "q": "Ya-Sin is surah number ...",
+          "a": "36",
+          "mins": 1,
+          "options": [
+            "36",
+            "67",
+            "18"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Ya-Sin 36:68-71",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 36:68-71 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَمَن نُّعَمِّرْهُ نُنَكِّسْهُ فِى ٱلْخَلْقِ ۖ أَفَلَا يَعْقِلُونَ (٦٨) وَمَا عَلَّمْنَٰهُ ٱلشِّعْرَ وَمَا يَنۢبَغِى لَهُۥٓ ۚ إِنْ هُوَ إِلَّا ذِكْرٌۭ وَقُرْءَانٌۭ مُّبِينٌۭ (٦٩) لِّيُنذِرَ مَن كَانَ حَيًّۭا وَيَحِقَّ ٱلْقَوْلُ عَلَى ٱلْكَٰفِرِينَ (٧٠) أَوَلَمْ يَرَوْا۟ أَنَّا خَلَقْنَا لَهُم مِّمَّا عَمِلَتْ أَيْدِينَآ أَنْعَٰمًۭا فَهُمْ لَهَا مَٰلِكُونَ (٧١)",
+            "source": "Surat Ya-Sin, 36:68-71"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "36:68",
+                "And he to whom We grant long life We reverse in creation; so will they not understand?"
+              ],
+              [
+                "36:69",
+                "And We did not give Prophet Muhammad, knowledge of poetry, nor is it befitting for him. It is not but a message and a clear Qur'an"
+              ],
+              [
+                "36:70",
+                "To warn whoever is alive and justify the word against the disbelievers."
+              ],
+              [
+                "36:71",
+                "Do they not see that We have created for them from what Our hands have made, grazing livestock, and [then] they are their owners?"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "وَمَن نُّعَمِّرْهُ",
+                "Ya-Sin 36:68",
+                "Idgham with ghunnah: noon before ن",
+                "wa man-nu'ammirhu"
+              ],
+              [
+                "يَنۢبَغِى",
+                "Ya-Sin 36:69",
+                "Iqlab: noon before ب",
+                "yambaghee with a hidden meem"
+              ],
+              [
+                "أَنْعَٰمًۭا",
+                "Ya-Sin 36:71",
+                "Izhar: noon sakinah before ع",
+                "an'aaman"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 36:68-71 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«يَنۢبَغِى» is read with ...",
+            "options": [
+              "iqlab",
+              "izhar",
+              "idgham"
+            ],
+            "answer": 0,
+            "why": "Noon sakinah before ب."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Ya-Sin 36:68-71 together, ayah by ayah.",
+          "a": "The class recites 36:68-71 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 36:68-71. Ayah 68: 3 times looking, 3 times without looking. Then ayah 69 the same way. Then link: recite 68 and 69 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 36:68-71 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "What is the Qur'an called in 36:69?",
+          "a": "A reminder (dhikr) and a clear Qur'an.",
+          "mins": 2
+        },
+        {
+          "q": "What should people realise from 36:71?",
+          "a": "Allah created livestock for them and gave them ownership: a reason for gratitude.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ya-Sin 36:70: «لِّيُنذِرَ مَن ...» Which word comes next?",
+          "a": "كَانَ",
+          "mins": 1,
+          "options": [
+            "فَلَكٍۢ",
+            "كَانَ",
+            "تَنزِيلَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 36:69 says the Prophet ﷺ was not taught poetry. Why does it matter that the Qur'an is not poetry?",
+          "a": "Poetry can be imagination; the Qur'an is a clear reminder and truth from Allah (36:69 to 70).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Ya-Sin 36:68-71 to a parent three times a day and revise Ya-Sin 49 to 67; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Ya-Sin 36:68-71 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sheep and camels grazing",
+          "alt": "Grazing livestock (36:71)",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Ya-Sin, ayat 71 to 83; recital",
+      "n": 40,
+      "title": "Surat Ya-Sin 36:72-74: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Livestock give us transport, food, drink and more. 36:73 then asks 'Will they not be grateful?' What does gratitude look like in practice?",
+      "objectives": [
+        "To memorise Ya-Sin 36:72-74 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 36:72-74 after the teacher, word for word",
+        "Most: recite 36:72-74 from memory with no more than one prompt",
+        "Some: link 36:72-74 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: gratitude and care for animals",
+      "keywords": [
+        {
+          "term": "shukr (شكر)",
+          "def": "gratitude"
+        },
+        {
+          "term": "manafi' (منافع)",
+          "def": "benefits"
+        },
+        {
+          "term": "aalihah (آلهة)",
+          "def": "false gods"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Livestock give us transport, food, drink and more. 36:73 then asks 'Will they not be grateful?' What does gratitude look like in practice?",
+        "a": "Saying alhamdulillah, using blessings in halal ways, caring for animals, sharing with others."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And for them therein are [other] benefits and drinks, so will they not be grateful?' (Ya-Sin 36:73).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Ya-Sin 36:69 in your head. How does the next ayah begin?",
+          "a": "لِّيُنذِرَ مَن",
+          "mins": 1,
+          "options": [
+            "لِّيُنذِرَ مَن",
+            "لَا ٱلشَّمْسُ",
+            "وَجَآءَ مِنْ"
+          ]
+        },
+        {
+          "q": "«ٱلْقَوْلُ عَلَى ٱلْكَٰفِرِينَ» means the word is ...",
+          "a": "justified against the disbelievers",
+          "mins": 1,
+          "options": [
+            "justified against the disbelievers",
+            "cancelled"
+          ]
+        },
+        {
+          "q": "«أَنْعَٰمًۭا» has ...",
+          "a": "izhar",
+          "mins": 1,
+          "options": [
+            "izhar",
+            "ikhfa'"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Ya-Sin 36:72-74",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 36:72-74 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَذَلَّلْنَٰهَا لَهُمْ فَمِنْهَا رَكُوبُهُمْ وَمِنْهَا يَأْكُلُونَ (٧٢) وَلَهُمْ فِيهَا مَنَٰفِعُ وَمَشَارِبُ ۖ أَفَلَا يَشْكُرُونَ (٧٣) وَٱتَّخَذُوا۟ مِن دُونِ ٱللَّهِ ءَالِهَةًۭ لَّعَلَّهُمْ يُنصَرُونَ (٧٤)",
+            "source": "Surat Ya-Sin, 36:72-74"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "36:72",
+                "And We have tamed them for them, so some of them they ride, and some of them they eat."
+              ],
+              [
+                "36:73",
+                "And for them therein are [other] benefits and drinks, so will they not be grateful?"
+              ],
+              [
+                "36:74",
+                "But they have taken besides Allah [false] deities that perhaps they would be helped."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "فَمِنْهَا",
+                "Ya-Sin 36:72",
+                "Izhar: noon sakinah before ه",
+                "fa-min-haa: clear noon"
+              ],
+              [
+                "مِن دُونِ",
+                "Ya-Sin 36:74",
+                "Ikhfa': noon sakinah before د",
+                "min-doon with a light hum"
+              ],
+              [
+                "ءَالِهَةًۭ لَّعَلَّهُمْ",
+                "Ya-Sin 36:74",
+                "Idgham without ghunnah: tanween into ل",
+                "aalihatal-la'allahum"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 36:72-74 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "36:74 says they took false gods hoping to be ...",
+            "options": [
+              "helped",
+              "forgiven",
+              "rich"
+            ],
+            "answer": 0,
+            "why": "'... that perhaps they would be helped.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Ya-Sin 36:72-74 together, ayah by ayah.",
+          "a": "The class recites 36:72-74 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 36:72-74. Ayah 72: 3 times looking, 3 times without looking. Then ayah 73 the same way. Then link: recite 72 and 73 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 36:72-74 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "List three benefits of livestock from 36:72 to 73.",
+          "a": "Riding, food, other benefits and drinks (milk).",
+          "mins": 2
+        },
+        {
+          "q": "Why is the ۖ sign in 36:73 a good place to pause?",
+          "a": "It separates the list of blessings from the question 'will they not be grateful?'",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ya-Sin 36:73: «وَلَهُمْ فِيهَا ...» Which word comes next?",
+          "a": "مَنَٰفِعُ",
+          "mins": 1,
+          "options": [
+            "مَنَٰفِعُ",
+            "مُّهْتَدُونَ",
+            "لَهُمْ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Livestock give us transport, food, drink and more. 36:73 then asks 'Will they not be grateful?' What does gratitude look like in practice?",
+          "a": "Saying alhamdulillah, using blessings in halal ways, caring for animals, sharing with others.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Ya-Sin 36:72-74 to a parent three times a day and revise Ya-Sin 49 to 71; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Ya-Sin 36:72-74 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sheep and camels grazing",
+          "alt": "Grazing livestock (36:71)",
+          "for": "hook"
+        },
+        {
+          "find": "Glass of milk",
+          "alt": "Drinks from livestock (36:73)",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Ya-Sin, ayat 71 to 83; recital",
+      "n": 41,
+      "title": "Surat Ya-Sin 36:75-78: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Someone holds up a crumbling bone and asks 'Who will give life to this?' How would you answer?",
+      "objectives": [
+        "To memorise Ya-Sin 36:75-78 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 36:75-78 after the teacher, word for word",
+        "Most: recite 36:75-78 from memory with no more than one prompt",
+        "Some: link 36:75-78 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: patience when people mock the truth",
+      "keywords": [
+        {
+          "term": "khasim (خصيم)",
+          "def": "an adversary, one who argues"
+        },
+        {
+          "term": "ramim (رميم)",
+          "def": "crumbled, disintegrated"
+        },
+        {
+          "term": "waqf lazim (وقف لازم)",
+          "def": "a must-stop sign"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Someone holds up a crumbling bone and asks 'Who will give life to this?' How would you answer?",
+        "a": "The One who created it the first time: Ya-Sin answers this in 36:79."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And he presents for Us an example and forgets his [own] creation. He says, \"Who will give life to bones while they are disintegrated?\"' (Ya-Sin 36:78).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Ya-Sin 36:72 in your head. How does the next ayah begin?",
+          "a": "وَلَهُمْ فِيهَا",
+          "mins": 1,
+          "options": [
+            "فَلَا يَسْتَطِيعُونَ",
+            "وَلَهُمْ فِيهَا",
+            "وَإِذَا قِيلَ"
+          ]
+        },
+        {
+          "q": "«مِن دُونِ» has ...",
+          "a": "ikhfa'",
+          "mins": 1,
+          "options": [
+            "ikhfa'",
+            "izhar"
+          ]
+        },
+        {
+          "q": "«ءَالِهَةًۭ لَّعَلَّهُمْ» has idgham ...",
+          "a": "without ghunnah",
+          "mins": 1,
+          "options": [
+            "without ghunnah",
+            "with ghunnah"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Ya-Sin 36:75-78",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 36:75-78 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "لَا يَسْتَطِيعُونَ نَصْرَهُمْ وَهُمْ لَهُمْ جُندٌۭ مُّحْضَرُونَ (٧٥) فَلَا يَحْزُنكَ قَوْلُهُمْ ۘ إِنَّا نَعْلَمُ مَا يُسِرُّونَ وَمَا يُعْلِنُونَ (٧٦) أَوَلَمْ يَرَ ٱلْإِنسَٰنُ أَنَّا خَلَقْنَٰهُ مِن نُّطْفَةٍۢ فَإِذَا هُوَ خَصِيمٌۭ مُّبِينٌۭ (٧٧) وَضَرَبَ لَنَا مَثَلًۭا وَنَسِىَ خَلْقَهُۥ ۖ قَالَ مَن يُحْىِ ٱلْعِظَٰمَ وَهِىَ رَمِيمٌۭ (٧٨)",
+            "source": "Surat Ya-Sin, 36:75-78"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "36:75",
+                "They are not able to help them, and they [themselves] are for them soldiers in attendance."
+              ],
+              [
+                "36:76",
+                "So let not their speech grieve you. Indeed, We know what they conceal and what they declare."
+              ],
+              [
+                "36:77",
+                "Does man not consider that We created him from a [mere] sperm-drop - then at once he is a clear adversary?"
+              ],
+              [
+                "36:78",
+                "And he presents for Us an example and forgets his [own] creation. He says, \"Who will give life to bones while they are disintegrated?\""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "جُندٌۭ مُّحْضَرُونَ",
+                "Ya-Sin 36:75",
+                "Idgham with ghunnah: tanween before م",
+                "jundum-muhdaroon"
+              ],
+              [
+                "يَحْزُنكَ",
+                "Ya-Sin 36:76",
+                "Ikhfa': noon before ك",
+                "yahzunka"
+              ],
+              [
+                "مِن نُّطْفَةٍۢ",
+                "Ya-Sin 36:77",
+                "Idgham with ghunnah: noon before ن",
+                "min-nutfah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 36:75-78 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "36:76 tells the Prophet ﷺ ...",
+            "options": [
+              "not to grieve at their words",
+              "to argue with them",
+              "to leave"
+            ],
+            "answer": 0,
+            "why": "'So let not their speech grieve you.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Ya-Sin 36:75-78 together, ayah by ayah.",
+          "a": "The class recites 36:75-78 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 36:75-78. Ayah 75: 3 times looking, 3 times without looking. Then ayah 76 the same way. Then link: recite 75 and 76 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 36:75-78 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "What does 36:76 say Allah knows?",
+          "a": "What they conceal and what they declare.",
+          "mins": 2
+        },
+        {
+          "q": "What is the small م-like sign (ۘ) after «قَوْلُهُمْ» in 36:76?",
+          "a": "A must-stop sign: stopping keeps 'their speech' separate from Allah's words 'Indeed, We know...'.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ya-Sin 36:77: «أَوَلَمْ يَرَ ...» Which word comes next?",
+          "a": "ٱلْإِنسَٰنُ",
+          "mins": 1,
+          "options": [
+            "ٱلْإِنسَٰنُ",
+            "لَكُمْ",
+            "فَإِذَا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Someone holds up a crumbling bone and asks 'Who will give life to this?' How would you answer?",
+          "a": "The One who created it the first time: Ya-Sin answers this in 36:79.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Ya-Sin 36:75-78 to a parent three times a day and revise Ya-Sin 49 to 74; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Ya-Sin 36:75-78 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Old weathered bones desert",
+          "alt": "Disintegrated bones (36:78)",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Ya-Sin, ayat 71 to 83; recital",
+      "n": 42,
+      "title": "Surat Ya-Sin 36:79-83: meaning, rules and the home hifdh plan",
+      "duration": 50,
+      "bigQuestion": "Ya-Sin ends: 'His command is only when He intends a thing that He says to it, Be, and it is.' How does this answer the question about the bones?",
+      "objectives": [
+        "To memorise Ya-Sin 36:79-83 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 36:79-83 after the teacher, word for word",
+        "Most: recite 36:79-83 from memory with no more than one prompt",
+        "Some: link 36:79-83 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: certainty in resurrection",
+      "keywords": [
+        {
+          "term": "kun fayakun (كن فيكون)",
+          "def": "'Be, and it is'"
+        },
+        {
+          "term": "malakut (ملكوت)",
+          "def": "the realm, dominion of all things"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising; here learned at home and checked briefly"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Ya-Sin ends: 'His command is only when He intends a thing that He says to it, Be, and it is.' How does this answer the question about the bones?",
+        "a": "Creating again is no harder for Allah than creating the first time; He only says 'Be'."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'His command is only when He intends a thing that He says to it, \"Be,\" and it is.' (Ya-Sin 36:82).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Ya-Sin 36:76 in your head. How does the next ayah begin?",
+          "a": "أَوَلَمْ يَرَ",
+          "mins": 1,
+          "options": [
+            "هُمْ وَأَزْوَٰجُهُمْ",
+            "أَوَلَمْ يَرَ",
+            "قِيلَ ٱدْخُلِ"
+          ]
+        },
+        {
+          "q": "The sign ۘ means ...",
+          "a": "you must stop",
+          "mins": 1,
+          "options": [
+            "you must stop",
+            "do not stop",
+            "you may stop"
+          ]
+        },
+        {
+          "q": "«يَحْزُنكَ» has ...",
+          "a": "ikhfa'",
+          "mins": 1,
+          "options": [
+            "ikhfa'",
+            "iqlab"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Ya-Sin 36:79-83",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 36:79-83 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "قُلْ يُحْيِيهَا ٱلَّذِىٓ أَنشَأَهَآ أَوَّلَ مَرَّةٍۢ ۖ وَهُوَ بِكُلِّ خَلْقٍ عَلِيمٌ (٧٩) ٱلَّذِى جَعَلَ لَكُم مِّنَ ٱلشَّجَرِ ٱلْأَخْضَرِ نَارًۭا فَإِذَآ أَنتُم مِّنْهُ تُوقِدُونَ (٨٠) أَوَلَيْسَ ٱلَّذِى خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضَ بِقَٰدِرٍ عَلَىٰٓ أَن يَخْلُقَ مِثْلَهُم ۚ بَلَىٰ وَهُوَ ٱلْخَلَّٰقُ ٱلْعَلِيمُ (٨١) إِنَّمَآ أَمْرُهُۥٓ إِذَآ أَرَادَ شَيْـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ (٨٢) فَسُبْحَٰنَ ٱلَّذِى بِيَدِهِۦ مَلَكُوتُ كُلِّ شَىْءٍۢ وَإِلَيْهِ تُرْجَعُونَ (٨٣)",
+            "source": "Surat Ya-Sin, 36:79-83"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "36:79",
+                "Say, \"He will give them life who produced them the first time; and He is, of all creation, Knowing.\""
+              ],
+              [
+                "36:80",
+                "[It is] He who made for you from the green tree, fire, and then from it you ignite."
+              ],
+              [
+                "36:81",
+                "Is not He who created the heavens and the earth Able to create the likes of them? Yes, [it is so]; and He is the Knowing Creator."
+              ],
+              [
+                "36:82",
+                "His command is only when He intends a thing that He says to it, \"Be,\" and it is."
+              ],
+              [
+                "36:83",
+                "So exalted is He in whose hand is the realm of all things, and to Him you will be returned."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "نَارًۭا فَإِذَآ",
+                "Ya-Sin 36:80",
+                "Ikhfa': tanween before ف",
+                "naaran fa-idhaa with a light hum"
+              ],
+              [
+                "كُن فَيَكُونُ",
+                "Ya-Sin 36:82",
+                "Ikhfa': noon before ف",
+                "kun fayakoon"
+              ],
+              [
+                "شَىْءٍۢ وَإِلَيْهِ",
+                "Ya-Sin 36:83",
+                "Idgham with ghunnah: tanween before و",
+                "shay'iw-wa ilayhi"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 36:79-83 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Who gives life to the bones (36:79)?",
+            "options": [
+              "The One who produced them the first time",
+              "No one",
+              "Nature"
+            ],
+            "answer": 0,
+            "why": "36:79."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Ya-Sin 36:79-83 together, ayah by ayah.",
+          "a": "The class recites 36:79-83 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 36:79-83. Ayah 79: 3 times looking, 3 times without looking. Then ayah 80 the same way. Then link: recite 79 and 80 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 36:79-83 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "What sign of Allah's power is in 36:80?",
+          "a": "Fire from the green tree.",
+          "mins": 2
+        },
+        {
+          "q": "Why is «كُن فَيَكُونُ» powerful as the surah's near-final words?",
+          "a": "It sums up Allah's power: resurrection is as easy as His word 'Be'.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ya-Sin 36:82: «إِنَّمَآ أَمْرُهُۥٓ ...» Which word comes next?",
+          "a": "إِذَآ",
+          "mins": 1,
+          "options": [
+            "مُّرْسَلُونَ",
+            "لَهَآ",
+            "إِذَآ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Ya-Sin ends: 'His command is only when He intends a thing that He says to it, Be, and it is.' How does this answer the question about the bones?",
+          "a": "Creating again is no harder for Allah than creating the first time; He only says 'Be'.",
+          "mins": 2
+        }
+      ],
+      "homework": "Home hifdh: learn 36:79 to 83 over the next two weeks (the teacher checks briefly in the recital); recite 36:68 to 78 daily; tick the revision log.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Ya-Sin 36:79-83 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Green tree leaves",
+          "alt": "The green tree (36:80)",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Ya-Sin, ayat 71 to 83; recital",
+      "n": 43,
+      "title": "Recital assessment 2: Ya-Sin and selections from Juz' 29 and 30",
+      "duration": 50,
+      "bigQuestion": "Which of Juz' 29 and 30 have you kept firm, and which have faded? What does that tell you?",
+      "objectives": [
+        "To understand how well I keep Juz' 29 and 30 alongside Ya-Sin, judged against the rubric"
+      ],
+      "successCriteria": [
+        "All: recite a Ya-Sin passage and one Juz' 'Amma surah",
+        "Most: recite a Juz' Tabarak passage with few prompts",
+        "Some: recite all three fluently with every rule"
+      ],
+      "smsc": "Spiritual: honesty about what we have kept",
+      "keywords": [
+        {
+          "term": "tasmi' (تسميع)",
+          "def": "reciting from memory to a listener who checks"
+        },
+        {
+          "term": "rubric",
+          "def": "the criteria and levels the teacher uses to mark recitation"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising memorised Qur'an so it stays firm"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which of Juz' 29 and 30 have you kept firm, and which have faded? What does that tell you?",
+        "a": "Surahs recited in salah and on the rota stay firm; those not revised fade. Revision decides."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «تَبَٰرَكَ ٱلَّذِى ...»?",
+          "a": "Al-Mulk",
+          "mins": 1,
+          "options": [
+            "An-Naba'",
+            "Ya-Sin",
+            "Al-Mulk"
+          ]
+        },
+        {
+          "q": "Recite An-Naba' 78:1 in your head. How does the next ayah begin?",
+          "a": "عَنِ ٱلنَّبَإِ",
+          "mins": 1,
+          "options": [
+            "رَّبِّ ٱلسَّمَٰوَٰتِ",
+            "عَنِ ٱلنَّبَإِ",
+            "ٱلَّذِى هُمْ"
+          ]
+        },
+        {
+          "q": "Juz' Tabarak is juz' ...",
+          "a": "29",
+          "mins": 1,
+          "options": [
+            "29",
+            "30",
+            "28"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "Show the rubric. Pupils choose the row they most want to improve and note it.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Order of turns",
+          "bullets": [],
+          "note": "Second half of the register; pupils assessed last lesson recite their Juz' 29 and 30 selections if time allows.",
+          "cycle": [
+            "Teacher calls your name",
+            "Mic on: isti'adhah",
+            "Ya-Sin passage, then one Juz' 29 and one Juz' 30 selection",
+            "Teacher marks the rubric",
+            "Target in the portal"
+          ]
+        },
+        {
+          "heading": "While you wait",
+          "bullets": [
+            "Mic muted, mushaf closed",
+            "Revise your next passage silently",
+            "No chat during turns: respect the reciter"
+          ],
+          "note": "The rota is on screen. Pupils not reciting revise, then complete the self-assessment on the pupil PDF."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "A selection from Juz' 30 could be ...",
+            "options": [
+              "An-Naba' 31 to 40",
+              "Ya-Sin 1 to 12",
+              "Al-Mulk 1 to 5"
+            ],
+            "answer": 0,
+            "why": "An-Naba' is in Juz' 30."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: recite Al-Mulk 67:1 to 4 together.",
+          "a": "Recited together.",
+          "mins": 4,
+          "model": "I do: I recite 67:1 slowly and you echo."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Assessment turns (second half). Everyone else revises silently and completes the self-assessment.",
+          "a": "Rubric marks recorded in the portal.",
+          "mins": 18,
+          "model": "The teacher reads out the order of names and models the first 20 seconds of a turn."
+        },
+        {
+          "q": "Extend: list the surahs of Juz' 29 and 30 that need the most revision.",
+          "a": "An honest list.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "My target is recorded ...",
+          "a": "in the portal",
+          "mins": 1,
+          "options": [
+            "in the portal",
+            "nowhere",
+            "in the chat"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Which of Juz' 29 and 30 have you kept firm, and which have faded? What does that tell you?",
+          "a": "Surahs recited in salah and on the rota stay firm; those not revised fade. Revision decides.",
+          "mins": 2
+        }
+      ],
+      "homework": "Add your faded surahs to the daily manzil; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Recitation rubric and self-assessment (pupil PDF)",
+        "Portal assessment record",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A mark of careful reciting",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Ya-Sin, ayat 71 to 83; recital",
+      "n": 44,
+      "title": "Recital feedback and reflection",
+      "duration": 50,
+      "bigQuestion": "Feedback can feel uncomfortable. Why is it a gift?",
+      "objectives": [
+        "To understand the feedback from my recital and plan how to act on it"
+      ],
+      "successCriteria": [
+        "All: read my rubric feedback and name one strength",
+        "Most: turn each weak row into an action",
+        "Some: link my actions to a weekly routine"
+      ],
+      "smsc": "Spiritual: humility in accepting correction",
+      "keywords": [
+        {
+          "term": "feedback",
+          "def": "information about how well I did and what to improve"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising memorised Qur'an so it stays firm"
+        },
+        {
+          "term": "muhasabah (محاسبة)",
+          "def": "honest self-review"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Feedback can feel uncomfortable. Why is it a gift?",
+        "a": "It shows exactly what to fix; the Prophet ﷺ and the Companions corrected one another's recitation with care."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A rubric row 'Fluency and waqf' covers ...",
+          "a": "pace and stops",
+          "mins": 1,
+          "options": [
+            "pace and stops",
+            "volume"
+          ]
+        },
+        {
+          "q": "Recite Ya-Sin 36:80 in your head. How does the next ayah begin?",
+          "a": "أَوَلَيْسَ ٱلَّذِى",
+          "mins": 1,
+          "options": [
+            "وَلَقَدْ أَضَلَّ",
+            "أَوَلَيْسَ ٱلَّذِى",
+            "إِنَّا جَعَلْنَا"
+          ]
+        },
+        {
+          "q": "«كُن فَيَكُونُ» is ...",
+          "a": "36:82",
+          "mins": 1,
+          "options": [
+            "36:82",
+            "36:1",
+            "2:255"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Reading your rubric",
+          "bullets": [],
+          "note": "Bismillah. Each pupil opens their own feedback in the portal; no sharing of marks.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "From feedback to action",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Feedback",
+              "Action"
+            ],
+            "rows": [
+              [
+                "Prompts in 36:33 to 40",
+                "3-3-link those ayat daily for a week"
+              ],
+              [
+                "Ghunnah uneven",
+                "Tahqiq drill on one page a day"
+              ],
+              [
+                "Stopped mid-word",
+                "Mark breath points in pencil"
+              ],
+              [
+                "Juz' 'Amma faded",
+                "Add 3 surahs to the manzil each day"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reflection",
+          "bullets": [
+            "What went well?",
+            "What surprised me?",
+            "What will I change?"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "The best response to 'ghunnah uneven' is ...",
+            "options": [
+              "a daily slow drill on a page",
+              "ignore it",
+              "recite faster"
+            ],
+            "answer": 0,
+            "why": "A specific action."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn this feedback into an action: 'Hesitates at section joins in Ya-Sin'.",
+          "a": "Learn the first words of each section as a chain and recite the joins daily.",
+          "mins": 4,
+          "model": "I do: 'Madd munfasil inconsistent' becomes 'tap 4 counts on every munfasil in Ya-Sin 1 to 12 this week'."
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: write a reflection on your recital and three actions linked to your rubric rows. Today's group re-recites the passage they found hardest.",
+          "a": "Three specific actions linked to feedback.",
+          "mins": 14,
+          "model": "The teacher shows a model reflection (no real pupil data)."
+        },
+        {
+          "q": "Extend: listen to the teacher recite 36:79 to 83 and check your home hifdh.",
+          "a": "Home hifdh checked.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: mark the waqf signs in 36:68 to 83.",
+          "a": "ۖ in 36:68, 73, 78, 79; ۚ in 36:69, 81; ۘ in 36:76.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "My actions are saved ...",
+          "a": "in the portal",
+          "mins": 1,
+          "options": [
+            "in the portal",
+            "nowhere"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Feedback can feel uncomfortable. Why is it a gift?",
+          "a": "It shows exactly what to fix; the Prophet ﷺ and the Companions corrected one another's recitation with care.",
+          "mins": 2
+        }
+      ],
+      "homework": "Start your three actions this week; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Recital feedback (portal)",
+        "Reflection sheet (pupil PDF)",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Notebook with checklist",
+          "alt": "Feedback into action",
+          "for": "teach:2"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Ya-Sin, ayat 71 to 83; recital",
+      "n": 45,
+      "title": "Targets for Year 11 and the summer revision plan",
+      "duration": 50,
+      "bigQuestion": "Year 11 brings exams. How will you make sure the Qur'an stays first, not last?",
+      "objectives": [
+        "To understand how to set Qur'an targets for Year 11 and plan revision so Ya-Sin, Juz' 29 and 30 stay firm"
+      ],
+      "successCriteria": [
+        "All: write two Year 11 targets",
+        "Most: build a summer manzil covering Ya-Sin and Juz' 29 and 30",
+        "Some: plan how Qur'an fits alongside GCSE revision next year"
+      ],
+      "smsc": "Spiritual: putting Allah's Book first",
+      "keywords": [
+        {
+          "term": "manzil (منزل)",
+          "def": "a fixed daily portion of revision"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising memorised Qur'an so it stays firm"
+        },
+        {
+          "term": "target",
+          "def": "a specific next step with a way to check it"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Year 11 brings exams. How will you make sure the Qur'an stays first, not last?",
+        "a": "A fixed daily time (for example after Fajr), short and consistent, and reciting in salah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So exalted is He in whose hand is the realm of all things, and to Him you will be returned.' (Ya-Sin 36:83).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Ya-Sin 36:81 in your head. How does the next ayah begin?",
+          "a": "إِنَّمَآ أَمْرُهُۥٓ",
+          "mins": 1,
+          "options": [
+            "أَوَلَمْ يَرَ",
+            "إِنَّمَآ أَمْرُهُۥٓ",
+            "وَءَايَةٌۭ لَّهُمْ"
+          ]
+        },
+        {
+          "q": "A manzil is ...",
+          "a": "a daily revision portion",
+          "mins": 1,
+          "options": [
+            "a daily revision portion",
+            "a new surah"
+          ]
+        },
+        {
+          "q": "Year 11 Qur'an includes ...",
+          "a": "Al-Kahf and tajweed mastery",
+          "mins": 1,
+          "options": [
+            "Al-Kahf and tajweed mastery",
+            "nothing"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Summer manzil",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Day",
+              "Main",
+              "Plus"
+            ],
+            "rows": [
+              [
+                "Saturday",
+                "Ya-Sin 1 to 27",
+                "Juz' 'Amma 78 to 80"
+              ],
+              [
+                "Sunday",
+                "Ya-Sin 28 to 54",
+                "Al-Mulk, Al-Qalam"
+              ],
+              [
+                "Monday",
+                "Ya-Sin 55 to 83",
+                "Al-Haqqah, Al-Ma'arij"
+              ],
+              [
+                "Tuesday",
+                "Nuh to Al-Muzzammil",
+                "81 to 88"
+              ],
+              [
+                "Wednesday",
+                "Al-Muddaththir, Al-Qiyamah",
+                "89 to 100"
+              ],
+              [
+                "Thursday",
+                "Al-Insan, Al-Mursalat",
+                "101 to 114"
+              ],
+              [
+                "Friday",
+                "Weak spots",
+                "Al-Kahf reading"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Year 11 preview",
+          "bullets": [
+            "Tajweed mastery",
+            "Al-Kahf consolidation",
+            "Understanding and teaching others"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Qur'an and exams",
+          "bullets": [
+            "Qur'an first, short and daily",
+            "Recite in salah",
+            "Du'a before study"
+          ],
+          "note": "The teacher closes with du'a for the class."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "The best way to protect Qur'an time in Year 11 is ...",
+            "options": [
+              "a fixed short daily slot",
+              "waiting until after exams",
+              "only weekends"
+            ],
+            "answer": 0,
+            "why": "Consistency over intensity."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one Year 11 Qur'an target that is specific and checkable.",
+          "a": "For example: 'Recite Ya-Sin in full each Friday with no prompts by December.'",
+          "mins": 4,
+          "model": "I do: 'Revise Juz' 29 every fortnight with a listener.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Complete the summer manzil and Year 11 targets in the portal; share one strategy (not marks) in the chat.",
+          "a": "A complete plan and two targets.",
+          "mins": 14,
+          "model": "The teacher shows a completed plan."
+        },
+        {
+          "q": "Extend: plan to read the tafsir of Ya-Sin 77 to 83 from a trusted source.",
+          "a": "A plan.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: plan a weekly full recital of Ya-Sin.",
+          "a": "A day chosen.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ya-Sin ends with: 'to Him you will be ...'",
+          "a": "returned",
+          "mins": 1,
+          "options": [
+            "returned",
+            "forgotten"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Year 11 brings exams. How will you make sure the Qur'an stays first, not last?",
+          "a": "A fixed daily time (for example after Fajr), short and consistent, and reciting in salah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Share the plan with your parents and begin the summer manzil.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Summer revision plan (portal)",
+        "Pupil PDF: summer manzil chart",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Calendar summer",
+          "alt": "A summer plan",
+          "for": "teach:1"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
         }
       ]
     }
