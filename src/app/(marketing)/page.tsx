@@ -13,6 +13,7 @@ import { admissionsProcessSteps } from "@/components/admissions/applicationShare
 import { lessonsAWeek } from "@/content/curriculum";
 import { PortalPreview } from "@/components/home/PortalPreview";
 import { AdmissionsProcessFlow } from "@/components/admissions/AdmissionsSteps";
+import { Icon, type IconName } from "@/components/learn/Icon";
 
 export const metadata: Metadata = pageMetadata({
   title: "A specialist, quality education, rooted in faith",
@@ -25,6 +26,17 @@ const defaultPillars = [
   { title: "Faith at the centre of the day", body: "Qur'an, Arabic and Islamic Studies are timetabled lessons at every key stage, with prayer built into the school day." },
   { title: "Live lessons, small classes", body: "Real-time lessons with qualified teachers and no more than 15 pupils in a class, so every child is known." },
   { title: "Character as well as grades", body: "Our six Tarbiyyah Compass values are taught by name and recognised in every class, so akhlaq grows alongside attainment." },
+];
+
+const PILLAR_ICONS: IconName[] = ["bookOpenCheck", "users", "award", "heartHandshake"];
+
+// Plain facts already stated on the site (never invented figures), shown as a band under the hero.
+const FACTS: { icon: IconName; label: string }[] = [
+  { icon: "graduationCap", label: "Year 1 to Year 11" },
+  { icon: "users", label: "Classes of up to 15" },
+  { icon: "monitor", label: "Live, timetabled lessons" },
+  { icon: "bookOpen", label: "Qur'an, Arabic and Islamic Studies" },
+  { icon: "globe", label: "Wherever home is" },
 ];
 
 const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
@@ -50,14 +62,17 @@ export default async function HomePage() {
     <>
       {/* HERO */}
       <section className="geo-texture relative overflow-hidden bg-cream">
-        <Container className="grid gap-12 py-14 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-16 lg:py-20">
+        {/* Large, very faint brand star behind the hero (decorative). */}
+        <StarMark className="hero-star pointer-events-none absolute -right-24 -top-24 h-[34rem] w-[34rem] text-gold-300/40 sm:-right-16" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-100/70 blur-3xl" />
+        <Container className="relative grid gap-12 py-14 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-16 lg:py-20">
           <div>
             <Kicker>{content.heroKicker || "An online school for homeschooling families"}</Kicker>
             {content.heroHeading ? (
               <h1 className="text-display font-serif font-semibold text-ink">{content.heroHeading}</h1>
             ) : (
               <h1 className="text-display font-serif font-semibold text-ink">
-                A specialist, quality education, <span className="text-gold-700">wherever home is.</span>
+                A specialist, quality education, <span className="accent-swash text-gold-700">wherever home is.</span>
               </h1>
             )}
             {content.heroBody ? (
@@ -92,7 +107,7 @@ export default async function HomePage() {
           {/* Key dates, instead of a stock photo: the thing a family deciding
               now actually needs to know. Same list as the admissions page. */}
           <aside aria-labelledby="key-dates-heading" className="relative mx-auto w-full max-w-md lg:mr-0">
-            <div className="rounded-3xl border border-gold-light/70 bg-white p-6 shadow-warm sm:p-8">
+            <div className="foil-top relative rounded-3xl border border-gold-light/70 bg-white p-6 shadow-warm sm:p-8">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-700">
                 <StarMark className="h-3.5 w-3.5" />
                 <h2 id="key-dates-heading">Key dates</h2>
@@ -107,24 +122,43 @@ export default async function HomePage() {
                 ))}
               </ol>
               <Link href="/open-evening" className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-gold-700 hover:text-gold-900">
-                Book an open evening <span aria-hidden="true">→</span>
+                Book an open evening <Icon name="arrowRight" size="sm" className="h-4 w-4" />
               </Link>
             </div>
           </aside>
         </Container>
       </section>
 
-      {/* THREE PILLARS */}
-      <section className="section-pad">
+      {/* FACTS BAND */}
+      <section aria-label="At a glance" className="border-y border-gold-light/50 bg-gold-50">
         <Container>
-          <Kicker>Why Tarbiyyah Global Academy</Kicker>
-          <h2 className="text-h2 max-w-2xl font-serif font-semibold text-ink">A real school day, built around faith and character.</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-5 text-sm font-semibold text-ink/80">
+            {FACTS.map((f) => (
+              <li key={f.label} className="flex items-center gap-2">
+                <Icon name={f.icon} size="sm" className="h-4 w-4 text-gold-700" />
+                {f.label}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* THREE PILLARS, on ink, so the page has rhythm between light and dark. */}
+      <section className="geo-texture-dark relative overflow-hidden bg-ink-900 section-pad text-cream">
+        <Container>
+          <Kicker tone="light">Why Tarbiyyah Global Academy</Kicker>
+          <h2 className="reveal text-h2 max-w-2xl font-serif font-semibold text-white">A real school day, built around faith and character.</h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
             {pillars.map((p, i) => (
-              <div key={p.title} className="rounded-2xl border border-gold-light/50 bg-white p-6">
-                <span aria-hidden="true" className="font-serif text-sm font-semibold text-gold-500">0{i + 1}</span>
-                <h3 className="mt-2 font-serif text-lg font-semibold text-ink">{p.title}</h3>
-                <p className="mt-2 text-sm text-ink/70">{p.body}</p>
+              <div key={p.title} className="reveal group relative rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-gold-300/50 hover:bg-white/[0.07]">
+                <div className="flex items-center justify-between">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-300/40 bg-gold-300/10 text-gold-300">
+                    <Icon name={PILLAR_ICONS[i % PILLAR_ICONS.length]} />
+                  </span>
+                  <span aria-hidden="true" className="font-serif text-3xl font-semibold text-white/15 transition-colors group-hover:text-gold-300/40">0{i + 1}</span>
+                </div>
+                <h3 className="mt-5 font-serif text-lg font-semibold text-white">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/80">{p.body}</p>
               </div>
             ))}
           </div>
@@ -132,8 +166,7 @@ export default async function HomePage() {
       </section>
 
       {/* STAGES OF SCHOOL */}
-      {/* Shares the pillars section's background, so it takes only bottom padding (no double gap). */}
-      <section className="pb-14 sm:pb-20 lg:pb-24">
+      <section className="section-pad">
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div>
             <Kicker>Curriculum</Kicker>
@@ -148,10 +181,11 @@ export default async function HomePage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {keyStages.map((ks) => (
-              <Link key={ks.slug} href={`/curriculum/${ks.slug}`} className="rounded-2xl border border-gold-light/50 bg-white p-5 shadow-sm transition hover:border-gold-500 hover:shadow-md">
+              <Link key={ks.slug} href={`/curriculum/${ks.slug}`} className="card-lift reveal group relative rounded-2xl border border-gold-light/50 bg-white p-5">
                 <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">{ks.title}</p>
                 <p className="mt-1 font-serif text-lg font-semibold text-gold-700">{ks.range}</p>
                 <p className="mt-1.5 text-sm text-ink/70">{lessonsAWeek(ks)}</p>
+                <Icon name="arrowRight" size="sm" className="absolute right-5 top-5 h-4 w-4 text-gold-500 transition-transform group-hover:translate-x-1" />
               </Link>
             ))}
           </div>
@@ -169,7 +203,7 @@ export default async function HomePage() {
           <p className="mt-3 max-w-2xl text-ink/75">From the online form to your child&apos;s first lesson, you always know what happens next and whose turn it is.</p>
           <AdmissionsProcessFlow steps={processSteps} />
           {/* Fees sit with admissions (one block, one pair of buttons) rather than as a separate band. */}
-          <div className="mt-10 flex flex-col gap-5 rounded-2xl border border-gold-light/60 bg-white p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
+          <div className="foil-top reveal relative mt-10 flex flex-col gap-5 overflow-hidden rounded-2xl border border-gold-light/60 bg-white p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
               <h3 className="font-serif text-xl font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h3>
               <p className="mt-2 text-ink/75">{content.feeTeaserBody || 'Every fee is published on our website, nothing shared only "on enquiry." Annual, two-payment and monthly plans are available for every year group.'}</p>

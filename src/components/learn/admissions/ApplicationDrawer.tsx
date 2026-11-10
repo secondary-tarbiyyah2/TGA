@@ -210,6 +210,11 @@ export function ApplicationDrawer({
                   <Row label="Email"><a href={`mailto:${app.parent_email}`} className="text-teal-700 underline">{app.parent_email}</a></Row>
                   <Row label="Phone">{app.parent_phone}</Row>
                   <Row label="Pupil's home address">{addressBlock(app)}</Row>
+                  <Row label="Local council">{app.local_authority}</Row>
+                  <Row label="Lived in the UK">{app.lived_in_uk == null ? null : app.lived_in_uk ? "Yes" : "No"}</Row>
+                  <Row label="Last UK address">{[app.last_uk_address, app.last_uk_postcode].filter(Boolean).join(", ") || null}</Row>
+                  <Row label="Council for last UK address">{app.last_uk_local_authority}</Row>
+                  <Row label="British citizen">{app.british_national == null ? null : app.british_national ? "Yes" : "No"}</Row>
                   <Row label="Current school">{app.current_school}</Row>
                   <Row label="Current year">{app.current_school_year}</Row>
                   <Row label="Previous Islamic education">{app.previous_islamic_education}</Row>

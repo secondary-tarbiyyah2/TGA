@@ -395,6 +395,7 @@ export function ApplicationsTab() {
     const cols = [
       "reference", "status", "created_at", "parent_name", "parent_email", "parent_phone", "relationship", "address",
       "address_line1", "address_line2", "address_town", "address_postcode", "address_country",
+      "local_authority", "lived_in_uk", "last_uk_postcode", "last_uk_address", "last_uk_local_authority", "british_national",
       "child_first_name", "child_last_name", "child_dob", "child_gender", "year_group_applying", "preferred_start",
       "current_school", "current_school_year", "previous_islamic_education", "send_or_medical_notes", "how_heard",
       "sibling_at_tarbiyyah", "sibling_details", "consent_contact", "consent_data", "declaration_name", "notes",

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "./Container";
+import { Icon } from "@/components/learn/Icon";
 
 type Related = { href: string; label: string; body: string };
 
@@ -68,8 +69,11 @@ export function RelatedLinks() {
         <ul className="mt-4 grid gap-3 sm:grid-cols-3">
           {links.map((l) => (
             <li key={l.href}>
-              <Link href={l.href} className="block h-full rounded-2xl border border-gold-light/50 bg-white p-4 transition-colors hover:border-gold-500">
-                <span className="block font-serif font-semibold text-ink">{l.label} <span aria-hidden="true" className="text-gold-700">→</span></span>
+              <Link href={l.href} className="card-lift group flex h-full flex-col rounded-2xl border border-gold-light/50 bg-white p-4">
+                <span className="flex items-center justify-between gap-2 font-serif font-semibold text-ink">
+                  {l.label}
+                  <Icon name="arrowRight" size="sm" className="h-4 w-4 text-gold-700 transition-transform group-hover:translate-x-1" />
+                </span>
                 <span className="mt-1 block text-sm text-ink/65">{l.body}</span>
               </Link>
             </li>
