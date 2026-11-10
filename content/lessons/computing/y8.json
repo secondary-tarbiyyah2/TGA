@@ -2753,6 +2753,1006 @@
           "for": "hook"
         }
       ]
+    },
+    {
+      "unit": "Summer 1: Python, first steps",
+      "n": 15,
+      "title": "From Scratch to text: print, input and variables",
+      "duration": 50,
+      "bigQuestion": "Scratch uses blocks you drag. Why do professional programmers mostly type code instead?",
+      "objectives": [
+        "To understand how Python uses print, input and variables to interact with a user"
+      ],
+      "successCriteria": [
+        "All: write a program that prints a message",
+        "Most: store input in a variable and print it back",
+        "Some: join strings and explain why input gives text"
+      ],
+      "smsc": "Moral: precision and patience when coding",
+      "keywords": [
+        {
+          "term": "print()",
+          "def": "shows output on the screen"
+        },
+        {
+          "term": "input()",
+          "def": "asks the user to type something"
+        },
+        {
+          "term": "variable",
+          "def": "a named store for data"
+        },
+        {
+          "term": "string",
+          "def": "text data, in quotes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Scratch uses blocks you drag. Why do professional programmers mostly type code instead?",
+        "a": "Typed code is faster to write, more precise and powerful for big programs."
+      },
+      "starter": [
+        {
+          "q": "A variable in Scratch ...",
+          "a": "stores a value that can change",
+          "mins": 1,
+          "options": [
+            "stores a value that can change",
+            "is a sprite"
+          ]
+        },
+        {
+          "q": "What does a loop do?",
+          "a": "Repeats instructions.",
+          "mins": 1
+        },
+        {
+          "q": "Selection means ...",
+          "a": "choosing what to do with IF",
+          "mins": 1,
+          "options": [
+            "choosing what to do with IF",
+            "deleting"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Scratch to Python",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Scratch",
+              "points": [
+                "say [Hello]",
+                "ask [Name?] and wait"
+              ]
+            },
+            "right": {
+              "title": "Python",
+              "points": [
+                "print(\"Hello\")",
+                "name = input(\"Name? \")"
+              ]
+            },
+            "label": "same idea"
+          }
+        },
+        {
+          "heading": "A first program",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "name = input(\"What is your name? \")\nprint(\"Assalamu alaykum, \" + name)",
+            "output": "What is your name? Amina\nAssalamu alaykum, Amina"
+          }
+        },
+        {
+          "heading": "Common mistakes",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "print(Hello) without quotes, or Print with a capital P",
+            "right": "print(\"Hello\"): lower case, text in quotes, brackets closed"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "What does input() return?",
+            "options": [
+              "A string (text)",
+              "A number always",
+              "Nothing"
+            ],
+            "answer": 0,
+            "why": "Input is always text."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix the bug: Print(\"Hi)",
+          "a": "print(\"Hi\"): lower-case p and a closing quote.",
+          "mins": 4,
+          "model": "I do: print(\"Salam) has a missing quote: print(\"Salam\")."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a program that asks for a name and a favourite subject and prints a sentence using both; save the link to the portal.",
+          "a": "Correct input, variables and joined output.",
+          "mins": 15,
+          "model": "The teacher writes the name part live."
+        },
+        {
+          "q": "Extend: ask for a city and print a three-line welcome.",
+          "a": "Three print lines using variables.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Text in Python goes inside ...",
+          "a": "quotes",
+          "mins": 1,
+          "options": [
+            "quotes",
+            "square brackets only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Scratch uses blocks you drag. Why do professional programmers mostly type code instead?",
+          "a": "Typed code is faster to write, more precise and powerful for big programs.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a program at home that asks a family member's name and greets them.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (Python begins; no secondary scheme of work supplied)",
+        "A free browser Python editor (for example Trinket or replit through the school; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Python code on screen",
+          "alt": "Python code",
+          "for": "teach:2"
+        },
+        {
+          "find": "Scratch blocks",
+          "alt": "Scratch blocks",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Python, first steps",
+      "n": 16,
+      "title": "Numbers and calculations; data types",
+      "duration": 50,
+      "bigQuestion": "Why does Python give '55' for \"5\" + \"5\" but 10 for 5 + 5?",
+      "objectives": [
+        "To understand Python's main data types and how to calculate with numbers from input"
+      ],
+      "successCriteria": [
+        "All: name integer, float and string",
+        "Most: convert input with int() and calculate",
+        "Some: use // and % and explain the results"
+      ],
+      "crossCurricular": "Maths: division with remainders",
+      "smsc": "Moral: accuracy matters",
+      "keywords": [
+        {
+          "term": "integer",
+          "def": "a whole number"
+        },
+        {
+          "term": "float",
+          "def": "a number with a decimal point"
+        },
+        {
+          "term": "casting",
+          "def": "changing a value to another data type, like int()"
+        },
+        {
+          "term": "operator",
+          "def": "a symbol that does a calculation, like + or *"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why does Python give '55' for \"5\" + \"5\" but 10 for 5 + 5?",
+        "a": "\"5\" is text, so + joins it; 5 is a number, so + adds."
+      },
+      "starter": [
+        {
+          "q": "input() returns ...",
+          "a": "a string",
+          "mins": 1,
+          "options": [
+            "a string",
+            "an integer"
+          ]
+        },
+        {
+          "q": "Write code to print 'Salam'.",
+          "a": "print(\"Salam\")",
+          "mins": 1
+        },
+        {
+          "q": "A variable ...",
+          "a": "stores data",
+          "mins": 1,
+          "options": [
+            "stores data",
+            "prints"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Data types",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Type",
+              "Example",
+              "Use"
+            ],
+            "rows": [
+              [
+                "int",
+                "7",
+                "Counting"
+              ],
+              [
+                "float",
+                "3.5",
+                "Measurements"
+              ],
+              [
+                "str",
+                "\"Hello\"",
+                "Text"
+              ],
+              [
+                "bool",
+                "True",
+                "Yes or no"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Operators",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Operator",
+              "Example",
+              "Result"
+            ],
+            "rows": [
+              [
+                "+",
+                "7 + 2",
+                "9"
+              ],
+              [
+                "*",
+                "7 * 2",
+                "14"
+              ],
+              [
+                "/",
+                "7 / 2",
+                "3.5"
+              ],
+              [
+                "//",
+                "7 // 2",
+                "3"
+              ],
+              [
+                "%",
+                "7 % 2",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Casting input",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "a = int(input(\"First number: \"))\nb = int(input(\"Second number: \"))\nprint(\"Total:\", a + b)",
+            "output": "First number: 4\nSecond number: 9\nTotal: 13"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "What does 17 % 5 give?",
+            "options": [
+              "2",
+              "3",
+              "3.4"
+            ],
+            "answer": 0,
+            "why": "17 = 3 × 5 + 2: remainder 2."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is 20 // 6 and 20 % 6?",
+          "a": "3 and 2.",
+          "mins": 4,
+          "model": "I do: 14 // 4 = 3 (whole times), 14 % 4 = 2 (remainder)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a 'share the dates' program: input the number of dates and people; print how many each gets and how many are left over; save to the portal.",
+          "a": "Uses int(), // and % correctly.",
+          "mins": 15,
+          "model": "The teacher writes the input lines."
+        },
+        {
+          "q": "Extend: calculate the zakah on an amount of savings (2.5%) with a float.",
+          "a": "amount * 0.025 printed.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "int(\"8\") gives ...",
+          "a": "the integer 8",
+          "mins": 1,
+          "options": [
+            "the integer 8",
+            "the string '8'"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why does Python give '55' for \"5\" + \"5\" but 10 for 5 + 5?",
+          "a": "\"5\" is text, so + joins it; 5 is a number, so + adds.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a program that converts minutes to hours and minutes using // and %.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (Python begins; no secondary scheme of work supplied)",
+        "A free browser Python editor (for example Trinket or replit through the school; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Calculator",
+          "alt": "Calculations",
+          "for": "hook"
+        },
+        {
+          "find": "Box of dates",
+          "alt": "Sharing dates",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Python, first steps",
+      "n": 17,
+      "title": "Selection: if, elif, else",
+      "duration": 50,
+      "bigQuestion": "How does a quiz app know whether your answer is right?",
+      "objectives": [
+        "To understand how programs make decisions with if, elif and else and comparison operators"
+      ],
+      "successCriteria": [
+        "All: write an if statement with correct indentation",
+        "Most: use elif and else for three outcomes",
+        "Some: combine conditions with and/or"
+      ],
+      "smsc": "Moral: fairness in rules",
+      "keywords": [
+        {
+          "term": "condition",
+          "def": "a test that is True or False"
+        },
+        {
+          "term": "selection",
+          "def": "choosing a path with if"
+        },
+        {
+          "term": "indentation",
+          "def": "spaces at the start of a line that show which code belongs to the if"
+        },
+        {
+          "term": "comparison operator",
+          "def": "==, !=, <, >, <=, >="
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How does a quiz app know whether your answer is right?",
+        "a": "It compares your answer with the correct one using a condition, then chooses what to show."
+      },
+      "starter": [
+        {
+          "q": "17 // 5 = ...",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "2"
+          ]
+        },
+        {
+          "q": "What does % give?",
+          "a": "The remainder.",
+          "mins": 1
+        },
+        {
+          "q": "int() converts to ...",
+          "a": "a whole number",
+          "mins": 1,
+          "options": [
+            "a whole number",
+            "text"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "If, elif, else",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "score = int(input(\"Score out of 10: \"))\nif score >= 8:\n    print(\"Excellent, mashaAllah!\")\nelif score >= 5:\n    print(\"Good, keep going\")\nelse:\n    print(\"Let's revise together\")",
+            "output": "Score out of 10: 6\nGood, keep going"
+          }
+        },
+        {
+          "heading": "Comparisons",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Operator",
+              "Means"
+            ],
+            "rows": [
+              [
+                "==",
+                "equal to"
+              ],
+              [
+                "!=",
+                "not equal to"
+              ],
+              [
+                "> <",
+                "greater, less than"
+              ],
+              [
+                ">= <=",
+                "greater or equal, less or equal"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistakes",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "if score = 8: and no indentation",
+            "right": "if score == 8: then indent the next line by 4 spaces"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "What prints if score is 8?",
+            "options": [
+              "Excellent, mashaAllah!",
+              "Good, keep going",
+              "Both"
+            ],
+            "answer": 0,
+            "why": "The first true branch runs."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix: if age > 12 print(\"Teen\")",
+          "a": "if age > 12:\n    print(\"Teen\")",
+          "mins": 4,
+          "model": "I do: add the colon and indent the print by 4 spaces."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a quiz with three questions; each uses if/else to say right or wrong and keeps a score; save to the portal.",
+          "a": "Three working questions and a final score.",
+          "mins": 15,
+          "model": "The teacher writes question 1."
+        },
+        {
+          "q": "Extend: give a grade with if/elif/else at the end.",
+          "a": "Correct grade bands.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "== means ...",
+          "a": "equal to",
+          "mins": 1,
+          "options": [
+            "equal to",
+            "store a value"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How does a quiz app know whether your answer is right?",
+          "a": "It compares your answer with the correct one using a condition, then chooses what to show.",
+          "mins": 2
+        }
+      ],
+      "homework": "Add one more question to your quiz and test it with family.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (Python begins; no secondary scheme of work supplied)",
+        "A free browser Python editor (for example Trinket or replit through the school; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Road junction fork",
+          "alt": "A decision point",
+          "for": "hook"
+        },
+        {
+          "find": "Quiz question mark",
+          "alt": "A quiz",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Python, first steps",
+      "n": 18,
+      "title": "Loops: for and while",
+      "duration": 50,
+      "bigQuestion": "Dhikr after salah: 33 times SubhanAllah. How would a program count to 33?",
+      "objectives": [
+        "To understand how for and while loops repeat code and when to use each"
+      ],
+      "successCriteria": [
+        "All: write a for loop with range",
+        "Most: write a while loop that stops on a condition",
+        "Some: choose the right loop and explain why"
+      ],
+      "crossCurricular": "Maths: sequences",
+      "smsc": "Spiritual: link to counting dhikr",
+      "keywords": [
+        {
+          "term": "iteration",
+          "def": "repeating steps"
+        },
+        {
+          "term": "for loop",
+          "def": "repeats a set number of times"
+        },
+        {
+          "term": "while loop",
+          "def": "repeats while a condition is True"
+        },
+        {
+          "term": "range()",
+          "def": "makes a sequence of numbers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Dhikr after salah: 33 times SubhanAllah. How would a program count to 33?",
+        "a": "With a for loop: for i in range(33)."
+      },
+      "starter": [
+        {
+          "q": "elif means ...",
+          "a": "else if",
+          "mins": 1,
+          "options": [
+            "else if",
+            "end"
+          ]
+        },
+        {
+          "q": "Write a comparison for 'x is not 5'.",
+          "a": "x != 5",
+          "mins": 1
+        },
+        {
+          "q": "Indentation shows ...",
+          "a": "which code belongs to the if",
+          "mins": 1,
+          "options": [
+            "which code belongs to the if",
+            "comments"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "For loops",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "for i in range(1, 4):\n    print(\"SubhanAllah\", i)",
+            "output": "SubhanAllah 1\nSubhanAllah 2\nSubhanAllah 3"
+          }
+        },
+        {
+          "heading": "While loops",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "password = \"\"\nwhile password != \"salam123\":\n    password = input(\"Password: \")\nprint(\"Welcome!\")",
+            "output": "Keeps asking until the right password is typed"
+          }
+        },
+        {
+          "heading": "Which loop?",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Task",
+              "Loop"
+            ],
+            "rows": [
+              [
+                "Print 10 times",
+                "for"
+              ],
+              [
+                "Ask until the answer is right",
+                "while"
+              ],
+              [
+                "Go through a list",
+                "for"
+              ],
+              [
+                "Game runs until lives = 0",
+                "while"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "range(1, 4) gives ...",
+            "options": [
+              "1, 2, 3",
+              "1, 2, 3, 4",
+              "0, 1, 2, 3"
+            ],
+            "answer": 0,
+            "why": "The end value is not included."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a loop that prints the 7 times table up to 7 × 10.",
+          "a": "for i in range(1, 11):\n    print(7 * i)",
+          "mins": 4,
+          "model": "I do: for i in range(1, 6): print(2 * i) gives 2, 4, 6, 8, 10."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a times-table tester: a for loop asks five questions, counts correct answers; a while loop keeps the program running until the user types 'stop'; save to the portal.",
+          "a": "Both loops work; score counted.",
+          "mins": 15,
+          "model": "The teacher writes the for loop."
+        },
+        {
+          "q": "Extend: count down from 10 to 1 with range(10, 0, -1).",
+          "a": "Countdown printed.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Best loop for 'repeat until the answer is right' is ...",
+          "a": "while",
+          "mins": 1,
+          "options": [
+            "while",
+            "for"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Dhikr after salah: 33 times SubhanAllah. How would a program count to 33?",
+          "a": "With a for loop: for i in range(33).",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a loop that prints SubhanAllah 33 times with the count.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (Python begins; no secondary scheme of work supplied)",
+        "A free browser Python editor (for example Trinket or replit through the school; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Tasbih prayer beads",
+          "alt": "Prayer beads: counting",
+          "for": "hook"
+        },
+        {
+          "find": "Circular arrows loop",
+          "alt": "A loop",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Python, first steps",
+      "n": 19,
+      "title": "Combining it all: a number guessing game",
+      "duration": 50,
+      "bigQuestion": "How could a game be made fair so the computer can't 'cheat'?",
+      "objectives": [
+        "To understand how to plan, build, test and debug a small program that combines input, selection and loops"
+      ],
+      "successCriteria": [
+        "All: build a guessing game that gives higher or lower hints",
+        "Most: count the guesses and end the game correctly",
+        "Some: test with normal, boundary and invalid data and fix bugs"
+      ],
+      "smsc": "Moral: fairness and perseverance in problem solving",
+      "keywords": [
+        {
+          "term": "random",
+          "def": "a module that picks unpredictable numbers"
+        },
+        {
+          "term": "debug",
+          "def": "find and fix errors"
+        },
+        {
+          "term": "test data",
+          "def": "values used to check a program works"
+        },
+        {
+          "term": "boundary",
+          "def": "a value at the edge of what's allowed"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How could a game be made fair so the computer can't 'cheat'?",
+        "a": "It picks a random number at the start and the rules are the same for every player."
+      },
+      "starter": [
+        {
+          "q": "range(1, 4) gives ...",
+          "a": "1, 2, 3",
+          "mins": 1,
+          "options": [
+            "1, 2, 3",
+            "1 to 4"
+          ]
+        },
+        {
+          "q": "Write a for loop that runs 5 times.",
+          "a": "for i in range(5):",
+          "mins": 1
+        },
+        {
+          "q": "A while loop repeats ...",
+          "a": "while a condition is True",
+          "mins": 1,
+          "options": [
+            "while a condition is True",
+            "forever always"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The plan",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Pick a random number 1 to 20",
+            "Ask for a guess",
+            "Say higher or lower",
+            "Repeat until correct",
+            "Show the number of guesses"
+          ]
+        },
+        {
+          "heading": "The code",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "import random\nsecret = random.randint(1, 20)\nguesses = 0\nguess = 0\nwhile guess != secret:\n    guess = int(input(\"Guess 1 to 20: \"))\n    guesses = guesses + 1\n    if guess < secret:\n        print(\"Higher\")\n    elif guess > secret:\n        print(\"Lower\")\nprint(\"Correct in\", guesses, \"guesses\")",
+            "output": "Hints until the guess is correct, then the count"
+          }
+        },
+        {
+          "heading": "Test plan",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Test",
+              "Input",
+              "Expected"
+            ],
+            "rows": [
+              [
+                "Normal",
+                "10",
+                "Higher or Lower or Correct"
+              ],
+              [
+                "Boundary",
+                "1 and 20",
+                "Accepted"
+              ],
+              [
+                "Invalid",
+                "abc",
+                "Error: we will add validation later"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "random.randint(1, 20) can return ...",
+            "options": [
+              "any whole number from 1 to 20",
+              "only 1 to 19",
+              "a decimal"
+            ],
+            "answer": 0,
+            "why": "randint includes both ends."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What prints if the secret is 12 and you guess 15?",
+          "a": "Lower",
+          "mins": 4,
+          "model": "I do: guess 8 with secret 12 prints 'Higher'."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build and test the guessing game; complete the test plan with real results; save the code and the plan to the portal (short programming task).",
+          "a": "A working game and a completed test plan.",
+          "mins": 15,
+          "model": "The teacher codes the first four lines."
+        },
+        {
+          "q": "Extend: limit the player to 5 guesses with 'and' in the while condition.",
+          "a": "while guess != secret and guesses < 5:",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Testing with 1 and 20 checks ...",
+          "a": "boundary values",
+          "mins": 1,
+          "options": [
+            "boundary values",
+            "invalid values"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How could a game be made fair so the computer can't 'cheat'?",
+          "a": "It picks a random number at the start and the rules are the same for every player.",
+          "mins": 2
+        }
+      ],
+      "homework": "Play your game with a family member and fix one improvement they suggest.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (Python begins; no secondary scheme of work supplied)",
+        "A free browser Python editor (for example Trinket or replit through the school; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Short programming task rubric (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Dice",
+          "alt": "Randomness",
+          "for": "hook"
+        },
+        {
+          "find": "Bug magnifying glass code",
+          "alt": "Debugging",
+          "for": "teach:3"
+        }
+      ]
     }
   ]
 }
