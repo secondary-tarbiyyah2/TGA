@@ -7,7 +7,7 @@
 --     anon (cannot be read back), quiz_leads cannot exist without both an
 --     email and consent
 begin;
-select plan(17);
+select plan(18);
 
 insert into auth.users (id, email) values
   ('e1000000-0000-0000-0000-000000000001', 'ht@example.com'),
@@ -140,14 +140,14 @@ select is((select count(*)::int from public.quiz_config_versions), 1, 'anon read
 select is((select label from public.quiz_config_versions limit 1), 'TEST live copy', 'anon sees only the published version''s content');
 reset role;
 
--- ── quiz_sessions/quiz_events: anon can insert (start a quiz) but never
--- read anything back — no personal data exists on these tables at all. ──
+-- ── quiz_sessions/quiz_events: no longer writable by anon (0198; the
+-- site never used them) and never readable back. ──
 set local role anon;
-insert into public.quiz_sessions (id, session_token, year_group_id) values
-  ('f1000000-0000-0000-0000-000000000010', 'test-token-abc', 'f1000000-0000-0000-0000-000000000002');
-select is((select count(*)::int from public.quiz_sessions), 0, 'anon cannot read back any quiz_sessions row, including their own');
-insert into public.quiz_events (session_id, event_type, step_index) values
-  ('f1000000-0000-0000-0000-000000000010', 'started', 0);
+select throws_ok(
+  $$ insert into public.quiz_sessions (id, session_token, year_group_id) values ('f1000000-0000-0000-0000-000000000010', 'test-token-abc', 'f1000000-0000-0000-0000-000000000002') $$,
+  '42501', null, 'anon can no longer write quiz_sessions (0198)'
+);
+select is((select count(*)::int from public.quiz_sessions), 0, 'anon cannot read any quiz_sessions row');
 
 -- ── quiz_leads: cannot be inserted without a real email + consent —
 -- enforced at the schema level (not null / check constraints), matching
