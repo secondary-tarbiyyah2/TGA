@@ -257,83 +257,246 @@
       "send": "SEND/EAL: audio of the correct sound and picture of mouth position. Stretch: write a short note on why accuracy is a sign of respect."
     },
     {
-      "unit": "Unit 2: Idgham and the family of madd",
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
       "n": 4,
-      "title": "Idgham: joining the noon",
+      "title": "Idgham with ghunnah: merging the noon into ي ن م و",
       "duration": 45,
+      "bigQuestion": "When two friends hold hands and walk as one, are they still two people? What happens to a noon when it 'holds hands' with the next letter?",
       "objectives": [
-        "Name the four idgham letters (yanmu)",
-        "Join noon sakinah or tanween to the next letter",
-        "Know which letters take ghunnah"
+        "To understand how noon sakinah and tanween merge with a humming sound into the letters of يَنْمُو"
       ],
+      "successCriteria": [
+        "All: name the four letters of idgham with ghunnah",
+        "Most: read idgham with a two-count hum",
+        "Some: explain why the noon is not written with a sukoon there"
+      ],
+      "smsc": "Social: we merge together kindly in our class like the letters, listening and taking turns",
       "keywords": [
         {
-          "term": "idgham",
-          "def": "joining one letter into the next"
+          "term": "idgham (إدغام)",
+          "def": "merging the noon into the next letter"
         },
         {
-          "term": "yanmu",
-          "def": "ي ن م و: the idgham letters with ghunnah"
+          "term": "ghunnah (غنة)",
+          "def": "a humming sound from the nose, held for two counts"
+        },
+        {
+          "term": "tanween (تنوين)",
+          "def": "a double vowel at the end of a word that sounds like an extra noon"
+        },
+        {
+          "term": "yanmu (ينمو)",
+          "def": "the four letters of idgham with ghunnah: ي ن م و"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "When two friends hold hands and walk as one, are they still two people? What happens to a noon when it 'holds hands' with the next letter?",
+        "a": "The noon joins into the next letter and disappears into it, but leaves a two-count hum: idgham with ghunnah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17). Rules like idgham make the recitation flow smoothly.",
+        "at": "start"
+      },
       "starter": [
-        "Name the rules of noon sakinah so far.",
-        "Which letters cause izhar?",
-        "Which causes iqlab?"
+        {
+          "q": "Izhar happens before ...",
+          "a": "the six throat letters",
+          "mins": 1,
+          "options": [
+            "the six throat letters",
+            "the letter baa",
+            "the letter laam"
+          ]
+        },
+        {
+          "q": "Al-Qadr 97:5: «سَلَٰمٌ هِىَ ...» Which word comes next?",
+          "a": "حَتَّىٰ",
+          "mins": 1,
+          "options": [
+            "هِىَ",
+            "مِّنْ",
+            "حَتَّىٰ"
+          ]
+        },
+        {
+          "q": "Which word is izhar?",
+          "a": "مِنْ عَلَقٍ",
+          "mins": 1,
+          "options": [
+            "مِنْ عَلَقٍ",
+            "مِن كُلِّ",
+            "أَنزَلْنَٰهُ"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Idgham means joining",
+          "heading": "Idgham: merging",
           "bullets": [
-            "Idgham means to merge",
-            "Noon sakinah or tanween joins the next letter",
-            "Six letters cause idgham"
+            "Idgham letters: ي ر م ل و ن",
+            "Remember them as يَرْمَلُونَ",
+            "Two kinds: with and without ghunnah"
           ],
-          "note": "Show the full table: izhar (6 letters), iqlab (1), ikhfa (15), idgham (6) = 28 letters. Notice 6 + 1 + 15 + 6 = 28. Ask pupils to check the total."
+          "note": "Bismillah. Idgham means to merge one letter into the next. It only happens across two words (except a few words we learn later)."
         },
         {
-          "heading": "With ghunnah",
-          "bullets": [
-            "ي  ن  م  و (yanmu)",
-            "Join and hum for two counts",
-            "مَن يَقُولُ  (Al-Baqarah 2:8)"
-          ],
-          "note": "Cite مَن يَقُولُ (2:8). The noon disappears into the yaa and the yaa is said with a shaddah and a hum. Model it slowly and ask pupils to copy."
+          "heading": "With ghunnah: يَنْمُو",
+          "bullets": [],
+          "note": "Four letters: ي ن م و. The noon disappears into the letter and we hum for two counts.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "خَيْرٌۭ مِّنْ",
+                "Al-Qadr 97:3",
+                "Idgham with ghunnah: م",
+                "khayrum-min, hum two counts"
+              ],
+              [
+                "مِّن مَّسَدٍۭ",
+                "Al-Masad 111:5",
+                "Idgham with ghunnah: م",
+                "mim-masad, hum two counts"
+              ],
+              [
+                "لَهَبٍۢ وَتَبَّ",
+                "Al-Masad 111:1",
+                "Idgham with ghunnah: و",
+                "lahabiw-wa tabb, nasal waw"
+              ],
+              [
+                "فَمَن يَعْمَلْ",
+                "Az-Zalzalah 99:7",
+                "Idgham with ghunnah: ي",
+                "famay-ya'mal, hum two counts"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Without ghunnah",
+          "heading": "How do I know? Look at the mushaf",
           "bullets": [
-            "ل  ر",
-            "Join with no humming",
-            "مِّن رَّبِّهِمْ  /  هُدًى لِّلْمُتَّقِينَ"
+            "No sukoon on the noon",
+            "Shaddah on the next letter",
+            "Tanween written one above the other, slanted"
           ],
-          "note": "Cite 2:5 مِّن رَّبِّهِمْ and 2:2 هُدًى لِّلْمُتَّقِينَ. The noon is replaced by the next letter fully. Misconception: adding a hum to laam and raa."
+          "note": "Show مِّن مَّسَدٍ in the mushaf: no sukoon on the noon, a shaddah on the meem. The mushaf shows us the rule."
         },
         {
-          "heading": "An exception",
-          "bullets": [
-            "Noon + yaa or waaw in the SAME word: izhar",
-            "الدُّنْيَا  - clear noon",
-            "The rule only works across two words"
-          ],
-          "note": "Teach: idgham needs two words. In الدُّنْيَا the noon and yaa are in one word, so the noon stays clear. Other classic examples exist but this one is enough for Year 3."
+          "heading": "Listen and repeat: two-count hum",
+          "bullets": [],
+          "note": "Show two fingers for the two counts. Pupils unmute in turn and repeat each example.",
+          "cycle": [
+            "Teacher reads one example",
+            "Class shows two fingers for the hum",
+            "Three pupils repeat in turn",
+            "Teacher checks the hum",
+            "Next example"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«مِّن مَّسَدٍ»: the noon meets meem (م). How do we read it?",
+            "options": [
+              "Merge into the meem with a two-count hum",
+              "Say the noon clearly",
+              "Change it into baa"
+            ],
+            "answer": 0,
+            "why": "Meem is one of يَنْمُو, so it is idgham with ghunnah. Clear noon is for throat letters; nothing changes into baa."
+          }
         }
       ],
       "practice": [
-        "List the idgham letters with ghunnah.",
-        "Read مِّن رَّبِّهِمْ. With or without ghunnah?"
+        {
+          "q": "Read «حَبْلٌ مِّن مَّسَدٍ» (111:5). How many idgham with ghunnah can you hear?",
+          "a": "Two: حَبْلٌۭ مِّن (tanween into meem) and مِّن مَّسَدٍ (noon into meem).",
+          "mins": 3,
+          "model": "I do: حَبْلٌ has tanween, next letter م: idgham with ghunnah. Then مِّن, next letter م again: idgham with ghunnah. I read: hablum-mim-masad, humming two counts twice."
+        },
+        {
+          "q": "Which letter is NOT in يَنْمُو?",
+          "a": "ر",
+          "mins": 1,
+          "options": [
+            "ر",
+            "ي",
+            "و"
+          ]
+        }
       ],
       "independent": [
-        "Sort 10 phrases into the four noon sakinah rules",
-        "Read with idgham: مَن يَقُولُ, مِّن رَّبِّهِمْ, هُدًى لِّلْمُتَّقِينَ",
-        "Partner quiz: which letters give ghunnah?"
+        {
+          "q": "On the pupil PDF, colour every idgham with ghunnah in Al-Bayyinah 98:2 and Al-Masad 111:1 and 5. Today's rota group reads 97:1 to 5 to the teacher in turn.",
+          "a": "98:2 رَسُولٌۭ مِّنَ, صُحُفًۭا مُّطَهَّرَةًۭ; 111:1 لَهَبٍۢ وَتَبَّ; 111:5 حَبْلٌۭ مِّن, مِّن مَّسَدٍ.",
+          "mins": 8,
+          "model": "The teacher colours the first one: رَسُولٌۭ مِّنَ in 98:2, tanween then meem, so idgham with ghunnah."
+        },
+        {
+          "q": "Extend: write the word يَنْمُو and colour its four letters.",
+          "a": "ي ن م و",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: in 97:4 «رَبِّهِم مِّن», which letter is merging, noon or meem?",
+          "a": "Meem: a meem sakinah merges into the next meem with ghunnah (we learn meem rules in Spring 2).",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What are the six idgham letters?",
-        "Why is الدُّنْيَا read with a clear noon?"
+        {
+          "q": "«خَيْرٌۭ مِّنْ» (97:3) is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "izhar",
+            "iqlab"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When two friends hold hands and walk as one, are they still two people? What happens to a noon when it 'holds hands' with the next letter?",
+          "a": "The noon joins into the next letter and disappears into it, but leaves a two-count hum: idgham with ghunnah.",
+          "mins": 2
+        }
       ],
-      "homework": "Recite the mnemonic yanmu and read مَن يَقُولُ to a family member.",
-      "send": "SEND/EAL: rule chart with colours for izhar, iqlab, ikhfa, idgham. Stretch: write your own example for each rule."
+      "homework": "Read Al-Masad 111:1 and 5 to a parent with the two-count hum; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Idgham with ghunnah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Palm fibre rope",
+          "alt": "A rope made of palm fibre (masad)",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Idgham and the family of madd",
@@ -651,6 +814,2356 @@
       ],
       "homework": "Recite Al-Fil and Quraysh daily and write three blessings you are thankful for.",
       "send": "SEND/EAL: chunked audio and sentence frames for gratitude. Stretch: link the surah to your own day."
+    },
+    {
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
+      "n": 9,
+      "title": "Surat Al-Qadr 97:1-3: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "Why might one special night be better than a thousand months?",
+      "objectives": [
+        "To memorise Al-Qadr 97:1-3 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 97:1-3 after the teacher, word for word",
+        "Most: recite 97:1-3 from memory with no more than one prompt",
+        "Some: link 97:1-3 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: wonder at the night the Qur'an was first sent down and the great reward Allah gives",
+      "keywords": [
+        {
+          "term": "Al-Qadr (القدر)",
+          "def": "the Decree: the name of the surah"
+        },
+        {
+          "term": "laylah (ليلة)",
+          "def": "night"
+        },
+        {
+          "term": "alf (ألف)",
+          "def": "a thousand"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might one special night be better than a thousand months?",
+        "a": "Allah chose it: the Qur'an was first sent down on it, and good deeds on it are worth more than a thousand months (97:3)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, We sent it (the Qur'an) down during the Night of Decree' (Al-Qadr 97:1). The Qur'an came down in the month of Ramadan (Al-Baqarah 2:185). Learning this surah is learning about the night the Qur'an began.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «قُلْ هُوَ ...»?",
+          "a": "Al-Ikhlas",
+          "mins": 1,
+          "options": [
+            "Al-Ikhlas",
+            "Al-Falaq",
+            "An-Nas"
+          ]
+        },
+        {
+          "q": "How many ayat are in Surat Al-'Asr (سورة العصر)?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "5",
+            "4"
+          ]
+        },
+        {
+          "q": "Which word has tanween?",
+          "a": "أَحَدٌ",
+          "mins": 1,
+          "options": [
+            "أَحَدٌ",
+            "قُلْ",
+            "هُوَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Qadr 97:1-3",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 97:1-3 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "إِنَّآ أَنزَلْنَٰهُ فِى لَيْلَةِ ٱلْقَدْرِ (١) وَمَآ أَدْرَىٰكَ مَا لَيْلَةُ ٱلْقَدْرِ (٢) لَيْلَةُ ٱلْقَدْرِ خَيْرٌۭ مِّنْ أَلْفِ شَهْرٍۢ (٣)",
+            "source": "Surat Al-Qadr, 97:1-3"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "97:1",
+                "Indeed, We sent the Qur'an down during the Night of Decree."
+              ],
+              [
+                "97:2",
+                "And what can make you know what is the Night of Decree?"
+              ],
+              [
+                "97:3",
+                "The Night of Decree is better than a thousand months."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "مِّنْ أَلْفِ",
+                "Al-Qadr 97:3",
+                "Izhar (clear noon)",
+                "Say the noon clearly before the hamza"
+              ],
+              [
+                "ٱلْقَدْرِ",
+                "Al-Qadr 97:1",
+                "Qalqalah on qaf",
+                "The qaf has sukoon, so it bounces"
+              ],
+              [
+                "أَنزَلْنَٰهُ",
+                "Al-Qadr 97:1",
+                "Ikhfa (coming in week 5)",
+                "The noon is hidden with a light hum"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 97:1-3 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which ayah says the Night of Decree is better than a thousand months?",
+            "options": [
+              "97:3",
+              "97:1",
+              "97:2"
+            ],
+            "answer": 0,
+            "why": "97:3 says it is better than a thousand months. 97:1 says the Qur'an was sent down on it; 97:2 asks what will make you know it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Qadr 97:1-3 together, ayah by ayah.",
+          "a": "The class recites 97:1-3 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 97:1-3. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "Laylat al-Qadr means ...",
+          "a": "the Night of Decree",
+          "mins": 1,
+          "options": [
+            "the Night of Decree",
+            "the first day of Ramadan",
+            "the night of Eid"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 97:1-3 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "On the pupil PDF, write what 'Laylat al-Qadr' means in your own words.",
+          "a": "The Night of Decree: the night the Qur'an was first sent down, better than a thousand months.",
+          "mins": 2
+        },
+        {
+          "q": "Find the word in 97:1 with a qalqalah letter. Why does it bounce?",
+          "a": "ٱلْقَدْرِ: the qaf (ق) has a sukoon, so it bounces.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Qadr 97:3: «لَيْلَةُ ٱلْقَدْرِ ...» Which word comes next?",
+          "a": "خَيْرٌۭ",
+          "mins": 1,
+          "options": [
+            "أَنزَلْنَٰهُ",
+            "خَيْرٌۭ",
+            "وَٱلرُّوحُ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why might one special night be better than a thousand months?",
+          "a": "Allah chose it: the Qur'an was first sent down on it, and good deeds on it are worth more than a thousand months (97:3).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Qadr 97:1-3 to a parent three times a day and revise Al-Fatihah and Surahs 114 to 98 (today's rota surah); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Qadr 97:1-3 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Night sky with stars over desert",
+          "alt": "Stars in a clear night sky over the desert",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
+      "n": 10,
+      "title": "Noon sakinah and tanween: the four rules and izhar",
+      "duration": 45,
+      "bigQuestion": "If you whisper 'min ahli' and then 'min-n-n ahli', which sounds clearer? Why do you think clear matters in the Qur'an?",
+      "objectives": [
+        "To understand how to spot noon sakinah and tanween and say the noon clearly (izhar) before the six throat letters"
+      ],
+      "successCriteria": [
+        "All: point to a noon sakinah and a tanween in an ayah",
+        "Most: name the six throat letters of izhar",
+        "Some: read three izhar examples clearly, with no humming"
+      ],
+      "smsc": "Spiritual: care in reciting Allah's words exactly as they were taught",
+      "keywords": [
+        {
+          "term": "noon sakinah (نون ساكنة)",
+          "def": "a noon with a sukoon on it: نْ"
+        },
+        {
+          "term": "tanween (تنوين)",
+          "def": "a double vowel at the end of a word that sounds like an extra noon"
+        },
+        {
+          "term": "izhar (إظهار)",
+          "def": "saying the noon clearly, with no extra humming"
+        },
+        {
+          "term": "halq (حلق)",
+          "def": "the throat, where the six izhar letters come from"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you whisper 'min ahli' and then 'min-n-n ahli', which sounds clearer? Why do you think clear matters in the Qur'an?",
+        "a": "Clear speech keeps the meaning right. Before the throat letters the noon is said clearly: that is izhar."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation (tartil)' (Al-Muzzammil 73:4). Tajweed rules help us recite the way the Prophet ﷺ was taught.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What does sukoon (ْ) do to a letter?",
+          "a": "It has no vowel: the letter stops",
+          "mins": 1,
+          "options": [
+            "It has no vowel: the letter stops",
+            "It doubles the letter",
+            "It makes it long"
+          ]
+        },
+        {
+          "q": "Which shows tanween?",
+          "a": "ـٌ (two dammahs)",
+          "mins": 1,
+          "options": [
+            "ـٌ (two dammahs)",
+            "ـْ (sukoon)",
+            "ـّ (shaddah)"
+          ]
+        },
+        {
+          "q": "Al-Qadr 97:1: «إِنَّآ أَنزَلْنَٰهُ ...» Which word comes next?",
+          "a": "فِى",
+          "mins": 1,
+          "options": [
+            "وَٱلرُّوحُ",
+            "فِى",
+            "مِّن"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two kinds of 'n' sound",
+          "bullets": [
+            "Both follow the same four rules",
+            "The next letter decides the rule"
+          ],
+          "note": "Bismillah. Write نْ and ـٌ ـً ـٍ on the board. Tanween only comes at the end of a word; noon sakinah can be in the middle or at the end.",
+          "compare": {
+            "left": {
+              "title": "Noon sakinah (نْ)",
+              "points": [
+                "A noon with sukoon",
+                "Middle or end of a word",
+                "مِنْ in 97:3"
+              ]
+            },
+            "right": {
+              "title": "Tanween (ـٌ ـً ـٍ)",
+              "points": [
+                "A double vowel",
+                "Only at the end of a word",
+                "Sounds like -un, -an, -in"
+              ]
+            },
+            "label": "same rules"
+          }
+        },
+        {
+          "heading": "The four rules",
+          "bullets": [],
+          "note": "We learn one a week. Today: izhar. Show the four names in Arabic and say each slowly.",
+          "diagram": {
+            "centre": "نْ or tanween",
+            "items": [
+              "Izhar (إظهار): say it clearly",
+              "Idgham (إدغام): merge it",
+              "Iqlab (إقلاب): change it to meem",
+              "Ikhfa (إخفاء): hide it"
+            ]
+          }
+        },
+        {
+          "heading": "Izhar: the six throat letters",
+          "bullets": [],
+          "note": "The six letters come from the throat: ء ه ع ح غ خ. The noon comes from the tip of the tongue, far away, so it stays clear. No ghunnah is added.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "مِّنْ أَلْفِ",
+                "Al-Qadr 97:3",
+                "Izhar: ء",
+                "Clear noon, then the hamza"
+              ],
+              [
+                "مِنْ عَلَقٍ",
+                "Al-'Alaq 96:2",
+                "Izhar: ع",
+                "Clear noon, then the 'ayn"
+              ],
+              [
+                "عَنْهُ",
+                "Al-Masad 111:2",
+                "Izhar: ه",
+                "Clear noon inside the word"
+              ],
+              [
+                "نَارٌ حَامِيَةٌۢ",
+                "Al-Qari'ah 101:11",
+                "Izhar: ح (tanween)",
+                "Clear 'un', then the haa"
+              ],
+              [
+                "مِّنْ خَوْفٍۭ",
+                "Quraysh 106:4",
+                "Izhar: خ",
+                "Clear noon, then the khaa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: clear noon",
+          "bullets": [],
+          "note": "Teacher reads each izhar example; three pupils unmute in turn and repeat. Listen for any extra humming and correct it kindly.",
+          "cycle": [
+            "Teacher reads one example",
+            "Class whispers it, mics muted",
+            "Three pupils repeat in turn",
+            "Teacher checks: no humming",
+            "Next example"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "In «مِنْ عَلَقٍ» the next letter is 'ayn (ع). Which rule is it?",
+            "options": [
+              "Izhar: say the noon clearly",
+              "Ikhfa: hide the noon",
+              "Iqlab: change it to meem"
+            ],
+            "answer": 0,
+            "why": "'Ayn is one of the six throat letters, so the noon is said clearly. Ikhfa and iqlab need other letters."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is it izhar? Look at «كُفُوًا أَحَدٌ» (112:4).",
+          "a": "Yes: tanween before hamza (ء), a throat letter, so the 'an' is clear.",
+          "mins": 3,
+          "model": "I do: find the tanween (كُفُوًا: two fathahs). Look at the next letter: أ (hamza). Hamza is a throat letter. So it is izhar: say 'kufuwan ahad' with a clear n."
+        },
+        {
+          "q": "Which is a throat letter?",
+          "a": "خ",
+          "mins": 1,
+          "options": [
+            "خ",
+            "ب",
+            "م"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Rule hunt on the pupil PDF: circle every noon sakinah or tanween in Al-'Alaq 96:1 to 10, then tick the ones that are izhar. Today's rota group recites 97:1 to 3 to the teacher in turn.",
+          "a": "Izhar: مِنْ عَلَقٍ (96:2), يَنْهَىٰ (96:9), عَبْدًا إِذَا (96:10).",
+          "mins": 8,
+          "model": "The teacher circles the first one: مِنْ عَلَقٍ in 96:2, next letter ع, a throat letter, so izhar."
+        },
+        {
+          "q": "Extend: write the six throat letters in order from deepest to nearest the mouth.",
+          "a": "ء ه (deepest), ع ح (middle), غ خ (nearest the mouth)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is there no humming in izhar?",
+          "a": "The throat letters are far from where the noon is made, so the noon is said clearly with no ghunnah.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which word shows izhar?",
+          "a": "مِّنْ أَلْفِ",
+          "mins": 1,
+          "options": [
+            "مِّنْ أَلْفِ",
+            "أَنزَلْنَٰهُ",
+            "مِّن كُلِّ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you whisper 'min ahli' and then 'min-n-n ahli', which sounds clearer? Why do you think clear matters in the Qur'an?",
+          "a": "Clear speech keeps the meaning right. Before the throat letters the noon is said clearly: that is izhar.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find two izhar examples in Surahs 112 to 114 with a parent and say them clearly; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Noon sakinah and tanween rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
+      "n": 11,
+      "title": "Surat Al-Qadr 97:4-5: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "What does 'peace until dawn' make you think of? How could a night be full of peace?",
+      "objectives": [
+        "To memorise Al-Qadr 97:4-5 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 97:4-5 after the teacher, word for word",
+        "Most: recite 97:4-5 from memory with no more than one prompt",
+        "Some: link 97:4-5 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: hope and longing to meet Laylat al-Qadr in Ramadan",
+      "keywords": [
+        {
+          "term": "mala'ikah (ملائكة)",
+          "def": "angels"
+        },
+        {
+          "term": "salam (سلام)",
+          "def": "peace"
+        },
+        {
+          "term": "fajr (فجر)",
+          "def": "dawn"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What does 'peace until dawn' make you think of? How could a night be full of peace?",
+        "a": "Allah says the night is peace until the rising of dawn (97:5); the angels come down by Allah's permission (97:4)."
+      },
+      "islamicLink": {
+        "text": "Allah says the angels and the Ruh (Jibril) come down on that night by the permission of their Lord, and it is peace until dawn (Al-Qadr 97:4 to 5). The Prophet ﷺ taught us to seek this night in the last ten nights of Ramadan (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qadr 97:2 in your head. How does the next ayah begin?",
+          "a": "لَيْلَةُ ٱلْقَدْرِ",
+          "mins": 1,
+          "options": [
+            "سَلَٰمٌ هِىَ",
+            "إِنَّآ أَنزَلْنَٰهُ",
+            "لَيْلَةُ ٱلْقَدْرِ"
+          ]
+        },
+        {
+          "q": "In «مِّنْ أَلْفِ» the noon is ...",
+          "a": "said clearly (izhar)",
+          "mins": 1,
+          "options": [
+            "said clearly (izhar)",
+            "hidden",
+            "changed to meem"
+          ]
+        },
+        {
+          "q": "How many throat letters are there for izhar?",
+          "a": "6",
+          "mins": 1,
+          "options": [
+            "6",
+            "4",
+            "15"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Qadr 97:4-5",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 97:4-5 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ وَٱلرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍۢ (٤) سَلَٰمٌ هِىَ حَتَّىٰ مَطْلَعِ ٱلْفَجْرِ (٥)",
+            "source": "Surat Al-Qadr, 97:4-5"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "97:4",
+                "The angels and the Spirit descend therein by permission of their Lord for every matter."
+              ],
+              [
+                "97:5",
+                "Peace it is until the emergence of dawn."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "مِّن كُلِّ",
+                "Al-Qadr 97:4",
+                "Ikhfa (week 5)",
+                "Light hidden noon with a hum"
+              ],
+              [
+                "رَبِّهِم مِّن",
+                "Al-Qadr 97:4",
+                "Meem meets meem",
+                "Merge the meems with a hum (Year 3 Spring 2)"
+              ],
+              [
+                "سَلَٰمٌ هِىَ",
+                "Al-Qadr 97:5",
+                "Izhar: ه (tanween)",
+                "Clear 'un' before the haa"
+              ],
+              [
+                "مَطْلَعِ",
+                "Al-Qadr 97:5",
+                "Qalqalah: ط",
+                "The ط has sukoon, so it bounces"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 97:4-5 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Who comes down on the Night of Decree, by Allah's permission?",
+            "options": [
+              "The angels and the Ruh (Jibril)",
+              "The prophets",
+              "The stars"
+            ],
+            "answer": 0,
+            "why": "97:4: the angels and the Ruh come down by the permission of their Lord. The other answers are not in the surah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Qadr 97:4-5 together, ayah by ayah.",
+          "a": "The class recites 97:4-5 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 97:4-5. Ayah 4: 3 times looking, 3 times without looking. Then ayah 5 the same way. Then link: recite 4 and 5 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "Which word ends the surah?",
+          "a": "ٱلْفَجْرِ",
+          "mins": 1,
+          "options": [
+            "ٱلْفَجْرِ",
+            "ٱلْقَدْرِ",
+            "شَهْرٍ"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 97:4-5 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Recite all of Al-Qadr (97:1 to 5) to a partner in a breakout room; your partner ticks each ayah.",
+          "a": "All five ayat in order with no prompts.",
+          "mins": 2
+        },
+        {
+          "q": "Which word in 97:5 has a qalqalah letter with sukoon? Read it with a bounce.",
+          "a": "مَطْلَعِ: the ط has sukoon, so it bounces.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Qadr 97:4: «تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ ...» Which word comes next?",
+          "a": "وَٱلرُّوحُ",
+          "mins": 1,
+          "options": [
+            "وَٱلرُّوحُ",
+            "رَبِّهِم",
+            "مَا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What does 'peace until dawn' make you think of? How could a night be full of peace?",
+          "a": "Allah says the night is peace until the rising of dawn (97:5); the angels come down by Allah's permission (97:4).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Qadr 97:4-5 to a parent three times a day and revise Al-Qadr 97:1 to 3 and today's rota surah; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Qadr 97:4-5 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sunrise dawn over desert horizon",
+          "alt": "Dawn breaking over the desert",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
+      "n": 12,
+      "title": "Surat Al-'Alaq 96:1-4: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "The very first word sent down to the Prophet ﷺ was 'Read!'. Why do you think Allah began with reading?",
+      "objectives": [
+        "To memorise Al-'Alaq 96:1-4 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 96:1-4 after the teacher, word for word",
+        "Most: recite 96:1-4 from memory with no more than one prompt",
+        "Some: link 96:1-4 to the ayat before and name the tajweed rules in them"
+      ],
+      "crossCurricular": "English: reading for meaning; the pen and writing as a gift",
+      "smsc": "Spiritual and cultural: Islam begins with reading and learning; knowledge is a gift from Allah",
+      "keywords": [
+        {
+          "term": "iqra' (اقرأ)",
+          "def": "read!"
+        },
+        {
+          "term": "qalam (قلم)",
+          "def": "pen"
+        },
+        {
+          "term": "'alaq (علق)",
+          "def": "a clinging clot: how a baby begins"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The very first word sent down to the Prophet ﷺ was 'Read!'. Why do you think Allah began with reading?",
+        "a": "Knowledge comes first: Allah taught by the pen (96:4). Muslims love to read and learn."
+      },
+      "islamicLink": {
+        "text": "These are among the first ayat of the Qur'an sent down to the Prophet ﷺ, in the cave of Hira (Bukhari). Allah says: 'Read in the name of your Lord who created' (Al-'Alaq 96:1).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Qadr 97:3 in your head. How does the next ayah begin?",
+          "a": "تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ",
+          "mins": 1,
+          "options": [
+            "وَمَآ أَدْرَىٰكَ",
+            "إِنَّآ أَنزَلْنَٰهُ",
+            "تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ"
+          ]
+        },
+        {
+          "q": "Idgham with ghunnah uses the letters ...",
+          "a": "ي ن م و",
+          "mins": 1,
+          "options": [
+            "ي ن م و",
+            "ء ه ع ح غ خ",
+            "ل ر"
+          ]
+        },
+        {
+          "q": "What does Al-Qadr 97:5 say the night is?",
+          "a": "Peace until dawn",
+          "mins": 1,
+          "options": [
+            "Peace until dawn",
+            "Darkness",
+            "A day of Eid"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-'Alaq 96:1-4",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 96:1-4 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ (١) خَلَقَ ٱلْإِنسَٰنَ مِنْ عَلَقٍ (٢) ٱقْرَأْ وَرَبُّكَ ٱلْأَكْرَمُ (٣) ٱلَّذِى عَلَّمَ بِٱلْقَلَمِ (٤)",
+            "source": "Surat Al-'Alaq, 96:1-4"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "96:1",
+                "Recite in the name of your Lord who created -"
+              ],
+              [
+                "96:2",
+                "Created man from a clinging substance."
+              ],
+              [
+                "96:3",
+                "Recite, and your Lord is the most Generous -"
+              ],
+              [
+                "96:4",
+                "Who taught by the pen -"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "مِنْ عَلَقٍ",
+                "Al-'Alaq 96:2",
+                "Izhar: ع",
+                "Clear noon before the 'ayn"
+              ],
+              [
+                "ٱلْإِنسَٰنَ",
+                "Al-'Alaq 96:2",
+                "Ikhfa: س (week 5)",
+                "Light hidden noon before seen"
+              ],
+              [
+                "ٱقْرَأْ",
+                "Al-'Alaq 96:1",
+                "Qalqalah: ق",
+                "The qaf has sukoon, so it bounces"
+              ],
+              [
+                "بِٱلْقَلَمِ",
+                "Al-'Alaq 96:4",
+                "No qalqalah",
+                "The qaf has a fathah, so it does not bounce"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 96:1-4 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "In 96:4 Allah says He taught by means of ...",
+            "options": [
+              "the pen",
+              "the stars",
+              "the sea"
+            ],
+            "answer": 0,
+            "why": "'Who taught by the pen' (96:4). The other answers are not in these ayat."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-'Alaq 96:1-4 together, ayah by ayah.",
+          "a": "The class recites 96:1-4 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 96:1-4. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«ٱقْرَأْ» means ...",
+          "a": "Read!",
+          "mins": 1,
+          "options": [
+            "Read!",
+            "Pray!",
+            "Write!"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 96:1-4 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Write one way you can 'read in the name of your Lord' this week.",
+          "a": "For example: say Bismillah before reading my books and the Qur'an.",
+          "mins": 2
+        },
+        {
+          "q": "96:1 and 96:3 both start with the same word. Which word, and what does it mean?",
+          "a": "ٱقْرَأْ: Read!",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-'Alaq 96:2: «خَلَقَ ٱلْإِنسَٰنَ ...» Which word comes next?",
+          "a": "مِنْ",
+          "mins": 1,
+          "options": [
+            "أَمَرَ",
+            "ٱللَّهَ",
+            "مِنْ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The very first word sent down to the Prophet ﷺ was 'Read!'. Why do you think Allah began with reading?",
+          "a": "Knowledge comes first: Allah taught by the pen (96:4). Muslims love to read and learn.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-'Alaq 96:1-4 to a parent three times a day and revise Al-Qadr (97) and today's rota surah; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-'Alaq 96:1-4 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jabal al-Nour Mecca",
+          "alt": "Jabal an-Nur, the mountain of the cave of Hira, near Makkah",
+          "for": "hook"
+        },
+        {
+          "find": "Reed pen calligraphy qalam",
+          "alt": "A reed pen (qalam) used for Arabic writing",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
+      "n": 13,
+      "title": "Idgham without ghunnah: merging into laam and raa",
+      "duration": 45,
+      "bigQuestion": "Some friends join so well you can't tell who is who. Before laam and raa the noon vanishes completely. What do you think we hear?",
+      "objectives": [
+        "To understand how noon sakinah and tanween merge fully into laam and raa with no humming"
+      ],
+      "successCriteria": [
+        "All: name the two letters of idgham without ghunnah",
+        "Most: read three examples with no hum",
+        "Some: compare idgham with and without ghunnah in one ayah"
+      ],
+      "smsc": "Moral: careful, honest effort: doing a small thing right even when no one checks",
+      "keywords": [
+        {
+          "term": "idgham (إدغام)",
+          "def": "merging the noon into the next letter"
+        },
+        {
+          "term": "bila ghunnah (بلا غنة)",
+          "def": "without humming"
+        },
+        {
+          "term": "laam (لام)",
+          "def": "the letter ل"
+        },
+        {
+          "term": "raa (راء)",
+          "def": "the letter ر"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some friends join so well you can't tell who is who. Before laam and raa the noon vanishes completely. What do you think we hear?",
+        "a": "Only the laam or raa, doubled, with no humming: idgham without ghunnah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Those to whom We have given the Book recite it with its true recital' (Al-Baqarah 2:121). Reciting each letter properly is part of respecting the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which word is idgham WITH ghunnah?",
+          "a": "مِّن مَّسَدٍ",
+          "mins": 1,
+          "options": [
+            "مِّن مَّسَدٍ",
+            "مِنْ عَلَقٍ",
+            "يَكُن لَّهُۥ"
+          ]
+        },
+        {
+          "q": "Al-'Alaq 96:3: «ٱقْرَأْ وَرَبُّكَ ...» Which word comes next?",
+          "a": "ٱلْأَكْرَمُ",
+          "mins": 1,
+          "options": [
+            "وَٱقْتَرِب",
+            "ٱلرُّجْعَىٰٓ",
+            "ٱلْأَكْرَمُ"
+          ]
+        },
+        {
+          "q": "How many counts is the ghunnah?",
+          "a": "2",
+          "mins": 1,
+          "options": [
+            "2",
+            "4",
+            "6"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Idgham without ghunnah",
+          "bullets": [
+            "Two letters: ل and ر",
+            "The noon disappears completely",
+            "No humming at all"
+          ],
+          "note": "Bismillah. Recap يَرْمَلُونَ: six idgham letters; four with ghunnah (يَنْمُو), two without (ل ر)."
+        },
+        {
+          "heading": "Examples we know",
+          "bullets": [],
+          "note": "Read each one. The noon is gone; we hear a doubled laam or raa.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "وَيْلٌۭ لِّكُلِّ",
+                "Al-Humazah 104:1",
+                "Idgham without ghunnah: ل",
+                "wayl-lil-kulli, no hum"
+              ],
+              [
+                "يَكُن لَّهُۥ",
+                "Al-Ikhlas 112:4",
+                "Idgham without ghunnah: ل",
+                "yakul-lahu, no hum"
+              ],
+              [
+                "أَن رَّءَاهُ",
+                "Al-'Alaq 96:7",
+                "Idgham without ghunnah: ر",
+                "ar-ra'aahu, no hum"
+              ],
+              [
+                "عِيشَةٍۢ رَّاضِيَةٍۢ",
+                "Al-Qari'ah 101:7",
+                "Idgham without ghunnah: ر",
+                "'eeshatir-raadiyah, no hum"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "With or without?",
+          "bullets": [],
+          "note": "The two kinds side by side. Hum for يَنْمُو; no hum for ل ر.",
+          "compare": {
+            "left": {
+              "title": "With ghunnah: ي ن م و",
+              "points": [
+                "Noon merges, hum stays",
+                "Two counts",
+                "حَبْلٌۭ مِّن"
+              ]
+            },
+            "right": {
+              "title": "Without ghunnah: ل ر",
+              "points": [
+                "Noon merges fully",
+                "No hum",
+                "وَيْلٌۭ لِّكُلِّ"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "Pupils often hum before laam. Model the wrong and the right way.",
+          "misconception": {
+            "wrong": "yakun-n-n lahu: a hum before the laam",
+            "right": "yakul-lahu: the noon becomes laam, no hum"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«وَيْلٌۭ لِّكُلِّ» (104:1): how do we read the tanween?",
+            "options": [
+              "Merge into laam with no hum",
+              "Merge with a two-count hum",
+              "Say it clearly"
+            ],
+            "answer": 0,
+            "why": "Laam is an idgham letter without ghunnah. Humming is for ي ن م و; clear is for throat letters."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read «هُمَزَةٍۢ لُّمَزَةٍ» (104:1). Which rule, and how?",
+          "a": "Idgham without ghunnah: tanween merges into laam; read humazatil-lumazah with no hum.",
+          "mins": 3,
+          "model": "I do: هُمَزَةٍ ends with tanween (two kasrahs). The next letter is ل. Laam is idgham without ghunnah, so I read 'humazatil-lumazah', no humming."
+        },
+        {
+          "q": "«أَن رَّءَاهُ» (96:7): next letter?",
+          "a": "ر",
+          "mins": 1,
+          "options": [
+            "ر",
+            "ء",
+            "ن"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Sort on the pupil PDF: put eight examples into 'with ghunnah' and 'without ghunnah'. Today's rota group recites Al-'Alaq 96:1 to 4 to the teacher in turn.",
+          "a": "With: خَيْرٌۭ مِّنْ, لَهَبٍۢ وَتَبَّ, فَمَن يَعْمَلْ, مِّن مَّسَدٍ. Without: وَيْلٌۭ لِّكُلِّ, يَكُن لَّهُۥ, أَن رَّءَاهُ, عِيشَةٍۢ رَّاضِيَةٍۢ.",
+          "mins": 8,
+          "model": "The teacher sorts the first two: خَيْرٌۭ مِّنْ (meem, so with ghunnah) and وَيْلٌۭ لِّكُلِّ (laam, so without)."
+        },
+        {
+          "q": "Extend: find one idgham without ghunnah in Surat Al-Ikhlas.",
+          "a": "يَكُن لَّهُۥ (112:4)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why do you think the hum disappears before laam and raa?",
+          "a": "Laam and raa are made very close to the noon and fully take its place, so no hum is left.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "«يَكُن لَّهُۥ» (112:4) is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "idgham with ghunnah",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Some friends join so well you can't tell who is who. Before laam and raa the noon vanishes completely. What do you think we hear?",
+          "a": "Only the laam or raa, doubled, with no humming: idgham without ghunnah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read Al-Humazah 104:1 and Al-Ikhlas 112:4 to a parent with no hum before the laam; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Idgham without ghunnah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic calligraphy letter lam",
+          "alt": "The Arabic letter laam in calligraphy",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
+      "n": 14,
+      "title": "Surat Al-'Alaq 96:5-8: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "Allah taught people what they did not know. What is something you know now that you did not know last year?",
+      "objectives": [
+        "To memorise Al-'Alaq 96:5-8 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 96:5-8 after the teacher, word for word",
+        "Most: recite 96:5-8 from memory with no more than one prompt",
+        "Some: link 96:5-8 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: humility: knowledge is from Allah, so we never look down on others",
+      "keywords": [
+        {
+          "term": "'allama (علّم)",
+          "def": "He taught"
+        },
+        {
+          "term": "al-insan (الإنسان)",
+          "def": "mankind, people"
+        },
+        {
+          "term": "ar-ruj'a (الرجعى)",
+          "def": "the return to Allah"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah taught people what they did not know. What is something you know now that you did not know last year?",
+        "a": "All knowledge is from Allah (96:5); we thank Him and use it well, not with pride (96:6 to 7)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'He taught man that which he knew not' (Al-'Alaq 96:5). Then He warns that people become proud when they think they need no one, but the return is to Allah (96:6 to 8).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-'Alaq 96:3 in your head. How does the next ayah begin?",
+          "a": "ٱلَّذِى عَلَّمَ",
+          "mins": 1,
+          "options": [
+            "ٱلَّذِى عَلَّمَ",
+            "عَلَّمَ ٱلْإِنسَٰنَ",
+            "خَلَقَ ٱلْإِنسَٰنَ"
+          ]
+        },
+        {
+          "q": "Idgham without ghunnah is before ...",
+          "a": "ل and ر",
+          "mins": 1,
+          "options": [
+            "ل and ر",
+            "ي ن م و",
+            "ب"
+          ]
+        },
+        {
+          "q": "Who taught by the pen?",
+          "a": "Allah",
+          "mins": 1,
+          "options": [
+            "Allah",
+            "The angels",
+            "The scholars"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-'Alaq 96:5-8",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 96:5-8 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "عَلَّمَ ٱلْإِنسَٰنَ مَا لَمْ يَعْلَمْ (٥) كَلَّآ إِنَّ ٱلْإِنسَٰنَ لَيَطْغَىٰٓ (٦) أَن رَّءَاهُ ٱسْتَغْنَىٰٓ (٧) إِنَّ إِلَىٰ رَبِّكَ ٱلرُّجْعَىٰٓ (٨)",
+            "source": "Surat Al-'Alaq, 96:5-8"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "96:5",
+                "Taught man that which he knew not."
+              ],
+              [
+                "96:6",
+                "No! [But] indeed, man transgresses"
+              ],
+              [
+                "96:7",
+                "Because he sees himself self-sufficient."
+              ],
+              [
+                "96:8",
+                "Indeed, to your Lord is the return."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "أَن رَّءَاهُ",
+                "Al-'Alaq 96:7",
+                "Idgham without ghunnah: ر",
+                "ar-ra'aahu, no hum"
+              ],
+              [
+                "ٱلْإِنسَٰنَ",
+                "Al-'Alaq 96:5",
+                "Ikhfa: س (week 5)",
+                "Light hidden noon"
+              ],
+              [
+                "كَلَّآ إِنَّ",
+                "Al-'Alaq 96:6",
+                "Madd: long alif before hamza",
+                "Stretch the alif (4 or 5 counts)"
+              ],
+              [
+                "مَا لَمْ يَعْلَمْ",
+                "Al-'Alaq 96:5",
+                "Meem sakinah before ي",
+                "Say the meem clearly (Spring 2)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 96:5-8 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "96:8 says that to your Lord is ...",
+            "options": [
+              "the return",
+              "the reward of the world",
+              "the light"
+            ],
+            "answer": 0,
+            "why": "'Indeed, to your Lord is the return' (96:8). Everyone returns to Allah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-'Alaq 96:5-8 together, ayah by ayah.",
+          "a": "The class recites 96:5-8 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 96:5-8. Ayah 5: 3 times looking, 3 times without looking. Then ayah 6 the same way. Then link: recite 5 and 6 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«لَيَطْغَىٰٓ» (96:6) is about ...",
+          "a": "people becoming proud and going too far",
+          "mins": 1,
+          "options": [
+            "people becoming proud and going too far",
+            "the night",
+            "the pen"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 96:5-8 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Write one thing Allah has taught you and one way you can thank Him.",
+          "a": "For example: Allah taught me to read; I thank Him by reading the Qur'an every day.",
+          "mins": 2
+        },
+        {
+          "q": "Link 96:1 to 8 and recite it to a partner. Which ayah was hardest to link?",
+          "a": "Recited in order; pupil names the hardest link (often 96:5 to 6).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-'Alaq 96:7: «أَن ...» Which word comes next?",
+          "a": "رَّءَاهُ",
+          "mins": 1,
+          "options": [
+            "يَنْهَىٰ",
+            "رَّءَاهُ",
+            "عَلَقٍ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Allah taught people what they did not know. What is something you know now that you did not know last year?",
+          "a": "All knowledge is from Allah (96:5); we thank Him and use it well, not with pride (96:6 to 7).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-'Alaq 96:5-8 to a parent three times a day and revise Al-'Alaq 96:1 to 4, Al-Qadr and today's rota surah; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-'Alaq 96:5-8 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Old Arabic books library shelf",
+          "alt": "Shelves of old books in a library",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
+      "n": 15,
+      "title": "Iqlab: the noon becomes a hidden meem before baa",
+      "duration": 45,
+      "bigQuestion": "Try saying 'n' and then 'b' quickly: 'min ba'd'. What do your lips want to do?",
+      "objectives": [
+        "To understand how noon sakinah and tanween change into a hidden meem with ghunnah before the letter baa"
+      ],
+      "successCriteria": [
+        "All: say which letter makes iqlab",
+        "Most: read iqlab with closed lips and a two-count hum",
+        "Some: spot the small meem sign in the mushaf"
+      ],
+      "smsc": "Spiritual: two rewards for the one who tries hard, even with difficulty (Bukhari and Muslim)",
+      "keywords": [
+        {
+          "term": "iqlab (إقلاب)",
+          "def": "changing the noon into a hidden meem before baa"
+        },
+        {
+          "term": "ghunnah (غنة)",
+          "def": "a humming sound from the nose, held for two counts"
+        },
+        {
+          "term": "baa (باء)",
+          "def": "the letter ب"
+        },
+        {
+          "term": "meem (ميم)",
+          "def": "the letter م, made with the lips"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Try saying 'n' and then 'b' quickly: 'min ba'd'. What do your lips want to do?",
+        "a": "They close, so the noon turns into a meem sound: iqlab. The mushaf shows a small meem (ۢ) to tell us."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The one who is skilled in the Qur'an will be with the noble and righteous scribes (angels), and the one who recites it with difficulty, stumbling, has two rewards' (Bukhari and Muslim). Every effort counts.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "«عِيشَةٍۢ رَّاضِيَةٍۢ» is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "izhar",
+            "idgham with ghunnah"
+          ]
+        },
+        {
+          "q": "Recite Al-'Alaq 96:6 in your head. How does the next ayah begin?",
+          "a": "أَن رَّءَاهُ",
+          "mins": 1,
+          "options": [
+            "أَرَءَيْتَ ٱلَّذِى",
+            "أَن رَّءَاهُ",
+            "خَلَقَ ٱلْإِنسَٰنَ"
+          ]
+        },
+        {
+          "q": "How many letters have idgham with ghunnah?",
+          "a": "4",
+          "mins": 1,
+          "options": [
+            "4",
+            "2",
+            "6"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Iqlab: one letter, ب",
+          "bullets": [
+            "Only before baa (ب)",
+            "Noon or tanween becomes a meem sound",
+            "Lips close gently, hum two counts"
+          ],
+          "note": "Bismillah. Iqlab means turning over or changing. The noon is not said; a hidden meem with ghunnah takes its place, then the baa."
+        },
+        {
+          "heading": "The small meem sign",
+          "bullets": [],
+          "note": "In the Madinah mushaf a small meem (ۢ) sits over the noon or by the tanween. Show it on screen.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "لَيُنۢبَذَنَّ",
+                "Al-Humazah 104:4",
+                "Iqlab inside one word",
+                "layum-badhanna, lips closed, hum"
+              ],
+              [
+                "مِنۢ بَعْدِ",
+                "Al-Bayyinah 98:4",
+                "Iqlab across two words",
+                "mim-ba'di, hum two counts"
+              ],
+              [
+                "لَنَسْفَعًۢا بِٱلنَّاصِيَةِ",
+                "Al-'Alaq 96:15",
+                "Iqlab with tanween",
+                "lanasfa'am-bin-naasiyah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "Some pupils press the lips hard (a full meem). Keep it light: lips just touch.",
+          "misconception": {
+            "wrong": "min ba'd: a clear noon, or a hard 'mm' pressed shut",
+            "right": "mim-ba'd: lips touch lightly, two-count hum, then baa"
+          }
+        },
+        {
+          "heading": "Listen and repeat: hidden meem",
+          "bullets": [],
+          "note": "Pupils unmute in turn. Ask them to look at their lips on camera: lips touch, hum, then baa.",
+          "cycle": [
+            "Teacher reads one iqlab example",
+            "Class watches the teacher's lips",
+            "Three pupils repeat in turn",
+            "Teacher checks: hum and light lips",
+            "Next example"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which word has iqlab?",
+            "options": [
+              "مِنۢ بَعْدِ",
+              "مِنْ عَلَقٍ",
+              "مِّن كُلِّ"
+            ],
+            "answer": 0,
+            "why": "Only baa makes iqlab. مِنْ عَلَقٍ is izhar ('ayn); مِّن كُلِّ is ikhfa (kaaf)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read «لَيُنۢبَذَنَّ» (104:4). Find the iqlab and say how to read it.",
+          "a": "Noon sakinah before baa inside the word: layum-badhanna, lips touching, two-count hum.",
+          "mins": 3,
+          "model": "I do: I see a small meem over the noon in لَيُنۢبَذَنَّ. The next letter is baa. So it is iqlab: I close my lips lightly and hum for two counts: 'layum...badhanna'."
+        },
+        {
+          "q": "Iqlab happens before ...",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "م",
+            "ن"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "On the pupil PDF, find the iqlab in Al-Humazah (104) and Al-Bayyinah 98:4 and draw the small meem sign above each. Today's rota group recites Al-'Alaq 96:1 to 8 to the teacher in turn.",
+          "a": "104:4 لَيُنۢبَذَنَّ; 98:4 مِنۢ بَعْدِ",
+          "mins": 8,
+          "model": "The teacher finds the first: in 104:4 the noon in لَيُنۢبَذَنَّ comes before baa, so we mark a small meem."
+        },
+        {
+          "q": "Extend: write the four rules of noon sakinah with one letter for each.",
+          "a": "Izhar: ء; idgham: م; iqlab: ب; ikhfa: (week 5) for example ك.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why do you think the noon turns into meem before baa?",
+          "a": "Meem and baa are both made with the lips, so a meem sound flows easily into the baa.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The small meem (ۢ) in the mushaf tells us ...",
+          "a": "it is iqlab",
+          "mins": 1,
+          "options": [
+            "it is iqlab",
+            "stop here",
+            "it is izhar"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Try saying 'n' and then 'b' quickly: 'min ba'd'. What do your lips want to do?",
+          "a": "They close, so the noon turns into a meem sound: iqlab. The mushaf shows a small meem (ۢ) to tell us.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read Al-Humazah 104:4 to a parent with the hidden meem; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Iqlab rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic letter baa calligraphy",
+          "alt": "The Arabic letter baa",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
+      "n": 16,
+      "title": "Surat Al-'Alaq 96:9-12: hear, understand and memorise",
+      "duration": 45,
+      "bigQuestion": "Have you ever seen someone stop another person from doing something good? What should we do?",
+      "objectives": [
+        "To memorise Al-'Alaq 96:9-12 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 96:9-12 after the teacher, word for word",
+        "Most: recite 96:9-12 from memory with no more than one prompt",
+        "Some: link 96:9-12 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: we never stop anyone from doing good; we help others to pray",
+      "keywords": [
+        {
+          "term": "'abd (عبد)",
+          "def": "a servant (worshipper) of Allah"
+        },
+        {
+          "term": "salla (صلّى)",
+          "def": "he prayed"
+        },
+        {
+          "term": "taqwa (تقوى)",
+          "def": "being mindful of Allah"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Have you ever seen someone stop another person from doing something good? What should we do?",
+        "a": "Al-'Alaq 96:9 to 12 warns about someone who stops a servant of Allah from praying; we help others to do good."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Have you seen the one who forbids a servant when he prays?' (Al-'Alaq 96:9 to 10). These ayat teach us that stopping someone from salah is a serious wrong, and that guidance and taqwa are what matter (96:11 to 12).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-'Alaq 96:7 in your head. How does the next ayah begin?",
+          "a": "إِنَّ إِلَىٰ",
+          "mins": 1,
+          "options": [
+            "أَوْ أَمَرَ",
+            "كَلَّا لَا",
+            "إِنَّ إِلَىٰ"
+          ]
+        },
+        {
+          "q": "«مِنۢ بَعْدِ» (98:4) is ...",
+          "a": "iqlab",
+          "mins": 1,
+          "options": [
+            "iqlab",
+            "izhar",
+            "idgham"
+          ]
+        },
+        {
+          "q": "Which word means 'the return'?",
+          "a": "ٱلرُّجْعَىٰٓ",
+          "mins": 1,
+          "options": [
+            "ٱلرُّجْعَىٰٓ",
+            "ٱلْقَلَمِ",
+            "ٱلْأَكْرَمُ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-'Alaq 96:9-12",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 96:9-12 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "أَرَءَيْتَ ٱلَّذِى يَنْهَىٰ (٩) عَبْدًا إِذَا صَلَّىٰٓ (١٠) أَرَءَيْتَ إِن كَانَ عَلَى ٱلْهُدَىٰٓ (١١) أَوْ أَمَرَ بِٱلتَّقْوَىٰٓ (١٢)",
+            "source": "Surat Al-'Alaq, 96:9-12"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "96:9",
+                "Have you seen the one who forbids"
+              ],
+              [
+                "96:10",
+                "A servant when he prays?"
+              ],
+              [
+                "96:11",
+                "Have you seen if he is upon guidance"
+              ],
+              [
+                "96:12",
+                "Or enjoins righteousness?"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "يَنْهَىٰ",
+                "Al-'Alaq 96:9",
+                "Izhar: ه (inside a word)",
+                "Clear noon before haa"
+              ],
+              [
+                "عَبْدًا إِذَا",
+                "Al-'Alaq 96:10",
+                "Izhar: ء (tanween)",
+                "Clear 'an' before the hamza"
+              ],
+              [
+                "إِن كَانَ",
+                "Al-'Alaq 96:11",
+                "Ikhfa: ك",
+                "Light hidden noon with a hum (today's tajweed lesson)"
+              ],
+              [
+                "صَلَّىٰٓ",
+                "Al-'Alaq 96:10",
+                "Shaddah on laam",
+                "Press the laam: sal-laa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 96:9-12 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Ayah 96:10 is about a servant of Allah who ...",
+            "options": [
+              "prays",
+              "sleeps",
+              "travels"
+            ],
+            "answer": 0,
+            "why": "'A servant when he prays' (96:10). The other answers are not in the ayah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-'Alaq 96:9-12 together, ayah by ayah.",
+          "a": "The class recites 96:9-12 together without the mushaf.",
+          "mins": 3,
+          "model": "I do: chunk 96:9-12. Ayah 9: 3 times looking, 3 times without looking. Then ayah 10 the same way. Then link: recite 9 and 10 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«بِٱلتَّقْوَىٰٓ» (96:12) is about ...",
+          "a": "taqwa: being mindful of Allah",
+          "mins": 1,
+          "options": [
+            "taqwa: being mindful of Allah",
+            "the night",
+            "a pen"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 96:9-12 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 7,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Write one way you can help someone else to pray on time.",
+          "a": "For example: remind my brother kindly when it is time for Maghrib.",
+          "mins": 2
+        },
+        {
+          "q": "Recite 96:1 to 12 to a partner. Count the izhar examples you hear.",
+          "a": "Izhar in 96:2 (مِنْ عَلَقٍ), 96:9 (يَنْهَىٰ), 96:10 (عَبْدًا إِذَا).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-'Alaq 96:11: «أَرَءَيْتَ إِن ...» Which word comes next?",
+          "a": "كَانَ",
+          "mins": 1,
+          "options": [
+            "كَانَ",
+            "وَٱقْتَرِب",
+            "عَلَقٍ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Have you ever seen someone stop another person from doing something good? What should we do?",
+          "a": "Al-'Alaq 96:9 to 12 warns about someone who stops a servant of Allah from praying; we help others to do good.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-'Alaq 96:9-12 to a parent three times a day and revise Al-'Alaq 96:1 to 8, Al-Qadr and today's rota surah; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-'Alaq 96:9-12 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Prayer mat sajjadah",
+          "alt": "A prayer mat ready for salah",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: At-Tin and the noon sakinah rules",
+      "n": 17,
+      "title": "Ikhfa and the noon sakinah check",
+      "duration": 45,
+      "bigQuestion": "Is hiding always bad? When the Qur'an 'hides' a noon, why might that make the recitation more beautiful?",
+      "objectives": [
+        "To understand how noon sakinah and tanween are hidden with ghunnah before the fifteen ikhfa letters, and to use all four rules"
+      ],
+      "successCriteria": [
+        "All: read three ikhfa examples with a light hum",
+        "Most: name the rule for any noon sakinah from its next letter",
+        "Some: score 8 out of 10 or more on the four-rules check"
+      ],
+      "smsc": "Spiritual: joy at finishing a set of rules; thanking Allah for progress",
+      "keywords": [
+        {
+          "term": "ikhfa (إخفاء)",
+          "def": "hiding the noon with a light humming sound"
+        },
+        {
+          "term": "ghunnah (غنة)",
+          "def": "a humming sound from the nose, held for two counts"
+        },
+        {
+          "term": "noon sakinah (نون ساكنة)",
+          "def": "a noon with a sukoon on it: نْ"
+        },
+        {
+          "term": "tanween (تنوين)",
+          "def": "a double vowel at the end of a word that sounds like an extra noon"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is hiding always bad? When the Qur'an 'hides' a noon, why might that make the recitation more beautiful?",
+        "a": "Ikhfa is a gentle, half-hidden noon with a hum: smoother than a clear noon, lighter than full merging."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation (tartil)' (Al-Muzzammil 73:4). Today we finish the four rules Allah's Messenger ﷺ recited with.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Iqlab happens before ...",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "ل",
+            "خ"
+          ]
+        },
+        {
+          "q": "«يَكُن لَّهُۥ» is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "iqlab",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Recite Al-'Alaq 96:9 in your head. How does the next ayah begin?",
+          "a": "عَبْدًا إِذَا",
+          "mins": 1,
+          "options": [
+            "أَلَمْ يَعْلَم",
+            "عَبْدًا إِذَا",
+            "ٱلَّذِى عَلَّمَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Ikhfa: the hidden noon",
+          "bullets": [
+            "15 letters: all the rest",
+            "Between clear and merged",
+            "Light hum, two counts"
+          ],
+          "note": "Bismillah. Ikhfa means hiding. The tongue does not press for the noon; we hum through the nose while getting ready for the next letter."
+        },
+        {
+          "heading": "The fifteen letters",
+          "bullets": [],
+          "note": "Count them together: ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك. If it is not izhar, idgham or iqlab, it is ikhfa.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "أَنزَلْنَٰهُ",
+                "Al-Qadr 97:1",
+                "Ikhfa: ز",
+                "an-zalnaahu, light hum"
+              ],
+              [
+                "مِّن كُلِّ",
+                "Al-Qadr 97:4",
+                "Ikhfa: ك",
+                "min-kulli, light hum"
+              ],
+              [
+                "ٱلْإِنسَٰنَ",
+                "Al-'Alaq 96:2",
+                "Ikhfa: س",
+                "al-in-saan, light hum"
+              ],
+              [
+                "مِن شَرِّ",
+                "Al-Falaq 113:2",
+                "Ikhfa: ش",
+                "min-sharri, light hum"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "All four rules",
+          "bullets": [],
+          "note": "Sort the cards on screen together: which column does each go in? Answers in the notes.",
+          "sort": {
+            "columns": [
+              "Izhar",
+              "Idgham",
+              "Iqlab",
+              "Ikhfa"
+            ],
+            "cards": [
+              "مِنْ عَلَقٍ",
+              "مِّن مَّسَدٍ",
+              "مِنۢ بَعْدِ",
+              "مِّن كُلِّ",
+              "عَنْهُ",
+              "وَيْلٌۭ لِّكُلِّ",
+              "لَيُنۢبَذَنَّ",
+              "أَنزَلْنَٰهُ"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: light hum",
+          "bullets": [],
+          "note": "Pupils unmute in turn for each ikhfa example. Then the noon sakinah check: each pupil reads two words and names the rule.",
+          "cycle": [
+            "Teacher reads one ikhfa example",
+            "Class hums softly, mics muted",
+            "Three pupils repeat in turn",
+            "Teacher checks the hum",
+            "Next example"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«مِّن كُلِّ» (97:4): the next letter is kaaf (ك). Which rule?",
+            "options": [
+              "Ikhfa",
+              "Izhar",
+              "Idgham"
+            ],
+            "answer": 0,
+            "why": "Kaaf is one of the fifteen ikhfa letters. It is not a throat letter (izhar) or in يَرْمَلُونَ (idgham)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read «أَنزَلْنَٰهُ» (97:1): find the noon and name the rule.",
+          "a": "The noon before zay (ز) is ikhfa: read an-zalnaahu with a light two-count hum.",
+          "mins": 3,
+          "model": "I do: the noon in أَنزَلْنَٰهُ has no vowel. Next letter: ز. Zay is not a throat letter, not in يَرْمَلُونَ, not baa: so ikhfa. I hum lightly as I move to the zay."
+        },
+        {
+          "q": "Which is an ikhfa letter?",
+          "a": "ك",
+          "mins": 1,
+          "options": [
+            "ك",
+            "ع",
+            "ل"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Noon sakinah check (pupil PDF): for ten words from Al-Qadr, Al-'Alaq and Al-Masad, write the rule. Today's rota group recites 96:1 to 12 to the teacher in turn.",
+          "a": "1 مِنْ عَلَقٍ izhar; 2 أَنزَلْنَٰهُ ikhfa; 3 مِّن كُلِّ ikhfa; 4 خَيْرٌۭ مِّنْ idgham with ghunnah; 5 مِّنْ أَلْفِ izhar; 6 أَن رَّءَاهُ idgham without ghunnah; 7 إِن كَانَ ikhfa; 8 مِّن مَّسَدٍ idgham with ghunnah; 9 لَهَبٍۢ وَتَبَّ idgham with ghunnah; 10 عَبْدًا إِذَا izhar.",
+          "mins": 8,
+          "model": "The teacher does word 1: مِنْ عَلَقٍ, next letter ع, a throat letter, so izhar."
+        },
+        {
+          "q": "Extend: write the fifteen ikhfa letters from memory.",
+          "a": "ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain to the class the difference between ikhfa and idgham with ghunnah.",
+          "a": "Idgham: the noon disappears into the next letter (shaddah). Ikhfa: the noon is hidden but not merged; no shaddah.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "«مِن شَرِّ» (113:2) is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "iqlab",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is hiding always bad? When the Qur'an 'hides' a noon, why might that make the recitation more beautiful?",
+          "a": "Ikhfa is a gentle, half-hidden noon with a hum: smoother than a clear noon, lighter than full merging.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read Al-Falaq (113) to a parent and point to each ikhfa; tick the revision log and keep revising Al-Qadr and Al-'Alaq in the break.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Ikhfa and the noon sakinah check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Tajweed colour coded Quran",
+          "alt": "A colour-coded tajweed mushaf page",
+          "for": "teach:2"
+        }
+      ]
     }
   ]
 }

@@ -98,190 +98,496 @@
       "send": "SEND/EAL: printed Al-Kawthar with rule key and colour codes. Stretch: write three audit questions for a partner."
     },
     {
-      "unit": "Unit 1: Madd in recitation and stopping",
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
       "n": 2,
       "title": "Madd 'arid lis-sukun and madd leen",
       "duration": 50,
+      "bigQuestion": "ٱلْمُجْرِمِينَ (74:41): when you continue it is 2 counts; when you stop it can be 6. Why does stopping change it?",
       "objectives": [
-        "Explain why madd lengthens when we stop",
-        "Read madd 'arid and madd leen with 2, 4 or 6 counts",
-        "Apply both rules in Surat Quraysh"
+        "To understand the madd that appear only when stopping ('arid lis-sukun and leen) and choose a consistent length"
       ],
+      "successCriteria": [
+        "All: explain why 'arid only happens when stopping",
+        "Most: stretch 'arid 2, 4 or 6 and keep it consistent",
+        "Some: distinguish madd leen from 'arid at the end of an ayah"
+      ],
+      "smsc": "Spiritual: calm, measured recitation",
       "keywords": [
         {
-          "term": "madd 'arid lis-sukun",
-          "def": "a madd letter followed by a letter made sakin only by stopping"
+          "term": "madd (مد)",
+          "def": "lengthening a vowel sound, counted in beats (harakat)"
         },
         {
-          "term": "madd leen",
-          "def": "waw or yaa sakinah after fatha, then a letter made sakin by stopping"
+          "term": "'arid lis-sukun (عارض للسكون)",
+          "def": "madd caused by stopping: 2, 4 or 6"
         },
         {
-          "term": "count",
-          "def": "one count is about one natural vowel length"
+          "term": "leen (لين)",
+          "def": "a soft و or ي sakinah after fathah"
+        },
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "ٱلْمُجْرِمِينَ (74:41): when you continue it is 2 counts; when you stop it can be 6. Why does stopping change it?",
+        "a": "Stopping makes the last letter sakin; a madd letter followed by a sukoon can stretch (2, 4 or 6)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation (tartil)' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "How many counts is madd tabi'i?",
-        "Give an example of madd muttasil."
+        {
+          "q": "Recite Al-Muddaththir 74:32 in your head. How does the next ayah begin?",
+          "a": "وَٱلَّيْلِ إِذْ",
+          "mins": 1,
+          "options": [
+            "نَذِيرًۭا لِّلْبَشَرِ",
+            "وَٱلَّيْلِ إِذْ",
+            "وَكُنَّا نُكَذِّبُ"
+          ]
+        },
+        {
+          "q": "Munfasil is ...",
+          "a": "hamza in the next word",
+          "mins": 1,
+          "options": [
+            "hamza in the next word",
+            "hamza in the same word",
+            "a stop"
+          ]
+        },
+        {
+          "q": "74:31 is best memorised ...",
+          "a": "in phrases",
+          "mins": 1,
+          "options": [
+            "in phrases",
+            "at once",
+            "backwards"
+          ]
+        },
+        {
+          "q": "Madd tabi'i is ...",
+          "a": "2 counts",
+          "mins": 1,
+          "options": [
+            "2 counts",
+            "4 counts",
+            "6 counts"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Stopping changes the word",
           "bullets": [
-            "When we stop, the last letter becomes sakin",
-            "A madd letter before it may then lengthen",
-            "Only at the stop, never when continuing"
+            "At a stop the last letter becomes sakin",
+            "A madd letter before it may lengthen",
+            "Only when stopping, never when continuing"
           ],
-          "note": "Write الْعَالَمِينَ on the board. Continue: the last noon has fatha, madd letter yaa is 2 counts. Stop: noon becomes sakin, so yaa is followed by a sakin letter and may be 2, 4 or 6. Ask: when does this rule apply? Only when you actually stop."
+          "note": "Bismillah. Model 74:41 ٱلْمُجْرِمِينَ: continuing (2), stopping (2, 4 or 6)."
         },
         {
-          "heading": "Madd 'arid lis-sukun",
-          "bullets": [
-            "Madd letter, then last letter sakin by stopping",
-            "2, 4 or 6 counts are all allowed",
-            "Examples: نَسْتَعِينُ, الرَّحِيمِ, الدِّينِ"
-          ],
-          "note": "Take Al-Fatihah ayat. Stop on نَسْتَعِينْ and stretch evenly. Key rule: keep the same length through the whole recital. Misconception: pupils choose a random length each time. Say 4 and keep to 4, or 2, or 6."
+          "heading": "'Arid lis-sukun in Al-Muddaththir",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Word (stopping)",
+              "Where",
+              "Madd letter",
+              "Counts"
+            ],
+            "rows": [
+              [
+                "ٱلْمُجْرِمِينَ",
+                "Al-Muddaththir 74:41",
+                "ي",
+                "2, 4 or 6"
+              ],
+              [
+                "ٱلْمُصَلِّينَ",
+                "Al-Muddaththir 74:43",
+                "ي",
+                "2, 4 or 6"
+              ],
+              [
+                "يَسِيرٍۢ",
+                "Al-Muddaththir 74:10",
+                "ي",
+                "2, 4 or 6"
+              ],
+              [
+                "ٱلنَّاقُورِ",
+                "Al-Muddaththir 74:8",
+                "و",
+                "2, 4 or 6"
+              ]
+            ]
+          }
         },
         {
           "heading": "Madd leen",
           "bullets": [
-            "Waw or yaa sakinah, fatha before it",
+            "و or ي sakinah after fathah",
             "Next letter sakin only because we stop",
-            "Soft and easy, 2, 4 or 6 counts"
+            "خَوْفٍ (106:4), ٱلْبَيْتِ (106:3): 2, 4 or 6"
           ],
-          "note": "Use Surat Quraysh: قُرَيْشٍ, الْبَيْتِ, خَوْفٍ. Stopping on خَوْفْ: the waw sakinah after fatha, then the faa sakin by waqf. Pupils feel the lips stay gently relaxed. Contrast with continuing: خَوْفٍ is read plainly."
+          "note": "Leen is soft; lips relaxed."
         },
         {
-          "heading": "Spot the difference",
-          "bullets": [
-            "Madd 'arid: long vowel letter before the stop",
-            "Madd leen: waw/yaa sakinah after fatha",
-            "Both depend on stopping"
-          ],
-          "note": "Quick sort on screen: الْعَالَمِينَ, الْبَيْتِ, يَوْمِ الدِّينِ, خَوْفٍ. Pupils drag into 'arid or leen. Check reasons, not just answers. Common error: calling any waw or yaa sakinah a madd leen even when no stop follows."
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Changing the 'arid length at every ayah end",
+            "right": "Choose 2, 4 or 6 and keep it for the whole recitation"
+          }
         },
         {
-          "heading": "Recite Quraysh",
-          "bullets": [
-            "Four ayat, three stops",
-            "Choose a length and keep it",
-            "Peer listens and ticks"
-          ],
-          "note": "Pupils recite Quraysh in pairs choosing 2, 4 or 6 counts for every stop. The partner ticks consistency. Circulate and praise accurate stops. The surah Quraysh is 106 and has four ayat."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«ٱلْمُصَلِّينَ» (74:43) when continuing to 74:44 is ...",
+            "options": [
+              "2 counts (tabi'i)",
+              "6 counts ('arid)",
+              "4 counts (munfasil)"
+            ],
+            "answer": 0,
+            "why": "'Arid only exists when stopping; joined, it is a natural madd of 2."
+          }
         }
       ],
       "practice": [
-        "Stop on الْعَالَمِينَ. Which madd applies and how many counts?",
-        "Stop on قُرَيْشٍ. Why is it madd leen?",
-        "Read الْبَيْتِ continuing: is there any extra madd?"
+        {
+          "q": "Recite 74:40 to 45 stopping at each ayah end, keeping 4 counts on every 'arid.",
+          "a": "'Arid (4 counts) on يَتَسَآءَلُونَ, ٱلْمُجْرِمِينَ, ٱلْمُصَلِّينَ, ٱلْمِسْكِينَ, ٱلْخَآئِضِينَ; none on سَقَرَ (no madd letter before the raa).",
+          "mins": 5,
+          "model": "I do: 74:40 يَتَسَآءَلُونَ: stop on noon, و before it: 4. 74:41 ٱلْمُجْرِمِينَ: 4. 74:42 سَقَرَ: stop سَقَرْ, no madd letter, so no 'arid."
+        },
+        {
+          "q": "'Arid lis-sukun can be ...",
+          "a": "2, 4 or 6",
+          "mins": 1,
+          "options": [
+            "2, 4 or 6",
+            "only 2",
+            "only 6"
+          ]
+        }
       ],
       "independent": [
-        "Sort 12 words into madd 'arid, madd leen or neither",
-        "Recite Al-Fatihah stopping on every ayah ending with 4 counts",
-        "Recite Quraysh with a consistent length, partner checks"
+        {
+          "q": "Ending audit (pupil PDF): for 74:38 to 56, mark which ayah endings give 'arid lis-sukun when stopping. Today's rota group recites 74:31 to 37.",
+          "a": "'Arid at 74:39, 40, 41, 43, 44, 45, 46, 47, 48, 49. None at 74:38, 42, 50 to 56 (no madd letter before the last letter, or taa marbutah).",
+          "mins": 10,
+          "model": "The teacher marks 74:38 رَهِينَةٌ: stopping gives رَهِينَهْ; the last letter has no madd before it, so no 'arid."
+        },
+        {
+          "q": "Extend: find a madd leen at the end of an ayah in Quraysh.",
+          "a": "خَوْفٍۭ (106:4) or ٱلْبَيْتِ (106:3).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why can 'arid never be less than 2 counts?",
+          "a": "It is built on a madd letter, which always has its natural 2 counts; stopping can only add to it.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Why is madd 'arid only found when we stop?",
-        "What makes a madd leen different from a madd 'arid?"
+        {
+          "q": "Madd leen is a و or ي sakinah after ...",
+          "a": "fathah",
+          "mins": 1,
+          "options": [
+            "fathah",
+            "kasrah",
+            "dammah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: ٱلْمُجْرِمِينَ (74:41): when you continue it is 2 counts; when you stop it can be 6. Why does stopping change it?",
+          "a": "Stopping makes the last letter sakin; a madd letter followed by a sukoon can stretch (2, 4 or 6).",
+          "mins": 2
+        }
       ],
-      "homework": "Mark every madd 'arid and madd leen on Surat Quraysh and recite it daily.",
-      "send": "SEND/EAL: two-colour card (blue = arid, green = leen) with six sample words. Stretch: explain to a partner why the length must stay consistent."
+      "homework": "Recite 74:31 to 37 and the earlier ayat with a fixed 'arid length; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Madd 'arid lis-sukun and madd leen rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Stop sign road",
+          "alt": "A sign to stop",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Madd in recitation and stopping",
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
       "n": 3,
       "title": "Madd silah and madd 'iwad",
       "duration": 50,
+      "bigQuestion": "Why do we read «لَهُۥ» as 'lahoo' but «لَهُ ٱلْ...» as 'lahul'?",
       "objectives": [
-        "Read the pronoun haa with silah sughra and silah kubra",
-        "Read tanween fatha at a stop with madd 'iwad",
-        "Find both rules in Surat Al-Humazah and Surat An-Nasr"
+        "To understand the madd of the pronoun haa (silah) and the madd at a stop on tanween fathah ('iwad), and apply them in Al-Muddaththir"
       ],
+      "successCriteria": [
+        "All: read silah sughra as 2 counts",
+        "Most: read silah kubra 4 or 5 before hamza",
+        "Some: explain when the pronoun haa has no silah"
+      ],
+      "smsc": "Cultural: the fine detail of Arabic grammar preserved in recitation",
       "keywords": [
         {
-          "term": "madd silah",
-          "def": "lengthening of the pronoun haa (hu, hi) joined to the next word"
+          "term": "madd (مد)",
+          "def": "lengthening a vowel sound, counted in beats (harakat)"
         },
         {
-          "term": "madd 'iwad",
-          "def": "tanween fatha becomes an alif when we stop"
+          "term": "silah (صلة)",
+          "def": "the madd on the pronoun haa between two vowels"
         },
         {
-          "term": "hamzat qat'",
-          "def": "the hamzah that is always pronounced"
+          "term": "'iwad (عوض)",
+          "def": "the alif replacing tanween fathah at a stop"
+        },
+        {
+          "term": "damir (ضمير)",
+          "def": "a pronoun, here the haa meaning him or his"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do we read «لَهُۥ» as 'lahoo' but «لَهُ ٱلْ...» as 'lahul'?",
+        "a": "Silah only happens when the haa is between two vowelled letters; before a sukoon (or hamzat al-wasl) it is short."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Those to whom We have given the Book recite it with its true recital' (Al-Baqarah 2:121).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "Name two kinds of madd far'i from Year 7.",
-        "Which madd takes six counts?"
+        {
+          "q": "Recite Al-Muddaththir 74:40 in your head. How does the next ayah begin?",
+          "a": "عَنِ ٱلْمُجْرِمِينَ",
+          "mins": 1,
+          "options": [
+            "كَلَّا ۖ",
+            "وَلِرَبِّكَ فَٱصْبِرْ",
+            "عَنِ ٱلْمُجْرِمِينَ"
+          ]
+        },
+        {
+          "q": "'Arid can be ...",
+          "a": "2, 4 or 6",
+          "mins": 1,
+          "options": [
+            "2, 4 or 6",
+            "only 2",
+            "5 only"
+          ]
+        },
+        {
+          "q": "«ٱلْخَآئِضِينَ» has ...",
+          "a": "muttasil",
+          "mins": 1,
+          "options": [
+            "muttasil",
+            "munfasil",
+            "silah"
+          ]
+        },
+        {
+          "q": "Al-Muddaththir 74:47: «حَتَّىٰٓ ...» Which word comes next?",
+          "a": "أَتَىٰنَا",
+          "mins": 1,
+          "options": [
+            "إِذَآ",
+            "أَتَىٰنَا",
+            "عَلَى"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Pronoun haa and silah",
-          "bullets": [
-            "The haa meaning 'him/his' is between two vowels",
-            "It is read with a small waw or yaa",
-            "Silah sughra: 2 counts before a normal letter"
-          ],
-          "note": "Show لَهُ مَا فِي السَّمَاوَاتِ. The haa has damma, the letter before it has a vowel, and the next letter has a vowel. So it is read as lahū. Misconception: pupils shorten it. Condition checked: vowel before, vowel after."
+          "heading": "Madd silah",
+          "bullets": [],
+          "note": "Bismillah. The pronoun haa (him/his) between two vowelled letters gets a small waw or yaa.",
+          "table": {
+            "head": [
+              "Type",
+              "When",
+              "Counts",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Silah sughra",
+                "Next letter is not hamza",
+                "2",
+                "لَهُۥ مَالًۭا"
+              ],
+              [
+                "Silah sughra",
+                "Same",
+                "2",
+                "إِنَّهُۥ كَانَ"
+              ],
+              [
+                "Silah kubra",
+                "Next letter is hamza",
+                "4 or 5",
+                "مَالَهُۥٓ أَخْلَدَهُۥ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Silah kubra",
+          "heading": "No silah",
           "bullets": [
-            "Same haa, but a hamzat qat' comes next",
-            "Extend 4 or 5 counts",
-            "Example: مَالَهُ أَخْلَدَهُ (104:3)"
+            "Letter before the haa is sakin: فِيهِ هُدًى",
+            "Next letter is sakin: لَهُ ٱلْمُلْكُ",
+            "Stopping on the haa: ذَكَرَهُۥ at a stop (74:55)"
           ],
-          "note": "Ayah 104:3 يَحْسَبُ أَنَّ مَالَهُ أَخْلَدَهُ. The haa is followed by hamzah of أَخْلَدَهُ. Stretch 4 or 5 counts like madd munfasil. Another example: عِنْدَهُ إِلَّا in Ayat al-Kursi (we study that in Year 10)."
-        },
-        {
-          "heading": "When there is no silah",
-          "bullets": [
-            "No silah if the letter before haa is sakin",
-            "No silah if the next letter is sakin",
-            "Hamzat al-wasl after haa: no silah"
-          ],
-          "note": "Contrast فِيهِ هُدًى (ya sakin before haa, no silah) with the rule. Give a short list; a few Qur'anic words are exceptions (for example in Surat Al-Furqan), and your teacher will show you when you meet them. Do not overwhelm pupils with exceptions."
+          "note": "A few words are special cases in Hafs; the teacher shows them when met."
         },
         {
           "heading": "Madd 'iwad",
           "bullets": [
-            "Stop on tanween fatha, not on taa marbutah",
-            "Tanween becomes alif, 2 counts",
-            "Examples: عَلِيمًا حَكِيمًا, تَوَّابًا"
+            "Stopping on tanween fathah",
+            "The tanween becomes a long aa, 2 counts",
+            "Not on taa marbutah (ـةً stops as haa)"
           ],
-          "note": "Say: when continuing we say hakeeman; when stopping we say hakeemaa. Examples: 4:17 ends عَلِيمًا حَكِيمًا, and 110:3 ends إِنَّهُ كَانَ تَوَّابًا. Taa marbutah (like رَحْمَةً) stops as a sakin haa, no alif."
+          "note": "Al-Muddaththir is full of them: وَحِيدًۭا (74:11) stops as wahidaa; مَّمْدُودًۭا (74:12); شُهُودًۭا (74:13); تَمْهِيدًۭا (74:14); صَعُودًا (74:17)."
         },
         {
-          "heading": "Practice in Al-Humazah",
-          "bullets": [
-            "Find the silah in ayah 3",
-            "Recite the end of An-Nasr",
-            "Check counts with a partner"
-          ],
-          "note": "Pupils read 104:3 and 110:3 aloud, then partner tick. Misconception: applying madd 'iwad to rounded taa. Collect errors and review them together."
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Stopping on وَحِيدًا as 'waheedan' or 'waheed'",
+            "right": "Stop as 'waheedaa': the tanween becomes a 2-count alif"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«لَهُۥ مَالًۭا» (74:12): the haa is read ...",
+            "options": [
+              "lahoo: silah sughra, 2 counts",
+              "lah: no silah",
+              "lahooo: 4 or 5 counts"
+            ],
+            "answer": 0,
+            "why": "Between two vowelled letters, and the next letter is not hamza: sughra, 2 counts."
+          }
         }
       ],
       "practice": [
-        "In مَالَهُ أَخْلَدَهُ, is this silah sughra or kubra? How many counts?",
-        "Why is there no silah in فِيهِ هُدًى?",
-        "How is تَوَّابًا read when you stop?"
+        {
+          "q": "Read 74:11 to 14 stopping at each ayah end; name the silah and 'iwad.",
+          "a": "Silah sughra: لَهُۥ مَالًۭا (74:12), لَهُۥ تَمْهِيدًۭا (74:14); 'iwad at the stops: وَحِيدَا, مَّمْدُودَا, شُهُودَا, تَمْهِيدَا.",
+          "mins": 5,
+          "model": "I do: 74:11 stop: وَحِيدًا becomes waheedaa ('iwad). 74:12 لَهُۥ مَالًا: silah sughra lahoo, 2; stop مَّمْدُودَا ('iwad)."
+        },
+        {
+          "q": "Silah kubra is followed by ...",
+          "a": "hamza",
+          "mins": 1,
+          "options": [
+            "hamza",
+            "sukoon",
+            "meem"
+          ]
+        }
       ],
       "independent": [
-        "Sort 10 words into silah sughra, silah kubra, no silah",
-        "Recite Surat An-Nasr stopping on every ayah",
-        "Write two sentences explaining madd 'iwad to a younger pupil"
+        {
+          "q": "Silah and 'iwad audit (pupil PDF): mark them in 74:11 to 18 and 74:54 to 56. Today's rota group recites 74:38 to 56.",
+          "a": "Silah sughra: 74:12, 74:14, 74:16 إِنَّهُۥ كَانَ, 74:17 سَأُرْهِقُهُۥ صَعُودًا, 74:18 إِنَّهُۥ فَكَّرَ, 74:54 إِنَّهُۥ تَذْكِرَةٌ; 'iwad at stops: 74:11 to 14, 74:17; 74:55 ذَكَرَهُۥ at a stop: no silah.",
+          "mins": 10,
+          "model": "The teacher marks 74:16: إِنَّهُۥ كَانَ: haa between نَّ (vowel) and ك (vowel): silah sughra, 2."
+        },
+        {
+          "q": "Extend: find a silah kubra in Al-Humazah.",
+          "a": "مَالَهُۥٓ أَخْلَدَهُۥ (104:3)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why do we stop on رَهِينَةٌ (74:38) as 'raheenah', not with an alif?",
+          "a": "It ends in taa marbutah: at a stop it becomes haa sakinah; 'iwad is only for tanween fathah on other letters.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the two conditions for silah sughra.",
-        "What happens to tanween fatha when you stop?"
+        {
+          "q": "Stopping on «صَعُودًا» (74:17) gives ...",
+          "a": "sa'oodaa ('iwad)",
+          "mins": 1,
+          "options": [
+            "sa'oodaa ('iwad)",
+            "sa'oodan",
+            "sa'ood"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why do we read «لَهُۥ» as 'lahoo' but «لَهُ ٱلْ...» as 'lahul'?",
+          "a": "Silah only happens when the haa is between two vowelled letters; before a sukoon (or hamzat al-wasl) it is short.",
+          "mins": 2
+        }
       ],
-      "homework": "Find two more examples of the pronoun haa in your mushaf and decide silah sughra or kubra.",
-      "send": "SEND/EAL: colour-coded cards showing vowel + haa + vowel. Stretch: find a word with haa that has no silah and explain why."
+      "homework": "Recite 74:38 to 56 daily; mark three silah in your manzil; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Madd silah and madd 'iwad rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Tajweed colour coded Quran",
+          "alt": "A colour-coded tajweed mushaf",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Alif-lam and hamzat al-wasl",
@@ -1121,6 +1427,3288 @@
       ],
       "homework": "Practise your targets daily and record a new recitation next week.",
       "send": "SEND/EAL: simplified rubric with sentence stems. Stretch: coach another pupil on one rule."
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 13,
+      "title": "Surat Al-Muddaththir 74:1-10: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "'O you who covers himself, arise and warn!' These words came early in the Prophet's ﷺ mission. What do they ask of him, and of us?",
+      "objectives": [
+        "To memorise Al-Muddaththir 74:1-10 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 74:1-10 after the teacher, word for word",
+        "Most: recite 74:1-10 from memory with no more than one prompt",
+        "Some: link 74:1-10 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: standing up for the truth with patience and purity",
+      "keywords": [
+        {
+          "term": "al-muddaththir (المدثر)",
+          "def": "the one wrapped in a cloak"
+        },
+        {
+          "term": "andhir (أنذر)",
+          "def": "warn"
+        },
+        {
+          "term": "tahhir (طهّر)",
+          "def": "purify"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'O you who covers himself, arise and warn!' These words came early in the Prophet's ﷺ mission. What do they ask of him, and of us?",
+        "a": "To stand up for the message: magnify Allah, purify oneself, avoid wrong, be patient for Allah (74:1 to 7)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who covers himself, arise and warn, and your Lord glorify, and your clothing purify, and uncleanliness avoid' (Al-Muddaththir 74:1 to 5). These are among the earliest ayat revealed after the first revelation (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ ...»?",
+          "a": "Al-Muddaththir",
+          "mins": 1,
+          "options": [
+            "Al-Muzzammil",
+            "Al-Muddaththir",
+            "Al-Qiyamah"
+          ]
+        },
+        {
+          "q": "Which surah is 67?",
+          "a": "Al-Mulk",
+          "mins": 1,
+          "options": [
+            "Al-Mulk",
+            "Nuh",
+            "Al-Jinn"
+          ]
+        },
+        {
+          "q": "«مِن رَّبِّ» is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "ikhfa",
+            "izhar"
+          ]
+        },
+        {
+          "q": "How many ayat are in Surat Al-Muddaththir (سورة المدثر)?",
+          "a": "56",
+          "mins": 1,
+          "options": [
+            "56",
+            "52",
+            "40"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Muddaththir 74:1-10",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 74:1-10 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ (١) قُمْ فَأَنذِرْ (٢) وَرَبَّكَ فَكَبِّرْ (٣) وَثِيَابَكَ فَطَهِّرْ (٤) وَٱلرُّجْزَ فَٱهْجُرْ (٥) وَلَا تَمْنُن تَسْتَكْثِرُ (٦) وَلِرَبِّكَ فَٱصْبِرْ (٧) فَإِذَا نُقِرَ فِى ٱلنَّاقُورِ (٨) فَذَٰلِكَ يَوْمَئِذٍۢ يَوْمٌ عَسِيرٌ (٩) عَلَى ٱلْكَٰفِرِينَ غَيْرُ يَسِيرٍۢ (١٠)",
+            "source": "Surat Al-Muddaththir, 74:1-10"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "74:1-2",
+                "O you who covers himself [with a garment], Arise and warn"
+              ],
+              [
+                "74:3-4",
+                "And your Lord glorify And your clothing purify"
+              ],
+              [
+                "74:5-6",
+                "And uncleanliness avoid And do not confer favor to acquire more"
+              ],
+              [
+                "74:7-8",
+                "But for your Lord be patient. And when the trumpet is blown,"
+              ],
+              [
+                "74:9-10",
+                "That Day will be a difficult day For the disbelievers - not easy."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "يَٰٓأَيُّهَا",
+                "Al-Muddaththir 74:1",
+                "Madd munfasil (يَٰٓ before أَ)",
+                "Stretch 4 or 5"
+              ],
+              [
+                "فَأَنذِرْ",
+                "Al-Muddaththir 74:2",
+                "Ikhfa: ذ",
+                "fa-an-dhir"
+              ],
+              [
+                "يَوْمَئِذٍۢ يَوْمٌ",
+                "Al-Muddaththir 74:9",
+                "Idgham with ghunnah: ي",
+                "yawma'idhiy-yawm"
+              ],
+              [
+                "يَسِيرٍۢ",
+                "Al-Muddaththir 74:10",
+                "Madd 'arid at a stop",
+                "yaseer: 2, 4 or 6"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 74:1-10 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which command is NOT in 74:2 to 7?",
+            "options": [
+              "Travel the earth",
+              "Arise and warn",
+              "Purify your clothing"
+            ],
+            "answer": 0,
+            "why": "74:2 to 7: arise and warn, glorify your Lord, purify your clothing, avoid uncleanliness, do not give to gain more, be patient for your Lord."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Muddaththir 74:1-10 together, ayah by ayah.",
+          "a": "The class recites 74:1-10 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 74:1-10. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«فَأَنذِرْ» (74:2) is ...",
+          "a": "ikhfa",
+          "mins": 1,
+          "options": [
+            "ikhfa",
+            "izhar",
+            "iqlab"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 74:1-10 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, list the six commands in 74:2 to 7 and one modern way to live each.",
+          "a": "Arise and warn; glorify Allah; purify clothing; avoid uncleanliness; give without seeking more; be patient: each with a sensible example.",
+          "mins": 2
+        },
+        {
+          "q": "Explain how 74:6 'do not confer favour to acquire more' links to sincerity.",
+          "a": "Give for Allah, not to get more back; that is ikhlas.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Muddaththir 74:3: «وَرَبَّكَ ...» Which word comes next?",
+          "a": "فَكَبِّرْ",
+          "mins": 1,
+          "options": [
+            "فَكَبِّرْ",
+            "ٱلتَّذْكِرَةِ",
+            "أَدْبَرَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 'O you who covers himself, arise and warn!' These words came early in the Prophet's ﷺ mission. What do they ask of him, and of us?",
+          "a": "To stand up for the message: magnify Allah, purify oneself, avoid wrong, be patient for Allah (74:1 to 7).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Muddaththir 74:1-10 to a parent three times a day and revise Al-Mulk to Nuh (67 to 71) on the rota; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Muddaththir 74:1-10 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Woollen cloak fabric",
+          "alt": "A woollen cloak",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 14,
+      "title": "Madd tabi'i and madd muttasil",
+      "duration": 50,
+      "bigQuestion": "If a reciter stretched the same madd 2 counts in one ayah and 6 in the next, what would you notice?",
+      "objectives": [
+        "To understand how the natural madd (2 counts) and the joined madd (4 or 5 counts) work and keep their lengths consistent"
+      ],
+      "successCriteria": [
+        "All: identify madd letters and stretch them 2 counts",
+        "Most: recognise madd muttasil and stretch 4 or 5",
+        "Some: explain why one length must be kept throughout a recitation"
+      ],
+      "smsc": "Cultural: the measured, even recitation passed down through teachers",
+      "keywords": [
+        {
+          "term": "madd (مد)",
+          "def": "lengthening a vowel sound, counted in beats (harakat)"
+        },
+        {
+          "term": "tabi'i (طبيعي)",
+          "def": "natural madd: 2 counts"
+        },
+        {
+          "term": "muttasil (متصل)",
+          "def": "joined madd: hamza in the same word, 4 or 5"
+        },
+        {
+          "term": "harakah (حركة)",
+          "def": "one count of length"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a reciter stretched the same madd 2 counts in one ayah and 6 in the next, what would you notice?",
+        "a": "It would sound uneven; lengths must be consistent, as reciters were taught."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation (tartil)' (Al-Muzzammil 73:4). Even lengths are part of tartil.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:4 in your head. How does the next ayah begin?",
+          "a": "وَٱلرُّجْزَ فَٱهْجُرْ",
+          "mins": 1,
+          "options": [
+            "وَٱلرُّجْزَ فَٱهْجُرْ",
+            "عَلَى ٱلْكَٰفِرِينَ",
+            "وَلَا تَمْنُن"
+          ]
+        },
+        {
+          "q": "«يَوْمَئِذٍۢ يَوْمٌ» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "ikhfa",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Madd letters are ...",
+          "a": "ا و ي",
+          "mins": 1,
+          "options": [
+            "ا و ي",
+            "ء ه ع",
+            "ب م و"
+          ]
+        },
+        {
+          "q": "A 'count' (harakah) is about ...",
+          "a": "the time to fold one finger",
+          "mins": 1,
+          "options": [
+            "the time to fold one finger",
+            "one second exactly",
+            "one breath"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The family of madd",
+          "bullets": [],
+          "note": "Bismillah. Today: the first two rows; the rest come over the half term.",
+          "table": {
+            "head": [
+              "Madd",
+              "When",
+              "Counts (Hafs)",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Tabi'i (طبيعي)",
+                "Madd letter, nothing after it causes more",
+                "2",
+                "وَثِيَابَكَ"
+              ],
+              [
+                "Muttasil (متصل)",
+                "Hamza after the madd letter, same word",
+                "4 or 5",
+                "شَآءَ"
+              ],
+              [
+                "Munfasil (منفصل)",
+                "Hamza starts the next word",
+                "4 or 5",
+                "وَمَآ أَدْرَىٰكَ"
+              ],
+              [
+                "'Arid lis-sukun (عارض للسكون)",
+                "Stopping on the letter after a madd letter",
+                "2, 4 or 6",
+                "ٱلْمُجْرِمِينَ"
+              ],
+              [
+                "Silah (صلة)",
+                "Pronoun haa between two vowels",
+                "2 (4 or 5 before hamza)",
+                "لَهُۥ مَالًۭا"
+              ],
+              [
+                "'Iwad (عوض)",
+                "Stopping on tanween fathah",
+                "2",
+                "وَحِيدًۭا"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Madd tabi'i: the natural madd",
+          "bullets": [
+            "ا after fathah, و after dammah, ي after kasrah",
+            "No hamza or sukoon after it",
+            "Always 2 counts"
+          ],
+          "note": "Model ثِيَابَكَ (74:4), ٱلنَّاقُورِ (74:8): exactly 2 counts."
+        },
+        {
+          "heading": "Madd muttasil: joined",
+          "bullets": [
+            "Madd letter then hamza in the same word",
+            "Obligatory: 4 or 5 counts",
+            "Choose one length and keep it"
+          ],
+          "note": "Examples in Al-Muddaththir: يَشَآءُ (74:31), شَآءَ (74:37), يَتَسَآءَلُونَ (74:40), ٱلْخَآئِضِينَ (74:45). The sign ٓ over the madd letter shows it is longer than natural."
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "shaa'a with 2 counts, like a natural madd",
+            "right": "shaaaa'a: 4 or 5 counts, because hamza follows in the same word"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«ٱلْخَآئِضِينَ» (74:45): the first madd is ...",
+            "options": [
+              "Muttasil: 4 or 5",
+              "Tabi'i: 2",
+              "Lazim: 6"
+            ],
+            "answer": 0,
+            "why": "Alif then hamza in the same word: madd muttasil."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Mark and count every madd in 74:37 «لِمَن شَآءَ مِنكُمْ أَن يَتَقَدَّمَ أَوْ يَتَأَخَّرَ».",
+          "a": "شَآءَ muttasil 4 or 5; no other madd letters stretched (أَوْ is leen only at a stop).",
+          "mins": 5,
+          "model": "I do: شَآءَ: alif then hamza in the same word, the sign ٓ: muttasil, I choose 4 counts. مِنكُمْ: ikhfa, not madd. أَوْ: waw sakinah after fathah is leen, not stretched when joined."
+        },
+        {
+          "q": "Muttasil is ...",
+          "a": "obligatory (wajib)",
+          "mins": 1,
+          "options": [
+            "obligatory (wajib)",
+            "optional",
+            "forbidden"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Madd audit (pupil PDF): mark every madd tabi'i and muttasil in 74:38 to 48. Today's rota group recites 74:1 to 10.",
+          "a": "Muttasil: يَتَسَآءَلُونَ (74:40), ٱلْخَآئِضِينَ (74:45). Tabi'i, e.g.: أَصْحَٰبَ (74:39), جَنَّٰتٍ (74:40), قَالُوا۟ (74:43), ٱلْمِسْكِينَ (74:44), ٱلدِّينِ (74:46), ٱلشَّٰفِعِينَ (74:48).",
+          "mins": 10,
+          "model": "The teacher marks 74:40: جَنَّٰتٍ: small alif, tabi'i 2; يَتَسَآءَلُونَ: alif then hamza, muttasil 4 or 5; then و in ـلُونَ: tabi'i 2."
+        },
+        {
+          "q": "Extend: find a madd muttasil in Al-Mulk.",
+          "a": "For example: ٱلسَّمَآءِ or مَآءٍ (pupil gives the ayah).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is muttasil obligatory but munfasil allowed different lengths?",
+          "a": "In muttasil the hamza is in the same word and all reciters lengthen it; in munfasil it is in the next word and reciters differ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Madd tabi'i is ...",
+          "a": "2 counts",
+          "mins": 1,
+          "options": [
+            "2 counts",
+            "4 counts",
+            "6 counts"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If a reciter stretched the same madd 2 counts in one ayah and 6 in the next, what would you notice?",
+          "a": "It would sound uneven; lengths must be consistent, as reciters were taught.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite 74:1 to 10 with even madd lengths; mark the madd in your mushaf; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Madd tabi'i and madd muttasil rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Tajweed colour coded Quran",
+          "alt": "A colour-coded tajweed mushaf",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 15,
+      "title": "Muraja'ah: Al-Mulk to Nuh on the rota",
+      "duration": 50,
+      "bigQuestion": "You will finish Juz' Tabarak (67 to 77) by the end of Year 9. What has to happen every week to keep the first surahs strong?",
+      "objectives": [
+        "To understand how to revise Juz' Tabarak efficiently and recite a manzil portion against the rubric"
+      ],
+      "successCriteria": [
+        "All: recite your manzil portion with no more than three prompts",
+        "Most: score a partner accurately on the rubric",
+        "Some: plan which Autumn surah (Al-Jinn or Al-Muzzammil) to catch up"
+      ],
+      "smsc": "Spiritual: faithfulness to what Allah has let us memorise",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "manzil (منزل)",
+          "def": "older memorised portion on a rota"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You will finish Juz' Tabarak (67 to 77) by the end of Year 9. What has to happen every week to keep the first surahs strong?",
+        "a": "A manzil rota so Al-Mulk to Nuh are revised every week, not only the new surah."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Keep refreshing your knowledge of the Qur'an, for it escapes faster than camels from their hobbles' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:7 in your head. How does the next ayah begin?",
+          "a": "فَإِذَا نُقِرَ",
+          "mins": 1,
+          "options": [
+            "فَقَالَ إِنْ",
+            "فَإِذَا نُقِرَ",
+            "سَأُرْهِقُهُۥ صَعُودًا"
+          ]
+        },
+        {
+          "q": "Muttasil length?",
+          "a": "4 or 5",
+          "mins": 1,
+          "options": [
+            "4 or 5",
+            "2",
+            "6 only"
+          ]
+        },
+        {
+          "q": "Juz' Tabarak is ...",
+          "a": "surahs 67 to 77",
+          "mins": 1,
+          "options": [
+            "surahs 67 to 77",
+            "surahs 78 to 114",
+            "surahs 1 to 7"
+          ]
+        },
+        {
+          "q": "Which surah is 71?",
+          "a": "Nuh",
+          "mins": 1,
+          "options": [
+            "Nuh",
+            "Al-Jinn",
+            "Al-Qalam"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rota",
+          "bullets": [],
+          "note": "Bismillah. Groups follow placement; this is the default.",
+          "table": {
+            "head": [
+              "Day",
+              "Sabaq",
+              "Sabqi",
+              "Manzil"
+            ],
+            "rows": [
+              [
+                "Mon",
+                "Al-Muddaththir new",
+                "Last section",
+                "Al-Mulk"
+              ],
+              [
+                "Tue",
+                "Link",
+                "This week",
+                "Al-Qalam"
+              ],
+              [
+                "Wed",
+                "Revise",
+                "Al-Muddaththir so far",
+                "Al-Haqqah"
+              ],
+              [
+                "Thu",
+                "Revise",
+                "Al-Muddaththir so far",
+                "Al-Ma'arij"
+              ],
+              [
+                "Fri",
+                "Check",
+                "All new",
+                "Nuh"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Catching up Al-Jinn and Al-Muzzammil",
+          "bullets": [
+            "Autumn targets for a normal year",
+            "If you do not know them: add 5 ayat a week",
+            "In the revision slot, not instead of new hifdh"
+          ],
+          "note": "Placement shows who needs them. TO CONFIRM with the Qur'an lead: each pupil's catch-up plan."
+        },
+        {
+          "heading": "Partner check",
+          "bullets": [
+            "Partner holds the mushaf",
+            "Marks prompts and rule slips",
+            "One precise target"
+          ],
+          "note": "Breakout pairs."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "A manzil portion chosen by the teacher.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher corrects one point",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which is the manzil?",
+            "options": [
+              "Older surahs revised on a rota",
+              "Today's new ayat",
+              "Last week's ayat"
+            ],
+            "answer": 0,
+            "why": "Manzil is the older memorised portion on a rota."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Score this recitation on the rubric: Nuh 71:1 to 4, two prompts, one muttasil read as 2 counts, steady pace.",
+          "a": "Hifdh 3 (two prompts); rules 3 (muttasil short); fluency 4; target: keep muttasil 4 or 5.",
+          "mins": 5,
+          "model": "I do: two prompts lowers hifdh to 3. The muttasil at 2 counts is a rule slip: 3. Pace fine: 4. One target: lengthen muttasil to 4 every time."
+        },
+        {
+          "q": "How many surahs are in Juz' Tabarak?",
+          "a": "11",
+          "mins": 1,
+          "options": [
+            "11",
+            "10",
+            "7"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite today's manzil to a partner who marks the rubric (pupil PDF). Today's rota group recites 74:1 to 10 to the teacher.",
+          "a": "Partner rubric and one target; the teacher records rota scores.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model one round."
+        },
+        {
+          "q": "Extend: write your weekly manzil plan in the portal log.",
+          "a": "Day by day plan for 67 to 71.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: recite Al-Mulk without stopping.",
+          "a": "Fluent, no prompts.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Sabaq means ...",
+          "a": "new ayat",
+          "mins": 1,
+          "options": [
+            "new ayat",
+            "older surahs",
+            "a rule"
+          ]
+        },
+        {
+          "q": "Back to our ponder: You will finish Juz' Tabarak (67 to 77) by the end of Year 9. What has to happen every week to keep the first surahs strong?",
+          "a": "A manzil rota so Al-Mulk to Nuh are revised every week, not only the new surah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow the rota in the portal log; recite 74:1 to 10 daily.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Hobbled camel resting",
+          "alt": "A camel resting",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 16,
+      "title": "Surat Al-Muddaththir 74:11-30: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "A man was given wealth and sons, then heard the Qur'an and called it 'magic'. Why might people reject the truth even when they know it?",
+      "objectives": [
+        "To memorise Al-Muddaththir 74:11-30 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 74:11-30 after the teacher, word for word",
+        "Most: recite 74:11-30 from memory with no more than one prompt",
+        "Some: link 74:11-30 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: arrogance blocks the truth; humility opens the heart",
+      "keywords": [
+        {
+          "term": "'anid (عنيد)",
+          "def": "stubbornly opposing"
+        },
+        {
+          "term": "istakbara (استكبر)",
+          "def": "was arrogant"
+        },
+        {
+          "term": "saqar (سقر)",
+          "def": "a name of Hell-fire"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A man was given wealth and sons, then heard the Qur'an and called it 'magic'. Why might people reject the truth even when they know it?",
+        "a": "Pride and love of status: he thought, plotted, frowned, turned away in arrogance (74:18 to 23)."
+      },
+      "islamicLink": {
+        "text": "Allah describes a man He gave wealth and sons who then said of the Qur'an: 'This is not but magic imitated; this is not but the word of a human being' (Al-Muddaththir 74:24 to 25). The surah warns against such arrogance.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:8 in your head. How does the next ayah begin?",
+          "a": "فَذَٰلِكَ يَوْمَئِذٍۢ",
+          "mins": 1,
+          "options": [
+            "فَمَن شَآءَ",
+            "ثُمَّ قُتِلَ",
+            "فَذَٰلِكَ يَوْمَئِذٍۢ"
+          ]
+        },
+        {
+          "q": "«شَآءَ» has ...",
+          "a": "madd muttasil",
+          "mins": 1,
+          "options": [
+            "madd muttasil",
+            "madd tabi'i",
+            "no madd"
+          ]
+        },
+        {
+          "q": "Al-Muddaththir 74:10: «عَلَى ٱلْكَٰفِرِينَ ...» Which word comes next?",
+          "a": "غَيْرُ",
+          "mins": 1,
+          "options": [
+            "فَقَالَ",
+            "غَيْرُ",
+            "أُوتُوا۟"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Muddaththir 74:11-20",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 74:11-20 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "ذَرْنِى وَمَنْ خَلَقْتُ وَحِيدًۭا (١١) وَجَعَلْتُ لَهُۥ مَالًۭا مَّمْدُودًۭا (١٢) وَبَنِينَ شُهُودًۭا (١٣) وَمَهَّدتُّ لَهُۥ تَمْهِيدًۭا (١٤) ثُمَّ يَطْمَعُ أَنْ أَزِيدَ (١٥) كَلَّآ ۖ إِنَّهُۥ كَانَ لِءَايَٰتِنَا عَنِيدًۭا (١٦) سَأُرْهِقُهُۥ صَعُودًا (١٧) إِنَّهُۥ فَكَّرَ وَقَدَّرَ (١٨) فَقُتِلَ كَيْفَ قَدَّرَ (١٩) ثُمَّ قُتِلَ كَيْفَ قَدَّرَ (٢٠)",
+            "source": "Surat Al-Muddaththir, 74:11-20"
+          }
+        },
+        {
+          "heading": "New ayat: Al-Muddaththir 74:21-30",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 74:21-30 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "ثُمَّ نَظَرَ (٢١) ثُمَّ عَبَسَ وَبَسَرَ (٢٢) ثُمَّ أَدْبَرَ وَٱسْتَكْبَرَ (٢٣) فَقَالَ إِنْ هَٰذَآ إِلَّا سِحْرٌۭ يُؤْثَرُ (٢٤) إِنْ هَٰذَآ إِلَّا قَوْلُ ٱلْبَشَرِ (٢٥) سَأُصْلِيهِ سَقَرَ (٢٦) وَمَآ أَدْرَىٰكَ مَا سَقَرُ (٢٧) لَا تُبْقِى وَلَا تَذَرُ (٢٨) لَوَّاحَةٌۭ لِّلْبَشَرِ (٢٩) عَلَيْهَا تِسْعَةَ عَشَرَ (٣٠)",
+            "source": "Surat Al-Muddaththir, 74:21-30"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "74:11-13",
+                "Leave Me with the one I created alone And to whom I granted extensive wealth And children present [with him]"
+              ],
+              [
+                "74:14-16",
+                "And spread [everything] before him, easing [his life]. Then he desires that I should add more. No! Indeed, he has been toward Our verses obstinate."
+              ],
+              [
+                "74:17-19",
+                "I will cover him with arduous torment. Indeed, he thought and deliberated. So may he be destroyed [for] how he deliberated."
+              ],
+              [
+                "74:20-22",
+                "Then may he be destroyed [for] how he deliberated. Then he considered [again]; Then he frowned and scowled;"
+              ],
+              [
+                "74:23-25",
+                "Then he turned back and was arrogant And said, \"This is not but magic imitated [from others]. This is not but the word of a human being.\""
+              ],
+              [
+                "74:26-28",
+                "I will drive him into Saqar. And what can make you know what is Saqar? It lets nothing remain and leaves nothing [unburned],"
+              ],
+              [
+                "74:29-30",
+                "Blackening the skins. Over it are nineteen [angels]."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 74:11-30 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What did the man call the Qur'an (74:24)?",
+            "options": [
+              "Magic",
+              "Poetry from a king",
+              "A history book"
+            ],
+            "answer": 0,
+            "why": "74:24: 'This is not but magic imitated'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Muddaththir 74:11-30 together, ayah by ayah.",
+          "a": "The class recites 74:11-30 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 74:11-30. Ayah 11: 3 times looking, 3 times without looking. Then ayah 12 the same way. Then link: recite 11 and 12 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«هَٰذَآ إِلَّا» (74:24) is ...",
+          "a": "madd munfasil",
+          "mins": 1,
+          "options": [
+            "madd munfasil",
+            "madd muttasil",
+            "madd lazim"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 74:11-30 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, list the steps in 74:18 to 23 that led him to reject the truth.",
+          "a": "He thought, plotted, looked, frowned, scowled, turned back and was arrogant.",
+          "mins": 2
+        },
+        {
+          "q": "Plan your week: how will you memorise 20 ayat in sections? Write it in the log.",
+          "a": "For example: 74:11 to 15 Mon, 16 to 20 Tue, 21 to 25 Wed, 26 to 30 Thu, link Fri.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Muddaththir 74:25: «إِنْ هَٰذَآ ...» Which word comes next?",
+          "a": "إِلَّا",
+          "mins": 1,
+          "options": [
+            "كَسَبَتْ",
+            "إِلَّا",
+            "عَنِ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A man was given wealth and sons, then heard the Qur'an and called it 'magic'. Why might people reject the truth even when they know it?",
+          "a": "Pride and love of status: he thought, plotted, frowned, turned away in arrogance (74:18 to 23).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Muddaththir 74:11-30 to a parent three times a day and revise 74:1 to 10 and the manzil rota; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Muddaththir 74:11-30 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Desert path road",
+          "alt": "A desert road",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A handwritten page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 17,
+      "title": "Madd munfasil and reciting with the rubric",
+      "duration": 50,
+      "bigQuestion": "One madd joins inside a word; another waits until the next word. Should they be treated the same?",
+      "objectives": [
+        "To understand madd munfasil and keep madd lengths consistent while reciting against the rubric"
+      ],
+      "successCriteria": [
+        "All: identify madd munfasil across two words",
+        "Most: keep munfasil and muttasil at the same chosen length",
+        "Some: score a recitation for madd accuracy"
+      ],
+      "smsc": "Moral: consistency and discipline in worship",
+      "keywords": [
+        {
+          "term": "madd (مد)",
+          "def": "lengthening a vowel sound, counted in beats (harakat)"
+        },
+        {
+          "term": "munfasil (منفصل)",
+          "def": "separated madd: hamza in the next word"
+        },
+        {
+          "term": "muttasil (متصل)",
+          "def": "joined madd: hamza in the same word"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "One madd joins inside a word; another waits until the next word. Should they be treated the same?",
+        "a": "Muttasil is in one word and obligatory; munfasil is across two words; in our route both are 4 or 5, kept consistent."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Those to whom We have given the Book recite it with its true recital' (Al-Baqarah 2:121).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:18 in your head. How does the next ayah begin?",
+          "a": "فَقُتِلَ كَيْفَ",
+          "mins": 1,
+          "options": [
+            "فَقُتِلَ كَيْفَ",
+            "وَكُنَّا نَخُوضُ",
+            "فَذَٰلِكَ يَوْمَئِذٍۢ"
+          ]
+        },
+        {
+          "q": "Muttasil is ...",
+          "a": "hamza in the same word",
+          "mins": 1,
+          "options": [
+            "hamza in the same word",
+            "hamza in the next word",
+            "a stop"
+          ]
+        },
+        {
+          "q": "«يَتَسَآءَلُونَ» has ...",
+          "a": "muttasil",
+          "mins": 1,
+          "options": [
+            "muttasil",
+            "munfasil",
+            "'iwad"
+          ]
+        },
+        {
+          "q": "Al-Muddaththir 74:27: «وَمَآ أَدْرَىٰكَ ...» Which word comes next?",
+          "a": "مَا",
+          "mins": 1,
+          "options": [
+            "كَأَنَّهُمْ",
+            "ٱلْخَآئِضِينَ",
+            "مَا"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Madd munfasil: separated",
+          "bullets": [
+            "Madd letter at the end of a word",
+            "Hamza starts the next word",
+            "4 or 5 counts (Hafs, our route)"
+          ],
+          "note": "Bismillah. Model 74:27 وَمَآ أَدْرَىٰكَ and 74:24 هَٰذَآ إِلَّا."
+        },
+        {
+          "heading": "Examples in Al-Muddaththir",
+          "bullets": [],
+          "note": "Pupils say joined or separated.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Madd",
+              "Counts"
+            ],
+            "rows": [
+              [
+                "هَٰذَآ إِلَّا",
+                "Al-Muddaththir 74:24",
+                "Munfasil",
+                "4 or 5"
+              ],
+              [
+                "وَمَآ أَدْرَىٰكَ",
+                "Al-Muddaththir 74:27",
+                "Munfasil",
+                "4 or 5"
+              ],
+              [
+                "إِلَّآ أَصْحَٰبَ",
+                "Al-Muddaththir 74:39",
+                "Munfasil",
+                "4 or 5"
+              ],
+              [
+                "شَآءَ",
+                "Al-Muddaththir 74:37",
+                "Muttasil",
+                "4 or 5"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Keep it consistent",
+          "bullets": [
+            "Choose 4 (or 5) at the start",
+            "Every muttasil and munfasil the same",
+            "Muttasil never shorter than munfasil"
+          ],
+          "note": "The rubric's 'rules' row includes consistent madd."
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "wa maa adraaka: 2 counts because the hamza is in another word",
+            "right": "wa maaaa adraaka: 4 or 5 counts, as in our muttasil"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«كَلَّآ إِنَّهُۥ» (74:54) is ...",
+            "options": [
+              "Munfasil",
+              "Muttasil",
+              "Tabi'i"
+            ],
+            "answer": 0,
+            "why": "The alif ends كَلَّآ and the hamza begins إِنَّهُۥ: separated."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read 74:24 to 27 and classify every madd before a hamza.",
+          "a": "هَٰذَآ إِلَّا (74:24) munfasil; هَٰذَآ إِلَّا (74:25) munfasil; وَمَآ أَدْرَىٰكَ (74:27) munfasil.",
+          "mins": 5,
+          "model": "I do: 74:24 هَٰذَآ ends with alif, next word إِلَّا starts with hamza: munfasil, 4 counts. Same in 74:25. 74:27 وَمَآ then أَدْرَىٰكَ: munfasil, 4."
+        },
+        {
+          "q": "Munfasil means ...",
+          "a": "separated",
+          "mins": 1,
+          "options": [
+            "separated",
+            "joined",
+            "necessary"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Rubric recitation: recite 74:11 to 30 to a partner in breakout rooms; partner scores the 'rules' row for madd only (pupil PDF). Today's rota group recites to the teacher.",
+          "a": "Partner records each munfasil and muttasil and whether lengths matched.",
+          "mins": 10,
+          "model": "The teacher recites 74:24 to 25 while the class scores it, then reveals the score."
+        },
+        {
+          "q": "Extend: find two munfasil in Al-Mulk.",
+          "a": "Pupil gives two examples with ayah numbers, checked by the teacher.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain why muttasil must not be shorter than munfasil.",
+          "a": "Muttasil is the stronger (obligatory) madd, so it is never given less length than the optional one.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Our munfasil length is ...",
+          "a": "4 or 5",
+          "mins": 1,
+          "options": [
+            "4 or 5",
+            "2",
+            "6"
+          ]
+        },
+        {
+          "q": "Back to our ponder: One madd joins inside a word; another waits until the next word. Should they be treated the same?",
+          "a": "Muttasil is in one word and obligatory; munfasil is across two words; in our route both are 4 or 5, kept consistent.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite 74:11 to 30 daily with consistent madd; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Madd munfasil and reciting with the rubric rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Metronome",
+          "alt": "Keeping a steady, even count",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 18,
+      "title": "Recitation with the rubric: Al-Muddaththir 1 to 30",
+      "duration": 50,
+      "bigQuestion": "What is the difference between reciting from memory and reciting well from memory?",
+      "objectives": [
+        "To understand how the rubric judges a recitation and to recite 74:1 to 30 at a secure level"
+      ],
+      "successCriteria": [
+        "All: recite 74:1 to 30 with no more than three prompts",
+        "Most: keep madd lengths consistent",
+        "Some: score 4 for fluency with correct waqf at ayah ends"
+      ],
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping"
+        },
+        {
+          "term": "rubric",
+          "def": "the checklist used to assess recitation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the difference between reciting from memory and reciting well from memory?",
+        "a": "Well means accurate letters, rules, even madd, steady pace and good stops: the rubric rows."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation (tartil)' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:22 in your head. How does the next ayah begin?",
+          "a": "ثُمَّ أَدْبَرَ",
+          "mins": 1,
+          "options": [
+            "ثُمَّ أَدْبَرَ",
+            "وَكُنَّا نُكَذِّبُ",
+            "كُلُّ نَفْسٍۭ"
+          ]
+        },
+        {
+          "q": "«وَمَآ أَدْرَىٰكَ» is ...",
+          "a": "munfasil",
+          "mins": 1,
+          "options": [
+            "munfasil",
+            "muttasil",
+            "tabi'i"
+          ]
+        },
+        {
+          "q": "Al-Muddaththir 74:28: «لَا ...» Which word comes next?",
+          "a": "تُبْقِى",
+          "mins": 1,
+          "options": [
+            "مِّنْهُمْ",
+            "حَتَّىٰٓ",
+            "تُبْقِى"
+          ]
+        },
+        {
+          "q": "Munfasil and muttasil should be ...",
+          "a": "the same length",
+          "mins": 1,
+          "options": [
+            "the same length",
+            "different",
+            "skipped"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rubric",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Weak links in 74:1 to 30",
+          "bullets": [
+            "74:19 and 74:20 are almost the same",
+            "74:20 adds ثُمَّ",
+            "74:21 to 23 each start ثُمَّ"
+          ],
+          "note": "Practise 74:18 to 23 slowly."
+        },
+        {
+          "heading": "Partner check",
+          "bullets": [
+            "Partner holds the mushaf",
+            "Scores each row",
+            "One precise target"
+          ],
+          "note": "Breakout pairs, 4 minutes each way."
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "74:18 to 30.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher corrects one point",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "74:20 begins ...",
+            "options": [
+              "ثُمَّ قُتِلَ",
+              "فَقُتِلَ",
+              "ثُمَّ نَظَرَ"
+            ],
+            "answer": 0,
+            "why": "74:19 فَقُتِلَ كَيْفَ قَدَّرَ; 74:20 ثُمَّ قُتِلَ كَيْفَ قَدَّرَ; 74:21 ثُمَّ نَظَرَ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 74:18 to 23 and say which word starts each ayah.",
+          "a": "74:18 إِنَّهُۥ; 74:19 فَقُتِلَ; 74:20 ثُمَّ قُتِلَ; 74:21 ثُمَّ نَظَرَ; 74:22 ثُمَّ عَبَسَ; 74:23 ثُمَّ أَدْبَرَ.",
+          "mins": 5,
+          "model": "I do: the story moves in steps: he thought (74:18), 'may he be destroyed' (74:19), again with ثُمَّ (74:20), then he looked, frowned, turned back: three more ثُمَّ."
+        },
+        {
+          "q": "How many ayat in 74:18 to 23 start with ثُمَّ?",
+          "a": "4",
+          "mins": 1,
+          "options": [
+            "4",
+            "3",
+            "5"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite 74:1 to 30 to a partner who scores the rubric (pupil PDF). Today's rota group recites 74:11 to 30 to the teacher.",
+          "a": "Partner rubric with one target; the teacher records rota scores.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model one round."
+        },
+        {
+          "q": "Extend: write the meaning of 74:26 to 30 in your own words.",
+          "a": "Allah will drive him into Saqar, which leaves nothing; over it are nineteen (angels).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: recite 74:1 to 30 without stopping.",
+          "a": "Fluent, no prompts.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Waqf (stopping) is best at ...",
+          "a": "the end of an ayah",
+          "mins": 1,
+          "options": [
+            "the end of an ayah",
+            "the middle of a word",
+            "anywhere"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What is the difference between reciting from memory and reciting well from memory?",
+          "a": "Well means accurate letters, rules, even madd, steady pace and good stops: the rubric rows.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite 74:1 to 30 daily; fix the ثُمَّ sequence; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Recitation with the rubric rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Checklist clipboard",
+          "alt": "A checklist",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 19,
+      "title": "Surat Al-Muddaththir 74:31-37: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "74:31 is one of the longest ayat in Juz' Tabarak. How would you memorise one very long ayah?",
+      "objectives": [
+        "To memorise Al-Muddaththir 74:31-37 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 74:31-37 after the teacher, word for word",
+        "Most: recite 74:31-37 from memory with no more than one prompt",
+        "Some: link 74:31-37 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: only Allah knows the full extent of His creation",
+      "keywords": [
+        {
+          "term": "junud (جنود)",
+          "def": "soldiers"
+        },
+        {
+          "term": "dhikra (ذكرى)",
+          "def": "a reminder"
+        },
+        {
+          "term": "asfara (أسفر)",
+          "def": "brightened (the dawn)"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "74:31 is one of the longest ayat in Juz' Tabarak. How would you memorise one very long ayah?",
+        "a": "Split it at its stopping marks into phrases, memorise each, then link them."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And none knows the soldiers of your Lord except Him. And it is not but a reminder to humanity' (Al-Muddaththir 74:31). Then He swears by the moon, the night and the dawn (74:32 to 34).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:26 in your head. How does the next ayah begin?",
+          "a": "وَمَآ أَدْرَىٰكَ",
+          "mins": 1,
+          "options": [
+            "كَلَّا ۖ",
+            "فَقَالَ إِنْ",
+            "وَمَآ أَدْرَىٰكَ"
+          ]
+        },
+        {
+          "q": "74:20 begins ...",
+          "a": "ثُمَّ قُتِلَ",
+          "mins": 1,
+          "options": [
+            "ثُمَّ قُتِلَ",
+            "فَقُتِلَ",
+            "ثُمَّ نَظَرَ"
+          ]
+        },
+        {
+          "q": "«كَلَّآ إِنَّهُۥ» is ...",
+          "a": "munfasil",
+          "mins": 1,
+          "options": [
+            "munfasil",
+            "muttasil",
+            "'arid"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Muddaththir 74:31",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 74:31 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَمَا جَعَلْنَآ أَصْحَٰبَ ٱلنَّارِ إِلَّا مَلَٰٓئِكَةًۭ ۙ وَمَا جَعَلْنَا عِدَّتَهُمْ إِلَّا فِتْنَةًۭ لِّلَّذِينَ كَفَرُوا۟ لِيَسْتَيْقِنَ ٱلَّذِينَ أُوتُوا۟ ٱلْكِتَٰبَ وَيَزْدَادَ ٱلَّذِينَ ءَامَنُوٓا۟ إِيمَٰنًۭا ۙ وَلَا يَرْتَابَ ٱلَّذِينَ أُوتُوا۟ ٱلْكِتَٰبَ وَٱلْمُؤْمِنُونَ ۙ وَلِيَقُولَ ٱلَّذِينَ فِى قُلُوبِهِم مَّرَضٌۭ وَٱلْكَٰفِرُونَ مَاذَآ أَرَادَ ٱللَّهُ بِهَٰذَا مَثَلًۭا ۚ كَذَٰلِكَ يُضِلُّ ٱللَّهُ مَن يَشَآءُ وَيَهْدِى مَن يَشَآءُ ۚ وَمَا يَعْلَمُ جُنُودَ رَبِّكَ إِلَّا هُوَ ۚ وَمَا هِىَ إِلَّا ذِكْرَىٰ لِلْبَشَرِ (٣١)",
+            "source": "Surat Al-Muddaththir, 74:31"
+          }
+        },
+        {
+          "heading": "New ayat: Al-Muddaththir 74:32-37",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 74:32-37 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "كَلَّا وَٱلْقَمَرِ (٣٢) وَٱلَّيْلِ إِذْ أَدْبَرَ (٣٣) وَٱلصُّبْحِ إِذَآ أَسْفَرَ (٣٤) إِنَّهَا لَإِحْدَى ٱلْكُبَرِ (٣٥) نَذِيرًۭا لِّلْبَشَرِ (٣٦) لِمَن شَآءَ مِنكُمْ أَن يَتَقَدَّمَ أَوْ يَتَأَخَّرَ (٣٧)",
+            "source": "Surat Al-Muddaththir, 74:32-37"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "74:31",
+                "And We have not made the keepers of the Fire except angels. And We have not made their number except as a trial for those who disbelieve - that those who were given the Scripture will be convinced and those who have believed will increase in faith and those who were given the Scripture and the believers will not doubt and that those in whose hearts is hypocrisy and the disbelievers will say, \"What does Allah intend by this as an example?\" Thus does Allah leave astray whom He wills and guides whom He wills. And none knows the soldiers of your Lord except Him. And mention of the Fire is not but a reminder to humanity."
+              ],
+              [
+                "74:32",
+                "No! By the moon"
+              ],
+              [
+                "74:33",
+                "And [by] the night when it departs"
+              ],
+              [
+                "74:34",
+                "And [by] the morning when it brightens,"
+              ],
+              [
+                "74:35",
+                "Indeed, the Fire is of the greatest [afflictions]"
+              ],
+              [
+                "74:36",
+                "As a warning to humanity -"
+              ],
+              [
+                "74:37",
+                "To whoever wills among you to proceed or stay behind."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 74:31-37 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "How should we memorise 74:31?",
+            "options": [
+              "In phrases between its waqf marks, then link",
+              "All at once",
+              "Only the last line"
+            ],
+            "answer": 0,
+            "why": "74:31 has several ۙ and ۚ marks: natural phrase breaks."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Muddaththir 74:31-37 together, ayah by ayah.",
+          "a": "The class recites 74:31-37 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 74:31-37. Ayah 31: 3 times looking, 3 times without looking. Then ayah 32 the same way. Then link: recite 31 and 32 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«شَآءَ» in 74:37 is ...",
+          "a": "muttasil",
+          "mins": 1,
+          "options": [
+            "muttasil",
+            "munfasil",
+            "tabi'i"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 74:31-37 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, write what Allah swears by in 74:32 to 34.",
+          "a": "The moon, the night when it departs, and the morning when it brightens.",
+          "mins": 2
+        },
+        {
+          "q": "Split 74:31 into its phrases at the waqf marks and memorise the first three.",
+          "a": "Phrases ending at each ۙ / ۚ mark; first three recited.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Muddaththir 74:34: «وَٱلصُّبْحِ ...» Which word comes next?",
+          "a": "إِذَآ",
+          "mins": 1,
+          "options": [
+            "خَلَقْتُ",
+            "إِذَآ",
+            "ٱلْمُجْرِمِينَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 74:31 is one of the longest ayat in Juz' Tabarak. How would you memorise one very long ayah?",
+          "a": "Split it at its stopping marks into phrases, memorise each, then link them.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Muddaththir 74:31-37 to a parent three times a day and revise 74:1 to 30 and the manzil rota; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Muddaththir 74:31-37 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Full moon",
+          "alt": "The moon (74:32)",
+          "for": "hook"
+        },
+        {
+          "find": "Sunrise dawn over desert horizon",
+          "alt": "Dawn brightening (74:34)",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 20,
+      "title": "Muraja'ah: linking Al-Muddaththir 1 to 37",
+      "duration": 50,
+      "bigQuestion": "Where in Al-Muddaththir do you most often lose your place? Why there?",
+      "objectives": [
+        "To understand how to link sections of a long surah and recite 74:1 to 37 with consistent madd"
+      ],
+      "successCriteria": [
+        "All: recite 74:1 to 37 with no more than three prompts",
+        "Most: cross the joints 74:10 to 11 and 74:30 to 31 smoothly",
+        "Some: start from any ayah on request"
+      ],
+      "smsc": "Spiritual: carrying the Qur'an with confidence",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "joint",
+          "def": "the link between two sections"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Where in Al-Muddaththir do you most often lose your place? Why there?",
+        "a": "Usually at joints between sections or where ayat look alike (74:19 and 74:20)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:35 in your head. How does the next ayah begin?",
+          "a": "نَذِيرًۭا لِّلْبَشَرِ",
+          "mins": 1,
+          "options": [
+            "ثُمَّ يَطْمَعُ",
+            "نَذِيرًۭا لِّلْبَشَرِ",
+            "ثُمَّ قُتِلَ"
+          ]
+        },
+        {
+          "q": "'Arid lis-sukun happens when ...",
+          "a": "stopping",
+          "mins": 1,
+          "options": [
+            "stopping",
+            "continuing",
+            "starting"
+          ]
+        },
+        {
+          "q": "Al-Muddaththir 74:30: «عَلَيْهَا ...» Which word comes next?",
+          "a": "تِسْعَةَ",
+          "mins": 1,
+          "options": [
+            "لَهُۥ",
+            "تِسْعَةَ",
+            "عَلَيْهَا"
+          ]
+        },
+        {
+          "q": "74:31 ends with ...",
+          "a": "لِلْبَشَرِ",
+          "mins": 1,
+          "options": [
+            "لِلْبَشَرِ",
+            "سَقَرَ",
+            "ٱلْكُبَرِ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Joints",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Joint",
+              "End of one",
+              "Start of next"
+            ],
+            "rows": [
+              [
+                "74:10 to 11",
+                "يَسِيرٍۢ",
+                "ذَرْنِى"
+              ],
+              [
+                "74:30 to 31",
+                "عَشَرَ",
+                "وَمَا جَعَلْنَآ"
+              ],
+              [
+                "74:37 to 38",
+                "يَتَأَخَّرَ",
+                "كُلُّ نَفْسٍۭ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Start anywhere",
+          "bullets": [
+            "Teacher names an ayah",
+            "Pupil starts there",
+            "Three ayat, consistent madd"
+          ],
+          "note": "Mics in turn."
+        },
+        {
+          "heading": "Partner check",
+          "bullets": [
+            "Partner names a start",
+            "You recite three ayat",
+            "Swap"
+          ],
+          "note": "Breakout pairs."
+        },
+        {
+          "heading": "Listen and repeat: the joints",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher recites across a joint",
+            "Pupils listen",
+            "Three pupils repeat in turn",
+            "Teacher checks the link",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "After 74:30 (عَلَيْهَا تِسْعَةَ عَشَرَ) comes ...",
+            "options": [
+              "وَمَا جَعَلْنَآ أَصْحَٰبَ ٱلنَّارِ",
+              "كَلَّا وَٱلْقَمَرِ",
+              "سَأُصْلِيهِ سَقَرَ"
+            ],
+            "answer": 0,
+            "why": "74:31 begins وَمَا جَعَلْنَآ أَصْحَٰبَ ٱلنَّارِ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Start at 74:30 and recite to 74:34.",
+          "a": "No prompts; 74:31 in phrases.",
+          "mins": 5,
+          "model": "I do: isti'adhah, 74:30 عَلَيْهَا تِسْعَةَ عَشَرَ, then 74:31 phrase by phrase, pausing only at its marks, then 74:32 to 34."
+        },
+        {
+          "q": "How many ayat in Al-Muddaththir?",
+          "a": "56",
+          "mins": 1,
+          "options": [
+            "56",
+            "52",
+            "40"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: 'start anywhere' check across 74:1 to 37 (start ayat on the pupil PDF). Today's rota group recites 74:1 to 37 to the teacher.",
+          "a": "Partner records starts and prompts; the teacher records rota scores.",
+          "mins": 10,
+          "model": "The teacher models one 'start anywhere' turn."
+        },
+        {
+          "q": "Extend: write the first word of 74:31 to 37 from memory.",
+          "a": "وَمَا, كَلَّا, وَٱلَّيْلِ, وَٱلصُّبْحِ, إِنَّهَا, نَذِيرًا, لِمَن",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: recite 74:1 to 37 without stopping.",
+          "a": "Fluent, no prompts.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Best test of strong hifdh?",
+          "a": "Starting from any ayah",
+          "mins": 1,
+          "options": [
+            "Starting from any ayah",
+            "Reading from the mushaf",
+            "Listening only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Where in Al-Muddaththir do you most often lose your place? Why there?",
+          "a": "Usually at joints between sections or where ayat look alike (74:19 and 74:20).",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise 'start anywhere' with a parent for 74:1 to 37; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Bridge over river",
+          "alt": "A bridge joining two sides",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 21,
+      "title": "Surat Al-Muddaththir 74:38-56: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "People in Paradise ask those in Saqar: 'What put you into Saqar?' Their four answers are in 74:43 to 46. Can you guess them?",
+      "objectives": [
+        "To memorise Al-Muddaththir 74:38-56 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 74:38-56 after the teacher, word for word",
+        "Most: recite 74:38-56 from memory with no more than one prompt",
+        "Some: link 74:38-56 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: salah and feeding the poor as protection",
+      "keywords": [
+        {
+          "term": "rahinah (رهينة)",
+          "def": "held in pledge (by its deeds)"
+        },
+        {
+          "term": "al-musallin (المصلين)",
+          "def": "those who pray"
+        },
+        {
+          "term": "al-miskin (المسكين)",
+          "def": "the poor"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "People in Paradise ask those in Saqar: 'What put you into Saqar?' Their four answers are in 74:43 to 46. Can you guess them?",
+        "a": "They did not pray, did not feed the poor, joined in falsehood and denied the Day of Judgement (74:43 to 46)."
+      },
+      "islamicLink": {
+        "text": "Allah says the people of Hell will answer: 'We were not of those who prayed, nor did we used to feed the poor, and we used to enter into vain discourse with those who engaged in it, and we used to deny the Day of Recompense' (Al-Muddaththir 74:43 to 46).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:33 in your head. How does the next ayah begin?",
+          "a": "وَٱلصُّبْحِ إِذَآ",
+          "mins": 1,
+          "options": [
+            "إِنْ هَٰذَآ",
+            "عَلَيْهَا تِسْعَةَ",
+            "وَٱلصُّبْحِ إِذَآ"
+          ]
+        },
+        {
+          "q": "«ٱلْمُجْرِمِينَ» at a stop is ...",
+          "a": "'arid lis-sukun",
+          "mins": 1,
+          "options": [
+            "'arid lis-sukun",
+            "muttasil",
+            "lazim"
+          ]
+        },
+        {
+          "q": "Leen is ...",
+          "a": "و or ي sakinah after fathah",
+          "mins": 1,
+          "options": [
+            "و or ي sakinah after fathah",
+            "a bounce",
+            "a hum"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Muddaththir 74:38-47",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 74:38-47 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "كُلُّ نَفْسٍۭ بِمَا كَسَبَتْ رَهِينَةٌ (٣٨) إِلَّآ أَصْحَٰبَ ٱلْيَمِينِ (٣٩) فِى جَنَّٰتٍۢ يَتَسَآءَلُونَ (٤٠) عَنِ ٱلْمُجْرِمِينَ (٤١) مَا سَلَكَكُمْ فِى سَقَرَ (٤٢) قَالُوا۟ لَمْ نَكُ مِنَ ٱلْمُصَلِّينَ (٤٣) وَلَمْ نَكُ نُطْعِمُ ٱلْمِسْكِينَ (٤٤) وَكُنَّا نَخُوضُ مَعَ ٱلْخَآئِضِينَ (٤٥) وَكُنَّا نُكَذِّبُ بِيَوْمِ ٱلدِّينِ (٤٦) حَتَّىٰٓ أَتَىٰنَا ٱلْيَقِينُ (٤٧)",
+            "source": "Surat Al-Muddaththir, 74:38-47"
+          }
+        },
+        {
+          "heading": "New ayat: Al-Muddaththir 74:48-56",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 74:48-56 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "فَمَا تَنفَعُهُمْ شَفَٰعَةُ ٱلشَّٰفِعِينَ (٤٨) فَمَا لَهُمْ عَنِ ٱلتَّذْكِرَةِ مُعْرِضِينَ (٤٩) كَأَنَّهُمْ حُمُرٌۭ مُّسْتَنفِرَةٌۭ (٥٠) فَرَّتْ مِن قَسْوَرَةٍۭ (٥١) بَلْ يُرِيدُ كُلُّ ٱمْرِئٍۢ مِّنْهُمْ أَن يُؤْتَىٰ صُحُفًۭا مُّنَشَّرَةًۭ (٥٢) كَلَّا ۖ بَل لَّا يَخَافُونَ ٱلْءَاخِرَةَ (٥٣) كَلَّآ إِنَّهُۥ تَذْكِرَةٌۭ (٥٤) فَمَن شَآءَ ذَكَرَهُۥ (٥٥) وَمَا يَذْكُرُونَ إِلَّآ أَن يَشَآءَ ٱللَّهُ ۚ هُوَ أَهْلُ ٱلتَّقْوَىٰ وَأَهْلُ ٱلْمَغْفِرَةِ (٥٦)",
+            "source": "Surat Al-Muddaththir, 74:48-56"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "74:38-40",
+                "Every soul, for what it has earned, will be retained Except the companions of the right, [Who will be] in gardens, questioning each other"
+              ],
+              [
+                "74:41-43",
+                "About the criminals, [And asking them], \"What put you into Saqar?\" They will say, \"We were not of those who prayed,"
+              ],
+              [
+                "74:44-46",
+                "Nor did we used to feed the poor. And we used to enter into vain discourse with those who engaged [in it], And we used to deny the Day of Recompense"
+              ],
+              [
+                "74:47-49",
+                "Until there came to us the certainty.\" So there will not benefit them the intercession of [any] intercessors. Then what is [the matter] with them that they are, from the reminder, turning away"
+              ],
+              [
+                "74:50-52",
+                "As if they were alarmed donkeys Fleeing from a lion? Rather, every person among them desires that he would be given scriptures spread about."
+              ],
+              [
+                "74:53-55",
+                "No! But they do not fear the Hereafter. No! Indeed, the Qur'an is a reminder Then whoever wills will remember it."
+              ],
+              [
+                "74:56",
+                "And they will not remember except that Allah wills. He is worthy of fear and adequate for [granting] forgiveness."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 74:38-56 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which is NOT one of the four answers in 74:43 to 46?",
+            "options": [
+              "We did not travel",
+              "We did not pray",
+              "We did not feed the poor"
+            ],
+            "answer": 0,
+            "why": "The four: not praying, not feeding the poor, joining vain talk, denying the Day."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Muddaththir 74:38-56 together, ayah by ayah.",
+          "a": "The class recites 74:38-56 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 74:38-56. Ayah 38: 3 times looking, 3 times without looking. Then ayah 39 the same way. Then link: recite 38 and 39 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«ٱلْخَآئِضِينَ» (74:45) has ...",
+          "a": "madd muttasil",
+          "mins": 1,
+          "options": [
+            "madd muttasil",
+            "madd munfasil",
+            "no madd"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 74:38-56 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "In the portal box, write how each of the four answers in 74:43 to 46 can guide your week.",
+          "a": "Pray on time; give food or charity; avoid idle, harmful talk; remember the Day of Judgement.",
+          "mins": 2
+        },
+        {
+          "q": "Plan your home hifdh of 74:38 to 56 by day in the log.",
+          "a": "A day-by-day plan.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Muddaththir 74:54: «كَلَّآ ...» Which word comes next?",
+          "a": "إِنَّهُۥ",
+          "mins": 1,
+          "options": [
+            "لَا",
+            "نَفْسٍۭ",
+            "إِنَّهُۥ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: People in Paradise ask those in Saqar: 'What put you into Saqar?' Their four answers are in 74:43 to 46. Can you guess them?",
+          "a": "They did not pray, did not feed the poor, joined in falsehood and denied the Day of Judgement (74:43 to 46).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Muddaththir 74:38-56 to a parent three times a day and revise 74:1 to 37; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Muddaththir 74:38-56 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Prayer mat sajjadah",
+          "alt": "A prayer mat",
+          "for": "hook"
+        },
+        {
+          "find": "Bread loaves",
+          "alt": "Bread to feed the poor",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 22,
+      "title": "Connecting Al-Muddaththir: the whole surah",
+      "duration": 50,
+      "bigQuestion": "If the surah were a story in four scenes, what would the scenes be?",
+      "objectives": [
+        "To understand the structure of Al-Muddaththir and use it to recite the whole surah from memory"
+      ],
+      "successCriteria": [
+        "All: name the surah's four parts",
+        "Most: recite the whole surah with no more than four prompts",
+        "Some: recite any part on request with consistent madd"
+      ],
+      "smsc": "Spiritual: the Qur'an as a reminder for whoever wills",
+      "keywords": [
+        {
+          "term": "tadabbur (تدبر)",
+          "def": "reflecting deeply on meaning"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If the surah were a story in four scenes, what would the scenes be?",
+        "a": "The call to rise and warn (1 to 10); the arrogant denier (11 to 31); the oaths and each soul's pledge (32 to 48); the turning away and the reminder (49 to 56)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Then do they not reflect upon the Qur'an?' (An-Nisa' 4:82).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:50 in your head. How does the next ayah begin?",
+          "a": "فَرَّتْ مِن",
+          "mins": 1,
+          "options": [
+            "وَمَآ أَدْرَىٰكَ",
+            "فَذَٰلِكَ يَوْمَئِذٍۢ",
+            "فَرَّتْ مِن"
+          ]
+        },
+        {
+          "q": "Silah sughra is ...",
+          "a": "2 counts",
+          "mins": 1,
+          "options": [
+            "2 counts",
+            "4 counts",
+            "6 counts"
+          ]
+        },
+        {
+          "q": "Stopping on «وَحِيدًۭا» gives ...",
+          "a": "waheedaa",
+          "mins": 1,
+          "options": [
+            "waheedaa",
+            "waheedan",
+            "waheed"
+          ]
+        },
+        {
+          "q": "How many ayat are in Surat Al-Muddaththir (سورة المدثر)?",
+          "a": "56",
+          "mins": 1,
+          "options": [
+            "56",
+            "52",
+            "50"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four scenes",
+          "bullets": [],
+          "note": "Bismillah.",
+          "timeline": [
+            {
+              "label": "74:1-10",
+              "text": "Arise and warn; the Day is hard for the disbelievers"
+            },
+            {
+              "label": "74:11-31",
+              "text": "The arrogant man; Saqar and its keepers"
+            },
+            {
+              "label": "74:32-48",
+              "text": "Oaths; each soul held by its deeds; the four answers"
+            },
+            {
+              "label": "74:49-56",
+              "text": "Why do they turn away? It is a reminder"
+            }
+          ]
+        },
+        {
+          "heading": "Scenes help hifdh",
+          "bullets": [
+            "Know which scene you are in",
+            "Each scene has key words",
+            "Themes prevent jumps"
+          ],
+          "note": "Pupils say the first ayah of each scene."
+        },
+        {
+          "heading": "Full recitation in turns",
+          "bullets": [
+            "Each pupil recites one scene",
+            "Next pupil continues",
+            "Teacher notes slips"
+          ],
+          "note": "Mics in turn around the class."
+        },
+        {
+          "heading": "Listen and repeat: the scene openings",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher recites a scene opening",
+            "Pupils name the scene",
+            "Three pupils continue in turn",
+            "Teacher checks",
+            "Next scene"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "74:49 to 56 are mainly about ...",
+            "options": [
+              "people turning away from the reminder",
+              "the arrogant man's wealth",
+              "the night and dawn"
+            ],
+            "answer": 0,
+            "why": "The last scene: they flee like frightened donkeys; it is a reminder for whoever wills."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "In the portal response box, write one sentence per scene (sentence starter: 'The surah opens with ...').",
+          "a": "Four accurate sentences.",
+          "mins": 5,
+          "model": "I do scene 1: 'The surah opens with Allah commanding the Prophet ﷺ to arise, warn, glorify his Lord and stay pure and patient (74:1 to 7).'"
+        },
+        {
+          "q": "Which scene has the four answers?",
+          "a": "74:32 to 48",
+          "mins": 1,
+          "options": [
+            "74:32 to 48",
+            "74:1 to 10",
+            "74:49 to 56"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Chain recitation: the class recites the whole surah one scene each, in rota order; then complete your summary. Today's rota group recites 74:38 to 56 to the teacher.",
+          "a": "Whole surah recited across the class; summary complete.",
+          "mins": 10,
+          "model": "The teacher starts the chain with scene 1."
+        },
+        {
+          "q": "Extend: pick the ayah that moves you most and explain why.",
+          "a": "Personal response with a correct reference.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: recite the whole surah alone.",
+          "a": "All 56 ayat with no more than four prompts.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The surah ends: 'He is worthy of taqwa and worthy of ...'",
+          "a": "forgiveness",
+          "mins": 1,
+          "options": [
+            "forgiveness",
+            "praise only",
+            "wealth"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If the surah were a story in four scenes, what would the scenes be?",
+          "a": "The call to rise and warn (1 to 10); the arrogant denier (11 to 31); the oaths and each soul's pledge (32 to 48); the turning away and the reminder (49 to 56).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite the whole surah over two days; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Connecting Al-Muddaththir rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Onager wild ass",
+          "alt": "A wild donkey (74:50)",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 23,
+      "title": "Full recitation with tartil: Al-Muddaththir",
+      "duration": 50,
+      "bigQuestion": "Tartil is not fast and not slow. How would you describe it to a younger pupil?",
+      "objectives": [
+        "To understand what tartil requires and recite Al-Muddaththir at a steady pace with all madd consistent"
+      ],
+      "successCriteria": [
+        "All: recite at a steady pace with stops at ayah ends",
+        "Most: keep all six madd types correct",
+        "Some: recite the whole surah with a score of 4 for fluency"
+      ],
+      "smsc": "Spiritual: reciting with care and calm",
+      "keywords": [
+        {
+          "term": "tartil (ترتيل)",
+          "def": "measured, clear recitation"
+        },
+        {
+          "term": "madd (مد)",
+          "def": "lengthening a vowel sound, counted in beats (harakat)"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Tartil is not fast and not slow. How would you describe it to a younger pupil?",
+        "a": "Clear and steady, giving every letter and rule its right, so the listener can follow."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation (tartil)' (Al-Muzzammil 73:4). This is the surah just before Al-Muddaththir.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:52 in your head. How does the next ayah begin?",
+          "a": "كَلَّا ۖ",
+          "mins": 1,
+          "options": [
+            "وَكُنَّا نَخُوضُ",
+            "عَلَى ٱلْكَٰفِرِينَ",
+            "كَلَّا ۖ"
+          ]
+        },
+        {
+          "q": "How many scenes did we use?",
+          "a": "4",
+          "mins": 1,
+          "options": [
+            "4",
+            "3",
+            "6"
+          ]
+        },
+        {
+          "q": "«مَالَهُۥٓ أَخْلَدَهُۥ» has ...",
+          "a": "silah kubra",
+          "mins": 1,
+          "options": [
+            "silah kubra",
+            "silah sughra",
+            "'iwad"
+          ]
+        },
+        {
+          "q": "Al-Muddaththir 74:55: «فَمَن ...» Which word comes next?",
+          "a": "شَآءَ",
+          "mins": 1,
+          "options": [
+            "شَآءَ",
+            "ٱلْكِتَٰبَ",
+            "كَيْفَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "All the madd together",
+          "bullets": [],
+          "note": "Bismillah. Revise the half term's table.",
+          "table": {
+            "head": [
+              "Madd",
+              "When",
+              "Counts (Hafs)",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Tabi'i (طبيعي)",
+                "Madd letter, nothing after it causes more",
+                "2",
+                "وَثِيَابَكَ"
+              ],
+              [
+                "Muttasil (متصل)",
+                "Hamza after the madd letter, same word",
+                "4 or 5",
+                "شَآءَ"
+              ],
+              [
+                "Munfasil (منفصل)",
+                "Hamza starts the next word",
+                "4 or 5",
+                "وَمَآ أَدْرَىٰكَ"
+              ],
+              [
+                "'Arid lis-sukun (عارض للسكون)",
+                "Stopping on the letter after a madd letter",
+                "2, 4 or 6",
+                "ٱلْمُجْرِمِينَ"
+              ],
+              [
+                "Silah (صلة)",
+                "Pronoun haa between two vowels",
+                "2 (4 or 5 before hamza)",
+                "لَهُۥ مَالًۭا"
+              ],
+              [
+                "'Iwad (عوض)",
+                "Stopping on tanween fathah",
+                "2",
+                "وَحِيدًۭا"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tartil checklist",
+          "bullets": [
+            "Steady pace",
+            "Breathe at ayah ends",
+            "Madd lengths consistent",
+            "Letters from the right makhraj"
+          ],
+          "note": "The fluency row of the rubric."
+        },
+        {
+          "heading": "Rehearsal in turns",
+          "bullets": [
+            "Each pupil recites one scene",
+            "Teacher times it",
+            "One target each"
+          ],
+          "note": "Mics in turn."
+        },
+        {
+          "heading": "Listen and repeat: tartil",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher recites at tartil pace",
+            "Pupils listen",
+            "Three pupils repeat at the same pace",
+            "Teacher checks pace and madd",
+            "Whole class repeats softly"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which shows good tartil?",
+            "options": [
+              "Steady pace, even madd, stops at ayah ends",
+              "As fast as possible",
+              "Long random pauses"
+            ],
+            "answer": 0,
+            "why": "Tartil is measured and clear."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 74:1 to 10 at tartil pace and name each madd you stretched.",
+          "a": "يَٰٓأَيُّهَا munfasil; ثِيَابَكَ tabi'i; ٱلنَّاقُورِ 'arid at a stop; يَسِيرٍ 'arid at a stop.",
+          "mins": 5,
+          "model": "I do: يَٰٓأَيُّهَا: munfasil 4. ٱلْمُدَّثِّرُ: stop, no madd before the raa. قُمْ فَأَنذِرْ: ikhfa. ثِيَابَكَ: tabi'i 2."
+        },
+        {
+          "q": "Which madd is obligatory?",
+          "a": "Muttasil",
+          "mins": 1,
+          "options": [
+            "Muttasil",
+            "Munfasil",
+            "'Arid"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite the whole surah between you (alternate scenes) at tartil pace; partner scores fluency and madd (pupil PDF). Today's rota group recites to the teacher.",
+          "a": "Partner scores; teacher records rota scores.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model alternating scenes."
+        },
+        {
+          "q": "Extend: write your 'arid length choice and why.",
+          "a": "e.g. 4 counts: steady and easy to keep consistent.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: recite the whole surah alone at tartil pace.",
+          "a": "All 56 ayat, steady, consistent madd.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Tartil is commanded in ...",
+          "a": "Al-Muzzammil 73:4",
+          "mins": 1,
+          "options": [
+            "Al-Muzzammil 73:4",
+            "Al-Fatihah 1:4",
+            "Al-Mulk 67:1"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Tartil is not fast and not slow. How would you describe it to a younger pupil?",
+          "a": "Clear and steady, giving every letter and rule its right, so the listener can follow.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite the whole surah at tartil pace once a day; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Full recitation with tartil rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Metronome",
+          "alt": "A steady beat",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 24,
+      "title": "Self and peer check: recording and improving",
+      "duration": 50,
+      "bigQuestion": "Is it easier to hear mistakes in someone else's recitation or in your own? Why?",
+      "objectives": [
+        "To understand how to evaluate one's own recitation honestly and act on precise feedback"
+      ],
+      "successCriteria": [
+        "All: identify one strength and one target in your own recitation",
+        "Most: give a partner precise feedback (ayah, word, rule)",
+        "Some: show improvement on a second attempt"
+      ],
+      "smsc": "Moral: humility in accepting correction",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "rubric",
+          "def": "the checklist used to assess recitation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it easier to hear mistakes in someone else's recitation or in your own? Why?",
+        "a": "Usually others'; we hear what we expect in our own. Recording or a partner helps us hear honestly."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The best of you are those who learn the Qur'an and teach it' (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:44 in your head. How does the next ayah begin?",
+          "a": "وَكُنَّا نَخُوضُ",
+          "mins": 1,
+          "options": [
+            "وَمَا يَذْكُرُونَ",
+            "وَلَا تَمْنُن",
+            "وَكُنَّا نَخُوضُ"
+          ]
+        },
+        {
+          "q": "Silah kubra length?",
+          "a": "4 or 5",
+          "mins": 1,
+          "options": [
+            "4 or 5",
+            "2",
+            "6"
+          ]
+        },
+        {
+          "q": "Precise feedback names ...",
+          "a": "ayah, word and rule",
+          "mins": 1,
+          "options": [
+            "ayah, word and rule",
+            "only the surah",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Al-Muddaththir 74:46: «وَكُنَّا نُكَذِّبُ ...» Which word comes next?",
+          "a": "بِيَوْمِ",
+          "mins": 1,
+          "options": [
+            "بِيَوْمِ",
+            "وَٱسْتَكْبَرَ",
+            "صَعُودًا"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Self-check",
+          "bullets": [
+            "At home: record, with a parent's permission",
+            "Listen with the mushaf open",
+            "Mark one strength, one target",
+            "Record again"
+          ],
+          "note": "Bismillah. In class we use partner listening instead of recording."
+        },
+        {
+          "heading": "Peer check",
+          "bullets": [
+            "Name the ayah",
+            "Name the word",
+            "Name the rule or makhraj",
+            "Model it"
+          ],
+          "note": "Example: '74:45, ٱلْخَآئِضِينَ: muttasil was 2 counts, make it 4.'"
+        },
+        {
+          "heading": "The rubric",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: second attempt",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Pupil recites",
+            "Partner gives one target",
+            "Teacher models the fix",
+            "Pupil recites again",
+            "Partner notes the change"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which is honest self-assessment?",
+            "options": [
+              "Naming one real target with the ayah",
+              "Saying it was perfect",
+              "Saying it was all bad"
+            ],
+            "answer": 0,
+            "why": "One real, specific target leads to improvement."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give precise feedback: a pupil reads «يَتَسَآءَلُونَ» (74:40) with a 2-count madd.",
+          "a": "74:40, يَتَسَآءَلُونَ: muttasil, 4 or 5 counts, not 2.",
+          "mins": 5,
+          "model": "I do: 'Ayah 74:40. Word يَتَسَآءَلُونَ. Rule: madd muttasil, alif then hamza in the word. You gave 2; make it 4. Listen: yatasaaaa'aloon.'"
+        },
+        {
+          "q": "First step of peer feedback?",
+          "a": "Name the ayah",
+          "mins": 1,
+          "options": [
+            "Name the ayah",
+            "Give a score",
+            "Stop listening"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: recite half the surah each, give one precise target, then recite again (pupil PDF). Today's rota group recites to the teacher.",
+          "a": "Two attempts with a recorded target and improvement.",
+          "mins": 10,
+          "model": "The teacher and a volunteer model the two-attempt routine."
+        },
+        {
+          "q": "Extend: write your three most common slips this half term.",
+          "a": "Personal list with ayah numbers.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: give feedback to two different partners.",
+          "a": "Two precise targets recorded.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A second attempt should ...",
+          "a": "fix the one target",
+          "mins": 1,
+          "options": [
+            "fix the one target",
+            "be faster",
+            "skip the hard ayah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is it easier to hear mistakes in someone else's recitation or in your own? Why?",
+          "a": "Usually others'; we hear what we expect in our own. Recording or a partner helps us hear honestly.",
+          "mins": 2
+        }
+      ],
+      "homework": "Fix your target daily; recite the whole surah to a parent; log it.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Self and peer check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Checklist clipboard",
+          "alt": "A checklist",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Muddaththir and madd in recitation",
+      "n": 25,
+      "title": "Half-term hifdh check: Al-Muddaththir against the rubric",
+      "duration": 50,
+      "bigQuestion": "Ramadan is four weeks. How will you keep Juz' Tabarak so far and Al-Muddaththir strong?",
+      "objectives": [
+        "To show secure memorisation of Al-Muddaththir with consistent madd and sound tajweed"
+      ],
+      "successCriteria": [
+        "All: recite Al-Muddaththir with no more than four prompts",
+        "Most: keep all madd types correct",
+        "Some: score 4 on every row and set a target for Al-Qiyamah"
+      ],
+      "smsc": "Spiritual: a Ramadan commitment to the Qur'an",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revision of what is already memorised"
+        },
+        {
+          "term": "madd (مد)",
+          "def": "lengthening a vowel sound, counted in beats (harakat)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Ramadan is four weeks. How will you keep Juz' Tabarak so far and Al-Muddaththir strong?",
+        "a": "A daily slice of each, logged, and recite in salah where possible."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'The month of Ramadan in which the Qur'an was revealed, a guidance for the people' (Al-Baqarah 2:185).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Muddaththir 74:36 in your head. How does the next ayah begin?",
+          "a": "لِمَن شَآءَ",
+          "mins": 1,
+          "options": [
+            "لِمَن شَآءَ",
+            "إِنَّهَا لَإِحْدَى",
+            "كَلَّا وَٱلْقَمَرِ"
+          ]
+        },
+        {
+          "q": "Stopping on taa marbutah gives ...",
+          "a": "haa sakinah",
+          "mins": 1,
+          "options": [
+            "haa sakinah",
+            "a long aa",
+            "tanween"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Muddaththir?",
+          "a": "56",
+          "mins": 1,
+          "options": [
+            "56",
+            "52",
+            "31"
+          ]
+        },
+        {
+          "q": "Al-Muddaththir 74:53: «كَلَّا بَل ...» Which word comes next?",
+          "a": "لَّا",
+          "mins": 1,
+          "options": [
+            "لَّا",
+            "كَلَّا",
+            "سَقَرَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How we are checked",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The check",
+          "bullets": [
+            "Recite the scene the teacher names",
+            "Answer one madd question",
+            "Hear your score and target"
+          ],
+          "note": "One by one; pupils heard this week in the rota keep that score. Others revise in breakout pairs."
+        },
+        {
+          "heading": "Mistakes to avoid",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "74:19 to 20 said as one ayah, or ثُمَّ missed",
+            "right": "74:19 فَقُتِلَ كَيْفَ قَدَّرَ; 74:20 ثُمَّ قُتِلَ كَيْفَ قَدَّرَ"
+          }
+        },
+        {
+          "heading": "Break plan",
+          "bullets": [
+            "Al-Muddaththir daily",
+            "One surah of 67 to 71 a day",
+            "Log it; parent initials weekly"
+          ],
+          "note": "Pupils write the plan on the pupil PDF."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "The next surah after Al-Muddaththir is ...",
+            "options": [
+              "Al-Qiyamah",
+              "Al-Muzzammil",
+              "Al-Insan"
+            ],
+            "answer": 0,
+            "why": "Surah 75 is Al-Qiyamah; 73 Al-Muzzammil comes before."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Self-check: recite 74:49 to 56 and score each rubric row.",
+          "a": "Pupil scores and one target.",
+          "mins": 5,
+          "model": "I do: I recite 74:49 to 56: hifdh 4; makharij 4; rules 4 (no silah on ذَكَرَهُۥ at the stop: correct); fluency 3. Target: steady pace in the long ayah 74:52."
+        },
+        {
+          "q": "Year 9 hifdh this year finishes at ...",
+          "a": "Al-Mursalat (77)",
+          "mins": 1,
+          "options": [
+            "Al-Mursalat (77)",
+            "An-Naba' (78)",
+            "Al-Mulk (67)"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Hifdh check: recite to the teacher one by one. While waiting, revise your manzil in breakout pairs and write your break plan.",
+          "a": "Teacher records rubric scores and one target per pupil in the portal.",
+          "mins": 10,
+          "model": "The teacher runs the first check as a model."
+        },
+        {
+          "q": "Extend: write your break plan on the pupil PDF.",
+          "a": "Daily plan, logged.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: read Al-Qiyamah 75:1 to 6 with the mushaf and mark the madd (no new hifdh until checked).",
+          "a": "Annotated ayat.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Qur'an was revealed in the month of ...",
+          "a": "Ramadan (2:185)",
+          "mins": 1,
+          "options": [
+            "Ramadan (2:185)",
+            "Muharram",
+            "Shawwal"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Ramadan is four weeks. How will you keep Juz' Tabarak so far and Al-Muddaththir strong?",
+          "a": "A daily slice of each, logged, and recite in salah where possible.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow your break plan; log it daily.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Half-term hifdh check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Crescent moon dusk",
+          "alt": "The crescent moon at dusk",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
