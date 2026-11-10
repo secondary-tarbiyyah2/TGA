@@ -2,7 +2,7 @@
   "subject": "PSHE",
   "year": "y7",
   "board": "National Curriculum / PSHE Association",
-  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials.",
+  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials. | Spring 1 2027 (lessons 3, 6 to 9, v3): Tarbiyyah Secondary PSHE Curriculum Intent, Year 7 (Health and wellbeing), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
   "lessons": [
     {
       "unit": "Unit 1: Relationships and the online world",
@@ -217,110 +217,233 @@
       "send": "SEND: use a step-by-step visual checklist. EAL: pre-teach digital vocabulary with screenshots. Stretch: research the Online Safety Act 2023 and summarise how it protects children."
     },
     {
-      "unit": "Unit 2: Mental wellbeing and aspirations",
+      "unit": "Spring 1: Health and wellbeing",
       "n": 3,
-      "title": "Understanding emotions and managing worries",
+      "title": "Naming feelings",
       "duration": 50,
+      "bigQuestion": "Is 'I feel bad' enough? How many different feelings could 'bad' hide?",
       "objectives": [
-        "Name a range of emotions and explain that all feelings are valid",
-        "Describe the link between thoughts, feelings and actions",
-        "Select healthy strategies for managing difficult emotions, including Islamic practices"
+        "To understand how naming our feelings accurately helps us manage them"
       ],
+      "successCriteria": [
+        "All: name at least eight feelings, including mixed ones",
+        "Most: describe how a feeling shows in the body and in behaviour",
+        "Some: explain how naming a feeling helps us choose a healthy response"
+      ],
+      "crossCurricular": "English: precise vocabulary and connotation",
+      "smsc": "Spiritual: emotions as part of being human, guided by faith",
       "keywords": [
         {
           "term": "emotion",
-          "def": "a feeling such as joy, fear or anger"
+          "def": "a feeling such as joy, anger or fear"
         },
         {
-          "term": "mental health",
-          "def": "our emotional, psychological and social wellbeing"
+          "term": "emotional vocabulary",
+          "def": "the words we use to name feelings precisely"
         },
         {
-          "term": "coping strategy",
-          "def": "something you do to manage a difficult feeling"
+          "term": "trigger",
+          "def": "something that sets off a feeling"
         },
         {
-          "term": "sabr",
-          "def": "patience and steadfastness"
-        },
-        {
-          "term": "stigma",
-          "def": "unfair negative attitudes towards something or someone"
+          "term": "response",
+          "def": "what we choose to do about a feeling"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 'I feel bad' enough? How many different feelings could 'bad' hide?",
+        "a": "Many: disappointed, embarrassed, lonely, anxious, guilty, frustrated. Precise words help us respond."
+      },
+      "islamicLink": {
+        "text": "Feelings are part of being human: the Prophet ﷺ wept when his son Ibrahim died and said the eye weeps and the heart grieves, but we say only what pleases our Lord (al-Bukhari). Islam guides what we do with feelings, not whether we have them.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name three different emotions.",
-        "Name one healthy way to relax.",
-        "What does ‘resilience’ mean?"
+        {
+          "q": "Which is a feeling word? A) Tuesday B) frustrated C) table",
+          "a": "B) frustrated",
+          "mins": 1,
+          "options": [
+            "Tuesday",
+            "Frustrated",
+            "Table"
+          ]
+        },
+        {
+          "q": "Name one thing that helps you feel calm.",
+          "a": "For example: a walk, du'a, talking to family.",
+          "mins": 1
+        },
+        {
+          "q": "Who is a trusted adult at TGA?",
+          "a": "Form tutor, any teacher, the safeguarding lead.",
+          "mins": 1
+        },
+        {
+          "q": "What is one healthy friendship quality?",
+          "a": "Kindness, trust, honesty, respect.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Everyone has mental health",
+          "heading": "A bigger feelings vocabulary",
           "bullets": [
-            "Mental health is part of overall health",
-            "It changes day to day",
-            "Everyone has good and hard days",
-            "Talking about it is healthy"
+            "Happy: content, proud, grateful",
+            "Sad: disappointed, lonely, hurt",
+            "Angry: annoyed, frustrated, furious",
+            "Afraid: nervous, anxious, panicked"
           ],
-          "note": "Say bismillah. Compare mental health with physical health: sometimes we feel well, sometimes we feel unwell, and we look after both. Challenge stigma: ‘Having a hard time does not mean something is wrong with you.’ Link to the PSHE Association KS3 mental health lessons. Ground rules are especially important today. Avoid asking pupils to share personal experiences. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "A feelings wheel helps: core feeling in the middle, precise words outside.",
+          "diagram": {
+            "centre": "Feelings",
+            "items": [
+              "Joy: proud, grateful",
+              "Sadness: lonely, disappointed",
+              "Anger: frustrated, jealous",
+              "Fear: anxious, embarrassed",
+              "Calm: peaceful, secure",
+              "Mixed: excited and nervous"
+            ]
+          }
         },
         {
-          "heading": "Naming our feelings",
+          "heading": "Feelings in the body",
           "bullets": [
-            "Use specific words, not just good or bad",
-            "Feelings are neither right nor wrong",
-            "Feelings can be mixed",
-            "Body clues: tight chest, hot face, tired"
+            "Anger: hot face, tight fists",
+            "Anxiety: fast heart, butterflies",
+            "Sadness: heavy, tired"
           ],
-          "note": "Show a simple feelings wheel with words such as anxious, frustrated, proud, disappointed, lonely, hopeful. Ask pupils to pick words for given scenarios: failing a test, being picked for a team, seeing friends chat without you. Teach that naming a feeling helps us manage it. Misconception: some feelings are forbidden. Feelings are natural; what matters is how we act."
+          "note": "Noticing the body is an early warning."
         },
         {
-          "heading": "Thoughts, feelings and actions",
+          "heading": "Name it to manage it",
           "bullets": [
-            "What we think affects how we feel",
-            "How we feel affects what we do",
-            "Unhelpful thoughts can be challenged",
-            "Ask: is this thought true and helpful?"
+            "Notice",
+            "Name precisely",
+            "Choose a response"
           ],
-          "note": "Use an invented example: a pupil gets a low mark, thinks ‘I am useless’, feels sad, and stops trying. Then challenge the thought: ‘I did not revise this topic; I can improve.’ Link to the Tarbiyyah Compass values of Resilience and Progress. Ask pupils to rewrite two unhelpful thoughts."
+          "note": "Model.",
+          "cycle": [
+            "Notice",
+            "Name",
+            "Accept",
+            "Choose a response"
+          ]
         },
         {
-          "heading": "Tools that help",
+          "heading": "Model: from 'bad' to precise",
           "bullets": [
-            "Breathing, walking, sleep and talking",
-            "Prayer, wudu, dhikr and du'a",
-            "Qur'an 13:28: hearts find rest in remembrance",
-            "Hadith: the strong person controls anger"
+            "Situation",
+            "Precise feeling",
+            "Healthy response"
           ],
-          "note": "Practise a breathing exercise. Cite plainly: Qur'an 13:28; and the hadith in which the Prophet (peace be upon him) said that the strong person is the one who controls himself in anger (Bukhari and Muslim). Explain that faith practices sit alongside practical strategies and talking to people, not instead of them. Warn that unhelpful strategies include hiding feelings, staying up late on screens, and being unkind to others."
+          "note": "Model.",
+          "model": {
+            "problem": "Your camera froze while presenting and others laughed.",
+            "steps": [
+              "Notice: hot face, want to leave",
+              "Name: embarrassed, a bit hurt",
+              "Accept: anyone would feel this",
+              "Respond: breathe, rejoin, tell the teacher afterwards"
+            ],
+            "answer": "Embarrassed and hurt; breathe, rejoin, talk to the teacher"
+          }
         },
         {
-          "heading": "When and where to ask for help",
+          "heading": "Check",
           "bullets": [
-            "If a feeling lasts for weeks, talk to someone",
-            "Family, teachers, pastoral team",
-            "Childline 0800 1111",
-            "Hadith: Allah sent down a cure for every illness"
+            "Vote in the Teams poll"
           ],
-          "note": "Cite plainly: the Prophet (peace be upon him) said that Allah has not sent down a disease without sending down a cure for it (Bukhari). Use this to show that seeking help is encouraged. Show how to start a conversation: ‘I have not been feeling like myself lately and I would like to talk.’ Remind pupils of the school pastoral team and the DSL. If a pupil seems very distressed, follow safeguarding procedures."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Most precise word for 'I didn't get picked and I'm alone at break'?",
+            "options": [
+              "Bad",
+              "Lonely",
+              "Fine",
+              "Angry"
+            ],
+            "answer": 1,
+            "why": "Lonely names the feeling precisely; 'bad' and 'fine' hide it."
+          }
         }
       ],
       "practice": [
-        "Choose a precise word for each: (a) you are waiting for exam results (b) your friend moves away (c) you win a quiz.",
-        "Rewrite this unhelpful thought as a helpful one: ‘Nobody will ever want to be my friend.’",
-        "List three coping strategies and say which one you would use before a presentation."
+        {
+          "q": "Give a precise word: 'I worked hard but got a low mark.'",
+          "a": "Disappointed (or frustrated).",
+          "mins": 2,
+          "model": "Teacher thinks aloud: not angry at anyone; I hoped for more; so disappointed."
+        },
+        {
+          "q": "Where might you feel anxiety in your body?",
+          "a": "Fast heartbeat, butterflies, sweaty hands.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Create a ‘toolkit’ card with five coping strategies, including two from Islamic practice.",
-        "Write a short dialogue between two friends where one explains they feel worried and the other responds supportively.",
-        "Write a paragraph explaining why asking for help is a sign of strength."
+        {
+          "q": "Core: Feelings scenarios (pupil PDF): for six situations, name the precise feeling and one healthy response.",
+          "a": "Precise words and sensible responses for each.",
+          "mins": 8,
+          "model": "Teacher completes scenario 1."
+        },
+        {
+          "q": "Extend: In the portal response box, describe a mixed feeling you have had. Start: 'I felt both... and...'",
+          "a": "For example: I felt both excited and nervous on my first day at TGA.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain why naming a feeling helps us control what we do.",
+          "a": "Naming slows us down and gives us a choice of response instead of reacting.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name three coping strategies.",
-        "Why should we talk about our feelings?"
+        {
+          "q": "Naming a feeling helps us... A) ignore it B) choose a healthy response C) blame others",
+          "a": "B) choose a healthy response",
+          "mins": 1,
+          "options": [
+            "Ignore it",
+            "Choose a healthy response",
+            "Blame others"
+          ]
+        },
+        {
+          "q": "Big question: what precise feelings could 'bad' hide? Name three.",
+          "a": "For example: disappointed, lonely, anxious.",
+          "mins": 2
+        }
       ],
-      "homework": "Make a personal coping plan: three things you will do when worried and two people you could ask for help.",
-      "send": "SEND: use feelings cards and breathing visuals. EAL: pre-teach emotion words with faces. Stretch: research how stigma around mental health affects people and suggest three ways to reduce it."
+      "homework": "Keep a feelings journal for three days: one precise feeling word each day and what helped.",
+      "send": "SEND: feelings wheel printed. EAL: feelings glossary with symbols. Stretch: research 'emotional granularity'.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 7 (Health and wellbeing), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Feelings wheel and scenarios (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "feelings wheel emotions chart",
+          "alt": "A feelings wheel",
+          "for": "teach:1"
+        },
+        {
+          "find": "journal notebook pen",
+          "alt": "A journal",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Mental wellbeing and aspirations",
@@ -569,6 +692,858 @@
       ],
       "homework": "Talk with a parent or carer about growing up and ask them for one piece of advice about prayer or cleanliness. Write two sentences about what you learned.",
       "send": "SEND: simple labelled diagrams and a step card for ghusl; offer a quiet check-in. EAL: pre-teach puberty, bulugh and ghusl with images. Stretch: compare the age of bulugh in fiqh with the legal age of adulthood in the UK."
+    },
+    {
+      "unit": "Spring 1: Health and wellbeing",
+      "n": 6,
+      "title": "Managing worries and stress",
+      "duration": 50,
+      "bigQuestion": "Is all stress bad? Can a little stress ever help?",
+      "objectives": [
+        "To understand what stress is and how to manage it with healthy strategies"
+      ],
+      "successCriteria": [
+        "All: name three signs of stress",
+        "Most: choose a strategy for each kind of worry",
+        "Some: tell the difference between everyday stress and when to get help"
+      ],
+      "crossCurricular": "Science: the body's stress response (heart rate, breathing)",
+      "smsc": "Spiritual: tawakkul and du'a",
+      "keywords": [
+        {
+          "term": "stress",
+          "def": "how the body and mind react to pressure"
+        },
+        {
+          "term": "anxiety",
+          "def": "worry or fear that can feel strong"
+        },
+        {
+          "term": "strategy",
+          "def": "a planned way of coping"
+        },
+        {
+          "term": "tawakkul",
+          "def": "trusting Allah after doing our part (تَوَكُّل)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is all stress bad? Can a little stress ever help?",
+        "a": "A little can help us focus (before a test); too much for too long harms."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah does not burden a soul beyond that it can bear' (al-Baqarah 2:286) and 'Verily, with hardship comes ease' (ash-Sharh 94:5-6). Tawakkul means doing our part, then trusting Allah with the outcome.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Most precise word for being left out?",
+          "a": "Lonely",
+          "mins": 1,
+          "options": [
+            "Bad",
+            "Lonely",
+            "Fine"
+          ]
+        },
+        {
+          "q": "Name one body sign of anxiety.",
+          "a": "Fast heartbeat, butterflies.",
+          "mins": 1
+        },
+        {
+          "q": "What are the steps: notice, name, ...?",
+          "a": "Accept, choose a response.",
+          "mins": 1
+        },
+        {
+          "q": "Name a trusted adult.",
+          "a": "Parent, form tutor, safeguarding lead.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is stress?",
+          "bullets": [
+            "The body's alarm system",
+            "Heart races, breathing speeds up",
+            "Helpful in short bursts"
+          ],
+          "note": "Good stress: a deadline helps focus. Too much: sleep and mood suffer."
+        },
+        {
+          "heading": "Signs of too much stress",
+          "bullets": [
+            "Poor sleep, headaches",
+            "Snapping at people",
+            "Avoiding work",
+            "Feeling overwhelmed"
+          ],
+          "note": "Notice patterns, not one bad day."
+        },
+        {
+          "heading": "Strategies",
+          "bullets": [
+            "Break tasks into small steps",
+            "Breathe: in 4, hold 4, out 4",
+            "Move and rest",
+            "Talk; make du'a; tawakkul"
+          ],
+          "note": "Match strategies to worries.",
+          "table": {
+            "head": [
+              "Worry",
+              "Strategy"
+            ],
+            "rows": [
+              [
+                "Too much homework",
+                "List, break into steps, start with one"
+              ],
+              [
+                "A test",
+                "Plan revision, sleep, breathe"
+              ],
+              [
+                "Falling out with a friend",
+                "Calm down, talk honestly, ask an adult"
+              ],
+              [
+                "World news",
+                "Limit news, talk to family, make du'a"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "When to get help",
+          "bullets": [
+            "It lasts weeks",
+            "It stops you sleeping, eating or learning",
+            "Thoughts of harming yourself: tell someone today"
+          ],
+          "note": "Safeguarding: say clearly that you will always help and may need to pass worries on to keep them safe."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Best first step when homework feels overwhelming?",
+            "options": [
+              "Ignore it",
+              "Break it into small steps and start one",
+              "Stay up all night",
+              "Copy a friend"
+            ],
+            "answer": 1,
+            "why": "Small steps make the task manageable."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Do box breathing together for one minute.",
+          "a": "Done.",
+          "mins": 1,
+          "model": "Teacher leads: in 4, hold 4, out 4, hold 4."
+        },
+        {
+          "q": "Choose a strategy for 'I'm worried about my first test'.",
+          "a": "Make a revision plan, sleep well, breathe, make du'a.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a personal stress plan (pupil PDF): my signs, three strategies, who I will talk to.",
+          "a": "A complete plan.",
+          "mins": 8,
+          "model": "Teacher completes the 'my signs' box."
+        },
+        {
+          "q": "Extend: In the portal response box, explain how tawakkul helps with worry. Start: 'Tawakkul helps because...'",
+          "a": "Tawakkul helps because I do my part and then trust Allah with the result, so I worry less about what I cannot control.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A little stress can... A) always harm B) help us focus C) never happen",
+          "a": "B) help us focus",
+          "mins": 1,
+          "options": [
+            "Always harm",
+            "Help us focus",
+            "Never happen"
+          ]
+        },
+        {
+          "q": "Big question: when should stress make you ask for help?",
+          "a": "When it lasts, stops sleeping or learning, or you feel unsafe.",
+          "mins": 2
+        }
+      ],
+      "homework": "Use one strategy from your plan this week and note whether it helped.",
+      "send": "SEND: strategy cards. EAL: stress, worry, strategy. Stretch: research how exercise reduces stress hormones.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 7 (Health and wellbeing), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Stress plan sheet (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stack of books desk",
+          "alt": "A pile of books",
+          "for": "hook"
+        },
+        {
+          "find": "calm sea horizon",
+          "alt": "A calm sea",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Health and wellbeing",
+      "n": 7,
+      "title": "Sleep, screens and healthy routines",
+      "duration": 50,
+      "bigQuestion": "Teenagers often feel awake late at night. Is that laziness or biology?",
+      "objectives": [
+        "To understand how sleep and screen habits affect health, mood and learning"
+      ],
+      "successCriteria": [
+        "All: state how much sleep teenagers need",
+        "Most: explain two ways screens can harm sleep",
+        "Some: design a realistic routine for an online learner and justify it"
+      ],
+      "crossCurricular": "Science: the circadian rhythm and melatonin",
+      "smsc": "Moral: self-discipline with technology",
+      "keywords": [
+        {
+          "term": "routine",
+          "def": "things we do regularly at set times"
+        },
+        {
+          "term": "circadian rhythm",
+          "def": "the body's 24-hour clock"
+        },
+        {
+          "term": "sleep hygiene",
+          "def": "habits that help good sleep"
+        },
+        {
+          "term": "blue light",
+          "def": "light from screens that can delay sleepiness"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Teenagers often feel awake late at night. Is that laziness or biology?",
+        "a": "Partly biology: the body clock shifts later in the teenage years, so routines matter more."
+      },
+      "islamicLink": {
+        "text": "Allah says He made the night as a covering and sleep as rest (al-Furqan 25:47). The Prophet ﷺ disliked sleeping before Isha and talking after it (al-Bukhari). An early night helps us wake for Fajr.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Name a sign of too much stress.",
+          "a": "Poor sleep, headaches, snapping at people.",
+          "mins": 1,
+          "options": [
+            "Poor sleep",
+            "Good mood",
+            "More energy"
+          ]
+        },
+        {
+          "q": "What is tawakkul?",
+          "a": "Trusting Allah after doing our part.",
+          "mins": 1
+        },
+        {
+          "q": "Name a stress strategy.",
+          "a": "Break tasks into steps, breathe, talk.",
+          "mins": 1
+        },
+        {
+          "q": "How many hours in a day?",
+          "a": "24",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How much sleep?",
+          "bullets": [
+            "Teenagers: about 8 to 10 hours",
+            "Sleep stores memories",
+            "Too little: mood, focus, health"
+          ],
+          "note": "NHS guidance for teenagers: about 8 to 10 hours."
+        },
+        {
+          "heading": "Screens and sleep",
+          "bullets": [
+            "Blue light delays the sleep hormone melatonin",
+            "Notifications wake us",
+            "Scrolling steals time"
+          ],
+          "note": "Devices out of the bedroom at night."
+        },
+        {
+          "heading": "A healthy day for an online learner",
+          "bullets": [
+            "Regular wake for Fajr",
+            "Breaks away from screens",
+            "Exercise daily",
+            "Screens off an hour before bed"
+          ],
+          "note": "Model.",
+          "table": {
+            "head": [
+              "Time",
+              "Activity"
+            ],
+            "rows": [
+              [
+                "Fajr",
+                "Wake, pray, light breakfast"
+              ],
+              [
+                "8:30 to 15:00",
+                "Live lessons with breaks off-screen"
+              ],
+              [
+                "16:00",
+                "Exercise outdoors"
+              ],
+              [
+                "17:00 to 18:30",
+                "Homework, then family time"
+              ],
+              [
+                "21:00",
+                "Screens off; read"
+              ],
+              [
+                "22:00",
+                "Sleep"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "How much sleep do teenagers need?",
+            "options": [
+              "5 to 6 hours",
+              "8 to 10 hours",
+              "12 to 14 hours",
+              "It does not matter"
+            ],
+            "answer": 1,
+            "why": "NHS guidance for teenagers is about 8 to 10 hours."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give two sleep hygiene tips.",
+          "a": "Same bedtime, screens off an hour before, dark cool room.",
+          "mins": 2,
+          "model": "Teacher lists three tips from their own routine."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Track yesterday: screen time, sleep, activity. Then plan a better day (pupil PDF).",
+          "a": "Honest record and an improved, realistic plan.",
+          "mins": 9,
+          "model": "Teacher fills a sample record."
+        },
+        {
+          "q": "Extend: In the portal response box, persuade a friend to charge their phone outside the bedroom. Use two reasons.",
+          "a": "Blue light delays melatonin; notifications wake you; better sleep helps learning.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain how the teenage body clock and Fajr both affect bedtime choices.",
+          "a": "The body clock shifts later, but waking for Fajr means an earlier bedtime is needed for enough sleep.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Blue light from screens can... A) help you sleep B) delay sleepiness C) do nothing",
+          "a": "B) delay sleepiness",
+          "mins": 1,
+          "options": [
+            "Help you sleep",
+            "Delay sleepiness",
+            "Do nothing"
+          ]
+        },
+        {
+          "q": "Big question: is feeling awake late laziness or biology?",
+          "a": "Partly biology (the body clock shifts), so good routines matter.",
+          "mins": 2
+        }
+      ],
+      "homework": "Try your improved routine for five days and record bedtime and wake time.",
+      "send": "SEND: routine planner with picture prompts. EAL: routine, habit, sleep. Stretch: research one study on screens and sleep.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 7 (Health and wellbeing), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Routine tracker and planner (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "smartphone in dark bedroom",
+          "alt": "A phone glowing in a dark room",
+          "for": "teach:2"
+        },
+        {
+          "find": "alarm clock",
+          "alt": "An alarm clock",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Health and wellbeing",
+      "n": 8,
+      "title": "Diet, exercise and healthy choices",
+      "duration": 50,
+      "bigQuestion": "If a habit is unhealthy but feels good now, how do you choose what is better for later?",
+      "objectives": [
+        "To understand how diet and physical activity affect long-term health and how to make realistic healthy choices"
+      ],
+      "successCriteria": [
+        "All: describe a balanced diet and the activity guideline",
+        "Most: evaluate a day's food and activity against the guidelines",
+        "Some: plan realistic changes and explain the long-term benefits"
+      ],
+      "crossCurricular": "Science: nutrition and the digestive system (Year 8 science)",
+      "smsc": "Moral: moderation and self-control",
+      "keywords": [
+        {
+          "term": "balanced diet",
+          "def": "foods from each group in the right amounts"
+        },
+        {
+          "term": "physical activity",
+          "def": "any movement that raises the heart rate"
+        },
+        {
+          "term": "sedentary",
+          "def": "sitting still for long periods"
+        },
+        {
+          "term": "moderation",
+          "def": "not too much, not too little"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a habit is unhealthy but feels good now, how do you choose what is better for later?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Eat and drink, but do not waste by excess' (al-A'raf 7:31). The Prophet ﷺ said the strong believer is better and more beloved to Allah than the weak believer, while there is good in both (Muslim). Looking after our bodies is part of our amanah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Teenagers need about how much sleep?",
+          "a": "8 to 10 hours",
+          "mins": 1,
+          "options": [
+            "5 hours",
+            "8 to 10 hours",
+            "14 hours"
+          ]
+        },
+        {
+          "q": "Name a sleep hygiene tip.",
+          "a": "Screens off an hour before bed.",
+          "mins": 1
+        },
+        {
+          "q": "Name a food group.",
+          "a": "Fruit and vegetables, starchy, protein, dairy, oils.",
+          "mins": 1
+        },
+        {
+          "q": "What does halal and tayyib mean?",
+          "a": "Allowed and good/wholesome.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A balanced diet",
+          "bullets": [
+            "Fruit and vegetables: at least 5 a day",
+            "Wholegrain starchy foods",
+            "Protein, dairy, water",
+            "Limit sugar, salt, saturated fat"
+          ],
+          "note": "NHS Eatwell Guide."
+        },
+        {
+          "heading": "Activity",
+          "bullets": [
+            "About 60 minutes a day on average",
+            "Strengthening activities each week",
+            "Break up long sitting"
+          ],
+          "note": "UK CMO guidance for 5 to 18 year olds."
+        },
+        {
+          "heading": "Evaluate a day",
+          "bullets": [
+            "Compare with guidelines",
+            "What is going well?",
+            "One realistic change"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Day: cereal, crisps and fizzy drink, pasta; 20 minutes walking; 7 hours on screens.",
+            "steps": [
+              "Well: a starchy breakfast and dinner",
+              "Gaps: little fruit and veg, sugary drink, low activity",
+              "Change 1: swap fizzy drink for water",
+              "Change 2: 30-minute walk after Asr"
+            ],
+            "answer": "Two realistic changes linked to the guidelines"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "How much activity should young people average a day?",
+            "options": [
+              "10 minutes",
+              "60 minutes",
+              "4 hours",
+              "None"
+            ],
+            "answer": 1,
+            "why": "The UK guideline is at least 60 minutes a day on average."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give one swap to cut sugar.",
+          "a": "Water instead of fizzy drink; fruit instead of sweets.",
+          "mins": 1,
+          "model": "Teacher shows a fizzy drink can label: about 35 g sugar per 330 ml can of regular cola; swap for water."
+        },
+        {
+          "q": "Why is a long time sedentary harmful?",
+          "a": "Less fitness, weaker muscles and bones, poorer mood.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Evaluate your own typical day against the guidelines and plan two realistic changes (pupil PDF).",
+          "a": "Honest evaluation and two specific changes.",
+          "mins": 9,
+          "model": "Teacher evaluates the model day aloud."
+        },
+        {
+          "q": "Extend: In the portal response box, explain one long-term benefit of each change. Start: 'Over time...'",
+          "a": "For example: Over time, less sugar protects teeth and reduces the risk of type 2 diabetes.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain how fasting in Ramadan can be done healthily (suhur, water, balanced iftar).",
+          "a": "Eat a slow-release suhur, drink water between iftar and suhur, avoid overeating at iftar.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Moderation means... A) never eating treats B) not too much, not too little C) only eating fruit",
+          "a": "B) not too much, not too little",
+          "mins": 1,
+          "options": [
+            "Never eating treats",
+            "Not too much, not too little",
+            "Only eating fruit"
+          ]
+        },
+        {
+          "q": "Big question: how do you choose what is better for later?",
+          "a": "Think of long-term health, use small realistic changes, and remember our body is an amanah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Try your two changes for a week and record them.",
+      "send": "SEND: food cards to sort. EAL: balanced, sedentary, moderation. Stretch: compare labels of two drinks.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 7 (Health and wellbeing), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "NHS Eatwell Guide and UK physical activity guidance (on slides)",
+        "Healthy day evaluation sheet (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "fruit and vegetables market",
+          "alt": "Fruit and vegetables",
+          "for": "teach:1"
+        },
+        {
+          "find": "walking path park",
+          "alt": "A walking path in a park",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Health and wellbeing",
+      "n": 9,
+      "title": "Asking for help; trusted adults",
+      "duration": 50,
+      "bigQuestion": "Why do people sometimes keep a problem to themselves even when it is getting worse?",
+      "objectives": [
+        "To understand when and how to ask for help, and who can help us inside and outside school"
+      ],
+      "successCriteria": [
+        "All: name trusted adults at home and at TGA",
+        "Most: decide when a situation needs help and who to ask",
+        "Some: explain why safeguarding means some worries must be passed on"
+      ],
+      "crossCurricular": "Citizenship: services that protect children (NHS, Childline)",
+      "smsc": "Social: community care for one another",
+      "keywords": [
+        {
+          "term": "trusted adult",
+          "def": "a grown-up who listens and keeps you safe"
+        },
+        {
+          "term": "safeguarding",
+          "def": "protecting children from harm"
+        },
+        {
+          "term": "designated safeguarding lead",
+          "def": "the staff member responsible for keeping pupils safe"
+        },
+        {
+          "term": "confidential",
+          "def": "kept private, unless someone is at risk of harm"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do people sometimes keep a problem to themselves even when it is getting worse?",
+        "a": "Embarrassment, fear of trouble, not wanting to worry others, or not knowing who to tell."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The religion is sincere advice' (Muslim), and believers are like one body: when one part hurts, the rest responds (al-Bukhari and Muslim). Asking for help and helping others are part of our faith.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "UK activity guideline?",
+          "a": "About 60 minutes a day",
+          "mins": 1,
+          "options": [
+            "10 minutes",
+            "60 minutes",
+            "4 hours"
+          ]
+        },
+        {
+          "q": "What is moderation?",
+          "a": "Not too much, not too little.",
+          "mins": 1
+        },
+        {
+          "q": "Name a stress strategy.",
+          "a": "Break into steps, breathe, talk, du'a.",
+          "mins": 1
+        },
+        {
+          "q": "How much sleep do teenagers need?",
+          "a": "8 to 10 hours.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "When to ask for help",
+          "bullets": [
+            "A worry that will not go away",
+            "Feeling unsafe at home, school or online",
+            "Someone else is at risk"
+          ],
+          "note": "Never wait for it to 'get bad enough'."
+        },
+        {
+          "heading": "Who can help",
+          "bullets": [
+            "Home: parents, relatives",
+            "TGA: form tutor, any teacher, designated safeguarding lead",
+            "Outside: GP, Childline 0800 1111, NHS 111"
+          ],
+          "note": "Show where the safeguarding lead's contact is in the portal.",
+          "diagram": {
+            "centre": "Help",
+            "items": [
+              "Parents",
+              "Form tutor",
+              "Safeguarding lead",
+              "GP or NHS 111",
+              "Childline 0800 1111",
+              "Imam or community elder"
+            ]
+          }
+        },
+        {
+          "heading": "How to ask",
+          "bullets": [
+            "Choose a time",
+            "Say: 'Can I talk to you about something?'",
+            "Message the teacher privately in Teams if speaking is hard"
+          ],
+          "note": "Private chat to a teacher is fine; never share private worries in the class chat."
+        },
+        {
+          "heading": "Safeguarding and confidentiality",
+          "bullets": [
+            "Most things stay private",
+            "If someone is at risk, adults must pass it on",
+            "That is to keep you safe, not to get you in trouble"
+          ],
+          "note": "Be honest with pupils about this."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "A friend messages that someone online is asking for their photos. What should you do?",
+            "options": [
+              "Keep it secret",
+              "Tell a trusted adult straight away",
+              "Reply to the stranger",
+              "Wait a week"
+            ],
+            "answer": 1,
+            "why": "This is a safeguarding risk; adults can act quickly to protect your friend."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Who could you tell at TGA if something worried you?",
+          "a": "My form tutor, any teacher or the safeguarding lead.",
+          "mins": 1,
+          "model": "Teacher shows the portal page with the safeguarding lead's contact."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Scenarios sheet (pupil PDF): for five situations, decide whether to get help and who.",
+          "a": "Help sought from an appropriate adult for each risky situation.",
+          "mins": 8,
+          "model": "Teacher completes scenario 1."
+        },
+        {
+          "q": "Extend: Make a personal help card: three people at home, two at TGA, one helpline.",
+          "a": "A completed help card.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: In the portal response box, explain why a teacher cannot always keep a secret. Start: 'A teacher must pass on...'",
+          "a": "A teacher must pass on a worry when a child may be at risk, so the right people can keep them safe.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Childline's number is... A) 999 B) 0800 1111 C) 101",
+          "a": "B) 0800 1111",
+          "mins": 1,
+          "options": [
+            "999",
+            "0800 1111",
+            "101"
+          ]
+        },
+        {
+          "q": "Big question: why do people keep problems to themselves, and what would you say to them?",
+          "a": "Fear or embarrassment; it is brave to tell, and adults can help.",
+          "mins": 2
+        }
+      ],
+      "homework": "Put your help card somewhere you will see it, and tell a parent you have made it.",
+      "send": "SEND: help card with symbols. EAL: help, safe, worry. Stretch: research what NHS 111 does.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 7 (Health and wellbeing), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Help scenarios and help card (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "telephone handset",
+          "alt": "A telephone",
+          "for": "teach:2"
+        },
+        {
+          "find": "hands holding help",
+          "alt": "Two hands reaching out",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
