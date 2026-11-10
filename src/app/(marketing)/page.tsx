@@ -65,6 +65,7 @@ export default async function HomePage() {
         {/* Large, very faint brand star behind the hero (decorative). */}
         <StarMark className="hero-star pointer-events-none absolute -right-24 -top-24 h-[34rem] w-[34rem] text-gold-300/40 sm:-right-16" />
         <span aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-100/70 blur-3xl" />
+        <span aria-hidden="true" className="tech-grid pointer-events-none absolute inset-0" />
         <Container className="relative grid gap-12 py-14 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-16 lg:py-20">
           <div>
             <Kicker>{content.heroKicker || "An online school for homeschooling families"}</Kicker>
@@ -107,7 +108,7 @@ export default async function HomePage() {
           {/* Key dates, instead of a stock photo: the thing a family deciding
               now actually needs to know. Same list as the admissions page. */}
           <aside aria-labelledby="key-dates-heading" className="relative mx-auto w-full max-w-md lg:mr-0">
-            <div className="foil-top relative rounded-3xl border border-gold-light/70 bg-white p-6 shadow-warm sm:p-8">
+            <div className="glow-border relative rounded-3xl border border-gold-light/70 bg-white p-6 shadow-warm sm:p-8">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-700">
                 <StarMark className="h-3.5 w-3.5" />
                 <h2 id="key-dates-heading">Key dates</h2>

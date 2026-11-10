@@ -8,6 +8,7 @@ import { createPortal } from "react-dom";
 import { Container } from "./Container";
 import { ViewSettingsMenu, ViewSettingsPanel } from "./ViewSettings";
 import { Icon, type IconName } from "@/components/learn/Icon";
+import { SiteSearchButton, openSiteSearch } from "./SiteSearch";
 import { primaryNav, primaryCta, secondaryCta, portalCta, isNavGroup, type NavGroup } from "@/lib/nav";
 
 /** The four things most visitors come for, as tiles at the top of the mobile menu. */
@@ -153,6 +154,18 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
     triggerRef.current?.focus();
   }
 
+  // Set when the drawer closes because a link was followed. The page behind
+  // the drawer is pinned (position: fixed) while it is open, and closing it
+  // normally puts the old scroll position back. After following a link that
+  // restore landed on the NEW page, at the old page's position (often near
+  // the bottom). So for links: no restore; the new page starts at the top,
+  // or at its #section when the link has one.
+  const followed = useRef<string | null>(null);
+  function follow(e: React.MouseEvent<HTMLAnchorElement>) {
+    followed.current = e.currentTarget.getAttribute("href") || "";
+    onClose();
+  }
+
   // Body scroll lock + focus trap + Escape-to-close, all scoped to exactly
   // while the drawer is open.
   useEffect(() => {
@@ -196,7 +209,16 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
       document.body.style.position = previous.position;
       document.body.style.top = previous.top;
       document.body.style.width = previous.width;
-      window.scrollTo(0, scrollY);
+      const href = followed.current;
+      followed.current = null;
+      if (href === null) {
+        window.scrollTo(0, scrollY);
+      } else {
+        const hash = href.includes("#") ? href.slice(href.indexOf("#") + 1) : "";
+        window.scrollTo(0, 0);
+        // Wait for the new page to render, then go to its section.
+        if (hash) setTimeout(() => document.getElementById(hash)?.scrollIntoView({ block: "start" }), 60);
+      }
       document.removeEventListener("keydown", onKeyDown);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps -- close()/triggerRef are stable for this component's lifetime; re-running per open-state change only
@@ -216,7 +238,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
     >
       {/* The drawer carries its own top bar, so it fills the whole screen whatever the page behind it is doing. */}
       <div className="sticky top-0 z-10 flex h-20 shrink-0 items-center justify-between border-b border-gold-light/40 bg-cream px-5">
-        <Link href="/" onClick={close} className="flex items-center" aria-label="Tarbiyyah Global Academy, home">
+        <Link href="/" onClick={follow} className="flex items-center" aria-label="Tarbiyyah Global Academy, home">
           <Image src="/brand/ga-wordmark.png" alt="" width={180} height={55} />
         </Link>
         <button type="button" onClick={close} aria-label="Close menu" className="rounded-md p-2 text-gold-700" style={{ touchAction: "manipulation" }}>
@@ -224,12 +246,23 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
         </button>
       </div>
       <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 p-5">
+        <button
+          type="button"
+          onClick={() => {
+            onClose();
+            setTimeout(openSiteSearch, 50);
+          }}
+          className="mb-3 flex min-h-12 items-center gap-3 rounded-xl border border-gold-light/70 bg-white px-4 text-left text-sm text-ink/70"
+        >
+          <Icon name="search" size="sm" className="h-4 w-4 text-gold-700" />
+          Search the site
+        </button>
         <div className="mb-3 grid grid-cols-2 gap-2">
           {QUICK_LINKS.map((q) => (
             <Link
               key={q.href}
               href={q.href}
-              onClick={close}
+              onClick={follow}
               className="flex items-center gap-2.5 rounded-xl border border-gold-light/60 bg-white px-3 py-3 text-sm font-semibold text-ink active:bg-gold-50"
               style={{ touchAction: "manipulation" }}
             >
@@ -262,7 +295,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
                     <Link
                       key={item.href}
                       href={item.href}
-                      onClick={close}
+                      onClick={follow}
                       className="flex items-center gap-3 rounded-xl px-2 py-1.5 text-ink/80 active:bg-gold-50"
                       style={{ minHeight: 52, touchAction: "manipulation" }}
                     >
@@ -284,7 +317,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
             <Link
               key={entry.href}
               href={entry.href}
-              onClick={close}
+              onClick={follow}
               className="flex items-center border-b border-gold-light/40 px-2 text-base font-semibold text-ink"
               style={{ minHeight: 48, touchAction: "manipulation" }}
             >
@@ -294,7 +327,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
         )}
         <Link
           href={portalCta.href}
-          onClick={close}
+          onClick={follow}
           className="flex items-center border-b border-gold-light/40 px-2 text-base font-medium text-ink/75"
           style={{ minHeight: 48, touchAction: "manipulation" }}
         >
@@ -330,7 +363,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
       <div className="sticky bottom-0 flex gap-3 border-t border-gold-light/40 bg-cream p-5">
         <Link
           href={primaryCta.href}
-          onClick={close}
+          onClick={follow}
           className="flex flex-1 items-center justify-center rounded-full bg-gold-500 px-5 py-3.5 text-base font-semibold text-ink-900"
           style={{ touchAction: "manipulation" }}
         >
@@ -338,7 +371,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
         </Link>
         <Link
           href={secondaryCta.href}
-          onClick={close}
+          onClick={follow}
           className="flex flex-1 items-center justify-center rounded-full border-[1.5px] border-gold-500 px-5 py-3.5 text-base font-semibold text-ink-900"
           style={{ touchAction: "manipulation" }}
         >
@@ -397,15 +430,18 @@ export function Header() {
         scrolled ? "border-gold-light/50" : "border-transparent"
       }`}
     >
+      <span aria-hidden="true" className="scroll-progress" />
       <Container className="flex h-20 items-center justify-between gap-4">
         <Link href="/" className="flex shrink-0 items-center" aria-label="Tarbiyyah Global Academy, home">
           <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={200} height={61} priority className="h-auto w-[180px] xl:w-[200px]" />
         </Link>
 
+        <div className="ml-auto flex items-center gap-1 lg:hidden">
+          <SiteSearchButton compact />
         <button
           ref={drawerTriggerRef}
           type="button"
-          className="rounded-md p-2 text-gold-700 lg:hidden"
+          className="rounded-md p-2 text-gold-700"
           style={{ touchAction: "manipulation" }}
           aria-expanded={drawerOpen}
           aria-controls="mobile-drawer"
@@ -416,6 +452,7 @@ export function Header() {
             {drawerOpen ? <path d="M6 6l12 12M18 6l-12 12" /> : <path d="M3 6h18M3 12h18M3 18h18" />}
           </svg>
         </button>
+        </div>
 
         {/* Desktop nav */}
         <nav ref={navRef} aria-label="Primary" className="hidden min-w-0 items-center gap-0.5 lg:flex">
@@ -444,6 +481,9 @@ export function Header() {
             )
           )}
           {/* Accessibility and display settings: an icon on every desktop width (labelled on very wide screens), plus the mobile drawer and the footer. */}
+          <span className="ml-1 hidden lg:inline-flex">
+            <SiteSearchButton />
+          </span>
           <span className="hidden lg:inline-flex">
             <ViewSettingsMenu />
           </span>
