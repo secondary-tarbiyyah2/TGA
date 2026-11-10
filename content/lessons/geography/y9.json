@@ -2,7 +2,7 @@
   "subject": "Geography",
   "year": "y9",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "National Curriculum KS3 (human and physical geography: natural resources, energy, sustainability); aligned to AQA GCSE 9-1 resource management content; school AQA textbook structure used for command-word style questions | Spring 1 2027 (lessons 9 to 13): Tarbiyyah Geography Curriculum Intent; Oxford Geog.3 chapter 3 (Earning a living); Hodder Progress in Geography KS3 unit 3 | Spring 2 2027: Geog.3 chapter 4 (development and inequality); TGA Year 9 pack | Summer 1 2027 (lessons 20 to 24): Geog.3 chapter 5 (tectonic hazards) and Progress in Geography unit 11; Haiti 2010 and Mount St Helens from the school intent; TGA Year 9 pack",
+  "source": "National Curriculum KS3 (human and physical geography: natural resources, energy, sustainability); aligned to AQA GCSE 9-1 resource management content; school AQA textbook structure used for command-word style questions | Spring 1 2027 (lessons 9 to 13): Tarbiyyah Geography Curriculum Intent; Oxford Geog.3 chapter 3 (Earning a living); Hodder Progress in Geography KS3 unit 3 | Spring 2 2027: Geog.3 chapter 4 (development and inequality); TGA Year 9 pack | Summer 1 2027 (lessons 20 to 24): Geog.3 chapter 5 (tectonic hazards) and Progress in Geography unit 11; Haiti 2010 and Mount St Helens from the school intent; TGA Year 9 pack | Summer 2 2027 (lessons 25 to 28): Geog.3 (OUP) 6.1 to 6.3, 6.6, 7.1 to 7.5 and Progress in Geography units 5 and 14; end-of-year test with own questions in the week of 28 Jun",
   "lessons": [
     {
       "unit": "Unit 1: Resources, energy and sustainability",
@@ -4515,6 +4515,920 @@
           "find": "Mount Vesuvius Naples",
           "alt": "Mount Vesuvius above Naples",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Russia and the Middle East; review of Key Stage 3",
+      "n": 25,
+      "title": "Meet Russia: physical features, climate zones and Yakutia",
+      "bigQuestion": "What happens to a city built on frozen ground when the ground starts to thaw?",
+      "objectives": [
+        "To understand Russia's physical geography and how climate change is affecting Yakutia"
+      ],
+      "successCriteria": [
+        "All: describe Russia's size, location and physical features",
+        "Most: explain how latitude and distance from the sea affect Russia's climate",
+        "Some: explain the effects of thawing permafrost in Yakutia"
+      ],
+      "crossCurricular": "Science: states of matter and the greenhouse effect",
+      "smsc": "Moral: the duty to care for the climate",
+      "keywords": [
+        {
+          "term": "tundra",
+          "def": "cold, treeless land near the Arctic"
+        },
+        {
+          "term": "taiga",
+          "def": "a huge forest of conifer trees south of the tundra"
+        },
+        {
+          "term": "permafrost",
+          "def": "ground that stays frozen all year"
+        },
+        {
+          "term": "continentality",
+          "def": "the effect of being far from the sea: hotter summers and colder winters"
+        },
+        {
+          "term": "biome",
+          "def": "a large area with its own climate, plants and animals"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Russia covers 11 time zones. What does that tell you about it before you even look at a map?"
+      },
+      "starter": [
+        {
+          "q": "Earthquakes happen mostly at:",
+          "a": "Plate boundaries",
+          "mins": 1,
+          "options": [
+            "Plate boundaries",
+            "The middle of plates"
+          ]
+        },
+        {
+          "q": "HDI combines health, education and:",
+          "a": "Income",
+          "mins": 1,
+          "options": [
+            "Income",
+            "Weather"
+          ]
+        },
+        {
+          "q": "What is a TNC?",
+          "a": "A transnational corporation, a company working in many countries",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The largest country",
+          "bullets": [
+            "About 17.1 million km²",
+            "11 time zones",
+            "In both Europe and Asia"
+          ],
+          "note": "The Ural Mountains divide European Russia from Siberia. Capital: Moscow."
+        },
+        {
+          "heading": "Physical features",
+          "bullets": [
+            "Ural Mountains; West Siberian Plain",
+            "Volga: Europe's longest river",
+            "Lake Baikal: the world's deepest lake"
+          ],
+          "note": "Baikal is over 1,600 m deep."
+        },
+        {
+          "heading": "Climate zones and biomes",
+          "bullets": [
+            "North: tundra",
+            "Middle: taiga, the largest forest",
+            "South: steppe grassland"
+          ],
+          "note": "Most of Russia is far north and far from the sea: long, very cold winters.",
+          "diagram": {
+            "centre": "Why Russia is so cold",
+            "items": [
+              "high latitude",
+              "far from the sea (continentality)",
+              "Arctic winds",
+              "few warm ocean currents"
+            ]
+          }
+        },
+        {
+          "heading": "Yakutia and permafrost",
+          "bullets": [
+            "Yakutsk: one of the coldest cities",
+            "Buildings stand on piles above the permafrost",
+            "Warming thaws the ground"
+          ],
+          "note": "January averages below -35 °C. The Batagaika crater in Yakutia is growing as permafrost thaws.",
+          "cycle": [
+            "warming climate",
+            "permafrost thaws",
+            "ground sinks and cracks",
+            "buildings and roads damaged",
+            "stored methane released, more warming"
+          ]
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Why are Yakutsk's buildings built on piles?",
+            "options": [
+              "So their heat does not thaw the frozen ground",
+              "To avoid floods from the sea",
+              "Because of earthquakes"
+            ],
+            "answer": 0,
+            "why": "Raising buildings stops their warmth melting the permafrost beneath them."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one effect of thawing permafrost. (3)",
+          "a": "The ground loses strength and sinks (1), so buildings crack and roads buckle (1); thawing also releases methane, which adds to warming (1)",
+          "mins": 2,
+          "model": "Point: permafrost is frozen ground that holds the land firm.\nDevelop: when it thaws it turns soft and sinks.\nLink: buildings crack, and stored methane escapes, causing more warming."
+        },
+        {
+          "q": "Which biome covers the middle of Russia?",
+          "a": "Taiga",
+          "mins": 1
+        },
+        {
+          "q": "What separates European Russia from Siberia?",
+          "a": "The Ural Mountains",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Annotate the map of Russia (Moscow, Urals, Volga, Lake Baikal, Siberia, Yakutsk, tundra, taiga, steppe), then answer in the portal response box: 'Explain how climate change is affecting Yakutia.' (6)",
+          "a": "Correct annotations; an answer with the cycle of thaw, damage and methane feedback",
+          "mins": 14,
+          "model": "Teacher annotates the Urals and writes 'boundary between Europe and Asia'."
+        },
+        {
+          "q": "Extend: Explain why Russia's winters are so cold.",
+          "a": "High latitude, far from the moderating sea, and cold Arctic winds",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why might climate change bring some benefits to Russia?",
+          "a": "Longer growing seasons, an ice-free Arctic shipping route, but with serious costs",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Permafrost is ground that:",
+          "a": "Stays frozen all year",
+          "mins": 1,
+          "options": [
+            "Stays frozen all year",
+            "Floods every spring"
+          ]
+        },
+        {
+          "q": "The world's deepest lake is:",
+          "a": "Lake Baikal",
+          "mins": 1,
+          "options": [
+            "Lake Baikal",
+            "Lake Victoria"
+          ]
+        },
+        {
+          "q": "Big question: what happens to a city on thawing ground?",
+          "a": "The ground sinks, buildings crack and roads buckle, and methane released adds to warming",
+          "mins": 1
+        }
+      ],
+      "homework": "Read Geog.3 6.6 and list three ways people in Yakutia are adapting.",
+      "send": "SEND: map with dots and labels. EAL: biome word mat with photos. Stretch: research the Northern Sea Route.",
+      "resources": [
+        "Geog.3 (Oxford University Press) Student Book and scheme of work, chapters 6 (Russia) and 7 (the Middle East); Progress in Geography KS3 (Hodder) units 5 and 14: units 6.1 to 6.3 and 6.6",
+        "Map of Russia and climate zones (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Yakutsk buildings on piles permafrost",
+          "alt": "Buildings on piles in Yakutsk",
+          "for": "teach:4"
+        },
+        {
+          "find": "taiga forest Siberia",
+          "alt": "The taiga forest",
+          "for": "keywords"
+        },
+        {
+          "find": "Lake Baikal winter ice",
+          "alt": "Lake Baikal",
+          "for": "teach:2"
+        },
+        {
+          "find": "Batagaika crater",
+          "alt": "The Batagaika crater in Yakutia",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Russia and the Middle East; review of Key Stage 3",
+      "n": 26,
+      "title": "Introducing the Middle East: physical geography, climate and people",
+      "bigQuestion": "Why have three narrow stretches of water in the Middle East mattered to the whole world?",
+      "objectives": [
+        "To understand the physical and human geography of the Middle East"
+      ],
+      "successCriteria": [
+        "All: locate the Middle East and name ten of its countries",
+        "Most: describe its climate zones and biomes",
+        "Some: explain why its choke points and oil matter to the world"
+      ],
+      "crossCurricular": "History: the region's past, from Baghdad to the Ottomans",
+      "smsc": "Cultural: the region that is home to Islam's holiest cities",
+      "keywords": [
+        {
+          "term": "Arabian Peninsula",
+          "def": "the large peninsula between the Red Sea and the Gulf"
+        },
+        {
+          "term": "arid",
+          "def": "very dry, with little rain"
+        },
+        {
+          "term": "maritime choke point",
+          "def": "a narrow sea passage many ships must use"
+        },
+        {
+          "term": "population density",
+          "def": "the number of people per km²"
+        },
+        {
+          "term": "export",
+          "def": "goods sold to another country"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Most of the Middle East gets very little rain. Where would you expect people to live?"
+      },
+      "islamicLink": {
+        "text": "The Middle East holds Islam's two holiest cities, Makkah and Madinah, in the Arabian Peninsula. Allah calls the Ka'bah the first House set up for mankind (Al Imran 3:96).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Permafrost is ground that:",
+          "a": "Stays frozen all year",
+          "mins": 1,
+          "options": [
+            "Stays frozen all year",
+            "Is always wet"
+          ]
+        },
+        {
+          "q": "The taiga is a:",
+          "a": "Conifer forest",
+          "mins": 1,
+          "options": [
+            "Conifer forest",
+            "Desert"
+          ]
+        },
+        {
+          "q": "Name a feature of Russia.",
+          "a": "Urals, Volga, Lake Baikal or Siberia",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Where is it?",
+          "bullets": [
+            "Where Africa, Asia and Europe meet",
+            "Includes the Arabian Peninsula, Iran, Iraq, Turkey, Egypt",
+            "Seas: Red Sea, the Gulf, Mediterranean"
+          ],
+          "note": "Definitions vary; Geog.3 7.1 includes Egypt and Turkey."
+        },
+        {
+          "heading": "Physical features",
+          "bullets": [
+            "Tigris and Euphrates; the Nile",
+            "Zagros and Taurus mountains",
+            "Rub' al Khali: the Empty Quarter"
+          ],
+          "note": "The Empty Quarter is the largest continuous sand desert in the world."
+        },
+        {
+          "heading": "Climate and biomes",
+          "bullets": [
+            "Arid: hot desert most of the region",
+            "Semi-arid steppe on the edges",
+            "Mediterranean along the coasts"
+          ],
+          "note": "Subtropical high pressure brings sinking, dry air.",
+          "sort": {
+            "columns": [
+              "Arid",
+              "Semi-arid",
+              "Mediterranean"
+            ],
+            "cards": [
+              "Riyadh",
+              "Empty Quarter",
+              "Ankara plateau",
+              "Beirut",
+              "Amman",
+              "Dubai"
+            ],
+            "answer": [
+              0,
+              0,
+              1,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "Choke points and oil",
+          "bullets": [
+            "Suez Canal, Strait of Hormuz, Bab el-Mandeb",
+            "A large share of the world's oil is shipped through Hormuz",
+            "Oil makes some Gulf states very rich"
+          ],
+          "note": "People live mainly along coasts and rivers, where water is found."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The Strait of Hormuz matters because:",
+            "options": [
+              "Much of the world's oil is shipped through it",
+              "It is a desert",
+              "It is a mountain pass"
+            ],
+            "answer": 0,
+            "why": "It links the Gulf to the open ocean, so oil tankers must pass through."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the pattern of population density in the Middle East. (3)",
+          "a": "Dense along rivers like the Nile and Tigris (1) and coasts (1); sparse in deserts such as the Empty Quarter (1)",
+          "mins": 2,
+          "model": "I look at the dark shading: along the Nile, the Tigris and Euphrates, and the coasts.\nI look at the light shading: the Empty Quarter.\nPattern: people cluster where there is water."
+        },
+        {
+          "q": "What is a maritime choke point?",
+          "a": "A narrow sea passage many ships must use",
+          "mins": 1
+        },
+        {
+          "q": "Which canal links the Mediterranean and the Red Sea?",
+          "a": "The Suez Canal",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Label a map of the Middle East with ten countries, the three choke points, the Tigris, Euphrates and Nile, and the Empty Quarter; then explain in the portal response box why the region matters to the world economy.",
+          "a": "Correct labels; an answer linking oil, choke points and trade routes",
+          "mins": 14,
+          "model": "Teacher labels Saudi Arabia, Makkah and the Red Sea first."
+        },
+        {
+          "q": "Extend: Explain why most of the region is arid.",
+          "a": "Sinking air in subtropical high pressure brings few clouds and little rain",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why might countries rich in oil want to rely on it less?",
+          "a": "Oil will run out, prices change and the world is cutting carbon emissions",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Arid means:",
+          "a": "Very dry",
+          "mins": 1,
+          "options": [
+            "Very dry",
+            "Very cold"
+          ]
+        },
+        {
+          "q": "The Empty Quarter is a:",
+          "a": "Sand desert",
+          "mins": 1,
+          "options": [
+            "Sand desert",
+            "Lake"
+          ]
+        },
+        {
+          "q": "Big question: why do three narrow stretches of water matter?",
+          "a": "Huge amounts of oil and trade must pass through them, so closing one affects the world",
+          "mins": 1
+        }
+      ],
+      "homework": "Revise for the end-of-year test: make a mind map for each geography topic since January.",
+      "send": "SEND: map with dots and a word bank. EAL: climate word mat. Stretch: research how the Suez Canal changed world trade after 1869.",
+      "resources": [
+        "Geog.3 (Oxford University Press) Student Book and scheme of work, chapters 6 (Russia) and 7 (the Middle East); Progress in Geography KS3 (Hodder) units 5 and 14: units 7.1 to 7.4",
+        "Map of the Middle East (portal printable)",
+        "Year 9 revision mind map template (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Rub al Khali dunes",
+          "alt": "Dunes of the Empty Quarter",
+          "for": "teach:2"
+        },
+        {
+          "find": "Suez Canal from space",
+          "alt": "The Suez Canal from space",
+          "for": "teach:4"
+        },
+        {
+          "find": "Strait of Hormuz satellite",
+          "alt": "The Strait of Hormuz",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Russia and the Middle East; review of Key Stage 3",
+      "n": 27,
+      "title": "End-of-year geography test",
+      "bigQuestion": "You have 30 minutes for 30 marks. How will you make your 8-mark answer reach a judgement?",
+      "objectives": [
+        "To understand what I can do in geography under test conditions across this year"
+      ],
+      "successCriteria": [
+        "All: answer data and map questions using figures",
+        "Most: explain processes and case studies accurately",
+        "Some: write a supported judgement"
+      ],
+      "crossCurricular": "Maths: data and statistics",
+      "smsc": "Moral: honesty and integrity in tests",
+      "keywords": [
+        {
+          "term": "command word",
+          "def": "the instruction in a question, such as assess or evaluate"
+        },
+        {
+          "term": "case study",
+          "def": "a real example studied in detail"
+        },
+        {
+          "term": "assess",
+          "def": "weigh up factors and decide which matters most"
+        },
+        {
+          "term": "evaluate",
+          "def": "judge strengths and weaknesses"
+        },
+        {
+          "term": "judgement",
+          "def": "a decision backed by evidence"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 30 minutes for 30 marks. How will you make your 8-mark answer reach a judgement?"
+      },
+      "starter": [
+        {
+          "q": "A destructive plate boundary is where plates:",
+          "a": "Move towards each other",
+          "mins": 1,
+          "options": [
+            "Move towards each other",
+            "Move apart"
+          ]
+        },
+        {
+          "q": "GDP per capita measures:",
+          "a": "Average wealth per person",
+          "mins": 1,
+          "options": [
+            "Average wealth per person",
+            "Life expectancy"
+          ]
+        },
+        {
+          "q": "Assess means:",
+          "a": "Weigh up and decide",
+          "mins": 1,
+          "options": [
+            "Weigh up and decide",
+            "List"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The test",
+          "bullets": [
+            "30 marks, 30 minutes",
+            "Earning a living, development, tectonic hazards, Russia and the Middle East",
+            "Portal test window, camera on, work alone"
+          ],
+          "note": "Read the front page together."
+        },
+        {
+          "heading": "Case studies count",
+          "bullets": [
+            "Name the place and date",
+            "Use two specific facts",
+            "Link them to the question"
+          ],
+          "note": "Haiti 2010 and Sichuan 2008 are our tectonic case studies."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "A strong case study answer includes:",
+            "options": [
+              "Named place, date and specific facts",
+              "General points only",
+              "A drawing"
+            ],
+            "answer": 0,
+            "why": "Specific detail separates higher levels."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Model: give two effects of the 2010 Haiti earthquake. (2)",
+          "a": "Hundreds of thousands killed (1); much of Port-au-Prince destroyed, many left homeless (1)",
+          "mins": 1,
+          "model": "Name the place and date; give two specific effects."
+        },
+        {
+          "q": "What do you do if stuck?",
+          "a": "Move on and come back",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Q1 (3): Name the four economic sectors.",
+          "a": "Primary, secondary, tertiary (2 for all three); quaternary (1)",
+          "mins": 3,
+          "model": "Teacher reads Q1 aloud and shows how the marks split."
+        },
+        {
+          "q": "Q2 (4): Explain two reasons why the UK's employment structure changed.",
+          "a": "Mechanisation and deindustrialisation cut primary and secondary jobs (2); globalisation moved manufacturing to cheaper countries, while services grew (2)",
+          "mins": 4
+        },
+        {
+          "q": "Q3 (3): Explain why HDI is a better measure of development than GDP alone.",
+          "a": "It combines income (1) with life expectancy (1) and education (1)",
+          "mins": 3
+        },
+        {
+          "q": "Q4 (4): Explain how a composite volcano forms at a destructive boundary.",
+          "a": "Oceanic plate subducts (1), melts in the mantle (1); magma rises (1); eruptions of ash and lava build layers (1)",
+          "mins": 4
+        },
+        {
+          "q": "Q5 (2): Give two reasons why people live near volcanoes.",
+          "a": "Fertile soil; geothermal energy; tourism (any two)",
+          "mins": 2
+        },
+        {
+          "q": "Q6 (4): Explain why Russia's climate is so cold.",
+          "a": "High latitude (1); far from the sea, so continentality (1); Arctic winds (1); long dark winters (1)",
+          "mins": 4
+        },
+        {
+          "q": "Q7 (8): 'The effects of an earthquake depend more on a country's development than on its magnitude.' Assess this view using Haiti 2010 and Sichuan 2008. Write in the response box.",
+          "a": "Level answer comparing magnitude, preparedness, building quality and response, with a supported judgement",
+          "mins": 8
+        }
+      ],
+      "exit": [
+        {
+          "q": "Case study answers need:",
+          "a": "Named places and specific facts",
+          "mins": 1,
+          "options": [
+            "Named places and specific facts",
+            "General points"
+          ]
+        },
+        {
+          "q": "Big question: how did your 8-mark answer reach a judgement?",
+          "a": "By weighing both factors and ending with which mattered more and why",
+          "mins": 1
+        }
+      ],
+      "homework": "Write down two topics you found hardest; we will repair them in our final lesson.",
+      "send": "SEND: extra time and a reader as agreed in the SEND register; enlarged resources. EAL: command word mat. Stretch: plan Q7 with a counter-argument.",
+      "resources": [
+        "Year 9 end-of-year geography test: 7 questions, 28 marks above plus 2 for spelling and accuracy, with mark scheme and resource sheet (own questions; portal test)",
+        "Geog.3 and Progress in Geography chapters studied since January",
+        "Command word mat (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "exam paper and pen",
+          "alt": "A test paper and pen",
+          "for": "hook"
+        },
+        {
+          "find": "Mount St Helens crater",
+          "alt": "Mount St Helens",
+          "for": "keywords"
+        },
+        {
+          "find": "seismograph",
+          "alt": "A seismograph",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Russia and the Middle East; review of Key Stage 3",
+      "n": 28,
+      "title": "Challenges in the Arabian Peninsula; feedback and Key Stage 3 review",
+      "bigQuestion": "How do you grow food and supply cities in one of the driest places on Earth?",
+      "objectives": [
+        "To understand the challenges facing the Arabian Peninsula and review Key Stage 3 geography"
+      ],
+      "successCriteria": [
+        "All: explain the water challenge and two responses",
+        "Most: explain why Gulf states are diversifying away from oil",
+        "Some: improve a test answer and connect KS3 topics"
+      ],
+      "crossCurricular": "Science: separating mixtures (desalination)",
+      "smsc": "Moral: not wasting water",
+      "keywords": [
+        {
+          "term": "aquifer",
+          "def": "rock underground that holds water"
+        },
+        {
+          "term": "desalination",
+          "def": "removing salt from seawater to make fresh water"
+        },
+        {
+          "term": "diversify",
+          "def": "develop a wider range of industries"
+        },
+        {
+          "term": "hydroponics",
+          "def": "growing plants in water with nutrients, without soil"
+        },
+        {
+          "term": "sustainable",
+          "def": "meeting today's needs without harming the future"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If your country's water came mostly from the sea and its money mostly from oil, what would worry you about the future?"
+      },
+      "islamicLink": {
+        "text": "Allah says: We made from water every living thing (Al-Anbiya 21:30). He also says: eat and drink, but do not waste (Al-A'raf 7:31), so every drop counts in a dry land.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The Empty Quarter is a:",
+          "a": "Sand desert",
+          "mins": 1,
+          "options": [
+            "Sand desert",
+            "Forest"
+          ]
+        },
+        {
+          "q": "The Strait of Hormuz matters for:",
+          "a": "Oil shipping",
+          "mins": 1,
+          "options": [
+            "Oil shipping",
+            "Fishing only"
+          ]
+        },
+        {
+          "q": "Name a country of the Arabian Peninsula.",
+          "a": "Saudi Arabia, Yemen, Oman, UAE, Qatar, Bahrain or Kuwait",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The water challenge",
+          "bullets": [
+            "Very little rain and no permanent rivers",
+            "Ancient aquifers used faster than they refill",
+            "Cities and farms need more water"
+          ],
+          "note": "Fossil groundwater was stored thousands of years ago and barely refills today."
+        },
+        {
+          "heading": "Responses",
+          "bullets": [
+            "Desalination plants on the coast",
+            "Hydroponics and drip irrigation",
+            "Treating and reusing waste water"
+          ],
+          "note": "Desalination needs a lot of energy, much of it from oil and gas.",
+          "compare": {
+            "left": {
+              "title": "Desalination",
+              "points": [
+                "Reliable supply",
+                "Uses lots of energy",
+                "Salty waste returned to the sea"
+              ]
+            },
+            "right": {
+              "title": "Saving water",
+              "points": [
+                "Drip irrigation, reuse",
+                "Cheaper",
+                "Needs everyone's effort"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Life after oil",
+          "bullets": [
+            "Oil will not last for ever",
+            "Diversify: tourism, finance, logistics, solar",
+            "Saudi Arabia's Vision 2030; Dubai as a trade hub"
+          ],
+          "note": "Dubai's oil was always small; trade and tourism built its economy."
+        },
+        {
+          "heading": "Key Stage 3 connections",
+          "bullets": [
+            "Water: rivers, glaciers, deserts",
+            "Hazards: tectonics, weather",
+            "People: development and globalisation"
+          ],
+          "note": "Model a connection across years.",
+          "model": {
+            "problem": "Connect Year 7 rivers with Year 9 Arabian Peninsula",
+            "steps": [
+              "Recall the water cycle from Year 7",
+              "Note: the Peninsula has little precipitation and no permanent rivers",
+              "So water must come from aquifers or the sea",
+              "Link: desalination replaces the river's job"
+            ],
+            "answer": "Where the water cycle gives little rain, people turn to aquifers and desalination."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Why are aquifers in the Peninsula a problem?",
+            "options": [
+              "They are used faster than they refill",
+              "They are full of oil",
+              "They flood every year"
+            ],
+            "answer": 0,
+            "why": "The water was stored long ago and barely refills, so it is running down."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why Gulf states want to diversify their economies. (3)",
+          "a": "Oil is finite (1); oil prices rise and fall, making income unstable (1); the world is cutting fossil fuel use (1)",
+          "mins": 2,
+          "model": "Point: oil will run out.\nDevelop: prices go up and down, so income is unstable.\nLink: as the world cuts carbon, demand for oil will fall."
+        },
+        {
+          "q": "Correct your weakest short answer from the test.",
+          "a": "The correct answer from the mark scheme",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Rewrite one test answer using feedback, then answer in the portal response box: 'Evaluate desalination as a solution to water shortage in the Arabian Peninsula.' (6)",
+          "a": "An improved test answer; strengths and weaknesses of desalination with a judgement",
+          "mins": 14,
+          "model": "Teacher models the first strength: 'Desalination gives a reliable supply because the sea never runs dry.'"
+        },
+        {
+          "q": "Extend: Write two KS3 connections like the model.",
+          "a": "Two clear links across years, for example tectonics and development (Haiti)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: How could solar power make desalination more sustainable?",
+          "a": "The Peninsula has strong sunshine, so solar can power plants without burning oil and gas",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Desalination removes:",
+          "a": "Salt from seawater",
+          "mins": 1,
+          "options": [
+            "Salt from seawater",
+            "Oil from sand"
+          ]
+        },
+        {
+          "q": "Big question: how do you supply cities in a desert?",
+          "a": "Desalination, careful use of aquifers, water reuse and hydroponics, powered more by solar in future",
+          "mins": 1
+        }
+      ],
+      "homework": "Choose the KS3 geography topic you most want to study further and write three questions you would like to answer.",
+      "send": "SEND: repair checklist; desalination pros and cons cards. EAL: water word mat. Stretch: compare water challenges in the Peninsula and in the UK's South East.",
+      "resources": [
+        "Geog.3 (Oxford University Press) Student Book and scheme of work, chapters 6 (Russia) and 7 (the Middle East); Progress in Geography KS3 (Hodder) units 5 and 14: unit 7.5",
+        "Marked end-of-year geography test and mark scheme",
+        "KS3 connections sheet (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "desalination plant",
+          "alt": "A desalination plant",
+          "for": "teach:2"
+        },
+        {
+          "find": "Dubai skyline",
+          "alt": "Dubai, a trade and tourism hub",
+          "for": "teach:3"
+        },
+        {
+          "find": "centre pivot irrigation desert Saudi Arabia",
+          "alt": "Irrigated circles of farmland in the desert",
+          "for": "keywords"
         }
       ]
     }
