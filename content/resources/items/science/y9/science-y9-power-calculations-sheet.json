@@ -1,0 +1,106 @@
+{
+ "id": "science-y9-power-calculations-sheet",
+ "title": "Power calculations sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y9",
+ "unit": "Spring 1: Making materials (9E); conservation of energy",
+ "lessons": [
+  23
+ ],
+ "source": "Seeded from science/y9 lesson 23 (Power calculations sheet (portal worksheet))",
+ "intro": "Lesson 23: Power: watts and kilowatts. To understand power as the rate of energy transfer and how to calculate it",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "A kettle transfers 360 000 J in 2 minutes. Find its power.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "t = 2 × 60 = 120 s"
+     },
+     {
+      "label": "Step 2",
+      "text": "P = E ÷ t"
+     },
+     {
+      "label": "Step 3",
+      "text": "P = 360 000 ÷ 120"
+     },
+     {
+      "label": "Step 4",
+      "text": "P = 3000 W = 3 kW"
+     },
+     {
+      "label": "Answer",
+      "text": "3000 W (3 kW)"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A lamp transfers 1200 J in 60 s. Power?",
+     "a": "1200 ÷ 60 = 20 W",
+     "model": "Formula: P = E ÷ t. Time is already in seconds: 60 s. Substitute: 1200 ÷ 60 = 20. P = 20 W."
+    },
+    {
+     "q": "A 2000 W heater runs for 10 s. Energy transferred?",
+     "a": "E = P × t = 2000 × 10 = 20 000 J"
+    },
+    {
+     "q": "Convert 2.5 kW to W.",
+     "a": "2500 W"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: With an adult, read the power labels on four appliances. Rank them and calculate the energy each transfers in 1 minute.",
+     "a": "Pupils' own, e.g. kettle 3000 W: 180 000 J per minute.",
+     "model": "Teacher shows the first: kettle label 3000 W; E = 3000 × 60 = 180 000 J per minute."
+    },
+    {
+     "q": "Extend: A microwave of 800 W heats soup for 3 minutes. How much energy?",
+     "a": "800 × 180 = 144 000 J"
+    },
+    {
+     "q": "Stretch: Why does the kettle boil water faster than the microwave heats the same water?",
+     "a": "It has a higher power (3000 W against 800 W), so it transfers energy to the water faster."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Power is measured in...",
+     "a": "Watts",
+     "options": [
+      "Joules",
+      "Watts",
+      "Metres"
+     ]
+    },
+    {
+     "q": "Big question: why does a kettle boil water faster than a microwave warms it?",
+     "a": "The kettle has a higher power rating, so it transfers energy to the water faster."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,149 @@
+{
+ "id": "science-y8-reflection-ray-diagram-sheet-portal-worksheet-pr",
+ "title": "Reflection ray diagram sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y8",
+ "unit": "Spring 1: Combustion (8E); light (8J)",
+ "lessons": [
+  20
+ ],
+ "source": "Seeded from science/y8 lesson 20 (Reflection ray diagram sheet (portal worksheet, printable or on a drawing tablet))",
+ "intro": "Lesson 20: Reflection and the law of reflection. To understand the law of reflection and the difference between specular and diffuse reflection",
+ "blocks": [
+  {
+   "h": "Label the diagram"
+  },
+  {
+   "picture": {
+    "find": "law of reflection diagram",
+    "alt": "A diagram of the law of reflection with the normal",
+    "labels": 5,
+    "draw": "Draw and label: Reflection ray diagram sheet"
+   }
+  },
+  {
+   "starters": [
+    "reflection",
+    "normal",
+    "angle of incidence",
+    "angle of reflection",
+    "diffuse reflection"
+   ],
+   "title": "Word bank"
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "A ray hits a mirror at 35° to the normal. Find the angle of reflection.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Angles are measured from the normal"
+     },
+     {
+      "label": "Step 2",
+      "text": "Law: i = r"
+     },
+     {
+      "label": "Step 3",
+      "text": "r = 35°"
+     },
+     {
+      "label": "Answer",
+      "text": "35° from the normal"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Specular and diffuse"
+  },
+  {
+   "table": {
+    "head": [
+     "Specular",
+     "Diffuse"
+    ],
+    "rows": [
+     [
+      "smooth mirror",
+      "rough paper, wall"
+     ],
+     [
+      "clear image",
+      "no image"
+     ],
+     [
+      "parallel rays stay parallel",
+      "rays scattered"
+     ]
+    ],
+    "blankRows": 2
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A ray hits a mirror at 20° to the surface. Find the angle of reflection.",
+     "a": "i = 90 - 20 = 70°, so r = 70°.",
+     "model": "The 20° is from the mirror, not the normal. i = 90 - 20 = 70°. Law: r = i. So r = 70° from the normal."
+    },
+    {
+     "q": "Why can't you see a reflection in a wall?",
+     "a": "Its rough surface gives diffuse reflection, scattering light."
+    },
+    {
+     "q": "What is the normal?",
+     "a": "A line at 90° to the surface where the ray hits."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Draw three ray diagrams with angles of incidence 30°, 45° and 60° and measure the reflected angles.",
+     "a": "Reflected angles 30°, 45°, 60° from the normal.",
+     "model": "Teacher draws the first: mirror line, dashed normal, incident ray at 30°, reflected ray at 30° on the other side."
+    },
+    {
+     "q": "Extend: Explain why road signs use rough, matt paint but mirrors are polished.",
+     "a": "Matt paint gives diffuse reflection so signs are seen from many angles without glare; mirrors need specular reflection for a clear image."
+    },
+    {
+     "q": "Stretch: Two mirrors at 90°. A ray hits the first at 30° to the normal. Find the angle it leaves the second mirror.",
+     "a": "It reflects at 30°, meets the second mirror at 60° to its normal, leaves at 60°, travelling back parallel to its original path."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Angles in reflection are measured from the...",
+     "a": "Normal",
+     "options": [
+      "Mirror",
+      "Normal",
+      "Floor"
+     ]
+    },
+    {
+     "q": "Big question: why can you see yourself in a mirror but not in a wall?",
+     "a": "The mirror is smooth (specular reflection, a clear image); the wall is rough (diffuse reflection scatters light)."
+    }
+   ]
+  }
+ ]
+}

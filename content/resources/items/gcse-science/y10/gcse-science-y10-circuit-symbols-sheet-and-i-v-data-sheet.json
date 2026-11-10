@@ -1,0 +1,140 @@
+{
+ "id": "gcse-science-y10-circuit-symbols-sheet-and-i-v-data-sheet",
+ "title": "Circuit symbols sheet and I-V data sheet",
+ "type": "worksheet",
+ "subject": "Science (GCSE Biology, Chemistry, Physics)",
+ "subjectSlug": "gcse-science",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0",
+ "unit": "Spring 1: Respiration, moles and electricity",
+ "lessons": [
+  108
+ ],
+ "source": "Seeded from gcse-science/y10 lesson 108 (Circuit symbols sheet and I-V data sheet (portal worksheet))",
+ "intro": "Lesson 108: Measuring resistance: circuit symbols, ammeters and voltmeters. To understand how to set up a circuit with an ammeter and voltmeter to find resistance",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Readings: 3.0 V, 0.30 A. Find R.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "R = V ÷ I"
+     },
+     {
+      "label": "Step 2",
+      "text": "R = 3.0 ÷ 0.30"
+     },
+     {
+      "label": "Step 3",
+      "text": "R = 10 Ω"
+     },
+     {
+      "label": "Answer",
+      "text": "10 Ω"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Circuit symbols"
+  },
+  {
+   "table": {
+    "head": [
+     "Component",
+     "What it does"
+    ],
+    "rows": [
+     [
+      "Cell and battery",
+      "supply"
+     ],
+     [
+      "Resistor and variable resistor",
+      "control current"
+     ],
+     [
+      "Ammeter",
+      "measures current (series)"
+     ],
+     [
+      "Voltmeter",
+      "measures voltage (parallel)"
+     ],
+     [
+      "Diode",
+      "current one way only"
+     ],
+     [
+      "LDR and thermistor",
+      "resistance changes with light and temperature"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Readings: 4.5 V and 0.15 A. Resistance? [2 marks]",
+     "a": "R = 4.5 ÷ 0.15 (1) = 30 Ω (1)",
+     "model": "Formula: R = V ÷ I. Substitute: 4.5 ÷ 0.15. Calculate: 30. Unit: Ω."
+    },
+    {
+     "q": "From the graph, what is the resistance of the resistor?",
+     "a": "R = 4 ÷ 0.4 = 10 Ω"
+    },
+    {
+     "q": "Why is the I-V graph a straight line through the origin?",
+     "a": "Current is proportional to voltage (constant resistance)."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Draw the circuit diagram to measure a resistor's resistance with an ammeter, voltmeter, variable resistor and cell. Then calculate R from four readings (portal worksheet).",
+     "a": "Ammeter in series, voltmeter across the resistor; R values all about 20 Ω; mean 20 Ω.",
+     "model": "Teacher draws it first: cell, switch, variable resistor, ammeter in one loop with the resistor; voltmeter on a parallel branch across the resistor."
+    },
+    {
+     "q": "Extend: Describe how to investigate the I-V characteristics of a filament lamp. [4 marks] Use the portal response box.",
+     "a": "Circuit with ammeter in series, voltmeter in parallel (1); vary voltage with variable resistor (1); record pairs of V and I (1); reverse the supply and repeat, plot I against V (1).",
+     "lines": 6
+    },
+    {
+     "q": "Stretch: Explain why a filament lamp's I-V graph curves.",
+     "a": "As current increases, the filament heats up and its resistance increases, so current rises less steeply."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "An ammeter is connected...",
+     "a": "In series",
+     "options": [
+      "In series",
+      "In parallel"
+     ]
+    },
+    {
+     "q": "Big question: how do you measure resistance?",
+     "a": "Measure V across and I through the component, then R = V ÷ I."
+    }
+   ]
+  }
+ ]
+}

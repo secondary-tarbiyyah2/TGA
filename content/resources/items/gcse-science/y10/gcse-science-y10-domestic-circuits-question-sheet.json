@@ -1,0 +1,69 @@
+{
+ "id": "gcse-science-y10-domestic-circuits-question-sheet",
+ "title": "Domestic circuits question sheet",
+ "type": "revision set",
+ "subject": "Science (GCSE Biology, Chemistry, Physics)",
+ "subjectSlug": "gcse-science",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0",
+ "unit": "Spring 1: Respiration, moles and electricity",
+ "lessons": [
+  98
+ ],
+ "source": "Seeded from gcse-science/y10 lesson 98 (Domestic circuits question sheet (portal worksheet))",
+ "intro": "Lesson 98: Why homes use parallel circuits, and how resistance changes the current. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "20 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Calculate the current for six appliances at 230 V from their resistances (portal worksheet) and the total if all run together.",
+     "a": "Answers in the key, e.g. 23 Ω heater: 10 A.",
+     "model": "Teacher does the first: lamp 920 Ω: I = 230 ÷ 920 = 0.25 A.",
+     "marks": 2
+    },
+    {
+     "q": "Explain, using resistance, why adding branches increases supply current.",
+     "a": "Each branch gives another path (1); total resistance decreases (1); for the same voltage, I = V ÷ R so current increases (1).",
+     "marks": 3
+    },
+    {
+     "q": "With an adult, list the appliances on one extension lead at home and check the total current against its rating (look at labels only).",
+     "a": "Pupils' own; total should stay below 13 A.",
+     "marks": 2
+    },
+    {
+     "q": "A kettle (13 A), toaster (4 A) and lamp (0.5 A) run from one lead. Total current?",
+     "a": "17.5 A",
+     "model": "Parallel branches: add the currents. 13 + 4 + 0.5 = 17.5 A. A 13 A extension lead would be overloaded.",
+     "marks": 1
+    },
+    {
+     "q": "Why is this dangerous?",
+     "a": "The current exceeds the lead's rating, so wires overheat and could start a fire.",
+     "marks": 2
+    },
+    {
+     "q": "Adding branches makes total resistance...",
+     "a": "Smaller.",
+     "marks": 1
+    },
+    {
+     "q": "More appliances on in parallel means supply current...",
+     "a": "Increases",
+     "options": [
+      "Increases",
+      "Decreases",
+      "Stays the same"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Big question: what happens to the supply current when you switch on more appliances?",
+     "a": "It increases because each adds a branch and total resistance falls.",
+     "marks": 2
+    }
+   ]
+  }
+ ]
+}

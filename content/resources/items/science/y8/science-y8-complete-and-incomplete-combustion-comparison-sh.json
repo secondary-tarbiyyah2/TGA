@@ -1,0 +1,134 @@
+{
+ "id": "science-y8-complete-and-incomplete-combustion-comparison-sh",
+ "title": "Complete and incomplete combustion comparison sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y8",
+ "unit": "Spring 1: Combustion (8E); light (8J)",
+ "lessons": [
+  12
+ ],
+ "source": "Seeded from science/y8 lesson 12 (Complete and incomplete combustion comparison sheet (portal worksheet))",
+ "intro": "Lesson 12: Incomplete combustion and carbon monoxide. To understand why incomplete combustion happens and why its products are harmful",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Write word equations for methane burning completely and incompletely",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Complete: methane + oxygen → carbon dioxide + water"
+     },
+     {
+      "label": "Step 2",
+      "text": "Incomplete: methane + oxygen → carbon monoxide + water"
+     },
+     {
+      "label": "Step 3",
+      "text": "Very little oxygen: carbon (soot) can form instead"
+     },
+     {
+      "label": "Answer",
+      "text": "Products depend on the oxygen supply"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Complete vs incomplete"
+  },
+  {
+   "table": {
+    "head": [
+     "Complete",
+     "Incomplete"
+    ],
+    "rows": [
+     [
+      "Plenty of oxygen",
+      "Limited oxygen"
+     ],
+     [
+      "Blue flame",
+      "Yellow, smoky flame"
+     ],
+     [
+      "Carbon dioxide + water",
+      "Carbon monoxide, carbon, water"
+     ],
+     [
+      "More energy released",
+      "Less energy released"
+     ]
+    ],
+    "blankRows": 2
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write a word equation for methane burning with very little oxygen.",
+     "a": "methane + oxygen → carbon monoxide + water (or carbon + water)",
+     "model": "Limited oxygen means the carbon cannot become carbon dioxide. It becomes carbon monoxide (or carbon). Hydrogen still becomes water. So methane + oxygen → carbon monoxide + water.",
+     "lines": 6
+    },
+    {
+     "q": "What colour flame shows incomplete combustion?",
+     "a": "Yellow (smoky)."
+    },
+    {
+     "q": "Why does incomplete combustion release less energy?",
+     "a": "The fuel is not fully oxidised."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Make a comparison table of complete and incomplete combustion (oxygen, flame, products, energy, dangers).",
+     "a": "Complete: plenty of oxygen, blue, CO₂ + H₂O, more energy; incomplete: limited oxygen, yellow, CO, C, H₂O, less energy, poisonous.",
+     "model": "Teacher fills the first row: oxygen supply: plenty (complete) or limited (incomplete)."
+    },
+    {
+     "q": "Extend: Explain how carbon monoxide stops the blood carrying oxygen. Write in the portal response box.",
+     "a": "CO binds to haemoglobin in red blood cells, so less oxygen can be carried to the body's cells.",
+     "lines": 6
+    },
+    {
+     "q": "Stretch: Why are CO alarms recommended near gas boilers?",
+     "a": "A faulty boiler with poor air supply can burn incompletely and release CO, which cannot be detected by our senses."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which gas is made only in incomplete combustion?",
+     "a": "Carbon monoxide",
+     "options": [
+      "Carbon dioxide",
+      "Carbon monoxide",
+      "Water vapour"
+     ]
+    },
+    {
+     "q": "Big question: why is a yellow, smoky flame more dangerous than a blue one?",
+     "a": "It shows incomplete combustion, which makes poisonous carbon monoxide and soot."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "id": "gcse-science-y10-series-circuits-practice-sheet",
+ "title": "Series circuits practice sheet",
+ "type": "worksheet",
+ "subject": "Science (GCSE Biology, Chemistry, Physics)",
+ "subjectSlug": "gcse-science",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0",
+ "unit": "Spring 1: Respiration, moles and electricity",
+ "lessons": [
+  96
+ ],
+ "source": "Seeded from gcse-science/y10 lesson 96 (Series circuits practice sheet (portal worksheet))",
+ "intro": "Lesson 96: Electrical units, Q = It and two resistors in series. To understand electrical units and how to calculate charge, current and voltage for two resistors in series",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "A current of 0.50 A flows through a lamp for 2.0 minutes. Calculate the charge that passes.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "I = 0.50 A and t = 2.0 minutes = 120 s"
+     },
+     {
+      "label": "Step 2",
+      "text": "Q = I t"
+     },
+     {
+      "label": "Step 3",
+      "text": "Q = 0.50 x 120"
+     },
+     {
+      "label": "Step 4",
+      "text": "Q = 60 °C"
+     },
+     {
+      "label": "Answer",
+      "text": "60 °C"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "A 6.0 V cell supplies a 4.0 ohm and an 8.0 ohm resistor in series. Calculate the current and the voltage across each resistor.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "R(total) = 4.0 + 8.0 = 12 ohm"
+     },
+     {
+      "label": "Step 2",
+      "text": "I = V / R = 6.0 / 12 = 0.50 A"
+     },
+     {
+      "label": "Step 3",
+      "text": "V1 = I R1 = 0.50 x 4.0 = 2.0 V"
+     },
+     {
+      "label": "Step 4",
+      "text": "V2 = I R2 = 0.50 x 8.0 = 4.0 V"
+     },
+     {
+      "label": "Answer",
+      "text": "0.50 A; 2.0 V and 4.0 V (which add to 6.0 V)"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A 4 Ω and 8 Ω resistor in series with 6 V. Find current. [2 marks]",
+     "a": "R = 12 Ω (1); I = 6 ÷ 12 = 0.5 A (1)",
+     "model": "Total resistance first: 4 + 8 = 12 Ω. Then I = V ÷ R = 6 ÷ 12 = 0.5 A."
+    },
+    {
+     "q": "Voltage across the 4 Ω resistor?",
+     "a": "V = 0.5 × 4 = 2 V"
+    },
+    {
+     "q": "Voltage across the 8 Ω resistor?",
+     "a": "4 V (2 + 4 = 6 V, the supply)"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Five series circuit problems (portal worksheet): total R, current, each voltage.",
+     "a": "Answers in the key, e.g. 10 Ω + 20 Ω on 9 V: 30 Ω, 0.3 A, 3 V and 6 V.",
+     "model": "Teacher does problem 1: 10 + 20 = 30 Ω; I = 9 ÷ 30 = 0.3 A; V₁ = 3 V; V₂ = 6 V; check 3 + 6 = 9 V."
+    },
+    {
+     "q": "Extend: A charge of 90 C flows through a series circuit in 3 minutes. Current?",
+     "a": "90 ÷ 180 = 0.5 A"
+    },
+    {
+     "q": "Stretch: In series, a 6 Ω resistor has 3 V across it on a 12 V supply. Find the other resistor.",
+     "a": "I = 0.5 A; other voltage 9 V; R = 9 ÷ 0.5 = 18 Ω"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Two resistors of 5 Ω and 10 Ω in series. Total?",
+     "a": "15 Ω",
+     "options": [
+      "5 Ω",
+      "15 Ω",
+      "50 Ω"
+     ]
+    },
+    {
+     "q": "Big question: why does a second resistor in series make the current smaller?",
+     "a": "Total resistance increases, so for the same voltage the current is lower (I = V ÷ R)."
+    }
+   ]
+  }
+ ]
+}

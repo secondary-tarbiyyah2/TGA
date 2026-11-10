@@ -1,0 +1,102 @@
+{
+ "id": "science-y9-electricity-cost-calculations-sheet",
+ "title": "Electricity cost calculations sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y9",
+ "unit": "Spring 1: Making materials (9E); conservation of energy",
+ "lessons": [
+  24
+ ],
+ "source": "Seeded from science/y9 lesson 24 (Electricity cost calculations sheet (portal worksheet))",
+ "intro": "Lesson 24: Paying for electricity: kilowatt-hours and cost. To understand how energy used by appliances is measured in kilowatt-hours and how to calculate its cost",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "A 2 kW heater runs for 3 hours at 25p per kWh. Find the cost.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Energy = 2 kW × 3 h = 6 kWh"
+     },
+     {
+      "label": "Step 2",
+      "text": "Cost = 6 × 25p"
+     },
+     {
+      "label": "Step 3",
+      "text": "Cost = 150p = £1.50"
+     },
+     {
+      "label": "Answer",
+      "text": "£1.50"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A 3 kW kettle runs for 4 minutes. Energy in kWh? Cost at 25p per kWh?",
+     "a": "4 min = 1/15 h; 3 × 1/15 = 0.2 kWh; cost = 0.2 × 25 = 5p.",
+     "model": "Convert time to hours: 4 ÷ 60 = 0.0667 h (one fifteenth). Energy = 3 × 0.0667 = 0.2 kWh. Cost = 0.2 × 25p = 5p."
+    },
+    {
+     "q": "A 0.1 kW TV is on for 5 hours. Energy?",
+     "a": "0.5 kWh"
+    },
+    {
+     "q": "Cost of 12 kWh at 25p per kWh?",
+     "a": "300p = £3.00"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Use your appliance table. Estimate how long each is used per day and calculate daily kWh and cost (25p per kWh as the example price).",
+     "a": "Pupils' own; e.g. kettle 3 kW × 0.2 h = 0.6 kWh = 15p.",
+     "model": "Teacher does the kettle first: 3 kW, about 12 minutes a day = 0.2 h; 0.6 kWh; 0.6 × 25 = 15p."
+    },
+    {
+     "q": "Extend: A meter read 14 562 kWh last month and 14 832 kWh this month. Cost at 25p per kWh?",
+     "a": "270 kWh × 25p = 6750p = £67.50"
+    },
+    {
+     "q": "Stretch: Suggest three changes to cut your family's electricity cost and estimate the saving for one.",
+     "a": "For example: replace 5 old 60 W bulbs with 8 W LEDs used 4 h a day: saves 5 × 0.052 × 4 = 1.04 kWh a day, about 26p a day."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "2 kW for 2 hours =",
+     "a": "4 kWh",
+     "options": [
+      "1 kWh",
+      "4 kWh",
+      "2000 kWh"
+     ]
+    },
+    {
+     "q": "Big question: how much does it cost to boil a kettle?",
+     "a": "About 5p for a 4-minute boil of a 3 kW kettle at 25p per kWh."
+    }
+   ]
+  }
+ ]
+}
