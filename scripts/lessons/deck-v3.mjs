@@ -229,16 +229,19 @@ export function makeV3(h) {
   }
 
   // ── I do: the teacher's model ─────────────────────────────────────────────────
-  const LABELS = /(?:^|\s|\n)(Point|Evidence|Explain|Explanation|Analysis|Analyse|Link|Evaluate|Evaluation|Judgement|Conclusion|Topic sentence|Context|Method|Working|Answer|Check|Step \d+)\s*:\s*/g;
+  // English models use the school's frameworks (PETZAAL, PESTAL, PEEDL, PEMACS, TAPS, CLOSER), written
+  // "Point: ... | Evidence: ... | Zoom in: ...": those labels are recognised too, and the "|" separators dropped.
+  const LABELS = /(?:^|\s|\n)(Point|Evidence|Explain|Explanation|Analysis|Analyse|Link|Evaluate|Evaluation|Judgement|Conclusion|Topic sentence|Context|Method|Methods|Working|Answer|Check|Step \d+|Technique|Zoom in|Zoom|Alternative|Structural strategy|Terminology|Audience impact|Develop|Effect|Second method|Application|Thesis|Argument|Engagement|Concept|Conceptualise|Synthesis|Synthesise|Before|After|Capture|Lead the lens|Observe|Sense \d|Mood|Viewpoint|Hook|Exposition|Tension|Resolution|Climax|Reveal|Delay|Plan|Opening|Introduction|Paragraph \d?|Summary|For|Against|Type|Author's purpose|Perspective|Second poem|Subject|Close-up|Atmosphere|Interpretation|Weigh|Difference|Ending)\s*:\s*/g;
+  const unbar = (t) => t.replace(/^\s*\|\s*/, "").replace(/\s*\|\s*$/, "").trim();
   /** Split a model into labelled parts (Point / Evidence…), lines or numbered steps; else one paragraph. */
   function modelParts(model) {
     const m = String(model || "").trim();
     const marks = [...m.matchAll(LABELS)];
     if (marks.length >= 2) {
       const out = [];
-      if (marks[0].index > 0 && m.slice(0, marks[0].index).trim()) out.push({ text: m.slice(0, marks[0].index).trim() });
-      marks.forEach((x, i) => out.push({ label: x[1], text: m.slice(x.index + x[0].length, i + 1 < marks.length ? marks[i + 1].index : m.length).trim() }));
-      return out;
+      if (marks[0].index > 0 && unbar(m.slice(0, marks[0].index))) out.push({ text: unbar(m.slice(0, marks[0].index)) });
+      marks.forEach((x, i) => out.push({ label: x[1], text: unbar(m.slice(x.index + x[0].length, i + 1 < marks.length ? marks[i + 1].index : m.length)) }));
+      return out.filter((p) => p.text);
     }
     if (m.includes("\n")) return m.split(/\n+/).map((t) => ({ text: t.trim() })).filter((x) => x.text);
     const numbered = m.split(/\s(?=\d+[.)]\s)/);
