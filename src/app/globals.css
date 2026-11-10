@@ -979,3 +979,97 @@ body:not(:has(.portal)) input[type="file"]::file-selector-button {
 body:not(:has(.portal)) input[type="file"]::file-selector-button:hover {
   background: var(--color-gold-100);
 }
+
+/* ── Site navigation (Nov 2026: "improve navigation and make it cooler") ── */
+/* A short gold bar under the top-level menu item for the current section. */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.625rem;
+  right: 0.625rem;
+  bottom: 0.25rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-gold-500);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+.nav-link:hover::after,
+.nav-link[data-active]::after,
+.nav-link[aria-expanded="true"]::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .menu-panel {
+    animation: menuIn 160ms ease-out;
+  }
+}
+@keyframes menuIn {
+  /* transform only: Tailwind's -translate-x-1/2 uses the separate translate property. */
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* The geometric texture on dark (ink) panels: gold lines a touch brighter. */
+.geo-texture-dark {
+  background-image:
+    radial-gradient(circle at 90% 10%, rgba(227, 201, 143, 0.18) 0, transparent 45%),
+    repeating-linear-gradient(45deg, rgba(227, 201, 143, 0.07) 0 1px, transparent 1px 22px),
+    repeating-linear-gradient(-45deg, rgba(227, 201, 143, 0.07) 0 1px, transparent 1px 22px);
+}
+
+/* ── Site polish (Nov 2026: "keep the colours, make it more interesting") ── */
+/* Cards that rise a little and pick up a gold edge on hover. */
+.card-lift {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-gold-500);
+  box-shadow: 0 14px 30px -14px rgba(27, 30, 33, 0.22);
+}
+
+/* A thin gold foil edge along the top of a card. */
+.foil-top::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  top: -1px;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-500), var(--color-gold-300), var(--color-gold-500), transparent);
+}
+
+/* A hand-drawn gold underline under the hero's accent words. */
+.accent-swash {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 60 3, 140 2, 298 6' fill='none' stroke='%23b08e45' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.3em;
+  padding-bottom: 0.08em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* The big background star turns very slowly. */
+  .hero-star {
+    animation: starTurn 90s linear infinite;
+  }
+  /* Sections ease in as they scroll into view (browsers with scroll-driven
+     animations; everywhere else they are simply shown). */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: revealUp linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+@keyframes starTurn {
+  to { transform: rotate(360deg); }
+}
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
