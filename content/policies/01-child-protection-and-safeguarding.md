@@ -10,7 +10,7 @@ agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
 dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
 nextReview: 31 August 2027
 basis: Adapted from the Tarbiyyah Secondary School Child Protection and Safeguarding Policy 2025–26, rewritten for fully online provision
-readAlongside: Online Safety and Acceptable Use Policy; Live Lesson Protocols; Recording of Live Lessons and Use of Images Policy; No Platform for Extremism (Prevent) Policy; Attendance, Punctuality and Children Missing Education Policy
+readAlongside: Online Safety and Acceptable Use Policy; Live Lesson Protocols; Recording of Live Lessons and Use of Images Policy; Safeguarding: Extremism and Radicalisation Policy; Attendance, Punctuality and Children Missing Education Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
 
@@ -36,8 +36,7 @@ Tarbiyyah Global Academy is committed to safeguarding and promoting the physical
 | Deputy Designated Safeguarding Lead | Skander Ahmed | skander@tarbiyyah.co.uk |
 | Headteacher | Ustadh Abu Zayn Haneef Sandhar (also the DSL) | globalacademy@tarbiyyah.co.uk · via the Academy office on 020 3719 8697 |
 | Chair of Trustees (safeguarding lead trustee) | Moiz Madrasawala | gbchair@tarbiyyah.co.uk |
-| Prevent Lead | The DSL | globalacademy@tarbiyyah.co.uk · via the Academy office on 020 3719 8697 |
-| Local authority designated officer (LADO) — London Borough of Hounslow | Hounslow LADO service | 020 8583 4933 · used for allegations against staff |
+| Local authority: allegations about staff — London Borough of Hounslow | Hounslow safeguarding team (allegations) | 020 8583 4933 · used for allegations against staff |
 | Hounslow Children's Services (for pupils living in Hounslow, and for advice) | Multi-Agency Safeguarding Hub | 020 8583 6600 |
 | NSPCC Helpline (UK, for adults worried about a child) | — | 0808 800 5000 · help@nspcc.org.uk |
 | Childline (UK, for children) | — | 0800 1111 · childline.org.uk |
@@ -54,7 +53,7 @@ This policy has due regard to legislation and statutory guidance, including:
 - Keeping Children Safe in Education (KCSIE) — the edition currently in force
 - Working Together to Safeguard Children 2023
 - The Online Education Accreditation Scheme (OEAS) standards published by the Department for Education, used as a benchmark of good practice
-- Counter-Terrorism and Security Act 2015 and the Prevent Duty Guidance
+- Counter-Terrorism and Security Act 2015 and its statutory guidance
 - Sexual Offences Act 2003 (including the position of trust offence)
 - Female Genital Mutilation Act 2003 (mandatory reporting duty)
 - Safeguarding Vulnerable Groups Act 2006
@@ -86,7 +85,7 @@ The DSL is a member of the senior leadership team with lead responsibility for s
 
 - be available, by phone or video call, throughout the Academy day (09:00–15:00 UK time) and have a deputy available when absent;
 - receive, record and act on all concerns, deciding on the right course of action;
-- make referrals to children's social care, the police, Channel or the relevant authority in the pupil's country of residence;
+- make referrals to children's social care, the police or the relevant authority in the pupil's country of residence;
 - keep secure, accurate, chronological child protection records;
 - liaise with the Headteacher about any police investigation or Section 47 enquiry;
 - ensure all staff receive induction and annual safeguarding training, with regular updates throughout the year;
@@ -113,7 +112,7 @@ Being online does not reduce risk; it changes where risk appears. Staff will be 
 | Camera refused repeatedly, or long unexplained absences | Concealment of injury, neglect, or a child missing education |
 | Sudden changes in mood, withdrawal or references to self-harm in chat or work | Mental health concerns or abuse |
 | Contact from strangers, gifts, new devices or secret online friends | Grooming or exploitation |
-| Extreme views, conspiracy content or hostile language about groups | Radicalisation (see the No Platform for Extremism (Prevent) Policy) |
+| Extreme views, conspiracy content or hostile language about groups | Radicalisation (see the Safeguarding: Extremism and Radicalisation Policy) |
 
 Staff will never assume that what they see on a screen is the whole picture. Where a pupil's camera is off, staff should still consider whether they have seen or heard enough of the child to be confident they are safe.
 
@@ -220,7 +219,7 @@ A pupil who does not appear in live lessons may be at risk. The Academy will:
 
 ### Allegations that may meet the harm threshold
 
-Any concern that a member of staff, supply teacher, volunteer or contractor may have harmed a child, committed a criminal offence against a child, behaved in a way that indicates they may pose a risk of harm, or behaved in a way that indicates they may not be suitable to work with children, must be reported to the Headteacher immediately (or to the Chair of Trustees if the concern relates to the Headteacher). The Headteacher will consult the LADO within one working day and follow KCSIE Part Four. Where a person is removed from regulated activity because of harm to a child, the Academy will make a referral to the Disclosure and Barring Service and, for teachers, consider a referral to the Teaching Regulation Agency.
+Any concern that a member of staff, supply teacher, volunteer or contractor may have harmed a child, committed a criminal offence against a child, behaved in a way that indicates they may pose a risk of harm, or behaved in a way that indicates they may not be suitable to work with children, must be reported to the Headteacher immediately (or to the Chair of Trustees if the concern relates to the Headteacher). The Headteacher will consult the local authority's allegations officer within one working day and follow KCSIE Part Four. Where a person is removed from regulated activity because of harm to a child, the Academy will make a referral to the Disclosure and Barring Service and, for teachers, consider a referral to the Teaching Regulation Agency.
 
 ### Low-level concerns
 
@@ -235,7 +234,7 @@ The Academy follows the safer recruitment section of the Child Protection and Sa
 | Who | What | How often |
 | --- | --- | --- |
 | All staff and volunteers | Safeguarding and child protection induction, including online safety, remote-teaching risks and this policy | On appointment, before teaching |
-| All staff | Safeguarding update, KCSIE changes and Prevent awareness | At least annually, with termly briefings |
+| All staff | Safeguarding update, KCSIE changes, and extremism and radicalisation awareness | At least annually, with termly briefings |
 | DSL and deputies | Designated safeguarding lead training, including filtering and monitoring | Every two years, with annual refresh |
 | Trustees | Safeguarding governance training | On appointment and at least every two years |
 | Recruitment panels | Safer recruitment training | Every three years |

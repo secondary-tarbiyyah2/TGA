@@ -3,7 +3,7 @@
   "year": "y10",
   "board": "Pearson Edexcel International GCSE (9-1) Geography (4GE1)",
   "boardShort": "Edexcel IGCSE 4GE1",
-  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data. | Gap-fill against AQA GCSE Geography 8035 specification | Spring 1 2027 (bridge hazards and fragile environments cores, lessons 2, 7, 10, 14 upgraded; rivers 1.1 to 1.3, lessons 28, 29 upgraded and 53 to 56 new): Pearson Edexcel International GCSE Geography 4GE1 specification and Pearson Paper 1 scheme of work; school Geography Curriculum Intent; own exam-style questions. File relabelled: taught and examined as 4GE1 (earlier lessons 1 to 52 were written for AQA 8035)",
+  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data. | Gap-fill against AQA GCSE Geography 8035 specification | Spring 1 2027 (bridge hazards and fragile environments cores, lessons 2, 7, 10, 14 upgraded; rivers 1.1 to 1.3, lessons 28, 29 upgraded and 53 to 56 new): Pearson Edexcel International GCSE Geography 4GE1 specification and Pearson Paper 1 scheme of work; school Geography Curriculum Intent; own exam-style questions. File relabelled: taught and examined as 4GE1 (earlier lessons 1 to 52 were written for AQA 8035) | Spring 2 2027 (4GE1 Topic 2, coastal environments: lessons 24, 25, 26, 49, 50 upgraded and new lessons): TGA Year 10 pack",
   "lessons": [
     {
       "unit": "Unit 1: Weather hazards (AQA 3.1.1 The challenge of natural hazards)",
@@ -3895,532 +3895,695 @@
       "boardShort": "AQA GCSE 8035"
     },
     {
-      "unit": "Unit 9: Coastal landscapes in the UK (AQA 3.1.3.2; OPTION: two of coasts, rivers, glaciers)",
-      "title": "Coastal processes: waves, weathering, erosion, transport and deposition",
-      "duration": 50,
-      "bigQuestion": "How do waves shape the coastline?",
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 24,
+      "title": "Waves, weathering, mass movement and coastal erosion (2.1a)",
+      "bigQuestion": "Why do some coastlines retreat metres a year while others barely change?",
       "objectives": [
-        "Describe wave types and characteristics",
-        "Explain weathering and mass movement on coasts",
-        "Explain erosion, transport (including longshore drift) and deposition"
+        "To understand how waves, weathering, mass movement and erosion shape coasts"
       ],
       "successCriteria": [
-        "All: name the two wave types and four erosion processes",
-        "Most: explain how longshore drift moves sediment",
-        "Some: explain how rock type and weather affect the speed of erosion"
+        "All: describe constructive and destructive waves",
+        "Most: explain four erosion processes and two types of mass movement",
+        "Some: explain how geology affects the rate of erosion"
       ],
-      "crossCurricular": "Science: forces and energy transfer",
-      "smsc": "Spiritual: reflecting on the power of the sea as a sign of creation",
+      "crossCurricular": "Science: energy transfer in waves",
+      "smsc": "Spiritual: the power of the sea",
       "keywords": [
         {
           "term": "fetch",
-          "def": "the distance of open water a wave has travelled over"
+          "def": "the distance of open water over which wind blows to make waves"
         },
         {
-          "term": "swash",
-          "def": "water moving up the beach"
+          "term": "destructive wave",
+          "def": "a tall, frequent wave with a strong backwash that erodes"
         },
         {
-          "term": "backwash",
-          "def": "water moving back down the beach"
+          "term": "constructive wave",
+          "def": "a low, gentle wave with a strong swash that builds beaches"
         },
         {
-          "term": "longshore drift",
-          "def": "the zigzag movement of sediment along a coast by waves"
+          "term": "weathering",
+          "def": "the breakdown of rock in place"
         },
         {
-          "term": "hydraulic power",
-          "def": "the force of waves hitting cliffs, compressing air in cracks"
+          "term": "mass movement",
+          "def": "the downhill movement of material under gravity"
         },
         {
-          "term": "abrasion",
-          "def": "waves hurling rocks at a cliff, wearing it away"
+          "term": "slumping",
+          "def": "the rotational slide of saturated soft cliffs"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A clay cliff and a granite cliff face the same storm. Which retreats faster, and why?"
+      },
+      "islamicLink": {
+        "text": "Allah says it is He who made the sea of service to you, so that you eat fresh fish from it and bring out ornaments from it, and you see ships sailing through it (An-Nahl 16:14). The coast is a blessing we are trusted to manage wisely.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Name two upland areas of the UK.",
-        "What is the difference between weathering and erosion?",
-        "Define 'deposition'."
+        {
+          "q": "A meander's outer bend has the most:",
+          "a": "Erosion",
+          "mins": 1,
+          "options": [
+            "Erosion",
+            "Deposition"
+          ]
+        },
+        {
+          "q": "A storm hydrograph's lag time is the gap between:",
+          "a": "Peak rainfall and peak discharge",
+          "mins": 1,
+          "options": [
+            "Peak rainfall and peak discharge",
+            "Two floods"
+          ]
+        },
+        {
+          "q": "Name one process of river erosion.",
+          "a": "Hydraulic action, abrasion, attrition or solution",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Wave types",
+          "heading": "Waves",
+          "bullets": [
+            "Made by wind blowing over the sea",
+            "Size depends on wind speed, duration and fetch",
+            "Swash up, backwash down"
+          ],
+          "note": "Fetch across the Atlantic can be thousands of km, so SW England gets big waves.",
           "compare": {
             "left": {
-              "title": "Constructive waves",
+              "title": "Destructive",
               "points": [
-                "Low and long, spaced out",
-                "Strong swash, weak backwash",
-                "About 6 to 8 per minute",
-                "Build up the beach"
+                "tall, steep",
+                "10 to 14 a minute",
+                "backwash stronger: erodes"
               ]
             },
             "right": {
-              "title": "Destructive waves",
+              "title": "Constructive",
               "points": [
-                "High and steep, close together",
-                "Weak swash, strong backwash",
-                "About 10 to 14 per minute",
-                "Erode the beach and cliff"
+                "low, long",
+                "6 to 8 a minute",
+                "swash stronger: builds beaches"
               ]
             },
             "label": "vs"
-          },
-          "note": "Wave size depends on the wind speed, wind duration and fetch. The UK's south-west faces the Atlantic with a long fetch, so it gets large waves. Constructive waves add material; destructive waves take it away. Ask pupils to recognise from a photo or a short clip. Misconception: constructive waves are always better; the beach can be built up in summer and eroded in winter storms."
+          }
         },
         {
-          "heading": "Processes at the coast",
-          "table": {
-            "head": [
-              "Process",
-              "How it works",
-              "Example / note"
-            ],
-            "rows": [
-              [
-                "Mechanical weathering",
-                "Freeze-thaw: water freezes in cracks, expands and breaks rock",
-                "Cliff faces in winter"
-              ],
-              [
-                "Chemical weathering",
-                "Weak acid in rain dissolves rocks such as limestone and chalk",
-                "Carbonation"
-              ],
-              [
-                "Mass movement",
-                "Rock slides, slumps or falls under gravity, often after rain",
-                "Soft clay cliffs slump; hard rock falls"
-              ],
-              [
-                "Erosion",
-                "Hydraulic power, abrasion, attrition and solution",
-                "Cliff retreat, wave-cut platform"
-              ],
-              [
-                "Transport",
-                "Longshore drift moves material along the coast",
-                "Sand and shingle"
-              ]
-            ]
-          },
-          "note": "Link weathering to loosening of rock; erosion to wearing away by waves; mass movement to rock moving down a slope. Pupils usually confuse weathering and erosion: weathering breaks rock in place, erosion wears it away and carries it. Attrition is rocks hitting each other and becoming smaller and rounder; solution is dissolving of rock by seawater. Ask pupils which processes are likely to be quickest on a soft clay cliff (slumping and erosion)."
-        },
-        {
-          "heading": "Longshore drift",
-          "cycle": [
-            "Waves approach at an angle because of the prevailing wind",
-            "Swash carries material up the beach at an angle",
-            "Backwash drags material straight down the slope",
-            "Material zigzags along the coast",
-            "Process repeats, moving sediment along the coast"
+          "heading": "Erosion processes",
+          "bullets": [
+            "Hydraulic action and abrasion",
+            "Attrition",
+            "Solution (corrosion) of limestone and chalk"
           ],
-          "note": "Draw a beach in plan view with arrows. Ask pupils to follow one pebble. In the UK, the prevailing wind is from the south-west so material generally moves from west to east along the south coast (check local direction before applying). Stress that drift builds beaches downdrift and deprives beaches updrift, which is why groynes are used. Link transport to deposition when waves lose energy."
+          "note": "Same names as river erosion; link to Spring 1."
         },
         {
-          "heading": "Skill: explain a process",
+          "heading": "Weathering and mass movement",
+          "bullets": [
+            "Freeze-thaw, salt, biological, chemical",
+            "Rockfalls on hard cliffs",
+            "Slumping on soft clay cliffs"
+          ],
+          "note": "Rain saturates clay; it becomes heavy and slides on a curved surface."
+        },
+        {
+          "heading": "Geology",
+          "bullets": [
+            "Hard rock: granite, chalk",
+            "Soft rock: clay, boulder clay",
+            "Faults and joints are weaknesses"
+          ],
+          "note": "Model.",
           "model": {
-            "problem": "Explain how longshore drift moves sediment along a coastline. (4 marks)",
+            "problem": "Explain why soft-rock cliffs retreat faster. (3 marks)",
             "steps": [
-              "Waves hit the coast at an angle because of the prevailing wind.",
-              "Swash carries sediment up the beach at that angle.",
-              "Backwash carries it straight back down due to gravity.",
-              "Repetition moves the sediment in a zigzag along the coast."
+              "Soft rock like boulder clay has little resistance (1)",
+              "It is easily eroded by hydraulic action and abrasion (1)",
+              "Saturated clay slumps, so the cliff retreats rapidly (1)"
             ],
-            "answer": "Waves approach the coast at an angle because of the wind direction, so swash carries sediment up the beach at an angle. Backwash then pulls it straight back down because of gravity. This repeats many times, so sediment is moved along the coast in a zigzag."
-          },
-          "note": "I do. Draw as you say. The four marks are four sequential steps. Pupils often forget the angle or say 'the waves go sideways'. Practise precise language."
+            "answer": "Three linked points"
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
           "check": {
-            "q": "Which wave type has a strong backwash?",
+            "q": "A long fetch produces:",
             "options": [
-              "Constructive",
-              "Destructive",
-              "Both equally",
-              "Neither"
+              "Smaller waves",
+              "Bigger waves",
+              "No change"
             ],
             "answer": 1,
-            "why": "Destructive waves are steep, with weak swash and strong backwash that drags sediment away."
-          },
-          "note": "Answer: B. Pupils choosing A often think that 'constructive' means strong; it is the opposite."
+            "why": "More open water lets wind transfer more energy, so waves grow."
+          }
         }
       ],
       "practice": [
-        "Draw and label the two wave types; add one characteristic for each.",
-        "Complete a table of erosion processes with a one-line definition."
+        {
+          "q": "Explain how freeze-thaw weathering breaks up cliffs. (3 marks)",
+          "a": "Water enters cracks (1); it freezes and expands by about 9% (1); repeated freezing and thawing widens cracks until rock breaks off (1)",
+          "mins": 4,
+          "model": "Step 1: water in a crack.\nStep 2: freezes, expands.\nStep 3: repeated, crack widens.\nStep 4: rock falls."
+        }
       ],
       "independent": [
-        "Core: State two differences between constructive and destructive waves. (2 marks)",
-        "Extend: Explain how hydraulic power erodes a cliff. (3 marks)",
-        "Stretch: Explain how weathering, mass movement and erosion work together to cause cliff retreat. (6 marks)"
+        {
+          "q": "Core: Exam practice (portal printable): (a) Describe the features of a destructive wave. (2) (b) Explain two processes of coastal erosion. (4) (c) Explain why mass movement is common on clay cliffs. (3)",
+          "a": "(a) tall, steep, frequent, strong backwash (b) e.g. hydraulic action: air compressed in cracks; abrasion: rocks thrown at cliff (c) saturation adds weight, lubricates, slumping",
+          "mins": 14,
+          "model": "Teacher answers (a) live with the mark points shown."
+        },
+        {
+          "q": "Extend: Annotate a cliff photo with processes acting on it.",
+          "a": "Waves, erosion, weathering and mass movement labelled",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Explain how climate change may increase coastal erosion. (4 marks)",
+          "a": "Rising sea levels and stronger storms bring more wave energy to cliffs; wetter winters saturate clay",
+          "mins": 5
+        }
       ],
       "exit": [
-        "Define longshore drift.",
-        "Return to the big question: give two processes that shape a coastline."
+        {
+          "q": "Slumping happens most on:",
+          "a": "Soft clay cliffs",
+          "mins": 1,
+          "options": [
+            "Soft clay cliffs",
+            "Granite cliffs"
+          ]
+        },
+        {
+          "q": "Big question: why do some coasts retreat fast and others barely change?",
+          "a": "Geology (soft or hard rock), wave energy and fetch, and weathering and mass movement all vary",
+          "mins": 2
+        }
       ],
-      "homework": "Draw a diagram of longshore drift on a beach with five labels and a one-paragraph explanation.",
-      "send": "SEND: pre-labelled process cards to sequence. EAL: use arrows and colours in diagrams. Stretch: explain why spits and groynes are linked to longshore drift.",
-      "n": 24,
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "homework": "Make flashcards for the 10 coastal process terms with a definition and an example on each.",
+      "send": "SEND: process cards with diagrams. EAL: glossary. Stretch: research the 2014 storms on the south-west coast.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.1a and 2.1b",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Portal geography y10 lesson 24 (AQA coastal processes) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "destructive waves storm coast",
+          "alt": "Storm waves hitting a coast",
+          "for": "hook"
+        },
+        {
+          "find": "slumping clay cliff",
+          "alt": "A slumped clay cliff",
+          "for": "teach:3"
+        },
+        {
+          "find": "chalk cliffs Seven Sisters",
+          "alt": "Chalk cliffs",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 9: Coastal landscapes in the UK (AQA 3.1.3.2; OPTION: two of coasts, rivers, glaciers)",
-      "title": "Coastal landforms: headlands, caves, arches, stacks, beaches, spits and dunes",
-      "duration": 50,
-      "bigQuestion": "How do the same waves make cliffs in one place and beaches in another?",
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 25,
+      "title": "Erosional landforms: headlands, bays, cliffs and stacks (2.1c)",
+      "bigQuestion": "Will Old Harry Rocks still be standing in 500 years?",
       "objectives": [
-        "Explain how geology and rock type shape coastal forms",
-        "Explain erosional landforms: headlands, bays, cliffs, wave-cut platforms, caves, arches and stacks",
-        "Explain depositional landforms: beaches, sand dunes, spits and bars"
+        "To understand how erosional coastal landforms are formed"
       ],
       "successCriteria": [
-        "All: name the sequence from cave to stump and two depositional landforms",
-        "Most: explain how a headland and bay and a stack form, using a diagram",
-        "Some: explain how a spit forms and why rock type matters, with Dorset and Spurn Head as examples"
+        "All: name five erosional landforms",
+        "Most: explain how headlands and bays form",
+        "Some: explain the sequence from cave to stump with process terms"
       ],
-      "crossCurricular": "Geology and art: sketching and annotating landforms",
-      "smsc": "Spiritual: patterns and change in the earth shape our world",
+      "crossCurricular": "Geology: rock types and structures",
+      "smsc": "Spiritual: wonder at the slow shaping of coasts",
       "keywords": [
         {
           "term": "headland",
-          "def": "a piece of land jutting into the sea, made of resistant rock"
+          "def": "a section of hard rock sticking out to sea"
+        },
+        {
+          "term": "bay",
+          "def": "a curved inlet of softer rock between headlands"
+        },
+        {
+          "term": "discordant coast",
+          "def": "rock bands at right angles to the coast"
         },
         {
           "term": "wave-cut platform",
-          "def": "a gently sloping rocky surface at the foot of a cliff"
+          "def": "a flat rocky area left as a cliff retreats"
         },
         {
           "term": "stack",
-          "def": "a column of rock separated from the headland"
+          "def": "a pillar of rock left when an arch collapses"
         },
         {
-          "term": "spit",
-          "def": "a long narrow ridge of sand or shingle joined to land at one end"
-        },
-        {
-          "term": "bar",
-          "def": "a ridge of sediment across a bay"
+          "term": "stump",
+          "def": "a worn-down stack"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Durdle Door is an arch. What do you think it will look like in the far future?"
+      },
       "starter": [
-        "Say Bismillah. Name the processes of longshore drift in order.",
-        "State two differences between constructive and destructive waves.",
-        "Define 'abrasion'."
+        {
+          "q": "Longshore drift is driven by the:",
+          "a": "Prevailing wind",
+          "mins": 1,
+          "options": [
+            "Prevailing wind",
+            "Moon"
+          ]
+        },
+        {
+          "q": "Backwash moves:",
+          "a": "Straight down the beach",
+          "mins": 1,
+          "options": [
+            "Straight down the beach",
+            "At an angle"
+          ]
+        },
+        {
+          "q": "Name one source of coastal sediment.",
+          "a": "Rivers, cliff erosion or offshore",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Geology matters",
-          "compare": {
-            "left": {
-              "title": "Resistant (hard) rock",
-              "points": [
-                "Limestone, granite, chalk (in places)",
-                "Erodes slowly",
-                "Forms headlands, high cliffs, arches and stacks"
-              ]
-            },
-            "right": {
-              "title": "Less resistant (soft) rock",
-              "points": [
-                "Clay and sand",
-                "Erodes quickly",
-                "Forms bays and slumping cliffs"
-              ]
-            },
-            "label": "and"
-          },
-          "note": "Case study: the Dorset coast (Purbeck), a UK coastline with landforms. Bands of rock run at right angles to the sea. At Lulworth Cove, the sea broke through the resistant Portland limestone and eroded the softer clay and sands behind to form a circular cove. Durdle Door, a limestone arch, and Old Harry Rocks, chalk stacks near Swanage, are nearby. Draw a plan view with alternating hard and soft bands. Teachers should check local details against current guides."
-        },
-        {
-          "heading": "From crack to stump",
-          "timeline": [
-            {
-              "label": "1. Crack",
-              "text": "Waves attack a weakness in the headland"
-            },
-            {
-              "label": "2. Cave",
-              "text": "Hydraulic power and abrasion enlarge it"
-            },
-            {
-              "label": "3. Arch",
-              "text": "The cave cuts through the headland, e.g. Durdle Door"
-            },
-            {
-              "label": "4. Stack",
-              "text": "Weathering weakens the roof until it collapses, leaving a stack, e.g. Old Harry"
-            },
-            {
-              "label": "5. Stump",
-              "text": "The stack is eroded to a small stump at the water"
-            }
+          "heading": "Headlands and bays",
+          "bullets": [
+            "Discordant coast: hard and soft rock bands",
+            "Soft rock erodes into bays",
+            "Hard rock left as headlands"
           ],
-          "note": "Pupils should say 'waves attack' and name specific processes at each stage (hydraulic power, abrasion, weathering) to earn full marks. Wave-cut platform: waves undercut the base of a cliff, forming a notch; the cliff collapses and retreats, leaving a gently sloping platform that is exposed at low tide. Ask: why would a cliff of soft clay not produce a stack? (It would slump rather than stand as a column.)"
+          "note": "Swanage Bay and the Foreland, Dorset."
         },
         {
-          "heading": "Depositional landforms",
-          "table": {
-            "head": [
-              "Landform",
-              "How it forms",
-              "UK example"
-            ],
-            "rows": [
-              [
-                "Beach",
-                "Constructive waves deposit sand or shingle",
-                "Many bays; Studland, Dorset"
-              ],
-              [
-                "Spit",
-                "Longshore drift deposits at a bend in the coast; the end curves with wind or waves",
-                "Spurn Head, Yorkshire; Hurst Castle Spit, Hampshire"
-              ],
-              [
-                "Bar",
-                "A spit grows across a bay, trapping a lagoon",
-                "Slapton Sands, Devon"
-              ],
-              [
-                "Sand dunes",
-                "Wind blows dry sand inland; plants such as marram grass trap it",
-                "Studland, Dorset; Ainsdale, Merseyside"
-              ]
-            ]
-          },
-          "note": "Link to longshore drift from the previous lesson: spits grow in the direction of drift where the coastline turns. Sheltered water behind a spit allows salt marsh to develop. Dune formation: embryo dunes, foredunes, yellow dunes and grey dunes; plants such as marram grass stabilise them. Examples should be checked by the teacher; the principles matter most. Keep the focus on 'Explain how' wording."
+          "heading": "Cliffs and wave-cut platforms",
+          "bullets": [
+            "Wave-cut notch at high tide",
+            "Overhang collapses",
+            "Cliff retreats; platform left"
+          ],
+          "note": "Flamborough Head, Yorkshire, is a chalk headland with platforms."
         },
         {
-          "heading": "Skill: explain landform formation",
+          "heading": "Cave to stump",
+          "bullets": [
+            "Crack, cave, arch, stack, stump",
+            "Old Harry Rocks, Dorset"
+          ],
+          "note": "Sequence.",
+          "cycle": [
+            "Hydraulic action widens a crack",
+            "Crack becomes a cave",
+            "Cave breaks through: arch",
+            "Arch roof collapses: stack",
+            "Stack erodes: stump"
+          ]
+        },
+        {
+          "heading": "Explaining a landform",
+          "bullets": [
+            "Process terms in sequence"
+          ],
+          "note": "Model.",
           "model": {
-            "problem": "Explain how a stack is formed. (4 marks)",
+            "problem": "Explain the formation of a stack. (4 marks)",
             "steps": [
-              "Start with a weakness: waves attack a crack in a headland.",
-              "Erosion enlarges it to a cave, then to an arch.",
-              "Weathering and erosion weaken the arch until the roof collapses.",
-              "The remaining column is a stack."
+              "Hydraulic action and abrasion widen a joint in a headland into a cave (1)",
+              "Caves on both sides join to form an arch (1)",
+              "Weathering and erosion weaken the arch roof until it collapses (1)",
+              "An isolated pillar of rock remains: a stack (1)"
             ],
-            "answer": "Waves attack cracks in the headland and erode them into a cave through hydraulic power and abrasion. The cave is eroded through the headland to form an arch. Weathering and erosion weaken the arch until its roof collapses, which leaves a stack separated from the headland."
-          },
-          "note": "I do. Draw labelled diagrams while talking. Require named processes. Pupils lose marks listing landforms without any process words."
+            "answer": "Four linked points with process terms"
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
           "check": {
-            "q": "Which landform is formed by deposition?",
+            "q": "Bays form in:",
             "options": [
-              "Arch",
-              "Spit",
-              "Cave",
-              "Wave-cut platform"
+              "Hard rock",
+              "Soft rock",
+              "Sand dunes"
             ],
             "answer": 1,
-            "why": "A spit is built by longshore drift depositing sediment. The others are erosional."
-          },
-          "note": "Answer: B."
+            "why": "Softer rock erodes faster than the headlands either side."
+          }
         }
       ],
       "practice": [
-        "Sketch and label a headland and bay; add the rock type for each.",
-        "Draw annotated diagrams of the stages from cave to stack."
+        {
+          "q": "Describe the features of a wave-cut platform. (2 marks)",
+          "a": "Flat, gently sloping rocky area at the cliff foot (1), exposed at low tide, with rock pools (1)",
+          "mins": 3,
+          "model": "Where: cliff foot.\nShape: flat, gentle slope.\nWhen seen: low tide.\nFeatures: rock pools."
+        }
       ],
       "independent": [
-        "Core: Name two landforms formed by erosion and one by deposition. (3 marks)",
-        "Extend: Explain how a spit is formed. (4 marks)",
-        "Stretch: Using a named UK coastline, explain how geology has influenced its landforms. (6 marks)"
+        {
+          "q": "Core: Annotated sequence diagram of cave, arch, stack, stump, then answer: 'Explain the formation of headlands and bays.' (4 marks)",
+          "a": "Discordant geology; differential erosion; soft rock forms bays, hard rock left as headlands; processes named",
+          "mins": 15,
+          "model": "Teacher draws the first two stages."
+        },
+        {
+          "q": "Extend: Use an OS map extract of the Dorset coast to give six-figure grid references of a stack and a bay.",
+          "a": "Correct references from the map",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why does Durdle Door's arch survive while others collapse? (3 marks)",
+          "a": "Rock strength, joints and wave energy vary; collapse depends on weaknesses",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Put cave, arch and stack in order.",
-        "Return to the big question: state one erosional and one depositional landform."
+        {
+          "q": "Old Harry Rocks is an example of a:",
+          "a": "Stack",
+          "mins": 1,
+          "options": [
+            "Stack",
+            "Spit"
+          ]
+        },
+        {
+          "q": "Big question: will Old Harry Rocks stand in 500 years?",
+          "a": "Not unchanged: erosion and weathering will keep wearing it, turning stacks to stumps over time",
+          "mins": 2
+        }
       ],
-      "homework": "Annotate a photograph or sketch of a coastal landform (such as Durdle Door or Spurn Head) with processes.",
-      "send": "SEND: step cards for stages with diagrams. EAL: key words with labelled pictures. Stretch: explain the origins of Chesil Beach.",
-      "n": 25,
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "homework": "Draw the cave to stump sequence from memory and check it against your notes.",
+      "send": "SEND: sequence cards. EAL: glossary. Stretch: compare a concordant coast (Lulworth Cove) with a discordant one.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.1c",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Portal geography y10 lesson 25 (AQA coastal landforms) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "OS map extract of the Dorset coast (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Old Harry Rocks",
+          "alt": "Old Harry Rocks, Dorset",
+          "for": "hook"
+        },
+        {
+          "find": "Durdle Door",
+          "alt": "Durdle Door, an arch",
+          "for": "teach:3"
+        },
+        {
+          "find": "wave-cut platform low tide",
+          "alt": "A wave-cut platform",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 9: Coastal landscapes in the UK (AQA 3.1.3.2; OPTION: two of coasts, rivers, glaciers)",
-      "title": "Managing the coast: hard engineering, soft engineering and managed retreat",
-      "duration": 50,
-      "bigQuestion": "Should we fight the sea or work with it?",
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 26,
+      "title": "Managing coasts: hard and soft engineering and SMPs (2.3b)",
+      "bigQuestion": "Should we hold the line or let the sea win?",
       "objectives": [
-        "Describe hard engineering, soft engineering and managed retreat",
-        "Evaluate their costs and benefits",
-        "Use a UK scheme (Medmerry, West Sussex) to judge the success of managed realignment"
+        "To understand and evaluate coastal management strategies"
       ],
       "successCriteria": [
-        "All: name two hard and two soft strategies with one cost or benefit each",
-        "Most: explain how each strategy works and compare costs",
-        "Some: evaluate a real scheme and make a judgement"
+        "All: name three hard and three soft engineering methods",
+        "Most: give advantages and disadvantages of each",
+        "Some: explain how Shoreline Management Plans decide between options"
       ],
-      "crossCurricular": "Economics: cost-benefit analysis; Citizenship: public decisions",
-      "smsc": "Moral: fairness: who is protected and who is not; guardianship of land and community",
+      "crossCurricular": "Economics: cost-benefit analysis",
+      "smsc": "Moral: fairness when some land is protected and some is not",
       "keywords": [
         {
           "term": "hard engineering",
-          "def": "man-made structures built to stop erosion or flooding"
+          "def": "built structures that resist the sea"
         },
         {
           "term": "soft engineering",
-          "def": "working with natural processes to manage the coast"
+          "def": "working with natural processes"
         },
         {
-          "term": "managed retreat",
-          "def": "allowing the sea to flood or erode land in a controlled way"
-        },
-        {
-          "term": "groyne",
-          "def": "a wall built out from the beach to trap sediment"
+          "term": "sea wall",
+          "def": "a concrete wall that reflects waves"
         },
         {
           "term": "beach nourishment",
           "def": "adding sand or shingle to a beach"
+        },
+        {
+          "term": "managed retreat",
+          "def": "allowing the sea to flood low-value land"
+        },
+        {
+          "term": "Shoreline Management Plan",
+          "def": "a plan deciding how each stretch of coast is managed"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A sea wall costs millions and protects 50 houses. A nature reserve could flood instead. What would you decide?"
+      },
       "starter": [
-        "Say Bismillah. Name two depositional landforms.",
-        "State how longshore drift moves sediment.",
-        "What is a groyne used for? Say what you remember."
+        {
+          "q": "A storm surge is caused by low pressure and:",
+          "a": "Strong winds",
+          "mins": 1,
+          "options": [
+            "Strong winds",
+            "Volcanoes"
+          ]
+        },
+        {
+          "q": "Coastal squeeze traps habitats between:",
+          "a": "Rising seas and sea walls",
+          "mins": 1,
+          "options": [
+            "Rising seas and sea walls",
+            "Two rivers"
+          ]
+        },
+        {
+          "q": "Name one coastal stakeholder.",
+          "a": "Homeowners, tourism businesses, conservationists, farmers, ports",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Coastal management strategies",
+          "heading": "Hard engineering",
+          "bullets": [
+            "Sea walls, groynes, rock armour",
+            "Revetments, offshore breakwaters",
+            "Strong but costly"
+          ],
+          "note": "Groynes may starve beaches downdrift.",
           "table": {
             "head": [
-              "Strategy",
-              "Type",
+              "Method",
               "How it works",
-              "Cost and issue"
+              "Pro",
+              "Con"
             ],
             "rows": [
               [
                 "Sea wall",
-                "Hard",
-                "Curved wall reflects waves",
-                "Very expensive; can erode beach in front"
-              ],
-              [
-                "Rock armour",
-                "Hard",
-                "Large boulders absorb wave energy",
-                "Costly; may be unattractive"
+                "reflects waves",
+                "strong",
+                "very costly; can scour beach"
               ],
               [
                 "Groynes",
-                "Hard",
-                "Trap sediment from longshore drift to build beaches",
-                "Starves beaches further along the coast"
+                "trap longshore drift",
+                "wider beach",
+                "starve downdrift"
+              ],
+              [
+                "Rock armour",
+                "absorbs wave energy",
+                "cheaper than walls",
+                "can look ugly; rocks shift"
               ],
               [
                 "Beach nourishment",
-                "Soft",
-                "Sand or shingle added to the beach",
-                "Needs repeating; cheaper but short-lived"
-              ],
-              [
-                "Dune regeneration",
-                "Soft",
-                "Fencing and planting marram grass",
-                "Cheap; needs controlling visitors"
+                "adds sediment",
+                "natural look; tourism",
+                "must be repeated"
               ],
               [
                 "Managed retreat",
-                "Retreat",
-                "Sea is allowed to flood low-value land",
-                "Cheapest; people may lose land"
+                "lets low land flood",
+                "cheap; new habitat",
+                "land and buildings lost"
               ]
             ]
-          },
-          "note": "Sort by pupils: hard fights the sea; soft works with nature; managed retreat accepts change. Costs: hard structures cost millions (sea walls can cost about £5,000 to £10,000 per metre, approx.). Pupils should know there is no best option: it depends on what is being protected. Ask: if a farm field is at risk and a town is behind it, would you choose the same strategy for both? This prepares for the cost-benefit logic in the case study."
+          }
         },
         {
-          "heading": "Case study: Medmerry managed realignment, West Sussex",
-          "table": {
-            "head": [
-              "Feature",
-              "Detail"
-            ],
-            "rows": [
-              [
-                "Location",
-                "Selsey peninsula, south of Chichester"
-              ],
-              [
-                "Problem",
-                "A narrow shingle bank was repeatedly breached; flooding risk to homes, a holiday park, roads and a water treatment works"
-              ],
-              [
-                "Scheme",
-                "New inland embankments about 7 km long built; the old shingle bank was breached in 2013, allowing tidal flooding of farmland"
-              ],
-              [
-                "Cost",
-                "About £28 million (approx.), the Environment Agency"
-              ],
-              [
-                "Benefits",
-                "Protects over 300 properties (approx.); creates about 180 hectares of new habitat for birds and wildlife (approx.); tourism"
-              ],
-              [
-                "Costs and problems",
-                "Farmland lost; compulsory purchase; some objections"
-              ]
-            ]
-          },
-          "note": "This is a recent managed realignment, among the largest in Europe at the time. Check the figures before use: they are approximate. Explain why this is cheaper in the long term: the sea takes the pressure and a natural saltmarsh and mudflat absorbs wave energy. Ask: who benefits and who loses? (Residents and wildlife gain; the farmer loses land.) For a hard engineering comparison you may add Mappleton, Holderness (1991, rock groynes and rock armour) but this is optional."
+          "heading": "Soft engineering",
+          "bullets": [
+            "Beach nourishment and re-profiling",
+            "Dune regeneration",
+            "Managed retreat"
+          ],
+          "note": "Medmerry, West Sussex (2013): managed realignment created a new salt marsh."
         },
         {
-          "heading": "Skill: evaluate a scheme",
+          "heading": "Shoreline Management Plans",
+          "bullets": [
+            "Hold the line",
+            "Advance the line",
+            "Managed realignment",
+            "No active intervention"
+          ],
+          "note": "Each stretch is given a policy based on cost and benefit.",
           "model": {
-            "problem": "Assess the success of a coastal management scheme you have studied. (6 marks, outline)",
+            "problem": "Evaluate hard engineering. (8 marks) Plan",
             "steps": [
-              "Aim: what was the scheme meant to do? (protect homes and create habitat at Medmerry)",
-              "Benefits with detail: over 300 properties protected; new wildlife habitat.",
-              "Costs with detail: about £28 million; farmland lost.",
-              "Judgement: successful overall because the cost is justified and the solution is sustainable, though some people lost land."
+              "Intro: define and name examples",
+              "Strengths: strong, immediate, protects valuable land",
+              "Weaknesses: cost, downdrift effects, appearance",
+              "Compare with soft methods",
+              "Judgement: best where land value is high"
             ],
-            "answer": "Medmerry was designed to protect homes on the Selsey peninsula and create wildlife habitat. It protects over 300 properties and has created large areas of salt marsh, but it cost about £28 million and farmers lost land. Overall it is successful because it provides lasting protection at a reasonable cost, although some people lost out."
-          },
-          "note": "I do. Show the balanced structure and ask pupils to circle the figure and the judgement. Insist on a clear answer to 'how successful'."
+            "answer": "A balanced plan"
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
           "check": {
-            "q": "Which is an example of soft engineering?",
+            "q": "Letting low-value land flood is:",
             "options": [
-              "Sea wall",
-              "Rock armour",
-              "Beach nourishment",
-              "Groynes"
+              "Hold the line",
+              "Managed retreat",
+              "Beach nourishment"
             ],
-            "answer": 2,
-            "why": "Beach nourishment adds natural sediment. The others are hard engineering."
-          },
-          "note": "Answer: C. Some pupils think groynes are soft because they are small; they are still a built structure."
+            "answer": 1,
+            "why": "Managed retreat (realignment) moves the defence line inland."
+          }
         }
       ],
       "practice": [
-        "Complete a table of strategies with one advantage and one disadvantage each.",
-        "Rank the strategies for a village with 50 homes and give reasons."
+        {
+          "q": "Give one advantage and one disadvantage of beach nourishment. (2 marks)",
+          "a": "Advantage: looks natural and supports tourism (1); disadvantage: sediment is washed away and must be replaced, costing money (1)",
+          "mins": 2,
+          "model": "Pro: natural, wider beach.\nCon: needs repeating.\nOne mark each."
+        }
       ],
       "independent": [
-        "Core: Give one advantage and one disadvantage of a sea wall. (2 marks)",
-        "Extend: Explain why managed retreat may be chosen instead of hard engineering. (4 marks)",
-        "Stretch: Using a named UK scheme, evaluate the success of coastal management. (6 marks)"
+        {
+          "q": "Core: 'Evaluate the use of hard engineering to protect coastlines.' (8 marks) Plan, then write in the portal response box.",
+          "a": "Balanced evaluation with examples (groynes, sea walls), downdrift effects, costs; justified conclusion",
+          "mins": 18,
+          "model": "Teacher plans with the class using the model."
+        },
+        {
+          "q": "Extend: Explain why a council might choose 'no active intervention'. (3 marks)",
+          "a": "Low-value land (1); cost exceeds benefit (1); natural sediment supply to other areas (1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain how one stretch's policy affects another. (2 marks)",
+          "a": "Holding the line can cut sediment supply downdrift, increasing erosion elsewhere",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name one hard and one soft engineering strategy.",
-        "Return to the big question: give a view in one sentence."
+        {
+          "q": "Groynes trap:",
+          "a": "Longshore drift sediment",
+          "mins": 1,
+          "options": [
+            "Longshore drift sediment",
+            "Rain"
+          ]
+        },
+        {
+          "q": "Big question: hold the line or let the sea win?",
+          "a": "Depends on land value, cost-benefit and environment; SMPs choose stretch by stretch",
+          "mins": 2
+        }
       ],
-      "homework": "Write a 150-word letter to a councillor arguing for either hard engineering or managed retreat for a village at risk.",
-      "send": "SEND: sort cards for hard / soft / retreat. EAL: sentence frames for advantage/disadvantage. Stretch: consider who decides what to protect and how costs are shared.",
-      "n": 26,
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "homework": "Make a cost-benefit table for five management methods.",
+      "send": "SEND: 8-mark frame; method cards. EAL: glossary. Stretch: research the Medmerry managed realignment scheme.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.3",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Portal geography y10 lesson 26 (AQA managing the coast) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "8-mark evaluate planning frame (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "rock armour coast",
+          "alt": "Rock armour protecting a coast",
+          "for": "teach:1"
+        },
+        {
+          "find": "sea wall promenade",
+          "alt": "A curved sea wall",
+          "for": "hook"
+        },
+        {
+          "find": "Medmerry managed realignment",
+          "alt": "The Medmerry managed realignment site",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 10: River landscapes in the UK (AQA 3.1.3.3; OPTION: two of coasts, rivers, glaciers)",
@@ -8455,326 +8618,438 @@
       "boardShort": "AQA GCSE 8035"
     },
     {
-      "unit": "Unit 3.1.3.2: Coastal landscapes in the UK (3.1.3) - option, two of coasts, rivers, glaciers",
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
       "n": 49,
-      "title": "Case study: the Holderness coast and its landforms",
-      "duration": 50,
-      "bigQuestion": "Why does the Holderness coast retreat faster than almost anywhere in Europe?",
+      "title": "Case study: the Holderness coast, a developed country (2.3)",
+      "bigQuestion": "Is it fair that some villages are protected and others are left to fall into the sea?",
       "objectives": [
-        "Locate the Holderness coast and explain why it erodes quickly",
-        "Describe landforms along it: cliffs, beaches, Spurn Head and Flamborough Head",
-        "Use named detail in exam answers"
+        "To understand the causes and impacts of erosion on the Holderness coast as a developed-country case study"
       ],
       "successCriteria": [
-        "All: locate Holderness",
-        "Most: explain the rate of erosion",
-        "Some: explain how landforms along it differ"
+        "All: locate Holderness and describe its geology",
+        "Most: explain why it erodes so quickly",
+        "Some: explain social, economic and environmental impacts"
       ],
-      "crossCurricular": "History: lost villages along the coast",
-      "smsc": "Moral: care for communities affected by loss",
+      "crossCurricular": "Economics: insurance and property value",
+      "smsc": "Moral: fairness in protecting communities",
       "keywords": [
         {
-          "term": "Holderness",
-          "def": "the coast of east Yorkshire, England"
-        },
-        {
           "term": "boulder clay",
-          "def": "soft rock left by ice, easily eroded"
+          "def": "soft rock (till) left by glaciers"
         },
         {
-          "term": "longshore drift",
-          "def": "movement of sediment along the coast by waves at an angle"
+          "term": "erosion rate",
+          "def": "how fast a coast retreats, often in metres per year"
         },
         {
-          "term": "Spurn Head",
-          "def": "a spit at the mouth of the Humber estuary"
+          "term": "Holderness",
+          "def": "a stretch of coast in East Yorkshire"
         },
         {
-          "term": "Flamborough Head",
-          "def": "a chalk headland north of the Holderness coast"
+          "term": "Mappleton",
+          "def": "a village protected by rock groynes in 1991"
+        },
+        {
+          "term": "terminal groyne effect",
+          "def": "increased erosion just beyond the last groyne"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some Holderness homeowners have watched their gardens disappear. What would you want the council to do?"
+      },
       "starter": [
-        "Bismillah. Name one process of coastal erosion.",
-        "How is a spit formed?",
-        "How does a headland form?"
-      ],
-      "teach": [
         {
-          "heading": "Where and why",
-          "bullets": [
-            "Holderness is on the east coast of Yorkshire.",
-            "Cliffs are made of soft boulder clay.",
-            "Waves arrive across the North Sea with a long fetch."
-          ],
-          "note": "Locate on a map: from Flamborough Head south to Spurn Head. Erosion rates are among the fastest in Europe, averaging approximately 1.5 to 2 metres a year (approx., verify). Reasons: soft rock, strong waves from the north-east, a long fetch, and cliffs with little protection. Case-study figures are approximate; verify against current sources before teaching."
-        },
-        {
-          "heading": "Cliffs and beaches",
-          "bullets": [
-            "Boulder clay cliffs are low and unstable.",
-            "Rain makes clay slump.",
-            "Beach material is moved south by longshore drift."
-          ],
-          "note": "Draw the cliff with slumping and the narrow beach. Link to processes: hydraulic action, abrasion, and mass movement. Villages such as Skipsea have been lost over time (verify). Longshore drift moves material south along the coast, which feeds Spurn Head."
-        },
-        {
-          "heading": "Spurn Head",
-          "bullets": [
-            "A spit at the southern end of Holderness.",
-            "Formed from sediment moved south by longshore drift.",
-            "It has a curved end and mudflats behind it."
-          ],
-          "note": "Spurn Head is about 5 km long (approx., verify) and has been breached by storms. Explain how a spit forms: change of coastline direction, sediment deposited where waves lose energy, a hook from changing wave direction. This is a link to the spit formation lesson but with a real example.",
-          "timeline": [
-            {
-              "label": "North",
-              "text": "Cliffs erode; sediment released"
-            },
-            {
-              "label": "Longshore drift",
-              "text": "Sediment moves south"
-            },
-            {
-              "label": "Humber mouth",
-              "text": "Coast changes direction"
-            },
-            {
-              "label": "Deposition",
-              "text": "Spit builds out"
-            },
-            {
-              "label": "Storm waves",
-              "text": "Spit can be breached or reshaped"
-            }
+          "q": "Groynes trap:",
+          "a": "Longshore drift sediment",
+          "mins": 1,
+          "options": [
+            "Longshore drift sediment",
+            "Water"
           ]
         },
         {
-          "heading": "Flamborough Head",
-          "note": "To the north, chalk is resistant, forming headlands with caves, arches and stacks (for example at Thornwick Bay; verify). This is the contrast: soft clay retreats rapidly, resistant chalk stays as a headland. Together they show how rock type affects landforms along one coastline.",
-          "compare": {
-            "left": {
-              "title": "Holderness (clay)",
-              "points": [
-                "Low, soft cliffs",
-                "Rapid retreat",
-                "Beaches and Spurn Head"
-              ]
-            },
-            "right": {
-              "title": "Flamborough (chalk)",
-              "points": [
-                "High, resistant cliffs",
-                "Headland, caves, arches, stacks",
-                "Slower retreat"
-              ]
-            },
-            "label": "contrast"
-          }
+          "q": "Managed retreat lets:",
+          "a": "Low-value land flood",
+          "mins": 1,
+          "options": [
+            "Low-value land flood",
+            "Walls be built"
+          ]
         },
         {
-          "heading": "Model answer with detail",
-          "note": "Use place-specific detail: name the coast, rock type, processes and the landform.",
-          "model": {
-            "problem": "Explain why Holderness has retreated faster than other coasts you have studied. (4 marks)",
-            "steps": [
-              "The cliffs are boulder clay, soft rock that is easily eroded",
-              "Waves from the North Sea have a long fetch so are powerful",
-              "Rain saturates clay, causing slumping, so cliffs retreat quickly",
-              "The sediment is carried south by longshore drift"
-            ],
-            "answer": "Rock type, wave power, mass movement, longshore drift"
-          }
-        },
-        {
-          "heading": "Hinge question",
-          "note": "Answer D. A is chalk. B is the process, not the reason. C is a landform formed elsewhere.",
-          "check": {
-            "q": "What is the best reason that the Holderness coast erodes so quickly?",
-            "options": [
-              "It is made of resistant chalk",
-              "It faces west",
-              "Waves never reach it",
-              "The cliffs are soft boulder clay and waves are powerful"
-            ],
-            "answer": 3,
-            "why": "Soft boulder clay is easily eroded by powerful North Sea waves."
-          }
+          "q": "Name one soft engineering method.",
+          "a": "Beach nourishment, dune regeneration or managed retreat",
+          "mins": 1
         }
-      ],
-      "practice": [
-        "Label a sketch of the Holderness coast: Flamborough Head, Spurn Head, Skipsea, Humber.",
-        "Why does material move south along the Holderness coast?"
-      ],
-      "independent": [
-        "Core: Describe the landforms of Spurn Head. (3 marks)",
-        "Extend: Explain why Holderness erodes more quickly than Flamborough Head. (4 marks)",
-        "Stretch: 'Rock type is the most important factor in coastal landforms.' How far do you agree, using the Holderness coast? (6 marks)"
-      ],
-      "exit": [
-        "Name one landform at each end of the coast studied.",
-        "Return to the big question: why is it so fast?"
-      ],
-      "homework": "Create a fact-file on Holderness with five facts, marking any figure that needs verifying.",
-      "send": "SEND: annotated map with labels. EAL: process words with pictures. Stretch: compare with another UK coast such as the Dorset coast.",
-      "covers": [
-        "3.1.3.2.7"
-      ],
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
-    },
-    {
-      "unit": "Unit 3.1.3.2: Coastal landscapes in the UK (3.1.3) - option, two of coasts, rivers, glaciers",
-      "n": 50,
-      "title": "Case study: managing the Holderness coast at Mappleton",
-      "duration": 50,
-      "bigQuestion": "Is it worth protecting one village if erosion moves elsewhere?",
-      "objectives": [
-        "Describe the coastal management scheme at Mappleton, Holderness",
-        "Evaluate its costs, benefits and effects on other places",
-        "Compare approaches such as hard engineering and managed retreat"
-      ],
-      "successCriteria": [
-        "All: name the methods used",
-        "Most: give benefits and costs",
-        "Some: evaluate the scheme using evidence"
-      ],
-      "crossCurricular": "Economics: cost-benefit decisions",
-      "smsc": "Moral: fairness between communities (adl) when protection helps some and harms others",
-      "keywords": [
-        {
-          "term": "rock armour",
-          "def": "large boulders placed at the foot of a cliff to absorb wave energy"
-        },
-        {
-          "term": "groyne",
-          "def": "a barrier built at right angles to the coast to trap sediment"
-        },
-        {
-          "term": "cost-benefit",
-          "def": "comparing money spent with what is saved"
-        },
-        {
-          "term": "downdrift",
-          "def": "the direction in which sediment is moved along the coast"
-        },
-        {
-          "term": "managed retreat",
-          "def": "allowing the sea to flood or erode areas deliberately"
-        }
-      ],
-      "starter": [
-        "Bismillah. Name one hard engineering method.",
-        "Name one soft engineering method.",
-        "What is longshore drift?"
       ],
       "teach": [
         {
-          "heading": "Why protect Mappleton?",
+          "heading": "Where and what",
           "bullets": [
-            "Mappleton is a village on the Holderness coast.",
-            "Erosion threatened homes, a farm and the main road.",
-            "The scheme was built in the early 1990s."
+            "East Yorkshire, Flamborough Head to Spurn Head",
+            "About 60 km of boulder clay cliffs",
+            "One of Europe's fastest-eroding coasts"
           ],
-          "note": "Introduce the problem: cliff-top houses and the B1242 road at risk. The scheme was completed around 1991 (approx., verify) at a cost of approximately 2 million pounds (approx., verify). Ask pupils to guess what decisions councils make about where to spend money. Case-study figures are approximate; verify against current sources before teaching. Check before use: Erosion increased down the coast, such as at Cowden (verify)."
+          "note": "Average retreat is around 2 m a year in places; many villages have been lost since Roman times. Case studies are suggestions until the school confirms its own (TO CONFIRM)."
         },
         {
-          "heading": "What was built",
+          "heading": "Why so fast?",
           "bullets": [
-            "Rock armour at the base of the cliffs.",
-            "Two rock groynes to trap sediment on the beach.",
-            "Cliff regrading may also be used."
+            "Soft boulder clay",
+            "Long fetch from the north-east; destructive waves",
+            "Narrow beaches give little protection"
           ],
-          "note": "Explain: rock armour absorbs wave energy; groynes trap beach material, widening the beach, which protects cliffs. Pupils should be able to state how each works. Mappleton's scheme is a hard engineering scheme; the beach increased in size in front of the village while it protected it.",
+          "note": "Longshore drift carries material south to Spurn Head.",
+          "model": {
+            "problem": "Explain why the Holderness coast erodes rapidly. (4 marks)",
+            "steps": [
+              "Boulder clay is soft and easily eroded (1)",
+              "It slumps when saturated (1)",
+              "Powerful North Sea waves with a long fetch attack it (1)",
+              "Narrow beaches mean little wave energy is absorbed (1)"
+            ],
+            "answer": "Four developed points"
+          }
+        },
+        {
+          "heading": "Impacts",
+          "bullets": [
+            "Social: homes and roads lost",
+            "Economic: falling property values, tourism",
+            "Environmental: sediment feeds Spurn Head"
+          ],
+          "note": "Use a table.",
           "table": {
             "head": [
-              "Method",
-              "How it works",
-              "Weakness"
+              "Social",
+              "Economic",
+              "Environmental"
             ],
             "rows": [
               [
-                "Rock armour",
-                "Absorbs wave energy",
-                "Expensive, can look unnatural"
+                "families lose homes",
+                "houses cannot be sold or insured",
+                "habitats lost on cliffs"
               ],
               [
-                "Rock groynes",
-                "Trap sediment to widen beach",
-                "Starves beaches further down the coast"
-              ],
-              [
-                "Do nothing",
-                "No cost",
-                "Property and land lost"
-              ],
-              [
-                "Managed retreat",
-                "Allows erosion in low-value areas",
-                "People may need to move"
+                "roads and services cut",
+                "farmland lost",
+                "sediment supplies spits and estuary"
               ]
             ]
           }
         },
         {
-          "heading": "Benefits and costs",
+          "heading": "Check",
           "bullets": [
-            "Village and road protected for now.",
-            "Sediment trapped, so less supply to the south.",
-            "Erosion increased down the coast, such as at Cowden."
+            "Vote in the Teams poll"
           ],
-          "note": "Discuss the downdrift effect: groynes trap sediment that would feed the coast to the south, so those cliffs lost their protective beach and may erode faster. This is an unintended consequence. Link to the sediment cell idea. Ask who gains and who loses. Check the figures for Cowden (verify). Case-study figures are approximate; verify against current sources before teaching."
-        },
-        {
-          "heading": "Evaluating the scheme",
-          "note": "Worked 6-mark structure: for, against, judgement. Pupils must use the case-study detail. Remember a judgement requires a reason: 'on balance, it was worthwhile because... but the long-term cost is...'.",
-          "model": {
-            "problem": "Evaluate the coastal management scheme at Mappleton. (4 marks)",
-            "steps": [
-              "Benefit: rock armour and groynes protected homes, farmland and the road",
-              "Benefit: a wider beach also protects cliffs and provides some recreation",
-              "Cost: the scheme was expensive for a small village",
-              "Cost: sediment is trapped, which may increase erosion to the south; judgement: protects locally but moves the problem"
-            ],
-            "answer": "Balanced points and a short judgement"
-          }
-        },
-        {
-          "heading": "Hinge question",
-          "note": "Answer C. A is the opposite. B is a hard engineering method that does not affect downdrift. D is soft engineering.",
+          "note": "Share the results.",
           "check": {
-            "q": "Why may rock groynes at Mappleton increase erosion further south?",
+            "q": "Holderness cliffs are mostly:",
             "options": [
-              "They absorb all wave energy",
-              "They are too small",
-              "They trap sediment so the coast further south receives less beach material",
-              "They increase longshore drift"
+              "Granite",
+              "Boulder clay",
+              "Chalk"
             ],
-            "answer": 2,
-            "why": "Groynes trap sediment moving south, so the next stretch of coast loses its protective beach."
+            "answer": 1,
+            "why": "Soft glacial till (boulder clay) is easily eroded."
           }
         }
       ],
       "practice": [
-        "List two benefits and two costs of the Mappleton scheme.",
-        "Explain why managed retreat might be chosen in a low-value area."
+        {
+          "q": "Describe the location of the Holderness coast. (2 marks)",
+          "a": "East coast of England in East Yorkshire (1), between Flamborough Head and Spurn Head, facing the North Sea (1)",
+          "mins": 2,
+          "model": "Country and region.\nBetween two named places.\nWhich sea it faces."
+        }
       ],
       "independent": [
-        "Core: Describe the management scheme at Mappleton. (4 marks)",
-        "Extend: Explain how groynes reduce erosion and why they can cause problems downdrift. (4 marks)",
-        "Stretch: 'Coastal management at Mappleton was worth the cost.' How far do you agree? (6 marks)"
+        {
+          "q": "Core: Build a case study fact file (location, geology, processes, rates, impacts) and answer: 'Explain the impacts of coastal erosion on people in a named area.' (6 marks)",
+          "a": "Accurate, specific impacts with place detail",
+          "mins": 20,
+          "model": "Teacher fills in location and geology first."
+        },
+        {
+          "q": "Extend: Explain how erosion at Holderness benefits Spurn Head. (2 marks)",
+          "a": "Eroded sediment is carried south by longshore drift (1) and deposited at Spurn Head (1)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why might erosion rates vary along the coast? (2 marks)",
+          "a": "Defences, beach width and local geology differ",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the two hard engineering methods used.",
-        "Return to the big question: is it worth it?"
+        {
+          "q": "Holderness faces the:",
+          "a": "North Sea",
+          "mins": 1,
+          "options": [
+            "North Sea",
+            "Irish Sea"
+          ]
+        },
+        {
+          "q": "Big question: is it fair that some villages are protected and others not?",
+          "a": "A reasoned view on cost-benefit versus fairness to residents",
+          "mins": 2
+        }
       ],
-      "homework": "Write a balanced 150-word letter from a Mappleton resident and a Cowden resident about the scheme (use only facts from class).",
-      "send": "SEND: for and against cards. EAL: evaluation stems. Stretch: compare with a managed retreat scheme in the UK such as Medmerry.",
-      "covers": [
-        "3.1.3.2.7"
+      "homework": "Learn five specific facts about Holderness for exam recall (place names, rock, processes, impacts).",
+      "send": "SEND: fact file headings. EAL: glossary. Stretch: research the village of Skipsea's erosion. Case studies are suggestions until the school confirms its own (TO CONFIRM).",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.3 (case study: developed country)",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Portal geography y10 lesson 49 (AQA Holderness) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)"
       ],
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Holderness coast cliff erosion",
+          "alt": "Eroding cliffs on the Holderness coast",
+          "for": "hook"
+        },
+        {
+          "find": "Mappleton groynes",
+          "alt": "Rock groynes at Mappleton",
+          "for": "keywords"
+        },
+        {
+          "find": "Spurn Head",
+          "alt": "Spurn Head",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 50,
+      "title": "Case study: managing the Holderness coast at Mappleton (2.3)",
+      "bigQuestion": "Did saving Mappleton cost someone else their home?",
+      "objectives": [
+        "To understand and evaluate coastal management at Mappleton as part of a developed-country case study"
+      ],
+      "successCriteria": [
+        "All: describe the Mappleton scheme",
+        "Most: explain its positive and negative effects",
+        "Some: write a substantiated 8-mark evaluation"
+      ],
+      "crossCurricular": "Economics: cost-benefit analysis",
+      "smsc": "Moral: who benefits and who pays",
+      "keywords": [
+        {
+          "term": "rock groyne",
+          "def": "a groyne made of large boulders"
+        },
+        {
+          "term": "rock revetment",
+          "def": "rocks placed at a cliff foot to absorb waves"
+        },
+        {
+          "term": "cost-benefit analysis",
+          "def": "comparing a scheme's costs with what it protects"
+        },
+        {
+          "term": "downdrift",
+          "def": "further along the coast in the direction of longshore drift"
+        },
+        {
+          "term": "sustainable",
+          "def": "meeting needs now without harming the future"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Mappleton was saved, but the coast just south of it eroded faster. Was the scheme a success?"
+      },
+      "starter": [
+        {
+          "q": "Holderness cliffs are mostly:",
+          "a": "Boulder clay",
+          "mins": 1,
+          "options": [
+            "Boulder clay",
+            "Granite"
+          ]
+        },
+        {
+          "q": "Holderness faces the:",
+          "a": "North Sea",
+          "mins": 1,
+          "options": [
+            "North Sea",
+            "English Channel"
+          ]
+        },
+        {
+          "q": "Why does Holderness erode fast?",
+          "a": "Soft boulder clay, strong North Sea waves, narrow beaches",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The scheme, 1991",
+          "bullets": [
+            "Two rock groynes",
+            "Rock revetment at the cliff foot",
+            "Cost about £2 million"
+          ],
+          "note": "Protected the village and the B1242 coast road. Case studies are suggestions until the school confirms its own (TO CONFIRM)."
+        },
+        {
+          "heading": "Effects",
+          "bullets": [
+            "Mappleton protected",
+            "Beach widened between groynes",
+            "Erosion increased to the south (terminal groyne effect)"
+          ],
+          "note": "Cowden, just south, saw faster cliff loss.",
+          "compare": {
+            "left": {
+              "title": "Successes",
+              "points": [
+                "village and road protected",
+                "beach built up",
+                "property values held"
+              ]
+            },
+            "right": {
+              "title": "Problems",
+              "points": [
+                "more erosion downdrift",
+                "farmland lost to the south",
+                "less sediment for Spurn Head"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Evaluate: 8 marks",
+          "bullets": [
+            "Both sides with evidence",
+            "Judgement with criteria",
+            "Use place detail"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Evaluate the success of coastal management in a named developed area. (8 marks) Plan",
+            "steps": [
+              "Intro: Mappleton, 1991, two rock groynes and revetment, about £2 million",
+              "Success: village and road protected; beach built up",
+              "Problems: terminal groyne effect at Cowden; sediment supply cut",
+              "Criteria: who benefits, cost, sustainability",
+              "Judgement: successful locally, less so for the whole coast"
+            ],
+            "answer": "A substantiated judgement"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The terminal groyne effect is:",
+            "options": [
+              "Erosion stopping everywhere",
+              "Increased erosion beyond the last groyne",
+              "A new beach"
+            ],
+            "answer": 1,
+            "why": "Sediment trapped by groynes no longer reaches the coast downdrift."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one negative effect of the Mappleton scheme. (2 marks)",
+          "a": "Groynes trapped sediment (1), so the coast to the south received less and eroded faster (1)",
+          "mins": 2,
+          "model": "Cause: sand trapped.\nEffect downdrift: less sand.\nResult: faster erosion."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 'Evaluate the success of coastal management in a named area in a developed country.' (8 marks) Timed: 12 minutes in the portal response box.",
+          "a": "Level 3: detailed place knowledge, balanced, substantiated judgement",
+          "mins": 14,
+          "model": "Teacher talks through the plan for 2 minutes before timing."
+        },
+        {
+          "q": "Extend: Self-assess with the level descriptors and write one target.",
+          "a": "Accurate self-assessment with a specific target",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Suggest a more sustainable plan for Holderness. (4 marks)",
+          "a": "Mix of managed retreat where land value is low, compensation for residents, protecting key settlements",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Mappleton scheme cost about:",
+          "a": "£2 million",
+          "mins": 1,
+          "options": [
+            "£2 million",
+            "£200 million"
+          ]
+        },
+        {
+          "q": "Big question: did saving Mappleton cost someone else?",
+          "a": "Yes in part: downdrift erosion increased, showing management must consider the whole sediment cell",
+          "mins": 2
+        }
+      ],
+      "homework": "Rewrite your 8-mark answer using your target and feedback.",
+      "send": "SEND: 8-mark frame and level descriptors in plain English. EAL: glossary. Stretch: compare Mappleton with Hornsea or Withernsea defences. Case studies are suggestions until the school confirms its own (TO CONFIRM).",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.3 (case study: developed country)",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Portal geography y10 lesson 50 (AQA Mappleton) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "8-mark evaluate level descriptors (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mappleton groynes",
+          "alt": "Rock groynes at Mappleton",
+          "for": "hook"
+        },
+        {
+          "find": "rock revetment cliff foot",
+          "alt": "Rock revetment at a cliff foot",
+          "for": "teach:1"
+        },
+        {
+          "find": "eroding farmland cliff edge",
+          "alt": "Farmland at an eroding cliff edge",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 3.3.2: Fieldwork",
@@ -10082,6 +10357,1283 @@
           "find": "flooded fields river",
           "alt": "Flooded fields beside a river",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 57,
+      "title": "Coastal transport, longshore drift and deposition (2.1b)",
+      "bigQuestion": "Where does all the sand on a beach come from?",
+      "objectives": [
+        "To understand how material is transported along coasts and deposited"
+      ],
+      "successCriteria": [
+        "All: describe longshore drift",
+        "Most: explain four transport processes and why deposition happens",
+        "Some: explain how human activity can interrupt sediment supply"
+      ],
+      "crossCurricular": "Maths: angles and vectors in wave direction",
+      "smsc": "Moral: actions in one place affect others",
+      "keywords": [
+        {
+          "term": "longshore drift",
+          "def": "the movement of sediment along a coast by waves approaching at an angle"
+        },
+        {
+          "term": "prevailing wind",
+          "def": "the most common wind direction"
+        },
+        {
+          "term": "deposition",
+          "def": "dropping of sediment when energy falls"
+        },
+        {
+          "term": "sediment cell",
+          "def": "a stretch of coast where sediment moves in a closed system"
+        },
+        {
+          "term": "groyne",
+          "def": "a barrier built out to sea to trap sediment"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you built a wall across a beach to keep your sand, what might happen to the beach further along?"
+      },
+      "starter": [
+        {
+          "q": "A destructive wave has a strong:",
+          "a": "Backwash",
+          "mins": 1,
+          "options": [
+            "Backwash",
+            "Swash"
+          ]
+        },
+        {
+          "q": "Slumping happens most on:",
+          "a": "Clay cliffs",
+          "mins": 1,
+          "options": [
+            "Clay cliffs",
+            "Granite cliffs"
+          ]
+        },
+        {
+          "q": "What is fetch?",
+          "a": "The distance of open water the wind blows over",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Transport",
+          "bullets": [
+            "Traction, saltation",
+            "Suspension, solution",
+            "Same as rivers"
+          ],
+          "note": "Quick retrieval of the four processes."
+        },
+        {
+          "heading": "Longshore drift",
+          "bullets": [
+            "Swash moves up at an angle (prevailing wind)",
+            "Backwash returns straight down (gravity)",
+            "Zig-zag movement along the coast"
+          ],
+          "note": "Draw the zig-zag.",
+          "cycle": [
+            "Prevailing wind drives waves at an angle",
+            "Swash carries sediment up the beach at an angle",
+            "Backwash drags it straight back down",
+            "Sediment moves along the coast step by step"
+          ]
+        },
+        {
+          "heading": "Deposition",
+          "bullets": [
+            "Where waves lose energy",
+            "Sheltered bays, behind spits",
+            "Constructive waves"
+          ],
+          "note": "Sediment sources: rivers, cliff erosion, offshore."
+        },
+        {
+          "heading": "Explain longshore drift",
+          "bullets": [
+            "Sequence with causes"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain the process of longshore drift. (4 marks)",
+            "steps": [
+              "Prevailing wind makes waves approach at an angle (1)",
+              "Swash carries sediment up the beach diagonally (1)",
+              "Backwash returns it straight down under gravity (1)",
+              "Repeated, sediment moves along the coast (1)"
+            ],
+            "answer": "Four sequenced points"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Backwash moves:",
+            "options": [
+              "At the same angle as the swash",
+              "Straight down the beach",
+              "Up the beach"
+            ],
+            "answer": 1,
+            "why": "Gravity pulls backwash straight down the steepest slope."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why do groynes cause erosion further along the coast? (2 marks)",
+          "a": "They trap sediment on the updrift side (1), so less reaches downdrift beaches, which get narrower and erode (1)",
+          "mins": 3,
+          "model": "Groyne traps sand.\nSand cannot pass.\nBeach downdrift starves.\nErosion increases there."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw an annotated longshore drift diagram, then answer: (a) State two sources of coastal sediment. (2) (b) Explain why deposition occurs in bays. (3)",
+          "a": "(a) rivers, cliff erosion, offshore bars (b) waves refract and spread out in bays, losing energy, so sediment is dropped",
+          "mins": 14,
+          "model": "Teacher draws the first two zig-zags with arrows."
+        },
+        {
+          "q": "Extend: Suggest how to measure longshore drift on a beach (fieldwork design). (3 marks)",
+          "a": "Place a marked float or painted pebble; measure distance moved in a set time with a tape; repeat; record wind direction",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Explain the idea of a sediment cell. (3 marks)",
+          "a": "A stretch of coast where sediment circulates; inputs, transfers and stores; actions in one place affect others in the cell",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Longshore drift is driven by the:",
+          "a": "Prevailing wind",
+          "mins": 1,
+          "options": [
+            "Prevailing wind",
+            "Tide only"
+          ]
+        },
+        {
+          "q": "Big question: where does beach sand come from?",
+          "a": "Eroded cliffs, rivers and offshore sediment, moved by waves and longshore drift and deposited where energy falls",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the longshore drift sequence and be ready to draw it from memory in 2 minutes.",
+      "send": "SEND: diagram with arrows to complete. EAL: glossary. Stretch: research the sediment cells of England and Wales.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.1b",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Portal geography y10 lesson 24 (AQA) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "groynes on beach",
+          "alt": "Wooden groynes on a beach",
+          "for": "teach:4"
+        },
+        {
+          "find": "sand beach waves aerial",
+          "alt": "Waves arriving at a beach",
+          "for": "hook"
+        },
+        {
+          "find": "shingle beach pebbles",
+          "alt": "A shingle beach",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 58,
+      "title": "Depositional landforms: beaches, spits, bars and dunes (2.1c)",
+      "bigQuestion": "How can a coast grow while another nearby shrinks?",
+      "objectives": [
+        "To understand how depositional coastal landforms are formed"
+      ],
+      "successCriteria": [
+        "All: name four depositional landforms",
+        "Most: explain how a spit forms",
+        "Some: explain how bars and tombolos differ from spits"
+      ],
+      "crossCurricular": "Science: forces and sediment transport",
+      "smsc": "Spiritual: the balance of loss and gain in nature",
+      "keywords": [
+        {
+          "term": "beach",
+          "def": "a store of sand or shingle between low and high tide"
+        },
+        {
+          "term": "spit",
+          "def": "a long ridge of sand or shingle sticking out from the coast"
+        },
+        {
+          "term": "bar",
+          "def": "a spit that grows across a bay, closing it off"
+        },
+        {
+          "term": "tombolo",
+          "def": "a ridge of sediment joining an island to the mainland"
+        },
+        {
+          "term": "sand dune",
+          "def": "a hill of sand built by wind behind a beach"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Spurn Head in Yorkshire is about 5 km long. How could the sea build land rather than destroy it?"
+      },
+      "starter": [
+        {
+          "q": "Old Harry Rocks is a:",
+          "a": "Stack",
+          "mins": 1,
+          "options": [
+            "Stack",
+            "Spit"
+          ]
+        },
+        {
+          "q": "Bays form in:",
+          "a": "Soft rock",
+          "mins": 1,
+          "options": [
+            "Soft rock",
+            "Hard rock"
+          ]
+        },
+        {
+          "q": "What forms when an arch collapses?",
+          "a": "A stack",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Beaches",
+          "bullets": [
+            "Sand: gentle slope",
+            "Shingle: steeper",
+            "Berms and ridges"
+          ],
+          "note": "Constructive waves build beaches."
+        },
+        {
+          "heading": "Spits",
+          "bullets": [
+            "Longshore drift carries sediment",
+            "Coast changes direction",
+            "Deposition continues out to sea; curved end"
+          ],
+          "note": "Spurn Head, at the mouth of the Humber.",
+          "model": {
+            "problem": "Explain how a spit forms. (4 marks)",
+            "steps": [
+              "Longshore drift moves sediment along the coast (1)",
+              "Where the coast changes direction, deposition continues into the sea (1)",
+              "A changing wind direction curves the end (recurved tip) (1)",
+              "Sheltered water behind becomes a salt marsh (1)"
+            ],
+            "answer": "Four linked points"
+          }
+        },
+        {
+          "heading": "Bars and tombolos",
+          "bullets": [
+            "Bar: spit closes a bay: lagoon behind",
+            "Slapton Ley, Devon: a lagoon behind a shingle bar",
+            "Tombolo: Chesil Beach joins Portland"
+          ],
+          "note": "Compare."
+        },
+        {
+          "heading": "Sand dunes",
+          "bullets": [
+            "Wind blows dry sand inland",
+            "Marram grass traps sand",
+            "Embryo, yellow, grey dunes"
+          ],
+          "note": "Link to ecosystems next lesson."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "A ridge joining an island to the mainland is a:",
+            "options": [
+              "Spit",
+              "Tombolo",
+              "Stack"
+            ],
+            "answer": 1,
+            "why": "Chesil Beach is a tombolo linking the Isle of Portland."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the features of a spit. (3 marks)",
+          "a": "Long, narrow ridge of sand or shingle (1) attached to land at one end (1), often with a curved (recurved) end and salt marsh behind (1)",
+          "mins": 3,
+          "model": "Shape: long, narrow.\nAttachment: one end on land.\nTip: curved.\nBehind: salt marsh."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Annotated diagram of spit formation, then: (a) Explain how a bar forms. (3) (b) Suggest why spits are important to people. (3)",
+          "a": "(a) spit grows across a bay, enclosing a lagoon (b) shelter harbours, habitats, tourism, protect land behind",
+          "mins": 15,
+          "model": "Teacher annotates the longshore drift arrows first."
+        },
+        {
+          "q": "Extend: Use a satellite image of Spurn Head to describe its shape with a scale.",
+          "a": "Length about 5 km, curved tip, salt marsh behind",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why might a spit be breached? (3 marks)",
+          "a": "Storm surges break through the narrow neck; reduced sediment supply",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Spurn Head is an example of a:",
+          "a": "Spit",
+          "mins": 1,
+          "options": [
+            "Spit",
+            "Tombolo"
+          ]
+        },
+        {
+          "q": "Big question: how can a coast grow while another shrinks?",
+          "a": "Material eroded in one place is carried by longshore drift and deposited elsewhere, building spits and beaches",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a two-column revision table: erosional and depositional landforms, each with a named example.",
+      "send": "SEND: diagram labels. EAL: glossary. Stretch: research how Spurn Head was breached in the 2013 storm surge.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.1c",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Portal geography y10 lesson 25 (AQA) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Spurn Head aerial",
+          "alt": "Spurn Head from the air",
+          "for": "hook"
+        },
+        {
+          "find": "Chesil Beach Portland",
+          "alt": "Chesil Beach and Portland",
+          "for": "teach:3"
+        },
+        {
+          "find": "marram grass sand dunes",
+          "alt": "Marram grass on sand dunes",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 59,
+      "title": "Coastal ecosystems and the threats they face (2.2)",
+      "bigQuestion": "Why do mangroves matter to a family living 50 km inland?",
+      "objectives": [
+        "To understand the characteristics of coastal ecosystems and why they are under threat"
+      ],
+      "successCriteria": [
+        "All: name four coastal ecosystems and where they are found",
+        "Most: explain how one ecosystem's biotic and abiotic parts interact",
+        "Some: assess the main threats and their impacts"
+      ],
+      "crossCurricular": "Biology: ecosystems and interdependence",
+      "smsc": "Spiritual: the balance (mizan) in creation",
+      "keywords": [
+        {
+          "term": "ecosystem",
+          "def": "living things and their non-living environment working together"
+        },
+        {
+          "term": "biotic",
+          "def": "living parts, like plants and animals"
+        },
+        {
+          "term": "abiotic",
+          "def": "non-living parts, like water, light and temperature"
+        },
+        {
+          "term": "coral reef",
+          "def": "a structure built by tiny coral animals in warm, clear, shallow seas"
+        },
+        {
+          "term": "mangrove",
+          "def": "a salt-tolerant tree growing on tropical coasts"
+        },
+        {
+          "term": "salt marsh",
+          "def": "a coastal wetland flooded by tides"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A coral reef covers a tiny part of the ocean floor but supports a huge share of sea life. How can that be?"
+      },
+      "islamicLink": {
+        "text": "Allah raised the sky and set up the balance, so do not transgress the balance (Ar-Rahman 55:7 to 8). Coastal ecosystems show this balance; harming one part harms the whole.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Spurn Head is a:",
+          "a": "Spit",
+          "mins": 1,
+          "options": [
+            "Spit",
+            "Bar"
+          ]
+        },
+        {
+          "q": "Marram grass traps:",
+          "a": "Sand",
+          "mins": 1,
+          "options": [
+            "Sand",
+            "Water"
+          ]
+        },
+        {
+          "q": "What is a tombolo?",
+          "a": "A ridge of sediment joining an island to the mainland",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four ecosystems",
+          "bullets": [
+            "Coral reefs: warm, clear, shallow tropical seas",
+            "Mangroves: tropical muddy coasts",
+            "Salt marshes and sand dunes: temperate coasts"
+          ],
+          "note": "Show the world distribution map.",
+          "table": {
+            "head": [
+              "Ecosystem",
+              "Where",
+              "Key conditions"
+            ],
+            "rows": [
+              [
+                "Coral reef",
+                "tropics, e.g. Great Barrier Reef",
+                "18 to 30 degrees C, clear, shallow, salty"
+              ],
+              [
+                "Mangrove",
+                "tropical coasts, e.g. Sundarbans",
+                "muddy, sheltered, tidal"
+              ],
+              [
+                "Salt marsh",
+                "sheltered temperate estuaries",
+                "regular tidal flooding"
+              ],
+              [
+                "Sand dunes",
+                "behind sandy beaches",
+                "onshore wind, sand supply"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Biotic and abiotic",
+          "bullets": [
+            "Coral polyps and algae live together",
+            "Need sunlight, warmth, clear water",
+            "Mangrove roots trap mud and shelter fish"
+          ],
+          "note": "Interdependence: change one part, the rest is affected."
+        },
+        {
+          "heading": "Threats",
+          "bullets": [
+            "Natural: storms, disease",
+            "Human: tourism, pollution, aquaculture, development",
+            "Climate change: bleaching, sea-level rise"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain one threat to coral reefs. (3 marks)",
+            "steps": [
+              "Rising sea temperatures stress corals (1)",
+              "Corals expel their algae and turn white: bleaching (1)",
+              "Without algae they starve, so reefs die and fish lose habitat (1)"
+            ],
+            "answer": "Three linked points"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which is abiotic?",
+            "options": [
+              "Mangrove tree",
+              "Sunlight",
+              "Fish"
+            ],
+            "answer": 1,
+            "why": "Sunlight is non-living."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why mangroves are valuable to coastal people. (4 marks)",
+          "a": "Roots absorb wave energy, reducing storm surge and erosion (2); nurseries for fish provide food and income; timber and honey (2)",
+          "mins": 4,
+          "model": "Value 1: protection from storms.\nHow: roots slow waves.\nValue 2: food and jobs.\nHow: fish breed among roots."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Exam practice: (a) Describe the distribution of coral reefs. (3) (b) Explain how mangroves are adapted to coastal conditions. (4) (c) Assess the threats to one coastal ecosystem. (8)",
+          "a": "(a) tropics, between about 30 N and 30 S, east coasts of continents, shallow seas (b) prop roots, salt excretion, breathing roots (c) balanced assessment of human and natural threats with judgement",
+          "mins": 20,
+          "model": "Teacher plans (c): intro, human threats, natural and climate threats, judgement."
+        },
+        {
+          "q": "Extend: Explain how salt marshes help protect the land behind them. (2 marks)",
+          "a": "Vegetation and mud absorb wave energy (1) and store flood water (1)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Coral bleaching is caused mainly by:",
+          "a": "Warmer seas",
+          "mins": 1,
+          "options": [
+            "Warmer seas",
+            "Colder seas"
+          ]
+        },
+        {
+          "q": "Big question: why do mangroves matter to a family 50 km inland?",
+          "a": "They protect coasts from storms and support fisheries and food supply that the wider region depends on",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a revision card for each of the four ecosystems: location, conditions, value, threats.",
+      "send": "SEND: table prompts; 8-mark frame. EAL: glossary. Stretch: research the Great Barrier Reef's recent bleaching events.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.2",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "8-mark assess planning frame (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "coral reef",
+          "alt": "A coral reef",
+          "for": "hook"
+        },
+        {
+          "find": "mangrove roots Sundarbans",
+          "alt": "Mangrove roots in the Sundarbans",
+          "for": "teach:2"
+        },
+        {
+          "find": "salt marsh estuary",
+          "alt": "A salt marsh",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 60,
+      "title": "Coastal flooding and conflicts at the coast (2.3a)",
+      "bigQuestion": "Who should decide how a coastline is used?",
+      "objectives": [
+        "To understand the causes of coastal flooding and the conflicts between coastal users"
+      ],
+      "successCriteria": [
+        "All: name three causes of coastal flooding",
+        "Most: explain how a storm surge forms",
+        "Some: analyse conflicts between coastal users"
+      ],
+      "crossCurricular": "Science: air pressure",
+      "smsc": "Social: balancing different groups' needs fairly",
+      "keywords": [
+        {
+          "term": "storm surge",
+          "def": "a rise in sea level caused by low pressure and strong winds"
+        },
+        {
+          "term": "sea-level rise",
+          "def": "the global increase in sea height from melting ice and warming water"
+        },
+        {
+          "term": "conflict",
+          "def": "disagreement between groups who want different things"
+        },
+        {
+          "term": "stakeholder",
+          "def": "a person or group with an interest in an issue"
+        },
+        {
+          "term": "coastal squeeze",
+          "def": "when habitats are trapped between rising seas and sea walls"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A caravan park, a nature reserve and a gas terminal want the same stretch of coast. Who should win?"
+      },
+      "starter": [
+        {
+          "q": "Coral bleaching is caused mainly by:",
+          "a": "Warmer seas",
+          "mins": 1,
+          "options": [
+            "Warmer seas",
+            "Fishing"
+          ]
+        },
+        {
+          "q": "Mangrove roots help by:",
+          "a": "Slowing waves",
+          "mins": 1,
+          "options": [
+            "Slowing waves",
+            "Making sand"
+          ]
+        },
+        {
+          "q": "Give one human threat to coastal ecosystems.",
+          "a": "Tourism, pollution, development, aquaculture",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Causes of coastal flooding",
+          "bullets": [
+            "Storm surges",
+            "Sea-level rise",
+            "High tides and heavy rain together"
+          ],
+          "note": "Low-lying coasts like Bangladesh and the Netherlands are most at risk."
+        },
+        {
+          "heading": "Storm surges",
+          "bullets": [
+            "Low pressure raises the sea surface",
+            "Strong onshore winds push water",
+            "Funnel-shaped seas make it higher"
+          ],
+          "note": "North Sea surge, 31 January to 1 February 1953: over 300 deaths in England.",
+          "model": {
+            "problem": "Explain how a storm surge happens. (3 marks)",
+            "steps": [
+              "Low pressure lets the sea surface rise (1)",
+              "Strong winds push water towards the coast (1)",
+              "Narrowing seas or estuaries funnel water higher, especially at high tide (1)"
+            ],
+            "answer": "Three linked points"
+          }
+        },
+        {
+          "heading": "Conflicts",
+          "bullets": [
+            "Tourism, housing, industry, conservation",
+            "Fishing and ports",
+            "Who pays for defences?"
+          ],
+          "note": "Map the stakeholders.",
+          "diagram": {
+            "centre": "Coastal conflict",
+            "items": [
+              "homeowners",
+              "tourism businesses",
+              "conservation groups",
+              "farmers",
+              "port and industry",
+              "local council"
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Low air pressure makes sea level:",
+            "options": [
+              "Fall",
+              "Rise",
+              "Stay the same"
+            ],
+            "answer": 1,
+            "why": "Less air pressing down lets the sea surface rise."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why sea-level rise increases flood risk. (2 marks)",
+          "a": "Higher average sea levels (1) mean surges and high tides reach further inland and overtop defences more often (1)",
+          "mins": 3,
+          "model": "Cause: warming water expands; ice melts.\nEffect: higher sea.\nRisk: surges reach further."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Exam practice: (a) State two causes of coastal flooding. (2) (b) Explain why some coastal areas are vulnerable to flooding. (4) (c) Analyse the conflicts between two users of a coastline. (6)",
+          "a": "(a) storm surge, sea-level rise (b) low-lying, dense population, poverty, little protection (c) two users' needs, why they clash, effects",
+          "mins": 20,
+          "model": "Teacher plans (c) using the stakeholder diagram."
+        },
+        {
+          "q": "Extend: Explain coastal squeeze. (3 marks)",
+          "a": "Rising sea pushes habitats inland (1); sea walls block them (1); salt marshes are lost (1)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A storm surge is caused by low pressure and:",
+          "a": "Strong winds",
+          "mins": 1,
+          "options": [
+            "Strong winds",
+            "Earthquakes"
+          ]
+        },
+        {
+          "q": "Big question: who should decide how a coast is used?",
+          "a": "Through planning that hears all stakeholders, balancing safety, livelihoods and conservation",
+          "mins": 2
+        }
+      ],
+      "homework": "Choose a stretch of UK coast and list four stakeholders and what each wants.",
+      "send": "SEND: stakeholder cards. EAL: glossary. Stretch: research the 2013 North Sea surge.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.3",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Portal geography y10 lesson 26 (AQA) adapted"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "storm surge sea wall waves",
+          "alt": "Waves overtopping a sea wall",
+          "for": "hook"
+        },
+        {
+          "find": "caravan park clifftop",
+          "alt": "A caravan park near a cliff edge",
+          "for": "teach:3"
+        },
+        {
+          "find": "Thames Barrier",
+          "alt": "The Thames Barrier",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 61,
+      "title": "Case study: coastal management in Bangladesh, a developing country (2.3)",
+      "bigQuestion": "How do you protect a coast when millions live below the height of a storm surge?",
+      "objectives": [
+        "To understand coastal threats and management in Bangladesh as a developing-country case study"
+      ],
+      "successCriteria": [
+        "All: describe why Bangladesh's coast is vulnerable",
+        "Most: explain three management strategies",
+        "Some: compare with Holderness and evaluate success"
+      ],
+      "crossCurricular": "Science: storms and pressure",
+      "smsc": "Social: community volunteers saving lives",
+      "keywords": [
+        {
+          "term": "delta",
+          "def": "low, flat land at a river mouth built from deposited sediment"
+        },
+        {
+          "term": "polder",
+          "def": "low land protected by embankments"
+        },
+        {
+          "term": "cyclone shelter",
+          "def": "a raised, strong building where people shelter in storms"
+        },
+        {
+          "term": "early warning system",
+          "def": "a way to alert people before a hazard"
+        },
+        {
+          "term": "vulnerability",
+          "def": "how likely people are to be harmed"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Bangladesh is one of the most densely populated countries on Earth and much of it is barely above sea level. What would you do first?"
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ taught that the believers are like one body in their care for one another (Sahih al-Bukhari and Muslim). Bangladesh's volunteer warning teams show how community care saves lives.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The Mappleton scheme used two:",
+          "a": "Rock groynes",
+          "mins": 1,
+          "options": [
+            "Rock groynes",
+            "Sea walls"
+          ]
+        },
+        {
+          "q": "The terminal groyne effect increases erosion:",
+          "a": "Downdrift",
+          "mins": 1,
+          "options": [
+            "Downdrift",
+            "Updrift"
+          ]
+        },
+        {
+          "q": "Name one soft engineering method.",
+          "a": "Beach nourishment, dune regeneration, managed retreat, planting mangroves",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why vulnerable?",
+          "bullets": [
+            "Ganges-Brahmaputra delta: low and flat",
+            "Funnel-shaped Bay of Bengal boosts surges",
+            "Dense population; many poor families"
+          ],
+          "note": "Cyclone Bhola (1970) killed hundreds of thousands. Case studies are suggestions until the school confirms its own (TO CONFIRM)."
+        },
+        {
+          "heading": "Management strategies",
+          "bullets": [
+            "Embankments and polders since the 1960s",
+            "Thousands of cyclone shelters",
+            "Mangrove planting (Sundarbans)"
+          ],
+          "note": "A volunteer Cyclone Preparedness Programme spreads warnings."
+        },
+        {
+          "heading": "Has it worked?",
+          "bullets": [
+            "Cyclone Sidr (2007): about 3,400 deaths",
+            "Far fewer than in 1970",
+            "But salt water, erosion and poverty remain"
+          ],
+          "note": "Warnings and shelters save lives; livelihoods still suffer.",
+          "compare": {
+            "left": {
+              "title": "Holderness (developed)",
+              "points": [
+                "erosion of soft cliffs",
+                "rock groynes, revetments",
+                "millions of pounds per scheme"
+              ]
+            },
+            "right": {
+              "title": "Bangladesh (developing)",
+              "points": [
+                "surges and flooding",
+                "embankments, shelters, mangroves, warnings",
+                "low-cost community measures"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Explain a strategy",
+          "bullets": [
+            "Point, explain, evidence"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain how cyclone shelters reduce deaths. (3 marks)",
+            "steps": [
+              "Raised, strong buildings above surge level (1)",
+              "Early warnings tell people to go there (1)",
+              "So people escape flood water; deaths fell between 1970 and 2007 (1)"
+            ],
+            "answer": "Three linked points"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Mangrove planting is:",
+            "options": [
+              "Hard engineering",
+              "Soft engineering",
+              "Neither"
+            ],
+            "answer": 1,
+            "why": "It works with nature to absorb wave energy."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why Bangladesh is vulnerable to coastal flooding. (4 marks)",
+          "a": "Low-lying delta (1) with a funnel-shaped bay that amplifies surges (1); dense population (1) and poverty limit protection (1)",
+          "mins": 4,
+          "model": "Physical: low delta + funnel bay.\nHuman: many people + poverty.\nTwo of each = 4 marks."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Case study fact file, then: 'Assess the success of coastal management in a named area in a developing or emerging country.' (8 marks) Portal response box.",
+          "a": "Specific Bangladesh evidence; strengths and limits; judgement",
+          "mins": 20,
+          "model": "Teacher plans the answer with the class."
+        },
+        {
+          "q": "Extend: Compare management at Holderness and in Bangladesh. (4 marks)",
+          "a": "Different threats, costs and methods; both face sea-level rise",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A polder is:",
+          "a": "Low land protected by embankments",
+          "mins": 1,
+          "options": [
+            "Low land protected by embankments",
+            "A cyclone"
+          ]
+        },
+        {
+          "q": "Big question: how do you protect millions below surge height?",
+          "a": "Combine embankments, mangroves, shelters and early warnings with community volunteers",
+          "mins": 2
+        }
+      ],
+      "homework": "Add Bangladesh to your case study recall table with five specific facts.",
+      "send": "SEND: fact file prompts. EAL: glossary. Stretch: research the Maldives sea wall as another example. Case studies are suggestions until the school confirms its own (TO CONFIRM).",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments) 2.3 (case study: developing or emerging country)",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Case study recall table (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sundarbans mangrove forest",
+          "alt": "The Sundarbans mangrove forest",
+          "for": "teach:2"
+        },
+        {
+          "find": "cyclone shelter Bangladesh",
+          "alt": "A cyclone shelter in Bangladesh",
+          "for": "hook"
+        },
+        {
+          "find": "Bay of Bengal satellite",
+          "alt": "The Bay of Bengal from space",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Coastal environments (2.1 to 2.3)",
+      "n": 62,
+      "title": "Coastal environments: unit quiz and 8-mark practice",
+      "bigQuestion": "What do you now know well, and what still needs repair?",
+      "objectives": [
+        "To understand how secure our knowledge of coastal environments is and improve exam technique"
+      ],
+      "successCriteria": [
+        "All: complete the unit quiz",
+        "Most: answer an 8-mark question with a clear judgement",
+        "Some: use precise case study detail throughout"
+      ],
+      "crossCurricular": "English: extended evaluative writing",
+      "smsc": "Moral: honesty in self-assessment",
+      "keywords": [
+        {
+          "term": "command word",
+          "def": "the instruction word in a question"
+        },
+        {
+          "term": "assess",
+          "def": "weigh up and judge importance"
+        },
+        {
+          "term": "evaluate",
+          "def": "judge success or value with evidence"
+        },
+        {
+          "term": "substantiated",
+          "def": "supported by evidence"
+        },
+        {
+          "term": "repair",
+          "def": "fixing gaps in knowledge"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which coastal topic would you least like to see in the exam? Why? That is where we start."
+      },
+      "starter": [
+        {
+          "q": "A polder is:",
+          "a": "Low land protected by embankments",
+          "mins": 1,
+          "options": [
+            "Low land protected by embankments",
+            "A spit"
+          ]
+        },
+        {
+          "q": "Old Harry Rocks is a:",
+          "a": "Stack",
+          "mins": 1,
+          "options": [
+            "Stack",
+            "Bar"
+          ]
+        },
+        {
+          "q": "What is managed retreat?",
+          "a": "Letting low-value land flood by moving the defence line inland",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Unit map",
+          "bullets": [
+            "2.1 processes and landforms",
+            "2.2 ecosystems",
+            "2.3 conflicts, flooding, management, case studies"
+          ],
+          "note": "Recap.",
+          "diagram": {
+            "centre": "Coastal environments",
+            "items": [
+              "waves",
+              "erosion",
+              "landforms",
+              "ecosystems",
+              "flooding",
+              "management",
+              "Holderness",
+              "Bangladesh"
+            ]
+          }
+        },
+        {
+          "heading": "8-mark technique",
+          "bullets": [
+            "Plan 2 minutes",
+            "Both sides with evidence",
+            "Judgement linked to criteria"
+          ],
+          "note": "About a mark a minute."
+        },
+        {
+          "heading": "Using the levels",
+          "bullets": [
+            "Level 1: simple points",
+            "Level 2: explained, some detail",
+            "Level 3: detailed, balanced, substantiated"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Turn a Level 2 sentence into Level 3",
+            "steps": [
+              "Level 2: 'Groynes protect the beach.'",
+              "Add place: 'At Mappleton, two rock groynes built in 1991 ...'",
+              "Add evaluation: '... protected the village but increased erosion at Cowden.'"
+            ],
+            "answer": "Specific, balanced and linked to a judgement"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "'Evaluate' asks you to:",
+            "options": [
+              "List facts",
+              "Judge success with evidence",
+              "Draw a diagram"
+            ],
+            "answer": 1,
+            "why": "Evaluate means weigh up and reach a substantiated judgement."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Upgrade this answer: 'Mangroves are good because they protect the coast.' (2 marks)",
+          "a": "Mangrove roots absorb wave energy (1), reducing storm surge damage, for example in the Sundarbans, Bangladesh (1)",
+          "mins": 2,
+          "model": "Add how: roots absorb waves.\nAdd where: Sundarbans.\nNow it is explained and located."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Unit quiz: answer the 15 questions on the portal (Topic 2).",
+          "a": "Answers on the portal quiz key",
+          "mins": 15,
+          "model": "Teacher does question 1 aloud."
+        },
+        {
+          "q": "Extend: 'Assess the importance of geology in the formation of coastal landforms.' (8 marks) Timed: 10 minutes.",
+          "a": "Hard and soft rock, discordant coasts, joints; other factors (waves, processes); judgement",
+          "mins": 11
+        },
+        {
+          "q": "Stretch: Write a repair list of three weak areas from your quiz with one action each.",
+          "a": "Specific topics and actions",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A substantiated judgement is:",
+          "a": "Supported by evidence",
+          "mins": 1,
+          "options": [
+            "Supported by evidence",
+            "A guess"
+          ]
+        },
+        {
+          "q": "Big question: what needs repair?",
+          "a": "A personal, specific list from the quiz and 8-mark feedback",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete one action from your repair list and redo the quiz questions you got wrong.",
+      "send": "SEND: quiz read aloud; 8-mark frame. EAL: command word glossary. Stretch: attempt a second 8-mark on ecosystems.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Topic 2 (Coastal environments)",
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 2); TGA Year 10 pack, Geography (4GE1), Spring 2",
+        "Coastal environments unit quiz, 15 questions (portal assessment)",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "8-mark level descriptors (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Durdle Door",
+          "alt": "Durdle Door",
+          "for": "hook"
+        },
+        {
+          "find": "Holderness coast cliff erosion",
+          "alt": "Holderness cliffs",
+          "for": "teach:3"
+        },
+        {
+          "find": "exam hall desks",
+          "alt": "An exam room",
+          "for": "keywords"
         }
       ]
     }

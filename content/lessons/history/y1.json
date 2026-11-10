@@ -2,7 +2,7 @@
   "subject": "History",
   "year": "y1",
   "board": "National Curriculum",
-  "source": "National Curriculum KS1 (changes within living memory); no school Drive history material found for Y1, written from scratch | Spring 1 2027 (lesson 5): Tarbiyyah Primary Year 1 curriculum map and History Long Term Plan 2023-24 (Cornerstones Moon Zoom!), TGA Year 1 Curriculum Pack (Topic)",
+  "source": "National Curriculum KS1 (changes within living memory); no school Drive history material found for Y1, written from scratch | Spring 1 2027 (lesson 5): Tarbiyyah Primary Year 1 curriculum map and History Long Term Plan 2023-24 (Cornerstones Moon Zoom!), TGA Year 1 Curriculum Pack (Topic) | Spring 2 2027 (lessons 2 to 4 upgraded): TGA Year 1 Curriculum Pack, Topic, Memory Box",
   "lessons": [
     {
       "unit": "Unit 1: Then and now",
@@ -92,265 +92,662 @@
       "send": "SEND/EAL: use picture cards and gestures for past, present, future and accept pointing as an answer. Stretch: add the words 'last week' and 'next week' to the sorting."
     },
     {
-      "unit": "Unit 1: Then and now",
+      "unit": "Spring 2: Childhood within living memory (Memory Box)",
       "n": 2,
       "title": "My own timeline",
-      "duration": 30,
+      "bigQuestion": "How have you changed since you were a baby?",
       "objectives": [
-        "Put events from my own life in order",
-        "Use words such as baby, toddler and now"
+        "To understand how a timeline shows the order of our life"
       ],
+      "successCriteria": [
+        "All: order three pictures from baby to now",
+        "Most: use before, after and now",
+        "Some: say one way you have changed"
+      ],
+      "crossCurricular": "Maths: ordering numbers and ages",
+      "smsc": "Spiritual: thanking Allah for growing and learning",
       "keywords": [
         {
           "term": "timeline",
-          "def": "a line that puts events in the order they happened"
+          "def": "a line that shows things in time order"
         },
         {
           "term": "baby",
           "def": "a very young child"
         },
         {
-          "term": "order",
-          "def": "which comes first, next and last"
+          "term": "toddler",
+          "def": "a small child learning to walk"
         },
         {
-          "term": "age",
-          "def": "how many years old you are"
+          "term": "before",
+          "def": "earlier"
+        },
+        {
+          "term": "after",
+          "def": "later"
+        },
+        {
+          "term": "now",
+          "def": "at this time"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What could you do as a baby? What can you do now?"
+      },
+      "islamicLink": {
+        "text": "Allah says He created us weak, then gave us strength (Ar-Rum 30:54). We were babies who could do nothing, and now we can walk, talk and learn the Qur'an. We thank Allah for each stage.",
+        "at": "start"
+      },
       "starter": [
-        "Is yesterday in the past or the future?",
-        "Name one old object and one new object.",
-        "What word do we use for what is happening now?"
+        {
+          "q": "Which is a material: wood or a cat?",
+          "a": "Wood",
+          "mins": 1,
+          "options": [
+            "Wood",
+            "A cat"
+          ]
+        },
+        {
+          "q": "The first person on the Moon was Neil ...",
+          "a": "Armstrong",
+          "mins": 1,
+          "options": [
+            "Armstrong",
+            "Anning"
+          ]
+        },
+        {
+          "q": "Name one season.",
+          "a": "Spring, summer, autumn or winter",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Changes in me",
+          "heading": "Life in order",
           "bullets": [
-            "I was a baby",
-            "Then I learned to walk",
-            "Now I am at school"
+            "Baby, toddler, child",
+            "Each comes after the one before",
+            "We grow older every day"
           ],
-          "note": "Say bismillah and thank Allah for how we grow. Show three pictures of a child as a baby, a toddler and a school child (photographs, not drawings). Ask what changed."
+          "note": "Use objects, not people: a baby bottle, small shoes, a school bag.",
+          "timeline": [
+            {
+              "label": "Baby",
+              "text": "a bottle and a rattle"
+            },
+            {
+              "label": "Toddler",
+              "text": "first small shoes"
+            },
+            {
+              "label": "Now",
+              "text": "a school bag and books"
+            }
+          ]
         },
         {
-          "heading": "What is a timeline?",
+          "heading": "Time words",
           "bullets": [
-            "A timeline shows events in order",
-            "First, next, then, now",
-            "The earliest event goes on the left"
+            "Before",
+            "After",
+            "Now"
           ],
-          "note": "Model a timeline on screen using a strip of paper: Baby, Toddler, Reception, Year 1. Point left to right as you read."
+          "note": "Model: 'Before I could walk, I crawled. Now I can run.'"
         },
         {
-          "heading": "Using age as a clue",
+          "heading": "How I changed",
           "bullets": [
-            "At 0 I was a baby",
-            "At 1 I started to walk",
-            "At 6 I am in Year 1"
+            "Bigger and taller",
+            "I can talk and read",
+            "I learn surahs"
           ],
-          "note": "Link ages to events. Ask pupils: what could you not do as a baby but can do now? Collect answers such as walk, read, write."
+          "note": "Ask: what can you do now that you could not do as a baby?"
         },
         {
-          "heading": "Photographs are clues",
+          "heading": "Check",
           "bullets": [
-            "Old photos show how we looked",
-            "They show clothes and places",
-            "They help us find out about the past"
+            "Vote in the Teams poll"
           ],
-          "note": "Show a baby photo and a recent photo. Ask what clues tell us which is older. Misconception: the photo that is bigger or colourful is older; look at the child's size."
+          "note": "Share the results.",
+          "check": {
+            "q": "Which comes first?",
+            "options": [
+              "Toddler",
+              "Baby",
+              "Child"
+            ],
+            "answer": 1,
+            "why": "We are babies first, then toddlers, then children."
+          }
         }
       ],
       "practice": [
-        "Order these: Year 1, baby, toddler. Which comes first?",
-        "What could you do when you were a baby? What can you do now?",
-        "Point to where 'now' goes on our class timeline"
-      ],
-      "independent": [
-        "Draw one object for each age on a three-box timeline: a baby's rattle, a toddler's shoe, your school bag now",
-        "Write the words first, next, now under the boxes",
-        "Tell your partner one new thing you can do now"
-      ],
-      "exit": [
-        "Which comes first on your timeline: baby or Year 1?",
-        "Say one thing you can do now that you could not do as a baby."
-      ],
-      "homework": "Find one baby photo or baby item at home and bring it (or describe it) to show your teacher.",
-      "send": "SEND/EAL: provide a pre-drawn three-box timeline with pictures to cut and stick or drag. Stretch: add a fourth box for 'when I am grown up' and label it future."
-    },
-    {
-      "unit": "Unit 1: Then and now",
-      "n": 3,
-      "title": "Toys from long ago and toys today",
-      "duration": 30,
-      "objectives": [
-        "Say how toys today are different from toys in the past",
-        "Use the words old and new to compare toys"
-      ],
-      "keywords": [
         {
-          "term": "toy",
-          "def": "an object children play with"
+          "q": "Put in order: child, baby, toddler.",
+          "a": "Baby, toddler, child",
+          "mins": 1,
+          "model": "Who is youngest? The baby.\nWho walks next? The toddler.\nWho goes to school? The child.\nBaby, toddler, child."
         },
         {
-          "term": "wooden",
-          "def": "made from wood"
+          "q": "Finish: Before I could walk, I ...",
+          "a": "crawled",
+          "mins": 1
         },
         {
-          "term": "plastic",
-          "def": "a light material made in factories"
-        },
-        {
-          "term": "compare",
-          "def": "to say how things are the same and different"
+          "q": "Finish: Now I can ...",
+          "a": "For example: read, run, say Al-Fatihah",
+          "mins": 1
         }
       ],
+      "independent": [
+        {
+          "q": "Core: Draw three things on your timeline: a baby bottle, small shoes, your school bag. Write baby, toddler, now.",
+          "a": "Three pictures in order with labels",
+          "mins": 5,
+          "model": "Teacher shows it first: bottle on the left, shoes in the middle, bag on the right; writes the three labels."
+        },
+        {
+          "q": "Extend: Write one sentence with 'now'.",
+          "a": "For example: Now I can ride a bike",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: What will you be able to do next year?",
+          "a": "For example: read longer books",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A timeline shows things in:",
+          "a": "Time order",
+          "mins": 1,
+          "options": [
+            "Time order",
+            "Size order"
+          ]
+        },
+        {
+          "q": "Big question: how have you changed since you were a baby?",
+          "a": "For example: I am taller and I can talk, read and pray",
+          "mins": 1
+        }
+      ],
+      "homework": "Put five photos of yourself in order with your family and talk about the changes (keep the photos at home; do not upload them).",
+      "send": "SEND: three picture cards to order. EAL: before, after, now with pictures. Stretch: add years to the timeline.",
+      "resources": [
+        "Tarbiyyah Primary Year 1 curriculum map and long-term plans 2023-24; TGA Year 1 Curriculum Pack, Topic, Spring 2 Memory Box (companion: Human Senses) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "My timeline sheet with three boxes (portal printable)",
+        "Coloured pencils",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "baby bottle",
+          "alt": "A baby bottle",
+          "for": "teach:1"
+        },
+        {
+          "find": "children's school bag",
+          "alt": "A school bag",
+          "for": "keywords"
+        },
+        {
+          "find": "baby shoes pair",
+          "alt": "Small baby shoes",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Childhood within living memory (Memory Box)",
+      "n": 3,
+      "title": "Toys long ago and today",
+      "bigQuestion": "Would a toy from long ago still be fun today?",
+      "objectives": [
+        "To understand how toys have changed within living memory"
+      ],
+      "successCriteria": [
+        "All: say if a toy is old or new",
+        "Most: say what an old toy is made of",
+        "Some: give one way toys have changed"
+      ],
+      "crossCurricular": "Science: materials (wood, metal, plastic) from Spring 1",
+      "smsc": "Social: respect for elders and their memories",
+      "keywords": [
+        {
+          "term": "artefact",
+          "def": "an object from the past"
+        },
+        {
+          "term": "old",
+          "def": "made a long time ago"
+        },
+        {
+          "term": "new",
+          "def": "made recently"
+        },
+        {
+          "term": "living memory",
+          "def": "what people alive now can remember"
+        },
+        {
+          "term": "grandparent",
+          "def": "the parent of your mum or dad"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What toy would your grandparent have played with when they were six?"
+      },
+      "islamicLink": {
+        "text": "Islam teaches us to honour our elders. Asking grandparents about their childhood is a kind way to spend time with them and learn from them.",
+        "at": "start"
+      },
       "starter": [
-        "What is a timeline?",
-        "Which comes first: baby or Year 1?",
-        "Say a sentence using the word 'yesterday'."
+        {
+          "q": "Which comes first: baby or toddler?",
+          "a": "Baby",
+          "mins": 1,
+          "options": [
+            "Baby",
+            "Toddler"
+          ]
+        },
+        {
+          "q": "We hear with our:",
+          "a": "Ears",
+          "mins": 1,
+          "options": [
+            "Ears",
+            "Eyes"
+          ]
+        },
+        {
+          "q": "Finish: Now I can ...",
+          "a": "For example: read, run, pray",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Toys long ago",
+          "heading": "What is an artefact?",
           "bullets": [
-            "Many old toys were made of wood or metal",
-            "Some were made at home",
-            "Children played outside a lot"
+            "An object from the past",
+            "It tells us about life then",
+            "We look closely and ask questions"
           ],
-          "note": "Show pictures of a wooden spinning top, a wooden doll or a tin toy, and a hoop and stick. Say that these toys were used by children many years ago, before our grandparents were born in some cases."
+          "note": "Hold up an object. Ask: is it old or new? How can we tell?"
+        },
+        {
+          "heading": "Old toys",
+          "bullets": [
+            "Wooden spinning tops",
+            "Marbles and skipping ropes",
+            "Metal toy cars, board games"
+          ],
+          "note": "Many toys long ago were wood, metal or cloth. Show photos of objects only."
         },
         {
           "heading": "Toys today",
           "bullets": [
-            "Many toys today are made of plastic",
-            "Some toys use batteries or screens",
-            "Toys are made in big factories"
+            "Plastic toys",
+            "Toys with batteries",
+            "Games on screens"
           ],
-          "note": "Show a plastic building brick set and a battery toy. Ask: which materials can you see? Introduce the word 'material'."
+          "note": "Many toys today are plastic. Some need batteries or a screen.",
+          "compare": {
+            "left": {
+              "title": "Long ago",
+              "points": [
+                "wood, metal, cloth",
+                "no batteries",
+                "played outside more"
+              ]
+            },
+            "right": {
+              "title": "Today",
+              "points": [
+                "often plastic",
+                "batteries and screens",
+                "played indoors more"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Same and different",
+          "heading": "Check",
           "bullets": [
-            "Same: children play and have fun",
-            "Different: materials and how they work",
-            "Different: old toys often have no batteries"
+            "Vote in the Teams poll"
           ],
-          "note": "Make a two-column chart 'old toy' and 'new toy' live on screen. Accept simple answers. Misconception: children long ago had no toys; they did, but different ones."
-        },
-        {
-          "heading": "Looking after toys",
-          "bullets": [
-            "We share our toys",
-            "We tidy up",
-            "We do not waste"
-          ],
-          "note": "Link to adab: in Islam we are taught to be kind, to share and not to waste. Keep this brief and positive."
+          "note": "Share the results.",
+          "check": {
+            "q": "A wooden spinning top is most likely:",
+            "options": [
+              "Very new",
+              "Old",
+              "From the future"
+            ],
+            "answer": 1,
+            "why": "Wooden tops were common long ago. Some new ones are still made, so we look for other clues."
+          }
         }
       ],
       "practice": [
-        "Is a wooden spinning top an old toy or a new toy?",
-        "Name one material a toy can be made of.",
-        "Say one way an old toy is different from a toy today."
+        {
+          "q": "Old or new: a tablet game?",
+          "a": "New",
+          "mins": 1,
+          "model": "Does it need a battery or a screen?\nYes.\nScreens are new.\nSo it is new."
+        },
+        {
+          "q": "What is a wooden top made of?",
+          "a": "Wood",
+          "mins": 1
+        },
+        {
+          "q": "Old or new: marbles in a cloth bag?",
+          "a": "Old (they are still played today too)",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Draw one old toy and one new toy",
-        "Write old and new under your pictures",
-        "Say one sentence: 'The old toy is made of ... The new toy is made of ...'"
+        {
+          "q": "Core: Sort six toy pictures into 'long ago' and 'today'.",
+          "a": "Long ago: wooden top, marbles, skipping rope; today: tablet game, plastic robot, remote-control car",
+          "mins": 5,
+          "model": "Teacher does the first card: wooden top, made of wood, no battery, goes in 'long ago'."
+        },
+        {
+          "q": "Extend: Write what one old toy is made of.",
+          "a": "For example: The top is made of wood",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which toy would you choose and why?",
+          "a": "Any toy with a reason",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Name one thing that is the same about old toys and new toys.",
-        "Name one thing that is different."
+        {
+          "q": "An artefact is:",
+          "a": "An object from the past",
+          "mins": 1,
+          "options": [
+            "An object from the past",
+            "A new game"
+          ]
+        },
+        {
+          "q": "Big question: would a toy from long ago still be fun today?",
+          "a": "For example: yes, a spinning top is still fun because you can race it",
+          "mins": 1
+        }
       ],
-      "homework": "Choose your favourite toy at home. Find out what it is made of and tell your teacher.",
-      "send": "SEND/EAL: provide sentence frames 'The old toy is ...' with a word bank (wood, plastic, metal). Stretch: sort toys into wood, plastic and metal."
+      "homework": "Find an old object at home and ask who used it and when.",
+      "send": "SEND: real objects to hold and sort. EAL: old and new with pictures. Stretch: put three toys in order from oldest to newest.",
+      "resources": [
+        "Tarbiyyah Primary Year 1 curriculum map and long-term plans 2023-24; TGA Year 1 Curriculum Pack, Topic, Spring 2 Memory Box (companion: Human Senses) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Toy sorting cards, six pictures of objects (portal printable)",
+        "Any old object at home (with an adult's permission)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wooden spinning top toy",
+          "alt": "A wooden spinning top",
+          "for": "hook"
+        },
+        {
+          "find": "glass marbles",
+          "alt": "Glass marbles",
+          "for": "teach:2"
+        },
+        {
+          "find": "tin toy car",
+          "alt": "An old metal toy car",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Then and now",
+      "unit": "Spring 2: Childhood within living memory (Memory Box)",
       "n": 4,
-      "title": "Asking questions about the past",
-      "duration": 30,
+      "title": "Asking an elder about the past",
+      "bigQuestion": "What question would you most like to ask your grandparent about when they were young?",
       "objectives": [
-        "Ask a question to find out about the past",
-        "Understand that people can tell us about the past"
+        "To understand how asking older people questions helps us learn about the past"
       ],
+      "successCriteria": [
+        "All: ask one question about the past",
+        "Most: plan three good questions",
+        "Some: compare their answer with life now"
+      ],
+      "crossCurricular": "English: writing questions with question marks",
+      "smsc": "Moral: adab with elders, listening and thanking",
       "keywords": [
         {
           "term": "question",
-          "def": "something we ask to find out an answer"
+          "def": "something we ask to find out"
         },
         {
-          "term": "grandparent",
-          "def": "the mother or father of your parent"
+          "term": "interview",
+          "def": "asking someone questions and listening"
         },
         {
-          "term": "remember",
-          "def": "to keep something in your mind from the past"
+          "term": "then",
+          "def": "in the past"
         },
         {
-          "term": "evidence",
-          "def": "clues that help us find out"
+          "term": "now",
+          "def": "at this time"
+        },
+        {
+          "term": "change",
+          "def": "when something becomes different"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the oldest thing you know about your family?"
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ taught us to show mercy to the young and respect to the old. Listening to our elders is part of good manners in Islam.",
+        "at": "start"
+      },
       "starter": [
-        "Name one old toy.",
-        "Name one new toy.",
-        "What is a toy made of?"
+        {
+          "q": "An artefact is an object from the ...",
+          "a": "past",
+          "mins": 1,
+          "options": [
+            "past",
+            "future"
+          ]
+        },
+        {
+          "q": "Many old toys were made of:",
+          "a": "Wood or metal",
+          "mins": 1,
+          "options": [
+            "Wood or metal",
+            "Only plastic"
+          ]
+        },
+        {
+          "q": "Name one sense.",
+          "a": "Sight, hearing, touch, taste or smell",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "History detectives",
+          "heading": "Question words",
           "bullets": [
-            "Detectives look for clues",
-            "Clues can be objects, photos or people",
-            "People remember the past"
+            "What? Where? When?",
+            "Who? How?",
+            "Questions end with ?"
           ],
-          "note": "Begin with bismillah. Remind pupils of the detective idea from lesson 1. Explain that the best clue is sometimes a person who was there."
+          "note": "Model a question: 'What games did you play?'"
         },
         {
-          "heading": "Asking good questions",
+          "heading": "Good interview manners",
           "bullets": [
-            "What did you play with?",
-            "Who did you play with?",
-            "Where did you play?"
+            "Say salaam and smile",
+            "Listen, do not interrupt",
+            "Say jazakallahu khayran"
           ],
-          "note": "Model question words What, Who, Where. Show how a question starts with a capital letter and ends with a question mark. Ask pupils to make up their own."
+          "note": "Adab: speak gently and listen to elders."
         },
         {
-          "heading": "Listening to answers",
+          "heading": "Plan three questions",
           "bullets": [
-            "Listen carefully",
-            "Say thank you",
-            "Remember what you hear"
+            "What games did you play?",
+            "What was your school like?",
+            "How did you talk to friends far away?"
           ],
-          "note": "Role-play with a pretend grandparent (you). Answer in simple terms, e.g. 'I played with marbles and a skipping rope.' Show respect to elders as part of adab."
+          "note": "Pupils choose or change the questions.",
+          "model": {
+            "problem": "Turn 'school' into a question",
+            "steps": [
+              "Pick a question word: what",
+              "Add the idea: your school",
+              "Add ?"
+            ],
+            "answer": "What was your school like?"
+          }
         },
         {
-          "heading": "What we found out",
+          "heading": "Then and now",
           "bullets": [
-            "Old people remember games from long ago",
-            "Some old games need no toys",
-            "Some games are still played today"
+            "Then: letters and phone boxes",
+            "Now: video calls",
+            "Some things stay the same"
           ],
-          "note": "Mention skipping, hopscotch and marbles as games still played. Ask: why do you think they are still popular?"
+          "note": "Many grandparents wrote letters. Now we can video call."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which is a question?",
+            "options": [
+              "I like toys.",
+              "What toys did you have?",
+              "Toys are fun."
+            ],
+            "answer": 1,
+            "why": "A question asks something and ends with a question mark."
+          }
         }
       ],
       "practice": [
-        "Choose a question word to start: ___ did you play with?",
-        "Who could you ask to find out about toys long ago?",
-        "Practise asking your partner: What is your favourite game?"
+        {
+          "q": "Make a question with 'where'.",
+          "a": "For example: Where did you go to school?",
+          "mins": 1,
+          "model": "Start with 'Where'.\nAdd the idea: go to school.\nEnd with a question mark.\nWhere did you go to school?"
+        },
+        {
+          "q": "Is 'I played marbles.' a question?",
+          "a": "No, it is a sentence",
+          "mins": 1
+        },
+        {
+          "q": "What do we say after the interview?",
+          "a": "Jazakallahu khayran (thank you)",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write or draw one question to ask a grandparent or older person about their toys",
-        "Draw the answer you think they will give",
-        "Say your question out loud to the class"
+        {
+          "q": "Core: Write three questions to ask a family elder on the question sheet.",
+          "a": "Three questions with question marks",
+          "mins": 5,
+          "model": "Teacher writes question 1 first: 'What games did you play?'"
+        },
+        {
+          "q": "Extend: Guess one answer your elder might give.",
+          "a": "For example: they played marbles outside",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Write one question about a change.",
+          "a": "For example: What is different now?",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Who can tell us about the past?",
-        "Say one question you could ask about toys long ago."
+        {
+          "q": "A question ends with:",
+          "a": "?",
+          "mins": 1,
+          "options": [
+            "?",
+            "."
+          ]
+        },
+        {
+          "q": "Big question: what would you most like to ask your grandparent?",
+          "a": "Any good question with a question word",
+          "mins": 1
+        }
       ],
-      "homework": "Ask an older person at home your question about toys and bring back one answer.",
-      "send": "SEND/EAL: provide a question starter strip (What / Who / Where) and allow drawing. Stretch: ask a second follow-up question beginning with Why."
+      "homework": "Interview an older relative using your three questions; draw or write one answer to share next lesson (a phone call or video call is fine).",
+      "send": "SEND: question starters on cards. EAL: what, where, when with pictures. Stretch: write a fourth question about the masjid long ago.",
+      "resources": [
+        "Tarbiyyah Primary Year 1 curriculum map and long-term plans 2023-24; TGA Year 1 Curriculum Pack, Topic, Spring 2 Memory Box (companion: Human Senses) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Interview question sheet with three lines (portal printable)",
+        "Pencil",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "red telephone box",
+          "alt": "A red telephone box from long ago",
+          "for": "teach:4"
+        },
+        {
+          "find": "old letters envelopes stamps",
+          "alt": "Old letters with stamps",
+          "for": "keywords"
+        },
+        {
+          "find": "rotary dial telephone",
+          "alt": "An old telephone with a dial",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Neil Armstrong and the Moon landing (Moon Zoom!)",

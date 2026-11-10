@@ -59,8 +59,18 @@ jobs:
       - name: Install LibreOffice (for PDF copies)
         uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
         with:
-          packages: libreoffice-impress libreoffice-writer fonts-liberation fonts-crosextra-carlito fonts-dejavu-core fonts-noto-core fonts-noto-naskh-arabic
-          version: "1"
+          packages: libreoffice-impress libreoffice-writer fonts-liberation fonts-crosextra-carlito fonts-dejavu-core fonts-noto-core
+          version: "2"
+
+      # Scheherazade New (OFL) for Qur'an text; Noto Naskh Arabic (other Arabic) comes with fonts-noto-core.
+      - name: Cache the Qur'an font
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/fonts/quran
+          key: quran-font-${{ hashFiles('scripts/lessons/install-quran-font.sh') }}
+
+      - name: Install the Qur'an font
+        run: bash scripts/lessons/install-quran-font.sh
 
       - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:

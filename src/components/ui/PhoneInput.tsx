@@ -20,12 +20,11 @@ export function Flag({ code, className = "" }: { code: string; className?: strin
   );
 }
 
-const OPTIONS: DropdownOption[] = DIAL_COUNTRIES.map((c, i) => ({
+const OPTIONS: DropdownOption[] = DIAL_COUNTRIES.map((c) => ({
   value: c.code,
   label: c.name,
   aside: `+${c.dial}`,
   icon: <Flag code={c.code} />,
-  group: i < 9 ? "Common" : "All countries",
   keywords: `+${c.dial} ${c.dial} ${c.code}`,
 }));
 

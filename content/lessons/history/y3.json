@@ -2,98 +2,248 @@
   "subject": "History",
   "year": "y3",
   "board": "National Curriculum",
-  "source": "National Curriculum KS2 (changes in Britain from the Stone Age to the Iron Age); no school Drive history material found for Y3, written from scratch | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 3 curriculum map and History Long Term Plan 2023-24 (Mighty Metals: History of Sports Tournaments); TGA Year 3 pack",
+  "source": "National Curriculum KS2 (changes in Britain from the Stone Age to the Iron Age); no school Drive history material found for Y3, written from scratch | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 3 curriculum map and History Long Term Plan 2023-24 (Mighty Metals: History of Sports Tournaments); TGA Year 3 pack | Spring 2 2027 (lessons 1, 3, 4 upgraded): TGA Year 3 pack, History and geography, Tribal Tales",
   "lessons": [
     {
-      "unit": "Unit 1: Stone Age to Iron Age Britain",
+      "unit": "Spring 2: Stone Age to Iron Age (Tribal Tales)",
       "n": 1,
-      "title": "What was prehistory? A timeline of early Britain",
-      "duration": 45,
+      "title": "What was the Stone Age?",
+      "bigQuestion": "How can we know about people who left no writing?",
       "objectives": [
-        "Explain what prehistory means",
-        "Place the Stone Age, Bronze Age and Iron Age in order on a timeline"
+        "To understand how archaeologists use evidence to find out about the Stone Age"
       ],
+      "successCriteria": [
+        "All: place the Stone Age at the start of a timeline",
+        "Most: say how hunter-gatherers found food",
+        "Some: explain what one artefact tells us"
+      ],
+      "crossCurricular": "Science: rocks such as flint (Year 3 Summer 2)",
+      "smsc": "Spiritual: wonder at how Allah gave people skill to survive",
       "keywords": [
         {
-          "term": "prehistory",
-          "def": "the time before people wrote down their history"
-        },
-        {
           "term": "Stone Age",
-          "def": "the long period when people made tools mostly from stone"
+          "def": "the long time when people made tools from stone"
         },
         {
-          "term": "Bronze Age",
-          "def": "the period when people began to make tools from bronze"
-        },
-        {
-          "term": "Iron Age",
-          "def": "the period when people made tools and weapons from iron"
+          "term": "hunter-gatherer",
+          "def": "a person who hunts animals and gathers plants for food"
         },
         {
           "term": "archaeologist",
-          "def": "a person who digs up and studies objects from the past"
+          "def": "someone who digs up and studies things from the past"
+        },
+        {
+          "term": "evidence",
+          "def": "clues that tell us what happened"
+        },
+        {
+          "term": "flint",
+          "def": "a hard stone that can be chipped to a sharp edge"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If someone dug up your bedroom in 5,000 years, what would they think about you?"
+      },
+      "islamicLink": {
+        "text": "Allah taught Adam the names of all things (Al-Baqarah 2:31). People have always been given minds to learn, make tools and care for the earth. History helps us see Allah's gifts to every generation.",
+        "at": "start"
+      },
       "starter": [
-        "What does BC stand for? (Before Christ, counting backwards)",
-        "Is 1666 a long time ago? How do you know?",
-        "What is a timeline for?"
+        {
+          "q": "Which came first: the ancient Olympics or the World Cup?",
+          "a": "The ancient Olympics",
+          "mins": 1,
+          "options": [
+            "Ancient Olympics",
+            "World Cup"
+          ]
+        },
+        {
+          "q": "BC dates are:",
+          "a": "Before the year 1",
+          "mins": 1,
+          "options": [
+            "Before the year 1",
+            "After the year 1"
+          ]
+        },
+        {
+          "q": "Name one material used to make tools today.",
+          "a": "For example: metal or plastic",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Bismillah: before writing",
+          "heading": "A very long time ago",
           "bullets": [
-            "Prehistory means before writing",
-            "People still lived, worked and made things",
-            "We learn from objects they left behind"
+            "Prehistory: before writing",
+            "Stone Age, Bronze Age, Iron Age",
+            "Each is named after a material for tools"
           ],
-          "note": "Start with bismillah and curiosity. Ask how we could find out about people who left no books. Collect ideas: bones, tools, buildings, paintings."
+          "note": "Build the timeline we will use all half term.",
+          "timeline": [
+            {
+              "label": "Before 4000 BC",
+              "text": "Stone Age hunter-gatherers"
+            },
+            {
+              "label": "About 4000 BC",
+              "text": "Farming begins in Britain"
+            },
+            {
+              "label": "About 2500 BC",
+              "text": "Bronze Age begins"
+            },
+            {
+              "label": "About 800 BC",
+              "text": "Iron Age begins"
+            },
+            {
+              "label": "AD 43",
+              "text": "The Romans invade"
+            }
+          ]
         },
         {
-          "heading": "Archaeologists",
+          "heading": "Hunter-gatherers",
           "bullets": [
-            "Archaeologists dig carefully in the ground",
-            "They find tools, bones and pottery",
-            "These finds are called artefacts"
+            "Hunted deer and wild boar",
+            "Gathered nuts, berries and roots",
+            "Moved with the seasons"
           ],
-          "note": "Show a picture of an archaeological dig. Emphasise careful recording: where an object is found matters as much as the object."
+          "note": "They did not farm. They followed food."
         },
         {
-          "heading": "Three big ages",
+          "heading": "Evidence",
           "bullets": [
-            "Stone Age: tools made of stone, bone and wood",
-            "Bronze Age: about 2500 BC to 800 BC",
-            "Iron Age: about 800 BC until the Romans came in AD 43"
+            "Flint tools and hand axes",
+            "Animal bones and burnt hearths",
+            "Remains of camps, like Star Carr in Yorkshire"
           ],
-          "note": "Dates are approximate and vary by source; present them as 'about'. Misconception: all people moved from one age to the next on the same day; changes happened slowly over hundreds of years."
+          "note": "Archaeologists dig carefully, record where things are, and ask questions."
         },
         {
-          "heading": "Counting BC",
+          "heading": "Reading an artefact",
           "bullets": [
-            "BC years count down towards AD 1",
-            "The bigger the BC number, the longer ago",
-            "2500 BC is earlier than 800 BC"
+            "What is it made of?",
+            "What was it used for?",
+            "What does it tell us?"
           ],
-          "note": "Draw a number line on screen. Practise: which is earlier, 3000 BC or 1000 BC? Many pupils think the smaller number is earlier."
+          "note": "Model with a flint hand axe.",
+          "model": {
+            "problem": "What does a flint hand axe tell us?",
+            "steps": [
+              "Made of: flint, a hard stone",
+              "Used for: cutting meat, wood and skins",
+              "So: people hunted and made their own tools"
+            ],
+            "answer": "Stone Age people were skilled toolmakers who hunted"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Hunter-gatherers got food by:",
+            "options": [
+              "Shopping",
+              "Hunting and gathering",
+              "Farming crops"
+            ],
+            "answer": 1,
+            "why": "Farming came later, in the New Stone Age (Neolithic)."
+          }
         }
       ],
       "practice": [
-        "Which is earlier: 2500 BC or 800 BC?",
-        "Put in order: Iron Age, Stone Age, Bronze Age.",
-        "Name one thing an archaeologist might find."
+        {
+          "q": "What can animal bones at a camp tell us?",
+          "a": "What animals people hunted and ate",
+          "mins": 2,
+          "model": "Find the clue: bones of deer.\nAsk: why are they here?\nAnswer: people ate deer.\nSo they hunted deer."
+        },
+        {
+          "q": "Why did hunter-gatherers move around?",
+          "a": "To follow animals and find plants in different seasons",
+          "mins": 2
+        },
+        {
+          "q": "Which age comes after the Stone Age?",
+          "a": "The Bronze Age",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Draw a timeline and mark the Stone Age, Bronze Age and Iron Age",
-        "Add the Romans arriving in AD 43",
-        "Write two sentences explaining what prehistory means"
+        {
+          "q": "Core: Look at three artefact photos (hand axe, antler tool, bone needle). For each, write what it was used for.",
+          "a": "Hand axe: cutting; antler tool: digging or a harpoon point; bone needle: sewing skins",
+          "mins": 9,
+          "model": "Teacher does the hand axe first using the three questions."
+        },
+        {
+          "q": "Extend: Write one sentence: 'Archaeologists know ... because ...'",
+          "a": "For example: Archaeologists know people hunted because they found animal bones",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: What can evidence NOT tell us about Stone Age people?",
+          "a": "For example: their names, what they said, what they believed",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What does prehistory mean?",
-        "Which age came after the Bronze Age?"
+        {
+          "q": "An archaeologist:",
+          "a": "Digs up and studies the past",
+          "mins": 1,
+          "options": [
+            "Digs up and studies the past",
+            "Writes stories"
+          ]
+        },
+        {
+          "q": "Big question: how can we know about people who left no writing?",
+          "a": "From evidence such as tools, bones and camps that archaeologists dig up and study",
+          "mins": 2
+        }
       ],
-      "homework": "Draw a simple picture of an object an archaeologist might find and write one sentence about what it was used for.",
-      "send": "SEND/EAL: colour-coded timeline with the ages already printed so pupils drag in pictures. Stretch: explain why historians use the word about with dates."
+      "homework": "Choose one object at home and write three things it would tell an archaeologist about you.",
+      "send": "SEND: artefact cards with a word bank. EAL: tool, hunt, gather with pictures. Stretch: research Star Carr and what was found there.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24 (Tribal Tales); TGA Year 3 pack, History and geography, Spring 2 (Cornerstones Maestro Tribal Tales: CHECK IN MAESTRO)",
+        "Stone Age artefact cards, three photos (portal printable)",
+        "Prehistory timeline strip for the unit (portal printable)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "flint hand axe",
+          "alt": "A flint hand axe",
+          "for": "teach:4"
+        },
+        {
+          "find": "bone needle prehistoric",
+          "alt": "A bone needle",
+          "for": "keywords"
+        },
+        {
+          "find": "archaeological excavation trench",
+          "alt": "An archaeological dig",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Stone Age to Iron Age Britain",
@@ -183,178 +333,455 @@
       "send": "SEND/EAL: picture word bank and sentence stems 'Stone Age people used ... to ...'. Stretch: explain one problem with finding food only by hunting and gathering."
     },
     {
-      "unit": "Unit 1: Stone Age to Iron Age Britain",
+      "unit": "Spring 2: Stone Age to Iron Age (Tribal Tales)",
       "n": 3,
-      "title": "The Neolithic revolution: farming and Skara Brae",
-      "duration": 45,
+      "title": "From hunting to farming: Skara Brae",
+      "bigQuestion": "Why would people stop moving and settle in one place?",
       "objectives": [
-        "Explain why farming changed how people lived",
-        "Describe what Skara Brae tells us about Stone Age homes"
+        "To understand how farming changed the way people lived in the New Stone Age"
       ],
+      "successCriteria": [
+        "All: say what changed when people farmed",
+        "Most: describe a home at Skara Brae",
+        "Some: explain why farming led to villages"
+      ],
+      "crossCurricular": "Geography: finding Orkney on the UK map",
+      "smsc": "Social: how families and villages work together",
       "keywords": [
         {
-          "term": "Neolithic",
-          "def": "the New Stone Age, when farming began in Britain"
-        },
-        {
           "term": "farming",
-          "def": "growing crops and keeping animals for food"
+          "def": "growing crops and keeping animals"
         },
         {
           "term": "settlement",
-          "def": "a place where people build homes and live"
+          "def": "a place where people live together"
+        },
+        {
+          "term": "Neolithic",
+          "def": "the New Stone Age, when farming began"
         },
         {
           "term": "Skara Brae",
-          "def": "a Stone Age village on Orkney in Scotland"
+          "def": "a Stone Age village on Orkney, Scotland"
+        },
+        {
+          "term": "dresser",
+          "def": "a stone shelf for keeping things"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather be a hunter-gatherer or a farmer? Why?"
+      },
       "starter": [
-        "Name two ways hunter-gatherers got food.",
-        "What does nomadic mean?",
-        "Which age comes before the Bronze Age?"
+        {
+          "q": "Hunter-gatherers got food by:",
+          "a": "Hunting and gathering",
+          "mins": 1,
+          "options": [
+            "Hunting and gathering",
+            "Farming"
+          ]
+        },
+        {
+          "q": "A flint hand axe was used for:",
+          "a": "Cutting",
+          "mins": 1,
+          "options": [
+            "Cutting",
+            "Writing"
+          ]
+        },
+        {
+          "q": "Which age came after the Stone Age?",
+          "a": "The Bronze Age",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "A big change: farming",
+          "heading": "A big change",
           "bullets": [
-            "Farming reached Britain about 6,000 years ago",
-            "People grew wheat and barley",
-            "They kept cows, sheep and pigs"
+            "Farming began about 6,000 years ago",
+            "Wheat, barley, sheep and cattle",
+            "People stayed in one place"
           ],
-          "note": "Bismillah. Explain that farming arrived in Britain around 4000 BC. Use 'about'. Ask: what is the advantage of growing food in one place?"
-        },
-        {
-          "heading": "Staying in one place",
-          "bullets": [
-            "Farmers needed to stay near their crops",
-            "They built permanent homes",
-            "Villages and tools for farming appeared"
-          ],
-          "note": "Contrast nomadic hunter-gatherers with settled farmers. Ask pupils what they would need if they stayed in one place: shelter, storage, tools."
+          "note": "The New Stone Age is called the Neolithic.",
+          "compare": {
+            "left": {
+              "title": "Hunter-gatherers",
+              "points": [
+                "moved with the seasons",
+                "wild food",
+                "small groups"
+              ]
+            },
+            "right": {
+              "title": "Farmers",
+              "points": [
+                "stayed in one place",
+                "grew crops, kept animals",
+                "villages"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
           "heading": "Skara Brae",
           "bullets": [
-            "Skara Brae is on Orkney, Scotland",
-            "It was built about 5,000 years ago",
-            "Houses were made from stone slabs"
+            "On Orkney, north of Scotland",
+            "Lived in about 3000 BC",
+            "Uncovered by a storm in 1850"
           ],
-          "note": "Skara Brae was lived in from about 3180 BC to 2500 BC. A storm in 1850 uncovered it. Show pictures of stone beds, dressers and a central hearth."
+          "note": "Show it on the UK map."
         },
         {
-          "heading": "What stone furniture tells us",
+          "heading": "Inside a house",
           "bullets": [
-            "Beds and shelves were made of stone",
-            "Each house had a central fireplace",
-            "Tools and jewellery were found there"
+            "Stone beds and a stone dresser",
+            "A hearth fire in the middle",
+            "Roofs probably of turf or skins"
           ],
-          "note": "Ask: what clues show people stayed there for a long time? Accept answers about furniture and storage. Misconception: stone furniture was uncomfortable; beds had heather and skins on top."
+          "note": "Stone furniture survived because there were few trees on Orkney.",
+          "model": {
+            "problem": "What does the stone dresser tell us?",
+            "steps": [
+              "It is a set of stone shelves",
+              "It faces the door",
+              "People kept and showed things on it"
+            ],
+            "answer": "They had belongings and settled homes"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Skara Brae is on:",
+            "options": [
+              "Orkney",
+              "Cornwall",
+              "London"
+            ],
+            "answer": 0,
+            "why": "Skara Brae is on Mainland, Orkney, off the north coast of Scotland."
+          }
         }
       ],
       "practice": [
-        "How did farming change where people lived?",
-        "Why was stone used to build at Skara Brae?",
-        "Name one thing found in a Skara Brae house."
-      ],
-      "independent": [
-        "Draw the inside of a Skara Brae house and label four features",
-        "Make a Venn diagram: hunter-gatherers, farmers, both",
-        "Write a paragraph beginning 'Farming changed life because ...'"
-      ],
-      "exit": [
-        "Name two crops grown by Neolithic farmers.",
-        "What does Skara Brae show us about Stone Age life?"
-      ],
-      "homework": "Design a Neolithic house: draw it and list three features it would need.",
-      "send": "SEND/EAL: pre-labelled picture of the house with a word bank. Stretch: suggest why Orkney had few trees and what that means for building materials."
-    },
-    {
-      "unit": "Unit 1: Stone Age to Iron Age Britain",
-      "n": 4,
-      "title": "Stonehenge, the Bronze Age and the Iron Age",
-      "duration": 45,
-      "objectives": [
-        "Describe what Stonehenge is and when it was built",
-        "Explain how bronze and iron changed tools and life in Britain"
-      ],
-      "keywords": [
         {
-          "term": "Stonehenge",
-          "def": "a prehistoric circle of standing stones in Wiltshire"
+          "q": "Why did farming mean people stayed in one place?",
+          "a": "They had to look after crops and animals",
+          "mins": 2,
+          "model": "Crops take months to grow.\nSomeone must look after them.\nSo people stayed nearby.\nThey built homes and villages."
         },
         {
-          "term": "bronze",
-          "def": "a metal made by mixing copper and tin"
+          "q": "What were Skara Brae's beds made of?",
+          "a": "Stone",
+          "mins": 1
         },
         {
-          "term": "iron",
-          "def": "a hard metal used to make strong tools and weapons"
-        },
-        {
-          "term": "hillfort",
-          "def": "a settlement on a hill protected by banks and ditches"
+          "q": "Why did stone furniture survive?",
+          "a": "Stone lasts; there was little wood on Orkney",
+          "mins": 2
         }
       ],
+      "independent": [
+        {
+          "q": "Core: Label the Skara Brae house plan: bed, dresser, hearth, door, passage.",
+          "a": "Five correct labels",
+          "mins": 8,
+          "model": "Teacher labels the hearth first: the fire in the middle."
+        },
+        {
+          "q": "Extend: Write two ways a farmer's life was different from a hunter-gatherer's.",
+          "a": "For example: stayed in one place; grew wheat instead of gathering",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: What problems might farming bring?",
+          "a": "For example: bad harvests, animal disease, more work",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Neolithic means:",
+          "a": "The New Stone Age",
+          "mins": 1,
+          "options": [
+            "The New Stone Age",
+            "The Iron Age"
+          ]
+        },
+        {
+          "q": "Big question: why would people settle in one place?",
+          "a": "To farm: crops and animals needed looking after, so they built homes and villages",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a model or drawing of a Skara Brae house with its stone furniture.",
+      "send": "SEND: labelled photo to copy from. EAL: farm, crop, village with pictures. Stretch: compare Skara Brae homes with homes today.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24 (Tribal Tales); TGA Year 3 pack, History and geography, Spring 2 (Cornerstones Maestro Tribal Tales: CHECK IN MAESTRO)",
+        "Skara Brae house plan to label (portal printable)",
+        "Prehistory timeline strip from lesson 1",
+        "UK map (atlas or online)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Skara Brae house interior stone dresser",
+          "alt": "A house at Skara Brae with its stone dresser",
+          "for": "teach:3"
+        },
+        {
+          "find": "Skara Brae Orkney",
+          "alt": "Skara Brae village on Orkney",
+          "for": "hook"
+        },
+        {
+          "find": "barley field",
+          "alt": "A field of barley",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Stone Age to Iron Age (Tribal Tales)",
+      "n": 4,
+      "title": "Stonehenge: a mystery from above",
+      "bigQuestion": "Why would people drag huge stones for many miles?",
+      "objectives": [
+        "To understand what we know and do not know about how and why Stonehenge was built"
+      ],
+      "successCriteria": [
+        "All: say one fact about Stonehenge",
+        "Most: describe Stonehenge from an aerial photo",
+        "Some: compare two theories about why it was built"
+      ],
+      "crossCurricular": "Geography: aerial photographs and plans",
+      "smsc": "Cultural: Britain's oldest monuments",
+      "keywords": [
+        {
+          "term": "monument",
+          "def": "a building or structure built to remember or mark something"
+        },
+        {
+          "term": "Stonehenge",
+          "def": "a circle of huge stones in Wiltshire"
+        },
+        {
+          "term": "aerial",
+          "def": "seen from above"
+        },
+        {
+          "term": "theory",
+          "def": "an idea that tries to explain something"
+        },
+        {
+          "term": "sarsen",
+          "def": "a huge sandstone block"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How could people move a stone as heavy as a lorry without wheels or machines?"
+      },
       "starter": [
-        "Why did farming mean people stayed in one place?",
-        "What was Skara Brae?",
-        "Which came first: Stone Age or Iron Age?"
+        {
+          "q": "Skara Brae is on:",
+          "a": "Orkney",
+          "mins": 1,
+          "options": [
+            "Orkney",
+            "Wiltshire"
+          ]
+        },
+        {
+          "q": "Farming began in Britain in the:",
+          "a": "New Stone Age",
+          "mins": 1,
+          "options": [
+            "New Stone Age",
+            "Iron Age"
+          ]
+        },
+        {
+          "q": "Name one thing found inside a Skara Brae house.",
+          "a": "Stone bed, stone dresser or hearth",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Stonehenge",
+          "heading": "What is Stonehenge?",
           "bullets": [
-            "Stonehenge is in Wiltshire, England",
-            "Building began about 5,000 years ago",
-            "It was built in stages over many hundreds of years"
+            "A stone circle in Wiltshire",
+            "Built in stages from about 3000 BC",
+            "Big stones raised about 2500 BC"
           ],
-          "note": "Start Stonehenge about 3000 BC with the earthwork; the large stones came later, about 2500 BC. Show a diagram of the circle. Historians do not know for certain why it was built: say 'ideas include'."
+          "note": "Show it on the map of England."
         },
         {
-          "heading": "Moving huge stones",
+          "heading": "The view from above",
           "bullets": [
-            "Some stones came from Wales",
-            "Large sarsen stones came from near Marlborough",
-            "People had no wheels or metal tools to help"
+            "A circle inside a ditch and bank",
+            "Big stones and smaller bluestones",
+            "A path called the Avenue"
           ],
-          "note": "The smaller bluestones came from the Preseli Hills in Wales, roughly 150 miles away. Ask how people might have moved them; teamwork, ropes, sledges and rollers are ideas, not certain facts."
+          "note": "Aerial photos show shapes we cannot see from the ground. Use the aerial photo."
         },
         {
-          "heading": "The Bronze Age",
+          "heading": "How was it built?",
           "bullets": [
-            "Bronze is copper mixed with tin",
-            "Bronze tools and jewellery were made",
-            "Trade brought metals to Britain"
+            "Sarsens from about 25 km away",
+            "Bluestones from Wales, about 240 km",
+            "Probably dragged on wooden sledges"
           ],
-          "note": "Show bronze axe heads. Explain that tin was rare so trading was important. Ask: why is bronze better than stone for some jobs?"
+          "note": "No one wrote down how. Archaeologists test ideas."
         },
         {
-          "heading": "The Iron Age",
+          "heading": "Why was it built?",
           "bullets": [
-            "Iron was stronger and cheaper than bronze",
-            "People lived in roundhouses and hillforts",
-            "Tribes such as the Celts farmed and traded"
+            "It lines up with midsummer sunrise",
+            "Burials were found there",
+            "We do not know for certain"
           ],
-          "note": "Show a roundhouse reconstruction and Maiden Castle hillfort. Mention the Iron Age lasted until the Romans arrived in AD 43. Use 'tribes' rather than claiming all were one group."
+          "note": "Teach as history: what people may have believed then.",
+          "table": {
+            "head": [
+              "Theory",
+              "Evidence for it"
+            ],
+            "rows": [
+              [
+                "A calendar",
+                "lines up with sunrise and sunset in summer and winter"
+              ],
+              [
+                "A burial place",
+                "human remains found there"
+              ],
+              [
+                "A gathering place",
+                "many animal bones from feasts nearby"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "An aerial photo is taken:",
+            "options": [
+              "From above",
+              "Underground",
+              "From inside"
+            ],
+            "answer": 0,
+            "why": "Aerial means from the air, looking down."
+          }
         }
       ],
       "practice": [
-        "Where is Stonehenge?",
-        "Why was it hard to move the stones?",
-        "Name one use for bronze and one for iron."
+        {
+          "q": "What does the aerial photo show that the ground photo does not?",
+          "a": "The circle shape, the ditch and the Avenue",
+          "mins": 2,
+          "model": "On the ground I see tall stones.\nFrom above I see a circle.\nI also see a ring ditch round it.\nSo aerial photos show the whole shape."
+        },
+        {
+          "q": "Where did the bluestones come from?",
+          "a": "Wales (the Preseli Hills)",
+          "mins": 1
+        },
+        {
+          "q": "Do we know for certain why it was built?",
+          "a": "No",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write a short fact file on Stonehenge with four facts",
-        "Draw an Iron Age roundhouse and a hillfort, adding labels",
-        "Complete a table showing Stone Age, Bronze Age and Iron Age tools"
+        {
+          "q": "Core: Draw a simple plan of Stonehenge from the aerial photo and label the stone circle, ditch and Avenue.",
+          "a": "A plan with three labels",
+          "mins": 8,
+          "model": "Teacher draws the outer ditch circle first, then the stones inside."
+        },
+        {
+          "q": "Extend: Choose one theory and give its evidence.",
+          "a": "For example: a calendar, because it lines up with the midsummer sunrise",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why can we never be sure?",
+          "a": "The builders left no writing, so we only have clues",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Which metal is made by mixing copper and tin?",
-        "Give one reason people built hillforts."
+        {
+          "q": "Stonehenge is in:",
+          "a": "Wiltshire",
+          "mins": 1,
+          "options": [
+            "Wiltshire",
+            "Orkney"
+          ]
+        },
+        {
+          "q": "Big question: why drag huge stones so far?",
+          "a": "It must have been very important to them, perhaps as a calendar, burial or meeting place; we do not know for certain",
+          "mins": 2
+        }
       ],
-      "homework": "Research Stonehenge or a hillfort and write three facts in your own words.",
-      "send": "SEND/EAL: fact file template with sentence starters. Stretch: explain why historians are careful when saying why Stonehenge was built."
+      "homework": "Find Stonehenge on an online map in satellite view and draw what you see from above.",
+      "send": "SEND: aerial photo with dotted outline to trace. EAL: above, circle, theory with pictures. Stretch: find the distance from Wales to Stonehenge on a map.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24 (Tribal Tales); TGA Year 3 pack, History and geography, Spring 2 (Cornerstones Maestro Tribal Tales: CHECK IN MAESTRO)",
+        "Stonehenge aerial photo and plan sheet (portal printable)",
+        "Online map in satellite view (Google Maps)",
+        "Prehistory timeline strip from lesson 1"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Stonehenge aerial view",
+          "alt": "Stonehenge from the air",
+          "for": "teach:2"
+        },
+        {
+          "find": "Stonehenge sarsen stones",
+          "alt": "The sarsen stones of Stonehenge",
+          "for": "hook"
+        },
+        {
+          "find": "Preseli Hills bluestone",
+          "alt": "The Preseli Hills in Wales",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Spring 1: The history of sports tournaments (Mighty Metals)",
@@ -1503,6 +1930,689 @@
           "find": "Olympia Greece ruins",
           "alt": "The ruins at Olympia",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Stone Age to Iron Age (Tribal Tales)",
+      "n": 10,
+      "title": "The Bronze Age: metal and trade",
+      "bigQuestion": "How could a new metal change people's lives?",
+      "objectives": [
+        "To understand how bronze and trade changed life in Britain"
+      ],
+      "successCriteria": [
+        "All: say that bronze is made from copper and tin",
+        "Most: explain why bronze tools were better",
+        "Some: explain how trade linked places"
+      ],
+      "crossCurricular": "Science: materials and their properties",
+      "smsc": "Social: trade and fairness between communities",
+      "keywords": [
+        {
+          "term": "Bronze Age",
+          "def": "the time when people made tools from bronze"
+        },
+        {
+          "term": "bronze",
+          "def": "a metal made by mixing copper and tin"
+        },
+        {
+          "term": "trade",
+          "def": "swapping or selling goods"
+        },
+        {
+          "term": "mine",
+          "def": "a place where rocks and metals are dug out"
+        },
+        {
+          "term": "roundhouse",
+          "def": "a round home with a pointed roof"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you found a new material much better than stone, what would you make first?"
+      },
+      "islamicLink": {
+        "text": "Allah says He sent down iron, in which is great strength and benefits for people (Al-Hadid 57:25). Metals are a gift from Allah. People used them to make tools, trade and build.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Stonehenge is in:",
+          "a": "Wiltshire",
+          "mins": 1,
+          "options": [
+            "Wiltshire",
+            "Wales"
+          ]
+        },
+        {
+          "q": "An aerial photo is taken from:",
+          "a": "Above",
+          "mins": 1,
+          "options": [
+            "Above",
+            "Inside"
+          ]
+        },
+        {
+          "q": "What were early tools made of?",
+          "a": "Stone (flint)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A new metal",
+          "bullets": [
+            "Bronze = copper + tin",
+            "Melted and poured into moulds",
+            "Stronger and sharper than stone"
+          ],
+          "note": "The Bronze Age in Britain began about 2500 BC.",
+          "timeline": [
+            {
+              "label": "Before 4000 BC",
+              "text": "Stone Age hunter-gatherers"
+            },
+            {
+              "label": "About 4000 BC",
+              "text": "Farming begins in Britain"
+            },
+            {
+              "label": "About 2500 BC",
+              "text": "Bronze Age begins"
+            },
+            {
+              "label": "About 800 BC",
+              "text": "Iron Age begins"
+            },
+            {
+              "label": "AD 43",
+              "text": "The Romans invade"
+            }
+          ]
+        },
+        {
+          "heading": "Where did the metal come from?",
+          "bullets": [
+            "Tin from Cornwall",
+            "Copper from mines like the Great Orme, Wales",
+            "Not every place had both"
+          ],
+          "note": "Show both on the UK map."
+        },
+        {
+          "heading": "Trade",
+          "bullets": [
+            "Places swapped metal, pots and food",
+            "Traders crossed the sea to Europe",
+            "Trade made some people rich"
+          ],
+          "note": "Ask: why did a place with copper need a place with tin?",
+          "model": {
+            "problem": "Why did Wales and Cornwall trade?",
+            "steps": [
+              "Wales had copper",
+              "Cornwall had tin",
+              "Bronze needs both"
+            ],
+            "answer": "Each place had what the other needed"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Bronze is made from:",
+            "options": [
+              "Iron and stone",
+              "Copper and tin",
+              "Gold and silver"
+            ],
+            "answer": 1,
+            "why": "Bronze is an alloy of copper and tin."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why was a bronze axe better than a stone one?",
+          "a": "Sharper, stronger, and it could be melted and remade",
+          "mins": 2,
+          "model": "Stone chips and breaks.\nBronze can be sharpened.\nBroken bronze can be melted again.\nSo bronze is better."
+        },
+        {
+          "q": "Where in Britain was tin found?",
+          "a": "Cornwall",
+          "mins": 1
+        },
+        {
+          "q": "What is trade?",
+          "a": "Swapping or selling goods",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw arrows on the UK map to show copper and tin travelling to make bronze. Add a key.",
+          "a": "Arrows from Wales (copper) and Cornwall (tin) with a key",
+          "mins": 8,
+          "model": "Teacher draws the first arrow from the Great Orme with a key colour."
+        },
+        {
+          "q": "Extend: Write a sentence: 'Trade helped people because ...'",
+          "a": "For example: they got metals they did not have",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Who might have become rich in the Bronze Age? Why?",
+          "a": "People who controlled mines or trade routes, because everyone needed metal",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Bronze Age came:",
+          "a": "After the Stone Age",
+          "mins": 1,
+          "options": [
+            "After the Stone Age",
+            "Before the Stone Age"
+          ]
+        },
+        {
+          "q": "Big question: how could a new metal change people's lives?",
+          "a": "Better tools and weapons, more trade, and some people became rich and powerful",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three things at home made of metal and say why metal was chosen.",
+      "send": "SEND: map with places marked. EAL: copper, tin, trade with pictures. Stretch: find out about the Must Farm Bronze Age houses.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24 (Tribal Tales); TGA Year 3 pack, History and geography, Spring 2 (Cornerstones Maestro Tribal Tales: CHECK IN MAESTRO)",
+        "UK outline map for the trade task (portal printable)",
+        "Prehistory timeline strip from lesson 1",
+        "Coloured pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bronze Age axe head",
+          "alt": "A Bronze Age axe head",
+          "for": "hook"
+        },
+        {
+          "find": "Great Orme copper mine",
+          "alt": "The Great Orme copper mine in Wales",
+          "for": "teach:2"
+        },
+        {
+          "find": "tin ore cassiterite",
+          "alt": "Tin ore",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Stone Age to Iron Age (Tribal Tales)",
+      "n": 11,
+      "title": "The Iron Age: hill forts and roundhouses",
+      "bigQuestion": "Why would people build their homes on top of a hill?",
+      "objectives": [
+        "To understand how people lived in Iron Age Britain"
+      ],
+      "successCriteria": [
+        "All: describe a roundhouse",
+        "Most: explain why hill forts were built",
+        "Some: name an Iron Age tribe and where it lived"
+      ],
+      "crossCurricular": "Geography: using maps to find hill forts",
+      "smsc": "Social: life in a tribe and community",
+      "keywords": [
+        {
+          "term": "Iron Age",
+          "def": "the time when people made tools from iron"
+        },
+        {
+          "term": "hill fort",
+          "def": "a hilltop settlement with ditches and banks"
+        },
+        {
+          "term": "roundhouse",
+          "def": "a round home with a thatched roof"
+        },
+        {
+          "term": "tribe",
+          "def": "a group of families with one leader"
+        },
+        {
+          "term": "thatch",
+          "def": "a roof made of straw or reeds"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you lived in Iron Age Britain, would you choose a hilltop or a river valley? Why?"
+      },
+      "starter": [
+        {
+          "q": "Bronze is made from copper and:",
+          "a": "Tin",
+          "mins": 1,
+          "options": [
+            "Tin",
+            "Iron"
+          ]
+        },
+        {
+          "q": "Tin came from:",
+          "a": "Cornwall",
+          "mins": 1,
+          "options": [
+            "Cornwall",
+            "Orkney"
+          ]
+        },
+        {
+          "q": "Put in order: Iron Age, Stone Age, Bronze Age.",
+          "a": "Stone Age, Bronze Age, Iron Age",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Iron arrives",
+          "bullets": [
+            "From about 800 BC",
+            "Iron ore was more common than copper",
+            "Iron ploughs and tools"
+          ],
+          "note": "The Iron Age lasted until the Romans came in AD 43.",
+          "timeline": [
+            {
+              "label": "Before 4000 BC",
+              "text": "Stone Age hunter-gatherers"
+            },
+            {
+              "label": "About 4000 BC",
+              "text": "Farming begins in Britain"
+            },
+            {
+              "label": "About 2500 BC",
+              "text": "Bronze Age begins"
+            },
+            {
+              "label": "About 800 BC",
+              "text": "Iron Age begins"
+            },
+            {
+              "label": "AD 43",
+              "text": "The Romans invade"
+            }
+          ]
+        },
+        {
+          "heading": "Hill forts",
+          "bullets": [
+            "Built on hilltops",
+            "Rings of ditches and banks",
+            "Maiden Castle, Dorset is a famous one"
+          ],
+          "note": "Hilltops are easy to defend and to see from."
+        },
+        {
+          "heading": "Roundhouses",
+          "bullets": [
+            "Walls of wattle and daub",
+            "Thatched roof, a fire in the middle",
+            "Animals and families close by"
+          ],
+          "note": "Model labelling a roundhouse.",
+          "model": {
+            "problem": "Label a roundhouse",
+            "steps": [
+              "Thatched roof: keeps out rain",
+              "Wattle and daub walls",
+              "Hearth in the middle for heat and cooking"
+            ],
+            "answer": "A labelled roundhouse"
+          }
+        },
+        {
+          "heading": "Tribes",
+          "bullets": [
+            "Britain had many tribes",
+            "Iceni in the east",
+            "Brigantes in the north"
+          ],
+          "note": "Show a map of tribes. Tribes traded and sometimes fought."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Why build on a hilltop?",
+            "options": [
+              "It was warmer",
+              "Easy to defend and see enemies",
+              "Closer to the sea"
+            ],
+            "answer": 1,
+            "why": "Height helped people see danger and made attack harder."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is wattle and daub?",
+          "a": "Woven sticks covered with mud, clay and straw",
+          "mins": 2,
+          "model": "Wattle: sticks woven like a basket.\nDaub: wet mud, clay and straw.\nPress the daub onto the wattle.\nIt dries into a wall."
+        },
+        {
+          "q": "What kept rain out of a roundhouse?",
+          "a": "The thatched roof",
+          "mins": 1
+        },
+        {
+          "q": "When did the Iron Age end?",
+          "a": "When the Romans invaded in AD 43",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Label a roundhouse diagram and write what each part was for.",
+          "a": "Roof, walls, hearth, door with uses",
+          "mins": 8,
+          "model": "Teacher labels the roof first and writes 'keeps out rain'."
+        },
+        {
+          "q": "Extend: Write two reasons for building a hill fort.",
+          "a": "Easy to defend; see enemies coming; show power",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Compare a roundhouse with a Skara Brae house.",
+          "a": "For example: both had a central hearth; Skara Brae used stone, roundhouses used wood and thatch",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A hill fort was built:",
+          "a": "On a hilltop",
+          "mins": 1,
+          "options": [
+            "On a hilltop",
+            "In a cave"
+          ]
+        },
+        {
+          "q": "Big question: why build homes on a hill?",
+          "a": "To be safe: easy to defend and to see enemies coming",
+          "mins": 2
+        }
+      ],
+      "homework": "Build a mini roundhouse from card, twigs or straws at home.",
+      "send": "SEND: labelled photo to copy from. EAL: roof, wall, fire with pictures. Stretch: find Maiden Castle on an online map in satellite view.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24 (Tribal Tales); TGA Year 3 pack, History and geography, Spring 2 (Cornerstones Maestro Tribal Tales: CHECK IN MAESTRO)",
+        "Roundhouse diagram to label (portal printable)",
+        "Iron Age tribes map (portal printable)",
+        "Prehistory timeline strip from lesson 1"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Iron Age roundhouse reconstruction",
+          "alt": "A rebuilt Iron Age roundhouse",
+          "for": "teach:3"
+        },
+        {
+          "find": "Maiden Castle Dorset aerial",
+          "alt": "Maiden Castle hill fort from the air",
+          "for": "hook"
+        },
+        {
+          "find": "thatched roof",
+          "alt": "A thatched roof",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Stone Age to Iron Age (Tribal Tales)",
+      "n": 12,
+      "title": "The Celts, storytelling and our unit review",
+      "bigQuestion": "How did people remember their history without books?",
+      "objectives": [
+        "To understand how the Celts passed on their history and how the Stone Age to Iron Age fits together"
+      ],
+      "successCriteria": [
+        "All: order the Stone, Bronze and Iron Ages",
+        "Most: explain how Celts remembered stories",
+        "Some: say what changed most from the Stone Age to the Iron Age"
+      ],
+      "crossCurricular": "English: oral storytelling and retelling",
+      "smsc": "Spiritual: the Qur'an preserved by memorisation",
+      "keywords": [
+        {
+          "term": "Celts",
+          "def": "people who lived in Britain in the Iron Age"
+        },
+        {
+          "term": "storyteller",
+          "def": "someone who tells stories from memory"
+        },
+        {
+          "term": "tradition",
+          "def": "something passed down over time"
+        },
+        {
+          "term": "timeline",
+          "def": "a line that shows events in time order"
+        },
+        {
+          "term": "change",
+          "def": "when something becomes different"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is one story your family always tells? Who told it to you first?"
+      },
+      "starter": [
+        {
+          "q": "A thatched roof is made of:",
+          "a": "Straw or reeds",
+          "mins": 1,
+          "options": [
+            "Straw or reeds",
+            "Stone"
+          ]
+        },
+        {
+          "q": "Maiden Castle is a:",
+          "a": "Hill fort",
+          "mins": 1,
+          "options": [
+            "Hill fort",
+            "Stone circle"
+          ]
+        },
+        {
+          "q": "Bronze is copper and ...",
+          "a": "tin",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Celts and stories",
+          "bullets": [
+            "Iron Age people of Britain",
+            "Learned stories and history by heart",
+            "Storytellers were highly respected"
+          ],
+          "note": "The Celts of Britain did not write their own books. We know about them from archaeology and from what Romans wrote."
+        },
+        {
+          "heading": "Remembering by heart",
+          "bullets": [
+            "Repeat and practise",
+            "Use patterns and lists",
+            "Pass it to the next generation"
+          ],
+          "note": "Link: Muslims memorise the Qur'an by heart, passed down carefully from teacher to pupil."
+        },
+        {
+          "heading": "Our whole timeline",
+          "bullets": [
+            "Stone, Bronze, Iron",
+            "Hunting, farming, metal",
+            "Then the Romans"
+          ],
+          "note": "Recap each period.",
+          "timeline": [
+            {
+              "label": "Before 4000 BC",
+              "text": "Stone Age hunter-gatherers"
+            },
+            {
+              "label": "About 4000 BC",
+              "text": "Farming begins in Britain"
+            },
+            {
+              "label": "About 2500 BC",
+              "text": "Bronze Age begins"
+            },
+            {
+              "label": "About 800 BC",
+              "text": "Iron Age begins"
+            },
+            {
+              "label": "AD 43",
+              "text": "The Romans invade"
+            }
+          ]
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which is in the right order?",
+            "options": [
+              "Iron, Bronze, Stone",
+              "Stone, Bronze, Iron",
+              "Bronze, Stone, Iron"
+            ],
+            "answer": 1,
+            "why": "Stone came first, then bronze, then iron."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What changed when people learned to farm?",
+          "a": "They settled in villages instead of moving",
+          "mins": 2,
+          "model": "Before: they moved to find food.\nAfter: they grew food.\nSo they stayed in one place.\nVillages like Skara Brae grew."
+        },
+        {
+          "q": "How did the Celts pass on their history?",
+          "a": "By telling stories from memory",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: End-of-unit quiz: answer the 10 questions on the portal (periods, Skara Brae, Stonehenge, metals, hill forts).",
+          "a": "Answers on the portal quiz key",
+          "mins": 12,
+          "model": "Teacher does question 1 aloud: 'Which came first, bronze or iron?' Bronze."
+        },
+        {
+          "q": "Extend: Complete the timeline task: put six events in order with dates.",
+          "a": "Hunter-gatherers; farming about 4000 BC; Stonehenge stones about 2500 BC; Bronze Age about 2500 BC; Iron Age about 800 BC; Romans AD 43",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: What was the biggest change from the Stone Age to the Iron Age? Give a reason.",
+          "a": "For example: farming, because people settled and built villages",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Iron Age ended when:",
+          "a": "The Romans invaded",
+          "mins": 1,
+          "options": [
+            "The Romans invaded",
+            "Stonehenge was built"
+          ]
+        },
+        {
+          "q": "Big question: how did people remember their history without books?",
+          "a": "Storytellers learned it by heart and passed it on, and objects they left are clues for us",
+          "mins": 2
+        }
+      ],
+      "homework": "Retell one family story to someone at home from memory.",
+      "send": "SEND: quiz read aloud; timeline cards to order. EAL: word bank of the unit. Stretch: write your own short tale set in an Iron Age roundhouse (spoken, no songs).",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24 (Tribal Tales); TGA Year 3 pack, History and geography, Spring 2 (Cornerstones Maestro Tribal Tales: CHECK IN MAESTRO)",
+        "End-of-unit quiz, 10 questions (portal assessment)",
+        "Timeline task cards, six events (portal printable; assessed)",
+        "Prehistory timeline strip from lesson 1"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Iron Age torc gold",
+          "alt": "A gold Iron Age torc (neck ring)",
+          "for": "hook"
+        },
+        {
+          "find": "Celtic knot stone carving",
+          "alt": "Celtic knot pattern carved in stone",
+          "for": "keywords"
+        },
+        {
+          "find": "Iron Age roundhouse interior hearth",
+          "alt": "The hearth inside a roundhouse",
+          "for": "teach:1"
         }
       ]
     }

@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y3",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 3: place value to 1000; addition and subtraction; 3, 4 and 8 times tables); Spring 1 founding year: White Rose Maths Year 3 small-step titles (bridge from Autumn blocks 1-3, then Spring blocks 1 Multiplication and division B and 2 Length and perimeter), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 3 Spring blocks 3 Fractions A and 4 Mass and capacity (small-step titles only)",
+  "source": "National Curriculum (KS2 Year 3: place value to 1000; addition and subtraction; 3, 4 and 8 times tables); Spring 1 founding year: White Rose Maths Year 3 small-step titles (bridge from Autumn blocks 1-3, then Spring blocks 1 Multiplication and division B and 2 Length and perimeter), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 3 Spring blocks 3 Fractions A and 4 Mass and capacity (small-step titles only); Summer 1 founding year: White Rose Maths Year 3 Summer blocks Fractions B, Money and Time (small-step titles only)",
   "lessons": [
     {
       "unit": "Spring 1: Multiplication and division B; length and perimeter",
@@ -11560,6 +11560,4736 @@
         "Measuring jug with water or rice (over a sink or tray), or the jug pictures on the slides",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 3 maths lesson 61 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 62,
+      "title": "Non-unit fractions of a set of objects",
+      "duration": 45,
+      "bigQuestion": "How does finding 1/5 help us find 3/5?",
+      "objectives": [
+        "To understand how to find a non-unit fraction of a set of objects"
+      ],
+      "successCriteria": [
+        "All: find a unit fraction of a set",
+        "Most: find a non-unit fraction using the unit fraction",
+        "Some: draw a bar model to show it"
+      ],
+      "crossCurricular": "Cooking: using a fraction of a bag of dates",
+      "smsc": "Moral: sharing food fairly in Ramadan",
+      "keywords": [
+        {
+          "term": "non-unit fraction",
+          "def": "more than 1 equal part, like 3/5"
+        },
+        {
+          "term": "set",
+          "def": "a group of objects"
+        },
+        {
+          "term": "bar model",
+          "def": "a bar split into equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "There are 20 dates. 3/4 of them are eaten at iftar. How many are left for suhur?",
+        "a": "1/4 of 20 is 5, 3/4 is 15 eaten, 5 left."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "egg box with twelve eggs",
+          "alt": "A set of 12 eggs",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/4 of 12?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 8 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "In 3/5, which is the numerator?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "1/3 of 15?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Unit fraction first",
+          "bullets": [
+            "1/3 of 12: divide by 3.",
+            "12 ÷ 3 = 4"
+          ],
+          "fraction": {
+            "parts": 3,
+            "shaded": 1,
+            "label": "1/3 of 12 = 4"
+          },
+          "note": "Share 12 counters into 3 groups."
+        },
+        {
+          "heading": "Then the numerator",
+          "model": {
+            "problem": "2/3 of 12",
+            "steps": [
+              "1/3 of 12 = 12 ÷ 3 = 4",
+              "2/3 is 2 lots of 4",
+              "2 × 4 = 8"
+            ],
+            "answer": "8"
+          }
+        },
+        {
+          "heading": "Bar model",
+          "bullets": [
+            "Whole: 20.",
+            "5 equal parts of 4.",
+            "3/5 is 3 parts: 12."
+          ],
+          "fraction": {
+            "parts": 5,
+            "shaded": 3,
+            "label": "3/5 of 20 = 12"
+          },
+          "note": "Draw it."
+        },
+        {
+          "heading": "Divide by the bottom, times by the top",
+          "bullets": [
+            "Denominator: how many parts.",
+            "Numerator: how many we take."
+          ],
+          "note": "Pupils say the rule in their own words."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3/4 of 20?",
+            "options": [
+              "15",
+              "5",
+              "60"
+            ],
+            "answer": 0,
+            "why": "20 ÷ 4 = 5, 3 × 5 = 15. 5 is only 1/4; 60 is 3 × 20."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2/5 of 15?",
+          "a": "6",
+          "mins": 2,
+          "model": "Teacher: 15 ÷ 5 = 3, 2 × 3 = 6."
+        },
+        {
+          "q": "3/8 of 24?",
+          "a": "9",
+          "mins": 3
+        },
+        {
+          "q": "5/6 of 18?",
+          "a": "15",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 4/5 of 30; 2/3 of 21; 3/10 of 50",
+          "a": "24; 14; 15",
+          "mins": 4,
+          "model": "Teacher: 30 ÷ 5 = 6, 4 × 6 = 24."
+        },
+        {
+          "q": "Extend: A class has 24 pupils. 5/8 have a sister. How many do not?",
+          "a": "9 (5/8 is 15)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which is more: 3/4 of 16 or 2/3 of 15? Show both bar models.",
+          "a": "3/4 of 16 = 12 > 2/3 of 15 = 10",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2/3 of 9? A) 6 B) 3 C) 18",
+          "a": "A) 6",
+          "mins": 2,
+          "options": [
+            "6",
+            "3",
+            "18"
+          ]
+        },
+        {
+          "q": "Big question: how does 1/5 help us find 3/5?",
+          "a": "Find 1/5 by dividing by 5, then multiply by 3",
+          "mins": 3
+        }
+      ],
+      "homework": "Use 24 pasta pieces to find 1/8, 3/8 and 5/8 of 24. Draw the bar models.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find 7/10 of 80 and 5/6 of 42.",
+      "resources": [
+        "White Rose Maths Year 3, Fractions B block: small step 'Non-unit fractions of a set of objects' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Counters, pasta or buttons (about 40)",
+        "Printed bar model template",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 62 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 63,
+      "title": "Reasoning with fractions of an amount",
+      "duration": 45,
+      "bigQuestion": "If we know a part, can we find the whole?",
+      "objectives": [
+        "To understand how to use a bar model to find the whole from a fraction"
+      ],
+      "successCriteria": [
+        "All: find the whole from a unit fraction",
+        "Most: find the whole from a non-unit fraction",
+        "Some: explain my method with a bar model"
+      ],
+      "crossCurricular": "Money: working out savings",
+      "smsc": "Social: explaining reasoning kindly to a partner",
+      "keywords": [
+        {
+          "term": "whole",
+          "def": "the full amount"
+        },
+        {
+          "term": "part",
+          "def": "a piece of the whole"
+        },
+        {
+          "term": "reasoning",
+          "def": "explaining how we know"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Bilal spent 1/4 of his money. He spent £5. How much did he have at the start?",
+        "a": "£20: 4 quarters of £5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "piggy bank",
+          "alt": "A money box",
+          "for": "hook"
+        },
+        {
+          "find": "measuring tape close up",
+          "alt": "A measuring tape",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/4 of 12?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 7 = ?",
+          "a": "28",
+          "mins": 1
+        },
+        {
+          "q": "2/5 of 10?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "1/3 of 18?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Part to whole",
+          "bullets": [
+            "1/4 is 5.",
+            "4 quarters make the whole.",
+            "4 × 5 = 20"
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 1,
+            "label": "1/4 = 5, whole = 20"
+          },
+          "note": "Bar of 4 boxes, one labelled 5."
+        },
+        {
+          "heading": "Non-unit part",
+          "model": {
+            "problem": "2/5 of a number is 8. Find the number.",
+            "steps": [
+              "2 parts = 8",
+              "1 part = 8 ÷ 2 = 4",
+              "5 parts = 5 × 4 = 20"
+            ],
+            "answer": "20"
+          }
+        },
+        {
+          "heading": "Check it",
+          "bullets": [
+            "2/5 of 20 = 8. ✓",
+            "Work it forwards."
+          ],
+          "note": "Always check back."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/3 of a number is 7. The number?",
+            "options": [
+              "21",
+              "10",
+              "7"
+            ],
+            "answer": 0,
+            "why": "3 thirds: 3 × 7 = 21."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/5 of a number is 6. Find it.",
+          "a": "30",
+          "mins": 3,
+          "model": "Teacher: 5 parts of 6: 5 × 6 = 30."
+        },
+        {
+          "q": "3/4 of a number is 12. Find it.",
+          "a": "16",
+          "mins": 3
+        },
+        {
+          "q": "1/8 of a number is 4. Find it.",
+          "a": "32",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1/6 is 5; 2/3 is 10; 3/5 is 9. Find each whole.",
+          "a": "30; 15; 15",
+          "mins": 4,
+          "model": "Teacher: 1/6 is 5, so 6 × 5 = 30."
+        },
+        {
+          "q": "Extend: Amina read 3/8 of her book: 24 pages. How many pages in the book?",
+          "a": "64",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: True or false: if 1/4 is 9, then 3/4 is 27 and the whole is 36. Explain.",
+          "a": "True: 3 × 9 = 27, 4 × 9 = 36",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/4 is 6. The whole? A) 24 B) 10 C) 2",
+          "a": "A) 24",
+          "mins": 2,
+          "options": [
+            "24",
+            "10",
+            "2"
+          ]
+        },
+        {
+          "q": "Big question: can we find the whole from a part?",
+          "a": "Yes: find 1 part, then multiply by the denominator",
+          "mins": 3
+        }
+      ],
+      "homework": "Make up 2 'find the whole' puzzles for someone at home and check their answers.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 5/6 of a number is 35. Find the number (42).",
+      "resources": [
+        "White Rose Maths Year 3, Fractions B block: small step 'Reasoning with fractions of an amount' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Counters, pasta or buttons (about 40)",
+        "Printed bar model template",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 63 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 64,
+      "title": "Fractions of measures",
+      "duration": 45,
+      "bigQuestion": "What is a quarter of an hour, a metre and a kilogram?",
+      "objectives": [
+        "To understand how to find fractions of lengths, masses and times"
+      ],
+      "successCriteria": [
+        "All: find 1/2 and 1/4 of 1 m and 1 hour",
+        "Most: find tenths of 1 m",
+        "Some: solve a measure problem with a non-unit fraction"
+      ],
+      "crossCurricular": "Cooking: weighing 1/4 kg of flour",
+      "smsc": "Moral: honest weighing and measuring",
+      "keywords": [
+        {
+          "term": "metre",
+          "def": "100 centimetres"
+        },
+        {
+          "term": "kilogram",
+          "def": "1,000 grams"
+        },
+        {
+          "term": "hour",
+          "def": "60 minutes"
+        },
+        {
+          "term": "fraction of",
+          "def": "divide by the denominator, times the numerator"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is longer: 3/4 of an hour or 1/2 of 100 minutes?",
+        "a": "3/4 of an hour is 45 minutes; half of 100 is 50 minutes. Half of 100 minutes is longer."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "metre stick",
+          "alt": "A metre stick",
+          "for": "teach:1"
+        },
+        {
+          "find": "kitchen scales",
+          "alt": "Kitchen scales",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 m = ? cm",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "1 hour = ? minutes",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "3/4 of 20?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 4 = ?",
+          "a": "24",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fractions of a metre",
+          "bullets": [
+            "1/2 of 1 m = 50 cm.",
+            "1/4 of 1 m = 25 cm.",
+            "1/10 of 1 m = 10 cm."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "marks": [
+              {
+                "at": 25,
+                "label": "1/4 m"
+              },
+              {
+                "at": 50,
+                "label": "1/2 m"
+              },
+              {
+                "at": 100,
+                "label": "1 m"
+              }
+            ]
+          },
+          "note": "Fold a 1 m string."
+        },
+        {
+          "heading": "Fractions of a kilogram",
+          "bullets": [
+            "1 kg = 1,000 g.",
+            "1/2 kg = 500 g.",
+            "1/4 kg = 250 g."
+          ],
+          "note": "Look at a 500 g packet."
+        },
+        {
+          "heading": "Fractions of an hour",
+          "bullets": [
+            "1/4 hour = 15 minutes.",
+            "3/4 hour = 45 minutes."
+          ],
+          "note": "Link to quarter past and quarter to."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3/10 of 1 m?",
+            "options": [
+              "30 cm",
+              "3 cm",
+              "70 cm"
+            ],
+            "answer": 0,
+            "why": "1/10 is 10 cm, 3 × 10 = 30 cm. 70 cm is what is left."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/4 of 1 kg?",
+          "a": "250 g",
+          "mins": 2,
+          "model": "Teacher: 1,000 ÷ 4 = 250, so 250 g."
+        },
+        {
+          "q": "3/4 of 1 hour?",
+          "a": "45 minutes",
+          "mins": 2
+        },
+        {
+          "q": "1/5 of 1 m?",
+          "a": "20 cm",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1/2 of 1 litre; 1/4 of 1 m; 1/3 of 1 hour",
+          "a": "500 ml; 25 cm; 20 minutes",
+          "mins": 4,
+          "model": "Teacher: 1 litre is 1,000 ml, half is 500 ml."
+        },
+        {
+          "q": "Extend: A ribbon is 1 m. Maryam uses 7/10 of it. How much is left?",
+          "a": "30 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Order: 3/4 of 1 m, 1/2 of 1 m, 4/10 of 1 m",
+          "a": "40 cm, 50 cm, 75 cm (smallest first)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/4 of an hour? A) 15 minutes B) 25 minutes C) 4 minutes",
+          "a": "A) 15 minutes",
+          "mins": 2,
+          "options": [
+            "15 minutes",
+            "25 minutes",
+            "4 minutes"
+          ]
+        },
+        {
+          "q": "Big question: what is a quarter of an hour, a metre and a kilogram?",
+          "a": "15 minutes, 25 cm and 250 g",
+          "mins": 3
+        }
+      ],
+      "homework": "Find a 1 kg bag in the kitchen. Use the scales to show 1/2 kg and 1/4 kg (ask an adult).",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find 3/5 of 1 kg (600 g) and 2/3 of 1 hour (40 minutes).",
+      "resources": [
+        "White Rose Maths Year 3, Fractions B block: fractions of an amount, applied to measures (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "String cut to 1 m and a ruler",
+        "Kitchen scales and a 1 kg bag of flour or rice (with an adult)",
+        "Paper plate clock",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 64 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 65,
+      "title": "Compare and order fractions with the same denominator",
+      "duration": 45,
+      "bigQuestion": "When the parts are the same size, how do we know which fraction is bigger?",
+      "objectives": [
+        "To understand how to compare and order fractions with the same denominator"
+      ],
+      "successCriteria": [
+        "All: compare two fractions with < and >",
+        "Most: order three fractions",
+        "Some: compare fractions of the same amount"
+      ],
+      "crossCurricular": "Cooking: comparing how much of a pizza each person ate",
+      "smsc": "Moral: fairness when sharing",
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "decide which is bigger"
+        },
+        {
+          "term": "order",
+          "def": "put in size order"
+        },
+        {
+          "term": "denominator",
+          "def": "equal parts in the whole"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Zayd ate 3/8 of a pizza. Hamza ate 5/8 of the same pizza. Who ate more, and how much more?",
+        "a": "Hamza, by 2/8."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza in 8 slices",
+          "for": "hook"
+        },
+        {
+          "find": "chocolate bar pieces",
+          "alt": "A bar of equal pieces",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/2 of 1 m?",
+          "a": "50 cm",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 1/3 _ 1/5",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 5 = ?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "2/5 of 20?",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same size parts",
+          "bullets": [
+            "Same denominator: parts the same size.",
+            "More parts, bigger fraction."
+          ],
+          "fraction": [
+            {
+              "parts": 8,
+              "shaded": 3,
+              "label": "3/8"
+            },
+            {
+              "parts": 8,
+              "shaded": 5,
+              "label": "5/8"
+            }
+          ],
+          "note": "Shade both."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "2/7, 4/7, 6/7",
+            "Look at the numerators."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 7,
+            "step": 1,
+            "marks": [
+              {
+                "at": 2,
+                "label": "2/7"
+              },
+              {
+                "at": 4,
+                "label": "4/7"
+              },
+              {
+                "at": 6,
+                "label": "6/7"
+              }
+            ]
+          },
+          "note": "Order smallest first."
+        },
+        {
+          "heading": "Of the same amount",
+          "bullets": [
+            "2/5 of 20 = 8.",
+            "3/5 of 20 = 12.",
+            "3/5 > 2/5"
+          ],
+          "note": "Check with amounts."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is smallest?",
+            "options": [
+              "4/9",
+              "7/9",
+              "2/9"
+            ],
+            "answer": 2,
+            "why": "Same size parts: 2 parts is the fewest."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 5/6 _ 1/6",
+          "a": ">",
+          "mins": 2,
+          "model": "Teacher: sixths are the same size; 5 parts > 1 part."
+        },
+        {
+          "q": "Order smallest first: 3/5, 1/5, 4/5",
+          "a": "1/5, 3/5, 4/5",
+          "mins": 3
+        },
+        {
+          "q": "Use < or >: 2/10 _ 9/10",
+          "a": "<",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use < or >: 7/12 _ 5/12; 3/8 _ 6/8; 1/4 _ 3/4",
+          "a": ">; <; <",
+          "mins": 4,
+          "model": "Teacher: twelfths are the same size; 7 > 5."
+        },
+        {
+          "q": "Extend: Order largest first: 4/11, 10/11, 1/11, 7/11",
+          "a": "10/11, 7/11, 4/11, 1/11",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write 3 fractions with denominator 9 between 2/9 and 8/9.",
+          "a": "For example 3/9, 5/9, 7/9",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bigger: A) 5/7 B) 3/7",
+          "a": "A) 5/7",
+          "mins": 2,
+          "options": [
+            "5/7",
+            "3/7"
+          ]
+        },
+        {
+          "q": "Big question: same denominator, which is bigger?",
+          "a": "The one with the bigger numerator",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 4 pairs of fractions with the same denominator and put < or > between them.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: which is bigger, 3/4 or 4/5? (4/5: it is only 1/5 short of 1)",
+      "resources": [
+        "White Rose Maths Year 3, Fractions B block: comparing and ordering fractions with the same denominator (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons (about 40)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 65 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 66,
+      "title": "Partition the whole",
+      "duration": 45,
+      "bigQuestion": "How many ways can we split one whole into two fractions?",
+      "objectives": [
+        "To understand how fractions with the same denominator can make one whole"
+      ],
+      "successCriteria": [
+        "All: find the missing part to make 1",
+        "Most: write a whole as two fractions in different ways",
+        "Some: find the missing part of a whole amount"
+      ],
+      "crossCurricular": "Cooking: filling a jug to 1 litre",
+      "smsc": "Social: working with a partner to find every way",
+      "keywords": [
+        {
+          "term": "partition",
+          "def": "split into parts"
+        },
+        {
+          "term": "whole",
+          "def": "all the parts: 5/5 = 1"
+        },
+        {
+          "term": "missing part",
+          "def": "the part still needed"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A jug is 3/5 full. How much more is needed to fill it?",
+        "a": "2/5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug with water",
+          "alt": "A measuring jug",
+          "for": "hook"
+        },
+        {
+          "find": "chocolate bar pieces",
+          "alt": "A bar in equal pieces",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Use < or >: 3/8 _ 5/8",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "5/5 = ?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 9 = ?",
+          "a": "27",
+          "mins": 1
+        },
+        {
+          "q": "3/4 of 1 hour?",
+          "a": "45 minutes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One whole",
+          "bullets": [
+            "5/5 = 1",
+            "3/5 + 2/5 = 5/5"
+          ],
+          "fraction": {
+            "parts": 5,
+            "shaded": 3,
+            "label": "3/5 shaded, 2/5 not"
+          },
+          "note": "Shade 3 parts, then 2 more."
+        },
+        {
+          "heading": "Many ways",
+          "bullets": [
+            "1/4 + 3/4",
+            "2/4 + 2/4",
+            "3/4 + 1/4"
+          ],
+          "note": "List all the ways for quarters."
+        },
+        {
+          "heading": "Missing part",
+          "model": {
+            "problem": "1 = 3/8 + ?",
+            "steps": [
+              "1 whole = 8/8",
+              "8 - 3 = 5"
+            ],
+            "answer": "5/8"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1 = 4/9 + ?",
+            "options": [
+              "5/9",
+              "4/9",
+              "5/5"
+            ],
+            "answer": 0,
+            "why": "9/9 - 4/9 = 5/9."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 = 7/10 + ?",
+          "a": "3/10",
+          "mins": 2,
+          "model": "Teacher: 1 is 10/10; 10 - 7 = 3, so 3/10."
+        },
+        {
+          "q": "1 = 1/6 + ?",
+          "a": "5/6",
+          "mins": 2
+        },
+        {
+          "q": "Write 1 as two sevenths 3 ways.",
+          "a": "For example 1/7 + 6/7, 2/7 + 5/7, 3/7 + 4/7",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1 = 2/5 + ?; 1 = 5/8 + ?; 1 = 11/12 + ?",
+          "a": "3/5; 3/8; 1/12",
+          "mins": 4,
+          "model": "Teacher: 5/5 - 2/5 = 3/5."
+        },
+        {
+          "q": "Extend: A cake is cut into 8 equal slices. 5 are eaten. What fraction is left?",
+          "a": "3/8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How many ways can you write 1 as two fractions with denominator 6? List them.",
+          "a": "5 ways: 1/6 + 5/6, 2/6 + 4/6, 3/6 + 3/6, 4/6 + 2/6, 5/6 + 1/6 (or 3 if order does not matter)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 = 3/4 + ? A) 1/4 B) 3/4 C) 4/4",
+          "a": "A) 1/4",
+          "mins": 2,
+          "options": [
+            "1/4",
+            "3/4",
+            "4/4"
+          ]
+        },
+        {
+          "q": "Big question: how many ways can we split a whole?",
+          "a": "One fewer than the denominator, for example 4 ways for fifths",
+          "mins": 3
+        }
+      ],
+      "homework": "Colour a strip of 10 squares in 2 colours. Write the two fractions that make 1. Do it 3 ways.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 1 = 2/9 + 3/9 + ? (4/9).",
+      "resources": [
+        "White Rose Maths Year 3, Fractions B block: small step 'Partition the whole' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Coloured pencils",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 66 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 67,
+      "title": "Add fractions",
+      "duration": 45,
+      "bigQuestion": "When we add fractions, why does the denominator stay the same?",
+      "objectives": [
+        "To understand how to add fractions with the same denominator within one whole"
+      ],
+      "successCriteria": [
+        "All: add two fractions with the same denominator",
+        "Most: add three fractions",
+        "Some: explain why the denominator stays the same"
+      ],
+      "crossCurricular": "Cooking: adding fractions of a cup in a recipe",
+      "smsc": "Social: spotting a mistake and helping a partner fix it",
+      "keywords": [
+        {
+          "term": "add",
+          "def": "put together"
+        },
+        {
+          "term": "numerator",
+          "def": "the top number: parts we have"
+        },
+        {
+          "term": "denominator",
+          "def": "the bottom number: size of the parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 1/5 + 2/5 equal to 3/10 or 3/5? Who is right?",
+        "a": "3/5: the parts are still fifths; we just have 3 of them."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "chocolate bar pieces",
+          "alt": "A bar in equal pieces",
+          "for": "teach:1"
+        },
+        {
+          "find": "glass of water half full",
+          "alt": "A glass part full",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 = 2/7 + ?",
+          "a": "5/7",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 4/9 _ 2/9",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 8 = ?",
+          "a": "32",
+          "mins": 1
+        },
+        {
+          "q": "2/3 of 12?",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Add the parts",
+          "bullets": [
+            "2/7 + 3/7",
+            "2 sevenths and 3 sevenths: 5 sevenths."
+          ],
+          "fraction": [
+            {
+              "parts": 7,
+              "shaded": 2,
+              "label": "2/7"
+            },
+            {
+              "parts": 7,
+              "shaded": 3,
+              "label": "3/7"
+            },
+            {
+              "parts": 7,
+              "shaded": 5,
+              "label": "5/7"
+            }
+          ],
+          "note": "Shade 2, then 3 more."
+        },
+        {
+          "heading": "Denominator stays",
+          "bullets": [
+            "The size of the parts does not change.",
+            "Only the number of parts adds."
+          ],
+          "note": "Like 2 apples + 3 apples = 5 apples."
+        },
+        {
+          "heading": "Misconception",
+          "bullets": [
+            "Do not add the denominators."
+          ],
+          "misconception": {
+            "wrong": "1/5 + 2/5 = 3/10",
+            "right": "1/5 + 2/5 = 3/5"
+          },
+          "note": "Show why 1/5 + 2/5 is not 3/10."
+        },
+        {
+          "heading": "On a number line",
+          "bullets": [
+            "3/10 + 4/10: start at 3, jump 4.",
+            "Land on 7/10."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 3,
+                "label": "3/10"
+              },
+              {
+                "at": 7,
+                "label": "7/10"
+              }
+            ]
+          },
+          "note": "Jump along tenths."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2/9 + 5/9 = ?",
+            "options": [
+              "7/9",
+              "7/18",
+              "3/9"
+            ],
+            "answer": 0,
+            "why": "Add the numerators; ninths stay ninths. 7/18 adds the denominators."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/5 + 2/5 = ?",
+          "a": "3/5",
+          "mins": 2,
+          "model": "Teacher: 1 fifth and 2 fifths make 3 fifths: 3/5."
+        },
+        {
+          "q": "3/10 + 4/10 = ?",
+          "a": "7/10",
+          "mins": 2
+        },
+        {
+          "q": "1/8 + 2/8 + 3/8 = ?",
+          "a": "6/8",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 2/6 + 3/6; 4/11 + 5/11; 1/4 + 2/4",
+          "a": "5/6; 9/11; 3/4",
+          "mins": 4,
+          "model": "Teacher: 2 sixths and 3 sixths make 5 sixths."
+        },
+        {
+          "q": "Extend: Yusuf drinks 2/8 of a bottle in the morning and 3/8 after lunch. How much did he drink?",
+          "a": "5/8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find 3 different pairs of fractions that add to 7/10.",
+          "a": "For example 1/10 + 6/10, 2/10 + 5/10, 3/10 + 4/10",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "3/7 + 2/7 = ? A) 5/7 B) 5/14 C) 1/7",
+          "a": "A) 5/7",
+          "mins": 2,
+          "options": [
+            "5/7",
+            "5/14",
+            "1/7"
+          ]
+        },
+        {
+          "q": "Big question: why does the denominator stay the same?",
+          "a": "The parts are the same size; we only count how many parts",
+          "mins": 3
+        }
+      ],
+      "homework": "Write and solve 5 additions of fractions with the same denominator.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 1/12 + 3/12 + 5/12 = ? (9/12)",
+      "resources": [
+        "White Rose Maths Year 3, Fractions B block: small step 'Add fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Paper number line 0 to 1 in tenths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 67 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 68,
+      "title": "Subtract fractions",
+      "duration": 45,
+      "bigQuestion": "How is subtracting fractions like subtracting apples?",
+      "objectives": [
+        "To understand how to subtract fractions with the same denominator"
+      ],
+      "successCriteria": [
+        "All: take away sevenths on a fraction bar",
+        "Most: subtract a fraction from 1",
+        "Some: find the difference between two fractions"
+      ],
+      "crossCurricular": "Cooking: how much of a cake is left",
+      "smsc": "Moral: not wasting food",
+      "keywords": [
+        {
+          "term": "subtract",
+          "def": "take away"
+        },
+        {
+          "term": "difference",
+          "def": "how much more one is than another"
+        },
+        {
+          "term": "whole",
+          "def": "1 = all the parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "There is 7/8 of a cake. You eat 3/8. How much is left?",
+        "a": "4/8."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "cake cut into slices",
+          "alt": "A cake in slices",
+          "for": "hook"
+        },
+        {
+          "find": "measuring tape close up",
+          "alt": "A measuring tape",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2/5 + 2/5 = ?",
+          "a": "4/5",
+          "mins": 1
+        },
+        {
+          "q": "1 = 5/6 + ?",
+          "a": "1/6",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 7 = ?",
+          "a": "21",
+          "mins": 1
+        },
+        {
+          "q": "12 - 5 = ?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Take away parts",
+          "bullets": [
+            "5/7 - 2/7",
+            "5 sevenths take 2 sevenths: 3/7."
+          ],
+          "fraction": [
+            {
+              "parts": 7,
+              "shaded": 5,
+              "label": "5/7"
+            },
+            {
+              "parts": 7,
+              "shaded": 3,
+              "label": "5/7 - 2/7 = 3/7"
+            }
+          ],
+          "note": "Cross out 2 parts."
+        },
+        {
+          "heading": "From one whole",
+          "model": {
+            "problem": "1 - 2/5",
+            "steps": [
+              "1 = 5/5",
+              "5/5 - 2/5 = 3/5"
+            ],
+            "answer": "3/5"
+          }
+        },
+        {
+          "heading": "Find the difference",
+          "bullets": [
+            "9/10 and 4/10.",
+            "Count on from 4 to 9: 5.",
+            "5/10"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 4,
+                "label": "4/10"
+              },
+              {
+                "at": 9,
+                "label": "9/10"
+              }
+            ]
+          },
+          "note": "Count on along tenths."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1 - 3/8 = ?",
+            "options": [
+              "5/8",
+              "2/8",
+              "3/8"
+            ],
+            "answer": 0,
+            "why": "8/8 - 3/8 = 5/8."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4/5 - 1/5 = ?",
+          "a": "3/5",
+          "mins": 2,
+          "model": "Teacher: 4 fifths take 1 fifth leaves 3 fifths."
+        },
+        {
+          "q": "1 - 1/4 = ?",
+          "a": "3/4",
+          "mins": 2
+        },
+        {
+          "q": "Difference between 2/9 and 7/9?",
+          "a": "5/9",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 6/7 - 4/7; 9/10 - 4/10; 1 - 5/12",
+          "a": "2/7; 5/10; 7/12",
+          "mins": 4,
+          "model": "Teacher: 6 sevenths take 4 sevenths is 2 sevenths."
+        },
+        {
+          "q": "Extend: A ribbon is 7/10 m. Khadijah cuts off 3/10 m. How long is the ribbon now?",
+          "a": "4/10 m",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find two fractions with denominator 8 whose difference is 3/8.",
+          "a": "For example 5/8 - 2/8 or 7/8 - 4/8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "7/8 - 3/8 = ? A) 4/8 B) 4/0 C) 10/8",
+          "a": "A) 4/8",
+          "mins": 2,
+          "options": [
+            "4/8",
+            "4/0",
+            "10/8"
+          ]
+        },
+        {
+          "q": "Big question: how is it like subtracting apples?",
+          "a": "We take away a number of parts; the size of the parts stays the same",
+          "mins": 3
+        }
+      ],
+      "homework": "Write and solve 5 subtractions of fractions, including two from 1 whole.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 1 - 2/9 - 4/9 = ? (3/9)",
+      "resources": [
+        "White Rose Maths Year 3, Fractions B block: small step 'Subtract fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Paper number line 0 to 1 in tenths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 68 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 69,
+      "title": "Add and subtract fractions: problems",
+      "duration": 45,
+      "bigQuestion": "How do we know whether to add or subtract in a fraction problem?",
+      "objectives": [
+        "To understand how to solve word problems by adding and subtracting fractions"
+      ],
+      "successCriteria": [
+        "All: choose add or subtract",
+        "Most: solve a one-step fraction problem",
+        "Some: solve a two-step fraction problem"
+      ],
+      "crossCurricular": "Geography: land use on a farm",
+      "smsc": "Spiritual: Allah provides crops from the earth",
+      "keywords": [
+        {
+          "term": "total",
+          "def": "add to find altogether"
+        },
+        {
+          "term": "left",
+          "def": "subtract to find what remains"
+        },
+        {
+          "term": "bar model",
+          "def": "a bar split into equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A field is planted with 2/9 wheat and 4/9 barley. What fraction is left for vegetables?",
+        "a": "1 - 6/9 = 3/9."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wheat field",
+          "alt": "A wheat field",
+          "for": "hook"
+        },
+        {
+          "find": "vegetable garden rows",
+          "alt": "Rows in a vegetable garden",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/10 + 5/10 = ?",
+          "a": "8/10",
+          "mins": 1
+        },
+        {
+          "q": "1 - 4/7 = ?",
+          "a": "3/7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 3 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "2/5 of 25?",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Key words",
+          "bullets": [
+            "Altogether, total: add.",
+            "Left, more than, difference: subtract."
+          ],
+          "note": "Sort the words."
+        },
+        {
+          "heading": "Two steps",
+          "model": {
+            "problem": "Ali eats 2/8 of a pizza and his sister eats 3/8. How much is left?",
+            "steps": [
+              "Eaten: 2/8 + 3/8 = 5/8",
+              "Left: 8/8 - 5/8 = 3/8"
+            ],
+            "answer": "3/8"
+          }
+        },
+        {
+          "heading": "Draw it",
+          "bullets": [
+            "Bar of 9 parts.",
+            "Shade wheat, barley, then count the rest."
+          ],
+          "fraction": {
+            "parts": 9,
+            "shaded": 6,
+            "label": "6/9 planted, 3/9 left"
+          },
+          "note": "Bar model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A tank is 5/6 full. 2/6 is used. Now?",
+            "options": [
+              "3/6",
+              "7/6",
+              "3/0"
+            ],
+            "answer": 0,
+            "why": "5/6 - 2/6 = 3/6."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Sara runs 3/10 km then 4/10 km. Total?",
+          "a": "7/10 km",
+          "mins": 2,
+          "model": "Teacher: total means add: 3/10 + 4/10 = 7/10 km."
+        },
+        {
+          "q": "A jug holds 1 litre. 3/5 is poured out. How much is left?",
+          "a": "2/5 litre",
+          "mins": 3
+        },
+        {
+          "q": "How much more is 7/9 than 2/9?",
+          "a": "5/9",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Omar paints 2/7 of a wall on Monday and 3/7 on Tuesday. How much is painted? How much is left?",
+          "a": "5/7; 2/7",
+          "mins": 4,
+          "model": "Teacher: add the days, then subtract from 7/7."
+        },
+        {
+          "q": "Extend: A bag of rice: 4/12 used for lunch, 5/12 for dinner. What fraction is left?",
+          "a": "3/12",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write your own two-step fraction problem with an answer of 1/5.",
+          "a": "For example 1 - 2/5 - 2/5 = 1/5",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/4 + 2/4 = ? A) 3/4 B) 3/8 C) 1/4",
+          "a": "A) 3/4",
+          "mins": 2,
+          "options": [
+            "3/4",
+            "3/8",
+            "1/4"
+          ]
+        },
+        {
+          "q": "Big question: how do we know to add or subtract?",
+          "a": "Read the question: total means add; left or difference means subtract",
+          "mins": 3
+        }
+      ],
+      "homework": "Solve 3 fraction word problems on the worksheet and draw a bar model for one.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 1/10 + 3/10 + ? = 1 (6/10).",
+      "resources": [
+        "White Rose Maths Year 3, Fractions B block: add and subtract fractions in problems (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Printed bar model template",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 69 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 70,
+      "title": "Fractions B: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "How confident am I with fractions now?",
+      "objectives": [
+        "To understand how well I can find, compare, add and subtract fractions"
+      ],
+      "successCriteria": [
+        "All: find fractions of amounts",
+        "Most: compare and add or subtract fractions",
+        "Some: solve a problem and explain"
+      ],
+      "smsc": "Spiritual: shukr for what we have learned; patience to keep practising",
+      "keywords": [
+        {
+          "term": "fraction",
+          "def": "equal parts of a whole"
+        },
+        {
+          "term": "numerator",
+          "def": "parts we have"
+        },
+        {
+          "term": "denominator",
+          "def": "equal parts in the whole"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which fraction fact are you most sure of? Which one do you want to practise?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        },
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza in eighths",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/4 of 16?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "2/7 + 4/7 = ?",
+          "a": "6/7",
+          "mins": 1
+        },
+        {
+          "q": "1 - 5/9 = ?",
+          "a": "4/9",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 9 = ?",
+          "a": "36",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fractions of amounts",
+          "bullets": [
+            "Divide by the denominator.",
+            "Multiply by the numerator."
+          ],
+          "fraction": {
+            "parts": 5,
+            "shaded": 3,
+            "label": "3/5 of 20 = 12"
+          },
+          "note": "Recap 3/5 of 20 = 12."
+        },
+        {
+          "heading": "Add and subtract",
+          "bullets": [
+            "Same denominator: add or take the numerators.",
+            "1 = 8/8."
+          ],
+          "note": "Recap."
+        },
+        {
+          "heading": "Check myself",
+          "bullets": [
+            "Work it backwards.",
+            "Does it make sense?"
+          ],
+          "note": "Model checking an answer."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/5 of a number is 9. The number?",
+            "options": [
+              "45",
+              "14",
+              "4"
+            ],
+            "answer": 0,
+            "why": "5 × 9 = 45."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2/3 of 18?",
+          "a": "12",
+          "mins": 2,
+          "model": "Teacher: 18 ÷ 3 = 6, 2 × 6 = 12."
+        },
+        {
+          "q": "Order: 5/8, 1/8, 7/8",
+          "a": "1/8, 5/8, 7/8",
+          "mins": 2
+        },
+        {
+          "q": "1 = 4/10 + ?",
+          "a": "6/10",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: 3/8 of 32; 4/5 of 25; 1/6 of 42",
+          "a": "12; 20; 7",
+          "mins": 4,
+          "model": "Teacher: 32 ÷ 8 = 4, 3 × 4 = 12."
+        },
+        {
+          "q": "Extend: Check: 3/11 + 5/11; 9/10 - 6/10; 1 - 2/7",
+          "a": "8/11; 3/10; 5/7",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: Halima has 30 stickers. She gives away 2/5. How many does she keep?",
+          "a": "18",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "3/4 is 15. The whole? A) 20 B) 45 C) 5",
+          "a": "A) 20",
+          "mins": 2,
+          "options": [
+            "20",
+            "45",
+            "5"
+          ]
+        },
+        {
+          "q": "Big question: one fraction skill I am sure of, one to practise",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct any mistakes on your check and write one tip for a friend.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 2/9 of 63 and 5/6 of 48.",
+      "resources": [
+        "White Rose Maths Year 3, Fractions B block: end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 70 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 71,
+      "title": "Pounds and pence",
+      "duration": 45,
+      "bigQuestion": "Why are there 100 pence in a pound?",
+      "objectives": [
+        "To understand how to convert and compare amounts in pounds and pence"
+      ],
+      "successCriteria": [
+        "All: recognise coins and notes",
+        "Most: convert between pounds and pence",
+        "Some: compare two amounts of money"
+      ],
+      "crossCurricular": "Science: comparing the size and mass of coins",
+      "smsc": "Moral: honesty with money",
+      "keywords": [
+        {
+          "term": "pound (£)",
+          "def": "100 pence"
+        },
+        {
+          "term": "pence (p)",
+          "def": "the smaller unit of money"
+        },
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        },
+        {
+          "term": "compare",
+          "def": "decide which is more"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather have 350p or £3 and 5p? Why?",
+        "a": "350p is £3 and 50p, which is more than £3 and 5p."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "british coins",
+          "alt": "UK coins",
+          "for": "keywords"
+        },
+        {
+          "find": "british five pound note",
+          "alt": "A £5 note",
+          "for": "teach:1"
+        }
+      ],
+      "islamicLink": {
+        "text": "Allah tells us to give full measure and weigh with an even balance (al-Isra 17:35). Muslims are honest with money: we count it carefully and never cheat in buying or selling.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "1 m = ? cm",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "300 + 45 = ?",
+          "a": "345",
+          "mins": 1
+        },
+        {
+          "q": "TT: 5 × 8 = ?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 100?",
+          "a": "25",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Coins and notes",
+          "bullets": [
+            "Coins: 1p, 2p, 5p, 10p, 20p, 50p, £1, £2.",
+            "Notes: £5, £10, £20, £50."
+          ],
+          "note": "Show real coins."
+        },
+        {
+          "heading": "Pounds to pence",
+          "bullets": [
+            "£1 = 100p",
+            "£3 and 45p = 345p"
+          ],
+          "table": {
+            "head": [
+              "Pounds and pence",
+              "Pence"
+            ],
+            "rows": [
+              [
+                "£1",
+                "100p"
+              ],
+              [
+                "£2 and 50p",
+                "250p"
+              ],
+              [
+                "£3 and 45p",
+                "345p"
+              ]
+            ]
+          },
+          "note": "Count pounds in 100s."
+        },
+        {
+          "heading": "Pence to pounds",
+          "model": {
+            "problem": "Convert 520p",
+            "steps": [
+              "500p = £5",
+              "20p left over"
+            ],
+            "answer": "£5 and 20p"
+          }
+        },
+        {
+          "heading": "Compare",
+          "bullets": [
+            "Make the units the same.",
+            "£2 and 5p = 205p",
+            "205p < 250p"
+          ],
+          "note": "Watch the 5p vs 50p trap."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is more?",
+            "options": [
+              "£4 and 10p",
+              "401p",
+              "They are equal"
+            ],
+            "answer": 0,
+            "why": "£4 and 10p = 410p, more than 401p."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Convert £6 to pence.",
+          "a": "600p",
+          "mins": 2,
+          "model": "Teacher: £1 is 100p, so £6 is 600p."
+        },
+        {
+          "q": "Convert 275p to pounds and pence.",
+          "a": "£2 and 75p",
+          "mins": 2
+        },
+        {
+          "q": "Use < or >: 150p _ £1 and 5p",
+          "a": "> (150p > 105p)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: £7 and 30p; 408p; £10",
+          "a": "730p; £4 and 8p; 1,000p",
+          "mins": 4,
+          "model": "Teacher: £7 is 700p, add 30p: 730p."
+        },
+        {
+          "q": "Extend: Order smallest first: £2 and 9p, 295p, £2 and 90p, 219p",
+          "a": "£2 and 9p (209p), 219p, £2 and 90p (290p), 295p",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Make £1 and 35p in 3 different ways with coins.",
+          "a": "For example £1 + 20p + 10p + 5p",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "£3 and 6p in pence? A) 306p B) 360p C) 36p",
+          "a": "A) 306p",
+          "mins": 2,
+          "options": [
+            "306p",
+            "360p",
+            "36p"
+          ]
+        },
+        {
+          "q": "Big question: why 100 pence in a pound?",
+          "a": "That is how our money is made: 100 pennies make 1 pound, like 100 cm make 1 m",
+          "mins": 2
+        }
+      ],
+      "homework": "Count the coins in a purse or a sadaqah jar with an adult. Write the total in pounds and pence.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many 20p coins make £3? (15)",
+      "resources": [
+        "White Rose Maths Year 3, Money block: small steps 'Pounds and pence', 'Convert pounds and pence' and 'Compare amounts of money' (week 3 folded into week 4) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Printed place value chart: pounds and pence",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 71 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 72,
+      "title": "Add money",
+      "duration": 45,
+      "bigQuestion": "How do we add pounds and pence without getting muddled?",
+      "objectives": [
+        "To understand how to add amounts of money, exchanging pence for pounds"
+      ],
+      "successCriteria": [
+        "All: add pounds and pence separately",
+        "Most: exchange 100p for £1",
+        "Some: add money in a shopping problem"
+      ],
+      "crossCurricular": "PSHE: planning spending",
+      "smsc": "Moral: spending wisely and not wasting money",
+      "keywords": [
+        {
+          "term": "total",
+          "def": "the amount altogether"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 100p for £1"
+        },
+        {
+          "term": "cost",
+          "def": "how much something is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A book costs £2 and 80p and a pen costs 50p. Is £3 enough?",
+        "a": "No: total is £3 and 30p."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "british coins",
+          "alt": "UK coins",
+          "for": "teach:1"
+        },
+        {
+          "find": "price tag on a book",
+          "alt": "A price label",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Convert 340p.",
+          "a": "£3 and 40p",
+          "mins": 1
+        },
+        {
+          "q": "70 + 50 = ?",
+          "a": "120",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 5 = ?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "£1 = ?p",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Pounds, then pence",
+          "bullets": [
+            "£2 and 40p + £1 and 35p",
+            "£2 + £1 = £3",
+            "40p + 35p = 75p"
+          ],
+          "note": "Total £3 and 75p."
+        },
+        {
+          "heading": "Exchange",
+          "model": {
+            "problem": "£4 and 80p + £2 and 50p",
+            "steps": [
+              "£4 + £2 = £6",
+              "80p + 50p = 130p",
+              "130p = £1 and 30p",
+              "£6 + £1 and 30p"
+            ],
+            "answer": "£7 and 30p"
+          }
+        },
+        {
+          "heading": "Bar model",
+          "bullets": [
+            "Total on top.",
+            "Parts below."
+          ],
+          "table": {
+            "head": [
+              "Total: £7 and 30p",
+              "Total: £7 and 30p"
+            ],
+            "rows": [
+              [
+                "£4 and 80p",
+                "£2 and 50p"
+              ]
+            ]
+          },
+          "note": "Draw the bar."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "65p + 50p = ?",
+            "options": [
+              "£1 and 15p",
+              "115",
+              "£11 and 5p"
+            ],
+            "answer": 0,
+            "why": "115p = £1 and 15p. 115 needs its unit."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "£3 and 20p + £2 and 45p",
+          "a": "£5 and 65p",
+          "mins": 2,
+          "model": "Teacher: £3 + £2 = £5; 20p + 45p = 65p."
+        },
+        {
+          "q": "75p + 40p",
+          "a": "£1 and 15p",
+          "mins": 2
+        },
+        {
+          "q": "£1 and 90p + £3 and 30p",
+          "a": "£5 and 20p",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: £5 and 15p + £2 and 70p; 85p + 85p; £6 and 55p + £1 and 60p",
+          "a": "£7 and 85p; £1 and 70p; £8 and 15p",
+          "mins": 4,
+          "model": "Teacher: £5 + £2 = £7, 15p + 70p = 85p."
+        },
+        {
+          "q": "Extend: A notebook is £1 and 25p, a pencil is 40p and a ruler is 85p. Find the total.",
+          "a": "£2 and 50p",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which two items above cost exactly £1 and 65p?",
+          "a": "Notebook and pencil",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "£2 and 60p + 50p? A) £3 and 10p B) £2 and 110p C) £7 and 60p",
+          "a": "A) £3 and 10p",
+          "mins": 2,
+          "options": [
+            "£3 and 10p",
+            "£2 and 110p",
+            "£7 and 60p"
+          ]
+        },
+        {
+          "q": "Big question: how do we add money without muddle?",
+          "a": "Add pounds, add pence, then exchange 100p for £1",
+          "mins": 2
+        }
+      ],
+      "homework": "Choose 2 items from a shopping leaflet and add the prices.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: add 3 amounts: £2 and 45p, £1 and 75p, 90p (£5 and 10p).",
+      "resources": [
+        "White Rose Maths Year 3, Money block: small step 'Add money' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Household items with price labels (pretend shop)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 72 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 73,
+      "title": "Subtract money",
+      "duration": 45,
+      "bigQuestion": "How do we subtract money when there are not enough pence?",
+      "objectives": [
+        "To understand how to subtract amounts of money, exchanging a pound for 100 pence"
+      ],
+      "successCriteria": [
+        "All: subtract pounds and pence separately",
+        "Most: exchange £1 for 100p",
+        "Some: find how much more one item costs"
+      ],
+      "crossCurricular": "PSHE: comparing prices before buying",
+      "smsc": "Moral: thinking before we spend",
+      "keywords": [
+        {
+          "term": "subtract",
+          "def": "take away"
+        },
+        {
+          "term": "difference",
+          "def": "how much more"
+        },
+        {
+          "term": "exchange",
+          "def": "swap £1 for 100p"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A toy was £5 and 60p. Now it is £2 and 30p less. What does it cost now?",
+        "a": "£3 and 30p."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "price tag",
+          "alt": "A price label",
+          "for": "hook"
+        },
+        {
+          "find": "british coins",
+          "alt": "UK coins",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "£1 and 40p + 70p = ?",
+          "a": "£2 and 10p",
+          "mins": 1
+        },
+        {
+          "q": "100 - 35 = ?",
+          "a": "65",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 4 = ?",
+          "a": "32",
+          "mins": 1
+        },
+        {
+          "q": "Convert 260p.",
+          "a": "£2 and 60p",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "No exchange",
+          "bullets": [
+            "£5 and 60p - £2 and 30p",
+            "£5 - £2 = £3",
+            "60p - 30p = 30p"
+          ],
+          "note": "Answer £3 and 30p."
+        },
+        {
+          "heading": "With exchange",
+          "model": {
+            "problem": "£4 and 20p - £1 and 50p",
+            "steps": [
+              "20p - 50p: not enough pence",
+              "Exchange £1: £3 and 120p",
+              "£3 - £1 = £2; 120p - 50p = 70p"
+            ],
+            "answer": "£2 and 70p"
+          }
+        },
+        {
+          "heading": "Difference",
+          "bullets": [
+            "Count on from the smaller.",
+            "£1 and 80p to £3: 20p then £1."
+          ],
+          "numberline": {
+            "min": 180,
+            "max": 300,
+            "step": 10,
+            "marks": [
+              {
+                "at": 180,
+                "label": "£1.80"
+              },
+              {
+                "at": 200,
+                "label": "£2"
+              },
+              {
+                "at": 300,
+                "label": "£3"
+              }
+            ]
+          },
+          "note": "Difference is £1 and 20p."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "£3 and 10p - 40p = ?",
+            "options": [
+              "£2 and 70p",
+              "£3 and 30p",
+              "£1 and 70p"
+            ],
+            "answer": 0,
+            "why": "Exchange £1: £2 and 110p - 40p = £2 and 70p."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "£6 and 75p - £4 and 25p",
+          "a": "£2 and 50p",
+          "mins": 2,
+          "model": "Teacher: £6 - £4 = £2; 75p - 25p = 50p."
+        },
+        {
+          "q": "£5 and 10p - £2 and 60p",
+          "a": "£2 and 50p",
+          "mins": 3
+        },
+        {
+          "q": "Difference between 85p and £1 and 20p?",
+          "a": "35p",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: £8 and 90p - £3 and 40p; £4 and 5p - £1 and 30p; £7 - £2 and 45p",
+          "a": "£5 and 50p; £2 and 75p; £4 and 55p",
+          "mins": 4,
+          "model": "Teacher: £8 - £3 = £5; 90p - 40p = 50p."
+        },
+        {
+          "q": "Extend: A lunchbox costs £4 and 30p and a bottle costs £1 and 85p. How much more is the lunchbox?",
+          "a": "£2 and 45p",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Ibrahim had £6. He spent £2 and 35p, then £1 and 50p. How much is left?",
+          "a": "£2 and 15p",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "£2 and 50p - 70p? A) £1 and 80p B) £2 and 20p C) £1 and 20p",
+          "a": "A) £1 and 80p",
+          "mins": 2,
+          "options": [
+            "£1 and 80p",
+            "£2 and 20p",
+            "£1 and 20p"
+          ]
+        },
+        {
+          "q": "Big question: what if there are not enough pence?",
+          "a": "Exchange £1 for 100p, then subtract",
+          "mins": 2
+        }
+      ],
+      "homework": "Find 2 prices in a leaflet and work out how much more one costs than the other.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: £10 - £3 and 99p (£6 and 1p).",
+      "resources": [
+        "White Rose Maths Year 3, Money block: small step 'Subtract money' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Household items with price labels (pretend shop)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 73 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 74,
+      "title": "Find change",
+      "duration": 45,
+      "bigQuestion": "How can a shopkeeper check they gave the right change?",
+      "objectives": [
+        "To understand how to find change by counting on or subtracting"
+      ],
+      "successCriteria": [
+        "All: find change from £1",
+        "Most: find change from £5 and £10",
+        "Some: check change by adding"
+      ],
+      "crossCurricular": "PSHE: shopping safely and checking receipts",
+      "smsc": "Moral: honesty: giving back the right change",
+      "keywords": [
+        {
+          "term": "change",
+          "def": "money given back when you pay too much"
+        },
+        {
+          "term": "count on",
+          "def": "add up from the price"
+        },
+        {
+          "term": "check",
+          "def": "add the change and the price"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You pay for a 35p apple with a £1 coin. What change should you get? How can you be sure?",
+        "a": "65p; 35p + 65p = £1."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "shop till",
+          "alt": "A shop till",
+          "for": "hook"
+        },
+        {
+          "find": "british one pound coin",
+          "alt": "A £1 coin",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "£4 and 20p - £1 and 50p?",
+          "a": "£2 and 70p",
+          "mins": 1
+        },
+        {
+          "q": "100 - 45 = ?",
+          "a": "55",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 6 = ?",
+          "a": "18",
+          "mins": 1
+        },
+        {
+          "q": "£2 = ?p",
+          "a": "200",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count on",
+          "model": {
+            "problem": "Change from £1 for 35p",
+            "steps": [
+              "35p to 40p: 5p",
+              "40p to £1: 60p",
+              "5p + 60p = 65p"
+            ],
+            "answer": "65p"
+          }
+        },
+        {
+          "heading": "From a note",
+          "bullets": [
+            "£5 - £3 and 20p",
+            "£3 and 20p to £4: 80p",
+            "£4 to £5: £1"
+          ],
+          "numberline": {
+            "min": 300,
+            "max": 500,
+            "step": 20,
+            "marks": [
+              {
+                "at": 320,
+                "label": "£3.20"
+              },
+              {
+                "at": 400,
+                "label": "£4"
+              },
+              {
+                "at": 500,
+                "label": "£5"
+              }
+            ]
+          },
+          "note": "Change £1 and 80p."
+        },
+        {
+          "heading": "Check the change",
+          "bullets": [
+            "Price + change = money paid.",
+            "£3 and 20p + £1 and 80p = £5 ✓"
+          ],
+          "note": "Shopkeepers check like this."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Change from £2 for 99p?",
+            "options": [
+              "£1 and 1p",
+              "£1 and 99p",
+              "1p"
+            ],
+            "answer": 0,
+            "why": "99p + 1p = £1, then £1 more: £1 and 1p."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Change from £1 for 45p?",
+          "a": "55p",
+          "mins": 2,
+          "model": "Teacher: 45p to 50p is 5p, 50p to £1 is 50p: 55p."
+        },
+        {
+          "q": "Change from £5 for £2 and 60p?",
+          "a": "£2 and 40p",
+          "mins": 3
+        },
+        {
+          "q": "Check: price 70p, change 30p, paid?",
+          "a": "£1",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Change from £1 for 12p; from £5 for £4 and 15p; from £10 for £6 and 75p",
+          "a": "88p; 85p; £3 and 25p",
+          "mins": 4,
+          "model": "Teacher: 12p to 20p is 8p, 20p to £1 is 80p: 88p."
+        },
+        {
+          "q": "Extend: Noor buys a book for £3 and 45p and pays with £5. She gets £1 and 65p change. Is that right?",
+          "a": "No: it should be £1 and 55p",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: You have a £10 note. Buy 2 items from the shop list and find your change.",
+          "a": "Answers will vary; check by adding",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Change from £1 for 60p? A) 40p B) 60p C) £1 and 60p",
+          "a": "A) 40p",
+          "mins": 2,
+          "options": [
+            "40p",
+            "60p",
+            "£1 and 60p"
+          ]
+        },
+        {
+          "q": "Big question: how can a shopkeeper check change?",
+          "a": "Add the change to the price: it should equal the money paid",
+          "mins": 2
+        }
+      ],
+      "homework": "Play shop at home: pay with £1 or £5 and give the right change.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: change from £20 for £13 and 64p (£6 and 36p).",
+      "resources": [
+        "White Rose Maths Year 3, Money block: small step 'Find change' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Household items with price labels (pretend shop)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 74 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 75,
+      "title": "Money problems in a pretend shop; money check",
+      "duration": 45,
+      "bigQuestion": "How do we plan what we can afford?",
+      "objectives": [
+        "To understand how to solve money problems with more than one step"
+      ],
+      "successCriteria": [
+        "All: find the total of 2 or 3 items",
+        "Most: find change after shopping",
+        "Some: solve a two-step money problem and check it"
+      ],
+      "crossCurricular": "PSHE: budgeting pocket money",
+      "smsc": "Moral: spending within our means and giving sadaqah",
+      "keywords": [
+        {
+          "term": "afford",
+          "def": "have enough money to buy"
+        },
+        {
+          "term": "total",
+          "def": "the cost altogether"
+        },
+        {
+          "term": "receipt",
+          "def": "a list of what was bought and paid"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have £5. Can you buy a notebook (£1 and 25p), 2 pencils (40p each) and a ruler (85p)? What is left?",
+        "a": "Total £2 and 90p; £2 and 10p left."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "shop receipt",
+          "alt": "A shop receipt",
+          "for": "teach:3"
+        },
+        {
+          "find": "stationery pencils and rulers",
+          "alt": "Pencils and a ruler",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Change from £1 for 65p?",
+          "a": "35p",
+          "mins": 1
+        },
+        {
+          "q": "£1 and 25p + 85p?",
+          "a": "£2 and 10p",
+          "mins": 1
+        },
+        {
+          "q": "2 × 40p?",
+          "a": "80p",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 6 = ?",
+          "a": "24",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The shop",
+          "bullets": [
+            "Notebook £1 and 25p",
+            "Pencil 40p",
+            "Ruler 85p",
+            "Glue £1 and 10p"
+          ],
+          "table": {
+            "head": [
+              "Item",
+              "Price"
+            ],
+            "rows": [
+              [
+                "Notebook",
+                "£1 and 25p"
+              ],
+              [
+                "Pencil",
+                "40p"
+              ],
+              [
+                "Ruler",
+                "85p"
+              ],
+              [
+                "Glue",
+                "£1 and 10p"
+              ]
+            ]
+          },
+          "note": "Show household items with labels."
+        },
+        {
+          "heading": "Two steps",
+          "model": {
+            "problem": "2 pencils and glue: change from £5?",
+            "steps": [
+              "2 × 40p = 80p",
+              "80p + £1 and 10p = £1 and 90p",
+              "£5 - £1 and 90p = £3 and 10p"
+            ],
+            "answer": "£3 and 10p"
+          }
+        },
+        {
+          "heading": "Receipt check",
+          "bullets": [
+            "List items.",
+            "Add the total.",
+            "Paid - total = change."
+          ],
+          "note": "Check with addition."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Notebook + ruler = ?",
+            "options": [
+              "£2 and 10p",
+              "£1 and 10p",
+              "£2"
+            ],
+            "answer": 0,
+            "why": "£1 and 25p + 85p = £1 and 110p = £2 and 10p."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Ruler + glue?",
+          "a": "£1 and 95p",
+          "mins": 2,
+          "model": "Teacher: 85p + £1 and 10p = £1 and 95p."
+        },
+        {
+          "q": "3 pencils?",
+          "a": "£1 and 20p",
+          "mins": 2
+        },
+        {
+          "q": "Change from £2 for 3 pencils?",
+          "a": "80p",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: notebook + pencil + glue; change from £5",
+          "a": "£2 and 75p; £2 and 25p",
+          "mins": 4,
+          "model": "Teacher: £1 and 25p + 40p = £1 and 65p, + £1 and 10p = £2 and 75p."
+        },
+        {
+          "q": "Extend: Check: Musa has £3. Can he buy 2 notebooks and a pencil? Explain.",
+          "a": "Yes: £2 and 50p + 40p = £2 and 90p, with 10p left",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: can you buy one of every item with £4? What is left?",
+          "a": "Yes: £1 and 25p + 40p + 85p + £1 and 10p = £3 and 60p; 40p left",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Glue + pencil? A) £1 and 50p B) £1 and 14p C) £5 and 10p",
+          "a": "A) £1 and 50p",
+          "mins": 2,
+          "options": [
+            "£1 and 50p",
+            "£1 and 14p",
+            "£5 and 10p"
+          ]
+        },
+        {
+          "q": "Big question: how do we plan what we can afford?",
+          "a": "Add the prices, compare with our money, find the change",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a pretend shop with 4 household items. Write a shopping list for £5 and work out the change.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find every way to spend exactly £2 and 50p in the shop.",
+      "resources": [
+        "White Rose Maths Year 3, Money block: problem solving and end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Household items with price labels (pretend shop)",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 75 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 76,
+      "title": "Roman numerals to XII",
+      "duration": 45,
+      "bigQuestion": "Why do some clocks use letters instead of numbers?",
+      "objectives": [
+        "To understand how to read Roman numerals from I to XII on a clock"
+      ],
+      "successCriteria": [
+        "All: read I to XII",
+        "Most: write numbers 1 to 12 as Roman numerals",
+        "Some: read the time on a Roman numeral clock"
+      ],
+      "crossCurricular": "History: the Romans in Britain",
+      "smsc": "Cultural: number systems from different times and places",
+      "keywords": [
+        {
+          "term": "Roman numerals",
+          "def": "letters the Romans used for numbers"
+        },
+        {
+          "term": "I, V, X",
+          "def": "1, 5 and 10"
+        },
+        {
+          "term": "clock face",
+          "def": "the front of a clock"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A clock shows IX, X, XI. What could IX mean?",
+        "a": "9: one before ten."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clock with roman numerals",
+          "alt": "A clock with Roman numerals",
+          "for": "hook"
+        },
+        {
+          "find": "big ben clock face",
+          "alt": "A large clock face with Roman numerals",
+          "for": "teach:3"
+        }
+      ],
+      "islamicLink": {
+        "text": "Allah tells us that prayer is decreed for the believers at set times (an-Nisa 4:103). Reading any clock helps us pray on time.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Change from £1 for 45p?",
+          "a": "55p",
+          "mins": 1
+        },
+        {
+          "q": "Minutes in an hour?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "TT: 5 × 9 = ?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "5 + 4 = ?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three letters",
+          "bullets": [
+            "I = 1",
+            "V = 5",
+            "X = 10"
+          ],
+          "note": "Write them big."
+        },
+        {
+          "heading": "Add and take",
+          "bullets": [
+            "After: add. VI = 5 + 1 = 6.",
+            "Before: take. IV = 5 - 1 = 4."
+          ],
+          "table": {
+            "head": [
+              "1-4",
+              "5-8",
+              "9-12"
+            ],
+            "rows": [
+              [
+                "I",
+                "V",
+                "IX"
+              ],
+              [
+                "II",
+                "VI",
+                "X"
+              ],
+              [
+                "III",
+                "VII",
+                "XI"
+              ],
+              [
+                "IV",
+                "VIII",
+                "XII"
+              ]
+            ]
+          },
+          "note": "Build 1 to 12."
+        },
+        {
+          "heading": "On a clock",
+          "bullets": [
+            "Same places as 1 to 12.",
+            "XII at the top."
+          ],
+          "note": "Show a Roman numeral clock."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "What is VIII?",
+            "options": [
+              "8",
+              "3",
+              "13"
+            ],
+            "answer": 0,
+            "why": "V + I + I + I = 5 + 3 = 8."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write 7 in Roman numerals.",
+          "a": "VII",
+          "mins": 2,
+          "model": "Teacher: 5 is V, add 2 more: VII."
+        },
+        {
+          "q": "What is XI?",
+          "a": "11",
+          "mins": 2
+        },
+        {
+          "q": "Write 4 and 9.",
+          "a": "IV; IX",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write 3, 6, 10 and 12.",
+          "a": "III; VI; X; XII",
+          "mins": 4,
+          "model": "Teacher: 3 is III."
+        },
+        {
+          "q": "Extend: Hour hand on IV, minute hand on XII. Time?",
+          "a": "4 o'clock",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why is 4 written IV and not IIII on most clocks? Explain the rule.",
+          "a": "I before V means take 1 away: 5 - 1 = 4",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "IX = ? A) 9 B) 11 C) 4",
+          "a": "A) 9",
+          "mins": 2,
+          "options": [
+            "9",
+            "11",
+            "4"
+          ]
+        },
+        {
+          "q": "Big question: why do some clocks use letters?",
+          "a": "They use Roman numerals, an old way of writing numbers",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a paper plate clock with Roman numerals I to XII.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is XV? XX? (15; 20)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small step 'Roman numerals to XII' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands and minute marks (printable template)",
+        "Printed Roman numeral clock face",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 76 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 77,
+      "title": "Tell the time to 5 minutes",
+      "duration": 45,
+      "bigQuestion": "How do the numbers on a clock become minutes?",
+      "objectives": [
+        "To understand how to tell the time to the nearest 5 minutes using past and to"
+      ],
+      "successCriteria": [
+        "All: count in 5s round the clock",
+        "Most: read minutes past",
+        "Some: read minutes to"
+      ],
+      "crossCurricular": "PSHE: getting ready on time",
+      "smsc": "Spiritual: being punctual for salah",
+      "keywords": [
+        {
+          "term": "past",
+          "def": "minutes after the hour"
+        },
+        {
+          "term": "to",
+          "def": "minutes before the next hour"
+        },
+        {
+          "term": "minute hand",
+          "def": "the long hand"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The minute hand is on 7. Is it 35 past or 25 to? Can it be both?",
+        "a": "Both: 35 past is the same as 25 to."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "An analogue clock",
+          "for": "hook"
+        },
+        {
+          "find": "station clock",
+          "alt": "A station clock",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "IV = ?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 60.",
+          "a": "5 ... 60",
+          "mins": 1
+        },
+        {
+          "q": "TT: 5 × 7 = ?",
+          "a": "35",
+          "mins": 1
+        },
+        {
+          "q": "60 - 35 = ?",
+          "a": "25",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count in 5s",
+          "bullets": [
+            "Each number: 5 more minutes.",
+            "6 is 30 minutes."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 60,
+            "step": 5,
+            "marks": [
+              {
+                "at": 15,
+                "label": "3"
+              },
+              {
+                "at": 30,
+                "label": "6"
+              },
+              {
+                "at": 45,
+                "label": "9"
+              }
+            ]
+          },
+          "note": "Count round together."
+        },
+        {
+          "heading": "Past",
+          "bullets": [
+            "Right side: past.",
+            "On 4: 20 past."
+          ],
+          "note": "Show 20 past 2."
+        },
+        {
+          "heading": "To",
+          "bullets": [
+            "Left side: to.",
+            "On 8: 20 to.",
+            "Hour hand nearly at the next hour."
+          ],
+          "note": "Show 20 to 3."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Minute hand on 10, hour hand nearly 6. Time?",
+            "options": [
+              "10 to 6",
+              "10 past 6",
+              "50 past 6"
+            ],
+            "answer": 0,
+            "why": "On 10: 10 minutes to; nearly 6."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Minute on 5, hour just past 9.",
+          "a": "25 past 9",
+          "mins": 2,
+          "model": "Teacher counts in 5s to 5: 25 past 9."
+        },
+        {
+          "q": "Minute on 11, hour nearly 4.",
+          "a": "5 to 4",
+          "mins": 2
+        },
+        {
+          "q": "Show 25 to 8.",
+          "a": "Minute on 7, hour nearly 8",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Show 10 past 1, 20 to 7 and 5 to 12.",
+          "a": "Minute on 2; minute on 8; minute on 11",
+          "mins": 4,
+          "model": "Teacher shows 10 past 1."
+        },
+        {
+          "q": "Extend: Write 35 past 4 as minutes to.",
+          "a": "25 to 5",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Dhuhr is at 25 past 1. You are ready at 20 past 1. Are you early or late? By how much?",
+          "a": "Early by 5 minutes",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Minute hand on 3? A) quarter past B) 3 past C) quarter to",
+          "a": "A) quarter past",
+          "mins": 2,
+          "options": [
+            "quarter past",
+            "3 past",
+            "quarter to"
+          ]
+        },
+        {
+          "q": "Big question: how do numbers become minutes?",
+          "a": "Each number is 5 minutes more: multiply by 5",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the clock at home 4 times today to the nearest 5 minutes.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is 40 minutes after 25 past 6? (5 past 7)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small step 'Tell the time to 5 minutes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands and minute marks (printable template)",
+        "An analogue clock at home",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 77 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 78,
+      "title": "Tell the time to the minute",
+      "duration": 45,
+      "bigQuestion": "How do the little marks on a clock help us?",
+      "objectives": [
+        "To understand how to tell the time to the nearest minute"
+      ],
+      "successCriteria": [
+        "All: count the minute marks",
+        "Most: read minutes past to the minute",
+        "Some: read minutes to to the minute"
+      ],
+      "crossCurricular": "Science: timing an experiment",
+      "smsc": "Moral: valuing every minute",
+      "keywords": [
+        {
+          "term": "minute mark",
+          "def": "a small line for 1 minute"
+        },
+        {
+          "term": "nearest minute",
+          "def": "the closest minute mark"
+        },
+        {
+          "term": "analogue clock",
+          "def": "a clock with hands"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The minute hand is 2 marks after the 7. What time is it past the hour?",
+        "a": "37 minutes past (23 to)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock close up",
+          "alt": "A clock with minute marks",
+          "for": "teach:1"
+        },
+        {
+          "find": "wristwatch analogue",
+          "alt": "A wristwatch",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Minute hand on 7?",
+          "a": "35 past",
+          "mins": 1
+        },
+        {
+          "q": "35 + 2 = ?",
+          "a": "37",
+          "mins": 1
+        },
+        {
+          "q": "60 - 37 = ?",
+          "a": "23",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 6 = ?",
+          "a": "48",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Minute marks",
+          "bullets": [
+            "60 marks round the clock.",
+            "4 small marks between numbers."
+          ],
+          "numberline": {
+            "min": 35,
+            "max": 40,
+            "step": 1,
+            "marks": [
+              {
+                "at": 35,
+                "label": "7"
+              },
+              {
+                "at": 37,
+                "label": "37"
+              },
+              {
+                "at": 40,
+                "label": "8"
+              }
+            ]
+          },
+          "note": "Zoom in on a clock."
+        },
+        {
+          "heading": "Minutes past",
+          "model": {
+            "problem": "Minute hand 3 marks after the 4",
+            "steps": [
+              "The 4 is 20 minutes",
+              "20 + 3 = 23"
+            ],
+            "answer": "23 minutes past"
+          }
+        },
+        {
+          "heading": "Minutes to",
+          "model": {
+            "problem": "Minute hand 2 marks before the 9",
+            "steps": [
+              "The 9 is 15 to",
+              "15 + 2 = 17"
+            ],
+            "answer": "17 minutes to"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Minute hand 1 mark after 2, hour just past 6. Time?",
+            "options": [
+              "11 minutes past 6",
+              "21 minutes past 6",
+              "2 past 6"
+            ],
+            "answer": 0,
+            "why": "The 2 is 10 minutes, add 1: 11 past 6."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Minute hand 4 marks after the 1.",
+          "a": "9 minutes past",
+          "mins": 2,
+          "model": "Teacher: the 1 is 5 minutes, 4 more is 9."
+        },
+        {
+          "q": "Minute hand 3 marks before the 12.",
+          "a": "3 minutes to",
+          "mins": 2
+        },
+        {
+          "q": "Minute hand 1 mark after the 6.",
+          "a": "31 minutes past (29 to)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read: 2 marks after 3; 4 marks after 8; 1 mark before 10",
+          "a": "17 past; 44 past (16 to); 11 to",
+          "mins": 4,
+          "model": "Teacher: the 3 is 15, add 2: 17 past."
+        },
+        {
+          "q": "Extend: Draw hands for 13 minutes past 5 and 8 minutes to 2.",
+          "a": "Minute 3 marks after 2, hour just past 5; minute 2 marks after 10, hour nearly 2",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Is 38 minutes past 3 nearer to half past 3 or quarter to 4?",
+          "a": "Quarter to 4 (45 past): 7 minutes away, half past is 8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Minute hand 2 marks after 5? A) 27 past B) 7 past C) 52 past",
+          "a": "A) 27 past",
+          "mins": 2,
+          "options": [
+            "27 past",
+            "7 past",
+            "52 past"
+          ]
+        },
+        {
+          "q": "Big question: how do the little marks help?",
+          "a": "Each mark is 1 minute, so we can count on from the 5s",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the time to the minute 3 times today and write it down.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what time is it 18 minutes after 47 minutes past 9? (5 past 10)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small step 'Tell the time to the minute' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands and minute marks (printable template)",
+        "Printed clock faces to draw hands on",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 78 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 79,
+      "title": "Digital clocks, am and pm",
+      "duration": 45,
+      "bigQuestion": "How can 7:00 mean two different times?",
+      "objectives": [
+        "To understand how to read 12-hour digital times with am and pm and match them to 24-hour times"
+      ],
+      "successCriteria": [
+        "All: read a digital time",
+        "Most: use am and pm",
+        "Some: change a pm time to 24-hour time"
+      ],
+      "crossCurricular": "Geography: travel timetables",
+      "smsc": "Spiritual: the times of the five daily prayers",
+      "keywords": [
+        {
+          "term": "digital",
+          "def": "shows the time with numbers only"
+        },
+        {
+          "term": "am",
+          "def": "midnight to midday"
+        },
+        {
+          "term": "pm",
+          "def": "midday to midnight"
+        },
+        {
+          "term": "24-hour clock",
+          "def": "hours numbered 0 to 23"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Fajr is at 4:30. Is that am or pm? How do you know?",
+        "a": "am: it is before sunrise, before midday."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "digital alarm clock",
+          "alt": "A digital clock",
+          "for": "hook"
+        },
+        {
+          "find": "railway departure board",
+          "alt": "A departure board with 24-hour times",
+          "for": "teach:4"
+        }
+      ],
+      "islamicLink": {
+        "text": "The five daily prayers are spread through the day and night: Fajr before sunrise (am), Dhuhr after midday, Asr and Maghrib in the afternoon and evening, Isha at night (pm). Allah decreed prayer at set times (an-Nisa 4:103).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Minute hand 3 marks after 4?",
+          "a": "23 past",
+          "mins": 1
+        },
+        {
+          "q": "12 + 3 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 6 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "Hours in a day?",
+          "a": "24",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Digital times",
+          "bullets": [
+            "Hours : minutes",
+            "7:45 is 45 past 7.",
+            "That is quarter to 8."
+          ],
+          "note": "Match digital to analogue."
+        },
+        {
+          "heading": "am and pm",
+          "bullets": [
+            "am: after midnight, before midday.",
+            "pm: after midday, before midnight."
+          ],
+          "note": "Sort the prayers into am and pm."
+        },
+        {
+          "heading": "24-hour time",
+          "bullets": [
+            "After midday, add 12 to the hour.",
+            "3 pm = 15:00",
+            "8:20 pm = 20:20"
+          ],
+          "table": {
+            "head": [
+              "12-hour",
+              "24-hour"
+            ],
+            "rows": [
+              [
+                "9:00 am",
+                "09:00"
+              ],
+              [
+                "12:30 pm",
+                "12:30"
+              ],
+              [
+                "3:00 pm",
+                "15:00"
+              ],
+              [
+                "8:20 pm",
+                "20:20"
+              ]
+            ]
+          },
+          "note": "Use a table."
+        },
+        {
+          "heading": "Timetables",
+          "bullets": [
+            "Trains and planes use 24-hour times.",
+            "14:35 = 2:35 pm"
+          ],
+          "note": "Read one line of a timetable."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is 6:15 pm?",
+            "options": [
+              "18:15",
+              "06:15",
+              "16:15"
+            ],
+            "answer": 0,
+            "why": "6 + 12 = 18."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write 4 pm in 24-hour time.",
+          "a": "16:00",
+          "mins": 2,
+          "model": "Teacher: pm, so add 12: 4 + 12 = 16, 16:00."
+        },
+        {
+          "q": "13:40 in 12-hour time?",
+          "a": "1:40 pm",
+          "mins": 2
+        },
+        {
+          "q": "Breakfast at 7:30. am or pm?",
+          "a": "am",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write in 24-hour time: 10:05 am; 2:50 pm; 11:30 pm",
+          "a": "10:05; 14:50; 23:30",
+          "mins": 4,
+          "model": "Teacher: 10:05 am stays 10:05."
+        },
+        {
+          "q": "Extend: Write in 12-hour time with am or pm: 17:25; 08:10; 21:00",
+          "a": "5:25 pm; 8:10 am; 9:00 pm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: In mid-June in London, Maghrib is at about 21:20. Is it light or dark at 8 pm? Explain.",
+          "a": "Still light: 8 pm is 20:00, before Maghrib at sunset",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "15:00 is... A) 3 pm B) 5 pm C) 3 am",
+          "a": "A) 3 pm",
+          "mins": 2,
+          "options": [
+            "3 pm",
+            "5 pm",
+            "3 am"
+          ]
+        },
+        {
+          "q": "Big question: how can 7:00 mean two times?",
+          "a": "7 am in the morning and 7 pm in the evening; 24-hour time writes 07:00 and 19:00",
+          "mins": 2
+        }
+      ],
+      "homework": "Write today's 5 prayer times from your masjid timetable in 12-hour and 24-hour time.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how long from 10:45 to 13:15? (2 hours 30 minutes)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small steps 'Read time on a digital clock' and 'Use am and pm', with 24-hour times as in the Year 3 pack (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands and minute marks (printable template)",
+        "A masjid prayer timetable (printed or on screen)",
+        "Printed train timetable extract (free online)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 79 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 80,
+      "title": "Years, months and days",
+      "duration": 45,
+      "bigQuestion": "Why does February sometimes have 29 days?",
+      "objectives": [
+        "To understand how days, months and years are related, including leap years"
+      ],
+      "successCriteria": [
+        "All: say how many days in each month",
+        "Most: say 365 days in a year and 366 in a leap year",
+        "Some: solve a problem with days and weeks"
+      ],
+      "crossCurricular": "Science: the Earth goes round the Sun in about 365 and a quarter days",
+      "smsc": "Spiritual: the lunar months of the Islamic calendar",
+      "keywords": [
+        {
+          "term": "year",
+          "def": "12 months, 365 days"
+        },
+        {
+          "term": "leap year",
+          "def": "a year with 366 days"
+        },
+        {
+          "term": "month",
+          "def": "28 to 31 days"
+        },
+        {
+          "term": "week",
+          "def": "7 days"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some people only have a real birthday every 4 years. How can that be?",
+        "a": "They were born on 29 February, which only comes in a leap year."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wall calendar",
+          "alt": "A wall calendar",
+          "for": "hook"
+        },
+        {
+          "find": "crescent moon",
+          "alt": "A crescent moon",
+          "for": "teach:3"
+        }
+      ],
+      "islamicLink": {
+        "text": "Allah made the sun and the moon so we can count years and keep time (Yunus 10:5), and the Islamic year has 12 months (at-Tawbah 9:36). Islamic months follow the moon, so each has 29 or 30 days.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "17:00 = ? pm",
+          "a": "5 pm",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 4 = ?",
+          "a": "28",
+          "mins": 1
+        },
+        {
+          "q": "Days in a week?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Months in a year?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Days in each month",
+          "bullets": [
+            "30 days: April, June, September, November.",
+            "February: 28 (29 in a leap year).",
+            "The rest: 31."
+          ],
+          "note": "Use the knuckle method on your fist."
+        },
+        {
+          "heading": "Leap years",
+          "bullets": [
+            "365 days a year.",
+            "Leap year: 366 days.",
+            "Usually every 4 years: 2028."
+          ],
+          "table": {
+            "head": [
+              "Year",
+              "Leap year?"
+            ],
+            "rows": [
+              [
+                "2026",
+                "No"
+              ],
+              [
+                "2027",
+                "No"
+              ],
+              [
+                "2028",
+                "Yes"
+              ],
+              [
+                "2032",
+                "Yes"
+              ]
+            ]
+          },
+          "note": "29 February is the extra day."
+        },
+        {
+          "heading": "The Islamic calendar",
+          "bullets": [
+            "12 months, 29 or 30 days each.",
+            "About 354 days a year."
+          ],
+          "note": "Ramadan moves earlier each year."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many days in September?",
+            "options": [
+              "30",
+              "31",
+              "28"
+            ],
+            "answer": 0,
+            "why": "30 days hath September, April, June and November."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Days in March?",
+          "a": "31",
+          "mins": 2,
+          "model": "Teacher: March is a knuckle month: 31 days."
+        },
+        {
+          "q": "Days in a leap year?",
+          "a": "366",
+          "mins": 2
+        },
+        {
+          "q": "Is 2027 a leap year?",
+          "a": "No (2028 is)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Days in: July; November; February 2028",
+          "a": "31; 30; 29",
+          "mins": 4,
+          "model": "Teacher: July is a knuckle: 31."
+        },
+        {
+          "q": "Extend: How many days in 3 weeks? In 5 weeks?",
+          "a": "21; 35",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Today is 26 April. How many days until 10 May (half term)?",
+          "a": "14 days (4 more in April, then 10 in May)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A leap year has... A) 366 days B) 365 days C) 364 days",
+          "a": "A) 366 days",
+          "mins": 2,
+          "options": [
+            "366 days",
+            "365 days",
+            "364 days"
+          ]
+        },
+        {
+          "q": "Big question: why does February sometimes have 29 days?",
+          "a": "A year is about 365 and a quarter days, so every 4 years we add a day",
+          "mins": 2
+        }
+      ],
+      "homework": "On a calendar, find how many days from today to Eid al-Adha half term.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many days in January, February and March 2028 together? (31 + 29 + 31 = 91)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small step 'Years, months and days' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A family calendar",
+        "Printed 2027 calendar",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 80 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 81,
+      "title": "Days and hours; hours and minutes",
+      "duration": 45,
+      "bigQuestion": "How do we change between days, hours and minutes?",
+      "objectives": [
+        "To understand how to convert between days, hours and minutes"
+      ],
+      "successCriteria": [
+        "All: say 24 hours in a day and 60 minutes in an hour",
+        "Most: convert days to hours and hours to minutes",
+        "Some: change minutes into hours and minutes"
+      ],
+      "crossCurricular": "Science: sleep and keeping healthy",
+      "smsc": "Moral: using time well each day",
+      "keywords": [
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        },
+        {
+          "term": "hour",
+          "def": "60 minutes"
+        },
+        {
+          "term": "day",
+          "def": "24 hours"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A journey takes 90 minutes. How many hours is that?",
+        "a": "1 hour 30 minutes, or one and a half hours."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "hourglass sand timer",
+          "alt": "A sand timer",
+          "for": "hook"
+        },
+        {
+          "find": "analogue wall clock",
+          "alt": "A clock",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Days in April?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 6 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "60 + 60 = ?",
+          "a": "120",
+          "mins": 1
+        },
+        {
+          "q": "Half of 60?",
+          "a": "30",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The facts",
+          "bullets": [
+            "1 day = 24 hours.",
+            "1 hour = 60 minutes."
+          ],
+          "table": {
+            "head": [
+              "Days",
+              "Hours"
+            ],
+            "rows": [
+              [
+                "1",
+                "24"
+              ],
+              [
+                "2",
+                "48"
+              ],
+              [
+                "3",
+                "72"
+              ]
+            ]
+          },
+          "note": "Say together."
+        },
+        {
+          "heading": "Hours to minutes",
+          "model": {
+            "problem": "2 hours 15 minutes in minutes",
+            "steps": [
+              "2 hours = 120 minutes",
+              "120 + 15 = 135"
+            ],
+            "answer": "135 minutes"
+          }
+        },
+        {
+          "heading": "Minutes to hours",
+          "model": {
+            "problem": "90 minutes",
+            "steps": [
+              "60 minutes = 1 hour",
+              "90 - 60 = 30 minutes left"
+            ],
+            "answer": "1 hour 30 minutes"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3 hours = ? minutes",
+            "options": [
+              "180",
+              "300",
+              "90"
+            ],
+            "answer": 0,
+            "why": "3 × 60 = 180. 300 uses 100 minutes in an hour."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 hour 20 minutes in minutes?",
+          "a": "80",
+          "mins": 2,
+          "model": "Teacher: 60 + 20 = 80 minutes."
+        },
+        {
+          "q": "2 days in hours?",
+          "a": "48",
+          "mins": 2
+        },
+        {
+          "q": "75 minutes in hours and minutes?",
+          "a": "1 hour 15 minutes",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 4 hours to minutes; 100 minutes to hours and minutes; 3 days to hours",
+          "a": "240; 1 hour 40 minutes; 72",
+          "mins": 4,
+          "model": "Teacher: 4 × 60 = 240."
+        },
+        {
+          "q": "Extend: A class trip on Teams lasts 135 minutes. Is that more than 2 hours? By how much?",
+          "a": "Yes, by 15 minutes",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which is longer: 1 day or 1,500 minutes? (1 day is 24 × 60 minutes)",
+          "a": "1,500 minutes (1 day = 1,440 minutes)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "120 minutes = ? A) 2 hours B) 1 hour 20 minutes C) 12 hours",
+          "a": "A) 2 hours",
+          "mins": 2,
+          "options": [
+            "2 hours",
+            "1 hour 20 minutes",
+            "12 hours"
+          ]
+        },
+        {
+          "q": "Big question: how do we change units of time?",
+          "a": "Use 60 minutes in an hour and 24 hours in a day: multiply or take away the 60s",
+          "mins": 2
+        }
+      ],
+      "homework": "Find out how long you sleep each night in hours and in minutes.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many hours in a week? (168)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small steps 'Days and hours' and 'Hours and minutes: use start and end times' (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands and minute marks (printable template)",
+        "Printed conversion table",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 81 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 82,
+      "title": "Minutes and seconds",
+      "duration": 45,
+      "bigQuestion": "What can you do in one minute?",
+      "objectives": [
+        "To understand that there are 60 seconds in a minute and how to convert and compare them"
+      ],
+      "successCriteria": [
+        "All: say 60 seconds in a minute",
+        "Most: convert minutes to seconds",
+        "Some: compare times in minutes and seconds"
+      ],
+      "crossCurricular": "Science: timing a fair test",
+      "smsc": "Spiritual: dhikr can be done in just a few seconds",
+      "keywords": [
+        {
+          "term": "second",
+          "def": "a very short unit of time"
+        },
+        {
+          "term": "minute",
+          "def": "60 seconds"
+        },
+        {
+          "term": "stopwatch",
+          "def": "a timer that counts seconds"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How many times can you write your name in 1 minute? Guess first, then we will time it.",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "analogue wall clock second hand",
+          "alt": "A clock with a second hand",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "90 minutes = ?",
+          "a": "1 hour 30 minutes",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 10 = ?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "2 × 60 = ?",
+          "a": "120",
+          "mins": 1
+        },
+        {
+          "q": "60 + 30 = ?",
+          "a": "90",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Seconds",
+          "bullets": [
+            "The thin hand: second hand.",
+            "Once round: 60 seconds = 1 minute."
+          ],
+          "note": "Watch the second hand go round."
+        },
+        {
+          "heading": "Minutes to seconds",
+          "model": {
+            "problem": "2 minutes 10 seconds",
+            "steps": [
+              "2 minutes = 120 seconds",
+              "120 + 10 = 130"
+            ],
+            "answer": "130 seconds"
+          }
+        },
+        {
+          "heading": "Compare",
+          "bullets": [
+            "Same units first.",
+            "1 minute 15 s = 75 s",
+            "75 s < 80 s"
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Time to write a name 5 times (example data)",
+            "labels": [
+              "Adam",
+              "Bilal",
+              "Dawud"
+            ],
+            "values": [
+              75,
+              80,
+              62
+            ],
+            "unit": "seconds"
+          },
+          "note": "Bar chart of example times."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "90 seconds = ?",
+            "options": [
+              "1 minute 30 seconds",
+              "9 minutes",
+              "1 minute 90 seconds"
+            ],
+            "answer": 0,
+            "why": "60 seconds is 1 minute, 30 left."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3 minutes in seconds?",
+          "a": "180",
+          "mins": 2,
+          "model": "Teacher: 3 × 60 = 180 seconds."
+        },
+        {
+          "q": "100 seconds in minutes and seconds?",
+          "a": "1 minute 40 seconds",
+          "mins": 3
+        },
+        {
+          "q": "Who was fastest in the chart?",
+          "a": "Dawud (62 seconds)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 4 minutes; 1 minute 45 seconds; 150 seconds",
+          "a": "240 s; 105 s; 2 minutes 30 seconds",
+          "mins": 4,
+          "model": "Teacher: 4 × 60 = 240."
+        },
+        {
+          "q": "Extend: Order fastest first: 1 minute 5 s, 58 s, 70 s",
+          "a": "58 s, 1 minute 5 s (65 s), 70 s",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How much faster was Dawud than Bilal?",
+          "a": "18 seconds",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 minute = ? A) 60 seconds B) 100 seconds C) 10 seconds",
+          "a": "A) 60 seconds",
+          "mins": 2,
+          "options": [
+            "60 seconds",
+            "100 seconds",
+            "10 seconds"
+          ]
+        },
+        {
+          "q": "Big question: what can you do in a minute?",
+          "a": "For example say subhanAllah many times, write my name, read a page",
+          "mins": 2
+        }
+      ],
+      "homework": "Time 3 jobs at home in seconds (for example making wudu). Convert to minutes and seconds.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many seconds in 1 hour? (3,600)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small step 'Minutes and seconds' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Stopwatch or phone timer (with an adult)",
+        "Paper plate clock with moving hands and minute marks (printable template)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 82 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 83,
+      "title": "Durations: start and end times",
+      "duration": 45,
+      "bigQuestion": "How do we work out how long something lasts?",
+      "objectives": [
+        "To understand how to find durations and start or end times"
+      ],
+      "successCriteria": [
+        "All: find a duration in minutes",
+        "Most: find an end time",
+        "Some: find a duration across the hour"
+      ],
+      "crossCurricular": "Geography: planning a journey with a timetable",
+      "smsc": "Spiritual: planning the day around salah",
+      "keywords": [
+        {
+          "term": "duration",
+          "def": "how long something lasts"
+        },
+        {
+          "term": "start time",
+          "def": "when it begins"
+        },
+        {
+          "term": "end time",
+          "def": "when it finishes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A lesson starts at 9:15 and ends at 10:00. How long is it? How did you count?",
+        "a": "45 minutes: count on in 5s or 15s."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "A clock",
+          "for": "teach:1"
+        },
+        {
+          "find": "bus timetable",
+          "alt": "A timetable",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2 minutes = ? seconds",
+          "a": "120",
+          "mins": 1
+        },
+        {
+          "q": "60 - 15 = ?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "TT: 5 × 9 = ?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "14:00 = ? pm",
+          "a": "2 pm",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count on to the hour",
+          "model": {
+            "problem": "9:15 to 10:00",
+            "steps": [
+              "9:15 to 9:30: 15 minutes",
+              "9:30 to 10:00: 30 minutes",
+              "15 + 30 = 45"
+            ],
+            "answer": "45 minutes"
+          }
+        },
+        {
+          "heading": "Across the hour",
+          "bullets": [
+            "2:40 to 3:15",
+            "2:40 to 3:00: 20 min",
+            "3:00 to 3:15: 15 min"
+          ],
+          "numberline": {
+            "min": 40,
+            "max": 75,
+            "step": 5,
+            "marks": [
+              {
+                "at": 40,
+                "label": "2:40"
+              },
+              {
+                "at": 60,
+                "label": "3:00"
+              },
+              {
+                "at": 75,
+                "label": "3:15"
+              }
+            ]
+          },
+          "note": "Total 35 minutes."
+        },
+        {
+          "heading": "End time",
+          "model": {
+            "problem": "Starts 1:50 pm, lasts 1 hour 30 minutes",
+            "steps": [
+              "1:50 + 1 hour = 2:50",
+              "2:50 + 10 min = 3:00",
+              "3:00 + 20 min = 3:20"
+            ],
+            "answer": "3:20 pm"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "4:35 to 5:05?",
+            "options": [
+              "30 minutes",
+              "70 minutes",
+              "1 hour 30 minutes"
+            ],
+            "answer": 0,
+            "why": "25 minutes to 5:00, 5 more: 30."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "10:20 to 10:55?",
+          "a": "35 minutes",
+          "mins": 2,
+          "model": "Teacher: count on 10:20 to 10:50 is 30, then 5 more: 35."
+        },
+        {
+          "q": "Starts 3:45, lasts 25 minutes. Ends?",
+          "a": "4:10",
+          "mins": 3
+        },
+        {
+          "q": "11:50 to 12:30?",
+          "a": "40 minutes",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Durations: 8:05 to 8:50; 6:40 to 7:25; 1:15 to 2:45",
+          "a": "45 minutes; 45 minutes; 1 hour 30 minutes",
+          "mins": 4,
+          "model": "Teacher: 8:05 to 8:50 is 45 minutes."
+        },
+        {
+          "q": "Extend: A bus leaves at 14:20 and arrives at 15:05. How long is the journey?",
+          "a": "45 minutes",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Qur'an class is at 5:10 pm. Homework takes 35 minutes. What time must you start to finish before class?",
+          "a": "4:35 pm",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "7:30 to 8:15? A) 45 minutes B) 85 minutes C) 15 minutes",
+          "a": "A) 45 minutes",
+          "mins": 2,
+          "options": [
+            "45 minutes",
+            "85 minutes",
+            "15 minutes"
+          ]
+        },
+        {
+          "q": "Big question: how do we find how long something lasts?",
+          "a": "Count on from the start time to the end time, using the hour as a stepping stone",
+          "mins": 2
+        }
+      ],
+      "homework": "Write down when you start and finish 2 activities today and find how long each took.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a film starts at 18:45 and lasts 1 hour 50 minutes. When does it end? (20:35)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small steps 'Hours and minutes: use durations' and 'Solve problems with time' (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands and minute marks (printable template)",
+        "Printed bus timetable extract (free online)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 83 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions B; money; time",
+      "n": 84,
+      "title": "Summer 1 check: fractions, money and time",
+      "duration": 45,
+      "bigQuestion": "What have I learned this half term, and what will I practise next?",
+      "objectives": [
+        "To understand how well I know fractions, money and time from Summer 1"
+      ],
+      "successCriteria": [
+        "All: answer fractions and money questions",
+        "Most: answer time questions",
+        "Some: set myself one next step"
+      ],
+      "smsc": "Spiritual: shukr for what we have learned; setting a goal (niyyah) to improve",
+      "keywords": [
+        {
+          "term": "fraction",
+          "def": "equal parts of a whole"
+        },
+        {
+          "term": "change",
+          "def": "money given back"
+        },
+        {
+          "term": "duration",
+          "def": "how long something lasts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which was hardest this half term: fractions, money or time? Why?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "british coins",
+          "alt": "UK coins",
+          "for": "teach:2"
+        },
+        {
+          "find": "analogue wall clock",
+          "alt": "A clock",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2/5 + 1/5 = ?",
+          "a": "3/5",
+          "mins": 1
+        },
+        {
+          "q": "Change from £1 for 28p?",
+          "a": "72p",
+          "mins": 1
+        },
+        {
+          "q": "XI = ?",
+          "a": "11",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 8 = ?",
+          "a": "64",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fractions",
+          "bullets": [
+            "Fractions of amounts.",
+            "Add and subtract the same denominator."
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 3,
+            "label": "3/4 of 24 = 18"
+          },
+          "note": "Quick recap: 3/4 of 24 = 18."
+        },
+        {
+          "heading": "Money",
+          "bullets": [
+            "£1 = 100p.",
+            "Exchange when adding and subtracting.",
+            "Count on for change."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Time",
+          "bullets": [
+            "To the minute.",
+            "am, pm and 24-hour.",
+            "Durations."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "My next step",
+          "bullets": [
+            "What did I find easy?",
+            "What needs practice?"
+          ],
+          "note": "Pupils write one next step in the response box."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "£5 - £3 and 45p?",
+            "options": [
+              "£1 and 55p",
+              "£2 and 55p",
+              "£1 and 65p"
+            ],
+            "answer": 0,
+            "why": "Count on: 55p to £4, then £1: £1 and 55p."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/6 of 36?",
+          "a": "6",
+          "mins": 1,
+          "model": "Teacher: 36 ÷ 6 = 6."
+        },
+        {
+          "q": "£2 and 70p + £1 and 50p?",
+          "a": "£4 and 20p",
+          "mins": 2
+        },
+        {
+          "q": "21:15 in 12-hour time?",
+          "a": "9:15 pm",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: 5/8 of 40; 1 - 3/10; 4/9 + 3/9",
+          "a": "25; 7/10; 7/9",
+          "mins": 4,
+          "model": "Teacher: 40 ÷ 8 = 5, 5 × 5 = 25."
+        },
+        {
+          "q": "Extend: Check: a book costs £3 and 65p. Change from £10? How much for 2 books?",
+          "a": "£6 and 35p; £7 and 30p",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: 3:50 pm to 5:15 pm? How many seconds in 4 minutes?",
+          "a": "1 hour 25 minutes; 240",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Days in a leap year? A) 366 B) 365 C) 360",
+          "a": "A) 366",
+          "mins": 1,
+          "options": [
+            "366",
+            "365",
+            "360"
+          ]
+        },
+        {
+          "q": "Big question: one thing I learned, one next step",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct your check with green pen and practise your next step for 10 minutes.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 2/3 of an hour plus 3/4 of an hour, in minutes (40 + 45 = 85 minutes).",
+      "resources": [
+        "White Rose Maths Year 3, Summer 1 end-of-term check (fractions B, money, time), as in the Year 3 plan (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Real coins and notes or printed play money",
+        "Paper plate clock with moving hands and minute marks (printable template)",
+        "Printed Summer 1 check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 84 guided, independent and homework tasks"
       ]
     }
   ]

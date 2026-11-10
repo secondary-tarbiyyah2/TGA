@@ -24,6 +24,7 @@
 //   sort          a card-sort activity: cards to sort into 2-4 columns
 // Block shapes and limits: src/lib/learn/lessonSchema.mjs (shared with the validator and portal).
 import { BLOCKS, ROUTINES } from "../../src/lib/learn/lessonSchema.mjs";
+import { QURANIC, QURAN_FONT, ARABIC_FONT, splitAyat, visibleLen } from "./arabic.mjs";
 
 export const BLOCK_KINDS = BLOCKS;
 
@@ -332,15 +333,36 @@ export function makeParts(h) {
 
     quote(s, ctx, q, bullets, area) {
       const th = ctx.theme;
-      const leftW = bullets.length ? 7.3 : area.w;
-      panel(s, area.x, area.y, leftW, area.h, th.dark);
-      s.addText("“", { x: area.x + 0.15, y: area.y - 0.15, w: 1.3, h: 1.5, fontFace: "Georgia", fontSize: 110, color: "E3C98F" });
       const isAr = /[؀-ۿ]/.test(q.text || "");
       // Poems and multi-paragraph extracts keep their line breaks (a blank line = a stanza or paragraph break).
-      const lines = String(q.text || "").includes("\n") ? String(q.text).split("\n").map(t) : null;
+      // A passage of several ayat goes one ayah per line.
+      const ayat = isAr ? splitAyat(q.text || "") : [];
+      // (The ayah number stays on the line with its last word: a no-break space joins them.)
+      const lines = String(q.text || "").includes("\n") ? String(q.text).split("\n").map(t) : ayat.length > 1 ? ayat.map((a) => t(a).replace(/ (\([٠-٩]+\))$/, " $1")) : null;
       const body = lines ? lines.map((l) => ({ text: l || " ", options: { breakLine: true } })) : t(q.text);
-      const size = fitSize(lines ? lines.map((l) => l || ".") : q.text, leftW - 1.1, area.h - 1.75, isAr ? 36 : 28, lines ? 11 : 13, lines ? 0 : 8);
-      s.addText(body, { x: area.x + 0.6, y: area.y + 0.9, w: leftW - 1.1, h: area.h - 1.75, fontFace: isAr ? "Arial" : "Georgia", fontSize: size, italic: !isAr, color: "FFFFFF", valign: "middle", align: isAr ? "right" : "left", rtlMode: isAr });
+      // Qur'an text (an ayah, or a source naming a surah or ayah) is set in Scheherazade New; other Arabic in Noto Naskh Arabic.
+      const ayah = isAr && (QURANIC.test(q.text || "") || /qur|s[uū]ra|ayah|ayat|\b\d{1,3}:\d{1,3}\b/i.test(q.source || ""));
+      const arFont = ayah ? QURAN_FONT : ARABIC_FONT;
+      if (isAr && (lines || visibleLen(q.text || "") > 90)) {
+        // A long Arabic passage (several ayat) must stay readable on the shared screen: it gets the full
+        // width, without the English quotation mark, and the notes go in a strip underneath.
+        const stripH = bullets.length ? 0.62 : 0;
+        const ph = area.h - (stripH ? stripH + 0.15 : 0);
+        const srcH = q.source ? 0.42 : 0;
+        const bw = area.w - 0.8;
+        const bh = ph - 0.3 - srcH;
+        panel(s, area.x, area.y, area.w, ph, th.dark);
+        const size = fitSize(lines ? lines.map((l) => l || ".") : q.text, bw, bh, 36, 18, 0);
+        s.addText(body, { x: area.x + 0.4, y: area.y + 0.15, w: bw, h: bh, fontFace: arFont, fontSize: size, color: "FFFFFF", valign: "middle", align: "right", rtlMode: true });
+        if (q.source) s.addText(`– ${t(q.source)}`, { x: area.x + 0.4, y: area.y + ph - srcH - 0.12, w: bw, h: srcH, fontFace: FONT, fontSize: fitSize(q.source, bw, srcH, 16, 10), color: "E3C98F", valign: "middle" });
+        strip(s, ctx, bullets, area.y + ph + 0.15, stripH, "Annotate");
+        return;
+      }
+      const leftW = bullets.length ? 7.3 : area.w;
+      const size = fitSize(lines ? lines.map((l) => l || ".") : q.text, leftW - 1.1, area.h - 1.75, isAr ? 36 : 28, isAr ? 18 : lines ? 11 : 13, lines ? 0 : 8);
+      panel(s, area.x, area.y, leftW, area.h, th.dark);
+      s.addText("“", { x: area.x + 0.15, y: area.y - 0.15, w: 1.3, h: 1.5, fontFace: "Georgia", fontSize: 110, color: "E3C98F" });
+      s.addText(body, { x: area.x + 0.6, y: area.y + 0.9, w: leftW - 1.1, h: area.h - 1.75, fontFace: isAr ? arFont : "Georgia", fontSize: size, italic: !isAr, color: "FFFFFF", valign: "middle", align: isAr ? "right" : "left", rtlMode: isAr });
       if (q.source) s.addText(`– ${t(q.source)}`, { x: area.x + 0.6, y: area.y + area.h - 0.75, w: leftW - 1.1, h: 0.5, fontFace: FONT, fontSize: fitSize(q.source, leftW - 1.6, 0.5, 16, 10), color: "E3C98F", valign: "middle" });
       if (bullets.length) sideBullets(s, ctx, bullets, area.x + leftW + 0.3, area.y, area.w - leftW - 0.3, area.h, "Annotate");
     },

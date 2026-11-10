@@ -5,7 +5,7 @@
   "boardShort": "Edexcel GCSE 1AA0",
   "exam": "Pearson Edexcel International GCSE (9-1) Arabic (First Language) (4AA1)",
   "examShort": "Edexcel IGCSE 4AA1",
-  "source": "Edexcel spec data file (content/syllabus/ks4/arabic.json): units 3.1, 3.2, 4.1, 4.2, 4.3, 5.1, 5.2 as placed for Year 11, plus exam-skills lessons for Papers 1 to 4. Original lessons written for TGA; no existing Year 11 Arabic file. The Pearson grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read: structures follow well-established Modern Standard Arabic and the themes; teacher to cross-check against Appendices 2 and 3. All reading and listening texts are original, not board material. | Gap-fill against Pearson Edexcel GCSE Arabic 1AA0 specification | Spring 1 2027 (lessons 18, 19, 21, 26 to 32): founding-year revision programme in the school's theme order (11 Jan Theme 1 and the 1AA0 conversation; 18 Jan Theme 2 and 4AA1 summary; 25 Jan Theme 3 and grammar with Arabic terms; 1 Feb extended writing, 1AA0 role play and picture task; 8 Feb mock week), from the Year 11 pack; all texts and questions are our own, exam-style, not board material; lessons v3",
+  "source": "Edexcel spec data file (content/syllabus/ks4/arabic.json): units 3.1, 3.2, 4.1, 4.2, 4.3, 5.1, 5.2 as placed for Year 11, plus exam-skills lessons for Papers 1 to 4. Original lessons written for TGA; no existing Year 11 Arabic file. The Pearson grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read: structures follow well-established Modern Standard Arabic and the themes; teacher to cross-check against Appendices 2 and 3. All reading and listening texts are original, not board material. | Gap-fill against Pearson Edexcel GCSE Arabic 1AA0 specification | Spring 1 2027 (lessons 18, 19, 21, 26 to 32): founding-year revision programme in the school's theme order (11 Jan Theme 1 and the 1AA0 conversation; 18 Jan Theme 2 and 4AA1 summary; 25 Jan Theme 3 and grammar with Arabic terms; 1 Feb extended writing, 1AA0 role play and picture task; 8 Feb mock week), from the Year 11 pack; all texts and questions are our own, exam-style, not board material; lessons v3 | Spring 2 2027 (lessons 33 to 43 new): Year 11 pack Arabic Spring 2 revision (mock feedback and targets; error repair; Theme 4 reading and writing; Theme 5; grammar test with Arabic terms; Group B 1AA0 speaking mock with Group A writing; timed reading and writing practice; feedback; weakest skill), before the May exams; our own texts and tasks, Pearson past papers from the school's copies as homework; lessons v3",
   "lessons": [
     {
       "unit": "Unit 3.1: What school is like",
@@ -6029,6 +6029,1961 @@
         }
       ],
       "duration": 50
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 33,
+      "title": "Mock feedback and personal targets",
+      "duration": 50,
+      "bigQuestion": "With about eight weeks to the exams, which skill would give you the most extra marks if you improved it?",
+      "objectives": [
+        "To understand my mock results by skill and set specific targets for the final weeks"
+      ],
+      "successCriteria": [
+        "All: record my marks by skill",
+        "Most: name the error types that cost marks",
+        "Some: write a timed target plan with checkable actions"
+      ],
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "هَدَف (hadaf)",
+          "def": "target"
+        },
+        {
+          "term": "مَهَارَة (maharah)",
+          "def": "skill"
+        },
+        {
+          "term": "أَخْطَاء (akhta')",
+          "def": "errors"
+        },
+        {
+          "term": "خُطَّة (khuttah)",
+          "def": "plan"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "With about eight weeks to the exams, which skill would give you the most extra marks if you improved it?",
+        "a": "Usually the weakest skill: small gains there count most."
+      },
+      "islamicLink": {
+        "text": "Allah does not burden a soul beyond what it can bear (al-Baqarah 2:286).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Target' is ...",
+          "a": "هَدَف",
+          "mins": 1,
+          "options": [
+            "هَدَف",
+            "خَطَأ"
+          ]
+        },
+        {
+          "q": "Correct: يَجِبُ أَنْ نَذْهَبُ",
+          "a": "يَجِبُ أَنْ نَذْهَبَ",
+          "mins": 1
+        },
+        {
+          "q": "When is the 4AA1 Paper 1 exam?",
+          "a": "Mon 10 May (pm)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Exam dates",
+          "bullets": [],
+          "note": "Begin with Bismillah. From the Year 11 pack (TO CONFIRM each centre's dates).",
+          "table": {
+            "head": [
+              "Exam",
+              "Date"
+            ],
+            "rows": [
+              [
+                "4AA1 Paper 1",
+                "Mon 10 May (pm)"
+              ],
+              [
+                "4AA1 Paper 2",
+                "Thu 20 May (pm)"
+              ],
+              [
+                "1AA0 speaking",
+                "Centre's window, April to May"
+              ],
+              [
+                "1AA0 Papers 1 and 3",
+                "Mon 24 May (pm)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Mock results by skill",
+          "bullets": [
+            "Listening ... Reading ... Writing ... Speaking ...",
+            "Which skill is lowest?",
+            "Which error type repeats?"
+          ],
+          "note": "Teacher returns marked mocks."
+        },
+        {
+          "heading": "Model target plan",
+          "bullets": [],
+          "note": "Specific, timed, checkable.",
+          "model": {
+            "problem": "Weakest skill: writing accuracy (agreement and أَنْ + subjunctive)",
+            "steps": [
+              "Action 1: ten أَنْ sentences daily, teacher checks Friday",
+              "Action 2: one 90-word task a week",
+              "Action 3: re-test on 19 April"
+            ],
+            "answer": "A plan with dates and checks"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is the best target?",
+            "options": [
+              "Write one timed 90-word task a week and get it marked",
+              "Revise Arabic more",
+              "Learn everything"
+            ],
+            "answer": 0,
+            "why": "Specific, timed, checkable."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct one sentence from your mock and name the rule.",
+          "a": "Pupils' own correction with rule",
+          "mins": 3,
+          "model": "Teacher corrects an anonymised mock sentence: المَدِينَةُ جَمِيلٌ → جَمِيلَةٌ (agreement)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Mock tracker on the pupil PDF: marks by skill and error types; then a three-action target plan with dates in the portal response box.",
+          "a": "Completed tracker and dated plan",
+          "mins": 24,
+          "model": "Teacher fills one row of the tracker."
+        },
+        {
+          "q": "Extend: choose one Pearson past-paper question for your weakest skill and do it at home.",
+          "a": "Chosen question",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Your weakest skill?",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: which skill gives most extra marks?",
+          "a": "The weakest one.",
+          "mins": 1
+        }
+      ],
+      "homework": "Start your target plan this week.",
+      "send": "SEND: tracker pre-filled with skills. EAL: error glossary. Stretch: plan two skills.",
+      "resources": [
+        "Slides",
+        "Marked mock papers and mark schemes (school)",
+        "Pupil PDF worksheet: mock tracker and target plan",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "calendar planner",
+          "alt": "A revision calendar",
+          "for": "keywords"
+        },
+        {
+          "find": "checklist",
+          "alt": "A checklist",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 34,
+      "title": "Repair: the ten most common grammar errors",
+      "duration": 50,
+      "bigQuestion": "Is it better to write simply and accurately, or ambitiously with errors?",
+      "objectives": [
+        "To understand and fix the grammar errors that cost the most marks"
+      ],
+      "successCriteria": [
+        "All: correct five common errors",
+        "Most: explain each rule in Arabic terms",
+        "Some: write sentences that use each rule correctly"
+      ],
+      "keywords": [
+        {
+          "term": "جَمْعُ غَيْرِ العَاقِلِ",
+          "def": "non-human plural (takes feminine singular)"
+        },
+        {
+          "term": "المُضَارِعُ المَنْصُوبُ",
+          "def": "subjunctive (after أَنْ، لَنْ، لِـ)"
+        },
+        {
+          "term": "العَدَد وَالمَعْدُود",
+          "def": "number and counted noun"
+        },
+        {
+          "term": "إِنَّ وَأَخَوَاتُهَا",
+          "def": "inna and its sisters"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it better to write simply and accurately, or ambitiously with errors?",
+        "a": "Ambitious and accurate is best; never sacrifice meaning. Learn the rules that let you be both."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Errors' is ...",
+          "a": "أَخْطَاء",
+          "mins": 1,
+          "options": [
+            "أَخْطَاء",
+            "أَهْدَاف"
+          ]
+        },
+        {
+          "q": "Correct: إِنَّ الطَّقْسُ جَمِيلٌ",
+          "a": "إِنَّ الطَّقْسَ جَمِيلٌ",
+          "mins": 1
+        },
+        {
+          "q": "Correct: عِنْدِي ثَلَاثُ إِخْوَةٍ",
+          "a": "عِنْدِي ثَلَاثَةُ إِخْوَةٍ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Top errors",
+          "bullets": [],
+          "note": "Begin with Bismillah. Adjust to the group's mock.",
+          "table": {
+            "head": [
+              "Error",
+              "Correct"
+            ],
+            "rows": [
+              [
+                "الكُتُبُ مُفِيدُونَ",
+                "الكُتُبُ مُفِيدَةٌ"
+              ],
+              [
+                "أُرِيدُ أَنْ أَدْرُسُ",
+                "أُرِيدُ أَنْ أَدْرُسَ"
+              ],
+              [
+                "كَانَ الجَوُّ حَارٌّ",
+                "كَانَ الجَوُّ حَارًّا"
+              ],
+              [
+                "لَمْ يَذْهَبُ",
+                "لَمْ يَذْهَبْ"
+              ],
+              [
+                "عِشْرُونَ طُلَّابٌ",
+                "عِشْرُونَ طَالِبًا"
+              ],
+              [
+                "هٰذَا سَيَّارَةٌ",
+                "هٰذِهِ سَيَّارَةٌ"
+              ],
+              [
+                "ذَهَبْتُ إِلَى المَدْرَسَةُ",
+                "ذَهَبْتُ إِلَى المَدْرَسَةِ"
+              ],
+              [
+                "البَيْتُ الكَبِيرُ جَدِّي",
+                "بَيْتُ جَدِّي الكَبِيرُ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Rule summary",
+          "bullets": [
+            "أَنْ / لَنْ → mansub; لَمْ → majzum",
+            "كَانَ → khabar mansub; إِنَّ → ism mansub",
+            "3 to 10 opposite gender + plural; 11+ singular mansub"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Correct form: لَنْ ___ (we will not travel)",
+            "options": [
+              "نُسَافِرَ",
+              "نُسَافِرُ",
+              "نُسَافِرْ"
+            ],
+            "answer": 0,
+            "why": "لَنْ → subjunctive (fathah)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct and explain: السَّيَّارَاتُ سَرِيعُونَ.",
+          "a": "السَّيَّارَاتُ سَرِيعَةٌ: non-human plural takes feminine singular.",
+          "mins": 3,
+          "model": "Teacher: سَيَّارَات are things (غَيْر عَاقِل), so the adjective is feminine singular: سَرِيعَةٌ."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Error clinic on the pupil PDF: correct twenty sentences (our own), naming the rule for each; then write one correct sentence per rule.",
+          "a": "Corrections with rules; eight correct sentences",
+          "mins": 26,
+          "model": "Teacher does sentences 1 and 2."
+        },
+        {
+          "q": "Extend: find two of these errors in your own mock writing and fix them.",
+          "a": "Pupils' own",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "After لَمْ the verb is ...",
+          "a": "Majzum",
+          "mins": 1,
+          "options": [
+            "Majzum",
+            "Mansub"
+          ]
+        },
+        {
+          "q": "Back to our ponder: simple or ambitious?",
+          "a": "Ambitious and accurate.",
+          "mins": 1
+        }
+      ],
+      "homework": "Ten-minute daily error drill using the clinic sheet.",
+      "send": "SEND: rule cards. EAL: rules in English. Stretch: i'rab of five corrected sentences.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: error clinic (our own sentences)",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "red pen correction",
+          "alt": "Corrections",
+          "for": "keywords"
+        },
+        {
+          "find": "Arabic grammar book",
+          "alt": "A grammar book",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 35,
+      "title": "Revision Theme 4: reading (work, ambitions, languages)",
+      "duration": 50,
+      "bigQuestion": "Why might learning Arabic help with a future job?",
+      "objectives": [
+        "To understand how to tackle reading questions on Theme 4 with confidence"
+      ],
+      "successCriteria": [
+        "All: find key information in a Theme 4 text",
+        "Most: answer inference questions in English and Arabic",
+        "Some: write a short summary in my own words (4AA1)"
+      ],
+      "keywords": [
+        {
+          "term": "طُمُوح (tumuh)",
+          "def": "ambition"
+        },
+        {
+          "term": "تَدْرِيب (tadrib)",
+          "def": "training"
+        },
+        {
+          "term": "عَمَلٌ تَطَوُّعِيٌّ ('amal tatawwu'i)",
+          "def": "volunteering"
+        },
+        {
+          "term": "جَامِعَة (jami'ah)",
+          "def": "university"
+        },
+        {
+          "term": "خِبْرَة (khibrah)",
+          "def": "experience"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might learning Arabic help with a future job?",
+        "a": "Work in translation, teaching, business, travel, and serving the community."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. After لَنْ the verb is ...",
+          "a": "Mansub",
+          "mins": 1,
+          "options": [
+            "Mansub",
+            "Majzum"
+          ]
+        },
+        {
+          "q": "Correct: الكُتُبُ مُفِيدُونَ",
+          "a": "الكُتُبُ مُفِيدَةٌ",
+          "mins": 1
+        },
+        {
+          "q": "Say 'I want to study at university'.",
+          "a": "أُرِيدُ أَنْ أَدْرُسَ فِي الجَامِعَةِ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Theme 4 vocabulary",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "طُمُوح",
+                "ambition"
+              ],
+              [
+                "تَدْرِيب",
+                "training"
+              ],
+              [
+                "عَمَلٌ تَطَوُّعِيٌّ",
+                "volunteering"
+              ],
+              [
+                "مُقَابَلَةُ عَمَلٍ",
+                "job interview"
+              ],
+              [
+                "لُغَات",
+                "languages"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The text",
+          "bullets": [],
+          "note": "Our own exam-style text.",
+          "quote": {
+            "text": "اِسْمِي سَلْمَى. بَعْدَ المَدْرَسَةِ أُرِيدُ أَنْ أَدْرُسَ الطِّبَّ فِي الجَامِعَةِ، لِأَنَّنِي أُحِبُّ مُسَاعَدَةَ المَرْضَى.\nفِي الصَّيْفِ المَاضِي عَمِلْتُ مُتَطَوِّعَةً فِي مُسْتَشْفًى قَرِيبٍ مِنْ بَيْتِي، وَتَعَلَّمْتُ أَشْيَاءَ كَثِيرَةً.\nأَتَكَلَّمُ العَرَبِيَّةَ وَالإِنْجِلِيزِيَّةَ، وَأَعْتَقِدُ أَنَّ اللُّغَاتِ سَتُسَاعِدُنِي فِي عَمَلِي.",
+            "source": "Our own text"
+          }
+        },
+        {
+          "heading": "Reading strategy",
+          "bullets": [
+            "Read the questions first",
+            "Underline time words (الصَّيْفِ المَاضِي)",
+            "Answer the question asked, in the language asked"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Why does Salma want to study medicine?",
+            "options": [
+              "She loves helping the sick",
+              "It pays well",
+              "Her father is a doctor"
+            ],
+            "answer": 0,
+            "why": "لِأَنَّنِي أُحِبُّ مُسَاعَدَةَ المَرْضَى."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What did Salma do last summer? (English)",
+          "a": "She volunteered in a hospital near her home and learned a lot.",
+          "mins": 3,
+          "model": "Teacher finds الصَّيْفِ المَاضِي and reads the sentence, then answers in English with both details."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Reading set on the pupil PDF (our own): two Theme 4 texts with ten questions (1AA0 Paper 3 style), plus for Group A a 50-word summary in Arabic of text 2 in your own words (4AA1 style).",
+          "a": "Accurate answers; Group A summary without copying",
+          "mins": 24,
+          "model": "Teacher answers question 1 of text 2."
+        },
+        {
+          "q": "Extend: translate two sentences of Salma's text into English.",
+          "a": "Accurate translation",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "تَطَوُّع means ...",
+          "a": "Volunteering",
+          "mins": 1,
+          "options": [
+            "Volunteering",
+            "Training"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how could Arabic help with a job?",
+          "a": "Translation, teaching, business, travel, community service.",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: portal arabic y11 lessons 7 to 12 and 23 to 25 (Theme 4).",
+      "send": "SEND: key words highlighted. EAL: glossary. Stretch: 70-word summary.",
+      "resources": [
+        "Slides",
+        "Portal arabic y11 lessons 7 to 12, 23 to 25 (Theme 4)",
+        "Pupil PDF worksheet: Theme 4 reading set",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "university library",
+          "alt": "A university library",
+          "for": "teach:1"
+        },
+        {
+          "find": "hospital corridor",
+          "alt": "A hospital",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 36,
+      "title": "Revision Theme 4: writing about my future",
+      "duration": 50,
+      "bigQuestion": "What will you be doing in ten years? What intention will drive it?",
+      "objectives": [
+        "To understand how to write a high-scoring answer about future plans and work"
+      ],
+      "successCriteria": [
+        "All: write about future plans with سَـ and أُرِيدُ أَنْ",
+        "Most: cover all bullet points with justified opinions",
+        "Some: use a conditional, a passive or إِنَّ for range"
+      ],
+      "smsc": "Spiritual: intention for the future",
+      "keywords": [
+        {
+          "term": "سَـ / سَوْفَ (sa- / sawfa)",
+          "def": "will (future)"
+        },
+        {
+          "term": "إِذَا (idha)",
+          "def": "if (likely)"
+        },
+        {
+          "term": "لَوْ (law)",
+          "def": "if (hypothetical)"
+        },
+        {
+          "term": "أَحْلُمُ بِـ (ahlumu bi-)",
+          "def": "I dream of"
+        },
+        {
+          "term": "مِهْنَة (mihnah)",
+          "def": "career"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What will you be doing in ten years? What intention will drive it?",
+        "a": "Pupils' own, with a good intention: helping people, serving the community, pleasing Allah."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Actions are only by intentions' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. طُمُوح is ...",
+          "a": "Ambition",
+          "mins": 1,
+          "options": [
+            "Ambition",
+            "Training"
+          ]
+        },
+        {
+          "q": "'Last summer' is ...",
+          "a": "فِي الصَّيْفِ المَاضِي",
+          "mins": 1,
+          "options": [
+            "فِي الصَّيْفِ المَاضِي",
+            "فِي الصَّيْفِ القَادِمِ"
+          ]
+        },
+        {
+          "q": "Say 'I volunteered'.",
+          "a": "عَمِلْتُ مُتَطَوِّعًا / مُتَطَوِّعَةً",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Task (our own, Paper-style)",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Bullet",
+              "Structure"
+            ],
+            "rows": [
+              [
+                "Your plans after school",
+                "سَأَدْرُسُ / أُرِيدُ أَنْ"
+              ],
+              [
+                "Work experience or volunteering",
+                "Past: عَمِلْتُ، تَعَلَّمْتُ"
+              ],
+              [
+                "Your dream job and why",
+                "أَحْلُمُ بِـ ... لِأَنَّ"
+              ],
+              [
+                "Languages in your future",
+                "إِذَا / لَوْ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model paragraph",
+          "bullets": [],
+          "note": "Labelled range.",
+          "quote": {
+            "text": "بَعْدَ الاِمْتِحَانَاتِ سَأَدْرُسُ الرِّيَاضِيَّاتِ فِي الكُلِّيَّةِ.\nأَحْلُمُ بِأَنْ أَكُونَ مُهَنْدِسًا لِأَنَّنِي أُحِبُّ حَلَّ المُشْكِلَاتِ.\nإِذَا تَعَلَّمْتُ العَرَبِيَّةَ جَيِّدًا، فَسَأَعْمَلُ فِي بَلَدٍ عَرَبِيٍّ إِنْ شَاءَ اللهُ.",
+            "source": "Teacher's model"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which shows the future?",
+            "options": [
+              "سَأَدْرُسُ",
+              "دَرَسْتُ",
+              "أَدْرُسُ"
+            ],
+            "answer": 0,
+            "why": "سَـ + present = future."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a conditional sentence about learning languages.",
+          "a": "e.g. إِذَا تَعَلَّمْتُ لُغَةً جَدِيدَةً، فَسَأُسَافِرُ أَكْثَرَ.",
+          "mins": 3,
+          "model": "Teacher: إِذَا + past verb, then فَـ + future: إِذَا دَرَسْتُ بِجِدٍّ فَسَأَنْجَحُ."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed writing (our own task) in the portal response box: 150 words (Group B 90 words) covering every bullet, in 25 minutes.",
+          "a": "Full coverage; range and accuracy",
+          "mins": 25,
+          "model": "Teacher shows a four-line plan for the bullets."
+        },
+        {
+          "q": "Extend: self-check with the error clinic list.",
+          "a": "Corrections",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "لَوْ is used for ...",
+          "a": "Hypothetical conditions",
+          "mins": 1,
+          "options": [
+            "Hypothetical conditions",
+            "Past events"
+          ]
+        },
+        {
+          "q": "Back to our ponder: your intention?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Redraft your writing with the teacher's feedback.",
+      "send": "SEND: bullet frame. EAL: structure bank. Stretch: add a passive (يُدَرَّسُ).",
+      "resources": [
+        "Slides",
+        "Portal arabic y11 lessons 9 to 12 (Theme 4)",
+        "Pupil PDF worksheet: Theme 4 writing plan",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "graduation cap",
+          "alt": "Further study",
+          "for": "keywords"
+        },
+        {
+          "find": "road ahead horizon",
+          "alt": "The road ahead",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 37,
+      "title": "Revision Theme 5: environment and bringing the world together",
+      "duration": 50,
+      "bigQuestion": "If Allah made people caretakers of the earth, what is one change you could make this week?",
+      "objectives": [
+        "To understand how to read and write about environmental issues and global events"
+      ],
+      "successCriteria": [
+        "All: use ten Theme 5 words",
+        "Most: answer reading questions and give an opinion on an issue",
+        "Some: write a balanced paragraph with evidence and a solution"
+      ],
+      "crossCurricular": "Geography: environmental issues and sustainability",
+      "smsc": "Moral: caring for the environment as a trust",
+      "keywords": [
+        {
+          "term": "بِيئَة (bi'ah)",
+          "def": "environment"
+        },
+        {
+          "term": "تَلَوُّث (talawwuth)",
+          "def": "pollution"
+        },
+        {
+          "term": "إِعَادَةُ التَّدْوِيرِ (i'adat at-tadwir)",
+          "def": "recycling"
+        },
+        {
+          "term": "مَوَارِدُ طَبِيعِيَّةٌ (mawarid tabi'iyyah)",
+          "def": "natural resources"
+        },
+        {
+          "term": "حَمْلَة (hamlah)",
+          "def": "campaign"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If Allah made people caretakers of the earth, what is one change you could make this week?",
+        "a": "Pupils' own: e.g. less waste, recycling, saving water in wudu."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And do not cause corruption on the earth after its reformation' (al-A'raf 7:56).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'I will study' is ...",
+          "a": "سَأَدْرُسُ",
+          "mins": 1,
+          "options": [
+            "سَأَدْرُسُ",
+            "دَرَسْتُ"
+          ]
+        },
+        {
+          "q": "إِذَا means ...",
+          "a": "If",
+          "mins": 1,
+          "options": [
+            "If",
+            "When"
+          ]
+        },
+        {
+          "q": "Say 'I dream of being a doctor'.",
+          "a": "أَحْلُمُ بِأَنْ أَكُونَ طَبِيبًا",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Theme 5 words",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "بِيئَة",
+                "environment"
+              ],
+              [
+                "تَلَوُّث",
+                "pollution"
+              ],
+              [
+                "إِعَادَةُ التَّدْوِيرِ",
+                "recycling"
+              ],
+              [
+                "تَغَيُّرُ المُنَاخِ",
+                "climate change"
+              ],
+              [
+                "حَمْلَة",
+                "campaign"
+              ],
+              [
+                "أَحْدَاثٌ رِيَاضِيَّةٌ عَالَمِيَّةٌ",
+                "international sports events"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The text",
+          "bullets": [],
+          "note": "Our own exam-style text.",
+          "quote": {
+            "text": "يَجِبُ عَلَيْنَا أَنْ نَحْمِيَ البِيئَةَ. فِي مَدْرَسَتِنَا بَدَأْنَا حَمْلَةً لِإِعَادَةِ تَدْوِيرِ البْلَاسْتِيكِ.\nنَسْتَعْمِلُ المَاءَ بِحِكْمَةٍ، حَتَّى فِي الوُضُوءِ.\nأَعْتَقِدُ أَنَّ كُلَّ شَخْصٍ يَسْتَطِيعُ أَنْ يُسَاعِدَ، وَلَوْ بِشَيْءٍ صَغِيرٍ.",
+            "source": "Our own text"
+          }
+        },
+        {
+          "heading": "No waste",
+          "bullets": [
+            "The Prophet ﷺ used little water for wudu",
+            "'Do not cause corruption on the earth' (7:56)",
+            "Islam and the environment agree"
+          ],
+          "note": "Wudu with a mudd: Bukhari and Muslim."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What campaign did the school start?",
+            "options": [
+              "Recycling plastic",
+              "Planting trees",
+              "Saving electricity"
+            ],
+            "answer": 0,
+            "why": "حَمْلَةً لِإِعَادَةِ تَدْوِيرِ البْلَاسْتِيكِ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give your opinion on recycling with a reason and a solution.",
+          "a": "e.g. أَعْتَقِدُ أَنَّ إِعَادَةَ التَّدْوِيرِ مُهِمَّةٌ لِأَنَّهَا تُقَلِّلُ التَّلَوُّثَ، لِذٰلِكَ يَجِبُ أَنْ نَفْصِلَ النُّفَايَاتِ.",
+          "mins": 3,
+          "model": "Teacher: opinion (أَعْتَقِدُ أَنَّ ...) + reason (لِأَنَّ ...) + solution (يَجِبُ أَنْ ...)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Reading and writing set (our own) on the pupil PDF: one Theme 5 text with eight questions, then 100 words (Group B 90) in the portal response box: 'كَيْفَ نَحْمِي البِيئَةَ؟'",
+          "a": "Accurate answers; balanced paragraph with opinion, evidence and solution",
+          "mins": 24,
+          "model": "Teacher answers question 1 and shows a four-line plan for the writing."
+        },
+        {
+          "q": "Extend: link one international sports event to bringing people together.",
+          "a": "e.g. كَأْسُ العَالَمِ تَجْمَعُ النَّاسَ مِنْ كُلِّ البُلْدَانِ",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "تَلَوُّث means ...",
+          "a": "Pollution",
+          "mins": 1,
+          "options": [
+            "Pollution",
+            "Recycling"
+          ]
+        },
+        {
+          "q": "Back to our ponder: one change this week?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: portal arabic y11 lessons 13 to 16 (Theme 5).",
+      "send": "SEND: word bank. EAL: glossary. Stretch: 140 words with يَجِبُ أَنْ and a conditional.",
+      "resources": [
+        "Slides",
+        "Portal arabic y11 lessons 13 to 16 (Theme 5)",
+        "Pupil PDF worksheet: Theme 5 reading and writing set",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "recycling bins",
+          "alt": "Recycling bins",
+          "for": "keywords"
+        },
+        {
+          "find": "plastic waste beach",
+          "alt": "Plastic pollution on a beach",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 38,
+      "title": "Grammar test with Arabic terms",
+      "duration": 50,
+      "bigQuestion": "Which grammar point would you most like to master before the exam?",
+      "objectives": [
+        "To understand how securely I can name and apply the grammar needed for the exams"
+      ],
+      "successCriteria": [
+        "All: complete the grammar test",
+        "Most: give correct i'rab for key structures",
+        "Some: transform sentences (active to passive, singular to plural) accurately"
+      ],
+      "keywords": [
+        {
+          "term": "المَبْنِيُّ لِلْمَجْهُولِ",
+          "def": "the passive voice"
+        },
+        {
+          "term": "المُثَنَّى (al-muthanna)",
+          "def": "the dual"
+        },
+        {
+          "term": "الحَال (al-hal)",
+          "def": "circumstantial accusative"
+        },
+        {
+          "term": "التَّمْيِيز (at-tamyiz)",
+          "def": "specification after numbers"
+        },
+        {
+          "term": "إِعْرَاب (i'rab)",
+          "def": "grammatical analysis"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which grammar point would you most like to master before the exam?",
+        "a": "Pupils' own; often number rules or the subjunctive."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Environment' is ...",
+          "a": "بِيئَة",
+          "mins": 1,
+          "options": [
+            "بِيئَة",
+            "حَمْلَة"
+          ]
+        },
+        {
+          "q": "Correct: يَجِبُ أَنْ نَحْمِي البِيئَةَ",
+          "a": "يَجِبُ أَنْ نَحْمِيَ البِيئَةَ",
+          "mins": 1
+        },
+        {
+          "q": "Passive of كَتَبَ is ...",
+          "a": "كُتِبَ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What the test covers",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "diagram": {
+            "centre": "Grammar test",
+            "items": [
+              "Cases and i'rab",
+              "كَانَ and إِنَّ",
+              "أَنْ، لَنْ، لَمْ",
+              "Numbers",
+              "Dual and plurals",
+              "The passive",
+              "Comparatives"
+            ]
+          }
+        },
+        {
+          "heading": "Worked transformation",
+          "bullets": [],
+          "note": "Model.",
+          "model": {
+            "problem": "Make passive: كَتَبَ الطَّالِبُ الرِّسَالَةَ",
+            "steps": [
+              "Remove the doer (الطَّالِبُ)",
+              "Passive verb: كُتِبَتْ (feminine, for الرِّسَالَة)",
+              "Object becomes nominative: الرِّسَالَةُ",
+              "كُتِبَتِ الرِّسَالَةُ"
+            ],
+            "answer": "كُتِبَتِ الرِّسَالَةُ"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'Fifteen students' is ...",
+            "options": [
+              "خَمْسَةَ عَشَرَ طَالِبًا",
+              "خَمْسَ عَشْرَةَ طُلَّابٍ",
+              "خَمْسَةَ عَشَرَ طُلَّابًا"
+            ],
+            "answer": 0,
+            "why": "11 to 99: singular, mansub (tamyiz); 15 with a masculine noun: خَمْسَةَ عَشَرَ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give the i'rab of: كَانَ الاِمْتِحَانُ صَعْبًا.",
+          "a": "كَانَ: فِعْلٌ مَاضٍ نَاقِصٌ؛ الاِمْتِحَانُ: اِسْمُ كَانَ مَرْفُوعٌ؛ صَعْبًا: خَبَرُ كَانَ مَنْصُوبٌ",
+          "mins": 3,
+          "model": "Teacher: كَانَ raises its ism and makes its khabar mansub."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Grammar test (our own, 40 marks) on the pupil PDF or portal: identify, correct, transform and i'rab.",
+          "a": "Answers following the rules",
+          "mins": 28,
+          "model": "Teacher does question 1 aloud."
+        },
+        {
+          "q": "Extend: mark with the answer key in green.",
+          "a": "Corrections",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Your weakest grammar point?",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: which point to master?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Ten-minute daily drill on your two weakest points.",
+      "send": "SEND: rule sheet allowed for part 1. EAL: terms glossary. Stretch: the hal and tamyiz section.",
+      "resources": [
+        "Slides",
+        "Grammar test (our own, 40 marks) and answer key",
+        "Pupil PDF worksheet: grammar test",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Arabic grammar book",
+          "alt": "A grammar book",
+          "for": "keywords"
+        },
+        {
+          "find": "pen and paper test",
+          "alt": "Test paper",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 39,
+      "title": "Group B speaking mock (1AA0); Group A writing practice (4AA1)",
+      "duration": 50,
+      "bigQuestion": "What helps you stay calm when the examiner asks something you did not expect?",
+      "objectives": [
+        "To understand how I perform in the speaking assessment (Group B) or a timed writing task (Group A)"
+      ],
+      "successCriteria": [
+        "All: complete my group's task",
+        "Most: answer all prompts or bullets fully",
+        "Some: develop answers with opinions, reasons and time frames"
+      ],
+      "keywords": [
+        {
+          "term": "لَعِبُ الأَدْوَارِ (la'b al-adwar)",
+          "def": "role play"
+        },
+        {
+          "term": "وَصْفُ الصُّورَةِ (wasf as-surah)",
+          "def": "picture description"
+        },
+        {
+          "term": "مُحَادَثَة (muhadathah)",
+          "def": "conversation"
+        },
+        {
+          "term": "سُؤَالٌ غَيْرُ مُتَوَقَّعٍ",
+          "def": "unexpected question"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What helps you stay calm when the examiner asks something you did not expect?",
+        "a": "Breathe, repeat a key word, answer simply, then add a reason."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Passive of كَتَبَ is ...",
+          "a": "كُتِبَ",
+          "mins": 1,
+          "options": [
+            "كُتِبَ",
+            "يَكْتُبُ"
+          ]
+        },
+        {
+          "q": "'Fifteen students' is ...",
+          "a": "خَمْسَةَ عَشَرَ طَالِبًا",
+          "mins": 1,
+          "options": [
+            "خَمْسَةَ عَشَرَ طَالِبًا",
+            "خَمْسَةَ عَشَرَ طُلَّابٍ"
+          ]
+        },
+        {
+          "q": "Say 'I believe that ...'.",
+          "a": "أَعْتَقِدُ أَنَّ ...",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Group B: 1AA0 speaking",
+          "bullets": [
+            "Role play",
+            "Picture-based task",
+            "Conversation on two themes"
+          ],
+          "note": "Begin with Bismillah. Each Group B pupil does the mock one to one with the teacher (in turn) using the school speaking booklet; timings as the specification."
+        },
+        {
+          "heading": "Group A: 4AA1 writing",
+          "bullets": [
+            "Timed task (our own)",
+            "Plan, write, check",
+            "Accuracy and range"
+          ],
+          "note": "Group A works on the writing task while Group B pupils are called in turn."
+        },
+        {
+          "heading": "Developing an answer",
+          "bullets": [],
+          "note": "Model.",
+          "model": {
+            "problem": "مَاذَا فَعَلْتَ فِي العُطْلَةِ؟",
+            "steps": [
+              "Answer: سَافَرْتُ إِلَى ...",
+              "Detail: بِالطَّائِرَةِ مَعَ عَائِلَتِي",
+              "Opinion + reason: كَانَتْ رَائِعَةً لِأَنَّ ...",
+              "Extra time frame: وَسَأَعُودُ ..."
+            ],
+            "answer": "A developed answer"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Develop: هَلْ تُحِبُّ مَدْرَسَتَكَ؟",
+          "a": "e.g. نَعَمْ، أُحِبُّهَا لِأَنَّ المُعَلِّمِينَ لُطَفَاءُ، وَفِي السَّنَةِ القَادِمَةِ سَأَدْرُسُ فِي الكُلِّيَّةِ.",
+          "mins": 3,
+          "model": "Teacher answers using the four-step model."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Group B: speaking mock with the teacher (one to one, in turn) and self-review notes; Group A: timed writing task (our own) in the portal response box, 200 words.",
+          "a": "Speaking mock completed with feedback; writing with range and accuracy",
+          "mins": 28,
+          "model": "Teacher demonstrates the role-play opening with a volunteer before starting."
+        },
+        {
+          "q": "Extend: write three developed answers to conversation questions.",
+          "a": "Developed answers",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "One thing you did well and one to improve?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Group B: practise conversation questions from the booklet daily; Group A: redraft the writing.",
+      "send": "SEND: prompt cards for speaking; extra time as agreed. EAL: phrase bank. Stretch: add a conditional to every conversation answer.",
+      "resources": [
+        "Slides",
+        "School speaking booklet (1AA0)",
+        "Speaking mock record sheet (teacher)",
+        "Group A writing task (our own)",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "microphone",
+          "alt": "Speaking",
+          "for": "keywords"
+        },
+        {
+          "find": "notebook pen",
+          "alt": "Writing",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 40,
+      "title": "Full paper practice: reading (timed)",
+      "duration": 50,
+      "bigQuestion": "Is it better to answer every question quickly or some questions perfectly?",
+      "objectives": [
+        "To understand how to manage time and accuracy in a full reading paper"
+      ],
+      "successCriteria": [
+        "All: complete the timed reading section",
+        "Most: answer in the language asked and use the text",
+        "Some: finish with time to check and attempt every question"
+      ],
+      "keywords": [
+        {
+          "term": "تَوْقِيت (tawqit)",
+          "def": "timing"
+        },
+        {
+          "term": "تَرْجَمَة (tarjamah)",
+          "def": "translation"
+        },
+        {
+          "term": "اِسْتِنْتَاج (istintaj)",
+          "def": "inference"
+        },
+        {
+          "term": "مُلَخَّص (mulakhkhas)",
+          "def": "summary"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it better to answer every question quickly or some questions perfectly?",
+        "a": "Attempt every question; a sensible guess can earn marks, a blank cannot."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Role play' is ...",
+          "a": "لَعِبُ الأَدْوَارِ",
+          "mins": 1,
+          "options": [
+            "لَعِبُ الأَدْوَارِ",
+            "وَصْفُ الصُّورَةِ"
+          ]
+        },
+        {
+          "q": "'Inference' is ...",
+          "a": "اِسْتِنْتَاج",
+          "mins": 1,
+          "options": [
+            "اِسْتِنْتَاج",
+            "تَرْجَمَة"
+          ]
+        },
+        {
+          "q": "What comes first: read the questions or the text?",
+          "a": "The questions",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Today",
+          "bullets": [
+            "Group A: 4AA1 Paper 1 style reading section (our own texts)",
+            "Group B: 1AA0 Paper 3 style reading section (our own texts)",
+            "About 27 minutes, exam conditions"
+          ],
+          "note": "Begin with Bismillah. Full Pearson past papers are set as timed homework from the school's copies."
+        },
+        {
+          "heading": "Strategy",
+          "bullets": [
+            "Read the questions first",
+            "Underline key words in the text",
+            "Translation: meaning first, then accurate English"
+          ]
+        },
+        {
+          "heading": "Translation tip",
+          "bullets": [],
+          "note": "Model.",
+          "model": {
+            "problem": "Translate: كَانَ الطَّقْسُ مُمْطِرًا، لِذٰلِكَ بَقِينَا فِي البَيْتِ.",
+            "steps": [
+              "كَانَ الطَّقْسُ مُمْطِرًا: the weather was rainy",
+              "لِذٰلِكَ: so, therefore",
+              "بَقِينَا: we stayed",
+              "فِي البَيْتِ: at home"
+            ],
+            "answer": "The weather was rainy, so we stayed at home."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Translate: سَأَزُورُ جَدَّتِي بَعْدَ الاِمْتِحَانَاتِ.",
+          "a": "I will visit my grandmother after the exams.",
+          "mins": 2,
+          "model": "Teacher: سَأَزُورُ = I will visit; جَدَّتِي = my grandmother; بَعْدَ الاِمْتِحَانَاتِ = after the exams."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed reading section (our own texts, group-specific) in the portal: 27 minutes.",
+          "a": "Answers with the mark scheme (teacher marks)",
+          "mins": 27,
+          "model": "Teacher shows the first question and starts the timer."
+        },
+        {
+          "q": "Extend: if finished, check every answer is in the language asked.",
+          "a": "Checked",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "How was your timing, and what will you change?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Timed homework: one full Pearson reading past paper (school copy) by next lesson.",
+      "send": "SEND: access arrangements as agreed. EAL: glossary not allowed (exam conditions); reader if agreed. Stretch: finish with 4 minutes to check.",
+      "resources": [
+        "Slides",
+        "Timed reading sections (our own texts, Group A and Group B)",
+        "Pearson past papers (school copies) for homework",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clock face",
+          "alt": "Timing",
+          "for": "teach:1"
+        },
+        {
+          "find": "open book",
+          "alt": "Reading",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 41,
+      "title": "Full paper practice: writing (timed); speaking window opens",
+      "duration": 50,
+      "bigQuestion": "How long should you spend planning before you write?",
+      "objectives": [
+        "To understand how to plan and write a full answer under timed conditions"
+      ],
+      "successCriteria": [
+        "All: complete the timed writing task",
+        "Most: cover all bullet points with accurate grammar",
+        "Some: show wide range and check accuracy in the final minutes"
+      ],
+      "keywords": [
+        {
+          "term": "تَخْطِيط (takhtit)",
+          "def": "planning"
+        },
+        {
+          "term": "مُرَاجَعَة (muraja'ah)",
+          "def": "checking"
+        },
+        {
+          "term": "مُفْرَدَات (mufradat)",
+          "def": "vocabulary"
+        },
+        {
+          "term": "تَرَاكِيب (tarakib)",
+          "def": "structures"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How long should you spend planning before you write?",
+        "a": "A few minutes: a quick plan saves time and covers every bullet."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. تَخْطِيط is ...",
+          "a": "Planning",
+          "mins": 1,
+          "options": [
+            "Planning",
+            "Checking"
+          ]
+        },
+        {
+          "q": "Translate: لِذٰلِكَ",
+          "a": "So, therefore",
+          "mins": 1,
+          "options": [
+            "So, therefore",
+            "Because"
+          ]
+        },
+        {
+          "q": "Name one structure that shows range.",
+          "a": "e.g. a conditional, a passive, إِنَّ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Today",
+          "bullets": [
+            "Group A: 4AA1 Paper 2 style writing (our own task)",
+            "Group B: 1AA0 Paper 4 style writing (our own task)",
+            "Speaking: Group B pupils in the centre window this month"
+          ],
+          "note": "Begin with Bismillah."
+        },
+        {
+          "heading": "Plan in three minutes",
+          "bullets": [],
+          "note": "Plan template.",
+          "cycle": [
+            "List the bullets",
+            "One idea and a structure per bullet",
+            "Write",
+            "Check endings, agreement, numbers"
+          ]
+        },
+        {
+          "heading": "Checking routine",
+          "bullets": [
+            "Agreement and non-human plurals",
+            "أَنْ / لَنْ / لَمْ forms",
+            "كَانَ and إِنَّ"
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plan one bullet: 'your plans for the summer' with a structure.",
+          "a": "e.g. سَأُسَافِرُ إِلَى ... إِنْ شَاءَ اللهُ؛ إِذَا ...، فَـ ...",
+          "mins": 2,
+          "model": "Teacher plans the first bullet aloud."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed writing (our own, group-specific) in the portal response box: 3 minutes plan, 22 minutes write, 2 minutes check.",
+          "a": "Full coverage, range and accuracy (teacher marks)",
+          "mins": 27,
+          "model": "Teacher shows the task and starts the timer."
+        },
+        {
+          "q": "Extend: underline every complex structure you used.",
+          "a": "Structures marked",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "How was your timing, and what will you change?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Timed homework: one full Pearson writing past paper (school copy); Group B: daily speaking practice.",
+      "send": "SEND: access arrangements; planning grid. EAL: none in exam conditions. Stretch: 10% over the word guide with no extra errors.",
+      "resources": [
+        "Slides",
+        "Timed writing tasks (our own, Group A and Group B)",
+        "School speaking booklet (1AA0)",
+        "Pearson past papers (school copies) for homework",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clock face",
+          "alt": "Timing",
+          "for": "teach:1"
+        },
+        {
+          "find": "notebook pen",
+          "alt": "Writing",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 42,
+      "title": "Feedback on full papers",
+      "duration": 50,
+      "bigQuestion": "Which mistake would you most hate to repeat in the real exam?",
+      "objectives": [
+        "To understand where I gained and lost marks in the full papers and what to fix"
+      ],
+      "successCriteria": [
+        "All: record marks by paper and question type",
+        "Most: correct errors using the mark scheme",
+        "Some: rewrite one answer to the top band"
+      ],
+      "keywords": [
+        {
+          "term": "مُخَطَّطُ التَّصْحِيحِ",
+          "def": "mark scheme"
+        },
+        {
+          "term": "تَحَسُّن (tahassun)",
+          "def": "improvement"
+        },
+        {
+          "term": "نُقْطَةُ ضَعْفٍ",
+          "def": "weak point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which mistake would you most hate to repeat in the real exam?",
+        "a": "Pupils' own: name it so you can stop it."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Mark scheme' is ...",
+          "a": "مُخَطَّطُ التَّصْحِيحِ",
+          "mins": 1,
+          "options": [
+            "مُخَطَّطُ التَّصْحِيحِ",
+            "تَخْطِيط"
+          ]
+        },
+        {
+          "q": "Correct: لَمْ يَذْهَبُ",
+          "a": "لَمْ يَذْهَبْ",
+          "mins": 1
+        },
+        {
+          "q": "Correct: عِشْرُونَ طُلَّابٌ",
+          "a": "عِشْرُونَ طَالِبًا",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Results",
+          "bullets": [
+            "Reading ... / Writing ... / Speaking (Group B) ...",
+            "Which question types lost marks?",
+            "Compare with the mock"
+          ],
+          "note": "Begin with Bismillah. Marked work returned in the portal."
+        },
+        {
+          "heading": "Common issues",
+          "bullets": [],
+          "note": "Adapt to the group.",
+          "table": {
+            "head": [
+              "Issue",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Answered in the wrong language",
+                "Underline 'in English / in Arabic'"
+              ],
+              [
+                "Missed a bullet",
+                "Tick bullets as you write"
+              ],
+              [
+                "Copied text in a summary",
+                "Use synonyms and own structures"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "From one band to the next",
+          "bullets": [],
+          "note": "Model.",
+          "model": {
+            "problem": "Improve: أَنَا أُحِبُّ السَّفَرَ. السَّفَرُ جَيِّدٌ.",
+            "steps": [
+              "Add a reason: لِأَنَّهُ يُعَلِّمُنَا",
+              "Add a time frame: فِي الصَّيْفِ القَادِمِ سَأُسَافِرُ",
+              "Add a conditional: لَوْ كَانَ عِنْدِي وَقْتٌ ...",
+              "Check endings"
+            ],
+            "answer": "A higher-band answer"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Improve one of your own sentences using the model steps.",
+          "a": "Pupils' own improved sentence",
+          "mins": 3,
+          "model": "Teacher improves an anonymised sentence on screen."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Correct both papers in green using the mark scheme, then rewrite your weakest writing answer in the portal response box.",
+          "a": "Corrections and an improved answer",
+          "mins": 26,
+          "model": "Teacher shows how to use the mark scheme for one answer."
+        },
+        {
+          "q": "Extend: update your target plan.",
+          "a": "Updated plan",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The mistake you will not repeat?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Follow the updated plan; Group B: speaking practice daily until your centre date.",
+      "send": "SEND: tracker with question types. EAL: correction phrase bank. Stretch: rewrite two answers.",
+      "resources": [
+        "Slides",
+        "Marked full papers and mark schemes",
+        "Pupil PDF worksheet: paper tracker",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "green pen",
+          "alt": "Corrections",
+          "for": "keywords"
+        },
+        {
+          "find": "bar chart",
+          "alt": "Marks by skill",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision",
+      "n": 43,
+      "title": "Weakest skill repair",
+      "duration": 50,
+      "bigQuestion": "Is it better to keep practising what you are good at or what you find hardest?",
+      "objectives": [
+        "To understand how to close the gap in my weakest skill before the exams"
+      ],
+      "successCriteria": [
+        "All: practise my weakest skill with a focused task",
+        "Most: apply the strategy for that skill",
+        "Some: complete an exam question in that skill to time"
+      ],
+      "keywords": [
+        {
+          "term": "اِسْتِمَاع (istima')",
+          "def": "listening"
+        },
+        {
+          "term": "قِرَاءَة (qira'ah)",
+          "def": "reading"
+        },
+        {
+          "term": "كِتَابَة (kitabah)",
+          "def": "writing"
+        },
+        {
+          "term": "مُحَادَثَة (muhadathah)",
+          "def": "speaking"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it better to keep practising what you are good at or what you find hardest?",
+        "a": "The hardest: that is where the extra marks are."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Listening' is ...",
+          "a": "اِسْتِمَاع",
+          "mins": 1,
+          "options": [
+            "اِسْتِمَاع",
+            "قِرَاءَة"
+          ]
+        },
+        {
+          "q": "'Improvement' is ...",
+          "a": "تَحَسُّن",
+          "mins": 1,
+          "options": [
+            "تَحَسُّن",
+            "تَخْطِيط"
+          ]
+        },
+        {
+          "q": "Your weakest skill?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four stations",
+          "bullets": [
+            "Listening: transcripts read by the teacher",
+            "Reading: our own texts",
+            "Writing: one timed task",
+            "Speaking (Group B): booklet questions"
+          ],
+          "note": "Begin with Bismillah. Pupils join the breakout for their weakest skill; teacher visits each."
+        },
+        {
+          "heading": "Strategy per skill",
+          "bullets": [],
+          "note": "Short reminders.",
+          "table": {
+            "head": [
+              "Skill",
+              "Key strategy"
+            ],
+            "rows": [
+              [
+                "Listening",
+                "Predict, note numbers and negatives"
+              ],
+              [
+                "Reading",
+                "Questions first; answer in the language asked"
+              ],
+              [
+                "Writing",
+                "Plan bullets; check endings"
+              ],
+              [
+                "Speaking",
+                "Answer, detail, opinion, reason, time frame"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "In listening, what should you write down quickly?",
+            "options": [
+              "Numbers and negatives",
+              "Every word",
+              "Nothing"
+            ],
+            "answer": 0,
+            "why": "Numbers and negatives often decide the answer."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Apply the speaking strategy: مَا رَأْيُكَ فِي حِمَايَةِ البِيئَةِ؟",
+          "a": "e.g. أَعْتَقِدُ أَنَّهَا مُهِمَّةٌ جِدًّا لِأَنَّ ... وَفِي المُسْتَقْبَلِ سَأَسْتَعْمِلُ ...",
+          "mins": 3,
+          "model": "Teacher answers with the five-part strategy."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Station work (breakout for your weakest skill): one exam-style task (our own) to time, then self-mark.",
+          "a": "Completed task and self-mark",
+          "mins": 26,
+          "model": "Teacher models the first item at each station before breakouts."
+        },
+        {
+          "q": "Extend: a second task in your next-weakest skill.",
+          "a": "Completed",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What will you practise daily until the exam?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Daily 20-minute practice in your weakest skill until the Summer 1 lessons (26 April). 4AA1 Paper 1: Mon 10 May.",
+      "send": "SEND: station prompts. EAL: strategy cards. Stretch: two stations.",
+      "resources": [
+        "Slides",
+        "Station tasks (our own, four skills)",
+        "School speaking booklet (1AA0)",
+        "Our own exam-style texts and questions (not board material); Pearson past papers and mark schemes held by the school"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "headphones",
+          "alt": "Listening",
+          "for": "keywords"
+        },
+        {
+          "find": "open book",
+          "alt": "Reading",
+          "for": "teach:1"
+        }
+      ]
     }
   ]
 }

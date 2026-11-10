@@ -29,16 +29,11 @@ export const DIAL_CODES: Record<string, string> = {
 
 export type DialCountry = { code: string; name: string; dial: string };
 
-/** Countries families are most likely to use, shown first in the picker. */
-const PINNED = ["GB", "IE", "US", "AE", "SA", "PK", "BD", "IN", "NG"];
-
-export const DIAL_COUNTRIES: DialCountry[] = (() => {
-  const all = Object.entries(COUNTRY_CODES)
-    .filter(([, code]) => DIAL_CODES[code])
-    .map(([name, code]) => ({ code, name, dial: DIAL_CODES[code] }));
-  const pinned = PINNED.map((c) => all.find((x) => x.code === c)).filter((x): x is DialCountry => !!x);
-  return [...pinned, ...all.filter((x) => !PINNED.includes(x.code)).sort((a, b) => a.name.localeCompare(b.name))];
-})();
+/** Every country, in alphabetical order (owner, Nov 2026). */
+export const DIAL_COUNTRIES: DialCountry[] = Object.entries(COUNTRY_CODES)
+  .filter(([, code]) => DIAL_CODES[code])
+  .map(([name, code]) => ({ code, name, dial: DIAL_CODES[code] }))
+  .sort((a, b) => a.name.localeCompare(b.name, "en-GB"));
 
 /** NANP codes shared by several countries: prefer this one when reading "+1 ..." back. */
 const PREFERRED_FOR_DIAL: Record<string, string> = { "1": "US", "7": "RU", "39": "IT", "44": "GB" };

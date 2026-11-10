@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y7",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme and the Edexcel spec content areas, own knowledge, authentic sources only | Spring 1 2027 (lessons 8, 9, 10 upgraded, 13 to 19 new): Year 7 pack Islamic Studies Spring 1 rows 1 to 4 and 6 (what hadith is and its preservation; isnad and grading; the hadith on intentions; the hadith of the five pillars; review and unit quiz); hadith cited only from Bukhari and Muslim or named collections without numbers (Abu Dawud, at-Tirmidhi, Ahmad); Ibn al-Mubarak's saying from the introduction of Sahih Muslim; chain of Bukhari hadith 1; approved hadith selection TO CONFIRM",
+  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme and the Edexcel spec content areas, own knowledge, authentic sources only | Spring 1 2027 (lessons 8, 9, 10 upgraded, 13 to 19 new): Year 7 pack Islamic Studies Spring 1 rows 1 to 4 and 6 (what hadith is and its preservation; isnad and grading; the hadith on intentions; the hadith of the five pillars; review and unit quiz); hadith cited only from Bukhari and Muslim or named collections without numbers (Abu Dawud, at-Tirmidhi, Ahmad); Ibn al-Mubarak's saying from the introduction of Sahih Muslim; chain of Bukhari hadith 1; approved hadith selection TO CONFIRM | Spring 2 2027 (lessons 11 and 12 upgraded, 20 to 28 new): Year 7 pack Islamic Studies Spring 2 weeks 1 to 6 (purification and wudu; ghusl and tayammum; conditions; pillars and obligatory acts; invalidators and sujud as-sahw; review and unit quiz), two lessons a week scaled to the short weeks (2, 2, 1, 2, 2, 2); lists of conditions, pillars, obligatory acts and invalidators as in Important Lessons for Every Muslim (Ibn Baz), with differences between the schools noted; 5:6, 4:43, 4:103, 7:31, 2:144; hadith from Bukhari and Muslim; lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: Foundations of Aqeedah",
@@ -1403,185 +1403,469 @@
       ]
     },
     {
-      "unit": "Unit 4: Fiqh of worship",
+      "unit": "Spring 2: Fiqh of worship",
       "n": 11,
-      "title": "Purification: wudu, ghusl and tayammum",
+      "title": "Wudu: fard, sunnah and what breaks it",
       "duration": 50,
+      "bigQuestion": "If you miss a sunnah part of wudu, is your wudu still valid? What about a fard part?",
       "objectives": [
-        "Explain the types of purification",
-        "State when each is needed",
-        "Describe the steps of ghusl and tayammum"
+        "To understand which parts of wudu are obligatory, which are sunnah, and what breaks wudu"
       ],
+      "successCriteria": [
+        "All: list the four fard acts named in 5:6",
+        "Most: sort the fard and sunnah acts of wudu",
+        "Some: explain what breaks wudu, including where scholars differ"
+      ],
+      "smsc": "Spiritual: wudu as worship that cleanses",
       "keywords": [
         {
-          "term": "wudu",
-          "def": "minor ablution"
+          "term": "wudu (وُضُوء)",
+          "def": "the minor ablution before salah"
         },
         {
-          "term": "ghusl",
-          "def": "full bath for major impurity"
+          "term": "fard (فَرْض)",
+          "def": "obligatory: leaving it makes the act invalid"
         },
         {
-          "term": "tayammum",
-          "def": "dry ablution with clean earth when water is not available"
+          "term": "sunnah (سُنَّة)",
+          "def": "recommended: following the Prophet ﷺ, rewarded but not obligatory"
         },
         {
-          "term": "najasah",
-          "def": "physical impurity"
+          "term": "nawaqid (نَوَاقِض)",
+          "def": "things that break wudu"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you miss a sunnah part of wudu, is your wudu still valid? What about a fard part?",
+        "a": "Missing a sunnah: valid but less reward. Missing a fard: not valid; redo it."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said that when a Muslim makes wudu and washes his face, every sin he looked at leaves with the water (Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Recite the steps of wudu in order.",
-        "Name three things that break wudu.",
-        "What does taharah mean?"
+        {
+          "q": "Bismillah. Hadath is removed by ...",
+          "a": "Wudu or ghusl",
+          "mins": 1,
+          "options": [
+            "Wudu or ghusl",
+            "Washing clothes"
+          ]
+        },
+        {
+          "q": "Blood on clothes is ...",
+          "a": "Najasah",
+          "mins": 1,
+          "options": [
+            "Najasah",
+            "Hadath"
+          ]
+        },
+        {
+          "q": "Which ayah describes wudu?",
+          "a": "Al-Ma'idah 5:6",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Why purity matters",
-          "bullets": [
-            "“Allah loves those who repent and those who purify themselves” (2:222)",
-            "Cleanliness is part of faith",
-            "Purity is required for prayer"
-          ],
-          "note": "Begin with bismillah. Remind pupils of Qur’an 5:6 from last year. The hadith ‘purification is half of faith’ is in Sahih Muslim. Ask: what are examples of cleanliness in your daily routine?"
+          "heading": "The command in 5:6",
+          "bullets": [],
+          "note": "Read 5:6 in translation and underline the four parts.",
+          "quote": {
+            "text": "O you who believe, when you rise for prayer, wash your faces and your forearms to the elbows, wipe over your heads and wash your feet to the ankles.",
+            "source": "Qur'an, al-Ma'idah 5:6 (translation of the meaning)"
+          }
         },
         {
-          "heading": "Wudu in detail",
-          "bullets": [
-            "Fard acts: wash the face, arms to elbows, wipe the head, wash the feet",
-            "Sunnah acts: bismillah, siwak, rinsing mouth and nose",
-            "Order and washing three times are sunnah"
-          ],
-          "note": "Fard actions come directly from 5:6. Madhhabs differ on details such as the niyyah and order; mention that families follow different madhhabs. Pupils check their understanding by correcting an incorrect wudu in a video or script."
+          "heading": "Fard or sunnah?",
+          "bullets": [],
+          "note": "Pupils show 1 or 2 for each card. Scholars of the four schools differ on some details; we teach the main position and note the difference.",
+          "sort": {
+            "columns": [
+              "Fard",
+              "Sunnah"
+            ],
+            "cards": [
+              "Washing the face",
+              "Using the siwak",
+              "Washing arms to the elbows",
+              "Washing three times",
+              "Wiping the head",
+              "Starting with the right",
+              "Washing feet to the ankles",
+              "Rinsing between the fingers"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
         },
         {
-          "heading": "Ghusl",
+          "heading": "Order and continuity",
           "bullets": [
-            "Required after major impurity (janabah)",
-            "Also required after menstruation and post-natal bleeding ends",
-            "Make intention, wash the body, rinse mouth and nose, ensure water reaches all the body"
+            "Many scholars add: in order",
+            "And without a long break",
+            "Rinsing mouth and nose: obligatory for Hanbalis"
           ],
-          "note": "Treat with maturity and brevity; this is standard fiqh for Year 7. Explain that boys and girls study it as part of becoming responsible adults. Use correct terms and direct questions to parents or teachers for more detail."
+          "note": "Scholars of the four schools differ on some details; we teach the main position and note the difference."
         },
         {
-          "heading": "Tayammum",
+          "heading": "What breaks wudu?",
           "bullets": [
-            "Used if water is not available or harmful to use",
-            "Strike clean earth with both hands",
-            "Wipe the face and the hands",
-            "Mentioned in the Qur’an (5:6)"
+            "Anything from the two private passages",
+            "Deep sleep or losing consciousness",
+            "Differed on: eating camel meat, touching the private part"
           ],
-          "note": "Teach as a mercy of Allah. Give a worked scenario: a traveller in the desert, or someone with a skin condition for whom water is harmful. The details of the strikes differ between madhhabs; teach the basic form. Ask: how does tayammum show that Islam is practical?"
+          "note": "Muslim reports the Prophet ﷺ told people to make wudu after eating camel meat; others held it was not required. Bleeding: differed on."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Hamza forgets to wipe his head. His wudu is ...",
+            "options": [
+              "Invalid: wiping the head is fard",
+              "Valid: it is sunnah",
+              "Valid if he washed his face"
+            ],
+            "answer": 0,
+            "why": "Wiping the head is named in 5:6, so it is fard."
+          }
         }
       ],
       "practice": [
-        "Identify the fard acts of wudu from 5:6.",
-        "When is ghusl required?",
-        "Describe a situation when tayammum is allowed."
+        {
+          "q": "Explain why washing three times is sunnah, not fard.",
+          "a": "The ayah commands washing, which is done once; the Prophet ﷺ sometimes washed once, twice or three times, so three is sunnah.",
+          "mins": 3,
+          "model": "Point: three times is recommended. Evidence: 5:6 commands washing without a number; the Prophet ﷺ washed once, twice and three times (Bukhari). Explain: once fulfils the command; more follows the Sunnah. Link: fard makes it valid, sunnah adds reward."
+        },
+        {
+          "q": "Deep sleep ...",
+          "a": "Breaks wudu",
+          "mins": 1,
+          "options": [
+            "Breaks wudu",
+            "Does not break wudu"
+          ]
+        },
+        {
+          "q": "Name two sunnah acts of wudu.",
+          "a": "For example: siwak, three times, starting with the right",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Create a flow chart: ‘Which type of purification do I need?’ with five scenarios.",
-        "Write a paragraph explaining how purity helps a Muslim prepare for prayer.",
-        "Make a mini-leaflet on tayammum for travellers."
+        {
+          "q": "Make a 'wudu guide for a new Muslim' on the pupil PDF: the steps in order, with F (fard) or S (sunnah) beside each, and a box of three things that break wudu.",
+          "a": "Correct order; fard: face, arms, head, feet (with order and continuity per many scholars); sunnah labelled; breakers correct",
+          "mins": 12,
+          "model": "Teacher writes the first lines: '1 Niyyah and Bismillah (S). 2 Wash hands three times (S).'"
+        },
+        {
+          "q": "Extend: what should someone do if unsure whether wudu broke?",
+          "a": "Stay with certainty: wudu remains (Bukhari and Muslim).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why might scholars differ on camel meat?",
+          "a": "They understood the evidence differently: some took the command as obligatory, others as recommended or abrogated.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the three types of purification.",
-        "Give one situation where tayammum is allowed."
+        {
+          "q": "Washing the face in wudu is ...",
+          "a": "Fard",
+          "mins": 1,
+          "options": [
+            "Fard",
+            "Sunnah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is wudu valid if you miss a sunnah? A fard?",
+          "a": "Sunnah missed: valid. Fard missed: not valid.",
+          "mins": 2
+        }
       ],
-      "homework": "Ask your parent which madhhab they follow and note one difference in wudu if any.",
-      "send": "SEND/EAL: flow chart with icons; stretch: discuss how Islam balances ease and obligation in purification."
+      "homework": "Make wudu slowly once a day this week, saying 'fard' or 'sunnah' in your head for each step.",
+      "send": "SEND: sort cards with symbols. EAL: fard / sunnah key word cards. Stretch: write a short note on why the four schools sometimes differ on wudu.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Portal islamic-studies y7 lesson 11 (this lesson)",
+        "Pupil PDF worksheet: wudu guide for a new Muslim",
+        "Mushaf or printed al-Ma'idah 5:6"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mosque ablution area",
+          "alt": "A mosque ablution area",
+          "for": "hook"
+        },
+        {
+          "find": "miswak stick",
+          "alt": "A siwak (miswak) used to clean the teeth",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Unit 4: Fiqh of worship",
+      "unit": "Spring 2: Fiqh of worship",
       "n": 12,
-      "title": "The salah: conditions, pillars and common mistakes",
+      "title": "Salah: its conditions (shurut)",
       "duration": 50,
+      "bigQuestion": "If you pray Dhuhr perfectly but ten minutes before its time begins, does it count? Why?",
       "objectives": [
-        "List the conditions for salah to be valid",
-        "Explain the pillars of the prayer",
-        "Identify and correct common mistakes"
+        "To understand the conditions that must be in place before salah is valid"
       ],
+      "successCriteria": [
+        "All: name five conditions of salah",
+        "Most: explain why each condition is needed",
+        "Some: apply the conditions to real situations"
+      ],
+      "crossCurricular": "Geography: using a compass and bearings to find the qiblah",
+      "smsc": "Spiritual: preparing properly to stand before Allah",
       "keywords": [
         {
-          "term": "shurut",
-          "def": "conditions that must be met before prayer"
+          "term": "shurut (شُرُوط)",
+          "def": "conditions: things needed before and during salah"
         },
         {
-          "term": "arkan",
-          "def": "the essential pillars inside the prayer"
+          "term": "'awrah (عَوْرَة)",
+          "def": "the parts of the body that must be covered"
         },
         {
-          "term": "tashahhud",
-          "def": "the sitting and testimony of faith"
+          "term": "qiblah (قِبْلَة)",
+          "def": "the direction of the Ka'bah"
         },
         {
-          "term": "awrah",
-          "def": "parts of the body that must be covered"
+          "term": "waqt (وَقْت)",
+          "def": "the time of a prayer"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you pray Dhuhr perfectly but ten minutes before its time begins, does it count? Why?",
+        "a": "No: the entry of the time is a condition; it must be prayed again in its time."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, prayer has been decreed upon the believers at specified times' (an-Nisa' 4:103).",
+        "at": "start"
+      },
       "starter": [
-        "Name the three types of purification.",
-        "Name the five daily prayers.",
-        "How many rak’ahs are in Isha?"
+        {
+          "q": "Bismillah. Tayammum uses ...",
+          "a": "Clean earth",
+          "mins": 1,
+          "options": [
+            "Clean earth",
+            "Water"
+          ]
+        },
+        {
+          "q": "Which parts are wiped in tayammum?",
+          "a": "Face and hands",
+          "mins": 1,
+          "options": [
+            "Face and hands",
+            "Arms and feet"
+          ]
+        },
+        {
+          "q": "Is ghusl before Jumu'ah fard or sunnah?",
+          "a": "Sunnah",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Conditions of salah",
+          "heading": "Conditions come first",
           "bullets": [
-            "Being Muslim, sane and of age",
-            "Purity: wudu or ghusl",
-            "Covering the awrah",
-            "Facing the qiblah and the correct time"
+            "A condition is in place before salah begins",
+            "It continues through the whole salah",
+            "Miss one: the salah is not valid"
           ],
-          "note": "Begin with bismillah. Pupils are at or near the age of responsibility, so tie this to personal duty. The Prophet ﷺ said to pray as you have seen me pray (Bukhari, Malik ibn al-Huwayrith). Ask: why does prayer have times? Cite Qur’an 4:103: prayer is prescribed for the believers at fixed times."
+          "note": "Begin with Bismillah."
         },
         {
-          "heading": "The pillars (arkan)",
-          "bullets": [
-            "Takbir al-ihram and standing",
-            "Reciting al-Fatihah",
-            "Ruku’, sujud and sitting between them",
-            "Final tashahhud and salam"
-          ],
-          "note": "Say clearly that scholars list the pillars with small differences between madhhabs, so we teach the main agreed actions. The hadith of the one who prayed badly (Bukhari, Muslim) teaches calmness (tuma’ninah) in each posture. Ask: what does tuma’ninah mean? (Rest in each position.)"
+          "heading": "The nine conditions",
+          "bullets": [],
+          "note": "From Important Lessons for Every Muslim (Ibn Baz). Other books list them differently; the content is the same.",
+          "table": {
+            "head": [
+              "Condition",
+              "In short"
+            ],
+            "rows": [
+              [
+                "Islam, sanity, discernment",
+                "The person praying"
+              ],
+              [
+                "Purity from hadath",
+                "Wudu or ghusl"
+              ],
+              [
+                "Removing najasah",
+                "Body, clothes and place"
+              ],
+              [
+                "Covering the 'awrah",
+                "Modest dress"
+              ],
+              [
+                "The time has begun",
+                "Each prayer in its time"
+              ],
+              [
+                "Facing the qiblah",
+                "Towards the Ka'bah"
+              ],
+              [
+                "Niyyah",
+                "Intending the prayer in the heart"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Rak’ah by rak’ah",
+          "heading": "Time and qiblah",
           "bullets": [
-            "First rak’ah: takbir, Fatihah, surah, ruku’, sujud x2",
-            "Second rak’ah: same, then sit for tashahhud",
-            "Longer prayers: stand for the third and fourth",
-            "End with salam to right and left"
+            "Prayer is prescribed at set times (4:103)",
+            "Turn your face towards al-Masjid al-Haram (2:144)",
+            "In the UK the qiblah is roughly south-east"
           ],
-          "note": "Demonstrate each prayer with rak’ah count: Fajr 2, Dhuhr 4, Asr 4, Maghrib 3, Isha 4. Pupils lead a mini-demonstration of one prayer in pairs on camera (if appropriate)."
+          "note": "Show a qiblah compass or app."
         },
         {
-          "heading": "Common mistakes",
+          "heading": "Quick check",
           "bullets": [
-            "Rushing without tuma’ninah",
-            "Looking around or fidgeting",
-            "Praying late without a reason",
-            "Not understanding the words"
+            "Vote in the Teams poll"
           ],
-          "note": "Be positive: everyone improves. The Prophet ﷺ taught the man who prayed hastily to pray calmly. Challenge pupils to choose one improvement. Provide a short list of du’as in sujud."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is a condition, not a pillar?",
+            "options": [
+              "Facing the qiblah",
+              "Reciting al-Fatihah",
+              "Ruku'"
+            ],
+            "answer": 0,
+            "why": "Facing the qiblah is needed before and during; al-Fatihah and ruku' are pillars inside the prayer."
+          }
         }
       ],
       "practice": [
-        "List the four conditions from the slide.",
-        "Put the actions of a rak’ah in order.",
-        "Explain tuma’ninah in your own words."
+        {
+          "q": "Explain why covering the 'awrah is a condition of salah.",
+          "a": "Allah commands modest dress for prayer; without it the prayer is not valid.",
+          "mins": 3,
+          "model": "Point: covering the 'awrah is required. Evidence: Allah says 'take your adornment at every masjid' (7:31). Explain: we stand before Allah in modest, clean clothing. Link: like purity and the qiblah, it must be in place before we begin."
+        },
+        {
+          "q": "Facing the Ka'bah is called facing the ...",
+          "a": "Qiblah",
+          "mins": 1,
+          "options": [
+            "Qiblah",
+            "Minbar"
+          ]
+        },
+        {
+          "q": "Which ayah says prayer has set times?",
+          "a": "An-Nisa' 4:103",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write a step-by-step guide to the two-rak’ah Fajr prayer.",
-        "Create a checklist titled ‘Preparing for salah’.",
-        "Write a paragraph on how to build khushu’ in prayer."
+        {
+          "q": "Five 'valid or not?' scenarios on the pupil PDF: write the condition involved and the ruling (e.g. praying Asr before its time; praying on a mat with a dry urine stain; praying facing the wrong way after trying your best to find the qiblah).",
+          "a": "Rulings with the condition named; the person who tried hard and erred in qiblah: prayer valid",
+          "mins": 12,
+          "model": "Teacher does scenario 1: 'Asr before its time: the condition of time is missing, so it must be prayed again after the time begins.'"
+        },
+        {
+          "q": "Extend: what if someone cannot work out the qiblah?",
+          "a": "Try their best; the prayer is valid even if they were wrong.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is the niyyah a condition rather than something said aloud?",
+          "a": "Intention is in the heart; the Prophet ﷺ did not say a set phrase aloud.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name two conditions of salah.",
-        "What is tuma’ninah?"
+        {
+          "q": "Praying before the time begins is ...",
+          "a": "Not valid",
+          "mins": 1,
+          "options": [
+            "Not valid",
+            "Valid"
+          ]
+        },
+        {
+          "q": "Back to our ponder: does Dhuhr before its time count?",
+          "a": "No: the time is a condition; pray it again in its time.",
+          "mins": 2
+        }
       ],
-      "homework": "Pray each salah on time for three days, noting how you helped yourself focus.",
-      "send": "SEND/EAL: images of postures with labels; stretch: compare the conditions and pillars and explain the difference."
+      "homework": "Find the qiblah in your room with a compass or app and the five prayer times for today.",
+      "send": "SEND: condition picture cards. EAL: key word cards. Stretch: research why prayer times change through the year in the UK.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Portal islamic-studies y7 lesson 12 (this lesson)",
+        "Pupil PDF worksheet: valid or not? scenarios",
+        "Qiblah compass or app; local prayer timetable"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "qibla compass",
+          "alt": "A qiblah compass",
+          "for": "teach:3"
+        },
+        {
+          "find": "prayer mat",
+          "alt": "A prayer mat",
+          "for": "keywords"
+        },
+        {
+          "find": "clock face",
+          "alt": "A clock: each prayer has its time",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Hadith and the Sunnah",
@@ -3209,6 +3493,1964 @@
         {
           "find": "hourglass sand timer",
           "alt": "A sand timer: use time well",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Fiqh of worship",
+      "n": 20,
+      "title": "Taharah: pure water and removing najasah",
+      "duration": 50,
+      "bigQuestion": "If your clothes look clean but you know a drop of urine touched them, can you pray in them? Why does it matter?",
+      "objectives": [
+        "To understand why purity is a condition of worship and how Muslims remove impurity"
+      ],
+      "successCriteria": [
+        "All: name the kind of water that can be used for purification",
+        "Most: explain the difference between hadath and najasah",
+        "Some: apply the rules to real situations, such as a dog's saliva"
+      ],
+      "crossCurricular": "Science: hygiene and how microbes spread",
+      "smsc": "Spiritual: purity as preparation for worship",
+      "keywords": [
+        {
+          "term": "taharah (طَهَارَة)",
+          "def": "purity required for worship"
+        },
+        {
+          "term": "najasah (نَجَاسَة)",
+          "def": "physical impurity, such as urine or blood"
+        },
+        {
+          "term": "hadath (حَدَث)",
+          "def": "a state that needs wudu or ghusl before prayer"
+        },
+        {
+          "term": "tahur (طَهُور)",
+          "def": "water that is pure and purifies"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If your clothes look clean but you know a drop of urine touched them, can you pray in them? Why does it matter?",
+        "a": "No: purity of body, clothes and place is a condition of salah, seen or unseen."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, Allah loves those who repent and loves those who purify themselves' (al-Baqarah 2:222).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What is the Sunnah?",
+          "a": "The sayings, actions and approvals of the Prophet ﷺ",
+          "mins": 1,
+          "options": [
+            "The sayings, actions and approvals of the Prophet ﷺ",
+            "A type of prayer"
+          ]
+        },
+        {
+          "q": "Which two collections are the most authentic?",
+          "a": "Bukhari and Muslim",
+          "mins": 1,
+          "options": [
+            "Bukhari and Muslim",
+            "Abu Dawud and Tirmidhi"
+          ]
+        },
+        {
+          "q": "What is an isnad?",
+          "a": "The chain of narrators",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Purity comes first",
+          "bullets": [
+            "Salah is not accepted without purity",
+            "Purity is half of iman",
+            "Two kinds: hadath and najasah"
+          ],
+          "note": "Begin with Bismillah. 'Allah does not accept a prayer without purification' (Muslim). 'Purity is half of iman' (Muslim)."
+        },
+        {
+          "heading": "Hadath or najasah?",
+          "bullets": [],
+          "note": "Make the distinction clear.",
+          "compare": {
+            "left": {
+              "title": "Hadath (a state)",
+              "points": [
+                "Minor: removed by wudu",
+                "Major: removed by ghusl",
+                "Not visible"
+              ]
+            },
+            "right": {
+              "title": "Najasah (a substance)",
+              "points": [
+                "Urine, faeces, blood, dog's saliva",
+                "On body, clothes or place",
+                "Washed away with water"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Which water purifies?",
+          "bullets": [
+            "Rain, sea, river and tap water purify",
+            "Water stays pure unless its colour, taste or smell changes from impurity",
+            "Allah sent down pure water from the sky (25:48)"
+          ],
+          "note": "Explain tahur: pure in itself and able to purify. Scholars of the four schools differ on some details; we teach the main position and note the difference."
+        },
+        {
+          "heading": "Special case: a dog's saliva",
+          "bullets": [
+            "Wash the vessel seven times",
+            "One of them with earth",
+            "A clear rule from the Sunnah"
+          ],
+          "note": "Reported in Muslim. Dogs may be kept for guarding, farming or hunting; the rule is about cleaning."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Blood drips on your sleeve. What do you need?",
+            "options": [
+              "Wash the sleeve",
+              "Make ghusl",
+              "Nothing: it is hadath"
+            ],
+            "answer": 0,
+            "why": "Blood is najasah: wash it off. Wudu and ghusl remove hadath, not a substance."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the difference between hadath and najasah with an example of each.",
+          "a": "Hadath is a state (e.g. after using the toilet), removed by wudu or ghusl; najasah is a substance (e.g. urine on clothes), washed away.",
+          "mins": 3,
+          "model": "Point: hadath is a state, najasah is a thing. Evidence: after the toilet you need wudu (hadath); urine on a sock must be washed (najasah). Explain: wudu does not clean a stain, and washing a stain does not give wudu. Link: both are needed before salah."
+        },
+        {
+          "q": "Sea water is ...",
+          "a": "Pure and purifying",
+          "mins": 1,
+          "options": [
+            "Pure and purifying",
+            "Not allowed for wudu"
+          ]
+        },
+        {
+          "q": "How many times is a vessel washed after a dog drinks from it?",
+          "a": "Seven, one with earth",
+          "mins": 1,
+          "options": [
+            "Seven, one with earth",
+            "Once"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Answer five 'Ask the mufti' cases on the pupil PDF (e.g. muddy rain on trousers, tea spilt on a prayer mat, a cat drinking from a bowl). Write the ruling and the reason.",
+          "a": "Rulings with reasons: mud is not najasah; tea is not najasah; a cat's leftover water is pure (scholars cite the Sunnah)",
+          "mins": 12,
+          "model": "Teacher answers case 1: 'Muddy rain on trousers: mud and rain are not najasah, so the trousers are fine for salah.'"
+        },
+        {
+          "q": "Extend: why can't wudu remove najasah?",
+          "a": "Wudu removes a state; najasah is a substance that must be washed off.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how does Islam's focus on purity link to health?",
+          "a": "Washing removes germs; Islam teaches hygiene as worship.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Urine on clothes is ...",
+          "a": "Najasah",
+          "mins": 1,
+          "options": [
+            "Najasah",
+            "Hadath"
+          ]
+        },
+        {
+          "q": "Back to our ponder: can you pray in clothes with a drop of urine?",
+          "a": "No: wash it first; purity of clothes is a condition of salah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Check where you pray at home: is the place clean? List three ways to keep it pure.",
+      "send": "SEND: hadath / najasah picture sort. EAL: key word cards with Arabic. Stretch: research the ruling on a cat's leftover water and give the evidence.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Pupil PDF worksheet: 'Ask the mufti' purity cases",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "rain drops on leaf",
+          "alt": "Rainwater: pure and purifying",
+          "for": "teach:3"
+        },
+        {
+          "find": "water tap sink",
+          "alt": "Clean tap water",
+          "for": "keywords"
+        },
+        {
+          "find": "dog bowl",
+          "alt": "A dog's bowl",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Fiqh of worship",
+      "n": 21,
+      "title": "Ghusl: the full ritual bath",
+      "duration": 50,
+      "bigQuestion": "Why would Islam ask for a whole-body wash on some occasions and only wudu on others?",
+      "objectives": [
+        "To understand when ghusl is needed and how it is performed"
+      ],
+      "successCriteria": [
+        "All: say what ghusl is",
+        "Most: list the occasions when ghusl is obligatory or sunnah",
+        "Some: describe the complete (sunnah) ghusl in order"
+      ],
+      "smsc": "Spiritual: purity before worship; Moral: modesty in learning",
+      "keywords": [
+        {
+          "term": "ghusl (غُسْل)",
+          "def": "washing the whole body as worship"
+        },
+        {
+          "term": "janabah (جَنَابَة)",
+          "def": "major ritual impurity, removed by ghusl"
+        },
+        {
+          "term": "wajib (وَاجِب)",
+          "def": "obligatory"
+        },
+        {
+          "term": "mustahabb (مُسْتَحَبّ)",
+          "def": "recommended"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why would Islam ask for a whole-body wash on some occasions and only wudu on others?",
+        "a": "Major impurity needs the full ghusl; minor impurity needs wudu."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And if you are in a state of janabah, then purify yourselves' (al-Ma'idah 5:6).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Name the four fard parts of wudu.",
+          "a": "Face, arms to elbows, wipe head, feet to ankles",
+          "mins": 1
+        },
+        {
+          "q": "Deep sleep ... wudu.",
+          "a": "Breaks",
+          "mins": 1,
+          "options": [
+            "Breaks",
+            "Does not break"
+          ]
+        },
+        {
+          "q": "Hadath is a state or a substance?",
+          "a": "A state",
+          "mins": 1,
+          "options": [
+            "A state",
+            "A substance"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "When is ghusl needed?",
+          "bullets": [],
+          "note": "Teach the names matter-of-factly; details are for home and are not discussed in class.",
+          "table": {
+            "head": [
+              "Obligatory (wajib)",
+              "Recommended (sunnah)"
+            ],
+            "rows": [
+              [
+                "After janabah (major impurity)",
+                "Before Jumu'ah"
+              ],
+              [
+                "When a woman's monthly bleeding ends",
+                "Before the two Eid prayers"
+              ],
+              [
+                "Washing a Muslim who has died (by others)",
+                "Before entering ihram for Hajj or 'Umrah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The minimum ghusl",
+          "bullets": [
+            "Niyyah",
+            "Water reaches the whole body",
+            "Including rinsing mouth and nose (many scholars)"
+          ],
+          "note": "Scholars of the four schools differ on some details; we teach the main position and note the difference."
+        },
+        {
+          "heading": "The complete ghusl (sunnah)",
+          "bullets": [],
+          "note": "Aishah and Maymunah described the Prophet's ﷺ ghusl (Bukhari and Muslim).",
+          "cycle": [
+            "Niyyah and Bismillah",
+            "Wash hands, then private parts",
+            "Make wudu",
+            "Pour water over the head three times",
+            "Wash the whole body, right side first"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which ghusl is sunnah, not obligatory?",
+            "options": [
+              "Before Jumu'ah",
+              "After janabah",
+              "When monthly bleeding ends"
+            ],
+            "answer": 0,
+            "why": "Ghusl for Jumu'ah is a strong sunnah; the others are obligatory."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the difference between the minimum ghusl and the complete ghusl.",
+          "a": "Minimum: niyyah and water over the whole body. Complete: following the Prophet's ﷺ way, with wudu first and the head washed three times.",
+          "mins": 3,
+          "model": "Point: both are valid, one is fuller. Evidence: the complete ghusl is described by Aishah (Bukhari and Muslim). Explain: the minimum lifts the impurity; the complete adds sunnah acts. Link: as with wudu, fard makes it valid, sunnah adds reward."
+        },
+        {
+          "q": "Ghusl before the Eid prayer is ...",
+          "a": "Sunnah",
+          "mins": 1,
+          "options": [
+            "Sunnah",
+            "Obligatory"
+          ]
+        },
+        {
+          "q": "What is done before pouring water on the head in the complete ghusl?",
+          "a": "Wudu",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write the steps of the complete ghusl as a numbered list on the pupil PDF, marking which part is the minimum needed for validity.",
+          "a": "Niyyah, Bismillah, hands, private parts, wudu, head three times, whole body right then left; minimum: niyyah and water over the whole body",
+          "mins": 12,
+          "model": "Teacher writes step 1: 'Make the niyyah in the heart and say Bismillah.'"
+        },
+        {
+          "q": "Extend: why is ghusl before Jumu'ah encouraged?",
+          "a": "Jumu'ah is a gathering; Muslims come clean and fresh.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why does Islam treat this topic plainly, without embarrassment?",
+          "a": "Worship needs knowledge; the Companions asked such questions openly and respectfully.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Janabah is removed by ...",
+          "a": "Ghusl",
+          "mins": 1,
+          "options": [
+            "Ghusl",
+            "Wudu",
+            "Tayammum only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why a full wash sometimes and wudu other times?",
+          "a": "Major impurity needs ghusl; minor impurity needs wudu.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the five steps of the complete ghusl. Any personal questions: ask a parent or the Islamic Studies teacher privately.",
+      "send": "SEND: step cards to order. EAL: word bank (wajib, mustahabb). Stretch: explain why the head is washed three times.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Portal islamic-studies y7 lesson 11 (purification)",
+        "Pupil PDF worksheet: steps of ghusl"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "water jug ewer",
+          "alt": "A water jug",
+          "for": "teach:3"
+        },
+        {
+          "find": "towel folded",
+          "alt": "A folded towel",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Fiqh of worship",
+      "n": 22,
+      "title": "Tayammum: purification when there is no water",
+      "duration": 50,
+      "bigQuestion": "You are in hospital and cannot let water touch your arm. Does that mean you cannot pray?",
+      "objectives": [
+        "To understand when tayammum is allowed and how it shows the ease of Islam"
+      ],
+      "successCriteria": [
+        "All: say what tayammum is",
+        "Most: explain the two situations that allow it",
+        "Some: describe how tayammum is done, from the Sunnah"
+      ],
+      "smsc": "Spiritual: Allah's mercy and the ease of Islam",
+      "keywords": [
+        {
+          "term": "tayammum (تَيَمُّم)",
+          "def": "purifying with clean earth when water cannot be used"
+        },
+        {
+          "term": "sa'id (صَعِيد)",
+          "def": "clean earth or dust"
+        },
+        {
+          "term": "rukhsah (رُخْصَة)",
+          "def": "a concession: an easier rule allowed for a reason"
+        },
+        {
+          "term": "ease (يُسْر)",
+          "def": "making things easy"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You are in hospital and cannot let water touch your arm. Does that mean you cannot pray?",
+        "a": "No: Allah gave tayammum; Islam never removes salah but makes it possible."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah does not intend to make difficulty for you, but He intends to purify you and complete His favour upon you' (al-Ma'idah 5:6).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Ghusl before Jumu'ah is ...",
+          "a": "Sunnah",
+          "mins": 1,
+          "options": [
+            "Sunnah",
+            "Obligatory"
+          ]
+        },
+        {
+          "q": "What is the minimum ghusl?",
+          "a": "Niyyah and water over the whole body",
+          "mins": 1
+        },
+        {
+          "q": "Name one fard part of wudu.",
+          "a": "For example: washing the face",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Allah's concession",
+          "bullets": [],
+          "note": "Read in translation.",
+          "quote": {
+            "text": "... and you find no water, then seek clean earth and wipe over your faces and hands with it. Allah does not intend to make difficulty for you.",
+            "source": "Qur'an, al-Ma'idah 5:6 (translation of the meaning)"
+          }
+        },
+        {
+          "heading": "When is it allowed?",
+          "bullets": [
+            "No water, or not enough to drink and wash",
+            "Water would harm: illness or a wound",
+            "Until water can be used again"
+          ],
+          "note": "Begin with Bismillah. Scholars of the four schools differ on some details; we teach the main position and note the difference."
+        },
+        {
+          "heading": "How it is done",
+          "bullets": [],
+          "note": "From the Sunnah: Ammar ibn Yasir's report (Bukhari and Muslim).",
+          "model": {
+            "problem": "How to make tayammum",
+            "steps": [
+              "Niyyah and Bismillah",
+              "Strike clean earth once with both palms",
+              "Wipe the face",
+              "Wipe the backs of the hands"
+            ],
+            "answer": "A valid tayammum, standing in place of wudu or ghusl"
+          }
+        },
+        {
+          "heading": "What ends tayammum?",
+          "bullets": [
+            "Whatever breaks wudu",
+            "Finding water you can use",
+            "The reason (illness) ending"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Sara has a plaster cast on her arm and the doctor says no water. What does she do?",
+            "options": [
+              "Wudu for the rest and tayammum or wipe for the cast",
+              "Stops praying until it heals",
+              "Prays without any purification"
+            ],
+            "answer": 0,
+            "why": "Scholars allow wiping over a cast or tayammum; salah is never dropped."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how tayammum shows that Islam is a religion of ease.",
+          "a": "When water cannot be used, Allah allows clean earth instead, so a Muslim can always pray (5:6).",
+          "mins": 3,
+          "model": "Point: tayammum shows ease. Evidence: 'Allah does not intend to make difficulty for you' (5:6). Explain: the ill and those without water can still purify and pray. Link: salah is never dropped, but made possible."
+        },
+        {
+          "q": "Tayammum uses ...",
+          "a": "Clean earth",
+          "mins": 1,
+          "options": [
+            "Clean earth",
+            "Sand only from Makkah",
+            "Soap"
+          ]
+        },
+        {
+          "q": "Which parts are wiped in tayammum?",
+          "a": "Face and hands",
+          "mins": 1,
+          "options": [
+            "Face and hands",
+            "Head and feet"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Case cards on the pupil PDF: decide whether tayammum is allowed and why (camping with only drinking water; a burn on the hand; cold weather but water available; a long flight).",
+          "a": "Allowed: drinking water only; burn (for that part). Not allowed: cold but water usable (warm it). Flight: use water if available, else tayammum",
+          "mins": 12,
+          "model": "Teacher does case 1: 'Camping with only enough to drink: tayammum is allowed, as drinking comes first.'"
+        },
+        {
+          "q": "Extend: does tayammum need water later to 'make up' the prayer?",
+          "a": "No: a prayer prayed with valid tayammum is valid.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: compare wudu and tayammum in a table (when, parts, what ends it).",
+          "a": "Wudu: water, four parts; tayammum: earth, face and hands; both end with what breaks wudu; tayammum also ends when water is found",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Tayammum is allowed when ...",
+          "a": "Water cannot be used",
+          "mins": 1,
+          "options": [
+            "Water cannot be used",
+            "We are in a hurry"
+          ]
+        },
+        {
+          "q": "Back to our ponder: can someone in hospital still pray?",
+          "a": "Yes: with tayammum or wiping, and in whatever position they can.",
+          "mins": 2
+        }
+      ],
+      "homework": "Teach a family member the steps of tayammum and tell them which ayah allows it.",
+      "send": "SEND: picture steps (palms, earth, wiping). EAL: allowed / not allowed cards. Stretch: research praying sitting when ill.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Pupil PDF worksheet: tayammum case cards",
+        "Mushaf or printed al-Ma'idah 5:6 and an-Nisa' 4:43"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clean dry earth soil",
+          "alt": "Clean dry earth",
+          "for": "keywords"
+        },
+        {
+          "find": "desert dunes",
+          "alt": "A desert with no water",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Fiqh of worship",
+      "n": 23,
+      "title": "Salah: its pillars (arkan)",
+      "duration": 50,
+      "bigQuestion": "What is the difference between rushing through salah and praying it with calm? Does Allah see a difference?",
+      "objectives": [
+        "To understand the pillars of salah and why missing one invalidates the rak'ah"
+      ],
+      "successCriteria": [
+        "All: name six pillars of salah",
+        "Most: place the pillars in order in one rak'ah",
+        "Some: explain tuma'ninah and why it matters"
+      ],
+      "smsc": "Spiritual: khushu' and calm in worship",
+      "keywords": [
+        {
+          "term": "arkan (أَرْكَان)",
+          "def": "pillars: essential parts inside the prayer"
+        },
+        {
+          "term": "takbirat al-ihram (تَكْبِيرَةُ الإِحْرَام)",
+          "def": "the opening Allahu akbar"
+        },
+        {
+          "term": "tuma'ninah (طُمَأْنِينَة)",
+          "def": "being still and calm in each position"
+        },
+        {
+          "term": "rak'ah (رَكْعَة)",
+          "def": "one unit of prayer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the difference between rushing through salah and praying it with calm? Does Allah see a difference?",
+        "a": "Yes: tuma'ninah (calm stillness) is a pillar; rushing can spoil the prayer."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Certainly will the believers have succeeded: they who are during their prayer humbly submissive' (al-Mu'minun 23:1-2).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Facing the qiblah is a ...",
+          "a": "Condition",
+          "mins": 1,
+          "options": [
+            "Condition",
+            "Pillar"
+          ]
+        },
+        {
+          "q": "Which ayah says prayer has set times?",
+          "a": "4:103",
+          "mins": 1,
+          "options": [
+            "4:103",
+            "2:183"
+          ]
+        },
+        {
+          "q": "Name three conditions of salah.",
+          "a": "For example: purity, time, qiblah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Pillars hold the prayer up",
+          "bullets": [
+            "A pillar is part of the prayer itself",
+            "Missed by mistake: go back and do it",
+            "Left on purpose: the prayer is invalid"
+          ],
+          "note": "Begin with Bismillah. Scholars of the four schools differ on some details; we teach the main position and note the difference."
+        },
+        {
+          "heading": "The fourteen pillars",
+          "bullets": [],
+          "note": "From Important Lessons for Every Muslim (Ibn Baz).",
+          "table": {
+            "head": [
+              "Pillars",
+              "Pillars (continued)"
+            ],
+            "rows": [
+              [
+                "Standing (if able)",
+                "Opening takbir"
+              ],
+              [
+                "Al-Fatihah",
+                "Ruku'"
+              ],
+              [
+                "Rising from ruku'",
+                "Sujud on seven parts"
+              ],
+              [
+                "Rising from sujud",
+                "Sitting between the two sujud"
+              ],
+              [
+                "Tuma'ninah",
+                "Doing them in order"
+              ],
+              [
+                "Final tashahhud and sitting for it",
+                "Salah on the Prophet ﷺ; the taslim"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The man who prayed badly",
+          "bullets": [
+            "He prayed quickly, then greeted the Prophet ﷺ",
+            "'Go back and pray, for you have not prayed'",
+            "He was taught to be still in each position"
+          ],
+          "note": "The hadith of the one who prayed badly (Bukhari and Muslim)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is a pillar of salah?",
+            "options": [
+              "Reciting al-Fatihah",
+              "Raising the hands",
+              "Saying Amin"
+            ],
+            "answer": 0,
+            "why": "Al-Fatihah is a pillar: 'There is no prayer for one who does not recite al-Fatihah' (Bukhari and Muslim)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why tuma'ninah is a pillar.",
+          "a": "The Prophet ﷺ told a man who rushed to go back and pray, and taught him to be still in each position (Bukhari and Muslim).",
+          "mins": 3,
+          "model": "Point: calm stillness is essential. Evidence: the hadith of the one who prayed badly: 'Go back and pray, for you have not prayed' (Bukhari and Muslim). Explain: rushing missed the stillness, so the prayer did not count. Link: khushu' grows from tuma'ninah."
+        },
+        {
+          "q": "The opening Allahu akbar is called ...",
+          "a": "Takbirat al-ihram",
+          "mins": 1,
+          "options": [
+            "Takbirat al-ihram",
+            "Taslim"
+          ]
+        },
+        {
+          "q": "Sujud is on how many body parts?",
+          "a": "Seven",
+          "mins": 1,
+          "options": [
+            "Seven",
+            "Three",
+            "Five"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write the pillars of one rak'ah in order on the pupil PDF 'rak'ah map' (prayer mat outlines, no people), then circle the pillars that come only in the last rak'ah.",
+          "a": "Standing, takbir (first rak'ah), al-Fatihah, ruku', rising, sujud, sitting, sujud, rising; last rak'ah adds final tashahhud, salah on the Prophet ﷺ, taslim",
+          "mins": 12,
+          "model": "Teacher places the first three: standing, opening takbir, al-Fatihah."
+        },
+        {
+          "q": "Extend: name the seven parts touching the ground in sujud.",
+          "a": "Forehead with nose, two hands, two knees, the toes of two feet (Bukhari and Muslim)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why do you think al-Fatihah is in every rak'ah?",
+          "a": "It is praise, worship and du'a for guidance: the heart of the prayer.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Leaving a pillar on purpose ...",
+          "a": "Invalidates the prayer",
+          "mins": 1,
+          "options": [
+            "Invalidates the prayer",
+            "Is fine"
+          ]
+        },
+        {
+          "q": "Back to our ponder: does Allah see the difference between rushing and calm?",
+          "a": "Yes: tuma'ninah is a pillar; rushing can spoil the prayer.",
+          "mins": 2
+        }
+      ],
+      "homework": "Pray one salah this week counting a slow 'subhanallah' in each position to practise tuma'ninah.",
+      "send": "SEND: rak'ah map with pillar cards to place. EAL: Arabic terms with English. Stretch: compare how the four schools count the pillars.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Pupil PDF worksheet: rak'ah map",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer rug pattern",
+          "alt": "A prayer mat",
+          "for": "teach:2"
+        },
+        {
+          "find": "calm lake reflection",
+          "alt": "A calm lake: stillness",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Fiqh of worship",
+      "n": 24,
+      "title": "Salah: its obligatory acts (wajibat) and sunnah acts",
+      "duration": 50,
+      "bigQuestion": "If you forget part of salah, does Allah want you to start all over again? What did the Prophet ﷺ teach?",
+      "objectives": [
+        "To understand the difference between the pillars, the obligatory acts and the sunnah acts of salah"
+      ],
+      "successCriteria": [
+        "All: give two obligatory acts and two sunnah acts",
+        "Most: explain what to do if an obligatory act is forgotten",
+        "Some: classify acts as pillar, obligatory or sunnah with reasons"
+      ],
+      "smsc": "Spiritual: care and accuracy in worship",
+      "keywords": [
+        {
+          "term": "wajibat (وَاجِبَات)",
+          "def": "obligatory acts: if forgotten, made up with sujud as-sahw"
+        },
+        {
+          "term": "tasbih (تَسْبِيح)",
+          "def": "saying subhana rabbiya ..."
+        },
+        {
+          "term": "first tashahhud (التَّشَهُّد الأَوَّل)",
+          "def": "the sitting after two rak'ahs"
+        },
+        {
+          "term": "sujud as-sahw (سُجُودُ السَّهْو)",
+          "def": "two prostrations for forgetfulness"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you forget part of salah, does Allah want you to start all over again? What did the Prophet ﷺ teach?",
+        "a": "Not always: for an obligatory act, sujud as-sahw makes it up; Islam is merciful."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Pray as you have seen me praying' (Bukhari). The levels help us follow him exactly.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Tuma'ninah means ...",
+          "a": "Stillness in each position",
+          "mins": 1,
+          "options": [
+            "Stillness in each position",
+            "Speed"
+          ]
+        },
+        {
+          "q": "Al-Fatihah is a ...",
+          "a": "Pillar",
+          "mins": 1,
+          "options": [
+            "Pillar",
+            "Sunnah"
+          ]
+        },
+        {
+          "q": "Sujud is on how many parts?",
+          "a": "Seven",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three levels",
+          "bullets": [],
+          "note": "Begin with Bismillah. The levels as in Important Lessons for Every Muslim (Ibn Baz); Scholars of the four schools differ on some details; we teach the main position and note the difference.",
+          "table": {
+            "head": [
+              "Level",
+              "If left by mistake",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Pillar (rukn)",
+                "Go back and do it, then sujud as-sahw",
+                "Ruku'"
+              ],
+              [
+                "Obligatory (wajib)",
+                "Sujud as-sahw",
+                "First tashahhud"
+              ],
+              [
+                "Sunnah",
+                "Prayer valid; no sahw needed",
+                "Raising the hands"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The eight obligatory acts",
+          "bullets": [
+            "Every takbir except the opening",
+            "Sami'a Allahu liman hamidah; Rabbana wa laka l-hamd",
+            "Tasbih in ruku' and sujud; 'Rabbighfir li' between sujud",
+            "First tashahhud and sitting for it"
+          ]
+        },
+        {
+          "heading": "Some sunnah acts",
+          "bullets": [
+            "Raising the hands at takbir",
+            "Opening du'a; a surah after al-Fatihah",
+            "Right hand over left on the chest"
+          ],
+          "note": "Scholars differ on where hands are placed; teach respect for difference."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Bilal forgets the first tashahhud. What should he do?",
+            "options": [
+              "Complete the prayer and do sujud as-sahw",
+              "Start the whole prayer again",
+              "Nothing at all"
+            ],
+            "answer": 0,
+            "why": "The first tashahhud is obligatory; forgetting it is made up with sujud as-sahw (Bukhari and Muslim)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the difference between a pillar and an obligatory act.",
+          "a": "A pillar cannot be replaced: it must be done; an obligatory act forgotten is made up by sujud as-sahw.",
+          "mins": 3,
+          "model": "Point: pillars are stronger than obligatory acts. Evidence: when the Prophet ﷺ missed the first tashahhud he did sujud as-sahw (Bukhari and Muslim). Explain: a missed pillar must be gone back to; a missed wajib is covered by sahw. Link: sunnah acts add reward but need no repair."
+        },
+        {
+          "q": "'Subhana rabbiya l-a'la' is said in ...",
+          "a": "Sujud",
+          "mins": 1,
+          "options": [
+            "Sujud",
+            "Ruku'"
+          ]
+        },
+        {
+          "q": "Raising the hands at takbir is ...",
+          "a": "Sunnah",
+          "mins": 1,
+          "options": [
+            "Sunnah",
+            "Pillar"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Classify twelve acts on the pupil PDF as pillar, obligatory or sunnah, and write what to do if each is forgotten.",
+          "a": "Classified correctly following the lesson table, with the repair for each",
+          "mins": 12,
+          "model": "Teacher does two: 'Ruku': pillar, go back and do it. Saying subhana rabbiya l-'azim: obligatory, sujud as-sahw.'"
+        },
+        {
+          "q": "Extend: what is said between the two sujud?",
+          "a": "Rabbighfir li (My Lord, forgive me)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why might the four schools classify some acts differently?",
+          "a": "They weighed the evidence and wording of hadith differently; all aim to follow the Sunnah.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Forgetting an obligatory act is repaired by ...",
+          "a": "Sujud as-sahw",
+          "mins": 1,
+          "options": [
+            "Sujud as-sahw",
+            "Repeating wudu"
+          ]
+        },
+        {
+          "q": "Back to our ponder: must you always start again?",
+          "a": "No: sujud as-sahw repairs a forgotten obligatory act.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the tasbih for ruku' and sujud and the du'a between the sujud by heart.",
+      "send": "SEND: three coloured columns with picture cards. EAL: Arabic phrases with meaning. Stretch: write how the Hanafi school's terms differ (fard, wajib, sunnah).",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Pupil PDF worksheet: pillar, obligatory or sunnah? sort",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer beads wooden",
+          "alt": "Prayer beads for counting tasbih",
+          "for": "keywords"
+        },
+        {
+          "find": "prayer mat",
+          "alt": "A prayer mat",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Fiqh of worship",
+      "n": 25,
+      "title": "What invalidates salah (mubtilat)",
+      "duration": 50,
+      "bigQuestion": "Your phone buzzes in salah. Is it better to ignore it, switch it off quickly, or answer? Why?",
+      "objectives": [
+        "To understand what breaks salah and why"
+      ],
+      "successCriteria": [
+        "All: name four things that break salah",
+        "Most: explain the difference between breaking salah and making a mistake",
+        "Some: apply the rules to tricky cases"
+      ],
+      "smsc": "Spiritual: focus and respect in worship",
+      "keywords": [
+        {
+          "term": "mubtilat (مُبْطِلَات)",
+          "def": "things that break the prayer"
+        },
+        {
+          "term": "deliberate",
+          "def": "done on purpose"
+        },
+        {
+          "term": "khushu' (خُشُوع)",
+          "def": "humble focus in prayer"
+        },
+        {
+          "term": "movement",
+          "def": "actions outside the prayer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your phone buzzes in salah. Is it better to ignore it, switch it off quickly, or answer? Why?",
+        "a": "Ignore it or silence it with a small movement; answering (speaking) breaks salah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Guard strictly the prayers ... and stand before Allah devoutly obedient' (al-Baqarah 2:238).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Forgetting the first tashahhud is repaired by ...",
+          "a": "Sujud as-sahw",
+          "mins": 1,
+          "options": [
+            "Sujud as-sahw",
+            "Ghusl"
+          ]
+        },
+        {
+          "q": "Ruku' is a ...",
+          "a": "Pillar",
+          "mins": 1,
+          "options": [
+            "Pillar",
+            "Sunnah"
+          ]
+        },
+        {
+          "q": "What is said between the two sujud?",
+          "a": "Rabbighfir li",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What breaks salah",
+          "bullets": [],
+          "note": "From Important Lessons for Every Muslim (Ibn Baz). Scholars of the four schools differ on some details; we teach the main position and note the difference.",
+          "diagram": {
+            "centre": "Breaks the salah",
+            "items": [
+              "Speaking on purpose",
+              "Laughing aloud",
+              "Eating or drinking",
+              "Uncovering the 'awrah",
+              "Turning away from the qiblah",
+              "Much continuous movement",
+              "Losing wudu",
+              "Leaving a pillar on purpose"
+            ]
+          }
+        },
+        {
+          "heading": "Small movements are fine",
+          "bullets": [
+            "The Prophet ﷺ carried his granddaughter Umamah in salah",
+            "Small, needed movements do not break it",
+            "Many continuous movements do"
+          ],
+          "note": "Umamah: Bukhari and Muslim."
+        },
+        {
+          "heading": "Not breaking, but harming",
+          "bullets": [
+            "Looking around",
+            "Fidgeting with clothes",
+            "Rushing: harms khushu'"
+          ],
+          "note": "Looking around is a theft Shaytan steals from the prayer (Bukhari)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Yusuf laughs out loud at a noise during salah. His salah is ...",
+            "options": [
+              "Broken: he must pray again",
+              "Fine",
+              "Only needs sujud as-sahw"
+            ],
+            "answer": 0,
+            "why": "Laughing aloud breaks salah; smiling does not."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why speaking breaks salah but a small movement to silence a phone does not.",
+          "a": "Speaking is not part of salah and is forbidden in it; a small needed movement is allowed, as the Prophet ﷺ carried Umamah.",
+          "mins": 3,
+          "model": "Point: speaking breaks it; a small movement does not. Evidence: the Companions were told to stop talking in prayer (Bukhari and Muslim); the Prophet ﷺ carried Umamah (Bukhari and Muslim). Explain: salah is worship only. Link: keep focus and minimal movement."
+        },
+        {
+          "q": "Drinking water during salah ...",
+          "a": "Breaks it",
+          "mins": 1,
+          "options": [
+            "Breaks it",
+            "Does not break it"
+          ]
+        },
+        {
+          "q": "Smiling quietly ...",
+          "a": "Does not break it",
+          "mins": 1,
+          "options": [
+            "Breaks it",
+            "Does not break it"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Eight 'broken or not?' cases on the pupil PDF, with the rule and evidence (e.g. sneezing and saying alhamdulillah quietly; scratching once; a cat walks in front; turning to see who came in).",
+          "a": "Rulings with rules: sneeze and quiet alhamdulillah: not broken; scratch once: not broken; cat: not broken; turning the body away: broken, glancing: disliked",
+          "mins": 12,
+          "model": "Teacher does case 1: 'Sneezing and saying alhamdulillah quietly: not broken; it is dhikr.'"
+        },
+        {
+          "q": "Extend: list three things that harm khushu' without breaking salah.",
+          "a": "Looking around, fidgeting, rushing",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how can we build khushu' online at home?",
+          "a": "Pray in a quiet place, phone away, know the meanings of what we recite.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Eating in salah ...",
+          "a": "Breaks it",
+          "mins": 1,
+          "options": [
+            "Breaks it",
+            "Is disliked only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: phone buzzes: ignore, silence or answer?",
+          "a": "Ignore or silence with a small movement; answering breaks salah.",
+          "mins": 2
+        }
+      ],
+      "homework": "Choose one khushu' habit (phone in another room, learning one meaning) and do it for every prayer this week.",
+      "send": "SEND: picture cards for the mubtilat. EAL: broken / not broken sort. Stretch: explain why the Prophet ﷺ carrying Umamah is evidence for small movements.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Pupil PDF worksheet: broken or not? cases",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mobile phone silent",
+          "alt": "A phone on silent",
+          "for": "hook"
+        },
+        {
+          "find": "prayer mat",
+          "alt": "A prayer mat",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Fiqh of worship",
+      "n": 26,
+      "title": "Common mistakes in salah and sujud as-sahw",
+      "duration": 50,
+      "bigQuestion": "Even the Prophet ﷺ forgot in salah once. Why might Allah have let that happen?",
+      "objectives": [
+        "To understand common mistakes in salah and how sujud as-sahw repairs forgetfulness"
+      ],
+      "successCriteria": [
+        "All: name three common mistakes in salah",
+        "Most: explain when sujud as-sahw is done",
+        "Some: decide the right repair in different cases"
+      ],
+      "smsc": "Spiritual: humility and repair in worship",
+      "keywords": [
+        {
+          "term": "sahw (سَهْو)",
+          "def": "forgetfulness in prayer"
+        },
+        {
+          "term": "certainty (يَقِين)",
+          "def": "being sure"
+        },
+        {
+          "term": "repair",
+          "def": "fix a mistake"
+        },
+        {
+          "term": "taslim (التَّسْلِيم)",
+          "def": "ending the prayer with as-salamu 'alaykum"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Even the Prophet ﷺ forgot in salah once. Why might Allah have let that happen?",
+        "a": "To teach us how to repair forgetfulness: he prayed five and then did sujud as-sahw."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'I am only human; I forget as you forget. So when I forget, remind me' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Laughing aloud in salah ...",
+          "a": "Breaks it",
+          "mins": 1,
+          "options": [
+            "Breaks it",
+            "Is fine"
+          ]
+        },
+        {
+          "q": "A small needed movement ...",
+          "a": "Does not break salah",
+          "mins": 1,
+          "options": [
+            "Does not break salah",
+            "Breaks it"
+          ]
+        },
+        {
+          "q": "Name one thing that harms khushu'.",
+          "a": "For example: looking around",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Common mistakes",
+          "bullets": [],
+          "note": "Teacher names each mistake and the fix.",
+          "table": {
+            "head": [
+              "Mistake",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Rushing ruku' and sujud",
+                "Be still: tuma'ninah"
+              ],
+              [
+                "Forehead or nose not touching the floor",
+                "Seven parts on the floor"
+              ],
+              [
+                "Racing ahead of the imam",
+                "Follow just after the imam"
+              ],
+              [
+                "Lips not moving in recitation",
+                "Move the tongue and lips"
+              ],
+              [
+                "Looking up or around",
+                "Look to the place of sujud"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "When the Prophet ﷺ forgot",
+          "bullets": [
+            "He prayed five rak'ahs of Dhuhr",
+            "The Companions told him",
+            "He did two sujud as-sahw"
+          ],
+          "note": "Begin with Bismillah. Reported in Bukhari and Muslim."
+        },
+        {
+          "heading": "When to do sujud as-sahw",
+          "bullets": [
+            "Adding a rak'ah, ruku' or sujud by mistake",
+            "Leaving an obligatory act",
+            "Doubt: build on what you are sure of"
+          ],
+          "note": "In doubt between three and four, take three and do sahw (Muslim). Scholars of the four schools differ on some details; we teach the main position and note the difference."
+        },
+        {
+          "heading": "How",
+          "bullets": [],
+          "note": "One common way, from the Sunnah.",
+          "model": {
+            "problem": "How to do sujud as-sahw",
+            "steps": [
+              "Finish the final tashahhud",
+              "Say Allahu akbar, make sujud",
+              "Sit, then a second sujud",
+              "Then the taslim (or before it, as some reports show)"
+            ],
+            "answer": "Two prostrations that repair forgetfulness"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "You are not sure if you prayed three or four rak'ahs of Asr. What do you do?",
+            "options": [
+              "Take three, pray one more, then sujud as-sahw",
+              "Assume four and stop",
+              "Start again from the beginning"
+            ],
+            "answer": 0,
+            "why": "Build on certainty (the lower number) and do sujud as-sahw (Muslim)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what to do if you add a fifth rak'ah by mistake.",
+          "a": "Finish the prayer and do sujud as-sahw, as the Prophet ﷺ did (Bukhari and Muslim).",
+          "mins": 3,
+          "model": "Point: an extra rak'ah is repaired with sahw. Evidence: the Prophet ﷺ prayed Dhuhr as five and then did two sujud (Bukhari and Muslim). Explain: the prayer stays valid. Link: Islam gives a clear repair for forgetfulness."
+        },
+        {
+          "q": "In doubt, we build on ...",
+          "a": "What we are sure of (the lower number)",
+          "mins": 1,
+          "options": [
+            "What we are sure of (the lower number)",
+            "The higher number"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Six repair cases on the pupil PDF: write the right repair and the evidence (e.g. forgot to say the tasbih in ruku'; forgot the first tashahhud and stood up; unsure whether two or three rak'ahs).",
+          "a": "Repairs: tasbih forgotten: sahw; first tashahhud: continue and sahw; unsure 2 or 3: take 2, continue, sahw",
+          "mins": 13,
+          "model": "Teacher does case 1: 'Forgot the tasbih in ruku': it is obligatory, so do sujud as-sahw at the end.'"
+        },
+        {
+          "q": "Extend: why should we not race ahead of the imam?",
+          "a": "The imam is to be followed; racing ahead is a serious mistake.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how does sujud as-sahw show the mercy of Islam?",
+          "a": "We are human and forget; Allah gave an easy repair.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Sujud as-sahw is how many prostrations?",
+          "a": "Two",
+          "mins": 1,
+          "options": [
+            "Two",
+            "One",
+            "Four"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why might the Prophet ﷺ have forgotten?",
+          "a": "To teach us how to repair forgetfulness in prayer.",
+          "mins": 1
+        }
+      ],
+      "homework": "Ask an adult at home to watch you pray one salah and check for the five common mistakes.",
+      "send": "SEND: mistake and fix picture pairs. EAL: repair phrase cards. Stretch: compare doing sahw before and after the taslim.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Pupil PDF worksheet: repair cases",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer mat",
+          "alt": "A prayer mat",
+          "for": "teach:4"
+        },
+        {
+          "find": "checklist",
+          "alt": "A checklist for common mistakes",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Fiqh of worship",
+      "n": 27,
+      "title": "Review: purification and salah",
+      "duration": 50,
+      "bigQuestion": "Which rule from this unit would you teach first to a new Muslim, and why?",
+      "objectives": [
+        "To understand how the rules of purification and salah fit together as one system of worship"
+      ],
+      "successCriteria": [
+        "All: recall key terms from the unit",
+        "Most: link each rule to its evidence",
+        "Some: solve mixed cases using several rules together"
+      ],
+      "smsc": "Spiritual: learning fiqh to worship correctly",
+      "keywords": [
+        {
+          "term": "taharah (طَهَارَة)",
+          "def": "purity required for worship"
+        },
+        {
+          "term": "shurut (شُرُوط)",
+          "def": "conditions"
+        },
+        {
+          "term": "arkan (أَرْكَان)",
+          "def": "pillars"
+        },
+        {
+          "term": "mubtilat (مُبْطِلَات)",
+          "def": "invalidators"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which rule from this unit would you teach first to a new Muslim, and why?",
+        "a": "Purity and the conditions first: without them the prayer is not valid."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'When Allah wants good for someone, He gives him understanding of the religion' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Tayammum uses ...",
+          "a": "Clean earth",
+          "mins": 1,
+          "options": [
+            "Clean earth",
+            "Water"
+          ]
+        },
+        {
+          "q": "Facing the qiblah is a ...",
+          "a": "Condition",
+          "mins": 1,
+          "options": [
+            "Condition",
+            "Pillar",
+            "Sunnah"
+          ]
+        },
+        {
+          "q": "In doubt about rak'ahs, build on ...",
+          "a": "Certainty (the lower number)",
+          "mins": 1,
+          "options": [
+            "Certainty (the lower number)",
+            "The higher number"
+          ]
+        },
+        {
+          "q": "Name the four fard parts of wudu.",
+          "a": "Face, arms, wipe head, feet",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The unit on one page",
+          "bullets": [],
+          "note": "Pupils add an example to each branch in the chat.",
+          "diagram": {
+            "centre": "Fiqh of worship",
+            "items": [
+              "Najasah and water",
+              "Wudu",
+              "Ghusl",
+              "Tayammum",
+              "Conditions",
+              "Pillars and wajibat",
+              "Invalidators",
+              "Sujud as-sahw"
+            ]
+          }
+        },
+        {
+          "heading": "Evidence match",
+          "bullets": [],
+          "note": "Match each rule to its evidence.",
+          "table": {
+            "head": [
+              "Rule",
+              "Evidence"
+            ],
+            "rows": [
+              [
+                "Wudu's four parts",
+                "Al-Ma'idah 5:6"
+              ],
+              [
+                "Prayer at set times",
+                "An-Nisa' 4:103"
+              ],
+              [
+                "Tuma'ninah",
+                "The man who prayed badly (Bukhari and Muslim)"
+              ],
+              [
+                "Sujud as-sahw",
+                "Dhuhr prayed as five (Bukhari and Muslim)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common confusion",
+          "bullets": [],
+          "note": "Address it directly.",
+          "misconception": {
+            "wrong": "Ghusl is needed after any sleep",
+            "right": "Deep sleep breaks wudu; it does not require ghusl"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which needs going back to, not just sujud as-sahw?",
+            "options": [
+              "A forgotten pillar",
+              "A forgotten tasbih",
+              "A forgotten sunnah"
+            ],
+            "answer": 0,
+            "why": "A pillar must be done; sahw alone does not replace it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Mixed case: Amina prays Maghrib on a clean mat, facing the qiblah, but forgot she had used the toilet since her last wudu. Is her prayer valid? What should she do?",
+          "a": "Not valid: purity from hadath is a condition. Make wudu and pray Maghrib again.",
+          "mins": 3,
+          "model": "Point: the prayer is not valid. Evidence: 'Allah does not accept a prayer without purification' (Muslim). Explain: the toilet broke wudu, so a condition was missing. Link: make wudu and repeat Maghrib."
+        },
+        {
+          "q": "Ghusl before Eid is ...",
+          "a": "Sunnah",
+          "mins": 1,
+          "options": [
+            "Sunnah",
+            "Obligatory"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Revision quiz (portal, 15 questions) on the whole unit, then correct your answers in green with the evidence.",
+          "a": "Answers from the unit with evidence",
+          "mins": 14,
+          "model": "Teacher answers question 1 on screen and shows how to correct in green with the evidence."
+        },
+        {
+          "q": "Extend: write two mixed cases of your own for a partner, with answers.",
+          "a": "Pupils' own cases using two rules each",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: explain how this unit shows that worship in Islam is both outward and inward.",
+          "a": "Outward: purity, conditions, pillars. Inward: niyyah, khushu', tuma'ninah.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Deep sleep requires ...",
+          "a": "Wudu",
+          "mins": 1,
+          "options": [
+            "Wudu",
+            "Ghusl"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which rule would you teach first, and why?",
+          "a": "Purity and the conditions: without them the prayer is not valid.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise for next lesson's unit quiz using your guide sheets and the quiz corrections.",
+      "send": "SEND: unit knowledge organiser with pictures. EAL: key term glossary. Stretch: set and mark a mixed case for a partner.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Portal revision quiz: fiqh of worship (15 questions)",
+        "Pupil PDF worksheets from this unit",
+        "Green pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mosque ablution area",
+          "alt": "A mosque ablution area",
+          "for": "teach:1"
+        },
+        {
+          "find": "prayer mat",
+          "alt": "A prayer mat",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Fiqh of worship",
+      "n": 28,
+      "title": "Unit quiz: fiqh of worship",
+      "duration": 50,
+      "bigQuestion": "How can a quiz be an act of worship?",
+      "objectives": [
+        "To understand how well I know the fiqh of purification and salah and what to revise"
+      ],
+      "successCriteria": [
+        "All: complete the unit quiz",
+        "Most: score 70% or more and correct mistakes",
+        "Some: write a full explanation for the long question with evidence"
+      ],
+      "smsc": "Moral: honesty in assessment",
+      "keywords": [
+        {
+          "term": "assessment",
+          "def": "a check of what we know"
+        },
+        {
+          "term": "evidence (دَلِيل)",
+          "def": "proof from the Qur'an or Sunnah"
+        },
+        {
+          "term": "ruling (حُكْم)",
+          "def": "what Islam says about an action"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How can a quiz be an act of worship?",
+        "a": "When we learn to worship Allah correctly and do our best honestly, with a good intention."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Say: are those who know equal to those who do not know?' (az-Zumar 39:9).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. The du'a between the sujud is ...",
+          "a": "Rabbighfir li",
+          "mins": 1,
+          "options": [
+            "Rabbighfir li",
+            "Subhana rabbiya l-'azim"
+          ]
+        },
+        {
+          "q": "Eating in salah ...",
+          "a": "Breaks it",
+          "mins": 1,
+          "options": [
+            "Breaks it",
+            "Does not break it"
+          ]
+        },
+        {
+          "q": "Which ayah allows tayammum?",
+          "a": "Al-Ma'idah 5:6 (also an-Nisa' 4:43)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How the quiz works",
+          "bullets": [
+            "Part A: 15 quick questions (15 marks)",
+            "Part B: one longer answer (6 marks)",
+            "Honest work: no notes"
+          ],
+          "note": "Begin with Bismillah. Quiz in the portal; the teacher monitors on camera."
+        },
+        {
+          "heading": "The long answer",
+          "bullets": [
+            "'Explain how a Muslim prepares for salah.' (6 marks)",
+            "Use: purity, conditions, niyyah",
+            "Give at least two pieces of evidence"
+          ],
+          "note": "Show the success criteria for the long answer."
+        },
+        {
+          "heading": "Model opening",
+          "bullets": [],
+          "note": "Model the first two sentences only.",
+          "model": {
+            "problem": "Explain how a Muslim prepares for salah. (6)",
+            "steps": [
+              "Point: first, purity from hadath with wudu (5:6)",
+              "Then: clean body, clothes and place",
+              "Then: cover the 'awrah, check the time, face the qiblah",
+              "Finally: the niyyah in the heart"
+            ],
+            "answer": "A full answer covers purity, conditions and evidence"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Practice question: name the three levels of acts in salah.",
+          "a": "Pillars, obligatory acts, sunnah acts",
+          "mins": 2,
+          "model": "Teacher: Pillar: must be done (ruku'). Obligatory: repaired by sahw (first tashahhud). Sunnah: extra reward (raising hands)."
+        },
+        {
+          "q": "Tuma'ninah is a ...",
+          "a": "Pillar",
+          "mins": 1,
+          "options": [
+            "Pillar",
+            "Sunnah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Unit quiz in the portal: Part A (15 questions) and Part B long answer in the response box: 'Explain how a Muslim prepares for salah.' Start: 'Before salah, a Muslim must ...'",
+          "a": "Part A answers from the unit; Part B covers wudu (5:6), najasah, 'awrah (7:31), time (4:103), qiblah (2:144), niyyah",
+          "mins": 25,
+          "model": "Teacher reminds pupils of the opening line from the model slide before they start."
+        },
+        {
+          "q": "Extend: when finished, check every answer against your guide sheets.",
+          "a": "Pupils' own checking",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: add a third piece of evidence to your long answer.",
+          "a": "For example: 'Allah does not accept a prayer without purification' (Muslim)",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which part of the unit will you revise first, and why?",
+          "a": "Pupils' own choice with a reason",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: how was today's quiz worship?",
+          "a": "Learning to worship correctly with a good intention and honest effort.",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct your quiz in green using the feedback, and pick one rule to practise in your own salah this week.",
+      "send": "SEND: quiz read aloud, extra time, word bank for Part B. EAL: Part B frame. Stretch: answer Part B with three pieces of evidence.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for Year 7 (TO CONFIRM), with Important Lessons for Every Muslim (Ibn Baz) for the lists of conditions, pillars and invalidators",
+        "Portal unit quiz: fiqh of worship (Part A 15 marks, Part B 6 marks)",
+        "Long-answer success criteria"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pen and paper test",
+          "alt": "A pen and paper for the quiz",
+          "for": "teach:1"
+        },
+        {
+          "find": "prayer mat",
+          "alt": "A prayer mat",
           "for": "keywords"
         }
       ]

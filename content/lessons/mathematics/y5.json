@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y5",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 5: number and place value to 1,000,000, negative numbers, Roman numerals, addition and subtraction, multiples, factors, primes, squares and cubes); sequencing checked against the school's Drive Maths folder (Primary national curriculum material; no Y5-specific scheme found, so lessons written from the National Curriculum); Spring 1 founding year: White Rose Maths Year 5 small-step titles (bridge from Autumn blocks 1-4, then Spring blocks 1 Multiplication and division B and 2 Fractions B), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 5 Spring blocks 3 Decimals and percentages, 4 Perimeter and area and 5 Statistics (small-step titles only)",
+  "source": "National Curriculum (KS2 Year 5: number and place value to 1,000,000, negative numbers, Roman numerals, addition and subtraction, multiples, factors, primes, squares and cubes); sequencing checked against the school's Drive Maths folder (Primary national curriculum material; no Y5-specific scheme found, so lessons written from the National Curriculum); Spring 1 founding year: White Rose Maths Year 5 small-step titles (bridge from Autumn blocks 1-4, then Spring blocks 1 Multiplication and division B and 2 Fractions B), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 5 Spring blocks 3 Decimals and percentages, 4 Perimeter and area and 5 Statistics (small-step titles only); Summer 1 founding year: White Rose Maths Year 5 Summer blocks Shape, Position and direction and Decimals (small-step titles only)",
   "lessons": [
     {
       "unit": "Spring 1: Multiplication and division B; fractions B",
@@ -11202,6 +11202,4715 @@
         "Printed place value chart (ones to thousandths) and place value counters (or paper discs)",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 5 maths lesson 57 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 58,
+      "title": "Understand and use degrees",
+      "duration": 45,
+      "bigQuestion": "Why is a full turn 360 degrees?",
+      "objectives": [
+        "To understand that angles are measured in degrees and how turns link to degrees"
+      ],
+      "successCriteria": [
+        "All: say a full turn is 360° and a right angle is 90°",
+        "Most: link quarter, half and three-quarter turns to degrees",
+        "Some: work out turns in degrees from compass directions"
+      ],
+      "crossCurricular": "Geography: compass directions",
+      "smsc": "Spiritual: Muslims turn to face the qiblah for salah",
+      "keywords": [
+        {
+          "term": "angle",
+          "def": "the amount of turn between two lines"
+        },
+        {
+          "term": "degree (°)",
+          "def": "the unit for measuring angles"
+        },
+        {
+          "term": "right angle",
+          "def": "a quarter turn: 90°"
+        },
+        {
+          "term": "full turn",
+          "def": "360°"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A skateboarder does a '360'. What do you think that means?",
+        "a": "A full turn: 360 degrees."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "compass rose",
+          "alt": "A compass rose",
+          "for": "teach:3"
+        },
+        {
+          "find": "protractor",
+          "alt": "A protractor",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Quarter of 360?",
+          "a": "90",
+          "mins": 1
+        },
+        {
+          "q": "Half of 360?",
+          "a": "180",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 4 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "How many right angles in a square?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Degrees",
+          "bullets": [
+            "We measure turn in degrees: °.",
+            "Full turn = 360°."
+          ],
+          "note": "Turn an arm of a paper clock."
+        },
+        {
+          "heading": "Turns and degrees",
+          "bullets": [
+            "Quarter turn: 90°.",
+            "Half turn: 180°.",
+            "Three-quarter turn: 270°."
+          ],
+          "table": {
+            "head": [
+              "Turn",
+              "Degrees"
+            ],
+            "rows": [
+              [
+                "Quarter",
+                "90°"
+              ],
+              [
+                "Half",
+                "180°"
+              ],
+              [
+                "Three-quarter",
+                "270°"
+              ],
+              [
+                "Full",
+                "360°"
+              ]
+            ]
+          },
+          "note": "Table."
+        },
+        {
+          "heading": "Compass turns",
+          "bullets": [
+            "N to E clockwise: 90°.",
+            "N to S: 180°.",
+            "N to NE: 45°."
+          ],
+          "note": "Use the compass rose."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Half a right angle?",
+            "options": [
+              "45°",
+              "90°",
+              "180°"
+            ],
+            "answer": 0,
+            "why": "90 ÷ 2 = 45."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Facing N, turn clockwise to W. Degrees?",
+          "a": "270°",
+          "mins": 2,
+          "model": "Teacher: N to E 90, to S 180, to W 270."
+        },
+        {
+          "q": "Two right angles = ?",
+          "a": "180°",
+          "mins": 2
+        },
+        {
+          "q": "A third of a full turn?",
+          "a": "120°",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Degrees in: a quarter turn; 3 right angles; a full turn and a half",
+          "a": "90°; 270°; 540°",
+          "mins": 4,
+          "model": "Teacher: a quarter turn is one right angle: 90°."
+        },
+        {
+          "q": "Extend: Facing E, turn 180°. Now facing?",
+          "a": "W",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: From N, how many degrees clockwise to SE?",
+          "a": "135°",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A full turn is... A) 360° B) 180° C) 100°",
+          "a": "A) 360°",
+          "mins": 2,
+          "options": [
+            "360°",
+            "180°",
+            "100°"
+          ]
+        },
+        {
+          "q": "Big question: why is a full turn 360°?",
+          "a": "That is how degrees are defined: a full turn is split into 360 equal parts",
+          "mins": 3
+        }
+      ],
+      "homework": "Stand facing north at home (use a phone compass with an adult). Turn 90°, 180° and 270°. What do you face each time?",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many degrees does the minute hand of a clock turn in 15 minutes? In 20 minutes? (90°; 120°)",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: small step 'Understand and use degrees' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 180° protractor (paper) or a school protractor",
+        "Paper plate clock or a compass rose printout",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 58 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 59,
+      "title": "Classify angles",
+      "duration": 45,
+      "bigQuestion": "How can we sort every angle into a family?",
+      "objectives": [
+        "To understand how to classify angles as acute, right, obtuse, straight or reflex"
+      ],
+      "successCriteria": [
+        "All: name acute, right and obtuse angles",
+        "Most: name straight and reflex angles",
+        "Some: classify an angle from its size in degrees"
+      ],
+      "crossCurricular": "Design and technology: angles in hinges and tools",
+      "smsc": "Social: agreeing a classification with a partner",
+      "keywords": [
+        {
+          "term": "acute",
+          "def": "less than 90°"
+        },
+        {
+          "term": "obtuse",
+          "def": "between 90° and 180°"
+        },
+        {
+          "term": "reflex",
+          "def": "between 180° and 360°"
+        },
+        {
+          "term": "straight angle",
+          "def": "exactly 180°"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The hands of a clock at 4 o'clock make two angles. What kinds are they?",
+        "a": "An obtuse angle (120°) and a reflex angle (240°)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "A clock",
+          "for": "hook"
+        },
+        {
+          "find": "open laptop side view",
+          "alt": "An open laptop making an angle",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Three-quarter turn?",
+          "a": "270°",
+          "mins": 1
+        },
+        {
+          "q": "Right angle = ?",
+          "a": "90°",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 12 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "360 - 120 = ?",
+          "a": "240",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Families",
+          "bullets": [
+            "Acute < 90°.",
+            "Right = 90°.",
+            "Obtuse: 90° to 180°."
+          ],
+          "note": "Show with two pencils."
+        },
+        {
+          "heading": "Bigger angles",
+          "bullets": [
+            "Straight = 180°.",
+            "Reflex: 180° to 360°."
+          ],
+          "note": "Open a book or a laptop."
+        },
+        {
+          "heading": "Sort them",
+          "bullets": [
+            "Use the size in degrees."
+          ],
+          "sort": {
+            "columns": [
+              "Acute",
+              "Obtuse",
+              "Reflex"
+            ],
+            "cards": [
+              "35°",
+              "100°",
+              "200°",
+              "89°",
+              "179°",
+              "300°"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Card sort."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is obtuse?",
+            "options": [
+              "150°",
+              "60°",
+              "210°"
+            ],
+            "answer": 0,
+            "why": "Between 90 and 180."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Classify 45°.",
+          "a": "Acute",
+          "mins": 2,
+          "model": "Teacher: 45 is less than 90, so acute."
+        },
+        {
+          "q": "Classify 270°.",
+          "a": "Reflex",
+          "mins": 2
+        },
+        {
+          "q": "Classify 91°.",
+          "a": "Obtuse",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Classify: 12°; 90°; 135°; 180°; 345°",
+          "a": "Acute; right; obtuse; straight; reflex",
+          "mins": 4,
+          "model": "Teacher: 12 is less than 90: acute."
+        },
+        {
+          "q": "Extend: Clock at 2 o'clock: classify the smaller and the larger angle.",
+          "a": "60° acute; 300° reflex",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Can a triangle have an obtuse angle? A reflex angle? Explain.",
+          "a": "Obtuse yes; reflex no: the three angles only add to 180°",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "200° is... A) reflex B) obtuse C) acute",
+          "a": "A) reflex",
+          "mins": 2,
+          "options": [
+            "reflex",
+            "obtuse",
+            "acute"
+          ]
+        },
+        {
+          "q": "Big question: how do we sort every angle?",
+          "a": "By size: acute, right, obtuse, straight, reflex",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 5 angles at home (doors, scissors, laptop) and classify each.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what type of angle is a quarter turn plus a half turn? (270°, reflex)",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: small step 'Classify angles' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 180° protractor (paper) or a school protractor",
+        "Two pencils or straws to make angles",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 59 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 60,
+      "title": "Estimate angles",
+      "duration": 45,
+      "bigQuestion": "How close can you get without a protractor?",
+      "objectives": [
+        "To understand how to estimate angles using benchmark angles"
+      ],
+      "successCriteria": [
+        "All: use 90° and 180° as benchmarks",
+        "Most: estimate an angle to the nearest 10°",
+        "Some: explain an estimate using benchmarks"
+      ],
+      "crossCurricular": "Science: angles of ramps and slopes",
+      "smsc": "Moral: honest estimates before checking",
+      "keywords": [
+        {
+          "term": "estimate",
+          "def": "a sensible guess"
+        },
+        {
+          "term": "benchmark",
+          "def": "a known angle to compare with: 45°, 90°, 180°"
+        },
+        {
+          "term": "nearest 10°",
+          "def": "close to a multiple of 10"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A ramp makes an angle with the ground. Is it nearer 10°, 45° or 80°? How do you decide?",
+        "a": "Compare with half a right angle (45°)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wheelchair ramp",
+          "alt": "A ramp",
+          "for": "hook"
+        },
+        {
+          "find": "ladder leaning against wall",
+          "alt": "A ladder leaning on a wall",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Classify 120°.",
+          "a": "Obtuse",
+          "mins": 1
+        },
+        {
+          "q": "Half of 90?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 9 = ?",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "180 - 45 = ?",
+          "a": "135",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Benchmarks",
+          "bullets": [
+            "90°: a square corner.",
+            "45°: half of that.",
+            "180°: a straight line."
+          ],
+          "note": "Fold paper to make 90° and 45°."
+        },
+        {
+          "heading": "Estimate",
+          "model": {
+            "problem": "An angle a bit more than a right angle",
+            "steps": [
+              "Bigger than 90°",
+              "Much less than 180°",
+              "Only a little past the right angle"
+            ],
+            "answer": "About 110°"
+          }
+        },
+        {
+          "heading": "Check with a protractor",
+          "bullets": [
+            "Estimate first.",
+            "Measure.",
+            "How close?"
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Estimates for one angle (actual 70°, example data)",
+            "labels": [
+              "Guess A",
+              "Guess B",
+              "Guess C",
+              "Actual"
+            ],
+            "values": [
+              60,
+              75,
+              90,
+              70
+            ],
+            "unit": "°"
+          },
+          "note": "Example class estimates."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "An angle just smaller than a right angle. Best estimate?",
+            "options": [
+              "80°",
+              "40°",
+              "120°"
+            ],
+            "answer": 0,
+            "why": "Just under 90°: 80°."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Estimate: a little over half a right angle.",
+          "a": "About 50°",
+          "mins": 2,
+          "model": "Teacher: half a right angle is 45°, a little more: about 50°."
+        },
+        {
+          "q": "Estimate: halfway between 90° and 180°.",
+          "a": "135°",
+          "mins": 2
+        },
+        {
+          "q": "Which guess in the chart was closest?",
+          "a": "Guess B (75°): 5° away",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Estimate 4 printed angles, then measure. Record the difference.",
+          "a": "Answers will vary; differences under 10° are good",
+          "mins": 4,
+          "model": "Teacher estimates angle A aloud using 90° and 45°."
+        },
+        {
+          "q": "Extend: Order the angles of a clock at 1, 4 and 11 o'clock (smaller angle) without measuring.",
+          "a": "1 and 11 o'clock are 30°; 4 o'clock is 120°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain how to estimate a reflex angle.",
+          "a": "Estimate the small angle, then take it from 360°",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Best estimate for a quarter turn? A) 90° B) 45° C) 180°",
+          "a": "A) 90°",
+          "mins": 2,
+          "options": [
+            "90°",
+            "45°",
+            "180°"
+          ]
+        },
+        {
+          "q": "Big question: how close can you get?",
+          "a": "Within about 10° using 45°, 90° and 180°",
+          "mins": 3
+        }
+      ],
+      "homework": "Estimate 3 angles at home, then check with your paper protractor.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: estimate the angle between the clock hands at 10 past 2 (about 0°; the hands nearly meet).",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: small step 'Estimate angles' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 180° protractor (paper) or a school protractor",
+        "Printed angle sheet (8 angles)",
+        "A4 paper to fold",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 60 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 61,
+      "title": "Measure angles up to 180°",
+      "duration": 45,
+      "bigQuestion": "Why does a protractor have two scales?",
+      "objectives": [
+        "To understand how to measure angles up to 180° accurately with a protractor"
+      ],
+      "successCriteria": [
+        "All: place the centre on the vertex and 0 on one arm",
+        "Most: choose the scale that starts at 0",
+        "Some: measure to the nearest degree"
+      ],
+      "crossCurricular": "Geography: bearings and the compass",
+      "smsc": "Spiritual: finding the qiblah",
+      "keywords": [
+        {
+          "term": "protractor",
+          "def": "a tool to measure angles"
+        },
+        {
+          "term": "vertex",
+          "def": "the point where two arms meet"
+        },
+        {
+          "term": "arm",
+          "def": "a line that makes the angle"
+        },
+        {
+          "term": "scale",
+          "def": "the numbers round the edge"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two pupils measure the same angle. One says 50°, one says 130°. How can both read the protractor?",
+        "a": "They used different scales; 50° is right if the angle is acute."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "protractor",
+          "alt": "A protractor",
+          "for": "teach:1"
+        },
+        {
+          "find": "angle measured with protractor",
+          "alt": "A protractor on an angle",
+          "for": "hook"
+        }
+      ],
+      "islamicLink": {
+        "text": "From London, the qiblah (the direction of the Ka'bah in Makkah) is about 119° clockwise from north. Muslims use angles and compasses to face the qiblah for salah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Estimate: just over a right angle.",
+          "a": "About 100°",
+          "mins": 1
+        },
+        {
+          "q": "180 - 50 = ?",
+          "a": "130",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 9 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "Classify 130°.",
+          "a": "Obtuse",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Line it up",
+          "bullets": [
+            "Centre on the vertex.",
+            "Base line on one arm.",
+            "Read where the other arm crosses."
+          ],
+          "note": "Model on the shared screen."
+        },
+        {
+          "heading": "Which scale?",
+          "bullets": [
+            "Start from 0 on your arm.",
+            "Count up that scale."
+          ],
+          "note": "Estimate first: acute or obtuse?"
+        },
+        {
+          "heading": "Measure",
+          "model": {
+            "problem": "Angle with one arm on the right zero",
+            "steps": [
+              "Use the inner scale from 0",
+              "Other arm crosses 65",
+              "It looks acute ✓"
+            ],
+            "answer": "65°"
+          }
+        },
+        {
+          "heading": "Misconception",
+          "bullets": [
+            "Reading the wrong scale."
+          ],
+          "misconception": {
+            "wrong": "An acute angle measured as 115°",
+            "right": "Count from 0 on the same scale: 65°"
+          },
+          "note": "Discuss."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "An obtuse angle reads 40 and 140. Which?",
+            "options": [
+              "140°",
+              "40°",
+              "180°"
+            ],
+            "answer": 0,
+            "why": "Obtuse means more than 90°."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Measure printed angle A.",
+          "a": "35°",
+          "mins": 2,
+          "model": "Teacher: centre on vertex, 0 on the bottom arm, read 35°; it is acute ✓."
+        },
+        {
+          "q": "Measure angle B.",
+          "a": "120°",
+          "mins": 2
+        },
+        {
+          "q": "Measure angle C.",
+          "a": "90°",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Measure angles D, E, F.",
+          "a": "D 48°; E 155°; F 72°",
+          "mins": 4,
+          "model": "Teacher measures D: 48°."
+        },
+        {
+          "q": "Extend: Measure the 3 angles of the printed triangle. Add them.",
+          "a": "62°, 58°, 60°: 180°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: The qiblah from London is about 119° from north. Draw it with a protractor from a north line.",
+          "a": "A line 119° clockwise from north (obtuse)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "First step with a protractor? A) centre on the vertex B) read the bigger number C) start at 180",
+          "a": "A) centre on the vertex",
+          "mins": 2,
+          "options": [
+            "centre on the vertex",
+            "read the bigger number",
+            "start at 180"
+          ]
+        },
+        {
+          "q": "Big question: why two scales?",
+          "a": "So we can start from 0 on either arm",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure 4 angles on the homework sheet; estimate first.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: measure a reflex angle by measuring the smaller angle and subtracting from 360°.",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: small step 'Measure angles up to 180°' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 180° protractor (paper) or a school protractor",
+        "Printed angle sheet (angles A to F and a triangle)",
+        "Ruler and sharp pencil",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 61 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 62,
+      "title": "Draw lines and angles accurately",
+      "duration": 45,
+      "bigQuestion": "How can we draw an angle exactly?",
+      "objectives": [
+        "To understand how to draw lines to the nearest millimetre and angles to the nearest degree"
+      ],
+      "successCriteria": [
+        "All: draw a line of a given length",
+        "Most: draw an angle up to 180°",
+        "Some: draw a reflex angle"
+      ],
+      "crossCurricular": "Design and technology: accurate drawings for making",
+      "smsc": "Moral: care and patience (itqan) in our work",
+      "keywords": [
+        {
+          "term": "accurate",
+          "def": "exactly right"
+        },
+        {
+          "term": "millimetre (mm)",
+          "def": "1/10 of a centimetre"
+        },
+        {
+          "term": "mark",
+          "def": "a small dot to show where to draw"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can you draw a 60° angle without a protractor? How close would you be?",
+        "a": "Probably close; a protractor makes it exact."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ruler with millimetres close up",
+          "alt": "A ruler with mm marks",
+          "for": "teach:1"
+        },
+        {
+          "find": "protractor",
+          "alt": "A protractor",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6.4 cm = ? mm",
+          "a": "64",
+          "mins": 1
+        },
+        {
+          "q": "Measure: is 95° acute or obtuse?",
+          "a": "Obtuse",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 9 = ?",
+          "a": "108",
+          "mins": 1
+        },
+        {
+          "q": "360 - 300 = ?",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Draw a line",
+          "bullets": [
+            "Start at 0, not the end of the ruler.",
+            "7.3 cm = 73 mm."
+          ],
+          "note": "Model on screen."
+        },
+        {
+          "heading": "Draw 60°",
+          "model": {
+            "problem": "Angle of 60°",
+            "steps": [
+              "Draw a base line, mark the vertex",
+              "Centre the protractor, 0 on the line",
+              "Dot at 60 on that scale",
+              "Join the dot to the vertex"
+            ],
+            "answer": "60° angle"
+          }
+        },
+        {
+          "heading": "Reflex angles",
+          "bullets": [
+            "Draw 360° - angle.",
+            "For 300°, draw 60°.",
+            "Mark the outside angle."
+          ],
+          "note": "Arc on the reflex side."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "To draw 250°, draw...",
+            "options": [
+              "110°",
+              "70°",
+              "250° directly"
+            ],
+            "answer": 0,
+            "why": "360 - 250 = 110."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Draw a line 8.6 cm long.",
+          "a": "86 mm",
+          "mins": 2,
+          "model": "Teacher: start at 0, count 8 cm and 6 mm."
+        },
+        {
+          "q": "Draw 45°.",
+          "a": "Half a right angle",
+          "mins": 2
+        },
+        {
+          "q": "Draw 130°.",
+          "a": "Obtuse, check 130 from 0",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw angles 25°, 90° and 165° on 6 cm base lines.",
+          "a": "Checked with a protractor, within 2°",
+          "mins": 4,
+          "model": "Teacher draws 25° first."
+        },
+        {
+          "q": "Extend: Draw a reflex angle of 280°.",
+          "a": "Draw 80°, mark the outside reflex angle",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw a triangle: base 7 cm, angles 50° and 60° at each end. Measure the third angle.",
+          "a": "70°",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "To draw 310°, draw... A) 50° B) 130° C) 310°",
+          "a": "A) 50°",
+          "mins": 2,
+          "options": [
+            "50°",
+            "130°",
+            "310°"
+          ]
+        },
+        {
+          "q": "Big question: how can we draw an angle exactly?",
+          "a": "Base line, centre on the vertex, 0 on the line, dot at the angle, join",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw 3 angles your family choose and measure them to check.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: draw a triangle with angles 90°, 45° and 45° and a 5 cm base.",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: small step 'Draw lines and angles accurately' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 180° protractor (paper) or a school protractor",
+        "Ruler and sharp pencil",
+        "Plain paper",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 62 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 63,
+      "title": "Calculate angles on a straight line",
+      "duration": 45,
+      "bigQuestion": "If we know one angle on a line, why do we know the other?",
+      "objectives": [
+        "To understand that angles on a straight line add up to 180°"
+      ],
+      "successCriteria": [
+        "All: say angles on a straight line total 180°",
+        "Most: find one missing angle",
+        "Some: find a missing angle when there are three angles"
+      ],
+      "crossCurricular": "Design and technology: angles in a hinge",
+      "smsc": "Social: explaining reasoning, not just answers",
+      "keywords": [
+        {
+          "term": "straight line",
+          "def": "an angle of 180°"
+        },
+        {
+          "term": "missing angle",
+          "def": "the angle we calculate"
+        },
+        {
+          "term": "adjacent",
+          "def": "next to each other"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A door opens 65° from a straight wall. What angle is left between the door and the other side of the wall?",
+        "a": "115°."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "open door",
+          "alt": "An open door",
+          "for": "hook"
+        },
+        {
+          "find": "ruler",
+          "alt": "A ruler as a straight line",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Straight angle = ?",
+          "a": "180°",
+          "mins": 1
+        },
+        {
+          "q": "180 - 65 = ?",
+          "a": "115",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 7 = ?",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "Draw 300°: draw?",
+          "a": "60°",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Half a turn",
+          "bullets": [
+            "A straight line is 180°.",
+            "Angles on it add to 180°."
+          ],
+          "note": "Measure two angles on a line: add them."
+        },
+        {
+          "heading": "One missing",
+          "model": {
+            "problem": "65° and ? on a line",
+            "steps": [
+              "180 - 65",
+              "= 115"
+            ],
+            "answer": "115°"
+          }
+        },
+        {
+          "heading": "Two known",
+          "model": {
+            "problem": "40°, 75° and ? on a line",
+            "steps": [
+              "40 + 75 = 115",
+              "180 - 115 = 65"
+            ],
+            "answer": "65°"
+          }
+        },
+        {
+          "heading": "Do not measure!",
+          "bullets": [
+            "Diagrams are not to scale.",
+            "Calculate."
+          ],
+          "note": "Explain why."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Angles on a line: 92° and ?",
+            "options": [
+              "88°",
+              "98°",
+              "268°"
+            ],
+            "answer": 0,
+            "why": "180 - 92 = 88."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "130° and ? on a line",
+          "a": "50°",
+          "mins": 2,
+          "model": "Teacher: 180 - 130 = 50."
+        },
+        {
+          "q": "25°, 90° and ? on a line",
+          "a": "65°",
+          "mins": 2
+        },
+        {
+          "q": "Two equal angles on a line?",
+          "a": "90° each",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Missing angles: 47° and ?; 155° and ?; 30°, 30° and ?",
+          "a": "133°; 25°; 120°",
+          "mins": 4,
+          "model": "Teacher: 180 - 47 = 133."
+        },
+        {
+          "q": "Extend: Three equal angles on a straight line. Each?",
+          "a": "60°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Angles on a line are x and 3x. Find x.",
+          "a": "45° (4x = 180)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "70° and ? on a line A) 110° B) 290° C) 20°",
+          "a": "A) 110°",
+          "mins": 2,
+          "options": [
+            "110°",
+            "290°",
+            "20°"
+          ]
+        },
+        {
+          "q": "Big question: why do we know the other angle?",
+          "a": "They must add to 180°, so subtract from 180",
+          "mins": 3
+        }
+      ],
+      "homework": "Solve 6 straight-line angle puzzles on the homework sheet.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: four angles on a line: 20°, 35°, 50° and ? (75°)",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: small step 'Calculate angles on a straight line' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed angle puzzle sheet",
+        "Printable 180° protractor (paper) or a school protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 63 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 64,
+      "title": "Calculate angles around a point",
+      "duration": 45,
+      "bigQuestion": "What do all the angles around a point add up to?",
+      "objectives": [
+        "To understand that angles around a point add up to 360°"
+      ],
+      "successCriteria": [
+        "All: say angles around a point total 360°",
+        "Most: find one missing angle around a point",
+        "Some: find equal angles around a point"
+      ],
+      "crossCurricular": "Art: Islamic geometric patterns built around a point",
+      "smsc": "Cultural: geometry in Islamic art",
+      "keywords": [
+        {
+          "term": "point",
+          "def": "where lines meet"
+        },
+        {
+          "term": "full turn",
+          "def": "360°"
+        },
+        {
+          "term": "around a point",
+          "def": "angles that fill a whole turn"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A pizza is cut into 8 equal slices from the centre. What angle is each slice at the centre?",
+        "a": "45°."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza in 8 slices",
+          "for": "hook"
+        },
+        {
+          "find": "bicycle wheel spokes",
+          "alt": "A wheel with spokes",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "180 - 72 = ?",
+          "a": "108",
+          "mins": 1
+        },
+        {
+          "q": "Full turn = ?",
+          "a": "360°",
+          "mins": 1
+        },
+        {
+          "q": "360 ÷ 4 = ?",
+          "a": "90",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 5 = ?",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A full turn",
+          "bullets": [
+            "Angles around a point: 360°."
+          ],
+          "chart": {
+            "kind": "pie",
+            "title": "Angles around a point (degrees)",
+            "labels": [
+              "150°",
+              "90°",
+              "120°"
+            ],
+            "values": [
+              150,
+              90,
+              120
+            ]
+          },
+          "note": "Show a pie chart of 3 angles."
+        },
+        {
+          "heading": "One missing",
+          "model": {
+            "problem": "150°, 90° and ?",
+            "steps": [
+              "150 + 90 = 240",
+              "360 - 240 = 120"
+            ],
+            "answer": "120°"
+          }
+        },
+        {
+          "heading": "Equal angles",
+          "bullets": [
+            "3 equal: 360 ÷ 3 = 120°.",
+            "8 equal: 360 ÷ 8 = 45°."
+          ],
+          "note": "Link to slices."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Around a point: 200° and ?",
+            "options": [
+              "160°",
+              "20°",
+              "100°"
+            ],
+            "answer": 0,
+            "why": "360 - 200 = 160."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "100°, 100° and ? around a point",
+          "a": "160°",
+          "mins": 2,
+          "model": "Teacher: 100 + 100 = 200, 360 - 200 = 160."
+        },
+        {
+          "q": "4 equal angles around a point?",
+          "a": "90°",
+          "mins": 2
+        },
+        {
+          "q": "85°, 95°, 110° and ?",
+          "a": "70°",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Missing: 300° and ?; 45°, 135°, 90° and ?; 6 equal angles",
+          "a": "60°; 90°; 60° each",
+          "mins": 4,
+          "model": "Teacher: 360 - 300 = 60."
+        },
+        {
+          "q": "Extend: Clock hands at 5 o'clock make 150°. The reflex angle?",
+          "a": "210°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Angles around a point are a, 2a and 3a. Find a.",
+          "a": "60° (6a = 360)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Around a point, angles add to... A) 360° B) 180° C) 90°",
+          "a": "A) 360°",
+          "mins": 2,
+          "options": [
+            "360°",
+            "180°",
+            "90°"
+          ]
+        },
+        {
+          "q": "Big question: what do they add up to?",
+          "a": "360°, a full turn",
+          "mins": 3
+        }
+      ],
+      "homework": "Cut a paper circle into 3 or 4 angles from the centre, measure them and check they add to 360°.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a regular hexagon split into 6 triangles from the centre: angle at the centre? (60°)",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: small step 'Calculate angles around a point' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper circle to cut (with an adult)",
+        "Printable 180° protractor (paper) or a school protractor",
+        "Printed angle puzzle sheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 64 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 65,
+      "title": "Calculate missing angles",
+      "duration": 45,
+      "bigQuestion": "Which fact do I need: 90°, 180° or 360°?",
+      "objectives": [
+        "To understand how to choose and use angle facts to find missing angles"
+      ],
+      "successCriteria": [
+        "All: find missing angles in a right angle",
+        "Most: choose between 180° and 360°",
+        "Some: find a reflex angle from a measured angle"
+      ],
+      "crossCurricular": "Geography: roads and junctions on maps",
+      "smsc": "Social: comparing methods with a partner",
+      "keywords": [
+        {
+          "term": "angle fact",
+          "def": "a rule like angles on a line = 180°"
+        },
+        {
+          "term": "right angle",
+          "def": "90°"
+        },
+        {
+          "term": "reflex angle",
+          "def": "more than 180°"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A right angle is split into two angles. One is 35°. What is the other? Which fact did you use?",
+        "a": "55°; a right angle is 90°."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "set square",
+          "alt": "A set square",
+          "for": "teach:1"
+        },
+        {
+          "find": "road junction aerial",
+          "alt": "Roads meeting at a junction",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "On a line: 125° and ?",
+          "a": "55°",
+          "mins": 1
+        },
+        {
+          "q": "Around a point: 270° and ?",
+          "a": "90°",
+          "mins": 1
+        },
+        {
+          "q": "90 - 35 = ?",
+          "a": "55",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 7 = ?",
+          "a": "42",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three facts",
+          "bullets": [
+            "Right angle: 90°.",
+            "Straight line: 180°.",
+            "Around a point: 360°."
+          ],
+          "table": {
+            "head": [
+              "Picture",
+              "Total"
+            ],
+            "rows": [
+              [
+                "Square corner",
+                "90°"
+              ],
+              [
+                "Straight line",
+                "180°"
+              ],
+              [
+                "Full turn",
+                "360°"
+              ]
+            ]
+          },
+          "note": "Pupils say which fact each diagram needs."
+        },
+        {
+          "heading": "In a right angle",
+          "model": {
+            "problem": "35° and ?",
+            "steps": [
+              "Square corner: 90°",
+              "90 - 35 = 55"
+            ],
+            "answer": "55°"
+          }
+        },
+        {
+          "heading": "Reflex angle",
+          "model": {
+            "problem": "The small angle is 110°. The reflex angle?",
+            "steps": [
+              "Full turn: 360°",
+              "360 - 110 = 250"
+            ],
+            "answer": "250°"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A straight line split into 3: 40°, 90°, ?",
+            "options": [
+              "50°",
+              "230°",
+              "140°"
+            ],
+            "answer": 0,
+            "why": "180 - 40 - 90 = 50."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Right angle: 62° and ?",
+          "a": "28°",
+          "mins": 2,
+          "model": "Teacher: 90 - 62 = 28."
+        },
+        {
+          "q": "Reflex angle if the small one is 75°?",
+          "a": "285°",
+          "mins": 2
+        },
+        {
+          "q": "Around a point: 90°, 90°, ? and 100°",
+          "a": "80°",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find: right angle 17° and ?; line 64° and ?; point 210° and ?",
+          "a": "73°; 116°; 150°",
+          "mins": 4,
+          "model": "Teacher: right angle: 90 - 17 = 73."
+        },
+        {
+          "q": "Extend: Two lines cross. One angle is 50°. Find the other three.",
+          "a": "130°, 50°, 130°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: True or false: a reflex angle and its small angle always add to 360°.",
+          "a": "True",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Small angle 140°. Reflex? A) 220° B) 40° C) 320°",
+          "a": "A) 220°",
+          "mins": 2,
+          "options": [
+            "220°",
+            "40°",
+            "320°"
+          ]
+        },
+        {
+          "q": "Big question: which fact do I need?",
+          "a": "Look at the picture: square corner 90°, straight line 180°, full turn 360°",
+          "mins": 3
+        }
+      ],
+      "homework": "Solve the mixed missing angle puzzles on the homework sheet.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: two lines cross; one angle is x and the next is 2x. Find all four (60°, 120°, 60°, 120°).",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: calculating missing angles (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed missing angle puzzle sheet",
+        "Printable 180° protractor (paper) or a school protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 65 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 66,
+      "title": "Angles: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "How well can I measure, draw and calculate angles?",
+      "objectives": [
+        "To understand how well I can classify, measure, draw and calculate angles"
+      ],
+      "successCriteria": [
+        "All: classify and estimate angles",
+        "Most: measure and draw angles",
+        "Some: calculate missing angles"
+      ],
+      "smsc": "Spiritual: shukr for learning; patience to improve",
+      "keywords": [
+        {
+          "term": "acute",
+          "def": "less than 90°"
+        },
+        {
+          "term": "obtuse",
+          "def": "90° to 180°"
+        },
+        {
+          "term": "reflex",
+          "def": "180° to 360°"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which angle skill do you trust most: estimating, measuring, drawing or calculating?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "protractor",
+          "alt": "A protractor",
+          "for": "teach:2"
+        },
+        {
+          "find": "compass rose",
+          "alt": "A compass rose",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Classify 179°.",
+          "a": "Obtuse",
+          "mins": 1
+        },
+        {
+          "q": "On a line: 35° and ?",
+          "a": "145°",
+          "mins": 1
+        },
+        {
+          "q": "Around a point: 3 equal?",
+          "a": "120°",
+          "mins": 1
+        },
+        {
+          "q": "TT: 11 × 8 = ?",
+          "a": "88",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Classify and estimate",
+          "bullets": [
+            "Acute, right, obtuse, straight, reflex.",
+            "Benchmarks: 45°, 90°, 180°."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Measure and draw",
+          "bullets": [
+            "Centre on the vertex.",
+            "0 on the arm.",
+            "Check: acute or obtuse?"
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Calculate",
+          "bullets": [
+            "90°, 180°, 360°.",
+            "Reflex = 360° - small angle."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Angles on a line: 3 equal angles?",
+            "options": [
+              "60°",
+              "120°",
+              "90°"
+            ],
+            "answer": 0,
+            "why": "180 ÷ 3 = 60."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Measure printed angle P.",
+          "a": "142°",
+          "mins": 2,
+          "model": "Teacher: centre on the vertex, 0 on the arm, read 142°; obtuse ✓."
+        },
+        {
+          "q": "Right angle: 48° and ?",
+          "a": "42°",
+          "mins": 2
+        },
+        {
+          "q": "Draw 75°.",
+          "a": "Checked within 2°",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: classify 5°, 95°, 185°; estimate printed angles Q and R",
+          "a": "Acute, obtuse, reflex; Q about 30°, R about 160°",
+          "mins": 4,
+          "model": "Teacher classifies 5°: acute."
+        },
+        {
+          "q": "Extend: Check: measure Q and R; draw 240°",
+          "a": "Q 32°; R 158°; 240° drawn as 120° marked outside",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: around a point 115°, 85°, ?; line 33°, 57°, ?",
+          "a": "160°; 90°",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Reflex angle for small angle 90°? A) 270° B) 90° C) 180°",
+          "a": "A) 270°",
+          "mins": 2,
+          "options": [
+            "270°",
+            "90°",
+            "180°"
+          ]
+        },
+        {
+          "q": "Big question: one strength, one target",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct your check in green pen; redo 2 questions you got wrong.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find the angle between N and the qiblah direction from London (about 119°) as a reflex angle (about 241°).",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: end-of-block check, angles part (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 180° protractor (paper) or a school protractor",
+        "Ruler and sharp pencil",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 66 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 67,
+      "title": "Regular and irregular polygons",
+      "duration": 45,
+      "bigQuestion": "What makes a shape regular?",
+      "objectives": [
+        "To understand the difference between regular and irregular polygons"
+      ],
+      "successCriteria": [
+        "All: name polygons by their number of sides",
+        "Most: say a regular polygon has equal sides and equal angles",
+        "Some: explain why a shape is irregular"
+      ],
+      "crossCurricular": "Art: Islamic geometric patterns",
+      "smsc": "Cultural: the geometry of Islamic art in masjids",
+      "keywords": [
+        {
+          "term": "polygon",
+          "def": "a closed 2-D shape with straight sides"
+        },
+        {
+          "term": "regular",
+          "def": "all sides equal and all angles equal"
+        },
+        {
+          "term": "irregular",
+          "def": "sides or angles not all equal"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a rectangle a regular polygon? Is a rhombus? Explain.",
+        "a": "Neither: a rectangle has unequal sides; a rhombus has unequal angles."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "honeycomb close up",
+          "alt": "Honeycomb: regular hexagons",
+          "for": "hook"
+        },
+        {
+          "find": "islamic geometric tile pattern",
+          "alt": "An Islamic geometric tile pattern",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Classify 120°.",
+          "a": "Obtuse",
+          "mins": 1
+        },
+        {
+          "q": "Sides on a hexagon?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 6 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "Angles in a square?",
+          "a": "4 right angles",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Name them",
+          "bullets": [
+            "Triangle 3, quadrilateral 4.",
+            "Pentagon 5, hexagon 6.",
+            "Octagon 8."
+          ],
+          "table": {
+            "head": [
+              "Sides",
+              "Name",
+              "Regular example"
+            ],
+            "rows": [
+              [
+                "3",
+                "Triangle",
+                "Equilateral"
+              ],
+              [
+                "4",
+                "Quadrilateral",
+                "Square"
+              ],
+              [
+                "5",
+                "Pentagon",
+                "Regular pentagon"
+              ],
+              [
+                "6",
+                "Hexagon",
+                "Honeycomb cell"
+              ],
+              [
+                "8",
+                "Octagon",
+                "Stop sign"
+              ]
+            ]
+          },
+          "note": "Name table."
+        },
+        {
+          "heading": "Regular",
+          "bullets": [
+            "All sides equal.",
+            "All angles equal."
+          ],
+          "note": "Both must be true."
+        },
+        {
+          "heading": "In Islamic art",
+          "bullets": [
+            "Regular hexagons and octagons tile.",
+            "Stars grow from them."
+          ],
+          "note": "Muslim craftsmen built patterns from regular polygons."
+        },
+        {
+          "heading": "Sort",
+          "bullets": [
+            "Regular or irregular?"
+          ],
+          "sort": {
+            "columns": [
+              "Regular",
+              "Irregular"
+            ],
+            "cards": [
+              "Square",
+              "Rectangle",
+              "Equilateral triangle",
+              "Rhombus",
+              "Regular hexagon",
+              "Right-angled triangle"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Card sort."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Is a rhombus regular?",
+            "options": [
+              "No",
+              "Yes",
+              "Only if it is red"
+            ],
+            "answer": 0,
+            "why": "Equal sides but angles are not all equal."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is an equilateral triangle regular?",
+          "a": "Yes",
+          "mins": 2,
+          "model": "Teacher: 3 equal sides and 3 equal angles (60° each): regular."
+        },
+        {
+          "q": "Name a regular quadrilateral.",
+          "a": "Square",
+          "mins": 2
+        },
+        {
+          "q": "A shape has 8 equal sides but different angles. Regular?",
+          "a": "No",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Name and say regular or irregular: 5 equal sides and angles; 4 sides, angles 90° and sides 3, 5, 3, 5 cm",
+          "a": "Regular pentagon; irregular quadrilateral (rectangle)",
+          "mins": 4,
+          "model": "Teacher: 5 equal sides and angles: regular pentagon."
+        },
+        {
+          "q": "Extend: Draw an irregular hexagon on squared paper.",
+          "a": "6 straight sides, not all equal",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why do bees use regular hexagons? Give one reason.",
+          "a": "They fit together with no gaps",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Regular means... A) equal sides and equal angles B) equal sides only C) 4 sides",
+          "a": "A) equal sides and equal angles",
+          "mins": 2,
+          "options": [
+            "equal sides and equal angles",
+            "equal sides only",
+            "4 sides"
+          ]
+        },
+        {
+          "q": "Big question: what makes a shape regular?",
+          "a": "All its sides and all its angles are equal",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 polygons at home or in a picture of Islamic tiles; name them and say regular or irregular.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: can a regular pentagon tile a floor with no gaps? Try with paper.",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: small step 'Regular and irregular polygons' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "Printed polygon card sort",
+        "Ruler and sharp pencil",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 67 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 68,
+      "title": "Properties of rectangles",
+      "duration": 45,
+      "bigQuestion": "What do we know about every rectangle?",
+      "objectives": [
+        "To understand the properties of rectangles and use them to find lengths and angles"
+      ],
+      "successCriteria": [
+        "All: say a rectangle has 4 right angles and opposite sides equal",
+        "Most: find missing sides and the perimeter",
+        "Some: use diagonals to find a missing angle"
+      ],
+      "crossCurricular": "Design and technology: measuring for a frame",
+      "smsc": "Spiritual: rows of prayer mats laid straight",
+      "keywords": [
+        {
+          "term": "rectangle",
+          "def": "4 right angles, opposite sides equal"
+        },
+        {
+          "term": "diagonal",
+          "def": "a line joining opposite corners"
+        },
+        {
+          "term": "perimeter",
+          "def": "the distance all the way round"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A prayer mat is a rectangle 110 cm by 70 cm. How much ribbon goes all the way round its edge?",
+        "a": "360 cm."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer mat",
+          "alt": "A rectangular prayer mat",
+          "for": "hook"
+        },
+        {
+          "find": "window frame rectangle",
+          "alt": "A rectangular window",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Regular quadrilateral?",
+          "a": "Square",
+          "mins": 1
+        },
+        {
+          "q": "2 × (7 + 4) = ?",
+          "a": "22",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 12 = ?",
+          "a": "108",
+          "mins": 1
+        },
+        {
+          "q": "90 - 37 = ?",
+          "a": "53",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Properties",
+          "bullets": [
+            "4 right angles.",
+            "Opposite sides equal and parallel.",
+            "Diagonals equal, cross at the middle."
+          ],
+          "note": "Fold a paper rectangle along a diagonal and check."
+        },
+        {
+          "heading": "Perimeter",
+          "model": {
+            "problem": "Rectangle 110 cm by 70 cm",
+            "steps": [
+              "110 + 70 = 180",
+              "180 × 2 = 360"
+            ],
+            "answer": "360 cm"
+          }
+        },
+        {
+          "heading": "Missing side",
+          "model": {
+            "problem": "Perimeter 30 cm, length 9 cm",
+            "steps": [
+              "30 ÷ 2 = 15 (length + width)",
+              "15 - 9 = 6"
+            ],
+            "answer": "6 cm"
+          }
+        },
+        {
+          "heading": "Angles with a diagonal",
+          "bullets": [
+            "A diagonal splits a right angle.",
+            "If one part is 37°, the other is 53°."
+          ],
+          "note": "90 - 37 = 53."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Rectangle 8 cm by 5 cm. Perimeter?",
+            "options": [
+              "26 cm",
+              "13 cm",
+              "40 cm"
+            ],
+            "answer": 0,
+            "why": "2 × (8 + 5) = 26. 40 is the area in cm²."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rectangle 12 cm by 3 cm: perimeter?",
+          "a": "30 cm",
+          "mins": 2,
+          "model": "Teacher: 12 + 3 = 15, × 2 = 30 cm."
+        },
+        {
+          "q": "Perimeter 24 cm, width 4 cm: length?",
+          "a": "8 cm",
+          "mins": 3
+        },
+        {
+          "q": "A diagonal makes 25° at a corner. The other part?",
+          "a": "65°",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Perimeters: 15 cm by 6 cm; 2.5 m by 1.5 m",
+          "a": "42 cm; 8 m",
+          "mins": 4,
+          "model": "Teacher: 15 + 6 = 21, × 2 = 42 cm."
+        },
+        {
+          "q": "Extend: A rectangle has perimeter 50 cm. Its length is 4 times its width. Find both.",
+          "a": "Width 5 cm, length 20 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Is every square a rectangle? Is every rectangle a square? Explain.",
+          "a": "Every square is a rectangle (4 right angles, opposite sides equal); not every rectangle is a square",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A rectangle always has... A) 4 right angles B) 4 equal sides C) 1 diagonal",
+          "a": "A) 4 right angles",
+          "mins": 2,
+          "options": [
+            "4 right angles",
+            "4 equal sides",
+            "1 diagonal"
+          ]
+        },
+        {
+          "q": "Big question: what do we know about every rectangle?",
+          "a": "4 right angles; opposite sides equal and parallel; equal diagonals",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure 2 rectangles at home (a book, a door) and work out their perimeters.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find all rectangles with whole-number sides and perimeter 20 cm (1 × 9, 2 × 8, 3 × 7, 4 × 6, 5 × 5).",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: properties of rectangles and calculating lengths and angles (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Ruler and sharp pencil",
+        "A4 paper rectangle to fold",
+        "Tape measure",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 68 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 69,
+      "title": "Lengths and angles in shapes",
+      "duration": 45,
+      "bigQuestion": "How can we find a length we cannot measure?",
+      "objectives": [
+        "To understand how to use properties of shapes to calculate missing lengths and angles"
+      ],
+      "successCriteria": [
+        "All: find sides of regular polygons from the perimeter",
+        "Most: find missing lengths in rectilinear shapes",
+        "Some: find missing angles in shapes using properties"
+      ],
+      "crossCurricular": "Design and technology: room plans",
+      "smsc": "Social: checking each other's working",
+      "keywords": [
+        {
+          "term": "rectilinear",
+          "def": "a shape whose sides meet at right angles"
+        },
+        {
+          "term": "property",
+          "def": "a fact that is always true for a shape"
+        },
+        {
+          "term": "perimeter",
+          "def": "distance all the way round"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A regular pentagon has a perimeter of 25 cm. How long is each side? How do you know without a ruler?",
+        "a": "5 cm: 5 equal sides."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "regular pentagon shape",
+          "alt": "A regular pentagon",
+          "for": "hook"
+        },
+        {
+          "find": "floor plan of a room",
+          "alt": "A floor plan (rectilinear)",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Perimeter 8 cm by 3 cm?",
+          "a": "22 cm",
+          "mins": 1
+        },
+        {
+          "q": "25 ÷ 5 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 9 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "Regular hexagon: sides equal?",
+          "a": "Yes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Regular polygon",
+          "model": {
+            "problem": "Regular hexagon, side 4 cm",
+            "steps": [
+              "6 equal sides",
+              "6 × 4 = 24"
+            ],
+            "answer": "Perimeter 24 cm"
+          }
+        },
+        {
+          "heading": "Rectilinear shape",
+          "model": {
+            "problem": "L-shape: total width 10 cm, top part 6 cm wide. The missing step?",
+            "steps": [
+              "Total width: 10 cm",
+              "10 - 6 = 4"
+            ],
+            "answer": "4 cm"
+          }
+        },
+        {
+          "heading": "Use the properties",
+          "bullets": [
+            "Square: all sides equal.",
+            "Rectangle: opposite sides equal.",
+            "All right angles: 90°."
+          ],
+          "note": "Label a floor plan."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Regular octagon, perimeter 40 cm. Side?",
+            "options": [
+              "5 cm",
+              "8 cm",
+              "320 cm"
+            ],
+            "answer": 0,
+            "why": "40 ÷ 8 = 5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Equilateral triangle, side 7 cm. Perimeter?",
+          "a": "21 cm",
+          "mins": 2,
+          "model": "Teacher: 3 equal sides: 3 × 7 = 21 cm."
+        },
+        {
+          "q": "Regular pentagon, perimeter 35 cm. Side?",
+          "a": "7 cm",
+          "mins": 2
+        },
+        {
+          "q": "A square has perimeter 36 cm. Side?",
+          "a": "9 cm",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Missing: regular hexagon perimeter 54 cm (side?); square side 12 cm (perimeter?)",
+          "a": "9 cm; 48 cm",
+          "mins": 4,
+          "model": "Teacher: 54 ÷ 6 = 9."
+        },
+        {
+          "q": "Extend: An L-shape: bottom 12 cm, left side 8 cm, top 5 cm, inner step down 3 cm. Find the two missing sides and the perimeter.",
+          "a": "7 cm and 5 cm; perimeter 40 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: An isosceles triangle has perimeter 20 cm and base 6 cm. The equal sides?",
+          "a": "7 cm each",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Regular hexagon, side 3 cm. Perimeter? A) 18 cm B) 9 cm C) 12 cm",
+          "a": "A) 18 cm",
+          "mins": 2,
+          "options": [
+            "18 cm",
+            "9 cm",
+            "12 cm"
+          ]
+        },
+        {
+          "q": "Big question: how can we find a length we cannot measure?",
+          "a": "Use the shape's properties and the lengths we know",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw an L-shaped room plan, label all but 2 sides and ask someone at home to find them.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a regular polygon has perimeter 60 cm and sides of 7.5 cm. How many sides? (8)",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: small step 'Calculate lengths and angles in shapes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "Ruler and sharp pencil",
+        "Printed rectilinear shapes sheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 69 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 70,
+      "title": "Reasoning about 2-D shapes",
+      "duration": 45,
+      "bigQuestion": "Always, sometimes or never true?",
+      "objectives": [
+        "To understand how to reason about the properties of 2-D shapes"
+      ],
+      "successCriteria": [
+        "All: test a statement with examples",
+        "Most: say always, sometimes or never",
+        "Some: find a counter-example to prove a statement false"
+      ],
+      "crossCurricular": "English: using 'because' to justify",
+      "smsc": "Moral: changing your mind when shown evidence",
+      "keywords": [
+        {
+          "term": "always",
+          "def": "true for every example"
+        },
+        {
+          "term": "sometimes",
+          "def": "true for some examples"
+        },
+        {
+          "term": "never",
+          "def": "true for no examples"
+        },
+        {
+          "term": "counter-example",
+          "def": "one example that shows a statement is false"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'A shape with 4 equal sides is a square.' Always, sometimes or never?",
+        "a": "Sometimes: a rhombus has 4 equal sides but may not have right angles."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "rhombus shape tile",
+          "alt": "A rhombus tile",
+          "for": "hook"
+        },
+        {
+          "find": "kite flying in sky",
+          "alt": "A kite shape",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Regular octagon side 5 cm: perimeter?",
+          "a": "40 cm",
+          "mins": 1
+        },
+        {
+          "q": "Is a rhombus regular?",
+          "a": "No",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "Angles in a triangle?",
+          "a": "180°",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Test it",
+          "bullets": [
+            "Draw examples.",
+            "Look for one that breaks the rule."
+          ],
+          "note": "One counter-example proves 'not always'."
+        },
+        {
+          "heading": "Quadrilateral family",
+          "bullets": [
+            "Square, rectangle, rhombus.",
+            "Parallelogram, kite, trapezium."
+          ],
+          "diagram": {
+            "centre": "Quadrilaterals",
+            "items": [
+              "Square",
+              "Rectangle",
+              "Rhombus",
+              "Parallelogram",
+              "Kite",
+              "Trapezium"
+            ]
+          },
+          "note": "Diagram."
+        },
+        {
+          "heading": "Reason",
+          "model": {
+            "problem": "'A rectangle has 4 lines of symmetry.'",
+            "steps": [
+              "A square does: 4 lines",
+              "A long rectangle has only 2"
+            ],
+            "answer": "Sometimes"
+          }
+        },
+        {
+          "heading": "Sort statements",
+          "bullets": [
+            "Always, sometimes or never?"
+          ],
+          "sort": {
+            "columns": [
+              "Always",
+              "Sometimes",
+              "Never"
+            ],
+            "cards": [
+              "A square is a rectangle",
+              "A triangle has 2 right angles",
+              "A pentagon is regular",
+              "A rectangle has equal diagonals"
+            ],
+            "answer": [
+              0,
+              2,
+              1,
+              0
+            ]
+          },
+          "note": "Card sort."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "'A regular polygon has equal angles.'",
+            "options": [
+              "Always",
+              "Sometimes",
+              "Never"
+            ],
+            "answer": 0,
+            "why": "Regular means equal sides and equal angles."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "'A triangle can have an obtuse angle.' Always, sometimes or never?",
+          "a": "Sometimes",
+          "mins": 2,
+          "model": "Teacher draws one with 120° and one with all acute angles: sometimes."
+        },
+        {
+          "q": "'A square is a rhombus.'",
+          "a": "Always",
+          "mins": 2
+        },
+        {
+          "q": "'A hexagon has 5 sides.'",
+          "a": "Never",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Always, sometimes or never: a parallelogram has right angles; a kite has 2 pairs of equal sides; a trapezium has a right angle",
+          "a": "Sometimes; always (two pairs of equal adjacent sides); sometimes",
+          "mins": 4,
+          "model": "Teacher: a rectangle is a parallelogram with right angles, a rhombus may not have them: sometimes."
+        },
+        {
+          "q": "Extend: Write your own 'sometimes' statement about quadrilaterals with one example of each.",
+          "a": "For example 'a quadrilateral has parallel sides': yes for a rectangle, no for a kite",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Prove false with a counter-example: 'All shapes with 4 right angles are squares.'",
+          "a": "A 5 cm by 2 cm rectangle",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "'A square has 4 lines of symmetry.' A) always B) sometimes C) never",
+          "a": "A) always",
+          "mins": 2,
+          "options": [
+            "always",
+            "sometimes",
+            "never"
+          ]
+        },
+        {
+          "q": "Big question: how do we decide?",
+          "a": "Test examples; one counter-example shows a statement is not always true",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 3 statements about shapes for someone at home to sort into always, sometimes and never.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: is it possible to draw a quadrilateral with exactly 3 right angles? Explain (no: the fourth would have to be 90° too).",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: reasoning with 2-D shapes (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "Ruler and sharp pencil",
+        "Printed always, sometimes, never cards",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 70 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 71,
+      "title": "Shape: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "How well do I know my shapes?",
+      "objectives": [
+        "To understand how well I can use shape properties to calculate and reason"
+      ],
+      "successCriteria": [
+        "All: identify regular and irregular polygons",
+        "Most: find missing lengths and angles in shapes",
+        "Some: reason with always, sometimes, never"
+      ],
+      "smsc": "Spiritual: shukr for learning",
+      "keywords": [
+        {
+          "term": "regular",
+          "def": "equal sides and angles"
+        },
+        {
+          "term": "rectilinear",
+          "def": "sides at right angles"
+        },
+        {
+          "term": "property",
+          "def": "a fact always true for a shape"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is easier to prove: that something is always true or that it is not always true?",
+        "a": "Not always: one counter-example is enough."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "honeycomb close up",
+          "alt": "Honeycomb hexagons",
+          "for": "teach:1"
+        },
+        {
+          "find": "floor plan of a room",
+          "alt": "A floor plan",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Name a regular quadrilateral.",
+          "a": "Square",
+          "mins": 1
+        },
+        {
+          "q": "Perimeter of a regular pentagon, side 6 cm?",
+          "a": "30 cm",
+          "mins": 1
+        },
+        {
+          "q": "On a line: 112° and ?",
+          "a": "68°",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 12 = ?",
+          "a": "144",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Polygons",
+          "bullets": [
+            "Names by sides.",
+            "Regular: equal sides and angles."
+          ],
+          "table": {
+            "head": [
+              "Sides",
+              "Name"
+            ],
+            "rows": [
+              [
+                "5",
+                "Pentagon"
+              ],
+              [
+                "6",
+                "Hexagon"
+              ],
+              [
+                "8",
+                "Octagon"
+              ]
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Lengths and angles",
+          "bullets": [
+            "Use properties.",
+            "Perimeter of regular polygons: sides × length."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Reasoning",
+          "bullets": [
+            "Always, sometimes, never.",
+            "Counter-examples."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Rectangle perimeter 28 cm, length 10 cm. Width?",
+            "options": [
+              "4 cm",
+              "18 cm",
+              "8 cm"
+            ],
+            "answer": 0,
+            "why": "28 ÷ 2 = 14, 14 - 10 = 4."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is a rectangle a regular polygon?",
+          "a": "No: sides not all equal",
+          "mins": 2,
+          "model": "Teacher: angles are equal, sides are not: irregular."
+        },
+        {
+          "q": "Regular hexagon perimeter 42 cm: side?",
+          "a": "7 cm",
+          "mins": 2
+        },
+        {
+          "q": "A diagonal of a rectangle makes 58° at a corner. Other part?",
+          "a": "32°",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: name and classify 3 shapes on the sheet",
+          "a": "Regular octagon; irregular pentagon; regular triangle (equilateral)",
+          "mins": 4,
+          "model": "Teacher names the first: regular octagon."
+        },
+        {
+          "q": "Extend: Check: L-shape missing sides and perimeter on the sheet",
+          "a": "6 cm and 4 cm; 36 cm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: always, sometimes, never: a rhombus is a square; a triangle has 4 vertices",
+          "a": "Sometimes; never",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "8 equal sides and 8 equal angles: A) regular octagon B) irregular octagon C) hexagon",
+          "a": "A) regular octagon",
+          "mins": 2,
+          "options": [
+            "regular octagon",
+            "irregular octagon",
+            "hexagon"
+          ]
+        },
+        {
+          "q": "Big question: one strength, one target",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct your check; draw one regular and one irregular hexagon.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: design a tile pattern using regular hexagons and triangles.",
+      "resources": [
+        "White Rose Maths Year 5, Shape block: end-of-block check, polygons part (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "Ruler and sharp pencil",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 71 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 72,
+      "title": "Read and plot coordinates",
+      "duration": 45,
+      "bigQuestion": "Why does the order of the numbers in (3, 5) matter?",
+      "objectives": [
+        "To understand how to read and plot coordinates in the first quadrant"
+      ],
+      "successCriteria": [
+        "All: read the x-coordinate then the y-coordinate",
+        "Most: plot points from coordinates",
+        "Some: explain why (3, 5) and (5, 3) are different"
+      ],
+      "crossCurricular": "Geography: grid references on maps",
+      "smsc": "Social: clear instructions help others",
+      "keywords": [
+        {
+          "term": "coordinate",
+          "def": "a pair of numbers that gives a position"
+        },
+        {
+          "term": "x-axis",
+          "def": "the horizontal axis"
+        },
+        {
+          "term": "y-axis",
+          "def": "the vertical axis"
+        },
+        {
+          "term": "origin",
+          "def": "(0, 0)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Treasure is buried at (3, 5). Your friend digs at (5, 3). Will they find it?",
+        "a": "No: x first (across), then y (up)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "treasure map grid",
+          "alt": "A map with a grid",
+          "for": "hook"
+        },
+        {
+          "find": "street map grid",
+          "alt": "A street map with grid squares",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Rectangle 6 by 4: perimeter?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "Square: lines of symmetry?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 3 = ?",
+          "a": "27",
+          "mins": 1
+        },
+        {
+          "q": "What is horizontal?",
+          "a": "Flat, side to side",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Along the corridor, up the stairs",
+          "bullets": [
+            "x first: across.",
+            "y second: up.",
+            "Written (x, y)."
+          ],
+          "note": "Model on the shared grid."
+        },
+        {
+          "heading": "Plot (3, 5)",
+          "model": {
+            "problem": "Plot (3, 5)",
+            "steps": [
+              "Start at the origin (0, 0)",
+              "Across 3",
+              "Up 5",
+              "Mark a cross"
+            ],
+            "answer": "The point (3, 5)"
+          }
+        },
+        {
+          "heading": "Read a point",
+          "bullets": [
+            "Go down to the x-axis: x.",
+            "Go across to the y-axis: y."
+          ],
+          "table": {
+            "head": [
+              "Point",
+              "x",
+              "y"
+            ],
+            "rows": [
+              [
+                "A",
+                "2",
+                "6"
+              ],
+              [
+                "B",
+                "6",
+                "2"
+              ],
+              [
+                "C",
+                "0",
+                "4"
+              ]
+            ]
+          },
+          "note": "Table of points."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Point 4 across, 1 up?",
+            "options": [
+              "(4, 1)",
+              "(1, 4)",
+              "(4, 4)"
+            ],
+            "answer": 0,
+            "why": "x first: (4, 1)."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plot (2, 7).",
+          "a": "Across 2, up 7",
+          "mins": 2,
+          "model": "Teacher: from (0, 0), across 2, up 7, mark it."
+        },
+        {
+          "q": "Plot (7, 2). Is it the same place?",
+          "a": "No",
+          "mins": 2
+        },
+        {
+          "q": "Where is C (0, 4)?",
+          "a": "On the y-axis, 4 up",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Plot and join: (1, 1), (5, 1), (5, 4), (1, 4). Name the shape.",
+          "a": "Rectangle",
+          "mins": 4,
+          "model": "Teacher plots (1, 1) and (5, 1)."
+        },
+        {
+          "q": "Extend: Read the coordinates of the 4 points on the sheet.",
+          "a": "(2, 3); (6, 8); (0, 5); (7, 0)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which points are on the x-axis? What do they have in common?",
+          "a": "Points like (7, 0): y is 0",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "(3, 5) means... A) 3 across, 5 up B) 3 up, 5 across C) 35",
+          "a": "A) 3 across, 5 up",
+          "mins": 2,
+          "options": [
+            "3 across, 5 up",
+            "3 up, 5 across",
+            "35"
+          ]
+        },
+        {
+          "q": "Big question: why does the order matter?",
+          "a": "The first number is across (x), the second is up (y); swapping moves the point",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a 10 by 10 grid and hide 3 'treasures'. Give someone the coordinates to find them.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: plot 4 points that make a square with sides 3 units, none on the axes.",
+      "resources": [
+        "White Rose Maths Year 5, Position and direction block: small step 'Read and plot coordinates' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "Ruler and sharp pencil",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 72 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 73,
+      "title": "Problem solving with coordinates",
+      "duration": 45,
+      "bigQuestion": "Can we find a corner of a shape we cannot see?",
+      "objectives": [
+        "To understand how to use coordinates and shape properties to find missing points"
+      ],
+      "successCriteria": [
+        "All: find the fourth vertex of a rectangle",
+        "Most: find points on a line",
+        "Some: solve a coordinate puzzle without plotting"
+      ],
+      "crossCurricular": "Geography: map grids",
+      "smsc": "Social: working logically together",
+      "keywords": [
+        {
+          "term": "vertex",
+          "def": "a corner of a shape"
+        },
+        {
+          "term": "vertices",
+          "def": "more than one vertex"
+        },
+        {
+          "term": "horizontal line",
+          "def": "all points have the same y"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A square has corners at (2, 2), (5, 2) and (5, 5). Where is the fourth corner?",
+        "a": "(2, 5)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "chess board",
+          "alt": "A chess board grid",
+          "for": "hook"
+        },
+        {
+          "find": "square tiles floor",
+          "alt": "Square floor tiles",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Plot (4, 1): across?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Is (0, 3) on the x-axis or y-axis?",
+          "a": "y-axis",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 6 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "5 - 2 = ?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fourth vertex",
+          "model": {
+            "problem": "Square (2, 2), (5, 2), (5, 5), ?",
+            "steps": [
+              "Side length: 5 - 2 = 3",
+              "The missing corner is above (2, 2)",
+              "x stays 2, y is 2 + 3 = 5"
+            ],
+            "answer": "(2, 5)"
+          }
+        },
+        {
+          "heading": "Lines",
+          "bullets": [
+            "Horizontal: same y.",
+            "Vertical: same x."
+          ],
+          "table": {
+            "head": [
+              "Point",
+              "On the line y = 3?"
+            ],
+            "rows": [
+              [
+                "(1, 3)",
+                "Yes"
+              ],
+              [
+                "(4, 3)",
+                "Yes"
+              ],
+              [
+                "(3, 4)",
+                "No"
+              ]
+            ]
+          },
+          "note": "Table."
+        },
+        {
+          "heading": "Without plotting",
+          "bullets": [
+            "Use differences.",
+            "Rectangle (1, 1), (6, 1), (6, 4): missing (1, 4)."
+          ],
+          "note": "Reason first, then plot to check."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Rectangle (0, 0), (4, 0), (4, 3), ?",
+            "options": [
+              "(0, 3)",
+              "(3, 4)",
+              "(3, 0)"
+            ],
+            "answer": 0,
+            "why": "Above (0, 0) at the height of 3."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Square (1, 1), (4, 1), (4, 4), ?",
+          "a": "(1, 4)",
+          "mins": 2,
+          "model": "Teacher: side 3; above (1, 1): (1, 4)."
+        },
+        {
+          "q": "Name 2 points on the vertical line x = 5.",
+          "a": "For example (5, 0) and (5, 7)",
+          "mins": 2
+        },
+        {
+          "q": "Rectangle (2, 1), (7, 1), (7, 3), ?",
+          "a": "(2, 3)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the missing vertex: square (3, 2), (6, 2), (6, 5); rectangle (0, 2), (5, 2), (0, 6)",
+          "a": "(3, 5); (5, 6)",
+          "mins": 4,
+          "model": "Teacher: side 3, so above (3, 2) is (3, 5)."
+        },
+        {
+          "q": "Extend: A rectangle has vertices (1, 2) and (7, 5) at opposite corners. Find the other two.",
+          "a": "(7, 2) and (1, 5)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find the perimeter of the rectangle above in units.",
+          "a": "18 units (6 + 3 + 6 + 3)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Points on y = 2 all have... A) y = 2 B) x = 2 C) x = y",
+          "a": "A) y = 2",
+          "mins": 2,
+          "options": [
+            "y = 2",
+            "x = 2",
+            "x = y"
+          ]
+        },
+        {
+          "q": "Big question: can we find a corner we cannot see?",
+          "a": "Yes: use the shape's properties and the differences in coordinates",
+          "mins": 3
+        }
+      ],
+      "homework": "Make 3 'missing corner' puzzles on a grid for someone at home.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a square has two corners at (2, 1) and (5, 1). Find two different possible squares.",
+      "resources": [
+        "White Rose Maths Year 5, Position and direction block: problem solving with coordinates (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "Ruler and sharp pencil",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 73 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 74,
+      "title": "Translation",
+      "duration": 45,
+      "bigQuestion": "What changes and what stays the same when a shape slides?",
+      "objectives": [
+        "To understand how to translate a shape on a grid and describe the translation"
+      ],
+      "successCriteria": [
+        "All: translate a shape left, right, up or down",
+        "Most: describe a translation in two steps",
+        "Some: explain that size and shape do not change"
+      ],
+      "crossCurricular": "Art: repeating patterns by translation in tiles",
+      "smsc": "Cultural: translated motifs in Islamic tile borders",
+      "keywords": [
+        {
+          "term": "translate",
+          "def": "slide without turning or flipping"
+        },
+        {
+          "term": "left, right, up, down",
+          "def": "the directions of a slide"
+        },
+        {
+          "term": "congruent",
+          "def": "exactly the same shape and size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A chess rook slides 3 squares right and 2 up in two moves. Does the piece change shape?",
+        "a": "No: it only changes position."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "chess board",
+          "alt": "A chess board",
+          "for": "hook"
+        },
+        {
+          "find": "sliding door",
+          "alt": "A sliding door",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Missing vertex: (1, 1), (4, 1), (4, 4), ?",
+          "a": "(1, 4)",
+          "mins": 1
+        },
+        {
+          "q": "Plot (6, 2): up?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 4 = ?",
+          "a": "32",
+          "mins": 1
+        },
+        {
+          "q": "3 + 4 = ?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Slide, do not turn",
+          "bullets": [
+            "Every vertex moves the same way.",
+            "Same shape, same size, same way round."
+          ],
+          "note": "Slide a paper triangle on the grid."
+        },
+        {
+          "heading": "Translate",
+          "model": {
+            "problem": "Triangle 4 right and 1 up",
+            "steps": [
+              "Move each vertex 4 right",
+              "Then 1 up",
+              "Join the new vertices"
+            ],
+            "answer": "A congruent triangle"
+          }
+        },
+        {
+          "heading": "Describe it",
+          "bullets": [
+            "Count one vertex.",
+            "Across first, then up or down."
+          ],
+          "note": "Example: 3 left, 2 down."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A point moves from (2, 3) to (6, 3). The translation?",
+            "options": [
+              "4 right",
+              "4 up",
+              "3 right"
+            ],
+            "answer": 0,
+            "why": "x grows by 4, y stays: 4 right."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Translate the square 5 right.",
+          "a": "Each corner 5 squares right",
+          "mins": 2,
+          "model": "Teacher moves each corner 5 right, then joins."
+        },
+        {
+          "q": "Translate the triangle 2 left, 3 up.",
+          "a": "Each vertex 2 left, 3 up",
+          "mins": 3
+        },
+        {
+          "q": "Describe: A to B on the sheet.",
+          "a": "6 right, 2 down",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Translate the shapes on the sheet as shown.",
+          "a": "Checked on the answer grid",
+          "mins": 4,
+          "model": "Teacher does the first slide: 3 right."
+        },
+        {
+          "q": "Extend: Describe each translation from shape P to Q, R and S.",
+          "a": "Q: 4 right 1 up; R: 5 down; S: 2 left 3 down",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Translate P 3 right and then 3 left. Where is it?",
+          "a": "Back where it started",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A translation can change... A) position B) size C) shape",
+          "a": "A) position",
+          "mins": 2,
+          "options": [
+            "position",
+            "size",
+            "shape"
+          ]
+        },
+        {
+          "q": "Big question: what changes and what stays the same?",
+          "a": "The position changes; size, shape and the way it faces stay the same",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a shape on squared paper and translate it 3 different ways. Describe each.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find a single translation that does '4 right, 2 up' then '1 left, 5 down' (3 right, 3 down).",
+      "resources": [
+        "White Rose Maths Year 5, Position and direction block: small step 'Translation' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "Paper shapes to slide",
+        "Printed translation sheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 74 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 75,
+      "title": "Translation with coordinates",
+      "duration": 45,
+      "bigQuestion": "How can we translate a point without drawing it?",
+      "objectives": [
+        "To understand how coordinates change when a point or shape is translated"
+      ],
+      "successCriteria": [
+        "All: add to x for right and to y for up",
+        "Most: subtract for left and down",
+        "Some: find the new coordinates of a whole shape"
+      ],
+      "crossCurricular": "Computing: moving sprites by changing x and y",
+      "smsc": "Social: checking a partner's coordinates",
+      "keywords": [
+        {
+          "term": "x-coordinate",
+          "def": "how far across"
+        },
+        {
+          "term": "y-coordinate",
+          "def": "how far up"
+        },
+        {
+          "term": "vertex",
+          "def": "a corner of a shape"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A point at (3, 2) slides 4 right and 1 up. Where does it land? Can you find it without the grid?",
+        "a": "(7, 3): 3 + 4 = 7, 2 + 1 = 3."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "street map grid",
+          "alt": "A grid map",
+          "for": "hook"
+        },
+        {
+          "find": "chess board",
+          "alt": "A chess board",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Translate (2, 3) 4 right?",
+          "a": "(6, 3)",
+          "mins": 1
+        },
+        {
+          "q": "8 - 3 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 8 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "A translation changes the...?",
+          "a": "Position",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Rules",
+          "bullets": [
+            "Right: add to x.",
+            "Left: subtract from x.",
+            "Up: add to y.",
+            "Down: subtract from y."
+          ],
+          "note": "Write on the board."
+        },
+        {
+          "heading": "Translate a point",
+          "model": {
+            "problem": "(5, 6) 2 left and 3 down",
+            "steps": [
+              "x: 5 - 2 = 3",
+              "y: 6 - 3 = 3"
+            ],
+            "answer": "(3, 3)"
+          }
+        },
+        {
+          "heading": "A whole shape",
+          "bullets": [
+            "Do every vertex.",
+            "Same change each time."
+          ],
+          "table": {
+            "head": [
+              "Vertex",
+              "Start",
+              "3 right, 1 up"
+            ],
+            "rows": [
+              [
+                "A",
+                "(1, 1)",
+                "(4, 2)"
+              ],
+              [
+                "B",
+                "(3, 1)",
+                "(6, 2)"
+              ],
+              [
+                "C",
+                "(1, 4)",
+                "(4, 5)"
+              ]
+            ]
+          },
+          "note": "Table."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "(7, 5) moves 3 left, 2 up. New point?",
+            "options": [
+              "(4, 7)",
+              "(10, 3)",
+              "(4, 3)"
+            ],
+            "answer": 0,
+            "why": "7 - 3 = 4; 5 + 2 = 7."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "(2, 4), 5 right.",
+          "a": "(7, 4)",
+          "mins": 2,
+          "model": "Teacher: x + 5 = 7; y stays 4."
+        },
+        {
+          "q": "(8, 6), 4 left, 2 down.",
+          "a": "(4, 4)",
+          "mins": 2
+        },
+        {
+          "q": "A point moved from (1, 2) to (6, 7). Describe it.",
+          "a": "5 right, 5 up",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Translate triangle (2, 1), (4, 1), (2, 3) by 3 right, 4 up.",
+          "a": "(5, 5), (7, 5), (5, 7)",
+          "mins": 4,
+          "model": "Teacher does (2, 1): (5, 5)."
+        },
+        {
+          "q": "Extend: A square's corner moves from (3, 3) to (1, 6). Where does corner (5, 3) go?",
+          "a": "(3, 6)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Can a translation take (2, 2) to (0, -1)? What would be odd about the answer?",
+          "a": "Yes, 2 left and 3 down; y = -1 is below the x-axis, outside the first quadrant",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "(4, 4), 1 left and 2 up? A) (3, 6) B) (5, 2) C) (3, 2)",
+          "a": "A) (3, 6)",
+          "mins": 2,
+          "options": [
+            "(3, 6)",
+            "(5, 2)",
+            "(3, 2)"
+          ]
+        },
+        {
+          "q": "Big question: how can we translate without drawing?",
+          "a": "Add or subtract the moves to the x and y coordinates",
+          "mins": 3
+        }
+      ],
+      "homework": "Write coordinates for a shape and translate it by a rule of your choice; check by plotting.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: describe the translation that takes (9, 2) to (2, 9) (7 left, 7 up).",
+      "resources": [
+        "White Rose Maths Year 5, Position and direction block: small step 'Translation with coordinates' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "Printed coordinate grids (0 to 10)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 75 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 76,
+      "title": "Reflection",
+      "duration": 45,
+      "bigQuestion": "How is a reflection different from a translation?",
+      "objectives": [
+        "To understand how to reflect a shape in a horizontal or vertical mirror line"
+      ],
+      "successCriteria": [
+        "All: reflect a point in a mirror line",
+        "Most: reflect a shape keeping distances the same",
+        "Some: say how a reflection flips the shape"
+      ],
+      "crossCurricular": "Art: symmetry in Islamic patterns",
+      "smsc": "Spiritual: balance and symmetry in creation",
+      "keywords": [
+        {
+          "term": "reflect",
+          "def": "flip over a mirror line"
+        },
+        {
+          "term": "mirror line",
+          "def": "the line the shape is flipped over"
+        },
+        {
+          "term": "image",
+          "def": "the new shape after reflecting"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Write the word 'MUM' and hold it to a mirror. Then try 'BOB'. What do you notice?",
+        "a": "Some letters look the same in a mirror; others flip."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "lake reflection of trees",
+          "alt": "Trees reflected in a lake",
+          "for": "hook"
+        },
+        {
+          "find": "butterfly with open wings",
+          "alt": "A symmetrical butterfly",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "(5, 6), 2 left?",
+          "a": "(3, 6)",
+          "mins": 1
+        },
+        {
+          "q": "Lines of symmetry in a square?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 × 7 = ?",
+          "a": "84",
+          "mins": 1
+        },
+        {
+          "q": "A translation is a...?",
+          "a": "Slide",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same distance",
+          "bullets": [
+            "Each point the same distance from the line.",
+            "But on the other side."
+          ],
+          "note": "Count squares to the mirror line."
+        },
+        {
+          "heading": "Reflect a triangle",
+          "model": {
+            "problem": "Vertical mirror line",
+            "steps": [
+              "Count each vertex to the line",
+              "Count the same on the other side",
+              "Join the new vertices"
+            ],
+            "answer": "The flipped triangle"
+          }
+        },
+        {
+          "heading": "Flipped",
+          "bullets": [
+            "Same shape and size.",
+            "Faces the opposite way."
+          ],
+          "compare": {
+            "left": {
+              "title": "Translation",
+              "points": [
+                "Slides",
+                "Faces the same way"
+              ]
+            },
+            "right": {
+              "title": "Reflection",
+              "points": [
+                "Flips",
+                "Faces the opposite way"
+              ]
+            },
+            "label": "vs"
+          },
+          "note": "Compare with a translation."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A point is 2 squares left of a vertical mirror. Its image is...",
+            "options": [
+              "2 squares right of the line",
+              "4 squares right",
+              "on the line"
+            ],
+            "answer": 0,
+            "why": "Same distance, other side."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Reflect the square in the vertical line.",
+          "a": "Same distance on the other side",
+          "mins": 2,
+          "model": "Teacher counts 1 square to the line, 1 square beyond."
+        },
+        {
+          "q": "Reflect the triangle in the horizontal line.",
+          "a": "Flipped below the line",
+          "mins": 3
+        },
+        {
+          "q": "Point on the mirror line: where is its image?",
+          "a": "Same place",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Reflect shapes A, B and C on the sheet.",
+          "a": "Checked on the answer grid",
+          "mins": 4,
+          "model": "Teacher reflects A first."
+        },
+        {
+          "q": "Extend: Use a mirror to check one of your reflections.",
+          "a": "The image matches",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Reflect a shape that touches the mirror line. What happens at the touching vertex?",
+          "a": "It stays in the same place",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A reflection... A) flips B) slides C) turns",
+          "a": "A) flips",
+          "mins": 2,
+          "options": [
+            "flips",
+            "slides",
+            "turns"
+          ]
+        },
+        {
+          "q": "Big question: how is it different from a translation?",
+          "a": "It flips the shape over a line so it faces the other way; a translation only slides",
+          "mins": 3
+        }
+      ],
+      "homework": "Fold a sheet, draw half a shape on one side and reflect it to complete it.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: reflect a shape in a diagonal mirror line (try with a mirror).",
+      "resources": [
+        "White Rose Maths Year 5, Position and direction block: small step 'Reflection' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "A small mirror",
+        "Printed reflection sheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 76 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 77,
+      "title": "Reflection with coordinates",
+      "duration": 45,
+      "bigQuestion": "Can we reflect a point using numbers only?",
+      "objectives": [
+        "To understand how coordinates change when reflected in a vertical or horizontal line"
+      ],
+      "successCriteria": [
+        "All: reflect a point in a vertical line",
+        "Most: reflect a point in a horizontal line",
+        "Some: reflect a whole shape using coordinates"
+      ],
+      "crossCurricular": "Computing: flipping a sprite",
+      "smsc": "Social: explaining to a partner",
+      "keywords": [
+        {
+          "term": "mirror line x = 5",
+          "def": "a vertical line through 5 on the x-axis"
+        },
+        {
+          "term": "mirror line y = 4",
+          "def": "a horizontal line through 4 on the y-axis"
+        },
+        {
+          "term": "distance",
+          "def": "how far from the line"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The mirror line is the vertical line through x = 5. Where is the reflection of (3, 2)?",
+        "a": "(7, 2): 2 left of the line becomes 2 right."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "lake reflection of trees",
+          "alt": "A reflection in water",
+          "for": "hook"
+        },
+        {
+          "find": "street map grid",
+          "alt": "A grid",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Reflection flips or slides?",
+          "a": "Flips",
+          "mins": 1
+        },
+        {
+          "q": "5 - 3 = ?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "5 + 2 = ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 11 = ?",
+          "a": "99",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Vertical line x = 5",
+          "model": {
+            "problem": "Reflect (3, 2)",
+            "steps": [
+              "Distance to the line: 5 - 3 = 2",
+              "Same distance the other side: 5 + 2 = 7",
+              "y stays 2"
+            ],
+            "answer": "(7, 2)"
+          }
+        },
+        {
+          "heading": "Horizontal line y = 4",
+          "model": {
+            "problem": "Reflect (2, 1)",
+            "steps": [
+              "Distance: 4 - 1 = 3",
+              "4 + 3 = 7",
+              "x stays 2"
+            ],
+            "answer": "(2, 7)"
+          }
+        },
+        {
+          "heading": "What changes?",
+          "bullets": [
+            "Vertical line: only x changes.",
+            "Horizontal line: only y changes."
+          ],
+          "table": {
+            "head": [
+              "Point",
+              "Mirror",
+              "Image"
+            ],
+            "rows": [
+              [
+                "(3, 2)",
+                "x = 5",
+                "(7, 2)"
+              ],
+              [
+                "(2, 1)",
+                "y = 4",
+                "(2, 7)"
+              ],
+              [
+                "(6, 6)",
+                "x = 5",
+                "(4, 6)"
+              ]
+            ]
+          },
+          "note": "Table."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Reflect (1, 3) in x = 4.",
+            "options": [
+              "(7, 3)",
+              "(1, 5)",
+              "(4, 3)"
+            ],
+            "answer": 0,
+            "why": "3 left of the line, so 3 right: x = 7."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Reflect (2, 5) in x = 3.",
+          "a": "(4, 5)",
+          "mins": 2,
+          "model": "Teacher: 1 left of x = 3, so 1 right: (4, 5)."
+        },
+        {
+          "q": "Reflect (6, 2) in y = 3.",
+          "a": "(6, 4)",
+          "mins": 2
+        },
+        {
+          "q": "Reflect (8, 1) in x = 5.",
+          "a": "(2, 1)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Reflect triangle (1, 1), (3, 1), (1, 4) in x = 5.",
+          "a": "(9, 1), (7, 1), (9, 4)",
+          "mins": 4,
+          "model": "Teacher: (1, 1) is 4 left of 5, so (9, 1)."
+        },
+        {
+          "q": "Extend: Reflect rectangle (2, 6), (4, 6), (4, 7), (2, 7) in y = 5.",
+          "a": "(2, 4), (4, 4), (4, 3), (2, 3)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A point and its image are (2, 3) and (8, 3). Where is the mirror line?",
+          "a": "x = 5 (half way)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Reflect (4, 2) in y = 5. A) (4, 8) B) (6, 2) C) (4, 3)",
+          "a": "A) (4, 8)",
+          "mins": 2,
+          "options": [
+            "(4, 8)",
+            "(6, 2)",
+            "(4, 3)"
+          ]
+        },
+        {
+          "q": "Big question: can we reflect using numbers?",
+          "a": "Yes: find the distance to the line and go the same distance past it; only one coordinate changes",
+          "mins": 3
+        }
+      ],
+      "homework": "Reflect 4 points of your choice in x = 5 using numbers, then check by plotting.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: reflect (2, 3) in x = 5 and then in y = 5 ((8, 3), then (8, 7)).",
+      "resources": [
+        "White Rose Maths Year 5, Position and direction block: reflection with coordinates (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "A small mirror",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 77 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 78,
+      "title": "Position and direction: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "How confident am I with coordinates, translations and reflections?",
+      "objectives": [
+        "To understand how well I can use coordinates to describe position and movement"
+      ],
+      "successCriteria": [
+        "All: read and plot coordinates",
+        "Most: translate shapes and describe translations",
+        "Some: reflect shapes and points"
+      ],
+      "smsc": "Spiritual: shukr for learning",
+      "keywords": [
+        {
+          "term": "coordinate",
+          "def": "(x, y)"
+        },
+        {
+          "term": "translate",
+          "def": "slide"
+        },
+        {
+          "term": "reflect",
+          "def": "flip over a mirror line"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is easier for you: translating or reflecting? Why?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "treasure map grid",
+          "alt": "A map with a grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "lake reflection of trees",
+          "alt": "A reflection in water",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Reflect (3, 4) in x = 5.",
+          "a": "(7, 4)",
+          "mins": 1
+        },
+        {
+          "q": "(6, 2), 3 left, 4 up?",
+          "a": "(3, 6)",
+          "mins": 1
+        },
+        {
+          "q": "Fourth corner: (0, 0), (3, 0), (3, 3)?",
+          "a": "(0, 3)",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 7 = ?",
+          "a": "49",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Coordinates",
+          "bullets": [
+            "(x, y): across then up."
+          ],
+          "table": {
+            "head": [
+              "Point",
+              "x",
+              "y"
+            ],
+            "rows": [
+              [
+                "P",
+                "4",
+                "1"
+              ],
+              [
+                "Q",
+                "1",
+                "4"
+              ]
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Translations",
+          "bullets": [
+            "Right/left: change x.",
+            "Up/down: change y."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Reflections",
+          "bullets": [
+            "Same distance, other side.",
+            "Vertical line: x changes."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "(2, 6) reflected in y = 4?",
+            "options": [
+              "(2, 2)",
+              "(6, 2)",
+              "(2, 8)"
+            ],
+            "answer": 0,
+            "why": "2 above the line becomes 2 below: y = 2."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plot (5, 0). Where is it?",
+          "a": "On the x-axis",
+          "mins": 2,
+          "model": "Teacher: across 5, up 0: on the x-axis."
+        },
+        {
+          "q": "Describe (2, 2) to (7, 1).",
+          "a": "5 right, 1 down",
+          "mins": 2
+        },
+        {
+          "q": "Reflect (9, 3) in x = 6.",
+          "a": "(3, 3)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: read and plot the points on the sheet; missing vertex of the rectangle",
+          "a": "(1, 5), (6, 2), (0, 3); (6, 5)",
+          "mins": 4,
+          "model": "Teacher reads the first point."
+        },
+        {
+          "q": "Extend: Check: translate the triangle 4 left, 2 up; give the new coordinates",
+          "a": "(1, 4), (3, 4), (1, 7)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: reflect the shape in x = 5 and give the coordinates",
+          "a": "(6, 1), (8, 1), (8, 3)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "(5, 5) translated 2 right? A) (7, 5) B) (5, 7) C) (3, 5)",
+          "a": "A) (7, 5)",
+          "mins": 2,
+          "options": [
+            "(7, 5)",
+            "(5, 7)",
+            "(3, 5)"
+          ]
+        },
+        {
+          "q": "Big question: one strength, one target",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct your check; make a coordinate puzzle with a translation and a reflection.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: reflect a shape in x = 5, then translate it 3 down: is the result the same as doing it the other way round?",
+      "resources": [
+        "White Rose Maths Year 5, Position and direction block: end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or printed coordinate grids (0 to 10)",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 78 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 79,
+      "title": "Add decimals within 1",
+      "duration": 45,
+      "bigQuestion": "How is adding 0.3 + 0.45 like adding 30 + 45?",
+      "objectives": [
+        "To understand how to add decimals with tenths and hundredths within 1"
+      ],
+      "successCriteria": [
+        "All: add tenths",
+        "Most: add tenths and hundredths with the same number of places",
+        "Some: add with an exchange of 10 hundredths for a tenth"
+      ],
+      "crossCurricular": "Science: adding measurements in kg and litres",
+      "smsc": "Social: sharing methods",
+      "keywords": [
+        {
+          "term": "tenth",
+          "def": "0.1"
+        },
+        {
+          "term": "hundredth",
+          "def": "0.01"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 10 hundredths for 1 tenth"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bottle holds 0.3 litres of juice and a cup holds 0.45 litres. Will they fit in a 1 litre jug together?",
+        "a": "Yes: 0.75 litres."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug with water",
+          "alt": "A measuring jug",
+          "for": "hook"
+        },
+        {
+          "find": "hundred square grid",
+          "alt": "A hundred square",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.6 = ? hundredths",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "30 + 45 = ?",
+          "a": "75",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 6 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "Reflect (1, 1) in x = 3",
+          "a": "(5, 1)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Think in hundredths",
+          "bullets": [
+            "0.3 = 30 hundredths.",
+            "0.3 + 0.45 = 30 + 45 hundredths.",
+            "= 75 hundredths = 0.75"
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Tenths",
+              "Hundredths"
+            ],
+            "rows": [
+              [
+                "0.3",
+                "3",
+                "0"
+              ],
+              [
+                "0.45",
+                "4",
+                "5"
+              ],
+              [
+                "0.75",
+                "7",
+                "5"
+              ]
+            ]
+          },
+          "note": "Shade a hundred square."
+        },
+        {
+          "heading": "Column method",
+          "model": {
+            "problem": "0.37 + 0.48",
+            "steps": [
+              "Line up the decimal points",
+              "Hundredths: 7 + 8 = 15: write 5, exchange 1 tenth",
+              "Tenths: 3 + 4 + 1 = 8"
+            ],
+            "answer": "0.85"
+          }
+        },
+        {
+          "heading": "Misconception",
+          "bullets": [
+            "Line up the points, not the digits."
+          ],
+          "misconception": {
+            "wrong": "0.3 + 0.45 = 0.48",
+            "right": "0.30 + 0.45 = 0.75"
+          },
+          "note": "Discuss."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "0.25 + 0.6 = ?",
+            "options": [
+              "0.85",
+              "0.31",
+              "0.265"
+            ],
+            "answer": 0,
+            "why": "25 + 60 = 85 hundredths."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "0.4 + 0.5",
+          "a": "0.9",
+          "mins": 2,
+          "model": "Teacher: 4 tenths + 5 tenths = 9 tenths: 0.9."
+        },
+        {
+          "q": "0.24 + 0.53",
+          "a": "0.77",
+          "mins": 2
+        },
+        {
+          "q": "0.39 + 0.46",
+          "a": "0.85",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 0.12 + 0.7; 0.56 + 0.28; 0.09 + 0.81",
+          "a": "0.82; 0.84; 0.9",
+          "mins": 4,
+          "model": "Teacher: 0.12 + 0.70 = 0.82."
+        },
+        {
+          "q": "Extend: A bag of nuts is 0.35 kg and a bag of raisins is 0.48 kg. Total?",
+          "a": "0.83 kg",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find 3 pairs of decimals with hundredths that add to 0.9.",
+          "a": "For example 0.45 + 0.45, 0.3 + 0.6, 0.12 + 0.78",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.3 + 0.45 = ? A) 0.75 B) 0.48 C) 0.345",
+          "a": "A) 0.75",
+          "mins": 2,
+          "options": [
+            "0.75",
+            "0.48",
+            "0.345"
+          ]
+        },
+        {
+          "q": "Big question: how is it like 30 + 45?",
+          "a": "Write both as hundredths and add as whole numbers, then turn back to a decimal",
+          "mins": 3
+        }
+      ],
+      "homework": "Add the masses of 2 small packets at home (with an adult) in kg.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 0.45 + 0.37 + 0.18 = ? (1)",
+      "resources": [
+        "White Rose Maths Year 5, Decimals block: small step 'Adding and subtracting decimals within 1' (adding) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters",
+        "Printed hundred square",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 79 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Shape; position and direction; decimals",
+      "n": 80,
+      "title": "Subtract decimals within 1; complements to 1",
+      "duration": 45,
+      "bigQuestion": "What do you need to add to 0.37 to make 1?",
+      "objectives": [
+        "To understand how to subtract decimals within 1 and find complements to 1"
+      ],
+      "successCriteria": [
+        "All: subtract tenths and hundredths",
+        "Most: find complements to 1",
+        "Some: subtract with an exchange"
+      ],
+      "crossCurricular": "Cooking: measuring flour in kg",
+      "smsc": "Moral: not wasting food when cooking",
+      "keywords": [
+        {
+          "term": "complement to 1",
+          "def": "the number that makes 1, like 0.37 and 0.63"
+        },
+        {
+          "term": "subtract",
+          "def": "take away"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 1 tenth for 10 hundredths"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 1 kg of flour. A recipe uses 0.37 kg. How much is left?",
+        "a": "0.63 kg."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bag of flour",
+          "alt": "A bag of flour",
+          "for": "hook"
+        },
+        {
+          "find": "kitchen scales",
+          "alt": "Kitchen scales",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0.25 + 0.5 = ?",
+          "a": "0.75",
+          "mins": 1
+        },
+        {
+          "q": "37 + ? = 100",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 8 = ?",
+          "a": "72",
+          "mins": 1
+        },
+        {
+          "q": "1 = ? hundredths",
+          "a": "100",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Complement to 1",
+          "model": {
+            "problem": "1 - 0.37",
+            "steps": [
+              "Count on 0.37 to 0.4: 0.03",
+              "0.4 to 1: 0.6",
+              "0.03 + 0.6 = 0.63"
+            ],
+            "answer": "0.63"
+          }
+        },
+        {
+          "heading": "On a number line",
+          "bullets": [
+            "Count on to the next tenth, then to 1."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "marks": [
+              {
+                "at": 0.37,
+                "label": "0.37"
+              },
+              {
+                "at": 0.4,
+                "label": "0.4"
+              },
+              {
+                "at": 1,
+                "label": "1"
+              }
+            ]
+          },
+          "note": "Number line."
+        },
+        {
+          "heading": "Column with exchange",
+          "model": {
+            "problem": "0.82 - 0.45",
+            "steps": [
+              "Hundredths: 2 - 5, exchange a tenth: 12 - 5 = 7",
+              "Tenths: 7 - 4 = 3"
+            ],
+            "answer": "0.37"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1 - 0.48 = ?",
+            "options": [
+              "0.52",
+              "0.62",
+              "0.48"
+            ],
+            "answer": 0,
+            "why": "48 + 52 = 100."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 - 0.6",
+          "a": "0.4",
+          "mins": 2,
+          "model": "Teacher: 6 tenths and 4 tenths make 10 tenths: 0.4."
+        },
+        {
+          "q": "0.87 - 0.35",
+          "a": "0.52",
+          "mins": 2
+        },
+        {
+          "q": "0.71 - 0.26",
+          "a": "0.45",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complements to 1: 0.15; 0.72; 0.09",
+          "a": "0.85; 0.28; 0.91",
+          "mins": 4,
+          "model": "Teacher: 15 + 85 = 100, so 0.85."
+        },
+        {
+          "q": "Extend: 0.9 - 0.43; 0.65 - 0.38; 0.5 - 0.27",
+          "a": "0.47; 0.27; 0.23",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A jug has 0.8 litres. 0.35 litres is poured, then 0.2 litres. What is left?",
+          "a": "0.25 litres",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 - 0.37 = ? A) 0.63 B) 0.73 C) 0.67",
+          "a": "A) 0.63",
+          "mins": 2,
+          "options": [
+            "0.63",
+            "0.73",
+            "0.67"
+          ]
+        },
+        {
+          "q": "Big question: what makes 1 with 0.37?",
+          "a": "0.63: 37 hundredths + 63 hundredths = 100 hundredths",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 6 complements to 1 and check each by adding.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: 1 - 0.125 = ? (0.875)",
+      "resources": [
+        "White Rose Maths Year 5, Decimals block: small steps 'Adding and subtracting decimals within 1' (subtracting) and 'Complements to 1'; continues in Summer 2 week 1 (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed place value chart (ones, tenths, hundredths) and place value counters",
+        "Paper number line 0 to 1 in tenths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 80 guided, independent and homework tasks"
       ]
     }
   ]

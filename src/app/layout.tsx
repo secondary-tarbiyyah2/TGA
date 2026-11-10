@@ -1,16 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Amiri, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { fontVariables } from "./fonts";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
 import { getSiteSettings } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk", subsets: ["latin"], weight: ["500", "600", "700"] });
-// Arabic script (Qur'an, Islamic Studies, Arabic terms). Not preloaded: the
-// browser only downloads it on pages that actually show Arabic.
-const amiri = Amiri({ variable: "--font-arabic", subsets: ["arabic"], weight: ["400", "700"], preload: false });
+// Fonts (Inter, Space Grotesk, and Amiri for Arabic) are self-hosted from src/app/fonts: see ./fonts.ts.
 
 const siteUrl = "https://globalacademy.tarbiyyah.co.uk";
 
@@ -94,7 +90,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${amiri.variable} h-full antialiased`}>
+    <html lang="en" className="h-full antialiased" style={fontVariables}>
       <body className="min-h-full flex flex-col bg-background text-ink">
         <JsonLd data={jsonLd} />
         <JsonLd data={websiteLd} />
