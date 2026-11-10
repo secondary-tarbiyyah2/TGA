@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y1",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quizzes EYFS-KS1/KS2: blessings, gratitude, amanah, best act after the shahadah, praying on time); National Curriculum RE (KS1) | Spring 1 2027 (lessons 7 and 8 upgraded, 13 new): TGA Year 1 Curriculum Pack (Islamic Studies Spring 1 weeks 1, 3, 5); hadith of the five pillars (Bukhari 8, Muslim 16); school-approved children's Islamic Studies texts TO CONFIRM | Spring 2 2027 (lesson 9 upgraded, 14 and 15 new): Year 1 syllabus yearMap Spring 2 (wudu, salah positions, ikhlas), IS weeks of 15 Mar, 31 Mar and 12 Apr (alternating with PSHE); hadith from Bukhari and Muslim only; lessons v3 | Summer 1 2027 (lessons 16 to 18 new): Year 1 plan Islamic Studies Summer 1 (eeman: six pillars and angels; books and the first revelation; qadr and in sha Allah), taught in the IS weeks of 26 Apr, 24 May and 7 Jun; 2:285, 96:1, 15:9, 18:23-24; hadith on angels made of light (Muslim); lessons v3",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quizzes EYFS-KS1/KS2: blessings, gratitude, amanah, best act after the shahadah, praying on time); National Curriculum RE (KS1) | Spring 1 2027 (lessons 7 and 8 upgraded, 13 new): TGA Year 1 Curriculum Pack (Islamic Studies Spring 1 weeks 1, 3, 5); hadith of the five pillars (Bukhari 8, Muslim 16); school-approved children's Islamic Studies texts TO CONFIRM | Spring 2 2027 (lesson 9 upgraded, 14 and 15 new): Year 1 syllabus yearMap Spring 2 (wudu, salah positions, ikhlas), IS weeks of 15 Mar, 31 Mar and 12 Apr (alternating with PSHE); hadith from Bukhari and Muslim only; lessons v3 | Summer 1 2027 (lessons 16 to 18 new): Year 1 plan Islamic Studies Summer 1 (eeman: six pillars and angels; books and the first revelation; qadr and in sha Allah), taught in the IS weeks of 26 Apr, 24 May and 7 Jun; 2:285, 96:1, 15:9, 18:23-24; hadith on angels made of light (Muslim); lessons v3 | Summer 2 2027: Y1 pack weeks 1 and 3 (Adam and Yunus; born in Makkah, Al-Amin) with the end-of-year oral quiz",
   "lessons": [
     {
       "unit": "Unit 1: Allah, the One and Only",
@@ -285,97 +285,194 @@
       "send": "SEND/EAL: dua frame 'Ya Allah, please help me with ___'. Stretch: explain how knowing Allah sees us helps us be good."
     },
     {
-      "unit": "Unit 2: The early life of Prophet Muhammad ﷺ",
+      "unit": "Summer 2: The prophets and the Prophet's character",
       "n": 4,
-      "title": "Born in Makkah: Muhammad ﷺ and his family",
+      "title": "Muhammad ﷺ: born in Makkah, an orphan, known as Al-Amin",
       "duration": 30,
+      "bigQuestion": "Who would you trust to look after your favourite thing? What makes someone easy to trust?",
       "objectives": [
-        "Know where and when Muhammad ﷺ was born",
-        "Name his parents and grandfather",
-        "Know he was an orphan who was cared for"
+        "To understand that the Prophet Muhammad ﷺ was born in Makkah, grew up an orphan and was known as the trustworthy one"
       ],
+      "successCriteria": [
+        "All: say the Prophet ﷺ was born in Makkah",
+        "Most: say who looked after him when his parents died",
+        "Some: explain why people called him Al-Amin"
+      ],
+      "smsc": "Moral: honesty and keeping a trust",
       "keywords": [
         {
-          "term": "orphan",
-          "def": "a child whose parents have died"
+          "term": "Makkah (مَكَّة)",
+          "def": "the city where the Prophet ﷺ was born"
         },
         {
-          "term": "Makkah",
-          "def": "the city of the Kaaba"
+          "term": "yateem (يَتِيم)",
+          "def": "a child whose father has died"
         },
         {
-          "term": "Quraysh",
-          "def": "the main tribe of Makkah"
+          "term": "Al-Amin (الأَمِين)",
+          "def": "the trustworthy one"
+        },
+        {
+          "term": "amanah (أَمَانَة)",
+          "def": "something kept safe for someone"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Who would you trust to look after your favourite thing? What makes someone easy to trust?",
+        "a": "Someone honest who always gives things back: the people of Makkah trusted Muhammad ﷺ like this."
+      },
+      "islamicLink": {
+        "text": "Allah says to the Prophet ﷺ: 'Did He not find you an orphan and give you shelter?' (ad-Duha 93:6). Allah cared for him from the start.",
+        "at": "start"
+      },
       "starter": [
-        "Name the Creator.",
-        "What do we say after the Prophet's name?",
-        "Which book did Jibril bring?"
+        {
+          "q": "Bismillah. Who was the first human?",
+          "a": "Adam (عَلَيْهِ السَّلَامُ)",
+          "mins": 1,
+          "options": [
+            "Adam",
+            "Yunus"
+          ]
+        },
+        {
+          "q": "What did Yunus do inside the big fish?",
+          "a": "He made du'a to Allah",
+          "mins": 1,
+          "options": [
+            "He made du'a to Allah",
+            "He slept"
+          ]
+        },
+        {
+          "q": "What do we say after the Prophet Muhammad's name?",
+          "a": "Sallallahu 'alayhi wa sallam (ﷺ)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Makkah",
+          "heading": "Born in Makkah",
           "bullets": [
-            "Makkah is a city in Arabia",
-            "The Kaaba is in Makkah",
-            "Ibrahim and Ismail built the Kaaba"
+            "He was born in Makkah",
+            "His father Abdullah died before he was born",
+            "His mother Aminah died when he was six"
           ],
-          "note": "Show a map. Locate Makkah. The Qur'an tells us Ibrahim and Ismail raised the foundations of the House (2:127). Explain the Kaaba is where Muslims face to pray."
+          "note": "Begin with Bismillah. Show a photo of Makkah's mountains. No pictures of prophets or people: objects, animals and places only."
         },
         {
-          "heading": "Muhammad ﷺ is born",
+          "heading": "Allah looked after him",
           "bullets": [
-            "Born in the 'Year of the Elephant'",
-            "Born in Makkah, in the tribe of Quraysh",
-            "His name means 'the praised one'"
+            "His grandfather looked after him",
+            "Then his uncle Abu Talib",
+            "Allah cared for him all along"
           ],
-          "note": "Explain that he was born in Makkah, in the Year of the Elephant, on a Monday (he ﷺ said Monday is the day he was born, Muslim). Explain the story of the elephant army is in Surah al-Fil (105). Do not give the exact date; scholars differ and say that."
+          "note": "Allah says: 'Did He not find you an orphan and give you shelter?' (ad-Duha 93:6).",
+          "quote": {
+            "text": "أَلَمْ يَجِدْكَ يَتِيمًا فَآوَىٰ",
+            "source": "ad-Duha 93:6"
+          }
         },
         {
-          "heading": "His family",
+          "heading": "Al-Amin: the trustworthy one",
           "bullets": [
-            "Father: Abdullah",
-            "Mother: Aminah",
-            "Grandfather: Abdul-Muttalib"
+            "He never told a lie",
+            "People left their precious things with him",
+            "He always gave them back"
           ],
-          "note": "His father Abdullah died before he was born. His mother Aminah passed away when he was a small child. His grandfather Abdul-Muttalib cared for him, then his uncle Abu Talib. Be gentle with children who may have lost relatives."
-        },
-        {
-          "heading": "The kind nurse",
-          "bullets": [
-            "He lived with Halimah in the desert",
-            "She was a wet nurse",
-            "Arab families did this for healthy air"
-          ],
-          "note": "Explain the Arab custom: babies were sent to desert families. Halimah as-Sa'diyyah nursed him. Keep to this simple fact. Ask: who looks after you?"
-        },
-        {
-          "heading": "Allah cared for him",
-          "bullets": [
-            "He was an orphan but Allah cared for him",
-            "Allah says He found him an orphan and gave him shelter",
-            "Be kind to orphans"
-          ],
-          "note": "Surah ad-Duha (93:6) says: did He not find you an orphan and give you refuge? Tell children we should be kind to orphans. Remember the Prophet ﷺ said he and the caretaker of an orphan will be like two fingers in Jannah (Bukhari). Hold up two fingers."
+          "note": "Hold up a small box: 'If you leave this with Al-Amin, you get it back.'",
+          "check": {
+            "q": "Why did people call him Al-Amin?",
+            "options": [
+              "He was honest and kept things safe",
+              "He was rich",
+              "He was tall"
+            ],
+            "answer": 0,
+            "why": "Al-Amin means trustworthy."
+          }
         }
       ],
       "practice": [
-        "Which city is the Kaaba in?",
-        "What do we say after his name?",
-        "Who made everything?"
+        {
+          "q": "Say three things about the Prophet ﷺ as a child.",
+          "a": "Born in Makkah; an orphan; looked after by his grandfather and uncle",
+          "mins": 3,
+          "model": "Teacher counts on fingers: 'One, he was born in Makkah. Two, he was an orphan. Three, his uncle Abu Talib looked after him.'"
+        },
+        {
+          "q": "Al-Amin means ...",
+          "a": "The trustworthy one",
+          "mins": 1,
+          "options": [
+            "The trustworthy one",
+            "The strong one"
+          ]
+        }
       ],
       "independent": [
-        "Put the family names in order: Abdullah, Aminah, Abdul-Muttalib (match to labels)",
-        "Draw the Kaaba and label it 'Makkah'",
-        "True or false: Muhammad ﷺ was born in Madinah"
+        {
+          "q": "End-of-year oral quiz in threes on Teams while the class colours the Makkah mountains on the pupil PDF: Allah is One; one pillar of Islam; one pillar of eeman; one prophet's story; one du'a with its meaning.",
+          "a": "Pupils' own answers, recorded as secure, developing or not yet",
+          "mins": 6,
+          "model": "Teacher asks the first group question and shows how to answer in a full sentence: 'Allah is One. He made everything.'"
+        },
+        {
+          "q": "Stretch: tell the class one way you can be like Al-Amin this week.",
+          "a": "For example: give back what I borrow",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Where was Muhammad ﷺ born?",
-        "Name one person who cared for him."
+        {
+          "q": "Where was the Prophet ﷺ born?",
+          "a": "Makkah",
+          "mins": 1,
+          "options": [
+            "Makkah",
+            "Madinah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what makes someone easy to trust?",
+          "a": "They are honest and give things back, like Al-Amin",
+          "mins": 1
+        }
       ],
-      "homework": "Ask a family member about orphans and say one kind thing we can do for them.",
-      "send": "SEND/EAL: family tree picture; map pointing. Stretch: explain what being an orphan means."
+      "homework": "Borrow something at home, look after it and give it back on time, like Al-Amin.",
+      "send": "SEND: picture cards (mountains, a box, a heart). EAL: word mat with Makkah, orphan, trust. Stretch: name the Prophet's ﷺ mother and father.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: Makkah mountains to colour",
+        "End-of-year oral quiz record sheet (secure, developing, not yet)",
+        "A small box (household)",
+        "School-approved seerah book for children (TO CONFIRM title with the Islamic Studies lead)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jabal al-Nour Makkah mountain",
+          "alt": "Mountains around Makkah",
+          "for": "teach:1"
+        },
+        {
+          "find": "small wooden treasure box",
+          "alt": "A box kept safe",
+          "for": "teach:3"
+        },
+        {
+          "find": "Makkah city view",
+          "alt": "The city of Makkah",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 2: The early life of Prophet Muhammad ﷺ",
@@ -2672,6 +2769,209 @@
           "find": "calendar on wall",
           "alt": "A calendar for plans",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The prophets and the Prophet's character",
+      "n": 19,
+      "title": "Prophets Adam and Yunus (عَلَيْهِمَا السَّلَامُ): saying sorry to Allah",
+      "duration": 30,
+      "bigQuestion": "If you make a mistake, what is the best thing to do next?",
+      "objectives": [
+        "To understand that Allah sent prophets, and that Adam and Yunus turned to Allah and said sorry"
+      ],
+      "successCriteria": [
+        "All: say that Adam was the first human and the first prophet",
+        "Most: retell Yunus's story in three steps",
+        "Some: say the du'a of Yunus and when we can use it"
+      ],
+      "smsc": "Moral: owning our mistakes and saying sorry",
+      "keywords": [
+        {
+          "term": "nabi (نَبِيّ)",
+          "def": "a prophet: a man Allah chose to teach people"
+        },
+        {
+          "term": "rasool (رَسُول)",
+          "def": "a messenger: a prophet sent with a message"
+        },
+        {
+          "term": "'alayhis-salam (عَلَيْهِ السَّلَامُ)",
+          "def": "peace be upon him: we say it after a prophet's name"
+        },
+        {
+          "term": "du'a (دُعَاء)",
+          "def": "asking Allah"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you make a mistake, what is the best thing to do next?",
+        "a": "Say sorry, put it right and ask Allah to forgive us: Adam and Yunus did this."
+      },
+      "islamicLink": {
+        "text": "Allah says that Adam and his wife said: 'Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers' (al-A'raf 7:23).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What do we say when we plan to do something tomorrow?",
+          "a": "In sha Allah",
+          "mins": 1,
+          "options": [
+            "In sha Allah",
+            "Bismillah"
+          ]
+        },
+        {
+          "q": "Which book came to Prophet Muhammad ﷺ?",
+          "a": "The Qur'an",
+          "mins": 1,
+          "options": [
+            "The Qur'an",
+            "The Zabur"
+          ]
+        },
+        {
+          "q": "How many pillars of eeman are there?",
+          "a": "Six",
+          "mins": 1,
+          "options": [
+            "Six",
+            "Five"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Allah sent prophets",
+          "bullets": [
+            "Allah chose good men to teach people",
+            "Each one taught: worship Allah alone",
+            "The first was Adam, the last Muhammad ﷺ"
+          ],
+          "note": "Begin with Bismillah. After every prophet's name pupils say 'alayhis-salam. No pictures of prophets or people: objects, animals and places only.",
+          "timeline": [
+            {
+              "label": "First",
+              "text": "Adam (عَلَيْهِ السَّلَامُ)"
+            },
+            {
+              "label": "Later",
+              "text": "Yunus (عَلَيْهِ السَّلَامُ)"
+            },
+            {
+              "label": "Last",
+              "text": "Muhammad ﷺ"
+            }
+          ]
+        },
+        {
+          "heading": "Adam: the first human",
+          "bullets": [
+            "Allah made Adam from clay",
+            "Allah taught him the names of things",
+            "Adam and his wife said sorry to Allah"
+          ],
+          "note": "Tell the story in words with a lump of clay on camera. Allah says Adam and his wife said: 'Our Lord, we have wronged ourselves' (al-A'raf 7:23). Show رَبَّنَا ظَلَمْنَا أَنْفُسَنَا."
+        },
+        {
+          "heading": "Yunus and the big fish",
+          "bullets": [
+            "Yunus left his people too soon",
+            "A big fish swallowed him",
+            "In the dark he made du'a; Allah saved him"
+          ],
+          "note": "Allah tells us his du'a: لَا إِلٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ (al-Anbiya' 21:87). Pupils repeat it in three parts.",
+          "check": {
+            "q": "What did Yunus do inside the fish?",
+            "options": [
+              "He made du'a to Allah",
+              "He went to sleep",
+              "He was angry"
+            ],
+            "answer": 0,
+            "why": "He turned to Allah in the dark."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Retell Yunus's story with me in three steps: first, next, last.",
+          "a": "First he left his people; next a big fish swallowed him; last he made du'a and Allah saved him",
+          "mins": 3,
+          "model": "Teacher holds up three fingers: 'First, Yunus left his people. Next, a big fish swallowed him. Last, he made du'a and Allah saved him.' Pupils say it back."
+        },
+        {
+          "q": "Who was the first human?",
+          "a": "Adam (عَلَيْهِ السَّلَامُ)",
+          "mins": 1,
+          "options": [
+            "Adam",
+            "Yunus"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "On the pupil PDF, put three pictures in order (the sea, a big fish, the beach) and say one sentence for each.",
+          "a": "Sea, fish, beach with a sentence for each",
+          "mins": 5,
+          "model": "Teacher does the first: the sea picture, 'Yunus went on a boat on the sea.'"
+        },
+        {
+          "q": "Stretch: say the du'a of Yunus and tell a partner when you could say it.",
+          "a": "When I am sad or have made a mistake",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "What should we do when we make a mistake?",
+          "a": "Say sorry and ask Allah to forgive us",
+          "mins": 1,
+          "options": [
+            "Say sorry and ask Allah to forgive us",
+            "Hide it"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what did Adam and Yunus do?",
+          "a": "They said sorry to Allah",
+          "mins": 1
+        }
+      ],
+      "homework": "Say the du'a of Yunus to your family and tell them the story of the big fish.",
+      "send": "SEND: three story cards with one picture each. EAL: picture word mat (clay, sea, fish). Stretch: say who came between Adam and Muhammad ﷺ (Nuh, Ibrahim, Musa).",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: Yunus story sequence (sea, fish, beach)",
+        "A small lump of clay or play dough (household)",
+        "School-approved seerah book for children (TO CONFIRM title with the Islamic Studies lead)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "whale shark underwater",
+          "alt": "A very big fish in the sea",
+          "for": "teach:3"
+        },
+        {
+          "find": "clay lump potter",
+          "alt": "Clay: Allah made Adam from clay",
+          "for": "teach:2"
+        },
+        {
+          "find": "calm sea horizon",
+          "alt": "The sea",
+          "for": "hook"
         }
       ]
     }
