@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y2",
   "board": "National Curriculum (KS1)",
-  "source": "National Curriculum (KS1 Year 2: place value to 100; addition and subtraction); Spring 1 founding year: White Rose Maths Year 2 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Money and 2 Multiplication and division), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 2 Spring blocks 2 Multiplication and division, 3 Length and height and 4 Mass, capacity and temperature, with addition and subtraction with exchange (Autumn block 2) caught up in week 3 (small-step titles only)",
+  "source": "National Curriculum (KS1 Year 2: place value to 100; addition and subtraction); Spring 1 founding year: White Rose Maths Year 2 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1 Money and 2 Multiplication and division), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 2 Spring blocks 2 Multiplication and division, 3 Length and height and 4 Mass, capacity and temperature, with addition and subtraction with exchange (Autumn block 2) caught up in week 3 (small-step titles only); Summer 1 founding year: White Rose Maths Year 2 Summer blocks Fractions and Time (small-step titles only)",
   "lessons": [
     {
       "unit": "Spring 1: Money; multiplication and division begins",
@@ -9384,6 +9384,3530 @@
         "Ruler",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 2 maths lesson 49 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 50,
+      "title": "Equal and unequal parts",
+      "duration": 30,
+      "bigQuestion": "When is a whole cut fairly?",
+      "objectives": [
+        "To understand the difference between equal and unequal parts of a whole"
+      ],
+      "successCriteria": [
+        "All: say if parts are equal or unequal",
+        "Most: cut a whole into equal parts",
+        "Some: explain why unequal parts are not fractions"
+      ],
+      "crossCurricular": "Cooking: cutting bread fairly for the family",
+      "smsc": "Moral: fairness ('adl) in sharing",
+      "keywords": [
+        {
+          "term": "whole",
+          "def": "the full shape or amount"
+        },
+        {
+          "term": "part",
+          "def": "a piece of the whole"
+        },
+        {
+          "term": "equal parts",
+          "def": "parts the same size"
+        },
+        {
+          "term": "unequal",
+          "def": "not the same size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A flatbread is torn into 2 pieces for 2 brothers. Is it always fair? How can you tell?",
+        "a": "Only if the 2 pieces are the same size."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "flatbread on a plate",
+          "alt": "A round flatbread",
+          "for": "hook"
+        },
+        {
+          "find": "chocolate bar pieces",
+          "alt": "A bar split into equal pieces",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Share 12 between 2?",
+          "a": "6 each",
+          "mins": 1
+        },
+        {
+          "q": "Double 8?",
+          "a": "16",
+          "mins": 1
+        },
+        {
+          "q": "5 × 3 = ?",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Parts and whole",
+          "bullets": [
+            "A whole can be split into parts.",
+            "Parts together make the whole."
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 0,
+            "label": "1 whole, 4 parts"
+          },
+          "note": "Show a paper strip folded into parts."
+        },
+        {
+          "heading": "Equal parts",
+          "bullets": [
+            "Every part the same size.",
+            "Fold so edges match."
+          ],
+          "fraction": {
+            "parts": 3,
+            "shaded": 1,
+            "label": "3 equal parts"
+          },
+          "note": "Fold a strip into 3 equal parts."
+        },
+        {
+          "heading": "Unequal parts",
+          "bullets": [
+            "Parts of different sizes.",
+            "These are not fractions yet."
+          ],
+          "note": "Tear a strip unevenly. Ask: fair?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which shape is in equal parts?",
+            "options": [
+              "A square folded edge to edge",
+              "A square torn in 2",
+              "A circle cut off-centre"
+            ],
+            "answer": 0,
+            "why": "Folding edge to edge gives 2 parts the same size."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fold a paper strip into 2 equal parts.",
+          "a": "2 parts the same size",
+          "mins": 2,
+          "model": "Teacher folds the strip so the ends meet: 2 equal parts."
+        },
+        {
+          "q": "Big piece and small piece: equal or unequal?",
+          "a": "Unequal",
+          "mins": 1
+        },
+        {
+          "q": "How many equal parts in a square folded twice?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fold a strip into 4 equal parts.",
+          "a": "4 parts the same size",
+          "mins": 2,
+          "model": "Teacher folds in half, then in half again."
+        },
+        {
+          "q": "Extend: Draw a rectangle in 3 equal parts and one in 3 unequal parts.",
+          "a": "Equal: same widths; unequal: different widths",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Can 3 equal parts and 1 bigger part make quarters?",
+          "a": "No: quarters are 4 equal parts",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Equal parts are... A) the same size B) any size C) always 2",
+          "a": "A) the same size",
+          "mins": 1,
+          "options": [
+            "the same size",
+            "any size",
+            "always 2"
+          ]
+        },
+        {
+          "q": "Big question: when is a whole cut fairly?",
+          "a": "When all the parts are equal",
+          "mins": 1
+        }
+      ],
+      "homework": "Fold a paper napkin into 2 and then 4 equal parts. Check the edges match.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: find 2 ways to cut a square into 4 equal parts that are not squares.",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small steps 'Introduction to parts and whole' and 'Equal and unequal parts' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper strips, squares and circles to fold (cut from A4)",
+        "Scissors (with an adult)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 50 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 51,
+      "title": "Recognise a half",
+      "duration": 30,
+      "bigQuestion": "Can a half look different but still be a half?",
+      "objectives": [
+        "To understand that a half is one of two equal parts of a whole"
+      ],
+      "successCriteria": [
+        "All: say if a shape shows a half",
+        "Most: write a half as 1/2",
+        "Some: spot halves that look different"
+      ],
+      "crossCurricular": "Science: symmetry in leaves and butterflies",
+      "smsc": "Spiritual: balance in Allah's creation",
+      "keywords": [
+        {
+          "term": "half",
+          "def": "1 of 2 equal parts"
+        },
+        {
+          "term": "1/2",
+          "def": "how we write a half"
+        },
+        {
+          "term": "whole",
+          "def": "2 halves make 1 whole"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A square can be cut in half in more than one way. How many ways can you think of?",
+        "a": "At least 4: across, down and both diagonals."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "apple cut in half",
+          "alt": "An apple cut in half",
+          "for": "hook"
+        },
+        {
+          "find": "folded paper square",
+          "alt": "A folded paper square",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Are 2 parts the same size equal?",
+          "a": "Yes",
+          "mins": 1
+        },
+        {
+          "q": "Half of 8?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "2 × 6 = ?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One half",
+          "bullets": [
+            "2 equal parts.",
+            "1 part is a half: 1/2."
+          ],
+          "fraction": {
+            "parts": 2,
+            "shaded": 1,
+            "label": "1/2"
+          },
+          "note": "Shade 1 of 2 parts."
+        },
+        {
+          "heading": "Writing 1/2",
+          "bullets": [
+            "Bottom: 2 equal parts.",
+            "Top: 1 part shaded."
+          ],
+          "note": "Say: one half."
+        },
+        {
+          "heading": "Different halves",
+          "bullets": [
+            "Across, down, corner to corner.",
+            "Each part is still a half."
+          ],
+          "note": "Fold squares 3 ways."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2 parts, not the same size, 1 shaded. A half?",
+            "options": [
+              "Yes",
+              "No",
+              "Only if it is red"
+            ],
+            "answer": 1,
+            "why": "Halves must be equal parts."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fold a square in half corner to corner.",
+          "a": "2 equal triangles",
+          "mins": 2,
+          "model": "Teacher folds corner to corner: 2 equal triangles, each 1/2."
+        },
+        {
+          "q": "How many halves make a whole?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "Write a half as a fraction.",
+          "a": "1/2",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Colour 1/2 of a strip of 2 squares.",
+          "a": "1 square coloured",
+          "mins": 2,
+          "model": "Teacher colours 1 of the 2 squares."
+        },
+        {
+          "q": "Extend: Colour 1/2 of a strip of 6 squares.",
+          "a": "3 squares coloured",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Is 4 parts with 2 shaded a half? Explain.",
+          "a": "Yes: 2 of 4 equal parts is the same as 1/2",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/2 means... A) 1 of 2 equal parts B) 2 of 1 part C) 1 of 2 any parts",
+          "a": "A) 1 of 2 equal parts",
+          "mins": 1,
+          "options": [
+            "1 of 2 equal parts",
+            "2 of 1 part",
+            "1 of 2 any parts"
+          ]
+        },
+        {
+          "q": "Big question: can a half look different and still be a half?",
+          "a": "Yes: any way that makes 2 equal parts",
+          "mins": 1
+        }
+      ],
+      "homework": "Find 3 things at home cut or folded in half (a sandwich, a towel, a door with 2 sides).",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: fold a circle in half 3 different ways.",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small step 'Recognise a half' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper strips, squares and circles to fold (cut from A4)",
+        "Crayons",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 51 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 52,
+      "title": "Find a half",
+      "duration": 30,
+      "bigQuestion": "How do we find half of a number?",
+      "objectives": [
+        "To understand how to find a half of an amount by sharing into 2 equal groups"
+      ],
+      "successCriteria": [
+        "All: share an amount into 2 equal groups",
+        "Most: find half of numbers to 20",
+        "Some: use doubles to find halves"
+      ],
+      "crossCurricular": "Cooking: halving a recipe",
+      "smsc": "Moral: giving half of what we have to someone in need",
+      "keywords": [
+        {
+          "term": "half of",
+          "def": "share into 2 equal groups"
+        },
+        {
+          "term": "halve",
+          "def": "split into 2 equal parts"
+        },
+        {
+          "term": "double",
+          "def": "2 lots of the same"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 18 stickers and give half away. How many do you keep? How did you find out?",
+        "a": "9: share into 2, or double 9 is 18."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "plate of dates",
+          "alt": "A plate of dates",
+          "for": "hook"
+        },
+        {
+          "find": "two bowls",
+          "alt": "Two bowls",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Write a half as a fraction.",
+          "a": "1/2",
+          "mins": 1
+        },
+        {
+          "q": "Double 7?",
+          "a": "14",
+          "mins": 1
+        },
+        {
+          "q": "Share 10 between 2?",
+          "a": "5 each",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Share into 2",
+          "bullets": [
+            "Half of 10.",
+            "One for each bowl.",
+            "5 each."
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 5,
+              "label": "5"
+            },
+            {
+              "parts": 5,
+              "shaded": 5,
+              "label": "5"
+            }
+          ],
+          "note": "Share pasta into 2 bowls."
+        },
+        {
+          "heading": "Use a double",
+          "model": {
+            "problem": "Half of 16",
+            "steps": [
+              "What doubles to 16?",
+              "8 + 8 = 16"
+            ],
+            "answer": "8"
+          }
+        },
+        {
+          "heading": "Bar model",
+          "bullets": [
+            "Whole on top.",
+            "2 equal parts below."
+          ],
+          "table": {
+            "head": [
+              "Half of 20",
+              "Half of 20"
+            ],
+            "rows": [
+              [
+                "10",
+                "10"
+              ]
+            ]
+          },
+          "note": "Draw a bar model for half of 20."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Half of 14?",
+            "options": [
+              "7",
+              "28",
+              "12"
+            ],
+            "answer": 0,
+            "why": "7 + 7 = 14. 28 is double."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Half of 12?",
+          "a": "6",
+          "mins": 1,
+          "model": "Teacher: double 6 is 12, so half of 12 is 6."
+        },
+        {
+          "q": "Half of 20?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "Half of 18?",
+          "a": "9",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Half of 4, 10 and 16",
+          "a": "2; 5; 8",
+          "mins": 2,
+          "model": "Teacher: double 2 is 4, so half of 4 is 2."
+        },
+        {
+          "q": "Extend: Half of 30 and half of 50",
+          "a": "15; 25",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: I halved a number and got 11. What was it?",
+          "a": "22",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Half of 8 is... A) 4 B) 16 C) 6",
+          "a": "A) 4",
+          "mins": 1,
+          "options": [
+            "4",
+            "16",
+            "6"
+          ]
+        },
+        {
+          "q": "Big question: how do we find half of a number?",
+          "a": "Share it into 2 equal groups, or use a double",
+          "mins": 1
+        }
+      ],
+      "homework": "Find half of 10, 14 and 20 using pasta or buttons.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: half of 40, 60 and 100.",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small step 'Find a half' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "2 bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 52 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 53,
+      "title": "Recognise and find a quarter",
+      "duration": 30,
+      "bigQuestion": "How is a quarter linked to a half?",
+      "objectives": [
+        "To understand that a quarter is one of four equal parts of a whole or an amount"
+      ],
+      "successCriteria": [
+        "All: recognise 1/4 of a shape",
+        "Most: find 1/4 of an amount by sharing into 4",
+        "Some: find a quarter by halving twice"
+      ],
+      "crossCurricular": "Cooking: cutting fruit into quarters",
+      "smsc": "Social: sharing fairly between 4 family members",
+      "keywords": [
+        {
+          "term": "quarter",
+          "def": "1 of 4 equal parts"
+        },
+        {
+          "term": "1/4",
+          "def": "how we write a quarter"
+        },
+        {
+          "term": "halve",
+          "def": "split into 2 equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a quarter of a pizza bigger or smaller than half of the same pizza?",
+        "a": "Smaller: it is half of a half."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into four slices",
+          "alt": "A pizza in 4 equal slices",
+          "for": "hook"
+        },
+        {
+          "find": "quarter of an orange",
+          "alt": "A quarter of an orange",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Half of 16?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "How many halves in a whole?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "10 × 2 = ?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A quarter of a shape",
+          "bullets": [
+            "4 equal parts.",
+            "1 part is 1/4."
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 1,
+            "label": "1/4"
+          },
+          "note": "Fold a square twice."
+        },
+        {
+          "heading": "A quarter of an amount",
+          "bullets": [
+            "Share 12 into 4 groups.",
+            "3 in each.",
+            "1/4 of 12 = 3."
+          ],
+          "note": "Share pasta into 4 bowls."
+        },
+        {
+          "heading": "Halve twice",
+          "model": {
+            "problem": "1/4 of 20",
+            "steps": [
+              "Half of 20 is 10",
+              "Half of 10 is 5"
+            ],
+            "answer": "5"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/4 of 8?",
+            "options": [
+              "2",
+              "4",
+              "32"
+            ],
+            "answer": 0,
+            "why": "Half of 8 is 4, half of 4 is 2. 4 is a half."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/4 of 12?",
+          "a": "3",
+          "mins": 1,
+          "model": "Teacher: half of 12 is 6, half of 6 is 3."
+        },
+        {
+          "q": "1/4 of 4?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 16?",
+          "a": "4",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1/4 of 8, 20 and 24",
+          "a": "2; 5; 6",
+          "mins": 2,
+          "model": "Teacher: half of 8 is 4, half of 4 is 2."
+        },
+        {
+          "q": "Extend: 1/2 of 20 and 1/4 of 20. Which is more?",
+          "a": "10 and 5: the half is more",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 1/4 of a number is 7. What is the number?",
+          "a": "28",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/4 of 16 is... A) 4 B) 8 C) 12",
+          "a": "A) 4",
+          "mins": 1,
+          "options": [
+            "4",
+            "8",
+            "12"
+          ]
+        },
+        {
+          "q": "Big question: how is a quarter linked to a half?",
+          "a": "A quarter is half of a half",
+          "mins": 1
+        }
+      ],
+      "homework": "Share 20 pieces of pasta into 4 equal groups. Write 1/4 of 20 = 5.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: 1/4 of 40 and 1/4 of 100.",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small steps 'Recognise a quarter' and 'Find a quarter' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper strips, squares and circles to fold (cut from A4)",
+        "4 bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 53 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 54,
+      "title": "Recognise and find a third",
+      "duration": 30,
+      "bigQuestion": "Why is a third smaller than a half?",
+      "objectives": [
+        "To understand that a third is one of three equal parts of a whole or an amount"
+      ],
+      "successCriteria": [
+        "All: recognise 1/3 of a shape",
+        "Most: find 1/3 of an amount by sharing into 3",
+        "Some: compare 1/2 and 1/3"
+      ],
+      "crossCurricular": "Cooking: sharing a cake between 3",
+      "smsc": "Moral: fair shares when more people come to eat",
+      "keywords": [
+        {
+          "term": "third",
+          "def": "1 of 3 equal parts"
+        },
+        {
+          "term": "1/3",
+          "def": "how we write a third"
+        },
+        {
+          "term": "share",
+          "def": "give out equally"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "3 children share a cake. 2 children share another cake the same size. Who gets the bigger piece?",
+        "a": "The 2 children: halves are bigger than thirds."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "cake cut into slices",
+          "alt": "A round cake in slices",
+          "for": "hook"
+        },
+        {
+          "find": "paper strip folded in three",
+          "alt": "A strip folded in 3",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/4 of 12?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Half of 18?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "5 × 3 = ?",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A third of a shape",
+          "bullets": [
+            "3 equal parts.",
+            "1 part is 1/3."
+          ],
+          "fraction": {
+            "parts": 3,
+            "shaded": 1,
+            "label": "1/3"
+          },
+          "note": "Fold a strip into 3."
+        },
+        {
+          "heading": "A third of an amount",
+          "bullets": [
+            "Share 9 into 3 groups.",
+            "3 in each.",
+            "1/3 of 9 = 3."
+          ],
+          "note": "Share pasta into 3 bowls."
+        },
+        {
+          "heading": "Half or third?",
+          "bullets": [
+            "More parts, smaller parts.",
+            "1/3 is smaller than 1/2."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 3,
+              "shaded": 1,
+              "label": "1/3"
+            }
+          ],
+          "note": "Compare the strips."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/3 of 12?",
+            "options": [
+              "4",
+              "3",
+              "6"
+            ],
+            "answer": 0,
+            "why": "Share 12 into 3 groups: 4 each. 3 is a quarter; 6 is a half."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/3 of 6?",
+          "a": "2",
+          "mins": 1,
+          "model": "Teacher shares 6 into 3 bowls: 2 each."
+        },
+        {
+          "q": "1/3 of 15?",
+          "a": "5",
+          "mins": 2
+        },
+        {
+          "q": "Which is bigger: 1/2 or 1/3?",
+          "a": "1/2",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1/3 of 3, 9 and 18",
+          "a": "1; 3; 6",
+          "mins": 2,
+          "model": "Teacher shares 3 into 3 bowls: 1 each."
+        },
+        {
+          "q": "Extend: 1/3 of 30",
+          "a": "10",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Mo has 1/3 of 12 dates. Ali has 1/2 of 8 dates. Who has more?",
+          "a": "Same: both have 4",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/3 of 9 is... A) 3 B) 6 C) 12",
+          "a": "A) 3",
+          "mins": 1,
+          "options": [
+            "3",
+            "6",
+            "12"
+          ]
+        },
+        {
+          "q": "Big question: why is a third smaller than a half?",
+          "a": "The whole is split into more equal parts, so each part is smaller",
+          "mins": 1
+        }
+      ],
+      "homework": "Share 15 pasta into 3 equal groups. Write 1/3 of 15 = 5.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: 1/3 of 21 and 1/3 of 60.",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small steps 'Recognise a third' and 'Find a third' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper strips, squares and circles to fold (cut from A4)",
+        "3 bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 54 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 55,
+      "title": "Unit and non-unit fractions",
+      "duration": 30,
+      "bigQuestion": "What does the top number of a fraction tell us?",
+      "objectives": [
+        "To understand unit and non-unit fractions such as 1/4, 2/4 and 3/4"
+      ],
+      "successCriteria": [
+        "All: say the numerator and denominator",
+        "Most: shade 3/4 of a shape",
+        "Some: find 3/4 of a shape and say what is left"
+      ],
+      "crossCurricular": "Cooking: how much of a pizza is left",
+      "smsc": "Social: talking about fractions with a partner",
+      "keywords": [
+        {
+          "term": "numerator",
+          "def": "the top number: parts we have"
+        },
+        {
+          "term": "denominator",
+          "def": "the bottom number: equal parts in the whole"
+        },
+        {
+          "term": "unit fraction",
+          "def": "1 part, like 1/3"
+        },
+        {
+          "term": "non-unit fraction",
+          "def": "more than 1 part, like 3/4"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You eat 3 of the 4 slices of a pizza. What fraction did you eat? What fraction is left?",
+        "a": "3/4 eaten, 1/4 left."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into four slices",
+          "alt": "A pizza in 4 slices",
+          "for": "hook"
+        },
+        {
+          "find": "chocolate bar pieces",
+          "alt": "A bar of pieces",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/3 of 9?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 8?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "How many quarters in a whole?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Top and bottom",
+          "bullets": [
+            "Bottom: equal parts in the whole.",
+            "Top: parts we have."
+          ],
+          "note": "Label 1/4 on screen."
+        },
+        {
+          "heading": "Three quarters",
+          "bullets": [
+            "4 equal parts, 3 shaded.",
+            "3/4"
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 3,
+            "label": "3/4"
+          },
+          "note": "Shade 3 of 4."
+        },
+        {
+          "heading": "Unit or non-unit?",
+          "bullets": [
+            "Unit: top is 1: 1/2, 1/3, 1/4.",
+            "Non-unit: top is more: 2/3, 3/4."
+          ],
+          "sort": {
+            "columns": [
+              "Unit fraction",
+              "Non-unit fraction"
+            ],
+            "cards": [
+              "1/2",
+              "3/4",
+              "1/3",
+              "2/3",
+              "1/4",
+              "2/4"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Sort fractions on screen."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is a non-unit fraction?",
+            "options": [
+              "1/3",
+              "2/3",
+              "1/4"
+            ],
+            "answer": 1,
+            "why": "2/3 has 2 parts, more than 1."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Shade 2/3 of a strip of 3.",
+          "a": "2 parts shaded",
+          "mins": 2,
+          "model": "Teacher: 3 equal parts, numerator 2, so shade 2."
+        },
+        {
+          "q": "In 3/4, which is the denominator?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "1/4 shaded. How much is not shaded?",
+          "a": "3/4",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Shade 3/4 of a square.",
+          "a": "3 of 4 parts shaded",
+          "mins": 2,
+          "model": "Teacher folds into quarters and shades 3."
+        },
+        {
+          "q": "Extend: Write the fraction: 2 of 3 equal parts shaded.",
+          "a": "2/3",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 2/4 of a pizza is eaten. What is left? Is that the same as a half?",
+          "a": "2/4 left; yes, it is the same as 1/2",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "In 2/3 the numerator is... A) 2 B) 3 C) 5",
+          "a": "A) 2",
+          "mins": 1,
+          "options": [
+            "2",
+            "3",
+            "5"
+          ]
+        },
+        {
+          "q": "Big question: what does the top number tell us?",
+          "a": "How many of the equal parts we have",
+          "mins": 1
+        }
+      ],
+      "homework": "Fold paper into 4 and colour 3/4. Write the fraction under it.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: draw 3 different shapes with 3/4 shaded.",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small steps 'The whole', 'Unit fractions', 'Non-unit fractions' and 'Recognise three quarters' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper strips, squares and circles to fold (cut from A4)",
+        "Crayons",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 55 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 56,
+      "title": "Count in fractions up to a whole",
+      "duration": 30,
+      "bigQuestion": "What comes after 3/4 when we count in quarters?",
+      "objectives": [
+        "To understand how to count in halves, quarters and thirds up to one whole"
+      ],
+      "successCriteria": [
+        "All: count in halves to 1",
+        "Most: count in quarters to 1",
+        "Some: count in thirds to 1"
+      ],
+      "crossCurricular": "Science: measuring with a tape",
+      "smsc": "Social: counting together in turns",
+      "keywords": [
+        {
+          "term": "count in quarters",
+          "def": "1/4, 2/4, 3/4, 1 whole"
+        },
+        {
+          "term": "whole",
+          "def": "all the equal parts together"
+        },
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Counting in quarters: 1/4, 2/4, 3/4... what comes next?",
+        "a": "4/4, which is 1 whole."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "measuring tape close up",
+          "alt": "A measuring tape",
+          "for": "teach:2"
+        },
+        {
+          "find": "orange segments",
+          "alt": "Orange segments",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Shade 3/4: how many parts?",
+          "a": "3 of 4",
+          "mins": 1
+        },
+        {
+          "q": "1/3 of 6?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "Half of 10?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count in halves",
+          "bullets": [
+            "1/2, 1 whole.",
+            "2/2 is 1 whole."
+          ],
+          "note": "Fold a strip, count the parts."
+        },
+        {
+          "heading": "Count in quarters",
+          "bullets": [
+            "1/4, 2/4, 3/4, 1.",
+            "4/4 is 1 whole."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 1,
+            "step": 0.25,
+            "marks": [
+              {
+                "at": 0.25,
+                "label": "1/4"
+              },
+              {
+                "at": 0.5,
+                "label": "2/4"
+              },
+              {
+                "at": 0.75,
+                "label": "3/4"
+              },
+              {
+                "at": 1,
+                "label": "1"
+              }
+            ]
+          },
+          "note": "Point along the line."
+        },
+        {
+          "heading": "Count in thirds",
+          "bullets": [
+            "1/3, 2/3, 1.",
+            "3/3 is 1 whole."
+          ],
+          "note": "Fold a strip in 3 and count."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/3, 2/3, ... next?",
+            "options": [
+              "3/3",
+              "4/3",
+              "2/4"
+            ],
+            "answer": 0,
+            "why": "3/3 is the whole: 1."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count in quarters from 0 to 1.",
+          "a": "1/4, 2/4, 3/4, 1",
+          "mins": 2,
+          "model": "Teacher points: 1/4, 2/4, 3/4, 4/4 = 1."
+        },
+        {
+          "q": "How many halves make 1?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "2/4, 3/4, ?",
+          "a": "1 (4/4)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count in thirds from 0 to 1.",
+          "a": "1/3, 2/3, 1",
+          "mins": 2,
+          "model": "Teacher counts the first third: 1/3."
+        },
+        {
+          "q": "Extend: Fill the gap: 1/4, _, 3/4, 1",
+          "a": "2/4",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Count back in quarters from 1.",
+          "a": "1, 3/4, 2/4, 1/4, 0",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "4/4 is the same as... A) 1 whole B) 1/4 C) 4",
+          "a": "A) 1 whole",
+          "mins": 1,
+          "options": [
+            "1 whole",
+            "1/4",
+            "4"
+          ]
+        },
+        {
+          "q": "Big question: what comes after 3/4?",
+          "a": "4/4, one whole",
+          "mins": 1
+        }
+      ],
+      "homework": "Fold a strip into quarters. Count along it to a grown-up: 1/4, 2/4, 3/4, 1.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: count in quarters past 1: 1 and 1/4, 1 and 2/4.",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small step 'Count in fractions up to a whole' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper strips, squares and circles to fold (cut from A4)",
+        "Paper number line 0 to 1 in quarters",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 56 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 57,
+      "title": "Find a half and a quarter of an amount",
+      "duration": 30,
+      "bigQuestion": "Which is more: half or a quarter of the same amount?",
+      "objectives": [
+        "To understand how to find halves and quarters of amounts and compare them"
+      ],
+      "successCriteria": [
+        "All: find 1/2 of an amount",
+        "Most: find 1/4 of an amount",
+        "Some: compare 1/2 and 1/4 of the same amount"
+      ],
+      "crossCurricular": "Cooking: halving and quartering ingredients",
+      "smsc": "Moral: fair shares at family meals",
+      "keywords": [
+        {
+          "term": "amount",
+          "def": "how many things"
+        },
+        {
+          "term": "share",
+          "def": "give out equally"
+        },
+        {
+          "term": "compare",
+          "def": "decide which is more"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You can have half of 12 dates or a quarter of 20 dates. Which do you choose?",
+        "a": "Half of 12 is 6; a quarter of 20 is 5. Choose half of 12."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "bowl of strawberries",
+          "alt": "A bowl of strawberries",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/2 of 14?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 8?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "2 × 10 = ?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Half of 16",
+          "bullets": [
+            "Share into 2.",
+            "8 each."
+          ],
+          "fraction": {
+            "parts": 2,
+            "shaded": 1,
+            "label": "1/2 of 16 = 8"
+          },
+          "note": "Bar model."
+        },
+        {
+          "heading": "A quarter of 16",
+          "bullets": [
+            "Share into 4.",
+            "4 each."
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 1,
+            "label": "1/4 of 16 = 4"
+          },
+          "note": "Bar model in 4."
+        },
+        {
+          "heading": "Compare",
+          "model": {
+            "problem": "1/2 of 10 or 1/4 of 24?",
+            "steps": [
+              "1/2 of 10 = 5",
+              "1/4 of 24 = 6",
+              "6 > 5"
+            ],
+            "answer": "1/4 of 24 is more"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/4 of 20?",
+            "options": [
+              "5",
+              "10",
+              "4"
+            ],
+            "answer": 0,
+            "why": "Half of 20 is 10, half again is 5. 10 is a half."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/2 of 18?",
+          "a": "9",
+          "mins": 1,
+          "model": "Teacher: double 9 is 18, so half of 18 is 9."
+        },
+        {
+          "q": "1/4 of 12?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Which is more: 1/2 of 8 or 1/4 of 8?",
+          "a": "1/2 of 8 (4 > 2)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1/2 of 20; 1/4 of 20",
+          "a": "10; 5",
+          "mins": 2,
+          "model": "Teacher: half of 20 is 10."
+        },
+        {
+          "q": "Extend: 1/4 of 40; 1/2 of 40",
+          "a": "10; 20",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Use < or >: 1/2 of 6 _ 1/4 of 16",
+          "a": "< (3 < 4)",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/2 of 12 is... A) 6 B) 3 C) 24",
+          "a": "A) 6",
+          "mins": 1,
+          "options": [
+            "6",
+            "3",
+            "24"
+          ]
+        },
+        {
+          "q": "Big question: which is more, half or a quarter of the same amount?",
+          "a": "Half: it is 2 quarters",
+          "mins": 1
+        }
+      ],
+      "homework": "Find 1/2 and 1/4 of 8, 12 and 16 with pasta.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: 1/4 of 100 and 1/2 of 100.",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small steps 'Find a half' and 'Find a quarter' (of amounts) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "4 bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 57 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 58,
+      "title": "Find a third and three quarters of an amount",
+      "duration": 30,
+      "bigQuestion": "How can finding 1/4 help us find 3/4?",
+      "objectives": [
+        "To understand how to find thirds and three quarters of amounts"
+      ],
+      "successCriteria": [
+        "All: find 1/3 of an amount",
+        "Most: find 1/4 then 3/4 of an amount",
+        "Some: solve a word problem with 3/4"
+      ],
+      "crossCurricular": "Cooking: using 3/4 of a bag of flour",
+      "smsc": "Moral: not wasting food (Islam teaches us to avoid waste)",
+      "keywords": [
+        {
+          "term": "third",
+          "def": "1 of 3 equal parts"
+        },
+        {
+          "term": "three quarters",
+          "def": "3 of 4 equal parts"
+        },
+        {
+          "term": "bar model",
+          "def": "a bar split to show parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "There are 8 cupcakes. 3/4 are eaten. How many are left?",
+        "a": "1/4 of 8 is 2, 3/4 is 6 eaten, so 2 are left."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "cupcakes on a tray",
+          "alt": "Cupcakes on a tray",
+          "for": "hook"
+        },
+        {
+          "find": "tray of muffins",
+          "alt": "A tray of muffins",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/4 of 12?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "1/3 of 9?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "3 × 5 = ?",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1/3 of 15",
+          "bullets": [
+            "Share into 3.",
+            "5 each."
+          ],
+          "fraction": {
+            "parts": 3,
+            "shaded": 1,
+            "label": "1/3 of 15 = 5"
+          },
+          "note": "Share pasta."
+        },
+        {
+          "heading": "3/4 of 12",
+          "model": {
+            "problem": "3/4 of 12",
+            "steps": [
+              "1/4 of 12 = 3",
+              "3/4 is 3 lots of 3",
+              "3 + 3 + 3 = 9"
+            ],
+            "answer": "9"
+          }
+        },
+        {
+          "heading": "Bar model",
+          "bullets": [
+            "Whole on top.",
+            "4 boxes of 3 below.",
+            "Count 3 boxes: 9."
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 3,
+            "label": "3/4 of 12 = 9"
+          },
+          "note": "Draw it."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3/4 of 8?",
+            "options": [
+              "6",
+              "2",
+              "4"
+            ],
+            "answer": 0,
+            "why": "1/4 of 8 is 2, 3 lots of 2 is 6. 2 is only 1/4."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3/4 of 4?",
+          "a": "3",
+          "mins": 1,
+          "model": "Teacher: 1/4 of 4 is 1, so 3/4 is 3."
+        },
+        {
+          "q": "1/3 of 18?",
+          "a": "6",
+          "mins": 2
+        },
+        {
+          "q": "3/4 of 16?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1/3 of 12; 3/4 of 20",
+          "a": "4; 15",
+          "mins": 2,
+          "model": "Teacher: 12 into 3 groups is 4 each."
+        },
+        {
+          "q": "Extend: 3/4 of 24",
+          "a": "18",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: A bag has 12 apples. 3/4 are red. How many are not red?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "3/4 of 12 is... A) 9 B) 3 C) 4",
+          "a": "A) 9",
+          "mins": 1,
+          "options": [
+            "9",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "q": "Big question: how does 1/4 help us find 3/4?",
+          "a": "Find 1/4, then add 3 lots of it",
+          "mins": 1
+        }
+      ],
+      "homework": "Find 3/4 of 8 and 1/3 of 12 using pasta.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: 2/3 of 15 (10).",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small steps 'Find a third' and 'Find three quarters' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "4 bowls",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 58 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 59,
+      "title": "Recognise the equivalence of a half and two quarters",
+      "duration": 30,
+      "bigQuestion": "Can two different fractions be the same amount?",
+      "objectives": [
+        "To understand that one half and two quarters are equal"
+      ],
+      "successCriteria": [
+        "All: shade 1/2 and 2/4 of the same shape",
+        "Most: say 1/2 = 2/4",
+        "Some: show it with an amount"
+      ],
+      "crossCurricular": "Cooking: two quarter cups make half a cup",
+      "smsc": "Social: explaining your thinking to a partner",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "the same amount"
+        },
+        {
+          "term": "half",
+          "def": "1/2"
+        },
+        {
+          "term": "two quarters",
+          "def": "2/4"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your sister eats 1/2 of a pizza. You eat 2/4 of the same size pizza. Who ate more?",
+        "a": "Neither: 1/2 = 2/4."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into four slices",
+          "alt": "A pizza in quarters",
+          "for": "hook"
+        },
+        {
+          "find": "folded paper square",
+          "alt": "A folded paper square",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/4 of 8?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "1/2 of 10?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "How many quarters in a half?",
+          "a": "2",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same size",
+          "bullets": [
+            "Fold a strip in half.",
+            "Fold again: quarters.",
+            "1/2 covers 2/4."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "2/4"
+            }
+          ],
+          "note": "Fold live."
+        },
+        {
+          "heading": "Equivalent",
+          "bullets": [
+            "1/2 = 2/4",
+            "Same amount, different names."
+          ],
+          "note": "Say it together."
+        },
+        {
+          "heading": "With an amount",
+          "model": {
+            "problem": "1/2 of 8 and 2/4 of 8",
+            "steps": [
+              "1/2 of 8 = 4",
+              "1/4 of 8 = 2, so 2/4 = 4"
+            ],
+            "answer": "Both are 4"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is the same as 1/2?",
+            "options": [
+              "2/4",
+              "1/4",
+              "3/4"
+            ],
+            "answer": 0,
+            "why": "2 quarters cover the same as 1 half."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Shade 2/4 of a square. Is it half?",
+          "a": "Yes",
+          "mins": 2,
+          "model": "Teacher shades 2 of 4 quarters: it covers half."
+        },
+        {
+          "q": "2/4 of 12?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "1/2 of 12?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Shade 1/2 of one strip and 2/4 of another. Compare.",
+          "a": "The same amount",
+          "mins": 2,
+          "model": "Teacher shades 1/2 first."
+        },
+        {
+          "q": "Extend: Use = or not: 1/2 _ 2/4; 1/4 _ 1/2",
+          "a": "=; not equal",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Is 3/4 more or less than 1/2? Explain.",
+          "a": "More: 1/2 is 2/4 and 3/4 is one more quarter",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/2 = ? A) 2/4 B) 1/4 C) 2/2",
+          "a": "A) 2/4",
+          "mins": 1,
+          "options": [
+            "2/4",
+            "1/4",
+            "2/2"
+          ]
+        },
+        {
+          "q": "Big question: can two different fractions be the same?",
+          "a": "Yes: 1/2 and 2/4 are the same amount",
+          "mins": 1
+        }
+      ],
+      "homework": "Fold paper into quarters. Colour 2/4 and show a grown-up that it is half.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: find another fraction equal to 1/2 (for example 3/6).",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: small step 'Recognise the equivalence of a half and two quarters' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper strips, squares and circles to fold (cut from A4)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Crayons",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 59 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 60,
+      "title": "Fractions: end-of-block check",
+      "duration": 30,
+      "bigQuestion": "What do I know about halves, quarters and thirds?",
+      "objectives": [
+        "To understand how well I can recognise and find fractions"
+      ],
+      "successCriteria": [
+        "All: recognise 1/2, 1/3, 1/4 and 3/4",
+        "Most: find fractions of amounts",
+        "Some: compare and explain fractions"
+      ],
+      "smsc": "Spiritual: shukr, thanking Allah for what we have learned",
+      "keywords": [
+        {
+          "term": "fraction",
+          "def": "equal parts of a whole"
+        },
+        {
+          "term": "numerator",
+          "def": "parts we have"
+        },
+        {
+          "term": "denominator",
+          "def": "equal parts in the whole"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather have 1/3 of 12 or 1/4 of 12? Why?",
+        "a": "1/3 of 12 is 4; 1/4 of 12 is 3. Choose 1/3."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into four slices",
+          "alt": "A pizza in quarters",
+          "for": "teach:1"
+        },
+        {
+          "find": "cake cut into slices",
+          "alt": "A cake in slices",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/3 of 6?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "3/4 of 4?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "1/2 = ?/4",
+          "a": "2",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Shapes",
+          "bullets": [
+            "Equal parts only.",
+            "Numerator: parts we have."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 3,
+              "shaded": 1,
+              "label": "1/3"
+            },
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "3/4"
+            }
+          ],
+          "note": "Recap with paper."
+        },
+        {
+          "heading": "Amounts",
+          "bullets": [
+            "Share by the denominator.",
+            "Times by the numerator."
+          ],
+          "note": "Recap 3/4 of 20."
+        },
+        {
+          "heading": "Compare",
+          "bullets": [
+            "More equal parts, smaller parts.",
+            "1/2 > 1/3 > 1/4"
+          ],
+          "note": "Ask: why is 1/4 smaller?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/3 of 21?",
+            "options": [
+              "7",
+              "3",
+              "18"
+            ],
+            "answer": 0,
+            "why": "Share 21 into 3: 7 each."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/2 of 16?",
+          "a": "8",
+          "mins": 1,
+          "model": "Teacher: half of 16 is 8."
+        },
+        {
+          "q": "1/4 of 16?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Order smallest first: 1/2, 1/4, 1/3",
+          "a": "1/4, 1/3, 1/2",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: shade 1/3, 2/4 and 3/4 of 3 strips.",
+          "a": "1 of 3; 2 of 4; 3 of 4 parts shaded",
+          "mins": 2,
+          "model": "Teacher shades 1 of 3 parts."
+        },
+        {
+          "q": "Extend: Check: 1/3 of 9; 1/4 of 24; 3/4 of 8",
+          "a": "3; 6; 6",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Check: Amir has 20 dates. He gives 1/4 away. How many does he keep?",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is biggest? A) 1/2 B) 1/3 C) 1/4",
+          "a": "A) 1/2",
+          "mins": 1,
+          "options": [
+            "1/2",
+            "1/3",
+            "1/4"
+          ]
+        },
+        {
+          "q": "Big question: one thing I know about fractions?",
+          "a": "Answers will vary, for example 1/2 = 2/4",
+          "mins": 1
+        }
+      ],
+      "homework": "Find 1/2, 1/4 and 3/4 of 12 at home with pasta or buttons.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: 1/3 of 30 and 3/4 of 40.",
+      "resources": [
+        "White Rose Maths Year 2, Fractions block: end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 50 pieces of pasta and 10 small cups or bowls",
+        "Paper strips, squares and circles to fold (cut from A4)",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 60 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 61,
+      "title": "O'clock and half past",
+      "duration": 30,
+      "bigQuestion": "How do the two hands on a clock work together?",
+      "objectives": [
+        "To understand how to tell the time to o'clock and half past"
+      ],
+      "successCriteria": [
+        "All: name the hour hand and minute hand",
+        "Most: read o'clock times",
+        "Some: read and show half past times"
+      ],
+      "crossCurricular": "Science: the sun rises and sets each day",
+      "smsc": "Spiritual: praying on time",
+      "keywords": [
+        {
+          "term": "hour hand",
+          "def": "the short hand"
+        },
+        {
+          "term": "minute hand",
+          "def": "the long hand"
+        },
+        {
+          "term": "o'clock",
+          "def": "the minute hand points to 12"
+        },
+        {
+          "term": "half past",
+          "def": "the minute hand points to 6"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why does a clock need two hands? What would go wrong with only one?",
+        "a": "One shows the hour, one shows the minutes; with one we could not tell half past."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "An analogue wall clock",
+          "for": "hook"
+        },
+        {
+          "find": "alarm clock analogue",
+          "alt": "An alarm clock",
+          "for": "keywords"
+        }
+      ],
+      "islamicLink": {
+        "text": "Allah tells us that prayer is written for the believers at set times (an-Nisa 4:103). Muslims look at the clock so we pray Fajr, Dhuhr, Asr, Maghrib and Isha on time.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "1/2 of 12?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 30.",
+          "a": "5, 10, 15, 20, 25, 30",
+          "mins": 1
+        },
+        {
+          "q": "How many quarters in a whole?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two hands",
+          "bullets": [
+            "Short hand: hours.",
+            "Long hand: minutes."
+          ],
+          "note": "Show the paper plate clock."
+        },
+        {
+          "heading": "O'clock",
+          "bullets": [
+            "Minute hand on 12.",
+            "Hour hand on the hour."
+          ],
+          "table": {
+            "head": [
+              "Minute hand",
+              "Hour hand",
+              "Time"
+            ],
+            "rows": [
+              [
+                "12",
+                "3",
+                "3 o'clock"
+              ],
+              [
+                "12",
+                "7",
+                "7 o'clock"
+              ]
+            ]
+          },
+          "note": "Show 3 o'clock, 7 o'clock."
+        },
+        {
+          "heading": "Half past",
+          "bullets": [
+            "Minute hand on 6.",
+            "Half way round.",
+            "Hour hand half way to the next hour."
+          ],
+          "note": "Show half past 4."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Minute hand on 6, hour hand between 2 and 3. Time?",
+            "options": [
+              "Half past 2",
+              "Half past 3",
+              "6 o'clock"
+            ],
+            "answer": 0,
+            "why": "Half past the hour it has passed: 2."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show 5 o'clock on your clock.",
+          "a": "Minute hand on 12, hour hand on 5",
+          "mins": 2,
+          "model": "Teacher moves the long hand to 12 and the short hand to 5."
+        },
+        {
+          "q": "Minute hand on 12, hour hand on 9. Time?",
+          "a": "9 o'clock",
+          "mins": 1
+        },
+        {
+          "q": "Show half past 8.",
+          "a": "Minute hand on 6, hour hand between 8 and 9",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Show 11 o'clock and half past 11.",
+          "a": "Minute hand on 12, hour on 11; minute on 6, hour between 11 and 12",
+          "mins": 2,
+          "model": "Teacher shows 11 o'clock first."
+        },
+        {
+          "q": "Extend: Half past 6: where is the hour hand?",
+          "a": "Between 6 and 7",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Maghrib was at 7 o'clock. Isha is 2 hours later. What time is Isha?",
+          "a": "9 o'clock",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Half past means the minute hand is on... A) 6 B) 12 C) 3",
+          "a": "A) 6",
+          "mins": 1,
+          "options": [
+            "6",
+            "12",
+            "3"
+          ]
+        },
+        {
+          "q": "Big question: how do the two hands work together?",
+          "a": "The short hand shows the hour, the long hand shows the minutes",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a paper plate clock. Show a grown-up 4 o'clock and half past 4.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: show half past 12. Where is each hand?",
+      "resources": [
+        "White Rose Maths Year 2, Time block: small step 'O'clock and half past' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands (made at home with a split pin)",
+        "An analogue clock at home",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 61 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 62,
+      "title": "Quarter past and quarter to",
+      "duration": 30,
+      "bigQuestion": "Why do we say 'quarter' when telling the time?",
+      "objectives": [
+        "To understand how to tell the time to quarter past and quarter to"
+      ],
+      "successCriteria": [
+        "All: show quarter past",
+        "Most: show quarter to",
+        "Some: say which hour quarter to is close to"
+      ],
+      "crossCurricular": "PSHE: a daily routine with times",
+      "smsc": "Spiritual: using time well",
+      "keywords": [
+        {
+          "term": "quarter past",
+          "def": "the minute hand points to 3"
+        },
+        {
+          "term": "quarter to",
+          "def": "the minute hand points to 9"
+        },
+        {
+          "term": "quarter turn",
+          "def": "a quarter of the way round"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The minute hand goes a quarter of the way round the clock. What time does it show if it started at 12?",
+        "a": "Quarter past."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "An analogue clock",
+          "for": "hook"
+        },
+        {
+          "find": "clock showing quarter past",
+          "alt": "A clock at quarter past",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Minute hand on 6 means...?",
+          "a": "Half past",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 12?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Show 2 o'clock.",
+          "a": "Minute hand 12, hour hand 2",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Quarter past",
+          "bullets": [
+            "Minute hand on 3.",
+            "A quarter turn past 12."
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 1,
+            "label": "quarter past"
+          },
+          "note": "Show quarter past 5."
+        },
+        {
+          "heading": "Quarter to",
+          "bullets": [
+            "Minute hand on 9.",
+            "A quarter to go to 12."
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 3,
+            "label": "quarter to"
+          },
+          "note": "Show quarter to 6."
+        },
+        {
+          "heading": "Where is the hour hand?",
+          "bullets": [
+            "Quarter past 5: just past 5.",
+            "Quarter to 6: nearly at 6."
+          ],
+          "note": "Watch the short hand move."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Minute hand on 9, hour hand nearly on 4. Time?",
+            "options": [
+              "Quarter to 4",
+              "Quarter past 4",
+              "Quarter to 3"
+            ],
+            "answer": 0,
+            "why": "9 means quarter to; nearly 4, so quarter to 4."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show quarter past 2.",
+          "a": "Minute hand on 3, hour hand just past 2",
+          "mins": 2,
+          "model": "Teacher moves the long hand to 3; the short hand is just past 2."
+        },
+        {
+          "q": "Minute hand on 3, hour hand just past 7. Time?",
+          "a": "Quarter past 7",
+          "mins": 1
+        },
+        {
+          "q": "Show quarter to 10.",
+          "a": "Minute hand on 9, hour hand nearly 10",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Show quarter past 8 and quarter to 8.",
+          "a": "Minute 3, hour past 8; minute 9, hour nearly 8",
+          "mins": 2,
+          "model": "Teacher shows quarter past 8 first."
+        },
+        {
+          "q": "Extend: Order: half past 3, quarter past 3, quarter to 4",
+          "a": "Quarter past 3, half past 3, quarter to 4",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Quarter to 1: which hour is it close to?",
+          "a": "1 o'clock",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Quarter past: the minute hand is on... A) 3 B) 9 C) 6",
+          "a": "A) 3",
+          "mins": 1,
+          "options": [
+            "3",
+            "9",
+            "6"
+          ]
+        },
+        {
+          "q": "Big question: why do we say quarter?",
+          "a": "The minute hand has gone a quarter of the way round, or has a quarter left",
+          "mins": 1
+        }
+      ],
+      "homework": "Show a grown-up quarter past and quarter to the time you eat dinner.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: what time is it 15 minutes after quarter to 3? (3 o'clock)",
+      "resources": [
+        "White Rose Maths Year 2, Time block: small step 'Quarter past and quarter to' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands (made at home with a split pin)",
+        "An analogue clock at home",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 62 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 63,
+      "title": "Days of the week and months of the year",
+      "duration": 30,
+      "bigQuestion": "How do we keep track of days and months?",
+      "objectives": [
+        "To understand the order of the days of the week and the months of the year"
+      ],
+      "successCriteria": [
+        "All: say the 7 days in order",
+        "Most: say the 12 months in order",
+        "Some: work out the day after or before"
+      ],
+      "crossCurricular": "Science: day and night",
+      "smsc": "Spiritual: Jumu'ah is the best day of the week for Muslims",
+      "keywords": [
+        {
+          "term": "week",
+          "def": "7 days"
+        },
+        {
+          "term": "month",
+          "def": "about 4 weeks"
+        },
+        {
+          "term": "year",
+          "def": "12 months"
+        },
+        {
+          "term": "calendar",
+          "def": "shows days and months"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Today is Thursday. What day is it in 2 days? How do you know?",
+        "a": "Saturday: Thursday, Friday, Saturday."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wall calendar",
+          "alt": "A wall calendar",
+          "for": "hook"
+        },
+        {
+          "find": "crescent moon",
+          "alt": "A crescent moon",
+          "for": "teach:3"
+        }
+      ],
+      "islamicLink": {
+        "text": "Allah made the sun a shining light and the moon a light, and measured its stages, so that we may know the number of years and how to count time (Yunus 10:5). The Islamic year also has 12 months (at-Tawbah 9:36).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Quarter past: minute hand on?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "How many days in a week?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Count in 2s to 12.",
+          "a": "2, 4, 6, 8, 10, 12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Days of the week",
+          "bullets": [
+            "Monday, Tuesday, Wednesday, Thursday.",
+            "Friday, Saturday, Sunday."
+          ],
+          "note": "Say them together. Friday is Jumu'ah (الجمعة)."
+        },
+        {
+          "heading": "Months of the year",
+          "bullets": [
+            "January to December: 12 months."
+          ],
+          "table": {
+            "head": [
+              "1 to 4",
+              "5 to 8",
+              "9 to 12"
+            ],
+            "rows": [
+              [
+                "January",
+                "May",
+                "September"
+              ],
+              [
+                "February",
+                "June",
+                "October"
+              ],
+              [
+                "March",
+                "July",
+                "November"
+              ],
+              [
+                "April",
+                "August",
+                "December"
+              ]
+            ]
+          },
+          "note": "Say them together."
+        },
+        {
+          "heading": "The Islamic months",
+          "bullets": [
+            "Also 12 months.",
+            "Ramadan (رمضان) is the 9th month."
+          ],
+          "note": "Months follow the moon."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "What day comes after Friday?",
+            "options": [
+              "Thursday",
+              "Saturday",
+              "Sunday"
+            ],
+            "answer": 1,
+            "why": "Friday then Saturday."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What day is before Wednesday?",
+          "a": "Tuesday",
+          "mins": 1,
+          "model": "Teacher says the days: Monday, Tuesday, Wednesday. Before Wednesday is Tuesday."
+        },
+        {
+          "q": "Which month comes after March?",
+          "a": "April",
+          "mins": 1
+        },
+        {
+          "q": "How many months in a year?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write the days of the week in order.",
+          "a": "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
+          "mins": 2,
+          "model": "Teacher writes Monday and Tuesday."
+        },
+        {
+          "q": "Extend: Which month is 2 months after June?",
+          "a": "August",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Today is Monday. Jumu'ah is Friday. How many days to wait?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is the 1st month? A) January B) December C) March",
+          "a": "A) January",
+          "mins": 1,
+          "options": [
+            "January",
+            "December",
+            "March"
+          ]
+        },
+        {
+          "q": "Big question: how do we keep track of days and months?",
+          "a": "Learn their order and use a calendar",
+          "mins": 1
+        }
+      ],
+      "homework": "Find your birthday month on a calendar. Say the months before and after it.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: how many days in 2 weeks? (14)",
+      "resources": [
+        "White Rose Maths Year 2, Time block: days of the week and months of the year (as in the Year 2 pack) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A family calendar",
+        "Printed days and months cards",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 63 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 64,
+      "title": "Tell the time to 5 minutes",
+      "duration": 30,
+      "bigQuestion": "Why do we count in 5s on a clock?",
+      "objectives": [
+        "To understand how to tell the time to the nearest 5 minutes"
+      ],
+      "successCriteria": [
+        "All: count round the clock in 5s",
+        "Most: read minutes past the hour",
+        "Some: read minutes to the hour"
+      ],
+      "crossCurricular": "Science: timing a plant watering routine",
+      "smsc": "Spiritual: being on time for salah",
+      "keywords": [
+        {
+          "term": "minutes past",
+          "def": "minutes after the hour"
+        },
+        {
+          "term": "minutes to",
+          "def": "minutes before the next hour"
+        },
+        {
+          "term": "count in 5s",
+          "def": "5, 10, 15 round the clock"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The minute hand points to 4. How many minutes past the hour is it?",
+        "a": "20 minutes: count in 5s, 5, 10, 15, 20."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "An analogue clock",
+          "for": "hook"
+        },
+        {
+          "find": "station clock",
+          "alt": "A big station clock",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 5s to 60.",
+          "a": "5, 10, 15 ... 60",
+          "mins": 1
+        },
+        {
+          "q": "Minute hand on 9 means...?",
+          "a": "Quarter to",
+          "mins": 1
+        },
+        {
+          "q": "Show half past 3.",
+          "a": "Minute 6, hour between 3 and 4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "5 minutes a number",
+          "bullets": [
+            "Each number is 5 more minutes.",
+            "1 is 5, 2 is 10, 3 is 15."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 60,
+            "step": 5,
+            "marks": [
+              {
+                "at": 15,
+                "label": "quarter past"
+              },
+              {
+                "at": 30,
+                "label": "half past"
+              },
+              {
+                "at": 45,
+                "label": "quarter to"
+              }
+            ]
+          },
+          "note": "Count round the clock."
+        },
+        {
+          "heading": "Minutes past",
+          "bullets": [
+            "Right side of the clock.",
+            "Minute hand on 4: 20 past."
+          ],
+          "note": "Show 20 past 3."
+        },
+        {
+          "heading": "Minutes to",
+          "bullets": [
+            "Left side of the clock.",
+            "Minute hand on 8: 20 to."
+          ],
+          "note": "Count back from 12 in 5s: 5, 10, 15, 20."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Minute hand on 2. Minutes past?",
+            "options": [
+              "10",
+              "2",
+              "20"
+            ],
+            "answer": 0,
+            "why": "5, 10. 2 is the number, not the minutes."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Minute hand on 5. Minutes past?",
+          "a": "25",
+          "mins": 2,
+          "model": "Teacher counts in 5s: 5, 10, 15, 20, 25 minutes past."
+        },
+        {
+          "q": "Minute hand on 10. Minutes to?",
+          "a": "10 to",
+          "mins": 1
+        },
+        {
+          "q": "Show 5 past 7.",
+          "a": "Minute hand on 1, hour just past 7",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Show 20 past 4 and 25 to 9.",
+          "a": "Minute 4, hour past 4; minute 7, hour nearly 9",
+          "mins": 2,
+          "model": "Teacher shows 20 past 4 first."
+        },
+        {
+          "q": "Extend: Minute hand on 11, hour hand nearly 6. Time?",
+          "a": "5 to 6",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Which is later: 10 past 2 or 10 to 2?",
+          "a": "10 past 2",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Minute hand on 4 means... A) 20 past B) 4 past C) 20 to",
+          "a": "A) 20 past",
+          "mins": 1,
+          "options": [
+            "20 past",
+            "4 past",
+            "20 to"
+          ]
+        },
+        {
+          "q": "Big question: why do we count in 5s on a clock?",
+          "a": "Each number on the clock is 5 minutes more",
+          "mins": 1
+        }
+      ],
+      "homework": "Read the clock at home 3 times today and tell a grown-up the time.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: write the time 25 minutes after 20 past 3 (quarter to 4).",
+      "resources": [
+        "White Rose Maths Year 2, Time block: small step 'Tell the time to 5 minutes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands (made at home with a split pin)",
+        "An analogue clock at home",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 64 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 65,
+      "title": "Minutes in an hour, hours in a day",
+      "duration": 30,
+      "bigQuestion": "How many minutes are in one hour?",
+      "objectives": [
+        "To understand that there are 60 minutes in an hour and 24 hours in a day"
+      ],
+      "successCriteria": [
+        "All: say 60 minutes in an hour",
+        "Most: say 24 hours in a day",
+        "Some: use these facts to solve a problem"
+      ],
+      "crossCurricular": "Science: day and night take 24 hours",
+      "smsc": "Spiritual: every hour is a gift from Allah",
+      "keywords": [
+        {
+          "term": "minute",
+          "def": "a short amount of time"
+        },
+        {
+          "term": "hour",
+          "def": "60 minutes"
+        },
+        {
+          "term": "day",
+          "def": "24 hours"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is an hour longer or shorter than you think? What could you do in 60 minutes?",
+        "a": "For example a school morning lesson block, or a long walk."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "hourglass sand timer",
+          "alt": "A sand timer",
+          "for": "hook"
+        },
+        {
+          "find": "analogue wall clock",
+          "alt": "An analogue clock",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Minute hand on 7 means...?",
+          "a": "25 to",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s to 60.",
+          "a": "5, 10 ... 60",
+          "mins": 1
+        },
+        {
+          "q": "Days in a week?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "60 minutes",
+          "bullets": [
+            "Minute hand goes once round.",
+            "That is 1 hour: 60 minutes."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 60,
+            "step": 5,
+            "marks": [
+              {
+                "at": 30,
+                "label": "30 min"
+              },
+              {
+                "at": 60,
+                "label": "1 hour"
+              }
+            ]
+          },
+          "note": "Count 12 jumps of 5 to 60."
+        },
+        {
+          "heading": "Half and quarter hours",
+          "bullets": [
+            "Half an hour: 30 minutes.",
+            "Quarter of an hour: 15 minutes."
+          ],
+          "note": "Link to half past and quarter past."
+        },
+        {
+          "heading": "24 hours in a day",
+          "bullets": [
+            "Hour hand goes round twice.",
+            "12 + 12 = 24 hours."
+          ],
+          "note": "Morning and afternoon."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many minutes in half an hour?",
+            "options": [
+              "30",
+              "50",
+              "12"
+            ],
+            "answer": 0,
+            "why": "Half of 60 is 30."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many minutes in 1 hour?",
+          "a": "60",
+          "mins": 1,
+          "model": "Teacher: the minute hand goes once round, 12 jumps of 5, 60 minutes."
+        },
+        {
+          "q": "Hours in a day?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "Minutes in a quarter of an hour?",
+          "a": "15",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Minutes in 2 hours?",
+          "a": "120",
+          "mins": 2,
+          "model": "Teacher: 60 + 60 = 120."
+        },
+        {
+          "q": "Extend: Which is longer: 50 minutes or 1 hour?",
+          "a": "1 hour (60 minutes)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: You sleep from 8 o'clock at night to 6 o'clock in the morning. How many hours?",
+          "a": "10 hours",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 hour = ? A) 60 minutes B) 100 minutes C) 24 minutes",
+          "a": "A) 60 minutes",
+          "mins": 1,
+          "options": [
+            "60 minutes",
+            "100 minutes",
+            "24 minutes"
+          ]
+        },
+        {
+          "q": "Big question: how many minutes in one hour?",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "homework": "Time something at home that takes about 15 minutes.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: how many minutes in 3 hours? (180)",
+      "resources": [
+        "White Rose Maths Year 2, Time block: small steps 'Minutes in an hour' and 'Hours in a day' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands (made at home with a split pin)",
+        "Kitchen timer or a phone timer (with an adult)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 65 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 66,
+      "title": "Compare durations",
+      "duration": 30,
+      "bigQuestion": "How do we know which activity takes longer?",
+      "objectives": [
+        "To understand how to compare how long things take"
+      ],
+      "successCriteria": [
+        "All: say which takes longer",
+        "Most: compare minutes and hours",
+        "Some: find how much longer"
+      ],
+      "crossCurricular": "PSHE: planning time for jobs at home",
+      "smsc": "Moral: using time wisely and not wasting it",
+      "keywords": [
+        {
+          "term": "duration",
+          "def": "how long something takes"
+        },
+        {
+          "term": "longer",
+          "def": "takes more time"
+        },
+        {
+          "term": "shorter",
+          "def": "takes less time"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which takes longer: brushing your teeth or eating dinner? How could we check?",
+        "a": "Eating dinner; time both with a clock."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "kitchen timer",
+          "alt": "A kitchen timer",
+          "for": "hook"
+        },
+        {
+          "find": "hourglass sand timer",
+          "alt": "A sand timer",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Minutes in an hour?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "Minutes in half an hour?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "Minute hand on 3 means?",
+          "a": "Quarter past",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Duration",
+          "bullets": [
+            "How long it takes.",
+            "Measure in seconds, minutes, hours."
+          ],
+          "note": "Ask: what takes about a minute?"
+        },
+        {
+          "heading": "Compare",
+          "bullets": [
+            "Same units: compare numbers.",
+            "20 minutes < 35 minutes."
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "How long (minutes, example data)",
+            "labels": [
+              "Wudu",
+              "Walk",
+              "Homework"
+            ],
+            "values": [
+              5,
+              20,
+              15
+            ],
+            "unit": "minutes"
+          },
+          "note": "Use a bar model."
+        },
+        {
+          "heading": "How much longer?",
+          "model": {
+            "problem": "Walk 20 minutes, homework 15 minutes",
+            "steps": [
+              "Walk: 20 minutes; homework: 15 minutes",
+              "20 - 15 = 5"
+            ],
+            "answer": "The walk is 5 minutes longer"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is longer?",
+            "options": [
+              "Half an hour",
+              "20 minutes",
+              "10 minutes"
+            ],
+            "answer": 0,
+            "why": "Half an hour is 30 minutes, more than 20."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which is shorter: 1 hour or 45 minutes?",
+          "a": "45 minutes",
+          "mins": 1,
+          "model": "Teacher: 1 hour is 60 minutes; 45 < 60."
+        },
+        {
+          "q": "Reading 10 min, writing 25 min. Which is longer?",
+          "a": "Writing",
+          "mins": 1
+        },
+        {
+          "q": "How much longer?",
+          "a": "15 minutes",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Order shortest first: 1 hour, 15 minutes, half an hour",
+          "a": "15 minutes, half an hour, 1 hour",
+          "mins": 2,
+          "model": "Teacher: half an hour is 30 minutes."
+        },
+        {
+          "q": "Extend: From the chart, how much longer is homework than wudu?",
+          "a": "10 minutes",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: A cake bakes for 40 minutes. It went in at 3 o'clock. Is it ready at half past 3?",
+          "a": "No: half past 3 is only 30 minutes",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Longer: A) 1 hour B) 50 minutes",
+          "a": "A) 1 hour",
+          "mins": 1,
+          "options": [
+            "1 hour",
+            "50 minutes"
+          ]
+        },
+        {
+          "q": "Big question: how do we know which takes longer?",
+          "a": "Measure both in the same units and compare",
+          "mins": 1
+        }
+      ],
+      "homework": "Time 2 jobs at home (for example making your bed and tidying toys). Which took longer?",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: find the difference between 1 hour and 35 minutes (25 minutes).",
+      "resources": [
+        "White Rose Maths Year 2, Time block: small step 'Compare durations of time' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands (made at home with a split pin)",
+        "Kitchen timer or a phone timer (with an adult)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 66 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 1: Fractions; time",
+      "n": 67,
+      "title": "Time: end-of-block check",
+      "duration": 30,
+      "bigQuestion": "What can I do now with clocks and time?",
+      "objectives": [
+        "To understand how well I can tell the time and use time facts"
+      ],
+      "successCriteria": [
+        "All: read o'clock, half past, quarter past and quarter to",
+        "Most: read time to 5 minutes",
+        "Some: use minutes, hours and days facts"
+      ],
+      "smsc": "Spiritual: shukr, thanking Allah for what we have learned",
+      "keywords": [
+        {
+          "term": "hour hand",
+          "def": "the short hand"
+        },
+        {
+          "term": "minute hand",
+          "def": "the long hand"
+        },
+        {
+          "term": "duration",
+          "def": "how long something takes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Think of the time you wake up. Can you show it on a clock to the nearest 5 minutes?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "An analogue clock",
+          "for": "teach:1"
+        },
+        {
+          "find": "wall calendar",
+          "alt": "A calendar",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Minute hand on 9?",
+          "a": "Quarter to",
+          "mins": 1
+        },
+        {
+          "q": "Hours in a day?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "Day after Sunday?",
+          "a": "Monday",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Reading the clock",
+          "bullets": [
+            "O'clock, half past.",
+            "Quarter past, quarter to.",
+            "To 5 minutes."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 60,
+            "step": 5,
+            "marks": [
+              {
+                "at": 15,
+                "label": "15"
+              },
+              {
+                "at": 30,
+                "label": "30"
+              },
+              {
+                "at": 45,
+                "label": "45"
+              }
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Time facts",
+          "bullets": [
+            "60 minutes in an hour.",
+            "24 hours in a day.",
+            "7 days in a week."
+          ],
+          "note": "Say them together."
+        },
+        {
+          "heading": "Calendars",
+          "bullets": [
+            "12 months in a year.",
+            "Days in order."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Minute hand on 8, hour hand nearly 5. Time?",
+            "options": [
+              "20 to 5",
+              "20 past 8",
+              "40 to 5"
+            ],
+            "answer": 0,
+            "why": "On 8: 20 minutes to the hour; nearly 5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show quarter past 6.",
+          "a": "Minute hand on 3, hour just past 6",
+          "mins": 1,
+          "model": "Teacher moves the long hand to 3."
+        },
+        {
+          "q": "Minute hand on 7: minutes past?",
+          "a": "35 (or 25 to)",
+          "mins": 1
+        },
+        {
+          "q": "Minutes in half an hour?",
+          "a": "30",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: show half past 9; 10 past 2; 5 to 11",
+          "a": "Minute 6; minute 2; minute 11 with the hour hand nearly 11",
+          "mins": 2,
+          "model": "Teacher shows half past 9."
+        },
+        {
+          "q": "Extend: Check: which is longer, 40 minutes or 1 hour? By how much?",
+          "a": "1 hour, by 20 minutes",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Check: what month comes 3 months after November?",
+          "a": "February",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "24 hours make... A) 1 day B) 1 week C) 1 hour",
+          "a": "A) 1 day",
+          "mins": 1,
+          "options": [
+            "1 day",
+            "1 week",
+            "1 hour"
+          ]
+        },
+        {
+          "q": "Big question: one thing I can do now with time?",
+          "a": "Answers will vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Tell a grown-up the time 3 times today to the nearest 5 minutes.",
+      "send": "SEND: use real objects (pasta, cups, paper shapes) first, one step at a time, worked example kept on screen. EAL: picture cards for the key words; say the sentence stem together first. Stretch: what time is 45 minutes after half past 2? (quarter past 3)",
+      "resources": [
+        "White Rose Maths Year 2, Time block: end-of-block check (titles only) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with moving hands (made at home with a split pin)",
+        "Printed end-of-block check (school White Rose account)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 67 guided, independent and homework tasks"
       ]
     }
   ]
