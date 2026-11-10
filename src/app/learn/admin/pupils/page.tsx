@@ -5,9 +5,12 @@ import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminPupilDetail } from "@/components/learn/pupil/AdminPupilDetail";
 import { AdminPupils } from "@/components/learn/pupil/AdminPupils";
+import { PupilDetailsEditor } from "@/components/learn/pupil/PupilDetailsEditor";
 
 function PupilsContent() {
-  const id = useSearchParams().get("id");
+  const params = useSearchParams();
+  const id = params.get("id");
+  if (id && params.get("edit") === "details") return <PupilDetailsEditor id={id} />;
   return id ? <AdminPupilDetail id={id} /> : <AdminPupils />;
 }
 
