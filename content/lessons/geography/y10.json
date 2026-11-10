@@ -3,7 +3,7 @@
   "year": "y10",
   "board": "Pearson Edexcel International GCSE (9-1) Geography (4GE1)",
   "boardShort": "Edexcel IGCSE 4GE1",
-  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data. | Gap-fill against AQA GCSE Geography 8035 specification | Spring 1 2027 (bridge hazards and fragile environments cores, lessons 2, 7, 10, 14 upgraded; rivers 1.1 to 1.3, lessons 28, 29 upgraded and 53 to 56 new): Pearson Edexcel International GCSE Geography 4GE1 specification and Pearson Paper 1 scheme of work; school Geography Curriculum Intent; own exam-style questions. File relabelled: taught and examined as 4GE1 (earlier lessons 1 to 52 were written for AQA 8035) | Spring 2 2027 (4GE1 Topic 2, coastal environments: lessons 24, 25, 26, 49, 50 upgraded and new lessons): TGA Year 10 pack",
+  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data. | Gap-fill against AQA GCSE Geography 8035 specification | Spring 1 2027 (bridge hazards and fragile environments cores, lessons 2, 7, 10, 14 upgraded; rivers 1.1 to 1.3, lessons 28, 29 upgraded and 53 to 56 new): Pearson Edexcel International GCSE Geography 4GE1 specification and Pearson Paper 1 scheme of work; school Geography Curriculum Intent; own exam-style questions. File relabelled: taught and examined as 4GE1 (earlier lessons 1 to 52 were written for AQA 8035) | Spring 2 2027 (4GE1 Topic 2, coastal environments: lessons 24, 25, 26, 49, 50 upgraded and new lessons): TGA Year 10 pack | Summer 1 2027 (4GE1 Paper 1 Section B physical fieldwork enquiry: lessons 43 and 44 upgraded, 63 to 70 new): home infiltration and run-off enquiry with a written guide and risk assessment; example data and own exam-style questions; TGA Year 10 pack",
   "lessons": [
     {
       "unit": "Unit 1: Weather hazards (AQA 3.1.1 The challenge of natural hazards)",
@@ -7584,405 +7584,6 @@
     },
     {
       "unit": "Unit 3: Fieldwork enquiries (AQA 3.3.2)",
-      "n": 43,
-      "title": "Planning a geographical enquiry: the six stages, hypotheses, sampling and risk",
-      "duration": 50,
-      "bigQuestion": "How do geographers plan an investigation that gives reliable answers?",
-      "objectives": [
-        "Describe the six stages of a geographical enquiry",
-        "Write an enquiry question and a testable hypothesis",
-        "Choose and justify a sampling method and assess risk"
-      ],
-      "successCriteria": [
-        "All: name the six stages and write a question",
-        "Most: write a hypothesis and justify a sampling method",
-        "Some: evaluate how sampling and risk planning affect reliability"
-      ],
-      "crossCurricular": "Mathematics: sampling and data handling; Science: working scientifically and risk assessment",
-      "smsc": "Moral: trustworthiness (amanah) in recording data honestly",
-      "keywords": [
-        {
-          "term": "primary data",
-          "def": "information collected first-hand by the investigator in the field"
-        },
-        {
-          "term": "secondary data",
-          "def": "information collected by someone else, such as the census or Environment Agency data"
-        },
-        {
-          "term": "hypothesis",
-          "def": "a testable statement predicting a relationship, such as 'velocity increases downstream'"
-        },
-        {
-          "term": "sampling",
-          "def": "choosing a smaller group of sites or people to represent the whole"
-        },
-        {
-          "term": "reliability",
-          "def": "how far the same results would be found if the enquiry were repeated"
-        },
-        {
-          "term": "anomaly",
-          "def": "a result that does not fit the pattern"
-        }
-      ],
-      "starter": [
-        "Bismillah. Define primary and secondary data.",
-        "Give one advantage of collecting your own data.",
-        "What is a hypothesis?"
-      ],
-      "teach": [
-        {
-          "heading": "What the specification requires",
-          "table": {
-            "head": [
-              "Requirement",
-              "Detail"
-            ],
-            "rows": [
-              [
-                "Number",
-                "Two enquiries"
-              ],
-              [
-                "Environments",
-                "Two contrasting (for example river and urban)"
-              ],
-              [
-                "Geography",
-                "Physical and human; at least one shows interaction"
-              ],
-              [
-                "Visits",
-                "At least two outside-school visits"
-              ],
-              [
-                "Data",
-                "Primary data collected in the field"
-              ],
-              [
-                "Paper",
-                "Examined in Paper 3, Section A"
-              ]
-            ]
-          },
-          "note": "Read this slide carefully with the class. AQA requires two enquiries in two contrasting environments, human and physical, with at least one showing their interaction, on at least two outside-school visits. The school submits a signed fieldwork statement. As an online school the route must be agreed: see the `send` line and clarify with AQA. In this course we use secondary data to teach and practise the method; it does not replace primary collection."
-        },
-        {
-          "heading": "The six enquiry stages",
-          "bullets": [
-            "Every enquiry follows the same cycle.",
-            "Each stage must link back to the question.",
-            "You must be able to justify choices at each stage."
-          ],
-          "cycle": [
-            "Question or hypothesis",
-            "Data collection",
-            "Data presentation",
-            "Data analysis",
-            "Conclusions",
-            "Evaluation"
-          ],
-          "note": "Walk through the cycle with a running example: 'Does a river get wider and faster downstream?'. Emphasise that exam questions ask pupils to explain choices at any stage, so they should be able to say why."
-        },
-        {
-          "heading": "Writing questions and hypotheses",
-          "model": {
-            "problem": "Turn the topic 'rivers' into a focused enquiry question and hypothesis.",
-            "steps": [
-              "Narrow the topic: how does the river change as it flows downstream?",
-              "Write a question: How do channel width and velocity change downstream along the River Dee?",
-              "Write a hypothesis: channel width and velocity increase with distance from the source.",
-              "State the data needed: width, depth and velocity at several sites at measured distances."
-            ],
-            "answer": "A good hypothesis predicts a relationship that can be measured and tested."
-          },
-          "note": "Model turning a broad topic into a testable question, then a hypothesis, then a null statement. Pupils should be able to say what data would test it. Misconception: a hypothesis is a hunch with no evidence; it should be based on geographical theory (the Bradshaw model for rivers, for example)."
-        },
-        {
-          "heading": "Sampling: choosing sites and people",
-          "check": {
-            "q": "A pupil asks every 10th person leaving a shop to complete a questionnaire. What is this sampling method?",
-            "options": [
-              "Random",
-              "Systematic",
-              "Stratified",
-              "Opportunistic"
-            ],
-            "answer": 1,
-            "why": "Choosing every nth person is systematic sampling. Random uses chance such as random numbers; stratified selects in proportion to groups; opportunistic uses whoever is convenient and is more biased."
-          },
-          "note": "Use the table to ask: which method is best for a questionnaire of shoppers? (Systematic or stratified.) For river sites? (Systematic at regular distance.) Pupils must justify with reference to bias, cost and time. Check on whiteboards."
-        },
-        {
-          "heading": "Sampling methods compared",
-          "compare": {
-            "left": {
-              "title": "Random / systematic",
-              "points": [
-                "Random: use random numbers; avoids bias",
-                "Systematic: every nth site or person; quick, even coverage",
-                "May miss important groups or features",
-                "Needs a clear list or route"
-              ]
-            },
-            "right": {
-              "title": "Stratified / opportunistic",
-              "points": [
-                "Stratified: match sample to groups in proportion",
-                "Opportunistic: ask whoever is available; easy but biased",
-                "Stratified needs good background data",
-                "Opportunistic is least reliable"
-              ]
-            },
-            "label": "sampling"
-          },
-          "note": "Ask which is the least biased and which is easiest. Link to reliability: bigger samples are more reliable, but cost time. Use real examples from planned enquiries."
-        },
-        {
-          "heading": "Assessing risk",
-          "table": {
-            "head": [
-              "Hazard",
-              "Risk",
-              "Control"
-            ],
-            "rows": [
-              [
-                "Fast or deep river",
-                "Slipping or drowning",
-                "Wellies, pairs, avoid after heavy rain, adult supervision"
-              ],
-              [
-                "Busy road (urban)",
-                "Traffic accident",
-                "Use crossings; never collect data in the road"
-              ],
-              [
-                "Weather",
-                "Cold or heat",
-                "Layers, hats, sun cream, water bottle"
-              ],
-              [
-                "Strangers (questionnaires)",
-                "Personal safety",
-                "Work in groups in public places; parent nearby"
-              ]
-            ]
-          },
-          "note": "Teach risk assessment as: hazard, risk, who is affected, control. Online route: a home or local enquiry needs a parent or tutor, a plan and check-ins. Ask: what is the hazard in a river? (Deep fast water, slipping, weather.) Control: wear life jackets, work in pairs, avoid high river levels."
-        }
-      ],
-      "practice": [
-        "Write a question and hypothesis for an enquiry about house price and distance from the city centre. (2 marks)",
-        "Explain one risk of collecting river data and one way to reduce it. (2 marks)"
-      ],
-      "independent": [
-        "Core: Describe the six stages of a geographical enquiry using an example. (4 marks)",
-        "Extend: Explain why a systematic sample may be better than opportunistic sampling for a questionnaire. (3 marks)",
-        "Stretch: Suggest and justify an enquiry that shows the interaction of physical and human geography. (4 marks)"
-      ],
-      "exit": [
-        "List the six enquiry stages in order.",
-        "State one advantage of random sampling."
-      ],
-      "homework": "Plan an enquiry about one local park or river: write a question, hypothesis, sampling method and risk table.",
-      "send": "SEND: step-by-step enquiry checklist. EAL: keyword cards. FLAG FOR TEACHER: AQA requires two fieldwork enquiries (one physical, one human, in two contrasting environments, with primary data collected on at least two outside-school occasions) and a signed centre fieldwork statement; the spec pack states secondary data alone does not meet this. An online cohort might meet it through supervised local fieldwork with a parent or tutor using a standard data pack, a partner centre or a residential day; the school must confirm this with AQA before relying on it. This lesson uses secondary data to teach the method only.",
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
-    },
-    {
-      "unit": "Unit 3: Fieldwork enquiries (AQA 3.3.2)",
-      "n": 44,
-      "title": "A physical enquiry using secondary data: how does a river change downstream?",
-      "duration": 50,
-      "bigQuestion": "Does the evidence support the hypothesis that rivers become wider, deeper and faster downstream?",
-      "objectives": [
-        "Present secondary river data using suitable graphs",
-        "Analyse patterns, anomalies and use percentage change",
-        "Reach a conclusion linked to the hypothesis"
-      ],
-      "successCriteria": [
-        "All: plot data on a graph",
-        "Most: describe and explain patterns with figures",
-        "Some: calculate percentage change and write an evaluated conclusion"
-      ],
-      "crossCurricular": "Mathematics: scatter graphs, line of best fit, percentage change",
-      "smsc": "Moral: honest reporting of results, including results that do not fit (sidq)",
-      "keywords": [
-        {
-          "term": "channel width",
-          "def": "distance across the river from bank to bank"
-        },
-        {
-          "term": "velocity",
-          "def": "speed of water flow, measured in metres per second"
-        },
-        {
-          "term": "scatter graph",
-          "def": "a graph plotting two variables to show a relationship"
-        },
-        {
-          "term": "line of best fit",
-          "def": "a line drawn through points to show the overall trend"
-        },
-        {
-          "term": "secondary data",
-          "def": "data collected by others, for example by the Environment Agency"
-        }
-      ],
-      "starter": [
-        "Bismillah. State the six enquiry stages.",
-        "Write a hypothesis about river width.",
-        "Define secondary data."
-      ],
-      "teach": [
-        {
-          "heading": "Where secondary data comes from",
-          "bullets": [
-            "Environment Agency river levels and flow data.",
-            "National River Flow Archive (NRFA).",
-            "Published fieldwork datasets and OS maps."
-          ],
-          "table": {
-            "head": [
-              "Site",
-              "Distance from source (km)",
-              "Width (m)",
-              "Depth (m)",
-              "Velocity (m/s)"
-            ],
-            "rows": [
-              [
-                "1",
-                "1",
-                "1.2",
-                "0.10",
-                "0.15"
-              ],
-              [
-                "2",
-                "3",
-                "2.5",
-                "0.18",
-                "0.22"
-              ],
-              [
-                "3",
-                "5",
-                "4.1",
-                "0.27",
-                "0.31"
-              ],
-              [
-                "4",
-                "7",
-                "6.0",
-                "0.35",
-                "0.40"
-              ],
-              [
-                "5",
-                "9",
-                "8.4",
-                "0.46",
-                "0.52"
-              ]
-            ]
-          },
-          "note": "Tell pupils that teaching data below is illustrative data constructed for practice, not measured on a real river. Real datasets are available free from the Environment Agency and NRFA (teacher should select a river with several gauging stations, for example the River Dee in Wales). Primary data will still be needed for AQA."
-        },
-        {
-          "heading": "Presenting: choose the right graph",
-          "model": {
-            "problem": "Show the relationship between distance from source and channel width.",
-            "steps": [
-              "Choose a scatter graph: both variables are continuous.",
-              "Put distance (independent) on the x-axis and width on the y-axis, with units.",
-              "Plot the five points: (1, 1.2), (3, 2.5), (5, 4.1), (7, 6.0), (9, 8.4).",
-              "Draw a line of best fit through the trend, not joining each point."
-            ],
-            "answer": "A scatter graph with a rising line of best fit shows a positive relationship."
-          },
-          "note": "Ask pupils why a scatter graph with line of best fit suits two continuous variables. Show how to scale axes, label with units and plot width against distance. Misconception: joining dots instead of drawing a best-fit line."
-        },
-        {
-          "heading": "Analysing: describe, then quantify",
-          "check": {
-            "q": "Width rises from 1.2 m to 8.4 m. What is the percentage increase?",
-            "options": [
-              "86%",
-              "600%",
-              "700%",
-              "7.2%"
-            ],
-            "answer": 1,
-            "why": "(8.4 - 1.2) / 1.2 x 100 = 600%. 86% divides by the new value; 700% uses the ratio 7 instead of the increase; 7.2 is the raw difference."
-          },
-          "note": "Percentage change = (new - old) / old x 100. Width: (8.4 - 1.2) / 1.2 = 6, so 600%. Velocity: (0.52 - 0.15) / 0.15 = 2.47, so about 247%. Ask: why does velocity increase when friction might be expected to slow the water? (The channel becomes more efficient: larger hydraulic radius and less friction relative to volume.) Common error: dividing by the new value."
-        },
-        {
-          "heading": "Explaining the pattern",
-          "bullets": [
-            "More tributaries add water, so discharge increases downstream.",
-            "The channel becomes larger and smoother, so friction falls.",
-            "Erosion widens and deepens the channel downstream."
-          ],
-          "cycle": [
-            "More tributaries join",
-            "Discharge increases",
-            "Channel enlarges",
-            "Friction relative to flow falls",
-            "Velocity rises"
-          ],
-          "note": "Link to the Bradshaw model: width, depth, velocity and discharge rise; load size and gradient fall. Ask pupils which results would be anomalies. A narrow, slow section near a bend or weir, or after a tributary, can break the pattern. Anomalies should be explained, not ignored."
-        },
-        {
-          "heading": "Conclusion and evaluation",
-          "compare": {
-            "left": {
-              "title": "Strengths of this approach",
-              "points": [
-                "Large, accurate datasets from official sources",
-                "Safe and low cost",
-                "Allows long-term comparisons",
-                "Can be repeated for any river"
-              ]
-            },
-            "right": {
-              "title": "Limitations",
-              "points": [
-                "Not collected for your question",
-                "Unknown methods and errors",
-                "Fewer sites than you may need",
-                "No direct experience of the site"
-              ]
-            },
-            "label": "secondary data"
-          },
-          "note": "Teach the paragraph frame: 'The data supports the hypothesis because ... (figures). The relationship is ... (strong). However ... (limits).' Limits of secondary data: collected for other purposes, different methods or dates, cannot check accuracy, only a few sites. Secondary data also gives wider coverage and saves time."
-        }
-      ],
-      "practice": [
-        "Plot the five points from the table on a scatter graph and draw a line of best fit.",
-        "Calculate the percentage increase in depth from site 1 to site 5. (2 marks)"
-      ],
-      "independent": [
-        "Core: Describe the pattern shown by the river data. (3 marks)",
-        "Extend: Explain why velocity increases downstream. (4 marks)",
-        "Stretch: Write a conclusion and evaluation for the hypothesis 'width, depth and velocity increase downstream'. (6 marks)"
-      ],
-      "exit": [
-        "Give the formula for percentage change.",
-        "State one limitation of secondary data."
-      ],
-      "homework": "Find river data from the NRFA or Environment Agency for two gauging stations and describe the difference in discharge.",
-      "send": "SEND: step-by-step enquiry checklist. EAL: keyword cards. FLAG FOR TEACHER: AQA requires two fieldwork enquiries (one physical, one human, in two contrasting environments, with primary data collected on at least two outside-school occasions) and a signed centre fieldwork statement; the spec pack states secondary data alone does not meet this. An online cohort might meet it through supervised local fieldwork with a parent or tutor using a standard data pack, a partner centre or a residential day; the school must confirm this with AQA before relying on it. This lesson uses secondary data to teach the method only.",
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
-    },
-    {
-      "unit": "Unit 3: Fieldwork enquiries (AQA 3.3.2)",
       "n": 45,
       "title": "A human enquiry and evaluating fieldwork: quality of life along a transect",
       "duration": 50,
@@ -11634,6 +11235,2402 @@
           "find": "exam hall desks",
           "alt": "An exam room",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 43,
+      "title": "Designing a physical enquiry: question, hypotheses and site",
+      "bigQuestion": "Does the ground around your home soak up rain, or send it rushing towards the river?",
+      "objectives": [
+        "To understand how to design a physical geography enquiry for Paper 1 Section B"
+      ],
+      "successCriteria": [
+        "All: state the stages of the enquiry process",
+        "Most: write a focused question and hypotheses",
+        "Some: justify a safe home or local site"
+      ],
+      "crossCurricular": "Science: hypotheses, variables and fair tests",
+      "smsc": "Social: understanding local flood risk for our community",
+      "keywords": [
+        {
+          "term": "enquiry",
+          "def": "an investigation that answers a geographical question"
+        },
+        {
+          "term": "hypothesis",
+          "def": "a testable statement predicting a result"
+        },
+        {
+          "term": "infiltration",
+          "def": "water soaking into the ground"
+        },
+        {
+          "term": "surface run-off",
+          "def": "water flowing over the ground surface"
+        },
+        {
+          "term": "primary data",
+          "def": "data you collect yourself"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "After heavy rain, where does the water from your street go, and how quickly?"
+      },
+      "starter": [
+        {
+          "q": "Longshore drift moves sediment:",
+          "a": "Along the coast",
+          "mins": 1,
+          "options": [
+            "Along the coast",
+            "Out to sea only"
+          ]
+        },
+        {
+          "q": "A storm hydrograph's lag time is the gap between:",
+          "a": "Peak rainfall and peak discharge",
+          "mins": 1,
+          "options": [
+            "Peak rainfall and peak discharge",
+            "Source and mouth"
+          ]
+        },
+        {
+          "q": "Give one factor that increases surface run-off.",
+          "a": "Impermeable surfaces, saturated soil, steep slopes, heavy rain",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What Section B asks",
+          "bullets": [
+            "One physical enquiry: rivers, coasts or hazards",
+            "Quantitative and qualitative primary data",
+            "At least two secondary sources"
+          ],
+          "note": "Paper 1 Section B is worth 20 marks: questions on your own enquiry and on unfamiliar data. Our enquiry: river environments (1.1, drainage basin processes)."
+        },
+        {
+          "heading": "The enquiry process",
+          "bullets": [
+            "Question and hypotheses",
+            "Methods and risk",
+            "Collect, present, analyse",
+            "Conclude and evaluate"
+          ],
+          "note": "We follow these stages for five weeks.",
+          "cycle": [
+            "question and hypotheses",
+            "plan methods and risk",
+            "collect data",
+            "present and analyse",
+            "conclude",
+            "evaluate"
+          ]
+        },
+        {
+          "heading": "Our question",
+          "bullets": [
+            "How does surface type affect infiltration and run-off around my home?",
+            "Links to flood risk in the drainage basin",
+            "Safe to do at home or nearby"
+          ],
+          "note": "Site: own garden, yard or a public green space with an adult. Bank-side observation of a local river only from a safe public viewpoint, never entering water."
+        },
+        {
+          "heading": "Writing hypotheses",
+          "bullets": [
+            "Testable",
+            "Clear variables",
+            "Linked to theory"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Write two hypotheses",
+            "steps": [
+              "Theory: permeable surfaces let water infiltrate",
+              "H1: infiltration is fastest on loose soil and slowest on compacted ground",
+              "H2: impermeable surfaces produce the most surface run-off",
+              "Each can be tested with timings and observation"
+            ],
+            "answer": "Two testable hypotheses linked to drainage basin theory"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which is a testable hypothesis?",
+            "options": [
+              "Rivers are interesting",
+              "Infiltration is slower on compacted ground than on grass",
+              "Floods are bad"
+            ],
+            "answer": 1,
+            "why": "A hypothesis predicts a measurable result; the others are opinions."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why must a fieldwork question be focused?",
+          "a": "So it can be answered with data you can actually collect",
+          "mins": 1,
+          "model": "A vague question cannot be measured.\nA focused one names the place, the variable and the comparison.\nSo data can answer it."
+        },
+        {
+          "q": "Name the two types of primary data Section B requires.",
+          "a": "Quantitative and qualitative",
+          "mins": 2
+        },
+        {
+          "q": "Why is our enquiry a river environment study?",
+          "a": "Infiltration and run-off are drainage basin processes that affect river flow and flooding",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the portal response box write your enquiry plan: question, two hypotheses, your site (with a sketch map) and why it is safe and suitable.",
+          "a": "A focused question, two testable hypotheses linked to theory, a justified site",
+          "mins": 15,
+          "model": "Question: How does surface type affect infiltration and run-off at my home? H1: Infiltration will be slowest on compacted ground. Site: my back garden and the path beside it, with an adult; suitable because it has four surface types close together."
+        },
+        {
+          "q": "Extend: Explain how your enquiry links to flood risk in a drainage basin.",
+          "a": "Less infiltration means more, faster run-off, shorter lag time and higher flood peaks",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Suggest a null hypothesis for H1.",
+          "a": "There is no difference in infiltration time between surface types",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Section B of Paper 1 is worth:",
+          "a": "20 marks",
+          "mins": 1,
+          "options": [
+            "20 marks",
+            "70 marks"
+          ]
+        },
+        {
+          "q": "Big question: soak up or rush off?",
+          "a": "It depends on surface type; our enquiry will measure it",
+          "mins": 1
+        }
+      ],
+      "homework": "Choose four surface types at your site (for example lawn, flower bed, gravel, compacted path) and photograph them (no people).",
+      "send": "SEND: enquiry plan frame. EAL: glossary. Stretch: research the Bradshaw model for a second, river-channel enquiry using secondary data.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "Enquiry plan frame (portal printable)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "water infiltration soil test",
+          "alt": "Testing how water soaks into soil",
+          "for": "teach:3"
+        },
+        {
+          "find": "surface runoff after rain street",
+          "alt": "Surface run-off on a street",
+          "for": "hook"
+        },
+        {
+          "find": "drainage basin diagram",
+          "alt": "A drainage basin diagram",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 63,
+      "title": "Risk assessment, sampling and the fieldwork guide",
+      "bigQuestion": "How can a fieldwork day at home go wrong, and how do we stop that happening?",
+      "objectives": [
+        "To understand how geographers plan safe, representative data collection"
+      ],
+      "successCriteria": [
+        "All: complete a risk assessment",
+        "Most: compare random, systematic and stratified sampling",
+        "Some: choose and justify a sampling strategy"
+      ],
+      "crossCurricular": "Maths: sampling and representative data",
+      "smsc": "Moral: responsibility for our own and others' safety",
+      "keywords": [
+        {
+          "term": "risk assessment",
+          "def": "a plan listing hazards, risk and how to reduce it"
+        },
+        {
+          "term": "sampling",
+          "def": "choosing which places or times to measure"
+        },
+        {
+          "term": "random sampling",
+          "def": "every point has an equal chance of being chosen"
+        },
+        {
+          "term": "systematic sampling",
+          "def": "measuring at regular intervals"
+        },
+        {
+          "term": "stratified sampling",
+          "def": "sampling each group in proportion to its size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you only tested one spot of lawn, could you say anything about the whole garden?"
+      },
+      "starter": [
+        {
+          "q": "A hypothesis must be:",
+          "a": "Testable",
+          "mins": 1,
+          "options": [
+            "Testable",
+            "An opinion"
+          ]
+        },
+        {
+          "q": "Infiltration means water:",
+          "a": "Soaking into the ground",
+          "mins": 1,
+          "options": [
+            "Soaking into the ground",
+            "Evaporating"
+          ]
+        },
+        {
+          "q": "What is our enquiry question?",
+          "a": "How does surface type affect infiltration and run-off around my home?",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Risk assessment",
+          "bullets": [
+            "Hazard: what could cause harm?",
+            "Risk: how likely and how serious?",
+            "Control: how to reduce it"
+          ],
+          "note": "Fieldwork guide: an adult present; no roads; tin edges taped; wash hands after soil; never enter a river.",
+          "table": {
+            "head": [
+              "Hazard",
+              "Risk",
+              "Control"
+            ],
+            "rows": [
+              [
+                "sharp tin edges",
+                "cuts",
+                "adult prepares tin; tape edges; gloves"
+              ],
+              [
+                "slipping on wet ground",
+                "falls",
+                "sturdy shoes; avoid slopes"
+              ],
+              [
+                "soil and germs",
+                "illness",
+                "wash hands; cover cuts"
+              ],
+              [
+                "river bank",
+                "drowning",
+                "view only from a safe public point with an adult"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sampling methods",
+          "bullets": [
+            "Random: number generator picks points",
+            "Systematic: every 2 m along a line",
+            "Stratified: in proportion to each surface"
+          ],
+          "note": "Sampling makes results representative without measuring everywhere."
+        },
+        {
+          "heading": "Choosing a strategy",
+          "bullets": [
+            "Stratified by surface type",
+            "Three trials on each surface",
+            "Systematic points along each surface"
+          ],
+          "note": "Model a justification.",
+          "model": {
+            "problem": "Justify our sampling",
+            "steps": [
+              "Stratified: we need each surface type",
+              "Systematic within each: every 1 m along it",
+              "Three trials each: reduces chance results",
+              "So results are fair and comparable"
+            ],
+            "answer": "A justified stratified-systematic strategy"
+          }
+        },
+        {
+          "heading": "Sample size",
+          "bullets": [
+            "More samples, more reliable",
+            "Time and safety limit it",
+            "Record every trial, even odd ones"
+          ],
+          "note": "Honest recording matters."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Measuring every 2 metres along a line is:",
+            "options": [
+              "Random",
+              "Systematic",
+              "Stratified"
+            ],
+            "answer": 1,
+            "why": "Regular intervals make it systematic."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why is random sampling useful?",
+          "a": "It avoids bias in choosing sites",
+          "mins": 1,
+          "model": "If I choose sites myself, I might pick easy ones.\nRandom choice gives every point an equal chance.\nSo it reduces bias."
+        },
+        {
+          "q": "Give one disadvantage of systematic sampling.",
+          "a": "It may miss variation between the intervals or follow a hidden pattern",
+          "mins": 2
+        },
+        {
+          "q": "Name one hazard at our site and its control.",
+          "a": "For example: sharp tin edges, controlled by taped edges and gloves",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete your own risk assessment (four hazards) and a sampling plan (method, number of sites, trials) in the portal response box, with reasons.",
+          "a": "Four relevant hazards with sensible controls; a justified sampling plan",
+          "mins": 15,
+          "model": "Teacher completes the first row: sharp tin edges, cuts, adult prepares tin and tapes edges."
+        },
+        {
+          "q": "Extend: (4 marks, own exam-style) Explain one advantage and one disadvantage of stratified sampling for your enquiry.",
+          "a": "Advantage: every surface type represented; disadvantage: needs to know each surface's area and takes longer",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: How could you reduce bias when choosing your river viewpoint photographs?",
+          "a": "Take photos at set points or times, not just dramatic views",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A risk assessment lists hazards and:",
+          "a": "Controls",
+          "mins": 1,
+          "options": [
+            "Controls",
+            "Results"
+          ]
+        },
+        {
+          "q": "Big question: how could it go wrong and how do we stop it?",
+          "a": "Cuts, slips, germs, water: controlled by adults, taped tins, hand washing, staying out of rivers",
+          "mins": 1
+        }
+      ],
+      "homework": "Prepare your equipment with an adult: tin with both ends removed and edges taped, measuring jug, timer, ruler, notebook.",
+      "send": "SEND: risk assessment table partly completed. EAL: glossary. Stretch: design a random sampling grid for your lawn.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "TGA home fieldwork guide: infiltration and run-off enquiry, with risk assessment (portal printable)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tin can infiltrometer",
+          "alt": "A tin ring used to measure infiltration",
+          "for": "teach:3"
+        },
+        {
+          "find": "quadrat sampling grid",
+          "alt": "A sampling grid",
+          "for": "teach:2"
+        },
+        {
+          "find": "measuring jug water",
+          "alt": "A measuring jug",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 64,
+      "title": "Collecting primary data: quantitative and qualitative",
+      "bigQuestion": "Can a stopwatch and a photograph tell you different things about the same patch of ground?",
+      "objectives": [
+        "To understand how to collect accurate quantitative and qualitative primary data"
+      ],
+      "successCriteria": [
+        "All: carry out an infiltration test accurately",
+        "Most: record qualitative observations and a field sketch",
+        "Some: explain why both data types are needed"
+      ],
+      "crossCurricular": "Science: accurate measurement and repeat readings",
+      "smsc": "Moral: honest recording of every result",
+      "keywords": [
+        {
+          "term": "quantitative data",
+          "def": "data as numbers, such as times and volumes"
+        },
+        {
+          "term": "qualitative data",
+          "def": "descriptions, photos and sketches"
+        },
+        {
+          "term": "field sketch",
+          "def": "a labelled drawing made at the site"
+        },
+        {
+          "term": "infiltration rate",
+          "def": "how fast water soaks into the ground"
+        },
+        {
+          "term": "accuracy",
+          "def": "how close a measurement is to the true value"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can a stopwatch and a photograph tell you different things about the same patch of ground?"
+      },
+      "islamicLink": {
+        "text": "Allah commands believers to stand firm for justice as witnesses for Him, even against themselves (An-Nisa 4:135). Recording data honestly, including results that do not fit, is part of that integrity.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Stratified sampling samples:",
+          "a": "Each group in proportion",
+          "mins": 1,
+          "options": [
+            "Each group in proportion",
+            "Only random points"
+          ]
+        },
+        {
+          "q": "Systematic sampling uses:",
+          "a": "Regular intervals",
+          "mins": 1,
+          "options": [
+            "Regular intervals",
+            "Random numbers"
+          ]
+        },
+        {
+          "q": "Name one control in our risk assessment.",
+          "a": "Taped tin edges, adult present, hand washing, no river entry",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Infiltration test method",
+          "bullets": [
+            "Push the tin 3 cm into the ground",
+            "Pour in 500 ml of water",
+            "Time until it has soaked away",
+            "Repeat three times per surface"
+          ],
+          "note": "Fieldwork guide, section 2. On hard surfaces that do not absorb, record 'no infiltration' and observe run-off instead.",
+          "model": {
+            "problem": "One infiltration trial",
+            "steps": [
+              "Push the tin in evenly to the 3 cm mark",
+              "Pour 500 ml in steadily",
+              "Start the timer as you finish pouring",
+              "Stop when no water remains on the surface; record the time"
+            ],
+            "answer": "A time in seconds for one trial"
+          }
+        },
+        {
+          "heading": "Run-off observation",
+          "bullets": [
+            "Pour 500 ml on a hard surface",
+            "Measure how far water flows",
+            "Note the direction and any drain"
+          ],
+          "note": "Qualitative and quantitative together."
+        },
+        {
+          "heading": "Qualitative data",
+          "bullets": [
+            "Photographs of each surface",
+            "Field sketch with labels",
+            "Notes: soil feel, plants, compaction"
+          ],
+          "note": "Field sketch: frame, main lines, labels, annotations, title, direction and date.",
+          "compare": {
+            "left": {
+              "title": "Quantitative",
+              "points": [
+                "infiltration times",
+                "run-off distance",
+                "rainfall in mm"
+              ]
+            },
+            "right": {
+              "title": "Qualitative",
+              "points": [
+                "photos",
+                "field sketch",
+                "surface descriptions"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Accuracy",
+          "bullets": [
+            "Same volume each time",
+            "Same depth for the tin",
+            "Start and stop timer the same way"
+          ],
+          "note": "Accuracy and consistency make results comparable."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "A field sketch is:",
+            "options": [
+              "Quantitative",
+              "Qualitative",
+              "Secondary"
+            ],
+            "answer": 1,
+            "why": "A labelled drawing describes the site: qualitative primary data."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why do we repeat each test three times?",
+          "a": "To spot anomalies and calculate a reliable mean",
+          "mins": 1,
+          "model": "One result could be a fluke.\nThree results show if one is odd.\nThe mean of three is more reliable."
+        },
+        {
+          "q": "Give one qualitative method for our enquiry.",
+          "a": "Photos, field sketch, surface notes",
+          "mins": 2
+        },
+        {
+          "q": "What do you record on a surface that does not absorb water?",
+          "a": "No infiltration; observe and measure run-off",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete your fieldwork (or use the class example data sheet if you cannot): three infiltration trials on four surfaces, one run-off observation, two photos and a field sketch. Record in the data table.",
+          "a": "A complete data table with 12 timings, a run-off measurement, photos and a labelled field sketch",
+          "mins": 15,
+          "model": "Teacher demonstrates one trial live on camera on a garden patch and records it."
+        },
+        {
+          "q": "Extend: (3 marks, own exam-style) Explain why you used qualitative data as well as quantitative data.",
+          "a": "Qualitative explains the numbers, e.g. compaction or plant roots; gives context; supports conclusions",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Suggest one improvement to the accuracy of the infiltration test.",
+          "a": "Mark the 3 cm depth on the tin; use a measuring jug with ml marks; start timing exactly as pouring ends",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Infiltration times are:",
+          "a": "Quantitative data",
+          "mins": 1,
+          "options": [
+            "Quantitative data",
+            "Qualitative data"
+          ]
+        },
+        {
+          "q": "Big question: stopwatch or photograph?",
+          "a": "Both: the stopwatch measures how fast; the photo shows why",
+          "mins": 1
+        }
+      ],
+      "homework": "Finish all trials with an adult and upload your data table, photos and field sketch to the portal.",
+      "send": "SEND: data table pre-printed with headings. EAL: glossary. Stretch: add a homemade rain gauge reading for one week.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "TGA home fieldwork guide: infiltration and run-off enquiry, with risk assessment (portal printable)",
+        "Fieldwork data table and class example data sheet (portal printable; example data labelled)",
+        "Equipment: open-ended tin (edges taped), 500 ml measuring jug, timer, ruler, phone camera, notebook (adult supervision)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "field sketch geography example",
+          "alt": "A labelled field sketch",
+          "for": "teach:3"
+        },
+        {
+          "find": "compacted soil path",
+          "alt": "A compacted path",
+          "for": "hook"
+        },
+        {
+          "find": "lawn grass close up",
+          "alt": "A lawn surface",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 65,
+      "title": "Secondary data: two sources for our enquiry",
+      "bigQuestion": "What can official data tell you that your own garden cannot?",
+      "objectives": [
+        "To understand how to choose and use at least two secondary sources to support a physical enquiry"
+      ],
+      "successCriteria": [
+        "All: name and access two secondary sources",
+        "Most: describe what each shows",
+        "Some: assess their reliability"
+      ],
+      "crossCurricular": "Computing: finding and judging online data",
+      "smsc": "Social: public information that protects communities",
+      "keywords": [
+        {
+          "term": "secondary data",
+          "def": "data collected by someone else"
+        },
+        {
+          "term": "flood risk map",
+          "def": "a map showing how likely flooding is"
+        },
+        {
+          "term": "river level data",
+          "def": "readings from gauges showing river height over time"
+        },
+        {
+          "term": "reliability",
+          "def": "how far data can be trusted"
+        },
+        {
+          "term": "source",
+          "def": "where information comes from"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What can official data tell you that your own garden cannot?"
+      },
+      "starter": [
+        {
+          "q": "A field sketch is:",
+          "a": "Qualitative",
+          "mins": 1,
+          "options": [
+            "Qualitative",
+            "Quantitative"
+          ]
+        },
+        {
+          "q": "We repeat trials to:",
+          "a": "Improve reliability",
+          "mins": 1,
+          "options": [
+            "Improve reliability",
+            "Save time"
+          ]
+        },
+        {
+          "q": "Why use both data types?",
+          "a": "Numbers measure; descriptions explain",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why secondary data?",
+          "bullets": [
+            "Wider area than we can measure",
+            "Longer time period",
+            "Puts our results in context"
+          ],
+          "note": "4GE1 requires at least two secondary sources for the environment."
+        },
+        {
+          "heading": "Our two sources",
+          "bullets": [
+            "Environment Agency long-term flood risk map",
+            "River level gauge data (GOV.UK 'Check river levels')",
+            "Met Office rainfall records"
+          ],
+          "note": "Pupils outside England use the equivalent national agency (for example SEPA or Natural Resources Wales).",
+          "table": {
+            "head": [
+              "Source",
+              "Shows",
+              "Use in our enquiry"
+            ],
+            "rows": [
+              [
+                "flood risk map",
+                "surface water and river flood risk",
+                "is our area at risk from run-off?"
+              ],
+              [
+                "river level gauge",
+                "river height over days",
+                "how rivers respond to rain"
+              ],
+              [
+                "Met Office rainfall",
+                "rainfall amounts",
+                "rain before our fieldwork"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Using a source",
+          "bullets": [
+            "What does it show?",
+            "Who made it and how?",
+            "How does it support or challenge our results?"
+          ],
+          "note": "Model with the flood risk map.",
+          "model": {
+            "problem": "Use the flood risk map",
+            "steps": [
+              "Find our postcode",
+              "Read the surface water risk: for example, medium",
+              "Link: lots of hard surfaces nearby",
+              "Supports H2: impermeable surfaces add run-off"
+            ],
+            "answer": "A source used to support a hypothesis"
+          }
+        },
+        {
+          "heading": "Reliability",
+          "bullets": [
+            "Official agencies: careful methods",
+            "But maps are models, not certain",
+            "Gauge data can have gaps"
+          ],
+          "note": "Evaluate every source."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Environment Agency flood maps are:",
+            "options": [
+              "Primary data",
+              "Secondary data",
+              "Qualitative fieldwork"
+            ],
+            "answer": 1,
+            "why": "Someone else collected them, so they are secondary data."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is secondary data?",
+          "a": "Data collected by someone else",
+          "mins": 1,
+          "model": "I did not measure it myself.\nAn agency or a book did.\nSo it is secondary."
+        },
+        {
+          "q": "Give one limitation of a flood risk map.",
+          "a": "It shows likelihood, not certainty; may be out of date; broad scale",
+          "mins": 2
+        },
+        {
+          "q": "How could rainfall records help explain your infiltration results?",
+          "a": "Wet soil from recent rain slows infiltration",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find your area on the flood risk map and one river level gauge near you (or use the example sheet). In the portal response box, describe what each shows and link it to your hypotheses.",
+          "a": "Two sources described accurately and linked to H1 or H2",
+          "mins": 15,
+          "model": "Teacher models the flood risk map for the school's example postcode."
+        },
+        {
+          "q": "Extend: (4 marks, own exam-style) Assess the reliability of one secondary source you used.",
+          "a": "Strengths (official, consistent methods) and limits (model, scale, gaps), with a judgement",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: How could secondary data show whether your fieldwork day was typical?",
+          "a": "Compare rainfall that week with long-term averages",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "4GE1 requires at least:",
+          "a": "Two secondary sources",
+          "mins": 1,
+          "options": [
+            "Two secondary sources",
+            "One secondary source"
+          ]
+        },
+        {
+          "q": "Big question: what can official data tell you?",
+          "a": "Wider and longer patterns, such as flood risk and river response, that give context",
+          "mins": 1
+        }
+      ],
+      "homework": "Save screenshots of your two secondary sources (maps and graphs only) into your portal folder.",
+      "send": "SEND: example sheet with both sources printed. EAL: glossary. Stretch: download a week of gauge data and plot it.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "Environment Agency 'Check your long term flood risk' and GOV.UK 'Check river levels' (or national equivalents); Met Office climate data",
+        "Secondary data example sheet (portal printable)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "river level gauge board",
+          "alt": "A river level gauge",
+          "for": "teach:2"
+        },
+        {
+          "find": "flood risk map England",
+          "alt": "A flood risk map",
+          "for": "hook"
+        },
+        {
+          "find": "rain gauge",
+          "alt": "A rain gauge",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 66,
+      "title": "Presenting data: choosing and drawing the right graph",
+      "bigQuestion": "Why might the same data look convincing on one graph and confusing on another?",
+      "objectives": [
+        "To understand how to choose and draw appropriate graphs for fieldwork data"
+      ],
+      "successCriteria": [
+        "All: choose a suitable graph for each data set",
+        "Most: draw an accurate bar chart and scatter graph",
+        "Some: justify a presentation choice"
+      ],
+      "crossCurricular": "Maths: means, scales and graph drawing",
+      "smsc": "Moral: presenting data honestly, not to mislead",
+      "keywords": [
+        {
+          "term": "bar chart",
+          "def": "bars showing amounts in separate categories"
+        },
+        {
+          "term": "scatter graph",
+          "def": "points showing the relationship between two variables"
+        },
+        {
+          "term": "line graph",
+          "def": "a line showing change over continuous time"
+        },
+        {
+          "term": "axis",
+          "def": "a labelled line showing a scale"
+        },
+        {
+          "term": "mean",
+          "def": "the total divided by the number of values"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might the same data look convincing on one graph and confusing on another?"
+      },
+      "starter": [
+        {
+          "q": "Secondary data is collected by:",
+          "a": "Someone else",
+          "mins": 1,
+          "options": [
+            "Someone else",
+            "You"
+          ]
+        },
+        {
+          "q": "A flood risk map is:",
+          "a": "Secondary data",
+          "mins": 1,
+          "options": [
+            "Secondary data",
+            "Primary data"
+          ]
+        },
+        {
+          "q": "Name one secondary source for our enquiry.",
+          "a": "Flood risk map, river level gauge data, Met Office rainfall",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Match graph to data",
+          "bullets": [
+            "Categories: bar chart",
+            "Change over time: line graph",
+            "Two variables: scatter graph"
+          ],
+          "note": "Example data, labelled as such, until pupils use their own.",
+          "sort": {
+            "columns": [
+              "Bar chart",
+              "Line graph",
+              "Scatter graph"
+            ],
+            "cards": [
+              "mean time per surface",
+              "river level over 3 days",
+              "slope angle vs infiltration time",
+              "run-off distance per surface",
+              "rainfall each day",
+              "plant cover vs infiltration time"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "Means first",
+          "bullets": [
+            "Add the three trials",
+            "Divide by three",
+            "Round sensibly"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Example data: flower bed trials 40 s, 52 s, 46 s",
+            "steps": [
+              "40 + 52 + 46 = 138",
+              "138 / 3 = 46",
+              "Mean = 46 s"
+            ],
+            "answer": "46 seconds"
+          }
+        },
+        {
+          "heading": "Example results (mean times)",
+          "bullets": [
+            "Flower bed fastest",
+            "Compacted path slowest",
+            "Hard paving: no infiltration"
+          ],
+          "note": "Example data, not real results.",
+          "chart": {
+            "kind": "bar",
+            "title": "Example data: mean infiltration time (s)",
+            "labels": [
+              "Flower bed",
+              "Lawn",
+              "Gravel",
+              "Compacted path"
+            ],
+            "values": [
+              46,
+              102,
+              75,
+              307
+            ],
+            "unit": "seconds"
+          }
+        },
+        {
+          "heading": "A good graph",
+          "bullets": [
+            "Title and labelled axes with units",
+            "Even scale",
+            "Accurate plotting and a key if needed"
+          ],
+          "note": "Check each graph against this list."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "To show how river level changed over three days, use a:",
+            "options": [
+              "Pie chart",
+              "Line graph",
+              "Bar chart"
+            ],
+            "answer": 1,
+            "why": "Change over continuous time suits a line graph."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Example data: compacted path trials 300 s, 280 s, 340 s. Mean?",
+          "a": "920 / 3 = 306.7 s (about 307 s)",
+          "mins": 1,
+          "model": "Add: 300 + 280 + 340 = 920.\nDivide by 3: 306.7.\nRound: about 307 s."
+        },
+        {
+          "q": "Which graph for 'plant cover (%) against infiltration time'?",
+          "a": "A scatter graph",
+          "mins": 2
+        },
+        {
+          "q": "What must every graph have?",
+          "a": "A title, labelled axes with units and an even scale",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Calculate the mean time for each surface from your data (or the example data), then draw a bar chart of means and one other suitable graph.",
+          "a": "Correct means; accurate, labelled bar chart and a second appropriate graph",
+          "mins": 15,
+          "model": "Teacher draws the axes and first bar from the example data."
+        },
+        {
+          "q": "Extend: (3 marks, own exam-style) Justify your choice of graph for one data set.",
+          "a": "Names the data type, explains why the graph suits it, notes what it shows clearly",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why is a pie chart unsuitable for infiltration times?",
+          "a": "Times are not parts of a whole",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Categories of data suit a:",
+          "a": "Bar chart",
+          "mins": 1,
+          "options": [
+            "Bar chart",
+            "Line graph"
+          ]
+        },
+        {
+          "q": "Big question: why can a graph confuse?",
+          "a": "Wrong graph type, uneven scales or missing labels hide the pattern",
+          "mins": 1
+        }
+      ],
+      "homework": "Upload your graphs to the portal; check them against the good-graph list.",
+      "send": "SEND: axes pre-drawn. EAL: glossary. Stretch: add range bars showing the highest and lowest trial.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "Example fieldwork data sheet (portal printable; example data labelled)",
+        "Graph paper; calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bar chart example data",
+          "alt": "A bar chart",
+          "for": "teach:3"
+        },
+        {
+          "find": "scatter graph example",
+          "alt": "A scatter graph",
+          "for": "keywords"
+        },
+        {
+          "find": "graph paper",
+          "alt": "Graph paper",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 67,
+      "title": "Presenting data: annotated photos, maps and field sketches",
+      "bigQuestion": "What can a labelled photograph prove that a graph cannot?",
+      "objectives": [
+        "To understand how annotated photographs, maps and field sketches present and explain fieldwork"
+      ],
+      "successCriteria": [
+        "All: tell the difference between a label and an annotation",
+        "Most: annotate a photograph and a map",
+        "Some: explain how visual evidence supports conclusions"
+      ],
+      "crossCurricular": "English: precise descriptive and explanatory writing",
+      "smsc": "Social: sharing findings clearly with others",
+      "keywords": [
+        {
+          "term": "label",
+          "def": "a word or phrase naming a feature"
+        },
+        {
+          "term": "annotation",
+          "def": "a note that explains or describes a feature"
+        },
+        {
+          "term": "annotated map",
+          "def": "a map with explanatory notes"
+        },
+        {
+          "term": "geolocated",
+          "def": "linked to an exact place"
+        },
+        {
+          "term": "visual evidence",
+          "def": "photos, sketches and maps used as proof"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What can a labelled photograph prove that a graph cannot?"
+      },
+      "starter": [
+        {
+          "q": "Change over time suits a:",
+          "a": "Line graph",
+          "mins": 1,
+          "options": [
+            "Line graph",
+            "Bar chart"
+          ]
+        },
+        {
+          "q": "A mean is the total divided by:",
+          "a": "The number of values",
+          "mins": 1,
+          "options": [
+            "The number of values",
+            "Two"
+          ]
+        },
+        {
+          "q": "Example data: 40, 52 and 46 s. Mean?",
+          "a": "46 s",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Label or annotation?",
+          "bullets": [
+            "Label: 'compacted path'",
+            "Annotation: 'bare, hard soil; water ran off in 5 s'",
+            "Annotations explain"
+          ],
+          "note": "Exam questions often ask you to annotate.",
+          "compare": {
+            "left": {
+              "title": "Label",
+              "points": [
+                "names",
+                "one or two words"
+              ]
+            },
+            "right": {
+              "title": "Annotation",
+              "points": [
+                "describes or explains",
+                "links to the enquiry"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Annotating a photo",
+          "bullets": [
+            "Arrow to the feature",
+            "Describe what you see",
+            "Explain how it affects infiltration"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Annotate the lawn photo",
+            "steps": [
+              "Arrow to bare patch",
+              "Describe: worn, bare soil",
+              "Explain: trampled soil is compacted",
+              "Link: slower infiltration than thick grass"
+            ],
+            "answer": "Three linked annotations"
+          }
+        },
+        {
+          "heading": "Annotated site map",
+          "bullets": [
+            "Sketch map of the site",
+            "Mark each sampling point",
+            "Add mean times beside them"
+          ],
+          "note": "Use proportional symbols or colour for times."
+        },
+        {
+          "heading": "Field sketch to evidence",
+          "bullets": [
+            "Show slope and drains",
+            "Mark run-off direction",
+            "Link to hypothesis 2"
+          ],
+          "note": "A field sketch can show where water goes."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which is an annotation?",
+            "options": [
+              "Gravel",
+              "Gravel: loose stones; water drained in 75 s",
+              "Path"
+            ],
+            "answer": 1,
+            "why": "An annotation describes or explains; the others only name."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn this label into an annotation: 'drain'.",
+          "a": "For example: drain at the lowest point; run-off from the patio flows here",
+          "mins": 1,
+          "model": "A label only names.\nI add what it does.\nAnd link it to my enquiry."
+        },
+        {
+          "q": "Why mark sampling points on a map?",
+          "a": "To show where data came from and allow comparison",
+          "mins": 2
+        },
+        {
+          "q": "Give one strength of photos as evidence.",
+          "a": "Show real conditions, can be checked by others",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Annotate two of your photos (three annotations each) and make an annotated site map with sampling points and mean times.",
+          "a": "Accurate annotations that describe and explain; clear map with data",
+          "mins": 15,
+          "model": "Teacher annotates the example lawn photo live."
+        },
+        {
+          "q": "Extend: (4 marks, own exam-style) Explain how one visual method helped you reach a conclusion.",
+          "a": "Named method, what it showed, link to hypothesis, why numbers alone were not enough",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: How could a GIS map improve your presentation?",
+          "a": "Geolocate points, overlay flood risk layers, show patterns over a wider area",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "An annotation:",
+          "a": "Explains",
+          "mins": 1,
+          "options": [
+            "Explains",
+            "Only names"
+          ]
+        },
+        {
+          "q": "Big question: what can a photo prove that a graph cannot?",
+          "a": "Why results happened: conditions such as compaction or slope",
+          "mins": 1
+        }
+      ],
+      "homework": "Upload your annotated photos and map to the portal.",
+      "send": "SEND: annotation sentence starters. EAL: glossary. Stretch: make a proportional-symbol map of mean times.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "Example annotated photo and site map (portal printable)",
+        "Own photos and field sketch from lesson 64"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "annotated photograph geography fieldwork",
+          "alt": "An annotated photograph",
+          "for": "teach:2"
+        },
+        {
+          "find": "garden drain grate",
+          "alt": "A drain",
+          "for": "hook"
+        },
+        {
+          "find": "sketch map with key",
+          "alt": "A sketch map",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 68,
+      "title": "Analysing data: patterns, averages and anomalies",
+      "bigQuestion": "What do you do with a result that does not fit?",
+      "objectives": [
+        "To understand how to analyse fieldwork data to describe patterns and deal with anomalies"
+      ],
+      "successCriteria": [
+        "All: describe a pattern using data",
+        "Most: calculate mean, median and range",
+        "Some: identify and explain an anomaly"
+      ],
+      "crossCurricular": "Maths: mean, median, range and outliers",
+      "smsc": "Moral: honesty about results that do not fit",
+      "keywords": [
+        {
+          "term": "pattern",
+          "def": "a general trend in the data"
+        },
+        {
+          "term": "anomaly",
+          "def": "a result that does not fit the pattern"
+        },
+        {
+          "term": "median",
+          "def": "the middle value when data is in order"
+        },
+        {
+          "term": "range",
+          "def": "the highest value minus the lowest"
+        },
+        {
+          "term": "analysis",
+          "def": "breaking data down to find meaning"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What should you do with a result that does not fit the pattern?"
+      },
+      "starter": [
+        {
+          "q": "An annotation:",
+          "a": "Explains",
+          "mins": 1,
+          "options": [
+            "Explains",
+            "Only names"
+          ]
+        },
+        {
+          "q": "Two variables suit a:",
+          "a": "Scatter graph",
+          "mins": 1,
+          "options": [
+            "Scatter graph",
+            "Bar chart"
+          ]
+        },
+        {
+          "q": "Name one visual way to present fieldwork.",
+          "a": "Annotated photo, annotated map, field sketch",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Describe the pattern",
+          "bullets": [
+            "General trend first",
+            "Use data: quote figures",
+            "Note exceptions"
+          ],
+          "note": "Example data: flower bed 46 s, lawn 102 s, gravel 75 s, compacted path 307 s."
+        },
+        {
+          "heading": "Averages and spread",
+          "bullets": [
+            "Mean: add and divide",
+            "Median: middle value",
+            "Range: highest minus lowest"
+          ],
+          "note": "Model with example lawn data.",
+          "model": {
+            "problem": "Example lawn trials: 95 s, 210 s, 102 s",
+            "steps": [
+              "Mean: 407 / 3 = 135.7 s",
+              "Median: order 95, 102, 210; median 102 s",
+              "Range: 210 - 95 = 115 s",
+              "210 s looks anomalous"
+            ],
+            "answer": "Mean 135.7 s, median 102 s, range 115 s"
+          }
+        },
+        {
+          "heading": "Anomalies",
+          "bullets": [
+            "Spot: far from the others",
+            "Explain: error or real cause?",
+            "Decide: include or exclude, and say why"
+          ],
+          "note": "Possible causes: tin not pushed in evenly; an old buried path; soil already wet.",
+          "table": {
+            "head": [
+              "Lawn trial",
+              "Time (s)",
+              "Note"
+            ],
+            "rows": [
+              [
+                "1",
+                "95",
+                "typical"
+              ],
+              [
+                "2",
+                "210",
+                "anomaly: near the shed, very compacted"
+              ],
+              [
+                "3",
+                "102",
+                "typical"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Linking to theory",
+          "bullets": [
+            "Compacted soil: fewer air spaces",
+            "Water infiltrates slowly",
+            "More run-off, faster to rivers"
+          ],
+          "note": "Analysis explains the pattern with geography."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Without the anomaly, the example lawn mean is:",
+            "options": [
+              "135.7 s",
+              "98.5 s",
+              "115 s"
+            ],
+            "answer": 1,
+            "why": "(95 + 102) / 2 = 98.5 s; 135.7 s includes the anomaly; 115 s is the range."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why can the median be better than the mean here?",
+          "a": "It is not pulled up by the anomaly",
+          "mins": 1,
+          "model": "The mean uses every value, including 210.\nThe median is the middle value, 102.\nSo the median is less affected by one odd result."
+        },
+        {
+          "q": "Describe the pattern in the example means.",
+          "a": "Infiltration was fastest on the flower bed (46 s) and slowest on the compacted path (307 s)",
+          "mins": 2
+        },
+        {
+          "q": "Give one possible cause of an anomaly.",
+          "a": "Uneven tin depth, buried material, wet soil, timing error",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Analyse your own data (or the example data): describe the pattern with figures, calculate mean, median and range for each surface, and explain any anomaly.",
+          "a": "Accurate calculations; pattern described with data; anomaly identified and explained",
+          "mins": 15,
+          "model": "Teacher writes the opening pattern sentence using the example data."
+        },
+        {
+          "q": "Extend: (4 marks, own exam-style) Explain the pattern in your results using geographical theory.",
+          "a": "Compaction, pore spaces, vegetation and roots, surface permeability linked to times",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Does your secondary data support your pattern? Explain.",
+          "a": "For example: surface water flood risk is higher in paved areas, matching slower infiltration",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "The range is:",
+          "a": "Highest minus lowest",
+          "mins": 1,
+          "options": [
+            "Highest minus lowest",
+            "The middle value"
+          ]
+        },
+        {
+          "q": "Big question: what do you do with an odd result?",
+          "a": "Record it, try to explain it, and decide openly whether to include it",
+          "mins": 1
+        }
+      ],
+      "homework": "Write your analysis section (200 words) in the portal for your enquiry report.",
+      "send": "SEND: calculation grid. EAL: glossary. Stretch: calculate the interquartile range for a larger data set from the class sheet.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "Example fieldwork data sheet (portal printable; example data labelled)",
+        "Calculator; portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "keywords"
+        },
+        {
+          "find": "compacted soil footpath",
+          "alt": "Compacted soil on a path",
+          "for": "teach:4"
+        },
+        {
+          "find": "data table notebook",
+          "alt": "A notebook with a data table",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 69,
+      "title": "Conclusions and evaluation: reliability, accuracy and validity",
+      "bigQuestion": "How confident can you be in your own conclusion?",
+      "objectives": [
+        "To understand how to write a conclusion and evaluate a fieldwork enquiry"
+      ],
+      "successCriteria": [
+        "All: write a conclusion that answers the question",
+        "Most: evaluate methods using reliability, accuracy and validity",
+        "Some: suggest realistic improvements"
+      ],
+      "crossCurricular": "Science: evaluating methods and evidence",
+      "smsc": "Moral: humility and honesty about what we know",
+      "keywords": [
+        {
+          "term": "conclusion",
+          "def": "the answer to the enquiry question, backed by evidence"
+        },
+        {
+          "term": "reliability",
+          "def": "whether repeating the method would give similar results"
+        },
+        {
+          "term": "accuracy",
+          "def": "how close results are to the true value"
+        },
+        {
+          "term": "validity",
+          "def": "whether the method actually measured what the question asked"
+        },
+        {
+          "term": "evaluation",
+          "def": "judging the strengths and limits of the enquiry"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How confident can you be in your own conclusion, and why?"
+      },
+      "starter": [
+        {
+          "q": "The median is:",
+          "a": "The middle value",
+          "mins": 1,
+          "options": [
+            "The middle value",
+            "The total"
+          ]
+        },
+        {
+          "q": "An anomaly:",
+          "a": "Does not fit the pattern",
+          "mins": 1,
+          "options": [
+            "Does not fit the pattern",
+            "Is the mean"
+          ]
+        },
+        {
+          "q": "Example lawn trials 95, 102, 210 s. Range?",
+          "a": "115 s",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Writing a conclusion",
+          "bullets": [
+            "Answer the question directly",
+            "Accept or reject each hypothesis",
+            "Use data as evidence"
+          ],
+          "note": "Model with the example data.",
+          "model": {
+            "problem": "Conclusion from example data",
+            "steps": [
+              "Answer: surface type strongly affected infiltration",
+              "H1 accepted: compacted path slowest (307 s), flower bed fastest (46 s)",
+              "H2 accepted: paving had no infiltration and the most run-off",
+              "Link: hard surfaces raise local flood risk"
+            ],
+            "answer": "A conclusion answering the question with data"
+          }
+        },
+        {
+          "heading": "Three tests",
+          "bullets": [
+            "Reliability: repeat and get similar results?",
+            "Accuracy: close to the true value?",
+            "Validity: did we measure what we asked?"
+          ],
+          "note": "Use these words precisely.",
+          "table": {
+            "head": [
+              "Term",
+              "Our enquiry",
+              "Improvement"
+            ],
+            "rows": [
+              [
+                "reliability",
+                "three trials per surface",
+                "five trials; different days"
+              ],
+              [
+                "accuracy",
+                "timing by eye",
+                "mark the tin; two timers"
+              ],
+              [
+                "validity",
+                "one garden only",
+                "several sites; record soil moisture"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Limits of our enquiry",
+          "bullets": [
+            "One site, one day",
+            "Soil moisture not controlled",
+            "Small samples"
+          ],
+          "note": "Every enquiry has limits; good evaluation says how they affect the conclusion."
+        },
+        {
+          "heading": "How far can we trust it?",
+          "bullets": [
+            "Pattern was strong and clear",
+            "But only one site",
+            "Conclusion: reliable for this site, less so in general"
+          ],
+          "note": "A judgement on confidence."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "If a method did not measure what the question asked, it lacks:",
+            "options": [
+              "Reliability",
+              "Validity",
+              "Accuracy"
+            ],
+            "answer": 1,
+            "why": "Validity is about measuring the right thing to answer the question."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is the difference between reliability and accuracy?",
+          "a": "Reliability: repeatable results; accuracy: close to the true value",
+          "mins": 1,
+          "model": "Reliable means we get similar results each time.\nAccurate means the results are close to the real value.\nA method can be reliable but still inaccurate."
+        },
+        {
+          "q": "Suggest one way to improve reliability.",
+          "a": "More trials, more sites, repeat on different days",
+          "mins": 2
+        },
+        {
+          "q": "Why might soil moisture affect validity?",
+          "a": "Wet soil infiltrates slowly whatever the surface, so differences may not be due to surface type",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the portal response box write your conclusion (answer the question, accept or reject hypotheses with data) and evaluation (reliability, accuracy, validity, improvements).",
+          "a": "A data-backed conclusion and an evaluation using all three terms with realistic improvements",
+          "mins": 15,
+          "model": "Teacher shows the model conclusion and the first evaluation sentence."
+        },
+        {
+          "q": "Extend: (8 marks, own exam-style) Evaluate the reliability of your conclusions.",
+          "a": "Strengths and limits of methods and data, effect on confidence, a final judgement",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: How would you extend the enquiry to a whole drainage basin?",
+          "a": "Sample sites across land uses using GIS, plus river gauge data at several points",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Validity asks:",
+          "a": "Did we measure the right thing?",
+          "mins": 1,
+          "options": [
+            "Did we measure the right thing?",
+            "Did we finish on time?"
+          ]
+        },
+        {
+          "q": "Big question: how confident are you?",
+          "a": "A judgement citing the strength of the pattern and the limits of the method",
+          "mins": 1
+        }
+      ],
+      "homework": "Submit your full enquiry report in the portal (question, methods, results, analysis, conclusion, evaluation).",
+      "send": "SEND: conclusion and evaluation frames. EAL: glossary. Stretch: compare your results with a classmate's site.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "Enquiry report template and marking grid (portal printable; marked internally)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "magnifying glass on data",
+          "alt": "Checking data closely",
+          "for": "hook"
+        },
+        {
+          "find": "flooded street drain",
+          "alt": "Surface water flooding",
+          "for": "teach:4"
+        },
+        {
+          "find": "checklist clipboard",
+          "alt": "A checklist",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 70,
+      "title": "Paper 1 Section B practice: questions on our own enquiry",
+      "bigQuestion": "Could you answer 20 marks of questions on your own fieldwork without notes?",
+      "objectives": [
+        "To understand how to answer Paper 1 Section B questions about our own enquiry"
+      ],
+      "successCriteria": [
+        "All: recall methods and justify them",
+        "Most: answer short questions precisely",
+        "Some: plan and write an 8-mark evaluation"
+      ],
+      "crossCurricular": "English: precise written answers to command words",
+      "smsc": "Moral: integrity in timed work",
+      "keywords": [
+        {
+          "term": "command word",
+          "def": "the instruction word that tells you how to answer"
+        },
+        {
+          "term": "justify",
+          "def": "give reasons to support a choice"
+        },
+        {
+          "term": "evaluate",
+          "def": "weigh strengths and weaknesses to reach a judgement"
+        },
+        {
+          "term": "own enquiry",
+          "def": "the fieldwork you carried out yourself"
+        },
+        {
+          "term": "mark scheme",
+          "def": "the guide examiners use to award marks"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Could you answer 20 marks of questions on your own fieldwork without notes?"
+      },
+      "starter": [
+        {
+          "q": "Validity asks whether we measured:",
+          "a": "The right thing",
+          "mins": 1,
+          "options": [
+            "The right thing",
+            "Quickly"
+          ]
+        },
+        {
+          "q": "Reliability is about:",
+          "a": "Repeatable results",
+          "mins": 1,
+          "options": [
+            "Repeatable results",
+            "Neat graphs"
+          ]
+        },
+        {
+          "q": "Name one improvement to our enquiry.",
+          "a": "More trials, more sites, control soil moisture, mark the tin",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Section B: your own enquiry",
+          "bullets": [
+            "Methods, sampling, risk",
+            "Presentation and analysis",
+            "Conclusions and evaluation"
+          ],
+          "note": "All questions in this practice are our own, written in the 4GE1 style."
+        },
+        {
+          "heading": "Command words",
+          "bullets": [
+            "Identify, state: short fact",
+            "Explain: reasons why",
+            "Evaluate: strengths, weaknesses, judgement"
+          ],
+          "note": "4GE1 command words from the specification."
+        },
+        {
+          "heading": "Answering a 3-mark explain",
+          "bullets": [
+            "Point",
+            "Develop it",
+            "Link to your enquiry"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain one reason you used stratified sampling. (3)",
+            "steps": [
+              "Point: to include every surface type",
+              "Develop: so each surface had equal trials",
+              "Link: we could compare infiltration fairly across surfaces"
+            ],
+            "answer": "Three linked marks"
+          }
+        },
+        {
+          "heading": "An 8-mark evaluate",
+          "bullets": [
+            "Strengths with examples",
+            "Weaknesses with effects",
+            "Clear judgement"
+          ],
+          "note": "Plan for two minutes before writing."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "'Evaluate' requires:",
+            "options": [
+              "A list of facts",
+              "Strengths, weaknesses and a judgement",
+              "A definition only"
+            ],
+            "answer": 1,
+            "why": "Evaluate means weighing evidence to reach a supported judgement."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "State one quantitative method you used. (1)",
+          "a": "Timing infiltration of 500 ml of water in a tin ring",
+          "mins": 1,
+          "model": "State means a short fact.\nOne method, named clearly.\nTiming how long 500 ml took to infiltrate."
+        },
+        {
+          "q": "Explain one risk and how you reduced it. (2)",
+          "a": "Sharp tin edges could cut; edges were taped and an adult handled the tin",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 20 minutes): own exam-style Section B on your enquiry: (a) State your enquiry question. (1) (b) Describe one qualitative method. (2) (c) Explain your sampling strategy. (3) (d) Explain one way you presented data and why. (3) (e) Explain one anomaly in your results. (3) (f) Evaluate the reliability of your conclusions. (8)",
+          "a": "Indicative points: focused question; field sketch or photos with how; stratified-systematic with reasons; graph choice justified; anomaly with cause; strengths, limits and judgement",
+          "mins": 20,
+          "model": "Teacher reads (a) aloud and shows a one-mark answer, then starts the timer."
+        },
+        {
+          "q": "Self-mark with the mark scheme and write two targets.",
+          "a": "Accurate self-marking and specific targets",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Rewrite your weakest answer to full marks.",
+          "a": "An improved answer matching the mark scheme",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A 3-mark explain needs:",
+          "a": "A point developed and linked",
+          "mins": 1,
+          "options": [
+            "A point developed and linked",
+            "One word"
+          ]
+        },
+        {
+          "q": "Big question: could you do it without notes?",
+          "a": "Pupil's self-assessment and next step",
+          "mins": 1
+        }
+      ],
+      "homework": "Learn your enquiry summary card: question, hypotheses, methods, sampling, results, conclusion, one improvement.",
+      "send": "SEND: question paper with answer frames; access arrangements. EAL: command word glossary. Stretch: write a model answer to (f).",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "Section B practice questions and mark scheme on our own enquiry (portal printable; own exam-style questions)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "exam paper desk",
+          "alt": "An exam desk",
+          "for": "hook"
+        },
+        {
+          "find": "stopwatch timer",
+          "alt": "A timer",
+          "for": "keywords"
+        },
+        {
+          "find": "highlighter pens",
+          "alt": "Highlighters for planning",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+      "n": 44,
+      "title": "Paper 1 Section B practice: unfamiliar river data",
+      "bigQuestion": "Can you apply fieldwork skills to a river you have never seen?",
+      "objectives": [
+        "To understand how to analyse and evaluate unfamiliar river fieldwork data in Paper 1 Section B"
+      ],
+      "successCriteria": [
+        "All: calculate cross-sectional area and discharge",
+        "Most: describe and explain downstream changes",
+        "Some: evaluate another enquiry's methods"
+      ],
+      "crossCurricular": "Maths: area, multiplication with decimals and units",
+      "smsc": "Spiritual: rivers as a sign and provision from Allah",
+      "keywords": [
+        {
+          "term": "cross-sectional area",
+          "def": "channel width multiplied by mean depth"
+        },
+        {
+          "term": "discharge",
+          "def": "volume of water passing a point each second (m³/s)"
+        },
+        {
+          "term": "velocity",
+          "def": "speed of the water flow"
+        },
+        {
+          "term": "Bradshaw model",
+          "def": "a model of how river characteristics change downstream"
+        },
+        {
+          "term": "unfamiliar data",
+          "def": "data from an enquiry you did not carry out"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can you apply your fieldwork skills to a river you have never seen?"
+      },
+      "islamicLink": {
+        "text": "Allah made from water every living thing (Al-Anbiya 21:30). Measuring rivers helps us understand and protect a vital blessing.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "'Evaluate' needs:",
+          "a": "Strengths, weaknesses and a judgement",
+          "mins": 1,
+          "options": [
+            "Strengths, weaknesses and a judgement",
+            "A list"
+          ]
+        },
+        {
+          "q": "Discharge is measured in:",
+          "a": "Cubic metres per second",
+          "mins": 1,
+          "options": [
+            "Cubic metres per second",
+            "Metres"
+          ]
+        },
+        {
+          "q": "Name one way a river changes downstream.",
+          "a": "Wider, deeper, faster, more discharge, smaller and rounder sediment",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The unfamiliar enquiry",
+          "bullets": [
+            "Students measured a river at 5 sites",
+            "Width, depth, velocity",
+            "From 2 km to 18 km from the source"
+          ],
+          "note": "Example data, written for this practice.",
+          "table": {
+            "head": [
+              "Site",
+              "Distance (km)",
+              "Width (m)",
+              "Mean depth (m)",
+              "Velocity (m/s)"
+            ],
+            "rows": [
+              [
+                "1",
+                "2",
+                "1.2",
+                "0.15",
+                "0.20"
+              ],
+              [
+                "2",
+                "6",
+                "2.5",
+                "0.25",
+                "0.30"
+              ],
+              [
+                "3",
+                "10",
+                "3.8",
+                "0.32",
+                "0.35"
+              ],
+              [
+                "4",
+                "14",
+                "5.0",
+                "0.45",
+                "0.40"
+              ],
+              [
+                "5",
+                "18",
+                "6.4",
+                "0.52",
+                "0.50"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Calculations",
+          "bullets": [
+            "Area = width × mean depth",
+            "Discharge = area × velocity",
+            "Show working and units"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Site 5 discharge",
+            "steps": [
+              "Area = 6.4 × 0.52 = 3.328 m²",
+              "Discharge = 3.328 × 0.50",
+              "= 1.664 m³/s",
+              "About 1.66 m³/s"
+            ],
+            "answer": "About 1.66 m³/s"
+          }
+        },
+        {
+          "heading": "Describe and explain",
+          "bullets": [
+            "Width, depth and velocity all increase",
+            "Tributaries add water",
+            "Less friction in a wider, deeper channel"
+          ],
+          "note": "Matches the Bradshaw model."
+        },
+        {
+          "heading": "Evaluate their methods",
+          "bullets": [
+            "Only 5 sites",
+            "Velocity by float: surface only",
+            "Measure on one day: weather?"
+          ],
+          "note": "Apply reliability, accuracy, validity to someone else's enquiry."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Site 1 discharge (1.2 × 0.15 × 0.20) is:",
+            "options": [
+              "0.036 m³/s",
+              "0.36 m³/s",
+              "3.6 m³/s"
+            ],
+            "answer": 0,
+            "why": "Area 1.2 × 0.15 = 0.18 m²; 0.18 × 0.20 = 0.036 m³/s."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate the cross-sectional area at site 3.",
+          "a": "3.8 × 0.32 = 1.216 m² (about 1.22 m²)",
+          "mins": 1,
+          "model": "Area = width × mean depth.\n3.8 × 0.32 = 1.216.\nAbout 1.22 m²."
+        },
+        {
+          "q": "Describe the change in velocity downstream, using data.",
+          "a": "Increases from 0.20 m/s at 2 km to 0.50 m/s at 18 km",
+          "mins": 2
+        },
+        {
+          "q": "Explain why velocity increases downstream.",
+          "a": "Deeper, wider channel has less friction relative to volume; more water from tributaries",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 18 minutes): own exam-style questions on the unfamiliar data: (a) Calculate discharge at site 3. (2) (b) Describe how width changes downstream. (2) (c) Suggest one reason for the change in discharge. (2) (d) Explain one limitation of measuring velocity with a float. (3) (e) Evaluate the students' methods. (8)",
+          "a": "(a) 1.216 × 0.35 = 0.4256, about 0.43 m³/s (b) increases from 1.2 m to 6.4 m (c) tributaries add water (d) floats measure surface speed only, affected by wind (e) few sites, one day, surface velocity, judgement",
+          "mins": 18,
+          "model": "Teacher works through (a) with the class, then starts the timer for the rest."
+        },
+        {
+          "q": "Self-mark with the mark scheme; add one target to your enquiry summary card.",
+          "a": "Accurate self-marking and a target",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Sketch the expected long profile for this river and label sites 1 to 5.",
+          "a": "A concave profile, steep near the source, gentle near site 5",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Area × velocity gives:",
+          "a": "Discharge",
+          "mins": 1,
+          "options": [
+            "Discharge",
+            "Gradient"
+          ]
+        },
+        {
+          "q": "Big question: can you apply skills to an unfamiliar river?",
+          "a": "Yes, using calculations, the Bradshaw model and evaluation terms",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the Section B practice set 2 in the portal before half term; Summer 2 begins Paper 1 revision.",
+      "send": "SEND: calculation steps scaffold; calculator. EAL: glossary with a channel diagram. Stretch: calculate discharge at all five sites and draw a line graph.",
+      "resources": [
+        "Pearson Edexcel International GCSE Geography 4GE1 specification, Paper 1 Section B (fieldwork contexts and Appendix 6)",
+        "TGA Year 10 pack, Geography (4GE1), Summer 1: Physical fieldwork enquiry; Pearson 4GE1 Paper 1 scheme of work",
+        "Unfamiliar river data sheet, questions and mark scheme (portal printable; example data and own exam-style questions)",
+        "Calculator; portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "river channel cross section measurement",
+          "alt": "Measuring a river channel",
+          "for": "hook"
+        },
+        {
+          "find": "river long profile diagram",
+          "alt": "A river long profile",
+          "for": "keywords"
+        },
+        {
+          "find": "meandering river lowland",
+          "alt": "A wide lowland river",
+          "for": "teach:3"
         }
       ]
     }

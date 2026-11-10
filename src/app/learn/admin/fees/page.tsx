@@ -218,7 +218,7 @@ function FeesContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Fees" }]}
+        crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Fees" }]}
         title="Fees and billing"
         subtitle="Charges raised against families, payments received, and who still owes what."
         actions={

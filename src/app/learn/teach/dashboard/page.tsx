@@ -15,10 +15,10 @@ import { EnrichmentSupervisorLink } from "@/components/learn/enrichment/Supervis
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { useNavBadges } from "@/lib/learn/navBadges";
 import { RecentLessons } from "@/components/learn/curriculum/RecentLessons";
 import { localDateKey } from "@/lib/learn/calendar";
 import type { TimetableSlot } from "@/lib/learn/timetable";
+import { PushOptIn } from "@/components/learn/PushOptIn";
 
 type Cover = {
   id: string;
@@ -72,25 +72,15 @@ function TeachContent() {
   // today's lessons and quick actions (TeachNow), anything to sign, cover,
   // and the latest few announcements. Timetable, classes and house points
   // live on their own pages (Calendar, My classes, Houses and stars).
-  const badges = useNavBadges("teach");
   // timetable weekday: 1 = Monday ... 7 = Sunday (ISO)
-  const isoToday = ((new Date().getDay() + 6) % 7) + 1;
-  const todayCount = slots === null ? "…" : slots.filter((s) => Number(s.weekday) === isoToday).length;
   return (
     <DashboardWithPanel viewer={{ kind: "teacher", classIds }}>
       <div className="space-y-6">
-        <DashboardHero
-          area="teach"
-          subtitle="Here's what needs your attention."
-          chips={[
-            { label: "Lessons today", value: todayCount, href: "/teach/today" },
-            { label: "Work to review", value: badges.review ?? "…", tone: "pink", href: "/teach/review" },
-            { label: "My classes", value: classIds.length, href: "/teach/classes" },
-            { label: "Unread messages", value: badges.messages ?? "…", tone: "pink", href: "/teach/messages" },
-          ]}
-        />
+        {/* The figures that matter today (registers, marking, homework, pupil records) are in TeachNow below, once. */}
+        <DashboardHero area="teach" subtitle="Here's what needs your attention today." />
 
         <ActionCentreWidget role="teach" />
+        <PushOptIn />
 
         <TeachNow slots={slots} />
 

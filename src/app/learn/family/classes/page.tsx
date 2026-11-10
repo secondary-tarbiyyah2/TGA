@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Suspense, useMemo } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -29,7 +30,7 @@ function FamilyClassesContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Classes" }]}
+        crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Classes" }]}
         title="Classes"
         subtitle="Each of your children's classes: lessons, homework, grades and announcements."
       />
@@ -66,7 +67,7 @@ export default function FamilyClassesPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
-        <Suspense fallback={<p className="text-sm text-ink/65">Loading…</p>}>
+        <Suspense fallback={<Loading label="Loading…" bare />}>
           <FamilyClassesContent />
         </Suspense>
       </LearnGate>

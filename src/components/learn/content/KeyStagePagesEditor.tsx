@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -85,7 +86,7 @@ export function KeyStagePagesEditor() {
 
   const lessonsTotal = (r: Row) => r.weekly.reduce((n, w) => n + (Number.isFinite(Number(w.lessons)) ? Number(w.lessons) : 0), 0);
 
-  if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (rows === null) return <Loading label="Loading…" bare />;
 
   return (
     <Card title="Key-stage pages" description="What each /curriculum page shows: the subject list, the 'Live lessons each week' table, the intro and the notes. These figures should match the Curriculum Policy (12) and the Flexible Learning Policy (21). Saving triggers a site rebuild, live in a few minutes.">

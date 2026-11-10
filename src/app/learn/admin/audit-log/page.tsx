@@ -9,7 +9,7 @@ export default function AuditLogPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <PageHeader
-          crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Audit log" }]}
+          crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Audit log" }]}
           title="Audit log"
           subtitle="Who changed what, and when. Restricted records show only that a change happened."
         />

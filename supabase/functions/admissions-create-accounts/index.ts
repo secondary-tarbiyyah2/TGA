@@ -162,21 +162,48 @@ Deno.serve(async (req) => {
     notes.push(`${childName} already had a pupil record.`);
   }
 
-  // ── 2b. start the pupil's details with the home address from the form (0151) ──
-  // Only when the pupil has no details record yet: anything the family or
-  // staff have already entered is never overwritten.
-  const line1 = typeof app.address_line1 === "string" ? app.address_line1.trim() : "";
-  if (line1) {
-    const { data: existingDetails } = await serviceClient.from("pupil_details").select("id").eq("child_id", childId).maybeSingle();
-    if (!existingDetails) {
-      const { error: detailsErr } = await serviceClient.from("pupil_details").insert({
-        child_id: childId,
-        address_line1: line1,
-        address_line2: (typeof app.address_line2 === "string" && app.address_line2.trim()) || null,
-        town: (typeof app.address_town === "string" && app.address_town.trim()) || null,
-        postcode: (typeof app.address_postcode === "string" && app.address_postcode.trim()) || null,
-      });
-      notes.push(detailsErr ? `Could not copy the home address into the pupil's details (${detailsErr.message}).` : "Home address copied into the pupil's details.");
+  // ── 2b. fill the pupil's record from the application (0151) ──────────
+  // Copies what the family already told us so nobody types it twice: home
+  // address, gender, previous school, and the parent (and any other legal
+  // guardian) as emergency contacts. Only EMPTY fields are filled: anything
+  // the family or staff have already entered is never overwritten, so this
+  // is safe to run again from "Create accounts" on an accepted application.
+  const str = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
+  const fromForm: Record<string, string | null> = {
+    address_line1: str(app.address_line1),
+    address_line2: str(app.address_line2),
+    town: str(app.address_town),
+    postcode: str(app.address_postcode),
+    gender: str(app.child_gender) ? String(app.child_gender).trim().toLowerCase() : null,
+    previous_school: str(app.current_school),
+  };
+  if (fromForm.gender && !["male", "female"].includes(fromForm.gender)) fromForm.gender = null;
+  const { data: existingDetails } = await serviceClient.from("pupil_details").select("*").eq("child_id", childId).maybeSingle();
+  const fill: Record<string, string> = {};
+  for (const [k, v] of Object.entries(fromForm)) {
+    if (v && !(existingDetails && str((existingDetails as Record<string, unknown>)[k]))) fill[k] = v;
+  }
+  if (Object.keys(fill).length > 0) {
+    const { error: detailsErr } = existingDetails
+      ? await serviceClient.from("pupil_details").update(fill).eq("child_id", childId)
+      : await serviceClient.from("pupil_details").insert({ child_id: childId, ...fill });
+    notes.push(detailsErr ? `Could not copy the form into the pupil's details (${detailsErr.message}).` : `Copied from the form into the pupil's details: ${Object.keys(fill).map((k) => k.replace(/_/g, " ").replace("line1", "address").replace("line2", "address line 2")).join(", ")}.`);
+  }
+
+  const { count: contactCount } = await serviceClient.from("pupil_emergency_contacts").select("id", { count: "exact", head: true }).eq("child_id", childId);
+  if (!contactCount) {
+    const contacts: Record<string, unknown>[] = [];
+    const parentPhone = str(app.parent_phone);
+    if (str(app.parent_name) && parentPhone) {
+      contacts.push({ child_id: childId, name: str(app.parent_name), relationship: str(app.relationship) || "Parent", phone: parentPhone, email: str(app.parent_email), parental_responsibility: true, is_authorised_collector: true, priority: 1 });
+    }
+    const guardianPhone = str(app.guardian_phone);
+    if (app.guardian_is_other === true && str(app.guardian_name) && guardianPhone) {
+      contacts.push({ child_id: childId, name: str(app.guardian_name), relationship: str(app.guardian_relationship) || "Legal guardian", phone: guardianPhone, email: str(app.guardian_email), parental_responsibility: true, is_authorised_collector: true, priority: contacts.length + 1 });
+    }
+    if (contacts.length > 0) {
+      const { error: contactErr } = await serviceClient.from("pupil_emergency_contacts").insert(contacts);
+      notes.push(contactErr ? `Could not add the emergency contacts (${contactErr.message}).` : `${contacts.length === 1 ? "The parent was" : "The parent and guardian were"} added as emergency contacts.`);
     }
   }
 

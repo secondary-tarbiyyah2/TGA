@@ -110,9 +110,9 @@ jobs:
       # directly.
       FTP_LEARN_USERNAME: ${{ secrets.FTP_LEARN_USERNAME }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
@@ -122,7 +122,7 @@ jobs:
 
       - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
-          version: latest
+          version: 2.122.1
 
       - name: Find the Supabase project ref
         id: project
@@ -162,6 +162,7 @@ jobs:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
           NEXT_PUBLIC_LEARN_ORIGIN: ${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}
+          NEXT_PUBLIC_VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
           # Address finder on the apply form: house-level suggestions from Google Places when set (repo variable), free OpenStreetMap otherwise.
           NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ vars.GOOGLE_MAPS_API_KEY }}
         run: npm run build

@@ -6,7 +6,7 @@ import { useLearnPermission } from "@/lib/learn/session";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 type Request = {
   id: string;
   request_type: string;
@@ -86,7 +86,7 @@ export function DataRights() {
       <p className="mt-1 text-xs text-ink/65">Subject access, rectification, erasure, export and objection requests, with the UK GDPR one-calendar-month statutory deadline computed automatically.</p>
 
       <ul className="mt-3 space-y-2">
-        {requests === null && <p className="text-sm text-ink/65">Loading…</p>}
+        {requests === null && <Loading label="Loading…" bare />}
         {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
         {listed.map((r) => {
           const deadline = r.extended_deadline || r.statutory_deadline;

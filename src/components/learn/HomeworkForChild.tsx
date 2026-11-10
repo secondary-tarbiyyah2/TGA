@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { attachHomework } from "@/lib/learn/homeworkStatus";
 import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -244,7 +245,7 @@ export function HomeworkForChild({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase, childId, classId]);
 
-  if (rows === null) return <p className="text-sm text-ink/65">Loading homework…</p>;
+  if (rows === null) return <Loading label="Loading homework…" bare />;
   if (rows.length === 0) return <p className="text-sm text-ink/65">No homework set yet.</p>;
 
   const item = (r: Row) => (

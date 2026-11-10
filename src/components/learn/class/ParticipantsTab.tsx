@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 type Person = { id: string; name: string };
 type Teacher = { user_id: string; full_name: string; role: string };
 type Candidate = { id: string; name: string; year_group_id: string | null };
@@ -93,7 +93,7 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto">
           {candidates === null ? (
-            <p className="px-5 py-4 text-sm text-ink/65">Loading…</p>
+            <Loading label="Loading…" bare />
           ) : shown.length === 0 ? (
             <p className="px-5 py-4 text-sm text-ink/65">No matching pupils to add.</p>
           ) : (
@@ -174,7 +174,7 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
     onChanged?.();
   };
 
-  if (people === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (people === null) return <Loading label="Loading…" bare />;
 
   return (
     <div className="space-y-6">

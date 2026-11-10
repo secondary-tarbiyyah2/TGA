@@ -8,7 +8,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, askNotice, Loading } from "@/components/learn/kit";
 /**
  * Starts (or rejoins) the in-house video call for a booking, same
  * BigBlueButton system already running lessons, including native
@@ -104,7 +104,7 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
     if (!(await askConfirm("Remove this availability slot? Families can no longer book it."))) return;
     const { error } = await supabase.from("availability_rules").delete().eq("id", id);
     // Keep the row on screen if the delete failed, rather than pretending it worked.
-    if (error) return window.alert(`Couldn't remove that slot. Please try again.`);
+    if (error) return void (await askNotice("Couldn't remove that slot", "Please try again."));
     setRules((r) => (r || []).filter((x) => x.id !== id));
   }
 
@@ -247,7 +247,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
     a.click();
   }
 
-  if (bookings === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (bookings === null) return <Loading label="Loading…" bare />;
 
   const now = new Date();
   const upcoming = bookings.filter((b) => new Date(b.starts_at) >= now && b.status === "confirmed");
@@ -335,7 +335,7 @@ function MyAvailability() {
       .then(({ data }) => setStaff((data as StaffRow) || "none"));
   }, [supabase, session]);
 
-  if (staff === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (staff === null) return <Loading label="Loading…" bare />;
   if (staff === "none") {
     return (
       <Card title="My availability">
@@ -379,7 +379,7 @@ function AllStaff() {
 
   return (
     <Card title="All staff" description="Manage any staff member's admissions availability, bookable status, or Teams link, e.g. while covering for someone on leave.">
-      {staffList === null && <p className="text-sm text-ink/65">Loading…</p>}
+      {staffList === null && <Loading label="Loading…" bare />}
       {staffList?.length === 0 && <p className="text-sm text-ink/65">No staff records yet.</p>}
       <ul className="space-y-2">
         {(staffList || []).map((s) => (

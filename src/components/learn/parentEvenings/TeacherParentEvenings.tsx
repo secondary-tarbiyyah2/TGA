@@ -13,7 +13,7 @@ import {
   type ParentEvening,
 } from "@/lib/learn/parentEvenings";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 type Row = { evening_id: string; join_url: string | null; parent_evenings: ParentEvening | null };
 type ScheduleRow = { booking_id: string; child_name: string; parent_name: string; slot_start: string; slot_end: string; join_url: string | null };
 
@@ -98,7 +98,7 @@ function EveningCard({ row, ev }: { row: Row; ev: ParentEvening }) {
         Your schedule <span className="font-normal text-ink/65">· {schedule ? schedule.length : 0} of {total} slots booked</span>
       </h3>
       {schedule === null ? (
-        <p className="mt-2 text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare className="mt-2" />
       ) : schedule.length === 0 ? (
         <p className="mt-2 text-sm text-ink/65">No bookings yet.</p>
       ) : (
@@ -144,7 +144,7 @@ export function TeacherParentEvenings() {
       });
   }, [supabase]);
 
-  if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (rows === null) return <Loading label="Loading…" bare />;
   if (rows.length === 0) {
     return (
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">

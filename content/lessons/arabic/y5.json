@@ -2,7 +2,7 @@
   "subject": "Arabic",
   "year": "y5",
   "board": "School curriculum (Madinah-style progression)",
-  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (pronouns, nominal sentences); National Curriculum KS2 languages | Spring 1 2027 (lessons 2, 3, 5 to 7): founding-year bridge (11 and 18 Jan) and Spring 1 weeks 1 to 3 (my new home, my room and furniture, where is it? with the oral check), order from the Tarbiyyah Primary Year 5 curriculum map (2023-24); Kitabi pages to be checked (CHECK IN KITABI); lessons v3 | Spring 2 2027 (lessons 8 to 13 new): Year 5 pack Arabic Spring 2 weeks 1 to 6 (at the airport; at the seaport; I travel by; my summer holiday; writing a holiday paragraph; review and oral check), our own dialogues and texts; lessons v3",
+  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (pronouns, nominal sentences); National Curriculum KS2 languages | Spring 1 2027 (lessons 2, 3, 5 to 7): founding-year bridge (11 and 18 Jan) and Spring 1 weeks 1 to 3 (my new home, my room and furniture, where is it? with the oral check), order from the Tarbiyyah Primary Year 5 curriculum map (2023-24); Kitabi pages to be checked (CHECK IN KITABI); lessons v3 | Spring 2 2027 (lessons 8 to 13 new): Year 5 pack Arabic Spring 2 weeks 1 to 6 (at the airport; at the seaport; I travel by; my summer holiday; writing a holiday paragraph; review and oral check), our own dialogues and texts; lessons v3 | Summer 1 2027 (lessons 14 to 18 new): Year 5 pack Arabic Summer 1 weeks 1 to 5 (days of the week; Islamic months and dates, taught as dates only; asking when; devices and games used wisely; a paragraph about my week), one lesson a week; full harakat; our own model texts; lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: About me",
@@ -2658,6 +2658,1172 @@
         {
           "find": "microphone",
           "alt": "Speaking aloud",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dates and days of the week; my electronic games",
+      "n": 14,
+      "title": "Days of the week: أَيَّامُ الأُسْبُوعِ",
+      "duration": 45,
+      "bigQuestion": "Some Arabic day names come from numbers. الأَحَد sounds like 'one'. Can you guess which other days are numbers?",
+      "objectives": [
+        "To understand and use the seven days of the week in Arabic and say what day it is"
+      ],
+      "successCriteria": [
+        "All: say the seven days in order",
+        "Most: answer مَا اليَوْمُ؟",
+        "Some: use أَمْسِ and غَدًا to say yesterday and tomorrow"
+      ],
+      "smsc": "Spiritual: Jumu'ah as a special day",
+      "keywords": [
+        {
+          "term": "أَيَّامُ الأُسْبُوعِ (ayyam al-usbu')",
+          "def": "the days of the week"
+        },
+        {
+          "term": "اليَوْم (al-yawm)",
+          "def": "today; the day"
+        },
+        {
+          "term": "أَمْسِ (amsi)",
+          "def": "yesterday"
+        },
+        {
+          "term": "غَدًا (ghadan)",
+          "def": "tomorrow"
+        },
+        {
+          "term": "يَوْمُ الجُمُعَةِ (yawm al-jumu'ah)",
+          "def": "Friday"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some Arabic day names come from numbers. الأَحَد sounds like 'one'. Can you guess which other days are numbers?",
+        "a": "الاِثْنَيْن (two), الثُّلَاثَاء (three), الأَرْبِعَاء (four), الخَمِيس (five)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The best day on which the sun has risen is Friday' (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. مَطَار is ...",
+          "a": "An airport",
+          "mins": 1,
+          "options": [
+            "An airport",
+            "A port"
+          ]
+        },
+        {
+          "q": "أُسَافِرُ بِالطَّائِرَةِ means ...",
+          "a": "I travel by plane",
+          "mins": 1,
+          "options": [
+            "I travel by plane",
+            "I travel by car"
+          ]
+        },
+        {
+          "q": "Say 'I went' in Arabic.",
+          "a": "ذَهَبْتُ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The seven days",
+          "bullets": [],
+          "note": "Begin with Bismillah. Each day is said after يَوْمُ. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "يَوْمُ ...",
+              "Day"
+            ],
+            "rows": [
+              [
+                "السَّبْت",
+                "Saturday"
+              ],
+              [
+                "الأَحَد",
+                "Sunday"
+              ],
+              [
+                "الاِثْنَيْن",
+                "Monday"
+              ],
+              [
+                "الثُّلَاثَاء",
+                "Tuesday"
+              ],
+              [
+                "الأَرْبِعَاء",
+                "Wednesday"
+              ],
+              [
+                "الخَمِيس",
+                "Thursday"
+              ],
+              [
+                "الجُمُعَة",
+                "Friday"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Number days",
+          "bullets": [
+            "الأَحَد: like أَحَد (one)",
+            "الاِثْنَيْن: two; الثُّلَاثَاء: three",
+            "الأَرْبِعَاء: four; الخَمِيس: five"
+          ],
+          "note": "Ask pupils to spot the numbers."
+        },
+        {
+          "heading": "Yesterday, today, tomorrow",
+          "bullets": [
+            "مَا اليَوْمُ؟ (what is today?)",
+            "اليَوْمُ يَوْمُ الثُّلَاثَاءِ",
+            "أَمْسِ: yesterday; غَدًا: tomorrow"
+          ],
+          "note": "Pupils answer for today's real day."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "يَوْمُ الجُمُعَةِ is ...",
+            "options": [
+              "Friday",
+              "Thursday",
+              "Sunday"
+            ],
+            "answer": 0,
+            "why": "الجُمُعَة = Friday, the day of Jumu'ah prayer."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "If today is الاِثْنَيْن, what was yesterday?",
+          "a": "الأَحَد (Sunday)",
+          "mins": 2,
+          "model": "Teacher points to the table: الاِثْنَيْن is Monday; the row before is الأَحَد, so أَمْسِ كَانَ يَوْمَ الأَحَدِ."
+        },
+        {
+          "q": "الخَمِيس is ...",
+          "a": "Thursday",
+          "mins": 1,
+          "options": [
+            "Thursday",
+            "Tuesday"
+          ]
+        },
+        {
+          "q": "غَدًا means ...",
+          "a": "Tomorrow",
+          "mins": 1,
+          "options": [
+            "Tomorrow",
+            "Yesterday"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Weekly planner on the pupil PDF: write the seven days in Arabic with harakat and one activity for each in English; then write three sentences: اليَوْمُ ... أَمْسِ ... غَدًا ...",
+          "a": "Seven days spelt correctly; three correct sentences about today, yesterday and tomorrow",
+          "mins": 11,
+          "model": "Teacher writes: اليَوْمُ يَوْمُ الأَرْبِعَاءِ. أَمْسِ كَانَ يَوْمَ الثُّلَاثَاءِ."
+        },
+        {
+          "q": "Extend: which two days are recommended for voluntary fasting?",
+          "a": "الاِثْنَيْن وَالخَمِيس (Monday and Thursday)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: say the days backwards from الجُمُعَة.",
+          "a": "الجُمُعَة، الخَمِيس، الأَرْبِعَاء، الثُّلَاثَاء، الاِثْنَيْن، الأَحَد، السَّبْت",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which day means 'two'?",
+          "a": "الاِثْنَيْن",
+          "mins": 1,
+          "options": [
+            "الاِثْنَيْن",
+            "السَّبْت"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which days come from numbers?",
+          "a": "الأَحَد to الخَمِيس",
+          "mins": 2
+        }
+      ],
+      "homework": "Each morning this week, say مَا اليَوْمُ؟ and answer in Arabic to someone at home.",
+      "send": "SEND: day cards to order. EAL: planner with English given. Stretch: learn أُسْبُوع (week) and شَهْر (month).",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: weekly planner"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "weekly planner calendar",
+          "alt": "A weekly planner",
+          "for": "teach:1"
+        },
+        {
+          "find": "mosque minaret Friday",
+          "alt": "Friday: the day of Jumu'ah",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dates and days of the week; my electronic games",
+      "n": 15,
+      "title": "Months and dates: the Islamic calendar",
+      "duration": 45,
+      "bigQuestion": "Why do you think Ramadan comes about eleven days earlier every year?",
+      "objectives": [
+        "To understand the Arabic names of the Islamic months and how to say a date"
+      ],
+      "successCriteria": [
+        "All: name four Islamic months including رَمَضَان and ذُو الحِجَّة",
+        "Most: say which month comes after another",
+        "Some: say a date: اليَوْمُ ... مِنْ شَهْرِ ..."
+      ],
+      "crossCurricular": "Science: phases of the moon",
+      "smsc": "Spiritual: the Islamic calendar",
+      "keywords": [
+        {
+          "term": "شَهْر (shahr)",
+          "def": "month"
+        },
+        {
+          "term": "تَارِيخ (tarikh)",
+          "def": "date"
+        },
+        {
+          "term": "هِلَال (hilal)",
+          "def": "the new crescent moon"
+        },
+        {
+          "term": "السَّنَةُ الهِجْرِيَّةُ (as-sanah al-hijriyyah)",
+          "def": "the Islamic (Hijri) year"
+        },
+        {
+          "term": "ذُو الحِجَّة (dhu l-hijjah)",
+          "def": "the twelfth month, of Hajj"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think Ramadan comes about eleven days earlier every year?",
+        "a": "The Islamic months follow the moon; a lunar year is about eleven days shorter than the solar year."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'They ask you about the new moons. Say: they are measurements of time for the people and for Hajj' (al-Baqarah 2:189).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. يَوْمُ الجُمُعَةِ is ...",
+          "a": "Friday",
+          "mins": 1,
+          "options": [
+            "Friday",
+            "Saturday"
+          ]
+        },
+        {
+          "q": "أَمْسِ means ...",
+          "a": "Yesterday",
+          "mins": 1,
+          "options": [
+            "Yesterday",
+            "Tomorrow"
+          ]
+        },
+        {
+          "q": "Say the day after الخَمِيس.",
+          "a": "الجُمُعَة",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Twelve months",
+          "bullets": [],
+          "note": "Begin with Bismillah. Read across each row. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Months 1 to 6",
+              "Months 7 to 12"
+            ],
+            "rows": [
+              [
+                "١ مُحَرَّم",
+                "٧ رَجَب"
+              ],
+              [
+                "٢ صَفَر",
+                "٨ شَعْبَان"
+              ],
+              [
+                "٣ رَبِيعُ الأَوَّلِ",
+                "٩ رَمَضَان"
+              ],
+              [
+                "٤ رَبِيعُ الآخِرِ",
+                "١٠ شَوَّال"
+              ],
+              [
+                "٥ جُمَادَى الأُولَى",
+                "١١ ذُو القَعْدَة"
+              ],
+              [
+                "٦ جُمَادَى الآخِرَة",
+                "١٢ ذُو الحِجَّة"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The moon decides",
+          "bullets": [
+            "Each month starts with the هِلَال",
+            "A month has 29 or 30 days",
+            "The Hijri year began with the Hijrah"
+          ],
+          "note": "Allah says: 'They ask you about the new moons. Say: they are measurements of time for the people and for Hajj' (al-Baqarah 2:189)."
+        },
+        {
+          "heading": "Saying a date",
+          "bullets": [
+            "اليَوْمُ هُوَ ... مِنْ شَهْرِ ...",
+            "عِيدُ الأَضْحَى فِي شَهْرِ ذِي الحِجَّةِ",
+            "رَمَضَانُ هُوَ الشَّهْرُ التَّاسِعُ"
+          ],
+          "note": "Taught as dates only (the map's birthday topic is not used)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which month comes after رَمَضَان?",
+            "options": [
+              "شَوَّال",
+              "شَعْبَان",
+              "رَجَب"
+            ],
+            "answer": 0,
+            "why": "رَمَضَان is 9th, شَوَّال is 10th."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "In which month is Eid al-Adha?",
+          "a": "ذُو الحِجَّة",
+          "mins": 2,
+          "model": "Teacher: Eid al-Adha is on the 10th of the month of Hajj, the 12th month: ذُو الحِجَّة. Sentence: عِيدُ الأَضْحَى فِي شَهْرِ ذِي الحِجَّةِ."
+        },
+        {
+          "q": "The month of fasting is ...",
+          "a": "رَمَضَان",
+          "mins": 1,
+          "options": [
+            "رَمَضَان",
+            "مُحَرَّم"
+          ]
+        },
+        {
+          "q": "شَهْر means ...",
+          "a": "Month",
+          "mins": 1,
+          "options": [
+            "Month",
+            "Week"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Islamic calendar wheel on the pupil PDF: write the twelve months in order (copying the harakat) and mark three special times: رَمَضَان، ذُو الحِجَّة، مُحَرَّم (the new year). Then write one sentence: ... فِي شَهْرِ ...",
+          "a": "Twelve months in order and one correct sentence, for example: نَصُومُ فِي شَهْرِ رَمَضَانَ",
+          "mins": 11,
+          "model": "Teacher writes the first three months and the sentence عِيدُ الفِطْرِ فِي شَهْرِ شَوَّالٍ."
+        },
+        {
+          "q": "Extend: which month is it now in the Islamic calendar? (Ask at home or check the masjid timetable.)",
+          "a": "ذُو الحِجَّة (late May 2027)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is the Hijri year about eleven days shorter?",
+          "a": "It follows the moon: 12 months of 29 or 30 days",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "ذُو الحِجَّة is month number ...",
+          "a": "12",
+          "mins": 1,
+          "options": [
+            "12",
+            "9"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why does Ramadan move earlier each year?",
+          "a": "The Islamic year follows the moon and is shorter",
+          "mins": 2
+        }
+      ],
+      "homework": "Find today's Hijri date on your masjid timetable and write it in Arabic.",
+      "send": "SEND: month cards to order with numbers. EAL: calendar wheel with English. Stretch: learn all twelve months by heart.",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: Islamic calendar wheel",
+        "Local masjid timetable with the Hijri date (household)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "crescent moon night sky",
+          "alt": "The new crescent: هِلَال",
+          "for": "teach:2"
+        },
+        {
+          "find": "calendar on wall",
+          "alt": "A calendar",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dates and days of the week; my electronic games",
+      "n": 16,
+      "title": "Asking when? مَتَى",
+      "duration": 45,
+      "bigQuestion": "What is the most important 'when?' question in a Muslim's day?",
+      "objectives": [
+        "To understand how to ask and answer 'when?' questions with days, months and times of day"
+      ],
+      "successCriteria": [
+        "All: ask a question with مَتَى",
+        "Most: answer with a day or a time of day",
+        "Some: hold a short question-and-answer dialogue"
+      ],
+      "smsc": "Spiritual: organising the day around salah",
+      "keywords": [
+        {
+          "term": "مَتَى؟ (mata)",
+          "def": "when?"
+        },
+        {
+          "term": "فِي الصَّبَاحِ (fi s-sabah)",
+          "def": "in the morning"
+        },
+        {
+          "term": "فِي المَسَاءِ (fi l-masa')",
+          "def": "in the evening"
+        },
+        {
+          "term": "بَعْدَ (ba'da)",
+          "def": "after"
+        },
+        {
+          "term": "قَبْلَ (qabla)",
+          "def": "before"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the most important 'when?' question in a Muslim's day?",
+        "a": "When is the next salah? مَتَى الصَّلَاةُ؟"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, prayer has been decreed upon the believers at specified times' (an-Nisa' 4:103).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. شَوَّال comes after ...",
+          "a": "رَمَضَان",
+          "mins": 1,
+          "options": [
+            "رَمَضَان",
+            "رَجَب"
+          ]
+        },
+        {
+          "q": "Eid al-Adha is in ...",
+          "a": "ذُو الحِجَّة",
+          "mins": 1,
+          "options": [
+            "ذُو الحِجَّة",
+            "مُحَرَّم"
+          ]
+        },
+        {
+          "q": "Say 'Monday'.",
+          "a": "الاِثْنَيْن",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Asking when",
+          "bullets": [
+            "مَتَى؟ (mata): when?",
+            "مَتَى تَذْهَبُ إِلَى المَسْجِدِ؟",
+            "When do you go to the masjid?"
+          ],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music."
+        },
+        {
+          "heading": "Answers",
+          "bullets": [],
+          "note": "Pupils repeat each answer.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "يَوْمَ الجُمُعَةِ",
+                "on Friday"
+              ],
+              [
+                "فِي الصَّبَاحِ",
+                "in the morning"
+              ],
+              [
+                "فِي المَسَاءِ",
+                "in the evening"
+              ],
+              [
+                "بَعْدَ المَدْرَسَةِ",
+                "after school"
+              ],
+              [
+                "قَبْلَ النَّوْمِ",
+                "before sleeping"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "A dialogue",
+          "bullets": [],
+          "note": "Read in two parts.",
+          "quote": {
+            "text": "مَتَى تَقْرَأُ القُرْآنَ؟\nأَقْرَأُ القُرْآنَ بَعْدَ الفَجْرِ.\nمَتَى تَلْعَبُ؟\nأَلْعَبُ بَعْدَ المَدْرَسَةِ.",
+            "source": "Our own dialogue"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "قَبْلَ النَّوْمِ means ...",
+            "options": [
+              "Before sleeping",
+              "After school",
+              "In the morning"
+            ],
+            "answer": 0,
+            "why": "قَبْلَ = before; النَّوْم = sleep."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer: مَتَى تَذْهَبُ إِلَى المَدْرَسَةِ؟",
+          "a": "For example: أَذْهَبُ إِلَى المَدْرَسَةِ فِي الصَّبَاحِ",
+          "mins": 2,
+          "model": "Teacher: take the verb from the question, change تَذْهَبُ (you go) to أَذْهَبُ (I go), and add when: فِي الصَّبَاحِ."
+        },
+        {
+          "q": "مَتَى means ...",
+          "a": "When?",
+          "mins": 1,
+          "options": [
+            "When?",
+            "Where?"
+          ]
+        },
+        {
+          "q": "بَعْدَ means ...",
+          "a": "After",
+          "mins": 1,
+          "options": [
+            "After",
+            "Before"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Interview grid on the pupil PDF: ask a partner four مَتَى questions (read Qur'an, play, sleep, eat) in a breakout, write their answers in Arabic, then report one back.",
+          "a": "Four questions and answers, for example: يَنَامُ قَبْلَ السَّاعَةِ التَّاسِعَةِ or أَنَامُ بَعْدَ العِشَاءِ",
+          "mins": 11,
+          "model": "Teacher asks a pupil: مَتَى تَأْكُلُ الفَطُورَ؟ Pupil: آكُلُ الفَطُورَ فِي الصَّبَاحِ. Teacher writes it in the grid."
+        },
+        {
+          "q": "Extend: ask مَتَى رَمَضَانُ؟ and answer with the month number.",
+          "a": "رَمَضَانُ هُوَ الشَّهْرُ التَّاسِعُ",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: use both قَبْلَ and بَعْدَ in one sentence.",
+          "a": "For example: أَتَوَضَّأُ قَبْلَ الصَّلَاةِ وَأَقْرَأُ بَعْدَهَا",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "فِي المَسَاءِ means ...",
+          "a": "In the evening",
+          "mins": 1,
+          "options": [
+            "In the evening",
+            "In the morning"
+          ]
+        },
+        {
+          "q": "Back to our ponder: the most important 'when?'",
+          "a": "مَتَى الصَّلَاةُ؟ When is the salah?",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask three people at home a مَتَى question in Arabic (teach them the answer words).",
+      "send": "SEND: answer cards to choose from. EAL: question frame. Stretch: use clock times: السَّاعَةُ الثَّامِنَةُ.",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: when? interview grid"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analog clock",
+          "alt": "A clock: when?",
+          "for": "hook"
+        },
+        {
+          "find": "sunrise over horizon",
+          "alt": "Morning: الصَّبَاح",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dates and days of the week; my electronic games",
+      "n": 17,
+      "title": "My electronic devices and games; using them wisely",
+      "duration": 45,
+      "bigQuestion": "Is time spent on games wasted, or can it be good? What makes the difference?",
+      "objectives": [
+        "To understand Arabic words for devices and games and how to talk about using them wisely"
+      ],
+      "successCriteria": [
+        "All: name four devices in Arabic",
+        "Most: say what I play and for how long",
+        "Some: give a reason for using devices wisely with لِأَنَّ"
+      ],
+      "crossCurricular": "Computing: healthy screen time and online safety",
+      "smsc": "Moral: self-control with technology",
+      "keywords": [
+        {
+          "term": "حَاسُوب (hasub)",
+          "def": "computer"
+        },
+        {
+          "term": "جِهَاز (jihaz)",
+          "def": "a device"
+        },
+        {
+          "term": "لُعْبَة (lu'bah)",
+          "def": "a game; a toy"
+        },
+        {
+          "term": "هَاتِف (hatif)",
+          "def": "phone"
+        },
+        {
+          "term": "وَقْت (waqt)",
+          "def": "time"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is time spent on games wasted, or can it be good? What makes the difference?",
+        "a": "It depends how much and what: time is a blessing, so we use it wisely and keep salah and family first."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'There are two blessings in which many people are cheated: health and free time' (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. مَتَى means ...",
+          "a": "When?",
+          "mins": 1,
+          "options": [
+            "When?",
+            "How much?"
+          ]
+        },
+        {
+          "q": "قَبْلَ النَّوْمِ means ...",
+          "a": "Before sleeping",
+          "mins": 1,
+          "options": [
+            "Before sleeping",
+            "After school"
+          ]
+        },
+        {
+          "q": "Answer: مَتَى تَقْرَأُ القُرْآنَ؟",
+          "a": "For example: أَقْرَأُ القُرْآنَ بَعْدَ الفَجْرِ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Devices",
+          "bullets": [],
+          "note": "Begin with Bismillah. Hold up or point to each. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "حَاسُوب",
+                "computer"
+              ],
+              [
+                "هَاتِف",
+                "phone"
+              ],
+              [
+                "جِهَازٌ لَوْحِيٌّ",
+                "tablet"
+              ],
+              [
+                "شَاشَة",
+                "screen"
+              ],
+              [
+                "لُعْبَةٌ إِلِكْتْرُونِيَّةٌ",
+                "electronic game"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "What I do",
+          "bullets": [
+            "أَلْعَبُ لُعْبَةً عَلَى الحَاسُوبِ",
+            "أَتَعَلَّمُ عَلَى الجِهَازِ: I learn on the device",
+            "سَاعَةً وَاحِدَةً: for one hour"
+          ],
+          "note": "Pupils say one true sentence."
+        },
+        {
+          "heading": "Wise or not?",
+          "bullets": [],
+          "note": "Pupils show the column number.",
+          "sort": {
+            "columns": [
+              "Wise",
+              "Not wise"
+            ],
+            "cards": [
+              "One hour after homework",
+              "Playing during salah time",
+              "A learning app for Arabic",
+              "Gaming late at night",
+              "Asking parents before downloading",
+              "Hiding screen time"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "هَاتِف is ...",
+            "options": [
+              "A phone",
+              "A computer",
+              "A game"
+            ],
+            "answer": 0,
+            "why": "هَاتِف (hatif) = phone."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: I play a game on the computer for one hour.",
+          "a": "أَلْعَبُ لُعْبَةً عَلَى الحَاسُوبِ سَاعَةً وَاحِدَةً",
+          "mins": 2,
+          "model": "Teacher builds it: أَلْعَبُ (I play) + لُعْبَةً (a game) + عَلَى الحَاسُوبِ (on the computer) + سَاعَةً وَاحِدَةً (for one hour)."
+        },
+        {
+          "q": "جِهَاز means ...",
+          "a": "A device",
+          "mins": 1,
+          "options": [
+            "A device",
+            "A screen"
+          ]
+        },
+        {
+          "q": "Time is ...",
+          "a": "وَقْت",
+          "mins": 1,
+          "options": [
+            "وَقْت",
+            "لُعْبَة"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Screen-time plan on the pupil PDF: three Arabic sentences about devices you use, when and for how long; then one rule in English for using them wisely. Start: أَلْعَبُ ...",
+          "a": "Three correct sentences with a device, a time word and a duration; one wise rule",
+          "mins": 11,
+          "model": "Teacher writes: أَسْتَعْمِلُ الحَاسُوبَ بَعْدَ المَدْرَسَةِ سَاعَةً وَاحِدَةً."
+        },
+        {
+          "q": "Extend: add a reason with لِأَنَّ.",
+          "a": "For example: أَلْعَبُ قَلِيلًا لِأَنَّ الوَقْتَ مُهِمٌّ",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: say 'I do not play during salah time': لَا أَلْعَبُ وَقْتَ الصَّلَاةِ.",
+          "a": "لَا أَلْعَبُ وَقْتَ الصَّلَاةِ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "حَاسُوب is ...",
+          "a": "A computer",
+          "mins": 1,
+          "options": [
+            "A computer",
+            "A phone"
+          ]
+        },
+        {
+          "q": "Back to our ponder: wasted or good?",
+          "a": "It depends: used wisely and in moderation, after duties",
+          "mins": 2
+        }
+      ],
+      "homework": "Keep your screen-time plan for a week with a parent and tick each day you kept it.",
+      "send": "SEND: device picture cards. EAL: sentence frame. Stretch: write about a learning app you use in two sentences.",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: screen-time plan"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "laptop computer desk",
+          "alt": "A computer: حَاسُوب",
+          "for": "keywords"
+        },
+        {
+          "find": "hourglass sand time",
+          "alt": "Time: وَقْت",
+          "for": "hook"
+        },
+        {
+          "find": "game controller",
+          "alt": "A game controller",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dates and days of the week; my electronic games",
+      "n": 18,
+      "title": "A short paragraph about my week",
+      "duration": 45,
+      "bigQuestion": "If someone read a paragraph about your week, what would they learn about you?",
+      "objectives": [
+        "To understand how to join days, activities and time words into a short paragraph about my week"
+      ],
+      "successCriteria": [
+        "All: write three sentences with days of the week",
+        "Most: join them with وَ and ثُمَّ",
+        "Some: write a five-sentence paragraph with a time word and an opinion"
+      ],
+      "crossCurricular": "English: paragraphs and connectives",
+      "smsc": "Spiritual: good regular habits",
+      "keywords": [
+        {
+          "term": "فِقْرَة (fiqrah)",
+          "def": "a paragraph"
+        },
+        {
+          "term": "أُسْبُوعِي (usbu'i)",
+          "def": "my week"
+        },
+        {
+          "term": "ثُمَّ (thumma)",
+          "def": "then"
+        },
+        {
+          "term": "كُلَّ يَوْمٍ (kulla yawm)",
+          "def": "every day"
+        },
+        {
+          "term": "أُحِبُّ (uhibbu)",
+          "def": "I like / love"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If someone read a paragraph about your week, what would they learn about you?",
+        "a": "Pupils' own: what matters to us, like salah, family, learning and play."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The most beloved deeds to Allah are the most regular, even if small' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. حَاسُوب is ...",
+          "a": "A computer",
+          "mins": 1,
+          "options": [
+            "A computer",
+            "A tablet"
+          ]
+        },
+        {
+          "q": "Say 'on Friday'.",
+          "a": "يَوْمَ الجُمُعَةِ",
+          "mins": 1,
+          "options": [
+            "يَوْمَ الجُمُعَةِ",
+            "يَوْمَ السَّبْتِ"
+          ]
+        },
+        {
+          "q": "ثُمَّ means ...",
+          "a": "Then",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Building blocks",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "When",
+              "What I do"
+            ],
+            "rows": [
+              [
+                "يَوْمَ السَّبْتِ",
+                "أَذْهَبُ إِلَى المَسْجِدِ"
+              ],
+              [
+                "يَوْمَ الأَحَدِ",
+                "أَزُورُ جَدَّتِي"
+              ],
+              [
+                "كُلَّ يَوْمٍ",
+                "أَقْرَأُ القُرْآنَ"
+              ],
+              [
+                "يَوْمَ الجُمُعَةِ",
+                "أُصَلِّي الجُمُعَةَ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model paragraph",
+          "bullets": [],
+          "note": "Labelled: time, action, joiner, opinion.",
+          "quote": {
+            "text": "كُلَّ يَوْمٍ أَقْرَأُ القُرْآنَ بَعْدَ الفَجْرِ.\nيَوْمَ السَّبْتِ أَذْهَبُ إِلَى المَسْجِدِ، ثُمَّ أَلْعَبُ مَعَ أَخِي.\nيَوْمَ الجُمُعَةِ أُصَلِّي الجُمُعَةَ.\nأُحِبُّ يَوْمَ الجُمُعَةِ لِأَنَّهُ يَوْمٌ مُبَارَكٌ.",
+            "source": "Teacher's model (our own text)"
+          }
+        },
+        {
+          "heading": "Checklist",
+          "bullets": [
+            "A day or time word in each sentence",
+            "وَ or ثُمَّ to join",
+            "One opinion with لِأَنَّ"
+          ],
+          "note": "Pupils check their own work against this."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which word joins two actions in order?",
+            "options": [
+              "ثُمَّ",
+              "مَتَى",
+              "أَيْنَ"
+            ],
+            "answer": 0,
+            "why": "ثُمَّ = then."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Join: أَذْهَبُ إِلَى المَدْرَسَةِ + أَرْجِعُ إِلَى البَيْتِ",
+          "a": "أَذْهَبُ إِلَى المَدْرَسَةِ ثُمَّ أَرْجِعُ إِلَى البَيْتِ",
+          "mins": 2,
+          "model": "Teacher: two actions in order, so put ثُمَّ between them: أَذْهَبُ إِلَى المَدْرَسَةِ ثُمَّ أَرْجِعُ إِلَى البَيْتِ."
+        },
+        {
+          "q": "كُلَّ يَوْمٍ means ...",
+          "a": "Every day",
+          "mins": 1,
+          "options": [
+            "Every day",
+            "Yesterday"
+          ]
+        },
+        {
+          "q": "فِقْرَة means ...",
+          "a": "A paragraph",
+          "mins": 1,
+          "options": [
+            "A paragraph",
+            "A word"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a paragraph about your week in the portal response box or on the pupil PDF: five sentences with days or time words, وَ or ثُمَّ, and one opinion with لِأَنَّ. Start: كُلَّ يَوْمٍ ...",
+          "a": "Five correct sentences with time words, joiners and an opinion",
+          "mins": 12,
+          "model": "Teacher writes the first sentence again and ticks the checklist."
+        },
+        {
+          "q": "Extend: read your paragraph to your partner, who asks one مَتَى question.",
+          "a": "Correct question and answer",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: add a sentence in the past: أَمْسِ ...",
+          "a": "For example: أَمْسِ زُرْتُ جَدِّي",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Back to our ponder: what does your paragraph show about you?",
+          "a": "Pupils' own",
+          "mins": 2
+        }
+      ],
+      "homework": "Read your paragraph to your family and translate it for them.",
+      "send": "SEND: paragraph frame with blanks and word bank. EAL: model paragraph with English. Stretch: write seven sentences with two opinions.",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: my week paragraph frame and checklist"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "weekly planner calendar",
+          "alt": "A weekly planner",
+          "for": "hook"
+        },
+        {
+          "find": "pencil writing notebook",
+          "alt": "Writing a paragraph",
           "for": "keywords"
         }
       ]

@@ -3,7 +3,7 @@
  "year": "y9",
  "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
  "boardShort": "KS3 Maths Progress",
- "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: straight-line graphs, forming and solving equations) and Spring 1 lessons (number, percentages, maths and money, with the riba note and halal finance) written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard and lessons v3 rules. | Founding year 2027 Spring 2 (15 Mar to 23 Apr): Deduction; rotation and translation; Pythagoras, written to the plan with Maths Progress Year 8 7.1 to 7.5, Year 7 10.3 to 10.5 and Year 9 7.3 as the school's resources.",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: straight-line graphs, forming and solving equations) and Spring 1 lessons (number, percentages, maths and money, with the riba note and halal finance) written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard and lessons v3 rules. | Founding year 2027 Spring 2 (15 Mar to 23 Apr): Deduction; rotation and translation; Pythagoras, written to the plan with Maths Progress Year 8 7.1 to 7.5, Year 7 10.3 to 10.5 and Year 9 7.3 as the school's resources. | Founding year 2027 Summer 1 (26 Apr to 11 Jun): Enlargement and similarity; ratio and proportion; rates, written to the plan with Maths Progress Year 9 4.1, 4.2, 4.4, 4.5, 10.1, 10.2 and Year 7 7.1 to 7.5 as the school's resources; assessment point 2 test in the week of 26 Apr; trigonometry (row 6) left as independent study.",
  "lessons": [
   {
    "unit": "Unit 1: Indices and standard form",
@@ -10824,6 +10824,4143 @@
      "find": "geometry set",
      "alt": "A geometry set",
      "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 52,
+   "title": "Enlargement: scale factor and centre of enlargement",
+   "duration": 50,
+   "bigQuestion": "What changes and what stays the same when a shape is enlarged?",
+   "objectives": [
+    "To understand how to enlarge a shape by a positive scale factor from a centre of enlargement"
+   ],
+   "successCriteria": [
+    "All: enlarge a shape by a whole-number scale factor",
+    "Most: enlarge from a centre by multiplying each distance from the centre",
+    "Some: explain why angles stay the same while lengths are multiplied"
+   ],
+   "smsc": "Social: architects and designers enlarge plans accurately so buildings match their drawings",
+   "keywords": [
+    {
+     "term": "enlargement",
+     "def": "a transformation that changes the size of a shape but not its shape"
+    },
+    {
+     "term": "scale factor",
+     "def": "the number every length is multiplied by"
+    },
+    {
+     "term": "centre of enlargement",
+     "def": "the fixed point the enlargement is measured from"
+    },
+    {
+     "term": "similar",
+     "def": "the same shape but a different size"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A photo 6 cm by 4 cm is enlarged to 18 cm wide. How tall is it now? Why would 16 cm look wrong?",
+    "a": "12 cm: every length is multiplied by 3. Adding 12 to both sides would stretch the picture."
+   },
+   "starter": [
+    {
+     "q": "The hypotenuse when the shorter sides are 6 cm and 8 cm",
+     "a": "10 cm",
+     "mins": 1
+    },
+    {
+     "q": "Translate (2, 3) by the column vector (4, -1)",
+     "a": "(6, 2)",
+     "mins": 1
+    },
+    {
+     "q": "Rotate (1, 0) by 90° anticlockwise about the origin",
+     "a": "(0, 1)",
+     "mins": 1
+    },
+    {
+     "q": "3 × 2.5",
+     "a": "7.5",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Scale factor",
+     "bullets": [
+      "Every length × the scale factor",
+      "Angles stay the same",
+      "The image is similar to the object"
+     ],
+     "note": "Model without a centre first.",
+     "model": {
+      "problem": "Enlarge a 3 cm by 2 cm rectangle by scale factor 4.",
+      "steps": [
+       "3 × 4 = 12",
+       "2 × 4 = 8"
+      ],
+      "answer": "12 cm by 8 cm"
+     }
+    },
+    {
+     "heading": "From the origin",
+     "bullets": [
+      "Multiply each distance from the centre"
+     ],
+     "note": "With the centre at (0, 0), multiply the coordinates.",
+     "model": {
+      "problem": "Enlarge triangle A(2, 1), B(4, 1), C(2, 2) by scale factor 3, centre (0, 0).",
+      "steps": [
+       "Each vertex is 3 times as far from the origin",
+       "Multiply each coordinate by 3",
+       "A'(6, 3), B'(12, 3), C'(6, 6)"
+      ],
+      "answer": "A'(6, 3), B'(12, 3), C'(6, 6)"
+     }
+    },
+    {
+     "heading": "From another centre",
+     "bullets": [
+      "Count from the centre, not the origin"
+     ],
+     "note": "Use the grid squares.",
+     "model": {
+      "problem": "Enlarge P(3, 2) by scale factor 2, centre (1, 1).",
+      "steps": [
+       "Centre to P: 2 right, 1 up",
+       "× 2: 4 right, 2 up",
+       "From the centre: (1 + 4, 1 + 2)"
+      ],
+      "answer": "(5, 3)"
+     }
+    },
+    {
+     "heading": "Multiply, never add",
+     "bullets": [
+      "Scale factors multiply"
+     ],
+     "note": "Link to the photo in the ponder question.",
+     "misconception": {
+      "wrong": "Scale factor 3 means add 3 cm to every length",
+      "right": "Scale factor 3 means multiply every length by 3"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A side of 5 cm is enlarged by scale factor 4. The image side is:",
+      "options": [
+       "20 cm",
+       "9 cm",
+       "1.25 cm",
+       "25 cm"
+      ],
+      "answer": 0,
+      "why": "5 × 4 = 20. 9 adds 4 instead of multiplying."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Enlarge P(2, 3) by scale factor 2 from centre (0, 0), then from centre (1, 1).",
+     "a": "(4, 6) and (3, 5)",
+     "mins": 2,
+     "model": "Centre (0, 0): double the coordinates, (4, 6).\nCentre (1, 1): P is 1 right and 2 up; doubled, 2 right and 4 up: (3, 5)."
+    },
+    {
+     "q": "A triangle has sides 3 cm, 4 cm and 5 cm. Enlarge by scale factor 2.5.",
+     "a": "7.5 cm, 10 cm, 12.5 cm",
+     "mins": 1
+    },
+    {
+     "q": "A square of side 4 cm is enlarged by scale factor 3. Its new perimeter?",
+     "a": "48 cm",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core (printable grid): Triangle T has vertices (1, 1), (3, 1) and (1, 4). Enlarge T by (a) scale factor 2, centre (0, 0) (b) scale factor 3, centre (1, 1) (c) scale factor 2, centre (2, 0). Write each image's coordinates.",
+     "a": "(a) (2, 2), (6, 2), (2, 8) (b) (1, 1), (7, 1), (1, 10) (c) (0, 2), (4, 2), (0, 8)",
+     "mins": 8,
+     "model": "(b) (1, 1) is the centre, so it stays put.\n(3, 1) is 2 right of the centre: × 3 = 6 right, so (7, 1).\n(1, 4) is 3 up: × 3 = 9 up, so (1, 10)."
+    },
+    {
+     "q": "Extend: A 5 cm by 3 cm rectangle is enlarged by scale factor 3. How many times bigger is the area?",
+     "a": "15 cm² becomes 15 × 9 = 135 cm²: 9 times bigger (3²)",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: An enlargement with scale factor 3 maps (2, 2) to (8, 5). Find the centre.",
+     "a": "(-1, 0.5): from (-1, 0.5) to (2, 2) is (3, 1.5), and × 3 gives (9, 4.5), landing on (8, 5)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Under an enlargement, angles:",
+     "a": "A) stay the same",
+     "mins": 1,
+     "options": [
+      "stay the same",
+      "are multiplied by the scale factor",
+      "halve"
+     ]
+    },
+    {
+     "q": "Scale factor 3: a 7 cm side becomes",
+     "a": "21 cm",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what changes and what stays the same in an enlargement?",
+     "a": "Lengths are multiplied by the scale factor; angles and the shape stay the same.",
+     "mins": 2
+    }
+   ],
+   "homework": "Enlargements on a grid: 6 shapes with different centres (portal homework, printable grid).",
+   "send": "Support: a grid with the centre marked and ray lines started. EAL: 'enlargement', 'scale factor', 'centre'. Stretch: finding a centre algebraically.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 4.1 Enlargement",
+    "Printable coordinate grid sheet (portal worksheet for this lesson)",
+    "Ruler and sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "magnifying glass",
+     "alt": "A magnifying glass",
+     "for": "keywords"
+    },
+    {
+     "find": "nested measuring cups",
+     "alt": "Nested cups: similar shapes in different sizes",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 53,
+   "title": "Enlargement with fractional scale factors",
+   "duration": 50,
+   "bigQuestion": "Can an enlargement make a shape smaller?",
+   "objectives": [
+    "To understand how fractional scale factors make shapes smaller and how to enlarge from a centre with a fractional scale factor"
+   ],
+   "successCriteria": [
+    "All: multiply lengths by a fractional scale factor such as ½ or ⅓",
+    "Most: enlarge a shape by a fractional scale factor from a centre",
+    "Some: find a scale factor from an object and its image (image ÷ object)"
+   ],
+   "keywords": [
+    {
+     "term": "scale factor",
+     "def": "the number every length is multiplied by"
+    },
+    {
+     "term": "fractional scale factor",
+     "def": "a scale factor between 0 and 1: the image is smaller"
+    },
+    {
+     "term": "centre of enlargement",
+     "def": "the fixed point the enlargement is measured from"
+    },
+    {
+     "term": "image",
+     "def": "the shape after the transformation"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "On a map every length is 1/100 000 of the real length. Is that still an 'enlargement'? What is its scale factor?",
+    "a": "Yes, in maths: an enlargement with scale factor 1/100 000, which makes it smaller."
+   },
+   "starter": [
+    {
+     "q": "Enlarge (3, 1) by scale factor 2, centre (0, 0)",
+     "a": "(6, 2)",
+     "mins": 1
+    },
+    {
+     "q": "½ of 9",
+     "a": "4.5",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 6/9",
+     "a": "2/3",
+     "mins": 1
+    },
+    {
+     "q": "The hypotenuse when the shorter sides are 5 and 12",
+     "a": "13",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Bigger or smaller?",
+     "bullets": [
+      "Above 1: bigger",
+      "Between 0 and 1: smaller",
+      "Still called an enlargement"
+     ],
+     "note": "Place scale factors on the line.",
+     "numberline": {
+      "min": 0,
+      "max": 3,
+      "step": 0.5,
+      "marks": [
+       {
+        "at": 0.5,
+        "label": "smaller"
+       },
+       {
+        "at": 1,
+        "label": "same size"
+       },
+       {
+        "at": 2,
+        "label": "bigger"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "Scale factor ½ from the origin",
+     "bullets": [
+      "Multiply each distance by ½"
+     ],
+     "note": "Halve the coordinates.",
+     "model": {
+      "problem": "Enlarge the triangle (2, 2), (6, 2), (2, 8) by scale factor ½, centre (0, 0).",
+      "steps": [
+       "Each vertex moves to half its distance from the origin",
+       "Halve each coordinate"
+      ],
+      "answer": "(1, 1), (3, 1), (1, 4)"
+     }
+    },
+    {
+     "heading": "Another centre",
+     "bullets": [
+      "Count from the centre"
+     ],
+     "note": "The image moves towards the centre.",
+     "model": {
+      "problem": "Enlarge P(7, 5) by scale factor ⅓, centre (1, 2).",
+      "steps": [
+       "Centre to P: 6 right, 3 up",
+       "× ⅓: 2 right, 1 up",
+       "From the centre: (1 + 2, 2 + 1)"
+      ],
+      "answer": "(3, 3)"
+     }
+    },
+    {
+     "heading": "Finding the scale factor",
+     "bullets": [
+      "Image length ÷ object length"
+     ],
+     "note": "Always image over object.",
+     "model": {
+      "problem": "An object side is 12 cm and its image side is 4 cm. Find the scale factor.",
+      "steps": [
+       "Scale factor = image ÷ object",
+       "4 ÷ 12 = ⅓"
+      ],
+      "answer": "⅓"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "An image side is 3 cm and the object side is 12 cm. The scale factor is:",
+      "options": [
+       "¼",
+       "4",
+       "9",
+       "⅓"
+      ],
+      "answer": 0,
+      "why": "3 ÷ 12 = ¼. 4 divides the wrong way round (object ÷ image)."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Enlarge (8, 4) by scale factor ¼, centre (0, 0).",
+     "a": "(2, 1)",
+     "mins": 1,
+     "model": "Multiply each coordinate by ¼.\n8 × ¼ = 2 and 4 × ¼ = 1: (2, 1)."
+    },
+    {
+     "q": "A 9 cm by 5 cm rectangle is enlarged by scale factor ½.",
+     "a": "4.5 cm by 2.5 cm",
+     "mins": 1
+    },
+    {
+     "q": "Object 15 cm, image 6 cm: the scale factor?",
+     "a": "6 ÷ 15 = ⅖ (0.4)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Enlarge the square (4, 4), (8, 4), (8, 8), (4, 8) by scale factor ½, centre (0, 0). (b) Enlarge the triangle (3, 3), (9, 3), (3, 9) by scale factor ⅓, centre (0, 0). (c) Enlarge (5, 7) by scale factor ½, centre (1, 1). (d) Find the scale factor when 20 cm becomes 5 cm.",
+     "a": "(a) (2, 2), (4, 2), (4, 4), (2, 4) (b) (1, 1), (3, 1), (1, 3) (c) (3, 4) (d) ¼",
+     "mins": 7,
+     "model": "(a) The centre is the origin, so halve every coordinate: (4, 4) → (2, 2), (8, 4) → (4, 2), and so on.\n(c) From (1, 1) to (5, 7) is 4 right and 6 up; half is 2 right and 3 up: (3, 4)."
+    },
+    {
+     "q": "Extend: A model of a 45 m minaret is made with scale factor 1/150. How tall is the model in cm?",
+     "a": "45 ÷ 150 = 0.3 m = 30 cm",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: An enlargement with scale factor ⅓ maps (6, 9) to (4, 5). Find the centre.",
+     "a": "(3, 3): from (3, 3) to (6, 9) is (3, 6); × ⅓ gives (1, 2), landing on (4, 5)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Scale factor ½ makes a shape:",
+     "a": "B) smaller",
+     "mins": 1,
+     "options": [
+      "bigger",
+      "smaller",
+      "the same size"
+     ]
+    },
+    {
+     "q": "The scale factor when 10 cm becomes 4 cm",
+     "a": "⅖",
+     "mins": 1
+    },
+    {
+     "q": "Big question: can an enlargement make a shape smaller?",
+     "a": "Yes: a scale factor between 0 and 1 multiplies every length by a fraction, so the image is smaller.",
+     "mins": 2
+    }
+   ],
+   "homework": "Fractional enlargements: 6 grid questions and 2 scale models (portal homework).",
+   "send": "Support: grid with the centre marked; halving and thirding table. EAL: 'fractional', 'reduce'. Stretch: finding a centre from two points.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 4.2 Negative and fractional scale factors",
+    "Printable coordinate grid sheet (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "architectural scale model building",
+     "alt": "A scale model of a building",
+     "for": "hook"
+    },
+    {
+     "find": "map scale bar",
+     "alt": "A map scale bar",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 54,
+   "title": "Describing enlargements: finding the centre and scale factor",
+   "duration": 50,
+   "bigQuestion": "Given a shape and its image, how can you work backwards to the centre of enlargement?",
+   "objectives": [
+    "To understand how to describe an enlargement fully by finding its scale factor and centre"
+   ],
+   "successCriteria": [
+    "All: find the scale factor from corresponding lengths",
+    "Most: find the centre by drawing ray lines through corresponding vertices",
+    "Some: describe an enlargement fully: enlargement, scale factor, centre"
+   ],
+   "keywords": [
+    {
+     "term": "ray line",
+     "def": "a line through a vertex and its image"
+    },
+    {
+     "term": "centre of enlargement",
+     "def": "the point where the ray lines meet"
+    },
+    {
+     "term": "corresponding",
+     "def": "in the same position on the object and the image"
+    },
+    {
+     "term": "describe fully",
+     "def": "name the transformation and give every detail"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A torch shines through a cut-out triangle onto a wall and makes a bigger triangle. Where is the torch? How could you find it from the two triangles?",
+    "a": "Draw lines through matching corners: they meet at the torch, the centre of enlargement."
+   },
+   "starter": [
+    {
+     "q": "The scale factor from 4 cm to 10 cm",
+     "a": "2.5",
+     "mins": 1
+    },
+    {
+     "q": "Enlarge (2, 1) by scale factor 3, centre (0, 0)",
+     "a": "(6, 3)",
+     "mins": 1
+    },
+    {
+     "q": "Reflect (2, 5) in y = x",
+     "a": "(5, 2)",
+     "mins": 1
+    },
+    {
+     "q": "⅓ of 12",
+     "a": "4",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Ray lines",
+     "bullets": [
+      "Join each vertex to its image",
+      "Extend the lines",
+      "They meet at the centre"
+     ],
+     "note": "Draw on a grid live; use a ruler."
+    },
+    {
+     "heading": "Describe fully",
+     "bullets": [
+      "Scale factor from lengths",
+      "Centre from ray lines"
+     ],
+     "note": "Worked example on the grid.",
+     "model": {
+      "problem": "Object (1, 1), (2, 1), (1, 3) has image (3, 1), (5, 1), (3, 5). Describe the transformation fully.",
+      "steps": [
+       "Side from (1, 1) to (2, 1) is 1; its image is 2: scale factor 2",
+       "Ray lines through (1, 1) and (3, 1), and through (1, 3) and (3, 5)",
+       "They meet at (-1, 1)"
+      ],
+      "answer": "Enlargement, scale factor 2, centre (-1, 1)"
+     }
+    },
+    {
+     "heading": "Check one vertex",
+     "bullets": [
+      "image = centre + scale factor × (object - centre)",
+      "Test it on a vertex you did not use"
+     ],
+     "note": "(2, 1): centre to object is 3 right; × 2 = 6 right; (-1 + 6, 1) = (5, 1). It works."
+    },
+    {
+     "heading": "Three facts",
+     "bullets": [
+      "All three for full marks"
+     ],
+     "note": "Exam mark schemes need each one.",
+     "misconception": {
+      "wrong": "It got 2 times bigger",
+      "right": "Enlargement, scale factor 2, centre (-1, 1)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "An object side is 3 cm and its image side is 12 cm. The scale factor is:",
+      "options": [
+       "4",
+       "9",
+       "¼",
+       "36"
+      ],
+      "answer": 0,
+      "why": "12 ÷ 3 = 4. 9 subtracts; ¼ divides the wrong way round."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Object (2, 2), (4, 2), (2, 3) has image (4, 4), (8, 4), (4, 6). Describe the transformation fully.",
+     "a": "Enlargement, scale factor 2, centre (0, 0)",
+     "mins": 2,
+     "model": "Lengths double: scale factor 2.\nEvery image coordinate is double the object's, so the ray lines meet at the origin."
+    },
+    {
+     "q": "Object (6, 6), (9, 6), (6, 9) has image (2, 2), (3, 2), (2, 3). Describe it fully.",
+     "a": "Enlargement, scale factor ⅓, centre (0, 0)",
+     "mins": 2
+    },
+    {
+     "q": "A perimeter of 12 cm becomes 30 cm. Scale factor?",
+     "a": "2.5",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Describe each transformation fully: (a) (1, 2), (3, 2), (1, 3) → (2, 4), (6, 4), (2, 6) (b) (2, 1), (4, 1), (4, 2) → (2, 1), (8, 1), (8, 4) (c) (5, 5), (9, 5), (9, 7) → (3, 4), (5, 4), (5, 5)",
+     "a": "(a) enlargement, scale factor 2, centre (0, 0) (b) enlargement, scale factor 3, centre (2, 1) (c) enlargement, scale factor ½, centre (1, 3)",
+     "mins": 8,
+     "model": "(a) Each image coordinate is double the object's and the lengths double: scale factor 2 from the origin.\n(b) (2, 1) does not move, so it is the centre; the side 2 becomes 6: scale factor 3."
+    },
+    {
+     "q": "Extend: An enlargement maps a 4 cm by 6 cm rectangle to a similar rectangle of area 216 cm². Find the scale factor.",
+     "a": "24 cm² → 216 cm² is × 9 = 3², so scale factor 3",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Explain why the centre of enlargement never moves.",
+     "a": "Its distance from the centre is 0, and 0 × any scale factor is still 0.",
+     "mins": 2
+    }
+   ],
+   "exit": [
+    {
+     "q": "To describe an enlargement fully, give:",
+     "a": "A) the scale factor and the centre",
+     "mins": 1,
+     "options": [
+      "the scale factor and the centre",
+      "the scale factor only",
+      "the direction it moved"
+     ]
+    },
+    {
+     "q": "The scale factor from 8 cm to 2 cm",
+     "a": "¼",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can you work back to the centre of enlargement?",
+     "a": "Draw ray lines through each vertex and its image; they meet at the centre.",
+     "mins": 2
+    }
+   ],
+   "homework": "Describe 6 enlargements fully on the printable grid (portal homework).",
+   "send": "Support: grids with one ray line already drawn. EAL: 'ray', 'corresponding', 'describe fully'. Stretch: area and enlargement links.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 4.1 Enlargement and 4.2 Negative and fractional scale factors",
+    "Printable coordinate grid sheet (portal worksheet for this lesson)",
+    "Ruler",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "torch light beam dark",
+     "alt": "A torch beam spreading out",
+     "for": "hook"
+    },
+    {
+     "find": "projector light beam",
+     "alt": "Light spreading from a projector",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 55,
+   "title": "Assessment point 2: maths test",
+   "duration": 50,
+   "bigQuestion": "How well can I use this year's number and geometry skills on my own?",
+   "objectives": [
+    "To understand how well I can apply this year's percentages, standard form, angle and Pythagoras work under test conditions"
+   ],
+   "successCriteria": [
+    "All: answer recall questions on standard form, multipliers and angle facts accurately",
+    "Most: show full working on percentage and Pythagoras questions",
+    "Some: check answers with an estimate or a reverse calculation"
+   ],
+   "smsc": "Moral: honesty (amanah, أَمَانَة) in assessments: our own work only",
+   "keywords": [
+    {
+     "term": "test conditions",
+     "def": "working alone, in silence, to time"
+    },
+    {
+     "term": "working",
+     "def": "the steps that show your method"
+    },
+    {
+     "term": "multiplier",
+     "def": "the decimal for a percentage change, such as 1.15"
+    },
+    {
+     "term": "mark",
+     "def": "a point earned for a correct step or answer"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "What is one exam habit that will earn you marks today, even if you get stuck?",
+    "a": "Write the method: a multiplier or Pythagoras set-up earns marks even if the final answer slips."
+   },
+   "starter": [
+    {
+     "q": "Write 45 000 in standard form",
+     "a": "4.5 × 10⁴",
+     "mins": 1
+    },
+    {
+     "q": "The multiplier for a 15% increase",
+     "a": "1.15",
+     "mins": 1
+    },
+    {
+     "q": "3² + 4²",
+     "a": "25",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Test rules",
+     "bullets": [
+      "Portal test, secure mode, 30 minutes",
+      "Calculator in Section B only",
+      "Show working in the response box"
+     ],
+     "note": "Cameras on; no other windows open."
+    },
+    {
+     "heading": "Mark-earning habits",
+     "bullets": [
+      "Write the multiplier first",
+      "Square, add, then square root",
+      "Check: does the answer make sense?"
+     ],
+     "note": "These answer the ponder question."
+    },
+    {
+     "heading": "Model of full working",
+     "bullets": [
+      "Reverse percentage: divide by the multiplier"
+     ],
+     "note": "From Spring 1.",
+     "model": {
+      "problem": "After a 20% reduction a price is £64. Find the original price.",
+      "steps": [
+       "Multiplier 0.8",
+       "Original × 0.8 = 64",
+       "64 ÷ 0.8 = 80"
+      ],
+      "answer": "£80"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Practice: the shorter sides of a right-angled triangle are 9 cm and 12 cm. Find the hypotenuse.",
+     "a": "15 cm",
+     "mins": 2,
+     "model": "9² + 12² = 81 + 144 = 225.\n√225 = 15 cm."
+    }
+   ],
+   "independent": [
+    {
+     "q": "Assessment point 2 test (portal, secure mode, 30 minutes): Section A non-calculator 20 marks, Section B calculator 10 marks, on Spring 1 and Spring 2 work. Sample: (a) (3.2 × 10⁴) × (2 × 10³) (b) increase 240 by 15% (c) after 20% off a price is £64: the original (d) a £12 000 car loses 10% of its value each year: its value after 2 years (e) hypotenuse with shorter sides 9 cm and 12 cm (f) exchange €230 to pounds at £1 = €1.15",
+     "a": "Sample answers: (a) 6.4 × 10⁷ (b) 276 (c) £80 (d) £9720 (e) 15 cm (f) £200",
+     "mins": 30,
+     "model": "(a) 3.2 × 2 = 6.4 and 10⁴ × 10³ = 10⁷.\n(b) 240 × 1.15 = 276.\n(d) 12 000 × 0.9² = 12 000 × 0.81 = 9720.\n(f) 230 ÷ 1.15 = 200."
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which question was hardest, and why?",
+     "a": "Personal reflection.",
+     "mins": 2
+    },
+    {
+     "q": "Big question: name the habit that earned you marks today.",
+     "a": "For example: writing the multiplier before calculating.",
+     "mins": 1
+    }
+   ],
+   "homework": "No homework: rest well; feedback in the next lesson.",
+   "send": "Support: access arrangements as agreed (reader, extra time, larger font). EAL: glossary of key words allowed. Stretch: the final challenge question in the test.",
+   "resources": [
+    "Assessment point 2 maths test, Year 9 (portal quiz, secure mode, written for this assessment point)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "stopwatch",
+     "alt": "A stopwatch for timing",
+     "for": "keywords"
+    },
+    {
+     "find": "pencil and calculator on desk",
+     "alt": "A pencil and calculator",
+     "for": "hook"
+    }
+   ],
+   "islamicLink": {
+    "text": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead. The test may include repeated percentage change and compound interest from Spring 1: we learn this as knowledge of how the wider economy works, never as something to take.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 56,
+   "title": "Similar shapes: finding missing lengths",
+   "duration": 50,
+   "bigQuestion": "How can you tell whether two shapes are similar, and use that to find a missing length?",
+   "objectives": [
+    "To understand how similar shapes have equal angles and sides in the same ratio, and use this to find missing lengths"
+   ],
+   "successCriteria": [
+    "All: decide whether two shapes are similar by checking the ratios of their sides",
+    "Most: find the scale factor and missing lengths in similar shapes",
+    "Some: find missing lengths in similar triangles, including one triangle inside another"
+   ],
+   "crossCurricular": "Geography: surveyors once used shadows and similar triangles to estimate heights",
+   "keywords": [
+    {
+     "term": "similar",
+     "def": "the same shape: equal angles and sides in the same ratio"
+    },
+    {
+     "term": "congruent",
+     "def": "the same shape and the same size"
+    },
+    {
+     "term": "corresponding sides",
+     "def": "sides in the same position on two similar shapes"
+    },
+    {
+     "term": "scale factor",
+     "def": "the number each length is multiplied by"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Are all squares similar? Are all rectangles? Are all circles?",
+    "a": "All squares and all circles are; rectangles are not always (1 by 2 and 1 by 3 are not)."
+   },
+   "starter": [
+    {
+     "q": "The scale factor from 6 cm to 15 cm",
+     "a": "2.5",
+     "mins": 1
+    },
+    {
+     "q": "Describe (1, 1) → (3, 3), (2, 1) → (6, 3)",
+     "a": "enlargement, scale factor 3, centre (0, 0)",
+     "mins": 1
+    },
+    {
+     "q": "Solve x ÷ 4 = 9 ÷ 6",
+     "a": "x = 6",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 12 : 18",
+     "a": "2 : 3",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Similar or congruent?",
+     "bullets": [
+      "Similar: same shape",
+      "Congruent: same shape and size"
+     ],
+     "note": "Show two pairs.",
+     "compare": {
+      "left": {
+       "title": "Similar",
+       "points": [
+        "equal angles",
+        "sides in the same ratio",
+        "one is an enlargement of the other"
+       ]
+      },
+      "right": {
+       "title": "Congruent",
+       "points": [
+        "equal angles",
+        "equal sides",
+        "scale factor 1"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Missing length",
+     "bullets": [
+      "Scale factor from a known pair"
+     ],
+     "note": "Always match corresponding sides.",
+     "model": {
+      "problem": "Rectangles 4 cm by 6 cm and 10 cm by x cm are similar. Find x.",
+      "steps": [
+       "Scale factor = 10 ÷ 4 = 2.5",
+       "x = 6 × 2.5"
+      ],
+      "answer": "15 cm"
+     }
+    },
+    {
+     "heading": "Similar triangles",
+     "bullets": [
+      "Fractions are fine as scale factors"
+     ],
+     "note": "Triangles ABC and PQR are similar.",
+     "model": {
+      "problem": "AB = 6, BC = 9 and PQ = 8, where AB corresponds to PQ. Find QR.",
+      "steps": [
+       "Scale factor = 8 ÷ 6 = 4/3",
+       "QR = 9 × 4/3"
+      ],
+      "answer": "QR = 12"
+     }
+    },
+    {
+     "heading": "One triangle inside another",
+     "bullets": [
+      "A parallel line makes similar triangles"
+     ],
+     "note": "Corresponding angles are equal, so the triangles are similar.",
+     "model": {
+      "problem": "In triangle ABC, D is on AB and E on AC with DE ∥ BC. AD = 4, AB = 10 and DE = 6. Find BC.",
+      "steps": [
+       "DE ∥ BC, so the angles match (corresponding angles): ADE and ABC are similar",
+       "Scale factor = 10 ÷ 4 = 2.5",
+       "BC = 6 × 2.5"
+      ],
+      "answer": "BC = 15"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "In two similar triangles, sides of 5 cm and 15 cm correspond. A side of 7 cm becomes:",
+      "options": [
+       "21 cm",
+       "17 cm",
+       "35 cm",
+       "10.5 cm"
+      ],
+      "answer": 0,
+      "why": "Scale factor 15 ÷ 5 = 3; 7 × 3 = 21. 17 adds 10 instead of multiplying."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Rectangles 3 cm by 5 cm and 7.5 cm by y cm are similar. Find y.",
+     "a": "y = 12.5",
+     "mins": 2,
+     "model": "Scale factor = 7.5 ÷ 3 = 2.5.\ny = 5 × 2.5 = 12.5."
+    },
+    {
+     "q": "Are rectangles 6 by 8 and 9 by 12 similar?",
+     "a": "Yes: both sides × 1.5",
+     "mins": 1
+    },
+    {
+     "q": "Are rectangles 6 by 8 and 8 by 10 similar?",
+     "a": "No: 8 ÷ 6 is not equal to 10 ÷ 8",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Similar triangles have sides 4, 6, 7 and 10, x, y: find x and y. (b) DE ∥ BC, AD = 3, AB = 12, DE = 2.5: find BC. (c) A 1.5 m pole casts a 2 m shadow; at the same time a tree casts a 14 m shadow: how tall is the tree? (d) Are triangles with sides 3, 4, 5 and 7.5, 10, 12.5 similar?",
+     "a": "(a) x = 15, y = 17.5 (b) BC = 10 (c) 10.5 m (d) yes: every side × 2.5",
+     "mins": 8,
+     "model": "(a) Scale factor = 10 ÷ 4 = 2.5; x = 6 × 2.5 = 15; y = 7 × 2.5 = 17.5.\n(c) Shadow scale factor 14 ÷ 2 = 7; height 1.5 × 7 = 10.5 m."
+    },
+    {
+     "q": "Extend: DE ∥ BC with AD = 5, DB = 3 and DE = 4. Find BC.",
+     "a": "AB = 8, scale factor 8 ÷ 5 = 1.6, BC = 6.4",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Explain why two triangles with the same three angles must be similar.",
+     "a": "Fixing the angles fixes the shape; only the size can change, so one is an enlargement of the other.",
+     "mins": 2
+    }
+   ],
+   "exit": [
+    {
+     "q": "Similar shapes have:",
+     "a": "A) equal angles and sides in the same ratio",
+     "mins": 1,
+     "options": [
+      "equal angles and sides in the same ratio",
+      "equal sides",
+      "equal areas"
+     ]
+    },
+    {
+     "q": "Scale factor 3: a 4 cm side becomes",
+     "a": "12 cm",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can you tell whether shapes are similar and find a missing length?",
+     "a": "Check corresponding sides are in the same ratio; then multiply by the scale factor.",
+     "mins": 2
+    }
+   ],
+   "homework": "Similar shapes: 8 missing-length questions including a shadow problem (portal homework).",
+   "send": "Support: corresponding sides colour-matched on the diagrams. EAL: 'similar', 'congruent', 'corresponding'. Stretch: nested triangles with a split side.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 10.1 Congruent and similar shapes and 10.2 Ratios in triangles (Unit 10: Comparing shapes)",
+    "Printable similar shapes sheet (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "tree shadow on ground sunny",
+     "alt": "A tree and its shadow",
+     "for": "teach:3"
+    },
+    {
+     "find": "nested bowls",
+     "alt": "Nested bowls: similar shapes",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 57,
+   "title": "Similar shapes: area",
+   "duration": 50,
+   "bigQuestion": "If a shape doubles in length, why does its area not just double?",
+   "objectives": [
+    "To understand how the area of similar shapes changes by the square of the length scale factor"
+   ],
+   "successCriteria": [
+    "All: find the area of an enlarged shape using area factor = (scale factor)²",
+    "Most: find the length scale factor from an area factor using a square root",
+    "Some: solve area problems with similar shapes in context"
+   ],
+   "smsc": "Moral: fair pricing: charging by the real amount of material, not by length alone",
+   "keywords": [
+    {
+     "term": "length scale factor",
+     "def": "the number every length is multiplied by"
+    },
+    {
+     "term": "area factor",
+     "def": "the number every area is multiplied by: the length scale factor squared"
+    },
+    {
+     "term": "similar",
+     "def": "the same shape, a different size"
+    },
+    {
+     "term": "square root",
+     "def": "the number that squares to give a value: √25 = 5"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A rug 1 m by 2 m costs £40. A similar rug twice as long and twice as wide uses how much more wool? Is £80 a fair price?",
+    "a": "It has 4 times the area (2 × 2), so about £160 for the same quality."
+   },
+   "starter": [
+    {
+     "q": "The scale factor from 3 cm to 7.5 cm",
+     "a": "2.5",
+     "mins": 1
+    },
+    {
+     "q": "3²",
+     "a": "9",
+     "mins": 1
+    },
+    {
+     "q": "√49",
+     "a": "7",
+     "mins": 1
+    },
+    {
+     "q": "The area of a 2 cm by 4 cm rectangle",
+     "a": "8 cm²",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Lengths and areas",
+     "bullets": [
+      "Area factor = (length scale factor)²"
+     ],
+     "note": "Draw a 1 by 1 square enlarged by 2 and 3.",
+     "table": {
+      "head": [
+       "Length scale factor",
+       "Area factor"
+      ],
+      "rows": [
+       [
+        "2",
+        "4"
+       ],
+       [
+        "3",
+        "9"
+       ],
+       [
+        "½",
+        "¼"
+       ],
+       [
+        "k",
+        "k²"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Area from the scale factor",
+     "bullets": [
+      "Square the scale factor first"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Two similar shapes have length scale factor 3. The small area is 5 cm². Find the large area.",
+      "steps": [
+       "Area factor = 3² = 9",
+       "5 × 9"
+      ],
+      "answer": "45 cm²"
+     }
+    },
+    {
+     "heading": "Working backwards",
+     "bullets": [
+      "Square root the area factor"
+     ],
+     "note": "From areas to lengths.",
+     "model": {
+      "problem": "Similar shapes have areas 12 cm² and 75 cm². A side of the small shape is 4 cm. Find the matching side of the large one.",
+      "steps": [
+       "Area factor 75 ÷ 12 = 6.25",
+       "Length scale factor √6.25 = 2.5",
+       "4 × 2.5"
+      ],
+      "answer": "10 cm"
+     }
+    },
+    {
+     "heading": "Not the same factor",
+     "bullets": [
+      "Areas use the square"
+     ],
+     "note": "Most common error.",
+     "misconception": {
+      "wrong": "Scale factor 3 multiplies the area by 3",
+      "right": "Scale factor 3 multiplies the area by 3² = 9"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Every length is doubled. The area is multiplied by:",
+      "options": [
+       "2",
+       "4",
+       "8",
+       "6"
+      ],
+      "answer": 1,
+      "why": "2² = 4. 8 is the volume factor; 2 is the length factor."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Similar triangles have length scale factor 4. The small area is 6 cm². Find the large area.",
+     "a": "96 cm²",
+     "mins": 2,
+     "model": "Area factor = 4² = 16.\n6 × 16 = 96 cm²."
+    },
+    {
+     "q": "An area factor of 25 means a length scale factor of",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Sides 3 cm and 7.5 cm correspond; the small area is 8 cm². The large area?",
+     "a": "Scale factor 2.5, area factor 6.25: 50 cm²",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) scale factor 5, small area 4 cm²: large area (b) scale factor ½, large area 36 cm²: small area (c) areas 20 cm² and 180 cm²: length scale factor (d) similar flags: the small one is 30 cm wide with area 600 cm², the large one is 90 cm wide: its area",
+     "a": "(a) 100 cm² (b) 9 cm² (c) 3 (d) 5400 cm²",
+     "mins": 7,
+     "model": "(a) Area factor 5² = 25; 4 × 25 = 100 cm².\n(c) 180 ÷ 20 = 9; √9 = 3."
+    },
+    {
+     "q": "Extend: A prayer mat design is enlarged so its area grows from 0.8 m² to 1.25 m². The small mat is 1.0 m long. How long is the large one?",
+     "a": "Area factor 1.5625, length scale factor 1.25: 1.25 m",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Two similar shapes have perimeters 18 cm and 24 cm. The larger area is 64 cm². Find the smaller area.",
+     "a": "Scale factor 4/3, area factor 16/9: 64 × 9/16 = 36 cm²",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Length scale factor 3 gives an area factor of:",
+     "a": "C) 9",
+     "mins": 1,
+     "options": [
+      "3",
+      "6",
+      "9"
+     ]
+    },
+    {
+     "q": "Area factor 16 gives a length scale factor of",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why does the area not just double when the lengths double?",
+     "a": "Area uses two lengths multiplied together, so both double: 2 × 2 = 4 times the area.",
+     "mins": 2
+    }
+   ],
+   "homework": "Similar areas: 8 questions including prices and maps (portal homework).",
+   "send": "Support: the k and k² table on a card. EAL: 'area factor', 'square root'. Stretch: perimeters and areas together.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 10.2 Ratios in triangles (Unit 10: Comparing shapes)",
+    "Printable similar shapes sheet 2 (portal worksheet for this lesson)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "woven rug pattern",
+     "alt": "A woven rug",
+     "for": "hook"
+    },
+    {
+     "find": "photo frames different sizes",
+     "alt": "Similar frames of different sizes",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 58,
+   "title": "Similar shapes: volume",
+   "duration": 50,
+   "bigQuestion": "If a model is 10 times smaller in length, how much smaller is its volume?",
+   "objectives": [
+    "To understand how the volume of similar solids changes by the cube of the length scale factor, and choose the right factor in mixed problems"
+   ],
+   "successCriteria": [
+    "All: use volume factor = (scale factor)³",
+    "Most: find the length scale factor from a volume factor using a cube root",
+    "Some: choose the right factor (k, k² or k³) in mixed problems"
+   ],
+   "keywords": [
+    {
+     "term": "volume factor",
+     "def": "the number every volume is multiplied by: the length scale factor cubed"
+    },
+    {
+     "term": "cube root",
+     "def": "the number that cubes to give a value: ∛27 = 3"
+    },
+    {
+     "term": "similar solids",
+     "def": "3D shapes with the same shape, different sizes"
+    },
+    {
+     "term": "capacity",
+     "def": "how much a container holds"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A 1 cm cube is enlarged to a 2 cm cube. How many small cubes fit inside the big one?",
+    "a": "8: 2 × 2 × 2."
+   },
+   "starter": [
+    {
+     "q": "Scale factor 4: the area factor",
+     "a": "16",
+     "mins": 1
+    },
+    {
+     "q": "2³",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "∛27",
+     "a": "3",
+     "mins": 1
+    },
+    {
+     "q": "The volume of a cube of side 3 cm",
+     "a": "27 cm³",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Three factors",
+     "bullets": [
+      "Length k, area k², volume k³"
+     ],
+     "note": "Pupils fill in the last row.",
+     "table": {
+      "head": [
+       "Length scale factor k",
+       "Area factor k²",
+       "Volume factor k³"
+      ],
+      "rows": [
+       [
+        "2",
+        "4",
+        "8"
+       ],
+       [
+        "3",
+        "9",
+        "27"
+       ],
+       [
+        "½",
+        "¼",
+        "⅛"
+       ],
+       [
+        "10",
+        "100",
+        "1000"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Volume from the scale factor",
+     "bullets": [
+      "Cube the scale factor"
+     ],
+     "note": "Similar jugs.",
+     "model": {
+      "problem": "Two similar jugs have length scale factor 3. The small jug holds 0.5 litres. How much does the large jug hold?",
+      "steps": [
+       "Volume factor 3³ = 27",
+       "0.5 × 27"
+      ],
+      "answer": "13.5 litres"
+     }
+    },
+    {
+     "heading": "Working backwards",
+     "bullets": [
+      "Cube root the volume factor"
+     ],
+     "note": "Similar boxes.",
+     "model": {
+      "problem": "Similar boxes have volumes 64 cm³ and 343 cm³. The small box is 8 cm tall. How tall is the large one?",
+      "steps": [
+       "Volume factor 343 ÷ 64",
+       "Length scale factor ∛(343 ÷ 64) = 7 ÷ 4",
+       "8 × 7 ÷ 4"
+      ],
+      "answer": "14 cm"
+     }
+    },
+    {
+     "heading": "Mixed problems",
+     "bullets": [
+      "Go through the length scale factor"
+     ],
+     "note": "Area to volume.",
+     "model": {
+      "problem": "Two similar bottles have surface areas 50 cm² and 200 cm². The small one holds 30 cm³. How much does the large one hold?",
+      "steps": [
+       "Area factor 4, so length scale factor 2",
+       "Volume factor 2³ = 8",
+       "30 × 8"
+      ],
+      "answer": "240 cm³"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Every length is multiplied by 10. The volume is multiplied by:",
+      "options": [
+       "10",
+       "100",
+       "1000",
+       "30"
+      ],
+      "answer": 2,
+      "why": "10³ = 1000. 100 is the area factor."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Length scale factor 2; the small volume is 15 cm³. Find the large volume.",
+     "a": "120 cm³",
+     "mins": 1,
+     "model": "Volume factor 2³ = 8.\n15 × 8 = 120 cm³."
+    },
+    {
+     "q": "A volume factor of 125 means a length scale factor of",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Scale factor ⅓; the large volume is 54 cm³. Find the small volume.",
+     "a": "54 × 1/27 = 2 cm³",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) scale factor 4, small volume 3 cm³: large volume (b) volumes 40 cm³ and 1080 cm³: length scale factor (c) a model car is 1/20 of the real length; the real boot holds 400 litres: how much does the model's hold? (d) similar cylinders 6 cm and 9 cm tall; the large surface area is 270 cm²: the small surface area",
+     "a": "(a) 192 cm³ (b) 3 (c) 0.05 litres (50 ml) (d) 120 cm²",
+     "mins": 8,
+     "model": "(a) Volume factor 4³ = 64; 3 × 64 = 192 cm³.\n(d) Scale factor 1.5, area factor 2.25; 270 ÷ 2.25 = 120 cm²."
+    },
+    {
+     "q": "Extend: Two similar water tanks are 1.2 m and 1.8 m tall. The small one holds 400 litres. How much does the large one hold?",
+     "a": "Scale factor 1.5, volume factor 3.375: 1350 litres",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Two similar solids have surface areas in the ratio 9 : 25. Find the ratio of their volumes.",
+     "a": "Length ratio 3 : 5, so volumes 27 : 125",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Length scale factor 2 gives a volume factor of:",
+     "a": "C) 8",
+     "mins": 1,
+     "options": [
+      "4",
+      "6",
+      "8"
+     ]
+    },
+    {
+     "q": "∛1000",
+     "a": "10",
+     "mins": 1
+    },
+    {
+     "q": "Big question: a model 10 times smaller in length is how much smaller in volume?",
+     "a": "10³ = 1000 times smaller, because volume uses three lengths.",
+     "mins": 2
+    }
+   ],
+   "homework": "Similar solids: 8 questions mixing length, area and volume (portal homework).",
+   "send": "Support: k, k², k³ table and a 2 × 2 × 2 cube picture. EAL: 'volume factor', 'cube root', 'capacity'. Stretch: ratio questions.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 10.2 Ratios in triangles (Unit 10: Comparing shapes); Year 8 2.3 Volume of cubes and cuboids",
+    "Printable similar solids sheet (portal worksheet for this lesson)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "sugar cubes stack",
+     "alt": "Sugar cubes",
+     "for": "hook"
+    },
+    {
+     "find": "water storage tank",
+     "alt": "A water storage tank",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 59,
+   "title": "Ratio: simplifying and equivalent ratios",
+   "duration": 50,
+   "bigQuestion": "Is 0.5 : 2 the same ratio as 1 : 4? How can decimals, fractions and units hide a simple ratio?",
+   "objectives": [
+    "To understand how to simplify ratios, including ratios with decimals, fractions and different units, and write them as 1 : n"
+   ],
+   "successCriteria": [
+    "All: simplify a ratio of whole numbers to its simplest form",
+    "Most: simplify ratios with decimals, fractions or mixed units",
+    "Some: write a ratio in the form 1 : n"
+   ],
+   "keywords": [
+    {
+     "term": "ratio",
+     "def": "compares the sizes of two or more quantities"
+    },
+    {
+     "term": "simplest form",
+     "def": "whole numbers with no common factor"
+    },
+    {
+     "term": "equivalent ratios",
+     "def": "ratios that compare in the same way, such as 2 : 3 and 4 : 6"
+    },
+    {
+     "term": "unit ratio",
+     "def": "a ratio written as 1 : n"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A recipe uses 250 g of flour to 0.5 kg of dates. A friend says the ratio is 250 : 0.5 = 500 : 1. What went wrong?",
+    "a": "The units: 0.5 kg = 500 g, so 250 : 500 = 1 : 2."
+   },
+   "starter": [
+    {
+     "q": "Scale factor 3: the area factor",
+     "a": "9",
+     "mins": 1
+    },
+    {
+     "q": "Scale factor 2: the volume factor",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "HCF of 24 and 36",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "0.4 × 10",
+     "a": "4",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Whole numbers",
+     "bullets": [
+      "Divide by the HCF"
+     ],
+     "note": "One step if you find the HCF.",
+     "model": {
+      "problem": "Simplify 24 : 36.",
+      "steps": [
+       "HCF of 24 and 36 is 12",
+       "24 ÷ 12 = 2 and 36 ÷ 12 = 3"
+      ],
+      "answer": "2 : 3"
+     }
+    },
+    {
+     "heading": "Fractions and decimals",
+     "bullets": [
+      "Multiply to make whole numbers first"
+     ],
+     "note": "Fractions: use the common denominator.",
+     "model": {
+      "problem": "Simplify ⅔ : ¾.",
+      "steps": [
+       "Common denominator 12: 8/12 : 9/12",
+       "Multiply both parts by 12"
+      ],
+      "answer": "8 : 9"
+     }
+    },
+    {
+     "heading": "Same units first",
+     "bullets": [
+      "Convert before simplifying"
+     ],
+     "note": "The ponder question.",
+     "misconception": {
+      "wrong": "250 g : 0.5 kg = 500 : 1",
+      "right": "0.5 kg = 500 g, so 250 : 500 = 1 : 2"
+     }
+    },
+    {
+     "heading": "The form 1 : n",
+     "bullets": [
+      "Divide both parts by the first"
+     ],
+     "note": "Useful for comparing and for map scales.",
+     "model": {
+      "problem": "Write 5 : 12 in the form 1 : n.",
+      "steps": [
+       "Divide both parts by 5",
+       "5 ÷ 5 = 1 and 12 ÷ 5 = 2.4"
+      ],
+      "answer": "1 : 2.4"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Simplify 0.6 : 1.5.",
+      "options": [
+       "2 : 5",
+       "6 : 15",
+       "3 : 5",
+       "5 : 2"
+      ],
+      "answer": 0,
+      "why": "× 10 gives 6 : 15; ÷ 3 gives 2 : 5. 6 : 15 is not fully simplified."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Simplify 3.5 : 2.",
+     "a": "7 : 4",
+     "mins": 1,
+     "model": "Multiply both by 2 to remove the decimal: 7 : 4.\n7 and 4 have no common factor."
+    },
+    {
+     "q": "Simplify 40 cm : 2 m.",
+     "a": "40 : 200 = 1 : 5",
+     "mins": 1
+    },
+    {
+     "q": "Write 4 : 18 in the form 1 : n.",
+     "a": "1 : 4.5",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Simplify (a) 56 : 84 (b) 2.4 : 3.6 (c) ¼ : ⅚ (d) 750 ml : 2 litres; (e) write 8 : 30 in the form 1 : n",
+     "a": "(a) 2 : 3 (b) 2 : 3 (c) 3 : 10 (d) 3 : 8 (e) 1 : 3.75",
+     "mins": 6,
+     "model": "(a) HCF 28: 56 ÷ 28 = 2, 84 ÷ 28 = 3.\n(c) Common denominator 12: 3/12 : 10/12; multiply both by 12: 3 : 10."
+    },
+    {
+     "q": "Extend: A map scale is 4 cm : 1 km. Write it in the form 1 : n.",
+     "a": "4 cm : 100 000 cm = 1 : 25 000",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Red and blue tiles are in the ratio 3 : 5. When 12 more red tiles are added the ratio becomes 1 : 1. How many blue tiles are there?",
+     "a": "3x + 12 = 5x, so x = 6 and there are 30 blue tiles",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Simplify 15 : 25.",
+     "a": "A) 3 : 5",
+     "mins": 1,
+     "options": [
+      "3 : 5",
+      "5 : 3",
+      "1 : 5"
+     ]
+    },
+    {
+     "q": "Write 2 : 7 in the form 1 : n.",
+     "a": "1 : 3.5",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can decimals, fractions and units hide a simple ratio?",
+     "a": "Convert to the same units and to whole numbers first; then divide by the HCF to see the simple ratio.",
+     "mins": 2
+    }
+   ],
+   "homework": "Simplifying ratios: 12 questions with decimals, fractions and units (portal homework).",
+   "send": "Support: HCF reminder and a units table. EAL: 'ratio', 'simplest form', 'equivalent'. Stretch: ratio change problems.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 7.2 Writing ratios and 7.3 Using ratios (Unit 7: Ratio and proportion)",
+    "Printable ratio practice sheet (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Medjool dates bowl",
+     "alt": "A bowl of dates",
+     "for": "hook"
+    },
+    {
+     "find": "map scale bar",
+     "alt": "A map scale bar",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 60,
+   "title": "Sharing in a ratio",
+   "duration": 50,
+   "bigQuestion": "How can a profit be shared fairly between partners who put in different amounts?",
+   "objectives": [
+    "To understand how to share an amount in a given ratio, including when one share or the difference is known"
+   ],
+   "successCriteria": [
+    "All: share an amount in a ratio of two or three parts",
+    "Most: find the total or another share from one known share",
+    "Some: solve problems where the difference between shares is known"
+   ],
+   "crossCurricular": "Business: sharing profit between partners in proportion to their investment",
+   "smsc": "Moral: fairness ('adl, عَدْل) and keeping agreements in business",
+   "keywords": [
+    {
+     "term": "ratio",
+     "def": "compares the sizes of quantities"
+    },
+    {
+     "term": "part",
+     "def": "one equal portion in a ratio"
+    },
+    {
+     "term": "share",
+     "def": "the amount each person or group gets"
+    },
+    {
+     "term": "total",
+     "def": "all the parts together"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Two partners invest £6000 and £4000 in a halal business and make £2500 profit. What is a fair way to share it?",
+    "a": "In the ratio of their investments, 3 : 2, if they agree: £1500 and £1000."
+   },
+   "starter": [
+    {
+     "q": "Simplify 6000 : 4000",
+     "a": "3 : 2",
+     "mins": 1
+    },
+    {
+     "q": "⅖ of 2500",
+     "a": "1000",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 1.2 : 0.8",
+     "a": "3 : 2",
+     "mins": 1
+    },
+    {
+     "q": "Write 4 : 10 in the form 1 : n",
+     "a": "1 : 2.5",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Sharing in two parts",
+     "bullets": [
+      "Add the parts, find one part"
+     ],
+     "note": "Bar model: 5 boxes, 3 shaded.",
+     "model": {
+      "problem": "Share £2500 in the ratio 3 : 2.",
+      "steps": [
+       "Total parts 3 + 2 = 5",
+       "One part 2500 ÷ 5 = 500",
+       "3 × 500 and 2 × 500"
+      ],
+      "answer": "£1500 and £1000"
+     }
+    },
+    {
+     "heading": "Three parts",
+     "bullets": [
+      "Same method"
+     ],
+     "note": "Check: the shares add up to the total.",
+     "model": {
+      "problem": "Share 72 in the ratio 2 : 3 : 4.",
+      "steps": [
+       "Total parts 9",
+       "One part 72 ÷ 9 = 8",
+       "2 × 8, 3 × 8, 4 × 8"
+      ],
+      "answer": "16, 24 and 32"
+     }
+    },
+    {
+     "heading": "One share known",
+     "bullets": [
+      "Find one part from the share you know"
+     ],
+     "note": "Not the total this time.",
+     "model": {
+      "problem": "In the ratio 3 : 5, the smaller share is £45. Find the total.",
+      "steps": [
+       "3 parts = 45",
+       "1 part = 15",
+       "8 parts = 120"
+      ],
+      "answer": "£120"
+     }
+    },
+    {
+     "heading": "Difference known",
+     "bullets": [
+      "The difference is a number of parts"
+     ],
+     "note": "Bar model makes this clear.",
+     "model": {
+      "problem": "Two shares are in the ratio 2 : 7 and differ by 35. Find both.",
+      "steps": [
+       "Difference = 7 - 2 = 5 parts = 35",
+       "1 part = 7",
+       "2 × 7 and 7 × 7"
+      ],
+      "answer": "14 and 49"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Share 60 in the ratio 1 : 3. The larger share is:",
+      "options": [
+       "45",
+       "20",
+       "40",
+       "15"
+      ],
+      "answer": 0,
+      "why": "4 parts, so 15 each; 3 × 15 = 45. 20 divides by 3 instead of 4."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Share £84 in the ratio 5 : 2.",
+     "a": "£60 and £24",
+     "mins": 2,
+     "model": "7 parts; 84 ÷ 7 = 12.\n5 × 12 = £60 and 2 × 12 = £24."
+    },
+    {
+     "q": "Share 90 kg of dates in the ratio 1 : 2 : 3.",
+     "a": "15 kg, 30 kg, 45 kg",
+     "mins": 1
+    },
+    {
+     "q": "The ratio is 4 : 9 and the larger share is 54. Find the smaller share.",
+     "a": "24",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Share £350 in the ratio 3 : 4. (b) Share 1.2 kg in the ratio 5 : 3. (c) In the ratio 2 : 3 : 5 the middle share is £27: find the total. (d) Two shares in the ratio 5 : 8 differ by 42: find both.",
+     "a": "(a) £150 and £200 (b) 750 g and 450 g (c) £90 (d) 70 and 112",
+     "mins": 7,
+     "model": "(a) 3 + 4 = 7 parts; 350 ÷ 7 = 50; 3 × 50 = £150 and 4 × 50 = £200.\n(c) 3 parts = 27, 1 part = 9, 10 parts = 90."
+    },
+    {
+     "q": "Extend: Three partners invest £5000, £3000 and £2000 and agree to share the profit in the ratio of their investments. The profit is £1800. Find each share.",
+     "a": "5 : 3 : 2, so 10 parts of £180: £900, £540 and £360",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A and B share money in the ratio 3 : 5, and B gets £40 more than A. A gives a quarter of his share as sadaqah. How much does he give?",
+     "a": "2 parts = 40, 1 part = 20, A gets £60; a quarter is £15",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Share 40 in the ratio 3 : 5. The smaller share is:",
+     "a": "A) 15",
+     "mins": 1,
+     "options": [
+      "15",
+      "24",
+      "5"
+     ]
+    },
+    {
+     "q": "Ratio 1 : 4 and the total is 75. The larger share?",
+     "a": "60",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can partners share profit fairly?",
+     "a": "Agree a ratio at the start (for example, the ratio of what each invested) and share in it by finding the value of one part.",
+     "mins": 2
+    }
+   ],
+   "homework": "Sharing in a ratio: 10 questions including partnerships (portal homework).",
+   "send": "Support: bar model template. EAL: 'share', 'part', 'partner'. Stretch: difference and change problems.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 7.3 Using ratios and 7.4 Ratios, proportions and fractions (Unit 7: Ratio and proportion)",
+    "Bar model template (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "spice market stall",
+     "alt": "A market stall",
+     "for": "hook"
+    },
+    {
+     "find": "dates in market crates",
+     "alt": "Crates of dates for sale",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "In a mushārakah (مُشَارَكَة) partnership, partners share profit in a ratio they agree at the start and share any loss in proportion to what each invested. Allah has permitted trade and forbidden riba (Qur'an 2:275), so fair partnership is the Islamic way to grow money together.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 61,
+   "title": "Ratio and fractions; combining ratios",
+   "duration": 50,
+   "bigQuestion": "How do ratios and fractions describe the same thing in different ways?",
+   "objectives": [
+    "To understand how ratios connect to fractions and how to combine two ratios that share a quantity"
+   ],
+   "successCriteria": [
+    "All: write a ratio as fractions of the whole",
+    "Most: change a fraction statement into a ratio and back",
+    "Some: combine ratios a : b and b : c into a : b : c"
+   ],
+   "keywords": [
+    {
+     "term": "ratio",
+     "def": "compares parts with each other"
+    },
+    {
+     "term": "fraction of the whole",
+     "def": "compares one part with the total"
+    },
+    {
+     "term": "proportion",
+     "def": "a part compared with the whole"
+    },
+    {
+     "term": "combine",
+     "def": "join two ratios into one by matching the shared quantity"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "In a bag the ratio of dates to figs is 2 : 3. Is the fraction of dates 2/3 or 2/5?",
+    "a": "2/5 of the whole bag; 2/3 compares the dates with the figs only."
+   },
+   "starter": [
+    {
+     "q": "Share 30 in the ratio 2 : 3",
+     "a": "12 and 18",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 18 : 24",
+     "a": "3 : 4",
+     "mins": 1
+    },
+    {
+     "q": "⅗ of 45",
+     "a": "27",
+     "mins": 1
+    },
+    {
+     "q": "LCM of 4 and 6",
+     "a": "12",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Ratio to fractions",
+     "bullets": [
+      "Add the parts for the whole"
+     ],
+     "note": "Bar of 5 parts.",
+     "model": {
+      "problem": "Dates and figs are in the ratio 2 : 3. What fraction are dates?",
+      "steps": [
+       "Total parts 2 + 3 = 5",
+       "Dates are 2 of the 5 parts",
+       "Dates are 2/3 of the number of figs"
+      ],
+      "answer": "2/5 of the bag"
+     }
+    },
+    {
+     "heading": "Part to part or part to whole?",
+     "bullets": [
+      "Read the question carefully"
+     ],
+     "note": "Ask: 'fraction of what?'",
+     "misconception": {
+      "wrong": "Ratio 2 : 3 means 2/3 of the bag are dates",
+      "right": "2/5 of the bag are dates; 2/3 compares dates with figs"
+     }
+    },
+    {
+     "heading": "Fraction to ratio",
+     "bullets": [
+      "The rest is the other part"
+     ],
+     "note": "Library example.",
+     "model": {
+      "problem": "¾ of the books on a shelf are in English and the rest in Arabic. Write the ratio English : Arabic.",
+      "steps": [
+       "Arabic = 1 - ¾ = ¼",
+       "¾ : ¼ = 3 : 1"
+      ],
+      "answer": "3 : 1"
+     }
+    },
+    {
+     "heading": "Combining ratios",
+     "bullets": [
+      "Make the shared part equal"
+     ],
+     "note": "Use the LCM.",
+     "model": {
+      "problem": "a : b = 2 : 3 and b : c = 4 : 5. Find a : b : c.",
+      "steps": [
+       "The LCM of 3 and 4 is 12",
+       "a : b = 8 : 12 and b : c = 12 : 15",
+       "Join them"
+      ],
+      "answer": "8 : 12 : 15"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "The ratio is 3 : 7. The first part is what fraction of the whole?",
+      "options": [
+       "3/10",
+       "3/7",
+       "7/10",
+       "1/3"
+      ],
+      "answer": 0,
+      "why": "3 + 7 = 10 parts, so 3/10. 3/7 compares the first part with the second."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Red and blue counters are in the ratio 5 : 3. What fraction are blue?",
+     "a": "3/8",
+     "mins": 1,
+     "model": "5 + 3 = 8 parts.\nBlue is 3 of the 8: 3/8."
+    },
+    {
+     "q": "⅖ of the trees in an orchard are olive trees and the rest are date palms. Write the ratio olive : date.",
+     "a": "2 : 3",
+     "mins": 1
+    },
+    {
+     "q": "a : b = 1 : 2 and b : c = 3 : 4. Find a : b : c.",
+     "a": "3 : 6 : 8",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) In the ratio 4 : 5, what fraction of the whole is each part? (b) 5/8 of a field is wheat and the rest is barley: write wheat : barley. (c) x : y = 3 : 4 and y : z = 6 : 5: find x : y : z. (d) In the ratio 2 : 7, the first part is what fraction of the second?",
+     "a": "(a) 4/9 and 5/9 (b) 5 : 3 (c) 9 : 12 : 10 (d) 2/7",
+     "mins": 6,
+     "model": "(c) Make y the same: 3 : 4 = 9 : 12 and 6 : 5 = 12 : 10, so x : y : z = 9 : 12 : 10."
+    },
+    {
+     "q": "Extend: Flour : sugar = 5 : 2 and sugar : butter = 3 : 4. A batch uses 300 g of flour. How much butter?",
+     "a": "15 : 6 : 8; flour 15 parts = 300 g, so 1 part = 20 g and butter = 160 g",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Apples and pears are in the ratio 3 : 5. After 4 apples are eaten the ratio is 1 : 2. How many pears are there?",
+     "a": "2(3x - 4) = 5x, so x = 8: 40 pears",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "In the ratio 1 : 4, the first part is what fraction of the whole?",
+     "a": "A) 1/5",
+     "mins": 1,
+     "options": [
+      "1/5",
+      "1/4",
+      "4/5"
+     ]
+    },
+    {
+     "q": "Combine 1 : 2 and 2 : 5",
+     "a": "1 : 2 : 5",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how do ratios and fractions describe the same thing differently?",
+     "a": "A ratio compares parts with each other; a fraction compares one part with the whole (add the parts to get the denominator).",
+     "mins": 2
+    }
+   ],
+   "homework": "Ratio and fractions: 10 questions including combining ratios (portal homework).",
+   "send": "Support: bar models for each ratio. EAL: 'proportion', 'combine'. Stretch: changing ratios.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 7.4 Ratios, proportions and fractions and 7.5 Proportions and percentages (Unit 7: Ratio and proportion)",
+    "Bar model template (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "dried dates and figs",
+     "alt": "Dates and figs",
+     "for": "hook"
+    },
+    {
+     "find": "olive grove trees",
+     "alt": "An olive grove",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 62,
+   "title": "Ratio in context: maps, recipes and best value",
+   "duration": 50,
+   "bigQuestion": "Where do we use ratio in everyday life without noticing?",
+   "objectives": [
+    "To understand how to apply ratio to map scales, recipes and value-for-money decisions"
+   ],
+   "successCriteria": [
+    "All: use a map scale 1 : n to change between map and real distances",
+    "Most: scale a recipe up or down",
+    "Some: compare value for money using a unit price"
+   ],
+   "smsc": "Moral: avoiding waste (isrāf, إِسْرَاف) by buying and cooking sensible amounts",
+   "keywords": [
+    {
+     "term": "scale",
+     "def": "the ratio of a map distance to the real distance"
+    },
+    {
+     "term": "unit price",
+     "def": "the cost of one unit, such as one gram or 100 ml"
+    },
+    {
+     "term": "best value",
+     "def": "the most for your money"
+    },
+    {
+     "term": "proportion",
+     "def": "a part compared with the whole"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A map has scale 1 : 50 000. Two masjids are 8 cm apart on it. How far apart are they really?",
+    "a": "8 × 50 000 = 400 000 cm = 4 km."
+   },
+   "starter": [
+    {
+     "q": "Simplify 750 g : 1.5 kg",
+     "a": "1 : 2",
+     "mins": 1
+    },
+    {
+     "q": "Share 45 in the ratio 4 : 5",
+     "a": "20 and 25",
+     "mins": 1
+    },
+    {
+     "q": "100 000 cm in km",
+     "a": "1 km",
+     "mins": 1
+    },
+    {
+     "q": "£3.60 ÷ 4",
+     "a": "90p",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Map to real",
+     "bullets": [
+      "Multiply, then convert units"
+     ],
+     "note": "cm → m → km.",
+     "model": {
+      "problem": "A map has scale 1 : 25 000. A path is 6 cm on the map. How long is it?",
+      "steps": [
+       "Real = 6 × 25 000 = 150 000 cm",
+       "÷ 100 = 1500 m",
+       "÷ 1000"
+      ],
+      "answer": "1.5 km"
+     }
+    },
+    {
+     "heading": "Real to map",
+     "bullets": [
+      "Convert to cm, then divide"
+     ],
+     "note": "Reverse the steps.",
+     "model": {
+      "problem": "Two villages are 3.2 km apart. The map scale is 1 : 40 000. How far apart are they on the map?",
+      "steps": [
+       "3.2 km = 320 000 cm",
+       "320 000 ÷ 40 000"
+      ],
+      "answer": "8 cm"
+     }
+    },
+    {
+     "heading": "Recipes",
+     "bullets": [
+      "Find the amount for one first"
+     ],
+     "note": "Unitary method.",
+     "model": {
+      "problem": "Date and oat bars: 300 g of oats makes 12 bars. How much for 30 bars?",
+      "steps": [
+       "One bar: 300 ÷ 12 = 25 g",
+       "30 bars: 30 × 25"
+      ],
+      "answer": "750 g"
+     }
+    },
+    {
+     "heading": "Best value",
+     "bullets": [
+      "Compare the same amount"
+     ],
+     "note": "Price per 100 g.",
+     "model": {
+      "problem": "Rice: 500 g for £1.80 or 2 kg for £6.60. Which is better value?",
+      "steps": [
+       "500 g: 180p ÷ 5 = 36p per 100 g",
+       "2 kg: 660p ÷ 20 = 33p per 100 g"
+      ],
+      "answer": "The 2 kg bag"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Map scale 1 : 10 000. 5 cm on the map is:",
+      "options": [
+       "500 m",
+       "50 m",
+       "5 km",
+       "50 000 m"
+      ],
+      "answer": 0,
+      "why": "5 × 10 000 = 50 000 cm = 500 m. 50 000 m forgets to convert from cm."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Map scale 1 : 50 000: how far is 8 cm on the map?",
+     "a": "4 km",
+     "mins": 1,
+     "model": "8 × 50 000 = 400 000 cm.\n400 000 cm = 4000 m = 4 km."
+    },
+    {
+     "q": "A recipe for 4 uses 150 g of lentils. How much for 10?",
+     "a": "375 g",
+     "mins": 1
+    },
+    {
+     "q": "Better value: 6 eggs for £1.50 or 15 for £3.60?",
+     "a": "15 for £3.60 (24p each against 25p)",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) scale 1 : 20 000, map 7.5 cm: the real distance in km (b) real 2.4 km, scale 1 : 30 000: the map distance (c) a soup for 6 uses 900 ml of stock and 240 g of lentils: amounts for 15 (d) better value: 750 ml of olive oil for £5.25 or 1 litre for £6.80?",
+     "a": "(a) 1.5 km (b) 8 cm (c) 2250 ml and 600 g (d) 1 litre: 0.68p per ml against 0.7p per ml",
+     "mins": 8,
+     "model": "(a) 7.5 × 20 000 = 150 000 cm = 1500 m = 1.5 km.\n(c) Scale factor 15 ÷ 6 = 2.5: 900 × 2.5 = 2250 ml and 240 × 2.5 = 600 g."
+    },
+    {
+     "q": "Extend: A recipe for 8 needs 3 eggs. How many eggs for 20 people?",
+     "a": "7.5, so use 8 eggs",
+     "mins": 2
+    },
+    {
+     "q": "Stretch: Shop A sells dates at 400 g for £3.20. Shop B sells 1 kg for £7.50 with 10% off. Which is better value?",
+     "a": "A: £8 per kg; B: 7.50 × 0.9 = £6.75 per kg; Shop B",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "On a 1 : 100 000 map, 1 cm stands for:",
+     "a": "A) 1 km",
+     "mins": 1,
+     "options": [
+      "1 km",
+      "100 m",
+      "10 km"
+     ]
+    },
+    {
+     "q": "Better value: 2 for £3 or 5 for £7?",
+     "a": "5 for £7 (£1.40 each against £1.50)",
+     "mins": 1
+    },
+    {
+     "q": "Big question: where do we use ratio without noticing?",
+     "a": "Reading maps, cooking for more people and choosing the best-value pack in a shop.",
+     "mins": 2
+    }
+   ],
+   "homework": "Ratio in real life: 4 map, 3 recipe and 3 best-value questions (portal homework).",
+   "send": "Support: units ladder (cm, m, km). EAL: 'scale', 'unit price', 'value'. Stretch: discounts and best value.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 7.1 Direct proportion; Year 9 4.5 Direct and inverse proportion (best buys)",
+    "Printable map extract with a 1 : 25 000 scale (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Ordnance Survey map extract",
+     "alt": "A walking map with a scale",
+     "for": "hook"
+    },
+    {
+     "find": "bags of rice on shelf",
+     "alt": "Bags of rice in different sizes",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 63,
+   "title": "Direct proportion",
+   "duration": 50,
+   "bigQuestion": "How can you tell from a table or a graph that two quantities are in direct proportion?",
+   "objectives": [
+    "To understand how to recognise direct proportion and solve problems with the unitary method and y = kx"
+   ],
+   "successCriteria": [
+    "All: solve direct proportion problems with the unitary method",
+    "Most: recognise direct proportion from a table (constant ratio) or a straight-line graph through the origin",
+    "Some: find k and use y = kx"
+   ],
+   "crossCurricular": "Science: Hooke's law: the extension of a spring is directly proportional to the force, up to a limit",
+   "keywords": [
+    {
+     "term": "direct proportion",
+     "def": "both quantities grow in the same ratio: y = kx"
+    },
+    {
+     "term": "unitary method",
+     "def": "find the value of one first"
+    },
+    {
+     "term": "constant of proportionality",
+     "def": "the number k in y = kx"
+    },
+    {
+     "term": "origin",
+     "def": "the point (0, 0)"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "5 litres of fuel cost £7.25. How much do 12 litres cost? Is the graph of cost against litres a straight line through (0, 0)? Why?",
+    "a": "£17.40; yes: 0 litres cost £0 and every litre adds the same amount."
+   },
+   "starter": [
+    {
+     "q": "Better value: 3 for £2.40 or 5 for £3.75?",
+     "a": "5 for £3.75 (75p each)",
+     "mins": 1
+    },
+    {
+     "q": "Scale 1 : 25 000: 4 cm is",
+     "a": "1 km",
+     "mins": 1
+    },
+    {
+     "q": "Share 56 in the ratio 3 : 4",
+     "a": "24 and 32",
+     "mins": 1
+    },
+    {
+     "q": "12 × 1.45",
+     "a": "17.4",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Unitary method",
+     "bullets": [
+      "Find one, then multiply"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "5 litres of fuel cost £7.25. How much do 12 litres cost?",
+      "steps": [
+       "1 litre: 7.25 ÷ 5 = £1.45",
+       "12 litres: 12 × 1.45 = 17.40"
+      ],
+      "answer": "£17.40"
+     }
+    },
+    {
+     "heading": "The graph",
+     "bullets": [
+      "A straight line",
+      "Through the origin"
+     ],
+     "note": "Example data: cost of fuel at £1.45 a litre.",
+     "chart": {
+      "kind": "line",
+      "title": "Cost of fuel (example data)",
+      "labels": [
+       "0",
+       "2",
+       "4",
+       "6",
+       "8",
+       "10"
+      ],
+      "values": [
+       0,
+       2.9,
+       5.8,
+       8.7,
+       11.6,
+       14.5
+      ],
+      "unit": "£"
+     }
+    },
+    {
+     "heading": "The table",
+     "bullets": [
+      "y ÷ x is the same every time"
+     ],
+     "note": "That constant is k.",
+     "table": {
+      "head": [
+       "Litres x",
+       "2",
+       "4",
+       "10"
+      ],
+      "rows": [
+       [
+        "Cost y (£)",
+        "2.90",
+        "5.80",
+        "14.50"
+       ],
+       [
+        "y ÷ x",
+        "1.45",
+        "1.45",
+        "1.45"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The formula y = kx",
+     "bullets": [
+      "Find k, then use it"
+     ],
+     "note": "Algebra version of the unitary method.",
+     "model": {
+      "problem": "y is directly proportional to x, and y = 12 when x = 3. Find y when x = 10.",
+      "steps": [
+       "y = kx",
+       "12 = 3k, so k = 4",
+       "y = 4 × 10"
+      ],
+      "answer": "y = 40"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which table shows direct proportion?",
+      "options": [
+       "x: 1, 2, 3; y: 5, 10, 15",
+       "x: 1, 2, 3; y: 5, 7, 9",
+       "x: 1, 2, 3; y: 6, 3, 2"
+      ],
+      "answer": 0,
+      "why": "Only the first has y ÷ x = 5 every time. The second adds 2 each time (not through the origin); the third is inverse."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "8 m of fabric costs £36. How much do 5 m cost?",
+     "a": "£22.50",
+     "mins": 2,
+     "model": "1 m: 36 ÷ 8 = £4.50.\n5 m: 5 × 4.50 = £22.50."
+    },
+    {
+     "q": "y is directly proportional to x, and y = 20 when x = 4. Find y when x = 7.",
+     "a": "k = 5, y = 35",
+     "mins": 1
+    },
+    {
+     "q": "Is y = 3x + 2 a direct proportion?",
+     "a": "No: when x = 0, y = 2, so it does not go through the origin.",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 7 kg of rice costs £12.60: find the cost of 3 kg (b) a car uses 6 litres of fuel per 80 km: fuel for 300 km (c) y ∝ x and y = 18 when x = 4: find k and y when x = 11 (d) Is the table x: 2, 5, 8; y: 7, 17.5, 28 a direct proportion?",
+     "a": "(a) £5.40 (b) 22.5 litres (c) k = 4.5, y = 49.5 (d) yes: y ÷ x = 3.5 every time",
+     "mins": 7,
+     "model": "(a) 1 kg: 12.60 ÷ 7 = £1.80; 3 kg: 3 × 1.80 = £5.40.\n(b) 300 ÷ 80 = 3.75; 3.75 × 6 = 22.5 litres."
+    },
+    {
+     "q": "Extend: Using an example rate of £1 = €1.16, convert £250 to euros and €406 to pounds.",
+     "a": "€290 and £350",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: p is directly proportional to q². p = 50 when q = 5. Find p when q = 8.",
+     "a": "k = 2, p = 2 × 64 = 128",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "A direct proportion graph is:",
+     "a": "A) a straight line through the origin",
+     "mins": 1,
+     "options": [
+      "a straight line through the origin",
+      "any straight line",
+      "a curve"
+     ]
+    },
+    {
+     "q": "4 pens cost £3. How much do 10 cost?",
+     "a": "£7.50",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can you tell two quantities are in direct proportion?",
+     "a": "y ÷ x is constant in the table, and the graph is a straight line through (0, 0).",
+     "mins": 2
+    }
+   ],
+   "homework": "Direct proportion: 10 questions with tables, graphs and y = kx (portal homework).",
+   "send": "Support: unitary method frame ('1 costs... so ... cost...'). EAL: 'proportional', 'constant'. Stretch: proportion to a square.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 7.1 Direct proportion; Year 9 4.5 Direct and inverse proportion",
+    "Printable graph paper (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "fuel pump nozzle",
+     "alt": "A fuel pump",
+     "for": "hook"
+    },
+    {
+     "find": "kitchen scales weighing",
+     "alt": "Kitchen scales",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 64,
+   "title": "Inverse proportion",
+   "duration": 50,
+   "bigQuestion": "When one quantity goes up, why does another sometimes go down in a fixed way?",
+   "objectives": [
+    "To understand how to recognise inverse proportion and solve problems where the product of the quantities stays the same"
+   ],
+   "successCriteria": [
+    "All: recognise inverse proportion: the product x × y stays the same",
+    "Most: solve problems such as workers and days",
+    "Some: use y = k ÷ x and describe the shape of its graph"
+   ],
+   "smsc": "Social: volunteering together lightens the load, as in food banks run by local masjids",
+   "keywords": [
+    {
+     "term": "inverse proportion",
+     "def": "as one quantity doubles, the other halves; x × y stays the same"
+    },
+    {
+     "term": "product",
+     "def": "the answer to a multiplication"
+    },
+    {
+     "term": "constant",
+     "def": "a value that does not change"
+    },
+    {
+     "term": "curve",
+     "def": "a line that is not straight"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "4 volunteers take 6 hours to pack food parcels for a masjid food bank. How long would 8 volunteers take? 3 volunteers?",
+    "a": "3 hours and 8 hours: the job is 24 volunteer-hours."
+   },
+   "starter": [
+    {
+     "q": "y ∝ x and y = 10 when x = 2. y when x = 5?",
+     "a": "25",
+     "mins": 1
+    },
+    {
+     "q": "6 × 4",
+     "a": "24",
+     "mins": 1
+    },
+    {
+     "q": "24 ÷ 3",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "Is y = 2x a direct proportion?",
+     "a": "yes",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Total work stays the same",
+     "bullets": [
+      "Find the total, then share it"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "4 volunteers take 6 hours. How long would 3 volunteers take?",
+      "steps": [
+       "Total work: 4 × 6 = 24 volunteer-hours",
+       "3 volunteers: 24 ÷ 3"
+      ],
+      "answer": "8 hours"
+     }
+    },
+    {
+     "heading": "The table",
+     "bullets": [
+      "x × y is the same every time"
+     ],
+     "note": "That constant is k.",
+     "table": {
+      "head": [
+       "Volunteers x",
+       "1",
+       "2",
+       "4",
+       "8"
+      ],
+      "rows": [
+       [
+        "Hours y",
+        "24",
+        "12",
+        "6",
+        "3"
+       ],
+       [
+        "x × y",
+        "24",
+        "24",
+        "24",
+        "24"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The graph",
+     "bullets": [
+      "A curve, not a straight line",
+      "It never reaches zero"
+     ],
+     "note": "y = 24 ÷ x.",
+     "chart": {
+      "kind": "line",
+      "title": "Hours against volunteers (y = 24 ÷ x)",
+      "labels": [
+       "1",
+       "2",
+       "3",
+       "4",
+       "6",
+       "8"
+      ],
+      "values": [
+       24,
+       12,
+       8,
+       6,
+       4,
+       3
+      ]
+     }
+    },
+    {
+     "heading": "The formula y = k ÷ x",
+     "bullets": [
+      "k = x × y"
+     ],
+     "note": "Algebra version.",
+     "model": {
+      "problem": "y is inversely proportional to x, and y = 5 when x = 8. Find y when x = 4.",
+      "steps": [
+       "y = k ÷ x",
+       "k = 5 × 8 = 40",
+       "y = 40 ÷ 4"
+      ],
+      "answer": "y = 10"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "6 taps fill a tank in 10 minutes. 4 taps take:",
+      "options": [
+       "15 minutes",
+       "6.7 minutes",
+       "8 minutes",
+       "12 minutes"
+      ],
+      "answer": 0,
+      "why": "Total 60 tap-minutes; 60 ÷ 4 = 15. 6.7 treats it as direct proportion."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A journey takes 3 hours at 40 mph. How long at 60 mph?",
+     "a": "2 hours",
+     "mins": 1,
+     "model": "Distance = 3 × 40 = 120 miles (constant).\n120 ÷ 60 = 2 hours."
+    },
+    {
+     "q": "y ∝ 1/x and y = 12 when x = 3. Find y when x = 9.",
+     "a": "k = 36, y = 4",
+     "mins": 1
+    },
+    {
+     "q": "Is x: 2, 4, 5; y: 10, 5, 4 an inverse proportion?",
+     "a": "Yes: x × y = 20 every time",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 5 workers build a wall in 12 days: how long for 3 workers? (b) a bag of grain feeds 12 chickens for 10 days: how long for 15 chickens? (c) y = k ÷ x and y = 9 when x = 4: find y when x = 6 (d) direct, inverse or neither: x 1, 2, 3 with y 12, 6, 4; x 1, 2, 3 with y 4, 8, 12; x 1, 2, 3 with y 5, 8, 11",
+     "a": "(a) 20 days (b) 8 days (c) 6 (d) inverse; direct; neither",
+     "mins": 7,
+     "model": "(a) Total work: 5 × 12 = 60 worker-days; 3 workers: 60 ÷ 3 = 20 days.\n(b) 12 × 10 = 120 chicken-days; 120 ÷ 15 = 8 days."
+    },
+    {
+     "q": "Extend: A water supply lasts 18 days for 30 people. After 6 days, 10 more people arrive. How much longer does it last?",
+     "a": "12 × 30 = 360 person-days left; 360 ÷ 40 = 9 more days",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: y is inversely proportional to x². y = 4 when x = 3. Find y when x = 6.",
+     "a": "k = 36, y = 36 ÷ 36 = 1",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "In inverse proportion, when x doubles, y:",
+     "a": "A) halves",
+     "mins": 1,
+     "options": [
+      "halves",
+      "doubles",
+      "stays the same"
+     ]
+    },
+    {
+     "q": "x × y = 30 and x = 6. y?",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why does one quantity go down in a fixed way as the other goes up?",
+     "a": "The total (the product x × y) stays the same, so more of one means proportionally less of the other.",
+     "mins": 2
+    }
+   ],
+   "homework": "Inverse proportion: 10 questions including mixed direct and inverse (portal homework).",
+   "send": "Support: 'total work' frame. EAL: 'inverse', 'product'. Stretch: inverse proportion to a square.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 4.5 Direct and inverse proportion",
+    "Printable proportion practice sheet (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "food bank parcels boxes",
+     "alt": "Food parcels in boxes",
+     "for": "hook"
+    },
+    {
+     "find": "water tap running",
+     "alt": "A running tap",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 65,
+   "title": "Direct, inverse or neither? Proportion problem solving",
+   "duration": 50,
+   "bigQuestion": "How do you decide which kind of proportion a problem uses before you start?",
+   "objectives": [
+    "To understand how to decide whether a situation is direct proportion, inverse proportion or neither, and choose the right method"
+   ],
+   "successCriteria": [
+    "All: classify situations as direct, inverse or neither, with a reason",
+    "Most: solve mixed proportion problems with the right method",
+    "Some: check answers make sense in context"
+   ],
+   "keywords": [
+    {
+     "term": "direct proportion",
+     "def": "more of one gives more of the other in the same ratio"
+    },
+    {
+     "term": "inverse proportion",
+     "def": "more of one gives less of the other; the product stays the same"
+    },
+    {
+     "term": "not proportional",
+     "def": "no constant ratio or product"
+    },
+    {
+     "term": "sense check",
+     "def": "asking whether an answer is realistic"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "One oven bakes a loaf in 40 minutes. How long do two ovens take to bake one loaf? Is this proportion at all?",
+    "a": "Still 40 minutes: a second oven does not speed up one loaf. Not every problem is proportion."
+   },
+   "starter": [
+    {
+     "q": "6 workers take 4 days. 8 workers take?",
+     "a": "3 days",
+     "mins": 1
+    },
+    {
+     "q": "3 kg cost £4.50. 7 kg cost?",
+     "a": "£10.50",
+     "mins": 1
+    },
+    {
+     "q": "y = kx with k = 2.5 and x = 8",
+     "a": "20",
+     "mins": 1
+    },
+    {
+     "q": "Inverse: y = 6 when x = 5. k?",
+     "a": "30",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Sort it first",
+     "bullets": [
+      "Decide before calculating"
+     ],
+     "note": "Pupils sort, then we check.",
+     "sort": {
+      "columns": [
+       "Direct",
+       "Inverse",
+       "Neither"
+      ],
+      "cards": [
+       "cost and number of tickets",
+       "speed and time for a fixed journey",
+       "workers and days for one job",
+       "a child's age and height",
+       "distance and fuel used",
+       "taps and time to fill a tank",
+       "shoe size and maths mark",
+       "litres and cost of milk"
+      ],
+      "answer": [
+       0,
+       1,
+       1,
+       2,
+       0,
+       1,
+       2,
+       0
+      ]
+     }
+    },
+    {
+     "heading": "Ask three questions",
+     "bullets": [
+      "More of one gives more of the other: direct?",
+      "More of one gives less of the other: inverse?",
+      "Is the ratio or the product constant?"
+     ],
+     "note": "If neither is constant, it is not proportion."
+    },
+    {
+     "heading": "Two steps",
+     "bullets": [
+      "Find the rate for one, then scale"
+     ],
+     "note": "Machines and bottles.",
+     "model": {
+      "problem": "3 machines make 600 bottles in 5 hours. How long do 5 machines take to make 1500 bottles?",
+      "steps": [
+       "One machine makes 600 ÷ 3 ÷ 5 = 40 bottles an hour",
+       "5 machines make 200 bottles an hour",
+       "1500 ÷ 200"
+      ],
+      "answer": "7.5 hours"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is NOT a proportion?",
+      "options": [
+       "the time to boil one egg and the number of pans",
+       "the cost and the kilograms of rice",
+       "workers and the days to build one wall"
+      ],
+      "answer": 0,
+      "why": "More pans do not boil one egg faster. Rice cost is direct; workers and days are inverse."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "5 sheets of paper weigh 25 g. How much do 120 sheets weigh?",
+     "a": "600 g",
+     "mins": 1,
+     "model": "More sheets, more weight: direct.\nOne sheet: 25 ÷ 5 = 5 g; 120 × 5 = 600 g."
+    },
+    {
+     "q": "A pipe fills a pool in 9 hours. How long do three identical pipes take?",
+     "a": "Inverse: 3 hours",
+     "mins": 1
+    },
+    {
+     "q": "A runner runs 100 m in 15 s. A pupil says 1000 m takes 150 s. Is that realistic?",
+     "a": "No: runners slow down over longer distances; 150 s is only an estimate from a direct model.",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Decide direct, inverse or neither, then solve: (a) 8 m of rope weighs 2.4 kg: how much does 15 m weigh? (b) 6 printers print a batch of reports in 45 minutes: how long for 9 printers? (c) 12 boxes of dates fill 3 shelves: how many shelves for 20 boxes? (d) 4 machines make 900 bars in 6 hours: how many bars do 6 machines make in 5 hours?",
+     "a": "(a) direct: 4.5 kg (b) inverse: 30 minutes (c) direct: 5 shelves (d) 1125 bars",
+     "mins": 8,
+     "model": "(a) More rope, more weight: direct. 1 m weighs 2.4 ÷ 8 = 0.3 kg; 15 m weighs 15 × 0.3 = 4.5 kg.\n(d) One machine makes 900 ÷ 4 ÷ 6 = 37.5 bars an hour; 6 × 5 × 37.5 = 1125."
+    },
+    {
+     "q": "Extend: A taxi charges £3 plus £2 a mile. Explain why the cost is not directly proportional to the miles, and find the cost of 7 miles.",
+     "a": "£17; the £3 fixed charge means 0 miles does not cost £0, so the graph misses the origin.",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: 8 people take 6 days to harvest an olive grove. After 2 days, 4 more people join. How many days does the harvest take in total?",
+     "a": "48 person-days; 16 done, 32 left for 12 people = 2⅔ days; total 4⅔ days",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Speed and time for a fixed distance are:",
+     "a": "A) inversely proportional",
+     "mins": 1,
+     "options": [
+      "inversely proportional",
+      "directly proportional",
+      "neither"
+     ]
+    },
+    {
+     "q": "A taxi at £3 plus £2 a mile: proportional?",
+     "a": "No",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how do you decide which kind of proportion a problem uses?",
+     "a": "Ask whether more of one gives more or less of the other, then check for a constant ratio (direct) or product (inverse); if neither, it is not proportion.",
+     "mins": 2
+    }
+   ],
+   "homework": "Mixed proportion problems: 8 questions; say direct, inverse or neither each time (portal homework).",
+   "send": "Support: decision flowchart card. EAL: 'direct', 'inverse', 'neither'. Stretch: multi-stage work problems.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 4.5 Direct and inverse proportion",
+    "Proportion decision card (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "bread loaves in oven",
+     "alt": "Bread baking in an oven",
+     "for": "hook"
+    },
+    {
+     "find": "olive harvest olives on branch",
+     "alt": "Olives ready to harvest",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 66,
+   "title": "Speed, distance and time",
+   "duration": 50,
+   "bigQuestion": "Why is average speed not always the average of the speeds?",
+   "objectives": [
+    "To understand how to use the relationship between speed, distance and time, including time conversions"
+   ],
+   "successCriteria": [
+    "All: calculate speed, distance or time from the other two",
+    "Most: convert minutes to hours correctly in speed problems",
+    "Some: find the average speed for a journey in two parts"
+   ],
+   "crossCurricular": "Science: speed, distance and time in physics use the same formula",
+   "keywords": [
+    {
+     "term": "speed",
+     "def": "how far you travel in each unit of time"
+    },
+    {
+     "term": "average speed",
+     "def": "total distance ÷ total time"
+    },
+    {
+     "term": "compound measure",
+     "def": "a measure made from two others, such as km/h"
+    },
+    {
+     "term": "km/h",
+     "def": "kilometres per hour"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "You drive 60 km at 30 km/h, then 60 km at 60 km/h. Is your average speed 45 km/h?",
+    "a": "No: 2 h + 1 h = 3 h for 120 km, so 40 km/h."
+   },
+   "starter": [
+    {
+     "q": "x × y = 36 and x = 9. y?",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "Direct: 3 cost £1.20. 8 cost?",
+     "a": "£3.20",
+     "mins": 1
+    },
+    {
+     "q": "45 minutes as hours",
+     "a": "0.75 h",
+     "mins": 1
+    },
+    {
+     "q": "1 km in metres",
+     "a": "1000 m",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "One formula, three ways",
+     "bullets": [
+      "Units must match"
+     ],
+     "note": "Pupils write all three.",
+     "diagram": {
+      "centre": "Speed = distance ÷ time",
+      "items": [
+       "Distance = speed × time",
+       "Time = distance ÷ speed",
+       "Hours with km/h",
+       "Seconds with m/s"
+      ]
+     }
+    },
+    {
+     "heading": "Average speed",
+     "bullets": [
+      "Total distance ÷ total time"
+     ],
+     "note": "Convert the time first.",
+     "model": {
+      "problem": "A train travels 210 km in 1 hour 45 minutes. Find its average speed.",
+      "steps": [
+       "1 h 45 min = 1.75 h",
+       "210 ÷ 1.75"
+      ],
+      "answer": "120 km/h"
+     }
+    },
+    {
+     "heading": "Minutes are not decimals",
+     "bullets": [
+      "45 minutes = 0.75 hours"
+     ],
+     "note": "Divide minutes by 60.",
+     "misconception": {
+      "wrong": "1 h 45 min = 1.45 h",
+      "right": "45 minutes = 45 ÷ 60 = 0.75 h, so 1.75 h"
+     }
+    },
+    {
+     "heading": "Time in minutes",
+     "bullets": [
+      "Hours first, then × 60"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "How long does it take to travel 54 km at 72 km/h? Give the answer in minutes.",
+      "steps": [
+       "t = 54 ÷ 72 = 0.75 h",
+       "0.75 × 60"
+      ],
+      "answer": "45 minutes"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A cyclist travels 36 km in 1 h 30 min. Their average speed is:",
+      "options": [
+       "24 km/h",
+       "27.7 km/h",
+       "36 km/h",
+       "54 km/h"
+      ],
+      "answer": 0,
+      "why": "36 ÷ 1.5 = 24. 27.7 wrongly uses 1.3 hours."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "How far do you travel at 65 km/h for 2.5 hours?",
+     "a": "162.5 km",
+     "mins": 1,
+     "model": "Distance = speed × time.\n65 × 2.5 = 162.5 km."
+    },
+    {
+     "q": "How long to travel 150 km at 60 km/h?",
+     "a": "2.5 h = 2 h 30 min",
+     "mins": 1
+    },
+    {
+     "q": "Speed for 400 m in 50 s",
+     "a": "8 m/s",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 315 km in 3 h 30 min: speed (b) 48 km/h for 25 minutes: distance (c) 7.2 km at 4.8 km/h: time in hours and minutes (d) a journey of 80 km in 1 hour, then 100 km in 1 h 30 min: average speed",
+     "a": "(a) 90 km/h (b) 20 km (c) 1.5 h = 1 h 30 min (d) 72 km/h",
+     "mins": 7,
+     "model": "(a) 3 h 30 min = 3.5 h; 315 ÷ 3.5 = 90 km/h.\n(d) Total 180 km in 2.5 h; 180 ÷ 2.5 = 72 km/h."
+    },
+    {
+     "q": "Extend: Convert 72 km/h to m/s and 15 m/s to km/h.",
+     "a": "72 000 m ÷ 3600 s = 20 m/s; 15 × 3600 ÷ 1000 = 54 km/h",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Show that the average speed in the ponder question is 40 km/h and explain why it is not 45 km/h.",
+     "a": "2 h + 1 h = 3 h; 120 ÷ 3 = 40 km/h. More time is spent at the slower speed, so the average is nearer 30.",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Speed =",
+     "a": "A) distance ÷ time",
+     "mins": 1,
+     "options": [
+      "distance ÷ time",
+      "time ÷ distance",
+      "distance × time"
+     ]
+    },
+    {
+     "q": "20 minutes as hours",
+     "a": "⅓ h",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is average speed not the average of the speeds?",
+     "a": "Average speed is total distance ÷ total time, and the slower part takes longer, so it counts for more.",
+     "mins": 2
+    }
+   ],
+   "homework": "Speed, distance and time: 10 questions including two-part journeys (portal homework).",
+   "send": "Support: formula triangle card and a minutes-to-hours table. EAL: 'average', 'per'. Stretch: m/s and km/h conversions.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 4.4 Compound measures",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "high speed train",
+     "alt": "A high-speed train",
+     "for": "hook"
+    },
+    {
+     "find": "car speedometer",
+     "alt": "A speedometer in km/h",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 67,
+   "title": "Density and pressure",
+   "duration": 50,
+   "bigQuestion": "Why does a ship made of steel float, but a steel bolt sinks?",
+   "objectives": [
+    "To understand how density and pressure are compound measures and use their formulae to solve problems"
+   ],
+   "successCriteria": [
+    "All: calculate density, mass or volume with density = mass ÷ volume",
+    "Most: calculate pressure, force or area with pressure = force ÷ area",
+    "Some: choose the right units (g/cm³, N/m², N/cm²)"
+   ],
+   "crossCurricular": "Science: density and pressure in physics use the same formulae",
+   "keywords": [
+    {
+     "term": "density",
+     "def": "mass per unit of volume"
+    },
+    {
+     "term": "pressure",
+     "def": "force per unit of area"
+    },
+    {
+     "term": "newton (N)",
+     "def": "the unit of force"
+    },
+    {
+     "term": "compound measure",
+     "def": "a measure made from two others"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A steel bolt sinks, but a steel ship floats. What is different?",
+    "a": "The ship's hull holds air, so the ship as a whole is less dense than water."
+   },
+   "starter": [
+    {
+     "q": "Speed for 150 km in 2 h",
+     "a": "75 km/h",
+     "mins": 1
+    },
+    {
+     "q": "Time for 90 km at 60 km/h",
+     "a": "1.5 h",
+     "mins": 1
+    },
+    {
+     "q": "Volume of a 2 × 3 × 5 cm cuboid",
+     "a": "30 cm³",
+     "mins": 1
+    },
+    {
+     "q": "Area of a 0.5 m by 0.4 m rectangle",
+     "a": "0.2 m²",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Three compound measures",
+     "bullets": [
+      "Each is one quantity divided by another"
+     ],
+     "note": "Same shape of formula.",
+     "table": {
+      "head": [
+       "Measure",
+       "Formula",
+       "Units"
+      ],
+      "rows": [
+       [
+        "Speed",
+        "distance ÷ time",
+        "km/h, m/s"
+       ],
+       [
+        "Density",
+        "mass ÷ volume",
+        "g/cm³, kg/m³"
+       ],
+       [
+        "Pressure",
+        "force ÷ area",
+        "N/m², N/cm²"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Density",
+     "bullets": [
+      "Mass ÷ volume"
+     ],
+     "note": "This block is aluminium.",
+     "model": {
+      "problem": "A 50 cm³ block has a mass of 135 g. Find its density.",
+      "steps": [
+       "density = mass ÷ volume",
+       "135 ÷ 50"
+      ],
+      "answer": "2.7 g/cm³"
+     }
+    },
+    {
+     "heading": "Mass from density",
+     "bullets": [
+      "Mass = density × volume"
+     ],
+     "note": "Olive oil is less dense than water, so it floats on it.",
+     "model": {
+      "problem": "Olive oil has a density of 0.92 g/cm³. Find the mass of 500 cm³.",
+      "steps": [
+       "mass = density × volume",
+       "0.92 × 500"
+      ],
+      "answer": "460 g"
+     }
+    },
+    {
+     "heading": "Pressure",
+     "bullets": [
+      "Force ÷ area"
+     ],
+     "note": "Smaller area, bigger pressure.",
+     "model": {
+      "problem": "A box weighing 600 N rests on a face 0.4 m by 0.5 m. Find the pressure.",
+      "steps": [
+       "Area = 0.4 × 0.5 = 0.2 m²",
+       "Pressure = 600 ÷ 0.2"
+      ],
+      "answer": "3000 N/m²"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "An object has mass 160 g and volume 20 cm³. Its density is:",
+      "options": [
+       "8 g/cm³",
+       "3200 g/cm³",
+       "0.125 g/cm³",
+       "180 g/cm³"
+      ],
+      "answer": 0,
+      "why": "160 ÷ 20 = 8. 3200 multiplies; 0.125 divides the wrong way round."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A metal has density 2.7 g/cm³. Find the volume of 1350 g.",
+     "a": "500 cm³",
+     "mins": 2,
+     "model": "volume = mass ÷ density.\n1350 ÷ 2.7 = 500 cm³."
+    },
+    {
+     "q": "A force of 240 N acts on 0.6 m². Find the pressure.",
+     "a": "400 N/m²",
+     "mins": 1
+    },
+    {
+     "q": "A pressure of 50 N/cm² acts on 12 cm². Find the force.",
+     "a": "600 N",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) mass 712 g, volume 80 cm³: density (b) gold has density 19.3 g/cm³: the mass of 5 cm³ (c) a crate weighing 1200 N stands on a base 1.5 m by 0.8 m: pressure (d) a 90 N block can rest on a 3 cm by 5 cm face or a 5 cm by 10 cm face: the greatest pressure in N/cm²",
+     "a": "(a) 8.9 g/cm³ (b) 96.5 g (c) 1000 N/m² (d) 6 N/cm², on the 3 cm by 5 cm face",
+     "mins": 7,
+     "model": "(a) density = 712 ÷ 80 = 8.9 g/cm³.\n(c) Area 1.5 × 0.8 = 1.2 m²; 1200 ÷ 1.2 = 1000 N/m²."
+    },
+    {
+     "q": "Extend: Water has a density of 1 g/cm³. Will a 300 g object with volume 400 cm³ float?",
+     "a": "Its density is 0.75 g/cm³, less than water, so it floats.",
+     "mins": 2
+    },
+    {
+     "q": "Stretch: Convert 2.7 g/cm³ to kg/m³.",
+     "a": "1 m³ = 1 000 000 cm³: 2 700 000 g = 2700 kg, so 2700 kg/m³",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Pressure =",
+     "a": "A) force ÷ area",
+     "mins": 1,
+     "options": [
+      "force ÷ area",
+      "area ÷ force",
+      "force × area"
+     ]
+    },
+    {
+     "q": "Density 2 g/cm³ and volume 30 cm³. Mass?",
+     "a": "60 g",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why does a steel ship float but a bolt sink?",
+     "a": "The ship's total mass is spread over a huge volume including air, so its density is less than water's; the solid bolt is denser than water.",
+     "mins": 2
+    }
+   ],
+   "homework": "Density and pressure: 10 questions (portal homework). Optional: find the density of a potato with kitchen scales and a measuring jug of water (guide in the pupil PDF).",
+   "send": "Support: formula card with units. EAL: 'density', 'pressure', 'force'. Stretch: unit conversions for density.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 4.4 Compound measures",
+    "Kitchen scales and a measuring jug (optional home task, written guide in the pupil PDF)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "cargo ship at sea",
+     "alt": "A steel ship floating",
+     "for": "hook"
+    },
+    {
+     "find": "olive oil bottle",
+     "alt": "A bottle of olive oil",
+     "for": "teach:3"
+    },
+    {
+     "find": "snowshoes",
+     "alt": "Snowshoes spread weight over a large area",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Allah commands honest measuring: 'And give full measure when you measure, and weigh with an even balance' (al-Isra 17:35). Knowing how mass, volume and density relate is part of measuring honestly in trade.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 68,
+   "title": "Rates: flow, pay and unit conversions",
+   "duration": 50,
+   "bigQuestion": "How do you compare rates given in different units?",
+   "objectives": [
+    "To understand how to solve multi-step problems with rates, including rates of flow and converting units"
+   ],
+   "successCriteria": [
+    "All: use rates such as litres per minute and pay per hour",
+    "Most: convert compound units, such as km/h to m/s",
+    "Some: solve multi-step rate problems and compare rates fairly"
+   ],
+   "smsc": "Moral: avoiding waste (isrāf, إِسْرَاف) of water",
+   "keywords": [
+    {
+     "term": "rate",
+     "def": "how much of one quantity for each unit of another"
+    },
+    {
+     "term": "rate of flow",
+     "def": "the volume of liquid per unit of time"
+    },
+    {
+     "term": "unit conversion",
+     "def": "changing a measure into different units"
+    },
+    {
+     "term": "compound measure",
+     "def": "a measure made from two others"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Tap A fills at 12 litres per minute. Tap B fills at 0.25 litres per second. Which is faster?",
+    "a": "B: 0.25 × 60 = 15 litres per minute."
+   },
+   "starter": [
+    {
+     "q": "Density for 400 g and 50 cm³",
+     "a": "8 g/cm³",
+     "mins": 1
+    },
+    {
+     "q": "Pressure for 300 N on 1.5 m²",
+     "a": "200 N/m²",
+     "mins": 1
+    },
+    {
+     "q": "Speed for 30 km in 20 minutes",
+     "a": "90 km/h",
+     "mins": 1
+    },
+    {
+     "q": "1 hour in seconds",
+     "a": "3600 s",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Rate of flow",
+     "bullets": [
+      "Time = volume ÷ rate"
+     ],
+     "note": "Same idea as speed.",
+     "model": {
+      "problem": "A 900 litre tank fills at 15 litres per minute. How long does it take?",
+      "steps": [
+       "Time = 900 ÷ 15",
+       "= 60 minutes"
+      ],
+      "answer": "1 hour"
+     }
+    },
+    {
+     "heading": "Converting a speed",
+     "bullets": [
+      "Change both units"
+     ],
+     "note": "km to m, hours to seconds.",
+     "model": {
+      "problem": "Convert 54 km/h to m/s.",
+      "steps": [
+       "54 km = 54 000 m",
+       "1 h = 3600 s",
+       "54 000 ÷ 3600"
+      ],
+      "answer": "15 m/s"
+     }
+    },
+    {
+     "heading": "Comparing rates",
+     "bullets": [
+      "Same units first"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Which is faster: 12 litres per minute or 0.25 litres per second?",
+      "steps": [
+       "0.25 × 60 = 15 litres per minute",
+       "15 > 12"
+      ],
+      "answer": "0.25 litres per second"
+     }
+    },
+    {
+     "heading": "A two-step problem",
+     "bullets": [
+      "Time each, then total"
+     ],
+     "note": "Water in a wudu area.",
+     "model": {
+      "problem": "A wudu tap runs at 6 litres per minute. 40 people each use it for 45 seconds. How much water is used?",
+      "steps": [
+       "45 s = 0.75 min",
+       "Each: 6 × 0.75 = 4.5 litres",
+       "40 × 4.5"
+      ],
+      "answer": "180 litres"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is fastest?",
+      "options": [
+       "20 m/s",
+       "70 km/h",
+       "1 km per minute"
+      ],
+      "answer": 0,
+      "why": "20 m/s = 72 km/h and 1 km per minute = 60 km/h, so 20 m/s is fastest."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Convert 25 m/s to km/h.",
+     "a": "90 km/h",
+     "mins": 2,
+     "model": "25 m each second = 25 × 3600 = 90 000 m each hour.\n90 000 m = 90 km, so 90 km/h."
+    },
+    {
+     "q": "A worker earns £96 for 8 hours. Find the rate of pay.",
+     "a": "£12 per hour",
+     "mins": 1
+    },
+    {
+     "q": "A 1.2 kg bag of rice lasts 15 days. Find the rate of use.",
+     "a": "80 g per day",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) a 54 000 litre pool fills at 30 litres per minute: the time in hours (b) convert 90 km/h to m/s (c) which is faster: 7 m/s or 24 km/h? (d) a printer prints 18 pages a minute: time for 405 pages (e) a wudu tap runs at 5 litres per minute and 60 people each use it for 40 s: the total water",
+     "a": "(a) 30 hours (b) 25 m/s (c) 7 m/s (= 25.2 km/h) (d) 22.5 minutes (e) 200 litres",
+     "mins": 8,
+     "model": "(a) 54 000 ÷ 30 = 1800 minutes; 1800 ÷ 60 = 30 hours.\n(e) 40 s = ⅔ min; 5 × ⅔ = 3⅓ litres each; × 60 = 200 litres."
+    },
+    {
+     "q": "Extend: If each of the 60 people used only 1 litre, closer to the Sunnah amount, how much water would be saved compared with (e)?",
+     "a": "200 - 60 = 140 litres",
+     "mins": 2
+    },
+    {
+     "q": "Stretch: One pipe fills a tank in 6 hours and another in 3 hours. How long do they take together?",
+     "a": "1/6 + 1/3 = 1/2 of the tank an hour, so 2 hours",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "36 km/h in m/s is:",
+     "a": "A) 10",
+     "mins": 1,
+     "options": [
+      "10",
+      "36",
+      "129.6"
+     ]
+    },
+    {
+     "q": "12 litres per minute in litres per second",
+     "a": "0.2",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how do you compare rates given in different units?",
+     "a": "Convert them to the same units first, then compare the numbers.",
+     "mins": 2
+    }
+   ],
+   "homework": "Rates problems: 8 questions including a water-saving survey at home (portal homework).",
+   "send": "Support: conversion ladder (s, min, h; m, km). EAL: 'rate', 'per', 'flow'. Stretch: combined rates.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 4.4 Compound measures",
+    "Measuring jug and a timer for an optional home tap-flow measurement (guide in the pupil PDF)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "water tap running into sink",
+     "alt": "A running tap",
+     "for": "hook"
+    },
+    {
+     "find": "empty swimming pool",
+     "alt": "A swimming pool",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Islam teaches moderation and avoiding waste, even of water. The Prophet ﷺ made wudu with a small amount of water, about one mudd (two cupped handfuls), as reported in Sahih al-Bukhari and Sahih Muslim. Rates help us measure how much we really use.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+   "n": 69,
+   "title": "Review and unit quiz: enlargement, similarity, ratio and rates",
+   "duration": 50,
+   "bigQuestion": "Which of this half term's skills can I now use without help?",
+   "objectives": [
+    "To understand how secure my enlargement, similarity, ratio, proportion and rates skills are, and what to practise next"
+   ],
+   "successCriteria": [
+    "All: recall the scale factor rules and the proportion and rate formulae",
+    "Most: answer quiz questions with full working and units",
+    "Some: set one strength and one target from the quiz"
+   ],
+   "smsc": "Moral: honesty (amanah, أَمَانَة) in assessments",
+   "keywords": [
+    {
+     "term": "scale factor",
+     "def": "the number every length is multiplied by"
+    },
+    {
+     "term": "ratio",
+     "def": "compares quantities"
+    },
+    {
+     "term": "proportion",
+     "def": "direct or inverse relationship"
+    },
+    {
+     "term": "compound measure",
+     "def": "speed, density, pressure or another rate"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which idea from this half term do you think appears most often in real life: ratio, proportion or rates? Why?",
+    "a": "Any, with a reason: for example ratio in recipes and maps, rates in travel and bills."
+   },
+   "starter": [
+    {
+     "q": "Scale factor 2: the area factor",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "Share 20 in the ratio 1 : 3",
+     "a": "5 and 15",
+     "mins": 1
+    },
+    {
+     "q": "Speed for 120 km in 1.5 h",
+     "a": "80 km/h",
+     "mins": 1
+    },
+    {
+     "q": "Inverse: x × y = 24, x = 8, y?",
+     "a": "3",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Rules to remember",
+     "bullets": [
+      "Lengths k, areas k², volumes k³"
+     ],
+     "note": "Quick-fire recall.",
+     "table": {
+      "head": [
+       "Topic",
+       "Rule"
+      ],
+      "rows": [
+       [
+        "Enlargement",
+        "multiply distances from the centre by k"
+       ],
+       [
+        "Similar areas",
+        "× k²"
+       ],
+       [
+        "Similar volumes",
+        "× k³"
+       ],
+       [
+        "Direct proportion",
+        "y = kx"
+       ],
+       [
+        "Inverse proportion",
+        "y = k ÷ x"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Compound measures",
+     "bullets": [
+      "Units must match"
+     ],
+     "note": "Pupils say each formula.",
+     "table": {
+      "head": [
+       "Measure",
+       "Formula"
+      ],
+      "rows": [
+       [
+        "Speed",
+        "distance ÷ time"
+       ],
+       [
+        "Density",
+        "mass ÷ volume"
+       ],
+       [
+        "Pressure",
+        "force ÷ area"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "A mixed problem",
+     "bullets": [
+      "Decide the type first"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Two similar jugs are 10 cm and 15 cm tall. The small one holds 400 ml. How much does the large one hold?",
+      "steps": [
+       "Scale factor 15 ÷ 10 = 1.5",
+       "Volume factor 1.5³ = 3.375",
+       "400 × 3.375"
+      ],
+      "answer": "1350 ml"
+     }
+    },
+    {
+     "heading": "Quiz rules",
+     "bullets": [
+      "Portal quiz, secure mode, 20 minutes",
+      "Calculator allowed",
+      "Working and units on every answer"
+     ],
+     "note": "Cameras on."
+    }
+   ],
+   "practice": [
+    {
+     "q": "Share £120 in the ratio 3 : 5.",
+     "a": "£45 and £75",
+     "mins": 2,
+     "model": "8 parts; 120 ÷ 8 = 15.\n3 × 15 = £45 and 5 × 15 = £75."
+    }
+   ],
+   "independent": [
+    {
+     "q": "Unit quiz (portal, secure mode, 20 minutes, 25 marks). Sample: (a) enlarge (2, 3) by scale factor 3, centre (0, 0) (b) similar shapes with scale factor 2.5: a 4 cm side becomes? (c) the area factor for scale factor 3 (d) 6 workers take 10 days: how long for 4 workers? (e) speed for 150 km in 2.5 h (f) density for 240 g and 30 cm³",
+     "a": "Sample answers: (a) (6, 9) (b) 10 cm (c) 9 (d) 15 days (e) 60 km/h (f) 8 g/cm³",
+     "mins": 20,
+     "model": "(d) 6 × 10 = 60 worker-days; 60 ÷ 4 = 15 days.\n(e) 150 ÷ 2.5 = 60 km/h.\n(f) 240 ÷ 30 = 8 g/cm³."
+    },
+    {
+     "q": "After the quiz: self-check with the answers on screen, then write one strength and one target in the portal response box.",
+     "a": "Personal: for example 'Strength: ratio. Target: volume factors.'",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Scale factor 2 multiplies volume by:",
+     "a": "C) 8",
+     "mins": 1,
+     "options": [
+      "2",
+      "4",
+      "8"
+     ]
+    },
+    {
+     "q": "Big question: which skills can you now use without help?",
+     "a": "Personal: for example 'sharing in a ratio and speed; I still need the card for volume factors'.",
+     "mins": 2
+    }
+   ],
+   "homework": "Practise your target from the quiz: the portal's Summer 1 review set (10 questions). Independent study: the introduction to trigonometry pages in Maths Progress Year 9 Unit 10 (10.3 to 10.6).",
+   "send": "Support: access arrangements as agreed. EAL: glossary allowed. Stretch: the final multi-step question.",
+   "resources": [
+    "Year 9 Summer 1 unit quiz (portal quiz, secure mode, written for this unit)",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 Unit 4 and Unit 10: Check and Strengthen questions for targets; 10.3 to 10.6 (trigonometry) for independent study",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "measuring jugs set",
+     "alt": "Measuring jugs of different sizes",
+     "for": "hook"
+    },
+    {
+     "find": "checklist with ticks",
+     "alt": "A checklist",
+     "for": "keywords"
     }
    ]
   }

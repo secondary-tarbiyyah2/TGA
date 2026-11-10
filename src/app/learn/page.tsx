@@ -1,12 +1,13 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import Link from "next/link";
 import { useLearnSession, dashboardPathForRole, learnRoleLabel } from "@/lib/learn/session";
 
 export default function LearnLandingPage() {
   const { session, roles, rolesLoaded } = useLearnSession();
 
-  if (session === "loading" || (session && !rolesLoaded)) return <p className="text-ink/65">Loading…</p>;
+  if (session === "loading" || (session && !rolesLoaded)) return <Loading label="Loading…" bare />;
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return <p className="text-ink/65">The /learn area isn&apos;t connected yet.</p>;
   if (!session) {
     return (

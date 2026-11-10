@@ -8,7 +8,7 @@ import { SubmissionFeedback } from "@/components/learn/homework/SubmissionFeedba
 import { FILE_CATEGORY_LABEL, SUBMISSION_TYPE_LABEL, submissionFiles } from "@/lib/learn/homeworkFiles";
 import { attachmentsOf, describeAllowed, formatDue, formatEdited, type Homework } from "@/lib/learn/homework";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 export type { Homework } from "@/lib/learn/homework";
 
 type StatusRow = { child_id: string; status: string; submission_id: string | null };
@@ -186,7 +186,7 @@ export function HomeworkCard({
       {open && (
         <div className="mt-3 space-y-2 border-t border-gold-light/30 pt-3">
           {statuses === null ? (
-            <p className="text-sm text-ink/65">Loading…</p>
+            <Loading label="Loading…" bare />
           ) : statuses.length === 0 ? (
             <p className="text-sm text-ink/65">No enrolled pupils.</p>
           ) : (

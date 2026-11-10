@@ -1,20 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { Icon } from "@/components/learn/Icon";
 import { StatusChip, ui } from "@/components/learn/ui";
-import { CATEGORIES, categoryOf, type Role } from "@/lib/learn/actionCentre";
+import { CATEGORIES, categoryOf, type CategoryKey, type Role } from "@/lib/learn/actionCentre";
 import { useActionItems } from "@/components/learn/actions/useActionItems";
 
+const SHOW = 6;
+
 /**
- * The dashboard's window into the Action centre: one row of categories with
- * their counts (each opens that category in the Action centre) and the three
- * most urgent things. Nothing at all when all is clear (the pinned sidebar
- * link already carries the count). Everything is actioned on the one Action
- * centre page; this only points there.
+ * The dashboard's "Waiting for you" list: everything that needs this person,
+ * filtered in place by category (Admissions, Attendance, ...), each row with
+ * its own button. Nothing at all when all is clear (the pinned sidebar link
+ * already carries the count). The full list, with Mark done and printing,
+ * stays on the Action centre page.
  */
 export function ActionCentreWidget({ role }: { role: Role }) {
   const { items } = useActionItems(role);
+  const [cat, setCat] = useState<CategoryKey | "all">("all");
   const urgent = (items || []).filter((i) => i.urgency !== "info");
   if (!urgent.length) return null;
   const base = role === "teach" ? "/teach" : role === "admin" ? "/admin" : role === "family" ? "/family" : "/student";
@@ -22,45 +26,52 @@ export function ActionCentreWidget({ role }: { role: Role }) {
     const list = urgent.filter((i) => categoryOf(i.area) === c.key);
     return { ...c, count: list.length, now: list.some((i) => i.urgency === "now") };
   }).filter((c) => c.count > 0);
+  const active = cat !== "all" && cats.some((c) => c.key === cat) ? cat : "all";
+  const shown = active === "all" ? urgent : urgent.filter((i) => categoryOf(i.area) === active);
 
   return (
     <section aria-labelledby="ac-widget" className="rounded-2xl border border-gold-light bg-white p-4 sm:p-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 id="ac-widget" className="text-sm font-semibold text-ink">
-          Needs you <span className="font-normal text-ink/60">· {urgent.length}</span>
+        <h2 id="ac-widget" className="text-base font-semibold text-ink">
+          Waiting for you <span className="font-normal text-ink/60">· {urgent.length}</span>
         </h2>
-        <Link href={`${base}/actions`} className={`${ui.btnSecondary} ${ui.sm}`}>
-          Open Action centre
+        <Link href={`${base}/actions${active === "all" ? "" : `?cat=${active}`}`} className={`${ui.btnSecondary} ${ui.sm}`}>
+          See everything
         </Link>
       </div>
       {cats.length > 1 && (
-        <ul className="mt-3 flex flex-wrap gap-2" aria-label="By category">
+        <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Show">
+          <button type="button" aria-pressed={active === "all"} onClick={() => setCat("all")} className={active === "all" ? ui.chipOn : ui.chip}>
+            All
+          </button>
           {cats.map((c) => (
-            <li key={c.key}>
-              <Link href={`${base}/actions?cat=${c.key}`} className={`${ui.chip} gap-1.5`}>
-                <Icon name={c.icon} size="sm" />
-                {c.label}
-                <span className={`rounded-full px-1.5 text-xs font-semibold tabular-nums ${c.now ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>{c.count}</span>
-              </Link>
-            </li>
+            <button key={c.key} type="button" aria-pressed={active === c.key} onClick={() => setCat(c.key)} className={`${active === c.key ? ui.chipOn : ui.chip} gap-1.5`}>
+              <Icon name={c.icon} size="sm" />
+              {c.label}
+              <span className={`rounded-full px-1.5 text-xs font-semibold tabular-nums ${c.now ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>{c.count}</span>
+            </button>
           ))}
-        </ul>
+        </div>
       )}
-      <ul className="mt-3 space-y-2">
-        {urgent.slice(0, 3).map((i) => (
-          <li key={i.id} className="flex flex-wrap items-center gap-2 text-sm text-ink">
+      <ul className="mt-3 divide-y divide-gold-light/70">
+        {shown.slice(0, SHOW).map((i) => (
+          <li key={i.id} className="flex flex-wrap items-center gap-3 py-2.5">
             <StatusChip tone={i.urgency === "now" ? "bad" : "warn"}>{i.area}</StatusChip>
-            <Link href={i.href} className="min-w-0 flex-1 truncate font-medium hover:underline">
-              {i.title}
+            <div className="min-w-0 flex-1 basis-56">
+              <p className="truncate text-sm font-semibold text-ink">{i.title}</p>
+              {i.detail && <p className="truncate text-xs text-ink/65">{i.detail}</p>}
+            </div>
+            <Link href={i.href} className={`${ui.btnSecondary} ${ui.sm}`}>
+              {i.cta || "Open"}
             </Link>
           </li>
         ))}
       </ul>
-      {urgent.length > 3 && (
+      {shown.length > SHOW && (
         <p className="mt-2 text-xs text-ink/60">
-          and {urgent.length - 3} more in the{" "}
-          <Link href={`${base}/actions`} className="font-medium text-teal-700 hover:underline">
-            Action centre
+          and {shown.length - SHOW} more under{" "}
+          <Link href={`${base}/actions${active === "all" ? "" : `?cat=${active}`}`} className="font-medium text-teal-700 hover:underline">
+            Waiting for you
           </Link>
           .
         </p>

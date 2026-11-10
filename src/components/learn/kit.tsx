@@ -288,10 +288,10 @@ export function Dialog({
   );
 }
 
-type ConfirmOptions = { title: string; description?: ReactNode; confirmLabel?: string; cancelLabel?: string; danger?: boolean };
+type ConfirmOptions = { title: string; description?: ReactNode; confirmLabel?: string; cancelLabel?: string; danger?: boolean; /** A notice: one OK button, no Cancel. */ noCancel?: boolean };
 
 /** One confirmation, the same everywhere. Prefer `useConfirm()`. */
-export function ConfirmDialog({ title, description, confirmLabel = "Confirm", cancelLabel = "Cancel", danger, onConfirm, onCancel }: ConfirmOptions & { onConfirm: () => void; onCancel: () => void }) {
+export function ConfirmDialog({ title, description, confirmLabel = "Confirm", cancelLabel = "Cancel", danger, noCancel, onConfirm, onCancel }: ConfirmOptions & { onConfirm: () => void; onCancel: () => void }) {
   return (
     <Dialog
       title={title}
@@ -300,9 +300,11 @@ export function ConfirmDialog({ title, description, confirmLabel = "Confirm", ca
       size="sm"
       footer={
         <>
-          <Button variant="ghost" onClick={onCancel}>
-            {cancelLabel}
-          </Button>
+          {!noCancel && (
+            <Button variant="ghost" onClick={onCancel}>
+              {cancelLabel}
+            </Button>
+          )}
           <Button variant={danger ? "danger" : "primary"} onClick={onConfirm} data-autofocus>
             {confirmLabel}
           </Button>
@@ -343,6 +345,18 @@ export function askConfirm(message: string, opts: Partial<ConfirmOptions> = {}):
   return Promise.resolve(typeof window !== "undefined" && window.confirm(message));
 }
 
+/**
+ * `await askNotice("Can't accept yet", "Mark the documents as received first.")`
+ * The portal's own message box in place of window.alert: a title, an
+ * explanation and one OK button. Outside the portal shell it falls back to the browser.
+ */
+export function askNotice(title: string, description?: string): Promise<void> {
+  const o: ConfirmOptions = { title, description, confirmLabel: "OK", noCancel: true };
+  if (activeAsk) return activeAsk(o).then(() => undefined);
+  if (typeof window !== "undefined") window.alert(description ? `${title}\n\n${description}` : title);
+  return Promise.resolve();
+}
+
 /** Mounted once by the portal shell; pages call useConfirm(). */
 export function ConfirmProvider({ children }: { children: ReactNode }) {
   const [pending, setPending] = useState<(ConfirmOptions & { resolve: (ok: boolean) => void }) | null>(null);
@@ -374,14 +388,35 @@ export function useConfirm(): (o: ConfirmOptions) => Promise<boolean> {
   return ctx || ((o) => Promise.resolve(typeof window !== "undefined" && window.confirm(o.title)));
 }
 
+// ── Loading ─────────────────────────────────────────────────────────
+
+/**
+ * The portal's one loading state: a few soft placeholder bars where the
+ * content will appear (not a bare "Loading…" line), announced politely to
+ * screen readers. `lines` sets how tall it is; `bare` drops the card.
+ */
+export function Loading({ label = "Loading", lines = 3, bare = false, className = "" }: { label?: string; lines?: number; bare?: boolean; className?: string }) {
+  const widths = ["w-11/12", "w-4/5", "w-2/3", "w-3/4", "w-1/2"];
+  return (
+    <div role="status" aria-live="polite" className={`${bare ? "" : "rounded-2xl border border-gold-light bg-white p-4 sm:p-5"} ${className}`}>
+      <span className="sr-only">{label.replace(/…$/, "")}…</span>
+      <div aria-hidden="true" className="space-y-2.5">
+        {Array.from({ length: Math.max(1, lines) }, (_, i) => (
+          <div key={i} className={`h-3 rounded-full bg-ink/[0.07] motion-safe:animate-pulse ${widths[i % widths.length]}`} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ── Figures and statuses ──────────────────────────────────────────────
 
 /** A figure and its label. `href` makes it a link; `tone` colours only the figure. */
 export function StatTile({ value, label, hint, href, tone = "neutral" }: { value: ReactNode; label: string; hint?: string; href?: string; tone?: "neutral" | "accent" | "warn" | "bad" }) {
-  const colour = tone === "accent" ? "text-gold-700" : tone === "warn" ? "text-amber-800" : tone === "bad" ? "text-red-700" : "text-ink";
+  const colour = tone === "accent" ? "text-gold-700" : tone === "warn" ? "text-amber-800" : tone === "bad" ? "text-red-700" : "text-forest-900";
   const body = (
     <>
-      <span className={`block text-[1.75rem] font-semibold leading-none tabular-nums tracking-tight ${colour}`}>{value}</span>
+      <span className={`portal-display block text-[1.875rem] font-semibold leading-none tabular-nums ${colour}`}>{value}</span>
       <span className="mt-2 block text-sm font-medium text-ink/80">{label}</span>
       {hint && <span className="mt-0.5 block text-xs text-ink/60">{hint}</span>}
     </>

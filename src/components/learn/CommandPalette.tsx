@@ -265,11 +265,11 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
       <button
         type="button"
         onClick={openPalette}
-        aria-label="Search"
-        className="mr-1 hidden h-10 w-60 items-center gap-2 rounded-lg border border-gold-light bg-white px-3 text-sm text-ink/60 transition-colors hover:border-ink/25 hover:text-ink md:flex"
+        aria-label="Search or jump to a page (Ctrl K)"
+        className="mr-1 hidden h-10 w-64 items-center gap-2.5 rounded-xl border border-gold-light bg-[var(--portal-canvas)] px-3.5 text-sm text-ink/65 transition-colors hover:border-ink/25 hover:bg-white hover:text-ink md:flex lg:w-80 xl:w-96"
       >
         <SearchIcon className="h-4 w-4" />
-        <span>Search…</span>
+        <span>Search or jump to a page</span>
         <kbd className="ml-auto rounded border border-gold-light bg-white px-1.5 py-0.5 text-[11px] font-medium text-ink/65">Ctrl K</kbd>
       </button>
 

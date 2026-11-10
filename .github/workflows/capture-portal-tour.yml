@@ -1,0 +1,63 @@
+name: Capture portal tour
+
+# Screenshots of the live portal (demo parent, teacher and pupil) for review.
+# Run by hand. The images go to the `portal-tour` branch, never to main, so
+# nothing on the site changes.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+      - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
+        with:
+          version: 2.122.1
+      - name: Find the project and keys
+        id: keys
+        run: |
+          set -euo pipefail
+          REF=$(supabase projects list -o json | jq -r '.[0].id')
+          KEYS=$(supabase projects api-keys --project-ref "$REF" -o json)
+          SR=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          AN=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          echo "::add-mask::$SR"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "sr=$SR" >> "$GITHUB_OUTPUT"
+          echo "anon=$AN" >> "$GITHUB_OUTPUT"
+      - run: npm ci --no-audit --no-fund
+      - run: npm i --no-save --no-audit --no-fund playwright@1.49.1 && npx playwright install --with-deps chromium
+      - name: Capture
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.sr }}
+          SUPABASE_ANON_KEY: ${{ steps.keys.outputs.anon }}
+          LEARN_URL: ${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}
+          OUT: /tmp/portal-tour
+        run: |
+          export PREVIEW_KEY="$(tr -d '[:space:]' < deploy/preview-key.txt)"
+          node scripts/capture-portal-tour.mjs
+          ls -la /tmp/portal-tour
+      - name: Push to the portal-tour branch
+        run: |
+          cd /tmp/portal-tour
+          git init -q -b portal-tour
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "Portal tour $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" portal-tour
+        env:
+          GH_TOKEN: ${{ github.token }}

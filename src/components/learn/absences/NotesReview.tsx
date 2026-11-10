@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ukToday } from "@/lib/learn/ukTime";
@@ -87,7 +88,7 @@ export function NotesReview({ notes, onChanged }: { notes: AbsenceNote[] | null;
       </div>
       <div className="px-4 py-4">
         {notes === null ? (
-          <p className="text-sm text-ink/65">Loading…</p>
+          <Loading label="Loading…" bare />
         ) : shown.length === 0 ? (
           <div className="py-4 text-center">
             <p className="font-medium text-ink">{filter === "undecided" ? "Nothing waiting for a decision" : "No notes here"}</p>

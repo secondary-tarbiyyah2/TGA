@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import Link from "next/link";
 import { useLearnSession, type LearnRole } from "@/lib/learn/session";
 
@@ -20,7 +21,7 @@ export function LearnGate({ allowedRoles, children }: { allowedRoles: LearnRole[
   const { session, roles, rolesLoaded } = useLearnSession();
 
   if (session === "loading" || (session && !rolesLoaded)) {
-    return <p className="text-ink/65">Loading…</p>;
+    return <Loading label="Loading…" bare />;
   }
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
     return <p className="text-ink/65">The /learn area isn&apos;t connected yet.</p>;

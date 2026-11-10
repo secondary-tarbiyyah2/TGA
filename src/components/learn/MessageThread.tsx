@@ -1,9 +1,11 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ReadTicks } from "@/components/learn/messages/ReadTicks";
 import { MessageTriagePanel } from "@/components/learn/messages/MessageTriagePanel";
+import { notifyMessage } from "@/lib/learn/push";
 
 type Message = {
   id: string;
@@ -127,8 +129,9 @@ export function MessageThread({ threadId, onSent, onRead, aiTriage = false, onTr
     if (!supabase || !body.trim() || !userId) return;
     setBusy(true);
     try {
-      const { error } = await supabase.from("message_thread_messages").insert({ thread_id: threadId, sender_id: userId, body: body.trim() });
+      const { data, error } = await supabase.from("message_thread_messages").insert({ thread_id: threadId, sender_id: userId, body: body.trim() }).select("id").single();
       if (!error) {
+        if (data?.id) void notifyMessage(data.id);
         setBody("");
         await load();
         onSent?.();
@@ -192,7 +195,7 @@ export function MessageThread({ threadId, onSent, onRead, aiTriage = false, onTr
     <div className="flex h-[58vh] min-h-[340px] flex-col">
       <div className="flex-1 space-y-2 overflow-y-auto p-3">
         {messages === null ? (
-          <p className="text-sm text-ink/65">Loading…</p>
+          <Loading label="Loading…" bare />
         ) : messages.length === 0 ? (
           <p className="text-sm text-ink/65">No messages yet. Write the first one below.</p>
         ) : (

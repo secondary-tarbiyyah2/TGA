@@ -169,6 +169,9 @@ Islamic belief; no invented facts,
 hadith or quotations. Questions must have concrete content (real numbers, real
 sentences), not placeholders.
 
+It also fails on placeholder text: a key word whose definition is missing or a stand-in ("def"),
+"TODO", "TBC", "lorem ipsum", "xxx", "[placeholder]", and empty strings where text is required
+("term" and "placeholder zero" are real maths words, so they pass when properly defined).
 `node scripts/lessons/validate.mjs` checks all of this (the shapes and limits live in
 `src/lib/learn/lessonSchema.mjs`, shared with the portal editor and the curriculum sync). To preview decks from a
 scratch folder: `LESSONS_DIR=path node scripts/lessons/build-decks.mjs out/preview`.

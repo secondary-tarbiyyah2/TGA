@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
@@ -193,7 +194,7 @@ export function AssessmentSitting() {
 
   const shell = (children: React.ReactNode, wide = false) => <Shell large={large} onLarge={() => setLarge((l) => !l)} wide={wide}>{children}</Shell>;
 
-  if (!st) return shell(<p className="py-20 text-center text-ink/70">Loading your assessment…</p>);
+  if (!st) return shell(<Loading label="Loading your assessment…" bare />);
   if (conflict) {
     return shell(
       <div className="mx-auto max-w-lg py-16 text-center">

@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction } from "@/lib/learn/edge";
@@ -70,7 +71,7 @@ function SlotPicker({
   );
   const slots = useMemo(() => generateSlots(evening), [evening]);
 
-  if (taken === null) return <p className="mt-2 text-sm text-ink/65">Loading times…</p>;
+  if (taken === null) return <Loading label="Loading times…" bare className="mt-2" />;
   if (slots.length === 0) return <p className="mt-2 text-sm text-ink/65">No times are available.</p>;
 
   return (
