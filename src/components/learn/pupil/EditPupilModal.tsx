@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Modal } from "@/components/learn/curriculum/Modal";
-import { Notice, ui } from "@/components/learn/ui";
+import { FormSection, Notice, ui } from "@/components/learn/ui";
 import { PupilPlacement } from "./PupilPlacement";
 
 type Loaded = {
@@ -109,35 +109,51 @@ export function EditPupilModal({ childId, onClose, onSaved }: { childId: string;
           !error && <div role="status" aria-label="Loading" className="h-40 rounded-xl bg-cream motion-safe:animate-pulse" />
         ) : (
           <>
-            <label className="block">
-              <span className={ui.label}>Full name</span>
-              <input value={form.name} onChange={(e) => set("name", e.target.value)} autoComplete="off" className={`mt-1 ${ui.input}`} />
-            </label>
-            <PupilPlacement
-              idPrefix="edit-pupil"
-              dob={form.dob}
-              setDob={(v) => set("dob", v)}
-              yearGroupId={form.yearGroupId}
-              setYearGroupId={(v) => set("yearGroupId", v)}
-              above={form.above}
-              setAbove={(v) => set("above", v)}
-              yearGroups={yearGroups}
-              classes={classes}
-              classIds={form.classIds}
-              setClassIds={(ids) => set("classIds", ids)}
-            />
-            <fieldset>
-              <legend className={`${ui.label} mb-1`}>Gender</legend>
-              <div className="flex flex-wrap gap-2">
-                {(["male", "female"] as const).map((g) => (
-                  <label key={g} className={`inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-lg border px-3 text-sm ${form.gender === g ? "border-teal-700 bg-teal-100/60" : "border-gold-light bg-white hover:bg-cream"}`}>
-                    <input type="radio" name="edit-pupil-gender" checked={form.gender === g} onChange={() => set("gender", g)} className="accent-[var(--color-teal-700)]" />
-                    {g === "male" ? "Male (he / him)" : "Female (she / her)"}
-                  </label>
-                ))}
-              </div>
-              <p className={`mt-1 ${ui.hint}`}>Report and note forms use this for the pronoun; staff can still change it there.</p>
-            </fieldset>
+            <FormSection title="The pupil" description="Their name, date of birth and the year group they are placed in.">
+              <label className="block">
+                <span className={ui.label}>Full name</span>
+                <input value={form.name} onChange={(e) => set("name", e.target.value)} autoComplete="off" className={`mt-1 ${ui.input}`} />
+              </label>
+              <PupilPlacement
+                idPrefix="edit-pupil"
+                part="placement"
+                dob={form.dob}
+                setDob={(v) => set("dob", v)}
+                yearGroupId={form.yearGroupId}
+                setYearGroupId={(v) => set("yearGroupId", v)}
+                above={form.above}
+                setAbove={(v) => set("above", v)}
+                yearGroups={yearGroups}
+              />
+              <fieldset>
+                <legend className={`${ui.label} mb-1`}>Gender</legend>
+                <div className="flex flex-wrap gap-2">
+                  {(["male", "female"] as const).map((g) => (
+                    <label key={g} className={`inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-lg border px-3 text-sm ${form.gender === g ? "border-teal-700 bg-teal-100/60" : "border-gold-light bg-white hover:bg-cream"}`}>
+                      <input type="radio" name="edit-pupil-gender" checked={form.gender === g} onChange={() => set("gender", g)} className="accent-[var(--color-teal-700)]" />
+                      {g === "male" ? "Male (he / him)" : "Female (she / her)"}
+                    </label>
+                  ))}
+                </div>
+                <p className={`mt-1 ${ui.hint}`}>Report and note forms use this for the pronoun; staff can still change it there.</p>
+              </fieldset>
+            </FormSection>
+            <FormSection title="Classes" description="Tick every class the pupil is in. A pupil can be in one class per subject.">
+              <PupilPlacement
+                idPrefix="edit-pupil"
+                part="classes"
+                dob={form.dob}
+                setDob={(v) => set("dob", v)}
+                yearGroupId={form.yearGroupId}
+                setYearGroupId={(v) => set("yearGroupId", v)}
+                above={form.above}
+                setAbove={(v) => set("above", v)}
+                yearGroups={yearGroups}
+                classes={classes}
+                classIds={form.classIds}
+                setClassIds={(ids) => set("classIds", ids)}
+              />
+            </FormSection>
             <div className="flex flex-wrap justify-end gap-2 border-t border-gold-light pt-3">
               <button type="button" onClick={onClose} className={ui.btnSecondary}>
                 Cancel

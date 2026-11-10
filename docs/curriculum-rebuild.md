@@ -90,7 +90,7 @@ Next, in this order (each one agent; briefs in docs/agent-briefs/):
 4. Consolidation pass (owner agreed): every old SOW, map and lesson marked keep / adapt / retire; retired lessons recorded in
    content/retired-lessons.json and moved to an "Archive - do not teach from" area; renumber lessons into teaching order.
 5. Backlog docs/backlog/tafweed.md: T19 portal polish is folded into the redesign (docs/portal-redesign.md "Next"), T22 LADO (owner must say which local authority), T23 safeguarding mailbox (owner must create it in
-   Microsoft 365). Prospectus PDF still needs the tablet-or-printer line (tools: the prospectus patch script approach in
+   Microsoft 365). Prospectus PDF tablet-or-printer line: owner said not to do it (10 Nov). (Old note: the prospectus patch script approach in
    git history of public/prospectus).
 6. Small fixes: arrows (→) in poll options render as dashes (branch `builder-arrows-fix` may exist); make the website use
    self-hosted fonts so builds don't fail when Google Fonts can't be reached.

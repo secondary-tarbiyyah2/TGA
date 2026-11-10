@@ -8,7 +8,7 @@ import { StaffProfileForm } from "@/components/learn/staff/StaffProfileForm";
 import { Tabs } from "@/components/learn/Tabs";
 import { SencoToggle } from "@/components/learn/send/SencoToggle";
 import { ukToday } from "@/lib/learn/ukTime";
-import { btn, ui } from "@/components/learn/ui";
+import { btn, FormSection, ui } from "@/components/learn/ui";
 
 import { askConfirm } from "@/components/learn/kit";
 type StaffRow = {
@@ -117,37 +117,40 @@ function ComplianceForm({ person, record, onSaved }: { person: StaffRow; record:
   return (
     <div className="space-y-4">
       <p className="rounded-lg bg-cream px-3 py-2 text-xs text-ink/70">Internal only. Families, students and teachers never see these records. The full checklist (references, qualification checks) is on the Single Central Record under Compliance.</p>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className="block text-sm font-medium text-ink" htmlFor="c-dbs">
-            DBS check date
-          </label>
-          <input id="c-dbs" type="date" className={INPUT} value={form.dbs_check_date} onChange={(e) => set("dbs_check_date", e.target.value)} />
+      <FormSection title="Vetting and training" description="DBS dates, the annual safeguarding refresher, start date and right to work.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className="block text-sm font-medium text-ink" htmlFor="c-dbs">
+              DBS check date
+            </label>
+            <input id="c-dbs" type="date" className={INPUT} value={form.dbs_check_date} onChange={(e) => set("dbs_check_date", e.target.value)} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-ink" htmlFor="c-dbs-renew">
+              DBS renewal due
+            </label>
+            <input id="c-dbs-renew" type="date" className={INPUT} value={form.dbs_renewal_due} onChange={(e) => set("dbs_renewal_due", e.target.value)} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-ink" htmlFor="c-train">
+              Safeguarding training date
+            </label>
+            <input id="c-train" type="date" className={INPUT} value={form.safeguarding_training_date} onChange={(e) => set("safeguarding_training_date", e.target.value)} />
+            {trainingNext && <p className={`mt-1 inline-block rounded-full px-2 py-0.5 text-xs font-medium ${STATE_STYLE[tState]}`}>Annual refresher due {fmt(trainingNext)}</p>}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-ink" htmlFor="c-start">
+              Start date
+            </label>
+            <input id="c-start" type="date" className={INPUT} value={form.start_date} onChange={(e) => set("start_date", e.target.value)} />
+          </div>
         </div>
-        <div>
-          <label className="block text-sm font-medium text-ink" htmlFor="c-dbs-renew">
-            DBS renewal due
-          </label>
-          <input id="c-dbs-renew" type="date" className={INPUT} value={form.dbs_renewal_due} onChange={(e) => set("dbs_renewal_due", e.target.value)} />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-ink" htmlFor="c-train">
-            Safeguarding training date
-          </label>
-          <input id="c-train" type="date" className={INPUT} value={form.safeguarding_training_date} onChange={(e) => set("safeguarding_training_date", e.target.value)} />
-          {trainingNext && <p className={`mt-1 inline-block rounded-full px-2 py-0.5 text-xs font-medium ${STATE_STYLE[tState]}`}>Annual refresher due {fmt(trainingNext)}</p>}
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-ink" htmlFor="c-start">
-            Start date
-          </label>
-          <input id="c-start" type="date" className={INPUT} value={form.start_date} onChange={(e) => set("start_date", e.target.value)} />
-        </div>
-      </div>
-      <label className="flex items-center gap-2 text-sm text-ink">
-        <input type="checkbox" checked={form.right_to_work_verified} onChange={(e) => set("right_to_work_verified", e.target.checked)} />
-        Right to work verified
-      </label>
+        <label className="flex items-center gap-2 text-sm text-ink">
+          <input type="checkbox" checked={form.right_to_work_verified} onChange={(e) => set("right_to_work_verified", e.target.checked)} />
+          Right to work verified
+        </label>
+      </FormSection>
+
       {msg && (
         <p role="status" className={`rounded-lg px-3 py-2 text-sm ${msg.kind === "ok" ? "bg-teal-100/60 text-ink" : "bg-amber-50 text-amber-900"}`}>
           {msg.text}
@@ -232,78 +235,84 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
 
   return (
     <div className="space-y-5">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className="block text-sm font-medium text-ink" htmlFor="sd-name">Full name</label>
-          <input id="sd-name" className={INPUT} value={form.full_name} onChange={(e) => set("full_name", e.target.value)} maxLength={120} />
+      <FormSection title="Name and contact" description="How their name appears to families, and how the school reaches them.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className="block text-sm font-medium text-ink" htmlFor="sd-name">Full name</label>
+            <input id="sd-name" className={INPUT} value={form.full_name} onChange={(e) => set("full_name", e.target.value)} maxLength={120} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-ink" htmlFor="sd-title">Title (Mr, Mrs, Ustadh…)</label>
+            <input id="sd-title" className={INPUT} value={form.title} onChange={(e) => set("title", e.target.value)} maxLength={20} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-ink" htmlFor="sd-email">Email on file</label>
+            <input id="sd-email" type="email" className={INPUT} value={form.email} onChange={(e) => set("email", e.target.value)} />
+            <p className="mt-1 text-xs text-ink/65">Changes the email held on their record. Their sign-in email only changes through an account reset.</p>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-ink" htmlFor="sd-phone">Phone</label>
+            <input id="sd-phone" type="tel" className={INPUT} value={form.phone} onChange={(e) => set("phone", e.target.value)} maxLength={30} />
+          </div>
         </div>
-        <div>
-          <label className="block text-sm font-medium text-ink" htmlFor="sd-title">Title (Mr, Mrs, Ustadh…)</label>
-          <input id="sd-title" className={INPUT} value={form.title} onChange={(e) => set("title", e.target.value)} maxLength={20} />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-ink" htmlFor="sd-email">Email on file</label>
-          <input id="sd-email" type="email" className={INPUT} value={form.email} onChange={(e) => set("email", e.target.value)} />
-          <p className="mt-1 text-xs text-ink/65">Changes the email held on their record. Their sign-in email only changes through an account reset.</p>
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-ink" htmlFor="sd-phone">Phone</label>
-          <input id="sd-phone" type="tel" className={INPUT} value={form.phone} onChange={(e) => set("phone", e.target.value)} maxLength={30} />
-        </div>
-      </div>
+      </FormSection>
 
-      <fieldset>
-        <legend className="text-sm font-medium text-ink">Roles</legend>
-        <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink">
-          {person.roles.includes("head_teacher") && <span className="rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-semibold text-teal-900">Headteacher</span>}
-          {EDITABLE_ROLES.map((r) => (
-            <label key={r} className="flex items-center gap-2">
-              <input type="checkbox" checked={roles.includes(r)} disabled={!canEditRoles} onChange={() => toggleRole(r)} />
-              {learnRoleLabel(r)}
-            </label>
-          ))}
-        </div>
-        {!canEditRoles && <p className="mt-1 text-xs text-ink/65">Only the Headteacher can change roles.</p>}
-        {canEditRoles && <p className="mt-1 text-xs text-ink/65">Removing a role removes every class it was granted for.</p>}
-      </fieldset>
+      <FormSection title="Roles and status" description="What they can see and do in the portal. Save details keeps this section and the one above.">
+        <fieldset>
+          <legend className="sr-only">Roles</legend>
+          <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink">
+            {person.roles.includes("head_teacher") && <span className="rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-semibold text-teal-900">Headteacher</span>}
+            {EDITABLE_ROLES.map((r) => (
+              <label key={r} className="flex items-center gap-2">
+                <input type="checkbox" checked={roles.includes(r)} disabled={!canEditRoles} onChange={() => toggleRole(r)} />
+                {learnRoleLabel(r)}
+              </label>
+            ))}
+          </div>
+          {!canEditRoles && <p className="mt-1 text-xs text-ink/65">Only the Headteacher can change roles.</p>}
+          {canEditRoles && <p className="mt-1 text-xs text-ink/65">Removing a role removes every class it was granted for.</p>}
+        </fieldset>
 
-      <div className="flex items-center gap-3">
-        <Toggle id="sd-active" checked={form.active} onChange={(v) => set("active", v)} label="Active" disabled={isSelf} />
-        <label htmlFor="sd-active" className="text-sm text-ink">
-          {form.active ? "Active" : "Inactive"}
-          <span className="block text-xs text-ink/65">Inactive staff are not offered in message lists or parent evenings. {isSelf ? "You can't make your own account inactive." : ""}</span>
-        </label>
-      </div>
-
-      {msg && (
-        <p role="status" className={`rounded-lg px-3 py-2 text-sm ${msg.kind === "ok" ? "bg-teal-100/60 text-ink" : "bg-amber-50 text-amber-900"}`}>
-          {msg.text}
-        </p>
-      )}
-      <button type="button" onClick={save} disabled={busy} className={btn("primary")}>
-        {busy ? "Saving…" : "Save details"}
-      </button>
-
-      <div className="rounded-xl border border-gold-light bg-cream/40 p-4">
         <div className="flex items-center gap-3">
-          <Toggle id="sd-dsl" checked={person.is_dsl} onChange={(v) => void setDsl(v)} label="Designated Safeguarding Lead" disabled={!canSetDsl || dslBusy} />
-          <label htmlFor="sd-dsl" className="text-sm font-semibold text-ink">
-            Designated Safeguarding Lead
+          <Toggle id="sd-active" checked={form.active} onChange={(v) => set("active", v)} label="Active" disabled={isSelf} />
+          <label htmlFor="sd-active" className="text-sm text-ink">
+            {form.active ? "Active" : "Inactive"}
+            <span className="block text-xs text-ink/65">Inactive staff are not offered in message lists or parent evenings. {isSelf ? "You can't make your own account inactive." : ""}</span>
           </label>
         </div>
-        <p className="mt-2 text-xs text-ink/65">
-          A Designated Safeguarding Lead receives reported concerns, can read the safeguarding log and sees flagged messages. There can be more than one: switch this on for a deputy too. The school must always have at least one.
-          {!canSetDsl ? " Only the Headteacher can change this." : ""}
-        </p>
-        {dslMsg && (
-          <p role="status" className={`mt-2 rounded-lg px-3 py-2 text-sm ${dslMsg.kind === "ok" ? "bg-teal-100/60 text-ink" : "bg-amber-50 text-amber-900"}`}>
-            {dslMsg.text}
+
+        {msg && (
+          <p role="status" className={`rounded-lg px-3 py-2 text-sm ${msg.kind === "ok" ? "bg-teal-100/60 text-ink" : "bg-amber-50 text-amber-900"}`}>
+            {msg.text}
           </p>
         )}
-      </div>
+        <button type="button" onClick={save} disabled={busy} className={btn("primary")}>
+          {busy ? "Saving…" : "Save details"}
+        </button>
+      </FormSection>
 
-      {/* The Staff page is Headteacher/admin only, and set_senco re-checks. */}
-      <SencoToggle userId={person.user_id} name={person.full_name} canSet />
+      <FormSection title="Safeguarding and SEND" description="These switches save as soon as you change them.">
+        <div className="rounded-xl border border-gold-light bg-cream/40 p-4">
+          <div className="flex items-center gap-3">
+            <Toggle id="sd-dsl" checked={person.is_dsl} onChange={(v) => void setDsl(v)} label="Designated Safeguarding Lead" disabled={!canSetDsl || dslBusy} />
+            <label htmlFor="sd-dsl" className="text-sm font-semibold text-ink">
+              Designated Safeguarding Lead
+            </label>
+          </div>
+          <p className="mt-2 text-xs text-ink/65">
+            A Designated Safeguarding Lead receives reported concerns, can read the safeguarding log and sees flagged messages. There can be more than one: switch this on for a deputy too. The school must always have at least one.
+            {!canSetDsl ? " Only the Headteacher can change this." : ""}
+          </p>
+          {dslMsg && (
+            <p role="status" className={`mt-2 rounded-lg px-3 py-2 text-sm ${dslMsg.kind === "ok" ? "bg-teal-100/60 text-ink" : "bg-amber-50 text-amber-900"}`}>
+              {dslMsg.text}
+            </p>
+          )}
+        </div>
+
+        {/* The Staff page is Headteacher/admin only, and set_senco re-checks. */}
+        <SencoToggle userId={person.user_id} name={person.full_name} canSet />
+      </FormSection>
     </div>
   );
 }
