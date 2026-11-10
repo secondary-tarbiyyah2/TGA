@@ -2,7 +2,7 @@
   "subject": "Science",
   "year": "y2",
   "board": "National Curriculum (KS1)",
-  "source": "National Curriculum KS1 Science (Living things and their habitats); Drive Science folder 'Science lower school' (3.8 organisms, 3.9 eco-systems) | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 2 curriculum map and Science Long Term Plan 2023-24 (Cornerstones Muck, Mess & Mixtures and Will It Degrade?), TGA Year 2 Curriculum Pack (Topic); home practicals with household items | Summer 1 2027 (lessons 10, 11): TGA Year 2 pack, Topic, How Do Germs Spread? (glitter or flour model; handwashing test)",
+  "source": "National Curriculum KS1 Science (Living things and their habitats); Drive Science folder 'Science lower school' (3.8 organisms, 3.9 eco-systems) | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 2 curriculum map and Science Long Term Plan 2023-24 (Cornerstones Muck, Mess & Mixtures and Will It Degrade?), TGA Year 2 Curriculum Pack (Topic); home practicals with household items | Summer 1 2027 (lessons 10, 11): TGA Year 2 pack, Topic, How Do Germs Spread? (glitter or flour model; handwashing test) | Summer 2 2027 (lessons 12 to 14): TGA Year 2 pack, Topic, The Scented Garden (garden and wild plants, plant parts and cress, light and dark cress test at home)",
   "lessons": [
     {
       "unit": "Living things and their habitats",
@@ -1954,6 +1954,687 @@
           "find": "tap running water sink",
           "alt": "A tap with running water",
           "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Plants and what they need (The Scented Garden)",
+      "n": 12,
+      "title": "Garden and wild plants and trees",
+      "bigQuestion": "Who planted the dandelion growing in the crack in the pavement?",
+      "objectives": [
+        "To understand how to name and sort common garden plants, wild plants and trees"
+      ],
+      "successCriteria": [
+        "All: name three wild plants and three garden plants",
+        "Most: name two trees and say if they are deciduous or evergreen",
+        "Some: explain the difference between a wild and a garden plant"
+      ],
+      "crossCurricular": "Geography: plants of hot and cold places",
+      "smsc": "Spiritual: wonder at plants growing even in a crack in the pavement",
+      "keywords": [
+        {
+          "term": "wild plant",
+          "def": "a plant that grows by itself, without being planted"
+        },
+        {
+          "term": "garden plant",
+          "def": "a plant that people choose and plant"
+        },
+        {
+          "term": "tree",
+          "def": "a tall plant with a woody trunk"
+        },
+        {
+          "term": "deciduous",
+          "def": "a tree that loses its leaves in autumn"
+        },
+        {
+          "term": "evergreen",
+          "def": "a tree that keeps its leaves all year"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which plants can you see from your window? Did someone plant them, or did they grow by themselves?"
+      },
+      "islamicLink": {
+        "text": "Allah tells us that He sends down rain from the sky and brings out every kind of plant with it (Al-An'am 6:99). Wild plants and garden plants both grow because Allah sends the rain.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Washing hands with soap removes:",
+          "a": "Germs",
+          "mins": 1,
+          "options": [
+            "Germs",
+            "Skin"
+          ]
+        },
+        {
+          "q": "A map drawn from above is a:",
+          "a": "Bird's eye view",
+          "mins": 1,
+          "options": [
+            "Bird's eye view",
+            "Side view"
+          ]
+        },
+        {
+          "q": "Name one part of a plant.",
+          "a": "Root, stem, leaf or flower",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Wild plants",
+          "bullets": [
+            "Grow by themselves",
+            "Daisy, dandelion, buttercup, clover",
+            "Seeds spread by wind or animals"
+          ],
+          "note": "Wild plants grow on lawns, verges and in cracks. Show a photo of each."
+        },
+        {
+          "heading": "Garden plants",
+          "bullets": [
+            "People choose and plant them",
+            "Sunflower, rose, tulip, lavender",
+            "They are watered and cared for"
+          ],
+          "note": "A plant can be wild in one place and planted in another; we sort by how it got there.",
+          "sort": {
+            "columns": [
+              "Wild plant",
+              "Garden plant"
+            ],
+            "cards": [
+              "daisy",
+              "rose",
+              "dandelion",
+              "sunflower",
+              "clover",
+              "tulip"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Trees",
+          "bullets": [
+            "Oak and horse chestnut: deciduous",
+            "Holly and pine: evergreen",
+            "All trees have a trunk"
+          ],
+          "note": "Recall Year 1: deciduous trees lose their leaves in autumn."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "A dandelion growing in the pavement is a:",
+            "options": [
+              "Wild plant",
+              "Garden plant",
+              "Tree"
+            ],
+            "answer": 0,
+            "why": "Nobody planted it; its seed blew there, so it is wild."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is a rose in a flower bed wild or garden?",
+          "a": "Garden",
+          "mins": 1,
+          "model": "Someone chose the rose.\nThey planted it in a flower bed.\nSo it is a garden plant."
+        },
+        {
+          "q": "Name a wild plant with yellow flowers.",
+          "a": "Dandelion or buttercup",
+          "mins": 1
+        },
+        {
+          "q": "Does a holly tree keep its leaves in winter?",
+          "a": "Yes, it is evergreen",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Sort eight plant pictures into wild plants, garden plants and trees.",
+          "a": "Wild: daisy, dandelion, clover; garden: rose, sunflower, tulip; trees: oak, holly",
+          "mins": 5,
+          "model": "Teacher places the daisy card under 'wild plant' and says why."
+        },
+        {
+          "q": "Extend: Write a sentence about one wild plant you have seen near home.",
+          "a": "For example: I saw daisies on the grass near my flat",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: How can a wild plant get to a new place?",
+          "a": "Its seeds are carried by the wind, animals or water",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A garden plant is:",
+          "a": "Planted by people",
+          "mins": 1,
+          "options": [
+            "Planted by people",
+            "Always a tree"
+          ]
+        },
+        {
+          "q": "Big question: who planted the dandelion in the pavement?",
+          "a": "Nobody: the wind carried its seed there, so it is a wild plant",
+          "mins": 1
+        }
+      ],
+      "homework": "Plant hunt with an adult from a window or on a walk you already make: tick the wild and garden plants on your spotting sheet.",
+      "send": "SEND: photo cards to sort with the words read aloud. EAL: plant names with photos. Stretch: find out what a weed is (a plant growing where people do not want it).",
+      "resources": [
+        "Tarbiyyah Primary Year 2 curriculum map and science, history and geography long-term plans 2023-24; TGA Year 2 pack, Topic, Summer 2 The Scented Garden (companion: Let's Explore the World) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Plant spotting sheet: wild plants, garden plants and trees (portal printable)",
+        "Pencil and coloured pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "dandelion growing in pavement crack",
+          "alt": "A dandelion growing in a pavement",
+          "for": "hook"
+        },
+        {
+          "find": "daisies in grass lawn",
+          "alt": "Daisies growing wild in grass",
+          "for": "teach:1"
+        },
+        {
+          "find": "sunflowers in garden",
+          "alt": "Sunflowers planted in a garden",
+          "for": "teach:2"
+        },
+        {
+          "find": "holly leaves and berries",
+          "alt": "Holly, an evergreen",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Plants and what they need (The Scented Garden)",
+      "n": 13,
+      "title": "Parts of a plant; sowing cress",
+      "bigQuestion": "A tiny seed has no mouth and no legs. How does it become a plant?",
+      "objectives": [
+        "To understand the parts of a plant and what each part does"
+      ],
+      "successCriteria": [
+        "All: label root, stem, leaf, flower and seed",
+        "Most: say the job of the root and the leaf",
+        "Some: sow cress seeds and say what will happen"
+      ],
+      "crossCurricular": "DT: using dried plant parts for a fragrant sachet next week",
+      "smsc": "Spiritual: wonder at how a tiny seed becomes a plant",
+      "keywords": [
+        {
+          "term": "root",
+          "def": "holds the plant in the ground and takes in water"
+        },
+        {
+          "term": "stem",
+          "def": "holds the plant up and carries water"
+        },
+        {
+          "term": "leaf",
+          "def": "uses sunlight to make food for the plant"
+        },
+        {
+          "term": "flower",
+          "def": "makes seeds"
+        },
+        {
+          "term": "seed",
+          "def": "a tiny package that can grow into a new plant"
+        },
+        {
+          "term": "bulb",
+          "def": "an underground store of food that grows a plant"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What do you think is inside a seed?"
+      },
+      "islamicLink": {
+        "text": "Allah says He is the One who splits the grain and the date stone so that they sprout (Al-An'am 6:95). Every seed that grows is a sign of Allah's power.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A daisy on a lawn is a:",
+          "a": "Wild plant",
+          "mins": 1,
+          "options": [
+            "Wild plant",
+            "Garden plant"
+          ]
+        },
+        {
+          "q": "The biggest ocean is the:",
+          "a": "Pacific",
+          "mins": 1,
+          "options": [
+            "Pacific",
+            "Arctic"
+          ]
+        },
+        {
+          "q": "Name an evergreen tree.",
+          "a": "Holly or pine",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Parts of a plant",
+          "bullets": [
+            "Root, stem, leaf, flower, seed",
+            "Each part has a job"
+          ],
+          "note": "Show a real plant or a photo. Pupils point to each part on camera.",
+          "diagram": {
+            "centre": "Flowering plant",
+            "items": [
+              "root: holds and drinks",
+              "stem: holds up, carries water",
+              "leaf: makes food",
+              "flower: makes seeds"
+            ]
+          }
+        },
+        {
+          "heading": "Seeds and bulbs",
+          "bullets": [
+            "A seed has a baby plant inside",
+            "It has a food store",
+            "A bulb is a big food store underground"
+          ],
+          "note": "Show an onion as a bulb you can eat. Tulips and daffodils grow from bulbs."
+        },
+        {
+          "heading": "Sow cress at home",
+          "bullets": [
+            "Wet kitchen paper in a dish",
+            "Sprinkle cress seeds on top",
+            "Keep damp; shoots in a few days"
+          ],
+          "note": "Model sowing on camera. An adult helps; do not eat seeds from the packet.",
+          "model": {
+            "problem": "Sow cress on kitchen paper",
+            "steps": [
+              "Fold kitchen paper into a dish",
+              "Wet it, but no puddles",
+              "Sprinkle seeds thinly",
+              "Put on a light windowsill"
+            ],
+            "answer": "Seeds sown; check every day"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which part takes in water from the soil?",
+            "options": [
+              "Flower",
+              "Root",
+              "Leaf"
+            ],
+            "answer": 1,
+            "why": "Roots take in water; the stem carries it up."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What does the stem do?",
+          "a": "Holds the plant up and carries water",
+          "mins": 1,
+          "model": "I think about a sunflower.\nIt stands tall on a thick stem.\nThe stem holds it up and carries water up from the roots."
+        },
+        {
+          "q": "Which part makes seeds?",
+          "a": "The flower",
+          "mins": 1
+        },
+        {
+          "q": "What is a bulb?",
+          "a": "An underground food store that grows a plant",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Label the five parts on the plant sheet and write each part's job.",
+          "a": "Root: holds and takes in water; stem: holds up and carries water; leaf: makes food; flower: makes seeds; seed: grows a new plant",
+          "mins": 5,
+          "model": "Teacher labels the root and writes 'holds the plant and drinks water'."
+        },
+        {
+          "q": "Extend: Sow your cress and draw the dish on day 1.",
+          "a": "Cress sown on damp kitchen paper; day 1 drawing",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Predict what your cress will look like in one week.",
+          "a": "For example: green shoots with small leaves, about 3 to 5 cm tall",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Leaves use sunlight to make:",
+          "a": "Food",
+          "mins": 1,
+          "options": [
+            "Food",
+            "Water"
+          ]
+        },
+        {
+          "q": "Big question: how does a seed become a plant?",
+          "a": "It uses its food store and water to grow a root and a shoot, then leaves",
+          "mins": 1
+        }
+      ],
+      "homework": "Look at your cress every day, keep the paper damp, and draw it on day 3 and day 6.",
+      "send": "SEND: plant labels to cut and stick. EAL: part names with pictures. Stretch: compare a cress seedling with a bean seed if you have one.",
+      "resources": [
+        "Tarbiyyah Primary Year 2 curriculum map and science, history and geography long-term plans 2023-24; TGA Year 2 pack, Topic, Summer 2 The Scented Garden (companion: Let's Explore the World) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Plant parts labelling sheet and cress diary (portal printable)",
+        "Household items: cress seeds, kitchen paper, a saucer or dish, water"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "parts of a flowering plant diagram",
+          "alt": "A diagram of a plant's parts",
+          "for": "teach:1"
+        },
+        {
+          "find": "cress seedlings on kitchen paper",
+          "alt": "Cress growing on kitchen paper",
+          "for": "teach:3"
+        },
+        {
+          "find": "onion bulb cut in half",
+          "alt": "An onion, a bulb we eat",
+          "for": "teach:2"
+        },
+        {
+          "find": "bean seed germinating root shoot",
+          "alt": "A seed growing a root and a shoot",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Plants and what they need (The Scented Garden)",
+      "n": 14,
+      "title": "What do plants need to grow well?",
+      "bigQuestion": "Would a plant grow in a dark cupboard? What would it look like?",
+      "objectives": [
+        "To understand that plants need water, light and the right warmth to grow and stay healthy"
+      ],
+      "successCriteria": [
+        "All: name three things plants need",
+        "Most: describe how cress grows with and without light",
+        "Some: say what a fair test changes and keeps the same"
+      ],
+      "crossCurricular": "Maths: measuring cress in centimetres",
+      "smsc": "Moral: looking after living things that depend on us",
+      "keywords": [
+        {
+          "term": "water",
+          "def": "plants take it in through their roots"
+        },
+        {
+          "term": "light",
+          "def": "plants need sunlight to make food"
+        },
+        {
+          "term": "warmth",
+          "def": "the right temperature for a plant to grow"
+        },
+        {
+          "term": "healthy",
+          "def": "strong, green and growing well"
+        },
+        {
+          "term": "fair test",
+          "def": "a test where we change only one thing"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What does a plant need to stay healthy? Is it the same as what you need?"
+      },
+      "islamicLink": {
+        "text": "Allah sends down water from the sky and brings out plants of every kind (Al-An'am 6:99). When we water and care for plants, we look after what Allah has given us.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which part takes in water?",
+          "a": "Root",
+          "mins": 1,
+          "options": [
+            "Root",
+            "Flower"
+          ]
+        },
+        {
+          "q": "A flower makes:",
+          "a": "Seeds",
+          "mins": 1,
+          "options": [
+            "Seeds",
+            "Roots"
+          ]
+        },
+        {
+          "q": "How tall is your cress now?",
+          "a": "Any measured or estimated answer, for example about 3 cm",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What plants need",
+          "bullets": [
+            "Water",
+            "Light",
+            "The right warmth",
+            "Space to grow"
+          ],
+          "note": "Recall: leaves use light to make food. Roots take in water.",
+          "diagram": {
+            "centre": "A healthy plant needs",
+            "items": [
+              "water",
+              "light",
+              "warmth",
+              "space"
+            ]
+          }
+        },
+        {
+          "heading": "Our light test",
+          "bullets": [
+            "Pot A: on a light windowsill",
+            "Pot B: in a dark cupboard",
+            "Same water, same seeds"
+          ],
+          "note": "We change only one thing: light. That makes it a fair test.",
+          "compare": {
+            "left": {
+              "title": "Pot A: light",
+              "points": [
+                "Windowsill",
+                "Watered"
+              ]
+            },
+            "right": {
+              "title": "Pot B: dark",
+              "points": [
+                "Cupboard",
+                "Watered"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "What we expect",
+          "bullets": [
+            "Light: short, strong and green",
+            "Dark: tall, thin and pale yellow",
+            "Plants need light to stay healthy"
+          ],
+          "note": "Seeds can sprout in the dark using their food store, but they cannot stay healthy without light."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "In our test, we change only:",
+            "options": [
+              "The light",
+              "The seeds",
+              "The water"
+            ],
+            "answer": 0,
+            "why": "Only the light is different, so it is a fair test."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Name three things a plant needs.",
+          "a": "Water, light and warmth (and space)",
+          "mins": 1,
+          "model": "I think of my cress on the windowsill.\nI water it, it gets sunlight, and the room is warm.\nSo plants need water, light and warmth."
+        },
+        {
+          "q": "Why do we use the same seeds in both pots?",
+          "a": "To keep the test fair",
+          "mins": 1
+        },
+        {
+          "q": "What colour will the cress in the dark be?",
+          "a": "Pale yellow",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Set up pot A and pot B with an adult and draw both on day 1 in your diary.",
+          "a": "Two pots set up with the same seeds and water; one light, one dark; day 1 drawn",
+          "mins": 5,
+          "model": "Teacher sets up both pots on camera and labels A and B."
+        },
+        {
+          "q": "Extend: Write a prediction: I think pot B will ... because ...",
+          "a": "For example: grow tall and yellow because it has no light",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: What would happen if we gave pot A no water?",
+          "a": "It would wilt and stop growing",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Plants use light to:",
+          "a": "Make food",
+          "mins": 1,
+          "options": [
+            "Make food",
+            "Drink"
+          ]
+        },
+        {
+          "q": "Big question: would a plant grow well in a dark cupboard?",
+          "a": "No: it might sprout, but it would grow thin and pale and not stay healthy",
+          "mins": 1
+        }
+      ],
+      "homework": "Check pots A and B every day for a week and draw them on day 4 and day 7; bring your diary to the next lesson.",
+      "send": "SEND: picture diary with tick boxes. EAL: water, light, warmth with pictures. Stretch: plan a test for warmth (a warm room and a cool room).",
+      "resources": [
+        "Tarbiyyah Primary Year 2 curriculum map and science, history and geography long-term plans 2023-24; TGA Year 2 pack, Topic, Summer 2 The Scented Garden (companion: Let's Explore the World) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Light and dark cress test diary (portal printable)",
+        "Household items: cress seeds, two saucers, kitchen paper, water, a dark cupboard and a windowsill"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "cress grown in dark pale yellow",
+          "alt": "Pale cress grown in the dark",
+          "for": "teach:3"
+        },
+        {
+          "find": "potted plant on sunny windowsill",
+          "alt": "A plant on a sunny windowsill",
+          "for": "teach:2"
+        },
+        {
+          "find": "watering can watering plants",
+          "alt": "Watering plants",
+          "for": "keywords"
         }
       ]
     }

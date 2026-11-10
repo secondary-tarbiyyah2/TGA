@@ -2,94 +2,231 @@
   "subject": "Geography",
   "year": "y2",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "National Curriculum (KS1 geography: continents and oceans, hot and cold places, atlas and compass skills) | Spring 2 2027: TGA Year 2 pack, Topic, Towers, Tunnels & Turrets (towers around the world) | Summer 1 2027 (lessons 6 to 8): TGA Year 2 pack, Topic, Street Detectives; fieldwork from the door or window with an adult",
+  "source": "National Curriculum (KS1 geography: continents and oceans, hot and cold places, atlas and compass skills) | Spring 2 2027: TGA Year 2 pack, Topic, Towers, Tunnels & Turrets (towers around the world) | Summer 1 2027 (lessons 6 to 8): TGA Year 2 pack, Topic, Street Detectives; fieldwork from the door or window with an adult | Summer 2 2027 (lesson 1 upgraded): TGA Year 2 pack, Topic, Let's Explore the World (continents and oceans)",
   "lessons": [
     {
-      "unit": "Unit 1: Our world",
+      "unit": "Summer 2: Continents, oceans and plants of the world (Let's Explore the World and The Scented Garden)",
       "n": 1,
-      "title": "The seven continents",
-      "duration": 30,
+      "title": "World map: the seven continents and five oceans",
+      "bigQuestion": "If you could only take one map on a journey round the world, what would it need to show?",
       "objectives": [
-        "Name the seven continents",
-        "Find each continent on a world map or globe",
-        "Say which continent is the biggest"
+        "To understand where the seven continents and five oceans are on a world map"
       ],
+      "successCriteria": [
+        "All: name the seven continents",
+        "Most: name the five oceans",
+        "Some: find the UK, Europe and the Equator on a world map"
+      ],
+      "crossCurricular": "Science: plants that grow in hot and cold places",
+      "smsc": "Cultural: families in our class come from many continents",
       "keywords": [
         {
           "term": "continent",
-          "def": "one of the seven very large areas of land on Earth"
+          "def": "a very large area of land"
         },
         {
-          "term": "globe",
-          "def": "a ball-shaped model of the Earth"
+          "term": "ocean",
+          "def": "a very large area of salty water"
         },
         {
           "term": "world map",
-          "def": "a flat picture of the whole Earth"
+          "def": "a flat drawing of the whole Earth"
         },
         {
-          "term": "Asia",
-          "def": "the biggest continent on Earth"
+          "term": "globe",
+          "def": "a round model of the Earth"
+        },
+        {
+          "term": "Equator",
+          "def": "an imaginary line round the middle of the Earth"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is there more land or more sea on the Earth? How could you find out?"
+      },
+      "islamicLink": {
+        "text": "Allah tells us that the differences in our languages and colours are among His signs (Ar-Rum 30:22). People live on every continent, and we learn about each place with respect.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Name the four countries of the UK.",
-        "What do we call a drawing of a place from above?",
-        "What is the name of the country where we live?"
+        {
+          "q": "A wild plant grows:",
+          "a": "By itself",
+          "mins": 1,
+          "options": [
+            "By itself",
+            "Only in pots"
+          ]
+        },
+        {
+          "q": "A holly tree is:",
+          "a": "Evergreen",
+          "mins": 1,
+          "options": [
+            "Evergreen",
+            "Deciduous"
+          ]
+        },
+        {
+          "q": "Name the capital of England.",
+          "a": "London",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Our big planet",
-          "bullets": [
-            "We live on planet Earth.",
-            "Earth has land and water.",
-            "The big areas of land are called continents."
-          ],
-          "note": "Hold up a globe or show one on screen and turn it slowly. Ask: what colours can you see? Blue is water and other colours are land. Say that Allah created the Earth with land and sea. Explain that a continent is a very big piece of land, much larger than a country."
-        },
-        {
           "heading": "Seven continents",
           "bullets": [
-            "Asia, Africa, North America and South America.",
-            "Antarctica, Europe and Australia.",
-            "There are seven continents in all."
+            "Africa, Antarctica, Asia, Europe",
+            "North America, South America",
+            "Oceania, with Australia"
           ],
-          "note": "Use a chant to learn the names: tap out the number of seven on your fingers. Show each continent in a different colour. Some maps show Australia as Oceania - say both names. Misconception: children think the UK is a continent. Remind them that the UK is a country in the continent of Europe."
+          "note": "Point to each on the world map as the class chants the names (spoken, no tune). Asia is the biggest.",
+          "diagram": {
+            "centre": "Seven continents",
+            "items": [
+              "Africa",
+              "Antarctica",
+              "Asia",
+              "Europe",
+              "North America",
+              "South America",
+              "Oceania"
+            ]
+          }
         },
         {
-          "heading": "Biggest and smallest",
+          "heading": "Five oceans",
           "bullets": [
-            "Asia is the biggest continent.",
-            "Australia is the smallest continent.",
-            "Antarctica is covered in ice."
+            "Pacific: the biggest",
+            "Atlantic, Indian",
+            "Arctic in the north",
+            "Southern round Antarctica"
           ],
-          "note": "Compare sizes by showing the continents as coloured shapes on a screen. Ask: which is bigger, Africa or Europe? Africa is much bigger. Link to home: many families have roots in Asia or Africa; ask children to point out where their family comes from."
+          "note": "There is more sea than land: about seven tenths of Earth's surface is ocean."
         },
         {
           "heading": "Where are we?",
           "bullets": [
-            "The UK is in the continent of Europe.",
-            "Makkah is in Asia, in the country of Saudi Arabia.",
-            "Egypt is in the north of Africa."
+            "The UK is in Europe",
+            "The Atlantic Ocean is to its west",
+            "The Equator is far to the south"
           ],
-          "note": "Point to each place on the map. Ask children to name a place they have visited and say which continent it is in. Makkah is a place Muslims all over the world face when they pray; this helps children connect the map with their own lives."
+          "note": "Model finding the UK: find Europe, then the islands at its north-west edge.",
+          "model": {
+            "problem": "Find the UK on a world map",
+            "steps": [
+              "Find Europe",
+              "Look at its north-west edge",
+              "Find two big islands",
+              "That is the UK and Ireland"
+            ],
+            "answer": "The UK, in Europe, beside the Atlantic Ocean"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The biggest ocean is the:",
+            "options": [
+              "Atlantic",
+              "Pacific",
+              "Arctic"
+            ],
+            "answer": 1,
+            "why": "The Pacific is the largest ocean on Earth."
+          }
         }
       ],
       "practice": [
-        "On the world map, point to Asia, Africa and Europe as I say them.",
-        "Complete: 'The UK is in the continent of ___.'"
+        {
+          "q": "Which continent is the UK in?",
+          "a": "Europe",
+          "mins": 1,
+          "model": "I find the UK on the map.\nI look at the big land it is next to.\nThat land is Europe."
+        },
+        {
+          "q": "Which continent is around the South Pole?",
+          "a": "Antarctica",
+          "mins": 1
+        },
+        {
+          "q": "Which ocean is between Africa and Australia?",
+          "a": "The Indian Ocean",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Colour in the seven continents on the world map and write their names.",
-        "Label the continent where you live and the continent where your family comes from.",
-        "Stretch: put the continents in order from biggest to smallest using a table."
+        {
+          "q": "Core: Label the seven continents and five oceans on a blank world map.",
+          "a": "All seven continents and five oceans in the right places",
+          "mins": 6,
+          "model": "Teacher labels Africa and the Atlantic Ocean first."
+        },
+        {
+          "q": "Extend: Colour the continent you were born in, or where your family comes from, and write its name.",
+          "a": "A correctly named and coloured continent",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: Name one continent the Equator crosses.",
+          "a": "Africa or South America",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Name three continents.",
-        "Which continent is the UK in?"
+        {
+          "q": "How many continents are there?",
+          "a": "Seven",
+          "mins": 1,
+          "options": [
+            "Seven",
+            "Five"
+          ]
+        },
+        {
+          "q": "Big question: what must a round-the-world map show?",
+          "a": "The seven continents and five oceans, and where we are",
+          "mins": 1
+        }
       ],
-      "homework": "Find the seven continents on a globe or map at home and teach someone how to say them.",
-      "send": "Provide a map with the continents outlined and name cards to stick on. EAL: say each continent name together twice. Stretch: ask which continents the Equator crosses."
+      "homework": "Say the seven continents and five oceans to an adult while pointing to them on a map or globe.",
+      "send": "SEND: map with first letters given and a word bank. EAL: continent and ocean names with a coloured map. Stretch: find the largest country in each of two continents.",
+      "resources": [
+        "Tarbiyyah Primary Year 2 curriculum map and science, history and geography long-term plans 2023-24; TGA Year 2 pack, Topic, Summer 2 The Scented Garden (companion: Let's Explore the World) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Our Wonderful World (school geography unit): continents and oceans pages and knowledge organiser",
+        "Blank world map (portal printable)",
+        "Globe or atlas if you have one"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "world map continents oceans",
+          "alt": "A world map of continents and oceans",
+          "for": "hook"
+        },
+        {
+          "find": "globe Earth model",
+          "alt": "A globe",
+          "for": "keywords"
+        },
+        {
+          "find": "Pacific Ocean from space",
+          "alt": "The Pacific Ocean from space",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Our world",
