@@ -4,14 +4,12 @@
 begin;
 select plan(7);
 
--- Unused tables: no anonymous writes.
-set local role anon;
-select throws_ok(
-  $$ insert into public.eligibility_responses (child_year_band, region, hifz_priority, start_readiness, recommended_action, contact_name, contact_email)
-     values ('y3-6', 'other', 'central', 'jan-2027', 'book_call', 'Test', 't@example.com') $$,
-  '42501', null, 'anon can no longer insert eligibility_responses'
+-- Unused tables: no insert or update policy left for anyone (staff only read them).
+select is(
+  (select count(*)::int from pg_policies where schemaname = 'public'
+     and tablename in ('quiz_sessions', 'quiz_events', 'eligibility_responses') and cmd in ('INSERT', 'UPDATE', 'ALL')),
+  0, 'no write policies remain on the unused quiz tables'
 );
-reset role;
 
 -- Rate limit: pretend to be the API, with a network address.
 set local role anon;
