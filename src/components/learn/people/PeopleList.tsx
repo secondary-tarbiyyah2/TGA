@@ -154,6 +154,12 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
           <p className="truncate text-xs text-ink/65">{[person.username ? `Username: ${person.username}` : null, person.email, ...meta].filter(Boolean).join(" · ") || "–"}</p>
         </div>
         <div className="flex flex-wrap gap-2">
+          {/* One pupil record: a pupil's sign-in row links straight to their record. */}
+          {person.childId && (
+            <a className={btn} href={`/admin/pupils?id=${person.childId}`}>
+              Pupil record
+            </a>
+          )}
           {person.profileId && person.roles.some((r) => r === "teacher" || r === "teaching_assistant_cover" || r === "head_teacher" || r === "admin") && (
             <a className={btn} href={`/admin/staff?user=${person.profileId}`}>
               Profile &amp; compliance
