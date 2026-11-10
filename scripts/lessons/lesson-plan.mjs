@@ -12,6 +12,7 @@ import path from "node:path";
 import { createRequire } from "node:module";
 import { ISLAMIC_SUBJECTS, ROUTINES, itemA, itemQ, itemModel, phaseMinutes, routineFor } from "../../src/lib/learn/lessonSchema.mjs";
 import { sortAnswer } from "./deck-parts.mjs";
+import { HAS_AR, QURAN_FONT, AR_LANG, arabicFont, isArabicOnly } from "./arabic.mjs";
 
 const require = createRequire(import.meta.url);
 const {
@@ -50,7 +51,29 @@ const MARGIN = 794; // 1.4 cm
 const CONTENT_W = PAGE_W - MARGIN * 2;
 
 const clean = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
-const run = (text, o = {}) => new TextRun({ text: String(text ?? "").replace(/\s+/g, " "), font: FONT, size: o.size || 19, bold: o.bold, italics: o.italics, color: o.color || INK });
+// Arabic in the plan: Word and LibreOffice draw Arabic letters with the run's complex-script font, so every
+// run carries Scheherazade New (Qur'an lessons and any ayah) or Noto Naskh Arabic there, a larger
+// complex-script size (Arabic reads small beside Calibri) and the Arabic language. A run that is all
+// Arabic is right-to-left. Set per plan in buildPlan.
+let planQuran = false;
+const run = (text, o = {}) => {
+  const s = String(text ?? "").replace(/\s+/g, " ");
+  const size = o.size || 19;
+  if (!HAS_AR.test(s)) return new TextRun({ text: s, font: FONT, size, bold: o.bold, italics: o.italics, color: o.color || INK });
+  const cs = arabicFont(s, planQuran);
+  return new TextRun({
+    text: s,
+    font: { ascii: FONT, hAnsi: FONT, eastAsia: FONT, cs },
+    size,
+    sizeComplexScript: Math.round(size * (cs === QURAN_FONT ? 1.35 : 1.2)),
+    bold: o.bold,
+    boldComplexScript: o.bold,
+    italics: o.italics,
+    color: o.color || INK,
+    language: { value: "en-GB", bidirectional: AR_LANG },
+    rightToLeft: isArabicOnly(s) || undefined,
+  });
+};
 const para = (children, o = {}) =>
   new Paragraph({ children: Array.isArray(children) ? children : [children], spacing: { before: o.before ?? 0, after: o.after ?? 50, line: 240 }, alignment: o.align, numbering: o.numbering, keepNext: o.keepNext, indent: o.indent });
 
@@ -147,6 +170,7 @@ const routineText = (id) => (ROUTINES[id] ? ROUTINES[id].label : "");
  * @param meta   { yearLabel, accent, band, prev, next, slides: { starter, teach:[n…], guided, independent, exit, close, total, …Answers }, breaks, keyQuestions }
  */
 export async function buildPlan(file, lesson, meta) {
+  planQuran = meta.subjectSlug === "quran";
   const accent = meta.accent;
   const duration = meta.duration || lesson.duration || 45;
   const teach = lesson.teach || [];
