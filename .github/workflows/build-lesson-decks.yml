@@ -63,7 +63,7 @@ jobs:
         run: |
           FORCE=0
           if [ "${{ github.event.inputs.force }}" = "true" ]; then FORCE=1; fi
-          if [ "${{ github.event_name }}" = "push" ] && git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qxE "scripts/lessons/(build-decks|deck-parts|deck-v3|lesson-plan).mjs|src/lib/learn/lessonSchema.mjs"; then
+          if [ "${{ github.event_name }}" = "push" ] && git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qxE "scripts/lessons/(build-decks|deck-parts|deck-v3|lesson-plan|arabic).mjs|src/lib/learn/lessonSchema.mjs"; then
             echo "Deck design changed: refreshing all generated decks."
             FORCE=1
           fi
