@@ -11,6 +11,7 @@ import {
   type StaffProfile,
 } from "@/lib/learn/staffProfiles";
 import { StaffAvatar } from "@/components/learn/staff/StaffAvatar";
+import { FormSection, LoadingState, ui } from "@/components/learn/ui";
 
 const INPUT = "mt-1 w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm text-ink";
 const LABEL = "block text-sm font-medium text-ink";
@@ -135,76 +136,84 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
     }
   };
 
-  if (!loaded) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
+  if (!loaded) return <LoadingState rows={3} label="Loading your profile" />;
 
   return (
     <div className="space-y-5">
-      <div className="flex items-center gap-4">
-        <StaffAvatar name={fullName} src={photoUrl} size={72} />
-        <div className="flex flex-wrap gap-2">
-          <label className="cursor-pointer rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
-            {form.photo_path ? "Replace photo" : "Add a photo"}
-            <input type="file" accept="image/jpeg,image/png,image/webp" className="sr-only" disabled={busy} onChange={(e) => onPhoto(e.target.files?.[0])} />
-          </label>
-          {form.photo_path && (
-            <button type="button" onClick={removePhoto} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/70 hover:bg-cream">
-              Remove
-            </button>
-          )}
+      <FormSection title="Photo" description="A clear head-and-shoulders photo helps families recognise you. Optional.">
+        <div className="flex items-center gap-4">
+          <StaffAvatar name={fullName} src={photoUrl} size={72} />
+          <div className="flex flex-wrap gap-2">
+            <label className={`${ui.btnSecondary} cursor-pointer`}>
+              {form.photo_path ? "Replace photo" : "Add a photo"}
+              <input type="file" accept="image/jpeg,image/png,image/webp" className="sr-only" disabled={busy} onChange={(e) => onPhoto(e.target.files?.[0])} />
+            </label>
+            {form.photo_path && (
+              <button type="button" onClick={removePhoto} className={ui.btnGhost}>
+                Remove
+              </button>
+            )}
+          </div>
         </div>
-      </div>
+      </FormSection>
 
-      <div className="grid gap-4 sm:grid-cols-[8rem_1fr]">
-        <div>
-          <label className={LABEL} htmlFor="sp-title">
-            Title
-          </label>
-          <input id="sp-title" className={INPUT} value={form.display_title} maxLength={20} placeholder="e.g. Ustadh" onChange={(e) => set("display_title", e.target.value)} />
+      <FormSection title="About you" description="Shown to families and pupils of your classes on Meet your teachers.">
+        <div className="grid gap-4 sm:grid-cols-[8rem_1fr]">
+          <div>
+            <label className={LABEL} htmlFor="sp-title">
+              Title
+            </label>
+            <input id="sp-title" className={INPUT} value={form.display_title} maxLength={20} placeholder="e.g. Ustadh" onChange={(e) => set("display_title", e.target.value)} />
+          </div>
+          <div>
+            <label className={LABEL} htmlFor="sp-years">
+              Years of teaching experience
+            </label>
+            <input id="sp-years" className={INPUT} inputMode="numeric" value={form.years} placeholder="e.g. 8" onChange={(e) => set("years", e.target.value.replace(/[^0-9]/g, ""))} />
+          </div>
         </div>
-        <div>
-          <label className={LABEL} htmlFor="sp-years">
-            Years of teaching experience
-          </label>
-          <input id="sp-years" className={INPUT} inputMode="numeric" value={form.years} placeholder="e.g. 8" onChange={(e) => set("years", e.target.value.replace(/[^0-9]/g, ""))} />
-        </div>
-      </div>
 
-      <div>
-        <label className={LABEL} htmlFor="sp-bio">
-          About me <span className="font-normal text-ink/65">(shown to families and pupils)</span>
+        <div>
+          <label className={LABEL} htmlFor="sp-bio">
+            About me <span className="font-normal text-ink/65">(shown to families and pupils)</span>
+          </label>
+          <textarea id="sp-bio" className={INPUT} rows={4} maxLength={2000} value={form.bio} onChange={(e) => set("bio", e.target.value)} />
+        </div>
+
+        <div>
+          <label className={LABEL} htmlFor="sp-qual">
+            Qualifications
+          </label>
+          <textarea id="sp-qual" className={INPUT} rows={2} maxLength={1000} value={form.qualifications} onChange={(e) => set("qualifications", e.target.value)} />
+        </div>
+      </FormSection>
+
+      <FormSection title="Subjects and languages" description="Separate each one with a comma.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className={LABEL} htmlFor="sp-subjects">
+              Subjects taught <span className="font-normal text-ink/65">(comma separated)</span>
+            </label>
+            <input id="sp-subjects" className={INPUT} value={form.subjects} placeholder="Qur'an, Arabic, Maths" onChange={(e) => set("subjects", e.target.value)} />
+          </div>
+          <div>
+            <label className={LABEL} htmlFor="sp-lang">
+              Languages <span className="font-normal text-ink/65">(comma separated)</span>
+            </label>
+            <input id="sp-lang" className={INPUT} value={form.languages} placeholder="English, Arabic, Urdu" onChange={(e) => set("languages", e.target.value)} />
+          </div>
+        </div>
+      </FormSection>
+
+      <FormSection title="Contact">
+        <label className="flex items-start gap-2 text-sm text-ink">
+          <input type="checkbox" className="mt-1" checked={form.contact_visible} onChange={(e) => set("contact_visible", e.target.checked)} />
+          <span>
+            Show my school email to families of my classes
+            <span className="block text-xs text-ink/65">Off by default. Families can always message you through the portal.</span>
+          </span>
         </label>
-        <textarea id="sp-bio" className={INPUT} rows={4} maxLength={2000} value={form.bio} onChange={(e) => set("bio", e.target.value)} />
-      </div>
-
-      <div>
-        <label className={LABEL} htmlFor="sp-qual">
-          Qualifications
-        </label>
-        <textarea id="sp-qual" className={INPUT} rows={2} maxLength={1000} value={form.qualifications} onChange={(e) => set("qualifications", e.target.value)} />
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className={LABEL} htmlFor="sp-subjects">
-            Subjects taught <span className="font-normal text-ink/65">(comma separated)</span>
-          </label>
-          <input id="sp-subjects" className={INPUT} value={form.subjects} placeholder="Qur'an, Arabic, Maths" onChange={(e) => set("subjects", e.target.value)} />
-        </div>
-        <div>
-          <label className={LABEL} htmlFor="sp-lang">
-            Languages <span className="font-normal text-ink/65">(comma separated)</span>
-          </label>
-          <input id="sp-lang" className={INPUT} value={form.languages} placeholder="English, Arabic, Urdu" onChange={(e) => set("languages", e.target.value)} />
-        </div>
-      </div>
-
-      <label className="flex items-start gap-2 text-sm text-ink">
-        <input type="checkbox" className="mt-1" checked={form.contact_visible} onChange={(e) => set("contact_visible", e.target.checked)} />
-        <span>
-          Show my school email to families of my classes
-          <span className="block text-xs text-ink/65">Off by default. Families can always message you through the portal.</span>
-        </span>
-      </label>
+      </FormSection>
 
       {msg && (
         <p role="status" className={`rounded-lg px-3 py-2 text-sm ${msg.kind === "ok" ? "bg-teal-100/60 text-ink" : "bg-amber-50 text-amber-900"}`}>
@@ -212,7 +221,7 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
         </p>
       )}
 
-      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+      <button type="button" onClick={save} disabled={busy} className={ui.btnPrimary}>
         {busy ? "Saving…" : "Save profile"}
       </button>
     </div>

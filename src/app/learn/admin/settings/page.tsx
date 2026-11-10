@@ -6,7 +6,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { learnRoleLabel, STAFF_ROLES } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { Switch, ui } from "@/components/learn/ui";
+import { FormSection, LoadingState, Switch, ui } from "@/components/learn/ui";
 import { Microsoft365Connection } from "@/components/learn/settings/Microsoft365Connection";
 import { AiUsage } from "@/components/learn/settings/AiUsage";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
@@ -116,36 +116,42 @@ function SchoolDetails() {
   };
 
   if (loadFailed) return <Section title="School details" hint="Couldn't load these. Only a Headteacher or Admin can see them.">{null}</Section>;
-  if (!s) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
+  if (!s) return <LoadingState rows={3} />;
   const set = (k: keyof SchoolSettings) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setS({ ...s, [k]: e.target.value || null });
   return (
     <Section title="School details" hint="Shown on the website and in emails to families. Also editable under Website content, Site settings." onSave={save} busy={busy} message={msg} defaultOpen>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Headteacher name">
-          <input className={inputCls} value={s.headteacher_name || ""} onChange={set("headteacher_name")} />
-        </Field>
-        <Field label="Admissions email">
-          <input type="email" className={inputCls} value={s.admissions_email || ""} onChange={set("admissions_email")} />
-        </Field>
-        <Field label="Phone">
-          <input className={inputCls} value={s.contact_phone || ""} onChange={set("contact_phone")} />
-        </Field>
-        <Field label="Office hours">
-          <input className={inputCls} value={s.opening_hours || ""} onChange={set("opening_hours")} />
-        </Field>
-        <Field label="Address">
-          <textarea rows={2} className={inputCls} value={s.contact_address || ""} onChange={set("contact_address")} />
-        </Field>
-        <Field label="Portal web address" help="Where families sign in.">
-          <input className={inputCls} value={s.portal_url || ""} onChange={set("portal_url")} />
-        </Field>
-        <Field label="Safeguarding lead (name)">
-          <input className={inputCls} value={s.safeguarding_lead_name || ""} onChange={set("safeguarding_lead_name")} />
-        </Field>
-        <Field label="Safeguarding lead (contact)">
-          <input className={inputCls} value={s.safeguarding_lead_contact || ""} onChange={set("safeguarding_lead_contact")} />
-        </Field>
-      </div>
+      <FormSection title="Contact" description="How families reach the school.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Headteacher name">
+            <input className={inputCls} value={s.headteacher_name || ""} onChange={set("headteacher_name")} />
+          </Field>
+          <Field label="Admissions email">
+            <input type="email" className={inputCls} value={s.admissions_email || ""} onChange={set("admissions_email")} />
+          </Field>
+          <Field label="Phone">
+            <input className={inputCls} value={s.contact_phone || ""} onChange={set("contact_phone")} />
+          </Field>
+          <Field label="Office hours">
+            <input className={inputCls} value={s.opening_hours || ""} onChange={set("opening_hours")} />
+          </Field>
+          <Field label="Address">
+            <textarea rows={2} className={inputCls} value={s.contact_address || ""} onChange={set("contact_address")} />
+          </Field>
+          <Field label="Portal web address" help="Where families sign in.">
+            <input className={inputCls} value={s.portal_url || ""} onChange={set("portal_url")} />
+          </Field>
+        </div>
+      </FormSection>
+      <FormSection title="Safeguarding" description="Shown on the website's safeguarding page and in emails, so families know who to contact with a concern.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Safeguarding lead (name)">
+            <input className={inputCls} value={s.safeguarding_lead_name || ""} onChange={set("safeguarding_lead_name")} />
+          </Field>
+          <Field label="Safeguarding lead (contact)">
+            <input className={inputCls} value={s.safeguarding_lead_contact || ""} onChange={set("safeguarding_lead_contact")} />
+          </Field>
+        </div>
+      </FormSection>
     </Section>
   );
 }
@@ -204,24 +210,31 @@ function LessonSettings() {
   };
 
   if (loadError) return <Section title="Lessons and attendance" hint={loadError}>{null}</Section>;
-  if (!s) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
+  if (!s) return <LoadingState rows={3} />;
   const num = (k: keyof LmsSettings) => (e: React.ChangeEvent<HTMLInputElement>) => setS({ ...s, [k]: e.target.value });
   return (
     <Section title="Lessons and attendance" hint="When parents are told about absences, and how long recordings are kept." onSave={save} busy={busy} message={msg}>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Recording retention (days)" help="Older recordings are deleted automatically each night.">
-          <input type="text" inputMode="numeric" className={inputCls} value={s.recording_retention_days} onChange={num("recording_retention_days")} />
-        </Field>
-        <Field label="Absence alert delay (minutes)" help="After a lesson ends with no register, parents are emailed.">
-          <input type="text" inputMode="numeric" className={inputCls} value={s.absence_alert_delay_minutes} onChange={num("absence_alert_delay_minutes")} />
-        </Field>
-        <Field label="Unexplained absences before an alert" help="The Safeguarding Lead is alerted at this number…">
-          <input type="text" inputMode="numeric" className={inputCls} value={s.unexplained_absence_threshold} onChange={num("unexplained_absence_threshold")} />
-        </Field>
-        <Field label="…within this many days">
-          <input type="text" inputMode="numeric" className={inputCls} value={s.unexplained_absence_period_days} onChange={num("unexplained_absence_period_days")} />
-        </Field>
-      </div>
+      <FormSection title="Recordings">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Recording retention (days)" help="Older recordings are deleted automatically each night.">
+            <input type="text" inputMode="numeric" className={inputCls} value={s.recording_retention_days} onChange={num("recording_retention_days")} />
+          </Field>
+        </div>
+      </FormSection>
+      <FormSection title="Absence alerts" description="When families are emailed about a missed lesson, and when the Safeguarding Lead is told about a pattern.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Absence alert delay (minutes)" help="After a lesson ends with no register, parents are emailed.">
+            <input type="text" inputMode="numeric" className={inputCls} value={s.absence_alert_delay_minutes} onChange={num("absence_alert_delay_minutes")} />
+          </Field>
+          <div className="hidden sm:block" aria-hidden="true" />
+          <Field label="Unexplained absences before an alert" help="The Safeguarding Lead is alerted at this number…">
+            <input type="text" inputMode="numeric" className={inputCls} value={s.unexplained_absence_threshold} onChange={num("unexplained_absence_threshold")} />
+          </Field>
+          <Field label="…within this many days">
+            <input type="text" inputMode="numeric" className={inputCls} value={s.unexplained_absence_period_days} onChange={num("unexplained_absence_period_days")} />
+          </Field>
+        </div>
+      </FormSection>
     </Section>
   );
 }
