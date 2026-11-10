@@ -6,7 +6,7 @@ import { Card } from "@/components/learn/Card";
 import { getPolicyLinks } from "@/lib/content";
 import { DOCX_MIME, UPLOAD_ACCEPT, extractDocxText, storageObjectName, uploadKind, uploadProblem } from "@/lib/learn/documentUpload";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { btn, ui } from "@/components/learn/ui";
+import { btn, FormSection, LoadingState, ui } from "@/components/learn/ui";
 import { PolicyTextEditor } from "@/components/learn/documents/PolicyTextEditor";
 import type { PolicyMeta } from "@/lib/policyMeta";
 import { Select } from "@/components/learn/Select";
@@ -288,7 +288,8 @@ export function PolicyEditor() {
 
   const form = (
     <div className="space-y-3">
-      <div className="grid gap-3 sm:grid-cols-2">
+      <FormSection title="The policy" description="Its number and title as families see them on the Policies page.">
+        <div className="grid gap-3 sm:grid-cols-2">
         <label className="text-sm text-ink">Policy number
           <input value={draft.number} onChange={(e) => set("number", e.target.value)} className={inputCls} />
         </label>
@@ -298,8 +299,10 @@ export function PolicyEditor() {
         <label className="text-sm text-ink sm:col-span-2">One-line summary
           <input value={draft.summary || ""} onChange={(e) => set("summary", e.target.value)} className={inputCls} />
         </label>
-        <div className="text-sm text-ink sm:col-span-2">
-          <p className="font-medium">Policy file</p>
+        </div>
+      </FormSection>
+      <FormSection title="Policy file" description="Upload a PDF or Word file, or link to one kept elsewhere.">
+        <div className="text-sm text-ink">
           {draft.file_path && draft.file_kind ? (
             <p className="mt-1 rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm">
               Uploaded: <span className="font-medium">{draft.file_name || "file"}</span> ({draft.file_kind === "pdf" ? "PDF" : "Word"}).{" "}
@@ -319,6 +322,9 @@ export function PolicyEditor() {
             Only needed for a policy you keep as a file. A policy written as text (Edit text) generates its own PDF and web page, and an upload here replaces that. Replacing the file makes everyone who must sign this policy sign the new version.
           </p>
         </div>
+      </FormSection>
+      <FormSection title="Listing and review" description="Where it appears, who can see it, and when it is next reviewed.">
+        <div className="grid gap-3 sm:grid-cols-2">
         <label className="text-sm text-ink">Category
           <Select value={draft.category} onChange={(e) => set("category", e.target.value as Row["category"])} className={inputCls}>
             <option value="required">Required (DfE)</option>
@@ -350,7 +356,8 @@ export function PolicyEditor() {
           <input type="checkbox" checked={draft.featured} onChange={(e) => set("featured", e.target.checked)} />
           Show in &ldquo;Key documents&rdquo; at the top of the Policies page
         </label>
-      </div>
+        </div>
+      </FormSection>
       <div className="flex gap-2">
         <button type="button" onClick={save} disabled={busy} className={btn("primary", "sm")}>{busy ? "Working…" : "Save"}</button>
         <button type="button" onClick={() => setEditingId(null)} className={btn("secondary", "sm")}>Cancel</button>
@@ -378,7 +385,7 @@ export function PolicyEditor() {
       )}
       {editingId === "new" && <div className="mb-3 rounded-2xl border border-gold-light/50 bg-cream/40 p-3">{form}</div>}
       {rows === null ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <LoadingState label="Loading policies" />
       ) : (
         <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
           {shownLive.map((r) => (

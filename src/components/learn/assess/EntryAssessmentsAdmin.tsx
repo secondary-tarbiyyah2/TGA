@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
-import { EmptyState, Notice, StatusChip, Switch, ui, type Tone } from "@/components/learn/ui";
+import { EmptyState, FormSection, Notice, StatusChip, Switch, ui, type Tone } from "@/components/learn/ui";
 import { Icon } from "@/components/learn/Icon";
 import { EntryReport, type ReportData } from "@/components/learn/assess/EntryReport";
 import { MathText } from "@/components/learn/assess/MathText";
@@ -263,7 +263,8 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
   return (
     <section className={`${ui.card} space-y-5`} aria-labelledby="new-ea">
       <h3 id="new-ea" className="text-base font-semibold text-ink">New entry assessment</h3>
-      <div role="radiogroup" aria-label="Who is it for" className="inline-flex rounded-xl border border-gold-light bg-cream p-1">
+      <FormSection title="Who it is for" description="Choose the child and the year group whose paper they sit.">
+      <div role="radiogroup" aria-label="Who is it for" className="inline-flex max-w-full flex-wrap rounded-xl border border-gold-light bg-cream p-1">
         {(["applicant", "pupil", "other"] as const).map((k) => (
           <button key={k} type="button" role="radio" aria-checked={who === k} onClick={() => setWho(k)} className={`rounded-lg px-3 py-1.5 text-sm font-medium ${who === k ? "bg-white shadow-sm" : "text-ink/65"}`}>{k === "applicant" ? "An applicant" : k === "pupil" ? "A current pupil" : "Someone else"}</button>
         ))}
@@ -297,55 +298,58 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
           </Select>
         </label>
       </div>
+      </FormSection>
 
-      <fieldset>
-        <legend className={ui.label}>Access arrangements</legend>
-        {who === "pupil" && fromPlan && <div className="mt-2"><Notice tone="info">From the pupil&apos;s support plan: {fromPlan}. Check them before making the paper.</Notice></div>}
-        <div className="mt-2 grid gap-1 sm:grid-cols-2">
-          <label className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-cream">
-            <span className="font-medium text-ink">Extra time</span>
-            <Select value={extra} onChange={(e) => setExtra(Number(e.target.value))} className={`${ui.input} !w-auto`}>
+      <FormSection title="Timing and breaks" description="Breaks pause the clock and hide the questions. Leaving the page is always counted and shown on the report; ending a part is stricter, because unanswered questions in it count as wrong.">
+        {who === "pupil" && fromPlan && <Notice tone="info">From the pupil&apos;s support plan: {fromPlan}. Check them before making the paper.</Notice>}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <label className={ui.label}>Extra time
+            <Select value={extra} onChange={(e) => setExtra(Number(e.target.value))} className={`mt-1 ${ui.input}`}>
               {[...new Set([0, 25, 50, 100, extra])].sort((x, y) => x - y).map((v) => <option key={v} value={v}>{v ? `${v}%` : "None"}</option>)}
             </Select>
           </label>
-          <div className="flex flex-wrap items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-cream">
-            <label className="flex items-center gap-2"><span className="font-medium text-ink">Breaks in each part</span>
-              <Select value={breaks} onChange={(e) => setBreaks(e.target.value as typeof breaks)} className={`${ui.input} !w-auto`}>
-                <option value="default">{effectiveYear >= 1 ? `Usual for Year ${effectiveYear} (${defaultBreaks(effectiveYear).perSection})` : "Usual for the year"}</option>
-                {["0", "1", "2", "3", "4", "6"].map((v) => <option key={v} value={v}>{v === "0" ? "No breaks" : v}</option>)}
-              </Select>
-            </label>
-            <label className="flex items-center gap-2"><span className="text-ink/70">of</span>
-              <Select value={breakMins} onChange={(e) => setBreakMins(Number(e.target.value))} className={`${ui.input} !w-auto`} aria-label="Length of each break">
-                <option value={0}>{effectiveYear >= 1 ? `${defaultBreaks(effectiveYear).minutes} min (usual)` : "usual length"}</option>
-                {[2, 3, 5, 8, 10].map((v) => <option key={v} value={v}>{v} min</option>)}
-              </Select>
-            </label>
-          </div>
-          <label className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-cream">
-            <span className="font-medium text-ink">End a part if the child leaves it</span>
-            <Select value={leaveLimit} onChange={(e) => setLeaveLimit(Number(e.target.value))} className={`${ui.input} !w-auto`}>
+          <label className={ui.label}>Breaks in each part
+            <Select value={breaks} onChange={(e) => setBreaks(e.target.value as typeof breaks)} className={`mt-1 ${ui.input}`}>
+              <option value="default">{effectiveYear >= 1 ? `Usual for Year ${effectiveYear} (${defaultBreaks(effectiveYear).perSection})` : "Usual for the year"}</option>
+              {["0", "1", "2", "3", "4", "6"].map((v) => <option key={v} value={v}>{v === "0" ? "No breaks" : v}</option>)}
+            </Select>
+          </label>
+          <label className={ui.label}>Length of each break
+            <Select value={breakMins} onChange={(e) => setBreakMins(Number(e.target.value))} className={`mt-1 ${ui.input}`}>
+              <option value={0}>{effectiveYear >= 1 ? `${defaultBreaks(effectiveYear).minutes} min (usual)` : "usual length"}</option>
+              {[2, 3, 5, 8, 10].map((v) => <option key={v} value={v}>{v} min</option>)}
+            </Select>
+          </label>
+          <label className={ui.label}>End a part if the child leaves it
+            <Select value={leaveLimit} onChange={(e) => setLeaveLimit(Number(e.target.value))} className={`mt-1 ${ui.input}`}>
               <option value={0}>Never (just count it)</option>
               {[3, 5, 10].map((v) => <option key={v} value={v}>{v} times</option>)}
             </Select>
           </label>
+        </div>
+        <p className={ui.hint}>Years 1–2 are offered a break halfway through each part and between parts.</p>
+      </FormSection>
+
+      <FormSection title="Access arrangements" description="Anything switched on here is shown on the report, so results are read in context.">
+        <div className="grid gap-1 sm:grid-cols-2">
           <Switch checked={readAloud} onChange={setReadAloud} label="Read questions aloud" hint="Available to Years 1–3 anyway; when on, each question is also read out automatically" />
           <Switch checked={largeText} onChange={setLargeText} label="Bigger text" />
           <Switch checked={eal} onChange={setEal} label="English is an additional language" hint="Shown on the report so verbal results are read with care" />
           <Switch checked={skipLive} onChange={setSkipLive} label="Skip Qur'an and Arabic" hint="For example if already assessed another way" />
         </div>
-        <label className={`${ui.label} mt-2`}>Other arrangements (optional, shown on the report)
+        <label className={ui.label}>Other arrangements (optional, shown on the report)
           <input value={other} onChange={(e) => setOther(e.target.value)} maxLength={200} placeholder="e.g. a parent reads the screen's buttons; coloured overlay" className={`mt-1 ${ui.input}`} />
         </label>
-        <p className={`${ui.hint} mt-2`}>Leaving the page (another tab, window or app) always covers the questions, is counted and shows on the report. Ending a part is stricter: unanswered questions in it count as wrong, so use it only when the child knows the rule. Breaks pause the clock and hide the questions; the report notes them as allowed. Years 1–2 are offered a break halfway through each part and between parts.</p>
-      </fieldset>
+      </FormSection>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className={ui.label}>Supervised by (optional)
-          <input value={invigilator} onChange={(e) => setInvigilator(e.target.value)} placeholder="e.g. Ustadha Sumayyah, on Teams" className={`mt-1 ${ui.input}`} />
-        </label>
-        {who === "applicant" && <div className="self-end"><Switch checked={email} onChange={setEmail} label="Email the link to the parent now" /></div>}
-      </div>
+      <FormSection title="Supervision and sending" description="Who watches the sitting, and whether the family gets the link now.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <label className={ui.label}>Supervised by (optional)
+            <input value={invigilator} onChange={(e) => setInvigilator(e.target.value)} placeholder="e.g. Ustadha Sumayyah, on Teams" className={`mt-1 ${ui.input}`} />
+          </label>
+          {who === "applicant" && <div className="self-end"><Switch checked={email} onChange={setEmail} label="Email the link to the parent now" /></div>}
+        </div>
+      </FormSection>
 
       {effectiveYear >= 1 && <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/75">Year {effectiveYear}: {effectiveYear <= 2 ? "about 35 minutes on screen in three short parts (Numbers, Listening and reading, Puzzles), then writing, Qur'an and Arabic on the call." : effectiveYear <= 6 ? "about 1 hour 35 minutes on screen in four parts the child can spread over several sittings, then Qur'an and Arabic on the call." : "about 2 hours on screen in four parts the child can spread over several sittings, then Qur'an and Arabic on the call."}{extra ? ` Times include ${extra}% extra.` : ""} Breaks pause the clock.</p>}
       {err && <Notice tone="bad">{err}</Notice>}
