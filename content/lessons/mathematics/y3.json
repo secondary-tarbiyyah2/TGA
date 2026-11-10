@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y3",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 3: place value to 1000; addition and subtraction; 3, 4 and 8 times tables); Spring 1 founding year: White Rose Maths Year 3 small-step titles (bridge from Autumn blocks 1-3, then Spring blocks 1 Multiplication and division B and 2 Length and perimeter), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24",
+  "source": "National Curriculum (KS2 Year 3: place value to 1000; addition and subtraction; 3, 4 and 8 times tables); Spring 1 founding year: White Rose Maths Year 3 small-step titles (bridge from Autumn blocks 1-3, then Spring blocks 1 Multiplication and division B and 2 Length and perimeter), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 3 Spring blocks 3 Fractions A and 4 Mass and capacity (small-step titles only)",
   "lessons": [
     {
       "unit": "Spring 1: Multiplication and division B; length and perimeter",
@@ -6138,6 +6138,5428 @@
         "Squared paper",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 3 maths lesson 35 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 36,
+      "title": "Understand the denominators of unit fractions",
+      "duration": 45,
+      "bigQuestion": "Why is 1/8 of a pizza smaller than 1/4?",
+      "objectives": [
+        "To understand what the denominator of a unit fraction tells us"
+      ],
+      "successCriteria": [
+        "All: name a unit fraction from a shape",
+        "Most: explain that the denominator is the number of equal parts",
+        "Some: explain why more parts make each part smaller"
+      ],
+      "crossCurricular": "Cooking: cutting a flatbread into equal pieces",
+      "smsc": "Moral: sharing food fairly in equal parts",
+      "keywords": [
+        {
+          "term": "unit fraction",
+          "def": "one equal part of a whole, like 1/4"
+        },
+        {
+          "term": "denominator",
+          "def": "the bottom number: how many equal parts"
+        },
+        {
+          "term": "equal parts",
+          "def": "parts the same size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You can have 1/4 or 1/8 of a pizza. Which would you choose if you were hungry? Why?",
+        "a": "1/4: the whole is cut into fewer parts, so each part is bigger."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza cut into 8 equal slices",
+          "for": "hook"
+        },
+        {
+          "find": "chocolate bar broken into pieces",
+          "alt": "A bar in equal pieces",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "TT: 4 × 8 = ?",
+          "a": "32",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 7 = ?",
+          "a": "21",
+          "mins": 1
+        },
+        {
+          "q": "Half of 12?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "96 ÷ 3 = ?",
+          "a": "32",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Equal parts",
+          "bullets": [
+            "A unit fraction is 1 equal part.",
+            "1/4: the whole in 4 equal parts.",
+            "The parts must be equal."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "1/4"
+            }
+          ],
+          "note": "Show a strip folded into 4."
+        },
+        {
+          "heading": "The denominator",
+          "bullets": [
+            "1/2, 1/3, 1/4, 1/5",
+            "The bottom number counts the parts.",
+            "The top number is 1: one part."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 3,
+              "shaded": 1,
+              "label": "1/3"
+            },
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "1/4"
+            },
+            {
+              "parts": 5,
+              "shaded": 1,
+              "label": "1/5"
+            }
+          ],
+          "note": "Ask: what does the 5 in 1/5 mean? (5 equal parts)."
+        },
+        {
+          "heading": "More parts, smaller parts",
+          "bullets": [
+            "1/8 is smaller than 1/4.",
+            "The same whole, cut more times."
+          ],
+          "misconception": {
+            "wrong": "1/8 is bigger than 1/4 because 8 is bigger than 4",
+            "right": "The whole is cut into 8 parts, so each part is smaller: 1/8 < 1/4"
+          },
+          "note": "Fold a strip into 4, then 8."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A shape has 6 equal parts. One is shaded. What fraction?",
+            "options": [
+              "1/6",
+              "6/1",
+              "1/5"
+            ],
+            "answer": 0,
+            "why": "1 of 6 equal parts: 1/6. 1/5 counts the unshaded parts."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A strip is folded into 3 equal parts. What is one part?",
+          "a": "1/3",
+          "mins": 2,
+          "model": "Teacher: 3 equal parts, so the denominator is 3; one part is 1/3."
+        },
+        {
+          "q": "Is a shape cut into 4 unequal parts showing quarters?",
+          "a": "No: the parts must be equal",
+          "mins": 2
+        },
+        {
+          "q": "Which is bigger: 1/2 or 1/10?",
+          "a": "1/2",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fold strips to show 1/2, 1/4 and 1/8. Label each.",
+          "a": "Labelled strips",
+          "mins": 4,
+          "model": "Teacher folds in half: 1/2; again: 1/4; again: 1/8."
+        },
+        {
+          "q": "Extend: Write the unit fraction: 7 equal parts, 10 equal parts, 12 equal parts.",
+          "a": "1/7, 1/10, 1/12",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain to a partner why 1/100 is tiny.",
+          "a": "The whole is split into 100 equal parts, so each is very small",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The denominator in 1/9 tells us...",
+          "a": "the whole has 9 equal parts",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is 1/8 of a pizza smaller than 1/4?",
+          "a": "It is cut into more equal parts, so each part is smaller",
+          "mins": 3
+        }
+      ],
+      "homework": "Fold a sheet of paper to make 1/2, 1/4 and 1/8 and label them.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find unit fractions in a clock face (1/4 of an hour, 1/12 of the numbers).",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Understand the denominators of unit fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 36 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 37,
+      "title": "Compare and order unit fractions",
+      "duration": 45,
+      "bigQuestion": "How can a bigger number make a smaller fraction?",
+      "objectives": [
+        "To understand how to compare and order unit fractions"
+      ],
+      "successCriteria": [
+        "All: compare two unit fractions with strips",
+        "Most: use < and > with unit fractions",
+        "Some: order three unit fractions and explain"
+      ],
+      "crossCurricular": "Cooking: sharing a cake between more guests",
+      "smsc": "Social: more people sharing means a smaller share each",
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "decide which is bigger"
+        },
+        {
+          "term": "unit fraction",
+          "def": "one equal part of a whole"
+        },
+        {
+          "term": "denominator",
+          "def": "how many equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A cake shared by 3 people or by 6 people. Who gets more each?",
+        "a": "Shared by 3: each piece is 1/3, which is bigger than 1/6."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "cake cut into slices",
+          "alt": "A round cake cut into equal slices",
+          "for": "hook"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "The denominator tells us...",
+          "a": "how many equal parts",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 6 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "Fraction for 1 of 5 equal parts?",
+          "a": "1/5",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 45 _ 54",
+          "a": "<",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Line them up",
+          "bullets": [
+            "Same whole, different parts.",
+            "1/2 > 1/3 > 1/4 > 1/6"
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 3,
+              "shaded": 1,
+              "label": "1/3"
+            },
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "1/4"
+            },
+            {
+              "parts": 6,
+              "shaded": 1,
+              "label": "1/6"
+            }
+          ],
+          "note": "Fraction wall rows."
+        },
+        {
+          "heading": "The rule",
+          "bullets": [
+            "Same numerator (1)?",
+            "Bigger denominator, smaller fraction.",
+            "1/10 < 1/5"
+          ],
+          "note": "Ask: 1/7 or 1/9? (1/7)."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "Smallest first: 1/12, 1/6, 1/3",
+            "Largest first: 1/2, 1/5, 1/8"
+          ],
+          "note": "Ask: order 1/4, 1/2, 1/10 smallest first (1/10, 1/4, 1/2)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is true?",
+            "options": [
+              "1/5 > 1/3",
+              "1/5 < 1/3",
+              "1/5 = 1/3"
+            ],
+            "answer": 1,
+            "why": "5 parts are smaller than 3 parts of the same whole. The trap: 5 > 3."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 1/4 _ 1/8",
+          "a": ">",
+          "mins": 2,
+          "model": "Teacher shows strips: the quarter is longer than the eighth, so 1/4 > 1/8."
+        },
+        {
+          "q": "Use < or >: 1/10 _ 1/2",
+          "a": "<",
+          "mins": 2
+        },
+        {
+          "q": "Order smallest first: 1/3, 1/9, 1/6",
+          "a": "1/9, 1/6, 1/3",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use < or >: 1/6 _ 1/5; 1/2 _ 1/12; 1/8 _ 1/7",
+          "a": "<; >; <",
+          "mins": 4,
+          "model": "Teacher: 1/6 has more parts than 1/5, so each part is smaller: <."
+        },
+        {
+          "q": "Extend: Order largest first: 1/4, 1/12, 1/2, 1/7",
+          "a": "1/2, 1/4, 1/7, 1/12",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Is 1/3 of a small pizza bigger than 1/4 of a huge pizza? Explain.",
+          "a": "Not always: we can only compare fractions of the same whole",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bigger: 1/20 or 1/2?",
+          "a": "1/2",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can a bigger number make a smaller fraction?",
+          "a": "A bigger denominator means more parts, so each part is smaller",
+          "mins": 3
+        }
+      ],
+      "homework": "Order 5 unit fractions from smallest to largest and explain your order.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: explain when 1/4 can be more than 1/2 (different wholes).",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Compare and order unit fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Printed fraction wall",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 37 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 38,
+      "title": "Understand the numerators of non-unit fractions",
+      "duration": 45,
+      "bigQuestion": "What does the top number of 3/5 tell us?",
+      "objectives": [
+        "To understand what the numerator of a non-unit fraction tells us"
+      ],
+      "successCriteria": [
+        "All: name a non-unit fraction from a shape",
+        "Most: explain the numerator and denominator",
+        "Some: show the same fraction in two ways"
+      ],
+      "crossCurricular": "Art: Islamic tiles with some parts coloured",
+      "smsc": "Spiritual: patterns in Islamic art built from equal parts",
+      "keywords": [
+        {
+          "term": "numerator",
+          "def": "the top number: how many parts we have"
+        },
+        {
+          "term": "non-unit fraction",
+          "def": "more than one equal part, like 3/5"
+        },
+        {
+          "term": "denominator",
+          "def": "the bottom number: how many equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A tile has 8 equal triangles. 3 are blue. What fraction is blue? What fraction is not?",
+        "a": "3/8 is blue; 5/8 is not."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "islamic geometric tile pattern",
+          "alt": "An Islamic geometric tile with equal parts",
+          "for": "hook"
+        },
+        {
+          "find": "chocolate bar broken into pieces",
+          "alt": "A bar in equal pieces",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Use < or >: 1/3 _ 1/6",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 4 = ?",
+          "a": "28",
+          "mins": 1
+        },
+        {
+          "q": "1 of 8 equal parts?",
+          "a": "1/8",
+          "mins": 1
+        },
+        {
+          "q": "63 ÷ 3 = ?",
+          "a": "21",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count the parts",
+          "bullets": [
+            "3/5: 5 equal parts, 3 shaded.",
+            "Numerator: 3 parts we have.",
+            "Denominator: 5 parts in all."
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 3,
+              "label": "3/5"
+            }
+          ],
+          "note": "Shade 3 of 5."
+        },
+        {
+          "heading": "Unit and non-unit",
+          "bullets": [
+            "1/5 is a unit fraction.",
+            "2/5, 3/5, 4/5 are non-unit.",
+            "3/5 = 1/5 + 1/5 + 1/5"
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 1,
+              "label": "1/5"
+            },
+            {
+              "parts": 5,
+              "shaded": 2,
+              "label": "2/5"
+            },
+            {
+              "parts": 5,
+              "shaded": 3,
+              "label": "3/5"
+            },
+            {
+              "parts": 5,
+              "shaded": 4,
+              "label": "4/5"
+            }
+          ],
+          "note": "Ask: how many fifths in 4/5? (4)."
+        },
+        {
+          "heading": "What is left?",
+          "bullets": [
+            "3/8 shaded.",
+            "5/8 not shaded.",
+            "3/8 + 5/8 = 8/8 = 1 whole"
+          ],
+          "note": "Ask: 2/7 shaded, how much not? (5/7)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A bar has 6 equal parts. 4 are shaded. What fraction is shaded?",
+            "options": [
+              "4/6",
+              "6/4",
+              "2/6"
+            ],
+            "answer": 0,
+            "why": "4 of 6 parts: 4/6. 2/6 is the unshaded part."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What fraction is 2 of 3 equal parts?",
+          "a": "2/3",
+          "mins": 2,
+          "model": "Teacher: 3 equal parts, so the denominator is 3; 2 shaded, so the numerator is 2: 2/3."
+        },
+        {
+          "q": "In 5/9, what does the 5 mean?",
+          "a": "5 of the 9 equal parts",
+          "mins": 2
+        },
+        {
+          "q": "3/4 shaded. What is not shaded?",
+          "a": "1/4",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Shade a strip to show 3/4, 2/5 and 5/8.",
+          "a": "Strips shaded correctly",
+          "mins": 4,
+          "model": "Teacher folds into 4, shades 3: 3/4."
+        },
+        {
+          "q": "Extend: Write the shaded and unshaded fractions: 7 of 10 parts shaded.",
+          "a": "7/10 and 3/10",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How many ways can you shade 2/4 of a 4-square grid?",
+          "a": "6 ways",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Fraction: 5 of 6 equal parts?",
+          "a": "5/6",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what does the top number of 3/5 tell us?",
+          "a": "We have 3 of the 5 equal parts",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 things at home split into equal parts and write a fraction for part of each.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: write a non-unit fraction for the months that start with J (3/12).",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Understand the numerators of non-unit fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 38 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 39,
+      "title": "Compare and order non-unit fractions",
+      "duration": 45,
+      "bigQuestion": "How do we compare 3/8 and 5/8? What about 2/3 and 2/5?",
+      "objectives": [
+        "To understand how to compare and order non-unit fractions"
+      ],
+      "successCriteria": [
+        "All: compare fractions with the same denominator",
+        "Most: compare fractions with the same numerator",
+        "Some: order three fractions and explain"
+      ],
+      "crossCurricular": "Cooking: comparing how much of a jug is full",
+      "smsc": "Moral: sharing fairly when parts are different sizes",
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "decide which is bigger"
+        },
+        {
+          "term": "same denominator",
+          "def": "the parts are the same size"
+        },
+        {
+          "term": "numerator",
+          "def": "how many parts we have"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 2/3 more or less than 2/5? Think about the size of the parts.",
+        "a": "More: thirds are bigger than fifths, and we have 2 of each."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:2"
+        },
+        {
+          "find": "glass of water half full",
+          "alt": "A glass part full of water",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "In 5/9, the 5 means...",
+          "a": "5 equal parts we have",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 1/4 _ 1/7",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 8 = ?",
+          "a": "64",
+          "mins": 1
+        },
+        {
+          "q": "2/7 shaded. Not shaded?",
+          "a": "5/7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same denominator",
+          "bullets": [
+            "Parts are the same size.",
+            "More parts, bigger fraction.",
+            "5/8 > 3/8"
+          ],
+          "fraction": [
+            {
+              "parts": 8,
+              "shaded": 3,
+              "label": "3/8"
+            },
+            {
+              "parts": 8,
+              "shaded": 5,
+              "label": "5/8"
+            }
+          ],
+          "note": "Shade both."
+        },
+        {
+          "heading": "Same numerator",
+          "bullets": [
+            "Same number of parts.",
+            "Bigger parts win.",
+            "2/3 > 2/5"
+          ],
+          "fraction": [
+            {
+              "parts": 3,
+              "shaded": 2,
+              "label": "2/3"
+            },
+            {
+              "parts": 5,
+              "shaded": 2,
+              "label": "2/5"
+            }
+          ],
+          "note": "Thirds are bigger than fifths."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "Same denominator: 1/7, 4/7, 6/7",
+            "Same numerator: 3/10, 3/5, 3/4"
+          ],
+          "note": "Ask: order 2/9, 7/9, 5/9 smallest first."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is largest?",
+            "options": [
+              "3/7",
+              "6/7",
+              "4/7"
+            ],
+            "answer": 1,
+            "why": "Same size parts: 6 sevenths is the most."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 4/9 _ 7/9",
+          "a": "<",
+          "mins": 2,
+          "model": "Teacher: same denominator, so the parts are the same size; 4 parts < 7 parts."
+        },
+        {
+          "q": "Use < or >: 3/4 _ 3/8",
+          "a": ">",
+          "mins": 2
+        },
+        {
+          "q": "Order smallest first: 5/6, 1/6, 3/6",
+          "a": "1/6, 3/6, 5/6",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use < or >: 2/5 _ 4/5; 5/8 _ 5/12; 3/10 _ 3/4",
+          "a": "<; >; <",
+          "mins": 4,
+          "model": "Teacher: 2/5 and 4/5 have the same denominator: 2 parts < 4 parts."
+        },
+        {
+          "q": "Extend: Order largest first: 4/11, 9/11, 1/11, 7/11",
+          "a": "9/11, 7/11, 4/11, 1/11",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which is bigger: 3/4 or 2/3? Use strips to show.",
+          "a": "3/4 (it is 1/4 short of 1; 2/3 is 1/3 short, and 1/3 > 1/4)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bigger: 5/12 or 7/12?",
+          "a": "7/12",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we compare 3/8 and 5/8? 2/3 and 2/5?",
+          "a": "Same denominator: more parts is bigger; same numerator: bigger parts (smaller denominator) is bigger",
+          "mins": 3
+        }
+      ],
+      "homework": "Write 4 pairs of fractions with < or >, two with the same denominator and two with the same numerator.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: compare 4/5 and 5/6 by finding how much each is short of 1.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Compare and order non-unit fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Printed fraction wall",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 39 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 40,
+      "title": "Fraction strips: unit and non-unit fractions (consolidation)",
+      "duration": 45,
+      "bigQuestion": "What can a fraction strip show us?",
+      "objectives": [
+        "To understand unit and non-unit fractions by making and using fraction strips"
+      ],
+      "successCriteria": [
+        "All: make strips of halves, quarters and eighths",
+        "Most: use strips to name and compare fractions",
+        "Some: find two fractions equal to 1/2 on the strips"
+      ],
+      "crossCurricular": "DT: measuring and folding paper accurately",
+      "smsc": "Social: checking a partner's strip kindly",
+      "keywords": [
+        {
+          "term": "fraction strip",
+          "def": "a paper strip folded into equal parts"
+        },
+        {
+          "term": "whole",
+          "def": "the full strip, 1"
+        },
+        {
+          "term": "equal parts",
+          "def": "parts the same size"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you fold a strip in half 3 times, how many equal parts do you get?",
+        "a": "8 equal parts (eighths)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "paper strip folded",
+          "alt": "A paper strip folded into equal parts",
+          "for": "teach:1"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Use < or >: 3/8 _ 5/8",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "Bigger: 1/3 or 1/5?",
+          "a": "1/3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 4 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "3 of 10 parts?",
+          "a": "3/10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Make strips",
+          "bullets": [
+            "Fold in half: halves.",
+            "Fold again: quarters.",
+            "Fold again: eighths."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "halves"
+            },
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "quarters"
+            },
+            {
+              "parts": 8,
+              "shaded": 1,
+              "label": "eighths"
+            }
+          ],
+          "note": "Make the strips together on camera."
+        },
+        {
+          "heading": "Use them",
+          "bullets": [
+            "Line up the strips.",
+            "Compare: 3/4 > 5/8.",
+            "Find equal lengths."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "3/4"
+            },
+            {
+              "parts": 8,
+              "shaded": 5,
+              "label": "5/8"
+            },
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            }
+          ],
+          "note": "Ask: which is longer, 3/8 or 1/2? (1/2)."
+        },
+        {
+          "heading": "Check yourself",
+          "bullets": [
+            "Parts equal?",
+            "Counted the parts?",
+            "Labelled with the fraction?"
+          ],
+          "note": "Pupils self-assess their strips."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which strip shows 6/8?",
+            "options": [
+              "6 of 8 equal parts shaded",
+              "8 of 6 parts shaded",
+              "6 parts, 8 shaded"
+            ],
+            "answer": 0,
+            "why": "6 of 8 equal parts: numerator 6, denominator 8."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use your strips: is 2/4 the same length as 1/2?",
+          "a": "Yes",
+          "mins": 2,
+          "model": "Teacher lines up 2 quarters under 1 half: same length."
+        },
+        {
+          "q": "Use < or >: 1/8 _ 1/4",
+          "a": "<",
+          "mins": 2
+        },
+        {
+          "q": "How many eighths make 1 whole?",
+          "a": "8",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a thirds strip by folding into 3. Shade 2/3.",
+          "a": "A strip with 2 of 3 parts shaded",
+          "mins": 4,
+          "model": "Teacher folds the strip into 3 equal parts like a letter and shades 2."
+        },
+        {
+          "q": "Extend: Use strips to order 3/8, 1/2, 1/4 (smallest first).",
+          "a": "1/4, 3/8, 1/2",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find two fractions equal to 1/2 using your strips.",
+          "a": "2/4 and 4/8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many quarters make 1 whole?",
+          "a": "4",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what can a fraction strip show us?",
+          "a": "Equal parts of a whole, so we can name, compare and find equal fractions",
+          "mins": 3
+        }
+      ],
+      "homework": "Keep your strips safe: use them to show a grown-up 1/2, 3/4 and 5/8.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: make sixths by folding thirds in half.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: consolidation of the unit and non-unit fraction small steps (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Coloured pencils",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 40 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 41,
+      "title": "Understand the whole",
+      "duration": 45,
+      "bigQuestion": "When is 4/4 the same as 1?",
+      "objectives": [
+        "To understand how many equal parts make one whole"
+      ],
+      "successCriteria": [
+        "All: say how many parts make a whole for any denominator",
+        "Most: write a whole as a fraction",
+        "Some: find what is missing to make a whole"
+      ],
+      "crossCurricular": "Cooking: cutting a whole flatbread",
+      "smsc": "Spiritual: Allah made the whole world in perfect balance",
+      "keywords": [
+        {
+          "term": "whole",
+          "def": "all of it: 1"
+        },
+        {
+          "term": "equal parts",
+          "def": "parts the same size"
+        },
+        {
+          "term": "denominator",
+          "def": "how many equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Huda ate 3/3 of a sandwich. Amir ate 1 sandwich. Who ate more?",
+        "a": "The same: 3/3 is one whole."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "sandwich cut into quarters",
+          "alt": "A sandwich cut into 4 equal parts",
+          "for": "hook"
+        },
+        {
+          "find": "orange cut into segments",
+          "alt": "An orange in equal segments",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Fold in half 3 times: how many parts?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 3/5 _ 4/5",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 3 = ?",
+          "a": "27",
+          "mins": 1
+        },
+        {
+          "q": "2/3 shaded. Not shaded?",
+          "a": "1/3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A whole",
+          "bullets": [
+            "2/2 = 1",
+            "3/3 = 1",
+            "4/4 = 1"
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 2,
+              "label": "2/2 = 1"
+            },
+            {
+              "parts": 3,
+              "shaded": 3,
+              "label": "3/3 = 1"
+            },
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "4/4 = 1"
+            }
+          ],
+          "note": "All parts shaded is 1 whole."
+        },
+        {
+          "heading": "Any denominator",
+          "bullets": [
+            "8/8 = 1",
+            "10/10 = 1",
+            "Numerator = denominator."
+          ],
+          "note": "Ask: how many sevenths in 1? (7)."
+        },
+        {
+          "heading": "Make a whole",
+          "bullets": [
+            "3/5 + ? = 1",
+            "We need 2 more fifths.",
+            "3/5 + 2/5 = 5/5 = 1"
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 3,
+              "label": "3/5: need 2/5 more"
+            }
+          ],
+          "note": "Ask: 5/9 + ? = 1 (4/9)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is equal to 1?",
+            "options": [
+              "6/6",
+              "1/6",
+              "6/1"
+            ],
+            "answer": 0,
+            "why": "6 of 6 parts is the whole. 6/1 is 6 wholes."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many quarters make 1?",
+          "a": "4",
+          "mins": 2,
+          "model": "Teacher shades a strip quarter by quarter: 1/4, 2/4, 3/4, 4/4 = 1."
+        },
+        {
+          "q": "1 = ?/10",
+          "a": "10/10",
+          "mins": 2
+        },
+        {
+          "q": "2/7 + ? = 1",
+          "a": "5/7",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write 1 as a fraction with denominators 3, 5 and 12.",
+          "a": "3/3, 5/5, 12/12",
+          "mins": 4,
+          "model": "Teacher: 3 parts, all 3 shaded: 3/3."
+        },
+        {
+          "q": "Extend: Fill in: 4/9 + ? = 1; 7/10 + ? = 1",
+          "a": "5/9; 3/10",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A pizza in 8 slices. 3 are eaten, then 2 more. What fraction is left?",
+          "a": "3/8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 = ?/6",
+          "a": "6/6",
+          "mins": 2
+        },
+        {
+          "q": "Big question: when is 4/4 the same as 1?",
+          "a": "Always: 4 of 4 equal parts is the whole",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw 3 shapes split into equal parts and write the whole as a fraction for each.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find 2/5 + 2/5 and how much more to make 1.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Understand the whole' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 41 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 42,
+      "title": "Fractions and scales",
+      "duration": 45,
+      "bigQuestion": "How can we read a scale that has no numbers on every mark?",
+      "objectives": [
+        "To understand how to find fractions on scales and bar models"
+      ],
+      "successCriteria": [
+        "All: count the equal parts between two numbers",
+        "Most: name the fraction a mark shows",
+        "Some: use a bar model to show a fraction"
+      ],
+      "crossCurricular": "Science: reading a measuring jug half full",
+      "smsc": "Moral: reading scales carefully so we are fair",
+      "keywords": [
+        {
+          "term": "scale",
+          "def": "marks in equal steps"
+        },
+        {
+          "term": "interval",
+          "def": "the gap between two marks"
+        },
+        {
+          "term": "bar model",
+          "def": "a bar split into equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A jug has marks between 0 and 1 litre, in 4 equal steps. The water is on the 3rd mark. What fraction of a litre?",
+        "a": "3/4 of a litre."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug with water",
+          "alt": "A measuring jug with water",
+          "for": "hook"
+        },
+        {
+          "find": "bar model diagram maths",
+          "alt": "A bar model",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 = ?/8",
+          "a": "8/8",
+          "mins": 1
+        },
+        {
+          "q": "3/7 + ? = 1",
+          "a": "4/7",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 9 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "Half of 1 litre?",
+          "a": "1/2 litre",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count the steps",
+          "bullets": [
+            "0 to 1 in 4 equal steps.",
+            "Each step is 1/4.",
+            "Marks: 1/4, 2/4, 3/4, 1."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "3 of 4 steps: 3/4"
+            }
+          ],
+          "note": "Count the gaps, not the marks."
+        },
+        {
+          "heading": "Bar model",
+          "bullets": [
+            "A bar of 1 whole.",
+            "Split into 5 equal parts.",
+            "3 parts = 3/5."
+          ],
+          "fraction": [
+            {
+              "parts": 5,
+              "shaded": 3,
+              "label": "3/5"
+            }
+          ],
+          "note": "Draw the bar."
+        },
+        {
+          "heading": "Count gaps, not marks",
+          "bullets": [
+            "A ruler from 0 to 1 with 5 gaps.",
+            "Each gap is 1/5.",
+            "The 2nd mark is 2/5."
+          ],
+          "misconception": {
+            "wrong": "There are 4 marks between 0 and 1, so it counts in quarters",
+            "right": "4 marks make 5 gaps: it counts in fifths"
+          },
+          "note": "Ask: 10 gaps between 0 and 1? (tenths)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Between 0 and 1 there are 3 equal gaps. The pointer is on the 2nd mark. Fraction?",
+            "options": [
+              "2/3",
+              "2/4",
+              "1/3"
+            ],
+            "answer": 0,
+            "why": "3 gaps: thirds. The 2nd mark is 2/3."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "0 to 1 in 5 gaps. Pointer on the 4th mark?",
+          "a": "4/5",
+          "mins": 2,
+          "model": "Teacher counts the gaps: 1, 2, 3, 4, 5, so fifths; the pointer is 4 gaps along: 4/5."
+        },
+        {
+          "q": "0 to 1 in 8 gaps. Pointer on the 3rd mark?",
+          "a": "3/8",
+          "mins": 2
+        },
+        {
+          "q": "Draw a bar model to show 2/6.",
+          "a": "A bar of 6 equal parts, 2 shaded",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read 3 scales: 0 to 1 in 4 gaps (pointer 1st mark); 6 gaps (5th mark); 10 gaps (7th mark).",
+          "a": "1/4; 5/6; 7/10",
+          "mins": 4,
+          "model": "Teacher counts 4 gaps, so quarters; the 1st mark is 1/4."
+        },
+        {
+          "q": "Extend: Draw bar models for 3/4 and 3/8.",
+          "a": "Bars of 4 and 8 equal parts, 3 shaded each",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A scale from 0 to 2 has 4 gaps between 0 and 1 and 4 more to 2. The pointer is on the 6th mark. What is it?",
+          "a": "1 2/4 (or 1 1/2)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0 to 1 in 7 gaps. Pointer on the 4th mark?",
+          "a": "4/7",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we read a scale with unnumbered marks?",
+          "a": "Count the equal gaps between two numbers to find the fraction each gap is worth",
+          "mins": 3
+        }
+      ],
+      "homework": "Look at a measuring jug or a ruler at home: how many gaps between two numbers?",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: read a scale from 0 to 2 in thirds.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Fractions and scales' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Ruler and a measuring jug (to look at the scales)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 42 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 43,
+      "title": "Fractions on a number line",
+      "duration": 45,
+      "bigQuestion": "Where does 3/4 live on a number line?",
+      "objectives": [
+        "To understand how to place fractions on a number line from 0 to 1"
+      ],
+      "successCriteria": [
+        "All: split a 0 to 1 line into equal parts",
+        "Most: mark a fraction on the line",
+        "Some: explain where 1/2 sits on lines of quarters and eighths"
+      ],
+      "crossCurricular": "Geography: a journey 3/4 of the way to school",
+      "smsc": "Moral: patience on a journey",
+      "keywords": [
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        },
+        {
+          "term": "interval",
+          "def": "an equal gap on the line"
+        },
+        {
+          "term": "fraction",
+          "def": "an equal part of a whole"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A walk from home (0) to the masjid (1). You stop 3/4 of the way. Nearer home or the masjid?",
+        "a": "Nearer the masjid: 3/4 is past half way."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "road sign showing distance",
+          "alt": "A road sign showing a distance",
+          "for": "hook"
+        },
+        {
+          "find": "ruler with centimetres close up",
+          "alt": "A ruler as a number line",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0 to 1 in 5 gaps. 2nd mark?",
+          "a": "2/5",
+          "mins": 1
+        },
+        {
+          "q": "1 = ?/4",
+          "a": "4/4",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 8 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 2/3 _ 2/5",
+          "a": ">",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Split the line",
+          "bullets": [
+            "0 to 1 in 4 equal gaps.",
+            "Marks: 1/4, 2/4, 3/4.",
+            "The end is 4/4 = 1."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "0 to 3/4 of the way"
+            }
+          ],
+          "note": "Think of the bar laid flat."
+        },
+        {
+          "heading": "Count along",
+          "bullets": [
+            "Count in quarters:",
+            "0, 1/4, 2/4, 3/4, 1"
+          ],
+          "table": {
+            "head": [
+              "Mark",
+              "0",
+              "1st",
+              "2nd",
+              "3rd",
+              "4th"
+            ],
+            "rows": [
+              [
+                "Fraction",
+                "0",
+                "1/4",
+                "2/4",
+                "3/4",
+                "1"
+              ]
+            ]
+          },
+          "note": "Point to each mark."
+        },
+        {
+          "heading": "Half way",
+          "bullets": [
+            "2/4 is half way.",
+            "4/8 is half way.",
+            "Both equal 1/2."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "2/4"
+            },
+            {
+              "parts": 8,
+              "shaded": 4,
+              "label": "4/8"
+            },
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            }
+          ],
+          "note": "Ask: half way on a line of sixths? (3/6)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A 0 to 1 line has 5 equal gaps. Where is 2/5?",
+            "options": [
+              "The 2nd mark",
+              "The 5th mark",
+              "Half way"
+            ],
+            "answer": 0,
+            "why": "Each gap is 1/5; 2 gaps along is 2/5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Mark 2/3 on a 0 to 1 line.",
+          "a": "Two of three equal gaps along",
+          "mins": 2,
+          "model": "Teacher splits the line into 3 equal gaps and counts 2 along: 2/3."
+        },
+        {
+          "q": "Mark 5/8.",
+          "a": "5 of 8 gaps along",
+          "mins": 2
+        },
+        {
+          "q": "Which is nearer 1: 1/4 or 3/4?",
+          "a": "3/4",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a 0 to 1 line in sixths. Mark 1/6, 3/6 and 5/6.",
+          "a": "Line with the marks at gaps 1, 3 and 5",
+          "mins": 4,
+          "model": "Teacher draws 6 equal gaps and labels 1/6 at the first mark."
+        },
+        {
+          "q": "Extend: Is 4/10 before or after half way? Explain.",
+          "a": "Before: half way is 5/10",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw a 0 to 2 line in quarters. Where does 6/4 go?",
+          "a": "Half way between 1 and 2 (1 2/4)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Half way on a line of eighths?",
+          "a": "4/8",
+          "mins": 2
+        },
+        {
+          "q": "Big question: where does 3/4 live on a number line?",
+          "a": "3 of 4 equal gaps from 0, past half way",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a 0 to 1 number line in fifths and mark 3 fractions.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: place 7/10 and 3/4 on the same line and compare.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Fractions on a number line' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Paper number line 0 to 1 (and 0 to 2)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 43 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 44,
+      "title": "Count in fractions on a number line",
+      "duration": 45,
+      "bigQuestion": "What comes after 4/4 when we count in quarters?",
+      "objectives": [
+        "To understand how to count forwards and backwards in fractions, past 1"
+      ],
+      "successCriteria": [
+        "All: count in quarters from 0 to 1",
+        "Most: count on past 1",
+        "Some: count backwards in fractions"
+      ],
+      "crossCurricular": "Time: counting in quarter hours",
+      "smsc": "Spiritual: counting the hours between prayers",
+      "keywords": [
+        {
+          "term": "count on",
+          "def": "keep adding the same step"
+        },
+        {
+          "term": "count back",
+          "def": "keep taking away the same step"
+        },
+        {
+          "term": "whole",
+          "def": "1, made of all the parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Count in quarters: 1/4, 2/4, 3/4, 4/4... what comes next?",
+        "a": "5/4, which is 1 and 1/4."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "analogue clock face",
+          "alt": "A clock face showing quarter hours",
+          "for": "hook"
+        },
+        {
+          "find": "ruler with centimetres close up",
+          "alt": "A ruler",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Mark 3/5 on a line: which gap?",
+          "a": "The 3rd",
+          "mins": 1
+        },
+        {
+          "q": "1 = ?/3",
+          "a": "3/3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "Half way on a line of tenths?",
+          "a": "5/10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count in quarters",
+          "bullets": [
+            "1/4, 2/4, 3/4, 4/4",
+            "4/4 = 1",
+            "Then 5/4, 6/4..."
+          ],
+          "table": {
+            "head": [
+              "Count",
+              "1st",
+              "2nd",
+              "3rd",
+              "4th",
+              "5th",
+              "6th"
+            ],
+            "rows": [
+              [
+                "Quarters",
+                "1/4",
+                "2/4",
+                "3/4",
+                "1",
+                "1 1/4",
+                "1 2/4"
+              ]
+            ]
+          },
+          "note": "Spoken count together."
+        },
+        {
+          "heading": "Past 1",
+          "bullets": [
+            "5/4 = 1 and 1/4",
+            "6/4 = 1 and 2/4",
+            "8/4 = 2"
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "1"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "and 2/4: 1 2/4"
+            }
+          ],
+          "note": "Show 2 strips of quarters."
+        },
+        {
+          "heading": "Count back",
+          "bullets": [
+            "1, 4/5, 3/5, 2/5",
+            "Take one fifth each time."
+          ],
+          "note": "Ask: what comes before 3/7? (2/7)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Count in thirds: 1/3, 2/3, 1, ... next?",
+            "options": [
+              "1 1/3",
+              "4/4",
+              "2"
+            ],
+            "answer": 0,
+            "why": "1 and one more third: 1 1/3."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count in fifths from 0 to 1.",
+          "a": "1/5, 2/5, 3/5, 4/5, 1",
+          "mins": 2,
+          "model": "Teacher points along a line in fifths: one fifth at a time."
+        },
+        {
+          "q": "What comes after 1 when counting in halves?",
+          "a": "1 1/2",
+          "mins": 2
+        },
+        {
+          "q": "Count back in tenths from 1 to 6/10.",
+          "a": "9/10, 8/10, 7/10, 6/10",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Count in quarters from 0 to 2.",
+          "a": "1/4, 2/4, 3/4, 1, 1 1/4, 1 2/4, 1 3/4, 2",
+          "mins": 4,
+          "model": "Teacher counts on a 0 to 2 line in quarters."
+        },
+        {
+          "q": "Extend: Fill the gaps: 3/8, 4/8, _, 6/8, _",
+          "a": "5/8, 7/8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Count back in thirds from 2 to 1.",
+          "a": "1 2/3, 1 1/3, 1",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Next: 2/6, 3/6, 4/6, ...?",
+          "a": "5/6",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what comes after 4/4 in quarters?",
+          "a": "5/4, which is 1 1/4",
+          "mins": 3
+        }
+      ],
+      "homework": "Count in quarters to 3 out loud with a grown-up.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: count in fifths from 1 to 2 and back.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Count in fractions on a number line' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Paper number line 0 to 2",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 44 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 45,
+      "title": "Tenths as part of a whole",
+      "duration": 45,
+      "bigQuestion": "What happens when we split a whole into 10 equal parts?",
+      "objectives": [
+        "To understand tenths as 10 equal parts of a whole"
+      ],
+      "successCriteria": [
+        "All: show 1/10 of a strip",
+        "Most: name non-unit tenths like 7/10",
+        "Some: explain the link between tenths and dividing by 10"
+      ],
+      "crossCurricular": "Science: 10 equal parts of a day's water",
+      "smsc": "Social: sharing between 10 people fairly",
+      "keywords": [
+        {
+          "term": "tenth",
+          "def": "one of 10 equal parts"
+        },
+        {
+          "term": "tenths",
+          "def": "parts of a whole split into 10"
+        },
+        {
+          "term": "divide",
+          "def": "share equally"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "10 friends share a 1 m ribbon equally. How long is each piece?",
+        "a": "1/10 of a metre: 10 cm."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bar of chocolate ten pieces",
+          "alt": "A bar in 10 equal pieces",
+          "for": "hook"
+        },
+        {
+          "find": "ruler 10 cm",
+          "alt": "A ruler marked in 10 cm",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Next: 1/3, 2/3, 1, ...?",
+          "a": "1 1/3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 10 × 7 = ?",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "60 ÷ 10 = ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "1 = ?/10",
+          "a": "10/10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Ten equal parts",
+          "bullets": [
+            "1 whole in 10 equal parts.",
+            "Each part is 1/10.",
+            "We say one tenth."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 1,
+              "label": "1/10"
+            }
+          ],
+          "note": "Show a strip of 10."
+        },
+        {
+          "heading": "Many tenths",
+          "bullets": [
+            "3/10: 3 of 10 parts.",
+            "7/10: 7 of 10 parts.",
+            "10/10 = 1"
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 3,
+              "label": "3/10"
+            },
+            {
+              "parts": 10,
+              "shaded": 7,
+              "label": "7/10"
+            },
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "10/10 = 1"
+            }
+          ],
+          "note": "Ask: 3/10 + ? = 1 (7/10)."
+        },
+        {
+          "heading": "Divide by 10",
+          "bullets": [
+            "1 ÷ 10 = 1/10",
+            "1 m ÷ 10 = 10 cm",
+            "Each part is a tenth."
+          ],
+          "note": "Ask: 1 litre in 10 cups? (1/10 litre each)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A strip has 10 equal parts. 4 are shaded. What fraction is NOT shaded?",
+            "options": [
+              "4/10",
+              "6/10",
+              "10/4"
+            ],
+            "answer": 1,
+            "why": "10 - 4 = 6 parts: 6/10."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Shade 5/10 of a strip.",
+          "a": "5 of 10 parts shaded",
+          "mins": 2,
+          "model": "Teacher shades 5 of the 10 parts and says five tenths."
+        },
+        {
+          "q": "8/10 + ? = 1",
+          "a": "2/10",
+          "mins": 2
+        },
+        {
+          "q": "What is 1/10 of 1 m in cm?",
+          "a": "10 cm",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write the fraction shaded: 2, 9 and 10 parts of 10.",
+          "a": "2/10, 9/10, 10/10",
+          "mins": 4,
+          "model": "Teacher counts 2 shaded parts of 10: 2/10."
+        },
+        {
+          "q": "Extend: Use < or >: 3/10 _ 7/10; 1/10 _ 1/2",
+          "a": "<; <",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A 1 m ribbon: cut off 3 tenths. How many cm are left?",
+          "a": "70 cm",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "4/10 + ? = 1",
+          "a": "6/10",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what happens when we split a whole into 10 equal parts?",
+          "a": "Each part is one tenth, 1/10",
+          "mins": 3
+        }
+      ],
+      "homework": "Fold a paper strip into 10 (or measure 10 cm parts on a 1 m string) and shade 3/10.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find 1/10 of 50, 80 and 100.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: tenths small steps (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Ruler (10 cm parts)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 45 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 46,
+      "title": "Count in tenths on a number line",
+      "duration": 45,
+      "bigQuestion": "What comes after 9/10?",
+      "objectives": [
+        "To understand how to count in tenths on a number line, past 1"
+      ],
+      "successCriteria": [
+        "All: count in tenths from 0 to 1",
+        "Most: count on past 1 in tenths",
+        "Some: find a tenth on a 0 to 2 line"
+      ],
+      "crossCurricular": "Science: reading a thermometer in small steps",
+      "smsc": "Moral: little steps of good add up",
+      "keywords": [
+        {
+          "term": "tenth",
+          "def": "one of 10 equal parts"
+        },
+        {
+          "term": "count on",
+          "def": "keep adding the same step"
+        },
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Count in tenths: 7/10, 8/10, 9/10, ... what next? And after that?",
+        "a": "10/10, which is 1; then 1 1/10."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "measuring tape",
+          "alt": "A measuring tape",
+          "for": "hook"
+        },
+        {
+          "find": "ruler 10 cm",
+          "alt": "A ruler showing 10 equal parts",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Shaded 3 of 10. Fraction?",
+          "a": "3/10",
+          "mins": 1
+        },
+        {
+          "q": "6/10 + ? = 1",
+          "a": "4/10",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 4 = ?",
+          "a": "32",
+          "mins": 1
+        },
+        {
+          "q": "1/10 of 1 m in cm?",
+          "a": "10 cm",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count in tenths",
+          "bullets": [
+            "0, 1/10, 2/10 ... 9/10, 1",
+            "10 equal steps to 1."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 4,
+              "label": "4/10 along"
+            }
+          ],
+          "note": "Spoken count; point to each mark."
+        },
+        {
+          "heading": "Past 1",
+          "bullets": [
+            "1, 1 1/10, 1 2/10 ...",
+            "... up to 2."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "1"
+            },
+            {
+              "parts": 10,
+              "shaded": 3,
+              "label": "and 3/10: 1 3/10"
+            }
+          ],
+          "note": "Show two strips of 10."
+        },
+        {
+          "heading": "Find the mark",
+          "bullets": [
+            "Count the gaps from 0.",
+            "6 gaps: 6/10.",
+            "13 gaps: 1 3/10."
+          ],
+          "note": "Ask: 15 gaps? (1 5/10)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Count back in tenths: 1 2/10, 1 1/10, ... next?",
+            "options": [
+              "1",
+              "1/10",
+              "2/10"
+            ],
+            "answer": 0,
+            "why": "1 1/10 take one tenth is 1."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count in tenths from 5/10 to 1.",
+          "a": "5/10, 6/10, 7/10, 8/10, 9/10, 1",
+          "mins": 2,
+          "model": "Teacher points along the line one tenth at a time."
+        },
+        {
+          "q": "What comes after 1 9/10?",
+          "a": "2",
+          "mins": 2
+        },
+        {
+          "q": "Count back from 4/10 to 0.",
+          "a": "3/10, 2/10, 1/10, 0",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Fill the gaps: 6/10, 7/10, _, 9/10, _, 1 1/10",
+          "a": "8/10, 1",
+          "mins": 4,
+          "model": "Teacher: each step is one tenth more."
+        },
+        {
+          "q": "Extend: On a 0 to 2 line in tenths, which fraction is 17 gaps from 0?",
+          "a": "1 7/10",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Count back in tenths from 1 3/10 to 8/10.",
+          "a": "1 2/10, 1 1/10, 1, 9/10, 8/10",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "After 9/10 comes...",
+          "a": "1 (10/10)",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what comes after 9/10?",
+          "a": "1 whole, then 1 1/10",
+          "mins": 3
+        }
+      ],
+      "homework": "Count in tenths from 0 to 2 out loud with a grown-up.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: count in 2 tenths from 0 to 2.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: count in tenths (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Paper number line 0 to 2 in tenths",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 46 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 47,
+      "title": "Unit fractions of a set of objects",
+      "duration": 45,
+      "bigQuestion": "How do we find 1/3 of 12 dates?",
+      "objectives": [
+        "To understand how to find a unit fraction of a set of objects"
+      ],
+      "successCriteria": [
+        "All: share a set into equal groups",
+        "Most: find a unit fraction of a number",
+        "Some: use a bar model to explain"
+      ],
+      "crossCurricular": "Cooking: sharing a box of dates at iftar",
+      "smsc": "Moral: sharing food fairly with family and neighbours",
+      "keywords": [
+        {
+          "term": "set",
+          "def": "a group of objects"
+        },
+        {
+          "term": "share",
+          "def": "give out equally"
+        },
+        {
+          "term": "unit fraction",
+          "def": "one equal part"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A box of 12 dates. You give 1/4 to your neighbour. How many dates is that?",
+        "a": "3 dates: 12 shared into 4 equal groups."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "box of dates",
+          "alt": "A box of dates",
+          "for": "hook"
+        },
+        {
+          "find": "bowl of apples",
+          "alt": "A bowl of apples",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "After 9/10?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "TT: 12 ÷ 4 = ?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 5 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "Share 10 between 2?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Share into groups",
+          "bullets": [
+            "1/3 of 12: share into 3 equal groups.",
+            "Each group has 4.",
+            "1/3 of 12 = 4"
+          ],
+          "fraction": [
+            {
+              "parts": 3,
+              "shaded": 1,
+              "label": "12 in 3 groups: 4 each"
+            }
+          ],
+          "note": "Share counters into 3 groups."
+        },
+        {
+          "heading": "Use division",
+          "bullets": [
+            "1/4 of 20 = 20 ÷ 4",
+            "= 5",
+            "Denominator: divide by it."
+          ],
+          "note": "Ask: 1/5 of 30? (6)."
+        },
+        {
+          "heading": "Bar model",
+          "model": {
+            "problem": "1/6 of 18",
+            "steps": [
+              "Draw a bar of 6 equal parts",
+              "18 ÷ 6 = 3",
+              "Each part is 3"
+            ],
+            "answer": "3"
+          },
+          "note": "Model aloud."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/2 of 16 = ?",
+            "options": [
+              "8",
+              "32",
+              "14"
+            ],
+            "answer": 0,
+            "why": "16 ÷ 2 = 8. 32 doubles instead of halves."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/3 of 15 = ?",
+          "a": "5",
+          "mins": 2,
+          "model": "Teacher draws a bar in 3 equal parts and shares 15: 5 in each."
+        },
+        {
+          "q": "1/5 of 20 = ?",
+          "a": "4",
+          "mins": 2
+        },
+        {
+          "q": "1/10 of 40 = ?",
+          "a": "4",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1/4 of 24; 1/8 of 16; 1/3 of 21",
+          "a": "6; 2; 7",
+          "mins": 4,
+          "model": "Teacher: 24 ÷ 4 = 6."
+        },
+        {
+          "q": "Extend: A class of 30 pupils: 1/10 have a cat. How many?",
+          "a": "3",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 1/4 of a number is 5. What is the number?",
+          "a": "20",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/2 of 18 = ?",
+          "a": "9",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we find 1/3 of 12 dates?",
+          "a": "Share 12 into 3 equal groups: 12 ÷ 3 = 4",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 1/2, 1/3 and 1/4 of 12 using pasta or buttons.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find 1/5 of 35 and 1/8 of 32.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Unit fractions of a set of objects' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "A bar model template",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 47 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 48,
+      "title": "Equivalent fractions on a number line",
+      "duration": 45,
+      "bigQuestion": "How can two different fractions be in the same place?",
+      "objectives": [
+        "To understand how equivalent fractions sit at the same point on a number line"
+      ],
+      "successCriteria": [
+        "All: find 1/2 on lines of quarters and eighths",
+        "Most: name equivalent fractions from two lines",
+        "Some: explain why 2/4 and 4/8 are equal"
+      ],
+      "crossCurricular": "Time: half an hour is two quarters of an hour",
+      "smsc": "Social: different words, the same meaning",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        },
+        {
+          "term": "same value",
+          "def": "the same amount"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "2/4 and 1/2 look different. Can they be the same amount?",
+        "a": "Yes: they are at the same point on a number line."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        },
+        {
+          "find": "analogue clock face",
+          "alt": "A clock showing half past",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/3 of 21?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Count in quarters: 2/4, 3/4, ...?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 8 = ?",
+          "a": "48",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 3/8 _ 5/8",
+          "a": "<",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two lines",
+          "bullets": [
+            "Line A in halves.",
+            "Line B in quarters.",
+            "1/2 and 2/4 meet."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "2/4"
+            }
+          ],
+          "note": "Stack the two lines."
+        },
+        {
+          "heading": "Three lines",
+          "bullets": [
+            "1/2 = 2/4 = 4/8",
+            "All at the same point."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "2/4"
+            },
+            {
+              "parts": 8,
+              "shaded": 4,
+              "label": "4/8"
+            }
+          ],
+          "note": "Ask: 3/4 = ?/8 (6/8)."
+        },
+        {
+          "heading": "Other families",
+          "bullets": [
+            "1/3 = 2/6",
+            "2/3 = 4/6",
+            "1/5 = 2/10"
+          ],
+          "fraction": [
+            {
+              "parts": 3,
+              "shaded": 2,
+              "label": "2/3"
+            },
+            {
+              "parts": 6,
+              "shaded": 4,
+              "label": "4/6"
+            }
+          ],
+          "note": "Ask: 3/5 = ?/10 (6/10)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is equivalent to 1/2?",
+            "options": [
+              "5/10",
+              "1/5",
+              "2/10"
+            ],
+            "answer": 0,
+            "why": "5 of 10 is half way. 1/5 and 2/10 are both less."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/4 = ?/8",
+          "a": "2/8",
+          "mins": 2,
+          "model": "Teacher stacks quarters on eighths: 1 quarter lines up with 2 eighths."
+        },
+        {
+          "q": "1/2 = ?/6",
+          "a": "3/6",
+          "mins": 2
+        },
+        {
+          "q": "2/5 = ?/10",
+          "a": "4/10",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use stacked lines: 3/4 = ?/8; 1/3 = ?/6; 4/5 = ?/10",
+          "a": "6/8; 2/6; 8/10",
+          "mins": 4,
+          "model": "Teacher: 3 quarters lines up with 6 eighths."
+        },
+        {
+          "q": "Extend: Find two fractions equivalent to 1/2.",
+          "a": "For example 3/6 and 5/10",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Is 3/6 equivalent to 4/8? Explain.",
+          "a": "Yes: both are 1/2",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2/3 = ?/6",
+          "a": "4/6",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can two fractions be in the same place?",
+          "a": "They are equivalent: equal in value, just split into different numbers of parts",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw 3 number lines (halves, quarters, eighths) one above the other and mark the equivalent fractions.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find all fractions equivalent to 1/2 with denominators up to 12.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Equivalent fractions on a number line' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Paper number lines 0 to 1 (halves, quarters, eighths)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 48 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 49,
+      "title": "Equivalent fractions as bar models",
+      "duration": 45,
+      "bigQuestion": "Why does 2/3 equal 4/6?",
+      "objectives": [
+        "To understand how bar models show equivalent fractions"
+      ],
+      "successCriteria": [
+        "All: find equivalents from a fraction wall",
+        "Most: draw two bars to show an equivalence",
+        "Some: find a missing number in an equivalence"
+      ],
+      "crossCurricular": "Art: tile patterns that use equal parts",
+      "smsc": "Spiritual: different patterns in Islamic art can cover the same space",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "fraction wall",
+          "def": "rows of bars split into equal parts"
+        },
+        {
+          "term": "bar model",
+          "def": "a bar split into equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Split each third of a bar in half. What happens to 2/3?",
+        "a": "It becomes 4/6: twice as many parts, each half the size."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        },
+        {
+          "find": "islamic geometric tile pattern",
+          "alt": "Islamic tiles split into equal parts",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/2 = ?/8",
+          "a": "4/8",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 4 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 20?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "2/5 = ?/10",
+          "a": "4/10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fraction wall",
+          "bullets": [
+            "Look down the wall.",
+            "1/2 = 2/4 = 3/6 = 4/8",
+            "Same length, same value."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "2/4"
+            },
+            {
+              "parts": 6,
+              "shaded": 3,
+              "label": "3/6"
+            },
+            {
+              "parts": 8,
+              "shaded": 4,
+              "label": "4/8"
+            }
+          ],
+          "note": "Use the printed wall."
+        },
+        {
+          "heading": "Split the parts",
+          "bullets": [
+            "2/3: split each third in two.",
+            "Now 4 of 6 parts.",
+            "2/3 = 4/6"
+          ],
+          "fraction": [
+            {
+              "parts": 3,
+              "shaded": 2,
+              "label": "2/3"
+            },
+            {
+              "parts": 6,
+              "shaded": 4,
+              "label": "4/6"
+            }
+          ],
+          "note": "Draw it."
+        },
+        {
+          "heading": "Missing numbers",
+          "bullets": [
+            "3/4 = ?/8",
+            "Each quarter is 2 eighths.",
+            "3 × 2 = 6: 6/8"
+          ],
+          "note": "Ask: 2/5 = ?/10 (4/10)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which bar shows a fraction equal to 3/4?",
+            "options": [
+              "6 of 8 parts shaded",
+              "3 of 8 parts shaded",
+              "4 of 8 parts shaded"
+            ],
+            "answer": 0,
+            "why": "Each quarter is 2 eighths: 3 quarters = 6 eighths."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/3 = ?/6",
+          "a": "2/6",
+          "mins": 2,
+          "model": "Teacher splits each third into 2: 1 third becomes 2 sixths."
+        },
+        {
+          "q": "3/5 = ?/10",
+          "a": "6/10",
+          "mins": 2
+        },
+        {
+          "q": "2/4 = 1/?",
+          "a": "2",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw bars to show 1/4 = 2/8 and 2/3 = 4/6.",
+          "a": "Pairs of bars the same length shaded",
+          "mins": 4,
+          "model": "Teacher draws a bar in 4, shades 1, then splits each part in 2: 2 of 8."
+        },
+        {
+          "q": "Extend: Fill in: 4/5 = ?/10; 1/2 = ?/12; 3/3 = ?/6",
+          "a": "8/10; 6/12; 6/6",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Amir says 2/3 = 3/4 because both are 1 part short. Is he right?",
+          "a": "No: the missing parts are different sizes (1/3 and 1/4)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/2 = ?/10",
+          "a": "5/10",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why does 2/3 equal 4/6?",
+          "a": "Splitting each third into 2 gives 4 sixths: the same amount, more parts",
+          "mins": 3
+        }
+      ],
+      "homework": "Use a fraction wall to write 6 pairs of equivalent fractions.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find 3 fractions equal to 2/3.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: small step 'Equivalent fractions as bar models' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Printed fraction wall",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 49 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 50,
+      "title": "Simple equivalents: halves, quarters and tenths",
+      "duration": 45,
+      "bigQuestion": "How many tenths make a half?",
+      "objectives": [
+        "To understand the equivalents of a half and quarters with eighths and tenths"
+      ],
+      "successCriteria": [
+        "All: know 1/2 = 2/4 = 4/8 = 5/10",
+        "Most: know 1/4 = 2/8 and 3/4 = 6/8",
+        "Some: use equivalents to compare fractions"
+      ],
+      "crossCurricular": "Time: half an hour is 30 of 60 minutes",
+      "smsc": "Moral: being exact and fair in sharing",
+      "keywords": [
+        {
+          "term": "half",
+          "def": "one of 2 equal parts"
+        },
+        {
+          "term": "quarter",
+          "def": "one of 4 equal parts"
+        },
+        {
+          "term": "tenth",
+          "def": "one of 10 equal parts"
+        },
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 5/10 of a cake more, less or the same as 1/2?",
+        "a": "The same: 5/10 = 1/2."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "cake cut into slices",
+          "alt": "A cake in equal slices",
+          "for": "hook"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/4 = ?/8",
+          "a": "6/8",
+          "mins": 1
+        },
+        {
+          "q": "1/3 = ?/6",
+          "a": "2/6",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 4 = ?",
+          "a": "16",
+          "mins": 1
+        },
+        {
+          "q": "1/10 of 30?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A half",
+          "bullets": [
+            "1/2 = 2/4 = 4/8",
+            "1/2 = 5/10",
+            "Numerator is half the denominator."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 1,
+              "label": "1/2"
+            },
+            {
+              "parts": 8,
+              "shaded": 4,
+              "label": "4/8"
+            },
+            {
+              "parts": 10,
+              "shaded": 5,
+              "label": "5/10"
+            }
+          ],
+          "note": "Ask: 1/2 = ?/6 (3/6)."
+        },
+        {
+          "heading": "Quarters",
+          "bullets": [
+            "1/4 = 2/8",
+            "3/4 = 6/8",
+            "2/4 = 1/2"
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "1/4"
+            },
+            {
+              "parts": 8,
+              "shaded": 2,
+              "label": "2/8"
+            },
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "3/4"
+            },
+            {
+              "parts": 8,
+              "shaded": 6,
+              "label": "6/8"
+            }
+          ],
+          "note": "Show strips."
+        },
+        {
+          "heading": "Use them to compare",
+          "bullets": [
+            "3/8 or 1/2?",
+            "1/2 = 4/8, and 3/8 < 4/8.",
+            "So 3/8 < 1/2."
+          ],
+          "note": "Ask: 6/10 or 1/2? (6/10)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is NOT equal to 1/2?",
+            "options": [
+              "4/8",
+              "5/10",
+              "2/8"
+            ],
+            "answer": 2,
+            "why": "2/8 = 1/4. Half of 8 is 4, not 2."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/2 = ?/10",
+          "a": "5/10",
+          "mins": 2,
+          "model": "Teacher: half of 10 is 5, so 5/10."
+        },
+        {
+          "q": "3/4 = ?/8",
+          "a": "6/8",
+          "mins": 2
+        },
+        {
+          "q": "Use < or >: 4/10 _ 1/2",
+          "a": "<",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Sort into 'equal to 1/2' or 'not': 3/6, 4/10, 6/12, 5/8",
+          "a": "Equal: 3/6, 6/12; not: 4/10, 5/8",
+          "mins": 4,
+          "model": "Teacher: half of 6 is 3, so 3/6 = 1/2."
+        },
+        {
+          "q": "Extend: use < or >: 5/8 _ 1/2; 1/4 _ 3/8; 2/10 _ 1/2",
+          "a": ">; <; <",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write 1/2 with denominators 2, 4, 6, 8, 10 and 12.",
+          "a": "1/2, 2/4, 3/6, 4/8, 5/10, 6/12",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many tenths make 1/2?",
+          "a": "5",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how many tenths make a half?",
+          "a": "5 tenths: 5/10 = 1/2",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 4 fractions equal to 1/2 and 2 equal to 1/4.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: use 1/2 to compare 5/12 and 3/5.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: equivalent fractions small steps (halves, quarters, eighths and tenths) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Printed fraction wall",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 50 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 51,
+      "title": "Fractions: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "What do I know about fractions, and what is my next step?",
+      "objectives": [
+        "To understand how secure I am with Fractions A"
+      ],
+      "successCriteria": [
+        "All: name, compare and order unit and non-unit fractions",
+        "Most: place fractions on number lines and find fractions of a set",
+        "Some: find equivalent fractions"
+      ],
+      "smsc": "Spiritual: shukr for learning; honest self-assessment",
+      "keywords": [
+        {
+          "term": "numerator",
+          "def": "how many parts we have"
+        },
+        {
+          "term": "denominator",
+          "def": "how many equal parts"
+        },
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which fraction fact do you feel most sure about? Which least?",
+        "a": "Answers will vary."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        },
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza in 8 slices",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/2 = ?/10",
+          "a": "5/10",
+          "mins": 1
+        },
+        {
+          "q": "1/5 of 25?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 1/6 _ 1/4",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 3 = ?",
+          "a": "21",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Recap",
+          "bullets": [
+            "Unit and non-unit.",
+            "Compare and order.",
+            "Number lines, sets, equivalents."
+          ],
+          "diagram": {
+            "centre": "Fractions A",
+            "items": [
+              "1/4 is 1 of 4 equal parts",
+              "1/8 < 1/4",
+              "3/8 < 5/8",
+              "4/4 = 1",
+              "1/3 of 12 = 4",
+              "1/2 = 2/4 = 5/10"
+            ]
+          },
+          "note": "Quick show-me recap."
+        },
+        {
+          "heading": "End-of-block check",
+          "bullets": [
+            "12 questions.",
+            "Work alone, then mark."
+          ],
+          "note": "Check on the worksheet; mark together."
+        },
+        {
+          "heading": "My next step",
+          "bullets": [
+            "Which questions did I miss?",
+            "What will I practise?"
+          ],
+          "note": "Pupils write one EBI target."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is the largest?",
+            "options": [
+              "2/5",
+              "4/5",
+              "1/5"
+            ],
+            "answer": 1,
+            "why": "Same denominator: 4 parts is the most."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Order smallest first: 1/3, 1/8, 1/5",
+          "a": "1/8, 1/5, 1/3",
+          "mins": 2,
+          "model": "Teacher: same numerator, the bigger denominator is smaller."
+        },
+        {
+          "q": "2/7 + ? = 1",
+          "a": "5/7",
+          "mins": 2
+        },
+        {
+          "q": "1/4 of 32?",
+          "a": "8",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: name 3 of 8 parts; 1/2 = ?/8; 1/3 of 18; count in tenths 7/10, _, _, 1",
+          "a": "3/8; 4/8; 6; 8/10, 9/10",
+          "mins": 4,
+          "model": "Teacher: 3 of 8 equal parts is 3/8."
+        },
+        {
+          "q": "Extend: Check: order 5/9, 2/9, 8/9 (largest first); 2/3 = ?/6; is 3/10 more or less than 1/2?",
+          "a": "8/9, 5/9, 2/9; 4/6; less",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: a scale 0 to 1 has 5 gaps; the pointer is on the 3rd mark. Then: 1/5 of a number is 7. What is the number?",
+          "a": "3/5; 35",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/2 = ?/12",
+          "a": "6/12",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what do I know and what is my next step?",
+          "a": "Answers will vary: one strength and one target",
+          "mins": 3
+        }
+      ],
+      "homework": "Practise your target from the check for 10 minutes.",
+      "send": "SEND: concrete first (paper strips, counters), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: write 3 tricky fraction questions for a partner.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 3: Fractions A: end-of-block check (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Counters, pasta or buttons",
+        "Printed fraction wall",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 51 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 52,
+      "title": "Use scales",
+      "duration": 45,
+      "bigQuestion": "How do we read a scale when not every mark has a number?",
+      "objectives": [
+        "To understand how to read scales by working out what each interval is worth"
+      ],
+      "successCriteria": [
+        "All: read a scale that counts in 1s, 2s, 5s or 10s",
+        "Most: work out the value of each interval",
+        "Some: read a scale between two numbered marks"
+      ],
+      "crossCurricular": "Science: reading thermometers and jugs",
+      "smsc": "Moral: honest weighing (Qur'an 55:9)",
+      "keywords": [
+        {
+          "term": "scale",
+          "def": "marks in equal steps"
+        },
+        {
+          "term": "interval",
+          "def": "the gap between two marks"
+        },
+        {
+          "term": "pointer",
+          "def": "the arrow that shows the reading"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A scale goes 0, 100, 200 with 4 gaps between each number. What is each gap worth?",
+        "a": "25: 100 split into 4 equal gaps."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "islamicLink": {
+        "text": "Allah says: establish weight in justice and do not make the balance short (Qur'an 55:9). Reading scales carefully keeps our weighing honest.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "kitchen weighing scales dial",
+          "alt": "Kitchen scales with a dial",
+          "for": "hook"
+        },
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/4 of 100?",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "Count in 5s from 35 to 60.",
+          "a": "40, 45, 50, 55, 60",
+          "mins": 1
+        },
+        {
+          "q": "TT: 4 × 25 = ?",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "0 to 1 in 5 gaps: each gap?",
+          "a": "1/5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Find the interval",
+          "bullets": [
+            "0 to 10 in 5 gaps.",
+            "10 ÷ 5 = 2",
+            "Each gap is 2."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 2,
+            "marks": [
+              {
+                "at": 6,
+                "label": "6"
+              }
+            ]
+          },
+          "note": "Count the gaps, not the marks."
+        },
+        {
+          "heading": "Bigger steps",
+          "bullets": [
+            "0 to 100 in 10 gaps.",
+            "Each gap is 10.",
+            "The pointer is on 70."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "marks": [
+              {
+                "at": 70,
+                "label": "70"
+              }
+            ]
+          },
+          "note": "Ask: 0 to 100 in 4 gaps? (25 each)."
+        },
+        {
+          "heading": "Between numbers",
+          "bullets": [
+            "200 to 300 in 4 gaps: 25 each.",
+            "Pointer 1 gap after 200: 225.",
+            "Pointer 3 gaps after: 275."
+          ],
+          "numberline": {
+            "min": 200,
+            "max": 300,
+            "step": 25,
+            "marks": [
+              {
+                "at": 225,
+                "label": "225"
+              },
+              {
+                "at": 275,
+                "label": "275"
+              }
+            ]
+          },
+          "note": "Model the count: 225, 250, 275."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "0 to 50 in 5 gaps. The pointer is on the 3rd mark. Reading?",
+            "options": [
+              "3",
+              "30",
+              "15"
+            ],
+            "answer": 1,
+            "why": "50 ÷ 5 = 10 each; 3 gaps is 30."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "0 to 20 in 4 gaps. Pointer on the 2nd mark?",
+          "a": "10",
+          "mins": 2,
+          "model": "Teacher: 20 ÷ 4 = 5 each gap; 2 gaps is 10."
+        },
+        {
+          "q": "0 to 100 in 5 gaps. Pointer on the 4th mark?",
+          "a": "80",
+          "mins": 2
+        },
+        {
+          "q": "0 to 1,000 in 10 gaps. Pointer on the 6th mark?",
+          "a": "600",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read: 0 to 10 in 10 gaps, 7th mark; 0 to 200 in 4 gaps, 3rd mark; 100 to 200 in 2 gaps, middle",
+          "a": "7; 150; 150",
+          "mins": 4,
+          "model": "Teacher: 10 ÷ 10 = 1 each, 7 gaps: 7."
+        },
+        {
+          "q": "Extend: Draw a scale from 0 to 40 in 8 gaps and mark 15.",
+          "a": "Gaps of 5; 15 at the 3rd mark",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A scale shows 500 and 1,000 with 4 gaps between. What is 3 gaps after 500?",
+          "a": "875",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0 to 60 in 6 gaps. Pointer on the 4th mark?",
+          "a": "40",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we read a scale without every number?",
+          "a": "Find what each gap is worth by dividing, then count the gaps",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 2 scales at home (jug, thermometer, scales) and work out what each gap is worth.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: read a scale with 5 gaps between 0 and 1 kg (200 g each).",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: small step 'Use scales' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Pictures of scales on the slides; a ruler, a measuring jug and kitchen scales to look at",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 52 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 53,
+      "title": "Measure mass in grams",
+      "duration": 45,
+      "bigQuestion": "How heavy is 1 gram?",
+      "objectives": [
+        "To understand how to measure and compare small masses in grams"
+      ],
+      "successCriteria": [
+        "All: read a scale in grams",
+        "Most: estimate the mass of small objects",
+        "Some: explain why we use grams for light objects"
+      ],
+      "crossCurricular": "Cooking: weighing flour for a recipe",
+      "smsc": "Moral: shopkeepers weigh honestly",
+      "keywords": [
+        {
+          "term": "gram",
+          "def": "a small unit of mass, g"
+        },
+        {
+          "term": "mass",
+          "def": "how heavy something is"
+        },
+        {
+          "term": "estimate",
+          "def": "a careful guess"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A paper clip is about 1 g. Is an apple about 10 g, 100 g or 1,000 g?",
+        "a": "About 100 g (most apples are 100 to 200 g)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "paper clips",
+          "alt": "Paper clips: about 1 g each",
+          "for": "hook"
+        },
+        {
+          "find": "kitchen weighing scales dial",
+          "alt": "Kitchen scales in grams",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0 to 100 in 5 gaps. Each gap?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "Count in 50s to 300.",
+          "a": "50, 100, ... 300",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 5 = ?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "200 to 300 in 4 gaps: 1st mark?",
+          "a": "225",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Grams",
+          "bullets": [
+            "We write g.",
+            "A paper clip: about 1 g.",
+            "A pencil: about 5 g."
+          ],
+          "sort": {
+            "columns": [
+              "About 1 g",
+              "About 100 g",
+              "About 1,000 g"
+            ],
+            "cards": [
+              "A paper clip",
+              "An apple",
+              "A bag of sugar",
+              "A pin",
+              "A bar of soap",
+              "A 1 litre bottle of water"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Pass round light objects at home."
+        },
+        {
+          "heading": "Read the scale",
+          "bullets": [
+            "Find the interval first.",
+            "0 to 100 g in 10 gaps: 10 g each.",
+            "The pointer is on 60 g."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "marks": [
+              {
+                "at": 60,
+                "label": "60 g"
+              }
+            ]
+          },
+          "note": "Use the scales picture."
+        },
+        {
+          "heading": "Estimate then weigh",
+          "bullets": [
+            "Guess first.",
+            "Then weigh.",
+            "How close were you?"
+          ],
+          "note": "Teacher weighs an apple: 140 g."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "0 to 500 g in 5 gaps. The pointer is on the 2nd mark. Mass?",
+            "options": [
+              "2 g",
+              "200 g",
+              "250 g"
+            ],
+            "answer": 1,
+            "why": "500 ÷ 5 = 100 g a gap; 2 gaps is 200 g."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "0 to 200 g in 4 gaps. Pointer on the 3rd mark?",
+          "a": "150 g",
+          "mins": 2,
+          "model": "Teacher: 200 ÷ 4 = 50 g a gap; 3 gaps is 150 g."
+        },
+        {
+          "q": "0 to 100 g in 10 gaps. 4th mark?",
+          "a": "40 g",
+          "mins": 2
+        },
+        {
+          "q": "Estimate: a banana in grams?",
+          "a": "About 100 to 150 g",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Weigh 3 small foods (with a grown-up) and write each mass in g.",
+          "a": "Answers will vary",
+          "mins": 4,
+          "model": "Teacher weighs a carrot on camera: about 80 g."
+        },
+        {
+          "q": "Extend: Read: 0 to 50 g in 5 gaps, 3rd mark; 0 to 1,000 g in 10 gaps, 7th mark",
+          "a": "30 g; 700 g",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: An apple is 130 g. An orange is 40 g heavier. What is the orange's mass?",
+          "a": "170 g",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which unit for a grape: g or kg?",
+          "a": "g",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how heavy is 1 gram?",
+          "a": "Very light: about a paper clip",
+          "mins": 3
+        }
+      ],
+      "homework": "Find the mass in grams printed on 3 food packets.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: estimate the mass of 10 paper clips, then check.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: small step 'Measure mass in grams' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Kitchen scales (with a grown-up), or the scales pictures on the slides",
+        "Household items to weigh: fruit, a tin, a bag of rice",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 53 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 54,
+      "title": "Measure mass in kilograms and grams",
+      "duration": 45,
+      "bigQuestion": "How can 1 kg 250 g also be 1,250 g?",
+      "objectives": [
+        "To understand how to measure mass in kilograms and grams"
+      ],
+      "successCriteria": [
+        "All: read a scale in kg",
+        "Most: read a mass in kg and g",
+        "Some: explain that 1 kg = 1,000 g"
+      ],
+      "crossCurricular": "Cooking: a 1 kg bag of rice for a family meal",
+      "smsc": "Moral: giving full weight when selling",
+      "keywords": [
+        {
+          "term": "kilogram",
+          "def": "a larger unit of mass, kg"
+        },
+        {
+          "term": "gram",
+          "def": "a small unit, 1,000 g = 1 kg"
+        },
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bag of flour is 1 kg. A bag of rice is 1 kg 500 g. How many grams is the rice?",
+        "a": "1,500 g."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bag of flour 1kg",
+          "alt": "A 1 kg bag of flour",
+          "for": "hook"
+        },
+        {
+          "find": "bathroom scales dial",
+          "alt": "Scales in kilograms",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0 to 200 g in 4 gaps, 3rd mark?",
+          "a": "150 g",
+          "mins": 1
+        },
+        {
+          "q": "TT: 10 × 100 = ?",
+          "a": "1,000",
+          "mins": 1
+        },
+        {
+          "q": "Apple 130 g + 40 g?",
+          "a": "170 g",
+          "mins": 1
+        },
+        {
+          "q": "Count in 250s to 1,000.",
+          "a": "250, 500, 750, 1,000",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Kilograms",
+          "bullets": [
+            "We write kg.",
+            "1 kg = 1,000 g.",
+            "A bag of sugar: 1 kg."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 5,
+            "step": 1,
+            "marks": [
+              {
+                "at": 1,
+                "label": "1 kg"
+              },
+              {
+                "at": 3,
+                "label": "3 kg"
+              }
+            ]
+          },
+          "note": "Ask: 2 kg in grams? (2,000 g)."
+        },
+        {
+          "heading": "kg and g",
+          "bullets": [
+            "Pointer between 1 kg and 2 kg.",
+            "1 kg to 2 kg in 4 gaps: 250 g each.",
+            "1 kg 250 g = 1,250 g"
+          ],
+          "numberline": {
+            "min": 1000,
+            "max": 2000,
+            "step": 250,
+            "marks": [
+              {
+                "at": 1000,
+                "label": "1 kg"
+              },
+              {
+                "at": 1250,
+                "label": "1 kg 250 g"
+              },
+              {
+                "at": 2000,
+                "label": "2 kg"
+              }
+            ]
+          },
+          "note": "Model the count."
+        },
+        {
+          "heading": "Convert",
+          "table": {
+            "head": [
+              "kg and g",
+              "grams"
+            ],
+            "rows": [
+              [
+                "1 kg",
+                "1,000 g"
+              ],
+              [
+                "1 kg 500 g",
+                "1,500 g"
+              ],
+              [
+                "2 kg 300 g",
+                "2,300 g"
+              ],
+              [
+                "3 kg",
+                "3,000 g"
+              ]
+            ]
+          },
+          "note": "Read across."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1 kg 750 g = ?",
+            "options": [
+              "1,750 g",
+              "175 g",
+              "1 kg 75 g"
+            ],
+            "answer": 0,
+            "why": "1 kg = 1,000 g; 1,000 + 750 = 1,750 g."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2 kg = ? g",
+          "a": "2,000 g",
+          "mins": 2,
+          "model": "Teacher: each kg is 1,000 g, so 2 kg is 2,000 g."
+        },
+        {
+          "q": "1,500 g = ? kg ? g",
+          "a": "1 kg 500 g",
+          "mins": 2
+        },
+        {
+          "q": "0 to 4 kg in 4 gaps. Pointer on the 3rd mark?",
+          "a": "3 kg",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write in grams: 3 kg; 1 kg 200 g; 2 kg 50 g",
+          "a": "3,000 g; 1,200 g; 2,050 g",
+          "mins": 4,
+          "model": "Teacher: 1 kg 200 g = 1,000 + 200 = 1,200 g."
+        },
+        {
+          "q": "Extend: Write in kg and g: 2,400 g; 1,080 g",
+          "a": "2 kg 400 g; 1 kg 80 g",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Read: 0 to 1 kg in 10 gaps, pointer on the 6th mark. Write in g.",
+          "a": "600 g",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "4 kg = ? g",
+          "a": "4,000 g",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can 1 kg 250 g be 1,250 g?",
+          "a": "1 kg is 1,000 g, and 1,000 + 250 = 1,250",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 packets with masses in kg or g and write each in grams.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: order 1 kg 200 g, 1,020 g and 1 kg 2 g.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: small step 'Measure mass in kilograms and grams' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Kitchen scales (with a grown-up), or the scales pictures on the slides",
+        "Household items to weigh: fruit, a tin, a bag of rice",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 54 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 55,
+      "title": "Compare mass",
+      "duration": 45,
+      "bigQuestion": "Which is heavier: 1 kg 50 g or 1,500 g?",
+      "objectives": [
+        "To understand how to compare and order masses in g and kg"
+      ],
+      "successCriteria": [
+        "All: compare masses in the same unit",
+        "Most: convert to compare kg and g",
+        "Some: order masses and explain"
+      ],
+      "crossCurricular": "Science: comparing materials",
+      "smsc": "Moral: honest measures (Qur'an 83:1-3)",
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "decide which is greater"
+        },
+        {
+          "term": "heavier",
+          "def": "greater mass"
+        },
+        {
+          "term": "lighter",
+          "def": "less mass"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A melon is 1 kg 50 g. A pineapple is 1,500 g. Which is heavier?",
+        "a": "The pineapple: 1 kg 50 g is 1,050 g."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "islamicLink": {
+        "text": "Allah warns those who give short measure and short weight (Qur'an 83:1-3). Comparing masses carefully is part of fair trade.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "melon and pineapple",
+          "alt": "A melon and a pineapple",
+          "for": "hook"
+        },
+        {
+          "find": "pan balance scale",
+          "alt": "A balance",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 kg 250 g = ? g",
+          "a": "1,250 g",
+          "mins": 1
+        },
+        {
+          "q": "2,300 g = ? kg ? g",
+          "a": "2 kg 300 g",
+          "mins": 1
+        },
+        {
+          "q": "TT: 7 × 6 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 1,050 _ 1,500",
+          "a": "<",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same unit",
+          "bullets": [
+            "450 g < 540 g",
+            "3 kg > 2 kg"
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Fruit masses",
+            "labels": [
+              "Apple",
+              "Mango",
+              "Melon"
+            ],
+            "values": [
+              150,
+              400,
+              1050
+            ],
+            "unit": "g"
+          },
+          "note": "Compare digits from the left."
+        },
+        {
+          "heading": "Change to grams",
+          "bullets": [
+            "1 kg 50 g = 1,050 g",
+            "1,050 g < 1,500 g",
+            "So the pineapple is heavier."
+          ],
+          "misconception": {
+            "wrong": "1 kg 50 g > 1,500 g because 50 > 1",
+            "right": "Change to grams: 1,050 g < 1,500 g"
+          },
+          "note": "Ask: 2 kg or 1,999 g? (2 kg)."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "Lightest first:",
+            "800 g, 1 kg 200 g, 1,500 g, 2 kg"
+          ],
+          "note": "Convert, then order."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is heaviest?",
+            "options": [
+              "900 g",
+              "1 kg 90 g",
+              "1,009 g"
+            ],
+            "answer": 1,
+            "why": "1 kg 90 g = 1,090 g, more than 1,009 g and 900 g."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 650 g _ 560 g",
+          "a": ">",
+          "mins": 2,
+          "model": "Teacher: compare hundreds: 6 hundreds > 5 hundreds."
+        },
+        {
+          "q": "Use < or >: 1 kg _ 950 g",
+          "a": ">",
+          "mins": 2
+        },
+        {
+          "q": "Order lightest first: 2 kg, 500 g, 1 kg 800 g",
+          "a": "500 g, 1 kg 800 g, 2 kg",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use < or >: 1 kg 300 g _ 1,030 g; 2,500 g _ 2 kg 50 g",
+          "a": ">; >",
+          "mins": 4,
+          "model": "Teacher: 1 kg 300 g = 1,300 g, and 1,300 > 1,030."
+        },
+        {
+          "q": "Extend: Order heaviest first: 1,200 g, 1 kg 20 g, 2 kg, 999 g",
+          "a": "2 kg, 1,200 g, 1 kg 20 g, 999 g",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A box of dates is 750 g. How many more grams to make 1 kg?",
+          "a": "250 g",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Heavier: 3 kg or 2,900 g?",
+          "a": "3 kg",
+          "mins": 2
+        },
+        {
+          "q": "Big question: 1 kg 50 g or 1,500 g?",
+          "a": "1,500 g: 1 kg 50 g is only 1,050 g",
+          "mins": 3
+        }
+      ],
+      "homework": "Order 4 food packets from your kitchen by mass.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: find two different ways to write 2,005 g.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: small step 'Compare mass' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Kitchen scales (with a grown-up), or the scales pictures on the slides",
+        "Household items to weigh: fruit, a tin, a bag of rice",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 55 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 56,
+      "title": "Add and subtract mass",
+      "duration": 45,
+      "bigQuestion": "How do we add 1 kg 600 g and 700 g?",
+      "objectives": [
+        "To understand how to add and subtract masses in g and kg"
+      ],
+      "successCriteria": [
+        "All: add and subtract masses in grams",
+        "Most: add masses that cross a kilogram",
+        "Some: solve a two-step mass problem"
+      ],
+      "crossCurricular": "Cooking: weighing ingredients for a family recipe",
+      "smsc": "Social: packing a fair food parcel for a neighbour",
+      "keywords": [
+        {
+          "term": "total",
+          "def": "all together"
+        },
+        {
+          "term": "difference",
+          "def": "how much more or less"
+        },
+        {
+          "term": "exchange",
+          "def": "1,000 g for 1 kg"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A food parcel has 1 kg 600 g of rice and 700 g of lentils. Is it over 2 kg?",
+        "a": "Yes: 2 kg 300 g."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bags of rice and lentils",
+          "alt": "Bags of rice and lentils",
+          "for": "hook"
+        },
+        {
+          "find": "kitchen weighing scales dial",
+          "alt": "Kitchen scales",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Use < or >: 1 kg 300 g _ 1,030 g",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "750 g + ? = 1 kg",
+          "a": "250 g",
+          "mins": 1
+        },
+        {
+          "q": "TT: 6 × 7 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "345 + 260 = ?",
+          "a": "605",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Add grams",
+          "bullets": [
+            "350 g + 425 g = 775 g",
+            "Add like numbers.",
+            "Keep the unit."
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 2,
+              "label": "775 g: 350 g and 425 g"
+            }
+          ],
+          "note": "Use a bar model."
+        },
+        {
+          "heading": "Cross a kilogram",
+          "model": {
+            "problem": "1 kg 600 g + 700 g",
+            "steps": [
+              "600 g + 700 g = 1,300 g",
+              "1,300 g = 1 kg 300 g",
+              "1 kg + 1 kg 300 g = 2 kg 300 g"
+            ],
+            "answer": "2 kg 300 g"
+          },
+          "note": "Model aloud."
+        },
+        {
+          "heading": "Subtract",
+          "bullets": [
+            "1 kg - 350 g",
+            "1,000 g - 350 g = 650 g",
+            "Count on from 350 to 1,000."
+          ],
+          "numberline": {
+            "min": 350,
+            "max": 1000,
+            "step": 50,
+            "marks": [
+              {
+                "at": 350,
+                "label": "350 g"
+              },
+              {
+                "at": 400,
+                "label": "+50"
+              },
+              {
+                "at": 1000,
+                "label": "+600 = 650 g"
+              }
+            ]
+          },
+          "note": "Ask: 2 kg - 1 kg 400 g? (600 g)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1 kg - 200 g = ?",
+            "options": [
+              "800 g",
+              "980 g",
+              "1 kg 200 g"
+            ],
+            "answer": 0,
+            "why": "1,000 - 200 = 800 g. 980 g takes 20, not 200."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "450 g + 300 g = ?",
+          "a": "750 g",
+          "mins": 2,
+          "model": "Teacher: 400 + 300 = 700, then 50: 750 g."
+        },
+        {
+          "q": "800 g + 400 g = ? kg ? g",
+          "a": "1 kg 200 g",
+          "mins": 2
+        },
+        {
+          "q": "1 kg - 600 g = ?",
+          "a": "400 g",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 275 g + 450 g; 1 kg 300 g + 900 g; 900 g - 365 g",
+          "a": "725 g; 2 kg 200 g; 535 g",
+          "mins": 4,
+          "model": "Teacher: 275 + 450: 200 + 400 = 600, 75 + 50 = 125, total 725 g."
+        },
+        {
+          "q": "Extend: A bag holds 2 kg of potatoes. 750 g are used. How much is left?",
+          "a": "1 kg 250 g (1,250 g)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Flour 500 g, sugar 250 g, butter 200 g. How much more is needed to make 1 kg?",
+          "a": "50 g",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "600 g + 600 g = ? kg ? g",
+          "a": "1 kg 200 g",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do we add 1 kg 600 g and 700 g?",
+          "a": "Add the grams (1,300 g), exchange 1,000 g for 1 kg: 2 kg 300 g",
+          "mins": 3
+        }
+      ],
+      "homework": "Weigh 2 foods, then find their total mass and the difference.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: solve: 3 bags of 450 g. Over or under 1 kg 500 g? By how much? (under, by 150 g).",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: small step 'Add and subtract mass' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Kitchen scales (with a grown-up), or the scales pictures on the slides",
+        "Household items to weigh: fruit, a tin, a bag of rice",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 56 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 57,
+      "title": "Measure capacity and volume in millilitres",
+      "duration": 45,
+      "bigQuestion": "How many millilitres does a cup hold?",
+      "objectives": [
+        "To understand how to measure capacity and volume in millilitres"
+      ],
+      "successCriteria": [
+        "All: read a jug in ml",
+        "Most: estimate the capacity of a container",
+        "Some: explain capacity and volume"
+      ],
+      "crossCurricular": "Science: liquids and their shape",
+      "smsc": "Moral: using only the water we need for wudu",
+      "keywords": [
+        {
+          "term": "millilitre",
+          "def": "a small unit of capacity, ml"
+        },
+        {
+          "term": "capacity",
+          "def": "how much a container can hold"
+        },
+        {
+          "term": "volume",
+          "def": "how much liquid is in it"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A teaspoon holds about 5 ml. Roughly how many teaspoons fill a 250 ml cup?",
+        "a": "50 teaspoons: 250 ÷ 5."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug in ml",
+          "for": "teach:2"
+        },
+        {
+          "find": "teaspoon",
+          "alt": "A teaspoon: about 5 ml",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 kg - 600 g = ?",
+          "a": "400 g",
+          "mins": 1
+        },
+        {
+          "q": "0 to 500 in 5 gaps: each?",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "TT: 5 × 50 = ?",
+          "a": "250",
+          "mins": 1
+        },
+        {
+          "q": "Count in 25s to 200.",
+          "a": "25, 50, ... 200",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Capacity and volume",
+          "bullets": [
+            "Capacity: how much it can hold.",
+            "Volume: how much is in it."
+          ],
+          "compare": {
+            "left": {
+              "title": "Capacity",
+              "points": [
+                "The most it can hold",
+                "Does not change"
+              ]
+            },
+            "right": {
+              "title": "Volume",
+              "points": [
+                "How much liquid is in it now",
+                "Changes when we pour"
+              ]
+            }
+          },
+          "note": "Same jug, different water levels."
+        },
+        {
+          "heading": "Read the jug",
+          "bullets": [
+            "Eye level with the water.",
+            "0 to 500 ml in 10 gaps: 50 ml each.",
+            "The water is at 350 ml."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 500,
+            "step": 50,
+            "marks": [
+              {
+                "at": 350,
+                "label": "350 ml"
+              }
+            ]
+          },
+          "note": "Bend down to read it."
+        },
+        {
+          "heading": "Estimate",
+          "bullets": [
+            "Teaspoon: 5 ml.",
+            "Cup: about 250 ml.",
+            "Bottle: about 500 ml."
+          ],
+          "note": "Guess before measuring."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "0 to 200 ml in 4 gaps. The water is on the 3rd mark. Volume?",
+            "options": [
+              "3 ml",
+              "150 ml",
+              "75 ml"
+            ],
+            "answer": 1,
+            "why": "200 ÷ 4 = 50 ml a gap; 3 gaps is 150 ml."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "0 to 100 ml in 10 gaps. 7th mark?",
+          "a": "70 ml",
+          "mins": 2,
+          "model": "Teacher: 100 ÷ 10 = 10 ml a gap; 7 gaps is 70 ml."
+        },
+        {
+          "q": "0 to 1,000 ml in 4 gaps. 1st mark?",
+          "a": "250 ml",
+          "mins": 2
+        },
+        {
+          "q": "Estimate: a mug in ml?",
+          "a": "About 300 ml",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Measure (with a grown-up) how many ml a cup, a mug and a glass hold.",
+          "a": "Answers will vary",
+          "mins": 4,
+          "model": "Teacher pours a full cup into a jug and reads at eye level: 250 ml."
+        },
+        {
+          "q": "Extend: Read: 0 to 500 ml in 5 gaps, 4th mark; 0 to 300 ml in 6 gaps, 5th mark",
+          "a": "400 ml; 250 ml",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A glass holds 300 ml. It has 120 ml in it. How much more to fill it?",
+          "a": "180 ml",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Unit for a teaspoon?",
+          "a": "ml",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how many ml does a cup hold?",
+          "a": "About 250 ml (measure to check)",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure how much water you drink in one glass, in ml.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: find how many 5 ml spoons make 100 ml.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: small step 'Measure capacity and volume in millilitres' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Measuring jug with water or rice (over a sink or tray), or the jug pictures on the slides",
+        "Cups, a mug and a bottle",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 57 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 58,
+      "title": "Measure capacity and volume in litres and millilitres",
+      "duration": 45,
+      "bigQuestion": "How can 1 l 500 ml also be 1,500 ml?",
+      "objectives": [
+        "To understand how to measure capacity in litres and millilitres"
+      ],
+      "successCriteria": [
+        "All: read a jug in litres",
+        "Most: write a volume in l and ml",
+        "Some: explain that 1 l = 1,000 ml"
+      ],
+      "crossCurricular": "Science: how much water a plant needs in a week",
+      "smsc": "Moral: not wasting water",
+      "keywords": [
+        {
+          "term": "litre",
+          "def": "a larger unit of capacity, l"
+        },
+        {
+          "term": "millilitre",
+          "def": "a small unit, 1,000 ml = 1 l"
+        },
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A large bottle of water is 1 l 500 ml. How many 500 ml bottles is that?",
+        "a": "3 bottles: 1,500 ÷ 500."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "large plastic water bottle",
+          "alt": "A large water bottle",
+          "for": "hook"
+        },
+        {
+          "find": "measuring jug litres",
+          "alt": "A jug marked in litres",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "0 to 1,000 ml in 4 gaps, 1st mark?",
+          "a": "250 ml",
+          "mins": 1
+        },
+        {
+          "q": "300 ml - 120 ml?",
+          "a": "180 ml",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 500 = ?",
+          "a": "1,500",
+          "mins": 1
+        },
+        {
+          "q": "1 kg = ? g",
+          "a": "1,000 g",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Litres",
+          "bullets": [
+            "We write l.",
+            "1 l = 1,000 ml.",
+            "A big bottle: 2 l."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 4,
+            "step": 1,
+            "marks": [
+              {
+                "at": 2,
+                "label": "2 l"
+              }
+            ]
+          },
+          "note": "Ask: 3 l in ml? (3,000 ml)."
+        },
+        {
+          "heading": "l and ml",
+          "bullets": [
+            "Between 1 l and 2 l in 4 gaps.",
+            "Each gap is 250 ml.",
+            "1 l 750 ml = 1,750 ml"
+          ],
+          "numberline": {
+            "min": 1000,
+            "max": 2000,
+            "step": 250,
+            "marks": [
+              {
+                "at": 1000,
+                "label": "1 l"
+              },
+              {
+                "at": 1750,
+                "label": "1 l 750 ml"
+              },
+              {
+                "at": 2000,
+                "label": "2 l"
+              }
+            ]
+          },
+          "note": "Count: 1,250, 1,500, 1,750."
+        },
+        {
+          "heading": "Convert",
+          "table": {
+            "head": [
+              "l and ml",
+              "ml"
+            ],
+            "rows": [
+              [
+                "1 l",
+                "1,000 ml"
+              ],
+              [
+                "1 l 200 ml",
+                "1,200 ml"
+              ],
+              [
+                "2 l 500 ml",
+                "2,500 ml"
+              ],
+              [
+                "4 l",
+                "4,000 ml"
+              ]
+            ]
+          },
+          "note": "Read across."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "2 l 50 ml = ?",
+            "options": [
+              "2,050 ml",
+              "250 ml",
+              "2,500 ml"
+            ],
+            "answer": 0,
+            "why": "2 l = 2,000 ml; 2,000 + 50 = 2,050 ml. 2,500 treats 50 as 500."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 l 300 ml = ? ml",
+          "a": "1,300 ml",
+          "mins": 2,
+          "model": "Teacher: 1 l = 1,000 ml; 1,000 + 300 = 1,300 ml."
+        },
+        {
+          "q": "2,600 ml = ? l ? ml",
+          "a": "2 l 600 ml",
+          "mins": 2
+        },
+        {
+          "q": "3 l = ? ml",
+          "a": "3,000 ml",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write in ml: 4 l; 1 l 450 ml; 3 l 5 ml",
+          "a": "4,000 ml; 1,450 ml; 3,005 ml",
+          "mins": 4,
+          "model": "Teacher: 1 l 450 ml = 1,000 + 450 = 1,450 ml."
+        },
+        {
+          "q": "Extend: Write in l and ml: 1,250 ml; 2,080 ml",
+          "a": "1 l 250 ml; 2 l 80 ml",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How many 250 ml cups fill a 2 l jug?",
+          "a": "8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1,500 ml = ? l ? ml",
+          "a": "1 l 500 ml",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how can 1 l 500 ml be 1,500 ml?",
+          "a": "1 l is 1,000 ml, and 1,000 + 500 = 1,500",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 drinks or bottles at home and write each capacity in ml.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: order 1 l 50 ml, 1,005 ml and 1 l 500 ml.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: small step 'Measure capacity and volume in litres and millilitres' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Measuring jug with water or rice (over a sink or tray), or the jug pictures on the slides",
+        "Cups, a mug and a bottle",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 58 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 59,
+      "title": "Compare capacity and volume",
+      "duration": 45,
+      "bigQuestion": "Which holds more: 1 l 20 ml or 1,200 ml?",
+      "objectives": [
+        "To understand how to compare and order capacities and volumes"
+      ],
+      "successCriteria": [
+        "All: compare in the same unit",
+        "Most: convert l and ml to compare",
+        "Some: order capacities and explain"
+      ],
+      "crossCurricular": "Science: comparing how much water plants need",
+      "smsc": "Moral: using water carefully",
+      "keywords": [
+        {
+          "term": "capacity",
+          "def": "how much a container can hold"
+        },
+        {
+          "term": "compare",
+          "def": "decide which is greater"
+        },
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A kettle holds 1 l 20 ml. A jug holds 1,200 ml. Which holds more?",
+        "a": "The jug: 1 l 20 ml is only 1,020 ml."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "kettle",
+          "alt": "A kettle",
+          "for": "hook"
+        },
+        {
+          "find": "measuring jug litres",
+          "alt": "A measuring jug",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 l 450 ml = ? ml",
+          "a": "1,450 ml",
+          "mins": 1
+        },
+        {
+          "q": "2,080 ml = ? l ? ml",
+          "a": "2 l 80 ml",
+          "mins": 1
+        },
+        {
+          "q": "TT: 9 × 6 = ?",
+          "a": "54",
+          "mins": 1
+        },
+        {
+          "q": "Use < or >: 1,020 _ 1,200",
+          "a": "<",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same unit",
+          "bullets": [
+            "750 ml > 570 ml",
+            "2 l < 3 l"
+          ],
+          "chart": {
+            "kind": "bar",
+            "title": "Capacity",
+            "labels": [
+              "Cup",
+              "Bottle",
+              "Jug"
+            ],
+            "values": [
+              250,
+              500,
+              1200
+            ],
+            "unit": "ml"
+          },
+          "note": "Compare from the left."
+        },
+        {
+          "heading": "Convert to compare",
+          "bullets": [
+            "1 l 20 ml = 1,020 ml",
+            "1,020 ml < 1,200 ml"
+          ],
+          "misconception": {
+            "wrong": "1 l 20 ml > 1,200 ml because it has litres",
+            "right": "Convert: 1,020 ml < 1,200 ml"
+          },
+          "note": "Ask: 2 l or 1,950 ml? (2 l)."
+        },
+        {
+          "heading": "Order",
+          "bullets": [
+            "Least first:",
+            "250 ml, 900 ml, 1 l 100 ml, 2 l"
+          ],
+          "note": "Convert, then order."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which holds the most?",
+            "options": [
+              "1 l 5 ml",
+              "1,050 ml",
+              "1 l"
+            ],
+            "answer": 1,
+            "why": "1,050 ml beats 1,005 ml and 1,000 ml."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Use < or >: 450 ml _ 540 ml",
+          "a": "<",
+          "mins": 2,
+          "model": "Teacher: compare hundreds: 4 < 5."
+        },
+        {
+          "q": "Use < or >: 1 l _ 990 ml",
+          "a": ">",
+          "mins": 2
+        },
+        {
+          "q": "Order least first: 3 l, 300 ml, 1 l 300 ml",
+          "a": "300 ml, 1 l 300 ml, 3 l",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use < or >: 2 l 500 ml _ 2,050 ml; 1,800 ml _ 1 l 80 ml",
+          "a": ">; >",
+          "mins": 4,
+          "model": "Teacher: 2 l 500 ml = 2,500 ml; 2,500 > 2,050."
+        },
+        {
+          "q": "Extend: Order most first: 1 l 200 ml, 1,020 ml, 2 l, 999 ml",
+          "a": "2 l, 1 l 200 ml, 1,020 ml, 999 ml",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A bottle holds 750 ml. How much more is 1 l?",
+          "a": "250 ml",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "More: 2 l or 1,999 ml?",
+          "a": "2 l",
+          "mins": 2
+        },
+        {
+          "q": "Big question: 1 l 20 ml or 1,200 ml?",
+          "a": "1,200 ml: 1 l 20 ml is only 1,020 ml",
+          "mins": 3
+        }
+      ],
+      "homework": "Order 4 containers at home by capacity using the labels or a jug.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: find two ways to write 3,050 ml.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: small step 'Compare capacity and volume' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Measuring jug with water or rice (over a sink or tray), or the jug pictures on the slides",
+        "Cups, a mug and a bottle",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 59 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 60,
+      "title": "Add and subtract capacity and volume",
+      "duration": 45,
+      "bigQuestion": "How much water is left after we pour some out?",
+      "objectives": [
+        "To understand how to add and subtract capacities and volumes"
+      ],
+      "successCriteria": [
+        "All: add and subtract volumes in ml",
+        "Most: add volumes that cross a litre",
+        "Some: solve a two-step capacity problem"
+      ],
+      "crossCurricular": "Cooking: measuring water and milk for a recipe",
+      "smsc": "Moral: not wasting water",
+      "keywords": [
+        {
+          "term": "total",
+          "def": "all together"
+        },
+        {
+          "term": "difference",
+          "def": "how much more or less"
+        },
+        {
+          "term": "litre",
+          "def": "1,000 ml"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A 2 l jug of water. You pour out 3 glasses of 250 ml. How much is left?",
+        "a": "1 l 250 ml (1,250 ml)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "jug of water and glasses",
+          "alt": "A jug of water and glasses",
+          "for": "hook"
+        },
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Use < or >: 1 l _ 990 ml",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "750 ml + ? = 1 l",
+          "a": "250 ml",
+          "mins": 1
+        },
+        {
+          "q": "TT: 3 × 250 = ?",
+          "a": "750",
+          "mins": 1
+        },
+        {
+          "q": "2,000 - 750 = ?",
+          "a": "1,250",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Add",
+          "bullets": [
+            "300 ml + 450 ml = 750 ml",
+            "800 ml + 500 ml = 1,300 ml",
+            "= 1 l 300 ml"
+          ],
+          "fraction": [
+            {
+              "parts": 2,
+              "shaded": 2,
+              "label": "1,300 ml: 800 ml and 500 ml"
+            }
+          ],
+          "note": "Use a bar model."
+        },
+        {
+          "heading": "Two steps",
+          "model": {
+            "problem": "2 l - 3 glasses of 250 ml",
+            "steps": [
+              "3 × 250 ml = 750 ml",
+              "2,000 ml - 750 ml = 1,250 ml",
+              "= 1 l 250 ml"
+            ],
+            "answer": "1 l 250 ml"
+          },
+          "note": "Model aloud."
+        },
+        {
+          "heading": "Subtract by counting on",
+          "bullets": [
+            "1 l - 650 ml",
+            "650 to 700: 50; 700 to 1,000: 300",
+            "350 ml"
+          ],
+          "numberline": {
+            "min": 600,
+            "max": 1000,
+            "step": 50,
+            "marks": [
+              {
+                "at": 650,
+                "label": "650 ml"
+              },
+              {
+                "at": 700,
+                "label": "+50"
+              },
+              {
+                "at": 1000,
+                "label": "+300"
+              }
+            ]
+          },
+          "note": "Ask: 1 l - 420 ml? (580 ml)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "500 ml + 750 ml = ?",
+            "options": [
+              "1 l 250 ml",
+              "1,250 l",
+              "1 l 25 ml"
+            ],
+            "answer": 0,
+            "why": "1,250 ml = 1 l 250 ml."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "400 ml + 350 ml = ?",
+          "a": "750 ml",
+          "mins": 2,
+          "model": "Teacher: 400 + 300 = 700, add 50: 750 ml."
+        },
+        {
+          "q": "900 ml + 300 ml = ? l ? ml",
+          "a": "1 l 200 ml",
+          "mins": 2
+        },
+        {
+          "q": "1 l - 300 ml = ?",
+          "a": "700 ml",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Core: 225 ml + 550 ml; 1 l 400 ml + 800 ml; 1 l - 375 ml",
+          "a": "775 ml; 2 l 200 ml; 625 ml",
+          "mins": 4,
+          "model": "Teacher: 225 + 550: 200 + 500 = 700, 25 + 50 = 75: 775 ml."
+        },
+        {
+          "q": "Extend: A bottle has 1 l 500 ml. 600 ml is drunk. How much is left?",
+          "a": "900 ml",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A recipe needs 300 ml milk and 450 ml water. You have 1 l of liquid. How much is left over?",
+          "a": "250 ml",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 l - 250 ml = ?",
+          "a": "750 ml",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how much is left after we pour some out?",
+          "a": "Subtract the volume poured from the start volume, in the same unit",
+          "mins": 3
+        }
+      ],
+      "homework": "Measure and add the water in 3 cups; then find the difference between two of them.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: a 1 l 500 ml bottle fills 4 cups of 300 ml. How much is left over? (300 ml).",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: small step 'Add and subtract capacity and volume' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Measuring jug with water or rice (over a sink or tray), or the jug pictures on the slides",
+        "Cups, a mug and a bottle",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 60 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 2: Fractions A; mass and capacity",
+      "n": 61,
+      "title": "Mass and capacity: end-of-block check",
+      "duration": 45,
+      "bigQuestion": "Which unit, which scale, which calculation?",
+      "objectives": [
+        "To understand how secure I am with mass and capacity"
+      ],
+      "successCriteria": [
+        "All: read scales and jugs",
+        "Most: convert and compare kg and g, l and ml",
+        "Some: solve mass and capacity problems"
+      ],
+      "smsc": "Moral: honest measures (Qur'an 17:35)",
+      "keywords": [
+        {
+          "term": "gram",
+          "def": "g, a small unit of mass"
+        },
+        {
+          "term": "kilogram",
+          "def": "kg, 1,000 g"
+        },
+        {
+          "term": "millilitre",
+          "def": "ml, a small unit of capacity"
+        },
+        {
+          "term": "litre",
+          "def": "l, 1,000 ml"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A recipe: 1 kg flour, 250 g dates, 500 ml milk. Which are masses and which is a capacity?",
+        "a": "Flour and dates are masses; milk is a capacity (volume)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "kitchen weighing scales dial",
+          "alt": "Kitchen scales",
+          "for": "teach:1"
+        },
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 l - 375 ml?",
+          "a": "625 ml",
+          "mins": 1
+        },
+        {
+          "q": "2 kg = ? g",
+          "a": "2,000 g",
+          "mins": 1
+        },
+        {
+          "q": "0 to 200 in 4 gaps: each?",
+          "a": "50",
+          "mins": 1
+        },
+        {
+          "q": "TT: 8 × 7 = ?",
+          "a": "56",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Recap",
+          "bullets": [
+            "Find the interval, then read.",
+            "1 kg = 1,000 g; 1 l = 1,000 ml.",
+            "Convert before comparing."
+          ],
+          "sort": {
+            "columns": [
+              "Mass",
+              "Capacity"
+            ],
+            "cards": [
+              "g",
+              "ml",
+              "kg",
+              "l",
+              "a bag of rice",
+              "a bottle of milk"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Show-me recap."
+        },
+        {
+          "heading": "End-of-block check",
+          "bullets": [
+            "12 questions.",
+            "Work alone, then mark."
+          ],
+          "note": "Check on the worksheet; mark together."
+        },
+        {
+          "heading": "My next step",
+          "bullets": [
+            "What went well?",
+            "Even better if...?"
+          ],
+          "note": "Pupils write one EBI target."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is greater: 1 kg 80 g or 1,800 g?",
+            "options": [
+              "1 kg 80 g",
+              "1,800 g",
+              "They are equal"
+            ],
+            "answer": 1,
+            "why": "1 kg 80 g = 1,080 g, less than 1,800 g."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "0 to 1 kg in 4 gaps. Pointer on the 3rd mark?",
+          "a": "750 g",
+          "mins": 2,
+          "model": "Teacher: 1,000 ÷ 4 = 250 g a gap; 3 gaps is 750 g."
+        },
+        {
+          "q": "1 l 300 ml = ? ml",
+          "a": "1,300 ml",
+          "mins": 2
+        },
+        {
+          "q": "600 g + 700 g = ?",
+          "a": "1 kg 300 g",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check: read 0 to 500 ml in 5 gaps (2nd mark); write 2,450 g in kg and g; order 1 l, 1,100 ml, 950 ml",
+          "a": "200 ml; 2 kg 450 g; 950 ml, 1 l, 1,100 ml",
+          "mins": 4,
+          "model": "Teacher: 500 ÷ 5 = 100 ml a gap; 2 gaps is 200 ml."
+        },
+        {
+          "q": "Extend: Check: 2 kg - 1 kg 250 g; 750 ml + 750 ml",
+          "a": "750 g; 1 l 500 ml",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Check: 4 bottles of 250 ml and a 1 l 500 ml jug. Total in l and ml?",
+          "a": "2 l 500 ml",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1,000 ml = ? l",
+          "a": "1 l",
+          "mins": 2
+        },
+        {
+          "q": "Big question: which unit, scale and calculation?",
+          "a": "Mass in g or kg, capacity in ml or l; find the interval; convert, then add or subtract",
+          "mins": 3
+        }
+      ],
+      "homework": "Practise your target from the check for 10 minutes.",
+      "send": "SEND: real scales and jugs first, scale pictures enlarged, fewer items. EAL: unit cards (g, kg, ml, l) with pictures; stem 'The scale counts in ...'. Stretch: write 2 two-step problems for a partner.",
+      "resources": [
+        "White Rose Maths Year 3, Spring block 4: Mass and capacity: end-of-block check (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Kitchen scales (with a grown-up), or the scales pictures on the slides",
+        "Measuring jug with water or rice (over a sink or tray), or the jug pictures on the slides",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 61 guided, independent and homework tasks"
       ]
     }
   ]
