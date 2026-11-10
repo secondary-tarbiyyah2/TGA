@@ -7,7 +7,7 @@ insert into auth.users (id, email) values
   ('a2010000-0000-0000-0000-000000000001', 'tour-head@example.com'),
   ('a2010000-0000-0000-0000-000000000002', 'tour-pupil@example.com');
 insert into public.profiles (id, role, full_name, email) values
-  ('a2010000-0000-0000-0000-000000000001', 'head_teacher', 'Tour Head', 'tour-head@example.com'),
+  ('a2010000-0000-0000-0000-000000000001', 'staff', 'Tour Head', 'tour-head@example.com'),
   ('a2010000-0000-0000-0000-000000000002', 'student', 'Tour Pupil', 'tour-pupil@example.com');
 insert into public.user_roles (user_id, role, scope_type, scope_id) values
   ('a2010000-0000-0000-0000-000000000001', 'head_teacher', 'none', null),
