@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { attachHomework } from "@/lib/learn/homeworkStatus";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -32,7 +33,7 @@ export function HomeworkDueWidget({ childId, title = "Upcoming homework" }: { ch
       });
   }, [supabase, childId]);
 
-  if (rows === null) return <p className="text-sm text-ink/65">Loading homework…</p>;
+  if (rows === null) return <Loading label="Loading homework…" bare />;
   if (rows.length === 0) return <p className="text-sm text-ink/65">No homework due.</p>;
 
   return (

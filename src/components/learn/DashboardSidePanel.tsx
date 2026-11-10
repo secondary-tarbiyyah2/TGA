@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { attachHomework } from "@/lib/learn/homeworkStatus";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -36,7 +37,7 @@ const BUCKET_ORDER = ["Overdue", "Today", "Tomorrow", "This week", "Later"];
 
 /** Moodle's Timeline block: what's due, grouped by when. */
 function Timeline({ items }: { items: TimelineItem[] | null }) {
-  if (items === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (items === null) return <Loading label="Loading…" bare />;
   if (items.length === 0) return <p className="text-sm text-ink/65">Nothing due in the next two weeks.</p>;
   const groups = BUCKET_ORDER.map((b) => ({ b, list: items.filter((i) => bucketOf(i.dueAt) === b) })).filter((g) => g.list.length > 0);
   return (

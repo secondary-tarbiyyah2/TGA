@@ -38,12 +38,19 @@ $message    = trim((string) ($body['message'] ?? ''));
 // human (or a downstream CRM) as one lead, even though neither PHP script
 // keeps a database of its own.
 $leadRef    = mailer_clean($body['lead_ref']    ?? '');
+// What the enquiry is about (contact page): a place, a general question, or
+// a current family. Only "interest" needs a year group.
+$enquiry    = mailer_clean($body['enquiry']     ?? 'interest');
+if (!in_array($enquiry, ['interest', 'question', 'current'], true)) $enquiry = 'interest';
+$enquiryLabel = ['interest' => 'Register interest', 'question' => 'General question', 'current' => 'Current family'][$enquiry];
 
 $errors = [];
 if ($parentName === '')                                          $errors[] = 'parent_name';
 if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'email';
 if (preg_match_all('/\d/', $phone) < 7)                          $errors[] = 'phone';
-if ($yeargroup === '')                                            $errors[] = 'yeargroup';
+if ($enquiry === 'interest' && $yeargroup === '')                $errors[] = 'yeargroup';
+if ($enquiry !== 'interest' && trim($message) === '')            $errors[] = 'message';
+if ($yeargroup === '') $yeargroup = 'Not given';
 if ($consent === '')                                              $errors[] = 'consent';
 
 if ($errors) {
@@ -58,9 +65,9 @@ if (mailer_rate_limited($email)) {
     exit;
 }
 
-$subject = 'Register interest' . $parentName . ' (' . $yeargroup . ')';
+$subject = $enquiryLabel . ': ' . $parentName . ($enquiry === 'interest' ? ' (' . $yeargroup . ')' : '');
 $text = implode("\n", [
-    'A new register-interest enquiry was submitted on Tarbiyyah Global Academy.',
+    'A new enquiry (' . $enquiryLabel . ') was submitted on Tarbiyyah Global Academy.',
     '',
     'Parent/guardian: ' . $parentName,
     'Email: ' . $email,
@@ -83,8 +90,9 @@ if (MAIL_SEND_ACK && $sent) {
     $ackText = implode("\n", [
         'Assalamu alaikum' . $greetName . ',',
         '',
-        'Thank you for registering your interest in Tarbiyyah Global Academy. We have',
-        'received your details and will be in touch as places open.',
+        $enquiry === 'interest'
+            ? "Thank you for registering your interest in Tarbiyyah Global Academy. We have\nreceived your details and will be in touch as places open."
+            : "Thank you for your message to Tarbiyyah Global Academy. We have received it\nand will reply within one working day.",
         '',
         'If you have any questions in the meantime, you can reach us at ' . MAIL_RECIPIENT . '.',
         '',
@@ -92,11 +100,11 @@ if (MAIL_SEND_ACK && $sent) {
         MAIL_SITE,
         'Part of the Tarbiyyah Education Trust',
     ]);
-    list($ackOk, $ackTransport, $ackDetail) = mailer_send($email, $parentName, 'Thank you for registering your interest' . MAIL_SITE, $ackText, MAIL_RECIPIENT, MAIL_SITE);
+    list($ackOk, $ackTransport, $ackDetail) = mailer_send($email, $parentName, ($enquiry === 'interest' ? 'Thank you for registering your interest: ' : 'We have your message: ') . MAIL_SITE, $ackText, MAIL_RECIPIENT, MAIL_SITE);
     mailer_log(($ackOk ? 'OK   ' : 'FAIL ') . 'register ack to=' . $email . ' via=' . $ackTransport . '– ' . $ackDetail);
 }
 
-mailer_forward_to_crm(['type' => 'register_interest', 'leadRef' => $leadRef, 'parentName' => $parentName, 'email' => $email, 'phone' => $phone, 'yeargroup' => $yeargroup, 'message' => $message, 'timezone' => $timezone, 'submittedAt' => gmdate('c')]);
+mailer_forward_to_crm(['type' => $enquiry === 'interest' ? 'register_interest' : 'enquiry_' . $enquiry, 'leadRef' => $leadRef, 'parentName' => $parentName, 'email' => $email, 'phone' => $phone, 'yeargroup' => $yeargroup, 'message' => $message, 'timezone' => $timezone, 'submittedAt' => gmdate('c')]);
 
 if (!$sent) {
     http_response_code(502);

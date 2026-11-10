@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Icon } from "@/components/learn/Icon";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -160,7 +161,7 @@ function GenerateContent() {
 
       <div className="space-y-5">
         <Step n={1} title="Choose the academic year" help="Which school year is this timetable for?" active={!year} done={stepDone[0]}>
-          {!data.loaded && <p className="text-sm text-ink/65">Loading…</p>}
+          {!data.loaded && <Loading label="Loading…" bare />}
           {data.loaded && data.years.length === 0 && (
             <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
               No academic year exists yet. <Link href="/admin/academic/years" className="font-semibold underline">Add one in Academic setup</Link>, then come back.

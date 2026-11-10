@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import Link from "next/link";
 import { LESSONS_HUB_TITLE, LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
 import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
@@ -29,7 +30,7 @@ function HubContent() {
     <div>
       <LessonsHeader title={LESSONS_HUB_TITLE} subtitle={`Everything about when lessons happen, split into short pages.${yearLabel ? ` Showing ${yearLabel}.` : ""}`} />
       {!data.loaded ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : (
         <>
           {data.years.length === 0 && (

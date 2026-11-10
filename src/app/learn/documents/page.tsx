@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -55,7 +56,7 @@ function DocumentsContent() {
         <div className="rounded-2xl border border-gold-light bg-white">
           <h2 className="border-b border-gold-light px-5 py-3 text-lg font-semibold text-ink">Signed by you</h2>
           {pdfError && <p role="alert" className="px-5 py-2 text-sm text-red-800">{pdfError}</p>}
-          {history === null && <p className="px-5 py-4 text-sm text-ink/65">Loading…</p>}
+          {history === null && <Loading label="Loading…" bare />}
           {history && history.length === 0 && <p className="px-5 py-4 text-sm text-ink/65">You have not signed any documents yet.</p>}
           {history && history.length > 0 && (
             <ul className="divide-y divide-gold-light/70">

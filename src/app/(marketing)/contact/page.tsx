@@ -63,7 +63,7 @@ export default async function ContactPage() {
           </div>
         </div>
         <div>
-          <RegisterInterestForm />
+          <RegisterInterestForm enquiryChoice />
         </div>
       </Container>
     </section>

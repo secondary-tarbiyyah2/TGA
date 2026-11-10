@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import {
@@ -88,7 +89,7 @@ export function PupilRecord({
   const { details, contacts, acks, loaded, error } = data;
   const [tab, setTab] = useState<Tab>(teacherView ? "health" : "basics");
 
-  if (!loaded) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (!loaded) return <Loading label="Loading…" bare />;
 
   const progress = completeness(details, contacts.length);
   const alerts = medicalAlerts(details);

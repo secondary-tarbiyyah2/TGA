@@ -25,7 +25,7 @@ import {
   type SubjectLink,
 } from "@/lib/learn/cover";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 type LogRow = CoverRow & {
   original_teacher_user_id: string;
   reason: string | null;
@@ -170,7 +170,7 @@ export function CoverSuggestions() {
 
   const current = useMemo(() => absences.filter((a) => a.ends_on >= today), [absences, today]);
 
-  if (!loaded) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (!loaded) return <Loading label="Loading…" bare />;
 
   return (
     <div className="space-y-5">

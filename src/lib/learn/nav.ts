@@ -82,20 +82,30 @@ export type SidebarGroup = { label: string; icon: SidebarIcon; items: SidebarIte
 
 
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
-  // Each entry is a page or a hub whose pages show as tabs. Grouped (see GROUPED_AREAS): the first group's entries are always-visible
-  // links at the top; the rest sit under headings that open and close. The
+  // Portal structure (owner, 10 November 2026: "too crowded, hard to navigate, not
+  // centralised"). Every role has ONE home, "Today", that gathers what used to be
+  // separate Overview, Action centre, To do and To review pages as its tabs; then
+  // a few places organised around people and classes. Every page still exists,
+  // reached as a tab of one place and from search (Ctrl+K). One word per thing:
+  // "House points" (houses), "Behaviour" (incidents and praise), "Merits" (a
+  // pupil's own view), "Timetable" (lessons by week).
+  //
+  // Grouped areas (see GROUPED_AREAS): the first group's entries are always
+  // visible at the top; the rest sit under headings that open and close. The
   // groups also lay out the Site administration index (/admin/site).
   admin: [
     {
       href: "/admin/dashboard",
-      label: "Home",
+      label: "Today",
       icon: "house",
       badge: "actions",
-      group: "Workspace",
+      group: "Daily",
       tabs: [
-        { href: "/admin/dashboard", label: "Overview", hint: "Today across the school" },
-        { href: "/admin/actions", label: "Action centre", hint: "Everything waiting for the office", icon: "flag", headOnly: true },
-        { href: "/admin/summary", label: "School summary", hint: "Attendance, homework and progress at a glance", icon: "chartColumnIncreasing", headOnly: true },
+        { href: "/admin/dashboard", label: "Today", hint: "Today across the school" },
+        { href: "/admin/actions", label: "Waiting for you", hint: "Everything waiting for the office, by urgency", icon: "flag", headOnly: true },
+        { href: "/admin/summary", label: "School at a glance", hint: "Attendance, homework and progress", icon: "chartColumnIncreasing", headOnly: true },
+        { href: "/admin/calendar", label: "Calendar", hint: "Term dates and school events", icon: "calendarDays" },
+        { href: "/admin/parent-evenings", label: "Parent evenings", hint: "Create evenings, open booking, see bookings", icon: "calendarClock", headOnly: true },
       ],
     },
     {
@@ -103,23 +113,12 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       label: "Messages",
       icon: "messageSquare",
       badge: "messages",
-      group: "Workspace",
+      group: "Daily",
       tabs: [
         { href: "/admin/messages", label: "Inbox", hint: "Conversations with families and staff", headOnly: true },
         { href: "/admin/announcements", label: "Announcements", hint: "School-wide notices", icon: "megaphone", headOnly: true },
         { href: "/admin/digest", label: "Weekly digest", hint: "Friday parent email", icon: "mail", headOnly: true },
-        { href: "/admin/message-oversight", label: "Oversight", hint: "Safeguarding view of staff-family messages", icon: "shieldAlert", headOnly: true },
         { href: "/admin/feedback", label: "Feedback", hint: "Suggestions and bug reports from portal users", icon: "messageSquarePlus", headOnly: true },
-      ],
-    },
-    {
-      href: "/admin/calendar",
-      label: "Calendar",
-      icon: "calendarDays",
-      group: "Workspace",
-      tabs: [
-        { href: "/admin/calendar", label: "Calendar", hint: "Term dates and school events" },
-        { href: "/admin/parent-evenings", label: "Parent evenings", hint: "Create evenings, open booking, see bookings", icon: "calendarClock", headOnly: true },
       ],
     },
     {
@@ -129,30 +128,23 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       group: "Pupils",
       tabs: [
         { href: "/admin/pupils", label: "All pupils", hint: "Every pupil's record in one place" },
+        { href: "/admin/attendance", label: "Registers", hint: "Take and review lesson registers", icon: "userCheck", headOnly: true },
+        { href: "/admin/absences", label: "Absences", hint: "Reported absences and follow-ups", icon: "calendarX", headOnly: true },
         { href: "/admin/send", label: "SEND register", hint: "Support plans, adjustments, access arrangements and reviews", icon: "listChecks", headOnly: true },
         { href: "/admin/behaviour", label: "Behaviour", hint: "Incidents and praise", icon: "heartHandshake", headOnly: true },
         { href: "/admin/rewards", label: "House points", hint: "House points and Star of the Week", icon: "trophy", headOnly: true },
-      ],
-    },
-    {
-      href: "/admin/attendance",
-      label: "Attendance",
-      icon: "userCheck",
-      group: "Pupils",
-      tabs: [
-        { href: "/admin/attendance", label: "Registers", hint: "Take and review lesson registers", headOnly: true },
-        { href: "/admin/absences", label: "Absences", hint: "Reported absences and follow-ups", icon: "calendarX", headOnly: true },
         { href: "/admin/enrichment", label: "Enrichment", hint: "Who joined each supervised block", icon: "calendarCheck", headOnly: true },
       ],
     },
     {
       href: "/admin/reports",
-      label: "Reports",
-      icon: "fileText",
+      label: "Progress",
+      icon: "chartLine",
       group: "Pupils",
       tabs: [
-        { href: "/admin/reports", label: "Term reports", hint: "Write, approve and issue reports", headOnly: true },
+        { href: "/admin/reports", label: "Term reports", hint: "Write, approve and issue reports", icon: "fileText", headOnly: true },
         { href: "/admin/gcse", label: "GCSE", hint: "Predicted and actual grades, Years 10 and 11", icon: "graduationCap", headOnly: true },
+        { href: "/admin/revision", label: "Revision results", hint: "How pupils did on each unit's revision", icon: "target", headOnly: true },
       ],
     },
     {
@@ -163,29 +155,30 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       matchPrefixes: ["/admin/class"],
       tabs: [
         { href: "/admin/classes", label: "Classes", hint: "Every class: stream, classwork, people and grades", headOnly: true, matchPrefixes: ["/admin/class"] },
+        { href: "/admin/lessons", label: "Timetable", hint: "Lessons by week, live lessons and recordings", icon: "layoutDashboard", headOnly: true },
+        { href: "/admin/lessons/generate", label: "Make the timetable", hint: "Match staff availability with what each class needs, then place every lesson", icon: "calendarCheck", headOnly: true },
+        { href: "/admin/academic/meeting-links", label: "Teams links", hint: "The Teams meeting link for each class's live lessons", icon: "monitor", headOnly: true },
         { href: "/admin/homework", label: "Classwork to action", hint: "To mark, missing and late, with links into each class", icon: "notebookPen", headOnly: true },
-        { href: "/admin/lessons", label: "Timetable", hint: "Timetable, live lessons and recordings", icon: "layoutDashboard", headOnly: true },
       ],
     },
     {
-      href: "/admin/curriculum",
+      href: "/admin/curriculum/map",
       label: "Curriculum",
       icon: "library",
       group: "Teaching",
       tabs: [
-        { href: "/admin/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs", headOnly: true },
+        { href: "/admin/curriculum/map", label: "Curriculum map", hint: "Every unit across the year; open a unit for its lessons, plan and specification", icon: "calendarDays", headOnly: true },
+        { href: "/admin/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs", icon: "library", headOnly: true },
         { href: "/admin/curriculum/review", label: "Lesson review", hint: "Submitted, changes requested and approved lessons", icon: "clipboardCheck", headOnly: true },
-        { href: "/admin/curriculum/map", label: "Curriculum map", hint: "Every unit across the year, half term by half term", icon: "calendarDays", headOnly: true },
-        { href: "/admin/planner", label: "Curriculum planner", hint: "Long-term and week-by-week plans, unit by unit", icon: "layoutGrid", headOnly: true },
+        { href: "/admin/planner", label: "Planner", hint: "Long-term and week-by-week plans, unit by unit", icon: "layoutGrid", headOnly: true },
         { href: "/admin/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText", headOnly: true },
-        { href: "/admin/revision", label: "Revision results", hint: "How pupils did on each unit's revision", icon: "chartLine", headOnly: true },
       ],
     },
     {
       href: "/admin/admissions",
       label: "Admissions",
       icon: "userRoundPlus",
-      group: "Management",
+      group: "School",
       tabs: [
         { href: "/admin/admissions", label: "Applications", hint: "Applications, calls and availability" },
         { href: "/admin/assessments", label: "Entry assessments", hint: "Baseline and entry assessments", icon: "clipboardCheck" },
@@ -193,92 +186,64 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       ],
     },
     {
-      href: "/admin/people",
-      label: "People",
-      icon: "idCard",
-      group: "Management",
+      href: "/admin/staff",
+      label: "Staff",
+      icon: "userRound",
+      group: "School",
       tabs: [
-        { href: "/admin/people", label: "Accounts", hint: "Families, students and staff accounts and roles" },
-        { href: "/admin/staff", label: "Staff", hint: "Teacher profiles and compliance dates", icon: "userRound", headOnly: true },
+        { href: "/admin/staff", label: "Staff", hint: "Teacher profiles and compliance dates", headOnly: true },
         { href: "/admin/staff-attendance", label: "Staff hours", hint: "Clock-ins, hours and late arrivals", icon: "clock", headOnly: true },
-        { href: "/admin/recruitment", label: "Recruitment", hint: "Vacancies and job applications", icon: "briefcase", headOnly: true },
+        { href: "/admin/recruitment", label: "Job applications", hint: "Vacancies and applications from the website's Apply for a job form", icon: "briefcase", headOnly: true },
         { href: "/admin/handbook", label: "Handbook", hint: "Policies and how-tos for staff", icon: "bookOpen" },
       ],
     },
     {
       href: "/admin/fees",
-      label: "Fees and policies",
+      label: "Office",
       icon: "wallet",
-      group: "Management",
+      group: "School",
       tabs: [
         { href: "/admin/fees", label: "Fees", hint: "Invoices and payment status", headOnly: true },
         { href: "/admin/documents", label: "Policies", hint: "Policies families and staff sign", icon: "fileCheck", headOnly: true },
+        { href: "/admin/people", label: "Accounts", hint: "Sign-ins and roles for families, pupils and staff", icon: "idCard" },
+        { href: "/admin/content", label: "Website", hint: "Pages on the public site", icon: "globe" },
+        { href: "/admin/academic", label: "Academic setup", hint: "Years, terms, year groups, classes and subjects", icon: "layers" },
+        { href: "/admin/settings", label: "Settings", hint: "School details, alerts, clock-in and Microsoft 365", icon: "settings" },
       ],
     },
     {
       href: "/admin/compliance",
       label: "Safeguarding",
       icon: "shieldCheck",
-      group: "Management",
+      group: "School",
       tabs: [
         { href: "/admin/compliance", label: "Compliance", hint: "Safeguarding, audit and retention" },
+        { href: "/admin/message-oversight", label: "Message oversight", hint: "Safeguarding view of staff-family messages", icon: "shieldAlert", headOnly: true },
         { href: "/admin/data-protection", label: "Data protection", hint: "Retention rules and subject access exports", headOnly: true },
         { href: "/admin/audit-log", label: "Audit log", hint: "Who changed what, with filters and CSV export", icon: "listChecks", headOnly: true },
       ],
     },
-    {
-      href: "/admin/settings",
-      label: "Settings",
-      icon: "settings",
-      group: "Management",
-      tabs: [
-        { href: "/admin/settings", label: "General", hint: "School details, alerts, clock-in and Microsoft 365" },
-        { href: "/admin/academic", label: "Academic setup", hint: "Years, terms, year groups, classes and subjects", icon: "layers" },
-        { href: "/admin/content", label: "Website", hint: "Pages on the public site", icon: "globe" },
-      ],
-    },
   ],
-
   teach: [
     {
       href: "/teach/dashboard",
-      label: "Home", group: "Workspace",
+      label: "Today",
+      group: "Daily",
       icon: "house",
       badge: "actions",
+      matchPrefixes: ["/teach/enrichment"],
       tabs: [
-        { href: "/teach/dashboard", label: "Overview", hint: "Your day at a glance" },
-        { href: "/teach/actions", label: "Action centre", hint: "Things waiting for you", icon: "flag" },
+        { href: "/teach/dashboard", label: "Today", hint: "Your day at a glance" },
+        { href: "/teach/today", label: "Lessons and registers", hint: "Today's lessons, with the register for each", icon: "sun", matchPrefixes: ["/teach/enrichment"] },
+        { href: "/teach/review", label: "To mark", hint: "Work handed in and waiting to be marked", icon: "clipboardCheck" },
+        { href: "/teach/actions", label: "Waiting for you", hint: "Everything else waiting for you", icon: "flag" },
+        { href: "/teach/calendar", label: "Calendar", hint: "Term dates and school events", icon: "calendarDays" },
+        { href: "/teach/parent-evenings", label: "Parent evenings", hint: "Your parent evening slots and bookings", icon: "calendarClock" },
       ],
     },
-    { href: "/teach/today", label: "Today", group: "Workspace", icon: "sun", matchPrefixes: ["/teach/enrichment"], hint: "Today's lessons and registers" },
-    {
-      href: "/teach/classes",
-      label: "My classes", group: "Workspace",
-      icon: "presentation",
-      matchPrefixes: ["/teach/class", "/teach/lessons"],
-      tabs: [
-        { href: "/teach/classes", label: "My classes", hint: "Stream, classwork, people and grades for each class", matchPrefixes: ["/teach/class", "/teach/lessons"] },
-        { href: "/teach/homework", label: "Classwork to action", hint: "To mark, missing and late, with links into each class", icon: "notebookPen" },
-        { href: "/teach/assessment", label: "Gradebook", hint: "Enter a whole class's results at once", icon: "award" },
-      ],
-    },
-    {
-      href: "/teach/curriculum",
-      label: "Curriculum", group: "Workspace",
-      icon: "library",
-      tabs: [
-        { href: "/teach/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs" },
-        { href: "/teach/curriculum/review", label: "Lesson review", hint: "Lessons in review, sent back or approved", icon: "clipboardCheck" },
-        { href: "/teach/curriculum/map", label: "Curriculum map", hint: "Every unit across the year, half term by half term", icon: "calendarDays" },
-        { href: "/teach/planner", label: "Curriculum planner", hint: "Long-term and week-by-week plans, unit by unit", icon: "layoutGrid" },
-        { href: "/teach/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText" },
-        { href: "/teach/revision", label: "Revision results", hint: "How your pupils did on each unit's revision", icon: "chartLine" },
-      ],
-    },
-    { href: "/teach/review", label: "To review", group: "Workspace", icon: "clipboardCheck", badge: "review", hint: "Work handed in and waiting to be marked" },
     {
       href: "/teach/messages",
-      label: "Messages", group: "Workspace",
+      label: "Messages", group: "Daily",
       icon: "messageSquare",
       badge: "messages",
       tabs: [
@@ -287,28 +252,43 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       ],
     },
     {
-      href: "/teach/calendar",
-      label: "Calendar", group: "Workspace",
-      icon: "calendarDays",
+      href: "/teach/classes",
+      label: "My classes", group: "Daily",
+      icon: "presentation",
+      matchPrefixes: ["/teach/class", "/teach/lessons"],
       tabs: [
-        { href: "/teach/calendar", label: "Calendar", hint: "Term dates and school events" },
-        { href: "/teach/parent-evenings", label: "Parent evenings", hint: "Your parent evening slots and bookings", icon: "calendarClock" },
+        { href: "/teach/classes", label: "My classes", hint: "Register, classwork, grades and pupils for each class", matchPrefixes: ["/teach/class", "/teach/lessons"] },
+        { href: "/teach/homework", label: "Classwork to action", hint: "To mark, missing and late, with links into each class", icon: "notebookPen" },
+        { href: "/teach/assessment", label: "Gradebook", hint: "Enter a whole class's results at once", icon: "award" },
+        { href: "/teach/reports", label: "Reports", hint: "Term reports for your classes", icon: "fileText" },
       ],
     },
     {
       href: "/teach/pupils",
-      label: "Pupils", group: "Pupils",
+      label: "Pupils", group: "Teaching",
       icon: "backpack",
       tabs: [
         { href: "/teach/pupils", label: "Pupils", hint: "Records for the pupils you teach" },
         { href: "/teach/send", label: "Support plans", hint: "Adjustments and access arrangements for pupils with SEND", icon: "listChecks", senco: true },
         { href: "/teach/quran", label: "Qur'an and Qaidah", hint: "Recitation and memorisation progress", icon: "bookMarked" },
         { href: "/teach/behaviour", label: "Behaviour", hint: "Incidents and praise", icon: "heartHandshake" },
-        { href: "/teach/stars", label: "Houses and stars", hint: "House points and Star of the Week", icon: "trophy" },
+        { href: "/teach/stars", label: "House points", hint: "House points and Star of the Week", icon: "trophy" },
         { href: "/teach/absences", label: "Absences", hint: "Reported pupil absences", icon: "calendarX" },
       ],
     },
-    { href: "/teach/reports", label: "Reports", group: "Pupils", icon: "fileText", hint: "Term reports for your classes" },
+    {
+      href: "/teach/curriculum/map",
+      label: "Curriculum", group: "Teaching",
+      icon: "library",
+      tabs: [
+        { href: "/teach/curriculum/map", label: "Curriculum map", hint: "Every unit across the year; open a unit for its lessons, plan and specification", icon: "calendarDays" },
+        { href: "/teach/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs", icon: "library" },
+        { href: "/teach/curriculum/review", label: "Lesson review", hint: "Lessons in review, sent back or approved", icon: "clipboardCheck" },
+        { href: "/teach/planner", label: "Planner", hint: "Long-term and week-by-week plans, unit by unit", icon: "layoutGrid" },
+        { href: "/teach/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText" },
+        { href: "/teach/revision", label: "Revision results", hint: "How your pupils did on each unit's revision", icon: "target" },
+      ],
+    },
     {
       href: "/teach/profile",
       label: "My staff area", group: "My account",
@@ -323,15 +303,16 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   family: [
     {
       href: "/family/dashboard",
-      label: "Home",
+      label: "Today",
       icon: "house",
-      badge: "actions",
+      badge: "todo",
+      matchPrefixes: ["/family/homework"],
       tabs: [
-        { href: "/family/dashboard", label: "Overview", hint: "Your children's week" },
-        { href: "/family/actions", label: "Action centre", hint: "Things waiting for you", icon: "flag" },
+        { href: "/family/dashboard", label: "Today", hint: "Your children's day and week" },
+        { href: "/family/todo", label: "Homework", hint: "Homework due, missing and handed in", icon: "listChecks", matchPrefixes: ["/family/homework"] },
+        { href: "/family/actions", label: "Waiting for you", hint: "Forms to sign, payments and replies", icon: "flag" },
       ],
     },
-    { href: "/family/todo", label: "To do", icon: "listChecks", badge: "todo", matchPrefixes: ["/family/homework"], hint: "Homework due and missing" },
     {
       href: "/family/messages",
       label: "Messages",
@@ -344,12 +325,15 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     },
     {
       href: "/family/classes",
-      label: "Classes",
-      icon: "presentation",
+      label: "My children",
+      icon: "houseHeart",
       matchPrefixes: ["/family/class", "/family/lessons"],
       tabs: [
-        { href: "/family/classes", label: "Classes", hint: "Your child's classes, lessons and classwork", matchPrefixes: ["/family/class", "/family/lessons"] },
-        { href: "/family/teachers", label: "Teachers", hint: "Who teaches your child", icon: "users" },
+        { href: "/family/classes", label: "Classes and timetable", hint: "Each child's classes, lessons and classwork", matchPrefixes: ["/family/class", "/family/lessons"] },
+        { href: "/family/teachers", label: "Teachers", hint: "Who teaches each child", icon: "users" },
+        { href: "/family/child-details", label: "Child details", hint: "Contact, medical and consent details", icon: "contact" },
+        { href: "/family/support", label: "Support plan", hint: "SEND support plan and reviews", icon: "listChecks" },
+        { href: "/family/absences", label: "Report an absence", hint: "Tell us your child will be away", icon: "calendarX" },
       ],
     },
     {
@@ -372,35 +356,27 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
         { href: "/family/parent-evenings", label: "Parent evenings", hint: "Book a slot with your child's teachers", icon: "calendarClock" },
       ],
     },
-    {
-      href: "/family/child-details",
-      label: "My family",
-      icon: "houseHeart",
-      tabs: [
-        { href: "/family/child-details", label: "Child details", hint: "Contact, medical and consent details", icon: "contact" },
-        { href: "/family/support", label: "Support plan", hint: "Your child's SEND support plan and reviews", icon: "listChecks" },
-        { href: "/family/absences", label: "Report an absence", hint: "Tell us your child will be away", icon: "calendarX" },
-        { href: "/family/fees", label: "Fees", hint: "Invoices and payments", icon: "wallet" },
-      ],
-    },
+    { href: "/family/fees", label: "Fees", icon: "wallet", hint: "Invoices and payments" },
   ],
 
   student: [
     {
       href: "/student/dashboard",
-      label: "Home",
+      label: "Today",
       icon: "house",
-      badge: "actions",
+      badge: "todo",
+      matchPrefixes: ["/student/homework"],
       tabs: [
-        { href: "/student/dashboard", label: "Overview", hint: "Your day" },
-        { href: "/student/actions", label: "Action centre", hint: "Things waiting for you", icon: "flag" },
+        { href: "/student/dashboard", label: "Today", hint: "Your lessons and work today" },
+        { href: "/student/todo", label: "Homework", hint: "Homework due, missing and handed in", icon: "listChecks", matchPrefixes: ["/student/homework"] },
+        { href: "/student/actions", label: "Waiting for you", hint: "Things waiting for you", icon: "flag" },
+        { href: "/student/announcements", label: "Announcements", icon: "megaphone" },
       ],
     },
-    { href: "/student/todo", label: "To do", icon: "listChecks", badge: "todo", matchPrefixes: ["/student/homework"], hint: "Homework due and missing" },
     { href: "/student/classes", label: "My classes", icon: "presentation", matchPrefixes: ["/student/class", "/student/lessons"], hint: "Your classes, lessons and classwork" },
     {
       href: "/student/revision",
-      label: "Learning",
+      label: "Revise",
       icon: "bookOpen",
       tabs: [
         { href: "/student/revision", label: "Unit revision", hint: "Revise each unit and test yourself", icon: "target" },
@@ -409,7 +385,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     },
     {
       href: "/student/reports",
-      label: "Progress",
+      label: "My progress",
       icon: "chartLine",
       tabs: [
         { href: "/student/reports", label: "Reports", icon: "fileText" },
@@ -418,11 +394,10 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     },
     {
       href: "/student/calendar",
-      label: "School",
-      icon: "school",
+      label: "Calendar",
+      icon: "calendarDays",
       tabs: [
         { href: "/student/calendar", label: "Calendar", icon: "calendarDays" },
-        { href: "/student/announcements", label: "Announcements", icon: "megaphone" },
         { href: "/student/teachers", label: "My teachers", icon: "users" },
       ],
     },
@@ -531,7 +506,7 @@ export function visibleSidebar(area: PortalArea, roles: string[]): SidebarItem[]
     const tabs = i.tabs.filter((t) => (isHead || !t.headOnly) && (!sencoOnly || t.senco || i.senco));
     if (tabs.length === 0) continue;
     // A hub with one page left for this user is just that page. If that page
-    // is the hub's own first page, it keeps the hub's name ("Home", not "Overview").
+    // is the hub's own first page, it keeps the hub's name ("Today", not "Overview").
     const own = tabs.length === 1 && tabs[0].href === i.href;
     if (tabs.length === 1) out.push({ ...i, id: i.href, href: tabs[0].href, label: own ? i.label : tabs[0].label, icon: own ? i.icon : tabs[0].icon || i.icon, hint: tabs[0].hint, tabs });
     else out.push({ ...i, id: i.href, href: tabs[0].href, tabs });
@@ -567,7 +542,8 @@ export function hubFor(pathname: string, roles: string[]): { item: SidebarItem; 
   // Only on the hub's own pages: a single class page (a matchPrefix of the
   // classes hub) has its own tabs and doesn't repeat the hub's.
   const p = normalisePortalPath(pathname);
-  const active = item.tabs.find((t) => p === t.href || p.startsWith(t.href + "/")) || null;
+  // The most specific tab wins (Timetable at /admin/lessons, "Make the timetable" at /admin/lessons/generate).
+  const active = activeTab(p, item.tabs);
   if (!active) return null;
   return { item, tabs: item.tabs, active };
 }
@@ -625,10 +601,10 @@ export const AREA_SUBTITLE: Record<PortalArea, string> = {
  * sidebar entry's href (for a hub, any of its tabs). Extra entries are
  * fallbacks for roles that can't open the earlier ones. */
 export const MOBILE_TABS: Record<PortalArea, string[]> = {
-  student: ["/student/dashboard", "/student/todo", "/student/classes", "/student/revision"],
-  family: ["/family/dashboard", "/family/todo", "/family/messages", "/family/classes"],
-  teach: ["/teach/today", "/teach/classes", "/teach/review", "/teach/messages", "/teach/send", "/teach/handbook"],
-  admin: ["/admin/dashboard", "/admin/messages", "/admin/pupils", "/admin/attendance", "/admin/admissions", "/admin/calendar"],
+  student: ["/student/dashboard", "/student/classes", "/student/revision", "/student/reports"],
+  family: ["/family/dashboard", "/family/messages", "/family/classes", "/family/reports"],
+  teach: ["/teach/dashboard", "/teach/classes", "/teach/messages", "/teach/pupils", "/teach/send", "/teach/handbook"],
+  admin: ["/admin/dashboard", "/admin/messages", "/admin/pupils", "/admin/classes", "/admin/admissions", "/admin/staff"],
 };
 
 /** The (at most four) sidebar entries in this user's phone tab bar. */

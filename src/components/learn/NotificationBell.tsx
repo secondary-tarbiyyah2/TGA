@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission } from "@/lib/learn/session";
@@ -129,7 +130,7 @@ export function NotificationBell({ userId }: { userId: string }) {
         <div className="absolute right-0 z-50 mt-2 w-80 rounded-xl border border-gold-light bg-white p-3 shadow-warm">
           <p className="px-1 pb-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Notifications</p>
           {signals === null ? (
-            <p className="p-2 text-sm text-ink/65">Loading…</p>
+            <Loading label="Loading…" bare />
           ) : signals.length === 0 ? (
             <p className="p-2 text-sm text-ink/65">Nothing needs your attention.</p>
           ) : (

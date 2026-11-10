@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -56,7 +57,7 @@ export function UpcomingLessons({
     })();
   }, [supabase, classIds.join(",")]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  if (lessons === null) return <p className="text-sm text-ink/65">Loading lessons…</p>;
+  if (lessons === null) return <Loading label="Loading lessons…" bare />;
   if (lessons.length === 0) return <p className="text-sm text-ink/65">{emptyLabel}</p>;
 
   return (

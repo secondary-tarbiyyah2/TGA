@@ -8,6 +8,7 @@ import { Switch } from "@/components/learn/class/AnnouncementComposer";
 import { Select } from "@/components/learn/Select";
 
 import { askConfirm } from "@/components/learn/kit";
+import { ui } from "@/components/learn/ui";
 type AssessmentType = { id: string; name: string };
 
 function Group({ title, children }: { title: string; children: React.ReactNode }) {
@@ -113,6 +114,14 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
     }
   };
 
+  const saveLink = async () => {
+    const supabase = getSupabaseClient();
+    if (!s || !supabase) return;
+    if (!(await persist(s, "Teams link saved. Pupils and families see Join on Teams from 10 minutes before each lesson."))) return;
+    const { error } = await supabase.rpc("set_class_meeting_url", { p_class_id: classId, p_url: s.meetingLink.trim() ? safeHttpUrl(s.meetingLink) : null });
+    if (error) setMsg({ tone: "err", text: "The link was saved, but lessons could not be updated. Try again." });
+  };
+
   const addCat = async () => {
     const supabase = getSupabaseClient();
     const w = Number(newCat.weight);
@@ -154,6 +163,38 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
         </p>
       )}
 
+      <section aria-labelledby="teams-link" className="rounded-2xl border-2 border-forest-700 bg-white p-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 id="teams-link" className="text-base font-semibold text-ink">
+              Live lessons on Teams
+            </h2>
+            <p className="mt-1 text-sm text-ink/70">Paste this class&apos;s recurring Teams meeting link once. Every lesson in the timetable uses it.</p>
+          </div>
+          <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${s.meetingLink.trim() ? "bg-forest-100 text-forest-900" : "bg-gold-100 text-gold-900"}`}>{s.meetingLink.trim() ? "Link set" : "No link yet"}</span>
+        </div>
+        <label htmlFor="class-teams-link" className="mt-4 block text-sm font-medium text-ink">
+          Teams meeting link
+        </label>
+        <div className="mt-1 flex flex-wrap gap-2">
+          <input id="class-teams-link" type="url" inputMode="url" value={s.meetingLink} onChange={(e) => set({ meetingLink: e.target.value })} placeholder="https://teams.microsoft.com/l/meetup-join/…" aria-describedby="class-teams-help" className={`${input} min-w-0 flex-1 basis-72`} />
+          {(() => {
+            const url = s.meetingLink.trim() ? safeHttpUrl(s.meetingLink) : null;
+            return url ? (
+              <a href={url} target="_blank" rel="noopener noreferrer" className={ui.btnSecondary}>
+                Test link
+              </a>
+            ) : null;
+          })()}
+          <button type="button" onClick={saveLink} className={ui.btnPrimary}>
+            Save link
+          </button>
+        </div>
+        <p id="class-teams-help" className="mt-1 text-xs text-ink/65">
+          In Teams, open the class&apos;s meeting, choose Copy join link and paste it here. Pupils and families get a Join on Teams button from 10 minutes before each lesson.
+        </p>
+      </section>
+
       <Group title="Class details">
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">
@@ -177,11 +218,6 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
         <label className="block text-sm font-medium text-ink">
           Description
           <textarea value={s.description} onChange={(e) => set({ description: e.target.value })} maxLength={1000} rows={3} className={`${input} mt-1`} />
-        </label>
-        <label className="block text-sm font-medium text-ink">
-          Virtual lesson link
-          <input type="url" value={s.meetingLink} onChange={(e) => set({ meetingLink: e.target.value })} placeholder="https://… (Teams, Meet or Zoom)" className={`${input} mt-1`} />
-          <span className="mt-1 block text-xs font-normal text-ink/65">This is where &ldquo;Join lesson&rdquo; takes pupils and families.</span>
         </label>
         <button type="button" onClick={saveDetails} className="rounded-lg bg-gold-700 px-5 py-2 text-sm font-medium text-white hover:bg-gold-900">
           Save details

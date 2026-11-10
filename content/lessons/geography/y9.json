@@ -2,7 +2,7 @@
   "subject": "Geography",
   "year": "y9",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "National Curriculum KS3 (human and physical geography: natural resources, energy, sustainability); aligned to AQA GCSE 9-1 resource management content; school AQA textbook structure used for command-word style questions | Spring 1 2027 (lessons 9 to 13): Tarbiyyah Geography Curriculum Intent; Oxford Geog.3 chapter 3 (Earning a living); Hodder Progress in Geography KS3 unit 3 | Spring 2 2027: Geog.3 chapter 4 (development and inequality); TGA Year 9 pack",
+  "source": "National Curriculum KS3 (human and physical geography: natural resources, energy, sustainability); aligned to AQA GCSE 9-1 resource management content; school AQA textbook structure used for command-word style questions | Spring 1 2027 (lessons 9 to 13): Tarbiyyah Geography Curriculum Intent; Oxford Geog.3 chapter 3 (Earning a living); Hodder Progress in Geography KS3 unit 3 | Spring 2 2027: Geog.3 chapter 4 (development and inequality); TGA Year 9 pack | Summer 1 2027 (lessons 20 to 24): Geog.3 chapter 5 (tectonic hazards) and Progress in Geography unit 11; Haiti 2010 and Mount St Helens from the school intent; TGA Year 9 pack",
   "lessons": [
     {
       "unit": "Unit 1: Resources, energy and sustainability",
@@ -3265,6 +3265,1255 @@
         {
           "find": "solar panel village Africa",
           "alt": "A small solar panel in a village",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Tectonic hazards",
+      "n": 20,
+      "title": "What is the Earth like inside? A cracked Earth",
+      "bigQuestion": "If the Earth's crust is like the skin of an apple, what is happening underneath it?",
+      "objectives": [
+        "To understand the Earth's layers and how the crust is broken into moving plates"
+      ],
+      "successCriteria": [
+        "All: describe the Earth's four layers",
+        "Most: compare oceanic and continental crust",
+        "Some: explain how convection moves plates"
+      ],
+      "crossCurricular": "Science: heat transfer by convection",
+      "smsc": "Spiritual: the earth made stable for life",
+      "keywords": [
+        {
+          "term": "crust",
+          "def": "the thin, solid outer layer of the Earth"
+        },
+        {
+          "term": "mantle",
+          "def": "the thick layer of hot rock below the crust"
+        },
+        {
+          "term": "core",
+          "def": "the hot iron and nickel centre of the Earth"
+        },
+        {
+          "term": "tectonic plate",
+          "def": "a large piece of the Earth's broken crust"
+        },
+        {
+          "term": "convection current",
+          "def": "a loop of heat rising and sinking in the mantle"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If the Earth's crust is as thin as an apple skin, what is happening underneath?"
+      },
+      "islamicLink": {
+        "text": "Allah says He placed firm mountains in the earth so that it would not shake with people (Al-Anbiya 21:31), and made the mountains as pegs (An-Naba 78:7). We study the forces beneath the crust as part of His creation.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "HDI combines health, education and:",
+          "a": "Income",
+          "mins": 1,
+          "options": [
+            "Income",
+            "Climate"
+          ]
+        },
+        {
+          "q": "A country with high GNI per person is usually:",
+          "a": "More developed",
+          "mins": 1,
+          "options": [
+            "More developed",
+            "Less developed"
+          ]
+        },
+        {
+          "q": "Name one way to measure development.",
+          "a": "GNI per person, HDI, life expectancy, literacy",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The layers",
+          "bullets": [
+            "Crust: thin and solid",
+            "Mantle: hot rock that flows slowly",
+            "Outer core: liquid iron and nickel",
+            "Inner core: solid, about 5,000°C or more"
+          ],
+          "note": "Geog.3 5.1.",
+          "diagram": {
+            "centre": "Earth's layers",
+            "items": [
+              "crust",
+              "upper mantle",
+              "lower mantle",
+              "outer core (liquid)",
+              "inner core (solid)"
+            ]
+          }
+        },
+        {
+          "heading": "Two kinds of crust",
+          "bullets": [
+            "Oceanic: thin, dense, basalt",
+            "Continental: thick, lighter, granite",
+            "Oceanic sinks below continental"
+          ],
+          "note": "Oceanic crust is about 5 to 10 km thick; continental about 25 to 70 km.",
+          "compare": {
+            "left": {
+              "title": "Oceanic crust",
+              "points": [
+                "5 to 10 km thick",
+                "denser (basalt)",
+                "can sink"
+              ]
+            },
+            "right": {
+              "title": "Continental crust",
+              "points": [
+                "25 to 70 km thick",
+                "lighter (granite)",
+                "does not sink"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "A cracked Earth",
+          "bullets": [
+            "The crust is broken into plates",
+            "Earthquakes and volcanoes follow plate edges",
+            "The Ring of Fire circles the Pacific"
+          ],
+          "note": "Geog.3 5.2. Compare the earthquake map with the plate map."
+        },
+        {
+          "heading": "Why plates move",
+          "bullets": [
+            "Heat from the core warms the mantle",
+            "Convection currents rise and sink",
+            "Ridge push and slab pull"
+          ],
+          "note": "Model the convection sequence.",
+          "model": {
+            "problem": "How does convection move plates?",
+            "steps": [
+              "The core heats the lower mantle",
+              "Hot rock rises slowly and spreads",
+              "It cools and sinks again",
+              "The moving mantle drags the plates; slab pull also pulls sinking plates down"
+            ],
+            "answer": "A four-step explanation of plate movement"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which crust is denser and can sink?",
+            "options": [
+              "Continental",
+              "Oceanic",
+              "Both equally"
+            ],
+            "answer": 1,
+            "why": "Oceanic crust (basalt) is denser, so it sinks beneath continental crust."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which layer is liquid?",
+          "a": "The outer core",
+          "mins": 1,
+          "model": "The inner core is solid because of huge pressure.\nThe mantle is solid rock that flows slowly.\nThe outer core is liquid metal."
+        },
+        {
+          "q": "What is the Ring of Fire?",
+          "a": "A belt of volcanoes and earthquakes around the Pacific",
+          "mins": 2
+        },
+        {
+          "q": "Name one plate.",
+          "a": "Pacific, Eurasian, African, North American, Indo-Australian, Nazca",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw and label a cross-section of the Earth, then write a paragraph explaining how plates move, using convection, ridge push and slab pull.",
+          "a": "Accurate labelled diagram and a correct explanation",
+          "mins": 15,
+          "model": "Teacher draws the crust and mantle layers first."
+        },
+        {
+          "q": "Extend: Compare the world maps of earthquakes and plates: describe the pattern.",
+          "a": "Earthquakes cluster along plate boundaries, especially around the Pacific",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: How do scientists know about layers they cannot see?",
+          "a": "Seismic waves change speed and direction through different layers",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "The mantle is:",
+          "a": "Hot rock that flows slowly",
+          "mins": 1,
+          "options": [
+            "Hot rock that flows slowly",
+            "Liquid water"
+          ]
+        },
+        {
+          "q": "Big question: what is happening under the 'apple skin'?",
+          "a": "Convection in the hot mantle slowly moves the cracked plates",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a fold-out revision card of the Earth's layers with thicknesses and states.",
+      "send": "SEND: labelled diagram to complete. EAL: glossary with diagram. Stretch: research how seismic waves revealed the liquid outer core.",
+      "resources": [
+        "Geog.3 (Oxford University Press) Student Book and scheme of work, chapter 5, lessons 5.1 and 5.2 and worksheets",
+        "Tarbiyyah Geography Curriculum Intent (KS3 long-term overview); TGA Year 9 pack, Geography, Summer 1; Progress in Geography KS3 (Hodder) unit 11 (Earthquakes and volcanoes)",
+        "Earth cross-section and world plate map (portal printable)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Earth layers cross section diagram",
+          "alt": "A diagram of the Earth's layers",
+          "for": "teach:1"
+        },
+        {
+          "find": "tectonic plates world map",
+          "alt": "A map of the tectonic plates",
+          "for": "teach:3"
+        },
+        {
+          "find": "Thingvellir rift Iceland",
+          "alt": "Where two plates meet in Iceland",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Tectonic hazards",
+      "n": 21,
+      "title": "A closer look at plate movements",
+      "bigQuestion": "Why does Iceland get bigger every year while the Himalayas get taller?",
+      "objectives": [
+        "To understand the different types of plate boundary and the landforms and hazards at each"
+      ],
+      "successCriteria": [
+        "All: describe constructive, destructive and conservative boundaries",
+        "Most: explain what happens at each",
+        "Some: name a real example of each"
+      ],
+      "crossCurricular": "Science: forces and rock types",
+      "smsc": "Spiritual: mountains rising as a sign of Allah's power",
+      "keywords": [
+        {
+          "term": "constructive boundary",
+          "def": "where plates move apart and new crust forms"
+        },
+        {
+          "term": "destructive boundary",
+          "def": "where plates move together and one sinks"
+        },
+        {
+          "term": "conservative boundary",
+          "def": "where plates slide past each other"
+        },
+        {
+          "term": "subduction",
+          "def": "one plate sinking beneath another"
+        },
+        {
+          "term": "fold mountains",
+          "def": "mountains formed when plates push rock upwards"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why does Iceland get wider every year while the Himalayas get taller?"
+      },
+      "starter": [
+        {
+          "q": "The outer core is:",
+          "a": "Liquid",
+          "mins": 1,
+          "options": [
+            "Liquid",
+            "Solid"
+          ]
+        },
+        {
+          "q": "Oceanic crust is:",
+          "a": "Denser",
+          "mins": 1,
+          "options": [
+            "Denser",
+            "Lighter"
+          ]
+        },
+        {
+          "q": "What moves the plates?",
+          "a": "Convection currents, ridge push and slab pull",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Constructive",
+          "bullets": [
+            "Plates move apart",
+            "Magma rises to fill the gap",
+            "Mid-Atlantic Ridge; Iceland"
+          ],
+          "note": "Geog.3 5.3. Gentle volcanoes and small earthquakes."
+        },
+        {
+          "heading": "Destructive",
+          "bullets": [
+            "Plates move together",
+            "Oceanic plate subducts under continental",
+            "Trenches, explosive volcanoes, big earthquakes"
+          ],
+          "note": "Example: the Nazca Plate under South America makes the Andes."
+        },
+        {
+          "heading": "Collision and conservative",
+          "bullets": [
+            "Collision: two continental plates fold up mountains",
+            "Himalayas: India meets Eurasia",
+            "Conservative: San Andreas Fault, earthquakes only"
+          ],
+          "note": "No volcanoes at conservative boundaries: no magma rises.",
+          "table": {
+            "head": [
+              "Boundary",
+              "Movement",
+              "Hazards",
+              "Example"
+            ],
+            "rows": [
+              [
+                "constructive",
+                "apart",
+                "volcanoes, small earthquakes",
+                "Iceland"
+              ],
+              [
+                "destructive",
+                "together, subduction",
+                "explosive volcanoes, big earthquakes, tsunamis",
+                "Andes, Japan"
+              ],
+              [
+                "collision",
+                "together, no subduction",
+                "earthquakes, fold mountains",
+                "Himalayas"
+              ],
+              [
+                "conservative",
+                "side by side",
+                "earthquakes",
+                "San Andreas, California"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Explaining a boundary",
+          "bullets": [
+            "Name and movement",
+            "What happens to the crust",
+            "Hazards and landforms"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain a destructive boundary",
+            "steps": [
+              "Plates move towards each other",
+              "Denser oceanic plate subducts into the mantle",
+              "Friction causes earthquakes; melting forms magma",
+              "Magma rises to form explosive volcanoes; a trench forms"
+            ],
+            "answer": "A sequenced explanation"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which boundary has earthquakes but no volcanoes?",
+            "options": [
+              "Constructive",
+              "Destructive",
+              "Conservative"
+            ],
+            "answer": 2,
+            "why": "At conservative boundaries plates slide past; no magma rises, so no volcanoes."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is subduction?",
+          "a": "One plate sinking beneath another into the mantle",
+          "mins": 1,
+          "model": "Two plates push together.\nThe denser oceanic plate goes under.\nIt sinks into the mantle: subduction."
+        },
+        {
+          "q": "Which boundary created the Himalayas?",
+          "a": "Collision (two continental plates)",
+          "mins": 1
+        },
+        {
+          "q": "Name a constructive boundary.",
+          "a": "The Mid-Atlantic Ridge (Iceland)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw and annotate diagrams of a constructive, a destructive and a conservative boundary with arrows, hazards and an example.",
+          "a": "Three accurate annotated diagrams with examples",
+          "mins": 15,
+          "model": "Teacher draws the constructive boundary first."
+        },
+        {
+          "q": "Extend: Explain why destructive boundaries cause the most dangerous eruptions.",
+          "a": "Thick, sticky magma traps gas, causing explosive eruptions",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why is Iceland growing wider?",
+          "a": "It sits on the Mid-Atlantic Ridge where plates move apart a few centimetres a year",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Plates moving apart form a:",
+          "a": "Constructive boundary",
+          "mins": 1,
+          "options": [
+            "Constructive boundary",
+            "Conservative boundary"
+          ]
+        },
+        {
+          "q": "Big question: Iceland and the Himalayas?",
+          "a": "Iceland widens at a constructive boundary; the Himalayas rise where India collides with Eurasia",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the boundary table: four types, movement, hazards, example.",
+      "send": "SEND: diagrams to complete. EAL: glossary with diagrams. Stretch: research the Andes and the Nazca Plate.",
+      "resources": [
+        "Geog.3 (Oxford University Press) Student Book and scheme of work, chapter 5, lesson 5.3 (plate movements) and worksheets",
+        "Tarbiyyah Geography Curriculum Intent (KS3 long-term overview); TGA Year 9 pack, Geography, Summer 1; Progress in Geography KS3 (Hodder) unit 11 (Earthquakes and volcanoes)",
+        "Plate boundary diagram sheet (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Silfra fissure Iceland",
+          "alt": "A rift between two plates in Iceland",
+          "for": "teach:1"
+        },
+        {
+          "find": "San Andreas Fault aerial",
+          "alt": "The San Andreas Fault",
+          "for": "teach:3"
+        },
+        {
+          "find": "Himalayas aerial",
+          "alt": "The Himalayas",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Tectonic hazards",
+      "n": 22,
+      "title": "What is an earthquake? Sichuan 2008 and Haiti 2010",
+      "bigQuestion": "Why can two earthquakes of similar strength have such different death tolls?",
+      "objectives": [
+        "To understand what causes earthquakes and why their effects differ between places"
+      ],
+      "successCriteria": [
+        "All: explain focus, epicentre and magnitude",
+        "Most: describe the effects of two earthquakes",
+        "Some: explain why effects differ"
+      ],
+      "crossCurricular": "Maths: scales where each step multiplies",
+      "smsc": "Moral: our duty to help those in disaster",
+      "keywords": [
+        {
+          "term": "focus",
+          "def": "the point underground where an earthquake starts"
+        },
+        {
+          "term": "epicentre",
+          "def": "the point on the surface directly above the focus"
+        },
+        {
+          "term": "seismic waves",
+          "def": "waves of energy that travel out from the focus"
+        },
+        {
+          "term": "magnitude",
+          "def": "the size of an earthquake, measured on a scale"
+        },
+        {
+          "term": "aftershock",
+          "def": "a smaller earthquake after the main one"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might two earthquakes of similar strength kill very different numbers of people?"
+      },
+      "islamicLink": {
+        "text": "Allah describes the Day when the earth is shaken with its final shaking (Az-Zalzalah 99:1). Earthquakes remind believers of His power, and Islam teaches us to help those in hardship.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "At a conservative boundary plates:",
+          "a": "Slide past each other",
+          "mins": 1,
+          "options": [
+            "Slide past each other",
+            "Move apart"
+          ]
+        },
+        {
+          "q": "The Himalayas formed by:",
+          "a": "Collision",
+          "mins": 1,
+          "options": [
+            "Collision",
+            "Subduction"
+          ]
+        },
+        {
+          "q": "What is subduction?",
+          "a": "One plate sinking beneath another",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What happens?",
+          "bullets": [
+            "Plates stick, strain builds",
+            "Rock snaps at the focus",
+            "Seismic waves spread out"
+          ],
+          "note": "Geog.3 5.4.",
+          "cycle": [
+            "plates move",
+            "friction locks them",
+            "strain builds",
+            "rock slips: energy released",
+            "seismic waves shake the ground"
+          ]
+        },
+        {
+          "heading": "Measuring",
+          "bullets": [
+            "Seismometers record shaking",
+            "Magnitude scale: each whole number about 10 times more shaking",
+            "About 32 times more energy"
+          ],
+          "note": "The moment magnitude scale is now used; it works like the old Richter scale."
+        },
+        {
+          "heading": "Two earthquakes",
+          "bullets": [
+            "Sichuan, China, 12 May 2008: magnitude 7.9",
+            "Haiti, 12 January 2010: magnitude 7.0",
+            "Haiti's capital, Port-au-Prince, devastated"
+          ],
+          "note": "Death toll estimates: Sichuan about 69,000 dead and about 18,000 missing; Haiti estimates range from about 100,000 to over 300,000.",
+          "table": {
+            "head": [
+              "Feature",
+              "Sichuan 2008",
+              "Haiti 2010"
+            ],
+            "rows": [
+              [
+                "magnitude",
+                "7.9",
+                "7.0"
+              ],
+              [
+                "deaths (estimates)",
+                "about 69,000 plus missing",
+                "about 100,000 to over 300,000"
+              ],
+              [
+                "development",
+                "emerging economy",
+                "poorest country in the Americas"
+              ],
+              [
+                "main problem",
+                "collapsed schools and mountain landslides",
+                "poorly built homes in a crowded city"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Why effects differ",
+          "bullets": [
+            "Building quality",
+            "Population density near the epicentre",
+            "Wealth, preparation and emergency services"
+          ],
+          "note": "Model a comparison.",
+          "model": {
+            "problem": "Why did Haiti suffer so badly?",
+            "steps": [
+              "Epicentre close to the crowded capital",
+              "Many buildings not earthquake-resistant",
+              "Few resources for rescue and hospitals",
+              "Weak government and existing poverty"
+            ],
+            "answer": "Human factors turned a strong earthquake into a disaster"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The point on the surface above the focus is the:",
+            "options": [
+              "Fault",
+              "Epicentre",
+              "Magnitude"
+            ],
+            "answer": 1,
+            "why": "The epicentre is directly above the focus, where shaking is usually strongest."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is the focus?",
+          "a": "The point underground where the earthquake starts",
+          "mins": 1,
+          "model": "Rocks snap deep underground.\nThat starting point is the focus.\nAbove it, on the surface, is the epicentre."
+        },
+        {
+          "q": "Which was stronger: Sichuan or Haiti?",
+          "a": "Sichuan (7.9)",
+          "mins": 1
+        },
+        {
+          "q": "Give one reason Haiti suffered so badly.",
+          "a": "Poor buildings, crowded capital, poverty, weak services",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the portal response box: 'Compare the effects of the Sichuan and Haiti earthquakes and explain why they differed.' Use data from the table.",
+          "a": "Comparison with data and at least three explained reasons",
+          "mins": 15,
+          "model": "Both earthquakes were very powerful, but Haiti's death toll was higher despite a lower magnitude. This is because its epicentre was close to a crowded capital with poorly built homes."
+        },
+        {
+          "q": "Extend: Why are death toll figures for Haiti so uncertain?",
+          "a": "Destroyed records, mass burials, different counting methods",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Is a natural hazard ever purely natural? Explain.",
+          "a": "The hazard is natural but the disaster depends on human vulnerability",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Each step on the magnitude scale is about:",
+          "a": "10 times more shaking",
+          "mins": 1,
+          "options": [
+            "10 times more shaking",
+            "Twice the shaking"
+          ]
+        },
+        {
+          "q": "Big question: why different death tolls?",
+          "a": "Building quality, population near the epicentre, wealth and preparation",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a case study card for Haiti 2010: causes, effects, responses.",
+      "send": "SEND: comparison frame with data. EAL: glossary. Stretch: research Haiti's long-term recovery.",
+      "resources": [
+        "Geog.3 (Oxford University Press) Student Book and scheme of work, chapter 5, lessons 5.4 and 5.5 (earthquakes; Southwest China) and worksheets; Haiti 2010 from the school intent",
+        "Tarbiyyah Geography Curriculum Intent (KS3 long-term overview); TGA Year 9 pack, Geography, Summer 1; Progress in Geography KS3 (Hodder) unit 11 (Earthquakes and volcanoes)",
+        "Earthquake case study data sheet (portal printable; figures from USGS and published estimates)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "seismograph recording",
+          "alt": "A seismograph trace",
+          "for": "teach:2"
+        },
+        {
+          "find": "Port-au-Prince earthquake damage buildings",
+          "alt": "Damaged buildings in Port-au-Prince",
+          "for": "teach:3"
+        },
+        {
+          "find": "earthquake damaged road crack",
+          "alt": "A road cracked by an earthquake",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Tectonic hazards",
+      "n": 23,
+      "title": "Tsunami! What is a volcano? Mount St Helens",
+      "bigQuestion": "How can an earthquake under the sea destroy a coastline thousands of kilometres away?",
+      "objectives": [
+        "To understand how tsunamis form and how volcanoes erupt, using real examples"
+      ],
+      "successCriteria": [
+        "All: explain how a tsunami forms",
+        "Most: label the parts of a volcano",
+        "Some: describe the 1980 eruption of Mount St Helens"
+      ],
+      "crossCurricular": "Science: waves and energy transfer",
+      "smsc": "Spiritual: patience and help in disaster",
+      "keywords": [
+        {
+          "term": "tsunami",
+          "def": "a series of huge waves caused by sudden movement of the sea bed"
+        },
+        {
+          "term": "magma",
+          "def": "molten rock under the ground"
+        },
+        {
+          "term": "lava",
+          "def": "magma that reaches the surface"
+        },
+        {
+          "term": "composite volcano",
+          "def": "a steep volcano of layers of ash and lava"
+        },
+        {
+          "term": "lateral blast",
+          "def": "a sideways explosion from a volcano"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How can an earthquake under the sea destroy a coast thousands of kilometres away?"
+      },
+      "islamicLink": {
+        "text": "Allah tells us He will test people with fear, hunger and loss, and gives good news to the patient who say 'We belong to Allah and to Him we return' (Al-Baqarah 2:155 to 156). Muslims around the world gave help after the 2004 tsunami.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The epicentre is:",
+          "a": "Above the focus",
+          "mins": 1,
+          "options": [
+            "Above the focus",
+            "Below the focus"
+          ]
+        },
+        {
+          "q": "Haiti's earthquake was in:",
+          "a": "2010",
+          "mins": 1,
+          "options": [
+            "2010",
+            "2004"
+          ]
+        },
+        {
+          "q": "Give one reason earthquake effects differ.",
+          "a": "Building quality, population, wealth, preparation",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tsunami",
+          "bullets": [
+            "Sea bed suddenly lifts at a destructive boundary",
+            "Water above is pushed up",
+            "Waves race out, growing tall near shore"
+          ],
+          "note": "Geog.3 5.6.",
+          "cycle": [
+            "undersea earthquake",
+            "sea bed lifts",
+            "water displaced",
+            "fast waves cross the ocean",
+            "waves grow tall in shallow water"
+          ]
+        },
+        {
+          "heading": "26 December 2004",
+          "bullets": [
+            "Magnitude 9.1 earthquake off Sumatra",
+            "About 230,000 people died in 14 countries",
+            "Aceh, Indonesia was worst hit"
+          ],
+          "note": "There was no Indian Ocean warning system then; one was set up afterwards."
+        },
+        {
+          "heading": "What is a volcano?",
+          "bullets": [
+            "Magma chamber, vent, crater",
+            "Ash, gas and lava erupt",
+            "Composite volcanoes: steep and explosive"
+          ],
+          "note": "Geog.3 5.7.",
+          "diagram": {
+            "centre": "Composite volcano",
+            "items": [
+              "magma chamber",
+              "main vent",
+              "crater",
+              "layers of ash and lava",
+              "ash cloud",
+              "side vent"
+            ]
+          }
+        },
+        {
+          "heading": "Mount St Helens, 18 May 1980",
+          "bullets": [
+            "Washington State, USA",
+            "Earthquake triggered a huge landslide",
+            "Lateral blast; 57 people died"
+          ],
+          "note": "Model sequencing.",
+          "model": {
+            "problem": "Sequence the eruption",
+            "steps": [
+              "Magma rose; the north side bulged outwards",
+              "A magnitude 5.1 earthquake shook the volcano",
+              "The bulge collapsed in a giant landslide",
+              "Pressure released in a sideways blast and ash column"
+            ],
+            "answer": "A correct four-step sequence"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Tsunami waves grow tallest:",
+            "options": [
+              "In the deep ocean",
+              "As they reach shallow water near the coast",
+              "On land far inland"
+            ],
+            "answer": 1,
+            "why": "Waves slow and pile up in shallow water, growing much taller."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is the difference between magma and lava?",
+          "a": "Magma is underground; lava has reached the surface",
+          "mins": 1,
+          "model": "Molten rock underground is magma.\nWhen it comes out it is called lava.\nSame rock, different place."
+        },
+        {
+          "q": "When did Mount St Helens erupt?",
+          "a": "18 May 1980",
+          "mins": 1
+        },
+        {
+          "q": "Which area was worst hit in 2004?",
+          "a": "Aceh, Indonesia",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a labelled composite volcano and a tsunami formation diagram; then write a case study paragraph on Mount St Helens.",
+          "a": "Accurate diagrams; paragraph with date, place, sequence and effects",
+          "mins": 15,
+          "model": "Teacher labels the magma chamber and vent first."
+        },
+        {
+          "q": "Extend: Why did the 2004 tsunami kill so many people far from the earthquake?",
+          "a": "No warning system, crowded low coasts, waves crossed the ocean in hours",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: How do warning systems reduce tsunami deaths today?",
+          "a": "Sea-floor sensors and buoys detect waves; alerts and evacuation routes",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Mount St Helens is in:",
+          "a": "The USA",
+          "mins": 1,
+          "options": [
+            "The USA",
+            "Japan"
+          ]
+        },
+        {
+          "q": "Big question: how can an undersea quake destroy a distant coast?",
+          "a": "It lifts the sea bed, sending fast waves across the ocean that grow tall near shore",
+          "mins": 2
+        }
+      ],
+      "homework": "Make case study cards: 2004 tsunami and Mount St Helens 1980.",
+      "send": "SEND: diagrams to label. EAL: glossary with diagrams. Stretch: research why the Baiturrahman Mosque in Banda Aceh survived (text only).",
+      "resources": [
+        "Geog.3 (Oxford University Press) Student Book and scheme of work, chapter 5, lessons 5.6 and 5.7 (tsunami; volcanoes) and worksheets; Mount St Helens from the school intent",
+        "Tarbiyyah Geography Curriculum Intent (KS3 long-term overview); TGA Year 9 pack, Geography, Summer 1; Progress in Geography KS3 (Hodder) unit 11 (Earthquakes and volcanoes)",
+        "Volcano and tsunami diagram sheet (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mount St Helens crater",
+          "alt": "Mount St Helens after the eruption",
+          "for": "teach:4"
+        },
+        {
+          "find": "tsunami warning sign",
+          "alt": "A tsunami warning sign",
+          "for": "hook"
+        },
+        {
+          "find": "composite volcano diagram",
+          "alt": "A diagram of a composite volcano",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Tectonic hazards",
+      "n": 24,
+      "title": "Why live in a danger zone? How communities prepare; unit quiz",
+      "bigQuestion": "Why would anyone choose to live next to an active volcano?",
+      "objectives": [
+        "To understand why people live in tectonic danger zones and how they reduce the risk"
+      ],
+      "successCriteria": [
+        "All: give reasons people live near volcanoes and fault lines",
+        "Most: explain predict, protect and plan",
+        "Some: complete the unit quiz"
+      ],
+      "crossCurricular": "Design and technology: engineering for earthquakes",
+      "smsc": "Moral: wealth and fairness in who is protected",
+      "keywords": [
+        {
+          "term": "risk",
+          "def": "the chance of a hazard harming people"
+        },
+        {
+          "term": "vulnerability",
+          "def": "how easily people can be harmed"
+        },
+        {
+          "term": "prediction",
+          "def": "forecasting when and where a hazard may happen"
+        },
+        {
+          "term": "preparation",
+          "def": "getting ready before a hazard"
+        },
+        {
+          "term": "geothermal energy",
+          "def": "heat from inside the Earth used for power"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why would anyone choose to live next to an active volcano?"
+      },
+      "starter": [
+        {
+          "q": "Magma that reaches the surface is:",
+          "a": "Lava",
+          "mins": 1,
+          "options": [
+            "Lava",
+            "Ash"
+          ]
+        },
+        {
+          "q": "The 2004 tsunami was in the:",
+          "a": "Indian Ocean",
+          "mins": 1,
+          "options": [
+            "Indian Ocean",
+            "Atlantic"
+          ]
+        },
+        {
+          "q": "When did Mount St Helens erupt?",
+          "a": "18 May 1980",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why live there?",
+          "bullets": [
+            "Fertile volcanic soil",
+            "Geothermal energy and minerals",
+            "Jobs, tourism and family ties"
+          ],
+          "note": "Geog.3 5.8. Iceland gets much of its heating from geothermal energy.",
+          "sort": {
+            "columns": [
+              "Benefit",
+              "Risk"
+            ],
+            "cards": [
+              "fertile soil",
+              "explosive eruptions",
+              "geothermal power",
+              "earthquakes",
+              "tourism jobs",
+              "tsunamis"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Predict",
+          "bullets": [
+            "Seismometers detect small tremors",
+            "Measure gas and ground swelling",
+            "Earthquakes cannot be predicted precisely"
+          ],
+          "note": "Volcanoes give more warning signs than earthquakes."
+        },
+        {
+          "heading": "Protect and plan",
+          "bullets": [
+            "Earthquake-resistant buildings",
+            "Warning systems and evacuation routes",
+            "Drills: Japan holds a national drill day each 1 September"
+          ],
+          "note": "Geog.3 5.9.",
+          "table": {
+            "head": [
+              "Strategy",
+              "Example",
+              "Why it helps"
+            ],
+            "rows": [
+              [
+                "predict",
+                "monitoring gas and tremors",
+                "time to evacuate"
+              ],
+              [
+                "protect",
+                "cross-bracing, base isolators",
+                "buildings stay standing"
+              ],
+              [
+                "plan",
+                "drills, emergency kits",
+                "people know what to do"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Evaluating strategies",
+          "bullets": [
+            "Effectiveness",
+            "Cost",
+            "Who can afford it?"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Is earthquake-resistant building the best strategy?",
+            "steps": [
+              "Very effective: buildings cause most deaths",
+              "But: expensive, slow to retrofit",
+              "Poorer countries may not afford it",
+              "Judgement: best long term, with cheap drills and planning now"
+            ],
+            "answer": "A judgement weighing effectiveness, cost and fairness"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which can scientists predict better?",
+            "options": [
+              "Earthquakes",
+              "Volcanic eruptions",
+              "Both exactly"
+            ],
+            "answer": 1,
+            "why": "Volcanoes show warning signs such as gas and swelling; earthquakes cannot be predicted precisely."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give two reasons people live near volcanoes.",
+          "a": "Fertile soil, geothermal energy, tourism, jobs, family",
+          "mins": 1,
+          "model": "Volcanic ash makes soil rich.\nFarmers grow good crops.\nHeat from the ground gives energy.\nSo people stay."
+        },
+        {
+          "q": "What do base isolators do?",
+          "a": "Let a building move separately from the ground shaking",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Tectonic hazards unit quiz in the portal (20 questions: structure, plates, earthquakes, tsunamis, volcanoes, living with hazards).",
+          "a": "Answers on the quiz mark scheme",
+          "mins": 15,
+          "model": "Teacher reads question 1 and shows the diagram question format."
+        },
+        {
+          "q": "Core: In the portal response box: 'Predict, protect or plan: which is most effective?' (one paragraph with an example).",
+          "a": "A justified judgement with an example such as Japan",
+          "mins": 8
+        },
+        {
+          "q": "Stretch: Why does wealth affect how well a community can prepare?",
+          "a": "Money for monitoring, strong buildings and services; poorer communities more vulnerable",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Geothermal energy comes from:",
+          "a": "Heat inside the Earth",
+          "mins": 1,
+          "options": [
+            "Heat inside the Earth",
+            "The wind"
+          ]
+        },
+        {
+          "q": "Big question: why live by a volcano?",
+          "a": "Benefits like fertile soil and energy outweigh rare risks for many, and some have little choice",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct your quiz with the feedback; next half term: Russia and the Middle East.",
+      "send": "SEND: quiz read aloud; strategy table. EAL: glossary. Stretch: research Iceland's use of geothermal energy.",
+      "resources": [
+        "Geog.3 (Oxford University Press) Student Book and scheme of work, chapter 5, lessons 5.8 and 5.9 (living in a danger zone; preparing) and the end-of-chapter test as a model",
+        "Tarbiyyah Geography Curriculum Intent (KS3 long-term overview); TGA Year 9 pack, Geography, Summer 1; Progress in Geography KS3 (Hodder) unit 11 (Earthquakes and volcanoes)",
+        "Tectonic hazards unit quiz (portal quiz; assessed)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "geothermal power station Iceland",
+          "alt": "A geothermal power station in Iceland",
+          "for": "teach:1"
+        },
+        {
+          "find": "base isolator building earthquake",
+          "alt": "An earthquake base isolator",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mount Vesuvius Naples",
+          "alt": "Mount Vesuvius above Naples",
           "for": "hook"
         }
       ]

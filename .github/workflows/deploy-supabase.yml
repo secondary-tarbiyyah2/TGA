@@ -61,10 +61,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
-          version: latest
+          version: 2.122.1
       # `supabase test db` needs a local stack already running — it doesn't
       # start one itself. `supabase start` spins up ephemeral Postgres +
       # friends via Docker (preinstalled on ubuntu-latest) — no project
@@ -88,16 +88,16 @@ jobs:
     env:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
 
       - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
-          version: latest
+          version: 2.122.1
 
       - name: Find the project ref
         id: project
@@ -244,6 +244,21 @@ jobs:
             supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" BBB_SERVER_URL="$BBB_SERVER_URL" BBB_SECRET="$BBB_SECRET"
           else
             echo "BBB_SERVER_URL / BBB_SECRET not set in repo secrets; calls will use the Teams fallback."
+          fi
+
+      # Web push (push-notify, 0199). The public key is a repo VARIABLE
+      # (also baked into the site build); the private key is a secret.
+      # Generate the pair once with `npx web-push generate-vapid-keys`.
+      - name: Set web push secrets (if provided)
+        env:
+          VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ vars.VAPID_SUBJECT || 'mailto:globalacademy@tarbiyyah.co.uk' }}
+        run: |
+          if [ -n "$VAPID_PUBLIC_KEY" ] && [ -n "$VAPID_PRIVATE_KEY" ]; then
+            supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" VAPID_PUBLIC_KEY="$VAPID_PUBLIC_KEY" VAPID_PRIVATE_KEY="$VAPID_PRIVATE_KEY" VAPID_SUBJECT="$VAPID_SUBJECT"
+          else
+            echo "VAPID keys not set; push notifications stay off."
           fi
 
       # Lets publish-website-content trigger a site rebuild after an admin

@@ -167,7 +167,7 @@ export function ActionCentre({ role }: { role: Role }) {
           </nav>
 
           <div ref={listRef} className="min-w-0 space-y-5">
-            <OwnPrintHeader title={`Action centre: ${catLabel}`} />
+            <OwnPrintHeader title={`Waiting for you: ${catLabel}`} />
             <div className={`${ui.toolbar} print:hidden`}>
               <p className="mr-auto text-sm text-ink/70">
                 <span className="font-semibold text-ink">{catLabel}</span> · {sections.reduce((n, s) => n + s.list.length, 0)} {sections.reduce((n, s) => n + s.list.length, 0) === 1 ? "item" : "items"}
@@ -198,7 +198,7 @@ export function ActionCentre({ role }: { role: Role }) {
           <summary className="cursor-pointer text-sm font-semibold text-ink">How missing homework is followed up</summary>
           <ol className="mt-2 space-y-1.5 text-sm text-ink/80">
             <li><b>Due date:</b> anything not handed in is marked missing by itself. No one has to mark it.</li>
-            <li><b>1 day:</b> the pupil and parent see it in their own Action centre, and the pupil can hand it in late.</li>
+            <li><b>1 day:</b> the pupil and parent see it under Waiting for you, and the pupil can hand it in late.</li>
             <li><b>2 days:</b> tell the parent.</li>
             <li><b>3 days:</b> chase the pupil and agree a day.</li>
             <li><b>5 days:</b> escalate to the head teacher.</li>
@@ -216,7 +216,7 @@ function CategorySection({ title, icon, list, role, isDone, onDone, showTitle }:
   const id = `ac-${title.toLowerCase().replace(/[^a-z]+/g, "-")}`;
   return (
     <section ref={ref} aria-labelledby={id} className="space-y-2">
-      <OwnPrintHeader title={`Action centre: ${title}`} />
+      <OwnPrintHeader title={`Waiting for you: ${title}`} />
       <div className={`flex items-center gap-2 ${showTitle ? "" : "sr-only"}`}>
         <Icon name={icon} size="sm" className="h-4 w-4 text-ink/65" />
         <h2 id={id} className="mr-auto text-base font-semibold text-ink">
@@ -242,7 +242,7 @@ function ItemRow({ item: i, role, done, onDone }: { item: ActionItem; role: Role
   const u = URGENCY[i.urgency];
   return (
     <li ref={ref} className={`rounded-2xl border bg-white p-4 ${i.urgency === "now" && !done ? "border-red-200" : "border-gold-light"} ${done ? "opacity-70" : ""}`}>
-      <OwnPrintHeader title={`Action centre: ${i.area}`} />
+      <OwnPrintHeader title={`Waiting for you: ${i.area}`} />
       <div className="flex flex-wrap items-start gap-x-4 gap-y-3">
         <div className="min-w-0 flex-1 basis-72">
           <p className="flex flex-wrap items-center gap-2 text-xs">

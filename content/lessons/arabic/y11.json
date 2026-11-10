@@ -5,7 +5,7 @@
   "boardShort": "Edexcel GCSE 1AA0",
   "exam": "Pearson Edexcel International GCSE (9-1) Arabic (First Language) (4AA1)",
   "examShort": "Edexcel IGCSE 4AA1",
-  "source": "Edexcel spec data file (content/syllabus/ks4/arabic.json): units 3.1, 3.2, 4.1, 4.2, 4.3, 5.1, 5.2 as placed for Year 11, plus exam-skills lessons for Papers 1 to 4. Original lessons written for TGA; no existing Year 11 Arabic file. The Pearson grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read: structures follow well-established Modern Standard Arabic and the themes; teacher to cross-check against Appendices 2 and 3. All reading and listening texts are original, not board material. | Gap-fill against Pearson Edexcel GCSE Arabic 1AA0 specification | Spring 1 2027 (lessons 18, 19, 21, 26 to 32): founding-year revision programme in the school's theme order (11 Jan Theme 1 and the 1AA0 conversation; 18 Jan Theme 2 and 4AA1 summary; 25 Jan Theme 3 and grammar with Arabic terms; 1 Feb extended writing, 1AA0 role play and picture task; 8 Feb mock week), from the Year 11 pack; all texts and questions are our own, exam-style, not board material; lessons v3 | Spring 2 2027 (lessons 33 to 43 new): Year 11 pack Arabic Spring 2 revision (mock feedback and targets; error repair; Theme 4 reading and writing; Theme 5; grammar test with Arabic terms; Group B 1AA0 speaking mock with Group A writing; timed reading and writing practice; feedback; weakest skill), before the May exams; our own texts and tasks, Pearson past papers from the school's copies as homework; lessons v3",
+  "source": "Edexcel spec data file (content/syllabus/ks4/arabic.json): units 3.1, 3.2, 4.1, 4.2, 4.3, 5.1, 5.2 as placed for Year 11, plus exam-skills lessons for Papers 1 to 4. Original lessons written for TGA; no existing Year 11 Arabic file. The Pearson grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read: structures follow well-established Modern Standard Arabic and the themes; teacher to cross-check against Appendices 2 and 3. All reading and listening texts are original, not board material. | Gap-fill against Pearson Edexcel GCSE Arabic 1AA0 specification | Spring 1 2027 (lessons 18, 19, 21, 26 to 32): founding-year revision programme in the school's theme order (11 Jan Theme 1 and the 1AA0 conversation; 18 Jan Theme 2 and 4AA1 summary; 25 Jan Theme 3 and grammar with Arabic terms; 1 Feb extended writing, 1AA0 role play and picture task; 8 Feb mock week), from the Year 11 pack; all texts and questions are our own, exam-style, not board material; lessons v3 | Spring 2 2027 (lessons 33 to 43 new): Year 11 pack Arabic Spring 2 revision (mock feedback and targets; error repair; Theme 4 reading and writing; Theme 5; grammar test with Arabic terms; Group B 1AA0 speaking mock with Group A writing; timed reading and writing practice; feedback; weakest skill), before the May exams; our own texts and tasks, Pearson past papers from the school's copies as homework; lessons v3 | Summer 1 2027 (lessons 17 and 20 upgraded, 44 to 47 new): Year 11 pack Arabic Summer 1 final preparation: reading papers and translation; Group A summary and grammar with Group B speaking final preparation (April to May window); writing papers; timed practice and exam-day plan; optional clinics on Mon 24 May (1AA0 listening and reading) and the week of 31 May (1AA0 writing before Paper 4 on 7 Jun); no live lessons after the exams; our own texts and tasks; lessons v3",
   "lessons": [
     {
       "unit": "Unit 3.1: What school is like",
@@ -2806,165 +2806,209 @@
       "boardShort": "Edexcel GCSE 1AA0"
     },
     {
-      "unit": "Exam skills: Papers 1 to 4 (all five themes)",
+      "unit": "Summer 1: Final preparation and exams",
       "n": 17,
-      "title": "Reading Paper: translating Arabic into English",
+      "title": "Reading papers: technique and translation into English",
       "duration": 50,
-      "bigQuestion": "How do I turn Arabic into accurate, natural English without a dictionary?",
+      "bigQuestion": "When you meet an unknown word in an exam, what are three things you can do instead of panicking?",
       "objectives": [
-        "Break a text into chunks and identify verbs, subjects and tenses",
-        "Handle common Arabic structures in English",
-        "Translate a short passage accurately"
+        "To understand how to approach the reading papers (4AA1 Paper 1 reading; 1AA0 Paper 3) and translate accurately into English"
       ],
       "successCriteria": [
-        "All: translate simple sentences with the main ideas correct",
-        "Most: translate with correct tenses and no omissions",
-        "Some: translate relative clauses, the passive and verb-first sentences naturally"
+        "All: follow the reading routine on a timed text",
+        "Most: answer in the language the question asks",
+        "Some: translate a short passage into natural, accurate English"
       ],
-      "crossCurricular": "English: translation and grammatical terminology; MFL: literal versus natural translation",
-      "smsc": "Cultural: respect for meaning and accuracy (amāna) when conveying another's words",
+      "smsc": "Moral: perseverance under exam conditions",
       "keywords": [
         {
-          "term": "تَرْجَمَةٌ",
-          "def": "translation (tarjama)"
+          "term": "قِرَاءَة (qira'ah)",
+          "def": "reading"
         },
         {
-          "term": "فِعْلٌ",
-          "def": "verb (fiʿl)"
+          "term": "تَرْجَمَة (tarjamah)",
+          "def": "translation"
         },
         {
-          "term": "فَاعِلٌ",
-          "def": "subject / doer (fāʿil)"
+          "term": "سِيَاق (siyaq)",
+          "def": "context"
         },
         {
-          "term": "مُضَافٌ",
-          "def": "first term of an idafa (muḍāf)"
+          "term": "جِذْر (jidhr)",
+          "def": "root (of a word)"
         },
         {
-          "term": "حَرْفُ جَرٍّ",
-          "def": "preposition (ḥarfu jarr)"
+          "term": "نَفْي (nafy)",
+          "def": "negation"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you meet an unknown word in an exam, what are three things you can do instead of panicking?",
+        "a": "Use the context, look for the root, and check whether you need that word at all to answer."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Read in the name of your Lord who created' (al-'Alaq 96:1).",
+        "at": "start"
+      },
       "starter": [
-        "Retrieval: give the English for 'بِسَبَبِ الْجَفَافِ' and 'لِذَلِكَ'.",
-        "Translate: 'مُوَظَّفٌ يُجِيدُ الْإِنْجِلِيزِيَّةَ'.",
-        "Say the root of 'مَكْتَبَةٌ'."
+        {
+          "q": "Bismillah. 'Weakest skill' practice: which strategy fits listening?",
+          "a": "Predict, note numbers and negatives",
+          "mins": 1,
+          "options": [
+            "Predict, note numbers and negatives",
+            "Write every word"
+          ]
+        },
+        {
+          "q": "The passive of كَتَبَ is ...",
+          "a": "كُتِبَ",
+          "mins": 1,
+          "options": [
+            "كُتِبَ",
+            "يَكْتُبُ"
+          ]
+        },
+        {
+          "q": "When is 4AA1 Paper 1?",
+          "a": "Mon 10 May (pm)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The method",
-          "bullets": [
-            "Read the whole text first for the gist",
-            "Split into chunks at the verbs",
-            "Identify tense, subject and object",
-            "Write natural English, then check nothing is missing"
-          ],
-          "note": "Paper 3 ends with a translation from Arabic into English (Section C per the spec file). Marks reward accurate content, so the order is meaning first, style second. Emphasise: no dictionaries; use roots and context for unknown words; never leave a gap, write the best guess. Remind pupils that each small word (negation, a preposition, a time word) can carry a mark."
-        },
-        {
-          "heading": "Arabic structure to English",
+          "heading": "The two reading papers",
+          "bullets": [],
+          "note": "Begin with Bismillah. Exams: 4AA1 Paper 1 Mon 10 May (pm), Paper 2 Thu 20 May (pm); 1AA0 Papers 1 and 3 Mon 24 May (pm), Paper 4 Mon 7 Jun (pm); 1AA0 speaking in the centre's April to May window.",
           "table": {
             "head": [
-              "Arabic structure",
-              "Example",
-              "English handling"
+              "Paper",
+              "What it asks"
             ],
             "rows": [
               [
-                "Verb before subject",
-                "ذَهَبَتِ الطَّالِبَاتُ",
-                "The students went (verb stays singular in Arabic)"
+                "4AA1 Paper 1 (2h15, 75 marks)",
+                "Reading on two texts; summary of a third; grammar"
               ],
               [
-                "Idafa (no 'al-' on the first noun)",
-                "مَدْرَسَةُ الْبَنَاتِ",
-                "the girls' school / the school of the girls"
-              ],
-              [
-                "Relative clause, no pronoun",
-                "مُوَظَّفٌ يُجِيدُ الْعَرَبِيَّةَ",
-                "an employee who is fluent in Arabic"
-              ],
-              [
-                "Passive",
-                "كُرِّمَ الطُّلَّابُ",
-                "the students were honoured"
-              ],
-              [
-                "Present with مُنْذُ",
-                "أَدْرُسُ الْعَرَبِيَّةَ مُنْذُ سَنَتَيْنِ",
-                "I have been studying Arabic for two years"
-              ],
-              [
-                "كَانَ + present",
-                "كَانَ يَذْهَبُ مَشْيًا",
-                "he used to go on foot"
-              ],
-              [
-                "Negative past",
-                "لَمْ أَذْهَبْ",
-                "I did not go"
+                "1AA0 Paper 3 (F 50 min, H 1h05)",
+                "Questions in English and Arabic; translation into English"
               ]
             ]
-          },
-          "note": "Go through each row with a quick example and ask pupils to translate it. These are the structures that most often cause mistranslation. Insist that pupils say the Arabic structure aloud before translating. Pupils add one more example of each from their notes."
+          }
         },
         {
-          "heading": "A practice passage",
-          "quote": {
-            "text": "ذَهَبَتْ مَدْرَسَتُنَا فِي رِحْلَةٍ إِلَى مَدِينَةِ الْإِسْكَنْدَرِيَّةِ. زُرْنَا الْمَكْتَبَةَ الْكَبِيرَةَ وَتَنَاوَلْنَا الْغَدَاءَ عَلَى الشَّاطِئِ. كَانَ الْجَوُّ جَمِيلًا وَلَكِنَّ الْمَطَرَ سَقَطَ فِي الْمَسَاءِ، لِذَلِكَ عُدْنَا مُبَكِّرِينَ.",
-            "source": "Original practice passage for this lesson"
-          },
-          "note": "Original passage. Pupils first underline the verbs and say the tense of each. Then they translate in chunks. Check difficult words: عُدْنَا (we returned), مُبَكِّرِينَ (early, plural), الْمَطَرَ (the rain). Prompt: how would an examiner know you understood وَلَكِنَّ (but)? Collect first translations and compare."
+          "heading": "Reading routine",
+          "bullets": [],
+          "note": "Model on our own text.",
+          "cycle": [
+            "Read the question and its language",
+            "Underline key words in the question",
+            "Find the matching part of the text",
+            "Check negatives (لَا، لَمْ، لَيْسَ)",
+            "Answer briefly and exactly"
+          ]
         },
         {
-          "heading": "Model: translating step by step",
+          "heading": "Translating into English",
+          "bullets": [],
+          "note": "Model.",
           "model": {
-            "problem": "Translate: ذَهَبَتْ مَدْرَسَتُنَا فِي رِحْلَةٍ إِلَى مَدِينَةِ الْإِسْكَنْدَرِيَّةِ. زُرْنَا الْمَكْتَبَةَ الْكَبِيرَةَ وَتَنَاوَلْنَا الْغَدَاءَ عَلَى الشَّاطِئِ.",
+            "problem": "Translate: لَمْ يَذْهَبْ أَخِي إِلَى المَدْرَسَةِ أَمْسِ لِأَنَّهُ كَانَ مَرِيضًا.",
             "steps": [
-              "ذَهَبَتْ مَدْرَسَتُنَا فِي رِحْلَةٍ = our school went on a trip",
-              "إِلَى مَدِينَةِ الْإِسْكَنْدَرِيَّةِ = to the city of Alexandria",
-              "زُرْنَا الْمَكْتَبَةَ الْكَبِيرَةَ = we visited the large library",
-              "وَتَنَاوَلْنَا الْغَدَاءَ عَلَى الشَّاطِئِ = and we had lunch on the beach"
+              "لَمْ + verb = past negative: did not go",
+              "Subject after the verb: my brother",
+              "Keep every detail: to school, yesterday",
+              "Reason: because he was ill"
             ],
-            "answer": "Our school went on a trip to the city of Alexandria. We visited the large library and had lunch on the beach."
-          },
-          "note": "Think aloud with the first two sentences. Notice the decisions: 'went on a trip' not 'went in a trip'; the idafa مَدِينَةِ الْإِسْكَنْدَرِيَّةِ becomes 'the city of Alexandria' or simply 'Alexandria'. Pupils do the last sentence themselves on whiteboards."
+            "answer": "My brother did not go to school yesterday because he was ill."
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "Best translation of: تَطْلُبُ الشَّرِكَةُ مُوَظَّفًا يُجِيدُ الْعَرَبِيَّةَ",
+            "q": "لَمْ يَأْكُلْ means ...",
             "options": [
-              "The company asks an employee who is excellent at Arabic",
-              "The company is looking for an employee who is fluent in Arabic",
-              "The company employee is fluent in Arabic",
-              "The company has an employee and he speaks Arabic"
+              "He did not eat",
+              "He does not eat",
+              "He will not eat"
             ],
-            "answer": 1,
-            "why": "تَطْلُبُ here means 'seeks'; مُوَظَّفًا يُجِيدُ is an indefinite noun with a relative clause: 'an employee who is fluent in'. The others misread the verb or the relative clause."
-          },
-          "note": "Mini-whiteboards. A mistranslates the relative clause; C misses the verb; D mistakes the meaning of the verb. Ask pupils to circle the word that gives 'is looking for'."
+            "answer": 0,
+            "why": "لَمْ + jussive = past negative."
+          }
         }
       ],
       "practice": [
-        "Underline the verb in each sentence of the passage and say its tense.",
-        "Translate the last sentence of the passage: كَانَ الْجَوُّ جَمِيلًا وَلَكِنَّ الْمَطَرَ سَقَطَ فِي الْمَسَاءِ، لِذَلِكَ عُدْنَا مُبَكِّرِينَ.",
-        "Translate: 'مَنَحَتِ الْمَدْرَسَةُ الطَّالِبَ جَائِزَةً' and 'لَمْ أَزُرْ مِصْرَ مِنْ قَبْلُ'."
+        {
+          "q": "Translate: سَتُسَافِرُ عَائِلَتِي إِلَى مَكَّةَ لِأَدَاءِ العُمْرَةِ.",
+          "a": "My family will travel to Makkah to perform Umrah.",
+          "mins": 3,
+          "model": "Teacher: سَـ = will; تُسَافِرُ عَائِلَتِي = my family travels; إِلَى مَكَّةَ = to Makkah; لِأَدَاءِ العُمْرَةِ = to perform Umrah."
+        },
+        {
+          "q": "لَيْسَ means ...",
+          "a": "Is not",
+          "mins": 1,
+          "options": [
+            "Is not",
+            "Did not"
+          ]
+        }
       ],
       "independent": [
-        "Core: translate the passage into English.",
-        "Extend: translate your own Arabic paragraph from last term into English and compare.",
-        "Stretch: write two sentences that trap the translator (e.g. with an idafa and a passive) and give them to a partner."
+        {
+          "q": "Timed reading (our own texts on the pupil PDF, 25 minutes): Group A: two 4AA1-style text questions; Group B: a 1AA0 Paper 3-style set at your tier with a five-sentence translation into English. Self-mark with the key.",
+          "a": "Answers per the key; translations accurate in tense, negation and detail",
+          "mins": 23,
+          "model": "Teacher does question 1 aloud using the routine."
+        },
+        {
+          "q": "Extend: list five words you guessed from their root.",
+          "a": "Pupils' own list",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Translate: 'يَجْمَعُ الْمِهْرَجَانُ النَّاسَ مِنْ دُوَلٍ مُخْتَلِفَةٍ'.",
-        "Name two structures that need careful handling in translation."
+        {
+          "q": "Which reading mistake will you watch for most?",
+          "a": "Pupils' own, for example missing a negative",
+          "mins": 1
+        }
       ],
-      "homework": "Translate 40 words of Arabic from a past text into English and highlight each structure you found difficult.",
-      "send": "EAL/SEND: give the passage with a glossary of 5 words and the first sentence translated. Stretch: translate a passage containing a passive and a conditional with no help.",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "homework": "Independent study: one timed reading text a day from the portal set; Group A also one summary. Exams: 4AA1 Paper 1 Mon 10 May (pm), Paper 2 Thu 20 May (pm); 1AA0 Papers 1 and 3 Mon 24 May (pm), Paper 4 Mon 7 Jun (pm); 1AA0 speaking in the centre's April to May window.",
+      "send": "SEND: glossary of ten high-frequency words; extra time as agreed. EAL: negation card. Stretch: translate a ten-sentence passage.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel GCSE Arabic (1AA0) specification, Theme 3; Pearson Edexcel International GCSE Arabic (4AA1) specification",
+        "Our own exam-style texts and tasks (not Pearson papers)",
+        "Pearson past papers and mark schemes (school copies, homework only)",
+        "Portal arabic y11 lessons 17 to 21 (exam skills)",
+        "Pupil PDF worksheet: timed reading set"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "highlighter pen text",
+          "alt": "Scanning a text",
+          "for": "teach:2"
+        },
+        {
+          "find": "open book reading",
+          "alt": "Reading",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
@@ -3402,166 +3446,198 @@
       "duration": 50
     },
     {
-      "unit": "Exam skills: Papers 1 to 4 (all five themes)",
+      "unit": "Summer 1: Final preparation and exams",
       "n": 20,
-      "title": "Listening Paper: strategies, numbers and traps",
+      "title": "Optional clinic (Mon 24 May, morning): 1AA0 listening and reading",
       "duration": 50,
-      "bigQuestion": "How do I catch the exact detail in an extract I hear only twice?",
+      "bigQuestion": "In listening, the first word you hear is not always the answer. Why do examiners do that?",
       "objectives": [
-        "Use the reading time to predict",
-        "Listen for numbers, negatives and distractors",
-        "Answer a multi-detail listening question accurately"
+        "To understand the final listening and reading strategies before the 1AA0 Papers 1 and 3 this afternoon"
       ],
       "successCriteria": [
-        "All: identify the main topic and one detail",
-        "Most: record numbers, times and negatives accurately",
-        "Some: avoid distractors by listening to the whole sentence"
+        "All: use the five-minute reading time well",
+        "Most: catch numbers, negatives and opinions when listening",
+        "Some: avoid the common traps in multiple-response questions"
       ],
-      "crossCurricular": "English: listening for detail; Maths: numbers and times",
-      "smsc": "Moral and social: attentive listening (iṣghāʾ) shows respect",
+      "smsc": "Spiritual: calm and focus",
       "keywords": [
         {
-          "term": "اِسْتِمَاعٌ",
-          "def": "listening (istimāʿ)"
+          "term": "اِسْتِمَاع (istima')",
+          "def": "listening"
         },
         {
-          "term": "لَيْسَ",
-          "def": "is not (laysa)"
+          "term": "أَرْقَام (arqam)",
+          "def": "numbers"
         },
         {
-          "term": "بَلْ",
-          "def": "but rather (bal)"
+          "term": "نَفْي (nafy)",
+          "def": "negation"
         },
         {
-          "term": "قَبْلَ / بَعْدَ",
-          "def": "before / after (qabla / baʿda)"
+          "term": "رَأْي (ra'y)",
+          "def": "opinion"
         },
         {
-          "term": "بَدَلَ",
-          "def": "instead of (badala)"
+          "term": "فَخّ (fakhkh)",
+          "def": "trap"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "In listening, the first word you hear is not always the answer. Why do examiners do that?",
+        "a": "To test real understanding: speakers change their minds or add لٰكِنْ."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, the hearing, the sight and the heart: about all those one will be questioned' (al-Isra' 17:36).",
+        "at": "start"
+      },
       "starter": [
-        "Retrieval: say '8:30' and '3:15' in Arabic.",
-        "Say the Arabic for 'left' and 'right'.",
-        "Say 'twenty pounds' and 'five nights'."
+        {
+          "q": "Bismillah. When is 1AA0 Paper 4?",
+          "a": "Mon 7 Jun (pm)",
+          "mins": 1,
+          "options": [
+            "Mon 7 Jun (pm)",
+            "Thu 20 May"
+          ]
+        },
+        {
+          "q": "لَمْ يَذْهَبْ means ...",
+          "a": "He did not go",
+          "mins": 1,
+          "options": [
+            "He did not go",
+            "He will not go"
+          ]
+        },
+        {
+          "q": "What do you do in the reading time?",
+          "a": "Read the questions and predict",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Before, during, after",
+          "heading": "Reading time (five minutes)",
           "bullets": [
-            "Use reading time: underline question words",
-            "Predict the answer type: number, place, reason",
-            "First hearing: gist; second: confirm detail",
-            "Never leave a blank: write an answer"
+            "Read every question",
+            "Underline what is asked: who, when, why",
+            "Predict likely words"
           ],
-          "note": "Per the spec file each extract is heard twice and the first five minutes include reading time. Questions in English at Foundation Section A, with different formats at Higher: check the SAMs. Teach pupils to write short answers (a word or a number) and to listen to the end of the sentence before deciding: speakers often correct themselves (ليس ... بل ...). Practise note-taking with abbreviations in English."
+          "note": "Begin with Bismillah. Optional clinic for Group B (TO CONFIRM attendance). No new content."
         },
         {
-          "heading": "Sounds that trap",
+          "heading": "Listening traps",
+          "bullets": [],
+          "note": "Model each trap with a short teacher-read sentence (our own).",
           "table": {
             "head": [
-              "Pair",
-              "Arabic",
-              "Transliteration",
-              "English"
+              "Trap",
+              "Example"
             ],
             "rows": [
               [
-                "7 / 9",
-                "سَبْعَةٌ / تِسْعَةٌ",
-                "sabʿa / tisʿa",
-                "seven / nine"
+                "A change of mind",
+                "أَرَدْتُ الشَّايَ، لٰكِنْ شَرِبْتُ القَهْوَةَ"
               ],
               [
-                "3 / 30",
-                "ثَلَاثَةٌ / ثَلَاثُونَ",
-                "thalātha / thalāthūna",
-                "three / thirty"
+                "A negative",
+                "لَا أُحِبُّ الرِّيَاضَةَ"
               ],
               [
-                "5 / 50",
-                "خَمْسَةٌ / خَمْسُونَ",
-                "khamsa / khamsūna",
-                "five / fifty"
+                "Similar numbers",
+                "ثَلَاثَة / ثَلَاثُونَ"
               ],
               [
-                "right / left",
-                "يَمِينٌ / يَسَارٌ",
-                "yamīn / yasār",
-                "right / left"
-              ],
-              [
-                "before / after",
-                "قَبْلَ / بَعْدَ",
-                "qabla / baʿda",
-                "before / after"
-              ],
-              [
-                "yesterday / tomorrow",
-                "أَمْسِ / غَدًا",
-                "amsi / ghadan",
-                "yesterday / tomorrow"
+                "Past or future",
+                "سَافَرْتُ / سَأُسَافِرُ"
               ]
             ]
-          },
-          "note": "Say each pair twice. Pupils write which they hear on mini-whiteboards. Then they listen to a full sentence. Teach the habit of checking the number against context (a price, a time, a date). The singular and plural number words may sound similar but the noun and the context disambiguate."
+          }
         },
         {
-          "heading": "Practice script (teacher reads twice)",
-          "quote": {
-            "text": "تَبْدَأُ الرِّحْلَةُ فِي الثَّامِنَةِ وَالنِّصْفِ صَبَاحًا وَلَيْسَ فِي التَّاسِعَةِ. سَيَكُونُ الْجَوُّ بَارِدًا وَلَكِنَّهُ مُشْمِسٌ. اِحْضُرُوا مَعَكُمْ غَدَاءً وَقُبَّعَةً وَخَمْسَةَ جُنَيْهَاتٍ لِلْمَتْحَفِ.",
-            "source": "Original practice listening script (teacher reads aloud twice)"
-          },
-          "note": "Teacher: read this slowly, twice, at natural pace, with a pause between readings. Do not show it. Pupils answer the questions in the practice section. This is an original script, not an exam extract. Tell pupils that a speaker 'correcting' themselves is a standard trap: the time is 8:30 and NOT 9."
-        },
-        {
-          "heading": "Model: answering a trap question",
-          "model": {
-            "problem": "After two hearings: 'What time does the trip start?' (script above)",
-            "steps": [
-              "Listen for the time phrase: فِي الثَّامِنَةِ وَالنِّصْفِ = at half past eight",
-              "Notice the correction: وَلَيْسَ فِي التَّاسِعَةِ = and not at nine",
-              "Write the answer in English with the time of day: صَبَاحًا = in the morning"
-            ],
-            "answer": "8:30 a.m. (not 9:00)."
-          },
-          "note": "Show how to record the detail after hearing it. Then the notes to the answer. Emphasise that the speaker says it is not at nine. Pupils then answer the other questions themselves from the second reading."
-        },
-        {
-          "heading": "Hinge question",
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "What will the weather be like?",
+            "q": "أَرَدْتُ الشَّايَ، لٰكِنْ شَرِبْتُ القَهْوَةَ. What did the speaker drink?",
             "options": [
-              "Cold and rainy",
-              "Cold but sunny",
-              "Hot and sunny",
-              "Cloudy and windy"
+              "Coffee",
+              "Tea",
+              "Both"
             ],
-            "answer": 1,
-            "why": "بَارِدًا وَلَكِنَّهُ مُشْمِسٌ = cold but sunny. The others mix the weather words or add details that are not in the script."
-          },
-          "note": "Mini-whiteboards. A and C are distractors from the script; D is a different item. Ask pupils to show the phrase they heard that rules out nine o'clock."
+            "answer": 0,
+            "why": "لٰكِنْ signals the change: he drank coffee."
+          }
         }
       ],
       "practice": [
-        "Listening practice: teacher reads the script twice; answer: (a) time; (b) weather; (c) three things to bring; (d) the amount of money.",
-        "Listen to a short extract of a pupil reading numbers and write them as digits.",
-        "Compare answers in pairs and say which phrase gave you each answer."
+        {
+          "q": "Listen (teacher reads, our own text): لَمْ أَذْهَبْ إِلَى السُّوقِ يَوْمَ السَّبْتِ، بَلْ ذَهَبْتُ يَوْمَ الأَحَدِ. When did the speaker go?",
+          "a": "Sunday",
+          "mins": 3,
+          "model": "Teacher: لَمْ أَذْهَبْ = I did not go (Saturday is wrong); بَلْ = rather; ذَهَبْتُ يَوْمَ الأَحَدِ = I went on Sunday."
+        },
+        {
+          "q": "بَلْ means ...",
+          "a": "Rather; but instead",
+          "mins": 1,
+          "options": [
+            "Rather; but instead",
+            "Because"
+          ]
+        }
       ],
       "independent": [
-        "Core: answer the script questions fully in English.",
-        "Extend: write your own 40-word listening script with a trap.",
-        "Stretch: swap scripts with a partner and answer theirs, then explain the trap."
+        {
+          "q": "Clinic: listening set (teacher reads our own transcripts twice, as in the exam) and a short reading set at your tier on the pupil PDF; mark together and note your last two reminders for this afternoon.",
+          "a": "Answers per the key; two personal reminders",
+          "mins": 25,
+          "model": "Teacher plays the first item and shows note-taking for numbers and negatives."
+        },
+        {
+          "q": "Extend: write the three negatives you must listen for.",
+          "a": "لَا، لَمْ، لَيْسَ (also لَنْ)",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Write the English for 'وَلَيْسَ فِي التَّاسِعَةِ'.",
-        "Give two strategies for the listening paper."
+        {
+          "q": "Your two reminders for this afternoon?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
       ],
-      "homework": "Listen to a short Arabic news item or recording and write five details in English.",
-      "send": "EAL/SEND: allow pauses and give a glossary of the script. Stretch: listen to unfamiliar topics at natural speed.",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "homework": "Rest before the afternoon papers. Next: optional Group B writing clinic in the week of 31 May; Paper 4 on Mon 7 Jun (pm).",
+      "send": "SEND: trap card; access arrangements confirmed. EAL: number card 1 to 100. Stretch: note opinions and reasons in the listening.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel GCSE Arabic (1AA0) specification, Theme 3; Pearson Edexcel International GCSE Arabic (4AA1) specification",
+        "Our own exam-style texts and tasks (not Pearson papers)",
+        "Portal arabic y11 lesson 20 (upgraded)",
+        "Pupil PDF worksheet: clinic listening transcripts and reading set"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "headphones on desk",
+          "alt": "Listening",
+          "for": "keywords"
+        },
+        {
+          "find": "calm lake morning",
+          "alt": "Calm before the exam",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Bringing the world together (5.1); revision begins; mock",
@@ -7981,6 +8057,834 @@
         {
           "find": "open book",
           "alt": "Reading",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation and exams",
+      "n": 44,
+      "title": "Group A: 4AA1 summary and grammar; Group B: 1AA0 speaking final preparation",
+      "duration": 50,
+      "bigQuestion": "What is the difference between knowing Arabic and showing it in an exam?",
+      "objectives": [
+        "To understand how to secure the marks in my group's next assessment: the 4AA1 summary and grammar (Group A) or the 1AA0 speaking test (Group B)"
+      ],
+      "successCriteria": [
+        "All: complete my group's focused task",
+        "Most: apply the technique for each part",
+        "Some: reach top-band criteria in one part"
+      ],
+      "smsc": "Spiritual: du'a for clear speech",
+      "keywords": [
+        {
+          "term": "تَلْخِيص (talkhis)",
+          "def": "summary"
+        },
+        {
+          "term": "إِعْرَاب (i'rab)",
+          "def": "grammatical analysis"
+        },
+        {
+          "term": "لَعِبُ الأَدْوَارِ (la'ib al-adwar)",
+          "def": "role play"
+        },
+        {
+          "term": "وَصْفُ الصُّورَةِ (wasf as-surah)",
+          "def": "picture description"
+        },
+        {
+          "term": "مُحَادَثَة (muhadathah)",
+          "def": "conversation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the difference between knowing Arabic and showing it in an exam?",
+        "a": "Showing it means doing exactly what each task asks, in the time, accurately."
+      },
+      "islamicLink": {
+        "text": "Musa (عَلَيْهِ السَّلَام) said: 'And untie the knot from my tongue, that they may understand my speech' (Ta Ha 20:27-28).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. لَمْ يَأْكُلْ means ...",
+          "a": "He did not eat",
+          "mins": 1,
+          "options": [
+            "He did not eat",
+            "He will not eat"
+          ]
+        },
+        {
+          "q": "Answer in the language ...",
+          "a": "The question asks",
+          "mins": 1,
+          "options": [
+            "The question asks",
+            "You prefer"
+          ]
+        },
+        {
+          "q": "Translate: كَانَ مَرِيضًا.",
+          "a": "He was ill.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Group A: the summary",
+          "bullets": [
+            "Find the main ideas, not examples",
+            "Rewrite in your own words",
+            "Keep to the word limit"
+          ],
+          "note": "Begin with Bismillah. Two groups in breakouts; teacher visits each."
+        },
+        {
+          "heading": "Group A: grammar with Arabic terms",
+          "bullets": [],
+          "note": "Know the terms.",
+          "table": {
+            "head": [
+              "Term",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "فَاعِل",
+                "subject of a verb"
+              ],
+              [
+                "مَفْعُولٌ بِهِ",
+                "object"
+              ],
+              [
+                "مُبْتَدَأ وَخَبَر",
+                "subject and predicate"
+              ],
+              [
+                "نَائِبُ الفَاعِلِ",
+                "subject of a passive verb"
+              ],
+              [
+                "مَجْرُور",
+                "genitive after a preposition"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Group B: the speaking test",
+          "bullets": [],
+          "note": "Prepare each part.",
+          "table": {
+            "head": [
+              "Part",
+              "Tip"
+            ],
+            "rows": [
+              [
+                "Role play",
+                "Answer every prompt; one unexpected question"
+              ],
+              [
+                "Picture task",
+                "Describe, then opinion, then other time frames"
+              ],
+              [
+                "Conversation",
+                "Develop: answer, detail, opinion, reason, time frame"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "In كُرِّمَ الطَّالِبُ, الطَّالِبُ is ...",
+            "options": [
+              "نَائِبُ الفَاعِلِ",
+              "مَفْعُولٌ بِهِ",
+              "خَبَر"
+            ],
+            "answer": 0,
+            "why": "The subject of a passive verb is نَائِبُ الفَاعِلِ, in the nominative."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Group A: give the i'rab of الكِتَابَ in قَرَأَ الطَّالِبُ الكِتَابَ. Group B: develop: هَلْ تُحِبُّ القِرَاءَةَ؟",
+          "a": "A: مَفْعُولٌ بِهِ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ. B: نَعَمْ، أُحِبُّهَا لِأَنَّ ... وَفِي العُطْلَةِ سَأَقْرَأُ ...",
+          "mins": 3,
+          "model": "Teacher does both: A names the role, case and sign; B answers with detail, reason and a future time frame."
+        },
+        {
+          "q": "A summary should include ...",
+          "a": "Main ideas in my own words",
+          "mins": 1,
+          "options": [
+            "Main ideas in my own words",
+            "Every example"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakouts: Group A: one 4AA1-style summary (our own text) and a ten-item grammar set with Arabic terms, then self-mark. Group B: speaking practice with the school's booklet: one role play, one picture task and four conversation questions, timed, with the teacher assessing in turn.",
+          "a": "Group A per the key; Group B against the booklet criteria",
+          "mins": 25,
+          "model": "Teacher models the first summary sentence for Group A, then the first role play prompt for Group B."
+        },
+        {
+          "q": "Extend: write down one target from today.",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Back to our ponder: knowing versus showing?",
+          "a": "Doing exactly what each task asks, in time, accurately",
+          "mins": 1
+        }
+      ],
+      "homework": "Group A: one summary and one grammar set a day. Group B: practise two booklet answers aloud daily until your speaking test. Exams: 4AA1 Paper 1 Mon 10 May (pm), Paper 2 Thu 20 May (pm); 1AA0 Papers 1 and 3 Mon 24 May (pm), Paper 4 Mon 7 Jun (pm); 1AA0 speaking in the centre's April to May window.",
+      "send": "SEND: summary frame; speaking cue cards; access arrangements as agreed. EAL: grammar term card. Stretch: Group A: i'rab of a full sentence; Group B: answer an unexpected question on any theme.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel GCSE Arabic (1AA0) specification, Theme 3; Pearson Edexcel International GCSE Arabic (4AA1) specification",
+        "Our own exam-style texts and tasks (not Pearson papers)",
+        "The school's 1AA0 Speaking and Writing revision booklet (Group B)",
+        "Pupil PDF worksheet: Group A summary and grammar set"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "microphone desk",
+          "alt": "A microphone: the speaking test",
+          "for": "teach:3"
+        },
+        {
+          "find": "grammar book open",
+          "alt": "Grammar study",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation and exams",
+      "n": 45,
+      "title": "Writing papers: technique for 4AA1 Paper 2 and 1AA0 Paper 4",
+      "duration": 50,
+      "bigQuestion": "If you had five minutes left, would you write more or check what you have written? Why?",
+      "objectives": [
+        "To understand how to plan and write answers that meet the writing papers' demands"
+      ],
+      "successCriteria": [
+        "All: plan a writing task in two minutes",
+        "Most: cover every bullet with three time frames",
+        "Some: show range (connectives, passives, conditionals) with accuracy"
+      ],
+      "smsc": "Moral: care and accuracy",
+      "keywords": [
+        {
+          "term": "كِتَابَة (kitabah)",
+          "def": "writing"
+        },
+        {
+          "term": "خُطَّة (khuttah)",
+          "def": "plan"
+        },
+        {
+          "term": "أَزْمِنَة (azminah)",
+          "def": "tenses; time frames"
+        },
+        {
+          "term": "رَوَابِط (rawabit)",
+          "def": "connectives"
+        },
+        {
+          "term": "مُرَاجَعَة (muraja'ah)",
+          "def": "checking"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had five minutes left, would you write more or check what you have written? Why?",
+        "a": "Usually check: accuracy marks are easy to lose with small errors."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Nun. By the pen and what they inscribe' (al-Qalam 68:1).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. نَائِبُ الفَاعِلِ is ...",
+          "a": "The subject of a passive verb",
+          "mins": 1,
+          "options": [
+            "The subject of a passive verb",
+            "The object"
+          ]
+        },
+        {
+          "q": "A summary uses ...",
+          "a": "Your own words",
+          "mins": 1,
+          "options": [
+            "Your own words",
+            "Copied sentences"
+          ]
+        },
+        {
+          "q": "Name the three parts of the 1AA0 speaking test.",
+          "a": "Role play, picture task, conversation",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The two writing papers",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Paper",
+              "Format"
+            ],
+            "rows": [
+              [
+                "4AA1 Paper 2 (1h30, 50 marks)",
+                "Two tasks from a choice of three, 25 marks each"
+              ],
+              [
+                "1AA0 Paper 4 Foundation",
+                "Picture sentences, 40 words, 90 words, translation into Arabic"
+              ],
+              [
+                "1AA0 Paper 4 Higher",
+                "90 words and 150 words (each from a choice), translation into Arabic"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "A plan that works",
+          "bullets": [],
+          "note": "Model on a task.",
+          "cycle": [
+            "Underline every bullet",
+            "Note a tense for each",
+            "Add one 'wow' structure per bullet",
+            "Write",
+            "Check endings, agreement, after أَنْ"
+          ]
+        },
+        {
+          "heading": "Range checklist",
+          "bullets": [
+            "Three time frames: past, present, future",
+            "Opinions with reasons; connectives",
+            "One passive or conditional (Higher)"
+          ],
+          "note": "Accuracy first, then range."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Five minutes left. Best use?",
+            "options": [
+              "Check endings and agreement",
+              "Start a new paragraph",
+              "Rewrite the first sentence"
+            ],
+            "answer": 0,
+            "why": "Checking protects accuracy marks."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Translate into Arabic (1AA0 style, our own): 'Last year I visited my grandparents and next year I will go to Makkah.'",
+          "a": "زُرْتُ جَدِّي وَجَدَّتِي فِي السَّنَةِ المَاضِيَةِ، وَسَأَذْهَبُ إِلَى مَكَّةَ فِي السَّنَةِ القَادِمَةِ.",
+          "mins": 3,
+          "model": "Teacher: past زُرْتُ; the people جَدِّي وَجَدَّتِي; time phrase فِي السَّنَةِ المَاضِيَةِ; future سَأَذْهَبُ + place + time phrase."
+        },
+        {
+          "q": "رَوَابِط means ...",
+          "a": "Connectives",
+          "mins": 1,
+          "options": [
+            "Connectives",
+            "Tenses"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed writing (our own tasks on the pupil PDF, 25 minutes): Group A: one 4AA1 Paper 2-style task (25 marks); Group B: one 1AA0 Paper 4 task at your tier plus a three-sentence translation into Arabic. Use the plan; leave 4 minutes to check.",
+          "a": "Every bullet covered with three time frames, accurate endings and agreement; translation accurate",
+          "mins": 23,
+          "model": "Teacher plans Group A's task aloud in two minutes, then Group B's."
+        },
+        {
+          "q": "Extend: swap and mark a partner's work with the range checklist.",
+          "a": "Pupils' own peer marks",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What will you check first in the last five minutes?",
+          "a": "Pupils' own, for example verb endings after أَنْ",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: one timed writing task every other day. Exams: 4AA1 Paper 1 Mon 10 May (pm), Paper 2 Thu 20 May (pm); 1AA0 Papers 1 and 3 Mon 24 May (pm), Paper 4 Mon 7 Jun (pm); 1AA0 speaking in the centre's April to May window.",
+      "send": "SEND: plan template; extra time as agreed. EAL: connective card. Stretch: write a Higher 150-word answer in 30 minutes.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel GCSE Arabic (1AA0) specification, Theme 3; Pearson Edexcel International GCSE Arabic (4AA1) specification",
+        "Our own exam-style texts and tasks (not Pearson papers)",
+        "The school's 1AA0 Speaking and Writing revision booklet (Group B)",
+        "Pearson past papers and mark schemes (school copies, homework only)",
+        "Pupil PDF worksheet: timed writing tasks"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pen writing paper",
+          "alt": "Writing",
+          "for": "keywords"
+        },
+        {
+          "find": "analog clock",
+          "alt": "Timing",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation and exams",
+      "n": 46,
+      "title": "Timed practice and the exam-day plan",
+      "duration": 50,
+      "bigQuestion": "Your first Arabic exam may fall in the half term. How will you keep revising when there are no lessons?",
+      "objectives": [
+        "To understand my exam-day plan for each paper and practise under full timing"
+      ],
+      "successCriteria": [
+        "All: write my exam timetable and plan for each paper",
+        "Most: complete a timed section and self-mark",
+        "Some: set three precise targets for the half term"
+      ],
+      "smsc": "Spiritual: tawakkul after effort",
+      "keywords": [
+        {
+          "term": "جَدْوَلُ الاِمْتِحَانَاتِ (jadwal al-imtihanat)",
+          "def": "exam timetable"
+        },
+        {
+          "term": "تَوْقِيت (tawqit)",
+          "def": "timing"
+        },
+        {
+          "term": "هُدُوء (hudu')",
+          "def": "calm"
+        },
+        {
+          "term": "تَوَكُّل (tawakkul)",
+          "def": "relying on Allah after doing your best"
+        },
+        {
+          "term": "هَدَف (hadaf)",
+          "def": "target"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your first Arabic exam may fall in the half term. How will you keep revising when there are no lessons?",
+        "a": "A written plan: short daily tasks, past papers, rest, salah and du'a."
+      },
+      "islamicLink": {
+        "text": "Musa (عَلَيْهِ السَّلَام) said: 'My Lord, expand for me my chest and ease for me my task' (Ta Ha 20:25-26).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. In the last five minutes, ...",
+          "a": "Check endings and agreement",
+          "mins": 1,
+          "options": [
+            "Check endings and agreement",
+            "Start a new task"
+          ]
+        },
+        {
+          "q": "4AA1 Paper 2 asks for ...",
+          "a": "Two tasks from three",
+          "mins": 1,
+          "options": [
+            "Two tasks from three",
+            "Four tasks"
+          ]
+        },
+        {
+          "q": "Translate: سَأَذْهَبُ.",
+          "a": "I will go.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "My exam timetable",
+          "bullets": [],
+          "note": "Begin with Bismillah. Pupils copy their own group's rows.",
+          "table": {
+            "head": [
+              "Date",
+              "Paper"
+            ],
+            "rows": [
+              [
+                "Mon 10 May (pm)",
+                "4AA1 Paper 1 (Group A)"
+              ],
+              [
+                "Thu 20 May (pm)",
+                "4AA1 Paper 2 (Group A)"
+              ],
+              [
+                "Mon 24 May (pm)",
+                "1AA0 Papers 1 and 3 (Group B)"
+              ],
+              [
+                "Mon 7 Jun (pm)",
+                "1AA0 Paper 4 (Group B)"
+              ],
+              [
+                "April to May",
+                "1AA0 speaking (Group B, by appointment)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Half-term plan",
+          "bullets": [
+            "Daily: 20 minutes reading or listening",
+            "Every other day: one timed writing",
+            "Rest, salah on time, du'a"
+          ],
+          "note": "Optional clinics: Mon 24 May morning (Group B listening and reading) and week of 31 May (Group B writing), TO CONFIRM."
+        },
+        {
+          "heading": "Exam day",
+          "bullets": [],
+          "note": "Pupils personalise.",
+          "cycle": [
+            "Sleep and Fajr",
+            "Black pens, ID, water",
+            "Read every instruction",
+            "Follow the time plan",
+            "Check, then du'a"
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write your own plan for the day before your first paper.",
+          "a": "For example: light reading practice, pack the bag, sleep early, du'a",
+          "mins": 2,
+          "model": "Teacher writes: 'Sunday 9 May: one short reading text, check the bag, sleep by 10pm, du'a.'"
+        },
+        {
+          "q": "When is 1AA0 Paper 4?",
+          "a": "Mon 7 Jun (pm)",
+          "mins": 1,
+          "options": [
+            "Mon 7 Jun (pm)",
+            "Mon 24 May (pm)"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed practice (our own papers on the pupil PDF, 28 minutes): Group A: a 4AA1 Paper 1 section (one text and the grammar questions); Group B: a 1AA0 reading section at your tier. Self-mark; write three targets in the portal response box.",
+          "a": "Answers per the key; three precise targets",
+          "mins": 30,
+          "model": "Teacher reminds the routine and starts the timer."
+        },
+        {
+          "q": "Extend: write a du'a you will say before each exam.",
+          "a": "For example: رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which target matters most?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Follow your half-term plan. Exams: 4AA1 Paper 1 Mon 10 May (pm), Paper 2 Thu 20 May (pm); 1AA0 Papers 1 and 3 Mon 24 May (pm), Paper 4 Mon 7 Jun (pm); 1AA0 speaking in the centre's April to May window. Optional clinics after the half term (TO CONFIRM).",
+      "send": "SEND: one-page plan; access arrangements confirmed. EAL: key instruction words in Arabic (اِقْرَأْ، أَجِبْ، اُكْتُبْ، اِخْتَرْ). Stretch: a full past paper under time over the half term.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel GCSE Arabic (1AA0) specification, Theme 3; Pearson Edexcel International GCSE Arabic (4AA1) specification",
+        "Our own exam-style texts and tasks (not Pearson papers)",
+        "Pearson past papers and mark schemes (school copies, homework only)",
+        "Pupil PDF worksheet: timed practice and half-term plan",
+        "Exam timetable (school letter)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "calendar on wall",
+          "alt": "The exam timetable",
+          "for": "teach:1"
+        },
+        {
+          "find": "black pens on desk",
+          "alt": "Ready for the exam",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation and exams",
+      "n": 47,
+      "title": "Optional clinic (week of 31 May): 1AA0 Paper 4 writing",
+      "duration": 50,
+      "bigQuestion": "Which three mistakes do you make most often in Arabic writing? How will you catch them on Monday?",
+      "objectives": [
+        "To understand and fix my last writing errors before 1AA0 Paper 4 on Mon 7 June"
+      ],
+      "successCriteria": [
+        "All: correct my three most common errors",
+        "Most: write one task at my tier to time",
+        "Some: polish range and accuracy to top-band level"
+      ],
+      "smsc": "Spiritual: calm effort and reliance on Allah",
+      "keywords": [
+        {
+          "term": "خَطَأ / أَخْطَاء (khata' / akhta')",
+          "def": "mistake / mistakes"
+        },
+        {
+          "term": "تَصْحِيح (tashih)",
+          "def": "correction"
+        },
+        {
+          "term": "مُطَابَقَة (mutabaqah)",
+          "def": "agreement"
+        },
+        {
+          "term": "تَرْجَمَة إِلَى العَرَبِيَّةِ (tarjamah ila l-'arabiyyah)",
+          "def": "translation into Arabic"
+        },
+        {
+          "term": "مُسْتَوَى (mustawa)",
+          "def": "tier; level"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which three mistakes do you make most often in Arabic writing? How will you catch them on Monday?",
+        "a": "Pupils' own: often agreement, endings after أَنْ, and missing harakat-sensitive spellings; a checklist catches them."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah does not burden a soul beyond that it can bear' (al-Baqarah 2:286).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Last year I visited ...' starts ...",
+          "a": "فِي السَّنَةِ المَاضِيَةِ زُرْتُ ...",
+          "mins": 1,
+          "options": [
+            "فِي السَّنَةِ المَاضِيَةِ زُرْتُ ...",
+            "فِي السَّنَةِ القَادِمَةِ زُرْتُ ..."
+          ]
+        },
+        {
+          "q": "After أَنْ the present verb ends in ...",
+          "a": "Fathah",
+          "mins": 1,
+          "options": [
+            "Fathah",
+            "Dammah"
+          ]
+        },
+        {
+          "q": "Name the three time frames.",
+          "a": "Past, present, future",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The ten most common errors",
+          "bullets": [],
+          "note": "Begin with Bismillah. Optional clinic for Group B (TO CONFIRM). Pupils tick their own.",
+          "table": {
+            "head": [
+              "Error",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Adjective does not agree",
+                "Check gender and number"
+              ],
+              [
+                "Plural things with masculine plural adjective",
+                "Feminine singular adjective"
+              ],
+              [
+                "أَنْ + verb with dammah",
+                "Fathah after أَنْ"
+              ],
+              [
+                "Number and noun mismatch",
+                "3 to 10: plural genitive; 11 to 99: singular accusative"
+              ],
+              [
+                "Missing time frame",
+                "Add past and future"
+              ],
+              [
+                "Translation word by word",
+                "Natural Arabic word order"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Translation into Arabic",
+          "bullets": [],
+          "note": "Model (our own).",
+          "model": {
+            "problem": "Translate: 'My sister likes science because it is useful.'",
+            "steps": [
+              "Subject: أُخْتِي",
+              "Verb (she): تُحِبُّ",
+              "Object: العُلُومَ",
+              "Reason: لِأَنَّهَا مُفِيدَةٌ"
+            ],
+            "answer": "أُخْتِي تُحِبُّ العُلُومَ لِأَنَّهَا مُفِيدَةٌ."
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'Fifteen pupils' is ...",
+            "options": [
+              "خَمْسَةَ عَشَرَ طَالِبًا",
+              "خَمْسَةَ عَشَرَ طُلَّابٍ",
+              "خَمْسَةُ طُلَّابٍ"
+            ],
+            "answer": 0,
+            "why": "11 to 99: singular accusative noun."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix: يَجِبُ أَنْ نَدْرُسُ كَثِيرًا وَالمَوَادُّ صَعْبُونَ.",
+          "a": "يَجِبُ أَنْ نَدْرُسَ كَثِيرًا، وَالمَوَادُّ صَعْبَةٌ.",
+          "mins": 3,
+          "model": "Teacher: after أَنْ, fathah: نَدْرُسَ; المَوَادّ is a non-human plural, so feminine singular: صَعْبَةٌ."
+        },
+        {
+          "q": "Which needs a feminine singular adjective?",
+          "a": "A non-human plural",
+          "mins": 1,
+          "options": [
+            "A non-human plural",
+            "A dual"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Clinic task: one 1AA0 Paper 4 task at your tier (our own) to time, plus a three-sentence translation into Arabic; then fix every error from the checklist in green and note your final reminders.",
+          "a": "Task meeting all bullets with three time frames; translation accurate; errors corrected",
+          "mins": 25,
+          "model": "Teacher plans the task aloud and reminds the final four minutes are for checking."
+        },
+        {
+          "q": "Extend: rewrite one paragraph with more range (a passive or conditional).",
+          "a": "Pupils' own improved paragraph",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Your three reminders for Monday?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Rest and light practice. Paper 4: Mon 7 Jun (pm). There are no live Arabic lessons for Year 11 after the exams.",
+      "send": "SEND: personal error checklist; access arrangements confirmed. EAL: connective and number card. Stretch: Higher 150-word task in 30 minutes.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel GCSE Arabic (1AA0) specification, Theme 3; Pearson Edexcel International GCSE Arabic (4AA1) specification",
+        "Our own exam-style texts and tasks (not Pearson papers)",
+        "The school's 1AA0 Speaking and Writing revision booklet (Group B)",
+        "Pupil PDF worksheet: error checklist and clinic task"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pen writing paper",
+          "alt": "Writing practice",
+          "for": "keywords"
+        },
+        {
+          "find": "checklist clipboard",
+          "alt": "The error checklist",
           "for": "teach:1"
         }
       ]

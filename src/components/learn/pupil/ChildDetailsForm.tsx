@@ -1,7 +1,9 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Icon } from "@/components/learn/Icon";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { PhoneInput } from "@/components/ui/PhoneInput";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import {
@@ -376,7 +378,7 @@ export function ChildDetailsForm() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Child details" }]}
+        crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Child details" }]}
         title="Child details"
         subtitle="Home, health, emergency contacts and consents. Each section saves as you go."
       />
@@ -465,7 +467,7 @@ export function ChildDetailsForm() {
           {saved && !error && <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-800">{saved}</p>}
 
           {loading ? (
-            <p className="text-sm text-ink/65">Loading…</p>
+            <Loading label="Loading…" bare />
           ) : (
             <div className="rounded-2xl border border-gold-light bg-white p-4">
               {step === "basics" && (
@@ -650,6 +652,20 @@ function Text({
   required?: boolean;
   error?: string;
 }) {
+  const id = useId();
+  if (type === "tel") {
+    // Same country-code picker (flag + dialling code, A to Z) as the website forms.
+    return (
+      <div className="block text-sm font-medium text-ink">
+        <label htmlFor={id}>
+          {label}
+          {required && <Required />}
+        </label>
+        <PhoneInput id={id} value={value} onChange={onChange} required={required} invalid={!!error} inputClassName={fieldCls.replace("mt-1 ", "")} />
+        <FieldError message={error} />
+      </div>
+    );
+  }
   return (
     <label className="block text-sm font-medium text-ink">
       <span>

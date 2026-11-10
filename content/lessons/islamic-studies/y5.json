@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y5",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: nafs, sincerity, praying on time, best deeds; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2) | Spring 1 2027 (lessons 4, 5, 8 upgraded, 13 and 14 new): Year 5 pack Islamic Studies Spring 1 weeks 1 to 5 (year of sorrow; Ta'if; Isra and Mi'raj; sawm; rules of fasting); Ta'if (Bukhari, Book of the Beginning of Creation; Muslim, Book of Jihad), the five prayers (Bukhari, Book of Salah; Muslim, Book of Faith) and fasting hadith (Bukhari, Book of Fasting) described or cited; school-approved seerah TO CONFIRM | Spring 2 2027 (lessons 6 and 7 upgraded, 15 to 18 new): Year 5 pack Islamic Studies Spring 2 weeks 1 to 6 (zakat al-fitr; Aqabah; the Hijrah; Quba and Madinah, condensed in the week of 5 Apr; zakah and nisab; recipients and sadaqah); 87:14-15, 17:34, 8:30, 9:40, 9:103, 9:60; example zakah figures only; lessons v3",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: nafs, sincerity, praying on time, best deeds; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2) | Spring 1 2027 (lessons 4, 5, 8 upgraded, 13 and 14 new): Year 5 pack Islamic Studies Spring 1 weeks 1 to 5 (year of sorrow; Ta'if; Isra and Mi'raj; sawm; rules of fasting); Ta'if (Bukhari, Book of the Beginning of Creation; Muslim, Book of Jihad), the five prayers (Bukhari, Book of Salah; Muslim, Book of Faith) and fasting hadith (Bukhari, Book of Fasting) described or cited; school-approved seerah TO CONFIRM | Spring 2 2027 (lessons 6 and 7 upgraded, 15 to 18 new): Year 5 pack Islamic Studies Spring 2 weeks 1 to 6 (zakat al-fitr; Aqabah; the Hijrah; Quba and Madinah, condensed in the week of 5 Apr; zakah and nisab; recipients and sadaqah); 87:14-15, 17:34, 8:30, 9:40, 9:103, 9:60; example zakah figures only; lessons v3 | Summer 1 2027 (lesson 9 upgraded, 19 to 22 new): Year 5 pack Islamic Studies Summer 1 weeks 1 to 5 (Hajj and Ibrahim; rites of Hajj and the first ten days before the Eid al-Adha half term; Eid al-Adha after it; truthful speech; promises and trusts); 3:97, 2:127, 22:27, 37:102-107, 22:37, 33:70, 17:34; hadith on the ten days (Bukhari), Arafah (Muslim), the two rams (Bukhari and Muslim), truthfulness and the hypocrite (Bukhari and Muslim); lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: Aqeedah: Tawheed and Qadar",
@@ -1392,99 +1392,208 @@
       ]
     },
     {
-      "unit": "Unit 3: Fiqh: zakah, sawm and Hajj",
+      "unit": "Summer 1: Hajj and truthful speech",
       "n": 9,
-      "title": "Hajj: the journey to the House of Allah",
+      "title": "Hajj: who must go, and the story of Ibrahim and Ismail",
       "duration": 45,
+      "bigQuestion": "Millions of people travel to the same place at the same time every year. What would make so many people go?",
       "objectives": [
-        "Define Hajj and Umrah",
-        "Describe the main rites at an introductory level",
-        "Explain the link to Ibrahim and Ismail"
+        "To understand what Hajj is, who must perform it, and how it goes back to Ibrahim and Ismail (عَلَيْهِمَا السَّلَام)"
       ],
+      "successCriteria": [
+        "All: say what Hajj is and where it takes place",
+        "Most: say who must perform Hajj",
+        "Some: explain how Ibrahim and Ismail (عَلَيْهِمَا السَّلَام) built the Ka'bah and called people to it"
+      ],
+      "crossCurricular": "Geography: locating Makkah and measuring distance on a map",
+      "smsc": "Spiritual: obeying Allah; Social: the ummah gathered as one",
       "keywords": [
         {
-          "term": "Hajj",
-          "def": "the pilgrimage to Makkah"
+          "term": "Hajj (حَجّ)",
+          "def": "the pilgrimage to Makkah, the fifth pillar of Islam"
         },
         {
-          "term": "Ihram",
-          "def": "the sacred state with simple clothing"
+          "term": "Ka'bah (الكَعْبَة)",
+          "def": "the house of Allah built by Ibrahim and Ismail"
         },
         {
-          "term": "Arafah",
-          "def": "the plain where pilgrims stand on the 9th"
+          "term": "able (مُسْتَطِيع)",
+          "def": "having the health, money and safe way to go"
+        },
+        {
+          "term": "pilgrim (حَاجّ)",
+          "def": "a person performing Hajj"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Millions of people travel to the same place at the same time every year. What would make so many people go?",
+        "a": "Allah's command: Hajj is the fifth pillar of Islam for every Muslim who is able."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And Hajj to the House is a duty owed to Allah by the people, for whoever is able to find a way to it' (Al 'Imran 3:97).",
+        "at": "start"
+      },
       "starter": [
-        "Name the fifth pillar.",
-        "Who built the Kaaba?",
-        "What is the Qiblah?",
-        "What is Ramadan?"
+        {
+          "q": "Bismillah. How many rak'ahs is Maghrib?",
+          "a": "Three",
+          "mins": 1,
+          "options": [
+            "Three",
+            "Four"
+          ]
+        },
+        {
+          "q": "Which month comes before Shawwal and has fasting?",
+          "a": "Ramadan",
+          "mins": 1,
+          "options": [
+            "Ramadan",
+            "Muharram"
+          ]
+        },
+        {
+          "q": "Zakah is given to ...",
+          "a": "The poor and the other groups Allah named",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "A duty once in a lifetime",
+          "heading": "The fifth pillar",
           "bullets": [
-            "Upon those who are able",
-            "3:97",
-            "The Kaaba is the House of Allah"
+            "Hajj is in Dhul-Hijjah, in Makkah",
+            "Once in a lifetime",
+            "For every adult Muslim who is able"
           ],
-          "note": "Bismillah. Qur'an 3:97: pilgrimage to the House is a duty owed to Allah by those who are able. The Prophet ﷺ said it is once; more is voluntary (Muslim). Ask: what does 'able' mean? Health and wealth."
+          "note": "Begin with Bismillah. Allah says Hajj is a duty on people 'for whoever is able to find a way' (Al 'Imran 3:97)."
         },
         {
-          "heading": "Ibrahim and Ismail",
-          "bullets": [
-            "They raised the foundations of the Kaaba",
-            "Rabbana taqabbal minna",
-            "2:127"
-          ],
-          "note": "Read 2:127 and the dua 'Our Lord, accept from us'. Link to Year 2 story of Ibrahim. Mention Ibrahim's call to pilgrimage (22:27)."
+          "heading": "Who must go?",
+          "bullets": [],
+          "note": "Pupils tick each condition.",
+          "diagram": {
+            "centre": "Hajj is due on",
+            "items": [
+              "A Muslim",
+              "An adult",
+              "Of sound mind",
+              "Healthy enough",
+              "With enough money and a safe way"
+            ]
+          }
         },
         {
-          "heading": "The main rites",
+          "heading": "Ibrahim and Ismail build the House",
           "bullets": [
-            "Ihram and talbiyah",
-            "Tawaf, Sa'i, Arafah",
-            "Muzdalifah, Mina, stoning, sacrifice"
+            "Ibrahim and his son raised the Ka'bah",
+            "They made du'a: accept this from us",
+            "Ibrahim called people to Hajj"
           ],
-          "note": "Give a simple outline: Ihram (intention and clothing), Talbiyah ('Labbayka Allahumma labbayk'), Tawaf around the Kaaba, Sa'i between Safa and Marwa, standing at Arafah, Muzdalifah, Mina. Do not go into detailed fiqh differences."
+          "note": "Al-Baqarah 2:127: 'Our Lord, accept this from us.' Al-Hajj 22:27: 'And proclaim to the people the Hajj.' No pictures of prophets."
         },
         {
-          "heading": "Arafah",
+          "heading": "Quick check",
           "bullets": [
-            "The most important rite",
-            "Pilgrims make dua",
-            "Reward: Hajj is Arafah"
+            "Think, then vote"
           ],
-          "note": "The Prophet ﷺ said Hajj is Arafah (Tirmidhi, Abu Dawud). Ask: why is standing in dua so important? Link to dependence on Allah."
-        },
-        {
-          "heading": "Reward",
-          "bullets": [
-            "Hajj with no wrongdoing returns him sinless",
-            "Like the day his mother bore him",
-            "Bukhari and Muslim"
-          ],
-          "note": "The Prophet ﷺ said whoever performs Hajj and does not commit obscenity or wrongdoing returns as the day his mother bore him. Compare Hajj and Umrah. Reflect."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Who must perform Hajj?",
+            "options": [
+              "Adult Muslims who are able",
+              "Every child",
+              "Only people who live in Makkah"
+            ],
+            "answer": 0,
+            "why": "Hajj is due once on every adult Muslim who is able (3:97)."
+          }
         }
       ],
       "practice": [
-        "Name the fifth pillar.",
-        "What is the Kaaba?",
-        "Who built the Kaaba?",
-        "What is talbiyah?"
+        {
+          "q": "Explain who must perform Hajj.",
+          "a": "Every adult Muslim of sound mind who has the health, money and a safe way, once in a lifetime.",
+          "mins": 3,
+          "model": "Point: Hajj is for those who are able. Evidence: 'for whoever is able to find a way' (Al 'Imran 3:97). Explain: Allah does not ask what we cannot do."
+        },
+        {
+          "q": "Who built the Ka'bah?",
+          "a": "Ibrahim and Ismail (عَلَيْهِمَا السَّلَام)",
+          "mins": 1,
+          "options": [
+            "Ibrahim and Ismail (عَلَيْهِمَا السَّلَام)",
+            "Nuh (عَلَيْهِ السَّلَام)"
+          ]
+        }
       ],
       "independent": [
-        "Draw a flowchart of the Hajj rites",
-        "Write a paragraph: why is Hajj a unifying experience?",
-        "Compare Hajj and Umrah in a table"
+        {
+          "q": "Write a short fact file on Hajj in the portal response box: what, where, when, who, and one line about Ibrahim and Ismail. Start: 'Hajj is ...'",
+          "a": "Pilgrimage to Makkah in Dhul-Hijjah; fifth pillar; adults who are able; once; Ibrahim and Ismail built the Ka'bah",
+          "mins": 11,
+          "model": "Teacher writes 'What': 'Hajj is the pilgrimage to Makkah, the fifth pillar of Islam.'"
+        },
+        {
+          "q": "Extend: what du'a did Ibrahim and Ismail make as they built?",
+          "a": "Our Lord, accept this from us (2:127)",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: why does Allah only ask those who are able?",
+          "a": "Islam is mercy and does not burden people beyond their ability",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name three rites of Hajj.",
-        "What does 'able' mean in 3:97?"
+        {
+          "q": "Hajj is pillar number ...",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Two"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why do millions go to Makkah?",
+          "a": "To obey Allah's command of Hajj",
+          "mins": 2
+        }
       ],
-      "homework": "Research one rite of Hajj and prepare a one-minute explanation.",
-      "send": "SEND/EAL: step diagram with pictures. Stretch: link Hajj to the story of Ibrahim."
+      "homework": "Find Makkah on a map or atlas and work out roughly how far it is from London.",
+      "send": "SEND: fact file frame with picture prompts. EAL: word mat (pilgrim, able, Ka'bah). Stretch: read al-Hajj 22:27 and say what it promises.",
+      "resources": [
+        "Slides",
+        "School-approved Hajj text for children (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: Hajj fact file frame",
+        "Atlas or online map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kaaba Masjid al-Haram aerial",
+          "alt": "The Ka'bah in Masjid al-Haram",
+          "for": "hook"
+        },
+        {
+          "find": "Maqam Ibrahim",
+          "alt": "The Station of Ibrahim beside the Ka'bah",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mecca city view mountains",
+          "alt": "Makkah",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Hadith and akhlaq: advice, speech and truth online",
@@ -3118,6 +3227,808 @@
           "find": "suitcase travel",
           "alt": "A suitcase: the stranded traveller",
           "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Hajj and truthful speech",
+      "n": 19,
+      "title": "The rites of Hajj in order, and the best ten days",
+      "duration": 45,
+      "bigQuestion": "Pilgrims wear the same simple white clothes, rich or poor. What lesson could that teach?",
+      "objectives": [
+        "To understand the main rites of Hajj in order and how Muslims everywhere share in the first ten days of Dhul-Hijjah"
+      ],
+      "successCriteria": [
+        "All: put the main rites of Hajj in order",
+        "Most: say what happens on the Day of Arafah",
+        "Some: explain how Muslims not on Hajj can earn reward in the ten days"
+      ],
+      "smsc": "Social: equality of the pilgrims; Spiritual: special times for worship",
+      "keywords": [
+        {
+          "term": "ihram (إِحْرَام)",
+          "def": "the special state and simple clothes of a pilgrim"
+        },
+        {
+          "term": "tawaf (طَوَاف)",
+          "def": "walking seven times around the Ka'bah"
+        },
+        {
+          "term": "sa'i (سَعْي)",
+          "def": "walking seven times between Safa and Marwah"
+        },
+        {
+          "term": "Arafah (عَرَفَة)",
+          "def": "the plain where pilgrims stand on the ninth day"
+        },
+        {
+          "term": "Mina (مِنَى)",
+          "def": "the valley where pilgrims stay and stone the pillars"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Pilgrims wear the same simple white clothes, rich or poor. What lesson could that teach?",
+        "a": "Everyone is equal before Allah; only taqwa makes a person better."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And proclaim to the people the Hajj; they will come to you on foot and on every lean camel, from every distant pass' (al-Hajj 22:27).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Hajj is due on Muslims who are ...",
+          "a": "Adult and able",
+          "mins": 1,
+          "options": [
+            "Adult and able",
+            "Rich only"
+          ]
+        },
+        {
+          "q": "Who built the Ka'bah?",
+          "a": "Ibrahim and Ismail",
+          "mins": 1,
+          "options": [
+            "Ibrahim and Ismail",
+            "Musa"
+          ]
+        },
+        {
+          "q": "In which month is Hajj?",
+          "a": "Dhul-Hijjah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The journey of Hajj",
+          "bullets": [],
+          "note": "Trace each step on the map of Makkah, Mina and Arafah.",
+          "timeline": [
+            {
+              "label": "Ihram",
+              "text": "Intention and simple clothes"
+            },
+            {
+              "label": "Tawaf",
+              "text": "Seven circuits of the Ka'bah"
+            },
+            {
+              "label": "Sa'i",
+              "text": "Safa and Marwah, seven times"
+            },
+            {
+              "label": "9th: Arafah",
+              "text": "Standing in du'a"
+            },
+            {
+              "label": "Mina",
+              "text": "Stoning, sacrifice, shaving"
+            },
+            {
+              "label": "Eid",
+              "text": "Tawaf and celebration"
+            }
+          ]
+        },
+        {
+          "heading": "Safa and Marwah",
+          "bullets": [
+            "Hajar ran between the two hills",
+            "She was searching for water for baby Ismail",
+            "Allah sent the well of Zamzam"
+          ],
+          "note": "Bukhari reports this story from Ibn Abbas. Pilgrims walk the same path. No pictures of people."
+        },
+        {
+          "heading": "The Day of Arafah",
+          "bullets": [
+            "Pilgrims stand on the plain of Arafah",
+            "They make du'a until sunset",
+            "Others fast this day if they can"
+          ],
+          "note": "The Prophet ﷺ said fasting the Day of Arafah expiates the sins of the year before and the year after (Muslim)."
+        },
+        {
+          "heading": "The best ten days, for everyone",
+          "bullets": [
+            "Good deeds are most loved by Allah now",
+            "Takbir: Allahu akbar, often",
+            "Fasting Arafah, sadaqah, extra salah"
+          ],
+          "note": "The Prophet ﷺ said no good deeds are better than those done in these ten days (Bukhari). Dhul-Hijjah begins around 7 May 2027, depending on the moon."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Put in order: Arafah, ihram, tawaf, sa'i.",
+          "a": "Ihram, tawaf, sa'i, Arafah",
+          "mins": 2,
+          "model": "Teacher: 'First the pilgrim enters ihram, then tawaf around the Ka'bah, then sa'i between Safa and Marwah, then on the ninth day Arafah.'"
+        },
+        {
+          "q": "Sa'i remembers ...",
+          "a": "Hajar searching for water",
+          "mins": 1,
+          "options": [
+            "Hajar searching for water",
+            "The building of a masjid"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Make a 'Hajj journey map' on the pupil PDF: number the places (Ka'bah, Safa and Marwah, Mina, Arafah) in order and write one sentence for each.",
+          "a": "Correct order with a sentence on what happens at each place",
+          "mins": 10,
+          "model": "Teacher writes stop 1: 'The Ka'bah: pilgrims make tawaf, walking around it seven times.'"
+        },
+        {
+          "q": "Extend: list three good deeds you can do in the ten days even though you are not on Hajj.",
+          "a": "Takbir, fasting Arafah, sadaqah, extra salah, helping at home",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: why do pilgrims all wear simple ihram clothes?",
+          "a": "To show equality and humility before Allah",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Pilgrims stand at Arafah on the ...",
+          "a": "Ninth of Dhul-Hijjah",
+          "mins": 1,
+          "options": [
+            "Ninth of Dhul-Hijjah",
+            "First of Ramadan"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what do the same white clothes teach?",
+          "a": "Everyone is equal before Allah",
+          "mins": 2
+        }
+      ],
+      "homework": "Over the half term, say the takbir each day in the ten days and fast the Day of Arafah if your family agrees you are able.",
+      "send": "SEND: map with the places already labelled, cards to order. EAL: word mat with Arabic. Stretch: find out what Zamzam water is.",
+      "resources": [
+        "Slides",
+        "School-approved Hajj text for children (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: Hajj journey map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mount Arafat",
+          "alt": "The plain and Mount of Arafah",
+          "for": "teach:3"
+        },
+        {
+          "find": "Safa Marwa hills Masjid al-Haram",
+          "alt": "The hills of Safa and Marwah",
+          "for": "teach:2"
+        },
+        {
+          "find": "ihram white cloth towels",
+          "alt": "Simple white ihram cloths",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Hajj and truthful speech",
+      "n": 20,
+      "title": "Eid al-Adha: sacrifice and sharing",
+      "duration": 45,
+      "bigQuestion": "What is the hardest thing you have ever given up because someone you love asked you to?",
+      "objectives": [
+        "To understand why Muslims celebrate Eid al-Adha and offer the udhiyah, and what Ibrahim's (عَلَيْهِ السَّلَام) obedience teaches"
+      ],
+      "successCriteria": [
+        "All: say what Muslims do on Eid al-Adha",
+        "Most: retell how Allah tested Ibrahim (عَلَيْهِ السَّلَام) and ransomed Ismail",
+        "Some: explain why the meat is shared and what reaches Allah"
+      ],
+      "smsc": "Spiritual: obedience and sacrifice; Social: sharing with the poor",
+      "keywords": [
+        {
+          "term": "Eid al-Adha (عِيدُ الأَضْحَى)",
+          "def": "the festival of sacrifice on the tenth of Dhul-Hijjah"
+        },
+        {
+          "term": "udhiyah (أُضْحِيَة)",
+          "def": "the animal sacrificed for Allah at Eid al-Adha"
+        },
+        {
+          "term": "taqwa (تَقْوَى)",
+          "def": "being mindful of Allah"
+        },
+        {
+          "term": "share",
+          "def": "give part of what you have to others"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the hardest thing you have ever given up because someone you love asked you to?",
+        "a": "Ibrahim (عَلَيْهِ السَّلَام) was ready to give up what he loved most for Allah; Allah ransomed his son."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Their meat will not reach Allah, nor will their blood, but what reaches Him is taqwa from you' (al-Hajj 22:37).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Pilgrims stand at Arafah on the ...",
+          "a": "Ninth of Dhul-Hijjah",
+          "mins": 1,
+          "options": [
+            "Ninth of Dhul-Hijjah",
+            "Tenth of Ramadan"
+          ]
+        },
+        {
+          "q": "Sa'i is between ...",
+          "a": "Safa and Marwah",
+          "mins": 1,
+          "options": [
+            "Safa and Marwah",
+            "Mina and Arafah"
+          ]
+        },
+        {
+          "q": "Did you say takbir in the ten days? What did you say?",
+          "a": "Allahu akbar",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The test of Ibrahim",
+          "bullets": [
+            "Ibrahim saw in a dream he must sacrifice his son",
+            "Ismail said: do as you are commanded",
+            "Both submitted to Allah"
+          ],
+          "note": "Begin with Bismillah. As-Saffat 37:102. Tell it calmly; no pictures of prophets or people."
+        },
+        {
+          "heading": "Allah's ransom",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "And We ransomed him with a great sacrifice.",
+            "source": "as-Saffat 37:107"
+          }
+        },
+        {
+          "heading": "Eid al-Adha day",
+          "bullets": [],
+          "note": "Pupils add what their family did.",
+          "cycle": [
+            "Ghusl and best clothes",
+            "Takbir on the way",
+            "Eid prayer",
+            "The udhiyah after the prayer",
+            "Share the meat",
+            "Visit family"
+          ]
+        },
+        {
+          "heading": "What reaches Allah?",
+          "bullets": [
+            "Not the meat or the blood",
+            "Our taqwa reaches Him",
+            "Share with family, friends and the poor"
+          ],
+          "note": "Al-Hajj 22:37. The Prophet ﷺ sacrificed two rams with his own hand, saying bismillah and takbir (Bukhari and Muslim). Many scholars recommend sharing in thirds."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why Muslims offer the udhiyah.",
+          "a": "To follow Ibrahim's obedience and the Sunnah, out of taqwa, and to share with others.",
+          "mins": 3,
+          "model": "Point: the udhiyah shows obedience to Allah. Evidence: Allah ransomed Ismail 'with a great sacrifice' (37:107). Explain: we remember Ibrahim's obedience and share the meat."
+        },
+        {
+          "q": "What reaches Allah from the udhiyah?",
+          "a": "Our taqwa",
+          "mins": 1,
+          "options": [
+            "Our taqwa",
+            "The meat"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write an Eid al-Adha recount in the portal response box: what your family did, how the meat or food was shared, and what Ibrahim's story taught you. Start: 'On Eid al-Adha ...'",
+          "a": "A recount with Eid actions, sharing and the lesson of obedience",
+          "mins": 11,
+          "model": "Teacher writes: 'On Eid al-Adha we went to the Eid prayer and said takbir on the way.'"
+        },
+        {
+          "q": "Extend: why is the udhiyah done after the Eid prayer, not before?",
+          "a": "The Prophet ﷺ taught that the sacrifice is after the prayer (Bukhari and Muslim)",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: what does 22:37 teach about all our worship?",
+          "a": "Allah looks at our hearts and taqwa",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Eid al-Adha is on the ... of Dhul-Hijjah.",
+          "a": "Tenth",
+          "mins": 1,
+          "options": [
+            "Tenth",
+            "First"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what did Ibrahim's test show?",
+          "a": "Complete obedience and trust in Allah",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask your family who received a share of the udhiyah or Eid food this year and write two sentences about it.",
+      "send": "SEND: story cards with words only to order. EAL: recount frame with time words. Stretch: compare the two Eids in a table.",
+      "resources": [
+        "Slides",
+        "School-approved Hajj text for children (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: Eid al-Adha recount frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sheep grazing field",
+          "alt": "Sheep, one of the animals offered as udhiyah",
+          "for": "teach:4"
+        },
+        {
+          "find": "food parcels sharing",
+          "alt": "Food parcels shared with others",
+          "for": "keywords"
+        },
+        {
+          "find": "mosque minaret morning sky",
+          "alt": "A masjid on Eid morning",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Hajj and truthful speech",
+      "n": 21,
+      "title": "Truthful speech",
+      "duration": 45,
+      "bigQuestion": "Is it ever all right to tell a small lie to make someone feel better? Think, then we will check.",
+      "objectives": [
+        "To understand why Islam commands truthful speech and how truthfulness leads to goodness"
+      ],
+      "successCriteria": [
+        "All: say what sidq means",
+        "Most: explain the hadith that truthfulness leads to righteousness",
+        "Some: explain why white lies and exaggerating are still a problem"
+      ],
+      "smsc": "Moral: honesty",
+      "keywords": [
+        {
+          "term": "sidq (صِدْق)",
+          "def": "truthfulness: saying what is true"
+        },
+        {
+          "term": "kadhib (كَذِب)",
+          "def": "lying"
+        },
+        {
+          "term": "birr (بِرّ)",
+          "def": "righteousness: all kinds of good"
+        },
+        {
+          "term": "exaggerate",
+          "def": "make something sound bigger than it is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it ever all right to tell a small lie to make someone feel better? Think, then we will check.",
+        "a": "Islam teaches truth with kindness: we can choose gentle true words instead of lying."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, fear Allah and speak words of appropriate justice' (al-Ahzab 33:70).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Eid al-Adha is on the ... of Dhul-Hijjah.",
+          "a": "Tenth",
+          "mins": 1,
+          "options": [
+            "Tenth",
+            "Ninth"
+          ]
+        },
+        {
+          "q": "What reaches Allah from the udhiyah?",
+          "a": "Taqwa",
+          "mins": 1,
+          "options": [
+            "Taqwa",
+            "The blood"
+          ]
+        },
+        {
+          "q": "Who was ransomed with a great sacrifice?",
+          "a": "Ismail (عَلَيْهِ السَّلَام)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Speak a straight word",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "O you who believe, fear Allah and speak words of appropriate justice.",
+            "source": "al-Ahzab 33:70"
+          }
+        },
+        {
+          "heading": "Where truth leads",
+          "bullets": [],
+          "note": "Follow the arrows.",
+          "cycle": [
+            "Truthfulness",
+            "Righteousness",
+            "Paradise"
+          ]
+        },
+        {
+          "heading": "The hadith",
+          "bullets": [
+            "Truthfulness leads to righteousness",
+            "Righteousness leads to Paradise",
+            "Lying leads to wickedness and the Fire"
+          ],
+          "note": "Bukhari and Muslim, from Ibn Mas'ud. A person keeps being truthful until he is written with Allah as truthful."
+        },
+        {
+          "heading": "Truth with kindness",
+          "bullets": [],
+          "note": "Pupils decide which is better.",
+          "compare": {
+            "left": {
+              "title": "Lie",
+              "points": [
+                "'I love it!' (when you do not)",
+                "Feels easy now",
+                "Breaks trust later"
+              ]
+            },
+            "right": {
+              "title": "Kind truth",
+              "points": [
+                "'Jazak Allahu khayran, that was kind of you'",
+                "True and gentle",
+                "Builds trust"
+              ]
+            },
+            "label": "vs"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what the hadith teaches about truthfulness.",
+          "a": "Truthfulness leads to righteousness and Paradise; lying leads to wickedness.",
+          "mins": 3,
+          "model": "Point: truth leads to good. Evidence: 'Truthfulness leads to righteousness, and righteousness leads to Paradise' (Bukhari and Muslim). Explain: each true word builds a good habit."
+        },
+        {
+          "q": "Sidq means ...",
+          "a": "Truthfulness",
+          "mins": 1,
+          "options": [
+            "Truthfulness",
+            "Patience"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Scenario cards on the pupil PDF: for four situations (a broken vase, a gift you dislike, homework not done, a friend's drawing), write a truthful and kind reply.",
+          "a": "True, gentle replies for each, for example: 'I broke it by accident, I am sorry'",
+          "mins": 11,
+          "model": "Teacher does card 1: 'I broke the vase by accident. I am sorry, can I help clear it up?'"
+        },
+        {
+          "q": "Extend: why is exaggerating a kind of lie?",
+          "a": "It makes something sound untrue, so it is not fully truthful",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: why do people trust a truthful person?",
+          "a": "Their words match the facts every time",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Truthfulness leads to ...",
+          "a": "Righteousness",
+          "mins": 1,
+          "options": [
+            "Righteousness",
+            "Trouble"
+          ]
+        },
+        {
+          "q": "Back to our ponder: small lie or kind truth?",
+          "a": "Kind truth: gentle words that are still true",
+          "mins": 2
+        }
+      ],
+      "homework": "Self-assessment: for one week, tick each day you spoke only the truth, even when it was hard.",
+      "send": "SEND: scenario cards with picture prompts. EAL: phrase bank of kind true replies. Stretch: learn al-Ahzab 33:70 in Arabic.",
+      "resources": [
+        "Slides",
+        "Qur'an and hadith list for truthfulness, checked by a teacher (TO CONFIRM)",
+        "Pupil PDF worksheet: truthful and kind replies; self-assessment chart"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "road signpost arrows",
+          "alt": "Signposts: where truth leads",
+          "for": "teach:2"
+        },
+        {
+          "find": "wax seal letter",
+          "alt": "A sealed letter: trust kept",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Hajj and truthful speech",
+      "n": 22,
+      "title": "Promises, honesty and keeping a trust",
+      "duration": 45,
+      "bigQuestion": "A friend lends you their favourite book. What makes you a good person to trust with it?",
+      "objectives": [
+        "To understand why keeping promises and trusts (amanah) is part of a Muslim's faith"
+      ],
+      "successCriteria": [
+        "All: say what amanah means",
+        "Most: give three examples of an amanah",
+        "Some: explain why breaking promises is a sign of hypocrisy"
+      ],
+      "smsc": "Moral: keeping promises; Social: being reliable",
+      "keywords": [
+        {
+          "term": "amanah (أَمَانَة)",
+          "def": "a trust: something left in your care"
+        },
+        {
+          "term": "wa'd (وَعْد)",
+          "def": "a promise"
+        },
+        {
+          "term": "munafiq (مُنَافِق)",
+          "def": "a hypocrite: someone whose actions do not match their words"
+        },
+        {
+          "term": "reliable",
+          "def": "someone you can count on"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A friend lends you their favourite book. What makes you a good person to trust with it?",
+        "a": "Looking after it, returning it on time and not lending it on: that is keeping an amanah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And fulfil every commitment. Indeed, the commitment is ever questioned about' (al-Isra' 17:34).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Truthfulness leads to ...",
+          "a": "Righteousness",
+          "mins": 1,
+          "options": [
+            "Righteousness",
+            "Wealth"
+          ]
+        },
+        {
+          "q": "Sidq means ...",
+          "a": "Truthfulness",
+          "mins": 1,
+          "options": [
+            "Truthfulness",
+            "Sadness"
+          ]
+        },
+        {
+          "q": "What was the Prophet ﷺ called in Makkah for his honesty?",
+          "a": "Al-Amin",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fulfil your promises",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "And fulfil every commitment. Indeed, the commitment is ever questioned about.",
+            "source": "al-Isra' 17:34"
+          }
+        },
+        {
+          "heading": "What is an amanah?",
+          "bullets": [],
+          "note": "Pupils add examples.",
+          "diagram": {
+            "centre": "Amanah",
+            "items": [
+              "A borrowed book",
+              "A secret told to you",
+              "Your body and time",
+              "Money given to look after",
+              "A job you agreed to do"
+            ]
+          }
+        },
+        {
+          "heading": "Signs of a hypocrite",
+          "bullets": [
+            "When he speaks, he lies",
+            "When he promises, he breaks it",
+            "When trusted, he betrays"
+          ],
+          "note": "Bukhari and Muslim, from Abu Hurayrah. A Muslim works hard to be the opposite of these."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "You promise to help Dad at 4pm but your friend calls. You ...",
+            "options": [
+              "Keep your promise and call your friend later",
+              "Forget the promise",
+              "Say you are ill"
+            ],
+            "answer": 0,
+            "why": "Promises are kept (17:34); honesty and trust come first."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why keeping a promise matters in Islam.",
+          "a": "Allah commands it and will ask about it (17:34); breaking promises is a sign of hypocrisy.",
+          "mins": 3,
+          "model": "Point: promises must be kept. Evidence: 'the commitment is ever questioned about' (17:34). Explain: Allah will ask us, so we only promise what we can do and then do it."
+        },
+        {
+          "q": "Amanah means ...",
+          "a": "A trust",
+          "mins": 1,
+          "options": [
+            "A trust",
+            "A prayer"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a 'promise plan' in the portal response box: one promise you will make this week, how you will keep it, and what you will say if something goes wrong. Start: 'I promise to ...'",
+          "a": "A realistic promise with a plan and an honest back-up",
+          "mins": 10,
+          "model": "Teacher writes: 'I promise to read to my little brother every evening. I will do it after Maghrib.'"
+        },
+        {
+          "q": "Extend: why should we say in sha Allah when we promise?",
+          "a": "Only Allah knows the future (18:23-24)",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: unit self-assessment: rate your truthful speech and promise-keeping this half term and set one target.",
+          "a": "Honest rating with a target",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Breaking promises is a sign of ...",
+          "a": "Hypocrisy",
+          "mins": 1,
+          "options": [
+            "Hypocrisy",
+            "Bravery"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what makes you trustworthy?",
+          "a": "Keeping the amanah and returning it as promised",
+          "mins": 2
+        }
+      ],
+      "homework": "Keep your promise plan and tell your parent at the end of the week how it went.",
+      "send": "SEND: promise frame with a sentence starter. EAL: key word cards. Stretch: find an example of al-Amin keeping trusts for people even when they opposed him.",
+      "resources": [
+        "Slides",
+        "Qur'an and hadith list for truthfulness, checked by a teacher (TO CONFIRM)",
+        "Pupil PDF worksheet: promise plan; unit self-assessment"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stack of library books",
+          "alt": "Borrowed books: an amanah",
+          "for": "teach:2"
+        },
+        {
+          "find": "padlock key",
+          "alt": "A lock and key: keeping a trust safe",
+          "for": "keywords"
         }
       ]
     }

@@ -11,6 +11,7 @@ import { ukToday } from "@/lib/learn/ukTime";
 import { btn, FormSection, ui } from "@/components/learn/ui";
 
 import { askConfirm } from "@/components/learn/kit";
+import { PhoneInput } from "@/components/ui/PhoneInput";
 type StaffRow = {
   user_id: string;
   full_name: string;
@@ -252,7 +253,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
           </div>
           <div>
             <label className="block text-sm font-medium text-ink" htmlFor="sd-phone">Phone</label>
-            <input id="sd-phone" type="tel" className={INPUT} value={form.phone} onChange={(e) => set("phone", e.target.value)} maxLength={30} />
+            <PhoneInput id="sd-phone" value={form.phone} onChange={(v) => set("phone", v)} inputClassName={ui.input} />
           </div>
         </div>
       </FormSection>

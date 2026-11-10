@@ -56,7 +56,7 @@ export function FamilyRevision() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Revision" }]} title="Revision" subtitle={`How ${name} is getting on with each unit's summary, quiz and practice.`} />
+      <PageHeader crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Revision" }]} title="Revision" subtitle={`How ${name} is getting on with each unit's summary, quiz and practice.`} />
       {children && children.length > 1 && (
         <div className="mb-4 flex flex-wrap gap-2" role="group" aria-label="Child">
           {children.map((c) => (

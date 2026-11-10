@@ -2,7 +2,7 @@
   "subject": "Geography",
   "year": "y4",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "National Curriculum (KS2 geography: volcanoes, earthquakes, structure of the Earth, Europe case study); school AQA tectonics sequence used for subject knowledge | Spring 1 2027 (lessons 5 to 6): Tarbiyyah Primary Year 4 curriculum map and Geography Long Term Plan 2023-24 (Marvellous Medicine: UK physical features); TGA Year 4 pack | Spring 2 2027: TGA Year 4 pack, History and geography, Misty Mountain, Sierra (mountains, map skills)",
+  "source": "National Curriculum (KS2 geography: volcanoes, earthquakes, structure of the Earth, Europe case study); school AQA tectonics sequence used for subject knowledge | Spring 1 2027 (lessons 5 to 6): Tarbiyyah Primary Year 4 curriculum map and Geography Long Term Plan 2023-24 (Marvellous Medicine: UK physical features); TGA Year 4 pack | Spring 2 2027: TGA Year 4 pack, History and geography, Misty Mountain, Sierra (mountains, map skills) | Summer 1 2027 (lessons 12 to 18 and 19): TGA Year 4 pack, History and geography, Blue Abyss (oceans, ocean floor, zones and currents, Great Barrier Reef, review, assessed enquiry)",
   "lessons": [
     {
       "unit": "Unit 1: Restless Earth",
@@ -1983,6 +1983,1866 @@
           "find": "steep mountain slope",
           "alt": "A steep mountain slope",
           "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Seas and oceans (Blue Abyss)",
+      "n": 12,
+      "title": "The five oceans of the world",
+      "bigQuestion": "If most of our planet is covered by water, should it be called Planet Ocean instead of Earth?",
+      "objectives": [
+        "To understand where the world's five oceans are and how they compare in size"
+      ],
+      "successCriteria": [
+        "All: name and locate the five oceans",
+        "Most: order the oceans by size",
+        "Some: explain why the oceans matter to people"
+      ],
+      "crossCurricular": "Maths: percentages as parts of 100 on a pie chart",
+      "smsc": "Spiritual: the vastness of the seas as a sign of Allah",
+      "keywords": [
+        {
+          "term": "ocean",
+          "def": "one of five huge areas of salt water"
+        },
+        {
+          "term": "continent",
+          "def": "one of seven very large areas of land"
+        },
+        {
+          "term": "Pacific",
+          "def": "the largest and deepest ocean"
+        },
+        {
+          "term": "Southern Ocean",
+          "def": "the ocean around Antarctica"
+        },
+        {
+          "term": "Arctic Ocean",
+          "def": "the smallest ocean, around the North Pole"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If most of our planet is water, should it be called Planet Ocean instead of Earth? Why?"
+      },
+      "islamicLink": {
+        "text": "Allah tells us that among His signs are the ships sailing on the sea like mountains (Ash-Shura 42:32). The oceans He created carry ships, feed people and make the rain.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The highest mountain on Earth is:",
+          "a": "Everest",
+          "mins": 1,
+          "options": [
+            "Everest",
+            "Ben Nevis"
+          ]
+        },
+        {
+          "q": "Lines joining places of the same height are:",
+          "a": "Contours",
+          "mins": 1,
+          "options": [
+            "Contours",
+            "Rivers"
+          ]
+        },
+        {
+          "q": "Who won the Battle of Hastings in 1066?",
+          "a": "William of Normandy",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A watery planet",
+          "bullets": [
+            "Oceans cover about 71% of Earth",
+            "Most of Earth's water is salty",
+            "All the oceans are joined"
+          ],
+          "note": "Show the globe or a world map. Spin it: blue everywhere.",
+          "chart": {
+            "kind": "pie",
+            "title": "Earth's surface",
+            "labels": [
+              "Ocean",
+              "Land"
+            ],
+            "values": [
+              71,
+              29
+            ],
+            "unit": "%"
+          }
+        },
+        {
+          "heading": "The five oceans",
+          "bullets": [
+            "Pacific, Atlantic, Indian",
+            "Southern, Arctic",
+            "Each touches several continents"
+          ],
+          "note": "Point to each on the map and name a continent it touches."
+        },
+        {
+          "heading": "Biggest to smallest",
+          "bullets": [
+            "Pacific is the largest",
+            "Then Atlantic, Indian, Southern",
+            "Arctic is the smallest"
+          ],
+          "note": "The Pacific is bigger than all the land on Earth put together.",
+          "table": {
+            "head": [
+              "Ocean",
+              "Size order",
+              "Touches"
+            ],
+            "rows": [
+              [
+                "Pacific",
+                "1st",
+                "Asia, Australia, the Americas"
+              ],
+              [
+                "Atlantic",
+                "2nd",
+                "Europe, Africa, the Americas"
+              ],
+              [
+                "Indian",
+                "3rd",
+                "Africa, Asia, Australia"
+              ],
+              [
+                "Southern",
+                "4th",
+                "Antarctica"
+              ],
+              [
+                "Arctic",
+                "5th",
+                "Europe, Asia, North America"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Locate an ocean",
+          "bullets": [
+            "Find the continents around it",
+            "Use compass directions",
+            "Write a location sentence"
+          ],
+          "note": "Model a location sentence.",
+          "model": {
+            "problem": "Where is the Indian Ocean?",
+            "steps": [
+              "Find Africa to the west",
+              "Find Asia to the north",
+              "Find Australia to the east",
+              "Write: south of Asia, between Africa and Australia"
+            ],
+            "answer": "The Indian Ocean is south of Asia, between Africa and Australia."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The smallest ocean is the:",
+            "options": [
+              "Pacific",
+              "Arctic",
+              "Atlantic"
+            ],
+            "answer": 1,
+            "why": "The Arctic Ocean around the North Pole is the smallest; the Pacific is the largest."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which ocean lies between Europe and North America?",
+          "a": "The Atlantic",
+          "mins": 1,
+          "model": "I find Europe on the right.\nI find North America on the left.\nThe ocean between them is the Atlantic."
+        },
+        {
+          "q": "Which ocean surrounds Antarctica?",
+          "a": "The Southern Ocean",
+          "mins": 1
+        },
+        {
+          "q": "Name two continents the Pacific touches.",
+          "a": "For example: Asia and North America",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Label the five oceans and seven continents on the world map, then number the oceans 1 to 5 by size.",
+          "a": "All labels correct; Pacific 1, Atlantic 2, Indian 3, Southern 4, Arctic 5",
+          "mins": 12,
+          "model": "Teacher labels the Pacific and writes 1 beside it first."
+        },
+        {
+          "q": "Extend: Write location sentences for two oceans.",
+          "a": "For example: The Arctic Ocean is north of Europe, Asia and North America.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why might the oceans be important even to people who live far from the sea?",
+          "a": "They make rain clouds, give food and carry ships with goods",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The largest ocean is the:",
+          "a": "Pacific",
+          "mins": 1,
+          "options": [
+            "Pacific",
+            "Indian"
+          ]
+        },
+        {
+          "q": "Big question: Planet Earth or Planet Ocean?",
+          "a": "A reasoned answer, e.g. Planet Ocean, because about 71% is ocean",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a UK-to-the-world sea route: which oceans would a ship cross to sail from London to Australia?",
+      "send": "SEND: map with ocean names to cut and stick. EAL: ocean names with a map. Stretch: find the Caribbean and Mediterranean Seas.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 1 Blue Abyss (Cornerstones Maestro Blue Abyss: CHECK IN MAESTRO)",
+        "World map: oceans and continents (portal printable)",
+        "Atlas or online map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "world ocean map",
+          "alt": "A map of the world's oceans",
+          "for": "teach:2"
+        },
+        {
+          "find": "Pacific Ocean from space",
+          "alt": "The Pacific Ocean seen from space",
+          "for": "hook"
+        },
+        {
+          "find": "Arctic sea ice",
+          "alt": "Sea ice in the Arctic Ocean",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Seas and oceans (Blue Abyss)",
+      "n": 13,
+      "title": "Seas, the Equator and the hemispheres",
+      "bigQuestion": "Is it summer everywhere in the world in June?",
+      "objectives": [
+        "To understand how the Equator and the Prime Meridian divide the Earth and where the seas around the UK are"
+      ],
+      "successCriteria": [
+        "All: name the seas around the UK",
+        "Most: find the Equator and the four hemispheres",
+        "Some: explain why seasons are opposite in the two hemispheres"
+      ],
+      "crossCurricular": "Science: the Earth, Sun and day and night",
+      "smsc": "Cultural: the same moment brings different seasons for Muslims around the world",
+      "keywords": [
+        {
+          "term": "sea",
+          "def": "a smaller area of salt water, often part of an ocean"
+        },
+        {
+          "term": "Equator",
+          "def": "an imaginary line round the middle of the Earth"
+        },
+        {
+          "term": "hemisphere",
+          "def": "half of the Earth"
+        },
+        {
+          "term": "Prime Meridian",
+          "def": "an imaginary line through Greenwich, London, from pole to pole"
+        },
+        {
+          "term": "latitude",
+          "def": "how far north or south of the Equator a place is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When it is summer in London, what season do you think it is in Australia?"
+      },
+      "starter": [
+        {
+          "q": "The largest ocean is the:",
+          "a": "Pacific",
+          "mins": 1,
+          "options": [
+            "Pacific",
+            "Arctic"
+          ]
+        },
+        {
+          "q": "Oceans cover about:",
+          "a": "71% of Earth",
+          "mins": 1,
+          "options": [
+            "71% of Earth",
+            "10% of Earth"
+          ]
+        },
+        {
+          "q": "Name the five oceans.",
+          "a": "Pacific, Atlantic, Indian, Southern, Arctic",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Seas around the UK",
+          "bullets": [
+            "North Sea to the east",
+            "Irish Sea to the west",
+            "English Channel to the south",
+            "Atlantic Ocean to the north and west"
+          ],
+          "note": "A sea is smaller than an ocean and often joins it."
+        },
+        {
+          "heading": "The Equator",
+          "bullets": [
+            "A line round the middle of Earth",
+            "Splits Earth into northern and southern halves",
+            "Places near it are hot all year"
+          ],
+          "note": "It is imaginary: you cannot see it on the ground."
+        },
+        {
+          "heading": "Four hemispheres",
+          "bullets": [
+            "Northern and Southern: split by the Equator",
+            "Eastern and Western: split by the Prime Meridian",
+            "The Prime Meridian runs through Greenwich, London"
+          ],
+          "note": "The UK is in the Northern Hemisphere.",
+          "diagram": {
+            "centre": "Hemispheres",
+            "items": [
+              "Northern: the UK",
+              "Southern: Australia",
+              "Eastern: Asia",
+              "Western: the Americas"
+            ]
+          }
+        },
+        {
+          "heading": "Opposite seasons",
+          "bullets": [
+            "Earth is tilted",
+            "June: Northern Hemisphere leans to the Sun",
+            "So June is winter in Australia"
+          ],
+          "note": "Model with a torch and a ball.",
+          "model": {
+            "problem": "Why is June cold in Australia?",
+            "steps": [
+              "Earth is tilted",
+              "In June the north leans towards the Sun",
+              "The south leans away",
+              "Less sunlight means winter in the south"
+            ],
+            "answer": "The Southern Hemisphere has winter in June"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The UK is in the:",
+            "options": [
+              "Southern Hemisphere",
+              "Northern Hemisphere",
+              "On the Equator"
+            ],
+            "answer": 1,
+            "why": "The UK is north of the Equator, so it is in the Northern Hemisphere."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which sea separates England and France?",
+          "a": "The English Channel",
+          "mins": 1,
+          "model": "I find England.\nI look south across the water to France.\nThat water is the English Channel."
+        },
+        {
+          "q": "Which line passes through Greenwich?",
+          "a": "The Prime Meridian",
+          "mins": 1
+        },
+        {
+          "q": "Is Australia north or south of the Equator?",
+          "a": "South",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: On the globe map sheet, draw and label the Equator and the Prime Meridian, label the four hemispheres, and mark the UK and Australia.",
+          "a": "Lines and labels correct; UK in the north and east/west, Australia in the south and east",
+          "mins": 12,
+          "model": "Teacher draws the Equator round the middle first."
+        },
+        {
+          "q": "Extend: Label the four seas and ocean around the UK.",
+          "a": "North Sea, Irish Sea, English Channel, Atlantic Ocean",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why are places near the Equator hot all year?",
+          "a": "The Sun is high in the sky all year, so sunlight is strong",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Equator divides Earth into:",
+          "a": "North and south",
+          "mins": 1,
+          "options": [
+            "North and south",
+            "East and west"
+          ]
+        },
+        {
+          "q": "Big question: is it summer everywhere in June?",
+          "a": "No: June is summer in the north but winter in the south",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three countries the Equator passes through on a map with an adult.",
+      "send": "SEND: lines drawn, labels to stick. EAL: north, south, east, west with arrows. Stretch: find Makkah's hemisphere and latitude.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 1 Blue Abyss (Cornerstones Maestro Blue Abyss: CHECK IN MAESTRO)",
+        "Globe outline sheet and UK seas map (portal printable)",
+        "Torch and ball (or orange) for the seasons model"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Prime Meridian line Greenwich",
+          "alt": "The Prime Meridian line at Greenwich",
+          "for": "teach:3"
+        },
+        {
+          "find": "globe showing Equator",
+          "alt": "A globe showing the Equator",
+          "for": "hook"
+        },
+        {
+          "find": "English Channel satellite",
+          "alt": "The English Channel from space",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Seas and oceans (Blue Abyss)",
+      "n": 14,
+      "title": "Under the waves: the ocean floor",
+      "bigQuestion": "If you drained all the water out of the Atlantic, what would you see?",
+      "objectives": [
+        "To understand the main features of the ocean floor"
+      ],
+      "successCriteria": [
+        "All: name the continental shelf, abyssal plain, ridge and trench",
+        "Most: order ocean floor features by depth",
+        "Some: explain how deep the Mariana Trench is"
+      ],
+      "crossCurricular": "Maths: comparing and subtracting large numbers",
+      "smsc": "Spiritual: wonder at hidden places only Allah fully knows",
+      "keywords": [
+        {
+          "term": "continental shelf",
+          "def": "shallow sea floor at the edge of a continent"
+        },
+        {
+          "term": "abyssal plain",
+          "def": "the deep, flat ocean floor"
+        },
+        {
+          "term": "trench",
+          "def": "a very deep, narrow valley in the ocean floor"
+        },
+        {
+          "term": "ridge",
+          "def": "a long underwater mountain chain"
+        },
+        {
+          "term": "depth",
+          "def": "how deep something is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Could the world's highest mountain fit inside the deepest part of the ocean?"
+      },
+      "starter": [
+        {
+          "q": "The Equator divides Earth into:",
+          "a": "North and south halves",
+          "mins": 1,
+          "options": [
+            "North and south halves",
+            "East and west halves"
+          ]
+        },
+        {
+          "q": "The sea between England and France is the:",
+          "a": "English Channel",
+          "mins": 1,
+          "options": [
+            "English Channel",
+            "Irish Sea"
+          ]
+        },
+        {
+          "q": "Everest is about how tall?",
+          "a": "About 8,849 m",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The edge of the land",
+          "bullets": [
+            "Continental shelf: shallow, up to about 200 m",
+            "Continental slope: drops steeply",
+            "Most sea fish live over the shelf"
+          ],
+          "note": "The shelf is the drowned edge of the continent."
+        },
+        {
+          "heading": "The deep ocean",
+          "bullets": [
+            "Abyssal plain: flat and dark",
+            "Ridges: underwater mountain chains",
+            "The Mid-Atlantic Ridge runs down the Atlantic"
+          ],
+          "note": "Link to Spring 2: mountains form where plates move."
+        },
+        {
+          "heading": "Trenches",
+          "bullets": [
+            "The deepest parts of the ocean",
+            "Mariana Trench in the Pacific",
+            "Challenger Deep: about 10,900 m"
+          ],
+          "note": "Everest (8,849 m) would fit inside with about 2 km of water above it.",
+          "chart": {
+            "kind": "bar",
+            "title": "Height and depth (approximate)",
+            "labels": [
+              "Ben Nevis",
+              "Everest",
+              "Abyssal plain",
+              "Challenger Deep"
+            ],
+            "values": [
+              1345,
+              8849,
+              4000,
+              10900
+            ],
+            "unit": "m"
+          }
+        },
+        {
+          "heading": "Draw a cross-section",
+          "bullets": [
+            "Land on the left",
+            "Shelf, slope, plain",
+            "A ridge, then a trench"
+          ],
+          "note": "Model the cross-section on the board.",
+          "model": {
+            "problem": "Ocean floor cross-section",
+            "steps": [
+              "Draw the coast",
+              "A shallow flat shelf",
+              "A steep slope down",
+              "A long flat plain",
+              "A ridge up, then a deep trench"
+            ],
+            "answer": "A labelled ocean floor profile"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The deepest part of the ocean is in a:",
+            "options": [
+              "Ridge",
+              "Trench",
+              "Continental shelf"
+            ],
+            "answer": 1,
+            "why": "Trenches are the deepest places; the shelf is shallow and ridges rise up."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is the continental shelf deep or shallow?",
+          "a": "Shallow",
+          "mins": 1,
+          "model": "The shelf is at the edge of the land.\nIt is the drowned edge of the continent.\nSo the water is shallow."
+        },
+        {
+          "q": "Which ocean is the Mariana Trench in?",
+          "a": "The Pacific",
+          "mins": 1
+        },
+        {
+          "q": "How much deeper is Challenger Deep than Everest is tall (roughly)?",
+          "a": "About 2,000 m (10,900 minus 8,849 is about 2,050)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw and label an ocean floor cross-section: coast, continental shelf, slope, abyssal plain, ridge, trench, with depths.",
+          "a": "All six parts labelled in a sensible order with approximate depths",
+          "mins": 12,
+          "model": "Teacher draws the coast and the shelf first."
+        },
+        {
+          "q": "Extend: Write three sentences describing a dive from the coast to the trench.",
+          "a": "For example: First the water is shallow over the shelf. Then the slope drops. The trench is the deepest part.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why is it so hard to explore trenches?",
+          "a": "They are dark, cold and the water pressure is enormous",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A long underwater mountain chain is a:",
+          "a": "Ridge",
+          "mins": 1,
+          "options": [
+            "Ridge",
+            "Shelf"
+          ]
+        },
+        {
+          "q": "Big question: could Everest fit in the deepest trench?",
+          "a": "Yes: Challenger Deep is about 10,900 m deep, deeper than Everest's 8,849 m",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a depth strip: draw Everest and the Mariana Trench to the same scale (1 cm for 1,000 m).",
+      "send": "SEND: cross-section to label with words given. EAL: shelf, plain, ridge, trench with a diagram. Stretch: find what lives on the abyssal plain.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 1 Blue Abyss (Cornerstones Maestro Blue Abyss: CHECK IN MAESTRO)",
+        "Ocean floor cross-section sheet (portal printable)",
+        "Ruler and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ocean floor topography map",
+          "alt": "A map of the ocean floor",
+          "for": "hook"
+        },
+        {
+          "find": "Mid-Atlantic Ridge map",
+          "alt": "The Mid-Atlantic Ridge",
+          "for": "teach:2"
+        },
+        {
+          "find": "Mariana Trench map",
+          "alt": "The Mariana Trench",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Seas and oceans (Blue Abyss)",
+      "n": 15,
+      "title": "Ocean zones and currents",
+      "bigQuestion": "Why is the deep ocean pitch black, even at midday?",
+      "objectives": [
+        "To understand how light changes with depth and how currents move ocean water"
+      ],
+      "successCriteria": [
+        "All: name the sunlight, twilight and midnight zones",
+        "Most: explain why deep water is dark and cold",
+        "Some: describe how the Gulf Stream warms the UK"
+      ],
+      "crossCurricular": "Science: light travels in straight lines and is blocked",
+      "smsc": "Spiritual: reflecting on an ayah about the deep sea",
+      "keywords": [
+        {
+          "term": "sunlight zone",
+          "def": "the top 200 m, where sunlight reaches"
+        },
+        {
+          "term": "twilight zone",
+          "def": "about 200 m to 1,000 m: dim light"
+        },
+        {
+          "term": "midnight zone",
+          "def": "below about 1,000 m: no sunlight"
+        },
+        {
+          "term": "current",
+          "def": "water moving in one direction through the ocean"
+        },
+        {
+          "term": "Gulf Stream",
+          "def": "a warm current flowing across the Atlantic towards Europe"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might a fish that lives 2 km down not need eyes that see colour?"
+      },
+      "islamicLink": {
+        "text": "Allah describes the darkness of a deep sea, covered by waves upon waves with clouds above: darkness upon darkness (An-Nur 24:40). Today we learn how light fades in deep water.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The deepest part of the ocean is a:",
+          "a": "Trench",
+          "mins": 1,
+          "options": [
+            "Trench",
+            "Shelf"
+          ]
+        },
+        {
+          "q": "The Mariana Trench is in the:",
+          "a": "Pacific",
+          "mins": 1,
+          "options": [
+            "Pacific",
+            "Atlantic"
+          ]
+        },
+        {
+          "q": "Name one feature of the ocean floor.",
+          "a": "Continental shelf, slope, abyssal plain, ridge or trench",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Layers of light",
+          "bullets": [
+            "Sunlight zone: 0 to 200 m",
+            "Twilight zone: 200 to 1,000 m",
+            "Midnight zone: below 1,000 m"
+          ],
+          "note": "Light fades quickly in water.",
+          "table": {
+            "head": [
+              "Zone",
+              "Depth",
+              "Light"
+            ],
+            "rows": [
+              [
+                "sunlight",
+                "0 to 200 m",
+                "bright; plants and plankton"
+              ],
+              [
+                "twilight",
+                "200 to 1,000 m",
+                "dim"
+              ],
+              [
+                "midnight",
+                "below 1,000 m",
+                "dark and cold"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Darkness upon darkness",
+          "bullets": [
+            "Waves on top of deep water",
+            "Light cannot reach the bottom",
+            "Some deep creatures make their own light"
+          ],
+          "note": "Allah describes the depths of a deep sea as darkness upon darkness (An-Nur 24:40)."
+        },
+        {
+          "heading": "Currents",
+          "bullets": [
+            "Water moves like rivers in the sea",
+            "Wind and temperature drive them",
+            "They carry heat around the world"
+          ],
+          "note": "Show a map of ocean currents: warm red arrows, cold blue arrows."
+        },
+        {
+          "heading": "The Gulf Stream",
+          "bullets": [
+            "Starts in the warm Gulf of Mexico",
+            "Flows across the Atlantic",
+            "Keeps UK winters milder"
+          ],
+          "note": "Model using the current map.",
+          "model": {
+            "problem": "Why is the UK milder than Canada at the same latitude?",
+            "steps": [
+              "Find the Gulf Stream on the map",
+              "It starts in warm water",
+              "It flows north-east to the UK",
+              "It brings warmth with it"
+            ],
+            "answer": "The warm Gulf Stream heats the UK's seas and air"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Below about 1,000 m is the:",
+            "options": [
+              "Sunlight zone",
+              "Twilight zone",
+              "Midnight zone"
+            ],
+            "answer": 2,
+            "why": "No sunlight reaches below about 1,000 m, so it is the midnight zone."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Where do sea plants grow: sunlight or midnight zone?",
+          "a": "Sunlight zone",
+          "mins": 1,
+          "model": "Plants need light to make food.\nLight only reaches the top 200 m.\nSo plants grow in the sunlight zone."
+        },
+        {
+          "q": "What moves water around the oceans?",
+          "a": "Currents (driven by wind and temperature)",
+          "mins": 1
+        },
+        {
+          "q": "Name the warm current that reaches the UK.",
+          "a": "The Gulf Stream (North Atlantic Drift)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw an ocean depth column with the three zones, their depths, and one creature or plant for each zone.",
+          "a": "Three zones with correct depths and suitable examples (e.g. seaweed, jellyfish, anglerfish)",
+          "mins": 12,
+          "model": "Teacher draws the sunlight zone with seaweed first."
+        },
+        {
+          "q": "Extend: On the current map, trace the Gulf Stream and write where it starts and ends.",
+          "a": "From the Gulf of Mexico across the Atlantic towards the UK and north-west Europe",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: What might happen to UK weather if the Gulf Stream weakened?",
+          "a": "UK winters could become colder",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Light in the sea fades:",
+          "a": "With depth",
+          "mins": 1,
+          "options": [
+            "With depth",
+            "With height"
+          ]
+        },
+        {
+          "q": "Big question: why is the deep ocean pitch black?",
+          "a": "Sunlight cannot reach below about 1,000 m, so it is dark at any time",
+          "mins": 2
+        }
+      ],
+      "homework": "Fill a tall clear glass with water and a few drops of milk; shine a torch from above and see how light fades lower down.",
+      "send": "SEND: zone column with depths given. EAL: light, dark, deep with pictures. Stretch: find out how anglerfish make light.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 1 Blue Abyss (Cornerstones Maestro Blue Abyss: CHECK IN MAESTRO)",
+        "Ocean depth zones sheet and current map (portal printable)",
+        "Clear glass, water, milk and torch for the home demo"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ocean currents world map",
+          "alt": "A map of ocean currents",
+          "for": "teach:3"
+        },
+        {
+          "find": "anglerfish deep sea",
+          "alt": "An anglerfish from the deep sea",
+          "for": "keywords"
+        },
+        {
+          "find": "sunlight through ocean water",
+          "alt": "Sunlight in the upper ocean",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Seas and oceans (Blue Abyss)",
+      "n": 16,
+      "title": "The Great Barrier Reef: location and life",
+      "bigQuestion": "How can tiny animals build something you can see from space?",
+      "objectives": [
+        "To understand where the Great Barrier Reef is and why it is so important for life"
+      ],
+      "successCriteria": [
+        "All: locate the Great Barrier Reef",
+        "Most: explain that coral is made by tiny animals",
+        "Some: describe the reef as an ecosystem"
+      ],
+      "crossCurricular": "Science: living things and their habitats",
+      "smsc": "Spiritual: the beauty of Allah's creation under the sea",
+      "keywords": [
+        {
+          "term": "reef",
+          "def": "a ridge of rock or coral near the surface of the sea"
+        },
+        {
+          "term": "coral",
+          "def": "tiny sea animals that build hard skeletons"
+        },
+        {
+          "term": "polyp",
+          "def": "one tiny coral animal"
+        },
+        {
+          "term": "ecosystem",
+          "def": "living things and their home working together"
+        },
+        {
+          "term": "Queensland",
+          "def": "the state in north-east Australia beside the reef"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is coral a rock, a plant or an animal? Decide before we start."
+      },
+      "starter": [
+        {
+          "q": "Below 1,000 m is the:",
+          "a": "Midnight zone",
+          "mins": 1,
+          "options": [
+            "Midnight zone",
+            "Sunlight zone"
+          ]
+        },
+        {
+          "q": "The Gulf Stream is a:",
+          "a": "Warm current",
+          "mins": 1,
+          "options": [
+            "Warm current",
+            "Cold current"
+          ]
+        },
+        {
+          "q": "Which ocean is between Africa and Australia?",
+          "a": "The Indian Ocean",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Where is it?",
+          "bullets": [
+            "Off the coast of Queensland, Australia",
+            "In the Coral Sea, part of the Pacific",
+            "About 2,300 km long"
+          ],
+          "note": "Find Australia, then the north-east coast."
+        },
+        {
+          "heading": "Built by animals",
+          "bullets": [
+            "Coral polyps are tiny animals",
+            "They build hard limestone skeletons",
+            "Millions together make a reef"
+          ],
+          "note": "It is the largest structure built by living things on Earth."
+        },
+        {
+          "heading": "A busy ecosystem",
+          "bullets": [
+            "Thousands of kinds of fish",
+            "Turtles, sharks and dolphins",
+            "Coral gives food and shelter"
+          ],
+          "note": "Coral needs warm, clear, shallow water in the sunlight zone.",
+          "diagram": {
+            "centre": "Great Barrier Reef",
+            "items": [
+              "coral",
+              "fish",
+              "turtles",
+              "sharks",
+              "seagrass",
+              "clear warm water"
+            ]
+          }
+        },
+        {
+          "heading": "Location sentence",
+          "bullets": [
+            "Continent, country, state",
+            "Ocean or sea",
+            "Compass direction"
+          ],
+          "note": "Model a full location description.",
+          "model": {
+            "problem": "Describe where the reef is",
+            "steps": [
+              "Continent: Oceania (Australia)",
+              "State: Queensland",
+              "Sea: the Coral Sea, Pacific Ocean",
+              "Direction: off the north-east coast"
+            ],
+            "answer": "The reef lies in the Coral Sea, off the north-east coast of Queensland, Australia."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Coral is made by:",
+            "options": [
+              "Plants",
+              "Tiny animals called polyps",
+              "Volcanoes"
+            ],
+            "answer": 1,
+            "why": "Coral polyps are animals; they build hard skeletons that make the reef."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which country is the reef next to?",
+          "a": "Australia",
+          "mins": 1,
+          "model": "I find the reef on the map.\nIt is next to a big island continent.\nThat is Australia."
+        },
+        {
+          "q": "Why does coral grow in shallow water?",
+          "a": "It needs sunlight and warm water",
+          "mins": 1
+        },
+        {
+          "q": "Name two animals that live on the reef.",
+          "a": "For example: turtles and clownfish",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a fact file on the reef: location (with a map), size, what coral is, and three animals that live there.",
+          "a": "A fact file with accurate location, about 2,300 km long, coral as animals, three reef animals",
+          "mins": 12,
+          "model": "Teacher fills in the location box first, using the model sentence."
+        },
+        {
+          "q": "Extend: Write how two living things on the reef depend on each other.",
+          "a": "For example: fish shelter in coral; some fish clean coral",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why is the reef called an ecosystem?",
+          "a": "Many living things and their environment depend on each other there",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The reef is off the coast of:",
+          "a": "Queensland, Australia",
+          "mins": 1,
+          "options": [
+            "Queensland, Australia",
+            "Brazil"
+          ]
+        },
+        {
+          "q": "Big question: how can tiny animals build something so big?",
+          "a": "Millions of polyps build skeletons over thousands of years",
+          "mins": 2
+        }
+      ],
+      "homework": "Find the reef on a satellite map with an adult and zoom in until you can see the coral.",
+      "send": "SEND: fact file with sentence starters. EAL: reef, coral, fish, turtle with pictures. Stretch: find out when the reef became a World Heritage Site.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 1 Blue Abyss (Cornerstones Maestro Blue Abyss: CHECK IN MAESTRO)",
+        "Great Barrier Reef fact file sheet (portal printable)",
+        "Atlas or online map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Great Barrier Reef aerial",
+          "alt": "The Great Barrier Reef from the air",
+          "for": "hook"
+        },
+        {
+          "find": "coral polyps close up",
+          "alt": "Coral polyps up close",
+          "for": "keywords"
+        },
+        {
+          "find": "green sea turtle coral reef",
+          "alt": "A turtle on the reef",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Seas and oceans (Blue Abyss)",
+      "n": 17,
+      "title": "The Great Barrier Reef under threat",
+      "bigQuestion": "Who is responsible for looking after a reef on the other side of the world?",
+      "objectives": [
+        "To understand the threats to the Great Barrier Reef and how people try to protect it"
+      ],
+      "successCriteria": [
+        "All: name three threats to the reef",
+        "Most: explain what coral bleaching is",
+        "Some: suggest how people can protect the reef"
+      ],
+      "crossCurricular": "Science: how environments can change and harm living things",
+      "smsc": "Moral: our duty to care for creation",
+      "keywords": [
+        {
+          "term": "threat",
+          "def": "something that could cause harm"
+        },
+        {
+          "term": "bleaching",
+          "def": "coral turning white when the water is too warm"
+        },
+        {
+          "term": "pollution",
+          "def": "harmful things put into the environment"
+        },
+        {
+          "term": "protect",
+          "def": "keep safe from harm"
+        },
+        {
+          "term": "marine park",
+          "def": "an area of sea with rules to protect it"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could make one rule to protect the reef, what would it be?"
+      },
+      "islamicLink": {
+        "text": "Allah says corruption has appeared on land and sea because of what people's hands have done (Ar-Rum 30:41). People are trusted to look after the earth and the seas, not to spoil them.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Coral is made by:",
+          "a": "Tiny animals",
+          "mins": 1,
+          "options": [
+            "Tiny animals",
+            "Plants"
+          ]
+        },
+        {
+          "q": "The reef is about:",
+          "a": "2,300 km long",
+          "mins": 1,
+          "options": [
+            "2,300 km long",
+            "23 km long"
+          ]
+        },
+        {
+          "q": "Name one animal that lives on the reef.",
+          "a": "For example: turtles, clownfish, sharks",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Warming water",
+          "bullets": [
+            "Seas are getting warmer",
+            "Stressed coral turns white",
+            "This is called bleaching"
+          ],
+          "note": "Bleached coral is still alive, but may die if the water stays too warm."
+        },
+        {
+          "heading": "Other threats",
+          "bullets": [
+            "Farm chemicals and mud washing in",
+            "Crown-of-thorns starfish eat coral",
+            "Storms and careless boats"
+          ],
+          "note": "Some threats are natural; many are made worse by people.",
+          "sort": {
+            "columns": [
+              "Natural",
+              "Caused or worsened by people"
+            ],
+            "cards": [
+              "cyclones",
+              "farm chemicals",
+              "warmer seas",
+              "boat anchors"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Protecting the reef",
+          "bullets": [
+            "A marine park with zones",
+            "No fishing in some areas",
+            "Cleaner farming and less waste"
+          ],
+          "note": "Australia made the reef a marine park in 1975."
+        },
+        {
+          "heading": "Explain a threat",
+          "bullets": [
+            "Name it",
+            "Say how it harms coral",
+            "Say what could help"
+          ],
+          "note": "Model a short explanation.",
+          "model": {
+            "problem": "Explain bleaching",
+            "steps": [
+              "Name: coral bleaching",
+              "Cause: the water gets too warm",
+              "Effect: coral turns white and may die",
+              "Help: cut pollution that warms the planet"
+            ],
+            "answer": "A three-part explanation"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Coral bleaching is caused mainly by:",
+            "options": [
+              "Cold water",
+              "Water that is too warm",
+              "Too many turtles"
+            ],
+            "answer": 1,
+            "why": "Warm water stresses the coral so it loses its colour."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What colour does bleached coral turn?",
+          "a": "White",
+          "mins": 1,
+          "model": "Healthy coral is colourful.\nWhen it is stressed by heat it loses its colour.\nIt turns white."
+        },
+        {
+          "q": "Name one threat caused by people.",
+          "a": "Pollution, warming seas or careless boats",
+          "mins": 1
+        },
+        {
+          "q": "What is a marine park?",
+          "a": "An area of sea with rules to protect it",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a threats and solutions table: three threats, how each harms the reef, and one way to help each.",
+          "a": "Three accurate threats with effects and sensible solutions",
+          "mins": 12,
+          "model": "Teacher completes the bleaching row first."
+        },
+        {
+          "q": "Extend: Write one thing a family in the UK could do to help.",
+          "a": "Use less energy, cut plastic waste, choose reef-safe products when visiting",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why is it hard to protect a reef so big?",
+          "a": "It is huge, in many places, and threats like warm water come from all over the world",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Crown-of-thorns starfish:",
+          "a": "Eat coral",
+          "mins": 1,
+          "options": [
+            "Eat coral",
+            "Clean coral"
+          ]
+        },
+        {
+          "q": "Big question: who is responsible for the reef?",
+          "a": "Everyone: Australia protects it, but warming seas come from the whole world",
+          "mins": 2
+        }
+      ],
+      "homework": "Plan your enquiry: write three facts you will use to answer 'How are people affecting the reef and what should be done?'",
+      "send": "SEND: table with threats given. EAL: threat, protect, warm with pictures. Stretch: compare a natural and a human threat.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 1 Blue Abyss (Cornerstones Maestro Blue Abyss: CHECK IN MAESTRO)",
+        "Threats and solutions table (portal printable)",
+        "Great Barrier Reef enquiry planning sheet (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bleached coral",
+          "alt": "Bleached white coral",
+          "for": "teach:1"
+        },
+        {
+          "find": "crown-of-thorns starfish",
+          "alt": "A crown-of-thorns starfish",
+          "for": "teach:2"
+        },
+        {
+          "find": "healthy coral reef colourful",
+          "alt": "Healthy, colourful coral",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Seas and oceans (Blue Abyss)",
+      "n": 18,
+      "title": "Review: mapping the oceans",
+      "bigQuestion": "How much can you now show on a blank world map without any help?",
+      "objectives": [
+        "To understand how well I can locate and describe oceans, seas and ocean features"
+      ],
+      "successCriteria": [
+        "All: label the five oceans and key lines",
+        "Most: place ocean features on a map",
+        "Some: explain one ocean process in writing"
+      ],
+      "crossCurricular": "English: explaining a process in a paragraph",
+      "smsc": "Spiritual: reflecting on how much there is still to learn",
+      "keywords": [
+        {
+          "term": "review",
+          "def": "look back to check what we know"
+        },
+        {
+          "term": "locate",
+          "def": "find where something is"
+        },
+        {
+          "term": "hemisphere",
+          "def": "half of the Earth"
+        },
+        {
+          "term": "current",
+          "def": "water moving in one direction through the ocean"
+        },
+        {
+          "term": "trench",
+          "def": "a very deep, narrow valley in the ocean floor"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which ocean fact from this unit would most surprise your family?"
+      },
+      "starter": [
+        {
+          "q": "Sonar measures depth using:",
+          "a": "Echoes",
+          "mins": 1,
+          "options": [
+            "Echoes",
+            "Rope"
+          ]
+        },
+        {
+          "q": "The smallest ocean is the:",
+          "a": "Arctic",
+          "mins": 1,
+          "options": [
+            "Arctic",
+            "Indian"
+          ]
+        },
+        {
+          "q": "Name two threats to the Great Barrier Reef.",
+          "a": "Warming seas (bleaching), pollution, crown-of-thorns starfish",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Big map recap",
+          "bullets": [
+            "Five oceans, seven continents",
+            "Equator and Prime Meridian",
+            "Seas around the UK"
+          ],
+          "note": "Quick-fire: point and name on the shared map."
+        },
+        {
+          "heading": "Under the sea recap",
+          "bullets": [
+            "Shelf, slope, plain, ridge, trench",
+            "Sunlight, twilight and midnight zones",
+            "Currents like the Gulf Stream"
+          ],
+          "note": "Pupils say one fact each in the chat."
+        },
+        {
+          "heading": "Places recap",
+          "bullets": [
+            "Great Barrier Reef: Queensland, Australia",
+            "Mariana Trench: Pacific",
+            "Mid-Atlantic Ridge: Atlantic"
+          ],
+          "note": "Model how to plan a map answer.",
+          "model": {
+            "problem": "Mark the Mariana Trench",
+            "steps": [
+              "Find the Pacific",
+              "Go to the west, east of the Philippines",
+              "Mark an X",
+              "Label it"
+            ],
+            "answer": "An X in the western Pacific labelled Mariana Trench"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Challenger Deep is about:",
+            "options": [
+              "1,000 m deep",
+              "10,900 m deep",
+              "100 m deep"
+            ],
+            "answer": 1,
+            "why": "It is about 10,900 m deep, deeper than Everest is tall."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Name the line through Greenwich.",
+          "a": "The Prime Meridian",
+          "mins": 1,
+          "model": "It runs from pole to pole.\nIt passes through London.\nIt is the Prime Meridian."
+        },
+        {
+          "q": "Which zone is 200 to 1,000 m deep?",
+          "a": "The twilight zone",
+          "mins": 1
+        },
+        {
+          "q": "Which ocean is the Great Barrier Reef in?",
+          "a": "The Pacific (Coral Sea)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Blank map challenge: label the five oceans, seven continents, the Equator, the Prime Meridian, the Great Barrier Reef, the Mariana Trench and the Gulf Stream.",
+          "a": "All items correctly placed; mark out of 15",
+          "mins": 13,
+          "model": "Teacher places the Equator first to show the level of care expected."
+        },
+        {
+          "q": "Extend: Write a paragraph explaining one ocean process (currents or light zones).",
+          "a": "An accurate explanation using key words",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Self-mark against the key and write your next step.",
+          "a": "A correct score and a target",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Gulf Stream warms the:",
+          "a": "UK",
+          "mins": 1,
+          "options": [
+            "UK",
+            "Antarctic"
+          ]
+        },
+        {
+          "q": "Big question: how much can you show without help?",
+          "a": "Pupil's score and one thing they will learn again",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise your blank map at home once more and bring your best score.",
+      "send": "SEND: map with numbered spaces and a word bank. EAL: picture word bank. Stretch: add three seas and one more trench.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 1 Blue Abyss (Cornerstones Maestro Blue Abyss: CHECK IN MAESTRO)",
+        "Blank world map challenge and answer key (portal printable)",
+        "Coloured pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "world map blank outline",
+          "alt": "A blank world map",
+          "for": "hook"
+        },
+        {
+          "find": "ocean currents world map",
+          "alt": "Ocean currents",
+          "for": "teach:2"
+        },
+        {
+          "find": "Coral Sea map",
+          "alt": "The Coral Sea",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Seas and oceans (Blue Abyss)",
+      "n": 19,
+      "title": "Enquiry: how are people affecting the Great Barrier Reef?",
+      "bigQuestion": "How are people affecting the Great Barrier Reef, and what should be done?",
+      "objectives": [
+        "To understand how to answer a geographical enquiry using evidence and a reasoned judgement"
+      ],
+      "successCriteria": [
+        "All: use two pieces of evidence",
+        "Most: explain effects on the reef",
+        "Some: make and justify a recommendation"
+      ],
+      "crossCurricular": "English: persuasive and explanatory writing (our reef letter)",
+      "smsc": "Moral: weighing different people's needs fairly",
+      "keywords": [
+        {
+          "term": "enquiry",
+          "def": "a question we investigate"
+        },
+        {
+          "term": "evidence",
+          "def": "facts that support an answer"
+        },
+        {
+          "term": "effect",
+          "def": "what happens because of something"
+        },
+        {
+          "term": "recommend",
+          "def": "suggest what should be done"
+        },
+        {
+          "term": "judgement",
+          "def": "a decision with reasons"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would you say to a tourist, a farmer and a fisher about the reef?"
+      },
+      "starter": [
+        {
+          "q": "Coral is made by:",
+          "a": "Tiny animals",
+          "mins": 1,
+          "options": [
+            "Tiny animals",
+            "Seaweed"
+          ]
+        },
+        {
+          "q": "Bleaching happens when water is:",
+          "a": "Too warm",
+          "mins": 1,
+          "options": [
+            "Too warm",
+            "Too cold"
+          ]
+        },
+        {
+          "q": "What is a marine park?",
+          "a": "An area of sea with rules to protect it",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Our enquiry",
+          "bullets": [
+            "Question: how are people affecting the reef?",
+            "Then: what should be done?",
+            "Answer with evidence"
+          ],
+          "note": "Assessed piece: the portal response box, about 2 paragraphs."
+        },
+        {
+          "heading": "Gather evidence",
+          "bullets": [
+            "Warming seas and bleaching",
+            "Farm chemicals and mud",
+            "Fishing, boats and tourism"
+          ],
+          "note": "Use the fact file and threats table from earlier lessons.",
+          "sort": {
+            "columns": [
+              "Harms the reef",
+              "Helps the reef"
+            ],
+            "cards": [
+              "farm run-off",
+              "no-fishing zones",
+              "careless anchors",
+              "cleaner farming",
+              "warming seas",
+              "mooring buoys"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Writing frame",
+          "bullets": [
+            "Paragraph 1: effects, with evidence",
+            "Paragraph 2: recommendation and why",
+            "End with a judgement"
+          ],
+          "note": "Model paragraph 1.",
+          "model": {
+            "problem": "Paragraph 1 model",
+            "steps": [
+              "Point: people are harming the reef",
+              "Evidence: warmer seas cause bleaching",
+              "Evidence: farm chemicals wash into the sea",
+              "Explain: coral is stressed and may die"
+            ],
+            "answer": "A paragraph with a point, two pieces of evidence and an explanation"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which is evidence, not opinion?",
+            "options": [
+              "The reef is lovely",
+              "Warm water causes coral bleaching",
+              "I like turtles"
+            ],
+            "answer": 1,
+            "why": "Evidence is a fact we can check; the others are opinions."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give one piece of evidence that people harm the reef.",
+          "a": "For example: farm chemicals wash into the sea",
+          "mins": 1,
+          "model": "Evidence is a fact.\nFarm chemicals wash off fields into rivers and the sea.\nThat is a fact about harm."
+        },
+        {
+          "q": "Give one way people help the reef.",
+          "a": "No-fishing zones, cleaner farming, mooring buoys",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write your enquiry answer in the portal response box (2 paragraphs). Start: 'People are affecting the Great Barrier Reef by...' then 'I recommend... because...'",
+          "a": "Two paragraphs: at least two pieces of evidence, effects explained, a justified recommendation",
+          "mins": 16,
+          "model": "Teacher shows the paragraph 1 model again and the first line of paragraph 2."
+        },
+        {
+          "q": "Extend: Add a sentence on who should act: Australia, other countries or both.",
+          "a": "Both, because warming seas are global",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Add a 'however' sentence showing another point of view.",
+          "a": "For example: however, tourism brings money that pays for protection",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A recommendation says:",
+          "a": "What should be done",
+          "mins": 1,
+          "options": [
+            "What should be done",
+            "What happened in 1872"
+          ]
+        },
+        {
+          "q": "Big question: how are people affecting the reef, and what should be done?",
+          "a": "Harm through warming, pollution and careless use; protect with marine park rules, cleaner farming and less pollution",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your enquiry answer to someone at home and ask them which recommendation they agree with.",
+      "send": "SEND: writing frame with sentence starters and a word bank. EAL: evidence cards with pictures. Stretch: add a fact with a number.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 1 Blue Abyss (Cornerstones Maestro Blue Abyss: CHECK IN MAESTRO)",
+        "Great Barrier Reef enquiry task and marking grid (portal printable; assessed)",
+        "Portal response box with the writing frame",
+        "Fact file and threats table from lessons 16 and 17"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Great Barrier Reef aerial",
+          "alt": "The Great Barrier Reef",
+          "for": "hook"
+        },
+        {
+          "find": "mooring buoy reef",
+          "alt": "A mooring buoy that protects coral from anchors",
+          "for": "teach:2"
+        },
+        {
+          "find": "sugar cane fields Queensland",
+          "alt": "Farmland in Queensland",
+          "for": "keywords"
         }
       ]
     }

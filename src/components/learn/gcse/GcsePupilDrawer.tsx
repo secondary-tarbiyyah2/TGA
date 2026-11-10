@@ -17,7 +17,7 @@ import {
 import { BoundaryEditor, GcseStatusChip, GradeChip, TrendLine, gradeOptions, useBoundaries } from "@/components/learn/gcse/GcseParts";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 export type PupilSubjectRow = GcseRow & { subject_name: string };
 
 const fmtDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" });
@@ -256,7 +256,7 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
                 </div>
                 {subjectRowId === r.id && mockForm}
                 {history === null ? (
-                  <p className="mt-1 text-xs text-ink/65">Loading…</p>
+                  <Loading label="Loading…" bare className="mt-1" />
                 ) : hist.length === 0 ? (
                   <p className="mt-1 text-xs text-ink/65">No changes recorded yet.</p>
                 ) : (

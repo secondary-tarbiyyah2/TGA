@@ -1,5 +1,7 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
+import { useNavBadges } from "@/lib/learn/navBadges";
 import { UpNextCard } from "@/components/learn/UpNextCard";
 import { Icon } from "@/components/learn/Icon";
 import { DashboardHero } from "@/components/learn/DashboardHero";
@@ -26,6 +28,7 @@ import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { ukToday } from "@/lib/learn/ukTime";
+import { PushOptIn } from "@/components/learn/PushOptIn";
 
 type Child = { id: string; name: string; year_group_id: string | null; year_groups?: { name: string } | null };
 
@@ -60,7 +63,7 @@ function ChildTimetable({ classIds, yearGroup }: { classIds: string[] | null; ye
     ).then(({ data }) => setSlots((data as unknown as TimetableSlot[]) || []));
   }, [supabase, classIds]);
 
-  if (slots === null) return <p className="text-sm text-ink/65">Loading timetable…</p>;
+  if (slots === null) return <Loading label="Loading timetable…" bare />;
   return <TimetableGrid slots={slots} yearGroups={yearGroup ? [yearGroup] : undefined} />;
 }
 
@@ -199,6 +202,7 @@ function FamilyContent() {
   }, [supabase, childKey]);
 
   const hasChildren = !!children && children.length > 0;
+  const badges = useNavBadges("family");
   const current = children?.find((c) => c.id === chosen) || children?.[0];
 
   // What a parent needs first: anything waiting on them, then what's next
@@ -207,7 +211,16 @@ function FamilyContent() {
   return (
     <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }} wideOnly>
       <div className="space-y-6">
-        <DashboardHero area="family" subtitle="Your children's school life in one place" />
+        <DashboardHero
+          area="family"
+          subtitle="Your children's school life in one place"
+          chips={[
+            { label: "Homework due or missing", value: badges.todo ?? "…", tone: badges.todo ? "pink" : undefined, href: "/family/todo" },
+            { label: "Waiting for you", value: badges.actions ?? "…", tone: badges.actions ? "pink" : undefined, href: "/family/actions" },
+            { label: "Unread messages", value: badges.messages ?? "…", tone: badges.messages ? "pink" : undefined, href: "/family/messages" },
+            { label: children && children.length === 1 ? "Child" : "Children", value: children === null ? "…" : children.length, href: "/family/classes" },
+          ]}
+        />
 
         {hasChildren && (
           <nav aria-label="Quick actions" className="flex flex-wrap gap-2 print:hidden">
@@ -221,17 +234,39 @@ function FamilyContent() {
         )}
 
         <ActionCentreWidget role="family" />
+        <PushOptIn />
         <ChildDetailsBanner />
         <JoinLessonCard who={{ kind: "parent" }} />
 
         {children === null && <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />}
         {children && children.length > 1 && (
-          <div role="group" aria-label="Choose a child" className="flex flex-wrap gap-2">
-            {children.map((c) => (
-              <button key={c.id} type="button" aria-pressed={current?.id === c.id} onClick={() => choose(c.id)} className={`${current?.id === c.id ? ui.chipOn : ui.chip} min-h-10`}>
-                {c.name}
-              </button>
-            ))}
+          <div role="group" aria-label="Whose school day to show" className="flex flex-wrap gap-2.5">
+            {children.map((c, i) => {
+              const on = current?.id === c.id;
+              const initials = c.name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]?.toUpperCase()).join("");
+              return (
+                <button
+                  key={c.id}
+                  type="button"
+                  aria-pressed={on}
+                  onClick={() => choose(c.id)}
+                  className={`relative flex min-h-[3.25rem] items-center gap-2.5 rounded-2xl border bg-white py-1.5 pl-1.5 pr-3.5 text-left transition-colors hover:bg-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 ${on ? "border-2 border-forest-700" : "border-gold-light"}`}
+                >
+                  {on && (
+                    <span aria-hidden="true" className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-forest-700 text-white">
+                      <Icon name="check" className="h-3 w-3" strokeWidth={3} />
+                    </span>
+                  )}
+                  <span aria-hidden="true" className={`flex h-9 w-9 items-center justify-center rounded-xl text-sm font-bold ${i % 2 ? "bg-gold-100 text-gold-900" : "bg-forest-100 text-forest-900"}`}>
+                    {initials}
+                  </span>
+                  <span className="flex flex-col leading-tight">
+                    <span className="text-sm font-semibold text-ink">{c.name.split(/\s+/)[0]}</span>
+                    {c.year_groups?.name && <span className="text-xs text-ink/65">{c.year_groups.name}</span>}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         )}
         {current && <ChildCard key={current.id} child={current} />}

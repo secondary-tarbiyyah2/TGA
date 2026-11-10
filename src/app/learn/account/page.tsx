@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useState } from "react";
 import Link from "next/link";
 import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
@@ -11,6 +12,7 @@ import { ParentPinSettings } from "@/components/learn/pin/ParentPinSettings";
 import { DigestPreference } from "@/components/learn/rewards/DigestPreference";
 import { MessageSettings } from "@/components/learn/messages/MessageSettings";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { PushOptIn } from "@/components/learn/PushOptIn";
 
 /**
  * The signed-in user's OWN account settings, password only, since MFA was
@@ -98,6 +100,11 @@ function AccountContent() {
       />
       <ChangePassword />
       {session && session !== "loading" && !roles.every((r) => r.role === "student") && <MessageSettings userId={session.user.id} />}
+      {session && session !== "loading" && !roles.every((r) => r.role === "student") && (
+        <div className="rounded-2xl border border-gold-light bg-white p-6">
+          <PushOptIn variant="setting" />
+        </div>
+      )}
       {session && session !== "loading" && roles.some((r) => r.role === "parent") && <ParentPinSettings userId={session.user.id} />}
       {roles.some((r) => r.role === "parent") && <DigestPreference />}
       <Link href="/feedback" className="flex items-center justify-between gap-3 rounded-2xl border border-gold-light bg-white p-6 hover:bg-cream">
@@ -118,7 +125,7 @@ export default function LearnAccountPage() {
 
   return (
     <section className="app-pad">
-      {session === "loading" && <p className="text-ink/65">Loading…</p>}
+      {session === "loading" && <Loading label="Loading…" bare />}
       {session === null && (
         <p className="text-ink/65">
           Please <Link href="/login" className="text-gold-700 underline">sign in</Link> to manage your account.

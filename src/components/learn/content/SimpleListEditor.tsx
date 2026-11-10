@@ -7,7 +7,7 @@ import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 export type FieldDef = {
   key: string;
   label: string;
@@ -139,7 +139,7 @@ export function SimpleListEditor({
         </div>
       )}
       {rows === null ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : (
         <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
           {shown.map((r) => (

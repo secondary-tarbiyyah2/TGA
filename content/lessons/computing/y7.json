@@ -5,268 +5,615 @@
   "source": "Drive 'Computing Overview' Year 7 scheme (Intro to Scratch: Introduction, Variables and IF statements, Variables and operators, The Scratch Calculator), National Curriculum KS3, aligned to Edexcel GCSE Computer Science 1CP2 | Spring 1 2027 (lessons 5 to 9, v3): Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (Think like a computer: algorithms); diagrams.net; building to Pearson Edexcel 4CP0",
   "lessons": [
     {
-      "unit": "Unit 1: Introduction to Scratch",
+      "unit": "Spring 2: Programming with Scratch",
       "n": 1,
-      "title": "Introduction to Scratch: sprites, movement and input",
+      "title": "Sprites, movement and events",
       "duration": 50,
+      "bigQuestion": "When you press a key in a game and something moves, what do you think is happening inside the program?",
       "objectives": [
-        "Create and control sprites and backdrops in Scratch",
-        "Program movement using keyboard input",
-        "Explain the terms sequence, event and input"
+        "To understand how event blocks start scripts and how motion blocks move a sprite on the stage"
       ],
+      "successCriteria": [
+        "All: make a sprite move when the green flag is clicked",
+        "Most: use key-press events to control a sprite",
+        "Some: use x and y coordinates to place a sprite exactly"
+      ],
+      "crossCurricular": "Maths: coordinates in four quadrants",
+      "smsc": "Moral: using technology responsibly and creatively",
       "keywords": [
         {
           "term": "sprite",
-          "def": "an object or character that a Scratch program controls"
-        },
-        {
-          "term": "sequence",
-          "def": "instructions carried out one after another in order"
+          "def": "an object that runs scripts in Scratch"
         },
         {
           "term": "event",
-          "def": "something that triggers a script, such as a key press"
+          "def": "something that starts a script, such as a key press"
         },
         {
-          "term": "input",
-          "def": "data given to a program by the user or a device"
+          "term": "script",
+          "def": "a stack of blocks that runs in order"
+        },
+        {
+          "term": "coordinates",
+          "def": "x and y numbers that give a position"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you press a key in a game and something moves, what do you think is happening inside the program?",
+        "a": "An event (the key press) starts a script that tells the sprite how to move."
+      },
       "starter": [
-        "Bismillah. What is an algorithm?",
-        "Give one example of an input device and one output device.",
-        "Why does the order of instructions matter in a program?"
+        {
+          "q": "An algorithm is ...",
+          "a": "a set of precise steps",
+          "mins": 1,
+          "options": [
+            "a set of precise steps",
+            "a computer part"
+          ]
+        },
+        {
+          "q": "What is decomposition (Spring 1)?",
+          "a": "Breaking a problem into smaller parts.",
+          "mins": 1
+        },
+        {
+          "q": "Which is an input device?",
+          "a": "Keyboard",
+          "mins": 1,
+          "options": [
+            "Keyboard",
+            "Speaker",
+            "Monitor"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The Scratch environment",
+          "heading": "The Scratch screen",
           "bullets": [
-            "Stage: where the program runs.",
-            "Sprites: the objects we control.",
-            "Blocks palette and script area."
+            "Stage: where sprites act (480 by 360)",
+            "Sprites: objects (use shapes, a ball, a rocket)",
+            "Blocks: drag to build scripts"
           ],
-          "note": "Share your screen with Scratch open. Show how to add a sprite, change the backdrop and drag blocks. Pupils should have a free Scratch account or use the offline editor. Remind them to save regularly."
+          "note": "Use object sprites only (no people or animal characters needed); no sound blocks."
         },
         {
-          "heading": "Events and sequence",
-          "bullets": [
-            "'When green flag clicked' starts a script.",
-            "Blocks run top to bottom.",
-            "Order changes the result."
-          ],
-          "note": "Build: when flag clicked, go to x:0 y:0, say Hello for 2 seconds, move 50 steps. Swap two blocks and run it again to show that order matters. Ask pupils to predict the result before each run."
+          "heading": "Events start scripts",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\ngo to x: 0 y: 0\nwhen right arrow key pressed\nchange x by 10\nwhen left arrow key pressed\nchange x by -10",
+            "output": "The rocket starts in the centre and moves left and right with the arrow keys"
+          }
         },
         {
-          "heading": "Keyboard input",
-          "bullets": [
-            "'When right arrow key pressed' is an event.",
-            "change x by 10 moves right.",
-            "change x by -10 moves left."
-          ],
-          "note": "Demonstrate four scripts for the arrow keys using change x and change y. Introduce the coordinates: the stage centre is (0,0), x goes left to right, y goes bottom to top. Misconception: pupils confuse x and y; ask them to point along each axis."
+          "heading": "Coordinates",
+          "bullets": [],
+          "note": "",
+          "numberline": {
+            "min": -240,
+            "max": 240,
+            "step": 40,
+            "marks": [
+              {
+                "at": -240,
+                "label": "Left edge"
+              },
+              {
+                "at": 0,
+                "label": "Centre"
+              },
+              {
+                "at": 240,
+                "label": "Right edge"
+              }
+            ]
+          }
         },
         {
-          "heading": "Debug a script",
-          "bullets": [
-            "Test every key.",
-            "Compare with what you expected.",
-            "Fix one problem at a time."
-          ],
-          "note": "Show a script where up and down are swapped. Ask pupils to find the bug. Reinforce the habit of testing and tracing. Mention that patience and carefulness are part of good character (sabr and ihsan) when we debug."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which block starts a script when the program runs?",
+            "options": [
+              "when green flag clicked",
+              "change x by 10",
+              "go to x: 0 y: 0"
+            ],
+            "answer": 0,
+            "why": "It is an event (hat) block."
+          }
         }
       ],
       "practice": [
-        "On the stage, what are the coordinates of the centre? What does change x by 10 do?",
-        "Predict: when flag clicked, move 100 steps, turn 90 degrees, move 100 steps. Draw the path.",
-        "Which block would you use to make a sprite say 'Assalamu alaykum' for 3 seconds?"
+        {
+          "q": "Add up and down movement to the rocket.",
+          "a": "when up arrow key pressed: change y by 10; when down arrow key pressed: change y by -10.",
+          "mins": 4,
+          "model": "I do: drag 'when up arrow key pressed', attach 'change y by 10'; repeat for down with -10; test."
+        }
       ],
       "independent": [
-        "Build a script so a sprite moves in four directions using the arrow keys.",
-        "Add a backdrop and a second sprite that says 'Welcome!' when the space key is pressed.",
-        "Stretch: add a sound that plays each time the sprite moves, and make the sprite stay within the stage edges."
+        {
+          "q": "Build a 'rocket control' program: start at (0, -150), move in four directions with arrow keys; save it to the portal.",
+          "a": "A working program with four key events and a start position.",
+          "mins": 15,
+          "model": "The teacher builds the right-arrow script live."
+        },
+        {
+          "q": "Extend: make the rocket point in the direction it moves.",
+          "a": "Add 'point in direction 90' etc. to each event.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: stop the rocket leaving the stage with 'if on edge, bounce'.",
+          "a": "Edge handling added.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name one event block and say what it does.",
-        "What is the difference between a sprite and a backdrop?"
+        {
+          "q": "x = 0, y = 0 is ...",
+          "a": "the centre of the stage",
+          "mins": 1,
+          "options": [
+            "the centre of the stage",
+            "the top left corner"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When you press a key in a game and something moves, what do you think is happening inside the program?",
+          "a": "An event (the key press) starts a script that tells the sprite how to move.",
+          "mins": 2
+        }
       ],
-      "homework": "Create a Scratch project where a sprite navigates a simple maze with the arrow keys. Share a screenshot.",
-      "send": "SEND/EAL: provide a labelled screenshot of the Scratch interface and a word bank; give partially built scripts. Stretch: add a rule that sends the sprite back to the start when it touches a wall colour."
+      "homework": "Add a second sprite (a star) that moves with the W, A, S, D keys.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (Scratch unit; no secondary scheme of work supplied)",
+        "Scratch (free, scratch.mit.edu, online or offline editor; TO CONFIRM accounts through a Scratch Teacher Account); object and shape sprites only, no sound or music blocks",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Rocket illustration icon",
+          "alt": "A rocket",
+          "for": "hook"
+        },
+        {
+          "find": "Coordinate grid four quadrants",
+          "alt": "A coordinate grid",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Introduction to Scratch",
+      "unit": "Spring 2: Programming with Scratch",
       "n": 2,
       "title": "Variables and IF statements",
       "duration": 50,
+      "bigQuestion": "How does a game know when you have won?",
       "objectives": [
-        "Store user input in a variable",
-        "Use IF and IF-ELSE statements with a condition",
-        "Build a guessing game that uses selection"
+        "To understand how variables store data and how IF statements make decisions"
       ],
+      "successCriteria": [
+        "All: create a variable and change it",
+        "Most: use IF to react when a condition is true",
+        "Some: use IF ... ELSE with a comparison"
+      ],
+      "crossCurricular": "Maths: inequalities (greater than, less than)",
+      "smsc": "Moral: fairness in game rules",
       "keywords": [
         {
           "term": "variable",
-          "def": "a named store for data that can change while a program runs"
-        },
-        {
-          "term": "selection",
-          "def": "choosing which instructions to run based on a condition"
+          "def": "a named store for data that can change"
         },
         {
           "term": "condition",
-          "def": "a statement that is either true or false"
+          "def": "a question that is true or false"
         },
         {
-          "term": "random",
-          "def": "chosen by chance, with no pattern"
+          "term": "selection",
+          "def": "choosing what to do using IF"
+        },
+        {
+          "term": "score",
+          "def": "a variable that counts points"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "How does a game know when you have won?",
+        "a": "It stores your score in a variable and uses IF to check whether it has reached the target."
+      },
       "starter": [
-        "Bismillah. What is the output of: set score to 3, change score by 4?",
-        "Which keyboard events did we use last lesson?",
-        "Is 'x > 5' a true/false condition? When is it true?"
+        {
+          "q": "Which block starts a script?",
+          "a": "when green flag clicked",
+          "mins": 1,
+          "options": [
+            "when green flag clicked",
+            "change x by 10"
+          ]
+        },
+        {
+          "q": "What does 'change x by -10' do?",
+          "a": "Moves the sprite 10 steps left.",
+          "mins": 1
+        },
+        {
+          "q": "The centre of the stage is ...",
+          "a": "(0, 0)",
+          "mins": 1,
+          "options": [
+            "(0, 0)",
+            "(240, 180)"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Variables store data",
+          "heading": "Variables",
           "bullets": [
-            "Make a variable called secret.",
-            "set secret to a random number.",
-            "The value can change as the program runs."
+            "A box with a name",
+            "Holds a number or text",
+            "Can change while the program runs"
           ],
-          "note": "Create the variable and show it on the stage. Use pick random 1 to 10. Run several times to show different values. Link to Year 5 learning: variable = labelled box."
+          "note": ""
         },
         {
-          "heading": "Ask and answer",
-          "bullets": [
-            "'ask' and 'wait' takes input.",
-            "'answer' holds what was typed.",
-            "Store it: set guess to answer."
-          ],
-          "note": "Show that answer changes each time something is asked, so we store it in a variable called guess if we need it later. This is a misconception many pupils have: answer is overwritten by the next ask."
+          "heading": "IF ... ELSE",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\nset score to 0\nforever\n  if touching star? then\n    change score by 1\n    go to random position\n  if score > 9 then\n    say You win! for 2 seconds\n    stop all",
+            "output": "Collect 10 stars to win"
+          }
         },
         {
-          "heading": "IF and IF-ELSE",
-          "bullets": [
-            "IF guess = secret THEN say 'Correct'.",
-            "ELSE say 'Wrong, try again'.",
-            "The condition is true or false."
-          ],
-          "note": "Build the guessing game. Run it with a right and wrong guess. Show also guess > secret to give hints (too high). Introduce comparison operators: <, >, =."
+          "heading": "Comparisons",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Operator",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                ">",
+                "greater than",
+                "score > 9"
+              ],
+              [
+                "<",
+                "less than",
+                "lives < 1"
+              ],
+              [
+                "=",
+                "equal to",
+                "level = 3"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Test thoroughly",
-          "bullets": [
-            "Test a correct guess.",
-            "Test a guess that is too high.",
-            "Test a guess that is too low."
-          ],
-          "note": "Create a test table on screen: input, expected output, actual output. This is a skill needed at GCSE. Ask pupils to find a test case which might break the game (e.g. typing text)."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "If score = 9, is 'score > 9' true?",
+            "options": [
+              "False",
+              "True",
+              "Error"
+            ],
+            "answer": 0,
+            "why": "9 is not greater than 9."
+          }
         }
       ],
       "practice": [
-        "Is the condition true? x = 7: x > 5, x = 5, x < 7.",
-        "What is wrong with this: IF answer = secret, but secret was never set? (the program compares with an empty or old value)",
-        "Write the IF-ELSE for a game which says 'Pass' when score >= 50 else 'Fail'."
+        {
+          "q": "Write the condition to end the game when lives reach 0.",
+          "a": "if lives < 1 then stop all (or lives = 0).",
+          "mins": 4,
+          "model": "I do: 'if lives = 0 then say Game over, stop all'."
+        }
       ],
       "independent": [
-        "Build a number guessing game with a random number from 1 to 10.",
-        "Add hints: 'too high' or 'too low' using nested IF blocks.",
-        "Stretch: add a variable to count the number of guesses and show it at the end."
+        {
+          "q": "Build a 'collect the stars' game: score variable, IF touching star then score + 1, win at 10; save to the portal.",
+          "a": "A working game with a score and a win condition.",
+          "mins": 15,
+          "model": "The teacher builds the score script live."
+        },
+        {
+          "q": "Extend: add a lives variable that drops when touching an obstacle.",
+          "a": "Lives decrease; game over at 0.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: use IF ... ELSE to show 'Well done' or 'Try again'.",
+          "a": "IF ... ELSE used correctly.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What is a condition?",
-        "Write one test for your guessing game with the input and the expected output."
+        {
+          "q": "A variable is ...",
+          "a": "a named store for data",
+          "mins": 1,
+          "options": [
+            "a named store for data",
+            "a sprite"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How does a game know when you have won?",
+          "a": "It stores your score in a variable and uses IF to check whether it has reached the target.",
+          "mins": 2
+        }
       ],
-      "homework": "Make the guessing game harder by using a bigger range of numbers (1 to 50). Test it and write down three test cases.",
-      "send": "SEND/EAL: provide a flow diagram of the program with sentences to complete. Stretch: let the game tell the player how close they are (within 3 or not)."
+      "homework": "Add a timer variable that counts down from 30.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (Scratch unit; no secondary scheme of work supplied)",
+        "Scratch (free, scratch.mit.edu, online or offline editor; TO CONFIRM accounts through a Scratch Teacher Account); object and shape sprites only, no sound or music blocks",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Scoreboard",
+          "alt": "A scoreboard",
+          "for": "hook"
+        },
+        {
+          "find": "Star shape gold",
+          "alt": "A star",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Introduction to Scratch",
+      "unit": "Spring 2: Programming with Scratch",
       "n": 3,
-      "title": "Variables and operators",
+      "title": "Operators and expressions",
       "duration": 50,
+      "bigQuestion": "A quiz asks '7 × 8 = ?'. How could a program check your answer without storing the answer in advance?",
       "objectives": [
-        "Use arithmetic operators (+, -, *, /) in Scratch",
-        "Use more than one variable in a program",
-        "Combine conditions using AND, OR and NOT"
+        "To understand how arithmetic, comparison and logical operators build expressions in programs"
       ],
+      "successCriteria": [
+        "All: use + − × ÷ in Scratch",
+        "Most: combine comparisons with AND or OR",
+        "Some: build a quiz that checks answers with expressions"
+      ],
+      "crossCurricular": "Maths: order of operations",
+      "smsc": "Intellectual: logical thinking",
       "keywords": [
         {
           "term": "operator",
-          "def": "a symbol or block that performs a calculation or comparison"
+          "def": "a symbol that does a calculation or comparison"
+        },
+        {
+          "term": "expression",
+          "def": "a combination that gives a value"
         },
         {
           "term": "AND",
-          "def": "true only if both conditions are true"
+          "def": "true only if both parts are true"
         },
         {
           "term": "OR",
-          "def": "true if at least one condition is true"
-        },
-        {
-          "term": "NOT",
-          "def": "reverses true to false and false to true"
+          "def": "true if either part is true"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A quiz asks '7 × 8 = ?'. How could a program check your answer without storing the answer in advance?",
+        "a": "It can calculate 7 × 8 with an operator and compare it with the answer typed in."
+      },
       "starter": [
-        "Bismillah. What is the value of x after: set x to 2, change x by 3?",
-        "What is a condition? Give one example.",
-        "What does 'answer' hold in Scratch?"
+        {
+          "q": "'score > 9' when score = 10 is ...",
+          "a": "True",
+          "mins": 1,
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "q": "What does a variable do?",
+          "a": "Stores data that can change.",
+          "mins": 1
+        },
+        {
+          "q": "IF chooses ...",
+          "a": "what to do",
+          "mins": 1,
+          "options": [
+            "what to do",
+            "a colour"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Arithmetic operators",
-          "bullets": [
-            "+ add, - subtract.",
-            "* multiply, / divide.",
-            "mod gives the remainder."
-          ],
-          "note": "Build a small script which asks two numbers and says the total. Test with 3 and 4 (7). Point out the difference between the + operator (3 and 4 make 7) and the 'join' block (3 and 4 make 34). Misconception: pupils use join when they mean add."
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Block",
+              "Example",
+              "Result"
+            ],
+            "rows": [
+              [
+                "( ) + ( )",
+                "7 + 8",
+                "15"
+              ],
+              [
+                "( ) * ( )",
+                "7 * 8",
+                "56"
+              ],
+              [
+                "( ) / ( )",
+                "56 / 7",
+                "8"
+              ],
+              [
+                "( ) mod ( )",
+                "17 mod 5",
+                "2"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Two variables",
-          "bullets": [
-            "Variable 'a' stores the first number.",
-            "Variable 'b' stores the second.",
-            "Variable 'total' stores a + b."
-          ],
-          "note": "Rebuild the script using a, b and total. Explain why storing values in variables is better than using answer directly. Pupils should trace the program with a trace table for inputs 6 and 9."
+          "heading": "Logical operators",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "AND",
+              "points": [
+                "Both true",
+                "age > 10 and age < 14"
+              ]
+            },
+            "right": {
+              "title": "OR",
+              "points": [
+                "Either true",
+                "key = y or key = Y"
+              ]
+            },
+            "label": "logic"
+          }
         },
         {
-          "heading": "Combining conditions",
-          "bullets": [
-            "age >= 11 AND age <= 16.",
-            "day = Friday OR day = Saturday.",
-            "NOT (score > 50)."
-          ],
-          "note": "Use a truth table with two inputs. Ask pupils when 'A AND B' is true (only when both are). Link to logic gates covered later at GCSE. Misconception: pupils think OR means exactly one is true; it also includes both."
+          "heading": "A quiz script",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "scratch",
+            "text": "set a to pick random 2 to 12\nset b to pick random 2 to 12\nask (join a (join  x  b)) and wait\nif answer = (a * b) then\n  change score by 1\n  say Correct!\nelse\n  say (join Answer:  (a * b))",
+            "output": "A times-table quiz that marks itself"
+          }
         },
         {
-          "heading": "Mod: remainders",
-          "bullets": [
-            "7 mod 2 = 1.",
-            "8 mod 2 = 0.",
-            "If n mod 2 = 0 then n is even."
-          ],
-          "note": "Demonstrate an even-or-odd checker. Explain mod gives the remainder after division. This idea returns in GCSE programming as the modulus operator."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "17 mod 5 = ?",
+            "options": [
+              "2",
+              "3",
+              "12"
+            ],
+            "answer": 0,
+            "why": "17 ÷ 5 = 3 remainder 2."
+          }
         }
       ],
       "practice": [
-        "Work out 17 mod 5. (2) and 20 mod 4. (0)",
-        "Is (5 > 3) AND (2 > 4) true or false? (false)",
-        "Is (5 > 3) OR (2 > 4) true or false? (true)"
+        {
+          "q": "What is 23 mod 4? And is (5 > 3) AND (2 > 4) true?",
+          "a": "3; false (the second part is false).",
+          "mins": 4,
+          "model": "I do: 23 ÷ 4 = 5 remainder 3. AND needs both true; 2 > 4 is false, so false."
+        }
       ],
       "independent": [
-        "Build a program that asks for two numbers and tells the user their sum, difference and product.",
-        "Build an even/odd checker using mod and an IF-ELSE.",
-        "Stretch: make a program which tells you if a number is between 10 and 20 using AND."
+        {
+          "q": "Build a self-marking times-table quiz with 5 random questions and a score; save to the portal.",
+          "a": "A working 5-question quiz.",
+          "mins": 15,
+          "model": "The teacher builds one question live."
+        },
+        {
+          "q": "Extend: use OR to accept 'y' or 'Y' to play again.",
+          "a": "OR condition works.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: give a final message using IF score = 5, ELSE IF score > 2 ...",
+          "a": "Graded feedback.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Evaluate: 13 mod 4.",
-        "When is 'A OR B' false?"
+        {
+          "q": "AND is true when ...",
+          "a": "both parts are true",
+          "mins": 1,
+          "options": [
+            "both parts are true",
+            "either part is true"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A quiz asks '7 × 8 = ?'. How could a program check your answer without storing the answer in advance?",
+          "a": "It can calculate 7 × 8 with an operator and compare it with the answer typed in.",
+          "mins": 2
+        }
       ],
-      "homework": "Design a program on paper which asks the user for their age and uses AND to decide whether they are in the 11 to 14 age band.",
-      "send": "SEND/EAL: provide a truth table template and colour-coded blocks for AND/OR. Stretch: use mod to make a program that checks whether a number is divisible by 3."
+      "homework": "Add a division question that always has a whole-number answer.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (Scratch unit; no secondary scheme of work supplied)",
+        "Scratch (free, scratch.mit.edu, online or offline editor; TO CONFIRM accounts through a Scratch Teacher Account); object and shape sprites only, no sound or music blocks",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Calculator",
+          "alt": "A calculator",
+          "for": "hook"
+        },
+        {
+          "find": "Logic gate symbols",
+          "alt": "Logic symbols",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Introduction to Scratch",
@@ -1550,6 +1897,628 @@
           "find": "ruler measuring scale",
           "alt": "A ruler: the edges matter",
           "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Programming with Scratch",
+      "n": 10,
+      "title": "Loops and repetition",
+      "duration": 50,
+      "bigQuestion": "Islamic geometric patterns repeat one shape many times. How could a loop draw one?",
+      "objectives": [
+        "To understand how count-controlled and condition-controlled loops repeat code efficiently"
+      ],
+      "successCriteria": [
+        "All: use repeat to draw a shape",
+        "Most: choose between repeat, forever and repeat until",
+        "Some: use a loop with a variable to make a pattern change each time"
+      ],
+      "crossCurricular": "Maths: angles in polygons (exterior angle = 360 ÷ sides)",
+      "smsc": "Cultural: maths and pattern in Islamic art",
+      "keywords": [
+        {
+          "term": "loop",
+          "def": "code that repeats"
+        },
+        {
+          "term": "count-controlled",
+          "def": "repeats a set number of times"
+        },
+        {
+          "term": "condition-controlled",
+          "def": "repeats until a condition is true"
+        },
+        {
+          "term": "iteration",
+          "def": "one run through a loop"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Islamic geometric patterns repeat one shape many times. How could a loop draw one?",
+        "a": "Repeat 'draw a shape, turn' several times: a loop makes the pattern with very little code."
+      },
+      "islamicLink": {
+        "text": "Islamic geometric art is built from repeated shapes rotated around a centre: the same idea as a loop in programming.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "17 mod 5 = ...",
+          "a": "2",
+          "mins": 1,
+          "options": [
+            "2",
+            "3"
+          ]
+        },
+        {
+          "q": "When is AND true?",
+          "a": "When both parts are true.",
+          "mins": 1
+        },
+        {
+          "q": "An expression gives ...",
+          "a": "a value",
+          "mins": 1,
+          "options": [
+            "a value",
+            "a sprite"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three loops",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Block",
+              "Type",
+              "Use"
+            ],
+            "rows": [
+              [
+                "repeat 10",
+                "Count-controlled",
+                "Draw a shape"
+              ],
+              [
+                "forever",
+                "Infinite",
+                "Game loop"
+              ],
+              [
+                "repeat until",
+                "Condition-controlled",
+                "Until score = 10"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Drawing with the pen",
+          "bullets": [],
+          "note": "Use the Pen extension.",
+          "code": {
+            "lang": "scratch",
+            "text": "pen down\nrepeat 8\n  repeat 4\n    move 80 steps\n    turn right 90 degrees\n  turn right 45 degrees",
+            "output": "Eight squares rotated around a point: an eight-pointed pattern"
+          }
+        },
+        {
+          "heading": "Exterior angle",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "What angle to turn to draw a regular hexagon?",
+            "steps": [
+              "Exterior angles add to 360°",
+              "360 ÷ 6 = 60",
+              "Turn 60° each time"
+            ],
+            "answer": "repeat 6: move, turn 60°"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "How many degrees to turn for a regular pentagon?",
+            "options": [
+              "72",
+              "60",
+              "108"
+            ],
+            "answer": 0,
+            "why": "360 ÷ 5 = 72."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the loop for an equilateral triangle.",
+          "a": "repeat 3: move 100 steps, turn right 120 degrees.",
+          "mins": 4,
+          "model": "I do: 360 ÷ 3 = 120; repeat 3 { move 100, turn 120 }."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Draw an Islamic-style rotated pattern with nested loops (for example 12 hexagons turning 30° each); save to the portal.",
+          "a": "A rotated pattern using nested loops.",
+          "mins": 15,
+          "model": "The teacher draws the 8-square pattern live."
+        },
+        {
+          "q": "Extend: change the pen colour each iteration.",
+          "a": "Colours vary each time.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: use a variable to make each shape bigger than the last.",
+          "a": "A growing spiral pattern.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "'repeat until' is ...",
+          "a": "condition-controlled",
+          "mins": 1,
+          "options": [
+            "condition-controlled",
+            "count-controlled"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Islamic geometric patterns repeat one shape many times. How could a loop draw one?",
+          "a": "Repeat 'draw a shape, turn' several times: a loop makes the pattern with very little code.",
+          "mins": 2
+        }
+      ],
+      "homework": "Design a pattern with nested loops on paper first, then build it.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (Scratch unit; no secondary scheme of work supplied)",
+        "Scratch (free, scratch.mit.edu, online or offline editor; TO CONFIRM accounts through a Scratch Teacher Account); object and shape sprites only, no sound or music blocks",
+        "Scratch Pen extension",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Islamic geometric star pattern",
+          "alt": "An Islamic star pattern",
+          "for": "hook"
+        },
+        {
+          "find": "Hexagon tiles",
+          "alt": "Hexagons",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Programming with Scratch",
+      "n": 11,
+      "title": "Scratch project: plan and build",
+      "duration": 50,
+      "bigQuestion": "Why do programmers plan before they code?",
+      "objectives": [
+        "To understand how to plan a program with a storyboard and build it in stages"
+      ],
+      "successCriteria": [
+        "All: storyboard a simple game or animation",
+        "Most: build it using events, variables, selection and loops",
+        "Some: decompose it into sprites and scripts before building"
+      ],
+      "smsc": "Moral: perseverance and good use of time",
+      "keywords": [
+        {
+          "term": "storyboard",
+          "def": "a plan in boxes showing what happens"
+        },
+        {
+          "term": "decompose",
+          "def": "break into smaller parts"
+        },
+        {
+          "term": "requirement",
+          "def": "something the program must do"
+        },
+        {
+          "term": "prototype",
+          "def": "a first working version"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do programmers plan before they code?",
+        "a": "Planning saves time, catches problems early and makes the build clearer."
+      },
+      "starter": [
+        {
+          "q": "360 ÷ 5 = ...",
+          "a": "72",
+          "mins": 1,
+          "options": [
+            "72",
+            "60"
+          ]
+        },
+        {
+          "q": "Name the three loop types.",
+          "a": "Repeat (count), forever, repeat until (condition).",
+          "mins": 1
+        },
+        {
+          "q": "A storyboard is ...",
+          "a": "a plan in boxes",
+          "mins": 1,
+          "options": [
+            "a plan in boxes",
+            "a sprite"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Project brief",
+          "bullets": [
+            "A game or animation with a clear goal",
+            "Must use: events, a variable, IF, a loop",
+            "No people sprites; no sound"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Plan",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Write 3 to 5 requirements",
+            "Storyboard 4 boxes",
+            "List sprites and their scripts",
+            "Build in stages",
+            "Test each stage"
+          ]
+        },
+        {
+          "heading": "Example plan",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Sprite",
+              "Scripts"
+            ],
+            "rows": [
+              [
+                "Basket",
+                "Arrow keys move"
+              ],
+              [
+                "Apple",
+                "Falls; if touching basket: score + 1"
+              ],
+              [
+                "Stage",
+                "Timer; game over at 0"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which should you do first?",
+            "options": [
+              "Write requirements and storyboard",
+              "Add colours",
+              "Share the project"
+            ],
+            "answer": 0,
+            "why": "Plan before building."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write three requirements for a 'catch the apples' game.",
+          "a": "The basket moves with arrows; apples fall from random positions; catching adds 1 to score.",
+          "mins": 4,
+          "model": "I do: R1 basket moves left and right; R2 apples fall; R3 catching adds a point."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Plan your project (requirements, storyboard, sprite table) on the pupil PDF, then build the first two requirements; save to the portal.",
+          "a": "A plan and a first working version.",
+          "mins": 15,
+          "model": "The teacher builds R1 live."
+        },
+        {
+          "q": "Extend: add a third requirement.",
+          "a": "A third feature working.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: add levels using a variable.",
+          "a": "Levels that change speed.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A requirement is ...",
+          "a": "something the program must do",
+          "mins": 1,
+          "options": [
+            "something the program must do",
+            "a sprite name"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why do programmers plan before they code?",
+          "a": "Planning saves time, catches problems early and makes the build clearer.",
+          "mins": 2
+        }
+      ],
+      "homework": "Continue building; note any bugs for next lesson.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (Scratch unit; no secondary scheme of work supplied)",
+        "Scratch (free, scratch.mit.edu, online or offline editor; TO CONFIRM accounts through a Scratch Teacher Account); object and shape sprites only, no sound or music blocks",
+        "Project planning sheet (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Storyboard sketch panels",
+          "alt": "A storyboard",
+          "for": "teach:2"
+        },
+        {
+          "find": "Apple basket",
+          "alt": "Apples in a basket",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Programming with Scratch",
+      "n": 12,
+      "title": "Test and debug the project; unit quiz",
+      "duration": 50,
+      "bigQuestion": "If a program works once, does that mean it is bug-free?",
+      "objectives": [
+        "To understand how to test a program systematically, fix bugs and check my learning in the unit quiz"
+      ],
+      "successCriteria": [
+        "All: test my program against each requirement",
+        "Most: find and fix at least two bugs",
+        "Some: explain each bug and how the fix works"
+      ],
+      "smsc": "Moral: honesty about mistakes and fixing them",
+      "keywords": [
+        {
+          "term": "test",
+          "def": "check a program works as intended"
+        },
+        {
+          "term": "bug",
+          "def": "an error in a program"
+        },
+        {
+          "term": "debug",
+          "def": "find and fix errors"
+        },
+        {
+          "term": "test plan",
+          "def": "a table of tests and expected results"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a program works once, does that mean it is bug-free?",
+        "a": "No: it must be tested with different inputs and situations."
+      },
+      "starter": [
+        {
+          "q": "A storyboard is ...",
+          "a": "a plan",
+          "mins": 1,
+          "options": [
+            "a plan",
+            "a bug"
+          ]
+        },
+        {
+          "q": "Name one requirement of your project.",
+          "a": "Any.",
+          "mins": 1
+        },
+        {
+          "q": "Debug means ...",
+          "a": "find and fix errors",
+          "mins": 1,
+          "options": [
+            "find and fix errors",
+            "delete everything"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Test plan",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Test",
+              "Expected",
+              "Actual",
+              "Pass?"
+            ],
+            "rows": [
+              [
+                "Press right arrow",
+                "Basket moves right",
+                "",
+                ""
+              ],
+              [
+                "Apple touches basket",
+                "Score + 1",
+                "",
+                ""
+              ],
+              [
+                "Timer reaches 0",
+                "Game over",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common bugs",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Bug",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Score never resets",
+                "set score to 0 on green flag"
+              ],
+              [
+                "Sprite leaves stage",
+                "if on edge, bounce"
+              ],
+              [
+                "Loop never ends",
+                "check the repeat until condition"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Unit quiz",
+          "bullets": [
+            "10 questions in the portal",
+            "Events, variables, IF, operators, loops"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "The score keeps going up from last game. The fix is ...",
+            "options": [
+              "set score to 0 when green flag clicked",
+              "delete the score",
+              "add a forever loop"
+            ],
+            "answer": 0,
+            "why": "Initialise variables at the start."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find the bug: 'repeat until score = 10' but score goes 9, 11 (it adds 2). What happens and how do you fix it?",
+          "a": "It never equals 10 so the loop never ends; use 'score > 9'.",
+          "mins": 4,
+          "model": "I do: trace: 9, 11, 13... never 10. Fix: repeat until score > 9."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Complete your test plan, fix at least two bugs, save the final project; then take the 10-question unit quiz in the portal.",
+          "a": "A completed test plan, a working project and a quiz score.",
+          "mins": 15,
+          "model": "The teacher tests one row live."
+        },
+        {
+          "q": "Extend: write one sentence on each bug you fixed.",
+          "a": "Clear bug explanations.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: share your project with the teacher for feedback.",
+          "a": "Project shared.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A test plan lists ...",
+          "a": "tests and expected results",
+          "mins": 1,
+          "options": [
+            "tests and expected results",
+            "sprite names"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If a program works once, does that mean it is bug-free?",
+          "a": "No: it must be tested with different inputs and situations.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show your finished project to your family.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (Scratch unit; no secondary scheme of work supplied)",
+        "Scratch (free, scratch.mit.edu, online or offline editor; TO CONFIRM accounts through a Scratch Teacher Account); object and shape sprites only, no sound or music blocks",
+        "Portal unit quiz (10 questions)",
+        "Test plan table (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bug beetle",
+          "alt": "A bug",
+          "for": "hook"
+        },
+        {
+          "find": "Checklist",
+          "alt": "A checklist",
+          "for": "teach:1"
         }
       ]
     }

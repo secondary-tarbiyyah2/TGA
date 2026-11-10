@@ -14,8 +14,8 @@ export type Crumb = { label: string; href?: string };
  * the title and a one-line description, with the page's actions on the
  * right. Sits on the page background, not inside a card.
  *
- * Crumbs are worked out from the sidebar when none are given: Home › Hub ›
- * Page. Pass `crumbs` only for deeper pages (Home › Classes › 7A Maths).
+ * Crumbs are worked out from the sidebar when none are given: Today › Hub ›
+ * Page. Pass `crumbs` only for deeper pages (Today › Classes › 7A Maths).
  *
  * Actions: give the screen's one main action as `action` (it goes last, on
  * the right, where people look for it); anything else goes in `actions`.
@@ -49,7 +49,7 @@ export function PageHeader({
 
   let trail: Crumb[] = crumbs || [];
   if (!crumbs && nav) {
-    trail = [{ label: "Home", href: home || undefined }];
+    trail = [{ label: "Today", href: home || undefined }];
     const t = title.toLowerCase();
     const same = (label: string) => {
       const l = label.toLowerCase();
@@ -63,12 +63,12 @@ export function PageHeader({
     // Families and pupils: on one of a hub's own pages the hub link is only
     // its first tab (a sibling, already in the tab strip), so "back" goes Home.
     const siblingHub = !!nav.tab && (nav.area === "family" || nav.area === "student");
-    if (nav.item.label !== "Home" && !same(nav.item.label) && !isHere(nav.item.href) && !siblingHub) trail.push({ label: nav.item.label, href: nav.item.href });
+    if (nav.item.label !== "Today" && !same(nav.item.label) && !isHere(nav.item.href) && !siblingHub) trail.push({ label: nav.item.label, href: nav.item.href });
     if (nav.tab && !same(nav.tab.label) && nav.tab.label !== nav.item.label && !isHere(nav.tab.href)) trail.push({ label: nav.tab.label, href: nav.tab.href });
     trail.push({ label: title });
-  } else if (crumbs && crumbs[0] && /^(admin|site administration|overview|dashboard)$/i.test(crumbs[0].label)) {
-    // Older pages named the root differently; it is always "Home".
-    trail = [{ label: "Home", href: home || crumbs[0].href }, ...crumbs.slice(1)];
+  } else if (crumbs && crumbs[0] && /^(home|admin|site administration|overview|dashboard)$/i.test(crumbs[0].label)) {
+    // Older pages named the root differently; it is always "Today".
+    trail = [{ label: "Today", href: home || crumbs[0].href }, ...crumbs.slice(1)];
   }
 
   // A crumb that links to the page you are already on (a hub whose first tab
@@ -120,7 +120,7 @@ export function PageHeader({
             </span>
           )}
           <div className="min-w-0">
-            <h1 className="text-2xl font-semibold leading-tight tracking-tight text-ink sm:text-[1.75rem]">{title}</h1>
+            <h1 className="portal-display text-2xl font-semibold leading-tight text-forest-900 sm:text-[1.875rem]">{title}</h1>
             {subtitle && <p className="mt-1 max-w-prose text-sm text-ink/65">{subtitle}</p>}
           </div>
         </div>
@@ -146,18 +146,13 @@ export function HubTabs({ roles }: { roles: string[] }) {
   if (!hub) return null;
   return (
     <nav aria-label={`${hub.item.label} pages`} className="hub-tabs portal-tabs -mx-4 mb-6 mt-4 overflow-x-auto px-4 sm:mx-0 sm:mt-6 sm:px-0 print:hidden">
-      <ul className="flex min-w-max gap-1 border-b border-gold-light">
+      <ul className="hub-seg">
         {hub.tabs.map((t) => {
           const active = hub.active?.href === t.href;
           return (
             <li key={t.href}>
-              <Link
-                href={t.href}
-                aria-current={active ? "page" : undefined}
-                title={t.hint}
-                className={`-mb-px flex min-h-11 items-center gap-2 border-b-2 px-3 text-sm font-medium transition-colors ${active ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:border-ink/20 hover:text-ink"}`}
-              >
-                <Icon name={t.icon || hub.item.icon} size="sm" className={`h-4 w-4 ${active ? "text-teal-700" : "text-ink/45"}`} />
+              <Link href={t.href} aria-current={active ? "page" : undefined} title={t.hint}>
+                <Icon name={t.icon || hub.item.icon} size="sm" className={`h-4 w-4 ${active ? "text-forest-700" : "text-ink/45"}`} />
                 {t.label}
               </Link>
             </li>

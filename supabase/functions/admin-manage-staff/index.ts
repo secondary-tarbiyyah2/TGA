@@ -41,6 +41,10 @@ async function requireAdmin(authHeader: string | null) {
   });
   const { data: userData } = await callerClient.auth.getUser();
   if (!userData?.user) return null;
+  // Security audit L9: the current role model (user_roles via current_has_role),
+  // with the old profiles.role = admin flag still accepted.
+  const { data: hasRole } = await callerClient.rpc("current_has_role", { roles: ["head_teacher", "admin"] });
+  if (hasRole === true) return userData.user;
   const { data: profile } = await callerClient.from("profiles").select("id, role").eq("id", userData.user.id).single();
   if (profile?.role !== "admin") return null;
   return userData.user;

@@ -9,8 +9,8 @@ import { SubPageNav } from "@/components/learn/SubPageNav";
 export const LESSON_TABS: { href: string; label: string; exact?: boolean }[] = [
   { href: "/admin/lessons", label: "Overview", exact: true },
   { href: "/admin/lessons/timetable", label: "Timetable" },
-  { href: "/admin/lessons/generate", label: "Generate" },
-  { href: "/admin/lessons/availability", label: "Availability" },
+  { href: "/admin/lessons/generate", label: "Make the timetable" },
+  { href: "/admin/lessons/availability", label: "Staff availability" },
   { href: "/admin/lessons/day", label: "School day" },
   { href: "/admin/lessons/list", label: "Lessons" },
 ];
@@ -24,7 +24,7 @@ export function LessonsHeader({ title, subtitle, actions }: { title: string; sub
   return (
     <>
       <PageHeader
-        crumbs={isHub ? [{ label: "Home", href: "/admin/dashboard" }, { label: LESSONS_HUB_TITLE }] : [{ label: "Home", href: "/admin/dashboard" }, { label: LESSONS_HUB_TITLE, href: "/admin/lessons" }, { label: title }]}
+        crumbs={isHub ? [{ label: "Today", href: "/admin/dashboard" }, { label: LESSONS_HUB_TITLE }] : [{ label: "Today", href: "/admin/dashboard" }, { label: LESSONS_HUB_TITLE, href: "/admin/lessons" }, { label: title }]}
         title={title}
         subtitle={subtitle}
         actions={actions}
