@@ -42,8 +42,11 @@ const TYPE_LABEL = {
 const AR = /[؀-ۿ]/;
 /** Text with any Arabic run wrapped so it gets the Arabic font and right-to-left order. */
 const t = (s) =>
-  esc(s)
-    .replace(/([؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿][؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿\sً-ْـ،؛؟]*)/g, (m) => {
+  // A line that is all Arabic (no English words) is one right-to-left run, so its quotes and full stop stay in place.
+  /^[\s«(]*[؀-ۿ]/.test(String(s ?? "")) && !/[A-Za-z]{2,}/.test(String(s ?? ""))
+    ? `<span class="ar" dir="rtl" lang="ar">${esc(s).replace(/\n/g, "<br>")}</span>`
+    : esc(s)
+    .replace(/(«?[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿][؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿\sً-ْـ،؛؟«»]*)/g, (m) => {
       // Spaces after the run stay outside it, or they jump to the wrong side of the Arabic.
       const trail = /\s*$/.exec(m)[0];
       return `<span class="ar" dir="rtl" lang="ar">${m.slice(0, m.length - trail.length)}</span>${trail}`;
