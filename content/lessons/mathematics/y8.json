@@ -3,7 +3,7 @@
  "year": "y8",
  "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
  "boardShort": "KS3 Maths Progress",
- "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: ratio, scale, multiplying fractions, Cartesian plane) and Spring 1 lessons (brackets, equations, sequences) written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard. | Founding year 2027 Spring 2 (15 Mar to 23 Apr): Indices, fractions, percentages and standard form; number sense, written to the plan with Maths Progress Year 8 1.4, 1.5, Unit 10 and Year 9 1.1 to 1.4 as the school's resources.",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: ratio, scale, multiplying fractions, Cartesian plane) and Spring 1 lessons (brackets, equations, sequences) written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard. | Founding year 2027 Spring 2 (15 Mar to 23 Apr): Indices, fractions, percentages and standard form; number sense, written to the plan with Maths Progress Year 8 1.4, 1.5, Unit 10 and Year 9 1.1 to 1.4 as the school's resources. | Founding year 2027 Summer 1 (26 Apr to 11 Jun): Angles, area and symmetry, written to the plan with Maths Progress Year 8 7.2 to 7.5, 2.1, 2.2, Year 9 7.1, 7.2 and Year 7 10.2, 10.3 as the school's resources; lessons 11 and 12 upgraded; assessment point 2 test in the week of 26 Apr.",
  "lessons": [
   {
    "unit": "Unit 1: Number",
@@ -1715,27 +1715,25 @@
    "send": "Support: problem cards with skill hints. Stretch: open problems with multiple answers."
   },
   {
-   "unit": "Unit 2: Area and volume",
+   "unit": "Summer 1: Angles, area and symmetry",
    "n": 11,
    "title": "Area of a triangle",
    "duration": 50,
    "bigQuestion": "Why is the area of a triangle exactly half of a rectangle?",
    "objectives": [
-    "Derive the formula for the area of a triangle",
-    "Use A = ½ × b × h with the perpendicular height",
-    "Find a missing length given the area"
+    "To understand why the area of a triangle is half the base times the perpendicular height and use it in problems"
    ],
    "successCriteria": [
-    "Find the area of a right-angled triangle",
-    "Find the area of any triangle using the perpendicular height",
-    "Find a missing base or height from the area"
+    "All: find the area of a right-angled triangle",
+    "Most: find the area of any triangle using the perpendicular height, not the slant side",
+    "Some: find a missing base or height from the area"
    ],
-   "crossCurricular": "Art: triangles in Islamic geometric design; DT: roof shapes",
-   "smsc": "Cultural: triangular structures in architecture around the world",
+   "crossCurricular": "Design and technology: cutting triangular panels from rectangular sheets",
+   "smsc": "Cultural: triangles in roof frames and Islamic geometric design",
    "keywords": [
     {
      "term": "area",
-     "def": "the amount of space inside a 2D shape, in square units"
+     "def": "the space inside a 2D shape, in square units"
     },
     {
      "term": "base",
@@ -1750,35 +1748,56 @@
      "def": "a rule written with letters"
     }
    ],
+   "hook": {
+    "type": "ponder",
+    "text": "A triangle sits inside a rectangle: same base, and its top touches the opposite side. What fraction of the rectangle does it cover? Does it matter where the top is?",
+    "a": "Exactly half, wherever the top vertex is on that side."
+   },
    "starter": [
-    "Area of a rectangle 6 cm by 4 cm?",
-    "Work out ½ × 10",
-    "What units is area measured in?",
-    "Name a triangle with a right angle"
+    {
+     "q": "One interior angle of a regular hexagon",
+     "a": "120°",
+     "mins": 1
+    },
+    {
+     "q": "The exterior angle of a regular 10-gon",
+     "a": "36°",
+     "mins": 1
+    },
+    {
+     "q": "Area of a rectangle 6 cm by 4 cm",
+     "a": "24 cm²",
+     "mins": 1
+    },
+    {
+     "q": "½ × 14",
+     "a": "7",
+     "mins": 1
+    }
    ],
    "teach": [
     {
      "heading": "Half a rectangle",
      "bullets": [
-      "A diagonal cuts a rectangle into 2 equal triangles",
-      "So area = ½ × base × height"
+      "A diagonal cuts a rectangle into two equal triangles",
+      "Any triangle fits twice in its rectangle",
+      "A = ½ × b × h"
      ],
-     "note": "Animate cutting a rectangle along a diagonal. Then show a non-right triangle fits in a rectangle twice too (cut and move the pieces).",
-     "misconception": {
-      "wrong": "Area = base × slant side",
-      "right": "Use the perpendicular height, at 90° to the base"
+     "note": "Animate cutting a rectangle along a diagonal, then a non-right triangle cut and rearranged.",
+     "fraction": {
+      "parts": 2,
+      "shaded": 1,
+      "label": "the triangle is ½ of the rectangle"
      }
     },
     {
      "heading": "Using the formula",
      "bullets": [
-      "A = ½ × b × h",
-      "Height is perpendicular to the base",
-      "Units: cm²"
+      "Height at 90° to the base"
      ],
-     "note": "Model with a triangle base 9 cm, perpendicular height 6 cm, slant side 7 cm.",
+     "note": "Model with a slant side as a distractor.",
      "model": {
-      "problem": "Base 9 cm, perpendicular height 6 cm, slant side 7 cm. Find the area.",
+      "problem": "A triangle has base 9 cm, perpendicular height 6 cm and slant side 7 cm. Find its area.",
       "steps": [
        "Ignore the slant side (7 cm)",
        "A = ½ × 9 × 6",
@@ -1788,19 +1807,41 @@
      }
     },
     {
+     "heading": "Which height?",
+     "bullets": [
+      "The perpendicular height, never the slant side"
+     ],
+     "note": "The most common error.",
+     "misconception": {
+      "wrong": "Area = ½ × base × slant side",
+      "right": "Area = ½ × base × perpendicular height (at 90° to the base)"
+     }
+    },
+    {
      "heading": "Working backwards",
      "bullets": [
       "Put the area into the formula",
       "Solve for the missing length"
      ],
-     "note": "A = 30 cm², b = 12 cm. 30 = ½ × 12 × h, so 30 = 6h, h = 5 cm."
+     "note": "Link to Spring 1 equations.",
+     "model": {
+      "problem": "A triangle has area 30 cm² and base 12 cm. Find its height.",
+      "steps": [
+       "30 = ½ × 12 × h",
+       "30 = 6h",
+       "h = 5"
+      ],
+      "answer": "5 cm"
+     }
     },
     {
-     "heading": "Check: which height?",
-     "bullets": [],
-     "note": "Show me on 3.",
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
-      "q": "A triangle has base 10 cm, sides 8 cm and 7 cm, and perpendicular height 5 cm. What is its area?",
+      "q": "A triangle has base 10 cm, other sides 8 cm and 7 cm, and perpendicular height 5 cm. Its area is:",
       "options": [
        "40 cm²",
        "25 cm²",
@@ -1808,46 +1849,114 @@
        "35 cm²"
       ],
       "answer": 1,
-      "why": "½ × 10 × 5 = 25. A uses the 8 cm side; C forgets to halve; D uses 7 cm."
+      "why": "½ × 10 × 5 = 25. 40 uses the 8 cm side; 50 forgets to halve; 35 uses the 7 cm side."
      }
     }
    ],
    "practice": [
-    "Find the area: base 8 cm, height 5 cm",
-    "Find the area: base 7 m, height 3 m",
-    "Area 24 cm², base 8 cm. Find the height."
+    {
+     "q": "Find the area of a triangle with base 8 cm and perpendicular height 5 cm.",
+     "a": "20 cm²",
+     "mins": 1,
+     "model": "A = ½ × 8 × 5.\n8 × 5 = 40; half of 40 = 20 cm²."
+    },
+    {
+     "q": "A right-angled triangle has shorter sides 7 cm and 10 cm. Find its area.",
+     "a": "35 cm²",
+     "mins": 1
+    },
+    {
+     "q": "A triangle has area 48 cm² and height 8 cm. Find its base.",
+     "a": "12 cm",
+     "mins": 2
+    }
    ],
    "independent": [
-    "Core: Find the area of triangles with (a) b = 14 cm, h = 9 cm (b) b = 6.5 m, h = 4 m (c) b = 11 mm, h = 7 mm",
-    "Extend: A triangular sail has a base of 3.2 m and a height of 5.5 m. Sailcloth costs £18 per m². Find the cost.",
-    "Stretch: Draw three different triangles on a grid that each have an area of 12 cm². Explain why there are infinitely many."
+    {
+     "q": "Core: Find the area: (a) base 14 cm, height 9 cm (b) base 6.5 m, height 4 m (c) an obtuse triangle with base 5 cm and perpendicular height 8 cm (drawn outside the triangle) (d) area 54 cm², base 12 cm: find the height",
+     "a": "(a) 63 cm² (b) 13 m² (c) 20 cm² (d) 9 cm",
+     "mins": 6,
+     "model": "(a) ½ × 14 × 9 = 7 × 9 = 63 cm².\n(d) 54 = ½ × 12 × h = 6h, so h = 9 cm."
+    },
+    {
+     "q": "Extend: A triangle has vertices (1, 1), (7, 1) and (4, 6). Find its area.",
+     "a": "Base 6, height 5: 15 square units",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Two triangles share a base of 10 cm, one above it with height 6 cm and one below with height 9 cm, making a kite. Find the kite's area.",
+     "a": "½ × 10 × 15 = 75 cm²",
+     "mins": 3
+    }
    ],
    "exit": [
-    "Area: base 12 cm, height 5 cm?",
-    "Why do we halve?",
-    "Area 18 cm², height 4 cm. Find the base."
+    {
+     "q": "The area of a triangle with base 10 cm and height 6 cm is:",
+     "a": "B) 30 cm²",
+     "mins": 1,
+     "options": [
+      "60 cm²",
+      "30 cm²",
+      "16 cm²"
+     ]
+    },
+    {
+     "q": "Which height do you use?",
+     "a": "the perpendicular height",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is a triangle's area half a rectangle's?",
+     "a": "Two copies of the triangle fill the rectangle with the same base and height, so it is half of b × h.",
+     "mins": 2
+    }
    ],
-   "homework": "Find and measure three triangles at home (e.g. sandwiches, signs) and calculate their areas.",
-   "send": "Support: grid paper and labelled diagrams with the height highlighted. Stretch: triangles on coordinate grids."
+   "homework": "Area of triangles: 10 questions including missing lengths (portal homework).",
+   "send": "Support: formula card and triangles with the height marked in colour. EAL: 'perpendicular', 'base'. Stretch: areas on coordinate grids.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 2.1 Area of a triangle (Unit 2: Area and volume)",
+    "Printable area sheet: triangles (portal worksheet for this lesson)",
+    "Ruler",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "triangular sail boat",
+     "alt": "A triangular sail",
+     "for": "hook"
+    },
+    {
+     "find": "set square",
+     "alt": "A set square showing a right angle",
+     "for": "keywords"
+    }
+   ]
   },
   {
-   "unit": "Unit 2: Area and volume",
+   "unit": "Summer 1: Angles, area and symmetry",
    "n": 12,
    "title": "Area of parallelograms and trapezia",
    "duration": 50,
    "bigQuestion": "How can cutting and rearranging a shape help us find its area?",
    "objectives": [
-    "Derive and use the formula for the area of a parallelogram",
-    "Derive and use the formula for the area of a trapezium",
-    "Find areas of compound shapes"
+    "To understand why the parallelogram and trapezium area formulae work and use them to find areas"
    ],
    "successCriteria": [
-    "Find the area of a parallelogram",
-    "Find the area of a trapezium",
-    "Find areas of compound shapes using several formulae"
+    "All: find the area of a parallelogram using base × perpendicular height",
+    "Most: find the area of a trapezium using ½(a + b)h",
+    "Some: find a missing length from the area of a parallelogram or trapezium"
    ],
-   "crossCurricular": "Geography: estimating the area of a field; DT: designing a garden",
-   "smsc": "Spiritual: patterns of tessellating shapes in mosque tilework",
+   "crossCurricular": "Geography: estimating the area of fields from a map",
+   "smsc": "Moral: 'adl (عَدْل): measuring land fairly when it is shared or sold",
    "keywords": [
     {
      "term": "parallelogram",
@@ -1858,19 +1967,40 @@
      "def": "a quadrilateral with exactly one pair of parallel sides"
     },
     {
-     "term": "parallel",
-     "def": "always the same distance apart; never meet"
+     "term": "parallel sides",
+     "def": "sides that are always the same distance apart"
     },
     {
-     "term": "compound shape",
-     "def": "a shape made of simpler shapes"
+     "term": "perpendicular height",
+     "def": "the distance at right angles between the parallel sides"
     }
    ],
+   "hook": {
+    "type": "ponder",
+    "text": "Cut a triangle off one end of a parallelogram and slide it to the other end. What shape do you get? What has stayed the same?",
+    "a": "A rectangle with the same base and perpendicular height, so the same area."
+   },
    "starter": [
-    "Area of a triangle: base 10 cm, height 7 cm",
-    "Area of a rectangle 9 cm by 5 cm",
-    "Work out ½ × (4 + 6)",
-    "How many pairs of parallel sides has a square?"
+    {
+     "q": "Area of a triangle: base 10 cm, height 7 cm",
+     "a": "35 cm²",
+     "mins": 1
+    },
+    {
+     "q": "Area of a rectangle 9 cm by 5 cm",
+     "a": "45 cm²",
+     "mins": 1
+    },
+    {
+     "q": "½ × (4 + 6)",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "A triangle has area 24 cm² and base 8 cm. Its height?",
+     "a": "6 cm",
+     "mins": 1
+    }
    ],
    "teach": [
     {
@@ -1880,80 +2010,156 @@
       "It becomes a rectangle",
       "A = b × h"
      ],
-     "note": "Animate the cut and slide. Ask: 'What stays the same?' (Base and perpendicular height.)"
+     "note": "Ask: what stays the same? Base and perpendicular height."
     },
     {
-     "heading": "Trapezium formula",
+     "heading": "Parallelogram model",
      "bullets": [
-      "A = ½ (a + b) h",
-      "a and b are the parallel sides",
-      "h is the perpendicular distance between them"
+      "Ignore the slant side"
      ],
-     "note": "Show two copies making a parallelogram of base (a + b).",
+     "note": "Same trap as triangles.",
      "model": {
-      "problem": "Trapezium: parallel sides 6 cm and 10 cm, height 4 cm. Find the area.",
+      "problem": "A parallelogram has base 11 cm, perpendicular height 6 cm and slant side 7 cm. Find its area.",
       "steps": [
-       "Add parallel sides: 6 + 10 = 16",
+       "Ignore the slant side",
+       "A = 11 × 6"
+      ],
+      "answer": "66 cm²"
+     }
+    },
+    {
+     "heading": "Trapezium",
+     "bullets": [
+      "A = ½(a + b)h",
+      "a and b are the parallel sides"
+     ],
+     "note": "Two copies make a parallelogram with base a + b.",
+     "model": {
+      "problem": "A trapezium has parallel sides 6 cm and 10 cm and height 4 cm. Find its area.",
+      "steps": [
+       "Add the parallel sides: 6 + 10 = 16",
        "Halve: 8",
-       "Multiply by height: 8 × 4"
+       "Multiply by the height: 8 × 4"
       ],
       "answer": "32 cm²"
      }
     },
     {
-     "heading": "Compound shapes",
+     "heading": "Which sides?",
      "bullets": [
-      "Split into rectangles, triangles and trapezia",
-      "Find any missing lengths",
-      "Add (or subtract) the areas"
+      "Only the parallel sides go in the bracket"
      ],
-     "note": "An L-shaped room: split into two rectangles, or a big rectangle minus a small one. Both give the same answer."
-    },
-    {
-     "heading": "Using the slant side",
-     "bullets": [
-      "Slant sides are not heights"
-     ],
-     "note": "Same error as with triangles.",
+     "note": "Point to the arrow marks.",
      "misconception": {
-      "wrong": "Parallelogram area = base × slant side",
-      "right": "Area = base × perpendicular height"
+      "wrong": "Put any two sides into ½(a + b)h",
+      "right": "a and b are the two parallel sides; h is the distance between them"
      }
     },
     {
-     "heading": "Check: trapezium",
-     "bullets": [],
-     "note": "Show me on 3.",
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
-      "q": "A trapezium has parallel sides 5 m and 9 m and height 6 m. Its area is…",
+      "q": "A trapezium has parallel sides 5 m and 9 m and height 6 m. Its area is:",
       "options": [
-       "270 m²",
-       "84 m²",
        "42 m²",
+       "84 m²",
+       "270 m²",
        "20 m²"
       ],
-      "answer": 2,
-      "why": "½ × (5 + 9) × 6 = 7 × 6 = 42. B forgets the half; A multiplies all three."
+      "answer": 0,
+      "why": "½ × 14 × 6 = 42. 84 forgets to halve; 270 multiplies all three numbers."
      }
     }
    ],
    "practice": [
-    "Parallelogram: base 12 cm, height 7 cm",
-    "Trapezium: parallel sides 4 m and 8 m, height 5 m",
-    "Area of an L-shape made of a 10 × 4 and a 3 × 6 rectangle"
+    {
+     "q": "Find the area of a parallelogram with base 12 cm and perpendicular height 4.5 cm.",
+     "a": "54 cm²",
+     "mins": 1,
+     "model": "A = b × h = 12 × 4.5 = 54 cm²."
+    },
+    {
+     "q": "A trapezium has parallel sides 3 m and 7 m and height 4 m. Find its area.",
+     "a": "20 m²",
+     "mins": 1
+    },
+    {
+     "q": "A parallelogram has area 72 cm² and base 9 cm. Find its height.",
+     "a": "8 cm",
+     "mins": 1
+    }
    ],
    "independent": [
-    "Core: Find the areas: (a) parallelogram b = 15 cm, h = 8 cm (b) trapezium a = 7 cm, b = 13 cm, h = 6 cm (c) trapezium a = 2.5 m, b = 4.5 m, h = 3 m",
-    "Extend: A garden is a trapezium with parallel sides 12 m and 18 m, 9 m apart. Turf costs £4.50 per m². Find the cost of turfing it.",
-    "Stretch: A trapezium has area 60 cm², height 6 cm and one parallel side of 8 cm. Find the other parallel side."
+    {
+     "q": "Core: (a) parallelogram, base 15 cm, height 8 cm (b) trapezium, parallel sides 8 cm and 14 cm, height 5 cm (c) trapezium, 2.5 m and 4.5 m, height 3 m (d) a trapezium has area 60 cm², height 6 cm and one parallel side 8 cm: find the other parallel side",
+     "a": "(a) 120 cm² (b) 55 cm² (c) 10.5 m² (d) 12 cm",
+     "mins": 7,
+     "model": "(b) ½ × (8 + 14) × 5 = ½ × 22 × 5 = 11 × 5 = 55 cm².\n(d) 60 = ½ × (8 + b) × 6 = 3(8 + b), so 8 + b = 20 and b = 12 cm."
+    },
+    {
+     "q": "Extend: A field is a trapezium with parallel sides 120 m and 80 m, 50 m apart. Find its area in hectares (1 hectare = 10 000 m²).",
+     "a": "½ × 200 × 50 = 5000 m² = 0.5 hectares",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Show that the trapezium formula gives the parallelogram formula when a = b.",
+     "a": "½(a + a)h = ½ × 2a × h = ah",
+     "mins": 2
+    }
    ],
    "exit": [
-    "Area of a parallelogram: base 9 cm, height 4 cm?",
-    "Write the trapezium formula.",
-    "Area of a trapezium: 3 cm, 7 cm, height 2 cm?"
+    {
+     "q": "A parallelogram has base 7 cm and height 4 cm. Its area is:",
+     "a": "A) 28 cm²",
+     "mins": 1,
+     "options": [
+      "28 cm²",
+      "14 cm²",
+      "11 cm²"
+     ]
+    },
+    {
+     "q": "In ½(a + b)h, what are a and b?",
+     "a": "the two parallel sides",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how does cutting and rearranging help find an area?",
+     "a": "It turns a new shape into one we know (a rectangle or parallelogram) without changing the area.",
+     "mins": 2
+    }
    ],
-   "homework": "Sketch a plan of a room or garden using rectangles and trapezia and calculate its total area.",
-   "send": "Support: formula card and shapes with heights highlighted. Stretch: reverse problems."
+   "homework": "Parallelograms and trapezia: 10 questions including a missing side (portal homework).",
+   "send": "Support: formula card with a and b coloured on a diagram. EAL: 'parallelogram', 'trapezium'. Stretch: fields and hectares.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 2.2 Area of a parallelogram and trapezium (Unit 2: Area and volume)",
+    "Printable area sheet: parallelograms and trapezia (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "farm fields aerial view",
+     "alt": "Fields seen from above",
+     "for": "hook"
+    },
+    {
+     "find": "trapezium shaped table",
+     "alt": "A trapezium-shaped table top",
+     "for": "keywords"
+    }
+   ]
   },
   {
    "unit": "Unit 2: Area and volume",
@@ -11324,6 +11530,3691 @@
      "find": "archery target",
      "alt": "A target board",
      "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 54,
+   "title": "Angles in parallel lines: corresponding and alternate",
+   "duration": 50,
+   "bigQuestion": "When a line crosses two parallel lines, why do so many angles turn out equal?",
+   "objectives": [
+    "To understand why corresponding and alternate angles in parallel lines are equal and use them to find missing angles"
+   ],
+   "successCriteria": [
+    "All: identify corresponding (F) and alternate (Z) angles",
+    "Most: find missing angles in parallel lines with the correct reason",
+    "Some: combine parallel-line facts with straight-line facts in two-step problems"
+   ],
+   "smsc": "Social: civil engineers use these facts to lay roads and rails safely",
+   "keywords": [
+    {
+     "term": "transversal",
+     "def": "a line that crosses two or more other lines"
+    },
+    {
+     "term": "corresponding angles",
+     "def": "in the same position at each crossing; equal when the lines are parallel"
+    },
+    {
+     "term": "alternate angles",
+     "def": "between the parallel lines on opposite sides of the transversal; equal"
+    },
+    {
+     "term": "parallel",
+     "def": "always the same distance apart, never meeting"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A straight road crosses two parallel railway tracks. It makes a 65° angle with the first rail. What angle does it make with the second rail?",
+    "a": "65°: the rails are parallel, so the road crosses both at the same angle (corresponding angles)."
+   },
+   "starter": [
+    {
+     "q": "The angle vertically opposite 38°",
+     "a": "38°",
+     "mins": 1
+    },
+    {
+     "q": "115° and x on a straight line: x?",
+     "a": "65°",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 3⁴ × 3²",
+     "a": "3⁶",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.000 62 in standard form",
+     "a": "6.2 × 10⁻⁴",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The transversal",
+     "bullets": [
+      "A transversal crosses two parallel lines",
+      "It makes eight angles",
+      "Only two different sizes"
+     ],
+     "note": "Arrow marks show the lines are parallel. Colour the two sizes."
+    },
+    {
+     "heading": "Corresponding angles: F",
+     "bullets": [
+      "Same position at each crossing"
+     ],
+     "note": "Trace the F shape.",
+     "model": {
+      "problem": "Two parallel lines are crossed by a transversal. Above the first line, on the right, the angle is 70°. Find the angle in the same position at the second line.",
+      "steps": [
+       "Same position at each crossing: corresponding angles",
+       "Corresponding angles are equal"
+      ],
+      "answer": "70°"
+     }
+    },
+    {
+     "heading": "Alternate angles: Z",
+     "bullets": [
+      "Between the lines, opposite sides"
+     ],
+     "note": "Trace the Z shape.",
+     "model": {
+      "problem": "Between the parallel lines, an angle on the left of the transversal is 125°. Find the alternate angle.",
+      "steps": [
+       "Between the lines, on opposite sides of the transversal: alternate angles",
+       "Alternate angles are equal"
+      ],
+      "answer": "125°"
+     }
+    },
+    {
+     "heading": "Only if parallel",
+     "bullets": [
+      "Look for the arrow marks"
+     ],
+     "note": "Without parallel lines these facts are false.",
+     "misconception": {
+      "wrong": "Corresponding angles are equal wherever two lines are crossed",
+      "right": "Only when the two lines are parallel (shown by arrows)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "In a Z shape between parallel lines, one angle is 48°. The other is:",
+      "options": [
+       "48°",
+       "132°",
+       "42°",
+       "96°"
+      ],
+      "answer": 0,
+      "why": "Alternate angles are equal: 48°. 132° is the angle on a straight line with 48°."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the angle alternate to 72° and the angle next to that one on the same straight line.",
+     "a": "72° and 108°",
+     "mins": 2,
+     "model": "Alternate angles are equal: 72°.\nAngles on a straight line add up to 180°: 180 - 72 = 108°."
+    },
+    {
+     "q": "Which angles make an F shape?",
+     "a": "corresponding angles",
+     "mins": 1
+    },
+    {
+     "q": "Two lines are crossed by a transversal. The corresponding angles are 64° and 66°. Are the lines parallel?",
+     "a": "No: in parallel lines corresponding angles are equal.",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find each lettered angle with a reason: (a) a corresponds to 57° (b) b is alternate to 131° (c) c lies on a straight line with an angle that corresponds to 75° (d) d is vertically opposite an angle that is alternate to 44°",
+     "a": "(a) 57° (b) 131° (c) 105° (d) 44°",
+     "mins": 6,
+     "model": "(c) The corresponding angle is 75° (corresponding angles are equal).\nc = 180 - 75 = 105° (angles on a straight line add up to 180°)."
+    },
+    {
+     "q": "Extend: Angles (3x + 10)° and (5x - 30)° are alternate angles. Find x and the angle.",
+     "a": "3x + 10 = 5x - 30, so x = 20 and the angle is 70°",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Use parallel-line facts to explain why neighbouring angles of a parallelogram add up to 180°.",
+     "a": "Extend one side: one angle and the corresponding angle lie on a straight line with the neighbour, so they add up to 180°.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Alternate angles are:",
+     "a": "A) equal",
+     "mins": 1,
+     "options": [
+      "equal",
+      "add up to 180°",
+      "add up to 90°"
+     ]
+    },
+    {
+     "q": "An F shape shows which angles?",
+     "a": "corresponding angles",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do so many angles turn out equal?",
+     "a": "The transversal crosses both parallel lines at the same angle, so the angles at each crossing match (corresponding and alternate angles).",
+     "mins": 2
+    }
+   ],
+   "homework": "Parallel lines: 10 questions naming each angle fact (portal homework).",
+   "send": "Support: F and Z shape cards to place over diagrams. EAL: 'transversal', 'corresponding', 'alternate'. Stretch: equations from alternate angles.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.2 Alternate angles and proof and 7.3 Angles in parallel lines (Unit 7: Lines and angles)",
+    "Printable parallel-lines worksheet (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "railway level crossing road tracks",
+     "alt": "A road crossing railway tracks",
+     "for": "hook"
+    },
+    {
+     "find": "ladder rungs parallel",
+     "alt": "Parallel rungs of a ladder",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 55,
+   "title": "Co-interior angles and multi-step angle problems",
+   "duration": 50,
+   "bigQuestion": "How can you find an angle that seems to have no link to the one you know?",
+   "objectives": [
+    "To understand how co-interior angles and chains of angle facts solve multi-step parallel-line problems"
+   ],
+   "successCriteria": [
+    "All: use the fact that co-interior angles add up to 180°",
+    "Most: solve two- and three-step problems, naming each fact",
+    "Some: form and solve equations from parallel-line diagrams"
+   ],
+   "keywords": [
+    {
+     "term": "co-interior angles",
+     "def": "between parallel lines on the same side of the transversal; they add up to 180°"
+    },
+    {
+     "term": "corresponding angles",
+     "def": "equal angles in an F shape"
+    },
+    {
+     "term": "alternate angles",
+     "def": "equal angles in a Z shape"
+    },
+    {
+     "term": "chain",
+     "def": "a sequence of steps, each with a reason"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "In a C shape between two parallel lines, the top angle is 70°. Is the bottom angle also 70°? Why or why not?",
+    "a": "No: co-interior angles add up to 180°, so it is 110°."
+   },
+   "starter": [
+    {
+     "q": "The angle alternate to 52°",
+     "a": "52°",
+     "mins": 1
+    },
+    {
+     "q": "The angle corresponding to 133°",
+     "a": "133°",
+     "mins": 1
+    },
+    {
+     "q": "180 - 74",
+     "a": "106",
+     "mins": 1
+    },
+    {
+     "q": "Solve 2x + 40 = 180",
+     "a": "x = 70",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Co-interior angles: C",
+     "bullets": [
+      "Same side, between the lines",
+      "They add up to 180°"
+     ],
+     "note": "Trace the C (or U) shape.",
+     "model": {
+      "problem": "Between parallel lines, on the same side of the transversal, the angles are 70° and y. Find y.",
+      "steps": [
+       "C shape: co-interior angles",
+       "Co-interior angles add up to 180°",
+       "y = 180 - 70"
+      ],
+      "answer": "y = 110°"
+     }
+    },
+    {
+     "heading": "Three facts",
+     "bullets": [
+      "Name the shape, then the rule"
+     ],
+     "note": "Pupils copy the table.",
+     "table": {
+      "head": [
+       "Shape",
+       "Name",
+       "Rule"
+      ],
+      "rows": [
+       [
+        "F",
+        "corresponding",
+        "equal"
+       ],
+       [
+        "Z",
+        "alternate",
+        "equal"
+       ],
+       [
+        "C",
+        "co-interior",
+        "add up to 180°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "A chain of facts",
+     "bullets": [
+      "One fact unlocks the next"
+     ],
+     "note": "Triangle between two parallel lines.",
+     "model": {
+      "problem": "A triangle has its top vertex on the upper of two parallel lines and its base on the lower line. At the top vertex its sides make angles of 50° (left) and 60° (right) with the upper line. Find the triangle's angles.",
+      "steps": [
+       "Left base angle = 50° (alternate angles are equal)",
+       "Right base angle = 60° (alternate angles are equal)",
+       "Top angle = 180 - 50 - 60 = 70° (angles on a straight line)"
+      ],
+      "answer": "50°, 60° and 70°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Co-interior angles are 2x° and (x + 30)°. x =",
+      "options": [
+       "50",
+       "70",
+       "30",
+       "60"
+      ],
+      "answer": 0,
+      "why": "2x + x + 30 = 180, so 3x = 150 and x = 50 (angles 100° and 80°). 30 sets the angles equal, which is the rule for alternate angles."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Co-interior angles are 115° and y. Find y.",
+     "a": "y = 65°",
+     "mins": 1,
+     "model": "Co-interior angles add up to 180°.\ny = 180 - 115 = 65°."
+    },
+    {
+     "q": "Alternate angles are (4x - 15)° and (2x + 25)°. Find x.",
+     "a": "2x = 40, so x = 20 (both angles 65°)",
+     "mins": 2
+    },
+    {
+     "q": "Name the angles between the parallel lines on the same side of the transversal.",
+     "a": "co-interior angles",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) an angle co-interior with 98° (b) a is alternate to 47° and b lies on a straight line with a (c) co-interior angles are 3p° and 2p°: find p (d) a triangle has its top vertex on the upper parallel line, where its sides make angles of 38° and 71° with that line: find the triangle's three angles",
+     "a": "(a) 82° (b) a = 47°, b = 133° (c) p = 36 (d) 38°, 71° and 71°",
+     "mins": 7,
+     "model": "(c) Co-interior angles add up to 180°: 3p + 2p = 180, 5p = 180, p = 36.\n(d) Base angles 38° and 71° (alternate angles); top angle 180 - 38 - 71 = 71°."
+    },
+    {
+     "q": "Extend: Prove that opposite angles of a parallelogram ABCD are equal.",
+     "a": "A + B = 180 (co-interior, AD ∥ BC) and B + C = 180 (co-interior, AB ∥ DC), so A = C.",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A bent line runs between two parallel lines. It makes 40° with the top line and 30° with the bottom line (both measured on the left). Find the angle at the bend.",
+     "a": "70°: draw a third parallel line through the bend; alternate angles give 40° + 30°.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Co-interior angles add up to:",
+     "a": "B) 180°",
+     "mins": 1,
+     "options": [
+      "90°",
+      "180°",
+      "360°"
+     ]
+    },
+    {
+     "q": "The angle co-interior with 127°",
+     "a": "53°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can you find an angle that seems unlinked?",
+     "a": "Chain facts: find an unlabelled angle with one fact, then use it with the next, naming each fact.",
+     "mins": 2
+    }
+   ],
+   "homework": "Multi-step parallel-line problems: 8 questions with reasons (portal homework).",
+   "send": "Support: F, Z and C cards and a reason bank. EAL: 'co-interior', 'chain'. Stretch: the bend problem and proofs.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.3 Angles in parallel lines and 7.5 Solving geometric problems (Unit 7: Lines and angles)",
+    "Printable parallel-lines worksheet 2 (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "steel bridge girders parallel diagonal",
+     "alt": "Bridge girders with parallel and crossing beams",
+     "for": "teach:3"
+    },
+    {
+     "find": "zebra crossing stripes",
+     "alt": "Parallel stripes",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 56,
+   "title": "Proof with parallel lines: angles in a triangle",
+   "duration": 50,
+   "bigQuestion": "How can we be sure the angles in every triangle add up to 180°, not just the ones we measured?",
+   "objectives": [
+    "To understand how parallel-line facts prove that the angles in a triangle add up to 180° and how to write a geometric proof"
+   ],
+   "successCriteria": [
+    "All: write the reason for each step of an angle calculation",
+    "Most: follow and complete the proof that the angles in a triangle add up to 180°",
+    "Some: write a proof that an exterior angle equals the sum of the two opposite interior angles"
+   ],
+   "smsc": "Moral: truthfulness: a claim needs evidence that holds in every case",
+   "keywords": [
+    {
+     "term": "proof",
+     "def": "an argument that shows something is true in every case"
+    },
+    {
+     "term": "demonstration",
+     "def": "showing something works for some examples"
+    },
+    {
+     "term": "exterior angle",
+     "def": "between one side and the next side extended"
+    },
+    {
+     "term": "alternate angles",
+     "def": "equal angles in a Z shape between parallel lines"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "You measured 20 triangles and every one had angles adding up to 180°. Have you proved it is true for all triangles?",
+    "a": "No: examples are a demonstration; a proof must work for every triangle."
+   },
+   "starter": [
+    {
+     "q": "The angle co-interior with 62°",
+     "a": "118°",
+     "mins": 1
+    },
+    {
+     "q": "The angle alternate to 75°",
+     "a": "75°",
+     "mins": 1
+    },
+    {
+     "q": "Exterior angle when the opposite interior angles are 40° and 65°",
+     "a": "105°",
+     "mins": 1
+    },
+    {
+     "q": "nth term of 3, 7, 11, 15",
+     "a": "4n - 1",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Demonstration or proof?",
+     "bullets": [
+      "Examples can convince",
+      "Only a proof is certain"
+     ],
+     "note": "Discuss the ponder answer.",
+     "compare": {
+      "left": {
+       "title": "Demonstration",
+       "points": [
+        "measure some triangles",
+        "true for those ones",
+        "might fail for another"
+       ]
+      },
+      "right": {
+       "title": "Proof",
+       "points": [
+        "uses facts that are always true",
+        "works for any triangle",
+        "certain"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Proof: triangle angle sum",
+     "bullets": [
+      "Draw a parallel line"
+     ],
+     "note": "Go line by line; pupils copy it.",
+     "model": {
+      "problem": "Prove that the angles a, b and c of any triangle add up to 180°.",
+      "steps": [
+       "Draw a line through the top vertex parallel to the base",
+       "The angle to the left of c equals a (alternate angles are equal)",
+       "The angle to the right of c equals b (alternate angles are equal)",
+       "These three angles lie on a straight line, so a + b + c = 180°"
+      ],
+      "answer": "True for every triangle"
+     }
+    },
+    {
+     "heading": "Proof: exterior angle",
+     "bullets": [
+      "Two facts, then compare"
+     ],
+     "note": "Short and powerful.",
+     "model": {
+      "problem": "Prove that an exterior angle e equals the sum of the opposite interior angles a and b.",
+      "steps": [
+       "a + b + c = 180° (angles in a triangle)",
+       "c + e = 180° (angles on a straight line)",
+       "So a + b = e"
+      ],
+      "answer": "Exterior angle = sum of the opposite interior angles"
+     }
+    },
+    {
+     "heading": "Reasons to write",
+     "bullets": [
+      "Full sentences earn the marks"
+     ],
+     "note": "Exam mark schemes look for these words.",
+     "table": {
+      "head": [
+       "Fact",
+       "Reason to write"
+      ],
+      "rows": [
+       [
+        "Z shape",
+        "alternate angles are equal"
+       ],
+       [
+        "F shape",
+        "corresponding angles are equal"
+       ],
+       [
+        "C shape",
+        "co-interior angles add up to 180°"
+       ],
+       [
+        "triangle",
+        "angles in a triangle add up to 180°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is a proof, not a demonstration?",
+      "options": [
+       "measuring 50 triangles",
+       "an argument with alternate angles that works for any triangle",
+       "drawing one large accurate triangle"
+      ],
+      "answer": 1,
+      "why": "Only the argument from facts that are always true covers every triangle. Measuring, however many, only shows the ones measured."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A triangle has its top vertex on the upper of two parallel lines; its sides make 55° and 45° with that line. Find the top angle x of the triangle, with reasons.",
+     "a": "x = 80°",
+     "mins": 2,
+     "model": "The base angles are 55° and 45° (alternate angles are equal).\nx = 180 - 55 - 45 = 80° (angles in a triangle add up to 180°)."
+    },
+    {
+     "q": "Complete the reason: AB ∥ CD, so angle ABC = angle BCD because...",
+     "a": "alternate angles are equal",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: In the portal response box, write each proof with a reason on every line: (a) the angles in a triangle add up to 180° (b) an exterior angle equals the sum of the two opposite interior angles (c) the angles in a quadrilateral add up to 360°",
+     "a": "(a) as modelled, with alternate angles and a straight line (b) a + b + c = 180 and c + e = 180, so e = a + b (c) a diagonal makes two triangles: 2 × 180° = 360°",
+     "mins": 10,
+     "model": "(a) Line through the top vertex parallel to the base.\nLeft angle = a and right angle = b (alternate angles are equal).\na + c + b = 180° (angles on a straight line)."
+    },
+    {
+     "q": "Extend: Prove that co-interior angles add up to 180°, using alternate angles.",
+     "a": "The angle next to y on the straight line is alternate to x, so it equals x; it and y add up to 180°, so x + y = 180°.",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Prove that a triangle cannot have two right angles.",
+     "a": "Two right angles already make 180°, leaving 0° for the third angle, which is impossible.",
+     "mins": 2
+    }
+   ],
+   "exit": [
+    {
+     "q": "A proof must:",
+     "a": "B) work in every case",
+     "mins": 1,
+     "options": [
+      "work for some examples",
+      "work in every case",
+      "use a protractor"
+     ]
+    },
+    {
+     "q": "The reason for equal angles in a Z shape",
+     "a": "alternate angles are equal",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can we be sure every triangle's angles add up to 180°?",
+     "a": "The parallel-line proof works for any triangle: its three angles fit together on a straight line.",
+     "mins": 2
+    }
+   ],
+   "homework": "Write the triangle proof from memory, then two angle calculations with reasons (portal homework).",
+   "send": "Support: proof frame with gaps for the reasons. EAL: 'proof', 'demonstration', 'reason'. Stretch: proofs about polygons.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.2 Alternate angles and proof (Unit 7: Lines and angles)",
+    "Proof writing frame (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Euclid Elements manuscript diagram",
+     "alt": "An old geometry manuscript diagram",
+     "for": "hook"
+    },
+    {
+     "find": "triangle proof parallel line diagram",
+     "alt": "A triangle with a line parallel to its base",
+     "for": "teach:2"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 57,
+   "title": "Assessment point 2: maths test",
+   "duration": 50,
+   "bigQuestion": "How well can I use this year's algebra and number skills on my own?",
+   "objectives": [
+    "To understand how well I can apply this year's algebra and number work under test conditions"
+   ],
+   "successCriteria": [
+    "All: answer recall questions on index laws, percentages and standard form accurately",
+    "Most: show full working on equation and sequence questions",
+    "Some: check answers with an estimate"
+   ],
+   "smsc": "Moral: honesty (amanah, أَمَانَة) in assessments: our own work only",
+   "keywords": [
+    {
+     "term": "test conditions",
+     "def": "working alone, in silence, to time"
+    },
+    {
+     "term": "working",
+     "def": "the steps that show your method"
+    },
+    {
+     "term": "mark",
+     "def": "a point earned for a correct step or answer"
+    },
+    {
+     "term": "estimate",
+     "def": "a rough answer from rounded numbers"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "What is one exam habit that will earn you marks today, even if you get stuck?",
+    "a": "Write the method down: a slip still earns method marks."
+   },
+   "starter": [
+    {
+     "q": "Expand 4(x + 3)",
+     "a": "4x + 12",
+     "mins": 1
+    },
+    {
+     "q": "2⁴",
+     "a": "16",
+     "mins": 1
+    },
+    {
+     "q": "10% of 85",
+     "a": "8.5",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Test rules",
+     "bullets": [
+      "Portal test, secure mode, 30 minutes",
+      "Calculator in Section B only",
+      "Show working in the response box"
+     ],
+     "note": "Cameras on; no other windows open."
+    },
+    {
+     "heading": "Mark-earning habits",
+     "bullets": [
+      "Write the method even if unsure",
+      "Give answers in the form asked",
+      "Check with an estimate"
+     ],
+     "note": "These answer the ponder question."
+    },
+    {
+     "heading": "Model of full working",
+     "bullets": [
+      "Every line can earn a mark"
+     ],
+     "note": "From Spring 1 equations.",
+     "model": {
+      "problem": "Solve 3(x - 2) = 21.",
+      "steps": [
+       "Expand: 3x - 6 = 21",
+       "Add 6: 3x = 27",
+       "Divide by 3: x = 9"
+      ],
+      "answer": "x = 9"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Practice: find the nth term of 5, 9, 13, 17.",
+     "a": "4n + 1",
+     "mins": 2,
+     "model": "The difference is 4, so 4n.\n4 × 1 = 4 and the first term is 5, so add 1: 4n + 1."
+    }
+   ],
+   "independent": [
+    {
+     "q": "Assessment point 2 test (portal, secure mode, 30 minutes): Section A non-calculator 20 marks, Section B calculator 10 marks, on Spring 1 and Spring 2 work. Sample: (a) expand 3(2x - 5) (b) solve 4x + 7 = 31 (c) factorise 12x + 18 (d) 2⁵ × 2³ (e) increase £60 by 15% (f) write 4.7 × 10⁻³ as a decimal (g) estimate 61.8 × 3.9 ÷ 0.52",
+     "a": "Sample answers: (a) 6x - 15 (b) x = 6 (c) 6(2x + 3) (d) 2⁸ (e) £69 (f) 0.0047 (g) 60 × 4 ÷ 0.5 = 480",
+     "mins": 30,
+     "model": "(b) 4x = 24, x = 6.\n(e) 10% = 6, 5% = 3, so 60 + 9 = £69.\n(g) Round to 1 significant figure: 60 × 4 = 240, and 240 ÷ 0.5 = 480."
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which question was hardest, and why?",
+     "a": "Personal reflection.",
+     "mins": 2
+    },
+    {
+     "q": "Big question: name the habit that earned you marks today.",
+     "a": "For example: writing each step of the equation.",
+     "mins": 1
+    }
+   ],
+   "homework": "No homework: rest well; feedback in the next lesson.",
+   "send": "Support: access arrangements as agreed (reader, extra time, larger font). EAL: glossary of key words allowed. Stretch: the final challenge question in the test.",
+   "resources": [
+    "Assessment point 2 maths test, Year 8 (portal quiz, secure mode, written for this assessment point)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "stopwatch",
+     "alt": "A stopwatch for timing",
+     "for": "keywords"
+    },
+    {
+     "find": "pencil and calculator on desk",
+     "alt": "A pencil and calculator",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 58,
+   "title": "Interior angles of polygons",
+   "duration": 50,
+   "bigQuestion": "Is there a rule for the angle sum of any polygon, however many sides?",
+   "objectives": [
+    "To understand how to find the sum of the interior angles of any polygon and use it to find missing angles"
+   ],
+   "successCriteria": [
+    "All: split a polygon into triangles from one vertex",
+    "Most: use (n - 2) × 180° to find an angle sum",
+    "Some: find one interior angle of a regular polygon and missing angles in irregular polygons"
+   ],
+   "smsc": "Spiritual: the bee builds hexagonal cells; Surah an-Nahl (The Bee) is named after it",
+   "keywords": [
+    {
+     "term": "polygon",
+     "def": "a closed shape with straight sides"
+    },
+    {
+     "term": "interior angle",
+     "def": "an angle inside a polygon at a vertex"
+    },
+    {
+     "term": "regular polygon",
+     "def": "all sides equal and all angles equal"
+    },
+    {
+     "term": "angle sum",
+     "def": "the total of the interior angles"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A triangle's angles add up to 180° and a quadrilateral's to 360°. Predict the totals for a pentagon and a hexagon. What pattern do you see?",
+    "a": "540° and 720°: each extra side adds 180°."
+   },
+   "starter": [
+    {
+     "q": "Angles in a quadrilateral add up to",
+     "a": "360°",
+     "mins": 1
+    },
+    {
+     "q": "The angle co-interior with 105°",
+     "a": "75°",
+     "mins": 1
+    },
+    {
+     "q": "3 × 180",
+     "a": "540",
+     "mins": 1
+    },
+    {
+     "q": "The name of an 8-sided polygon",
+     "a": "octagon",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Triangles from one vertex",
+     "bullets": [
+      "Draw diagonals from one corner only"
+     ],
+     "note": "Pupils fill in the last column.",
+     "table": {
+      "head": [
+       "Polygon",
+       "Sides n",
+       "Triangles",
+       "Angle sum"
+      ],
+      "rows": [
+       [
+        "Triangle",
+        "3",
+        "1",
+        "180°"
+       ],
+       [
+        "Quadrilateral",
+        "4",
+        "2",
+        "360°"
+       ],
+       [
+        "Pentagon",
+        "5",
+        "3",
+        "540°"
+       ],
+       [
+        "Hexagon",
+        "6",
+        "4",
+        "720°"
+       ],
+       [
+        "Octagon",
+        "8",
+        "6",
+        "1080°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The rule",
+     "bullets": [
+      "Triangles = n - 2",
+      "Angle sum = (n - 2) × 180°"
+     ],
+     "note": "Check it against the table.",
+     "model": {
+      "problem": "Find the angle sum of a decagon.",
+      "steps": [
+       "n = 10",
+       "(10 - 2) × 180 = 8 × 180"
+      ],
+      "answer": "1440°"
+     }
+    },
+    {
+     "heading": "Regular polygons",
+     "bullets": [
+      "All angles equal: share the sum"
+     ],
+     "note": "Divide by the number of angles.",
+     "model": {
+      "problem": "Find one interior angle of a regular pentagon.",
+      "steps": [
+       "Sum = (5 - 2) × 180 = 540°",
+       "All five are equal: 540 ÷ 5"
+      ],
+      "answer": "108°"
+     }
+    },
+    {
+     "heading": "Irregular polygons",
+     "bullets": [
+      "Subtract the known angles"
+     ],
+     "note": "Same method as triangles.",
+     "model": {
+      "problem": "A pentagon has angles 100°, 120°, 95°, 110° and x. Find x.",
+      "steps": [
+       "Sum = 540°",
+       "100 + 120 + 95 + 110 = 425",
+       "x = 540 - 425"
+      ],
+      "answer": "x = 115°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "The angle sum of a hexagon is:",
+      "options": [
+       "720°",
+       "540°",
+       "1080°",
+       "600°"
+      ],
+      "answer": 0,
+      "why": "(6 - 2) × 180 = 720. 1080 comes from 6 × 180, which counts too many triangles."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find one interior angle of a regular octagon.",
+     "a": "135°",
+     "mins": 2,
+     "model": "Sum = (8 - 2) × 180 = 1080°.\n1080 ÷ 8 = 135°."
+    },
+    {
+     "q": "The angle sum of a 12-sided polygon",
+     "a": "1800°",
+     "mins": 1
+    },
+    {
+     "q": "A hexagon has five angles of 115°. Find the sixth.",
+     "a": "720 - 575 = 145°",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) the angle sum of a heptagon (b) one interior angle of a regular hexagon (c) one interior angle of a regular decagon (d) a pentagon has angles 2x, 2x, 3x, 3x and 140°: find x",
+     "a": "(a) 900° (b) 120° (c) 144° (d) x = 40",
+     "mins": 7,
+     "model": "(a) n = 7: (7 - 2) × 180 = 5 × 180 = 900°.\n(d) 10x + 140 = 540, 10x = 400, x = 40."
+    },
+    {
+     "q": "Extend: A polygon has an angle sum of 2340°. How many sides has it?",
+     "a": "2340 ÷ 180 = 13 triangles, so 15 sides",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Can a regular polygon have interior angles of 130°? Explain.",
+     "a": "(n - 2) × 180 = 130n gives 50n = 360 and n = 7.2, not a whole number: no.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "The angle sum of a pentagon is:",
+     "a": "B) 540°",
+     "mins": 1,
+     "options": [
+      "360°",
+      "540°",
+      "720°"
+     ]
+    },
+    {
+     "q": "One interior angle of a regular hexagon",
+     "a": "120°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: is there a rule for the angle sum of any polygon?",
+     "a": "Yes: (n - 2) × 180°, because it splits into n - 2 triangles from one vertex.",
+     "mins": 2
+    }
+   ],
+   "homework": "Polygon angle sums: 10 questions (portal homework).",
+   "send": "Support: table of polygons with the triangle column filled. EAL: 'polygon', 'interior', 'regular'. Stretch: impossible regular polygons.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.4 Exterior and interior angles (Unit 7: Lines and angles)",
+    "Polygon angles table (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Dome of the Rock octagonal building",
+     "alt": "An octagonal building in Jerusalem",
+     "for": "teach:3"
+    },
+    {
+     "find": "honeycomb hexagon cells",
+     "alt": "Honeycomb hexagons",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 59,
+   "title": "Exterior angles and regular polygons",
+   "duration": 50,
+   "bigQuestion": "Why do the exterior angles of every polygon add up to 360°?",
+   "objectives": [
+    "To understand why the exterior angles of any polygon add up to 360° and use this for regular polygons"
+   ],
+   "successCriteria": [
+    "All: find an exterior angle from an interior angle (they add up to 180°)",
+    "Most: use exterior angle = 360° ÷ n for regular polygons",
+    "Some: find the number of sides from an interior or exterior angle"
+   ],
+   "keywords": [
+    {
+     "term": "exterior angle",
+     "def": "the turn at each corner when walking round a polygon"
+    },
+    {
+     "term": "interior angle",
+     "def": "the angle inside a polygon at a vertex"
+    },
+    {
+     "term": "regular polygon",
+     "def": "all sides equal and all angles equal"
+    },
+    {
+     "term": "full turn",
+     "def": "360°"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Walk all the way round a park shaped like a pentagon, turning at each corner. Back at the start, facing the same way, how far have you turned in total?",
+    "a": "One full turn: 360°."
+   },
+   "starter": [
+    {
+     "q": "The angle sum of an octagon",
+     "a": "1080°",
+     "mins": 1
+    },
+    {
+     "q": "One interior angle of a regular pentagon",
+     "a": "108°",
+     "mins": 1
+    },
+    {
+     "q": "180 - 108",
+     "a": "72",
+     "mins": 1
+    },
+    {
+     "q": "360 ÷ 8",
+     "a": "45",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Walking round",
+     "bullets": [
+      "At each corner you turn through the exterior angle",
+      "Back at the start: one full turn",
+      "So exterior angles add up to 360°"
+     ],
+     "note": "True for every polygon, regular or not."
+    },
+    {
+     "heading": "Interior and exterior",
+     "bullets": [
+      "They lie on a straight line: 180°"
+     ],
+     "note": "Regular hexagon.",
+     "model": {
+      "problem": "Find the exterior and interior angles of a regular hexagon.",
+      "steps": [
+       "Exterior = 360 ÷ 6 = 60°",
+       "Interior = 180 - 60"
+      ],
+      "answer": "60° and 120°"
+     }
+    },
+    {
+     "heading": "Sides from the exterior angle",
+     "bullets": [
+      "n = 360 ÷ exterior angle"
+     ],
+     "note": "Works for regular polygons.",
+     "model": {
+      "problem": "A regular polygon has exterior angles of 24°. How many sides?",
+      "steps": [
+       "For a regular polygon, n = 360 ÷ exterior angle",
+       "n = 360 ÷ 24"
+      ],
+      "answer": "15 sides"
+     }
+    },
+    {
+     "heading": "Sides from the interior angle",
+     "bullets": [
+      "Find the exterior angle first"
+     ],
+     "note": "The quickest route.",
+     "model": {
+      "problem": "A regular polygon has interior angles of 160°. How many sides?",
+      "steps": [
+       "Exterior = 180 - 160 = 20°",
+       "n = 360 ÷ 20"
+      ],
+      "answer": "18 sides"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A regular polygon has exterior angles of 40°. The number of sides is:",
+      "options": [
+       "9",
+       "8",
+       "40",
+       "4"
+      ],
+      "answer": 0,
+      "why": "360 ÷ 40 = 9."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the exterior and interior angles of a regular decagon.",
+     "a": "36° and 144°",
+     "mins": 2,
+     "model": "Exterior = 360 ÷ 10 = 36°.\nInterior = 180 - 36 = 144°."
+    },
+    {
+     "q": "A regular polygon has interior angles of 150°. How many sides?",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "Can a regular polygon have an exterior angle of 50°?",
+     "a": "No: 360 ÷ 50 = 7.2, not a whole number.",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) the exterior angle of a regular 20-gon (b) the interior angle of a regular 9-gon (c) the number of sides when the exterior angle is 30° (d) the number of sides when the interior angle is 156°",
+     "a": "(a) 18° (b) 140° (c) 12 (d) 15",
+     "mins": 6,
+     "model": "(b) Exterior = 360 ÷ 9 = 40°; interior = 180 - 40 = 140°.\n(d) Exterior = 180 - 156 = 24°; n = 360 ÷ 24 = 15."
+    },
+    {
+     "q": "Extend: The exterior angles of a pentagon are x, 2x, 2x, 3x and 4x. Find x.",
+     "a": "12x = 360, so x = 30",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: The interior angle of a regular polygon is 4 times its exterior angle. How many sides has it?",
+     "a": "Exterior e, interior 4e: 5e = 180, e = 36°, so n = 10",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "The exterior angles of any polygon add up to:",
+     "a": "B) 360°",
+     "mins": 1,
+     "options": [
+      "180°",
+      "360°",
+      "540°"
+     ]
+    },
+    {
+     "q": "The exterior angle of a regular 12-gon",
+     "a": "30°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do exterior angles always add up to 360°?",
+     "a": "Walking round the shape you turn through each exterior angle and end facing the way you started: one full turn.",
+     "mins": 2
+    }
+   ],
+   "homework": "Exterior and interior angles: 10 questions including finding n (portal homework).",
+   "send": "Support: the two formulas on a card. EAL: 'exterior', 'interior'. Stretch: polygons with mixed angle conditions.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.4 Exterior and interior angles (Unit 7: Lines and angles)",
+    "Polygon angles table (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "hexagonal gazebo",
+     "alt": "A hexagonal gazebo",
+     "for": "hook"
+    },
+    {
+     "find": "compass rose",
+     "alt": "A compass rose: one full turn",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 60,
+   "title": "Polygon problems and tessellation",
+   "duration": 50,
+   "bigQuestion": "Which regular polygons tile a floor on their own, and why?",
+   "objectives": [
+    "To understand how polygon angle facts solve problems, including which regular polygons tessellate"
+   ],
+   "successCriteria": [
+    "All: decide whether a regular polygon tessellates using angles at a point",
+    "Most: find angles where polygons meet",
+    "Some: solve multi-step polygon problems with reasons"
+   ],
+   "crossCurricular": "Art: Islamic tiling patterns built from regular polygons",
+   "smsc": "Cultural: octagon-and-square tiling in mosques and Islamic palaces",
+   "keywords": [
+    {
+     "term": "tessellate",
+     "def": "fit together with no gaps or overlaps"
+    },
+    {
+     "term": "vertex",
+     "def": "a corner where shapes meet"
+    },
+    {
+     "term": "regular polygon",
+     "def": "all sides and all angles equal"
+    },
+    {
+     "term": "angles at a point",
+     "def": "add up to 360°"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Floor tiles in many mosques combine octagons with small squares. Why do octagons need the squares, but hexagons can tile alone?",
+    "a": "Three hexagons make 3 × 120° = 360°; two octagons make 270°, leaving 90°: a square fills it."
+   },
+   "starter": [
+    {
+     "q": "One interior angle of a regular octagon",
+     "a": "135°",
+     "mins": 1
+    },
+    {
+     "q": "Sides when the exterior angle is 45°",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "The angle sum of a hexagon",
+     "a": "720°",
+     "mins": 1
+    },
+    {
+     "q": "The exterior angle of an equilateral triangle",
+     "a": "120°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The tessellation test",
+     "bullets": [
+      "Angles round a point must make 360°"
+     ],
+     "note": "This is the ponder question.",
+     "model": {
+      "problem": "Do regular pentagons tessellate?",
+      "steps": [
+       "Interior angle 108°",
+       "360 ÷ 108 = 3.33...",
+       "Not a whole number"
+      ],
+      "answer": "No: gaps are left"
+     }
+    },
+    {
+     "heading": "Which ones tessellate?",
+     "bullets": [
+      "Only three regular polygons work alone"
+     ],
+     "note": "Pupils check each row.",
+     "table": {
+      "head": [
+       "Regular polygon",
+       "Interior angle",
+       "Tessellates alone?"
+      ],
+      "rows": [
+       [
+        "triangle",
+        "60°",
+        "yes: 6 × 60°"
+       ],
+       [
+        "square",
+        "90°",
+        "yes: 4 × 90°"
+       ],
+       [
+        "pentagon",
+        "108°",
+        "no"
+       ],
+       [
+        "hexagon",
+        "120°",
+        "yes: 3 × 120°"
+       ],
+       [
+        "octagon",
+        "135°",
+        "no; with squares: 135 + 135 + 90"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Shapes sharing a side",
+     "bullets": [
+      "Angles at the shared vertex"
+     ],
+     "note": "Pentagon and hexagon side by side.",
+     "model": {
+      "problem": "A regular pentagon and a regular hexagon share a side. Find the angle between them at a shared vertex.",
+      "steps": [
+       "Angles at a point add up to 360°",
+       "360 - 108 - 120"
+      ],
+      "answer": "132°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which regular polygon tessellates on its own?",
+      "options": [
+       "hexagon",
+       "pentagon",
+       "octagon",
+       "decagon"
+      ],
+      "answer": 0,
+      "why": "120° × 3 = 360°. Pentagons (108°), octagons (135°) and decagons (144°) do not divide 360° exactly."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Two regular octagons and one other regular polygon meet at a point with no gap. What is the other polygon?",
+     "a": "a square",
+     "mins": 2,
+     "model": "2 × 135 = 270.\n360 - 270 = 90°, the interior angle of a square."
+    },
+    {
+     "q": "Two regular hexagons and one other regular polygon meet at a point. What is the third?",
+     "a": "another regular hexagon (360 - 240 = 120°)",
+     "mins": 1
+    },
+    {
+     "q": "The interior angle of a regular 12-gon",
+     "a": "150°",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Explain with angles why regular octagons do not tessellate alone. (b) Two regular 12-gons and one other regular polygon meet at a point: which one? (c) A regular hexagon and a square share a side: find the angle between them at a shared vertex. (d) A square, a regular hexagon and a regular 12-gon meet at a point: do they fit exactly?",
+     "a": "(a) 2 × 135 = 270 leaves a gap; 3 × 135 = 405 overlaps (b) an equilateral triangle (c) 150° (d) yes: 90 + 120 + 150 = 360°",
+     "mins": 8,
+     "model": "(a) 360 ÷ 135 = 2.67, not a whole number, so octagons alone leave gaps.\n(b) 2 × 150 = 300; 360 - 300 = 60°: an equilateral triangle."
+    },
+    {
+     "q": "Extend: In regular pentagon ABCDE, find angle BAC.",
+     "a": "Triangle ABC is isosceles with angle B = 108°, so BAC = (180 - 108) ÷ 2 = 36°",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Explain why only three regular polygons tessellate on their own.",
+     "a": "The interior angle must divide 360°. It is at least 60° and less than 180°, so only 60°, 90° and 120° work: triangle, square and hexagon.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Why do regular pentagons not tessellate?",
+     "a": "A) 108° does not divide 360°",
+     "mins": 1,
+     "options": [
+      "108° does not divide 360°",
+      "they have an odd number of sides",
+      "their sides are too short"
+     ]
+    },
+    {
+     "q": "Square + two octagons at a point add up to",
+     "a": "360°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: which regular polygons tile a floor alone, and why?",
+     "a": "Triangles, squares and hexagons: their interior angles (60°, 90°, 120°) divide 360° exactly.",
+     "mins": 2
+    }
+   ],
+   "homework": "Design a tessellating tile pattern using regular polygons; show the angle check at one point (portal upload).",
+   "send": "Support: interior angle table to hand. EAL: 'tessellate', 'vertex'. Stretch: semi-regular tessellations.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.4 Exterior and interior angles and 7.5 Solving geometric problems (Unit 7: Lines and angles)",
+    "Printable polygon tiles sheet (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "octagon and square floor tiles",
+     "alt": "Octagon and square floor tiles",
+     "for": "hook"
+    },
+    {
+     "find": "honeycomb",
+     "alt": "Honeycomb: hexagons that tessellate",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 61,
+   "title": "Area of compound shapes",
+   "duration": 50,
+   "bigQuestion": "How many different ways can you split the same shape, and do they all give the same area?",
+   "objectives": [
+    "To understand how to find the area of compound shapes by splitting them or subtracting simpler shapes"
+   ],
+   "successCriteria": [
+    "All: find missing lengths on a compound shape",
+    "Most: find the area by splitting into rectangles, triangles and trapezia",
+    "Some: find a shaded area by subtracting"
+   ],
+   "smsc": "Social: a masjid committee planning carpet for an L-shaped prayer hall uses compound areas",
+   "keywords": [
+    {
+     "term": "compound shape",
+     "def": "a shape made from simpler shapes"
+    },
+    {
+     "term": "split",
+     "def": "cut into shapes whose areas you can find"
+    },
+    {
+     "term": "subtract",
+     "def": "take away an area, such as a hole"
+    },
+    {
+     "term": "shaded region",
+     "def": "the part of a diagram you are asked to find"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "An L-shaped room can be split into two rectangles in two ways, or found as a big rectangle minus a small one. Which method is best?",
+    "a": "All three give the same area; choose the one with the fewest calculations."
+   },
+   "starter": [
+    {
+     "q": "Area of a triangle: base 8 cm, height 5 cm",
+     "a": "20 cm²",
+     "mins": 1
+    },
+    {
+     "q": "Area of a parallelogram: base 9 cm, height 4 cm",
+     "a": "36 cm²",
+     "mins": 1
+    },
+    {
+     "q": "Area of a trapezium: 4 cm, 10 cm, height 3 cm",
+     "a": "21 cm²",
+     "mins": 1
+    },
+    {
+     "q": "12 - 7.5",
+     "a": "4.5",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Subtracting",
+     "bullets": [
+      "Big shape minus the missing part"
+     ],
+     "note": "Quickest for an L-shape.",
+     "model": {
+      "problem": "An L-shaped room is a 10 m by 8 m rectangle with a 4 m by 3 m corner removed. Find its area.",
+      "steps": [
+       "Big rectangle 10 × 8 = 80",
+       "Corner 4 × 3 = 12",
+       "80 - 12"
+      ],
+      "answer": "68 m²"
+     }
+    },
+    {
+     "heading": "Missing lengths",
+     "bullets": [
+      "Opposite sides of a rectangle are equal",
+      "Missing length = total minus the known part",
+      "Label every length first"
+     ],
+     "note": "Model finding two missing lengths on an L-shape."
+    },
+    {
+     "heading": "Adding",
+     "bullets": [
+      "Split into shapes you know"
+     ],
+     "note": "The end wall of a house.",
+     "model": {
+      "problem": "A wall is a rectangle 6 m wide and 4 m high with a triangular top 6 m wide and 2.5 m high. Find its area.",
+      "steps": [
+       "Rectangle 6 × 4 = 24",
+       "Triangle ½ × 6 × 2.5 = 7.5",
+       "Total 24 + 7.5"
+      ],
+      "answer": "31.5 m²"
+     }
+    },
+    {
+     "heading": "Shaded regions",
+     "bullets": [
+      "Outer area minus inner area"
+     ],
+     "note": "A tile with a hole.",
+     "model": {
+      "problem": "A square tile of side 20 cm has a square hole of side 6 cm. Find the shaded area.",
+      "steps": [
+       "Tile 20 × 20 = 400",
+       "Hole 6 × 6 = 36",
+       "400 - 36"
+      ],
+      "answer": "364 cm²"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A 10 cm by 6 cm rectangle has a triangle of base 10 cm and height 4 cm on top. The total area is:",
+      "options": [
+       "80 cm²",
+       "60 cm²",
+       "100 cm²",
+       "64 cm²"
+      ],
+      "answer": 0,
+      "why": "60 + ½ × 10 × 4 = 60 + 20 = 80. 100 forgets to halve the triangle."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A T-shape is a 12 cm by 3 cm bar on top of a 4 cm by 9 cm stem. Find its area.",
+     "a": "72 cm²",
+     "mins": 2,
+     "model": "Bar 12 × 3 = 36.\nStem 4 × 9 = 36.\nTotal 36 + 36 = 72 cm²."
+    },
+    {
+     "q": "A 15 m by 10 m rectangle has a 5 m by 4 m rectangle removed. Find the remaining area.",
+     "a": "130 m²",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) an L-shape: a 9 cm by 7 cm rectangle with a 4 cm by 3 cm corner removed (b) an 8 m by 5 m rectangle with a trapezium on top (parallel sides 8 m and 4 m, height 3 m) (c) a 20 m by 12 m garden with a triangular pond (base 6 m, height 4 m): area of grass (d) an arrow: a 10 cm by 4 cm rectangle with a triangle of base 8 cm and height 5 cm at one end",
+     "a": "(a) 51 cm² (b) 58 m² (c) 228 m² (d) 60 cm²",
+     "mins": 8,
+     "model": "(a) 9 × 7 = 63; corner 4 × 3 = 12; 63 - 12 = 51 cm².\n(b) 40 + ½ × (8 + 4) × 3 = 40 + 18 = 58 m²."
+    },
+    {
+     "q": "Extend: Turf costs £4.50 per m². How much does it cost to turf the grass in (c)?",
+     "a": "228 × 4.50 = £1026",
+     "mins": 2
+    },
+    {
+     "q": "Stretch: A window is a 1.2 m by 0.8 m rectangle with a triangle of height 0.3 m on its 1.2 m top. Glass costs £35 per m². Find the cost.",
+     "a": "0.96 + 0.18 = 1.14 m²; 1.14 × 35 = £39.90",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "A shape of 50 cm² has a hole of 8 cm². The shaded area is:",
+     "a": "A) 42 cm²",
+     "mins": 1,
+     "options": [
+      "42 cm²",
+      "58 cm²",
+      "400 cm²"
+     ]
+    },
+    {
+     "q": "The first step for a compound shape?",
+     "a": "split it (or plan to subtract) and find the missing lengths",
+     "mins": 1
+    },
+    {
+     "q": "Big question: do different ways of splitting give the same area?",
+     "a": "Yes: area does not change when we cut it up differently; choose the quickest way.",
+     "mins": 2
+    }
+   ],
+   "homework": "Compound shapes: 8 questions including one cost problem (portal homework).",
+   "send": "Support: shapes pre-split with dotted lines. EAL: 'compound', 'shaded', 'subtract'. Stretch: cost problems with units.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 2.1 Area of a triangle and 2.2 Area of a parallelogram and trapezium (Unit 2: Area and volume)",
+    "Printable compound shapes sheet (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "floor plan L-shaped room",
+     "alt": "An L-shaped floor plan",
+     "for": "hook"
+    },
+    {
+     "find": "garden lawn with small pond",
+     "alt": "A lawn with a pond",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 62,
+   "title": "Area problems: units and missing lengths",
+   "duration": 50,
+   "bigQuestion": "Why is 1 m² not 100 cm²?",
+   "objectives": [
+    "To understand how to convert between units of area and solve area problems with mixed units and missing lengths"
+   ],
+   "successCriteria": [
+    "All: convert between m² and cm² (× 10 000)",
+    "Most: find a missing length from an area with any of the formulae",
+    "Some: solve real problems with mixed units, such as tiles or paint"
+   ],
+   "smsc": "Spiritual: rows in salah (sufūf, صُفُوف) stand straight and close; planning a prayer hall uses area",
+   "keywords": [
+    {
+     "term": "square metre (m²)",
+     "def": "the area of a square 1 m by 1 m"
+    },
+    {
+     "term": "square centimetre (cm²)",
+     "def": "the area of a square 1 cm by 1 cm"
+    },
+    {
+     "term": "conversion factor",
+     "def": "the number you multiply by to change units"
+    },
+    {
+     "term": "hectare",
+     "def": "10 000 m², used for land"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A square metre is 100 cm by 100 cm. How many 1 cm squares fit inside it? Many people say 100. Who is right?",
+    "a": "10 000: 100 rows of 100 squares."
+   },
+   "starter": [
+    {
+     "q": "Area of a trapezium: 5 cm, 7 cm, height 4 cm",
+     "a": "24 cm²",
+     "mins": 1
+    },
+    {
+     "q": "80 - 12",
+     "a": "68",
+     "mins": 1
+    },
+    {
+     "q": "100 × 100",
+     "a": "10 000",
+     "mins": 1
+    },
+    {
+     "q": "3.5 × 100",
+     "a": "350",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Area units",
+     "bullets": [
+      "Square the length factor"
+     ],
+     "note": "Draw 1 m² split into 100 by 100.",
+     "table": {
+      "head": [
+       "Length",
+       "Area"
+      ],
+      "rows": [
+       [
+        "1 m = 100 cm",
+        "1 m² = 10 000 cm²"
+       ],
+       [
+        "1 cm = 10 mm",
+        "1 cm² = 100 mm²"
+       ],
+       [
+        "1 km = 1000 m",
+        "1 km² = 1 000 000 m²"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Not × 100",
+     "bullets": [
+      "Area factors are squared"
+     ],
+     "note": "Ask pupils to spot the error.",
+     "misconception": {
+      "wrong": "2.5 m² = 250 cm²",
+      "right": "2.5 m² = 2.5 × 10 000 = 25 000 cm²"
+     }
+    },
+    {
+     "heading": "Tiling a floor",
+     "bullets": [
+      "Same units first"
+     ],
+     "note": "Work in cm throughout.",
+     "model": {
+      "problem": "A floor is 4.5 m by 3.2 m. Tiles are 30 cm by 30 cm. How many tiles are needed, ignoring cutting?",
+      "steps": [
+       "Same units: 450 cm by 320 cm",
+       "Floor 450 × 320 = 144 000 cm²",
+       "Tile 30 × 30 = 900 cm²",
+       "144 000 ÷ 900 = 160"
+      ],
+      "answer": "160 tiles"
+     }
+    },
+    {
+     "heading": "Missing length, mixed units",
+     "bullets": [
+      "Convert, then solve"
+     ],
+     "note": "Parallelogram example.",
+     "model": {
+      "problem": "A parallelogram has area 3.6 m² and base 240 cm. Find its height in cm.",
+      "steps": [
+       "3.6 m² = 36 000 cm²",
+       "h = 36 000 ÷ 240"
+      ],
+      "answer": "150 cm"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "0.5 m² in cm² is:",
+      "options": [
+       "50",
+       "500",
+       "5000",
+       "50 000"
+      ],
+      "answer": 2,
+      "why": "0.5 × 10 000 = 5000. 50 uses × 100, the length factor."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Convert 3 m² to cm².",
+     "a": "30 000 cm²",
+     "mins": 1,
+     "model": "1 m² = 10 000 cm².\n3 × 10 000 = 30 000 cm²."
+    },
+    {
+     "q": "Convert 45 000 cm² to m².",
+     "a": "4.5 m²",
+     "mins": 1
+    },
+    {
+     "q": "A triangle has area 1.2 m² and base 1.5 m. Find its height.",
+     "a": "1.6 m",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 7 m² in cm² (b) 2500 cm² in m² (c) 6 cm² in mm² (d) a rectangular rug of area 6 m² is 250 cm wide: how long is it in m? (e) a wall 5 m by 2.4 m is painted and one tin covers 8 m²: how many tins?",
+     "a": "(a) 70 000 cm² (b) 0.25 m² (c) 600 mm² (d) 2.4 m (e) 12 m² needs 1.5 tins, so buy 2",
+     "mins": 7,
+     "model": "(a) 1 m² = 10 000 cm², so 7 × 10 000 = 70 000 cm².\n(d) 250 cm = 2.5 m; 6 ÷ 2.5 = 2.4 m."
+    },
+    {
+     "q": "Extend: A prayer hall floor is 18 m by 12 m. Each person praying needs about 1.2 m by 0.5 m. Roughly how many can pray at once?",
+     "a": "216 ÷ 0.6 = 360 people",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A rectangular field of 3.5 hectares is 250 m long. How wide is it?",
+     "a": "35 000 ÷ 250 = 140 m",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "1 m² is equal to:",
+     "a": "C) 10 000 cm²",
+     "mins": 1,
+     "options": [
+      "100 cm²",
+      "1000 cm²",
+      "10 000 cm²"
+     ]
+    },
+    {
+     "q": "Convert 2 m² to cm².",
+     "a": "20 000 cm²",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is 1 m² not 100 cm²?",
+     "a": "1 m² is 100 cm by 100 cm, which holds 100 × 100 = 10 000 squares of 1 cm².",
+     "mins": 2
+    }
+   ],
+   "homework": "Area units: 10 conversion and tiling questions (portal homework).",
+   "send": "Support: a 1 m² grid picture and conversion card. EAL: 'convert', 'square metre', 'hectare'. Stretch: hectares and km².",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 2.1 and 2.2 (Unit 2: Area and volume); Year 7 4.2 Length, mass and capacity (metric units)",
+    "Printable area units sheet (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "ceramic floor tiles square",
+     "alt": "Square floor tiles",
+     "for": "teach:3"
+    },
+    {
+     "find": "empty mosque prayer hall carpet rows",
+     "alt": "Rows on a prayer hall carpet",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 63,
+   "title": "Circumference of a circle",
+   "duration": 50,
+   "bigQuestion": "Why is π the same for every circle in the world?",
+   "objectives": [
+    "To understand what π is and how to calculate the circumference of a circle"
+   ],
+   "successCriteria": [
+    "All: name the radius, diameter and circumference",
+    "Most: calculate a circumference with C = πd or C = 2πr",
+    "Some: find the diameter or radius from the circumference"
+   ],
+   "crossCurricular": "History: the mathematician Jamshid al-Kashi of Samarkand calculated π to 16 decimal places in 1424",
+   "smsc": "Cultural: Muslim scholars' contributions to calculating π",
+   "keywords": [
+    {
+     "term": "radius",
+     "def": "the distance from the centre to the edge"
+    },
+    {
+     "term": "diameter",
+     "def": "the distance across through the centre: d = 2r"
+    },
+    {
+     "term": "circumference",
+     "def": "the distance all the way round a circle"
+    },
+    {
+     "term": "pi (π)",
+     "def": "circumference ÷ diameter for every circle: about 3.14"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Wrap a string round a plate, then lay it along the diameter. How many diameters long is the string? Will it be the same for a coin and a car tyre?",
+    "a": "Just over 3 diameters (π ≈ 3.14), for every circle."
+   },
+   "starter": [
+    {
+     "q": "1 m² in cm²",
+     "a": "10 000 cm²",
+     "mins": 1
+    },
+    {
+     "q": "Area of a triangle: base 6 cm, height 5 cm",
+     "a": "15 cm²",
+     "mins": 1
+    },
+    {
+     "q": "One interior angle of a regular hexagon",
+     "a": "120°",
+     "mins": 1
+    },
+    {
+     "q": "2 × 3.5",
+     "a": "7",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Parts of a circle",
+     "bullets": [
+      "d = 2r"
+     ],
+     "note": "Label a plate drawn on screen.",
+     "table": {
+      "head": [
+       "Part",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "centre",
+        "the middle point"
+       ],
+       [
+        "radius r",
+        "centre to edge"
+       ],
+       [
+        "diameter d",
+        "edge to edge through the centre"
+       ],
+       [
+        "circumference C",
+        "the distance all the way round"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "What is π?",
+     "bullets": [
+      "C ÷ d is the same for every circle",
+      "π = 3.14159...",
+      "Its digits never end or repeat"
+     ],
+     "note": "Pupils measure a mug or plate at home: C ÷ d comes out near 3.1."
+    },
+    {
+     "heading": "From the diameter",
+     "bullets": [
+      "C = πd"
+     ],
+     "note": "Use the π key.",
+     "model": {
+      "problem": "Find the circumference of a circle with diameter 8 cm, to 1 d.p.",
+      "steps": [
+       "C = πd",
+       "C = π × 8 = 25.132...",
+       "Round to 1 d.p."
+      ],
+      "answer": "25.1 cm"
+     }
+    },
+    {
+     "heading": "From the radius",
+     "bullets": [
+      "C = 2πr"
+     ],
+     "note": "Or double to the diameter first.",
+     "model": {
+      "problem": "Find the circumference of a circle with radius 5 cm, to 1 d.p.",
+      "steps": [
+       "C = 2 × π × 5",
+       "= 10π = 31.415..."
+      ],
+      "answer": "31.4 cm"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A circle has radius 3 cm. Its circumference is about:",
+      "options": [
+       "9.4 cm",
+       "18.8 cm",
+       "28.3 cm",
+       "6 cm"
+      ],
+      "answer": 1,
+      "why": "2 × π × 3 = 18.85. 9.4 treats the radius as the diameter; 28.3 is the area."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the circumference of a circle with diameter 12 cm, to 1 d.p.",
+     "a": "37.7 cm",
+     "mins": 1,
+     "model": "C = π × 12 = 37.699...\n= 37.7 cm (1 d.p.)."
+    },
+    {
+     "q": "Circumference, radius 4.5 m (1 d.p.)",
+     "a": "28.3 m",
+     "mins": 1
+    },
+    {
+     "q": "A circle has circumference 50 cm. Find its diameter (1 d.p.).",
+     "a": "50 ÷ π = 15.9 cm",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find each circumference to 1 d.p.: (a) d = 20 cm (b) r = 7 cm (c) d = 1.5 m (d) a bicycle wheel of diameter 64 cm: how far does it travel in one turn? (e) give (a) in terms of π",
+     "a": "(a) 62.8 cm (b) 44.0 cm (c) 4.7 m (d) 201.1 cm (e) 20π cm",
+     "mins": 7,
+     "model": "(a) C = πd = π × 20 = 62.83... = 62.8 cm (1 d.p.).\n(b) C = 2 × π × 7 = 14π = 43.98... = 44.0 cm."
+    },
+    {
+     "q": "Extend: How many full turns does the 64 cm wheel make in 1 km?",
+     "a": "100 000 ÷ 201.06... = 497.4, so 497 full turns",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A circular track has a circumference of 400 m. Find its radius to 1 d.p.",
+     "a": "r = 400 ÷ 2π = 63.7 m",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "The circumference formula is:",
+     "a": "A) C = πd",
+     "mins": 1,
+     "options": [
+      "C = πd",
+      "C = πr²",
+      "C = 2d"
+     ]
+    },
+    {
+     "q": "d = 10 cm. C to 1 d.p.?",
+     "a": "31.4 cm",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is π the same for every circle?",
+     "a": "Every circle is an enlargement of every other, so circumference ÷ diameter is always the same number, π.",
+     "mins": 2
+    }
+   ],
+   "homework": "Measure three circular objects at home, find C ÷ d for each, then 6 circumference questions (portal homework).",
+   "send": "Support: formula card and a labelled circle. EAL: 'radius', 'diameter', 'circumference'. Stretch: radius from circumference.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.1 Circumference of a circle (Unit 7)",
+    "String and ruler, and two circular household objects (plate, mug)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "round dinner plate",
+     "alt": "A round plate",
+     "for": "hook"
+    },
+    {
+     "find": "bicycle wheel",
+     "alt": "A bicycle wheel",
+     "for": "teach:3"
+    },
+    {
+     "find": "circle radius diameter diagram",
+     "alt": "A labelled circle",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 64,
+   "title": "Area of a circle",
+   "duration": 50,
+   "bigQuestion": "How can a circle be cut up and rearranged into a rectangle?",
+   "objectives": [
+    "To understand where the formula A = πr² comes from and use it to find the area of a circle"
+   ],
+   "successCriteria": [
+    "All: calculate the area of a circle from its radius",
+    "Most: calculate the area from the diameter by halving first",
+    "Some: give answers in terms of π or rounded, and find the radius from an area"
+   ],
+   "smsc": "Social: comparing value fairly by area, not by size on a label",
+   "keywords": [
+    {
+     "term": "area",
+     "def": "the space inside a shape, in square units"
+    },
+    {
+     "term": "radius",
+     "def": "centre to edge"
+    },
+    {
+     "term": "π",
+     "def": "about 3.14; on the calculator as π"
+    },
+    {
+     "term": "sector",
+     "def": "a slice of a circle between two radii"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Cut a circle into 16 thin slices and lay them top to tail. What shape do they almost make? What are its length and height?",
+    "a": "Almost a rectangle: length πr (half the circumference) and height r, so area πr²."
+   },
+   "starter": [
+    {
+     "q": "Circumference, d = 10 cm (1 d.p.)",
+     "a": "31.4 cm",
+     "mins": 1
+    },
+    {
+     "q": "The radius when d = 18 cm",
+     "a": "9 cm",
+     "mins": 1
+    },
+    {
+     "q": "5²",
+     "a": "25",
+     "mins": 1
+    },
+    {
+     "q": "π × 4 to 1 d.p.",
+     "a": "12.6",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Slices into a rectangle",
+     "bullets": [
+      "Length = half the circumference = πr",
+      "Height = the radius r",
+      "Area = πr × r = πr²"
+     ],
+     "note": "Animate the slices; more slices, closer to a rectangle."
+    },
+    {
+     "heading": "From the radius",
+     "bullets": [
+      "Square the radius first"
+     ],
+     "note": "Calculator order matters.",
+     "model": {
+      "problem": "Find the area of a circle with radius 6 cm.",
+      "steps": [
+       "A = πr²",
+       "= π × 6² = π × 36",
+       "= 113.097..."
+      ],
+      "answer": "113.1 cm² (or 36π cm²)"
+     }
+    },
+    {
+     "heading": "Square, then π",
+     "bullets": [
+      "r² before π"
+     ],
+     "note": "Show the wrong calculator key order.",
+     "misconception": {
+      "wrong": "For r = 6, A = (π × 6)² or π × 12",
+      "right": "Square the radius, then multiply by π: π × 36"
+     }
+    },
+    {
+     "heading": "From the diameter",
+     "bullets": [
+      "Halve first"
+     ],
+     "note": "Many lose marks here.",
+     "model": {
+      "problem": "Find the area of a circle with diameter 10 m.",
+      "steps": [
+       "r = 5 m",
+       "A = π × 25 = 78.539..."
+      ],
+      "answer": "78.5 m²"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A circle has diameter 8 cm. Its area is:",
+      "options": [
+       "16π cm²",
+       "64π cm²",
+       "8π cm²",
+       "4π cm²"
+      ],
+      "answer": 0,
+      "why": "r = 4, so π × 4² = 16π. 64π uses the diameter; 8π is the circumference."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the area of a circle with radius 3 cm, to 1 d.p.",
+     "a": "28.3 cm²",
+     "mins": 1,
+     "model": "A = π × 3² = 9π = 28.27...\n= 28.3 cm²."
+    },
+    {
+     "q": "Area, diameter 14 cm, in terms of π",
+     "a": "49π cm²",
+     "mins": 1
+    },
+    {
+     "q": "A circle has area 100 cm². Find its radius (1 d.p.).",
+     "a": "r² = 100 ÷ π = 31.83, r = 5.6 cm",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find each area to 1 d.p.: (a) r = 9 cm (b) d = 20 m (c) r = 2.5 cm (d) a circular tablecloth of diameter 1.8 m (2 d.p.) (e) give (b) in terms of π",
+     "a": "(a) 254.5 cm² (b) 314.2 m² (c) 19.6 cm² (d) 2.54 m² (e) 100π m²",
+     "mins": 7,
+     "model": "(a) A = π × 9² = 81π = 254.469... = 254.5 cm² (1 d.p.).\n(d) r = 0.9: π × 0.81 = 2.544... = 2.54 m²."
+    },
+    {
+     "q": "Extend: Which has more food: one round flatbread of diameter 30 cm or two of diameter 20 cm?",
+     "a": "One of 30 cm: 225π = 706.9 cm² against 2 × 100π = 628.3 cm²",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A circle has circumference 31.4 cm. Find its area to 1 d.p.",
+     "a": "r = 31.4 ÷ 2π = 4.997...; area = πr² = 78.5 cm²",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "The area of a circle is:",
+     "a": "A) πr²",
+     "mins": 1,
+     "options": [
+      "πr²",
+      "2πr",
+      "πd"
+     ]
+    },
+    {
+     "q": "Area when r = 10 cm, in terms of π",
+     "a": "100π cm²",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can a circle be rearranged into a rectangle?",
+     "a": "Cut it into thin slices and lay them top to tail: a near-rectangle πr long and r high, so the area is πr².",
+     "mins": 2
+    }
+   ],
+   "homework": "Area of circles: 8 questions including one comparison (portal homework).",
+   "send": "Support: a radius-first checklist. EAL: 'area', 'sector'. Stretch: radius from area and area from circumference.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.2 Area of a circle (Unit 7)",
+    "Paper circle, scissors and glue for the slices demonstration",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "circular garden pond",
+     "alt": "A circular pond",
+     "for": "hook"
+    },
+    {
+     "find": "circle divided into sectors",
+     "alt": "A circle cut into sectors",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 65,
+   "title": "Semicircles, quarter circles and compound shapes",
+   "duration": 50,
+   "bigQuestion": "How do you find the perimeter of a shape with a curved edge?",
+   "objectives": [
+    "To understand how to find the area and perimeter of semicircles, quarter circles and compound shapes with circles"
+   ],
+   "successCriteria": [
+    "All: find the area and arc length of a semicircle and a quarter circle",
+    "Most: find a perimeter including the straight edges",
+    "Some: find areas of compound shapes combining circles with rectangles"
+   ],
+   "smsc": "Cultural: arches and domes in Islamic architecture are built on semicircles and circles",
+   "keywords": [
+    {
+     "term": "semicircle",
+     "def": "half a circle"
+    },
+    {
+     "term": "quarter circle",
+     "def": "a quarter of a circle, with two radii as straight edges"
+    },
+    {
+     "term": "arc",
+     "def": "part of the circumference"
+    },
+    {
+     "term": "perimeter",
+     "def": "the total distance round the edge of a shape"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A running track is a rectangle with a semicircle on each end. How would you find the distance round it?",
+    "a": "Add the two straights to the two semicircular ends, which together make one full circle."
+   },
+   "starter": [
+    {
+     "q": "Area of a circle with r = 5 cm (1 d.p.)",
+     "a": "78.5 cm²",
+     "mins": 1
+    },
+    {
+     "q": "Circumference, d = 8 cm (1 d.p.)",
+     "a": "25.1 cm",
+     "mins": 1
+    },
+    {
+     "q": "Half of 36π",
+     "a": "18π",
+     "mins": 1
+    },
+    {
+     "q": "Perimeter of a 10 cm by 4 cm rectangle",
+     "a": "28 cm",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Semicircle",
+     "bullets": [
+      "Halve the area",
+      "Halve the circumference, then add the diameter"
+     ],
+     "note": "Model both measures.",
+     "model": {
+      "problem": "A semicircle has diameter 10 cm. Find its area and perimeter.",
+      "steps": [
+       "Area = ½ × π × 5² = 39.27...",
+       "Curved edge = ½ × π × 10 = 15.70...",
+       "Perimeter = 15.70 + 10"
+      ],
+      "answer": "Area 39.3 cm²; perimeter 25.7 cm"
+     }
+    },
+    {
+     "heading": "Do not forget the straight edge",
+     "bullets": [
+      "Perimeter includes every edge"
+     ],
+     "note": "The most common error.",
+     "misconception": {
+      "wrong": "Perimeter of a semicircle = ½ × π × d",
+      "right": "Add the straight edge too: ½πd + d"
+     }
+    },
+    {
+     "heading": "Quarter circle",
+     "bullets": [
+      "Quarter of the area and circumference",
+      "Plus two radii"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A quarter circle has radius 6 cm. Find its area and perimeter.",
+      "steps": [
+       "Area = ¼ × π × 36 = 28.27...",
+       "Arc = ¼ × 2 × π × 6 = 9.42...",
+       "Perimeter = 9.42 + 6 + 6"
+      ],
+      "answer": "Area 28.3 cm²; perimeter 21.4 cm"
+     }
+    },
+    {
+     "heading": "A running track",
+     "bullets": [
+      "Two semicircles make one circle"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "A track is a 100 m by 60 m rectangle with a semicircle on each 60 m end. How far is one lap?",
+      "steps": [
+       "Two semicircles: one circle of diameter 60: π × 60 = 188.49...",
+       "Straights: 2 × 100 = 200",
+       "Total"
+      ],
+      "answer": "388.5 m"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "The perimeter of a semicircle of diameter 4 cm is:",
+      "options": [
+       "2π + 4 cm",
+       "2π cm",
+       "4π + 4 cm",
+       "4π cm"
+      ],
+      "answer": 0,
+      "why": "Half of π × 4 is 2π, plus the 4 cm diameter. 2π forgets the straight edge."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the area of a semicircle with radius 8 cm, to 1 d.p.",
+     "a": "100.5 cm²",
+     "mins": 2,
+     "model": "Area = ½ × π × 8² = 32π = 100.53...\n= 100.5 cm²."
+    },
+    {
+     "q": "The arc length of a quarter circle of radius 10 cm (1 d.p.)",
+     "a": "5π = 15.7 cm",
+     "mins": 1
+    },
+    {
+     "q": "The perimeter of that quarter circle",
+     "a": "15.7 + 20 = 35.7 cm",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) a semicircle of diameter 14 cm: area and perimeter (b) a window: an 80 cm wide, 100 cm tall rectangle with a semicircle on top: total area (c) a 10 cm square with a quarter circle of radius 10 cm drawn from one corner: the area outside the quarter circle",
+     "a": "(a) 77.0 cm² and 36.0 cm (b) 10 513.3 cm² (c) 21.5 cm²",
+     "mins": 8,
+     "model": "(a) r = 7: area = ½ × π × 49 = 76.96...; curved edge ½ × π × 14 = 21.99...; perimeter 21.99 + 14 = 36.0 cm.\n(b) 8000 + ½ × π × 40² = 8000 + 2513.3 = 10 513.3 cm²."
+    },
+    {
+     "q": "Extend: An arched masjid doorway is a rectangle 1.2 m wide and 2 m tall with a semicircular top. Find the area of the opening to 2 d.p.",
+     "a": "2.4 + ½ × π × 0.6² = 2.4 + 0.565 = 2.97 m²",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Show that the perimeter of a semicircle of radius r is r(π + 2).",
+     "a": "Curved edge πr plus diameter 2r: πr + 2r = r(π + 2)",
+     "mins": 2
+    }
+   ],
+   "exit": [
+    {
+     "q": "Two semicircles of diameter d make:",
+     "a": "A) a full circle of diameter d",
+     "mins": 1,
+     "options": [
+      "a full circle of diameter d",
+      "a quarter circle",
+      "a rectangle"
+     ]
+    },
+    {
+     "q": "Perimeter of a semicircle with d = 10 cm (1 d.p.)",
+     "a": "25.7 cm",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how do you find the perimeter of a shape with a curved edge?",
+     "a": "Add the curved arc (the right fraction of πd) to all the straight edges.",
+     "mins": 2
+    }
+   ],
+   "homework": "Semicircles and compound shapes: 8 questions (portal homework).",
+   "send": "Support: fraction-of-a-circle card (½, ¼). EAL: 'semicircle', 'arc', 'perimeter'. Stretch: algebraic perimeters.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.1 Circumference of a circle and 7.2 Area of a circle (Unit 7)",
+    "Printable circles and compound shapes sheet (portal worksheet for this lesson)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "athletics running track aerial",
+     "alt": "A running track from above",
+     "for": "hook"
+    },
+    {
+     "find": "arched window",
+     "alt": "An arched window",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 66,
+   "title": "Line and rotational symmetry",
+   "duration": 50,
+   "bigQuestion": "How many ways can a shape fit onto itself?",
+   "objectives": [
+    "To understand how to find the lines of symmetry and the order of rotational symmetry of 2D shapes and patterns"
+   ],
+   "successCriteria": [
+    "All: draw all the lines of symmetry of a shape",
+    "Most: find the order of rotational symmetry",
+    "Some: describe the symmetry of regular polygons and Islamic geometric patterns"
+   ],
+   "crossCurricular": "Art: symmetry in Islamic geometric patterns",
+   "keywords": [
+    {
+     "term": "line of symmetry",
+     "def": "a fold line where both halves match exactly"
+    },
+    {
+     "term": "rotational symmetry",
+     "def": "the shape looks the same after a turn of less than 360°"
+    },
+    {
+     "term": "order of rotational symmetry",
+     "def": "how many times a shape fits onto itself in one full turn"
+    },
+    {
+     "term": "regular polygon",
+     "def": "all sides and all angles equal"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A regular twelve-point star from a mosque window: how many lines of symmetry has it, and how many times does it fit onto itself in one full turn?",
+    "a": "12 lines of symmetry and order 12."
+   },
+   "starter": [
+    {
+     "q": "Semicircle area with r = 2 cm, in terms of π",
+     "a": "2π cm²",
+     "mins": 1
+    },
+    {
+     "q": "One interior angle of a regular octagon",
+     "a": "135°",
+     "mins": 1
+    },
+    {
+     "q": "The exterior angle of a regular hexagon",
+     "a": "60°",
+     "mins": 1
+    },
+    {
+     "q": "Circumference when d = 1 m, in terms of π",
+     "a": "π m",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Line symmetry",
+     "bullets": [
+      "Fold along the line: the halves match",
+      "It acts like a mirror",
+      "Some shapes have none"
+     ],
+     "note": "Fold a paper square both ways and along the diagonals."
+    },
+    {
+     "heading": "Rotational symmetry",
+     "bullets": [
+      "Turn about the centre",
+      "Count the fits in one full turn",
+      "Order 1 means no rotational symmetry"
+     ],
+     "note": "Use tracing paper at home to check."
+    },
+    {
+     "heading": "Common shapes",
+     "bullets": [
+      "Regular n-gon: n lines, order n"
+     ],
+     "note": "Pupils predict before the reveal.",
+     "table": {
+      "head": [
+       "Shape",
+       "Lines of symmetry",
+       "Order"
+      ],
+      "rows": [
+       [
+        "Equilateral triangle",
+        "3",
+        "3"
+       ],
+       [
+        "Square",
+        "4",
+        "4"
+       ],
+       [
+        "Rectangle",
+        "2",
+        "2"
+       ],
+       [
+        "Parallelogram",
+        "0",
+        "2"
+       ],
+       [
+        "Regular hexagon",
+        "6",
+        "6"
+       ],
+       [
+        "Kite",
+        "1",
+        "1"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Diagonals are not always fold lines",
+     "bullets": [
+      "Test by folding"
+     ],
+     "note": "Use a paper parallelogram.",
+     "misconception": {
+      "wrong": "A parallelogram has 2 lines of symmetry: its diagonals",
+      "right": "Folding on a diagonal does not match: it has no lines of symmetry, but rotational symmetry of order 2"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "The order of rotational symmetry of a regular pentagon is:",
+      "options": [
+       "5",
+       "1",
+       "10",
+       "2"
+      ],
+      "answer": 0,
+      "why": "It fits onto itself every 72°, five times in a full turn. 10 counts lines and turns together."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Give the lines of symmetry and the order of rotational symmetry of a rhombus.",
+     "a": "2 lines; order 2",
+     "mins": 2,
+     "model": "The two diagonals are fold lines (the halves match).\nIt fits onto itself after a half turn and a full turn: order 2."
+    },
+    {
+     "q": "A regular octagon",
+     "a": "8 lines; order 8",
+     "mins": 1
+    },
+    {
+     "q": "The capital letter Z",
+     "a": "0 lines; order 2",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Give the lines of symmetry and the order for: an isosceles triangle, a rectangle, a regular 10-gon, an isosceles trapezium. (b) On the 4 by 4 printable grid, shade squares to make a pattern with exactly 2 lines of symmetry and order 2. (c) Sketch a shape with order 3 but no lines of symmetry.",
+     "a": "(a) 1 and 1; 2 and 2; 10 and 10; 1 and 1 (b) for example a 2 by 4 block shaded across the middle of the grid (c) for example a three-armed pinwheel",
+     "mins": 8,
+     "model": "(a) Isosceles triangle: one fold line from the top angle to the middle of the base; it only fits onto itself after a full turn, so order 1."
+    },
+    {
+     "q": "Extend: On the printable star sheet, shade a pattern with order 6 and 6 lines of symmetry, and another with order 6 and no lines.",
+     "a": "Teacher checks: for no lines, use swirl (pinwheel) shading that keeps the turns.",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A regular polygon has rotational symmetry of order 9. How many lines of symmetry has it, and what is its exterior angle?",
+     "a": "9 lines; exterior angle 360 ÷ 9 = 40°",
+     "mins": 2
+    }
+   ],
+   "exit": [
+    {
+     "q": "The order of rotational symmetry of a square is:",
+     "a": "B) 4",
+     "mins": 1,
+     "options": [
+      "2",
+      "4",
+      "1"
+     ]
+    },
+    {
+     "q": "Lines of symmetry of a regular hexagon",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how many ways can a shape fit onto itself?",
+     "a": "As many as its order of rotational symmetry; a regular n-gon fits n ways by turning and also has n fold lines.",
+     "mins": 2
+    }
+   ],
+   "homework": "Symmetry in patterns: find the lines and order for 8 shapes and tile designs (portal homework).",
+   "send": "Support: tracing paper (or a drawing tablet) to check turns. EAL: 'symmetry', 'order', 'rotate'. Stretch: designing patterns with given symmetry.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 10.2 Symmetry (Unit 10: Transformations)",
+    "Printable symmetry grids and star sheet (portal worksheet for this lesson; usable on a drawing tablet)",
+    "Tracing paper",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Islamic star pattern window",
+     "alt": "A star pattern in a window",
+     "for": "hook"
+    },
+    {
+     "find": "snowflake macro",
+     "alt": "A snowflake: six-fold symmetry",
+     "for": "keywords"
+    },
+    {
+     "find": "starfish",
+     "alt": "A starfish: five-fold symmetry",
+     "for": "teach:2"
+    }
+   ],
+   "islamicLink": {
+    "text": "Allah describes how He created and proportioned what He made: 'Who created you, proportioned you, and balanced you' (al-Infitar 82:7). Symmetry appears all through creation, from snowflakes and starfish to the leaves of plants, and Muslim artists reflected this balance in geometric patterns.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 67,
+   "title": "Reflecting shapes in lines",
+   "duration": 50,
+   "bigQuestion": "Where does a shape go when it is reflected, and what stays the same?",
+   "objectives": [
+    "To understand how to reflect shapes in horizontal and vertical lines on a coordinate grid"
+   ],
+   "successCriteria": [
+    "All: reflect a shape in the x-axis or the y-axis",
+    "Most: reflect a shape in lines such as x = 2 or y = -1",
+    "Some: explain that the image is congruent and each point is the same distance from the mirror line"
+   ],
+   "keywords": [
+    {
+     "term": "reflection",
+     "def": "a transformation that flips a shape in a mirror line"
+    },
+    {
+     "term": "mirror line",
+     "def": "the line a shape is reflected in"
+    },
+    {
+     "term": "image",
+     "def": "the shape after a transformation"
+    },
+    {
+     "term": "congruent",
+     "def": "exactly the same shape and size"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A point at (3, 2) is reflected in the x-axis. Where does it go? What changes in its coordinates and what stays the same?",
+    "a": "(3, -2): x stays the same and y changes sign."
+   },
+   "starter": [
+    {
+     "q": "Order of rotational symmetry of a rectangle",
+     "a": "2",
+     "mins": 1
+    },
+    {
+     "q": "Lines of symmetry of a square",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "The x-coordinate of (5, -2)",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Is the line x = 3 vertical or horizontal?",
+     "a": "vertical",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Lines on the grid",
+     "bullets": [
+      "x = a is vertical",
+      "y = b is horizontal"
+     ],
+     "note": "The most confused fact in this topic.",
+     "table": {
+      "head": [
+       "Line",
+       "Direction",
+       "Passes through"
+      ],
+      "rows": [
+       [
+        "x = 2",
+        "vertical",
+        "(2, 0) and (2, 5)"
+       ],
+       [
+        "y = -1",
+        "horizontal",
+        "(0, -1) and (4, -1)"
+       ],
+       [
+        "x-axis",
+        "horizontal",
+        "every point with y = 0"
+       ],
+       [
+        "y-axis",
+        "vertical",
+        "every point with x = 0"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "In an axis",
+     "bullets": [
+      "Same distance, other side"
+     ],
+     "note": "Count squares to the line, then the same beyond it.",
+     "model": {
+      "problem": "Reflect the triangle (1, 1), (4, 1), (1, 3) in the y-axis.",
+      "steps": [
+       "Each point goes the same distance to the other side",
+       "x changes sign, y stays",
+       "(-1, 1), (-4, 1), (-1, 3)"
+      ],
+      "answer": "Image: (-1, 1), (-4, 1), (-1, 3)"
+     }
+    },
+    {
+     "heading": "In x = 3",
+     "bullets": [
+      "Measure from the mirror line, not the axis"
+     ],
+     "note": "Point by point.",
+     "model": {
+      "problem": "Reflect the point (5, 2) in the line x = 3.",
+      "steps": [
+       "(5, 2) is 2 to the right of x = 3",
+       "The image is 2 to the left of x = 3",
+       "x = 1"
+      ],
+      "answer": "(1, 2)"
+     }
+    },
+    {
+     "heading": "Which line?",
+     "bullets": [
+      "x = 3 is vertical"
+     ],
+     "note": "Pupils draw it.",
+     "misconception": {
+      "wrong": "Reflecting in x = 3 means reflecting in the x-axis",
+      "right": "x = 3 is the vertical line through 3 on the x-axis"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Reflect (2, 5) in the x-axis:",
+      "options": [
+       "(2, -5)",
+       "(-2, 5)",
+       "(5, 2)",
+       "(-2, -5)"
+      ],
+      "answer": 0,
+      "why": "The x-axis is horizontal: x stays, y changes sign. (-2, 5) is the reflection in the y-axis."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Reflect (-3, 4) in the y-axis and in the x-axis.",
+     "a": "(3, 4) and (-3, -4)",
+     "mins": 2,
+     "model": "y-axis: x changes sign, (3, 4).\nx-axis: y changes sign, (-3, -4)."
+    },
+    {
+     "q": "Reflect (6, 1) in the line x = 4.",
+     "a": "(2, 1)",
+     "mins": 1
+    },
+    {
+     "q": "Reflect (0, 5) in the line y = 2.",
+     "a": "(0, -1)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core (printable grid): Triangle T has vertices (1, 2), (3, 2) and (3, 5). Reflect T in (a) the y-axis (b) the x-axis (c) x = 4 (d) y = 1. Write each image's coordinates.",
+     "a": "(a) (-1, 2), (-3, 2), (-3, 5) (b) (1, -2), (3, -2), (3, -5) (c) (7, 2), (5, 2), (5, 5) (d) (1, 0), (3, 0), (3, -3)",
+     "mins": 8,
+     "model": "(a) Each x changes sign: (1, 2) goes to (-1, 2), and so on.\n(c) (1, 2) is 3 left of x = 4, so its image is 3 right: (7, 2)."
+    },
+    {
+     "q": "Extend: A shape is reflected in x = 2 and one image vertex is (-1, 4). Where was the original vertex?",
+     "a": "(5, 4)",
+     "mins": 2
+    },
+    {
+     "q": "Stretch: Reflect (a, b) in the line x = k. Write the image in terms of a, b and k.",
+     "a": "(2k - a, b)",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Reflect (4, -3) in the y-axis:",
+     "a": "A) (-4, -3)",
+     "mins": 1,
+     "options": [
+      "(-4, -3)",
+      "(4, 3)",
+      "(-4, 3)"
+     ]
+    },
+    {
+     "q": "Is the image congruent to the object?",
+     "a": "Yes",
+     "mins": 1
+    },
+    {
+     "q": "Big question: where does a reflected shape go, and what stays the same?",
+     "a": "The same distance to the other side of the mirror line; size, shape and angles stay the same, but it is flipped.",
+     "mins": 2
+    }
+   ],
+   "homework": "Reflections on a grid: 6 shapes in 6 mirror lines (portal homework, printable grid).",
+   "send": "Support: tracing paper and a grid with the mirror line drawn in colour. EAL: 'mirror line', 'image', 'congruent'. Stretch: the general rule (2k - a, b).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 10.3 Reflection (Unit 10: Transformations)",
+    "Printable coordinate grid sheet (portal worksheet for this lesson)",
+    "Tracing paper",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "mountain lake reflection",
+     "alt": "Mountains reflected in a lake",
+     "for": "hook"
+    },
+    {
+     "find": "hand mirror",
+     "alt": "A mirror",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 68,
+   "title": "Reflections in y = x and y = -x; describing reflections",
+   "duration": 50,
+   "bigQuestion": "How can you find the mirror line when you only see the object and its image?",
+   "objectives": [
+    "To understand how to reflect in the lines y = x and y = -x and describe a reflection fully by its mirror line"
+   ],
+   "successCriteria": [
+    "All: reflect a point or shape in y = x by swapping the coordinates",
+    "Most: reflect a point or shape in y = -x",
+    "Some: find and describe the mirror line between an object and its image"
+   ],
+   "keywords": [
+    {
+     "term": "y = x",
+     "def": "the diagonal line through (1, 1), (2, 2), (3, 3)"
+    },
+    {
+     "term": "mirror line",
+     "def": "the line a shape is reflected in"
+    },
+    {
+     "term": "describe fully",
+     "def": "name the transformation and give its mirror line as an equation"
+    },
+    {
+     "term": "invariant point",
+     "def": "a point that does not move"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "The point (2, 5) is reflected and lands on (5, 2). Where is the mirror line? What happened to the coordinates?",
+    "a": "The line y = x; the coordinates swapped."
+   },
+   "starter": [
+    {
+     "q": "Reflect (3, 4) in the x-axis",
+     "a": "(3, -4)",
+     "mins": 1
+    },
+    {
+     "q": "Reflect (3, 4) in the y-axis",
+     "a": "(-3, 4)",
+     "mins": 1
+    },
+    {
+     "q": "Reflect (4, 0) in x = 1",
+     "a": "(-2, 0)",
+     "mins": 1
+    },
+    {
+     "q": "Which line passes through (2, 2) and (5, 5)?",
+     "a": "y = x",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Four mirror lines",
+     "bullets": [
+      "y = x: swap the coordinates"
+     ],
+     "note": "Pupils test each rule on (2, 5).",
+     "table": {
+      "head": [
+       "Mirror line",
+       "Rule",
+       "(2, 5) goes to"
+      ],
+      "rows": [
+       [
+        "x-axis",
+        "(x, y) → (x, -y)",
+        "(2, -5)"
+       ],
+       [
+        "y-axis",
+        "(x, y) → (-x, y)",
+        "(-2, 5)"
+       ],
+       [
+        "y = x",
+        "(x, y) → (y, x)",
+        "(5, 2)"
+       ],
+       [
+        "y = -x",
+        "(x, y) → (-y, -x)",
+        "(-5, -2)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Reflect in y = x",
+     "bullets": [
+      "Swap each pair"
+     ],
+     "note": "Draw y = x first.",
+     "model": {
+      "problem": "Reflect the triangle (1, 3), (2, 6), (4, 3) in the line y = x.",
+      "steps": [
+       "Swap each pair of coordinates",
+       "(1, 3) → (3, 1), (2, 6) → (6, 2), (4, 3) → (3, 4)"
+      ],
+      "answer": "(3, 1), (6, 2), (3, 4)"
+     }
+    },
+    {
+     "heading": "Describing a reflection",
+     "bullets": [
+      "Find the midpoints"
+     ],
+     "note": "The mirror line is the perpendicular bisector of each object-image pair.",
+     "model": {
+      "problem": "(1, 2), (3, 2), (3, 4) maps to (1, -4), (3, -4), (3, -6). Describe the transformation fully.",
+      "steps": [
+       "Same size, flipped: a reflection",
+       "Midpoint of (1, 2) and (1, -4) is (1, -1)",
+       "Every midpoint has y = -1"
+      ],
+      "answer": "Reflection in the line y = -1"
+     }
+    },
+    {
+     "heading": "Full description",
+     "bullets": [
+      "Name it and give the equation"
+     ],
+     "note": "Exam mark schemes need both.",
+     "misconception": {
+      "wrong": "Describe it as 'a flip'",
+      "right": "Write 'reflection in the line y = -1': the transformation and the mirror line's equation"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Reflect (3, -1) in the line y = x:",
+      "options": [
+       "(-1, 3)",
+       "(1, -3)",
+       "(3, 1)",
+       "(-3, 1)"
+      ],
+      "answer": 0,
+      "why": "Swap the coordinates: (-1, 3). (1, -3) also changes the signs, which is the rule for y = -x."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Reflect (4, 7) in y = x and in y = -x.",
+     "a": "(7, 4) and (-7, -4)",
+     "mins": 2,
+     "model": "y = x: swap, (7, 4).\ny = -x: swap and change both signs, (-7, -4)."
+    },
+    {
+     "q": "Object (2, 1), image (2, 7). Mirror line?",
+     "a": "y = 4",
+     "mins": 1
+    },
+    {
+     "q": "Object (-3, 5), image (5, -3). Mirror line?",
+     "a": "y = x",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Reflect the triangle (1, 1), (4, 1), (1, 2) in y = x. (b) Reflect it in y = -x. (c) Describe fully: (2, 3), (5, 3), (5, 4) maps to (2, -1), (5, -1), (5, -2). (d) Describe fully: (0, 1), (2, 1), (2, 4) maps to (6, 1), (4, 1), (4, 4).",
+     "a": "(a) (1, 1), (1, 4), (2, 1) (b) (-1, -1), (-1, -4), (-2, -1) (c) reflection in y = 1 (d) reflection in x = 3",
+     "mins": 8,
+     "model": "(a) Swap each pair: (1, 1) stays (it is on the line), (4, 1) → (1, 4), (1, 2) → (2, 1).\n(c) Midpoint of y = 3 and y = -1 is y = 1; check the others: 4 and -2 also give 1."
+    },
+    {
+     "q": "Extend: Which points do not move when reflected in y = x?",
+     "a": "Every point on the line y = x, such as (3, 3): they are invariant",
+     "mins": 2
+    },
+    {
+     "q": "Stretch: Reflect (2, 5) in the x-axis, then reflect the result in the y-axis. What single transformation does the same?",
+     "a": "(-2, -5): a rotation of 180° about the origin",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Reflect (6, 1) in y = x:",
+     "a": "A) (1, 6)",
+     "mins": 1,
+     "options": [
+      "(1, 6)",
+      "(-6, 1)",
+      "(6, -1)"
+     ]
+    },
+    {
+     "q": "Object (0, 2), image (0, -6). Mirror line?",
+     "a": "y = -2",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how do you find the mirror line from an object and its image?",
+     "a": "Find the midpoints of each point and its image; the mirror line passes through them all (the perpendicular bisector).",
+     "mins": 2
+    }
+   ],
+   "homework": "Describe 6 reflections fully and reflect 2 shapes in y = x (portal homework, printable grid).",
+   "send": "Support: rule table for the four mirror lines. EAL: 'describe fully', 'invariant'. Stretch: combining two reflections.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 10.3 Reflection and 10.5 Translations and combined transformations (Unit 10: Transformations)",
+    "Printable coordinate grid sheet (portal worksheet for this lesson)",
+    "Tracing paper",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Taj Mahal reflection pool",
+     "alt": "A building reflected in a long pool",
+     "for": "hook"
+    },
+    {
+     "find": "graph y = x line",
+     "alt": "The line y = x on a grid",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Angles, area and symmetry",
+   "n": 69,
+   "title": "Review and end of half-term quiz: angles and area",
+   "duration": 50,
+   "bigQuestion": "Which angle facts and area formulae can I now use without help?",
+   "objectives": [
+    "To understand how secure my angle reasoning, area formulae and symmetry are, and what to practise next"
+   ],
+   "successCriteria": [
+    "All: recall the parallel-line and polygon facts and the area formulae",
+    "Most: answer quiz questions with reasons and units",
+    "Some: set one strength and one target from the quiz"
+   ],
+   "smsc": "Moral: honesty (amanah, أَمَانَة) in assessments",
+   "keywords": [
+    {
+     "term": "reason",
+     "def": "the fact that justifies a step"
+    },
+    {
+     "term": "formula",
+     "def": "a rule written with letters"
+    },
+    {
+     "term": "units",
+     "def": "cm, cm², m² and so on: always include them"
+    },
+    {
+     "term": "target",
+     "def": "the next thing to practise"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which is easier to forget: an angle reason or the units on an area? How will you make sure you remember both today?",
+    "a": "Both cost marks; write the reason beside each angle and units on every area."
+   },
+   "starter": [
+    {
+     "q": "Alternate angles are",
+     "a": "equal",
+     "mins": 1
+    },
+    {
+     "q": "Angle sum of a pentagon",
+     "a": "540°",
+     "mins": 1
+    },
+    {
+     "q": "Area of a trapezium, 4 cm, 6 cm, height 5 cm",
+     "a": "25 cm²",
+     "mins": 1
+    },
+    {
+     "q": "Area of a circle with r = 3 cm, in terms of π",
+     "a": "9π cm²",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Angle facts",
+     "bullets": [
+      "Name the fact every time"
+     ],
+     "note": "Quick-fire recall.",
+     "table": {
+      "head": [
+       "Fact",
+       "Rule"
+      ],
+      "rows": [
+       [
+        "Corresponding (F)",
+        "equal"
+       ],
+       [
+        "Alternate (Z)",
+        "equal"
+       ],
+       [
+        "Co-interior (C)",
+        "add up to 180°"
+       ],
+       [
+        "Polygon angle sum",
+        "(n - 2) × 180°"
+       ],
+       [
+        "Exterior angles",
+        "add up to 360°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Area formulae",
+     "bullets": [
+      "Perpendicular height, never slant"
+     ],
+     "note": "Pupils say each formula.",
+     "table": {
+      "head": [
+       "Shape",
+       "Area"
+      ],
+      "rows": [
+       [
+        "Triangle",
+        "½ × b × h"
+       ],
+       [
+        "Parallelogram",
+        "b × h"
+       ],
+       [
+        "Trapezium",
+        "½(a + b)h"
+       ],
+       [
+        "Circle",
+        "πr²"
+       ],
+       [
+        "Circumference",
+        "πd"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "A mixed problem",
+     "bullets": [
+      "Two facts, two reasons"
+     ],
+     "note": "Model with full reasons.",
+     "model": {
+      "problem": "A regular hexagon has an exterior angle x. Find x and one interior angle.",
+      "steps": [
+       "x = 360 ÷ 6 = 60° (exterior angles add up to 360°)",
+       "Interior = 180 - 60 = 120° (angles on a straight line)"
+      ],
+      "answer": "60° and 120°"
+     }
+    },
+    {
+     "heading": "Quiz rules",
+     "bullets": [
+      "Portal quiz, secure mode, 20 minutes",
+      "Calculator allowed",
+      "Reasons and units on every answer"
+     ],
+     "note": "Cameras on."
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the area of a semicircle with diameter 12 cm (1 d.p.).",
+     "a": "56.5 cm²",
+     "mins": 2,
+     "model": "r = 6: ½ × π × 36 = 18π = 56.548...\n= 56.5 cm²."
+    }
+   ],
+   "independent": [
+    {
+     "q": "End of half-term quiz (portal, secure mode, 20 minutes, 25 marks): parallel lines, polygons, areas, circles and symmetry. Sample: (a) the angle alternate to 64° (b) one interior angle of a regular 9-gon (c) area of a trapezium with parallel sides 6 cm and 10 cm, height 5 cm (d) area of a circle with radius 4 cm (1 d.p.) (e) reflect (2, -3) in the y-axis",
+     "a": "Sample answers: (a) 64° (b) 140° (c) 40 cm² (d) 50.3 cm² (e) (-2, -3)",
+     "mins": 20,
+     "model": "(b) Exterior 360 ÷ 9 = 40°, interior 180 - 40 = 140°.\n(c) ½ × 16 × 5 = 40 cm².\n(d) π × 16 = 50.265... = 50.3 cm²."
+    },
+    {
+     "q": "After the quiz: self-check with the answers on screen, then write one strength and one target in the portal response box.",
+     "a": "Personal: for example 'Strength: polygons. Target: semicircle perimeters.'",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which formula gives the area of a circle?",
+     "a": "A) πr²",
+     "mins": 1,
+     "options": [
+      "πr²",
+      "2πr",
+      "πd"
+     ]
+    },
+    {
+     "q": "Big question: which facts and formulae can you now use without help?",
+     "a": "Personal: for example 'all the parallel-line facts; I still need to check the trapezium formula'.",
+     "mins": 2
+    }
+   ],
+   "homework": "Practise your target from the quiz: the portal's Summer 1 review set (10 questions).",
+   "send": "Support: access arrangements as agreed. EAL: glossary allowed. Stretch: the final multi-step question.",
+   "resources": [
+    "Year 8 Summer 1 end of half-term quiz: angles and area (portal quiz, secure mode, written for this unit)",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 Unit 7 and Unit 2: Check and Strengthen questions for targets",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "geometry set compass protractor ruler",
+     "alt": "A geometry set",
+     "for": "hook"
+    },
+    {
+     "find": "checklist with ticks",
+     "alt": "A checklist",
+     "for": "keywords"
     }
    ]
   }
