@@ -3,7 +3,7 @@
  "year": "y7",
  "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
  "boardShort": "KS3 Maths Progress",
- "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: Autumn 1 and 2 essentials) and Spring 1 lessons written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard (10 steps, success criteria, AfL). | Founding year 2027 Spring 2 (15 Mar to 23 Apr): Directed numbers; adding fractions, written to the plan with Maths Progress Year 7 2.6, Year 8 1.3, 8.2, 8.5 and Year 7 Unit 5 as the school's resources.",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: Autumn 1 and 2 essentials) and Spring 1 lessons written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard (10 steps, success criteria, AfL). | Founding year 2027 Spring 2 (15 Mar to 23 Apr): Directed numbers; adding fractions, written to the plan with Maths Progress Year 7 2.6, Year 8 1.3, 8.2, 8.5 and Year 7 Unit 5 as the school's resources. | Founding year 2027 Summer 1 (26 Apr to 11 Jun): Geometric notation and constructions; geometric reasoning, written to the plan with Maths Progress Year 7 Unit 8 (8.1 to 8.6) and Year 9 5.2, 5.3 as the school's resources; assessment point 2 test in the week of 26 Apr.",
  "lessons": [
   {
    "unit": "Unit 1: Analysing and displaying data",
@@ -11443,6 +11443,3981 @@
      "find": "notebook corrections pen",
      "alt": "A notebook with corrections in a different colour",
      "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 52,
+   "title": "Geometric notation: points, lines and line segments",
+   "duration": 50,
+   "bigQuestion": "Why do mathematicians need a shared way to name lines and shapes?",
+   "objectives": [
+    "To understand how geometric notation describes points, lines, line segments and shapes precisely"
+   ],
+   "successCriteria": [
+    "All: label points with capital letters and name a line segment such as AB",
+    "Most: use the symbols for parallel and perpendicular and the marks for equal sides",
+    "Some: describe a quadrilateral fully using notation for its sides and diagonals"
+   ],
+   "crossCurricular": "Design and technology: labelled technical drawings",
+   "smsc": "Social: a precise shared language lets people work together without mistakes",
+   "keywords": [
+    {
+     "term": "point",
+     "def": "an exact position, named with a capital letter"
+    },
+    {
+     "term": "line segment",
+     "def": "the part of a line between two end points, such as AB"
+    },
+    {
+     "term": "vertex",
+     "def": "a corner where two sides meet (plural: vertices)"
+    },
+    {
+     "term": "parallel",
+     "def": "always the same distance apart, never meeting: ∥"
+    },
+    {
+     "term": "perpendicular",
+     "def": "meeting at a right angle: ⊥"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A builder says: 'the line from that corner to the other corner'. Which line does he mean? How could we make it impossible to misunderstand?",
+    "a": "Label the corners with capital letters: 'line segment AC' can only mean one line."
+   },
+   "starter": [
+    {
+     "q": "-3 + 8",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "2/5 + 1/3",
+     "a": "11/15",
+     "mins": 1
+    },
+    {
+     "q": "-4 × -6",
+     "a": "24",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.35 as a fraction in its simplest form",
+     "a": "7/20",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Lines and line segments",
+     "bullets": [
+      "A point is named with a capital letter",
+      "A line goes on for ever both ways",
+      "A line segment has two end points"
+     ],
+     "note": "Draw both on the board. Ask: which one has a length we can measure? Only the segment.",
+     "compare": {
+      "left": {
+       "title": "Line AB",
+       "points": [
+        "arrows at both ends",
+        "goes on for ever",
+        "no length"
+       ]
+      },
+      "right": {
+       "title": "Line segment AB",
+       "points": [
+        "two end points, A and B",
+        "a fixed length",
+        "written AB"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Symbols and marks",
+     "bullets": [
+      "Arrows on lines show parallel",
+      "Dashes on sides show equal lengths"
+     ],
+     "note": "Pupils copy the table into their books.",
+     "table": {
+      "head": [
+       "Notation",
+       "Meaning",
+       "Example"
+      ],
+      "rows": [
+       [
+        "AB ∥ CD",
+        "AB is parallel to CD",
+        "opposite sides of a rectangle"
+       ],
+       [
+        "AB ⊥ BC",
+        "AB is perpendicular to BC",
+        "sides at a corner of a square"
+       ],
+       [
+        "matching arrows",
+        "the lines are parallel",
+        "railway tracks"
+       ],
+       [
+        "matching dashes",
+        "the sides are equal",
+        "two sides of an isosceles triangle"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Naming a shape",
+     "bullets": [
+      "Letters go round the shape in order"
+     ],
+     "note": "Model with a rectangle drawn on the board.",
+     "model": {
+      "problem": "Rectangle PQRS is labelled in order. Name the side parallel to PQ and the sides perpendicular to PQ.",
+      "steps": [
+       "Letters go round in order: P, Q, R, S",
+       "SR is opposite PQ, so SR ∥ PQ",
+       "QR and PS meet PQ at right angles"
+      ],
+      "answer": "SR ∥ PQ; QR ⊥ PQ and PS ⊥ PQ"
+     }
+    },
+    {
+     "heading": "Order matters",
+     "bullets": [
+      "A and C are opposite corners in ABCD"
+     ],
+     "note": "Common slip when pupils label a shape themselves.",
+     "misconception": {
+      "wrong": "In rectangle ABCD, A and C are next to each other",
+      "right": "The letters go round in order, so A and C are opposite: AC is a diagonal"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "In square WXYZ (labelled in order), which line segment is a diagonal?",
+      "options": [
+       "WX",
+       "XZ",
+       "YZ",
+       "ZW"
+      ],
+      "answer": 1,
+      "why": "X and Z are opposite corners, so XZ is a diagonal. The other three join neighbouring letters, so they are sides."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Triangle ABC has AB = AC. How do we show this on a diagram, and what type of triangle is it?",
+     "a": "One dash on AB and one dash on AC; isosceles",
+     "mins": 2,
+     "model": "Equal sides get the same number of dashes: one dash on AB, one on AC.\nTwo equal sides make the triangle isosceles."
+    },
+    {
+     "q": "Name all four sides of quadrilateral KLMN.",
+     "a": "KL, LM, MN, NK",
+     "mins": 1
+    },
+    {
+     "q": "Write in notation: line segment EF is parallel to line segment GH.",
+     "a": "EF ∥ GH",
+     "mins": 1
+    },
+    {
+     "q": "How many diagonals does pentagon ABCDE have? Name them.",
+     "a": "5: AC, AD, BD, BE, CE",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Parallelogram ABCD is labelled in order. (a) Which side is parallel to AB? (b) Which side is equal to AD? (c) Name both diagonals. (d) Write one statement using ∥.",
+     "a": "(a) DC (b) BC (c) AC and BD (d) AD ∥ BC (or AB ∥ DC)",
+     "mins": 5,
+     "model": "Opposite sides of a parallelogram are parallel and equal: AB with DC, AD with BC.\nDiagonals join opposite corners: A to C and B to D."
+    },
+    {
+     "q": "Extend: A hexagon has vertices A to F. How many diagonals does it have? Explain a quick way to count them.",
+     "a": "9: from each of 6 vertices there are 3 diagonals (not to itself or its 2 neighbours); 6 × 3 = 18 counts each one twice, so 9",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Find a rule for the number of diagonals of a polygon with n sides. Test it on an octagon.",
+     "a": "n(n - 3) ÷ 2; octagon: 8 × 5 ÷ 2 = 20",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which symbol means 'is perpendicular to'?",
+     "a": "A) ⊥",
+     "mins": 1,
+     "options": [
+      "⊥",
+      "∥",
+      "="
+     ]
+    },
+    {
+     "q": "Rectangle PQRS: name the side parallel to QR.",
+     "a": "PS",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do mathematicians label shapes with letters?",
+     "a": "So everyone means exactly the same point, line or angle; words alone can be misunderstood.",
+     "mins": 2
+    }
+   ],
+   "homework": "Notation sheet: label and describe five shapes using ∥, ⊥ and dash marks (portal homework, 8 questions).",
+   "send": "Support: notation card with each symbol and a labelled example. EAL: 'parallel', 'perpendicular', 'vertex', 'segment'. Stretch: the diagonals rule for any polygon.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.2 Lines, angles and triangles (Unit 8: Lines and angles)",
+    "Notation reference card (printable, in the pupil PDF)",
+    "Ruler and sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "railway tracks straight parallel",
+     "alt": "Railway tracks: two parallel lines",
+     "for": "keywords"
+    },
+    {
+     "find": "set square drawing instrument",
+     "alt": "A set square for drawing perpendicular lines",
+     "for": "teach:2"
+    },
+    {
+     "find": "architectural floor plan drawing",
+     "alt": "A labelled technical drawing",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 53,
+   "title": "Naming angles and types of angle",
+   "duration": 50,
+   "bigQuestion": "How can three letters name exactly one angle?",
+   "objectives": [
+    "To understand how to name angles with three letters and classify them by size"
+   ],
+   "successCriteria": [
+    "All: name an angle such as angle ABC and identify its vertex",
+    "Most: classify angles as acute, right, obtuse, straight or reflex",
+    "Some: find both angles between clock hands and justify each type"
+   ],
+   "smsc": "Spiritual: the times of salah follow the sun's position in the sky through the day, which changes the angle of shadows",
+   "keywords": [
+    {
+     "term": "angle",
+     "def": "the amount of turn between two lines that meet"
+    },
+    {
+     "term": "acute",
+     "def": "less than 90°"
+    },
+    {
+     "term": "obtuse",
+     "def": "more than 90° but less than 180°"
+    },
+    {
+     "term": "reflex",
+     "def": "more than 180° but less than 360°"
+    },
+    {
+     "term": "degree",
+     "def": "the unit of turn: a full turn is 360°"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A clock shows 4 o'clock. What angle is between the hands? Is there more than one answer?",
+    "a": "120° inside, and 240° the reflex way round: two angles share the same arms."
+   },
+   "starter": [
+    {
+     "q": "Which symbol means parallel?",
+     "a": "∥",
+     "mins": 1
+    },
+    {
+     "q": "How many diagonals does a rectangle have?",
+     "a": "2",
+     "mins": 1
+    },
+    {
+     "q": "-7 - 5",
+     "a": "-12",
+     "mins": 1
+    },
+    {
+     "q": "3/4 of 60",
+     "a": "45",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Naming an angle",
+     "bullets": [
+      "Three letters: the middle one is the vertex",
+      "Written angle ABC or ∠ABC",
+      "Or a small letter inside, such as x"
+     ],
+     "note": "Trace ABC with a finger: start at A, turn at B, finish at C. B must be in the middle."
+    },
+    {
+     "heading": "Types of angle",
+     "bullets": [
+      "Compare with 90° and 180°"
+     ],
+     "note": "Pupils give a classroom example of each.",
+     "table": {
+      "head": [
+       "Type",
+       "Size",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Acute",
+        "less than 90°",
+        "a slice cut from a round flatbread"
+       ],
+       [
+        "Right",
+        "exactly 90°",
+        "the corner of a book"
+       ],
+       [
+        "Obtuse",
+        "between 90° and 180°",
+        "an open laptop leaning back"
+       ],
+       [
+        "Straight",
+        "exactly 180°",
+        "a flat ruler"
+       ],
+       [
+        "Reflex",
+        "between 180° and 360°",
+        "the outside of a corner"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Classify",
+     "bullets": [
+      "Use the two benchmarks"
+     ],
+     "note": "Model the decision for each angle aloud.",
+     "model": {
+      "problem": "Classify 47°, 90°, 156°, 180° and 215°.",
+      "steps": [
+       "47 < 90: acute",
+       "90 exactly: right angle",
+       "between 90 and 180: obtuse",
+       "180 exactly: straight; 215 > 180: reflex"
+      ],
+      "answer": "acute, right, obtuse, straight, reflex"
+     }
+    },
+    {
+     "heading": "The middle letter",
+     "bullets": [
+      "Angle ABC turns at B"
+     ],
+     "note": "Ask: where is the vertex of angle XZY?",
+     "misconception": {
+      "wrong": "Angle ABC has its vertex at A",
+      "right": "The middle letter is the vertex: angle ABC is at B"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which angle is reflex?",
+      "options": [
+       "175°",
+       "90°",
+       "190°",
+       "45°"
+      ],
+      "answer": 2,
+      "why": "190° is between 180° and 360°. 175° is obtuse because it is less than 180°."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Classify 35°, 125°, 270° and 90°.",
+     "a": "acute, obtuse, reflex, right",
+     "mins": 2,
+     "model": "Compare each with 90° and 180°.\n35 < 90: acute. 90 < 125 < 180: obtuse.\n270 > 180: reflex. 90 exactly: right angle."
+    },
+    {
+     "q": "In triangle XYZ, which letter is the vertex of angle XZY?",
+     "a": "Z",
+     "mins": 1
+    },
+    {
+     "q": "One angle at a point is 70°. What is the reflex angle on the other side?",
+     "a": "290°",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Classify 12°, 89°, 91°, 179°, 181° and 300°. (b) A clock shows 3 o'clock: what angle is between the hands, and what type? (c) Name the vertex of angle DEF and of angle FED.",
+     "a": "(a) acute, acute, obtuse, obtuse, reflex, reflex (b) 90°, a right angle (c) E both times",
+     "mins": 5,
+     "model": "(a) The boundaries are 90° and 180°: 89 is just acute, 91 just obtuse, 181 just reflex.\n(b) Each hour is 360 ÷ 12 = 30°; 3 hours make 90°.\n(c) The middle letter both times: E."
+    },
+    {
+     "q": "Extend: What angles do the hands make at 5 o'clock? Give the smaller angle and the reflex angle.",
+     "a": "150° and 210°",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: At 2:30 the hour hand is halfway between 2 and 3. Find the smaller angle between the hands.",
+     "a": "105°: minute hand at 180°, hour hand at 2.5 × 30 = 75°, 180 - 75 = 105",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which type of angle is 135°?",
+     "a": "B) obtuse",
+     "mins": 1,
+     "options": [
+      "acute",
+      "obtuse",
+      "reflex"
+     ]
+    },
+    {
+     "q": "What is the vertex of angle PQR?",
+     "a": "Q",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can three letters name exactly one angle?",
+     "a": "The middle letter is the vertex and the outer letters show the two arms, so only one angle fits.",
+     "mins": 2
+    }
+   ],
+   "homework": "Angle types sheet: classify and estimate 12 angles (portal homework).",
+   "send": "Support: angle-type card with the 90° and 180° benchmarks. EAL: 'acute', 'obtuse', 'reflex', 'vertex'. Stretch: clock angles at any time.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.1 Measuring and drawing angles and 8.2 Lines, angles and triangles",
+    "Angle types card (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "analogue clock face",
+     "alt": "A clock face: the hands make an angle",
+     "for": "hook"
+    },
+    {
+     "find": "protractor",
+     "alt": "A protractor for measuring angles",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 54,
+   "title": "Measuring and drawing angles with a protractor",
+   "duration": 50,
+   "bigQuestion": "Why do the two scales on a protractor cause so many wrong answers?",
+   "objectives": [
+    "To understand how to measure and draw angles accurately with a protractor, including reflex angles"
+   ],
+   "successCriteria": [
+    "All: measure acute and obtuse angles to the nearest degree",
+    "Most: draw an angle of a given size",
+    "Some: measure or draw a reflex angle using 360° minus the angle inside"
+   ],
+   "crossCurricular": "Geography: measuring bearings on maps uses the same skill",
+   "smsc": "Moral: itqan (إِتْقَان), doing even a small task carefully and accurately",
+   "keywords": [
+    {
+     "term": "protractor",
+     "def": "a tool for measuring and drawing angles"
+    },
+    {
+     "term": "baseline",
+     "def": "the zero line of the protractor, placed along one arm"
+    },
+    {
+     "term": "scale",
+     "def": "the numbers round the edge; a protractor has two"
+    },
+    {
+     "term": "reflex angle",
+     "def": "more than 180° but less than 360°"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A protractor only shows 0° to 180°. How could you use it to draw an angle of 250°?",
+    "a": "Draw 360 - 250 = 110° and mark the reflex angle on the outside."
+   },
+   "starter": [
+    {
+     "q": "Classify 156°",
+     "a": "obtuse",
+     "mins": 1
+    },
+    {
+     "q": "The vertex of angle KLM",
+     "a": "L",
+     "mins": 1
+    },
+    {
+     "q": "360 - 75",
+     "a": "285",
+     "mins": 1
+    },
+    {
+     "q": "2/3 + 1/6",
+     "a": "5/6",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Measuring",
+     "bullets": [
+      "Centre cross on the vertex",
+      "Zero line along one arm"
+     ],
+     "note": "Show on the visualiser with a real protractor.",
+     "model": {
+      "problem": "Measure angle ABC.",
+      "steps": [
+       "Put the centre cross exactly on the vertex B",
+       "Line up the zero line with arm BA",
+       "Count up from 0° on the scale that starts at BA",
+       "Read where arm BC crosses; check: acute or obtuse?"
+      ],
+      "answer": "Use the scale that starts at 0 on your arm"
+     }
+    },
+    {
+     "heading": "Two scales",
+     "bullets": [
+      "The scales always add up to 180°"
+     ],
+     "note": "Ask: if one scale says 50, what does the other say? 130.",
+     "misconception": {
+      "wrong": "The angle looks acute but I read 130° from the outer scale",
+      "right": "Start at 0° on the arm you lined up: an acute angle reads less than 90°, here 50°"
+     }
+    },
+    {
+     "heading": "Drawing an angle",
+     "bullets": [
+      "Draw one arm first",
+      "Mark a dot, then join"
+     ],
+     "note": "Pupils draw along with you.",
+     "model": {
+      "problem": "Draw angle PQR = 65°.",
+      "steps": [
+       "Draw arm QR with a ruler, at least 7 cm",
+       "Centre on Q, zero line on QR",
+       "Mark a dot at 65° on the scale starting at R",
+       "Join Q to the dot and label 65°"
+      ],
+      "answer": "Check: it looks less than a right angle"
+     }
+    },
+    {
+     "heading": "Reflex angles",
+     "bullets": [
+      "Draw 360° minus the angle",
+      "Mark the outside angle"
+     ],
+     "note": "A protractor cannot draw a reflex angle directly.",
+     "model": {
+      "problem": "Draw a reflex angle of 230°.",
+      "steps": [
+       "360 - 230 = 130",
+       "Draw 130° in the usual way",
+       "Mark the outside angle with an arc and label it 230°"
+      ],
+      "answer": "230° = 360° - 130°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "The inside angle is 48°. What is the reflex angle at the same vertex?",
+      "options": [
+       "132°",
+       "312°",
+       "228°",
+       "308°"
+      ],
+      "answer": 1,
+      "why": "360 - 48 = 312. 132° is 180 - 48: that is the angle on a straight line, not round a point."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "An angle measures 72°. A pupil writes 108°. What went wrong?",
+     "a": "They read the wrong scale: 180 - 72 = 108",
+     "mins": 2,
+     "model": "72 + 108 = 180: the two scales always add up to 180°.\nThe angle is acute, so 72° is correct; 108° came from the other scale."
+    },
+    {
+     "q": "Draw an angle of 140°. Which type is it?",
+     "a": "obtuse",
+     "mins": 2
+    },
+    {
+     "q": "To draw 300°, what angle do you draw first?",
+     "a": "60°",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Measure the six angles a to f on the printable angle sheet, then draw angles of 40°, 125° and 250°.",
+     "a": "Sheet: a 35°, b 118°, c 90°, d 162°, e 205°, f 330° (accept ± 2°). 250° is drawn as 110° inside with the outside marked.",
+     "mins": 7,
+     "model": "Angle a: centre on the vertex, zero line on the lower arm, read the inner scale from 0: 35°.\nIt looks acute, so 35° (not 145°) is sensible."
+    },
+    {
+     "q": "Extend: Without measuring, explain why angles of 175° and 185° look almost the same.",
+     "a": "Both are 5° from a straight line (180°), one on each side.",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Draw triangle ABC with AB = 8 cm, angle A = 50° and angle B = 60°. Measure angle C. What should it be?",
+     "a": "70°, because the angles in a triangle add up to 180°",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "The inside angle is 100°. The reflex angle is:",
+     "a": "B) 260°",
+     "mins": 1,
+     "options": [
+      "80°",
+      "260°",
+      "200°"
+     ]
+    },
+    {
+     "q": "Where does the centre cross of the protractor go?",
+     "a": "On the vertex of the angle",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do the two scales cause wrong answers, and how do you avoid it?",
+     "a": "Each angle can be read as x or 180 - x; start from 0 on your arm and decide acute or obtuse first.",
+     "mins": 2
+    }
+   ],
+   "homework": "Measure and draw 10 angles on the portal angle sheet (printable); estimate each one first.",
+   "send": "Support: a protractor with the inner scale highlighted; baselines already drawn. EAL: 'protractor', 'baseline', 'scale'. Stretch: draw a 3-4-5 triangle and measure its angles.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.1 Measuring and drawing angles (Unit 8: Lines and angles)",
+    "Printable angle sheet: six angles to measure (portal worksheet for this lesson)",
+    "Geometry set: ruler, protractor, compasses and a sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "protractor measuring angle",
+     "alt": "A protractor lined up on an angle",
+     "for": "teach:1"
+    },
+    {
+     "find": "180 degree protractor transparent",
+     "alt": "A 180° protractor with two scales",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 55,
+   "title": "Assessment point 2: maths test",
+   "duration": 50,
+   "bigQuestion": "How well can I use this year's number skills on my own?",
+   "objectives": [
+    "To understand how well I can apply this year's number work under test conditions"
+   ],
+   "successCriteria": [
+    "All: answer recall questions on directed numbers, fractions and percentages accurately",
+    "Most: show full working on multi-step questions",
+    "Some: check answers with an estimate or the inverse"
+   ],
+   "smsc": "Moral: honesty (amanah, أَمَانَة) in assessments: our own work only",
+   "keywords": [
+    {
+     "term": "test conditions",
+     "def": "working alone, in silence, to time"
+    },
+    {
+     "term": "working",
+     "def": "the steps that show your method"
+    },
+    {
+     "term": "mark",
+     "def": "a point earned for a correct step or answer"
+    },
+    {
+     "term": "inverse",
+     "def": "the opposite operation, used to check"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "What is one habit that will earn you marks in a test even when you get stuck?",
+    "a": "Write the method down: a slip still earns method marks."
+   },
+   "starter": [
+    {
+     "q": "-8 + 3",
+     "a": "-5",
+     "mins": 1
+    },
+    {
+     "q": "1/2 + 1/5",
+     "a": "7/10",
+     "mins": 1
+    },
+    {
+     "q": "10% of 340",
+     "a": "34",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Test rules",
+     "bullets": [
+      "Portal test, secure mode, 30 minutes",
+      "Calculator in Section B only",
+      "Show working in the response box"
+     ],
+     "note": "Cameras on; no other windows open."
+    },
+    {
+     "heading": "Mark-earning habits",
+     "bullets": [
+      "Write the method even if unsure",
+      "Give answers in the form asked",
+      "Check with the inverse"
+     ],
+     "note": "These answer the ponder question."
+    },
+    {
+     "heading": "Model of full working",
+     "bullets": [
+      "Every step can earn a mark"
+     ],
+     "note": "From Spring 2 adding mixed numbers.",
+     "model": {
+      "problem": "Work out 2 1/2 + 1 2/3.",
+      "steps": [
+       "Improper fractions: 5/2 + 5/3",
+       "Common denominator 6: 15/6 + 10/6",
+       "25/6 = 4 1/6"
+      ],
+      "answer": "4 1/6"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Practice: work out 3/4 of 28, showing working.",
+     "a": "21",
+     "mins": 2,
+     "model": "28 ÷ 4 = 7.\n7 × 3 = 21."
+    }
+   ],
+   "independent": [
+    {
+     "q": "Assessment point 2 test (portal, secure mode, 30 minutes): Section A non-calculator 20 marks, Section B calculator 10 marks, on Spring 1 and Spring 2 work. Sample: (a) -5 + 12 (b) -3 × -7 (c) 3/8 + 1/4 (d) 2 1/3 + 1 3/4 (e) 35% of 80 (f) 3/5 of 45 (g) order 0.4, 3/8, 45% (h) 456 × 23",
+     "a": "Sample answers: (a) 7 (b) 21 (c) 5/8 (d) 4 1/12 (e) 28 (f) 27 (g) 3/8, 0.4, 45% (h) 10 488",
+     "mins": 30,
+     "model": "(c) 3/8 + 2/8 = 5/8.\n(d) 7/3 + 7/4 = 28/12 + 21/12 = 49/12 = 4 1/12.\n(e) 10% = 8, 5% = 4, 35% = 24 + 4 = 28.\n(g) 3/8 = 0.375, 45% = 0.45.\n(h) 456 × 20 = 9120, 456 × 3 = 1368, total 10 488."
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which question was hardest, and why?",
+     "a": "Personal reflection.",
+     "mins": 2
+    },
+    {
+     "q": "Big question: name the habit that earned you marks today.",
+     "a": "For example: writing each step of the fraction method.",
+     "mins": 1
+    }
+   ],
+   "homework": "No homework: rest well; feedback in the next lesson after the half term.",
+   "send": "Support: access arrangements as agreed (reader, extra time, larger font). EAL: glossary of key words allowed. Stretch: the final challenge question in the test.",
+   "resources": [
+    "Assessment point 2 maths test, Year 7 (portal quiz, secure mode, written for this assessment point)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "stopwatch",
+     "alt": "A stopwatch for timing",
+     "for": "keywords"
+    },
+    {
+     "find": "pencil and calculator on desk",
+     "alt": "A pencil and calculator",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 56,
+   "title": "Constructing triangles: two sides and the included angle (SAS)",
+   "duration": 50,
+   "bigQuestion": "If I tell you two sides and one angle, is there only one triangle you can draw?",
+   "objectives": [
+    "To understand how to construct a triangle accurately from two sides and the angle between them"
+   ],
+   "successCriteria": [
+    "All: draw a line of a given length to the nearest millimetre",
+    "Most: construct a triangle from two sides and the included angle (SAS)",
+    "Some: explain why two sides and an angle that is not between them may give two triangles"
+   ],
+   "crossCurricular": "Design and technology: accurate drawings are made before anything is built",
+   "smsc": "Moral: itqan (إِتْقَان), doing work carefully and well",
+   "keywords": [
+    {
+     "term": "construct",
+     "def": "draw accurately with a ruler, protractor or compasses"
+    },
+    {
+     "term": "included angle",
+     "def": "the angle between two given sides"
+    },
+    {
+     "term": "sketch",
+     "def": "a quick labelled drawing, not to scale"
+    },
+    {
+     "term": "accurate",
+     "def": "lengths within 1 mm and angles within 1°"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Two sides of a triangle are 6 cm and 4 cm. How many different triangles could you draw? What one extra fact would fix it?",
+    "a": "Infinitely many; the angle between the two sides fixes it."
+   },
+   "starter": [
+    {
+     "q": "The inside angle is 35°. The reflex angle?",
+     "a": "325°",
+     "mins": 1
+    },
+    {
+     "q": "Classify 95°",
+     "a": "obtuse",
+     "mins": 1
+    },
+    {
+     "q": "-12 ÷ 4",
+     "a": "-3",
+     "mins": 1
+    },
+    {
+     "q": "25% of 64",
+     "a": "16",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Sketch first",
+     "bullets": [
+      "Sketch and label the facts",
+      "Decide which side to draw first",
+      "Use a sharp pencil"
+     ],
+     "note": "A sketch avoids putting the angle at the wrong vertex."
+    },
+    {
+     "heading": "SAS model",
+     "bullets": [
+      "Side, angle, side"
+     ],
+     "note": "Pupils follow on paper as you draw.",
+     "model": {
+      "problem": "Construct triangle ABC with AB = 7 cm, angle A = 40° and AC = 5 cm.",
+      "steps": [
+       "Draw AB = 7 cm with a ruler",
+       "At A, measure 40° and draw a long faint line",
+       "Measure 5 cm along it from A and mark C",
+       "Join C to B"
+      ],
+      "answer": "Check: BC measures about 4.5 cm"
+     }
+    },
+    {
+     "heading": "Where is the angle?",
+     "bullets": [
+      "Between the two given sides"
+     ],
+     "note": "The included angle is at the vertex the two sides share.",
+     "misconception": {
+      "wrong": "Measure the angle at B when it is given at A",
+      "right": "The included angle is between the two given sides, at the vertex they share"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Triangle PQR has PQ = 6 cm and QR = 8 cm. Which angle is the included angle?",
+      "options": [
+       "angle P",
+       "angle Q",
+       "angle R"
+      ],
+      "answer": 1,
+      "why": "Q is the vertex shared by PQ and QR, so angle Q is between them. P and R are at the far ends."
+     }
+    },
+    {
+     "heading": "How accurate?",
+     "bullets": [
+      "Lengths within 1 mm",
+      "Angles within 1°",
+      "Leave construction lines showing"
+     ],
+     "note": "Exam markers check with a ruler and protractor."
+    }
+   ],
+   "practice": [
+    {
+     "q": "Construct triangle XYZ with XY = 6 cm, angle X = 70° and XZ = 6 cm. Measure YZ and angles Y and Z.",
+     "a": "YZ ≈ 6.9 cm; angles Y and Z are both 55°",
+     "mins": 3,
+     "model": "Draw XY = 6 cm, measure 70° at X, mark 6 cm along the arm, join to Y.\nXY = XZ, so the triangle is isosceles: (180 - 70) ÷ 2 = 55° each."
+    },
+    {
+     "q": "Construct triangle DEF with DE = 5 cm, angle E = 90° and EF = 12 cm. Measure DF.",
+     "a": "13 cm",
+     "mins": 3
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Construct each triangle and measure the third side: (a) AB = 8 cm, angle A = 60°, AC = 8 cm (b) PQ = 9 cm, angle P = 35°, PR = 6 cm (c) KL = 7.5 cm, angle K = 110°, KM = 4 cm",
+     "a": "(a) 8 cm (b) QR ≈ 5.3 cm (c) LM ≈ 9.6 cm (accept ± 2 mm)",
+     "mins": 7,
+     "model": "(a) Two 8 cm sides with 60° between them: the other angles are (180 - 60) ÷ 2 = 60° too.\nThe triangle is equilateral, so the third side is also 8 cm."
+    },
+    {
+     "q": "Extend: Construct a rhombus with sides of 5 cm and one angle of 50°. Measure the shorter diagonal.",
+     "a": "≈ 4.2 cm",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: AB = 7 cm, angle A = 40° and BC = 5 cm. Construct both possible triangles. Why are there two?",
+     "a": "An arc of 5 cm from B cuts the 40° line at A in two places, so C has two positions: the angle is not between the given sides.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which set of facts fixes exactly one triangle?",
+     "a": "B) two sides and the angle between them",
+     "mins": 1,
+     "options": [
+      "two sides only",
+      "two sides and the angle between them",
+      "three angles"
+     ]
+    },
+    {
+     "q": "How accurate must a constructed length be?",
+     "a": "within 1 mm",
+     "mins": 1
+    },
+    {
+     "q": "Big question: if I give you two sides and one angle, is there only one triangle?",
+     "a": "Yes, if the angle is between the two sides (SAS); otherwise there may be two.",
+     "mins": 2
+    }
+   ],
+   "homework": "Construct three SAS triangles from the portal sheet and measure the third side of each.",
+   "send": "Support: pre-drawn first side and a step card. EAL: 'construct', 'included', 'sketch'. Stretch: the ambiguous case in the stretch task.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.3 Drawing triangles accurately (Unit 8: Lines and angles)",
+    "Printable SAS construction sheet (portal worksheet for this lesson)",
+    "Geometry set: ruler, protractor, compasses and a sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "steel truss bridge triangles",
+     "alt": "A bridge built from triangles",
+     "for": "hook"
+    },
+    {
+     "find": "roof truss timber triangle",
+     "alt": "A timber roof truss",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 57,
+   "title": "Constructing triangles: two angles and the included side (ASA)",
+   "duration": 50,
+   "bigQuestion": "Why do two angles and one side fix a triangle, but three angles do not?",
+   "objectives": [
+    "To understand how to construct a triangle accurately from two angles and the side between them"
+   ],
+   "successCriteria": [
+    "All: construct a triangle from two angles and the included side (ASA)",
+    "Most: calculate the third angle and check it by measuring",
+    "Some: explain why three angles alone give triangles of any size"
+   ],
+   "crossCurricular": "Geography: map makers used triangulation, measuring one baseline and many angles",
+   "smsc": "Social: shared, exact methods mean anyone can check a drawing",
+   "keywords": [
+    {
+     "term": "included side",
+     "def": "the side between the two given angles"
+    },
+    {
+     "term": "angle sum",
+     "def": "the angles in a triangle add up to 180°"
+    },
+    {
+     "term": "similar",
+     "def": "the same shape but a different size"
+    },
+    {
+     "term": "arm",
+     "def": "one of the two lines that make an angle"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Can two triangles have exactly the same three angles but be different sizes?",
+    "a": "Yes: they are similar; angles alone do not fix the size."
+   },
+   "starter": [
+    {
+     "q": "The included angle between AB and BC",
+     "a": "angle B",
+     "mins": 1
+    },
+    {
+     "q": "Inside angle 64°: the reflex angle?",
+     "a": "296°",
+     "mins": 1
+    },
+    {
+     "q": "180 - 47 - 68",
+     "a": "65",
+     "mins": 1
+    },
+    {
+     "q": "Write 3/20 as a percentage",
+     "a": "15%",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "ASA model",
+     "bullets": [
+      "Angle, side, angle"
+     ],
+     "note": "Both angles open towards the same side of the line.",
+     "model": {
+      "problem": "Construct triangle ABC with AB = 6 cm, angle A = 50° and angle B = 70°.",
+      "steps": [
+       "Draw AB = 6 cm",
+       "At A, draw a long faint line at 50°",
+       "At B, draw a long faint line at 70° on the same side",
+       "The lines cross at C: label it"
+      ],
+      "answer": "Check: angle C = 180 - 50 - 70 = 60°"
+     }
+    },
+    {
+     "heading": "Three angles are not enough",
+     "bullets": [
+      "Same angles, different size"
+     ],
+     "note": "Draw both on screen.",
+     "compare": {
+      "left": {
+       "title": "Triangle 1",
+       "points": [
+        "angles 50°, 70°, 60°",
+        "AB = 6 cm"
+       ]
+      },
+      "right": {
+       "title": "Triangle 2",
+       "points": [
+        "angles 50°, 70°, 60°",
+        "AB = 9 cm"
+       ]
+      },
+      "label": "similar"
+     }
+    },
+    {
+     "heading": "Same side",
+     "bullets": [
+      "Both arms point the same way"
+     ],
+     "note": "Otherwise the lines go apart.",
+     "misconception": {
+      "wrong": "Draw angle B below the line and angle A above it",
+      "right": "Both angles open towards the same side of AB, or the arms never meet"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Angles of 100° and 90° are given at the two ends of a side. What happens?",
+      "options": [
+       "a long thin triangle",
+       "the arms never meet: no triangle",
+       "a right-angled triangle"
+      ],
+      "answer": 1,
+      "why": "100 + 90 = 190, more than 180°, so the arms move apart. Two angles must add up to less than 180°."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Construct triangle PQR with PQ = 7 cm, angle P = 45° and angle Q = 45°. Find angle R and measure PR.",
+     "a": "R = 90°; PR ≈ 4.9 to 5.0 cm",
+     "mins": 3,
+     "model": "180 - 45 - 45 = 90, so R is a right angle.\nThe base angles are equal, so PR = QR: measure about 4.9 cm."
+    },
+    {
+     "q": "Angles of 35° and 120° are at the ends of a 5 cm side. Find the third angle.",
+     "a": "25°",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Calculate the third angle, then construct and measure the other two sides: (a) AB = 8 cm, angle A = 30°, angle B = 60° (b) XY = 5.5 cm, angle X = 75°, angle Y = 75° (c) DE = 6 cm, angle D = 110°, angle E = 40°",
+     "a": "(a) C = 90°; AC ≈ 6.9 cm, BC = 4.0 cm (b) Z = 30°; XZ = YZ ≈ 10.6 cm (c) F = 30°; DF ≈ 7.7 cm, EF ≈ 11.3 cm (accept ± 2 mm)",
+     "mins": 8,
+     "model": "(a) 180 - 30 - 60 = 90, so angle C = 90°.\nDraw AB = 8 cm, 30° at A and 60° at B on the same side; they meet at C.\nBC measures 4 cm: half of AB, as in every 30°, 60°, 90° triangle."
+    },
+    {
+     "q": "Extend: Explain why angles of 95° and 85° cannot be the two angles at the ends of a side.",
+     "a": "95 + 85 = 180, so the arms are parallel and never meet.",
+     "mins": 2
+    },
+    {
+     "q": "Stretch: AB = 6 cm, angle A = 40° and angle C = 80°, where C is not on AB. How can you still construct it?",
+     "a": "Angle B = 180 - 40 - 80 = 60°; then use ASA with AB, angle A = 40° and angle B = 60°.",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Two angles at the ends of a side are 60° and 50°. The third angle is:",
+     "a": "A) 70°",
+     "mins": 1,
+     "options": [
+      "70°",
+      "110°",
+      "90°"
+     ]
+    },
+    {
+     "q": "Name the side between angles P and Q.",
+     "a": "PQ",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do two angles and a side fix a triangle, but three angles do not?",
+     "a": "Two angles and the side between them fix where the third vertex is; three angles fix only the shape, so the size can change.",
+     "mins": 2
+    }
+   ],
+   "homework": "Construct three ASA triangles from the portal sheet; calculate and then measure the third angle of each.",
+   "send": "Support: a step card and a pre-drawn first side. EAL: 'included side', 'similar', 'arm'. Stretch: AAS problems where the side is not included.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.3 Drawing triangles accurately (Unit 8: Lines and angles)",
+    "Printable ASA construction sheet (portal worksheet for this lesson)",
+    "Geometry set: ruler, protractor, compasses and a sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "triangulation pillar trig point",
+     "alt": "A triangulation pillar used for map making",
+     "for": "hook"
+    },
+    {
+     "find": "set square 45 degree",
+     "alt": "A 45° set square",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 58,
+   "title": "Constructing triangles with compasses: three sides (SSS)",
+   "duration": 50,
+   "bigQuestion": "How can compasses find a point that is exactly 5 cm from one place and 4 cm from another?",
+   "objectives": [
+    "To understand how to construct a triangle from three sides using a ruler and compasses"
+   ],
+   "successCriteria": [
+    "All: set compasses to a given radius and draw an arc",
+    "Most: construct a triangle from three sides (SSS), leaving the arcs visible",
+    "Some: decide whether three lengths can make a triangle and explain why"
+   ],
+   "crossCurricular": "Design and technology: a triangle with fixed sides cannot change shape, so frames use triangles",
+   "smsc": "Moral: itqan (إِتْقَان): neat, exact work that others can check",
+   "keywords": [
+    {
+     "term": "compasses",
+     "def": "a tool for drawing circles and arcs"
+    },
+    {
+     "term": "arc",
+     "def": "part of a circle"
+    },
+    {
+     "term": "radius",
+     "def": "the distance from the centre of a circle to its edge"
+    },
+    {
+     "term": "triangle inequality",
+     "def": "the two shorter sides must add up to more than the longest side"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Can you make a triangle from sticks of 3 cm, 4 cm and 8 cm? What about 3 cm, 5 cm and 8 cm?",
+    "a": "No to both: 3 + 4 < 8, and 3 + 5 = 8 lies flat."
+   },
+   "starter": [
+    {
+     "q": "The angle sum of a triangle",
+     "a": "180°",
+     "mins": 1
+    },
+    {
+     "q": "Third angle when two are 52° and 77°",
+     "a": "51°",
+     "mins": 1
+    },
+    {
+     "q": "-6 - (-9)",
+     "a": "3",
+     "mins": 1
+    },
+    {
+     "q": "1/4 + 3/8",
+     "a": "5/8",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "SSS model",
+     "bullets": [
+      "Longest side first",
+      "Two arcs",
+      "Leave the arcs"
+     ],
+     "note": "Pupils draw along with you.",
+     "model": {
+      "problem": "Construct triangle ABC with AB = 6 cm, BC = 5 cm and AC = 4 cm.",
+      "steps": [
+       "Draw AB = 6 cm",
+       "Set compasses to 4 cm: arc from A",
+       "Set compasses to 5 cm: arc from B",
+       "Join A and B to the crossing point C"
+      ],
+      "answer": "Measure each side to check"
+     }
+    },
+    {
+     "heading": "Why the arcs work",
+     "bullets": [
+      "Every point on the 4 cm arc is 4 cm from A",
+      "Every point on the 5 cm arc is 5 cm from B",
+      "The crossing point is both"
+     ],
+     "note": "This answers the big question."
+    },
+    {
+     "heading": "Can it be a triangle?",
+     "bullets": [
+      "Two shorter sides must beat the longest"
+     ],
+     "note": "Pupils sort, then we check.",
+     "sort": {
+      "columns": [
+       "Makes a triangle",
+       "Does not"
+      ],
+      "cards": [
+       "3, 4, 5",
+       "2, 3, 6",
+       "5, 5, 9",
+       "4, 4, 8",
+       "6, 7, 12",
+       "1, 10, 10"
+      ],
+      "answer": [
+       0,
+       1,
+       0,
+       1,
+       0,
+       0
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which lengths make a triangle?",
+      "options": [
+       "2 cm, 3 cm, 7 cm",
+       "4 cm, 5 cm, 10 cm",
+       "5 cm, 6 cm, 10 cm",
+       "3 cm, 3 cm, 6 cm"
+      ],
+      "answer": 2,
+      "why": "5 + 6 = 11, more than 10. In the others the two shorter sides add up to less than, or exactly, the longest side."
+     }
+    },
+    {
+     "heading": "Keep the arcs",
+     "bullets": [
+      "Arcs are the evidence"
+     ],
+     "note": "In an exam, rubbed-out arcs lose the construction marks.",
+     "misconception": {
+      "wrong": "Rub out the arcs to make it neat",
+      "right": "Leave the arcs: they show it was constructed, not guessed"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Construct an equilateral triangle with sides of 7 cm.",
+     "a": "Each angle measures 60°",
+     "mins": 2,
+     "model": "Draw 7 cm. Keep the compasses at 7 cm and draw an arc from each end.\nJoin both ends to the crossing point: all sides 7 cm, so all angles 60°."
+    },
+    {
+     "q": "Construct triangle PQR with PQ = 8 cm, QR = 6 cm and PR = 10 cm. Measure the largest angle.",
+     "a": "90°, at Q",
+     "mins": 3
+    },
+    {
+     "q": "Can 2.5 cm, 3.5 cm and 6 cm make a triangle?",
+     "a": "No: 2.5 + 3.5 = 6, so it would lie flat.",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Construct each triangle with ruler and compasses, leaving the arcs, and measure the largest angle: (a) 5 cm, 5 cm, 5 cm (b) 7 cm, 4 cm, 5 cm (c) 9 cm, 6 cm, 6 cm",
+     "a": "(a) 60° (b) about 101° to 102° (c) about 97°",
+     "mins": 7,
+     "model": "(b) Draw the longest side, 7 cm, first.\nArc of 4 cm from one end, arc of 5 cm from the other; join both ends to the crossing.\nThe largest angle is opposite the 7 cm side."
+    },
+    {
+     "q": "Extend: Construct a kite with sides 5 cm, 5 cm, 8 cm and 8 cm whose short diagonal is 6 cm.",
+     "a": "Draw the 6 cm diagonal; arcs of 5 cm from both ends on one side and 8 cm from both ends on the other; join.",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A triangle has sides of 4 cm, 9 cm and x cm, where x is a whole number. List every possible value of x.",
+     "a": "6, 7, 8, 9, 10, 11, 12 (x must be more than 5 and less than 13)",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Can 3 cm, 4 cm and 9 cm make a triangle?",
+     "a": "B) No",
+     "mins": 1,
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    {
+     "q": "To draw a side of 6 cm with an arc, set the compasses to:",
+     "a": "6 cm",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can compasses find a point 5 cm from one place and 4 cm from another?",
+     "a": "Draw an arc of radius 5 cm from the first and 4 cm from the second: where they cross is the point.",
+     "mins": 2
+    }
+   ],
+   "homework": "SSS construction sheet: three triangles with arcs left visible; photograph and upload to the portal.",
+   "send": "Support: compasses already set for the first arc; a step card. EAL: 'arc', 'radius', 'compasses'. Stretch: the triangle inequality with algebra.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 5.3 Constructing triangles (Unit 5: Constructions)",
+    "Printable SSS construction sheet (portal worksheet for this lesson)",
+    "Geometry set: ruler, protractor, compasses and a sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "drawing compass",
+     "alt": "A pair of compasses",
+     "for": "keywords"
+    },
+    {
+     "find": "geodesic dome triangles",
+     "alt": "A dome made of triangles",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 59,
+   "title": "Constructing the perpendicular bisector of a line segment",
+   "duration": 50,
+   "bigQuestion": "How can you find the exact middle of a line without measuring?",
+   "objectives": [
+    "To understand how to construct a perpendicular bisector with compasses and why it works"
+   ],
+   "successCriteria": [
+    "All: construct the perpendicular bisector of a line segment, leaving the arcs",
+    "Most: check that it meets the segment at the midpoint at 90°",
+    "Some: explain why every point on it is the same distance from both ends"
+   ],
+   "smsc": "Moral: 'adl (عَدْل), fairness: the perpendicular bisector marks the places that are fair to both sides",
+   "keywords": [
+    {
+     "term": "bisect",
+     "def": "cut into two equal parts"
+    },
+    {
+     "term": "perpendicular bisector",
+     "def": "the line that cuts a segment in half at right angles"
+    },
+    {
+     "term": "midpoint",
+     "def": "the point exactly halfway along a line segment"
+    },
+    {
+     "term": "equidistant",
+     "def": "the same distance from two or more places"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Two wells are 8 km apart. Where could you stand to be exactly the same distance from both? Is there more than one place?",
+    "a": "Anywhere on the perpendicular bisector of the line joining them: a whole line of places."
+   },
+   "starter": [
+    {
+     "q": "Can 4 cm, 5 cm and 10 cm make a triangle?",
+     "a": "No",
+     "mins": 1
+    },
+    {
+     "q": "The angle sum of a triangle",
+     "a": "180°",
+     "mins": 1
+    },
+    {
+     "q": "Half of 9.4 cm",
+     "a": "4.7 cm",
+     "mins": 1
+    },
+    {
+     "q": "Classify 90°",
+     "a": "right angle",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The construction",
+     "bullets": [
+      "Compasses more than half the line",
+      "Same radius from both ends"
+     ],
+     "note": "Model live; pupils follow.",
+     "model": {
+      "problem": "Construct the perpendicular bisector of AB = 8 cm.",
+      "steps": [
+       "Open the compasses to more than half of AB, for example 5 cm",
+       "Draw arcs above and below the line from A",
+       "Keep the radius: arcs above and below from B",
+       "Join the two crossing points with a ruler"
+      ],
+      "answer": "It crosses AB at the midpoint, 4 cm from each end, at 90°"
+     }
+    },
+    {
+     "heading": "Why it works",
+     "bullets": [
+      "Each crossing point is 5 cm from A and from B",
+      "The four arcs make a rhombus",
+      "A rhombus's diagonals cross at right angles and bisect each other"
+     ],
+     "note": "The perpendicular bisector is every point equidistant from A and B."
+    },
+    {
+     "heading": "Same radius",
+     "bullets": [
+      "Do not change the compasses"
+     ],
+     "note": "A changed radius gives a line that misses the midpoint.",
+     "misconception": {
+      "wrong": "Change the compass width between A and B",
+      "right": "Use the same radius from both ends, or the line misses the midpoint"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Compasses are set to 3 cm for a 10 cm line. What happens?",
+      "options": [
+       "the arcs do not meet",
+       "the bisector is not perpendicular",
+       "it works fine"
+      ],
+      "answer": 0,
+      "why": "3 + 3 = 6, less than 10, so the arcs cannot reach each other. Use more than half the line: more than 5 cm."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Construct the perpendicular bisector of a 6 cm line. Measure each half and the angle.",
+     "a": "3 cm each, meeting at 90°",
+     "mins": 3,
+     "model": "Compasses at about 4 cm; arcs from both ends above and below; join the crossings.\nMeasure 3 cm and 3 cm and check 90° with a protractor."
+    },
+    {
+     "q": "Point P is on the perpendicular bisector of CD and PC = 7 cm. Find PD.",
+     "a": "7 cm",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Draw AB = 10 cm and construct its perpendicular bisector. (b) Mark the midpoint M and measure AM. (c) Mark any point P on the bisector; measure PA and PB. (d) Draw any triangle and construct the perpendicular bisectors of two of its sides.",
+     "a": "(a) arcs visible (b) AM = 5 cm (c) PA = PB (d) the bisectors cross at a point the same distance from all three vertices",
+     "mins": 8,
+     "model": "(a) Compasses at 6 cm. Arcs from A and from B, above and below; join the two crossings with a ruler."
+    },
+    {
+     "q": "Extend: Two villages A and B are 6 km apart (1 cm = 1 km). A well must be the same distance from both and 5 km from A. Construct its possible positions.",
+     "a": "Construct the perpendicular bisector of AB; an arc of 5 cm from A cuts it in two places, each 4 km from the midpoint.",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Explain why the three perpendicular bisectors of a triangle meet at one point.",
+     "a": "Where two meet, the point is equidistant from all three vertices, so it must also lie on the third bisector.",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "The perpendicular bisector of AB crosses AB at:",
+     "a": "B) the midpoint",
+     "mins": 1,
+     "options": [
+      "A",
+      "the midpoint",
+      "B"
+     ]
+    },
+    {
+     "q": "Q is on the perpendicular bisector of EF and QE = 4.5 cm. Find QF.",
+     "a": "4.5 cm",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can you find the exact middle of a line without measuring?",
+     "a": "Construct the perpendicular bisector with equal arcs from both ends: it crosses at the midpoint.",
+     "mins": 2
+    }
+   ],
+   "homework": "Perpendicular bisector sheet: three lines and one map problem (portal homework).",
+   "send": "Support: compasses pre-set and arcs started on the sheet. EAL: 'bisect', 'midpoint', 'equidistant'. Stretch: the circumcentre of a triangle.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 5.2 Basic constructions (Unit 5: Constructions)",
+    "Printable construction sheet: bisectors (portal worksheet for this lesson)",
+    "Geometry set: ruler, protractor, compasses and a sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "stone water well",
+     "alt": "A stone well",
+     "for": "hook"
+    },
+    {
+     "find": "perpendicular bisector construction",
+     "alt": "A perpendicular bisector drawn with compasses",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 60,
+   "title": "Constructing an angle bisector",
+   "duration": 50,
+   "bigQuestion": "How can you split any angle exactly in half without a protractor?",
+   "objectives": [
+    "To understand how to bisect an angle with compasses and why the construction works"
+   ],
+   "successCriteria": [
+    "All: construct the bisector of an angle, leaving the arcs",
+    "Most: check with a protractor that both halves are equal",
+    "Some: construct angles of 60°, 30° and 45° without a protractor"
+   ],
+   "crossCurricular": "Art: Islamic geometric patterns are built from compass and straight-edge constructions",
+   "smsc": "Cultural: the geometric art of mosques and palaces across the Muslim world",
+   "keywords": [
+    {
+     "term": "angle bisector",
+     "def": "a line that cuts an angle into two equal angles"
+    },
+    {
+     "term": "arc",
+     "def": "part of a circle"
+    },
+    {
+     "term": "construct",
+     "def": "draw accurately with compasses and a ruler"
+    },
+    {
+     "term": "equilateral",
+     "def": "with all sides equal and all angles 60°"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "You have compasses and a ruler but no protractor. How could you draw an angle of exactly 30°?",
+    "a": "Construct an equilateral triangle for 60°, then bisect that angle."
+   },
+   "starter": [
+    {
+     "q": "P is on the perpendicular bisector of AB and PA = 6 cm. PB?",
+     "a": "6 cm",
+     "mins": 1
+    },
+    {
+     "q": "Half of 74°",
+     "a": "37°",
+     "mins": 1
+    },
+    {
+     "q": "Angles in an equilateral triangle",
+     "a": "60° each",
+     "mins": 1
+    },
+    {
+     "q": "180 - 2 × 35",
+     "a": "110",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Bisecting an angle",
+     "bullets": [
+      "Arc from the vertex first",
+      "Then equal arcs from the arms"
+     ],
+     "note": "Model with a 70° angle.",
+     "model": {
+      "problem": "Bisect angle ABC = 70°.",
+      "steps": [
+       "Arc from B cutting both arms at P and Q",
+       "Same radius: arcs from P and from Q crossing inside the angle",
+       "Join B to the crossing point"
+      ],
+      "answer": "Two angles of 35°: check with a protractor"
+     }
+    },
+    {
+     "heading": "Why it works",
+     "bullets": [
+      "BP = BQ, and the two small arcs are equal",
+      "So two congruent triangles share the bisector",
+      "Their angles at B are equal"
+     ],
+     "note": "Congruent: identical in shape and size."
+    },
+    {
+     "heading": "Special angles",
+     "bullets": [
+      "Build angles from constructions"
+     ],
+     "note": "Pupils copy the table.",
+     "table": {
+      "head": [
+       "Construct",
+       "Then",
+       "Angle"
+      ],
+      "rows": [
+       [
+        "equilateral triangle",
+        "nothing",
+        "60°"
+       ],
+       [
+        "60°",
+        "bisect",
+        "30°"
+       ],
+       [
+        "perpendicular",
+        "nothing",
+        "90°"
+       ],
+       [
+        "90°",
+        "bisect",
+        "45°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Bisecting a reflex angle of 240° gives:",
+      "options": [
+       "120°",
+       "60°",
+       "240°",
+       "100°"
+      ],
+      "answer": 0,
+      "why": "Half of 240 is 120. 60° would come from bisecting the 120° angle on the other side."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Draw an angle of 80° and bisect it with compasses.",
+     "a": "Two angles of 40°",
+     "mins": 3,
+     "model": "Arc from the vertex across both arms.\nEqual arcs from the two crossing points; join the vertex to where they meet.\nCheck: 40° each."
+    },
+    {
+     "q": "Construct an angle of 60° with compasses and a ruler.",
+     "a": "Arc from the vertex; same radius from where it cuts the line; join the vertex to the crossing.",
+     "mins": 2
+    },
+    {
+     "q": "Which construction gives 45°?",
+     "a": "Construct 90° (a perpendicular), then bisect it.",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Draw angles of 50°, 130° and 90° and bisect each. (b) Construct an angle of 30° without a protractor. (c) Measure your halves and record any error.",
+     "a": "(a) 25°, 65°, 45° (b) construct 60°, then bisect (c) within 1° is accurate",
+     "mins": 8,
+     "model": "(a) For 130°: arc from the vertex across both arms; equal arcs from those points; join the vertex to the crossing; measure 65° each."
+    },
+    {
+     "q": "Extend: Construct an angle of 15° with compasses and a ruler only.",
+     "a": "Construct 60°, bisect to 30°, bisect again to 15°.",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Construct triangle ABC with AB = 7 cm, BC = 6 cm and AC = 5 cm. Bisect all three angles. What do you notice?",
+     "a": "The three bisectors meet at one point: the centre of the circle that touches all three sides.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Bisecting a 90° angle gives:",
+     "a": "B) 45°",
+     "mins": 1,
+     "options": [
+      "30°",
+      "45°",
+      "60°"
+     ]
+    },
+    {
+     "q": "Which angle do you bisect to get 30°?",
+     "a": "60°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can you halve any angle without a protractor?",
+     "a": "Equal arcs from the vertex, then from the arms; the line to the crossing splits it exactly in half.",
+     "mins": 2
+    }
+   ],
+   "homework": "Angle bisector sheet: bisect four angles and construct 30° and 45° (portal homework).",
+   "send": "Support: angles pre-drawn with the first arc started. EAL: 'bisector', 'congruent'. Stretch: construct 75° (45° + 30°).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 5.2 Basic constructions and 5.3 Constructing triangles (Unit 5: Constructions)",
+    "Printable construction sheet: angle bisectors (portal worksheet for this lesson)",
+    "Geometry set: ruler, protractor, compasses and a sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Islamic geometric pattern tiles",
+     "alt": "Islamic geometric tilework",
+     "for": "hook"
+    },
+    {
+     "find": "angle bisector construction compass",
+     "alt": "An angle bisected with compasses",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 61,
+   "title": "Constructing perpendiculars and shortest distances",
+   "duration": 50,
+   "bigQuestion": "What is the shortest path from a point to a straight road?",
+   "objectives": [
+    "To understand how to construct perpendiculars from a point and at a point, and use them to find shortest distances"
+   ],
+   "successCriteria": [
+    "All: construct the perpendicular at a point on a line",
+    "Most: construct the perpendicular from a point to a line",
+    "Some: use the perpendicular to find and justify the shortest distance from a point to a line"
+   ],
+   "smsc": "Moral: itqan (إِتْقَان): accurate constructions, not guesses by eye",
+   "keywords": [
+    {
+     "term": "perpendicular",
+     "def": "at right angles (90°) to a line"
+    },
+    {
+     "term": "shortest distance",
+     "def": "the distance along the perpendicular from a point to a line"
+    },
+    {
+     "term": "foot of the perpendicular",
+     "def": "where the perpendicular meets the line"
+    },
+    {
+     "term": "hypotenuse",
+     "def": "the longest side of a right-angled triangle"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A house stands beside a straight road. Which path to the road is shortest? How could you prove it?",
+    "a": "The path that meets the road at 90°: any slanted path is the hypotenuse of a right-angled triangle, so it is longer."
+   },
+   "starter": [
+    {
+     "q": "Half of 90°",
+     "a": "45°",
+     "mins": 1
+    },
+    {
+     "q": "To construct 30°, bisect which angle?",
+     "a": "60°",
+     "mins": 1
+    },
+    {
+     "q": "PA = PB means P is on the...",
+     "a": "perpendicular bisector of AB",
+     "mins": 1
+    },
+    {
+     "q": "Is 7² + 24² = 25²?",
+     "a": "Yes: 49 + 576 = 625",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "From a point to a line",
+     "bullets": [
+      "One arc from P cuts the line twice"
+     ],
+     "note": "Model live.",
+     "model": {
+      "problem": "Construct the perpendicular from point P to line l.",
+      "steps": [
+       "Arc from P cutting l at A and B",
+       "Same radius: arcs from A and B on the other side of l",
+       "Join P to the crossing point"
+      ],
+      "answer": "The line meets l at 90°"
+     }
+    },
+    {
+     "heading": "At a point on a line",
+     "bullets": [
+      "Equal arcs either side of Q"
+     ],
+     "note": "Used to make right angles in squares and rectangles.",
+     "model": {
+      "problem": "Construct a right angle at point Q on a line.",
+      "steps": [
+       "Arcs from Q cut the line at A and B, so QA = QB",
+       "Wider radius: arcs from A and B crossing above Q",
+       "Join Q to the crossing"
+      ],
+      "answer": "A 90° angle at Q"
+     }
+    },
+    {
+     "heading": "Shortest distance",
+     "bullets": [
+      "Measure along the perpendicular",
+      "Any slanted path is longer",
+      "It is the hypotenuse of a right-angled triangle"
+     ],
+     "note": "Link to the height of a triangle."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A point is 4 cm from a line, measured along the perpendicular. A slanted path from the point to the line could be:",
+      "options": [
+       "3 cm",
+       "4 cm",
+       "5 cm"
+      ],
+      "answer": 2,
+      "why": "Any other path is longer than the perpendicular, so it must be more than 4 cm. 3 cm is impossible; 4 cm is the perpendicular itself."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Draw a line and a point P 5 cm above it. Construct the perpendicular from P and measure the shortest distance.",
+     "a": "5 cm",
+     "mins": 3,
+     "model": "Arc from P cutting the line twice.\nEqual arcs from those points below the line; join P to the crossing.\nMeasure from P to the foot: 5 cm."
+    },
+    {
+     "q": "Construct a right angle at the 3 cm mark of a 10 cm line.",
+     "a": "Perpendicular at a point on the line",
+     "mins": 2
+    },
+    {
+     "q": "Why is the height of a triangle measured along a perpendicular?",
+     "a": "Height is the shortest distance from the vertex to the base, which is along the perpendicular.",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Construct a square of side 5 cm using perpendiculars (no protractor). (b) Draw triangle ABC with AB = 8 cm, AC = 6 cm, BC = 7 cm and construct the perpendicular from C to AB. Measure the height. (c) Work out the area: ½ × 8 × height.",
+     "a": "(a) right angles at the corners, sides 5 cm (b) height ≈ 5.1 cm (c) area ≈ 20.3 cm² (accept 20 to 21 cm²)",
+     "mins": 8,
+     "model": "(a) Draw 5 cm. Construct a perpendicular at each end.\nMeasure 5 cm up each one and join the tops."
+    },
+    {
+     "q": "Extend: A ship S is 6 km from a straight coastline (scale 1 cm = 1 km). Construct the point on the coast closest to the ship.",
+     "a": "The foot of the perpendicular from S to the coastline, 6 cm from S on the drawing.",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Explain why the perpendicular from the top of an isosceles triangle cuts the base in half.",
+     "a": "It makes two right-angled triangles with equal hypotenuses and a shared side, so by Pythagoras their bases are equal.",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "The shortest distance from a point to a line is:",
+     "a": "B) along the perpendicular",
+     "mins": 1,
+     "options": [
+      "along any straight path",
+      "along the perpendicular",
+      "along a curve"
+     ]
+    },
+    {
+     "q": "What angle does a constructed perpendicular make with the line?",
+     "a": "90°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what is the shortest path from a point to a straight road?",
+     "a": "The perpendicular: the path that meets the road at 90°.",
+     "mins": 2
+    }
+   ],
+   "homework": "Perpendiculars sheet: two constructions and one shortest-distance map problem (portal homework).",
+   "send": "Support: point and line pre-drawn; step card. EAL: 'perpendicular', 'foot', 'shortest'. Stretch: prove the perpendicular is shortest with Pythagoras.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 5.2 Basic constructions (Unit 5: Constructions)",
+    "Printable construction sheet: perpendiculars (portal worksheet for this lesson)",
+    "Geometry set: ruler, protractor, compasses and a sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "straight country road aerial",
+     "alt": "A straight road from above",
+     "for": "hook"
+    },
+    {
+     "find": "carpenter's square tool",
+     "alt": "A carpenter's square for right angles",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 62,
+   "title": "Constructions in Islamic geometric patterns",
+   "duration": 50,
+   "bigQuestion": "How did craftsmen build intricate patterns with only compasses and a straight edge?",
+   "objectives": [
+    "To understand how compass constructions create regular hexagons, stars and Islamic geometric patterns"
+   ],
+   "successCriteria": [
+    "All: construct a regular hexagon inside a circle using the radius",
+    "Most: construct a six-point star and divide a circle into twelve equal parts",
+    "Some: explain with angles why the radius steps round a circle exactly six times"
+   ],
+   "crossCurricular": "Art: Islamic geometric design (girih and zellige tilework)",
+   "smsc": "Cultural: the geometric art of mosques from Córdoba to Isfahan",
+   "keywords": [
+    {
+     "term": "regular hexagon",
+     "def": "a six-sided shape with all sides and angles equal"
+    },
+    {
+     "term": "radius",
+     "def": "the distance from the centre of a circle to its edge"
+    },
+    {
+     "term": "rotational symmetry",
+     "def": "a shape looks the same after a turn of less than 360°"
+    },
+    {
+     "term": "tessellate",
+     "def": "fit together with no gaps or overlaps"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Mosque tiles often show six-point and twelve-point stars. How could a craftsman draw a perfect star with only compasses and a ruler?",
+    "a": "Step the radius round a circle six times to make a hexagon, then join alternate points."
+   },
+   "starter": [
+    {
+     "q": "To construct 30°, bisect:",
+     "a": "60°",
+     "mins": 1
+    },
+    {
+     "q": "Angles in an equilateral triangle",
+     "a": "60° each",
+     "mins": 1
+    },
+    {
+     "q": "360 ÷ 6",
+     "a": "60",
+     "mins": 1
+    },
+    {
+     "q": "Interior angle of a square",
+     "a": "90°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Hexagon in a circle",
+     "bullets": [
+      "Keep the same radius all the way round"
+     ],
+     "note": "Model on paper under the visualiser.",
+     "model": {
+      "problem": "Construct a regular hexagon in a circle of radius 4 cm.",
+      "steps": [
+       "Draw a circle of radius 4 cm and mark a point on it",
+       "Keep the radius: step round the circle, marking 6 points",
+       "Join neighbouring points with a ruler"
+      ],
+      "answer": "Six sides of 4 cm"
+     }
+    },
+    {
+     "heading": "Why six fit",
+     "bullets": [
+      "Each triangle from the centre has three 4 cm sides",
+      "So each is equilateral: 60° at the centre",
+      "6 × 60° = 360°"
+     ],
+     "note": "This answers the big question."
+    },
+    {
+     "heading": "From hexagon to star",
+     "bullets": [
+      "Every step is a construction"
+     ],
+     "note": "Pupils follow the cycle on the pattern sheet.",
+     "cycle": [
+      "Join alternate points: a triangle",
+      "Join the other three: a six-point star",
+      "Bisect the 60° angles: twelve points",
+      "Repeat the unit to tessellate"
+     ]
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A hexagon is made by stepping a radius of 5 cm round a circle. Each side is:",
+      "options": [
+       "5 cm",
+       "10 cm",
+       "2.5 cm",
+       "6 cm"
+      ],
+      "answer": 0,
+      "why": "Each side equals the radius, because the six triangles from the centre are equilateral. 10 cm is the diameter."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Construct a regular hexagon with sides of 5 cm.",
+     "a": "Circle of radius 5 cm; step 6 points round it; join them",
+     "mins": 3,
+     "model": "Draw a circle of radius 5 cm.\nKeep the compasses at 5 cm and step round, marking six points.\nJoin neighbouring points with a ruler."
+    },
+    {
+     "q": "Two 60° angles meet at each corner of the hexagon. What is its interior angle?",
+     "a": "120°",
+     "mins": 1
+    },
+    {
+     "q": "Join alternate vertices of the hexagon. What shape do you get?",
+     "a": "An equilateral triangle",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core (pattern sheet, printable or on a drawing tablet): (a) construct a regular hexagon in a circle of radius 5 cm (b) draw the six-point star (c) shade it in two colours to keep its symmetry and write its order of rotational symmetry.",
+     "a": "(a) sides of 5 cm (b) two overlapping equilateral triangles (c) order 6",
+     "mins": 12,
+     "model": "(a) Mark one point on the circle; keep the compasses at 5 cm and step round; join neighbouring points.\n(b) Join alternate points to make one triangle, then the other three."
+    },
+    {
+     "q": "Extend: Bisect the angles at the centre to make 12 equal parts. What angle is each part?",
+     "a": "30°",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Regular hexagons tessellate. Use angles to explain why.",
+     "a": "Each interior angle is 120°, and three meet at a point: 3 × 120° = 360°.",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "The side of a hexagon drawn this way equals the:",
+     "a": "B) radius",
+     "mins": 1,
+     "options": [
+      "diameter",
+      "radius",
+      "circumference"
+     ]
+    },
+    {
+     "q": "Order of rotational symmetry of a six-point star",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how did craftsmen build these patterns with only compasses and a straight edge?",
+     "a": "Stepping the radius round a circle makes six equal parts; joining and bisecting builds hexagons, stars and twelve-fold patterns.",
+     "mins": 2
+    }
+   ],
+   "homework": "Design your own tile from a hexagon or a twelve-part circle (construction lines left visible) and upload a photo to the portal.",
+   "send": "Support: circle and centre pre-drawn on the pattern sheet. EAL: 'hexagon', 'radius', 'tessellate'. Stretch: construct a twelve-point star.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 5.2 Basic constructions (Unit 5: Constructions)",
+    "Printable Islamic pattern construction sheet (portal worksheet for this lesson; usable on a drawing tablet)",
+    "Geometry set: ruler, protractor, compasses and a sharp pencil",
+    "Two coloured pencils",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Islamic geometric pattern star tiles",
+     "alt": "Star patterns in Islamic tilework",
+     "for": "hook"
+    },
+    {
+     "find": "zellige tilework Morocco",
+     "alt": "Zellige tiles built from geometric shapes",
+     "for": "teach:3"
+    },
+    {
+     "find": "hexagon construction in circle compass",
+     "alt": "A hexagon constructed in a circle",
+     "for": "teach:1"
+    }
+   ],
+   "islamicLink": {
+    "text": "Mosque decoration traditionally uses geometric and plant patterns rather than pictures of people or animals. Muslim craftsmen built these patterns from simple compass and straight-edge constructions, showing itqan (إِتْقَان): doing work with excellence.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 63,
+   "title": "Angles on a straight line and at a point",
+   "duration": 50,
+   "bigQuestion": "Why must angles on a straight line always add up to 180°?",
+   "objectives": [
+    "To understand how to use the facts about angles on a straight line and around a point to find missing angles"
+   ],
+   "successCriteria": [
+    "All: find a missing angle on a straight line",
+    "Most: find a missing angle around a point",
+    "Some: form and solve an equation from angle facts, giving reasons"
+   ],
+   "smsc": "Social: giving reasons lets others follow and check our thinking",
+   "keywords": [
+    {
+     "term": "angles on a straight line",
+     "def": "add up to 180°: half a full turn"
+    },
+    {
+     "term": "angles at a point",
+     "def": "add up to 360°: a full turn"
+    },
+    {
+     "term": "supplementary",
+     "def": "two angles that add up to 180°"
+    },
+    {
+     "term": "reason",
+     "def": "the angle fact that justifies a step"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A door swings from closed until it is flat against the wall: half a turn. How many degrees has it turned? What about a full turn?",
+    "a": "180° for a half turn; 360° for a full turn."
+   },
+   "starter": [
+    {
+     "q": "Interior angle of a regular hexagon",
+     "a": "120°",
+     "mins": 1
+    },
+    {
+     "q": "360 ÷ 4",
+     "a": "90",
+     "mins": 1
+    },
+    {
+     "q": "180 - 37",
+     "a": "143",
+     "mins": 1
+    },
+    {
+     "q": "Solve x + 25 = 90",
+     "a": "x = 65",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "On a straight line",
+     "bullets": [
+      "Angles on a straight line add up to 180°",
+      "Half of a full turn"
+     ],
+     "note": "Write the reason in words every time.",
+     "model": {
+      "problem": "Angles of 65° and x lie on a straight line. Find x.",
+      "steps": [
+       "Angles on a straight line add up to 180°",
+       "x = 180 - 65"
+      ],
+      "answer": "x = 115°"
+     }
+    },
+    {
+     "heading": "At a point",
+     "bullets": [
+      "Angles at a point add up to 360°"
+     ],
+     "note": "A full turn.",
+     "model": {
+      "problem": "Angles of 90°, 130° and y meet at a point. Find y.",
+      "steps": [
+       "Angles at a point add up to 360°",
+       "90 + 130 = 220",
+       "y = 360 - 220"
+      ],
+      "answer": "y = 140°"
+     }
+    },
+    {
+     "heading": "Write the reason",
+     "bullets": [
+      "Marks are given for reasons"
+     ],
+     "note": "Exams ask 'give reasons for your answer'.",
+     "table": {
+      "head": [
+       "Step",
+       "Reason"
+      ],
+      "rows": [
+       [
+        "x = 180 - 65 = 115°",
+        "angles on a straight line add up to 180°"
+       ],
+       [
+        "y = 360 - 220 = 140°",
+        "angles at a point add up to 360°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "With algebra",
+     "bullets": [
+      "Add the angles, then solve"
+     ],
+     "note": "Link to Year 7 equations in the bridge.",
+     "model": {
+      "problem": "Angles 2x, 3x and 80° lie on a straight line. Find x.",
+      "steps": [
+       "2x + 3x + 80 = 180",
+       "5x = 100",
+       "x = 20"
+      ],
+      "answer": "x = 20: the angles are 40° and 60°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Three equal angles and a right angle meet at a point. Each equal angle is:",
+      "options": [
+       "90°",
+       "120°",
+       "80°",
+       "270°"
+      ],
+      "answer": 0,
+      "why": "360 - 90 = 270, then 270 ÷ 3 = 90. 270 forgets to share between three; 120 ignores the right angle."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Angles x, 48° and 75° lie on a straight line. Find x and give the reason.",
+     "a": "x = 57°: angles on a straight line add up to 180°",
+     "mins": 2,
+     "model": "48 + 75 = 123.\n180 - 123 = 57, so x = 57° (angles on a straight line add up to 180°)."
+    },
+    {
+     "q": "Four angles meet at a point: 100°, 85°, 95° and a. Find a.",
+     "a": "80°",
+     "mins": 1
+    },
+    {
+     "q": "Angles 4x and 2x lie on a straight line. Find x.",
+     "a": "x = 30",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find each lettered angle, giving reasons: (a) 132° and a on a straight line (b) 110°, 70°, 90° and b at a point (c) 3c and 45° on a straight line (d) d, d, d and 120° at a point",
+     "a": "(a) a = 48° (b) b = 90° (c) c = 45° (d) d = 80°",
+     "mins": 6,
+     "model": "(a) a = 180 - 132 = 48°, because angles on a straight line add up to 180°.\n(d) 3d + 120 = 360, 3d = 240, d = 80° (angles at a point add up to 360°)."
+    },
+    {
+     "q": "Extend: Angles (x + 20)°, (2x - 10)° and 2x° lie on a straight line. Find each angle.",
+     "a": "5x + 10 = 180, x = 34: 54°, 58°, 68°",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Five angles at a point are in the ratio 1 : 2 : 3 : 4 : 5. Find the largest.",
+     "a": "360 ÷ 15 = 24, so the largest is 5 × 24 = 120°",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Angles on a straight line add up to:",
+     "a": "B) 180°",
+     "mins": 1,
+     "options": [
+      "90°",
+      "180°",
+      "360°"
+     ]
+    },
+    {
+     "q": "125° and y lie on a straight line. y?",
+     "a": "55°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why must angles on a straight line add up to 180°?",
+     "a": "A straight line is half a full turn, and a full turn is 360°.",
+     "mins": 2
+    }
+   ],
+   "homework": "Angles on lines and at points: 12 questions with reasons (portal homework).",
+   "send": "Support: reason cards to copy ('angles on a straight line add up to 180°'). EAL: 'supplementary', 'reason'. Stretch: angle problems in ratio.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.4 Calculating angles (Unit 8: Lines and angles)",
+    "Angle reasons card (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "folding ruler opened straight",
+     "alt": "A folding ruler opened flat: 180°",
+     "for": "hook"
+    },
+    {
+     "find": "compass rose",
+     "alt": "A compass rose: a full turn of 360°",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 64,
+   "title": "Vertically opposite angles",
+   "duration": 50,
+   "bigQuestion": "When two straight lines cross, why are the opposite angles always equal?",
+   "objectives": [
+    "To understand why vertically opposite angles are equal and use this with other angle facts"
+   ],
+   "successCriteria": [
+    "All: identify pairs of vertically opposite angles where two lines cross",
+    "Most: find all four angles at a crossing given one",
+    "Some: prove that vertically opposite angles are equal"
+   ],
+   "keywords": [
+    {
+     "term": "vertically opposite",
+     "def": "angles opposite each other where two lines cross; they are equal"
+    },
+    {
+     "term": "intersect",
+     "def": "cross"
+    },
+    {
+     "term": "proof",
+     "def": "an argument that shows something is always true"
+    },
+    {
+     "term": "adjacent",
+     "def": "next to each other"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Open a pair of scissors slowly. As the angle between the blades grows, what happens to the angle opposite it?",
+    "a": "It grows by exactly the same amount: opposite angles stay equal."
+   },
+   "starter": [
+    {
+     "q": "x and 72° on a straight line: x?",
+     "a": "108°",
+     "mins": 1
+    },
+    {
+     "q": "Angles at a point add up to",
+     "a": "360°",
+     "mins": 1
+    },
+    {
+     "q": "Solve 5x = 135",
+     "a": "x = 27",
+     "mins": 1
+    },
+    {
+     "q": "Three equal angles at a point",
+     "a": "120° each",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Two lines crossing",
+     "bullets": [
+      "Four angles at the crossing",
+      "Opposite angles are equal",
+      "Neighbours add up to 180°"
+     ],
+     "note": "Draw two crossing lines and label one angle.",
+     "model": {
+      "problem": "Two lines cross. One angle is 40°. Find the other three.",
+      "steps": [
+       "Opposite angle: 40° (vertically opposite angles are equal)",
+       "Neighbour: 180 - 40 = 140° (angles on a straight line)",
+       "Its opposite: 140°"
+      ],
+      "answer": "40°, 140°, 40°, 140°"
+     }
+    },
+    {
+     "heading": "Proof",
+     "bullets": [
+      "Works for every crossing"
+     ],
+     "note": "Walk through each line slowly.",
+     "model": {
+      "problem": "Prove a = c, where a and c are opposite and b is between them.",
+      "steps": [
+       "a + b = 180 (angles on a straight line)",
+       "c + b = 180 (angles on a straight line)",
+       "So a = 180 - b and c = 180 - b"
+      ],
+      "answer": "a = c, whatever the size of b"
+     }
+    },
+    {
+     "heading": "Neighbours are not equal",
+     "bullets": [
+      "Only opposite angles are equal"
+     ],
+     "note": "Common error in exam answers.",
+     "misconception": {
+      "wrong": "Angles next to each other at a crossing are equal",
+      "right": "Neighbours add up to 180°; only opposite angles are equal"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Two lines cross. One angle is 115°. Which list gives all four?",
+      "options": [
+       "115°, 65°, 115°, 65°",
+       "115°, 115°, 115°, 115°",
+       "115°, 245°, 115°, 245°",
+       "115°, 75°, 115°, 75°"
+      ],
+      "answer": 0,
+      "why": "Neighbours add up to 180°: 180 - 115 = 65. 245 wrongly uses 360."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Two lines cross. One angle is 3x and the angle opposite it is 84°. Find x.",
+     "a": "x = 28",
+     "mins": 2,
+     "model": "Vertically opposite angles are equal: 3x = 84.\nx = 84 ÷ 3 = 28."
+    },
+    {
+     "q": "Two lines cross at 90°. Find all four angles.",
+     "a": "All 90°",
+     "mins": 1
+    },
+    {
+     "q": "Opposite angles are (2x + 10)° and (x + 50)°. Find x.",
+     "a": "x = 40",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the lettered angles, giving a reason each time: (a) lines cross with one angle 58°: find a (opposite) and b and c (neighbours) (b) opposite angles are 5y and 135° (c) angles (4p - 20)° and (2p + 40)° are vertically opposite: find p and the angle",
+     "a": "(a) a = 58°, b = c = 122° (b) y = 27 (c) p = 30; the angle is 100°",
+     "mins": 6,
+     "model": "(a) a = 58° (vertically opposite angles are equal).\nb = 180 - 58 = 122° (angles on a straight line); c = 122° (vertically opposite b)."
+    },
+    {
+     "q": "Extend: Three straight lines cross at one point, making six angles. Two neighbouring angles are 50° and 70°. Find the other four.",
+     "a": "50°, 70° (opposite) and 60°, 60° (180 - 50 - 70 = 60 and its opposite)",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Write a full proof, with a reason on each line, that vertically opposite angles are equal.",
+     "a": "a + b = 180° and b + c = 180° (angles on a straight line), so a + b = b + c and a = c.",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Vertically opposite angles are:",
+     "a": "A) equal",
+     "mins": 1,
+     "options": [
+      "equal",
+      "add up to 180°",
+      "add up to 90°"
+     ]
+    },
+    {
+     "q": "One angle at a crossing is 33°. Its neighbour?",
+     "a": "147°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why are vertically opposite angles always equal?",
+     "a": "Each one makes 180° with the same neighbour, so both equal 180° minus that neighbour.",
+     "mins": 2
+    }
+   ],
+   "homework": "Vertically opposite angles: 10 questions with reasons, including two with algebra (portal homework).",
+   "send": "Support: two crossing lines drawn on a card to point at. EAL: 'vertically opposite', 'adjacent', 'intersect'. Stretch: write the proof.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.4 Calculating angles (Unit 8: Lines and angles)",
+    "Angle reasons card (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "scissors open",
+     "alt": "Open scissors: two crossing blades",
+     "for": "hook"
+    },
+    {
+     "find": "crossroads aerial view",
+     "alt": "Two roads crossing",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 65,
+   "title": "Angle problems: lines, points and equations",
+   "duration": 50,
+   "bigQuestion": "How do you choose which angle fact to use first?",
+   "objectives": [
+    "To understand how to combine angle facts at lines and points to solve multi-step problems with reasons"
+   ],
+   "successCriteria": [
+    "All: solve two-step angle problems using straight-line, point and vertically opposite facts",
+    "Most: set up and solve an equation from an angle diagram",
+    "Some: write a reason beside every step"
+   ],
+   "smsc": "Moral: honest reasoning: showing why something is true, not guessing",
+   "keywords": [
+    {
+     "term": "reason",
+     "def": "the angle fact that justifies a step"
+    },
+    {
+     "term": "equation",
+     "def": "a statement that two expressions are equal"
+    },
+    {
+     "term": "multi-step",
+     "def": "needs more than one calculation"
+    },
+    {
+     "term": "not to scale",
+     "def": "the diagram is not drawn accurately, so do not measure it"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Can three angles on a straight line be 70°, 60° and 60°? How can you tell at once?",
+    "a": "No: they add up to 190°, not 180°."
+   },
+   "starter": [
+    {
+     "q": "The angle opposite 74°",
+     "a": "74°",
+     "mins": 1
+    },
+    {
+     "q": "The neighbour of 74° at a crossing",
+     "a": "106°",
+     "mins": 1
+    },
+    {
+     "q": "Solve 6x = 210",
+     "a": "x = 35",
+     "mins": 1
+    },
+    {
+     "q": "Angles in the ratio 1 : 2 on a straight line: the smaller",
+     "a": "60°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Plan first",
+     "bullets": [
+      "Which fact links what I know to what I need?"
+     ],
+     "note": "Pupils say which fact before any calculation.",
+     "diagram": {
+      "centre": "Which fact?",
+      "items": [
+       "Straight line: 180°",
+       "At a point: 360°",
+       "Vertically opposite: equal",
+       "Find an unlabelled angle first",
+       "Write the reason each time"
+      ]
+     }
+    },
+    {
+     "heading": "Crossing lines with algebra",
+     "bullets": [
+      "Neighbours make an equation"
+     ],
+     "note": "Two lines cross.",
+     "model": {
+      "problem": "Two lines cross. One angle is 2x and its neighbour is x + 30. Find x and all four angles.",
+      "steps": [
+       "Neighbours on a straight line: 2x + x + 30 = 180",
+       "3x = 150, so x = 50",
+       "Angles 100° and 80°, and their opposites"
+      ],
+      "answer": "x = 50; 100°, 80°, 100°, 80°"
+     }
+    },
+    {
+     "heading": "At a point with algebra",
+     "bullets": [
+      "Add all the angles"
+     ],
+     "note": "Collect like terms first.",
+     "model": {
+      "problem": "Angles 3y, 4y, 5y and 120° meet at a point. Find y.",
+      "steps": [
+       "3y + 4y + 5y + 120 = 360",
+       "12y = 240",
+       "y = 20"
+      ],
+      "answer": "y = 20; the angles are 60°, 80°, 100° and 120°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Angles x, 2x and 3x lie on a straight line. x =",
+      "options": [
+       "30°",
+       "60°",
+       "36°",
+       "20°"
+      ],
+      "answer": 0,
+      "why": "6x = 180, so x = 30. 60 uses 360 instead of 180."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Angles a, 47° and a lie on a straight line. Find a.",
+     "a": "a = 66.5°",
+     "mins": 2,
+     "model": "2a + 47 = 180 (angles on a straight line).\n2a = 133, so a = 66.5°."
+    },
+    {
+     "q": "Angles x, x + 40, 2x and 80° meet at a point. Find x.",
+     "a": "4x + 120 = 360, so x = 60",
+     "mins": 2
+    },
+    {
+     "q": "A pupil writes 'x = 70° because it looks like it'. Why does this earn no marks?",
+     "a": "Diagrams are not drawn to scale; a reason must be an angle fact.",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Angles (x + 15)°, 2x° and 75° lie on a straight line: find x. (b) Angles 5p°, 3p°, 90° and 110° meet at a point: find p. (c) Two lines cross; one angle is (3t - 10)° and the opposite angle is (t + 50)°: find t and all four angles.",
+     "a": "(a) x = 30 (b) p = 20 (c) t = 30; 80°, 100°, 80°, 100°",
+     "mins": 7,
+     "model": "(a) x + 15 + 2x + 75 = 180 (angles on a straight line).\n3x + 90 = 180, 3x = 90, x = 30."
+    },
+    {
+     "q": "Extend: The angles at a point are in the ratio 2 : 3 : 4. The smallest lies on a straight line with angle y. Find y.",
+     "a": "360 ÷ 9 = 40, smallest 80°, so y = 100°",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Write your own two-step angle problem with a full solution and reasons; swap with a partner to check.",
+     "a": "Own problem; the partner checks every reason.",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Angles of 100°, 100° and x meet at a point. x =",
+     "a": "A) 160°",
+     "mins": 1,
+     "options": [
+      "160°",
+      "80°",
+      "260°"
+     ]
+    },
+    {
+     "q": "Why must every step have a reason?",
+     "a": "Diagrams are not to scale; the reason shows the step is true.",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how do you choose which angle fact to use first?",
+     "a": "Look for an angle linked to one you know by a fact (line, point or opposite); find unlabelled angles on the way.",
+     "mins": 2
+    }
+   ],
+   "homework": "Mixed angle problems: 8 questions with algebra and reasons (portal homework).",
+   "send": "Support: fact cards and partly completed equations. EAL: 'reason', 'not to scale'. Stretch: ratio problems at a point.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.4 Calculating angles (Unit 8: Lines and angles)",
+    "Angle reasoning practice sheet (portal worksheet for this lesson)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "railway junction tracks crossing",
+     "alt": "Railway lines crossing",
+     "for": "hook"
+    },
+    {
+     "find": "window frame cross bars",
+     "alt": "A window frame with crossing bars",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 66,
+   "title": "Angles in a triangle",
+   "duration": 50,
+   "bigQuestion": "Why do the angles in every triangle add up to 180°?",
+   "objectives": [
+    "To understand why the angles in a triangle add up to 180° and use this to find missing angles"
+   ],
+   "successCriteria": [
+    "All: find a missing angle in a triangle",
+    "Most: find angles in right-angled triangles and use exterior angles on a straight line",
+    "Some: explain why the angle sum is 180° using a straight line"
+   ],
+   "keywords": [
+    {
+     "term": "interior angle",
+     "def": "an angle inside a shape"
+    },
+    {
+     "term": "exterior angle",
+     "def": "the angle between one side and the next side extended"
+    },
+    {
+     "term": "angle sum",
+     "def": "the total of the interior angles"
+    },
+    {
+     "term": "right-angled triangle",
+     "def": "a triangle with one 90° angle"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Tear the three corners off a paper triangle and put them together, point to point. What do you think they will make?",
+    "a": "A straight line: 180°."
+   },
+   "starter": [
+    {
+     "q": "x, 2x and 3x on a straight line: x?",
+     "a": "30°",
+     "mins": 1
+    },
+    {
+     "q": "The angle vertically opposite 47°",
+     "a": "47°",
+     "mins": 1
+    },
+    {
+     "q": "360 - 245",
+     "a": "115",
+     "mins": 1
+    },
+    {
+     "q": "2/3 of 180",
+     "a": "120",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The tearing test",
+     "bullets": [
+      "Cut out any triangle",
+      "Tear off the three corners",
+      "Place them point to point: a straight line"
+     ],
+     "note": "Pupils try it at home with paper and scissors; works for any triangle."
+    },
+    {
+     "heading": "Finding a missing angle",
+     "bullets": [
+      "Add the two you know",
+      "Subtract from 180°"
+     ],
+     "note": "Always write the reason.",
+     "model": {
+      "problem": "A triangle has angles 48°, 67° and x. Find x.",
+      "steps": [
+       "Angles in a triangle add up to 180°",
+       "48 + 67 = 115",
+       "x = 180 - 115"
+      ],
+      "answer": "x = 65°"
+     }
+    },
+    {
+     "heading": "Exterior angle",
+     "bullets": [
+      "Extend one side"
+     ],
+     "note": "Notice: e equals the sum of the two opposite interior angles.",
+     "model": {
+      "problem": "A triangle has angles 50°, 60° and 70°. The side at the 70° angle is extended. Find the exterior angle e.",
+      "steps": [
+       "e and 70° lie on a straight line",
+       "e = 180 - 70",
+       "Note: 50 + 60 = 110 as well"
+      ],
+      "answer": "e = 110°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A right-angled triangle has one angle of 34°. The third angle is:",
+      "options": [
+       "56°",
+       "146°",
+       "66°",
+       "46°"
+      ],
+      "answer": 0,
+      "why": "180 - 90 - 34 = 56. 146 forgets the right angle."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the missing angle in a triangle with angles 105° and 38°.",
+     "a": "37°",
+     "mins": 2,
+     "model": "105 + 38 = 143.\n180 - 143 = 37° (angles in a triangle add up to 180°)."
+    },
+    {
+     "q": "A triangle has angles x, 2x and 3x. Find x.",
+     "a": "x = 30",
+     "mins": 1
+    },
+    {
+     "q": "Can a triangle have two obtuse angles? Explain.",
+     "a": "No: two angles over 90° already add up to more than 180°.",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find each missing angle, with a reason: (a) 72°, 59°, a (b) 90°, 41°, b (c) c, c, 50° (d) 3d, 4d, 5d",
+     "a": "(a) a = 49° (b) b = 49° (c) c = 65° (d) d = 15: the angles are 45°, 60°, 75°",
+     "mins": 6,
+     "model": "(a) 72 + 59 = 131; a = 180 - 131 = 49° (angles in a triangle add up to 180°).\n(d) 12d = 180, so d = 15."
+    },
+    {
+     "q": "Extend: The exterior angle at C is 128° and angle A is 54°. Find angle B.",
+     "a": "74° (the exterior angle equals A + B)",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Prove that an exterior angle of a triangle equals the sum of the two opposite interior angles.",
+     "a": "a + b + c = 180 (triangle); e + c = 180 (straight line); so e = a + b.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "A triangle has angles 90° and 45°. The third angle is:",
+     "a": "A) 45°",
+     "mins": 1,
+     "options": [
+      "45°",
+      "90°",
+      "135°"
+     ]
+    },
+    {
+     "q": "Can a triangle have angles 100°, 50° and 40°?",
+     "a": "No: they add up to 190°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do the angles in every triangle add up to 180°?",
+     "a": "The three corners fit together on a straight line, which is 180°.",
+     "mins": 2
+    }
+   ],
+   "homework": "Angles in triangles: 12 questions including exterior angles (portal homework).",
+   "send": "Support: triangle cut-out and reason card. EAL: 'interior', 'exterior'. Stretch: the exterior angle proof.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.5 Angles in a triangle (Unit 8: Lines and angles)",
+    "Paper and scissors for the tearing test",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "triangular roof gable",
+     "alt": "A triangular roof end",
+     "for": "teach:1"
+    },
+    {
+     "find": "set square triangle",
+     "alt": "A set square: a right-angled triangle",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 67,
+   "title": "Isosceles and equilateral triangles",
+   "duration": 50,
+   "bigQuestion": "If two sides of a triangle are equal, what must be true about its angles?",
+   "objectives": [
+    "To understand how the properties of isosceles and equilateral triangles help find missing angles"
+   ],
+   "successCriteria": [
+    "All: identify isosceles, equilateral and scalene triangles from their marks",
+    "Most: find the base angles or the top angle of an isosceles triangle",
+    "Some: solve multi-step problems combining triangle and straight-line facts, with reasons"
+   ],
+   "keywords": [
+    {
+     "term": "isosceles",
+     "def": "a triangle with two equal sides and two equal angles"
+    },
+    {
+     "term": "equilateral",
+     "def": "a triangle with all sides equal and all angles 60°"
+    },
+    {
+     "term": "scalene",
+     "def": "a triangle with no equal sides"
+    },
+    {
+     "term": "base angles",
+     "def": "the two equal angles of an isosceles triangle"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A triangle has an angle of 40° and two equal sides. Is there only one possible triangle? Find all the angles.",
+    "a": "Two: 40°, 70°, 70° or 40°, 40°, 100°."
+   },
+   "starter": [
+    {
+     "q": "68° and 77° in a triangle: the third?",
+     "a": "35°",
+     "mins": 1
+    },
+    {
+     "q": "Exterior angle when the opposite interiors are 40° and 75°",
+     "a": "115°",
+     "mins": 1
+    },
+    {
+     "q": "Solve 2x + 50 = 180",
+     "a": "x = 65",
+     "mins": 1
+    },
+    {
+     "q": "Each angle of an equilateral triangle",
+     "a": "60°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Types of triangle",
+     "bullets": [
+      "Marks show equal sides"
+     ],
+     "note": "Pupils match each to a dash pattern.",
+     "table": {
+      "head": [
+       "Triangle",
+       "Sides",
+       "Angles"
+      ],
+      "rows": [
+       [
+        "Equilateral",
+        "3 equal",
+        "all 60°"
+       ],
+       [
+        "Isosceles",
+        "2 equal",
+        "2 equal base angles"
+       ],
+       [
+        "Scalene",
+        "none equal",
+        "none equal"
+       ],
+       [
+        "Right-angled",
+        "any",
+        "one 90°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Top angle given",
+     "bullets": [
+      "Share what is left equally"
+     ],
+     "note": "Isosceles: the base angles are equal.",
+     "model": {
+      "problem": "An isosceles triangle has a top angle of 50°. Find the base angles.",
+      "steps": [
+       "Base angles are equal",
+       "180 - 50 = 130",
+       "130 ÷ 2"
+      ],
+      "answer": "65° each"
+     }
+    },
+    {
+     "heading": "Base angle given",
+     "bullets": [
+      "Double it, then subtract"
+     ],
+     "note": "Common exam question.",
+     "model": {
+      "problem": "An isosceles triangle has a base angle of 35°. Find the top angle.",
+      "steps": [
+       "The other base angle is also 35°",
+       "180 - 35 - 35"
+      ],
+      "answer": "110°"
+     }
+    },
+    {
+     "heading": "Which angles are equal?",
+     "bullets": [
+      "The angles opposite the equal sides"
+     ],
+     "note": "Point to the dashes, then the opposite angles.",
+     "misconception": {
+      "wrong": "The equal angles are always the top angle and one other",
+      "right": "The equal angles are opposite the equal sides, at the ends of the base"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "An isosceles triangle has a top angle of 120°. Each base angle is:",
+      "options": [
+       "30°",
+       "60°",
+       "120°",
+       "20°"
+      ],
+      "answer": 0,
+      "why": "(180 - 120) ÷ 2 = 30. 60 forgets to share between two angles."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "An isosceles triangle has a base angle of 72°. Find the other two angles.",
+     "a": "72° and 36°",
+     "mins": 2,
+     "model": "The other base angle is also 72°.\n180 - 72 - 72 = 36°."
+    },
+    {
+     "q": "Find each angle of an isosceles right-angled triangle.",
+     "a": "90°, 45°, 45°",
+     "mins": 1
+    },
+    {
+     "q": "An isosceles triangle has angles x, x and 2x. Find x.",
+     "a": "x = 45",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Isosceles, top angle 34°: the base angles? (b) Isosceles, base angle 49°: the top angle? (c) Equilateral triangle ABC with BC extended to D: angle ACD? (d) Isosceles with base angles (2y + 10)° and top angle 80°: find y.",
+     "a": "(a) 73° each (b) 82° (c) 120° (d) base angles 50°, so y = 20",
+     "mins": 6,
+     "model": "(a) 180 - 34 = 146; 146 ÷ 2 = 73° each (base angles of an isosceles triangle are equal; angles in a triangle add up to 180°)."
+    },
+    {
+     "q": "Extend: An isosceles triangle has one angle of 40°. Find both possible sets of angles.",
+     "a": "40°, 70°, 70° or 40°, 40°, 100°",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: In triangle PQR, PQ = PR and angle P = 44°. QR is extended to S. Find angle PRS, giving reasons.",
+     "a": "Base angles (180 - 44) ÷ 2 = 68°; PRS = 180 - 68 = 112° (angles on a straight line)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Each angle of an equilateral triangle is:",
+     "a": "B) 60°",
+     "mins": 1,
+     "options": [
+      "45°",
+      "60°",
+      "90°"
+     ]
+    },
+    {
+     "q": "Isosceles, top angle 100°: the base angles?",
+     "a": "40° each",
+     "mins": 1
+    },
+    {
+     "q": "Big question: if two sides are equal, what must be true about the angles?",
+     "a": "The two angles opposite the equal sides (the base angles) are equal.",
+     "mins": 2
+    }
+   ],
+   "homework": "Isosceles and equilateral triangle problems: 10 questions with reasons (portal homework).",
+   "send": "Support: triangle types card. EAL: 'isosceles', 'equilateral', 'scalene'. Stretch: problems combining two triangles.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.5 Angles in a triangle (Unit 8: Lines and angles)",
+    "Triangle types card (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "A-frame roof house",
+     "alt": "An A-frame roof: an isosceles triangle",
+     "for": "hook"
+    },
+    {
+     "find": "equilateral triangle tiles",
+     "alt": "Equilateral triangle tiles",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 68,
+   "title": "Angles in quadrilaterals",
+   "duration": 50,
+   "bigQuestion": "Why do the angles in every quadrilateral add up to 360°?",
+   "objectives": [
+    "To understand why the angles in a quadrilateral add up to 360° and use the properties of special quadrilaterals"
+   ],
+   "successCriteria": [
+    "All: find a missing angle in any quadrilateral",
+    "Most: use the angle properties of parallelograms, rhombuses, kites and trapeziums",
+    "Some: explain the 360° rule by splitting into two triangles"
+   ],
+   "keywords": [
+    {
+     "term": "quadrilateral",
+     "def": "a shape with four straight sides"
+    },
+    {
+     "term": "parallelogram",
+     "def": "two pairs of parallel sides; opposite angles are equal"
+    },
+    {
+     "term": "kite",
+     "def": "two pairs of equal sides next to each other; one pair of equal angles"
+    },
+    {
+     "term": "trapezium",
+     "def": "exactly one pair of parallel sides"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Draw any four-sided shape and one diagonal. What do you notice? What does it tell you about the angles?",
+    "a": "The diagonal makes two triangles: 2 × 180° = 360°."
+   },
+   "starter": [
+    {
+     "q": "Isosceles, top angle 70°: base angles?",
+     "a": "55° each",
+     "mins": 1
+    },
+    {
+     "q": "Triangle with angles in the ratio 1 : 1 : 2",
+     "a": "45°, 45°, 90°",
+     "mins": 1
+    },
+    {
+     "q": "x and 3x on a straight line",
+     "a": "x = 45",
+     "mins": 1
+    },
+    {
+     "q": "A quadrilateral with four right angles",
+     "a": "square or rectangle",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Two triangles",
+     "bullets": [
+      "A diagonal splits it into two triangles",
+      "2 × 180° = 360°"
+     ],
+     "note": "Works for every quadrilateral.",
+     "model": {
+      "problem": "A quadrilateral has angles 85°, 110°, 75° and d. Find d.",
+      "steps": [
+       "Angles in a quadrilateral add up to 360°",
+       "85 + 110 + 75 = 270",
+       "d = 360 - 270"
+      ],
+      "answer": "d = 90°"
+     }
+    },
+    {
+     "heading": "Special quadrilaterals",
+     "bullets": [
+      "Properties give extra angles"
+     ],
+     "note": "Pupils copy the table.",
+     "table": {
+      "head": [
+       "Shape",
+       "Angle facts"
+      ],
+      "rows": [
+       [
+        "Parallelogram",
+        "opposite angles equal; neighbours add up to 180°"
+       ],
+       [
+        "Rhombus",
+        "as a parallelogram; diagonals cross at 90°"
+       ],
+       [
+        "Kite",
+        "one pair of opposite angles equal"
+       ],
+       [
+        "Trapezium",
+        "the two angles on each slanted side add up to 180°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Parallelogram",
+     "bullets": [
+      "Opposite equal, neighbours 180°"
+     ],
+     "note": "Model with one given angle.",
+     "model": {
+      "problem": "A parallelogram has one angle of 65°. Find the others.",
+      "steps": [
+       "Opposite angle: 65°",
+       "Neighbour: 180 - 65 = 115°",
+       "Its opposite: 115°"
+      ],
+      "answer": "65°, 115°, 65°, 115°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Vote in the poll"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A kite has angles of 120° and 70°, and its other two angles are the equal pair. Each equal angle is:",
+      "options": [
+       "85°",
+       "120°",
+       "70°",
+       "170°"
+      ],
+      "answer": 0,
+      "why": "360 - 120 - 70 = 170, shared between two equal angles: 85° each. 170 forgets to share."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A quadrilateral has angles 95°, 2x, 3x and 115°. Find x.",
+     "a": "x = 30",
+     "mins": 2,
+     "model": "95 + 115 + 5x = 360 (angles in a quadrilateral).\n5x = 150, so x = 30."
+    },
+    {
+     "q": "A rhombus has an angle of 38°. Find the other three.",
+     "a": "38°, 142°, 142°",
+     "mins": 1
+    },
+    {
+     "q": "Can a quadrilateral have four angles of 100°?",
+     "a": "No: they add up to 400°.",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the missing angles, with reasons: (a) 72°, 108°, 95° and a (b) a parallelogram with one angle 128° (c) a kite with equal angles b, b and others 64° and 100° (d) a trapezium with base angles 55° and 70°: the other two",
+     "a": "(a) a = 85° (b) 128°, 52°, 52° (c) b = 98° (d) 125° and 110°",
+     "mins": 7,
+     "model": "(a) 72 + 108 + 95 = 275; a = 360 - 275 = 85° (angles in a quadrilateral add up to 360°).\n(d) Each slanted side: 180 - 55 = 125° and 180 - 70 = 110°."
+    },
+    {
+     "q": "Extend: The angles of a quadrilateral are in the ratio 2 : 3 : 3 : 4. Find them and name a possible shape.",
+     "a": "60°, 90°, 90°, 120°: for example a right-angled trapezium",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Use triangles to explain why the angles of a pentagon add up to 540°.",
+     "a": "Diagonals from one vertex make 3 triangles: 3 × 180° = 540°.",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "The angles in a quadrilateral add up to:",
+     "a": "B) 360°",
+     "mins": 1,
+     "options": [
+      "180°",
+      "360°",
+      "540°"
+     ]
+    },
+    {
+     "q": "A parallelogram has an angle of 70°. Its neighbour?",
+     "a": "110°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do the angles in every quadrilateral add up to 360°?",
+     "a": "A diagonal splits it into two triangles, each with 180°.",
+     "mins": 2
+    }
+   ],
+   "homework": "Angles in quadrilaterals: 10 questions on special quadrilaterals (portal homework).",
+   "send": "Support: quadrilateral properties card. EAL: 'parallelogram', 'trapezium', 'kite'. Stretch: angle sums of other polygons.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 8.6 Quadrilaterals (Unit 8: Lines and angles)",
+    "Quadrilateral properties card (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "kite flying in sky",
+     "alt": "A kite in the sky",
+     "for": "keywords"
+    },
+    {
+     "find": "parallelogram paving tiles",
+     "alt": "Paving in parallelograms",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+   "n": 69,
+   "title": "Review and unit quiz: notation, constructions and angles",
+   "duration": 50,
+   "bigQuestion": "Which angle facts and constructions can I now use without help?",
+   "objectives": [
+    "To understand how secure my notation, constructions and angle reasoning are, and what to practise next"
+   ],
+   "successCriteria": [
+    "All: recall the angle facts and the steps of each construction",
+    "Most: answer the quiz with a reason for each angle",
+    "Some: set one strength and one target from the quiz"
+   ],
+   "smsc": "Moral: honesty (amanah, أَمَانَة) in assessments",
+   "keywords": [
+    {
+     "term": "reason",
+     "def": "the angle fact that justifies a step"
+    },
+    {
+     "term": "construct",
+     "def": "draw accurately with compasses and a ruler"
+    },
+    {
+     "term": "bisector",
+     "def": "a line that cuts something into two equal parts"
+    },
+    {
+     "term": "target",
+     "def": "the next thing to practise"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which is harder to get right: a construction or an angle calculation? Why?",
+    "a": "Constructions need care with equipment; calculations need the right fact and reason. Both need checking."
+   },
+   "starter": [
+    {
+     "q": "Angles on a straight line add up to",
+     "a": "180°",
+     "mins": 1
+    },
+    {
+     "q": "Angles in a quadrilateral add up to",
+     "a": "360°",
+     "mins": 1
+    },
+    {
+     "q": "Isosceles, top angle 40°: base angles?",
+     "a": "70° each",
+     "mins": 1
+    },
+    {
+     "q": "Bisect 60°",
+     "a": "30°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The angle facts",
+     "bullets": [
+      "Learn each with its reason"
+     ],
+     "note": "Quick-fire: pupils say the total.",
+     "table": {
+      "head": [
+       "Fact",
+       "Rule"
+      ],
+      "rows": [
+       [
+        "Straight line",
+        "180°"
+       ],
+       [
+        "At a point",
+        "360°"
+       ],
+       [
+        "Vertically opposite",
+        "equal"
+       ],
+       [
+        "Triangle",
+        "180°"
+       ],
+       [
+        "Quadrilateral",
+        "360°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The constructions",
+     "bullets": [
+      "Leave every arc"
+     ],
+     "note": "Recall the steps for each.",
+     "diagram": {
+      "centre": "Constructions",
+      "items": [
+       "SAS: side, angle, side",
+       "ASA: angle, side, angle",
+       "SSS: three sides with arcs",
+       "Perpendicular bisector",
+       "Angle bisector",
+       "Perpendicular from a point"
+      ]
+     }
+    },
+    {
+     "heading": "A mixed problem",
+     "bullets": [
+      "Two facts, two reasons"
+     ],
+     "note": "Model with full reasons.",
+     "model": {
+      "problem": "Triangle ABC has AB = AC and angle A = 52°. BC is extended to D. Find angle ACD.",
+      "steps": [
+       "Base angles: (180 - 52) ÷ 2 = 64° (isosceles triangle)",
+       "ACD = 180 - 64 (angles on a straight line)"
+      ],
+      "answer": "116°"
+     }
+    },
+    {
+     "heading": "Quiz rules",
+     "bullets": [
+      "Portal quiz, secure mode, 20 minutes",
+      "Ruler, protractor and compasses ready",
+      "A reason beside every angle"
+     ],
+     "note": "Constructions: photograph and upload."
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find x: a triangle has angles x, x + 20 and 100°.",
+     "a": "x = 30",
+     "mins": 2,
+     "model": "2x + 120 = 180 (angles in a triangle add up to 180°).\n2x = 60, so x = 30."
+    }
+   ],
+   "independent": [
+    {
+     "q": "Unit quiz (portal, secure mode, 20 minutes, 25 marks): notation, constructions (photo uploaded) and angle facts with reasons. Sample: (a) Name the vertex of angle PQR (b) Construct the perpendicular bisector of a 7 cm line (c) x, 2x and 90° lie on a straight line: find x (d) a kite has angles 110°, 70°, b and b: find b",
+     "a": "Sample answers: (a) Q (b) arcs visible; it meets the line at 3.5 cm at 90° (c) x = 30 (d) b = 90°",
+     "mins": 20,
+     "model": "(c) x + 2x + 90 = 180 (angles on a straight line), 3x = 90, x = 30.\n(d) 110 + 70 + 2b = 360, 2b = 180, b = 90°."
+    },
+    {
+     "q": "After the quiz: self-check with the answers on screen, then write one strength and one target in the portal response box.",
+     "a": "Personal: for example 'Strength: reasons. Target: SSS arcs.'",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which construction gives a 45° angle?",
+     "a": "A) bisect 90°",
+     "mins": 1,
+     "options": [
+      "bisect 90°",
+      "bisect 60°",
+      "SSS"
+     ]
+    },
+    {
+     "q": "Big question: which facts and constructions can you now use without help?",
+     "a": "Personal: for example 'all the angle facts; I still need the step card for the angle bisector'.",
+     "mins": 2
+    }
+   ],
+   "homework": "Practise your target from the quiz: the portal's Summer 1 review set (10 questions).",
+   "send": "Support: access arrangements as agreed; fact card allowed for the first two questions. EAL: glossary allowed. Stretch: the final multi-step question.",
+   "resources": [
+    "Year 7 Summer 1 unit quiz (portal quiz, secure mode, written for this unit)",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 Unit 8 Lines and angles: Check and Strengthen questions for targets",
+    "Geometry set: ruler, protractor, compasses and a sharp pencil",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "geometry set compass protractor ruler",
+     "alt": "A geometry set",
+     "for": "hook"
+    },
+    {
+     "find": "checklist with ticks",
+     "alt": "A checklist",
+     "for": "keywords"
     }
    ]
   }
