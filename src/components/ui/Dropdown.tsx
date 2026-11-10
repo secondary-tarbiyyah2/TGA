@@ -109,6 +109,8 @@ export type DropdownProps = {
   onBlur?: () => void;
   /** Keep the option's right-hand note in the list only. */
   hideAsideOnTrigger?: boolean;
+  /** Shown on the trigger instead of the chosen option's label, e.g. "+44" for a phone country code. */
+  triggerText?: ReactNode;
   /**
    * Draw the list in a fixed layer over the page, at least 14rem wide and kept
    * on screen, so it isn't cut off inside a table, card or scrolling panel
@@ -134,6 +136,7 @@ export function Dropdown({
   wrapperClassName = "",
   onBlur,
   hideAsideOnTrigger,
+  triggerText,
   floating,
   ...aria
 }: DropdownProps) {
@@ -370,7 +373,7 @@ export function Dropdown({
         } ${invalid ? "border-red-500" : ""} ${className}`}
       >
         {selected?.icon && <span className="shrink-0 text-base leading-none" aria-hidden="true">{selected.icon}</span>}
-        <span className={`min-w-0 flex-1 truncate ${selected ? "text-ink" : "text-ink/50"}`}>{selected ? selected.label : placeholder}</span>
+        <span className={`min-w-0 flex-1 truncate ${selected ? "text-ink" : "text-ink/50"}`}>{selected ? (triggerText ?? selected.label) : placeholder}</span>
         {selected?.aside && !hideAsideOnTrigger && <span className="hidden shrink-0 text-xs text-ink/55 sm:inline">{selected.aside}</span>}
         <span className={`shrink-0 text-gold-700 transition-transform ${open ? "rotate-180" : ""}`}>{chevron}</span>
       </button>

@@ -39,7 +39,7 @@ export function PrelaunchHome() {
             <h2 className="font-serif text-2xl font-semibold text-ink">Register your interest</h2>
             <p className="mt-2 text-ink/70">Founding places are limited. Register to receive admissions updates and invitations to our online open evenings.</p>
           </div>
-          <RegisterInterestForm />
+          <RegisterInterestForm heading={false} />
         </div>
 
         <div className="lg:col-start-1 lg:row-start-2 lg:self-start">

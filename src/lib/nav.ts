@@ -1,7 +1,11 @@
 import { LEARN_ORIGIN } from "./learn/origin";
 
-export type NavLink = { href: string; label: string };
-export type NavGroup = { label: string; items: NavLink[]; blurb?: string };
+import type { IconName } from "@/components/learn/Icon";
+
+export type NavLink = { href: string; label: string; icon?: IconName; desc?: string };
+/** A highlighted call to action shown beside a group's links in the desktop menu. */
+export type NavFeature = { eyebrow: string; title: string; body: string; href: string; cta: string };
+export type NavGroup = { label: string; items: NavLink[]; blurb?: string; feature?: NavFeature };
 export type NavEntry = NavLink | NavGroup;
 
 export function isNavGroup(entry: NavEntry): entry is NavGroup {
@@ -13,52 +17,57 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
 // cost it and take the next step (Admissions) → enrolled families (For
 // Parents) → Contact. Admissions is for prospective families and For
 // Parents for current ones, so neither group wades through the other's
-// links. Each group is a single-level dropdown on desktop and an
-// expandable section in the mobile drawer; `blurb` is the one-line hint
-// shown under the group name on mobile. Every existing URL stays live and
-// is reachable from a dropdown, a hub page or the footer.
+// links. On desktop each group opens a panel (icon, link, one-line
+// description, plus a featured next step); in the mobile drawer it is an
+// expandable section. `blurb` is the one-line hint under the group name on
+// mobile. Every existing URL stays live and is reachable from a menu, a hub
+// page or the footer.
 export const primaryNav: NavEntry[] = [
   {
     label: "Our School",
-    blurb: "About us, team, testimonials, FAQs, careers",
+    blurb: "About us, testimonials, FAQs, careers",
     items: [
-      { href: "/about", label: "About us" },
-      { href: "/testimonials", label: "Testimonials" },
-      { href: "/faqs", label: "FAQs" },
-      { href: "/careers", label: "Careers" },
+      { href: "/about", label: "About us", icon: "school", desc: "Who we are and the trust behind us" },
+      { href: "/testimonials", label: "Testimonials", icon: "messageSquare", desc: "Family stories, once our first cohort joins" },
+      { href: "/faqs", label: "FAQs", icon: "circleHelp", desc: "Fees, lessons, technology and more" },
+      { href: "/careers", label: "Careers", icon: "briefcase", desc: "Teach with us, wherever you are" },
     ],
+    feature: { eyebrow: "Meet us", title: "Online open evening", body: "See a lesson, meet the team and ask anything.", href: "/open-evening#open-evenings", cta: "Choose a date" },
   },
   {
     label: "Learning",
     blurb: "Curriculum, how live lessons work, support",
     items: [
-      { href: "/learning", label: "How learning works" },
-      { href: "/curriculum", label: "Curriculum by key stage" },
-      { href: "/pastoral-care", label: "Pastoral care & SEND" },
+      { href: "/learning", label: "How learning works", icon: "monitor", desc: "Live lessons, timetable and classes" },
+      { href: "/curriculum", label: "Curriculum by key stage", icon: "bookOpen", desc: "National curriculum with Qur'an, Arabic and Islamic Studies" },
+      { href: "/pastoral-care", label: "Pastoral care & SEND", icon: "heartHandshake", desc: "Wellbeing, character and extra support" },
     ],
+    feature: { eyebrow: "Try it", title: "Taster morning", body: "Your child joins real lessons before you decide.", href: "/open-evening#taster", cta: "Book a taster" },
   },
   {
     label: "Admissions",
     blurb: "Is it right for us? Open evenings, fees and how to apply",
     items: [
-      { href: "/eligibility", label: "Is it right for us?" },
-      { href: "/open-evening#open-evenings", label: "Online open evenings" },
-      { href: "/open-evening#taster", label: "Taster morning" },
-      { href: "/fees", label: "Fees" },
-      { href: "/admissions", label: "How to apply" },
-      { href: "/prospectus/TGA-Prospectus-2026-27.pdf", label: "Prospectus (PDF)" },
+      { href: "/eligibility", label: "Is it right for us?", icon: "listChecks", desc: "Two minutes: lesson times, fees, next step" },
+      { href: "/admissions", label: "How to apply", icon: "clipboardCheck", desc: "The six steps from form to first lesson" },
+      { href: "/fees", label: "Fees", icon: "wallet", desc: "Costs, sibling discount and payment plans" },
+      { href: "/open-evening#open-evenings", label: "Online open evenings", icon: "presentation", desc: "Meet us live from home" },
+      { href: "/open-evening#taster", label: "Taster morning", icon: "sun", desc: "Join real lessons for a morning" },
+      { href: "/prospectus/TGA-Prospectus-2026-27.pdf", label: "Prospectus (PDF)", icon: "download", desc: "Everything in one download" },
     ],
+    feature: { eyebrow: "Founding cohort", title: "Apply online", body: "About ten minutes, and several children at once.", href: "/admissions/apply", cta: "Start your application" },
   },
   {
     label: "For Parents",
     blurb: "Parent hub, term dates, policies",
     items: [
-      { href: "/parents", label: "Parent hub" },
-      { href: "/term-dates", label: "Term dates" },
-      { href: "/policies", label: "Policies" },
-      { href: "/safeguarding", label: "Safeguarding" },
-      { href: "/manage-booking", label: "Manage a booking" },
+      { href: "/parents", label: "Parent hub", icon: "houseHeart", desc: "Everything for current families" },
+      { href: "/term-dates", label: "Term dates", icon: "calendarDays", desc: "Terms, holidays and key dates" },
+      { href: "/policies", label: "Policies", icon: "scrollText", desc: "Safeguarding, admissions, fees, data" },
+      { href: "/safeguarding", label: "Safeguarding", icon: "shieldCheck", desc: "How we keep children safe" },
+      { href: "/manage-booking", label: "Manage a booking", icon: "calendarClock", desc: "Change or cancel a call" },
     ],
+    feature: { eyebrow: "Families", title: "Learning portal", body: "Timetable, classwork, reports and messages.", href: `${LEARN_ORIGIN}/login`, cta: "Sign in" },
   },
   { href: "/contact", label: "Contact" },
 ];

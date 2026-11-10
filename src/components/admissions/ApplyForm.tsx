@@ -31,6 +31,8 @@ import { COUNTRIES } from "@/lib/countries";
 import { COUNTRY_ALIASES, countryCode } from "@/components/admissions/countryCodes";
 import { Combobox, SelectBox } from "@/components/admissions/Combobox";
 import { AddressLookup } from "@/components/admissions/AddressLookup";
+import { PhoneInput } from "@/components/ui/PhoneInput";
+import { splitPhone } from "@/lib/dialCodes";
 import type { AddressFill, AddressSuggestion } from "@/components/admissions/addressLookup";
 import { bandForYearGroup } from "@/components/learn/admissions/paymentCalc";
 import type { FeeBand } from "@/content/seed";
@@ -175,7 +177,7 @@ function dobError(k: ChildForm): string | undefined {
 
 function phoneError(phone: string, who: string): string | undefined {
   if (!phone.trim()) return `Please enter a phone number we can reach ${who} on.`;
-  if (phone.replace(/\D/g, "").length < 7) return "That phone number looks too short. Please include the full number with its country code if outside the UK.";
+  if (splitPhone(phone).local.replace(/\D/g, "").length < 6) return "That phone number looks too short. Please check the number and the country code.";
   return undefined;
 }
 
@@ -1013,7 +1015,7 @@ export function ApplyForm({
               <input {...props("parentEmail")} type="email" autoComplete="email" maxLength={254} className={inputCls} />
             </Field>
             <Field id="f-parentPhone" label="Phone number" error={errors.parentPhone}>
-              <input {...props("parentPhone")} type="tel" autoComplete="tel" maxLength={40} className={inputCls} />
+              <PhoneInput id="f-parentPhone" name="parentPhone" value={values.parentPhone} onChange={(v) => setText("parentPhone", v)} disabled={busy} invalid={!!errors.parentPhone} describedBy={errors.parentPhone ? "e-f-parentPhone" : undefined} inputClassName={inputBase} />
             </Field>
             <Field id="f-preferredStart" label="Preferred start" optional>
               <input {...props("preferredStart")} type="text" maxLength={120} placeholder="e.g. January 2027" className={inputCls} />
@@ -1361,7 +1363,7 @@ export function ApplyForm({
                         <input {...kidProps(i, "guardianEmail")} type="email" maxLength={254} className={inputCls} />
                       </Field>
                       <Field id={`f-c${i}-guardianPhone`} label="Phone number" error={errors[`c${i}-guardianPhone`]}>
-                        <input {...kidProps(i, "guardianPhone")} type="tel" maxLength={40} className={inputCls} />
+                        <PhoneInput id={`f-c${i}-guardianPhone`} value={k.guardianPhone} onChange={(v) => setKidText(i, "guardianPhone", v)} disabled={busy} invalid={!!errors[`c${i}-guardianPhone`]} describedBy={errors[`c${i}-guardianPhone`] ? `e-f-c${i}-guardianPhone` : undefined} inputClassName={inputBase} />
                       </Field>
                       <div className="sm:col-span-2">
                         <Field id={`f-c${i}-guardianAddress`} label="Home address" optional>

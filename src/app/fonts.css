@@ -1,0 +1,31 @@
+/*
+ * Size-matched fallback fonts, shown for a moment while the real fonts load (or if they fail).
+ * These are the exact values next/font/google used, so pages look the same as before the fonts
+ * were self-hosted. src/app/fonts.ts puts each one last in its font's CSS variable.
+ */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+  size-adjust: 107.12%;
+}
+
+@font-face {
+  font-family: "Space Grotesk Fallback";
+  src: local("Arial");
+  ascent-override: 89.71%;
+  descent-override: 26.62%;
+  line-gap-override: 0%;
+  size-adjust: 109.69%;
+}
+
+@font-face {
+  font-family: "Amiri Fallback";
+  src: local("Times New Roman");
+  ascent-override: 112.47%;
+  descent-override: 63.44%;
+  line-gap-override: 0%;
+  size-adjust: 99.94%;
+}

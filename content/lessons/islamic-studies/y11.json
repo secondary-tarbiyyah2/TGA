@@ -3,7 +3,7 @@
   "year": "y11",
   "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
   "boardShort": "Edexcel IGCSE 4IS1",
-  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.8, 1.9, 2.1, 2.2, 2.3 and Appendix 5 passages (33:9, 5:3, 112:1-4, 9:128-129, 4:163); assumes Year 11 pupils have already covered spec 1.1-1.7 in Year 10; RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 2.4-2.9 and 3.6-3.9, plus one extra lesson deepening 2.2 (the six earlier prophets). Units 1.8, 1.9, 2.1, 2.2 and 2.3 are already covered in content/lessons/islamic-studies/y11.json (12 lessons) and are not duplicated here. | Gap-fill against Pearson Edexcel International GCSE Islamic Studies 4IS1 specification | Spring 1 2027 (lessons 35 to 42 new): Year 11 pack Islamic Studies founding-year fast-teach (week of 11 Jan 2.1 to 2.4; 18 Jan 2.5 to 2.9; 25 Jan 3.6 and 3.7; 1 Feb 3.8 and 3.9; mock week of 8 Feb not written as lessons), with portal lessons 8 to 34 as independent study; set passages 112:1-4, 9:128-129, 4:163, the predestination hadith with 92:5-10, 101:1-11, 2:97-98, 5:48, 49:11-13, 9:117, 49:15, the hadith of Abu 'Ubaid, 30:21, 46:15-18 and the guardian hadith; Shia content taught factually; approved resources for Shia content and the cohort's prior coverage TO CONFIRM",
+  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.8, 1.9, 2.1, 2.2, 2.3 and Appendix 5 passages (33:9, 5:3, 112:1-4, 9:128-129, 4:163); assumes Year 11 pupils have already covered spec 1.1-1.7 in Year 10; RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 2.4-2.9 and 3.6-3.9, plus one extra lesson deepening 2.2 (the six earlier prophets). Units 1.8, 1.9, 2.1, 2.2 and 2.3 are already covered in content/lessons/islamic-studies/y11.json (12 lessons) and are not duplicated here. | Gap-fill against Pearson Edexcel International GCSE Islamic Studies 4IS1 specification | Spring 1 2027 (lessons 35 to 42 new): Year 11 pack Islamic Studies founding-year fast-teach (week of 11 Jan 2.1 to 2.4; 18 Jan 2.5 to 2.9; 25 Jan 3.6 and 3.7; 1 Feb 3.8 and 3.9; mock week of 8 Feb not written as lessons), with portal lessons 8 to 34 as independent study; set passages 112:1-4, 9:128-129, 4:163, the predestination hadith with 92:5-10, 101:1-11, 2:97-98, 5:48, 49:11-13, 9:117, 49:15, the hadith of Abu 'Ubaid, 30:21, 46:15-18 and the guardian hadith; Shia content taught factually; approved resources for Shia content and the cohort's prior coverage TO CONFIRM | Spring 2 2027 (lessons 43 to 53 new): Year 11 pack Islamic Studies Spring 2 papers and repair (mock feedback and repair list; command words and set passages; Section A 1.1 to 1.9; Section B; Section C 3.1 to 3.9; timed paper with Sections A and B in lessons and Section C at home; feedback; weakest-section repair), before the 4IS1 exam on Wed 26 May 2027; all questions are our own in 4IS1 style; lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: Section A - The battles fought by the Prophet (spec 1.8)",
@@ -6437,6 +6437,2189 @@
           "find": "Houses of Parliament London",
           "alt": "The Houses of Parliament in London",
           "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 43,
+      "title": "Mock feedback and personal repair list",
+      "duration": 50,
+      "bigQuestion": "Is a low mark in a mock bad news or useful news? Why?",
+      "objectives": [
+        "To understand where I lost marks in the mock and plan focused repair before the May exam"
+      ],
+      "successCriteria": [
+        "All: identify three topics or skills where I lost marks",
+        "Most: explain each loss using the mark scheme criteria",
+        "Some: write a timed repair list with specific actions"
+      ],
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "repair list",
+          "def": "a plan of exactly what to fix and when"
+        },
+        {
+          "term": "AO (assessment objective)",
+          "def": "the skill a question tests"
+        },
+        {
+          "term": "set passage",
+          "def": "the specified Qur'an or hadith text for a topic"
+        },
+        {
+          "term": "command word",
+          "def": "the instruction: describe, explain, assess"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a low mark in a mock bad news or useful news? Why?",
+        "a": "Useful: it shows exactly what to fix with ten weeks to go."
+      },
+      "islamicLink": {
+        "text": "Allah does not burden a soul beyond what it can bear (al-Baqarah 2:286). With effort, tawakkul and du'a, every gap can be closed.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. How long is the 4IS1 paper?",
+          "a": "2 hours 30 minutes",
+          "mins": 1,
+          "options": [
+            "2 hours 30 minutes",
+            "1 hour 45 minutes"
+          ]
+        },
+        {
+          "q": "How many sections?",
+          "a": "Three (A, B, C)",
+          "mins": 1,
+          "options": [
+            "Three (A, B, C)",
+            "Two"
+          ]
+        },
+        {
+          "q": "Which passage is set for 2.1?",
+          "a": "112:1-4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The paper",
+          "bullets": [],
+          "note": "Begin with Bismillah. 4IS1 paper: 2 hours 30, 90 marks; Section A 1.1 to 1.9, Section B 2.1 to 2.9, Section C 3.1 to 3.9 (30 marks a section: about 50 minutes each)",
+          "table": {
+            "head": [
+              "Section",
+              "Content",
+              "Time guide"
+            ],
+            "rows": [
+              [
+                "A",
+                "1.1 to 1.9 the Prophet ﷺ",
+                "About 50 min"
+              ],
+              [
+                "B",
+                "2.1 to 2.9 beliefs",
+                "About 50 min"
+              ],
+              [
+                "C",
+                "3.1 to 3.9 practices",
+                "About 50 min"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Where marks go",
+          "bullets": [
+            "Knowledge without development",
+            "Set passage not used or misquoted",
+            "12-mark answers with no judgement"
+          ],
+          "note": "Adapt to the group's actual mock errors."
+        },
+        {
+          "heading": "Model repair list",
+          "bullets": [],
+          "note": "Specific, timed, checkable.",
+          "model": {
+            "problem": "Weakness: 12-mark conclusions and set passages for 3.6 to 3.9",
+            "steps": [
+              "Action 1: learn 49:15, 30:21, the guardian hadith by Friday",
+              "Action 2: one 12-mark plan a day for a week",
+              "Action 3: teacher checks two conclusions",
+              "Review on 19 April"
+            ],
+            "answer": "A list with dates and checks"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is the best repair action?",
+            "options": [
+              "Write three 12-mark conclusions this week and get feedback",
+              "Revise more",
+              "Read everything again"
+            ],
+            "answer": 0,
+            "why": "Specific, timed and checkable."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct one mock answer in green and name the criterion you missed.",
+          "a": "Pupils' own correction with criterion (e.g. no evidence, no judgement)",
+          "mins": 4,
+          "model": "Teacher corrects an anonymised mock answer on screen: 'Missing: a set passage. Added: 112:1 ...'"
+        },
+        {
+          "q": "Section B covers ...",
+          "a": "Beliefs 2.1 to 2.9",
+          "mins": 1,
+          "options": [
+            "Beliefs 2.1 to 2.9",
+            "Practices 3.1 to 3.9"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Go through your marked mock: list every lost mark by topic and skill on the pupil PDF tracker, then write a repair list (three actions with dates) in the portal response box.",
+          "a": "Completed tracker; three specific, dated actions",
+          "mins": 17,
+          "model": "Teacher fills one row: '2.4 al-Qadr: lost 4 marks: did not use the hadith on predestination: action: learn it by Tuesday.'"
+        },
+        {
+          "q": "Extend: rank your three weakest topics by marks available.",
+          "a": "Ranked list",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: rewrite one mock answer to the top band.",
+          "a": "Improved answer",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A good target is ...",
+          "a": "Specific and timed",
+          "mins": 1,
+          "options": [
+            "Specific and timed",
+            "General"
+          ]
+        },
+        {
+          "q": "Back to our ponder: bad news or useful news?",
+          "a": "Useful: it shows exactly what to fix.",
+          "mins": 1
+        }
+      ],
+      "homework": "Start your repair list actions; bring evidence to next lesson.",
+      "send": "SEND: tracker with topic list pre-filled. EAL: command word glossary. Stretch: set yourself a timed question from your weakest topic.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Marked mock papers and mark schemes (school)",
+        "Pupil PDF worksheet: mock tracker and repair list",
+        "Green pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "checklist",
+          "alt": "A checklist",
+          "for": "teach:3"
+        },
+        {
+          "find": "calendar planner",
+          "alt": "A revision calendar",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 44,
+      "title": "Repair: command words, set passages and the 12-mark answer",
+      "duration": 50,
+      "bigQuestion": "What is the difference between knowing a lot and answering the question?",
+      "objectives": [
+        "To understand how each 4IS1 question type is answered and fix the common errors from the mock"
+      ],
+      "successCriteria": [
+        "All: match command words to what they require",
+        "Most: use a set passage accurately in an answer",
+        "Some: write a top-band 12-mark conclusion"
+      ],
+      "smsc": "Spiritual: seeking knowledge as worship",
+      "keywords": [
+        {
+          "term": "describe",
+          "def": "give features or events"
+        },
+        {
+          "term": "explain",
+          "def": "give reasons, developed with evidence"
+        },
+        {
+          "term": "assess",
+          "def": "weigh arguments and judge"
+        },
+        {
+          "term": "develop",
+          "def": "add detail, example or evidence to a point"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the difference between knowing a lot and answering the question?",
+        "a": "Answering the question means doing what the command word asks, with evidence."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And say: My Lord, increase me in knowledge' (Ta Ha 20:114).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Set passage for 3.2?",
+          "a": "62:9-11",
+          "mins": 1,
+          "options": [
+            "62:9-11",
+            "3:18-19"
+          ]
+        },
+        {
+          "q": "Set passage for 2.5?",
+          "a": "101:1-11",
+          "mins": 1,
+          "options": [
+            "101:1-11",
+            "2:97-98"
+          ]
+        },
+        {
+          "q": "Set passage for 3.8?",
+          "a": "30:21 and 46:15-18",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Command words",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Command",
+              "Do this"
+            ],
+            "rows": [
+              [
+                "Describe",
+                "Features or events, accurate detail"
+              ],
+              [
+                "Explain",
+                "Reasons, each developed with evidence"
+              ],
+              [
+                "Explain what this passage teaches",
+                "Quote briefly, explain, apply"
+              ],
+              [
+                "Assess this statement",
+                "For, against, justified judgement"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Set passages map",
+          "bullets": [],
+          "note": "Pupils fill the gaps from memory first.",
+          "table": {
+            "head": [
+              "Topic",
+              "Passage"
+            ],
+            "rows": [
+              [
+                "1.1 to 1.3",
+                "66:1-3; 97:1-5; 33:38-40"
+              ],
+              [
+                "1.4 to 1.6",
+                "Hadith on intention; 33:36; hadith on the just"
+              ],
+              [
+                "1.7 to 1.9",
+                "Hadith on obedience; 33:9; 5:3"
+              ],
+              [
+                "2.1 to 2.5",
+                "112:1-4; 9:128-129; 4:163; predestination hadith with 92:5-10; 101:1-11"
+              ],
+              [
+                "2.6 to 2.9",
+                "2:97-98; 5:48; 49:11-13; 9:117"
+              ],
+              [
+                "3.1 to 3.5",
+                "3:18-19; 62:9-11; 2:183-185; 9:58-60; 2:197-199"
+              ],
+              [
+                "3.6 to 3.9",
+                "49:15; Abu 'Ubaid on the Eids; 30:21, 46:15-18; the guardian hadith"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Top-band conclusion",
+          "bullets": [],
+          "note": "Model.",
+          "model": {
+            "problem": "'Hajj is the most important pillar.' Conclusion",
+            "steps": [
+              "Judge: I disagree",
+              "Weigh: Hajj is once in a lifetime and only for those able (3:97)",
+              "Compare: salah is daily and the dividing line (Muslim)",
+              "So: salah is more central, though Hajj is the greatest single journey"
+            ],
+            "answer": "A judgement that weighs and justifies"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'Assess this statement' needs ...",
+            "options": [
+              "Both sides and a justified judgement",
+              "A list of facts",
+              "One side only"
+            ],
+            "answer": 0,
+            "why": "Assess = weigh and judge."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what 9:58-60 teaches about zakah. (4 marks, our own question)",
+          "a": "Zakah goes only to the eight groups named (9:60), as a duty from Allah; it is not to be given by personal favour (9:58-59).",
+          "mins": 4,
+          "model": "Point 1: zakah has set recipients. Develop: 9:60 lists the poor, the needy and six other groups. Point 2: it is an obligation from Allah. Develop: 'an obligation from Allah' (9:60), so Muslims distribute it as Allah commands, not by favour."
+        },
+        {
+          "q": "'Explain' requires ...",
+          "a": "Developed reasons",
+          "mins": 1,
+          "options": [
+            "Developed reasons",
+            "A list"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Fix-it set on the pupil PDF: five weak answers (our own examples) to improve: add development, add the set passage, or add a judgement.",
+          "a": "Each answer improved with the missing element named",
+          "mins": 16,
+          "model": "Teacher fixes answer 1: adds 'Develop: for example, 2:183 says fasting was prescribed so that you may attain taqwa.'"
+        },
+        {
+          "q": "Extend: write the set passages for Section C from memory.",
+          "a": "3:18-19; 62:9-11; 2:183-185; 9:58-60; 2:197-199; 49:15; Abu 'Ubaid hadith; 30:21, 46:15-18; guardian hadith",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which command word needs a judgement?",
+          "a": "Assess",
+          "mins": 1,
+          "options": [
+            "Assess",
+            "Describe"
+          ]
+        },
+        {
+          "q": "Back to our ponder: knowing a lot versus answering the question?",
+          "a": "Answer what the command word asks, with evidence.",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: learn all set passages using the map; self-test daily.",
+      "send": "SEND: command word cards. EAL: set passage map with English summaries. Stretch: write a top-band conclusion for a statement of your choice.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Pupil PDF worksheet: set passages map and fix-it set"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "open Quran book",
+          "alt": "The Qur'an: set passages",
+          "for": "teach:2"
+        },
+        {
+          "find": "toolbox",
+          "alt": "A toolbox: exam techniques",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 45,
+      "title": "Section A exam questions: 1.1 to 1.5",
+      "duration": 50,
+      "bigQuestion": "Which single event from 1.1 to 1.5 changed the most? Why?",
+      "objectives": [
+        "To understand how to answer Section A questions on the Prophet's ﷺ life from early years to the Sunnah"
+      ],
+      "successCriteria": [
+        "All: recall key facts and set passages for 1.1 to 1.5",
+        "Most: answer 4-mark questions with development",
+        "Some: write a 12-mark answer on a Section A statement"
+      ],
+      "smsc": "Spiritual: the Prophet's ﷺ example",
+      "keywords": [
+        {
+          "term": "chronology",
+          "def": "the order of events"
+        },
+        {
+          "term": "revelation (وَحْي)",
+          "def": "Allah's message sent to the Prophet ﷺ"
+        },
+        {
+          "term": "Hijrah (هِجْرَة)",
+          "def": "the migration to Madinah, 622 CE"
+        },
+        {
+          "term": "Sunnah (سُنَّة)",
+          "def": "the Prophet's ﷺ sayings, actions and approvals"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which single event from 1.1 to 1.5 changed the most? Why?",
+        "a": "Pupils' own: the first revelation (97:1-5) or the Hijrah, with a reason."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Read in the name of your Lord who created' (al-'Alaq 96:1), the first words revealed.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Set passage for 1.2?",
+          "a": "97:1-5",
+          "mins": 1,
+          "options": [
+            "97:1-5",
+            "66:1-3"
+          ]
+        },
+        {
+          "q": "'Seal of the Prophets' is in ...",
+          "a": "33:40",
+          "mins": 1,
+          "options": [
+            "33:40",
+            "2:255"
+          ]
+        },
+        {
+          "q": "Set passage for 1.5?",
+          "a": "33:36",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1.1 to 1.5 at a glance",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "timeline": [
+            {
+              "label": "570 CE",
+              "text": "Birth; orphaned; Abu Talib; trade; Khadijah (1.1)"
+            },
+            {
+              "label": "610 CE",
+              "text": "Hira; Jibril; 96:1-5; Night of Power (1.2)"
+            },
+            {
+              "label": "613 onwards",
+              "text": "Public call; opposition (1.3)"
+            },
+            {
+              "label": "616 to 622",
+              "text": "Boycott; Mi'raj; Hijrah (1.4)"
+            },
+            {
+              "label": "Madinah",
+              "text": "Sunnah recorded and followed (1.5)"
+            }
+          ]
+        },
+        {
+          "heading": "Exam traps",
+          "bullets": [
+            "Mixing up 97:1-5 (Night of Power) and 96:1-5 (first revelation)",
+            "Dates without events",
+            "Sunnah without how it was recorded"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which passage is set for 1.4?",
+            "options": [
+              "The hadith on intention and hijrah",
+              "33:9",
+              "5:3"
+            ],
+            "answer": 0,
+            "why": "1.4: the hadith on intention and migration."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain two reasons why the Prophet's ﷺ early life mattered for his later work. (4 marks, our own question)",
+          "a": "His honesty (al-Amin) made people trust his message; his work as a trader and with Khadijah gave experience and support.",
+          "mins": 4,
+          "model": "Point 1: his honesty prepared people to trust him. Develop: called al-Amin, so the Quraysh could not call him a liar. Point 2: experience in trade and society. Develop: travel and business with Khadijah's support, who later believed first."
+        },
+        {
+          "q": "Who was Bahira?",
+          "a": "A Christian monk who met the young Muhammad ﷺ in Syria (1.1)",
+          "mins": 1,
+          "options": [
+            "A Christian monk who met the young Muhammad ﷺ in Syria (1.1)",
+            "A Makkan leader"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Section A set 1 on the pupil PDF (our own questions): four 4-mark questions on 1.1 to 1.5 and one 12-mark: 'The Hijrah was the most important event in establishing Islam.' Assess. Timed: 25 minutes.",
+          "a": "Mark-scheme style answers: developed points with evidence; balanced 12-mark with a justified judgement",
+          "mins": 25,
+          "model": "Teacher answers the first 4-mark question aloud with Point and Develop."
+        },
+        {
+          "q": "Extend: self-mark with the class mark scheme in green.",
+          "a": "Corrections",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "96:1-5 is ...",
+          "a": "The first revelation",
+          "mins": 1,
+          "options": [
+            "The first revelation",
+            "The set passage for 1.2"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which event changed most?",
+          "a": "Pupils' own with a reason",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: redo any question below half marks; read portal y10 lessons 12 to 17 for weak topics.",
+      "send": "SEND: timeline with key words. EAL: 4-mark Point and Develop frame. Stretch: answer the 12-mark in 15 minutes.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Pupil PDF worksheet: Section A set 1 (our own questions) and mark scheme",
+        "Portal islamic-studies y10 lessons 12 to 17 (independent study)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jabal al-Nour Hira",
+          "alt": "Jabal an-Nur, the mountain of the Cave of Hira",
+          "for": "teach:1"
+        },
+        {
+          "find": "timeline arrows",
+          "alt": "A timeline",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 46,
+      "title": "Section A exam questions: 1.6 to 1.9",
+      "duration": 50,
+      "bigQuestion": "Was the Prophet ﷺ more a leader in war or a leader in peace? What is the evidence?",
+      "objectives": [
+        "To understand how to answer Section A questions on justice, leadership, the battles and the final years"
+      ],
+      "successCriteria": [
+        "All: recall the set passages for 1.6 to 1.9",
+        "Most: answer 4-mark questions with development",
+        "Some: write a 12-mark answer comparing reasons for battles"
+      ],
+      "smsc": "Moral: justice and leadership",
+      "keywords": [
+        {
+          "term": "'adl (عَدْل)",
+          "def": "justice"
+        },
+        {
+          "term": "Badr (بَدْر)",
+          "def": "the first major battle, 2 AH"
+        },
+        {
+          "term": "Khaybar (خَيْبَر)",
+          "def": "the battle of 7 AH"
+        },
+        {
+          "term": "Farewell Sermon",
+          "def": "the final sermon, 10 AH"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Was the Prophet ﷺ more a leader in war or a leader in peace? What is the evidence?",
+        "a": "Mostly peace: battles were defensive and few; treaties, justice and teaching filled his leadership."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed in the Messenger of Allah you have an excellent example' (al-Ahzab 33:21).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Set passage for 1.8?",
+          "a": "33:9",
+          "mins": 1,
+          "options": [
+            "33:9",
+            "5:3"
+          ]
+        },
+        {
+          "q": "Set passage for 1.9?",
+          "a": "5:3",
+          "mins": 1,
+          "options": [
+            "5:3",
+            "33:36"
+          ]
+        },
+        {
+          "q": "Set passage for 1.6?",
+          "a": "The hadith on the just seated on pulpits of light",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1.6 to 1.9 at a glance",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Topic",
+              "Key content",
+              "Passage"
+            ],
+            "rows": [
+              [
+                "1.6 Justice",
+                "Social and economic justice, rights, women, other religions",
+                "Hadith on the just"
+              ],
+              [
+                "1.7 Leader",
+                "Shari'ah, consolidation, prisoners, other nations",
+                "Hadith on obedience"
+              ],
+              [
+                "1.8 Battles",
+                "Badr, Uhud, Trench, Khaybar: reasons and importance",
+                "33:9"
+              ],
+              [
+                "1.9 Final years",
+                "Farewell Pilgrimage and sermon, achievements, death",
+                "5:3"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The battles",
+          "bullets": [],
+          "note": "Order and one reason each.",
+          "timeline": [
+            {
+              "label": "2 AH",
+              "text": "Badr: defending Madinah; Quraysh army came out"
+            },
+            {
+              "label": "3 AH",
+              "text": "Uhud: lesson of obedience to orders"
+            },
+            {
+              "label": "5 AH",
+              "text": "Trench: siege of Madinah; 33:9"
+            },
+            {
+              "label": "7 AH",
+              "text": "Khaybar: ending a threat after treaties were broken"
+            }
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which battle is linked to 33:9?",
+            "options": [
+              "The Trench",
+              "Badr",
+              "Khaybar"
+            ],
+            "answer": 0,
+            "why": "33:9 recalls the armies and the wind sent against them at the Trench."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain two lessons Muslims learn from the Battle of Uhud. (4 marks, our own question)",
+          "a": "Obey the leader's orders: the archers left their post; patience after loss: the Muslims recovered and Allah's help came with obedience.",
+          "mins": 4,
+          "model": "Point 1: obedience. Develop: the archers left the hill against orders, which turned victory into loss. Point 2: patience and learning from mistakes. Develop: the Qur'an addressed the believers with lessons (3:152), not despair."
+        },
+        {
+          "q": "Badr was in ...",
+          "a": "2 AH",
+          "mins": 1,
+          "options": [
+            "2 AH",
+            "5 AH"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Section A set 2 on the pupil PDF (our own questions): four 4-mark questions on 1.6 to 1.9 and one 12-mark: 'The Prophet's ﷺ greatest achievement was religious, not political.' Assess. Timed: 25 minutes.",
+          "a": "Mark-scheme style answers with set passages and a justified judgement",
+          "mins": 25,
+          "model": "Teacher answers the first 4-mark question aloud."
+        },
+        {
+          "q": "Extend: self-mark in green.",
+          "a": "Corrections",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "5:3 was revealed at ...",
+          "a": "Arafah",
+          "mins": 1,
+          "options": [
+            "Arafah",
+            "Badr"
+          ]
+        },
+        {
+          "q": "Back to our ponder: leader in war or peace?",
+          "a": "Mostly peace; battles were few and for defence or broken treaties.",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: battle flash cards (date, reason, outcome, lesson); read portal y11 lessons 1 to 7 for weak topics.",
+      "send": "SEND: battle cards. EAL: Point and Develop frame. Stretch: compare reasons for Badr and Khaybar in one paragraph.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Pupil PDF worksheet: Section A set 2 (our own questions) and mark scheme",
+        "Portal islamic-studies y11 lessons 1 to 7 (independent study)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Badr battlefield",
+          "alt": "The plain of Badr",
+          "for": "teach:2"
+        },
+        {
+          "find": "Mount Uhud",
+          "alt": "Mount Uhud near Madinah",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 47,
+      "title": "Section B exam questions: 2.1 to 2.9",
+      "duration": 50,
+      "bigQuestion": "Which belief from Section B has the biggest effect on how a Muslim lives day to day? Why?",
+      "objectives": [
+        "To understand how to answer Section B belief questions accurately with set passages"
+      ],
+      "successCriteria": [
+        "All: recall the set passage for each of 2.1 to 2.9",
+        "Most: answer 4-mark belief questions with development",
+        "Some: write a 12-mark answer on al-Qadr or Shari'ah"
+      ],
+      "smsc": "Spiritual: core beliefs",
+      "keywords": [
+        {
+          "term": "Tawhid (تَوْحِيد)",
+          "def": "the oneness of Allah"
+        },
+        {
+          "term": "al-Qadr (القَدَر)",
+          "def": "predestination"
+        },
+        {
+          "term": "Akhirah (الآخِرَة)",
+          "def": "life after death"
+        },
+        {
+          "term": "Shari'ah (شَرِيعَة)",
+          "def": "Islamic law and guidance"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which belief from Section B has the biggest effect on how a Muslim lives day to day? Why?",
+        "a": "Pupils' own, for example Akhirah (accountability) or Tawhid, with a reason."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Say: He is Allah, the One' (al-Ikhlas 112:1), the set passage for 2.1.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Set passage for 2.4?",
+          "a": "The hadith on predestination with 92:5-10",
+          "mins": 1,
+          "options": [
+            "The hadith on predestination with 92:5-10",
+            "101:1-11"
+          ]
+        },
+        {
+          "q": "Set passage for 2.6?",
+          "a": "2:97-98",
+          "mins": 1,
+          "options": [
+            "2:97-98",
+            "5:48"
+          ]
+        },
+        {
+          "q": "Set passage for 2.9?",
+          "a": "9:117",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Section B map",
+          "bullets": [],
+          "note": "Begin with Bismillah. Pupils recall before the reveal.",
+          "table": {
+            "head": [
+              "Topic",
+              "Core",
+              "Passage"
+            ],
+            "rows": [
+              [
+                "2.1 Allah",
+                "Tawhid, attributes, shirk, nifaq",
+                "112:1-4"
+              ],
+              [
+                "2.2 Risalah",
+                "Prophethood; Adam to Isa",
+                "9:128-129"
+              ],
+              [
+                "2.3 Books",
+                "Tawrat, Zabur, Injil, Scrolls",
+                "4:163"
+              ],
+              [
+                "2.4 al-Qadr",
+                "Decree, free will, evil and suffering",
+                "Hadith with 92:5-10"
+              ],
+              [
+                "2.5 Akhirah",
+                "Judgement, Barzakh, Jannah, Jahannam",
+                "101:1-11"
+              ],
+              [
+                "2.6 Malaikah",
+                "Jibril, Mikail, Israfil, Izrail",
+                "2:97-98"
+              ],
+              [
+                "2.7 Shari'ah",
+                "Sources, ijma, qiyas, five categories",
+                "5:48"
+              ],
+              [
+                "2.8 and 2.9",
+                "Etiquette; early leaders",
+                "49:11-13; 9:117"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Trap: free will",
+          "bullets": [
+            "Qadr does not remove responsibility",
+            "92:5-10: whoever gives and fears Allah, We ease his way",
+            "Effort and trust together"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which angel blows the trumpet?",
+            "options": [
+              "Israfil",
+              "Mikail",
+              "Jibril"
+            ],
+            "answer": 0,
+            "why": "Israfil; Mikail with provision and rain; Jibril with revelation."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what 92:5-10 teaches about free will. (4 marks, our own question)",
+          "a": "People choose to give and fear Allah or to be stingy; Allah eases the path each chooses, so people are responsible.",
+          "mins": 4,
+          "model": "Point 1: humans make real choices. Develop: 'as for he who gives and fears Allah ... We will ease him toward ease' (92:5-7). Point 2: choices have consequences. Develop: 'as for he who withholds ... We will ease him toward difficulty' (92:8-10)."
+        },
+        {
+          "q": "The five categories of action are part of ...",
+          "a": "2.7 Shari'ah",
+          "mins": 1,
+          "options": [
+            "2.7 Shari'ah",
+            "2.5 Akhirah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Section B set on the pupil PDF (our own questions): five 4-mark questions across 2.1 to 2.9 and one 12-mark: 'If everything is decreed, people cannot be held responsible for their actions.' Assess. Timed: 27 minutes.",
+          "a": "Mark-scheme style answers; 12-mark uses the predestination hadith and 92:5-10 with a justified judgement",
+          "mins": 27,
+          "model": "Teacher answers the first 4-mark question aloud."
+        },
+        {
+          "q": "Extend: self-mark in green.",
+          "a": "Corrections",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Shirk is ...",
+          "a": "Associating partners with Allah",
+          "mins": 1,
+          "options": [
+            "Associating partners with Allah",
+            "Hypocrisy"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which belief most affects daily life?",
+          "a": "Pupils' own with a reason",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: Section B flash cards (one per topic with passage); read portal y11 lessons 8 to 24 for weak topics.",
+      "send": "SEND: map with gaps. EAL: belief vocabulary list. Stretch: write a 12-mark on 'Belief in angels has little effect on how Muslims live.'",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Pupil PDF worksheet: Section B set (our own questions) and mark scheme",
+        "Portal islamic-studies y11 lessons 8 to 24 (independent study)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "night sky stars",
+          "alt": "The heavens: belief in Allah's creation",
+          "for": "hook"
+        },
+        {
+          "find": "open Quran book",
+          "alt": "The Qur'an",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 48,
+      "title": "Section C exam questions: 3.1 to 3.5",
+      "duration": 50,
+      "bigQuestion": "If you had to explain the five pillars to a non-Muslim friend in one minute, what would you say?",
+      "objectives": [
+        "To understand how to answer Section C questions on the five pillars with set passages"
+      ],
+      "successCriteria": [
+        "All: recall the set passages for 3.1 to 3.5",
+        "Most: answer 4-mark questions on practices with development",
+        "Some: write a 12-mark answer evaluating a pillar"
+      ],
+      "smsc": "Spiritual: the pillars as worship",
+      "keywords": [
+        {
+          "term": "sawm (صَوْم)",
+          "def": "fasting"
+        },
+        {
+          "term": "zakah (زَكَاة)",
+          "def": "obligatory giving"
+        },
+        {
+          "term": "Khums (خُمُس)",
+          "def": "one fifth: a Shia practice named in the spec"
+        },
+        {
+          "term": "Hajj (حَجّ)",
+          "def": "pilgrimage"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had to explain the five pillars to a non-Muslim friend in one minute, what would you say?",
+        "a": "Belief, prayer, charity, fasting and pilgrimage: a complete way of worship."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, fasting is prescribed for you ... that you may attain taqwa' (al-Baqarah 2:183).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Set passage for 3.3?",
+          "a": "2:183-185",
+          "mins": 1,
+          "options": [
+            "2:183-185",
+            "2:197-199"
+          ]
+        },
+        {
+          "q": "Set passage for 3.4?",
+          "a": "9:58-60",
+          "mins": 1,
+          "options": [
+            "9:58-60",
+            "62:9-11"
+          ]
+        },
+        {
+          "q": "Set passage for 3.5?",
+          "a": "2:197-199",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Section C part 1 map",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Topic",
+              "Core",
+              "Passage"
+            ],
+            "rows": [
+              [
+                "3.1 Shahadah",
+                "Nature, role, use",
+                "3:18-19"
+              ],
+              [
+                "3.2 Salah",
+                "Importance, how, Jummah, exemptions",
+                "62:9-11"
+              ],
+              [
+                "3.3 Sawm",
+                "Purpose, exemptions, Laylat al-Qadr",
+                "2:183-185"
+              ],
+              [
+                "3.4 Zakah and Khums",
+                "Purpose, recipients, global giving",
+                "9:58-60"
+              ],
+              [
+                "3.5 Hajj",
+                "Origins, rites, benefits, exemptions",
+                "2:197-199"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Khums: taught factually",
+          "bullets": [
+            "A fifth (one-fifth) of certain wealth",
+            "In Shia practice: on surplus annual income",
+            "Sunni scholars apply khums to war gains (8:41)"
+          ],
+          "note": "Taught as the specification requires; the school's own position stated plainly by the teacher (TO CONFIRM framing with the Islamic Studies lead)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "2:185 tells us the Qur'an was revealed in ...",
+            "options": [
+              "Ramadan",
+              "Dhul-Hijjah",
+              "Muharram"
+            ],
+            "answer": 0,
+            "why": "'The month of Ramadan in which the Qur'an was revealed' (2:185)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain two benefits of Hajj for Muslims. (4 marks, our own question)",
+          "a": "Spiritual: forgiveness and closeness to Allah, following Ibrahim; social: unity of millions of Muslims of every race in one dress.",
+          "mins": 4,
+          "model": "Point 1: spiritual renewal. Develop: Hajj with no obscenity or wrongdoing is commanded (2:197), and pilgrims seek forgiveness. Point 2: unity. Develop: ihram makes rich and poor equal before Allah."
+        },
+        {
+          "q": "Who is exempt from fasting and makes it up later?",
+          "a": "The ill and travellers",
+          "mins": 1,
+          "options": [
+            "The ill and travellers",
+            "Teenagers"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Section C set 1 on the pupil PDF (our own questions): four 4-mark questions on 3.1 to 3.5 and one 12-mark: 'Zakah is more important than sawm.' Assess. Timed: 25 minutes.",
+          "a": "Mark-scheme style answers; set passages used; justified judgement",
+          "mins": 25,
+          "model": "Teacher answers the first 4-mark question aloud."
+        },
+        {
+          "q": "Extend: self-mark in green.",
+          "a": "Corrections",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Laylat al-Qadr is in ...",
+          "a": "Ramadan",
+          "mins": 1,
+          "options": [
+            "Ramadan",
+            "Shawwal"
+          ]
+        },
+        {
+          "q": "Back to our ponder: the five pillars in one minute?",
+          "a": "Belief, prayer, charity, fasting and pilgrimage: a complete way of worship.",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: pillars flash cards; read portal y10 lessons 21 to 33 for weak topics.",
+      "send": "SEND: map with gaps. EAL: pillar vocabulary. Stretch: 12-mark on 'Hajj is the most important pillar.'",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Pupil PDF worksheet: Section C set 1 (our own questions) and mark scheme",
+        "Portal islamic-studies y10 lessons 21 to 33 (independent study)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kaaba",
+          "alt": "The Ka'bah: Hajj",
+          "for": "teach:1"
+        },
+        {
+          "find": "dates in bowl",
+          "alt": "Dates: breaking the fast",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 49,
+      "title": "Section C exam questions: 3.6 to 3.9",
+      "duration": 50,
+      "bigQuestion": "Which topic in 3.6 to 3.9 is most misunderstood by non-Muslims? How would you explain it?",
+      "objectives": [
+        "To understand how to answer Section C questions on jihad, festivals, family and leadership"
+      ],
+      "successCriteria": [
+        "All: recall the set passages for 3.6 to 3.9",
+        "Most: answer 4-mark questions with development",
+        "Some: write a 12-mark answer on festivals or leadership"
+      ],
+      "smsc": "Social and moral: responsibility and citizenship",
+      "keywords": [
+        {
+          "term": "jihad (جِهَاد)",
+          "def": "striving in the way of Allah"
+        },
+        {
+          "term": "Eid (عِيد)",
+          "def": "festival"
+        },
+        {
+          "term": "nikah (نِكَاح)",
+          "def": "marriage contract"
+        },
+        {
+          "term": "ra'i (رَاعٍ)",
+          "def": "guardian, shepherd"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which topic in 3.6 to 3.9 is most misunderstood by non-Muslims? How would you explain it?",
+        "a": "Often jihad: explain the greater (inner) jihad and the strict conditions of the lesser jihad."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Every one of you is a guardian, and every one of you is responsible for his flock' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Set passage for 3.6?",
+          "a": "49:15",
+          "mins": 1,
+          "options": [
+            "49:15",
+            "30:21"
+          ]
+        },
+        {
+          "q": "Set passage for 3.7?",
+          "a": "The hadith narrated by Abu 'Ubaid on the two Eid days",
+          "mins": 1,
+          "options": [
+            "The hadith narrated by Abu 'Ubaid on the two Eid days",
+            "2:190"
+          ]
+        },
+        {
+          "q": "Set passage for 3.9?",
+          "a": "'Every one of you is a guardian'",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Section C part 2 map",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Topic",
+              "Core",
+              "Passage"
+            ],
+            "rows": [
+              [
+                "3.6 Jihad",
+                "Greater and lesser; conditions (2:190-194, 22:39)",
+                "49:15"
+              ],
+              [
+                "3.7 Festivals",
+                "Eid al-Fitr, Eid al-Adha, Ashura (Sunni and Shia meanings)",
+                "Abu 'Ubaid's hadith"
+              ],
+              [
+                "3.8 Family",
+                "Marriage, purpose of family, birth and death ceremonies",
+                "30:21; 46:15-18"
+              ],
+              [
+                "3.9 Leadership",
+                "Responsibilities, modern challenges, citizenship",
+                "Guardian hadith"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Trap: jihad",
+          "bullets": [
+            "Greater jihad: against one's own desires",
+            "Lesser jihad: defensive, with strict conditions",
+            "Never against civilians; no aggression (2:190)"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "2:190 says ...",
+            "options": [
+              "Fight those who fight you, but do not transgress",
+              "Fight everyone",
+              "Never defend yourself"
+            ],
+            "answer": 0,
+            "why": "Defensive, with limits."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain two ways the guardian hadith applies to Muslim citizens. (4 marks, our own question)",
+          "a": "Each person is responsible for those in their care (family, work); leaders answer for their people, so citizens act responsibly and leaders serve.",
+          "mins": 4,
+          "model": "Point 1: every Muslim has responsibility. Develop: 'every one of you is a guardian ... responsible for his flock' (Bukhari and Muslim): parents, workers, pupils. Point 2: leaders are accountable. Develop: the ruler is a guardian and will be asked about his people."
+        },
+        {
+          "q": "Aqiqah is part of ...",
+          "a": "3.8 birth ceremonies",
+          "mins": 1,
+          "options": [
+            "3.8 birth ceremonies",
+            "3.7 festivals"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Section C set 2 on the pupil PDF (our own questions): four 4-mark questions on 3.6 to 3.9 and one 12-mark: 'Eid-ul-Fitr is more important than Eid-ul-Adha.' Assess. Timed: 25 minutes.",
+          "a": "Mark-scheme style answers; 12-mark uses Abu 'Ubaid's hadith and a justified judgement",
+          "mins": 25,
+          "model": "Teacher answers the first 4-mark question aloud."
+        },
+        {
+          "q": "Extend: self-mark in green.",
+          "a": "Corrections",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Greater jihad is ...",
+          "a": "Striving against one's own desires",
+          "mins": 1,
+          "options": [
+            "Striving against one's own desires",
+            "Warfare"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how would you explain jihad?",
+          "a": "Greater inner struggle first; lesser jihad defensive with strict conditions.",
+          "mins": 1
+        }
+      ],
+      "homework": "Independent study: Section C part 2 flash cards; read portal y11 lessons 25 to 32 for weak topics. Timed paper next week: Sections A and B in lessons, Section C at home.",
+      "send": "SEND: map with gaps. EAL: vocabulary list. Stretch: 12-mark on 'Leaders face more challenges today than in the Prophet's ﷺ time.'",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Pupil PDF worksheet: Section C set 2 (our own questions) and mark scheme",
+        "Portal islamic-studies y11 lessons 25 to 32 (independent study)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Eid prayer mosque",
+          "alt": "A mosque on the day of Eid",
+          "for": "teach:1"
+        },
+        {
+          "find": "shepherd flock sheep",
+          "alt": "A flock: the guardian hadith",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 50,
+      "title": "Timed paper (part 1): Section A",
+      "duration": 50,
+      "bigQuestion": "What would you do if you ran out of time on the last 12-mark question?",
+      "objectives": [
+        "To understand how to manage time and answer Section A under exam conditions"
+      ],
+      "successCriteria": [
+        "All: complete the timed Section A set",
+        "Most: keep to about 1.7 minutes a mark",
+        "Some: finish with time to check and add development"
+      ],
+      "smsc": "Moral: honesty under exam conditions",
+      "keywords": [
+        {
+          "term": "timing",
+          "def": "how long to spend on each question"
+        },
+        {
+          "term": "mark a minute",
+          "def": "pace: about 1.7 minutes for each mark in 4IS1"
+        },
+        {
+          "term": "check",
+          "def": "re-read to add detail and fix errors"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would you do if you ran out of time on the last 12-mark question?",
+        "a": "Plan to avoid it: keep to time; if short, write a plan with bullet points to earn some marks."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'There are two blessings which many people lose: health and free time' (Bukhari). Time in the exam is a trust too.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Section A covers ...",
+          "a": "1.1 to 1.9",
+          "mins": 1,
+          "options": [
+            "1.1 to 1.9",
+            "2.1 to 2.9"
+          ]
+        },
+        {
+          "q": "Total paper time?",
+          "a": "2 hours 30",
+          "mins": 1,
+          "options": [
+            "2 hours 30",
+            "2 hours"
+          ]
+        },
+        {
+          "q": "Set passage for 1.3?",
+          "a": "33:38-40",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Timing plan",
+          "bullets": [],
+          "note": "Begin with Bismillah. 4IS1 paper: 2 hours 30, 90 marks; Section A 1.1 to 1.9, Section B 2.1 to 2.9, Section C 3.1 to 3.9 (30 marks a section: about 50 minutes each)",
+          "table": {
+            "head": [
+              "Marks",
+              "Time"
+            ],
+            "rows": [
+              [
+                "4-mark question",
+                "About 7 minutes"
+              ],
+              [
+                "12-mark question",
+                "About 20 minutes"
+              ],
+              [
+                "Today's set: 16 marks",
+                "27 minutes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Exam conditions online",
+          "bullets": [
+            "Camera on, notes away, one window",
+            "Write in the portal response box or on paper",
+            "Upload a photo if on paper"
+          ],
+          "note": "Teacher invigilates on camera."
+        },
+        {
+          "heading": "Last-minute reminders",
+          "bullets": [
+            "Read the command word",
+            "Quote set passages briefly",
+            "Leave 2 minutes to check"
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: plan (not write) a 12-mark answer in 2 minutes: 'The Prophet's ﷺ treatment of opponents was the main reason Islam spread.'",
+          "a": "Plan with two for, two against, a judgement",
+          "mins": 2,
+          "model": "Teacher plans aloud in 2 minutes: For: Makkah pardon, Thumamah. Against: Hudaybiyyah (48:1), the Qur'an. Judgement: partly agree."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed Section A set in the portal (our own questions, 16 marks, 27 minutes): one 4-mark question and one 12-mark question across 1.1 to 1.9.",
+          "a": "Mark-scheme style answers (teacher marks after the lesson)",
+          "mins": 27,
+          "model": "Teacher shows the first question on screen and starts the timer."
+        },
+        {
+          "q": "Extend: if finished early, check and add one more piece of evidence.",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How was your timing, and what will you change next time?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Section C timed at home before the week of 19 April: 50 minutes, one sitting, no notes (pupil PDF paper, parent signs the start and end times).",
+      "send": "SEND: 25% extra time if on the access arrangements list; reader if agreed. EAL: command word card allowed. Stretch: aim to finish with 4 minutes to check.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Timed Section A set (portal; our own questions) and mark scheme",
+        "Section C home paper (pupil PDF) with parent sign-off box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clock face",
+          "alt": "A clock for timing",
+          "for": "teach:1"
+        },
+        {
+          "find": "pen and paper test",
+          "alt": "Exam paper",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 51,
+      "title": "Timed paper (part 2): Section B",
+      "duration": 50,
+      "bigQuestion": "How do you stay calm when the first question looks hard?",
+      "objectives": [
+        "To understand how to answer Section B under exam conditions with accurate beliefs and passages"
+      ],
+      "successCriteria": [
+        "All: complete the timed Section B set",
+        "Most: use at least two set passages accurately",
+        "Some: produce a 12-mark answer with a justified judgement in 20 minutes"
+      ],
+      "smsc": "Spiritual: calm and trust in Allah under pressure",
+      "keywords": [
+        {
+          "term": "timing",
+          "def": "how long to spend on each question"
+        },
+        {
+          "term": "accuracy",
+          "def": "correct facts and passages"
+        },
+        {
+          "term": "judgement",
+          "def": "a clear conclusion with reasons"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How do you stay calm when the first question looks hard?",
+        "a": "Breathe, say a du'a, start with the question you know best, come back later."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And say: My Lord, increase me in knowledge' (Ta Ha 20:114).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Section B covers ...",
+          "a": "2.1 to 2.9",
+          "mins": 1,
+          "options": [
+            "2.1 to 2.9",
+            "3.1 to 3.9"
+          ]
+        },
+        {
+          "q": "Set passage for 2.7?",
+          "a": "5:48",
+          "mins": 1,
+          "options": [
+            "5:48",
+            "9:117"
+          ]
+        },
+        {
+          "q": "About how long for a 12-mark question?",
+          "a": "20 minutes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Timing plan",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Marks",
+              "Time"
+            ],
+            "rows": [
+              [
+                "4-mark question",
+                "About 7 minutes"
+              ],
+              [
+                "12-mark question",
+                "About 20 minutes"
+              ],
+              [
+                "Today's set: 16 marks",
+                "27 minutes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Calm in the exam",
+          "bullets": [
+            "Du'a before starting",
+            "Start with what you know",
+            "Mark-a-minute pace keeps you safe"
+          ],
+          "note": "A du'a such as 'Rabbi zidni 'ilma' (20:114) can be said."
+        },
+        {
+          "heading": "Reminders",
+          "bullets": [
+            "Name the angel, book or prophet exactly",
+            "Free will and qadar: both sides",
+            "Leave 2 minutes to check"
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: write the set passage reference for each of 2.1 to 2.9 in 2 minutes.",
+          "a": "112:1-4; 9:128-129; 4:163; predestination hadith with 92:5-10; 101:1-11; 2:97-98; 5:48; 49:11-13; 9:117",
+          "mins": 2,
+          "model": "Teacher writes the first three from memory as a model."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed Section B set in the portal (our own questions, 16 marks, 27 minutes): one 4-mark question and one 12-mark question across 2.1 to 2.9.",
+          "a": "Mark-scheme style answers (teacher marks after the lesson)",
+          "mins": 27,
+          "model": "Teacher shows the first question and starts the timer."
+        },
+        {
+          "q": "Extend: if finished early, add one more piece of evidence.",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How was your timing, and what will you change next time?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the Section C timed home paper (50 minutes) if not done; upload it to the portal.",
+      "send": "SEND: access arrangements as agreed. EAL: command word card. Stretch: finish with 4 minutes to check.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Timed Section B set (portal; our own questions) and mark scheme",
+        "Section C home paper (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clock face",
+          "alt": "A clock for timing",
+          "for": "teach:1"
+        },
+        {
+          "find": "calm lake",
+          "alt": "A calm lake: staying calm",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 52,
+      "title": "Timed paper feedback",
+      "duration": 50,
+      "bigQuestion": "Which matters more now: the mark you got or what you do with it?",
+      "objectives": [
+        "To understand my results across the three sections and what to fix in the last weeks"
+      ],
+      "successCriteria": [
+        "All: record my marks for each section",
+        "Most: correct my answers using the mark scheme",
+        "Some: rewrite my weakest 12-mark answer to the top band"
+      ],
+      "smsc": "Moral: perseverance and self-improvement",
+      "keywords": [
+        {
+          "term": "feedback",
+          "def": "information on how to improve"
+        },
+        {
+          "term": "band",
+          "def": "a level in the mark scheme"
+        },
+        {
+          "term": "weakest section",
+          "def": "where I lost most marks"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which matters more now: the mark you got or what you do with it?",
+        "a": "What you do with it: four weeks of focused repair can change the grade."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, Allah will not change the condition of a people until they change what is in themselves' (ar-Ra'd 13:11).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 12-mark answers need ...",
+          "a": "Both sides and a justified judgement",
+          "mins": 1,
+          "options": [
+            "Both sides and a justified judgement",
+            "One side"
+          ]
+        },
+        {
+          "q": "Set passage for 3.9?",
+          "a": "The guardian hadith",
+          "mins": 1,
+          "options": [
+            "The guardian hadith",
+            "49:15"
+          ]
+        },
+        {
+          "q": "Set passage for 1.9?",
+          "a": "5:3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Your results",
+          "bullets": [
+            "Section A ... / 20",
+            "Section B ... / 20",
+            "Section C (home) ... / 30"
+          ],
+          "note": "Begin with Bismillah. Teacher returns marked work in the portal."
+        },
+        {
+          "heading": "Common errors this time",
+          "bullets": [],
+          "note": "Adapt to the group.",
+          "table": {
+            "head": [
+              "Error",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Undeveloped points",
+                "Point, then Develop with evidence"
+              ],
+              [
+                "Wrong passage",
+                "Use the set passages map"
+              ],
+              [
+                "No judgement",
+                "Start the conclusion with 'Overall, I ...'"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: from band 2 to band 4",
+          "bullets": [],
+          "note": "Show one anonymised answer improved.",
+          "model": {
+            "problem": "Improving a 12-mark answer",
+            "steps": [
+              "Add a set passage to a 'for' point",
+              "Develop each 'against' point",
+              "Write a judgement that weighs both",
+              "Check spelling of key terms"
+            ],
+            "answer": "Higher band"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct one answer from your timed paper using the mark scheme.",
+          "a": "Pupils' own correction",
+          "mins": 4,
+          "model": "Teacher corrects an anonymised 4-mark answer: adds Develop with 2:183."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Feedback tasks on the pupil PDF: record marks per section, correct every answer in green, then rewrite your weakest 12-mark answer in the portal response box.",
+          "a": "Corrections and an improved 12-mark answer",
+          "mins": 24,
+          "model": "Teacher shows how to fill the section tracker."
+        },
+        {
+          "q": "Extend: write a new repair list for the final weeks.",
+          "a": "Specific, dated actions",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is your weakest section, and why?",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: mark or what you do with it?",
+          "a": "What you do with it.",
+          "mins": 1
+        }
+      ],
+      "homework": "Follow your new repair list; bring your weakest section notes next lesson.",
+      "send": "SEND: tracker pre-filled with sections. EAL: correction phrase bank. Stretch: rewrite two 12-mark answers.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Marked timed paper (portal) and mark scheme",
+        "Pupil PDF worksheet: section tracker",
+        "Green pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bar chart",
+          "alt": "A chart of section marks",
+          "for": "teach:1"
+        },
+        {
+          "find": "green pen",
+          "alt": "A green pen for corrections",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision and past papers",
+      "n": 53,
+      "title": "Weakest section repair and set-passage recall",
+      "duration": 50,
+      "bigQuestion": "Is re-reading notes or testing yourself a better way to revise? Why?",
+      "objectives": [
+        "To understand how to close the gaps in my weakest section before the final weeks"
+      ],
+      "successCriteria": [
+        "All: recall every set passage for my weakest section",
+        "Most: answer two 4-mark questions from that section with development",
+        "Some: write a full 12-mark answer from that section"
+      ],
+      "smsc": "Moral: perseverance",
+      "keywords": [
+        {
+          "term": "retrieval",
+          "def": "recalling from memory to make it stick"
+        },
+        {
+          "term": "interleaving",
+          "def": "mixing topics in practice"
+        },
+        {
+          "term": "set passage",
+          "def": "the specified text for a topic"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is re-reading notes or testing yourself a better way to revise? Why?",
+        "a": "Testing yourself (retrieval) builds stronger memory than re-reading."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The most beloved deeds to Allah are the most regular, even if small' (Bukhari and Muslim): a little revision every day.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Set passage for 2.5?",
+          "a": "101:1-11",
+          "mins": 1,
+          "options": [
+            "101:1-11",
+            "112:1-4"
+          ]
+        },
+        {
+          "q": "Set passage for 3.3?",
+          "a": "2:183-185",
+          "mins": 1,
+          "options": [
+            "2:183-185",
+            "2:197-199"
+          ]
+        },
+        {
+          "q": "Set passage for 1.4?",
+          "a": "The hadith on intention and hijrah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three groups",
+          "bullets": [
+            "Group A: Section A",
+            "Group B: Section B",
+            "Group C: Section C"
+          ],
+          "note": "Begin with Bismillah. Pupils join the breakout room for their weakest section; teacher visits each."
+        },
+        {
+          "heading": "Retrieval routine",
+          "bullets": [],
+          "note": "Show the routine.",
+          "cycle": [
+            "Cover the notes",
+            "Write the passage and key facts",
+            "Check and correct in green",
+            "Answer one question",
+            "Repeat in two days"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which revision method is strongest?",
+            "options": [
+              "Testing yourself from memory",
+              "Highlighting",
+              "Re-reading"
+            ],
+            "answer": 0,
+            "why": "Retrieval practice builds memory best."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recall: write the set passages for your weakest section from memory, then check.",
+          "a": "Pupils' own, checked against the map",
+          "mins": 4,
+          "model": "Teacher does Section C from memory on screen, then checks against the map."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Repair set on the pupil PDF for your weakest section (our own questions): two 4-mark questions and one 12-mark question, then self-mark.",
+          "a": "Mark-scheme style answers for the chosen section",
+          "mins": 26,
+          "model": "Teacher answers one 4-mark question for each section in turn, briefly, before breakouts."
+        },
+        {
+          "q": "Extend: make a one-page revision sheet for that section.",
+          "a": "Revision sheet",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which section will you test yourself on daily?",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: re-reading or testing?",
+          "a": "Testing yourself (retrieval).",
+          "mins": 1
+        }
+      ],
+      "homework": "Daily 15-minute retrieval of set passages and one question until the Summer 1 lessons (26 April). Exam: Wed 26 May 2027 (am).",
+      "send": "SEND: passage cards with first words. EAL: key term list per section. Stretch: interleave one question from each section.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Our own exam-style questions in 4IS1 format (not Pearson papers); Pearson sample assessment material where the school holds it",
+        "Pupil PDF worksheet: section repair sets (A, B, C)",
+        "Set passages map (from lesson 44)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "flash cards study",
+          "alt": "Flash cards for retrieval",
+          "for": "teach:2"
+        },
+        {
+          "find": "calendar planner",
+          "alt": "A revision calendar",
+          "for": "keywords"
         }
       ]
     }

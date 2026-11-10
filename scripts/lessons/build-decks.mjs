@@ -37,6 +37,7 @@ import { makeV3 } from "./deck-v3.mjs";
 import { readCache as readPictures, picturesFor } from "./pictures.mjs";
 import { BLOCKS, ISLAMIC_SUBJECTS, ROUTINES, itemQ, itemA, itemModel, itemOptions, hasAnswers, phaseMinutes, routineFor } from "../../src/lib/learn/lessonSchema.mjs";
 import { retiredChecker } from "./retired.mjs";
+import { HAS_AR, QURANIC, QURAN_FONT, ARABIC_FONT, AR_LANG, arabicFont, arabicSegments, isArabicOnly, visibleLen } from "./arabic.mjs";
 
 // Cross-curricular hubs: lessons that teach a hub's spec unit get a "Connect it" slide (see content/syllabus/matrices/hubs.json).
 const HUBS_BY_LESSON = (() => {
@@ -171,28 +172,36 @@ const slug = (s) => clean(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/
  * an average character is ~0.52em wide and lines are 1.2em tall, plus
  * `gapPt` between paragraphs. Conservative on purpose.
  */
+// Arabic: vowel marks take no width, and Arabic lines are taller: LibreOffice spaces both Arabic fonts at
+// about 1.27em and an Arabic box adds 1.3x (Qur'an) or 1.15x (other Arabic). Set per deck in buildDeck.
+let quranText = false;
+const lineEm = (t) => (!HAS_AR.test(t) ? 1.17 : quranText || QURANIC.test(t) ? 1.68 : 1.48);
+// Joined Arabic letters are narrower: about 0.40em each in Scheherazade New (measured on a rendered ayah).
+const charEm = (t) => (isArabicOnly(t) ? 0.42 : 0.48);
+const perLine = (t, w, size) => Math.max(4, Math.floor((w * 72 - 16) / (size * charEm(t))));
 function fitSize(texts, w, h, max, min, gapPt = 8) {
   const list = (Array.isArray(texts) ? texts : [texts]).map(clean).filter(Boolean);
   // The longest word must fit on one line: a word is never broken in the middle ("trie / d").
-  const longest = Math.max(1, ...list.flatMap((t) => t.split(" ").map((x) => x.length)));
+  const longest = Math.max(1, ...list.flatMap((t) => t.split(" ").map(visibleLen)));
   for (let size = max; size > min; size -= 1) {
-    const charsPerLine = Math.max(4, Math.floor((w * 72 - 16) / (size * 0.48)));
     if (longest * size * 0.56 > w * 72 - 16) continue;
     let lines = 0;
     for (const t of list) {
+      const charsPerLine = perLine(t, w, size);
       // Word-wrap estimate.
       let line = 0;
       let count = 1;
       for (const word of t.split(" ")) {
-        const len = word.length + (line ? 1 : 0);
+        const wl = visibleLen(word);
+        const len = wl + (line ? 1 : 0);
         if (line + len > charsPerLine && line > 0) {
           count++;
-          line = word.length;
+          line = wl;
         } else line += len;
       }
-      lines += count;
+      lines += count * lineEm(t);
     }
-    const need = (lines * size * 1.17 + (list.length - 1) * gapPt + 10) / 72;
+    const need = (lines * size + (list.length - 1) * gapPt + 10) / 72;
     if (need <= h) return size;
   }
   return min;
@@ -201,21 +210,22 @@ function fitSize(texts, w, h, max, min, gapPt = 8) {
 /** Height (inches) the texts need at `size` pt in a box `w` wide (the same estimate as fitSize). */
 function textHeight(texts, w, size, gapPt = 8) {
   const list = (Array.isArray(texts) ? texts : [texts]).map(clean).filter(Boolean);
-  const charsPerLine = Math.max(4, Math.floor((w * 72 - 16) / (size * 0.48)));
   let lines = 0;
   for (const t of list) {
+    const charsPerLine = perLine(t, w, size);
     let line = 0;
     let count = 1;
     for (const word of t.split(" ")) {
-      const len = word.length + (line ? 1 : 0);
+      const wl = visibleLen(word);
+      const len = wl + (line ? 1 : 0);
       if (line + len > charsPerLine && line > 0) {
         count++;
-        line = word.length;
+        line = wl;
       } else line += len;
     }
-    lines += count;
+    lines += count * lineEm(t);
   }
-  return (lines * size * 1.17 + (list.length - 1) * gapPt + 10) / 72;
+  return (lines * size + (list.length - 1) * gapPt + 10) / 72;
 }
 
 /** Fonts wider than Calibri need a narrower box in fitSize's estimate. */
@@ -749,24 +759,72 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
     if (!txt.some((r) => r && typeof r === "object" && typeof r.text === "string" && ARROW.test(r.text))) return txt;
     return txt.flatMap((r) => (r && typeof r === "object" && typeof r.text === "string" && ARROW.test(r.text) ? splitRun(r.text, r.options) : [r]));
   };
+  // Arabic: every stretch of Arabic is its own run, marked Arabic, in Scheherazade New (Qur'an lessons and any
+  // ayah) or Noto Naskh Arabic. A box that is all Arabic is right-to-left; Arabic inside an English
+  // sentence is drawn 15% larger so it reads at the same size as the English around it.
+  const quranDeck = path.basename(path.dirname(file.path)) === "quran";
+  quranText = quranDeck;
+  const arOpts = (o, text, quran) => {
+    const f = arabicFont(text, quran || o.fontFace === QURAN_FONT);
+    return { ...o, fontFace: f, lang: AR_LANG };
+  };
+  const arRuns = (text, options, boxSize, boxQuran) => {
+    const segs = arabicSegments(text);
+    const mixed = segs.some((g) => !g.ar && /[A-Za-z0-9]/.test(g.text));
+    return segs.map((g, i) => {
+      let o = { ...(options || {}) };
+      if (o.breakLine && i < segs.length - 1) delete o.breakLine;
+      if (g.ar) {
+        o = arOpts(o, g.text, quranDeck || boxQuran);
+        const base = o.fontSize || boxSize;
+        if (mixed && base) o.fontSize = Math.round(base * 1.15 * 2) / 2;
+      }
+      return { text: g.text, options: o };
+    });
+  };
+  const runText = (r) => (typeof r === "string" ? r : r && typeof r === "object" && typeof r.text === "string" ? r.text : "");
+  const withArabic = (txt, opts) => {
+    const all = Array.isArray(txt) ? txt.map(runText).join("") : typeof txt === "string" ? txt : "";
+    if (!HAS_AR.test(all)) return [txt, opts];
+    const boxQuran = opts.fontFace === QURAN_FONT;
+    if (isArabicOnly(all)) {
+      // A whole Arabic box: the box itself is Arabic and right-to-left.
+      // LibreOffice spaces Arabic lines at about 1.27em; the marks above and below need a little more.
+      const o = { ...arOpts(opts, all, quranDeck || boxQuran), rtlMode: true };
+      o.lineSpacingMultiple = opts.lineSpacingMultiple || (o.fontFace === QURAN_FONT ? 1.3 : 1.15);
+      return [Array.isArray(txt) ? txt.map((r) => (r && typeof r === "object" && r.options ? { ...r, options: { ...r.options, lang: AR_LANG, fontFace: o.fontFace, rtlMode: true } } : r)) : txt, o];
+    }
+    const runs = typeof txt === "string" ? arRuns(txt, {}, opts.fontSize, boxQuran) : txt.flatMap((r) => (HAS_AR.test(runText(r)) ? arRuns(runText(r), typeof r === "string" ? {} : r.options, opts.fontSize, boxQuran) : [r]));
+    return [runs, opts];
+  };
   pptx.addSlide = (o) => {
     slideCount++;
     const s = addSlide(o);
     const at = s.addText.bind(s);
-    s.addText = (txt, opts = {}) => {
+    s.addText = (txt0, opts0 = {}) => {
+      let [txt, opts] = withArabic(txt0, opts0);
       if (typeof txt === "string" && COMB.test(txt)) return at(txt, { ...opts, fontFace: "DejaVu Sans" });
       if (Array.isArray(txt)) txt = txt.map((r) => (r && typeof r === "object" && typeof r.text === "string" && COMB.test(r.text) ? { ...r, options: { ...(r.options || {}), fontFace: "DejaVu Sans" } } : r));
       return at(withArrows(txt), opts);
     };
     const atb = s.addTable.bind(s);
-    const fixCell = (c) => {
+    const fixCell = (c, tableSize) => {
+      const ct = runText(c);
+      if (HAS_AR.test(ct)) {
+        const base = (c && typeof c === "object" && c.options) || {};
+        if (isArabicOnly(ct)) {
+          const o = { ...arOpts(base, ct, quranDeck), rtlMode: true };
+          return { text: ct, options: o };
+        }
+        return { text: arRuns(ct, {}, base.fontSize || tableSize, false), options: base };
+      }
       if (typeof c === "string" && COMB.test(c)) return { text: c, options: { fontFace: "DejaVu Sans" } };
       if (typeof c === "string" && ARROW.test(c)) return { text: splitRun(c, {}), options: {} };
       if (c && typeof c === "object" && typeof c.text === "string" && COMB.test(c.text)) return { ...c, options: { ...(c.options || {}), fontFace: "DejaVu Sans" } };
       if (c && typeof c === "object" && typeof c.text === "string" && ARROW.test(c.text)) return { ...c, text: splitRun(c.text, {}) };
       return c;
     };
-    s.addTable = (rows, opts) => atb(Array.isArray(rows) ? rows.map((r) => (Array.isArray(r) ? r.map(fixCell) : r)) : rows, opts);
+    s.addTable = (rows, opts) => atb(Array.isArray(rows) ? rows.map((r) => (Array.isArray(r) ? r.map((c) => fixCell(c, opts && opts.fontSize)) : r)) : rows, opts);
     if (pupil) toA4(s, slideCount);
     return s;
   };
@@ -855,7 +913,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
         s.addShape("ellipse", { x, y, w: d, h: d, fill: { color: PLAY[c].solid, transparency: 25 }, line: { color: PLAY[c].solid, width: 0, transparency: 25 } }),
       );
       s.addImage({ path: LOGO_DARK, x: 1.0, y: 0.55, w: 0.7 * LOGO_RATIO, h: 0.7 });
-      if (islamicSubject) s.addText("بسم الله الرحمن الرحيم", { x: 5.6, y: 0.6, w: 4.8, h: 0.6, fontFace: "Arial", fontSize: 24, color: GOLD_DARK, align: "right", rtlMode: true });
+      if (islamicSubject) s.addText("بسم الله الرحمن الرحيم", { x: 5.6, y: 0.6, w: 4.8, h: 0.6, fontFace: ARABIC_FONT, fontSize: 24, color: GOLD_DARK, align: "right", rtlMode: true });
       const chip = `Mission ${lesson.n} · ${file.subject} · ${ctx.yearLabel}`;
       const chipW = Math.min(7.6, 0.6 + (chip.length * 18 * 0.5) / 72);
       s.addShape("roundRect", { x: 1.0, y: 1.75, w: chipW, h: 0.55, rectRadius: 0.27, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
@@ -873,7 +931,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
       s.addShape("rect", { x: 0.5, y: 0, w: 0.06, h: 7.5, fill: { color: GOLD }, line: { color: GOLD, width: 0 } });
       parts.motif(s, theme, { x: 9.0, y: 1.5, w: 4.0, h: 4.75 });
       s.addImage({ path: LOGO_WHITE, x: 1.0, y: 0.6, w: 0.8 * LOGO_RATIO, h: 0.8 });
-      if (islamicSubject) s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: "Arial", fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
+      if (islamicSubject) s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: ARABIC_FONT, fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
       const chip = band === "junior" ? `MISSION ${lesson.n}  ·  ${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}` : `${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}${ks4 && (file.examShort || file.exam) ? `  ·  EXAM: ${clean(file.examShort || file.exam).toUpperCase()}` : ks4 && (lesson.boardShort || lesson.board || file.boardShort || file.board) ? `  ·  ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board).toUpperCase()}` : ""}`;
       s.addText(chip, { x: 1.0, y: 2.2, w: 7.9, h: 0.45, fontFace: FONT, fontSize: Math.min(16, fitSize(chip, 7.0, 0.42, 16, 9)), bold: true, color: "E3C98F", charSpacing: 3, fit: "shrink" });
       s.addText(lesson.title, { x: 1.0, y: 2.75, w: 7.8, h: 2.0, fontFace: theme.head, fontSize: fitSize(lesson.title, fw(7.8, theme.head), 2.0, 46, 22), bold: true, color: "FFFFFF", valign: "top" });
@@ -1056,7 +1114,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
     if (ar) {
       layoutSpotlight(s, ctx, bullets, { ...area, h: 2.5 });
       s.addShape("roundRect", { x: 0.8, y: 4.85, w: 11.8, h: 1.95, rectRadius: 0.1, fill: { color: "FFFFFF" }, line: { color: GOLD, width: 1.5 } });
-      s.addText(clean(ar), { x: 1.0, y: 4.9, w: 11.4, h: 1.85, fontFace: "Arial", fontSize: fitSize(ar, 11.4, 1.85, 40, 22), color: EMERALD, align: "center", valign: "middle", rtlMode: true });
+      s.addText(clean(ar), { x: 1.0, y: 4.9, w: 11.4, h: 1.85, fontFace: ARABIC_FONT, fontSize: fitSize(ar, 11.4, 1.85, 40, 22), color: EMERALD, align: "center", valign: "middle", rtlMode: true });
     } else {
       const layout = numbered && bullets.length >= 2 && bullets.length <= 5 ? "steps" : chooseLayout(ctx, { ...t, bullets }, i);
       if (layout === "cards") layoutCards(s, ctx, bullets, area);
@@ -1258,7 +1316,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
       s.addShape("roundRect", { x: 0.8, y: 4.3, w: textW, h: 0.8, rectRadius: 0.12, fill: { color: "FFFFFF" }, line: { color: LINE, width: 1 } });
       s.addText([{ text: band === "early" ? "Next time:  " : "Next lesson:  ", options: { bold: true, color: ctx.accent } }, { text: clean(nextLesson.title), options: { color: INK } }], { x: 1.05, y: 4.3, w: textW - 0.5, h: 0.8, fontFace: FONT, fontSize: fitSize(`Next lesson: ${nextLesson.title}`, textW - 0.5, 0.8, 20, 13), valign: "middle" });
     }
-    s.addText("جزاكم الله خيرا", { x: 0.8, y: 5.25, w: 8, h: 0.7, fontFace: "Arial", fontSize: 28, color: GOLD_DARK, rtlMode: true });
+    s.addText("جزاكم الله خيرا", { x: 0.8, y: 5.25, w: 8, h: 0.7, fontFace: ARABIC_FONT, fontSize: 28, color: GOLD_DARK, rtlMode: true });
     s.addText(band === "early" ? "Well done today! See you next time, in sha Allah." : "Thank you for your effort and adab today. See you next lesson, in sha Allah.", { x: 0.8, y: 5.95, w: textW, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
     s.addImage({ path: LOGO_DARK, x: 0.8, y: 6.55, w: 0.55 * LOGO_RATIO, h: 0.55 });
     if (band === "early") {
