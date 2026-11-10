@@ -2,7 +2,7 @@
   "subject": "Arabic",
   "year": "y9",
   "board": "TGA Arabic scheme (KS3)",
-  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for KS3-to-GCSE progression: school, daily life, plans, shopping); continuity from TGA Y7-Y8 Arabic files | Spring 1 2027 (lessons 1, 2, 4, 13 to 19): founding-year bridge (11 Jan describing people and participles; 18 Jan my town, directions and weather with the future) and Spring 1 weeks 1 to 3 (school subjects; opinions and connectives; my school day in three tenses, informal email and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3 | Spring 2 2027 (lesson 3 upgraded, 20 to 29 new): Year 9 pack Arabic Spring 2 Transport weeks 1 to 6 (means of transport with 16:8; بِـ and journeys; adjectives and non-human plural agreement; a past journey; comparatives and preference; pros and cons with 7:56; a writing piece; sound and broken plurals; plurals with numbers; review and unit quiz); our own texts; lessons v3",
+  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for KS3-to-GCSE progression: school, daily life, plans, shopping); continuity from TGA Y7-Y8 Arabic files | Spring 1 2027 (lessons 1, 2, 4, 13 to 19): founding-year bridge (11 Jan describing people and participles; 18 Jan my town, directions and weather with the future) and Spring 1 weeks 1 to 3 (school subjects; opinions and connectives; my school day in three tenses, informal email and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3 | Spring 2 2027 (lesson 3 upgraded, 20 to 29 new): Year 9 pack Arabic Spring 2 Transport weeks 1 to 6 (means of transport with 16:8; بِـ and journeys; adjectives and non-human plural agreement; a past journey; comparatives and preference; pros and cons with 7:56; a writing piece; sound and broken plurals; plurals with numbers; review and unit quiz); our own texts; lessons v3 | Summer 1 2027 (lessons 10 and 11 upgraded, 30 to 37 new): Year 9 pack Arabic Summer 1 weeks 1 to 5 Clothes (items; colour agreement; seasons and weather; what we wear with reasons and modest dress; prices 20 to 100, portal 10; sizes and colours; plurals of clothes; the imperative in a shop; comparing, portal 11; role play and unit quiz); week 6 (shop review) dropped; full harakat; our own dialogues; lessons v3",
   "lessons": [
     {
       "unit": "Spring 1: At school",
@@ -1468,223 +1468,467 @@
       "send": "SEND: menu cards with images. EAL: bilingual food list. Stretch: use هَلْ يُوجَدُ ... ؟ (is there ...?)."
     },
     {
-      "unit": "Unit 3: Food and shopping",
+      "unit": "Summer 1: Clothes",
       "n": 10,
-      "title": "Shopping and prices: numbers 20 to 100",
+      "title": "In the clothes shop: prices and numbers 20 to 100",
       "duration": 50,
+      "bigQuestion": "Is the cheapest item always the best buy? What else should a Muslim shopper think about?",
       "objectives": [
-        "Say numbers from 20 to 100",
-        "Ask for prices",
-        "Role-play buying something"
+        "To understand how to ask and give prices with numbers from 20 to 100"
       ],
+      "successCriteria": [
+        "All: say the tens from 20 to 100",
+        "Most: ask بِكَمْ هٰذَا؟ and answer with بِـ + number",
+        "Some: say compound prices like 35 or 72 pounds"
+      ],
+      "crossCurricular": "Maths: numbers and money",
+      "smsc": "Moral: wise spending; Social: polite shopping",
       "keywords": [
         {
-          "term": "عِشْرُونَ",
-          "def": "twenty (ʿishrūna)"
+          "term": "بِكَمْ؟ (bikam)",
+          "def": "how much? (price)"
         },
         {
-          "term": "خَمْسُونَ",
-          "def": "fifty (khamsūna)"
+          "term": "ثَمَن (thaman)",
+          "def": "price"
         },
         {
-          "term": "مِائَةٌ",
-          "def": "hundred (mi'a)"
+          "term": "جُنَيْه (junayh)",
+          "def": "pound (money)"
         },
         {
-          "term": "كَمْ ثَمَنُ هَذَا؟",
-          "def": "how much is this?"
+          "term": "عِشْرُونَ ('ishrun)",
+          "def": "twenty"
         },
         {
-          "term": "جُنَيْهٌ",
-          "def": "pound (junayh)"
-        },
-        {
-          "term": "رَخِيصٌ / غَالٍ",
-          "def": "cheap / expensive"
+          "term": "مِائَة (mi'ah)",
+          "def": "a hundred"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is the cheapest item always the best buy? What else should a Muslim shopper think about?",
+        "a": "Quality, need, avoiding waste, and honest dealing: the price is only one part."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And eat and drink, but be not excessive. Indeed, He does not like those who are excessive' (al-A'raf 7:31).",
+        "at": "start"
+      },
       "starter": [
-        "Order a meal in Arabic.",
-        "Count from 11 to 20 in Arabic.",
-        "Say 'please' and 'thank you' in Arabic."
+        {
+          "q": "Bismillah. 'Because the weather is cold' is ...",
+          "a": "لِأَنَّ الجَوَّ بَارِدٌ",
+          "mins": 1,
+          "options": [
+            "لِأَنَّ الجَوَّ بَارِدٌ",
+            "لِأَنَّ الجَوُّ بَارِدٌ"
+          ]
+        },
+        {
+          "q": "حِشْمَة means ...",
+          "a": "Modesty in dress",
+          "mins": 1,
+          "options": [
+            "Modesty in dress",
+            "A scarf"
+          ]
+        },
+        {
+          "q": "Say 'I wear a coat in winter'.",
+          "a": "أَلْبَسُ مِعْطَفًا فِي الشِّتَاءِ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Tens",
-          "bullets": [
-            "عِشْرُونَ - ʿishrūna - 20",
-            "ثَلَاثُونَ - thalāthūna - 30",
-            "أَرْبَعُونَ - arbaʿūna - 40",
-            "خَمْسُونَ - khamsūna - 50",
-            "سِتُّونَ - sittūna - 60"
-          ],
-          "note": "Begin with bismillah. The tens end in -ūna (nominative) or -īna (accusative and genitive). Chant the pattern. Then teach سَبْعُونَ (70), ثَمَانُونَ (80), تِسْعُونَ (90) and مِائَةٌ (100). Misconception: pronouncing thalāthūna like 'thirteen'. Practise with a number bingo."
+          "heading": "The tens",
+          "bullets": [],
+          "note": "Begin with Bismillah. Pupils count along. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Number",
+              "Arabic"
+            ],
+            "rows": [
+              [
+                "20",
+                "عِشْرُونَ"
+              ],
+              [
+                "30",
+                "ثَلَاثُونَ"
+              ],
+              [
+                "40",
+                "أَرْبَعُونَ"
+              ],
+              [
+                "50",
+                "خَمْسُونَ"
+              ],
+              [
+                "60",
+                "سِتُّونَ"
+              ],
+              [
+                "70 / 80 / 90",
+                "سَبْعُونَ / ثَمَانُونَ / تِسْعُونَ"
+              ],
+              [
+                "100",
+                "مِائَةٌ"
+              ]
+            ]
+          }
         },
         {
           "heading": "Compound numbers",
           "bullets": [
-            "وَاحِدٌ وَعِشْرُونَ - wāḥidun wa-ʿishrūna - 21",
-            "خَمْسَةٌ وَثَلَاثُونَ - khamsatun wa-thalāthūna - 35",
-            "تِسْعَةٌ وَتِسْعُونَ - tisʿatun wa-tisʿūna - 99"
+            "35: خَمْسَةٌ وَثَلَاثُونَ (five and thirty)",
+            "Units first, then وَ, then the tens",
+            "72: اِثْنَانِ وَسَبْعُونَ"
           ],
-          "note": "Arabic says the unit first and then the ten: 'five and thirty'. This is a good link to English 'five and twenty' in old English. Pupils say 5 numbers each. The tens remain in -ūna after a unit."
+          "note": "Like the old English 'five and thirty'."
         },
         {
-          "heading": "How much is this?",
+          "heading": "Asking the price",
           "bullets": [
-            "كَمْ ثَمَنُ هَذَا؟ - kam thamanu hādhā? - how much is this?",
-            "ثَمَنُهُ خَمْسُونَ جُنَيْهًا - thamanuhu khamsūna junayhan - it costs fifty pounds",
-            "هَذَا رَخِيصٌ - hādhā rakhīṣun - this is cheap",
-            "هَذَا غَالٍ - hādhā ghālin - this is expensive"
+            "بِكَمْ هٰذَا القَمِيصُ؟ How much is this shirt?",
+            "بِعِشْرِينَ جُنَيْهًا: for twenty pounds",
+            "After بِـ the tens end in ـِينَ"
           ],
-          "note": "Teach how to ask and tell the price. جُنَيْهًا is singular accusative after a number from 11 upward. Mention that the Egyptian pound is جُنَيْهٌ مِصْرِيٌّ; UK pounds: جُنَيْهٌ إِسْتِرْلِينِيٌّ. Check the spelling of رَخِيصٌ (with ص)."
+          "note": "With 20 to 99 the counted noun is singular with ـًا: جُنَيْهًا."
         },
         {
-          "heading": "In the shop",
+          "heading": "Quick check",
           "bullets": [
-            "أُرِيدُ قَمِيصًا - urīdu qamīṣan - I want a shirt",
-            "هَلْ عِنْدَكَ مَقَاسٌ أَكْبَرُ؟ - do you have a bigger size?",
-            "سَآخُذُ هَذَا - sa-ākhudhu hādhā - I will take this",
-            "شُكْرًا، مَعَ السَّلَامَةِ - thanks, goodbye"
+            "Vote in the Teams poll"
           ],
-          "note": "Model a shop dialogue and ask pupils to identify the polite phrases. Introduce the stem سَآخُذُ (I will take). Remind about honesty in trade: the Prophet (peace be upon him) praised the honest merchant (Tirmidhi). Link to fairness in business."
-        },
-        {
-          "heading": "Honesty in trade",
-          "bullets": [
-            "الصِّدْقُ - aṣ-ṣidq - honesty",
-            "الْأَمَانَةُ - al-amāna - trustworthiness",
-            "Do not cheat when buying or selling"
-          ],
-          "note": "Ask pupils what honesty means in a shop. Qur'an 83:1–3 condemns those who give less than they should when measuring. Link to fair prices and not cheating. Pupils then practise buying and selling with honest descriptions."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "45 is ...",
+            "options": [
+              "خَمْسَةٌ وَأَرْبَعُونَ",
+              "أَرْبَعَةٌ وَخَمْسُونَ",
+              "أَرْبَعُونَ وَخَمْسَةٌ"
+            ],
+            "answer": 0,
+            "why": "Units first, then the tens."
+          }
         }
       ],
       "practice": [
-        "Say the numbers: 25, 40, 68, 100.",
-        "Ask the price of a shirt.",
-        "Answer: 'It costs thirty pounds'.",
-        "Say 'This is expensive' and 'This is cheap'."
-      ],
-      "independent": [
-        "Write the prices for ten items in Arabic words.",
-        "Create a role-play of buying two items in a shop.",
-        "Perform the role-play with a partner and swap roles."
-      ],
-      "exit": [
-        "Write 'fifty-five' in Arabic.",
-        "How do you ask the price?"
-      ],
-      "homework": "Write a shopping list in Arabic with five items and prices in words.",
-      "send": "SEND: number line with Arabic numerals. EAL: bilingual price vocabulary. Stretch: use discounts with خَصْمٌ (discount)."
-    },
-    {
-      "unit": "Unit 3: Food and shopping",
-      "n": 11,
-      "title": "Comparing things: bigger, cheaper, better",
-      "duration": 50,
-      "objectives": [
-        "Form and use the comparative أَفْعَلُ",
-        "Compare two items using مِنْ",
-        "Use the superlative with الْـ"
-      ],
-      "keywords": [
         {
-          "term": "أَكْبَرُ",
-          "def": "bigger (akbaru)"
+          "q": "Answer: بِكَمْ هٰذَا المِعْطَفُ؟ (£60)",
+          "a": "بِسِتِّينَ جُنَيْهًا",
+          "mins": 2,
+          "model": "Teacher: after بِـ, سِتُّونَ becomes سِتِّينَ; the noun is singular with ـًا: جُنَيْهًا. Together: بِسِتِّينَ جُنَيْهًا."
         },
         {
-          "term": "أَصْغَرُ",
-          "def": "smaller (aṣgharu)"
+          "q": "مِائَة is ...",
+          "a": "100",
+          "mins": 1,
+          "options": [
+            "100",
+            "1,000"
+          ]
         },
         {
-          "term": "أَرْخَصُ",
-          "def": "cheaper (arkhaṣu)"
-        },
-        {
-          "term": "أَغْلَى",
-          "def": "more expensive (aghlā)"
-        },
-        {
-          "term": "أَجْمَلُ",
-          "def": "more beautiful (ajmalu)"
-        },
-        {
-          "term": "مِنْ",
-          "def": "than / from (min)"
+          "q": "ثَمَن means ...",
+          "a": "Price",
+          "mins": 1,
+          "options": [
+            "Price",
+            "Size"
+          ]
         }
       ],
+      "independent": [
+        {
+          "q": "Price tags on the pupil PDF: write ten prices in Arabic words (for example £25, £38, £99), then write four shop exchanges with بِكَمْ ...؟ and the answer.",
+          "a": "Correct compound numbers and بِـ + ـِينَ forms with جُنَيْهًا",
+          "mins": 18,
+          "model": "Teacher does £38: ثَمَانِيَةٌ وَثَلَاثُونَ جُنَيْهًا; بِكَمْ هٰذَا الحِذَاءُ؟ بِثَمَانِيَةٍ وَثَلَاثِينَ جُنَيْهًا."
+        },
+        {
+          "q": "Extend: say 'that is expensive' and 'that is cheap'.",
+          "a": "هٰذَا غَالٍ؛ هٰذَا رَخِيصٌ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "بِكَمْ؟ asks ...",
+          "a": "How much?",
+          "mins": 1,
+          "options": [
+            "How much?",
+            "How many?"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is the cheapest always best?",
+          "a": "No: quality, need, avoiding waste and honesty matter",
+          "mins": 2
+        }
+      ],
+      "homework": "Look at three price tags at home or online and say the prices in Arabic.",
+      "send": "SEND: number line 20 to 100 with Arabic labels. EAL: price frame. Stretch: say prices with pence: وَخَمْسُونَ بِنْسًا.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Portal arabic y9 lesson 10 (upgraded)",
+        "Pupil PDF worksheet: price tags and shop exchanges"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clothing price tag",
+          "alt": "A price tag",
+          "for": "hook"
+        },
+        {
+          "find": "pound coins and notes",
+          "alt": "British pounds",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Clothes",
+      "n": 11,
+      "title": "Comparing in the shop: cheaper, dearer, better",
+      "duration": 50,
+      "bigQuestion": "Two coats: one cheaper, one better made. Which is the better choice, and how would you argue it in Arabic?",
+      "objectives": [
+        "To understand how to compare clothes with the comparative and the superlative"
+      ],
+      "successCriteria": [
+        "All: say أَرْخَصُ مِنْ and أَغْلَى مِنْ",
+        "Most: form comparatives on the pattern أَفْعَلُ",
+        "Some: use the superlative with ال or the construct to choose the best item"
+      ],
+      "smsc": "Moral: wise choices and honest dealing",
+      "keywords": [
+        {
+          "term": "أَرْخَصُ مِنْ (arkhasu min)",
+          "def": "cheaper than"
+        },
+        {
+          "term": "أَغْلَى مِنْ (aghla min)",
+          "def": "more expensive than"
+        },
+        {
+          "term": "أَفْضَلُ (afdalu)",
+          "def": "better; best"
+        },
+        {
+          "term": "أَكْبَرُ (akbaru)",
+          "def": "bigger"
+        },
+        {
+          "term": "اِسْمُ التَّفْضِيلِ (ism at-tafdil)",
+          "def": "the comparative form"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two coats: one cheaper, one better made. Which is the better choice, and how would you argue it in Arabic?",
+        "a": "It depends on need and quality: هٰذَا أَغْلَى لٰكِنَّهُ أَفْضَلُ."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And give full measure when you measure, and weigh with an even balance. That is the best' (al-Isra' 17:35).",
+        "at": "start"
+      },
       "starter": [
-        "Say the price: 'It costs fifty pounds'.",
-        "Say 'This is cheap' and 'That is expensive'.",
-        "Say the numbers 60 and 90."
+        {
+          "q": "Bismillah. أَرِنِي means ...",
+          "a": "Show me",
+          "mins": 1,
+          "options": [
+            "Show me",
+            "Give me"
+          ]
+        },
+        {
+          "q": "The imperative of تَكْتُبُ is ...",
+          "a": "اُكْتُبْ",
+          "mins": 1,
+          "options": [
+            "اُكْتُبْ",
+            "تَكْتُبْ"
+          ]
+        },
+        {
+          "q": "Say 'give me a shirt, please'.",
+          "a": "أَعْطِنِي قَمِيصًا، مِنْ فَضْلِكَ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The comparative pattern",
-          "bullets": [
-            "كَبِيرٌ → أَكْبَرُ - kabīr → akbar - big → bigger",
-            "صَغِيرٌ → أَصْغَرُ - small → smaller",
-            "جَمِيلٌ → أَجْمَلُ - beautiful → more beautiful",
-            "غَالٍ → أَغْلَى - expensive → more expensive"
-          ],
-          "note": "Begin with bismillah. The comparative follows the pattern أَفْعَلُ. It has no tanween and does not change for gender. Write the root letters on the board and show how they fit the pattern. Pupils try three more: قَدِيمٌ → أَقْدَمُ, سَهْلٌ → أَسْهَلُ."
+          "heading": "The comparative",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Adjective",
+              "Comparative",
+              "English"
+            ],
+            "rows": [
+              [
+                "رَخِيص",
+                "أَرْخَصُ",
+                "cheaper"
+              ],
+              [
+                "غَالٍ",
+                "أَغْلَى",
+                "more expensive"
+              ],
+              [
+                "كَبِير",
+                "أَكْبَرُ",
+                "bigger"
+              ],
+              [
+                "جَمِيل",
+                "أَجْمَلُ",
+                "more beautiful"
+              ],
+              [
+                "جَيِّد",
+                "أَفْضَلُ",
+                "better"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Comparing with مِنْ",
+          "heading": "Comparing two items",
           "bullets": [
-            "هَذَا الْقَمِيصُ أَرْخَصُ مِنْ ذَلِكَ - this shirt is cheaper than that",
-            "هَذِهِ الْحَقِيبَةُ أَكْبَرُ مِنْ تِلْكَ - this bag is bigger than that",
-            "أَخِي أَطْوَلُ مِنِّي - my brother is taller than me"
+            "هٰذَا المِعْطَفُ أَرْخَصُ مِنْ ذٰلِكَ",
+            "الفُسْتَانُ الأَزْرَقُ أَغْلَى مِنَ الأَحْمَرِ",
+            "The comparative does not change for gender"
           ],
-          "note": "مِنْ means 'than' here. Note that مِنِّي is مِنْ + me. Link to comparing people: do not look down on others; Qur'an 49:13 says the most honoured is the one who has the most taqwa. Ask pupils to avoid unkind comparisons."
+          "note": "Recall from Spring 2 (transport)."
         },
         {
-          "heading": "The most...",
+          "heading": "The best",
           "bullets": [
-            "الْأَكْبَرُ - al-akbaru - the biggest",
-            "الْأَرْخَصُ - al-arkhaṣu - the cheapest",
-            "هَذَا هُوَ الْأَجْمَلُ - this is the most beautiful",
-            "أَجْمَلُ بَيْتٍ - the most beautiful house"
+            "هٰذَا أَفْضَلُ قَمِيصٍ فِي المَحَلِّ",
+            "Comparative + noun = superlative",
+            "Or with ال: هٰذَا هُوَ الأَفْضَلُ"
           ],
-          "note": "Two ways of the superlative: add الْ (the biggest) or use the comparative before an indefinite noun in genitive (أَجْمَلُ بَيْتٍ). Practise with a shopping scenario. Check pupils do not add tanween."
+          "note": "Show both ways."
         },
         {
-          "heading": "Shopping comparison dialogue",
+          "heading": "Quick check",
           "bullets": [
-            "- أَيُّ حَقِيبَةٍ أَرْخَصُ؟",
-            "- هَذِهِ أَرْخَصُ مِنْ تِلْكَ",
-            "- وَلَكِنَّ تِلْكَ أَجْمَلُ",
-            "- سَآخُذُ الْأَرْخَصَ"
+            "Vote in the Teams poll"
           ],
-          "note": "Gloss: 'Which bag is cheaper? This one is cheaper than that one. But that one is more beautiful. I'll take the cheaper one.' Ask pupils which they would choose. Pupils perform similar dialogues about shoes or phones."
-        },
-        {
-          "heading": "Using comparisons well",
-          "bullets": [
-            "Use مِنْ to say 'than'",
-            "Use لَكِنَّ to contrast",
-            "Use لِأَنَّ to give reasons"
-          ],
-          "note": "Combine comparison with reasons: هَذَا الْقَمِيصُ أَفْضَلُ لِأَنَّهُ أَرْخَصُ. Pupils write three sentences like this. Remind them to be fair and truthful in their comparisons."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'The black shoes are cheaper than the white' is ...",
+            "options": [
+              "الحِذَاءُ الأَسْوَدُ أَرْخَصُ مِنَ الأَبْيَضِ",
+              "الحِذَاءُ الأَسْوَدُ رَخِيصٌ مِنَ الأَبْيَضِ",
+              "الحِذَاءُ الأَسْوَدُ أَرْخَصُ الأَبْيَضِ"
+            ],
+            "answer": 0,
+            "why": "Comparative + مِنْ."
+          }
         }
       ],
       "practice": [
-        "Make the comparative: قَدِيمٌ, سَهْلٌ, طَوِيلٌ.",
-        "Translate: 'This phone is cheaper than that phone'.",
-        "Say: 'My house is bigger than my friend's house'.",
-        "Choose: the cheapest shirt."
+        {
+          "q": "Compare two coats: the grey one is warmer than the blue one (دَافِئ → أَدْفَأُ).",
+          "a": "المِعْطَفُ الرَّمَادِيُّ أَدْفَأُ مِنَ الأَزْرَقِ",
+          "mins": 2,
+          "model": "Teacher: دَافِئ on the أَفْعَلُ pattern is أَدْفَأُ; then مِنْ; then the other item: مِنَ الأَزْرَقِ."
+        },
+        {
+          "q": "أَفْضَلُ means ...",
+          "a": "Better; best",
+          "mins": 1,
+          "options": [
+            "Better; best",
+            "Bigger"
+          ]
+        },
+        {
+          "q": "أَغْلَى مِنْ means ...",
+          "a": "More expensive than",
+          "mins": 1,
+          "options": [
+            "More expensive than",
+            "Cheaper than"
+          ]
+        }
       ],
       "independent": [
-        "Write eight comparisons using eight different adjectives.",
-        "Write a shop dialogue in which you compare two items and decide.",
-        "Perform your dialogue with a partner."
+        {
+          "q": "Compare and choose in the portal response box: three pairs of items with prices on the pupil PDF; write two comparisons for each pair and say which you would buy and why, using لٰكِنَّ once. Start: ... أَرْخَصُ مِنْ ...",
+          "a": "Six correct comparisons with مِنْ, three choices with reasons, لٰكِنَّ used correctly",
+          "mins": 18,
+          "model": "Teacher does pair 1: القَمِيصُ الأَبْيَضُ أَرْخَصُ مِنَ الأَزْرَقِ، لٰكِنَّ الأَزْرَقَ أَجْمَلُ. سَأَشْتَرِي الأَبْيَضَ لِأَنَّهُ أَرْخَصُ."
+        },
+        {
+          "q": "Extend: write a superlative sentence about something in your home.",
+          "a": "For example: هٰذَا أَكْبَرُ كِتَابٍ فِي بَيْتِنَا",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write 'The book is bigger than the pen'.",
-        "How do you say 'the cheapest'?"
+        {
+          "q": "The comparative pattern is ...",
+          "a": "أَفْعَلُ",
+          "mins": 1,
+          "options": [
+            "أَفْعَلُ",
+            "فَعْلَاءُ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: cheaper or better?",
+          "a": "It depends on need and quality; argued with comparatives",
+          "mins": 2
+        }
       ],
-      "homework": "Write a paragraph (70 words) comparing two shops or two items, with reasons.",
-      "send": "SEND: comparative pattern cards. EAL: bilingual adjective list. Stretch: use the comparative with a clause: أَكْبَرُ مِمَّا تَتَوَقَّعُ (bigger than you expect)."
+      "homework": "Revise the unit for the role play and quiz: clothes, colours, seasons, prices, sizes, plurals, imperatives, comparatives.",
+      "send": "SEND: comparative table and sentence frame. EAL: pictures with prices. Stretch: compare three items in one sentence.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Portal arabic y9 lesson 11 (upgraded)",
+        "Pupil PDF worksheet: compare and choose"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "two coats on hangers",
+          "alt": "Two coats to compare",
+          "for": "hook"
+        },
+        {
+          "find": "price tags clothing sale",
+          "alt": "Price tags",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 3: Food and shopping",
@@ -5398,6 +5642,1833 @@
         {
           "find": "target archery",
           "alt": "A target",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Clothes",
+      "n": 30,
+      "title": "Items of clothing",
+      "duration": 50,
+      "bigQuestion": "Allah calls clothing a blessing that covers and adorns, but says something else is even better. What could it be?",
+      "objectives": [
+        "To understand and use the Arabic words for everyday clothing"
+      ],
+      "successCriteria": [
+        "All: name eight items of clothing",
+        "Most: say what I am wearing with أَلْبَسُ",
+        "Some: use هٰذَا / هٰذِهِ correctly with each item"
+      ],
+      "smsc": "Spiritual: clothing as a blessing; Moral: modesty",
+      "keywords": [
+        {
+          "term": "مَلَابِس (malabis)",
+          "def": "clothes"
+        },
+        {
+          "term": "قَمِيص (qamis)",
+          "def": "shirt"
+        },
+        {
+          "term": "بِنْطَال (bintal)",
+          "def": "trousers"
+        },
+        {
+          "term": "فُسْتَان (fustan)",
+          "def": "dress"
+        },
+        {
+          "term": "مِعْطَف (mi'taf)",
+          "def": "coat"
+        },
+        {
+          "term": "أَلْبَسُ (albasu)",
+          "def": "I wear"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah calls clothing a blessing that covers and adorns, but says something else is even better. What could it be?",
+        "a": "'The clothing of righteousness (taqwa): that is best' (al-A'raf 7:26)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O children of Adam, We have sent down to you clothing to cover yourselves and as adornment. But the clothing of righteousness: that is best' (al-A'raf 7:26).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. حَافِلَة is ...",
+          "a": "A bus",
+          "mins": 1,
+          "options": [
+            "A bus",
+            "A train"
+          ]
+        },
+        {
+          "q": "أُفَضِّلُ القِطَارَ لِأَنَّهُ أَسْرَعُ means ...",
+          "a": "I prefer the train because it is faster",
+          "mins": 1,
+          "options": [
+            "I prefer the train because it is faster",
+            "The train is slow"
+          ]
+        },
+        {
+          "q": "Say 'I travelled by plane'.",
+          "a": "سَافَرْتُ بِالطَّائِرَةِ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Clothes",
+          "bullets": [],
+          "note": "Begin with Bismillah. Hold up real clothes on camera. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "قَمِيص",
+                "shirt"
+              ],
+              [
+                "بِنْطَال",
+                "trousers"
+              ],
+              [
+                "فُسْتَان",
+                "dress"
+              ],
+              [
+                "مِعْطَف",
+                "coat"
+              ],
+              [
+                "ثَوْب",
+                "thobe; long garment"
+              ],
+              [
+                "حِجَاب",
+                "headscarf"
+              ],
+              [
+                "حِذَاء",
+                "shoe"
+              ],
+              [
+                "جَوَارِب",
+                "socks"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "What are you wearing?",
+          "bullets": [
+            "مَاذَا تَلْبَسُ؟ (to a boy) / مَاذَا تَلْبَسِينَ؟ (to a girl)",
+            "أَلْبَسُ قَمِيصًا وَبِنْطَالًا",
+            "The thing worn takes ـًا (accusative)"
+          ],
+          "note": "Recall the you forms from Year 8."
+        },
+        {
+          "heading": "This or this?",
+          "bullets": [],
+          "note": "Pupils show 1 or 2.",
+          "sort": {
+            "columns": [
+              "هٰذَا",
+              "هٰذِهِ"
+            ],
+            "cards": [
+              "قَمِيص",
+              "عَبَاءَة",
+              "مِعْطَف",
+              "قُبَّعَة",
+              "حِذَاء",
+              "جَوْرَب"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "مِعْطَف is ...",
+            "options": [
+              "A coat",
+              "A dress",
+              "A shoe"
+            ],
+            "answer": 0,
+            "why": "مِعْطَف (mi'taf) = coat."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say what you are wearing today in one sentence.",
+          "a": "For example: أَلْبَسُ قَمِيصًا وَبِنْطَالًا وَجَوَارِبَ",
+          "mins": 2,
+          "model": "Teacher: أَلْبَسُ (I wear) + the items with ـًا: قَمِيصًا وَبِنْطَالًا. Note جَوَارِبَ (socks) has no tanwin."
+        },
+        {
+          "q": "حِذَاء is ...",
+          "a": "A shoe",
+          "mins": 1,
+          "options": [
+            "A shoe",
+            "A hat"
+          ]
+        },
+        {
+          "q": "فُسْتَان is ...",
+          "a": "A dress",
+          "mins": 1,
+          "options": [
+            "A dress",
+            "A coat"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Wardrobe list on the pupil PDF: write ten items with harakat and هٰذَا / هٰذِهِ, then write three sentences: what you wear to school, to the masjid and at home. Start: أَلْبَسُ ...",
+          "a": "Ten items with correct demonstratives; three sentences with أَلْبَسُ and accusative endings",
+          "mins": 18,
+          "model": "Teacher writes: فِي المَسْجِدِ أَلْبَسُ ثَوْبًا أَبْيَضَ."
+        },
+        {
+          "q": "Extend: ask a partner مَاذَا تَلْبَسُ فِي العِيدِ؟ and write the answer.",
+          "a": "For example: أَلْبَسُ ثَوْبًا جَدِيدًا",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "مَلَابِس means ...",
+          "a": "Clothes",
+          "mins": 1,
+          "options": [
+            "Clothes",
+            "Colours"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what clothing is best?",
+          "a": "The clothing of taqwa (7:26)",
+          "mins": 2
+        }
+      ],
+      "homework": "Lay out tomorrow's clothes and name each item in Arabic.",
+      "send": "SEND: picture word mat. EAL: clothes cards. Stretch: learn وِشَاح (scarf), عَبَاءَة and قُبَّعَة.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Pupil PDF worksheet: wardrobe list"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "folded shirts stack",
+          "alt": "Folded shirts: قُمْصَان",
+          "for": "teach:1"
+        },
+        {
+          "find": "winter coat on hanger",
+          "alt": "A coat: مِعْطَف",
+          "for": "keywords"
+        },
+        {
+          "find": "clothes rail shop",
+          "alt": "Clothes on a rail",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Clothes",
+      "n": 31,
+      "title": "Describing clothes: colour and agreement",
+      "duration": 50,
+      "bigQuestion": "Why do you think Arabic colour words have their own special pattern?",
+      "objectives": [
+        "To understand how colour adjectives agree with masculine and feminine nouns"
+      ],
+      "successCriteria": [
+        "All: say six colours in the masculine",
+        "Most: give the feminine form of each colour",
+        "Some: describe three items with a colour and a second adjective"
+      ],
+      "smsc": "Cultural: dress in Arabic-speaking countries; Spiritual: beauty without pride",
+      "keywords": [
+        {
+          "term": "لَوْن (lawn)",
+          "def": "colour"
+        },
+        {
+          "term": "أَبْيَضُ / بَيْضَاءُ (abyad / bayda')",
+          "def": "white (m / f)"
+        },
+        {
+          "term": "أَسْوَدُ / سَوْدَاءُ (aswad / sawda')",
+          "def": "black (m / f)"
+        },
+        {
+          "term": "أَزْرَقُ / زَرْقَاءُ (azraq / zarqa')",
+          "def": "blue (m / f)"
+        },
+        {
+          "term": "مُطَابَقَة (mutabaqah)",
+          "def": "agreement"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think Arabic colour words have their own special pattern?",
+        "a": "They follow fixed patterns: أَفْعَلُ for masculine and فَعْلَاءُ for feminine, which makes them easy to predict."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Allah is beautiful and loves beauty' (Muslim), said when a man asked about liking good clothes and shoes.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. أَلْبَسُ means ...",
+          "a": "I wear",
+          "mins": 1,
+          "options": [
+            "I wear",
+            "I buy"
+          ]
+        },
+        {
+          "q": "قَمِيص is ...",
+          "a": "A shirt",
+          "mins": 1,
+          "options": [
+            "A shirt",
+            "Trousers"
+          ]
+        },
+        {
+          "q": "Ask a girl 'what are you wearing?'",
+          "a": "مَاذَا تَلْبَسِينَ؟",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Colours, two patterns",
+          "bullets": [],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Masculine",
+              "Feminine",
+              "English"
+            ],
+            "rows": [
+              [
+                "أَبْيَضُ",
+                "بَيْضَاءُ",
+                "white"
+              ],
+              [
+                "أَسْوَدُ",
+                "سَوْدَاءُ",
+                "black"
+              ],
+              [
+                "أَحْمَرُ",
+                "حَمْرَاءُ",
+                "red"
+              ],
+              [
+                "أَزْرَقُ",
+                "زَرْقَاءُ",
+                "blue"
+              ],
+              [
+                "أَخْضَرُ",
+                "خَضْرَاءُ",
+                "green"
+              ],
+              [
+                "أَصْفَرُ",
+                "صَفْرَاءُ",
+                "yellow"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Agreement",
+          "bullets": [
+            "قَمِيصٌ أَبْيَضُ: a white shirt",
+            "عَبَاءَةٌ سَوْدَاءُ: a black abaya",
+            "Colours on these patterns take no tanwin"
+          ],
+          "note": "The adjective follows the noun and matches its gender."
+        },
+        {
+          "heading": "Two adjectives",
+          "bullets": [
+            "فُسْتَانٌ أَزْرَقُ طَوِيلٌ: a long blue dress",
+            "حِذَاءٌ أَسْوَدُ جَدِيدٌ: new black shoes",
+            "Colour first, then the other adjective"
+          ],
+          "note": "Order is a common style; both must agree."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'A green scarf' (وِشَاح, masculine) is ...",
+            "options": [
+              "وِشَاحٌ أَخْضَرُ",
+              "وِشَاحٌ خَضْرَاءُ",
+              "وِشَاحٌ أَخْضَرٌ"
+            ],
+            "answer": 0,
+            "why": "Masculine noun, masculine colour, no tanwin on أَخْضَرُ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe: a red hat (قُبَّعَة).",
+          "a": "قُبَّعَةٌ حَمْرَاءُ",
+          "mins": 2,
+          "model": "Teacher: قُبَّعَة ends in ة, so feminine. Red feminine is حَمْرَاءُ. Together: قُبَّعَةٌ حَمْرَاءُ."
+        },
+        {
+          "q": "The feminine of أَصْفَرُ is ...",
+          "a": "صَفْرَاءُ",
+          "mins": 1,
+          "options": [
+            "صَفْرَاءُ",
+            "أَصْفَرَةٌ"
+          ]
+        },
+        {
+          "q": "لَوْن means ...",
+          "a": "Colour",
+          "mins": 1,
+          "options": [
+            "Colour",
+            "Size"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Describe five items from a clothes shop photo on the pupil PDF with colour and one more adjective; then describe your school uniform or Eid clothes in three sentences in the portal response box.",
+          "a": "Correct gender agreement and patterns, for example: مِعْطَفٌ رَمَادِيٌّ قَصِيرٌ؛ عَبَاءَةٌ سَوْدَاءُ جَمِيلَةٌ",
+          "mins": 18,
+          "model": "Teacher does item 1: ثَوْبٌ أَبْيَضُ طَوِيلٌ."
+        },
+        {
+          "q": "Extend: what colour is the kiswah of the Ka'bah?",
+          "a": "أَسْوَدُ: كِسْوَةُ الكَعْبَةِ سَوْدَاءُ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Colours in the masculine follow the pattern ...",
+          "a": "أَفْعَلُ",
+          "mins": 1,
+          "options": [
+            "أَفْعَلُ",
+            "فَاعِل"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why the special pattern?",
+          "a": "Fixed patterns: أَفْعَلُ and فَعْلَاءُ, easy to predict",
+          "mins": 2
+        }
+      ],
+      "homework": "Describe three items in your wardrobe with colour and size in Arabic.",
+      "send": "SEND: colour table with both forms. EAL: colour cards. Stretch: learn رَمَادِيٌّ (grey) and بُنِّيٌّ (brown), which follow a different pattern.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Pupil PDF worksheet: describing clothes"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kaaba kiswah black cloth",
+          "alt": "The black kiswah of the Ka'bah",
+          "for": "teach:2"
+        },
+        {
+          "find": "colour swatches fabric",
+          "alt": "Fabric colours",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Clothes",
+      "n": 32,
+      "title": "The four seasons and the weather",
+      "duration": 50,
+      "bigQuestion": "Allah alternates night and day and the seasons. What would life be like with only one season all year?",
+      "objectives": [
+        "To understand how to describe the four seasons and their weather in full sentences"
+      ],
+      "successCriteria": [
+        "All: name the four seasons",
+        "Most: describe the weather in each with يَكُونُ الجَوُّ",
+        "Some: compare the weather in the UK and an Arabic-speaking country"
+      ],
+      "crossCurricular": "Geography: climates of the UK and the Middle East",
+      "smsc": "Spiritual: signs of Allah in the seasons",
+      "keywords": [
+        {
+          "term": "فَصْل (fasl)",
+          "def": "season"
+        },
+        {
+          "term": "الجَوّ (al-jaww)",
+          "def": "the weather"
+        },
+        {
+          "term": "تُمْطِرُ (tumtiru)",
+          "def": "it rains"
+        },
+        {
+          "term": "دَرَجَةُ الحَرَارَةِ (darajat al-hararah)",
+          "def": "temperature"
+        },
+        {
+          "term": "مُشْمِس (mushmis)",
+          "def": "sunny"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah alternates night and day and the seasons. What would life be like with only one season all year?",
+        "a": "Harder for crops and less varied: the seasons are a sign and a mercy (3:190)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, in the creation of the heavens and the earth and the alternation of the night and the day are signs for those of understanding' (Al 'Imran 3:190).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. The feminine of أَبْيَضُ is ...",
+          "a": "بَيْضَاءُ",
+          "mins": 1,
+          "options": [
+            "بَيْضَاءُ",
+            "أَبْيَضَةٌ"
+          ]
+        },
+        {
+          "q": "'A black abaya' is ...",
+          "a": "عَبَاءَةٌ سَوْدَاءُ",
+          "mins": 1,
+          "options": [
+            "عَبَاءَةٌ سَوْدَاءُ",
+            "عَبَاءَةٌ أَسْوَدُ"
+          ]
+        },
+        {
+          "q": "Name three colours in Arabic.",
+          "a": "أَبْيَضُ، أَسْوَدُ، أَحْمَرُ، أَزْرَقُ، أَخْضَرُ، أَصْفَرُ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four seasons",
+          "bullets": [],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Season",
+              "Weather"
+            ],
+            "rows": [
+              [
+                "الصَّيْف",
+                "حَارٌّ وَمُشْمِسٌ"
+              ],
+              [
+                "الخَرِيف",
+                "تَهُبُّ الرِّيَاحُ"
+              ],
+              [
+                "الشِّتَاء",
+                "بَارِدٌ؛ تُمْطِرُ وَيَتَسَاقَطُ الثَّلْجُ"
+              ],
+              [
+                "الرَّبِيع",
+                "مُعْتَدِلٌ وَجَمِيلٌ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sentences",
+          "bullets": [
+            "فِي الصَّيْفِ يَكُونُ الجَوُّ حَارًّا",
+            "يَكُونُ makes the adjective end in ـًا",
+            "دَرَجَةُ الحَرَارَةِ عِشْرُونَ دَرَجَةً"
+          ],
+          "note": "Show يَكُونُ + accusative."
+        },
+        {
+          "heading": "Here and there",
+          "bullets": [],
+          "note": "Compare.",
+          "compare": {
+            "left": {
+              "title": "فِي بِرِيطَانِيَا",
+              "points": [
+                "الصَّيْفُ دَافِئٌ",
+                "الشِّتَاءُ بَارِدٌ وَمُمْطِرٌ"
+              ]
+            },
+            "right": {
+              "title": "فِي السُّعُودِيَّةِ",
+              "points": [
+                "الصَّيْفُ حَارٌّ جِدًّا",
+                "الشِّتَاءُ مُعْتَدِلٌ"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'In winter the weather is cold' is ...",
+            "options": [
+              "فِي الشِّتَاءِ يَكُونُ الجَوُّ بَارِدًا",
+              "فِي الشِّتَاءِ يَكُونُ الجَوُّ بَارِدٌ",
+              "فِي الصَّيْفِ يَكُونُ الجَوُّ بَارِدًا"
+            ],
+            "answer": 0,
+            "why": "يَكُونُ makes the adjective accusative: بَارِدًا."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: in summer the weather is hot and sunny.",
+          "a": "فِي الصَّيْفِ يَكُونُ الجَوُّ حَارًّا وَمُشْمِسًا",
+          "mins": 2,
+          "model": "Teacher: فِي الصَّيْفِ + يَكُونُ الجَوُّ + both adjectives in the accusative: حَارًّا وَمُشْمِسًا."
+        },
+        {
+          "q": "تُمْطِرُ means ...",
+          "a": "It rains",
+          "mins": 1,
+          "options": [
+            "It rains",
+            "It is windy"
+          ]
+        },
+        {
+          "q": "فَصْل means ...",
+          "a": "Season",
+          "mins": 1,
+          "options": [
+            "Season",
+            "Weather"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a weather report in the portal response box comparing the four seasons in the UK and in one Arabic-speaking country, with a temperature for each. Start: فِي بِرِيطَانِيَا ...",
+          "a": "Eight sentences with يَكُونُ + accusative, temperatures and comparisons",
+          "mins": 18,
+          "model": "Teacher writes: فِي بِرِيطَانِيَا يَكُونُ الشِّتَاءُ بَارِدًا، وَدَرَجَةُ الحَرَارَةِ خَمْسُ دَرَجَاتٍ."
+        },
+        {
+          "q": "Extend: say which season you prefer and why.",
+          "a": "For example: أُفَضِّلُ الرَّبِيعَ لِأَنَّ الجَوَّ مُعْتَدِلٌ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "مُشْمِس means ...",
+          "a": "Sunny",
+          "mins": 1,
+          "options": [
+            "Sunny",
+            "Rainy"
+          ]
+        },
+        {
+          "q": "Back to our ponder: life with one season?",
+          "a": "Harder and less varied; seasons are a sign and mercy",
+          "mins": 2
+        }
+      ],
+      "homework": "Write today's weather in Arabic each day this week, with the temperature.",
+      "send": "SEND: weather symbols with Arabic labels. EAL: sentence frame. Stretch: use the past: كَانَ الجَوُّ بَارِدًا أَمْسِ.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Pupil PDF worksheet: weather report frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "thermometer weather",
+          "alt": "A thermometer: temperature",
+          "for": "keywords"
+        },
+        {
+          "find": "Riyadh skyline sunny",
+          "alt": "A hot sunny city in Arabia",
+          "for": "teach:3"
+        },
+        {
+          "find": "rain on window",
+          "alt": "Rain: تُمْطِرُ",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Clothes",
+      "n": 33,
+      "title": "What we wear in each season",
+      "duration": 50,
+      "bigQuestion": "How do you decide what to wear: weather, comfort, modesty or fashion? Which should come first?",
+      "objectives": [
+        "To understand how to say what I wear in each season, with reasons, and talk about modest dress"
+      ],
+      "successCriteria": [
+        "All: say one item I wear in each season",
+        "Most: give a reason with لِأَنَّ",
+        "Some: explain in Arabic why modesty matters in clothing"
+      ],
+      "smsc": "Moral: modesty and self-respect",
+      "keywords": [
+        {
+          "term": "أَلْبَسُ (albasu)",
+          "def": "I wear"
+        },
+        {
+          "term": "دَافِئ (dafi')",
+          "def": "warm"
+        },
+        {
+          "term": "خَفِيف (khafif)",
+          "def": "light (weight)"
+        },
+        {
+          "term": "حِشْمَة (hishmah)",
+          "def": "modesty in dress"
+        },
+        {
+          "term": "وِشَاح (wishah)",
+          "def": "scarf"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How do you decide what to wear: weather, comfort, modesty or fashion? Which should come first?",
+        "a": "Modesty and comfort first, then weather; fashion only within what pleases Allah."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Haya' (modesty) is a branch of iman' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. تُمْطِرُ means ...",
+          "a": "It rains",
+          "mins": 1,
+          "options": [
+            "It rains",
+            "It snows"
+          ]
+        },
+        {
+          "q": "'In summer the weather is hot' is ...",
+          "a": "فِي الصَّيْفِ يَكُونُ الجَوُّ حَارًّا",
+          "mins": 1,
+          "options": [
+            "فِي الصَّيْفِ يَكُونُ الجَوُّ حَارًّا",
+            "فِي الشِّتَاءِ يَكُونُ الجَوُّ حَارًّا"
+          ]
+        },
+        {
+          "q": "Name the four seasons.",
+          "a": "الصَّيْف، الخَرِيف، الشِّتَاء، الرَّبِيع",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Season and clothes",
+          "bullets": [],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Season",
+              "I wear ..."
+            ],
+            "rows": [
+              [
+                "فِي الشِّتَاءِ",
+                "مِعْطَفًا وَوِشَاحًا"
+              ],
+              [
+                "فِي الصَّيْفِ",
+                "قَمِيصًا خَفِيفًا"
+              ],
+              [
+                "فِي الخَرِيفِ",
+                "سُتْرَةً دَافِئَةً"
+              ],
+              [
+                "فِي الرَّبِيعِ",
+                "ثِيَابًا خَفِيفَةً"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Because ...",
+          "bullets": [
+            "فِي الشِّتَاءِ أَلْبَسُ مِعْطَفًا لِأَنَّ الجَوَّ بَارِدٌ",
+            "لِأَنَّ + noun with ـَ: لِأَنَّ الجَوَّ",
+            "Or لِأَنَّهُ with a pronoun"
+          ],
+          "note": "Note the noun after لِأَنَّ takes fathah."
+        },
+        {
+          "heading": "Modesty in dress",
+          "bullets": [
+            "Clothes that cover and are not tight",
+            "Clean and neat",
+            "Haya' is a branch of iman"
+          ],
+          "note": "Bukhari and Muslim: 'Haya' (modesty) is a branch of iman.' Keep it general and respectful."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'Because the weather is cold' is ...",
+            "options": [
+              "لِأَنَّ الجَوَّ بَارِدٌ",
+              "لِأَنَّ الجَوُّ بَارِدٌ",
+              "لِأَنَّ الجَوَّ بَارِدًا"
+            ],
+            "answer": 0,
+            "why": "After لِأَنَّ the noun takes fathah; the adjective stays with dammah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: in summer I wear a light shirt because the weather is hot.",
+          "a": "فِي الصَّيْفِ أَلْبَسُ قَمِيصًا خَفِيفًا لِأَنَّ الجَوَّ حَارٌّ",
+          "mins": 2,
+          "model": "Teacher builds it: فِي الصَّيْفِ + أَلْبَسُ + قَمِيصًا خَفِيفًا + لِأَنَّ الجَوَّ حَارٌّ."
+        },
+        {
+          "q": "دَافِئ means ...",
+          "a": "Warm",
+          "mins": 1,
+          "options": [
+            "Warm",
+            "Light"
+          ]
+        },
+        {
+          "q": "حِشْمَة means ...",
+          "a": "Modesty in dress",
+          "mins": 1,
+          "options": [
+            "Modesty in dress",
+            "Fashion"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a short paragraph in the portal response box: what you wear in two seasons with reasons, and two sentences on why modest dress matters to Muslims. Start: فِي الشِّتَاءِ أَلْبَسُ ...",
+          "a": "Correct accusative after أَلْبَسُ, reasons with لِأَنَّ, two sentences on modesty",
+          "mins": 18,
+          "model": "Teacher writes: فِي الشِّتَاءِ أَلْبَسُ مِعْطَفًا دَافِئًا لِأَنَّ الجَوَّ بَارِدٌ."
+        },
+        {
+          "q": "Extend: use لِأَنَّهُ with a clothing item.",
+          "a": "For example: أُحِبُّ هٰذَا المِعْطَفَ لِأَنَّهُ دَافِئٌ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "After لِأَنَّ, the noun takes ...",
+          "a": "Fathah",
+          "mins": 1,
+          "options": [
+            "Fathah",
+            "Dammah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what should come first?",
+          "a": "Modesty and comfort, then weather; fashion within what pleases Allah",
+          "mins": 2
+        }
+      ],
+      "homework": "Check tomorrow's weather forecast and say in Arabic what you will wear and why.",
+      "send": "SEND: sentence frame with clothes pictures. EAL: reason starters. Stretch: use سَأَلْبَسُ (I will wear) for tomorrow.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Pupil PDF worksheet: season and clothes paragraph frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "winter scarf wool",
+          "alt": "A warm scarf: وِشَاح",
+          "for": "keywords"
+        },
+        {
+          "find": "summer cotton shirt",
+          "alt": "A light shirt for summer",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Clothes",
+      "n": 34,
+      "title": "Sizes and colours: do you have it in ...?",
+      "duration": 50,
+      "bigQuestion": "What makes a shopper polite? Which Arabic words would show it?",
+      "objectives": [
+        "To understand how to ask for sizes and colours in a clothes shop politely"
+      ],
+      "successCriteria": [
+        "All: say small, medium and large",
+        "Most: ask هَلْ عِنْدَكَ ...؟ with a size or colour",
+        "Some: hold a four-turn shop dialogue with a problem (wrong size)"
+      ],
+      "smsc": "Social: courtesy in shops",
+      "keywords": [
+        {
+          "term": "مَقَاس (maqas)",
+          "def": "size"
+        },
+        {
+          "term": "صَغِير / مُتَوَسِّط / كَبِير (saghir / mutawassit / kabir)",
+          "def": "small / medium / large"
+        },
+        {
+          "term": "هَلْ عِنْدَكَ ...؟ (hal 'indaka)",
+          "def": "do you have ...?"
+        },
+        {
+          "term": "ضَيِّق (dayyiq)",
+          "def": "tight"
+        },
+        {
+          "term": "وَاسِع (wasi')",
+          "def": "loose; wide"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes a shopper polite? Which Arabic words would show it?",
+        "a": "Greeting, asking kindly and thanking: السَّلَامُ عَلَيْكُمْ، مِنْ فَضْلِكَ، شُكْرًا، جَزَاكَ اللّٰهُ خَيْرًا."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'May Allah have mercy on a man who is easy-going when he buys, when he sells and when he asks for what is owed' (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. بِكَمْ؟ means ...",
+          "a": "How much?",
+          "mins": 1,
+          "options": [
+            "How much?",
+            "Where?"
+          ]
+        },
+        {
+          "q": "'For thirty pounds' is ...",
+          "a": "بِثَلَاثِينَ جُنَيْهًا",
+          "mins": 1,
+          "options": [
+            "بِثَلَاثِينَ جُنَيْهًا",
+            "بِثَلَاثُونَ جُنَيْهًا"
+          ]
+        },
+        {
+          "q": "Say 72 in Arabic.",
+          "a": "اِثْنَانِ وَسَبْعُونَ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sizes",
+          "bullets": [],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "مَقَاسٌ صَغِيرٌ",
+                "small size"
+              ],
+              [
+                "مَقَاسٌ مُتَوَسِّطٌ",
+                "medium size"
+              ],
+              [
+                "مَقَاسٌ كَبِيرٌ",
+                "large size"
+              ],
+              [
+                "ضَيِّقٌ / وَاسِعٌ",
+                "tight / loose"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Polite questions",
+          "bullets": [
+            "مِنْ فَضْلِكَ، هَلْ عِنْدَكَ هٰذَا القَمِيصُ بِمَقَاسٍ كَبِيرٍ؟",
+            "هَلْ عِنْدَكَ هٰذَا بِاللَّوْنِ الأَزْرَقِ؟",
+            "نَعَمْ، تَفَضَّلْ / لَا، آسِفٌ"
+          ],
+          "note": "Model with a polite tone."
+        },
+        {
+          "heading": "Shop dialogue",
+          "bullets": [],
+          "note": "Read in two parts.",
+          "quote": {
+            "text": "الزَّبُونُ: السَّلَامُ عَلَيْكُمْ. هَلْ عِنْدَكَ هٰذَا القَمِيصُ بِمَقَاسٍ مُتَوَسِّطٍ؟\nالبَائِعُ: وَعَلَيْكُمُ السَّلَامُ. نَعَمْ، تَفَضَّلْ.\nالزَّبُونُ: هٰذَا ضَيِّقٌ قَلِيلًا. هَلْ عِنْدَكَ مَقَاسٌ أَكْبَرُ؟\nالبَائِعُ: نَعَمْ، هٰذَا مَقَاسٌ كَبِيرٌ.",
+            "source": "Our own dialogue"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "ضَيِّق means ...",
+            "options": [
+              "Tight",
+              "Loose",
+              "Long"
+            ],
+            "answer": 0,
+            "why": "ضَيِّق = tight."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Ask politely for these trousers in black.",
+          "a": "مِنْ فَضْلِكَ، هَلْ عِنْدَكَ هٰذَا البِنْطَالُ بِاللَّوْنِ الأَسْوَدِ؟",
+          "mins": 2,
+          "model": "Teacher: مِنْ فَضْلِكَ (please) + هَلْ عِنْدَكَ (do you have) + هٰذَا البِنْطَالُ + بِاللَّوْنِ الأَسْوَدِ (in black, kasrah after بِـ)."
+        },
+        {
+          "q": "مُتَوَسِّط means ...",
+          "a": "Medium",
+          "mins": 1,
+          "options": [
+            "Medium",
+            "Large"
+          ]
+        },
+        {
+          "q": "مَقَاس means ...",
+          "a": "Size",
+          "mins": 1,
+          "options": [
+            "Size",
+            "Price"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Role play in breakout pairs: customer and seller, four turns each, asking for a size and a colour and solving a problem (too tight or wrong colour); then write your dialogue on the pupil PDF.",
+          "a": "Polite greetings, هَلْ عِنْدَكَ ...؟, sizes and colours with agreement, a solved problem",
+          "mins": 18,
+          "model": "Teacher and a pupil perform the first two turns of the model dialogue."
+        },
+        {
+          "q": "Extend: add the price at the end with بِكَمْ ...؟",
+          "a": "For example: بِكَمْ هٰذَا؟ بِخَمْسَةٍ وَعِشْرِينَ جُنَيْهًا",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "هَلْ عِنْدَكَ ...؟ means ...",
+          "a": "Do you have ...?",
+          "mins": 1,
+          "options": [
+            "Do you have ...?",
+            "Where is ...?"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what makes a shopper polite?",
+          "a": "Greeting, asking kindly, thanking",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise your role play with someone at home, swapping roles.",
+      "send": "SEND: dialogue frame with gaps. EAL: polite phrase card. Stretch: add هٰذَا وَاسِعٌ جِدًّا and ask for a smaller size.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Pupil PDF worksheet: shop role play frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clothes shop interior",
+          "alt": "Inside a clothes shop",
+          "for": "hook"
+        },
+        {
+          "find": "clothing size label tag",
+          "alt": "A size label",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Clothes",
+      "n": 35,
+      "title": "Plurals of clothes",
+      "duration": 50,
+      "bigQuestion": "English adds -s to most plurals but has 'mice' and 'feet'. Arabic has many 'mice-type' plurals. How can we learn them?",
+      "objectives": [
+        "To understand how clothing words form their plurals, especially broken plurals"
+      ],
+      "successCriteria": [
+        "All: give the plural of four clothing words",
+        "Most: recognise sound and broken plurals",
+        "Some: use plural things with a feminine singular adjective"
+      ],
+      "smsc": "Moral: avoiding waste",
+      "keywords": [
+        {
+          "term": "جَمْعُ تَكْسِيرٍ (jam' taksir)",
+          "def": "broken plural: the word's inside changes"
+        },
+        {
+          "term": "قُمْصَان (qumsan)",
+          "def": "shirts"
+        },
+        {
+          "term": "فَسَاتِين (fasatin)",
+          "def": "dresses"
+        },
+        {
+          "term": "مَعَاطِف (ma'atif)",
+          "def": "coats"
+        },
+        {
+          "term": "أَحْذِيَة (ahdhiyah)",
+          "def": "shoes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "English adds -s to most plurals but has 'mice' and 'feet'. Arabic has many 'mice-type' plurals. How can we learn them?",
+        "a": "By learning each word with its plural and spotting common patterns like فَعَالِيل and أَفْعِلَة."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And eat and drink, but be not excessive' (al-A'raf 7:31): buying only what we need.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. مَقَاس means ...",
+          "a": "Size",
+          "mins": 1,
+          "options": [
+            "Size",
+            "Colour"
+          ]
+        },
+        {
+          "q": "ضَيِّق means ...",
+          "a": "Tight",
+          "mins": 1,
+          "options": [
+            "Tight",
+            "Loose"
+          ]
+        },
+        {
+          "q": "Ask 'do you have it in blue?'",
+          "a": "هَلْ عِنْدَكَ هٰذَا بِاللَّوْنِ الأَزْرَقِ؟",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Singular and plural",
+          "bullets": [],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "One",
+              "Many",
+              "English"
+            ],
+            "rows": [
+              [
+                "قَمِيص",
+                "قُمْصَان",
+                "shirts"
+              ],
+              [
+                "فُسْتَان",
+                "فَسَاتِين",
+                "dresses"
+              ],
+              [
+                "مِعْطَف",
+                "مَعَاطِف",
+                "coats"
+              ],
+              [
+                "حِذَاء",
+                "أَحْذِيَة",
+                "shoes"
+              ],
+              [
+                "ثَوْب",
+                "ثِيَاب",
+                "garments"
+              ],
+              [
+                "قُبَّعَة",
+                "قُبَّعَات",
+                "hats"
+              ],
+              [
+                "بِنْطَال",
+                "بَنَاطِيل",
+                "trousers"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sound or broken?",
+          "bullets": [],
+          "note": "Pupils show the column number.",
+          "sort": {
+            "columns": [
+              "Sound plural (ending added)",
+              "Broken plural (inside changes)"
+            ],
+            "cards": [
+              "قُبَّعَات",
+              "قُمْصَان",
+              "فَسَاتِين",
+              "حَقِيبَات",
+              "مَعَاطِف",
+              "سُتْرَات"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "Plural things, singular adjective",
+          "bullets": [],
+          "note": "Key rule.",
+          "misconception": {
+            "wrong": "قُمْصَانٌ جَدِيدُونَ",
+            "right": "قُمْصَانٌ جَدِيدَةٌ: plural things take a feminine singular adjective"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "The plural of مِعْطَف is ...",
+            "options": [
+              "مَعَاطِف",
+              "مِعْطَفَات",
+              "مِعْطَفُونَ"
+            ],
+            "answer": 0,
+            "why": "A broken plural: مَعَاطِف."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make plural with adjective: فُسْتَانٌ طَوِيلٌ",
+          "a": "فَسَاتِينُ طَوِيلَةٌ",
+          "mins": 2,
+          "model": "Teacher: plural of فُسْتَان is فَسَاتِين (no tanwin on this pattern). Plural things take a feminine singular adjective: طَوِيلَةٌ."
+        },
+        {
+          "q": "أَحْذِيَة means ...",
+          "a": "Shoes",
+          "mins": 1,
+          "options": [
+            "Shoes",
+            "Socks"
+          ]
+        },
+        {
+          "q": "قُبَّعَات is a ... plural.",
+          "a": "Sound",
+          "mins": 1,
+          "options": [
+            "Sound",
+            "Broken"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Plural practice on the pupil PDF: give the plurals of ten clothing words with an adjective each; then write a shop window description of five plural items. Start: فِي النَّافِذَةِ ...",
+          "a": "Correct plurals and feminine singular adjectives, for example: مَعَاطِفُ شَتَوِيَّةٌ؛ أَحْذِيَةٌ سَوْدَاءُ",
+          "mins": 18,
+          "model": "Teacher writes: فِي النَّافِذَةِ قُمْصَانٌ بَيْضَاءُ وَأَحْذِيَةٌ جَدِيدَةٌ."
+        },
+        {
+          "q": "Extend: use a number 3 to 10 with a clothing plural.",
+          "a": "For example: عِنْدِي ثَلَاثَةُ قُمْصَانٍ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Plural things take a ... adjective.",
+          "a": "Feminine singular",
+          "mins": 1,
+          "options": [
+            "Feminine singular",
+            "Masculine plural"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how can we learn broken plurals?",
+          "a": "Learn each with its plural; spot patterns",
+          "mins": 2
+        }
+      ],
+      "homework": "Make flash cards of ten clothing words with their plurals and test yourself daily.",
+      "send": "SEND: plural table to copy and colour-code. EAL: picture cards with both forms. Stretch: name the pattern of three broken plurals.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Pupil PDF worksheet: plurals of clothes"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "shoes on shelf",
+          "alt": "Shoes: أَحْذِيَة",
+          "for": "keywords"
+        },
+        {
+          "find": "clothes rail shop",
+          "alt": "Coats and shirts on a rail",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Clothes",
+      "n": 36,
+      "title": "The imperative in a shop: أَرِنِي، أَعْطِنِي",
+      "duration": 50,
+      "bigQuestion": "Is a command rude? How can the same request sound polite in Arabic?",
+      "objectives": [
+        "To understand how to use the imperative politely in a shop"
+      ],
+      "successCriteria": [
+        "All: say أَرِنِي and أَعْطِنِي with their meanings",
+        "Most: make imperatives from present-tense verbs",
+        "Some: soften an imperative with مِنْ فَضْلِكَ and use the feminine form"
+      ],
+      "crossCurricular": "English: imperatives and politeness",
+      "smsc": "Social: polite requests",
+      "keywords": [
+        {
+          "term": "فِعْلُ الأَمْرِ (fi'l al-amr)",
+          "def": "the imperative: a command or request"
+        },
+        {
+          "term": "أَرِنِي (arini)",
+          "def": "show me"
+        },
+        {
+          "term": "أَعْطِنِي (a'tini)",
+          "def": "give me"
+        },
+        {
+          "term": "تَفَضَّلْ / تَفَضَّلِي (tafaddal / tafaddali)",
+          "def": "here you are; please (to a boy / girl)"
+        },
+        {
+          "term": "اِنْتَظِرْ (intazir)",
+          "def": "wait"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a command rude? How can the same request sound polite in Arabic?",
+        "a": "Add مِنْ فَضْلِكَ and a kind tone: أَرِنِي ذٰلِكَ القَمِيصَ، مِنْ فَضْلِكَ."
+      },
+      "islamicLink": {
+        "text": "Ibrahim (عَلَيْهِ السَّلَام) said: 'My Lord, show me (أَرِنِي) how You give life to the dead' (al-Baqarah 2:260): the same word, used in du'a.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. The plural of قَمِيص is ...",
+          "a": "قُمْصَان",
+          "mins": 1,
+          "options": [
+            "قُمْصَان",
+            "قَمِيصَات"
+          ]
+        },
+        {
+          "q": "'New shirts' is ...",
+          "a": "قُمْصَانٌ جَدِيدَةٌ",
+          "mins": 1,
+          "options": [
+            "قُمْصَانٌ جَدِيدَةٌ",
+            "قُمْصَانٌ جَدِيدُونَ"
+          ]
+        },
+        {
+          "q": "Say 'shoes' in Arabic.",
+          "a": "أَحْذِيَة",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Requests in a shop",
+          "bullets": [],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "أَرِنِي ...",
+                "show me ..."
+              ],
+              [
+                "أَعْطِنِي ...",
+                "give me ..."
+              ],
+              [
+                "اِنْتَظِرْ قَلِيلًا",
+                "wait a little"
+              ],
+              [
+                "تَفَضَّلْ",
+                "here you are"
+              ],
+              [
+                "خُذْ",
+                "take"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Making the imperative",
+          "bullets": [],
+          "note": "Follow the steps with تَكْتُبُ.",
+          "model": {
+            "problem": "Make the imperative of تَكْتُبُ (you write).",
+            "steps": [
+              "Take the you form: تَكْتُبُ",
+              "Remove تَـ: كْتُبُ",
+              "Starts with sukun, so add a helping alif: اُكْتُبْ",
+              "End with sukun"
+            ],
+            "answer": "اُكْتُبْ (write!)"
+          }
+        },
+        {
+          "heading": "To a girl",
+          "bullets": [
+            "أَرِينِي (show me, to a girl)",
+            "اِنْتَظِرِي (wait, to a girl)",
+            "Add ـِي to the imperative"
+          ],
+          "note": "Recall أَنْتِ forms from Year 8."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "أَعْطِنِي means ...",
+            "options": [
+              "Give me",
+              "Show me",
+              "Wait"
+            ],
+            "answer": 0,
+            "why": "أَعْطِنِي = give me."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Ask politely: show me the red dress.",
+          "a": "أَرِنِي الفُسْتَانَ الأَحْمَرَ، مِنْ فَضْلِكَ",
+          "mins": 2,
+          "model": "Teacher: أَرِنِي (show me) + الفُسْتَانَ (object, fathah) + الأَحْمَرَ (agrees) + مِنْ فَضْلِكَ."
+        },
+        {
+          "q": "اِنْتَظِرْ means ...",
+          "a": "Wait",
+          "mins": 1,
+          "options": [
+            "Wait",
+            "Take"
+          ]
+        },
+        {
+          "q": "The imperative of تَجْلِسُ is ...",
+          "a": "اِجْلِسْ",
+          "mins": 1,
+          "options": [
+            "اِجْلِسْ",
+            "تَجْلِسْ"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Shop scene in the portal response box: write six polite requests a customer might make (with أَرِنِي، أَعْطِنِي and two imperatives you form yourself), and the seller's replies with تَفَضَّلْ. Include one request to a female seller.",
+          "a": "Six correct requests with objects in the accusative, polite softeners, one feminine form",
+          "mins": 18,
+          "model": "Teacher writes: أَعْطِنِي مِعْطَفًا بِمَقَاسٍ كَبِيرٍ، مِنْ فَضْلِكَ. البَائِعُ: تَفَضَّلْ."
+        },
+        {
+          "q": "Extend: make the imperative of تَذْهَبُ.",
+          "a": "اِذْهَبْ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A polite softener is ...",
+          "a": "مِنْ فَضْلِكَ",
+          "mins": 1,
+          "options": [
+            "مِنْ فَضْلِكَ",
+            "أَيْنَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how does a request sound polite?",
+          "a": "Add مِنْ فَضْلِكَ and a kind tone",
+          "mins": 2
+        }
+      ],
+      "homework": "Use three polite Arabic requests at home today (with مِنْ فَضْلِكَ).",
+      "send": "SEND: request cards to complete. EAL: imperative steps card. Stretch: learn the plural imperative أَرُونِي (show me, to a group).",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Pupil PDF worksheet: imperative steps and shop scene"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "shop counter till",
+          "alt": "A shop counter",
+          "for": "hook"
+        },
+        {
+          "find": "red dress on hanger",
+          "alt": "A red dress: فُسْتَانٌ أَحْمَرُ",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Clothes",
+      "n": 37,
+      "title": "Role play: buying clothes; unit quiz",
+      "duration": 50,
+      "bigQuestion": "In a real shop abroad, what would worry you most about speaking Arabic, and what would help?",
+      "objectives": [
+        "To understand how well I can use the unit's language in a shop role play and a written quiz"
+      ],
+      "successCriteria": [
+        "All: complete the role play with greetings, a request and a price",
+        "Most: include a size, a colour and a comparison",
+        "Some: handle an unexpected question from the teacher"
+      ],
+      "smsc": "Social: confidence and courtesy",
+      "keywords": [
+        {
+          "term": "لَعِبُ الأَدْوَارِ (la'ib al-adwar)",
+          "def": "role play"
+        },
+        {
+          "term": "زَبُون (zabun)",
+          "def": "customer"
+        },
+        {
+          "term": "بَائِع (ba'i')",
+          "def": "seller"
+        },
+        {
+          "term": "اِخْتِبَار (ikhtibar)",
+          "def": "quiz"
+        },
+        {
+          "term": "سُؤَالٌ مُفَاجِئٌ (su'al mufaji')",
+          "def": "an unexpected question"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a real shop abroad, what would worry you most about speaking Arabic, and what would help?",
+        "a": "Not understanding a question; preparing key phrases and asking يُمْكِنُ أَنْ تُعِيدَ؟ (can you repeat?) helps."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'May Allah have mercy on a man who is easy-going when he buys, when he sells and when he asks for what is owed' (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. أَرْخَصُ مِنْ means ...",
+          "a": "Cheaper than",
+          "mins": 1,
+          "options": [
+            "Cheaper than",
+            "Better than"
+          ]
+        },
+        {
+          "q": "أَعْطِنِي means ...",
+          "a": "Give me",
+          "mins": 1,
+          "options": [
+            "Give me",
+            "Show me"
+          ]
+        },
+        {
+          "q": "Say £45 in Arabic.",
+          "a": "خَمْسَةٌ وَأَرْبَعُونَ جُنَيْهًا",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The role play",
+          "bullets": [],
+          "note": "Begin with Bismillah. Assessed with the speaking checklist.",
+          "cycle": [
+            "Greet and say what you want",
+            "Ask for a size and colour",
+            "Ask the price and compare",
+            "Answer one unexpected question",
+            "Decide, pay and thank"
+          ]
+        },
+        {
+          "heading": "Useful phrases",
+          "bullets": [
+            "يُمْكِنُ أَنْ تُعِيدَ، مِنْ فَضْلِكَ؟ Can you repeat, please?",
+            "لَا أَفْهَمُ: I do not understand",
+            "جَزَاكَ اللّٰهُ خَيْرًا: thank you"
+          ],
+          "note": "Pupils note these on mini-whiteboards."
+        },
+        {
+          "heading": "The quiz",
+          "bullets": [
+            "Part A: 15 questions",
+            "Part B: write your shop dialogue",
+            "No notes; honest work"
+          ],
+          "note": "Quiz in the portal."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer the unexpected question: لِمَاذَا تُرِيدُ هٰذَا المِعْطَفَ؟",
+          "a": "أُرِيدُهُ لِأَنَّ الجَوَّ بَارِدٌ فِي الشِّتَاءِ",
+          "mins": 2,
+          "model": "Teacher: repeat the verb with 'I' and the pronoun ـهُ for the coat: أُرِيدُهُ; then a reason with لِأَنَّ."
+        },
+        {
+          "q": "لَا أَفْهَمُ means ...",
+          "a": "I do not understand",
+          "mins": 1,
+          "options": [
+            "I do not understand",
+            "I do not want"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Role play in breakouts (teacher assesses each pair for 3 minutes); then the unit quiz in the portal: Part A (15 marks) and Part B in the response box (10 marks: a shop dialogue of eight turns with a size, a colour, a price, an imperative and a comparison).",
+          "a": "Role play per the checklist; Part A per the key; Part B meeting all five requirements",
+          "mins": 30,
+          "model": "Teacher and a pupil perform the first three turns as a model."
+        },
+        {
+          "q": "Extend: check every adjective agrees.",
+          "a": "Pupils' own check",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is your target for Summer 2?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct the quiz in green and write one target for Summer 2.",
+      "send": "SEND: role play cue cards; quiz read aloud with extra time. EAL: phrase bank allowed for Part B. Stretch: add a complaint about a faulty item.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (Clothes)",
+        "Speaking checklist (role play)",
+        "Portal unit quiz: clothes (Part A 15, Part B 10)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "clothes shop interior",
+          "alt": "A clothes shop",
+          "for": "hook"
+        },
+        {
+          "find": "pen and paper test",
+          "alt": "The unit quiz",
           "for": "keywords"
         }
       ]

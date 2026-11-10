@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y9",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme as a bridge to the Edexcel spec (1.9, 2.1, 2.4, 2.5, 3.3), own knowledge, authentic sources only | Spring 1 2027 (lessons 5, 6, 10 upgraded, 13 to 19 new): Year 9 pack Islamic Studies Spring 1 weeks 1 to 5 (Hudaybiyyah events, terms, wisdom and results; the Conquest of Makkah and forgiveness; leadership; sawm rules and spirit with the short quiz); Hudaybiyyah, Abu Basir, the Makhzumi woman and fasting hadith from Bukhari and Muslim; the safety declarations (Muslim); the conquest address and az-Zuhri's observation named as seerah reports; approved seerah text TO CONFIRM | Spring 2 2027 (lessons 7, 8 and 9 upgraded, 20 to 27 new): Year 9 pack Islamic Studies Spring 2 weeks 1 to 6 (Farewell Pilgrimage; the sermon on life, wealth, riba, women, equality and the Qur'an; how hadith were collected and graded; the four schools; usul and qiyas; etiquette of differing; fiqh and UK law review; unit quiz); 5:3, 2:275, 49:13, 5:90, 17:23, 4:59, 8:46, 3:103, 5:1; sermon content from Bukhari and Muslim only; standard riba note; lessons v3",
+  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme as a bridge to the Edexcel spec (1.9, 2.1, 2.4, 2.5, 3.3), own knowledge, authentic sources only | Spring 1 2027 (lessons 5, 6, 10 upgraded, 13 to 19 new): Year 9 pack Islamic Studies Spring 1 weeks 1 to 5 (Hudaybiyyah events, terms, wisdom and results; the Conquest of Makkah and forgiveness; leadership; sawm rules and spirit with the short quiz); Hudaybiyyah, Abu Basir, the Makhzumi woman and fasting hadith from Bukhari and Muslim; the safety declarations (Muslim); the conquest address and az-Zuhri's observation named as seerah reports; approved seerah text TO CONFIRM | Spring 2 2027 (lessons 7, 8 and 9 upgraded, 20 to 27 new): Year 9 pack Islamic Studies Spring 2 weeks 1 to 6 (Farewell Pilgrimage; the sermon on life, wealth, riba, women, equality and the Qur'an; how hadith were collected and graded; the four schools; usul and qiyas; etiquette of differing; fiqh and UK law review; unit quiz); 5:3, 2:275, 49:13, 5:90, 17:23, 4:59, 8:46, 3:103, 5:1; sermon content from Bukhari and Muslim only; standard riba note; lessons v3 | Summer 1 2027 (lessons 11 and 12 upgraded, 28 to 35 new): Year 9 pack Islamic Studies Summer 1 weeks 1 to 5 (halal earning; work with dignity; riba with the standard riba note; the first ten days of Dhul-Hijjah and wealth spent for Allah before the Eid al-Adha half term; honesty in business; fairness in weights, contracts and wages; backbiting; good speech; Important Lessons unit 6, the nine conditions of salah; applied and unit quiz); 2:168, 62:10, 34:10-11, 2:275-282, 22:37, 4:29, 83:1-3, 55:9, 49:12, 14:24, 4:103, 2:144, 7:31, 4:43; hadith from Bukhari, Muslim, or both, each named; unit numbering TO CONFIRM against the school's edition; lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: Aqeedah - knowing Allah, the Last Day and al-Qadr",
@@ -1835,208 +1835,409 @@
       ]
     },
     {
-      "unit": "Unit 4: Akhlaq and dealings",
+      "unit": "Summer 1: Dealings with others and Important Lessons",
       "n": 11,
-      "title": "Halal earning, honest trade and riba",
+      "title": "Halal earning and honest trade",
       "duration": 50,
+      "bigQuestion": "Does it matter how you got your money if you spend it on good things? Why?",
       "objectives": [
-        "Explain Islamic teaching on halal income",
-        "Define riba and give examples",
-        "Apply honesty in trade to scenarios"
+        "To understand why Islam cares how money is earned and what makes earning halal"
       ],
+      "successCriteria": [
+        "All: give two halal and two haram ways of earning",
+        "Most: explain why halal earning affects whether du'a is answered",
+        "Some: evaluate a modern job or business against Islamic principles"
+      ],
+      "crossCurricular": "Business: ethical business decisions",
+      "smsc": "Moral: honesty in earning",
       "keywords": [
         {
-          "term": "kasb halal",
+          "term": "kasb halal (كَسْب حَلَال)",
           "def": "lawful earning"
         },
         {
-          "term": "riba",
-          "def": "usury or interest: an unjust increase on a loan"
+          "term": "tijarah (تِجَارَة)",
+          "def": "trade"
         },
         {
-          "term": "gharar",
-          "def": "excessive uncertainty or deception in a contract"
+          "term": "rizq (رِزْق)",
+          "def": "provision that Allah gives"
         },
         {
-          "term": "ghishsh",
-          "def": "cheating or deceiving in trade"
+          "term": "tayyib (طَيِّب)",
+          "def": "good and pure"
+        },
+        {
+          "term": "gharar (غَرَر)",
+          "def": "excessive uncertainty in a deal"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Does it matter how you got your money if you spend it on good things? Why?",
+        "a": "Yes: Allah is pure and accepts only what is pure; how we earn matters as much as how we spend."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O mankind, eat from whatever is on earth that is lawful and good' (al-Baqarah 2:168).",
+        "at": "start"
+      },
       "starter": [
-        "Define halal and haram.",
-        "Name the five rulings.",
-        "What does amanah mean?"
+        {
+          "q": "Bismillah. Which ruling: rewarded if done, sin if left?",
+          "a": "Fard",
+          "mins": 1,
+          "options": [
+            "Fard",
+            "Mubah"
+          ]
+        },
+        {
+          "q": "In the Farewell Sermon, what did the Prophet ﷺ abolish?",
+          "a": "Riba",
+          "mins": 1,
+          "options": [
+            "Riba",
+            "Trade"
+          ]
+        },
+        {
+          "q": "Name one source of Islamic law besides the Qur'an.",
+          "a": "Sunnah, ijma', qiyas",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Earning honestly",
-          "bullets": [
-            "“No one has eaten better food than that earned by his own hands” (Bukhari)",
-            "Narrated by al-Miqdam",
-            "Work is honourable, begging is discouraged",
-            "The Prophet ﷺ was a trader and shepherd"
-          ],
-          "note": "Begin with bismillah. Link to al-Amin from Year 6. Ask: how does honest work build dignity? Mention that Dawud (peace be upon him) ate from the work of his hands (Bukhari)."
+          "heading": "Allah is pure",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "quote": {
+            "text": "Allah is pure and accepts only what is pure.",
+            "source": "Prophet Muhammad ﷺ, reported by Abu Hurayrah (Muslim)"
+          }
         },
         {
-          "heading": "Trade is permitted; riba is forbidden",
+          "heading": "The traveller's du'a",
           "bullets": [
-            "“Allah has permitted trade and forbidden riba” (2:275)",
-            "Riba: extra money demanded for a loan",
-            "Example: borrow £1,000, repay £1,100 because of delay",
-            "It exploits those in need"
+            "A dishevelled traveller raises his hands: O Lord!",
+            "His food, drink and clothing are haram",
+            "How can he be answered?"
           ],
-          "note": "Worked example: Ali borrows £1,000 and must repay £1,100 after a year. The extra £100 is riba. Compare with a sale: a shop buys a bike for £200 and sells for £250, which is permitted trade because of real goods and shared risk. Ask: why is it unjust? (Rich gain, poor suffer.)"
+          "note": "The same hadith in Muslim continues with this example. Ask: what does it show about earning and du'a?"
         },
         {
-          "heading": "Honesty in trade",
-          "bullets": [
-            "“Whoever cheats us is not one of us” (Muslim)",
-            "Show defects in goods",
-            "Give full measure (83:1-3)",
-            "Do not hoard to raise prices"
-          ],
-          "note": "The hadith of the wet grain at the bottom of the heap is in Muslim (Abu Hurayrah). Ask pupils to give modern examples: false advertising, fake reviews, selling unsafe goods. Link to amanah."
+          "heading": "Halal or haram earning?",
+          "bullets": [],
+          "note": "Pupils show the column number.",
+          "sort": {
+            "columns": [
+              "Halal",
+              "Haram"
+            ],
+            "cards": [
+              "Selling fruit at a fair price",
+              "Selling alcohol",
+              "Fixing phones",
+              "Gambling winnings",
+              "Tutoring",
+              "Selling fake designer goods"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
         },
         {
-          "heading": "Other forbidden dealings",
+          "heading": "Trade is honoured",
           "bullets": [
-            "Gambling and games of chance (5:90)",
-            "Bribery",
-            "Theft and fraud",
-            "Selling what is haram"
+            "Allah permitted trade (2:275)",
+            "The Prophet ﷺ worked as a trader",
+            "Seek Allah's bounty after Jumu'ah (62:10)"
           ],
-          "note": "Keep concise. Explain the reasoning: these harm individuals and society. Encourage fair business ethics such as fair wages and paying on time. Use the Qur’anic principle of justice (4:29: do not consume one another’s wealth unjustly)."
+          "note": "Al-Jumu'ah 62:10: 'disperse in the land and seek from the bounty of Allah'."
         },
         {
-          "heading": "A good earner",
+          "heading": "Quick check",
           "bullets": [
-            "Seek halal earnings",
-            "Be generous and pay zakah",
-            "Avoid waste (17:26-27)",
-            "Trust Allah for provision"
+            "Vote in the Teams poll"
           ],
-          "note": "Ask pupils to design a ‘code of ethics’ for a small online shop. Revisit zakah."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Why might a du'a not be answered, according to the hadith?",
+            "options": [
+              "The person's food and clothing were haram",
+              "He prayed too often",
+              "He was travelling"
+            ],
+            "answer": 0,
+            "why": "Muslim: how can he be answered when his provision is haram?"
+          }
         }
       ],
       "practice": [
-        "Define riba in your own words.",
-        "Identify which scenarios are riba: (a) borrow £500 repay £500 (b) borrow £500 repay £600.",
-        "Give two examples of cheating in trade."
-      ],
-      "independent": [
-        "Write a code of ethics for a Muslim-owned shop with five rules and a Qur’an or hadith reason for each.",
-        "Write a 6-mark style answer: ‘Explain why Islam forbids riba.’",
-        "Create a short case study of an honest businessperson from the Companions (from reliable sources)."
-      ],
-      "exit": [
-        "What does 2:275 say about trade and riba?",
-        "Give an example of honest trade."
-      ],
-      "homework": "Write a short advice letter to a friend starting an online business, using at least two Islamic principles.",
-      "send": "SEND/EAL: scenario cards with money examples; stretch: evaluate the difference between a loan with interest and a profit-sharing partnership."
-    },
-    {
-      "unit": "Unit 4: Akhlaq and dealings",
-      "n": 12,
-      "title": "Guarding the tongue: backbiting and good speech",
-      "duration": 50,
-      "objectives": [
-        "Define backbiting using the hadith",
-        "Explain the Qur’anic warning in 49:11-13",
-        "Suggest practical ways to guard the tongue"
-      ],
-      "keywords": [
         {
-          "term": "ghibah",
-          "def": "backbiting: mentioning your brother in a way he would dislike, even if true"
+          "q": "Explain why halal earning matters in Islam. (4 marks, our own question)",
+          "a": "Allah accepts only what is pure (Muslim); haram earning blocks du'a (Muslim); trade is permitted and honoured (2:275, 62:10).",
+          "mins": 4,
+          "model": "Point 1: Allah accepts only the pure. Develop: 'Allah is pure and accepts only what is pure' (Muslim). Point 2: haram earning harms our du'a. Develop: the traveller whose food was haram (Muslim)."
         },
         {
-          "term": "buhtan",
+          "q": "Selling fake designer goods is ...",
+          "a": "Haram: cheating and deception",
+          "mins": 1,
+          "options": [
+            "Haram: cheating and deception",
+            "Halal if cheap"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Business judge in the portal response box: assess three start-up ideas (a halal food delivery service; a phone app with gambling-style loot boxes; a tutoring service) against halal earning. For each: halal or not, the principle, and a fix if needed. Start: 'Idea 1 is ... because ...'",
+          "a": "Food: halal if honest; loot boxes: gambling-like, haram, fix by removing chance-for-money; tutoring: halal",
+          "mins": 15,
+          "model": "Teacher does idea 1: 'Halal, because it sells permitted food honestly. It must avoid haram ingredients and false adverts.'"
+        },
+        {
+          "q": "Extend: what is gharar and why is it forbidden?",
+          "a": "Excessive uncertainty in a deal, which leads to unfairness and disputes",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Trade is ... in Islam.",
+          "a": "Permitted and honoured",
+          "mins": 1,
+          "options": [
+            "Permitted and honoured",
+            "Forbidden"
+          ]
+        },
+        {
+          "q": "Back to our ponder: does it matter how you earned it?",
+          "a": "Yes: Allah accepts only what is pure",
+          "mins": 2
+        }
+      ],
+      "homework": "Interview a family member about their work: what makes it halal and how they keep it honest; write five lines.",
+      "send": "SEND: sort cards with images of goods. EAL: key term list. Stretch: research why the Prophet ﷺ was trusted as a trader before prophethood.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: halal or haram earning sort; business judge frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "fruit market stall",
+          "alt": "A fruit stall: honest trade",
+          "for": "teach:3"
+        },
+        {
+          "find": "coins and banknotes",
+          "alt": "Money: earned and spent",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dealings with others and Important Lessons",
+      "n": 12,
+      "title": "Guarding the tongue: backbiting",
+      "duration": 50,
+      "bigQuestion": "If what you say about someone is true, is it still wrong to say it behind their back? Why?",
+      "objectives": [
+        "To understand what backbiting (gheebah) is, why Allah compares it to something disgusting, and how to stop it"
+      ],
+      "successCriteria": [
+        "All: define gheebah using the hadith",
+        "Most: explain the image in 49:12",
+        "Some: explain the rare cases scholars allow and why"
+      ],
+      "crossCurricular": "Computing: responsible communication online",
+      "smsc": "Moral: protecting others' honour; Social: online behaviour",
+      "keywords": [
+        {
+          "term": "gheebah (غِيبَة)",
+          "def": "backbiting: saying about someone absent what they would dislike"
+        },
+        {
+          "term": "buhtan (بُهْتَان)",
           "def": "slander: saying something false about someone"
         },
         {
-          "term": "namimah",
-          "def": "tale-bearing to cause trouble"
+          "term": "namimah (نَمِيمَة)",
+          "def": "carrying tales to cause trouble"
         },
         {
-          "term": "husn adh-dhann",
-          "def": "thinking well of others"
+          "term": "tawbah (تَوْبَة)",
+          "def": "repentance"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If what you say about someone is true, is it still wrong to say it behind their back? Why?",
+        "a": "Yes: that is exactly gheebah. If it is false, it is even worse: buhtan (Muslim)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And do not backbite one another. Would one of you like to eat the flesh of his dead brother? You would detest it' (al-Hujurat 49:12).",
+        "at": "start"
+      },
       "starter": [
-        "Define riba and give an example.",
-        "Quote a hadith about speaking good or keeping silent.",
-        "Define amanah."
+        {
+          "q": "Bismillah. 83:1-3 warns against ...",
+          "a": "Giving short measure",
+          "mins": 1,
+          "options": [
+            "Giving short measure",
+            "Lending"
+          ]
+        },
+        {
+          "q": "2:282 commands ...",
+          "a": "Writing down debts",
+          "mins": 1,
+          "options": [
+            "Writing down debts",
+            "Fasting"
+          ]
+        },
+        {
+          "q": "Give one right of a worker.",
+          "a": "To be paid the full wage on time",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Qur’anic warning",
-          "bullets": [
-            "“Do not spy or backbite each other” (49:12)",
-            "“Would one of you like to eat the flesh of his dead brother?”",
-            "Avoid assumptions, mocking and nicknames (49:11-12)",
-            "Allah accepts repentance"
-          ],
-          "note": "Begin with bismillah. Edexcel 2.8 passage 49:11-13. Explain the strong image: backbiting damages a person who cannot defend himself. Ask: why is the image so powerful?"
+          "heading": "What is gheebah?",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "quote": {
+            "text": "Do you know what backbiting is? It is mentioning your brother with what he dislikes. If what you say is true, you have backbitten him; if it is not true, you have slandered him.",
+            "source": "Prophet Muhammad ﷺ, reported by Abu Hurayrah (Muslim)"
+          }
         },
         {
-          "heading": "What is backbiting?",
+          "heading": "The image in 49:12",
           "bullets": [
-            "The Prophet ﷺ asked: do you know what backbiting is?",
-            "“Your mentioning your brother in a way he dislikes”",
-            "If it is true, it is backbiting; if false, it is slander",
-            "Narrated by Abu Hurayrah (Muslim)"
+            "Like eating your dead brother's flesh",
+            "You would hate it",
+            "So hate backbiting too"
           ],
-          "note": "Use the full hadith: a man asked, ‘What if what I say is true?’ and the Prophet ﷺ replied that if it is true you have backbitten him and if it is not true you have slandered him. Ask for school-age examples, e.g. group chat gossip."
+          "note": "Al-Hujurat 49:12. The image shows how ugly gheebah is to Allah."
         },
         {
-          "heading": "Exceptions",
+          "heading": "When scholars allow it",
           "bullets": [
             "Seeking help against injustice",
-            "Asking for a fatwa",
-            "Warning others of real harm in a fair way",
-            "Not for fun or revenge"
+            "Warning someone of real harm",
+            "Asking a scholar for a ruling"
           ],
-          "note": "Scholars mention limited cases where mentioning a person is permissible, such as complaining to someone who can help or a person seeking advice in marriage. Stress that this is for need, not gossip. Remind pupils to ask a teacher if unsure."
+          "note": "An-Nawawi lists such cases in Riyad as-Salihin. Only what is needed, never for entertainment."
         },
         {
-          "heading": "The Muslim’s speech",
+          "heading": "Quick check",
           "bullets": [
-            "“A Muslim is one from whose tongue and hand people are safe” (Bukhari, Muslim)",
-            "Speak good or be silent",
-            "Reconcile between people",
-            "Make excuses for others"
+            "Vote in the Teams poll"
           ],
-          "note": "Link to the hadith of Abdullah ibn Amr. Mention that Allah praises those who encourage charity, kindness and reconciliation (4:114). Ask: when did you last defend someone behind their back?"
-        },
-        {
-          "heading": "Practical steps",
-          "bullets": [
-            "Stop and change the subject",
-            "Leave the gathering",
-            "Make tawbah and seek forgiveness from the person if possible",
-            "Speak well of people in their absence"
-          ],
-          "note": "Role play a gossip scenario with pupils choosing responses. Final consolidation: ask pupils to revisit their Year 8 truthfulness goal and add tongue goals. Quick end-of-unit quiz."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Saying something false about someone absent is ...",
+            "options": [
+              "Buhtan (slander)",
+              "Gheebah only",
+              "Allowed"
+            ],
+            "answer": 0,
+            "why": "Muslim: if it is not true, you have slandered him."
+          }
         }
       ],
       "practice": [
-        "Define ghibah and buhtan.",
-        "Decide whether it is backbiting: ‘She always comes late’ said when she is absent.",
-        "Suggest two ways to respond when others backbite."
+        {
+          "q": "Explain why backbiting is so serious. (4 marks, our own question)",
+          "a": "Allah likens it to eating a dead brother's flesh (49:12); it harms honour and trust; it is a sin of the tongue even when true (Muslim).",
+          "mins": 4,
+          "model": "Point 1: Allah's image. Develop: like eating your dead brother's flesh (49:12). Point 2: even true words count. Develop: the hadith defines gheebah as mentioning what he dislikes, even if true (Muslim)."
+        },
+        {
+          "q": "Carrying tales to cause trouble is ...",
+          "a": "Namimah",
+          "mins": 1,
+          "options": [
+            "Namimah",
+            "Nasihah"
+          ]
+        }
       ],
       "independent": [
-        "Write a short story where a pupil stops a friend from backbiting.",
-        "Create a ‘tongue guard’ checklist with five rules.",
-        "Write a 6-mark style answer: ‘Explain Islamic teaching about harmful speech.’"
+        {
+          "q": "Group chat rescue in the portal response box: a class group chat starts mocking an absent pupil. Write three messages you could send to stop it kindly, and explain the evidence behind your choice. Start: 'Message 1: ...'",
+          "a": "Kind interventions (change the topic, defend the absent, remind of 49:12) with evidence",
+          "mins": 15,
+          "model": "Teacher writes message 1: 'Let's not talk about him when he's not here, it's not fair.'"
+        },
+        {
+          "q": "Extend: how does a person repent from gheebah?",
+          "a": "Stop, regret, resolve not to return, make du'a for the person and praise them where you spoke badly",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Give the hadith definition of backbiting.",
-        "Name one exception where mentioning a person is allowed."
+        {
+          "q": "Gheebah is ...",
+          "a": "Mentioning someone absent with what they dislike",
+          "mins": 1,
+          "options": [
+            "Mentioning someone absent with what they dislike",
+            "Giving advice privately"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is it wrong if it is true?",
+          "a": "Yes: that is gheebah",
+          "mins": 2
+        }
       ],
-      "homework": "Keep a three-day speech diary noting times you spoke kindly or avoided gossip.",
-      "send": "SEND/EAL: scenario cards; stretch: analyse online gossip against Islamic principles."
+      "homework": "Keep a 'tongue diary' for three days: note any time you stopped yourself from gheebah.",
+      "send": "SEND: definition cards with examples. EAL: key term list. Stretch: compare gheebah, buhtan and namimah in a table.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: group chat rescue"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "smartphone group chat screen",
+          "alt": "A group chat",
+          "for": "teach:4"
+        },
+        {
+          "find": "zipper close up",
+          "alt": "A zip: guarding the tongue",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Spring 1: The Prophet as leader and sawm",
@@ -5222,6 +5423,1690 @@
         {
           "find": "balance scale",
           "alt": "Weighing both sides",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dealings with others and Important Lessons",
+      "n": 28,
+      "title": "Work with dignity: earning by your own hands",
+      "duration": 50,
+      "bigQuestion": "Is any honest job too low for a Muslim? Who decides what makes work worthy?",
+      "objectives": [
+        "To understand the dignity of work in Islam and why earning by one's own effort is better than begging or haram shortcuts"
+      ],
+      "successCriteria": [
+        "All: say what the Prophet ﷺ said about eating from one's own work",
+        "Most: explain why prophets worked with their hands",
+        "Some: argue whether any honest job is beneath a Muslim"
+      ],
+      "crossCurricular": "Careers: valuing every kind of work",
+      "smsc": "Moral: dignity of work; Social: respect for every worker",
+      "keywords": [
+        {
+          "term": "'amal (عَمَل)",
+          "def": "work"
+        },
+        {
+          "term": "kadd (كَدّ)",
+          "def": "hard effort"
+        },
+        {
+          "term": "'iffah (عِفَّة)",
+          "def": "dignity: not asking people when you can work"
+        },
+        {
+          "term": "sadaqah (صَدَقَة)",
+          "def": "charity"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is any honest job too low for a Muslim? Who decides what makes work worthy?",
+        "a": "No honest job is too low: prophets herded sheep and worked with their hands. Allah judges taqwa, not job titles."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And when the prayer has been concluded, disperse within the land and seek from the bounty of Allah' (al-Jumu'ah 62:10).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Allah is pure and accepts only what is ...'",
+          "a": "Pure",
+          "mins": 1,
+          "options": [
+            "Pure",
+            "Expensive"
+          ]
+        },
+        {
+          "q": "Selling alcohol is ...",
+          "a": "Haram",
+          "mins": 1,
+          "options": [
+            "Haram",
+            "Halal"
+          ]
+        },
+        {
+          "q": "Which ayah tells us to seek Allah's bounty after Jumu'ah?",
+          "a": "Al-Jumu'ah 62:10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The best food",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "quote": {
+            "text": "No one has ever eaten better food than what he eats from the work of his own hands. The Prophet of Allah Dawud used to eat from the work of his own hands.",
+            "source": "Prophet Muhammad ﷺ (Bukhari)"
+          }
+        },
+        {
+          "heading": "Prophets who worked",
+          "bullets": [],
+          "note": "Pupils match each prophet to the work.",
+          "table": {
+            "head": [
+              "Prophet",
+              "Work"
+            ],
+            "rows": [
+              [
+                "Dawud (عَلَيْهِ السَّلَام)",
+                "Made armour (34:10-11)"
+              ],
+              [
+                "Muhammad ﷺ",
+                "Herded sheep; traded"
+              ],
+              [
+                "Nuh (عَلَيْهِ السَّلَام)",
+                "Built the ark (11:37)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Better than asking",
+          "bullets": [
+            "Carrying firewood to sell is better than begging",
+            "Dignity ('iffah) is part of faith",
+            "Help those who truly cannot work"
+          ],
+          "note": "Bukhari and Muslim: 'That one of you takes his rope and brings a bundle of firewood on his back to sell, so Allah saves his face, is better than asking people.' Bukhari: the Prophet ﷺ herded sheep."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which prophet ate from making armour?",
+            "options": [
+              "Dawud",
+              "Isa",
+              "Yunus"
+            ],
+            "answer": 0,
+            "why": "Bukhari; and al-Saba' 34:10-11."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why Islam honours work with your hands. (4 marks, our own question)",
+          "a": "The best food is from one's own work (Bukhari); prophets worked; earning protects dignity and avoids begging (Bukhari and Muslim).",
+          "mins": 4,
+          "model": "Point 1: own earning is the best food. Develop: Dawud ate from his own work (Bukhari). Point 2: it protects dignity. Develop: carrying firewood is better than begging (Bukhari and Muslim)."
+        },
+        {
+          "q": "'Iffah means ...",
+          "a": "Dignity: not asking people when you can work",
+          "mins": 1,
+          "options": [
+            "Dignity: not asking people when you can work",
+            "Wealth"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a balanced paragraph in the portal response box: 'Some jobs are beneath a Muslim.' Give one view, an opposite view with evidence, and your judgement. Start: 'Some people think ... However ...'",
+          "a": "Balanced answer: no honest halal job is beneath a Muslim; evidence from the prophets and the firewood hadith; judgement",
+          "mins": 15,
+          "model": "Teacher writes the first view: 'Some people think cleaning jobs are low status because society does not praise them.'"
+        },
+        {
+          "q": "Extend: name a haram 'shortcut' to money that young people might be tempted by online.",
+          "a": "Gambling apps, scams, selling stolen accounts",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The best food is from ...",
+          "a": "The work of your own hands",
+          "mins": 1,
+          "options": [
+            "The work of your own hands",
+            "Gifts only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is any honest job too low?",
+          "a": "No; Allah judges taqwa",
+          "mins": 2
+        }
+      ],
+      "homework": "Do one practical job at home this week without being asked and note the dignity in it.",
+      "send": "SEND: paragraph frame with sentence starters. EAL: key term list. Stretch: compare two careers you are considering with halal earning in mind.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: work with dignity paragraph frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bundle of firewood",
+          "alt": "A bundle of firewood",
+          "for": "teach:3"
+        },
+        {
+          "find": "chain mail armour",
+          "alt": "Chain armour, the work of Dawud",
+          "for": "teach:2"
+        },
+        {
+          "find": "carpenter tools workbench",
+          "alt": "Tools of a trade",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dealings with others and Important Lessons",
+      "n": 29,
+      "title": "Riba and why Islam forbids it",
+      "duration": 50,
+      "bigQuestion": "If you lend a friend £10, is it fair to ask for £12 back? What about if a business makes a profit with your money?",
+      "objectives": [
+        "To understand what riba is, how seriously Islam forbids it, and what fair alternatives Islamic finance uses"
+      ],
+      "successCriteria": [
+        "All: define riba",
+        "Most: explain two reasons Islam forbids it",
+        "Some: explain how musharakah and murabahah share risk fairly"
+      ],
+      "crossCurricular": "Maths and Business: interest is studied as knowledge only; Islamic finance alternatives",
+      "smsc": "Moral: justice in money",
+      "keywords": [
+        {
+          "term": "riba (رِبَا)",
+          "def": "an increase charged on a loan: interest"
+        },
+        {
+          "term": "qard hasan (قَرْض حَسَن)",
+          "def": "a goodly loan with no increase"
+        },
+        {
+          "term": "musharakah (مُشَارَكَة)",
+          "def": "partnership: sharing profit and loss"
+        },
+        {
+          "term": "murabahah (مُرَابَحَة)",
+          "def": "cost-plus sale: selling at a known profit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you lend a friend £10, is it fair to ask for £12 back? What about if a business makes a profit with your money?",
+        "a": "Fixed extra on a loan is riba and forbidden; sharing real profit and loss in a partnership is fair."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah has permitted trade and has forbidden riba' (al-Baqarah 2:275).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. The best food is from ...",
+          "a": "The work of your own hands",
+          "mins": 1,
+          "options": [
+            "The work of your own hands",
+            "Borrowed money"
+          ]
+        },
+        {
+          "q": "Which prophet made armour?",
+          "a": "Dawud",
+          "mins": 1,
+          "options": [
+            "Dawud",
+            "Musa"
+          ]
+        },
+        {
+          "q": "What did the Farewell Sermon say about riba?",
+          "a": "All riba is abolished",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Trade allowed, riba forbidden",
+          "bullets": [],
+          "note": "Begin with Bismillah. Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead.",
+          "quote": {
+            "text": "Allah has permitted trade and has forbidden riba.",
+            "source": "al-Baqarah 2:275"
+          }
+        },
+        {
+          "heading": "How serious is it?",
+          "bullets": [
+            "Allah declares war on those who keep riba (2:279)",
+            "The Prophet ﷺ cursed its taker, giver, writer and witnesses",
+            "One of the seven destructive sins"
+          ],
+          "note": "Muslim, from Jabir: the curse on all four. Bukhari and Muslim: the seven destructive sins include consuming riba."
+        },
+        {
+          "heading": "Why is it unjust?",
+          "bullets": [],
+          "note": "Pupils add reasons in the chat.",
+          "diagram": {
+            "centre": "Harms of riba",
+            "items": [
+              "The lender gains with no risk",
+              "Debt grows for the poor",
+              "Wealth gathers with the rich",
+              "Mercy in lending is lost"
+            ]
+          }
+        },
+        {
+          "heading": "Fair alternatives",
+          "bullets": [],
+          "note": "Discuss each.",
+          "compare": {
+            "left": {
+              "title": "Musharakah",
+              "points": [
+                "Partners invest together",
+                "Share real profit and loss"
+              ]
+            },
+            "right": {
+              "title": "Murabahah",
+              "points": [
+                "Bank buys the item",
+                "Sells at a known, fixed profit"
+              ]
+            },
+            "label": "or"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Lending £100 and requiring £110 back is ...",
+            "options": [
+              "Riba",
+              "Musharakah",
+              "Sadaqah"
+            ],
+            "answer": 0,
+            "why": "A fixed increase on a loan is riba."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain two reasons Islam forbids riba. (4 marks, our own question)",
+          "a": "It is injustice: the lender gains without risk while debt grows on the borrower; Allah forbids it clearly (2:275) and the Prophet ﷺ cursed all involved (Muslim).",
+          "mins": 4,
+          "model": "Point 1: Allah forbids it. Develop: 'Allah has permitted trade and forbidden riba' (2:275). Point 2: it is unjust. Develop: the borrower's debt grows while the lender takes no risk, so wealth flows from the poor to the rich."
+        },
+        {
+          "q": "A loan with no increase is called ...",
+          "a": "Qard hasan",
+          "mins": 1,
+          "options": [
+            "Qard hasan",
+            "Riba"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Case study on the pupil PDF: Bilal wants a car. Compare a car loan with interest and a murabahah sale, then answer in the portal response box: which is permitted and why, and how would a musharakah work for a family shop? Start: 'The car loan is ... because ...'",
+          "a": "Interest loan is riba (2:275); murabahah is a sale at a known profit; musharakah shares profit and loss in the shop",
+          "mins": 15,
+          "model": "Teacher explains option 1: 'A £6,000 loan repaid as £6,600: the £600 is a fixed increase on a loan, so it is riba.'"
+        },
+        {
+          "q": "Extend: what does 2:280 say about a borrower in hardship?",
+          "a": "Give him time until ease; forgiving it is better",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Riba is ...",
+          "a": "An increase charged on a loan",
+          "mins": 1,
+          "options": [
+            "An increase charged on a loan",
+            "A fair profit in trade"
+          ]
+        },
+        {
+          "q": "Back to our ponder: £12 back for £10?",
+          "a": "That is riba; sharing real profit in partnership is fair",
+          "mins": 2
+        }
+      ],
+      "homework": "Find one Islamic finance product (for example a home purchase plan) and write how it avoids riba.",
+      "send": "SEND: definition cards and a simple worked example. EAL: key term list. Stretch: explain why buying on credit at a higher fixed price can be permitted while a loan with interest is not.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: riba case study"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bank building facade",
+          "alt": "A bank",
+          "for": "teach:2"
+        },
+        {
+          "find": "small shop storefront",
+          "alt": "A family shop: partners share profit and loss",
+          "for": "teach:4"
+        },
+        {
+          "find": "calculator coins",
+          "alt": "Calculating a loan",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dealings with others and Important Lessons",
+      "n": 30,
+      "title": "Dhul-Hijjah: the best ten days and wealth spent for Allah",
+      "duration": 50,
+      "bigQuestion": "If you could spend £100 for Allah during the best ten days of the year, what would do the most good, and why?",
+      "objectives": [
+        "To understand the virtue of the first ten days of Dhul-Hijjah and how Muslims use their wealth for Allah in them through the udhiyah and sadaqah"
+      ],
+      "successCriteria": [
+        "All: name three deeds for the ten days",
+        "Most: explain the rules and purpose of the udhiyah",
+        "Some: link the udhiyah to halal earning and 22:37"
+      ],
+      "smsc": "Spiritual: seasons of worship; Social: sharing with the poor",
+      "keywords": [
+        {
+          "term": "Dhul-Hijjah (ذُو الحِجَّة)",
+          "def": "the month of Hajj"
+        },
+        {
+          "term": "udhiyah (أُضْحِيَة)",
+          "def": "the sacrifice for Allah from the Eid prayer to the end of tashriq"
+        },
+        {
+          "term": "Yawm 'Arafah (يَوْمُ عَرَفَة)",
+          "def": "the ninth of Dhul-Hijjah"
+        },
+        {
+          "term": "infaq (إِنْفَاق)",
+          "def": "spending in Allah's way"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could spend £100 for Allah during the best ten days of the year, what would do the most good, and why?",
+        "a": "Pupils' own: an udhiyah shared with the poor, sadaqah, or helping family, all from halal money."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Their meat will not reach Allah, nor will their blood, but what reaches Him is taqwa from you' (al-Hajj 22:37).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Riba is ...",
+          "a": "An increase charged on a loan",
+          "mins": 1,
+          "options": [
+            "An increase charged on a loan",
+            "A gift"
+          ]
+        },
+        {
+          "q": "Which ayah says 'Allah has permitted trade and forbidden riba'?",
+          "a": "Al-Baqarah 2:275",
+          "mins": 1,
+          "options": [
+            "Al-Baqarah 2:275",
+            "Al-Ikhlas 112:1"
+          ]
+        },
+        {
+          "q": "Name an Islamic finance alternative.",
+          "a": "Musharakah or murabahah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The best days",
+          "bullets": [],
+          "note": "Begin with Bismillah. Expected to begin around 7 May 2027, by moon sighting.",
+          "quote": {
+            "text": "There are no days in which good deeds are more beloved to Allah than these ten days.",
+            "source": "Prophet Muhammad ﷺ, reported by Ibn Abbas (Bukhari)"
+          }
+        },
+        {
+          "heading": "Deeds for the ten days",
+          "bullets": [],
+          "note": "Pupils add ideas.",
+          "diagram": {
+            "centre": "Ten days",
+            "items": [
+              "Takbir: Allahu akbar",
+              "Fast the Day of Arafah (Muslim)",
+              "Sadaqah",
+              "Udhiyah",
+              "Qur'an and salah"
+            ]
+          }
+        },
+        {
+          "heading": "The udhiyah",
+          "bullets": [],
+          "note": "Schools of fiqh differ on some details.",
+          "table": {
+            "head": [
+              "Question",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "Who?",
+                "Stressed sunnah for those able (some say obligatory)"
+              ],
+              [
+                "When?",
+                "After the Eid prayer (Bukhari and Muslim)"
+              ],
+              [
+                "What?",
+                "Sound sheep, goat, cow or camel of the right age"
+              ],
+              [
+                "Hair and nails?",
+                "Not cut from the 1st until it is offered (Muslim)"
+              ],
+              [
+                "Then?",
+                "Eat, gift and give to the poor"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Pure money for pure worship",
+          "bullets": [
+            "Allah accepts only what is pure (Muslim)",
+            "The udhiyah is bought with halal money",
+            "Taqwa reaches Allah, not the meat (22:37)"
+          ],
+          "note": "Link to the halal earning lessons."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What reaches Allah from the udhiyah?",
+            "options": [
+              "Taqwa",
+              "The meat",
+              "The blood"
+            ],
+            "answer": 0,
+            "why": "Al-Hajj 22:37."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why the udhiyah must be from halal money.",
+          "a": "Allah is pure and accepts only what is pure (Muslim); worship from haram wealth is not accepted; taqwa is what reaches Allah (22:37).",
+          "mins": 3,
+          "model": "Point: worship must be pure. Evidence: 'Allah is pure and accepts only what is pure' (Muslim). Explain: an udhiyah bought with haram money defeats its purpose. Link: 22:37."
+        },
+        {
+          "q": "Fasting the Day of Arafah expiates ...",
+          "a": "The year before and the year after",
+          "mins": 1,
+          "options": [
+            "The year before and the year after",
+            "One day"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Plan in the portal response box: 'My ten days': a deed for each day and a £100 (imagined) spending plan for Allah, with reasons and evidence for two choices. Start: 'Day 1: ...'",
+          "a": "Ten deeds; a spending plan such as a share in an udhiyah for the poor and sadaqah, with evidence",
+          "mins": 15,
+          "model": "Teacher writes: 'Day 9: fast the Day of Arafah if able (Muslim). £60: a share of an udhiyah for families in need.'"
+        },
+        {
+          "q": "Extend: why do some families send their udhiyah abroad, and what do scholars say about eating from it?",
+          "a": "To feed the poor where need is greatest; eating from it is recommended where possible, so some also sacrifice locally",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Day of Arafah is the ... of Dhul-Hijjah.",
+          "a": "Ninth",
+          "mins": 1,
+          "options": [
+            "Ninth",
+            "First"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what would do the most good with £100?",
+          "a": "Pupils' own with a reason",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow your ten days plan over the half term and say the takbir daily.",
+      "send": "SEND: planner with picture prompts. EAL: key term list. Stretch: compare zakah and the udhiyah: who, when, why.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: my ten days and spending plan"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mount Arafat",
+          "alt": "The plain of Arafah",
+          "for": "teach:2"
+        },
+        {
+          "find": "sheep grazing field",
+          "alt": "Sheep for the udhiyah",
+          "for": "teach:3"
+        },
+        {
+          "find": "crescent moon night sky",
+          "alt": "The new moon of Dhul-Hijjah",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dealings with others and Important Lessons",
+      "n": 31,
+      "title": "Honesty in business",
+      "duration": 50,
+      "bigQuestion": "A seller hides a scratch on a phone and makes £20 more. Has he gained or lost? Think about this world and the next.",
+      "objectives": [
+        "To understand how honesty brings blessing in trade and why cheating and false oaths are forbidden"
+      ],
+      "successCriteria": [
+        "All: say what the Prophet ﷺ said about cheating",
+        "Most: explain the hadith on truthful buyers and sellers",
+        "Some: judge modern selling practices (reviews, hidden fees) by these hadith"
+      ],
+      "crossCurricular": "Business: consumer rights and honest marketing",
+      "smsc": "Moral: honesty; Social: trust in the community",
+      "keywords": [
+        {
+          "term": "ghish (غِشّ)",
+          "def": "cheating: hiding a fault or deceiving"
+        },
+        {
+          "term": "barakah (بَرَكَة)",
+          "def": "blessing that makes something grow in good"
+        },
+        {
+          "term": "bay' (بَيْع)",
+          "def": "a sale"
+        },
+        {
+          "term": "yamin kadhibah (يَمِين كَاذِبَة)",
+          "def": "a false oath"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A seller hides a scratch on a phone and makes £20 more. Has he gained or lost? Think about this world and the next.",
+        "a": "He lost: the barakah is wiped out, and the Prophet ﷺ said 'whoever cheats is not of us' (Muslim)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, do not consume one another's wealth unjustly, but only in lawful business by mutual consent' (an-Nisa' 4:29).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. The udhiyah is offered ...",
+          "a": "After the Eid prayer",
+          "mins": 1,
+          "options": [
+            "After the Eid prayer",
+            "Before Fajr on Eid"
+          ]
+        },
+        {
+          "q": "Riba is forbidden in ...",
+          "a": "Al-Baqarah 2:275",
+          "mins": 1,
+          "options": [
+            "Al-Baqarah 2:275",
+            "Al-Fatihah 1:5"
+          ]
+        },
+        {
+          "q": "What is the best food, according to the hadith?",
+          "a": "From the work of your own hands",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The heap of food",
+          "bullets": [
+            "The Prophet ﷺ put his hand into a pile of grain",
+            "The bottom was wet, hidden from buyers",
+            "'Whoever cheats is not of us'"
+          ],
+          "note": "Begin with Bismillah. Muslim, from Abu Hurayrah."
+        },
+        {
+          "heading": "Blessed sales",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "If they are truthful and make things clear, their sale will be blessed; if they lie and hide, the blessing of their sale will be wiped out.",
+            "source": "Prophet Muhammad ﷺ, reported by Hakim ibn Hizam (Bukhari and Muslim)"
+          }
+        },
+        {
+          "heading": "False oaths",
+          "bullets": [
+            "Swearing falsely to make a sale",
+            "Among those Allah will not look at on the Day",
+            "Sells the product, destroys the barakah"
+          ],
+          "note": "Muslim, from Abu Dharr: three Allah will not speak to, including one who sells his goods with a false oath. Bukhari and Muslim: the false oath sells goods but wipes out blessing."
+        },
+        {
+          "heading": "Honest or not?",
+          "bullets": [],
+          "note": "Pupils show the column number.",
+          "sort": {
+            "columns": [
+              "Honest",
+              "Dishonest"
+            ],
+            "cards": [
+              "Listing a phone's scratch in the advert",
+              "Writing fake five-star reviews",
+              "Showing the full price at the start",
+              "Hiding fees until checkout",
+              "Returning extra change",
+              "Saying 'last one left' when untrue"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "According to the hadith, lying in a sale ...",
+            "options": [
+              "Wipes out its blessing",
+              "Doubles the profit's reward",
+              "Is fine if small"
+            ],
+            "answer": 0,
+            "why": "Bukhari and Muslim, from Hakim ibn Hizam."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what Islam teaches about honesty in business. (4 marks, our own question)",
+          "a": "Truthful, clear sales are blessed and lying wipes out blessing (Bukhari and Muslim); cheating puts a person outside the Prophet's ﷺ way (Muslim).",
+          "mins": 4,
+          "model": "Point 1: honesty brings barakah. Develop: 'if they are truthful and make things clear, their sale will be blessed' (Bukhari and Muslim). Point 2: cheating is condemned. Develop: 'Whoever cheats is not of us' (Muslim)."
+        },
+        {
+          "q": "Ghish means ...",
+          "a": "Cheating",
+          "mins": 1,
+          "options": [
+            "Cheating",
+            "Profit"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write an honest advert in the portal response box for a second-hand item (a bike, phone or book), including its faults, a fair price and no exaggeration; then explain which hadith guided you. Start: 'For sale: ...'",
+          "a": "Accurate advert with faults listed, fair price, and the hadith of Hakim ibn Hizam or the heap of food",
+          "mins": 15,
+          "model": "Teacher writes: 'For sale: a blue bike, 3 years old. Small scratch on the frame; brakes replaced last month. £60.'"
+        },
+        {
+          "q": "Extend: is a fake review a form of lying? Why?",
+          "a": "Yes: it is false testimony to deceive buyers",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Whoever cheats is not of us' is reported by ...",
+          "a": "Muslim",
+          "mins": 1,
+          "options": [
+            "Muslim",
+            "No one: it is not a hadith"
+          ]
+        },
+        {
+          "q": "Back to our ponder: did the seller gain or lose?",
+          "a": "He lost: barakah wiped out and the sin of cheating",
+          "mins": 2
+        }
+      ],
+      "homework": "Look at one online advert and write two things that are honest and one that might mislead.",
+      "send": "SEND: advert frame with headings. EAL: key term list. Stretch: research the market inspector (muhtasib) in Muslim history.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: honest or not? sort; honest advert frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pile of grain wheat market",
+          "alt": "A heap of grain at a market",
+          "for": "teach:1"
+        },
+        {
+          "find": "shop price tag",
+          "alt": "A price tag",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dealings with others and Important Lessons",
+      "n": 32,
+      "title": "Fairness in business: weights, contracts and wages",
+      "duration": 50,
+      "bigQuestion": "Why do you think the Qur'an has a whole surah that begins by warning people who cheat on weights?",
+      "objectives": [
+        "To understand how Islam protects fairness in weights and measures, written contracts and paying workers"
+      ],
+      "successCriteria": [
+        "All: say what 83:1-3 warns against",
+        "Most: explain why Allah commands writing down debts",
+        "Some: apply these principles to a modern job or zero-hour contract"
+      ],
+      "crossCurricular": "Citizenship: UK consumer and employment law",
+      "smsc": "Moral: justice; Social: workers' rights",
+      "keywords": [
+        {
+          "term": "mizan (مِيزَان)",
+          "def": "the balance, fairness in weighing"
+        },
+        {
+          "term": "tatfif (تَطْفِيف)",
+          "def": "giving short measure"
+        },
+        {
+          "term": "'aqd (عَقْد)",
+          "def": "a contract"
+        },
+        {
+          "term": "ujrah (أُجْرَة)",
+          "def": "a wage"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think the Qur'an has a whole surah that begins by warning people who cheat on weights?",
+        "a": "Small unfairness hurts many people and shows a heart that does not fear the Day of Judgement (al-Mutaffifin)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And establish weight in justice and do not make deficient the balance' (ar-Rahman 55:9).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Lying in a sale ...",
+          "a": "Wipes out its blessing",
+          "mins": 1,
+          "options": [
+            "Wipes out its blessing",
+            "Is allowed"
+          ]
+        },
+        {
+          "q": "'Whoever cheats is not of us' was said about ...",
+          "a": "A heap of wet grain",
+          "mins": 1,
+          "options": [
+            "A heap of wet grain",
+            "A camel"
+          ]
+        },
+        {
+          "q": "Ghish means ...",
+          "a": "Cheating",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Woe to those who give short measure",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "quote": {
+            "text": "Woe to those who give less, who when they take a measure from people take in full, but when they give by measure or weight, they give less.",
+            "source": "al-Mutaffifin 83:1-3"
+          }
+        },
+        {
+          "heading": "Write it down",
+          "bullets": [
+            "The longest ayah in the Qur'an is about debts",
+            "Write the amount and date",
+            "Bring witnesses; be fair to both"
+          ],
+          "note": "Al-Baqarah 2:282. Writing protects both sides and prevents disputes."
+        },
+        {
+          "heading": "Pay the worker",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "Allah said: There are three whom I will oppose on the Day of Resurrection ... and a man who hired a worker, took full work from him, and did not pay him his wage.",
+            "source": "Hadith qudsi, reported by Abu Hurayrah (Bukhari)"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Why does 2:282 command writing down debts?",
+            "options": [
+              "To protect both sides and prevent disputes",
+              "To charge interest",
+              "To shame the borrower"
+            ],
+            "answer": 0,
+            "why": "Writing is fairer and prevents doubt (2:282)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how Islam protects fairness in business. (4 marks, our own question)",
+          "a": "It forbids short measure (83:1-3); commands written contracts for debts (2:282); requires workers to be paid their full wage (Bukhari).",
+          "mins": 4,
+          "model": "Point 1: fair measures. Develop: 'Woe to those who give less' (83:1). Point 2: workers' rights. Develop: Allah opposes the one who does not pay a worker (Bukhari)."
+        },
+        {
+          "q": "Tatfif means ...",
+          "a": "Giving short measure",
+          "mins": 1,
+          "options": [
+            "Giving short measure",
+            "Giving charity"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Fair or unfair? In the portal response box, judge three cases: a shop's scales set 50g light; a boss who pays a month late without reason; a friend who lends £200 with no written note. For each: the principle, the evidence and the fix. Start: 'Case 1 is unfair because ...'",
+          "a": "Short measure (83:1-3), fix the scales; late wages (Bukhari hadith qudsi), pay on time; write the loan (2:282)",
+          "mins": 15,
+          "model": "Teacher does case 1: 'Unfair: it is tatfif, condemned in 83:1-3. Fix: recalibrate the scales and refund customers.'"
+        },
+        {
+          "q": "Extend: what modern laws in the UK protect the same things?",
+          "a": "Trading standards on weights, contract law, the national minimum wage",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The longest ayah in the Qur'an (2:282) is about ...",
+          "a": "Writing down debts",
+          "mins": 1,
+          "options": [
+            "Writing down debts",
+            "Prayer times"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why warn about weights so strongly?",
+          "a": "Small cheating harms many and shows no fear of the Day",
+          "mins": 2
+        }
+      ],
+      "homework": "Weigh a packet of food at home and check it against the label; write what you found and why accuracy matters.",
+      "send": "SEND: case cards with key words. EAL: key term list. Stretch: compare 2:282 with the UK Consumer Credit Act's written agreements.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: fair or unfair? cases",
+        "Kitchen scales and a labelled food packet (household)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "balance scale weights",
+          "alt": "A balance scale: the mizan",
+          "for": "teach:1"
+        },
+        {
+          "find": "signed contract pen",
+          "alt": "A written contract",
+          "for": "teach:2"
+        },
+        {
+          "find": "kitchen scales",
+          "alt": "Kitchen scales",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dealings with others and Important Lessons",
+      "n": 33,
+      "title": "Good speech: speak good or be silent",
+      "duration": 50,
+      "bigQuestion": "Is silence ever the best answer? When?",
+      "objectives": [
+        "To understand the Islamic standard for speech and how it applies to lying, tale-carrying and online comments"
+      ],
+      "successCriteria": [
+        "All: say the hadith 'speak good or be silent'",
+        "Most: explain the danger of namimah",
+        "Some: write a personal 'speech code' with evidence"
+      ],
+      "smsc": "Moral: truthful, kind speech; Social: online conduct",
+      "keywords": [
+        {
+          "term": "kalimah tayyibah (كَلِمَة طَيِّبَة)",
+          "def": "a good word"
+        },
+        {
+          "term": "namimah (نَمِيمَة)",
+          "def": "carrying tales to cause trouble"
+        },
+        {
+          "term": "kadhib (كَذِب)",
+          "def": "lying"
+        },
+        {
+          "term": "lisan (لِسَان)",
+          "def": "the tongue"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is silence ever the best answer? When?",
+        "a": "When we cannot say something good: 'Whoever believes in Allah and the Last Day, let him speak good or be silent' (Bukhari and Muslim)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Have you not seen how Allah sets forth the example of a good word? It is like a good tree' (Ibrahim 14:24).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Gheebah is ...",
+          "a": "Mentioning someone absent with what they dislike",
+          "mins": 1,
+          "options": [
+            "Mentioning someone absent with what they dislike",
+            "Lying"
+          ]
+        },
+        {
+          "q": "Which surah has the image of eating a dead brother's flesh?",
+          "a": "Al-Hujurat 49:12",
+          "mins": 1,
+          "options": [
+            "Al-Hujurat 49:12",
+            "Al-'Asr 103"
+          ]
+        },
+        {
+          "q": "What is buhtan?",
+          "a": "Slander: saying something false about someone",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Speak good or be silent",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "quote": {
+            "text": "Whoever believes in Allah and the Last Day, let him speak good or remain silent.",
+            "source": "Prophet Muhammad ﷺ, reported by Abu Hurayrah (Bukhari and Muslim)"
+          }
+        },
+        {
+          "heading": "Tale-carrying",
+          "bullets": [
+            "The tale-carrier will not enter Paradise",
+            "It breaks friendships and families",
+            "Stop the story with you"
+          ],
+          "note": "Bukhari and Muslim, from Hudhayfah: 'The qattat (tale-carrier) will not enter Paradise.'"
+        },
+        {
+          "heading": "A good word is like a good tree",
+          "bullets": [],
+          "note": "Read together; discuss the roots and fruit.",
+          "quote": {
+            "text": "A good word is like a good tree, whose root is firmly fixed and whose branches are high in the sky.",
+            "source": "Ibrahim 14:24"
+          }
+        },
+        {
+          "heading": "The three filters",
+          "bullets": [],
+          "note": "Apply to an online comment.",
+          "cycle": [
+            "Is it true?",
+            "Is it good or needed?",
+            "Is it kind?",
+            "Then speak or post"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Passing on what someone said to cause a fight is ...",
+            "options": [
+              "Namimah",
+              "Nasihah",
+              "Sadaqah"
+            ],
+            "answer": 0,
+            "why": "Carrying tales to cause trouble is namimah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the Islamic teaching on speech. (4 marks, our own question)",
+          "a": "Speak good or be silent (Bukhari and Muslim); a good word is like a good tree (14:24); tale-carrying is a major sin (Bukhari and Muslim).",
+          "mins": 4,
+          "model": "Point 1: the rule. Develop: 'let him speak good or remain silent' (Bukhari and Muslim). Point 2: the value of a good word. Develop: like a good tree with firm roots (14:24)."
+        },
+        {
+          "q": "The tale-carrier ...",
+          "a": "Will not enter Paradise",
+          "mins": 1,
+          "options": [
+            "Will not enter Paradise",
+            "Is rewarded"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write your personal 'speech code' in the portal response box: five rules for speaking and posting, each with evidence from this lesson or the last. Start: 'Rule 1: ...'",
+          "a": "Five clear rules with evidence (speak good or be silent; no gheebah 49:12; no namimah; truthfulness; three filters)",
+          "mins": 15,
+          "model": "Teacher writes rule 1: 'Before I post, I ask: is it true, is it needed, is it kind? (Speak good or be silent: Bukhari and Muslim.)'"
+        },
+        {
+          "q": "Extend: why is a joke that includes a lie still a problem?",
+          "a": "Lying is not allowed even in jest; the Prophet ﷺ joked but only spoke truth",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A good word is like a ...",
+          "a": "Good tree",
+          "mins": 1,
+          "options": [
+            "Good tree",
+            "Strong wall"
+          ]
+        },
+        {
+          "q": "Back to our ponder: when is silence best?",
+          "a": "When we cannot say something good",
+          "mins": 2
+        }
+      ],
+      "homework": "Share your speech code with your family and keep it for a week.",
+      "send": "SEND: speech code frame with sentence starters. EAL: key term list. Stretch: research the hadith of Mu'adh on the harvest of the tongue in an approved collection.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: my speech code"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "olive tree roots branches",
+          "alt": "A good tree with firm roots",
+          "for": "teach:3"
+        },
+        {
+          "find": "filter funnel",
+          "alt": "A filter for our words",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dealings with others and Important Lessons",
+      "n": 34,
+      "title": "Important Lessons unit 6: the conditions of salah",
+      "duration": 50,
+      "bigQuestion": "A key opens a door only if every notch is right. How is that like the conditions of salah?",
+      "objectives": [
+        "To understand the nine conditions of salah listed by Ibn Baz and why each must be in place before we pray"
+      ],
+      "successCriteria": [
+        "All: name at least six of the nine conditions",
+        "Most: give evidence for three of them",
+        "Some: solve cases where a condition is missing"
+      ],
+      "smsc": "Spiritual: preparing properly for worship",
+      "keywords": [
+        {
+          "term": "shurut (شُرُوط)",
+          "def": "conditions: what must be in place before and during salah"
+        },
+        {
+          "term": "hadath (حَدَث)",
+          "def": "the state that requires wudu or ghusl"
+        },
+        {
+          "term": "najasah (نَجَاسَة)",
+          "def": "impurity"
+        },
+        {
+          "term": "'awrah (عَوْرَة)",
+          "def": "what must be covered"
+        },
+        {
+          "term": "tamyiz (تَمْيِيز)",
+          "def": "the age of understanding right from wrong"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A key opens a door only if every notch is right. How is that like the conditions of salah?",
+        "a": "Every condition must be in place for the salah to be valid, like every notch on a key."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, prayer has been decreed upon the believers at specified times' (an-Nisa' 4:103).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Speak good or ...'",
+          "a": "Be silent",
+          "mins": 1,
+          "options": [
+            "Be silent",
+            "Speak loudly"
+          ]
+        },
+        {
+          "q": "The tale-carrier ...",
+          "a": "Will not enter Paradise",
+          "mins": 1,
+          "options": [
+            "Will not enter Paradise",
+            "Is excused"
+          ]
+        },
+        {
+          "q": "Name the two conditions for any deed to be accepted.",
+          "a": "Ikhlas and following the Sunnah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Nine conditions (Ibn Baz)",
+          "bullets": [],
+          "note": "Begin with Bismillah. Unit 6 of the book (school edition, TO CONFIRM numbering).",
+          "table": {
+            "head": [
+              "About the person",
+              "About the prayer"
+            ],
+            "rows": [
+              [
+                "1 Islam",
+                "6 Covering the 'awrah"
+              ],
+              [
+                "2 Sanity",
+                "7 The time has entered"
+              ],
+              [
+                "3 Tamyiz (discernment)",
+                "8 Facing the qiblah"
+              ],
+              [
+                "4 Removing hadath (wudu or ghusl)",
+                "9 Intention"
+              ],
+              [
+                "5 Removing najasah (body, clothes, place)",
+                "Each must be in place"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Evidence",
+          "bullets": [],
+          "note": "Pupils match each condition to its evidence.",
+          "table": {
+            "head": [
+              "Condition",
+              "Evidence"
+            ],
+            "rows": [
+              [
+                "Purity",
+                "'Allah does not accept a prayer without purification' (Muslim)"
+              ],
+              [
+                "Time",
+                "'at specified times' (an-Nisa' 4:103)"
+              ],
+              [
+                "Qiblah",
+                "'turn your face toward al-Masjid al-Haram' (2:144)"
+              ],
+              [
+                "Covering",
+                "'take your adornment at every masjid' (7:31)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Praying Asr before its time has entered is ...",
+            "options": [
+              "Not valid",
+              "Valid",
+              "Better"
+            ],
+            "answer": 0,
+            "why": "The time is a condition (4:103)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why purity is a condition of salah. (4 marks, our own question)",
+          "a": "Allah does not accept a prayer without purification (Muslim); salah is standing before Allah, so body, clothes and place must be pure; Allah loves those who purify themselves (2:222).",
+          "mins": 4,
+          "model": "Point 1: the Prophet ﷺ made it a condition. Develop: 'Allah does not accept a prayer without purification' (Muslim). Point 2: respect for the meeting with Allah. Develop: 2:222, Allah loves those who purify themselves."
+        },
+        {
+          "q": "How many conditions does Ibn Baz list?",
+          "a": "Nine",
+          "mins": 1,
+          "options": [
+            "Nine",
+            "Fourteen"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Condition cases on the pupil PDF: eight cases (praying in a jumper with a stain of najasah unknowingly; praying Maghrib before sunset; a boy of twelve praying without wudu; praying towards the wrong direction after trying hard to find it; and four more). For each, valid or not, which condition, and what to do. Answer in the portal response box.",
+          "a": "Answers per the key, for example unknown najasah: valid (common view); Maghrib early: not valid, repeat; no wudu: not valid; wrong qiblah after effort: valid",
+          "mins": 15,
+          "model": "Teacher does case 2: 'Maghrib before sunset: not valid, because the time is a condition (4:103). Pray again after sunset.'"
+        },
+        {
+          "q": "Extend: what is the difference between a condition and a pillar?",
+          "a": "A condition is outside and before the salah (and lasts through it); a pillar is a part inside it",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Facing the qiblah is a ...",
+          "a": "Condition",
+          "mins": 1,
+          "options": [
+            "Condition",
+            "Sunnah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how is salah like a key?",
+          "a": "Every condition must be right for it to be valid",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the nine conditions by heart and recite them to a family member.",
+      "send": "SEND: nine condition cards with symbols. EAL: key term list. Stretch: research what scholars say about praying with najasah one did not know about.",
+      "resources": [
+        "Slides",
+        "Important Lessons for Every Muslim (Shaykh Ibn Baz), English translation used by the school (TO CONFIRM edition and unit numbering)",
+        "Pupil PDF worksheet: condition cases"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "old key and lock",
+          "alt": "A key: every notch must fit",
+          "for": "hook"
+        },
+        {
+          "find": "compass rose",
+          "alt": "A compass: finding the qiblah",
+          "for": "teach:2"
+        },
+        {
+          "find": "prayer mat masjid carpet",
+          "alt": "A clean place for salah",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dealings with others and Important Lessons",
+      "n": 35,
+      "title": "Important Lessons unit 6 applied; unit quiz",
+      "duration": 50,
+      "bigQuestion": "How can a Muslim pray at school, on a plane or in hospital and still keep every condition?",
+      "objectives": [
+        "To understand how the conditions of salah apply in real situations and check my learning across the unit"
+      ],
+      "successCriteria": [
+        "All: complete the unit quiz",
+        "Most: apply the conditions of salah to travel, school and illness",
+        "Some: write a developed 6-mark answer on honest dealings"
+      ],
+      "smsc": "Spiritual: worship in every setting; Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "shurut (شُرُوط)",
+          "def": "conditions"
+        },
+        {
+          "term": "rukhsah (رُخْصَة)",
+          "def": "a concession Allah allows"
+        },
+        {
+          "term": "tayammum (تَيَمُّم)",
+          "def": "dry purification when water cannot be used"
+        },
+        {
+          "term": "mu'amalat (مُعَامَلَات)",
+          "def": "dealings with others"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How can a Muslim pray at school, on a plane or in hospital and still keep every condition?",
+        "a": "With planning and the concessions Allah gives: tayammum, estimating the qiblah, praying sitting if needed."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah does not burden a soul beyond that it can bear' (al-Baqarah 2:286).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. How many conditions of salah does Ibn Baz list?",
+          "a": "Nine",
+          "mins": 1,
+          "options": [
+            "Nine",
+            "Five"
+          ]
+        },
+        {
+          "q": "Praying before the time is ...",
+          "a": "Not valid",
+          "mins": 1,
+          "options": [
+            "Not valid",
+            "Valid"
+          ]
+        },
+        {
+          "q": "Name four conditions of salah.",
+          "a": "Islam, sanity, discernment, purity, covering, time, qiblah, intention",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Conditions in real life",
+          "bullets": [],
+          "note": "Begin with Bismillah. Discuss each.",
+          "table": {
+            "head": [
+              "Situation",
+              "How the conditions are kept"
+            ],
+            "rows": [
+              [
+                "On a plane",
+                "Estimate the qiblah; pray in the time"
+              ],
+              [
+                "No water or illness",
+                "Tayammum (an-Nisa' 4:43)"
+              ],
+              [
+                "At school",
+                "Plan wudu and a clean place in the time"
+              ],
+              [
+                "Unsure of the qiblah",
+                "Try your best; your prayer is valid"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The quiz",
+          "bullets": [
+            "Part A: 15 short questions",
+            "Part B: one 6-mark answer",
+            "Honest work; no notes"
+          ],
+          "note": "Quiz in the portal covering the whole unit (lessons 11, 12, 28 to 35)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Tayammum is used when ...",
+            "options": [
+              "Water cannot be found or used",
+              "You are in a hurry",
+              "The masjid is far"
+            ],
+            "answer": 0,
+            "why": "An-Nisa' 4:43."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Apply the conditions of salah to a Muslim pupil on a school trip day.",
+          "a": "Plan wudu, find a clean place, check the time, use a compass app for the qiblah, cover properly.",
+          "mins": 3,
+          "model": "Teacher: 'Time: check Dhuhr on the app. Purity: wudu before leaving. Place: a clean corner with a mat. Qiblah: compass app.'"
+        },
+        {
+          "q": "Which condition does tayammum help with?",
+          "a": "Removing hadath (purity)",
+          "mins": 1,
+          "options": [
+            "Removing hadath (purity)",
+            "Facing the qiblah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Unit quiz in the portal: Part A (15 marks) on halal earning, riba, honesty, fairness, speech and the conditions of salah; Part B in the response box (6 marks): 'Explain two Islamic teachings about honesty in business.' Start: 'The first teaching is ...'",
+          "a": "Part A from the unit; Part B: truthful sales are blessed (Bukhari and Muslim), whoever cheats is not of us (Muslim) or 83:1-3, each developed",
+          "mins": 25,
+          "model": "Teacher reads the start sentence and reminds: point, evidence, explain, twice."
+        },
+        {
+          "q": "Extend: check each Part B point has evidence.",
+          "a": "Pupils' own check",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which lesson in this unit will you revise first?",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: how can a Muslim keep the conditions anywhere?",
+          "a": "Planning and the concessions Allah gives",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct the quiz in green and write one target for Summer 2.",
+      "send": "SEND: quiz read aloud, extra time, frame for Part B. EAL: key term list allowed. Stretch: add a third piece of evidence to Part B.",
+      "resources": [
+        "Slides",
+        "Important Lessons for Every Muslim (Shaykh Ibn Baz), English translation used by the school (TO CONFIRM edition and unit numbering)",
+        "Portal unit quiz: dealings with others and Important Lessons unit 6 (Part A 15, Part B 6)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "airplane cabin window",
+          "alt": "On a plane: keeping the conditions",
+          "for": "teach:1"
+        },
+        {
+          "find": "pen and paper test",
+          "alt": "The unit quiz",
           "for": "keywords"
         }
       ]

@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y4",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: salah, nafs, sincerity; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2) | Spring 1 2027 (lessons 1, 4, 5, 6 upgraded, 13 new): Year 4 pack Islamic Studies Spring 1 (weeks 1 and 2 Autumn bridge: Islam, Iman, Ihsan and the six articles; weeks 3 to 5 the Makkan years condensed); hadith of Jibril (Muslim 8), the first revelation (Bukhari 3) and Mount Safa (Bukhari, Book of Tafsir) described; reliable children's seerah TO CONFIRM | Spring 2 2027 (lessons 14 to 19 new): Year 4 pack Islamic Studies Spring 2 weeks 1 to 6 (Bilal and Sumayyah; Abyssinia; Umar; the boycott; the Year of Sorrow; Isra and Mi'raj); seerah reports labelled; 2:153, 16:90, 41:44, 94:5-6, 2:155, 17:1; hadith from Bukhari and Muslim; lessons v3",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: salah, nafs, sincerity; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2) | Spring 1 2027 (lessons 1, 4, 5, 6 upgraded, 13 new): Year 4 pack Islamic Studies Spring 1 (weeks 1 and 2 Autumn bridge: Islam, Iman, Ihsan and the six articles; weeks 3 to 5 the Makkan years condensed); hadith of Jibril (Muslim 8), the first revelation (Bukhari 3) and Mount Safa (Bukhari, Book of Tafsir) described; reliable children's seerah TO CONFIRM | Spring 2 2027 (lessons 14 to 19 new): Year 4 pack Islamic Studies Spring 2 weeks 1 to 6 (Bilal and Sumayyah; Abyssinia; Umar; the boycott; the Year of Sorrow; Isra and Mi'raj); seerah reports labelled; 2:153, 16:90, 41:44, 94:5-6, 2:155, 17:1; hadith from Bukhari and Muslim; lessons v3 | Summer 1 2027 (lessons 8 and 9 upgraded, 20 to 22 new): Year 4 pack Islamic Studies Summer 1 weeks 1, 2, 3, 4 and 6 (week 5 masjid etiquette dropped): the gift of salah, pillars 1 and 2, congregation, review with the practical check; the first ten days of Dhul-Hijjah noted before the Eid al-Adha half term; 4:103, 2:238; hadith on al-Fatihah, the closest in sujud, the man who rushed, congregation, rows and following the imam (Bukhari and Muslim, Muslim); pillars list TO CONFIRM against the school's fiqh text; lessons v3",
   "lessons": [
     {
       "unit": "Spring 1: The Makkan years (1)",
@@ -1185,194 +1185,390 @@
       "send": "SEND/EAL: flowchart with pictures. Stretch: research why Islam provides tayammum."
     },
     {
-      "unit": "Unit 3: Fiqh: purity, the pillars of salah and congregation",
+      "unit": "Summer 1: Salah and praying in congregation",
       "n": 8,
-      "title": "Salah: conditions and pillars",
+      "title": "The pillars of salah (1): intention, takbir, standing and al-Fatihah",
       "duration": 45,
+      "bigQuestion": "A table has four legs. What happens if you take one away? What could that teach us about salah?",
       "objectives": [
-        "List the conditions of salah",
-        "List the pillars (arkan) of salah",
-        "Explain the difference"
+        "To understand the first pillars of salah and why salah is not complete without them"
       ],
+      "successCriteria": [
+        "All: name the first four parts of salah in order",
+        "Most: explain why al-Fatihah must be recited in every rak'ah",
+        "Some: explain the difference between a pillar and a sunnah act"
+      ],
+      "smsc": "Spiritual: care in worship",
       "keywords": [
         {
-          "term": "condition",
-          "def": "something needed before prayer"
+          "term": "rukn (رُكْن)",
+          "def": "a pillar: a part salah cannot be without"
         },
         {
-          "term": "pillar",
-          "def": "a part inside the prayer you cannot leave out"
+          "term": "takbir (التَّكْبِير)",
+          "def": "saying Allahu akbar to begin"
         },
         {
-          "term": "qiblah",
-          "def": "direction of the Kaaba"
+          "term": "qiyam (القِيَام)",
+          "def": "standing in salah"
+        },
+        {
+          "term": "al-Fatihah (الفَاتِحَة)",
+          "def": "the opening surah, read in every rak'ah"
+        },
+        {
+          "term": "rak'ah (رَكْعَة)",
+          "def": "one unit of prayer"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A table has four legs. What happens if you take one away? What could that teach us about salah?",
+        "a": "It falls: salah has pillars, and without one the salah is not complete."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Pray as you have seen me praying' (Bukhari).",
+        "at": "start"
+      },
       "starter": [
-        "How many rak'ahs in Dhuhr?",
-        "What breaks wudu?",
-        "Name the five prayers.",
-        "What is the Qiblah?"
+        {
+          "q": "Bismillah. Which prayer is at sunset?",
+          "a": "Maghrib",
+          "mins": 1,
+          "options": [
+            "Maghrib",
+            "Dhuhr"
+          ]
+        },
+        {
+          "q": "What do we face in salah?",
+          "a": "The qiblah",
+          "mins": 1,
+          "options": [
+            "The qiblah",
+            "The door"
+          ]
+        },
+        {
+          "q": "Name two things that must be ready before salah.",
+          "a": "Time, wudu, clean place, qiblah",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Conditions",
+          "heading": "What is a pillar?",
           "bullets": [
-            "Islam and sound mind",
-            "Purity",
-            "Facing Qiblah, time, covering the awrah"
+            "A pillar holds the salah up",
+            "If one is missed, the rak'ah is not complete",
+            "Sunnah acts add beauty and reward"
           ],
-          "note": "Bismillah. These come before the prayer. Facing the Qiblah: Qur'an 2:144. Time: 4:103. Covering: pupils will learn details in later years. Keep gentle."
+          "note": "Begin with Bismillah. The list follows the school's fiqh text (TO CONFIRM). Scholars count the intention as a condition or a pillar; it is in the heart."
         },
         {
-          "heading": "Pillars",
-          "bullets": [
-            "Standing if able, takbir",
-            "Reciting Al-Fatihah",
-            "Bowing and standing up"
-          ],
-          "note": "The Prophet ﷺ said there is no prayer for one who does not recite Fatihah (Bukhari and Muslim). Different madhhabs list pillars in slightly different ways; present the common ones."
+          "heading": "The first pillars",
+          "bullets": [],
+          "note": "Pupils copy the order with hand signals, sitting at their desks.",
+          "cycle": [
+            "Intention in the heart",
+            "Takbir: Allahu akbar",
+            "Standing (qiyam)",
+            "Reciting al-Fatihah"
+          ]
         },
         {
-          "heading": "Sujood and sitting",
-          "bullets": [
-            "Two sujood in each rak'ah",
-            "Sitting between them",
-            "Final tashahhud and tasleem"
-          ],
-          "note": "Sujood: the closest a servant is to Allah (Muslim). Tasleem: salam to right and left. Demonstrate."
+          "heading": "No salah without al-Fatihah",
+          "bullets": [],
+          "note": "Read slowly.",
+          "quote": {
+            "text": "There is no prayer for the one who does not recite the Opening of the Book.",
+            "source": "Prophet Muhammad ﷺ (Bukhari and Muslim)"
+          }
         },
         {
-          "heading": "Calmness",
+          "heading": "Before the break: the best ten days",
           "bullets": [
-            "Be calm in each position",
-            "Do not rush",
-            "The Prophet ﷺ told the man: pray again, you did not pray"
+            "Dhul-Hijjah starts around 7 May",
+            "Good deeds then are most loved by Allah",
+            "Pray on time and add sunnah prayers"
           ],
-          "note": "Bukhari and Muslim (Abu Hurairah): the man who prayed hastily. The Prophet ﷺ taught him to be calm in each position. Ask: why is calmness important?"
-        },
-        {
-          "heading": "Practise",
-          "bullets": [
-            "Order the pillars",
-            "Check conditions",
-            "Teach a partner"
-          ],
-          "note": "Matching game. Keep to the core. Praise accuracy."
+          "note": "The Prophet ﷺ said no good deeds are better than those done in these ten days (Bukhari). The date depends on the moon."
         }
       ],
       "practice": [
-        "Name two conditions.",
-        "Name two pillars.",
-        "Where do we face?",
-        "How many rak'ahs in Fajr?"
+        {
+          "q": "Put these in order: al-Fatihah, takbir, intention, standing.",
+          "a": "Intention, takbir, standing, al-Fatihah",
+          "mins": 2,
+          "model": "Teacher: 'First the heart decides (intention). Then I raise my hands: Allahu akbar. I stand. Then I recite al-Fatihah.'"
+        },
+        {
+          "q": "What do we say to begin salah?",
+          "a": "Allahu akbar",
+          "mins": 1,
+          "options": [
+            "Allahu akbar",
+            "Assalamu 'alaykum"
+          ]
+        }
       ],
       "independent": [
-        "Sort cards: condition vs pillar",
-        "Write the order of one rak'ah",
-        "Role-play teaching salah"
+        {
+          "q": "On the pupil PDF, complete the 'salah table' diagram: write a pillar on each table leg and a sunnah act (such as raising the hands) on the tablecloth.",
+          "a": "Legs: intention, takbir, standing, al-Fatihah; cloth: a sunnah such as raising the hands or a du'a of opening",
+          "mins": 10,
+          "model": "Teacher fills leg 1: 'Takbir: Allahu akbar.'"
+        },
+        {
+          "q": "Extend: recite al-Fatihah to your partner, checking each ayah.",
+          "a": "Al-Fatihah recited in full, seven ayat",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: what is the difference between a pillar and a sunnah act?",
+          "a": "A pillar must be done for the salah to count; a sunnah adds reward",
+          "mins": 1
+        }
       ],
       "exit": [
-        "What is a pillar of salah?",
-        "Why must we be calm?"
+        {
+          "q": "Which surah is read in every rak'ah?",
+          "a": "Al-Fatihah",
+          "mins": 1,
+          "options": [
+            "Al-Fatihah",
+            "Al-Ikhlas"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what happens to salah without a pillar?",
+          "a": "It is not complete, like a table without a leg",
+          "mins": 2
+        }
       ],
-      "homework": "Pray one salah calmly and write a short reflection on how it felt.",
-      "send": "SEND/EAL: card sort with pictures. Stretch: explain the difference between a pillar and a sunnah."
+      "homework": "Practise the opening of salah at home with a parent watching, and pray on time every day in the ten days of Dhul-Hijjah.",
+      "send": "SEND: four picture-free pillar cards to order. EAL: word mat with Arabic and English. Stretch: learn the meaning of each ayah of al-Fatihah.",
+      "resources": [
+        "Slides",
+        "Reliable salah guide for children (TO CONFIRM title against the school's fiqh text)",
+        "Pupil PDF worksheet: the salah table diagram",
+        "A mushaf or al-Fatihah card"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wooden table four legs",
+          "alt": "A table needs all its legs, like salah needs its pillars",
+          "for": "hook"
+        },
+        {
+          "find": "Surah al-Fatiha calligraphy",
+          "alt": "Surah al-Fatihah written in Arabic",
+          "for": "teach:3"
+        },
+        {
+          "find": "crescent moon night sky",
+          "alt": "A new moon: the start of Dhul-Hijjah",
+          "for": "teach:4"
+        }
+      ]
     },
     {
-      "unit": "Unit 3: Fiqh: purity, the pillars of salah and congregation",
+      "unit": "Summer 1: Salah and praying in congregation",
       "n": 9,
-      "title": "Congregational prayer and Jumuah",
+      "title": "Praying in congregation: the imam and straight rows",
       "duration": 45,
+      "bigQuestion": "Why do you think praying together is worth so much more than praying alone?",
       "objectives": [
-        "Explain the reward of praying in congregation",
-        "Describe Jumuah etiquette",
-        "Explain the khutbah"
+        "To understand how Muslims pray together in jama'ah and why it is worth so much more reward"
       ],
+      "successCriteria": [
+        "All: say what jama'ah means and who the imam is",
+        "Most: explain how to follow the imam and keep the rows straight",
+        "Some: explain how praying together builds the ummah"
+      ],
+      "smsc": "Social: unity and equality in the rows",
       "keywords": [
         {
-          "term": "jama'ah",
-          "def": "congregation"
+          "term": "jama'ah (الجَمَاعَة)",
+          "def": "praying together as a group"
         },
         {
-          "term": "Jumuah",
-          "def": "the Friday prayer"
+          "term": "imam (الإِمَام)",
+          "def": "the one who leads the prayer"
         },
         {
-          "term": "khutbah",
-          "def": "sermon"
+          "term": "saff (صَفّ)",
+          "def": "a straight row in prayer"
+        },
+        {
+          "term": "ma'mum (مَأْمُوم)",
+          "def": "someone praying behind the imam"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think praying together is worth so much more than praying alone?",
+        "a": "Allah loves unity: prayer in jama'ah is twenty-seven times better than praying alone (Bukhari and Muslim)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Prayer in congregation is better than prayer alone by twenty-seven degrees' (Bukhari and Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Name the five prayers.",
-        "What is a masjid?",
-        "What is the Qiblah?",
-        "What does Allahu Akbar mean?"
+        {
+          "q": "Bismillah. What do we say in ruku'?",
+          "a": "Subhana Rabbiyal-'Adhim",
+          "mins": 1,
+          "options": [
+            "Subhana Rabbiyal-'Adhim",
+            "Subhana Rabbiyal-A'la"
+          ]
+        },
+        {
+          "q": "How do we end the salah?",
+          "a": "Salam to the right and left",
+          "mins": 1,
+          "options": [
+            "Salam to the right and left",
+            "Standing up"
+          ]
+        },
+        {
+          "q": "Why must we be calm in each position?",
+          "a": "Tuma'ninah is a pillar; rushing spoils the salah",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The reward",
-          "bullets": [
-            "27 times greater",
-            "Bukhari and Muslim (Ibn Umar)",
-            "Brings Muslims together"
-          ],
-          "note": "Bismillah. The Prophet ﷺ said prayer in congregation is 27 degrees better than praying alone. Explain 'degrees' as multiples of reward. Link to community."
+          "heading": "Twenty-seven times better",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "Prayer in congregation is better than prayer alone by twenty-seven degrees.",
+            "source": "Prophet Muhammad ﷺ, reported by Ibn Umar (Bukhari and Muslim)"
+          }
         },
         {
-          "heading": "Straight lines",
+          "heading": "Follow the imam",
           "bullets": [
-            "Stand shoulder to shoulder",
-            "Fill the gaps",
-            "Follow the imam"
+            "The imam is in front",
+            "Move after him, never before him",
+            "Say Amin after al-Fatihah"
           ],
-          "note": "Straight lines: Bukhari and Muslim. Do not rush ahead of the imam. Practice on screen."
+          "note": "Bukhari and Muslim report: 'The imam is appointed to be followed.' No pictures of people praying: objects, places and diagrams only."
         },
         {
-          "heading": "Jumuah",
+          "heading": "Straight rows",
           "bullets": [
-            "Friday is the best day",
-            "Prayer replaces Dhuhr",
-            "Khutbah then two rak'ahs"
+            "Shoulder to shoulder, feet to feet",
+            "Fill the front row first",
+            "No gaps"
           ],
-          "note": "Qur'an 62:9: when the call is made for Friday prayer, hasten to the remembrance of Allah and leave trade. Obligatory for men; ladies may attend. Teach the Friday sunnahs: ghusl, clean clothes, going early (Bukhari and Muslim)."
+          "note": "The Prophet ﷺ said: 'Straighten your rows, for straightening the rows is part of completing the prayer' (Bukhari and Muslim)."
         },
         {
-          "heading": "Listening to the khutbah",
+          "heading": "Quick check",
           "bullets": [
-            "Stay quiet",
-            "Do not play with things",
-            "Listen carefully"
+            "Think, then vote"
           ],
-          "note": "The Prophet ﷺ said if you say 'be quiet' to your friend while the imam speaks, you have spoken idly (Bukhari and Muslim). Use gently."
-        },
-        {
-          "heading": "Masjid manners",
-          "bullets": [
-            "Arrive early",
-            "Pray two rak'ahs on entering (tahiyyat al-masjid)",
-            "Keep voices low"
-          ],
-          "note": "The Prophet ﷺ said when one of you enters the masjid, do not sit until praying two rak'ahs (Bukhari and Muslim). Role-play enters the masjid."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "When the imam goes into ruku', you ...",
+            "options": [
+              "Go into ruku' after him",
+              "Go before him",
+              "Stay standing"
+            ],
+            "answer": 0,
+            "why": "We follow the imam, moving after him."
+          }
         }
       ],
       "practice": [
-        "What is Jumuah?",
-        "What is the khutbah?",
-        "Who leads the prayer?",
-        "What is a congregation?"
+        {
+          "q": "Explain how to pray behind an imam.",
+          "a": "Stand in a straight row, follow his movements after him, say Amin after al-Fatihah, end with salam after him.",
+          "mins": 3,
+          "model": "Point: we follow the imam. Evidence: 'The imam is appointed to be followed' (Bukhari and Muslim). Explain: we move after him, never before, and keep the row straight."
+        },
+        {
+          "q": "Jama'ah prayer is how many times better?",
+          "a": "Twenty-seven",
+          "mins": 1,
+          "options": [
+            "Twenty-seven",
+            "Two"
+          ]
+        }
       ],
       "independent": [
-        "Plan a Jumuah morning routine",
-        "Explain three Friday etiquettes",
-        "Write a paragraph about unity in prayer"
+        {
+          "q": "On the pupil PDF, draw the rows of a masjid from above using squares for places (no people) and write three rules for praying in jama'ah.",
+          "a": "Straight rows filled from the front, follow the imam, no gaps",
+          "mins": 10,
+          "model": "Teacher draws one square for the imam's place and a straight line of squares behind it: 'Row 1 fills first.'"
+        },
+        {
+          "q": "Extend: pray one salah in jama'ah at home with your family this week.",
+          "a": "Pupil reports back",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: how does praying in rows show that all Muslims are equal?",
+          "a": "Rich and poor stand side by side before Allah",
+          "mins": 2
+        }
       ],
       "exit": [
-        "How much more reward is congregational prayer?",
-        "What do we do when the imam speaks?"
+        {
+          "q": "The one who leads the prayer is the ...",
+          "a": "Imam",
+          "mins": 1,
+          "options": [
+            "Imam",
+            "Mu'adhdhin"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why is jama'ah worth more?",
+          "a": "Allah loves unity; it is twenty-seven times better",
+          "mins": 2
+        }
       ],
-      "homework": "Attend a Jumuah or watch one online and write three things you noticed.",
-      "send": "SEND/EAL: pictures of lines in the masjid. Stretch: explain why straight lines matter."
+      "homework": "Pray at least one salah in jama'ah with your family and help make the row straight.",
+      "send": "SEND: row diagram ready to label. EAL: word mat (row, imam, follow). Stretch: find out what the mu'adhdhin does.",
+      "resources": [
+        "Slides",
+        "Reliable salah guide for children (TO CONFIRM title against the school's fiqh text)",
+        "Pupil PDF worksheet: masjid rows from above"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mosque prayer hall empty carpet lines",
+          "alt": "An empty masjid prayer hall with lines for rows",
+          "for": "teach:3"
+        },
+        {
+          "find": "mihrab mosque",
+          "alt": "The mihrab, where the imam stands",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Akhlaq and hadith: trust, family and neighbours",
@@ -3116,6 +3312,670 @@
         {
           "find": "Masjid al-Haram",
           "alt": "Al-Masjid al-Haram in Makkah",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Salah and praying in congregation",
+      "n": 20,
+      "title": "The gift of salah: times, wudu and qiblah",
+      "duration": 45,
+      "bigQuestion": "If someone gave you five appointments a day with the King of all kings, how would you get ready?",
+      "objectives": [
+        "To understand why salah is a gift from Allah and what must be ready before we pray: the time, wudu and the qiblah"
+      ],
+      "successCriteria": [
+        "All: name the five daily prayers in order",
+        "Most: say three things that must be ready before salah",
+        "Some: explain why salah at its time matters, using 4:103"
+      ],
+      "crossCurricular": "Geography: using a compass and directions",
+      "smsc": "Spiritual: salah as a meeting with Allah",
+      "keywords": [
+        {
+          "term": "salah (الصَّلَاة)",
+          "def": "the prayer Muslims pray five times a day"
+        },
+        {
+          "term": "wudu (الوُضُوء)",
+          "def": "washing parts of the body before prayer"
+        },
+        {
+          "term": "qiblah (القِبْلَة)",
+          "def": "the direction of the Ka'bah that we face"
+        },
+        {
+          "term": "waqt (الوَقْت)",
+          "def": "the set time of each prayer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If someone gave you five appointments a day with the King of all kings, how would you get ready?",
+        "a": "Clean, on time and facing the right way: salah is our meeting with Allah, five times a day."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, prayer has been decreed upon the believers at specified times' (an-Nisa' 4:103).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Who freed Bilal (رَضِيَ اللّٰهُ عَنْهُ)?",
+          "a": "Abu Bakr",
+          "mins": 1,
+          "options": [
+            "Abu Bakr",
+            "Abu Jahl"
+          ]
+        },
+        {
+          "q": "What gift did Allah give in the Mi'raj?",
+          "a": "The five daily prayers",
+          "mins": 1,
+          "options": [
+            "The five daily prayers",
+            "The month of Ramadan"
+          ]
+        },
+        {
+          "q": "Which pillar of Islam comes after the shahadah?",
+          "a": "Salah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A gift from Allah",
+          "bullets": [
+            "Salah was given on the night of the Mi'raj",
+            "It is the second pillar of Islam",
+            "Five prayers, with the reward of fifty"
+          ],
+          "note": "Begin with Bismillah. The five prayers given in the Mi'raj with the reward of fifty is reported in Bukhari and Muslim. No pictures of people praying: objects, places and diagrams only."
+        },
+        {
+          "heading": "Five prayers, five times",
+          "bullets": [],
+          "note": "Pupils put the times in order.",
+          "timeline": [
+            {
+              "label": "Fajr",
+              "text": "Dawn, before sunrise"
+            },
+            {
+              "label": "Dhuhr",
+              "text": "After midday"
+            },
+            {
+              "label": "Asr",
+              "text": "Afternoon"
+            },
+            {
+              "label": "Maghrib",
+              "text": "Just after sunset"
+            },
+            {
+              "label": "Isha",
+              "text": "Night"
+            }
+          ]
+        },
+        {
+          "heading": "Ready to pray",
+          "bullets": [],
+          "note": "Tick each on the board.",
+          "diagram": {
+            "centre": "Before salah",
+            "items": [
+              "The time has started",
+              "Wudu",
+              "Clean body, clothes and place",
+              "Covered properly",
+              "Facing the qiblah"
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which comes straight after Maghrib?",
+            "options": [
+              "Isha",
+              "Fajr",
+              "Asr"
+            ],
+            "answer": 0,
+            "why": "Maghrib is at sunset; Isha is the night prayer."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why we must pray each salah at its time.",
+          "a": "Allah made salah due at set times (4:103), so we pray when the time comes, not whenever we like.",
+          "mins": 3,
+          "model": "Point: each salah has its time. Evidence: 'prayer has been decreed upon the believers at specified times' (an-Nisa' 4:103). Explain: so we stop what we are doing when the time comes."
+        },
+        {
+          "q": "The qiblah is the direction of ...",
+          "a": "The Ka'bah in Makkah",
+          "mins": 1,
+          "options": [
+            "The Ka'bah in Makkah",
+            "The nearest masjid"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "On the pupil PDF, fill in the salah clock: write each prayer's name beside its time of day and one thing you need ready before it.",
+          "a": "Fajr dawn, Dhuhr midday, Asr afternoon, Maghrib sunset, Isha night; wudu, clean place, qiblah",
+          "mins": 10,
+          "model": "Teacher writes Fajr at dawn: 'I need wudu and to face the qiblah.'"
+        },
+        {
+          "q": "Extend: use a compass app with a parent to find the qiblah at home; which direction is it from the UK?",
+          "a": "Roughly south-east",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why do Muslims all over the world face one qiblah?",
+          "a": "It unites the ummah in worship of Allah alone",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many daily prayers are there?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Three"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how do we get ready for salah?",
+          "a": "Wudu, clean clothes and place, at the right time, facing the qiblah",
+          "mins": 2
+        }
+      ],
+      "homework": "With a parent, find the qiblah at home and write the five prayer times for one day from your local masjid timetable.",
+      "send": "SEND: salah clock with pictures of the sky at each time. EAL: word mat (dawn, midday, sunset). Stretch: find which ayah says 'turn your face toward al-Masjid al-Haram' (al-Baqarah 2:144).",
+      "resources": [
+        "Slides",
+        "Reliable salah guide for children (TO CONFIRM title against the school's fiqh text)",
+        "Pupil PDF worksheet: the salah clock",
+        "Local masjid prayer timetable (household)",
+        "Compass app with a parent (optional)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kaaba Masjid al-Haram",
+          "alt": "The Ka'bah, our qiblah",
+          "for": "keywords"
+        },
+        {
+          "find": "prayer mat folded",
+          "alt": "A prayer mat ready for salah",
+          "for": "hook"
+        },
+        {
+          "find": "compass rose",
+          "alt": "A compass for finding the direction",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Salah and praying in congregation",
+      "n": 21,
+      "title": "The pillars of salah (2): ruku', sujud, sitting, tashahhud and salam",
+      "duration": 45,
+      "bigQuestion": "When are we closest to Allah in salah? Guess, then we will find out.",
+      "objectives": [
+        "To understand the remaining pillars of salah and why we must be calm in each position"
+      ],
+      "successCriteria": [
+        "All: name the positions from ruku' to salam in order",
+        "Most: say what we say in ruku' and sujud",
+        "Some: explain why calmness (tuma'ninah) is needed in each position"
+      ],
+      "smsc": "Spiritual: calm and focus in worship",
+      "keywords": [
+        {
+          "term": "ruku' (الرُّكُوع)",
+          "def": "bowing with hands on knees"
+        },
+        {
+          "term": "sujud (السُّجُود)",
+          "def": "prostrating on seven body parts"
+        },
+        {
+          "term": "tashahhud (التَّشَهُّد)",
+          "def": "the words said while sitting at the end"
+        },
+        {
+          "term": "salam (السَّلَام)",
+          "def": "turning right and left to end the prayer"
+        },
+        {
+          "term": "tuma'ninah (الطُّمَأْنِينَة)",
+          "def": "being calm and still in each position"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When are we closest to Allah in salah? Guess, then we will find out.",
+        "a": "In sujud: the Prophet ﷺ said the closest a servant is to his Lord is when he is in sujud (Muslim)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The closest a servant is to his Lord is when he is in sujud, so make plenty of du'a' (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What do we say to begin salah?",
+          "a": "Allahu akbar",
+          "mins": 1,
+          "options": [
+            "Allahu akbar",
+            "Subhan Allah"
+          ]
+        },
+        {
+          "q": "Which surah must be read in every rak'ah?",
+          "a": "Al-Fatihah",
+          "mins": 1,
+          "options": [
+            "Al-Fatihah",
+            "An-Nas"
+          ]
+        },
+        {
+          "q": "Name the first four pillars in order.",
+          "a": "Intention, takbir, standing, al-Fatihah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rest of the rak'ah",
+          "bullets": [],
+          "note": "Follow the order with hand signals.",
+          "cycle": [
+            "Ruku': bow",
+            "Stand up straight",
+            "Sujud",
+            "Sit between two sujud",
+            "Second sujud"
+          ]
+        },
+        {
+          "heading": "What we say",
+          "bullets": [],
+          "note": "Pupils repeat each phrase.",
+          "table": {
+            "head": [
+              "Position",
+              "We say"
+            ],
+            "rows": [
+              [
+                "Ruku'",
+                "Subhana Rabbiyal-'Adhim"
+              ],
+              [
+                "Rising",
+                "Sami' Allahu liman hamidah"
+              ],
+              [
+                "Sujud",
+                "Subhana Rabbiyal-A'la"
+              ],
+              [
+                "Between sujud",
+                "Rabbighfir li"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Ending the prayer",
+          "bullets": [
+            "Sit for the final tashahhud",
+            "Send salah on the Prophet ﷺ",
+            "Salam to the right, then the left"
+          ],
+          "note": "Assalamu 'alaykum wa rahmatullah, to each side. No pictures of people praying: objects, places and diagrams only."
+        },
+        {
+          "heading": "Calm and still",
+          "bullets": [
+            "Never rush: be still in each position",
+            "The Prophet ﷺ told a man to pray again",
+            "Because he rushed his salah"
+          ],
+          "note": "Bukhari and Muslim report the hadith of the man who prayed quickly and was told: 'Go back and pray, for you have not prayed.'"
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "What do we say in sujud?",
+            "options": [
+              "Subhana Rabbiyal-A'la",
+              "Allahu akbar only",
+              "Assalamu 'alaykum"
+            ],
+            "answer": 0,
+            "why": "In sujud we glorify Allah, the Most High."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Order these: salam, ruku', sujud, tashahhud.",
+          "a": "Ruku', sujud, tashahhud, salam",
+          "mins": 2,
+          "model": "Teacher: 'Bow first (ruku'), then sujud, then sit for the tashahhud, then end with salam.'"
+        },
+        {
+          "q": "How many body parts touch the ground in sujud?",
+          "a": "Seven",
+          "mins": 1,
+          "options": [
+            "Seven",
+            "Four"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "On the pupil PDF, complete the positions table: for each position write its name, what the body does and what we say in it.",
+          "a": "Ruku': Subhana Rabbiyal-'Adhim; sujud: Subhana Rabbiyal-A'la; sitting: Rabbighfir li; tashahhud; salam",
+          "mins": 9,
+          "model": "Teacher labels the bowing shape: 'Ruku': Subhana Rabbiyal-'Adhim.'"
+        },
+        {
+          "q": "Extend: name the seven body parts of sujud.",
+          "a": "Forehead with nose, two hands, two knees, two feet (toes)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why did the Prophet ﷺ tell the man to pray again?",
+          "a": "He rushed and was not calm; tuma'ninah is a pillar",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "We end salah with ...",
+          "a": "Salam",
+          "mins": 1,
+          "options": [
+            "Salam",
+            "Takbir"
+          ]
+        },
+        {
+          "q": "Back to our ponder: when are we closest to Allah?",
+          "a": "In sujud",
+          "mins": 1
+        }
+      ],
+      "homework": "Pray one salah slowly at home, counting three calm breaths in each position.",
+      "send": "SEND: position cards with the phrase printed. EAL: audio of each phrase (teacher recording, no music). Stretch: learn the tashahhud by heart.",
+      "resources": [
+        "Slides",
+        "Reliable salah guide for children (TO CONFIRM title against the school's fiqh text)",
+        "Pupil PDF worksheet: positions table (words only)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer mat masjid carpet",
+          "alt": "A prayer mat",
+          "for": "keywords"
+        },
+        {
+          "find": "Islamic geometric pattern mosque carpet rows",
+          "alt": "Masjid carpet with rows",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Salah and praying in congregation",
+      "n": 22,
+      "title": "Salah review and recap: the practical check",
+      "duration": 45,
+      "bigQuestion": "If you had to teach a new Muslim how to pray, what would you tell them first?",
+      "objectives": [
+        "To understand the whole salah from start to end by recalling its conditions, pillars and congregation rules"
+      ],
+      "successCriteria": [
+        "All: say the order of a rak'ah from takbir to sujud",
+        "Most: answer quiz questions on times, pillars and jama'ah",
+        "Some: explain the difference between a condition, a pillar and a sunnah"
+      ],
+      "smsc": "Spiritual: worship done well",
+      "keywords": [
+        {
+          "term": "shart (شَرْط)",
+          "def": "a condition: what must be ready before salah"
+        },
+        {
+          "term": "rukn (رُكْن)",
+          "def": "a pillar inside salah"
+        },
+        {
+          "term": "sunnah (سُنَّة)",
+          "def": "an extra act that brings reward"
+        },
+        {
+          "term": "review",
+          "def": "look back to remember"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had to teach a new Muslim how to pray, what would you tell them first?",
+        "a": "Get ready first: time, wudu, clean place and qiblah. Then the pillars in order, calmly."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Guard strictly the prayers, especially the middle prayer, and stand before Allah devoutly obedient' (al-Baqarah 2:238).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Jama'ah prayer is ... times better.",
+          "a": "Twenty-seven",
+          "mins": 1,
+          "options": [
+            "Twenty-seven",
+            "Ten"
+          ]
+        },
+        {
+          "q": "We move ... the imam.",
+          "a": "After",
+          "mins": 1,
+          "options": [
+            "After",
+            "Before"
+          ]
+        },
+        {
+          "q": "What do we say in sujud?",
+          "a": "Subhana Rabbiyal-A'la",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Before, during, extra",
+          "bullets": [],
+          "note": "Pupils sort each card.",
+          "sort": {
+            "columns": [
+              "Condition (before)",
+              "Pillar (during)",
+              "Sunnah (extra)"
+            ],
+            "cards": [
+              "Wudu",
+              "Ruku'",
+              "Raising the hands",
+              "Facing the qiblah",
+              "Al-Fatihah",
+              "Siwak"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "The whole rak'ah",
+          "bullets": [],
+          "note": "Say it together.",
+          "cycle": [
+            "Takbir",
+            "Al-Fatihah",
+            "Ruku'",
+            "Stand straight",
+            "Two sujud",
+            "Sit or stand"
+          ]
+        },
+        {
+          "heading": "The practical check",
+          "bullets": [
+            "At home, with a parent watching",
+            "Pray two rak'ahs calmly",
+            "Parent ticks the checklist"
+          ],
+          "note": "Assessment from the plan: parts of salah at home with a parent's sight. No pictures of people praying: objects, places and diagrams only."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Wudu is a ...",
+            "options": [
+              "Condition",
+              "Pillar",
+              "Sunnah"
+            ],
+            "answer": 0,
+            "why": "Wudu is done before salah, so it is a condition."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the difference between a condition and a pillar.",
+          "a": "A condition comes before and lasts through salah (like wudu); a pillar is a part inside salah (like ruku').",
+          "mins": 3,
+          "model": "Teacher: 'Wudu is a condition: I need it before I start. Ruku' is a pillar: it is part of the prayer itself.'"
+        },
+        {
+          "q": "How many rak'ahs is Fajr?",
+          "a": "Two",
+          "mins": 1,
+          "options": [
+            "Two",
+            "Four"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Salah quiz on the pupil PDF: ten questions on times, conditions, pillars and jama'ah, then self-mark with the answers on screen.",
+          "a": "Answers on the quiz key, for example Maghrib is three rak'ahs, Dhuhr four",
+          "mins": 10,
+          "model": "Teacher answers question 1 aloud: 'How many rak'ahs is Maghrib? Three.'"
+        },
+        {
+          "q": "Extend: write the rak'ahs of all five prayers.",
+          "a": "Fajr 2, Dhuhr 4, Asr 4, Maghrib 3, Isha 4",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: name one sunnah prayer the Prophet ﷺ kept.",
+          "a": "For example the two rak'ahs before Fajr",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ruku' is a ...",
+          "a": "Pillar",
+          "mins": 1,
+          "options": [
+            "Pillar",
+            "Condition"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what would you teach a new Muslim first?",
+          "a": "To get ready: time, wudu, clean place, qiblah",
+          "mins": 2
+        }
+      ],
+      "homework": "Practical check: pray two rak'ahs at home while a parent ticks the checklist on the pupil PDF; return it next week.",
+      "send": "SEND: quiz read aloud with picture options. EAL: key word list. Stretch: teach a younger sibling the order of a rak'ah.",
+      "resources": [
+        "Slides",
+        "Reliable salah guide for children (TO CONFIRM title against the school's fiqh text)",
+        "Pupil PDF worksheet: salah quiz and parent checklist for the practical check"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "prayer mat masjid carpet",
+          "alt": "A prayer mat",
+          "for": "teach:3"
+        },
+        {
+          "find": "checklist clipboard",
+          "alt": "A checklist",
           "for": "keywords"
         }
       ]
