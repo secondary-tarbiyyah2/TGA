@@ -54,6 +54,13 @@ export type ApplicationRow = {
   address_town?: string | null;
   address_postcode?: string | null;
   address_country?: string | null;
+  /** 0194: link to a UK local council. */
+  local_authority?: string | null;
+  lived_in_uk?: boolean | null;
+  last_uk_postcode?: string | null;
+  last_uk_address?: string | null;
+  last_uk_local_authority?: string | null;
+  british_national?: boolean | null;
   child_first_name: string;
   child_last_name: string;
   child_dob: string;
@@ -144,7 +151,7 @@ export function processPips(a: Pick<ApplicationRow, "assessment_at" | "interview
 }
 
 export const APPLICATION_COLUMNS =
-  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, address_line1, address_line2, address_town, address_postcode, address_country, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, payment_plan_intent, children_applying, sibling_applicants, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, offer_made_at, offer_deadline, admin_fee_amount, admin_fee_received, admin_fee_received_at, deposit_amount, deposit_received_at, parent_profile_id, child_id, student_profile_id, accounts_created_at, family_id, sibling_index, guardian_is_other, guardian_name, guardian_relationship, guardian_email, guardian_phone, guardian_address, created_at, updated_at";
+  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, address_line1, address_line2, address_town, address_postcode, address_country, local_authority, lived_in_uk, last_uk_postcode, last_uk_address, last_uk_local_authority, british_national, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, payment_plan_intent, children_applying, sibling_applicants, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, offer_made_at, offer_deadline, admin_fee_amount, admin_fee_received, admin_fee_received_at, deposit_amount, deposit_received_at, parent_profile_id, child_id, student_profile_id, accounts_created_at, family_id, sibling_index, guardian_is_other, guardian_name, guardian_relationship, guardian_email, guardian_phone, guardian_address, created_at, updated_at";
 
 /** Age in whole years from an ISO date (yyyy-mm-dd), e.g. "7". Empty if invalid. */
 export function ageFromDob(dob: string): string {
