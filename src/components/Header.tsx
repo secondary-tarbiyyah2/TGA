@@ -356,7 +356,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
         </button>
         {a11yOpen && (
           <div id="mobile-a11y-panel" className="pb-2">
-            <ViewSettingsPanel />
+            <ViewSettingsPanel onNavigate={onClose} />
           </div>
         )}
       </div>

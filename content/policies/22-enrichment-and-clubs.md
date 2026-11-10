@@ -10,7 +10,7 @@ agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
 dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
 nextReview: 31 August 2027
 basis: New policy for online provision
-readAlongside: Tarbiyyah Compass Character Framework; Live Lesson Protocols; No Platform for Extremism (Prevent) Policy; Health, Safety and Wellbeing Policy
+readAlongside: Tarbiyyah Compass Character Framework; Live Lesson Protocols; Safeguarding: Extremism and Radicalisation Policy; Health, Safety and Wellbeing Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
 
@@ -34,7 +34,7 @@ The club programme for each term is published on the Student Portal before the t
 ## 3. How Clubs are Run
 
 - Clubs are run on Academy platforms by Academy staff or approved, DBS-checked volunteers, and follow the Live Lesson Protocols, including recording.
-- External providers and guest speakers are approved through the risk assessment in the No Platform for Extremism (Prevent) Policy.
+- External providers and guest speakers are approved through the risk assessment in the Safeguarding: Extremism and Radicalisation Policy.
 - Pupils sign up through the Student Portal; parents can see their child's clubs on the Parent Portal.
 - Clubs are timed to suit different time zones where possible.
 - Any in-person event or trip has its own risk assessment and parental consent.

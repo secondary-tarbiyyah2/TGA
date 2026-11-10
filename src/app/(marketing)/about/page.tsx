@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { StarMark } from "@/components/StarMark";
 import Link from "next/link";
-import { aboutDefaults } from "@/content/defaults";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { getAboutContent, getSiteSettings } from "@/lib/content";
+import { COMPASS, COMPASS_WORD, IHSAN_HALF_TERM } from "@/content/compass";
 
 export const metadata: Metadata = pageMetadata({
   title: "About Us",
@@ -14,11 +13,9 @@ export const metadata: Metadata = pageMetadata({
   path: "/about",
 });
 
-const defaultRecipe = aboutDefaults.recipe_items;
 
 export default async function AboutPage() {
   const [content, settings] = await Promise.all([getAboutContent(), getSiteSettings()]);
-  const recipe = content.recipeItems?.length ? content.recipeItems : defaultRecipe;
 
   return (
     <>
@@ -60,17 +57,31 @@ export default async function AboutPage() {
         <Container>
           <Kicker>Our values: the Tarbiyyah Compass</Kicker>
           <h2 id="recipe-heading" className="text-h2 font-serif font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
-          {/* Six in a row on desktop, 3 + 3 on tablets, two columns on phones.
-              Grid rows stretch, so every card in a row is the same height. */}
-          <ol className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6" aria-label="The six Tarbiyyah Compass values">
-            {recipe.map((r, i) => (
-              <li key={`${r.letter}-${i}`} className="flex h-full flex-col items-center rounded-2xl border border-gold-light/60 bg-white px-3 py-5 text-center shadow-sm">
-                <span aria-hidden="true" className="flex h-10 w-10 items-center justify-center rounded-xl bg-ink-900 text-gold-300"><StarMark className="h-6 w-6" /></span>
-                <h3 className="mt-3 font-serif font-semibold text-ink">{r.word}</h3>
-                <p className="mt-1 text-sm leading-snug text-ink/70">{r.body}</p>
+          <p className="mt-3 max-w-2xl text-ink/75">
+            Our five values spell <strong className="font-semibold text-ink">{COMPASS_WORD}</strong>: worshipping Allah as though you see Him. In an online school much of a pupil&apos;s day happens with no adult in the room, so this is the character we build, one letter at a time.
+          </p>
+          {/* The letters run down the left in large type, so the word reads at a glance. */}
+          <ol className="mt-8 grid gap-3 lg:grid-cols-5" aria-label={`The ${COMPASS_WORD} values`}>
+            {COMPASS.map((v) => (
+              <li key={v.letter} className="reveal flex gap-4 rounded-2xl border border-gold-light/60 bg-white p-4 shadow-sm lg:flex-col lg:gap-3 lg:p-5">
+                <span aria-hidden="true" className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink-900 font-serif text-3xl font-semibold text-gold-300">
+                  {v.letter}
+                </span>
+                <div className="min-w-0">
+                  <h3 className="font-serif text-lg font-semibold text-ink">
+                    <span className="text-gold-700">{v.word.charAt(0)}</span>
+                    {v.word.slice(1)}
+                  </h3>
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-gold-700">{v.gloss}</p>
+                  <p className="mt-1.5 text-sm leading-snug text-ink/75">{v.body}</p>
+                  <p className="mt-2 inline-block rounded-full bg-gold-50 px-2 py-0.5 font-mono text-[0.68rem] text-ink/75">{v.halfTerm}</p>
+                </div>
               </li>
             ))}
           </ol>
+          <p className="mt-4 rounded-xl border border-gold-light/60 bg-white/70 px-4 py-3 text-sm text-ink/80">
+            <strong className="font-semibold text-ink">{IHSAN_HALF_TERM}: Ihsan.</strong> The year ends with all five together, doing everything as well as we can because Allah sees us.
+          </p>
           <p className="mt-6 max-w-3xl text-sm text-ink/70">One value is the focus each half term, recognised with merits, a Compass Star in every class and a character comment on every report.</p>
         </Container>
       </section>

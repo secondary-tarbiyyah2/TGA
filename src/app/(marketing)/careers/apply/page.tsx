@@ -26,46 +26,38 @@ export default async function CareersApplyPage() {
   const email = settings.admissionsEmail || FALLBACK_ADMISSIONS_EMAIL;
 
   return (
-    <>
-      <section className="geo-texture bg-cream hero-pad">
-        <Container className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-16">
-          <div>
-            <Kicker>Careers</Kicker>
-            <h1 className="text-h1 font-serif font-semibold text-ink">Apply for a role.</h1>
-            <p className="mt-5 max-w-xl text-lg text-ink/75">
-              The form has six short steps and takes about 20 minutes. Your answers are saved on this device as you go, so you can come back to it.
-            </p>
-            <p className="mt-4 max-w-xl text-sm text-ink/70">
-              Not sure which role suits you? See the{" "}
-              <Link href="/careers/#vacancies" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">current vacancies</Link>, or choose &ldquo;General application&rdquo; on the first step.
-            </p>
-            <a href="#application-form" className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 lg:hidden">
-              Start the form
-            </a>
-          </div>
-          <div className="rounded-2xl border border-gold-light/60 bg-white p-6">
-            <h2 className="font-serif text-lg font-semibold text-ink">What you&apos;ll need</h2>
-            <ul className="mt-3 space-y-2.5 text-sm text-ink/80">
-              {NEEDS.map((n) => (
-                <li key={n} className="flex gap-2.5">
-                  <span aria-hidden="true" className="mt-0.5 text-gold-700">&#10003;</span>
-                  <span>{n}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Container>
-      </section>
+    <section className="geo-texture bg-cream pb-16 pt-10 sm:pt-12" aria-labelledby="careers-apply-heading">
+      <Container className="max-w-3xl">
+        <Kicker>Careers</Kicker>
+        <h1 id="careers-apply-heading" className="text-h2 font-serif font-semibold text-ink">Apply for a role</h1>
+        <p className="mt-3 text-base text-ink/75">
+          Six short steps, about 20 minutes. Answers are saved on this device as you go. Not sure which role suits you? See the{" "}
+          <Link href="/careers/#vacancies" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">current vacancies</Link>, or choose &ldquo;General application&rdquo; on the first step.
+        </p>
 
-      <section className="section-pad scroll-mt-20" id="application-form" aria-label="Application form">
-        <Container className="max-w-3xl">
+        <details className="group mt-5 rounded-2xl border border-gold-light/60 bg-white">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-5 py-3 text-sm font-semibold text-ink [&::-webkit-details-marker]:hidden">
+            <span>What you&apos;ll need <span className="font-normal text-ink/70">({NEEDS.length} things)</span></span>
+            <span aria-hidden="true" className="text-gold-700 transition-transform group-open:rotate-180">&#9662;</span>
+          </summary>
+          <ul className="grid gap-2 border-t border-gold-light/50 px-5 py-4 text-sm text-ink/80 sm:grid-cols-2 sm:gap-x-6">
+            {NEEDS.map((n) => (
+              <li key={n} className="flex gap-2.5">
+                <span aria-hidden="true" className="mt-0.5 text-gold-700">&#10003;</span>
+                <span>{n}</span>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        <div id="application-form" className="mt-6 scroll-mt-24">
           <CareerApplyForm email={email} />
           <p className="mt-6 text-sm text-ink/70">
             Having trouble with the form? Email your CV and a covering letter to{" "}
             <a href={`mailto:${email}`} className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">{email}</a> instead.
           </p>
-        </Container>
-      </section>
-    </>
+        </div>
+      </Container>
+    </section>
   );
 }

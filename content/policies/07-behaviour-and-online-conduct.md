@@ -16,7 +16,7 @@ availability: Published on the Academy website and Parent Portal. Available in l
 
 ## 1. Purpose
 
-Tarbiyyah Global Academy aims to be a calm, well-ordered and supportive online school in which every pupil can learn and every teacher can teach. Our standards of conduct are rooted in adab and akhlaq and in our Tarbiyyah Compass values — Resilience, Eeman, Contentment, Integrity, Progress and Excellence — and are applied consistently in every live lesson, assembly, club and Academy platform.
+Tarbiyyah Global Academy aims to be a calm, well-ordered and supportive online school in which every pupil can learn and every teacher can teach. Our standards of conduct are rooted in adab and akhlaq and in our Tarbiyyah Compass values, which spell IHSAN (Ilm, Honesty, Sabr and shukr, Adab, Niyyah), and are applied consistently in every live lesson, assembly, club and Academy platform.
 
 We recognise that behaviour and engagement online are closely linked to a pupil's circumstances: an unsuitable home study space, technical difficulties, unmet special educational needs, social, emotional or mental health needs, or upheaval at home. Our first response to poor behaviour is therefore to understand it; our second is to address it firmly and fairly.
 

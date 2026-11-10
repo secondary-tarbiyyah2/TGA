@@ -30,6 +30,8 @@ const NAMES: Record<string, string> = {
   "/sample-lesson": "Sample lesson",
   "/faqs": "FAQs",
   "/contact": "Contact",
+  "/careers": "Careers",
+  "/careers/apply": "Apply for a role",
   "/legal/privacy": "Privacy policy",
   "/legal/cookies": "Cookie policy",
   "/legal/terms": "Terms",
@@ -39,6 +41,8 @@ const NAMES: Record<string, string> = {
 // → /about, Learning → /learning, Admissions → /admissions, For Parents →
 // /parents), so the visible trail and the menu agree.
 const PARENT: Record<string, string> = {
+  "/careers": "/about",
+  "/careers/apply": "/careers",
   "/testimonials": "/about",
   "/faqs": "/about",
   "/pastoral-care": "/learning",

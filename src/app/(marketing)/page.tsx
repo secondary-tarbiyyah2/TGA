@@ -25,7 +25,7 @@ export const metadata: Metadata = pageMetadata({
 const defaultPillars = [
   { title: "Faith at the centre of the day", body: "Qur'an, Arabic and Islamic Studies are timetabled lessons at every key stage, with prayer built into the school day." },
   { title: "Live lessons, small classes", body: "Real-time lessons with qualified teachers and no more than 15 pupils in a class, so every child is known." },
-  { title: "Character as well as grades", body: "Our six Tarbiyyah Compass values are taught by name and recognised in every class, so akhlaq grows alongside attainment." },
+  { title: "Character as well as grades", body: "Our Tarbiyyah Compass values spell IHSAN: ilm, honesty, sabr and shukr, adab and niyyah. Taught by name and recognised in every class, so akhlaq grows alongside attainment." },
 ];
 
 const PILLAR_ICONS: IconName[] = ["bookOpenCheck", "users", "award", "heartHandshake"];

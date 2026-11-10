@@ -659,8 +659,17 @@ html:has(.portal-topbar) {
 html[data-large-text] {
   font-size: 112.5%;
 }
+html[data-large-text][data-text-size="large"] {
+  font-size: 112.5%;
+}
 html[data-large-text][data-text-size="larger"] {
-  font-size: 125%;
+  font-size: 130%;
+}
+html[data-large-text][data-text-size="largest"] {
+  font-size: 150%;
+}
+html[data-large-text]:not([data-text-size]) {
+  font-size: 115%;
 }
 html[data-reduce-motion] *,
 html[data-reduce-motion] *::before,
@@ -1140,4 +1149,47 @@ body:not(:has(.portal)) input[type="file"]::file-selector-button:hover {
   background-size: 22px 22px;
   -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 0%, transparent 70%);
   mask-image: radial-gradient(ellipse at 70% 40%, #000 0%, transparent 70%);
+}
+
+/* ── Accessibility centre extras (ViewSettings.tsx) ── */
+/* Readable font: a plain, open system typeface with generous spacing, for
+   headings too (no download needed). */
+html[data-readable-font],
+html[data-readable-font] body,
+html[data-readable-font] :is(h1, h2, h3, h4, h5, h6, .font-serif, button, input, textarea, select) {
+  font-family: Verdana, Tahoma, "Segoe UI", "Atkinson Hyperlegible", Arial, sans-serif !important;
+  letter-spacing: 0.01em;
+}
+/* Colour strength: on the page's own blocks, not <html>, so fixed bars and
+   dialogs keep their position. */
+html[data-saturation="low"] body > * {
+  filter: saturate(0.4);
+}
+html[data-saturation="mono"] body > * {
+  filter: grayscale(1);
+}
+/* Outline headings: every heading marked so the page's structure shows. */
+html[data-headings] main :is(h1, h2, h3, h4) {
+  outline: 2px dashed var(--color-gold-500);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+/* Large cursor (48px), with a matching hand on links and buttons. */
+html[data-big-cursor],
+html[data-big-cursor] * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewBox='0 0 40 48'%3E%3Cpath d='M3 2l30 27H19l9 15-6 3-9-15-10 9z' fill='%23111' stroke='%23fff' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 3 2, auto !important;
+}
+html[data-big-cursor] :is(a, button, [role="button"], [role="radio"], [role="switch"], summary, label, select),
+html[data-big-cursor] :is(a, button, [role="button"], [role="radio"], [role="switch"], summary, label, select) * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='48' viewBox='0 0 44 48'%3E%3Cpath d='M14 4a4 4 0 0 1 8 0v14l3-1a4 4 0 0 1 5 3l1-1a4 4 0 0 1 6 3v12c0 7-5 13-12 13h-5c-5 0-8-2-11-6L3 31a4 4 0 0 1 6-5l5 5z' fill='%23111' stroke='%23fff' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 16 2, pointer !important;
+}
+/* Reduce motion also stops the scroll-driven reveals, the turning star and the glow. */
+html[data-reduce-motion] :is(.reveal, .hero-star, .scroll-progress, .menu-panel, .search-panel) {
+  animation: none !important;
+}
+html[data-reduce-motion] .glow-border::before {
+  animation: none !important;
+}
+html[data-reduce-motion] .scroll-progress {
+  display: none;
 }

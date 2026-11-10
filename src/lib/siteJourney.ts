@@ -40,6 +40,7 @@ const EXTRA: SitePage[] = [
   { href: "/", title: "Home", desc: "Start here", group: "Start", icon: "house" },
   { href: "/admissions/apply", title: "Apply online", desc: "About ten minutes, several children at once", group: "Admissions", icon: "notebookPen", keywords: "application form enrol register" },
   { href: "/book-a-call#book", title: "Book a free call", desc: "20 minutes with admissions, at a time that suits you", group: "Admissions", icon: "calendarCheck", keywords: "phone talk speak meeting" },
+  { href: "/careers", title: "Careers", desc: "Working at Tarbiyyah Global Academy", group: "Our School", icon: "briefcase", keywords: "jobs work teacher vacancy staff recruitment hiring" },
   { href: "/contact", title: "Contact", desc: "Email, phone or register your interest", group: "Contact", icon: "mail", keywords: "email phone address register interest" },
   { href: "/sample-lesson", title: "Sample lesson", desc: "See what a live lesson looks like", group: "Learning", icon: "play" },
   { href: "/accessibility", title: "Accessibility", desc: "How we make the site work for everyone", group: "About the site", icon: "eye" },

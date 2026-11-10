@@ -7,37 +7,38 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Headteacher
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: the framework, previously called RECIPE, is renamed the Tarbiyyah Compass; the six values are unchanged)
+dateOfIssue: 1 September 2026 (version 2.1, updated 10 November 2026: the Academy's own values, which spell IHSAN, replace the values shared with the other Tarbiyyah schools)
 nextReview: 31 August 2027
-basis: New framework written for Tarbiyyah Global Academy, building on the Tarbiyyah Compass values shared across the Tarbiyyah family of schools
+basis: Written for Tarbiyyah Global Academy. Its values are the Academy's own and differ from those of Tarbiyyah Primary, Tarbiyyah Secondary School for Boys and Tarbiyyah Al-Banaat
 readAlongside: Behaviour and Online Conduct Policy; Curriculum Policy; Enrichment and Clubs Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
 
 ## 1. Purpose
 
-Tarbiyyah means nurturing — of the heart, the mind and the character. The Tarbiyyah Compass is our name for the six values that guide that nurturing. Like a compass, they help a pupil find the right way wherever they are in the world, and they echo the eight-pointed star at the heart of our identity. They describe the kind of young people we hope our pupils will become. This framework sets out what each value means, what it looks like online, and how staff teach, model and recognise it.
+Tarbiyyah means nurturing of the heart, the mind and the character. The Tarbiyyah Compass is the Academy's own set of values that guide that nurturing. Like a compass, they help a pupil find the right way wherever they are in the world. The five values spell **IHSAN**: worshipping Allah as though you see Him. Each value is the focus of one half term, and the year ends with Ihsan itself, all five together. This framework sets out what each value means, what it looks like online, and how staff teach, model and recognise it.
 
-## 2. The Tarbiyyah Compass Values
+## 2. The IHSAN Values
 
-| Value | Meaning | What it looks like at TGA |
-| --- | --- | --- |
-| Resilience | Persevering through difficulty with patience (sabr) | Keeps trying when work is hard; recovers from mistakes; manages technical problems calmly |
-| Eeman | Faith that shapes action | Prays on time; recites and reflects on the Qur'an; brings good intentions to learning |
-| Contentment | Gratitude (shukr) and inner peace | Appreciates blessings; is kind about others' success; manages screen time and wellbeing sensibly |
-| Integrity | Honesty and trustworthiness (amanah) | Does their own work; tells the truth; keeps camera and chat conduct the same whether watched or not |
-| Progress | Always seeking to improve | Acts on feedback; sets goals; takes pride in growth |
-| Excellence | Ihsan — doing everything as well as possible | High-quality work; excellent manners (adab); helps others excel |
+| Letter | Value | Meaning | What it looks like at TGA | Focus |
+| --- | --- | --- | --- | --- |
+| I | Ilm | Love of learning: curiosity, good questions and the effort to really understand | Asks questions; reads beyond the lesson; acts on feedback | Autumn 2 |
+| H | Honesty | Sidq and amanah: telling the truth, doing your own work and keeping the trust others place in you | Does their own work; tells the truth; keeps passwords and devices safe; keeps promises | Summer 1 |
+| S | Sabr and shukr | Patience and gratitude: keeping going when things are hard, and thanking Allah and others when they are easy | Perseveres with hard work; manages technical problems calmly; thanks teachers and family; uses screen time wisely | Spring 2 |
+| A | Adab | Good manners: respect and kindness in how we speak, listen and behave, online and at home | Greets with salam; follows microphone and chat etiquette; speaks kindly to teachers and classmates | Autumn 1 |
+| N | Niyyah | Sincere intention: doing what is right for the sake of Allah, whether or not anyone is watching | Brings a good intention to learning; behaves the same with camera on or off; prays on time | Spring 1 |
+
+**Summer 2: Ihsan.** The final half term brings the five together: doing everything as well as we can, because Allah sees us.
 
 > **Why "online" matters**
 >
-> In an online school, much of a pupil's conduct happens without an adult in the room. Integrity and ihsan — worshipping Allah as though you see Him — are therefore not abstract ideas but the daily foundation of how our pupils learn.
+> In an online school, much of a pupil's conduct happens without an adult in the room. Niyyah and honesty, doing right because Allah sees us and keeping the trust others place in us, are therefore not abstract ideas but the daily foundation of how our pupils learn, and the road to ihsan.
 
 ## 3. How the Values are Taught
 
 - **Assemblies:** each half term focuses on one Tarbiyyah Compass value, with Qur'anic verses, hadith and stories from the seerah and from inspiring Muslims past and present.
 - **Form time:** short discussions and reflection prompts linked to the value of the half term.
-- **Curriculum:** subject leads identify where their subject develops each value, for example resilience in problem-solving in Mathematics and integrity in scientific method.
+- **Curriculum:** subject leads identify where their subject develops each value, for example sabr in problem-solving in Mathematics and honesty in scientific method.
 - **Staff modelling:** every member of staff models the values in their conduct and communication.
 
 ## 4. How the Values are Recognised

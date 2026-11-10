@@ -47,7 +47,7 @@ The Academy processes lesson recordings under Article 6(1)(e) of the UK GDPR (a 
 | The teacher who led the lesson | Their own lessons, for reflection and planning |
 | Pupils | Only where a recording has been deliberately shared as a learning resource, with other pupils' images removed or limited where appropriate |
 | Parents | Not routinely. Parents may make a subject access request for recordings of their own child; other pupils' data will be redacted or withheld as the law requires |
-| External agencies | Police, children's social care or the LADO, where required for a safeguarding matter or by law |
+| External agencies | Police, children's social care or the local authority, where required for a safeguarding matter or by law |
 
 Every access to a recording for safeguarding, behaviour or complaint purposes is logged.
 
