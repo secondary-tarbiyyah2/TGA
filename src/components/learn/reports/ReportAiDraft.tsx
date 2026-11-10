@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { COMPASS_BY_HALF_TERM } from "@/content/compass";
 import { AiDisclaimer, AiSpark } from "@/components/learn/AiBits";
 import { Notice, ui } from "@/components/learn/ui";
 import { aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
@@ -8,7 +9,7 @@ import { usePronounField } from "@/lib/learn/pronoun";
 import type { ClassSummary, SubjectRating } from "./summary";
 import { Select } from "@/components/learn/Select";
 
-const RECIPE = ["Resilience", "Eeman", "Contentment", "Integrity", "Progress", "Excellence"];
+const RECIPE = COMPASS_BY_HALF_TERM;
 
 /**
  * "Draft with AI" beside a pupil's report comment. The teacher jots bullet
@@ -113,7 +114,7 @@ export function ReportAiDraft({
               <Select value={recipe} onChange={(e) => setRecipe(e.target.value)} className={`mt-1 ${ui.select}`}>
                 <option value="">None</option>
                 {RECIPE.map((r) => (
-                  <option key={r}>{r}</option>
+                  <option key={r.word} value={r.word}>{`${r.word} (${r.english}), ${r.halfTerm}`}</option>
                 ))}
               </Select>
             </label>
