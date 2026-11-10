@@ -2,7 +2,7 @@
   "subject": "Science",
   "year": "y4",
   "board": "National Curriculum (KS2, lower)",
-  "source": "National Curriculum KS2 Science (States of matter; Animals including humans); Drive Science 'Science lower school' (3.5 matter) and KS3 SOW particle theory progression | Spring 1 2027 (lessons 1 to 4 upgraded, 9 to 14 new): Tarbiyyah Primary Year 4 Science Long Term Plan 2023-24 (Cornerstones Marvellous Medicine and How Far Can Sound Travel?), home practicals with household items | Spring 2 2027 (lessons 15 to 25): Tarbiyyah Primary Year 4 curriculum map and Science Long Term Plan 2023-24 (Cornerstones How Can We Change a Sound?), home practicals with household items and written safety guides; week of 5 Apr has one lesson | Summer 1 2027 (lesson 7 upgraded, 26 to 34 new): Tarbiyyah Primary Year 4 curriculum map and Science Long Term Plan 2023-24 (Cornerstones Blue Abyss and Can We Block Sound?), home practicals with household items and written safety guides; unit week 5 (human impact) not timetabled",
+  "source": "National Curriculum KS2 Science (States of matter; Animals including humans); Drive Science 'Science lower school' (3.5 matter) and KS3 SOW particle theory progression | Spring 1 2027 (lessons 1 to 4 upgraded, 9 to 14 new): Tarbiyyah Primary Year 4 Science Long Term Plan 2023-24 (Cornerstones Marvellous Medicine and How Far Can Sound Travel?), home practicals with household items | Spring 2 2027 (lessons 15 to 25): Tarbiyyah Primary Year 4 curriculum map and Science Long Term Plan 2023-24 (Cornerstones How Can We Change a Sound?), home practicals with household items and written safety guides; week of 5 Apr has one lesson | Summer 1 2027 (lesson 7 upgraded, 26 to 34 new): Tarbiyyah Primary Year 4 curriculum map and Science Long Term Plan 2023-24 (Cornerstones Blue Abyss and Can We Block Sound?), home practicals with household items and written safety guides; unit week 5 (human impact) not timetabled | Summer 2 2027 (lessons 35 to 42 new; weeks of 14 Jun to 5 Jul, 2 a week): Tarbiyyah Primary Year 4 curriculum map and Science Long Term Plan 2023-24 (Cornerstones Road Trip USA, Electricity), home circuits with AA cells and written safety guides, no mains work; own unit check and end-of-year quiz questions; unit weeks 4 and 5 (conductors and insulators, brightness) are extension and not timetabled",
   "lessons": [
     {
       "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
@@ -7268,6 +7268,1885 @@
         {
           "find": "ocean waves",
           "alt": "Ocean waves",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Electricity (Road Trip USA)",
+      "n": 35,
+      "title": "Mains and battery appliances",
+      "duration": 45,
+      "bigQuestion": "Imagine your home with no electricity for a whole day. What would you miss most, and what would still work?",
+      "objectives": [
+        "To understand that appliances get their electricity from the mains or from batteries"
+      ],
+      "successCriteria": [
+        "All: name five appliances that use electricity",
+        "Most: sort appliances into mains and battery",
+        "Some: explain why some appliances use batteries"
+      ],
+      "crossCurricular": "Geography: power lines across the countryside (Road Trip USA)",
+      "smsc": "Moral: not wasting electricity",
+      "keywords": [
+        {
+          "term": "electricity",
+          "def": "a kind of energy that makes appliances work"
+        },
+        {
+          "term": "appliance",
+          "def": "a machine or device that uses electricity"
+        },
+        {
+          "term": "mains",
+          "def": "electricity that comes through wires to sockets in buildings"
+        },
+        {
+          "term": "battery",
+          "def": "a store of electricity you can carry"
+        },
+        {
+          "term": "plug",
+          "def": "the part that connects an appliance to a socket"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Imagine your home with no electricity for a whole day. What would you miss most, and what would still work?",
+        "a": "Pupils' own: lights, fridge, cooker; things with batteries would work until they ran out."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Eat and drink, but do not waste. Indeed, He does not like those who waste' (Al-A'raf 7:31). Electricity is a blessing; switching off what we are not using is part of not wasting.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which part of a flower makes pollen?",
+          "a": "Stamen",
+          "mins": 1,
+          "options": [
+            "Stamen",
+            "Petal",
+            "Sepal"
+          ]
+        },
+        {
+          "q": "Sound is made by...",
+          "a": "Vibrations",
+          "mins": 1,
+          "options": [
+            "Vibrations",
+            "Light"
+          ]
+        },
+        {
+          "q": "Water freezes at what temperature?",
+          "a": "0°C",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What uses electricity?",
+          "bullets": [
+            "Lights, kettles, fridges",
+            "Torches and remote controls",
+            "Electricity makes them work"
+          ],
+          "note": "Pupils look around their room and type one appliance in the chat."
+        },
+        {
+          "heading": "Mains or battery?",
+          "bullets": [
+            "Mains: plugs into a socket",
+            "Battery: carried inside",
+            "Some use both: charge from mains"
+          ],
+          "note": "Sort the cards together.",
+          "sort": {
+            "columns": [
+              "Mains",
+              "Battery",
+              "Both (rechargeable)"
+            ],
+            "cards": [
+              "Kettle",
+              "Torch",
+              "Fridge",
+              "Remote control",
+              "Washing machine",
+              "Laptop",
+              "Watch",
+              "Mobile phone"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              2,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "Why use batteries?",
+          "bullets": [
+            "You can carry them",
+            "No wires to trip on",
+            "Safe for small devices"
+          ],
+          "note": "Ask: why is a torch battery powered and not plugged in?"
+        },
+        {
+          "heading": "Why use the mains?",
+          "bullets": [
+            "Big appliances need lots of electricity",
+            "Mains does not run out",
+            "It is much more powerful, so dangerous"
+          ],
+          "note": "Mains heats kettles and runs washing machines."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which appliance uses the mains?",
+            "options": [
+              "A kettle",
+              "A torch",
+              "A calculator"
+            ],
+            "answer": 0,
+            "why": "A kettle needs lots of electricity to heat water, so it plugs into a socket."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is a hairdryer mains or battery? Why?",
+          "a": "Mains: it needs a lot of electricity to heat and blow air",
+          "mins": 2,
+          "model": "Ask: does it have a plug? Yes. Does it need a lot of energy to heat? Yes. So it uses the mains."
+        },
+        {
+          "q": "Name one battery appliance in your bag or room.",
+          "a": "For example: a calculator, watch or torch",
+          "mins": 1
+        },
+        {
+          "q": "Why does a phone need charging?",
+          "a": "Its battery runs out and is refilled from the mains",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Do an appliance hunt in two rooms with an adult. Record each appliance in a table: mains, battery or both. Do not touch any plugs.",
+          "a": "A table of at least eight appliances sorted correctly",
+          "mins": 9,
+          "model": "Teacher fills in the first two rows from a kitchen photo: kettle (mains), clock (battery)."
+        },
+        {
+          "q": "Extend: Which room had the most mains appliances? Why?",
+          "a": "Usually the kitchen: cooking and cleaning need lots of electricity",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Design a new battery appliance. Say why it should not use the mains.",
+          "a": "For example: a torch for a bike, because it must be carried",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A torch usually uses...",
+          "a": "A battery",
+          "mins": 1,
+          "options": [
+            "A battery",
+            "The mains"
+          ]
+        },
+        {
+          "q": "Big question: what would still work with no mains electricity?",
+          "a": "Things with batteries, until the batteries run out.",
+          "mins": 2
+        }
+      ],
+      "homework": "Count the plug sockets in your home with an adult. Do not touch them.",
+      "send": "SEND: picture cards to sort. EAL: appliance, mains, battery, plug. Stretch: find out where the mains electricity in your home comes from.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Summer 2 (Cornerstones Road Trip USA, science strand: Electricity)",
+        "Appliance hunt recording table (portal worksheet)",
+        "Mains or battery sorting cards (portal worksheet)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "electric kettle",
+          "alt": "An electric kettle",
+          "for": "keywords"
+        },
+        {
+          "find": "AA batteries",
+          "alt": "AA batteries",
+          "for": "teach:3"
+        },
+        {
+          "find": "UK plug socket",
+          "alt": "A UK plug socket",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Electricity (Road Trip USA)",
+      "n": 36,
+      "title": "Staying safe with electricity",
+      "duration": 45,
+      "bigQuestion": "Why do you think we can safely hold a battery in our hand, but must never touch the inside of a plug socket?",
+      "objectives": [
+        "To understand why mains electricity is dangerous and how to stay safe"
+      ],
+      "successCriteria": [
+        "All: state four electrical safety rules",
+        "Most: explain why mains is more dangerous than a battery",
+        "Some: spot dangers in a picture of a room"
+      ],
+      "crossCurricular": "PSHE: keeping safe at home",
+      "smsc": "Social: keeping younger children safe",
+      "keywords": [
+        {
+          "term": "socket",
+          "def": "the holes in the wall where a plug goes"
+        },
+        {
+          "term": "voltage",
+          "def": "how strong the push of electricity is"
+        },
+        {
+          "term": "cable",
+          "def": "wires covered in plastic"
+        },
+        {
+          "term": "shock",
+          "def": "electricity passing through the body, which can hurt or kill"
+        },
+        {
+          "term": "safety",
+          "def": "keeping yourself and others from harm"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think we can safely hold a battery in our hand, but must never touch the inside of a plug socket?",
+        "a": "A battery's push is tiny; mains has a very strong push (230 volts) that can give a deadly shock."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Do not throw yourselves with your own hands into destruction' (Al-Baqarah 2:195). Islam teaches us to protect our lives and the lives of others, so we take care with dangers such as electricity.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A kettle uses...",
+          "a": "Mains",
+          "mins": 1,
+          "options": [
+            "Mains",
+            "Battery"
+          ]
+        },
+        {
+          "q": "Why might a phone need charging?",
+          "a": "Its battery has run out",
+          "mins": 1,
+          "options": [
+            "Its battery has run out",
+            "It is too hot"
+          ]
+        },
+        {
+          "q": "Name one battery appliance.",
+          "a": "For example: a torch or remote control",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How strong is the push?",
+          "bullets": [
+            "Battery: small push",
+            "Mains: huge push",
+            "Higher voltage is more dangerous"
+          ],
+          "note": "UK mains is 230 volts; an AA cell is 1.5 volts.",
+          "chart": {
+            "kind": "bar",
+            "title": "Voltage of electricity supplies",
+            "labels": [
+              "AA cell",
+              "Small square battery",
+              "Mains socket"
+            ],
+            "values": [
+              1.5,
+              9,
+              230
+            ],
+            "unit": "volts"
+          }
+        },
+        {
+          "heading": "Safety rules at home",
+          "bullets": [
+            "Never touch or poke into sockets",
+            "Keep water away from electrics",
+            "Pull the plug, never the cable",
+            "Tell an adult about damaged cables"
+          ],
+          "note": "Pupils repeat each rule as a chant (spoken)."
+        },
+        {
+          "heading": "Safety rules outside",
+          "bullets": [
+            "Stay away from power lines",
+            "Never climb pylons or enter substations",
+            "Fly kites in open fields only"
+          ],
+          "note": "Show a pylon photo and a danger sign."
+        },
+        {
+          "heading": "Battery safety",
+          "bullets": [
+            "Never open or bite batteries",
+            "Button batteries can kill if swallowed",
+            "Do not join battery ends with a wire"
+          ],
+          "note": "Tell an adult at once if a small child may have swallowed one."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which is safe?",
+            "options": [
+              "Using a hairdryer in the bath",
+              "Pulling a plug out by the plug",
+              "Poking a socket with a fork"
+            ],
+            "answer": 1,
+            "why": "Hold the plug, not the cable. Water and metal near mains are dangerous."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why you must never use a hairdryer near a bath.",
+          "a": "Water lets mains electricity pass through it, so you could get a deadly shock",
+          "mins": 2,
+          "model": "Name the danger, then the reason: 'Water and mains electricity are dangerous together because electricity can pass through water to your body.'"
+        },
+        {
+          "q": "What should you do if a cable is frayed?",
+          "a": "Do not touch it; tell an adult",
+          "mins": 1
+        },
+        {
+          "q": "Which is stronger: mains or an AA cell?",
+          "a": "Mains",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Look at the 'spot the danger' kitchen picture. Circle six dangers and write a safety rule for each.",
+          "a": "Six dangers with rules, e.g. drink near a socket: keep water away from electrics",
+          "mins": 9,
+          "model": "Teacher circles the first danger (a cable trailing near the sink) and writes the rule."
+        },
+        {
+          "q": "Extend: Make a safety poster for younger pupils with three rules.",
+          "a": "A clear poster with three correct rules and pictures of objects only",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why are plugs and cables covered in plastic?",
+          "a": "Plastic does not let electricity pass, so it protects us from the metal wires inside",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Safe to do:",
+          "a": "Tell an adult about a broken plug",
+          "mins": 1,
+          "options": [
+            "Tell an adult about a broken plug",
+            "Fix it yourself"
+          ]
+        },
+        {
+          "q": "Big question: why can we hold a battery but not touch a socket?",
+          "a": "A battery's push is very small; mains is about 230 volts and can kill.",
+          "mins": 2
+        }
+      ],
+      "homework": "Teach your family three electrical safety rules and ask them to sign your book.",
+      "send": "SEND: rules with picture symbols. EAL: socket, cable, shock, voltage. Stretch: find out what a fuse in a UK plug does.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Summer 2 (Cornerstones Road Trip USA, science strand: Electricity)",
+        "'Spot the danger' kitchen picture (portal worksheet; objects only, no people)",
+        "Electrical safety rules card (portal worksheet)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "electricity pylon",
+          "alt": "An electricity pylon",
+          "for": "teach:3"
+        },
+        {
+          "find": "danger of death electricity sign",
+          "alt": "A danger sign on a substation fence",
+          "for": "hook"
+        },
+        {
+          "find": "frayed electrical cable",
+          "alt": "A frayed cable",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Electricity (Road Trip USA)",
+      "n": 37,
+      "title": "What is a circuit?",
+      "duration": 45,
+      "bigQuestion": "A torch has a battery and a bulb inside. Why does the bulb only light when you press the button?",
+      "objectives": [
+        "To understand that electricity only flows around a complete circuit"
+      ],
+      "successCriteria": [
+        "All: name the parts of a simple circuit",
+        "Most: say whether a bulb will light in a drawn circuit",
+        "Some: explain why a gap stops a bulb lighting"
+      ],
+      "crossCurricular": "Design and technology: torches and lights",
+      "smsc": "Spiritual: wonder at an invisible flow we cannot see",
+      "keywords": [
+        {
+          "term": "circuit",
+          "def": "a complete loop that electricity flows around"
+        },
+        {
+          "term": "cell",
+          "def": "a single battery that pushes electricity"
+        },
+        {
+          "term": "bulb",
+          "def": "a part that lights up when electricity flows"
+        },
+        {
+          "term": "wire",
+          "def": "metal covered in plastic that carries electricity"
+        },
+        {
+          "term": "complete",
+          "def": "with no gaps, all joined up"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A torch has a battery and a bulb inside. Why does the bulb only light when you press the button?",
+        "a": "Pressing the button closes a gap, making a complete loop so electricity can flow."
+      },
+      "starter": [
+        {
+          "q": "Mains voltage in the UK is about...",
+          "a": "230 volts",
+          "mins": 1,
+          "options": [
+            "230 volts",
+            "1.5 volts"
+          ]
+        },
+        {
+          "q": "Never put anything into a...",
+          "a": "Socket",
+          "mins": 1,
+          "options": [
+            "Socket",
+            "Drawer"
+          ]
+        },
+        {
+          "q": "Name one battery appliance.",
+          "a": "Torch, remote control, watch",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Parts of a circuit",
+          "bullets": [
+            "Cell: pushes the electricity",
+            "Wires: carry it",
+            "Bulb: lights up"
+          ],
+          "note": "Hold up each part on camera.",
+          "table": {
+            "head": [
+              "Part",
+              "What it does"
+            ],
+            "rows": [
+              [
+                "Cell",
+                "Pushes electricity around"
+              ],
+              [
+                "Wire",
+                "Carries electricity"
+              ],
+              [
+                "Bulb",
+                "Lights when electricity flows"
+              ],
+              [
+                "Buzzer",
+                "Makes a sound"
+              ],
+              [
+                "Motor",
+                "Spins"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "A complete loop",
+          "bullets": [
+            "Electricity leaves one end of the cell",
+            "Goes through the bulb",
+            "Returns to the other end"
+          ],
+          "note": "Trace the loop with a finger on the photo.",
+          "cycle": [
+            "Cell (+ end)",
+            "Wire",
+            "Bulb",
+            "Wire",
+            "Cell (- end)"
+          ]
+        },
+        {
+          "heading": "Gaps stop the flow",
+          "bullets": [
+            "A gap breaks the loop",
+            "No flow, no light",
+            "Loose clips make gaps"
+          ],
+          "note": "Compare a road with a broken bridge."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Will the bulb light? Both wires go to the same end of the cell.",
+            "options": [
+              "Yes",
+              "No",
+              "Only dimly"
+            ],
+            "answer": 1,
+            "why": "Both wires on one end do not make a loop through the cell, so no electricity flows."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A bulb has one wire to the cell. Will it light? Why?",
+          "a": "No: the loop is not complete",
+          "mins": 2,
+          "model": "Trace the path from the cell. It goes to the bulb, but there is no wire back to the cell. The loop is broken, so the bulb stays off."
+        },
+        {
+          "q": "What pushes electricity round the circuit?",
+          "a": "The cell (battery)",
+          "mins": 1
+        },
+        {
+          "q": "What carries the electricity?",
+          "a": "The wires",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Look at six circuit pictures on the worksheet. Tick the ones where the bulb lights and explain each cross.",
+          "a": "Correct ticks; crosses explained with 'gap' or 'not a complete loop'",
+          "mins": 9,
+          "model": "Teacher does picture 1 on screen, tracing the loop and saying 'complete, so it lights'."
+        },
+        {
+          "q": "Extend: Draw your own circuit with a cell, a bulb and a buzzer that all work.",
+          "a": "One complete loop through cell, bulb and buzzer",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why does a torch have a button?",
+          "a": "To open and close a gap so we can turn the light on and off",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Electricity only flows around a...",
+          "a": "Complete circuit",
+          "mins": 1,
+          "options": [
+            "Complete circuit",
+            "Broken circuit"
+          ]
+        },
+        {
+          "q": "Big question: why does the torch light only when you press the button?",
+          "a": "Pressing closes the gap and completes the circuit.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three things at home with an on/off button. Draw one and say where the gap might be.",
+      "send": "SEND: real kit parts to point to; picture cards. EAL: circuit, cell, bulb, wire, complete. Stretch: find out what a motor is used for at home.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Summer 2 (Cornerstones Road Trip USA, science strand: Electricity)",
+        "Will it light? six-circuit worksheet (portal worksheet)",
+        "Simple circuit kit: a cell holder with 1 or 2 AA cells, a torch bulb in a holder, three wires with crocodile clips (parents told about battery safety)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "simple circuit battery bulb wires",
+          "alt": "A simple circuit with a battery, bulb and wires",
+          "for": "teach:1"
+        },
+        {
+          "find": "torch",
+          "alt": "A torch",
+          "for": "hook"
+        },
+        {
+          "find": "crocodile clip wire",
+          "alt": "A wire with crocodile clips",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Electricity (Road Trip USA)",
+      "n": 38,
+      "title": "Build a simple circuit",
+      "duration": 45,
+      "bigQuestion": "If you add a second bulb to a circuit with one cell, do you think both bulbs will be brighter, dimmer or the same?",
+      "objectives": [
+        "To understand how to build a working series circuit and test a prediction"
+      ],
+      "successCriteria": [
+        "All: build a circuit that lights a bulb",
+        "Most: predict and test what happens when one clip is removed",
+        "Some: add a second bulb and describe the change"
+      ],
+      "crossCurricular": "Maths: comparing and recording results in a table",
+      "smsc": "Social: working safely with an adult",
+      "keywords": [
+        {
+          "term": "series circuit",
+          "def": "a circuit with one loop and the parts one after another"
+        },
+        {
+          "term": "connect",
+          "def": "join together"
+        },
+        {
+          "term": "predict",
+          "def": "say what you think will happen"
+        },
+        {
+          "term": "terminal",
+          "def": "the end of a cell, marked + or -"
+        },
+        {
+          "term": "bright",
+          "def": "giving out a lot of light"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you add a second bulb to a circuit with one cell, do you think both bulbs will be brighter, dimmer or the same?",
+        "a": "Both will be dimmer: the cell's push is shared between two bulbs."
+      },
+      "starter": [
+        {
+          "q": "A circuit must be...",
+          "a": "Complete",
+          "mins": 1,
+          "options": [
+            "Complete",
+            "Broken"
+          ]
+        },
+        {
+          "q": "What does a cell do?",
+          "a": "Pushes electricity around",
+          "mins": 1,
+          "options": [
+            "Pushes electricity around",
+            "Makes light"
+          ]
+        },
+        {
+          "q": "Name the part that lights up.",
+          "a": "Bulb",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Safety guide: building circuits",
+          "bullets": [
+            "Only use AA or AAA cells: never the mains",
+            "Never use button batteries",
+            "Never join a wire straight across a cell",
+            "If anything gets warm, unclip it and tell an adult"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "How to build it",
+          "bullets": [
+            "Clip a wire to the + terminal",
+            "Clip it to one side of the bulb",
+            "Clip a second wire from the bulb back to -"
+          ],
+          "note": "Build it live on camera, one step at a time."
+        },
+        {
+          "heading": "Make a prediction",
+          "bullets": [
+            "What if we unclip one wire?",
+            "What if we add a second bulb?",
+            "Write it before you test"
+          ],
+          "note": "Use 'I think ... because ...'."
+        },
+        {
+          "heading": "One bulb or two?",
+          "bullets": [
+            "Two bulbs share the cell's push",
+            "Both are dimmer",
+            "Add a cell to make them bright again"
+          ],
+          "note": "Show the two circuits side by side.",
+          "compare": {
+            "left": {
+              "title": "One cell, one bulb",
+              "points": [
+                "bright",
+                "all the push goes to one bulb"
+              ]
+            },
+            "right": {
+              "title": "One cell, two bulbs",
+              "points": [
+                "both dimmer",
+                "push shared between two bulbs"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "You unclip one wire. What happens?",
+            "options": [
+              "The bulb goes out",
+              "The bulb gets brighter",
+              "Nothing changes"
+            ],
+            "answer": 0,
+            "why": "Unclipping makes a gap, so the circuit is not complete."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Predict: what happens if you turn the cell round?",
+          "a": "The bulb still lights (a bulb works either way round)",
+          "mins": 2,
+          "model": "Think: is the loop still complete? Yes, so electricity still flows. A bulb lights either way round."
+        },
+        {
+          "q": "What will make two dim bulbs bright again?",
+          "a": "Add another cell",
+          "mins": 1
+        },
+        {
+          "q": "What is the + end of a cell called?",
+          "a": "The positive terminal",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: With an adult, build a circuit that lights one bulb. Draw it. Then add a second bulb and record what you see.",
+          "a": "A drawing of a working circuit; two bulbs were dimmer than one",
+          "mins": 10,
+          "model": "Teacher builds the one-bulb circuit on camera, then adds a second bulb and compares the brightness."
+        },
+        {
+          "q": "Extend: Write your prediction and your result. Were you right?",
+          "a": "For example: I predicted brighter but they were dimmer",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Explain why the second bulb made both dimmer.",
+          "a": "The same push from one cell is shared between two bulbs",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Adding a bulb in series makes the bulbs...",
+          "a": "Dimmer",
+          "mins": 1,
+          "options": [
+            "Dimmer",
+            "Brighter"
+          ]
+        },
+        {
+          "q": "Big question: what happens with two bulbs and one cell?",
+          "a": "Both bulbs are dimmer because the push is shared.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write the three safety rules for building circuits in your book and draw your working circuit neatly.",
+      "send": "SEND: adult partner builds with the pupil; step cards. EAL: connect, terminal, predict. Stretch: try two cells and two bulbs; describe the brightness.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Summer 2 (Cornerstones Road Trip USA, science strand: Electricity)",
+        "Home practical guide and safety card: build a simple circuit (portal worksheet)",
+        "Simple circuit kit: a cell holder with 1 or 2 AA cells, a torch bulb in a holder, three wires with crocodile clips (parents told about battery safety)",
+        "A second torch bulb in a holder",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "light bulb filament close up",
+          "alt": "A torch bulb filament",
+          "for": "keywords"
+        },
+        {
+          "find": "battery holder AA",
+          "alt": "A holder for AA cells",
+          "for": "teach:2"
+        },
+        {
+          "find": "glowing small light bulb",
+          "alt": "A small bulb glowing",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Electricity (Road Trip USA)",
+      "n": 39,
+      "title": "Switches",
+      "duration": 45,
+      "bigQuestion": "How does a light switch on the wall turn a light on and off when the bulb is far away across the room?",
+      "objectives": [
+        "To understand how a switch opens and closes a gap in a circuit"
+      ],
+      "successCriteria": [
+        "All: say what open and closed mean",
+        "Most: make a switch from household items",
+        "Some: explain where switches are useful"
+      ],
+      "crossCurricular": "Design and technology: switches in products",
+      "smsc": "Moral: switching off to save energy",
+      "keywords": [
+        {
+          "term": "switch",
+          "def": "a part that opens or closes a gap in a circuit"
+        },
+        {
+          "term": "open",
+          "def": "a switch with a gap: no electricity flows"
+        },
+        {
+          "term": "closed",
+          "def": "a switch with no gap: electricity flows"
+        },
+        {
+          "term": "gap",
+          "def": "a break in a circuit"
+        },
+        {
+          "term": "metal",
+          "def": "a material such as steel that lets electricity pass"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How does a light switch on the wall turn a light on and off when the bulb is far away across the room?",
+        "a": "The switch opens or closes a gap in the circuit's wires, which run through the walls and ceiling to the bulb."
+      },
+      "starter": [
+        {
+          "q": "Two bulbs with one cell are...",
+          "a": "Dimmer",
+          "mins": 1,
+          "options": [
+            "Dimmer",
+            "Brighter"
+          ]
+        },
+        {
+          "q": "Unclipping a wire makes a...",
+          "a": "Gap",
+          "mins": 1,
+          "options": [
+            "Gap",
+            "Loop"
+          ]
+        },
+        {
+          "q": "Name the three parts of a simple circuit.",
+          "a": "Cell, wire, bulb",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What a switch does",
+          "bullets": [
+            "Closed: no gap, bulb on",
+            "Open: a gap, bulb off",
+            "It controls the circuit"
+          ],
+          "note": "Show a switch opening and closing on camera.",
+          "table": {
+            "head": [
+              "Switch",
+              "Gap?",
+              "Bulb"
+            ],
+            "rows": [
+              [
+                "Closed",
+                "No",
+                "On"
+              ],
+              [
+                "Open",
+                "Yes",
+                "Off"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Make a paperclip switch",
+          "bullets": [
+            "Two split pins in card",
+            "Paperclip hooked on one pin",
+            "Swing it to touch the other"
+          ],
+          "note": "The paperclip is metal, so electricity passes through it."
+        },
+        {
+          "heading": "Safety guide: the paperclip switch",
+          "bullets": [
+            "An adult pushes the split pins through the card",
+            "Pin points are sharp: keep fingers clear",
+            "Use AA or AAA cells only",
+            "Unclip everything when you finish"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Switches all around us",
+          "bullets": [
+            "Light switches",
+            "Kettle and torch buttons",
+            "Door bells and keyboards"
+          ],
+          "note": "Pupils name switches they used today."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "A switch is open. The bulb is...",
+            "options": [
+              "Off",
+              "On",
+              "Brighter"
+            ],
+            "answer": 0,
+            "why": "Open means there is a gap, so no electricity flows."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why the bulb goes off when the switch is open.",
+          "a": "The open switch makes a gap, so the circuit is not complete and electricity cannot flow",
+          "mins": 2,
+          "model": "Link three ideas: open means a gap; a gap breaks the loop; no loop means no flow, so no light."
+        },
+        {
+          "q": "Why must the paperclip be metal?",
+          "a": "Metal lets electricity pass",
+          "mins": 1
+        },
+        {
+          "q": "Name two switches at home.",
+          "a": "For example: a light switch and a kettle button",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: With an adult, make the paperclip switch and add it to your circuit. Draw it open and closed.",
+          "a": "Two drawings: switch open (bulb off) and closed (bulb on)",
+          "mins": 10,
+          "model": "Teacher adds a paperclip switch to the circuit on camera and swings it open and closed."
+        },
+        {
+          "q": "Extend: Try a plastic clip instead of a metal one. Does it work?",
+          "a": "No: plastic does not let electricity pass",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Design a switch for a box that lights a bulb when the lid opens.",
+          "a": "For example: foil pads that touch when the lid lifts",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Closed switch means the bulb is...",
+          "a": "On",
+          "mins": 1,
+          "options": [
+            "On",
+            "Off"
+          ]
+        },
+        {
+          "q": "Big question: how does a wall switch work a faraway light?",
+          "a": "It opens or closes a gap in wires that run to the bulb.",
+          "mins": 2
+        }
+      ],
+      "homework": "List every switch you use in one day.",
+      "send": "SEND: a ready-made switch to add to the circuit. EAL: open, closed, gap, switch. Stretch: explain why a wall switch has plastic on the outside.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Summer 2 (Cornerstones Road Trip USA, science strand: Electricity)",
+        "Home practical guide and safety card: paperclip switch (portal worksheet)",
+        "Simple circuit kit: a cell holder with 1 or 2 AA cells, a torch bulb in a holder, three wires with crocodile clips (parents told about battery safety)",
+        "A metal paperclip, two split pins, a piece of thick card",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "light switch on wall",
+          "alt": "A light switch on a wall",
+          "for": "hook"
+        },
+        {
+          "find": "paper clips",
+          "alt": "Metal paperclips",
+          "for": "teach:2"
+        },
+        {
+          "find": "push button switch",
+          "alt": "A push button switch",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Electricity (Road Trip USA)",
+      "n": 40,
+      "title": "Buzzers and why a bulb does not light",
+      "duration": 45,
+      "bigQuestion": "Your torch will not switch on. Write down every reason you can think of. Which would you check first?",
+      "objectives": [
+        "To understand how to find and fix a fault in a circuit"
+      ],
+      "successCriteria": [
+        "All: add a buzzer to a circuit",
+        "Most: name four reasons a bulb may not light",
+        "Some: find and fix a fault step by step"
+      ],
+      "crossCurricular": "Computing: debugging step by step",
+      "smsc": "Moral: patience and perseverance when something goes wrong",
+      "keywords": [
+        {
+          "term": "buzzer",
+          "def": "a part that makes a sound when electricity flows"
+        },
+        {
+          "term": "fault",
+          "def": "something wrong that stops a circuit working"
+        },
+        {
+          "term": "loose",
+          "def": "not joined on tightly"
+        },
+        {
+          "term": "flat",
+          "def": "a cell that has run out"
+        },
+        {
+          "term": "check",
+          "def": "look carefully to find out"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your torch will not switch on. Write down every reason you can think of. Which would you check first?",
+        "a": "Flat battery, broken bulb, loose part, battery the wrong way, switch broken. Check the easiest first: the battery."
+      },
+      "starter": [
+        {
+          "q": "An open switch makes a...",
+          "a": "Gap",
+          "mins": 1,
+          "options": [
+            "Gap",
+            "Loop"
+          ]
+        },
+        {
+          "q": "Which material lets electricity pass?",
+          "a": "Metal",
+          "mins": 1,
+          "options": [
+            "Metal",
+            "Plastic"
+          ]
+        },
+        {
+          "q": "What does a cell do?",
+          "a": "Pushes electricity around the circuit",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Buzzers",
+          "bullets": [
+            "Make a sound when electricity flows",
+            "Many work one way round only",
+            "Red wire to the + end"
+          ],
+          "note": "Connect a buzzer on camera; turn it round to show it stops."
+        },
+        {
+          "heading": "Why won't it work?",
+          "bullets": [
+            "Look for each fault in turn"
+          ],
+          "note": "Pupils vote which fault is most likely.",
+          "diagram": {
+            "centre": "Bulb not lit",
+            "items": [
+              "gap or loose clip",
+              "switch open",
+              "flat cell",
+              "broken bulb",
+              "both wires on one end",
+              "buzzer wrong way round"
+            ]
+          }
+        },
+        {
+          "heading": "Fault-finding steps",
+          "bullets": [
+            "Check every clip is tight",
+            "Is the switch closed?",
+            "Swap in a new cell",
+            "Swap in a new bulb"
+          ],
+          "note": "One change at a time, so we know what fixed it."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "You swap the bulb and now it lights. What was the fault?",
+            "options": [
+              "The bulb was broken",
+              "The cell was flat",
+              "A clip was loose"
+            ],
+            "answer": 0,
+            "why": "Only the bulb changed, so the old bulb was the fault."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A circuit with a buzzer is silent. The clips are tight and the switch is closed. What next?",
+          "a": "Turn the buzzer round, or try a new cell",
+          "mins": 2,
+          "model": "Follow the steps in order: clips tight, switch closed. Next, the buzzer may be the wrong way round, so turn it round; if still silent, swap the cell."
+        },
+        {
+          "q": "Why change only one thing at a time?",
+          "a": "So you know which change fixed it",
+          "mins": 1
+        },
+        {
+          "q": "Name one fault you can see by looking.",
+          "a": "A loose clip, an open switch or a gap",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Your adult makes one secret fault in your circuit. Use the steps to find and fix it. Record what you checked.",
+          "a": "A list of checks in order and the fault found, e.g. 'loose clip at the bulb'",
+          "mins": 10,
+          "model": "Teacher makes a secret fault on camera; pupils call out each check while the teacher works through them."
+        },
+        {
+          "q": "Extend: Add a buzzer and a bulb in one circuit. Do both work?",
+          "a": "Yes, both work but the bulb may be dimmer",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Write a fault-finding guide for a torch with four steps.",
+          "a": "Four ordered steps, easiest first",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A cell that has run out is...",
+          "a": "Flat",
+          "mins": 1,
+          "options": [
+            "Flat",
+            "Open"
+          ]
+        },
+        {
+          "q": "Big question: which would you check first on the torch?",
+          "a": "The easiest: the battery (or a loose part), then the bulb.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a 'Circuit doctor' card: four faults and how to fix each one.",
+      "send": "SEND: a fault checklist with pictures to tick. EAL: fault, loose, flat, buzzer. Stretch: explain why an open switch is not really a fault.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Summer 2 (Cornerstones Road Trip USA, science strand: Electricity)",
+        "Home practical guide and safety card: buzzers and finding faults (portal worksheet)",
+        "Circuit doctor fault checklist (portal worksheet)",
+        "Simple circuit kit: a cell holder with 1 or 2 AA cells, a torch bulb in a holder, three wires with crocodile clips (parents told about battery safety)",
+        "A buzzer (in the circuit kit)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "electronic buzzer component",
+          "alt": "A small buzzer",
+          "for": "teach:1"
+        },
+        {
+          "find": "torch batteries",
+          "alt": "A torch with its batteries",
+          "for": "hook"
+        },
+        {
+          "find": "broken light bulb filament",
+          "alt": "A bulb with a broken filament",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Electricity (Road Trip USA)",
+      "n": 41,
+      "title": "Electricity check",
+      "duration": 45,
+      "bigQuestion": "If you could teach a younger child only one thing about electricity, what would it be and why?",
+      "objectives": [
+        "To understand how well I know electricity: appliances, safety and circuits"
+      ],
+      "successCriteria": [
+        "All: answer questions on appliances and safety",
+        "Most: say if a circuit will work and why",
+        "Some: explain a fault and how to fix it"
+      ],
+      "crossCurricular": "English: explaining with 'because'",
+      "smsc": "Moral: honest work in a check",
+      "keywords": [
+        {
+          "term": "circuit",
+          "def": "a complete loop that electricity flows around"
+        },
+        {
+          "term": "switch",
+          "def": "a part that opens or closes a gap"
+        },
+        {
+          "term": "mains",
+          "def": "electricity from sockets in buildings"
+        },
+        {
+          "term": "fault",
+          "def": "something wrong that stops a circuit working"
+        },
+        {
+          "term": "cell",
+          "def": "a single battery"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could teach a younger child only one thing about electricity, what would it be and why?",
+        "a": "Pupils' own: often 'never touch sockets' because mains can kill."
+      },
+      "starter": [
+        {
+          "q": "A buzzer that is silent may be...",
+          "a": "The wrong way round",
+          "mins": 1,
+          "options": [
+            "The wrong way round",
+            "Too bright"
+          ]
+        },
+        {
+          "q": "Closed switch means...",
+          "a": "No gap",
+          "mins": 1,
+          "options": [
+            "No gap",
+            "A gap"
+          ]
+        },
+        {
+          "q": "Name one mains appliance.",
+          "a": "Kettle, fridge, washing machine",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Our electricity unit",
+          "bullets": [
+            "Four big ideas"
+          ],
+          "note": "Recap map.",
+          "diagram": {
+            "centre": "Electricity",
+            "items": [
+              "mains and battery appliances",
+              "safety rules",
+              "complete circuits",
+              "switches",
+              "faults and fixes"
+            ]
+          }
+        },
+        {
+          "heading": "Answering 'why' questions",
+          "bullets": [
+            "Say what happens",
+            "Then 'because'",
+            "Use a key word"
+          ],
+          "note": "Model: 'The bulb is off because the switch is open, so there is a gap.'"
+        },
+        {
+          "heading": "Sort it",
+          "bullets": [
+            "Safe or unsafe?"
+          ],
+          "note": "Pupils vote for each card.",
+          "sort": {
+            "columns": [
+              "Safe",
+              "Unsafe"
+            ],
+            "cards": [
+              "Pulling the plug, not the cable",
+              "Using a radio in the bath",
+              "Telling an adult about a frayed cable",
+              "Flying a kite near power lines",
+              "Using AA cells for a circuit",
+              "Poking a socket"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which circuit will light?",
+            "options": [
+              "Cell, wires and bulb in one loop",
+              "Bulb with one wire to the cell",
+              "Open switch in the loop"
+            ],
+            "answer": 0,
+            "why": "Only a complete loop with no gaps lets electricity flow."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why does a bulb go out when you open the switch?",
+          "a": "Opening makes a gap, so the circuit is not complete",
+          "mins": 2,
+          "model": "What happens, then because: 'The bulb goes out because opening the switch makes a gap, so electricity cannot flow.'"
+        },
+        {
+          "q": "Is a laptop mains, battery or both?",
+          "a": "Both: battery charged from the mains",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Q1: Name two mains appliances and two battery appliances.",
+          "a": "For example: kettle, fridge; torch, remote control",
+          "mins": 2,
+          "model": "Teacher reads Q1 and shows how to set out two lists."
+        },
+        {
+          "q": "Q2: Give two safety rules for mains electricity.",
+          "a": "For example: never touch sockets; keep water away",
+          "mins": 2
+        },
+        {
+          "q": "Q3: Why is mains more dangerous than an AA cell?",
+          "a": "Mains has a much bigger push (230 V against 1.5 V)",
+          "mins": 2
+        },
+        {
+          "q": "Q4: Name the three parts of a simple circuit.",
+          "a": "Cell, wires, bulb",
+          "mins": 1
+        },
+        {
+          "q": "Q5: A bulb has both wires on the + end of the cell. Will it light? Why?",
+          "a": "No: there is no complete loop through the cell",
+          "mins": 2
+        },
+        {
+          "q": "Q6: What does an open switch do?",
+          "a": "Makes a gap so electricity cannot flow",
+          "mins": 1
+        },
+        {
+          "q": "Q7: Two bulbs with one cell are dimmer than one bulb. Why?",
+          "a": "The cell's push is shared between two bulbs",
+          "mins": 2
+        },
+        {
+          "q": "Q8: Give two reasons a bulb might not light.",
+          "a": "For example: flat cell, broken bulb, loose clip, gap",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Never put anything into a...",
+          "a": "Socket",
+          "mins": 1,
+          "options": [
+            "Socket",
+            "Pencil case"
+          ]
+        },
+        {
+          "q": "Big question: what one thing would you teach a younger child?",
+          "a": "Pupils' own, with a reason.",
+          "mins": 2
+        }
+      ],
+      "homework": "Correct any wrong answers in green using your notes.",
+      "send": "SEND: questions read aloud; answers chosen from picture cards. EAL: key word mat. Stretch: draw a circuit with a switch that controls two bulbs.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Summer 2 (Cornerstones Road Trip USA, science strand: Electricity)",
+        "Year 4 electricity check (8 questions above, on the portal worksheet with answers)",
+        "Electricity key word mat (portal)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "simple electric circuit",
+          "alt": "A simple circuit",
+          "for": "teach:1"
+        },
+        {
+          "find": "electrical safety sign",
+          "alt": "An electrical warning sign",
+          "for": "keywords"
+        },
+        {
+          "find": "light bulb",
+          "alt": "A light bulb",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Electricity (Road Trip USA)",
+      "n": 42,
+      "title": "End-of-year science quiz",
+      "duration": 45,
+      "bigQuestion": "Which science idea from Year 4 surprised you most, and why?",
+      "objectives": [
+        "To understand how well I know the science we learnt in Year 4"
+      ],
+      "successCriteria": [
+        "All: answer questions on states of matter and sound",
+        "Most: answer questions on habitats and electricity",
+        "Some: set one science target for Year 5"
+      ],
+      "crossCurricular": "English: writing full-sentence answers",
+      "smsc": "Moral: honesty and doing my best",
+      "keywords": [
+        {
+          "term": "solid",
+          "def": "keeps its shape"
+        },
+        {
+          "term": "liquid",
+          "def": "flows and takes the shape of its container"
+        },
+        {
+          "term": "gas",
+          "def": "spreads out to fill any space"
+        },
+        {
+          "term": "vibration",
+          "def": "a fast movement back and forth that makes sound"
+        },
+        {
+          "term": "habitat",
+          "def": "the natural home of a living thing"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which science idea from Year 4 surprised you most, and why?",
+        "a": "Pupils' own: for example, that sound can travel through solids, or that gas has weight."
+      },
+      "starter": [
+        {
+          "q": "Which is safe to use in a circuit?",
+          "a": "AA cell",
+          "mins": 1,
+          "options": [
+            "AA cell",
+            "Mains socket"
+          ]
+        },
+        {
+          "q": "Water boils at...",
+          "a": "100°C",
+          "mins": 1,
+          "options": [
+            "100°C",
+            "0°C"
+          ]
+        },
+        {
+          "q": "What makes a sound?",
+          "a": "Vibrations",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Our Year 4 science",
+          "bullets": [
+            "Four topics this year"
+          ],
+          "note": "Pupils say one fact for each.",
+          "diagram": {
+            "centre": "Year 4 science",
+            "items": [
+              "states of matter",
+              "the water cycle",
+              "sound",
+              "habitats and keys",
+              "food chains",
+              "electricity"
+            ]
+          }
+        },
+        {
+          "heading": "States of matter",
+          "bullets": [
+            "Solids keep their shape",
+            "Liquids flow",
+            "Gases fill any space"
+          ],
+          "note": "Quick recap with ice, water and steam.",
+          "table": {
+            "head": [
+              "Change",
+              "From",
+              "To"
+            ],
+            "rows": [
+              [
+                "Melting",
+                "Solid",
+                "Liquid"
+              ],
+              [
+                "Freezing",
+                "Liquid",
+                "Solid"
+              ],
+              [
+                "Evaporating",
+                "Liquid",
+                "Gas"
+              ],
+              [
+                "Condensing",
+                "Gas",
+                "Liquid"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quiz tips",
+          "bullets": [
+            "Read twice",
+            "Use a key word",
+            "Check your arrows in food chains"
+          ],
+          "note": "Remind pupils the arrow points to the eater."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Water vapour turning back into water is...",
+            "options": [
+              "Condensing",
+              "Melting",
+              "Freezing"
+            ],
+            "answer": 0,
+            "why": "Gas to liquid is condensing, as on a cold window."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why do sounds get quieter as you walk away?",
+          "a": "The vibrations spread out and get weaker with distance",
+          "mins": 2,
+          "model": "Say what happens, then why: 'It gets quieter because the vibrations spread out and get weaker the further they travel.'"
+        },
+        {
+          "q": "In grass → rabbit → fox, which is the producer?",
+          "a": "Grass",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Q1: Sort into solid, liquid, gas: ice, milk, steam, sand.",
+          "a": "Solid: ice, sand; liquid: milk; gas: steam",
+          "mins": 2,
+          "model": "Teacher reads Q1 and shows how to make three short lists."
+        },
+        {
+          "q": "Q2: At what temperature does water freeze?",
+          "a": "0°C",
+          "mins": 1
+        },
+        {
+          "q": "Q3: Name the process when puddles dry up on a sunny day.",
+          "a": "Evaporation",
+          "mins": 1
+        },
+        {
+          "q": "Q4: How does sound reach your ear?",
+          "a": "Vibrations travel through the air to the ear",
+          "mins": 2
+        },
+        {
+          "q": "Q5: How can you make a drum sound louder?",
+          "a": "Hit it harder (bigger vibrations)",
+          "mins": 1
+        },
+        {
+          "q": "Q6: A short, tight elastic band gives a high or low pitch?",
+          "a": "High",
+          "mins": 1
+        },
+        {
+          "q": "Q7: Is a worm a vertebrate or an invertebrate?",
+          "a": "Invertebrate (no backbone)",
+          "mins": 1
+        },
+        {
+          "q": "Q8: Write a food chain with three living things.",
+          "a": "For example: grass → rabbit → fox",
+          "mins": 2
+        },
+        {
+          "q": "Q9: Give one electrical safety rule.",
+          "a": "For example: never touch sockets",
+          "mins": 1
+        },
+        {
+          "q": "Q10: Why does a bulb need a complete circuit?",
+          "a": "Electricity only flows around a complete loop",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "My science target for Year 5 is...",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what surprised me most this year?",
+          "a": "Pupils' own, with a reason.",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct any quiz answers you got wrong, and write your Year 5 target in your book.",
+      "send": "SEND: questions read aloud; picture options. EAL: Year 4 key word mat. Stretch: explain the water cycle in four steps.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Summer 2 (Cornerstones Road Trip USA, science strand: Electricity)",
+        "Year 4 end-of-year science quiz (10 questions above, on the portal worksheet with answers)",
+        "Year 4 science key word mat (portal)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "ice cubes melting",
+          "alt": "Ice cubes melting",
+          "for": "teach:2"
+        },
+        {
+          "find": "drum",
+          "alt": "A drum",
+          "for": "keywords"
+        },
+        {
+          "find": "pond habitat",
+          "alt": "A pond habitat",
           "for": "hook"
         }
       ]
