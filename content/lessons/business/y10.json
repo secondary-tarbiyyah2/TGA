@@ -219,27 +219,21 @@
       "boardShort": "Edexcel IGCSE 4BS1"
     },
     {
-      "unit": "Unit 1.1: Business objectives",
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
       "n": 9,
-      "title": "Business aims and objectives: why a business exists and where it is heading",
-      "covers": [
-        "1.1.1",
-        "1.1.2"
-      ],
+      "title": "1.1 Business aims and objectives (core)",
       "duration": 50,
-      "bigQuestion": "If a business makes no profit, has it failed?",
+      "bigQuestion": "A new home bakery and a global supermarket chain: would they have the same aims? Why or why not?",
       "objectives": [
-        "Distinguish an aim from an objective",
-        "Describe financial aims: survival, profit, sales, market share, financial security",
-        "Describe non-financial aims and explain why objectives change over time"
+        "To understand how aims and objectives guide a business and why they change as it grows"
       ],
       "successCriteria": [
-        "All: define aim and objective and name three aims",
-        "Most: match an aim to a business and say whether it is financial",
-        "Some: explain how a change in market conditions or legislation would change an objective"
+        "All: define aim and objective and give two financial aims",
+        "Most: classify aims as financial or non-financial in a case",
+        "Some: explain why a named trigger changes an objective"
       ],
-      "crossCurricular": "Maths: percentage market share and percentage change in sales",
-      "smsc": "Moral: honesty and fairness as part of how success is measured; halal earning as a purpose beyond profit",
+      "crossCurricular": "Maths: percentages for market share and SMART targets",
+      "smsc": "Moral: halal earning and fair dealing as business aims",
       "keywords": [
         {
           "term": "aim",
@@ -247,141 +241,242 @@
         },
         {
           "term": "objective",
-          "def": "a measurable target that helps a business reach its aim"
-        },
-        {
-          "term": "survival",
-          "def": "staying in business, the main aim of most new firms"
-        },
-        {
-          "term": "profit",
-          "def": "revenue minus total costs"
+          "def": "a measurable, timed target that helps reach an aim"
         },
         {
           "term": "market share",
-          "def": "a firm's sales as a percentage of total sales in the market"
+          "def": "a firm's sales as a percentage of total market sales"
         },
         {
-          "term": "financial security",
-          "def": "having enough money to keep going through hard times"
+          "term": "survival",
+          "def": "staying in business"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A new home bakery and a global supermarket chain: would they have the same aims? Why or why not?",
+        "a": "No: a start-up often aims to survive; a large firm may aim for market share or growth. Aims change with size and conditions."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who have believed, do not consume one another's wealth unjustly but only in lawful business by mutual consent' (An-Nisa' 4:29). A Muslim's business aims include halal earning and fair dealing, not profit at any cost.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name two businesses on your road. What do you think each one wants to achieve?",
-        "What is the difference between a good and a service? Give one example of each.",
-        "A shop sold 400 items at 5 pounds each. Calculate its revenue."
+        {
+          "q": "Revenue = 400 items × £5 = ?",
+          "a": "£2,000",
+          "mins": 1,
+          "options": [
+            "£2,000",
+            "£405",
+            "£800"
+          ]
+        },
+        {
+          "q": "A service is ...",
+          "a": "something done for you, like a haircut",
+          "mins": 1,
+          "options": [
+            "something done for you, like a haircut",
+            "a physical product",
+            "a raw material"
+          ]
+        },
+        {
+          "q": "Profit = ?",
+          "a": "Revenue minus total costs",
+          "mins": 1,
+          "options": [
+            "Revenue minus total costs",
+            "Revenue plus costs",
+            "Price × costs"
+          ]
+        },
+        {
+          "q": "Name one business near you and one thing it wants to achieve.",
+          "a": "e.g. a corner shop wants to survive and make a profit.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Aims versus objectives",
+          "heading": "Aims and objectives",
           "bullets": [
-            "An aim is the long-term goal",
-            "An objective is a measurable target",
-            "Objectives are the steps towards the aim",
-            "Good objectives have a number and a date"
+            "Aim: the long-term goal",
+            "Objective: a measurable step towards it",
+            "SMART objectives: specific, measurable, timed"
           ],
-          "note": "Begin with bismillah. Use a running example: Noor's Bakery in a fictional town. Aim: to be the best-known bakery in the town. Objective: to sell 1,200 loaves a week by next March. Ask pupils which is the aim and which is the objective, and why the objective is easier to check. Misconception: the two words are not interchangeable in the exam; an aim is broad, an objective is specific and measurable."
+          "note": "Example: aim 'grow'; objective 'increase sales by 10% in 12 months'."
         },
         {
-          "heading": "Financial aims",
-          "bullets": [
-            "Survival: vital for a new business",
-            "Profit: revenue minus costs",
-            "Sales: revenue and sales volume growth",
-            "Market share: share of total market sales",
-            "Financial security: a cash cushion for hard times"
-          ],
-          "note": "Go through each aim with a fictional example. Survival: the first-year coffee kiosk. Profit: a firm that wants 20,000 pounds a year. Sales growth: a clothes shop wants sales up 10 per cent. Market share: if the market is worth 2 million pounds and Noor's sells 200,000 pounds, its share is 10 per cent. Financial security: owner can pay wages for three months even if sales fall. Ask: which aim matters most to a business in its first six months? Most pupils will say survival; push on why."
-        },
-        {
-          "heading": "Worked example: market share",
-          "note": "Model the calculation slowly. Emphasise that market share needs the total market figure, which the exam will give. Then ask what a rise from 10 to 12 per cent would mean for the firm. Remind pupils that this is a quantitative skill: show the working, include the percentage sign.",
-          "model": {
-            "problem": "Noor's Bakery sold 240,000 pounds of bread in a year. All bakeries in the town sold 1,600,000 pounds. Calculate Noor's market share.",
-            "steps": [
-              "Write the formula: market share = firm's sales divided by total market sales, times 100",
-              "Substitute: 240,000 divided by 1,600,000",
-              "Calculate: 0.15",
-              "Multiply by 100 to give a percentage"
-            ],
-            "answer": "Market share = 15%"
+          "heading": "Financial and non-financial aims",
+          "bullets": [],
+          "note": "Spec 1.1.1.",
+          "compare": {
+            "left": {
+              "title": "Financial",
+              "points": [
+                "Survival",
+                "Profit",
+                "Sales",
+                "Market share",
+                "Financial security"
+              ]
+            },
+            "right": {
+              "title": "Non-financial",
+              "points": [
+                "Social objectives",
+                "Personal satisfaction",
+                "Challenge",
+                "Independence and control"
+              ]
+            },
+            "label": "vs"
           }
         },
         {
-          "heading": "Non-financial aims",
-          "bullets": [
-            "Social objectives: help the community or environment",
-            "Personal satisfaction: enjoying the work",
-            "Challenge: testing yourself in a new venture",
-            "Independence and control: being your own boss"
-          ],
-          "note": "Explain that not every owner chases the highest profit. A charity-minded business might give some of its earnings to a local school. Link to the Islamic ethos: many Muslim business owners aim to earn halal income and deal honestly, and may give charity from profit. Do not state rulings; invite the class to discuss and the teacher can expand. Ask: can a business have both financial and non-financial aims? Draw out that it usually does."
+          "heading": "Why objectives change (1.1.2)",
+          "bullets": [],
+          "note": "Use a fictional firm: Noor Bakes, a home bakery that grows into three shops.",
+          "diagram": {
+            "centre": "Triggers for change",
+            "items": [
+              "Market conditions",
+              "Technology",
+              "Performance",
+              "Legislation",
+              "Internal reasons (new owners, growth)"
+            ]
+          }
         },
         {
-          "heading": "Check: financial or non-financial?",
-          "note": "Hinge question on mini-whiteboards. Show answer letters at once. The trap is option C: sales growth is financial. Option B is a non-financial social aim.",
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "An aim and an objective are the same thing",
+            "right": "An objective is a measurable, timed target that helps reach the aim"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
           "check": {
-            "q": "Hamza opens a fictional garden centre. He says, 'My first aim is to still be trading in two years.' Which aim is this?",
+            "q": "Which is an objective rather than an aim?",
             "options": [
-              "Market share",
-              "Survival",
-              "Social objective",
-              "Personal satisfaction"
+              "Increase market share from 5% to 8% by December",
+              "Be successful",
+              "Grow",
+              "Help the community"
             ],
-            "answer": 1,
-            "why": "Staying in business is survival, a financial aim. Market share needs a percentage of the market; a social objective helps the community."
+            "answer": 0,
+            "why": "Only option A is measurable and timed; the others are broad aims."
           }
-        },
-        {
-          "heading": "Why objectives change",
-          "bullets": [
-            "Market conditions: new competitors or falling demand",
-            "Technology: online selling changes what is possible",
-            "Performance: beating or missing targets",
-            "Legislation: new laws, such as a higher minimum wage",
-            "Internal reasons: new owner or new managers"
-          ],
-          "note": "Give the Noor's Bakery story: a supermarket opens next door (market conditions), so the objective moves from growing sales to keeping loyal customers. Then a new law raises minimum wage (legislation) so profit objective is lowered. Ask pupils to give an example for each of the five reasons. Note that the exam can ask them to explain why a given objective might change in the context of a given firm."
         }
       ],
       "practice": [
-        "Hamza's garden centre had revenue of 90,000 pounds. The whole market in the area was 600,000 pounds. Calculate his market share.",
-        "Write one aim and one measurable objective for a fictional school uniform shop opening in September.",
-        "State two reasons why Noor's Bakery might change its objective from growth to survival."
+        {
+          "q": "Outline one reason why Noor Bakes might change its objective from survival to growth. (2 marks)",
+          "a": "It has built a loyal customer base and steady profits (performance), so it can aim to open more shops.",
+          "mins": 5,
+          "model": "Point: performance has improved. Development: Noor Bakes now makes a steady profit and has regular customers, so survival is secure and it can set a growth objective such as opening a second shop."
+        },
+        {
+          "q": "Market share is an example of ...",
+          "a": "a financial aim",
+          "mins": 1,
+          "options": [
+            "a financial aim",
+            "a non-financial aim",
+            "a trigger"
+          ]
+        }
       ],
       "independent": [
-        "Core: Sort ten aims (for example: to be the largest, to enjoy the work, to help local people, to survive, to earn 30,000 pounds) into financial and non-financial.",
-        "Extend: Explain two reasons why a new coffee kiosk might change its objectives after six months.",
-        "Stretch: Exam style (6 marks, Explain): 'A new business should always make survival its main aim.' Explain two reasons for and one against, and give a short conclusion."
+        {
+          "q": "In the portal response box, explain two non-financial aims a social enterprise might have (sentence starter: 'One non-financial aim is ...').",
+          "a": "e.g. social objectives (training young people); personal satisfaction for the founders; each developed.",
+          "mins": 10,
+          "model": "The teacher writes the first: 'One non-financial aim is a social objective, such as training young people from the area, because the business exists to help the community as well as to cover its costs.'"
+        },
+        {
+          "q": "Extend: write a SMART objective for a charity shop.",
+          "a": "e.g. raise £5,000 for the local food bank by 31 July.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 'Profit should always be the main aim of a business.' Give one argument for and one against.",
+          "a": "For: needed to survive and grow. Against: social or ethical aims may matter more; halal earning means profit within limits.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Define the term market share.",
-        "Give one financial and one non-financial aim for a business of your choice.",
-        "Big question: if a business makes no profit, has it failed? Answer in two sentences."
+        {
+          "q": "Which is a trigger that can change objectives?",
+          "a": "New legislation",
+          "mins": 1,
+          "options": [
+            "New legislation",
+            "A logo",
+            "A slogan"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A new home bakery and a global supermarket chain: would they have the same aims? Why or why not?",
+          "a": "No: a start-up often aims to survive; a large firm may aim for market share or growth. Aims change with size and conditions.",
+          "mins": 2
+        }
       ],
-      "homework": "Find a real small business near you and write its likely aim and one objective, saying whether each is financial.",
-      "send": "SEND: give a card sort with aims already labelled as financial or non-financial for support. EAL: pre-teach aim, objective, survival with images. Stretch: ask pupils to rank five aims for a start-up and justify the order.",
-      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
-      "boardShort": "Edexcel IGCSE 4BS1"
+      "homework": "Write one financial and one non-financial aim for a business you know, with a SMART objective for each.",
+      "send": "SEND: key-word card and a partly completed answer frame. EAL: glossary with examples. Stretch: add a counter-argument and a judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.1 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: aims sort and answer frame",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bakery bread display shop",
+          "alt": "Bread on display in a bakery",
+          "for": "hook"
+        },
+        {
+          "find": "Supermarket aisle",
+          "alt": "A large supermarket",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "1.1.1",
+        "1.1.2"
+      ]
     },
     {
-      "unit": "Unit 1.2: Types of organisation",
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
       "n": 10,
-      "title": "Sole traders and partnerships: owning a small business",
+      "title": "1.2 Business ownership (core): sole traders, partnerships and companies",
       "duration": 50,
-      "bigQuestion": "Would you start a business alone or with a partner?",
+      "bigQuestion": "If your business failed and owed £50,000, should the bank be able to take your family car? What would you choose before starting?",
       "objectives": [
-        "Describe a sole trader and a partnership",
-        "Compare them by risk, ownership, limited liability, control, finance and use of profits",
-        "Judge which suits a small business"
+        "To understand how forms of business ownership differ in risk, liability, control and finance"
       ],
       "successCriteria": [
-        "All: define sole trader and partnership and state one advantage of each",
-        "Most: explain unlimited liability and why it is a risk",
-        "Some: justify the better form for a given business"
+        "All: describe a sole trader, partnership, private and public limited company",
+        "Most: explain limited and unlimited liability",
+        "Some: judge which ownership form suits a given business"
       ],
-      "crossCurricular": "Maths: sharing profit in a ratio",
-      "smsc": "Moral: trust and honest dealing between partners; keeping promises (amanah) in a partnership agreement",
+      "smsc": "Moral: sharing risk fairly; partnership in Islamic finance",
       "keywords": [
         {
           "term": "sole trader",
@@ -389,147 +484,233 @@
         },
         {
           "term": "partnership",
-          "def": "a business owned by two to twenty people who share risk and profit"
+          "def": "a business owned by two or more people who share profit and risk"
         },
         {
-          "term": "unlimited liability",
-          "def": "owners are personally responsible for all the debts of the business"
+          "term": "limited liability",
+          "def": "owners lose only what they invested"
         },
         {
-          "term": "deed of partnership",
-          "def": "a written agreement setting out how partners share profit and decisions"
+          "term": "shareholder",
+          "def": "an owner of part of a company"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If your business failed and owed £50,000, should the bank be able to take your family car? What would you choose before starting?",
+        "a": "With unlimited liability (sole trader, partnership) it could; with a limited company the owners lose only what they invested."
+      },
+      "islamicLink": {
+        "text": "Islam encourages partnership in trade: Islamic finance uses mushārakah (مُشَارَكَة), where partners share profit and loss, instead of interest-based loans. Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead.",
+        "at": "start"
+      },
       "starter": [
-        "Define the terms aim and objective.",
-        "Give one financial and one non-financial business aim.",
-        "Noor's Bakery has 18% market share. Total market sales are 500,000 pounds. How much did Noor's sell?"
+        {
+          "q": "An objective must be ...",
+          "a": "measurable",
+          "mins": 1,
+          "options": [
+            "measurable",
+            "secret",
+            "vague"
+          ]
+        },
+        {
+          "q": "Survival is a ...",
+          "a": "financial aim",
+          "mins": 1,
+          "options": [
+            "financial aim",
+            "non-financial aim"
+          ]
+        },
+        {
+          "q": "Which is a non-financial aim?",
+          "a": "Personal satisfaction",
+          "mins": 1,
+          "options": [
+            "Personal satisfaction",
+            "Profit",
+            "Sales"
+          ]
+        },
+        {
+          "q": "Name a business with one owner.",
+          "a": "e.g. a local barber.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Sole traders",
-          "bullets": [
-            "One owner, often the only worker",
-            "Keeps all the profit",
-            "Makes decisions without consulting others",
-            "Unlimited liability: personal assets at risk",
-            "Finance usually comes from own savings or loans"
-          ],
-          "note": "Use fictional Sami, a mobile phone repairer. He decides everything, keeps all profit, and can start quickly. Risk: if he owes 15,000 pounds and the business cannot pay, creditors can take his car and savings. Ask: why is it hard for him to grow? Draw out limited finance and one pair of hands. Point out that sole traders are very common among small businesses."
-        },
-        {
-          "heading": "Partnerships",
-          "bullets": [
-            "Two or more owners, usually up to 20",
-            "Profits shared as agreed, often in a ratio",
-            "More skills and more capital than one person",
-            "Unlimited liability, and each partner can be liable for the others' debts",
-            "A deed of partnership prevents arguments"
-          ],
-          "note": "Sami joins Yusuf, a web designer, to make a repair-and-web shop. Discuss benefits: two lots of savings, two skills, shared workload. Drawbacks: disagreements, sharing profit, and being responsible for the other's mistakes. Stress the written agreement. Link to trust: Muslims are encouraged to honour agreements; invite pupils to say why a clear written agreement shows honesty and prevents harm. Avoid quoting any text."
-        },
-        {
-          "heading": "Worked example: sharing partnership profit",
-          "note": "Walk through the ratio calculation. Check that pupils add the ratio parts first. Ask what happens to each partner's share if profit falls to 18,000 pounds. Then discuss fairness: is a 3:2 split fair if both work the same hours? Pupils should say the deed of partnership decides.",
-          "model": {
-            "problem": "Sami and Yusuf share profit in the ratio 3:2. Their profit is 30,000 pounds. How much does each receive?",
-            "steps": [
-              "Add the ratio parts: 3 + 2 = 5",
-              "Find one part: 30,000 divided by 5 = 6,000",
-              "Sami: 3 x 6,000 = 18,000",
-              "Yusuf: 2 x 6,000 = 12,000"
-            ],
-            "answer": "Sami 18,000 pounds, Yusuf 12,000 pounds"
-          }
-        },
-        {
-          "heading": "Compare: sole trader and partnership",
-          "note": "Use as a revision grid. Ask pupils to cover one column and recall the other. Note control: a sole trader has full control; partners must agree. Neither has limited liability. Exam tip: when asked which is better, refer to the business in the question, not generic points.",
+          "heading": "Four common forms",
+          "bullets": [],
+          "note": "Spec 1.2.1. Fictional examples only.",
           "table": {
             "head": [
-              "Feature",
-              "Sole trader",
-              "Partnership"
+              "Form",
+              "Owners",
+              "Liability",
+              "Example"
             ],
             "rows": [
               [
-                "Owners",
-                "One",
-                "Two to twenty"
-              ],
-              [
-                "Liability",
+                "Sole trader",
+                "1",
                 "Unlimited",
-                "Unlimited"
+                "A mobile mechanic"
               ],
               [
-                "Control",
-                "Complete",
-                "Shared"
+                "Partnership",
+                "2 to 20 (usually)",
+                "Unlimited (usually)",
+                "Two accountants"
               ],
               [
-                "Finance",
-                "Own savings, loans",
-                "More savings from partners"
+                "Private limited (Ltd)",
+                "Shareholders, shares not on the stock exchange",
+                "Limited",
+                "A family firm"
               ],
               [
-                "Profit",
-                "Kept by the owner",
-                "Shared as agreed"
-              ],
-              [
-                "Risk",
-                "All on one person",
-                "Shared but still personal"
+                "Public limited (plc)",
+                "Shares sold to the public",
+                "Limited",
+                "A national chain"
               ]
             ]
           }
         },
         {
-          "heading": "Check: liability",
-          "note": "Mini-whiteboards. Answer B. Distractor A is the limited-liability idea that belongs to companies; C is a confusion with control.",
-          "check": {
-            "q": "Sami's business owes 8,000 pounds and cannot pay. What does unlimited liability mean for him?",
-            "options": [
-              "He only loses the money he put in",
-              "His own possessions could be used to pay the debt",
-              "His customers must pay the debt",
-              "The debt is cancelled"
-            ],
-            "answer": 1,
-            "why": "Unlimited liability means the owner is personally responsible. Only limited-liability owners lose just their investment."
+          "heading": "Limited and unlimited liability",
+          "bullets": [
+            "Unlimited: personal assets can be taken",
+            "Limited: lose only the money invested",
+            "Limited liability encourages investment"
+          ],
+          "note": "Return to the ponder question."
+        },
+        {
+          "heading": "Other forms (1.2.3)",
+          "bullets": [
+            "Franchise: buy the right to use a brand",
+            "Social enterprise: profits reinvested for a social aim",
+            "Public corporation: owned by the government",
+            "Multinational: operates in more than one country"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "A private limited company is owned by the government",
+            "right": "'Private' means its shares are not sold to the public; public corporations are government-owned"
           }
         },
         {
-          "heading": "Which form suits which business?",
-          "bullets": [
-            "A one-person market stall: sole trader",
-            "A two-dentist surgery needing equipment: partnership",
-            "Ask: how much capital? how much risk?",
-            "Ask: does the owner want control?"
-          ],
-          "note": "Practise judging. Give three quick scenarios and take votes. Emphasise that the correct answer depends on size, finance needed and the owner's preference. In an exam justification answer pupils must use the context and reach a clear decision."
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Which owners have limited liability?",
+            "options": [
+              "Shareholders of a Ltd company",
+              "A sole trader",
+              "Partners in an ordinary partnership",
+              "A self-employed plumber"
+            ],
+            "answer": 0,
+            "why": "Only company shareholders have limited liability; the others are personally liable for debts."
+          }
         }
       ],
       "practice": [
-        "Maryam and Aisha share profit in the ratio 1:3. Profit is 24,000 pounds. Calculate each share.",
-        "State two advantages of a partnership over a sole trader.",
-        "Explain why a deed of partnership is useful."
+        {
+          "q": "Explain one disadvantage of being a sole trader. (3 marks)",
+          "a": "Unlimited liability: if the business fails, personal assets such as savings or a car may be used to pay debts, so the owner carries all the risk.",
+          "mins": 5,
+          "model": "Point: unlimited liability. Explain: the owner and the business are legally the same. Develop: so if debts cannot be paid, personal possessions can be taken."
+        },
+        {
+          "q": "A plc sells shares ...",
+          "a": "to the public",
+          "mins": 1,
+          "options": [
+            "to the public",
+            "only to family",
+            "to the government"
+          ]
+        }
       ],
       "independent": [
-        "Core: Complete a table comparing a sole trader and partnership for a fictional hair salon.",
-        "Extend: Explain two risks for a sole trader who owns a fictional bicycle repair shop.",
-        "Stretch: Justify (6 marks): Sami has 6,000 pounds savings and wants to open a computer shop needing 25,000 pounds. Should he stay a sole trader or form a partnership? Use the figures."
+        {
+          "q": "Case (pupil PDF): Amir and Sara want to open a café. In the portal box, justify whether they should form a partnership or a private limited company (frame: 'I recommend ... because ... However ... Overall ...').",
+          "a": "Either, if justified: Ltd for limited liability and credibility; partnership for simplicity and privacy; must weigh risk against cost and control.",
+          "mins": 10,
+          "model": "The teacher writes the opening: 'I recommend a private limited company because the café needs about £40,000 of equipment, and limited liability protects their homes if it fails.'"
+        },
+        {
+          "q": "Extend: give one advantage and one disadvantage of a franchise.",
+          "a": "Advantage: known brand. Disadvantage: royalty payments and less control.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why might a plc lose control to outsiders?",
+          "a": "Anyone can buy shares; a large shareholder can influence decisions.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Define unlimited liability.",
-        "Give one benefit and one drawback of a partnership.",
-        "Big question: would you start alone or with a partner? One reason."
+        {
+          "q": "A social enterprise uses its profits mainly to ...",
+          "a": "pursue a social aim",
+          "mins": 1,
+          "options": [
+            "pursue a social aim",
+            "pay shareholders",
+            "pay tax only"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If your business failed and owed £50,000, should the bank be able to take your family car? What would you choose before starting?",
+          "a": "With unlimited liability (sole trader, partnership) it could; with a limited company the owners lose only what they invested.",
+          "mins": 2
+        }
       ],
-      "homework": "Interview someone you know who runs a small business and note what ownership form it has and why.",
-      "send": "SEND: give the ratio sharing steps as a prompt card. EAL: pair 'liable' with 'responsible for debts'. Stretch: compare the position if a partner disappears and leaves debts.",
-      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
-      "boardShort": "Edexcel IGCSE 4BS1"
+      "homework": "Choose a local business and decide its likely ownership form; give two reasons.",
+      "send": "SEND: key-word card and a partly completed answer frame. EAL: glossary with examples. Stretch: add a counter-argument and a judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.2 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: ownership comparison table and justify frame",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Cafe shop front",
+          "alt": "A small café",
+          "for": "hook"
+        },
+        {
+          "find": "Contract document and pen",
+          "alt": "A signed agreement",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "1.2.1",
+        "1.2.2",
+        "1.2.3"
+      ]
     },
     {
       "unit": "Unit 1.2: Types of organisation",
@@ -847,312 +1028,501 @@
       "boardShort": "Edexcel IGCSE 4BS1"
     },
     {
-      "unit": "Unit 1.3: Classification of businesses",
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
       "n": 13,
-      "title": "Business sectors: primary, secondary and tertiary",
+      "title": "1.3 Business sectors and the chain of production (core)",
       "duration": 50,
-      "bigQuestion": "Where does the cost of a loaf of bread begin?",
+      "bigQuestion": "Where does the cost of a date you eat begin: the palm tree, the packing factory, or the shop?",
       "objectives": [
-        "Classify businesses as primary, secondary or tertiary",
-        "Explain how the sectors depend on each other",
-        "Describe how the importance of sectors changes over time"
+        "To understand how primary, secondary and tertiary businesses depend on each other in a chain of production"
       ],
       "successCriteria": [
-        "All: name the three sectors with an example each",
-        "Most: classify mixed businesses correctly",
-        "Some: explain how the sectors form a chain"
+        "All: classify businesses into the three sectors",
+        "Most: build a chain of production for a product",
+        "Some: explain why the tertiary sector grows as countries develop"
       ],
       "crossCurricular": "Geography: employment structure and development",
-      "smsc": "Social: respect for all kinds of work (dignity of labour)",
+      "smsc": "Social: dignity of every kind of work",
       "keywords": [
         {
           "term": "primary sector",
-          "def": "businesses that extract or grow natural resources"
+          "def": "extracts raw materials"
         },
         {
           "term": "secondary sector",
-          "def": "businesses that make or build goods from raw materials"
+          "def": "makes goods from raw materials"
         },
         {
           "term": "tertiary sector",
-          "def": "businesses that provide services"
-        },
-        {
-          "term": "raw materials",
-          "def": "unprocessed resources used to make goods"
+          "def": "provides services"
         },
         {
           "term": "chain of production",
-          "def": "the stages from raw material to the consumer"
+          "def": "the stages from raw material to customer"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Where does the cost of a date you eat begin: the palm tree, the packing factory, or the shop?",
+        "a": "All three: farming (primary), packing (secondary) and selling (tertiary) each add value."
+      },
       "starter": [
-        "Name two types of business ownership.",
-        "What is a franchise?",
-        "Name one stakeholder of a school."
+        {
+          "q": "Limited liability means ...",
+          "a": "owners lose only their investment",
+          "mins": 1,
+          "options": [
+            "owners lose only their investment",
+            "no tax",
+            "no profit"
+          ]
+        },
+        {
+          "q": "A plc sells shares to ...",
+          "a": "the public",
+          "mins": 1,
+          "options": [
+            "the public",
+            "family only",
+            "nobody"
+          ]
+        },
+        {
+          "q": "A franchisee pays ...",
+          "a": "a fee or royalty to the franchisor",
+          "mins": 1,
+          "options": [
+            "a fee or royalty to the franchisor",
+            "nothing",
+            "the government only"
+          ]
+        },
+        {
+          "q": "Name a job in farming, a factory and a shop.",
+          "a": "e.g. farmer, machine operator, cashier.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Three sectors",
-          "bullets": [
-            "Primary: farming, fishing, mining, oil extraction",
-            "Secondary: manufacturing, construction, food processing",
-            "Tertiary: shops, banks, schools, transport"
-          ],
-          "note": "Begin with bismillah. Give the bread chain: wheat grown by a fictional Delta Farm (primary), flour milled and bread baked by Golden Crust Bakery (secondary), sold by a supermarket (tertiary). Ask pupils to classify their own family's jobs. Misconception: a baker who also sells in the same shop is both secondary and tertiary."
-        },
-        {
-          "heading": "Classify: sort the businesses",
-          "note": "Use as a quick sort. Pupils tick the sector for each. Point out the mixed cases (the garage and the bakery) to prompt discussion. Tell them classification depends on the main activity.",
+          "bullets": [],
+          "note": "Spec 1.3.1.",
           "table": {
             "head": [
-              "Business (fictional)",
+              "Sector",
               "What it does",
-              "Sector"
+              "Examples"
             ],
             "rows": [
               [
-                "Sahara Salt Works",
-                "Extracts salt from salt pans",
-                "Primary"
+                "Primary",
+                "Extracts raw materials",
+                "Farming, fishing, mining"
               ],
               [
-                "Cairo Chairs Ltd",
-                "Makes wooden chairs",
-                "Secondary"
+                "Secondary",
+                "Turns materials into goods",
+                "Manufacturing, construction"
               ],
               [
-                "Safe Journey Taxis",
-                "Carries passengers",
-                "Tertiary"
-              ],
-              [
-                "Hilltop Orchard",
-                "Grows and sells apples",
-                "Primary"
-              ],
-              [
-                "BuildRight Ltd",
-                "Constructs houses",
-                "Secondary"
-              ],
-              [
-                "Sunrise Dental",
-                "Provides dental care",
-                "Tertiary"
+                "Tertiary",
+                "Provides services",
+                "Shops, banks, transport, schools"
               ]
             ]
           }
         },
         {
-          "heading": "The chain of production",
-          "bullets": [
-            "Each sector depends on the others",
-            "Primary supplies raw materials to secondary",
-            "Secondary supplies finished goods to tertiary",
-            "Tertiary delivers goods and services to customers"
-          ],
-          "note": "Draw the chain with arrows. Ask what happens if the primary sector fails, for example a bad harvest. Link to price rises and shortages. Link to supply chains: a business is part of a chain, so its prices and quality depend on its suppliers."
+          "heading": "Chain of production: dates",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Palm grower picks dates (primary)",
+            "Factory sorts and packs (secondary)",
+            "Lorry and wholesaler (tertiary)",
+            "Shop sells to the customer (tertiary)"
+          ]
         },
         {
-          "heading": "Worked example: sector shares",
-          "note": "Model a simple sector calculation. Ask pupils what the figures suggest about a country's economy (mostly services). Remind them to give percentages with the working.",
-          "model": {
-            "problem": "Fictional Country Zeta has 2,000,000 workers: 200,000 primary, 400,000 secondary and the rest tertiary. Calculate the percentage in the tertiary sector.",
-            "steps": [
-              "Tertiary workers = 2,000,000 - 200,000 - 400,000",
-              "= 1,400,000",
-              "Percentage = 1,400,000 divided by 2,000,000 x 100",
-              "= 70%"
+          "heading": "The UK economy",
+          "bullets": [],
+          "note": "Approximate UK shares of output, for discussion; check current ONS figures before quoting.",
+          "chart": {
+            "kind": "pie",
+            "title": "UK output by sector (approximate)",
+            "labels": [
+              "Primary",
+              "Secondary",
+              "Tertiary"
             ],
-            "answer": "70% of workers are in the tertiary sector"
+            "values": [
+              1,
+              19,
+              80
+            ],
+            "unit": "%"
           }
         },
         {
-          "heading": "Check: classify",
-          "note": "Answer B. A mining firm extracts resources and is primary, a car factory secondary, a bank tertiary.",
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "A business can only be in one sector",
+            "right": "A farm shop grows (primary) and sells (tertiary); classify by its main activity"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
           "check": {
-            "q": "Which activity belongs to the secondary sector?",
+            "q": "A car factory is in which sector?",
             "options": [
-              "Extracting oil",
-              "Turning flour into bread in a factory",
-              "Providing bank loans",
-              "Growing wheat"
+              "Secondary",
+              "Primary",
+              "Tertiary",
+              "Public"
             ],
-            "answer": 1,
-            "why": "Converting materials into goods is secondary; extracting and growing are primary; services are tertiary."
+            "answer": 0,
+            "why": "It turns materials into finished goods: secondary."
           }
-        },
-        {
-          "heading": "Changing importance of sectors",
-          "bullets": [
-            "Richer countries have large tertiary sectors",
-            "Developing economies often rely more on primary",
-            "Technology moves jobs from secondary to tertiary",
-            "Businesses may move between sectors as they grow"
-          ],
-          "note": "Discuss why the tertiary sector has grown: rising incomes, demand for services, machines doing factory work. Warn pupils not to state countries' exact percentages without data. A business can change: a fruit farm that starts a jam factory moves into secondary. Ask why a firm might do that (add value, higher prices)."
         }
       ],
       "practice": [
-        "Classify: a gold mine, a furniture workshop, a hairdresser, a fishing boat.",
-        "Explain how a secondary sector business depends on the primary sector.",
-        "Name a business that operates in more than one sector and explain why."
+        {
+          "q": "Outline how a fall in cocoa harvests affects a chocolate shop. (2 marks)",
+          "a": "Less cocoa raises costs for the chocolate maker (secondary), so the shop pays more and may raise prices.",
+          "mins": 5,
+          "model": "Point: primary supply falls. Development: manufacturers pay more for cocoa and pass on the cost, so the shop's prices rise or its profit falls."
+        },
+        {
+          "q": "A bank is ...",
+          "a": "tertiary",
+          "mins": 1,
+          "options": [
+            "tertiary",
+            "secondary",
+            "primary"
+          ]
+        }
       ],
       "independent": [
-        "Core: Classify twelve fictional businesses and complete the chain for a cup of tea.",
-        "Extend: Explain one reason why a country's tertiary sector grows as its income rises.",
-        "Stretch: Analyse (6 marks): Hilltop Orchard grows apples (primary) and plans to open a jam factory and a cafe. Explain how this would change its sectors and risk."
+        {
+          "q": "Build the chain of production for a cotton T-shirt on the pupil PDF and label each sector; then in the portal box explain one way the sectors depend on each other.",
+          "a": "Cotton farm (P) → spinning and sewing factory (S) → shipping and retailer (T); e.g. retailers need factories to supply stock on time.",
+          "mins": 10,
+          "model": "The teacher starts: 'Cotton is grown on a farm (primary) ...'"
+        },
+        {
+          "q": "Extend: give two reasons why the tertiary sector has grown in the UK.",
+          "a": "Higher incomes increase demand for services; manufacturing moved abroad where costs are lower.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why might a developing country have a large primary sector?",
+          "a": "Many jobs in farming and mining; less capital for manufacturing and services.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the three sectors.",
-        "Which sector is a bank in?",
-        "Big question: where does the cost of a loaf of bread begin?"
+        {
+          "q": "Fishing is ...",
+          "a": "primary",
+          "mins": 1,
+          "options": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Where does the cost of a date you eat begin: the palm tree, the packing factory, or the shop?",
+          "a": "All three: farming (primary), packing (secondary) and selling (tertiary) each add value.",
+          "mins": 2
+        }
       ],
-      "homework": "Trace the supply chain for one item you own (for example a pair of trainers) and label each sector.",
-      "send": "SEND: use picture cards for sorting. EAL: pair each sector word with an action (extract, make, serve). Stretch: investigate why a country's main sector changes as it develops.",
-      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
-      "boardShort": "Edexcel IGCSE 4BS1"
+      "homework": "Write the chain of production for one food in your kitchen.",
+      "send": "SEND: key-word card and a partly completed answer frame. EAL: glossary with examples. Stretch: add a counter-argument and a judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.3 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: chain of production template",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Date palm trees",
+          "alt": "Date palms (primary)",
+          "for": "hook"
+        },
+        {
+          "find": "Factory production line",
+          "alt": "A production line (secondary)",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "1.3.1"
+      ]
     },
     {
-      "unit": "Unit 1.4: Location decisions",
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
       "n": 14,
-      "title": "Location decisions: where should a business open?",
+      "title": "1.4 Location decisions (core)",
       "duration": 50,
-      "bigQuestion": "Would you open a bakery on a busy high street or an online shop from your home?",
+      "bigQuestion": "Why are petrol stations on main roads but furniture factories on industrial estates?",
       "objectives": [
-        "Describe the factors in location: market, labour, materials, competitors",
-        "Explain how the nature of the activity affects location",
-        "Explain the effect of the internet, legal controls and trade blocs on location"
+        "To understand the factors that influence where a business locates and how the internet changes the decision"
       ],
       "successCriteria": [
         "All: name four location factors",
-        "Most: explain how two factors would influence a given business",
-        "Some: justify a location and recommend one using evidence"
+        "Most: explain which factor matters most for a given business",
+        "Some: justify a location choice using the case data"
       ],
-      "crossCurricular": "Geography: industrial location and trade blocs",
-      "smsc": "Social: the effect of a business on a local community and fair competition",
+      "crossCurricular": "Geography: industrial location",
+      "smsc": "Moral: thinking about the effect of a location on the local community",
       "keywords": [
         {
+          "term": "location",
+          "def": "where a business operates"
+        },
+        {
           "term": "proximity",
-          "def": "nearness to something, such as customers or suppliers"
+          "def": "how close something is"
         },
         {
           "term": "e-commerce",
-          "def": "buying and selling over the internet"
+          "def": "buying and selling online"
         },
         {
           "term": "trade bloc",
-          "def": "a group of countries with agreed trading rules, often with reduced tariffs"
-        },
-        {
-          "term": "labour",
-          "def": "the workers a business employs"
-        },
-        {
-          "term": "planning permission",
-          "def": "legal approval needed to build or use premises"
-        },
-        {
-          "term": "competitors",
-          "def": "other firms selling similar goods or services"
+          "def": "countries that trade freely with each other"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why are petrol stations on main roads but furniture factories on industrial estates?",
+        "a": "Different businesses need different things: customers passing by, or cheap land, labour and transport."
+      },
       "starter": [
-        "Name the three business sectors.",
-        "Give an example of a secondary business.",
-        "What does a stakeholder want from a business? Give one example."
+        {
+          "q": "A bakery that bakes and sells is mainly ...",
+          "a": "secondary and tertiary",
+          "mins": 1,
+          "options": [
+            "secondary and tertiary",
+            "primary",
+            "public"
+          ]
+        },
+        {
+          "q": "Mining is ...",
+          "a": "primary",
+          "mins": 1,
+          "options": [
+            "primary",
+            "tertiary",
+            "secondary"
+          ]
+        },
+        {
+          "q": "Chain of production ends with ...",
+          "a": "the customer",
+          "mins": 1,
+          "options": [
+            "the customer",
+            "the farm",
+            "the factory"
+          ]
+        },
+        {
+          "q": "Name one business you can only use online.",
+          "a": "e.g. an online clothes shop with no physical store.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Key location factors",
-          "bullets": [
-            "Market: close to customers",
-            "Labour: availability and skill, wage levels",
-            "Materials: near suppliers, especially heavy ones",
-            "Competitors: avoid or cluster"
-          ],
-          "note": "Bismillah. Use fictional Greenway Furniture Ltd, planning a factory. Heavy materials (timber) mean being near suppliers cuts transport costs. A restaurant needs footfall. Ask: why do some businesses locate next to competitors? (Customers compare, for example a street of car showrooms.) Ask why a business might avoid competitors."
-        },
-        {
-          "heading": "Nature of the activity",
-          "bullets": [
-            "Retail: busy streets, customers nearby",
-            "Manufacturing: space, transport links, cheaper rent",
-            "Services: access to clients or work from home",
-            "Extraction: where the resource is"
-          ],
-          "note": "Link to sector knowledge from last lesson. A fishing business must be near the sea, a call centre can be anywhere with staff and internet, a hairdresser needs customers on foot. Ask pupils to place five fictional businesses (a bakery, a mine, a dentist, a web designer, a warehouse) and justify. Misconception: the cheapest location is not always best; compare cost against revenue."
-        },
-        {
-          "heading": "Worked example: comparing locations",
-          "note": "Show a simple decision. Pupils should see cost is not the only variable. Ask what other factors might matter (parking, staff travel, competitors). Introduce weighting if time.",
-          "model": {
-            "problem": "Greenway Furniture compares two sites. Site A: rent 4,000 pounds a month, transport cost to customers 1,500 pounds. Site B: rent 2,500 pounds a month, transport cost 3,800 pounds. Which is cheaper per month?",
-            "steps": [
-              "Site A total = 4,000 + 1,500",
-              "Site A = 5,500",
-              "Site B total = 2,500 + 3,800",
-              "Site B = 6,300"
-            ],
-            "answer": "Site A is 800 pounds a month cheaper"
+          "heading": "Location factors (1.4.1)",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Where to locate?",
+            "items": [
+              "Proximity to market",
+              "Proximity to labour",
+              "Proximity to materials",
+              "Competitors",
+              "Nature of the business",
+              "Internet and e-commerce",
+              "Laws and trade blocs"
+            ]
           }
         },
         {
-          "heading": "The internet and e-commerce",
-          "bullets": [
-            "Online shops need less high-street space",
-            "Can sell nationally or globally from anywhere",
-            "Need a warehouse, delivery and a good website",
-            "Customers cannot touch or try products"
-          ],
-          "note": "Ask: which businesses are hardest to move online? Haircuts, dentists, restaurants. E-commerce means a business can choose a cheap location, but delivery cost and trust matter. Ask pupils to explain why a bakery may still want a shop even though it sells online."
-        },
-        {
-          "heading": "Legal controls and trade blocs",
-          "bullets": [
-            "Planning permission and zoning limit where firms build",
-            "Environmental and safety laws affect sites",
-            "Trade blocs allow easier trade between members",
-            "Firms may locate inside a bloc to avoid tariffs"
-          ],
-          "note": "Keep it conceptual. A government may refuse planning permission for a noisy factory near homes. A trade bloc lets members trade with lower tariffs, so a firm outside may build a factory inside to sell freely. Use a fictional bloc: the Blue Sea Trade Union. Ask: how does this help a firm? Cheaper, easier sales. Do not name real bloc membership details."
-        },
-        {
-          "heading": "Check: location",
-          "note": "Answer D. Heavy bulky materials lead to locating near the source; A and B are not about materials.",
-          "check": {
-            "q": "A firm makes cement from heavy limestone and sells to builders nationwide. Which factor is likely most important?",
-            "options": [
-              "Close to shoppers",
-              "Close to competitors",
-              "Near an airport",
-              "Near the limestone supply"
+          "heading": "Matching factors to firms",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Business",
+              "Key factor",
+              "Why"
             ],
-            "answer": 3,
-            "why": "Heavy, bulky raw materials are expensive to move, so firms tend to locate near them."
+            "rows": [
+              [
+                "Convenience shop",
+                "Market",
+                "Customers nearby"
+              ],
+              [
+                "Steel works",
+                "Materials",
+                "Heavy, bulky inputs"
+              ],
+              [
+                "Call centre",
+                "Labour",
+                "Many staff at a reasonable wage"
+              ],
+              [
+                "Online retailer",
+                "Internet; warehouse near roads",
+                "Fast delivery"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "E-commerce or premises?",
+          "bullets": [
+            "Online: lower rent, wider market",
+            "Premises: customers see and try",
+            "Many use both"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "The cheapest location is always best",
+            "right": "Cheap land may be far from customers or workers; weigh costs against sales"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "A brick maker should locate near ...",
+            "options": [
+              "its raw materials",
+              "a city centre",
+              "a beach",
+              "an airport"
+            ],
+            "answer": 0,
+            "why": "Bricks use heavy clay; being near materials cuts transport costs."
           }
         }
       ],
       "practice": [
-        "A bakery pays rent of 3,200 pounds and delivery costs 900 pounds a month at site A, or rent 2,000 pounds and delivery 2,400 pounds at site B. Which is cheaper and by how much?",
-        "State two reasons a hairdresser should locate on a busy street.",
-        "Explain how e-commerce changes a business's location choice."
+        {
+          "q": "Explain one reason why a supermarket locates near a large housing estate. (3 marks)",
+          "a": "Proximity to market: many customers live close, so footfall and sales are higher, which covers higher rent.",
+          "mins": 5,
+          "model": "Point: close to its market. Explain: thousands of households nearby shop weekly. Develop: higher sales justify the cost of the site."
+        },
+        {
+          "q": "E-commerce reduces the need for ...",
+          "a": "expensive high-street premises",
+          "mins": 1,
+          "options": [
+            "expensive high-street premises",
+            "customers",
+            "products"
+          ]
+        }
       ],
       "independent": [
-        "Core: Choose a location for fictional Zam Zam Cafe from three given sites using market, rent and competitors.",
-        "Extend: Explain two ways a trade bloc could influence where a clothes manufacturer locates.",
-        "Stretch: Justify (6 marks): Should an online toy business rent a warehouse near the capital, where rent is high, or in a smaller town with low rent but poor transport? Use 1,200 orders a week in your reasoning."
+        {
+          "q": "Case (pupil PDF): Halal Fresh, a meat wholesaler, picks Site A (city centre, high rent) or Site B (industrial estate by the motorway). In the portal box, justify one choice.",
+          "a": "Site B: lower rent, motorway access for deliveries, space for cold storage; customers are restaurants, not passers-by. A counter-point and judgement.",
+          "mins": 10,
+          "model": "The teacher writes the opening: 'I recommend Site B because Halal Fresh delivers to restaurants, so motorway access matters more than passing trade.'"
+        },
+        {
+          "q": "Extend: how can a trade bloc affect location?",
+          "a": "Firms locate inside a bloc to avoid tariffs and sell freely to members.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why might a firm relocate abroad, and one risk?",
+          "a": "Lower wages or near new markets; risk: quality control or reputation.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Give two location factors.",
-        "Define e-commerce.",
-        "Big question: for a bakery, one reason for a high-street shop and one for online only."
+        {
+          "q": "A call centre locates mainly for ...",
+          "a": "labour",
+          "mins": 1,
+          "options": [
+            "labour",
+            "raw materials",
+            "rivers"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why are petrol stations on main roads but furniture factories on industrial estates?",
+          "a": "Different businesses need different things: customers passing by, or cheap land, labour and transport.",
+          "mins": 2
+        }
       ],
-      "homework": "Look at three shops near your home and decide which location factor best explains where each is.",
-      "send": "SEND: provide a factor checklist with pictures. EAL: pre-teach footfall, proximity. Stretch: weigh factors using a scoring grid and explain the weighting.",
-      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
-      "boardShort": "Edexcel IGCSE 4BS1"
+      "homework": "Choose a business on your high street and explain its location in three sentences.",
+      "send": "SEND: key-word card and a partly completed answer frame. EAL: glossary with examples. Stretch: add a counter-argument and a judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.4 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: Halal Fresh site case and justify frame",
+        "Map of the two sites (on the pupil PDF)",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Industrial estate warehouse",
+          "alt": "Warehouses on an industrial estate",
+          "for": "hook"
+        },
+        {
+          "find": "Motorway junction aerial",
+          "alt": "A motorway junction",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "1.4.1"
+      ]
     },
     {
       "unit": "Unit 4.1: Market research",
@@ -3038,6 +3408,1440 @@
       "send": "SEND: use a card-sort for the six types. EAL: pre-teach 'discriminate', 'seasonal', 'temporary' with examples. Stretch: discuss reasonable adjustments with a real-world scenario.",
       "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
       "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
+      "n": 26,
+      "title": "1.5 Globalisation: opportunities and threats for businesses",
+      "duration": 50,
+      "bigQuestion": "Look at the labels on three things in your house. How many countries are involved in your everyday life?",
+      "objectives": [
+        "To understand what globalisation is and how it creates opportunities and threats for businesses"
+      ],
+      "successCriteria": [
+        "All: define globalisation with an example",
+        "Most: explain one opportunity and one threat for a UK business",
+        "Some: analyse how globalisation affects a named small business"
+      ],
+      "smsc": "Cultural: global trade and the Muslim tradition of honest trade across lands",
+      "keywords": [
+        {
+          "term": "globalisation",
+          "def": "growing links between economies through trade, travel and communication"
+        },
+        {
+          "term": "import",
+          "def": "a good or service bought from abroad"
+        },
+        {
+          "term": "export",
+          "def": "a good or service sold abroad"
+        },
+        {
+          "term": "supply chain",
+          "def": "the firms that supply materials and parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Look at the labels on three things in your house. How many countries are involved in your everyday life?",
+        "a": "Usually many: products are made, sourced and sold across the world: that is globalisation."
+      },
+      "islamicLink": {
+        "text": "Allah mentions the trade journeys of Quraysh: 'For the accustomed security of Quraysh, their accustomed security in the caravan of winter and summer' (Quraysh 106:1 to 2). Trade across lands is an old part of Muslim history.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A steel works locates near ...",
+          "a": "raw materials",
+          "mins": 1,
+          "options": [
+            "raw materials",
+            "the beach",
+            "a school"
+          ]
+        },
+        {
+          "q": "E-commerce means ...",
+          "a": "selling online",
+          "mins": 1,
+          "options": [
+            "selling online",
+            "exporting",
+            "manufacturing"
+          ]
+        },
+        {
+          "q": "A multinational operates in ...",
+          "a": "more than one country",
+          "mins": 1,
+          "options": [
+            "more than one country",
+            "one town",
+            "only online"
+          ]
+        },
+        {
+          "q": "Name a product you own that was made in another country.",
+          "a": "e.g. a phone assembled in China.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is globalisation?",
+          "bullets": [
+            "Growing links between economies",
+            "More trade, travel and communication",
+            "Firms buy, make and sell worldwide"
+          ],
+          "note": "Spec 1.5.1. Drivers: cheaper transport (containers), the internet, trade agreements."
+        },
+        {
+          "heading": "Opportunities and threats",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Opportunities",
+              "points": [
+                "Bigger markets abroad",
+                "Cheaper materials and labour",
+                "New ideas and technology"
+              ]
+            },
+            "right": {
+              "title": "Threats",
+              "points": [
+                "More foreign competition",
+                "Exchange-rate risk",
+                "Long supply chains can break"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "A small UK firm goes global",
+          "bullets": [
+            "Modest Threads: a fictional modest-wear brand",
+            "Sells online to 20 countries",
+            "Fabric from Turkey, sewing in Leicester"
+          ],
+          "note": "Discuss: which opportunities and threats does Modest Threads face?"
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Globalisation only affects big companies",
+            "right": "Small firms sell online worldwide and face foreign competitors too"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Which is a THREAT of globalisation for a UK firm?",
+            "options": [
+              "Cheaper imports from foreign competitors",
+              "Access to new markets",
+              "Cheaper materials",
+              "New technology"
+            ],
+            "answer": 0,
+            "why": "Foreign competition can take customers; the others are opportunities."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one opportunity globalisation gives Modest Threads. (3 marks)",
+          "a": "Access to customers abroad via its website, increasing sales beyond the UK market and spreading risk.",
+          "mins": 5,
+          "model": "Point: wider market. Explain: online sales reach customers in 20 countries. Develop: more sales and less dependence on UK demand."
+        },
+        {
+          "q": "Containers and the internet are ...",
+          "a": "drivers of globalisation",
+          "mins": 1,
+          "options": [
+            "drivers of globalisation",
+            "threats only",
+            "taxes"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal box, analyse one threat globalisation poses to Modest Threads (Point, Evidence from the case, Explain, Link).",
+          "a": "e.g. cheaper foreign modest-wear brands sell online too, so Modest Threads may need to cut prices or differentiate, reducing margins.",
+          "mins": 10,
+          "model": "The teacher writes Point and Evidence: 'One threat is foreign competition. Brands in Turkey sell similar abayas online at lower prices.'"
+        },
+        {
+          "q": "Extend: give two drivers of globalisation.",
+          "a": "Cheaper container shipping; the internet; free-trade agreements.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: should Modest Threads move sewing to Turkey? One for, one against.",
+          "a": "For: lower costs. Against: longer delivery, quality and UK jobs; 'made in UK' appeal.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Globalisation means ...",
+          "a": "growing links between the world's economies",
+          "mins": 1,
+          "options": [
+            "growing links between the world's economies",
+            "only exporting",
+            "government control"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Look at the labels on three things in your house. How many countries are involved in your everyday life?",
+          "a": "Usually many: products are made, sourced and sold across the world: that is globalisation.",
+          "mins": 2
+        }
+      ],
+      "homework": "Check labels on five items at home; list the countries and one opportunity for a UK firm.",
+      "send": "SEND: key-word card and a partly completed answer frame. EAL: glossary with examples. Stretch: add a counter-argument and a judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.5 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: Modest Threads case and PEEL frame",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Container ship port",
+          "alt": "A container ship in port",
+          "for": "hook"
+        },
+        {
+          "find": "Shipping containers stacked",
+          "alt": "Stacked shipping containers",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "1.5.1"
+      ]
+    },
+    {
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
+      "n": 27,
+      "title": "1.5 Multinationals: why businesses grow across borders",
+      "duration": 50,
+      "bigQuestion": "A global car maker opens a factory in a small town. Who wins, and could anyone lose?",
+      "objectives": [
+        "To understand why businesses become multinationals and how they can benefit and harm a host country"
+      ],
+      "successCriteria": [
+        "All: define a multinational and host country",
+        "Most: explain two benefits to the business",
+        "Some: evaluate the impact on a host country"
+      ],
+      "smsc": "Moral: fairness to workers and communities (no zulm)",
+      "keywords": [
+        {
+          "term": "multinational",
+          "def": "a business with operations in more than one country"
+        },
+        {
+          "term": "host country",
+          "def": "the country where a multinational sets up"
+        },
+        {
+          "term": "tariff",
+          "def": "a tax on imports"
+        },
+        {
+          "term": "repatriation",
+          "def": "sending profits back home"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A global car maker opens a factory in a small town. Who wins, and could anyone lose?",
+        "a": "Jobs and income for the town and lower costs for the firm; but local firms may struggle and profits may go abroad."
+      },
+      "starter": [
+        {
+          "q": "A threat of globalisation is ...",
+          "a": "foreign competition",
+          "mins": 1,
+          "options": [
+            "foreign competition",
+            "bigger markets",
+            "new ideas"
+          ]
+        },
+        {
+          "q": "An export is ...",
+          "a": "sold abroad",
+          "mins": 1,
+          "options": [
+            "sold abroad",
+            "bought from abroad",
+            "a tax"
+          ]
+        },
+        {
+          "q": "A plc can raise money by ...",
+          "a": "selling shares",
+          "mins": 1,
+          "options": [
+            "selling shares",
+            "only loans",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Name one multinational company.",
+          "a": "e.g. a well-known car maker or food chain (any real example).",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why become a multinational?",
+          "bullets": [
+            "Closer to customers abroad",
+            "Lower costs (labour, land)",
+            "Avoid trade barriers (tariffs)",
+            "Spread risk across markets"
+          ],
+          "note": "Spec 1.5.2."
+        },
+        {
+          "heading": "The host country",
+          "bullets": [],
+          "note": "Week 2 (host country) is independent study in the founding year; this slide gives the essentials.",
+          "compare": {
+            "left": {
+              "title": "Benefits",
+              "points": [
+                "Jobs and training",
+                "Investment and tax",
+                "New technology and skills"
+              ]
+            },
+            "right": {
+              "title": "Drawbacks",
+              "points": [
+                "Profits sent home",
+                "Local firms may close",
+                "Environmental harm; low wages"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Ethics",
+          "bullets": [
+            "Fair wages and safe work",
+            "Paying fair tax where profits are made",
+            "Protecting the environment"
+          ],
+          "note": "Islamic ethics: fair dealing and no harm (no oppression, zulm)."
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "A multinational is any big company",
+            "right": "It has operations (factories or offices) in more than one country"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Which is a DRAWBACK for a host country?",
+            "options": [
+              "Profits sent back to the home country",
+              "New jobs",
+              "Training for workers",
+              "Tax revenue"
+            ],
+            "answer": 0,
+            "why": "Profits leaving reduce the local benefit; the others are benefits."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one benefit for a business of becoming a multinational. (3 marks)",
+          "a": "Lower production costs, e.g. cheaper labour abroad, which raises profit margins or allows lower prices.",
+          "mins": 5,
+          "model": "Point: lower costs. Explain: wages and land may be cheaper in the host country. Develop: the firm can cut prices or raise profit."
+        },
+        {
+          "q": "Locating inside a trade bloc avoids ...",
+          "a": "tariffs",
+          "mins": 1,
+          "options": [
+            "tariffs",
+            "customers",
+            "workers"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal box: 'A multinational opening a factory is always good for the host country.' Evaluate this statement (6 marks). Use the pupil PDF case of a fictional factory in Morocco.",
+          "a": "Benefits (jobs, skills, tax) against drawbacks (profit repatriation, local firms, environment); a supported judgement ('it depends on ...').",
+          "mins": 10,
+          "model": "The teacher writes the first point: 'The factory creates 2,000 jobs, raising incomes and spending in the area, which helps local shops.'"
+        },
+        {
+          "q": "Extend: name two benefits to a multinational of spreading risk.",
+          "a": "A downturn in one country can be balanced by sales elsewhere.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how could a host government reduce the drawbacks?",
+          "a": "Laws on wages and pollution; tax rules; require local suppliers.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A host country is ...",
+          "a": "where the multinational sets up",
+          "mins": 1,
+          "options": [
+            "where the multinational sets up",
+            "where its head office is",
+            "any customer"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A global car maker opens a factory in a small town. Who wins, and could anyone lose?",
+          "a": "Jobs and income for the town and lower costs for the firm; but local firms may struggle and profits may go abroad.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the student book section on multinationals (1.5.2) and note two benefits and two drawbacks for a host country.",
+      "send": "SEND: key-word card and a partly completed answer frame. EAL: glossary with examples. Stretch: add a counter-argument and a judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.5 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: host-country case and evaluate frame",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Car factory assembly",
+          "alt": "A car factory",
+          "for": "hook"
+        },
+        {
+          "find": "World map",
+          "alt": "A world map",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "1.5.2"
+      ]
+    },
+    {
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
+      "n": 28,
+      "title": "1.5 Calculating exchange rates",
+      "duration": 50,
+      "bigQuestion": "A hoodie costs £20 in London. How would a shop in New York know what to charge in dollars?",
+      "objectives": [
+        "To understand how to convert prices between currencies using an exchange rate"
+      ],
+      "successCriteria": [
+        "All: convert pounds into another currency by multiplying",
+        "Most: convert another currency into pounds by dividing",
+        "Some: compare costs after an exchange-rate change"
+      ],
+      "crossCurricular": "Maths: multiplying and dividing by decimals; proportion",
+      "smsc": "Moral: honest pricing; 'Woe to those who give less than due' (Al-Mutaffifin 83:1)",
+      "keywords": [
+        {
+          "term": "exchange rate",
+          "def": "the price of one currency in terms of another"
+        },
+        {
+          "term": "currency",
+          "def": "the money used in a country"
+        },
+        {
+          "term": "convert",
+          "def": "change an amount from one currency to another"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A hoodie costs £20 in London. How would a shop in New York know what to charge in dollars?",
+        "a": "Use the exchange rate: if £1 = $1.25, then £20 = $25."
+      },
+      "starter": [
+        {
+          "q": "£1 = $1.25. How many dollars is £2?",
+          "a": "$2.50",
+          "mins": 1,
+          "options": [
+            "$2.50",
+            "$1.60",
+            "$3.25"
+          ]
+        },
+        {
+          "q": "50% of £60 = ?",
+          "a": "£30",
+          "mins": 1,
+          "options": [
+            "£30",
+            "£50",
+            "£12"
+          ]
+        },
+        {
+          "q": "A host country is where ...",
+          "a": "a multinational sets up",
+          "mins": 1,
+          "options": [
+            "a multinational sets up",
+            "it is owned",
+            "goods are invented"
+          ]
+        },
+        {
+          "q": "Name two currencies other than the pound.",
+          "a": "e.g. US dollar, euro, Saudi riyal.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The exchange rate",
+          "bullets": [
+            "The price of one currency in another",
+            "£1 = $1.25 means one pound buys 1.25 dollars",
+            "Pounds to foreign: multiply",
+            "Foreign to pounds: divide"
+          ],
+          "note": "Spec 1.5.3. Calculators allowed in 4BS1."
+        },
+        {
+          "heading": "Worked example",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "£1 = €1.16. A UK firm sells a jacket for £50. What is the price in euros? A French supplier charges €580: what is that in pounds?",
+            "steps": [
+              "Pounds to euros: 50 × 1.16",
+              "= €58",
+              "Euros to pounds: 580 ÷ 1.16",
+              "= £500"
+            ],
+            "answer": "€58 and £500"
+          }
+        },
+        {
+          "heading": "Practice table",
+          "bullets": [],
+          "note": "Pupils complete before the answers are revealed.",
+          "table": {
+            "head": [
+              "Rate",
+              "Convert",
+              "Working",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "£1 = $1.25",
+                "£80 to $",
+                "80 × 1.25",
+                "$100"
+              ],
+              [
+                "£1 = $1.25",
+                "$500 to £",
+                "500 ÷ 1.25",
+                "£400"
+              ],
+              [
+                "£1 = €1.16",
+                "£250 to €",
+                "250 × 1.16",
+                "€290"
+              ],
+              [
+                "£1 = SAR 4.70",
+                "SAR 940 to £",
+                "940 ÷ 4.70",
+                "£200"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "$500 to pounds: 500 × 1.25 = £625",
+            "right": "Divide: 500 ÷ 1.25 = £400 (a pound is worth more than a dollar here)"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "£1 = $1.25. What is $250 in pounds?",
+            "options": [
+              "£200",
+              "£312.50",
+              "£250",
+              "£125"
+            ],
+            "answer": 0,
+            "why": "250 ÷ 1.25 = 200. Multiplying gives 312.50, the common error."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "£1 = €1.16. A UK café imports Italian coffee costing €464. Calculate the cost in pounds. (2 marks)",
+          "a": "464 ÷ 1.16 = £400",
+          "mins": 5,
+          "model": "I do: euros to pounds, so divide. 464 ÷ 1.16 = 400. Answer: £400 (show the working for the method mark)."
+        },
+        {
+          "q": "£1 = $1.25: £40 = ?",
+          "a": "$50",
+          "mins": 1,
+          "options": [
+            "$50",
+            "$32",
+            "$41.25"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: eight exchange-rate calculations in business contexts, with working.",
+          "a": "e.g. £120 at $1.25 = $150; $375 at $1.25 = £300; £60 at €1.16 = €69.60; €1,160 at €1.16 = £1,000; and four more on the sheet.",
+          "mins": 10,
+          "model": "The teacher does question 1: £120 × 1.25 = $150."
+        },
+        {
+          "q": "Extend: £1 = $1.25. A US customer pays $45 for a £36 product. Check the price is right.",
+          "a": "36 × 1.25 = $45: correct.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: the rate changes from $1.25 to $1.50. What is the new dollar price of a £20 hoodie?",
+          "a": "20 × 1.50 = $30 (up from $25).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Foreign currency into pounds: you ...",
+          "a": "divide by the rate",
+          "mins": 1,
+          "options": [
+            "divide by the rate",
+            "multiply by the rate",
+            "add the rate"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A hoodie costs £20 in London. How would a shop in New York know what to charge in dollars?",
+          "a": "Use the exchange rate: if £1 = $1.25, then £20 = $25.",
+          "mins": 2
+        }
+      ],
+      "homework": "Look up today's pound to dollar and pound to euro rates and convert the price of one item you own.",
+      "send": "SEND: a step card 'pounds to foreign: ×; foreign to pounds: ÷'. EAL: currency glossary. Stretch: two-step problems with a rate change.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.5 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: eight exchange-rate calculations",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Currency exchange board",
+          "alt": "A currency exchange board",
+          "for": "hook"
+        },
+        {
+          "find": "Banknotes of different countries",
+          "alt": "Banknotes of different currencies",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "1.5.3"
+      ]
+    },
+    {
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
+      "n": 29,
+      "title": "1.5 Exchange rate changes: importers and exporters",
+      "duration": 50,
+      "bigQuestion": "If the pound becomes stronger, is that good news or bad news for UK businesses?",
+      "objectives": [
+        "To understand how a change in the exchange rate affects the prices, competitiveness and profits of importers and exporters"
+      ],
+      "successCriteria": [
+        "All: state what a stronger pound does to export prices",
+        "Most: calculate the effect of a rate change on an import cost",
+        "Some: analyse how a firm might respond"
+      ],
+      "crossCurricular": "Maths: percentage change",
+      "smsc": "Moral: honest trade whatever the market does",
+      "keywords": [
+        {
+          "term": "appreciation",
+          "def": "a rise in the value of a currency"
+        },
+        {
+          "term": "depreciation",
+          "def": "a fall in the value of a currency"
+        },
+        {
+          "term": "competitiveness",
+          "def": "how attractive a firm's prices and products are compared with rivals"
+        },
+        {
+          "term": "importer",
+          "def": "a business that buys from abroad"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If the pound becomes stronger, is that good news or bad news for UK businesses?",
+        "a": "It depends: importers pay less (good); exporters' prices rise abroad (bad). SPICED: Strong Pound, Imports Cheaper, Exports Dearer."
+      },
+      "starter": [
+        {
+          "q": "£1 = $1.25: £80 = ?",
+          "a": "$100",
+          "mins": 1,
+          "options": [
+            "$100",
+            "$64",
+            "$81.25"
+          ]
+        },
+        {
+          "q": "$500 at $1.25 = ?",
+          "a": "£400",
+          "mins": 1,
+          "options": [
+            "£400",
+            "£625",
+            "£500"
+          ]
+        },
+        {
+          "q": "An importer ...",
+          "a": "buys from abroad",
+          "mins": 1,
+          "options": [
+            "buys from abroad",
+            "sells abroad",
+            "sets the rate"
+          ]
+        },
+        {
+          "q": "£1 = €1.16. Convert €232 to pounds.",
+          "a": "£200",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "SPICED and WIDEC",
+          "bullets": [],
+          "note": "Spec 1.5.4.",
+          "compare": {
+            "left": {
+              "title": "Strong pound (SPICED)",
+              "points": [
+                "Imports cheaper",
+                "Exports dearer abroad",
+                "Good for importers"
+              ]
+            },
+            "right": {
+              "title": "Weak pound (WIDEC)",
+              "points": [
+                "Imports dearer",
+                "Exports cheaper abroad",
+                "Good for exporters"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Worked example: an exporter",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "A UK firm sells a £20 hoodie in the USA. The rate rises from £1 = $1.25 to £1 = $1.50.",
+            "steps": [
+              "Before: 20 × 1.25 = $25",
+              "After: 20 × 1.50 = $30",
+              "US price rises by $5 (20%)",
+              "Hoodies are less competitive in the USA"
+            ],
+            "answer": "Dollar price up from $25 to $30"
+          }
+        },
+        {
+          "heading": "Worked example: an importer",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "A UK shop imports $6,000 of stock. The rate rises from $1.25 to $1.50.",
+            "steps": [
+              "Before: 6,000 ÷ 1.25 = £4,800",
+              "After: 6,000 ÷ 1.50 = £4,000",
+              "Saving: £800"
+            ],
+            "answer": "Import cost falls by £800"
+          }
+        },
+        {
+          "heading": "How firms respond",
+          "bullets": [
+            "Exporter: keep the dollar price, accept less profit",
+            "Or compete on quality, not price",
+            "Importer: lower prices or keep the extra margin"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "The pound gets weaker. A UK exporter's products abroad become ...",
+            "options": [
+              "cheaper and more competitive",
+              "dearer and less competitive",
+              "unchanged",
+              "illegal"
+            ],
+            "answer": 0,
+            "why": "WIDEC: weak pound, exports cheaper."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "The rate falls from £1 = €1.20 to £1 = €1.00. A UK importer buys €3,000 of goods. Calculate the change in cost in pounds. (3 marks)",
+          "a": "Before 3,000 ÷ 1.20 = £2,500; after 3,000 ÷ 1.00 = £3,000; cost rises by £500.",
+          "mins": 5,
+          "model": "I do: before: 3,000 ÷ 1.20 = 2,500. After: 3,000 ÷ 1.00 = 3,000. Change: 3,000 − 2,500 = £500 more."
+        },
+        {
+          "q": "A strong pound is good for ...",
+          "a": "importers",
+          "mins": 1,
+          "options": [
+            "importers",
+            "exporters",
+            "nobody"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Case (pupil PDF): Modest Threads exports to the USA and imports fabric from Turkey. The pound strengthens. In the portal box analyse the overall effect on its profit (6 marks).",
+          "a": "Exports dearer in dollars (sales may fall) but Turkish fabric cheaper (costs fall); net effect depends on the share of sales abroad against imported costs.",
+          "mins": 10,
+          "model": "The teacher writes the first chain: 'A stronger pound means each £50 abaya costs more dollars, so American customers may buy fewer ...'"
+        },
+        {
+          "q": "Extend: write out SPICED and WIDEC in full.",
+          "a": "Strong Pound Imports Cheaper Exports Dearer; Weak (pound) Imports Dearer Exports Cheaper.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why might a firm not change its foreign price when the rate moves?",
+          "a": "Rates move often; price changes confuse customers; it may absorb the change in its margin.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "SPICED stands for ...",
+          "a": "Strong Pound Imports Cheaper Exports Dearer",
+          "mins": 1,
+          "options": [
+            "Strong Pound Imports Cheaper Exports Dearer",
+            "Sales Profit Income Cost Expense Debt",
+            "Strong Prices In Countries"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If the pound becomes stronger, is that good news or bad news for UK businesses?",
+          "a": "It depends: importers pay less (good); exporters' prices rise abroad (bad). SPICED: Strong Pound, Imports Cheaper, Exports Dearer.",
+          "mins": 2
+        }
+      ],
+      "homework": "Answer the pupil PDF question: the pound weakens; who gains and who loses in a UK holiday company that sells trips abroad?",
+      "send": "SEND: SPICED card with arrows. EAL: glossary. Stretch: net-effect calculation with both imports and exports.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.5 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: Modest Threads exchange-rate case",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Currency exchange board",
+          "alt": "Exchange rates on a board",
+          "for": "hook"
+        },
+        {
+          "find": "Container ship port",
+          "alt": "Goods being imported and exported",
+          "for": "teach:4"
+        }
+      ],
+      "covers": [
+        "1.5.4"
+      ]
+    },
+    {
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
+      "n": 30,
+      "title": "1.6 Government spending, taxation, infrastructure and legislation",
+      "duration": 50,
+      "bigQuestion": "If the government built a new railway to your town, which local businesses would gain, and why?",
+      "objectives": [
+        "To understand how government spending, taxes, infrastructure and laws affect businesses"
+      ],
+      "successCriteria": [
+        "All: name two taxes and two areas of government spending",
+        "Most: explain how a tax change affects a business",
+        "Some: analyse how new legislation changes a firm's costs"
+      ],
+      "crossCurricular": "Citizenship: how government is funded",
+      "smsc": "Social: the shared duty to support public services; fair laws protect workers and customers",
+      "keywords": [
+        {
+          "term": "taxation",
+          "def": "money collected by government from people and firms"
+        },
+        {
+          "term": "infrastructure",
+          "def": "basic facilities such as roads, rail and broadband"
+        },
+        {
+          "term": "legislation",
+          "def": "laws made by government"
+        },
+        {
+          "term": "VAT",
+          "def": "value added tax, added to the price of goods"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If the government built a new railway to your town, which local businesses would gain, and why?",
+        "a": "Shops, hotels and firms needing staff or deliveries: better infrastructure cuts costs and brings customers."
+      },
+      "islamicLink": {
+        "text": "Islam values public good: the state of the early caliphs used zakah for people in need (At-Tawbah 9:60 lists its recipients). Zakah is an act of worship, not a business tax, but both show wealth has duties attached.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A strong pound makes exports ...",
+          "a": "dearer",
+          "mins": 1,
+          "options": [
+            "dearer",
+            "cheaper",
+            "no change"
+          ]
+        },
+        {
+          "q": "£1 = $1.25: $100 = ?",
+          "a": "£80",
+          "mins": 1,
+          "options": [
+            "£80",
+            "£125",
+            "£100"
+          ]
+        },
+        {
+          "q": "WIDEC: weak pound, imports ...",
+          "a": "dearer",
+          "mins": 1,
+          "options": [
+            "dearer",
+            "cheaper"
+          ]
+        },
+        {
+          "q": "Name one public service paid for by government.",
+          "a": "e.g. the NHS, state schools, roads.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Spending and taxation (1.6.1)",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Spending",
+              "points": [
+                "Health, education, defence",
+                "Roads and railways",
+                "Spending creates demand for firms"
+              ]
+            },
+            "right": {
+              "title": "Taxation",
+              "points": [
+                "Income tax: less to spend",
+                "VAT: higher prices",
+                "Corporation tax: less profit"
+              ]
+            },
+            "label": "and"
+          }
+        },
+        {
+          "heading": "Infrastructure (1.6.2)",
+          "bullets": [
+            "Roads, rail, ports, broadband",
+            "Cuts transport time and cost",
+            "Helps firms reach customers"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Legislation (1.6.2)",
+          "bullets": [],
+          "note": "Laws protect people but add costs.",
+          "table": {
+            "head": [
+              "Law area",
+              "Example",
+              "Effect on business"
+            ],
+            "rows": [
+              [
+                "Employment",
+                "National Minimum Wage",
+                "Higher wage costs"
+              ],
+              [
+                "Consumer",
+                "Goods must be as described",
+                "Refunds; honest adverts"
+              ],
+              [
+                "Health and safety",
+                "Safe workplace rules",
+                "Training and equipment costs"
+              ],
+              [
+                "Environment",
+                "Limits on pollution",
+                "Cleaner processes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Taxes only affect big companies",
+            "right": "VAT and income tax change what every customer can spend, so all firms are affected"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "A rise in VAT is most likely to ...",
+            "options": [
+              "raise prices and reduce sales",
+              "raise customers' incomes",
+              "cut a firm's wage bill",
+              "lower prices"
+            ],
+            "answer": 0,
+            "why": "VAT is added to prices, so goods cost more and demand may fall."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one effect on a restaurant of a rise in the National Minimum Wage. (3 marks)",
+          "a": "Higher wage costs reduce profit unless prices rise; it may cut staff hours; but staff may be more motivated.",
+          "mins": 5,
+          "model": "Point: costs rise. Explain: the restaurant employs 12 staff on the minimum wage. Develop: wage bill rises, so profit falls or prices go up."
+        },
+        {
+          "q": "Corporation tax is a tax on ...",
+          "a": "company profits",
+          "mins": 1,
+          "options": [
+            "company profits",
+            "imports",
+            "wages"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal box, analyse how a new high-speed rail line could affect a hotel near a station (6 marks).",
+          "a": "More visitors and easier staff travel (demand up) but more competition from new hotels and disruption during building; a reasoned conclusion.",
+          "mins": 10,
+          "model": "The teacher writes the first chain: 'Faster travel brings more business visitors, so room bookings rise, increasing revenue ...'"
+        },
+        {
+          "q": "Extend: give one reason a government might cut income tax and one effect on retailers.",
+          "a": "To boost spending; shops sell more.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why might consumer law help honest businesses?",
+          "a": "It removes cheating rivals and builds trust, which supports fair competition.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Infrastructure means ...",
+          "a": "roads, rail, ports and networks",
+          "mins": 1,
+          "options": [
+            "roads, rail, ports and networks",
+            "taxes",
+            "prices"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If the government built a new railway to your town, which local businesses would gain, and why?",
+          "a": "Shops, hotels and firms needing staff or deliveries: better infrastructure cuts costs and brings customers.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find one law that affects a business you know and write how it changes its costs.",
+      "send": "SEND: key-word card and a partly completed answer frame. EAL: glossary with examples. Stretch: add a counter-argument and a judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.6 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: government case and analyse frame",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "High speed train",
+          "alt": "A high-speed train",
+          "for": "hook"
+        },
+        {
+          "find": "Road construction",
+          "alt": "Building new infrastructure",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "1.6.1",
+        "1.6.2"
+      ]
+    },
+    {
+      "unit": "Spring 1: The international economy and government (1.5, 1.6)",
+      "n": 31,
+      "title": "1.6 Trade policy: tariffs, quotas and trading blocs",
+      "duration": 50,
+      "bigQuestion": "If the government taxed every imported phone, who would pay in the end?",
+      "objectives": [
+        "To understand how tariffs, quotas and trading blocs affect businesses that trade internationally"
+      ],
+      "successCriteria": [
+        "All: define tariff, quota and trading bloc",
+        "Most: calculate the effect of a tariff on an import price",
+        "Some: evaluate whether a business gains from a trading bloc"
+      ],
+      "crossCurricular": "Maths: percentage increase",
+      "smsc": "Moral: fairness in trade between nations; riba avoided in finance",
+      "keywords": [
+        {
+          "term": "tariff",
+          "def": "a tax on imported goods"
+        },
+        {
+          "term": "quota",
+          "def": "a limit on the quantity of a good that can be imported"
+        },
+        {
+          "term": "trading bloc",
+          "def": "a group of countries that trade freely together"
+        },
+        {
+          "term": "protectionism",
+          "def": "using barriers to protect home producers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If the government taxed every imported phone, who would pay in the end?",
+        "a": "Usually the customer, through higher prices; UK makers might gain. That tax is a tariff."
+      },
+      "starter": [
+        {
+          "q": "VAT is added to ...",
+          "a": "prices",
+          "mins": 1,
+          "options": [
+            "prices",
+            "wages",
+            "profits only"
+          ]
+        },
+        {
+          "q": "Infrastructure includes ...",
+          "a": "railways",
+          "mins": 1,
+          "options": [
+            "railways",
+            "adverts",
+            "shares"
+          ]
+        },
+        {
+          "q": "Minimum wage rises: a café's costs ...",
+          "a": "rise",
+          "mins": 1,
+          "options": [
+            "rise",
+            "fall",
+            "stay the same"
+          ]
+        },
+        {
+          "q": "£1 = $1.25: convert $250 to pounds.",
+          "a": "£200",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Trade barriers",
+          "bullets": [
+            "Tariff: a tax on imports",
+            "Quota: a limit on the amount imported",
+            "Both protect home producers",
+            "Both can raise prices for customers"
+          ],
+          "note": "Spec 1.6.2."
+        },
+        {
+          "heading": "Worked example: a tariff",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "A UK shop imports bicycles at £200 each. A 15% tariff is added. What is the new cost?",
+            "steps": [
+              "15% of £200 = 0.15 × 200",
+              "= £30",
+              "New cost = 200 + 30"
+            ],
+            "answer": "£230 per bicycle"
+          }
+        },
+        {
+          "heading": "Trading blocs",
+          "bullets": [
+            "Groups of countries with free trade between them",
+            "Examples: the EU, ASEAN",
+            "Common external tariff on outsiders (customs union)"
+          ],
+          "note": "Firms inside a bloc sell freely to members; those outside face tariffs."
+        },
+        {
+          "heading": "Interest rates (independent study)",
+          "bullets": [
+            "1.6.3 is studied at home this half term",
+            "Higher rates: borrowing costs rise, spending falls",
+            "Taught as knowledge of the economy, never to take"
+          ],
+          "note": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead."
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "A quota is ...",
+            "options": [
+              "a limit on the quantity of imports",
+              "a tax on imports",
+              "a subsidy",
+              "an exchange rate"
+            ],
+            "answer": 0,
+            "why": "A tariff is the tax; a quota limits quantity."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 10% tariff is added to imported tyres costing £80 each. Calculate the new cost of 50 tyres. (2 marks)",
+          "a": "80 × 1.10 = £88 each; 88 × 50 = £4,400.",
+          "mins": 5,
+          "model": "I do: 10% of 80 = 8, so £88 per tyre. 88 × 50 = £4,400."
+        },
+        {
+          "q": "Free trade inside a bloc means ...",
+          "a": "no tariffs between members",
+          "mins": 1,
+          "options": [
+            "no tariffs between members",
+            "no trade",
+            "higher tariffs between members"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Case (pupil PDF): a UK date importer buys from Country A (no trade agreement with the UK, 8% tariff) or Country B (free-trade agreement, no tariff, higher price). In the portal box justify which supplier to use (6 marks).",
+          "a": "Calculations on the sheet: Country A £5.00 + 8% = £5.40 per kg against Country B £5.30; also quality, delivery and reliability; justified choice.",
+          "mins": 10,
+          "model": "The teacher works the first calculation: £5.00 × 1.08 = £5.40 per kg from Country A."
+        },
+        {
+          "q": "Extend: give one reason a government uses tariffs.",
+          "a": "To protect home industries and jobs, or raise revenue.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: who might lose from a quota on imported steel?",
+          "a": "UK firms that use steel (car makers, builders) pay more; customers pay more.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A tariff is ...",
+          "a": "a tax on imports",
+          "mins": 1,
+          "options": [
+            "a tax on imports",
+            "a limit on imports",
+            "a type of loan"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If the government taxed every imported phone, who would pay in the end?",
+          "a": "Usually the customer, through higher prices; UK makers might gain. That tax is a tariff.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study (pupil PDF): interest rates and business (1.6.3) with the Islamic note; answer three questions.",
+      "send": "SEND: percentage step card. EAL: glossary. Stretch: compare tariff and quota effects on price and quantity.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Business Student Book (Rob Jones, 2017), chapter for 1.6 (TO CONFIRM chapter number)",
+        "Pupil PDF worksheet: tariff calculations and supplier case",
+        "Pupil PDF: independent study, interest rates (1.6.3) with the Islamic note",
+        "Calculator",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Customs border checkpoint lorries",
+          "alt": "Lorries at a border checkpoint",
+          "for": "hook"
+        },
+        {
+          "find": "Dates fruit",
+          "alt": "Dates, an imported food",
+          "for": "teach:3"
+        }
+      ],
+      "covers": [
+        "1.6.2",
+        "1.6.3"
+      ]
     }
   ],
   "boardShort": "Edexcel IGCSE 4BS1"

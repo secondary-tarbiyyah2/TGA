@@ -5,33 +5,73 @@
   "source": "Adapted from the school Drive Quran folder (TPS Quran Tracker: Year 1 Qaidah and Quran sheets, tajweed rules by year); Qur'an text per the Madinah mushaf (Hafs)",
   "lessons": [
     {
-      "unit": "Unit 1: Joining the letters",
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
       "n": 1,
-      "title": "Letter shapes: start, middle and end",
+      "title": "Letter shapes: start, middle and end (ب ت ث ن ي)",
       "duration": 30,
+      "bigQuestion": "Your name looks different in capitals and small letters, but it is still your name. Can a letter change its shape and stay the same letter?",
       "objectives": [
-        "Know that letters change shape inside a word",
-        "Recognise ب in its start, middle and end shapes",
-        "Read a joined group of letters"
+        "To understand that Arabic letters change shape at the start, middle and end of a word"
       ],
+      "successCriteria": [
+        "All: point to ب at the start, middle and end",
+        "Most: name ب ت ث ن ي by their dots",
+        "Some: read a joined word like بَتَ"
+      ],
+      "smsc": "Spiritual: learning to read Allah's Book, one letter at a time",
       "keywords": [
         {
-          "term": "initial",
-          "def": "the shape of a letter at the start of a word"
+          "term": "awwal (أول)",
+          "def": "start"
         },
         {
-          "term": "medial",
-          "def": "the shape of a letter in the middle of a word"
+          "term": "wasat (وسط)",
+          "def": "middle"
         },
         {
-          "term": "final",
-          "def": "the shape of a letter at the end of a word"
+          "term": "akhir (آخر)",
+          "def": "end"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your name looks different in capitals and small letters, but it is still your name. Can a letter change its shape and stay the same letter?",
+        "a": "Yes! Arabic letters change shape when they join, but keep their dots and sound."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Read in the name of your Lord who created' (Al-'Alaq 96:1). Learning letters is the first step to reading the Qur'an.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Say the alphabet from alif to khaa.",
-        "Read: بَ تَ ثَ جَ",
-        "Name the three short vowel marks."
+        {
+          "q": "Which way do we read Arabic?",
+          "a": "Right to left",
+          "mins": 1,
+          "options": [
+            "Right to left",
+            "Left to right"
+          ]
+        },
+        {
+          "q": "Which letter is this: ب?",
+          "a": "baa",
+          "mins": 1,
+          "options": [
+            "baa",
+            "taa",
+            "noon"
+          ]
+        },
+        {
+          "q": "Say Bismillah! Which vowel is this: بَ?",
+          "a": "fathah",
+          "mins": 1,
+          "options": [
+            "fathah",
+            "kasrah",
+            "dammah"
+          ]
+        }
       ],
       "teach": [
         {
@@ -42,293 +82,799 @@
             "Middle: ـبـ",
             "End: ـب"
           ],
-          "note": "Write all four on the board. Explain the letter keeps its main body and the dot; only the connecting line changes. Compare to joined handwriting in English."
+          "note": "Bismillah. Write all four on the board. The dot stays the same; only the joining line changes. Like joined handwriting."
         },
         {
-          "heading": "The baa family (ب ت ث ن ي)",
-          "bullets": [
-            "Same 'tooth' shape, different dots",
-            "ب one dot below, ت two above, ث three above",
-            "ن one dot above, ي two dots below"
-          ],
-          "note": "Show the five letters in the start shape: بـ تـ ثـ نـ يـ. Ask children to read the dots. Yaa's final form tail is a surprise; show it."
+          "heading": "The tooth family",
+          "bullets": [],
+          "note": "Same 'tooth' shape, different dots. Children say the dots aloud.",
+          "table": {
+            "head": [
+              "Letter",
+              "Dots",
+              "Start shape"
+            ],
+            "rows": [
+              [
+                "ب",
+                "one below",
+                "بـ"
+              ],
+              [
+                "ت",
+                "two above",
+                "تـ"
+              ],
+              [
+                "ث",
+                "three above",
+                "ثـ"
+              ],
+              [
+                "ن",
+                "one above",
+                "نـ"
+              ],
+              [
+                "ي",
+                "two below",
+                "يـ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Reading joined letters",
-          "bullets": [
-            "بَتَ ba-ta",
-            "تَبَ ta-ba",
-            "ثَبَ tha-ba",
-            "نَبَ na-ba"
-          ],
-          "note": "Join two or three letters and read them. Remind children that Arabic is read from right to left. Point with a finger to build the habit."
+          "heading": "Read with me",
+          "bullets": [],
+          "note": "Point right to left. Children echo with mics on in turn.",
+          "cycle": [
+            "Teacher points to بَتَ",
+            "We say ba-ta together",
+            "Three friends say it in turn",
+            "Teacher claps for good reading"
+          ]
         },
         {
-          "heading": "Right to left",
-          "bullets": [
-            "Arabic is read from right to left",
-            "Start on the right side of the page",
-            "The Qur'an book opens from the right"
-          ],
-          "note": "Show the mushaf opening from what looks like the 'back'. A common mistake is reading left to right. Practise with a finger or a pointer."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which letter has three dots on top?",
+            "options": [
+              "ث",
+              "ت",
+              "ن"
+            ],
+            "answer": 0,
+            "why": "ث has three dots above; ت has two; ن has one."
+          }
         }
       ],
       "practice": [
-        "Read: بَتَ",
-        "Which dots does ن have and where?"
-      ],
-      "independent": [
-        "Write the four shapes of ب, ت, ث",
-        "Join letters to make: بَتَ, ثَنَ, نَبَ",
-        "Spot the baa-family letters in a row of joined letters"
-      ],
-      "exit": [
-        "Which direction do we read Arabic?",
-        "How many shapes can one letter have?"
-      ],
-      "homework": "Practise writing ب in four shapes and show someone at home.",
-      "send": "SEND/EAL: use highlighters for the connecting line. Stretch: join four letters from the baa family and read them."
-    },
-    {
-      "unit": "Unit 1: Joining the letters",
-      "n": 2,
-      "title": "Joining families: jeem, seen, 'ayn, faa, kaaf and more",
-      "duration": 30,
-      "objectives": [
-        "Know the shapes of more letter families",
-        "Join letters from different families",
-        "Read short joined words with harakat"
-      ],
-      "keywords": [
         {
-          "term": "family",
-          "def": "letters that share the same body shape"
+          "q": "Read: بَتَ, تَبَ, نَبَتَ",
+          "a": "ba-ta, ta-ba, na-ba-ta",
+          "mins": 3,
+          "model": "I do: I start on the right. بَ (ba), تَ (ta): bata. Now تَبَ: ta-ba."
         },
         {
-          "term": "connect",
-          "def": "join to the letter that follows"
+          "q": "Which letter has two dots below?",
+          "a": "ي",
+          "mins": 1,
+          "options": [
+            "ي",
+            "ب",
+            "ت"
+          ]
         }
       ],
+      "independent": [
+        {
+          "q": "Pupil PDF: trace ب in its four shapes, then circle the tooth letters in a row of joined letters. The teacher listens to today's group read بَتَ.",
+          "a": "Four shapes traced; ب ت ث ن ي circled.",
+          "mins": 4,
+          "model": "The teacher traces the first ب: alone, then start, middle, end."
+        },
+        {
+          "q": "Extend: write بَتَ on your whiteboard.",
+          "a": "بَتَ",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many dots has ن?",
+          "a": "one",
+          "mins": 1,
+          "options": [
+            "one",
+            "two",
+            "three"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your name looks different in capitals and small letters, but it is still your name. Can a letter change its shape and stay the same letter?",
+          "a": "Yes! Arabic letters change shape when they join, but keep their dots and sound.",
+          "mins": 1
+        }
+      ],
+      "homework": "Show someone at home ب in four shapes; tick the revision log after saying Al-Fatihah.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): joining pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: letter shapes to trace and read",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic letter ba calligraphy",
+          "alt": "The Arabic letter baa",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 2,
+      "title": "Joining families: ج ح خ, س ش, ص ض, ط ظ",
+      "duration": 30,
+      "bigQuestion": "Brothers and sisters can look alike. Which Arabic letters look like brothers?",
+      "objectives": [
+        "To understand that letters in the same family join in the same way and only their dots differ"
+      ],
+      "successCriteria": [
+        "All: point to ج ح خ at the start of a word",
+        "Most: say which family a letter belongs to",
+        "Some: read a word with two joined families, like سَجَدَ"
+      ],
+      "smsc": "Spiritual: learning to read Allah's Book, one letter at a time",
+      "keywords": [
+        {
+          "term": "ya'tasil (يتصل)",
+          "def": "joins"
+        },
+        {
+          "term": "kalimah (كلمة)",
+          "def": "a word"
+        },
+        {
+          "term": "harf (حرف)",
+          "def": "a letter"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Brothers and sisters can look alike. Which Arabic letters look like brothers?",
+        "a": "ج ح خ look alike; so do س ش, ص ض, ط ظ. The dots tell them apart."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Read in the name of your Lord who created' (Al-'Alaq 96:1). Learning letters is the first step to reading the Qur'an.",
+        "at": "start"
+      },
       "starter": [
-        "Say the shapes of baa at start, middle and end.",
-        "Read: نَبَ ثَبَ",
-        "Which letter has three dots above and a tooth shape?"
+        {
+          "q": "Which letter has three dots on top?",
+          "a": "ث",
+          "mins": 1,
+          "options": [
+            "ث",
+            "ت",
+            "ب"
+          ]
+        },
+        {
+          "q": "Read: بَتَ",
+          "a": "ba-ta",
+          "mins": 1,
+          "options": [
+            "ba-ta",
+            "ta-ba",
+            "na-ba"
+          ]
+        },
+        {
+          "q": "Which shape is the start of ب?",
+          "a": "بـ",
+          "mins": 1,
+          "options": [
+            "بـ",
+            "ـب",
+            "ـبـ"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The jeem family (ج ح خ)",
-          "bullets": [
-            "جـ حـ خـ at the start of a word",
-            "ـجـ ـحـ ـخـ in the middle",
-            "ـج ـح ـخ at the end"
-          ],
-          "note": "Show how the body is a hook. The dot sits inside jeem, none on Haa, above on khaa. Practise saying the three sounds."
+          "heading": "Letter families",
+          "bullets": [],
+          "note": "Bismillah. Same body, different dots.",
+          "table": {
+            "head": [
+              "Family",
+              "Letters",
+              "Start shape"
+            ],
+            "rows": [
+              [
+                "Jeem family",
+                "ج ح خ",
+                "جـ حـ خـ"
+              ],
+              [
+                "Seen family",
+                "س ش",
+                "سـ شـ"
+              ],
+              [
+                "Saad family",
+                "ص ض",
+                "صـ ضـ"
+              ],
+              [
+                "Taa family",
+                "ط ظ",
+                "طـ ظـ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "The seen family (س ش) and 'ayn family (ع غ)",
+          "heading": "In the middle and at the end",
           "bullets": [
-            "سـ شـ: three teeth joined",
-            "عـ غـ: a small head that closes",
-            "ص ض: round belly joined to the next letter"
+            "ـجـ ـحـ ـخـ",
+            "ـس ـش",
+            "ـص ـض",
+            "ـط ـظ"
           ],
-          "note": "These shapes change a lot in the middle. Show examples; do not expect memorisation this lesson, just recognition."
+          "note": "Show middle and end shapes. ج ح خ keep their bowl at the end."
         },
         {
-          "heading": "Faa and qaaf (ف ق), kaaf, laam, meem, haa",
-          "bullets": [
-            "فـ قـ: round head with dots",
-            "كـ لـ مـ هـ: joined to the next letter",
-            "ل and ا: the lam-alif joins as لا"
-          ],
-          "note": "Show the tricky lam-alif (لا). It is a very common word 'laa' (no). Practise reading it."
+          "heading": "Read with me",
+          "bullets": [],
+          "note": "Words: سَجَدَ (sajada), حَسَدَ (hasada), خَطَبَ (khataba).",
+          "cycle": [
+            "Teacher points to the word",
+            "We say it slowly together",
+            "Three friends read in turn",
+            "Teacher claps for good reading"
+          ]
         },
         {
-          "heading": "Reading words",
-          "bullets": [
-            "جَمَلَ jamala",
-            "سَمِعَ sami'a",
-            "فَتَحَ fataHa",
-            "كَتَبَ kataba"
-          ],
-          "note": "These are simple Arabic verbs. Children sound them out slowly; meanings optional: he wrote (kataba), he opened (fataHa), he heard (sami'a). Draw attention to dots."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which letter is in the jeem family?",
+            "options": [
+              "خ",
+              "س",
+              "ط"
+            ],
+            "answer": 0,
+            "why": "ج ح خ are the jeem family."
+          }
         }
       ],
       "practice": [
-        "Read: كَتَبَ",
-        "Which letter joins as لا?"
+        {
+          "q": "Read: سَجَدَ",
+          "a": "sa-ja-da",
+          "mins": 3,
+          "model": "I do: right to left: سَ (sa), جَ (ja), دَ (da): sajada."
+        },
+        {
+          "q": "Which has dots: ص or ض?",
+          "a": "ض",
+          "mins": 1,
+          "options": [
+            "ض",
+            "ص"
+          ]
+        }
       ],
       "independent": [
-        "Match joined shapes to isolated letters",
-        "Read a list of five words",
-        "Trace words with colour on the joining line"
+        {
+          "q": "Pupil PDF: colour each family a different colour, then read three joined words. The teacher listens to today's group.",
+          "a": "Families coloured; words read.",
+          "mins": 4,
+          "model": "The teacher colours ج ح خ blue and reads سَجَدَ."
+        },
+        {
+          "q": "Extend: write سَجَدَ on your whiteboard.",
+          "a": "سَجَدَ",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Read: فَتَحَ",
-        "Which three letters share the hook shape?"
+        {
+          "q": "ش has how many dots?",
+          "a": "three",
+          "mins": 1,
+          "options": [
+            "three",
+            "one",
+            "two"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Brothers and sisters can look alike. Which Arabic letters look like brothers?",
+          "a": "ج ح خ look alike; so do س ش, ص ض, ط ظ. The dots tell them apart.",
+          "mins": 1
+        }
       ],
-      "homework": "Choose two letter families and write each in all four shapes.",
-      "send": "SEND/EAL: use large print and a ruler under the line. Stretch: write two joined words."
+      "homework": "Find ج and س in your Qaidah and show a grown-up; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): joining pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: letter shapes to trace and read",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic calligraphy letters",
+          "alt": "Arabic letters joined in writing",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Joining the letters",
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
       "n": 3,
-      "title": "Letters that do not join: alif, daal, dhaal, raa, zay, waaw",
+      "title": "Letters that never join to the next: ا د ذ ر ز و",
       "duration": 30,
+      "bigQuestion": "Some people always hold hands with the person behind them, but not in front. Which Arabic letters 'hold hands' only one way?",
       "objectives": [
-        "Know the six letters that do not join to the next letter",
-        "Read words with a gap after these letters",
-        "Write words correctly with these letters"
+        "To understand that six letters never join to the letter after them, so a word can have a gap"
       ],
+      "successCriteria": [
+        "All: name the six letters that do not join after",
+        "Most: point to the gap after ا or د in a word",
+        "Some: read a word with a non-joiner, like دَرَسَ"
+      ],
+      "smsc": "Spiritual: learning to read Allah's Book, one letter at a time",
       "keywords": [
         {
           "term": "non-joiner",
-          "def": "a letter that does not join to the letter after it"
+          "def": "a letter that does not join to the next letter"
         },
         {
-          "term": "gap",
-          "def": "a space inside a word after a non-joining letter"
+          "term": "kalimah (كلمة)",
+          "def": "a word"
+        },
+        {
+          "term": "harf (حرف)",
+          "def": "a letter"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some people always hold hands with the person behind them, but not in front. Which Arabic letters 'hold hands' only one way?",
+        "a": "ا د ذ ر ز و: they join to the letter before, but never to the letter after."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Read in the name of your Lord who created' (Al-'Alaq 96:1). Learning letters is the first step to reading the Qur'an.",
+        "at": "start"
+      },
       "starter": [
-        "Read: سَمِعَ كَتَبَ",
-        "Say the letters in the jeem family.",
-        "What is the sound of ذ?"
+        {
+          "q": "Which letter has two dots on top?",
+          "a": "ق",
+          "mins": 1,
+          "options": [
+            "ق",
+            "ف",
+            "غ"
+          ]
+        },
+        {
+          "q": "Read: عَلِمَ",
+          "a": "'a-li-ma",
+          "mins": 1,
+          "options": [
+            "'a-li-ma",
+            "ma-li-'a",
+            "'a-ma-li"
+          ]
+        },
+        {
+          "q": "Which is the start shape of ه?",
+          "a": "هـ",
+          "mins": 1,
+          "options": [
+            "هـ",
+            "ـه",
+            "ـهـ"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Six non-joiners",
+          "heading": "Six shy letters",
           "bullets": [
-            "ا alif",
-            "د daal and ذ dhaal",
-            "ر raa and ز zay",
-            "و waaw"
+            "ا د ذ ر ز و",
+            "Join to the letter before",
+            "Never join to the letter after"
           ],
-          "note": "Teach a memory chant: 'Alif, Daal, Dhaal, Raa, Zay, Waaw don't join forward'. They join to the letter before them but not after. Check each child can name all six."
+          "note": "Bismillah. Call them the 'shy letters'."
         },
         {
-          "heading": "What it looks like",
-          "bullets": [
-            "دَرَسَ darasa: gap after د and ر",
-            "ذَهَبَ dhahaba: gap after ذ",
-            "وَزَنَ wazana: gaps after و and ز"
-          ],
-          "note": "Write words on the board. The gap is inside one word, not a space between words. Point out one word vs two words. Many children mistake the gap for a word boundary."
+          "heading": "Look for the gap",
+          "bullets": [],
+          "note": "Point to each gap.",
+          "table": {
+            "head": [
+              "Word",
+              "Say",
+              "The gap is after"
+            ],
+            "rows": [
+              [
+                "دَرَسَ",
+                "da-ra-sa",
+                "د and ر"
+              ],
+              [
+                "زَرَعَ",
+                "za-ra-'a",
+                "ز and ر"
+              ],
+              [
+                "وَرَدَ",
+                "wa-ra-da",
+                "و and ر"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Words from the Qur'an",
-          "bullets": [
-            "رَبِّ Rabbi",
-            "النَّاسِ An-Naas",
-            "الْعَالَمِينَ Al-'Aalameen",
-            "دِينِ deen"
-          ],
-          "note": "Show these words from Al-Fatihah and An-Nas. Notice the gaps after non-joiners. Read them letter by letter first."
+          "heading": "Read with me",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher points to the word",
+            "We find the gap",
+            "Three friends read in turn",
+            "Teacher claps for good reading"
+          ]
         },
         {
-          "heading": "Spot the non-joiner",
-          "bullets": [
-            "Circle the non-joiners in a word",
-            "Read the word aloud",
-            "Check the gap rule"
-          ],
-          "note": "Do two examples on the board together before independent work. Praise careful reading over fast reading."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which letter never joins to the next letter?",
+            "options": [
+              "د",
+              "ب",
+              "س"
+            ],
+            "answer": 0,
+            "why": "د is one of the six: ا د ذ ر ز و."
+          }
         }
       ],
       "practice": [
-        "Name the six non-joiners",
-        "Read: دَرَسَ"
+        {
+          "q": "Read: دَرَسَ",
+          "a": "da-ra-sa",
+          "mins": 3,
+          "model": "I do: دَ (da), then a gap because د does not join after. رَ (ra), gap again. سَ (sa): darasa."
+        },
+        {
+          "q": "Which is a 'shy letter'?",
+          "a": "و",
+          "mins": 1,
+          "options": [
+            "و",
+            "م",
+            "ل"
+          ]
+        }
       ],
       "independent": [
-        "Circle the non-joiners in 6 words",
-        "Copy and read: ذَهَبَ، وَزَنَ، رَبِّ",
-        "Write a word with two non-joiners"
+        {
+          "q": "Pupil PDF: circle the six shy letters in a row of words, then read زَرَعَ. The teacher listens to today's group.",
+          "a": "Six letters circled; word read.",
+          "mins": 4,
+          "model": "The teacher circles the first: د in دَرَسَ."
+        },
+        {
+          "q": "Extend: write وَرَدَ on your whiteboard.",
+          "a": "وَرَدَ",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Name three non-joining letters",
-        "Read: ذَهَبَ"
+        {
+          "q": "How many shy letters are there?",
+          "a": "6",
+          "mins": 1,
+          "options": [
+            "6",
+            "5",
+            "10"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Some people always hold hands with the person behind them, but not in front. Which Arabic letters 'hold hands' only one way?",
+          "a": "ا د ذ ر ز و: they join to the letter before, but never to the letter after.",
+          "mins": 1
+        }
       ],
-      "homework": "Write the six non-joining letters on a card and decorate it.",
-      "send": "SEND/EAL: colour non-joiners red. Stretch: write sentences with three non-joining letters."
+      "homework": "Find a gap after د or ر in your Qaidah and show a grown-up; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): joining pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: letter shapes to trace and read",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic letter waw calligraphy",
+          "alt": "The Arabic letter waw",
+          "for": "teach:1"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Joining the letters",
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
       "n": 4,
-      "title": "Reading joined words fluently",
+      "title": "Reading joined words with short vowels",
       "duration": 30,
+      "bigQuestion": "You can now read letters and vowels. What is the next big step to reading the Qur'an?",
       "objectives": [
-        "Read joined words with fathah, kasrah and dammah",
-        "Read from right to left smoothly",
-        "Read words from Al-Fatihah"
+        "To understand how to read two- and three-letter joined words using letter shapes and short vowels"
       ],
+      "successCriteria": [
+        "All: read three two-letter words",
+        "Most: read five three-letter words like كَتَبَ",
+        "Some: read a word with a shy letter in it"
+      ],
+      "smsc": "Spiritual: learning to read Allah's Book, one letter at a time",
       "keywords": [
         {
-          "term": "fluent",
-          "def": "reading smoothly without stopping at each letter"
+          "term": "kalimah (كلمة)",
+          "def": "a word"
         },
         {
-          "term": "word",
-          "def": "a group of joined letters with spaces either side"
+          "term": "harakah (حركة)",
+          "def": "a short vowel mark"
+        },
+        {
+          "term": "fathah (فتحة)",
+          "def": "a short 'a' above the letter"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "You can now read letters and vowels. What is the next big step to reading the Qur'an?",
+        "a": "Reading joined words: putting shapes and vowels together."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Read in the name of your Lord who created' (Al-'Alaq 96:1). Learning letters is the first step to reading the Qur'an.",
+        "at": "start"
+      },
       "starter": [
-        "Read the six non-joiners.",
-        "Read: دَرَسَ ذَهَبَ",
-        "What direction do we read in?"
+        {
+          "q": "Which is a shy letter?",
+          "a": "ر",
+          "mins": 1,
+          "options": [
+            "ر",
+            "ب",
+            "ن"
+          ]
+        },
+        {
+          "q": "Read: دَرَسَ",
+          "a": "da-ra-sa",
+          "mins": 1,
+          "options": [
+            "da-ra-sa",
+            "sa-ra-da",
+            "da-sa-ra"
+          ]
+        },
+        {
+          "q": "Which vowel is under the letter?",
+          "a": "kasrah",
+          "mins": 1,
+          "options": [
+            "kasrah",
+            "fathah",
+            "dammah"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "From letters to words",
+          "heading": "Shapes plus vowels",
           "bullets": [
-            "Say each letter sound",
-            "Join the sounds together",
-            "Read the whole word"
+            "Find the letters",
+            "Look at the vowel on each",
+            "Read right to left"
           ],
-          "note": "Model slow-fast reading: first letter by letter (ka-ta-ba), then blended (kataba). Repeat. Fluency grows from accuracy."
+          "note": "Bismillah. Revise fathah ـَ, kasrah ـِ, dammah ـُ."
         },
         {
-          "heading": "Words from Al-Fatihah",
-          "bullets": [
-            "مَالِكِ maaliki",
-            "رَبِّ Rabbi",
-            "الدِّينِ ad-deen",
-            "نَعْبُدُ na'budu"
-          ],
-          "note": "Show each word. Some contain sukoon or shaddah (marks to be learned). Teacher reads, children echo. Do not explain marks yet."
+          "heading": "Read with me",
+          "bullets": [],
+          "note": "Real words from the Qaidah.",
+          "table": {
+            "head": [
+              "Word",
+              "Say",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "كَتَبَ",
+                "ka-ta-ba",
+                "he wrote"
+              ],
+              [
+                "جَلَسَ",
+                "ja-la-sa",
+                "he sat"
+              ],
+              [
+                "عَلِمَ",
+                "'a-li-ma",
+                "he knew"
+              ],
+              [
+                "كُتُبٌ",
+                "ku-tu-bun",
+                "books"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Fluency practice",
-          "bullets": [
-            "Read from right to left with a finger",
-            "Do not guess the word",
-            "Check every letter and mark"
-          ],
-          "note": "Common error: guessing a word from its first letters. Stop children and ask them to 'zoom in' on each letter. Use a pointer."
+          "heading": "Reading turns",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher points to the word",
+            "We say it slowly together",
+            "Three friends read in turn",
+            "Teacher claps for good reading"
+          ]
         },
         {
-          "heading": "Read to a partner",
-          "bullets": [
-            "Partner A reads",
-            "Partner B listens and checks",
-            "Swap roles"
-          ],
-          "note": "Breakout rooms or pairs; listen to two pairs. Use kind correction language: 'Try that letter again.'"
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "How do we read «كَتَبَ»?",
+            "options": [
+              "ka-ta-ba",
+              "ki-ti-bi",
+              "ku-tu-bu"
+            ],
+            "answer": 0,
+            "why": "All three letters have fathah: ka-ta-ba."
+          }
         }
       ],
       "practice": [
-        "Read: مَالِكِ",
-        "Read: بِسْمِ (teacher helps)"
+        {
+          "q": "Read: جَلَسَ, عَلِمَ",
+          "a": "ja-la-sa, 'a-li-ma",
+          "mins": 3,
+          "model": "I do: جَ (ja) لَ (la) سَ (sa): jalasa. عَ ('a) لِ (li) مَ (ma): 'alima."
+        },
+        {
+          "q": "Which vowel is on لِ?",
+          "a": "kasrah",
+          "mins": 1,
+          "options": [
+            "kasrah",
+            "fathah",
+            "dammah"
+          ]
+        }
       ],
       "independent": [
-        "Read 10 words with harakat",
-        "Partner reading with a checklist",
-        "Read a line from a Qaidah page"
+        {
+          "q": "Pupil PDF: read five joined words to a grown-up or partner and tick each one. The teacher listens to today's group.",
+          "a": "Five words read and ticked.",
+          "mins": 4,
+          "model": "The teacher reads the first word and ticks it."
+        },
+        {
+          "q": "Extend: write كَتَبَ on your whiteboard.",
+          "a": "كَتَبَ",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Read: مَلِكِ",
-        "What do we do if we are not sure of a letter?"
+        {
+          "q": "Read: «جَلَسَ»",
+          "a": "ja-la-sa",
+          "mins": 1,
+          "options": [
+            "ja-la-sa",
+            "ja-li-su",
+            "sa-la-ja"
+          ]
+        },
+        {
+          "q": "Back to our ponder: You can now read letters and vowels. What is the next big step to reading the Qur'an?",
+          "a": "Reading joined words: putting shapes and vowels together.",
+          "mins": 1
+        }
       ],
-      "homework": "Read your reading page twice to a family member and ask them to sign it.",
-      "send": "SEND/EAL: finger-point and echo-read. Stretch: read unseen words from the Qaidah."
+      "homework": "Read five joined words from your Qaidah to a grown-up; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): joining pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: letter shapes to trace and read",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "hook"
+        },
+        {
+          "find": "Open book",
+          "alt": "An open book for reading",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Sukoon, shaddah, madd and tanween",
@@ -888,89 +1434,2265 @@
       "send": "SEND/EAL: pictures for daybreak and darkness. Stretch: recite all five ayat."
     },
     {
-      "unit": "Unit 3: Reading and reciting short surahs",
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
       "n": 12,
-      "title": "Surat Al-Ikhlas",
+      "title": "Surat Al-Ikhlas 112:3-4: Allah has no child, no parent and no equal",
       "duration": 30,
+      "bigQuestion": "Everyone you know has a mother or father. Allah is different. How?",
       "objectives": [
-        "Read Al-Ikhlas with the right letters and marks",
-        "Know what each ayah means",
-        "Recite the surah by heart"
+        "To memorise Al-Ikhlas 112:3-4 accurately and recite it with its tajweed"
       ],
+      "successCriteria": [
+        "All: say 112:3 to 4 after the teacher",
+        "Most: say all of Al-Ikhlas alone",
+        "Some: say what 112:4 teaches about Allah"
+      ],
+      "smsc": "Spiritual: Allah is unique; nothing is like Him",
       "keywords": [
         {
-          "term": "Al-Ikhlas",
-          "def": "surah 112, four ayat about Allah being One"
+          "term": "lam yalid (لم يلد)",
+          "def": "He has no child"
         },
         {
-          "term": "Ahad",
-          "def": "One, unique"
+          "term": "lam yulad (لم يولد)",
+          "def": "He was not born"
         },
         {
-          "term": "Samad",
-          "def": "the One everyone needs"
+          "term": "kufuwan (كفوا)",
+          "def": "equal"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Everyone you know has a mother or father. Allah is different. How?",
+        "a": "Allah has no child and no parent, and nothing is like Him (112:3 to 4)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'He neither begets nor is born, nor is there to Him any equivalent' (Al-Ikhlas 112:3 to 4). The Prophet ﷺ said Al-Ikhlas is equal to a third of the Qur'an (Bukhari).",
+        "at": "start"
+      },
       "starter": [
-        "Recite An-Nas ayat 1-3.",
-        "Recite Al-Falaq ayat 1-3.",
-        "Read: أَحَدٌ"
+        {
+          "q": "Recite Al-Ikhlas 112:1 in your head. How does the next ayah begin?",
+          "a": "ٱللَّهُ ٱلصَّمَدُ",
+          "mins": 1,
+          "options": [
+            "لَمْ يَلِدْ",
+            "وَلَمْ يَكُن",
+            "ٱللَّهُ ٱلصَّمَدُ"
+          ]
+        },
+        {
+          "q": "What does أَحَدٌ mean?",
+          "a": "One",
+          "mins": 1,
+          "options": [
+            "One",
+            "Two",
+            "Kind"
+          ]
+        },
+        {
+          "q": "Which family is ح in?",
+          "a": "jeem family",
+          "mins": 1,
+          "options": [
+            "jeem family",
+            "seen family",
+            "taa family"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Who is Allah?",
+          "heading": "New ayat: Al-Ikhlas 112:3-4",
           "bullets": [
-            "Al-Ikhlas answers: who is Allah?",
-            "It has four ayat",
-            "The Prophet ﷺ said it equals a third of the Qur'an"
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
           ],
-          "note": "Cite Sahih al-Bukhari: the Prophet ﷺ said Al-Ikhlas equals a third of the Qur'an. Don't over-explain. Ask: What is the most important thing to know about Allah? He is One."
+          "note": "Begin with isti'adhah and Bismillah. Recite 112:3-4 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "لَمْ يَلِدْ وَلَمْ يُولَدْ (٣) وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ (٤)",
+            "source": "Surat Al-Ikhlas, 112:3-4"
+          }
         },
         {
-          "heading": "Ayat 1-2",
+          "heading": "What the ayat mean",
           "bullets": [
-            "قُلْ هُوَ اللَّهُ أَحَدٌ",
-            "اللَّهُ الصَّمَدُ",
-            "Say: He is Allah, One",
-            "Allah, the Self-Sufficient Master"
+            "English helps us understand; only the Arabic is the Qur'an",
+            "Big idea: nothing is like Allah"
           ],
-          "note": "Say 'Samad' means everyone needs Him but He needs no one. Ayah 1 ends with tanween; at the end we stop with sukoon: 'ahad'. Say with a clear dal."
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "112:3",
+                "He neither begets nor is born,"
+              ],
+              [
+                "112:4",
+                "Nor is there to Him any equivalent.\""
+              ]
+            ]
+          }
         },
         {
-          "heading": "Ayat 3-4",
-          "bullets": [
-            "لَمْ يَلِدْ وَلَمْ يُولَدْ",
-            "وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
-            "He has no child and was not born",
-            "And there is none like Him"
-          ],
-          "note": "Use simple language. Stress that Allah is not like His creation. Warn gently against comparing Allah to anything."
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 112:3-4 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "We listen, mics muted",
+            "Mics on in turn: three friends repeat",
+            "Teacher fixes one sound",
+            "Everyone repeats softly together"
+          ]
         },
         {
-          "heading": "Recite it",
-          "bullets": [
-            "Echo by chunk",
-            "Read with the book",
-            "Recite without the book"
-          ],
-          "note": "Use a memory chain: ayah 1, 1-2, 1-3, 1-4. Record tracker scores. Celebrate the first full surah learned."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "112:4 tells us ...",
+            "options": [
+              "Nothing is equal to Allah",
+              "Allah has a child",
+              "Allah sleeps"
+            ],
+            "answer": 0,
+            "why": "112:4: there is none equal to Him."
+          }
         }
       ],
       "practice": [
-        "Recite An-Nas",
-        "Recite Al-Falaq ayah 1"
+        {
+          "q": "Chunk and link Al-Ikhlas 112:3-4 with the teacher.",
+          "a": "Pupils say 112:3-4 together without looking.",
+          "mins": 3,
+          "model": "I do: chunk 112:3-4. Ayah 3: 3 times looking, 3 times without looking. Then ayah 4 the same way. Then link: recite 3 and 4 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
       ],
       "independent": [
-        "Read Al-Ikhlas in pairs",
-        "Memorise the surah using the chain method",
-        "Recite to the teacher"
+        {
+          "q": "Listening turns: today's group says 112:3-4 to the teacher, one by one. Everyone else: say it softly 3 times looking, 3 times without.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 5,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Say the whole of Al-Ikhlas to a friend.",
+          "a": "All four ayat.",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Who is Allah (in your own words)?",
-        "Recite ayah 3"
+        {
+          "q": "Al-Ikhlas 112:3: «لَمْ يَلِدْ ...» Which word comes next?",
+          "a": "وَلَمْ",
+          "mins": 1,
+          "options": [
+            "أَحَدٌ",
+            "كُفُوًا",
+            "وَلَمْ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Everyone you know has a mother or father. Allah is different. How?",
+          "a": "Allah has no child and no parent, and nothing is like Him (112:3 to 4).",
+          "mins": 1
+        }
       ],
-      "homework": "Recite Al-Ikhlas ten times to a family member, checking you finish every ayah.",
-      "send": "SEND/EAL: split the surah into 4 picture cards. Stretch: explain the meaning of each ayah."
+      "homework": "Recite Al-Ikhlas 112:3-4 to a parent three times a day and revise Al-Ikhlas 112:1 to 2 and Al-Fatihah; tick the portal revision log each day.",
+      "send": "SEND: one ayah at a time, extra listening turns, finger tracking on the pupil PDF. EAL: key words shown with meanings. Stretch: lead the echo for a group.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "The school's Qaidah book (TO CONFIRM which edition), joining or tanween pages",
+        "Pupil PDF worksheet: Al-Ikhlas 112:3-4 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Single tree on hill",
+          "alt": "One tree on a hill",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 13,
+      "title": "Surat Al-Ikhlas 112:1-2: hear, understand and memorise",
+      "duration": 30,
+      "bigQuestion": "If someone asked you 'Who is Allah?', what would you say?",
+      "objectives": [
+        "To memorise Al-Ikhlas 112:1-2 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: say 112:1 to 2 after the teacher",
+        "Most: say 112:1 to 2 alone",
+        "Some: tell a friend what أَحَدٌ means"
+      ],
+      "smsc": "Spiritual: knowing that Allah is One (tawheed)",
+      "keywords": [
+        {
+          "term": "Al-Ikhlas (الإخلاص)",
+          "def": "sincerity: the name of the surah"
+        },
+        {
+          "term": "ahad (أحد)",
+          "def": "One"
+        },
+        {
+          "term": "as-Samad (الصمد)",
+          "def": "the One everyone needs"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If someone asked you 'Who is Allah?', what would you say?",
+        "a": "Allah is One (112:1); everyone needs Him and He needs no one (112:2)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said Surat Al-Ikhlas is equal to a third of the Qur'an (Bukhari). Allah says: 'Say, He is Allah, the One' (Al-Ikhlas 112:1).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah do we say in every salah?",
+          "a": "Al-Fatihah",
+          "mins": 1,
+          "options": [
+            "Al-Fatihah",
+            "An-Nas",
+            "Al-Falaq"
+          ]
+        },
+        {
+          "q": "Which way do we read Arabic?",
+          "a": "Right to left",
+          "mins": 1,
+          "options": [
+            "Right to left",
+            "Left to right"
+          ]
+        },
+        {
+          "q": "What do we say before we recite?",
+          "a": "A'udhu billah and Bismillah",
+          "mins": 1,
+          "options": [
+            "A'udhu billah and Bismillah",
+            "Good morning",
+            "Nothing"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Ikhlas 112:1-2",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 112:1-2 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "قُلْ هُوَ ٱللَّهُ أَحَدٌ (١) ٱللَّهُ ٱلصَّمَدُ (٢)",
+            "source": "Surat Al-Ikhlas, 112:1-2"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "English helps us understand; only the Arabic is the Qur'an",
+            "Big idea: Allah is One"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "112:1",
+                "Say, \"He is Allah, [who is] One,"
+              ],
+              [
+                "112:2",
+                "Allah, the Eternal Refuge."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 112:1-2 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "We listen, mics muted",
+            "Mics on in turn: three friends repeat",
+            "Teacher fixes one sound",
+            "Everyone repeats softly together"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What does «أَحَدٌ» mean?",
+            "options": [
+              "One",
+              "Two",
+              "Many"
+            ],
+            "answer": 0,
+            "why": "أَحَدٌ means One: Allah is One."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Ikhlas 112:1-2 with the teacher.",
+          "a": "Pupils say 112:1-2 together without looking.",
+          "mins": 3,
+          "model": "I do: chunk 112:1-2. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says 112:1-2 to the teacher, one by one. Everyone else: say it softly 3 times looking, 3 times without.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 5,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Hold up one finger and say: 'Allah is One'.",
+          "a": "Pupil says it with one finger up.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Ikhlas 112:1 begins ...",
+          "a": "قُلْ هُوَ",
+          "mins": 1,
+          "options": [
+            "قُلْ هُوَ",
+            "قُلْ أَعُوذُ",
+            "ٱلْحَمْدُ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If someone asked you 'Who is Allah?', what would you say?",
+          "a": "Allah is One (112:1); everyone needs Him and He needs no one (112:2).",
+          "mins": 1
+        }
+      ],
+      "homework": "Recite Al-Ikhlas 112:1-2 to a parent three times a day and revise Al-Fatihah; tick the portal revision log each day.",
+      "send": "SEND: one ayah at a time, extra listening turns, finger tracking on the pupil PDF. EAL: key words shown with meanings. Stretch: lead the echo for a group.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "The school's Qaidah book (TO CONFIRM which edition), joining or tanween pages",
+        "Pupil PDF worksheet: Al-Ikhlas 112:1-2 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Single tree on hill",
+          "alt": "One tree on a hill",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 14,
+      "title": "Listen and check: Al-Ikhlas 1 to 2 and Al-Fatihah",
+      "duration": 30,
+      "bigQuestion": "When it is your turn to recite to the teacher, how should you sit and start?",
+      "objectives": [
+        "To understand how we recite to the teacher in turn and to say Al-Ikhlas 112:1 to 2 and Al-Fatihah clearly"
+      ],
+      "successCriteria": [
+        "All: say Al-Fatihah with the class",
+        "Most: say Al-Ikhlas 112:1 to 2 alone to the teacher",
+        "Some: say Al-Fatihah alone with no help"
+      ],
+      "smsc": "Social: waiting for our turn and listening to friends",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "isti'adhah (استعاذة)",
+          "def": "saying A'udhu billah before reciting"
+        },
+        {
+          "term": "ayah (آية)",
+          "def": "one sentence of the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When it is your turn to recite to the teacher, how should you sit and start?",
+        "a": "Sit nicely, camera on, say A'udhu billah and Bismillah, then recite clearly."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So when you recite the Qur'an, seek refuge in Allah from Shaytan, the expelled' (An-Nahl 16:98). That is why we say A'udhu billah first.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Al-Ikhlas 112:1: «قُلْ هُوَ ...» Which word comes next?",
+          "a": "ٱللَّهُ",
+          "mins": 1,
+          "options": [
+            "كُفُوًا",
+            "ٱللَّهُ",
+            "ٱلصَّمَدُ"
+          ]
+        },
+        {
+          "q": "What does أَحَدٌ mean?",
+          "a": "One",
+          "mins": 1,
+          "options": [
+            "One",
+            "Big",
+            "Kind"
+          ]
+        },
+        {
+          "q": "Which letter has one dot below?",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "ت",
+            "ن"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How we recite",
+          "bullets": [],
+          "note": "Bismillah. Show each star; children copy the sitting.",
+          "table": {
+            "head": [
+              "Star",
+              "What the teacher listens for"
+            ],
+            "rows": [
+              [
+                "Memory",
+                "I say every word in the right order"
+              ],
+              [
+                "Sounds",
+                "Each letter comes from the right place"
+              ],
+              [
+                "Harakat",
+                "Fathah, kasrah and dammah are clear"
+              ],
+              [
+                "Adab",
+                "I sit nicely, start with isti'adhah and Bismillah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Al-Fatihah together",
+          "bullets": [
+            "Say it with me",
+            "Slowly, one ayah at a time"
+          ],
+          "note": "Recite together. Listen for ح in ٱلْحَمْدُ and ع in ٱلْعَٰلَمِينَ.",
+          "quote": {
+            "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ (١) ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ (٢) ٱلرَّحْمَٰنِ ٱلرَّحِيمِ (٣) مَٰلِكِ يَوْمِ ٱلدِّينِ (٤)",
+            "source": "Surat Al-Fatihah, 1:1-4"
+          }
+        },
+        {
+          "heading": "Listening turns",
+          "bullets": [],
+          "note": "Names on screen. Each child unmutes for their turn.",
+          "cycle": [
+            "Teacher says your name",
+            "Mic on, A'udhu billah, Bismillah",
+            "Say Al-Ikhlas 1 to 2",
+            "Teacher gives a star",
+            "Mic off, next friend"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Before we recite, we say ...",
+            "options": [
+              "A'udhu billah and Bismillah",
+              "Goodbye",
+              "Nothing"
+            ],
+            "answer": 0,
+            "why": "We seek refuge in Allah first (16:98), then say Bismillah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Fatihah 1:1 to 4 together, then 1:5 to 7.",
+          "a": "The class says all seven ayat together.",
+          "mins": 3,
+          "model": "I do: I say each ayah slowly, then you say it back: بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ..."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Ikhlas 112:1 to 2 to the teacher, one by one. Everyone else says it softly three times.",
+          "a": "Each child in the group says 112:1 to 2; teacher gives stars on the rubric.",
+          "mins": 5,
+          "model": "The teacher shows one turn: A'udhu billah, Bismillah, قُلْ هُوَ ٱللَّهُ أَحَدٌ ٱللَّهُ ٱلصَّمَدُ."
+        },
+        {
+          "q": "Extend: say Al-Fatihah alone to a grown-up after the lesson.",
+          "a": "Said alone.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many ayat in Al-Fatihah?",
+          "a": "7",
+          "mins": 1,
+          "options": [
+            "7",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When it is your turn to recite to the teacher, how should you sit and start?",
+          "a": "Sit nicely, camera on, say A'udhu billah and Bismillah, then recite clearly.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Fatihah and Al-Ikhlas 112:1 to 2 to a grown-up each day; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: my recitation stars chart",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A star for good reciting",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 15,
+      "title": "Listen and check: all of Al-Ikhlas and An-Nas",
+      "duration": 30,
+      "bigQuestion": "If you learn a surah but never say it again, what might happen?",
+      "objectives": [
+        "To understand how to link the four ayat of Al-Ikhlas and keep An-Nas fresh by revising it"
+      ],
+      "successCriteria": [
+        "All: say Al-Ikhlas with the class",
+        "Most: say Al-Ikhlas alone to the teacher",
+        "Some: say An-Nas alone with no help"
+      ],
+      "smsc": "Spiritual: keeping the Qur'an close every day",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "saying again what we learned"
+        },
+        {
+          "term": "An-Nas (الناس)",
+          "def": "mankind, people"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you learn a surah but never say it again, what might happen?",
+        "a": "We might forget it. Saying it every day keeps it in our hearts."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Keep refreshing your knowledge of the Qur'an' (Bukhari and Muslim): we keep saying what we have learned.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Ikhlas 112:2 in your head. How does the next ayah begin?",
+          "a": "لَمْ يَلِدْ",
+          "mins": 1,
+          "options": [
+            "وَلَمْ يَكُن",
+            "قُلْ هُوَ",
+            "لَمْ يَلِدْ"
+          ]
+        },
+        {
+          "q": "Which surah says Allah has no child?",
+          "a": "Al-Ikhlas",
+          "mins": 1,
+          "options": [
+            "Al-Ikhlas",
+            "An-Nas",
+            "Al-Falaq"
+          ]
+        },
+        {
+          "q": "Which surah begins «قُلْ أَعُوذُ ...»?",
+          "a": "An-Nas",
+          "mins": 1,
+          "options": [
+            "Al-Falaq",
+            "Al-Ikhlas",
+            "An-Nas"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Ikhlas: all four ayat",
+          "bullets": [
+            "Say it together",
+            "Then link ayah to ayah"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "قُلْ هُوَ ٱللَّهُ أَحَدٌ (١) ٱللَّهُ ٱلصَّمَدُ (٢) لَمْ يَلِدْ وَلَمْ يُولَدْ (٣) وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ (٤)",
+            "source": "Surat Al-Ikhlas, 112:1-4"
+          }
+        },
+        {
+          "heading": "An-Nas: revise",
+          "bullets": [
+            "Say it together",
+            "Listen for the س sound"
+          ],
+          "note": "An-Nas was learned in the Autumn; children placed at induction may still be learning it.",
+          "quote": {
+            "text": "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ (١) مَلِكِ ٱلنَّاسِ (٢) إِلَٰهِ ٱلنَّاسِ (٣) مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ (٤) ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ (٥) مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ (٦)",
+            "source": "Surat An-Nas, 114:1-6"
+          }
+        },
+        {
+          "heading": "Listening turns",
+          "bullets": [],
+          "note": "Names on screen.",
+          "cycle": [
+            "Teacher says your name",
+            "Mic on, A'udhu billah, Bismillah",
+            "Say Al-Ikhlas",
+            "Teacher gives a star",
+            "Mic off, next friend"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "How many ayat in Al-Ikhlas?",
+            "options": [
+              "4",
+              "6",
+              "7"
+            ],
+            "answer": 0,
+            "why": "Al-Ikhlas has 4 ayat; An-Nas has 6; Al-Fatihah has 7."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Ikhlas together, then An-Nas together.",
+          "a": "Both surahs said together.",
+          "mins": 3,
+          "model": "I do: I say each ayah, you say it back, then we join them."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Ikhlas to the teacher, one by one. Everyone else says An-Nas softly three times.",
+          "a": "Stars given for each child in the group.",
+          "mins": 5,
+          "model": "The teacher shows one turn with Al-Ikhlas."
+        },
+        {
+          "q": "Extend: say An-Nas to a grown-up after the lesson.",
+          "a": "Said alone.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many ayat in An-Nas?",
+          "a": "6",
+          "mins": 1,
+          "options": [
+            "6",
+            "4",
+            "7"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you learn a surah but never say it again, what might happen?",
+          "a": "We might forget it. Saying it every day keeps it in our hearts.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Ikhlas and An-Nas to a grown-up each day; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: my recitation stars chart",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A star for good reciting",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 16,
+      "title": "More letter shapes: ع غ, ف ق, ك ل م, ه",
+      "duration": 30,
+      "bigQuestion": "Some letters change a lot when they join. Which letter do you think changes the most?",
+      "objectives": [
+        "To understand how ع غ, ف ق, ك ل م and ه change shape when they join"
+      ],
+      "successCriteria": [
+        "All: point to ع at the start, middle and end",
+        "Most: read ف and ق by their dots",
+        "Some: read a word with ه in the middle, like فَهِمَ"
+      ],
+      "smsc": "Spiritual: learning to read Allah's Book, one letter at a time",
+      "keywords": [
+        {
+          "term": "harf (حرف)",
+          "def": "a letter"
+        },
+        {
+          "term": "kalimah (كلمة)",
+          "def": "a word"
+        },
+        {
+          "term": "shakl (شكل)",
+          "def": "shape"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some letters change a lot when they join. Which letter do you think changes the most?",
+        "a": "ه changes a lot: ه هـ ـهـ ـه. ع also changes: ع عـ ـعـ ـع."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Read in the name of your Lord who created' (Al-'Alaq 96:1). Learning letters is the first step to reading the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which family is خ in?",
+          "a": "jeem family",
+          "mins": 1,
+          "options": [
+            "jeem family",
+            "seen family",
+            "saad family"
+          ]
+        },
+        {
+          "q": "Read: سَجَدَ",
+          "a": "sa-ja-da",
+          "mins": 1,
+          "options": [
+            "sa-ja-da",
+            "ja-sa-da",
+            "da-ja-sa"
+          ]
+        },
+        {
+          "q": "Which has dots: ط or ظ?",
+          "a": "ظ",
+          "mins": 1,
+          "options": [
+            "ظ",
+            "ط"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four groups",
+          "bullets": [],
+          "note": "Bismillah. Show each letter alone and at the start.",
+          "table": {
+            "head": [
+              "Letters",
+              "Start shape",
+              "Watch for"
+            ],
+            "rows": [
+              [
+                "ع غ",
+                "عـ غـ",
+                "a small open mouth"
+              ],
+              [
+                "ف ق",
+                "فـ قـ",
+                "ف one dot, ق two dots"
+              ],
+              [
+                "ك ل م",
+                "كـ لـ مـ",
+                "ك has a small mark inside"
+              ],
+              [
+                "ه",
+                "هـ",
+                "changes the most"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "ه in four shapes",
+          "bullets": [
+            "Alone: ه",
+            "Start: هـ",
+            "Middle: ـهـ",
+            "End: ـه"
+          ],
+          "note": "Children draw them in the air."
+        },
+        {
+          "heading": "Read with me",
+          "bullets": [],
+          "note": "Words: فَهِمَ (fahima), عَلِمَ ('alima), كَتَبَ (kataba).",
+          "cycle": [
+            "Teacher points to the word",
+            "We say it slowly together",
+            "Three friends read in turn",
+            "Teacher claps for good reading"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which letter has two dots on top?",
+            "options": [
+              "ق",
+              "ف",
+              "ع"
+            ],
+            "answer": 0,
+            "why": "ق has two dots; ف has one; ع has none."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read: عَلِمَ",
+          "a": "'a-li-ma",
+          "mins": 3,
+          "model": "I do: right to left: عَ ('a), لِ (li), مَ (ma): 'alima."
+        },
+        {
+          "q": "Which is the middle shape of ه?",
+          "a": "ـهـ",
+          "mins": 1,
+          "options": [
+            "ـهـ",
+            "هـ",
+            "ـه"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: match each letter to its start shape, then read فَهِمَ and كَتَبَ. The teacher listens to today's group.",
+          "a": "Letters matched; words read.",
+          "mins": 4,
+          "model": "The teacher matches ع to عـ."
+        },
+        {
+          "q": "Extend: write كَتَبَ on your whiteboard.",
+          "a": "كَتَبَ",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "ف has how many dots?",
+          "a": "one",
+          "mins": 1,
+          "options": [
+            "one",
+            "two",
+            "none"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Some letters change a lot when they join. Which letter do you think changes the most?",
+          "a": "ه changes a lot: ه هـ ـهـ ـه. ع also changes: ع عـ ـعـ ـع.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find ع and ه in your Qaidah and show a grown-up their shapes; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): joining pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: letter shapes to trace and read",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic letter ha calligraphy",
+          "alt": "The Arabic letter haa",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 17,
+      "title": "Surat Al-Masad 111:1-2: hear, understand and memorise",
+      "duration": 30,
+      "bigQuestion": "Abu Lahab was the Prophet's ﷺ own uncle, yet he hurt him and Islam. Does being family make someone good?",
+      "objectives": [
+        "To memorise Al-Masad 111:1-2 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: say 111:1 to 2 after the teacher",
+        "Most: say 111:1 to 2 alone",
+        "Some: say what 111:2 teaches about money"
+      ],
+      "smsc": "Moral: good deeds matter more than family name or money",
+      "keywords": [
+        {
+          "term": "Al-Masad (المسد)",
+          "def": "rope of palm fibre"
+        },
+        {
+          "term": "Abu Lahab (أبو لهب)",
+          "def": "an uncle of the Prophet ﷺ who fought Islam"
+        },
+        {
+          "term": "mal (مال)",
+          "def": "money, wealth"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Abu Lahab was the Prophet's ﷺ own uncle, yet he hurt him and Islam. Does being family make someone good?",
+        "a": "No: what matters is belief and good deeds. His money and work did not help him (111:2)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'May the hands of Abu Lahab be ruined, and ruined is he. His wealth will not avail him or that which he gained' (Al-Masad 111:1 to 2). Abu Lahab was an uncle of the Prophet ﷺ who opposed Islam.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Ikhlas 112:3 in your head. How does the next ayah begin?",
+          "a": "وَلَمْ يَكُن",
+          "mins": 1,
+          "options": [
+            "وَلَمْ يَكُن",
+            "ٱللَّهُ ٱلصَّمَدُ",
+            "قُلْ هُوَ"
+          ]
+        },
+        {
+          "q": "Which surah says Allah is One?",
+          "a": "Al-Ikhlas",
+          "mins": 1,
+          "options": [
+            "Al-Ikhlas",
+            "Al-Masad",
+            "An-Nas"
+          ]
+        },
+        {
+          "q": "ف has how many dots?",
+          "a": "one",
+          "mins": 1,
+          "options": [
+            "one",
+            "two",
+            "three"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Masad 111:1-2",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 111:1-2 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "تَبَّتْ يَدَآ أَبِى لَهَبٍۢ وَتَبَّ (١) مَآ أَغْنَىٰ عَنْهُ مَالُهُۥ وَمَا كَسَبَ (٢)",
+            "source": "Surat Al-Masad, 111:1-2"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "English helps us understand; only the Arabic is the Qur'an",
+            "Big idea: money cannot save someone who fights the truth"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "111:1",
+                "May the hands of Abu Lahab be ruined, and ruined is he."
+              ],
+              [
+                "111:2",
+                "His wealth will not avail him or that which he gained."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 111:1-2 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "We listen, mics muted",
+            "Mics on in turn: three friends repeat",
+            "Teacher fixes one sound",
+            "Everyone repeats softly together"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Who is this surah about?",
+            "options": [
+              "Abu Lahab",
+              "Abu Bakr",
+              "Bilal"
+            ],
+            "answer": 0,
+            "why": "111:1 names Abu Lahab."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Masad 111:1-2 with the teacher.",
+          "a": "Pupils say 111:1-2 together without looking.",
+          "mins": 3,
+          "model": "I do: chunk 111:1-2. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says 111:1-2 to the teacher, one by one. Everyone else: say it softly 3 times looking, 3 times without.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 5,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Tell a friend one thing that really helps us: our money, or our good deeds?",
+          "a": "Our good deeds and belief.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Masad 111:1: «تَبَّتْ يَدَآ ...» Which word comes next?",
+          "a": "أَبِى",
+          "mins": 1,
+          "options": [
+            "مَآ",
+            "وَتَبَّ",
+            "أَبِى"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Abu Lahab was the Prophet's ﷺ own uncle, yet he hurt him and Islam. Does being family make someone good?",
+          "a": "No: what matters is belief and good deeds. His money and work did not help him (111:2).",
+          "mins": 1
+        }
+      ],
+      "homework": "Recite Al-Masad 111:1-2 to a parent three times a day and revise Al-Ikhlas and Al-Falaq; tick the portal revision log each day.",
+      "send": "SEND: one ayah at a time, extra listening turns, finger tracking on the pupil PDF. EAL: key words shown with meanings. Stretch: lead the echo for a group.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "The school's Qaidah book (TO CONFIRM which edition), joining or tanween pages",
+        "Pupil PDF worksheet: Al-Masad 111:1-2 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Palm fibre rope",
+          "alt": "A rope made of palm fibre (masad)",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 18,
+      "title": "Listen and check: Al-Masad 1 to 2 and Al-Falaq",
+      "duration": 30,
+      "bigQuestion": "Al-Falaq asks Allah to protect us. From what things do you ask Allah to protect you?",
+      "objectives": [
+        "To understand how to say Al-Masad 111:1 to 2 clearly and keep Al-Falaq by revising it"
+      ],
+      "successCriteria": [
+        "All: say Al-Falaq with the class",
+        "Most: say Al-Masad 111:1 to 2 alone",
+        "Some: say Al-Falaq alone with no help"
+      ],
+      "smsc": "Spiritual: asking Allah for protection",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "Al-Falaq (الفلق)",
+          "def": "daybreak"
+        },
+        {
+          "term": "a'udhu (أعوذ)",
+          "def": "I seek protection"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Falaq asks Allah to protect us. From what things do you ask Allah to protect you?",
+        "a": "From the evil of what He created, the dark night, and envy (113:2 to 5)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Say, I seek refuge in the Lord of daybreak' (Al-Falaq 113:1). The Prophet ﷺ recited Al-Falaq and An-Nas for protection (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Masad 111:1 in your head. How does the next ayah begin?",
+          "a": "مَآ أَغْنَىٰ",
+          "mins": 1,
+          "options": [
+            "وَٱمْرَأَتُهُۥ حَمَّالَةَ",
+            "فِى جِيدِهَا",
+            "مَآ أَغْنَىٰ"
+          ]
+        },
+        {
+          "q": "Al-Masad is about ...",
+          "a": "Abu Lahab",
+          "mins": 1,
+          "options": [
+            "Abu Lahab",
+            "an elephant",
+            "the night"
+          ]
+        },
+        {
+          "q": "Which surah begins «قُلْ أَعُوذُ ...»?",
+          "a": "Al-Falaq",
+          "mins": 1,
+          "options": [
+            "Al-Ikhlas",
+            "An-Nas",
+            "Al-Falaq"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Falaq: revise",
+          "bullets": [
+            "Say it together",
+            "Listen for ق at the end of ٱلْفَلَقِ"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ (١) مِن شَرِّ مَا خَلَقَ (٢) وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ (٣) وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ (٤) وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ (٥)",
+            "source": "Surat Al-Falaq, 113:1-5"
+          }
+        },
+        {
+          "heading": "How we recite",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Star",
+              "What the teacher listens for"
+            ],
+            "rows": [
+              [
+                "Memory",
+                "I say every word in the right order"
+              ],
+              [
+                "Sounds",
+                "Each letter comes from the right place"
+              ],
+              [
+                "Harakat",
+                "Fathah, kasrah and dammah are clear"
+              ],
+              [
+                "Adab",
+                "I sit nicely, start with isti'adhah and Bismillah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listening turns",
+          "bullets": [],
+          "note": "Names on screen.",
+          "cycle": [
+            "Teacher says your name",
+            "Mic on, A'udhu billah, Bismillah",
+            "Say Al-Masad 1 to 2",
+            "Teacher gives a star",
+            "Mic off, next friend"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Al-Falaq begins ...",
+            "options": [
+              "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
+              "قُلْ هُوَ ٱللَّهُ أَحَدٌ",
+              "تَبَّتْ يَدَآ"
+            ],
+            "answer": 0,
+            "why": "Al-Falaq 113:1. The others are Al-Ikhlas and Al-Masad."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Falaq together, then Al-Masad 111:1 to 2.",
+          "a": "Both said together.",
+          "mins": 3,
+          "model": "I do: I say each ayah, you say it back."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Masad 111:1 to 2 to the teacher, one by one. Everyone else says Al-Falaq softly three times.",
+          "a": "Stars given for each child in the group.",
+          "mins": 5,
+          "model": "The teacher shows one turn."
+        },
+        {
+          "q": "Extend: say Al-Falaq to a grown-up before bed.",
+          "a": "Said alone.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many ayat in Al-Falaq?",
+          "a": "5",
+          "mins": 1,
+          "options": [
+            "5",
+            "6",
+            "4"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Falaq asks Allah to protect us. From what things do you ask Allah to protect you?",
+          "a": "From the evil of what He created, the dark night, and envy (113:2 to 5).",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Falaq before bed and Al-Masad 111:1 to 2 each day; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: my recitation stars chart",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Sunrise dawn over desert horizon",
+          "alt": "Daybreak (falaq)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A star for good reciting",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 19,
+      "title": "Surat Al-Masad 111:3-5: hear, understand and memorise",
+      "duration": 30,
+      "bigQuestion": "111:5 talks about a rope of palm fibre. Have you ever seen a rope made from plants?",
+      "objectives": [
+        "To memorise Al-Masad 111:3-5 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: say 111:3 to 5 after the teacher",
+        "Most: say all of Al-Masad alone",
+        "Some: say what masad means"
+      ],
+      "smsc": "Moral: never hurt others; be kind to those who bring good",
+      "keywords": [
+        {
+          "term": "nar (نار)",
+          "def": "fire"
+        },
+        {
+          "term": "habl (حبل)",
+          "def": "rope"
+        },
+        {
+          "term": "masad (مسد)",
+          "def": "palm fibre"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "111:5 talks about a rope of palm fibre. Have you ever seen a rope made from plants?",
+        "a": "Palm fibre is twisted into rough rope (masad); the surah takes its name from it."
+      },
+      "islamicLink": {
+        "text": "Allah says Abu Lahab will burn in a fire of flame, and his wife, who helped him hurt the Prophet ﷺ, will have a rope of palm fibre around her neck (Al-Masad 111:3 to 5).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Masad 111:1 in your head. How does the next ayah begin?",
+          "a": "مَآ أَغْنَىٰ",
+          "mins": 1,
+          "options": [
+            "وَٱمْرَأَتُهُۥ حَمَّالَةَ",
+            "فِى جِيدِهَا",
+            "مَآ أَغْنَىٰ"
+          ]
+        },
+        {
+          "q": "Al-Masad means ...",
+          "a": "rope of palm fibre",
+          "mins": 1,
+          "options": [
+            "rope of palm fibre",
+            "the night",
+            "daybreak"
+          ]
+        },
+        {
+          "q": "Which is a shy letter?",
+          "a": "ز",
+          "mins": 1,
+          "options": [
+            "ز",
+            "ج",
+            "ك"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Masad 111:3-5",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 111:3-5 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "سَيَصْلَىٰ نَارًۭا ذَاتَ لَهَبٍۢ (٣) وَٱمْرَأَتُهُۥ حَمَّالَةَ ٱلْحَطَبِ (٤) فِى جِيدِهَا حَبْلٌۭ مِّن مَّسَدٍۭ (٥)",
+            "source": "Surat Al-Masad, 111:3-5"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "English helps us understand; only the Arabic is the Qur'an",
+            "Big idea: hurting Allah's Messenger ﷺ brings a bad end"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "111:3",
+                "He will [enter to] burn in a Fire of [blazing] flame"
+              ],
+              [
+                "111:4",
+                "And his wife [as well] - the carrier of firewood."
+              ],
+              [
+                "111:5",
+                "Around her neck is a rope of [twisted] fiber."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 111:3-5 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "We listen, mics muted",
+            "Mics on in turn: three friends repeat",
+            "Teacher fixes one sound",
+            "Everyone repeats softly together"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What is masad?",
+            "options": [
+              "A rope of palm fibre",
+              "A sword",
+              "A camel"
+            ],
+            "answer": 0,
+            "why": "مَسَد is palm-fibre rope (111:5)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Masad 111:3-5 with the teacher.",
+          "a": "Pupils say 111:3-5 together without looking.",
+          "mins": 3,
+          "model": "I do: chunk 111:3-5. Ayah 3: 3 times looking, 3 times without looking. Then ayah 4 the same way. Then link: recite 3 and 4 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says 111:3-5 to the teacher, one by one. Everyone else: say it softly 3 times looking, 3 times without.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 5,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Say all of Al-Masad to a friend.",
+          "a": "All five ayat.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Masad 111:4: «وَٱمْرَأَتُهُۥ ...» Which word comes next?",
+          "a": "حَمَّالَةَ",
+          "mins": 1,
+          "options": [
+            "أَغْنَىٰ",
+            "حَبْلٌۭ",
+            "حَمَّالَةَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 111:5 talks about a rope of palm fibre. Have you ever seen a rope made from plants?",
+          "a": "Palm fibre is twisted into rough rope (masad); the surah takes its name from it.",
+          "mins": 1
+        }
+      ],
+      "homework": "Recite Al-Masad 111:3-5 to a parent three times a day and revise Al-Masad 111:1 to 2 and Al-Ikhlas; tick the portal revision log each day.",
+      "send": "SEND: one ayah at a time, extra listening turns, finger tracking on the pupil PDF. EAL: key words shown with meanings. Stretch: lead the echo for a group.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "The school's Qaidah book (TO CONFIRM which edition), joining or tanween pages",
+        "Pupil PDF worksheet: Al-Masad 111:3-5 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Palm fibre rope",
+          "alt": "A rope of palm fibre",
+          "for": "hook"
+        },
+        {
+          "find": "Date palm trees",
+          "alt": "Date palm trees",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 20,
+      "title": "Listen and check: all of Al-Masad; letter check خ د",
+      "duration": 30,
+      "bigQuestion": "خ and د look different but are often mixed up when reading fast. Why is it important to read every letter right?",
+      "objectives": [
+        "To understand how to link all five ayat of Al-Masad and read the letters خ and د correctly"
+      ],
+      "successCriteria": [
+        "All: say Al-Masad with the class",
+        "Most: say Al-Masad alone to the teacher",
+        "Some: read خ and د in joined words with no help"
+      ],
+      "smsc": "Spiritual: care with every letter of the Qur'an",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "kha' (خاء)",
+          "def": "the letter خ"
+        },
+        {
+          "term": "dal (دال)",
+          "def": "the letter د"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "خ and د look different but are often mixed up when reading fast. Why is it important to read every letter right?",
+        "a": "One wrong letter can change a word in the Qur'an, so we take care with each one."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation (tartil)' (Al-Muzzammil 73:4): slowly and carefully.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Masad 111:3 in your head. How does the next ayah begin?",
+          "a": "وَٱمْرَأَتُهُۥ حَمَّالَةَ",
+          "mins": 1,
+          "options": [
+            "فِى جِيدِهَا",
+            "وَٱمْرَأَتُهُۥ حَمَّالَةَ",
+            "مَآ أَغْنَىٰ"
+          ]
+        },
+        {
+          "q": "Which letter is shy (no join after)?",
+          "a": "د",
+          "mins": 1,
+          "options": [
+            "د",
+            "خ",
+            "ح"
+          ]
+        },
+        {
+          "q": "How many ayat are in Surat Al-Masad (سورة المسد)?",
+          "a": "5",
+          "mins": 1,
+          "options": [
+            "5",
+            "4",
+            "6"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Masad: all five ayat",
+          "bullets": [
+            "Say it together",
+            "Link ayah to ayah"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "تَبَّتْ يَدَآ أَبِى لَهَبٍۢ وَتَبَّ (١) مَآ أَغْنَىٰ عَنْهُ مَالُهُۥ وَمَا كَسَبَ (٢) سَيَصْلَىٰ نَارًۭا ذَاتَ لَهَبٍۢ (٣) وَٱمْرَأَتُهُۥ حَمَّالَةَ ٱلْحَطَبِ (٤) فِى جِيدِهَا حَبْلٌۭ مِّن مَّسَدٍۭ (٥)",
+            "source": "Surat Al-Masad, 111:1-5"
+          }
+        },
+        {
+          "heading": "Letter check: خ and د",
+          "bullets": [],
+          "note": "Read each; the child says the letter's name.",
+          "table": {
+            "head": [
+              "Word",
+              "Say",
+              "Letter to watch"
+            ],
+            "rows": [
+              [
+                "خَلَقَ",
+                "kha-la-qa",
+                "خ: one dot above, joins"
+              ],
+              [
+                "دَرَسَ",
+                "da-ra-sa",
+                "د: no dot, does not join after"
+              ],
+              [
+                "خَدَعَ",
+                "kha-da-'a",
+                "خ then د"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listening turns",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher says your name",
+            "Mic on, A'udhu billah, Bismillah",
+            "Say Al-Masad",
+            "Read one خ word",
+            "Teacher gives a star"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which letter has one dot above and joins?",
+            "options": [
+              "خ",
+              "د",
+              "ح"
+            ],
+            "answer": 0,
+            "why": "خ has one dot above; ح has none; د has none and does not join after."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Masad together, then read خَدَعَ.",
+          "a": "Surah said together; kha-da-'a read.",
+          "mins": 3,
+          "model": "I do: I say each ayah of Al-Masad, you say it back. Then: خَ (kha), دَ (da), gap, عَ ('a)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Masad and reads one word with خ or د. Everyone else says Al-Masad softly three times.",
+          "a": "Stars and a letter check for each child in the group.",
+          "mins": 5,
+          "model": "The teacher shows one turn."
+        },
+        {
+          "q": "Extend: read three words with د from your Qaidah.",
+          "a": "Three words read.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many ayat in Al-Masad?",
+          "a": "5",
+          "mins": 1,
+          "options": [
+            "5",
+            "4",
+            "6"
+          ]
+        },
+        {
+          "q": "Back to our ponder: خ and د look different but are often mixed up when reading fast. Why is it important to read every letter right?",
+          "a": "One wrong letter can change a word in the Qur'an, so we take care with each one.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Masad to a grown-up each day; read three د words; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "The school's Qaidah book (TO CONFIRM which edition)",
+        "Pupil PDF worksheet: my recitation stars chart",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A star for good reciting",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 21,
+      "title": "Al-Masad: saying it smoothly and its story",
+      "duration": 30,
+      "bigQuestion": "Who was Abu Lahab, and why did Allah send a surah about him?",
+      "objectives": [
+        "To understand the story of Al-Masad at Year 1 level and say the whole surah smoothly"
+      ],
+      "successCriteria": [
+        "All: say Al-Masad with the class",
+        "Most: say Al-Masad smoothly alone",
+        "Some: tell the story of the surah in three sentences"
+      ],
+      "smsc": "Moral: kindness and good deeds matter more than money",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "Abu Lahab (أبو لهب)",
+          "def": "an uncle of the Prophet ﷺ who fought Islam"
+        },
+        {
+          "term": "mal (مال)",
+          "def": "money, wealth"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Who was Abu Lahab, and why did Allah send a surah about him?",
+        "a": "An uncle of the Prophet ﷺ who fought against Islam; the surah tells his end and teaches us that good deeds, not family or money, save us."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'His wealth will not avail him or that which he gained' (Al-Masad 111:2).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Masad 111:2 in your head. How does the next ayah begin?",
+          "a": "سَيَصْلَىٰ نَارًۭا",
+          "mins": 1,
+          "options": [
+            "تَبَّتْ يَدَآ",
+            "سَيَصْلَىٰ نَارًۭا",
+            "وَٱمْرَأَتُهُۥ حَمَّالَةَ"
+          ]
+        },
+        {
+          "q": "What is masad?",
+          "a": "rope of palm fibre",
+          "mins": 1,
+          "options": [
+            "rope of palm fibre",
+            "a fire",
+            "a house"
+          ]
+        },
+        {
+          "q": "Read: «كَتَبَ»",
+          "a": "ka-ta-ba",
+          "mins": 1,
+          "options": [
+            "ka-ta-ba",
+            "ba-ta-ka",
+            "ki-ti-bi"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The story",
+          "bullets": [],
+          "note": "Bismillah. Simple and calm; no pictures of people.",
+          "timeline": [
+            {
+              "label": "1",
+              "text": "The Prophet ﷺ called people to Allah"
+            },
+            {
+              "label": "2",
+              "text": "His uncle Abu Lahab was unkind and said no"
+            },
+            {
+              "label": "3",
+              "text": "Allah sent Al-Masad"
+            },
+            {
+              "label": "4",
+              "text": "His money could not help him"
+            }
+          ]
+        },
+        {
+          "heading": "Say it smoothly",
+          "bullets": [
+            "Say it together, slowly",
+            "No stopping inside an ayah"
+          ],
+          "note": "",
+          "quote": {
+            "text": "تَبَّتْ يَدَآ أَبِى لَهَبٍۢ وَتَبَّ (١) مَآ أَغْنَىٰ عَنْهُ مَالُهُۥ وَمَا كَسَبَ (٢) سَيَصْلَىٰ نَارًۭا ذَاتَ لَهَبٍۢ (٣) وَٱمْرَأَتُهُۥ حَمَّالَةَ ٱلْحَطَبِ (٤) فِى جِيدِهَا حَبْلٌۭ مِّن مَّسَدٍۭ (٥)",
+            "source": "Surat Al-Masad, 111:1-5"
+          }
+        },
+        {
+          "heading": "Listening turns",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher says your name",
+            "Mic on, A'udhu billah, Bismillah",
+            "Say Al-Masad smoothly",
+            "Teacher gives a star",
+            "Mic off, next friend"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What did Abu Lahab's money do for him?",
+            "options": [
+              "It did not help him",
+              "It saved him",
+              "It made him kind"
+            ],
+            "answer": 0,
+            "why": "111:2: his wealth did not avail him."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Tell the story in three sentences with 'First', 'Then', 'In the end'.",
+          "a": "First, the Prophet ﷺ called people to Allah. Then Abu Lahab was unkind. In the end, his money could not help him.",
+          "mins": 3,
+          "model": "I do: 'First, the Prophet ﷺ called people to Allah.' Now you say the next one."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Masad smoothly to the teacher. Everyone else says it softly three times.",
+          "a": "Stars for each child in the group.",
+          "mins": 5,
+          "model": "The teacher shows one smooth turn."
+        },
+        {
+          "q": "Extend: tell a grown-up the story of Al-Masad.",
+          "a": "Story told in three sentences.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Abu Lahab was the Prophet's ﷺ ...",
+          "a": "uncle",
+          "mins": 1,
+          "options": [
+            "uncle",
+            "friend",
+            "brother"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Who was Abu Lahab, and why did Allah send a surah about him?",
+          "a": "An uncle of the Prophet ﷺ who fought against Islam; the surah tells his end and teaches us that good deeds, not family or money, save us.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Masad and tell its story to a grown-up; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: story frame 'First, Then, In the end'",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Palm fibre rope",
+          "alt": "A rope of palm fibre",
+          "for": "hook"
+        },
+        {
+          "find": "Coins pile",
+          "alt": "Money that could not help",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
+      "n": 22,
+      "title": "Sign-off: Al-Ikhlas and Al-Masad",
+      "duration": 30,
+      "bigQuestion": "Ramadan is coming soon and there is a long break. How will you keep your surahs?",
+      "objectives": [
+        "To show that Al-Ikhlas and Al-Masad are memorised and that we can read joined words"
+      ],
+      "successCriteria": [
+        "All: say Al-Ikhlas alone",
+        "Most: say Al-Masad alone",
+        "Some: read five joined words with no help"
+      ],
+      "smsc": "Spiritual: keeping the Qur'an through Ramadan",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "saying again what we learned"
+        },
+        {
+          "term": "kalimah (كلمة)",
+          "def": "a word"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Ramadan is coming soon and there is a long break. How will you keep your surahs?",
+        "a": "Say them every day with a grown-up and tick the log."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Keep refreshing your knowledge of the Qur'an' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Ikhlas 112:1 in your head. How does the next ayah begin?",
+          "a": "ٱللَّهُ ٱلصَّمَدُ",
+          "mins": 1,
+          "options": [
+            "لَمْ يَلِدْ",
+            "وَلَمْ يَكُن",
+            "ٱللَّهُ ٱلصَّمَدُ"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Masad?",
+          "a": "5",
+          "mins": 1,
+          "options": [
+            "5",
+            "4",
+            "7"
+          ]
+        },
+        {
+          "q": "Read: «عَلِمَ»",
+          "a": "'a-li-ma",
+          "mins": 1,
+          "options": [
+            "'a-li-ma",
+            "ma-li-'a",
+            "'a-la-ma"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How we recite",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Star",
+              "What the teacher listens for"
+            ],
+            "rows": [
+              [
+                "Memory",
+                "I say every word in the right order"
+              ],
+              [
+                "Sounds",
+                "Each letter comes from the right place"
+              ],
+              [
+                "Harakat",
+                "Fathah, kasrah and dammah are clear"
+              ],
+              [
+                "Adab",
+                "I sit nicely, start with isti'adhah and Bismillah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sign-off",
+          "bullets": [
+            "Say Al-Ikhlas",
+            "Say Al-Masad",
+            "Read five joined words"
+          ],
+          "note": "One by one; children signed off in this week's turns keep their stars. Others practise softly."
+        },
+        {
+          "heading": "Break plan",
+          "bullets": [
+            "Al-Fatihah every day",
+            "Two surahs a day: An-Nas to Al-Masad",
+            "Tick the log with a grown-up"
+          ],
+          "note": "Children colour their plan on the pupil PDF."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which surah comes before Al-Ikhlas in the mushaf?",
+            "options": [
+              "Al-Masad",
+              "Al-Falaq",
+              "An-Nas"
+            ],
+            "answer": 0,
+            "why": "Order at the end of the mushaf: Al-Masad (111), Al-Ikhlas (112), Al-Falaq (113), An-Nas (114)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Ikhlas then Al-Masad together.",
+          "a": "Both said together.",
+          "mins": 3,
+          "model": "I do: I say each ayah of both surahs, you say it back."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Sign-off turns: today's group says both surahs and reads five words to the teacher. Everyone else colours their break plan.",
+          "a": "Signed-off stars recorded in the portal.",
+          "mins": 5,
+          "model": "The teacher shows one sign-off turn."
+        },
+        {
+          "q": "Extend: say both surahs to a grown-up tonight.",
+          "a": "Said alone.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Say a little every day keeps the Qur'an ...",
+          "a": "in our hearts",
+          "mins": 1,
+          "options": [
+            "in our hearts",
+            "on the shelf",
+            "far away"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Ramadan is coming soon and there is a long break. How will you keep your surahs?",
+          "a": "Say them every day with a grown-up and tick the log.",
+          "mins": 1
+        }
+      ],
+      "homework": "Follow your break plan: Al-Fatihah and two surahs a day; tick the log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: my break plan to colour",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Crescent moon dusk",
+          "alt": "The crescent moon",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }

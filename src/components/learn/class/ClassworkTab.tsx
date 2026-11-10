@@ -14,7 +14,8 @@ import { ReviewQueue } from "@/components/learn/classwork/ReviewQueue";
 import { Tabs } from "@/components/learn/Tabs";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { ActionsMenu, askConfirm, type MenuAction } from "@/components/learn/kit";
+import { btn } from "@/components/learn/ui";
 type Topic = { id: string; name: string; position: number };
 type Hw = Homework & { topic_id: string | null; status?: string; kind?: string | null; assigned_child_ids?: string[] | null };
 type Mat = { id: string; title: string; kind: "material" | "question"; body: string | null; resources: unknown; topic_id: string | null; allow_comments: boolean; created_at: string };
@@ -145,7 +146,7 @@ function MaterialForm({ classId, kind, topics, defaultTopic, onDone, onCancel }:
         <button type="button" onClick={onCancel} className="rounded-lg px-4 py-2 text-sm font-medium text-ink/70 hover:bg-cream">
           Cancel
         </button>
-        <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-5 py-2 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-60">
+        <button type="button" onClick={save} disabled={busy} className={btn("primary")}>
           {busy ? "Working…" : "Post"}
         </button>
       </div>
@@ -157,72 +158,20 @@ type CreateKind = HomeworkKind | "material" | "question" | "topic";
 
 /** Google Classroom's "+ Create": assignment, quiz, question, material, then announcement and topic. */
 function CreateMenu({ onPick, classHref }: { onPick: (k: CreateKind) => void; classHref: (tab: string) => string }) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const button = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    if (!open) return;
-    const close = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    const esc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
-        button.current?.focus();
-      }
-    };
-    document.addEventListener("mousedown", close);
-    document.addEventListener("keydown", esc);
-    ref.current?.querySelector<HTMLElement>('[role="menuitem"]')?.focus();
-    return () => {
-      document.removeEventListener("mousedown", close);
-      document.removeEventListener("keydown", esc);
-    };
-  }, [open]);
-  const onMenuKey = (e: React.KeyboardEvent) => {
-    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
-    e.preventDefault();
-    const items = Array.from(ref.current?.querySelectorAll<HTMLElement>('[role="menuitem"]') || []);
-    const i = items.indexOf(document.activeElement as HTMLElement);
-    items[(i + (e.key === "ArrowDown" ? 1 : -1) + items.length) % items.length]?.focus();
-  };
-  const item = "flex w-full items-start gap-3 px-4 py-2 text-left text-sm text-ink hover:bg-cream focus:bg-cream focus:outline-none";
-  const pick = (k: CreateKind) => {
-    setOpen(false);
-    onPick(k);
-  };
   const entries: { k: CreateKind; label: string; hint: string }[] = [
     { k: "assignment", label: "Assignment", hint: "Work to hand in, marked by you" },
     { k: "quiz", label: "Quiz assignment", hint: "Questions with a mark out of" },
     { k: "question", label: "Question", hint: "One question; pupils answer in comments" },
     { k: "material", label: "Material", hint: "Notes, files and links to read" },
   ];
-  return (
-    <div ref={ref} className="relative">
-      <button ref={button} type="button" aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((o) => !o)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white hover:bg-gold-900">
-        + Create
-      </button>
-      {open && (
-        <div role="menu" aria-label="Create" onKeyDown={onMenuKey} className="absolute right-0 z-20 mt-2 w-64 overflow-hidden rounded-xl border border-gold-light bg-white py-1 shadow-lg">
-          {entries.map((e) => (
-            <button key={e.k} role="menuitem" type="button" className={item} onClick={() => pick(e.k)}>
-              <span className="min-w-0">
-                <span className="block font-medium">{e.label}</span>
-                <span className="block text-xs text-ink/65">{e.hint}</span>
-              </span>
-            </button>
-          ))}
-          <div className="my-1 border-t border-gold-light/70" />
-          <Link role="menuitem" href={classHref("stream")} className={item}>
-            Announcement
-          </Link>
-          <button role="menuitem" type="button" className={item} onClick={() => pick("topic")}>
-            Topic
-          </button>
-        </div>
-      )}
-    </div>
-  );
+  const items: MenuAction[] = [
+    { section: "Classwork", label: "" },
+    ...entries.map((e) => ({ label: e.label, hint: e.hint, onSelect: () => onPick(e.k) })),
+    { section: "Also", label: "" },
+    { label: "Announcement", href: classHref("stream") },
+    { label: "Topic", onSelect: () => onPick("topic") },
+  ];
+  return <ActionsMenu items={items} label="Create" trigger="primary" menuClassName="w-64" />;
 }
 
 /**
@@ -439,7 +388,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
       {newTopic !== null && (
         <div className="flex flex-wrap gap-2 rounded-2xl border border-gold-light bg-white p-4">
           <input type="text" value={newTopic} onChange={(e) => setNewTopic(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addTopic()} placeholder="Topic name, e.g. Week 3: Tajweed" aria-label="Topic name" maxLength={80} className="min-w-0 flex-1 rounded-lg border border-gold-light/70 px-3 py-2 text-sm" />
-          <button type="button" onClick={addTopic} disabled={!newTopic.trim()} className="rounded-lg bg-gold-700 hover:bg-gold-900 px-4 py-2 text-sm font-medium text-white disabled:opacity-50">
+          <button type="button" onClick={addTopic} disabled={!newTopic.trim()} className={btn("primary")}>
             Add topic
           </button>
           <button type="button" onClick={() => setNewTopic(null)} className="rounded-lg px-3 py-2 text-sm text-ink/70 hover:bg-cream">

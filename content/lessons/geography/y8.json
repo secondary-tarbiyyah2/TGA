@@ -2,92 +2,252 @@
   "subject": "Geography",
   "year": "y8",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "Adapted from school Geography lesson plans in Drive: 'Geo - Y8 - 4.1 What Causes Waves and Tides', 'Geo - Y8 - 4.3 Which Landforms Do the Waves Create?', 'Geo - Y8 - 4.5 Your holiday in Newquay'; National Curriculum KS3; AQA GCSE coasts progression",
+  "source": "Adapted from school Geography lesson plans in Drive: 'Geo - Y8 - 4.1 What Causes Waves and Tides', 'Geo - Y8 - 4.3 Which Landforms Do the Waves Create?', 'Geo - Y8 - 4.5 Your holiday in Newquay'; National Curriculum KS3; AQA GCSE coasts progression | Spring 1 2027 (lessons 1, 3, 4, 6, 7 upgraded; 3 is now erosion, transport and longshore drift, 4 the landforms): Tarbiyyah Geography Curriculum Intent; Oxford Geog.2 chapter 4 (Coasts); Hodder Progress in Geography KS3 unit 9",
   "lessons": [
     {
-      "unit": "Unit 4: Coasts - waves and landforms",
+      "unit": "Spring 1: Coasts",
       "n": 1,
       "title": "What causes waves and tides? (4.1)",
-      "duration": 50,
+      "bigQuestion": "Why is the sea never still?",
       "objectives": [
-        "Explain how wind creates waves and what fetch is",
-        "Compare constructive and destructive waves",
-        "Explain what causes tides and the difference between spring and neap tides"
+        "To understand how wind makes waves and how the Moon causes tides"
       ],
+      "successCriteria": [
+        "All: say how waves form and name the swash and backwash",
+        "Most: compare constructive and destructive waves",
+        "Some: explain spring and neap tides"
+      ],
+      "crossCurricular": "Science: gravity and the Moon",
+      "smsc": "Spiritual: the sea and Moon as signs of Allah",
       "keywords": [
-        { "term": "fetch", "def": "the distance of open water over which the wind blows" },
-        { "term": "swash", "def": "the forward movement of water up a beach after a wave breaks" },
-        { "term": "backwash", "def": "the movement of water back down the beach" },
-        { "term": "tide", "def": "the regular rise and fall of sea level caused mainly by the Moon" },
-        { "term": "storm surge", "def": "a rise in sea level caused by low pressure and strong winds" }
+        {
+          "term": "fetch",
+          "def": "the distance of open water the wind blows over"
+        },
+        {
+          "term": "swash",
+          "def": "water rushing up the beach"
+        },
+        {
+          "term": "backwash",
+          "def": "water flowing back down the beach"
+        },
+        {
+          "term": "tide",
+          "def": "the regular rise and fall of the sea"
+        },
+        {
+          "term": "constructive wave",
+          "def": "a gentle wave that builds up beaches"
+        }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why are waves at a beach in Cornwall often bigger than those on a lake?"
+      },
+      "islamicLink": {
+        "text": "Allah says it is He who made the sea subject to you, so that you eat fresh meat from it and sail through it (an-Nahl 16:14). The Moon that moves the tides is also the Moon by which Muslims count the months (Yunus 10:5).",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Name the layers of the Earth from the surface down.",
-        "What is the difference between a river's source and its mouth?",
-        "What do you think causes waves? Write your idea in one sentence."
+        {
+          "q": "A glacier moves because of:",
+          "a": "Gravity",
+          "mins": 1,
+          "options": [
+            "Gravity",
+            "Wind"
+          ]
+        },
+        {
+          "q": "Which process scrapes rock like sandpaper?",
+          "a": "Abrasion",
+          "mins": 1,
+          "options": [
+            "Abrasion",
+            "Plucking"
+          ]
+        },
+        {
+          "q": "Water expands when it:",
+          "a": "Freezes",
+          "mins": 1,
+          "options": [
+            "Freezes",
+            "Boils"
+          ]
+        },
+        {
+          "q": "Name the ocean to the west of Cornwall.",
+          "a": "The Atlantic Ocean",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "How waves form",
           "bullets": [
-            "Wind blows across the surface of the sea.",
-            "Friction pushes the water into waves.",
-            "The wave breaks when it reaches shallow water."
+            "Wind blows over the sea",
+            "Friction makes ripples, then waves",
+            "Stronger, longer wind: bigger waves"
           ],
-          "note": "Start with the tray of water demonstration from the school plan: blow across the water and watch ripples form, then tilt the tray to show how water moves onto the land. Ask: what happens as you blow harder? Note the model's limits; real waves have far more energy. The water itself moves in circles; only the energy travels forward."
+          "note": "Blow across a bowl of water to show it."
         },
         {
-          "heading": "Fetch: why some waves are bigger",
+          "heading": "Fetch",
           "bullets": [
-            "Fetch is the distance wind blows over open water.",
-            "Stronger wind and longer fetch make bigger waves.",
-            "The UK's south-west coast faces the Atlantic and gets big waves."
+            "Long fetch: big waves",
+            "Cornwall faces thousands of km of Atlantic",
+            "A lake has a short fetch"
           ],
-          "note": "Show a map: the Atlantic fetch is thousands of kilometres, while the North Sea fetch is shorter. This is why surfers go to Cornwall and Devon. Use the tray model: a longer tray gives a longer fetch. Ask pupils which UK coast would get the smallest waves."
+          "note": "Show the Atlantic fetch on a map from the Caribbean to Cornwall."
         },
         {
-          "heading": "Constructive and destructive waves",
+          "heading": "Two kinds of wave",
           "bullets": [
-            "Constructive waves are low, with strong swash. They build beaches.",
-            "Destructive waves are high and steep, with strong backwash. They erode.",
-            "Constructive: about 6 to 8 per minute. Destructive: 10 to 14."
+            "Constructive and destructive"
           ],
-          "note": "Misconception from the school plan: pupils think waves only erode. Show diagrams of each type and stress that waves can both erode and deposit. Ask: after a storm, why might a beach lose sand? (Destructive waves take it away). Use hand movements: swash forwards, backwash back."
+          "note": "Compare and ask which builds beaches.",
+          "compare": {
+            "left": {
+              "title": "Constructive",
+              "points": [
+                "low and long",
+                "strong swash",
+                "about 6 to 8 a minute",
+                "builds beaches"
+              ]
+            },
+            "right": {
+              "title": "Destructive",
+              "points": [
+                "high and steep",
+                "strong backwash",
+                "about 10 to 14 a minute",
+                "removes material"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "What causes tides?",
+          "heading": "Tides",
           "bullets": [
-            "The Moon's gravity pulls on the oceans.",
-            "Most coasts have two high tides and two low tides a day.",
-            "High tide comes about every 12 hours 25 minutes."
+            "The Moon's gravity pulls the oceans",
+            "Two high tides about every 24 hours 50 minutes",
+            "Spring tides: biggest range; neap tides: smallest"
           ],
-          "note": "Use a diagram of Earth and Moon with the bulge of water. Tides are predictable, which is why fishermen, sailors and beach walkers use tide tables. Stress that normal tide height is not caused by wind. Ask why high tide is 25 minutes later each cycle (the Moon moves around the Earth)."
+          "note": "Spring tides happen at new and full Moon, when the Sun and Moon pull in line; neap tides at half Moon.",
+          "cycle": [
+            "High tide",
+            "Water falls (ebb)",
+            "Low tide",
+            "Water rises (flood)",
+            "High tide again"
+          ]
         },
         {
-          "heading": "Spring and neap tides",
+          "heading": "Check",
           "bullets": [
-            "Spring tides: Sun, Moon and Earth line up, biggest range.",
-            "Neap tides: Sun and Moon at right angles, smallest range.",
-            "The Bay of Fundy, Canada, has a tidal range of about 16 m."
+            "Vote in the Teams poll"
           ],
-          "note": "Spring tides have nothing to do with the season; the name comes from the idea of the water 'springing up'. Show the alignment diagrams. The UK's Severn estuary has one of the biggest tidal ranges in the world, around 14 m. Explain that a storm surge combined with a spring tide is the most dangerous for coastal flooding."
+          "note": "Share results.",
+          "check": {
+            "q": "Which wave has a strong backwash?",
+            "options": [
+              "Constructive",
+              "Destructive",
+              "Both equally"
+            ],
+            "answer": 1,
+            "why": "Destructive waves have a strong backwash that drags material away."
+          }
         }
       ],
       "practice": [
-        "Complete the table comparing constructive and destructive waves.",
-        "Explain why Newquay gets larger waves than Hull, using the word fetch."
+        {
+          "q": "Explain why some waves are bigger than others.",
+          "a": "Stronger wind, blowing for longer, over a longer fetch makes bigger waves",
+          "mins": 3,
+          "model": "Three factors: wind speed, how long it blows, and fetch.\nCornwall: strong winds over a long Atlantic fetch.\nSo bigger waves."
+        },
+        {
+          "q": "What is the backwash?",
+          "a": "Water flowing back down the beach",
+          "mins": 2
+        },
+        {
+          "q": "What causes tides?",
+          "a": "Mainly the pull of the Moon's gravity (and the Sun's)",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Draw and label a diagram of a breaking wave showing swash and backwash.",
-        "Answer questions on waves and tides using the key words.",
-        "Stretch: explain why a storm surge at a spring tide is so dangerous for coastal towns."
+        {
+          "q": "Core: Draw labelled diagrams of a constructive and a destructive wave, showing swash and backwash.",
+          "a": "Constructive: long low wave, big swash arrow, small backwash. Destructive: tall steep wave, small swash, big backwash",
+          "mins": 8,
+          "model": "Teacher shows it first: a low, long wave, a long arrow up the beach labelled 'strong swash', a short arrow back labelled 'weak backwash'."
+        },
+        {
+          "q": "Extend: In the portal response box, explain the difference between spring and neap tides.",
+          "a": "Spring tides (new and full Moon) have the highest high and lowest low tides because the Sun and Moon pull together; neap tides (half Moon) have the smallest range",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why might destructive waves be more common in winter?",
+          "a": "Winter storms bring stronger winds, making bigger, steeper waves",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Define the word fetch.",
-        "Which type of wave builds up a beach?"
+        {
+          "q": "Fetch is:",
+          "a": "The distance the wind blows over open water",
+          "mins": 1,
+          "options": [
+            "The distance the wind blows over open water",
+            "The height of a cliff"
+          ]
+        },
+        {
+          "q": "Big question: why is the sea never still?",
+          "a": "Wind makes waves all the time, and the Moon's gravity makes tides rise and fall",
+          "mins": 3
+        }
       ],
-      "homework": "Write four sentences explaining how a storm could damage a coast, using at least four key words.",
-      "send": "Provide a labelled wave diagram and sentence starters. EAL: use video clips and gestures for swash and backwash. Stretch: explain why some storms affect only one side of the UK."
+      "homework": "Look up tomorrow's high and low tide times for a UK beach and note the time between them.",
+      "send": "SEND: labelled wave diagrams to complete. EAL: wave, wind, tide, Moon. Stretch: research the Severn Estuary's large tidal range.",
+      "resources": [
+        "Geog.2 (Oxford University Press) Student Book and scheme of work, chapter 4, 4.1",
+        "Progress in Geography KS3 (Hodder) unit 9 (Land meets the sea) activities",
+        "Wave diagram sheet (portal printable)",
+        "A bowl of water to blow across (home demonstration)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "waves breaking on beach",
+          "alt": "Waves breaking on a beach",
+          "for": "hook"
+        },
+        {
+          "find": "Fistral Beach waves",
+          "alt": "Atlantic waves at Fistral Beach, Cornwall",
+          "for": "teach:2"
+        },
+        {
+          "find": "low tide harbour boats",
+          "alt": "Boats resting in a harbour at low tide",
+          "for": "teach:4"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Coasts - waves and landforms",
@@ -100,11 +260,26 @@
         "Explain how rock type affects the rate of erosion"
       ],
       "keywords": [
-        { "term": "erosion", "def": "wearing away of the land by moving water, ice or wind" },
-        { "term": "weathering", "def": "the breakdown of rock in place without it being moved" },
-        { "term": "hydraulic action", "def": "the force of waves pushing air and water into cracks in rock" },
-        { "term": "abrasion", "def": "rocks hurled by waves scraping against cliffs" },
-        { "term": "attrition", "def": "rocks colliding and becoming smaller and rounder" }
+        {
+          "term": "erosion",
+          "def": "wearing away of the land by moving water, ice or wind"
+        },
+        {
+          "term": "weathering",
+          "def": "the breakdown of rock in place without it being moved"
+        },
+        {
+          "term": "hydraulic action",
+          "def": "the force of waves pushing air and water into cracks in rock"
+        },
+        {
+          "term": "abrasion",
+          "def": "rocks hurled by waves scraping against cliffs"
+        },
+        {
+          "term": "attrition",
+          "def": "rocks colliding and becoming smaller and rounder"
+        }
       ],
       "starter": [
         "Say Bismillah. What is fetch?",
@@ -167,156 +342,479 @@
       "send": "Provide a process diagram to label. EAL: act out each process (hydraulic action, abrasion) with simple actions. Stretch: investigate the effect of different rock types on erosion rates."
     },
     {
-      "unit": "Unit 4: Coasts - waves and landforms",
+      "unit": "Spring 1: Coasts",
       "n": 3,
-      "title": "Which landforms do waves create? Erosional landforms (4.3)",
-      "duration": 50,
+      "title": "What work do the waves do? Erosion, transport, deposition and longshore drift (4.2)",
+      "bigQuestion": "How can a pebble from Dorset end up miles along the coast?",
       "objectives": [
-        "Describe how headlands and bays are formed",
-        "Explain the sequence from cave to arch to stack to stump",
-        "Identify wave-cut platforms and notches"
+        "To understand how waves erode, transport and deposit material along the coast"
       ],
+      "successCriteria": [
+        "All: name the four types of erosion",
+        "Most: explain how longshore drift moves material",
+        "Some: explain when and why waves deposit material"
+      ],
+      "crossCurricular": "Science: forces and energy",
+      "smsc": "Spiritual: change over time in Allah's creation",
       "keywords": [
-        { "term": "headland", "def": "a piece of land sticking out into the sea" },
-        { "term": "wave-cut notch", "def": "a groove cut into the base of a cliff by waves" },
-        { "term": "wave-cut platform", "def": "a flat rocky area at the foot of a cliff exposed at low tide" },
-        { "term": "arch", "def": "a natural opening through a headland" },
-        { "term": "stack", "def": "a tall column of rock separated from the headland" }
+        {
+          "term": "hydraulic action",
+          "def": "the force of water and air smashing into cracks"
+        },
+        {
+          "term": "abrasion",
+          "def": "rocks thrown by waves wear away the cliff"
+        },
+        {
+          "term": "attrition",
+          "def": "rocks knock together and become smaller and rounder"
+        },
+        {
+          "term": "longshore drift",
+          "def": "the zigzag movement of sediment along a beach"
+        },
+        {
+          "term": "deposition",
+          "def": "dropping material when waves lose energy"
+        }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why are beach pebbles smooth and round, and not sharp like broken rock?"
+      },
       "starter": [
-        "Say Bismillah. Define erosion and deposition.",
-        "Name the four processes of wave erosion.",
-        "Why do hard and soft rocks erode at different rates?"
+        {
+          "q": "Destructive waves have a strong:",
+          "a": "Backwash",
+          "mins": 1,
+          "options": [
+            "Backwash",
+            "Swash"
+          ]
+        },
+        {
+          "q": "What is fetch?",
+          "a": "The distance of open water the wind blows over",
+          "mins": 1,
+          "options": [
+            "The distance of open water the wind blows over",
+            "A type of rock"
+          ]
+        },
+        {
+          "q": "Spring tides happen at:",
+          "a": "New and full Moon",
+          "mins": 1,
+          "options": [
+            "New and full Moon",
+            "Half Moon"
+          ]
+        },
+        {
+          "q": "What is the swash?",
+          "a": "Water rushing up the beach",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four types of erosion",
+          "bullets": [
+            "Hydraulic action",
+            "Abrasion",
+            "Attrition",
+            "Solution"
+          ],
+          "note": "Solution: some rocks, like chalk and limestone, dissolve in sea water.",
+          "diagram": {
+            "centre": "coastal erosion",
+            "items": [
+              "hydraulic action: air and water forced into cracks",
+              "abrasion: rocks hurled at the cliff",
+              "attrition: rocks knock together",
+              "solution: rock dissolves"
+            ]
+          }
+        },
+        {
+          "heading": "Transport",
+          "bullets": [
+            "Traction: rolling large boulders",
+            "Saltation: bouncing pebbles",
+            "Suspension: carried in the water",
+            "Solution: dissolved"
+          ],
+          "note": "Sediment size decides how it is carried."
+        },
+        {
+          "heading": "Longshore drift",
+          "bullets": [
+            "Swash moves up at an angle",
+            "Backwash goes straight down",
+            "Material zigzags along the beach"
+          ],
+          "note": "The angle comes from the direction of the wind (the prevailing wind).",
+          "cycle": [
+            "Wind blows at an angle",
+            "Swash carries sediment up at an angle",
+            "Backwash pulls it straight down",
+            "Sediment moves along the beach",
+            "Repeat"
+          ]
+        },
+        {
+          "heading": "Deposition",
+          "bullets": [
+            "Waves lose energy",
+            "Sheltered bays and calm water",
+            "Constructive waves build beaches"
+          ],
+          "note": "Where the coast changes direction, material is dropped."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Which process makes beach pebbles round?",
+            "options": [
+              "Hydraulic action",
+              "Attrition",
+              "Solution"
+            ],
+            "answer": 1,
+            "why": "In attrition, rocks knock together and wear into smaller, rounder pebbles."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain longshore drift in three steps.",
+          "a": "Swash carries sediment up the beach at an angle; backwash pulls it straight down; it zigzags along the coast",
+          "mins": 3,
+          "model": "Step 1: the wind makes waves arrive at an angle.\nStep 2: swash pushes sediment up at that angle.\nStep 3: backwash drags it straight down, so it moves along."
+        },
+        {
+          "q": "What is hydraulic action?",
+          "a": "Water and air forced into cracks, breaking the rock",
+          "mins": 2
+        },
+        {
+          "q": "When do waves deposit material?",
+          "a": "When they lose energy, for example in sheltered bays",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a labelled diagram of longshore drift with the prevailing wind, swash, backwash and direction of movement.",
+          "a": "Diagram with angled swash arrows, straight backwash arrows, zigzag path and wind arrow",
+          "mins": 8,
+          "model": "Teacher shows it first: wind arrow from the south-west, swash arrow up at an angle, backwash straight down, then the next swash."
+        },
+        {
+          "q": "Extend: In the portal response box, explain how erosion, transport and deposition link along one stretch of coast.",
+          "a": "Cliffs are eroded; material is moved along by longshore drift; it is deposited where waves lose energy, forming beaches",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why do chalk cliffs suffer from solution?",
+          "a": "Chalk is a form of calcium carbonate that slowly dissolves in slightly acidic sea water",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Material bouncing along the sea bed is moved by:",
+          "a": "Saltation",
+          "mins": 1,
+          "options": [
+            "Saltation",
+            "Suspension"
+          ]
+        },
+        {
+          "q": "Big question: how can a pebble from Dorset end up miles along the coast?",
+          "a": "Longshore drift moves it along in a zigzag as waves hit the beach at an angle",
+          "mins": 3
+        }
+      ],
+      "homework": "Read Geog.2 page 4.2 (or the portal summary) and complete the longshore drift questions.",
+      "send": "SEND: diagram with labels to place. EAL: erode, carry, drop, zigzag. Stretch: explain how groynes interrupt longshore drift.",
+      "resources": [
+        "Geog.2 (Oxford University Press) Student Book and scheme of work, chapter 4, 4.2",
+        "Progress in Geography KS3 (Hodder) unit 9 (Land meets the sea) activities",
+        "Longshore drift diagram sheet (portal printable)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "beach pebbles rounded",
+          "alt": "Rounded pebbles on a beach",
+          "for": "hook"
+        },
+        {
+          "find": "chalk cliffs erosion",
+          "alt": "Chalk cliffs being eroded",
+          "for": "teach:1"
+        },
+        {
+          "find": "Chesil Beach pebbles",
+          "alt": "Chesil Beach, Dorset",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Coasts",
+      "n": 4,
+      "title": "Which landforms do waves create? (4.3)",
+      "bigQuestion": "How does a headland turn into a stack?",
+      "objectives": [
+        "To understand how erosion and deposition create coastal landforms"
+      ],
+      "successCriteria": [
+        "All: name three landforms of erosion and two of deposition",
+        "Most: explain the sequence from cave to stump",
+        "Some: explain how a spit forms"
+      ],
+      "crossCurricular": "Science: rock types and hardness",
+      "smsc": "Spiritual: reflecting on change in the landscape",
+      "keywords": [
+        {
+          "term": "headland",
+          "def": "rock sticking out into the sea"
+        },
+        {
+          "term": "bay",
+          "def": "a curved inlet between headlands"
+        },
+        {
+          "term": "stack",
+          "def": "a pillar of rock left when an arch collapses"
+        },
+        {
+          "term": "spit",
+          "def": "a long ridge of sand or shingle sticking out into the sea"
+        },
+        {
+          "term": "wave-cut platform",
+          "def": "a flat rock surface left as a cliff retreats"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Old Harry Rocks stand alone in the sea. Were they always cut off from the land?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'He released the two seas, meeting side by side; between them is a barrier they do not cross' (ar-Rahman 55:19 to 20). Coasts, where land and sea meet, are full of signs for those who reflect.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which process makes pebbles round?",
+          "a": "Attrition",
+          "mins": 1,
+          "options": [
+            "Attrition",
+            "Solution"
+          ]
+        },
+        {
+          "q": "Longshore drift moves material:",
+          "a": "Along the coast",
+          "mins": 1,
+          "options": [
+            "Along the coast",
+            "Straight out to sea"
+          ]
+        },
+        {
+          "q": "Waves deposit when they:",
+          "a": "Lose energy",
+          "mins": 1,
+          "options": [
+            "Lose energy",
+            "Gain energy"
+          ]
+        },
+        {
+          "q": "Name one type of coastal erosion.",
+          "a": "For example: hydraulic action",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Headlands and bays",
           "bullets": [
-            "Hard rock sticks out as headlands.",
-            "Soft rock is eroded back to form bays.",
-            "Waves focus their energy on the headland."
+            "Hard and soft rock side by side",
+            "Soft rock erodes faster: bays",
+            "Hard rock is left: headlands"
           ],
-          "note": "Misconception from the school plan: pupils confuse erosion and deposition. Emphasise that these landforms are made by erosion. Show a diagram of alternating hard and soft rock. Ask: which will stand out as the headland? The harder rock. Example: Swanage Bay and Ballard Down in Dorset."
+          "note": "Swanage Bay (soft rock) lies between harder headlands in Dorset."
         },
         {
-          "heading": "Cliffs, notches and platforms",
+          "heading": "Cave, arch, stack, stump",
           "bullets": [
-            "Waves cut a notch at the foot of the cliff.",
-            "The cliff above collapses, leaving a steep face.",
-            "The cliff retreats, leaving a wave-cut platform."
+            "A crack is eroded into a cave",
+            "Caves meet: an arch",
+            "The arch falls: a stack",
+            "The stack wears down: a stump"
           ],
-          "note": "Sketch the stages: notch, overhang, collapse, retreat. The platform is the flat area exposed at low tide, covered in rock pools. Ask pupils why rock pools are good for study (they show life adapting to tidal changes). Use annotated sketches."
+          "note": "Durdle Door is an arch; Old Harry Rocks are stacks.",
+          "cycle": [
+            "Crack",
+            "Cave",
+            "Arch",
+            "Stack",
+            "Stump"
+          ]
         },
         {
-          "heading": "Caves, arches, stacks and stumps",
+          "heading": "Cliffs and wave-cut platforms",
           "bullets": [
-            "Waves widen a crack into a cave.",
-            "Caves on both sides join to make an arch.",
-            "The arch collapses, leaving a stack, then a stump."
+            "Waves cut a notch at the cliff foot",
+            "The cliff above collapses",
+            "A flat platform is left behind"
           ],
-          "note": "Draw a four-stage sequence on the board or show a labelled sequence. Examples in Dorset: Durdle Door (arch), Old Harry Rocks (stacks). The Jurassic Coast was designated a UNESCO World Heritage Site in 2001. Ask pupils to say each stage with the word 'then'."
+          "note": "The cliff retreats inland, leaving the platform visible at low tide."
         },
         {
-          "heading": "Sequence in action",
+          "heading": "Beaches and spits",
           "bullets": [
-            "Crack, cave, arch, stack, stump.",
-            "The process takes hundreds to thousands of years.",
-            "New caves can start on the new headland."
+            "Beaches: deposited sand or shingle",
+            "Spits: longshore drift carries material past a bend",
+            "Spurn Head, Yorkshire"
           ],
-          "note": "Ask pupils to order scrambled pictures. Highlight that coasts are always changing. Link to Islamic ethos by saying that the sea is one of Allah's signs and that we study it with awe and respect for its power."
+          "note": "The end of a spit often curves as wind and waves change direction.",
+          "model": {
+            "problem": "How does a spit form?",
+            "steps": [
+              "Longshore drift moves sediment along",
+              "The coast changes direction",
+              "Sediment is deposited into the sea",
+              "A ridge grows out; its end curves"
+            ],
+            "answer": "A long ridge of sand or shingle sticking out from the coast"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "What forms when an arch collapses?",
+            "options": [
+              "A cave",
+              "A stack",
+              "A bay"
+            ],
+            "answer": 1,
+            "why": "The arch roof falls, leaving a stack."
+          }
         }
       ],
       "practice": [
-        "Number the stages in the correct order: stump, cave, arch, crack, stack.",
-        "Label the diagram of a headland with notch, cave and arch."
-      ],
-      "independent": [
-        "Draw an annotated sequence showing how a stack forms.",
-        "Describe two landforms created by wave erosion using key terms.",
-        "Stretch: explain why wave-cut platforms form only along cliffed coasts."
-      ],
-      "exit": [
-        "Name three erosional landforms.",
-        "What forms after a stack collapses?"
-      ],
-      "homework": "Find an image of Durdle Door or Old Harry Rocks and annotate it with the stages of formation.",
-      "send": "Provide a cut-and-stick sequence. EAL: use photographs with labels. Stretch: compare formation of a bay with the formation of a cove."
-    },
-    {
-      "unit": "Unit 4: Coasts - waves and landforms",
-      "n": 4,
-      "title": "Transport and longshore drift",
-      "duration": 50,
-      "objectives": [
-        "Describe four ways sediment is transported",
-        "Explain how longshore drift moves material along the coast",
-        "Draw and label a longshore drift diagram"
-      ],
-      "keywords": [
-        { "term": "transportation", "def": "the movement of eroded material by waves, wind, ice or rivers" },
-        { "term": "longshore drift", "def": "the zigzag movement of sediment along a coast" },
-        { "term": "prevailing wind", "def": "the direction from which wind most often blows" },
-        { "term": "sediment", "def": "small pieces of rock, sand and silt moved by water" },
-        { "term": "saltation", "def": "bouncing of small stones along the sea bed" }
-      ],
-      "starter": [
-        "Say Bismillah. Name an erosional landform.",
-        "What forms after an arch collapses?",
-        "Which type of wave has a strong swash?"
-      ],
-      "teach": [
         {
-          "heading": "How waves move sediment",
-          "bullets": [
-            "Traction: large boulders roll along the sea bed.",
-            "Saltation: pebbles bounce along the bed.",
-            "Suspension: fine sand and silt float in the water."
-          ],
-          "note": "Demonstrate with a bowl of water and different sized materials: sand, gravel, small stones. Ask which would be easiest to carry. Then add 'solution': dissolved minerals carried invisibly in the water. Pupils should be able to name four methods."
+          "q": "Put in order: stack, cave, stump, arch, crack.",
+          "a": "Crack, cave, arch, stack, stump",
+          "mins": 3,
+          "model": "Start small: a crack.\nWiden it: a cave.\nThrough the headland: an arch.\nRoof falls: a stack.\nWorn down: a stump."
         },
         {
-          "heading": "Longshore drift",
-          "bullets": [
-            "Waves hit the beach at an angle because of the prevailing wind.",
-            "Swash carries material up the beach at that angle.",
-            "Backwash returns straight down because of gravity."
-          ],
-          "note": "Draw the zigzag on a board. Ask pupils to trace the path of a pebble. The UK's prevailing wind comes from the south-west, so material is often moved from west to east along the south coast. Show a time-lapse of a pebble marked with a bright colour if available."
+          "q": "Why does soft rock form bays?",
+          "a": "It erodes faster than hard rock",
+          "mins": 2
         },
         {
-          "heading": "Net movement along the coast",
-          "bullets": [
-            "Each wave moves the pebble a short distance.",
-            "Over time, material moves along the coast.",
-            "The direction depends on the wind and coastline."
-          ],
-          "note": "Common misconception: pupils think the sediment moves in a straight line along the beach. Emphasise the zigzag. Link to groynes as defence: they interrupt longshore drift, which builds up the beach on one side."
-        },
-        {
-          "heading": "Where does the sediment go?",
-          "bullets": [
-            "Eroded cliffs supply sediment to the coast.",
-            "Rivers also deliver sediment to the sea.",
-            "Sediment is deposited where waves lose energy."
-          ],
-          "note": "This leads into the deposition lesson. Ask pupils where they would expect the transported material to be dropped: sheltered bays, estuaries, behind headlands. Check that pupils can say why waves lose energy there."
+          "q": "Name a spit in the UK.",
+          "a": "Spurn Head (or Hurst Castle Spit)",
+          "mins": 2
         }
       ],
-      "practice": [
-        "Number the steps of longshore drift in the correct order on a diagram.",
-        "Match the four transport methods with sketches and definitions."
-      ],
       "independent": [
-        "Draw a labelled diagram of longshore drift with arrows showing swash, backwash and net movement.",
-        "Write a paragraph explaining how longshore drift moves a pebble 100 m along a beach.",
-        "Stretch: predict what would happen if a pier or harbour wall blocked longshore drift."
+        {
+          "q": "Core: Draw a four-stage diagram of a headland eroding into a stack and stump, with labels and processes.",
+          "a": "Four stages: crack, cave (hydraulic action, abrasion), arch, stack and stump",
+          "mins": 8,
+          "model": "Teacher shows stage 1: headland with a crack at sea level labelled 'hydraulic action widens the crack'."
+        },
+        {
+          "q": "Extend: In the portal response box, explain how a spit forms (4 to 5 sentences).",
+          "a": "Longshore drift moves sediment; at a bend in the coast it is deposited into calmer water; a ridge builds out; changing wind curves the end; salt marsh may form behind",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why are stacks and arches temporary landforms?",
+          "a": "Erosion continues, so arches collapse and stacks wear down",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name two ways sediment is transported by the sea.",
-        "Why does backwash move straight down the beach?"
+        {
+          "q": "Durdle Door is an:",
+          "a": "Arch",
+          "mins": 1,
+          "options": [
+            "Arch",
+            "Stack",
+            "Spit"
+          ]
+        },
+        {
+          "q": "Big question: how does a headland turn into a stack?",
+          "a": "Erosion widens a crack into a cave, then an arch; the arch collapses leaving a stack",
+          "mins": 3
+        }
       ],
-      "homework": "Explain longshore drift in your own words to someone at home and ask them to draw what you described.",
-      "send": "Provide a diagram with the arrows partly drawn. EAL: use physical movement (zigzag) to explain longshore drift. Stretch: use a map of the south coast to predict the direction of drift."
+      "homework": "Read Geog.2 page 4.3 (or the portal summary) and label a photo of Old Harry Rocks.",
+      "send": "SEND: picture sequence cards. EAL: crack, cave, arch, stack. Stretch: find an example of a bar on a map (Slapton Ley).",
+      "resources": [
+        "Geog.2 (Oxford University Press) Student Book and scheme of work, chapter 4, 4.3",
+        "Progress in Geography KS3 (Hodder) unit 9 (Land meets the sea) activities",
+        "Coastal landforms sequence sheet (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Old Harry Rocks",
+          "alt": "Old Harry Rocks, Dorset",
+          "for": "hook"
+        },
+        {
+          "find": "Durdle Door",
+          "alt": "Durdle Door, an arch",
+          "for": "teach:2"
+        },
+        {
+          "find": "Spurn Head aerial",
+          "alt": "Spurn Head spit",
+          "for": "teach:4"
+        },
+        {
+          "find": "wave-cut platform",
+          "alt": "A wave-cut platform at low tide",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Coasts - waves and landforms",
@@ -329,11 +827,26 @@
         "Identify depositional landforms on a map or photograph"
       ],
       "keywords": [
-        { "term": "deposition", "def": "when material being carried is dropped because water loses energy" },
-        { "term": "beach", "def": "an area of sand or pebbles at the edge of the sea" },
-        { "term": "spit", "def": "a long narrow ridge of sand or shingle joined to land at one end" },
-        { "term": "bar", "def": "a ridge of sand or shingle across a bay" },
-        { "term": "salt marsh", "def": "an area of mud and salt-loving plants sheltered behind a spit" }
+        {
+          "term": "deposition",
+          "def": "when material being carried is dropped because water loses energy"
+        },
+        {
+          "term": "beach",
+          "def": "an area of sand or pebbles at the edge of the sea"
+        },
+        {
+          "term": "spit",
+          "def": "a long narrow ridge of sand or shingle joined to land at one end"
+        },
+        {
+          "term": "bar",
+          "def": "a ridge of sand or shingle across a bay"
+        },
+        {
+          "term": "salt marsh",
+          "def": "an area of mud and salt-loving plants sheltered behind a spit"
+        }
       ],
       "starter": [
         "Say Bismillah. Draw the zigzag path of longshore drift.",
@@ -395,156 +908,525 @@
       "send": "Provide a partially complete diagram. EAL: use labelled photographs. Stretch: investigate why Spurn Head has changed over time."
     },
     {
-      "unit": "Unit 5: Coasts - people and the coast",
+      "unit": "Spring 1: Coasts",
       "n": 6,
-      "title": "Your holiday in Newquay: using the coast and conflicts (4.5)",
-      "duration": 50,
+      "title": "What do we use the coast for? Newquay on an OS map (4.4, 4.5)",
+      "bigQuestion": "Who should get the most say over how a coast is used?",
       "objectives": [
-        "Use an OS map to describe the coast at Newquay",
-        "Explain how people use the coast and the benefits of tourism",
-        "Explain conflicts of interest and suggest a win-win solution"
+        "To understand how people use the coast and how to read it on an OS map"
       ],
+      "successCriteria": [
+        "All: name four uses of the coast",
+        "Most: use grid references and symbols to describe Newquay",
+        "Some: explain a conflict between coastal users"
+      ],
+      "crossCurricular": "Business: tourism and local jobs",
+      "smsc": "Social: balancing the needs of different groups",
       "keywords": [
-        { "term": "conflict of interest", "def": "when different groups want different things from the same place" },
-        { "term": "sustainable", "def": "meeting present needs without damaging the future" },
-        { "term": "Ordnance Survey (OS) map", "def": "a detailed map made by the national mapping agency" },
-        { "term": "tourism", "def": "visiting a place for leisure, holidays or interest" },
-        { "term": "stakeholder", "def": "a person or group affected by a decision" }
+        {
+          "term": "tourism",
+          "def": "visiting places for leisure"
+        },
+        {
+          "term": "land use",
+          "def": "what land is used for"
+        },
+        {
+          "term": "conflict",
+          "def": "a disagreement between groups"
+        },
+        {
+          "term": "OS map",
+          "def": "an Ordnance Survey map of Britain"
+        },
+        {
+          "term": "six-figure grid reference",
+          "def": "a precise location within a grid square"
+        }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you lived in Newquay, would you want more tourists or fewer? Why?"
+      },
+      "islamicLink": {
+        "text": "Islam teaches fairness between neighbours: the Prophet, peace be upon him, said that Jibril kept urging him about the rights of the neighbour (Sahih al-Bukhari and Sahih Muslim). Sharing a coast fairly between residents, visitors and nature is part of good neighbourliness.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Name two landforms waves create.",
-        "Is a spit created by erosion or deposition?",
-        "On a 1:25,000 map, what does 4 cm on the map represent?"
+        {
+          "q": "When an arch collapses it leaves a:",
+          "a": "Stack",
+          "mins": 1,
+          "options": [
+            "Stack",
+            "Spit"
+          ]
+        },
+        {
+          "q": "A spit is formed by:",
+          "a": "Longshore drift and deposition",
+          "mins": 1,
+          "options": [
+            "Longshore drift and deposition",
+            "Hydraulic action only"
+          ]
+        },
+        {
+          "q": "Soft rock erodes into:",
+          "a": "Bays",
+          "mins": 1,
+          "options": [
+            "Bays",
+            "Headlands"
+          ]
+        },
+        {
+          "q": "In a grid reference, which comes first?",
+          "a": "Eastings (along)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Newquay on the map",
+          "heading": "Uses of the coast",
           "bullets": [
-            "Newquay is on the north coast of Cornwall.",
-            "About 20,000 people live there all year.",
-            "Many more visit in summer to surf and sunbathe."
+            "Tourism and surfing",
+            "Fishing and ports",
+            "Homes, farming, nature reserves"
           ],
-          "note": "Display an OS Explorer 106 extract of Newquay if available. Practise 6-figure grid references and finding the harbour, Fistral Beach, headlands and coastal paths. Common misconception from the school plan: pupils read grid references from the wrong corner; remind them the reference names the bottom-left corner of the square. Provide support sheets with the 'along then up' reminder."
+          "note": "Ask: which uses could clash?",
+          "diagram": {
+            "centre": "the coast",
+            "items": [
+              "tourism",
+              "surfing",
+              "fishing",
+              "port and harbour",
+              "homes",
+              "nature reserve",
+              "golf course",
+              "farming"
+            ]
+          }
         },
         {
-          "heading": "How is the coast used?",
+          "heading": "Newquay, Cornwall",
           "bullets": [
-            "Surfing, boat trips, walking and sunbathing.",
-            "Hotels, cafés, shops and the aquarium.",
-            "Fishing, harbour and the local economy."
+            "A popular seaside town",
+            "Fistral Beach: famous for surfing",
+            "Many hotels, campsites and caravan parks"
           ],
-          "note": "Brainstorm activities from the school plan: walking, surfing, sunbathing, boat trips and visiting the aquarium. Discuss the social (jobs, community), economic (income, businesses) and environmental (litter, erosion of dunes, traffic) impacts. Ask which uses are in conflict."
+          "note": "Show Newquay on an online OS map: beaches, headlands (Towan Head), the harbour."
         },
         {
-          "heading": "Who wants what?",
+          "heading": "Reading the OS map",
           "bullets": [
-            "Retired residents want peace and quiet.",
-            "Business owners want more visitors and money.",
-            "Environmentalists want to protect wildlife and dunes."
+            "Symbols for car parks, campsites, viewpoints",
+            "Blue P for parking; tent symbol for campsites",
+            "Use six-figure references"
           ],
-          "note": "Create four teams: retired residents, businesspeople, environmentalists, tourists. Each team writes what they want and what worries them. Highlight that these conflicts exist on every popular coast. Ask pupils to think about different views with respect."
+          "note": "Model one reference on the extract worksheet, then pupils find two."
         },
         {
-          "heading": "A win-win solution",
+          "heading": "Conflicts",
           "bullets": [
-            "Zones for noisy and quiet activities.",
-            "Park-and-ride, bins and beach cleans.",
-            "Fees and rules that protect dunes and wildlife."
+            "Who wants what?"
           ],
-          "note": "Ask: can we make everyone happy? Not always, but compromise helps. From the school plan: leaders make decisions to support everyone. Link to Islam: we are stewards of the Earth and must respect the rights of people (including neighbours). Encourage careful, fair judgement."
+          "note": "Pupils add to each side in the chat.",
+          "compare": {
+            "left": {
+              "title": "Tourism and business",
+              "points": [
+                "more hotels",
+                "more car parks",
+                "jobs and income"
+              ]
+            },
+            "right": {
+              "title": "Residents and nature",
+              "points": [
+                "quiet streets",
+                "house prices",
+                "protect wildlife"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Fistral Beach is famous for:",
+            "options": [
+              "Fishing boats",
+              "Surfing",
+              "A nuclear power station"
+            ],
+            "answer": 1,
+            "why": "Atlantic waves make Fistral one of the UK's best-known surfing beaches."
+          }
         }
       ],
       "practice": [
-        "Give the six-figure grid reference for the harbour and for Fistral Beach.",
-        "In your team, write one need and one worry for your group."
+        {
+          "q": "Name one conflict between coastal users in Newquay.",
+          "a": "For example: more holiday homes vs local people needing affordable housing",
+          "mins": 3,
+          "model": "Pick two users: tourists and residents.\nWhat each wants: more holiday lets vs affordable homes.\nThat is a conflict."
+        },
+        {
+          "q": "What does a tent symbol on an OS map show?",
+          "a": "A campsite",
+          "mins": 2
+        },
+        {
+          "q": "Why do surfers like Fistral Beach?",
+          "a": "It faces the Atlantic and gets big waves from a long fetch",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Describe the impact of increased visitors on Newquay (social, economic and environmental) in three paragraphs.",
-        "Suggest a win-win plan that keeps all four groups as happy as possible, and explain who must compromise.",
-        "Stretch: evaluate who benefits most and who loses most from tourism in Newquay."
+        {
+          "q": "Core: On the Newquay OS extract worksheet, answer six questions using symbols and six-figure grid references.",
+          "a": "Answers on the worksheet key",
+          "mins": 8,
+          "model": "Teacher does question 1: find the harbour, read the eastings then northings, estimate tenths, write the six figures."
+        },
+        {
+          "q": "Extend: In the portal response box, explain one conflict and suggest a compromise.",
+          "a": "For example: limit new holiday lets and build affordable homes for local people, so tourism and residents both benefit",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: How does tourism bring both benefits and problems to Newquay?",
+          "a": "Benefits: jobs and income; problems: traffic, litter, seasonal jobs, high house prices",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name one benefit and one problem of tourism for a coastal town.",
-        "What is a conflict of interest?"
+        {
+          "q": "Conflict means:",
+          "a": "A disagreement between groups",
+          "mins": 1,
+          "options": [
+            "A disagreement between groups",
+            "A kind of wave"
+          ]
+        },
+        {
+          "q": "Big question: who should get the most say over how a coast is used?",
+          "a": "Reasoned view balancing residents, businesses, visitors and nature",
+          "mins": 3
+        }
       ],
-      "homework": "Write a short diary entry from the point of view of one stakeholder in Newquay during August.",
-      "send": "Provide role cards with sentence starters. EAL: pre-teach tourism vocabulary using images. Stretch: use evidence from the OS map to support recommendations."
+      "homework": "Find a UK seaside town on an online map and list four uses of its coast.",
+      "send": "SEND: OS symbol card and the extract with key features circled. EAL: beach, harbour, hotel, campsite. Stretch: compare Newquay with a fishing port such as Newlyn.",
+      "resources": [
+        "Geog.2 (Oxford University Press) Student Book and scheme of work, chapter 4, 4.4 and 4.5",
+        "Progress in Geography KS3 (Hodder) unit 9 (Land meets the sea) activities",
+        "OS map extract: Newquay, Cornwall, 1:25,000 (on screen via an online OS map; portal printable)",
+        "Newquay OS map worksheet with six questions and key (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Fistral Beach Newquay",
+          "alt": "Fistral Beach, Newquay",
+          "for": "hook"
+        },
+        {
+          "find": "Newquay harbour",
+          "alt": "Newquay harbour",
+          "for": "teach:2"
+        },
+        {
+          "find": "Towan Head Newquay",
+          "alt": "Towan Head, Newquay",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 5: Coasts - people and the coast",
+      "unit": "Spring 1: Coasts",
       "n": 7,
-      "title": "Protecting the coast: hard and soft engineering",
-      "duration": 50,
+      "title": "Happisburgh and protecting places from the sea; unit quiz (4.7, 4.8)",
+      "bigQuestion": "Should we protect every home from the sea?",
       "objectives": [
-        "Explain why coasts need protecting from erosion and flooding",
-        "Describe hard and soft engineering strategies",
-        "Evaluate advantages and disadvantages of strategies using the Holderness coast"
+        "To understand how coasts are managed and why some places, like Happisburgh, are not fully protected"
       ],
+      "successCriteria": [
+        "All: name two hard and two soft engineering methods",
+        "Most: explain why Happisburgh is eroding so fast",
+        "Some: evaluate managed retreat at Happisburgh"
+      ],
+      "crossCurricular": "Citizenship: how councils decide",
+      "smsc": "Moral: fairness to people who lose their homes",
       "keywords": [
-        { "term": "hard engineering", "def": "building artificial structures to protect the coast" },
-        { "term": "soft engineering", "def": "working with natural processes to protect the coast" },
-        { "term": "sea wall", "def": "a strong concrete or stone wall at the back of a beach" },
-        { "term": "groyne", "def": "a wall or fence built out into the sea to trap sediment" },
-        { "term": "managed retreat", "def": "allowing the sea to flood or erode land in a controlled way" }
+        {
+          "term": "hard engineering",
+          "def": "building structures to stop the sea, like sea walls"
+        },
+        {
+          "term": "soft engineering",
+          "def": "working with nature, like adding sand to beaches"
+        },
+        {
+          "term": "groyne",
+          "def": "a fence across a beach that traps sand"
+        },
+        {
+          "term": "managed retreat",
+          "def": "allowing the sea to flood or erode an area in a controlled way"
+        },
+        {
+          "term": "shoreline management plan",
+          "def": "a plan for how each stretch of coast will be managed"
+        }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If the sea would reach your house in 20 years, what would you want the council to do?"
+      },
+      "islamicLink": {
+        "text": "Allah made people caretakers of the earth (al-An'am 6:165). Managing the coast means making fair, wise decisions for the community and future generations, and caring for those who lose their homes.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Name a depositional landform.",
-        "What is longshore drift?",
-        "Why might a village on a soft cliff be at risk?"
+        {
+          "q": "Fistral Beach is famous for:",
+          "a": "Surfing",
+          "mins": 1,
+          "options": [
+            "Surfing",
+            "Ferries"
+          ]
+        },
+        {
+          "q": "A groyne traps:",
+          "a": "Sand moved by longshore drift",
+          "mins": 1,
+          "options": [
+            "Sand moved by longshore drift",
+            "Fish"
+          ]
+        },
+        {
+          "q": "When an arch collapses it forms a:",
+          "a": "Stack",
+          "mins": 1,
+          "options": [
+            "Stack",
+            "Bay"
+          ]
+        },
+        {
+          "q": "What is a conflict?",
+          "a": "A disagreement between groups",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Why protect the coast?",
+          "heading": "Happisburgh, Norfolk",
           "bullets": [
-            "Homes, roads and farms can be lost to erosion.",
-            "Low-lying land is at risk of flooding.",
-            "Sea levels are rising with climate change."
+            "Cliffs of soft sand and clay",
+            "Erode quickly in storms",
+            "Homes and a road have been lost"
           ],
-          "note": "Show images of houses on a cliff edge. Ask: what should people do? This leads to a debate on cost versus benefit. Remind pupils that waves and storms are powerful signs of Allah's creation and humans must manage risks wisely."
+          "note": "Show the village on a map and photos of the cliff edge (no people)."
         },
         {
           "heading": "Hard engineering",
           "bullets": [
-            "Sea walls reflect wave energy. They are strong but costly.",
-            "Groynes trap sediment and build up beaches.",
-            "Rock armour absorbs waves and is cheaper."
+            "Sea walls",
+            "Rock armour",
+            "Groynes and revetments"
           ],
-          "note": "Show a labelled diagram with each structure. Evaluate: sea walls last a long time (50 to 100 years) but are expensive per metre and can look ugly; groynes may starve beaches further along the coast of sediment, causing more erosion downdrift. Ask pupils to think of one advantage and one disadvantage of each."
+          "note": "Hard engineering is strong but costly, and can move the problem along the coast.",
+          "table": {
+            "head": [
+              "Method",
+              "How it works",
+              "Problem"
+            ],
+            "rows": [
+              [
+                "sea wall",
+                "reflects waves",
+                "very expensive"
+              ],
+              [
+                "rock armour",
+                "absorbs wave energy",
+                "can look ugly"
+              ],
+              [
+                "groynes",
+                "trap sand from longshore drift",
+                "starve beaches further along"
+              ],
+              [
+                "revetment",
+                "slatted barrier breaks waves",
+                "wears out"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Soft engineering",
+          "heading": "Soft engineering and managed retreat",
           "bullets": [
-            "Beach nourishment adds sand or shingle.",
-            "Dune regeneration plants marram grass.",
-            "Managed retreat lets the sea take low-value land."
+            "Beach nourishment: add sand",
+            "Dune regeneration",
+            "Managed retreat: let nature take its course"
           ],
-          "note": "Soft engineering is cheaper and looks natural, but may need repeating and may not protect against big storms. Managed retreat means accepting loss of some farmland or houses and compensation. Ask: is it fair to ask some people to give up land to protect others?"
+          "note": "Old wooden defences at Happisburgh from the mid-1900s have broken down; the long-term plan is not to hold the line."
         },
         {
-          "heading": "Case study: Holderness coast",
+          "heading": "Why not protect it?",
           "bullets": [
-            "The Holderness coast in Yorkshire has soft boulder clay.",
-            "It erodes by about 2 m a year on average.",
-            "Mappleton was protected with rock groynes and rock armour."
+            "Costs more than the land is worth",
+            "Defences push erosion further along",
+            "Money spent where most people benefit"
           ],
-          "note": "Holderness is one of Europe's fastest-eroding coastlines, stretching about 60 km from Flamborough Head to Spurn Head. Many villages have been lost since Roman times. Protecting Mappleton (about £2 million in 1991) saved the village but increased erosion further south. Ask pupils what this shows about hard engineering."
+          "note": "Some families were helped to move inland. Ask: is that fair?",
+          "compare": {
+            "left": {
+              "title": "Protect",
+              "points": [
+                "save homes",
+                "keep the community",
+                "people's rights"
+              ]
+            },
+            "right": {
+              "title": "Managed retreat",
+              "points": [
+                "cheaper",
+                "natural",
+                "protects coasts further along"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Which is soft engineering?",
+            "options": [
+              "Sea wall",
+              "Beach nourishment",
+              "Rock armour"
+            ],
+            "answer": 1,
+            "why": "Adding sand to beaches works with nature; walls and rock armour are hard engineering."
+          }
         }
       ],
       "practice": [
-        "Complete a table of strategies: cost, effectiveness, effect on environment.",
-        "Sort strategies into hard and soft: sea wall, beach nourishment, rock armour, dune planting."
+        {
+          "q": "Give two reasons Happisburgh erodes fast.",
+          "a": "Soft sand and clay cliffs; powerful North Sea storm waves; broken old defences",
+          "mins": 3,
+          "model": "Think: rock and waves.\nRock: soft sand and clay.\nWaves: strong North Sea storms.\nSo the cliffs erode fast."
+        },
+        {
+          "q": "Name one problem with groynes.",
+          "a": "They starve beaches further along the coast of sand",
+          "mins": 2
+        },
+        {
+          "q": "What is managed retreat?",
+          "a": "Letting the sea erode or flood an area in a planned way",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Write a paragraph evaluating two coastal defences with advantages and disadvantages.",
-        "Explain why Mappleton's defences caused problems elsewhere.",
-        "Stretch: argue whether the money spent defending one village is justified."
+        {
+          "q": "Core: Coasts unit quiz on the portal (12 questions: waves, tides, erosion, longshore drift, landforms, uses, management).",
+          "a": "Answers in the portal quiz key",
+          "mins": 10,
+          "model": "Teacher does question 1 aloud: 'What is fetch?' The distance of open water the wind blows over."
+        },
+        {
+          "q": "Extend: In the portal response box: 'Happisburgh should be protected.' Do you agree? Give both sides and a judgement.",
+          "a": "Balanced answer using cost, fairness to residents and effects on other coasts, ending with a reasoned judgement",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why does a shoreline management plan look at a whole stretch of coast, not one village?",
+          "a": "Defences in one place affect sediment and erosion elsewhere along the coast",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name one hard and one soft engineering strategy.",
-        "What is managed retreat?"
+        {
+          "q": "Rock armour is:",
+          "a": "Hard engineering",
+          "mins": 1,
+          "options": [
+            "Hard engineering",
+            "Soft engineering"
+          ]
+        },
+        {
+          "q": "Big question: should we protect every home from the sea?",
+          "a": "Reasoned view: not always, because of cost and effects elsewhere, but people affected should be treated fairly",
+          "mins": 3
+        }
       ],
-      "homework": "Research one UK coastal defence scheme and bring two facts to the next lesson.",
-      "send": "Provide a comparison table with sentence starters. EAL: use pictures to match each strategy. Stretch: use cost-benefit reasoning to rank strategies for a named coastal town."
+      "homework": "Revise coasts for the Autumn 2027 review with the Geog.2 chapter 4 summary.",
+      "send": "SEND: quiz read aloud; methods table to complete. EAL: protect, wall, sand, move. Stretch: compare Happisburgh with protected Mappleton on the Holderness coast.",
+      "resources": [
+        "Geog.2 (Oxford University Press) Student Book and scheme of work, chapter 4, 4.7 and 4.8 (unit quiz: school intent assessment)",
+        "Progress in Geography KS3 (Hodder) unit 9 (Land meets the sea) activities",
+        "Coasts unit quiz (portal, 12 questions)",
+        "Coastal management methods table (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Happisburgh cliffs erosion",
+          "alt": "Eroding cliffs at Happisburgh, Norfolk",
+          "for": "hook"
+        },
+        {
+          "find": "Happisburgh lighthouse",
+          "alt": "Happisburgh lighthouse",
+          "for": "teach:1"
+        },
+        {
+          "find": "rock armour coast",
+          "alt": "Rock armour protecting a coast",
+          "for": "keywords"
+        },
+        {
+          "find": "groynes beach",
+          "alt": "Wooden groynes on a beach",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 5: Coasts - people and the coast",
@@ -557,10 +1439,22 @@
         "Review learning from the whole coasts unit"
       ],
       "keywords": [
-        { "term": "cost-benefit", "def": "weighing the costs of a plan against its benefits" },
-        { "term": "evaluate", "def": "make a judgement using evidence for and against" },
-        { "term": "recommendation", "def": "advice about what should be done" },
-        { "term": "sustainable management", "def": "protecting the coast in a way that lasts and respects people and nature" }
+        {
+          "term": "cost-benefit",
+          "def": "weighing the costs of a plan against its benefits"
+        },
+        {
+          "term": "evaluate",
+          "def": "make a judgement using evidence for and against"
+        },
+        {
+          "term": "recommendation",
+          "def": "advice about what should be done"
+        },
+        {
+          "term": "sustainable management",
+          "def": "protecting the coast in a way that lasts and respects people and nature"
+        }
       ],
       "starter": [
         "Say Bismillah. Name two hard engineering strategies.",

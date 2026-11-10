@@ -565,360 +565,692 @@
       "boardShort": "Edexcel GCSE 1CP2"
     },
     {
-      "unit": "Unit 2: Programming in Python (Topic 6)",
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
       "n": 7,
-      "title": "Python: variables, data types, operators and validation",
+      "title": "First Python programs: variables, data types, input and output",
       "duration": 50,
+      "bigQuestion": "If a program asks your age and you type 14, does the computer know 14 is a number?",
       "objectives": [
-        "Use variables, constants and the five main data types in Python",
-        "Use arithmetic, comparison and logical operators, including // and %",
-        "Write a program that validates input with a loop"
+        "To understand how variables, data types, input and output work in a simple Python program"
       ],
+      "successCriteria": [
+        "All: write a program that inputs a name and outputs a greeting",
+        "Most: convert input to int or float before calculating",
+        "Some: explain why input() always returns a string"
+      ],
+      "smsc": "Moral: clear, honest code others can read and trust",
       "keywords": [
         {
-          "term": "constant",
-          "def": "a named value that does not change while a program runs"
+          "term": "variable",
+          "def": "a named location that stores data"
+        },
+        {
+          "term": "data type",
+          "def": "the kind of data: int, float, str, bool"
+        },
+        {
+          "term": "input",
+          "def": "data entered into a program"
         },
         {
           "term": "casting",
-          "def": "converting a value from one data type to another"
-        },
-        {
-          "term": "validation",
-          "def": "checking that data is sensible and in the allowed range before using it"
-        },
-        {
-          "term": "syntax error",
-          "def": "a mistake that breaks the rules of the language so the program cannot run"
+          "def": "converting from one data type to another"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a program asks your age and you type 14, does the computer know 14 is a number?",
+        "a": "No: input() gives text (a string); we must convert it with int() to calculate with it."
+      },
       "starter": [
-        "Bismillah. State the data type of: 5, '5', 5.0, True.",
-        "What is 29 // 6 and 29 % 6? (4 and 5)",
-        "Which loop do you use when you do not know how many repeats are needed?"
+        {
+          "q": "A decision in a flowchart is a ...",
+          "a": "diamond",
+          "mins": 1,
+          "options": [
+            "diamond",
+            "rectangle",
+            "parallelogram"
+          ]
+        },
+        {
+          "q": "Abstraction means ...",
+          "a": "removing unneeded detail",
+          "mins": 1,
+          "options": [
+            "removing unneeded detail",
+            "breaking into parts",
+            "repeating"
+          ]
+        },
+        {
+          "q": "'14' in quotes is a ...",
+          "a": "string",
+          "mins": 1,
+          "options": [
+            "string",
+            "integer",
+            "Boolean"
+          ]
+        },
+        {
+          "q": "What will print(3 + 4) show?",
+          "a": "7",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Variables and constants",
-          "bullets": [
-            "Variables change; constants do not.",
-            "Use meaningful names: price_per_item.",
-            "Python style for a constant: VAT_RATE = 0.2."
-          ],
-          "note": "Python has no true constants, but writing in capital letters shows the value should not be changed. Explain why named constants help: changing one line updates the whole program. Show how a bad name like x makes code hard to read."
-        },
-        {
-          "heading": "Casting and operators",
-          "bullets": [
-            "int(), float(), str() change types.",
-            "Arithmetic: + - * / // % **.",
-            "Comparison: == != < > <= >=.",
-            "Logical: and, or, not."
-          ],
-          "note": "Run the code to find a worker's wages: hours = float(input('Hours? ')), rate = 12.50, pay = hours * rate. Predict the output for 8 hours (100.0). Remind pupils that input returns a string."
-        },
-        {
-          "heading": "Validation with while",
-          "bullets": [
-            "Ask for input.",
-            "While it is invalid: show message, ask again.",
-            "Continue when valid."
-          ],
-          "note": "Code: age = int(input('Age (0-120)? ')); while age < 0 or age > 120: print('Invalid'); age = int(input('Age (0-120)? ')). Distinguish validation (sensible data) from verification (correct data, such as typing a password twice). Discuss what happens if the user types letters: ValueError; show try/except only as an extension."
-        },
-        {
-          "heading": "Testing",
-          "bullets": [
-            "Normal data: 25.",
-            "Boundary data: 0, 120, -1, 121.",
-            "Erroneous data: 'abc'."
-          ],
-          "note": "Teach test data types and have pupils write a test table with expected result. Exams (Paper 2) reward programs that handle boundaries correctly. Model running tests and recording results."
-        }
-      ],
-      "practice": [
-        "Write the Python to store a constant PI as 3.14.",
-        "What is the output? x = 17; print(x // 5); print(x % 5); print(x / 5). (3, 2, 3.4)",
-        "Write a condition that is True when age is between 11 and 16 inclusive. (age >= 11 and age <= 16)"
-      ],
-      "independent": [
-        "Write a program which asks for a price and a quantity, uses a constant for VAT at 20 per cent, and outputs the total including VAT.",
-        "Write a program that asks for a mark from 0 to 100 and keeps asking until a valid mark is entered.",
-        "Create a test table with normal, boundary and erroneous data for your mark program."
-      ],
-      "exit": [
-        "What is the difference between validation and verification?",
-        "Name one example each of normal, boundary and erroneous test data for an age between 0 and 120."
-      ],
-      "homework": "Write and test a Python program that converts a number of minutes into hours and minutes and validates the input is not negative.",
-      "send": "SEND/EAL: provide code with comments and blanks and a data type glossary. Stretch: use try and except to handle non-numeric input without crashing.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
-    },
-    {
-      "unit": "Unit 2: Programming in Python (Topic 6)",
-      "n": 8,
-      "title": "Python: lists, strings and implementing a search",
-      "duration": 50,
-      "objectives": [
-        "Create, index and loop through a list in Python",
-        "Use common string operations such as len and slicing",
-        "Implement a linear search in Python"
-      ],
-      "keywords": [
-        {
-          "term": "list",
-          "def": "an ordered collection of items stored under one name"
-        },
-        {
-          "term": "index",
-          "def": "the position of an item in a list, starting at 0"
-        },
-        {
-          "term": "length",
-          "def": "the number of items in a list or characters in a string, found with len()"
-        },
-        {
-          "term": "substring",
-          "def": "part of a string"
-        }
-      ],
-      "starter": [
-        "Bismillah. Write a for loop which prints the numbers 1 to 5.",
-        "Which search needs a sorted list?",
-        "What data type is 'Quran'?"
-      ],
-      "teach": [
-        {
-          "heading": "Lists",
-          "bullets": [
-            "names = ['Amina', 'Bilal', 'Sara'].",
-            "names[0] is 'Amina'.",
-            "len(names) is 3.",
-            "names.append('Omar') adds an item."
-          ],
-          "note": "Stress that indexes start at 0, a very common source of off-by-one errors. Ask what names[3] would be after the append (Omar) and what it was before (error: index out of range)."
-        },
-        {
-          "heading": "Looping through lists",
-          "bullets": [
-            "for name in names: print(name).",
-            "for i in range(len(names)): uses the index.",
-            "Total: total = total + marks[i]."
-          ],
-          "note": "Show both loop styles. Use the index loop when position matters, e.g. printing position numbers. Calculate the total and mean of the list [60, 72, 85, 91] (308 and 77.0)."
-        },
-        {
-          "heading": "Strings",
-          "bullets": [
-            "len('Quran') is 5.",
-            "word[0] is the first letter.",
-            "word[1:4] slices characters 1 to 3.",
-            "word.upper() makes capitals."
-          ],
-          "note": "Demonstrate slicing: 'Madinah'[0:3] = 'Mad'. Strings can be indexed but not changed in place. Link to ASCII later in the Data topic."
-        },
-        {
-          "heading": "Linear search in Python",
-          "bullets": [
-            "found = False",
-            "for i in range(len(nums)):",
-            "if nums[i] == target: found = True",
-            "print position or 'not found'."
-          ],
-          "note": "Write the program together and test with [14, 9, 22, 5, 17] and the target 22 (position 2 as index; position 3 counting from 1). Test with a target that is not present. Compare with the pseudo-code from lesson 4 and note the matching structure."
-        }
-      ],
-      "practice": [
-        "Given marks = [45, 60, 72, 88], what is marks[2] and len(marks)? (72, 4)",
-        "What does 'Computer'[0:3] give? ('Com')",
-        "Complete the loop to add all items of marks into total."
-      ],
-      "independent": [
-        "Write a program that stores 5 names in a list, then asks the user for a name and says whether it is in the list using a linear search.",
-        "Write a program that finds the largest number in a list of 6 numbers without using max().",
-        "Stretch: write a program that counts how many vowels are in a word typed by the user."
-      ],
-      "exit": [
-        "What is the index of the first item in a Python list?",
-        "Write the Python expression for the number of items in a list called scores."
-      ],
-      "homework": "Write a Python program which asks the user for 5 marks, stores them in a list, then prints the total, average and highest mark.",
-      "send": "SEND/EAL: provide code with comments to match to descriptions, and colour index positions on a list diagram. Stretch: implement a bubble sort in Python for a list of 6 numbers.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
-    },
-    {
-      "unit": "Unit 1.1: Computational thinking: decomposition, abstraction and subprograms",
-      "n": 9,
-      "title": "Decomposition, abstraction and subprograms: modelling a problem",
-      "duration": 50,
-      "bigQuestion": "How do programmers solve a problem that is too big to hold in one head?",
-      "objectives": [
-        "Explain how decomposition and abstraction are used to model a problem (1.1.1)",
-        "Decompose a scenario into sub-problems with inputs and outputs",
-        "Explain the benefits of using subprograms (1.1.2)"
-      ],
-      "successCriteria": [
-        "All: define decomposition and abstraction and give one example of each",
-        "Most: decompose a scenario and say which details a model keeps and ignores",
-        "Some: justify the use of subprograms in a given program using three distinct benefits"
-      ],
-      "crossCurricular": "Geography: maps and models leave out detail on purpose",
-      "smsc": "Moral: amanah (trust) in building software others will rely on: a well-structured program is easier to check and keep honest",
-      "keywords": [
-        {
-          "term": "decomposition",
-          "def": "breaking a problem into smaller parts that can be solved separately"
-        },
-        {
-          "term": "abstraction",
-          "def": "removing detail that is not needed so you focus on what matters"
-        },
-        {
-          "term": "model",
-          "def": "a simplified representation of a real system, built using abstraction"
-        },
-        {
-          "term": "subprogram",
-          "def": "a named block of code that does one job and can be called many times"
-        }
-      ],
-      "starter": [
-        "Bismillah. Name the three skills of computational thinking.",
-        "A Tube map ignores real distances. State one reason that is helpful to passengers.",
-        "In Python, what does def do?"
-      ],
-      "teach": [
-        {
-          "heading": "Decomposition: divide the problem",
-          "bullets": [
-            "Break a big problem into smaller sub-problems",
-            "Solve and test each part on its own",
-            "Then join the parts together"
-          ],
-          "note": "Use a prayer-times app as the running scenario. Ask pupils to shout out tasks; group them on the board. Stress that each sub-problem should be small enough to describe in one sentence. Pupils often list features; push them to say what goes in and what comes out of each part.",
+          "heading": "Data types (6.3.1)",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
-              "Sub-problem",
-              "Input",
-              "Output"
+              "Type",
+              "Python",
+              "Example"
             ],
             "rows": [
               [
-                "Find the user's location",
-                "GPS reading",
-                "City name"
+                "Integer",
+                "int",
+                "14"
               ],
               [
-                "Look up today's times",
-                "City name, date",
-                "Five prayer times"
+                "Real",
+                "float",
+                "3.5"
               ],
               [
-                "Work out the next prayer",
-                "Prayer times, current time",
-                "Name and time of next prayer"
+                "String",
+                "str",
+                "'Amina'"
               ],
               [
-                "Show the result",
-                "Name and time",
-                "Message on screen"
+                "Boolean",
+                "bool",
+                "True"
               ]
             ]
           }
         },
         {
-          "heading": "Abstraction: keep what matters",
-          "bullets": [
-            "Decide which details the solution needs",
-            "Ignore the rest",
-            "The result is a simpler model"
-          ],
-          "note": "Define a model as a simplified version of the real thing. The key exam skill is to name specific details kept and ignored in the scenario, not to write general sentences. Note that abstraction is not hiding code from users; it is leaving detail out of the problem description.",
-          "compare": {
-            "left": {
-              "title": "Kept in the model",
-              "points": [
-                "Number of free spaces",
-                "Ticket price per hour",
-                "Time of entry"
-              ]
-            },
-            "right": {
-              "title": "Ignored by the model",
-              "points": [
-                "Colour of each car",
-                "Weather",
-                "Names of the drivers"
-              ]
-            },
-            "label": "Car park ticket machine"
-          }
-        },
-        {
-          "heading": "Worked example: model a lift",
-          "note": "Model aloud (I do). Show that decomposition splits the job and abstraction chooses the data. Ask: what would we add if the lift must carry a stretcher? Link to 'fitness for purpose'.",
-          "model": {
-            "problem": "A programmer is asked to write the control program for a lift in a three-storey school. Decompose the problem and state what the model leaves out.",
-            "steps": [
-              "Sub-problem 1: read which floor button was pressed (input: button number)",
-              "Sub-problem 2: decide direction (input: current floor and target floor; output: up or down)",
-              "Sub-problem 3: move the lift and stop at the floor (output: motor command)",
-              "Sub-problem 4: open and close the doors",
-              "Model keeps: current floor, target floor, door state. It ignores: the colour of the lift, who is inside, the mirror"
-            ],
-            "answer": "Four sub-problems, each with clear inputs and outputs, and a model that stores only the data the control program needs."
-          }
-        },
-        {
-          "heading": "Subprograms: name it once, use it often",
-          "bullets": [
-            "A subprogram is a named block with one job",
-            "Call it whenever you need that job done",
-            "Place the logic in one place only"
-          ],
-          "note": "Trace the code with pupils: the function vat is defined once, then called twice. Ask what would change if the VAT rate changed: only one line. List benefits: avoids repeating code, shorter programs, easier to test and debug, easier to maintain, parts can be shared by a team, and can be reused in other programs.",
+          "heading": "Model program",
+          "bullets": [],
+          "note": "Trace it together line by line.",
           "code": {
             "lang": "python",
-            "text": "def vat(price):\n    return price * 0.2\n\ndef show_line(item, price):\n    print(item, price, vat(price))\n\nshow_line(\"Book\", 10)\nshow_line(\"Pen\", 2)",
-            "output": "Book 10 2.0\nPen 2 0.4"
+            "text": "name = input('Name: ')\nage = int(input('Age: '))\nnext_year = age + 1\nprint('Salaam', name)\nprint('Next year you will be', next_year)",
+            "output": "Name: Yusuf\nAge: 14\nSalaam Yusuf\nNext year you will be 15"
           }
         },
         {
-          "heading": "Check: benefits of subprograms",
-          "note": "Whiteboards up on the count of three. Option C is the trap: subprograms do not make code run faster in themselves. Option A describes a benefit that is about repetition. Ask pupils why D is true but not the best answer here.",
+          "heading": "Variables",
+          "bullets": [
+            "A named place to store data",
+            "Meaningful names: next_year, not x",
+            "Assignment uses ="
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "age = input('Age: ') then age + 1",
+            "right": "input() returns a string: use int(input(...)) before adding"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
           "check": {
-            "q": "A program calculates VAT in five different places. Which is the best reason to move the calculation into one subprogram?",
+            "q": "What does input() return?",
             "options": [
-              "It stops the program having any errors",
-              "A change to the VAT rule is made in one place only",
-              "It makes the program run much faster",
-              "It means the program no longer needs variables"
+              "A string",
+              "An integer",
+              "A float",
+              "A Boolean"
             ],
-            "answer": 1,
-            "why": "Reuse and easier maintenance: changing the rule once fixes every call. A subprogram does not remove errors (A), does not by itself speed the code up (C) and variables are still needed (D)."
+            "answer": 0,
+            "why": "Always a string; convert with int() or float()."
           }
         }
       ],
       "practice": [
-        "A mosque wants a program to manage its weekly rota for volunteers. Write four sub-problems and, for each, one input and one output.",
-        "A satnav model of a road network keeps road names, lengths and speed limits. State two details it ignores and say why that is acceptable.",
-        "A game draws an enemy character in eight different places. Explain how a subprogram would help."
+        {
+          "q": "Write a program that inputs the price of an item and a quantity, then outputs the total.",
+          "a": "price = float(input('Price: ')); qty = int(input('Quantity: ')); print('Total', price * qty)",
+          "mins": 5,
+          "model": "I do: price = float(input('Price: ')) because prices have pence; qty = int(input('Quantity: ')); total = price * qty; print('Total:', total)."
+        },
+        {
+          "q": "Which converts '3.5' to a number?",
+          "a": "float('3.5')",
+          "mins": 1,
+          "options": [
+            "float('3.5')",
+            "int('3.5')",
+            "str(3.5)"
+          ]
+        }
       ],
       "independent": [
-        "Core: Decompose the problem 'a school canteen till' into at least four sub-problems. Next to each, name the data it needs.",
-        "Extend: Write two examples of abstraction in a model of a school timetable. For each, say what is kept and what is ignored.",
-        "Stretch: A team of three writes a library loans program. Use decomposition and subprograms to explain how the work could be shared and tested, in about 100 words."
+        {
+          "q": "Pupil PDF task: write a program that inputs minutes and outputs hours and minutes (e.g. 135 → 2 hours 15 minutes). Test with 135, 60 and 59.",
+          "a": "mins = int(input()); print(mins // 60, 'hours', mins % 60, 'minutes'). 135 → 2 15; 60 → 1 0; 59 → 0 59.",
+          "mins": 10,
+          "model": "The teacher shows // (integer division) and % (modulus): 135 // 60 = 2, 135 % 60 = 15."
+        },
+        {
+          "q": "Extend: add a meaningful comment to each line.",
+          "a": "Comments with # explaining each step.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what happens if the user types 'ten'? Why?",
+          "a": "A runtime error (ValueError): int() cannot convert 'ten'.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Define abstraction and give one example not used today.",
-        "Give two benefits of using subprograms in a large program."
+        {
+          "q": "Which is a Boolean value?",
+          "a": "True",
+          "mins": 1,
+          "options": [
+            "True",
+            "'True'",
+            "1.0"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If a program asks your age and you type 14, does the computer know 14 is a number?",
+          "a": "No: input() gives text (a string); we must convert it with int() to calculate with it.",
+          "mins": 2
+        }
       ],
-      "homework": "Choose a program you use (a bus app, a game or a banking app). Write 120 words on how it could be decomposed and what abstraction its model uses.",
-      "send": "SEND/EAL: give a blank three-column table (sub-problem, input, output) and sentence stems such as 'The model ignores ... because ...'. Stretch: evaluate a model that has ignored too much detail and say what to add. Builds on y10 lesson 1, which introduced the terms; this lesson applies them to modelling and adds subprograms (1.1.2).",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Write a program that inputs two test marks and outputs the average; bring it next lesson.",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: first programs tasks and test table",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Python programming language logo",
+          "alt": "The Python logo",
+          "for": "hook"
+        },
+        {
+          "find": "Computer keyboard",
+          "alt": "A keyboard for input",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+      "n": 8,
+      "title": "Lists and arrays: storing and searching many values",
+      "duration": 50,
+      "bigQuestion": "A teacher records 15 test marks. Would you rather have 15 variables or one list? Why?",
+      "objectives": [
+        "To understand how lists store many values under one name and how to loop through them to search and total"
+      ],
+      "successCriteria": [
+        "All: create a list and access an item by index",
+        "Most: loop through a list to total or find the largest value",
+        "Some: implement a linear search returning the position"
+      ],
+      "smsc": "Social: organising data to serve people well",
+      "keywords": [
+        {
+          "term": "list (array)",
+          "def": "an ordered collection of values under one name"
+        },
+        {
+          "term": "index",
+          "def": "the position of an item, starting at 0"
+        },
+        {
+          "term": "iterate",
+          "def": "go through each item in turn"
+        },
+        {
+          "term": "linear search",
+          "def": "check each item in turn until found"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A teacher records 15 test marks. Would you rather have 15 variables or one list? Why?",
+        "a": "One list: easier to store, loop through, sort and search."
+      },
+      "starter": [
+        {
+          "q": "== means ...",
+          "a": "is equal to",
+          "mins": 1,
+          "options": [
+            "is equal to",
+            "assign",
+            "not equal"
+          ]
+        },
+        {
+          "q": "17 // 5 = ?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "2",
+            "3.4"
+          ]
+        },
+        {
+          "q": "range(5) starts at ...",
+          "a": "0",
+          "mins": 1,
+          "options": [
+            "0",
+            "1",
+            "5"
+          ]
+        },
+        {
+          "q": "What does not True give?",
+          "a": "False",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Lists (arrays) and indexes",
+          "bullets": [],
+          "note": "Index starts at 0 (zero-based).",
+          "code": {
+            "lang": "python",
+            "text": "marks = [62, 75, 48, 90]\nprint(marks[0])\nprint(marks[3])\nprint(len(marks))\nmarks.append(81)\nprint(marks)",
+            "output": "62\n90\n4\n[62, 75, 48, 90, 81]"
+          }
+        },
+        {
+          "heading": "Iterate over a list",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "marks = [62, 75, 48, 90]\ntotal = 0\nhighest = marks[0]\nfor m in marks:\n    total = total + m\n    if m > highest:\n        highest = m\nprint(total, highest)",
+            "output": "275 90"
+          }
+        },
+        {
+          "heading": "Linear search",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "names = ['Ali', 'Huda', 'Musa', 'Safa']\ntarget = input('Find: ')\nfound = -1\nfor i in range(len(names)):\n    if names[i] == target:\n        found = i\nprint(found)",
+            "output": "Find: Musa\n2"
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "The first item is marks[1]",
+            "right": "Lists are zero-based: the first item is marks[0]"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "names = ['Ali', 'Huda', 'Musa']. What is names[2]?",
+            "options": [
+              "'Musa'",
+              "'Huda'",
+              "'Ali'",
+              "Error"
+            ],
+            "answer": 0,
+            "why": "Index 2 is the third item."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write code to find the average of marks = [62, 75, 48, 90].",
+          "a": "total = 0; for m in marks: total += m; print(total / len(marks)) → 68.75",
+          "mins": 5,
+          "model": "I do: total = sum by looping: 62 + 75 + 48 + 90 = 275. Average = 275 / len(marks) = 275 / 4 = 68.75."
+        },
+        {
+          "q": "len([3, 8, 1]) = ?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "2",
+            "12"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: a list of 8 daily step counts. Write a program that outputs the total, the highest and how many days were over 8,000.",
+          "a": "Loop with total, highest, and a counter for values > 8000; answers for the given data on the sheet.",
+          "mins": 10,
+          "model": "The teacher writes the loop header and the counter: count = 0; for s in steps: if s > 8000: count = count + 1"
+        },
+        {
+          "q": "Extend: change the linear search to print 'Not found' when found is still -1.",
+          "a": "if found == -1: print('Not found') else: print(found)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is linear search slow on a list of a million names?",
+          "a": "It may check every item: up to a million comparisons.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Lists in Python are ...",
+          "a": "zero-based",
+          "mins": 1,
+          "options": [
+            "zero-based",
+            "one-based",
+            "fixed length"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A teacher records 15 test marks. Would you rather have 15 variables or one list? Why?",
+          "a": "One list: easier to store, loop through, sort and search.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a list of your five daily prayers' times and print each with a loop.",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: step-count list task",
+        "Portal: computing y10 lesson 28 (data types and arrays) for reference",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Shopping list on paper",
+          "alt": "A list",
+          "for": "hook"
+        },
+        {
+          "find": "Pedometer step counter",
+          "alt": "A step counter",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+      "n": 9,
+      "title": "Problem solving core: decomposition, abstraction and algorithms",
+      "duration": 50,
+      "bigQuestion": "How would you explain to a robot how to make a cup of tea? What details could it ignore?",
+      "objectives": [
+        "To understand how decomposition and abstraction turn a real problem into an algorithm shown as a flowchart or pseudo-code"
+      ],
+      "successCriteria": [
+        "All: decompose a problem into sub-problems",
+        "Most: draw a flowchart with a decision",
+        "Some: write pseudo-code for the same algorithm"
+      ],
+      "smsc": "Spiritual: order and precision in creation; excellence (itqan) in our work",
+      "keywords": [
+        {
+          "term": "decomposition",
+          "def": "breaking a problem into smaller parts"
+        },
+        {
+          "term": "abstraction",
+          "def": "removing unnecessary detail"
+        },
+        {
+          "term": "algorithm",
+          "def": "a precise set of steps to solve a problem"
+        },
+        {
+          "term": "pseudo-code",
+          "def": "a structured, language-free way of writing an algorithm"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How would you explain to a robot how to make a cup of tea? What details could it ignore?",
+        "a": "Break it into steps (decomposition) and leave out details that do not matter, like the colour of the cup (abstraction)."
+      },
+      "islamicLink": {
+        "text": "Allah says He created death and life 'to test you as to which of you is best in deed' (Al-Mulk 67:2). Doing work with care and excellence (itqan), like careful, tested code, is part of being best in deed.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "An algorithm is ...",
+          "a": "a set of steps to solve a problem",
+          "mins": 1,
+          "options": [
+            "a set of steps to solve a problem",
+            "a computer",
+            "a program language"
+          ]
+        },
+        {
+          "q": "Which flowchart shape is a decision?",
+          "a": "Diamond",
+          "mins": 1,
+          "options": [
+            "Diamond",
+            "Rectangle",
+            "Oval"
+          ]
+        },
+        {
+          "q": "Input means ...",
+          "a": "data going into a program",
+          "mins": 1,
+          "options": [
+            "data going into a program",
+            "data shown on screen",
+            "a loop"
+          ]
+        },
+        {
+          "q": "Name one everyday algorithm.",
+          "a": "e.g. a recipe, directions to school, wudu steps.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Decomposition and abstraction",
+          "bullets": [
+            "Decomposition: break a problem into smaller parts",
+            "Abstraction: remove unnecessary detail",
+            "Both make problems solvable"
+          ],
+          "note": "Spec 1.1.1. Example: a school library app: search, borrow, return, overdue reminder."
+        },
+        {
+          "heading": "Flowchart symbols",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Shape",
+              "Use"
+            ],
+            "rows": [
+              [
+                "Oval",
+                "Start or stop"
+              ],
+              [
+                "Parallelogram",
+                "Input or output"
+              ],
+              [
+                "Rectangle",
+                "Process"
+              ],
+              [
+                "Diamond",
+                "Decision (yes or no)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: pass or fail",
+          "bullets": [],
+          "note": "Pupils draw the flowchart from this pseudo-code.",
+          "code": {
+            "lang": "pseudocode",
+            "text": "SEND 'Enter mark' TO DISPLAY\nRECEIVE mark FROM KEYBOARD\nIF mark >= 50 THEN\n    SEND 'Pass' TO DISPLAY\nELSE\n    SEND 'Fail' TO DISPLAY\nEND IF",
+            "output": "Enter mark: 62 → Pass"
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Abstraction means making the problem harder to understand",
+            "right": "Abstraction hides detail that is not needed, so the problem is simpler"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "Ignoring the colour of a bus when planning a bus-timetable app is ...",
+            "options": [
+              "abstraction",
+              "decomposition",
+              "iteration",
+              "a syntax error"
+            ],
+            "answer": 0,
+            "why": "Removing unneeded detail is abstraction."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Decompose a 'prayer-times reminder' app into four sub-problems.",
+          "a": "e.g. get location; get today's prayer times; compare with the current time; send a reminder.",
+          "mins": 5,
+          "model": "I do: 1) get the user's town; 2) look up today's five prayer times; 3) check the clock every minute; 4) when a time arrives, show a reminder."
+        },
+        {
+          "q": "Which is a process box?",
+          "a": "Rectangle",
+          "mins": 1,
+          "options": [
+            "Rectangle",
+            "Diamond",
+            "Oval"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: draw a flowchart and write pseudo-code that inputs an age and outputs 'Child', 'Teen' (13 to 19) or 'Adult'.",
+          "a": "Two decisions: IF age < 13 → Child; ELSE IF age <= 19 → Teen; ELSE Adult.",
+          "mins": 10,
+          "model": "The teacher draws the first decision: diamond 'age < 13?', yes → output 'Child'."
+        },
+        {
+          "q": "Extend: identify one abstraction you made.",
+          "a": "e.g. ignored date of birth; used whole years only.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how many test values would you use, and which?",
+          "a": "12, 13, 19, 20 (boundaries) and an invalid value like -1.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Breaking a problem into smaller parts is ...",
+          "a": "decomposition",
+          "mins": 1,
+          "options": [
+            "decomposition",
+            "abstraction",
+            "selection"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How would you explain to a robot how to make a cup of tea? What details could it ignore?",
+          "a": "Break it into steps (decomposition) and leave out details that do not matter, like the colour of the cup (abstraction).",
+          "mins": 2
+        }
+      ],
+      "homework": "Write pseudo-code for making wudu-ready reminders or another everyday task with one decision.",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: flowchart template and age-group task",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Flowchart diagram",
+          "alt": "A flowchart",
+          "for": "teach:2"
+        },
+        {
+          "find": "Kettle and cup",
+          "alt": "Making a cup of tea: an everyday algorithm",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
@@ -1233,361 +1565,529 @@
       "boardShort": "Edexcel GCSE 1CP2"
     },
     {
-      "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
       "n": 12,
-      "title": "Operators and trace tables",
+      "title": "Operators and trace tables core",
       "duration": 50,
-      "bigQuestion": "How can we find out what an algorithm does without running it?",
+      "bigQuestion": "How can you be sure what a program will do without running it?",
       "objectives": [
-        "Use arithmetic, relational and logical operators in algorithms (1.2.3)",
-        "Complete a trace table to work out outputs and variable values (1.2.4)",
-        "Describe what an algorithm does from its trace"
+        "To understand how arithmetic, relational and logical operators work and how a trace table shows a program's values"
       ],
       "successCriteria": [
-        "All: evaluate expressions with arithmetic and relational operators",
+        "All: evaluate expressions with + − * / // % **",
         "Most: complete a trace table for a loop",
-        "Some: use the trace to state the purpose of an unfamiliar algorithm"
+        "Some: combine relational and logical operators in a condition"
       ],
-      "crossCurricular": "Mathematics: order of operations and iterative formulae",
-      "smsc": "Moral: patience and accuracy (itqan) in checking each step",
+      "crossCurricular": "Maths: order of operations and remainders",
+      "smsc": "Moral: checking work carefully before trusting it",
       "keywords": [
         {
           "term": "operator",
-          "def": "a symbol that carries out an operation on values"
+          "def": "a symbol that performs an operation"
         },
         {
-          "term": "relational operator",
-          "def": "compares two values and gives True or False"
-        },
-        {
-          "term": "logical operator",
-          "def": "combines conditions: AND, OR, NOT"
+          "term": "modulus",
+          "def": "the remainder after division (%)"
         },
         {
           "term": "trace table",
-          "def": "a table that records the value of each variable as an algorithm runs"
+          "def": "a table recording variable values as a program runs"
+        },
+        {
+          "term": "logical operator",
+          "def": "and, or, not"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "How can you be sure what a program will do without running it?",
+        "a": "Trace it: follow each line and record each variable's value in a trace table."
+      },
       "starter": [
-        "Bismillah. Calculate 17 MOD 5 and 17 DIV 5.",
-        "What does the diamond in a flowchart do?",
-        "Name the three types of repetition or loop shown in the previous lesson."
+        {
+          "q": "range(1, 4) gives ...",
+          "a": "1, 2, 3",
+          "mins": 1,
+          "options": [
+            "1, 2, 3",
+            "1, 2, 3, 4",
+            "0, 1, 2, 3"
+          ]
+        },
+        {
+          "q": "Which loop has a fixed count?",
+          "a": "for",
+          "mins": 1,
+          "options": [
+            "for",
+            "while",
+            "if"
+          ]
+        },
+        {
+          "q": "17 % 5 = ?",
+          "a": "2",
+          "mins": 1,
+          "options": [
+            "2",
+            "3",
+            "3.4"
+          ]
+        },
+        {
+          "q": "2 ** 3 = ?",
+          "a": "8",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Operators",
-          "bullets": [
-            "Arithmetic: + - * / DIV MOD and powers",
-            "Relational: = != < > <= >=",
-            "Logical: AND, OR, NOT"
-          ],
-          "note": "In Python DIV is // and MOD is %. Exam pseudocode may use either style; the paper always defines what it uses. Note that brackets and BIDMAS apply: * and / before + and -. Ask: what is 2 + 3 * 4? (14, not 20).",
+          "heading": "Operators (6.5)",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
-              "Expression",
-              "Result",
-              "Type"
+              "Kind",
+              "Operators",
+              "Example",
+              "Result"
             ],
             "rows": [
               [
-                "17 // 5",
-                "3",
-                "Arithmetic (integer division)"
+                "Arithmetic",
+                "+ − * /",
+                "7 / 2",
+                "3.5"
               ],
               [
-                "17 % 5",
-                "2",
-                "Arithmetic (remainder)"
+                "Integer division and modulus",
+                "// %",
+                "7 // 2, 7 % 2",
+                "3, 1"
               ],
               [
-                "2 ** 3",
-                "8",
-                "Arithmetic (power)"
+                "Exponent",
+                "**",
+                "3 ** 2",
+                "9"
               ],
               [
-                "7 >= 7",
-                "True",
-                "Relational"
+                "Relational",
+                "== != < > <= >=",
+                "5 != 3",
+                "True"
               ],
               [
-                "(3 < 5) and (2 > 4)",
-                "False",
-                "Logical"
+                "Logical",
+                "and or not",
+                "(5 > 3) and (2 > 4)",
+                "False"
               ]
             ]
           }
         },
         {
-          "heading": "Trace table: record every change",
-          "bullets": [
-            "One column per variable, plus output",
-            "Add a row each time a value changes",
-            "Follow the code exactly, do not guess"
-          ],
-          "note": "Run the program with the class first without showing the output, then reveal it. Draw the trace table as pupils dictate. Point out that i is a variable too. The most common error is to skip the row where the loop condition fails.",
+          "heading": "Trace this",
+          "bullets": [],
+          "note": "Complete the trace table together.",
           "code": {
             "lang": "python",
-            "text": "total = 0\nfor i in range(1, 5):\n    if i % 2 == 0:\n        total = total + i\n    print(i, total)",
-            "output": "1 0\n2 2\n3 2\n4 6"
+            "text": "total = 0\nfor n in range(1, 5):\n    if n % 2 == 0:\n        total = total + n\nprint(total)",
+            "output": "6"
           }
         },
         {
-          "heading": "Worked example: a while loop trace",
-          "note": "Model slowly, writing each row, and say the condition aloud each time. Ask pupils what the loop seems to calculate: it counts subtractions of 3, which is 8 DIV 3 plus one because the loop subtracts once more after n reaches 2. Stress that a trace tells you what the algorithm really does, which may differ from what you expected.",
-          "model": {
-            "problem": "Trace: n = 8, count = 0, WHILE n >= 0: n = n - 3, count = count + 1. Then OUTPUT count.",
-            "steps": [
-              "Start: n = 8, count = 0. Condition 8 >= 0 is True",
-              "Row 1: n = 5, count = 1 (5 >= 0 True)",
-              "Row 2: n = 2, count = 2 (2 >= 0 True)",
-              "Row 3: n = -1, count = 3 (-1 >= 0 False, so the loop stops)",
-              "OUTPUT count"
-            ],
-            "answer": "The output is 3. The final n is -1. Note this is 8 DIV 3 plus one, because the loop subtracts once more after n reaches 2."
-          }
-        },
-        {
-          "heading": "Answer: trace of the earlier program",
-          "note": "Pupils first complete their own trace of the program from the earlier slide, then you reveal this table. Only even values of i are added, so total goes 0, 2, 2, 6. Check they have a row for every pass of the loop.",
+          "heading": "Trace table",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
-              "i",
-              "i % 2 == 0",
-              "total",
-              "Output"
+              "n",
+              "n % 2 == 0",
+              "total"
             ],
             "rows": [
               [
                 "1",
                 "False",
-                "0",
-                "1 0"
+                "0"
               ],
               [
                 "2",
                 "True",
-                "2",
-                "2 2"
+                "2"
               ],
               [
                 "3",
                 "False",
-                "2",
-                "3 2"
+                "2"
               ],
               [
                 "4",
                 "True",
-                "6",
-                "4 6"
+                "6"
               ]
             ]
           }
         },
         {
-          "heading": "Check: relational and logical operators",
-          "note": "Answer B. x > 3 is True, y < 10 is False, so True AND False is False; but the question uses OR. Work it through: x = 5, y = 12: x > 3 True; y < 10 False; OR gives True. Ask why option C (False) is the AND answer.",
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Using = to compare: if n = 4:",
+            "right": "= assigns; == compares: if n == 4:"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
           "check": {
-            "q": "x = 5 and y = 12. What is the value of (x > 3) OR (y < 10)?",
+            "q": "What is not (3 > 5)?",
             "options": [
-              "False",
               "True",
-              "5",
-              "12"
+              "False",
+              "3",
+              "Error"
             ],
-            "answer": 1,
-            "why": "x > 3 is True. y < 10 is False. With OR, one True is enough, so the result is True. False would be the result of AND (A). The result of a relational test is a Boolean, not a number (C, D)."
+            "answer": 0,
+            "why": "3 > 5 is False; not False is True."
           }
         }
       ],
       "practice": [
-        "Evaluate: (a) 23 // 4; (b) 23 % 4; (c) 3 ** 2 + 1; (d) 10 != 10.",
-        "Trace: a = 1, b = 1; repeat 4 times: c = a + b, a = b, b = c. Complete the table and give the final b.",
-        "State the purpose of this algorithm: SET s TO 0, FOR each digit d IN [4, 8, 1]: SET s TO s + d, OUTPUT s / 3."
+        {
+          "q": "Evaluate: 20 // 6, 20 % 6, 20 / 6 (to 2 dp), 2 ** 5.",
+          "a": "3, 2, 3.33, 32",
+          "mins": 5,
+          "model": "I do: 20 // 6: how many whole 6s in 20: 3. 20 % 6: remainder 2. 20 / 6 = 3.33. 2 ** 5 = 32."
+        },
+        {
+          "q": "(4 >= 4) or (1 > 2) = ?",
+          "a": "True",
+          "mins": 1,
+          "options": [
+            "True",
+            "False"
+          ]
+        }
       ],
       "independent": [
-        "Core: Trace the program total = 1; for i in range(1, 4): total = total * 2; print(total). Show every row.",
-        "Extend: Write an algorithm using MOD to output 'even' or 'odd' for each number in [3, 10, 7, 12] and trace it.",
-        "Stretch: A trace of an unknown algorithm gives x: 1, 3, 7, 15, 31. Describe the pattern, write the loop that produced it and state the next value."
+        {
+          "q": "Pupil PDF: complete trace tables for three short programs, including one with a while loop and a logical operator.",
+          "a": "Answers on the pupil PDF answer key in the plan (e.g. program 1 output 6; program 2 output 15; program 3 output 'Valid').",
+          "mins": 10,
+          "model": "The teacher fills the first row of program 1's trace table."
+        },
+        {
+          "q": "Extend: write a condition true only for ages 13 to 19 inclusive.",
+          "a": "age >= 13 and age <= 19",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what is the output of print(7 // 2 * 2 + 7 % 2)?",
+          "a": "7 (3 * 2 + 1)",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Calculate 29 MOD 6 and 29 DIV 6.",
-        "State why a trace table has a column for every variable."
+        {
+          "q": "Which operator gives the remainder?",
+          "a": "%",
+          "mins": 1,
+          "options": [
+            "%",
+            "//",
+            "/"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How can you be sure what a program will do without running it?",
+          "a": "Trace it: follow each line and record each variable's value in a trace table.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a short algorithm using a loop and one IF. Swap with a partner (or ask someone at home), trace it for the input 6 and write down what it does.",
-      "send": "SEND/EAL: give a pre-drawn trace table with column headings and the first row filled. Stretch: ask for the trace of a nested loop.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Trace the pupil PDF homework program and predict its output.",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: trace table set (three programs)",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Calculator",
+          "alt": "A calculator",
+          "for": "hook"
+        },
+        {
+          "find": "Spreadsheet table grid",
+          "alt": "A table of values",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
       "n": 13,
-      "title": "Errors and test data: finding and fixing faults",
+      "title": "Errors and test data: defensive programming",
       "duration": 50,
-      "bigQuestion": "How can you prove a program works, and what do you do when it does not?",
+      "bigQuestion": "A program runs with no error messages but gives the wrong answer. Is it working?",
       "objectives": [
-        "Identify syntax, logic and runtime errors (1.2.5)",
-        "Correct logic errors in an algorithm",
-        "Choose normal, boundary and erroneous test data and judge fitness for purpose (1.2.7)"
+        "To understand the three kinds of error and how normal, boundary and erroneous test data find them"
       ],
       "successCriteria": [
-        "All: name the three types of error and give an example of each",
-        "Most: spot and fix a logic error using a trace",
-        "Some: design a test plan with expected outcomes and judge whether a program is fit for purpose"
+        "All: classify syntax, logic and runtime errors",
+        "Most: write a test plan with normal, boundary and erroneous data",
+        "Some: find and fix a logic error using a trace table"
       ],
-      "crossCurricular": "Science: fair testing and repeatable results",
-      "smsc": "Moral: honesty (sidq) in reporting that something is broken, rather than hiding it",
+      "smsc": "Moral: honesty about mistakes and fixing them (itqan)",
       "keywords": [
         {
           "term": "syntax error",
-          "def": "code that breaks the rules of the language, so it cannot run"
+          "def": "breaks the rules of the language; the program will not run"
         },
         {
           "term": "logic error",
-          "def": "the program runs but gives wrong results because of faulty reasoning"
+          "def": "the program runs but gives wrong results"
         },
         {
           "term": "runtime error",
-          "def": "an error that happens while the program is running and stops it"
+          "def": "an error that crashes the program while running"
         },
         {
           "term": "test data",
-          "def": "chosen inputs used to check a program, with the expected results"
-        },
-        {
-          "term": "fit for purpose",
-          "def": "does the job it was designed for, correctly and efficiently"
+          "def": "normal, boundary and erroneous values used to test"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A program runs with no error messages but gives the wrong answer. Is it working?",
+        "a": "No: it has a logic error. Testing with planned data finds errors the computer cannot spot."
+      },
       "starter": [
-        "Bismillah. What is a trace table used for?",
-        "Calculate 90 / 3 + 10 and 90 / (3 + 10) on paper, to 1 decimal place.",
-        "Why do we use meaningful variable names?"
+        {
+          "q": "Length check example?",
+          "a": "Password at least 8 characters",
+          "mins": 1,
+          "options": [
+            "Password at least 8 characters",
+            "Age 11 to 18",
+            "Name not empty"
+          ]
+        },
+        {
+          "q": "Authentication confirms ...",
+          "a": "who the user is",
+          "mins": 1,
+          "options": [
+            "who the user is",
+            "the data type"
+          ]
+        },
+        {
+          "q": "A while loop runs ...",
+          "a": "while its condition is True",
+          "mins": 1,
+          "options": [
+            "while its condition is True",
+            "a set number of times",
+            "once"
+          ]
+        },
+        {
+          "q": "Give a boundary value for 'age 11 to 18'.",
+          "a": "11 or 18",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Three kinds of error",
-          "bullets": [
-            "Syntax: rules broken, program will not start",
-            "Logic: runs, but the answer is wrong",
-            "Runtime: crashes while running"
-          ],
-          "note": "Run all three programs on the next slides in turn if you have a computer. Ask pupils which type is hardest to find and why: logic errors give no error message. Emphasise that only the logic error needs a trace table to find.",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
-              "Type",
-              "When detected",
+              "Error",
+              "What happens",
               "Example"
             ],
             "rows": [
               [
                 "Syntax",
-                "Before or as the program starts",
-                "Missing bracket or colon"
-              ],
-              [
-                "Logic",
-                "Never by the computer; found by testing",
-                "Wrong operator or order of operations"
+                "The program will not run",
+                "print('hi' (missing bracket)"
               ],
               [
                 "Runtime",
-                "While running",
-                "Dividing by zero, index out of range"
+                "It crashes while running",
+                "int('ten'), dividing by 0"
+              ],
+              [
+                "Logic",
+                "It runs but gives the wrong result",
+                "Using > instead of >="
               ]
             ]
           }
         },
         {
-          "heading": "Syntax error",
-          "bullets": [
-            "The translator reports the line",
-            "Fix: add the missing bracket",
-            "The program cannot run until fixed"
-          ],
-          "note": "Read the message aloud and find the cause. In exams a syntax error is often a missing colon, bracket, quotation mark or misspelled keyword. Ask pupils to say how the translator helped them.",
-          "code": {
-            "lang": "python",
-            "text": "print(\"Salam\"",
-            "output": "SyntaxError: '(' was never closed"
-          }
-        },
-        {
-          "heading": "Logic error",
-          "bullets": [
-            "No error message appears",
-            "Output is 190.0, not the mean 90.0",
-            "Fix: brackets around the sum"
-          ],
-          "note": "Pupils should calculate the correct mean first (60 + 90 + 120 = 270, divided by 3 is 90), then compare. The fault is the order of operations: division happens before addition. Show the fix: mean = (a + b + c) / 3. Link to the trace table: trace the faulty line to see where it diverges.",
-          "code": {
-            "lang": "python",
-            "text": "a = 60\nb = 90\nc = 120\nmean = a + b + c / 3\nprint(mean)",
-            "output": "190.0"
-          }
-        },
-        {
-          "heading": "Worked example: find and fix",
-          "note": "Model the method: run with simple data you can predict, compare with the expected value, then trace to find the line. Point out that the logic error here is also an off-by-one, a very common exam error. The range stops before the second number.",
-          "model": {
-            "problem": "This code should output the sum of 1 to 5 (15) but outputs 10: total = 0; for i in range(1, 5): total = total + i; print(total). Find and fix the error.",
-            "steps": [
-              "Expected output: 1 + 2 + 3 + 4 + 5 = 15",
-              "Trace: i takes 1, 2, 3, 4 only, so total is 10",
-              "range(1, 5) stops before 5",
-              "Change to range(1, 6)"
+          "heading": "Test data",
+          "bullets": [],
+          "note": "For 'mark 0 to 100'.",
+          "table": {
+            "head": [
+              "Type",
+              "Values",
+              "Expected"
             ],
-            "answer": "A logic error (off by one). The corrected loop is for i in range(1, 6), which outputs 15."
+            "rows": [
+              [
+                "Normal",
+                "56, 72",
+                "Accepted"
+              ],
+              [
+                "Boundary",
+                "0, 100 (and -1, 101 just outside)",
+                "0, 100 accepted; -1, 101 rejected"
+              ],
+              [
+                "Erroneous",
+                "'fifty', 3.5",
+                "Rejected"
+              ]
+            ]
           }
         },
         {
-          "heading": "Runtime error and test data",
-          "bullets": [
-            "Runtime: 10 / 0 stops the program",
-            "Normal data: typical valid values",
-            "Boundary data: the edges; erroneous data: invalid input"
-          ],
-          "note": "Run the code to show the crash. Then introduce a test plan for a program that accepts ages from 11 to 16. Boundaries are both sides of each limit: 10, 11, 16, 17. Erroneous data includes the wrong type, such as 'abc'. Testing shows the presence of faults, not their absence.",
+          "heading": "Find the logic error",
+          "bullets": [],
+          "note": "Expected: 'Pass' for 50 and above.",
           "code": {
             "lang": "python",
-            "text": "nums = [4, 0]\nprint(10 / nums[0])\nprint(10 / nums[1])",
-            "output": "2.5\nZeroDivisionError: division by zero"
+            "text": "mark = int(input('Mark: '))\nif mark > 50:\n    print('Pass')\nelse:\n    print('Fail')",
+            "output": "Mark: 50\nFail   (wrong: 50 should pass)"
           }
         },
         {
-          "heading": "Check: type of error",
-          "note": "Answer C. The program runs and prints something, so it is not a syntax error; it does not crash, so it is not a runtime error; the result is wrong. Discuss why D is not an error type at all: bad style is not an error.",
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "If there are no error messages, the program is correct",
+            "right": "Logic errors give no message; only testing reveals them"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
           "check": {
-            "q": "A program to find the area of a rectangle outputs 14 for width 3 and height 4, instead of 12. It runs without crashing. What type of error is this?",
+            "q": "Dividing by zero during a run is a ...",
             "options": [
-              "Syntax error",
-              "Runtime error",
-              "Logic error",
-              "Presentation error"
+              "runtime error",
+              "syntax error",
+              "logic error",
+              "validation check"
             ],
-            "answer": 2,
-            "why": "The program runs to the end but the result is wrong, so the logic is faulty (it added 3 + 4 instead of multiplying). A syntax error stops the program starting (A); a runtime error crashes it (B)."
+            "answer": 0,
+            "why": "The program starts but crashes when it happens: runtime."
           }
         }
       ],
       "practice": [
-        "Classify each fault: (a) a missing colon after if; (b) a program that adds VAT twice; (c) asking for list[10] in a list of 5 items.",
-        "A program accepts exam marks from 0 to 100. Give one normal, two boundary and one erroneous test value for the valid range.",
-        "Explain how a trace table helps find a logic error."
+        {
+          "q": "Fix the logic error in the pass/fail program and write the boundary tests.",
+          "a": "Change > to >=; tests: 50 → Pass, 49 → Fail.",
+          "mins": 5,
+          "model": "I do: 'Pass' should include 50, so the condition must be mark >= 50. Boundary tests: 49 (Fail) and 50 (Pass)."
+        },
+        {
+          "q": "'fifty' for a mark is ...",
+          "a": "erroneous data",
+          "mins": 1,
+          "options": [
+            "erroneous data",
+            "boundary data",
+            "normal data"
+          ]
+        }
       ],
       "independent": [
-        "Core: Fix the error and state its type: for i in range(3) print(i).",
-        "Extend: Write a test plan table (input, type of data, expected result) for a program that accepts a password of 8 to 12 characters.",
-        "Stretch: A program to find the largest of three numbers always outputs the first number. Describe how you would test it, what data you would choose and how you would find the line at fault."
+        {
+          "q": "Pupil PDF: three buggy programs. For each, name the error type, fix it and write a test table (normal, boundary, erroneous).",
+          "a": "Program 1 syntax (missing colon); program 2 runtime (int of text, add validation); program 3 logic (wrong range); answers in the plan's key.",
+          "mins": 10,
+          "model": "The teacher fixes program 1: add the missing colon after the if condition; error type syntax."
+        },
+        {
+          "q": "Extend: how can a try/except stop a runtime error from crashing a program?",
+          "a": "It catches the error (e.g. ValueError) and lets the program ask again.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why do programmers test boundaries on both sides?",
+          "a": "Off-by-one errors happen exactly at the edges.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the three types of error. Which one does the computer never report?",
-        "Give one example of boundary data for a program that accepts numbers from 1 to 50."
+        {
+          "q": "A program runs but gives a wrong answer: this is a ...",
+          "a": "logic error",
+          "mins": 1,
+          "options": [
+            "logic error",
+            "syntax error",
+            "runtime error"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A program runs with no error messages but gives the wrong answer. Is it working?",
+          "a": "No: it has a logic error. Testing with planned data finds errors the computer cannot spot.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a short program in Python containing one syntax, one logic and one runtime error (in three separate versions). Annotate each with the type and the fix.",
-      "send": "SEND/EAL: provide a sorting task with the three error types as cards and example snippets. Stretch: ask for a test plan with 8 rows covering every kind of test data.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Write a full test plan for your sign-up program from last lesson and run it.",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: three buggy programs and test tables",
+        "Portal: computing y10 lesson 13 (errors and test data) for reference",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Magnifying glass",
+          "alt": "Looking closely for errors",
+          "for": "hook"
+        },
+        {
+          "find": "Checklist clipboard",
+          "alt": "A test checklist",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
@@ -3778,137 +4278,218 @@
       "boardShort": "Edexcel GCSE 1CP2"
     },
     {
-      "unit": "Unit 6.2: Problem solving with programming: program structure and control",
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
       "n": 27,
-      "title": "Program structure and control: sequence, selection, repetition and iteration",
+      "title": "Selection and loops core: if, while and for",
       "duration": 50,
-      "bigQuestion": "How do the parts of a program fit together so it does what you intend?",
+      "bigQuestion": "A teacher calls the register: 15 names, every day. A game keeps going until you lose. Which needs a fixed count and which needs a condition?",
       "objectives": [
-        "Identify the structural components of a program (6.2.1)",
-        "Use sequence, selection, repetition and iteration in Python (6.2.2)",
-        "Explain the idea of a single entry and a single exit point"
+        "To understand how selection and repetition control the flow of a Python program"
       ],
       "successCriteria": [
-        "All: identify the main parts of a program",
-        "Most: write programs using if/elif/else, for and while",
-        "Some: nest structures correctly and justify the choice of loop"
+        "All: write an if/elif/else statement",
+        "Most: use a for loop with range and a while loop",
+        "Some: choose count-controlled or condition-controlled repetition and justify it"
       ],
-      "crossCurricular": "Mathematics: conditions and iterative procedures",
-      "smsc": "Moral: discipline and order (nidham) in organising work",
+      "smsc": "Moral: discipline and consistency, like a daily revision routine",
       "keywords": [
         {
+          "term": "selection",
+          "def": "choosing a path with if, elif, else"
+        },
+        {
+          "term": "iteration",
+          "def": "repeating code"
+        },
+        {
           "term": "count-controlled",
-          "def": "a loop that runs a set number of times, such as for"
+          "def": "a loop that runs a set number of times (for)"
         },
         {
           "term": "condition-controlled",
-          "def": "a loop that runs while a condition is true, such as while"
-        },
-        {
-          "term": "nested",
-          "def": "one structure placed inside another"
-        },
-        {
-          "term": "single entry and exit",
-          "def": "each block of code is entered at the top and left at the bottom"
+          "def": "a loop that runs while a condition is True (while)"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A teacher calls the register: 15 names, every day. A game keeps going until you lose. Which needs a fixed count and which needs a condition?",
+        "a": "The register is count-controlled (for); the game is condition-controlled (while)."
+      },
       "starter": [
-        "Bismillah. What does the % operator do in Python?",
-        "Write an if statement that prints 'adult' when age is 18 or more.",
-        "What is the difference between for and while?"
+        {
+          "q": "input() returns ...",
+          "a": "a string",
+          "mins": 1,
+          "options": [
+            "a string",
+            "an int",
+            "a float"
+          ]
+        },
+        {
+          "q": "135 // 60 = ?",
+          "a": "2",
+          "mins": 1,
+          "options": [
+            "2",
+            "15",
+            "2.25"
+          ]
+        },
+        {
+          "q": "135 % 60 = ?",
+          "a": "15",
+          "mins": 1,
+          "options": [
+            "15",
+            "2",
+            "75"
+          ]
+        },
+        {
+          "q": "Write a line that converts '20' to an integer.",
+          "a": "int('20')",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Parts of a program",
-          "bullets": [
-            "Libraries imported at the top",
-            "Constants and global data",
-            "Subprogram definitions, then the main program"
-          ],
-          "note": "Show the labelled program. A typical order: imports, constants, subprograms, main code. Comments label each part. The same structure scales from 10 lines to 10 000. Pupils often put definitions after the code that calls them, which fails in Python.",
+          "heading": "Selection",
+          "bullets": [],
+          "note": "Indentation shows the block.",
           "code": {
             "lang": "python",
-            "text": "import math                      # library\n\nVAT = 0.2                        # constant\n\ndef gross(net):                  # subprogram\n    return net * (1 + VAT)\n\ndef main():                      # main program\n    prices = [10, 20, 35]\n    for p in prices:\n        print(p, math.ceil(gross(p)))\n\nmain()",
-            "output": "10 12\n20 24\n35 42"
+            "text": "mark = int(input('Mark: '))\nif mark >= 70:\n    print('Grade A')\nelif mark >= 50:\n    print('Grade B')\nelse:\n    print('Keep going')",
+            "output": "Mark: 55\nGrade B"
           }
         },
         {
-          "heading": "Selection and repetition in Python",
-          "bullets": [
-            "if / elif / else chooses one path",
-            "for repeats a known number of times",
-            "while repeats until a condition is false"
-          ],
-          "note": "Trace the program: the first matching branch runs and the rest are skipped. Check that pupils see why 6 gives six and not even: the order of conditions matters. Ask what would happen if the % 2 test came first.",
+          "heading": "Count-controlled: for",
+          "bullets": [],
+          "note": "range(1, 6) gives 1 to 5.",
           "code": {
             "lang": "python",
-            "text": "for n in range(1, 7):\n    if n % 6 == 0:\n        label = \"six\"\n    elif n % 2 == 0:\n        label = \"even\"\n    else:\n        label = \"odd\"\n    print(n, label)",
-            "output": "1 odd\n2 even\n3 odd\n4 even\n5 odd\n6 six"
+            "text": "for day in range(1, 6):\n    print('Day', day, ': revise 10 minutes')",
+            "output": "Day 1 : revise 10 minutes\n... to Day 5"
           }
         },
         {
-          "heading": "Single entry and exit",
-          "bullets": [
-            "Every structure is entered at the top",
-            "And left at the bottom",
-            "Nested structures sit completely inside others"
-          ],
-          "note": "Draw boxes around the loop and the if inside it to show nesting. Structured programs are easier to read, test and prove correct. Avoid jumping out of the middle with extra exits where a condition would do. The while loop below has one entry and one exit and the condition is the only way out.",
+          "heading": "Condition-controlled: while",
+          "bullets": [],
+          "note": "",
           "code": {
             "lang": "python",
-            "text": "attempts = 0\ncorrect = False\nguesses = [4, 9, 7]\nwhile not correct and attempts < len(guesses):\n    if guesses[attempts] == 7:\n        correct = True\n    attempts = attempts + 1\nprint(correct, attempts)",
-            "output": "True 3"
+            "text": "total = 0\nwhile total < 100:\n    total = total + 30\nprint(total)",
+            "output": "120"
           }
         },
         {
-          "heading": "Worked example: choose the right loop",
-          "note": "Model the decision: ask 'do we know how many times in advance?' If yes, for; if not, while. Link 'iteration over data' with for item in list. Keep the focus on the choice and the justification, because Paper 2 and Paper 1 both ask pupils to explain why a loop is suitable.",
-          "model": {
-            "problem": "Choose a loop for each task and justify: (a) print the 12 times table; (b) keep asking for a password until it is correct; (c) total the marks in a list.",
-            "steps": [
-              "(a) 12 repeats is known: count-controlled, for i in range(1, 13)",
-              "(b) Number of attempts is unknown: condition-controlled, while not correct",
-              "(c) Visit every item: iteration over a data structure, for mark in marks",
-              "Check that each loop has one entry point and one exit point"
-            ],
-            "answer": "(a) for, (b) while, (c) for over the list."
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "range(1, 5) gives 1 to 5",
+            "right": "range(1, 5) stops before 5: it gives 1, 2, 3, 4"
           }
         },
         {
-          "heading": "Check: order of conditions",
-          "note": "Answer C. In an if/elif chain the first true branch is the only one that runs, so 6 gets 'six' because that test is first. If the % 2 test came first, 6 would be labelled 'even'.",
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
           "check": {
-            "q": "In the program with n % 6 == 0 first, which label is printed for n = 6?",
+            "q": "How many times does 'for i in range(3):' repeat?",
             "options": [
-              "even",
-              "odd",
-              "six",
-              "six and even"
+              "3",
+              "2",
+              "4",
+              "Forever"
             ],
-            "answer": 2,
-            "why": "The first condition, n % 6 == 0, is true so 'six' is chosen and the elif branches are skipped. 'even' (A) would be printed only if the even test came first."
+            "answer": 0,
+            "why": "range(3) gives 0, 1, 2: three times."
           }
         }
       ],
       "practice": [
-        "List four structural parts of a program in the order they usually appear.",
-        "Write a for loop that prints the numbers 10, 20, 30, 40, 50.",
-        "Write a while loop that doubles a variable starting at 1 until it is more than 100, then prints it."
+        {
+          "q": "Trace the while loop on the slide: write total after each pass.",
+          "a": "30, 60, 90, 120; then 120 < 100 is False, so it stops and prints 120.",
+          "mins": 5,
+          "model": "I do: start 0. 0 < 100: total 30. 30 < 100: 60. 60 < 100: 90. 90 < 100: 120. 120 < 100 is False: stop, print 120."
+        },
+        {
+          "q": "Which loop suits 'keep asking until the password is correct'?",
+          "a": "while",
+          "mins": 1,
+          "options": [
+            "while",
+            "for",
+            "if"
+          ]
+        }
       ],
       "independent": [
-        "Core: Write a program that prints 'fizz' for each multiple of 3 from 1 to 15 and the number otherwise.",
-        "Extend: Write a program with a list of five marks and use iteration and selection to print the number of marks of 60 or more.",
-        "Stretch: Extend the guessing loop so that it also prints 'not found' if no guess was 7, still with one entry and one exit. Explain why a single exit makes the program easier to test."
+        {
+          "q": "Pupil PDF: write a program that prints the 7 times table (7 × 1 to 7 × 12) with a for loop, then a version that keeps asking for a number until it is between 1 and 12.",
+          "a": "for i in range(1, 13): print(7, 'x', i, '=', 7 * i); while loop: n = int(input()) repeated while n < 1 or n > 12.",
+          "mins": 10,
+          "model": "The teacher writes the first line: for i in range(1, 13):"
+        },
+        {
+          "q": "Extend: use elif to output 'Fizz' for multiples of 3 in 1 to 15.",
+          "a": "for i in range(1, 16): if i % 3 == 0: print('Fizz') else: print(i)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: when is a while loop dangerous?",
+          "a": "If the condition never becomes False: an infinite loop.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Which loop is used when you do not know how many times to repeat?",
-        "What is meant by nested selection inside a loop?"
+        {
+          "q": "Which keyword gives a second condition after if?",
+          "a": "elif",
+          "mins": 1,
+          "options": [
+            "elif",
+            "else if",
+            "then"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A teacher calls the register: 15 names, every day. A game keeps going until you lose. Which needs a fixed count and which needs a condition?",
+          "a": "The register is count-controlled (for); the game is condition-controlled (while).",
+          "mins": 2
+        }
       ],
-      "homework": "Write a program with a library import, a constant, a function and a main loop, and label each structural part with a comment.",
-      "send": "SEND/EAL: give a program with sections cut apart to reorder and label. Stretch: ask for a nested loop program printing a multiplication grid.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Write a for loop that prints a 5-day revision plan; bring the code next lesson.",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: selection and loops tasks",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Traffic lights",
+          "alt": "Traffic lights: a real-life selection",
+          "for": "hook"
+        },
+        {
+          "find": "Flowchart diagram",
+          "alt": "A flowchart with a loop",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Unit 6.3: Problem solving with programming: data types, variables and strings",
@@ -4049,165 +4630,218 @@
       "boardShort": "Edexcel GCSE 1CP2"
     },
     {
-      "unit": "Unit 6.3: Problem solving with programming: data types, variables and strings",
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
       "n": 29,
-      "title": "Manipulating strings",
+      "title": "Manipulating strings: length, position, slices and case",
       "duration": 50,
-      "bigQuestion": "How can a program search inside text and change it?",
+      "bigQuestion": "A school email is made from a pupil's name, like 'yahmed24'. How could a program build it automatically?",
       "objectives": [
-        "Find the length of a string and use positions (6.3.3)",
-        "Extract substrings with slicing",
-        "Change case and search for text"
+        "To understand how to manipulate strings using length, indexing, slicing, concatenation and case conversion"
       ],
       "successCriteria": [
-        "All: use len and position to read a character",
-        "Most: slice a string and convert case",
-        "Some: combine find and slicing to extract a part of a string"
+        "All: find the length of a string and a character by index",
+        "Most: slice a substring",
+        "Some: build a username from parts of a name"
       ],
-      "crossCurricular": "English: spelling, word patterns and text analysis",
-      "smsc": "Cultural: handling names respectfully, including capital letters and spelling, shows adab to the person",
+      "smsc": "Cultural: names and their meanings handled with care in systems",
       "keywords": [
         {
           "term": "string",
           "def": "a sequence of characters"
         },
         {
-          "term": "length",
-          "def": "the number of characters in a string"
+          "term": "slice",
+          "def": "part of a string taken with [start:end]"
         },
         {
-          "term": "index",
-          "def": "position of a character, starting from 0"
+          "term": "concatenation",
+          "def": "joining strings"
         },
         {
           "term": "substring",
-          "def": "a part of a string"
-        },
-        {
-          "term": "slice",
-          "def": "a way of taking a substring, such as word[0:3]"
+          "def": "a string inside another string"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A school email is made from a pupil's name, like 'yahmed24'. How could a program build it automatically?",
+        "a": "Take the first letter of the first name, the surname, a number, then make it lower case: string manipulation."
+      },
       "starter": [
-        "Bismillah. What is the index of the first item of a list?",
-        "How do you make a for loop visit every item in a list?",
-        "State the type of 'A'."
+        {
+          "q": "marks[0] is ...",
+          "a": "the first item",
+          "mins": 1,
+          "options": [
+            "the first item",
+            "the last item",
+            "an error"
+          ]
+        },
+        {
+          "q": "len('Salaam') = ?",
+          "a": "6",
+          "mins": 1,
+          "options": [
+            "6",
+            "5",
+            "7"
+          ]
+        },
+        {
+          "q": "Linear search checks ...",
+          "a": "each item in turn",
+          "mins": 1,
+          "options": [
+            "each item in turn",
+            "the middle first",
+            "only the first"
+          ]
+        },
+        {
+          "q": "What is 'ab' + 'cd'?",
+          "a": "'abcd'",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Length and position",
-          "bullets": [
-            "len(word) is the number of characters",
-            "word[0] is the first; word[-1] is the last",
-            "Indexes run from 0 to len - 1"
-          ],
-          "note": "Write 'Bismillah' with an index above each letter so pupils can see it. The positions are the key idea: the last index is len - 1. Pupils get an 'index out of range' error by using len(word) as an index.",
+          "heading": "String operations (6.3.3)",
+          "bullets": [],
+          "note": "",
           "code": {
             "lang": "python",
-            "text": "word = \"Bismillah\"\nprint(len(word))\nprint(word[0], word[-1])\nprint(word[0:3])\nprint(word.upper(), word.lower())\nprint(word.find(\"mil\"))",
-            "output": "9\nB h\nBis\nBISMILLAH bismillah\n3"
+            "text": "word = 'Madinah'\nprint(len(word))\nprint(word[0])\nprint(word[0:3])\nprint(word.upper())\nprint(word.lower())\nprint(word + ' city')",
+            "output": "7\nM\nMad\nMADINAH\nmadinah\nMadinah city"
           }
         },
         {
-          "heading": "Slices, case and find",
+          "heading": "Slicing",
           "bullets": [
-            "word[a:b] starts at a and stops before b",
-            "upper() and lower() convert case",
-            "find returns the position or -1"
+            "word[start:end] stops before end",
+            "word[2:5] of 'Madinah' is 'din'",
+            "word[-1] is the last character: 'h'"
           ],
-          "note": "In the run above, word[0:3] is 'Bis': positions 0, 1, 2. find gives the position where the substring starts, 3. If not found it returns -1: ask what that is useful for. Strings cannot be changed in place; we build new strings.",
-          "table": {
-            "head": [
-              "Expression",
-              "Result",
-              "Meaning"
-            ],
-            "rows": [
-              [
-                "word[2:5]",
-                "smi",
-                "positions 2, 3, 4"
-              ],
-              [
-                "word[:3]",
-                "Bis",
-                "start to position 2"
-              ],
-              [
-                "word[6:]",
-                "lah",
-                "position 6 to end"
-              ],
-              [
-                "word.find('xyz')",
-                "-1",
-                "not found"
-              ]
-            ]
-          }
+          "note": ""
         },
         {
-          "heading": "Looping over characters",
-          "bullets": [
-            "for ch in text visits each character",
-            "Use in to test whether a letter is in a set",
-            "Convert to lower case before comparing"
-          ],
-          "note": "Trace the vowel counter with 'Tarbiyyah': a, i, a is 3 vowels. Ask pupils why we lower-case first (so 'A' counts too). This pattern appears in Paper 2 tasks.",
+          "heading": "Model: a username",
+          "bullets": [],
+          "note": "",
           "code": {
             "lang": "python",
-            "text": "text = \"Tarbiyyah\"\nvowels = 0\nfor ch in text.lower():\n    if ch in \"aeiou\":\n        vowels = vowels + 1\nprint(vowels)",
-            "output": "3"
+            "text": "first = input('First name: ')\nsurname = input('Surname: ')\nyear = input('Year joined: ')\nuser = first[0] + surname + year[2:4]\nprint(user.lower())",
+            "output": "First name: Yasmin\nSurname: Ahmed\nYear joined: 2024\nyahmed24"
           }
         },
         {
-          "heading": "Worked example: extract the username",
-          "note": "Model by combining find and slicing. Ask where the at sign is (position 5 in 'amina@school.org'), so the username is the slice from 0 up to that position. Ask what the domain slice would be (from position 6).",
-          "model": {
-            "problem": "An email address is stored as email = 'amina@school.org'. Write code to output the part before the @ in capitals.",
-            "steps": [
-              "Find the position of the @: at = email.find('@') gives 5",
-              "Slice from the start up to but not including position 5: email[0:at]",
-              "Convert to capitals with .upper()",
-              "print(email[0:at].upper())"
-            ],
-            "answer": "The output is AMINA."
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "word[1:3] includes word[3]",
+            "right": "The end index is not included: word[1:3] is characters 1 and 2"
           }
         },
         {
-          "heading": "Check: slicing",
-          "note": "Answer B. keyboard has k0 e1 y2 b3 o4 a5 r6 d7, so [2:5] is positions 2, 3 and 4: 'ybo'. A is [1:4] and C is [2:6]; D is what you get by counting from 1.",
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
           "check": {
-            "q": "word = 'keyboard'. What is word[2:5]?",
+            "q": "word = 'Quran'. What is word[1:3]?",
             "options": [
-              "eyb",
-              "ybo",
-              "yboa",
-              "eybo"
+              "'ur'",
+              "'Qur'",
+              "'ura'",
+              "'ra'"
             ],
-            "answer": 1,
-            "why": "Positions 2, 3 and 4 are y, b, o. The slice stops before position 5. 'eyb' starts at 1 (A); 'yboa' includes position 5 (C)."
+            "answer": 0,
+            "why": "Characters at index 1 and 2: u and r."
           }
         }
       ],
       "practice": [
-        "For name = 'Zainab', state len(name), name[0] and name[1:4].",
-        "Write code to print a word in capitals and its length.",
-        "Write code that prints how many times the letter 'a' appears in 'Alhamdulillah'."
+        {
+          "q": "For s = 'Al-Kahf', write expressions for: its length, its last character, 'Kahf', and it in capitals.",
+          "a": "len(s) = 7; s[-1] = 'f'; s[3:7] = 'Kahf'; s.upper() = 'AL-KAHF'",
+          "mins": 5,
+          "model": "I do: len(s): A, l, -, K, a, h, f = 7. s[-1] = 'f'. 'Kahf' starts at index 3 and ends at 6, so s[3:7]. s.upper() = 'AL-KAHF'."
+        },
+        {
+          "q": "'Salaam'.lower() = ?",
+          "a": "'salaam'",
+          "mins": 1,
+          "options": [
+            "'salaam'",
+            "'SALAAM'",
+            "'Salaam'"
+          ]
+        }
       ],
       "independent": [
-        "Core: Write a program that prints the first and last letters of 'Madrasah' and its length.",
-        "Extend: Store 'Surname,Forename' as a string and use find and slicing to print Forename Surname.",
-        "Stretch: Write a program that checks whether a word is a palindrome (reads the same backwards), using slicing. Test with 'level' and 'salam'."
+        {
+          "q": "Pupil PDF: write a program that inputs a sentence and outputs its length, the number of vowels and the sentence with the first letter capitalised.",
+          "a": "len(s); loop counting characters in 'aeiouAEIOU'; s[0].upper() + s[1:].",
+          "mins": 10,
+          "model": "The teacher writes the vowel loop: count = 0; for ch in s: if ch in 'aeiouAEIOU': count = count + 1"
+        },
+        {
+          "q": "Extend: output the sentence backwards.",
+          "a": "s[::-1] or a loop from the end.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: check whether a word is a palindrome.",
+          "a": "word.lower() == word.lower()[::-1]",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What is the index of the last character of a 6-letter string?",
-        "State the difference between upper() and lower()."
+        {
+          "q": "Joining strings with + is ...",
+          "a": "concatenation",
+          "mins": 1,
+          "options": [
+            "concatenation",
+            "slicing",
+            "casting"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A school email is made from a pupil's name, like 'yahmed24'. How could a program build it automatically?",
+          "a": "Take the first letter of the first name, the surname, a number, then make it lower case: string manipulation.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a program that takes the sentence 'Learning is a path to Jannah' and prints the number of letters, the first word and the sentence in capitals.",
-      "send": "SEND/EAL: give an indexed strip of letters for each example. Stretch: ask for a function that counts any given letter.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Write a program that makes initials from a full name (e.g. Muhammad Ali Khan → MAK).",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: string tasks",
+        "Portal: computing y10 lesson 29 (manipulating strings) for reference",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Name badge blank",
+          "alt": "A blank name badge",
+          "for": "hook"
+        },
+        {
+          "find": "Computer keyboard",
+          "alt": "A keyboard",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Unit 6.4: Problem solving with programming: input, files, validation and authentication",
@@ -4377,170 +5011,242 @@
       "boardShort": "Edexcel GCSE 1CP2"
     },
     {
-      "unit": "Unit 6.4: Problem solving with programming: input, files, validation and authentication",
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
       "n": 31,
       "title": "Validation and authentication",
       "duration": 50,
-      "bigQuestion": "How do we stop bad data and bad users from getting into a program?",
+      "bigQuestion": "A form asks your age and someone types 250. Whose job is it to catch that: the user's or the program's?",
       "objectives": [
-        "Apply validation: length, presence, range and pattern checks (6.4.3)",
-        "Apply authentication: ID and password, and lookup (6.4.4)",
-        "Explain the difference between validation and checking correctness"
+        "To understand how validation checks and authentication make programs robust and secure"
       ],
       "successCriteria": [
-        "All: name the four validation checks",
-        "Most: write a function for each type of validation check",
-        "Some: write a login routine with a lookup and limited attempts"
+        "All: name four validation checks",
+        "Most: code a range check with a while loop",
+        "Some: code a simple username and password check with limited attempts"
       ],
-      "crossCurricular": "PSHE: online safety and strong passwords",
-      "smsc": "Moral: amanah and honesty: protect people's accounts and never store or share passwords carelessly",
+      "smsc": "Moral: amanah: protecting other people's data and accounts",
       "keywords": [
         {
           "term": "validation",
-          "def": "an automatic check that data is sensible and in the right form"
-        },
-        {
-          "term": "range check",
-          "def": "tests that a value lies between a minimum and a maximum"
-        },
-        {
-          "term": "length check",
-          "def": "tests the number of characters"
-        },
-        {
-          "term": "presence check",
-          "def": "tests that something was entered"
+          "def": "checking input is sensible before using it"
         },
         {
           "term": "authentication",
-          "def": "proving who you are, for example with an ID and password"
+          "def": "confirming who a user is"
+        },
+        {
+          "term": "range check",
+          "def": "a check that a value is within limits"
+        },
+        {
+          "term": "robust",
+          "def": "a program that copes with unexpected input"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A form asks your age and someone types 250. Whose job is it to catch that: the user's or the program's?",
+        "a": "The program's: validation checks input is sensible before it is used."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, Allah commands you to render trusts (amanat) to whom they are due' (An-Nisa' 4:58). User data held in a program is a trust.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. What is the difference between a syntax error and a logic error?",
-        "Write the condition: x is between 5 and 10 inclusive.",
-        "What does len('Salam') return?"
+        {
+          "q": "zakah_due(5000, 5000) = ?",
+          "a": "125.0",
+          "mins": 1,
+          "options": [
+            "125.0",
+            "0",
+            "200.0"
+          ]
+        },
+        {
+          "q": "Boundary data is ...",
+          "a": "at the edge of the valid range",
+          "mins": 1,
+          "options": [
+            "at the edge of the valid range",
+            "invalid",
+            "random"
+          ]
+        },
+        {
+          "q": "A function ends with ...",
+          "a": "return",
+          "mins": 1,
+          "options": [
+            "return",
+            "input",
+            "range"
+          ]
+        },
+        {
+          "q": "What does len('') return?",
+          "a": "0",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Four validation checks",
-          "bullets": [
-            "Presence: something was entered",
-            "Length: the right number of characters",
-            "Range: between a minimum and a maximum"
-          ],
-          "note": "Pattern (format) check: the data follows a layout such as one letter then three digits. Validation tells us that data is reasonable, not that it is correct: a pupil aged 14 entered as 15 passes. Give pupils the table of checks and an example each.",
+          "heading": "Validation checks (6.4.3)",
+          "bullets": [],
+          "note": "Validation checks data is reasonable, not that it is true.",
           "table": {
             "head": [
               "Check",
-              "Test",
-              "Passes",
-              "Fails"
+              "Example"
             ],
             "rows": [
               [
                 "Presence",
-                "text != ''",
-                "'Amina'",
-                "''"
+                "Name is not empty"
               ],
               [
                 "Length",
-                "8 <= len(pw) <= 12",
-                "'tarbiyyah1'",
-                "'salam'"
+                "Password at least 8 characters"
               ],
               [
                 "Range",
-                "0 <= mark <= 100",
-                "100",
-                "101"
+                "Age between 11 and 18"
               ],
               [
-                "Pattern",
-                "letter then 3 digits",
-                "A123",
-                "123A"
+                "Pattern (format)",
+                "Postcode or email has the right shape"
               ]
             ]
           }
         },
         {
-          "heading": "Validation as functions",
-          "bullets": [
-            "Each check returns True or False",
-            "Combine checks with and",
-            "Reuse them wherever data is entered"
-          ],
-          "note": "Run the code and read the output in pairs. The pattern check uses string methods: isalpha and isdigit. Each function is short, testable and reusable (link to subprograms). Pupils often forget that the function returns a Boolean rather than printing.",
+          "heading": "Range check with a loop",
+          "bullets": [],
+          "note": "",
           "code": {
             "lang": "python",
-            "text": "def valid_length(pw):\n    return 8 <= len(pw) <= 12\n\ndef valid_range(mark):\n    return 0 <= mark <= 100\n\ndef valid_code(code):\n    return len(code) == 4 and code[0].isalpha() and code[1:].isdigit()\n\nprint(valid_length(\"salam\"), valid_length(\"tarbiyyah1\"))\nprint(valid_range(101), valid_range(100))\nprint(valid_code(\"A123\"), valid_code(\"123A\"))",
-            "output": "False True\nFalse True\nTrue False"
+            "text": "age = int(input('Age (11-18): '))\nwhile age < 11 or age > 18:\n    print('Out of range, try again')\n    age = int(input('Age (11-18): '))\nprint('Thank you')",
+            "output": "Age (11-18): 25\nOut of range, try again\nAge (11-18): 15\nThank you"
           }
         },
         {
-          "heading": "Authentication by lookup",
-          "bullets": [
-            "Look the user ID up in stored data",
-            "Compare the password for that ID",
-            "Limit the number of attempts"
-          ],
-          "note": "Trace the program: the first attempt has the right ID and a wrong password, the second succeeds. Real systems never store plain passwords: they store a protected form (a hash). That is beyond this course, but the habit of never writing a password in plain text is a matter of amanah.",
+          "heading": "Authentication (6.4.4)",
+          "bullets": [],
+          "note": "",
           "code": {
             "lang": "python",
-            "text": "users = {\"amina\": \"Sun123\", \"bilal\": \"Moon456\"}\ntries = [(\"amina\", \"wrong\"), (\"amina\", \"Sun123\")]\ni = 0\nlogged_in = False\nwhile i < len(tries) and not logged_in:\n    name, pw = tries[i]\n    if name in users and users[name] == pw:\n        logged_in = True\n    i = i + 1\nprint(logged_in, i)",
-            "output": "True 2"
+            "text": "attempts = 0\nok = False\nwhile attempts < 3 and not ok:\n    user = input('User: ')\n    pw = input('Password: ')\n    if user == 'zaid' and pw == 'Tq7!vR2k':\n        ok = True\n    attempts = attempts + 1\nprint('Welcome' if ok else 'Locked out')",
+            "output": "(after the correct pair) Welcome"
           }
         },
         {
-          "heading": "Worked example: validate and re-ask",
-          "note": "Model the loop pattern: ask, check, repeat while invalid. In an exam the structure matters more than the exact messages. Test with boundary data: 0 and 100 pass, -1 and 101 fail.",
-          "model": {
-            "problem": "Describe a program that asks for a mark from 0 to 100 and keeps asking until it is valid.",
-            "steps": [
-              "Ask for the mark and convert it with int()",
-              "While the mark is below 0 or above 100: print an error message",
-              "Ask again inside the loop and convert again",
-              "After the loop ends, the mark is valid and can be used"
-            ],
-            "answer": "Code: mark = int(input('Mark: ')); while mark < 0 or mark > 100: print('Invalid'); mark = int(input('Mark: '))"
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Validation proves data is correct",
+            "right": "Validation only checks it is sensible; a valid age can still be wrong"
           }
         },
         {
-          "heading": "Check: what validation can and cannot do",
-          "note": "Answer A. A range check can show the value is within limits but cannot know it is true. B would need the name to be a real person; C is verification; D is not a type of validation. Discuss why double entry (verification) is a separate idea.",
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
           "check": {
-            "q": "A user enters their age as 51 instead of 15. The program has a range check from 11 to 16. What happens?",
+            "q": "Checking a password has at least 8 characters is a ...",
             "options": [
-              "The program rejects it, because the value is outside the range",
-              "The program accepts it as correct",
-              "The program accepts it, but the data is wrong",
-              "The program rejects it, because it fails a pattern check"
+              "length check",
+              "range check",
+              "presence check",
+              "authentication"
             ],
             "answer": 0,
-            "why": "51 is outside 11 to 16, so the range check rejects it. A range check would not catch 14 typed instead of 15, because validation tests that data is sensible, not that it is correct. A pattern check (D) tests layout, not size."
+            "why": "It checks how many characters: length."
           }
         }
       ],
       "practice": [
-        "Name the validation check that stops an empty username.",
-        "Write a Python function that returns True if a password is at least 8 characters.",
-        "Explain one reason why validated data may still be incorrect."
+        {
+          "q": "Write a presence check that keeps asking until a name is entered.",
+          "a": "name = input('Name: '); while name == '': name = input('Name: ')",
+          "mins": 5,
+          "model": "I do: name = input('Name: '). while name == '': print('Name required'); name = input('Name: '). The loop only ends when something is typed."
+        },
+        {
+          "q": "Authentication checks ...",
+          "a": "who the user is",
+          "mins": 1,
+          "options": [
+            "who the user is",
+            "the data type",
+            "the screen size"
+          ]
+        }
       ],
       "independent": [
-        "Core: Write a validation routine for an age between 11 and 16 that keeps asking until valid.",
-        "Extend: Write a function valid_postcode that returns True if a string has length 6, begins with a letter and ends with a digit. Test it with three values.",
-        "Stretch: Write a login routine that allows three attempts, using a dictionary of users, and prints a message after a successful or failed login."
+        {
+          "q": "Pupil PDF: write a sign-up program that validates a username (presence, 4 to 12 characters) and a password (at least 8 characters, contains a digit). Test with valid, boundary and invalid data.",
+          "a": "Loops for each rule; any(ch.isdigit() for ch in pw) or a loop for the digit; test table completed.",
+          "mins": 10,
+          "model": "The teacher writes the username length check: while len(u) < 4 or len(u) > 12: u = input('Username: ')"
+        },
+        {
+          "q": "Extend: why should a real system never store passwords as plain text?",
+          "a": "If data is stolen, passwords are exposed; systems store a hashed form.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why limit login attempts to three?",
+          "a": "To slow down guessing attacks (brute force).",
+          "mins": 2
+        }
       ],
       "exit": [
-        "List the four types of validation check.",
-        "State what authentication proves."
+        {
+          "q": "Age 11 to 18: 18 is ...",
+          "a": "valid boundary data",
+          "mins": 1,
+          "options": [
+            "valid boundary data",
+            "invalid",
+            "erroneous"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A form asks your age and someone types 250. Whose job is it to catch that: the user's or the program's?",
+          "a": "The program's: validation checks input is sensible before it is used.",
+          "mins": 2
+        }
       ],
-      "homework": "Choose a form you use (a library card or school login). List every field and say which validation check you would use for each.",
-      "send": "SEND/EAL: give a matching task for check and example (and a function template). Stretch: ask for a function that combines several checks.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Write three test cases (valid, boundary, invalid) for your sign-up program.",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: sign-up validation task and test table",
+        "Portal: computing y10 lesson 31 (validation and authentication) for reference",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Padlock",
+          "alt": "A padlock: security",
+          "for": "hook"
+        },
+        {
+          "find": "Login screen password field",
+          "alt": "A login form",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Unit 6.5: Problem solving with programming: operators",
@@ -4680,141 +5386,220 @@
       "boardShort": "Edexcel GCSE 1CP2"
     },
     {
-      "unit": "Unit 6.6: Problem solving with programming: subprograms and scope",
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
       "n": 33,
-      "title": "Subprograms: functions, procedures and scope",
+      "title": "Subprograms: functions, procedures and parameters",
       "duration": 50,
-      "bigQuestion": "How do you build a program from small, reusable pieces without them interfering?",
+      "bigQuestion": "If you needed the same ten lines of code in five places, what could go wrong if you copied them each time?",
       "objectives": [
-        "Use built-in, library and user-defined subprograms (6.6.1)",
-        "Know that functions return values and procedures do not (6.6.2)",
-        "Use local and global variables appropriately (6.6.3)"
+        "To understand how functions and procedures with parameters make programs shorter, clearer and reusable"
       ],
       "successCriteria": [
-        "All: name a built-in and a library subprogram and call a function",
-        "Most: write a function with parameters and a return value, and a procedure",
-        "Some: explain scope and predict the effect of local and global variables"
+        "All: define and call a procedure",
+        "Most: write a function with parameters that returns a value",
+        "Some: explain the difference between local and global variables"
       ],
-      "crossCurricular": "Mathematics: functions with inputs and outputs",
-      "smsc": "Moral: responsibility: each part of a program looks after its own job (amanah)",
+      "smsc": "Social: writing code others can reuse is a service to the team",
       "keywords": [
+        {
+          "term": "subprogram",
+          "def": "a named block of code that can be called"
+        },
         {
           "term": "function",
           "def": "a subprogram that returns a value"
         },
         {
           "term": "procedure",
-          "def": "a subprogram that does a job but does not return a value"
+          "def": "a subprogram that does not return a value"
         },
         {
           "term": "parameter",
-          "def": "a variable in the subprogram definition that receives a value"
-        },
-        {
-          "term": "local variable",
-          "def": "a variable that exists only inside the subprogram"
-        },
-        {
-          "term": "global variable",
-          "def": "a variable declared outside subprograms that can be seen everywhere"
+          "def": "a value passed into a subprogram"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you needed the same ten lines of code in five places, what could go wrong if you copied them each time?",
+        "a": "A fix must be made five times and mistakes creep in; a subprogram is written once and called many times."
+      },
+      "islamicLink": {
+        "text": "Allah says He created death and life 'to test you as to which of you is best in deed' (Al-Mulk 67:2). Doing work with care and excellence (itqan), like careful, tested code, is part of being best in deed.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. State two benefits of subprograms.",
-        "What does len('Salam') return?",
-        "What does the keyword def do?"
+        {
+          "q": "'Kahf'[0] = ?",
+          "a": "'K'",
+          "mins": 1,
+          "options": [
+            "'K'",
+            "'a'",
+            "'f'"
+          ]
+        },
+        {
+          "q": "len('Ya-Sin') = ?",
+          "a": "6",
+          "mins": 1,
+          "options": [
+            "6",
+            "5",
+            "4"
+          ]
+        },
+        {
+          "q": "Slicing s[1:3] includes index 3?",
+          "a": "No",
+          "mins": 1,
+          "options": [
+            "No",
+            "Yes"
+          ]
+        },
+        {
+          "q": "What does 'abc'.upper() give?",
+          "a": "'ABC'",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Three kinds of subprogram",
+          "heading": "Procedures and functions (6.6)",
           "bullets": [
-            "Built-in: print, len, int, round",
-            "Library: import math, then math.sqrt(49)",
-            "User-defined: written by the programmer with def"
-          ],
-          "note": "Show that the library must be imported before use. Libraries save writing code that experts have already tested; mention random (random numbers, not predictable, so no output here). The programmer decides when to write their own: when no existing one does the job.",
-          "code": {
-            "lang": "python",
-            "text": "import math\nprint(len(\"Salam\"), round(3.14159, 2))\nprint(math.sqrt(49), math.ceil(4.2))",
-            "output": "5 3.14\n7.0 5"
-          }
-        },
-        {
-          "heading": "Functions and procedures",
-          "bullets": [
-            "Function: returns a value to the caller",
-            "Procedure: carries out a task, returns nothing",
+            "Procedure: does a task, returns no value",
+            "Function: returns a value",
             "Parameters pass data in"
           ],
-          "note": "Run the program and discuss each line of output. The last line shows that a procedure has no useful return value (Python shows None). In the exam a function is called in an expression or assigned to a variable; a procedure is called on its own line.",
+          "note": "Benefits (1.1.2): reuse, easier testing, teamwork, readability."
+        },
+        {
+          "heading": "Model",
+          "bullets": [],
+          "note": "",
           "code": {
             "lang": "python",
-            "text": "def area(w, h):\n    return w * h\n\ndef show(w, h):\n    print(\"Area is\", area(w, h))\n\nresult = area(3, 4)\nprint(result)\nshow(5, 2)\nprint(show(1, 1))",
-            "output": "12\nArea is 10\nArea is 1\nNone"
+            "text": "def greet(name):\n    print('Salaam', name)\n\ndef area(length, width):\n    return length * width\n\ngreet('Huda')\nroom = area(4, 3)\nprint('Area:', room)",
+            "output": "Salaam Huda\nArea: 12"
           }
         },
         {
-          "heading": "Local and global scope",
+          "heading": "Local and global (6.6.3)",
           "bullets": [
-            "Local: created inside, gone when it ends",
-            "Global: declared outside, visible everywhere",
-            "Prefer parameters and return to global variables"
+            "Local: created inside a subprogram, used only there",
+            "Global: created in the main program",
+            "Prefer parameters and return values"
           ],
-          "note": "Run the code: the error shows that bonus does not exist outside the function. Global variables can be changed from anywhere, which makes faults hard to find; passing values in through parameters is safer. Ask pupils why two subprograms can both have a local variable called i without clashing.",
-          "code": {
-            "lang": "python",
-            "text": "total = 100\n\ndef add_bonus(points):\n    bonus = 5\n    return points + bonus\n\nscore = add_bonus(total)\nprint(score)\nprint(bonus)",
-            "output": "105\nNameError: name 'bonus' is not defined"
+          "note": ""
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "A function that prints its answer has returned it",
+            "right": "Only return sends the value back to be stored or used"
           }
         },
         {
-          "heading": "Worked example: write a function",
-          "note": "Model naming, parameters, return and a call. Show that the function has no input or print inside: it does one job, and the caller decides what to do with the result. Test with the values given: 45 out of 60 is 75.0.",
-          "model": {
-            "problem": "Write a function percentage that takes a score and a total and returns the percentage rounded to one decimal place. Show a call for 45 out of 60.",
-            "steps": [
-              "Define it: def percentage(score, total):",
-              "Calculate inside: result = score / total * 100",
-              "Return the rounded result: return round(result, 1)",
-              "Call it: print(percentage(45, 60))"
-            ],
-            "answer": "The call outputs 75.0."
-          }
-        },
-        {
-          "heading": "Check: function or procedure?",
-          "note": "Answer D. The subprogram returns a value that is used in an expression, so it is a function. A and B describe a procedure. C is wrong: parameters do not decide the type.",
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
           "check": {
-            "q": "def double(n): return n * 2. The statement y = double(8) is run. What is double?",
+            "q": "Which returns a value?",
             "options": [
-              "A procedure, because it has a parameter",
-              "A procedure, because it is user-defined",
-              "A local variable",
-              "A function, because it returns a value"
+              "def double(n): return n * 2",
+              "def show(n): print(n * 2)",
+              "print(n * 2)",
+              "n = n * 2"
             ],
-            "answer": 3,
-            "why": "It returns n * 2 to the caller, which is stored in y, so it is a function. Having a parameter (A) or being user-defined (B) does not make something a procedure. It is not a variable (C)."
+            "answer": 0,
+            "why": "Only the first uses return."
           }
         }
       ],
       "practice": [
-        "State one built-in and one library subprogram you have used.",
-        "Write a procedure that prints a greeting for a name passed in as a parameter.",
-        "State what happens if you print a local variable outside its function."
+        {
+          "q": "Write a function vat(price) that returns the price plus 20% VAT. Call it with 50.",
+          "a": "def vat(price): return price * 1.2 → vat(50) returns 60.0",
+          "mins": 5,
+          "model": "I do: def vat(price): then return price * 1.2. Main program: total = vat(50); print(total) shows 60.0."
+        },
+        {
+          "q": "Parameters are ...",
+          "a": "values passed into a subprogram",
+          "mins": 1,
+          "options": [
+            "values passed into a subprogram",
+            "loops",
+            "outputs"
+          ]
+        }
       ],
       "independent": [
-        "Core: Write a function that returns the square of a number and call it for 9.",
-        "Extend: Write a function is_even(n) that returns True or False, and use it in a loop over 1 to 10 to print the even numbers.",
-        "Stretch: Explain, with a short example, why changing a global variable inside many subprograms makes errors hard to find, and rewrite it using parameters and return."
+        {
+          "q": "Pupil PDF: write a function average(numbers) that returns the mean of a list, and a procedure report(name, numbers) that prints the name and average. Test with [62, 75, 48, 90].",
+          "a": "average returns 68.75; report prints the name and 68.75.",
+          "mins": 10,
+          "model": "The teacher writes the header: def average(numbers): total = 0; for n in numbers: total = total + n; return total / len(numbers)"
+        },
+        {
+          "q": "Extend: give two benefits of subprograms.",
+          "a": "Code reuse; easier testing and debugging; clearer structure.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: what is printed? def f(x): x = x + 1; return x then a = 5; f(a); print(a)",
+          "a": "5: the function's change is local and the return value was not stored.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "State the difference between a function and a procedure.",
-        "Define a local variable."
+        {
+          "q": "A variable created inside a function is ...",
+          "a": "local",
+          "mins": 1,
+          "options": [
+            "local",
+            "global",
+            "constant"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you needed the same ten lines of code in five places, what could go wrong if you copied them each time?",
+          "a": "A fix must be made five times and mistakes creep in; a subprogram is written once and called many times.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a program with two functions and one procedure for a task of your choice (for example a canteen bill). Label each as a function or procedure.",
-      "send": "SEND/EAL: provide a template with def, parameters and return highlighted. Stretch: ask for a function that calls another function.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Write a function that converts minutes to 'h:mm' text and test it with three values.",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: subprogram tasks",
+        "Portal: computing y10 lesson 33 (subprograms and scope) for reference",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Toolbox tools",
+          "alt": "A toolbox: reusable tools",
+          "for": "hook"
+        },
+        {
+          "find": "Recipe card",
+          "alt": "A recipe used again and again",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Unit 6.5: Operators (Problem solving with programming)",
@@ -4984,6 +5769,246 @@
       ],
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
       "boardShort": "Edexcel GCSE 1CP2"
+    },
+    {
+      "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+      "n": 35,
+      "title": "Subprograms in practice: building a small program from functions",
+      "duration": 50,
+      "bigQuestion": "A big project is easier when each person builds one part. How is that like subprograms?",
+      "objectives": [
+        "To understand how to decompose a problem into subprograms and build a working program from them"
+      ],
+      "successCriteria": [
+        "All: call given functions in the right order",
+        "Most: write two functions with parameters and returns",
+        "Some: design the subprograms for a new problem before coding"
+      ],
+      "smsc": "Spiritual: zakah as worship; technology serving the community",
+      "keywords": [
+        {
+          "term": "decomposition",
+          "def": "breaking a problem into parts"
+        },
+        {
+          "term": "return value",
+          "def": "the value a function sends back"
+        },
+        {
+          "term": "boundary data",
+          "def": "test data at the edge of a valid range"
+        },
+        {
+          "term": "modular",
+          "def": "built from separate subprograms"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A big project is easier when each person builds one part. How is that like subprograms?",
+        "a": "Each subprogram is a part with a clear job; they fit together through parameters and return values."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And establish prayer and give zakah' (Al-Baqarah 2:43). Zakah is 2.5% of eligible wealth held for a lunar year above the nisab; the program is a maths and coding exercise; real zakah questions go to a scholar.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A function sends back a value with ...",
+          "a": "return",
+          "mins": 1,
+          "options": [
+            "return",
+            "print",
+            "input"
+          ]
+        },
+        {
+          "q": "A procedure ...",
+          "a": "returns no value",
+          "mins": 1,
+          "options": [
+            "returns no value",
+            "always returns",
+            "is a loop"
+          ]
+        },
+        {
+          "q": "vat(50) with price * 1.2 returns ...",
+          "a": "60.0",
+          "mins": 1,
+          "options": [
+            "60.0",
+            "50.2",
+            "70.0"
+          ]
+        },
+        {
+          "q": "Name one benefit of subprograms.",
+          "a": "e.g. reuse of code.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Decompose: a zakah calculator",
+          "bullets": [
+            "get_amount(): input savings",
+            "zakah_due(amount, nisab): return 2.5% if at or above nisab",
+            "show(result): print the answer"
+          ],
+          "note": "Nisab value is entered by the user (it changes with gold and silver prices); the app is a programming exercise, not a fatwa."
+        },
+        {
+          "heading": "Model program",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "def zakah_due(amount, nisab):\n    if amount >= nisab:\n        return amount * 0.025\n    return 0\n\nsavings = float(input('Savings held a year: '))\nnisab = float(input('Nisab today: '))\nprint('Zakah due:', zakah_due(savings, nisab))",
+            "output": "Savings held a year: 8000\nNisab today: 5000\nZakah due: 200.0"
+          }
+        },
+        {
+          "heading": "Testing a function",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Test",
+              "amount",
+              "nisab",
+              "Expected"
+            ],
+            "rows": [
+              [
+                "Normal",
+                "8000",
+                "5000",
+                "200.0"
+              ],
+              [
+                "Boundary",
+                "5000",
+                "5000",
+                "125.0"
+              ],
+              [
+                "Below",
+                "4999",
+                "5000",
+                "0"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Testing only one 'normal' value",
+            "right": "Test normal, boundary and below-boundary values"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "bullets": [],
+          "note": "Launch the Teams poll; share results; explain the right answer and the trap in the others.",
+          "check": {
+            "q": "zakah_due(4000, 5000) returns ...",
+            "options": [
+              "0",
+              "100.0",
+              "125.0",
+              "Error"
+            ],
+            "answer": 0,
+            "why": "4000 is below the nisab, so the function returns 0."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate by hand: zakah_due(12000, 5000) and zakah_due(5000, 5000).",
+          "a": "300.0 and 125.0",
+          "mins": 5,
+          "model": "I do: 12000 >= 5000, so 12000 × 0.025 = 300.0. 5000 >= 5000 is True (boundary), so 5000 × 0.025 = 125.0."
+        },
+        {
+          "q": "2.5% as a decimal is ...",
+          "a": "0.025",
+          "mins": 1,
+          "options": [
+            "0.025",
+            "0.25",
+            "2.5"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: build a 'revision timer' program from three functions: get_minutes(), split(minutes) returning hours and minutes, and show(h, m). Test it with 135 and 45.",
+          "a": "split uses // and %; 135 → 2 h 15 min; 45 → 0 h 45 min.",
+          "mins": 10,
+          "model": "The teacher writes split: def split(minutes): return minutes // 60, minutes % 60"
+        },
+        {
+          "q": "Extend: add a test table with three tests for split().",
+          "a": "e.g. 135 → (2, 15); 60 → (1, 0); 0 → (0, 0).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: design (in pseudo-code) the subprograms for a library-loan system.",
+          "a": "e.g. find_book(title), lend(book, pupil), return_book(book), overdue_list(date).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which test value checks the boundary of 'amount >= nisab'?",
+          "a": "amount equal to nisab",
+          "mins": 1,
+          "options": [
+            "amount equal to nisab",
+            "a huge amount",
+            "a negative amount"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A big project is easier when each person builds one part. How is that like subprograms?",
+          "a": "Each subprogram is a part with a clear job; they fit together through parameters and return values.",
+          "mins": 2
+        }
+      ],
+      "homework": "Finish the revision timer program and its test table.",
+      "send": "SEND: printed code with line numbers and a keyword card; pair programming. EAL: glossary of Python keywords. Stretch: extend the program with validation or a function.",
+      "resources": [
+        "Slides",
+        "Python 3 with IDLE (or the school's online Python editor)",
+        "Pupil PDF worksheet: revision timer task and test table",
+        "Pearson 1CP2 Programming Language Subset (PLS) for reference; pupils sit 4CP0",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Gold coins",
+          "alt": "Gold, used to set the nisab",
+          "for": "hook"
+        },
+        {
+          "find": "Hourglass sand timer",
+          "alt": "A timer",
+          "for": "teach:3"
+        }
+      ]
     }
   ]
 }
