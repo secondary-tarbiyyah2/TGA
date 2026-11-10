@@ -17,64 +17,58 @@ export default async function ApplyPage() {
   const email = settings.admissionsEmail || FALLBACK_ADMISSIONS_EMAIL;
 
   const needs = [
-    "Each child's latest school report or homeschool progress record, if you have one (PDF, JPG or PNG).",
-    "Photo ID for a parent or guardian (passport, driving licence or national ID card), as a PDF, JPG or PNG. You only need to upload it once, even for several children.",
-    "Proof of identity and address for the pupil: each child's passport or birth certificate, and a recent utility bill, council tax bill, bank statement or tenancy agreement showing your child's home address (PDF, JPG or PNG). If you don't have the proof of address to hand, we will ask you for it during the review.",
-    "Your child's home address, and a parent or guardian email address and phone number.",
-    `Payment is not taken on this form. If we make an offer, you then send proof of payment (screenshot or receipt) for the application fee${settings.applicationFee != null ? ` (${formatGBP(settings.applicationFee)})` : ""} if not yet paid and your first fee payment, to confirm the place.`,
+    "Each child's latest school report or homeschool record, if you have one.",
+    "Photo ID for a parent or guardian (passport, driving licence or national ID). Once, even for several children.",
+    "Each child's passport or birth certificate.",
+    "Proof of your child's address, such as a recent utility bill or bank statement. You can send this later if needed.",
+    "Your child's home address, and your email and phone number.",
   ];
+  const paymentNote = `No payment is taken on this form. If we offer a place, you then send proof of payment for the application fee${settings.applicationFee != null ? ` (${formatGBP(settings.applicationFee)})` : ""}, if not yet paid, and your first fee payment.`;
 
   return (
-    <>
-      <section className="geo-texture bg-cream hero-pad">
-        <Container className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-16">
-          <div>
-            <Kicker>Admissions</Kicker>
-            <h1 className="text-h1 font-serif font-semibold text-ink">Apply online.</h1>
-            <p className="mt-5 max-w-xl text-lg text-ink/75">
-              The form takes about ten minutes in three short steps, and you can apply for several children at once without repeating your own details.
-            </p>
-            <p className="mt-4 max-w-xl text-sm text-ink/70">
-              Apply by Friday 18 December 2026 for the founding cohort. What happens after you apply is set out in the{" "}
-              <Link href="/admissions" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">six admissions steps</Link>.
-            </p>
-            <a href="#application-form" className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 lg:hidden">
-              Start the form
-            </a>
-          </div>
-          <div className="rounded-2xl border border-gold-light/60 bg-white p-6">
-            <h2 className="font-serif text-lg font-semibold text-ink">What you&apos;ll need</h2>
-            <ul className="mt-3 space-y-2.5 text-sm text-ink/80">
-              {needs.map((n) => (
-                <li key={n} className="flex gap-2.5">
-                  <span aria-hidden="true" className="mt-0.5 text-gold-700">&#10003;</span>
-                  <span>{n}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Container>
-      </section>
+    <section className="geo-texture bg-cream pb-16 pt-10 sm:pt-12" aria-labelledby="apply-heading">
+      <Container>
+        <div className="mx-auto max-w-3xl">
+          <Kicker>Admissions</Kicker>
+          <h1 id="apply-heading" className="text-h2 font-serif font-semibold text-ink">Apply online</h1>
+          <p className="mt-3 text-base text-ink/75">
+            About ten minutes. Apply for several children at once without repeating your details. Apply by Friday 18 December 2026 for the founding cohort; what happens next is in the{" "}
+            <Link href="/admissions" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">six admissions steps</Link>.
+          </p>
 
-      <section className="section-pad scroll-mt-20" id="application-form" aria-labelledby="application-form-heading">
-        <Container>
-          <div className="mx-auto max-w-3xl">
-            <h2 id="application-form-heading" className="text-h2 font-serif font-semibold text-ink">Your application</h2>
-            <div className="mt-6">
-              <ApplyForm
-                admissionsEmail={email}
-                applicationFee={settings.applicationFee}
-                feeBands={feeBands}
-                siblingDiscountPercent={settings.siblingDiscountPercent}
-                siblingDiscountNote={settings.siblingDiscountNote}
-                annualDiscountPercent={settings.annualDiscountPercent}
-                feeTerms={settings.feeTerms}
-                feeInstalments={settings.feeInstalments}
-              />
+          <details className="group mt-5 rounded-2xl border border-gold-light/60 bg-white">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-5 py-3 text-sm font-semibold text-ink [&::-webkit-details-marker]:hidden">
+              <span>What you&apos;ll need <span className="font-normal text-ink/70">({needs.length} things, PDF, JPG or PNG)</span></span>
+              <span aria-hidden="true" className="text-gold-700 transition-transform group-open:rotate-180">&#9662;</span>
+            </summary>
+            <div className="border-t border-gold-light/50 px-5 py-4">
+              <ul className="grid gap-2 text-sm text-ink/80 sm:grid-cols-2 sm:gap-x-6">
+                {needs.map((n) => (
+                  <li key={n} className="flex gap-2.5">
+                    <span aria-hidden="true" className="mt-0.5 text-gold-700">&#10003;</span>
+                    <span>{n}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-xs text-ink/70">{paymentNote}</p>
             </div>
+          </details>
+
+          <div id="application-form" className="mt-6 scroll-mt-24">
+            <h2 className="sr-only">Your application</h2>
+            <ApplyForm
+              admissionsEmail={email}
+              applicationFee={settings.applicationFee}
+              feeBands={feeBands}
+              siblingDiscountPercent={settings.siblingDiscountPercent}
+              siblingDiscountNote={settings.siblingDiscountNote}
+              annualDiscountPercent={settings.annualDiscountPercent}
+              feeTerms={settings.feeTerms}
+              feeInstalments={settings.feeInstalments}
+            />
           </div>
-        </Container>
-      </section>
-    </>
+        </div>
+      </Container>
+    </section>
   );
 }
