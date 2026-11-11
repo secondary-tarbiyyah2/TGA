@@ -5,7 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { Loading } from "@/components/learn/kit";
 import { Select } from "@/components/learn/Select";
 import { Tabs } from "@/components/learn/Tabs";
-import { EmptyState, Status, type StatusKind } from "@/components/learn/ui";
+import { EmptyState, Status, ui, type StatusKind } from "@/components/learn/ui";
 import { Panel } from "@/components/learn/templates/parts";
 import { surahName } from "@/lib/learn/surahs";
 import { localDateKey } from "@/lib/learn/calendar";
@@ -357,7 +357,7 @@ export function PupilChronology({ childId }: { childId: string }) {
             items={[{ key: "all" as const, label: "Everything", count: events.length }, ...(Object.keys(KIND_LABEL) as Kind[]).map((k) => ({ key: k, label: KIND_LABEL[k], count: count(k) }))]}
           />
         </div>
-        <Select value={String(days)} onChange={(e) => setDays(Number(e.target.value) as 90 | 365)} aria-label="How far back" className="w-44">
+        <Select value={String(days)} onChange={(e) => setDays(Number(e.target.value) as 90 | 365)} aria-label="How far back" className={`${ui.select} w-44`}>
           <option value="90">Last 90 days</option>
           <option value="365">Last 12 months</option>
         </Select>
