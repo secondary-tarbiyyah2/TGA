@@ -14,6 +14,7 @@ import { Icon, type IconName } from "@/components/learn/Icon";
 import { Notice, btn, ui } from "@/components/learn/ui";
 import { useResourceActions } from "@/components/learn/curriculum/TermResources";
 import { UnitWeeksPanel } from "@/components/learn/curriculum/UnitPanels";
+import { useFeature } from "@/lib/learn/features";
 
 /*
  * The Curriculum as ONE browser, like a drive (owner, 11 Nov 2026, feedback 2, items 14 and 18):
@@ -94,6 +95,7 @@ function useYearData(year: string | null) {
 }
 
 export function CurriculumBrowser({ area }: { area: Area }) {
+  const revisionOn = useFeature("revision_packs");
   const params = useSearchParams();
   const router = useRouter();
   const year = params.get("year");
@@ -288,7 +290,7 @@ export function CurriculumBrowser({ area }: { area: Area }) {
             </dl>
             <div className="mt-4 flex flex-col gap-2">
               <Link href={`/${area}/curriculum?year=${year}&subject=${encodeURIComponent(subjectRow.slug)}&unit=${encodeURIComponent(unitRow.key)}&classic=1`} className={btn("secondary", "sm")}>
-                <Icon name="layoutGrid" size="sm" /> Unit tools: spec, revision pack, results
+                <Icon name="layoutGrid" size="sm" /> {revisionOn ? "Unit tools: spec, revision pack, results" : "Unit tools: spec and connections"}
               </Link>
               <Link href={`/${area}/syllabus?subject=${encodeURIComponent(planSlugOf(subjectRow.slug))}&view=years&year=${year}`} className={btn("ghost", "sm")}>
                 <Icon name="scrollText" size="sm" /> The subject&apos;s syllabus

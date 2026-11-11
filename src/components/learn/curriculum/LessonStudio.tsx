@@ -11,6 +11,7 @@ import { callEdgeFunction } from "@/lib/learn/edge";
 import { realEditAt, when } from "@/lib/learn/curriculumUnits";
 import { LESSON_COLUMNS, downloadDeck, fileNameFor, pathFor, saveBlob, yearLabel, type CurriculumLesson, type LessonFileKind } from "@/lib/learn/curriculum";
 import { answerFeedback, loadFeedback, type LessonFeedback } from "@/lib/learn/lessonFeedback";
+import { lessonReadOnlyNote, useFeatures } from "@/lib/learn/features";
 import { BLOCKS } from "@/lib/learn/lessonSchema.mjs";
 
 import { askConfirm } from "@/components/learn/kit";
@@ -293,7 +294,11 @@ export function LessonStudio({
   const [note, setNote] = useState("");
   const [rebuild, setRebuild] = useState(false);
   const [mayEdit, setMayEdit] = useState(canEditRole);
-  const [notes, setNotes] = useState<LessonFeedback[]>(feedback ? [feedback] : []);
+  // School features: the banner follows "Only subject teachers can edit lessons" and "Lesson feedback".
+  const features = useFeatures();
+  const [allNotes, setNotes] = useState<LessonFeedback[]>(feedback ? [feedback] : []);
+  // Lesson feedback switched off: its notes are kept but not shown.
+  const notes = features.lesson_feedback ? allNotes : [];
   const [build, setBuild] = useState<Build | null>(null);
   const [watching, setWatching] = useState(false);
   const [files, setFiles] = useState<CurriculumLesson>(lesson);
@@ -774,7 +779,7 @@ export function LessonStudio({
           <div className="space-y-2 border-b border-gold-light bg-cream/50 px-4 py-2 text-sm" aria-live="polite">
             {error && <p className="text-amber-900">{error}</p>}
             {loaded && !loaded.content && <p className="text-amber-900">This lesson has not been loaded into the editor yet. It is filled in from the lesson files automatically within the hour; try again later.</p>}
-            {!mayEdit && loaded?.content && <p className="text-ink/75">You can read this lesson and leave feedback. Editing is for teachers of this subject and the Headteacher.</p>}
+            {!mayEdit && loaded?.content && <p className="text-ink/75">{lessonReadOnlyNote(features)}</p>}
             {problems.length > 0 && (
               <ul role="alert" className="list-disc pl-5 text-red-800">
                 {problems.map((p) => (
