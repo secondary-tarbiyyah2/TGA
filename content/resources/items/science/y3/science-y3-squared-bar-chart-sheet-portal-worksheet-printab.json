@@ -1,0 +1,138 @@
+{
+ "id": "science-y3-squared-bar-chart-sheet-portal-worksheet-printab",
+ "title": "Squared bar chart sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y3",
+ "unit": "Spring 2: Skeletons, muscles, nutrition and plants (Tribal Tales)",
+ "lessons": [
+  23
+ ],
+ "source": "Seeded from science/y3 lesson 23 (Squared bar chart sheet (portal worksheet, printable or on a drawing tablet))",
+ "intro": "Lesson 23: Cress results: graphs and conclusions. To understand how a bar chart helps us compare results and reach a conclusion",
+ "blocks": [
+  {
+   "h": "Bar chart"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "yMax": 10,
+    "yStep": 1,
+    "yLabel": "",
+    "xLabel": ""
+   }
+  },
+  {
+   "text": "Label both axes, choose a scale, and draw the bars with a ruler, with gaps between them."
+  },
+  {
+   "h": "Our results"
+  },
+  {
+   "table": {
+    "head": [
+     "Pot",
+     "Conditions",
+     "Height (mm)",
+     "Colour"
+    ],
+    "rows": [
+     [
+      "1",
+      "light, water, warm",
+      "40",
+      "green"
+     ],
+     [
+      "2",
+      "dark, water, warm",
+      "55",
+      "pale yellow"
+     ],
+     [
+      "3",
+      "light, no water",
+      "0",
+      "dry seeds"
+     ],
+     [
+      "4",
+      "light, water, cold",
+      "10",
+      "green"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which pot did not grow at all, and why?",
+     "a": "Pot 3, because it had no water",
+     "model": "Find the 0 on the chart: pot 3. What was missing? Water. So pot 3 did not grow because seeds need water."
+    },
+    {
+     "q": "Which pot grew slowly? What does that show?",
+     "a": "Pot 4 in the fridge; plants need warmth to grow well"
+    },
+    {
+     "q": "Is the tallest plant always the healthiest?",
+     "a": "No: pot 2 was tall but pale and weak"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Draw a bar chart of your own cress heights (or the example data) on the squared sheet.",
+     "a": "Four bars correctly labelled with heights in mm",
+     "model": "Teacher draws pot 1's bar on camera: find 40 on the side, draw the bar up to 40, label it 'Pot 1'."
+    },
+    {
+     "q": "Write a conclusion of two sentences using 'because'.",
+     "a": "For example: Plants need water because pot 3 did not grow. Plants need light to be green because pot 2 was pale.",
+     "lines": 6
+    },
+    {
+     "q": "If we did the test again, what would you change to make it better?",
+     "a": "For example: more pots of each kind, measure on the same days, use the same seeds."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Bars on a bar chart show...",
+     "a": "How big each amount is",
+     "options": [
+      "How big each amount is",
+      "The colour"
+     ]
+    },
+    {
+     "q": "Big question: what do plants need?",
+     "a": "Light, water and warmth (and air and nutrients) to grow well."
+    }
+   ]
+  }
+ ]
+}

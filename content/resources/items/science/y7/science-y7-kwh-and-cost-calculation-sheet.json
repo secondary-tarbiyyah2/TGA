@@ -1,0 +1,106 @@
+{
+ "id": "science-y7-kwh-and-cost-calculation-sheet",
+ "title": "KWh and cost calculation sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y7",
+ "unit": "Spring 2: Current electricity (7J); forces (7K)",
+ "lessons": [
+  39
+ ],
+ "source": "Seeded from science/y7 lesson 39 (kWh and cost calculation sheet (portal worksheet))",
+ "intro": "Lesson 39: Paying for electricity. To understand how electricity is measured and paid for, and how to avoid waste",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "A 2 kW heater runs for 3 hours. Electricity costs 25p per kWh. Find the cost.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Energy = 2 kW × 3 h"
+     },
+     {
+      "label": "Step 2",
+      "text": "= 6 kWh"
+     },
+     {
+      "label": "Step 3",
+      "text": "Cost = 6 × 25p"
+     },
+     {
+      "label": "Step 4",
+      "text": "= 150p"
+     },
+     {
+      "label": "Answer",
+      "text": "£1.50"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A 0.5 kW microwave runs for 0.2 h at 25p per kWh. Cost?",
+     "a": "2.5p",
+     "model": "Energy = 0.5 × 0.2 = 0.1 kWh. Cost = 0.1 × 25 = 2.5p."
+    },
+    {
+     "q": "Convert 60 W to kW.",
+     "a": "0.06 kW"
+    },
+    {
+     "q": "How many hours is 30 minutes?",
+     "a": "0.5 h"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find the power of three appliances at home with an adult (read labels only). Estimate daily use and calculate the daily cost at 25p per kWh.",
+     "a": "Pupils' own; for example kettle 2 kW × 0.2 h = 0.4 kWh = 10p",
+     "model": "Teacher does the kettle: 2 kW for 12 minutes a day (0.2 h): 0.4 kWh, 10p a day."
+    },
+    {
+     "q": "A 60 W bulb is swapped for a 10 W LED, used 5 h a day. How many kWh are saved in 30 days?",
+     "a": "50 W × 5 h × 30 = 7500 Wh = 7.5 kWh"
+    },
+    {
+     "q": "How much money does that save at 25p per kWh?",
+     "a": "7.5 × 25 = 187.5p, about £1.88"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "kWh = kW × ...",
+     "a": "Hours",
+     "options": [
+      "Hours",
+      "Volts",
+      "Amps"
+     ]
+    },
+    {
+     "q": "Big question: kettle for 5 minutes or charger all night: which costs more?",
+     "a": "The kettle: about 0.17 kWh against about 0.04 kWh."
+    }
+   ]
+  }
+ ]
+}

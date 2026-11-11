@@ -1,0 +1,138 @@
+{
+ "id": "science-y5-animal-data-table-and-squared-bar-chart-sheet",
+ "title": "Animal data table and squared bar chart sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y5",
+ "unit": "Spring 2: Changes of materials and animals including humans",
+ "lessons": [
+  26
+ ],
+ "source": "Seeded from science/y5 lesson 26 (Animal data table and squared bar chart sheet (portal worksheet))",
+ "intro": "Lesson 26: Gestation and lifespan: reading animal data. To understand how gestation and lifespan vary between animals by reading data",
+ "blocks": [
+  {
+   "h": "Bar chart"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "yMax": 10,
+    "yStep": 1,
+    "yLabel": "",
+    "xLabel": ""
+   }
+  },
+  {
+   "text": "Label both axes, choose a scale, and draw the bars with a ruler, with gaps between them."
+  },
+  {
+   "h": "Gestation"
+  },
+  {
+   "table": {
+    "head": [
+     "Animal",
+     "Gestation (approx.)",
+     "Lifespan (approx.)"
+    ],
+    "rows": [
+     [
+      "Mouse",
+      "3 weeks",
+      "2 years"
+     ],
+     [
+      "Cat",
+      "9 weeks",
+      "15 years"
+     ],
+     [
+      "Human",
+      "40 weeks",
+      "80 years"
+     ],
+     [
+      "Horse",
+      "48 weeks",
+      "28 years"
+     ],
+     [
+      "Elephant",
+      "95 weeks",
+      "65 years"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "How many weeks longer is a human's gestation than a cat's?",
+     "a": "31 weeks (40 - 9)",
+     "model": "Find both numbers: human 40, cat 9. Subtract: 40 - 9 = 31. So 31 weeks longer."
+    },
+    {
+     "q": "Which animal has the shortest lifespan?",
+     "a": "Mouse"
+    },
+    {
+     "q": "Is it true that the biggest animal always lives longest? Use the data.",
+     "a": "No: the elephant is bigger but humans live longer in the table"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Draw a bar chart of the gestation times from the table on squared paper.",
+     "a": "Five bars: mouse 3, cat 9, human 40, horse 48, elephant 95 weeks",
+     "model": "Teacher sets up the axes on camera: animals along the bottom, weeks up the side in steps of 10, and draws the mouse bar."
+    },
+    {
+     "q": "Write a pattern sentence: 'The bigger the mammal, the ...'",
+     "a": "The bigger the mammal, the longer the gestation.",
+     "lines": 6
+    },
+    {
+     "q": "Convert the elephant's gestation into months (about 4 weeks a month).",
+     "a": "About 24 months (95 ÷ 4 ≈ 24), nearly two years"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Gestation means...",
+     "a": "Time before birth",
+     "options": [
+      "Time before birth",
+      "How long it lives"
+     ]
+    },
+    {
+     "q": "Big question: why does an elephant take nearly two years to be born?",
+     "a": "It is very big, and bigger mammals usually need longer to grow before birth."
+    }
+   ]
+  }
+ ]
+}
