@@ -1,5 +1,6 @@
 "use client";
 
+import { Stepper } from "@/components/learn/templates/parts";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
@@ -81,18 +82,21 @@ export function EntryAssessmentsAdmin() {
     <div className="space-y-5">
       {/* When a report is open, only the report prints. */}
       <div className={`space-y-5 ${open ? "print:hidden" : ""}`}>
-      <div className="grid gap-3 sm:grid-cols-4">
-        {[
-          { k: "active" as const, label: "Waiting for the pupil", n: count(["issued", "in_progress"]), icon: "hourglass" as const, tile: "tile-blue" },
-          { k: "marking" as const, label: "Needs marking", n: count(["submitted"]), icon: "notebookPen" as const, tile: "tile-amber" },
-          { k: "complete" as const, label: "Complete", n: count(["complete"]), icon: "circleCheck" as const, tile: "tile-green" },
-          { k: "all" as const, label: "All assessments", n: (rows || []).length, icon: "listChecks" as const, tile: "tile-slate" },
-        ].map((c) => (
-          <button key={c.k} type="button" onClick={() => setFilter(c.k)} aria-pressed={filter === c.k} className={`flex items-center gap-3 rounded-2xl border bg-white p-4 text-left transition hover:shadow-sm ${filter === c.k ? "border-teal-700 ring-1 ring-teal-700" : "border-gold-light"}`}>
-            <span className={`portal-tile ${c.tile}`} aria-hidden="true"><Icon name={c.icon} /></span>
-            <span><span className="block text-2xl font-semibold leading-none tabular-nums">{rows === null ? "…" : c.n}</span><span className="mt-1 block text-sm text-ink/70">{c.label}</span></span>
-          </button>
-        ))}
+      {/* The assessment's stages in order, each a filter (owner, 11 Nov 2026: workflows show their stages). */}
+      <div className="flex flex-wrap items-center gap-3 border-y border-gold-light py-2">
+        <div className="min-w-0 flex-1">
+          <Stepper
+            label="Entry assessment stages"
+            steps={[
+              { key: "active", label: "Waiting for the pupil", meta: rows === null ? undefined : `${count(["issued", "in_progress"])} issued or started`, state: filter === "active" ? "current" : "todo", onClick: () => setFilter("active") },
+              { key: "marking", label: "Needs marking", meta: rows === null ? undefined : `${count(["submitted"])} to mark`, state: filter === "marking" ? "current" : "todo", onClick: () => setFilter("marking") },
+              { key: "complete", label: "Complete", meta: rows === null ? undefined : `${count(["complete"])} with a report`, state: filter === "complete" ? "current" : "todo", onClick: () => setFilter("complete") },
+            ]}
+          />
+        </div>
+        <button type="button" onClick={() => setFilter("all")} aria-pressed={filter === "all"} className={filter === "all" ? ui.chipOn : ui.chip}>
+          All <span className="tabular-nums opacity-70">{rows === null ? "" : (rows || []).length}</span>
+        </button>
       </div>
 
       {notice && (
@@ -103,7 +107,7 @@ export function EntryAssessmentsAdmin() {
       )}
 
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-lg font-semibold text-ink">{filter === "active" ? "Waiting for the pupil" : filter === "marking" ? "Needs marking" : filter === "complete" ? "Complete" : "All assessments"}</h2>
+        <h2 className="t-section text-base">{filter === "active" ? "Waiting for the pupil" : filter === "marking" ? "Needs marking" : filter === "complete" ? "Complete" : "All assessments"}</h2>
         <button type="button" onClick={() => setCreating(true)} data-guide="assessments-new" className={ui.btnPrimary}>
           <Icon name="userRoundPlus" className="h-4 w-4" /> New assessment
         </button>

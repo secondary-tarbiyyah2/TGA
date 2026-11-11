@@ -65,6 +65,16 @@ Batches and status:
    compact `variant="switch"` control. No line-variant `Tabs` is left in the portal (check with
    `grep -rn "<Tabs" src | grep -v switch`). Admissions' board has a stage strip (`Stepper`) with counts per stage.
    Converter scripts used: `scratchpad/tpl/conv.py`, `parentend.py`, `toswitch.py`, `cleanup.py`.
+5c. [x] Stages for timetabling and entry assessments (PR "Timetable and entry assessments as stages"): every
+   Timetable page shows the five stages under its header (School day, Staff availability, Make the timetable,
+   Timetable, Lessons; `TIMETABLE_STAGES` in `timetable/LessonsFrame.tsx`), the page you are on marked, each a link.
+   Entry assessments' four coloured icon tiles became a `Stepper` (Waiting for the pupil, Needs marking, Complete,
+   each a filter with its count) plus an All chip. `Stepper` links now use the app's own `Link`.
+
+**Blocker (11 Nov 2026, from about 19:35):** GitHub Actions stopped running for the whole repository (every
+workflow on every branch, main included, ends in `startup_failure` or stays queued; most likely the account's
+Actions minutes or spending limit). PRs #216 and the stages PR wait for green checks; merge them once CI runs again.
+
 6a. [x] Gradebook (workspace): the class picker, pupil count and Add an assessment sit on one line above the
    grid (`ClassGradebook toolbar`); the card with a second "Gradebook" heading is gone, here and in a class's
    Grades. "No assessment types" now points to Report settings, where they live.
