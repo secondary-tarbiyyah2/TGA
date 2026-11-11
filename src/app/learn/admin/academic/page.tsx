@@ -63,7 +63,7 @@ function AcademicHub() {
               {!next && <Link href="/admin/lessons" className="font-semibold underline">Next: build the timetable &rarr;</Link>}
             </div>
           </Notice>
-          <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <ol data-guide="academic-steps" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {cards.map((c, i) => (
               <li key={c.href}>
                 <Link href={c.href} className="flex h-full flex-col rounded-2xl border border-gold-light bg-white p-4 transition hover:border-gold-500 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">

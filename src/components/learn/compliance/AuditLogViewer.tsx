@@ -152,7 +152,7 @@ export function AuditLogViewer() {
         Every change captured by the database, newest first. Summaries show which fields changed, never what they changed to. Anything involving safeguarding, health, messages or admissions shows only that a change happened. Exporting is itself logged.
       </p>
 
-      <form onSubmit={applyFilters} className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-6">
+      <form onSubmit={applyFilters} data-guide="audit-filters" className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-6">
         <label className="text-xs text-ink/70 lg:col-span-2">
           Who (email contains)
           <input value={filters.actor} onChange={(e) => setFilters({ ...filters, actor: e.target.value })} placeholder="e.g. head@…" className={`${ui.input} mt-1`} />

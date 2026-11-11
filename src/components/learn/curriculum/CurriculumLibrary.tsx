@@ -516,7 +516,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   return (
     <div className="space-y-4">
       {/* One compact filter card: year on top, then search and the filters as dropdowns in a single row. */}
-      <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4" role="group" aria-label="Find lessons">
+      <div data-guide="library-filters" className="space-y-3 rounded-2xl border border-gold-light bg-white p-4" role="group" aria-label="Find lessons">
         <div className="flex flex-wrap items-center justify-between gap-2">
           {year && <Tabs variant="switch" items={yearTabs} value={year} onChange={setYear} label="Year group" />}
           <span className="flex flex-wrap items-center gap-3">
@@ -642,7 +642,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                 <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: classColour(sub.slug) }} />
                 {sub.name}
               </h2>
-              <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <ul data-guide="library-units" className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {sub.units.map((u) => {
                   const p = packFor(u);
                   const avg = p ? scores[p.id] : undefined;
@@ -748,7 +748,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                 {results.length === 0 ? (
                   <p className="p-8 text-center text-sm text-ink/70">No lessons match. Try other words or another year.</p>
                 ) : (
-                  <ol>{results.map((l) => lessonRow(l, true))}</ol>
+                  <ol data-guide="library-units" >{results.map((l) => lessonRow(l, true))}</ol>
                 )}
               </section>
             ) : (
@@ -821,7 +821,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                   />
                   {tab === "lessons" &&
                     (current.lessons.length ? (
-                      <ol className="overflow-hidden rounded-2xl border border-gold-light bg-white">{current.lessons.map((l) => lessonRow(l))}</ol>
+                      <ol data-guide="library-units" className="overflow-hidden rounded-2xl border border-gold-light bg-white">{current.lessons.map((l) => lessonRow(l))}</ol>
                     ) : (
                       <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit is a revision pack only; its summary and video are on the Revision pack tab.</p>
                     ))}

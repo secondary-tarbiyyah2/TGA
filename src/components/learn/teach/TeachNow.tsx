@@ -158,7 +158,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
             ) : lessons.length === 0 ? (
               <p className="text-sm text-ink/65">No lessons today.</p>
             ) : (
-              <ul className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3" aria-label="Your day">
+              <ul data-guide="teach-your-day" className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3" aria-label="Your day">
                 {lessons.map((l) => {
                   const done = now > hhmm(l.end);
                   const due = !l.registerTaken && now >= hhmm(l.start);
@@ -210,7 +210,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
           )}
         </section>
 
-        <nav aria-label="Quick actions" className="rounded-2xl border border-gold-light bg-white p-4">
+        <nav data-guide="teach-quick-actions" aria-label="Quick actions" className="rounded-2xl border border-gold-light bg-white p-4">
           <h2 className="mb-2 text-sm font-semibold text-ink">Quick actions</h2>
           <ul className="space-y-1.5">
             {actions.map((a) => (

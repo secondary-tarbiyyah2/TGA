@@ -272,7 +272,7 @@ export function WeeklyGrid({
   const previewOk = preview && previewSlot ? moveProblem(previewSlot, preview.cur.weekday, fmt(preview.cur.start), fmt(preview.cur.end), universe) === null : true;
 
   return (
-    <div>
+    <div data-guide="timetable-grid">
       {moveNote && !moveError && <p role="status" className="mb-2 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-900">{moveNote}</p>}
       {moveError && <p role="alert" className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">{moveError}</p>}
       {!editable && slots.length > 0 && <p className="mb-2 text-xs text-ink/65">Locked: only draft timetables can be changed or dragged.</p>}

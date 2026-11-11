@@ -114,7 +114,7 @@ function AvailabilityContent() {
           {shown.length === 0 ? (
             <p className="text-sm text-ink/65">{data.teachers.length === 0 ? "No teachers yet. Add them under Accounts." : "Every teacher has set their availability."}</p>
           ) : (
-            <ul className="divide-y divide-gold-light/30">{shown.map((t) => <TeacherRow key={`${t.id}-${effYearId}`} teacher={t} rows={rowsFor(t.id)} yearId={effYearId} reload={reload} />)}</ul>
+            <ul data-guide="availability" className="divide-y divide-gold-light/30">{shown.map((t) => <TeacherRow key={`${t.id}-${effYearId}`} teacher={t} rows={rowsFor(t.id)} yearId={effYearId} reload={reload} />)}</ul>
           )}
         </div>
       )}

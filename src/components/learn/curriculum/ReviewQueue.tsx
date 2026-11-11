@@ -60,7 +60,7 @@ export function ReviewQueue({ area }: { area: "teach" | "admin" }) {
     );
 
   return (
-    <div className="space-y-6">
+    <div data-guide="review-queue" className="space-y-6">
       {subjects.length > 1 && (
         <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Subject">
           {["all", ...subjects].map((s) => (

@@ -363,7 +363,7 @@ export function ClassGradebook({
   }
 
   return (
-    <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-5">
+    <div data-guide="gradebook" className="space-y-3 rounded-2xl border border-gold-light bg-white p-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <h2 className="font-serif text-h3 font-semibold text-ink">Gradebook</h2>

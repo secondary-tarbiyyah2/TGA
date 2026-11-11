@@ -225,7 +225,7 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
 
 function SubjectGrid({ plan, onPick }: { plan: PlanSource; onPick: (s: string) => void }) {
   return (
-    <section aria-labelledby="syl-pick" className={ui.card}>
+    <section data-guide="syllabus-subject" aria-labelledby="syl-pick" className={ui.card}>
       <h2 id="syl-pick" className={eyebrow}>
         Choose a subject
       </h2>
@@ -326,7 +326,7 @@ function SubjectHeader({ sp, live, docs, overview, openFile, onSubject, canEdit,
             </p>
           </div>
         </div>
-        <div className="w-full sm:w-60">
+        <div data-guide="syllabus-subject" className="w-full sm:w-60">
           <Select value={sp.subject.slug} onChange={(e) => onSubject(e.target.value)} aria-label="Change subject">
             {PLAN_SUBJECTS.map((s) => (
               <option key={s.slug} value={s.slug}>

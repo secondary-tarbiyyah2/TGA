@@ -89,6 +89,7 @@ export function QuranTeacher() {
       <MarkScale />
       <Tabs
         label="Qur'an sections"
+        guide="quran-sections"
         value={tab}
         onChange={(k) => {
           setTab(k);

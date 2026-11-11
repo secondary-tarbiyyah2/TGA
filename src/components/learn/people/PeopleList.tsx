@@ -292,6 +292,7 @@ export function PeopleList({
           }}
           placeholder="Search by name, email, year group or class…"
           aria-label="Search people"
+          data-guide="people-search"
           className={INPUT_CLASS}
         />
         <Tabs

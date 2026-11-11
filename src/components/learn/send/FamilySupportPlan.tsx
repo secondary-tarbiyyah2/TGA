@@ -214,6 +214,7 @@ function PlanView({ plan, childName }: { plan: SupportPlan; childName: string })
       )}
 
       {plan.status === "active" && (
+        <div data-guide="support-comments">
         <Section title="Your comments" description="Tell us what you think of the plan, or that you agree with it. The SENCo reads every comment.">
           {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
           <Field label="Comment (optional when agreeing)" htmlFor="fam-comment" className="mt-2">
@@ -249,6 +250,7 @@ function PlanView({ plan, childName }: { plan: SupportPlan; childName: string })
             </ul>
           )}
         </Section>
+        </div>
       )}
     </>
   );

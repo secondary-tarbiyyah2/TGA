@@ -209,6 +209,7 @@ function ContentAdmin() {
         value={group.key}
         onChange={(k) => setTab(GROUPS.find((g) => g.key === k)!.tabs[0])}
         label="Website content sections"
+        guide="content-sections"
       />
       {group.tabs.length > 1 && <Tabs variant="switch" items={group.tabs.map((t) => ({ key: t, label: t }))} value={tab} onChange={setTab} label={`${group.label} editors`} />}
       {tab === "Policies" && (

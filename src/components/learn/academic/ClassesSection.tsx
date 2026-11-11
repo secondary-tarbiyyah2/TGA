@@ -181,7 +181,7 @@ export function ClassesSection(props: Props) {
     : classes;
 
   return (
-    <StepCard step={4} id="classes" done={classes.length > 0} title="Classes" help="A class is a subject taught to a year group. Set how many lessons it needs each week; the timetable is built from this.">
+    <StepCard step={4} id="classes" guide="academic-classes" done={classes.length > 0} title="Classes" help="A class is a subject taught to a year group. Set how many lessons it needs each week; the timetable is built from this.">
       {!ready && <EmptyState>Finish steps 1 to 3 first: a class needs an academic year, a year group and a subject to pick from.</EmptyState>}
       {ready && (
         <div className="mb-4 flex flex-wrap items-center gap-2">

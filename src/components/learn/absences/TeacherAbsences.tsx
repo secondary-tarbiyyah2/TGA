@@ -40,7 +40,7 @@ export function TeacherAbsences() {
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
       <div className="space-y-5">
         {upcoming.length > 0 && (
-          <section className="rounded-2xl border border-gold-light bg-white" aria-labelledby="upcoming-abs">
+          <section data-guide="teach-absences" className="rounded-2xl border border-gold-light bg-white" aria-labelledby="upcoming-abs">
             <h2 id="upcoming-abs" className="border-b border-gold-light px-4 py-3 text-sm font-semibold text-ink">
               Away today or coming up
             </h2>

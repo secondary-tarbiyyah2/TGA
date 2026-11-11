@@ -64,7 +64,7 @@ export function YearsSection({ years, terms, reload }: Common & { years: Academi
   };
 
   return (
-    <StepCard step={1} id="years" done={years.length > 0} title="Academic years & terms" help="The school year the timetable is built for. Add the year here, then its terms under Calendar › Terms.">
+    <StepCard step={1} id="years" guide="academic-years" done={years.length > 0} title="Academic years & terms" help="The school year the timetable is built for. Add the year here, then its terms under Calendar › Terms.">
       {years.length === 0 && <EmptyState>No academic year yet. Add one below (for example &quot;2026/27&quot;, 1 Sep 2026 to 31 Aug 2027). The timetable can&apos;t be built without it.</EmptyState>}
       <div className="space-y-3">
         {years.map((y) => {
@@ -164,7 +164,7 @@ export function YearGroupsSection({ yearGroups, classes, enrolments, reload }: C
   };
 
   return (
-    <StepCard step={2} id="year-groups" done={yearGroups.length > 0} title="Year groups" help="Year 1, Year 2 and so on (the Academy starts at Year 1). Capacity is the total places in that year; leave it blank to hide “places remaining” on the public site.">
+    <StepCard step={2} id="year-groups" guide="academic-year-groups" done={yearGroups.length > 0} title="Year groups" help="Year 1, Year 2 and so on (the Academy starts at Year 1). Capacity is the total places in that year; leave it blank to hide “places remaining” on the public site.">
       {yearGroups.length === 0 && <EmptyState>No year groups yet. Add them below, in order from youngest to oldest.</EmptyState>}
       <ul className="space-y-2">
         {yearGroups.map((y) => (
@@ -227,7 +227,7 @@ export function SubjectsSection({ subjects, reload }: Common & { subjects: Subje
   };
 
   return (
-    <StepCard step={3} id="subjects" done={subjects.length > 0} title="Subjects" help="What is taught. Core subjects (English, Maths, Science) are placed earlier in the day when the timetable is generated.">
+    <StepCard step={3} id="subjects" guide="academic-subjects" done={subjects.length > 0} title="Subjects" help="What is taught. Core subjects (English, Maths, Science) are placed earlier in the day when the timetable is generated.">
       {subjects.length === 0 && <EmptyState>No subjects yet. Add the subjects you teach below.</EmptyState>}
       <ul className="grid gap-2 sm:grid-cols-2">
         {subjects.map((s) => (

@@ -136,7 +136,7 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
             ))}
           </Select>
         </label>
-        <div role="group" aria-label="Show" className="inline-flex gap-0.5 rounded-xl bg-gold-100/70 p-1">
+        <div data-guide="map-view" role="group" aria-label="Show" className="inline-flex gap-0.5 rounded-xl bg-gold-100/70 p-1">
           {(
             [
               ["subject", "One subject"],
@@ -159,7 +159,7 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
       ) : view === "subject" ? (
         <SubjectView subjects={subjects} chosen={chosen} onChoose={setSubject} statsFor={statsFor} hrefFor={hrefFor} now={now} />
       ) : (
-        <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
+        <div data-guide="map-grid" className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
           <table className="w-full min-w-[60rem] border-collapse text-left text-sm">
             <caption className="sr-only">
               {yearLabel(year)} curriculum map: units by subject and half term
@@ -285,7 +285,7 @@ function SubjectView({
       </nav>
 
       {chosen && (
-        <section aria-labelledby="map-subject" className="min-w-0 flex-1 rounded-2xl border border-gold-light bg-white p-5 sm:p-6">
+        <section data-guide="map-grid" aria-labelledby="map-subject" className="min-w-0 flex-1 rounded-2xl border border-gold-light bg-white p-5 sm:p-6">
           <h2 id="map-subject" className="font-serif text-h3 font-semibold text-forest-900">
             {chosen.name}
           </h2>

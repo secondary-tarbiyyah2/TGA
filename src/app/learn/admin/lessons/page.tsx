@@ -40,7 +40,7 @@ function HubContent() {
               </Notice>
             </div>
           )}
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <ul data-guide="lessons-cards" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {cards.map((c) => (
               <li key={c.href}>
                 <Link href={c.href} className="flex h-full flex-col rounded-2xl border border-gold-light bg-white p-4 transition hover:border-gold-500 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">

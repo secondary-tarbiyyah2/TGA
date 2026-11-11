@@ -26,6 +26,7 @@ function AdmissionsContent() {
         value={tab}
         onChange={setTab}
         label="Admissions sections"
+        guide="admissions-tabs"
         idBase="admissions"
       />
 

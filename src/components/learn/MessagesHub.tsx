@@ -231,6 +231,7 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
         actions={
           <button
             type="button"
+            data-guide="messages-new"
             onClick={() => setPicking(true)}
             disabled={loading || nobodyToMessage || directoryFailed}
             className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50"
@@ -274,7 +275,7 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
               </div>
             )}
             <ScrollArea label="Conversations" className="max-h-[70vh]">
-            <ul className="divide-y divide-gold-light/70">
+            <ul data-guide="messages-list" className="divide-y divide-gold-light/70">
               {sorted.length === 0 && urgentOnly && (
                 <li className="px-5 py-10 text-center text-sm text-ink/65">No urgent conversations.</li>
               )}

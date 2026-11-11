@@ -144,7 +144,7 @@ function StudentContent() {
         </section>
       )}
 
-      <details className="group rounded-2xl border border-gold-light bg-white" open={simplified || undefined}>
+      <details data-guide="pupil-timetable" className="group rounded-2xl border border-gold-light bg-white" open={simplified || undefined}>
         <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-5 py-3">
           <h2 className="text-h3 font-semibold text-ink">My timetable</h2>
           <span className="flex items-center gap-2 text-sm text-ink/65">

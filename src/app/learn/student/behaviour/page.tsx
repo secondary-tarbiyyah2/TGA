@@ -56,7 +56,7 @@ function StudentBehaviourContent() {
         <Loading label="Loading…" bare />
       ) : (
         <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-3">
+          <div data-guide="merit-stats" className="grid grid-cols-2 gap-3">
             <StatTile label="Merit points" value={String(points)} sub={points > 0 ? "Masha Allah, keep going!" : "Your first merit is waiting for you"} tone="good" />
             <StatTile label="Badges" value={String(badges.length)} />
           </div>
@@ -64,7 +64,7 @@ function StudentBehaviourContent() {
             <h2 className="mb-2 text-base font-semibold text-ink">My badges</h2>
             <BadgeShelf badges={badges} empty="No badges yet. Keep working hard and you will earn one." />
           </section>
-          <section>
+          <section data-guide="merit-recent" >
             <h2 className="mb-2 text-base font-semibold text-ink">My recent merits</h2>
             <RecordsTable records={records.slice(0, 30)} showStudent={false} empty="No merits yet. Helping others, great work and good manners all earn them." />
           </section>

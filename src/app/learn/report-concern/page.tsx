@@ -132,7 +132,7 @@ function ReportConcernForm() {
           )}
         </p>
       )}
-      <form onSubmit={submit} className="mt-4 space-y-4">
+      <form onSubmit={submit} data-guide="concern-form" className="mt-4 space-y-4">
         <label className="block text-sm text-ink">
           Who or what is this about?
           <input value={subject} onChange={(e) => setSubject(e.target.value)} required className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2" placeholder="e.g. a child in Year 4, a staff member, a general concern" />

@@ -138,6 +138,7 @@ export function IcsFeedLink() {
     <div className="print:hidden mt-4">
       <button
         type="button"
+        data-guide="calendar-subscribe"
         onClick={openMenu}
         className="inline-flex items-center gap-2 rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-900"
       >

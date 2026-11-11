@@ -30,7 +30,7 @@ export function ActionCentreWidget({ role }: { role: Role }) {
   const shown = active === "all" ? urgent : urgent.filter((i) => categoryOf(i.area) === active);
 
   return (
-    <section aria-labelledby="ac-widget" className="rounded-2xl border border-gold-light bg-white p-4 sm:p-5">
+    <section data-guide="waiting-widget" aria-labelledby="ac-widget" className="rounded-2xl border border-gold-light bg-white p-4 sm:p-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 id="ac-widget" className="text-base font-semibold text-ink">
           Waiting for you <span className="font-normal text-ink/60">· {urgent.length}</span>

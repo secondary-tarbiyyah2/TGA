@@ -307,7 +307,7 @@ function OpenEveningContent() {
           )
         }
         action={
-          <Button variant="primary" icon="plus" onClick={startNew}>
+          <Button variant="primary" icon="plus" onClick={startNew} data-guide="open-evening-new">
             New open evening
           </Button>
         }

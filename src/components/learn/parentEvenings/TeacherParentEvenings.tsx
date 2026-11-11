@@ -94,7 +94,7 @@ function EveningCard({ row, ev }: { row: Row; ev: ParentEvening }) {
         {msg && <p className="mt-1 text-xs text-ink/70">{msg}</p>}
       </div>
 
-      <h3 className="mt-5 text-sm font-semibold text-ink">
+      <h3 data-guide="pe-schedule" className="mt-5 text-sm font-semibold text-ink">
         Your schedule <span className="font-normal text-ink/65">· {schedule ? schedule.length : 0} of {total} slots booked</span>
       </h3>
       {schedule === null ? (

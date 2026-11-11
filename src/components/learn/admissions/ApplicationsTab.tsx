@@ -492,7 +492,7 @@ export function ApplicationsTab() {
       {load === "ready" && rows.length > 0 && (
         <>
           {filtered.length === 0 && <p className="text-sm text-ink/65">No applications match your search.</p>}
-          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          <div data-guide="admissions-list" className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
             {PIPELINE_STATUSES.map((s) => (
               <Column key={s} status={s} apps={byStatus(s)} dragOver={dragOver} setDragOver={setDragOver} onDropOn={handleDrop} cardProps={cardProps} familySizes={familySizes} />
             ))}

@@ -119,6 +119,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
         <Tabs
           variant="switch"
           label="Reports sections"
+          guide="reports-sections"
           items={sections}
           value={section}
           onChange={(k) => go({ view: k })}

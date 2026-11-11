@@ -104,7 +104,7 @@ export function EntryAssessmentsAdmin() {
 
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-lg font-semibold text-ink">{filter === "active" ? "Waiting for the pupil" : filter === "marking" ? "Needs marking" : filter === "complete" ? "Complete" : "All assessments"}</h2>
-        <button type="button" onClick={() => setCreating((v) => !v)} className={ui.btnPrimary}>
+        <button type="button" onClick={() => setCreating((v) => !v)} data-guide="assessments-new" className={ui.btnPrimary}>
           <Icon name="userRoundPlus" className="h-4 w-4" /> New assessment
         </button>
       </div>
