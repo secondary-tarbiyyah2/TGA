@@ -7,6 +7,37 @@
 > **Third pass (11 Nov 2026):** structure, not look. Read `docs/portal-structure.md` (the patterns) and "Third pass"
 > below (status) before changing how a page is put together.
 
+## Page design system (owner, 11 Nov 2026 14:50 and 15:59)
+
+Owner: "your entire LMS needs a page design system ... every section feels like it belongs to the same product",
+then "i dont need templates, just push the changes directly". So there is no templates document: each page is
+changed in place, in small PRs (branches `claude/templates-<batch>`), using a few shared pieces where they help.
+Page kinds to aim for (the owner's list): Dashboard (Today, overviews), Directory (pupils, staff, classes,
+families), Record (pupil, teacher, class), Settings, Workflow (admissions, reports, assessments, timetabling),
+Workspace (report writing, lesson preparation, marking). Rules: compact headers, much less scrolling (columns,
+grouping, one section at a time, side panels), restrained shape and colour, no strip of tabs across the top.
+
+Shared pieces (`src/components/learn/templates/`):
+- `parts.tsx`: `Panel` (titled hairline block), `SettingsGroup` and `SettingRow` (label left, control right),
+  `SaveBar` (sticky Save and Cancel with unsaved, saving, saved, error), `Pagination`, `BulkActionBar`,
+  `Stepper` (workflow stages), `toast()` (short message that goes by itself).
+- `SettingsPage.tsx`: settings sections down the left (dropdown on phones), one section at a time; `embedded`
+  for a settings view inside a workspace.
+- `DataTable` now uses `Pagination` and takes `bulkActions` (tick boxes plus the bulk bar); old callers unchanged.
+
+Batches and status:
+1. [x] Reports > Settings (`reports/ReportSettings.tsx`): two sections, `?section=comments|grading`. Comments and
+   assessments: comment bank (search, 8 a page, remove) beside assessment types (duplicates refused). Grading:
+   Subject, then Scale, then Grade boundaries in three columns; boundaries as a table (grade, from, up to) with
+   checks (label needed, 0 to 100, no duplicate grade or starting mark) and Remove. Same tables and RLS.
+2. [ ] Directories: pupils, staff, classes, people (families). 3. [ ] Records. 4. [ ] Other settings pages
+   (School settings, Account, Academic setup, Admissions and Recruitment settings). 5. [ ] Workflows (Reports'
+   own sections as stages, Admissions, Entry assessments, Timetable). 6. [ ] Workspaces and Today, Messages,
+   Calendar, Qur'an, absences.
+
+Screenshots: `scratchpad/tpl/shots.mjs` (the redesign3 mock harness pointed at this worktree, plus subjects,
+comment bank, assessment types, mark schemes, boundaries and terms) logs `OVERFLOW` when a page scrolls sideways.
+
 ## Owner feedback 2 (11 Nov 2026), items 3 and 4: Messages and Calendar
 
 Brief: `docs/owner-briefs/2026-11-11-feedback-2.md`. Branches `claude/fb2-msg-*`.
@@ -440,6 +471,8 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Pupil absences to act on (feedback 2, item 20): the follow-up queue with a case panel (contacts,
+  call log, message, reason, decision, reminder, escalate, close, history); migration 0209.
 - 2026-11-11: Classwork quizzes (feedback 2, items 6, 15, 17; migration 0206): full-screen quiz builder with nine question types as cards, settings, AI draft checked question by question, results and marking; pupils sit quizzes full screen with the server clock, autosave and results; Classwork filters and groups by kind. Add an assessment opens full screen (item 10, `FocusView`).
 - 2026-11-11: Class Insights restructured (owner feedback 2, item 11): one strip of four figures linking to their sections, then "Pupils who may need a word" as a table with one column per reason (capitalised), a reason filter, each flagged figure linking to Attendance, Classwork or Grades, the name to the pupil record (`pupilRecordHref`), Message and Record per row; phones show each pupil as a short card.
 - 2026-11-11: Waiting for you page compartmentalised (owner feedback 2, item 2): in Everything each category is its own box with a count and "N to do now", showing its first four lines and Show all; every line carries its one action as a button (marking opens in place), and the three dots open its detail (pupils named, Mark done, print). Save as PDF still prints every line.

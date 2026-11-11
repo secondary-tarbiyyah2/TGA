@@ -796,11 +796,6 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
           </span>
         )}
         {footer && <span aria-hidden="true">Accessibility and display</span>}
-        {!portal && !footer && (
-          <span aria-hidden="true" className="hidden 2xl:inline">
-            Accessibility
-          </span>
-        )}
         {count > 0 && (
           <span
             aria-hidden="true"
