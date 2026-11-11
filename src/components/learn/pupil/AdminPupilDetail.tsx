@@ -7,27 +7,27 @@ import { BaselineAssessments } from "./BaselineAssessments";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { PrintScope, findPrintScope, printElement } from "@/components/learn/printScope";
 import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
+import { PupilChronology, PupilSummary } from "./ProfileSummary";
 import { PupilDocumentsTab, PupilQuranTab, PupilWorkTab } from "./ProfileSections";
 import { Button, Notice, StatusChip, ui } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { ukDaysAgo } from "@/lib/learn/ukTime";
 import { LeaderboardPrivacy } from "@/components/learn/behaviour/LeaderboardPrivacy";
 import { ProgressBar, ageFromDob, completeness, formatDob, formatStamp, medicalAlerts } from "./data";
 import { PupilOverview } from "./PupilOverview";
 import { RecordSections, usePupilRecordData, type RecordChild } from "./PupilRecord";
-import { Fig, PupilAttendanceTab, PupilBehaviourTab, PupilReportsTab, attendanceFigures } from "./ProfileTabs";
+import { PupilAttendanceTab, PupilBehaviourTab, PupilReportsTab } from "./ProfileTabs";
 import { SupportPlanEditor } from "@/components/learn/send/SupportPlanEditor";
 import { EditPupilModal } from "./EditPupilModal";
 import { createAccountsFor } from "@/components/learn/admissions/accountsApi";
 import { askNotice } from "@/components/learn/kit";
 import { PupilDetailsEditor } from "./PupilDetailsEditor";
 
-type ChildRaw = { id: string; name: string; dob: string | null; parent_user_id: string | null; year_groups?: { name: string } | null };
+type ChildRaw = { id: string; name: string; dob: string | null; parent_user_id: string | null; year_group_id?: string | null; year_groups?: { name: string } | null };
 type EnrolRaw = { classes?: { name: string } | null };
 type Parent = { full_name: string | null; email: string | null };
 
-type Tab = "overview" | "details" | "medical" | "send" | "attendance" | "behaviour" | "work" | "quran" | "reports" | "documents" | "assessment";
-const TABS: Tab[] = ["overview", "details", "medical", "send", "attendance", "behaviour", "work", "quran", "reports", "documents", "assessment"];
+type Tab = "overview" | "chronology" | "details" | "medical" | "send" | "attendance" | "behaviour" | "work" | "quran" | "reports" | "documents" | "assessment";
+const TABS: Tab[] = ["overview", "chronology", "details", "medical", "send", "attendance", "behaviour", "work", "quran", "reports", "documents", "assessment"];
 
 /**
  * A pupil's profile: the one place for everything about a child. Overview,
@@ -63,7 +63,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
   const [child, setChild] = useState<RecordChild | null>(null);
   const [parent, setParent] = useState<Parent | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "missing">("loading");
-  const [att30, setAtt30] = useState<ReturnType<typeof attendanceFigures> | null>(null);
+  const [yearGroupId, setYearGroupId] = useState<string | null>(null);
   const printRef = useRef<HTMLDivElement>(null);
   const [editing, setEditing] = useState(false);
   const [above, setAbove] = useState(false);
@@ -76,12 +76,9 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
     if (!supabase) return;
     let cancelled = false;
     (async () => {
-      // The last 30 UK days, today included.
-      const since = ukDaysAgo(29);
-      const [c, e, a, f] = await Promise.all([
-        supabase.from("children").select("id, name, dob, parent_user_id, year_groups(name)").eq("id", id).maybeSingle(),
+      const [c, e, f] = await Promise.all([
+        supabase.from("children").select("id, name, dob, parent_user_id, year_group_id, year_groups(name)").eq("id", id).maybeSingle(),
         supabase.from("enrolments").select("classes(name)").eq("child_id", id),
-        supabase.from("attendance_records").select("status, lesson_instances!inner(date)").eq("child_id", id).gte("lesson_instances.date", since).limit(1000),
         // Separate, so the profile still loads before migration 0185 is applied.
         supabase.from("children").select("working_above_year_group").eq("id", id).maybeSingle(),
       ]);
@@ -95,7 +92,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
         yearGroup: row.year_groups?.name || null,
         classes: ((e.data as unknown as EnrolRaw[]) || []).map((x) => x.classes?.name || "").filter(Boolean),
       });
-      setAtt30(attendanceFigures((a.data as { status: string }[]) || []));
+      setYearGroupId(row.year_group_id || null);
       setAbove(!!(f.data as { working_above_year_group?: boolean } | null)?.working_above_year_group);
       setState("ready");
       if (row.parent_user_id) {
@@ -185,7 +182,8 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
 
   const age = child ? ageFromDob(child.dob) : null;
   const items: { key: Tab; label: string; count?: number; countAlert?: boolean }[] = [
-    { key: "overview", label: "Overview" },
+    { key: "overview", label: "Summary" },
+    { key: "chronology", label: "Chronology" },
     { key: "attendance", label: "Attendance" },
     { key: "behaviour", label: "Behaviour and house points" },
     { key: "work", label: "Classwork and grades" },
@@ -282,15 +280,11 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
             {tab === "overview" && (
               <div className="space-y-4">
                 {record.loaded && missing.length > 0 && <MissingCard missing={missing} requestHref={requestHref} hasParentEmail={!!parent?.email} started={!!record.details} onOpen={() => setTab("details")} />}
-                <dl className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-                  <Fig label="Attendance (30 days)" value={att30 ? (att30.rate === null ? "–" : `${att30.rate}%`) : "…"} warn={!!att30 && att30.rate !== null && att30.rate < 90} sub={att30 ? `${att30.absent} missed of ${att30.lessons}` : undefined} />
-                  <Fig label="Medical alerts" value={record.loaded ? (alerts.length ? alerts.join(", ") : "None") : "…"} warn={alerts.length > 0} sub={record.details?.health_confirmed ? "Confirmed by the family" : "Not confirmed yet"} />
-                  <Fig label="Emergency contacts" value={record.loaded ? String(record.contacts.length) : "…"} warn={record.loaded && record.contacts.length < 2} sub={record.contacts[0] ? `${record.contacts[0].name}, ${record.contacts[0].phone}` : "None yet"} />
-                  <Fig label="Consents" value={record.details ? `${record.details.photo_consent ? "Photos" : "No photos"} · ${record.details.trip_consent ? "Trips" : "No trips"}` : "…"} sub={record.details?.photo_consent == null || record.details?.trip_consent == null ? "Not all answered" : "Answered"} />
-                </dl>
+                <PupilSummary childId={child.id} yearGroupId={yearGroupId} yearGroup={child.yearGroup} scopeNote="Averages are for every pupil in the same year group." />
                 <PupilOverview childId={child.id} />
               </div>
             )}
+            {tab === "chronology" && <PupilChronology childId={child.id} />}
             {tab === "details" && (
               <div className="space-y-4">
                 {record.loaded && missing.length > 0 && <MissingCard missing={missing} requestHref={requestHref} hasParentEmail={!!parent?.email} started={!!record.details} />}

@@ -478,6 +478,10 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Pupil profile Summary and Chronology (feedback 3): an academic-year and term switch; attendance, merits,
+  sanctions and behaviour points on one ruled strip, each against the year group's average (pupils the viewer can
+  see); a weekly or monthly trend; Chronology lists absences, behaviour, missing or late work, results, Qur'an and
+  reports by month with a filter (`pupil/ProfileSummary.tsx`). TGA's own layout, ideas only from SchoolMS.
 - 2026-11-11: SEND register figures and filters (feedback 3): On the register, EHC plans, SEN support and Reviews due
   (overdue in red) on one ruled strip, each pressing through to those pupils; filters by the four areas of need, level
   and year; pupils' names open their profile (head teacher). Permissions unchanged.
