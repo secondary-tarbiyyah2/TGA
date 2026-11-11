@@ -16,9 +16,10 @@ export function actionsEntry(a: Area): GuideEntry {
     purpose: head(a) ? "Everything waiting for the office, most urgent first: applications, absences, approvals, alerts." : "Registers, marking, replies and pupil records waiting for you, most urgent first.",
     when: "First thing each day, and whenever its number in the menu goes up.",
     steps: [
-      "Choose a group at the top, or leave it on All.",
+      "Choose a group from the list of groups, each with its count, or leave it on Everything: each group is its own box showing its first four lines, and Show all opens the group.",
       "Work down Do now first, then This week, then Good to know.",
-      "Press a line: its detail opens beside the list, with every pupil named and its buttons (do it, Mark done, print). Work to mark is marked right there.",
+      "Each line has one button that does the job; work to mark is marked right there.",
+      "Press the three dots on a line for its detail beside the list: every pupil named, Mark done and print.",
       "Come back: lines clear by themselves once the work is done.",
     ],
     tips: ["Save as PDF prints the list for a meeting.", "How missing homework is followed up explains who does what on each day after a due date."],
@@ -26,7 +27,7 @@ export function actionsEntry(a: Area): GuideEntry {
     related: [`/${a}/dashboard`, `/${a}/messages`],
     showMe: [
       { target: "waiting-categories", label: "Groups", say: "Filter the list by type of job." },
-      { target: "waiting-list", label: "The list", say: "Press a line to see it and act on it beside the list." },
+      { target: "waiting-list", label: "The list", say: "Each line has its own button; the three dots show its detail." },
     ],
     tasks: ["see what needs me", "action centre"],
   };
