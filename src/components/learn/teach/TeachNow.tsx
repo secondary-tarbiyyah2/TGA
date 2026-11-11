@@ -178,7 +178,8 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
                   <li key={l.id} className={`flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 ${isNext ? "bg-forest-50/60" : ""}`}>
                     <div className="w-[5.5rem] shrink-0 tabular-nums">
                       <p className="text-sm font-semibold text-ink">{hhmm(l.start)}</p>
-                      <p className="t-meta">to {hhmm(l.end)}</p>
+                      {/* An end time that isn't after the start (bad timetable data) is left out rather than shown as "08:00 to 08:00". */}
+                      {hhmm(l.end) > hhmm(l.start) && <p className="t-meta">to {hhmm(l.end)}</p>}
                     </div>
                     <div className="min-w-0 flex-1">
                       <Link href={`/teach/class?id=${l.classId}`} className="block truncate font-semibold text-ink hover:text-forest-700" title={l.className}>
@@ -260,7 +261,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
           lessonId={panel.lesson.id}
           classId={panel.lesson.classId}
           className={panel.lesson.className}
-          when={`${hhmm(panel.lesson.start)} to ${hhmm(panel.lesson.end)}`}
+          when={hhmm(panel.lesson.end) > hhmm(panel.lesson.start) ? `${hhmm(panel.lesson.start)} to ${hhmm(panel.lesson.end)}` : hhmm(panel.lesson.start)}
           lessonHref={`/teach/lessons/view?id=${panel.lesson.id}`}
           onClose={() => setPanel(null)}
           onProgress={(taken, total) => {

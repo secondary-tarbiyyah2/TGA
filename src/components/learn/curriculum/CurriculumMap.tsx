@@ -9,7 +9,8 @@ import { PLAN_SUBJECTS, focusTitle, isFoundingHalfTerm } from "@/lib/learn/sylla
 import { loadReviews, reviewKey, type ReviewRow } from "@/lib/learn/curriculumReview";
 import { useLearnSession } from "@/lib/learn/session";
 import { EmptyState, Status, btn, ui, type StatusKind } from "@/components/learn/ui";
-import { SidePanel } from "@/components/learn/kit";
+import { SidePanel, type WorkflowStatus } from "@/components/learn/kit";
+import { UnitLessonsPanel, UnitWeeksPanel } from "@/components/learn/curriculum/UnitPanels";
 import { Icon } from "@/components/learn/Icon";
 import { Select } from "@/components/learn/Select";
 import { Tabs } from "@/components/learn/Tabs";
@@ -109,6 +110,8 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
   const [subject, setSubject] = useState<string | null>(null);
   const [unitId, setUnitId] = useState<string | null>(null);
   const [panelId, setPanelId] = useState<string | null>(null);
+  // A unit's lessons or weekly plan, opened over the map instead of another page.
+  const [sheet, setSheet] = useState<{ unitId: string; kind: "lessons" | "weeks"; from: "panel" | "page" } | null>(null);
   const [restored, setRestored] = useState(false);
   const [units, setUnits] = useState<UnitRow[] | null>(null);
   const [lessons, setLessons] = useState<LessonLite[]>([]);
@@ -224,6 +227,16 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
     planner: `/${area}/planner`,
     subjectLibrary: (slug: string, y: string) => `/${area}/curriculum?year=${y}&subject=${encodeURIComponent(slug)}`,
     subjectSyllabus: (planSlug: string, y: string) => `/${area}/syllabus?subject=${encodeURIComponent(planSlug)}&view=years&year=${y}`,
+    open: (u: UnitRow, kind: "lessons" | "weeks") => {
+      const from = panelId === u.id ? "panel" : "page";
+      setPanelId(null);
+      setSheet({ unitId: u.id, kind, from });
+    },
+  };
+  const sheetUnit = sheet ? (units || []).find((u) => u.id === sheet.unitId) || null : null;
+  const statusOfLesson = (slug: string, y: string) => (n: number): WorkflowStatus | null => {
+    const st = reviews[reviewKey(slug, "lesson", `${y}/${n}`)]?.status;
+    return st === "approved" || st === "published" || st === "submitted" || st === "in_review" || st === "changes_needed" ? st : null;
   };
 
   const pickYear = (y: string) => {
@@ -349,6 +362,30 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
           <UnitBody u={panelUnit} cols={cols} subjectUnits={subjects.find((s) => s.slug === panelUnit.subject_slug)?.ordered || []} statsFor={statsFor} onUnit={(u) => setPanelId(u.id)} />
         </SidePanel>
       )}
+      {sheet && sheetUnit && sheet.kind === "lessons" && (
+        <UnitLessonsPanel
+          area={area}
+          subjectSlug={sheetUnit.subject_slug}
+          subject={sheetUnit.subject}
+          year={sheetUnit.year}
+          unit={unitTitle(sheetUnit)}
+          libUnit={statsFor(sheetUnit).libUnit}
+          statusOf={statusOfLesson(sheetUnit.subject_slug, sheetUnit.year)}
+          onClose={() => setSheet(null)}
+          onBack={sheet.from === "panel" ? () => { setSheet(null); setPanelId(sheetUnit.id); } : undefined}
+        />
+      )}
+      {sheet && sheetUnit && sheet.kind === "weeks" && (
+        <UnitWeeksPanel
+          title={unitTitle(sheetUnit)}
+          subject={sheetUnit.subject}
+          year={sheetUnit.year}
+          weeks={sheetUnit.weeks || []}
+          syllabusHref={links.syllabus(sheetUnit)}
+          onClose={() => setSheet(null)}
+          onBack={sheet.from === "panel" ? () => { setSheet(null); setPanelId(sheetUnit.id); } : undefined}
+        />
+      )}
     </div>
   );
 }
@@ -363,7 +400,7 @@ function MapLoading({ year }: { year: string }) {
   );
 }
 
-type Links = { library: (u: UnitRow, libUnit: string | null) => string; syllabus: (u: UnitRow) => string; review: string; planner: string; subjectLibrary: (slug: string, y: string) => string; subjectSyllabus: (planSlug: string, y: string) => string };
+type Links = { open: (u: UnitRow, kind: "lessons" | "weeks") => void; library: (u: UnitRow, libUnit: string | null) => string; syllabus: (u: UnitRow) => string; review: string; planner: string; subjectLibrary: (slug: string, y: string) => string; subjectSyllabus: (planSlug: string, y: string) => string };
 
 /** A unit's place in the year: its half term (or term), and whether it is taught in the founding year. */
 function placeOf(u: UnitRow, cols: Col[]): string {
@@ -654,12 +691,19 @@ function UnitActions({ u, st, links, canEdit }: { u: UnitRow; st: Stats; links: 
           Review {st.waiting} lesson{st.waiting === 1 ? "" : "s"}
         </Link>
       )}
-      <Link href={links.library(u, st.libUnit)} className={btn(st.waiting ? "secondary" : "primary", "sm")}>
-        <Icon name="library" size="sm" /> {st.total ? `Open ${st.total} lesson${st.total === 1 ? "" : "s"}` : "Lesson library"}
-      </Link>
-      <Link href={links.syllabus(u)} className={btn("secondary", "sm")}>
-        <Icon name="scrollText" size="sm" /> Weekly plan and syllabus
-      </Link>
+      {/* Lessons and the weekly plan open over the map (owner, 11 Nov 2026: no hopping between pages). */}
+      {st.total ? (
+        <button type="button" onClick={() => links.open(u, "lessons")} className={btn(st.waiting ? "secondary" : "primary", "sm")} data-guide="map-open-lessons">
+          <Icon name="library" size="sm" /> {`${st.total} lesson${st.total === 1 ? "" : "s"}`}
+        </button>
+      ) : (
+        <Link href={links.library(u, st.libUnit)} className={btn("primary", "sm")}>
+          <Icon name="library" size="sm" /> Lesson library
+        </Link>
+      )}
+      <button type="button" onClick={() => links.open(u, "weeks")} className={btn("secondary", "sm")}>
+        <Icon name="scrollText" size="sm" /> Weekly plan
+      </button>
       {canEdit && (
         <Link href={links.planner} className={`${btn("ghost", "sm")} sm:ml-auto`}>
           <Icon name="pencil" size="sm" /> Edit in the Planner
