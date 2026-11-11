@@ -12,7 +12,7 @@ export default function TeachQuranPage() {
         <LearnShell role="teach">
           <PageHeader
             title="Qur'an and Qaidah"
-            subtitle="Set homework for a level group, mark it out of 10, schedule one-to-one recitation and keep revision on track."
+            subtitle="Hear each pupil recite and tap their mistakes; the mark works itself out from the school's standard. Homework, level groups, one to ones and revision are in the sections."
           />
           <QuranTeacher />
         </LearnShell>

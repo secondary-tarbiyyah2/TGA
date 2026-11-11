@@ -49,7 +49,7 @@ function DesktopDropdown({ group, open, onOpen, onToggle, onClose }: { group: Na
         onClick={onToggle}
         aria-expanded={open}
         aria-controls={panelId}
-        className={`nav-link relative flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2.5 text-sm font-medium transition-colors ${
+        className={`nav-link relative flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-2.5 text-sm font-medium transition-colors ${
           active || open ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
         }`}
         data-active={active || undefined}
@@ -433,7 +433,7 @@ export function Header() {
       <span aria-hidden="true" className="scroll-progress" />
       <Container className="flex h-20 items-center justify-between gap-4">
         <Link href="/" className="flex shrink-0 items-center" aria-label="Tarbiyyah Global Academy, home">
-          <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={200} height={61} priority className="h-auto w-[180px] xl:w-[200px]" />
+          <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={200} height={61} priority className="h-auto w-[170px] xl:w-[180px]" />
         </Link>
 
         <div className="ml-auto flex items-center gap-1 lg:hidden">
@@ -472,7 +472,7 @@ export function Header() {
                 href={entry.href}
                 aria-current={samePage(pathname, entry.href) ? "page" : undefined}
                 data-active={samePage(pathname, entry.href) || undefined}
-                className={`nav-link relative whitespace-nowrap rounded-md px-2.5 py-2.5 text-sm font-medium transition-colors ${
+                className={`nav-link relative whitespace-nowrap rounded-md px-2 py-2.5 text-sm font-medium transition-colors ${
                   samePage(pathname, entry.href) ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
                 }`}
               >
@@ -480,7 +480,7 @@ export function Header() {
               </Link>
             )
           )}
-          {/* Accessibility and display settings: an icon on every desktop width (labelled on very wide screens), plus the mobile drawer and the footer. */}
+          {/* Accessibility and display settings: an icon on every desktop width, plus the mobile drawer and the footer. Everything here must fit inside the Container so the bar lines up with the page content on both edges. */}
           <span className="ml-1 hidden lg:inline-flex">
             <SiteSearchButton />
           </span>
@@ -492,7 +492,8 @@ export function Header() {
               <rect x="5" y="11" width="14" height="9" rx="1.5" />
               <path d="M8 11V8a4 4 0 0 1 8 0v3" />
             </svg>
-            {portalCta.shortLabel}
+            {/* Icon only between 1024 and 1279px, so the bar still fits the page width. */}
+            <span className="hidden xl:inline">{portalCta.shortLabel}</span>
           </Link>
           <Link href={secondaryCta.href} className="ml-1.5 hidden items-center justify-center whitespace-nowrap rounded-full border-[1.5px] border-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 transition-colors hover:bg-gold-100 xl:inline-flex">
             {/* Shorter than the drawer/footer label so the desktop bar fits on one line. */}

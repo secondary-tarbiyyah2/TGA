@@ -97,6 +97,7 @@ RewriteCond %{HTTP_HOST} !^preview\. [NC]
 RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_URI} !^/(coming-soon|legal|manage-booking)(/|$)
 RewriteCond %{REQUEST_URI} !^/(term-dates|fees|curriculum)/?$
+RewriteCond %{REQUEST_URI} !^/careers(/apply)?/?$
 RewriteCond %{REQUEST_URI} !^/(_next|brand|learn|studio|staff|policies|prospectus)/
 RewriteCond %{REQUEST_URI} !\.(php|png|jpe?g|webp|gif|svg|ico|webmanifest|xml|ics|js|css|woff2?|json|pdf|docx|map)$
 RewriteCond %{REQUEST_URI} !^/robots\.txt$
@@ -109,6 +110,11 @@ RewriteCond %{HTTP_HOST} !^preview\. [NC]
 RewriteRule ^fees/?$ /coming-soon/fees/index.html [L]
 RewriteCond %{HTTP_HOST} !^preview\. [NC]
 RewriteRule ^curriculum/?$ /coming-soon/subjects/index.html [L]
+# Careers is public before launch so recruitment adverts can link to it.
+RewriteCond %{HTTP_HOST} !^preview\. [NC]
+RewriteRule ^careers/?$ /coming-soon/careers/index.html [L]
+RewriteCond %{HTTP_HOST} !^preview\. [NC]
+RewriteRule ^careers/apply/?$ /coming-soon/careers/apply/index.html [L]
 
 <IfModule mod_headers.c>
   # Basic browser protections for every response (security audit T20):
