@@ -315,6 +315,28 @@ jobs:
             echo "No Claude / absence-email secrets in the repo yet; AI features are off and inbound-absence rejects webhooks until RESEND_INBOUND_WEBHOOK_SECRET is set."
           fi
 
+      # Online payments (T71, docs/payments.md): the Stripe secret key
+      # (sk_test_... first, sk_live_... when going live) and the webhook's
+      # signing secret (whsec_...). Each is set only when the GitHub secret
+      # exists, so a value set directly in Supabase is never overwritten by a
+      # blank. Without them every Pay button says payments are being set up.
+      - name: Set Stripe secrets (if provided)
+        env:
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+        run: |
+          ARGS=()
+          for NAME in STRIPE_SECRET_KEY STRIPE_WEBHOOK_SECRET; do
+            VALUE="${!NAME}"
+            if [ -n "$VALUE" ]; then ARGS+=("$NAME=$VALUE"); fi
+          done
+          if [ ${#ARGS[@]} -gt 0 ]; then
+            supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" "${ARGS[@]}" > /dev/null
+            echo "Stripe secrets set: ${#ARGS[@]}"
+          else
+            echo "No Stripe secrets in the repo yet; online payments stay off until STRIPE_SECRET_KEY and STRIPE_WEBHOOK_SECRET are added."
+          fi
+
       - name: Deploy Edge Functions
         run: |
           supabase functions deploy book-admissions-call --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
@@ -433,6 +455,12 @@ jobs:
           # Tarbiyah Notes, parent-message triage). Re-checks the caller's role
           # with their own token; never sends anything to families itself.
           supabase functions deploy ai-assist --yes --project-ref "${{ steps.project.outputs.ref }}"
+          # Online payments through Stripe (T71, docs/payments.md).
+          supabase functions deploy payments-checkout --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy payments-admin --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy payments-checkout-public --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy payments-webhook --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy payments-daily --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
 
       # Sign-in emails: Amazon SES SMTP when SES_SMTP_USER/SES_SMTP_PASS (and
       # AWS_SES_REGION) are set, otherwise Resend SMTP. Built with jq so a

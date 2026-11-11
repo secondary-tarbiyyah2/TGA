@@ -136,11 +136,11 @@ export function WeeklyTarbiyahNoteForm({ childId, classId, childName }: { childI
               </>
             )}
             <label className="text-xs text-ink/70" title={pronounFromRecord ? "From the pupil's record" : undefined}>
-              <span className="sr-only">Pronoun{pronounFromRecord ? " (from the pupil's record)" : ""}</span>
+              <span className="sr-only">Boy or girl{pronounFromRecord ? " (from the pupil's record)" : ""}</span>
               <Select value={pronoun} onChange={(e) => setPronoun(e.target.value)} className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-xs">
                 <option value="">Use their name</option>
-                <option value="he">he / him</option>
-                <option value="she">she / her</option>
+                <option value="he">Boy (he)</option>
+                <option value="she">Girl (she)</option>
               </Select>
             </label>
           </div>

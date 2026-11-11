@@ -151,9 +151,9 @@ export default async function FeesPage() {
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <h2 className="font-serif text-lg font-semibold text-ink">How to pay</h2>
               <p className="mt-2 text-sm text-ink/70">
-                Online, by debit or credit card or straight from your bank app, on our secure payment page, with your child&apos;s full name as the reference. The link comes with your offer, after the assessment and interview, and is on the Fees page of the Parent Portal.
+                Online only: straight from your bank app (Pay by Bank) or by debit or credit card, on Stripe&apos;s secure payment page. New families pay the application fee and the first payment from the personal link in their emails, where they also choose their plan. Every payment after that is listed, with its reference, on the Fees page of the Parent Portal, ready to pay in a few taps.
               </p>
-              <PayOnline url={settings.onlinePaymentUrl} className="mt-4" />
+              <PayOnline className="mt-4" />
             </div>
           </div>
           <p className="mt-6 text-sm text-ink/70">
