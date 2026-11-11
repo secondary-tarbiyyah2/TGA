@@ -378,6 +378,7 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Waiting for you page compartmentalised (owner feedback 2, item 2): in Everything each category is its own box with a count and "N to do now", showing its first four lines and Show all; every line carries its one action as a button (marking opens in place), and the three dots open its detail (pupils named, Mark done, print). Save as PDF still prints every line.
 - 2026-11-10: Portal guide part 1 (T39): an entry for every page per role, Guide me panel and Show me, progress in
   `portal_prefs.guide_progress` (migration 0203).
 - 2026-11-10: Guided tour (T38, PR "Portal: a short guided tour for every role"): role tours, page tips on the lesson

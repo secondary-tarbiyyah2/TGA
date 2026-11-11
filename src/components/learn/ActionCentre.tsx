@@ -45,6 +45,9 @@ function OwnPrintHeader({ title }: { title: string }) {
   );
 }
 
+/** In Everything, each category shows this many items; "Show all" opens the category. */
+const PER_SECTION = 4;
+
 function readCat(): CategoryKey | "all" {
   if (typeof window === "undefined") return "all";
   const c = new URLSearchParams(window.location.search).get("cat");
@@ -189,7 +192,24 @@ export function ActionCentre({ role }: { role: Role }) {
                 {hiddenCount ? "Everything left in this category is marked done." : "Nothing in this category needs doing right now."}
               </EmptyState>
             ) : (
-              sections.map((s) => <CategorySection key={s.key} title={s.label} icon={s.icon} list={s.list} role={role} isDone={isDone} onDone={markDone} showTitle={cat === "all"} />)
+              sections.map((s) => (
+                <CategorySection
+                  key={s.key}
+                  title={s.label}
+                  icon={s.icon}
+                  list={s.list}
+                  role={role}
+                  isDone={isDone}
+                  onDone={markDone}
+                  showTitle={cat === "all"}
+                  limit={cat === "all" ? PER_SECTION : undefined}
+                  onShowAll={() => {
+                    choose(s.key);
+                    // Back to the top of the list, never further down the page.
+                    listRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+                  }}
+                />
+              ))
             )}
           </div>
         </div>
@@ -213,16 +233,39 @@ export function ActionCentre({ role }: { role: Role }) {
   );
 }
 
-function CategorySection({ title, icon, list, role, isDone, onDone, showTitle }: { title: string; icon: IconName; list: ActionItem[]; role: Role; isDone: (i: ActionItem) => boolean; onDone: (i: ActionItem, on: boolean) => void; showTitle: boolean }) {
+function CategorySection({
+  title,
+  icon,
+  list,
+  role,
+  isDone,
+  onDone,
+  showTitle,
+  limit,
+  onShowAll,
+}: {
+  title: string;
+  icon: IconName;
+  list: ActionItem[];
+  role: Role;
+  isDone: (i: ActionItem) => boolean;
+  onDone: (i: ActionItem, on: boolean) => void;
+  showTitle: boolean;
+  /** Show only this many, with "Show all" (the Everything view), so no category runs on and on. */
+  limit?: number;
+  onShowAll: () => void;
+}) {
   const ref = useRef<HTMLElement>(null);
   const id = `ac-${title.toLowerCase().replace(/[^a-z]+/g, "-")}`;
+  const now = list.filter((i) => i.urgency === "now" && !isDone(i)).length;
   return (
-    <section ref={ref} aria-labelledby={id} className="space-y-2">
+    <section ref={ref} aria-labelledby={id} className={showTitle ? "overflow-hidden rounded-[10px] border border-gold-light bg-white" : "space-y-2"}>
       <OwnPrintHeader title={`Waiting for you: ${title}`} />
-      <div className={`flex items-center gap-2 ${showTitle ? "" : "sr-only"}`}>
+      <div className={`flex items-center gap-2 ${showTitle ? "border-b border-gold-light bg-cream/40 px-4 py-2.5" : "sr-only"}`}>
         <Icon name={icon} size="sm" className="h-4 w-4 text-ink/65" />
         <h2 id={id} className="mr-auto text-base font-semibold text-ink">
           {title} <span className="font-normal text-ink/65">· {list.length}</span>
+          {now > 0 && <span className="ml-2 rounded-full bg-red-100 px-2 text-xs font-semibold leading-5 text-red-800">{now} to do now</span>}
         </h2>
         {showTitle && (
           <button type="button" onClick={() => printElement(ref.current)} className={`${ui.btnLink} !text-xs print:hidden`}>
@@ -230,11 +273,17 @@ function CategorySection({ title, icon, list, role, isDone, onDone, showTitle }:
           </button>
         )}
       </div>
-      <ul data-guide="waiting-list" className="space-y-2">
-        {list.map((i) => (
-          <ItemRow key={i.id} item={i} role={role} done={isDone(i)} onDone={(on) => onDone(i, on)} />
+      <ul data-guide="waiting-list" className={showTitle ? "divide-y divide-gold-light/70" : "space-y-2"}>
+        {list.map((i, n) => (
+          <ItemRow key={i.id} item={i} role={role} done={isDone(i)} onDone={(on) => onDone(i, on)} flat={showTitle} printOnly={!!limit && n >= limit} />
         ))}
       </ul>
+      {limit && list.length > limit && (
+        <button type="button" onClick={onShowAll} className="flex min-h-11 w-full items-center gap-1 border-t border-gold-light/70 px-4 text-left text-sm font-medium text-forest-700 hover:bg-[var(--portal-hover)] print:hidden">
+          Show all {list.length} in {title}
+          <Icon name="chevronRight" size="sm" />
+        </button>
+      )}
     </section>
   );
 }
@@ -243,30 +292,44 @@ function CategorySection({ title, icon, list, role, isDone, onDone, showTitle }:
 const marksInPlace = (i: ActionItem) => i.area === "Marking" || /\/(teach|admin)\/(homework|review)$/.test(i.href);
 
 /**
- * One item in the list: a row that opens its detail beside the list (owner, 11 Nov 2026:
- * list and detail; docs/portal-structure.md, pattern 4). The detail holds everything about it
- * (every pupil named, what to do), and its actions: do it (marking opens in place), mark done,
- * print or save as PDF.
+ * One item in the list: what it is, how urgent, and its one action as a button on the row
+ * (marking opens in place). "Details" opens everything about it beside the list (every pupil
+ * named, Mark done, print or save as PDF; docs/portal-structure.md, pattern 4).
  */
-function ItemRow({ item: i, role, done, onDone }: { item: ActionItem; role: Role; done: boolean; onDone: (on: boolean) => void }) {
+function ItemRow({ item: i, role, done, onDone, flat = false, printOnly = false }: { item: ActionItem; role: Role; done: boolean; onDone: (on: boolean) => void; /** Inside a category box: no border of its own. */ flat?: boolean; /** Past the category's first few: kept for Save as PDF, hidden on screen. */ printOnly?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const [marking, setMarking] = useState(false);
   const u = URGENCY[i.urgency];
   const pupilHref = (id: string) => (role === "teach" ? `/teach/pupils?pupil=${id}` : role === "admin" ? `/admin/pupils?id=${id}` : null);
+  const inPlace = marksInPlace(i) && (role === "teach" || role === "admin");
+  const primary = i.urgency === "now" && !done;
+  // The one clear action, on the row itself (owner, 11 Nov 2026); the detail (every pupil
+  // named, Mark done, print) opens beside the list from "Details".
+  const action = inPlace ? (
+    <button type="button" onClick={() => setMarking(true)} aria-haspopup="dialog" className={`${primary ? ui.btnPrimary : ui.btnSecondary} ${ui.sm}`}>
+      Mark work here
+    </button>
+  ) : (
+    <Link href={i.href} className={`${primary ? ui.btnPrimary : ui.btnSecondary} ${ui.sm}`}>
+      {i.cta}
+    </Link>
+  );
   return (
-    <li className={`rounded-[10px] border bg-white ${i.urgency === "now" && !done ? "border-red-200" : "border-gold-light"} ${done ? "opacity-70" : ""}`}>
-      <button type="button" onClick={() => setOpen(true)} aria-haspopup="dialog" className="flex w-full flex-wrap items-center gap-x-4 gap-y-1.5 px-4 py-3 text-left transition-colors hover:bg-[var(--portal-hover)]">
-        <span className="min-w-0 flex-1 basis-72">
-          <span className="block text-sm font-semibold text-ink">{i.title}</span>
-          <span className="mt-0.5 block truncate text-sm text-ink/70">{i.detail}</span>
-        </span>
-        <span className="flex shrink-0 items-center gap-2 text-xs">
+    <li className={`${flat ? "" : `rounded-[10px] border bg-white ${i.urgency === "now" && !done ? "border-red-200" : "border-gold-light"}`} ${done ? "opacity-70" : ""} ${printOnly ? "hidden print:block" : ""}`}>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
+        <div className="min-w-0 flex-1 basis-72">
+          <p className="text-sm font-semibold text-ink">{i.title}</p>
+          <p className="mt-0.5 line-clamp-2 text-sm text-ink/70">{i.detail}</p>
+        </div>
+        <div className="flex shrink-0 items-center gap-2">
           <StatusChip tone={done ? "neutral" : u.tone}>{done ? "Marked done" : u.label}</StatusChip>
-          <span className="font-medium text-ink/65">{i.area}</span>
-          <Icon name="chevronRight" size="sm" className="text-ink/50" />
-        </span>
-      </button>
+          {action}
+          <button type="button" onClick={() => setOpen(true)} aria-haspopup="dialog" aria-label={`Details: ${i.title}`} title="Details, mark done or print" className={ui.btnIcon}>
+            <Icon name="ellipsis" size="sm" />
+          </button>
+        </div>
+      </div>
       {open && (
         <SidePanel
           title={i.title}
