@@ -395,7 +395,7 @@ export function HousesAdmin() {
 
       <HouseBoard houses={houses} pupils={children}members={members} busy={busy} onMove={assignMany} onAutoAssign={autoAssign} />
 
-      <div key={refresh} className="max-w-xl">
+      <div key={refresh} data-guide="houses" className="max-w-xl">
         <HouseTable title="Current house table" />
       </div>
     </div>

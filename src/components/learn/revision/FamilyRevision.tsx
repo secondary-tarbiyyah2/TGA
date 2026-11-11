@@ -179,7 +179,7 @@ function RevisionBySubject({ list, name }: { list: Unit[]; name: string }) {
       {subjects
         .filter((g) => g.active.length > 0)
         .map(({ subject, active, idle }) => (
-          <section key={subject} aria-label={subject}>
+          <section key={subject} data-guide="family-revision" aria-label={subject}>
             <h2 className="mb-2 text-sm font-semibold text-ink">
               {subject} <span className="font-normal text-ink/60">· {active.length + idle.length} unit{active.length + idle.length === 1 ? "" : "s"}</span>
             </h2>

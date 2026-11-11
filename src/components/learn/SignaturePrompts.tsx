@@ -161,7 +161,7 @@ export function SignaturePrompts({ onLoaded, onSigned, limit }: { onLoaded?: (ou
   const shown = !docs ? [] : capped ? docs.filter((d, i) => i < limit || d.document_id === signing) : docs;
 
   return (
-    <div className="space-y-3">
+    <div data-guide="documents-pending" className="space-y-3">
       {success && (
         <p role="status" className="rounded-2xl border border-green-200 bg-green-50 px-5 py-3 text-sm font-medium text-green-800">
           Signed. Thank you.

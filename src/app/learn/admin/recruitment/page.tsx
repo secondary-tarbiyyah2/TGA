@@ -38,6 +38,7 @@ function RecruitmentContent() {
         value={tab}
         onChange={setTab}
         label="Recruitment sections"
+        guide="recruitment-tabs"
         idBase="recruitment"
       />
       <div {...tabPanelProps("recruitment", tab)}>

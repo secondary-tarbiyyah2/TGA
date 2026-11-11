@@ -123,6 +123,7 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
         <Tabs
           variant="switch"
           label="Show"
+          guide="send-filter"
           value={filter}
           onChange={setFilter}
           items={[
@@ -143,7 +144,9 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
             {filter === "plans" ? "Use Add a pupil above, or open a pupil from Needs mentioned, no plan." : null}
           </EmptyState>
         ) : (
-          <RegisterTable rows={shown} onOpen={(id) => go(id)} onSaved={load} />
+          <div data-guide="send-list" >
+            <RegisterTable rows={shown} onOpen={(id) => go(id)} onSaved={load} />
+          </div>
         )}
         <p className={ui.hint}>
           Draft plans start by themselves when an applicant who mentioned a need is accepted. The Headteacher gives someone the SENCo role under People, Staff (or switches SENCo on for a teacher who also keeps the register).

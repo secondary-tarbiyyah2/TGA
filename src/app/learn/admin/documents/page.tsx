@@ -483,7 +483,7 @@ function DocumentsContent() {
           )
         }
         action={
-          <Button variant="primary" icon="plus" onClick={() => setCreating(true)}>
+          <Button variant="primary" icon="plus" onClick={() => setCreating(true)} data-guide="documents-new">
             New document to sign
           </Button>
         }

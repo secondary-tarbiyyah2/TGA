@@ -46,6 +46,7 @@ function SiteAdminContent() {
           if (e.key === "Enter" && q && first) router.push(first.href);
         }}
         placeholder="Search site administration"
+        data-guide="site-search"
         aria-label="Search site administration"
         className={`${ui.input} mb-4 max-w-md`}
       />

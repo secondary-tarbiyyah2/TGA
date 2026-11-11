@@ -94,6 +94,7 @@ function TodoBody({ childId, hwHref, heading, subtitle, childPicker }: { childId
         subtitle={subtitle}
         actions={
           classes.length > 1 ? (
+            <div data-guide="homework-class">
             <Select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Filter by class" className={`${ui.select} max-w-full sm:w-64`}>
               <option value="">All classes</option>
               {classes.map((c) => (
@@ -102,18 +103,19 @@ function TodoBody({ childId, hwHref, heading, subtitle, childPicker }: { childId
                 </option>
               ))}
             </Select>
+            </div>
           ) : undefined
         }
       />
       {childPicker}
       <div className="rounded-2xl border border-gold-light bg-white">
-      <Tabs items={TABS.map((t) => ({ ...t, count: counts[t.key], countAlert: t.key === "missing" }))} value={tab} onChange={setTab} label="Homework status" className="px-3" />
+      <Tabs items={TABS.map((t) => ({ ...t, count: counts[t.key], countAlert: t.key === "missing" }))} value={tab} onChange={setTab} label="Homework status" className="px-3" guide="homework-status" />
       {items === null ? (
         <div className="m-5 h-24 motion-safe:animate-pulse rounded-lg bg-cream" />
       ) : list.length === 0 ? (
         <p className="p-8 text-center text-sm text-ink/65">{empty[tab]}</p>
       ) : (
-        <ul role="tabpanel" className="divide-y divide-gold-light/60 p-2">
+        <ul role="tabpanel" data-guide="homework-list" className="divide-y divide-gold-light/60 p-2">
           {list.map((i) => (
             <li key={i.homework_id}>
               <Link href={typeof hwHref === "function" ? hwHref(i.homework_id) : hwHref} className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg px-3 py-3 hover:bg-cream">

@@ -491,7 +491,7 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
             <p className="p-4 text-sm text-ink/70">No staff yet. Add teachers and office staff in People, then their profiles appear here.</p>
           )
         ) : (
-          <ul className="divide-y divide-gold-light/50">
+          <ul data-guide="staff-list" className="divide-y divide-gold-light/50">
             {q && shownStaff.length === 0 && <li className="px-4 py-3 text-sm text-ink/65">Nobody matches &quot;{query}&quot;.</li>}
             {shownStaff.map((s) => {
               const w = warnings[s.user_id] || [];

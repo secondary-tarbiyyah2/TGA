@@ -405,7 +405,7 @@ export function ChildDetailsForm() {
             </div>
           )}
 
-          <section className="rounded-2xl border border-gold-light bg-white p-4" aria-label="Progress">
+          <section data-guide="child-details-progress" className="rounded-2xl border border-gold-light bg-white p-4" aria-label="Progress">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h2 className="text-base font-semibold text-ink">{childName}</h2>
               <p className="text-sm text-ink/65">{progress.percent}% complete{details?.completed_at ? ` · finished ${formatStamp(details.completed_at)}` : ""}</p>
@@ -436,7 +436,7 @@ export function ChildDetailsForm() {
             )}
           </section>
 
-          <div ref={tabsRef} className="-mx-4 flex scroll-mt-20 gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0" role="tablist" aria-label="Sections">
+          <div ref={tabsRef} data-guide="child-details-sections" className="-mx-4 flex scroll-mt-20 gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0" role="tablist" aria-label="Sections">
             {STEPS.map((s, i) => (
               <button
                 key={s.key}

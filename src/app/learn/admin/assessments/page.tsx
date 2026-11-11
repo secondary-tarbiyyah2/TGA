@@ -19,6 +19,7 @@ export default function AdminAssessmentsPage() {
         />
         <Tabs
           label="Assessment type"
+          guide="assessments-type"
           idBase="assess"
           value={tab}
           onChange={setTab}

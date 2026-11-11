@@ -14,7 +14,7 @@ export default function DataProtectionPage() {
           title="Data protection"
           subtitle="Retention rules with a review-first clean-up, and one-click subject access exports."
         />
-        <div className="space-y-6">
+        <div data-guide="data-protection" className="space-y-6">
           <SubjectAccessExport />
           <RetentionRules />
         </div>

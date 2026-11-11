@@ -183,6 +183,7 @@ export function ClassGrid({
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search classes"
             aria-label="Search classes"
+            data-guide="class-search"
             className="w-full max-w-xs border border-gold-light px-3 py-2 text-sm"
           />
           <Select value={sort} onChange={(e) => setSort(e.target.value as "name" | "subject" | "year")} aria-label="Sort classes" className="border border-gold-light px-3 py-2 text-sm">
@@ -208,13 +209,13 @@ export function ClassGrid({
       {shown.length === 0 ? (
         <p className="text-sm text-ink/65">No classes match &ldquo;{query}&rdquo;.</p>
       ) : view === "list" && controls ? (
-        <ul className="space-y-2">
+        <ul data-guide="class-cards" className="space-y-2">
           {shown.map((c) => (
             <ClassRow key={c.id} cls={c} href={hrefFor(c)} progress={progress[c.id]} />
           ))}
         </ul>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div data-guide="class-cards" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {shown.map((c) => (
             <ClassCard key={c.id} cls={c} href={hrefFor(c)} progress={progress[c.id]} />
           ))}

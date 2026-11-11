@@ -229,7 +229,25 @@ descriptions and plain-word keywords.
 - To change a tour, edit `tours.ts` and bump `VERSION` if everyone should see it again; `tours.test.ts` keeps each tour
   5 to 8 steps, one short sentence a step, no dashes, British spelling.
 
+### The Portal guide (T39, `src/content/portal-guide/`, `src/components/learn/guide/`)
+Owner, 10 Nov 2026: "the tour needs to be detailed and explain everything A to Z: each page, its purpose, how to use it
+etc. Needs to be done in a unique way." The short tour above stays as the doorway; the Portal guide is the full manual.
+- **Content as data.** One entry per page per role group (head teacher and admin, admissions, teacher and cover,
+  SENCo, parent, pupil): name as in the menu, category (the chapter), purpose, when you'd use it, 3 to 7 steps naming
+  the real buttons, 1 to 3 tips, who else sees it, related pages, 1 to 4 Show me targets, and common jobs for the A to Z.
+  Pages both staff areas share are written once in `staff.ts`; admissions and SENCo reuse the head and teacher entries
+  with their differences written in.
+- **Guide me** (top bar, or the ? key): the page's entry in a side panel (a bottom sheet at 360px). Show me dims the
+  page and outlines each `data-guide` element in turn, like the tour; if something is not on screen (an empty list),
+  the card says so and carries on.
+- **Progress** per person in `portal_prefs.guide_progress` (migration 0203): pages learned, Show me finished, the last
+  page read and how far each journey got, with a browser copy.
+- **Guard:** `src/lib/learn/guide.test.ts` fails if a page a role can reach has no entry, a Show me target is missing
+  from the page's code, a menu page is renamed in one place only, or text breaks house style.
+
 ## Log
+- 2026-11-10: Portal guide part 1 (T39): an entry for every page per role, Guide me panel and Show me, progress in
+  `portal_prefs.guide_progress` (migration 0203).
 - 2026-11-10: Guided tour (T38, PR "Portal: a short guided tour for every role"): role tours, page tips on the lesson
   editor and planner, "Take the tour" in the menu and search, migration 0202 `tours_seen`.
 - 2026-11-10: Navigation rebuilt round categories (T38, PR "Portal navigation: categories, pins and search"): staff

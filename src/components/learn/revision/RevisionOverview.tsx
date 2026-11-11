@@ -43,7 +43,7 @@ export function RevisionOverview({ area }: { area: "teach" | "admin" }) {
         </div>
       )}
       {rows && rows.length > 0 && (
-        <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
+        <div data-guide="revision-overview" className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
           <table className="min-w-full text-sm">
             <thead className="bg-cream/60 text-left text-xs text-ink/70">
               <tr>

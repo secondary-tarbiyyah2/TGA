@@ -80,6 +80,7 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
       )}
       <Tabs
         label="Qur'an sections"
+        guide="quran-sections"
         value={tab}
         onChange={setTab}
         items={[

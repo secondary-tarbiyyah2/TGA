@@ -235,7 +235,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
         title={cls.name}
         primary={
           isStaff ? (
-            <ButtonLink href={classHref("classwork")} variant="primary" icon="plus">
+            <ButtonLink href={classHref("classwork")} variant="primary" icon="plus" data-guide="class-set-work">
               Set work
             </ButtonLink>
           ) : undefined
@@ -251,7 +251,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           { label: viewer.kind === "student" ? "All my classes" : "All classes", icon: "layoutGrid", href: crumbs[1].href as string },
         ]}
       />
-      <nav aria-label="Class sections" className="portal-tabs -mx-4 mb-6 mt-2 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+      <nav data-guide="class-tabs" aria-label="Class sections" className="portal-tabs -mx-4 mb-6 mt-2 overflow-x-auto px-4 sm:mx-0 sm:px-0">
         <ul className="flex min-w-max gap-1 border-b border-gold-light">
           {tabs.map((t) => {
             const active = t === tab;

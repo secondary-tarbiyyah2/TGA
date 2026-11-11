@@ -178,7 +178,7 @@ function TodayContent() {
           </p>
         </div>
       ) : (
-        <div className="space-y-3">
+        <div data-guide="today-lessons" className="space-y-3">
           {lessons.map((l) => (
             <LessonCard key={l.id} lesson={l} open={(openId ?? current) === l.id} onToggle={() => setOpenId((openId ?? current) === l.id ? "" : l.id)} />
           ))}

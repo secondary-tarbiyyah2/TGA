@@ -14,7 +14,7 @@ export function StaffHandbook() {
           <p className="text-sm text-ink/70">The full handbook: the school day, how we teach, safeguarding, behaviour, marking, attendance, recording and data, online conduct, the portal, who to contact, and a first-week checklist.</p>
         </div>
         <div className="flex gap-2">
-          <a href={HANDBOOK_PDF} target="_blank" rel="noreferrer" className={ui.btnPrimary}>Download PDF</a>
+          <a href={HANDBOOK_PDF} target="_blank" rel="noreferrer" data-guide="handbook-pdf" className={ui.btnPrimary}>Download PDF</a>
           <a href="https://globalacademy.tarbiyyah.co.uk/policies/" target="_blank" rel="noreferrer" className={ui.btnSecondary}>All policies</a>
         </div>
       </section>

@@ -55,7 +55,7 @@ export function InstallGuide() {
   const [open, setOpen] = useState<string | null>(ios ? "ios" : null);
 
   return (
-    <div className="mx-auto max-w-2xl py-8">
+    <div data-guide="install-guide" className="mx-auto max-w-2xl py-8">
       <div className="flex items-center gap-4">
         {/* eslint-disable-next-line @next/next/no-img-element -- static icon from /public */}
         <img src="/app-icon-192.png" alt="" width={64} height={64} className="h-16 w-16 rounded-2xl shadow-sm" />

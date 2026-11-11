@@ -38,9 +38,9 @@ export function Field({ label, hint, children, className = "" }: { label: string
   );
 }
 
-export function StepCard({ step, title, help, done, children, id }: { step: number; title: string; help: string; done: boolean; children: ReactNode; id?: string }) {
+export function StepCard({ step, title, help, done, children, id, guide }: { step: number; title: string; help: string; done: boolean; children: ReactNode; id?: string; guide?: string }) {
   return (
-    <section id={id} className="scroll-mt-20 rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
+    <section id={id} data-guide={guide} className="scroll-mt-20 rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
       <div className="flex items-start gap-3">
         <span
           aria-hidden="true"

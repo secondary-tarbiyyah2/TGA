@@ -112,7 +112,7 @@ export function MeetYourTeachers({ classId, bare = false, messageHref }: { class
     ) : teachers.length === 0 ? (
       <p className="text-sm text-ink/65">Your teachers will appear here once classes have been assigned.</p>
     ) : (
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul data-guide="teacher-cards" className="grid gap-3 sm:grid-cols-2">
         {teachers.map((t) => (
           <TeacherCard key={t.teacher_id} t={t} photo={t.photo_path ? photos[t.photo_path] : undefined} showClasses={!classId} messageHref={messageHref} />
         ))}

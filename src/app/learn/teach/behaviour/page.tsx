@@ -90,7 +90,7 @@ function TeachBehaviourContent() {
           </Link>
         }
         action={
-          <button type="button" onClick={() => setModal({ kind: "merit" })} className={btn("primary")}>
+          <button type="button" onClick={() => setModal({ kind: "merit" })} data-guide="behaviour-log" className={btn("primary")}>
             + Log merit or demerit
           </button>
         }
@@ -124,7 +124,7 @@ function TeachBehaviourContent() {
             <StatTile label="Follow-ups outstanding" value={String(stats.detentionsOutstanding)} />
           </div>
 
-          <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
+          <section data-guide="behaviour-quick" className="rounded-2xl border border-gold-light/50 bg-white p-4">
             <h3 className="mb-3 text-base font-semibold text-ink">Quick log</h3>
             {visibleStudents.length === 0 ? (
               <p className="text-sm text-ink/65">No pupils are enrolled in this class yet.</p>

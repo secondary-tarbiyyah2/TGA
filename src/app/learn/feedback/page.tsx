@@ -59,7 +59,7 @@ function YourFeedback() {
           <p className="mt-1 text-sm text-ink/70">Spotted a problem or have an idea? Use the Feedback button at the top of any page.</p>
         </div>
       ) : (
-        <ul className="space-y-3">
+        <ul data-guide="feedback-list" className="space-y-3">
           {tickets.map((t) => (
             <li key={t.id} className="rounded-2xl border border-gold-light bg-white p-5">
               <div className="flex flex-wrap items-start justify-between gap-2">

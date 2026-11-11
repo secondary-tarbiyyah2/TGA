@@ -257,7 +257,7 @@ export function TermResources({ area }: { area: "teach" | "admin" }) {
 
   return (
     <div className="space-y-5">
-      <div className="flex flex-wrap items-end gap-3">
+      <div data-guide="resources-filters" className="flex flex-wrap items-end gap-3">
         <label className="block text-sm font-medium text-ink">
           Term
           <Select value={term} onChange={(e) => setTerm(e.target.value)} className={`mt-1 w-44 ${ui.select}`}>
@@ -339,7 +339,7 @@ export function TermResources({ area }: { area: "teach" | "admin" }) {
             Showing {Math.min(shown.length, limit)} of {shown.length}
             {shown.length !== rows.length ? ` (filtered from ${rows.length})` : ""}. Pupils only see a resource when you share it to their class.
           </p>
-          <ul className="divide-y divide-gold-light/70 rounded-xl border border-gold-light bg-white">
+          <ul data-guide="resources-list" className="divide-y divide-gold-light/70 rounded-xl border border-gold-light bg-white">
             {shown.slice(0, limit).map((r) => (
               <li key={r.id} className="flex flex-col gap-2 p-3 sm:flex-row sm:items-start">
                 <div className="min-w-0 flex-1">

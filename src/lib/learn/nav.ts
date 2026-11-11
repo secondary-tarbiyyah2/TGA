@@ -125,14 +125,14 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
         { href: "/admin/dashboard", label: "Today", icon: "house", hint: "Today across the school", keywords: "home dashboard overview start", short: "Today" },
         { href: "/admin/actions", label: "Waiting for you", icon: "flag", hint: "Everything waiting for the office, by urgency", headOnly: true, badge: "actions", keywords: "action centre to do tasks alerts needs attention" },
         { href: "/admin/messages", label: "Messages", icon: "messageSquare", hint: "Conversations with families and staff", headOnly: true, badge: "messages", keywords: "inbox email chat parents contact", short: "Messages" },
-        { href: "/admin/calendar", label: "Calendar", icon: "calendarDays", hint: "Term dates and school events", keywords: "term dates holidays events diary" },
+        { href: "/admin/calendar", label: "Calendar", icon: "calendarDays", hint: "Term dates and school events", headOnly: true, keywords: "term dates holidays events diary" },
       ],
     },
     {
       label: "Pupils and admissions",
       icon: "backpack",
       pages: [
-        { href: "/admin/pupils", label: "All pupils", icon: "backpack", hint: "Every pupil's record in one place", keywords: "students children records add pupil missing details medical", short: "Pupils" },
+        { href: "/admin/pupils", label: "All pupils", icon: "backpack", hint: "Every pupil's record in one place", headOnly: true, keywords: "students children records add pupil missing details medical", short: "Pupils" },
         { href: "/admin/admissions", label: "Applications", icon: "userRoundPlus", hint: "Applications, calls and availability", keywords: "admissions apply enquiries new families" },
         { href: "/admin/assessments", label: "Entry assessments", icon: "clipboardCheck", hint: "Baseline and entry assessments", keywords: "baseline test placement" },
         { href: "/admin/open-evening", label: "Open evenings", icon: "school", hint: "Sessions, bookings and attendee lists", keywords: "open day taster visits bookings" },
@@ -210,7 +210,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
         { href: "/admin/staff", label: "Staff", icon: "userRound", hint: "Teacher profiles and compliance dates", headOnly: true, keywords: "teachers team dbs checks" },
         { href: "/admin/staff-attendance", label: "Staff hours", icon: "clock", hint: "Clock-ins, hours and late arrivals", headOnly: true, keywords: "clock in timesheet hours worked" },
         { href: "/admin/recruitment", label: "Job applications", icon: "briefcase", hint: "Vacancies and applications from the website's Apply for a job form", headOnly: true, keywords: "recruitment vacancies jobs hiring" },
-        { href: "/admin/handbook", label: "Staff handbook", icon: "bookOpen", hint: "Policies and how-tos for staff", keywords: "how to guide help policies" },
+        { href: "/admin/handbook", label: "Staff handbook", icon: "bookOpen", hint: "Policies and how-tos for staff", headOnly: true, keywords: "how to guide help policies" },
       ],
     },
     {
@@ -694,7 +694,7 @@ export const MOBILE_TABS: Record<PortalArea, string[]> = {
   student: ["/student/dashboard", "/student/todo", "/student/classes", "/student/revision"],
   family: ["/family/dashboard", "/family/todo", "/family/messages", "/family/classes"],
   teach: ["/teach/dashboard", "/teach/classes", "/teach/review", "/teach/messages", "/teach/send", "/teach/handbook"],
-  admin: ["/admin/dashboard", "/admin/messages", "/admin/pupils", "/admin/classes", "/admin/admissions", "/admin/calendar"],
+  admin: ["/admin/dashboard", "/admin/messages", "/admin/pupils", "/admin/classes", "/admin/admissions", "/admin/calendar", "/admin/people", "/admin/open-evening"],
 };
 
 /** The (at most four) entries in this user's phone tab bar. Staff get single

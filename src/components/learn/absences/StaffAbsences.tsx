@@ -103,6 +103,7 @@ export function StaffAbsences({ crumbs, subtitle, showCover = false, showEmails 
           value={tab}
           onChange={setTab}
           label="Absences sections"
+          guide="absences-tabs"
         />
         {periodMatters && (
           <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Period">

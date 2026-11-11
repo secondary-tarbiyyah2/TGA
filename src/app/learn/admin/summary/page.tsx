@@ -426,7 +426,7 @@ function SummaryContent() {
       />
       </div>
 
-      <div className="no-print mb-5 flex flex-wrap items-end gap-3">
+      <div data-guide="summary-controls" className="no-print mb-5 flex flex-wrap items-end gap-3">
         <label className="text-sm font-medium text-ink/70">
           <span className="mb-1 block">Period</span>
           <Select value={period} onChange={(e) => setPeriod(e.target.value as PeriodKey)} className={field}>
@@ -461,7 +461,7 @@ function SummaryContent() {
 
       {calc && (
         <>
-          <div className="print-tiles mb-8 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 lg:grid-cols-4">
+          <div data-guide="summary-figures" className="print-tiles mb-8 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 lg:grid-cols-4">
             <StatTile label="Total students" value={calc.students} />
             <StatTile label="Lessons held" value={calc.lessons} />
             <StatTile label="Attendance rate" value={fmtPct(calc.attendance)} />
