@@ -13,15 +13,14 @@ import { saveCsv, toCsv as buildCsv } from "@/lib/learn/csv";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { Button, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
+import { ATTENDANCE_CODES, TECHNICAL_REPEAT, attendanceLabel, technicalRepeats, type AttendanceStatus } from "@/lib/learn/attendanceCodes";
 
-type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
-const STATUSES: { value: Status; label: string; dot: string }[] = [
-  { value: "present", label: "Present", dot: "bg-green-600" },
-  { value: "late", label: "Late", dot: "bg-amber-500" },
-  { value: "absent", label: "Absent", dot: "bg-red-600" },
-  { value: "excused", label: "Authorised", dot: "bg-slate-500" },
-  { value: "not_engaged", label: "Not engaged", dot: "bg-amber-800" },
-  { value: "technical", label: "Couldn't connect", dot: "bg-slate-300" },
+type Status = AttendanceStatus;
+const DOT: Record<Status, string> = { present: "bg-green-600", late: "bg-amber-500", excused: "bg-slate-500", absent: "bg-red-600", technical: "bg-ink-700", not_engaged: "bg-green-600" };
+/** The school's five codes (attendanceCodes.ts), then the older "not engaged" mark, shown only where it was used. */
+const STATUSES: { value: Status; label: string; help: string; dot: string; legacy?: boolean }[] = [
+  ...ATTENDANCE_CODES.map((c) => ({ value: c.value as Status, label: c.label, help: c.help, dot: DOT[c.value] })),
+  { value: "not_engaged", label: attendanceLabel("not_engaged"), help: "An older mark, no longer used. Counts as present.", dot: DOT.not_engaged, legacy: true },
 ];
 
 const PAGE_SIZE = 1000;
@@ -70,8 +69,8 @@ function pct(part: number, whole: number): string {
   return whole === 0 ? "–" : `${Math.round((part / whole) * 100)}%`;
 }
 
-/** Attendance rate counts present, late and "present but not engaged" as
- * attended; excused and couldn't-connect are left out of the denominator
+/** Attendance rate counts present and late (and the older "not engaged" mark) as
+ * attended; authorised and technical absences are left out of the denominator
  * (authorised, and recorded separately, per the Attendance Policy). */
 function rate(c: Counts): string {
   const attended = c.present + c.late + c.not_engaged;
@@ -236,16 +235,19 @@ function ReportsContent() {
   }, [filtered]);
 
   const byStudent = useMemo(() => {
-    const m = new Map<string, { name: string; counts: Counts }>();
+    const m = new Map<string, { name: string; counts: Counts; techDates: string[] }>();
     filtered.forEach((r) => {
-      const e = m.get(r.childId) || { name: r.child, counts: zero() };
+      const e = m.get(r.childId) || { name: r.child, counts: zero(), techDates: [] };
       e.counts[r.status] += 1;
+      if (r.status === "technical") e.techDates.push(r.date);
       m.set(r.childId, e);
     });
     return [...m.entries()]
-      .map(([id, e]) => ({ id, name: e.name, counts: e.counts }))
+      .map(([id, e]) => ({ id, name: e.name, counts: e.counts, techRepeat: technicalRepeats(e.techDates) }))
       .sort((a, b) => b.counts.absent - a.counts.absent || a.name.localeCompare(b.name));
   }, [filtered]);
+
+  const techRepeaters = byStudent.filter((st) => st.techRepeat).length;
 
   const filtersActive = Boolean(yearGroupId || classId || status || search.trim());
 
@@ -362,7 +364,7 @@ function ReportsContent() {
               Status
               <Select value={status} onChange={(e) => setStatus(e.target.value as "" | Status)} className={`mt-1 ${fieldCls}`}>
                 <option value="">Any status</option>
-                {STATUSES.map((s) => (
+                {STATUSES.filter((s) => !s.legacy).map((s) => (
                   <option key={s.value} value={s.value}>
                     {s.label}
                   </option>
@@ -392,12 +394,17 @@ function ReportsContent() {
 
         {rows !== null && (
           <>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-7">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
               <StatTile label="Attendance rate" value={rate(totals)} sub={`${total} record${total === 1 ? "" : "s"}`} />
-              {STATUSES.map((s) => (
-                <StatTile key={s.value} label={s.label} value={totals[s.value]} dot={s.dot} />
+              {STATUSES.filter((s) => !s.legacy || totals[s.value] > 0).map((s) => (
+                <StatTile key={s.value} label={s.label} value={totals[s.value]} dot={s.dot} sub={s.value === "technical" ? `Recorded separately${techRepeaters ? `; ${techRepeaters} pupil${techRepeaters === 1 ? "" : "s"} repeating` : ""}` : undefined} />
               ))}
             </div>
+            {techRepeaters > 0 && (
+              <p role="status" className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                {techRepeaters} pupil{techRepeaters === 1 ? " has" : "s have"} had technical absences on {TECHNICAL_REPEAT.count} or more days within {TECHNICAL_REPEAT.days} days. They are marked &ldquo;Repeated&rdquo; in By student below: check the family&apos;s connection and device.
+              </p>
+            )}
 
             {total === 0 ? (
               <div className="rounded-2xl border border-dashed border-gold-light bg-white p-10 text-center">
@@ -458,24 +465,30 @@ function ReportsContent() {
                               </button>
                             ),
                           },
-                          { key: "present", header: "P", align: "right", sort: (st) => st.counts.present, className: "tabular-nums text-ink/70", cell: (st) => st.counts.present },
+                          { key: "present", header: "P", align: "right", sort: (st) => st.counts.present + st.counts.not_engaged, className: "tabular-nums text-ink/70", cell: (st) => st.counts.present + st.counts.not_engaged },
                           { key: "late", header: "L", align: "right", sort: (st) => st.counts.late, className: "tabular-nums text-ink/70", cell: (st) => st.counts.late },
+                          { key: "excused", header: "AA", align: "right", sort: (st) => st.counts.excused, className: "tabular-nums text-ink/70", cell: (st) => st.counts.excused },
                           {
                             key: "absent",
-                            header: "A",
+                            header: "UA",
                             align: "right",
                             sort: (st) => st.counts.absent,
                             className: "tabular-nums",
                             cell: (st) => <span className={st.counts.absent > 0 ? "font-medium text-red-700" : "text-ink/70"}>{st.counts.absent}</span>,
                           },
-                          { key: "excused", header: "E", align: "right", sort: (st) => st.counts.excused, className: "tabular-nums text-ink/70", cell: (st) => st.counts.excused },
-                          { key: "not_engaged", header: "NE", align: "right", sort: (st) => st.counts.not_engaged, className: "tabular-nums text-ink/70", cell: (st) => st.counts.not_engaged },
-                          { key: "technical", header: "T", align: "right", sort: (st) => st.counts.technical, className: "tabular-nums text-ink/70", cell: (st) => st.counts.technical },
+                          {
+                            key: "technical",
+                            header: "T",
+                            align: "right",
+                            sort: (st) => st.counts.technical,
+                            className: "tabular-nums",
+                            cell: (st) => (st.techRepeat ? <span className="font-medium text-amber-900" title="Technical absences on 2 or more days within 30 days">{st.counts.technical} Repeated</span> : <span className="text-ink/70">{st.counts.technical}</span>),
+                          },
                           { key: "rate", header: "Rate", align: "right", sort: (st) => rateValue(st.counts), className: "font-semibold tabular-nums", cell: (st) => rate(st.counts) },
                         ]}
                       />
                     </div>
-                    <p className="px-4 py-2 text-xs text-ink/65">P present, L late, A absent, E excused, NE present but not engaged, T couldn&apos;t connect. Rate = (present + late + not engaged) / (those + absent); excused and couldn&apos;t connect are not counted against attendance.</p>
+                    <p className="px-4 py-2 text-xs text-ink/65">P present, L late, AA authorised absence, UA unauthorised absence, T technical absence. Rate = (present + late) / (those + unauthorised absences); authorised and technical absences are not counted against attendance. Technical absences are reviewed for a pattern.</p>
                   </Section>
                 </div>
 

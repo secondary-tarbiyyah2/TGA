@@ -85,7 +85,7 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
   const weeks = LOOKBACK_DAYS / 7;
 
   const figures = [
-    { label: "Attendance", value: att === null ? "–" : `${att}%`, sub: "Present, late or not engaged", alert: att !== null && att < 90, href: classHref("attendance") },
+    { label: "Attendance", value: att === null ? "–" : `${att}%`, sub: "Present or late", alert: att !== null && att < 90, href: classHref("attendance") },
     { label: "Homework handed in", value: due.length ? `${Math.round((handedIn / due.length) * 100)}%` : "–", sub: missing ? `${missing} missing` : "Nothing missing", alert: missing > 0, href: classHref("classwork") },
     { label: "To review", value: String(review), sub: review ? "Handed in, not yet returned" : "All marked", alert: review > 0, href: `${classHref("classwork")}&view=review` },
     { label: "Average result", value: avg === null ? "–" : `${avg}%`, sub: `${scored.length} result${scored.length === 1 ? "" : "s"} recorded`, alert: false, href: classHref("grades") },
