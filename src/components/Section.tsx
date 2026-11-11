@@ -1,8 +1,7 @@
-import { StarMark } from "./StarMark";
 
 /**
- * The section kicker used on every public page: a gold hairline, the brand's
- * 8-point star and a short uppercase label. One component, so every section
+ * The section kicker used on every public page: a gold hairline and a short
+ * uppercase label. One component, so every section
  * opens the same way. `tone="light"` is for dark (ink or teal) bands.
  */
 export function Kicker({ children, tone = "gold" }: { children: React.ReactNode; tone?: "gold" | "light" }) {
@@ -10,7 +9,6 @@ export function Kicker({ children, tone = "gold" }: { children: React.ReactNode;
   return (
     <div className={`mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] ${light ? "text-gold-300" : "text-gold-700"}`}>
       <span className={`h-px w-6 ${light ? "bg-gold-300" : "bg-gold"}`} aria-hidden="true" />
-      <StarMark className="h-3.5 w-3.5 shrink-0" />
       <span className="font-mono tracking-[0.16em]">{children}</span>
     </div>
   );

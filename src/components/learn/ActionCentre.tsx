@@ -140,7 +140,7 @@ export function ActionCentre({ role }: { role: Role }) {
         }`}
       >
         {icon && <Icon name={icon} size="sm" />}
-        <span className="min-w-0 flex-1 truncate">{label}</span>
+        <span className="min-w-0 flex-1 break-words leading-snug">{label}</span>
         <span className={`rounded-full px-2 text-xs font-semibold leading-5 tabular-nums ${on ? "bg-white/20 text-white" : urgent ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>
           {count}
           <span className="sr-only">{urgent ? `, ${urgent} to do now` : ""}</span>

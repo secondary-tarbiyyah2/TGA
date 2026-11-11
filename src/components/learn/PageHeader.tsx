@@ -29,6 +29,7 @@ export function PageHeader({
   action,
   back,
   icon,
+  figures,
 }: {
   crumbs?: Crumb[];
   title: string;
@@ -41,6 +42,11 @@ export function PageHeader({
   back?: Crumb | false;
   /** Kept for callers; page titles no longer carry an icon tile (owner brief, 10 Nov 2026). */
   icon?: IconName;
+  /**
+   * A compact line of figures under the title ("214 pupils  12 missing details"). A figure
+   * with `href` or `onClick` opens the list behind it. Never a row of tiles.
+   */
+  figures?: Figure[];
 }) {
   void icon;
   const pathname = usePathname();
@@ -104,6 +110,7 @@ export function PageHeader({
         <div className="min-w-0">
           <h1 className="t-title">{title}</h1>
           {subtitle && <p className="mt-1 max-w-[72ch] text-sm leading-relaxed text-ink-500">{subtitle}</p>}
+          {figures && figures.length > 0 && <Figures figures={figures} />}
         </div>
         {hasActions && (
           <div className="flex flex-wrap items-center gap-2 sm:shrink-0 sm:justify-end">
@@ -113,6 +120,41 @@ export function PageHeader({
         )}
       </div>
     </div>
+  );
+}
+
+export type Figure = { value: React.ReactNode; label: string; href?: string; onClick?: () => void; tone?: "warn" };
+
+/** The header's line of figures: the number, then its label; a link or button when it opens something. */
+function Figures({ figures }: { figures: Figure[] }) {
+  const cls = "flex items-baseline gap-1.5 rounded text-left text-sm";
+  const hover = "hover:[&>.fig-label]:text-forest-700 hover:[&>.fig-label]:underline";
+  return (
+    <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1.5" data-page-figures>
+      {figures.map((f) => {
+        const inner = (
+          <>
+            <span className={`font-semibold tabular-nums ${f.tone === "warn" ? "text-amber-800" : "text-ink"}`}>{f.value}</span>
+            <span className="fig-label text-ink-500">{f.label}</span>
+          </>
+        );
+        return (
+          <li key={f.label}>
+            {f.href ? (
+              <Link href={f.href} className={`${cls} ${hover}`}>
+                {inner}
+              </Link>
+            ) : f.onClick ? (
+              <button type="button" onClick={f.onClick} className={`${cls} ${hover}`}>
+                {inner}
+              </button>
+            ) : (
+              <span className={cls}>{inner}</span>
+            )}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 

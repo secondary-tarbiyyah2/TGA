@@ -5,7 +5,6 @@ import Link from "next/link";
 import { FIT_CHECK, type ChoiceOption } from "@/content/fitCheck";
 import type { FeeBand } from "@/content/seed";
 import { Kicker } from "@/components/Section";
-import { StarMark } from "@/components/StarMark";
 import { formatGBP } from "@/lib/format";
 import { UK_TIME_ZONE, isValidTimeZone } from "@/lib/timezones";
 import { initialPlace, placeLabel, placeTimeName, savePlace } from "@/lib/place";
@@ -282,9 +281,6 @@ function Intro({ onStart, headingRef }: { onStart: () => void; headingRef: React
       </div>
 
       <div className="relative">
-        <div className="pointer-events-none absolute -right-6 -top-8 hidden text-gold-300/60 sm:block" aria-hidden="true">
-          <StarMark className="h-28 w-28" />
-        </div>
         <div className="relative rounded-3xl border border-gold-light/50 bg-white/90 p-6 shadow-warm sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-900">What you will get</p>
           <ul className="mt-5 space-y-4">
@@ -659,7 +655,7 @@ function Result({
               const ks = keyStageFor(y);
               return (
                 <li key={`${y}-${i}`} className="flex gap-3">
-                  <StarMark className="mt-1 h-3.5 w-3.5 shrink-0 text-gold-700" />
+                  <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-gold-700" />
                   <span>
                     <span className="font-semibold text-ink">{ks ? S.day.childLine(y, ks.title) : y}:</span> {lessonsLine(y)}
                   </span>
@@ -758,18 +754,12 @@ function VerdictHero({
   const filled = verdict === "strong" ? 3 : verdict === "sort" ? 2 : 1;
   return (
     <section className="relative overflow-hidden rounded-3xl bg-ink-900 p-7 text-white shadow-warm sm:p-10" aria-labelledby="fc-verdict">
-      <div className="pointer-events-none absolute -right-16 -top-16 text-gold-500/15" aria-hidden="true">
-        <StarMark className="h-72 w-72" />
-      </div>
-      <div className="pointer-events-none absolute -bottom-20 right-24 hidden text-gold-500/10 sm:block" aria-hidden="true">
-        <StarMark className="h-44 w-44" />
-      </div>
       <div className="relative">
         <Kicker tone="light">{C.intro.kicker}</Kicker>
         <div className="mt-2 inline-flex items-center gap-3 rounded-full border border-gold-300/50 bg-white/5 py-1.5 pl-2 pr-4">
           <span className="flex gap-1" aria-hidden="true">
             {[0, 1, 2].map((i) => (
-              <StarMark key={i} filled={i < filled} className={`h-4 w-4 ${i < filled ? "text-gold-300" : "text-gold-300/40"}`} />
+              <span key={i} className={`h-2 w-6 rounded-full ${i < filled ? "bg-gold-300" : "bg-gold-300/30"}`} />
             ))}
           </span>
           <span className="text-sm font-semibold text-gold-300">{label}</span>
@@ -793,7 +783,7 @@ function VerdictHero({
 function SectionTitle({ id, children }: { id: string; children: ReactNode }) {
   return (
     <h3 id={id} className="flex items-center gap-2.5 font-serif text-h3 font-semibold text-ink">
-      <StarMark className="h-5 w-5 shrink-0 text-gold-500" />
+      <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full bg-gold-500" />
       {children}
     </h3>
   );
@@ -986,7 +976,7 @@ function NextSteps({ nextKey, callHref }: { nextKey: keyof typeof S.next.steps; 
           {S.next.dates.map((d) => (
             <li key={`${d.label}-${d.when}`} className="relative pb-4 last:pb-0">
               <span className="absolute -left-[1.95rem] top-1 flex h-4 w-4 items-center justify-center bg-white text-gold-700" aria-hidden="true">
-                <StarMark className="h-4 w-4" />
+                <span className="h-2.5 w-2.5 rounded-full bg-current" />
               </span>
               <Link href={d.href} className="group block">
                 <span className="block text-sm font-semibold text-ink group-hover:underline">{d.label}</span>
