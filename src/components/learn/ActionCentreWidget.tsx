@@ -53,7 +53,7 @@ export function ActionCentreWidget({ role, extra = [], skipAreas = [] }: { role:
               <section aria-labelledby={headingId} className="flex flex-1 flex-col">
                 <div className="flex items-center gap-2 border-b border-gold-light/70 px-4 py-2.5">
                   <Icon name={g.icon} size="sm" className="h-4 w-4 text-ink/65" />
-                  <h3 id={headingId} className="min-w-0 flex-1 truncate text-sm font-semibold text-ink">
+                  <h3 id={headingId} className="min-w-0 flex-1 text-sm font-semibold leading-snug text-ink">
                     {g.label}
                   </h3>
                   <span className={`rounded-full px-2 text-xs font-semibold leading-5 tabular-nums ${g.now ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>

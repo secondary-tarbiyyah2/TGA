@@ -358,7 +358,10 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         className="portal-search hidden w-full lg:flex lg:max-w-[20rem] xl:max-w-[26rem]"
       >
         <SearchIcon className="h-4 w-4 shrink-0" />
-        <span className="min-w-0 flex-1 truncate text-left">Search pages, people and jobs</span>
+        <span className="min-w-0 flex-1 text-left">
+          <span className="hidden xl:inline">Search pages, people and jobs</span>
+          <span className="xl:hidden">Search</span>
+        </span>
         <kbd className="portal-kbd">{shortcut}</kbd>
       </button>
 
