@@ -5,8 +5,9 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { Crumb } from "@/components/learn/PageHeader";
 import { WorkspaceHeader } from "@/components/learn/kit";
-import { Tabs } from "@/components/learn/Tabs";
+import { Stepper, type Step } from "@/components/learn/templates/parts";
 import { Button, Notice, ui } from "@/components/learn/ui";
+import { Icon } from "@/components/learn/Icon";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { localDateKey } from "@/lib/learn/calendar";
 import { PrintStyles } from "./ReportDocument";
@@ -76,11 +77,14 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
   const changed = () => setTick((t) => t + 1);
 
   const section: Section = view === "class" || view === "pupil" ? "overview" : (view as Section);
-  const sections = [
-    { key: "overview" as Section, label: mode === "admin" ? "Overview" : "My classes" },
-    ...(mode === "admin" ? [{ key: "approval" as Section, label: "Approval queue", count: awaiting ?? undefined, countAlert: true }] : []),
-    { key: "issued" as Section, label: "Issued" },
-    ...(mode === "admin" ? [{ key: "settings" as Section, label: "Settings" }] : []),
+  // The report workflow as stages (owner, 11 Nov 2026: workflows show their stages and the
+  // current step): write, then (head teacher) approve, then issued. Settings is not a stage:
+  // it opens from the header's menu and has a Back link.
+  const stage = (key: Section, label: string, meta?: string): Step => ({ key, label, meta, state: section === key ? "current" : "todo", onClick: () => go({ view: key }) });
+  const steps: Step[] = [
+    stage("overview", mode === "admin" ? "Write" : "Write reports", mode === "admin" ? "Each class's reports" : "Your classes"),
+    ...(mode === "admin" ? [stage("approval", "Approve", awaiting === null ? undefined : awaiting === 0 ? "Nothing waiting" : `${awaiting} waiting`)] : []),
+    stage("issued", "Issued", "Sent to families"),
   ];
 
   const home = mode === "admin" ? "/admin/dashboard" : "/teach/dashboard";
@@ -107,8 +111,9 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                 ? "Write, approve and issue end-of-term reports. Figures come from attendance, homework, merits, Qur'an and assessments already recorded."
                 : "Write your classes' end-of-term reports. Figures are filled in for you; add your judgement and a comment, then submit for approval."
           }
+          menu={mode === "admin" && view !== "settings" ? [{ label: "Report settings", icon: "settings", hint: "Comment bank, assessment types, grading", onSelect: () => go({ view: "settings" }) }] : undefined}
           primary={
-            mode === "admin" && view !== "approval" && (awaiting ?? 0) > 0 ? (
+            mode === "admin" && view !== "approval" && view !== "settings" && (awaiting ?? 0) > 0 ? (
               <Button variant="primary" icon="circleCheck" onClick={() => go({ view: "approval" })}>
                 Review approvals
               </Button>
@@ -118,14 +123,16 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
-        <Tabs
-          variant="switch"
-          label="Reports sections"
-          guide="reports-sections"
-          items={sections}
-          value={section}
-          onChange={(k) => go({ view: k })}
-        />
+        {view === "settings" ? (
+          <button type="button" onClick={() => go({ view: "overview" })} className={`${ui.btnGhost} -ml-2`}>
+            <Icon name="chevronLeft" size="sm" />
+            Back to reports
+          </button>
+        ) : (
+          <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
+            <Stepper steps={steps} label="Report stages" guide="reports-sections" />
+          </div>
+        )}
         {view !== "pupil" && view !== "settings" && terms && (
           <label className="flex items-center gap-2 text-sm text-ink/75">
             <span>Term</span>
