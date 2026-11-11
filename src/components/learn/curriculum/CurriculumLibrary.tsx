@@ -34,7 +34,8 @@ import {
   type CurriculumLesson,
   type CurriculumVersion,
 } from "@/lib/learn/curriculum";
-import { StatusChip, ui } from "@/components/learn/ui";
+import { Status, btn as btnFor, ui } from "@/components/learn/ui";
+import { HALF_TERMS, halfTermFromTitle, halfTermLabel } from "@/lib/learn/curriculumUnits";
 import { useLessonPins } from "@/lib/learn/pins";
 import { ActionsMenu, WorkflowBadge, WorkspaceHeader, type MenuAction, type WorkflowStatus, Loading } from "@/components/learn/kit";
 import { allHubs, boardLabel, hubNodeLessons, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, syllabusFor } from "@/lib/learn/syllabusIndex";
@@ -200,7 +201,11 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const [message, setMessage] = useState<string | null>(null);
   const [signoffs, setSignoffs] = useState<Record<string, Signoff>>({});
   const [signing, setSigning] = useState<{ slug: string; scope: "spec" | "lesson"; ref: string; label: string } | null>(null);
-  const [approvedOnly, setApprovedOnly] = useState(false);
+  // Quick filters: review status and half term (the half term comes from the planner's unit, or the unit's own name).
+  type StatusFilter = "all" | "approved" | "review" | "todo";
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
+  const [htFilter, setHtFilter] = useState("all");
+  const [planUnits, setPlanUnits] = useState<{ subject_slug: string; title: string; half_term: string | null }[]>([]);
   const loadSignoffs = useCallback(async () => {
     if (!supabase) return;
     const { data } = await supabase.from("curriculum_signoffs").select("subject_slug, scope, ref, status, note, checked_name, checked_at").limit(5000);
@@ -290,8 +295,13 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       // Before migration 0179 is deployed the editor's columns do not exist yet.
       return r.error ? supabase.from("curriculum_lessons").select(LESSON_COLUMNS).eq("year", year).order("subject").order("lesson_no") : r;
     };
-    const [{ data, error }, packList] = await Promise.all([fetchLessons(), unitsForYear(year).catch(() => [] as StaffUnit[])]);
+    const [{ data, error }, packList, planRes] = await Promise.all([
+      fetchLessons(),
+      unitsForYear(year).catch(() => [] as StaffUnit[]),
+      Promise.resolve(supabase.from("curriculum_units").select("subject_slug, title, half_term").eq("year", year)).catch(() => ({ data: null })),
+    ]);
     setPacks(packList);
+    setPlanUnits(((planRes as { data: unknown }).data as { subject_slug: string; title: string; half_term: string | null }[] | null) || []);
     revisionOverview()
       .then((rows) => setScores(Object.fromEntries(rows.map((r) => [r.unit_id, r.avg_pct ?? null]))))
       .catch(() => setScores({}));
@@ -308,10 +318,24 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     load();
   }, [load]);
 
+  const statusMatches = (r: Signoff | undefined) =>
+    statusFilter === "all" ? true : statusFilter === "approved" ? isApproved(r) : statusFilter === "review" ? !!r && (r.status === "submitted" || r.status === "in_review" || r.status === "changes_needed") : !r || r.status === "draft";
+  // The half term a library unit belongs to: its planner unit's, else the one its name starts with.
+  const normT = (t: string) => t.toLowerCase().replace(/^(autumn|spring|summer)\s*\d\s*:\s*/, "").replace(/[^a-z0-9]+/g, " ").trim();
+  const halfTermOf = useCallback(
+    (g: { subject_slug: string; unit: string }): string | null => {
+      const own = halfTermFromTitle(g.unit);
+      if (own) return own;
+      const t = normT(g.unit);
+      const hit = planUnits.find((u) => u.subject_slug === g.subject_slug && u.half_term && (normT(u.title) === t || normT(u.title).startsWith(t) || t.startsWith(normT(u.title))));
+      return hit?.half_term || null;
+    },
+    [planUnits],
+  );
   // Subjects, each with its units in teaching order.
   const allSubjects = useMemo(() => {
     const bySubject = new Map<string, { slug: string; name: string; units: Map<string, UnitGroup> }>();
-    (lessons || []).filter((l) => !approvedOnly || isApproved(signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)])).forEach((l) => {
+    (lessons || []).filter((l) => statusMatches(signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)])).forEach((l) => {
       const s = bySubject.get(l.subject_slug) || { slug: l.subject_slug, name: l.subject, units: new Map() };
       const u = l.unit || "Lessons";
       const k = unitKey(l.subject_slug, u);
@@ -329,7 +353,8 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     return [...bySubject.values()]
       .sort((a, b) => a.name.localeCompare(b.name))
       .map((s) => ({ ...s, units: [...s.units.values()].sort((a, b) => (a.lessons[0]?.lesson_no ?? 0) - (b.lessons[0]?.lesson_no ?? 0)) }));
-  }, [lessons, packs, approvedOnly, signoffs]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- statusMatches only reads statusFilter
+  }, [lessons, packs, statusFilter, signoffs]);
 
   // Exam boards belong to subjects: once a subject is picked, only its own board(s) are offered.
   // With every subject showing, offer the few board families (AQA, Pearson Edexcel…) instead of every exact title.
@@ -341,11 +366,15 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     () =>
       allSubjects
         .filter((s) => subjectFilter === "all" || s.slug === subjectFilter)
-        .map((s) => ({ ...s, units: s.units.filter((u) => boardFilter === "all" || u.board === boardFilter || (!!u.board && boardFamily(u.board) === boardFilter)) }))
+        .map((s) => ({ ...s, units: s.units.filter((u) => (boardFilter === "all" || u.board === boardFilter || (!!u.board && boardFamily(u.board) === boardFilter)) && (htFilter === "all" || halfTermOf(u) === htFilter) && (statusFilter === "all" || u.lessons.length > 0)) }))
         .filter((s) => s.units.length > 0),
-    [allSubjects, subjectFilter, boardFilter],
+    [allSubjects, subjectFilter, boardFilter, htFilter, halfTermOf, statusFilter],
   );
-  const filtersOn = subjectFilter !== "all" || boardFilter !== "all" || approvedOnly;
+  const filtersOn = subjectFilter !== "all" || boardFilter !== "all" || statusFilter !== "all" || htFilter !== "all";
+  const progressOf = (ls: CurriculumLesson[]) => {
+    const rs = ls.map((l) => signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]);
+    return { total: ls.length, approved: rs.filter(isApproved).length, waiting: rs.filter((r) => r && (r.status === "submitted" || r.status === "in_review")).length };
+  };
   const allUnits = useMemo(() => subjects.flatMap((s) => s.units), [subjects]);
   const packFor = useCallback((g: UnitGroup | undefined) => (g ? packs.find((p) => p.subject_slug === g.subject_slug && p.unit === g.unit) : undefined), [packs]);
 
@@ -425,6 +454,13 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     saveBlob(new Blob([blob], { type: "application/pdf" }), `${slug}-revision-booklet.pdf`);
   };
 
+  // Keep the unit you are on in view in the unit list.
+  useEffect(() => {
+    if (!activeKey) return;
+    const t = window.setTimeout(() => document.querySelector<HTMLElement>('nav[aria-label="Units"] [aria-current="true"]')?.scrollIntoView({ block: "nearest" }), 60);
+    return () => window.clearTimeout(t);
+  }, [activeKey]);
+
   const openUnit = (key: string, t: UnitTab = "lessons") => {
     setSelected(key);
     setTab(t);
@@ -466,44 +502,47 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     ];
     const objectives = l.objectives || [];
     return (
-      <li key={l.id} className="group border-t border-gold-light/70 first:border-t-0">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3.5 sm:flex-nowrap">
-          <span className="w-7 shrink-0 text-right text-sm font-semibold tabular-nums text-ink/45">{String(l.lesson_no).padStart(2, "0")}</span>
-          <div className="min-w-0 flex-1">
-            <Link href={lessonHref(l)} className="block text-[0.9375rem] font-semibold leading-snug text-ink hover:text-forest-700">
+      <li key={l.id} className="group border-t border-gold-light first:border-t-0">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 transition-colors hover:bg-cream/50 sm:flex-nowrap sm:px-5">
+          <span className="w-6 shrink-0 text-right text-xs font-semibold tabular-nums text-ink-500">{String(l.lesson_no).padStart(2, "0")}</span>
+          <div className="min-w-0 flex-1 basis-[calc(100%-2.5rem)] sm:basis-auto">
+            <Link href={lessonHref(l)} className="block text-sm font-semibold leading-snug text-ink hover:text-forest-700">
               {l.title}
             </Link>
-            <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink/60">
+            <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-500">
+              <SignoffChip s={s} />
               {showUnit && <span>{`${l.subject} · ${l.unit || "Lessons"}`}</span>}
               {objectives.length > 0 && (
-                <button type="button" onClick={() => setOpenLesson(expanded ? null : l.id)} aria-expanded={expanded} className="hover:text-ink hover:underline">
-                  {objectives.length} learning objective{objectives.length === 1 ? "" : "s"}
+                <button type="button" onClick={() => setOpenLesson(expanded ? null : l.id)} aria-expanded={expanded} className="inline-flex items-center gap-1 rounded hover:text-ink">
+                  <Icon name="chevronRight" className={`h-3 w-3 transition-transform ${expanded ? "rotate-90" : ""}`} />
+                  {objectives.length} objective{objectives.length === 1 ? "" : "s"}
                 </button>
               )}
-              <SignoffChip s={s} />
               {l.version > 1 && <span>{l.custom_deck ? "Own slides" : "Edited"} · v{l.version}</span>}
-              {l.rebuild_requested && <span className="text-gold-900">New slides on the way</span>}
+              {l.rebuild_requested && <span className="text-amber-900">New slides on the way</span>}
             </span>
           </div>
-          <div className="flex shrink-0 items-center gap-1 pl-11 sm:pl-0">
-            {l.pdf_path && (
-              <button type="button" className={`hidden sm:inline-flex ${ui.btnLink} px-2`} onClick={() => view(l, "slides-pdf")}>
-                Slides
-              </button>
-            )}
-            {l.plan_pdf_path && (
-              <button type="button" className={`hidden sm:inline-flex ${ui.btnLink} px-2`} onClick={() => view(l, "plan-pdf")}>
-                Plan
-              </button>
-            )}
+          <div className="ml-auto flex shrink-0 items-center gap-1 sm:ml-0">
+            <span className="hidden md:contents">
+              {l.pdf_path && (
+                <button type="button" className={`${ui.btnLink} px-2 !text-ink-500 hover:!text-forest-700`} onClick={() => view(l, "slides-pdf")}>
+                  Slides
+                </button>
+              )}
+              {l.plan_pdf_path && (
+                <button type="button" className={`${ui.btnLink} px-2 !text-ink-500 hover:!text-forest-700`} onClick={() => view(l, "plan-pdf")}>
+                  Plan
+                </button>
+              )}
+            </span>
             <Link href={lessonHref(l)} className={`${btn} ml-1`}>
-              Open lesson
+              Open
             </Link>
             <ActionsMenu items={menu} label={`More actions for ${l.title}`} size="sm" />
           </div>
         </div>
         {expanded && objectives.length > 0 && (
-          <ol className="mb-3 ml-[3.75rem] mr-4 list-decimal space-y-0.5 pl-4 text-sm text-ink/80">
+          <ol className="portal-reveal mb-3 ml-[3.25rem] mr-4 list-decimal space-y-0.5 pl-4 text-sm text-ink-700 sm:ml-[3.75rem]">
             {objectives.map((o) => (
               <li key={o}>{o}</li>
             ))}
@@ -515,28 +554,30 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
 
   return (
     <div className="space-y-4">
-      {/* One compact filter card: year on top, then search and the filters as dropdowns in a single row. */}
-      <div data-guide="library-filters" className="space-y-3 rounded-2xl border border-gold-light bg-white p-4" role="group" aria-label="Find lessons">
+      {/* One control bar: year, then search and filters, then quick filters. */}
+      <div data-guide="library-filters" className="space-y-3 border-b border-gold-light pb-4" role="group" aria-label="Find lessons">
         <div className="flex flex-wrap items-center justify-between gap-2">
           {year && <Tabs variant="switch" items={yearTabs} value={year} onChange={setYear} label="Year group" />}
-          <span className="flex flex-wrap items-center gap-3">
-            {myYears.length > 0 && <span className="text-xs text-ink/65">• = a year you teach</span>}
+          <span className="flex flex-wrap items-center gap-2">
+            {myYears.length > 0 && <span className="t-meta text-xs">• a year you teach</span>}
             {isHead && (
-              <button type="button" className={btn} onClick={() => setQueueOpen(true)}>
-                Staff feedback{waitingFeedback ? ` (${waitingFeedback} waiting)` : ""}
+              <button type="button" className={btnFor("ghost", "sm")} onClick={() => setQueueOpen(true)}>
+                <Icon name="messageSquare" size="sm" /> Staff feedback{waitingFeedback ? ` (${waitingFeedback})` : ""}
+              </button>
+            )}
+            {year && !building && (
+              <button type="button" className={btn} onClick={() => setBuilding({})}>
+                <Icon name="plus" size="sm" /> New revision pack
               </button>
             )}
           </span>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <input
-            type="search"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder={`Search ${year ? yearLabel(year) : ""} lessons`}
-            aria-label="Search lessons by title, unit or objective"
-            className="min-w-[12rem] flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm"
-          />
+          <label className="relative min-w-[12rem] flex-1">
+            <span className="sr-only">Search lessons by title, unit or objective</span>
+            <Icon name="search" className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-500" />
+            <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder={`Search ${year ? yearLabel(year) : ""} lessons`} className={`${ui.input} !pl-9`} />
+          </label>
           {allSubjects.length > 1 && (
             <Select
               aria-label="Subject"
@@ -547,7 +588,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                 setSelected(null);
                 setWanted(null);
               }}
-              className="w-auto max-w-[16rem] rounded-lg border border-gold-light py-2 pl-3 text-sm"
+              className={`${ui.select} w-auto max-w-[16rem]`}
             >
               <option value="all">All subjects ({allSubjects.reduce((t, x) => t + x.units.length, 0)})</option>
               {allSubjects.map((x) => (
@@ -557,8 +598,16 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               ))}
             </Select>
           )}
+          <Select aria-label="Half term" value={htFilter} onChange={(e) => { setHtFilter(e.target.value); setSelected(null); setWanted(null); }} className={`${ui.select} w-auto max-w-[12rem]`}>
+            <option value="all">Any half term</option>
+            {HALF_TERMS.map((h) => (
+              <option key={h.key} value={h.key}>
+                {h.label}
+              </option>
+            ))}
+          </Select>
           {boards.length > 1 && (
-            <Select aria-label="Exam board" value={boardFilter} onChange={(e) => setBoardFilter(e.target.value)} className="w-auto max-w-[14rem] rounded-lg border border-gold-light py-2 pl-3 text-sm">
+            <Select aria-label="Exam board" value={boardFilter} onChange={(e) => setBoardFilter(e.target.value)} className={`${ui.select} w-auto max-w-[14rem]`}>
               <option value="all">Any exam board</option>
               {boards.map((bd) => (
                 <option key={bd} value={bd}>
@@ -567,42 +616,50 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               ))}
             </Select>
           )}
-          <button
-            type="button"
-            aria-pressed={approvedOnly}
-            onClick={() => {
-              setApprovedOnly(!approvedOnly);
-              setSelected(null);
-              setWanted(null);
-            }}
-            className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium transition ${approvedOnly ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink hover:border-teal-700"}`}
-          >
-            {approvedOnly && <Icon name="check" size="sm" strokeWidth={2.25} />}Signed off only
-          </button>
-          {filtersOn && (
-            <button
-              type="button"
-              className={ui.btnLink}
-              onClick={() => {
-                setSubjectFilter("all");
-                setBoardFilter("all");
-                setApprovedOnly(false);
-              }}
-            >
-              Clear
-            </button>
-          )}
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-gold-light/60 pt-3">
-          <p className="text-sm text-ink/65" aria-live="polite">
-            {!lessons ? "Loading…" : results ? `${results.length} match${results.length === 1 ? "" : "es"}` : `${lessons.length} lessons · ${allUnits.length} units`}
-            {boards.length === 1 && <span className="ml-2 rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900">{boards[0]}</span>}
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+          <div role="group" aria-label="Review status" className="flex flex-wrap items-center gap-1.5">
+            {(
+              [
+                ["all", "All lessons"],
+                ["approved", "Approved"],
+                ["review", "In review"],
+                ["todo", "Not yet submitted"],
+              ] as const
+            ).map(([k, label]) => (
+              <button
+                key={k}
+                type="button"
+                aria-pressed={statusFilter === k}
+                onClick={() => {
+                  setStatusFilter(k);
+                  setSelected(null);
+                  setWanted(null);
+                }}
+                className={statusFilter === k ? ui.chipOn : ui.chip}
+              >
+                {label}
+              </button>
+            ))}
+            {filtersOn && (
+              <button
+                type="button"
+                className={`${ui.btnLink} ml-1`}
+                onClick={() => {
+                  setSubjectFilter("all");
+                  setBoardFilter("all");
+                  setStatusFilter("all");
+                  setHtFilter("all");
+                }}
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
+          <p className="t-meta" aria-live="polite">
+            {!lessons ? "Loading" : results ? `${results.length} match${results.length === 1 ? "" : "es"}` : `${lessons.length} lessons · ${allUnits.length} units`}
+            {boards.length === 1 && <span className="ml-2">· {boards[0]}</span>}
           </p>
-          {year && !building && (
-            <button type="button" className={btn} onClick={() => setBuilding({})}>
-              + New revision pack
-            </button>
-          )}
         </div>
       </div>
 
@@ -626,54 +683,71 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       )}
 
       {message && (
-        <p role="status" className="rounded-lg border border-gold-light bg-cream px-3 py-2 text-sm text-ink/80">
+        <p role="status" className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink-700">
           {message}
         </p>
       )}
 
-      {lessons === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
-      {!building && lessons && allUnits.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No lessons for this year yet.</p>}
+      {lessons === null && <Loading label={`Loading ${year ? yearLabel(year) : "the"} lessons`} lines={6} />}
+      {!building && lessons && allUnits.length === 0 && (
+        <p className="rounded-2xl border border-dashed border-gold-light px-6 py-10 text-center text-sm text-ink-500">{filtersOn ? "No units match these filters. Clear the filters to see every unit." : "No lessons for this year yet."}</p>
+      )}
 
       {!building && lessons && allUnits.length > 0 && !activeKey && !results && (
-        <div className="space-y-6">
+        <div className="space-y-7">
           {subjects.map((sub) => (
             <section key={sub.slug} aria-labelledby={`subj-${sub.slug}`}>
-              <h2 id={`subj-${sub.slug}`} className="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-ink/70">
-                <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: classColour(sub.slug) }} />
+              <h2 id={`subj-${sub.slug}`} className="t-section mb-2 flex items-center gap-2">
+                <span aria-hidden="true" className="h-2 w-2 rounded-full" style={{ backgroundColor: classColour(sub.slug) }} />
                 {sub.name}
+                <span className="t-meta font-normal">· {sub.units.length} unit{sub.units.length === 1 ? "" : "s"}</span>
               </h2>
-              <ul data-guide="library-units" className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <ul data-guide="library-units" className="divide-y divide-gold-light overflow-hidden rounded-2xl border border-gold-light bg-white">
                 {sub.units.map((u) => {
                   const p = packFor(u);
                   const avg = p ? scores[p.id] : undefined;
+                  const pr = progressOf(u.lessons);
+                  const ht = halfTermOf(u);
+                  const pct = pr.total ? Math.round((pr.approved / pr.total) * 100) : 0;
                   return (
-                    <li key={u.key} className="flex flex-col overflow-hidden rounded-2xl border border-gold-light bg-white transition hover:shadow-sm">
-                      <span aria-hidden="true" className="h-1.5" style={{ backgroundColor: classColour(sub.slug) }} />
-                      <button type="button" onClick={() => openUnit(u.key)} className="flex-1 px-4 pb-2 pt-3 text-left">
-                        <span className="block font-semibold text-ink">{u.unit}</span>
-                        <span className="mt-0.5 block text-xs text-ink/65">
+                    <li key={u.key} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 px-4 py-3 transition-colors hover:bg-cream/50 sm:grid-cols-[6.5rem_minmax(0,1fr)_11rem_auto] sm:px-5">
+                      <span className="t-meta hidden text-xs font-semibold sm:block">{ht ? halfTermLabel(ht) : "Unit"}</span>
+                      <button type="button" onClick={() => openUnit(u.key)} className="min-w-0 text-left">
+                        <span className="block text-sm font-semibold leading-snug text-ink hover:text-forest-700">{u.unit.replace(/^(Autumn|Spring|Summer)\s*\d:\s*/i, "")}</span>
+                        <span className="t-meta mt-0.5 block text-xs">
+                          <span className="sm:hidden">{ht ? `${halfTermLabel(ht)} · ` : ""}</span>
                           {u.lessons.length ? `${u.lessons.length} lesson${u.lessons.length === 1 ? "" : "s"}` : "Revision only"}
                           {u.board ? ` · ${u.board}` : ""}
+                          {p ? ` · revision ${p.published ? "live" : "hidden"}${p.takers ? `, ${p.takers} pupils, avg ${avg ?? "–"}%` : ""}` : ""}
                         </span>
                       </button>
-                      <div className="flex flex-wrap items-center gap-2 border-t border-gold-light/60 px-4 py-2.5">
-                        {p ? (
+                      <span className="col-span-2 flex items-center gap-2 sm:col-span-1">
+                        {pr.total > 0 ? (
                           <>
-                            <StatusChip tone={p.published ? "good" : "neutral"}>{p.published ? "Revision live" : "Revision hidden"}</StatusChip>
-                            <span className="text-xs text-ink/65">
-                              {p.questions} questions
-                              {p.takers ? ` · ${p.takers} pupils · avg ${avg ?? "–"}%` : ""}
+                            <span aria-hidden="true" className="block h-[3px] w-16 overflow-hidden rounded-full bg-[var(--portal-sunken)]">
+                              <span className="block h-full rounded-full bg-forest-500" style={{ width: `${pct}%` }} />
                             </span>
-                            <button type="button" onClick={() => openUnit(u.key, p.takers ? "results" : "revision")} className={`ml-auto ${ui.btnLink}`}>
-                              {p.takers ? "Results" : "Open"}
-                            </button>
+                            <Status kind={pr.approved === pr.total ? "approved" : pr.waiting ? "attention" : "in_progress"}>{pr.waiting ? `${pr.waiting} to review` : `${pr.approved} of ${pr.total} approved`}</Status>
                           </>
                         ) : (
-                          <button type="button" onClick={() => setBuilding({ initial: { subject_slug: u.subject_slug, subject: u.subject, unit: u.unit } })} className={`${ui.btnSecondary} ${ui.sm}`}>
-                            + Add summary and quiz
+                          <Status kind="unavailable">No lessons</Status>
+                        )}
+                      </span>
+                      <span className="col-start-2 row-start-1 flex items-center gap-1 sm:col-start-auto sm:row-start-auto">
+                        {!p && (
+                          <button type="button" onClick={() => setBuilding({ initial: { subject_slug: u.subject_slug, subject: u.subject, unit: u.unit } })} className={`${ui.btnLink} !hidden px-2 !text-ink-500 hover:!text-forest-700 lg:!inline-flex`}>
+                            Add revision
                           </button>
                         )}
-                      </div>
+                        {p && p.takers > 0 && (
+                          <button type="button" onClick={() => openUnit(u.key, "results")} className={`${ui.btnLink} !hidden px-2 !text-ink-500 hover:!text-forest-700 lg:!inline-flex`}>
+                            Results
+                          </button>
+                        )}
+                        <button type="button" onClick={() => openUnit(u.key)} className={btn} aria-label={`Open ${u.unit}`}>
+                          Open
+                        </button>
+                      </span>
                     </li>
                   );
                 })}
@@ -688,11 +762,11 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           {/* Units: a list on wide screens, a drop-down on phones. */}
           <div className="lg:hidden">
             <button type="button" onClick={() => { setSelected(null); setWanted(null); setSearch(""); }} className={`mb-2 ${ui.btnLink}`}>
-              ‹ All units
+              <Icon name="chevronLeft" size="sm" /> All units
             </button>
-            <label className="block text-sm font-semibold text-ink">
-              Unit
-              <Select value={activeKey || ""} onChange={(e) => openUnit(e.target.value, tab)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm">
+            <label className="block">
+              <span className="t-eyebrow mb-1.5 block">Unit</span>
+              <Select value={activeKey || ""} onChange={(e) => openUnit(e.target.value, tab)} className={`${ui.select} block w-full`}>
                 {subjects.map((s) => (
                   <optgroup key={s.slug} label={s.name}>
                     {s.units.map((u) => (
@@ -705,13 +779,13 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               </Select>
             </label>
           </div>
-          <nav aria-label="Units" className="hidden max-h-[75vh] space-y-4 self-start overflow-y-auto rounded-2xl border border-gold-light bg-white p-3 lg:sticky lg:top-[76px] lg:block">
+          <nav aria-label="Units" className="hidden max-h-[calc(100vh-6rem)] space-y-4 self-start overflow-y-auto pr-1 lg:sticky lg:top-[76px] lg:block">
             <button type="button" onClick={() => { setSelected(null); setWanted(null); setSearch(""); }} className={`px-2 ${ui.btnLink}`}>
-              ‹ All units
+              <Icon name="chevronLeft" size="sm" /> All units
             </button>
             {subjects.map((s) => (
               <div key={s.slug}>
-                <p className="px-2 pb-1 text-xs font-semibold uppercase tracking-wide text-ink/65">{s.name}</p>
+                <p className="t-eyebrow px-2 pb-1">{s.name}</p>
                 <ul className="space-y-0.5">
                   {s.units.map((u) => {
                     const p = packFor(u);
@@ -722,12 +796,12 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                           type="button"
                           onClick={() => openUnit(u.key, tab)}
                           aria-current={active ? "true" : undefined}
-                          className={`flex w-full items-start gap-2 rounded-lg px-2 py-1.5 text-left text-sm ${active ? "bg-teal-100 font-semibold text-teal-900" : "text-ink/85 hover:bg-cream"}`}
+                          className={`flex w-full items-start gap-2 rounded-lg px-2 py-1.5 text-left text-[0.8125rem] transition-colors ${active ? "bg-white font-semibold text-forest-900 shadow-[var(--portal-shadow-lift)]" : "text-ink-700 hover:bg-[var(--portal-hover)]"}`}
                         >
                           <span className="min-w-0 flex-1">{u.unit}</span>
                           <span className="flex shrink-0 items-center gap-1 pt-0.5 text-xs font-normal text-ink/65">
                             {u.lessons.length > 0 && <span className="tabular-nums">{u.lessons.length}</span>}
-                            {p && <span title={p.takers ? `${p.takers} pupils have revised` : "Revision pack ready"} className={`h-2 w-2 rounded-full ${p.takers ? "bg-teal-700" : "bg-gold-500"}`} />}
+                            {p && <span title={p.takers ? `${p.takers} pupils have revised` : "Revision pack ready"} className={`h-1.5 w-1.5 rounded-full ${p.takers ? "bg-forest-700" : "bg-gold-500"}`} />}
                           </span>
                         </button>
                       </li>
@@ -736,9 +810,9 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                 </ul>
               </div>
             ))}
-            <p className="flex items-center gap-1.5 border-t border-gold-light px-2 pt-2 text-xs text-ink/65">
-              <span className="h-2 w-2 rounded-full bg-gold-500" /> revision pack
-              <span className="ml-2 h-2 w-2 rounded-full bg-teal-700" /> pupils have revised
+            <p className="t-meta flex items-center gap-1.5 border-t border-gold-light px-2 pt-2 text-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold-500" /> revision pack
+              <span className="ml-2 h-1.5 w-1.5 rounded-full bg-forest-700" /> pupils have revised
             </p>
           </nav>
 
@@ -772,15 +846,18 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                           dl("Everything (ZIP)", ["slides-pdf", "plan-pdf", "slides-pptx", "plan-docx"]),
                         ]
                       : [];
+                    const ht = halfTermOf(current);
+                    const pct = current.lessons.length ? Math.round((approved / current.lessons.length) * 100) : 0;
                     return (
                       <WorkspaceHeader
-                        eyebrow={[{ label: current.subject }, { label: year ? yearLabel(year) : "" }]}
+                        eyebrow={[{ label: current.subject }, { label: year ? yearLabel(year) : "" }, ...(ht ? [{ label: halfTermLabel(ht), href: `/${area}/curriculum/map?year=${year}&subject=${encodeURIComponent(current.subject_slug)}` }] : [])]}
                         title={current.unit.replace(/^(Autumn|Spring|Summer)\s*\d:\s*/i, "")}
                         meta={
                           <>
-                            {unitNo ? `Unit ${unitNo.padStart(2, "0")}` : (current.unit.match(/^(Autumn|Spring|Summer)\s*\d/i)?.[0] ?? "Unit")}
+                            {unitNo ? `Unit ${unitNo.padStart(2, "0")}` : current.lessons.length ? `${current.lessons.length} lesson${current.lessons.length === 1 ? "" : "s"}` : "Revision only"}
+                            {` · ${objectiveCount} objectives`}
                             {current.board ? ` · ${current.board}` : ""}
-                            {busyId === `unit:${current.subject}:${current.unit}` ? " · preparing download…" : ""}
+                            {busyId === `unit:${current.subject}:${current.unit}` ? " · preparing download" : ""}
                           </>
                         }
                         status={
@@ -790,12 +867,19 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                             </Link>
                           ) : undefined
                         }
-                        stats={[
-                          { value: String(current.lessons.length).padStart(2, "0"), label: current.lessons.length === 1 ? "Lesson" : "Lessons" },
-                          { value: String(objectiveCount).padStart(2, "0"), label: "Objectives" },
-                          { value: String(approved).padStart(2, "0"), label: "Approved" },
-                          { value: String(waiting).padStart(2, "0"), label: "Awaiting review" },
-                        ]}
+                        description={
+                          current.lessons.length > 0 ? (
+                            <span className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                              <span aria-hidden="true" className="block h-1 w-40 overflow-hidden rounded-full bg-[var(--portal-sunken)]">
+                                <span className="block h-full rounded-full bg-forest-500" style={{ width: `${pct}%` }} />
+                              </span>
+                              <span className="text-xs text-ink-700">
+                                {approved} of {current.lessons.length} approved
+                              </span>
+                              {waiting > 0 && <Status kind="attention">{waiting} awaiting review</Status>}
+                            </span>
+                          ) : undefined
+                        }
                         primary={
                           current.lessons[0] ? (
                             <Link href={lessonHref(current.lessons[0])} className={ui.btnPrimary}>
@@ -803,7 +887,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                             </Link>
                           ) : undefined
                         }
-                        menu={unitMenu}
+                        menu={[...unitMenu, { section: "See also", label: "" }, { label: "On the Curriculum map", icon: "calendarDays", href: `/${area}/curriculum/map?year=${year}&subject=${encodeURIComponent(current.subject_slug)}` }]}
                       />
                     );
                   })()}
@@ -821,7 +905,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                   />
                   {tab === "lessons" &&
                     (current.lessons.length ? (
-                      <ol data-guide="library-units" className="overflow-hidden rounded-2xl border border-gold-light bg-white">{current.lessons.map((l) => lessonRow(l))}</ol>
+                      <ol data-guide="library-units" aria-label={`Lessons in ${current.unit}`} className="overflow-hidden rounded-2xl border border-gold-light bg-white">{current.lessons.map((l) => lessonRow(l))}</ol>
                     ) : (
                       <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit is a revision pack only; its summary and video are on the Revision pack tab.</p>
                     ))}

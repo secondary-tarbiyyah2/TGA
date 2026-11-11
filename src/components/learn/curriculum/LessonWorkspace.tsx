@@ -43,7 +43,7 @@ function Part({ title, action, children, id, guide }: { title: string; action?: 
   return (
     <section aria-labelledby={id} data-guide={guide} className="border-t border-gold-light py-5 first:border-t-0 first:pt-0">
       <div className="mb-3 flex items-baseline justify-between gap-3">
-        <h2 id={id} className="text-[0.9375rem] font-semibold text-ink">
+        <h2 id={id} className="t-eyebrow">
           {title}
         </h2>
         {action}
@@ -57,7 +57,7 @@ function Part({ title, action, children, id, guide }: { title: string; action?: 
 function Material({ icon, title, detail, onOpen, openLabel = "Open", menu }: { icon: IconName; title: string; detail: string; onOpen?: () => void; openLabel?: string; menu?: React.ReactNode }) {
   return (
     <li className="flex items-center gap-3 py-2.5">
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-forest-50 text-forest-700" aria-hidden="true">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--portal-sunken)] text-ink-500" aria-hidden="true">
         <Icon name={icon} size="sm" />
       </span>
       <span className="min-w-0 flex-1">
@@ -361,43 +361,58 @@ export function LessonWorkspace({ id, at, area }: { id: string; at?: { subject: 
               {siblings.map((s) => (
                 <li key={s.id}>
                   {s.id === lesson.id ? (
-                    <span aria-current="page" className="flex items-center gap-3 py-2 text-sm font-semibold text-forest-800">
+                    <span aria-current="page" className="relative flex items-center gap-3 py-2 text-sm font-semibold text-forest-900">
+                      <span aria-hidden="true" className="absolute -left-3 top-1/2 h-4 w-[3px] -translate-y-1/2 rounded-r bg-[var(--portal-accent)]" />
                       <span className="w-6 text-right tabular-nums">{s.lesson_no}</span>
                       {s.title}
                     </span>
                   ) : (
-                    <Link href={`${base}/lesson?id=${s.id}`} className="flex items-center gap-3 py-2 text-sm text-ink/85 hover:text-forest-700">
-                      <span className="w-6 text-right tabular-nums text-ink/50">{s.lesson_no}</span>
+                    <Link href={`${base}/lesson?id=${s.id}`} className="flex items-center gap-3 py-2 text-sm text-ink-700 hover:text-forest-700">
+                      <span className="w-6 text-right tabular-nums text-ink-500">{s.lesson_no}</span>
                       {s.title}
                     </Link>
                   )}
                 </li>
               ))}
             </ol>
-            <div className="mt-3 flex justify-between gap-3 text-sm">
-              {prev ? (
-                <Link href={`${base}/lesson?id=${prev.id}`} className={ui.btnLink}>
-                  ‹ {prev.title}
-                </Link>
-              ) : (
-                <span />
-              )}
-              {next && (
-                <Link href={`${base}/lesson?id=${next.id}`} className={ui.btnLink}>
-                  {next.title} ›
-                </Link>
-              )}
-            </div>
+            {(prev || next) && (
+              <div className="mt-4 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-gold-light bg-gold-light sm:grid-cols-2">
+                <div className="min-w-0 bg-white px-4 py-3">
+                  <p className="t-eyebrow flex items-center gap-1">
+                    <Icon name="arrowLeft" className="h-3 w-3" /> Previous lesson
+                  </p>
+                  {prev ? (
+                    <Link href={`${base}/lesson?id=${prev.id}`} className="mt-1 block text-sm font-medium text-forest-700 hover:underline">
+                      {prev.title}
+                    </Link>
+                  ) : (
+                    <p className="t-meta mt-1">The first lesson of the unit</p>
+                  )}
+                </div>
+                <div className="min-w-0 bg-white px-4 py-3">
+                  <p className="t-eyebrow flex items-center gap-1">
+                    Next lesson <Icon name="arrowRight" className="h-3 w-3" />
+                  </p>
+                  {next ? (
+                    <Link href={`${base}/lesson?id=${next.id}`} className="mt-1 block text-sm font-medium text-forest-700 hover:underline">
+                      {next.title}
+                    </Link>
+                  ) : (
+                    <p className="t-meta mt-1">The last lesson of the unit</p>
+                  )}
+                </div>
+              </div>
+            )}
           </Part>
         </div>
 
         <aside className="space-y-6 lg:sticky lg:top-[84px] lg:self-start">
           <div id="review" className="scroll-mt-24 rounded-2xl border border-gold-light bg-white p-4">
-            <h2 className="mb-3 text-[0.9375rem] font-semibold text-ink">Teacher review</h2>
+            <h2 className="t-eyebrow mb-3">Teacher review</h2>
             <ReviewPanel slug={lesson.subject_slug} scope="lesson" refKey={lessonRef(lesson.year, lesson.lesson_no)} row={review} reviewer={reviewer} canSubmit={canEdit} currentVersion={lesson.version} onChanged={load} />
           </div>
           <div className="rounded-2xl border border-gold-light bg-white p-4 text-sm">
-            <h2 className="mb-2 text-[0.9375rem] font-semibold text-ink">Versions</h2>
+            <h2 className="t-eyebrow mb-2">Versions</h2>
             <p className="text-ink/75">
               Version {lesson.version}
               {lesson.custom_deck ? " · own slides" : ""}

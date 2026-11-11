@@ -452,11 +452,15 @@ function SidebarBody({
   );
 }
 
-/** Desktop: a fixed rail down the left. */
+/** Desktop: a rail down the left, full height, sticky, with its own scroll. */
 export function PortalSidebar(props: { area: PortalArea; session: Session; roles: RoleGrant[]; collapsed: boolean; onToggle: () => void }) {
   return (
-    <aside className={`portal-sidebar fixed inset-y-0 left-0 z-30 hidden transition-[width] duration-200 ease-[var(--portal-ease)] motion-reduce:transition-none lg:block ${props.collapsed ? "w-[var(--portal-rail-w)]" : "w-[var(--portal-sidebar-w)]"}`}>
-      <SidebarBody {...props} />
+    // The aside runs the full height of the page (so its stone background never stops short);
+    // the menu inside is sticky at the height of the window and scrolls on its own.
+    <aside className={`portal-sidebar relative z-30 hidden shrink-0 transition-[width] duration-200 ease-[var(--portal-ease)] motion-reduce:transition-none lg:block ${props.collapsed ? "w-[var(--portal-rail-w)]" : "w-[var(--portal-sidebar-w)]"}`}>
+      <div className="sticky top-0 h-[100dvh] overflow-hidden">
+        <SidebarBody {...props} />
+      </div>
     </aside>
   );
 }
