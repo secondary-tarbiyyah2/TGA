@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
 import type { Crumb } from "@/components/learn/PageHeader";
 import { WorkspaceHeader, type MenuAction, Loading } from "@/components/learn/kit";
-import { ButtonLink } from "@/components/learn/ui";
+import { Button } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
+import { SetWorkPanel } from "@/components/learn/class/SetWorkPanel";
 import { ParticipantsTab } from "@/components/learn/class/ParticipantsTab";
 import { CourseTab } from "@/components/learn/class/CourseTab";
 import { StreamTab } from "@/components/learn/class/StreamTab";
@@ -185,6 +187,11 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
   const requested = (TAB_ALIASES[rawTab] ?? rawTab) as TabKey;
   const tab: TabKey = tabs.includes(requested) ? requested : "stream";
   const classHref = (t: string) => `${area}/class?id=${classId}${childQuery}&tab=${t}`;
+  const router = useRouter();
+  // "Set work" opens a panel over whichever section you are in. An address with ?set=assignment
+  // (or quiz) opens the same panel, so links from elsewhere land on the class with it open.
+  const setParam = params.get("set");
+  const [setWork, setSetWork] = useState<"assignment" | "quiz" | null>(isStaff && (setParam === "assignment" || setParam === "quiz") ? setParam : null);
 
   useEffect(() => {
     if (!classId) return;
@@ -235,14 +242,15 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
         title={cls.name}
         primary={
           isStaff ? (
-            <ButtonLink href={classHref("classwork")} variant="primary" icon="plus" data-guide="class-set-work">
+            <Button variant="primary" icon="plus" data-guide="class-set-work" onClick={() => setSetWork("assignment")}>
               Set work
-            </ButtonLink>
+            </Button>
           ) : undefined
         }
         menu={[
           ...(isStaff
             ? ([
+                { label: "Set a quiz", icon: "listChecks", onSelect: () => setSetWork("quiz") },
                 { label: "Take the register", icon: "userCheck", href: classHref("attendance") },
                 { label: "Grades", icon: "chartColumnIncreasing", href: classHref("grades") },
                 { label: "Class settings", icon: "settings", href: classHref("settings") },
@@ -251,18 +259,39 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           { label: viewer.kind === "student" ? "All my classes" : "All classes", icon: "layoutGrid", href: crumbs[1].href as string },
         ]}
       />
-      <nav data-guide="class-tabs" aria-label="Class sections" className="portal-tabs -mx-4 mb-6 mt-2 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-        <ul className="flex min-w-max gap-1 border-b border-gold-light">
+      {setWork && (
+        <SetWorkPanel
+          classId={cls.id}
+          className={cls.name}
+          kind={setWork}
+          onClose={() => {
+            setSetWork(null);
+            if (setParam) router.replace(classHref(tab), { scroll: false });
+          }}
+        />
+      )}
+      <div className="mt-2 lg:grid lg:grid-cols-[11.5rem_minmax(0,1fr)] lg:gap-10">
+      {/* The class's sections: a list down the left on wide screens and a dropdown on phones,
+          not a strip across the top (owner, 11 Nov 2026; docs/portal-structure.md, pattern 5). */}
+      <nav data-guide="class-tabs" aria-label="Class sections" className="mb-5 lg:mb-0">
+        <div className="lg:hidden">
+          <label className="t-eyebrow mb-1 block" htmlFor="class-section">
+            Section
+          </label>
+          <Select id="class-section" value={tab} onChange={(e) => router.push(classHref(e.target.value), { scroll: false })} className="w-full">
+            {tabs.map((t) => (
+              <option key={t} value={t}>
+                {TAB_LABELS[t]}
+              </option>
+            ))}
+          </Select>
+        </div>
+        <ul className="portal-section-nav hidden lg:sticky lg:top-[calc(var(--portal-topbar-h)+1.5rem)] lg:block">
           {tabs.map((t) => {
             const active = t === tab;
             return (
               <li key={t}>
-                <Link
-                  href={classHref(t)}
-                  scroll={false}
-                  aria-current={active ? "page" : undefined}
-                  className={`-mb-px flex min-h-11 items-center border-b-2 px-3 text-sm font-medium transition-colors ${active ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:border-ink/20 hover:text-ink"}`}
-                >
+                <Link href={classHref(t)} scroll={false} aria-current={active ? "page" : undefined} className={`portal-section-link ${active ? "portal-section-link--active" : ""}`}>
                   {TAB_LABELS[t]}
                 </Link>
               </li>
@@ -270,6 +299,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           })}
         </ul>
       </nav>
+      <div className="min-w-0">
 
       {viewer.kind !== "staff" && (
         <JoinLessonCard
@@ -308,6 +338,8 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
       {tab === "insights" && isStaff && <ClassInsightsTab classId={cls.id} classHref={classHref} />}
 
       {tab === "settings" && isStaff && <ClassSettingsTab classId={cls.id} className={cls.name} subject={cls.subject} canRename={viewer.kind === "staff"} />}
+      </div>
+      </div>
     </div>
   );
 }

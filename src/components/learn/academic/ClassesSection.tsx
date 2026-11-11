@@ -9,7 +9,7 @@ import type { AcademicYear, Child, ClassRow, ClassTeacher, Enrolment, Subject, T
 import { ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { SidePanel, askConfirm } from "@/components/learn/kit";
 type Props = {
   classes: ClassRow[];
   yearGroups: YearGroup[];
@@ -63,10 +63,94 @@ function ClassFields({ d, set, props }: { d: Draft; set: (f: (s: Draft) => Draft
   );
 }
 
+/** A class row from the form, or what is wrong with it. One rule for adding and editing. */
+function classPayload(d: Draft, yearGroups: YearGroup[]): { error: string } | { row: Record<string, unknown> } {
+  if (!d.name.trim() || !d.year_group_id || !d.subject_id) return { error: "Class name, year group and subject are required." };
+  const weekly = Number(d.weekly_lessons);
+  const len = Number(d.lesson_length_minutes);
+  if (!Number.isInteger(weekly) || weekly < 1) return { error: "Lessons per week must be 1 or more." };
+  if (!Number.isInteger(len) || len < 1) return { error: "Lesson length must be a number of minutes." };
+  const url = cleanMeetingUrl(d.meeting_url);
+  if (url === "invalid") return { error: "The meeting link must be a full https:// link." };
+  return {
+    row: {
+      name: d.name.trim(),
+      year_group: yearGroups.find((y) => y.id === d.year_group_id)?.name || "",
+      year_group_id: d.year_group_id,
+      subject_id: d.subject_id,
+      academic_year_id: d.academic_year_id || null,
+      weekly_lessons: weekly,
+      lesson_length_minutes: len,
+      meeting_url: url,
+    },
+  };
+}
+
+/**
+ * "Add a class" as a form in a panel over the page (owner, 11 Nov 2026: actions open in place).
+ * Used on Classes and on Academic setup's Classes and teachers step; the same checks and the
+ * same insert as before.
+ */
+export function AddClassPanel({ props, onClose, onAdded }: { props: Pick<Props, "yearGroups" | "subjects" | "years" | "kids" | "enrolments" | "teachers" | "classTeachers" | "subjectTeachers" | "classes" | "reload" | "ready">; onClose: () => void; onAdded?: (name: string) => void }) {
+  const supabase = getSupabaseClient();
+  const [form, setForm] = useState<Draft>(BLANK);
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const add = async () => {
+    if (!supabase) return;
+    const p = classPayload(form, props.yearGroups);
+    if ("error" in p) return setError(p.error);
+    setBusy(true);
+    setError(null);
+    try {
+      const { error: err } = await supabase.from("classes").insert(p.row);
+      if (err) return setError(err.message);
+      await props.reload();
+      onAdded?.(form.name.trim());
+      onClose();
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <SidePanel
+      title="Add a class"
+      eyebrow="Classes"
+      onClose={onClose}
+      size="lg"
+      footer={
+        <>
+          <button type="button" className={primaryBtn} disabled={busy || !props.ready} onClick={add}>
+            {busy ? "Adding…" : "Add class"}
+          </button>
+          <button type="button" className={ghostBtn} onClick={onClose}>
+            Cancel
+          </button>
+        </>
+      }
+    >
+      <div data-guide="add-class-panel">
+        {!props.ready ? (
+          <EmptyState>Finish Academic setup steps 1 to 3 first: a class needs an academic year, a year group and a subject to pick from.</EmptyState>
+        ) : (
+          <>
+            <p className="mb-4 text-sm text-ink-500">A class is a subject taught to a year group. Set how many lessons it needs each week; the timetable is built from this.</p>
+            <ClassFields d={form} set={setForm} props={props as Props} />
+            {error && (
+              <div className="mt-3">
+                <Notice tone="error">{error}</Notice>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </SidePanel>
+  );
+}
+
 export function ClassesSection(props: Props) {
   const supabase = getSupabaseClient();
   const { classes, yearGroups, subjects, kids, enrolments, teachers, classTeachers, subjectTeachers, reload, ready } = props;
-  const [form, setForm] = useState<Draft>(BLANK);
   const [editId, setEditId] = useState<string | null>(null);
   const [draft, setDraft] = useState<Draft>(BLANK);
   const [enrolForm, setEnrolForm] = useState<Record<string, string>>({});
@@ -79,27 +163,7 @@ export function ClassesSection(props: Props) {
   const [openPupils, setOpenPupils] = useState<string | null>(null);
   const [query, setQuery] = useState("");
 
-  const payload = (d: Draft): { error: string } | { row: Record<string, unknown> } => {
-    if (!d.name.trim() || !d.year_group_id || !d.subject_id) return { error: "Class name, year group and subject are required." };
-    const weekly = Number(d.weekly_lessons);
-    const len = Number(d.lesson_length_minutes);
-    if (!Number.isInteger(weekly) || weekly < 1) return { error: "Lessons per week must be 1 or more." };
-    if (!Number.isInteger(len) || len < 1) return { error: "Lesson length must be a number of minutes." };
-    const url = cleanMeetingUrl(d.meeting_url);
-    if (url === "invalid") return { error: "The meeting link must be a full https:// link." };
-    return {
-      row: {
-        name: d.name.trim(),
-        year_group: yearGroups.find((y) => y.id === d.year_group_id)?.name || "",
-        year_group_id: d.year_group_id,
-        subject_id: d.subject_id,
-        academic_year_id: d.academic_year_id || null,
-        weekly_lessons: weekly,
-        lesson_length_minutes: len,
-        meeting_url: url,
-      },
-    };
-  };
+  const payload = (d: Draft) => classPayload(d, yearGroups);
 
   const fail = (at: string, msg: string) => {
     setErrorAt(at);
@@ -120,17 +184,6 @@ export function ClassesSection(props: Props) {
     }
   };
 
-  const add = async () => {
-    if (!supabase) return;
-    const p = payload(form);
-    if ("error" in p) return fail("add", p.error);
-    const name = form.name.trim();
-    await write("add", () => supabase.from("classes").insert(p.row), () => {
-      setForm(BLANK);
-      setAdding(false);
-      setNotice(`${name} added. Choose its teacher in "Who teaches what" below.`);
-    });
-  };
   const save = async (id: string) => {
     if (!supabase) return;
     const p = payload(draft);
@@ -185,26 +238,20 @@ export function ClassesSection(props: Props) {
       {!ready && <EmptyState>Finish steps 1 to 3 first: a class needs an academic year, a year group and a subject to pick from.</EmptyState>}
       {ready && (
         <div className="mb-4 flex flex-wrap items-center gap-2">
-          {!adding && (
-            <button type="button" className={primaryBtn} onClick={() => { setAdding(true); setError(null); setNotice(null); }}>
-              + Add a class
-            </button>
-          )}
+          <button type="button" className={primaryBtn} onClick={() => { setAdding(true); setError(null); setNotice(null); }}>
+            + Add a class
+          </button>
           {classes.length > 6 && (
             <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Filter by class, year group or subject" aria-label="Filter classes" className={`${inputCls} sm:!w-72`} />
           )}
         </div>
       )}
       {ready && adding && (
-        <div className="mb-4 rounded-xl bg-cream/60 p-3 sm:p-4">
-          <p className="mb-3 text-sm font-medium text-ink">New class</p>
-          <ClassFields d={form} set={setForm} props={props} />
-          {errFor("add")}
-          <div className="mt-3 flex gap-2">
-            <button type="button" className={primaryBtn} disabled={busy} onClick={add}>{busy ? "Adding…" : "Add class"}</button>
-            <button type="button" className={ghostBtn} onClick={() => { setAdding(false); setError(null); }}>Cancel</button>
-          </div>
-        </div>
+        <AddClassPanel
+          props={props}
+          onClose={() => setAdding(false)}
+          onAdded={(name) => setNotice(`${name} added. Choose its teacher in "Who teaches what" below.`)}
+        />
       )}
       {notice && <div className="mb-3"><Notice tone="ok">{notice}</Notice></div>}
       {ready && classes.length === 0 && !adding && <EmptyState>No classes yet. Use + Add a class to create the first one.</EmptyState>}

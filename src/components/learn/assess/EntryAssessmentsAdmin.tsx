@@ -11,7 +11,7 @@ import { printElement } from "@/components/learn/printScope";
 import { PrintHeader } from "@/components/learn/print";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, SidePanel } from "@/components/learn/kit";
 type Row = {
   id: string; candidate_name: string; year: number; status: string; created_at: string; started_at: string | null; submitted_at: string | null; completed_at: string | null;
   expires_at: string; application_id: string | null; child_id: string | null; eal: boolean; access: Record<string, unknown>; dob: string | null; invigilator: string | null;
@@ -104,20 +104,23 @@ export function EntryAssessmentsAdmin() {
 
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-lg font-semibold text-ink">{filter === "active" ? "Waiting for the pupil" : filter === "marking" ? "Needs marking" : filter === "complete" ? "Complete" : "All assessments"}</h2>
-        <button type="button" onClick={() => setCreating((v) => !v)} data-guide="assessments-new" className={ui.btnPrimary}>
+        <button type="button" onClick={() => setCreating(true)} data-guide="assessments-new" className={ui.btnPrimary}>
           <Icon name="userRoundPlus" className="h-4 w-4" /> New assessment
         </button>
       </div>
 
+      {/* New assessment opens over the list (owner, 11 Nov 2026: actions open in place). */}
       {creating && (
-        <CreateForm
-          onDone={(link, emailed) => {
-            setCreating(false);
-            setNotice({ tone: "good", text: emailed ? "Assessment made and the link emailed to the parent." : "Assessment made. Send this link to the family:", link });
-            load();
-          }}
-          onCancel={() => setCreating(false)}
-        />
+        <SidePanel title="New assessment" eyebrow="Entry assessments" onClose={() => setCreating(false)} size="lg">
+          <CreateForm
+            onDone={(link, emailed) => {
+              setCreating(false);
+              setNotice({ tone: "good", text: emailed ? "Assessment made and the link emailed to the parent." : "Assessment made. Send this link to the family:", link });
+              load();
+            }}
+            onCancel={() => setCreating(false)}
+          />
+        </SidePanel>
       )}
 
       {rows === null ? (

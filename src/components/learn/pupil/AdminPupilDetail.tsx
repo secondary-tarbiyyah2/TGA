@@ -19,6 +19,7 @@ import { SupportPlanEditor } from "@/components/learn/send/SupportPlanEditor";
 import { EditPupilModal } from "./EditPupilModal";
 import { createAccountsFor } from "@/components/learn/admissions/accountsApi";
 import { askNotice } from "@/components/learn/kit";
+import { PupilDetailsEditor } from "./PupilDetailsEditor";
 
 type ChildRaw = { id: string; name: string; dob: string | null; parent_user_id: string | null; year_groups?: { name: string } | null };
 type EnrolRaw = { classes?: { name: string } | null };
@@ -35,7 +36,22 @@ const TABS: Tab[] = ["overview", "details", "medical", "send", "attendance", "be
 export function AdminPupilDetail({ id }: { id: string }) {
   // Saving an edit reloads the whole profile (details, record and tabs).
   const [version, setVersion] = useState(0);
-  return <PupilProfile key={version} id={id} onEdited={() => setVersion((v) => v + 1)} />;
+  const params = useSearchParams();
+  const router = useRouter();
+  // "Edit details" opens over the record (owner, 11 Nov 2026: actions open in place). The
+  // address keeps &edit=details, so older links open the same panel over the record.
+  const editingDetails = params.get("edit") === "details";
+  const closeDetails = () => {
+    const q = new URLSearchParams(params.toString());
+    q.delete("edit");
+    router.replace(`/admin/pupils?${q.toString()}`, { scroll: false });
+  };
+  return (
+    <>
+      <PupilProfile key={version} id={id} onEdited={() => setVersion((v) => v + 1)} />
+      {editingDetails && <PupilDetailsEditor id={id} onClose={closeDetails} onSaved={() => setVersion((v) => v + 1)} />}
+    </>
+  );
 }
 
 function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
@@ -195,7 +211,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
               <button type="button" onClick={() => printElement(findPrintScope(printRef.current, "pupil-record"))} className={ui.btnSecondary}>
                 Print record
               </button>
-              <Link href={`/admin/pupils?id=${id}&edit=details`} className={ui.btnSecondary}>
+              <Link href={`/admin/pupils?id=${id}&edit=details`} scroll={false} className={ui.btnSecondary} data-guide="pupil-edit-details">
                 Edit details
               </Link>
             </>

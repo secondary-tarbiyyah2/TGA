@@ -669,6 +669,39 @@ html[data-readable-font] .portal .portal-display {
   padding-top: 0.125rem;
   padding-bottom: 0.375rem;
 }
+/* A workspace's own sections (a class: Stream, Classwork, Lessons...), listed down the left of
+   the content on wide screens instead of a strip across the top. */
+.portal-section-nav {
+  border-left: 1px solid var(--color-gold-light);
+}
+.portal-section-link {
+  position: relative;
+  display: flex;
+  min-height: 2.25rem;
+  align-items: center;
+  padding: 0 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-ink-500);
+  transition: color var(--portal-fast) var(--portal-ease);
+}
+.portal-section-link:hover {
+  color: var(--color-ink-900);
+}
+.portal-section-link--active {
+  color: var(--color-forest-900);
+  font-weight: 600;
+}
+.portal-section-link--active::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0.375rem;
+  bottom: 0.375rem;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--color-forest-700);
+}
 /* A category page you are inside of (one of its own steps is open): forest text, no lift. */
 .portal-nav-leaf--here {
   color: var(--color-forest-900);
@@ -685,7 +718,7 @@ html[data-readable-font] .portal .portal-display {
   min-height: 2.5rem;
   align-items: center;
   border-radius: var(--radius-lg);
-  padding: 0.125rem 0.625rem 0.125rem 1rem;
+  padding: 0.125rem 0.625rem 0.125rem 1.25rem;
   font-size: 0.8125rem;
   color: var(--color-ink-500);
   transition: background-color var(--portal-fast) var(--portal-ease), color var(--portal-fast) var(--portal-ease);

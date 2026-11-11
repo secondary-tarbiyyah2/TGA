@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { PhoneInput } from "@/components/ui/PhoneInput";
-import { askConfirm, Loading } from "@/components/learn/kit";
+import { SidePanel, askConfirm, Loading } from "@/components/learn/kit";
 import { ui } from "@/components/learn/ui";
 import { validPhone } from "./data";
 
@@ -65,7 +65,12 @@ const contactKey = (c: Contact) => JSON.stringify([c.name, c.relationship, c.pho
  * admin, as RLS allows). Every change is written to the audit log by the
  * existing triggers.
  */
-export function PupilDetailsEditor({ id }: { id: string }) {
+/**
+ * A pupil's Home, Health, Support needs, Emergency contacts and Consents with one Save bar.
+ * On a pupil's record it opens in a panel over the record (`onClose` given; owner, 11 Nov 2026:
+ * actions open in place); on its own it is the page it always was.
+ */
+export function PupilDetailsEditor({ id, onClose, onSaved }: { id: string; /** Open as a panel over the record. */ onClose?: () => void; onSaved?: () => void }) {
   const [name, setName] = useState<string>("");
   const [orig, setOrig] = useState<Details | null>(null);
   const [form, setForm] = useState<Details>(EMPTY);
@@ -157,6 +162,7 @@ export function PupilDetailsEditor({ id }: { id: string }) {
     if (failed) return setMsg({ tone: "err", text: `Some changes could not be saved (${failed}). Nothing else was lost; try again.` });
     setMsg({ tone: "ok", text: "Saved. The family sees the same details in their account." });
     setReload((r) => r + 1);
+    onSaved?.();
   };
 
   const discard = async () => {
@@ -173,7 +179,7 @@ export function PupilDetailsEditor({ id }: { id: string }) {
     { label: "Edit details" },
   ];
 
-  if (!orig) return <Loading label="Loading the pupil's details" />;
+  if (!orig) return onClose ? <SidePanel title="Edit details" eyebrow="Pupil" onClose={onClose} size="lg"><Loading label="Loading the pupil's details" /></SidePanel> : <Loading label="Loading the pupil's details" />;
 
   // Plain render helpers, not components: a component made inside render would
   // remount its input on every keystroke and lose focus.
@@ -208,6 +214,150 @@ export function PupilDetailsEditor({ id }: { id: string }) {
     );
   };
 
+  const sections = (
+    <div className="min-w-0 flex-1 space-y-4">
+      <section id="home" aria-labelledby="home-h" className={`${ui.card} scroll-mt-24 space-y-4`}>
+        <h2 id="home-h" className="text-base font-semibold text-ink">
+          Home
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="block text-sm font-medium text-ink">
+            <span id="gender-l">Gender</span>
+            <div role="group" aria-labelledby="gender-l" className="mt-1 flex gap-2">
+              {(["male", "female"] as const).map((g) => (
+                <button key={g} type="button" aria-pressed={form.gender === g} onClick={() => set("gender", g)} className={form.gender === g ? ui.chipOn : ui.chip}>
+                  {g === "male" ? "Male" : "Female"}
+                </button>
+              ))}
+            </div>
+          </div>
+          {field("home_language", "Language spoken at home")}
+          {field("address_line1", "Address")}
+          {field("address_line2", "Address line 2")}
+          {field("town", "Town or city")}
+          {field("postcode", "Postcode")}
+          {field("previous_school", "Previous school")}
+        </div>
+      </section>
+
+      <section id="health" aria-labelledby="health-h" className={`${ui.card} scroll-mt-24 space-y-4`}>
+        <h2 id="health-h" className="text-base font-semibold text-ink">
+          Health
+        </h2>
+        <p className="-mt-2 text-sm text-ink/65">Shown to every adult who teaches this pupil. Write &ldquo;None&rdquo; where there is nothing.</p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {field("gp_name", "GP surgery")}
+          <div className="block text-sm font-medium text-ink">
+            <label htmlFor="gp-phone">GP phone</label>
+            <PhoneInput id="gp-phone" value={text("gp_phone")} onChange={(v) => set("gp_phone", v)} inputClassName={ui.input} />
+          </div>
+          {field("medical_conditions", "Medical conditions", undefined, true)}
+          {field("allergies", "Allergies", undefined, true)}
+          {field("medication", "Medication", undefined, true)}
+          {field("dietary_needs", "Dietary needs", undefined, true)}
+        </div>
+      </section>
+
+      <section id="support" aria-labelledby="support-h" className={`${ui.card} scroll-mt-24 space-y-3`}>
+        <h2 id="support-h" className="text-base font-semibold text-ink">
+          Support needs
+        </h2>
+        {field("sen_notes", "What helps this pupil learn", "Plans and reviews are in the Support plan tab of the record.", true)}
+      </section>
+
+      <section id="contacts" aria-labelledby="contacts-h" className={`${ui.card} scroll-mt-24 space-y-3`}>
+        <h2 id="contacts-h" className="text-base font-semibold text-ink">
+          Emergency contacts
+        </h2>
+        <p className="-mt-1 text-sm text-ink/65">Called in this order.</p>
+        {contacts.filter((c) => !c.removed).length === 0 && <p className="text-sm text-ink/65">No contacts yet.</p>}
+        {contacts.map((c, i) =>
+          c.removed ? null : (
+            <fieldset key={c.key} className="rounded-xl border border-gold-light p-4">
+              <legend className="px-1 text-sm font-semibold text-ink">{c.name.trim() || `Contact ${i + 1}`}</legend>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <label className="block text-sm font-medium text-ink">
+                  Name
+                  <input value={c.name} onChange={(e) => patchContact(c.key, { name: e.target.value })} className={input} />
+                </label>
+                <label className="block text-sm font-medium text-ink">
+                  Relationship
+                  <input value={c.relationship} onChange={(e) => patchContact(c.key, { relationship: e.target.value })} className={input} />
+                </label>
+                <div className="block text-sm font-medium text-ink">
+                  <label htmlFor={`ph-${c.key}`}>Phone</label>
+                  <PhoneInput id={`ph-${c.key}`} value={c.phone} onChange={(v) => patchContact(c.key, { phone: v })} inputClassName={ui.input} />
+                </div>
+                <div className="block text-sm font-medium text-ink">
+                  <label htmlFor={`ph2-${c.key}`}>Second phone (optional)</label>
+                  <PhoneInput id={`ph2-${c.key}`} value={c.alt_phone} onChange={(v) => patchContact(c.key, { alt_phone: v })} inputClassName={ui.input} />
+                </div>
+                <label className="block text-sm font-medium text-ink sm:col-span-2">
+                  Email (optional)
+                  <input type="email" value={c.email} onChange={(e) => patchContact(c.key, { email: e.target.value })} className={input} />
+                </label>
+              </div>
+              <div className="mt-3 flex flex-wrap items-center gap-4 text-sm">
+                <label className="inline-flex items-center gap-2">
+                  <input type="checkbox" checked={c.parental_responsibility} onChange={(e) => patchContact(c.key, { parental_responsibility: e.target.checked })} className="h-4 w-4 accent-forest-700" />
+                  Parental responsibility
+                </label>
+                <label className="inline-flex items-center gap-2">
+                  <input type="checkbox" checked={c.is_authorised_collector} onChange={(e) => patchContact(c.key, { is_authorised_collector: e.target.checked })} className="h-4 w-4 accent-forest-700" />
+                  Can collect
+                </label>
+                <button type="button" onClick={() => patchContact(c.key, { removed: true })} className={`${ui.btnLinkDanger} ml-auto`}>
+                  Remove
+                </button>
+              </div>
+            </fieldset>
+          ),
+        )}
+        <button
+          type="button"
+          onClick={() =>
+            setContacts((cs) => [...cs, { key: `new-${Date.now()}`, id: null, name: "", relationship: "", phone: "", alt_phone: "", email: "", is_authorised_collector: false, parental_responsibility: false }])
+          }
+          className={`${ui.btnSecondary} ${ui.sm}`}
+        >
+          Add a contact
+        </button>
+      </section>
+
+      <section id="consents" aria-labelledby="consents-h" className={`${ui.card} scroll-mt-24`}>
+        <h2 id="consents-h" className="text-base font-semibold text-ink">
+          Consents
+        </h2>
+        <p className="mb-2 text-sm text-ink/65">&ldquo;Not asked&rdquo; is different from &ldquo;Refused&rdquo;: ask the family before a trip or photo.</p>
+        {consent("photo_consent", "Photos in school materials", "Website, prospectus and newsletters")}
+        {consent("trip_consent", "Educational visits", "Trips during the school day")}
+      </section>
+    </div>
+  );
+  const saveBar = (
+    <>
+          <p role="status" className={`text-sm ${msg ? (msg.tone === "err" ? "text-red-800" : "text-forest-800") : "text-ink/70"}`}>
+            {msg ? msg.text : changedCount ? `${changedCount} section${changedCount === 1 ? "" : "s"} changed` : "No changes yet"}
+          </p>
+          <div className="ml-auto flex gap-2">
+            <button type="button" onClick={discard} disabled={busy || !changedCount} className={ui.btnSecondary}>
+              Discard
+            </button>
+            <button type="button" onClick={save} disabled={busy || !changedCount} className={ui.btnPrimary}>
+              {busy ? "Saving…" : "Save changes"}
+            </button>
+          </div>
+    </>
+  );
+
+  if (onClose)
+    return (
+      <SidePanel title={`Edit ${name.split(/\s+/)[0]}'s details`} eyebrow="Pupil record" onClose={onClose} size="lg" footer={<div role="region" aria-label="Save changes" className="flex w-full flex-wrap items-center gap-3">{saveBar}</div>}>
+        <p className="mb-4 text-sm text-ink-500">Every section in one place. Changes save together and are logged. Name, year group and classes are under Edit pupil on the record.</p>
+        {sections}
+      </SidePanel>
+    );
+
   return (
     <>
       <PageHeader crumbs={crumbs} title={`Edit ${name.split(/\s+/)[0]}'s details`} subtitle="Every section on one page. Changes save together and are logged." />
@@ -236,139 +386,12 @@ export function PupilDetailsEditor({ id }: { id: string }) {
           </p>
         </nav>
 
-        <div className="min-w-0 flex-1 space-y-4">
-          <section id="home" aria-labelledby="home-h" className={`${ui.card} scroll-mt-24 space-y-4`}>
-            <h2 id="home-h" className="text-base font-semibold text-ink">
-              Home
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="block text-sm font-medium text-ink">
-                <span id="gender-l">Gender</span>
-                <div role="group" aria-labelledby="gender-l" className="mt-1 flex gap-2">
-                  {(["male", "female"] as const).map((g) => (
-                    <button key={g} type="button" aria-pressed={form.gender === g} onClick={() => set("gender", g)} className={form.gender === g ? ui.chipOn : ui.chip}>
-                      {g === "male" ? "Male" : "Female"}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              {field("home_language", "Language spoken at home")}
-              {field("address_line1", "Address")}
-              {field("address_line2", "Address line 2")}
-              {field("town", "Town or city")}
-              {field("postcode", "Postcode")}
-              {field("previous_school", "Previous school")}
-            </div>
-          </section>
-
-          <section id="health" aria-labelledby="health-h" className={`${ui.card} scroll-mt-24 space-y-4`}>
-            <h2 id="health-h" className="text-base font-semibold text-ink">
-              Health
-            </h2>
-            <p className="-mt-2 text-sm text-ink/65">Shown to every adult who teaches this pupil. Write &ldquo;None&rdquo; where there is nothing.</p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {field("gp_name", "GP surgery")}
-              <div className="block text-sm font-medium text-ink">
-                <label htmlFor="gp-phone">GP phone</label>
-                <PhoneInput id="gp-phone" value={text("gp_phone")} onChange={(v) => set("gp_phone", v)} inputClassName={ui.input} />
-              </div>
-              {field("medical_conditions", "Medical conditions", undefined, true)}
-              {field("allergies", "Allergies", undefined, true)}
-              {field("medication", "Medication", undefined, true)}
-              {field("dietary_needs", "Dietary needs", undefined, true)}
-            </div>
-          </section>
-
-          <section id="support" aria-labelledby="support-h" className={`${ui.card} scroll-mt-24 space-y-3`}>
-            <h2 id="support-h" className="text-base font-semibold text-ink">
-              Support needs
-            </h2>
-            {field("sen_notes", "What helps this pupil learn", "Plans and reviews are in the Support plan tab of the record.", true)}
-          </section>
-
-          <section id="contacts" aria-labelledby="contacts-h" className={`${ui.card} scroll-mt-24 space-y-3`}>
-            <h2 id="contacts-h" className="text-base font-semibold text-ink">
-              Emergency contacts
-            </h2>
-            <p className="-mt-1 text-sm text-ink/65">Called in this order.</p>
-            {contacts.filter((c) => !c.removed).length === 0 && <p className="text-sm text-ink/65">No contacts yet.</p>}
-            {contacts.map((c, i) =>
-              c.removed ? null : (
-                <fieldset key={c.key} className="rounded-xl border border-gold-light p-4">
-                  <legend className="px-1 text-sm font-semibold text-ink">{c.name.trim() || `Contact ${i + 1}`}</legend>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <label className="block text-sm font-medium text-ink">
-                      Name
-                      <input value={c.name} onChange={(e) => patchContact(c.key, { name: e.target.value })} className={input} />
-                    </label>
-                    <label className="block text-sm font-medium text-ink">
-                      Relationship
-                      <input value={c.relationship} onChange={(e) => patchContact(c.key, { relationship: e.target.value })} className={input} />
-                    </label>
-                    <div className="block text-sm font-medium text-ink">
-                      <label htmlFor={`ph-${c.key}`}>Phone</label>
-                      <PhoneInput id={`ph-${c.key}`} value={c.phone} onChange={(v) => patchContact(c.key, { phone: v })} inputClassName={ui.input} />
-                    </div>
-                    <div className="block text-sm font-medium text-ink">
-                      <label htmlFor={`ph2-${c.key}`}>Second phone (optional)</label>
-                      <PhoneInput id={`ph2-${c.key}`} value={c.alt_phone} onChange={(v) => patchContact(c.key, { alt_phone: v })} inputClassName={ui.input} />
-                    </div>
-                    <label className="block text-sm font-medium text-ink sm:col-span-2">
-                      Email (optional)
-                      <input type="email" value={c.email} onChange={(e) => patchContact(c.key, { email: e.target.value })} className={input} />
-                    </label>
-                  </div>
-                  <div className="mt-3 flex flex-wrap items-center gap-4 text-sm">
-                    <label className="inline-flex items-center gap-2">
-                      <input type="checkbox" checked={c.parental_responsibility} onChange={(e) => patchContact(c.key, { parental_responsibility: e.target.checked })} className="h-4 w-4 accent-forest-700" />
-                      Parental responsibility
-                    </label>
-                    <label className="inline-flex items-center gap-2">
-                      <input type="checkbox" checked={c.is_authorised_collector} onChange={(e) => patchContact(c.key, { is_authorised_collector: e.target.checked })} className="h-4 w-4 accent-forest-700" />
-                      Can collect
-                    </label>
-                    <button type="button" onClick={() => patchContact(c.key, { removed: true })} className={`${ui.btnLinkDanger} ml-auto`}>
-                      Remove
-                    </button>
-                  </div>
-                </fieldset>
-              ),
-            )}
-            <button
-              type="button"
-              onClick={() =>
-                setContacts((cs) => [...cs, { key: `new-${Date.now()}`, id: null, name: "", relationship: "", phone: "", alt_phone: "", email: "", is_authorised_collector: false, parental_responsibility: false }])
-              }
-              className={`${ui.btnSecondary} ${ui.sm}`}
-            >
-              Add a contact
-            </button>
-          </section>
-
-          <section id="consents" aria-labelledby="consents-h" className={`${ui.card} scroll-mt-24`}>
-            <h2 id="consents-h" className="text-base font-semibold text-ink">
-              Consents
-            </h2>
-            <p className="mb-2 text-sm text-ink/65">&ldquo;Not asked&rdquo; is different from &ldquo;Refused&rdquo;: ask the family before a trip or photo.</p>
-            {consent("photo_consent", "Photos in school materials", "Website, prospectus and newsletters")}
-            {consent("trip_consent", "Educational visits", "Trips during the school day")}
-          </section>
-        </div>
+        {sections}
       </div>
 
       <div role="region" aria-label="Save changes" className="fixed inset-x-0 bottom-0 z-30 border-t border-gold-light bg-white/95 px-4 py-3 shadow-[0_-4px_16px_rgba(18,50,31,0.08)] backdrop-blur print:hidden">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-3">
-          <p role="status" className={`text-sm ${msg ? (msg.tone === "err" ? "text-red-800" : "text-forest-800") : "text-ink/70"}`}>
-            {msg ? msg.text : changedCount ? `${changedCount} section${changedCount === 1 ? "" : "s"} changed` : "No changes yet"}
-          </p>
-          <div className="ml-auto flex gap-2">
-            <button type="button" onClick={discard} disabled={busy || !changedCount} className={ui.btnSecondary}>
-              Discard
-            </button>
-            <button type="button" onClick={save} disabled={busy || !changedCount} className={ui.btnPrimary}>
-              {busy ? "Saving…" : "Save changes"}
-            </button>
-          </div>
+          {saveBar}
         </div>
       </div>
     </>

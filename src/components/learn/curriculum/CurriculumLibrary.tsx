@@ -37,7 +37,7 @@ import {
 import { Status, btn as btnFor, ui } from "@/components/learn/ui";
 import { HALF_TERMS, halfTermFromTitle, halfTermLabel } from "@/lib/learn/curriculumUnits";
 import { useLessonPins } from "@/lib/learn/pins";
-import { ActionsMenu, WorkflowBadge, WorkspaceHeader, type MenuAction, type WorkflowStatus, Loading } from "@/components/learn/kit";
+import { ActionsMenu, WorkflowBadge, WorkspaceHeader, type MenuAction, type WorkflowStatus, Loading, SidePanel } from "@/components/learn/kit";
 import { allHubs, boardLabel, hubNodeLessons, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, syllabusFor } from "@/lib/learn/syllabusIndex";
 import { Select } from "@/components/learn/Select";
 
@@ -242,7 +242,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const [viewing, setViewing] = useState<{ lesson: CurriculumLesson; kind: "slides-pdf" | "plan-pdf"; url: string | null } | null>(null);
   const [openLesson, setOpenLesson] = useState<string | null>(null);
   const [wanted, setWanted] = useState<{ subject: string | null; unit: string } | null>(linked.unit ? { subject: linked.subject, unit: linked.unit } : null);
-  // Making or editing a revision pack (PackBuilder) takes over the main area.
+  // Making or editing a revision pack (PackBuilder) opens in a panel over the library.
   const [building, setBuilding] = useState<{ packId?: string; initial?: { subject_slug?: string; subject?: string; unit?: string } } | null>(null);
 
   const setYear = (y: string) => {
@@ -663,7 +663,9 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
         </div>
       </div>
 
+      {/* Making or editing a revision pack opens over the library (owner, 11 Nov 2026: actions open in place). */}
       {building && year && (
+        <SidePanel title={building.packId ? "Edit revision pack" : "New revision pack"} eyebrow={yearLabel(year)} onClose={() => { setBuilding(null); load(); }} size="lg">
         <PackBuilder
           key={building.packId || "new"}
           year={year}
@@ -680,6 +682,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             load();
           }}
         />
+        </SidePanel>
       )}
 
       {message && (

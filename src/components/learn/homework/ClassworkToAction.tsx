@@ -6,6 +6,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { ButtonLink, EmptyState, StatusChip, ui } from "@/components/learn/ui";
 import type { AttentionRow } from "@/lib/learn/homeworkFeedback";
+import { MarkingPanel } from "@/components/learn/classwork/MarkingPanel";
 
 const ATTENTION_COLUMNS = "homework_id, homework_title, class_id, class_name, due_at, child_id, child_name, submission_id, submitted_at, attention, resubmission_requested_at";
 
@@ -49,6 +50,9 @@ export function ClassworkToAction({ scope }: { scope: "teach" | "admin" }) {
   const [error, setError] = useState(false);
   const [days, setDays] = useState(30);
   const [kind, setKind] = useState<Kind | "all">("all");
+  // Marking opens in a panel over this list (owner, 11 Nov 2026); closing it refreshes the list.
+  const [marking, setMarking] = useState<{ classId: string; className: string; homeworkId?: string; title?: string } | null>(null);
+  const [reload, setReload] = useState(0);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -68,7 +72,7 @@ export function ClassworkToAction({ scope }: { scope: "teach" | "admin" }) {
     return () => {
       alive = false;
     };
-  }, [days]);
+  }, [days, reload]);
 
   const groups = useMemo<ClassGroup[] | null>(() => {
     if (!queue || !attention) return null;
@@ -179,9 +183,9 @@ export function ClassworkToAction({ scope }: { scope: "teach" | "admin" }) {
                 </span>
                 <span className="flex gap-2">
                   {g.counts.mark > 0 && (
-                    <Link href={classwork(g.id, "&view=review")} className={`${ui.btnPrimary} ${ui.sm}`}>
+                    <button type="button" onClick={() => setMarking({ classId: g.id, className: g.name })} className={`${ui.btnPrimary} ${ui.sm}`}>
                       Mark work
-                    </Link>
+                    </button>
                   )}
                   <Link href={classwork(g.id)} className={`${ui.btnSecondary} ${ui.sm}`}>
                     Open classwork
@@ -197,9 +201,9 @@ export function ClassworkToAction({ scope }: { scope: "teach" | "admin" }) {
                     </span>
                     <span className="flex min-w-0 flex-[2] basis-72 flex-wrap items-center gap-x-4 gap-y-1">
                       {(kind === "all" || kind === "mark") && p.mark.length > 0 && (
-                        <Link href={classwork(g.id, `&view=review&homework=${p.id}`)} className={ui.btnLink}>
+                        <button type="button" onClick={() => setMarking({ classId: g.id, className: g.name, homeworkId: p.id, title: p.title })} className={ui.btnLink}>
                           Mark {plural(p.mark.length, "piece")}
-                        </Link>
+                        </button>
                       )}
                       {(kind === "all" || kind === "missing") && p.missing.length > 0 && (
                         <span className="text-ink/80">
@@ -223,6 +227,18 @@ export function ClassworkToAction({ scope }: { scope: "teach" | "admin" }) {
             </section>
           ))}
         </div>
+      )}
+      {marking && (
+        <MarkingPanel
+          classId={marking.classId}
+          homeworkId={marking.homeworkId}
+          title={marking.title ? `Mark: ${marking.title}` : "Work to mark"}
+          eyebrow={marking.className}
+          onClose={() => {
+            setMarking(null);
+            setReload((n) => n + 1);
+          }}
+        />
       )}
     </>
   );

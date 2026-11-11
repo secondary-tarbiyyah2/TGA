@@ -32,9 +32,9 @@ export const TEACHER_GUIDE: GuideEntry[] = [
     when: "When you sign in, and between lessons.",
     steps: [
       "Under Your day, each lesson shows whether its register is taken.",
-      "When a lesson is due, press Start on Teams to open its live lesson, then Take register.",
+      "When a lesson is due, press Start on Teams to open its live lesson, then Take register: the register opens beside Today and saves each mark as you go.",
       "Check the figures: registers due, to mark, homework due soon and pupil records to read.",
-      "Use Quick actions to take a register, set work, mark work, enter results or send a message.",
+      "Use Quick actions to take a register, set work, mark work, enter results or send a message: setting and marking work open in a panel over Today, so you never lose your place.",
       "Pinned and recently opened lessons are under Curriculum, so you can get back to them.",
     ],
     tips: ["Documents waiting for your signature appear here too; sign them from this page."],
@@ -42,7 +42,7 @@ export const TEACHER_GUIDE: GuideEntry[] = [
     related: ["/teach/today", "/teach/actions", "/teach/review", "/teach/classes"],
     showMe: [
       { target: "teach-your-day", label: "Your day", say: "Today's lessons with Start on Teams and Take register." },
-      { target: "teach-quick-actions", label: "Quick actions", say: "The everyday jobs, one press each." },
+      { target: "teach-quick-actions", label: "Quick actions", say: "The everyday jobs, one press each; most open right here in a panel." },
       { target: "waiting-widget", label: "Waiting for you", say: "The most urgent things waiting for you." },
     ],
     tasks: ["start a live lesson on Teams", "see my day"],
