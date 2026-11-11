@@ -1,4 +1,5 @@
 import type { IconName } from "@/components/learn/Icon";
+import type { FeatureKey, FeatureMap } from "@/lib/learn/features";
 
 // One place for every /learn area's navigation.
 //
@@ -72,6 +73,8 @@ export type HubTab = {
   badge?: NavBadgeName;
   keywords?: string;
   short?: string;
+  /** Hidden while the Headteacher has this School feature switched off (Settings, School features). */
+  feature?: FeatureKey;
 };
 
 /** `group` is the category the item sits under in grouped areas (staff).
@@ -97,6 +100,7 @@ export type SidebarItem = {
   keywords?: string;
   short?: string;
   page?: boolean;
+  feature?: FeatureKey;
 };
 export type SidebarGroup = { label: string; icon: SidebarIcon; items: SidebarItem[] };
 
@@ -167,7 +171,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       pages: [
         { href: "/admin/reports", label: "Term reports", icon: "fileText", hint: "Write, approve and issue reports", headOnly: true, keywords: "progress reports report cards approve" },
         { href: "/admin/gcse", label: "GCSE grades", icon: "graduationCap", hint: "Predicted and actual grades, Years 10 and 11", headOnly: true, keywords: "predicted grades exams year 10 year 11 interventions" },
-        { href: "/admin/revision", label: "Revision results", icon: "target", hint: "How pupils did on each unit's revision", headOnly: true, keywords: "quiz results revision scores" },
+        { href: "/admin/revision", feature: "revision_packs", label: "Revision results", icon: "target", hint: "How pupils did on each unit's revision", headOnly: true, keywords: "quiz results revision scores" },
         { href: "/admin/summary", label: "School at a glance", icon: "chartColumnIncreasing", hint: "Attendance, homework and progress", headOnly: true, keywords: "data analytics summary figures statistics" },
       ],
     },
@@ -178,7 +182,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
         { href: "/admin/attendance", label: "Registers", icon: "userCheck", hint: "Take and review lesson registers", headOnly: true, keywords: "attendance register present late take the register" },
         { href: "/admin/absences", label: "Absences and cover", icon: "calendarX", hint: "Reported absences, follow-ups and staff cover", headOnly: true, keywords: "absent sick off staff cover unexplained" },
         { href: "/admin/behaviour", label: "Behaviour", icon: "heartHandshake", hint: "Incidents and praise", headOnly: true, keywords: "incidents conduct praise sanctions" },
-        { href: "/admin/rewards", label: "House points", icon: "trophy", hint: "House points and Star of the Week", headOnly: true, keywords: "merits rewards stars houses star of the week" },
+        { href: "/admin/rewards", feature: "house_points", label: "House points", icon: "trophy", hint: "House points and Star of the Week", headOnly: true, keywords: "merits rewards stars houses star of the week" },
         { href: "/admin/enrichment", label: "Enrichment", icon: "calendarCheck", hint: "Who joined each supervised block", headOnly: true, keywords: "clubs activities supervised blocks" },
       ],
     },
@@ -228,7 +232,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       icon: "settings",
       pages: [
         { href: "/admin/academic", label: "Academic setup", icon: "layers", hint: "Years, terms, year groups, classes and subjects", keywords: "terms year groups subjects set up" },
-        { href: "/admin/settings", label: "School settings", icon: "settings", hint: "School details, alerts, clock-in and Microsoft 365", keywords: "configuration ai helpers alerts microsoft" },
+        { href: "/admin/settings", label: "School settings", icon: "settings", hint: "School features, school details, alerts, clock-in and Microsoft 365", keywords: "configuration ai helpers alerts microsoft school features switches turn on off revision packs" },
       ],
     },
   ],
@@ -281,7 +285,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       pages: [
         { href: "/teach/assessment", label: "Gradebook", icon: "award", hint: "Enter a whole class's results at once", keywords: "marks grades results markbook" },
         { href: "/teach/reports", label: "Term reports", icon: "fileText", hint: "Term reports for your classes", keywords: "report comments progress reports write" },
-        { href: "/teach/revision", label: "Revision results", icon: "target", hint: "How your pupils did on each unit's revision", keywords: "quiz results revision scores" },
+        { href: "/teach/revision", feature: "revision_packs", label: "Revision results", icon: "target", hint: "How your pupils did on each unit's revision", keywords: "quiz results revision scores" },
       ],
     },
     {
@@ -290,7 +294,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       pages: [
         { href: "/teach/absences", label: "Absences", icon: "calendarX", hint: "Reported pupil absences", keywords: "absent sick off away" },
         { href: "/teach/behaviour", label: "Behaviour", icon: "heartHandshake", hint: "Incidents and praise", keywords: "incidents conduct praise sanctions log behaviour" },
-        { href: "/teach/stars", label: "House points", icon: "trophy", hint: "House points and Star of the Week", keywords: "merits rewards stars award points star of the week" },
+        { href: "/teach/stars", feature: "house_points", label: "House points", icon: "trophy", hint: "House points and Star of the Week", keywords: "merits rewards stars award points star of the week" },
       ],
     },
     {
@@ -359,7 +363,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
         { href: "/family/reports", label: "Reports", icon: "fileText", hint: "Term reports", keywords: "report card grades progress", short: "Progress" },
         { href: "/family/quran", label: "Qur'an", icon: "bookMarked", hint: "Qur'an and Qaidah: recitation and memorisation progress", keywords: "quran hifz qaidah memorisation" },
         { href: "/family/behaviour", label: "Behaviour", icon: "heartHandshake", hint: "Praise and incidents", keywords: "merits house points praise" },
-        { href: "/family/revision", label: "Revision", icon: "target", hint: "Unit revision results", keywords: "quiz results" },
+        { href: "/family/revision", feature: "revision_packs", label: "Revision", icon: "target", hint: "Unit revision results", keywords: "quiz results" },
       ],
     },
     {
@@ -399,7 +403,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       label: "Revise",
       icon: "bookOpen",
       pages: [
-        { href: "/student/revision", label: "Unit revision", icon: "target", hint: "Revise each unit and test yourself", keywords: "quiz practice test revise", short: "Revise" },
+        { href: "/student/revision", feature: "revision_packs", label: "Unit revision", icon: "target", hint: "Revise each unit and test yourself", keywords: "quiz practice test revise", short: "Revise" },
         { href: "/student/quran", label: "Qur'an and Qaidah", icon: "bookMarked", hint: "Your recitation and memorisation", keywords: "quran hifz qaidah" },
       ],
     },
@@ -564,20 +568,45 @@ export function navPageFor(pathname: string, fallbackArea?: PortalArea | null): 
   return best;
 }
 
+/** Is this page's School feature switched off? Pages with no feature are always on. */
+export const featureOff = (features: Partial<FeatureMap> | undefined, key: FeatureKey | undefined): boolean => !!key && features?.[key] === false;
+
+/** Every page (in any area) hidden by a switched-off School feature. */
+export function hiddenFeatureHrefs(features: Partial<FeatureMap> | undefined): string[] {
+  return (Object.keys(NAV_CATEGORIES) as PortalArea[]).flatMap((a) => allPages(a).filter((p) => featureOff(features, p.feature)).map((p) => p.href));
+}
+
+/** Words in the Portal guide about a switched-off feature (lines in other pages' entries). */
+const FEATURE_WORDS: Partial<Record<FeatureKey, RegExp>> = {
+  revision_packs: /revision pack/i,
+  house_points: /house points? (leaderboard|table)/i,
+  lesson_feedback: /leave feedback on a lesson|lesson feedback/i,
+};
+
+/** What the Portal guide leaves out with these switches (see filterGuide in the guide content). */
+export function guideFilterFor(features: Partial<FeatureMap> | undefined): { hiddenHrefs: string[]; dropText: RegExp[]; journeys: boolean } {
+  return {
+    hiddenHrefs: hiddenFeatureHrefs(features),
+    dropText: (Object.keys(FEATURE_WORDS) as FeatureKey[]).filter((k) => featureOff(features, k)).map((k) => FEATURE_WORDS[k]!),
+    journeys: !featureOff(features, "guide_journeys"),
+  };
+}
+
 /** The area's sidebar items this user can open: headOnly pages removed, each
  * hub cut down to the tabs they can open (and pointing at the first one), and
  * a hub left with no tabs dropped. */
-export function visibleSidebar(area: PortalArea, roles: string[]): SidebarItem[] {
+export function visibleSidebar(area: PortalArea, roles: string[], features?: Partial<FeatureMap>): SidebarItem[] {
   const isHead = isHeadRole(roles);
   const sencoOnly = area === "teach" && isSencoOnly(roles);
   const out: SidebarItem[] = [];
   for (const i of SIDEBAR_NAV[area]) {
     if (i.headOnly && !isHead) continue;
+    if (featureOff(features, i.feature)) continue;
     if (!i.tabs) {
       if (!sencoOnly || i.senco) out.push(i);
       continue;
     }
-    const tabs = i.tabs.filter((t) => (isHead || !t.headOnly) && (!sencoOnly || t.senco || i.senco));
+    const tabs = i.tabs.filter((t) => (isHead || !t.headOnly) && (!sencoOnly || t.senco || i.senco) && !featureOff(features, t.feature));
     if (tabs.length === 0) continue;
     // A hub with one page left for this user is just that page. If that page
     // is the hub's own first page, it keeps the hub's name ("Today", not "Overview").
@@ -611,8 +640,8 @@ export const SUB_PAGES: Record<string, PortalNavItem[]> = {
 /** Every page this user can open in an area, one row per page (hub tabs
  * included, with the category as `parent`, and their sub-pages): the command
  * palette lists these. */
-export function visiblePages(area: PortalArea, roles: string[]): PortalPage[] {
-  const pages: PortalPage[] = visibleSidebar(area, roles).flatMap((i): PortalPage[] =>
+export function visiblePages(area: PortalArea, roles: string[], features?: Partial<FeatureMap>): PortalPage[] {
+  const pages: PortalPage[] = visibleSidebar(area, roles, features).flatMap((i): PortalPage[] =>
     i.tabs && i.tabs.length > 1
       ? i.tabs.flatMap((t): PortalPage[] => [
           { href: t.href, label: t.label, hint: t.hint, parent: i.label === t.label ? undefined : i.label, icon: t.icon || i.icon, keywords: t.keywords },
@@ -633,12 +662,12 @@ export const ADMIN_INDEX_HREF = "/admin/site";
 
 /** The hub the current page is in, when it has two or more tabs this user can
  * open (the pages the sidebar lists together). */
-export function hubFor(pathname: string, roles: string[]): { item: SidebarItem; tabs: HubTab[]; active: HubTab | null } | null {
+export function hubFor(pathname: string, roles: string[], features?: Partial<FeatureMap>): { item: SidebarItem; tabs: HubTab[]; active: HubTab | null } | null {
   const area = portalAreaFor(pathname);
   if (!area) return null;
   const found = navItemFor(pathname);
   if (!found?.item.tabs) return null;
-  const item = visibleSidebar(area, roles).find((i) => i.id === found.item.href);
+  const item = visibleSidebar(area, roles, features).find((i) => i.id === found.item.href);
   // Only pages in this area belong in the strip (Report a concern lives outside it).
   const tabs = (item?.tabs || []).filter((t) => portalAreaFor(t.href) === area);
   if (!item || tabs.length < 2) return null;
@@ -652,9 +681,9 @@ export function hubFor(pathname: string, roles: string[]): { item: SidebarItem; 
 }
 
 /** Site administration (/admin/site): every admin page by category, built from the menu. */
-export function visibleAdminSections(roles: string[]): PortalNavGroup[] {
+export function visibleAdminSections(roles: string[], features?: Partial<FeatureMap>): PortalNavGroup[] {
   const groups = new Map<string, PortalNavItem[]>();
-  for (const i of visibleSidebar("admin", roles)) {
+  for (const i of visibleSidebar("admin", roles, features)) {
     if (!i.group) continue;
     const list = groups.get(i.group) || [];
     if (i.tabs) list.push(...i.tabs.map((t) => ({ href: t.href, label: t.label, hint: t.hint })));
@@ -670,8 +699,8 @@ export type SidebarEntry = { kind: "link"; item: SidebarItem } | { kind: "sectio
 /** The sidebar layout. Families and pupils: one link per entry, in the order
  * written above. Staff: the Home pages as plain links at the top, then one
  * dropdown per category holding its pages as rows. */
-export function sidebarLayout(area: PortalArea, roles: string[]): SidebarEntry[] {
-  const items = visibleSidebar(area, roles);
+export function sidebarLayout(area: PortalArea, roles: string[], features?: Partial<FeatureMap>): SidebarEntry[] {
+  const items = visibleSidebar(area, roles, features);
   if (!isGroupedArea(area)) return items.map((item) => ({ kind: "link", item }));
   return items.map((item): SidebarEntry => {
     if (item.page) return { kind: "link", item };
@@ -701,8 +730,8 @@ export const MOBILE_TABS: Record<PortalArea, string[]> = {
 /** The (at most four) entries in this user's phone tab bar. Staff get single
  * pages (lit only on that page, or its own sub-pages); families and pupils get
  * their hubs, lit on any of the hub's pages. Labels are the short names. */
-export function mobileTabsFor(area: PortalArea, roles: string[]): SidebarItem[] {
-  const visible = visibleSidebar(area, roles);
+export function mobileTabsFor(area: PortalArea, roles: string[], features?: Partial<FeatureMap>): SidebarItem[] {
+  const visible = visibleSidebar(area, roles, features);
   const grouped = isGroupedArea(area);
   const out: SidebarItem[] = [];
   for (const href of MOBILE_TABS[area]) {

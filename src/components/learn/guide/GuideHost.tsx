@@ -6,7 +6,8 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo } from "react";
-import type { PortalArea } from "@/lib/learn/nav";
+import { guideFilterFor, type PortalArea } from "@/lib/learn/nav";
+import { useFeatures } from "@/lib/learn/features";
 import { markGuideLearned, usePortalPrefs } from "@/lib/learn/portalPrefs";
 import { GuideJourney } from "./GuideJourney";
 import { GuidePanel } from "./GuidePanel";
@@ -20,8 +21,11 @@ export function GuideHost({ area, roles, userId }: { area: PortalArea; roles: st
   const prefs = usePortalPrefs(userId);
   const content = useGuideContent(panel || !!spot);
   const role = useMemo(() => content?.guideRoleFor(area, roles) ?? null, [content, area, roles]);
-  const entries = role && content ? content.GUIDE[role] : null;
-  const entry = role && content ? content.guideEntryFor(role, pathname) : null;
+  // School features the Headteacher has switched off are left out of the guide.
+  const features = useFeatures();
+  const filter = useMemo(() => guideFilterFor(features), [features]);
+  const entries = useMemo(() => (role && content ? content.filterGuide(content.GUIDE[role], filter) : null), [role, content, filter]);
+  const entry = role && content ? content.guideEntryFor(role, pathname, filter) : null;
 
   // A new page closes a Show me that belonged to the old one. A link from the
   // Portal guide (?guide=1) opens the new page's guide straight away.

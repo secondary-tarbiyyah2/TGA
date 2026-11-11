@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { aiCheck, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
+import { useFeature } from "@/lib/learn/features";
 
 type Row = { day: string; task: string; calls: number; input_tokens: number; output_tokens: number };
 
@@ -51,6 +52,7 @@ function AiCheck() {
  */
 export function AiUsage() {
   const status = useAiStatus();
+  const aiOn = useFeature("ai_helpers");
   const [rows, setRows] = useState<Row[] | null>(null);
   const [failed, setFailed] = useState(false);
 
@@ -87,7 +89,8 @@ export function AiUsage() {
         <span aria-hidden="true" className="mt-1 text-lg leading-none text-ink/50 transition-transform group-open:rotate-90">›</span>
       </summary>
       <div className="space-y-3 border-t border-gold-light px-5 py-5 text-sm">
-        {status && !status.configured && <p className="rounded-lg bg-amber-50 px-3 py-2 text-amber-950">AI helpers are not switched on yet. Ask whoever looks after the website to add the AI key (technical note: the ANTHROPIC_API_KEY secret); the AI buttons appear for staff once it is set.</p>}
+        {!aiOn && <p className="rounded-lg bg-[var(--portal-sunken)] px-3 py-2 text-ink-700">Switched off under School features. Switch AI helpers on there to bring the AI buttons back.</p>}
+        {aiOn && status && !status.configured && <p className="rounded-lg bg-amber-50 px-3 py-2 text-amber-950">AI helpers are not switched on yet. Ask whoever looks after the website to add the AI key (technical note: the ANTHROPIC_API_KEY secret); the AI buttons appear for staff once it is set.</p>}
         {status?.configured && (
           <p className="text-ink/75">
             Today: <span className="font-semibold text-ink">{fmt(usedToday)}</span>

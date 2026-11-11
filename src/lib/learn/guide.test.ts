@@ -6,8 +6,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
-import { SUB_PAGES, allPages, visiblePages, type PortalArea } from "./nav.ts";
-import { GUIDE, JOURNEYS, guideEntryFor, guideRoleFor, type GuideEntry, type GuideRole } from "../../content/portal-guide/index.ts";
+import { SUB_PAGES, allPages, guideFilterFor, visiblePages, type PortalArea } from "./nav.ts";
+import { DEFAULT_FEATURES, type FeatureMap } from "./features.ts";
+import { GUIDE, JOURNEYS, filterGuide, filterJourneys, guideEntryFor, guideRoleFor, type GuideEntry, type GuideRole } from "../../content/portal-guide/index.ts";
 
 const ROOT = process.cwd();
 const ROLES: Record<string, [PortalArea, string[]]> = {
@@ -183,4 +184,37 @@ test("Day in the life journeys: 6 to 12 steps, on pages the role has, pointing a
     }
   }
   assert.deepEqual(missing, [], "journey targets not found on their pages");
+});
+
+// School features (Settings, migration 0206): a switched-off feature's pages
+// leave the menu, so their guide entries and journey stops are skipped, and
+// every page still in the menu keeps its entry.
+const ALL_OFF: FeatureMap = { revision_packs: false, subject_lesson_editing: false, ai_helpers: false, house_points: false, guide_journeys: false, lesson_feedback: false };
+
+test("with School features switched off, their guide entries are skipped and every page left has one", () => {
+  for (const features of [ALL_OFF, { ...ALL_OFF, guide_journeys: true }, DEFAULT_FEATURES]) {
+    const f = guideFilterFor(features);
+    for (const role of Object.keys(ROLES)) {
+      const [area, roles] = ROLES[role];
+      const g = guideFor(role);
+      const visible = visiblePages(area, roles, features).map((p) => p.href);
+      const entries = filterGuide(GUIDE[g], f);
+      const have = new Set(entries.map((e) => e.href));
+      const missing = [...new Set([...visible, ...DETAIL[g], ...SHARED])].filter((h) => !have.has(h));
+      assert.deepEqual(missing, [], `${role}: no guide entry for these pages`);
+      const reach = new Set([...visible, ...DETAIL[g], ...SHARED, "/report-concern", "/documents"]);
+      for (const e of entries) {
+        assert.ok(reach.has(e.href), `${role}: the guide still describes ${e.href}, which is switched off`);
+        for (const r of e.related) assert.ok(have.has(r), `${role} ${e.href}: related page ${r} is switched off`);
+        assert.ok(e.steps.length >= 2, `${role} ${e.href}: too few steps left`);
+        if (!features.revision_packs) for (const t of [...e.steps, ...e.tips, ...(e.tasks || [])]) assert.ok(!/revision pack/i.test(t), `${role} ${e.href}: "${t}" is about revision packs`);
+      }
+      for (const j of filterJourneys(JOURNEYS[g] || [], f)) for (const s of j.steps) assert.ok(have.has(s.href), `${role} ${j.id}: stop on ${s.href}, which is switched off`);
+    }
+  }
+  assert.deepEqual(filterJourneys(JOURNEYS.pupil, guideFilterFor(ALL_OFF)), [], "journeys switched off: none offered");
+  assert.ok(filterJourneys(JOURNEYS.pupil, guideFilterFor({ ...ALL_OFF, guide_journeys: true }))[0].steps.every((s) => s.href !== "/student/revision"), "revision packs off: the pupil journey skips Revise");
+  assert.equal(guideEntryFor("pupil", "/student/revision", guideFilterFor(ALL_OFF)), null, "no guide for a switched-off page");
+  assert.ok(visiblePages("student", ["student"], ALL_OFF).every((p) => p.href !== "/student/revision"), "the menu and search leave it out");
+  assert.ok(visiblePages("student", ["student"]).some((p) => p.href === "/student/revision"), "with no switches given, nothing is hidden");
 });
