@@ -98,7 +98,7 @@ export default async function CareersPage() {
           <p className="mt-3 text-ink/80">
             Questions about a role? Email{" "}
             <a href={`mailto:${email}`} className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">{email}</a>. Read our{" "}
-            <Link href="/safeguarding" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">safeguarding approach</Link>.
+            <Link href="/policies/" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">policies, including safeguarding</Link>.
           </p>
         </Container>
       </section>
