@@ -38,7 +38,7 @@ jobs:
           echo "sr=$SR" >> "$GITHUB_OUTPUT"
           echo "anon=$AN" >> "$GITHUB_OUTPUT"
       - run: npm ci --no-audit --no-fund
-      - run: npm i --no-save --no-audit --no-fund playwright@1.49.1 && npx playwright install --with-deps chromium
+      - run: npm i --no-save --no-audit --no-fund playwright@1.49.1 && npx playwright install --with-deps chromium || npx playwright install chromium
       - name: Capture
         env:
           SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
