@@ -37,7 +37,7 @@ const MAX_ATTACH_BYTES = 6 * 1024 * 1024;
 const MIN_FILL_MS = 30 * 1000;
 
 // Allowed values: keep in step with src/lib/careers.ts and migration 0182.
-const RIGHT_TO_WORK = ["uk_yes", "uk_sponsorship", "outside_uk"];
+const RIGHT_TO_WORK = ["uk_yes", "outside_uk"];
 const TEACHER_STATUS = ["qts", "qtls", "overseas", "training", "none"];
 const YEARS_EXPERIENCE = ["none", "under_2", "2_5", "5_10", "over_10"];
 const ONLINE_EXPERIENCE = ["regular", "some", "none"];
@@ -305,7 +305,7 @@ Deno.serve(async (req) => {
 
   let emailSent = false;
   if (settings.auto_acknowledge) {
-    const ack = await acknowledge(email, fullName, str(p.preferredName, 80) || firstName, reference, vacancyTitle, settings.notify_email);
+    const ack = await acknowledge(email, fullName, str(p.preferredName, 80) || firstName, reference, vacancyTitle, settings.notify_email, { ...row, reference } as SavedRow);
     emailSent = ack.ok;
     await logEmail(id, ack.ok ? `Acknowledgement sent to ${email}.` : `Could not send the acknowledgement to ${email}: ${ack.detail.slice(0, 300)}`);
   }
@@ -333,7 +333,39 @@ async function logEmail(applicationId: string, body: string) {
   await supabase.from("job_application_events").insert({ application_id: applicationId, kind: "email", body });
 }
 
-async function acknowledge(to: string, fullName: string, callName: string, reference: string, role: string, replyInbox: string) {
+function candidateCopy(a: SavedRow): string {
+  const v = (x: unknown) => (x === null || x === undefined || x === "" ? `<span style="color:#888;">Not given</span>` : esc(String(x)).replace(/\n/g, "<br>"));
+  const row = (label: string, value: string) =>
+    `<tr><td style="padding:4px 12px 4px 0;vertical-align:top;color:#6b6b6b;width:38%;">${esc(label)}</td><td style="padding:4px 0;vertical-align:top;">${value}</td></tr>`;
+  const list = (xs: unknown) => (Array.isArray(xs) && xs.length ? esc(xs.join(", ")) : v(""));
+  const jobs = a.employment.length
+    ? a.employment.map((j) => `${esc(j.role)}, ${esc(j.employer)} (${esc(monthLabel(j.from))} to ${j.current ? "present" : esc(monthLabel(j.to))})`).join("<br>")
+    : v("");
+  const refs = a.referees.map((r) => `${esc(r.name)}, ${esc(r.organisation)}`).join("<br>");
+  return (
+    `<h2 style="font-size:15px;margin:22px 0 6px;padding-bottom:4px;border-bottom:1px solid #E3C98F;color:#5E4B1E;">A copy of your application</h2>` +
+    `<table style="border-collapse:collapse;width:100%;font-size:14px;">` +
+    row("Role", v(a.vacancy_title)) +
+    row("Name", v(`${a.first_name} ${a.last_name}`)) +
+    row("Email", v(a.email)) +
+    row("Phone", v(a.phone)) +
+    row("Lives in", v([a.town, a.country].filter(Boolean).join(", "))) +
+    row("Right to work", v(LABELS.rightToWork[String(a.right_to_work)])) +
+    row("Teacher status", v(LABELS.teacherStatus[String(a.teacher_status)])) +
+    row("Highest qualification", v(a.highest_qualification)) +
+    row("Subjects", list(a.subjects)) +
+    row("Year groups", list(a.year_groups)) +
+    row("Employment", jobs) +
+    row("Hours", v(LABELS.hours[String(a.hours_preference)])) +
+    row("Days available", list(a.available_days)) +
+    row("Referees", refs || v("")) +
+    row("Documents", `CV${a.documents.length ? ` and ${a.documents.length} supporting document${a.documents.length === 1 ? "" : "s"}` : ""}`) +
+    `</table>` +
+    `<p style="margin:10px 0 0;font-size:13px;color:#6b6b6b;">If anything here is wrong, reply to this email and we will update it.</p>`
+  );
+}
+
+async function acknowledge(to: string, fullName: string, callName: string, reference: string, role: string, replyInbox: string, copy: SavedRow) {
   const html = emailShell(
     `<h1 style="font-size:20px;margin:0 0 16px;">Thank you for applying</h1>` +
       `<p style="margin:0 0 14px;line-height:1.55;">Assalamu alaikum ${esc(callName)},</p>` +
@@ -346,7 +378,8 @@ async function acknowledge(to: string, fullName: string, callName: string, refer
       `<li>For shortlisted candidates we take up references and carry out the safer recruitment checks every school must make. We agree the right criminal record checks for where you live, as we recruit internationally.</li>` +
       `</ol>` +
       `<p style="margin:0 0 14px;line-height:1.55;">If you have any questions, reply to this email or write to <a href="mailto:${esc(replyInbox)}" style="color:#5E4B1E;">${esc(replyInbox)}</a>.</p>` +
-      `<p style="margin:0;line-height:1.55;">JazakAllahu khayran,<br>Tarbiyyah Global Academy</p>`,
+      `<p style="margin:0;line-height:1.55;">JazakAllahu khayran,<br>Tarbiyyah Global Academy</p>` +
+      candidateCopy(copy),
     `We have received your application (${reference}).`,
   );
   try {
