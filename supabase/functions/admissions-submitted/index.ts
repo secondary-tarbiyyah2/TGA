@@ -21,7 +21,9 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { sendEmail, emailShell } from "../_shared/resend.ts";
-import { DEFAULT_TEMPLATES, buildTemplateContext, renderTemplate, type FamilyInput } from "../admissions-correspond/templating.ts";
+import { generateToken, hashToken } from "../_shared/manageToken.ts";
+import { stripeSecretKey } from "../_shared/stripe.ts";
+import { DEFAULT_TEMPLATES, PAYMENT_LINK_PLACEHOLDER, buildTemplateContext, renderTemplate, type FamilyInput } from "../admissions-correspond/templating.ts";
 import { ROLE_EMAILS } from "../_shared/contacts.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
@@ -29,6 +31,7 @@ const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 
 const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || ROLE_EMAILS.admissions;
+const SITE_URL = (Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk").replace(/\/$/, "");
 const LEARN_SITE_URL = (Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk").replace(/\/$/, "");
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const FRESH_MS = 30 * 60 * 1000;
@@ -135,23 +138,46 @@ Deno.serve(async (req) => {
     children: siblings.map((s) => ({ first_name: s.child_first_name, last_name: s.child_last_name, year_group: s.year_group_applying })),
     snapshot,
   };
-  const ctx = buildTemplateContext(lead, (settings as never) || null, (stage as never) || null, { family });
+  const ctx = buildTemplateContext(lead, (settings as never) || null, (stage as never) || null, { family, personalPayLink: Boolean(stripeSecretKey()) });
   const out = renderTemplate({ subject: tpl.subject, body: tpl.body }, ctx);
   if (out.unresolved.length > 0 || !out.subject || !out.body) return jsonResponse({ ok: false, error: "template_unresolved", unresolved: out.unresolved }, 500);
+
+  // The family's personal payment page (T71): pay the application fee online
+  // straight away. Same link pattern as the offer email: a random token, only
+  // its hash stored, switched on once the email has gone.
+  let token: string | null = null;
+  let sendBody = out.body;
+  let loggedBody = out.body;
+  if (out.body.includes(PAYMENT_LINK_PLACEHOLDER) && lead.reference) {
+    token = generateToken();
+    const link = `${SITE_URL}/admissions/payment/?ref=${encodeURIComponent(lead.reference)}&token=${token}`;
+    sendBody = out.body.split(PAYMENT_LINK_PLACEHOLDER).join(link);
+    loggedBody = out.body.split(PAYMENT_LINK_PLACEHOLDER).join("(personal secure payment link sent by email)");
+  } else if (out.body.includes(PAYMENT_LINK_PLACEHOLDER)) {
+    sendBody = loggedBody = out.body.split(PAYMENT_LINK_PLACEHOLDER).join("");
+  }
 
   let emailSent = false;
   let emailError: string | null = null;
   try {
-    const result = await sendEmail({ to: lead.parent_email, toName: lead.parent_name, subject: out.subject, html: emailShell(bodyToHtml(out.body)) });
+    const result = await sendEmail({ to: lead.parent_email, toName: lead.parent_name, subject: out.subject, html: emailShell(bodyToHtml(sendBody)) });
     emailSent = result.ok;
     if (!result.ok) emailError = result.detail;
   } catch (e) {
     emailError = String(e);
   }
 
+  if (emailSent && token) {
+    const hash = await hashToken(token);
+    // Each child's application fee can be paid from the same page (one link per family email, on the lead application).
+    await serviceClient
+      .from("admissions_stage_details")
+      .upsert({ application_id: lead.id, payment_token_hash: hash, payment_token_created_at: new Date().toISOString() }, { onConflict: "application_id" });
+  }
+
   const failure = emailError ? emailError.slice(0, 500) : null;
   await serviceClient.from("admissions_messages").insert([
-    { application_id: lead.id, template: "received", subject: out.subject, body: out.body, sent_by: null, email_sent: emailSent, email_error: failure },
+    { application_id: lead.id, template: "received", subject: out.subject, body: loggedBody, sent_by: null, email_sent: emailSent, email_error: failure },
     ...siblings.slice(1).map((s) => ({
       application_id: s.id,
       template: "received",

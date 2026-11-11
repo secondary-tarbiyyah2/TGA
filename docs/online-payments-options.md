@@ -1,5 +1,7 @@
 # Taking fee payments online: options and recommendation
 
+> **Built (11 November 2026):** the recommendation below is now built in full on Stripe (portal checkout, personal payment links, webhook, references, reconciliation, Direct Debit switch). How it works and the owner's setup steps: `docs/payments.md`. The shared Payment Link described here is now only a fallback until the Stripe keys are added.
+
 Owner's request (11 November 2026, Tafweed 3, item T71): "way to pay now is online so we need to find a
 way to accommodate for this on the website, identify a way to do so, minimal commission". Standing
 orders and bank transfers are no longer offered (T72).
