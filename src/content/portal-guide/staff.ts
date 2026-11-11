@@ -67,23 +67,26 @@ export function calendarEntry(a: Area): GuideEntry {
     href: `/${a}/calendar`,
     name: "Calendar",
     category: "Home",
-    purpose: "Term dates, half terms, closures, lessons, homework due dates and events in one calendar.",
+    purpose: "Lessons, assessments, homework and deadlines, school events, term dates, Islamic dates, meetings and admissions in one calendar, each in its own colour.",
     when: "When planning the week or checking a date.",
     steps: [
-      "Choose Month, Week or Day agenda.",
-      "Press a day to see what is on.",
-      head(a) ? "Use the Terms and Dates and overrides sections to add term dates, half terms and closures." : "Press Add to my calendar to subscribe from Google, Outlook or Apple Calendar.",
+      "Choose Month, Week or Agenda (the next six weeks).",
+      "Press a category to hide or show it; the coloured dots are the key.",
+      "Press a day to see everything on it beside the calendar.",
+      "Press Add to calendar for a meeting, event or deadline; choose its category and who sees it.",
+      head(a) ? "Use Terms and closures to set term dates, half terms and closures." : "Press Add to my calendar to subscribe from Google, Outlook or Apple Calendar.",
     ],
-    tips: ["Islamic dates are shown alongside each day."],
-    privacy: head(a) ? "Term dates and closures you add are shown to everyone in the school." : "Your calendar link shows your own lessons; keep it private. Stop sharing turns it off.",
+    tips: [head(a) ? "The office can show an entry to everyone, to families or to one class; admissions entries are for staff only." : "You can add entries for staff, or for a class you teach.", "Islamic dates are shown alongside each day."],
+    privacy: head(a) ? "Entries for everyone are shown to every family and pupil, so check them before saving." : "Your calendar link shows your own lessons; keep it private. Stop sharing turns it off.",
     related: [`/${a}/dashboard`, `/${a}/announcements`],
     showMe: [
-      { target: "calendar-views", label: "Calendar view", say: "Month, week or day." },
+      { target: "calendar-views", label: "Calendar view", say: "Month, week or agenda." },
+      { target: "calendar-categories", label: "Categories", say: "Each colour is a category; press one to hide or show it." },
       head(a)
-        ? { target: "calendar-sections", label: "Calendar sections", say: "Calendar, Dates and overrides, and Terms." }
+        ? { target: "calendar-sections", label: "Calendar sections", say: "The calendar, and Terms and closures." }
         : { target: "calendar-subscribe", label: "Add to my calendar", say: "Put the calendar on your phone or Outlook." },
     ],
-    tasks: ["see term dates", ...(head(a) ? ["add term dates", "add a closure"] : [])],
+    tasks: ["see term dates", "add a meeting", "add an event", ...(head(a) ? ["add term dates", "add a closure"] : [])],
   };
 }
 

@@ -33,7 +33,17 @@ Brief: `docs/owner-briefs/2026-11-11-feedback-2.md`. Branches `claude/fb2-msg-*`
    realtime. Also fixed: stray merge markers in `globals.css` (from #160) that switched off the dialog and menu
    animations and the floating-shadow rule.
 
-**Calendar (item 4).** Next PR (`claude/fb2-msg-4`).
+**Calendar (item 4).**
+4. [x] PR "Calendar: categories, colours, filters, Month, Week and Agenda, Add to calendar" (migration 0206
+   `calendar_events`, RLS by audience: everyone, staff, families, a class; the office adds anything, other staff
+   staff-only entries and their own classes; admissions entries staff only). Eight categories, each a `--cal-*` token
+   in `globals.css`: lessons, assessments, homework and deadlines, school events, holidays and term dates, Islamic
+   dates (computed from the Hijri calendar: new year, Ashura, Ramadan, Eid al-Fitr, Dhul Hijjah, Arafah, Eid
+   al-Adha), meetings (also parents' evenings), admissions (also open evenings; staff only). The category chips are
+   the legend and the filter (remembered in the browser). Views: Month (Hijri month, Gregorian small, named bars in
+   category colours; dots on phones), Week (seven columns on wide screens), Agenda (the next six weeks). Add to
+   calendar opens `calendar/EventDialog` (fits the screen; Enter saves, Escape closes). Announcements left the
+   calendar (they are notices, not dates; they stay on Announcements and Today).
 
 ## Third pass (owner feedback, 11 Nov 2026): structure
 
