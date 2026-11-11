@@ -5,18 +5,22 @@ import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { ClassViewer } from "@/lib/learn/classes";
-import { renderMarkup, safeHttpUrl } from "@/lib/learn/markup";
+import { renderMarkup } from "@/lib/learn/markup";
 import { HOMEWORK_COLUMNS, type Homework } from "@/lib/learn/homework";
-import { AttachmentList, cleanAttachments, uploadClassFile, type Attachment } from "@/components/learn/class/Attachments";
+import { AttachmentList, cleanAttachments } from "@/components/learn/class/Attachments";
+import { CLASSWORK_TYPES, CreatePicker, MaterialDialog, TopicDialog, type ClassworkType, type CreatePick } from "@/components/learn/class/CreateClasswork";
+import { Icon, type IconName } from "@/components/learn/Icon";
+import { PostDialog } from "@/components/learn/class/AnnouncementComposer";
 import { HomeworkCard } from "@/components/learn/homework/HomeworkCards";
 import { type HomeworkKind } from "@/components/learn/homework/HomeworkEditor";
-import { CLASSWORK_CHANGED, SetWorkPanel } from "@/components/learn/class/SetWorkPanel";
+import { CLASSWORK_CHANGED, CLASSWORK_CREATE, SetWorkPanel } from "@/components/learn/class/SetWorkPanel";
 import { ReviewQueue } from "@/components/learn/classwork/ReviewQueue";
+import { QuizBuilder } from "@/components/learn/quiz/QuizBuilder";
 import { Tabs } from "@/components/learn/Tabs";
 import { Select } from "@/components/learn/Select";
 
-import { ActionsMenu, SidePanel, askConfirm, type MenuAction } from "@/components/learn/kit";
-import { btn } from "@/components/learn/ui";
+import { askConfirm } from "@/components/learn/kit";
+import { Button, ui } from "@/components/learn/ui";
 type Topic = { id: string; name: string; position: number };
 type Hw = Homework & { topic_id: string | null; status?: string; kind?: string | null; assigned_child_ids?: string[] | null };
 type Mat = { id: string; title: string; kind: "material" | "question"; body: string | null; resources: unknown; topic_id: string | null; allow_comments: boolean; created_at: string };
@@ -25,6 +29,7 @@ type Row =
   | { type: "homework"; id: string; title: string; at: string; topicId: string | null; row: Hw }
   | { type: "material"; id: string; title: string; at: string; topicId: string | null; row: Mat };
 
+const KIND_GROUP: Record<ClassworkType, string> = { assignment: "Assignments", quiz: "Quizzes", question: "Questions", material: "Materials" };
 const KIND_LABEL = { homework: "Assignment", quiz: "Quiz", material: "Material", question: "Question" } as const;
 
 const STATUS: Record<string, { label: string; cls: string }> = {
@@ -42,137 +47,6 @@ function homeworkHref(viewer: ClassViewer): string {
   if (viewer.kind === "staff") return "/admin/homework";
   if (viewer.kind === "student") return "/student/homework";
   return `/family/homework?child=${viewer.childId}`;
-}
-
-function MaterialForm({ classId, kind, topics, defaultTopic, onDone, onCancel }: { classId: string; kind: "material" | "question"; topics: Topic[]; defaultTopic: string; onDone: () => void; onCancel: () => void }) {
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
-  const [topicId, setTopicId] = useState(defaultTopic);
-  const [allowComments, setAllowComments] = useState(kind === "question");
-  const [link, setLink] = useState("");
-  const [files, setFiles] = useState<Attachment[]>([]);
-  const [links, setLinks] = useState<Attachment[]>([]);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const addFiles = async (list: FileList | null) => {
-    if (!list) return;
-    setBusy(true);
-    for (const f of Array.from(list)) {
-      const r = await uploadClassFile(classId, f);
-      if ("error" in r) setError(r.error);
-      else setFiles((x) => [...x, r.attachment]);
-    }
-    setBusy(false);
-  };
-  const addLink = () => {
-    const u = safeHttpUrl(link);
-    if (!u) return setError("That doesn't look like a web address.");
-    setError(null);
-    setLinks((l) => [...l, { label: u.replace(/^https?:\/\//, "").slice(0, 60), url: u }]);
-    setLink("");
-  };
-
-  const save = async () => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    if (!title.trim()) return setError("Add a title.");
-    setBusy(true);
-    setError(null);
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    const { error: err } = await supabase.from("class_materials").insert({
-      class_id: classId,
-      topic_id: topicId || null,
-      kind,
-      title: title.trim(),
-      body: body.trim() || null,
-      resources: [...files, ...links],
-      allow_comments: allowComments,
-      created_by: user?.id ?? null,
-    });
-    setBusy(false);
-    if (err) return setError("Could not save. Try again.");
-    onDone();
-  };
-
-  return (
-    <section aria-label={kind === "question" ? "New question" : "New material"} className="rounded-2xl border border-gold-light bg-white p-5">
-      <h3 className="text-sm font-semibold text-ink">{kind === "question" ? "New question" : "New material"}</h3>
-      <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder={kind === "question" ? "Question" : "Title"} aria-label="Title" maxLength={200} className="mt-3 w-full rounded-lg border border-gold-light/70 px-3 py-2 text-sm" />
-      <textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder={kind === "question" ? "Instructions (optional)" : "Notes (optional)"} aria-label="Details" rows={4} maxLength={8000} className="mt-3 w-full rounded-lg border border-gold-light/70 px-3 py-2 text-sm" />
-      {(files.length > 0 || links.length > 0) && (
-        <ul className="mt-2 flex flex-wrap gap-2 text-sm text-ink/80">
-          {[...files, ...links].map((a, i) => (
-            <li key={i} className="rounded-lg bg-cream px-2.5 py-1">
-              {a.label}
-            </li>
-          ))}
-        </ul>
-      )}
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <label className="cursor-pointer rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
-          Attach file
-          <input type="file" multiple className="sr-only" onChange={(e) => addFiles(e.target.files)} />
-        </label>
-        <input type="text" value={link} onChange={(e) => setLink(e.target.value)} placeholder="Paste a link" aria-label="Link address" className="min-w-0 flex-1 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm" />
-        <button type="button" onClick={addLink} disabled={!link.trim()} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
-          Add link
-        </button>
-      </div>
-      <div className="mt-4 flex flex-wrap items-center gap-4">
-        <label className="text-sm text-ink/80">
-          Topic{" "}
-          <Select value={topicId} onChange={(e) => setTopicId(e.target.value)} className="ml-1 rounded-lg border border-gold-light/70 px-2 py-1.5 text-sm">
-            <option value="">No topic</option>
-            {topics.map((t) => (
-              <option key={t.id} value={t.id}>
-                {t.name}
-              </option>
-            ))}
-          </Select>
-        </label>
-        <label className="flex items-center gap-2 text-sm text-ink/80">
-          <input type="checkbox" checked={allowComments} onChange={(e) => setAllowComments(e.target.checked)} />
-          Allow class comments
-        </label>
-      </div>
-      {error && (
-        <p role="alert" className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
-          {error}
-        </p>
-      )}
-      <div className="mt-4 flex justify-end gap-2">
-        <button type="button" onClick={onCancel} className="rounded-lg px-4 py-2 text-sm font-medium text-ink/70 hover:bg-cream">
-          Cancel
-        </button>
-        <button type="button" onClick={save} disabled={busy} className={btn("primary")}>
-          {busy ? "Working…" : "Post"}
-        </button>
-      </div>
-    </section>
-  );
-}
-
-type CreateKind = HomeworkKind | "material" | "question" | "topic";
-
-/** Google Classroom's "+ Create": assignment, quiz, question, material, then announcement and topic. */
-function CreateMenu({ onPick, classHref }: { onPick: (k: CreateKind) => void; classHref: (tab: string) => string }) {
-  const entries: { k: CreateKind; label: string; hint: string }[] = [
-    { k: "assignment", label: "Assignment", hint: "Work to hand in, marked by you" },
-    { k: "quiz", label: "Quiz assignment", hint: "Questions with a mark out of" },
-    { k: "question", label: "Question", hint: "One question; pupils answer in comments" },
-    { k: "material", label: "Material", hint: "Notes, files and links to read" },
-  ];
-  const items: MenuAction[] = [
-    { section: "Classwork", label: "" },
-    ...entries.map((e) => ({ label: e.label, hint: e.hint, onSelect: () => onPick(e.k) })),
-    { section: "Also", label: "" },
-    { label: "Announcement", href: classHref("stream") },
-    { label: "Topic", onSelect: () => onPick("topic") },
-  ];
-  return <ActionsMenu items={items} label="Create" trigger="primary" menuClassName="w-64" />;
 }
 
 /**
@@ -198,9 +72,16 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
   // topic's heading (its "+ Assignment"), or in place of the item being edited,
   // so nobody is thrown to the top of a long list.
   const [setting, setSetting] = useState<{ kind: HomeworkKind; editing: Hw | null; topicId: string; at: string } | null>(null);
-  const [newTopic, setNewTopic] = useState<string | null>(null);
+  // "Create" opens the kinds of classwork as cards; ?create=1 (the class header's "Set work") opens it on arrival.
+  const [picker, setPicker] = useState(canEdit && params.get("create") === "1");
+  const [newTopic, setNewTopic] = useState(false);
+  const [posting, setPosting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [note, setNote] = useState<string | null>(null);
+  // Classwork by kind (owner, 11 Nov 2026, item 6): a filter for each of the four kinds, and the
+  // list grouped by kind (Assignments, Quizzes, Questions, Materials) or by topic.
+  const [kindFilter, setKindFilter] = useState<"all" | ClassworkType>("all");
+  const [groupBy, setGroupBy] = useState<"kind" | "topic">("kind");
   const [view, setView] = useState<"all" | "review">(isStaff && params.get("view") === "review" ? "review" : "all");
   const [reviewHw, setReviewHw] = useState<string | undefined>(undefined);
   const [toReview, setToReview] = useState<Record<string, number>>({});
@@ -243,6 +124,14 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
     load();
   }, [load]);
 
+  // The class header's "Set work" while this section is already open.
+  useEffect(() => {
+    if (!canEdit) return;
+    const open = () => setPicker(true);
+    window.addEventListener(CLASSWORK_CREATE, open);
+    return () => window.removeEventListener(CLASSWORK_CREATE, open);
+  }, [canEdit]);
+
   // Work set from the class header's "Set work" panel (or anywhere else on the page): refresh.
   useEffect(() => {
     const onChanged = (e: Event) => {
@@ -272,19 +161,56 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
     setReviewHw(homeworkId);
     setView("review");
   };
-  const addTopic = async () => {
+  const addTopic = async (name: string): Promise<string | null> => {
     const supabase = getSupabaseClient();
-    const name = (newTopic || "").trim();
-    if (!supabase || !name) return;
+    if (!supabase || !name) return "Not connected.";
     const {
       data: { user },
     } = await supabase.auth.getUser();
     const { error: err } = await supabase.from("class_topics").insert({ class_id: classId, name, position: (topics?.length ?? 0) + 1, created_by: user?.id ?? null });
-    if (err) return setError(err.code === "23505" ? "There is already a topic with that name." : "Could not add the topic.");
+    if (err) return err.code === "23505" ? "There is already a topic with that name." : "Could not add the topic.";
     setError(null);
-    setNewTopic(null);
     load();
+    return null;
   };
+
+  // Arrived with ?create=1: drop it once the cards close, so a refresh doesn't reopen them.
+  const closePicker = () => {
+    setPicker(false);
+    if (params.get("create")) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("create");
+      window.history.replaceState(window.history.state, "", url.toString());
+    }
+  };
+
+  const pick = (k: CreatePick) => {
+    closePicker();
+    setView("all");
+    if (k === "topic") setNewTopic(true);
+    else if (k === "post") setPosting(true);
+    else if (k === "assignment" || k === "quiz") startSetting(k);
+    else {
+      setSetting(null);
+      setCreating(k);
+    }
+  };
+
+  // ?create=assignment|quiz|question|material (the Stream's "Or set classwork" links) opens that
+  // kind's own form once, straight away, instead of the cards.
+  const createKind = canEdit ? params.get("create") : null;
+  // Each request is handled once; `n` lets the class header ask again while you are already here.
+  const createKey = createKind ? `${createKind}:${params.get("n") || ""}` : "";
+  const [createHandled, setCreateHandled] = useState("");
+  useEffect(() => {
+    if (!createKey || createHandled === createKey || topics === null) return;
+    if (createKind === "assignment" || createKind === "quiz" || createKind === "question" || createKind === "material") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-off: open the form the link asked for
+      setCreateHandled(createKey);
+      pick(createKind);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once when the list has loaded
+  }, [topics, createKind, createKey, createHandled]);
 
   const removeTopic = async (t: Topic) => {
     const supabase = getSupabaseClient();
@@ -312,7 +238,19 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
 
   // Setting or editing work opens in a panel over the list (owner, 11 Nov 2026: actions open in
   // place, never as a page of their own); closing it leaves the list exactly where it was.
-  const editor = setting ? (
+  // A quiz is built in its own full-screen builder (questions, settings, AI draft, results);
+  // an assignment opens in the side panel.
+  const editor = setting?.kind === "quiz" ? (
+    <QuizBuilder
+      classId={classId}
+      className={classTitle}
+      homeworkId={setting.editing?.id ?? null}
+      topics={topics}
+      initialTopicId={setting.topicId}
+      onClose={() => setSetting(null)}
+      onSaved={(n) => setNote(n ?? null)}
+    />
+  ) : setting ? (
     <SetWorkPanel
       classId={classId}
       className={classTitle}
@@ -327,11 +265,17 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
     />
   ) : null;
 
-  const groups: { key: string; topic: Topic | null; items: Row[] }[] = [
-    { key: "none", topic: null, items: rows.filter((r) => !r.topicId || !topics.some((t) => t.id === r.topicId)) },
-    ...topics.map((t) => ({ key: t.id, topic: t, items: rows.filter((r) => r.topicId === t.id) })),
-  ];
-  const visibleGroups = groups.filter((g) => g.topic || g.items.length > 0 || (rows.length === 0 && !isStaff));
+  const kindOf = (r: Row): ClassworkType => (r.type === "homework" ? (r.row.kind === "quiz" ? "quiz" : "assignment") : r.row.kind);
+  const counts = Object.fromEntries(CLASSWORK_TYPES.map((t) => [t.kind, rows.filter((r) => kindOf(r) === t.kind).length])) as Record<ClassworkType, number>;
+  const filtered = kindFilter === "all" ? rows : rows.filter((r) => kindOf(r) === kindFilter);
+  const groups: { key: string; topic: Topic | null; items: Row[]; label?: string; icon?: IconName }[] =
+    groupBy === "kind"
+      ? CLASSWORK_TYPES.map((t) => ({ key: `kind-${t.kind}`, topic: null, label: KIND_GROUP[t.kind], icon: t.icon, items: filtered.filter((r) => kindOf(r) === t.kind) }))
+      : [
+          { key: "none", topic: null, items: filtered.filter((r) => !r.topicId || !topics.some((t) => t.id === r.topicId)) },
+          ...topics.map((t) => ({ key: t.id, topic: t, items: filtered.filter((r) => r.topicId === t.id) })),
+        ];
+  const visibleGroups = groups.filter((g) => (g.topic && kindFilter === "all") || g.items.length > 0 || (rows.length === 0 && !isStaff && groupBy === "topic"));
 
   return (
     <div className="space-y-4">
@@ -354,21 +298,9 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
           <p className="text-sm text-ink/65">Everything set for this class, grouped by topic.</p>
         )}
         {canEdit && (
-          <CreateMenu
-            classHref={classHref}
-            onPick={(k) => {
-              if (k === "topic") {
-                setView("all");
-                setNewTopic("");
-              }
-              else if (k === "assignment" || k === "quiz") startSetting(k);
-              else {
-                setSetting(null);
-                setView("all");
-                setCreating(k);
-              }
-            }}
-          />
+          <Button variant="primary" icon="plus" onClick={() => setPicker(true)} data-guide="classwork-create">
+            Create
+          </Button>
         )}
       </div>
 
@@ -383,40 +315,53 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
       )}
       {editor}
 
-      {newTopic !== null && (
-        <div className="flex flex-wrap gap-2 rounded-2xl border border-gold-light bg-white p-4">
-          <input type="text" value={newTopic} onChange={(e) => setNewTopic(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addTopic()} placeholder="Topic name, e.g. Week 3: Tajweed" aria-label="Topic name" maxLength={80} className="min-w-0 flex-1 rounded-lg border border-gold-light/70 px-3 py-2 text-sm" />
-          <button type="button" onClick={addTopic} disabled={!newTopic.trim()} className={btn("primary")}>
-            Add topic
-          </button>
-          <button type="button" onClick={() => setNewTopic(null)} className="rounded-lg px-3 py-2 text-sm text-ink/70 hover:bg-cream">
-            Cancel
-          </button>
-        </div>
-      )}
+      {picker && <CreatePicker onPick={pick} onClose={closePicker} />}
+      {newTopic && <TopicDialog onClose={() => setNewTopic(false)} onSave={addTopic} />}
+      {posting && <PostDialog classId={classId} onClose={() => setPosting(false)} onPosted={() => setNote("Posted to the class stream.")} />}
       {error && (
         <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
           {error}
         </p>
       )}
       {creating && (
-        <SidePanel title={creating === "question" ? "Ask a question" : "Post a material"} eyebrow={classTitle} onClose={() => setCreating(null)} size="lg">
-          <MaterialForm
-            classId={classId}
-            kind={creating}
-            topics={topics}
-            defaultTopic=""
-            onCancel={() => setCreating(null)}
-            onDone={() => {
-              setCreating(null);
-              load();
-            }}
-          />
-        </SidePanel>
+        <MaterialDialog
+          classId={classId}
+          kind={creating}
+          topics={topics}
+          onClose={() => setCreating(null)}
+          onDone={() => {
+            setCreating(null);
+            load();
+          }}
+        />
+      )}
+
+      {rows.length > 0 && (
+        <div className="flex flex-wrap items-center gap-2" data-guide="classwork-kinds">
+          <div role="group" aria-label="Show" className="flex flex-wrap gap-1.5">
+            <button type="button" aria-pressed={kindFilter === "all"} onClick={() => setKindFilter("all")} className={kindFilter === "all" ? ui.chipOn : ui.chip}>
+              All {rows.length}
+            </button>
+            {CLASSWORK_TYPES.map((t) => (
+              <button key={t.kind} type="button" aria-pressed={kindFilter === t.kind} onClick={() => setKindFilter(t.kind)} className={kindFilter === t.kind ? ui.chipOn : ui.chip} disabled={!counts[t.kind] && kindFilter !== t.kind}>
+                <Icon name={t.icon} size="sm" />
+                {KIND_GROUP[t.kind]} {counts[t.kind]}
+              </button>
+            ))}
+          </div>
+          <span className="flex-1" />
+          <div role="radiogroup" aria-label="Group by" className="inline-flex rounded-xl bg-cream p-1">
+            {(["kind", "topic"] as const).map((g) => (
+              <button key={g} type="button" role="radio" aria-checked={groupBy === g} onClick={() => setGroupBy(g)} className={`min-h-11 rounded-lg px-3 text-[0.8125rem] font-medium sm:min-h-8 ${groupBy === g ? "bg-white text-ink shadow-sm ring-1 ring-gold-light" : "text-ink/70 hover:text-ink"}`}>
+                {g === "kind" ? "By kind" : "By topic"}
+              </button>
+            ))}
+          </div>
+        </div>
       )}
 
       {rows.length === 0 && topics.length === 0 && (
-        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">{canEdit ? "No classwork yet. Use Create to add an assignment, quiz, question or material." : "Nothing has been set for this class yet."}</p>
+        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">{canEdit ? "No classwork yet. Press Create to add an assignment, a quiz, a question or a material." : "Nothing has been set for this class yet."}</p>
       )}
 
       {visibleGroups.map((g) => {
@@ -444,7 +389,15 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                 )}
               </div>
             ) : (
-              <h2 className="px-4 pt-3 text-sm font-semibold text-ink/65">{topics.length > 0 ? "No topic" : "Classwork"}</h2>
+              g.label ? (
+                <h2 className="flex items-center gap-2 px-4 pt-3 text-sm font-semibold text-ink">
+                  {g.icon && <Icon name={g.icon} className="h-4 w-4 text-ink/60" />}
+                  {g.label}
+                  <span className="text-xs font-normal text-ink/65">{g.items.length}</span>
+                </h2>
+              ) : (
+                <h2 className="px-4 pt-3 text-sm font-semibold text-ink/65">{topics.length > 0 ? "No topic" : "Classwork"}</h2>
+              )
             )}
             {!closed && (
               <ul className="divide-y divide-gold-light/60 px-2 pb-2">
@@ -460,13 +413,13 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                     <li key={`${r.type}-${r.id}`} className="px-3 py-2.5">
                       <div className="flex flex-wrap items-center gap-3">
                         <div className="min-w-0 flex-1">
-                          <p className="text-[11px] font-semibold uppercase tracking-wider text-ink/65">{KIND_LABEL[kindKey]}</p>
+                          {groupBy !== "kind" && <p className="text-[11px] font-semibold uppercase tracking-wider text-ink/65">{KIND_LABEL[kindKey]}</p>}
                           {hw && !isStaff ? (
                             <Link href={homeworkHref(viewer)} className="block truncate text-sm font-medium text-ink hover:text-teal-700 hover:underline">
                               {r.title}
                             </Link>
                           ) : (
-                            <button type="button" onClick={() => setExpanded(open ? null : `${r.type}-${r.id}`)} aria-expanded={open} className="block max-w-full truncate text-left text-sm font-medium text-ink hover:text-teal-700 hover:underline">
+                            <button type="button" onClick={() => (hw?.kind === "quiz" && canEdit ? startSetting("quiz", hw) : setExpanded(open ? null : `${r.type}-${r.id}`))} aria-expanded={hw?.kind === "quiz" && canEdit ? undefined : open} className="block max-w-full truncate text-left text-sm font-medium text-ink hover:text-teal-700 hover:underline">
                               {r.title}
                             </button>
                           )}

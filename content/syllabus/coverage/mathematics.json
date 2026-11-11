@@ -2,9 +2,9 @@
  "subject": "Mathematics",
  "board": "Pearson Edexcel",
  "code": "4MA1",
- "lessonCount": 138,
+ "lessonCount": 222,
  "points": 145,
- "covered": 111,
+ "covered": 120,
  "units": [
   {
    "ref": "Unit 1",
@@ -17,11 +17,12 @@
    "lessons": [
     "y10/1",
     "y10/17",
-    "y10/21",
     "y10/25",
     "y11/10",
     "y11/11",
-    "y11/33"
+    "y11/33",
+    "y11/52",
+    "y11/54"
    ],
    "points": [
     {
@@ -36,7 +37,8 @@
      "text": "Convert recurring decimals into fractions (1.3A, Higher).",
      "lessons": [
       "y10/1",
-      "y10/25"
+      "y10/25",
+      "y11/54"
      ]
     },
     {
@@ -52,7 +54,7 @@
      "lessons": [
       "y11/10",
       "y11/33",
-      "y10/21"
+      "y11/52"
      ]
     },
     {
@@ -74,9 +76,10 @@
     "y10/2",
     "y10/3",
     "y10/4",
-    "y10/5",
     "y10/19",
-    "y10/21"
+    "y11/54",
+    "y11/58",
+    "y11/75"
    ],
    "points": [
     {
@@ -92,8 +95,7 @@
      "n": 2,
      "text": "Express integers as products of powers of prime factors (1.4D).",
      "lessons": [
-      "y10/2",
-      "y10/4"
+      "y10/2"
      ]
     },
     {
@@ -101,7 +103,8 @@
      "text": "Find highest common factors and lowest common multiples (1.4E).",
      "lessons": [
       "y10/2",
-      "y10/19"
+      "y10/19",
+      "y11/58"
      ]
     },
     {
@@ -109,15 +112,15 @@
      "text": "Understand surds; simplify them and rationalise a denominator (1.4A, 1.4B, Higher).",
      "lessons": [
       "y10/4",
-      "y10/5"
+      "y11/75",
+      "y11/54"
      ]
     },
     {
      "n": 5,
      "text": "Use index laws with integer, fractional and negative powers in numerical expressions (1.4C, Higher).",
      "lessons": [
-      "y10/3",
-      "y10/21"
+      "y10/3"
      ]
     }
    ]
@@ -131,28 +134,29 @@
    "covered": 6,
    "total": 8,
    "lessons": [
-    "y10/3",
     "y10/6",
     "y10/7",
     "y10/8",
     "y10/9",
     "y10/10",
     "y10/31",
-    "y10/40",
-    "y10/44"
+    "y10/44",
+    "y11/55",
+    "y11/59",
+    "y11/65"
    ],
    "points": [
     {
      "n": 1,
      "text": "Use index laws in simple algebraic cases (2.1D).",
-     "lessons": []
+     "lessons": [
+      "y11/55"
+     ]
     },
     {
      "n": 2,
      "text": "Use index notation with fractional, negative and zero powers (2.1A, Higher).",
-     "lessons": [
-      "y10/3"
-     ]
+     "lessons": []
     },
     {
      "n": 3,
@@ -194,9 +198,9 @@
      "n": 7,
      "text": "Complete the square for a quadratic expression (2.2D, Higher).",
      "lessons": [
-      "y10/40",
       "y10/44",
-      "y10/7"
+      "y11/59",
+      "y11/65"
      ]
     },
     {
@@ -220,7 +224,9 @@
     "y10/17",
     "y10/29",
     "y10/30",
-    "y10/58"
+    "y10/32",
+    "y10/58",
+    "y11/58"
    ],
    "points": [
     {
@@ -250,7 +256,9 @@
      "n": 4,
      "text": "Change the subject, including where it appears twice or as a power (2.3A, Higher).",
      "lessons": [
-      "y10/12"
+      "y10/12",
+      "y11/58",
+      "y10/32"
      ]
     },
     {
@@ -274,11 +282,9 @@
     "y10/14",
     "y10/15",
     "y10/16",
-    "y10/37",
-    "y10/38",
-    "y10/43",
-    "y10/45",
-    "y11/6"
+    "y10/108",
+    "y11/6",
+    "y11/61"
    ],
    "points": [
     {
@@ -294,9 +300,9 @@
      "n": 2,
      "text": "Set up simple linear equations from given information (2.4B).",
      "lessons": [
-      "y10/37",
-      "y10/38",
-      "y10/43"
+      "y10/14",
+      "y10/108",
+      "y11/6"
      ]
     },
     {
@@ -305,7 +311,7 @@
      "lessons": [
       "y10/16",
       "y10/15",
-      "y10/45"
+      "y11/61"
      ]
     }
    ]
@@ -322,7 +328,8 @@
     "y10/47",
     "y10/48",
     "y10/49",
-    "y10/50"
+    "y10/50",
+    "y11/62"
    ],
    "points": [
     {
@@ -330,7 +337,6 @@
      "text": "Generate terms of a sequence from term-to-term and position-to-term rules (3.1).",
      "lessons": [
       "y10/47",
-      "y10/49",
       "y10/50"
      ]
     },
@@ -339,7 +345,8 @@
      "text": "Use the first term (a) and common difference (d) of an arithmetic sequence (3.1A, Higher).",
      "lessons": [
       "y10/48",
-      "y10/49"
+      "y10/49",
+      "y11/62"
      ]
     },
     {
@@ -351,8 +358,9 @@
      "n": 4,
      "text": "Find the sum of the first n terms of an arithmetic series (3.1C, Higher).",
      "lessons": [
+      "y10/49",
       "y10/48",
-      "y10/49"
+      "y11/62"
      ]
     }
    ]
@@ -362,10 +370,15 @@
    "title": "Graphical representation of data",
    "year": "Y10",
    "paper": "Papers 1H and 2H",
-   "status": "partial",
-   "covered": 3,
+   "status": "covered",
+   "covered": 4,
    "total": 4,
    "lessons": [
+    "y10/86",
+    "y10/87",
+    "y10/88",
+    "y10/90",
+    "y10/91",
     "y11/45",
     "y11/47",
     "y11/52"
@@ -375,26 +388,35 @@
      "n": 1,
      "text": "Present data with pictograms, bar charts, pie charts and two-way tables, and interpret them (6.1).",
      "lessons": [
-      "y11/45"
+      "y11/45",
+      "y10/88"
      ]
     },
     {
      "n": 2,
      "text": "Construct and interpret histograms for continuous data with unequal class intervals (6.1A, Higher).",
      "lessons": [
-      "y11/52"
+      "y11/52",
+      "y10/86",
+      "y10/87"
      ]
     },
     {
      "n": 3,
      "text": "Construct cumulative frequency diagrams from tabulated data (6.1B, Higher).",
-     "lessons": []
+     "lessons": [
+      "y10/90",
+      "y10/87",
+      "y10/91"
+     ]
     },
     {
      "n": 4,
      "text": "Use cumulative frequency diagrams (6.1C, Higher).",
      "lessons": [
-      "y11/47"
+      "y11/47",
+      "y10/90",
+      "y10/91"
      ]
     }
    ]
@@ -405,9 +427,11 @@
    "year": "Y10",
    "paper": "Papers 1H and 2H",
    "status": "partial",
-   "covered": 3,
+   "covered": 4,
    "total": 5,
    "lessons": [
+    "y10/91",
+    "y10/93",
     "y11/47",
     "y11/48",
     "y11/52",
@@ -417,7 +441,9 @@
     {
      "n": 1,
      "text": "Understand the concept of average (6.2A).",
-     "lessons": []
+     "lessons": [
+      "y10/93"
+     ]
     },
     {
      "n": 2,
@@ -437,6 +463,7 @@
      "text": "Estimate the median from a cumulative frequency diagram (6.2A, Higher).",
      "lessons": [
       "y11/47",
+      "y10/91",
       "y11/53"
      ]
     },
@@ -444,6 +471,7 @@
      "n": 5,
      "text": "Understand spread; find the interquartile range from data and from a cumulative frequency diagram (6.2B to 6.2D, Higher).",
      "lessons": [
+      "y10/91",
       "y11/47"
      ]
     }
@@ -454,34 +482,28 @@
    "title": "Fractions",
    "year": "Y10",
    "paper": "Papers 1H and 2H",
-   "status": "covered",
-   "covered": 5,
+   "status": "partial",
+   "covered": 4,
    "total": 5,
    "lessons": [
     "y10/1",
     "y10/11",
     "y10/18",
     "y10/25",
-    "y10/26",
-    "y10/27",
-    "y10/54"
+    "y10/26"
    ],
    "points": [
     {
      "n": 1,
      "text": "Order fractions and find a fraction of a quantity (1.2D).",
      "lessons": [
-      "y10/26",
-      "y10/27"
+      "y10/26"
      ]
     },
     {
      "n": 2,
      "text": "Express one number as a fraction of another (1.2E).",
-     "lessons": [
-      "y10/27",
-      "y10/54"
-     ]
+     "lessons": []
     },
     {
      "n": 3,
@@ -520,7 +542,8 @@
    "total": 5,
    "lessons": [
     "y10/25",
-    "y10/27",
+    "y10/28",
+    "y10/56",
     "y10/58",
     "y11/22",
     "y11/25"
@@ -530,7 +553,6 @@
      "n": 1,
      "text": "Express a number as a percentage of another; convert percentages to fractions and decimals (1.6B, 1.6C).",
      "lessons": [
-      "y10/27",
       "y10/25"
      ]
     },
@@ -540,7 +562,7 @@
      "lessons": [
       "y10/58",
       "y11/22",
-      "y10/27"
+      "y10/56"
      ]
     },
     {
@@ -552,6 +574,7 @@
      "n": 4,
      "text": "Use compound interest and depreciation (1.6G).",
      "lessons": [
+      "y10/28",
       "y11/25"
      ]
     },
@@ -560,6 +583,7 @@
      "text": "Use repeated percentage change and solve compound interest problems (1.6A, 1.6B, Higher).",
      "lessons": [
       "y11/25",
+      "y10/28",
       "y10/58"
      ]
     }
@@ -576,14 +600,12 @@
    "lessons": [
     "y10/26",
     "y10/29",
-    "y10/51",
-    "y10/52",
     "y10/53",
+    "y10/54",
     "y10/55",
     "y10/58",
     "y10/59",
-    "y11/22",
-    "y11/25"
+    "y10/94"
    ],
    "points": [
     {
@@ -599,9 +621,9 @@
      "n": 2,
      "text": "Divide a quantity in a given ratio or ratios (1.7B).",
      "lessons": [
+      "y10/54",
       "y10/26",
-      "y10/51",
-      "y10/52"
+      "y10/53"
      ]
     },
     {
@@ -617,16 +639,16 @@
      "n": 4,
      "text": "Solve word problems about ratio and proportion (1.7E).",
      "lessons": [
-      "y10/58",
-      "y11/22",
-      "y11/25"
+      "y10/54",
+      "y10/55",
+      "y10/58"
      ]
     },
     {
      "n": 5,
      "text": "Use number in everyday life, with standard units, time and money, including currency conversion (1.10A to 1.10C).",
      "lessons": [
-      "y10/51"
+      "y10/94"
      ]
     }
    ]
@@ -643,8 +665,7 @@
     "y10/21",
     "y10/23",
     "y10/24",
-    "y10/32",
-    "y10/36"
+    "y10/100"
    ],
    "points": [
     {
@@ -653,23 +674,23 @@
      "lessons": [
       "y10/21",
       "y10/23",
-      "y10/24"
+      "y10/100"
      ]
     },
     {
      "n": 2,
      "text": "Calculate with and interpret numbers in standard form (1.9A).",
      "lessons": [
-      "y10/24",
       "y10/23",
-      "y10/36"
+      "y10/24",
+      "y10/21"
      ]
     },
     {
      "n": 3,
      "text": "Solve problems involving standard form (1.9A, Higher).",
      "lessons": [
-      "y10/32"
+      "y10/24"
      ]
     }
    ]
@@ -694,8 +715,8 @@
      "n": 1,
      "text": "Use compound measures such as speed, density and pressure (4.4G).",
      "lessons": [
-      "y11/9",
       "y10/60",
+      "y11/9",
       "y10/59"
      ]
     },
@@ -712,8 +733,8 @@
      "n": 3,
      "text": "Convert between metric units of volume (4.10A).",
      "lessons": [
-      "y11/9",
       "y10/51",
+      "y11/9",
       "y11/33"
      ]
     }
@@ -724,18 +745,19 @@
    "title": "Geometry of shapes",
    "year": "Y10",
    "paper": "Papers 1H and 2H",
-   "status": "partial",
-   "covered": 4,
+   "status": "covered",
+   "covered": 5,
    "total": 5,
    "lessons": [
+    "y10/62",
     "y10/63",
     "y10/64",
-    "y10/65",
-    "y10/71",
+    "y10/95",
     "y11/28",
     "y11/31",
     "y11/34",
-    "y11/43"
+    "y11/43",
+    "y11/64"
    ],
    "points": [
     {
@@ -743,23 +765,26 @@
      "text": "Use angle properties of intersecting and parallel lines and angles on a straight line (4.1B).",
      "lessons": [
       "y10/63",
-      "y11/43",
-      "y10/65"
+      "y11/64",
+      "y11/43"
      ]
     },
     {
      "n": 2,
      "text": "Use the angle properties of isosceles, equilateral and right-angled triangles (4.1D).",
      "lessons": [
+      "y10/95",
       "y11/34",
-      "y10/65",
-      "y10/71"
+      "y10/63"
      ]
     },
     {
      "n": 3,
      "text": "Use the angle sum and properties of quadrilaterals, including parallelogram, rhombus, trapezium and kite (4.2B, 4.2C).",
-     "lessons": []
+     "lessons": [
+      "y10/62",
+      "y10/63"
+     ]
     },
     {
      "n": 4,
@@ -773,6 +798,7 @@
      "text": "Give reasons using standard geometrical statements for angles in lines, polygons and circles (4.7A, Higher).",
      "lessons": [
       "y11/28",
+      "y10/63",
       "y11/31"
      ]
     }
@@ -787,28 +813,28 @@
    "covered": 2,
    "total": 2,
    "lessons": [
-    "y10/39",
-    "y10/59",
+    "y10/103",
+    "y10/104",
     "y11/14",
-    "y11/17"
+    "y11/67"
    ],
    "points": [
     {
      "n": 1,
      "text": "Interpret information in linear and non-linear graphs, including distance-time and speed-time graphs (3.3A).",
      "lessons": [
-      "y10/39",
-      "y11/14",
-      "y11/17"
+      "y10/103",
+      "y10/104",
+      "y11/67"
      ]
     },
     {
      "n": 2,
      "text": "Read rates from real-life graphs, such as speed from a distance-time graph (3.3A).",
      "lessons": [
+      "y10/103",
       "y11/14",
-      "y11/17",
-      "y10/59"
+      "y10/104"
      ]
     }
    ]
@@ -818,27 +844,33 @@
    "title": "Linear graphs",
    "year": "Y10",
    "paper": "Papers 1H and 2H",
-   "status": "partial",
-   "covered": 4,
+   "status": "covered",
+   "covered": 5,
    "total": 5,
    "lessons": [
     "y10/35",
     "y10/36",
     "y10/37",
     "y10/38",
-    "y10/40",
+    "y10/39",
+    "y10/46",
+    "y10/107",
+    "y10/108",
+    "y10/112",
     "y11/2",
     "y11/23",
-    "y11/31"
+    "y11/31",
+    "y11/43",
+    "y11/61"
    ],
    "points": [
     {
      "n": 1,
      "text": "Find the midpoint of a line segment from its end points (3.3E).",
      "lessons": [
+      "y10/107",
       "y10/38",
-      "y10/37",
-      "y10/40"
+      "y10/112"
      ]
     },
     {
@@ -847,7 +879,7 @@
      "lessons": [
       "y11/23",
       "y10/36",
-      "y10/37"
+      "y10/39"
      ]
     },
     {
@@ -855,8 +887,8 @@
      "text": "Generate points and plot graphs of linear functions (3.3I).",
      "lessons": [
       "y10/35",
-      "y10/40",
-      "y11/2"
+      "y11/2",
+      "y10/37"
      ]
     },
     {
@@ -864,14 +896,18 @@
      "text": "Calculate the gradient from two points; find lines parallel or perpendicular to a given line (3.3F, 3.3G, Higher).",
      "lessons": [
       "y10/37",
-      "y10/38",
-      "y11/31"
+      "y11/31",
+      "y11/43"
      ]
     },
     {
      "n": 5,
      "text": "Show simple linear inequalities on graphs and identify regions, including harder examples (2.8D, 2.8E; 2.8B, Higher).",
-     "lessons": []
+     "lessons": [
+      "y10/46",
+      "y10/108",
+      "y11/61"
+     ]
     }
    ]
   },
@@ -884,15 +920,17 @@
    "covered": 5,
    "total": 5,
    "lessons": [
-    "y10/16",
+    "y10/15",
     "y10/35",
-    "y10/39",
     "y10/40",
     "y10/42",
     "y10/43",
     "y10/44",
-    "y10/45",
-    "y11/1"
+    "y10/109",
+    "y11/1",
+    "y11/59",
+    "y11/61",
+    "y11/65"
    ],
    "points": [
     {
@@ -901,32 +939,34 @@
      "lessons": [
       "y10/42",
       "y10/43",
-      "y10/44"
+      "y11/59"
      ]
     },
     {
      "n": 2,
      "text": "Solve quadratics with the quadratic formula or by completing the square (2.7B, Higher).",
      "lessons": [
-      "y10/44"
+      "y11/59",
+      "y10/44",
+      "y11/65"
      ]
     },
     {
      "n": 3,
      "text": "Form and solve quadratic equations from a context (2.7C, Higher).",
      "lessons": [
-      "y10/42",
-      "y10/39",
-      "y10/45"
+      "y10/109",
+      "y10/44",
+      "y10/15"
      ]
     },
     {
      "n": 4,
      "text": "Solve quadratic inequalities and show the solution set on a number line (2.8A, Higher).",
      "lessons": [
-      "y10/45",
-      "y10/16",
-      "y11/1"
+      "y10/43",
+      "y10/44",
+      "y11/61"
      ]
     },
     {
@@ -934,8 +974,8 @@
      "text": "Plot graphs of quadratic functions (3.3I).",
      "lessons": [
       "y10/35",
-      "y11/1",
-      "y10/40"
+      "y10/40",
+      "y11/1"
      ]
     }
    ]
@@ -950,16 +990,18 @@
    "total": 4,
    "lessons": [
     "y10/38",
-    "y10/62",
+    "y10/52",
     "y10/65",
-    "y10/70"
+    "y10/70",
+    "y10/111"
    ],
    "points": [
     {
      "n": 1,
      "text": "Construct triangles and other 2D shapes with ruler, protractor and compasses (4.5B).",
      "lessons": [
-      "y10/65"
+      "y10/65",
+      "y10/111"
      ]
     },
     {
@@ -967,22 +1009,23 @@
      "text": "Construct the perpendicular bisector of a line and the bisector of an angle (4.5D).",
      "lessons": [
       "y10/65",
-      "y10/62",
-      "y10/38"
+      "y10/38",
+      "y10/70"
      ]
     },
     {
      "n": 3,
      "text": "Use three-figure bearings (4.4D).",
      "lessons": [
-      "y10/70"
+      "y10/70",
+      "y10/111"
      ]
     },
     {
      "n": 4,
      "text": "Solve problems with scale drawings; use and interpret maps (4.5C, 4.11B).",
      "lessons": [
-      "y10/70"
+      "y10/52"
      ]
     }
    ]
@@ -996,13 +1039,15 @@
    "covered": 6,
    "total": 6,
    "lessons": [
-    "y10/22",
     "y10/61",
     "y10/71",
     "y10/72",
     "y10/73",
     "y10/75",
-    "y10/76"
+    "y10/76",
+    "y10/112",
+    "y10/113",
+    "y11/79"
    ],
    "points": [
     {
@@ -1010,8 +1055,8 @@
      "text": "Find perimeters and areas of triangles, rectangles, parallelograms and trapezia (4.9B to 4.9D).",
      "lessons": [
       "y10/71",
-      "y10/76",
-      "y10/72"
+      "y10/113",
+      "y10/76"
      ]
     },
     {
@@ -1020,15 +1065,16 @@
      "lessons": [
       "y10/72",
       "y10/75",
-      "y10/22"
+      "y10/113"
      ]
     },
     {
      "n": 3,
      "text": "Find perimeters and areas of sectors of circles (4.9A, Higher).",
      "lessons": [
-      "y10/72",
-      "y10/75"
+      "y10/113",
+      "y10/75",
+      "y10/112"
      ]
     },
     {
@@ -1037,7 +1083,7 @@
      "lessons": [
       "y10/71",
       "y10/73",
-      "y10/72"
+      "y11/79"
      ]
     },
     {
@@ -1045,8 +1091,8 @@
      "text": "Find volumes of prisms, including cuboids and cylinders (4.10E).",
      "lessons": [
       "y10/71",
-      "y10/61",
-      "y10/73"
+      "y11/79",
+      "y10/61"
      ]
     },
     {
@@ -1054,7 +1100,8 @@
      "text": "Find the surface area and volume of a sphere and a right circular cone (4.10A, Higher).",
      "lessons": [
       "y10/73",
-      "y10/71"
+      "y10/71",
+      "y11/79"
      ]
     }
    ]
@@ -1068,30 +1115,32 @@
    "covered": 5,
    "total": 5,
    "lessons": [
+    "y10/120",
+    "y10/121",
     "y11/34",
     "y11/35",
-    "y11/36",
     "y11/37",
-    "y11/39",
-    "y11/40"
+    "y11/40",
+    "y11/81",
+    "y11/97"
    ],
    "points": [
     {
      "n": 1,
      "text": "Know, understand and use Pythagoras' theorem in two dimensions (4.8A).",
      "lessons": [
-      "y11/34",
-      "y11/36",
-      "y11/37"
+      "y10/120",
+      "y10/121",
+      "y11/34"
      ]
     },
     {
      "n": 2,
      "text": "Use sine, cosine and tangent of acute angles to find lengths and angles (4.8B).",
      "lessons": [
+      "y10/121",
       "y11/35",
-      "y11/34",
-      "y11/39"
+      "y10/120"
      ]
     },
     {
@@ -1107,15 +1156,18 @@
      "n": 4,
      "text": "Use sine, cosine and tangent of obtuse angles (4.8A, Higher).",
      "lessons": [
+      "y10/121",
       "y11/35",
-      "y11/39"
+      "y11/97"
      ]
     },
     {
      "n": 5,
      "text": "Use angles of elevation and depression (4.8B, Higher).",
      "lessons": [
-      "y11/35"
+      "y11/35",
+      "y11/81",
+      "y11/97"
      ]
     }
    ]
@@ -1129,13 +1181,13 @@
    "covered": 3,
    "total": 6,
    "lessons": [
-    "y10/62",
     "y10/68",
     "y10/69",
     "y10/76",
     "y11/4",
     "y11/5",
-    "y11/41"
+    "y11/41",
+    "y11/80"
    ],
    "points": [
     {
@@ -1148,7 +1200,6 @@
      "text": "Reflect a shape in a mirror line and construct the mirror line (5.2D, 5.2E).",
      "lessons": [
       "y10/69",
-      "y10/62",
       "y11/5"
      ]
     },
@@ -1170,7 +1221,8 @@
      "text": "Enlarge a shape from a centre by a scale factor; angles are preserved, lengths are not (5.2J to 5.2L).",
      "lessons": [
       "y10/68",
-      "y10/76"
+      "y10/76",
+      "y11/80"
      ]
     },
     {
@@ -1195,21 +1247,25 @@
     "y11/8",
     "y11/14",
     "y11/16",
-    "y11/19"
+    "y11/19",
+    "y11/60",
+    "y11/66"
    ],
    "points": [
     {
      "n": 1,
      "text": "Recognise, plot and draw cubic, reciprocal and other given graphs, and y = sin x, cos x, tan x (3.3A, Higher).",
      "lessons": [
-      "y11/2"
+      "y11/2",
+      "y11/66"
      ]
     },
     {
      "n": 2,
      "text": "Apply y = f(x) + a, f(ax), f(x + a) and af(x) to linear, quadratic, sine and cosine graphs (3.3B, Higher).",
      "lessons": [
-      "y10/41"
+      "y10/41",
+      "y11/66"
      ]
     },
     {
@@ -1232,7 +1288,7 @@
      "lessons": [
       "y11/8",
       "y11/19",
-      "y11/3"
+      "y11/60"
      ]
     }
    ]
@@ -1249,7 +1305,8 @@
     "y11/6",
     "y11/7",
     "y11/8",
-    "y11/19"
+    "y11/19",
+    "y11/60"
    ],
    "points": [
     {
@@ -1275,8 +1332,8 @@
      "text": "Solve one linear and one quadratic equation simultaneously (2.7D, Higher).",
      "lessons": [
       "y11/8",
-      "y11/6",
-      "y11/19"
+      "y11/60",
+      "y11/6"
      ]
     }
    ]
@@ -1292,7 +1349,9 @@
    "lessons": [
     "y10/80",
     "y10/81",
-    "y10/82"
+    "y10/82",
+    "y11/87",
+    "y11/88"
    ],
    "points": [
     {
@@ -1304,7 +1363,8 @@
      "n": 2,
      "text": "Find probabilities from Venn diagrams and sample spaces (6.3D, 6.3E).",
      "lessons": [
-      "y10/80"
+      "y10/80",
+      "y11/88"
      ]
     },
     {
@@ -1322,7 +1382,8 @@
      "text": "Draw and use tree diagrams; find probabilities of independent events (6.3A, 6.3B, Higher).",
      "lessons": [
       "y10/81",
-      "y10/82"
+      "y10/82",
+      "y11/87"
      ]
     },
     {
@@ -1342,7 +1403,8 @@
    "total": 2,
    "lessons": [
     "y11/12",
-    "y11/13"
+    "y11/13",
+    "y11/56"
    ],
    "points": [
     {
@@ -1350,6 +1412,7 @@
      "text": "Identify upper and lower bounds of values given to a degree of accuracy (1.8C).",
      "lessons": [
       "y11/13",
+      "y11/56",
       "y11/12"
      ]
     },
@@ -1357,7 +1420,8 @@
      "n": 2,
      "text": "Solve problems using upper and lower bounds (1.8A, Higher).",
      "lessons": [
-      "y11/13"
+      "y11/13",
+      "y11/56"
      ]
     }
    ]
@@ -1368,35 +1432,44 @@
    "year": "Y11",
    "paper": "Papers 1H and 2H",
    "status": "partial",
-   "covered": 2,
+   "covered": 4,
    "total": 5,
    "lessons": [
-    "y10/80"
+    "y10/80",
+    "y11/88",
+    "y11/98"
    ],
    "points": [
     {
      "n": 1,
      "text": "Understand sets, the universal set and the empty set, with their symbols (1.5A, 1.5C).",
-     "lessons": []
+     "lessons": [
+      "y11/88"
+     ]
     },
     {
      "n": 2,
      "text": "Use the notation for union, intersection, element of and complement (1.5B, 1.5D).",
      "lessons": [
-      "y10/80"
+      "y11/88",
+      "y10/80",
+      "y11/98"
      ]
     },
     {
      "n": 3,
      "text": "Represent sets with Venn diagrams (1.5E).",
      "lessons": [
+      "y11/88",
       "y10/80"
      ]
     },
     {
      "n": 4,
      "text": "Understand sets defined algebraically and subsets (1.5A, Higher).",
-     "lessons": []
+     "lessons": [
+      "y11/88"
+     ]
     },
     {
      "n": 5,
@@ -1414,7 +1487,6 @@
    "covered": 2,
    "total": 5,
    "lessons": [
-    "y10/75",
     "y11/27",
     "y11/28",
     "y11/30"
@@ -1424,7 +1496,6 @@
      "n": 1,
      "text": "Know the parts of a circle: centre, radius, chord, diameter, circumference, tangent, arc, sector, segment (4.6).",
      "lessons": [
-      "y10/75",
       "y11/27"
      ]
     },
@@ -1463,21 +1534,21 @@
    "total": 4,
    "lessons": [
     "y10/15",
-    "y11/15",
+    "y10/112",
+    "y10/121",
     "y11/34",
     "y11/35",
     "y11/37",
-    "y11/39",
-    "y11/40"
+    "y11/39"
    ],
    "points": [
     {
      "n": 1,
      "text": "Use the sine and cosine rules for any triangle (4.8C, Higher).",
      "lessons": [
+      "y10/121",
       "y11/35",
-      "y11/39",
-      "y11/40"
+      "y11/39"
      ]
     },
     {
@@ -1499,7 +1570,7 @@
      "lessons": [
       "y11/37",
       "y10/15",
-      "y11/15"
+      "y10/112"
      ]
     }
    ]
@@ -1516,9 +1587,10 @@
     "y10/67",
     "y10/68",
     "y10/71",
-    "y10/72",
     "y10/74",
-    "y10/76"
+    "y10/76",
+    "y11/80",
+    "y11/85"
    ],
    "points": [
     {
@@ -1526,7 +1598,8 @@
      "text": "Understand congruence as the same shape and size (4.2F, 4.2G).",
      "lessons": [
       "y10/67",
-      "y10/68"
+      "y10/68",
+      "y11/85"
      ]
     },
     {
@@ -1534,6 +1607,7 @@
      "text": "Similar figures have corresponding lengths in the same ratio and equal angles (4.11A).",
      "lessons": [
       "y10/76",
+      "y11/80",
       "y10/71"
      ]
     },
@@ -1541,8 +1615,7 @@
      "n": 3,
      "text": "Areas of similar figures are in the ratio of the squares of corresponding sides (4.11A, Higher).",
      "lessons": [
-      "y10/76",
-      "y10/72"
+      "y10/76"
      ]
     },
     {
@@ -1560,37 +1633,46 @@
    "title": "Function notation",
    "year": "Y11",
    "paper": "Papers 1H and 2H",
-   "status": "partial",
-   "covered": 1,
+   "status": "covered",
+   "covered": 4,
    "total": 4,
    "lessons": [
-    "y10/33",
     "y10/34",
-    "y11/35"
+    "y11/63",
+    "y11/96",
+    "y11/98"
    ],
    "points": [
     {
      "n": 1,
      "text": "Understand a function as a mapping between two sets (3.2A, Higher).",
-     "lessons": []
+     "lessons": [
+      "y11/98",
+      "y11/63",
+      "y11/96"
+     ]
     },
     {
      "n": 2,
      "text": "Use f(x) = … and f : x ↦ … notation (3.2B, Higher).",
-     "lessons": []
+     "lessons": [
+      "y11/98"
+     ]
     },
     {
      "n": 3,
      "text": "Understand domain and range, and values excluded from a domain (3.2C, Higher).",
-     "lessons": []
+     "lessons": [
+      "y11/63"
+     ]
     },
     {
      "n": 4,
      "text": "Find composite functions fg and inverse functions f⁻¹ (3.2D, Higher).",
      "lessons": [
       "y10/34",
-      "y11/35",
-      "y10/33"
+      "y11/96",
+      "y11/63"
      ]
     }
    ]
@@ -1637,20 +1719,24 @@
    "year": "Y11",
    "paper": "Papers 1H and 2H",
    "status": "partial",
-   "covered": 3,
+   "covered": 4,
    "total": 5,
    "lessons": [
-    "y11/14",
+    "y10/39",
+    "y10/55",
+    "y10/94",
     "y11/16",
-    "y11/50"
+    "y11/50",
+    "y11/91"
    ],
    "points": [
     {
      "n": 1,
      "text": "Understand a variable rate of change (3.4A, Higher).",
      "lessons": [
-      "y11/14",
-      "y11/16"
+      "y10/39",
+      "y10/55",
+      "y10/94"
      ]
     },
     {
@@ -1675,7 +1761,9 @@
     {
      "n": 5,
      "text": "Apply calculus to linear kinematics and simple practical problems (3.4E, Higher).",
-     "lessons": []
+     "lessons": [
+      "y11/91"
+     ]
     }
    ]
   }

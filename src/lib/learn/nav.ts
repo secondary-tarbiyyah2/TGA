@@ -154,9 +154,9 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       icon: "library",
       pages: [
         { href: "/admin/curriculum/map", label: "Curriculum map", icon: "calendarDays", hint: "Every unit across the year; open a unit for its lessons, plan and specification", headOnly: true, keywords: "units year overview scheme" },
-        { href: "/admin/curriculum", label: "Lesson library", icon: "library", hint: "Lesson plans, resources and revision packs", headOnly: true, keywords: "lessons slides resources plans revision packs" },
+        { href: "/admin/curriculum", label: "Browse", icon: "folder", hint: "Years, subjects and units as folders, with their lessons and resources", headOnly: true, keywords: "lesson library lessons slides resources plans revision packs folders drive" },
         { href: "/admin/curriculum/review", label: "Lesson review", icon: "clipboardCheck", hint: "Submitted, changes requested and approved lessons", headOnly: true, keywords: "approve sign off quality check lessons" },
-        { href: "/admin/curriculum/resources", label: "Resources", icon: "printer", hint: "Each term's resource list: printables to download or share", headOnly: true, keywords: "worksheets quizzes tests mocks mark schemes knowledge organisers writing frames printables term resources" },
+        { href: "/admin/curriculum/resources", label: "Resources", icon: "printer", hint: "Resources in the Curriculum folders, and each term's printable list", headOnly: true, keywords: "worksheets quizzes tests mocks mark schemes knowledge organisers writing frames printables term resources" },
         { href: "/admin/planner", label: "Planner", icon: "layoutGrid", hint: "Long-term and week-by-week plans, unit by unit", headOnly: true, keywords: "long term plan medium term weekly" },
         { href: "/admin/syllabus", label: "Syllabus", icon: "scrollText", hint: "Schemes of work and exam specifications", headOnly: true, keywords: "scheme of work specification gcse spec" },
       ],
@@ -252,6 +252,8 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
         { href: "/teach/today", label: "Lessons and registers", icon: "userCheck", hint: "Today's lessons, with the register for each", matchPrefixes: ["/teach/enrichment"], keywords: "attendance register take the register lessons today teams join" },
         { href: "/teach/review", label: "To mark", icon: "clipboardCheck", hint: "Work handed in and waiting to be marked", badge: "review", keywords: "marking feedback submissions handed in", short: "To mark" },
         { href: "/teach/homework", label: "Classwork to action", icon: "notebookPen", hint: "To mark, missing and late, with links into each class", keywords: "homework late missing chase" },
+        // Its own page, apart from My pupils (owner, 11 Nov 2026): hear each Qur'an class recite.
+        { href: "/teach/quran", label: "Qur'an and Qaidah", icon: "bookMarked", hint: "Hear each Qur'an class recite, log mistakes and see each pupil's history", keywords: "quran hifz memorisation recitation qaidah mistakes tajweed strictness" },
       ],
     },
     {
@@ -259,7 +261,6 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       icon: "backpack",
       pages: [
         { href: "/teach/pupils", label: "My pupils", icon: "backpack", hint: "Records for the pupils you teach", keywords: "students children records" },
-        { href: "/teach/quran", label: "Qur'an and Qaidah", icon: "bookMarked", hint: "Recitation and memorisation progress", keywords: "quran hifz memorisation recitation qaidah" },
       ],
     },
     {
@@ -267,9 +268,9 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       icon: "library",
       pages: [
         { href: "/teach/curriculum/map", label: "Curriculum map", icon: "calendarDays", hint: "Every unit across the year; open a unit for its lessons, plan and specification", keywords: "units year overview scheme" },
-        { href: "/teach/curriculum", label: "Lesson library", icon: "library", hint: "Lesson plans, resources and revision packs", keywords: "lessons slides resources plans revision packs edit a lesson" },
+        { href: "/teach/curriculum", label: "Browse", icon: "folder", hint: "Years, subjects and units as folders, with their lessons and resources", keywords: "lesson library lessons slides resources plans revision packs edit a lesson folders drive" },
         { href: "/teach/curriculum/review", label: "Lesson review", icon: "clipboardCheck", hint: "Lessons in review, sent back or approved", keywords: "approve sign off lessons" },
-        { href: "/teach/curriculum/resources", label: "Resources", icon: "printer", hint: "Each term's resource list: printables to download or share", keywords: "worksheets quizzes tests mocks mark schemes knowledge organisers writing frames printables term resources" },
+        { href: "/teach/curriculum/resources", label: "Resources", icon: "printer", hint: "Resources in the Curriculum folders, and each term's printable list", keywords: "worksheets quizzes tests mocks mark schemes knowledge organisers writing frames printables term resources" },
         { href: "/teach/planner", label: "Planner", icon: "layoutGrid", hint: "Long-term and week-by-week plans, unit by unit", keywords: "long term plan medium term weekly" },
         { href: "/teach/syllabus", label: "Syllabus", icon: "scrollText", hint: "Schemes of work and exam specifications", keywords: "scheme of work specification gcse spec" },
       ],
