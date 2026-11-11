@@ -52,7 +52,7 @@ export function SchoolFeatures({ canChange }: { canChange: boolean }) {
 
   return (
     <div data-guide="school-features" className="rounded-2xl border border-gold-light bg-white">
-      <div className="border-t border-gold-light">
+      <div>
         {failed ? (
           <p className="px-5 py-5 text-sm text-ink/70">Couldn&apos;t load the school features. Refresh the page to try again.</p>
         ) : !values ? (

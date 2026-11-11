@@ -267,7 +267,7 @@ function MessagingSettings() {
     setMsg(error ? "Couldn't save. Only a Headteacher or Admin can change this." : "Saved.");
   };
 
-  if (days === null) return null;
+  if (days === null) return <p className="t-meta">Nothing to show yet. Only a Headteacher or Admin can see these.</p>;
   return (
     <Section title="Messages" hint="Staff and parents can message each other. Students have no private messaging." onSave={save} busy={busy} message={msg}>
       <Field label="Keep messages for (days)" help="Conversations with no new messages for this long are deleted automatically. 730 days is about two school years.">
@@ -281,6 +281,7 @@ type ClockInSettings = { require_clock_in: boolean; clock_in_roles: string[]; au
 
 function ClockInSettingsSection() {
   const [s, setS] = useState<ClockInSettings | null>(null);
+  const [loaded, setLoaded] = useState(false);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
@@ -292,7 +293,10 @@ function ClockInSettingsSection() {
       .select("require_clock_in, clock_in_roles, auto_clock_out_hours")
       .eq("id", true)
       .maybeSingle()
-      .then(({ data }) => setS((data as ClockInSettings | null) || null));
+      .then(({ data }) => {
+        setS((data as ClockInSettings | null) || null);
+        setLoaded(true);
+      });
   }, []);
 
   const save = async () => {
@@ -308,7 +312,7 @@ function ClockInSettingsSection() {
     setMsg(error ? "Couldn't save. Only a Headteacher or Admin can change this." : "Saved.");
   };
 
-  if (!s) return null;
+  if (!s) return <p className="t-meta">{loaded ? "Couldn't load these. Only a Headteacher or Admin can see them." : "Loading"}</p>;
   return (
     <Section title="Staff clock-in" hint="Staff who must clock in see a clock-in screen instead of the portal until they do." onSave={save} busy={busy} message={msg}>
       <div className="space-y-4">

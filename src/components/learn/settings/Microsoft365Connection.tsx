@@ -72,7 +72,7 @@ export function Microsoft365Connection() {
     void test();
   };
 
-  if (!allowed) return null;
+  if (!allowed) return <p className="t-meta">Only a Headteacher or Admin can see this.</p>;
   const meetings = status?.meetings;
 
   return (

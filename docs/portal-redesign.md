@@ -37,8 +37,14 @@ Batches and status:
    they went); the selected chip's count is readable again. People: Staff / Families switch beside the search,
    role chips under it, one bordered list with shared `Pagination` (was a card around everything with Show
    more). Staff profiles already list and detail; unchanged.
-3. [ ] Records. 4. [ ] Other settings pages
-   (School settings, Account, Academic setup, Admissions and Recruitment settings). 5. [ ] Workflows (Reports'
+3. [ ] Records.
+4. [x] Settings pages, part 1: School settings (`/admin/settings`) is a `SettingsPage`: School features, School
+   details, Lessons and attendance, Messages, Staff clock-in, Microsoft 365, AI helpers, Related pages down the
+   left, one at a time, `?section=`; the accordions (`<details>`) in SchoolFeatures, Microsoft365Connection and
+   AiUsage became plain panels; a section with no access or no data says so instead of vanishing. Your account
+   (`/account`) is one panel of `SettingsGroup` rows (Password, Messages, Notifications, Parent PIN, Weekly email,
+   Your feedback); gold-filled buttons there became the forest primary. `SectionNav`'s phone dropdown now has the
+   input box (was borderless). Still to do: Academic setup, Admissions and Recruitment settings. 5. [ ] Workflows (Reports'
    own sections as stages, Admissions, Entry assessments, Timetable). 6. [ ] Workspaces and Today, Messages,
    Calendar, Qur'an, absences.
 
