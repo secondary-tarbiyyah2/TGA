@@ -110,6 +110,31 @@ body {
   line-height: 1.65;
 }
 
+/* Public website reading sizes (owner, 11 Nov 2026: "fonts a bit too small").
+   The marketing layout wraps every public page in .site-type; the portal
+   (/learn) keeps its own denser scale. Unlayered, so these win over
+   Tailwind's text-* utilities on the public site only. */
+.site-type {
+  font-size: 18px;
+}
+.site-type .text-xs {
+  font-size: 0.84375rem; /* 13.5px */
+  line-height: 1.45;
+}
+.site-type .text-sm {
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+}
+.site-type .text-base {
+  font-size: 1.125rem; /* 18px */
+}
+.site-type .text-lg {
+  font-size: 1.25rem; /* 20px */
+}
+.site-type .text-xl {
+  font-size: 1.375rem; /* 22px */
+}
+
 /* Tailwind's preflight resets <button> to `cursor: default` (matching the
    native OS default) rather than `pointer`– every clickable button on
    this site (option cards, CTAs, admin controls) needs the hand cursor

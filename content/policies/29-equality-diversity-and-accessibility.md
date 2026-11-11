@@ -7,9 +7,8 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Headteacher
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2)
 nextReview: 31 August 2027
-basis: Combines and adapts the Tarbiyyah Secondary Equal Opportunity Policy, Disability Equality (DDA) Policy and Accessibility Plan (outdated legislation and site-based content removed) for online provision
 readAlongside: SEND and Inclusion Policy; Admissions Policy; Anti-Bullying and Cyberbullying Policy; Curriculum Policy; Live Lesson Protocols
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
@@ -51,7 +50,7 @@ In a physical school, an accessibility plan focuses on ramps, lifts and classroo
 | Access to the curriculum | Captions and transcripts in live lessons; Immersive Reader; recorded explanations; adapted resources; assistive technology; flexible camera arrangements | From launch; reviewed termly |
 | Access to information | Policies and letters available in large print, accessible PDFs and plain-English summaries; key information available in other languages on request. The website's Policies page lets families search the policies, jump to a group, and request any policy in another format | From launch |
 | Digital platforms | Website and portals built to WCAG 2.2 AA (keyboard access, colour contrast, screen reader support, reduced motion); annual accessibility audit | Launch and annually |
-| Assessments | Access arrangements configured in Safe Exam Browser and Forms; alternative formats where needed | Ongoing |
+| Assessments | Access arrangements (such as extra time and rest breaks) set up in the Student Portal and Forms; alternative formats where needed | Ongoing |
 | Staff | Training on accessible teaching and inclusive online practice | Annually |
 
 This plan runs from January 2027 to January 2030 and is reviewed annually.

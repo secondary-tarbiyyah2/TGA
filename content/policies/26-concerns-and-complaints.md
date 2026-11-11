@@ -7,9 +7,8 @@ appliesTo: Parents of current pupils and anyone with an interest in the Academy
 owner: Headteacher
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2)
 nextReview: 31 August 2027
-basis: Adapted from the Tarbiyyah Secondary Complaints Policy 2025–26 for online provision, incorporating the TGA parent concern escalation route (teacher → form tutor → pastoral lead → Headteacher, 48-hour response)
 readAlongside: Parent Communication Charter; Admissions Policy; SEND and Inclusion Policy; Child Protection and Safeguarding Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
@@ -44,7 +43,7 @@ We aim to acknowledge every concern within two school days (48 hours) and to res
 
 ## 5. Stage 2 — Formal Complaint to the Headteacher
 
-If a concern is not resolved, parents may make a formal complaint in writing using the Complaint Form in Appendix A (or by email, including the same information) to globalacademy@tarbiyyah.co.uk, marked "For the attention of the Headteacher". Complaints should be made within three months of the issue arising.
+If a concern is not resolved, parents may make a formal complaint in writing to globalacademy@tarbiyyah.co.uk, marked "For the attention of the Headteacher", using the [Complaint Form](https://globalacademy.tarbiyyah.co.uk/policies/complaint-form/) (also available from the Academy office) or an email that gives the same information. Complaints should be made within three months of the issue arising.
 
 - The Headteacher (or a senior leader not involved) acknowledges the complaint within five school days and offers a video meeting.
 - The complaint is investigated, including review of relevant records such as lesson recordings where appropriate.
@@ -74,16 +73,3 @@ The Academy is committed to dealing with all complaints fairly. Where a complain
 ## 9. External Routes
 
 The decision of the Complaints Panel is the final stage of the Academy's procedure. This does not affect families' statutory rights, including their rights as consumers under the Consumer Rights Act 2015, and families may seek independent advice at any stage. Safeguarding concerns can always be raised directly with the local authority.
-
-## Appendix A — Complaint Form
-
-| Detail | Please complete |
-| --- | --- |
-| Your name | |
-| Your email and phone number | |
-| Pupil's name and year group | |
-| What is your complaint about? | |
-| Who have you already raised it with, and when? | |
-| What was the result? | |
-| What would you like the Academy to do to resolve it? | |
-| Signature and date | |
