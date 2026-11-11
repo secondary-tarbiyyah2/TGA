@@ -320,7 +320,7 @@ export function SidePanel({ title, eyebrow, onClose, children, footer, label }: 
   return (
     <div className="portal fixed inset-0 z-[90] flex items-end justify-end sm:items-stretch">
       <button type="button" aria-label="Close" tabIndex={-1} onClick={onClose} className="portal-scrim absolute inset-0 bg-ink/35" />
-      <div ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby={titleId} aria-label={label} className="portal-sheet relative flex max-h-[88vh] w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl outline-none sm:max-h-none sm:w-[min(32rem,92vw)] sm:rounded-none sm:border-l sm:border-gold-light">
+      <div ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby={titleId} aria-label={label} className="portal-sheet relative flex max-h-[88vh] w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl outline-none sm:max-h-none sm:w-[min(36rem,92vw)] sm:rounded-none sm:border-l sm:border-gold-light">
         <div className="flex items-start gap-3 border-b border-gold-light px-5 py-4">
           <div className="min-w-0 flex-1">
             {eyebrow && <div className="t-eyebrow mb-1">{eyebrow}</div>}
