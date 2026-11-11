@@ -40,7 +40,7 @@ export async function invite(body: Record<string, unknown>): Promise<InviteResul
 }
 
 export function friendlyError(result: InviteResult): string {
-  if (result.error === "head_teacher_required") return "Only a Headteacher can add or re-invite a Headteacher or Admin.";
+  if (result.error === "head_teacher_required") return "Only a Headteacher can add or re-invite a Headteacher, an Admin or a Digital Lead.";
   if (result.error === "missing_or_invalid_fields") return "Please check the name and email address.";
   if (result.error === "forbidden") return "Only a Headteacher or Admin account can add people. Sign in with one of those accounts, or ask the Headteacher to add them.";
   const base = edgeErrorMessage(result);
@@ -64,11 +64,12 @@ export const CHIP_STYLES: Record<LearnRole, string> = {
   teacher: "bg-teal-100 text-teal-900",
   teaching_assistant_cover: "bg-teal-100 text-teal-900",
   senco: "bg-teal-100 text-teal-900",
+  digital_lead: "bg-teal-100 text-teal-900",
   parent: "bg-cream text-ink/75",
   student: "bg-cream text-ink/75",
 };
 
-export const ROLE_PRIORITY: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "parent", "student"];
+export const ROLE_PRIORITY: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "digital_lead", "parent", "student"];
 
 /** The portal's one input style (see ui.tsx). */
 export const INPUT_CLASS = ui.input;

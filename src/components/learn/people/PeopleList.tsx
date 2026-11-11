@@ -20,7 +20,7 @@ const TABS: { id: Tab; label: string; roles: LearnRole[]; chips: Chip[] }[] = [
   {
     id: "staff",
     label: "Staff",
-    roles: ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"],
+    roles: ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "digital_lead"],
     chips: [
       { id: "all", label: "All staff", roles: [] },
       { id: "head", label: "Headteacher", roles: ["head_teacher"] },
@@ -29,6 +29,7 @@ const TABS: { id: Tab; label: string; roles: LearnRole[]; chips: Chip[] }[] = [
       { id: "teachers", label: "Teachers", roles: ["teacher"] },
       { id: "cover", label: "Assistants & cover", roles: ["teaching_assistant_cover"] },
       { id: "senco", label: "SENCo", roles: ["senco"] },
+      { id: "digital", label: "Digital Lead", roles: ["digital_lead"] },
     ],
   },
   {

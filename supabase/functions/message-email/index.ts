@@ -27,7 +27,7 @@ const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
 const db = createClient(supabaseUrl, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 const LEARN = (Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk").replace(/\/$/, "");
 const THROTTLE_MS = 30 * 60 * 1000;
-const STAFF_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"];
+const STAFF_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "digital_lead"];
 
 type Thread = { id: string; kind: string; title: string | null; parent_id: string | null; teacher_id: string | null; staff_a_id: string | null; staff_b_id: string | null };
 

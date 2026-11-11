@@ -30,12 +30,13 @@ const learnSiteUrl = Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.
 
 const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 
-const ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "parent", "student"] as const;
+const ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "digital_lead", "parent", "student"] as const;
 type Role = (typeof ROLES)[number];
 const ADD_ON_PERMISSIONS = ["timetabler", "safeguarding_lead", "can_export_data", "assessment_lead"] as const;
 type AddOn = (typeof ADD_ON_PERMISSIONS)[number];
 
-const SENSITIVE_ROLES: Role[] = ["head_teacher", "admin"];
+// Digital Lead reviews what admins do, so only the Headteacher names one.
+const SENSITIVE_ROLES: Role[] = ["head_teacher", "admin", "digital_lead"];
 const SENSITIVE_ADD_ONS: AddOn[] = ["safeguarding_lead"];
 
 // Kept local rather than shared with the frontend's role-label helper
@@ -49,6 +50,7 @@ const ROLE_LABEL: Record<Role, string> = {
   teacher: "Teacher",
   teaching_assistant_cover: "Teaching Assistant/Cover",
   senco: "SENCo",
+  digital_lead: "Digital Lead",
   parent: "Parent",
   student: "Student",
 };
@@ -59,7 +61,8 @@ const ROLE_LABEL: Record<Role, string> = {
 // anything under /learn.
 function legacyProfileRole(role: Role): string {
   if (role === "head_teacher" || role === "admin" || role === "admissions") return "admin";
-  if (role === "teacher" || role === "teaching_assistant_cover" || role === "senco") return "teacher";
+  // Never "admin" for a Digital Lead: the legacy admin value opens the old admin read policies.
+  if (role === "teacher" || role === "teaching_assistant_cover" || role === "senco" || role === "digital_lead") return "teacher";
   return role; // 'parent' | 'student'
 }
 

@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
-export const LEARN_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "parent", "student"] as const;
+export const LEARN_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "digital_lead", "parent", "student"] as const;
 export type LearnRole = (typeof LEARN_ROLES)[number];
 
-export const STAFF_ROLES: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"];
+export const STAFF_ROLES: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "digital_lead"];
 
 export type RoleGrant = { role: LearnRole; scope_type: "none" | "class" | "family"; scope_id: string | null };
 
@@ -19,6 +19,7 @@ const ROLE_LABELS: Record<LearnRole, string> = {
   teacher: "Teacher",
   teaching_assistant_cover: "Teaching Assistant / Cover",
   senco: "SENCo",
+  digital_lead: "Digital Lead",
   parent: "Parent",
   student: "Student",
 };
@@ -33,6 +34,7 @@ export function learnRoleLabel(role: LearnRole): string {
 export function dashboardPathForRole(role: LearnRole): string {
   // A SENCo account works in the Teaching area; its home opens the SEND register.
   if (role === "teacher" || role === "teaching_assistant_cover" || role === "senco") return "/teach/dashboard";
+  // A Digital Lead works in the Admin area; its home opens the Audit log.
   if (role === "parent") return "/family/dashboard";
   if (role === "student") return "/student/dashboard";
   return "/admin/dashboard";
