@@ -7,6 +7,7 @@ import { CredentialsCard } from "./StudentCredentials";
 import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
 import { CHIP_STYLES, GOLD_BUTTON, INPUT_CLASS, friendlyError, initials, invite, type Person } from "./shared";
 import { Tabs } from "@/components/learn/Tabs";
+import { Pagination } from "@/components/learn/templates/parts";
 import { btn as btnClass, ui } from "@/components/learn/ui";
 
 import { askConfirm, Loading } from "@/components/learn/kit";
@@ -247,7 +248,7 @@ export function PeopleList({
   const [tab, setTab] = useState<Tab>("staff");
   const [chip, setChip] = useState("all");
   const [search, setSearch] = useState(initialSearch);
-  const [limit, setLimit] = useState(PAGE);
+  const [page, setPage] = useState(0);
   const tabDef = TABS.find((t) => t.id === tab) as (typeof TABS)[number];
 
   const inTab = useMemo(() => {
@@ -277,32 +278,33 @@ export function PeopleList({
   const switchTab = (k: Tab) => {
     setTab(k);
     setChip("all");
-    setLimit(PAGE);
+    setPage(0);
   };
 
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white">
-      <div className="space-y-3 border-b border-gold-light/40 p-4">
-        <input
-          type="search"
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            setLimit(PAGE);
-          }}
-          placeholder="Search by name, email, year group or class…"
-          aria-label="Search people"
-          data-guide="people-search"
-          className={INPUT_CLASS}
-        />
+    <div className="space-y-3">
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center gap-2">
         <Tabs
           variant="switch"
-          fill
           items={TABS.map((t) => ({ key: t.id, label: t.label, count: inTab[t.id].length }))}
           value={tab}
           onChange={switchTab}
           label="People"
         />
+        <input
+          type="search"
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(0);
+          }}
+          placeholder="Search by name, email, year group or class…"
+          aria-label="Search people"
+          data-guide="people-search"
+          className={`${INPUT_CLASS} !w-auto min-w-[14rem] flex-1`}
+        />
+        </div>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by role">
           {tabDef.chips.map((f) => (
             <button
@@ -311,7 +313,7 @@ export function PeopleList({
               aria-pressed={chip === f.id}
               onClick={() => {
                 setChip(f.id);
-                setLimit(PAGE);
+                setPage(0);
               }}
               className={chip === f.id ? ui.chipOn : ui.chip}
             >
@@ -321,6 +323,7 @@ export function PeopleList({
         </div>
       </div>
 
+      <div className="rounded-[10px] border border-gold-light bg-[var(--portal-surface)]">
       {loading ? (
         <Loading label="Loading…" bare />
       ) : error ? (
@@ -348,29 +351,21 @@ export function PeopleList({
       ) : (
         <>
           <ul className="divide-y divide-gold-light/30">
-            {shown.slice(0, limit).map((p) => (
+            {shown.slice(page * PAGE, page * PAGE + PAGE).map((p) => (
               <PersonRow key={p.key} person={p} onAddChild={onAddChild} onChanged={onChanged} />
             ))}
           </ul>
-          {(shown.length > limit || otherMatches > 0) && (
-            <div className="flex flex-wrap items-center gap-3 border-t border-gold-light/40 px-4 py-3 text-sm text-ink/65">
-              {shown.length > limit && (
-                <>
-                  Showing {limit} of {shown.length}.
-                  <button type="button" onClick={() => setLimit((n) => n + PAGE)} className={ui.btnLink}>
-                    Show more
-                  </button>
-                </>
-              )}
-              {otherMatches > 0 && (
-                <button type="button" onClick={() => switchTab(other)} className={`${ui.btnLink} sm:ml-auto`}>
-                  {otherMatches} more in {TABS.find((t) => t.id === other)?.label}
-                </button>
-              )}
+          {otherMatches > 0 && (
+            <div className="border-t border-gold-light/40 px-4 py-2.5 text-sm">
+              <button type="button" onClick={() => switchTab(other)} className={ui.btnLink}>
+                {otherMatches} more in {TABS.find((t) => t.id === other)?.label}
+              </button>
             </div>
           )}
         </>
       )}
+      </div>
+      {!loading && !error && shown.length > PAGE && <Pagination page={page} size={PAGE} total={shown.length} onPage={setPage} />}
     </div>
   );
 }
