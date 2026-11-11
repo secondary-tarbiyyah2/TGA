@@ -3,79 +3,98 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Icon } from "@/components/learn/Icon";
-import { StatusChip, ui } from "@/components/learn/ui";
-import { CATEGORIES, categoryOf, type CategoryKey, type Role } from "@/lib/learn/actionCentre";
+import { ui } from "@/components/learn/ui";
+import { CATEGORIES, categoryOf, type ActionArea, type ActionItem, type Role } from "@/lib/learn/actionCentre";
 import { useActionItems } from "@/components/learn/actions/useActionItems";
+import { MarkingPanel } from "@/components/learn/classwork/MarkingPanel";
 
-const SHOW = 6;
+/** How many items each category shows on Today before "See all". */
+const PER_CATEGORY = 2;
+
+/** Work to mark opens the marking panel over the page; everything else goes to the page that does it. */
+export const marksInPlace = (i: ActionItem) => i.area === "Marking" || /\/(teach|admin)\/(homework|review)$/.test(i.href);
 
 /**
- * The dashboard's "Waiting for you" list: everything that needs this person,
- * filtered in place by category (Admissions, Attendance, ...), each row with
- * its own button. Nothing at all when all is clear (the pinned sidebar link
- * already carries the count). The full list, with Mark done and printing,
- * stays on the Action centre page.
+ * Today's "Waiting for you": what needs this person, sorted into tidy category boxes
+ * (Attendance, Classwork, Pupils and SEND, Documents...) with a count each, the most urgent two
+ * items in each with one clear button, and "See all" for the rest on the Waiting for you page
+ * (owner, 11 Nov 2026: "things should be separated and compartmentalised"). Nothing at all when
+ * all is clear. `extra` adds items only this page knows about (the head's lessons to approve);
+ * `skipAreas` leaves out what Today already shows (a teacher's registers are in Your day).
  */
-export function ActionCentreWidget({ role }: { role: Role }) {
+export function ActionCentreWidget({ role, extra = [], skipAreas = [] }: { role: Role; extra?: ActionItem[]; skipAreas?: ActionArea[] }) {
   const { items } = useActionItems(role);
-  const [cat, setCat] = useState<CategoryKey | "all">("all");
-  const urgent = (items || []).filter((i) => i.urgency !== "info");
-  if (!urgent.length) return null;
+  const [marking, setMarking] = useState(false);
+  const staff = role === "teach" || role === "admin";
+  const urgent = [...extra, ...(items || [])].filter((i) => i.urgency !== "info" && !skipAreas.includes(i.area));
+  if (items === null || !urgent.length) return null;
   const base = role === "teach" ? "/teach" : role === "admin" ? "/admin" : role === "family" ? "/family" : "/student";
-  const cats = CATEGORIES.map((c) => {
-    const list = urgent.filter((i) => categoryOf(i.area) === c.key);
-    return { ...c, count: list.length, now: list.some((i) => i.urgency === "now") };
-  }).filter((c) => c.count > 0);
-  const active = cat !== "all" && cats.some((c) => c.key === cat) ? cat : "all";
-  const shown = active === "all" ? urgent : urgent.filter((i) => categoryOf(i.area) === active);
+  const rank = { now: 0, soon: 1, info: 2 } as const;
+  const groups = CATEGORIES.map((c) => {
+    const list = urgent.filter((i) => categoryOf(i.area) === c.key).sort((a, b) => rank[a.urgency] - rank[b.urgency]);
+    return { ...c, list, now: list.filter((i) => i.urgency === "now").length };
+  }).filter((c) => c.list.length > 0);
 
   return (
-    <section data-guide="waiting-widget" aria-labelledby="ac-widget" className="rounded-2xl border border-gold-light bg-white p-4 sm:p-5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 id="ac-widget" className="text-base font-semibold text-ink">
+    <section data-guide="waiting-widget" aria-labelledby="ac-widget">
+      <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
+        <h2 id="ac-widget" className="t-section">
           Waiting for you <span className="font-normal text-ink/60">· {urgent.length}</span>
         </h2>
-        <Link href={`${base}/actions${active === "all" ? "" : `?cat=${active}`}`} className={`${ui.btnSecondary} ${ui.sm}`}>
-          See everything
+        <Link href={`${base}/actions`} className="text-sm font-medium text-forest-700 hover:underline">
+          Open Waiting for you
         </Link>
       </div>
-      {cats.length > 1 && (
-        <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Show">
-          <button type="button" aria-pressed={active === "all"} onClick={() => setCat("all")} className={active === "all" ? ui.chipOn : ui.chip}>
-            All
-          </button>
-          {cats.map((c) => (
-            <button key={c.key} type="button" aria-pressed={active === c.key} onClick={() => setCat(c.key)} className={`${active === c.key ? ui.chipOn : ui.chip} gap-1.5`}>
-              <Icon name={c.icon} size="sm" />
-              {c.label}
-              <span className={`rounded-full px-1.5 text-xs font-semibold tabular-nums ${c.now ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>{c.count}</span>
-            </button>
-          ))}
-        </div>
-      )}
-      <ul className="mt-3 divide-y divide-gold-light/70">
-        {shown.slice(0, SHOW).map((i) => (
-          <li key={i.id} className="flex flex-wrap items-center gap-3 py-2.5">
-            <StatusChip tone={i.urgency === "now" ? "bad" : "warn"}>{i.area}</StatusChip>
-            <div className="min-w-0 flex-1 basis-56">
-              <p className="truncate text-sm font-semibold text-ink">{i.title}</p>
-              {i.detail && <p className="truncate text-xs text-ink/65">{i.detail}</p>}
-            </div>
-            <Link href={i.href} className={`${ui.btnSecondary} ${ui.sm}`}>
-              {i.cta || "Open"}
-            </Link>
-          </li>
-        ))}
+      <ul className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3">
+        {groups.map((g) => {
+          const headingId = `ac-w-${g.key}`;
+          return (
+            <li key={g.key} className={`flex flex-col rounded-[10px] border bg-white ${g.now ? "border-red-200" : "border-gold-light"}`}>
+              <section aria-labelledby={headingId} className="flex flex-1 flex-col">
+                <div className="flex items-center gap-2 border-b border-gold-light/70 px-4 py-2.5">
+                  <Icon name={g.icon} size="sm" className="h-4 w-4 text-ink/65" />
+                  <h3 id={headingId} className="min-w-0 flex-1 truncate text-sm font-semibold text-ink">
+                    {g.label}
+                  </h3>
+                  <span className={`rounded-full px-2 text-xs font-semibold leading-5 tabular-nums ${g.now ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>
+                    {g.list.length}
+                    {g.now > 0 && <span className="sr-only">, {g.now} to do now</span>}
+                  </span>
+                </div>
+                <ul className="flex-1 divide-y divide-gold-light/60">
+                  {g.list.slice(0, PER_CATEGORY).map((i) => (
+                    <li key={i.id} className="flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-2.5">
+                      <div className="min-w-[11rem] flex-1">
+                        <p className="line-clamp-2 text-sm font-medium text-ink">
+                          {i.urgency === "now" && <span className="mr-1.5 inline-block h-2 w-2 rounded-full bg-red-600 align-middle" aria-hidden="true" />}
+                          {i.urgency === "now" && <span className="sr-only">Do now: </span>}
+                          {i.title}
+                        </p>
+                      </div>
+                      {staff && marksInPlace(i) ? (
+                        <button type="button" onClick={() => setMarking(true)} aria-haspopup="dialog" className={`${ui.btnSecondary} ${ui.sm} shrink-0`}>
+                          {i.cta}
+                        </button>
+                      ) : (
+                        <Link href={i.href} className={`${ui.btnSecondary} ${ui.sm} shrink-0`}>
+                          {i.cta}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+                {g.list.length > PER_CATEGORY && (
+                  <Link href={`${base}/actions?cat=${g.key}`} className="flex min-h-11 items-center gap-1 border-t border-gold-light/70 px-4 text-sm font-medium text-forest-700 hover:bg-[var(--portal-hover)]">
+                    See all {g.list.length} in {g.label}
+                    <Icon name="chevronRight" size="sm" />
+                  </Link>
+                )}
+              </section>
+            </li>
+          );
+        })}
       </ul>
-      {shown.length > SHOW && (
-        <p className="mt-2 text-xs text-ink/60">
-          and {shown.length - SHOW} more under{" "}
-          <Link href={`${base}/actions${active === "all" ? "" : `?cat=${active}`}`} className="font-medium text-teal-700 hover:underline">
-            Waiting for you
-          </Link>
-          .
-        </p>
-      )}
+      {marking && <MarkingPanel onClose={() => setMarking(false)} />}
     </section>
   );
 }

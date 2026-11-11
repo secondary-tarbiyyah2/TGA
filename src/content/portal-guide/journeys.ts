@@ -32,7 +32,7 @@ export const JOURNEYS: Record<GuideRole, Journey[]> = {
       title: "The morning check",
       summary: "Today and the Action centre, admissions, safeguarding, registers, staff cover and policies.",
       steps: [
-        { href: "/admin/dashboard", target: "admin-stats", title: "Today's figures", body: "Lessons today, things needing attention, lessons to approve and curriculum progress." },
+        { href: "/admin/dashboard", target: "waiting-widget", title: "Waiting for you", body: "Every job sorted into boxes by type, each line with its own button." },
         { href: "/admin/dashboard", target: "admin-lessons-today", title: "Registers", body: "Any lesson showing Register missing needs chasing." },
         { href: "/admin/actions", target: "waiting-list", title: "Waiting for you", body: "The Action centre: work down Do now, then This week. Press a line to see it and act on it beside the list." },
         { href: "/admin/admissions", target: "admissions-list", title: "Admissions", body: "New applications arrive here. Move each one on with the arrows." },
