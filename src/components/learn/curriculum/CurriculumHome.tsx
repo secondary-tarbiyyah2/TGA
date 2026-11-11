@@ -10,6 +10,7 @@ import { btn } from "@/components/learn/ui";
 import { CurriculumBrowser } from "@/components/learn/curriculum/CurriculumBrowser";
 import { CurriculumLibrary } from "@/components/learn/curriculum/CurriculumLibrary";
 import { TermResources } from "@/components/learn/curriculum/TermResources";
+import { useFeature } from "@/lib/learn/features";
 
 /** The Curriculum's views and tools, offered from the browser's header (one menu, not a strip). */
 export function curriculumTools(area: "admin" | "teach"): MenuAction[] {
@@ -26,6 +27,7 @@ function Inner({ area, mode }: { area: "admin" | "teach"; mode: "library" | "res
   const params = useSearchParams();
   const router = useRouter();
   const classic = params.get("classic") === "1";
+  const revisionOn = useFeature("revision_packs");
   const terms = params.get("terms") === "1";
   // Resources live in the same browser now: the old Resources address opens it showing resources.
   const toBrowser = mode === "resources" && !terms;
@@ -49,7 +51,7 @@ function Inner({ area, mode }: { area: "admin" | "teach"; mode: "library" | "res
         <PageHeader
           crumbs={[...crumbs, { label: "Unit tools" }]}
           title="Unit tools"
-          subtitle="The unit's lessons with every action, its specification points, connections, revision pack and pupil results."
+          subtitle={revisionOn ? "The unit's lessons with every action, its specification points, connections, revision pack and pupil results." : "The unit's lessons with every action, its specification points and connections."}
           back={{ label: "Back to the folder", href: `/${area}/curriculum?${new URLSearchParams([...params.entries()].filter(([k]) => k !== "classic")).toString()}` }}
         />
         <p className="-mt-3 mb-4 text-sm">

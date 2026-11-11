@@ -7,6 +7,7 @@ import { attachHomework } from "@/lib/learn/homeworkStatus";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { MARK_COLUMNS, nextSession, pupilStats, revisionRows, todayISO, type QuranMark, type Session } from "@/lib/learn/quranClassroom";
+import { loadFeatures } from "@/lib/learn/features";
 import { reviewState, type RegisterRow } from "@/lib/learn/send";
 import { fetchAbsences, fetchNotes } from "@/components/learn/absences/data";
 import { shiftDateKey, ukNowHm, ukToday } from "@/lib/learn/ukTime";
@@ -125,8 +126,10 @@ export async function loadStaffItems(role: "teach" | "admin"): Promise<ActionIte
   }
 
   items.push(...(await loadSendItems(base)));
-  items.push(...(await loadRevisionItems(base)));
-  items.push(...(await loadLessonFeedbackItems(base).catch(() => [] as ActionItem[])));
+  // School features the Headteacher has switched off add nothing here (Settings, School features).
+  const features = await loadFeatures();
+  if (features.revision_packs) items.push(...(await loadRevisionItems(base)));
+  if (features.lesson_feedback) items.push(...(await loadLessonFeedbackItems(base).catch(() => [] as ActionItem[])));
   items.push(...(await loadOwnSignatureItems().catch(() => [] as ActionItem[])));
   if (role === "teach") items.push(...(await loadTeacherDayItems().catch(() => [] as ActionItem[])));
   if (role === "teach") items.push(...(await loadQuranTeacherItems()));

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { isSidebarItemActive, mobileTabsFor, type PortalArea } from "@/lib/learn/nav";
 import { useNavBadges } from "@/lib/learn/navBadges";
+import { useFeatures } from "@/lib/learn/features";
 import { Icon } from "@/components/learn/Icon";
 
 // The four places each kind of user goes most, one tap away at the bottom
@@ -19,7 +20,8 @@ const cell = "flex min-h-[56px] w-full flex-col items-center justify-center gap-
 export function MobileTabBar({ area, roles }: { area: PortalArea; roles: string[] }) {
   const pathname = usePathname() || "";
   const badges = useNavBadges(area);
-  const items = mobileTabsFor(area, roles);
+  const features = useFeatures();
+  const items = mobileTabsFor(area, roles, features);
   if (!items.length) return null;
   return (
     <nav aria-label="Quick links" data-tour="tabbar" className="portal-tabbar fixed inset-x-0 bottom-0 z-30 border-t border-gold-light lg:hidden print:hidden">

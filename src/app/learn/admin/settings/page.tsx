@@ -4,11 +4,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
-import { learnRoleLabel, STAFF_ROLES } from "@/lib/learn/session";
+import { learnRoleLabel, STAFF_ROLES, useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { FormSection, LoadingState, Switch, ui } from "@/components/learn/ui";
 import { Microsoft365Connection } from "@/components/learn/settings/Microsoft365Connection";
 import { AiUsage } from "@/components/learn/settings/AiUsage";
+import { SchoolFeatures } from "@/components/learn/settings/SchoolFeatures";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 
 type LmsSettings = {
@@ -341,6 +342,12 @@ function ClockInSettingsSection() {
   );
 }
 
+/** School features: only the Headteacher and Admin can change them (admissions staff can see them). */
+function SchoolFeaturesSection() {
+  const { roles } = useLearnSession();
+  return <SchoolFeatures canChange={roles.some((r) => r.role === "head_teacher" || r.role === "admin")} />;
+}
+
 function Shortcuts() {
   const links = [
     { href: "/admin/people", title: "Accounts", text: "Add students, parents, teachers and admins." },
@@ -369,8 +376,9 @@ export default function AdminSettingsPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
-        <PageHeader title="Settings" subtitle="School details, alerts, retention, staff clock-in and connections. Open a section to change it." />
+        <PageHeader title="Settings" subtitle="School features, school details, alerts, retention, staff clock-in and connections. Open a section to change it." />
         <div className="space-y-5">
+          <SchoolFeaturesSection />
           <SchoolDetails />
           <LessonSettings />
           <MessagingSettings />
