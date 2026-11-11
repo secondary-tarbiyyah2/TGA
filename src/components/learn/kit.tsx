@@ -556,7 +556,7 @@ export function WorkspaceHeader({
       <div className="mt-1.5 flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
         <div className="min-w-[min(100%,18rem)] flex-1">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <h1 className="text-[1.5rem] font-semibold leading-tight tracking-tight text-ink">{title}</h1>
+            <h1 className="min-w-0 text-[1.5rem] font-semibold leading-tight tracking-tight text-ink [overflow-wrap:anywhere]">{title}</h1>
             {status}
           </div>
           {meta && <div className="mt-1 text-sm text-ink/65">{meta}</div>}

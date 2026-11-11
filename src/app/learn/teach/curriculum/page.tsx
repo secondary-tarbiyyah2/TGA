@@ -17,7 +17,7 @@ export default function TeachCurriculumPage() {
           />
           <CurriculumLibrary area="teach" />
           <p className="mt-4 text-sm text-ink/75">
-            Looking for the official specifications and syllabuses? <Link href="/teach/syllabus" className="font-semibold text-teal-800 underline">Open Syllabus and specifications</Link>.
+            Looking for the official specifications and syllabuses? <Link href="/teach/syllabus" className="font-semibold text-teal-800 underline">Open the Syllabus</Link>.
           </p>
         </LearnShell>
       </LearnGate>

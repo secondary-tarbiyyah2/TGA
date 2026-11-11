@@ -2,7 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Tabs } from "@/components/learn/Tabs";
-import { ui } from "@/components/learn/ui";
+import { Status, ui } from "@/components/learn/ui";
+import { Icon } from "@/components/learn/Icon";
+import { focusTitle, isFoundingHalfTerm } from "@/lib/learn/syllabusPlan";
 import { classColour } from "@/lib/learn/classes";
 import { YEARS, yearLabel } from "@/lib/learn/curriculum";
 import { useLearnSession } from "@/lib/learn/session";
@@ -38,7 +40,7 @@ import {
 import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Modal";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, Loading } from "@/components/learn/kit";
 import { usePageTips } from "@/components/learn/tour/usePageTips";
 const YEAR_KEY = "tga-planner-year";
 const btn = `${ui.btnSecondary} ${ui.sm}`;
@@ -218,17 +220,17 @@ export function CurriculumPlanner() {
 
   return (
     <div className="space-y-4">
-      <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4">
+      <div className="space-y-2.5 border-b border-gold-light pb-4">
         <div data-tour="planner-years" data-guide="planner-years">
           <Tabs variant="switch" items={YEARS.map((y) => ({ key: y, label: yearLabel(y).replace("Year ", "Y") }))} value={year} onChange={setYear} label="Year group" />
         </div>
-        <p className="text-sm text-ink/75">
+        <p className="max-w-[80ch] text-sm text-ink-700">
           {ks4
             ? "Years 10 and 11 follow the exam board's specification: each unit sits in the term the board suggests. Open a unit to change its points or add a week-by-week plan."
             : "Each subject's units for the year, half term by half term. Open a unit to change what it covers or plan it week by week."}{" "}
           {canEdit ? "Changes save for everyone straight away." : "You can look but not change the plan."}
         </p>
-        <p data-tour="planner-status" className="text-xs text-ink/65" aria-live="polite">
+        <p data-tour="planner-status" className="t-meta text-xs" aria-live="polite">
           {lastEdit?.updated_by_name ? `Last change in ${yearLabel(year)}: ${lastEdit.updated_by_name}, ${when(lastEdit.updated_at)}. ` : ""}
           {pending ? "Waiting to be copied to the syllabus pack. " : ""}
           {sync ? `Last copied to the syllabus pack and slides: ${when(sync.finished_at || sync.started_at)}${sync.ok ? "" : " (that run did not finish; it will try again)"}.` : "Not yet copied to the syllabus pack."}
@@ -255,61 +257,77 @@ export function CurriculumPlanner() {
           {error}
         </p>
       )}
-      {units === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
+      {units === null && <Loading label={`Loading the ${yearLabel(year)} plan`} lines={6} />}
       {units && subjects.length === 0 && !error && (
         <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">The curriculum has not been loaded into the planner yet. It is filled from the syllabus files the first time the sync runs.</p>
       )}
 
       {units && subjects.length > 0 && (
+        <div className="@container">
         <div data-tour="planner-grid" data-guide="planner-grid" className="overflow-hidden rounded-2xl border border-gold-light bg-white">
-          {/* Column headings: only on wide screens, where the grid shows. */}
-          <div className="hidden border-b border-gold-light bg-cream lg:grid" style={{ gridTemplateColumns: `10rem repeat(${allColumns.length}, minmax(0, 1fr))` }}>
-            <span className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Subject</span>
-            {allColumns.map((c) => (
-              <span key={c.key} className="border-l border-gold-light px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/65">
-                {c.label}
-              </span>
-            ))}
+          {/* Column headings: only where the grid has room (a container query, so the sidebar is allowed for). */}
+          <div className="hidden border-b border-gold-light bg-cream/60 @5xl:grid" style={{ gridTemplateColumns: `9.5rem repeat(${allColumns.length}, minmax(0, 1fr))` }}>
+            <span className="t-eyebrow flex items-end px-3 pb-2.5">Subject</span>
+            {allColumns.map((c, i) => {
+              const term = c.label.split(" ")[0];
+              const firstOfTerm = i === 0 || allColumns[i - 1].label.split(" ")[0] !== term;
+              const halfTerm = c.key !== NOT_PLACED && !ks4;
+              return (
+                <span key={c.key} className="border-l border-gold-light px-3 pb-2.5 pt-3">
+                  <span className={`block text-[0.6875rem] font-semibold ${halfTerm && firstOfTerm ? "text-ink" : "text-transparent"}`} aria-hidden={!(halfTerm && firstOfTerm)}>
+                    {halfTerm ? term : "."}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-xs font-semibold text-ink-500">
+                    {c.label}
+                    {halfTerm && isFoundingHalfTerm(c.key) && <span title="Taught in the founding year, 2027" aria-label="founding year" className="h-1.5 w-1.5 rounded-full bg-forest-500" />}
+                  </span>
+                </span>
+              );
+            })}
           </div>
           <ul>
             {subjects.map((s) => {
               const mine = sortUnits(forYear.filter((u) => u.subject_slug === s.slug));
               return (
-                <li key={s.slug} className="border-t border-gold-light first:border-t-0 lg:grid" style={{ gridTemplateColumns: `10rem repeat(${allColumns.length}, minmax(0, 1fr))` }}>
-                  <h2 className="flex items-center gap-2 bg-cream/60 px-3 py-2 text-sm font-semibold text-ink lg:bg-transparent">
-                    <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: classColour(s.slug) }} />
+                <li key={s.slug} className="border-t border-gold-light first:border-t-0 @5xl:grid" style={{ gridTemplateColumns: `9.5rem repeat(${allColumns.length}, minmax(0, 1fr))` }}>
+                  <h2 className="flex items-center gap-2 bg-cream/60 px-3 py-2.5 text-[0.8125rem] font-semibold text-ink @5xl:items-start @5xl:bg-transparent">
+                    <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full @5xl:mt-1.5" style={{ backgroundColor: classColour(s.slug) }} />
                     {s.name}
                   </h2>
-                  <div className="grid gap-px bg-gold-light/60 sm:grid-cols-2 lg:contents">
+                  <div className="grid gap-px bg-gold-light sm:grid-cols-2 @5xl:contents">
                     {allColumns.map((c) => {
                       const cell = mine.filter((u) => columnOf(u) === c.key);
                       return (
-                        <div key={c.key} className="min-w-0 bg-white px-3 py-2 lg:border-l lg:border-gold-light">
-                          <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-ink/55 lg:hidden">{c.label}</p>
+                        <div key={c.key} className="group/cell grid min-w-0 grid-cols-[4.5rem_minmax(0,1fr)] items-start gap-x-2 bg-white p-2 sm:block @5xl:border-l @5xl:border-gold-light">
+                          <p className="t-eyebrow px-1 pt-2 sm:mb-1.5 sm:pt-0 @5xl:hidden">{HALF_TERMS.find((h) => h.key === c.key)?.short || c.label}</p>
+                          <div className="min-w-0">
                           <ul className="space-y-1.5">
                             {cell.map((u, i) => (
-                              <li key={u.id} className="group flex items-start gap-1">
+                              <li key={u.id} className="flex items-start gap-1">
                                 <button
                                   type="button"
                                   onClick={() => setEditing({ draft: draftFromSnapshot(u, true), original: u })}
-                                  className="min-w-0 flex-1 rounded-lg border border-gold-light bg-white px-2 py-1.5 text-left text-sm text-ink hover:border-teal-700 hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700"
+                                  aria-label={`${canEdit ? "Edit" : "Open"} ${u.title}`}
+                                  className="min-w-0 flex-1 rounded-lg border border-gold-light bg-white p-2.5 text-left transition-[border-color,box-shadow] duration-150 hover:border-ink/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest-700"
                                 >
-                                  <span className="block font-medium leading-snug">
-                                    {u.ref ? `${u.ref} ` : ""}
-                                    {u.title}
+                                  <span className="block text-[0.8125rem] font-semibold leading-snug text-ink [overflow-wrap:anywhere]">
+                                    {u.ref ? <span className="mr-1 tabular-nums text-forest-700">{u.ref}</span> : null}
+                                    {u.kind === "spec" ? u.title : focusTitle(u.title)}
                                   </span>
-                                  <span className="block text-xs text-ink/60">
-                                    {u.weeks.length ? `${u.weeks.length} week${u.weeks.length === 1 ? "" : "s"} planned` : "No weekly plan yet"}
-                                    {ks4 ? ` · ${u.year.toUpperCase()}` : ""}
+                                  <span className="mt-1.5 block">
+                                    <Status kind={u.weeks.length ? "completed" : "unavailable"} className="!text-[0.6875rem]">
+                                      {u.weeks.length ? `${u.weeks.length}-week plan` : "No weekly plan yet"}
+                                      {ks4 ? ` · ${u.year.toUpperCase()}` : ""}
+                                    </Status>
                                   </span>
                                 </button>
                                 {canEdit && cell.length > 1 && (
                                   <span className="flex flex-col">
-                                    <button type="button" disabled={busy || i === 0} onClick={() => move(u, -1)} aria-label={`Move ${u.title} up`} className="rounded px-1 text-xs text-ink/60 hover:bg-cream disabled:opacity-30">
-                                      ▲
+                                    <button type="button" disabled={busy || i === 0} onClick={() => move(u, -1)} aria-label={`Move ${u.title} up`} title="Move up" className="flex h-6 w-6 items-center justify-center rounded text-ink-500 hover:bg-cream hover:text-ink disabled:opacity-30">
+                                      <Icon name="chevronUp" className="h-3.5 w-3.5" />
                                     </button>
-                                    <button type="button" disabled={busy || i === cell.length - 1} onClick={() => move(u, 1)} aria-label={`Move ${u.title} down`} className="rounded px-1 text-xs text-ink/60 hover:bg-cream disabled:opacity-30">
-                                      ▼
+                                    <button type="button" disabled={busy || i === cell.length - 1} onClick={() => move(u, 1)} aria-label={`Move ${u.title} down`} title="Move down" className="flex h-6 w-6 items-center justify-center rounded text-ink-500 hover:bg-cream hover:text-ink disabled:opacity-30">
+                                      <Icon name="chevronDown" className="h-3.5 w-3.5" />
                                     </button>
                                   </span>
                                 )}
@@ -317,10 +335,11 @@ export function CurriculumPlanner() {
                             ))}
                           </ul>
                           {canEdit && (
-                            <button type="button" onClick={() => setEditing({ draft: newDraft(s.slug, s.name, c.key) })} className={`mt-1 ${ui.btnLink} !text-xs`}>
-                              + Add unit
+                            <button type="button" onClick={() => setEditing({ draft: newDraft(s.slug, s.name, c.key) })} className="mt-1.5 inline-flex min-h-8 items-center gap-1 rounded-md px-1.5 text-xs font-medium text-ink-500 transition-colors hover:bg-cream hover:text-forest-700 focus-visible:text-forest-700 @5xl:opacity-60 @5xl:group-hover/cell:opacity-100 @5xl:focus-visible:opacity-100">
+                              <Icon name="plus" className="h-3.5 w-3.5" /> Add unit
                             </button>
                           )}
+                          </div>
                         </div>
                       );
                     })}
@@ -329,6 +348,10 @@ export function CurriculumPlanner() {
               );
             })}
           </ul>
+        </div>
+        <p className="t-meta mt-2 flex items-center gap-1.5 text-xs">
+          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-forest-500" /> Half terms taught in the founding year (January to July 2027). Select a unit to {canEdit ? "edit it" : "see it"} in place.
+        </p>
         </div>
       )}
 

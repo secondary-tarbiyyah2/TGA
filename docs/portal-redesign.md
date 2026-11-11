@@ -58,8 +58,20 @@ action and location, gold only as a marker, one status language (dot and word), 
    CSS, so the website's dropdown is unchanged); dashboard greeting at a calmer size; phones from 360px fit every top-bar
    control. The other curriculum pages (Lesson library, Lesson review, Resources, Planner) pick all of this up through
    the tokens, `PageHeader` and the section tabs.
-5. Next candidates: the Lesson library's own unit and lesson layout (`CurriculumLibrary.tsx`, 1,600 lines) and the
-   Planner grid could take the map's card and timeline language; dashboard stat strips could use `t-title` figures.
+5. [x] Lesson library, lesson workspace and Planner in the map's language (PR "Portal redesign 2: Lesson library and
+   Planner"). Sidebar: the aside now runs the full page height (stone all the way down) with the menu sticky inside
+   at window height and scrolling on its own (it was `fixed`, so long-page captures showed a blank strip).
+   Library: one control bar (year, search, subject, half term, exam board) and quick filters for review status (All,
+   Approved, In review, Not yet submitted; replacing "Signed off only"); the overview is a list per subject with each
+   unit's half term (from the planner's `curriculum_units`, else the unit's own name), progress bar and status; the
+   unit header shows subject, year and half term (linked to the map), approved out of written and anything waiting;
+   lessons are a clean list (number, title, status, objectives on demand, Open plus a menu holding every previous
+   action). The unit list keeps the open unit in view. Lesson workspace: section labels as small capitals, the
+   current lesson marked in gold, previous and next lesson as the map's "Builds on / Leads to" pair. Planner: controls
+   as a bar, half-term columns with term headings and founding-year dots (container query, so it only becomes a grid
+   where it fits), unit cards with a weekly-plan status, chevron move buttons, a quiet Add unit; phones list each half
+   term as a compact row. Editing in place (the unit dialog) is unchanged; `data-guide` and `data-tour` targets kept.
+6. Next candidates: dashboard stat strips with `t-title` figures; Resources page list styling.
 
 Screenshots of this pass (made-up data, mocked Supabase) were taken at 1440, 1280, 768, 375 and 360px with
 `scratchpad/redesign2/shots.mjs`-style Playwright scripts: build with `NEXT_PUBLIC_SUPABASE_URL=https://mock.supabase.co`

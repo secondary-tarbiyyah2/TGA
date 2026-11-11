@@ -122,12 +122,12 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
 
   return (
     <ConfirmProvider>
-    <div className="portal min-h-screen">
+    <div className="portal min-h-screen lg:flex">
       <ActivityRecorder />
       <InstallAppSetup />
       <PortalSidebar area={area} session={activeSession} roles={roles} collapsed={collapsed} onToggle={toggleSidebar} />
 
-      <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-[var(--portal-ease)] motion-reduce:transition-none ${collapsed ? "lg:pl-[var(--portal-rail-w)]" : "lg:pl-[var(--portal-sidebar-w)]"}`}>
+      <div className="flex min-h-screen min-w-0 flex-1 flex-col">
         <header className="portal-topbar sticky top-0 z-20">
           <div className="flex h-[var(--portal-topbar-h)] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
