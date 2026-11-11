@@ -14,5 +14,9 @@
 3. **Branches and PRs:** branch from `main` as `claude/<topic>`; never push to
    `main`. The sandbox usually can't run `npm`, so CI (lint, `tsc`, build,
    a11y, `supabase test db`) is the check: open the PR and make sure it's green.
-4. **Migrations** are numbered in `supabase/migrations/`; take the next free
+4. **Owner's standing rule (11 Nov 2026):** "keep doing it, i want u to have used the lms i showed u for
+   inspo BUT i need the structure to be clearly different". Ihsan LMS (`Bananamc/madrasa-maina`) and SchoolMS
+   are sources of feature ideas only: every TGA page's structure and layout must be clearly different from
+   both, in TGA's own design (DESIGN.md). Never copy their code.
+5. **Migrations** are numbered in `supabase/migrations/`; take the next free
    number from `main` at the time you open the PR.
