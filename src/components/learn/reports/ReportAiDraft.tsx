@@ -101,11 +101,11 @@ export function ReportAiDraft({
           </label>
           <div className="grid gap-2 sm:grid-cols-2">
             <label className={ui.label}>
-              Pronoun
+              Boy or girl
               <Select value={pronoun} onChange={(e) => setPronoun(e.target.value)} className={`mt-1 ${ui.select}`}>
                 <option value="">Use their name</option>
-                <option value="he">he / him</option>
-                <option value="she">she / her</option>
+                <option value="he">Boy (he)</option>
+                <option value="she">Girl (she)</option>
               </Select>
               {fromRecord && <span className={`mt-1 block font-normal ${ui.hint}`}>From {firstName}&apos;s record. Change it here if needed.</span>}
             </label>

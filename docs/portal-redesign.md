@@ -499,6 +499,11 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Payments (T71, `docs/payments.md`): family Fees page rebuilt (references, Pay now / Pay all due, status
+  dots, StatStrip); new School office > Payments page (`/admin/payments`, `components/learn/payments/PaymentsBoard.tsx`:
+  header figures, Needs checking list, table that stacks on phones, charge side panel, waive and set-plan dialogs);
+  Admissions > Settings > Payments (`PaymentsSettings.tsx`); Fees category in the Action centre. PR #210 merged; staff
+  page in the follow-up PR. Waiting on the owner's Stripe secrets.
 - 2026-11-11: House points as a proper system (feedback 2, item 21; `rewards/HousePoints.tsx`): one page for teachers and the
   head teacher with sections down the left (Standings and award, Leaderboard with top pupils, History with filters, CSV
   and taken-back awards, Star of the week, and for the head Limits and houses); Award points in a side panel; the head

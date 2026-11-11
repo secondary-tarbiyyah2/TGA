@@ -83,7 +83,7 @@ export function SubjectAccessExport() {
     setResult(null);
     if (type === "pupil") {
       const { data } = await supabase.from("children").select("id, name, dob").ilike("name", `%${t}%`).order("name").limit(10);
-      setCandidates(((data as { id: string; name: string; dob: string }[] | null) || []).map((c) => ({ id: c.id, label: c.name, detail: `born ${new Date(c.dob).toLocaleDateString("en-GB")}` })));
+      setCandidates(((data as { id: string; name: string; dob: string }[] | null) || []).map((c) => ({ id: c.id, label: c.name, detail: c.dob ? `born ${new Date(`${c.dob}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}` : "" })));
     } else {
       const { data } = await supabase.from("profiles").select("id, full_name, email").eq("role", "parent").or(`full_name.ilike.%${t}%,email.ilike.%${t}%`).order("full_name").limit(10);
       setCandidates(((data as { id: string; full_name: string; email: string }[] | null) || []).map((c) => ({ id: c.id, label: c.full_name, detail: c.email })));
