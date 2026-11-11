@@ -128,7 +128,7 @@ export function classPageEntry(a: Area): GuideEntry {
     related: [`/${a}/classes`, `/${a}/homework`, `/${a}/lessons/view`],
     showMe: [
       { target: "class-tabs", label: "Class sections", say: "Stream, Classwork, Lessons, People, Attendance, Grades, Insights and Settings." },
-      { target: "class-set-work", label: "Set work", say: "Start a new piece of classwork here; it opens over the page." },
+      { target: "class-set-work", label: "Set work", say: "Start a new piece of classwork here: choose Assignment, Quiz assignment, Question or Material." },
     ],
     tasks: ["set homework", "set classwork", "mark work", "add a Teams link"],
   };
