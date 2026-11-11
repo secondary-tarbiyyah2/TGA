@@ -16,7 +16,7 @@ insert into public.user_roles (user_id, role, scope_type, scope_id) values
   ('a2050000-0000-0000-0000-000000000002', 'teacher', 'none', null),
   ('a2050000-0000-0000-0000-000000000003', 'parent', 'none', null);
 insert into public.classes (id, name, year_group) values ('a2050000-0000-0000-0000-0000000000c1', 'QM Year 7 Quran', 'y7');
-insert into public.children (id, name, parent_user_id) values ('a2050000-0000-0000-0000-0000000000d1', 'QM Pupil', 'a2050000-0000-0000-0000-000000000003');
+insert into public.children (id, name, parent_user_id, dob, is_test) values ('a2050000-0000-0000-0000-0000000000d1', 'QM Pupil', 'a2050000-0000-0000-0000-000000000003', '2014-01-01', true);
 
 set local role authenticated;
 set local "request.jwt.claims" to '{"sub": "a2050000-0000-0000-0000-000000000002"}';
