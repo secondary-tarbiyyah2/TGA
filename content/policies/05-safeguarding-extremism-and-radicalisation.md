@@ -7,9 +7,9 @@ appliesTo: All staff, pupils, parents, trustees, virtual guest speakers, and any
 owner: Designated Safeguarding Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.2, updated 10 November 2026: renamed and filed under safeguarding; the duties are unchanged)
+dateOfIssue: 1 September 2026 (version 1.3)
 nextReview: 31 August 2027
-basis: Updated from the Tarbiyyah Global Academy draft (September 2026) and the Tarbiyyah Secondary No Platform for Extremism Policy 2025–26
+basis: Updated from the Tarbiyyah Global Academy draft (September 2026)
 readAlongside: Child Protection and Safeguarding Policy; Online Safety and Acceptable Use Policy; Tarbiyyah Compass Character Framework; Behaviour and Online Conduct Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---

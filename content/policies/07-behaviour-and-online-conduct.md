@@ -7,9 +7,9 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Pastoral and Behaviour Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
+dateOfIssue: 1 September 2026 (version 1.3)
 nextReview: 31 August 2027
-basis: Tidied and updated from the Tarbiyyah Global Academy Behaviour and Online Conduct Policy draft (September 2026), which was adapted from the Tarbiyyah Secondary Behaviour Policy
+basis: Tidied and updated from the Tarbiyyah Global Academy Behaviour and Online Conduct Policy draft (September 2026)
 readAlongside: Live Lesson Protocols; Anti-Bullying and Cyberbullying Policy; Online Safety and Acceptable Use Policy; Academic Integrity and Secure Assessment Policy; SEND and Inclusion Policy; Child Protection and Safeguarding Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---

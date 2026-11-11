@@ -7,9 +7,8 @@ appliesTo: All applicants for a place at Tarbiyyah Global Academy, and their par
 owner: Admissions Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
+dateOfIssue: 1 September 2026 (version 1.3)
 nextReview: 31 August 2027
-basis: Adapted from the Tarbiyyah Secondary Admissions Policy 2026–27 for an online, co-educational Year 1 to Year 11 school
 readAlongside: Fees Policy; SEND and Inclusion Policy; Equality, Diversity and Accessibility Policy; Behaviour and Online Conduct Policy; Attendance, Punctuality and Children Missing Education Policy; Child Protection and Safeguarding Policy; Data Protection Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---

@@ -7,7 +7,7 @@ appliesTo: All parents and fee-payers of pupils at Tarbiyyah Global Academy
 owner: Headteacher, with the finance team
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.3, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
+dateOfIssue: 1 September 2026 (version 1.4)
 nextReview: 31 August 2027
 basis: Tarbiyyah Global Academy Fee Policy (September 2026), updated in October 2026 to the founding-cohort fees, charges and payment dates published in the Prospectus 2026–27 (live lessons from 11 January 2027)
 readAlongside: Admissions Policy; Flexible Learning Policy; Examinations and Private Candidates Policy; Concerns and Complaints Policy

@@ -7,9 +7,9 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Data Protection Officer and Designated Safeguarding Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.1)
 nextReview: 31 August 2027
-basis: New policy for online provision (replaces the Tarbiyyah Secondary CCTV Policy)
+basis: New policy for online provision
 readAlongside: Data Protection Policy; Child Protection and Safeguarding Policy; Online Safety and Acceptable Use Policy; Live Lesson Protocols
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---

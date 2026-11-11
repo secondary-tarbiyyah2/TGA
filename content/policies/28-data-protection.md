@@ -7,9 +7,9 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Data Protection Officer
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2)
 nextReview: 31 August 2027
-basis: Updated from the Tarbiyyah Global Academy Data Protection Policy draft (September 2026) and the Tarbiyyah Secondary Data Protection Policy 2025–26; platform references updated to the Academy's current systems
+basis: Updated from the Tarbiyyah Global Academy Data Protection Policy draft (September 2026); platform references updated to the Academy's current systems
 readAlongside: Recording of Live Lessons and Use of Images Policy; Online Safety and Acceptable Use Policy; Child Protection and Safeguarding Policy; Admissions Policy; the privacy notice on the Academy website
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---

@@ -7,9 +7,8 @@ appliesTo: All staff, sessional and supply teachers, volunteers, contractors who
 owner: Headteacher
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 9 November 2026 for international recruitment and the online application process)
+dateOfIssue: 1 September 2026 (version 1.1)
 nextReview: 31 August 2027
-basis: Adapted from the Tarbiyyah Secondary Safer Recruitment Policy 2025–26 for online provision and remote staff, and updated for recruiting teachers who live outside the UK
 readAlongside: Child Protection and Safeguarding Policy; Risk Assessment Policy; Data Protection Policy; Equality, Diversity and Accessibility Policy; Staff Code of Conduct for Online Teaching
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---

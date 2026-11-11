@@ -7,9 +7,8 @@ appliesTo: Parents of current pupils and anyone with an interest in the Academy
 owner: Headteacher
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2)
 nextReview: 31 August 2027
-basis: Adapted from the Tarbiyyah Secondary Complaints Policy 2025–26 for online provision, incorporating the TGA parent concern escalation route (teacher → form tutor → pastoral lead → Headteacher, 48-hour response)
 readAlongside: Parent Communication Charter; Admissions Policy; SEND and Inclusion Policy; Child Protection and Safeguarding Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
