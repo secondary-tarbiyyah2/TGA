@@ -46,7 +46,7 @@ jobs:
         run: |
           npm ci
           npm install --no-save --no-audit --no-fund pptxgenjs@4.0.1 docx@9.5.1 pdf-lib@1.17.1 playwright@1.63.0 @fontsource-variable/inter@5.3.0 @fontsource-variable/source-serif-4@5.3.1 @fontsource/amiri@5.3.0
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium || npx playwright install chromium
 
       - name: Install LibreOffice (matrix deck PDF) and pdftotext (contents page numbers)
         run: |

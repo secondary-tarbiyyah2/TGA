@@ -31,7 +31,7 @@ export type KeyStage = {
 };
 
 export const SCHOOL_WEEK_NOTE =
-  "Live teaching runs 09:00–15:00 UK time Monday to Thursday and 09:00–12:00 on Fridays (the afternoon is free for Jumu'ah). Form time, assemblies and clubs are in addition to these lessons. Classes have no more than 15 pupils. Families in other time zones can ask about the Academy's flexible learning options.";
+  "Live teaching runs 09:00–15:00 UK time Monday to Thursday and 09:00–12:00 on Fridays (the afternoon is free for Jumu'ah). Form time, assemblies and clubs are in addition to these lessons. Classes have no more than 15 pupils. Families in other time zones can ask about flexible learning, which is offered subject to availability.";
 
 export const keyStages: KeyStage[] = [
   {

@@ -86,7 +86,9 @@ jobs:
       - name: Install the accessibility checker
         run: |
           npm i --no-save playwright @axe-core/playwright
-          npx playwright install --with-deps chromium
+          # The runner image already has Chromium's system libraries; when Ubuntu's package mirror is
+          # unreachable (apt DNS failures, 11 Nov 2026) install the browser alone instead of failing the job.
+          npx playwright install --with-deps chromium || npx playwright install chromium
       - name: Check public pages (WCAG 2.2 AA, 360px width)
         run: node scripts/a11y-check.mjs out
 

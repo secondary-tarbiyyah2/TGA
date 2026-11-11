@@ -42,7 +42,24 @@ const safe = new Marked({
   },
 });
 
+// A run of Arabic words (letters, harakat and the honorific ligatures such as
+// U+FDFA), with the spaces between them.
+const ARABIC_RUN = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+(?:\s+[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+)*/g;
+
+/**
+ * Marks Arabic in rendered HTML as Arabic, right to left, so it gets the Arabic
+ * font (`:lang(ar)` in globals.css) and sits correctly inside an English
+ * sentence (e.g. "The Prophet صلى الله عليه وسلم said"). Only text between
+ * tags is touched, never attributes.
+ */
+export function markArabic(html: string): string {
+  return html
+    .split(/(<[^>]*>)/)
+    .map((part) => (part.startsWith("<") ? part : part.replace(ARABIC_RUN, (run) => `<span lang="ar" dir="rtl">${run}</span>`)))
+    .join("");
+}
+
 /** Markdown to HTML with raw HTML escaped and unsafe link targets dropped. */
 export function renderSafeMarkdown(md: string): string {
-  return safe.parse(md, { async: false }) as string;
+  return markArabic(safe.parse(md, { async: false }) as string);
 }
