@@ -8,7 +8,7 @@ insert into auth.users (id, email) values
   ('a2050000-0000-0000-0000-000000000002', 'qm-teacher@example.com'),
   ('a2050000-0000-0000-0000-000000000003', 'qm-parent@example.com');
 insert into public.profiles (id, role, full_name, email) values
-  ('a2050000-0000-0000-0000-000000000001', 'head_teacher', 'QM Head', 'qm-head@example.com'),
+  ('a2050000-0000-0000-0000-000000000001', 'admin', 'QM Head', 'qm-head@example.com'),
   ('a2050000-0000-0000-0000-000000000002', 'teacher', 'QM Teacher', 'qm-teacher@example.com'),
   ('a2050000-0000-0000-0000-000000000003', 'parent', 'QM Parent', 'qm-parent@example.com');
 insert into public.user_roles (user_id, role, scope_type, scope_id) values
