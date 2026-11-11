@@ -50,9 +50,25 @@ patterns are in `docs/portal-structure.md`.
    Waiting for you side by side on wide screens.
 7. [x] Parent Today, simpler and warmer: a live lesson first, then the child's day, then anything waiting; the
    child-details reminder is a calm amber note instead of a red alarm.
-8. Next: the Action centre as list and detail (each item's detail and action in a panel; Messages already shows the
-   thread list beside the conversation); the pupil's Today (needs a pupil test account with lessons to check);
-   Lesson library and Planner editing in panels where they still swap the page's content.
+8. [x] Waiting for you (Action centre) as list and detail: a row opens the item beside the list (every pupil named,
+   do it, Mark done, print); work to mark is marked in place (`MarkingPanel`). Messages already shows the thread list
+   beside the conversation.
+9. [x] Pupil Today: Join lesson, My day (today's lessons in order), Homework due, four doors (Homework, Revise, My
+   progress, My classes), then Waiting for you, How I'm doing and the folded timetable.
+10. [x] Curriculum editors in panels: the curriculum `Modal` takes `panel` (renders the portal `SidePanel`, size lg);
+   the Planner's unit editor, the lesson's full form, sign off, upload own slides, version history, share to class
+   (lessons and term resources) and lesson feedback all open as side panels. `SubPageNav` deleted (unused).
+
+**Consistency sweep (11 Nov 2026): what is left, and why.**
+- In-page view switches (`Tabs`) remain on about 37 pages (Admissions, Attendance, Behaviour, Fees, GCSE,
+  Recruitment, Documents, Staff, Reports, a pupil record, Qur'an, Revision and others). They switch views inside one
+  page and never go to another page, so they are not the category strips the owner objected to; changing them all is
+  a bigger restructure, best done page by page with the list and detail pattern.
+- Site administration's category row filters one index page (not navigation).
+- Still full pages on purpose: the lesson editor (LessonStudio, a full-screen slide editor that needs the width),
+  slide and plan viewers (wide dialogs), Family "Complete details now" (the family's long details form, its own
+  page), Syllabus "Edit in the Curriculum planner" (the planner is the editing tool), the head's "Take registers"
+  link to the Registers page (every register; single registers now open in place from Today).
 
 Test data for screenshots: `scratchpad/redesign3/shots.mjs` mocks Supabase with a made-up school (three classes,
 eight pupils, homework, a marking queue, today's lessons on a published timetable, cover, contacts) and unlocks the

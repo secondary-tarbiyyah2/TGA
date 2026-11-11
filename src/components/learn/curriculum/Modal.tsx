@@ -2,14 +2,26 @@
 
 import { useEffect } from "react";
 import { ui } from "@/components/learn/ui";
+import { SidePanel } from "@/components/learn/kit";
 
-/** A dialog over the page: Escape or Close shuts it. `wide` fills most of the screen (editors, viewers). */
-export function Modal({ title, onClose, children, wide }: { title: string; onClose: () => void; children: React.ReactNode; wide?: boolean }) {
+/**
+ * A dialog over the page: Escape or Close shuts it. `wide` fills most of the screen (viewers).
+ * `panel` opens it as the portal's side panel instead (a sheet from the bottom on phones): the
+ * way every editor opens (owner, 11 Nov 2026: editing in panels, never replacing the page).
+ */
+export function Modal({ title, onClose, children, wide, panel }: { title: string; onClose: () => void; children: React.ReactNode; wide?: boolean; panel?: boolean }) {
   useEffect(() => {
+    if (panel) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
+  }, [onClose, panel]);
+  if (panel)
+    return (
+      <SidePanel title={title} onClose={onClose} size="lg">
+        <div className="-mx-5 -my-4">{children}</div>
+      </SidePanel>
+    );
   return (
     <div role="dialog" aria-modal="true" aria-label={title} className="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-3">
       <div className={`flex max-h-full w-full flex-col overflow-hidden rounded-xl bg-white shadow-xl ${wide ? "h-full max-w-5xl" : "max-w-lg"}`}>
