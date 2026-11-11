@@ -43,8 +43,8 @@ Batches and status:
    left, one at a time, `?section=`; the accordions (`<details>`) in SchoolFeatures, Microsoft365Connection and
    AiUsage became plain panels; a section with no access or no data says so instead of vanishing. Your account
    (`/account`) is one panel of `SettingsGroup` rows (Password, Messages, Notifications, Parent PIN, Weekly email,
-   Your feedback); gold-filled buttons there became the forest primary. `SectionNav`'s phone dropdown now has the
-   input box (was borderless). Still to do: Academic setup, Admissions and Recruitment settings. 5a. [x] Figures: `.portal-figures` (globals.css) turns any grid of figure tiles into one panel divided by hairlines
+   Your feedback); gold-filled buttons there became the forest primary. Account also holds "Your signature" (staff), added
+   on main at the same time. Still to do: Academic setup, Admissions and Recruitment settings. 5a. [x] Figures: `.portal-figures` (globals.css) turns any grid of figure tiles into one panel divided by hairlines
    (no separate cards, no tinted fills, no coloured left bars). Used on Fees (staff and family), Safeguarding,
    Behaviour (all four roles) and School summary; safeguarding figures carry their state in the number's colour.
    `Select` now treats an important width (`!w-auto`) as layout, so a dropdown given `!w-auto` sits inline in a
