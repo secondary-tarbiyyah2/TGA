@@ -182,7 +182,7 @@ function RailTips({ root }: { root: React.RefObject<HTMLElement | null> }) {
   }, [root]);
   if (!tip || typeof document === "undefined") return null;
   return createPortal(
-    <div role="presentation" aria-hidden="true" className="portal portal-tip" style={{ top: tip.top, left: tip.left, transform: "translateY(-50%)" }}>
+    <div role="presentation" aria-hidden="true" className="portal-tip" style={{ top: tip.top, left: tip.left, transform: "translateY(-50%)" }}>
       {tip.text}
     </div>,
     document.body,

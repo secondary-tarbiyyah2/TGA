@@ -169,12 +169,20 @@ export function Section({ title, description, action, children, className = "" }
 
 export type Tone = "neutral" | "info" | "good" | "warn" | "bad";
 
+/** Restrained chips: a hairline outline and a coloured dot; colour in the text only where it means something. */
 const CHIP: Record<Tone, string> = {
-  neutral: "bg-cream text-ink/75 ring-gold-light",
-  info: "bg-teal-100 text-teal-900 ring-teal-700/20",
-  good: "bg-green-50 text-green-800 ring-green-600/20",
-  warn: "bg-amber-50 text-amber-900 ring-amber-600/25",
-  bad: "bg-red-50 text-red-800 ring-red-600/20",
+  neutral: "text-ink-700 ring-gold-light",
+  info: "text-forest-900 ring-forest-200",
+  good: "text-forest-800 ring-forest-200",
+  warn: "text-amber-900 ring-amber-300/70",
+  bad: "text-red-800 ring-red-300/70",
+};
+const CHIP_DOT: Record<Tone, string> = {
+  neutral: "bg-ink/30",
+  info: "bg-forest-500",
+  good: "bg-forest-700",
+  warn: "bg-amber-500",
+  bad: "bg-red-600",
 };
 
 /** An on/off switch: a sliding knob that carries a tick when on. Use for every yes/no setting. */
@@ -205,7 +213,12 @@ export function SwitchKnob({ checked }: { checked: boolean }) {
 
 /** A small status label: Present, Late, Draft, Issued, Overdue… */
 export function StatusChip({ tone = "neutral", children }: { tone?: Tone; children: ReactNode }) {
-  return <span className={`inline-flex shrink-0 items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset ${CHIP[tone]}`}>{children}</span>;
+  return (
+    <span className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-white px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${CHIP[tone]}`}>
+      <span aria-hidden="true" className={`h-1.5 w-1.5 shrink-0 rounded-full ${CHIP_DOT[tone]}`} />
+      {children}
+    </span>
+  );
 }
 
 /**
@@ -276,30 +289,29 @@ export function FormSection({ title, description, children, className = "" }: { 
   );
 }
 
-/** A finished-looking placeholder while a list or card loads: a few soft bars, announced as "Loading". */
+/**
+ * Loading: a thin moving line and a few words, announced to screen readers. Deliberately not
+ * shaped like the content that is coming (owner brief: placeholders must never look like the
+ * permanent page). `rows` is kept for callers and sets how much room it takes.
+ */
 export function LoadingState({ rows = 4, label = "Loading", className = "" }: { rows?: number; label?: string; className?: string }) {
   return (
-    <div role="status" aria-label={label} className={`space-y-3 rounded-2xl border border-gold-light bg-white p-4 sm:p-5 ${className}`}>
-      {Array.from({ length: rows }, (_, i) => (
-        <div key={i} className="flex items-center gap-3">
-          <span className="h-8 w-8 shrink-0 rounded-full bg-cream motion-safe:animate-pulse" />
-          <span className="h-3.5 flex-1 rounded bg-cream motion-safe:animate-pulse" style={{ maxWidth: `${85 - ((i * 17) % 35)}%` }} />
-        </div>
-      ))}
-      <span className="sr-only">{label}</span>
+    <div role="status" aria-live="polite" className={`flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-gold-light px-5 ${className}`} style={{ minHeight: `${Math.max(6, Math.min(rows, 8) * 1.75)}rem` }}>
+      <div className="portal-progress w-32" aria-hidden="true" />
+      <p className="t-meta">{label.replace(/\u2026$|\.\.\.$/, "")}</p>
     </div>
   );
 }
 
-/** "Nothing here yet" with what to do about it: an icon tile, the headline, one line of help and (ideally) the action that fills it. */
-export function EmptyState({ title, children, icon = "inbox", tile = "tile-gold", action }: { title: string; children?: ReactNode; icon?: IconName; tile?: string; action?: ReactNode }) {
+/** "Nothing here yet" with what to do about it: a quiet icon, the headline, one line of help and (ideally) the action that fills it. */
+export function EmptyState({ title, children, icon = "inbox", action }: { title: string; children?: ReactNode; icon?: IconName; /** Kept for callers; empty states no longer use coloured tiles. */ tile?: string; action?: ReactNode }) {
   return (
-    <div className="portal-empty rounded-2xl border border-dashed border-gold-light px-5 py-10 text-center sm:py-12">
-      <span className={`portal-tile portal-tile--lg mx-auto ${tile}`} aria-hidden="true">
-        <Icon name={icon} />
+    <div className="rounded-2xl border border-dashed border-gold-light px-5 py-10 text-center sm:py-12">
+      <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-[var(--portal-sunken)] text-ink-500" aria-hidden="true">
+        <Icon name={icon} className="h-[1.125rem] w-[1.125rem]" />
       </span>
-      <p className="mt-4 text-base font-semibold text-ink">{title}</p>
-      {children && <div className="mx-auto mt-1 max-w-md text-sm text-ink/70">{children}</div>}
+      <p className="t-section mt-3">{title}</p>
+      {children && <div className="mx-auto mt-1 max-w-md text-sm text-ink-500">{children}</div>}
       {action && <div className="mt-5 flex flex-wrap justify-center gap-2">{action}</div>}
     </div>
   );

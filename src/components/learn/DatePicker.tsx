@@ -307,7 +307,7 @@ function Calendar({ id, value, start, min, max, onPick, onClose }: { id: string;
   const navBtn = `${ui.btnIcon} !h-9 !w-9`;
 
   return (
-    <div id={id} role="dialog" aria-modal="false" aria-labelledby={titleId} className="absolute left-0 z-30 mt-2 w-[19rem] max-w-[calc(100vw-2rem)] rounded-2xl border border-gold-light bg-white p-3 shadow-lg">
+    <div id={id} role="dialog" aria-modal="false" aria-labelledby={titleId} className="absolute left-0 z-30 mt-2 w-[19rem] max-w-[calc(100vw-2rem)] portal-menu rounded-xl border border-gold-light bg-white p-3 shadow-lg">
       <div className="mb-2 flex items-center justify-between gap-1">
         <span className="flex">
           <button type="button" className={navBtn} aria-label="Previous year" title="Previous year" onClick={() => nav(-12)}>
@@ -361,7 +361,7 @@ function Calendar({ id, value, start, min, max, onPick, onClose }: { id: string;
                       aria-label={formatLongDate(iso)}
                       onClick={() => onPick(iso)}
                       className={`h-9 w-full rounded-lg tabular-nums transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-teal-700 disabled:cursor-not-allowed disabled:opacity-30 ${
-                        selected ? "bg-gold-700 font-semibold text-white" : iso === today ? "font-semibold text-teal-700 ring-1 ring-inset ring-gold-300 hover:bg-gold-50" : "text-ink hover:bg-gold-50"
+                        selected ? "bg-forest-700 font-semibold text-white" : iso === today ? "font-semibold text-forest-700 ring-1 ring-inset ring-forest-200 hover:bg-cream" : "text-ink hover:bg-cream"
                       }`}
                     >
                       {c.d}

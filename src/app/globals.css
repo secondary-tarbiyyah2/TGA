@@ -462,6 +462,34 @@ html[data-readable-font] .portal .portal-display {
 .portal button:disabled {
   cursor: not-allowed;
 }
+/* The branded dropdown (components/ui/Dropdown.tsx, shared with the website) in the portal's
+   colours: forest focus and selection, a grey-green chevron, the portal's corner and shadow. */
+.portal [role="combobox"][aria-haspopup="listbox"] {
+  border-radius: var(--radius-lg);
+}
+.portal [role="combobox"][aria-haspopup="listbox"]:is([aria-expanded="true"], :focus-visible) {
+  border-color: var(--color-forest-700);
+  box-shadow: 0 0 0 3px var(--portal-focus-ring);
+  outline: none;
+}
+.portal [role="combobox"][aria-haspopup="listbox"] .text-gold-700 {
+  color: var(--color-ink-500);
+}
+.portal :has(> [role="listbox"]:not([hidden])):not([role="dialog"]) {
+  border-radius: var(--radius-xl);
+  border-color: var(--color-gold-light);
+  box-shadow: var(--portal-shadow-pop);
+}
+.portal [role="option"].bg-gold-100 {
+  background: var(--color-cream);
+}
+.portal [role="option"][aria-selected="true"] {
+  color: var(--color-forest-900);
+  font-weight: 600;
+}
+.portal [role="option"] .fill-gold-700 {
+  fill: var(--color-forest-700);
+}
 /* Button feedback: a press settles the control by a pixel (never on reduced motion). */
 @media (prefers-reduced-motion: no-preference) {
   .portal :is(.portal-btn, .portal-topbar-btn):active:not(:disabled) {
@@ -834,8 +862,8 @@ html[data-readable-font] .portal .portal-display {
   font-weight: 500;
   line-height: 1.2;
   white-space: nowrap;
-  color: var(--portal-canvas);
-  box-shadow: var(--portal-shadow-pop);
+  color: #f7f5ef;
+  box-shadow: 0 6px 18px -6px rgba(23, 32, 27, 0.35);
 }
 @media (prefers-reduced-motion: no-preference) {
   .portal-tip {
@@ -970,6 +998,18 @@ html[data-readable-font] .portal .portal-display {
   }
   .portal-icon-btn {
     width: 2.75rem;
+  }
+}
+/* Very narrow phones (360 to 419px): every top-bar control still fits on one line, at 38px. */
+@media (max-width: 419px) {
+  .portal-topbar-btn,
+  .portal-icon-btn {
+    height: 2.375rem;
+    min-width: 2.375rem;
+    padding: 0;
+  }
+  .portal-icon-btn {
+    width: 2.375rem;
   }
 }
 
