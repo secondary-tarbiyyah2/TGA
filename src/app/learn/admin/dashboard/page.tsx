@@ -18,6 +18,8 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { PushOptIn } from "@/components/learn/PushOptIn";
 import { RegisterPanel } from "@/components/learn/attendance/RegisterPanel";
 import { CoverToday } from "@/components/learn/dashboard/CoverToday";
+import { NeedsYou } from "@/components/learn/dashboard/NeedsYou";
+import { SchoolToday } from "@/components/learn/dashboard/SchoolToday";
 import { QuickActions, type QuickAction } from "@/components/learn/dashboard/QuickActions";
 import { BehaviourDialog } from "@/components/learn/dashboard/BehaviourDialog";
 import type { ActionItem } from "@/lib/learn/actionCentre";
@@ -276,14 +278,19 @@ function DashboardContent() {
     );
   }
 
-  // The head's Today (owner, 11 Nov 2026): quick actions at the very top, then today's lessons
-  // and cover side by side, then Waiting for you in category boxes. The old figures strip and
-  // "Today at a glance" row repeated these three, so they are gone.
+  // The head's Today (owner, 11 Nov 2026, feedback 2 and 3): what needs doing now
+  // as alert rows (Needs you now), quick actions, The school today (a few live figures), today's
+  // lessons and cover side by side, then this week's jobs in category boxes. Each thing is shown
+  // once: "do now" items only in Needs you, registers in the lessons list.
   const content = (
     <div className="space-y-6">
       <DashboardHero area="admin" subtitle={myRoles || undefined} />
 
+      <NeedsYou role="admin" />
+
       <QuickActions actions={quick} guide="admin-quick-actions" />
+
+      <SchoolToday lessons={lessons} now={now} />
 
       <div className="grid gap-6 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <TodayLessons lessons={lessons} />
@@ -291,7 +298,7 @@ function DashboardContent() {
       </div>
 
       {/* Registers are in Today's lessons beside it, so they are not repeated here. */}
-      <ActionCentreWidget role="admin" extra={lessonsToApprove} skipAreas={["Registers"]} />
+      <ActionCentreWidget role="admin" extra={lessonsToApprove} skipAreas={["Registers"]} skipNow />
 
       <CurriculumHealth figures={curriculum} />
 

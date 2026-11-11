@@ -20,13 +20,14 @@ export const marksInPlace = (i: ActionItem) => i.area === "Marking" || /\/(teach
  * items in each with one clear button, and "See all" for the rest on the Waiting for you page
  * (owner, 11 Nov 2026: "things should be separated and compartmentalised"). Nothing at all when
  * all is clear. `extra` adds items only this page knows about (the head's lessons to approve);
- * `skipAreas` leaves out what Today already shows (a teacher's registers are in Your day).
+ * `skipAreas` leaves out what Today already shows (a teacher's registers are in Your day);
+ * `skipNow` leaves out the "do now" items when Needs you already lists them at the top.
  */
-export function ActionCentreWidget({ role, extra = [], skipAreas = [] }: { role: Role; extra?: ActionItem[]; skipAreas?: ActionArea[] }) {
+export function ActionCentreWidget({ role, extra = [], skipAreas = [], skipNow = false }: { role: Role; extra?: ActionItem[]; skipAreas?: ActionArea[]; skipNow?: boolean }) {
   const { items } = useActionItems(role);
   const [marking, setMarking] = useState(false);
   const staff = role === "teach" || role === "admin";
-  const urgent = [...extra, ...(items || [])].filter((i) => i.urgency !== "info" && !skipAreas.includes(i.area));
+  const urgent = [...extra, ...(items || [])].filter((i) => i.urgency !== "info" && !(skipNow && i.urgency === "now") && !skipAreas.includes(i.area));
   if (items === null || !urgent.length) return null;
   const base = role === "teach" ? "/teach" : role === "admin" ? "/admin" : role === "family" ? "/family" : "/student";
   const rank = { now: 0, soon: 1, info: 2 } as const;

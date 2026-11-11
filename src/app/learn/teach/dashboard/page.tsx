@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { DashboardHero } from "@/components/learn/DashboardHero";
 import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
+import { NeedsYou } from "@/components/learn/dashboard/NeedsYou";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { useLearnSession } from "@/lib/learn/session";
@@ -67,18 +68,20 @@ function TeachContent() {
     })();
   }, [supabase]);
 
-  // Today answers "what do I need to do today?" and nothing else (owner, 11 Nov 2026): quick
-  // actions at the very top, then the day's lessons, then what is waiting, sorted into
-  // categories (documents to sign included), then cover and the latest announcements.
-  // Registers are left out of Waiting for you here because Your day shows each one.
+  // Today answers "what do I need to do today?" and nothing else (owner, 11 Nov 2026): anything
+  // to do now as alert rows (Needs you now), quick actions, the day's lessons, then this week's
+  // jobs sorted into categories (documents to sign included), then cover and announcements.
+  // Registers are left out of both lists here because Your day shows each one.
   return (
     <DashboardWithPanel viewer={{ kind: "teacher", classIds }}>
       <div className="space-y-6">
         <DashboardHero area="teach" />
 
+        <NeedsYou role="teach" skipAreas={["Registers"]} />
+
         <TeachNow slots={slots} classIds={classIds} />
 
-        <ActionCentreWidget role="teach" skipAreas={["Registers"]} />
+        <ActionCentreWidget role="teach" skipAreas={["Registers"]} skipNow />
 
         {covers && covers.length > 0 && (
           <section className="rounded-2xl border border-gold-light bg-white px-5 py-4" aria-labelledby="cover-heading">
