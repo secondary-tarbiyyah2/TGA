@@ -4,6 +4,7 @@ import { Loading } from "@/components/learn/kit";
 import { useMemo, useState } from "react";
 import { ReasonModal } from "./ReasonModal";
 import { formatDay, reasonLabel, type Absence } from "./data";
+import { PupilLink } from "@/components/learn/pupil/PupilLink";
 
 /** Recent absences, one line per child and day, with a way to record why. */
 export function RecentAbsences({ absences, onChanged }: { absences: Absence[] | null; onChanged: () => void }) {
@@ -35,7 +36,7 @@ export function RecentAbsences({ absences, onChanged }: { absences: Absence[] | 
           {rows.map((a) => (
             <li key={`${a.childId}|${a.date}`} className="flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-sm">
               <span className="min-w-0 text-ink">
-                <span className="font-medium">{a.childName}</span> <span className="text-ink/65">· {formatDay(a.date)} · {a.className}</span>
+                <PupilLink id={a.childId} name={a.childName} className="font-medium" /> <span className="text-ink/65">· {formatDay(a.date)} · {a.className}</span>
               </span>
               <span className="flex items-center gap-2">
                 {a.reasonCode && <span className="rounded-full bg-cream px-2.5 py-1 text-xs font-medium text-ink/70">{reasonLabel(a.reasonCode)}</span>}

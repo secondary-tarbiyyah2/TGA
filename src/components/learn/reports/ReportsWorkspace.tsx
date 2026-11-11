@@ -101,7 +101,9 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
           description={
             view === "pupil"
               ? undefined
-              : mode === "admin"
+              : view === "settings"
+                ? "The comment bank, assessment types and grade boundaries every report draws on."
+                : mode === "admin"
                 ? "Write, approve and issue end-of-term reports. Figures come from attendance, homework, merits, Qur'an and assessments already recorded."
                 : "Write your classes' end-of-term reports. Figures are filled in for you; add your judgement and a comment, then submit for approval."
           }

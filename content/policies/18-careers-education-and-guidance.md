@@ -7,9 +7,8 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Careers Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.1)
 nextReview: 31 August 2027
-basis: Adapted from the Tarbiyyah Secondary Careers Policy 2025–26 for online provision
 readAlongside: Curriculum Policy; Tarbiyyah Compass Character Framework; Examinations and Private Candidates Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
