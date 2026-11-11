@@ -1,0 +1,224 @@
+{
+ "id": "geography-y3-practice-grid-map-with-answer-key-for-teachers",
+ "title": "Practice grid map, with answer key for teachers",
+ "type": "printable graph/grid",
+ "subject": "Geography",
+ "subjectSlug": "geography",
+ "year": "y3",
+ "unit": "Spring 2: Map skills and fieldwork (Tribal Tales)",
+ "lessons": [
+  12
+ ],
+ "source": "Written for geography/y3 lesson 12 (Practice grid map, with answer key for teachers (portal printable))",
+ "intro": "Lesson 12: Four-figure grid references. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "panels": [
+    {
+     "title": "The grid",
+     "points": [
+      "Lines across and up",
+      "Each line has a number",
+      "The square is named by its bottom-left corner"
+     ]
+    },
+    {
+     "title": "Along then up",
+     "points": [
+      "Along the corridor (eastings)",
+      "Then up the stairs (northings)",
+      "Write the two numbers together"
+     ]
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Find the grid reference of the church",
+    "parts": [
+     {
+      "text": "Go to the bottom-left corner of its square"
+     },
+     {
+      "text": "Read along: 23"
+     },
+     {
+      "text": "Read up: 45"
+     },
+     {
+      "text": "Write them together"
+     },
+     {
+      "label": "Why it works",
+      "text": "2345"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Practice grid map"
+  },
+  {
+   "grid": {
+    "kind": "gridmap",
+    "eastings": [
+     "01",
+     "02",
+     "03",
+     "04"
+    ],
+    "rows": [
+     [
+      "04",
+      "Church",
+      "Wood",
+      "",
+      "Farm"
+     ],
+     [
+      "03",
+      "",
+      "River",
+      "Bridge",
+      ""
+     ],
+     [
+      "02",
+      "School",
+      "",
+      "Park",
+      "Shop"
+     ],
+     [
+      "01",
+      "Station",
+      "",
+      "",
+      "Masjid"
+     ]
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Grid reference of the station?",
+     "a": "0101",
+     "marks": 1
+    },
+    {
+     "q": "Grid reference of the shop?",
+     "a": "0402",
+     "marks": 1
+    },
+    {
+     "q": "What is at 0303?",
+     "a": "The bridge",
+     "marks": 1
+    },
+    {
+     "q": "Which direction is the farm from the school?",
+     "a": "North-east",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "grid",
+     "def": "lines that cross to make squares"
+    },
+    {
+     "term": "grid reference",
+     "def": "numbers that tell us which square"
+    },
+    {
+     "term": "eastings",
+     "def": "lines that go across the bottom, read first"
+    },
+    {
+     "term": "northings",
+     "def": "lines that go up the side, read second"
+    },
+    {
+     "term": "square",
+     "def": "one box on the grid"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "What is in square 2446 on the practice map?",
+     "a": "The wood (see map key)"
+    },
+    {
+     "q": "Write the grid reference of the pond.",
+     "a": "2244 (see map key)"
+    },
+    {
+     "q": "Why do we always read along first?",
+     "a": "So everyone reads it the same way and finds the same square"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Find six features from their grid references and write six grid references on the map sheet.",
+     "a": "Answers on the map sheet key"
+    },
+    {
+     "q": "Extend: Make a treasure map with a grid and hide three items; write their grid references.",
+     "a": "A grid map with three correct references"
+    },
+    {
+     "q": "Stretch: Explain what goes wrong if you read up first.",
+     "a": "You land in the wrong square"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which do we read first?",
+     "options": [
+      "Up the side",
+      "Along the bottom",
+      "Either"
+     ],
+     "a": "B) Along the bottom. Along the corridor, then up the stairs: eastings first."
+    },
+    {
+     "q": "A four-figure grid reference has:",
+     "a": "Four numbers",
+     "options": [
+      "Four numbers",
+      "Two letters"
+     ]
+    },
+    {
+     "q": "Big question: how can two numbers find any square?",
+     "a": "One number along the bottom and one up the side meet at one square"
+    }
+   ]
+  }
+ ]
+}

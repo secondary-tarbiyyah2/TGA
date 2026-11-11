@@ -1,0 +1,195 @@
+{
+ "id": "computing-y9-bake-sale-spreadsheet-template",
+ "title": "Bake sale spreadsheet template",
+ "type": "printable graph/grid",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 2: Databases and spreadsheets",
+ "lessons": [
+  12
+ ],
+ "source": "Written for computing/y9 lesson 12 (Bake sale spreadsheet template (portal))",
+ "intro": "Lesson 12: Spreadsheets: formulas and functions. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Formulas"
+  },
+  {
+   "table": {
+    "head": [
+     "Row",
+     "A Item",
+     "B Price (£)",
+     "C Sold",
+     "D Takings"
+    ],
+    "rows": [
+     [
+      "2",
+      "Cupcake",
+      "1.50",
+      "40",
+      "=B2*C2"
+     ],
+     [
+      "3",
+      "Brownie",
+      "2.00",
+      "25",
+      "=B3*C3"
+     ],
+     [
+      "4",
+      "Date ball",
+      "0.50",
+      "60",
+      "=B4*C4"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Functions"
+  },
+  {
+   "table": {
+    "head": [
+     "Function",
+     "Example",
+     "Result"
+    ],
+    "rows": [
+     [
+      "SUM",
+      "=SUM(D2:D4)",
+      "140.00"
+     ],
+     [
+      "AVERAGE",
+      "=AVERAGE(C2:C4)",
+      "41.67 (2 d.p.)"
+     ],
+     [
+      "MAX",
+      "=MAX(C2:C4)",
+      "60"
+     ],
+     [
+      "MIN",
+      "=MIN(B2:B4)",
+      "0.50"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Absolute references"
+  },
+  {
+   "model": {
+    "title": "Add 20% of each takings figure to a charity column, with 20% in F1",
+    "parts": [
+     {
+      "text": "Put 0.2 in F1"
+     },
+     {
+      "text": "In E2 type =D2*$F$1"
+     },
+     {
+      "text": "Copy down to E4"
+     },
+     {
+      "text": "$F$1 stays fixed; D2 changes to D3, D4"
+     },
+     {
+      "label": "Why it works",
+      "text": "E2 = 12.00, E3 = 10.00, E4 = 6.00"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "cell reference",
+     "def": "the address of a cell, such as B2"
+    },
+    {
+     "term": "formula",
+     "def": "a calculation starting with ="
+    },
+    {
+     "term": "function",
+     "def": "a built-in formula such as SUM"
+    },
+    {
+     "term": "absolute reference",
+     "def": "a reference that does not change when copied ($B$1)"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Work out D3 and D4, then SUM(D2:D4).",
+     "a": "D3 = 50, D4 = 30; SUM = 140."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Build the bake sale spreadsheet (portal template): takings formulas, SUM, AVERAGE, MAX, MIN and a 20% sadaqah column with an absolute reference.",
+     "a": "Correct formulas; total £140; sadaqah £28."
+    },
+    {
+     "q": "Extend: what is AVERAGE(C2:C4) exactly?",
+     "a": "125 ÷ 3 = 41.666..., 41.67 to 2 d.p."
+    },
+    {
+     "q": "Stretch: use COUNTIF to count items that sold more than 30.",
+     "a": "=COUNTIF(C2:C4,\">30\") = 2"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "D2 = 1.50 × 40. What is D2?",
+     "options": [
+      "60",
+      "41.5",
+      "6"
+     ],
+     "a": "A) 60. 1.50 × 40 = 60."
+    },
+    {
+     "q": "Formulas start with ...",
+     "a": "=",
+     "options": [
+      "=",
+      "#",
+      "@"
+     ]
+    },
+    {
+     "q": "Think again: Why might a business use a spreadsheet instead of a calculator?",
+     "a": "Formulas update automatically when data changes, and calculations can be copied and checked."
+    }
+   ]
+  }
+ ]
+}

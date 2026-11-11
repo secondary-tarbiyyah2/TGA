@@ -1,0 +1,49 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-own-exam-style-questions-wit-l47",
+ "title": "Own exam-style questions with answers on the teacher sheet (lesson 47)",
+ "type": "revision set",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 2: Revision cycle 2",
+ "lessons": [
+  47
+ ],
+ "source": "Seeded from computing/y11 lesson 47 (Pupil PDF worksheet: own exam-style questions with answers on the teacher sheet)",
+ "intro": "Lesson 47: Python practice: reading, refining and improving code. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "25 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: improve three given programs (names, comments, loops, functions, validation) and explain each change.",
+     "a": "Improved code with explanations (teacher key).",
+     "model": "The teacher refactors program 1 live.",
+     "marks": 2
+    },
+    {
+     "q": "make average() robust to an empty list.",
+     "a": "if len(marks) == 0: return 0",
+     "marks": 1
+    },
+    {
+     "q": "Rename: 'n = 15' for the number of pupils.",
+     "a": "number_of_pupils = 15 (or pupil_count)",
+     "model": "I do: 't' → 'total_cost'.",
+     "marks": 1
+    },
+    {
+     "q": "Refactoring changes ...",
+     "a": "how code is written, not what it does",
+     "options": [
+      "how code is written, not what it does",
+      "the output",
+      "the language"
+     ],
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}
