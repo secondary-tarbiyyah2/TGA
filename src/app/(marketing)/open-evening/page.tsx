@@ -26,7 +26,7 @@ export default async function OpenEveningPage() {
             <Kicker>Meet us online</Kicker>
             <h1 className="text-h1 font-serif font-semibold text-ink">Open evenings and a taster morning.</h1>
             <p className="mt-5 max-w-xl text-lg text-ink/75">
-              Meet the Headteacher, watch a short demonstration of how a live lesson runs, see the Parent and Student Portals, and ask anything you like.
+              Meet the Headteacher, see the Parent and Student Portals, and ask anything you like. To see a real lesson, book your child onto the taster morning.
               Every session is online, and the joining link is emailed to you when you register.
             </p>
             <p className="mt-4 max-w-xl text-ink/75">
@@ -58,7 +58,7 @@ export default async function OpenEveningPage() {
           <section id="open-evenings" aria-labelledby="open-evenings-heading" className="scroll-mt-24 rounded-2xl border border-gold-light/60 bg-white p-6">
             <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">For parents</p>
             <h2 id="open-evenings-heading" className="mt-1 font-serif text-2xl font-semibold text-ink">Online open evenings</h2>
-            <p className="mt-2 text-ink/75">An hour with the Headteacher: how the school day works, a short demonstration of how a live lesson runs, a tour of the Parent and Student Portals, and your questions answered live.</p>
+            <p className="mt-2 text-ink/75">An hour with the Headteacher: how the school day works, a tour of the Parent and Student Portals, and your questions answered live.</p>
             <ul className="mt-3 space-y-1 text-sm text-ink/80">
               {sessions.filter((d) => /open evening/i.test(d.label)).map((d) => (
                 <li key={d.when}>{d.when} (UK time)</li>
