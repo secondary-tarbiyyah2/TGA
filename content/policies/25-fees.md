@@ -35,7 +35,7 @@ Under every plan, the first payment is due on admission, when the place is accep
 
 | Charge | Detail |
 | --- | --- |
-| Application fee | £150 per child, non-refundable, payable when applying. It covers the entry assessment and the time spent with each family. There is no registration fee. |
+| Application fee | £150 per child, non-refundable. The payment details are emailed after the application is made, and the fee must be paid before a place is confirmed. It covers the entry assessment and the time spent with each family. There is no registration fee. |
 | Annual payment discount | 2% discount where the annual option is chosen and paid in full on acceptance of the place (no later than Friday 8 January 2027) |
 | Sibling discount | 5% off tuition for a second child and 10% for the third and later children, applied to the younger sibling's tuition. It can be combined with the annual payment discount |
 | Examination fees | Not included. International GCSE entry fees are billed separately by the examination centre (see the Examinations and Private Candidates Policy) |
