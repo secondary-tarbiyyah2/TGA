@@ -9,6 +9,7 @@ import { ukTimeOf } from "@/lib/learn/ukTime";
 import { useSupportPlans } from "@/lib/learn/send";
 import { SupportAtAGlance, SupportBadge } from "@/components/learn/send/SupportAtAGlance";
 import { Select } from "@/components/learn/Select";
+import { PupilLink } from "@/components/learn/pupil/PupilLink";
 
 export type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
 /** The four marks used every lesson, as one-tap buttons. */
@@ -16,7 +17,7 @@ export const STATUSES: { value: Status; label: string; on: string }[] = [
   { value: "present", label: "Present", on: "bg-green-600 text-white" },
   { value: "late", label: "Late", on: "bg-amber-500 text-white" },
   { value: "absent", label: "Absent", on: "bg-red-600 text-white" },
-  { value: "excused", label: "Excused", on: "bg-slate-500 text-white" },
+  { value: "excused", label: "Authorised", on: "bg-slate-500 text-white" },
 ];
 /** The two less common marks from the Attendance Policy, under "Other". */
 export const OTHER_STATUSES: { value: Status; label: string; hint: string }[] = [
@@ -27,7 +28,7 @@ export const STATUS_LABEL: Record<Status, string> = {
   present: "Present",
   late: "Late",
   absent: "Absent",
-  excused: "Excused",
+  excused: "Authorised absence",
   not_engaged: "Present, not engaged",
   technical: "Couldn't connect",
 };
@@ -56,6 +57,11 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   const [reasonError, setReasonError] = useState<string | null>(null);
   const [lessonDate, setLessonDate] = useState<string | null>(null);
   const [reasons, setReasons] = useState<Record<string, string>>({});
+  // Register notes (attendance_records.note): one short line per pupil, saved when you leave the box.
+  const [notes, setNotes] = useState<Record<string, string>>({});
+  const savedNotes = useRef<Record<string, string>>({});
+  const [noteOpen, setNoteOpen] = useState<string | null>(null);
+  const [noteState, setNoteState] = useState<Record<string, "saving" | "saved" | "error">>({});
   const [saving, setSaving] = useState<Record<string, "saving" | "saved" | "error">>({});
   // Who pressed "Join lesson" (lesson_joins): child id -> first join time. Used to pre-fill 'present'.
   const [joined, setJoined] = useState<Record<string, string>>({});
@@ -105,7 +111,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
       setLessonDate(date);
       const [{ data: enr }, { data: att }] = await Promise.all([
         supabase.from("enrolments").select("children(id, name)").eq("class_id", classId),
-        supabase.from("attendance_records").select("child_id, status").eq("lesson_instance_id", lessonId),
+        supabase.from("attendance_records").select("child_id, status, note").eq("lesson_instance_id", lessonId),
       ]);
       totalRef.current = ((enr as unknown as { children: unknown }[]) || []).filter((r) => r.children).length;
       enrolledRef.current = new Set(((enr as unknown as { children: { id: string } | null }[]) || []).flatMap((r) => (r.children ? [r.children.id] : [])));
@@ -119,7 +125,13 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
         setReasons(Object.fromEntries(((rs as { child_id: string; reason_code: string }[]) || []).map((r) => [r.child_id, r.reason_code])));
       }
       const m: Record<string, Status> = {};
-      for (const a of (att as { child_id: string; status: Status }[]) || []) m[a.child_id] = a.status;
+      const n: Record<string, string> = {};
+      for (const a of (att as { child_id: string; status: Status; note: string | null }[]) || []) {
+        m[a.child_id] = a.status;
+        if (a.note) n[a.child_id] = a.note;
+      }
+      setNotes(n);
+      savedNotes.current = n;
       setMarks(m);
       marksRef.current = m;
       const list = ((enr as unknown as { children: { id: string } | null }[]) || []).filter((r) => r.children);
@@ -189,6 +201,20 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
     }
   };
 
+  const saveNote = async (childId: string) => {
+    const supabase = getSupabaseClient();
+    const text = (notes[childId] || "").trim().slice(0, 300);
+    if (!supabase || text === (savedNotes.current[childId] || "")) return;
+    setNoteState((s) => ({ ...s, [childId]: "saving" }));
+    const { error } = await supabase
+      .from("attendance_records")
+      .update({ note: text || null })
+      .eq("lesson_instance_id", lessonId)
+      .eq("child_id", childId);
+    if (!error) savedNotes.current = { ...savedNotes.current, [childId]: text };
+    setNoteState((s) => ({ ...s, [childId]: error ? "error" : "saved" }));
+  };
+
   if (children === null) return <Loading label="Loading register…" bare />;
   if (children.length === 0) return <p className="px-5 py-4 text-sm text-ink/65">No students enrolled in this class yet.</p>;
   const unmarked = children.filter((c) => !marks[c.id]);
@@ -238,7 +264,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           return (
             <li key={c.id} className="flex flex-wrap items-center gap-3 px-5 py-2.5">
               <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">
-                {c.name}
+                <PupilLink id={c.id} name={c.name} />
                 <SupportBadge plan={plans?.[c.id]} />
                 {didJoin ? <span className="ml-2 text-xs font-normal text-green-800">Joined {timeOf(joined[c.id])}</span> : anyJoins ? <span className="ml-2 text-xs font-normal text-amber-800">Has not joined</span> : null}
                 {teams[c.id] && (
@@ -284,6 +310,42 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                   </option>
                 ))}
               </Select>
+              <button
+                type="button"
+                onClick={() => setNoteOpen(noteOpen === c.id ? null : c.id)}
+                disabled={!current}
+                aria-expanded={noteOpen === c.id}
+                title={current ? "Add a note to this mark" : "Mark the pupil first, then add a note"}
+                className={`rounded-lg border px-2.5 py-1.5 text-sm font-medium disabled:opacity-50 ${notes[c.id] ? "border-forest-700 bg-forest-50 text-forest-900" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+              >
+                {notes[c.id] ? "Note" : "Add note"}
+                <span className="sr-only"> for {c.name}</span>
+              </button>
+              {noteOpen === c.id && current && (
+                <label className="flex w-full items-center gap-2 text-xs text-ink/70">
+                  <span className="shrink-0">Note</span>
+                  <input
+                    type="text"
+                    autoFocus
+                    maxLength={300}
+                    value={notes[c.id] || ""}
+                    onChange={(e) => setNotes((n) => ({ ...n, [c.id]: e.target.value }))}
+                    onBlur={() => void saveNote(c.id)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        void saveNote(c.id).then(() => setNoteOpen(null));
+                      }
+                    }}
+                    placeholder="For example: joined 10 minutes late, camera off"
+                    className="min-w-0 flex-1 rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm text-ink"
+                  />
+                  <span aria-live="polite" className="w-14 shrink-0 text-right">
+                    {noteState[c.id] === "saving" ? "Saving…" : noteState[c.id] === "error" ? <span className="text-red-700">Not saved</span> : noteState[c.id] === "saved" ? "Saved" : ""}
+                  </span>
+                </label>
+              )}
+              {noteOpen !== c.id && notes[c.id] && <p className="w-full truncate text-xs text-ink/65">Note: {notes[c.id]}</p>}
               {current === "absent" && lessonDate && !canRecordReason && (
                 <p className="w-full text-xs text-ink/65">
                   Reason: {reasons[c.id] ? REASONS.find((r) => r.value === reasons[c.id])?.label || "Recorded" : "not given yet (the office follows this up)"}

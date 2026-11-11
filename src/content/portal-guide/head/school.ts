@@ -47,8 +47,8 @@ export const HEAD_ATTENDANCE: GuideEntry[] = [
     purpose: "Every lesson register in the school: take a missing one, and review attendance by class and pupil.",
     when: "Each day to check registers are taken, and weekly to review attendance.",
     steps: [
-      "On Take register, use Previous and Next (or the date) to choose a day.",
-      "Tick Only show registers still to take, then open a lesson and mark each pupil.",
+      "On Registers, choose the dates and, if you like, a class.",
+      "Press To take, then Take register on a lesson; it opens on its own page to mark each pupil.",
       "Open Reports to filter by date range, year group, class, status or pupil.",
       "Read By class and By student; click a row to filter by it.",
     ],
@@ -56,8 +56,8 @@ export const HEAD_ATTENDANCE: GuideEntry[] = [
     privacy: "Staff only. Parents see their own child's attendance.",
     related: ["/admin/absences", "/admin/dashboard"],
     showMe: [
-      { target: "registers-day", label: "Day's registers", say: "Every lesson today with its register." },
-      { target: "registers-filters", label: "Take register and Reports", say: "Reports reviews attendance over any period." },
+      { target: "registers-list", label: "Registers", say: "Every lesson with its register: taken, taken late or not taken." },
+      { target: "attendance-sections", label: "Registers and Reports", say: "Reports reviews attendance over any period." },
     ],
     tasks: ["take a register", "attendance", "check registers"],
   },
