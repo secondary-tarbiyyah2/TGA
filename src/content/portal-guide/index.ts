@@ -6,6 +6,7 @@ import { HEAD_GUIDE } from "./head/index.ts";
 import { ADMISSIONS_GUIDE } from "./admissions/index.ts";
 import { TEACHER_GUIDE } from "./teacher/index.ts";
 import { SENCO_GUIDE } from "./senco/index.ts";
+import { DIGITAL_GUIDE } from "./digital/index.ts";
 import { PARENT_GUIDE } from "./parent/index.ts";
 import { PUPIL_GUIDE } from "./pupil/index.ts";
 import { sharedEntries } from "./shared.ts";
@@ -20,6 +21,7 @@ export const GUIDE: Record<GuideRole, GuideEntry[]> = {
   admissions: [...ADMISSIONS_GUIDE, ...sharedEntries("admissions")],
   teacher: [...TEACHER_GUIDE, ...sharedEntries("teacher")],
   senco: [...SENCO_GUIDE, ...sharedEntries("senco")],
+  digital: [...DIGITAL_GUIDE, ...sharedEntries("digital")],
   parent: [...PARENT_GUIDE, ...sharedEntries("parent")],
   pupil: [...PUPIL_GUIDE, ...sharedEntries("pupil")],
 };
@@ -28,7 +30,10 @@ type Area = "admin" | "teach" | "family" | "student";
 
 /** Which guide a person reads in an area. */
 export function guideRoleFor(area: Area, roles: string[]): GuideRole {
-  if (area === "admin") return roles.some((r) => r === "head_teacher" || r === "admin") ? "head" : "admissions";
+  if (area === "admin") {
+    if (roles.some((r) => r === "head_teacher" || r === "admin")) return "head";
+    return roles.includes("digital_lead") && !roles.includes("admissions") ? "digital" : "admissions";
+  }
   if (area === "teach") {
     const teaches = roles.some((r) => ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"].includes(r));
     return roles.includes("senco") && !teaches ? "senco" : "teacher";

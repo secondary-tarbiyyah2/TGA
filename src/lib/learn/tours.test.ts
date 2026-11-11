@@ -11,6 +11,7 @@ const ROLES: Record<string, ["admin" | "teach" | "family" | "student", string[]]
   teacher: ["teach", ["teacher"]],
   teaching_assistant_cover: ["teach", ["teaching_assistant_cover"]],
   senco: ["teach", ["senco"]],
+  digital_lead: ["admin", ["digital_lead"]],
   parent: ["family", ["parent"]],
   student: ["student", ["student"]],
 };

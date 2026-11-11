@@ -107,5 +107,7 @@ export function sharedEntries(r: GuideRole): GuideEntry[] {
   // Teachers and the SENCo have Report a concern in their menu already; a
   // SENCo-only account has no documents page.
   const concernInMenu = r === "teacher" || r === "senco";
-  return [accountEntry(r), ...(concernInMenu ? [] : [reportConcernEntry(r)]), ...(r === "senco" ? [] : [documentsEntry(r)]), feedbackEntry(r), installEntry(r)];
+  // Neither has a documents page.
+  const noDocuments = r === "senco" || r === "digital";
+  return [accountEntry(r), ...(concernInMenu ? [] : [reportConcernEntry(r)]), ...(noDocuments ? [] : [documentsEntry(r)]), feedbackEntry(r), installEntry(r)];
 }

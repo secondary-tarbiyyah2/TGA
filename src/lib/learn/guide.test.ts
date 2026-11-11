@@ -18,6 +18,7 @@ const ROLES: Record<string, [PortalArea, string[]]> = {
   teacher: ["teach", ["teacher"]],
   teaching_assistant_cover: ["teach", ["teaching_assistant_cover"]],
   senco: ["teach", ["senco"]],
+  digital_lead: ["admin", ["digital_lead"]],
   parent: ["family", ["parent"]],
   student: ["student", ["student"]],
 };
@@ -28,6 +29,7 @@ const DETAIL: Record<GuideRole, string[]> = {
   admissions: ["/admin/site", "/admin/academic/meeting-links"],
   teacher: ["/teach/class", "/teach/lessons/view", "/teach/curriculum/lesson", "/teach/enrichment"],
   senco: [],
+  digital: ["/admin/site"],
   parent: ["/family/class", "/family/lessons/view", "/family/homework"],
   pupil: ["/student/class", "/student/lessons/view", "/student/homework"],
 };
@@ -164,6 +166,9 @@ test("the guide finds the entry for an address", () => {
   assert.equal(guideEntryFor("parent", "/family/todo")?.name, "Homework");
   assert.equal(guideRoleFor("teach", ["senco"]), "senco");
   assert.equal(guideRoleFor("admin", ["admissions"]), "admissions");
+  assert.equal(guideRoleFor("admin", ["digital_lead"]), "digital");
+  assert.equal(guideRoleFor("admin", ["teacher", "digital_lead"]), "digital");
+  assert.equal(guideEntryFor("digital", "/admin/audit-log")?.name, "Audit log");
 });
 
 test("Day in the life journeys: 6 to 12 steps, on pages the role has, pointing at real things", () => {

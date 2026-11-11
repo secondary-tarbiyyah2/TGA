@@ -43,7 +43,7 @@ function csvCell(v: unknown): string {
 const tableLabel = (t: string | null) => (t ? t.replace(/_/g, " ") : "–");
 
 /**
- * Audit log viewer for the Headteacher and Admin. Reads through the
+ * Audit log viewer for the Headteacher, Admin and Digital Lead. Reads through the
  * audit_log_search() RPC (0075), which builds each summary on the server:
  * only field NAMES are listed (never values, bar a few harmless status-like
  * fields) and rows about safeguarding, health, messages, admissions and other
