@@ -14,11 +14,13 @@ import { CurriculumHealth, useCurriculumFigures } from "@/components/learn/curri
 import { RecentLessons } from "@/components/learn/curriculum/RecentLessons";
 import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
-import { useActionItems } from "@/components/learn/actions/useActionItems";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PushOptIn } from "@/components/learn/PushOptIn";
 import { RegisterPanel } from "@/components/learn/attendance/RegisterPanel";
-import { HeadModules } from "@/components/learn/dashboard/HeadModules";
+import { CoverToday } from "@/components/learn/dashboard/CoverToday";
+import { QuickActions, type QuickAction } from "@/components/learn/dashboard/QuickActions";
+import { BehaviourDialog } from "@/components/learn/dashboard/BehaviourDialog";
+import type { ActionItem } from "@/lib/learn/actionCentre";
 
 const AUDIT_ACTION_LABELS: Record<string, string> = {
   BOOKING_CALL_JOIN: "started a call for a booking",
@@ -136,10 +138,24 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
   // A lesson's register opens over Today (owner, 11 Nov 2026: actions open in place).
   const [register, setRegister] = useState<TodayLessonRow | null>(null);
   const [marked, setMarked] = useState<Record<string, boolean>>({});
+  const [showAll, setShowAll] = useState(false);
+  const isTaken = (l: TodayLessonRow) => l.registered > 0 || !!marked[l.id];
+  const started = (lessons || []).filter((l) => now >= l.start_time.slice(0, 5));
+  const takenCount = started.filter(isTaken).length;
+  // A whole school's day can be long: lessons with a register taken fold into the summary
+  // line, so what is left is what still needs someone (owner: no long expanded lists).
+  const shown = showAll ? lessons || [] : (lessons || []).filter((l) => !(now >= l.start_time.slice(0, 5) && isTaken(l)));
   return (
     <div data-guide="admin-lessons-today" className="rounded-2xl border border-gold-light bg-white">
-      <div className="flex items-center justify-between border-b border-gold-light px-5 py-3.5">
-        <h2 className="text-sm font-semibold text-ink">Today&apos;s lessons</h2>
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gold-light px-5 py-3.5">
+        <h2 className="text-sm font-semibold text-ink">
+          Today&apos;s lessons
+          {started.length > 0 && (
+            <span className={`ml-1.5 font-normal ${takenCount < started.length ? "text-amber-900" : "text-ink/60"}`}>
+              · {takenCount} of {started.length} registers taken
+            </span>
+          )}
+        </h2>
         <span className="flex gap-3">
           <Link href="/admin/attendance" className={`${ui.btnLink} !text-xs`}>
             Take registers
@@ -155,7 +171,7 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
         <p className="px-5 py-4 text-sm text-ink/65">No lessons on the published timetable today.</p>
       ) : (
         <ul className="divide-y divide-gold-light/70">
-          {lessons.map((l) => {
+          {shown.map((l) => {
             const started = now >= l.start_time.slice(0, 5);
             return (
               <li key={l.id} className="flex flex-wrap items-center gap-3 px-5 py-3 text-sm">
@@ -185,6 +201,12 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
           })}
         </ul>
       )}
+      {lessons && lessons.length > 0 && takenCount > 0 && (
+        <button type="button" onClick={() => setShowAll((v) => !v)} aria-expanded={showAll} className="flex min-h-11 w-full items-center border-t border-gold-light/70 px-5 text-left text-sm font-medium text-forest-700 hover:bg-[var(--portal-hover)]">
+          {showAll ? "Hide lessons with a register taken" : `Show ${takenCount} lesson${takenCount === 1 ? "" : "s"} with a register taken`}
+        </button>
+      )}
+      {lessons && lessons.length > 0 && shown.length === 0 && <p className="px-5 py-4 text-sm text-ink/65">Every register so far is taken. No more lessons today.</p>}
       {register && (
         <RegisterPanel
           lessonId={register.id}
@@ -217,14 +239,25 @@ function DashboardContent() {
   const isHead = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
   const myRoles = Array.from(new Set(roles.map((r) => learnRoleLabel(r.role)))).join(", ");
   const { lessons } = useSchoolToday();
-  // "Need attention" is the Action centre's own count, so Home and the Action
-  // centre always agree (registers, absences, marking, signatures,
-  // safeguarding, admissions and more all live there now, in categories).
-  const { items: actionItems } = useActionItems("admin");
-  const attentionTotal = actionItems === null ? "…" : actionItems.filter((i) => i.urgency !== "info").length;
-  // A register opened from the Today modules (owner, 11 Nov 2026: actions open in place).
-  const [registerId, setRegisterId] = useState<string | null>(null);
-  const registerLesson = registerId ? (lessons || []).find((l) => l.id === registerId) || null : null;
+  const [panel, setPanel] = useState<"behaviour" | null>(null);
+  // Lessons waiting for the head's review join the Curriculum box in Waiting for you, so
+  // approvals sit with every other job instead of in a separate row of figures.
+  const lessonsToApprove: ActionItem[] = curriculum && curriculum.waiting > 0
+    ? [{ id: "adm-lessons-review", area: "Curriculum", urgency: "soon", title: `${curriculum.waiting} lesson${curriculum.waiting === 1 ? "" : "s"} waiting for your review`, detail: "Written lessons to approve or send back with changes.", href: "/admin/curriculum/review", cta: "Review lessons" }]
+    : [];
+  const now = ukNowHm();
+  const started = (lessons || []).filter((l) => now >= l.start_time.slice(0, 5));
+  const missing = started.filter((l) => l.registered === 0).length;
+  const quick: QuickAction[] = [
+    { label: "Registers", hint: lessons === null ? "…" : missing ? `${missing} not taken` : started.length ? "All taken so far" : "None started yet", alert: missing > 0, icon: "userCheck", href: "/admin/attendance" },
+    { label: "Log behaviour", hint: "Praise, concern or incident", icon: "heartHandshake", onSelect: () => setPanel("behaviour") },
+    { label: "Message", hint: "A family or colleague", icon: "messageSquare", href: "/admin/messages?compose=1" },
+    { label: "Announcement", hint: "To families or staff", icon: "megaphone", href: "/admin/announcements" },
+    { label: "Absences and cover", hint: "Follow up, arrange cover", icon: "calendarX", href: "/admin/absences" },
+    { label: "Pupils", hint: "Find a pupil's record", icon: "backpack", href: "/admin/pupils" },
+    { label: "Lesson review", hint: curriculum ? (curriculum.waiting ? `${curriculum.waiting} waiting` : "Nothing waiting") : "…", icon: "clipboardCheck", href: "/admin/curriculum/review" },
+    { label: "Applications", hint: "Admissions queue", icon: "userRoundPlus", href: "/admin/admissions" },
+  ];
 
   if (!isHead) {
     return (
@@ -247,48 +280,33 @@ function DashboardContent() {
     );
   }
 
+  // The head's Today (owner, 11 Nov 2026): quick actions at the very top, then today's lessons
+  // and cover side by side, then Waiting for you in category boxes. The old figures strip and
+  // "Today at a glance" row repeated these three, so they are gone.
   const content = (
     <div className="space-y-6">
-      <div data-guide="admin-stats">
-      <DashboardHero
-        area="admin"
-        subtitle={myRoles ? `${myRoles}. The school today, and what needs a decision.` : "The school today, and what needs a decision."}
-        chips={[
-          { label: "Lessons today", value: lessons === null ? "…" : lessons.length, href: "/admin/lessons" },
-          { label: "Need attention", value: attentionTotal, tone: "pink", href: "/admin/actions" },
-          { label: "Lessons to approve", value: curriculum ? curriculum.waiting : "…", tone: "pink", href: "/admin/curriculum/review" },
-          { label: "Curriculum approved", value: curriculum ? `${curriculum.lessons ? Math.round((curriculum.approved / curriculum.lessons) * 100) : 0}%` : "…", hint: curriculum ? `${curriculum.approved} of ${curriculum.lessons} lessons` : undefined, href: "/admin/curriculum/map" },
-        ]}
-      />
-      </div>
+      <DashboardHero area="admin" subtitle={myRoles || undefined} />
 
-      <HeadModules lessons={lessons} items={actionItems} lessonsToApprove={curriculum ? curriculum.waiting : null} now={ukNowHm()} onRegister={setRegisterId} />
+      <QuickActions actions={quick} guide="admin-quick-actions" />
 
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <TodayLessons lessons={lessons} />
-        <ActionCentreWidget role="admin" />
+        <CoverToday />
       </div>
-      <PushOptIn />
-      {registerLesson && (
-        <RegisterPanel
-          lessonId={registerLesson.id}
-          classId={registerLesson.class_id}
-          className={registerLesson.className}
-          when={`${registerLesson.start_time.slice(0, 5)} to ${registerLesson.end_time.slice(0, 5)}`}
-          lessonHref={`/admin/lessons/view?id=${registerLesson.id}`}
-          onClose={() => setRegisterId(null)}
-        />
-      )}
+
+      <ActionCentreWidget role="admin" extra={lessonsToApprove} />
 
       <CurriculumHealth figures={curriculum} />
-
-      <RecentLessons area="admin" />
 
       <WithdrawalNoticesAdmin compact />
 
       <AdminLeaderboard />
 
       <ActivityFeed />
+
+      <RecentLessons area="admin" compact />
+      <PushOptIn />
+      {panel === "behaviour" && <BehaviourDialog allowIncident onClose={() => setPanel(null)} />}
     </div>
   );
 

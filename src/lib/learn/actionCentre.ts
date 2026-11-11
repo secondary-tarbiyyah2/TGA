@@ -127,9 +127,138 @@ export async function loadStaffItems(role: "teach" | "admin"): Promise<ActionIte
   items.push(...(await loadSendItems(base)));
   items.push(...(await loadRevisionItems(base)));
   items.push(...(await loadLessonFeedbackItems(base).catch(() => [] as ActionItem[])));
+  items.push(...(await loadOwnSignatureItems().catch(() => [] as ActionItem[])));
+  if (role === "teach") items.push(...(await loadTeacherDayItems().catch(() => [] as ActionItem[])));
   if (role === "teach") items.push(...(await loadQuranTeacherItems()));
   if (role === "admin") items.push(...(await loadAdminItems().catch(() => [] as ActionItem[])));
   return items;
+}
+
+/**
+ * Documents waiting for this member of staff's own signature (my_outstanding_signatures,
+ * scoped to auth.uid() in the view). Owner, 11 Nov 2026: "Pending your signature" belongs in
+ * Waiting for you, not as its own block on Today. Signing happens on the Documents page.
+ */
+async function loadOwnSignatureItems(): Promise<ActionItem[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  const { count, error } = await supabase.from("my_outstanding_signatures").select("document_id", { count: "exact", head: true });
+  const n = error ? 0 : count || 0;
+  if (!n) return [];
+  return [{ id: "me-sign", area: "Signatures", urgency: "soon", title: `${plural(n, "document")} for you to read and sign`, detail: "School policies and agreements that need your own signature.", href: "/documents", cta: "Read and sign" }];
+}
+
+/**
+ * The teacher's own day: registers not taken for lessons that have started, work handed in
+ * and waiting to be marked (the same list as To mark), and pupil records with medical or
+ * emergency details not yet read (the same rule as the Pupils page). These used to be a strip
+ * of figures on Today as well as here; now they live here once.
+ */
+async function loadTeacherDayItems(): Promise<ActionItem[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return [];
+  const out: ActionItem[] = [];
+  const today = ukToday();
+  const now = ukNowHm();
+
+  type SlotRow = { id: string; start_time: string; classes: { name: string } | null; timetable_runs: { status: string } | null };
+  type LessonRow = { id: string; timetable_slot_id: string | null; timetable_slots: { start_time: string; classes: { name: string } | null } | null };
+  const [slotRes, ownRes, queueRes, classes] = await Promise.all([
+    supabase.from("timetable_slots").select("id, start_time, classes(name), timetable_runs!inner(status)").eq("teacher_user_id", user.id).eq("timetable_runs.status", "published"),
+    supabase.from("lesson_instances").select("id, timetable_slot_id, timetable_slots(start_time, classes(name))").eq("date", today).eq("teacher_user_id", user.id),
+    supabase.from("homework_review_queue").select("submitted_at").order("submitted_at", { ascending: true }).limit(1000),
+    myTeachingClasses(),
+  ]);
+
+  // Registers: today's lessons (timetabled or given to you directly) that have started with no marks yet.
+  const slots = (slotRes.error ? [] : (slotRes.data as unknown as SlotRow[])) || [];
+  const bySlot = new Map(slots.map((s) => [s.id, s]));
+  const lessons = new Map<string, { start: string; className: string }>();
+  if (slots.length) {
+    const r = await supabase.from("lesson_instances").select("id, timetable_slot_id").eq("date", today).in("timetable_slot_id", [...bySlot.keys()]);
+    for (const l of (r.data as { id: string; timetable_slot_id: string }[] | null) || []) {
+      const s = bySlot.get(l.timetable_slot_id);
+      if (s) lessons.set(l.id, { start: s.start_time, className: s.classes?.name || "Class" });
+    }
+  }
+  for (const l of ((ownRes.error ? [] : ownRes.data) as unknown as LessonRow[]) || []) {
+    if (!lessons.has(l.id) && l.timetable_slots) lessons.set(l.id, { start: l.timetable_slots.start_time, className: l.timetable_slots.classes?.name || "Class" });
+  }
+  const started = [...lessons.entries()].filter(([, l]) => now >= l.start.slice(0, 5));
+  if (started.length) {
+    const att = await supabase.from("attendance_records").select("lesson_instance_id").in("lesson_instance_id", started.map(([id]) => id));
+    if (!att.error) {
+      const taken = new Set(((att.data as { lesson_instance_id: string }[]) || []).map((a) => a.lesson_instance_id));
+      const missing = started.filter(([id]) => !taken.has(id)).sort((a, b) => a[1].start.localeCompare(b[1].start));
+      if (missing.length) {
+        out.push({
+          id: "t-registers",
+          area: "Registers",
+          urgency: "now",
+          title: `${plural(missing.length, "register")} not taken today`,
+          detail: `${missing.map(([, l]) => `${l.className} (${l.start.slice(0, 5)})`).join(", ")}. The lesson has started and no one is marked yet.`,
+          href: "/teach/today",
+          cta: "Take registers",
+        });
+      }
+    }
+  }
+
+  // Work to mark: the To mark list, oldest first.
+  const queue = (queueRes.error ? [] : (queueRes.data as { submitted_at: string }[])) || [];
+  if (queue.length) {
+    const oldest = daysAgo(queue[0].submitted_at);
+    out.push({
+      id: "t-marking",
+      area: "Marking",
+      urgency: oldest >= 7 ? "now" : "soon",
+      title: `${queue.length}${queue.length >= 1000 ? "+" : ""} ${queue.length === 1 ? "piece" : "pieces"} of work to mark`,
+      detail: oldest >= 1 ? `The oldest has been waiting ${plural(oldest, "day")}.` : "Handed in today.",
+      href: "/teach/review",
+      cta: "Mark work",
+    });
+  }
+
+  // Pupil records to read: pupils in your classes whose medical and emergency details you haven't
+  // acknowledged, or that changed since you did.
+  const classIds = classes.map((c) => c.id);
+  if (classIds.length) {
+    const [enr, health, acks] = await Promise.all([
+      supabase.from("enrolments").select("child_id, children(name)").in("class_id", classIds),
+      supabase.rpc("teacher_pupil_health"),
+      supabase.from("pupil_detail_acknowledgements").select("child_id, details_updated_at").eq("teacher_id", user.id),
+    ]);
+    if (!enr.error && !health.error && !acks.error) {
+      const names = new Map<string, string>();
+      for (const e of (enr.data as unknown as { child_id: string; children: { name: string } | null }[]) || []) names.set(e.child_id, e.children?.name || "Pupil");
+      const updated = new Map(((health.data as { child_id: string; updated_at: string | null }[]) || []).map((h) => [h.child_id, h.updated_at]));
+      const ackBy = new Map(((acks.data as { child_id: string; details_updated_at: string | null }[]) || []).map((a) => [a.child_id, a.details_updated_at]));
+      const toRead = [...names.entries()].filter(([id]) => {
+        if (!ackBy.has(id)) return true;
+        const at = ackBy.get(id);
+        const up = updated.get(id);
+        return !!(up && at && new Date(up).getTime() > new Date(at).getTime() + 1000);
+      });
+      if (toRead.length) {
+        out.push({
+          id: "t-records",
+          area: "Pupils",
+          urgency: "soon",
+          title: `${plural(toRead.length, "pupil record")} to read`,
+          detail: "Medical and emergency details for pupils in your classes that you haven't read yet, or that have changed since.",
+          people: toRead.slice(0, 5).map(([id, name]) => ({ id, name })),
+          who: toRead.length > 5 ? `and ${toRead.length - 5} more` : undefined,
+          href: "/teach/pupils",
+          cta: "Read records",
+        });
+      }
+    }
+  }
+  return out;
 }
 
 /**

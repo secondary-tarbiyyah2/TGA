@@ -378,6 +378,7 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Today rebuilt (owner feedback 2, items 1 and 12): quick actions as a compact row at the very top (teacher: take register, set work, mark work, log behaviour in panels or dialogs; message, Qur'an, results, absences as links; head: registers, behaviour, message, announcement, absences and cover, pupils, lesson review, applications), then the day's lessons, then Waiting for you as category boxes (two lines each, one button, See all). Teacher registers not taken, work to mark, pupil records to read and the person's own documents to sign are now Action centre items, so the teacher figures strip and the Pending your signature block are gone; the head's figures strip and "Today at a glance" row are replaced by today's lessons (taken ones folded away) and Cover today beside them; lessons to approve join the Curriculum box. Recently opened is a one-line strip of links at the foot.
 - 2026-11-10: Portal guide part 1 (T39): an entry for every page per role, Guide me panel and Show me, progress in
   `portal_prefs.guide_progress` (migration 0203).
 - 2026-11-10: Guided tour (T38, PR "Portal: a short guided tour for every role"): role tours, page tips on the lesson
