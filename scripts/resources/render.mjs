@@ -128,7 +128,8 @@ function blockHtml(b, ctx) {
   if (b.passage) {
     const p = b.passage;
     let ln = 0;
-    const paras = p.paras.map((x) => (p.lineNumbers ? `<p><span class="pn">${++ln}</span>${t(x)}</p>` : `<p>${t(x)}</p>`)).join("");
+    // An empty paragraph is a stanza break in a poem.
+    const paras = p.paras.map((x) => (!String(x).trim() ? "<p>&nbsp;</p>" : p.lineNumbers ? `<p><span class="pn">${++ln}</span>${t(x)}</p>` : `<p>${t(x)}</p>`)).join("");
     return `<article class="passage">${p.title ? `<h3>${t(p.title)}</h3>` : ""}${p.byline ? `<p class="byline">${t(p.byline)}</p>` : ""}${paras}${p.source ? `<p class="src">${t(p.source)}</p>` : ""}</article>`;
   }
   if (b.model) return `<article class="model">${b.model.title ? `<h3>${t(b.model.title)}</h3>` : ""}${b.model.parts.map((p) => `<p>${p.label ? `<span class="tag">${t(p.label)}</span>` : ""}${t(p.text)}</p>`).join("")}</article>`;
