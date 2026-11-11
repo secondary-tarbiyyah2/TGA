@@ -397,7 +397,8 @@ export function sendEntry(a: Area): GuideEntry {
     purpose: "Pupils with SEND: their support plans, adjustments, access arrangements and reviews.",
     when: "Before teaching a new class, before a test, or when a review is due.",
     steps: [
-      "Search by name, or Show Current plans, Review due, Drafts or Needs mentioned, no plan.",
+      "The figures at the top count pupils on the register, EHC plans, SEN support and reviews due (overdue in red); press one to show those pupils.",
+      "Search by name, filter by area of need, level or year, or Show Current plans, Review due, Drafts or Needs mentioned, no plan.",
       "Open a pupil to read their plan: in lessons, in tests and targets.",
       "Use Pupil profile to see their full record.",
     ],
@@ -407,6 +408,7 @@ export function sendEntry(a: Area): GuideEntry {
     showMe: [
       { target: "send-filter", label: "Show", say: "Current plans, reviews due and drafts." },
       { target: "send-list", label: "Register", say: "Open a pupil's plan." },
+      { target: "send-figures", label: "Figures", say: "On the register, EHC plans, SEN support and reviews due." },
     ],
     tasks: ["read a support plan", "send register"],
   };

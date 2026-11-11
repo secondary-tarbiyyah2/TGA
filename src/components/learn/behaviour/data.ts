@@ -70,7 +70,7 @@ export const INCIDENT_CATEGORIES: string[] = ["Classroom disruption", "Bullying 
 
 /** Each badge's icon from the portal icon set (no emojis in the portal). */
 export const BADGE_TYPES: { name: string; icon: IconName }[] = [
-  { name: "Star of the week", icon: "star" },
+  { name: "Star of the week", icon: "award" },
   { name: "Great effort", icon: "zap" },
   { name: "Kindness", icon: "heart" },
   { name: "Punctuality", icon: "clock" },
