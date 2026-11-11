@@ -245,7 +245,7 @@ function FeesContent() {
       )}
       {loadError && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load fees just now. Please refresh the page and try again.</p>}
 
-      <div data-guide="fees-figures" className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <div data-guide="fees-figures" className="portal-figures mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatTile label="Billed" value={formatGBP(stats.billed)} />
         <StatTile label="Collected" value={formatGBP(stats.collected)} status={stats.collected > 0 && stats.outstanding === 0 ? "ok" : undefined} />
         <StatTile label="Outstanding" value={formatGBP(stats.outstanding)} />
@@ -268,22 +268,22 @@ function FeesContent() {
       )}
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
-        <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search family, child, description" aria-label="Search charges" className={`${ui.input} min-w-0 flex-1 sm:max-w-xs`} />
-        <Select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value as "all" | ChargeStatus)} className={inputCls} aria-label="Status">
+        <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search family, child, description" aria-label="Search charges" className={`${ui.input} min-w-[12rem] flex-1 sm:max-w-xs`} />
+        <Select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value as "all" | ChargeStatus)} className={`${inputCls} !w-auto`} aria-label="Status">
           <option value="all">All statuses</option>
           <option value="outstanding">Outstanding</option>
           <option value="overdue">Overdue</option>
           <option value="paid">Paid</option>
           <option value="void">Void</option>
         </Select>
-        <Select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className={inputCls} aria-label="Year group">
+        <Select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className={`${inputCls} !w-auto`} aria-label="Year group">
           <option value="all">All year groups</option>
           {yearOptions.map((y) => (
             <option key={y} value={y}>{y}</option>
           ))}
         </Select>
         {view === "charges" && (
-          <Select value={sort} onChange={(e) => setSort(e.target.value as typeof sort)} className={inputCls} aria-label="Sort charges">
+          <Select value={sort} onChange={(e) => setSort(e.target.value as typeof sort)} className={`${inputCls} !w-auto`} aria-label="Sort charges">
             <option value="due_desc">Newest due date first</option>
             <option value="due_asc">Oldest due date first</option>
             <option value="balance">Largest balance first</option>

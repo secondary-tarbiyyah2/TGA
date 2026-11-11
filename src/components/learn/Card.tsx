@@ -65,7 +65,7 @@ export function StatTile({ label, value, status, href }: { label: string; value:
       className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gold-light bg-white p-5 transition before:absolute before:inset-y-0 before:left-0 before:w-1 ${tone.bar} ${href ? "hover:border-teal-500/40 hover:shadow-sm" : ""}`}
     >
       <p className="text-sm font-medium text-ink/65">{label}</p>
-      <p className={`mt-1.5 text-3xl font-semibold tabular-nums tracking-tight ${tone.value}`}>{value}</p>
+      <p className={`mt-1 text-2xl font-semibold tabular-nums tracking-tight ${tone.value}`}>{value}</p>
       <div className="mt-auto flex items-center justify-between gap-2 pt-3">
         {statusStyle ? (
           <span className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs font-medium ${tone.pill}`}>

@@ -259,8 +259,8 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
   }
 
   const tile = (label: string, value: number | string, tone: "bad" | "ok" | "warn", onClick?: () => void, sub?: string) => (
-    <button type="button" onClick={onClick} className={`rounded-2xl border p-4 text-left ${tone === "bad" ? "border-red-300 bg-red-50" : tone === "warn" ? "border-amber-300 bg-amber-50" : "border-green-200 bg-green-50"} ${onClick ? "hover:brightness-95" : "cursor-default"}`}>
-      <p className="text-2xl font-semibold text-ink">{value}</p>
+    <button type="button" onClick={onClick} className={`rounded-2xl border p-4 text-left ${tone === "bad" ? "border-red-300 bg-red-50" : tone === "warn" ? "border-amber-300 bg-amber-50" : "border-green-200 bg-green-50"} ${onClick ? "hover:!bg-cream" : "cursor-default"}`}>
+      <p className={`text-2xl font-semibold tabular-nums ${tone === "bad" ? "text-red-700" : tone === "warn" ? "text-amber-800" : "text-ink"}`}>{value}</p>
       <p className="text-xs font-medium text-ink/70">{label}</p>
       {sub && <p className="mt-0.5 text-[11px] text-ink/65">{sub}</p>}
     </button>
@@ -269,7 +269,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
   return (
     <div className="space-y-5">
       {topExtra}
-      <div data-guide="safeguarding-summary" className="grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="Safeguarding summary">
+      <div data-guide="safeguarding-summary" className="portal-figures grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="Safeguarding summary">
         {tile("Open alerts", loading ? "…" : activeCount, activeCount === 0 ? "ok" : openCount > 0 ? "bad" : "warn", () => { setTab("alerts"); setFilter("active"); setKindFilter("all"); }, loading ? undefined : `${openCount} not yet acknowledged`)}
         {tile("Flagged messages", loading ? "…" : openFlagged, openFlagged === 0 ? "ok" : "bad", () => { setTab("alerts"); setFilter("active"); setKindFilter("flagged_message"); })}
         {tile("Unsigned critical policies", loading ? "…" : criticalUnsigned, criticalUnsigned === 0 ? "ok" : "bad", () => setTab("signatures"), "people yet to sign child protection / safeguarding")}
