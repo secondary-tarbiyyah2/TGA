@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ukDaysAgo, ukToday } from "@/lib/learn/ukTime";
-import { Register, type Status } from "@/components/learn/attendance/Register";
+import type { Status } from "@/components/learn/attendance/Register";
+import { PupilLink } from "@/components/learn/pupil/PupilLink";
 import { useClassRoster } from "@/components/learn/class/PupilPicker";
 
 export type ClassLesson = { id: string; date: string; start: string | null };
@@ -54,7 +55,6 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
   const roster = useClassRoster(classId);
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
   const [marks, setMarks] = useState<Mark[]>([]);
-  const [openId, setOpenId] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
 
   const load = useCallback(async () => {
@@ -93,6 +93,8 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
   const overall = rateOf(marks);
   const shownLessons = showAll ? lessons : lessons.slice(0, 8);
   const absencesHref = area === "/admin" ? "/admin/absences" : "/teach/absences";
+  // Each register opens on its own page with a Back link (owner, 11 Nov 2026), never expanded here.
+  const registerBase = area === "/admin" ? "/admin" : "/teach";
 
   return (
     <div className="space-y-4">
@@ -115,7 +117,6 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
           <ul className="divide-y divide-gold-light/60">
             {shownLessons.map((l) => {
               const n = byLesson.get(l.id)?.length || 0;
-              const open = openId === l.id;
               return (
                 <li key={l.id} className="px-5 py-3">
                   <div className="flex flex-wrap items-center gap-3">
@@ -126,15 +127,10 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
                     <span className={`rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset ${n === 0 ? "bg-amber-50 text-amber-900 ring-amber-600/20" : n < total ? "bg-cream text-ink/75 ring-gold-light" : "bg-green-50 text-green-800 ring-green-600/20"}`}>
                       {n === 0 ? "Not taken" : `${n} of ${total} marked`}
                     </span>
-                    <button type="button" onClick={() => setOpenId(open ? null : l.id)} aria-expanded={open} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
-                      {open ? "Close" : n === 0 ? "Take register" : "Open register"}
-                    </button>
+                    <Link href={`${registerBase}/register?id=${l.id}&from=class`} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
+                      {n === 0 ? "Take register" : "Open register"}
+                    </Link>
                   </div>
-                  {open && (
-                    <div className="mt-3">
-                      <Register lessonId={l.id} classId={classId} onProgress={() => load()} />
-                    </div>
-                  )}
                 </li>
               );
             })}
@@ -170,7 +166,9 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
               <tbody className="divide-y divide-gold-light/60">
                 {pupils.map((p) => (
                   <tr key={p.id}>
-                    <td className="px-5 py-2.5 font-medium text-ink">{p.name}</td>
+                    <td className="px-5 py-2.5 font-medium text-ink">
+                      <PupilLink id={p.id} name={p.name} />
+                    </td>
                     <td className={`px-5 py-2.5 text-right font-semibold tabular-nums ${p.rate !== null && p.rate < 90 ? "text-red-700" : "text-ink"}`}>{p.rate === null ? "–" : `${p.rate}%`}</td>
                     <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.absent}</td>
                     <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.late}</td>

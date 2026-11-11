@@ -129,7 +129,7 @@ export function classPageEntry(a: Area): GuideEntry {
     related: [`/${a}/classes`, `/${a}/homework`, `/${a}/lessons/view`],
     showMe: [
       { target: "class-tabs", label: "Class sections", say: "Stream, Classwork, Lessons, People, Attendance, Grades, Insights and Settings." },
-      { target: "class-set-work", label: "Set work", say: "Start a new piece of classwork here; it opens over the page." },
+      { target: "class-set-work", label: "Set work", say: "Start a new piece of classwork here: choose Assignment, Quiz assignment, Question or Material." },
     ],
     tasks: ["set homework", "set classwork", "mark work", "add a Teams link"],
   };
@@ -207,22 +207,24 @@ export function curriculumMapEntry(a: Area): GuideEntry {
 export function libraryEntry(a: Area): GuideEntry {
   return {
     href: `/${a}/curriculum`,
-    name: "Lesson library",
+    name: "Browse",
     category: "Curriculum",
-    purpose: "Every lesson's slides, plan and resources, unit by unit, plus revision packs.",
-    when: "To plan, find, present or share a lesson.",
+    purpose: "The whole curriculum as folders, like a drive: year, subject, unit, then its lessons, resources and weekly plan.",
+    when: "To find, present or share a lesson or a resource.",
     steps: [
-      "Choose a subject and a year.",
-      "Pick a unit from the unit tabs, or search for a lesson.",
-      "Press Open lesson for the lesson's own page, or Slides or Plan to view them here.",
-      "Use + Add summary and quiz (or the revision pack) to build the unit's revision for pupils.",
+      "Open a year, then a subject, then a unit; the path at the top takes you back up.",
+      "Search, or show Lessons or Resources only; in a unit, filter lessons by review status.",
+      "Press anything once to see its details on the right; press Open (or double click) to open it.",
+      "A lesson opens on its own page, with slides, plan, resources, sharing and review, and a way back.",
+      "In a unit, Unit tools has its specification points, revision pack and pupil results.",
     ],
-    tips: ["Looking for exam specifications? Use Open Syllabus and specifications at the top.", "Pin a lesson to keep it on your Today page."],
+    tips: ["Switch between grid and list with the buttons on the right of the toolbar.", "Views and tools at the top opens the Curriculum map, Planner, Lesson review, Syllabus and the term resource lists."],
     privacy: "Staff only. Pupils only see what you share to a class and approved revision packs.",
     related: [`/${a}/curriculum/lesson`, `/${a}/curriculum/map`, `/${a}/curriculum/review`],
     showMe: [
-      { target: "library-filters", label: "Subject and year", say: "Choose the subject and year here." },
-      { target: "library-units", label: "Units and lessons", say: "Each unit's lessons, with Open lesson." },
+      { target: "curriculum-browser", label: "Folders", say: "Years, subjects and units as folders; the path at the top goes back up." },
+      { target: "curriculum-browser-filters", label: "Search and filters", say: "Search, lessons or resources only, review status, grid or list." },
+      { target: "curriculum-browser-details", label: "Details", say: "What you selected, with its main action." },
     ],
     tasks: ["find a lesson", "make a revision pack"],
   };
@@ -279,10 +281,11 @@ export function resourcesEntry(a: Area): GuideEntry {
     href: `/${a}/curriculum/resources`,
     name: "Resources",
     category: "Curriculum",
-    purpose: "Each term's printables: worksheets, quizzes, tests, mark schemes and knowledge organisers.",
+    purpose: "Each term's printables: worksheets, quizzes, tests, mark schemes and knowledge organisers, in each unit's folder.",
     when: "To download or share a resource for this term.",
     steps: [
-      "Filter by Term, Subject, Year, Type or Status, or search.",
+      "Resources opens the Curriculum folders showing resources: open a year, subject and unit to see that unit's.",
+      "For a whole term's list, use Views and tools, then Resources by term, and filter by Term, Subject, Year, Type or Status.",
       "Press Download pupil copy (PDF), or the Word copy to edit it.",
       "Use Share to a class to put it in a class's classwork.",
     ],
@@ -290,8 +293,8 @@ export function resourcesEntry(a: Area): GuideEntry {
     privacy: "Staff only, until shared to a class.",
     related: [`/${a}/curriculum`, `/${a}/class`],
     showMe: [
-      { target: "resources-filters", label: "Filters", say: "Narrow the list by term, subject, year and type." },
-      { target: "resources-list", label: "Resources", say: "Download or share each resource." },
+      { target: "curriculum-browser", label: "Folders", say: "Each unit's folder holds its resources." },
+      { target: "curriculum-browser-details", label: "Details", say: "Preview, download or share the resource you selected." },
     ],
     tasks: ["download a worksheet", "print a quiz"],
   };
@@ -366,7 +369,7 @@ export function revisionResultsEntry(a: Area): GuideEntry {
     purpose: "How pupils did on each unit's revision quiz: average, pupils under 60% and the weakest topic.",
     when: "After a unit, to decide what to reteach.",
     steps: ["Find the unit.", "Read Pupils, Average, Under 60% and Weakest topic.", "Press See results for each pupil."],
-    tips: ["Revision packs are built in the Lesson library."],
+    tips: ["Revision packs are built in a unit's Unit tools, under Curriculum, Browse."],
     privacy: "Staff, the pupil and their parents see a pupil's results.",
     related: [`/${a}/curriculum`],
     showMe: [{ target: "revision-overview", label: "Results by unit", say: "One row per unit." }],

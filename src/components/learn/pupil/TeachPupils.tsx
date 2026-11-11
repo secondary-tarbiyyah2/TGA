@@ -1,19 +1,18 @@
 "use client";
 
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Loading } from "@/components/learn/kit";
 import { useEffect, useMemo, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { formatStamp } from "./data";
-import { PupilRecord } from "./PupilRecord";
-import { PupilOverview } from "./PupilOverview";
-import { ackState, usePupils, type PupilRow } from "./usePupils";
+import { ackState, usePupils } from "./usePupils";
 import { Tabs } from "@/components/learn/Tabs";
 import { localDateKey } from "@/lib/learn/calendar";
 import { reasonLabel } from "@/components/learn/absences/data";
 import { useSupportPlans } from "@/lib/learn/send";
-import { PupilSupportCard, SupportBadge } from "@/components/learn/send/SupportAtAGlance";
+import { SupportBadge } from "@/components/learn/send/SupportAtAGlance";
 import { Select } from "@/components/learn/Select";
 
 type Signals = { rate: number | null; lessons: number; awayToday: string | null };
@@ -77,15 +76,13 @@ const ACK_BADGE = {
 } as const;
 
 export function TeachPupils() {
-  const { pupils, error, reload } = usePupils(true);
+  const { pupils, error } = usePupils(true);
   const { roles } = useLearnSession();
   const canAcknowledge = roles.some((r) => r.role === "teacher" || r.role === "teaching_assistant_cover");
   const [q, setQ] = useState("");
   const [cls, setCls] = useState("");
   const [only, setOnly] = useState<"all" | "alerts" | "away" | "todo" | "send">("all");
-  const [open, setOpen] = useState<PupilRow | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [ackError, setAckError] = useState<string | null>(null);
+  const router = useRouter();
 
   const taught = useMemo(() => (pupils || []).filter((p) => p.classes.length > 0), [pupils]);
   const signals = usePupilSignals(taught.map((p) => p.id));
@@ -111,32 +108,13 @@ export function TeachPupils() {
     });
   }, [pupils, q, cls, only, signals, plans]);
 
-  // Links from the Action centre and the Qur'an page land here as ?pupil=<id>: open that pupil.
+  // Older links (the Action centre, the Qur'an page) say ?pupil=<id>: open that pupil's record page.
   useEffect(() => {
-    if (!pupils) return;
     const id = new URLSearchParams(window.location.search).get("pupil");
-    const hit = id && pupils.find((p) => p.id === id);
-    if (hit) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- open the linked pupil once the list arrives
-      setOpen(hit);
-      window.history.replaceState(null, "", window.location.pathname);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- only when the pupil list first arrives
-  }, [pupils === null]);
+    if (id) router.replace(`/teach/pupils?id=${id}`);
+  }, [router]);
 
   const todo = (pupils || []).filter((p) => p.classes.length > 0 && ackState(p) !== "current").length;
-
-  const acknowledge = async (p: PupilRow) => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    setBusy(true);
-    setAckError(null);
-    const { error: e } = await supabase.from("pupil_detail_acknowledgements").upsert({ child_id: p.id }, { onConflict: "child_id,teacher_id" });
-    setBusy(false);
-    if (e) return setAckError("We couldn't record that just now. Please try again.");
-    setOpen(null);
-    reload();
-  };
 
   const selectCls = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink";
 
@@ -145,7 +123,7 @@ export function TeachPupils() {
       <PageHeader
         crumbs={[{ label: "Today", href: "/teach/dashboard" }, { label: "Pupils" }]}
         title="Pupils"
-        subtitle="Everyone you teach: who is away today and why, attendance, and the medical and additional-needs information to read."
+        subtitle="Everyone you teach: who is away today and why, attendance, and the medical and additional-needs information to read. Press a pupil for their full record."
       />
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
 
@@ -188,7 +166,7 @@ export function TeachPupils() {
               const initials = p.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
               return (
                 <li key={p.id}>
-                  <button type="button" onClick={() => { setAckError(null); setOpen(p); }} className="flex w-full flex-wrap items-center gap-3 px-4 py-3 text-left hover:bg-cream/50">
+                  <Link href={`/teach/pupils?id=${p.id}`} className="flex w-full flex-wrap items-center gap-3 px-4 py-3 text-left hover:bg-cream/50">
                     <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials}</span>
                     <span className="min-w-0 flex-1">
                       <span className="block font-medium text-ink">
@@ -214,7 +192,7 @@ export function TeachPupils() {
                       ))}
                       {canAcknowledge && st !== "current" && <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${ACK_BADGE[st].cls}`}>{ACK_BADGE[st].label}</span>}
                     </span>
-                  </button>
+                  </Link>
                 </li>
               );
             })}
@@ -222,42 +200,6 @@ export function TeachPupils() {
         )}
       </div>
 
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-label={`${open.name}, pupil information`}>
-          <div className="flex max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl bg-cream sm:rounded-2xl">
-            <div className="flex items-center justify-between gap-3 border-b border-gold-light/60 bg-white px-4 py-3">
-              <h2 className="text-base font-semibold text-ink">Pupil information</h2>
-              <button type="button" onClick={() => setOpen(null)} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/70 hover:bg-cream">
-                Close
-              </button>
-            </div>
-            <div className="space-y-4 overflow-y-auto p-4">
-              {plans?.[open.id] && <PupilSupportCard plan={plans[open.id]} />}
-              <PupilOverview childId={open.id} />
-              <PupilRecord teacherView child={{ id: open.id, name: open.name, dob: open.dob, yearGroup: open.yearGroup, classes: open.classes.map((c) => c.name) }} />
-            </div>
-            {canAcknowledge && (
-              <div className="border-t border-gold-light/60 bg-white px-4 py-3">
-                {ackError && <p className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{ackError}</p>}
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-xs text-ink/65">
-                    {ackState(open) === "current" && open.ack
-                      ? `You acknowledged this on ${formatStamp(open.ack.acknowledged_at)}.`
-                      : ackState(open) === "stale"
-                        ? "This record has changed since you last read it."
-                        : "Tick this off once you have read the health and needs information."}
-                  </p>
-                  {ackState(open) !== "current" && (
-                    <button type="button" disabled={busy} onClick={() => acknowledge(open)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
-                      {busy ? "Saving…" : "I've read this"}
-                    </button>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </>
   );
 }
