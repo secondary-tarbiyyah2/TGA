@@ -1,0 +1,171 @@
+{
+ "id": "computing-y10-pearson-pseudocode-command-set-as-printed-in-the",
+ "title": "Pseudocode command set: a summary for written algorithms",
+ "type": "knowledge organiser",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Summer 1: Algorithms",
+ "lessons": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  10,
+  15,
+  16,
+  40,
+  41
+ ],
+ "source": "Written for computing/y10 lessons 2, 3, 4, 5, 6, 10, 15, 16, 40, 41 (Pearson pseudocode command set (as printed in the specification) for written algorithms)",
+ "intro": "Lessons 2 to 41. A TGA summary of the pseudocode style Pearson uses in written questions. Check details against the command set printed in the specification.",
+ "name": false,
+ "blocks": [
+  {
+   "table": {
+    "head": [
+     "Construct",
+     "Pseudocode"
+    ],
+    "rows": [
+     [
+      "Assignment",
+      "SET counter TO 0"
+     ],
+     [
+      "Input",
+      "RECEIVE name FROM (STRING) KEYBOARD"
+     ],
+     [
+      "Output",
+      "SEND 'Hello' TO DISPLAY"
+     ],
+     [
+      "Selection",
+      "IF score > 50 THEN ... ELSE ... END IF"
+     ],
+     [
+      "Count-controlled loop",
+      "FOR index FROM 1 TO 10 DO ... END FOR"
+     ],
+     [
+      "Loop over an array",
+      "FOR EACH item FROM list DO ... END FOREACH"
+     ],
+     [
+      "Condition-controlled loop",
+      "WHILE attempts < 3 DO ... END WHILE"
+     ],
+     [
+      "Post-condition loop",
+      "REPEAT ... UNTIL password = 'secret'"
+     ],
+     [
+      "Fixed repetition",
+      "REPEAT 5 TIMES ... END REPEAT"
+     ],
+     [
+      "Procedure",
+      "PROCEDURE greet (name) BEGIN PROCEDURE ... END PROCEDURE"
+     ],
+     [
+      "Function",
+      "FUNCTION total (a, b) BEGIN FUNCTION RETURN a + b END FUNCTION"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Operators"
+  },
+  {
+   "table": {
+    "head": [
+     "Type",
+     "Operators"
+    ],
+    "rows": [
+     [
+      "Arithmetic",
+      "+  -  *  /  MOD  DIV  ^"
+     ],
+     [
+      "Relational",
+      "=  <>  >  >=  <  <="
+     ],
+     [
+      "Logical",
+      "AND  OR  NOT"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Flowchart symbols"
+  },
+  {
+   "table": {
+    "head": [
+     "Symbol",
+     "Shape",
+     "Use"
+    ],
+    "rows": [
+     [
+      "Terminal",
+      "Rounded rectangle",
+      "Start, Stop"
+     ],
+     [
+      "Input/output",
+      "Parallelogram",
+      "RECEIVE, SEND"
+     ],
+     [
+      "Process",
+      "Rectangle",
+      "SET, calculate"
+     ],
+     [
+      "Decision",
+      "Diamond",
+      "Yes/no question"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Example: password check with three attempts"
+  },
+  {
+   "model": {
+    "title": "Pseudocode",
+    "parts": [
+     {
+      "text": "SET attempts TO 0"
+     },
+     {
+      "text": "SET correct TO FALSE"
+     },
+     {
+      "text": "WHILE attempts < 3 AND correct = FALSE DO"
+     },
+     {
+      "text": "    RECEIVE guess FROM (STRING) KEYBOARD"
+     },
+     {
+      "text": "    IF guess = 'tga2027' THEN SET correct TO TRUE ELSE SET attempts TO attempts + 1 END IF"
+     },
+     {
+      "text": "END WHILE"
+     },
+     {
+      "text": "IF correct = TRUE THEN SEND 'Welcome' TO DISPLAY ELSE SEND 'Locked' TO DISPLAY END IF"
+     }
+    ]
+   }
+  }
+ ]
+}

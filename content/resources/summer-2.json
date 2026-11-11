@@ -14,7 +14,7 @@
   "total": 2037,
   "byType": {
    "equipment": 385,
-   "worksheet": 553,
+   "worksheet": 552,
    "school file": 479,
    "slides": 61,
    "test paper": 4,
@@ -28,7 +28,7 @@
    "mock paper": 28,
    "quiz": 38,
    "textbook": 48,
-   "knowledge organiser": 28
+   "knowledge organiser": 29
   },
   "bySource": {
    "household": 385,
@@ -39,9 +39,9 @@
   },
   "byStatus": {
    "ready": 752,
-   "to make": 800,
+   "to make": 799,
    "in school files": 479,
-   "made": 6
+   "made": 7
   }
  },
  "resources": [
@@ -249,7 +249,7 @@
   {"id":"computing-y9-w3c-html-validator-validator-w3-org","title":"W3C HTML validator (validator.w3.org)","type":"equipment","subject":"Computing","subjectSlug":"computing","year":"y9","units":["Summer 2: Web design and deeper programming"],"lessons":[{"n":24,"title":"Testing, evaluating and publishing safely"}],"via":"resources","source":"household","status":"ready","wording":"W3C HTML validator (validator.w3.org)"},
   {"id":"computing-y10-a-free-python-3-editor-idle-or-a-browser-editor","title":"A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)","type":"school file","subject":"Computing","subjectSlug":"computing","year":"y10","units":["Summer 2: Practice and mock"],"lessons":[{"n":42,"title":"Programming practice 1: from problem to program in a time limit"},{"n":43,"title":"Programming practice 2: reading files and processing records"},{"n":47,"title":"Year 10 mock: Python practical task"},{"n":48,"title":"Mock feedback: fixing errors and improving code"},{"n":49,"title":"Bridge to Year 11: computers and networks"}],"via":"resources","source":"school","status":"in school files","wording":"A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)"},
   {"id":"computing-y10-pearson-edexcel-international-gcse-computer-scie","title":"Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)","type":"external tool","subject":"Computing","subjectSlug":"computing","year":"y10","units":["Summer 2: Practice and mock"],"lessons":[{"n":42,"title":"Programming practice 1: from problem to program in a time limit"},{"n":43,"title":"Programming practice 2: reading files and processing records"},{"n":44,"title":"Paper 1 practice: data and algorithm questions"},{"n":45,"title":"Paper 1 practice: 6-mark explain and discuss answers"},{"n":46,"title":"Year 10 mock: Paper 1 style questions"},{"n":47,"title":"Year 10 mock: Python practical task"},{"n":48,"title":"Mock feedback: fixing errors and improving code"},{"n":49,"title":"Bridge to Year 11: computers and networks"}],"via":"resources","source":"external","status":"ready","wording":"Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)"},
-  {"id":"computing-y10-pearson-pseudocode-command-set-as-printed-in-the","title":"Pearson pseudocode command set (as printed in the specification) for written algorithms","type":"worksheet","subject":"Computing","subjectSlug":"computing","year":"y10","units":["Summer 2: Practice and mock"],"lessons":[{"n":42,"title":"Programming practice 1: from problem to program in a time limit"},{"n":43,"title":"Programming practice 2: reading files and processing records"},{"n":44,"title":"Paper 1 practice: data and algorithm questions"},{"n":45,"title":"Paper 1 practice: 6-mark explain and discuss answers"},{"n":46,"title":"Year 10 mock: Paper 1 style questions"},{"n":47,"title":"Year 10 mock: Python practical task"},{"n":48,"title":"Mock feedback: fixing errors and improving code"},{"n":49,"title":"Bridge to Year 11: computers and networks"}],"via":"resources","source":"generated","status":"to make","wording":"Pearson pseudocode command set (as printed in the specification) for written algorithms","item":"items/computing/y10/computing-y10-pearson-pseudocode-command-set-as-printed-in-the.json"},
+  {"id":"computing-y10-pearson-pseudocode-command-set-as-printed-in-the","title":"Pseudocode command set: a summary for written algorithms","type":"knowledge organiser","subject":"Computing","subjectSlug":"computing","year":"y10","units":["Summer 2: Practice and mock"],"lessons":[{"n":42,"title":"Programming practice 1: from problem to program in a time limit"},{"n":43,"title":"Programming practice 2: reading files and processing records"},{"n":44,"title":"Paper 1 practice: data and algorithm questions"},{"n":45,"title":"Paper 1 practice: 6-mark explain and discuss answers"},{"n":46,"title":"Year 10 mock: Paper 1 style questions"},{"n":47,"title":"Year 10 mock: Python practical task"},{"n":48,"title":"Mock feedback: fixing errors and improving code"},{"n":49,"title":"Bridge to Year 11: computers and networks"}],"via":"resources","source":"generated","status":"made","wording":"Pearson pseudocode command set (as printed in the specification) for written algorithms","item":"items/computing/y10/computing-y10-pearson-pseudocode-command-set-as-printed-in-the.json"},
   {"id":"computing-y10-pupil-pdf-worksheet","title":"Pupil PDF worksheet","type":"worksheet","subject":"Computing","subjectSlug":"computing","year":"y10","units":["Summer 2: Practice and mock"],"lessons":[{"n":42,"title":"Programming practice 1: from problem to program in a time limit"},{"n":43,"title":"Programming practice 2: reading files and processing records"},{"n":44,"title":"Paper 1 practice: data and algorithm questions"},{"n":45,"title":"Paper 1 practice: 6-mark explain and discuss answers"},{"n":46,"title":"Year 10 mock: Paper 1 style questions"},{"n":47,"title":"Year 10 mock: Python practical task"},{"n":48,"title":"Mock feedback: fixing errors and improving code"},{"n":49,"title":"Bridge to Year 11: computers and networks"}],"via":"resources","source":"builder","status":"ready","wording":"Pupil PDF worksheet (printable or for a drawing tablet)"},
   {"id":"computing-y10-slides","title":"Slides","type":"slides","subject":"Computing","subjectSlug":"computing","year":"y10","units":["Summer 2: Practice and mock"],"lessons":[{"n":42,"title":"Programming practice 1: from problem to program in a time limit"},{"n":43,"title":"Programming practice 2: reading files and processing records"},{"n":44,"title":"Paper 1 practice: data and algorithm questions"},{"n":45,"title":"Paper 1 practice: 6-mark explain and discuss answers"},{"n":46,"title":"Year 10 mock: Paper 1 style questions"},{"n":47,"title":"Year 10 mock: Python practical task"},{"n":48,"title":"Mock feedback: fixing errors and improving code"},{"n":49,"title":"Bridge to Year 11: computers and networks"}],"via":"resources","source":"builder","status":"ready","wording":"Slides"},
   {"id":"computing-y10-example-data-file-scores-csv","title":"Example data file scores.csv","type":"worksheet","subject":"Computing","subjectSlug":"computing","year":"y10","units":["Summer 2: Practice and mock"],"lessons":[{"n":43,"title":"Programming practice 2: reading files and processing records"}],"via":"resources","source":"generated","status":"to make","wording":"Example data file scores.csv (portal)","item":"items/computing/y10/computing-y10-example-data-file-scores-csv.json"},

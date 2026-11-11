@@ -1,0 +1,257 @@
+{
+ "id": "geography-y10-example-fieldwork-data-sheet-portal-printable-ex",
+ "title": "Example fieldwork data sheet",
+ "type": "worksheet",
+ "subject": "Geography",
+ "subjectSlug": "geography",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4GE1",
+ "unit": "Summer 1: Physical fieldwork enquiry (Paper 1 Section B)",
+ "lessons": [
+  66,
+  68
+ ],
+ "source": "Written for geography/y10 lessons 66, 68 (Example fieldwork data sheet (portal printable; example data labelled))",
+ "intro": "Lesson 66: Presenting data: choosing and drawing the right graph. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Example data (labelled example)"
+  },
+  {
+   "table": {
+    "head": [
+     "Surface",
+     "Trial 1 (s)",
+     "Trial 2 (s)",
+     "Trial 3 (s)",
+     "Mean (s)"
+    ],
+    "rows": [
+     [
+      "Flower bed",
+      "40",
+      "52",
+      "46",
+      ""
+     ],
+     [
+      "Lawn (thick grass)",
+      "88",
+      "95",
+      "92",
+      ""
+     ],
+     [
+      "Lawn (worn, bare)",
+      "180",
+      "205",
+      "190",
+      ""
+     ],
+     [
+      "Compacted path",
+      "300",
+      "318",
+      "303",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "answers": "Flower bed: 46 s; Lawn (thick grass): 92 s; Lawn (worn, bare): 192 s; Compacted path: 307 s"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "Flower bed",
+     "Lawn (thick grass)",
+     "Lawn (worn, bare)",
+     "Compacted path"
+    ],
+    "yMax": 350,
+    "yStep": 50,
+    "yLabel": "Mean time (s)"
+   }
+  },
+  {
+   "h": "Match graph to data"
+  },
+  {
+   "cards": [
+    "mean time per surface",
+    "river level over 3 days",
+    "slope angle vs infiltration time",
+    "run-off distance per surface",
+    "rainfall each day",
+    "plant cover vs infiltration time"
+   ],
+   "cols": 3,
+   "title": "Sort into: Bar chart / Line graph / Scatter graph",
+   "task": "sort them into the columns: Bar chart, Line graph, Scatter graph.",
+   "answer": "Bar chart: mean time per surface; run-off distance per surface. Line graph: river level over 3 days; rainfall each day. Scatter graph: slope angle vs infiltration time; plant cover vs infiltration time"
+  },
+  {
+   "h": "Means first"
+  },
+  {
+   "model": {
+    "title": "Example data: flower bed trials 40 s, 52 s, 46 s",
+    "parts": [
+     {
+      "text": "40 + 52 + 46 = 138"
+     },
+     {
+      "text": "138 / 3 = 46"
+     },
+     {
+      "text": "Mean = 46 s"
+     },
+     {
+      "label": "Why it works",
+      "text": "46 seconds"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Example results (mean times)"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "Flower bed",
+     "Lawn",
+     "Gravel",
+     "Compacted path"
+    ],
+    "yMax": 350,
+    "yStep": 50,
+    "yLabel": "seconds",
+    "xLabel": "Example data: mean infiltration time (s)",
+    "values": [
+     46,
+     102,
+     75,
+     307
+    ],
+    "line": false
+   }
+  },
+  {
+   "bullets": [
+    "Flower bed fastest",
+    "Compacted path slowest",
+    "Hard paving: no infiltration"
+   ]
+  },
+  {
+   "panels": [
+    {
+     "title": "A good graph",
+     "points": [
+      "Title and labelled axes with units",
+      "Even scale",
+      "Accurate plotting and a key if needed"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "bar chart",
+     "def": "bars showing amounts in separate categories"
+    },
+    {
+     "term": "scatter graph",
+     "def": "points showing the relationship between two variables"
+    },
+    {
+     "term": "line graph",
+     "def": "a line showing change over continuous time"
+    },
+    {
+     "term": "axis",
+     "def": "a labelled line showing a scale"
+    },
+    {
+     "term": "mean",
+     "def": "the total divided by the number of values"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Example data: compacted path trials 300 s, 280 s, 340 s. Mean?",
+     "a": "920 / 3 = 306.7 s (about 307 s)"
+    },
+    {
+     "q": "Which graph for 'plant cover (%) against infiltration time'?",
+     "a": "A scatter graph"
+    },
+    {
+     "q": "What must every graph have?",
+     "a": "A title, labelled axes with units and an even scale"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Calculate the mean time for each surface from your data (or the example data), then draw a bar chart of means and one other suitable graph.",
+     "a": "Correct means; accurate, labelled bar chart and a second appropriate graph"
+    },
+    {
+     "q": "Extend: (3 marks, own exam-style) Justify your choice of graph for one data set.",
+     "a": "Names the data type, explains why the graph suits it, notes what it shows clearly"
+    },
+    {
+     "q": "Stretch: Why is a pie chart unsuitable for infiltration times?",
+     "a": "Times are not parts of a whole"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "To show how river level changed over three days, use a:",
+     "options": [
+      "Pie chart",
+      "Line graph",
+      "Bar chart"
+     ],
+     "a": "B) Line graph. Change over continuous time suits a line graph."
+    },
+    {
+     "q": "Categories of data suit a:",
+     "a": "Bar chart",
+     "options": [
+      "Bar chart",
+      "Line graph"
+     ]
+    },
+    {
+     "q": "Big question: why can a graph confuse?",
+     "a": "Wrong graph type, uneven scales or missing labels hide the pattern"
+    }
+   ]
+  }
+ ]
+}

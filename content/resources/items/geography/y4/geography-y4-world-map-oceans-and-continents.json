@@ -1,0 +1,266 @@
+{
+ "id": "geography-y4-world-map-oceans-and-continents",
+ "title": "World map: oceans and continents",
+ "type": "printable graph/grid",
+ "subject": "Geography",
+ "subjectSlug": "geography",
+ "year": "y4",
+ "unit": "Summer 1: Seas and oceans (Blue Abyss)",
+ "lessons": [
+  12
+ ],
+ "source": "Written for geography/y4 lesson 12 (World map: oceans and continents (portal printable))",
+ "intro": "Lesson 12: The five oceans of the world. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Oceans and continents"
+  },
+  {
+   "grid": {
+    "kind": "worldmap",
+    "region": "world",
+    "height": 130,
+    "points": [
+     [
+      -40,
+      30,
+      "Atlantic Ocean"
+     ],
+     [
+      -150,
+      10,
+      "Pacific Ocean"
+     ],
+     [
+      80,
+      -20,
+      "Indian Ocean"
+     ],
+     [
+      0,
+      -65,
+      "Southern Ocean",
+      "below"
+     ],
+     [
+      0,
+      80,
+      "Arctic Ocean"
+     ]
+    ]
+   }
+  },
+  {
+   "text": "Label the seven continents: Africa, Antarctica, Asia, Australia (Oceania), Europe, North America, South America."
+  },
+  {
+   "h": "A watery planet"
+  },
+  {
+   "grid": {
+    "kind": "pie",
+    "cols": 1,
+    "charts": [
+     {
+      "title": "Earth's surface",
+      "data": [
+       [
+        "Ocean",
+        71
+       ],
+       [
+        "Land",
+        29
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "bullets": [
+    "Oceans cover about 71% of Earth",
+    "Most of Earth's water is salty",
+    "All the oceans are joined"
+   ]
+  },
+  {
+   "panels": [
+    {
+     "title": "The five oceans",
+     "points": [
+      "Pacific, Atlantic, Indian",
+      "Southern, Arctic",
+      "Each touches several continents"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Biggest to smallest"
+  },
+  {
+   "table": {
+    "head": [
+     "Ocean",
+     "Size order",
+     "Touches"
+    ],
+    "rows": [
+     [
+      "Pacific",
+      "1st",
+      "Asia, Australia, the Americas"
+     ],
+     [
+      "Atlantic",
+      "2nd",
+      "Europe, Africa, the Americas"
+     ],
+     [
+      "Indian",
+      "3rd",
+      "Africa, Asia, Australia"
+     ],
+     [
+      "Southern",
+      "4th",
+      "Antarctica"
+     ],
+     [
+      "Arctic",
+      "5th",
+      "Europe, Asia, North America"
+     ]
+    ]
+   }
+  },
+  {
+   "bullets": [
+    "Pacific is the largest",
+    "Then Atlantic, Indian, Southern",
+    "Arctic is the smallest"
+   ]
+  },
+  {
+   "h": "Locate an ocean"
+  },
+  {
+   "model": {
+    "title": "Where is the Indian Ocean?",
+    "parts": [
+     {
+      "text": "Find Africa to the west"
+     },
+     {
+      "text": "Find Asia to the north"
+     },
+     {
+      "text": "Find Australia to the east"
+     },
+     {
+      "text": "Write: south of Asia, between Africa and Australia"
+     },
+     {
+      "label": "Why it works",
+      "text": "The Indian Ocean is south of Asia, between Africa and Australia."
+     }
+    ]
+   }
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "ocean",
+     "def": "one of five huge areas of salt water"
+    },
+    {
+     "term": "continent",
+     "def": "one of seven very large areas of land"
+    },
+    {
+     "term": "Pacific",
+     "def": "the largest and deepest ocean"
+    },
+    {
+     "term": "Southern Ocean",
+     "def": "the ocean around Antarctica"
+    },
+    {
+     "term": "Arctic Ocean",
+     "def": "the smallest ocean, around the North Pole"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which ocean lies between Europe and North America?",
+     "a": "The Atlantic"
+    },
+    {
+     "q": "Which ocean surrounds Antarctica?",
+     "a": "The Southern Ocean"
+    },
+    {
+     "q": "Name two continents the Pacific touches.",
+     "a": "For example: Asia and North America"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Label the five oceans and seven continents on the world map, then number the oceans 1 to 5 by size.",
+     "a": "All labels correct; Pacific 1, Atlantic 2, Indian 3, Southern 4, Arctic 5"
+    },
+    {
+     "q": "Extend: Write location sentences for two oceans.",
+     "a": "For example: The Arctic Ocean is north of Europe, Asia and North America."
+    },
+    {
+     "q": "Stretch: Why might the oceans be important even to people who live far from the sea?",
+     "a": "They make rain clouds, give food and carry ships with goods"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "The smallest ocean is the:",
+     "options": [
+      "Pacific",
+      "Arctic",
+      "Atlantic"
+     ],
+     "a": "B) Arctic. The Arctic Ocean around the North Pole is the smallest; the Pacific is the largest."
+    },
+    {
+     "q": "The largest ocean is the:",
+     "a": "Pacific",
+     "options": [
+      "Pacific",
+      "Indian"
+     ]
+    },
+    {
+     "q": "Big question: Planet Earth or Planet Ocean?",
+     "a": "A reasoned answer, e.g. Planet Ocean, because about 71% is ocean"
+    }
+   ]
+  }
+ ]
+}

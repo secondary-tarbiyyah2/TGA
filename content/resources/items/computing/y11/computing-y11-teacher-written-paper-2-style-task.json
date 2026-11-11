@@ -1,0 +1,119 @@
+{
+ "id": "computing-y11-teacher-written-paper-2-style-task",
+ "title": "Paper 2 style task: Masjid library loans (teacher-written)",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Summer 1: Final preparation",
+ "lessons": [
+  53
+ ],
+ "source": "Written for computing/y11 lesson 53 (Teacher-written Paper 2 style task (portal))",
+ "intro": "Lesson 53. A teacher-written practice task in the style of Paper 2. Plan first (15 minutes), then code in Python, saving often.",
+ "blocks": [
+  {
+   "passage": {
+    "title": "The task",
+    "paras": [
+     "The masjid library lends books to members. Write a program that:",
+     "1. Loads a list of books (title, author, available: True or False) into a list of lists.",
+     "2. Shows a menu: 1 search by title, 2 borrow a book, 3 return a book, 4 list available books, 5 quit.",
+     "3. Search: asks for part of a title and shows every matching book (not case sensitive).",
+     "4. Borrow: asks for an exact title; if it is available, marks it as not available and confirms; otherwise shows a clear message.",
+     "5. Return: marks the book as available again, with validation if the title is not found.",
+     "6. Uses at least two subprograms with parameters and a return value, meaningful names and comments."
+    ],
+    "byline": "Written for TGA"
+   }
+  },
+  {
+   "h": "Plan"
+  },
+  {
+   "table": {
+    "head": [
+     "Part",
+     "Inputs",
+     "Processes",
+     "Outputs",
+     "Subprogram"
+    ],
+    "rows": [
+     [
+      "Search",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "Borrow",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "Return",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "List available",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ],
+    "tall": true
+   }
+  },
+  {
+   "h": "Test plan"
+  },
+  {
+   "table": {
+    "head": [
+     "Test",
+     "Type",
+     "Input",
+     "Expected"
+    ],
+    "rows": [
+     [
+      "1",
+      "Normal",
+      "search 'garden'",
+      "Shows matching titles"
+     ],
+     [
+      "2",
+      "Boundary",
+      "borrow the last available book",
+      "Confirmed; list now empty of it"
+     ],
+     [
+      "3",
+      "Invalid",
+      "menu choice 9",
+      "Error message; menu shown again"
+     ],
+     [
+      "4",
+      "Invalid",
+      "borrow a book already out",
+      "'Not available' message"
+     ]
+    ]
+   }
+  },
+  {
+   "answers": "Mark points: list of lists loaded; menu loop until 5; case-insensitive search with 'in' and lower(); borrow and return update the available flag with validation; at least two subprograms with parameters and a return value; meaningful names and comments; tests show expected results."
+  }
+ ]
+}

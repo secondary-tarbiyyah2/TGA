@@ -1,0 +1,238 @@
+{
+ "id": "geography-y5-squared-paper-ruler",
+ "title": "Squared paper, ruler",
+ "type": "printable graph/grid",
+ "subject": "Geography",
+ "subjectSlug": "geography",
+ "year": "y5",
+ "unit": "Summer 1: Land use and food (Allotment)",
+ "lessons": [
+  18
+ ],
+ "source": "Written for geography/y5 lesson 18 (Squared paper, ruler)",
+ "intro": "Lesson 18: Home fieldwork: where does our kitchen food come from?. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Squared paper"
+  },
+  {
+   "grid": {
+    "kind": "squared",
+    "size": 10,
+    "height": 150
+   }
+  },
+  {
+   "panels": [
+    {
+     "title": "Our question",
+     "points": [
+      "Where does our kitchen food come from?",
+      "Prediction first",
+      "Then collect data"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Collecting data"
+  },
+  {
+   "table": {
+    "head": [
+     "Continent",
+     "Tally",
+     "Total"
+    ],
+    "rows": [
+     [
+      "UK",
+      "IIII III",
+      "8"
+     ],
+     [
+      "Europe (not UK)",
+      "IIII",
+      "4"
+     ],
+     [
+      "Asia",
+      "IIII",
+      "4"
+     ],
+     [
+      "Africa",
+      "II",
+      "2"
+     ],
+     [
+      "Americas",
+      "II",
+      "2"
+     ]
+    ]
+   }
+  },
+  {
+   "bullets": [
+    "Choose 20 foods",
+    "Read 'Produce of' or 'Origin'",
+    "Tally by continent"
+   ]
+  },
+  {
+   "h": "Presenting data"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "UK",
+     "Europe",
+     "Asia",
+     "Africa",
+     "Americas"
+    ],
+    "yMax": 8,
+    "yStep": 1,
+    "yLabel": "foods",
+    "xLabel": "Example: origin of 20 kitchen foods",
+    "values": [
+     8,
+     4,
+     4,
+     2,
+     2
+    ],
+    "line": false
+   }
+  },
+  {
+   "bullets": [
+    "Bar chart: one bar per continent",
+    "Label both axes",
+    "Give it a title"
+   ]
+  },
+  {
+   "h": "Drawing a conclusion"
+  },
+  {
+   "model": {
+    "title": "Conclusion from the example data",
+    "parts": [
+     {
+      "text": "Tallest bar: UK with 8"
+     },
+     {
+      "text": "But 12 of 20 came from abroad"
+     },
+     {
+      "text": "So most food came from abroad"
+     },
+     {
+      "text": "Reason: climate and seasons"
+     },
+     {
+      "label": "Why it works",
+      "text": "Most of our food (12 of 20) came from abroad, though the UK was the biggest single source."
+     }
+    ]
+   }
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "fieldwork",
+     "def": "collecting information yourself, outside the classroom"
+    },
+    {
+     "term": "data",
+     "def": "facts and numbers we collect"
+    },
+    {
+     "term": "tally",
+     "def": "marks used to count"
+    },
+    {
+     "term": "bar chart",
+     "def": "a chart using bars to show amounts"
+    },
+    {
+     "term": "conclusion",
+     "def": "what the results show"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "What do you write if the label only says 'packed in UK'?",
+     "a": "Unknown origin"
+    },
+    {
+     "q": "How many tally marks show 7?",
+     "a": "IIII II (a bundle of five and two)"
+    },
+    {
+     "q": "What must a bar chart have?",
+     "a": "A title and labelled axes"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Using your own kitchen data (or the sample data sheet), make a tally chart and a bar chart by continent.",
+     "a": "An accurate tally and a titled, labelled bar chart"
+    },
+    {
+     "q": "Extend: Write a conclusion: 'Most of our food comes from... because...'",
+     "a": "A conclusion matching the chart with a reason"
+    },
+    {
+     "q": "Stretch: How could you make the results more reliable?",
+     "a": "Check more foods, or a second kitchen, and record unknowns honestly"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "In the example, how many foods came from abroad?",
+     "options": [
+      "8",
+      "12",
+      "20"
+     ],
+     "a": "B) 12. 20 foods minus 8 from the UK leaves 12 from abroad."
+    },
+    {
+     "q": "A conclusion should:",
+     "a": "Match the data",
+     "options": [
+      "Match the data",
+      "Ignore the data"
+     ]
+    },
+    {
+     "q": "Big question: UK or abroad?",
+     "a": "Answer from the pupil's own data with a reason"
+    }
+   ]
+  }
+ ]
+}

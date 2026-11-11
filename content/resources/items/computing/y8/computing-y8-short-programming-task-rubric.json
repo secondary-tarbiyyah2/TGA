@@ -1,0 +1,156 @@
+{
+ "id": "computing-y8-short-programming-task-rubric",
+ "title": "Short programming task rubric",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y8",
+ "unit": "Summer 1: Python, first steps",
+ "lessons": [
+  19
+ ],
+ "source": "Written for computing/y8 lesson 19 (Short programming task rubric (portal))",
+ "intro": "Lesson 19: Combining it all: a number guessing game. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Rubric: guessing game"
+  },
+  {
+   "table": {
+    "head": [
+     "Criterion",
+     "Working towards",
+     "Secure",
+     "Excellent"
+    ],
+    "rows": [
+     [
+      "Program works",
+      "Runs with errors",
+      "Higher, lower and correct all work",
+      "Also limits guesses and counts them"
+     ],
+     [
+      "Code quality",
+      "Unclear names",
+      "Meaningful names and indentation",
+      "Comments explain each part"
+     ],
+     [
+      "Testing",
+      "Few tests",
+      "Normal, boundary and invalid tests with results",
+      "Fixes made after testing are recorded"
+     ]
+    ],
+    "tall": true
+   }
+  },
+  {
+   "h": "Test plan"
+  },
+  {
+   "table": {
+    "head": [
+     "Test",
+     "Input",
+     "Expected"
+    ],
+    "rows": [
+     [
+      "Normal",
+      "10",
+      "Higher or Lower or Correct"
+     ],
+     [
+      "Boundary",
+      "1 and 20",
+      "Accepted"
+     ],
+     [
+      "Invalid",
+      "abc",
+      "Error: we will add validation later"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "random",
+     "def": "a module that picks unpredictable numbers"
+    },
+    {
+     "term": "debug",
+     "def": "find and fix errors"
+    },
+    {
+     "term": "test data",
+     "def": "values used to check a program works"
+    },
+    {
+     "term": "boundary",
+     "def": "a value at the edge of what's allowed"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "What prints if the secret is 12 and you guess 15?",
+     "a": "Lower"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Build and test the guessing game; complete the test plan with real results; save the code and the plan to the portal (short programming task).",
+     "a": "A working game and a completed test plan."
+    },
+    {
+     "q": "Extend: limit the player to 5 guesses with 'and' in the while condition.",
+     "a": "while guess != secret and guesses < 5:"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "random.randint(1, 20) can return ...",
+     "options": [
+      "any whole number from 1 to 20",
+      "only 1 to 19",
+      "a decimal"
+     ],
+     "a": "A) any whole number from 1 to 20. randint includes both ends."
+    },
+    {
+     "q": "Testing with 1 and 20 checks ...",
+     "a": "boundary values",
+     "options": [
+      "boundary values",
+      "invalid values"
+     ]
+    },
+    {
+     "q": "Think again: How could a game be made fair so the computer can't 'cheat'?",
+     "a": "It picks a random number at the start and the rules are the same for every player."
+    }
+   ]
+  }
+ ]
+}

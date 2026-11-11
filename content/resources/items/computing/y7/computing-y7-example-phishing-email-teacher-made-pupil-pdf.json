@@ -1,0 +1,169 @@
+{
+ "id": "computing-y7-example-phishing-email-teacher-made-pupil-pdf",
+ "title": "Example phishing email (teacher-made, pupil PDF)",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y7",
+ "unit": "Summer 1: Networks, web design and cyber security",
+ "lessons": [
+  16
+ ],
+ "source": "Written for computing/y7 lesson 16 (Example phishing email (teacher-made, pupil PDF))",
+ "intro": "Lesson 16: Cyber security: threats and how to stay safe. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Spot the phishing email"
+  },
+  {
+   "passage": {
+    "title": "From: Security Team <support@bank-secure-alerts.co>",
+    "paras": [
+     "Subject: URGENT: Your account will be closed in 24 hours",
+     "Dear Customer,",
+     "We have detected unusual activity on your acount. To keep your money safe, you must verify your details immediately or your account will be closed.",
+     "Click here to verify: http://bank-secure-alerts.co/login",
+     "Please enter your full card number, PIN and password.",
+     "Thank you,",
+     "Customer Securty Department"
+    ],
+    "byline": "A made-up example for teaching"
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Find five warning signs in the email.",
+     "a": "Urgent threat (24 hours); generic greeting (Dear Customer); spelling mistakes (acount, Securty); a strange sender address and link; asks for PIN and password (banks never do)",
+     "marks": 5
+    },
+    {
+     "q": "What should you do with an email like this?",
+     "a": "Do not click or reply; report it (for example forward to report@phishing.gov.uk) and delete it; contact the bank using its official number.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "h": "Threats"
+  },
+  {
+   "table": {
+    "head": [
+     "Threat",
+     "What it does"
+    ],
+    "rows": [
+     [
+      "Malware (viruses, ransomware)",
+      "Harms devices or locks files"
+     ],
+     [
+      "Phishing",
+      "Tricks you into giving details"
+     ],
+     [
+      "Weak passwords",
+      "Easy to guess or crack"
+     ],
+     [
+      "Unsafe downloads",
+      "Hide malware"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Spot the phish"
+  },
+  {
+   "cards": [
+    "Urgent threat",
+    "Spelling mistakes and odd sender address",
+    "Message from your teacher on Teams about homework",
+    "Asks for your password"
+   ],
+   "cols": 3,
+   "title": "Sort into: Phishing sign / Normal",
+   "task": "sort them into the columns: Phishing sign, Normal.",
+   "answer": "Phishing sign: Urgent threat; Spelling mistakes and odd sender address; Asks for your password. Normal: Message from your teacher on Teams about homework"
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "malware",
+     "def": "software designed to harm a device or steal data"
+    },
+    {
+     "term": "phishing",
+     "def": "fake messages that trick people into giving information"
+    },
+    {
+     "term": "two-step verification",
+     "def": "a second check when logging in"
+    },
+    {
+     "term": "update",
+     "def": "a fix from the maker that closes security holes"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find three phishing signs in the teacher's example email.",
+     "a": "Odd sender address, urgency, a request for login details."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Make a one-page cyber security guide for your family (five tips with reasons) in the HTML editor or a document; save to the portal.",
+     "a": "Five accurate tips with reasons."
+    },
+    {
+     "q": "Extend: explain what ransomware is and why backups help.",
+     "a": "It locks files for a payment; backups let you restore without paying."
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which is a sign of phishing?",
+     "options": [
+      "It asks for your password urgently",
+      "It's from your teacher about a lesson",
+      "It has no links"
+     ],
+     "a": "A) It asks for your password urgently. Real services never ask for passwords like that."
+    },
+    {
+     "q": "Updates help because they ...",
+     "a": "fix security holes",
+     "options": [
+      "fix security holes",
+      "slow devices"
+     ]
+    },
+    {
+     "q": "Think again: A message says 'Your account will be closed! Click here now!' What should make you suspicious?",
+     "a": "Urgency, a threat, and a link: classic phishing signs."
+    }
+   ]
+  }
+ ]
+}

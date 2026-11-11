@@ -1,0 +1,212 @@
+{
+ "id": "computing-y10-algorithms-unit-quiz-and-tracing-set",
+ "title": "Algorithms unit quiz and tracing set",
+ "type": "quiz",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Summer 1: Algorithms",
+ "lessons": [
+  16
+ ],
+ "source": "Seeded from computing/y10 lesson 16 (Algorithms unit quiz and tracing set (portal))",
+ "intro": "Covers lessons 2 to 41 of Algorithms. Answer every question. For multiple choice, fill in one circle.",
+ "time": "30 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "A diamond in a flowchart is a ...",
+     "options": [
+      "decision",
+      "process",
+      "terminal"
+     ],
+     "a": "A) decision. It has yes/no outputs.",
+     "marks": 1
+    },
+    {
+     "q": "After the loop above, total is ...",
+     "options": [
+      "20",
+      "8",
+      "10"
+     ],
+     "a": "A) 20. 2 + 4 + 6 + 8 = 20.",
+     "marks": 1
+    },
+    {
+     "q": "Binary search requires the list to be ...",
+     "options": [
+      "sorted",
+      "short",
+      "unsorted"
+     ],
+     "a": "A) sorted. Halving only works on ordered data.",
+     "marks": 1
+    },
+    {
+     "q": "After pass 1 of bubble sort (ascending), the largest item is ...",
+     "options": [
+      "at the end",
+      "at the start",
+      "in the middle"
+     ],
+     "a": "A) at the end. It bubbles up.",
+     "marks": 1
+    },
+    {
+     "q": "Merge sort is an example of ...",
+     "options": [
+      "divide and conquer",
+      "linear search",
+      "a flag"
+     ],
+     "a": "A) divide and conquer. Split, then merge.",
+     "marks": 1
+    },
+    {
+     "q": "Which construct is FOR index FROM 1 TO 10?",
+     "options": [
+      "Iteration",
+      "Selection",
+      "Sequence"
+     ],
+     "a": "A) Iteration. A count-controlled loop.",
+     "marks": 1
+    },
+    {
+     "q": "1 OR 1 = ...",
+     "options": [
+      "1",
+      "0",
+      "2"
+     ],
+     "a": "A) 1. OR is true if at least one is true.",
+     "marks": 1
+    },
+    {
+     "q": "How many rows for a three-input truth table?",
+     "options": [
+      "8",
+      "6",
+      "3"
+     ],
+     "a": "A) 8. 2^3 = 8.",
+     "marks": 1
+    },
+    {
+     "q": "If items[mid] < target, the algorithm ...",
+     "options": [
+      "sets low to mid + 1",
+      "sets high to mid - 1",
+      "stops"
+     ],
+     "a": "A) sets low to mid + 1. The target is in the upper half.",
+     "marks": 1
+    },
+    {
+     "q": "The first algorithm's purpose is to ...",
+     "options": [
+      "find the largest value",
+      "sort the array",
+      "count the items"
+     ],
+     "a": "A) find the largest value. It keeps the biggest so far.",
+     "marks": 1
+    },
+    {
+     "q": "Iteration means ...",
+     "a": "repeating",
+     "options": [
+      "repeating",
+      "choosing"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "END IF closes ...",
+     "a": "a selection block",
+     "options": [
+      "a selection block",
+      "a loop"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Input and output use a ...",
+     "a": "parallelogram",
+     "options": [
+      "parallelogram",
+      "diamond"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Merge sort uses ...",
+     "a": "divide and conquer",
+     "options": [
+      "divide and conquer",
+      "neighbour swaps only"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Bubble sort is good for ...",
+     "a": "small lists",
+     "options": [
+      "small lists",
+      "huge lists"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "A trace table records ...",
+     "a": "variable values step by step",
+     "options": [
+      "variable values step by step",
+      "only the output"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "A diamond is a ...",
+     "a": "decision",
+     "options": [
+      "decision",
+      "terminal"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "WHILE loops repeat ...",
+     "a": "while a condition is true",
+     "options": [
+      "while a condition is true",
+      "a fixed number of times"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Linear search works on ...",
+     "a": "sorted or unsorted lists",
+     "options": [
+      "sorted or unsorted lists",
+      "sorted lists only"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Binary search is faster because it ...",
+     "a": "halves the list",
+     "options": [
+      "halves the list",
+      "checks every item"
+     ],
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

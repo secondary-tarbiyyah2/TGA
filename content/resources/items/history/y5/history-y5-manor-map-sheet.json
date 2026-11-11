@@ -1,0 +1,277 @@
+{
+ "id": "history-y5-manor-map-sheet",
+ "title": "Manor map sheet",
+ "type": "printable graph/grid",
+ "subject": "History",
+ "subjectSlug": "history",
+ "year": "y5",
+ "unit": "Summer 1: Medieval peasants and the Black Death (Peasants, Princes & Pestilence)",
+ "lessons": [
+  18
+ ],
+ "source": "Written for history/y5 lesson 18 (Manor map sheet (portal printable))",
+ "intro": "Lesson 18: Life in a medieval village. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "A medieval manor (simplified)"
+  },
+  {
+   "grid": {
+    "kind": "schematic",
+    "height": 110,
+    "areas": [
+     [
+      40,
+      35,
+      20,
+      "Lord's land (demesne)"
+     ],
+     [
+      120,
+      35,
+      22,
+      "Open field strips"
+     ],
+     [
+      60,
+      85,
+      18,
+      "Common"
+     ],
+     [
+      140,
+      85,
+      16,
+      "Woodland"
+     ]
+    ],
+    "roads": [
+     [
+      10,
+      60,
+      175,
+      60,
+      "Track",
+      false
+     ]
+    ],
+    "places": [
+     [
+      90,
+      52,
+      "Manor house",
+      "gold"
+     ],
+     [
+      100,
+      70,
+      "Church"
+     ],
+     [
+      75,
+      68,
+      "Mill"
+     ]
+    ]
+   }
+  },
+  {
+   "text": "Label the villeins' cottages, the strips and where the peasants worked for the lord."
+  },
+  {
+   "panels": [
+    {
+     "title": "The manor",
+     "points": [
+      "The lord's manor house",
+      "A church and a mill",
+      "Peasants' cottages",
+      "Open fields and common land"
+     ]
+    },
+    {
+     "title": "Manor",
+     "points": [
+      "manor house",
+      "church",
+      "mill",
+      "cottages",
+      "open fields",
+      "common land",
+      "woods"
+     ]
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Strips and fields"
+  },
+  {
+   "table": {
+    "head": [
+     "Field",
+     "Year 1",
+     "Year 2",
+     "Year 3"
+    ],
+    "rows": [
+     [
+      "A",
+      "wheat",
+      "beans",
+      "fallow"
+     ],
+     [
+      "B",
+      "beans",
+      "fallow",
+      "wheat"
+     ],
+     [
+      "C",
+      "fallow",
+      "wheat",
+      "beans"
+     ]
+    ]
+   }
+  },
+  {
+   "bullets": [
+    "Three big open fields",
+    "Each split into long strips",
+    "One field rested (fallow) each year"
+   ]
+  },
+  {
+   "panels": [
+    {
+     "title": "A villein's life",
+     "points": [
+      "Worked the lord's land some days",
+      "Farmed own strips the rest",
+      "Gave a tithe to the Church"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Reading the rotation table"
+  },
+  {
+   "model": {
+    "title": "What grows in field A in year 4?",
+    "parts": [
+     {
+      "text": "A: wheat, beans, fallow"
+     },
+     {
+      "text": "The pattern repeats every 3 years"
+     },
+     {
+      "text": "Year 4 is like year 1"
+     },
+     {
+      "label": "Why it works",
+      "text": "Wheat"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "manor",
+     "def": "a lord's land with its village and fields"
+    },
+    {
+     "term": "strip field",
+     "def": "a long thin piece of a big open field"
+    },
+    {
+     "term": "villein",
+     "def": "a peasant who had to work for the lord"
+    },
+    {
+     "term": "fallow",
+     "def": "a field left empty for a year to rest"
+    },
+    {
+     "term": "tithe",
+     "def": "a tenth of crops given to the Church"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Why was one field left fallow?",
+     "a": "To let the soil rest and recover"
+    },
+    {
+     "q": "What was a tithe?",
+     "a": "A tenth of crops given to the Church"
+    },
+    {
+     "q": "Name two buildings in a manor.",
+     "a": "For example: manor house and mill"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Label the manor map, then write a diary entry for one day in a villein's year (spring sowing or autumn harvest) in the portal response box.",
+     "a": "Correct labels; a diary using villein, strip, lord's land, tithe"
+    },
+    {
+     "q": "Extend: Compare a villein's home with yours (two differences).",
+     "a": "For example: wattle and daub walls, no running water"
+    },
+    {
+     "q": "Stretch: Why might a villein want to leave the manor?",
+     "a": "To be free, earn wages and not work for the lord"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "A field left empty for a year is:",
+     "options": [
+      "Arable",
+      "Fallow",
+      "Common"
+     ],
+     "a": "B) Fallow. Fallow land rests for a year so the soil recovers."
+    },
+    {
+     "q": "A villein had to:",
+     "a": "Work for the lord",
+     "options": [
+      "Work for the lord",
+      "Fight as a knight"
+     ]
+    },
+    {
+     "q": "Big question: would you swap for a day? Why?",
+     "a": "A choice with reasons using village facts"
+    }
+   ]
+  }
+ ]
+}

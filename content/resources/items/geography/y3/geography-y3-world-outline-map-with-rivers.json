@@ -1,0 +1,243 @@
+{
+ "id": "geography-y3-world-outline-map-with-rivers",
+ "title": "World outline map with rivers",
+ "type": "printable graph/grid",
+ "subject": "Geography",
+ "subjectSlug": "geography",
+ "year": "y3",
+ "unit": "Summer 1: Rivers and the water cycle (Flow and One Planet, Our World)",
+ "lessons": [
+  15
+ ],
+ "source": "Written for geography/y3 lesson 15 (World outline map with rivers (portal printable))",
+ "intro": "Lesson 15: Great rivers of the world. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "World rivers"
+  },
+  {
+   "grid": {
+    "kind": "worldmap",
+    "region": "world",
+    "height": 130,
+    "points": [
+     [
+      31.2,
+      30,
+      "Nile"
+     ],
+     [
+      -55,
+      -3,
+      "Amazon"
+     ],
+     [
+      -90,
+      35,
+      "Mississippi"
+     ],
+     [
+      112,
+      30.5,
+      "Yangtze"
+     ],
+     [
+      90,
+      24,
+      "Ganges",
+      "below"
+     ],
+     [
+      -0.5,
+      51.5,
+      "Thames"
+     ]
+    ]
+   }
+  },
+  {
+   "text": "Trace each river in blue and write its name. Which continent is each one in?"
+  },
+  {
+   "answers": "Nile: Africa; Amazon: South America; Mississippi: North America; Yangtze: Asia; Ganges: Asia; Thames: Europe."
+  },
+  {
+   "panels": [
+    {
+     "title": "Five great rivers",
+     "points": [
+      "Nile: Africa",
+      "Amazon: South America",
+      "Thames: England",
+      "Tigris and Euphrates: Iraq"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Long and mighty"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "Nile",
+     "Amazon",
+     "Euphrates",
+     "Thames"
+    ],
+    "yMax": 7000,
+    "yStep": 1000,
+    "yLabel": "km",
+    "xLabel": "River lengths (approximate)",
+    "values": [
+     6650,
+     6400,
+     2800,
+     346
+    ],
+    "line": false
+   }
+  },
+  {
+   "bullets": [
+    "The Nile is about 6,650 km long",
+    "The Amazon carries the most water",
+    "The Thames is about 346 km"
+   ]
+  },
+  {
+   "panels": [
+    {
+     "title": "Why live by a river?",
+     "points": [
+      "Water to drink and wash",
+      "Fertile soil for crops",
+      "Boats for travel and trade"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Reading the chart"
+  },
+  {
+   "model": {
+    "title": "How much longer is the Nile than the Thames?",
+    "parts": [
+     {
+      "text": "Nile is about 6,650 km"
+     },
+     {
+      "text": "Thames is about 346 km"
+     },
+     {
+      "text": "6,650 minus 346"
+     },
+     {
+      "text": "About 6,304 km longer"
+     },
+     {
+      "label": "Why it works",
+      "text": "About 6,300 km longer"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "continent",
+     "def": "one of seven very large areas of land"
+    },
+    {
+     "term": "Nile",
+     "def": "the world's longest river, in Africa"
+    },
+    {
+     "term": "Amazon",
+     "def": "the river carrying the most water, in South America"
+    },
+    {
+     "term": "Tigris and Euphrates",
+     "def": "two rivers in Iraq, where early cities grew"
+    },
+    {
+     "term": "fertile",
+     "def": "good for growing crops"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which continent is the Amazon in?",
+     "a": "South America"
+    },
+    {
+     "q": "Which city grew on the Tigris?",
+     "a": "Baghdad"
+    },
+    {
+     "q": "Give one reason people live by rivers.",
+     "a": "Water, fertile soil, travel or trade"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: On the world map, mark and label the Nile, Amazon, Thames, Tigris and Euphrates, and write the continent beside each.",
+     "a": "All five rivers and continents correct"
+    },
+    {
+     "q": "Extend: Write a sentence comparing the Nile and the Thames.",
+     "a": "The Nile is much longer than the Thames: about 6,650 km compared with about 346 km."
+    },
+    {
+     "q": "Stretch: Why did the first cities grow by the Tigris, Euphrates and Nile?",
+     "a": "Fertile soil from floods and water for farming meant enough food for many people"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "The longest river in the world is the:",
+     "options": [
+      "Thames",
+      "Nile",
+      "Tigris"
+     ],
+     "a": "B) Nile. The Nile is about 6,650 km; the Amazon is close but carries more water."
+    },
+    {
+     "q": "The Tigris and Euphrates are in:",
+     "a": "Iraq",
+     "options": [
+      "Iraq",
+      "Brazil"
+     ]
+    },
+    {
+     "q": "Big question: a long river or a wide one: which matters more?",
+     "a": "Either, with a reason: what matters most is water, soil and travel for people"
+    }
+   ]
+  }
+ ]
+}
