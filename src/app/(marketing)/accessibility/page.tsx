@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import Link from "next/link";
 import { getSiteSettings } from "@/lib/content";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 export const metadata: Metadata = pageMetadata({
   title: "Accessibility",
@@ -14,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default async function AccessibilityPage() {
   const settings = await getSiteSettings();
-  const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
+  const email = settings.admissionsEmail || ROLE_EMAILS.general;
   return (
     <>
       <section className="geo-texture bg-cream section-pad">

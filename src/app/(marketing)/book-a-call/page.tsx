@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { BookingCalendar } from "@/components/booking/BookingCalendar";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 export const metadata: Metadata = {
   title: "Book an Admissions Call",
@@ -35,7 +36,7 @@ export default function BookACallPage() {
 
         <p className="mt-8 max-w-2xl text-sm text-ink/70">
           Prefer not to book a slot? Email{" "}
-          <a href="mailto:globalacademy@tarbiyyah.co.uk" className="font-semibold text-gold-700 underline">globalacademy@tarbiyyah.co.uk</a>{" "}
+          <a href={`mailto:${ROLE_EMAILS.admissions}`} className="font-semibold text-gold-700 underline">{ROLE_EMAILS.admissions}</a>{" "}
           or come to an <Link href="/open-evening" className="font-semibold text-gold-700 underline">online open evening</Link>.
         </p>
       </Container>

@@ -5,6 +5,7 @@
  */
 
 import { withDerivedFees, FEE_DEFAULTS, FEE_POLICY_DEFAULTS, type FeeSchedule } from "@/lib/fees";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 /** Only `annualFee` is a stored/edited number. `termlyFee`, `monthlyFee` and
  * `schedule` are DERIVED (src/lib/fees.ts) from the annual fee plus the
@@ -108,7 +109,7 @@ export const siteSettings: SiteSettings = {
   feeInstalments: FEE_DEFAULTS.instalments,
   annualDiscountPercent: FEE_POLICY_DEFAULTS.annualDiscountPercent,
   paymentScheduleText: FEE_POLICY_DEFAULTS.paymentScheduleText,
-  admissionsEmail: "globalacademy@tarbiyyah.co.uk",
+  admissionsEmail: ROLE_EMAILS.admissions,
   contactPhone: "020 3719 8697",
   headteacherName: "Ustadh Abu Zayn Haneef Sandhar",
   complaintsLastYear: 0,

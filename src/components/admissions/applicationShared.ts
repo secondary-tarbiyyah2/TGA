@@ -1,6 +1,8 @@
 // Shared by the public application form (/admissions/apply) and the admin
 // Admissions pipeline, so the two can never disagree on stages or fields.
 
+import { ROLE_EMAILS } from "@/content/contacts";
+
 export const APPLICATION_STATUSES = ["new", "reviewing", "assessment", "interview", "offered", "accepted", "waitlisted", "declined", "withdrawn"] as const;
 export type ApplicationStatus = (typeof APPLICATION_STATUSES)[number];
 
@@ -36,7 +38,7 @@ export const YEAR_GROUP_OPTIONS: { value: string; label: string }[] = [
   { value: "Not sure yet", label: "Not sure yet" },
 ];
 
-export const FALLBACK_ADMISSIONS_EMAIL = "globalacademy@tarbiyyah.co.uk";
+export const FALLBACK_ADMISSIONS_EMAIL = ROLE_EMAILS.admissions;
 
 export type ApplicationRow = {
   id: string;

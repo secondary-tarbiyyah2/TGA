@@ -6,10 +6,11 @@ import { getSiteSettings } from "@/lib/content";
 import { LEARN_ORIGIN } from "@/lib/learn/origin";
 import { ViewSettingsMenu } from "./ViewSettings";
 import { StarMark } from "./StarMark";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 export async function Footer() {
   const settings = await getSiteSettings();
-  const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
+  const email = settings.admissionsEmail || ROLE_EMAILS.general;
 
   return (
     <footer className="geo-texture-dark relative overflow-hidden border-t border-gold-light/30 bg-ink text-cream/90">

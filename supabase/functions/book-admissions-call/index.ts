@@ -10,10 +10,11 @@ import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { generateToken, hashToken } from "../_shared/manageToken.ts";
 import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
 import { bookingWhenText, bookingWhenTextForStaff, escHtml, isValidTimeZone } from "../_shared/bookingTime.ts";
+import { ROLE_EMAILS } from "../_shared/contacts.ts";
 
 const ADMISSIONS_TEAMS_URL = Deno.env.get("ADMISSIONS_TEAMS_URL") || "";
 const SITE_URL = Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk";
-const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || ROLE_EMAILS.admissions;
 
 const supabase = createClient(
   Deno.env.get("SUPABASE_URL")!,

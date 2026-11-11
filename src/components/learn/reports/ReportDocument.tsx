@@ -2,6 +2,7 @@ import { PrintSheet } from "@/components/learn/print";
 import { StatusChip, type Tone } from "@/components/learn/ui";
 import { PRINT_AREA } from "./printArea";
 import type { ClassSummary, ReportNarrative, SubjectRating } from "./summary";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 export { PRINT_AREA };
 
@@ -211,7 +212,7 @@ export function ReportDocument({
       </div>
       <footer className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-gold-light/50 pt-3 text-[11px] text-ink/65">
         <span>Tarbiyyah Global Academy · part of the Tarbiyyah Education Trust</span>
-        <span>globalacademy@tarbiyyah.co.uk</span>
+        <span>{ROLE_EMAILS.general}</span>
       </footer>
       </div>
     </article>

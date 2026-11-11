@@ -99,6 +99,7 @@ export type FeesInput = {
   plans: { id: string; label: string; firstPayment: number; detail: string }[];
 };
 
+/** Same as ROLE_EMAILS.admissions in _shared/contacts.ts (kept as a literal so this file stays import-free); change both together. */
 export const DEFAULT_SCHOOL_EMAIL = "globalacademy@tarbiyyah.co.uk";
 
 // ── formatting ───────────────────────────────────────────────────────────

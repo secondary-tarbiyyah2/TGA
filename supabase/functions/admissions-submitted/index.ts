@@ -22,12 +22,13 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { sendEmail, emailShell } from "../_shared/resend.ts";
 import { DEFAULT_TEMPLATES, buildTemplateContext, renderTemplate, type FamilyInput } from "../admissions-correspond/templating.ts";
+import { ROLE_EMAILS } from "../_shared/contacts.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 
-const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || ROLE_EMAILS.admissions;
 const LEARN_SITE_URL = (Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk").replace(/\/$/, "");
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const FRESH_MS = 30 * 60 * 1000;
