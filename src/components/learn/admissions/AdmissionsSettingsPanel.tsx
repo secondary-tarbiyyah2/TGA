@@ -1,5 +1,6 @@
 "use client";
 
+import { PaymentsSettings } from "@/components/learn/payments/PaymentsSettings";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { EmailTemplatesPanel } from "@/components/learn/admissions/EmailTemplatesPanel";
@@ -69,6 +70,7 @@ export function AdmissionsSettingsPanel() {
 
   return (
     <div className="space-y-4">
+      <PaymentsSettings />
       <Group
         title="Offer & assessment email settings"
         help="Used when staff write offer, assessment and interview emails. Fee amounts are not set here: change them in Content > Fees. Note: these settings are stored in the public site settings table, so never put a password, API key or secret here."
@@ -76,12 +78,7 @@ export function AdmissionsSettingsPanel() {
         <label className="block text-sm font-medium text-ink">
           Online payment link
           <input type="url" value={d.online_payment_url} onChange={(e) => set("online_payment_url", e.target.value)} placeholder="https://buy.stripe.com/…" maxLength={500} disabled={!loaded} className={fieldCls} />
-          <span className="mt-1 block text-xs font-normal text-ink/65">The address of your secure payment page (for example a Stripe Payment Link). Once it is set, the offer email&apos;s &ldquo;How to pay&rdquo; gives this link, and a Pay online button appears on the website&apos;s Fees page (after the next site update) and on the family Fees page in the portal. Leave it empty to show no button. See docs/online-payments-options.md.</span>
-        </label>
-        <label className="mt-3 block text-sm font-medium text-ink">
-          Payment instructions (only used while there is no online payment link)
-          <textarea value={d.payment_instructions} onChange={(e) => set("payment_instructions", e.target.value)} rows={6} maxLength={2000} disabled={!loaded} className={`${fieldCls} font-mono text-xs`} />
-          <span className="mt-1 block text-xs font-normal text-ink/65">Pasted into the offer email under &ldquo;How to pay&rdquo; until the online payment link above is set. The offer also asks families to use the child&apos;s full name as the reference.</span>
+          <span className="mt-1 block text-xs font-normal text-ink/65">Fallback only, while Stripe is not connected (see Payments above): a shared Stripe Payment Link for the email payment page. Once Stripe is connected every family pays on their own page and this is not used; clear it then. See docs/payments.md.</span>
         </label>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">

@@ -224,6 +224,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       icon: "wallet",
       pages: [
         { href: "/admin/fees", label: "Fees", icon: "wallet", hint: "Invoices and payment status", headOnly: true, keywords: "payments invoices money bursary" },
+        { href: "/admin/payments", label: "Payments", icon: "receipt", hint: "Every charge and Stripe payment, checked against Stripe daily", headOnly: true, keywords: "stripe reconcile references invoices overdue refunds disputes" },
         { href: "/admin/documents", label: "Policies to sign", icon: "fileCheck", hint: "Policies families and staff sign", headOnly: true, keywords: "documents signatures consent forms" },
         { href: "/admin/people", label: "Accounts and sign-ins", icon: "idCard", hint: "Sign-ins and roles for families, pupils and staff", keywords: "people users logins invite roles password" },
         { href: "/admin/content", label: "Website pages", icon: "globe", hint: "Pages on the public site", keywords: "website cms public site" },
