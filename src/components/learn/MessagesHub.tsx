@@ -59,7 +59,12 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
   const [threads, setThreads] = useState<ThreadRow[] | null>(null);
   const [lasts, setLasts] = useState<Record<string, Last>>({});
   const [active, setActive] = useState<string | null>(null);
+  // ?compose=1 (Today's "Send a message") opens New message straight away, over the inbox.
   const [picking, setPicking] = useState(false);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reads the address once after hydration
+    if (new URLSearchParams(window.location.search).get("compose") === "1") setPicking(true);
+  }, []);
   const [query, setQuery] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [directoryFailed, setDirectoryFailed] = useState(false);

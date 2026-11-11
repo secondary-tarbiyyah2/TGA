@@ -116,18 +116,19 @@ export function classPageEntry(a: Area): GuideEntry {
     purpose: "One class: Stream, Classwork, Lessons, People, Attendance, Grades, Insights and Settings.",
     when: "When you set work, take this class's register, look at grades or change the class's Teams link.",
     steps: [
-      "Press Set work, then choose Assignment, Quiz assignment, Question or Material from Create.",
-      "Fill in the title, instructions and due date, then press Assign (or Schedule for later).",
+      "Press Set work at the top of the class: the form opens in a panel over the section you are in.",
+      "Fill in the title, instructions and due date, then press Assign (or Schedule for later); the panel closes and you are back where you were.",
+      "Inside Classwork, Create also offers Quiz assignment, Question and Material, each in the same panel.",
       "Open Classwork, then To review, to mark what pupils handed in and press Return to pupil.",
-      "Open Attendance to take this class's register.",
+      "The class's sections are listed down the left (on a phone, choose one from Section); open Attendance to take this class's register.",
       "Open Settings to paste the class's Teams meeting link once, then Save link.",
     ],
-    tips: ["Work is only set inside a class; Classwork to action just lists what needs marking or chasing.", "Insights lists pupils who may need a word."],
+    tips: ["Work is only set inside a class, or from Set work on Today, where you choose the class.", "Insights lists pupils who may need a word."],
     privacy: "Pupils and their parents see the Stream, Classwork, Lessons and their own Grades. Attendance, Insights and Settings are staff only.",
     related: [`/${a}/classes`, `/${a}/homework`, `/${a}/lessons/view`],
     showMe: [
       { target: "class-tabs", label: "Class sections", say: "Stream, Classwork, Lessons, People, Attendance, Grades, Insights and Settings." },
-      { target: "class-set-work", label: "Set work", say: "Start a new piece of classwork here." },
+      { target: "class-set-work", label: "Set work", say: "Start a new piece of classwork here; it opens over the page." },
     ],
     tasks: ["set homework", "set classwork", "mark work", "add a Teams link"],
   };
@@ -169,14 +170,15 @@ export function classworkToActionEntry(a: Area): GuideEntry {
     steps: [
       "Choose what to show: To mark, Missing, Handed in late or Resubmission asked.",
       "Choose how far back: Last 30 days, Last 90 days or This year.",
-      "Press Mark work or Open classwork to go into that class.",
+      "Press Mark work: the work to mark opens in a panel over this list, and the list updates when you close it.",
+      "Press Open classwork to go into that class.",
     ],
     tips: ["New work is set inside a class with Set work, not here."],
     privacy: head(a) ? "You see every class; teachers see only theirs." : "You see only your own classes.",
     related: [`/${a}/class`, ...(head(a) ? [] : ["/teach/review"])],
     showMe: [
       { target: "cta-filter", label: "Show", say: "Pick what needs action." },
-      { target: "cta-list", label: "The list", say: "Each line opens the class's classwork." },
+      { target: "cta-list", label: "The list", say: "Mark each piece from here, or open the class's classwork." },
     ],
     tasks: ["chase missing homework", "late homework"],
   };

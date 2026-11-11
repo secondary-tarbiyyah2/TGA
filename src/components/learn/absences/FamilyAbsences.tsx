@@ -18,7 +18,8 @@ const CHIP: Record<NoteStatus, string> = {
 const fieldCls = `mt-1 ${ui.input}`;
 const REASONS = ["Unwell", "Medical or dental appointment", "Family emergency", "Religious observance", "Other"];
 
-export function FamilyAbsences() {
+/** `embedded`: inside a panel over Today (no page title of its own). */
+export function FamilyAbsences({ embedded = false }: { embedded?: boolean } = {}) {
   const [children, setChildren] = useState<Child[] | null>(null);
   const [notes, setNotes] = useState<AbsenceNote[] | null>(null);
   const [unexplained, setUnexplained] = useState<Absence[]>([]);
@@ -179,10 +180,11 @@ export function FamilyAbsences() {
 
   return (
     <>
-      <PageHeader
-        title="Report an absence"
-        subtitle="Let us know why your child was, or will be, away. It helps us look after them."
-      />
+      {embedded ? (
+        <p className="mb-4 text-sm text-ink-500">Let us know why your child was, or will be, away. It helps us look after them.</p>
+      ) : (
+        <PageHeader title="Report an absence" subtitle="Let us know why your child was, or will be, away. It helps us look after them." />
+      )}
       {loadError && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load. Please refresh in a moment.</p>}
 
       {view === "home" && (

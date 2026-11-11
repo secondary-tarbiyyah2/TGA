@@ -14,7 +14,7 @@ export const PARENT_GUIDE: GuideEntry[] = [
       "If you have more than one child, choose whose school day to show at the top.",
       "Check the figures: homework due or missing, things waiting for you and unread messages.",
       "When a live lesson is about to start, press Join lesson on the lesson card.",
-      "Use the quick actions to Report an absence or Message a teacher.",
+      "Use the quick actions to Report an absence (it opens right here, over Today) or Message a teacher.",
       "Scroll down for the timetable and upcoming lessons for the next two weeks.",
     ],
     tips: [

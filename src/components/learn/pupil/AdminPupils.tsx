@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
-import { WorkspaceHeader } from "@/components/learn/kit";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { SidePanel, WorkspaceHeader } from "@/components/learn/kit";
 import { DataTable, type Column } from "@/components/learn/DataTable";
 import { Icon } from "@/components/learn/Icon";
 import { Button, IconButton, Notice, StatusChip, ui } from "@/components/learn/ui";
@@ -115,6 +114,79 @@ function AddPupil({ onClose, onChanged }: { onClose: () => void; onChanged: () =
   return <AddPersonModal initialType="student" yearGroups={people.yearGroups} classes={people.classes} parents={people.parents} onClose={onClose} onChanged={onChanged} />;
 }
 
+/**
+ * A pupil's essentials beside the list (owner, 11 Nov 2026: pick a row, its detail opens
+ * beside the list; docs/portal-structure.md, pattern 4): year, classes, attendance, support,
+ * medical alerts and what is missing from the record, with the record's main actions.
+ * Previous and Next move through the list as it is filtered and sorted, without closing.
+ */
+function PupilPeek({ pupil, extras, onClose, onEdit, onPrev, onNext, position }: { pupil: PupilRow; extras: Extras; onClose: () => void; onEdit: () => void; onPrev?: () => void; onNext?: () => void; position: string }) {
+  const att = extras.attendance.get(pupil.id);
+  const support = extras.support.get(pupil.id);
+  const missing = isComplete(pupil) ? [] : missingItems(pupil);
+  const row = (label: string, value: ReactNode) => (
+    <div className="grid grid-cols-[8.5rem_minmax(0,1fr)] gap-3 py-2.5">
+      <dt className="t-meta">{label}</dt>
+      <dd className="min-w-0 text-sm text-ink">{value}</dd>
+    </div>
+  );
+  return (
+    <SidePanel
+      title={pupil.name}
+      eyebrow={[pupil.yearGroup || "No year group", position].filter(Boolean).join(" · ")}
+      onClose={onClose}
+      footer={
+        <>
+          <Link href={`/admin/pupils?id=${pupil.id}`} className={ui.btnPrimary}>
+            Open full record
+          </Link>
+          <button type="button" onClick={onEdit} className={ui.btnSecondary}>
+            Edit pupil
+          </button>
+          <span className="ml-auto flex gap-1">
+            <IconButton icon="chevronLeft" label="Previous pupil" onClick={onPrev} disabled={!onPrev} />
+            <IconButton icon="chevronRight" label="Next pupil" onClick={onNext} disabled={!onNext} />
+          </span>
+        </>
+      }
+    >
+      <div data-guide="pupil-peek">
+        {pupil.alerts.length > 0 && (
+          <div className="mb-4">
+            <Notice tone="bad">
+              <span className="font-semibold">Medical: </span>
+              {pupil.alerts.join(", ")}
+            </Notice>
+          </div>
+        )}
+        <dl className="divide-y divide-gold-light">
+          {row("Classes", pupil.classes.length ? pupil.classes.map((c) => c.name).join(", ") : <span className="text-ink-500">None yet</span>)}
+          {row("Attendance", !extras.loaded ? "…" : att === undefined || att === null ? <span className="text-ink-500">No lessons marked in the last 30 days</span> : <span className={att < 90 ? "font-semibold text-amber-900" : ""}>{att}% over the last 30 days</span>)}
+          {row("Support", support ? SUPPORT_LEVEL[support] : <span className="text-ink-500">No active support plan</span>)}
+          {row("Working above year", extras.above.has(pupil.id) ? "Yes" : <span className="text-ink-500">No</span>)}
+          {row(
+            "Record",
+            missing.length === 0 ? (
+              <span className="text-green-800">Complete</span>
+            ) : (
+              <span>
+                <span className="font-medium text-amber-900">{pupil.details ? `${missing.length} missing` : "Not started"}</span>
+                <span className="mt-0.5 block text-ink-500">{missing.join(", ")}</span>
+              </span>
+            ),
+          )}
+          {row("Parent", extras.parentEmail.get(pupil.id)?.email || <span className="text-ink-500">No parent account linked</span>)}
+        </dl>
+        <p className="mt-4 text-sm">
+          <Link href={`/admin/pupils?id=${pupil.id}&edit=details`} className="font-medium text-forest-700 hover:underline">
+            Edit home, health, contacts and consents
+          </Link>
+        </p>
+      </div>
+    </SidePanel>
+  );
+}
+
 /** The list's class cell: a count that opens to the names, so long lists never wrap the row. */
 function ClassesCell({ classes }: { classes: { id: string; name: string }[] }) {
   if (classes.length === 0) return <span className="text-ink/60">None</span>;
@@ -143,7 +215,6 @@ function ClassesCell({ classes }: { classes: { id: string; name: string }[] }) {
  * row), edit, add a pupil, and remind families whose details are missing.
  */
 export function AdminPupils() {
-  const router = useRouter();
   const { pupils, yearGroups, error, reload } = usePupils();
   const [tick, setTick] = useState(0);
   const extras = usePupilExtras(pupils ? pupils.map((p) => p.id) : null, tick);
@@ -151,6 +222,8 @@ export function AdminPupils() {
   const [year, setYear] = useState("");
   const [adding, setAdding] = useState(false);
   const [editing, setEditing] = useState<string | null>(null);
+  // The pupil whose essentials are open beside the list.
+  const [peek, setPeek] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   // Same gate as every other export in the portal.
   const canExport = useLearnPermission("can_export_data");
@@ -232,9 +305,16 @@ export function AdminPupils() {
             {initials(p.name)}
           </span>
           <span className="min-w-0">
-            <Link href={`/admin/pupils?id=${p.id}`} className="block font-medium text-ink hover:text-teal-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setPeek(p.id);
+              }}
+              className="block text-left font-medium text-ink hover:text-teal-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+            >
               {p.name}
-            </Link>
+            </button>
             {extras.above.has(p.id) && (
               <span className="mt-0.5 block text-xs font-medium text-teal-700" title="Working above year group">
                 Above year group
@@ -344,7 +424,7 @@ export function AdminPupils() {
         <WorkspaceHeader
           eyebrow={[{ label: "Today", href: "/admin/dashboard" }, { label: "Pupils" }]}
           title="Pupils"
-          description="Click a pupil for their full record: details, medical, support, attendance, behaviour, reports and entry assessment."
+          description="Press a pupil to see them beside the list; open the full record for details, medical, support, attendance, behaviour, reports and entry assessment."
           stats={
             pupils
               ? [
@@ -407,7 +487,7 @@ export function AdminPupils() {
           rows={pupils === null ? null : rows}
           rowKey={(p) => p.id}
           columns={columns}
-          onRowClick={(p) => router.push(`/admin/pupils?id=${p.id}`)}
+          onRowClick={(p) => setPeek(p.id)}
           rowClassName={() => "!align-middle"}
           search={{ text: (p) => `${p.name} ${p.yearGroup || ""} ${p.classes.map((c) => c.name).join(" ")}`, placeholder: "Search pupils or classes" }}
           filters={
@@ -434,6 +514,22 @@ export function AdminPupils() {
 
       {adding && <AddPupil onClose={() => setAdding(false)} onChanged={refresh} />}
       {editing && <EditPupilModal childId={editing} onClose={() => setEditing(null)} onSaved={refresh} />}
+      {(() => {
+        const i = peek ? rows.findIndex((r) => r.id === peek) : -1;
+        if (i < 0) return null;
+        const pupil = rows[i];
+        return (
+          <PupilPeek
+            pupil={pupil}
+            extras={extras}
+            position={`${i + 1} of ${rows.length}`}
+            onClose={() => setPeek(null)}
+            onEdit={() => setEditing(pupil.id)}
+            onPrev={i > 0 ? () => setPeek(rows[i - 1].id) : undefined}
+            onNext={i < rows.length - 1 ? () => setPeek(rows[i + 1].id) : undefined}
+          />
+        );
+      })()}
     </>
   );
 }

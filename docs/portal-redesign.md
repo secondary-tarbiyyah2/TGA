@@ -4,6 +4,46 @@
 > `docs/owner-briefs/2026-11-10-ui-ux-redesign.md` replaced the visual language below. The rules now live in
 > `DESIGN.md` ("Portal design system") and in the tokens of `src/app/globals.css` (`.portal`). Read "Second pass"
 > first; the earlier sections are kept as history (their phase 2 colour table and "Type" rules are superseded).
+> **Third pass (11 Nov 2026):** structure, not look. Read `docs/portal-structure.md` (the patterns) and "Third pass"
+> below (status) before changing how a page is put together.
+
+## Third pass (owner feedback, 11 Nov 2026): structure
+
+Owner: "I don't like the fact that options are on top and across (Curriculum etc). Also some buttons, when I press,
+for example Set homework, take me to a separate page. I hate the pages themselves." Then: "there is no structure, the
+UI is the problem; use Figma community 'education portal' designs for inspiration." The research and the nine
+patterns are in `docs/portal-structure.md`.
+
+**Status.**
+1. [x] No strips across the top (PR "Portal redesign 3: no tab strips across the top"). `HubTabs` and `SubPageNav`
+   are gone; the sidebar lists a category's pages, a page's own steps (`SUB_PAGES`: Timetable, Academic setup) one
+   level further in while you are on it, and for families and pupils a hub's pages under it while you are in it. The
+   collapsed rail opens the menu at a category. `PageHeader` shows the category as a small eyebrow. Academic setup
+   steps link to the previous and next step at their foot.
+2. [x] Actions in place (PR "Portal redesign 3: actions open in place"). `SidePanel` gained `size="lg"` for forms and
+   no longer steals focus when its parent re-renders. Converted, each reusing its existing form so validation,
+   permissions and data are unchanged:
+   - Set work / Set a quiz (class header; `?set=assignment|quiz` opens it over the class), Create > Assignment, Quiz,
+     Question and Material inside Classwork, editing a piece of work, and Set work on teacher Today (class picker):
+     `SetWorkPanel` (`class/SetWorkPanel.tsx`), which announces `tga:classwork-changed` so lists refresh.
+   - Take register on teacher Today and on the head's Today (today's lessons): `RegisterPanel`.
+   - Mark work on teacher Today and Classwork to action (per class and per piece): `MarkingPanel` (the To review list).
+   - Edit details on a pupil record (`&edit=details` now opens the panel over the record, so old links work).
+   - Report an absence on family Today (the same `FamilyAbsences`, `embedded`).
+   - Add a class on Classes and on Academic setup > Classes and teachers: `AddClassPanel` (one `classPayload` rule).
+   - New assessment (Entry assessments) and New / Edit revision pack (Lesson library).
+   - Send a message on Today opens Messages with New message already open (`?compose=1`).
+   Already in place and kept: Add pupil, Edit pupil, Log behaviour, New message, Share to class, Edit lesson (the
+   studio), Record payment, Record a staff absence and Assign cover (forms on their own page section).
+3. [x] My teaching, first cut: teacher Today's "Your day" is a list of lessons with register status, Take register and
+   Start on Teams; Quick actions open panels. A class's sections (Stream, Classwork, Lessons, People, Attendance,
+   Grades, Insights, Settings) are listed down the left of the class on wide screens and chosen from "Section" on
+   phones, not a strip across the top.
+4. [x] Pupils: list and detail. Pressing a pupil opens their essentials beside the list (`PupilPeek` in
+   `AdminPupils.tsx`): classes, attendance, support, medical, what is missing, parent; Open full record, Edit pupil,
+   Previous and Next through the filtered list.
+5. Next: Curriculum as one structure (library, planner and review in the map's language, unit detail in a panel);
+   Messages and Waiting for you as list and detail; parent and pupil home.
 
 ## Second pass (owner brief, 10 Nov 2026): audit, direction and status
 

@@ -1,6 +1,7 @@
 "use client";
 
-import { Loading } from "@/components/learn/kit";
+import { Loading, SidePanel } from "@/components/learn/kit";
+import { FamilyAbsences } from "@/components/learn/absences/FamilyAbsences";
 import { useNavBadges } from "@/lib/learn/navBadges";
 import { UpNextCard } from "@/components/learn/UpNextCard";
 import { Icon } from "@/components/learn/Icon";
@@ -204,6 +205,8 @@ function FamilyContent() {
   const hasChildren = !!children && children.length > 0;
   const badges = useNavBadges("family");
   const current = children?.find((c) => c.id === chosen) || children?.[0];
+  // "Report an absence" opens over Today (owner, 11 Nov 2026: actions open in place).
+  const [reporting, setReporting] = useState(false);
 
   // What a parent needs first: anything waiting on them, then what's next
   // for the child, then the detail. Adding a child sits at the bottom
@@ -224,13 +227,18 @@ function FamilyContent() {
 
         {hasChildren && (
           <nav data-guide="family-quick-actions" aria-label="Quick actions" className="flex flex-wrap gap-2 print:hidden">
-            <Link href="/family/absences" className={ui.btnPrimary}>
+            <button type="button" onClick={() => setReporting(true)} className={ui.btnPrimary}>
               Report an absence
-            </Link>
-            <Link href="/family/messages" className={ui.btnSecondary}>
+            </button>
+            <Link href="/family/messages?compose=1" className={ui.btnSecondary}>
               Message a teacher
             </Link>
           </nav>
+        )}
+        {reporting && (
+          <SidePanel title="Report an absence" eyebrow="Your children" onClose={() => setReporting(false)} size="lg">
+            <FamilyAbsences embedded />
+          </SidePanel>
         )}
 
         <ActionCentreWidget role="family" />

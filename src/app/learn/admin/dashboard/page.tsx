@@ -17,6 +17,7 @@ import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { useActionItems } from "@/components/learn/actions/useActionItems";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PushOptIn } from "@/components/learn/PushOptIn";
+import { RegisterPanel } from "@/components/learn/attendance/RegisterPanel";
 
 const AUDIT_ACTION_LABELS: Record<string, string> = {
   BOOKING_CALL_JOIN: "started a call for a booking",
@@ -131,6 +132,9 @@ function useSchoolToday() {
 
 function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
   const now = ukNowHm();
+  // A lesson's register opens over Today (owner, 11 Nov 2026: actions open in place).
+  const [register, setRegister] = useState<TodayLessonRow | null>(null);
+  const [marked, setMarked] = useState<Record<string, boolean>>({});
   return (
     <div data-guide="admin-lessons-today" className="rounded-2xl border border-gold-light bg-white">
       <div className="flex items-center justify-between border-b border-gold-light px-5 py-3.5">
@@ -162,7 +166,7 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
                 </Link>
                 {l.bbb_status === "live" && <span className="rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">Live</span>}
                 {started ? (
-                  l.registered > 0 ? (
+                  l.registered > 0 || marked[l.id] ? (
                     <StatusChip tone="good">Register taken</StatusChip>
                   ) : (
                     <StatusChip tone="bad">Register missing</StatusChip>
@@ -170,10 +174,28 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
                 ) : (
                   <StatusChip>Later</StatusChip>
                 )}
+                {started && (
+                  <button type="button" onClick={() => setRegister(l)} className={`${ui.btnSecondary} ${ui.sm}`}>
+                    {l.registered > 0 || marked[l.id] ? "Register" : "Take register"}
+                  </button>
+                )}
               </li>
             );
           })}
         </ul>
+      )}
+      {register && (
+        <RegisterPanel
+          lessonId={register.id}
+          classId={register.class_id}
+          className={register.className}
+          when={`${register.start_time.slice(0, 5)} to ${register.end_time.slice(0, 5)}`}
+          lessonHref={`/admin/lessons/view?id=${register.id}`}
+          onClose={() => setRegister(null)}
+          onProgress={(taken, total) => {
+            if (total > 0 && taken > 0) setMarked((m) => ({ ...m, [register.id]: true }));
+          }}
+        />
       )}
     </div>
   );

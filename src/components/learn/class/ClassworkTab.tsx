@@ -2,19 +2,20 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { ClassViewer } from "@/lib/learn/classes";
 import { renderMarkup, safeHttpUrl } from "@/lib/learn/markup";
 import { HOMEWORK_COLUMNS, type Homework } from "@/lib/learn/homework";
 import { AttachmentList, cleanAttachments, uploadClassFile, type Attachment } from "@/components/learn/class/Attachments";
 import { HomeworkCard } from "@/components/learn/homework/HomeworkCards";
-import { HomeworkEditor, type HomeworkKind } from "@/components/learn/homework/HomeworkEditor";
+import { type HomeworkKind } from "@/components/learn/homework/HomeworkEditor";
+import { CLASSWORK_CHANGED, SetWorkPanel } from "@/components/learn/class/SetWorkPanel";
 import { ReviewQueue } from "@/components/learn/classwork/ReviewQueue";
 import { Tabs } from "@/components/learn/Tabs";
 import { Select } from "@/components/learn/Select";
 
-import { ActionsMenu, askConfirm, type MenuAction } from "@/components/learn/kit";
+import { ActionsMenu, SidePanel, askConfirm, type MenuAction } from "@/components/learn/kit";
 import { btn } from "@/components/learn/ui";
 type Topic = { id: string; name: string; position: number };
 type Hw = Homework & { topic_id: string | null; status?: string; kind?: string | null; assigned_child_ids?: string[] | null };
@@ -203,7 +204,6 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
   const [view, setView] = useState<"all" | "review">(isStaff && params.get("view") === "review" ? "review" : "all");
   const [reviewHw, setReviewHw] = useState<string | undefined>(undefined);
   const [toReview, setToReview] = useState<Record<string, number>>({});
-  const editorRef = useRef<HTMLDivElement>(null);
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -243,6 +243,16 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
     load();
   }, [load]);
 
+  // Work set from the class header's "Set work" panel (or anywhere else on the page): refresh.
+  useEffect(() => {
+    const onChanged = (e: Event) => {
+      const id = (e as CustomEvent<{ classId: string | null }>).detail?.classId;
+      if (!id || id === classId) load();
+    };
+    window.addEventListener(CLASSWORK_CHANGED, onChanged);
+    return () => window.removeEventListener(CLASSWORK_CHANGED, onChanged);
+  }, [load, classId]);
+
   const reviewTotal = Object.values(toReview).reduce((a, b) => a + b, 0);
   const onReviewCount = useCallback(() => {
     // Work returned in the To review view: refresh the counts on the list.
@@ -256,8 +266,6 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
     setSetting({ kind, editing, topicId, at });
     if (at.startsWith("topic:")) setCollapsed((c) => ({ ...c, [topicId]: false }));
     setView("all");
-    // Only nudge it into view if it isn't already: no jumping around the page.
-    requestAnimationFrame(() => editorRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }));
   };
 
   const openReview = (homeworkId?: string) => {
@@ -302,31 +310,21 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
 
   if (topics === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
+  // Setting or editing work opens in a panel over the list (owner, 11 Nov 2026: actions open in
+  // place, never as a page of their own); closing it leaves the list exactly where it was.
   const editor = setting ? (
-        <section ref={editorRef} aria-label={setting.editing ? `Edit ${setting.editing.title}` : setting.kind === "quiz" ? "New quiz assignment" : "New assignment"} className="scroll-mt-24 rounded-2xl border border-gold-light bg-white p-5">
-          <div className="mb-4 flex items-center justify-between gap-3">
-            <h3 className="text-base font-semibold text-ink">{setting.editing ? `Edit “${setting.editing.title}”` : setting.kind === "quiz" ? "New quiz assignment" : "New assignment"}</h3>
-            <button type="button" onClick={() => setSetting(null)} className="text-sm text-ink/65 hover:text-ink">
-              Close
-            </button>
-          </div>
-          <HomeworkEditor
-            key={setting.editing?.id || `new-${setting.kind}`}
-            classes={[{ id: classId, name: classTitle }]}
-            initialClassId={classId}
-            lockClass
-            topics={topics}
-            initialTopicId={setting.editing?.topic_id || setting.topicId}
-            kind={setting.kind}
-            editing={setting.editing}
-            onCancel={() => setSetting(null)}
-            onSaved={(n) => {
-              setNote(n ?? null);
-              setSetting(null);
-              load();
-            }}
-          />
-        </section>
+    <SetWorkPanel
+      classId={classId}
+      className={classTitle}
+      kind={setting.kind}
+      editing={setting.editing}
+      topicId={setting.topicId}
+      onClose={() => setSetting(null)}
+      onSaved={(n) => {
+        setNote(n ?? null);
+        setSetting(null);
+      }}
+    />
   ) : null;
 
   const groups: { key: string; topic: Topic | null; items: Row[] }[] = [
@@ -383,7 +381,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
           {note}
         </p>
       )}
-      {setting?.at === "top" && editor}
+      {editor}
 
       {newTopic !== null && (
         <div className="flex flex-wrap gap-2 rounded-2xl border border-gold-light bg-white p-4">
@@ -402,17 +400,19 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
         </p>
       )}
       {creating && (
-        <MaterialForm
-          classId={classId}
-          kind={creating}
-          topics={topics}
-          defaultTopic=""
-          onCancel={() => setCreating(null)}
-          onDone={() => {
-            setCreating(null);
-            load();
-          }}
-        />
+        <SidePanel title={creating === "question" ? "Ask a question" : "Post a material"} eyebrow={classTitle} onClose={() => setCreating(null)} size="lg">
+          <MaterialForm
+            classId={classId}
+            kind={creating}
+            topics={topics}
+            defaultTopic=""
+            onCancel={() => setCreating(null)}
+            onDone={() => {
+              setCreating(null);
+              load();
+            }}
+          />
+        </SidePanel>
       )}
 
       {rows.length === 0 && topics.length === 0 && (
@@ -446,7 +446,6 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
             ) : (
               <h2 className="px-4 pt-3 text-sm font-semibold text-ink/65">{topics.length > 0 ? "No topic" : "Classwork"}</h2>
             )}
-            {g.topic && setting?.at === `topic:${g.key}` && <div className="px-3 pb-3">{editor}</div>}
             {!closed && (
               <ul className="divide-y divide-gold-light/60 px-2 pb-2">
                 {g.items.length === 0 && <li className="px-3 py-3 text-sm text-ink/65">Nothing in this topic yet.</li>}
@@ -498,7 +497,6 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                           </button>
                         )}
                       </div>
-                      {hw && setting?.at === `item:${hw.id}` && <div className="mt-2">{editor}</div>}
                       {open && hw && isStaff && setting?.at !== `item:${hw.id}` && (
                         <div className="mt-2">
                           <HomeworkCard

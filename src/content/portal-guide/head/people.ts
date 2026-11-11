@@ -9,7 +9,7 @@ export const HEAD_DASHBOARD: GuideEntry = {
   when: "First thing every morning.",
   steps: [
     "Read the figures: lessons today, need attention, lessons to approve and curriculum approved.",
-    "Check today's lessons for Register missing, and press Take registers if needed.",
+    "Check today's lessons for Register missing, and press Take register on the lesson: its register opens over Today.",
     "Open Waiting for you for the full list of jobs.",
     "Glance at Recent activity, or open the Full audit log.",
   ],
@@ -33,8 +33,8 @@ export const HEAD_PEOPLE: GuideEntry[] = [
     when: "To look up, add or update a pupil, or chase missing details.",
     steps: [
       "Search, or filter by year group, or Show Missing details, Medical alerts, Support plan or Above year group.",
-      "Press a pupil's row to open their full record.",
-      "In the record, use the tabs (Overview, Details & contacts, Medical & consents and more) and Edit details to change anything.",
+      "Press a pupil's row: their essentials open beside the list (classes, attendance, support, medical and what is missing), with Previous and Next to move along the list.",
+      "Press Open full record for everything; in the record, Edit details opens home, health, contacts and consents in a panel over the record.",
       "With Missing details showing, press Remind families to open an email to those parents, or Copy email addresses.",
       "Press Add pupil to add a new pupil.",
     ],
@@ -43,7 +43,7 @@ export const HEAD_PEOPLE: GuideEntry[] = [
     related: ["/admin/people", "/admin/send", "/admin/admissions"],
     showMe: [
       { target: "pupils-filter", label: "Show", say: "Missing details, medical alerts, support plans and more." },
-      { target: "pupils-list", label: "Pupils", say: "Press a row for the full record." },
+      { target: "pupils-list", label: "Pupils", say: "Press a row to see the pupil beside the list." },
       { target: "pupils-add", label: "Add pupil", say: "Add a new pupil here." },
     ],
     tasks: ["find a pupil", "add a pupil", "chase missing details", "edit pupil details"],

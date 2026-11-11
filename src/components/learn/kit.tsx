@@ -267,17 +267,21 @@ export function Dialog({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const titleId = useId();
+  const closeRef = useRef(onClose);
+  useEffect(() => {
+    closeRef.current = onClose;
+  }, [onClose]);
   useEffect(() => {
     const back = document.activeElement as HTMLElement | null;
     const el = ref.current?.querySelector<HTMLElement>("[data-autofocus], button, [href], input, select, textarea");
     el?.focus();
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && !e.defaultPrevented && closeRef.current();
     document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("keydown", onKey);
       back?.focus?.();
     };
-  }, [onClose]);
+  }, []);
   const width = size === "sm" ? "max-w-md" : size === "lg" ? "max-w-3xl" : "max-w-lg";
   return (
     <div className="portal fixed inset-0 z-[90] flex items-end justify-center sm:items-center sm:p-4">
@@ -301,13 +305,20 @@ export function Dialog({
  * detail of something picked on the page without leaving it: progressive disclosure. Escape,
  * the close button and the backdrop close it; focus moves into it and back out.
  */
-export function SidePanel({ title, eyebrow, onClose, children, footer, label }: { title: ReactNode; eyebrow?: ReactNode; onClose: () => void; children: ReactNode; footer?: ReactNode; label?: string }) {
+export function SidePanel({ title, eyebrow, onClose, children, footer, label, size = "md" }: { title: ReactNode; eyebrow?: ReactNode; onClose: () => void; children: ReactNode; footer?: ReactNode; label?: string; /** "lg" for forms (setting work, a pupil's details); "md" for a record's detail. */ size?: "md" | "lg" }) {
   const ref = useRef<HTMLDivElement>(null);
   const titleId = useId();
+  // The latest onClose, so a parent re-rendering (typing in a form inside) never re-runs the
+  // open effect and pulls focus back to the panel.
+  const closeRef = useRef(onClose);
+  useEffect(() => {
+    closeRef.current = onClose;
+  }, [onClose]);
   useEffect(() => {
     const back = document.activeElement as HTMLElement | null;
     ref.current?.focus();
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    // Escape closes the panel, unless something inside it (an open dropdown) used it first.
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && !e.defaultPrevented && closeRef.current();
     document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -316,11 +327,12 @@ export function SidePanel({ title, eyebrow, onClose, children, footer, label }: 
       document.body.style.overflow = prev;
       back?.focus?.();
     };
-  }, [onClose]);
+  }, []);
+  const width = size === "lg" ? "sm:w-[min(44rem,94vw)]" : "sm:w-[min(36rem,92vw)]";
   return (
     <div className="portal fixed inset-0 z-[90] flex items-end justify-end sm:items-stretch">
       <button type="button" aria-label="Close" tabIndex={-1} onClick={onClose} className="portal-scrim absolute inset-0 bg-ink/35" />
-      <div ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby={titleId} aria-label={label} className="portal-sheet relative flex max-h-[88vh] w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl outline-none sm:max-h-none sm:w-[min(36rem,92vw)] sm:rounded-none sm:border-l sm:border-gold-light">
+      <div ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby={titleId} aria-label={label} className={`portal-sheet relative flex ${size === "lg" ? "max-h-[94dvh]" : "max-h-[88vh]"} w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl outline-none sm:max-h-none ${width} sm:rounded-none sm:border-l sm:border-gold-light`}>
         <div className="flex items-start gap-3 border-b border-gold-light px-5 py-4">
           <div className="min-w-0 flex-1">
             {eyebrow && <div className="t-eyebrow mb-1">{eyebrow}</div>}
