@@ -54,7 +54,10 @@ Batches and status:
    many are waiting, Issued), each pressable, instead of a switch strip; Report settings left the stages and
    opens from the header's menu with "Back to reports". The overview's figures use `.portal-figures`. The
    `Stepper` keeps one row on phones (no notes or joining lines there). Still to do: Admissions, Entry
-   assessments, Timetable. 6. [ ] Workspaces and Today, Messages,
+   assessments, Timetable. 6a. [x] Gradebook (workspace): the class picker, pupil count and Add an assessment sit on one line above the
+   grid (`ClassGradebook toolbar`); the card with a second "Gradebook" heading is gone, here and in a class's
+   Grades. "No assessment types" now points to Report settings, where they live.
+6. [ ] Workspaces and Today, Messages,
    Calendar, Qur'an, absences.
 
 Screenshots: `scratchpad/tpl/shots.mjs` (the redesign3 mock harness pointed at this worktree, plus subjects,
