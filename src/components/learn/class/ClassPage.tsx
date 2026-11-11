@@ -21,6 +21,7 @@ import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 import { ClassGradebook } from "@/components/learn/assessment/ClassGradebook";
 import { ClassAttendanceTab } from "@/components/learn/class/ClassAttendanceTab";
 import { ClassInsightsTab } from "@/components/learn/class/ClassInsightsTab";
+import { QuranClasses, isQuranClass } from "@/components/learn/quran/QuranClasses";
 import { useClassRoster } from "@/components/learn/class/PupilPicker";
 
 /** Route bases per viewer, e.g. the class page and lesson page URLs. */
@@ -159,10 +160,11 @@ function StaffGrades({ classId }: { classId: string }) {
  * the URL (?tab=grades) so it survives a refresh. Older links (?tab=course,
  * assignments, participants, announcements) still land on the matching tab.
  */
-type TabKey = "stream" | "classwork" | "lessons" | "people" | "attendance" | "grades" | "insights" | "settings";
+type TabKey = "stream" | "quran" | "classwork" | "lessons" | "people" | "attendance" | "grades" | "insights" | "settings";
 
 const TAB_LABELS: Record<TabKey, string> = {
   stream: "Stream",
+  quran: "Hear and mark",
   classwork: "Classwork",
   lessons: "Lessons",
   people: "People",
@@ -182,7 +184,12 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
   const childQuery = viewer.kind === "parent" ? `&child=${viewer.childId}` : "";
   const isStaff = viewer.kind === "teacher" || viewer.kind === "staff";
 
-  const tabs: TabKey[] = isStaff ? ["stream", "classwork", "lessons", "people", "attendance", "grades", "insights", "settings"] : ["stream", "classwork", "lessons", "people", "grades"];
+  // A Qur'an class (subject or name says Qur'an, Qaidah or hifdh) has its own section for hearing pupils
+  // recite and posting lesson notes (owner, 11 Nov 2026: "include this quran system as part of classroom").
+  const quranClass = !!cls && isQuranClass(cls);
+  const tabs: TabKey[] = isStaff
+    ? ["stream", ...(quranClass ? (["quran"] as TabKey[]) : []), "classwork", "lessons", "people", "attendance", "grades", "insights", "settings"]
+    : ["stream", "classwork", "lessons", "people", "grades"];
   const rawTab = params.get("tab") || "";
   const requested = (TAB_ALIASES[rawTab] ?? rawTab) as TabKey;
   const tab: TabKey = tabs.includes(requested) ? requested : "stream";
@@ -320,6 +327,8 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
       )}
 
       {tab === "stream" && <StreamTab classId={cls.id} viewer={viewer} area={area} classHref={classHref} />}
+
+      {tab === "quran" && isStaff && <QuranClasses scope={viewer.kind === "staff" ? "admin" : "teach"} fixedClass={cls} focusPupil={params.get("pupil")} />}
 
       {tab === "classwork" && <ClassworkTab classId={cls.id} classTitle={cls.name} viewer={viewer} classHref={classHref} />}
 
