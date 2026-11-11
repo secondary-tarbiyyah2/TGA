@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
@@ -9,7 +10,6 @@ import { GcseMocks } from "@/components/learn/gcse/GcseMocks";
 import { GcseInterventions } from "@/components/learn/gcse/GcseInterventions";
 import { isGcseYear } from "@/lib/learn/gcse";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
@@ -62,9 +62,18 @@ function AdminGcseContent() {
         subtitle="Target, predicted and actual grades (9 to 1) for Years 10 and 11 (GCSE and International GCSE, as at Tarbiyyah Secondary School). Select a pupil for their history and mock exams. Pupils and parents see their own."
       />
 
-      <Tabs items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="GCSE progress sections" guide="gcse-tabs" idBase="gcse" className="mb-5" />
-
-      <div {...tabPanelProps("gcse", tab)}>
+      <SectionLayout
+        nav={
+          <SectionNav
+            items={TABS.map((t) => ({ key: t.id, label: t.label }))}
+            value={tab}
+            onChange={setTab}
+            label="GCSE progress sections"
+            guide="gcse-tabs"
+          />
+        }
+      >
+        <div>
         {tab === "overview" && <GcseOverview key={version} />}
         {tab === "mocks" && <GcseMocks key={version} />}
         {tab === "interventions" && <GcseInterventions />}
@@ -99,6 +108,7 @@ function AdminGcseContent() {
           </>
         )}
       </div>
+      </SectionLayout>
     </>
   );
 }

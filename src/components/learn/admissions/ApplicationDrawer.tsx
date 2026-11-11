@@ -151,7 +151,7 @@ export function ApplicationDrawer({
               </button>
             ))}
           </div>
-          <Tabs items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Application sections" className="-mx-5 mt-3 px-5" />
+          <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Application sections" className="-mx-5 mt-3 px-5" />
         </div>
 
         <div className="p-5">

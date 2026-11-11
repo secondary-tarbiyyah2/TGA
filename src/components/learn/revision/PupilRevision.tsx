@@ -186,7 +186,7 @@ function UnitView({ id, onBack }: { id: string; onBack: () => void }) {
             <h2 className="text-h2 font-semibold text-ink">{unit.title}</h2>
           </div>
           <UnitTodos unitId={id} />
-          <Tabs
+          <Tabs variant="switch"
             items={[
               { key: "summary" as Tab, label: "1 · Summary" },
               { key: "quiz" as Tab, label: "2 · Quiz" },

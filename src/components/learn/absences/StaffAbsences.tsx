@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { PageHeader, type Crumb } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -12,7 +13,6 @@ import { NotesReview } from "./NotesReview";
 import { RecentAbsences } from "./RecentAbsences";
 import { SummaryCard } from "./SummaryCard";
 import { dateKeyDaysAgo, formatDay, useAbsenceData } from "./data";
-import { Tabs } from "@/components/learn/Tabs";
 
 type Term = { name: string; starts_on: string; ends_on: string };
 type Tab = "overview" | "followup" | "notes" | "emails" | "reports" | "cover";
@@ -94,18 +94,23 @@ export function StaffAbsences({ crumbs, subtitle, showCover = false, showEmails 
     <>
       <PageHeader crumbs={crumbs} title="Absences" subtitle={subtitle || "What families have told us, and who has not been heard from."} />
       <div className="space-y-5">
-        <Tabs
-          items={TABS.filter((t) => (t.key !== "cover" || showCover) && (t.key !== "emails" || showEmails)).map((t) => ({
+        <SectionLayout
+          nav={
+            <SectionNav
+              items={TABS.filter((t) => (t.key !== "cover" || showCover) && (t.key !== "emails" || showEmails)).map((t) => ({
             ...t,
             count: t.key === "followup" && followCount > 0 ? followCount : t.key === "emails" && emailCount > 0 ? emailCount : undefined,
             countAlert: true,
           }))}
-          value={tab}
-          onChange={setTab}
-          label="Absences sections"
-          guide="absences-tabs"
-        />
-        {periodMatters && (
+              value={tab}
+              onChange={setTab}
+              label="Absences sections"
+              guide="absences-tabs"
+            />
+          }
+        >
+          <div className="min-w-0 space-y-5">
+          {periodMatters && (
           <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Period">
             {PERIODS.map((p) => (
               <button
@@ -133,6 +138,8 @@ export function StaffAbsences({ crumbs, subtitle, showCover = false, showEmails 
         {tab === "emails" && showEmails && <EmailAbsences onChanged={onEmailsChanged} />}
         {tab === "reports" && <AbsenceReports absences={absences} periodLabel={label} />}
         {tab === "cover" && showCover && <CoverSuggestions />}
+          </div>
+        </SectionLayout>
       </div>
     </>
   );

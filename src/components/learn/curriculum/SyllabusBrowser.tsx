@@ -258,7 +258,7 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
         ) : (
           <>
             <SubjectHeader sp={sp} live={plan.live} docs={docs[sp.subject.slug]} overview={docs.overview} openFile={openFile} canEdit={canEdit} area={area} />
-            <Tabs items={views} value={activeView} onChange={(v) => { setView(v); setPanelKey(null); }} label="Syllabus views" idBase="syl" />
+            <Tabs variant="switch" items={views} value={activeView} onChange={(v) => { setView(v); setPanelKey(null); }} label="Syllabus views" idBase="syl" />
             <div {...tabPanelProps("syl", activeView)} className="focus:outline-none">
               {activeView === "plan" && <PlanView sp={sp} onOpen={(u) => setPanelKey(u.key)} />}
               {activeView === "years" && (

@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
@@ -158,19 +159,22 @@ function BehaviourContent() {
       />
       {error && <p role="alert" className="mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error} Please refresh the page and try again.</p>}
 
-      <Tabs
-        items={[
+      <SectionLayout
+        nav={
+          <SectionNav
+            items={[
           { key: "merits", label: "Merits and demerits" },
           { key: "incidents", label: "Incidents" },
           { key: "badges", label: "Badges" },
         ]}
-        value={tab}
-        onChange={setTab}
-        label="Behaviour sections"
-        className="mb-4"
-      />
-
-      {records === null ? (
+            value={tab}
+            onChange={setTab}
+            label="Behaviour sections"
+          />
+        }
+      >
+        <div className="min-w-0 space-y-5">
+        {records === null ? (
         <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : tab === "badges" ? (
         <div className="space-y-4">
@@ -323,6 +327,8 @@ function BehaviourContent() {
           }}
         />
       )}
+        </div>
+      </SectionLayout>
     </>
   );
 }

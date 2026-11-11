@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { absoluteFileUrl } from "@/lib/learn/fileLinks";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -11,7 +12,6 @@ import { DOCX_MIME, UPLOAD_ACCEPT, extractDocxText, openSignableFile, storageObj
 import { RecordSignatureModal, type SignTarget } from "@/components/learn/documents/RecordSignatureModal";
 import { SignatureHistory } from "@/components/learn/documents/SignatureHistory";
 import { AUDIENCE_LABEL, audienceText, audienceToRoles, requestSignatures, rolesToAudience, type Audience } from "@/components/learn/documents/audience";
-import { Tabs } from "@/components/learn/Tabs";
 import { Button, EmptyState, Field, IconButton, StatusChip, SwitchKnob, btn, ui } from "@/components/learn/ui";
 import { csvEscape } from "@/components/learn/fees/shared";
 import { Select } from "@/components/learn/Select";
@@ -489,19 +489,22 @@ function DocumentsContent() {
         }
       />
 
-      <Tabs
-        items={[
+      <SectionLayout
+        nav={
+          <SectionNav
+            items={[
           { key: "policies", label: "Website policies", count: policies?.length },
           { key: "signing", label: "Needs a signature", count: signing.length },
           { key: "outstanding", label: "Outstanding", count: outstanding ? new Set(outstanding.map((o) => o.user_id)).size : undefined, countAlert: true },
         ]}
-        value={tab}
-        onChange={setTab}
-        label="Documents sections"
-        className="mb-4"
-      />
-
-      {note && (
+            value={tab}
+            onChange={setTab}
+            label="Documents sections"
+          />
+        }
+      >
+        <div className="min-w-0 space-y-5">
+        {note && (
         <p role={note.tone === "bad" ? "alert" : "status"} className={`mb-4 flex items-start justify-between gap-3 rounded-lg border px-4 py-2 text-sm ${note.tone === "good" ? "border-green-200 bg-green-50 text-green-900" : "border-red-200 bg-red-50 text-red-800"}`}>
           <span>{note.text}</span>
           <button type="button" onClick={() => setNote(null)} aria-label="Dismiss" className="-my-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg opacity-70 hover:bg-white/60 hover:opacity-100">
@@ -794,6 +797,8 @@ function DocumentsContent() {
           }}
         />
       )}
+        </div>
+      </SectionLayout>
     </>
   );
 }

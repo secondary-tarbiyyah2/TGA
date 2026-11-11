@@ -26,6 +26,7 @@ import { ukToday } from "@/lib/learn/ukTime";
 import { saveCsv } from "@/lib/learn/csv";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
+import { Stepper } from "@/components/learn/templates/parts";
 
 import { askConfirm, askNotice } from "@/components/learn/kit";
 const FORM_URL = `${MAIN_SITE_ORIGIN}/admissions/apply`;
@@ -492,6 +493,16 @@ export function ApplicationsTab() {
       {load === "ready" && rows.length > 0 && (
         <>
           {filtered.length === 0 && <p className="text-sm text-ink/65">No applications match your search.</p>}
+          {/* The pipeline's stages in order with how many are at each (owner, 11 Nov 2026: workflows show their stages). */}
+          <div className="border-y border-gold-light py-2">
+            <Stepper
+              label="Admissions stages"
+              steps={PIPELINE_STATUSES.map((s) => {
+                const n = byStatus(s).length;
+                return { key: s, label: STATUS_LABELS[s], meta: `${n} ${n === 1 ? "application" : "applications"}`, state: n > 0 ? ("current" as const) : ("todo" as const) };
+              })}
+            />
+          </div>
           <div data-guide="admissions-list" className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
             {PIPELINE_STATUSES.map((s) => (
               <Column key={s} status={s} apps={byStatus(s)} dragOver={dragOver} setDragOver={setDragOver} onDropOn={handleDrop} cardProps={cardProps} familySizes={familySizes} />

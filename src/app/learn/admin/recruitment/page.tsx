@@ -1,9 +1,9 @@
 "use client";
 
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
-import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { useLearnSession } from "@/lib/learn/session";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 import { btn } from "@/components/learn/ui";
@@ -29,21 +29,25 @@ function RecruitmentContent() {
           </a>
         }
       />
-      <Tabs
-        items={[
+      <SectionLayout
+        nav={
+          <SectionNav
+            items={[
           { key: "applications", label: "Applications" },
           { key: "vacancies", label: "Vacancies" },
           { key: "settings", label: "Email settings" },
         ]}
-        value={tab}
-        onChange={setTab}
-        label="Recruitment sections"
-        guide="recruitment-tabs"
-        idBase="recruitment"
-      />
-      <div {...tabPanelProps("recruitment", tab)}>
+            value={tab}
+            onChange={setTab}
+            label="Recruitment sections"
+            guide="recruitment-tabs"
+          />
+        }
+      >
+        <div>
         {tab === "applications" ? <ApplicationsPanel userId={userId} /> : tab === "vacancies" ? <VacanciesPanel userId={userId} /> : <RecruitmentSettingsPanel />}
       </div>
+      </SectionLayout>
     </div>
   );
 }
