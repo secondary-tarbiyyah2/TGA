@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
-import { WorkspaceHeader } from "@/components/learn/kit";
+import { ActionsMenu } from "@/components/learn/kit";
+import { PageHeader } from "@/components/learn/PageHeader";
 import { Button } from "@/components/learn/ui";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
 import { AddClassPanel } from "@/components/learn/academic/ClassesSection";
@@ -15,25 +16,26 @@ function ClassesList({ onAdd }: { onAdd: () => void }) {
   const classes = useViewerClasses(VIEWER);
   return (
     <>
-      <div className="mb-6">
-        <WorkspaceHeader
-          eyebrow={[{ label: "Today", href: "/admin/dashboard" }, { label: "Teaching" }]}
-          title="Classes"
-          description="Every class in the school. Open one to see its week-by-week course page."
-          stats={classes ? [{ value: classes.length, label: classes.length === 1 ? "class" : "classes" }, { value: new Set(classes.map((c) => c.yearGroup).filter(Boolean)).size, label: "year groups" }] : undefined}
-          primary={
-            <Button variant="primary" icon="plus" onClick={onAdd} data-guide="classes-add">
-              Add a class
-            </Button>
-          }
-          menu={[
-            { label: "Classes and teachers (enrol pupils, choose teachers)", icon: "users", href: "/admin/academic/classes" },
-            { label: "Timetable", icon: "calendarDays", href: "/admin/lessons" },
-            { label: "Classwork to action", icon: "notebookPen", href: "/admin/homework" },
-          ]}
-        />
-      </div>
-      <ClassGrid viewer={VIEWER} classes={classes} hrefFor={(c) => `/admin/class?id=${c.id}`} emptyLabel="No classes yet. Use Add a class to create one." />
+      <PageHeader
+        title="Classes"
+        subtitle="Every class in the school. Open one to see its week-by-week course page."
+        figures={classes ? [{ value: classes.length, label: classes.length === 1 ? "class" : "classes" }, { value: new Set(classes.map((c) => c.yearGroup).filter(Boolean)).size, label: "year groups" }] : undefined}
+        actions={
+          <ActionsMenu
+            items={[
+              { label: "Classes and teachers (enrol pupils, choose teachers)", icon: "users", href: "/admin/academic/classes" },
+              { label: "Timetable", icon: "calendarDays", href: "/admin/lessons" },
+              { label: "Classwork to action", icon: "notebookPen", href: "/admin/homework" },
+            ]}
+          />
+        }
+        action={
+          <Button variant="primary" icon="plus" onClick={onAdd} data-guide="classes-add">
+            Add a class
+          </Button>
+        }
+      />
+      <ClassGrid viewer={VIEWER} classes={classes} defaultView="list" hrefFor={(c) => `/admin/class?id=${c.id}`} emptyLabel="No classes yet. Use Add a class to create one." />
     </>
   );
 }

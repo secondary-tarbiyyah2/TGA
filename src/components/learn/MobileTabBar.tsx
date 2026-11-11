@@ -36,7 +36,7 @@ export function MobileTabBar({ area, roles }: { area: PortalArea; roles: string[
                   <Icon name={i.icon} />
                   {!!count && <span aria-hidden="true" className="absolute right-2.5 top-0.5 h-2 w-2 rounded-full bg-red-700 ring-2 ring-[var(--portal-canvas)]" />}
                 </span>
-                <span className="max-w-full truncate">{i.label}</span>
+                <span className="max-w-full text-center leading-tight">{i.label}</span>
               </Link>
             </li>
           );

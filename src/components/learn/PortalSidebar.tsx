@@ -89,7 +89,7 @@ function NavLink({ item, active, here, onNavigate, count, pin }: { item: Sidebar
       <span className="portal-nav-icon" aria-hidden="true">
         <Icon name={item.icon} />
       </span>
-      <span className="min-w-0 flex-1 truncate">{item.label}</span>
+      <span className="min-w-0 flex-1 break-words leading-snug">{item.label}</span>
       <NavCount count={count} alert={isAlertBadge(item)} />
     </Link>
   );
@@ -135,7 +135,7 @@ function SubLeaves({ subs, pathname, onNavigate }: { subs: PortalNavItem[]; path
         return (
           <li key={sp.href}>
             <Link href={sp.href} onClick={onNavigate} aria-current={on ? "page" : undefined} title={sp.hint} className={`portal-nav-sub ${on ? "portal-nav-sub--active" : ""}`}>
-              <span className="min-w-0 flex-1 truncate">{sp.label}</span>
+              <span className="min-w-0 flex-1 break-words leading-snug">{sp.label}</span>
             </Link>
           </li>
         );
@@ -153,7 +153,7 @@ function NavLeaf({ item, active, onNavigate, count, pinned, pathname }: { item: 
     <>
       <div className="portal-nav-item relative">
         <Link href={item.href} onClick={onNavigate} aria-current={active && !onSub ? "page" : undefined} title={item.hint} className={`portal-nav-leaf ${pinned === undefined ? "" : "!pr-9"} ${active ? (onSub ? "portal-nav-leaf--here" : "portal-nav-leaf--active") : ""}`}>
-          <span className="min-w-0 flex-1 truncate">{item.label}</span>
+          <span className="min-w-0 flex-1 break-words leading-snug">{item.label}</span>
           <NavCount count={count} alert={isAlertBadge(item)} />
         </Link>
         {pinned !== undefined && <PinButton item={item} pinned={pinned} />}
@@ -467,7 +467,7 @@ function SidebarBody({
                 <span className="portal-nav-icon" aria-hidden="true">
                   <Icon name="layoutGrid" />
                 </span>
-                <span className="min-w-0 flex-1 truncate">All admin pages</span>
+                <span className="min-w-0 flex-1 break-words leading-snug">All admin pages</span>
               </Link>
             ))}
           {collapsed ? (
@@ -479,7 +479,7 @@ function SidebarBody({
               <span className="portal-nav-icon" aria-hidden="true">
                 <Icon name="compass" />
               </span>
-              <span className="min-w-0 flex-1 truncate">Take the tour</span>
+              <span className="min-w-0 flex-1 break-words leading-snug">Take the tour</span>
             </button>
           )}
           {collapsed ? (
@@ -491,7 +491,7 @@ function SidebarBody({
               <span className="portal-nav-icon" aria-hidden="true">
                 <Icon name="bookOpenCheck" />
               </span>
-              <span className="min-w-0 flex-1 truncate">Portal guide</span>
+              <span className="min-w-0 flex-1 break-words leading-snug">Portal guide</span>
             </Link>
           )}
           <InstallAppLink onNavigate={onNavigate} compact={collapsed} />
