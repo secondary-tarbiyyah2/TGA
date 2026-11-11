@@ -1,0 +1,143 @@
+{
+ "id": "mathematics-y5-printed-translation-sheet",
+ "title": "Printed translation sheet",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y5",
+ "unit": "Summer 1: Shape; position and direction; decimals",
+ "lessons": [
+  74
+ ],
+ "source": "Seeded from mathematics/y5 lesson 74 (Printed translation sheet)",
+ "intro": "Lesson 74: Translation. To understand how to translate a shape on a grid and describe the translation",
+ "blocks": [
+  {
+   "h": "Translate the shape"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": 0,
+    "xMax": 10,
+    "yMin": 0,
+    "yMax": 10,
+    "height": 110,
+    "points": [
+     [
+      2,
+      2,
+      "A"
+     ],
+     [
+      4,
+      2,
+      "B"
+     ],
+     [
+      4,
+      4,
+      "C"
+     ],
+     [
+      2,
+      4,
+      "D"
+     ]
+    ]
+   }
+  },
+  {
+   "text": "Square ABCD has corners A (2, 2), B (4, 2), C (4, 4) and D (2, 4). Translate it 4 right and 3 up. Write the new coordinates."
+  },
+  {
+   "answers": "A' (6, 5), B' (8, 5), C' (8, 7), D' (6, 7)"
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Triangle 4 right and 1 up",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Move each vertex 4 right"
+     },
+     {
+      "label": "Step 2",
+      "text": "Then 1 up"
+     },
+     {
+      "label": "Step 3",
+      "text": "Join the new vertices"
+     },
+     {
+      "label": "Answer",
+      "text": "A congruent triangle"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Translate the square 5 right.",
+     "a": "Each corner 5 squares right",
+     "model": "Teacher moves each corner 5 right, then joins."
+    },
+    {
+     "q": "Translate the triangle 2 left, 3 up.",
+     "a": "Each vertex 2 left, 3 up"
+    },
+    {
+     "q": "Describe: A to B on the sheet.",
+     "a": "6 right, 2 down"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Translate the shapes on the sheet as shown.",
+     "a": "Checked on the answer grid",
+     "model": "Teacher does the first slide: 3 right."
+    },
+    {
+     "q": "Describe each translation from shape P to Q, R and S.",
+     "a": "Q: 4 right 1 up; R: 5 down; S: 2 left 3 down"
+    },
+    {
+     "q": "Translate P 3 right and then 3 left. Where is it?",
+     "a": "Back where it started"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A translation can change... A) position B) size C) shape",
+     "a": "A) position",
+     "options": [
+      "position",
+      "size",
+      "shape"
+     ]
+    },
+    {
+     "q": "Big question: what changes and what stays the same?",
+     "a": "The position changes; size, shape and the way it faces stay the same"
+    }
+   ]
+  }
+ ]
+}

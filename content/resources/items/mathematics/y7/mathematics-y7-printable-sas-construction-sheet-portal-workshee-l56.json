@@ -1,0 +1,106 @@
+{
+ "id": "mathematics-y7-printable-sas-construction-sheet-portal-workshee-l56",
+ "title": "Printable SAS construction sheet (lesson 56)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+ "lessons": [
+  56
+ ],
+ "source": "Seeded from mathematics/y7 lesson 56 (Printable SAS construction sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 56: Constructing triangles: two sides and the included angle (SAS). To understand how to construct a triangle accurately from two sides and the angle between them",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Construct triangle ABC with AB = 7 cm, angle A = 40° and AC = 5 cm.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Draw AB = 7 cm with a ruler"
+     },
+     {
+      "label": "Step 2",
+      "text": "At A, measure 40° and draw a long faint line"
+     },
+     {
+      "label": "Step 3",
+      "text": "Measure 5 cm along it from A and mark C"
+     },
+     {
+      "label": "Step 4",
+      "text": "Join C to B"
+     },
+     {
+      "label": "Answer",
+      "text": "Check: BC measures about 4.5 cm"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Construct triangle XYZ with XY = 6 cm, angle X = 70° and XZ = 6 cm. Measure YZ and angles Y and Z.",
+     "a": "YZ ≈ 6.9 cm; angles Y and Z are both 55°",
+     "model": "Draw XY = 6 cm, measure 70° at X, mark 6 cm along the arm, join to Y. XY = XZ, so the triangle is isosceles: (180 - 70) ÷ 2 = 55° each."
+    },
+    {
+     "q": "Construct triangle DEF with DE = 5 cm, angle E = 90° and EF = 12 cm. Measure DF.",
+     "a": "13 cm"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Construct each triangle and measure the third side: (a) AB = 8 cm, angle A = 60°, AC = 8 cm (b) PQ = 9 cm, angle P = 35°, PR = 6 cm (c) KL = 7.5 cm, angle K = 110°, KM = 4 cm",
+     "a": "(a) 8 cm (b) QR ≈ 5.3 cm (c) LM ≈ 9.6 cm (accept ± 2 mm)",
+     "model": "(a) Two 8 cm sides with 60° between them: the other angles are (180 - 60) ÷ 2 = 60° too. The triangle is equilateral, so the third side is also 8 cm."
+    },
+    {
+     "q": "Construct a rhombus with sides of 5 cm and one angle of 50°. Measure the shorter diagonal.",
+     "a": "≈ 4.2 cm"
+    },
+    {
+     "q": "AB = 7 cm, angle A = 40° and BC = 5 cm. Construct both possible triangles. Why are there two?",
+     "a": "An arc of 5 cm from B cuts the 40° line at A in two places, so C has two positions: the angle is not between the given sides."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which set of facts fixes exactly one triangle?",
+     "a": "B) two sides and the angle between them",
+     "options": [
+      "two sides only",
+      "two sides and the angle between them",
+      "three angles"
+     ]
+    },
+    {
+     "q": "How accurate must a constructed length be?",
+     "a": "within 1 mm"
+    },
+    {
+     "q": "Big question: if I give you two sides and one angle, is there only one triangle?",
+     "a": "Yes, if the angle is between the two sides (SAS); otherwise there may be two."
+    }
+   ]
+  }
+ ]
+}

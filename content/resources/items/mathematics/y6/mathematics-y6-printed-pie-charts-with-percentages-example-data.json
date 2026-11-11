@@ -1,0 +1,130 @@
+{
+ "id": "mathematics-y6-printed-pie-charts-with-percentages-example-data",
+ "title": "Printed pie charts with percentages (example data)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y6",
+ "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+ "lessons": [
+  72
+ ],
+ "source": "Seeded from mathematics/y6 lesson 72 (Printed pie charts with percentages (example data))",
+ "intro": "Lesson 72: Pie charts with percentages. To understand how to read pie charts labelled with percentages",
+ "blocks": [
+  {
+   "h": "Trees in a park, 200 trees (example data)"
+  },
+  {
+   "grid": {
+    "kind": "pie",
+    "cols": 1,
+    "charts": [
+     {
+      "title": "Trees in a park",
+      "data": [
+       [
+        "Oak 25%",
+        25
+       ],
+       [
+        "Beech 40%",
+        40
+       ],
+       [
+        "Ash 20%",
+        20
+       ],
+       [
+        "Other 15%",
+        15
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "40% of 200 trees",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "10% = 20"
+     },
+     {
+      "label": "Step 2",
+      "text": "40% = 80"
+     },
+     {
+      "label": "Answer",
+      "text": "80 beech trees"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "How many oak trees?",
+     "a": "50",
+     "model": "Teacher: 25% is a quarter: 200 ÷ 4 = 50."
+    },
+    {
+     "q": "How many 'other'?",
+     "a": "30"
+    },
+    {
+     "q": "Check the total.",
+     "a": "50 + 80 + 40 + 30 = 200"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A survey of 80 pupils: 45% walk, 30% car, 25% bus. How many each?",
+     "a": "36; 24; 20",
+     "model": "Teacher: 10% of 80 = 8, 45% = 36."
+    },
+    {
+     "q": "The angle of a 30% sector?",
+     "a": "108°"
+    },
+    {
+     "q": "Yusuf says: 'Class A's 50% is always more people than class B's 25%.' True? Explain.",
+     "a": "Not always: it depends on the totals (50% of 20 = 10, 25% of 80 = 20)"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "50% of a pie chart is... A) 180° B) 50° C) 90°",
+     "a": "A) 180°",
+     "options": [
+      "180°",
+      "50°",
+      "90°"
+     ]
+    },
+    {
+     "q": "Big question: how do percentages fit?",
+     "a": "The whole circle is 100%; find each percentage of the total"
+    }
+   ]
+  }
+ ]
+}

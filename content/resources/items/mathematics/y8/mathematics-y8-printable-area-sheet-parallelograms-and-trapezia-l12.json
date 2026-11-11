@@ -1,0 +1,141 @@
+{
+ "id": "mathematics-y8-printable-area-sheet-parallelograms-and-trapezia-l12",
+ "title": "Printable area sheet: parallelograms and trapezia (lesson 12)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y8",
+ "unit": "Summer 1: Angles, area and symmetry",
+ "lessons": [
+  12
+ ],
+ "source": "Seeded from mathematics/y8 lesson 12 (Printable area sheet: parallelograms and trapezia (portal worksheet for this lesson))",
+ "intro": "Lesson 12: Area of parallelograms and trapezia. To understand why the parallelogram and trapezium area formulae work and use them to find areas",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "A parallelogram has base 11 cm, perpendicular height 6 cm and slant side 7 cm. Find its area.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Ignore the slant side"
+     },
+     {
+      "label": "Step 2",
+      "text": "A = 11 × 6"
+     },
+     {
+      "label": "Answer",
+      "text": "66 cm²"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "A trapezium has parallel sides 6 cm and 10 cm and height 4 cm. Find its area.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Add the parallel sides: 6 + 10 = 16"
+     },
+     {
+      "label": "Step 2",
+      "text": "Halve: 8"
+     },
+     {
+      "label": "Step 3",
+      "text": "Multiply by the height: 8 × 4"
+     },
+     {
+      "label": "Answer",
+      "text": "32 cm²"
+     }
+    ]
+   }
+  },
+  {
+   "h": "My results"
+  },
+  {
+   "table": {
+    "head": [
+     "Test",
+     "What I changed",
+     "What I measured",
+     "Result",
+     "Notes"
+    ],
+    "rows": [],
+    "blankRows": 8
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find the area of a parallelogram with base 12 cm and perpendicular height 4.5 cm.",
+     "a": "54 cm²",
+     "model": "A = b × h = 12 × 4.5 = 54 cm²."
+    },
+    {
+     "q": "A trapezium has parallel sides 3 m and 7 m and height 4 m. Find its area.",
+     "a": "20 m²"
+    },
+    {
+     "q": "A parallelogram has area 72 cm² and base 9 cm. Find its height.",
+     "a": "8 cm"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) parallelogram, base 15 cm, height 8 cm (b) trapezium, parallel sides 8 cm and 14 cm, height 5 cm (c) trapezium, 2.5 m and 4.5 m, height 3 m (d) a trapezium has area 60 cm², height 6 cm and one parallel side 8 cm: find the other parallel side",
+     "a": "(a) 120 cm² (b) 55 cm² (c) 10.5 m² (d) 12 cm",
+     "model": "(b) ½ × (8 + 14) × 5 = ½ × 22 × 5 = 11 × 5 = 55 cm². (d) 60 = ½ × (8 + b) × 6 = 3(8 + b), so 8 + b = 20 and b = 12 cm."
+    },
+    {
+     "q": "A field is a trapezium with parallel sides 120 m and 80 m, 50 m apart. Find its area in hectares (1 hectare = 10 000 m²).",
+     "a": "½ × 200 × 50 = 5000 m² = 0.5 hectares"
+    },
+    {
+     "q": "Show that the trapezium formula gives the parallelogram formula when a = b.",
+     "a": "½(a + a)h = ½ × 2a × h = ah"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A parallelogram has base 7 cm and height 4 cm. Its area is:",
+     "a": "A) 28 cm²",
+     "options": [
+      "28 cm²",
+      "14 cm²",
+      "11 cm²"
+     ]
+    },
+    {
+     "q": "In ½(a + b)h, what are a and b?",
+     "a": "the two parallel sides"
+    },
+    {
+     "q": "Big question: how does cutting and rearranging help find an area?",
+     "a": "It turns a new shape into one we know (a rectangle or parallelogram) without changing the area."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "id": "mathematics-y9-printable-coordinate-grid-sheet-portal-worksheet-l53",
+ "title": "Printable coordinate grid sheet (lesson 53)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+ "lessons": [
+  53
+ ],
+ "source": "Seeded from mathematics/y9 lesson 53 (Printable coordinate grid sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 53: Enlargement with fractional scale factors. To understand how fractional scale factors make shapes smaller and how to enlarge from a centre with a fractional scale factor",
+ "blocks": [
+  {
+   "h": "Coordinate grid"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": -8,
+    "xMax": 8,
+    "yMin": -8,
+    "yMax": 8,
+    "height": 125
+   }
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Enlarge the triangle (2, 2), (6, 2), (2, 8) by scale factor ½, centre (0, 0).",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Each vertex moves to half its distance from the origin"
+     },
+     {
+      "label": "Step 2",
+      "text": "Halve each coordinate"
+     },
+     {
+      "label": "Answer",
+      "text": "(1, 1), (3, 1), (1, 4)"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Enlarge P(7, 5) by scale factor ⅓, centre (1, 2).",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Centre to P: 6 right, 3 up"
+     },
+     {
+      "label": "Step 2",
+      "text": "× ⅓: 2 right, 1 up"
+     },
+     {
+      "label": "Step 3",
+      "text": "From the centre: (1 + 2, 2 + 1)"
+     },
+     {
+      "label": "Answer",
+      "text": "(3, 3)"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "An object side is 12 cm and its image side is 4 cm. Find the scale factor.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Scale factor = image ÷ object"
+     },
+     {
+      "label": "Step 2",
+      "text": "4 ÷ 12 = ⅓"
+     },
+     {
+      "label": "Answer",
+      "text": "⅓"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Enlarge (8, 4) by scale factor ¼, centre (0, 0).",
+     "a": "(2, 1)",
+     "model": "Multiply each coordinate by ¼. 8 × ¼ = 2 and 4 × ¼ = 1: (2, 1)."
+    },
+    {
+     "q": "A 9 cm by 5 cm rectangle is enlarged by scale factor ½.",
+     "a": "4.5 cm by 2.5 cm"
+    },
+    {
+     "q": "Object 15 cm, image 6 cm: the scale factor?",
+     "a": "6 ÷ 15 = ⅖ (0.4)"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) Enlarge the square (4, 4), (8, 4), (8, 8), (4, 8) by scale factor ½, centre (0, 0). (b) Enlarge the triangle (3, 3), (9, 3), (3, 9) by scale factor ⅓, centre (0, 0). (c) Enlarge (5, 7) by scale factor ½, centre (1, 1). (d) Find the scale factor when 20 cm becomes 5 cm.",
+     "a": "(a) (2, 2), (4, 2), (4, 4), (2, 4) (b) (1, 1), (3, 1), (1, 3) (c) (3, 4) (d) ¼",
+     "model": "(a) The centre is the origin, so halve every coordinate: (4, 4) → (2, 2), (8, 4) → (4, 2), and so on. (c) From (1, 1) to (5, 7) is 4 right and 6 up; half is 2 right and 3 up: (3, 4)."
+    },
+    {
+     "q": "A model of a 45 m minaret is made with scale factor 1/150. How tall is the model in cm?",
+     "a": "45 ÷ 150 = 0.3 m = 30 cm"
+    },
+    {
+     "q": "An enlargement with scale factor ⅓ maps (6, 9) to (4, 5). Find the centre.",
+     "a": "(3, 3): from (3, 3) to (6, 9) is (3, 6); × ⅓ gives (1, 2), landing on (4, 5)"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Scale factor ½ makes a shape:",
+     "a": "B) smaller",
+     "options": [
+      "bigger",
+      "smaller",
+      "the same size"
+     ]
+    },
+    {
+     "q": "The scale factor when 10 cm becomes 4 cm",
+     "a": "⅖"
+    },
+    {
+     "q": "Big question: can an enlargement make a shape smaller?",
+     "a": "Yes: a scale factor between 0 and 1 multiplies every length by a fraction, so the image is smaller."
+    }
+   ]
+  }
+ ]
+}

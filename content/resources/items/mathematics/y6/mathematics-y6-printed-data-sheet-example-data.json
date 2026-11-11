@@ -1,0 +1,190 @@
+{
+ "id": "mathematics-y6-printed-data-sheet-example-data",
+ "title": "Printed data sheet (example data)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y6",
+ "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+ "lessons": [
+  73
+ ],
+ "source": "Seeded from mathematics/y6 lesson 73 (Printed data sheet (example data))",
+ "intro": "Lesson 73: The mean. To understand how to calculate and use the mean as an average",
+ "blocks": [
+  {
+   "h": "Dates each friend has (example data)"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E"
+    ],
+    "yMax": 12,
+    "yStep": 2,
+    "yLabel": "Dates",
+    "values": [
+     4,
+     6,
+     8,
+     10,
+     12
+    ]
+   }
+  },
+  {
+   "table": {
+    "head": [
+     "Day",
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri",
+     "Sat",
+     "Sun"
+    ],
+    "rows": [
+     [
+      "Qur'an reading, week 1 (minutes)",
+      "10",
+      "15",
+      "20",
+      "15",
+      "10",
+      "20",
+      "15"
+     ]
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Find the mean number of dates.",
+     "a": "Total 40 ÷ 5 = 8",
+     "marks": 2
+    },
+    {
+     "q": "Find the mean minutes of reading in week 1.",
+     "a": "Total 105 ÷ 7 = 15 minutes",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Mean of 3, 7, 5, 9",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Total: 3 + 7 + 5 + 9 = 24"
+     },
+     {
+      "label": "Step 2",
+      "text": "How many: 4"
+     },
+     {
+      "label": "Step 3",
+      "text": "24 ÷ 4 = 6"
+     },
+     {
+      "label": "Answer",
+      "text": "6"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Mean of 5 numbers is 7. Four are 6, 8, 5, 9.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Total = 5 × 7 = 35"
+     },
+     {
+      "label": "Step 2",
+      "text": "6 + 8 + 5 + 9 = 28"
+     },
+     {
+      "label": "Step 3",
+      "text": "35 - 28 = 7"
+     },
+     {
+      "label": "Answer",
+      "text": "7"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Mean of 2, 4, 9?",
+     "a": "5",
+     "model": "Teacher: total 15, 3 values: 15 ÷ 3 = 5."
+    },
+    {
+     "q": "Mean of 12, 15, 18, 15?",
+     "a": "15"
+    },
+    {
+     "q": "Mean of 4 numbers is 10. Total?",
+     "a": "40"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Means: 7, 8, 9, 10, 11; 25, 30, 35; 1.5, 2.5, 3, 5",
+     "a": "9; 30; 3",
+     "model": "Teacher: total 45, ÷ 5 = 9."
+    },
+    {
+     "q": "Mean daily Qur'an reading: Week 1 (minutes) 10, 15, 20, 15, 10, 20, 15; Week 2 mean 14. Which week was higher?",
+     "a": "Week 1: total 105, mean 15 > 14"
+    },
+    {
+     "q": "Mean of 6 numbers is 12. Five are 10, 14, 11, 13, 12. Find the sixth.",
+     "a": "12"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Mean of 4, 5, 6? A) 5 B) 15 C) 6",
+     "a": "A) 5",
+     "options": [
+      "5",
+      "15",
+      "6"
+     ]
+    },
+    {
+     "q": "Big question: how can one number represent a set?",
+     "a": "The mean shares the total equally between all the values"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,158 @@
+{
+ "id": "mathematics-y8-printable-parallel-lines-worksheet-2-portal-work-l55",
+ "title": "Printable parallel-lines worksheet 2 (lesson 55)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y8",
+ "unit": "Summer 1: Angles, area and symmetry",
+ "lessons": [
+  55
+ ],
+ "source": "Seeded from mathematics/y8 lesson 55 (Printable parallel-lines worksheet 2 (portal worksheet for this lesson))",
+ "intro": "Lesson 55: Co-interior angles and multi-step angle problems. To understand how co-interior angles and chains of angle facts solve multi-step parallel-line problems",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Between parallel lines, on the same side of the transversal, the angles are 70° and y. Find y.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "C shape: co-interior angles"
+     },
+     {
+      "label": "Step 2",
+      "text": "Co-interior angles add up to 180°"
+     },
+     {
+      "label": "Step 3",
+      "text": "y = 180 - 70"
+     },
+     {
+      "label": "Answer",
+      "text": "y = 110°"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "A triangle has its top vertex on the upper of two parallel lines and its base on the lower line. At the top vertex its sides make angles of 50° (left) and 60° (right) with the upper line. Find the triangle's angles.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Left base angle = 50° (alternate angles are equal)"
+     },
+     {
+      "label": "Step 2",
+      "text": "Right base angle = 60° (alternate angles are equal)"
+     },
+     {
+      "label": "Step 3",
+      "text": "Top angle = 180 - 50 - 60 = 70° (angles on a straight line)"
+     },
+     {
+      "label": "Answer",
+      "text": "50°, 60° and 70°"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Three facts"
+  },
+  {
+   "table": {
+    "head": [
+     "Shape",
+     "Name",
+     "Rule"
+    ],
+    "rows": [
+     [
+      "F",
+      "corresponding",
+      "equal"
+     ],
+     [
+      "Z",
+      "alternate",
+      "equal"
+     ],
+     [
+      "C",
+      "co-interior",
+      "add up to 180°"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Co-interior angles are 115° and y. Find y.",
+     "a": "y = 65°",
+     "model": "Co-interior angles add up to 180°. y = 180 - 115 = 65°."
+    },
+    {
+     "q": "Alternate angles are (4x - 15)° and (2x + 25)°. Find x.",
+     "a": "2x = 40, so x = 20 (both angles 65°)"
+    },
+    {
+     "q": "Name the angles between the parallel lines on the same side of the transversal.",
+     "a": "co-interior angles"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) an angle co-interior with 98° (b) a is alternate to 47° and b lies on a straight line with a (c) co-interior angles are 3p° and 2p°: find p (d) a triangle has its top vertex on the upper parallel line, where its sides make angles of 38° and 71° with that line: find the triangle's three angles",
+     "a": "(a) 82° (b) a = 47°, b = 133° (c) p = 36 (d) 38°, 71° and 71°",
+     "model": "(c) Co-interior angles add up to 180°: 3p + 2p = 180, 5p = 180, p = 36. (d) Base angles 38° and 71° (alternate angles); top angle 180 - 38 - 71 = 71°."
+    },
+    {
+     "q": "Prove that opposite angles of a parallelogram ABCD are equal.",
+     "a": "A + B = 180 (co-interior, AD ∥ BC) and B + C = 180 (co-interior, AB ∥ DC), so A = C."
+    },
+    {
+     "q": "A bent line runs between two parallel lines. It makes 40° with the top line and 30° with the bottom line (both measured on the left). Find the angle at the bend.",
+     "a": "70°: draw a third parallel line through the bend; alternate angles give 40° + 30°."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Co-interior angles add up to:",
+     "a": "B) 180°",
+     "options": [
+      "90°",
+      "180°",
+      "360°"
+     ]
+    },
+    {
+     "q": "The angle co-interior with 127°",
+     "a": "53°"
+    },
+    {
+     "q": "Big question: how can you find an angle that seems unlinked?",
+     "a": "Chain facts: find an unlabelled angle with one fact, then use it with the next, naming each fact."
+    }
+   ]
+  }
+ ]
+}

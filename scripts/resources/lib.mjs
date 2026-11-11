@@ -123,7 +123,9 @@ export function classify(text) {
   // Portal features that already exist (revision log, secure test mode, response box, portal lessons).
   if (/^portal (revision log|secure test|response box|lesson|year \d+ lesson|half-term quiz \(secure|unit quiz \(secure)|revision log|secure test mode|^portal lessons?\b|^independent study: portal/i.test(t)) return { type: "external tool", source: "external" };
   // Pupils' own kit (even when it mentions a frame, chart or paper): egg-box ten frames, maths kits, counters.
-  if (/\(household\)|^glue|scissors|a sheet of card|^maths kit|egg[- ]box|^counters|^place value counters|^lego|^dice|^real coins|^paper strip|^strip of paper|^paper plates|^a4 paper|^paper fraction strips \(cut|^paper to fold|^mini-?whiteboard|^exercise book|^calculator|^scientific calculator/i.test(t)) return { type: "equipment", source: "household" };
+  if (/\(household\)|^glue|scissors|a sheet of card|^maths kit|egg[- ]box|^counters|^place value counters|^lego|^dice|^real coins|^paper strip|^strip of paper|^paper plates|^a4 paper|^paper fraction strips \(cut|^paper to fold|^mini-?whiteboard|^exercise book|^calculator|^scientific calculator|^set square/i.test(t)) return { type: "equipment", source: "household" };
+  // White Rose checks and papers printed from the school's White Rose account.
+  if (/\(school white rose account\)/i.test(t)) return { type: "school file", source: "school" };
   // Named in the school's own schemes of work (English KS3/KS4 SOW: booklets, organisers, weekly quizzes).
   if (/grammar booklet|vocabulary booklet|knowledge organiser( and quotation banks?)? \(year \d|knowledge organisers and quotation banks \(year|weekly retrieval quiz|weekly progress check|baseline retrieval quiz|\(senco\)/i.test(t)) return { type: "school file", source: "school" };
   if (has.builderGeneric(t) && !/:\s*\S/.test(t.replace(/^printable worksheet \(or drawing tablet\):/i, ""))) return { type: /slides|teams whiteboard|on screen/i.test(t) ? "slides" : "worksheet", source: "builder" };

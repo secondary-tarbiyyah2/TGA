@@ -1,0 +1,59 @@
+{
+ "id": "mathematics-y11-final-clinic-question-set-portal-worksheet-writt-l98",
+ "title": "Final clinic question set (lesson 98)",
+ "type": "revision set",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4MA1 Higher",
+ "unit": "Summer 1: Final papers",
+ "lessons": [
+  98
+ ],
+ "source": "Seeded from mathematics/y11 lesson 98 (Final clinic question set (portal worksheet written for this lesson; original questions with mark-scheme answers))",
+ "intro": "Lesson 98: Final topic clinic: calculus, vectors and sets. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "25 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "(a) find the turning points of y = x³ - 3x² - 9x + 5 [5] (b) OABC is a parallelogram with OA = a and OC = c; M is the midpoint of AB: find OM [2] (c) ξ = {integers 1 to 12}, A = {multiples of 3}, B = {even numbers}: list A ∩ B and find n((A ∪ B)′) [3] (d) s = 2t³ - 5t² + 4t: find the velocity when t = 2 [2]",
+     "a": "(a) (-1, 10) maximum and (3, -22) minimum (b) OM = a + ½c (c) A ∩ B = {6, 12}; n((A ∪ B)′) = 4 (d) 8",
+     "model": "(a) dy/dx = 3x² - 6x - 9 (M1); = 0 gives x² - 2x - 3 = 0 (M1); x = 3 or x = -1 (A1); y = -22 and y = 10 (A1 A1). (d) v = ds/dt = 6t² - 10t + 4 = 24 - 20 + 4 = 8.",
+     "marks": 12
+    },
+    {
+     "q": "For the curve in (a), find the gradient at x = 1 and the equation of the tangent there.",
+     "a": "Gradient -12; y(1) = -6; tangent y = -12x + 6",
+     "marks": 3
+    },
+    {
+     "q": "OA = a and OB = b. P divides AB in the ratio 1 : 3. Find OP.",
+     "a": "OP = a + ¼(b - a) = ¾a + ¼b",
+     "marks": 3
+    },
+    {
+     "q": "Use calculus to find the turning point of y = x² - 6x + 2.",
+     "a": "(3, -7)",
+     "model": "dy/dx = 2x - 6 = 0, so x = 3. y = 9 - 18 + 2 = -7.",
+     "marks": 1
+    },
+    {
+     "q": "OA = a and OB = b. Write AB.",
+     "a": "b - a",
+     "marks": 1
+    },
+    {
+     "q": "The derivative of x⁴ is:",
+     "a": "A) 4x³",
+     "options": [
+      "4x³",
+      "x³",
+      "4x⁴"
+     ],
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

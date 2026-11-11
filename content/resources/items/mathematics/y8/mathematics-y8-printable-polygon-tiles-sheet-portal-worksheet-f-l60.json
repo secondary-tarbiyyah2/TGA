@@ -1,0 +1,164 @@
+{
+ "id": "mathematics-y8-printable-polygon-tiles-sheet-portal-worksheet-f-l60",
+ "title": "Printable polygon tiles sheet (lesson 60)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y8",
+ "unit": "Summer 1: Angles, area and symmetry",
+ "lessons": [
+  60
+ ],
+ "source": "Seeded from mathematics/y8 lesson 60 (Printable polygon tiles sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 60: Polygon problems and tessellation. To understand how polygon angle facts solve problems, including which regular polygons tessellate",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Do regular pentagons tessellate?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Interior angle 108°"
+     },
+     {
+      "label": "Step 2",
+      "text": "360 ÷ 108 = 3.33..."
+     },
+     {
+      "label": "Step 3",
+      "text": "Not a whole number"
+     },
+     {
+      "label": "Answer",
+      "text": "No: gaps are left"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "A regular pentagon and a regular hexagon share a side. Find the angle between them at a shared vertex.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Angles at a point add up to 360°"
+     },
+     {
+      "label": "Step 2",
+      "text": "360 - 108 - 120"
+     },
+     {
+      "label": "Answer",
+      "text": "132°"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Which ones tessellate?"
+  },
+  {
+   "table": {
+    "head": [
+     "Regular polygon",
+     "Interior angle",
+     "Tessellates alone?"
+    ],
+    "rows": [
+     [
+      "triangle",
+      "60°",
+      "yes: 6 × 60°"
+     ],
+     [
+      "square",
+      "90°",
+      "yes: 4 × 90°"
+     ],
+     [
+      "pentagon",
+      "108°",
+      "no"
+     ],
+     [
+      "hexagon",
+      "120°",
+      "yes: 3 × 120°"
+     ],
+     [
+      "octagon",
+      "135°",
+      "no; with squares: 135 + 135 + 90"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Two regular octagons and one other regular polygon meet at a point with no gap. What is the other polygon?",
+     "a": "a square",
+     "model": "2 × 135 = 270. 360 - 270 = 90°, the interior angle of a square."
+    },
+    {
+     "q": "Two regular hexagons and one other regular polygon meet at a point. What is the third?",
+     "a": "another regular hexagon (360 - 240 = 120°)"
+    },
+    {
+     "q": "The interior angle of a regular 12-gon",
+     "a": "150°"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) Explain with angles why regular octagons do not tessellate alone. (b) Two regular 12-gons and one other regular polygon meet at a point: which one? (c) A regular hexagon and a square share a side: find the angle between them at a shared vertex. (d) A square, a regular hexagon and a regular 12-gon meet at a point: do they fit exactly?",
+     "a": "(a) 2 × 135 = 270 leaves a gap; 3 × 135 = 405 overlaps (b) an equilateral triangle (c) 150° (d) yes: 90 + 120 + 150 = 360°",
+     "model": "(a) 360 ÷ 135 = 2.67, not a whole number, so octagons alone leave gaps. (b) 2 × 150 = 300; 360 - 300 = 60°: an equilateral triangle."
+    },
+    {
+     "q": "In regular pentagon ABCDE, find angle BAC.",
+     "a": "Triangle ABC is isosceles with angle B = 108°, so BAC = (180 - 108) ÷ 2 = 36°"
+    },
+    {
+     "q": "Explain why only three regular polygons tessellate on their own.",
+     "a": "The interior angle must divide 360°. It is at least 60° and less than 180°, so only 60°, 90° and 120° work: triangle, square and hexagon."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Why do regular pentagons not tessellate?",
+     "a": "A) 108° does not divide 360°",
+     "options": [
+      "108° does not divide 360°",
+      "they have an odd number of sides",
+      "their sides are too short"
+     ]
+    },
+    {
+     "q": "Square + two octagons at a point add up to",
+     "a": "360°"
+    },
+    {
+     "q": "Big question: which regular polygons tile a floor alone, and why?",
+     "a": "Triangles, squares and hexagons: their interior angles (60°, 90°, 120°) divide 360° exactly."
+    }
+   ]
+  }
+ ]
+}

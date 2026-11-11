@@ -1,0 +1,177 @@
+{
+ "id": "mathematics-y6-printed-dual-bar-chart-example-data",
+ "title": "Printed dual bar chart (example data)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y6",
+ "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+ "lessons": [
+  70
+ ],
+ "source": "Seeded from mathematics/y6 lesson 70 (Printed dual bar chart (example data))",
+ "intro": "Lesson 70: Dual bar charts. To understand how to read and interpret dual bar charts",
+ "blocks": [
+  {
+   "h": "Books read (example data)"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "January",
+     "February",
+     "March",
+     "April"
+    ],
+    "yMax": 40,
+    "yStep": 5,
+    "yLabel": "Books",
+    "values": [
+     [
+      24,
+      28,
+      35,
+      30
+     ],
+     [
+      30,
+      26,
+      40,
+      38
+     ]
+    ],
+    "key": [
+     "Year 5",
+     "Year 6"
+    ]
+   }
+  },
+  {
+   "h": "Bar chart"
+  },
+  {
+   "text": "Label both axes, choose a scale, and draw the bars with a ruler, with gaps between them."
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "March",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Year 5: 35"
+     },
+     {
+      "label": "Step 2",
+      "text": "Year 6: 40"
+     },
+     {
+      "label": "Step 3",
+      "text": "40 - 35 = 5"
+     },
+     {
+      "label": "Answer",
+      "text": "Year 6 read 5 more"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Two bars"
+  },
+  {
+   "table": {
+    "head": [
+     "Month",
+     "Year 5",
+     "Year 6"
+    ],
+    "rows": [
+     [
+      "January",
+      "24",
+      "30"
+     ],
+     [
+      "February",
+      "28",
+      "26"
+     ],
+     [
+      "March",
+      "35",
+      "40"
+     ],
+     [
+      "April",
+      "30",
+      "38"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Year 6 in April?",
+     "a": "38",
+     "model": "Teacher: find April, the Year 6 bar, read across: 38."
+    },
+    {
+     "q": "Total for January?",
+     "a": "54"
+    },
+    {
+     "q": "Difference in April?",
+     "a": "8"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Total books for Year 5 over 4 months; for Year 6",
+     "a": "117; 134",
+     "model": "Teacher: 24 + 28 + 35 + 30 = 117."
+    },
+    {
+     "q": "Which month had the biggest difference between the years?",
+     "a": "April (8)"
+    },
+    {
+     "q": "Write 2 statements comparing the years, one using 'more' and one using 'total'.",
+     "a": "For example Year 6 read more in 3 of 4 months; Year 6 read 134 in total, 17 more than Year 5"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A dual bar chart needs a... A) key B) pie C) line",
+     "a": "A) key",
+     "options": [
+      "key",
+      "pie",
+      "line"
+     ]
+    },
+    {
+     "q": "Big question: how can one chart compare two groups?",
+     "a": "Two bars side by side for each category, with a key"
+    }
+   ]
+  }
+ ]
+}

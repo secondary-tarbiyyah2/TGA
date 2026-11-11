@@ -1,0 +1,99 @@
+{
+ "id": "mathematics-y5-printed-coordinate-grids-0-to-10",
+ "title": "Printed coordinate grids (0 to 10)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y5",
+ "unit": "Summer 1: Shape; position and direction; decimals",
+ "lessons": [
+  75
+ ],
+ "source": "Seeded from mathematics/y5 lesson 75 (Printed coordinate grids (0 to 10))",
+ "intro": "Lesson 75: Translation with coordinates. To understand how coordinates change when a point or shape is translated",
+ "blocks": [
+  {
+   "h": "Coordinate grids (0 to 10)"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": 0,
+    "xMax": 10,
+    "yMin": 0,
+    "yMax": 10,
+    "height": 105
+   }
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": 0,
+    "xMax": 10,
+    "yMin": 0,
+    "yMax": 10,
+    "height": 105
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(2, 4), 5 right.",
+     "a": "(7, 4)",
+     "model": "Teacher: x + 5 = 7; y stays 4."
+    },
+    {
+     "q": "(8, 6), 4 left, 2 down.",
+     "a": "(4, 4)"
+    },
+    {
+     "q": "A point moved from (1, 2) to (6, 7). Describe it.",
+     "a": "5 right, 5 up"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Translate triangle (2, 1), (4, 1), (2, 3) by 3 right, 4 up.",
+     "a": "(5, 5), (7, 5), (5, 7)",
+     "model": "Teacher does (2, 1): (5, 5)."
+    },
+    {
+     "q": "A square's corner moves from (3, 3) to (1, 6). Where does corner (5, 3) go?",
+     "a": "(3, 6)"
+    },
+    {
+     "q": "Can a translation take (2, 2) to (0, -1)? What would be odd about the answer?",
+     "a": "Yes, 2 left and 3 down; y = -1 is below the x-axis, outside the first quadrant"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "(4, 4), 1 left and 2 up? A) (3, 6) B) (5, 2) C) (3, 2)",
+     "a": "A) (3, 6)",
+     "options": [
+      "(3, 6)",
+      "(5, 2)",
+      "(3, 2)"
+     ]
+    },
+    {
+     "q": "Big question: how can we translate without drawing?",
+     "a": "Add or subtract the moves to the x and y coordinates"
+    }
+   ]
+  }
+ ]
+}

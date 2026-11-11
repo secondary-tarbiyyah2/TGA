@@ -1,0 +1,129 @@
+{
+ "id": "mathematics-y8-printable-area-sheet-triangles-portal-worksheet-l11",
+ "title": "Printable area sheet: triangles (lesson 11)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y8",
+ "unit": "Summer 1: Angles, area and symmetry",
+ "lessons": [
+  11
+ ],
+ "source": "Seeded from mathematics/y8 lesson 11 (Printable area sheet: triangles (portal worksheet for this lesson))",
+ "intro": "Lesson 11: Area of a triangle. To understand why the area of a triangle is half the base times the perpendicular height and use it in problems",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "A triangle has base 9 cm, perpendicular height 6 cm and slant side 7 cm. Find its area.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Ignore the slant side (7 cm)"
+     },
+     {
+      "label": "Step 2",
+      "text": "A = ½ × 9 × 6"
+     },
+     {
+      "label": "Step 3",
+      "text": "9 × 6 = 54; half of 54 = 27"
+     },
+     {
+      "label": "Answer",
+      "text": "27 cm²"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "A triangle has area 30 cm² and base 12 cm. Find its height.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "30 = ½ × 12 × h"
+     },
+     {
+      "label": "Step 2",
+      "text": "30 = 6h"
+     },
+     {
+      "label": "Step 3",
+      "text": "h = 5"
+     },
+     {
+      "label": "Answer",
+      "text": "5 cm"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find the area of a triangle with base 8 cm and perpendicular height 5 cm.",
+     "a": "20 cm²",
+     "model": "A = ½ × 8 × 5. 8 × 5 = 40; half of 40 = 20 cm²."
+    },
+    {
+     "q": "A right-angled triangle has shorter sides 7 cm and 10 cm. Find its area.",
+     "a": "35 cm²"
+    },
+    {
+     "q": "A triangle has area 48 cm² and height 8 cm. Find its base.",
+     "a": "12 cm"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find the area: (a) base 14 cm, height 9 cm (b) base 6.5 m, height 4 m (c) an obtuse triangle with base 5 cm and perpendicular height 8 cm (drawn outside the triangle) (d) area 54 cm², base 12 cm: find the height",
+     "a": "(a) 63 cm² (b) 13 m² (c) 20 cm² (d) 9 cm",
+     "model": "(a) ½ × 14 × 9 = 7 × 9 = 63 cm². (d) 54 = ½ × 12 × h = 6h, so h = 9 cm."
+    },
+    {
+     "q": "A triangle has vertices (1, 1), (7, 1) and (4, 6). Find its area.",
+     "a": "Base 6, height 5: 15 square units"
+    },
+    {
+     "q": "Two triangles share a base of 10 cm, one above it with height 6 cm and one below with height 9 cm, making a kite. Find the kite's area.",
+     "a": "½ × 10 × 15 = 75 cm²"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "The area of a triangle with base 10 cm and height 6 cm is:",
+     "a": "B) 30 cm²",
+     "options": [
+      "60 cm²",
+      "30 cm²",
+      "16 cm²"
+     ]
+    },
+    {
+     "q": "Which height do you use?",
+     "a": "the perpendicular height"
+    },
+    {
+     "q": "Big question: why is a triangle's area half a rectangle's?",
+     "a": "Two copies of the triangle fill the rectangle with the same base and height, so it is half of b × h."
+    }
+   ]
+  }
+ ]
+}

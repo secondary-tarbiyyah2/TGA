@@ -1,0 +1,138 @@
+{
+ "id": "mathematics-y5-printed-reflection-sheet",
+ "title": "Printed reflection sheet",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y5",
+ "unit": "Summer 1: Shape; position and direction; decimals",
+ "lessons": [
+  76
+ ],
+ "source": "Seeded from mathematics/y5 lesson 76 (Printed reflection sheet)",
+ "intro": "Lesson 76: Reflection. To understand how to reflect a shape in a horizontal or vertical mirror line",
+ "blocks": [
+  {
+   "h": "Reflect in the mirror line"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": 0,
+    "xMax": 10,
+    "yMin": 0,
+    "yMax": 10,
+    "height": 110,
+    "points": [
+     [
+      1,
+      2,
+      "A"
+     ],
+     [
+      3,
+      2,
+      "B"
+     ],
+     [
+      3,
+      5,
+      "C"
+     ]
+    ]
+   }
+  },
+  {
+   "text": "Draw the mirror line x = 5 (a vertical line through 5). Reflect triangle ABC, with A (1, 2), B (3, 2) and C (3, 5), in the line. Write the new coordinates."
+  },
+  {
+   "answers": "A' (9, 2), B' (7, 2), C' (7, 5): each point is the same distance from x = 5 on the other side."
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Vertical mirror line",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Count each vertex to the line"
+     },
+     {
+      "label": "Step 2",
+      "text": "Count the same on the other side"
+     },
+     {
+      "label": "Step 3",
+      "text": "Join the new vertices"
+     },
+     {
+      "label": "Answer",
+      "text": "The flipped triangle"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Reflect the square in the vertical line.",
+     "a": "Same distance on the other side",
+     "model": "Teacher counts 1 square to the line, 1 square beyond."
+    },
+    {
+     "q": "Reflect the triangle in the horizontal line.",
+     "a": "Flipped below the line"
+    },
+    {
+     "q": "Point on the mirror line: where is its image?",
+     "a": "Same place"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Reflect shapes A, B and C on the sheet.",
+     "a": "Checked on the answer grid",
+     "model": "Teacher reflects A first."
+    },
+    {
+     "q": "Use a mirror to check one of your reflections.",
+     "a": "The image matches"
+    },
+    {
+     "q": "Reflect a shape that touches the mirror line. What happens at the touching vertex?",
+     "a": "It stays in the same place"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A reflection... A) flips B) slides C) turns",
+     "a": "A) flips",
+     "options": [
+      "flips",
+      "slides",
+      "turns"
+     ]
+    },
+    {
+     "q": "Big question: how is it different from a translation?",
+     "a": "It flips the shape over a line so it faces the other way; a translation only slides"
+    }
+   ]
+  }
+ ]
+}

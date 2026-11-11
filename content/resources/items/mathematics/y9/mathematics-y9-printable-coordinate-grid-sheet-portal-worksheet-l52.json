@@ -1,0 +1,161 @@
+{
+ "id": "mathematics-y9-printable-coordinate-grid-sheet-portal-worksheet-l52",
+ "title": "Printable coordinate grid sheet (lesson 52)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+ "lessons": [
+  52
+ ],
+ "source": "Seeded from mathematics/y9 lesson 52 (Printable coordinate grid sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 52: Enlargement: scale factor and centre of enlargement. To understand how to enlarge a shape by a positive scale factor from a centre of enlargement",
+ "blocks": [
+  {
+   "h": "Coordinate grid"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": -8,
+    "xMax": 8,
+    "yMin": -8,
+    "yMax": 8,
+    "height": 125
+   }
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Enlarge a 3 cm by 2 cm rectangle by scale factor 4.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "3 × 4 = 12"
+     },
+     {
+      "label": "Step 2",
+      "text": "2 × 4 = 8"
+     },
+     {
+      "label": "Answer",
+      "text": "12 cm by 8 cm"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Enlarge triangle A(2, 1), B(4, 1), C(2, 2) by scale factor 3, centre (0, 0).",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Each vertex is 3 times as far from the origin"
+     },
+     {
+      "label": "Step 2",
+      "text": "Multiply each coordinate by 3"
+     },
+     {
+      "label": "Step 3",
+      "text": "A'(6, 3), B'(12, 3), C'(6, 6)"
+     },
+     {
+      "label": "Answer",
+      "text": "A'(6, 3), B'(12, 3), C'(6, 6)"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Enlarge P(3, 2) by scale factor 2, centre (1, 1).",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Centre to P: 2 right, 1 up"
+     },
+     {
+      "label": "Step 2",
+      "text": "× 2: 4 right, 2 up"
+     },
+     {
+      "label": "Step 3",
+      "text": "From the centre: (1 + 4, 1 + 2)"
+     },
+     {
+      "label": "Answer",
+      "text": "(5, 3)"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Enlarge P(2, 3) by scale factor 2 from centre (0, 0), then from centre (1, 1).",
+     "a": "(4, 6) and (3, 5)",
+     "model": "Centre (0, 0): double the coordinates, (4, 6). Centre (1, 1): P is 1 right and 2 up; doubled, 2 right and 4 up: (3, 5)."
+    },
+    {
+     "q": "A triangle has sides 3 cm, 4 cm and 5 cm. Enlarge by scale factor 2.5.",
+     "a": "7.5 cm, 10 cm, 12.5 cm"
+    },
+    {
+     "q": "A square of side 4 cm is enlarged by scale factor 3. Its new perimeter?",
+     "a": "48 cm"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Triangle T has vertices (1, 1), (3, 1) and (1, 4). Enlarge T by (a) scale factor 2, centre (0, 0) (b) scale factor 3, centre (1, 1) (c) scale factor 2, centre (2, 0). Write each image's coordinates.",
+     "a": "(a) (2, 2), (6, 2), (2, 8) (b) (1, 1), (7, 1), (1, 10) (c) (0, 2), (4, 2), (0, 8)",
+     "model": "(b) (1, 1) is the centre, so it stays put. (3, 1) is 2 right of the centre: × 3 = 6 right, so (7, 1). (1, 4) is 3 up: × 3 = 9 up, so (1, 10)."
+    },
+    {
+     "q": "A 5 cm by 3 cm rectangle is enlarged by scale factor 3. How many times bigger is the area?",
+     "a": "15 cm² becomes 15 × 9 = 135 cm²: 9 times bigger (3²)"
+    },
+    {
+     "q": "An enlargement with scale factor 3 maps (2, 2) to (8, 5). Find the centre.",
+     "a": "(-1, 0.5): from (-1, 0.5) to (2, 2) is (3, 1.5), and × 3 gives (9, 4.5), landing on (8, 5)"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Under an enlargement, angles:",
+     "a": "A) stay the same",
+     "options": [
+      "stay the same",
+      "are multiplied by the scale factor",
+      "halve"
+     ]
+    },
+    {
+     "q": "Scale factor 3: a 7 cm side becomes",
+     "a": "21 cm"
+    },
+    {
+     "q": "Big question: what changes and what stays the same in an enlargement?",
+     "a": "Lengths are multiplied by the scale factor; angles and the shape stay the same."
+    }
+   ]
+  }
+ ]
+}

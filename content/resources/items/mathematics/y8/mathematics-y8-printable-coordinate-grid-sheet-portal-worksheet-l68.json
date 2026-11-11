@@ -1,0 +1,172 @@
+{
+ "id": "mathematics-y8-printable-coordinate-grid-sheet-portal-worksheet-l68",
+ "title": "Printable coordinate grid sheet (lesson 68)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y8",
+ "unit": "Summer 1: Angles, area and symmetry",
+ "lessons": [
+  68
+ ],
+ "source": "Seeded from mathematics/y8 lesson 68 (Printable coordinate grid sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 68: Reflections in y = x and y = -x; describing reflections. To understand how to reflect in the lines y = x and y = -x and describe a reflection fully by its mirror line",
+ "blocks": [
+  {
+   "h": "Coordinate grid"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": -6,
+    "xMax": 6,
+    "yMin": -6,
+    "yMax": 6,
+    "height": 120
+   }
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Reflect the triangle (1, 3), (2, 6), (4, 3) in the line y = x.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Swap each pair of coordinates"
+     },
+     {
+      "label": "Step 2",
+      "text": "(1, 3) → (3, 1), (2, 6) → (6, 2), (4, 3) → (3, 4)"
+     },
+     {
+      "label": "Answer",
+      "text": "(3, 1), (6, 2), (3, 4)"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "(1, 2), (3, 2), (3, 4) maps to (1, -4), (3, -4), (3, -6). Describe the transformation fully.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Same size, flipped: a reflection"
+     },
+     {
+      "label": "Step 2",
+      "text": "Midpoint of (1, 2) and (1, -4) is (1, -1)"
+     },
+     {
+      "label": "Step 3",
+      "text": "Every midpoint has y = -1"
+     },
+     {
+      "label": "Answer",
+      "text": "Reflection in the line y = -1"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Four mirror lines"
+  },
+  {
+   "table": {
+    "head": [
+     "Mirror line",
+     "Rule",
+     "(2, 5) goes to"
+    ],
+    "rows": [
+     [
+      "x-axis",
+      "(x, y) → (x, -y)",
+      "(2, -5)"
+     ],
+     [
+      "y-axis",
+      "(x, y) → (-x, y)",
+      "(-2, 5)"
+     ],
+     [
+      "y = x",
+      "(x, y) → (y, x)",
+      "(5, 2)"
+     ],
+     [
+      "y = -x",
+      "(x, y) → (-y, -x)",
+      "(-5, -2)"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Reflect (4, 7) in y = x and in y = -x.",
+     "a": "(7, 4) and (-7, -4)",
+     "model": "y = x: swap, (7, 4). y = -x: swap and change both signs, (-7, -4)."
+    },
+    {
+     "q": "Object (2, 1), image (2, 7). Mirror line?",
+     "a": "y = 4"
+    },
+    {
+     "q": "Object (-3, 5), image (5, -3). Mirror line?",
+     "a": "y = x"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) Reflect the triangle (1, 1), (4, 1), (1, 2) in y = x. (b) Reflect it in y = -x. (c) Describe fully: (2, 3), (5, 3), (5, 4) maps to (2, -1), (5, -1), (5, -2). (d) Describe fully: (0, 1), (2, 1), (2, 4) maps to (6, 1), (4, 1), (4, 4).",
+     "a": "(a) (1, 1), (1, 4), (2, 1) (b) (-1, -1), (-1, -4), (-2, -1) (c) reflection in y = 1 (d) reflection in x = 3",
+     "model": "(a) Swap each pair: (1, 1) stays (it is on the line), (4, 1) → (1, 4), (1, 2) → (2, 1). (c) Midpoint of y = 3 and y = -1 is y = 1; check the others: 4 and -2 also give 1."
+    },
+    {
+     "q": "Which points do not move when reflected in y = x?",
+     "a": "Every point on the line y = x, such as (3, 3): they are invariant"
+    },
+    {
+     "q": "Reflect (2, 5) in the x-axis, then reflect the result in the y-axis. What single transformation does the same?",
+     "a": "(-2, -5): a rotation of 180° about the origin"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Reflect (6, 1) in y = x:",
+     "a": "A) (1, 6)",
+     "options": [
+      "(1, 6)",
+      "(-6, 1)",
+      "(6, -1)"
+     ]
+    },
+    {
+     "q": "Object (0, 2), image (0, -6). Mirror line?",
+     "a": "y = -2"
+    },
+    {
+     "q": "Big question: how do you find the mirror line from an object and its image?",
+     "a": "Find the midpoints of each point and its image; the mirror line passes through them all (the perpendicular bisector)."
+    }
+   ]
+  }
+ ]
+}
