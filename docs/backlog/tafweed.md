@@ -322,7 +322,48 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 
 ---
 
+## Third batch (owner, 11 Nov 2026, Tafweed 3)
+
+### T40. Message family goes straight to that family's conversation
+- **Owner's note:** "if i press msg family on the chat, it should send me to the family not to a new msg and i pick"
+- **Reading:** every "Message family" button opens the 1:1 conversation with that pupil's parent in Messages, starting one if there isn't one yet, never the empty New message picker. Who may message whom is unchanged: the directory (0085, `can_message_user`) and the insert policy on `message_threads` still decide.
+- **Files:** `src/components/learn/MessagesHub.tsx` (`?family=<pupil id>`, `openFamily`), `src/components/learn/pupil/TeachPupilProfile.tsx`, `AdminPupils.tsx` (pupil panel), `AdminPupilDetail.tsx` (header), `src/components/learn/class/ClassInsightsTab.tsx`.
+- **Done when:** [x] Message family on the teacher's pupil page, the pupil record, the Pupils list panel and class Insights opens that family's conversation; [x] an existing 1:1 (or an older "About <pupil>" thread) is reused, otherwise one is started; [x] a family with no portal account, or one you may not message, gets a plain message instead of a blank picker; [ ] PR #187's new "Message family" in the absences follow-up panel uses `/admin/messages?family=<pupil id>` (one-line change once both are merged); [ ] owner checks.
+- **Status:** Done (awaiting owner check)
+
+### T41. Portal guide and tour together, one structure
+- **Owner's note:** "Ensure portal guide and tour r together and structured"
+- **Reading:** one way into help, named the same everywhere: the Portal guide. Its home is in three parts: 1 Quick tour (Take the tour), 2 A day in the life, 3 Every page A to Z (journey map and A to Z), each ticked when done. Guide me (or ?) on any page opens that page's part of the guide.
+- **Files:** `src/components/learn/PortalSidebar.tsx` (one "Portal guide" row, `data-tour="help"`), `LearnAccountMenu.tsx`, `CommandPalette.tsx` ("Portal guide: ..." entries), `src/lib/learn/tours.ts` (last step "Your Portal guide"), `src/components/learn/guide/GuideHome.tsx`.
+- **Done when:** [x] the menu has one entry (no separate Take the tour row); [x] account menus and search name it the same way; [x] guide home starts with the three parts; [x] `guide.test.ts` and `tours.test.ts` pass, every `data-guide` target kept; [ ] owner checks.
+- **Status:** Done (awaiting owner check)
+
+### T42. Edit pupil opened underneath the pupil's side panel
+- **Owner's note:** "When i press edit pupil on the page, it overrides the other image" (screenshot: Admin › Pupils, Iman Mahmood's side panel, Year 8, 21 of 45, drawn on top of the Edit pupil dialog, which shows greyed underneath).
+- **Reading:** the Edit pupil dialog (z-50) opened under the side panel (z-90). Edit pupil now opens as the side panel itself and replaces the pupil's panel while it is open; closing it brings the pupil's panel back.
+- **Files:** `src/components/learn/pupil/AdminPupils.tsx`, `EditPupilModal.tsx`.
+- **Done when:** [x] Edit pupil from the panel is on top and the only panel showing; [x] Cancel or Save returns to the pupil's panel; [ ] owner checks.
+- **Status:** Done (awaiting owner check)
+
+### T43. Reporting absences with the school's five codes
+- **Owner's note:** "Ensure the portal can accommodate for reporting absences": Present (attended and engaged); Late (joined after registration); Authorised absence (illness, medical appointment that could not be arranged outside lessons, religious observance e.g. Eid, or exceptional circumstances approved by the Headteacher); Unauthorised absence (no reason given, or a reason not accepted, including term-time holidays); Technical absence (unable to connect despite reasonable efforts; recorded separately and reviewed for pattern).
+- **Reading:** the database already had a value for each (`attendance_records.status`: present, late, excused = authorised, absent = unauthorised, technical), so no mark changes. One module (`src/lib/learn/attendanceCodes.ts`) holds the names, meanings and counting rules. "Present, not engaged" is no longer offered; marks already saved with it are kept and count as present. Technical absences are counted on their own (not against the rate, no longer lumped with "excused") and flagged when a pupil has them on 2 or more days within 30 days (`TECHNICAL_REPEAT`, easy to change).
+- **Files:** `src/lib/learn/attendanceCodes.ts` (+ test), `src/components/learn/attendance/Register.tsx` (five one-tap codes, "What the codes mean", the office's reason sets authorised or unauthorised), `src/components/learn/absences/data.ts` (reasons in the school's terms, new `exceptional`), `FamilyAbsences.tsx` (family reasons with what each is usually recorded as, "How the school records attendance"), `SummaryCard.tsx`, `AbsenceReports.tsx`, `src/components/learn/pupil/ProfileTabs.tsx` (five figures, repeat flag), `src/app/learn/admin/attendance/page.tsx` (codes, AA / UA / T columns, repeat flag), class Attendance and Insights, reports (`summary.ts`, `ReportDocument.tsx`); migration 0211 `absence_reason_codes` (adds the `exceptional` reason, keeps every existing value) + pgTAP `absence_reason_codes.test.sql`.
+- **Done when:** [x] registers, family reporting, absences, the pupil record, Attendance and class pages use the five codes with their meanings as help text; [x] technical absences counted separately and flagged when they repeat; [x] no data dropped; [ ] the follow-up queue (PR #187) shows the same words once both are merged; [ ] the emailed-absence parser (`supabase/functions/inbound-absence/parse.ts`) still uses its older categories (Unwell, Family emergency): owner to say whether to rename; [ ] owner checks.
+- **Status:** Done (awaiting owner check)
+
+### T44. Messages: a more developed layout
+- **Owner's note (11 Nov, 14:13):** "i dont like the way messages is, it can be more developed" (screenshot: staff Messages at laptop width; the New message button cut off at the right; one narrow card with an open conversation, Fatima Khan, Huda Khan, and "No messages yet. Write the first one below." with no reply box in view).
+- **Reading:** list and conversation side by side whenever the page is wide enough, using the full width; the reply box always visible at the foot of the conversation; a clear header saying who this is (for a parent: "Parent of <pupil>", the pupil's year group, days away recently, Open record); a helpful start to a new conversation (suggested first lines, using the pupil's recent absence when there is one); all of PRs #171, #174, #182 kept (groups, replies, files, receipts, search, mute, email notifications). TGA's own look (DESIGN.md), not a copy of any chat app.
+- **Files:** `src/components/learn/MessagesHub.tsx` (container-query two-pane workspace of fixed height), `src/components/learn/MessageThread.tsx` (fills its pane, new empty state with starters), `src/components/learn/messages/FamilyContext.tsx` (family strip and openers).
+- **Done when:** [x] two panes from a 42rem-wide page area (so an open menu never squeezes it into one column), one pane with a back button below that; [x] reply box always at the foot; [x] family strip and "Parent of" header for staff; [x] suggested first lines that fill the box but never send; [ ] checked by eye at 1366px, 1150px and 360px (could not run the portal in the sandbox; CI builds it); [ ] owner checks.
+- **Status:** Done (awaiting owner check)
+
+---
+
 ## Log
+
+- 2026-11-11: Tafweed 3, T40 to T44 (branch `claude/tafweed3-portal`): Message family opens the family's conversation (`?family=`); the Portal guide is the one way into help, its home in three parts (quick tour, a day in the life, A to Z); Edit pupil opens as the side panel instead of under it; the five attendance codes everywhere (`attendanceCodes.ts`, migration 0211 `absence_reason_codes`, pgTAP `absence_reason_codes.test.sql`), technical absences counted separately and flagged on 2 or more days in 30; Messages as a two-pane workspace with the reply box always in view, a family strip and suggested first lines.
 
 - 2026-11-11: T39 part 3 (branch `claude/portal-guide`): "A day in the life" journeys on the Portal guide home (`src/content/portal-guide/journeys.ts`, `GuideJourney.tsx`, `GuideJourneys.tsx`). Teacher: plan a lesson, send it for review, teach it live on Teams, take the register, set and mark work, log behaviour, write a report. Head: Today, Waiting for you, admissions, safeguarding, flagged messages, registers, absences and cover, lessons to approve, policies. Admissions, SENCo, parent (today, homework, messages, fees, absence, details, calendar) and pupil (join a lesson, homework, a class, revise, merits). Each step goes to the real page (following a real class link where needed) and outlines the real element; Skip this step, Stop for now, and Carry on later from where you stopped (saved in `guide_progress.journeys`). `guide.test.ts` checks 6 to 12 steps and every target.
 - 2026-11-11: T39 part 2 (branch `claude/portal-guide`): the Portal guide home at `/guide` (`GuideHome.tsx`): progress ring ("18 of 42 pages learned"), Carry on (last page read) and Next, the role's pages as a journey map of chapters with a tick per page learned, a searchable A to Z of every page and common job (links open the page with its guide panel, `?guide=1`), and Start the guide again. Linked from the menu (Portal guide, under Take the tour), the account menu and search ("Open the Portal guide", "Guide me on this page"). The first-sign-in tour's last step is now "Want the full guide?" with an Open the Portal guide button.
