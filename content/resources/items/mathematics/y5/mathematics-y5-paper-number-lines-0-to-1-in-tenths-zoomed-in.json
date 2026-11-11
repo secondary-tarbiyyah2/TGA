@@ -1,0 +1,54 @@
+{
+ "id": "mathematics-y5-paper-number-lines-0-to-1-in-tenths-zoomed-in",
+ "title": "Paper number lines (0 to 1 in tenths; zoomed in)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y5",
+ "unit": "Spring 2: Decimals and percentages; perimeter and area; statistics",
+ "lessons": [
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47
+ ],
+ "source": "Seeded from mathematics/y5 lessons 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47 (Paper number lines (0 to 1 in tenths; zoomed in))",
+ "intro": "Used in lessons 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47.",
+ "blocks": [
+  {
+   "h": "Number lines"
+  },
+  {
+   "grid": {
+    "kind": "numberline",
+    "min": 0,
+    "max": 20,
+    "count": 3
+   }
+  },
+  {
+   "h": "Blank number lines to label"
+  },
+  {
+   "grid": {
+    "kind": "numberline",
+    "min": 0,
+    "max": 10,
+    "blank": true,
+    "count": 3
+   }
+  }
+ ]
+}

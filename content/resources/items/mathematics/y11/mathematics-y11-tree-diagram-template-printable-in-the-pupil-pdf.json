@@ -1,0 +1,171 @@
+{
+ "id": "mathematics-y11-tree-diagram-template-printable-in-the-pupil-pdf",
+ "title": "Tree diagram template",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4MA1 Higher",
+ "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+ "lessons": [
+  87
+ ],
+ "source": "Seeded from mathematics/y11 lesson 87 (Tree diagram template (printable, in the pupil PDF))",
+ "intro": "Lesson 87: Probability: tree diagrams and conditional probability. To understand how to use tree diagrams for independent and dependent events",
+ "blocks": [
+  {
+   "h": "Two-stage tree diagram"
+  },
+  {
+   "grid": {
+    "kind": "schematic",
+    "height": 90,
+    "north": false,
+    "roads": [
+     [
+      10,
+      45,
+      60,
+      20
+     ],
+     [
+      10,
+      45,
+      60,
+      70
+     ],
+     [
+      70,
+      20,
+      130,
+      8
+     ],
+     [
+      70,
+      20,
+      130,
+      32
+     ],
+     [
+      70,
+      70,
+      130,
+      58
+     ],
+     [
+      70,
+      70,
+      130,
+      82
+     ]
+    ],
+    "places": []
+   }
+  },
+  {
+   "text": "Write each outcome at the end of a branch and its probability on the branch. Multiply along the branches; add the end results that you need."
+  },
+  {
+   "grid": {
+    "kind": "schematic",
+    "height": 90,
+    "north": false,
+    "roads": [
+     [
+      10,
+      45,
+      60,
+      20
+     ],
+     [
+      10,
+      45,
+      60,
+      70
+     ],
+     [
+      70,
+      20,
+      130,
+      8
+     ],
+     [
+      70,
+      20,
+      130,
+      32
+     ],
+     [
+      70,
+      70,
+      130,
+      58
+     ],
+     [
+      70,
+      70,
+      130,
+      82
+     ]
+    ],
+    "places": []
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A spinner gives 1 with probability 0.4. It is spun twice. P(both 1s)?",
+     "a": "0.16",
+     "model": "Independent: 0.4 × 0.4 = 0.16."
+    },
+    {
+     "q": "A box has 4 dates and 6 figs. Two are taken without replacement. P(both figs)?",
+     "a": "1/3"
+    },
+    {
+     "q": "P(A) = 0.6, P(B | A) = 0.25. P(A and B)?",
+     "a": "0.15"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A bag has 7 green and 3 yellow beads. Two are taken without replacement. (a) Complete the tree diagram [2] (b) P(both yellow) [2] (c) P(same colour) [3] (d) P(at least one green) [2] (e) Given that the first is green, P(the second is yellow) [3]",
+     "a": "(a) first 7/10, 3/10; second 6/9, 3/9 after green and 7/9, 2/9 after yellow (b) 1/15 (c) 8/15 (d) 14/15 (e) 1/3",
+     "model": "(b) 3/10 × 2/9 = 6/90 = 1/15. (c) 7/10 × 6/9 + 1/15 = 42/90 + 6/90 = 48/90 = 8/15. (d) 1 - 1/15. (e) 3/9."
+    },
+    {
+     "q": "A bag has n red and 4 blue balls. Two are taken without replacement and P(both blue) = 1/11. Find n.",
+     "a": "4/(n + 4) × 3/(n + 3) = 1/11, (n + 4)(n + 3) = 132, n² + 7n - 120 = 0, n = 8"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "With replacement, the second-draw probabilities",
+     "a": "A) stay the same",
+     "options": [
+      "stay the same",
+      "change",
+      "become 0"
+     ]
+    },
+    {
+     "q": "Answer the ponder question.",
+     "a": "No: after a red is taken it is 4/7; after a blue it is 5/7."
+    }
+   ]
+  }
+ ]
+}

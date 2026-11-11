@@ -8,10 +8,11 @@ import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
-import { ADMIN_INDEX_HREF, AREA_SUBTITLE, isGroupedArea, isSidebarItemActive, normalisePortalPath, sidebarLayout, tileFor, visiblePages, visibleSidebar, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
+import { ADMIN_INDEX_HREF, AREA_SUBTITLE, isGroupedArea, isSidebarItemActive, normalisePortalPath, sidebarLayout, visiblePages, visibleSidebar, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
 import { Icon } from "@/components/learn/Icon";
+import { ActionsMenu, type MenuAction } from "@/components/learn/kit";
 import { InstallAppLink } from "@/components/learn/InstallApp";
-import { NavBadge, useNavBadges, type NavBadges } from "@/lib/learn/navBadges";
+import { useNavBadges, type NavBadges } from "@/lib/learn/navBadges";
 import { setCategoryOpen, togglePin, usePortalPrefs, type PortalPrefs } from "@/lib/learn/portalPrefs";
 import { startTour } from "@/lib/learn/tours";
 
@@ -33,8 +34,17 @@ function initialsOf(name: string): string {
   return ((parts[0]?.[0] || "") + (parts.length > 1 ? parts[parts.length - 1][0] : "")).toUpperCase() || "?";
 }
 
-/** Unread messages and work to mark are blue counts; things overdue are red. */
+/** Unread messages and work to mark are quiet counts; things missing or overdue are red. */
 const isAlertBadge = (i: SidebarItem) => i.badge !== "messages" && i.badge !== "review";
+
+function NavCount({ count, alert }: { count: number | undefined; alert: boolean }) {
+  if (!count) return null;
+  return (
+    <span aria-label={`${count} waiting`} className={`portal-nav-count ${alert ? "portal-nav-count--alert" : ""}`}>
+      {count > 99 ? "99+" : count}
+    </span>
+  );
+}
 
 const catKey = (area: PortalArea, label: string) => `${area}:${label}`;
 
@@ -71,31 +81,33 @@ function PinButton({ item, pinned }: { item: SidebarItem; pinned: boolean }) {
   );
 }
 
-function NavLink({ item, active, collapsed, onNavigate, count, pin }: { item: SidebarItem; active: boolean; collapsed: boolean; onNavigate?: () => void; count?: number; pin?: { pinned: boolean } }) {
-  const showPin = !!pin && !collapsed;
+/** A top-level page: icon and name. */
+function NavLink({ item, active, onNavigate, count, pin }: { item: SidebarItem; active: boolean; onNavigate?: () => void; count?: number; pin?: { pinned: boolean } }) {
   const link = (
-    <Link
-      href={item.href}
-      onClick={onNavigate}
-      aria-current={active ? "page" : undefined}
-      title={collapsed ? item.label : undefined}
-      aria-label={collapsed ? (count ? `${item.label} (${count} waiting)` : item.label) : undefined}
-      className={`portal-nav-row relative ${collapsed ? "justify-center !px-0" : ""} ${active ? "portal-nav-row--active" : ""} ${showPin ? "!pr-9" : ""}`}
-    >
-      <span className={`portal-tile ${tileFor(item.icon)}`} aria-hidden="true">
+    <Link href={item.href} onClick={onNavigate} aria-current={active ? "page" : undefined} title={item.hint} className={`portal-nav-row ${active ? "portal-nav-row--active" : ""} ${pin ? "!pr-9" : ""}`}>
+      <span className="portal-nav-icon" aria-hidden="true">
         <Icon name={item.icon} />
       </span>
-      {!collapsed && <span className="min-w-0 flex-1 truncate">{item.label}</span>}
-      {!collapsed && <NavBadge count={count} alert={isAlertBadge(item)} />}
-      {collapsed && !!count && <span aria-hidden="true" className="absolute right-2 top-1.5 h-2 w-2 rounded-full bg-red-700 ring-2 ring-white" />}
+      <span className="min-w-0 flex-1 truncate">{item.label}</span>
+      <NavCount count={count} alert={isAlertBadge(item)} />
     </Link>
   );
-  if (!showPin) return link;
+  if (!pin) return link;
   return (
     <div className="portal-nav-item relative">
       {link}
       <PinButton item={item} pinned={pin.pinned} />
     </div>
+  );
+}
+
+/** The collapsed rail: one icon per page or category, its name in a tooltip. */
+function RailLink({ item, active, onNavigate, count }: { item: SidebarItem; active: boolean; onNavigate?: () => void; count?: number }) {
+  return (
+    <Link href={item.href} onClick={onNavigate} aria-current={active ? "page" : undefined} data-tip={count ? `${item.label} (${count})` : item.label} aria-label={count ? `${item.label} (${count} waiting)` : item.label} className="portal-rail-btn">
+      <Icon name={item.icon} />
+      {!!count && <span aria-hidden="true" className="portal-rail-dot" />}
+    </Link>
   );
 }
 
@@ -105,7 +117,7 @@ function NavLeaf({ item, active, onNavigate, count, pinned }: { item: SidebarIte
     <div className="portal-nav-item relative">
       <Link href={item.href} onClick={onNavigate} aria-current={active ? "page" : undefined} title={item.hint} className={`portal-nav-leaf !pr-9 ${active ? "portal-nav-leaf--active" : ""}`}>
         <span className="min-w-0 flex-1 truncate">{item.label}</span>
-        <NavBadge count={count} alert={isAlertBadge(item)} />
+        <NavCount count={count} alert={isAlertBadge(item)} />
       </Link>
       <PinButton item={item} pinned={pinned} />
     </div>
@@ -121,12 +133,12 @@ function NavSection({ section, isOpen, onToggle, pathname, onNavigate, badges, p
   return (
     <div>
       <button type="button" onClick={onToggle} aria-expanded={isOpen} aria-controls={panelId} data-tour-cat={section.label} className={`portal-nav-cat ${holdsActive ? "portal-nav-cat--here" : ""}`}>
-        <span className={`portal-tile ${tileFor(section.icon)}`} aria-hidden="true">
+        <span className="portal-nav-icon" aria-hidden="true">
           <Icon name={section.icon} />
         </span>
-        <span className="min-w-0 flex-1 text-left leading-snug">{section.label}</span>
-        {!isOpen && !!waiting && <span aria-label={`${waiting} waiting`} className="h-2 w-2 shrink-0 rounded-full bg-red-700" />}
-        <Icon name="chevronDown" className={`h-4 w-4 shrink-0 opacity-60 transition-transform duration-200 ${isOpen ? "" : "-rotate-90"}`} />
+        <span className="min-w-0 flex-1 text-left">{section.label}</span>
+        {!isOpen && !!waiting && <span aria-label={`${waiting} waiting`} className="portal-nav-dot" />}
+        <Icon name="chevronRight" className={`portal-nav-chevron ${isOpen ? "rotate-90" : ""}`} />
       </button>
       <div id={panelId} className="portal-nav-panel" data-open={isOpen || undefined} inert={!isOpen || undefined}>
         <ul className="portal-nav-tree min-h-0 overflow-hidden">
@@ -138,6 +150,42 @@ function NavSection({ section, isOpen, onToggle, pathname, onNavigate, badges, p
         </ul>
       </div>
     </div>
+  );
+}
+
+/** Tooltips for the collapsed rail: one floating label, placed beside whichever icon is
+ * pointed at or focused (the rail scrolls, so a CSS tooltip inside it would be clipped). */
+function RailTips({ root }: { root: React.RefObject<HTMLElement | null> }) {
+  const [tip, setTip] = useState<{ text: string; top: number; left: number } | null>(null);
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    const show = (e: Event) => {
+      const t = (e.target as Element | null)?.closest?.("[data-tip]") as HTMLElement | null;
+      if (!t || !el.contains(t)) return setTip(null);
+      const r = t.getBoundingClientRect();
+      setTip({ text: t.dataset.tip || "", top: r.top + r.height / 2, left: r.right + 10 });
+    };
+    const hide = () => setTip(null);
+    el.addEventListener("pointerover", show);
+    el.addEventListener("focusin", show);
+    el.addEventListener("pointerleave", hide);
+    el.addEventListener("focusout", hide);
+    el.addEventListener("scroll", hide, true);
+    return () => {
+      el.removeEventListener("pointerover", show);
+      el.removeEventListener("focusin", show);
+      el.removeEventListener("pointerleave", hide);
+      el.removeEventListener("focusout", hide);
+      el.removeEventListener("scroll", hide, true);
+    };
+  }, [root]);
+  if (!tip || typeof document === "undefined") return null;
+  return createPortal(
+    <div role="presentation" aria-hidden="true" className="portal portal-tip" style={{ top: tip.top, left: tip.left, transform: "translateY(-50%)" }}>
+      {tip.text}
+    </div>,
+    document.body,
   );
 }
 
@@ -175,6 +223,7 @@ function SidebarBody({
   const roleLabel = [...new Set(roles.map((r) => learnRoleLabel(r.role)))].join(", ");
   const displayName = fullName || session.user.email || "Your account";
   const homeHref = areas.find((a) => a.startsWith(`/${area}/`)) || areas[0] || "/";
+  const rootRef = useRef<HTMLDivElement>(null);
 
   // Pinned pages (staff): only pages this person can still open, in the order pinned.
   const pages = grouped ? visiblePages(area, roleNames) : [];
@@ -190,7 +239,7 @@ function SidebarBody({
   useEffect(() => {
     const t = window.setTimeout(() => {
       const el = navRef.current?.querySelector<HTMLElement>('.portal-nav-panel[data-open] [aria-current="page"], :scope > ul [aria-current="page"]');
-      el?.scrollIntoView({ block: "center" });
+      el?.scrollIntoView({ block: "nearest" });
     }, 250);
     return () => window.clearTimeout(t);
   }, [pathname]);
@@ -215,20 +264,40 @@ function SidebarBody({
   // Collapsed rail: one icon per Home page and per category (to its first page).
   const railItems = visibleSidebar(area, roleNames).map((item, idx, all) => ({ item, divider: grouped && idx > 0 && !item.page && !!all[idx - 1].page }));
 
+  // The account menu at the foot of the sidebar: who is signed in, the account page, other
+  // portals this person can open, and signing out.
+  const accountItems: MenuAction[] = [
+    { label: "Your account", icon: "userRound", href: "/account", hint: "Name, sign-in, notifications and display" },
+    { label: "Portal guide", icon: "bookOpenCheck", href: `/guide?area=${area}`, hint: "Every page explained, A to Z" },
+    ...(areas.length > 1
+      ? [
+          { label: "", section: "Switch portal" } as MenuAction,
+          ...areas.map((href): MenuAction => ({ label: AREA_NAMES[href] || href, icon: "layoutDashboard", href, aside: href.startsWith(`/${area}/`) ? "Current" : undefined })),
+        ]
+      : []),
+    { label: "Sign out", icon: "logOut", onSelect: () => void signOut(), danger: true },
+  ];
+  const accountHeader = (
+    <div className="min-w-0">
+      <p className="truncate text-sm font-semibold text-ink">{displayName}</p>
+      <p className="truncate text-xs text-ink-500">{session.user.email}</p>
+    </div>
+  );
+
   return (
-    <div className="flex h-full flex-col">
-      <div className={`portal-sidebar-head flex h-[64px] shrink-0 items-center ${collapsed ? "justify-center px-2" : "justify-between gap-2 pl-5 pr-3"}`}>
+    <div ref={rootRef} className="flex h-full flex-col">
+      <div className={`flex h-[var(--portal-topbar-h)] shrink-0 items-center ${collapsed ? "justify-center px-2" : "justify-between gap-2 pl-4 pr-2.5"}`}>
         {collapsed ? (
-          <Link href={homeHref} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home" title="Home">
-            <Image src="/brand/ga-logo-square.png" alt="" width={36} height={36} priority className="h-9 w-9 max-w-none rounded-lg" />
+          <Link href={homeHref} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home" data-tip="Home">
+            <Image src="/brand/ga-logo-square.png" alt="" width={32} height={32} priority className="h-8 w-8 max-w-none rounded-md" />
           </Link>
         ) : (
           <>
             <Link href={homeHref} onClick={onNavigate} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home">
-              <Image src="/brand/ga-wordmark.png" alt="" width={128} height={39} priority className="h-[38px] w-[128px] max-w-none object-contain" />
+              <Image src="/brand/ga-wordmark.png" alt="" width={118} height={36} priority className="h-[34px] w-[114px] max-w-none object-contain" />
             </Link>
             {onToggle && (
-              <button type="button" onClick={onToggle} title="Collapse sidebar" aria-label="Collapse sidebar" className="portal-icon-btn">
+              <button type="button" onClick={onToggle} title="Collapse the menu" aria-label="Collapse the menu" className="portal-icon-btn">
                 <Icon name="panelLeftClose" />
               </button>
             )}
@@ -241,42 +310,42 @@ function SidebarBody({
         )}
       </div>
 
-      <nav ref={navRef} aria-label={AREA_SUBTITLE[area]} data-tour="menu" className={`min-h-0 flex-1 overflow-y-auto overscroll-contain pb-4 pt-2 ${collapsed ? "px-2" : "px-3"}`}>
+      <nav ref={navRef} aria-label={AREA_SUBTITLE[area]} data-tour="menu" className={`min-h-0 flex-1 overflow-y-auto overscroll-contain pb-4 ${collapsed ? "px-3 pt-1" : "px-3 pt-0.5"}`}>
         {collapsed ? (
-          <ul className="space-y-0.5">
+          <ul className="space-y-1">
             <li>
-              <button type="button" onClick={onToggle} title="Expand sidebar" aria-label="Expand sidebar" className="portal-nav-row w-full justify-center !px-0 text-ink/65">
+              <button type="button" onClick={onToggle} data-tip="Expand the menu" aria-label="Expand the menu" className="portal-rail-btn">
                 <Icon name="panelLeftOpen" />
               </button>
             </li>
             {railItems.map(({ item, divider }) => (
               <li key={item.id || item.href}>
-                {divider && <div role="presentation" className="mx-2 my-2 border-t border-gold-light" />}
-                <NavLink item={item} active={isSidebarItemActive(pathname, item)} collapsed onNavigate={onNavigate} count={item.badge ? badges[item.badge] : undefined} />
+                {divider && <div role="presentation" className="mx-auto my-2 w-6 border-t border-gold-light" />}
+                <RailLink item={item} active={isSidebarItemActive(pathname, item)} onNavigate={onNavigate} count={item.badge ? badges[item.badge] : undefined} />
               </li>
             ))}
           </ul>
         ) : (
           <>
             {grouped && (
-              <div data-tour="pinned" className="mb-2">
-                <p className="portal-nav-label !pt-1">Pinned</p>
+              <div data-tour="pinned">
+                <p className="portal-nav-label !pt-2">Pinned</p>
                 {pinnedItems.length > 0 ? (
-                  <ul className="space-y-0.5">
+                  <ul className="space-y-px">
                     {pinnedItems.map((i) => (
                       <li key={`pin:${i.href}`}>
-                        <NavLink item={i} active={isSidebarItemActive(pathname, i)} collapsed={false} onNavigate={onNavigate} pin={{ pinned: true }} />
+                        <NavLink item={i} active={isSidebarItemActive(pathname, i)} onNavigate={onNavigate} pin={{ pinned: true }} />
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="px-3 pb-1 text-xs leading-snug text-ink/60">
-                    Pin the pages you use most: point at a page below and press <Icon name="pin" className="inline h-3 w-3 align-[-1px]" />.
+                  <p className="px-2.5 pb-1 text-xs leading-snug text-ink-500">
+                    Point at a page and press <Icon name="pin" className="inline h-3 w-3 align-[-1px]" /> to keep it here.
                   </p>
                 )}
               </div>
             )}
-            <ul className="space-y-0.5">
+            <ul className="space-y-px">
               {grouped && (
                 <li role="presentation">
                   <p className="portal-nav-label">Home</p>
@@ -286,16 +355,16 @@ function SidebarBody({
                 e.kind === "link"
                   ? [
                       <li key={e.item.id || e.item.href}>
-                        <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} collapsed={false} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} pin={grouped ? { pinned: prefs.pinned.includes(e.item.href) } : undefined} />
+                        <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} pin={grouped ? { pinned: prefs.pinned.includes(e.item.href) } : undefined} />
                       </li>,
                     ]
                   : [],
               )}
             </ul>
             {sections.length > 0 && (
-              <div data-tour="categories" className="mt-3">
-                <p className="portal-nav-label !pt-0">Categories</p>
-                <ul className="space-y-0.5">
+              <div data-tour="categories">
+                <p className="portal-nav-label">Categories</p>
+                <ul className="space-y-px">
                   {sections.map((s) => (
                     <li key={s.label}>
                       <NavSection section={s} isOpen={isOpen(s.label)} onToggle={() => toggle(s.label)} pathname={pathname} onNavigate={onNavigate} badges={badges} pinned={prefs.pinned} />
@@ -307,96 +376,78 @@ function SidebarBody({
           </>
         )}
 
-        {!collapsed && (
-          <div className="mt-4 space-y-0.5 border-t border-gold-light pt-3">
-            {area === "admin" && (
+        <div className={`mt-4 border-t border-gold-light pt-3 ${collapsed ? "space-y-1" : "space-y-px"}`}>
+          {area === "admin" &&
+            (collapsed ? (
+              <Link href={ADMIN_INDEX_HREF} data-tip="All admin pages" aria-label="All admin pages" aria-current={normalisePortalPath(pathname) === ADMIN_INDEX_HREF ? "page" : undefined} className="portal-rail-btn">
+                <Icon name="layoutGrid" />
+              </Link>
+            ) : (
               <Link href={ADMIN_INDEX_HREF} onClick={onNavigate} aria-current={normalisePortalPath(pathname) === ADMIN_INDEX_HREF ? "page" : undefined} className={`portal-nav-row ${normalisePortalPath(pathname) === ADMIN_INDEX_HREF ? "portal-nav-row--active" : ""}`}>
-                <span className="portal-tile tile-slate" aria-hidden="true">
+                <span className="portal-nav-icon" aria-hidden="true">
                   <Icon name="layoutGrid" />
                 </span>
                 <span className="min-w-0 flex-1 truncate">All admin pages</span>
               </Link>
-            )}
-            <button type="button" data-tour="help" onClick={() => startTour()} className="portal-nav-row w-full text-left">
-              <span className="portal-tile tile-slate" aria-hidden="true">
+            ))}
+          {collapsed ? (
+            <button type="button" data-tour="help" onClick={() => startTour()} data-tip="Take the tour" aria-label="Take the tour" className="portal-rail-btn">
+              <Icon name="compass" />
+            </button>
+          ) : (
+            <button type="button" data-tour="help" onClick={() => startTour()} className="portal-nav-row text-left">
+              <span className="portal-nav-icon" aria-hidden="true">
                 <Icon name="compass" />
               </span>
               <span className="min-w-0 flex-1 truncate">Take the tour</span>
             </button>
+          )}
+          {collapsed ? (
+            <Link href={`/guide?area=${area}`} data-tip="Portal guide" aria-label="Portal guide" aria-current={normalisePortalPath(pathname) === "/guide" ? "page" : undefined} className="portal-rail-btn">
+              <Icon name="bookOpenCheck" />
+            </Link>
+          ) : (
             <Link href={`/guide?area=${area}`} onClick={onNavigate} data-tour="guide-home" aria-current={normalisePortalPath(pathname) === "/guide" ? "page" : undefined} className={`portal-nav-row ${normalisePortalPath(pathname) === "/guide" ? "portal-nav-row--active" : ""}`}>
-              <span className="portal-tile tile-slate" aria-hidden="true">
+              <span className="portal-nav-icon" aria-hidden="true">
                 <Icon name="bookOpenCheck" />
               </span>
               <span className="min-w-0 flex-1 truncate">Portal guide</span>
             </Link>
-            <InstallAppLink onNavigate={onNavigate} />
-          </div>
-        )}
-        {collapsed && (
-          <div className="mt-4 flex flex-col items-center gap-0.5 border-t border-gold-light pt-3">
-            {area === "admin" && (
-              <Link href={ADMIN_INDEX_HREF} title="All admin pages" aria-label="All admin pages" className="portal-nav-row w-full justify-center !px-0">
-                <span className="portal-tile tile-slate" aria-hidden="true">
-                  <Icon name="layoutGrid" />
-                </span>
-              </Link>
-            )}
-            <button type="button" data-tour="help" onClick={() => startTour()} title="Take the tour" aria-label="Take the tour" className="portal-nav-row w-full justify-center !px-0">
-              <span className="portal-tile tile-slate" aria-hidden="true">
-                <Icon name="compass" />
-              </span>
-            </button>
-            <Link href={`/guide?area=${area}`} title="Portal guide" aria-label="Portal guide" className="portal-nav-row w-full justify-center !px-0">
-              <span className="portal-tile tile-slate" aria-hidden="true">
-                <Icon name="bookOpenCheck" />
-              </span>
-            </Link>
-            <InstallAppLink onNavigate={onNavigate} compact />
-          </div>
-        )}
-
-        {areas.length > 1 && !collapsed && (
-          <div className="mt-4 border-t border-gold-light pt-3">
-            <p className="portal-nav-label">Switch portal</p>
-            {areas.map((href) => {
-              const here = href.startsWith(`/${area}/`);
-              return (
-                <Link key={href} href={href} onClick={onNavigate} aria-current={here ? "true" : undefined} className={`portal-nav-sub !ml-0 ${here ? "portal-nav-sub--active" : ""}`}>
-                  {AREA_NAMES[href] || href}
-                </Link>
-              );
-            })}
-          </div>
-        )}
+          )}
+          <InstallAppLink onNavigate={onNavigate} compact={collapsed} />
+        </div>
       </nav>
 
-      <div className={`shrink-0 border-t border-gold-light ${collapsed ? "flex flex-col items-center gap-1.5 px-2 py-3" : "p-3"}`}>
-        {collapsed ? (
-          <>
-            <Link href="/account" onClick={onNavigate} title={`${displayName}, ${roleLabel}`} aria-label="Your account" className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900 hover:bg-teal-700 hover:text-white">
-              {initialsOf(displayName)}
-            </Link>
-            <button type="button" onClick={signOut} title="Sign out" aria-label="Sign out" className="portal-icon-btn hover:!bg-red-50 hover:!text-red-700">
-              <Icon name="logOut" />
-            </button>
-          </>
-        ) : (
-          <div className="flex items-center gap-2">
-            <Link href="/account" onClick={onNavigate} className="flex min-h-11 min-w-0 flex-1 items-center gap-2.5 rounded-xl p-1.5 hover:bg-cream">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-700 text-xs font-semibold text-white" aria-hidden="true">
+      <div className={`shrink-0 border-t border-gold-light ${collapsed ? "flex justify-center px-2 py-2.5" : "px-2.5 py-2"}`}>
+        <ActionsMenu
+          items={accountItems}
+          label="Your account"
+          placement="above"
+          align="left"
+          header={accountHeader}
+          menuClassName="w-[15.5rem]"
+          triggerClassName={collapsed ? "portal-profile !w-auto justify-center !p-1" : "portal-profile"}
+          triggerContent={
+            collapsed ? (
+              <span className="portal-avatar" aria-hidden="true" data-tip={`${displayName}, ${roleLabel}`}>
                 {initialsOf(displayName)}
               </span>
-              <span className="min-w-0">
-                <span className="block truncate text-sm font-semibold text-ink">{displayName}</span>
-                <span className="block truncate text-xs text-ink/65">{roleLabel}</span>
-              </span>
-            </Link>
-            <button type="button" onClick={signOut} title="Sign out" aria-label="Sign out" className="portal-icon-btn shrink-0 hover:!bg-red-50 hover:!text-red-700">
-              <Icon name="logOut" />
-            </button>
-          </div>
-        )}
+            ) : (
+              <>
+                <span className="portal-avatar" aria-hidden="true">
+                  {initialsOf(displayName)}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-[0.8125rem] font-semibold leading-tight text-ink">{displayName}</span>
+                  <span className="block truncate text-xs leading-tight text-ink-500">{roleLabel}</span>
+                </span>
+                <Icon name="chevronsUpDown" className="h-4 w-4 shrink-0 text-ink-500" />
+              </>
+            )
+          }
+        />
       </div>
+      {collapsed && <RailTips root={rootRef} />}
     </div>
   );
 }
@@ -404,7 +455,7 @@ function SidebarBody({
 /** Desktop: a fixed rail down the left. */
 export function PortalSidebar(props: { area: PortalArea; session: Session; roles: RoleGrant[]; collapsed: boolean; onToggle: () => void }) {
   return (
-    <aside className={`portal-sidebar fixed inset-y-0 left-0 z-30 hidden bg-white transition-[width] duration-200 ease-out lg:block ${props.collapsed ? "w-[76px]" : "w-[280px]"}`}>
+    <aside className={`portal-sidebar fixed inset-y-0 left-0 z-30 hidden transition-[width] duration-200 ease-[var(--portal-ease)] motion-reduce:transition-none lg:block ${props.collapsed ? "w-[var(--portal-rail-w)]" : "w-[var(--portal-sidebar-w)]"}`}>
       <SidebarBody {...props} />
     </aside>
   );
@@ -452,8 +503,8 @@ export function PortalSidebarDrawer(props: { area: PortalArea; session: Session;
       {open &&
         createPortal(
           <div className="portal fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
-            <button type="button" aria-label="Close" className="absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
-            <div className="portal-drawer absolute inset-y-0 left-0 w-[86%] max-w-[320px] bg-white shadow-xl">
+            <button type="button" aria-label="Close" className="portal-scrim absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
+            <div className="portal-drawer portal-sidebar absolute inset-y-0 left-0 w-[86%] max-w-[320px] shadow-xl">
               <SidebarBody {...props} onNavigate={() => setOpen(false)} onClose={() => setOpen(false)} />
             </div>
           </div>,

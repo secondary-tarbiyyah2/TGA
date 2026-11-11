@@ -42,6 +42,7 @@
   --color-forest-700: #1d4a37;
   --color-forest-600: #255c45;
   --color-forest-500: #3d7a5f;
+  --color-forest-300: #a7bcae;
   --color-forest-200: #c9dcd1;
   --color-forest-100: #e4eee8;
   --color-forest-50: #f2f7f4;
@@ -82,6 +83,7 @@
   --color-forest-700: var(--color-forest-700);
   --color-forest-600: var(--color-forest-600);
   --color-forest-500: var(--color-forest-500);
+  --color-forest-300: var(--color-forest-300);
   --color-forest-200: var(--color-forest-200);
   --color-forest-100: var(--color-forest-100);
   --color-forest-50: var(--color-forest-50);
@@ -187,47 +189,95 @@ button:not(:disabled),
   padding-top: 0;
 }
 
-/* /learn portal look. The marketing site's warm beige borders and
-   30-46px headings made the portal read as a brochure rather than an app.
-   Scoped to .portal (the wrapper in src/app/learn/layout.tsx), so the
-   public site is unaffected. It redefines the tokens the portal's
-   utilities already use (border-gold-light, bg-cream, rounded-2xl,
-   text-h2/h3), so all 36 portal pages pick it up without editing each one.
-   Logo gold marks buttons, links and navigation; teal-500 marks done/positive state. */
+/* /learn portal look (owner brief 10 Nov 2026, "complete UI/UX redesign"; DESIGN.md
+   "Portal design system"). Scoped to .portal (the wrapper in src/app/learn/layout.tsx), so the
+   public site is unaffected. It redefines the tokens the portal's utilities already use
+   (border-gold-light, bg-cream, text-ink, rounded-2xl, teal-*), so every portal page picks the
+   new look up without editing each one.
+
+   Palette, one job per colour:
+     ivory canvas, stone surfaces, hairline borders  the page itself
+     charcoal ink, grey-green secondary text          words
+     deep forest green                                actions, links, focus, "you are here"
+     muted green                                      quiet emphasis (progress, secondary marks)
+     antique gold                                     accent only (logo, the active-page marker)
+     amber / red / green                              status only */
 .portal {
-  /* Warm neutrals so the portal sits in the same family as the gold, ink
-     and cream brand (DESIGN.md) rather than a generic blue SaaS canvas. */
-  --color-gold-light: #e8e3d8; /* hairline borders */
-  --color-cream: #f4f1ea; /* hover and tint surface */
-  --portal-canvas: #f8f6f1; /* page background behind cards */
-  --portal-hover: #f1ede4; /* row hover */
-  /* Redesign (owner brief, Nov 2026; docs/portal-redesign.md): forest green
-     does the work (actions, links, focus, "you are here"); heritage gold is a
-     restrained brand accent (logo, active-page marker, key figures), never a
-     button fill. The portal's teal-* utilities mean forest green, so every
-     existing page picks this up without edits. */
-  --color-forest-900: #12321f;
-  --color-forest-800: #173f2c;
-  --color-forest-700: #1d4a37; /* actions and links: 9.9:1 on white */
-  --color-forest-600: #255c45;
-  --color-forest-500: #3d7a5f;
-  --color-forest-200: #c9dcd1;
-  --color-forest-100: #e4eee8;
-  --color-forest-50: #f2f7f4;
-  --portal-focus-ring: rgba(29, 74, 55, 0.28); /* forest-700 at 28% */
-  --portal-hero-bg: #12321f; /* forest: the welcome strip on dashboards */
-  --portal-accent: var(--color-gold-500); /* the gold marker beside the page you're on */
+  /* Surfaces */
+  --portal-canvas: #f7f5ef; /* warm ivory: the page */
+  --portal-surface: #fffefb; /* panels that sit on the page */
+  --portal-sidebar: #f1eee6; /* soft stone: the sidebar */
+  --portal-sunken: #ebe7dd; /* wells, segmented-control tracks */
+  --portal-hover: #ece8de; /* row hover on canvas and stone */
+  --color-gold-light: #e4dfd3; /* hairline borders */
+  --color-cream: #f3f0e8; /* tint surface (hover on white, table heads) */
+  --color-white: #fffefb;
+
+  /* Text: charcoal with a green undertone, and a grey-green for secondary text and icons. */
+  --color-ink: #1f2521;
+  --color-ink-900: #1f2521; /* 15:1 on ivory */
+  --color-ink-700: #3a433d;
+  --color-ink-500: #5b6760; /* secondary text: 5.5:1 on ivory */
+  --foreground: #1f2521;
+
+  /* Deep forest green: actions and where you are. Muted green: quiet emphasis. */
+  --color-forest-900: #12291d;
+  --color-forest-800: #173524;
+  --color-forest-700: #1e4230; /* actions and links: 11:1 on white */
+  --color-forest-600: #2a5640;
+  --color-forest-500: #557a64; /* muted green: progress, secondary marks (4.6:1 on white) */
+  --color-forest-300: #a7bcae;
+  --color-forest-200: #cad8ce;
+  --color-forest-100: #e2eae3;
+  --color-forest-50: #eff3ee;
+
+  /* Antique gold: an accent, never a fill for buttons or large areas. */
+  --color-gold-500: #a8894a;
+  --color-gold-300: #d9c7a1;
+  --color-gold-100: #f3ecdc;
+  --color-gold-50: #faf6ec;
+  --portal-accent: var(--color-gold-500); /* the marker beside the page you are on */
+
+  --portal-focus-ring: rgba(30, 66, 48, 0.3); /* forest-700 at 30% */
+  --portal-hero-bg: #12291d;
   --color-teal-900: var(--color-forest-900);
   --color-teal-700: var(--color-forest-700);
   --color-teal-600: var(--color-forest-600);
   --color-teal-500: var(--color-forest-500);
   --color-teal-100: var(--color-forest-100);
   --color-teal-50: var(--color-forest-50);
-  --portal-shadow-rgb: 30, 36, 32; /* charcoal for the few floating shadows */
-  --radius-2xl: 0.75rem;
-  --radius-xl: 0.625rem;
+
+  /* Depth: hairlines at rest; a shadow only on things that float (menus, dialogs, popovers). */
+  --portal-shadow-rgb: 23, 32, 27;
+  --portal-shadow-pop: 0 12px 32px -12px rgba(var(--portal-shadow-rgb), 0.22), 0 2px 6px -2px rgba(var(--portal-shadow-rgb), 0.08), 0 0 0 1px rgba(var(--portal-shadow-rgb), 0.06);
+  --portal-shadow-lift: 0 1px 2px rgba(var(--portal-shadow-rgb), 0.07), 0 0 0 1px rgba(var(--portal-shadow-rgb), 0.06);
+
+  /* Shape: controls 7px, panels 10px, chips are pills. */
+  --radius-lg: 0.4375rem;
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.625rem;
+
+  /* Motion: short and calm. Everything is switched off under reduced motion. */
+  --portal-ease: cubic-bezier(0.2, 0, 0, 1);
+  --portal-fast: 120ms;
+  --portal-med: 200ms;
+
+  /* Type scale (Inter). Page title 22px, section 15px, body 14-15px, meta 13px, eyebrow 11px. */
+  --portal-fs-title: 1.375rem;
+  --portal-fs-section: 0.9375rem;
+  --portal-fs-meta: 0.8125rem;
+  --portal-fs-eyebrow: 0.6875rem;
+
+  /* Layout */
+  --portal-sidebar-w: 268px;
+  --portal-rail-w: 64px;
+  --portal-topbar-h: 56px;
+
   font-size: 15px;
   line-height: 1.55;
+  color: var(--color-ink-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 /* Gold is never a button fill in the portal: any solid gold-700/900 control
    (older pages write the class by hand) becomes forest green. */
@@ -243,135 +293,292 @@ button:not(:disabled),
 .portal:not(.fixed) {
   background: var(--portal-canvas);
 }
-/* The portal runs on "small" type everywhere; nudge the two smallest sizes up so
-   tables and cards are comfortable to read without touching every page. */
+/* The portal's small sizes, nudged so tables and cards are comfortable to read. */
 .portal {
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.25rem;
-  --text-sm: 0.9rem;
-  --text-sm--line-height: 1.4rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.375rem;
 }
 .portal .text-h2 {
-  font-size: 1.5rem; /* 24px page titles */
+  font-size: var(--portal-fs-title);
   line-height: 1.25;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.014em;
 }
 .portal .text-h3 {
-  font-size: 1.0625rem; /* 17px card titles */
+  font-size: 1.0625rem;
   line-height: 1.35;
+  letter-spacing: -0.006em;
 }
-.portal .font-serif {
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif; /* app UI uses one typeface */
-}
-/* The few brand moments in the portal (page titles, the greeting, key
-   figures) use the website's display face, so the portal and the public site
-   read as one school. Everything else stays Inter. */
+/* One typeface in the app: Inter for titles too (the public website keeps its display face). */
+.portal .font-serif,
 .portal .portal-display {
-  font-family: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.015em;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  letter-spacing: -0.014em;
 }
 html[data-readable-font] .portal .portal-display {
   font-family: inherit;
 }
-/* Hub tabs: one segmented control (as in Ihsan LMS), the page you're on lifted in white. */
-.hub-seg {
-  display: inline-flex;
-  min-width: max-content;
-  gap: 2px;
-  padding: 4px;
-  border-radius: 0.875rem;
-  background: color-mix(in oklab, var(--color-gold-light) 75%, var(--portal-canvas));
+/* Type roles, so a title is a title on every page (DESIGN.md "Type"). */
+.portal .t-title {
+  font-size: var(--portal-fs-title);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.016em;
+  color: var(--color-ink-900);
 }
-.hub-seg a {
-  display: inline-flex;
-  min-height: 2.5rem;
+.portal .t-section {
+  font-size: var(--portal-fs-section);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.006em;
+  color: var(--color-ink-900);
+}
+.portal .t-eyebrow {
+  font-size: var(--portal-fs-eyebrow);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-500);
+}
+.portal .t-meta {
+  font-size: var(--portal-fs-meta);
+  line-height: 1.4;
+  color: var(--color-ink-500);
+}
+.portal .t-num {
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+/* Section navigation (HubTabs in PageHeader.tsx): the pages of the category you are in, as a
+   quiet row of text tabs under the top bar. The page you are on is marked by a forest underline
+   and darker text, not a filled pill. */
+.hub-nav {
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--color-gold-light);
+}
+.hub-nav__label {
+  display: none;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 0.625rem;
-  padding: 0 0.875rem;
+  padding-right: 1.25rem;
+  margin: 0.625rem 0;
+  border-right: 1px solid var(--color-gold-light);
+  white-space: nowrap;
+}
+@media (min-width: 1024px) {
+  .hub-nav__label {
+    display: inline-flex;
+  }
+}
+.hub-seg {
+  display: flex;
+  min-width: max-content;
+  gap: 0.25rem;
+}
+.hub-seg a {
+  position: relative;
+  display: inline-flex;
+  min-height: 2.875rem;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem 0.375rem 0 0;
+  padding: 0 0.625rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: color-mix(in oklab, var(--color-ink) 72%, transparent);
-  transition: background 120ms, color 120ms, box-shadow 120ms;
+  color: var(--color-ink-500);
+  transition: color var(--portal-fast) var(--portal-ease), background-color var(--portal-fast) var(--portal-ease);
+}
+.hub-seg a svg {
+  color: color-mix(in oklab, var(--color-ink-500) 80%, transparent);
+  transition: color var(--portal-fast) var(--portal-ease);
 }
 .hub-seg a:hover {
   color: var(--color-ink-900);
-  background: color-mix(in oklab, var(--color-white) 55%, transparent);
+  background: color-mix(in oklab, var(--portal-hover) 60%, transparent);
+}
+.hub-seg a::after {
+  content: "";
+  position: absolute;
+  left: 0.625rem;
+  right: 0.625rem;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: var(--color-forest-700);
+  transform: scaleX(0);
+  transition: transform var(--portal-med) var(--portal-ease);
 }
 .hub-seg a[aria-current="page"] {
-  background: var(--color-white);
-  color: var(--color-forest-900);
+  color: var(--color-ink-900);
   font-weight: 600;
-  box-shadow: 0 1px 2px rgba(var(--portal-shadow-rgb), 0.12), 0 0 0 1px rgba(var(--portal-shadow-rgb), 0.04);
 }
-/* Form controls: white, same corner radius as buttons, and a clear teal
-   focus ring (a thin border colour change alone is easy to miss). */
+.hub-seg a[aria-current="page"] svg {
+  color: var(--color-forest-700);
+}
+.hub-seg a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+}
+/* Form controls: one look. Same corner radius as buttons and a clear forest focus ring. */
 .portal :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea) {
   background-color: var(--color-white);
-  border-radius: 0.5rem;
-  transition: border-color 120ms, box-shadow 120ms;
+  border-radius: var(--radius-lg);
+  transition: border-color var(--portal-fast), box-shadow var(--portal-fast);
 }
 .portal :is(input, select, textarea):focus-visible {
   outline: none;
-  border-color: var(--color-teal-700);
+  border-color: var(--color-forest-700);
   box-shadow: 0 0 0 3px var(--portal-focus-ring);
+}
+.portal :is(input[type="checkbox"], input[type="radio"]) {
+  accent-color: var(--color-forest-700);
 }
 /* Dropdowns: one consistent look (soft chevron, roomy padding) instead of the browser default. */
 .portal select:not([multiple]):not([size]) {
   appearance: none;
   -webkit-appearance: none;
   padding-right: 2.25rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b7280' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 7.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%235b6760' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 7.5l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.7rem center;
   background-size: 1.1rem;
   cursor: pointer;
 }
 .portal select:not([multiple]):not([size]):hover:not(:disabled) {
-  border-color: var(--color-teal-700);
+  border-color: color-mix(in oklab, var(--color-ink-900) 28%, var(--color-gold-light));
 }
 .portal select:disabled {
   opacity: 0.6;
 }
-.portal :is(button, a):focus-visible {
-  outline: 2px solid var(--color-teal-700);
+.portal :is(button, a, [role="button"], [role="tab"], summary):focus-visible {
+  outline: 2px solid var(--color-forest-700);
   outline-offset: 2px;
 }
 .portal button:disabled {
   cursor: not-allowed;
 }
-/* Top bar: frosted white strip, quiet ghost buttons. */
+/* Button feedback: a press settles the control by a pixel (never on reduced motion). */
+@media (prefers-reduced-motion: no-preference) {
+  .portal :is(.portal-btn, .portal-topbar-btn):active:not(:disabled) {
+    transform: translateY(0.5px);
+  }
+}
+
+@layer components {
+/* ── Top bar: part of the canvas (no white strip), a hairline under it, and one family of
+   quiet controls. Report a concern keeps its own red outline so it is never lost among them. */
 .portal-topbar {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: saturate(1.4) blur(10px);
+  background: color-mix(in oklab, var(--portal-canvas) 90%, transparent);
+  backdrop-filter: saturate(1.2) blur(8px);
   border-bottom: 1px solid var(--color-gold-light);
 }
 .portal-topbar-btn {
   display: inline-flex;
-  height: 2.5rem;
-  min-width: 2.5rem;
+  height: 2.25rem;
+  min-width: 2.25rem;
   align-items: center;
   justify-content: center;
-  gap: 0.375rem;
-  border-radius: 0.75rem;
-  border: 1px solid var(--color-gold-light);
-  background: var(--color-white);
-  padding: 0 0.75rem;
-  transition: background 120ms, border-color 120ms;
+  gap: 0.4375rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-ink-700);
+  transition: background-color var(--portal-fast) var(--portal-ease), border-color var(--portal-fast) var(--portal-ease), color var(--portal-fast) var(--portal-ease);
 }
 .portal-topbar-btn:hover {
   background: var(--portal-hover);
+  color: var(--color-ink-900);
 }
-/* Square icon-only button (sidebar collapse, menu, sign out). */
+.portal-topbar-btn > svg {
+  height: 1.0625rem;
+  width: 1.0625rem;
+  color: var(--color-ink-500);
+}
+.portal-topbar-btn:hover > svg {
+  color: var(--color-ink-900);
+}
+/* A control that is "on" (clocked in): a soft forest surface. */
+.portal-topbar-btn--on {
+  background: var(--color-forest-50);
+  border-color: var(--color-forest-200);
+  color: var(--color-forest-900);
+}
+.portal-topbar-btn--on:hover {
+  background: var(--color-forest-100);
+}
+/* Safeguarding: always visible, always distinct (owner: never buried in a menu). */
+.portal-topbar-btn--concern {
+  border-color: color-mix(in oklab, #b42318 32%, transparent);
+  color: #a3241a;
+  background: color-mix(in oklab, #b42318 4%, transparent);
+}
+.portal-topbar-btn--concern > svg {
+  color: currentColor;
+}
+.portal-topbar-btn--concern:hover {
+  background: color-mix(in oklab, #b42318 9%, transparent);
+  color: #8a1c13;
+}
+.portal-topbar-sep {
+  width: 1px;
+  height: 1.25rem;
+  margin: 0 0.25rem;
+  background: var(--color-gold-light);
+}
+/* Search: a proportionate field, with its keyboard shortcut shown. */
+.portal-search {
+  display: flex;
+  height: 2.25rem;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gold-light);
+  background: var(--color-white);
+  padding: 0 0.5rem 0 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--color-ink-500);
+  transition: border-color var(--portal-fast) var(--portal-ease), box-shadow var(--portal-fast) var(--portal-ease);
+}
+.portal-search:hover {
+  border-color: color-mix(in oklab, var(--color-ink-900) 22%, var(--color-gold-light));
+  color: var(--color-ink-700);
+}
+.portal-kbd {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  border-radius: 0.3125rem;
+  border: 1px solid var(--color-gold-light);
+  background: var(--portal-canvas);
+  padding: 0.0625rem 0.375rem;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--color-ink-500);
+}
+/* Square icon-only button (sidebar collapse, menu, close). */
 .portal-icon-btn {
   display: inline-flex;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.25rem;
+  width: 2.25rem;
   align-items: center;
   justify-content: center;
-  border-radius: 0.75rem;
-  color: rgb(27 30 33 / 0.6);
-  transition: background 120ms, color 120ms;
+  border-radius: var(--radius-lg);
+  color: var(--color-ink-500);
+  transition: background-color var(--portal-fast) var(--portal-ease), color var(--portal-fast) var(--portal-ease);
+}
+.portal-icon-btn > svg {
+  height: 1.125rem;
+  width: 1.125rem;
 }
 .portal-icon-btn:hover {
   background: var(--portal-hover);
@@ -380,174 +587,164 @@ html[data-readable-font] .portal .portal-display {
 .portal-hero {
   background: var(--portal-hero-bg);
 }
+
+/* ── Sidebar (PortalSidebar.tsx): soft stone, hairline edge. Group labels are small capitals;
+   pages are 34px rows with a 16px outline icon; the page you are on is lifted onto the
+   surface colour with forest text and a short gold marker at the edge. */
 .portal-sidebar {
+  background: var(--portal-sidebar);
   border-right: 1px solid var(--color-gold-light);
 }
-
-/* Sidebar rows. One row style for every destination: 44px tall on touch
-   screens (the phone drawer), 40px on desktop. Group headings are small
-   uppercase labels that fold their group away. */
 .portal-nav-label {
-  padding: 0.75rem 0.75rem 0.375rem;
-  font-size: 0.6875rem;
+  padding: 1rem 0.625rem 0.375rem;
+  font-size: var(--portal-fs-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--color-ink) 62%, transparent);
+  color: var(--color-ink-500);
 }
-.portal-nav-row {
-  display: flex;
-  min-height: 2.75rem;
-  align-items: center;
-  gap: 0.75rem;
-  border-radius: 0.625rem;
-  padding: 0.25rem 0.625rem;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: color-mix(in oklab, var(--color-ink) 80%, transparent);
-  transition: background 120ms, color 120ms;
-}
-@media (min-width: 1024px) {
-  .portal-nav-row {
-    min-height: 2.5rem;
-  }
-}
-.portal-nav-row:hover {
-  background: var(--portal-hover);
-  color: var(--color-ink-900);
-}
-.portal-nav-row--active,
-.portal-nav-row--active:hover {
+.portal-nav-row,
+.portal-nav-cat,
+.portal-nav-leaf {
   position: relative;
-  background: var(--color-forest-100);
-  color: var(--color-forest-900);
-  font-weight: 600;
-}
-/* The one place gold marks navigation: a short bar beside the page you're on. */
-.portal-nav-row--active::before {
-  content: "";
-  position: absolute;
-  left: -0.5rem;
-  top: 0.5rem;
-  bottom: 0.5rem;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
-  background: var(--portal-accent);
-}
-.portal-nav-group {
-  display: flex;
-  width: 100%;
-  min-height: 2.75rem;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 0.5rem;
-  padding: 0 0.75rem;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: color-mix(in oklab, var(--color-ink) 58%, transparent);
-  transition: color 120ms, background 120ms;
-}
-@media (min-width: 1024px) {
-  .portal-nav-group {
-    min-height: 2rem;
-  }
-}
-.portal-nav-group:hover {
-  color: var(--color-ink-900);
-  background: var(--portal-hover);
-}
-.portal-nav-panel {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 200ms ease-out;
-}
-.portal-nav-panel[data-open] {
-  grid-template-rows: 1fr;
-}
-.portal-nav-panel[data-open] > ul {
-  padding-top: 0.125rem;
-}
-/* Staff menu categories (nav.ts NAV_CATEGORIES): a heading row that opens like
-   a dropdown, its pages underneath as plain text rows on a hairline. */
-.portal-nav-cat {
   display: flex;
   width: 100%;
   min-height: 2.75rem;
   align-items: center;
   gap: 0.625rem;
-  border-radius: 0.625rem;
-  padding: 0.25rem 0.5rem 0.25rem 0.625rem;
+  border-radius: var(--radius-lg);
+  padding: 0.25rem 0.625rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: color-mix(in oklab, var(--color-ink) 80%, transparent);
-  transition: background 120ms, color 120ms;
+  line-height: 1.3;
+  color: var(--color-ink-700);
+  transition: background-color var(--portal-fast) var(--portal-ease), color var(--portal-fast) var(--portal-ease), box-shadow var(--portal-fast) var(--portal-ease);
 }
 @media (min-width: 1024px) {
+  .portal-nav-row,
   .portal-nav-cat {
-    min-height: 2.5rem;
+    min-height: 2.125rem;
+  }
+  .portal-nav-leaf {
+    min-height: 2rem;
   }
 }
-.portal-nav-cat:hover {
+.portal-nav-leaf {
+  font-weight: 450;
+  color: var(--color-ink-500);
+}
+.portal-nav-row:hover,
+.portal-nav-cat:hover,
+.portal-nav-leaf:hover {
   background: var(--portal-hover);
   color: var(--color-ink-900);
 }
-.portal-nav-cat .portal-tile {
-  background: transparent;
-  color: color-mix(in oklab, var(--color-ink) 55%, transparent);
+.portal-nav-row--active,
+.portal-nav-row--active:hover,
+.portal-nav-leaf--active,
+.portal-nav-leaf--active:hover {
+  background: var(--color-white);
+  box-shadow: var(--portal-shadow-lift);
+  color: var(--color-forest-900);
+  font-weight: 600;
+}
+/* The one place gold marks navigation: a short bar at the sidebar's edge beside the page you're on. */
+.portal-nav-row--active::before,
+.portal-nav-leaf--active::before {
+  content: "";
+  position: absolute;
+  left: -0.75rem;
+  top: 50%;
+  height: 1rem;
+  width: 3px;
+  transform: translateY(-50%);
+  border-radius: 0 3px 3px 0;
+  background: var(--portal-accent);
+}
+.portal-nav-leaf--active::before {
+  left: -0.5rem;
+  border-radius: 3px;
+}
+.portal-nav-icon {
+  display: flex;
+  height: 1.25rem;
+  width: 1.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink-500);
+  transition: color var(--portal-fast) var(--portal-ease);
+}
+.portal-nav-icon > svg {
+  height: 1rem;
+  width: 1rem;
+  stroke-width: 1.85;
+}
+:is(.portal-nav-row, .portal-nav-cat):hover .portal-nav-icon {
+  color: var(--color-ink-900);
+}
+.portal-nav-row--active .portal-nav-icon,
+.portal-nav-cat--here .portal-nav-icon {
+  color: var(--color-forest-700);
 }
 .portal-nav-cat--here {
   color: var(--color-forest-900);
   font-weight: 600;
 }
-.portal-nav-cat--here .portal-tile {
-  color: var(--color-forest-700);
+.portal-nav-chevron {
+  height: 0.875rem;
+  width: 0.875rem;
+  flex-shrink: 0;
+  color: var(--color-ink-500);
+  transition: transform var(--portal-med) var(--portal-ease);
 }
+.portal-nav-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--portal-med) var(--portal-ease);
+}
+.portal-nav-panel[data-open] {
+  grid-template-rows: 1fr;
+}
+/* The pages of an open category, hung from a hairline (drawn inside the box, so the
+   gold marker of the page you are on can sit on it without being clipped). */
 .portal-nav-tree {
-  margin-left: 1.625rem;
-  border-left: 1px solid var(--color-gold-light);
-  padding-left: 0.375rem;
+  margin-left: 1.25rem;
+  padding-left: 0.5rem;
+  background: linear-gradient(var(--color-gold-light), var(--color-gold-light)) no-repeat 0 0 / 1px 100%;
 }
 .portal-nav-panel[data-open] > .portal-nav-tree {
-  padding-bottom: 0.25rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.375rem;
 }
-.portal-nav-leaf {
-  display: flex;
-  min-height: 2.75rem;
+/* Counts in the menu: a quiet number for things to get round to (messages, marking), a small
+   red pill only for things that are late or missing. */
+.portal-nav-count {
+  display: inline-flex;
+  min-width: 1.25rem;
+  height: 1.125rem;
+  flex-shrink: 0;
   align-items: center;
-  gap: 0.5rem;
-  border-radius: 0.5rem;
-  padding: 0.25rem 0.625rem;
-  font-size: 0.875rem;
-  color: color-mix(in oklab, var(--color-ink) 75%, transparent);
-  transition: background 120ms, color 120ms;
-}
-@media (min-width: 1024px) {
-  .portal-nav-leaf {
-    min-height: 2.125rem;
-  }
-}
-.portal-nav-leaf:hover {
-  background: var(--portal-hover);
-  color: var(--color-ink-900);
-}
-.portal-nav-leaf--active,
-.portal-nav-leaf--active:hover {
-  position: relative;
-  background: var(--color-forest-100);
-  color: var(--color-forest-900);
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 0.375rem;
+  font-size: 0.6875rem;
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-700);
+  background: var(--portal-sunken);
 }
-.portal-nav-leaf--active::before {
-  content: "";
-  position: absolute;
-  left: -0.5rem;
-  top: 0.4rem;
-  bottom: 0.4rem;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
-  background: var(--portal-accent);
+.portal-nav-count--alert {
+  color: #fff;
+  background: #b42318;
+}
+.portal-nav-dot {
+  height: 0.4375rem;
+  width: 0.4375rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #b42318;
+  box-shadow: 0 0 0 2px var(--portal-sidebar);
 }
 /* Pin a page to the top of the menu: shown on hover or keyboard focus, always on touch screens. */
 .portal-nav-pin {
@@ -555,15 +752,15 @@ html[data-readable-font] .portal .portal-display {
   right: 0.25rem;
   top: 50%;
   display: flex;
-  height: 2rem;
-  width: 2rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transform: translateY(-50%);
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
-  color: color-mix(in oklab, var(--color-ink) 60%, transparent);
+  border-radius: 0.375rem;
+  color: var(--color-ink-500);
   opacity: 0;
-  transition: opacity 120ms, background 120ms, color 120ms;
+  transition: opacity var(--portal-fast), background-color var(--portal-fast), color var(--portal-fast);
 }
 .portal-nav-item:hover .portal-nav-pin,
 .portal-nav-item:focus-within .portal-nav-pin,
@@ -571,7 +768,7 @@ html[data-readable-font] .portal .portal-display {
   opacity: 1;
 }
 .portal-nav-pin:hover {
-  background: var(--portal-hover);
+  background: var(--portal-sunken);
   color: var(--color-ink-900);
 }
 @media (hover: none) {
@@ -579,15 +776,118 @@ html[data-readable-font] .portal .portal-display {
     opacity: 0.7;
   }
 }
+/* Collapsed rail: icon buttons, a tooltip with the page's name on hover or focus. */
+.portal-rail-btn {
+  position: relative;
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  color: var(--color-ink-500);
+  transition: background-color var(--portal-fast) var(--portal-ease), color var(--portal-fast) var(--portal-ease);
+}
+.portal-rail-btn > svg {
+  height: 1.125rem;
+  width: 1.125rem;
+}
+.portal-rail-btn:hover {
+  background: var(--portal-hover);
+  color: var(--color-ink-900);
+}
+.portal-rail-btn[aria-current="page"] {
+  background: var(--color-white);
+  box-shadow: var(--portal-shadow-lift);
+  color: var(--color-forest-700);
+}
+.portal-rail-btn[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  left: -0.75rem;
+  top: 50%;
+  height: 1rem;
+  width: 3px;
+  transform: translateY(-50%);
+  border-radius: 0 3px 3px 0;
+  background: var(--portal-accent);
+}
+.portal-rail-dot {
+  position: absolute;
+  right: 0.4375rem;
+  top: 0.4375rem;
+  height: 0.4375rem;
+  width: 0.4375rem;
+  border-radius: 999px;
+  background: #b42318;
+  box-shadow: 0 0 0 2px var(--portal-sidebar);
+}
+.portal-tip {
+  position: fixed;
+  z-index: 60;
+  pointer-events: none;
+  border-radius: 0.375rem;
+  background: var(--color-ink-900);
+  padding: 0.3125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--portal-canvas);
+  box-shadow: var(--portal-shadow-pop);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .portal-tip {
+    animation: portalTipIn 120ms var(--portal-ease);
+  }
+}
+@keyframes portalTipIn {
+  from { opacity: 0; transform: translateX(-3px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+/* The profile button at the foot of the sidebar. */
+.portal-profile {
+  display: flex;
+  width: 100%;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: var(--radius-lg);
+  padding: 0.375rem;
+  text-align: left;
+  transition: background-color var(--portal-fast) var(--portal-ease);
+}
+.portal-profile:hover,
+.portal-profile[aria-expanded="true"] {
+  background: var(--portal-hover);
+}
+.portal-avatar {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--color-forest-700);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f7f5ef;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 0 2px var(--portal-sidebar), 0 0 0 3px var(--color-gold-300);
+}
 @media (prefers-reduced-motion: reduce) {
-  .portal-nav-pin {
+  .portal-nav-pin,
+  .portal-nav-panel,
+  .portal-nav-chevron {
     transition: none;
   }
 }
 /* Guided tour (tour/TourHost.tsx): the page dims, with a cut-out round the thing being explained. */
 .tour-spotlight {
   position: absolute;
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
   box-shadow: 0 0 0 9999px color-mix(in oklab, var(--color-ink-900) 58%, transparent);
   outline: 2px solid var(--portal-accent, var(--color-gold-500));
   outline-offset: 0;
@@ -606,7 +906,7 @@ html[data-readable-font] .portal .portal-display {
     transition: none;
   }
 }
-/* Plain text links (the "Switch portal" list). */
+/* Plain text links (older lists). */
 .portal-nav-sub {
   display: flex;
   min-height: 2.75rem;
@@ -615,9 +915,9 @@ html[data-readable-font] .portal .portal-display {
   border-left: 2px solid transparent;
   padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
-  color: rgb(27 30 33 / 0.7);
-  border-radius: 0 0.5rem 0.5rem 0;
-  transition: background 120ms, color 120ms;
+  color: var(--color-ink-700);
+  border-radius: 0 0.375rem 0.375rem 0;
+  transition: background-color var(--portal-fast), color var(--portal-fast);
 }
 @media (min-width: 1024px) {
   .portal-nav-sub {
@@ -630,25 +930,35 @@ html[data-readable-font] .portal .portal-display {
 }
 .portal-nav-sub--active,
 .portal-nav-sub--active:hover {
-  border-left-color: var(--color-teal-700);
-  background: var(--color-teal-100);
-  color: var(--color-teal-900);
+  border-left-color: var(--color-forest-700);
+  background: var(--color-forest-50);
+  color: var(--color-forest-900);
   font-weight: 600;
 }
 
-/* Phone tab bar: an icon in a pill that fills with its colour when it is the page you are on. */
+/* Phone tab bar: an icon over a short label; the page you are on gets a forest icon and a
+   short gold marker above it. */
+.portal-tabbar {
+  background: color-mix(in oklab, var(--portal-canvas) 94%, transparent);
+  backdrop-filter: saturate(1.2) blur(8px);
+}
 .portal-tabbar-pill {
+  position: relative;
   display: flex;
-  height: 1.875rem;
-  width: 3.25rem;
+  height: 1.75rem;
+  width: 3rem;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  transition: background 150ms, color 150ms;
+  border-radius: 999px;
+  transition: background-color var(--portal-fast), color var(--portal-fast);
+}
+.portal-tabbar-pill > svg {
+  height: 1.25rem;
+  width: 1.25rem;
 }
 .portal-tabbar-pill--on {
-  background: var(--tile-bg);
-  color: var(--tile-fg);
+  background: var(--color-forest-100);
+  color: var(--color-forest-800);
 }
 
 /* Touch screens: the top bar's buttons reach the 44px minimum. */
@@ -663,20 +973,25 @@ html[data-readable-font] .portal .portal-display {
   }
 }
 
+}
 /* Panels: a hairline and no resting shadow (shadows are for things that
    float: menus, dialogs). A linked panel shows it is clickable by its border. */
 .portal .rounded-2xl.border.bg-white {
   box-shadow: none;
   border-color: var(--color-gold-light);
-  transition: border-color 120ms, background-color 120ms;
+  transition: border-color var(--portal-fast), background-color var(--portal-fast);
 }
 a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
-  border-color: color-mix(in oklab, var(--color-forest-700) 45%, var(--color-gold-light));
+  border-color: color-mix(in oklab, var(--color-forest-700) 40%, var(--color-gold-light));
 }
 /* A panel inside a panel loses its own frame (no cards inside cards). */
 .portal .rounded-2xl.border.bg-white .rounded-2xl.border.bg-white {
   border-color: transparent;
   background: var(--color-cream);
+}
+/* Anything that floats (menus, popovers, the search palette, dialogs) shares one shadow. */
+.portal :is(.shadow-lg, .shadow-xl, .shadow-2xl, .shadow-warm) {
+  box-shadow: var(--portal-shadow-pop);
 }
 
 /* Faint ruled-paper lines for the Weekly Tarbiyah Note showcase card. */
@@ -921,6 +1236,9 @@ html[data-contrast] a:not([class]) {
 html[data-dark] .portal {
   color-scheme: dark;
   --portal-canvas: #16181a;
+  --portal-surface: #1f2225;
+  --portal-sidebar: #1a1d1f;
+  --portal-sunken: #25292c;
   --color-white: #1f2225; /* cards */
   --color-cream: #292c2f; /* tint surface */
   --portal-hover: #2d3135;
@@ -947,6 +1265,7 @@ html[data-dark] .portal {
   --color-forest-50: #1a2620;
   --color-forest-100: #1f3329; /* selected surface */
   --color-forest-200: #2c4a3b;
+  --color-forest-300: #3f6a54;
   --color-forest-500: #5fae86;
   --color-forest-600: #7cc39e;
   --color-forest-700: #9bd3b4; /* as text and links */

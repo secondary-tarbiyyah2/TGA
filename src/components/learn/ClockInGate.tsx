@@ -291,9 +291,9 @@ export function ClockChip({ userId, roles }: { userId: string; roles: RoleGrant[
         }}
         aria-label="Clock in"
         title="Clock in"
-        className="flex h-9 min-w-9 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-gold-light px-2 text-sm font-medium text-ink/70 hover:bg-cream disabled:opacity-50 sm:px-3"
+        className="portal-topbar-btn whitespace-nowrap disabled:opacity-50"
       >
-        <Icon name="clock" className="h-4 w-4 sm:hidden" />
+        <Icon name="clock" />
         <span className="hidden sm:inline">Clock in</span>
       </button>
     );
@@ -320,11 +320,9 @@ export function ClockChip({ userId, roles }: { userId: string; roles: RoleGrant[
         aria-expanded={open}
         aria-haspopup="dialog"
         title="You are clocked in"
-        className="flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full bg-teal-100 px-3 text-sm font-medium tabular-nums text-teal-900 hover:bg-teal-100/70"
+        className="portal-topbar-btn portal-topbar-btn--on whitespace-nowrap tabular-nums"
       >
-        <span aria-hidden="true" className="text-teal-500">
-          ●
-        </span>
+        <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-forest-500 motion-safe:animate-pulse" />
         <span className="hidden sm:inline">Clocked in</span> {elapsed}
       </button>
       {open && (

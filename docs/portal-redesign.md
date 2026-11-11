@@ -1,4 +1,45 @@
-# Portal redesign (owner brief, 9 Nov 2026)
+# Portal redesign
+
+> **Current source of truth (10 Nov 2026, second pass).** The owner's brief
+> `docs/owner-briefs/2026-11-10-ui-ux-redesign.md` replaced the visual language below. The rules now live in
+> `DESIGN.md` ("Portal design system") and in the tokens of `src/app/globals.css` (`.portal`). Read "Second pass"
+> first; the earlier sections are kept as history (their phase 2 colour table and "Type" rules are superseded).
+
+## Second pass (owner brief, 10 Nov 2026): audit, direction and status
+
+**Audit (what the owner disliked, and why).**
+- It read as an admin template in green: white rounded cards everywhere, a frosted white top bar of pill buttons, a
+  segmented pill strip for every category's pages, a large coloured icon tile beside every page title, the website's
+  display face (Space Grotesk) for titles, and a breadcrumb that repeated the tab strip above it.
+- Space was spent in the wrong places: a 60px top bar, then a 56px tab strip, then a breadcrumb, a 48px tile and a
+  30px title before any content; dense tables and lists below.
+- The Curriculum map showed loading bars shaped like the final page, then a list (one subject) or a squashed six-column
+  table (whole year), with no sense of the year as a timeline, and no unit detail (objectives, what it builds on and
+  leads to) though the planner holds it (`curriculum_units`: `focus`, `skills`, `key_terms`, `assess`, `prereq`,
+  `leads_to`, `weeks`).
+- Syllabus sent people round in circles: a subject grid "page", then a subject "page", and choosing a unit on the
+  long-term plan jumped to another view and scrolled away.
+
+**Constraints kept.** Static export plus Supabase from the browser; every route, permission (`LearnGate`), RLS-scoped
+query and workflow unchanged; data only from the database or the published syllabus index; the tour's `data-tour`
+targets and the portal guide's `data-guide` attributes kept; no new dependencies (Inter was already self-hosted).
+
+**Direction.** See `DESIGN.md` "Portal design system": ivory canvas, stone sidebar, hairlines, Inter, forest green for
+action and location, gold only as a marker, one status language (dot and word), short calm motion.
+
+**Status.**
+1. [x] Tokens, typography and shell (PR "Portal redesign 2: tokens, type and shell"): new palette and type roles in
+   `.portal`; sidebar on stone with icon rail and tooltips, profile button with account menu (switch portal and sign
+   out moved there); top bar on the canvas with search and shortcut, clock-in, display, feedback, Report a concern in
+   its own red outline, notifications; category pages as underline tabs (`HubTabs`); `PageHeader` without the icon tile
+   or a repeated breadcrumb; buttons, inputs and chips refined at the source (`ui.tsx`); `Status` for the status
+   language.
+2. [ ] Curriculum navigation and Curriculum map (six half terms as a timeline; one subject and whole year).
+3. [ ] Syllabus as one page (subject, year, view and unit all in place; old links still work).
+4. [ ] Component consistency pass (tabs, empty and loading states, dialogs, menus, status chips) and the other
+   curriculum pages.
+
+## First pass (owner brief, 9 Nov 2026)
 
 The owner asked for a full rethink of the learning portal (learn.tarbiyyah.co.uk), not a prettier version of the
 current one. It must "feel like a proper, professionally engineered education management platform, not a website

@@ -1,0 +1,59 @@
+{
+ "id": "mathematics-y11-revision-exam-style-question-set-portal-workshee-l84",
+ "title": "Revision exam-style question set (lesson 84)",
+ "type": "revision set",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4MA1 Higher",
+ "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+ "lessons": [
+  84
+ ],
+ "source": "Seeded from mathematics/y11 lesson 84 (Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers))",
+ "intro": "Lesson 84: Vectors: geometric proof. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "20 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "OABC is a parallelogram with OA = a and OC = c. M is the midpoint of AB and N is on CB with CN : NB = 2 : 1. (a) Find AB, OM and ON in terms of a and c [4] (b) Find MN [2] (c) X is on OB with OX : XB = 3 : 1. Find OX [2] (d) P is the point with OP = 2a + c. Prove that O, M and P are collinear [4]",
+     "a": "(a) AB = c, OM = a + ½c, ON = c + ⅔a (b) MN = ½c - ⅓a (c) OB = a + c, OX = ¾(a + c) (d) OP = 2(a + ½c) = 2 OM, sharing O, so O, M, P are collinear",
+     "model": "(a) AB = OC = c; OM = a + ½c; ON = c + ⅔a (CB = a). (b) ON - OM = ⅔a + c - a - ½c = ½c - ⅓a. (c) ¾ of OB. (d) as shown.",
+     "marks": 12
+    },
+    {
+     "q": "In triangle OAB, OA = a, OB = b. P divides OA in the ratio 1 : 2 and Q divides OB in the ratio 1 : 2. Prove PQ is parallel to AB and find the ratio PQ : AB.",
+     "a": "PQ = ⅓b - ⅓a = ⅓(b - a) = ⅓AB; parallel, ratio 1 : 3",
+     "marks": 4
+    },
+    {
+     "q": "OA = a, OB = b, M is the midpoint of AB. Find OM.",
+     "a": "½(a + b)",
+     "model": "OM = OA + ½AB = a + ½(b - a) = ½a + ½b.",
+     "marks": 1
+    },
+    {
+     "q": "Show that 6a - 9b is parallel to 2a - 3b.",
+     "a": "6a - 9b = 3(2a - 3b)",
+     "marks": 2
+    },
+    {
+     "q": "AB = 3a + b and BC = 6a + 2b. What can you say about A, B and C?",
+     "a": "BC = 2AB and they share B, so A, B, C are collinear",
+     "marks": 2
+    },
+    {
+     "q": "To prove collinear you need a multiple AND",
+     "a": "A) a shared point",
+     "options": [
+      "a shared point",
+      "equal lengths",
+      "a right angle"
+     ],
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

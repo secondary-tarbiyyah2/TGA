@@ -1,0 +1,39 @@
+{
+ "id": "mathematics-y4-paper-number-lines-zoomed-in-e-g-0-3-to-0-4",
+ "title": "Paper number lines zoomed in (e.g. 0.3 to 0.4)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y4",
+ "unit": "Spring 2: Fractions; decimals (a)",
+ "lessons": [
+  55
+ ],
+ "source": "Seeded from mathematics/y4 lesson 55 (Paper number lines zoomed in (e.g. 0.3 to 0.4))",
+ "intro": "Lesson 55: Hundredths on a number line.",
+ "blocks": [
+  {
+   "h": "Number lines"
+  },
+  {
+   "grid": {
+    "kind": "numberline",
+    "min": 0,
+    "max": 20,
+    "count": 3
+   }
+  },
+  {
+   "h": "Blank number lines to label"
+  },
+  {
+   "grid": {
+    "kind": "numberline",
+    "min": 0,
+    "max": 10,
+    "blank": true,
+    "count": 3
+   }
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "id": "mathematics-y11-revision-exam-style-question-set-portal-workshee-l91",
+ "title": "Revision exam-style question set (lesson 91)",
+ "type": "revision set",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4MA1 Higher",
+ "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+ "lessons": [
+  91
+ ],
+ "source": "Seeded from mathematics/y11 lesson 91 (Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers))",
+ "intro": "Lesson 91: Calculus: turning points and kinematics. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "20 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "(a) Turning points of y = 2x³ - 3x² - 12x + 5, with type [5] (b) s = t³ - 9t² + 24t: times at rest and acceleration at each [4] (c) An open box is made from a 12 cm square by cutting squares of side x from each corner. V = x(12 - 2x)². Find x for maximum volume and the volume [4]",
+     "a": "(a) (-1, 12) maximum, (2, -15) minimum (b) t = 2 (a = -6), t = 4 (a = 6) (c) x = 2, V = 128 cm³",
+     "model": "(a) 6x² - 6x - 12 = 6(x - 2)(x + 1); y(-1) = -2 - 3 + 12 + 5 = 12; y(2) = 16 - 12 - 24 + 5 = -15. (b) v = 3t² - 18t + 24 = 3(t - 2)(t - 4); a = 6t - 18. (c) V = 144x - 48x² + 4x³, dV/dx = 144 - 96x + 12x² = 12(x - 2)(x - 6); x = 6 gives no box, so x = 2, V = 2 × 8² = 128.",
+     "marks": 13
+    },
+    {
+     "q": "Show that y = x³ + 3x has no turning points.",
+     "a": "dy/dx = 3x² + 3 > 0 for all x, never 0",
+     "marks": 3
+    },
+    {
+     "q": "Find the turning point of y = 5 + 6x - x² and say whether it is a maximum or minimum.",
+     "a": "(3, 14), maximum",
+     "model": "dy/dx = 6 - 2x = 0, x = 3, y = 5 + 18 - 9 = 14. Negative x² term: n-shaped, so a maximum.",
+     "marks": 1
+    },
+    {
+     "q": "s = 2t² - 8t + 3. Find v when t = 5.",
+     "a": "12 m/s",
+     "marks": 1
+    },
+    {
+     "q": "v = 20 - 4t². Find the acceleration at t = 2.",
+     "a": "-16 m/s²",
+     "marks": 1
+    },
+    {
+     "q": "At a turning point dy/dx =",
+     "a": "A) 0",
+     "options": [
+      "0",
+      "1",
+      "the y value"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Answer the ponder question.",
+     "a": "15 m out from the wall and 30 m along it: 450 m².",
+     "marks": 2
+    }
+   ]
+  }
+ ]
+}

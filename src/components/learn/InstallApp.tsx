@@ -77,21 +77,24 @@ export function InstallAppSetup() {
 export function InstallAppLink({ onNavigate, compact = false }: { onNavigate?: () => void; compact?: boolean }) {
   const { standalone, canPrompt, install } = useInstallApp();
   if (standalone) return null;
-  const cls = `portal-nav-row ${compact ? "justify-center" : ""}`;
-  const inner = (
+  const cls = compact ? "portal-rail-btn" : "portal-nav-row";
+  const inner = compact ? (
+    <Icon name="download" />
+  ) : (
     <>
-      <span className="portal-tile tile-gold" aria-hidden="true">
+      <span className="portal-nav-icon" aria-hidden="true">
         <Icon name="download" />
       </span>
-      {!compact && <span className="min-w-0 flex-1 truncate">Install the app</span>}
+      <span className="min-w-0 flex-1 truncate">Install the app</span>
     </>
   );
+  const tip = compact ? { "data-tip": "Install the app", "aria-label": "Install the app" } : {};
   return canPrompt ? (
-    <button type="button" className={cls} onClick={() => void install()} title="Install the TGA Portal as an app">
+    <button type="button" className={cls} onClick={() => void install()} title={compact ? undefined : "Install the TGA Portal as an app"} {...tip}>
       {inner}
     </button>
   ) : (
-    <Link href="/install" className={cls} onClick={onNavigate} title="Install the TGA Portal as an app">
+    <Link href="/install" className={cls} onClick={onNavigate} title={compact ? undefined : "Install the TGA Portal as an app"} {...tip}>
       {inner}
     </Link>
   );
