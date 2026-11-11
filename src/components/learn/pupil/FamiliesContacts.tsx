@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { Loading, SidePanel } from "@/components/learn/kit";
-import { Button, ButtonLink, EmptyState, Notice, Status } from "@/components/learn/ui";
+import { Button, ButtonLink, EmptyState, Notice, Status, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 import { saveCsv, toCsv } from "@/lib/learn/csv";
 import { CONTACT_SELECT, type EmergencyContact } from "./data";
@@ -141,7 +141,7 @@ export function FamiliesContacts() {
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a pupil, parent or contact" aria-label="Search" className="min-w-[12rem] flex-1 rounded-[7px] border border-gold-light bg-white px-3 py-2 text-sm" />
-            <Select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group">
+            <Select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className={`${ui.select} w-full sm:w-44`}>
               <option value="">Every year</option>
               {years.map((y) => (
                 <option key={y} value={y}>
@@ -170,7 +170,7 @@ export function FamiliesContacts() {
                       <span className="t-meta block">{f.child.year_groups?.name || "No year group"}</span>
                     </span>
                     <span className="min-w-0 flex-1 basis-56 text-sm">
-                      <span className="block truncate text-ink">{f.parent?.full_name || <span className="text-ink/60">No parent linked</span>}</span>
+                      <span className="block truncate text-ink">{f.parent?.full_name || <span className="text-ink/60">{f.child.parent_user_id ? "Parent account, no name" : "No parent linked"}</span>}</span>
                       <span className="t-meta block truncate">{f.parent?.email || ""}</span>
                     </span>
                     <span className="t-meta w-28">
@@ -231,7 +231,7 @@ export function FamiliesContacts() {
                 </p>
               ) : (
                 <p className="text-ink/70">
-                  No parent sign-in is linked.{" "}
+                  {current.child.parent_user_id ? "A parent sign-in is linked but has no name or email." : "No parent sign-in is linked."}{" "}
                   <Link href={`/admin/people?q=${encodeURIComponent(current.child.name)}`} className="font-medium text-forest-700 hover:underline">
                     Accounts and sign-ins
                   </Link>

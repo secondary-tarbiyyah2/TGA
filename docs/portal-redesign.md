@@ -478,6 +478,10 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Families and contacts (`/admin/families`, Pupils and admissions; feedback 3): counts that filter (no parent
+  linked, no parent email, no phone number, no emergency contact, only one contact, no one with parental responsibility),
+  year and search, each family beside the list with tap-to-call numbers, Edit details and Download CSV. Email delivery
+  status is not shown: the portal does not record bounces yet (would need the email provider's webhooks).
 - 2026-11-11: SEND register figures and filters (feedback 3): On the register, EHC plans, SEN support and Reviews due
   (overdue in red) on one ruled strip, each pressing through to those pupils; filters by the four areas of need, level
   and year; pupils' names open their profile (head teacher). Permissions unchanged.
