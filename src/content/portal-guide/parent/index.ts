@@ -104,10 +104,14 @@ export const PARENT_GUIDE: GuideEntry[] = [
     steps: [
       "Press New message.",
       "Search by name or child and choose who to write to.",
-      "Write your message and send it.",
-      "Open a conversation on the left to read replies.",
+      "Write your message and send it. Press Reply beside a message to answer that one.",
+      "Open a conversation on the left to read replies. Your class's groups are here too.",
     ],
-    tips: ["Worried about a child's safety? Use Report a concern instead, so it goes straight to the safeguarding team."],
+    tips: [
+      "Worried about a child's safety? Use Report a concern instead, so it goes straight to the safeguarding team.",
+      "In a class group you see the staff's messages; your replies go to the staff only, never to other families.",
+      "Choose in Account whether we email you about new messages as they arrive, once a day or never.",
+    ],
     privacy: `The people in the conversation read it. ${OVERSIGHT}`,
     related: ["/family/teachers", "/family/announcements", "/report-concern"],
     showMe: [

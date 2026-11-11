@@ -1037,7 +1037,6 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
   border-color: transparent;
   background: var(--color-cream);
 }
-<<<<<<< HEAD
 /* Things that open: menus and popovers drop in a few pixels, side panels slide in, the
    backdrop fades. Short, no bounce, and nothing at all under reduced motion. */
 @media (prefers-reduced-motion: no-preference) {
@@ -1096,8 +1095,6 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
   from { transform: translateX(-100%); }
   to { transform: translateX(290%); }
 }
-=======
->>>>>>> origin/main
 /* Anything that floats (menus, popovers, the search palette, dialogs) shares one shadow. */
 .portal :is(.shadow-lg, .shadow-xl, .shadow-2xl, .shadow-warm) {
   box-shadow: var(--portal-shadow-pop);

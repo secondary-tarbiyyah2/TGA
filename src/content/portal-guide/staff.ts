@@ -37,25 +37,28 @@ export function messagesEntry(a: Area): GuideEntry {
     href: `/${a}/messages`,
     name: "Messages",
     category: "Home",
-    purpose: head(a) ? "Conversations with families and staff across the school." : "Conversations with the families of your classes and with colleagues.",
-    when: "To reply to a parent, contact a colleague or start a conversation about a pupil.",
+    purpose: head(a) ? "Conversations and groups with families and staff across the school." : "Conversations and groups with the families of your classes and with colleagues.",
+    when: "To reply to a parent, contact a colleague, message a whole class's families or start a conversation about a pupil.",
     steps: [
-      "Press New message.",
-      "Search by name or child, then choose a person (Staff or Parents).",
-      "Write and send.",
-      "Open a conversation on the left to read and reply; Urgent ones are marked.",
+      "Press New message. Choose A person, or A group (a class's parents or pupils, a year group, a staff team, or people you pick).",
+      "Write and send. Press the paper clip to attach documents or pictures (up to 10 MB each).",
+      "Open a conversation on the left to read and reply; press Reply beside a message to quote it. Your own message can be edited or deleted for 15 minutes.",
+      "Ticks show sent, delivered and read; in a group, Seen by shows who has read it.",
+      "Search finds people, groups and words in messages. The menu at the top of a conversation mutes it or opens Group details (members, name, replies on or off).",
     ],
     tips: [
       "A safeguarding worry belongs in Report a concern, not in a message.",
+      "In a group, families and pupils see only the staff's messages and their own, never each other's. Everyone chooses in Account how often they are emailed about new messages.",
       ...(head(a) ? ["The sort button can ask AI to sort the newest parent messages; you still read and reply yourself."] : []),
     ],
     privacy: `Only the people in a conversation see it, apart from safeguarding oversight. ${OVERSIGHT_NOTE}`,
     related: [`/${a}/announcements`, "/report-concern"],
     showMe: [
       { target: "messages-new", label: "New message", say: "Start a conversation here." },
-      { target: "messages-list", label: "Conversations", say: "Every conversation, with unread counts." },
+      { target: "messages-search", label: "Search", say: "People, groups and words in messages." },
+      { target: "messages-list", label: "Conversations", say: "Every conversation and group, with unread counts." },
     ],
-    tasks: ["message a parent", "reply to a parent", "message a colleague"],
+    tasks: ["message a parent", "reply to a parent", "message a colleague", "message a class's parents", "make a group"],
   };
 }
 
