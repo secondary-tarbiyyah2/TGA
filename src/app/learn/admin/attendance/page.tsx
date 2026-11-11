@@ -1,19 +1,17 @@
 "use client";
 
 import { Loading } from "@/components/learn/kit";
-import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
-import { Register } from "@/components/learn/attendance/Register";
+import { RegisterList } from "@/components/learn/attendance/RegisterList";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { DataTable } from "@/components/learn/DataTable";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { formatDateKey, shiftDateKey, ukDaysAgo, ukToday } from "@/lib/learn/ukTime";
+import { formatDateKey, ukDaysAgo } from "@/lib/learn/ukTime";
 import { saveCsv, toCsv as buildCsv } from "@/lib/learn/csv";
-import { classBannerStyle } from "@/lib/learn/classes";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
-import { Button, StatusChip, btn, ui } from "@/components/learn/ui";
+import { Button, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
 type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
@@ -21,7 +19,7 @@ const STATUSES: { value: Status; label: string; dot: string }[] = [
   { value: "present", label: "Present", dot: "bg-green-600" },
   { value: "late", label: "Late", dot: "bg-amber-500" },
   { value: "absent", label: "Absent", dot: "bg-red-600" },
-  { value: "excused", label: "Excused", dot: "bg-slate-500" },
+  { value: "excused", label: "Authorised", dot: "bg-slate-500" },
   { value: "not_engaged", label: "Not engaged", dot: "bg-amber-800" },
   { value: "technical", label: "Couldn't connect", dot: "bg-slate-300" },
 ];
@@ -519,201 +517,19 @@ function ReportsContent() {
   );
 }
 
-type DayLesson = { id: string; classId: string; className: string; start: string; end: string };
-type RawDayLesson = {
-  id: string;
-  timetable_slots?: { class_id: string; start_time: string; end_time: string; classes?: { name: string } | null; timetable_runs?: { status: string } | null } | null;
-};
-type Progress = { taken: number; total: number };
-
-const isDone = (p: Progress | undefined) => Boolean(p && p.total > 0 && p.taken >= p.total);
-
-function DayLessonCard({ lesson, open, onToggle, progress, onProgress }: { lesson: DayLesson; open: boolean; onToggle: () => void; progress: Progress | undefined; onProgress: (id: string, taken: number, total: number) => void }) {
-  const report = useCallback((taken: number, total: number) => onProgress(lesson.id, taken, total), [onProgress, lesson.id]);
-  const done = isDone(progress);
-  const empty = progress !== undefined && progress.total === 0;
-  const partial = progress !== undefined && progress.taken > 0 && !done;
-  const panelId = `register-${lesson.id}`;
-  return (
-    <section className="overflow-hidden rounded-2xl border border-gold-light bg-white">
-      <div className="flex flex-wrap items-center gap-3 px-4 py-3 sm:px-5">
-        <span className="h-10 w-10 shrink-0 rounded-xl" style={classBannerStyle(lesson.classId)} aria-hidden="true" />
-        <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold text-ink/65">
-            {lesson.start} to {lesson.end}
-          </p>
-          <Link href={`/admin/class?id=${lesson.classId}`} className="block truncate text-base font-semibold text-ink hover:text-teal-700">
-            {lesson.className}
-          </Link>
-        </div>
-        <StatusChip tone={progress === undefined || empty ? "neutral" : done ? "good" : partial ? "warn" : "bad"}>
-          {progress === undefined ? "Checking…" : empty ? "No pupils enrolled" : done ? "Register taken" : partial ? `Part taken (${progress.taken} of ${progress.total})` : "Register not taken"}
-        </StatusChip>
-        <button type="button" onClick={onToggle} aria-expanded={open} aria-controls={panelId} className={btn(open || done ? "secondary" : "primary", "sm")}>
-          {open ? "Hide register" : done ? "Review" : "Take register"}
-        </button>
-      </div>
-      {/* Kept mounted while hidden so the status badge stays live. */}
-      <div id={panelId} hidden={!open} className="border-t border-gold-light">
-        <Register lessonId={lesson.id} classId={lesson.classId} onProgress={report} />
-      </div>
-    </section>
-  );
-}
-
-const navBtn = btn("secondary");
-
-function TakeRegister() {
-  const [date, setDate] = useState(ukToday());
-  const [lessons, setLessons] = useState<DayLesson[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [progress, setProgress] = useState<Record<string, Progress>>({});
-  // Open/closed per lesson. Until a register reports in it follows the
-  // default; then it opens only if the register still needs taking.
-  const [toggled, setToggled] = useState<Record<string, boolean>>({});
-  const [onlyOutstanding, setOnlyOutstanding] = useState(false);
-
-  useEffect(() => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    let cancelled = false;
-    (async () => {
-      const { data, error: err } = await supabase
-        .from("lesson_instances")
-        .select("id, timetable_slots(class_id, start_time, end_time, classes(name), timetable_runs(status))")
-        .eq("date", date);
-      if (cancelled) return;
-      if (err) {
-        setError(err.message);
-        setLessons([]);
-        return;
-      }
-      const rows = ((data as unknown as RawDayLesson[]) || [])
-        .filter((l) => l.timetable_slots && l.timetable_slots.timetable_runs?.status === "published")
-        .map((l) => {
-          const t = l.timetable_slots!;
-          return { id: l.id, classId: t.class_id, className: t.classes?.name || "Class", start: t.start_time.slice(0, 5), end: t.end_time.slice(0, 5) };
-        })
-        .sort((a, b) => a.start.localeCompare(b.start) || a.className.localeCompare(b.className));
-      setLessons(rows);
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [date]);
-
-  const lessonCount = useRef(0);
-  useEffect(() => {
-    lessonCount.current = lessons?.length ?? 0;
-  }, [lessons]);
-  const onProgress = useCallback((id: string, taken: number, total: number) => {
-    setProgress((p) => (p[id]?.taken === taken && p[id]?.total === total ? p : { ...p, [id]: { taken, total } }));
-    // Decide open/closed once, when the register first loads, so a card
-    // doesn't snap shut under the admin's cursor as they finish it.
-    setToggled((t) => (id in t ? t : { ...t, [id]: lessonCount.current <= 2 || (total > 0 && taken < total) }));
-  }, []);
-
-  const go = (d: string) => {
-    if (!d) return;
-    setLessons(null);
-    setError(null);
-    setProgress({});
-    setToggled({});
-    setDate(d);
-  };
-  const today = ukToday();
-  const label = formatDateKey(date, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
-
-  const list = lessons || [];
-  // With only a couple of lessons, open them all; otherwise open only the
-  // ones still to take, so a busy day isn't one very long page.
-  const isOpen = (l: DayLesson) => toggled[l.id] ?? list.length <= 2;
-  const doneCount = list.filter((l) => isDone(progress[l.id])).length;
-  const known = list.filter((l) => progress[l.id] !== undefined).length;
-  const shown = onlyOutstanding ? list.filter((l) => !isDone(progress[l.id])) : list;
-  const setAll = (open: boolean) => setToggled(Object.fromEntries(list.map((l) => [l.id, open])));
-
-  return (
-    <>
-      <div data-guide="registers-day" className="mb-4 flex flex-wrap items-center gap-2 rounded-2xl border border-gold-light bg-white p-3">
-        <button type="button" onClick={() => go(shiftDateKey(date, -1))} className={navBtn} aria-label="Previous day">
-          ‹ Previous
-        </button>
-        <input type="date" value={date} onChange={(e) => go(e.target.value)} className={`${fieldCls} !w-auto`} aria-label="Register date" />
-        <button type="button" onClick={() => go(shiftDateKey(date, 1))} className={navBtn} aria-label="Next day">
-          Next ›
-        </button>
-        {date !== today && (
-          <button type="button" onClick={() => go(today)} className={btn("ghost")}>
-            Today
-          </button>
-        )}
-        <span className="w-full text-sm text-ink/65 sm:ml-auto sm:w-auto">
-          {label}
-          {date === today ? " (today)" : ""}
-        </span>
-      </div>
-      {error && <p role="alert" className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load this day&apos;s lessons. Please refresh the page and try again.</p>}
-      {lessons === null ? (
-        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
-      ) : lessons.length === 0 ? (
-        !error && (
-          <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">
-            No published lessons on this day.{" "}
-            <Link href="/admin/lessons" className="font-medium text-teal-700 underline">
-              Check the timetable
-            </Link>
-          </div>
-        )
-      ) : (
-        <>
-          <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-            <p className="font-medium text-ink" aria-live="polite">
-              {known < list.length ? "Checking registers…" : `${doneCount} of ${list.length} register${list.length === 1 ? "" : "s"} taken`}
-            </p>
-            <label className="flex items-center gap-2 text-ink/70">
-              <input type="checkbox" checked={onlyOutstanding} onChange={(e) => setOnlyOutstanding(e.target.checked)} />
-              Only show registers still to take
-            </label>
-            {list.length > 2 && (
-              <span className="flex gap-3 sm:ml-auto">
-                <button type="button" onClick={() => setAll(true)} className={ui.btnLink}>
-                  Open all
-                </button>
-                <button type="button" onClick={() => setAll(false)} className={ui.btnLink}>
-                  Close all
-                </button>
-              </span>
-            )}
-          </div>
-          {onlyOutstanding && shown.length === 0 && <div className="mb-4 rounded-2xl border border-dashed border-green-300 bg-green-50 p-6 text-center text-sm text-green-900">Every register for this day is taken.</div>}
-          <div className="space-y-4">
-            {list.map((l) => (
-              // Hidden rather than unmounted when filtered out, so progress stays known.
-              <div key={l.id} hidden={!shown.includes(l)}>
-                <DayLessonCard lesson={l} open={isOpen(l)} onToggle={() => setToggled((t) => ({ ...t, [l.id]: !isOpen(l) }))} progress={progress[l.id]} onProgress={onProgress} />
-              </div>
-            ))}
-          </div>
-        </>
-      )}
-    </>
-  );
-}
-
 type AttendanceTab = "register" | "reports";
 
 function AttendanceContent() {
   const [tab, setTab] = useState<AttendanceTab>("register");
   const tabs: { key: AttendanceTab; label: string }[] = [
-    { key: "register", label: "Take register" },
+    { key: "register", label: "Registers" },
     { key: "reports", label: "Reports" },
   ];
   return (
     <>
-      <PageHeader crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Attendance" subtitle="Take or correct any lesson's register, or report across a date range." />
-      <Tabs items={tabs} value={tab} onChange={setTab} label="Attendance sections" guide="registers-filters" idBase="attendance" className="mb-5" />
-      <div {...tabPanelProps("attendance", tab)}>{tab === "register" ? <TakeRegister /> : <ReportsContent />}</div>
+      <PageHeader crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Attendance" subtitle="Every lesson's register, filtered by date, class and state; open one to take or correct it. Reports cover any date range." />
+      <Tabs items={tabs} value={tab} onChange={setTab} label="Attendance sections" guide="attendance-sections" idBase="attendance" className="mb-5" />
+      <div {...tabPanelProps("attendance", tab)}>{tab === "register" ? <RegisterList scope="all" base="/admin" /> : <ReportsContent />}</div>
     </>
   );
 }

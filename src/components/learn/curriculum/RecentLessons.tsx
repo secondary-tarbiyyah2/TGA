@@ -55,7 +55,7 @@ function LessonLinkRow({ area, l }: { area: "teach" | "admin"; l: { id: string; 
 }
 
 /** Pinned lessons first, then the ones opened most recently in this browser. */
-export function RecentLessons({ area, limit = 4 }: { area: "teach" | "admin"; limit?: number }) {
+export function RecentLessons({ area, limit = 4, compact = false }: { area: "teach" | "admin"; limit?: number; /** One line of small links (Today) instead of a card. */ compact?: boolean }) {
   const [items, setItems] = useState<RecentLesson[] | null>(null);
   const { lessons: pinned } = useLessonPins();
   useEffect(() => {
@@ -65,6 +65,31 @@ export function RecentLessons({ area, limit = 4 }: { area: "teach" | "admin"; li
   const pins = pinned || [];
   const recent = (items || []).filter((r) => !pins.some((p) => p.id === r.id));
   if (pins.length === 0 && recent.length === 0) return null;
+  if (compact) {
+    // One quiet line at the foot of Today (owner, 11 Nov 2026: "is there a need for recently
+    // opened?"): pinned lessons first, then the last few opened, as small links.
+    const list = [...pins.slice(0, 4), ...recent].slice(0, 5);
+    return (
+      <nav aria-labelledby="recent-lessons" className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+        <h2 id="recent-lessons" className="mr-1 text-[0.8125rem] font-medium text-ink-500">
+          {pins.length ? "Your lessons" : "Pick up where you left off"}
+        </h2>
+        <ul className="contents">
+          {list.map((l) => (
+            <li key={l.id}>
+              <Link
+                href={`/${area}/curriculum/lesson?id=${encodeURIComponent(l.id)}`}
+                title={`${l.title}: ${l.subject}, ${yearLabel(l.year)}`}
+                className="inline-flex min-h-11 max-w-[16rem] items-center rounded-full border border-gold-light bg-white px-3 text-[0.8125rem] text-ink hover:bg-cream sm:min-h-8"
+              >
+                <span className="truncate">{l.title}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    );
+  }
   return (
     <section aria-labelledby="recent-lessons" className="rounded-2xl border border-gold-light bg-white">
       <div className="flex items-baseline justify-between gap-3 px-5 pb-2 pt-4">
