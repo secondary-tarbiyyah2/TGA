@@ -56,7 +56,7 @@ function StudentBehaviourContent() {
         <Loading label="Loading…" bare />
       ) : (
         <div className="space-y-4">
-          <div data-guide="merit-stats" className="grid grid-cols-2 gap-3">
+          <div data-guide="merit-stats" className="portal-figures grid grid-cols-2 gap-3">
             <StatTile label="Merit points" value={String(points)} sub={points > 0 ? "Masha Allah, keep going!" : "Your first merit is waiting for you"} tone="good" />
             <StatTile label="Badges" value={String(badges.length)} />
           </div>

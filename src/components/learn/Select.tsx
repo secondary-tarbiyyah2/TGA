@@ -21,7 +21,7 @@ import { ui } from "@/components/learn/ui";
 
 // Classes that place the field in its row (width, margins, flex/grid) belong
 // on the outer wrapper; the rest (border, padding, text) style the button.
-const LAYOUT = /^(?:[a-z0-9-]+:)*(?:-?m[trblxyse]?-|w-|min-w-|max-w-|flex-(?!row|col|wrap)|basis-|grow|shrink|self-|justify-self-|col-|row-|order-|block$|inline-block$|inline$|hidden$|contents$)/;
+const LAYOUT = /^(?:[a-z0-9-]+:)*!?(?:-?m[trblxyse]?-|w-|min-w-|max-w-|flex-(?!row|col|wrap)|basis-|grow|shrink|self-|justify-self-|col-|row-|order-|block$|inline-block$|inline$|hidden$|contents$)/;
 
 export function Select({ className, wrapperClassName, ...props }: ComponentProps<typeof SiteSelect>) {
   const all = (className ?? ui.select).split(/\s+/).filter(Boolean);

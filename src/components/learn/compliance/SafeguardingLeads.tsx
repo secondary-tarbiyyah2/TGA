@@ -37,12 +37,12 @@ export function SafeguardingLeadsBanner({ canManage = false }: { canManage?: boo
   const dsl = (leads || []).filter((l) => l.kind === "safeguarding_lead").map((l) => l.full_name);
   const heads = (leads || []).filter((l) => l.kind === "head_teacher").map((l) => l.full_name);
   return (
-    <section aria-label="Designated Safeguarding Lead" className="rounded-2xl border-2 border-teal-200 bg-teal-50 p-5">
-      <p className="text-xs font-semibold uppercase tracking-wider text-teal-900/70">Designated Safeguarding Lead</p>
+    <section aria-label="Designated Safeguarding Lead" className={`rounded-2xl border bg-white px-5 py-4 ${leads && dsl.length === 0 ? "border-red-300" : "border-gold-light"}`}>
+      <p className="t-eyebrow">Designated Safeguarding Lead</p>
       {leads === null ? (
         <Loading label="Loading…" bare className="mt-1" />
       ) : dsl.length > 0 ? (
-        <p className="mt-1 font-serif text-h3 font-semibold text-ink">{joinNames(dsl)}</p>
+        <p className="t-section mt-1 text-base">{joinNames(dsl)}</p>
       ) : (
         <p className="mt-1 text-sm font-semibold text-red-800">No Designated Safeguarding Lead has been assigned yet.</p>
       )}
