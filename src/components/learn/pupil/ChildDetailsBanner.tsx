@@ -45,23 +45,23 @@ export function ChildDetailsBanner() {
   if (!rows || rows.length === 0) return null;
 
   return (
-    <section role="alert" aria-label="Child details required" data-onboarding className="print:hidden rounded-2xl border-2 border-red-300 bg-red-50 p-5">
-      <h2 className="text-base font-semibold text-red-900">Please complete your child&apos;s details</h2>
-      <p className="mt-1 text-sm text-red-900/80">
+    <section role="alert" aria-label="Child details required" data-onboarding className="print:hidden rounded-[10px] border border-amber-200 bg-amber-50 p-5">
+      <h2 className="text-base font-semibold text-ink">Please complete your child&apos;s details</h2>
+      <p className="mt-1 text-sm text-ink-700">
         The school needs a home address, GP, health details, two emergency contacts and your consents for every pupil.
       </p>
       <ul className="mt-3 space-y-2">
         {rows.map((r) => (
           <li key={r.id} className="rounded-xl bg-white/70 px-3 py-2 text-sm text-ink">
             <span className="font-semibold">{r.name}</span> <span className="text-ink/65">({r.percent}% complete)</span>
-            <span className="block text-xs text-red-800">
+            <span className="block text-xs text-amber-900">
               Still required: {r.missing.slice(0, 3).join(", ")}
               {r.missing.length > 3 ? ` and ${r.missing.length - 3} more` : ""}
             </span>
           </li>
         ))}
       </ul>
-      <Link href="/family/child-details" className="mt-4 inline-block rounded-lg bg-red-700 px-4 py-2 text-sm font-semibold text-white hover:bg-red-800">
+      <Link href="/family/child-details" className="mt-4 inline-block rounded-lg bg-forest-700 px-4 py-2 text-sm font-semibold text-white hover:bg-forest-800">
         Complete details now
       </Link>
     </section>

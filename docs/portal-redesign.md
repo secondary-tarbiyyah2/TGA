@@ -42,8 +42,21 @@ patterns are in `docs/portal-structure.md`.
 4. [x] Pupils: list and detail. Pressing a pupil opens their essentials beside the list (`PupilPeek` in
    `AdminPupils.tsx`): classes, attendance, support, medical, what is missing, parent; Open full record, Edit pupil,
    Previous and Next through the filtered list.
-5. Next: Curriculum as one structure (library, planner and review in the map's language, unit detail in a panel);
-   Messages and Waiting for you as list and detail; parent and pupil home.
+5. [x] Curriculum without hopping (PR "Curriculum without hopping between pages"): on the map a unit's lessons and
+   weekly plan open in panels (`UnitPanels.tsx`: `UnitLessonsPanel`, `UnitWeeksPanel`), each lesson opening its
+   workspace; Lesson review is list and detail (the lesson's objectives and `ReviewPanel` beside the queue).
+6. [x] Head teacher Today from modules (`dashboard/HeadModules.tsx`): Registers today, Safeguarding, Admissions,
+   Cover today, Approvals; each opens its list over Today (registers open `RegisterPanel`). Today's lessons and
+   Waiting for you side by side on wide screens.
+7. [x] Parent Today, simpler and warmer: a live lesson first, then the child's day, then anything waiting; the
+   child-details reminder is a calm amber note instead of a red alarm.
+8. Next: the Action centre as list and detail (each item's detail and action in a panel; Messages already shows the
+   thread list beside the conversation); the pupil's Today (needs a pupil test account with lessons to check);
+   Lesson library and Planner editing in panels where they still swap the page's content.
+
+Test data for screenshots: `scratchpad/redesign3/shots.mjs` mocks Supabase with a made-up school (three classes,
+eight pupils, homework, a marking queue, today's lessons on a published timetable, cover, contacts) and unlocks the
+parent PIN; specs are JSON lists of pages and clicks.
 
 ## Second pass (owner brief, 10 Nov 2026): audit, direction and status
 

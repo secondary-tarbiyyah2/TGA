@@ -241,9 +241,8 @@ function FamilyContent() {
           </SidePanel>
         )}
 
-        <ActionCentreWidget role="family" />
-        <PushOptIn />
-        <ChildDetailsBanner />
+        {/* Simple and warm (owner, 11 Nov 2026): a live lesson first, then your child's day, then
+            anything waiting for you. */}
         <JoinLessonCard who={{ kind: "parent" }} />
 
         {children === null && <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />}
@@ -278,6 +277,10 @@ function FamilyContent() {
           </div>
         )}
         {current && <ChildCard key={current.id} child={current} />}
+
+        <ActionCentreWidget role="family" />
+        <ChildDetailsBanner />
+        <PushOptIn />
 
         {hasChildren && <FamilyRewards childIds={children.map((c) => c.id)} />}
 
