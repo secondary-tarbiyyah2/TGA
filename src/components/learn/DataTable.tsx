@@ -4,7 +4,7 @@ import { useMemo, useState, type MouseEvent, type ReactNode } from "react";
 import { Icon } from "@/components/learn/Icon";
 import { btn, LoadingState, ui } from "@/components/learn/ui";
 import { saveCsv, toCsv, type CsvCell } from "@/lib/learn/csv";
-import { Select } from "@/components/learn/Select";
+import { BulkActionBar, Pagination } from "@/components/learn/templates/parts";
 
 /**
  * The one way the portal shows a list of records (pupils, registers, staff
@@ -35,8 +35,6 @@ export type Column<T> = {
   hideOnPhone?: boolean;
 };
 
-const PAGE_SIZES = [25, 50, 100, 0] as const; // 0 = all
-
 export function DataTable<T>({
   rows,
   columns,
@@ -51,6 +49,7 @@ export function DataTable<T>({
   pageSize: initialPageSize = 25,
   rowClassName,
   onRowClick,
+  bulkActions,
 }: {
   /** null while loading. */
   rows: T[] | null;
@@ -76,11 +75,17 @@ export function DataTable<T>({
    * does the same (put one in the first column).
    */
   onRowClick?: (row: T) => void;
+  /**
+   * Turns on a tick box per row and, while any are ticked, a bar above the list with these
+   * actions (Directory template). Called with the ticked rows and a function that clears them.
+   */
+  bulkActions?: (rows: T[], clear: () => void) => ReactNode;
 }) {
   const [q, setQ] = useState("");
   const [sort, setSort] = useState(initialSort || null);
   const [size, setSize] = useState<number>(initialPageSize);
   const [page, setPage] = useState(0);
+  const [ticked, setTicked] = useState<Set<string>>(() => new Set());
 
   const shown = useMemo(() => {
     let list = rows || [];
@@ -105,8 +110,30 @@ export function DataTable<T>({
   const pages = size ? Math.max(1, Math.ceil(shown.length / size)) : 1;
   const current = Math.min(page, pages - 1); // stays valid when the page's filters shrink the list
   const pageRows = size ? shown.slice(current * size, current * size + size) : shown;
-  const from = shown.length ? current * (size || shown.length) + 1 : 0;
-  const to = size ? Math.min(shown.length, (current + 1) * size) : shown.length;
+
+  const tickedRows = bulkActions ? (rows || []).filter((r) => ticked.has(rowKey(r))) : [];
+  const clearTicks = () => setTicked(new Set());
+  const toggleTick = (k: string) =>
+    setTicked((cur) => {
+      const next = new Set(cur);
+      if (next.has(k)) next.delete(k);
+      else next.add(k);
+      return next;
+    });
+  const pageKeys = pageRows.map(rowKey);
+  const allOnPage = pageKeys.length > 0 && pageKeys.every((k) => ticked.has(k));
+  const tickPage = () =>
+    setTicked((cur) => {
+      const next = new Set(cur);
+      for (const k of pageKeys) {
+        if (allOnPage) next.delete(k);
+        else next.add(k);
+      }
+      return next;
+    });
+  const tickBox = (r: T) => (
+    <input type="checkbox" checked={ticked.has(rowKey(r))} onChange={() => toggleTick(rowKey(r))} aria-label="Tick this row" className="h-4 w-4 accent-[var(--color-forest-700)]" />
+  );
 
   const toggleSort = (key: string) => {
     setSort((s) => (s && s.key === key ? { key, dir: s.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" }));
@@ -158,6 +185,12 @@ export function DataTable<T>({
         </div>
       )}
 
+      {bulkActions && (
+        <BulkActionBar count={tickedRows.length} onClear={clearTicks}>
+          {bulkActions(tickedRows, clearTicks)}
+        </BulkActionBar>
+      )}
+
       {rows === null ? (
         <LoadingState label={`Loading ${caption.toLowerCase()}`} />
       ) : shown.length === 0 ? (
@@ -175,6 +208,11 @@ export function DataTable<T>({
               <caption className="sr-only">{caption}</caption>
               <thead className="sticky top-0 z-[1] bg-cream/70 backdrop-blur-sm">
                 <tr className="border-b border-gold-light">
+                  {bulkActions && (
+                    <th scope="col" className="w-10 px-4 py-2.5">
+                      <input type="checkbox" checked={allOnPage} onChange={tickPage} aria-label="Tick every row on this page" className="h-4 w-4 accent-[var(--color-forest-700)]" />
+                    </th>
+                  )}
                   {columns.map((c) => {
                     const active = sort?.key === c.key;
                     return (
@@ -200,6 +238,7 @@ export function DataTable<T>({
               <tbody>
                 {pageRows.map((r) => (
                   <tr key={rowKey(r)} onClick={rowClick(r)} className={`border-t border-gold-light/50 align-top hover:bg-cream/60 ${clickCls} ${rowClassName?.(r) || ""}`}>
+                    {bulkActions && <td className="w-10 px-4 py-2.5">{tickBox(r)}</td>}
                     {columns.map((c) => (
                       <td key={c.key} className={`px-4 py-2.5 text-ink ${alignCls(c.align)} ${c.align === "right" ? "tabular-nums" : ""} ${c.className || ""}`}>
                         {c.cell(r)}
@@ -217,7 +256,10 @@ export function DataTable<T>({
               const [first, ...rest] = columns.filter((c) => !c.hideOnPhone);
               return (
                 <li key={rowKey(r)} onClick={rowClick(r)} className={`rounded-2xl border border-gold-light bg-white p-4 ${clickCls} ${rowClassName?.(r) || ""}`}>
-                  <div className="font-medium text-ink">{first.cell(r)}</div>
+                  <div className="flex items-start gap-3 font-medium text-ink">
+                    {bulkActions && <span className="pt-0.5">{tickBox(r)}</span>}
+                    <div className="min-w-0 flex-1">{first.cell(r)}</div>
+                  </div>
                   <dl className="mt-2 grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 text-sm">
                     {rest.map((c) => (
                       <div key={c.key} className="contents">
@@ -231,46 +273,17 @@ export function DataTable<T>({
             })}
           </ul>
 
-          <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-ink/75">
-            <p aria-live="polite" className="tabular-nums">
-              Showing {from}–{to} of {shown.length}
-              {rows.length !== shown.length ? ` (filtered from ${rows.length})` : ""}
-            </p>
-            <div className="flex flex-wrap items-center gap-2">
-              <label className="flex items-center gap-1.5 whitespace-nowrap">
-                Per page
-                <Select
-                  value={size}
-                  onChange={(e) => {
-                    setSize(Number(e.target.value));
-                    setPage(0);
-                  }}
-                  className={`${ui.select} !w-auto !py-1 pl-2.5 sm:!min-h-8`}
-                >
-                  {PAGE_SIZES.map((n) => (
-                    <option key={n} value={n}>
-                      {n || "All"}
-                    </option>
-                  ))}
-                </Select>
-              </label>
-              {pages > 1 && (
-                <nav aria-label="Pages" className="flex items-center gap-1">
-                  <button type="button" onClick={() => setPage(current - 1)} disabled={current === 0} className={btn("secondary", "sm")}>
-                    <Icon name="chevronLeft" size="sm" />
-                    Previous
-                  </button>
-                  <span className="px-1 tabular-nums">
-                    {current + 1} / {pages}
-                  </span>
-                  <button type="button" onClick={() => setPage(current + 1)} disabled={current >= pages - 1} className={btn("secondary", "sm")}>
-                    Next
-                    <Icon name="chevronRight" size="sm" />
-                  </button>
-                </nav>
-              )}
-            </div>
-          </div>
+          <Pagination
+            page={current}
+            size={size}
+            total={shown.length}
+            filteredFrom={rows.length}
+            onPage={setPage}
+            onSize={(n) => {
+              setSize(n);
+              setPage(0);
+            }}
+          />
         </>
       )}
     </div>

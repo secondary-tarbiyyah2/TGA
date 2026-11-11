@@ -7,9 +7,8 @@ appliesTo: All applicants for a place at Tarbiyyah Global Academy, and their par
 owner: Admissions Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
+dateOfIssue: 1 September 2026 (version 1.3)
 nextReview: 31 August 2027
-basis: Adapted from the Tarbiyyah Secondary Admissions Policy 2026–27 for an online, co-educational Year 1 to Year 11 school
 readAlongside: Fees Policy; SEND and Inclusion Policy; Equality, Diversity and Accessibility Policy; Behaviour and Online Conduct Policy; Attendance, Punctuality and Children Missing Education Policy; Child Protection and Safeguarding Policy; Data Protection Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
@@ -41,20 +40,22 @@ Because all learning is online, a place is conditional on the family providing:
 - a laptop or desktop computer (Windows or Mac) or an iPad, with a working webcam, microphone and headset;
 - a reliable broadband connection;
 - a quiet, suitable space for study;
-- a way for the pupil to write on worksheets and the lesson PDF each day: a tablet with a stylus is recommended for every pupil (any tablet that takes a stylus, or a basic graphics tablet that plugs into the laptop), and where the pupil does not have one, a printer at home is required;
-- for secure tests, a device supported by Safe Exam Browser (Windows, Mac or iPad). The minimum specification is published on the website, and a device check is completed before the pupil starts.
+- a way for the pupil to write on worksheets and the lesson PDF each day: a tablet with a stylus is recommended for every pupil (any tablet that takes a stylus, or a basic graphics tablet that plugs into the laptop), and where the pupil does not have one, access to printing is required (at home, at a local library or similar).
+
+The minimum specification is published on the website, and a device check is completed during induction week, before the pupil starts.
 
 ## 5. How to Apply
 
+Before applying, families are welcome to book an admissions call, join an online open evening or the taster morning, and use "Is it right for us?" on the Academy website to see the likely year group, the live day in their time zone, what they need at home and the fees. The application itself follows the same six steps as the "How to apply" page of the website:
+
 | Step | What happens |
 | --- | --- |
-| 1. Enquiry | Families may book an admissions call through the website and use the fit check on the Academy website to see the likely year group, timetable and fees |
-| 2. Application | Complete the online application form and pay the application fee of £150 per child, which is non-refundable (see the Fees Policy) |
-| 3. Documents | Upload the documents listed in Appendix A; the Academy requests a confidential report from the current school |
-| 4. Assessment | The pupil completes the online entry assessment under supervised, camera-on conditions |
-| 5. Family video call | A conversation with a member of the leadership team about learning goals, values and support needs |
-| 6. Decision | Normally within three working days of the family meeting |
-| 7. Offer | A conditional offer is issued with the terms and conditions and Fees Policy |
+| 1. Apply | Complete the online application form (one form for all the children in a family), including each child's home address, and upload the documents listed in Appendix A. Pay the application fee of £150 per child, which is non-refundable (see the Fees Policy) |
+| 2. We review the application | The admissions team checks the application and documents, asks the child's current school for a confidential report, and tells the family if anything else is needed |
+| 3. Remote assessment | The pupil sits an age-appropriate online entry assessment, supervised with the camera on. The Academy emails the date, time and what to prepare |
+| 4. Family video call | A video call with the Headteacher or a member of the leadership team, the parent or guardian and the pupil, about learning goals, values and any support needs |
+| 5. Offer and securing the place | The decision is sent in writing, normally within three working days of the family video call (and within ten working days of a complete application). A successful applicant receives a conditional offer with the terms and conditions and the Fees Policy, and the family secures the place as set out in section 7 |
+| 6. Welcome | The Academy creates the parent and pupil accounts, emails the sign-in details, and welcomes the pupil to induction week before the first live lessons |
 
 ## 6. Reasonable Adjustments and SEND
 
@@ -106,14 +107,13 @@ Families who believe the process was not followed properly may ask the Admission
 
 ## Appendix A — Documents Required with an Application
 
-| Document | Purpose |
-| --- | --- |
-| Completed online application form | The application itself |
-| Birth certificate or passport | Identity and date of birth |
-| Proof of home address and country of residence | For the admissions record and safeguarding |
-| Photo ID for each parent or guardian | Identity of adults with parental responsibility |
-| Evidence of parental responsibility where relevant | For example a court order |
-| Most recent school report | Attainment, progress and attendance |
-| EHCP, SEN support plan or professional reports | To plan support and adjustments |
-| Medical information and any Individual Healthcare Plan | To keep the pupil safe from day one |
-| Emergency contact details, including a local adult | For safeguarding and medical emergencies |
+| Document | Purpose | When |
+| --- | --- | --- |
+| The child's passport or birth certificate | Identity and date of birth | Uploaded with the application |
+| Photo ID for a parent or guardian | Identity of adults with parental responsibility | Uploaded with the application |
+| Proof of the child's home address and country of residence | For the admissions record and safeguarding | Uploaded with the application, or asked for during the review |
+| Most recent school report, or a homeschool progress record | Attainment, progress and attendance | Uploaded with the application if the family has one; the Academy also asks the current school for a confidential report |
+| Evidence of parental responsibility, where relevant | For example a court order | During the review |
+| EHCP, SEN support plan or professional reports | To plan support and adjustments | During the review, or with the application |
+| Medical information and any Individual Healthcare Plan | To keep the pupil safe from day one | Before the pupil starts |
+| Emergency contact details, including a local adult | For safeguarding and medical emergencies | Before the pupil starts |

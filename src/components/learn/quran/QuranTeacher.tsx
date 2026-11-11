@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { myTeachingClasses } from "@/lib/learn/classes";
-import { Tabs } from "@/components/learn/Tabs";
+import { SectionLayout, SectionNav, type SectionItem } from "@/components/learn/SectionNav";
+import { QuranClasses } from "./QuranClasses";
+import { MarkingStandard } from "./MarkingStandard";
 import { EmptyState, Notice, StatusChip, ui } from "@/components/learn/ui";
 import { FOCUS_AREAS, focusLabel, surahAyat, surahName, SURAHS } from "@/lib/learn/surahs";
 import {
@@ -15,7 +17,7 @@ import { Select } from "@/components/learn/Select";
 
 type Pupil = { id: string; name: string; year: string | null };
 type ChildLevel = { child_id: string; track: "qaidah" | "quran"; level_id: string };
-type Tab = "mark" | "homework" | "groups" | "sessions" | "revision" | "data";
+type Tab = "classes" | "mark" | "homework" | "groups" | "sessions" | "revision" | "data" | "standard";
 type Data = { pupils: Pupil[]; levels: Level[]; childLevels: ChildLevel[]; homework: Homework[]; sessions: Session[]; marks: QuranMark[] };
 
 const fmt = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
@@ -23,7 +25,9 @@ const SURAH_OPTIONS = SURAHS.map((s, i) => ({ n: i + 1, label: `${i + 1}. ${s[0]
 
 export function QuranTeacher() {
   const supabase = getSupabaseClient();
-  const [tab, setTab] = useState<Tab>("mark");
+  const [tab, setTab] = useState<Tab>("classes");
+  // ?pupil=<id> (from a pupil's profile) opens the recitation panel for that pupil.
+  const [focusPupil] = useState<string | null>(() => (typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("pupil")));
   const [data, setData] = useState<Data | null>(null);
   const [version, setVersion] = useState(0);
   const [msg, setMsg] = useState<{ tone: "good" | "bad"; text: string } | null>(null);
@@ -83,34 +87,49 @@ export function QuranTeacher() {
   const dueTotal = data.pupils.filter((p) => revisionRows(pupilStats(data.marks.filter((m) => m.child_id === p.id))).some((r) => r.status === "due")).length;
   const unbooked = data.pupils.filter((p) => !nextSession(data.sessions.filter((s) => s.child_id === p.id))).length;
 
+  const items: SectionItem<Tab>[] = [
+    { key: "classes", label: "Hear and track" },
+    { key: "mark", label: "Mark homework" },
+    { key: "homework", label: "Set homework" },
+    { key: "groups", label: "Level groups" },
+    { key: "sessions", label: "One to one", count: unbooked || undefined, countAlert: unbooked > 0 },
+    { key: "revision", label: "Revision", count: dueTotal || undefined, countAlert: dueTotal > 0 },
+    { key: "data", label: "Class data" },
+    { key: "standard", label: "Marking standard" },
+  ];
   return (
-    <div className="space-y-4">
-      {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
-      <MarkScale />
-      <Tabs
-        label="Qur'an sections"
-        guide="quran-sections"
-        value={tab}
-        onChange={(k) => {
-          setTab(k);
-          setMsg(null);
-        }}
-        items={[
-          { key: "mark", label: "Mark homework" },
-          { key: "homework", label: "Set homework" },
-          { key: "groups", label: "Level groups" },
-          { key: "sessions", label: "One to one", count: unbooked, countAlert: unbooked > 0 },
-          { key: "revision", label: "Revision", count: dueTotal, countAlert: dueTotal > 0 },
-          { key: "data", label: "Class data" },
-        ]}
-      />
-      {tab === "mark" && <MarkTab data={data} pupilsIn={pupilsIn} lvName={lvName} onDone={done} onFail={fail} />}
-      {tab === "homework" && <HomeworkTab data={data} pupilsIn={pupilsIn} onDone={done} onFail={fail} />}
-      {tab === "groups" && <GroupsTab data={data} levelOf={levelOf} pupilsIn={pupilsIn} onDone={done} onFail={fail} />}
-      {tab === "sessions" && <SessionsTab data={data} pupilLevels={pupilLevels} onDone={done} onFail={fail} />}
-      {tab === "revision" && <RevisionTab data={data} />}
-      {tab === "data" && <DataTab data={data} pupilLevels={pupilLevels} pupilsIn={pupilsIn} />}
-    </div>
+    <SectionLayout
+      nav={
+        <SectionNav
+          items={items}
+          value={tab}
+          onChange={(k) => {
+            setTab(k);
+            setMsg(null);
+          }}
+          label="Qur'an sections"
+          guide="quran-sections"
+          id="quran-section"
+        />
+      }
+    >
+      <div className="space-y-4">
+        {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
+        {tab === "classes" && <QuranClasses scope="teach" focusPupil={focusPupil} />}
+        {tab === "mark" && (
+          <>
+            <MarkScale />
+            <MarkTab data={data} pupilsIn={pupilsIn} lvName={lvName} onDone={done} onFail={fail} />
+          </>
+        )}
+        {tab === "homework" && <HomeworkTab data={data} pupilsIn={pupilsIn} onDone={done} onFail={fail} />}
+        {tab === "groups" && <GroupsTab data={data} levelOf={levelOf} pupilsIn={pupilsIn} onDone={done} onFail={fail} />}
+        {tab === "sessions" && <SessionsTab data={data} pupilLevels={pupilLevels} onDone={done} onFail={fail} />}
+        {tab === "revision" && <RevisionTab data={data} />}
+        {tab === "data" && <DataTab data={data} pupilLevels={pupilLevels} pupilsIn={pupilsIn} />}
+        {tab === "standard" && <MarkingStandard canEdit={false} />}
+      </div>
+    </SectionLayout>
   );
 }
 

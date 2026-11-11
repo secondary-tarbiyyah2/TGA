@@ -28,6 +28,9 @@ const ROOT = join(__dirname, "..");
 const SRC = join(ROOT, "content", "policies");
 const OUT = join(ROOT, "public", "policies");
 const LOGO = join(ROOT, "public", "brand", "ga-wordmark.png");
+// Amiri (Arabic), the site's own Arabic font, embedded so Arabic such as
+// "صلى الله عليه وسلم" prints clearly whatever fonts the runner has.
+const ARABIC_FONT = join(ROOT, "src", "app", "fonts", "amiri-arabic-400.woff2");
 
 const args = process.argv.slice(2);
 const writeHtml = args.includes("--html");
@@ -95,6 +98,23 @@ const CSS = `
   .approval { margin-top: 26px; padding-top: 10px; border-top: 1px solid #e6dcc3; font-size: 9pt; color: #4a4a4a; }
 `;
 
+// Same rule as markArabic() in src/lib/safeMarkdown.ts: each run of Arabic
+// words is marked lang="ar" dir="rtl" (text between tags only).
+const ARABIC_RUN = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+(?:\s+[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+)*/g;
+function markArabic(html) {
+  return html
+    .split(/(<[^>]*>)/)
+    .map((part) => (part.startsWith("<") ? part : part.replace(ARABIC_RUN, (run) => `<span lang="ar" dir="rtl">${run}</span>`)))
+    .join("");
+}
+
+function arabicFontCss() {
+  if (!existsSync(ARABIC_FONT)) return "";
+  const data = readFileSync(ARABIC_FONT).toString("base64");
+  return `@font-face { font-family: "Amiri"; src: url(data:font/woff2;base64,${data}) format("woff2"); font-weight: 400; font-style: normal; }
+  :lang(ar) { font-family: "Amiri", "Noto Naskh Arabic", "DejaVu Sans", serif; font-size: 1.15em; unicode-bidi: isolate; }`;
+}
+
 function sectionsOf(html) {
   const out = [];
   for (const m of html.matchAll(/<h2[^>]*>(.*?)<\/h2>/g)) out.push(m[1].replace(/<[^>]+>/g, ""));
@@ -102,10 +122,10 @@ function sectionsOf(html) {
 }
 
 function render(meta, body) {
-  const html = marked.parse(body, { gfm: true });
+  const html = markArabic(marked.parse(body, { gfm: true }));
   const toc = sectionsOf(html);
   const logo = existsSync(LOGO) ? `data:image/png;base64,${readFileSync(LOGO).toString("base64")}` : "";
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(meta.title)}</title><style>${CSS}</style></head><body>
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(meta.title)}</title><style>${CSS}${arabicFontCss()}</style></head><body>
 <div class="brand">${logo ? `<img src="${logo}" alt="">` : ""}<div><div class="sub">Part of the Tarbiyyah Education Trust · globalacademy.tarbiyyah.co.uk · globalacademy@tarbiyyah.co.uk · 020 3719 8697</div></div></div>
 <h1>${esc(meta.title).toUpperCase()}</h1>
 ${meta.subtitle ? `<p class="subtitle">${esc(meta.subtitle)}</p>` : ""}

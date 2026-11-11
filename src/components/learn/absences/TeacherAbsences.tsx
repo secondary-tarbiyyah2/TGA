@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { PupilLink } from "@/components/learn/pupil/PupilLink";
 import { EmptyState, StatusChip } from "@/components/learn/ui";
 import { dateKeyDaysAgo, formatDay, reasonLabel, useAbsenceData, type AbsenceNote } from "./data";
 import { ukToday } from "@/lib/learn/ukTime";
@@ -17,7 +18,7 @@ export function TeacherAbsences() {
   const { notes, absences, error } = useAbsenceData(dateKeyDaysAgo(29), today);
 
   const rows = useMemo(() => {
-    const out: { key: string; childName: string; date: string; classes: string[]; why: string | null; decided: AbsenceNote["status"] | null }[] = [];
+    const out: { key: string; childId: string; childName: string; date: string; classes: string[]; why: string | null; decided: AbsenceNote["status"] | null }[] = [];
     for (const a of absences || []) {
       const k = `${a.childId}|${a.date}`;
       const note = (notes || []).find((n) => n.child_id === a.childId && n.from_date <= a.date && a.date <= n.to_date);
@@ -26,7 +27,7 @@ export function TeacherAbsences() {
         if (!existing.classes.includes(a.className)) existing.classes.push(a.className);
         continue;
       }
-      out.push({ key: k, childName: a.childName, date: a.date, classes: [a.className], why: note?.reason || reasonLabel(a.reasonCode) || null, decided: note?.status || null });
+      out.push({ key: k, childId: a.childId, childName: a.childName, date: a.date, classes: [a.className], why: note?.reason || reasonLabel(a.reasonCode) || null, decided: note?.status || null });
     }
     return out;
   }, [absences, notes]);
@@ -47,7 +48,7 @@ export function TeacherAbsences() {
             <ul className="divide-y divide-gold-light/50">
               {upcoming.map((n) => (
                 <li key={n.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm">
-                  <span className="font-medium text-ink">{n.childName}</span>
+                  <PupilLink id={n.child_id} name={n.childName} className="font-medium text-ink" />
                   <span className="text-ink/65">{n.from_date === n.to_date ? formatDay(n.from_date) : `${formatDay(n.from_date)} to ${formatDay(n.to_date)}`}</span>
                   <span className="min-w-0 flex-1 text-ink/80">{n.reason}</span>
                 </li>
@@ -70,7 +71,7 @@ export function TeacherAbsences() {
               {rows.map((r) => (
                 <li key={r.key} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm">
                   <span className="w-28 shrink-0 text-ink/65">{formatDay(r.date)}</span>
-                  <span className="font-medium text-ink">{r.childName}</span>
+                  <PupilLink id={r.childId} name={r.childName} className="font-medium text-ink" />
                   <span className="text-xs text-ink/65">{r.classes.join(", ")}</span>
                   <span className="min-w-0 flex-1 text-ink/80">{r.why || <span className="text-ink/65">No reason given yet</span>}</span>
                   {r.decided === "authorised" && <StatusChip tone="good">Authorised</StatusChip>}
