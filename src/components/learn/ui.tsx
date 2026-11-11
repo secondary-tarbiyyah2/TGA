@@ -28,29 +28,29 @@ import { Icon, type IconName } from "@/components/learn/Icon";
 const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700";
 
 /** Shape and behaviour shared by every button, whatever its colour. */
-const btnBase = `inline-flex min-h-11 select-none items-center justify-center gap-1.5 rounded-lg px-4 py-2 text-center text-sm leading-tight transition-colors sm:min-h-10 disabled:cursor-not-allowed disabled:opacity-50 ${focus}`;
+const btnBase = `portal-btn inline-flex min-h-11 select-none items-center justify-center gap-1.5 rounded-lg px-3.5 py-1.5 text-center text-sm leading-tight transition-[background-color,border-color,color,box-shadow] duration-150 sm:min-h-9 disabled:cursor-not-allowed disabled:opacity-50 ${focus}`;
 
 export type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
 export type ButtonSize = "sm" | "md";
 
 const VARIANT: Record<ButtonVariant, string> = {
   // Forest green: the portal's action colour (docs/portal-redesign.md). Gold is never a button fill.
-  primary: "bg-forest-700 font-semibold text-white hover:bg-forest-900",
-  secondary: "border border-gold-light bg-white font-medium text-ink hover:border-ink/25 hover:bg-cream",
-  ghost: "font-medium text-ink/75 hover:bg-cream hover:text-ink",
+  primary: "bg-forest-700 font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_1px_1px_rgba(18,41,29,0.18)] hover:bg-forest-800",
+  secondary: "border border-gold-light bg-white font-medium text-ink shadow-[0_1px_1px_rgba(23,32,27,0.04)] hover:border-ink/20 hover:bg-cream",
+  ghost: "font-medium text-ink-700 hover:bg-[var(--portal-hover)] hover:text-ink",
   danger: "bg-red-700 font-semibold text-white hover:bg-red-800",
 };
 
 /** Smaller buttons for inside rows, tables and cards. Still 44px tall on phones. */
-const SM = "!min-h-11 !gap-1 !px-2.5 !py-1 !text-xs sm:!min-h-8";
+const SM = "!min-h-11 !gap-1 !px-2.5 !py-1 !text-[0.8125rem] sm:!min-h-8";
 
 /** The class string for a button of a given variant and size, for a <button>, <Link> or <a>. */
 export function btn(variant: ButtonVariant = "secondary", size: ButtonSize = "md"): string {
   return `${btnBase} ${VARIANT[variant]}${size === "sm" ? ` ${SM}` : ""}`;
 }
 
-const inputBase = `block w-full min-h-11 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/55 transition-colors hover:border-ink/25 sm:min-h-10 disabled:cursor-not-allowed disabled:bg-cream disabled:opacity-70 ${focus}`;
-const chipBase = `inline-flex min-h-11 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 text-sm font-medium transition-colors sm:min-h-8 sm:px-3 ${focus}`;
+const inputBase = `block w-full min-h-11 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/50 transition-colors hover:border-ink/20 sm:min-h-9 disabled:cursor-not-allowed disabled:bg-cream disabled:opacity-70 ${focus}`;
+const chipBase = `inline-flex min-h-11 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 text-[0.8125rem] font-medium transition-colors sm:min-h-8 sm:px-3 ${focus}`;
 
 export const ui = {
   /** The main action on a screen or row. One per view. */
@@ -62,7 +62,7 @@ export const ui = {
   /** Deleting or removing for good. */
   btnDanger: btn("danger"),
   /** A square, icon-only button: give it an aria-label. 44px on phones, 40px above. */
-  btnIcon: `inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-ink/65 transition-colors hover:bg-cream hover:text-ink sm:h-10 sm:w-10 disabled:cursor-not-allowed disabled:opacity-50 ${focus}`,
+  btnIcon: `inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-ink-500 transition-colors hover:bg-[var(--portal-hover)] hover:text-ink sm:h-9 sm:w-9 disabled:cursor-not-allowed disabled:opacity-50 ${focus}`,
   /** A quiet text-only action (e.g. "Remove" beside a row). */
   btnLink: `inline-flex min-h-11 items-center gap-1 rounded text-sm font-medium text-teal-700 underline-offset-2 hover:underline sm:min-h-0 disabled:cursor-not-allowed disabled:opacity-50 ${focus}`,
   btnLinkDanger: `inline-flex min-h-11 items-center gap-1 rounded text-sm font-medium text-red-700 underline-offset-2 hover:underline sm:min-h-0 disabled:cursor-not-allowed disabled:opacity-50 ${focus}`,
@@ -76,7 +76,7 @@ export const ui = {
   /** Same as input, with a comfortable minimum height for writing. */
   textarea: `${inputBase} min-h-[6rem] leading-relaxed`,
   label: "block text-sm font-medium text-ink",
-  hint: "text-xs text-ink/65",
+  hint: "text-xs text-ink-500",
   /** A field's error message, under the input. */
   error: "text-xs font-medium text-red-700",
 
@@ -84,7 +84,7 @@ export const ui = {
   /** A card's heading row: title on the left, one action on the right. */
   cardHead: "mb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2",
   /** A card or section title. */
-  sectionTitle: "text-base font-semibold text-ink",
+  sectionTitle: "t-section",
   /** A row of filters and actions above a list. Wraps on phones. */
   toolbar: "flex flex-wrap items-center gap-2",
   /** Vertical rhythm between the blocks of a page (cards, sections). */
@@ -95,8 +95,8 @@ export const ui = {
   formGrid: "grid max-w-3xl gap-4 sm:grid-cols-2",
 
   /** A filter chip; pass aria-pressed and use chipOn for the chosen one. */
-  chip: `${chipBase} border-gold-light bg-white text-ink/75 hover:border-ink/25 hover:bg-cream hover:text-ink`,
-  chipOn: `${chipBase} border-teal-700 bg-teal-700 text-white`,
+  chip: `${chipBase} border-gold-light bg-white text-ink-700 hover:border-ink/20 hover:bg-cream hover:text-ink`,
+  chipOn: `${chipBase} border-forest-700 bg-forest-50 text-forest-900 ring-1 ring-inset ring-forest-700`,
 } as const;
 
 type BtnOwnProps = { variant?: ButtonVariant; size?: ButtonSize; icon?: IconName; iconRight?: IconName; className?: string; children?: ReactNode };
@@ -206,6 +206,33 @@ export function SwitchKnob({ checked }: { checked: boolean }) {
 /** A small status label: Present, Late, Draft, Issued, Overdue… */
 export function StatusChip({ tone = "neutral", children }: { tone?: Tone; children: ReactNode }) {
   return <span className={`inline-flex shrink-0 items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset ${CHIP[tone]}`}>{children}</span>;
+}
+
+/**
+ * The portal's status language (DESIGN.md): a small dot and a plain word, never a big
+ * coloured badge. Colour only where it means something: green done, amber needs attention,
+ * red overdue, grey waiting or unavailable.
+ */
+export type StatusKind = "pending" | "in_progress" | "completed" | "attention" | "overdue" | "approved" | "unavailable";
+export const STATUS: Record<StatusKind, { label: string; dot: string; text: string }> = {
+  pending: { label: "Pending", dot: "bg-ink/30", text: "text-ink-700" },
+  in_progress: { label: "In progress", dot: "bg-forest-500", text: "text-ink-700" },
+  completed: { label: "Completed", dot: "bg-forest-700", text: "text-forest-800" },
+  attention: { label: "Needs attention", dot: "bg-amber-500", text: "text-amber-900" },
+  overdue: { label: "Overdue", dot: "bg-red-600", text: "text-red-800" },
+  approved: { label: "Approved", dot: "bg-forest-700", text: "text-forest-800" },
+  unavailable: { label: "Unavailable", dot: "border border-ink/35 bg-transparent", text: "text-ink-500" },
+};
+
+/** A status: dot and word. `children` replaces the word ("4 of 6 approved"). */
+export function Status({ kind, children, className = "" }: { kind: StatusKind; children?: ReactNode; className?: string }) {
+  const s = STATUS[kind];
+  return (
+    <span className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap text-xs font-medium ${s.text} ${className}`}>
+      <span aria-hidden="true" className={`h-1.5 w-1.5 shrink-0 rounded-full ${s.dot}`} />
+      {children ?? s.label}
+    </span>
+  );
 }
 
 const NOTICE: Record<Exclude<Tone, "neutral">, string> = {
