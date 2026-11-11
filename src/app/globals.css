@@ -1868,3 +1868,8 @@ html[data-reduce-motion] .scroll-progress {
 .mushaf-ayah[data-skipped="true"] .mushaf-word { opacity: 0.35; text-decoration: line-through; cursor: not-allowed; background: none; }
 .mushaf-ayah[data-skipped="true"] .mushaf-ayah-no { border-style: dashed; color: var(--color-ink-500); }
 html[data-reduce-motion] .mushaf-word { transition: none; }
+.mushaf-text--read .mushaf-word, .mushaf-text--read .mushaf-gap, .mushaf-text--read .mushaf-ayah-no { cursor: default; }
+.mushaf-text--read .mushaf-word:hover { background: none; }
+.mushaf-text--read .mushaf-word[data-mark="prompt"]:hover { background: var(--color-red-50); }
+.mushaf-text--read .mushaf-word[data-mark="slip"]:hover { background: var(--color-amber-50); }
+.mushaf-text--read .mushaf-word[data-mark="tajweed"]:hover { background: var(--color-sky-50); }

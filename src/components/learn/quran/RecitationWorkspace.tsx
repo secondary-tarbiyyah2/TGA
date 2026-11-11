@@ -8,7 +8,7 @@ import { DatePicker } from "@/components/learn/DatePicker";
 import { askConfirm } from "@/components/learn/kit";
 import { SURAHS, surahAyat, surahAr } from "@/lib/learn/surahs";
 import { bandFor, type QuranMark } from "@/lib/learn/quranClassroom";
-import { MARKING_LEVELS, MIN_PAGES, MISTAKE_KINDS, adjustScore, levelLabel, markFromMistakes, type MarkingLevel, type MarkingStandard, type Mistake, type MistakeKind } from "@/lib/learn/quranMarking";
+import { MARKING_LEVELS, MIN_PAGES, MISTAKE_KINDS, adjustScore, readMistakes, levelLabel, markFromMistakes, type MarkingLevel, type MarkingStandard, type Mistake, type MistakeKind } from "@/lib/learn/quranMarking";
 import { PAGE_COUNT, ayatOfPages, ayatOfPortion, loadAyat, pageOf, pagesForAyat, type MushafAyah } from "@/lib/learn/mushaf";
 import { ukToday } from "@/lib/learn/ukTime";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -517,22 +517,25 @@ export function RecitationWorkspace({
 
 /** The portion's text: surah headings, a quiet page marker where a new mushaf page starts, tappable words,
  *  joins and ayah numbers. Right to left; marks show by colour and underline style, never colour alone. */
-function MushafText({
+export function MushafText({
   ayat,
   skipped,
   onWord,
   onAyah,
   markAt,
+  readOnly = false,
 }: {
   ayat: MushafAyah[];
   skipped: Set<string>;
   onWord: (surah: number, ayah: number, word: number, gap?: boolean) => void;
   onAyah: (surah: number, ayah: number) => void;
   markAt: (surah: number, ayah: number, word: number, gap: boolean) => Mistake | undefined;
+  /** A saved recitation shown again: nothing can be tapped. */
+  readOnly?: boolean;
 }) {
   const label: Record<string, string> = { prompt: "prompt", slip: "slip", tajweed: "tajweed" };
   return (
-    <div lang="ar" dir="rtl" className="mushaf-text px-4 pb-6 pt-2 sm:px-6">
+    <div lang="ar" dir="rtl" className={`mushaf-text px-4 pb-6 pt-2 sm:px-6 ${readOnly ? "mushaf-text--read" : ""}`}>
       {ayat.map((a, n) => {
         const head = n === 0 || ayat[n - 1].surah !== a.surah;
         const pageBreak = n === 0 || ayat[n - 1].page !== a.page;
@@ -559,8 +562,8 @@ function MushafText({
               return (
                 <span key={i}>
                   <span
-                    role="button"
-                    tabIndex={isSkipped ? -1 : 0}
+                    role={readOnly ? undefined : "button"}
+                    tabIndex={readOnly || isSkipped ? -1 : 0}
                     className="mushaf-word"
                     data-mark={m?.kind}
                     aria-label={`Ayah ${a.ayah}, word ${i + 1}${m ? `, marked ${label[m.kind]}` : ""}`}
@@ -576,8 +579,8 @@ function MushafText({
                   </span>
                   {!last && (
                     <span
-                      role="button"
-                      tabIndex={isSkipped ? -1 : 0}
+                      role={readOnly ? undefined : "button"}
+                      tabIndex={readOnly || isSkipped ? -1 : 0}
                       className="mushaf-gap"
                       data-mark={g?.kind}
                       aria-label={`Join after word ${i + 1} of ayah ${a.ayah}${g ? ", marked tajweed" : ""}`}
@@ -593,7 +596,7 @@ function MushafText({
                 </span>
               );
             })}
-            <button type="button" className="mushaf-ayah-no" aria-pressed={isSkipped} aria-label={`Ayah ${a.ayah}${isSkipped ? ", not reached" : ""}. Tap if they did not reach it.`} onClick={() => onAyah(a.surah, a.ayah)}>
+            <button type="button" disabled={readOnly} className="mushaf-ayah-no" aria-pressed={isSkipped} aria-label={`Ayah ${a.ayah}${isSkipped ? ", not reached" : ""}. Tap if they did not reach it.`} onClick={() => onAyah(a.surah, a.ayah)}>
               {a.ayah}
             </button>{" "}
           </span>
@@ -601,4 +604,41 @@ function MushafText({
       })}
     </div>
   );
+}
+
+/** A saved recitation's portion with its marks, as the teacher left them (History > See on the page). */
+export function MarkedPage({ entry, onClose }: { entry: { surah_from: number | null; ayah_from: number | null; ayah_to: number | null; session_date: string; score: number | null; mistakes?: unknown }; onClose: () => void }) {
+  const [text, setText] = useState<MushafAyah[] | null>(null);
+  const [failed, setFailed] = useState(false);
+  const surah = entry.surah_from || 1;
+  const marks = useMemo(() => readMistakesFor(entry.mistakes, surah), [entry.mistakes, surah]);
+  useEffect(() => {
+    let alive = true;
+    loadAyat(ayatOfPortion(surah, entry.ayah_from, entry.ayah_to))
+      .then((x) => {
+        if (alive) setText(x);
+      })
+      .catch(() => {
+        if (alive) setFailed(true);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [surah, entry.ayah_from, entry.ayah_to]);
+  const skipped = new Set(marks.filter((m) => m.kind === "skipped").map((m) => keyOf(m.surah || surah, m.ayah || 0)));
+  const markAt = (s: number, a: number, w: number, gap: boolean) => marks.find((m) => (m.surah || surah) === s && m.ayah === a && m.word === w && !!m.gap === gap && m.kind !== "skipped");
+  const counts = MISTAKE_KINDS.map((k) => `${k.label} ${marks.filter((m) => m.kind === k.value).length}`).join(" · ");
+  return (
+    <FocusView title={`${SURAHS[surah - 1][0]} ${entry.ayah_from ?? 1} to ${entry.ayah_to ?? surahAyat(surah)}`} eyebrow={`Heard ${fmtDay(entry.session_date)} · ${entry.score ?? "-"} out of 10`} backLabel="Back" onClose={onClose} width="reading">
+      <p className="t-meta mb-3">{counts}. Ayat not reached are struck through.</p>
+      <div className="rounded-[10px] border border-gold-light bg-white">
+        {failed ? <p className="p-4 text-sm">The text didn&apos;t load. Try again in a moment.</p> : text === null ? <p className="t-meta p-4">Opening the mushaf…</p> : <MushafText ayat={text} skipped={skipped} onWord={() => {}} onAyah={() => {}} markAt={markAt} readOnly />}
+      </div>
+    </FocusView>
+  );
+}
+
+/** Marks of one saved entry; older marks without a surah belong to the entry's surah. */
+function readMistakesFor(raw: unknown, surah: number): Mistake[] {
+  return readMistakes(raw).map((m) => ({ ...m, surah: m.surah ?? surah }));
 }
