@@ -34,7 +34,7 @@ export function PayOnlinePanel({ balance }: { balance: number }) {
 
   if (!href) return null;
   return (
-    <section aria-labelledby="pay-online-title" className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-[10px] border border-gold-light bg-white p-4">
+    <section aria-labelledby="pay-online-title" className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-gold-light bg-white p-4">
       <div className="min-w-0">
         <h2 id="pay-online-title" className="t-section text-ink">Pay online</h2>
         <p className="t-meta mt-0.5">

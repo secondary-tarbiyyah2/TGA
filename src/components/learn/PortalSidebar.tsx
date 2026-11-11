@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
@@ -346,16 +345,24 @@ function SidebarBody({
   );
 
   return (
-    <div ref={rootRef} className="flex h-full flex-col">
-      <div className={`flex h-[var(--portal-topbar-h)] shrink-0 items-center ${collapsed ? "justify-center px-2" : "justify-between gap-2 pl-4 pr-2.5"}`}>
+    <div ref={rootRef} className="flex h-full min-h-0 flex-col">
+      <div className={`flex shrink-0 items-center pb-3 pt-[1.125rem] ${collapsed ? "justify-center px-2" : "justify-between gap-2 pl-4 pr-3"}`}>
         {collapsed ? (
-          <Link href={homeHref} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home" data-tip="Home">
-            <Image src="/brand/ga-logo-square.png" alt="" width={32} height={32} priority className="h-8 w-8 max-w-none rounded-md" />
+          <Link href={homeHref} className="flex shrink-0 items-center rounded-[0.6875rem]" aria-label="Tarbiyyah Global Academy: home" data-tip="Home">
+            <span className="portal-brand-mark" aria-hidden="true">
+              TGA
+            </span>
           </Link>
         ) : (
           <>
-            <Link href={homeHref} onClick={onNavigate} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home">
-              <Image src="/brand/ga-wordmark.png" alt="" width={118} height={36} priority className="h-[34px] w-[114px] max-w-none object-contain" />
+            <Link href={homeHref} onClick={onNavigate} className="flex min-w-0 shrink items-center gap-2.5 rounded-[0.6875rem]" aria-label="Tarbiyyah Global Academy: home">
+              <span className="portal-brand-mark" aria-hidden="true">
+                TGA
+              </span>
+              <span className="min-w-0 leading-tight" aria-hidden="true">
+                <b className="block truncate text-sm font-bold text-ink">Tarbiyyah</b>
+                <span className="block truncate text-xs text-ink-500">Global Academy</span>
+              </span>
             </Link>
             {onToggle && (
               <button type="button" onClick={onToggle} title="Collapse the menu" aria-label="Collapse the menu" className="portal-icon-btn">
@@ -381,7 +388,7 @@ function SidebarBody({
             </li>
             {railItems.map(({ item, divider }) => (
               <li key={item.id || item.href}>
-                {divider && <div role="presentation" className="mx-auto my-2 w-6 border-t border-gold-light" />}
+                {divider && <div role="presentation" className="mx-auto my-2 w-6 border-t border-[var(--portal-line)]" />}
                 <RailLink
                   item={item}
                   active={isSidebarItemActive(pathname, item)}
@@ -455,7 +462,7 @@ function SidebarBody({
           </>
         )}
 
-        <div className={`mt-4 border-t border-gold-light pt-3 ${collapsed ? "space-y-1" : "space-y-px"}`}>
+        <div className={`mt-4 border-t border-[var(--portal-line-soft)] pt-3 ${collapsed ? "space-y-1" : "space-y-px"}`}>
           {area === "admin" &&
             (collapsed ? (
               <Link href={ADMIN_INDEX_HREF} data-tip="All admin pages" aria-label="All admin pages" aria-current={normalisePortalPath(pathname) === ADMIN_INDEX_HREF ? "page" : undefined} className="portal-rail-btn">
@@ -487,7 +494,7 @@ function SidebarBody({
         </div>
       </nav>
 
-      <div className={`shrink-0 border-t border-gold-light ${collapsed ? "flex justify-center px-2 py-2.5" : "px-2.5 py-2"}`}>
+      <div className={`shrink-0 ${collapsed ? "flex justify-center px-2 py-3" : "px-3 pb-3 pt-2"}`}>
         <ActionsMenu
           items={accountItems}
           label="Your account"
@@ -527,8 +534,11 @@ export function PortalSidebar(props: { area: PortalArea; session: Session; roles
     // The aside runs the full height of the page (so its stone background never stops short);
     // the menu inside is sticky at the height of the window and scrolls on its own.
     <aside className={`portal-sidebar relative z-30 hidden shrink-0 transition-[width] duration-200 ease-[var(--portal-ease)] motion-reduce:transition-none lg:block ${props.collapsed ? "w-[var(--portal-rail-w)]" : "w-[var(--portal-sidebar-w)]"}`}>
-      <div className="sticky top-0 h-[100dvh] overflow-hidden">
-        <SidebarBody {...props} />
+      {/* Evergreen: the menu floats as a rounded panel 16px from the edges of the window. */}
+      <div className="sticky top-0 h-[100dvh] py-4 pl-4">
+        <div className="portal-sidebar-panel">
+          <SidebarBody {...props} />
+        </div>
       </div>
     </aside>
   );
@@ -577,7 +587,7 @@ export function PortalSidebarDrawer(props: { area: PortalArea; session: Session;
         createPortal(
           <div className="portal fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
             <button type="button" aria-label="Close" className="portal-scrim absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
-            <div className="portal-drawer portal-sidebar absolute inset-y-0 left-0 w-[86%] max-w-[320px] shadow-xl">
+            <div className="portal-drawer portal-sidebar absolute inset-y-0 left-0 w-[86%] max-w-[320px] overflow-hidden shadow-xl">
               <SidebarBody {...props} onNavigate={() => setOpen(false)} onClose={() => setOpen(false)} />
             </div>
           </div>,

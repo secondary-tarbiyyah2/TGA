@@ -429,11 +429,11 @@ export function CurriculumBrowser({ area }: { area: Area }) {
           {loading ? (
             <Loading label="Opening the folder" />
           ) : folders.length === 0 && files.length === 0 ? (
-            <p className="rounded-[10px] border border-gold-light bg-white px-4 py-8 text-center text-sm text-ink-500">{searching ? "Nothing matches." : unitRow ? "Nothing here yet for this filter." : "This folder is empty."}</p>
+            <p className="rounded-2xl border border-gold-light bg-white px-4 py-8 text-center text-sm text-ink-500">{searching ? "Nothing matches." : unitRow ? "Nothing here yet for this filter." : "This folder is empty."}</p>
           ) : (
             <>
               {folders.length > 0 && (
-                <ul className={view === "grid" ? "grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4" : "divide-y divide-gold-light overflow-hidden rounded-[10px] border border-gold-light bg-white"}>
+                <ul className={view === "grid" ? "grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4" : "divide-y divide-gold-light overflow-hidden rounded-2xl border border-gold-light bg-white"}>
                   {folders.map((f) => (
                     <li key={f.key}>
                       <button
@@ -444,7 +444,7 @@ export function CurriculumBrowser({ area }: { area: Area }) {
                         aria-pressed={selected === f.key}
                         className={
                           view === "grid"
-                            ? `flex h-full w-full flex-col gap-2 rounded-[10px] border bg-white p-3.5 text-left transition-colors hover:bg-[var(--portal-hover)] ${selected === f.key ? "border-forest-700 ring-1 ring-forest-700" : "border-gold-light"}`
+                            ? `flex h-full w-full flex-col gap-2 rounded-2xl border bg-white p-3.5 text-left transition-colors hover:bg-[var(--portal-hover)] ${selected === f.key ? "border-forest-700 ring-1 ring-forest-700" : "border-gold-light"}`
                             : `flex w-full items-center gap-3 px-4 py-2.5 text-left transition-colors hover:bg-[var(--portal-hover)] ${selected === f.key ? "bg-forest-50" : ""}`
                         }
                       >
@@ -464,7 +464,7 @@ export function CurriculumBrowser({ area }: { area: Area }) {
                 </ul>
               )}
               {files.length > 0 && (
-                <ul className={`${folders.length ? "mt-4" : ""} ${view === "grid" ? "grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4" : "divide-y divide-gold-light overflow-hidden rounded-[10px] border border-gold-light bg-white"}`}>
+                <ul className={`${folders.length ? "mt-4" : ""} ${view === "grid" ? "grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4" : "divide-y divide-gold-light overflow-hidden rounded-2xl border border-gold-light bg-white"}`}>
                   {files.map((f) => (
                     <li key={f.key}>
                       <button
@@ -475,7 +475,7 @@ export function CurriculumBrowser({ area }: { area: Area }) {
                         aria-pressed={selected === f.key}
                         className={
                           view === "grid"
-                            ? `flex h-full w-full flex-col gap-2 rounded-[10px] border bg-white p-3.5 text-left transition-colors hover:bg-[var(--portal-hover)] ${selected === f.key ? "border-forest-700 ring-1 ring-forest-700" : "border-gold-light"}`
+                            ? `flex h-full w-full flex-col gap-2 rounded-2xl border bg-white p-3.5 text-left transition-colors hover:bg-[var(--portal-hover)] ${selected === f.key ? "border-forest-700 ring-1 ring-forest-700" : "border-gold-light"}`
                             : `flex w-full items-center gap-3 px-4 py-2.5 text-left transition-colors hover:bg-[var(--portal-hover)] ${selected === f.key ? "bg-forest-50" : ""}`
                         }
                       >
@@ -496,7 +496,7 @@ export function CurriculumBrowser({ area }: { area: Area }) {
 
         {/* The details pane: beside the contents on wide screens; a panel over the page on phones. */}
         <aside data-guide="curriculum-browser-details" aria-label="Details" className="hidden lg:block">
-          <div className="sticky top-[calc(var(--portal-topbar-h)+1rem)] rounded-[10px] border border-gold-light bg-white p-4">{details()}</div>
+          <div className="sticky top-[calc(var(--portal-topbar-h)+1rem)] rounded-2xl border border-gold-light bg-white p-4">{details()}</div>
         </aside>
       </div>
 

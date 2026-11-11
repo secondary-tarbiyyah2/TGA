@@ -100,7 +100,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
       <div className="portal flex min-h-screen flex-col">
         <ActivityRecorder />
         <InstallAppSetup />
-        <header className="portal-topbar sticky top-0 z-40 border-b border-gold-light bg-white">
+        <header className="portal-topbar sticky top-0 z-40">
           <div className="mx-auto flex h-[60px] max-w-[1440px] items-center px-4 sm:px-6 lg:px-8">
             <Link href={homeHref} aria-label="Tarbiyyah Global Academy" className="flex shrink-0 items-center">
               <Image src="/brand/ga-wordmark.png" alt="" width={124} height={37} priority className="h-[37px] w-[124px] max-w-none object-contain" />
@@ -128,7 +128,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
 
       <div className="flex min-h-screen min-w-0 flex-1 flex-col">
         <header className="portal-topbar sticky top-0 z-20">
-          <div className="flex h-[var(--portal-topbar-h)] items-center gap-2 px-4 sm:px-6 lg:px-8">
+          <div className="flex h-[var(--portal-topbar-h)] items-center gap-2 px-4 sm:px-6 lg:gap-3 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
             <Link href={homeHref} className="flex shrink-0 items-center lg:hidden" aria-label="Tarbiyyah Global Academy, your dashboard">
               {/* Very narrow phones (360px) get the square mark, so every top-bar button still fits. */}
@@ -141,7 +141,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
               <CommandPalette area={area} roles={roles.map((r) => r.role)} />
             </div>
             {/* Everyday tools, then safeguarding on its own (always visible, never in a menu), then alerts. */}
-            <div className="ml-auto flex items-center gap-0.5 sm:gap-1">
+            <div className="ml-auto flex items-center gap-0.5 sm:gap-2">
               <GuideButton />
               <ClockChip userId={activeSession.user.id} roles={roles} />
               <span aria-hidden="true" className="portal-topbar-sep hidden sm:block" />
@@ -162,7 +162,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
         </header>
 
         <main id="main" className="flex-1 overflow-x-clip pb-24 lg:pb-0">
-          <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
+          <div className="mx-auto w-full max-w-[1320px] px-4 pt-2 sm:px-6 lg:px-8">
             <SignatureBanner />
             {/* No strip of sibling pages across the top (owner, 11 Nov 2026): the sidebar lists a
                 category's pages, and each page starts with its own compact title. */}

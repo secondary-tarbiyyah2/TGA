@@ -345,7 +345,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         aria-label="Search"
         title={`Search (${shortcut})`}
         data-tour="search"
-        className="portal-icon-btn lg:hidden"
+        className="portal-topbar-btn lg:hidden"
       >
         <SearchIcon className="h-5 w-5" />
       </button>

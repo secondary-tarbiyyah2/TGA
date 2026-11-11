@@ -43,7 +43,7 @@ export function LessonNotes({ classId }: { classId: string }) {
   }, [load, tick]);
 
   return (
-    <section aria-labelledby="ln-title" className="rounded-[10px] border border-gold-light bg-white" data-guide="quran-lesson-notes">
+    <section aria-labelledby="ln-title" className="rounded-2xl border border-gold-light bg-white" data-guide="quran-lesson-notes">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gold-light/70 px-4 py-3">
         <div>
           <h2 id="ln-title" className="t-section">
@@ -183,7 +183,7 @@ function LessonNoteDialog({ classId, onClose, onPosted }: { classId: string; onC
             </p>
             <div role="radiogroup" aria-labelledby={`${ids}-kind`} className="mt-1 grid gap-1">
               {RECITATION_KINDS.map((k) => (
-                <button key={k.value} type="button" role="radio" aria-checked={kind === k.value} onClick={() => setKind(kind === k.value ? "" : k.value)} className={`flex items-center justify-between rounded-[7px] border px-3 py-1.5 text-sm ${kind === k.value ? "border-forest-700 font-semibold text-forest-900" : "border-gold-light text-ink/80"}`}>
+                <button key={k.value} type="button" role="radio" aria-checked={kind === k.value} onClick={() => setKind(kind === k.value ? "" : k.value)} className={`flex items-center justify-between rounded-lg border px-3 py-1.5 text-sm ${kind === k.value ? "border-forest-700 font-semibold text-forest-900" : "border-gold-light text-ink/80"}`}>
                   {k.label}
                   <span lang="ar" dir="rtl" className="text-ink/60">
                     {k.ar}

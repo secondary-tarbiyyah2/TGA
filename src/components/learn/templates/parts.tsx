@@ -47,7 +47,7 @@ export function Panel({
 }) {
   const headingId = useId();
   return (
-    <section id={id} data-guide={guide} aria-labelledby={title ? headingId : undefined} className={`min-w-0 rounded-[10px] border border-gold-light bg-[var(--portal-surface)] ${className}`}>
+    <section id={id} data-guide={guide} aria-labelledby={title ? headingId : undefined} className={`min-w-0 rounded-2xl border border-gold-light bg-[var(--portal-surface)] ${className}`}>
       {(title || actions) && (
         <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 border-b border-gold-light/70 px-4 py-3 sm:px-5">
           <div className="min-w-0">
@@ -207,7 +207,7 @@ export function Pagination({ page, size, total, filteredFrom, onPage, onSize, si
 export function BulkActionBar({ count, onClear, children, noun = "selected" }: { count: number; onClear: () => void; children: ReactNode; noun?: string }) {
   if (!count) return null;
   return (
-    <div role="region" aria-label="Actions for the ticked rows" className="flex flex-wrap items-center gap-2 rounded-[10px] border border-forest-700/30 bg-forest-50 px-3 py-2 text-sm" data-bulk-bar>
+    <div role="region" aria-label="Actions for the ticked rows" className="flex flex-wrap items-center gap-2 rounded-2xl border border-forest-700/30 bg-forest-50 px-3 py-2 text-sm" data-bulk-bar>
       <span className="font-semibold tabular-nums text-forest-900">
         {count} {noun}
       </span>

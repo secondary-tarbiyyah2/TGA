@@ -124,9 +124,9 @@ function StudentContent() {
         {slots === null ? (
           <Loading label="Loading your lessons" bare />
         ) : todays.length === 0 ? (
-          <p className="rounded-[10px] border border-gold-light bg-white px-4 py-5 text-sm text-ink-500">No lessons today. Enjoy your day, and keep up with your revision.</p>
+          <p className="rounded-2xl border border-gold-light bg-white px-4 py-5 text-sm text-ink-500">No lessons today. Enjoy your day, and keep up with your revision.</p>
         ) : (
-          <ol className="divide-y divide-gold-light overflow-hidden rounded-[10px] border border-gold-light bg-white">
+          <ol className="divide-y divide-gold-light overflow-hidden rounded-2xl border border-gold-light bg-white">
             {todays.map((l) => {
               const done = nowHm > l.end_time.slice(0, 5);
               const on = !done && nowHm >= l.start_time.slice(0, 5);
@@ -149,7 +149,7 @@ function StudentContent() {
       </section>
 
       {childId && (
-        <section aria-labelledby="hw-due" className="rounded-[10px] border border-gold-light bg-white p-4 sm:p-5">
+        <section aria-labelledby="hw-due" className="rounded-2xl border border-gold-light bg-white p-4 sm:p-5">
           <div className="mb-2 flex items-baseline justify-between gap-3">
             <h2 id="hw-due" className="t-section">
               Homework due
@@ -164,7 +164,7 @@ function StudentContent() {
 
       <nav aria-label="Where to go" data-guide="pupil-doors" className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         {doors.map((d) => (
-          <Link key={d.href} href={d.href} className="flex min-h-24 flex-col justify-between rounded-[10px] border border-gold-light bg-white p-4 transition-colors hover:border-forest-700/40 hover:bg-[var(--portal-hover)]">
+          <Link key={d.href} href={d.href} className="flex min-h-24 flex-col justify-between rounded-2xl border border-gold-light bg-white p-4 transition-colors hover:border-forest-700/40 hover:bg-[var(--portal-hover)]">
             <Icon name={d.icon} className="h-6 w-6 text-forest-700" />
             <span>
               <span className="block text-base font-semibold text-ink">{d.label}</span>

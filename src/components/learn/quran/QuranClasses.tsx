@@ -197,7 +197,7 @@ function PupilQuranHistory({ pupil, marks, onClose, onHear }: { pupil: Pupil; ma
     >
       <PupilSummary marks={marks} />
       {focus.heard > 0 && (
-        <section className="mb-5 rounded-[10px] border border-forest-300 bg-forest-200/20 px-4 py-3" aria-labelledby="qh-focus">
+        <section className="mb-5 rounded-2xl border border-forest-300 bg-forest-200/20 px-4 py-3" aria-labelledby="qh-focus">
           <h3 id="qh-focus" className="t-section">
             What to practise
           </h3>
@@ -303,7 +303,7 @@ function ClassTable({ pupils, byPupil, onHear, onOpen }: { pupils: Pupil[]; byPu
 
   return (
     <div className="space-y-3" data-guide="quran-gradebook">
-      <dl className="grid grid-cols-3 divide-x divide-gold-light rounded-[10px] border border-gold-light bg-white text-center">
+      <dl className="grid grid-cols-3 divide-x divide-gold-light rounded-2xl border border-gold-light bg-white text-center">
         <div className="px-3 py-2.5">
           <dt className="t-meta">Heard this week</dt>
           <dd className="font-semibold tabular-nums text-ink">
@@ -319,7 +319,7 @@ function ClassTable({ pupils, byPupil, onHear, onOpen }: { pupils: Pupil[]; byPu
           <dd className={`font-semibold tabular-nums ${rows.length - heardThisWeek ? "text-amber-900" : "text-ink"}`}>{rows.length - heardThisWeek}</dd>
         </div>
       </dl>
-      <div className="overflow-x-auto rounded-[10px] border border-gold-light bg-white">
+      <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
         <table className="w-full min-w-[44rem] text-sm">
           <caption className="sr-only">Pupils&apos; Qur&apos;an progress. Choose a column heading to sort.</caption>
           <thead className="border-b border-gold-light bg-[var(--portal-hover)]">
@@ -414,7 +414,7 @@ function PupilSummary({ marks }: { marks: Mark[] }) {
   const o = useMemo(() => pupilOverview(marks), [marks]);
   const per = useMemo(() => surahAverages(marks), [marks]);
   if (!o.count) return null;
-  const tile = "rounded-[10px] border border-gold-light bg-white px-3 py-2.5";
+  const tile = "rounded-2xl border border-gold-light bg-white px-3 py-2.5";
   return (
     <section className="mb-5 space-y-3" aria-label="Summary">
       <dl className="grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -453,7 +453,7 @@ function PupilSummary({ marks }: { marks: Mark[] }) {
         </p>
       )}
       {o.coverage.surahs.length > 0 && (
-        <details className="rounded-[10px] border border-gold-light bg-white px-3 py-2">
+        <details className="rounded-2xl border border-gold-light bg-white px-3 py-2">
           <summary className="cursor-pointer text-sm font-medium text-ink">Surahs memorised ({o.coverage.surahs.length})</summary>
           <ul className="mt-2 flex flex-wrap gap-1.5">
             {o.coverage.surahs.map((s) => (
@@ -465,7 +465,7 @@ function PupilSummary({ marks }: { marks: Mark[] }) {
         </details>
       )}
       {per.length > 0 && (
-        <details className="rounded-[10px] border border-gold-light bg-white px-3 py-2">
+        <details className="rounded-2xl border border-gold-light bg-white px-3 py-2">
           <summary className="cursor-pointer text-sm font-medium text-ink">Average per surah ({per.length})</summary>
           <ul className="mt-2 divide-y divide-gold-light/60 text-sm">
             {per.map((x) => {

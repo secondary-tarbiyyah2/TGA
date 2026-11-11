@@ -387,7 +387,7 @@ function RecentAwards({ me, isHead, mineOnly, houseOf, houseById, tick, onChange
       <p className="t-meta">
         {shown.length} award{shown.length === 1 ? "" : "s"}, {total} point{total === 1 ? "" : "s"}. {isHead ? "Every award and every one taken back is also in the audit log." : "You see awards for the pupils you teach."}
       </p>
-      <div className="rounded-[10px] border border-gold-light bg-white">{list}</div>
+      <div className="rounded-2xl border border-gold-light bg-white">{list}</div>
     </div>
   );
 }

@@ -222,43 +222,62 @@ button:not(:disabled),
      antique gold                                     accent only (logo, the active-page marker)
      amber / red / green                              status only */
 .portal {
-  /* Surfaces */
-  --portal-canvas: #f7f5ef; /* warm ivory: the page */
-  --portal-surface: #fffefb; /* panels that sit on the page */
-  --portal-sidebar: #f1eee6; /* soft stone: the sidebar */
-  --portal-sunken: #ebe7dd; /* wells, segmented-control tracks */
-  --portal-hover: #ece8de; /* row hover on canvas and stone */
-  --color-gold-light: #e4dfd3; /* hairline borders */
-  --color-cream: #f3f0e8; /* tint surface (hover on white, table heads) */
-  --color-white: #fffefb;
+  /* Evergreen (owner's choice, 11 Nov 2026; DESIGN.md "Portal design system").
+     Surfaces: a warm stone canvas, white cards that float a little on it. */
+  --portal-canvas: #f6f4ef; /* the page */
+  --portal-surface: #ffffff; /* cards and panels */
+  --portal-sidebar: #ffffff; /* the floating sidebar panel */
+  --portal-soft: #f6f3ec; /* soft blocks inside a card (account block, pupil cards) */
+  --portal-sunken: #f1ede4; /* segmented-control tracks, neutral chips */
+  --portal-hover: #f6f3ec; /* row hover in the sidebar and menus */
+  --portal-row-hover: #faf8f3; /* table row hover, secondary button hover */
+  --portal-selected: #eef5f0; /* the page or row you are on */
+  --portal-line: #ebe6db; /* card edges */
+  --portal-line-soft: #f0ece3; /* lines between rows inside a card */
+  --portal-control-line: #ddd6c8; /* button and field edges */
+  --portal-control-line-hover: #c9c1ae;
+  --portal-track: #ece7dc; /* progress bar tracks */
+  --color-gold-light: #e2ddd1; /* hairline borders */
+  --color-cream: #f6f3ec; /* tint surface (hover on white, table heads) */
+  --color-white: #ffffff;
 
-  /* Text: charcoal with a green undertone, and a grey-green for secondary text and icons. */
-  --color-ink: #1f2521;
-  --color-ink-900: #1f2521; /* 15:1 on ivory */
-  --color-ink-700: #3a433d;
-  --color-ink-500: #5b6760; /* secondary text: 5.5:1 on ivory */
-  --foreground: #1f2521;
+  /* Text: near-black ink, a grey for secondary text and icons. */
+  --color-ink: #16191c;
+  --color-ink-900: #16191c; /* 16:1 on the canvas */
+  --color-ink-700: #3a3f45;
+  --color-ink-500: #646a71; /* secondary text: 5.0:1 on the canvas, 5.4:1 on white */
+  --foreground: #16191c;
 
-  /* Deep forest green: actions and where you are. Muted green: quiet emphasis. */
-  --color-forest-900: #12291d;
-  --color-forest-800: #173524;
-  --color-forest-700: #1e4230; /* actions and links: 11:1 on white */
-  --color-forest-600: #2a5640;
-  --color-forest-500: #557a64; /* muted green: progress, secondary marks (4.6:1 on white) */
-  --color-forest-300: #a7bcae;
-  --color-forest-200: #cad8ce;
-  --color-forest-100: #e2eae3;
-  --color-forest-50: #eff3ee;
+  /* Forest green: actions and where you are. */
+  --color-forest-900: #12321f;
+  --color-forest-800: #173f2c;
+  --color-forest-700: #1d4a37; /* actions and links: 10.6:1 on white */
+  --color-forest-600: #245a43;
+  --color-forest-500: #3d7a5f; /* progress, quiet emphasis (5.0:1 on white) */
+  --color-forest-300: #a7c4b4;
+  --color-forest-200: #c9dcd1;
+  --color-forest-100: #e3f0e8;
+  --color-forest-50: #eef5f0;
 
-  /* Antique gold: an accent, never a fill for buttons or large areas. */
-  --color-gold-500: #a8894a;
-  --color-gold-300: #d9c7a1;
-  --color-gold-100: #f3ecdc;
-  --color-gold-50: #faf6ec;
-  --portal-accent: var(--color-gold-500); /* the marker beside the page you are on */
+  /* Gold: the accent (logo mark, the marker beside the page you are on, the class hero's
+     Join button). As text only gold-700 (#7d6428, 4.9:1 on the canvas). */
+  --color-gold-500: #b08e45;
+  --color-gold-300: #e3c98f;
+  --color-gold-100: #f5ecd6;
+  --color-gold-50: #fbf7ee;
+  --portal-accent: var(--color-gold-500);
 
-  --portal-focus-ring: rgba(30, 66, 48, 0.3); /* forest-700 at 30% */
-  --portal-hero-bg: #12291d;
+  /* Tinted chips and avatars: one soft background and a dark ink each (all 4.5:1 or more). */
+  --tone-ok-bg: #e3f0e8; --tone-ok: #1b5a3d;
+  --tone-warn-bg: #fcf0d6; --tone-warn: #7a4f00;
+  --tone-bad-bg: #fde7e4; --tone-bad: #9a2a1e;
+  --tone-info-bg: #e6eef8; --tone-info: #25507d;
+  --tone-neutral-bg: #f1ede4; --tone-neutral: #3a3f45;
+  --avatar-0: #e3f0e8; --avatar-1: #f5ecd6; --avatar-2: #e6eef8;
+  --avatar-3: #f3e6f0; --avatar-4: #e9e6f8; --avatar-5: #fde7e4;
+
+  --portal-focus-ring: rgba(61, 122, 95, 0.35);
+  --portal-hero-bg: radial-gradient(120% 140% at 100% 0%, #2f6b52 0%, #1d4a37 45%, #173f2c 100%);
   --color-teal-900: var(--color-forest-900);
   --color-teal-700: var(--color-forest-700);
   --color-teal-600: var(--color-forest-600);
@@ -278,31 +297,33 @@ button:not(:disabled),
   --cal-meeting: #6b2f6b;
   --cal-admissions: #475569;
 
-  /* Depth: hairlines at rest; a shadow only on things that float (menus, dialogs, popovers). */
-  --portal-shadow-rgb: 23, 32, 27;
-  --portal-shadow-pop: 0 12px 32px -12px rgba(var(--portal-shadow-rgb), 0.22), 0 2px 6px -2px rgba(var(--portal-shadow-rgb), 0.08), 0 0 0 1px rgba(var(--portal-shadow-rgb), 0.06);
+  /* Depth: cards sit a little above the canvas; menus and dialogs float higher. */
+  --portal-shadow-rgb: 20, 25, 20;
+  --portal-shadow-card: 0 1px 2px rgba(var(--portal-shadow-rgb), 0.04), 0 8px 24px -12px rgba(var(--portal-shadow-rgb), 0.1);
+  --portal-shadow-pop: 0 16px 40px -14px rgba(var(--portal-shadow-rgb), 0.24), 0 2px 6px -2px rgba(var(--portal-shadow-rgb), 0.08), 0 0 0 1px rgba(var(--portal-shadow-rgb), 0.05);
   --portal-shadow-lift: 0 1px 2px rgba(var(--portal-shadow-rgb), 0.07), 0 0 0 1px rgba(var(--portal-shadow-rgb), 0.06);
 
-  /* Shape: controls 7px, panels 10px, chips are pills. */
-  --radius-lg: 0.4375rem;
-  --radius-xl: 0.5rem;
-  --radius-2xl: 0.625rem;
+  /* Shape: controls 11px, small panels 14px, cards 18px, chips are pills. */
+  --radius-lg: 0.6875rem;
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.125rem;
+  --radius-3xl: 1.5rem;
 
   /* Motion: short and calm. Everything is switched off under reduced motion. */
   --portal-ease: cubic-bezier(0.2, 0, 0, 1);
   --portal-fast: 120ms;
   --portal-med: 200ms;
 
-  /* Type scale (Inter). Page title 22px, section 15px, body 14-15px, meta 13px, eyebrow 11px. */
-  --portal-fs-title: 1.375rem;
+  /* Type scale (Inter). Page title 28px, section 15px, body 14-15px, meta 13px, eyebrow 12px. */
+  --portal-fs-title: 1.75rem;
   --portal-fs-section: 0.9375rem;
   --portal-fs-meta: 0.8125rem;
-  --portal-fs-eyebrow: 0.6875rem;
+  --portal-fs-eyebrow: 0.75rem;
 
   /* Layout */
-  --portal-sidebar-w: 268px;
-  --portal-rail-w: 64px;
-  --portal-topbar-h: 56px;
+  --portal-sidebar-w: 272px;
+  --portal-rail-w: 72px;
+  --portal-topbar-h: 72px;
 
   font-size: 15px;
   line-height: 1.55;
@@ -333,8 +354,8 @@ button:not(:disabled),
 }
 .portal .text-h2 {
   font-size: var(--portal-fs-title);
-  line-height: 1.25;
-  letter-spacing: -0.014em;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 .portal .text-h3 {
   font-size: 1.0625rem;
@@ -353,25 +374,32 @@ html[data-readable-font] .portal .portal-display {
 /* Type roles, so a title is a title on every page (DESIGN.md "Type"). */
 .portal .t-title {
   font-size: var(--portal-fs-title);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.016em;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   color: var(--color-ink-900);
 }
 .portal .t-section {
   font-size: var(--portal-fs-section);
-  font-weight: 600;
+  font-weight: 650;
   line-height: 1.35;
   letter-spacing: -0.006em;
   color: var(--color-ink-900);
 }
+/* The eyebrow above a title: small gold capitals (gold-700 passes 4.5:1 on the canvas and on white). */
 .portal .t-eyebrow {
   font-size: var(--portal-fs-eyebrow);
-  font-weight: 600;
+  font-weight: 650;
   line-height: 1.2;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--color-gold-700);
+}
+/* The same capitals as a table or list heading stay grey. */
+.portal :is(thead, tr, th, dt, dl) .t-eyebrow,
+.portal :is(tr, th, dt).t-eyebrow {
   color: var(--color-ink-500);
+  letter-spacing: 0.04em;
 }
 .portal .t-meta {
   font-size: var(--portal-fs-meta);
@@ -392,8 +420,8 @@ html[data-readable-font] .portal .portal-display {
 }
 .portal :is(input, select, textarea):focus-visible {
   outline: none;
-  border-color: var(--color-forest-700);
-  box-shadow: 0 0 0 3px var(--portal-focus-ring);
+  border-color: var(--color-forest-500);
+  box-shadow: 0 0 0 3px rgba(61, 122, 95, 0.18);
 }
 .portal :is(input[type="checkbox"], input[type="radio"]) {
   accent-color: var(--color-forest-700);
@@ -415,7 +443,7 @@ html[data-readable-font] .portal .portal-display {
 .portal select:disabled {
   opacity: 0.6;
 }
-.portal :is(button, a, [role="button"], [role="tab"], summary):focus-visible {
+.portal :is(button, a, [role="button"], [role="tab"], summary):not(.portal-btn, .portal-pill, .portal-topbar-btn, .portal-search):focus-visible {
   outline: 2px solid var(--color-forest-700);
   outline-offset: 2px;
 }
@@ -1112,20 +1140,21 @@ html[data-readable-font] .portal .portal-display {
 }
 
 }
-/* Panels: a hairline and no resting shadow (shadows are for things that
-   float: menus, dialogs). A linked panel shows it is clickable by its border. */
-.portal .rounded-2xl.border.bg-white {
+/* Cards (Evergreen): white, a soft edge, 18px corners and a soft shadow, so they sit a little
+   above the canvas. A linked card shows it is clickable by its border. */
+.portal :is(.rounded-2xl, .rounded-3xl).border:is(.bg-white, .bg-\[var\(--portal-surface\)\]) {
+  box-shadow: var(--portal-shadow-card);
+  border-color: var(--portal-line);
+  transition: border-color var(--portal-fast), background-color var(--portal-fast), box-shadow var(--portal-fast);
+}
+a.portal-card:hover, .portal a.rounded-2xl.border:is(.bg-white, .bg-\[var\(--portal-surface\)\]):hover {
+  border-color: color-mix(in oklab, var(--color-forest-500) 45%, var(--portal-line));
+}
+/* A panel inside a panel loses its own frame and shadow (no cards inside cards). */
+.portal :is(.rounded-2xl, .rounded-3xl).border:is(.bg-white, .bg-\[var\(--portal-surface\)\]) .rounded-2xl.border:is(.bg-white, .bg-\[var\(--portal-surface\)\]) {
+  border-color: var(--portal-line-soft);
+  background: var(--portal-soft);
   box-shadow: none;
-  border-color: var(--color-gold-light);
-  transition: border-color var(--portal-fast), background-color var(--portal-fast);
-}
-a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
-  border-color: color-mix(in oklab, var(--color-forest-700) 40%, var(--color-gold-light));
-}
-/* A panel inside a panel loses its own frame (no cards inside cards). */
-.portal .rounded-2xl.border.bg-white .rounded-2xl.border.bg-white {
-  border-color: transparent;
-  background: var(--color-cream);
 }
 /* Things that open: menus and popovers drop in a few pixels, side panels slide in, the
    backdrop fades. Short, no bounce, and nothing at all under reduced motion. */
@@ -1430,6 +1459,22 @@ html[data-contrast] a:not([class]) {
    use one colour as both a text and a background colour get their background pinned by class. */
 html[data-dark] .portal {
   color-scheme: dark;
+  --portal-soft: #25292c;
+  --portal-row-hover: #262a2d;
+  --portal-selected: #1f3329;
+  --portal-line: #33373b;
+  --portal-line-soft: #2a2e31;
+  --portal-control-line: #3c4044;
+  --portal-control-line-hover: #545a5f;
+  --portal-track: #33373b;
+  --portal-shadow-card: none;
+  --tone-ok-bg: #163326; --tone-ok: #8fd8b1;
+  --tone-warn-bg: #3a2e12; --tone-warn: #f1cc7a;
+  --tone-bad-bg: #3d1a17; --tone-bad: #f4a399;
+  --tone-info-bg: #172636; --tone-info: #9fc4ee;
+  --tone-neutral-bg: #2a2e31; --tone-neutral: #d2cfc9;
+  --avatar-0: #1d3a2c; --avatar-1: #3a3020; --avatar-2: #1d2b3d;
+  --avatar-3: #352236; --avatar-4: #2a2540; --avatar-5: #3d1f1c;
   --portal-canvas: #16181a;
   --portal-surface: #1f2225;
   --portal-sidebar: #1a1d1f;
@@ -1466,7 +1511,7 @@ html[data-dark] .portal {
   --color-forest-700: #9bd3b4; /* as text and links */
   --color-forest-800: #b5e0c8;
   --color-forest-900: #cdebda;
-  --portal-hero-bg: #16261e;
+  --portal-hero-bg: radial-gradient(120% 140% at 100% 0%, #24503d 0%, #173a2b 45%, #10291e 100%);
   --color-teal-50: var(--color-forest-50);
   --color-teal-100: var(--color-forest-100);
   --color-teal-500: var(--color-forest-500);
@@ -1960,3 +2005,688 @@ html[data-reduce-motion] .mushaf-word { transition: none; }
 .mushaf-text--read .mushaf-word[data-mark="prompt"]:hover { background: var(--color-red-50); }
 .mushaf-text--read .mushaf-word[data-mark="slip"]:hover { background: var(--color-amber-50); }
 .mushaf-text--read .mushaf-word[data-mark="tajweed"]:hover { background: var(--color-sky-50); }
+
+/* ══ Evergreen (owner's choice, 11 Nov 2026: "i like 1, so change everything to that. but the
+   buttons etc on the pages themself need to be improved"). DESIGN.md "Portal design system".
+   Components live in the components layer, so a page's own utility classes still win; focus
+   rings are unlayered so the site-wide gold outline never doubles them. ══ */
+@layer components {
+  /* ── Buttons: 40px, 11px corners, a tiny shadow; 44px on touch-sized screens. */
+  .portal-btn {
+    position: relative;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.6875rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+    transition: background-color 150ms ease, background-image 150ms ease, border-color 150ms ease, box-shadow 150ms ease, color 150ms ease, transform 100ms ease;
+  }
+  @media (min-width: 640px) {
+    .portal-btn {
+      min-height: 2.5rem;
+    }
+  }
+  .portal-btn > svg {
+    height: 1rem;
+    width: 1rem;
+    flex: none;
+    opacity: 0.9;
+  }
+  .portal-btn--secondary {
+    background: var(--color-white);
+    color: var(--color-ink-900);
+    border-color: var(--portal-control-line);
+    box-shadow: 0 1px 2px rgba(var(--portal-shadow-rgb), 0.06), inset 0 -1px 0 rgba(var(--portal-shadow-rgb), 0.04);
+  }
+  .portal-btn--secondary:hover:not(:disabled) {
+    background: var(--portal-row-hover);
+    border-color: var(--portal-control-line-hover);
+    box-shadow: 0 2px 6px -2px rgba(var(--portal-shadow-rgb), 0.12);
+  }
+  .portal-btn--primary {
+    background: linear-gradient(180deg, #245a43 0%, #1d4a37 100%);
+    color: #fff;
+    border-color: #173f2c;
+    box-shadow: 0 1px 2px rgba(23, 63, 44, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+  .portal-btn--primary:hover:not(:disabled) {
+    background: linear-gradient(180deg, #2a6550 0%, #1f5039 100%);
+    border-color: #12321f;
+    box-shadow: 0 4px 12px -4px rgba(23, 63, 44, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  }
+  .portal-btn--danger {
+    background: linear-gradient(180deg, #b0342a 0%, #9a2a1e 100%);
+    color: #fff;
+    border-color: #7f2117;
+    box-shadow: 0 1px 2px rgba(127, 33, 23, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+  .portal-btn--danger:hover:not(:disabled) {
+    background: linear-gradient(180deg, #bb3a2f 0%, #8a2419 100%);
+    box-shadow: 0 4px 12px -4px rgba(127, 33, 23, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  }
+  .portal-btn--ghost {
+    background: transparent;
+    color: var(--color-ink-700);
+  }
+  .portal-btn--ghost:hover:not(:disabled) {
+    background: var(--portal-hover);
+    color: var(--color-ink-900);
+  }
+  /* The class hero's call to action: gold, taller. Ink on gold-300 is 12:1. */
+  .portal-btn--gold {
+    min-height: 2.875rem;
+    padding: 0 1.25rem;
+    border-radius: 0.8125rem;
+    background: linear-gradient(180deg, #ecd6a3, #e3c98f);
+    color: #16191c;
+    border-color: #cdb070;
+    box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+  }
+  .portal-btn--gold:hover:not(:disabled) {
+    background: linear-gradient(180deg, #f1dcac, #e7cf98);
+  }
+  /* Small: rows, tables and cards. 32px from tablet up, 9px corners. */
+  .portal-btn--sm {
+    min-height: 2.75rem;
+    padding: 0 0.75rem;
+    gap: 0.375rem;
+    border-radius: 0.5625rem;
+    font-size: 0.8125rem;
+  }
+  @media (min-width: 640px) {
+    .portal-btn--sm {
+      min-height: 2rem;
+    }
+  }
+  .portal-btn--sm > svg {
+    height: 0.875rem;
+    width: 0.875rem;
+  }
+  /* A square icon-only button. */
+  .portal-btn--icon {
+    width: 2.75rem;
+    min-width: 2.75rem;
+    padding: 0;
+    color: var(--color-ink-500);
+  }
+  @media (min-width: 640px) {
+    .portal-btn--icon {
+      width: 2.5rem;
+      min-width: 2.5rem;
+    }
+  }
+  .portal-btn--icon:hover:not(:disabled) {
+    background: var(--portal-hover);
+    color: var(--color-ink-900);
+  }
+
+  /* Hand-written solid green buttons on older pages pick up the same depth. */
+  .portal :is(button, a):is(.bg-forest-700, .bg-teal-700, .bg-gold-700) {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+    box-shadow: 0 1px 2px rgba(23, 63, 44, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+
+  /* ── Filter pills: 34px, forest when on. */
+  .portal-pill {
+    display: inline-flex;
+    min-height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    white-space: nowrap;
+    border-radius: 999px;
+    border: 1px solid var(--color-gold-light);
+    background: var(--color-white);
+    padding: 0 0.875rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-ink-700);
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+  }
+  @media (min-width: 640px) {
+    .portal-pill {
+      min-height: 2.125rem;
+    }
+  }
+  .portal-pill:hover {
+    border-color: var(--portal-control-line-hover);
+    color: var(--color-ink-900);
+  }
+  .portal-pill--on,
+  .portal-pill--on:hover {
+    background: var(--color-forest-700);
+    border-color: var(--color-forest-700);
+    color: #fff;
+    box-shadow: 0 1px 2px rgba(23, 63, 44, 0.3);
+  }
+  html[data-dark] .portal .portal-pill--on {
+    background: #2f6b51;
+    border-color: #2f6b51;
+  }
+
+  /* ── Segmented control: a stone track with the chosen option raised in white. */
+  .portal-seg {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    border-radius: 0.75rem;
+    background: var(--portal-sunken);
+    padding: 0.25rem;
+  }
+  .portal-seg > * {
+    display: inline-flex;
+    min-height: 2.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    border-radius: 0.5625rem;
+    padding: 0 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-ink-500);
+    transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+  }
+  .portal-seg > :hover {
+    color: var(--color-ink-900);
+  }
+  .portal-seg > :is([aria-pressed="true"], [aria-checked="true"], [aria-selected="true"], [aria-current="page"], .portal-seg-on) {
+    background: var(--color-white);
+    color: var(--color-ink-900);
+    box-shadow: 0 1px 3px rgba(var(--portal-shadow-rgb), 0.15);
+  }
+
+  /* ── Text fields: 44px, 11px corners, a green focus ring. */
+  .portal-field {
+    display: block;
+    width: 100%;
+    min-height: 2.75rem;
+    border-radius: 0.6875rem;
+    border: 1px solid var(--portal-control-line);
+    background: var(--color-white);
+    padding: 0.5rem 0.875rem;
+    font-size: 0.875rem;
+    color: var(--color-ink-900);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+  .portal-field::placeholder {
+    color: color-mix(in oklab, var(--color-ink-500) 85%, transparent);
+  }
+  .portal-field:hover:not(:disabled):not(:focus) {
+    border-color: var(--portal-control-line-hover);
+  }
+  .portal-field:disabled {
+    cursor: not-allowed;
+    background: var(--portal-soft);
+    opacity: 0.75;
+  }
+
+  /* ── Settings checkboxes drawn as switches: add `portal-switch` to the checkbox. */
+  .portal input[type="checkbox"].portal-switch {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    height: 1.5rem;
+    width: 2.5rem;
+    flex: none;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 999px;
+    background: var(--portal-control-line);
+    transition: background-color 150ms ease;
+  }
+  .portal input[type="checkbox"].portal-switch::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: 1.125rem;
+    width: 1.125rem;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    transition: left 150ms ease;
+  }
+  .portal input[type="checkbox"].portal-switch:checked {
+    background: var(--color-forest-700);
+  }
+  .portal input[type="checkbox"].portal-switch:checked::after {
+    left: 1.1875rem;
+  }
+
+  /* ── Tags: soft tinted pills. */
+  .portal-tag {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.375rem;
+    white-space: nowrap;
+    border-radius: 999px;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    background: var(--tone-neutral-bg);
+    color: var(--tone-neutral);
+  }
+  .portal-tag--ok { background: var(--tone-ok-bg); color: var(--tone-ok); }
+  .portal-tag--warn { background: var(--tone-warn-bg); color: var(--tone-warn); }
+  .portal-tag--bad { background: var(--tone-bad-bg); color: var(--tone-bad); }
+  .portal-tag--info { background: var(--tone-info-bg); color: var(--tone-info); }
+
+  /* ── Avatars: round initials on a soft tint. */
+  .portal-initials {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    height: 2.125rem;
+    width: 2.125rem;
+    border-radius: 999px;
+    background: var(--avatar-0);
+    color: var(--color-ink-900);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .portal-initials[data-tint="1"] { background: var(--avatar-1); }
+  .portal-initials[data-tint="2"] { background: var(--avatar-2); }
+  .portal-initials[data-tint="3"] { background: var(--avatar-3); }
+  .portal-initials[data-tint="4"] { background: var(--avatar-4); }
+  .portal-initials[data-tint="5"] { background: var(--avatar-5); }
+
+  /* ── Progress bars and small charts. */
+  .portal-bar {
+    display: block;
+    height: 6px;
+    min-width: 4rem;
+    flex: 1 1 auto;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--portal-track);
+  }
+  .portal-bar > span {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: var(--color-forest-500);
+  }
+  .portal-spark {
+    display: inline-flex;
+    height: 1.625rem;
+    align-items: flex-end;
+    gap: 3px;
+  }
+  .portal-spark > i {
+    display: block;
+    width: 6px;
+    border-radius: 2px;
+    background: var(--color-forest-500);
+  }
+  .portal-minibars {
+    display: flex;
+    height: 4rem;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  .portal-minibars > i {
+    display: block;
+    flex: 1;
+    border-radius: 4px 4px 2px 2px;
+    background: var(--color-forest-500);
+    opacity: 0.85;
+  }
+  .portal-minibars > i:last-child {
+    background: var(--color-gold-500);
+    opacity: 1;
+  }
+
+  /* ── Tables: muted small headers, a warm row hover, the chosen row in soft green. */
+  :where(.portal) thead th {
+    color: var(--color-ink-500);
+  }
+  :where(.portal) table:not([role="grid"], .portal-heat-table) > tbody > tr {
+    transition: background-color 120ms ease;
+  }
+  :where(.portal) table:not([role="grid"], .portal-heat-table) > tbody > tr:hover {
+    background-color: var(--portal-row-hover);
+  }
+  :where(.portal) tbody > tr:is([aria-selected="true"], [data-selected="true"]) {
+    background-color: var(--portal-selected);
+  }
+
+  /* ── Shell: the floating sidebar. The aside keeps the column; the panel inside floats 16px
+     from the edges with 22px corners. */
+  .portal-sidebar {
+    background: transparent;
+    border-right: 0;
+  }
+  .portal-sidebar-panel {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--portal-line);
+    border-radius: 1.375rem;
+    background: var(--portal-sidebar);
+    box-shadow: 0 8px 24px -16px rgba(var(--portal-shadow-rgb), 0.2);
+  }
+  /* The phone drawer is the same panel, flush to the edge. */
+  .portal-drawer.portal-sidebar {
+    background: var(--portal-sidebar);
+    border-radius: 0 1.375rem 1.375rem 0;
+  }
+  .portal-drawer .portal-sidebar-panel {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .portal-brand-mark {
+    display: inline-flex;
+    height: 2.25rem;
+    width: 2.25rem;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.6875rem;
+    background: var(--color-forest-700);
+    color: var(--color-gold-300);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+  html[data-dark] .portal .portal-brand-mark {
+    background: #24503d;
+    color: #e3c98f;
+  }
+  .portal-nav-row,
+  .portal-nav-cat,
+  .portal-nav-leaf,
+  .portal-nav-sub {
+    border-radius: 0.75rem;
+  }
+  .portal-nav-row,
+  .portal-nav-cat {
+    font-weight: 600;
+    color: var(--color-ink-700);
+  }
+  .portal-nav-leaf {
+    border-radius: 0.5625rem;
+  }
+  .portal-nav-row--active,
+  .portal-nav-row--active:hover,
+  .portal-nav-leaf--active,
+  .portal-nav-leaf--active:hover,
+  .portal-nav-sub--active,
+  .portal-nav-sub--active:hover {
+    background: var(--portal-selected);
+    box-shadow: inset 3px 0 0 var(--portal-accent);
+    color: var(--color-forest-700);
+    font-weight: 700;
+  }
+  .portal-nav-row--active::before,
+  .portal-nav-leaf--active::before {
+    display: none;
+  }
+  .portal-nav-cat--here {
+    color: var(--color-forest-700);
+  }
+  .portal-nav-tree {
+    margin-left: 1.5rem;
+    padding-left: 0.375rem;
+    background: none;
+  }
+  .portal-rail-btn {
+    border-radius: 0.75rem;
+  }
+  .portal-rail-btn[aria-current="page"] {
+    background: var(--portal-selected);
+    box-shadow: inset 3px 0 0 var(--portal-accent);
+    color: var(--color-forest-700);
+  }
+  .portal-rail-btn[aria-current="page"]::before {
+    display: none;
+  }
+  .portal-nav-dot,
+  .portal-rail-dot {
+    box-shadow: 0 0 0 2px var(--portal-sidebar);
+  }
+  /* The account at the foot of the sidebar, in a soft block. */
+  .portal-profile {
+    border-radius: 0.875rem;
+    background: var(--portal-soft);
+    padding: 0.5rem 0.625rem;
+  }
+  .portal-profile:hover,
+  .portal-profile[aria-expanded="true"] {
+    background: color-mix(in oklab, var(--portal-soft) 85%, var(--color-ink-900) 4%);
+  }
+  .portal-avatar {
+    background: var(--avatar-2);
+    color: var(--color-ink-900);
+    box-shadow: none;
+  }
+
+  /* ── Top bar: on the canvas (no strip, no line), white controls with soft edges. */
+  .portal-topbar {
+    background: color-mix(in oklab, var(--portal-canvas) 92%, transparent);
+    border-bottom: 0;
+  }
+  .portal-topbar-btn {
+    height: 2.5rem;
+    min-width: 2.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--portal-line);
+    background: var(--color-white);
+    padding: 0 0.75rem;
+    font-weight: 600;
+    color: var(--color-ink-700);
+    box-shadow: 0 1px 2px rgba(var(--portal-shadow-rgb), 0.04);
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+  }
+  .portal-topbar-btn:hover {
+    background: var(--portal-row-hover);
+    border-color: var(--portal-control-line-hover);
+    color: var(--color-ink-900);
+  }
+  .portal-topbar-btn--on {
+    background: var(--portal-selected);
+    border-color: var(--color-forest-200);
+    color: var(--color-forest-700);
+  }
+  .portal-topbar-btn--concern {
+    background: var(--color-white);
+    border-color: #f2c5bf;
+    color: #9a2a1e;
+    box-shadow: 0 1px 2px rgba(154, 42, 30, 0.08);
+  }
+  .portal-topbar-btn--concern:hover {
+    background: #fdf2f0;
+    border-color: #e9a59b;
+    color: #8a1c13;
+  }
+  html[data-dark] .portal .portal-topbar-btn--concern {
+    border-color: #6e4038;
+    color: #f4a399;
+  }
+  html[data-dark] .portal .portal-topbar-btn--concern:hover {
+    background: #3a2522;
+  }
+  .portal-topbar-sep {
+    display: none !important;
+  }
+  .portal-search {
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    border-color: var(--portal-line);
+    background: var(--color-white);
+    padding: 0 0.5rem 0 0.875rem;
+    color: var(--color-ink-500);
+    box-shadow: 0 1px 2px rgba(var(--portal-shadow-rgb), 0.04);
+  }
+  .portal-search:hover {
+    border-color: var(--portal-control-line-hover);
+  }
+  .portal-kbd {
+    border: 0;
+    border-radius: 0.375rem;
+    background: var(--portal-sunken);
+    padding: 0.0625rem 0.4375rem;
+  }
+  .portal-icon-btn {
+    border-radius: 0.75rem;
+  }
+
+  /* ── A record's sections down the left (class, pupil): a white card, the current one
+     marked like the sidebar's current page. */
+  .portal-section-nav {
+    border-left: 0;
+    border: 1px solid var(--portal-line);
+    border-radius: 1.125rem;
+    background: var(--portal-surface);
+    padding: 0.5rem;
+    box-shadow: var(--portal-shadow-card);
+  }
+  .portal-section-link {
+    min-height: 2.5rem;
+    border-radius: 0.625rem;
+    padding: 0 0.75rem;
+    font-weight: 550;
+    transition: background-color 120ms ease, color 120ms ease;
+  }
+  .portal-section-link:hover {
+    background: var(--portal-row-hover);
+  }
+  .portal-section-link--active,
+  .portal-section-link--active:hover {
+    background: var(--portal-selected);
+    box-shadow: inset 3px 0 0 var(--portal-accent);
+    color: var(--color-forest-700);
+    font-weight: 700;
+  }
+  .portal-section-link--active::before {
+    display: none;
+  }
+  .portal-section-tile {
+    border-color: var(--portal-line);
+    border-radius: 0.6875rem;
+    font-weight: 550;
+    box-shadow: 0 1px 2px rgba(var(--portal-shadow-rgb), 0.04);
+  }
+  .portal-section-tile--active {
+    border-color: var(--color-forest-200);
+    background: var(--portal-selected);
+    box-shadow: inset 3px 0 0 var(--portal-accent);
+    color: var(--color-forest-700);
+    font-weight: 700;
+  }
+
+  /* ── The class hero: deep green with a faint gold ring top right. */
+  .portal-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 1.5rem;
+    background: var(--portal-hero-bg);
+    color: #fff;
+  }
+  .portal-hero::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    z-index: -1;
+    height: 260px;
+    width: 260px;
+    border-radius: 50%;
+    border: 40px solid rgba(227, 201, 143, 0.12);
+    pointer-events: none;
+  }
+  .portal-hero-eyebrow {
+    color: #e3c98f; /* 8.9:1 on the hero green */
+  }
+  .portal-hero-muted {
+    color: #c9dcd1; /* 9:1 on the hero green */
+  }
+  .portal-hero .portal-initials {
+    box-shadow: 0 0 0 2px #1d4a37;
+  }
+
+  /* ── Attendance heat grid and score chips. */
+  .portal-heat {
+    display: inline-flex;
+    height: 1.875rem;
+    width: 1.875rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: var(--tone-neutral-bg);
+    color: var(--tone-neutral);
+  }
+  .portal-score {
+    display: inline-flex;
+    min-width: 2.125rem;
+    height: 1.875rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    background: var(--tone-neutral-bg);
+    color: var(--tone-neutral);
+  }
+  /* Touch screens: the top bar's buttons reach 44px; very narrow phones (360 to 419px) 38px,
+     so every control still fits on one line. */
+  @media (max-width: 639px) {
+    .portal-topbar-btn,
+    .portal-icon-btn {
+      height: 2.75rem;
+      min-width: 2.75rem;
+    }
+  }
+  @media (max-width: 419px) {
+    .portal-topbar-btn,
+    .portal-icon-btn {
+      height: 2.375rem;
+      min-width: 2.375rem;
+      padding: 0;
+    }
+  }
+}
+
+/* Focus (unlayered so the site-wide outline does not draw a second ring). */
+.portal :is(.portal-btn, .portal-pill, .portal-topbar-btn, .portal-search, .portal-section-link, .portal-section-tile):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--portal-focus-ring);
+}
+.portal .portal-field:focus,
+.portal .portal-field:focus-visible {
+  outline: none;
+  border-color: var(--color-forest-500);
+  box-shadow: 0 0 0 3px rgba(61, 122, 95, 0.18);
+}
+.portal input[type="checkbox"].portal-switch:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--portal-focus-ring);
+}
+@media (min-width: 1024px) {
+  .portal {
+    --portal-topbar-h: 76px;
+  }
+}
+@media (max-width: 1023px) {
+  .portal {
+    --portal-topbar-h: 60px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .portal :is(.portal-btn--primary, .portal-btn--gold, .portal-btn--danger):active:not(:disabled) {
+    transform: translateY(1px);
+  }
+}

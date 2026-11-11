@@ -115,7 +115,7 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
             The last {weeks} weeks · {roster.length} pupil{roster.length === 1 ? "" : "s"}
           </p>
         </div>
-        <ul data-guide="insights-figures" className="grid grid-cols-2 gap-px overflow-hidden rounded-[10px] border border-gold-light bg-gold-light lg:grid-cols-4">
+        <ul data-guide="insights-figures" className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-gold-light bg-gold-light lg:grid-cols-4">
           {figures.map((f) => (
             <li key={f.label} className="bg-white">
               <Link href={f.href} className="flex h-full flex-col gap-0.5 px-4 py-3.5 transition-colors hover:bg-[var(--portal-hover)]">
@@ -136,7 +136,7 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
           <p className="t-meta">Attendance under 90%, two or more pieces of homework missing, or an average under 50%. Press a name for their record, or a figure for the page behind it.</p>
         </div>
         {pupils.length === 0 ? (
-          <p className="rounded-[10px] border border-gold-light bg-white px-4 py-5 text-sm text-ink-500">No one stands out. Everyone is attending, handing work in and doing well.</p>
+          <p className="rounded-2xl border border-gold-light bg-white px-4 py-5 text-sm text-ink-500">No one stands out. Everyone is attending, handing work in and doing well.</p>
         ) : (
           <>
             <div className="mb-3 flex flex-wrap gap-2" role="group" aria-label="Show">
@@ -149,7 +149,7 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
                 </button>
               ))}
             </div>
-            <div className="overflow-hidden rounded-[10px] border border-gold-light bg-white">
+            <div className="overflow-hidden rounded-2xl border border-gold-light bg-white">
               <table className="block w-full text-sm sm:table">
                 <thead className="hidden border-b border-gold-light text-left sm:table-header-group">
                   <tr className="t-eyebrow">

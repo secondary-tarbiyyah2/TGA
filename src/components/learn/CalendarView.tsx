@@ -306,7 +306,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
           {role && data && <ViewFilter role={role} directory={dir} view={view} onChange={setView} />}
 
           <div className={mode === "month" ? "grid gap-4 xl:grid-cols-[minmax(0,1fr)_340px]" : ""}>
-            <section className="min-w-0 overflow-hidden rounded-[10px] border border-gold-light bg-[var(--portal-surface)]">
+            <section className="min-w-0 overflow-hidden rounded-2xl border border-gold-light bg-[var(--portal-surface)]">
               {mode === "month" && (
                 <>
                   <div className="grid grid-cols-7 border-b border-gold-light text-center">
@@ -450,7 +450,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
             </section>
 
             {mode === "month" && isDesktop && (
-              <aside aria-labelledby={headingId} className="flex flex-col overflow-hidden rounded-[10px] border border-gold-light bg-[var(--portal-surface)] xl:sticky xl:top-[76px] xl:max-h-[calc(100vh-6rem)] xl:self-start">
+              <aside aria-labelledby={headingId} className="flex flex-col overflow-hidden rounded-2xl border border-gold-light bg-[var(--portal-surface)] xl:sticky xl:top-[76px] xl:max-h-[calc(100vh-6rem)] xl:self-start">
                 {panel()}
               </aside>
             )}

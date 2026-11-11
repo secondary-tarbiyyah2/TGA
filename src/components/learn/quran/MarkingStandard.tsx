@@ -21,7 +21,7 @@ const fromDraft = (d: Draft): MarkingStandard => ({
   tajweed: Object.fromEntries(MARKING_LEVELS.map((l) => [l.value, Number(d.tajweed[l.value])])) as MarkingStandard["tajweed"],
 });
 
-const cell = "w-20 rounded-[7px] border border-gold-light bg-white px-2 py-1.5 text-sm tabular-nums disabled:bg-cream disabled:text-ink/70";
+const cell = "w-20 rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm tabular-nums disabled:bg-cream disabled:text-ink/70";
 
 /**
  * The strictness bands (owner, 11 Nov 2026: "bands of strictness for giving students a number"): for each
@@ -91,7 +91,7 @@ export function MarkingStandard({ canEdit }: { canEdit: boolean }) {
           Most points per page for each mark
         </h3>
         <p className="t-meta mb-2">More than the last column gives 1 or 2. Each column must allow at least as much as the one before it.</p>
-        <div className="overflow-x-auto rounded-[10px] border border-gold-light bg-white">
+        <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
           <table className="w-full min-w-[30rem] text-sm">
             <thead>
               <tr className="t-eyebrow text-left">
@@ -137,7 +137,7 @@ export function MarkingStandard({ canEdit }: { canEdit: boolean }) {
         <h3 id="ms-points" className="t-section mb-2">
           Points for a slip and a tajweed mistake
         </h3>
-        <div className="overflow-x-auto rounded-[10px] border border-gold-light bg-white">
+        <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
           <table className="w-full min-w-[24rem] text-sm">
             <thead>
               <tr className="t-eyebrow text-left">
@@ -201,7 +201,7 @@ export function MarkingStandard({ canEdit }: { canEdit: boolean }) {
           {classes.length === 0 ? (
             <p className="text-sm text-ink/70">No Qur&apos;an classes yet. Add one for each year group in Academic setup, with the subject Qur&apos;an.</p>
           ) : (
-            <ul className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light bg-white">
+            <ul className="divide-y divide-gold-light/60 rounded-2xl border border-gold-light bg-white">
               {classes.map((c) => (
                 <li key={c.id} className="flex flex-wrap items-center justify-between gap-2 px-4 py-2 text-sm">
                   <span className="font-medium text-ink">{c.name}</span>

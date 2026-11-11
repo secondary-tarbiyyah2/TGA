@@ -153,8 +153,8 @@ export function ActionsMenu({
             : trigger === "primary"
               ? `${btn("primary", small ? "sm" : "md")}`
               : trigger === "text"
-            ? `inline-flex min-h-11 items-center gap-1 rounded-lg border border-gold-light bg-white px-3 text-sm font-medium text-ink hover:bg-cream ${small ? "sm:min-h-8" : "sm:min-h-10"}`
-            : `inline-flex ${small ? "h-11 w-11 sm:h-8 sm:w-8" : "h-11 w-11 sm:h-10 sm:w-10"} shrink-0 items-center justify-center rounded-lg text-ink/65 hover:bg-cream hover:text-ink`
+            ? `${btn("secondary", small ? "sm" : "md")}`
+            : `${btn("secondary", small ? "sm" : "md")} portal-btn--icon ${small ? "sm:!w-8 sm:!min-w-8" : ""}`
         }
       >
         {triggerContent ? (
@@ -174,7 +174,7 @@ export function ActionsMenu({
           role="menu"
           aria-label={label}
           onKeyDown={onListKey}
-          className={`portal-menu absolute z-40 max-h-[min(80vh,40rem)] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-xl border border-gold-light bg-white p-1 shadow-lg ${placement === "above" ? "bottom-full mb-1.5" : "top-full mt-1"} ${menuClassName} ${side === "right" ? "right-0" : "left-0"}`}
+          className={`portal-menu absolute z-40 max-h-[min(80vh,40rem)] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-2xl border border-[var(--portal-line)] bg-white p-1.5 shadow-lg ${placement === "above" ? "bottom-full mb-1.5" : "top-full mt-1"} ${menuClassName} ${side === "right" ? "right-0" : "left-0"}`}
         >
           {header && (
             <div role="presentation" className="-mx-1 -mt-1 mb-1 border-b border-gold-light px-4 py-3">
@@ -194,7 +194,7 @@ export function ActionsMenu({
                   {it.section}
                 </p>
               );
-            const cls = `flex min-h-9 w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left text-sm outline-none focus:bg-cream hover:bg-cream ${
+            const cls = `flex min-h-10 w-full items-center gap-2.5 rounded-[0.625rem] px-2.5 py-1.5 text-left text-sm font-medium outline-none focus:bg-[var(--portal-hover)] hover:bg-[var(--portal-hover)] ${
               it.danger ? "text-red-700" : "text-ink"
             } ${it.disabled ? "pointer-events-none opacity-45" : ""}`;
             const inner = (
@@ -286,15 +286,15 @@ export function Dialog({
   return (
     <div className="portal fixed inset-0 z-[90] flex items-end justify-center sm:items-center sm:p-4">
       <button type="button" aria-label="Close" tabIndex={-1} onClick={onClose} className="portal-scrim absolute inset-0 bg-ink/40" />
-      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby={titleId} className={`portal-menu relative flex max-h-[92vh] w-full ${width} flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl sm:rounded-xl`}>
-        <div className="px-5 pb-2 pt-5">
-          <h2 id={titleId} className="t-section text-base">
+      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby={titleId} className={`portal-menu relative flex max-h-[92vh] w-full ${width} flex-col overflow-hidden rounded-t-[1.375rem] border border-[var(--portal-line)] bg-white shadow-xl sm:rounded-[1.375rem]`}>
+        <div className="px-6 pb-2 pt-6">
+          <h2 id={titleId} className="text-lg font-bold tracking-[-0.015em] text-ink">
             {title}
           </h2>
-          {description && <div className="mt-1 text-sm text-ink/70">{description}</div>}
+          {description && <div className="mt-1 text-sm text-ink-500">{description}</div>}
         </div>
-        {children && <div className="min-h-0 flex-1 overflow-y-auto px-5 py-2">{children}</div>}
-        {footer && <div className="flex flex-wrap items-center justify-end gap-2 px-5 pb-5 pt-3">{footer}</div>}
+        {children && <div className="min-h-0 flex-1 overflow-y-auto px-6 py-2">{children}</div>}
+        {footer && <div className="flex flex-wrap items-center justify-end gap-2 px-6 pb-6 pt-4">{footer}</div>}
       </div>
     </div>
   );
@@ -330,22 +330,22 @@ export function SidePanel({ title, eyebrow, onClose, children, footer, label, si
   }, []);
   const width = size === "lg" ? "sm:w-[min(44rem,94vw)]" : "sm:w-[min(36rem,92vw)]";
   return (
-    <div className="portal fixed inset-0 z-[90] flex items-end justify-end sm:items-stretch">
+    <div className="portal fixed inset-0 z-[90] flex items-end justify-end sm:items-stretch sm:p-3">
       <button type="button" aria-label="Close" tabIndex={-1} onClick={onClose} className="portal-scrim absolute inset-0 bg-ink/35" />
-      <div ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby={titleId} aria-label={label} className={`portal-sheet relative flex ${size === "lg" ? "max-h-[94dvh]" : "max-h-[88vh]"} w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl outline-none sm:max-h-none ${width} sm:rounded-none sm:border-l sm:border-gold-light`}>
-        <div className="flex items-start gap-3 border-b border-gold-light px-5 py-4">
+      <div ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby={titleId} aria-label={label} className={`portal-sheet relative flex ${size === "lg" ? "max-h-[94dvh]" : "max-h-[88vh]"} w-full flex-col overflow-hidden rounded-t-[1.375rem] bg-white shadow-xl outline-none sm:max-h-none ${width} sm:rounded-[1.375rem] sm:border sm:border-[var(--portal-line)]`}>
+        <div className="flex items-start gap-3 border-b border-[var(--portal-line-soft)] px-6 py-5">
           <div className="min-w-0 flex-1">
             {eyebrow && <div className="t-eyebrow mb-1">{eyebrow}</div>}
-            <h2 id={titleId} className="t-section text-base">
+            <h2 id={titleId} className="text-lg font-bold tracking-[-0.015em] text-ink">
               {title}
             </h2>
           </div>
-          <button type="button" onClick={onClose} aria-label="Close" className="portal-icon-btn -mr-1.5 -mt-1 shrink-0">
+          <button type="button" onClick={onClose} aria-label="Close" className={`${btn("secondary")} portal-btn--icon -mr-1 -mt-1 shrink-0`}>
             <Icon name="x" />
           </button>
         </div>
-        <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">{children}</div>
-        {footer && <div className="flex flex-wrap items-center gap-2 border-t border-gold-light px-5 py-3">{footer}</div>}
+        <div className="min-h-0 flex-1 overflow-y-auto px-6 py-5">{children}</div>
+        {footer && <div className="flex flex-wrap items-center gap-2 border-t border-[var(--portal-line-soft)] bg-[var(--portal-row-hover)] px-6 py-3.5">{footer}</div>}
       </div>
     </div>
   );
@@ -460,7 +460,7 @@ export function useConfirm(): (o: ConfirmOptions) => Promise<boolean> {
  */
 export function Loading({ label = "Loading", lines = 3, bare = false, className = "" }: { label?: string; lines?: number; bare?: boolean; className?: string }) {
   return (
-    <div role="status" aria-live="polite" className={`flex flex-col items-center justify-center gap-2.5 ${bare ? "py-4" : "rounded-2xl border border-dashed border-gold-light px-5"} ${className}`} style={bare ? undefined : { minHeight: `${Math.max(4.5, Math.min(lines, 8) * 1.5)}rem` }}>
+    <div role="status" aria-live="polite" className={`flex flex-col items-center justify-center gap-2.5 ${bare ? "py-4" : "rounded-2xl border border-dashed border-[var(--portal-control-line)] px-5"} ${className}`} style={bare ? undefined : { minHeight: `${Math.max(4.5, Math.min(lines, 8) * 1.5)}rem` }}>
       <div className="portal-progress w-28" aria-hidden="true" />
       <p className="t-meta">{label.replace(/\u2026$|\.\.\.$/, "")}</p>
     </div>
@@ -474,14 +474,14 @@ export function StatTile({ value, label, hint, href, tone = "neutral" }: { value
   const colour = tone === "accent" ? "text-gold-700" : tone === "warn" ? "text-amber-800" : tone === "bad" ? "text-red-700" : "text-forest-900";
   const body = (
     <>
-      <span className={`portal-display block text-[1.875rem] font-semibold leading-none tabular-nums ${colour}`}>{value}</span>
-      <span className="mt-2 block text-sm font-medium text-ink/80">{label}</span>
-      {hint && <span className="mt-0.5 block text-xs text-ink/60">{hint}</span>}
+      <span className="block text-[0.8125rem] font-medium text-ink-500">{label}</span>
+      <span className={`portal-display mt-1 block text-[1.75rem] font-bold leading-[1.1] tracking-[-0.02em] tabular-nums ${colour}`}>{value}</span>
+      {hint && <span className="mt-1 block text-xs text-ink-500">{hint}</span>}
     </>
   );
-  const cls = "block min-w-0 px-4 py-3.5";
+  const cls = "block min-w-0 px-5 py-4";
   return href ? (
-    <Link href={href} className={`${cls} transition-colors hover:bg-cream`}>
+    <Link href={href} className={`${cls} transition-colors hover:bg-[var(--portal-row-hover)]`}>
       {body}
     </Link>
   ) : (
@@ -491,7 +491,7 @@ export function StatTile({ value, label, hint, href, tone = "neutral" }: { value
 
 /** A row of StatTiles separated by hairlines, in one panel (not four cards). */
 export function StatStrip({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`grid grid-cols-2 divide-gold-light rounded-2xl border border-gold-light bg-white sm:grid-cols-4 sm:divide-x [&>*:nth-child(n+3)]:border-t [&>*:nth-child(n+3)]:border-gold-light sm:[&>*:nth-child(n+3)]:border-t-0 ${className}`}>{children}</div>;
+  return <div className={`grid grid-cols-2 overflow-hidden divide-[var(--portal-line-soft)] rounded-2xl border border-gold-light bg-white sm:grid-cols-4 sm:divide-x [&>*:nth-child(n+3)]:border-t [&>*:nth-child(n+3)]:border-[var(--portal-line-soft)] sm:[&>*:nth-child(n+3)]:border-t-0 ${className}`}>{children}</div>;
 }
 
 export type WorkflowStatus = "draft" | "submitted" | "in_review" | "changes_needed" | "approved" | "published";
@@ -521,12 +521,12 @@ export function WorkflowBadge({ status, className = "" }: { status: WorkflowStat
 /** "ART & DESIGN / YEAR 7": the context line above a workspace title. Parts with an href are links. */
 export function Eyebrow({ parts }: { parts: { label: string; href?: string }[] }) {
   return (
-    <p className="flex flex-wrap items-center gap-x-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-ink/55">
+    <p className="flex flex-wrap items-center gap-x-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.06em] text-gold-700">
       {parts.map((p, i) => (
         <span key={i} className="inline-flex items-center gap-1.5">
           {i > 0 && <span aria-hidden="true">/</span>}
           {p.href ? (
-            <Link href={p.href} className="hover:text-forest-700 hover:underline">
+            <Link href={p.href} className="underline-offset-2 hover:text-forest-700 hover:underline">
               {p.label}
             </Link>
           ) : (
@@ -563,16 +563,16 @@ export function WorkspaceHeader({
   menu?: MenuAction[];
 }) {
   return (
-    <header className="border-b border-gold-light pb-5">
+    <header className="pb-6">
       {eyebrow && <Eyebrow parts={eyebrow} />}
       <div className="mt-1.5 flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
         <div className="min-w-[min(100%,18rem)] flex-1">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <h1 className="min-w-0 text-[1.5rem] font-semibold leading-tight tracking-tight text-ink [overflow-wrap:anywhere]">{title}</h1>
+            <h1 className="t-title min-w-0 [overflow-wrap:anywhere]">{title}</h1>
             {status}
           </div>
-          {meta && <div className="mt-1 text-sm text-ink/65">{meta}</div>}
-          {description && <p className="mt-2 max-w-prose text-sm text-ink/75">{description}</p>}
+          {meta && <div className="mt-1 text-[0.8125rem] text-ink-500">{meta}</div>}
+          {description && <p className="mt-2 max-w-prose text-sm text-ink-700">{description}</p>}
         </div>
         {(primary || (menu && menu.length > 0)) && (
           <div className="flex shrink-0 items-center gap-1.5">
@@ -585,7 +585,7 @@ export function WorkspaceHeader({
         <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-2">
           {stats.map((s) => (
             <div key={s.label} className="flex items-baseline gap-2">
-              <dt className="order-2 text-sm text-ink/65">{s.label}</dt>
+              <dt className="order-2 text-sm text-ink-500">{s.label}</dt>
               <dd className="order-1 text-lg font-semibold tabular-nums text-ink">{s.value}</dd>
             </div>
           ))}

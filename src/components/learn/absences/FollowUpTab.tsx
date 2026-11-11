@@ -259,7 +259,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
   };
 
   return (
-    <section className="rounded-[10px] border border-gold-light bg-white" data-guide="absences-followup">
+    <section className="rounded-2xl border border-gold-light bg-white" data-guide="absences-followup">
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-gold-light/60 px-4 py-3">
         <div>
           <h2 className="t-section">Absences to follow up</h2>
@@ -278,7 +278,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
           </EmptyState>
         ) : (
           <>
-            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className="w-full rounded-[7px] border border-gold-light bg-white px-3 py-2 text-sm sm:max-w-xs" />
+            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className="w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm sm:max-w-xs" />
             <div className="overflow-x-auto">
               <Tabs
                 variant="switch"
@@ -298,7 +298,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
             {shown.length === 0 ? (
               <p className="py-4 text-center text-sm text-ink/65">Nothing in this view.</p>
             ) : (
-              <ul className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light">
+              <ul className="divide-y divide-gold-light/60 rounded-2xl border border-gold-light">
                 {shown.map((r) => (
                   <CaseRow key={r.key} row={r} today={today} onOpen={() => setOpenKey(r.key)} />
                 ))}
@@ -469,7 +469,7 @@ function CasePanel({
         </div>
 
         {escalated && r.fu && (
-          <div className="rounded-[10px] border border-red-200 bg-red-50/60 px-3 py-2 text-sm text-red-900">
+          <div className="rounded-2xl border border-red-200 bg-red-50/60 px-3 py-2 text-sm text-red-900">
             <p>
               Escalated{r.fu.escalated_by_name ? ` by ${r.fu.escalated_by_name}` : ""}
               {r.fu.escalated_at ? ` on ${stamp(r.fu.escalated_at)}` : ""}. {r.fu.escalation_notified_at ? "The head teacher and safeguarding lead were emailed." : "Not emailed yet."}
@@ -492,7 +492,7 @@ function CasePanel({
           ) : contacts.length === 0 ? (
             <p className="text-sm text-ink/70">No contacts on the pupil&apos;s record. Message the family through the portal.</p>
           ) : (
-            <ul className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light">
+            <ul className="divide-y divide-gold-light/60 rounded-2xl border border-gold-light">
               {contacts.map((c) => (
                 <li key={c.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2 text-sm">
                   <span className="min-w-0 flex-1">
@@ -563,7 +563,7 @@ function CasePanel({
             Reminder
           </h3>
           <div className="flex flex-wrap items-center gap-2">
-            <input type="date" value={remindOn} min={today} onChange={(e) => setRemindOn(e.target.value)} aria-label="Remind me on" className="rounded-[7px] border border-gold-light bg-white px-3 py-2 text-sm" />
+            <input type="date" value={remindOn} min={today} onChange={(e) => setRemindOn(e.target.value)} aria-label="Remind me on" className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm" />
             <Button size="sm" disabled={busy || remindOn === (r.fu?.next_action_due || "")} onClick={() => onRemind(remindOn)}>
               {remindOn ? "Set reminder" : "Clear reminder"}
             </Button>

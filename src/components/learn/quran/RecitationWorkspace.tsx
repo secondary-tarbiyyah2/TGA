@@ -299,7 +299,7 @@ export function RecitationWorkspace({
   const leave = async () => (marks.length === 0 ? true : askConfirm("Leave without saving? The marks on this recitation will be lost.", { confirmLabel: "Leave", danger: true }));
 
   const markCard = (
-    <section aria-labelledby="rw-mark" aria-live="polite" className="rounded-[10px] border border-gold-light bg-white px-4 py-3">
+    <section aria-labelledby="rw-mark" aria-live="polite" className="rounded-2xl border border-gold-light bg-white px-4 py-3">
       <h2 id="rw-mark" className="t-eyebrow">
         Mark
       </h2>
@@ -350,7 +350,7 @@ export function RecitationWorkspace({
       <div className="grid gap-6 pb-28 lg:grid-cols-[minmax(0,1fr)_19rem] lg:pb-6">
         <div className="min-w-0 space-y-6">
           {/* 1. What they recite */}
-          <section aria-labelledby="rw-what" className="rounded-[10px] border border-gold-light bg-white p-4">
+          <section aria-labelledby="rw-what" className="rounded-2xl border border-gold-light bg-white p-4">
             <h2 id="rw-what" className="t-section">
               1. What {pupil.name.split(" ")[0]} recites
             </h2>
@@ -449,7 +449,7 @@ export function RecitationWorkspace({
           </section>
 
           {/* 2. The text */}
-          <section aria-labelledby="rw-text" className="rounded-[10px] border border-gold-light bg-white">
+          <section aria-labelledby="rw-text" className="rounded-2xl border border-gold-light bg-white">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gold-light/70 px-4 py-3">
               <h2 id="rw-text" className="t-section">
                 2. Mark as they recite
@@ -476,7 +476,7 @@ export function RecitationWorkspace({
 
         {/* 3. Pens and the mark: beside the text on wide screens, a bar along the bottom on phones. */}
         <aside className="lg:sticky lg:top-4 lg:self-start">
-          <div className="fixed inset-x-0 bottom-0 z-20 border-t border-gold-light bg-white/95 px-3 py-2 backdrop-blur lg:static lg:rounded-[10px] lg:border lg:bg-white lg:p-4">
+          <div className="fixed inset-x-0 bottom-0 z-20 border-t border-gold-light bg-white/95 px-3 py-2 backdrop-blur lg:static lg:rounded-2xl lg:border lg:bg-white lg:p-4">
             <h2 className="t-eyebrow hidden lg:block">Pen</h2>
             <div role="radiogroup" aria-label="Pen" className="grid grid-cols-3 gap-1.5 lg:mt-2 lg:grid-cols-1">
               {MISTAKE_KINDS.map((k) => (
@@ -648,7 +648,7 @@ export function MarkedPage({ entry, onClose }: { entry: { surah_from: number | n
   return (
     <FocusView title={`${SURAHS[surah - 1][0]} ${entry.ayah_from ?? 1} to ${entry.ayah_to ?? surahAyat(surah)}`} eyebrow={`Heard ${fmtDay(entry.session_date)} · ${entry.score ?? "-"} out of 10`} backLabel="Back" onClose={onClose} width="reading">
       <p className="t-meta mb-3">{counts}. Ayat not reached are struck through.</p>
-      <div className="rounded-[10px] border border-gold-light bg-white">
+      <div className="rounded-2xl border border-gold-light bg-white">
         {failed ? <p className="p-4 text-sm">The text didn&apos;t load. Try again in a moment.</p> : text === null ? <p className="t-meta p-4">Opening the mushaf…</p> : <MushafText ayat={text} skipped={skipped} onWord={() => {}} onAyah={() => {}} markAt={markAt} readOnly />}
       </div>
     </FocusView>

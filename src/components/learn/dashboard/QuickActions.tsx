@@ -25,7 +25,7 @@ export type QuickAction = {
  */
 export function QuickActions({ actions, guide }: { actions: QuickAction[]; guide: string }) {
   const cls =
-    "flex h-full min-h-12 w-full items-center gap-2.5 rounded-[10px] border border-gold-light bg-white px-3 py-2 text-left transition-colors hover:border-forest-700/40 hover:bg-[var(--portal-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700";
+    "flex h-full min-h-12 w-full items-center gap-2.5 rounded-2xl border border-gold-light bg-white px-3 py-2 text-left transition-colors hover:border-forest-700/40 hover:bg-[var(--portal-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700";
   return (
     <nav data-guide={guide} aria-label="Quick actions">
       <h2 className="sr-only">Quick actions</h2>
