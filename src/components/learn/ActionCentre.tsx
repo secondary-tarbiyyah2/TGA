@@ -264,7 +264,7 @@ function ItemRow({ item: i, role, done, onDone }: { item: ActionItem; role: Role
         <span className="flex shrink-0 items-center gap-2 text-xs">
           <StatusChip tone={done ? "neutral" : u.tone}>{done ? "Marked done" : u.label}</StatusChip>
           <span className="font-medium text-ink/65">{i.area}</span>
-          <Icon name="chevronRight" size="sm" className="text-ink/50" />
+          <Icon name="chevronRight" className="h-4 w-4 shrink-0 text-ink/50" />
         </span>
       </button>
       {open && (
