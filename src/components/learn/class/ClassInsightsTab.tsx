@@ -6,7 +6,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { useClassRoster } from "@/components/learn/class/PupilPicker";
 import { LOOKBACK_DAYS, loadClassAttendance, rateOf, type ClassMark } from "@/components/learn/class/ClassAttendanceTab";
 import { Icon } from "@/components/learn/Icon";
-import { ui } from "@/components/learn/ui";
+import { Avatar, EmptyState, ui } from "@/components/learn/ui";
 import { pupilRecordHref } from "@/components/learn/pupil/PupilLink";
 
 type Why = "attendance" | "homework" | "results";
@@ -16,8 +16,29 @@ const WHY: { key: Why; label: string }[] = [
   { key: "results", label: "Results" },
 ];
 
-type StatusRow = { child_id: string; status: string; homework_id: string };
-type Grade = { child_id: string; percent: number | null };
+type StatusRow = { child_id: string; status: string; homework_id: string; due_at?: string | null };
+type Grade = { child_id: string; percent: number | null; date?: string | null };
+
+const WEEKS = 8;
+/** Which of the last WEEKS weeks (0 = oldest) a date falls in, or -1. */
+function weekIndex(iso: string | null | undefined, now: number): number {
+  if (!iso) return -1;
+  const t = new Date(iso.length === 10 ? `${iso}T12:00:00` : iso).getTime();
+  const back = Math.floor((now - t) / (7 * 86_400_000));
+  return back < 0 || back >= WEEKS ? -1 : WEEKS - 1 - back;
+}
+
+/** A row of small bars, one per week (decorative: the figure is said in words beside it). */
+function MiniBars({ values }: { values: (number | null)[] }) {
+  if (values.every((v) => v === null)) return null;
+  return (
+    <span className="portal-minibars mt-3" aria-hidden="true">
+      {values.map((v, i) => (
+        <i key={i} style={{ height: v === null ? "3px" : `${Math.max(6, Math.min(100, v))}%`, opacity: v === null ? 0.25 : undefined }} />
+      ))}
+    </span>
+  );
+}
 
 /**
  * A class at a glance, like Teams for Education's Insights (owner, 11 Nov 2026: "better
@@ -29,6 +50,8 @@ type Grade = { child_id: string; percent: number | null };
 export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { classId: string; classHref: (tab: string) => string; area?: string }) {
   const roster = useClassRoster(classId);
   const [marks, setMarks] = useState<ClassMark[] | null>(null);
+  const [lessonDates, setLessonDates] = useState<Record<string, string>>({});
+  const [now, setNow] = useState(0);
   const [hw, setHw] = useState<StatusRow[] | null>(null);
   const [review, setReview] = useState<number | null>(null);
   const [grades, setGrades] = useState<Grade[] | null>(null);
@@ -42,12 +65,14 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
     (async () => {
       const [att, st, rq, gr] = await Promise.all([
         loadClassAttendance(classId),
-        supabase.from("homework_status").select("child_id, status, homework_id").eq("class_id", classId).gte("due_at", since).limit(5000),
+        supabase.from("homework_status").select("child_id, status, homework_id, due_at").eq("class_id", classId).gte("due_at", since).limit(5000),
         supabase.from("homework_review_queue").select("submission_id", { count: "exact", head: true }).eq("class_id", classId),
-        supabase.from("assessments").select("child_id, percent").eq("class_id", classId).gte("date", since.slice(0, 10)).limit(5000),
+        supabase.from("assessments").select("child_id, percent, date").eq("class_id", classId).gte("date", since.slice(0, 10)).limit(5000),
       ]);
       if (!alive) return;
       setMarks(att?.marks || []);
+      setLessonDates(Object.fromEntries((att?.lessons || []).map((l) => [l.id, l.date])));
+      setNow(Date.now());
       setHw((st.data as unknown as StatusRow[]) || []);
       setReview(rq.count ?? 0);
       setGrades((gr.data as unknown as Grade[]) || []);
@@ -84,11 +109,47 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
   const att = rateOf(marks);
   const weeks = LOOKBACK_DAYS / 7;
 
+  // Week by week (oldest first), for each figure's small bars.
+  const series = (fill: (bucket: number[][]) => void, toValue: (xs: number[]) => number | null) => {
+    const b: number[][] = Array.from({ length: WEEKS }, () => []);
+    fill(b);
+    return b.map((xs) => (xs.length ? toValue(xs) : null));
+  };
+  const attSeries = series(
+    (b) => {
+      for (const m of marks) {
+        const w = weekIndex(lessonDates[m.lesson_instance_id], now);
+        if (w < 0) continue;
+        if (m.status === "present" || m.status === "late" || m.status === "not_engaged") b[w].push(1);
+        else if (m.status === "absent") b[w].push(0);
+      }
+    },
+    (xs) => Math.round((xs.reduce((a, c) => a + c, 0) / xs.length) * 100),
+  );
+  const hwSeries = series(
+    (b) => {
+      for (const h of due) {
+        const w = weekIndex(h.due_at, now);
+        if (w >= 0) b[w].push(h.status === "on_time" || h.status === "late" ? 1 : 0);
+      }
+    },
+    (xs) => Math.round((xs.reduce((a, c) => a + c, 0) / xs.length) * 100),
+  );
+  const gradeSeries = series(
+    (b) => {
+      for (const g of grades) {
+        const w = weekIndex(g.date, now);
+        if (w >= 0 && g.percent != null) b[w].push(Number(g.percent));
+      }
+    },
+    (xs) => Math.round(xs.reduce((a, c) => a + c, 0) / xs.length),
+  );
+
   const figures = [
-    { label: "Attendance", value: att === null ? "–" : `${att}%`, sub: "Present or late", alert: att !== null && att < 90, href: classHref("attendance") },
-    { label: "Homework handed in", value: due.length ? `${Math.round((handedIn / due.length) * 100)}%` : "–", sub: missing ? `${missing} missing` : "Nothing missing", alert: missing > 0, href: classHref("classwork") },
-    { label: "To review", value: String(review), sub: review ? "Handed in, not yet returned" : "All marked", alert: review > 0, href: `${classHref("classwork")}&view=review` },
-    { label: "Average result", value: avg === null ? "–" : `${avg}%`, sub: `${scored.length} result${scored.length === 1 ? "" : "s"} recorded`, alert: false, href: classHref("grades") },
+    { label: "Attendance", value: att === null ? "–" : `${att}%`, sub: "Present or late", alert: att !== null && att < 90, href: classHref("attendance"), bars: attSeries },
+    { label: "Homework handed in", value: due.length ? `${Math.round((handedIn / due.length) * 100)}%` : "–", sub: missing ? `${missing} missing` : "Nothing missing", alert: missing > 0, href: classHref("classwork"), bars: hwSeries },
+    { label: "To review", value: String(review), sub: review ? "Handed in, not yet returned" : "All marked", alert: review > 0, href: `${classHref("classwork")}&view=review`, bars: null },
+    { label: "Average result", value: avg === null ? "–" : `${avg}%`, sub: `${scored.length} result${scored.length === 1 ? "" : "s"} recorded`, alert: false, href: classHref("grades"), bars: gradeSeries },
   ];
   const counts: Record<Why, number> = { attendance: 0, homework: 0, results: 0 };
   for (const p of pupils) for (const r of p.reasons) counts[r]++;
@@ -115,28 +176,32 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
             The last {weeks} weeks · {roster.length} pupil{roster.length === 1 ? "" : "s"}
           </p>
         </div>
-        <ul data-guide="insights-figures" className="grid grid-cols-2 gap-px overflow-hidden rounded-[10px] border border-gold-light bg-gold-light lg:grid-cols-4">
+        <ul data-guide="insights-figures" className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 xl:grid-cols-4">
           {figures.map((f) => (
-            <li key={f.label} className="bg-white">
-              <Link href={f.href} className="flex h-full flex-col gap-0.5 px-4 py-3.5 transition-colors hover:bg-[var(--portal-hover)]">
+            <li key={f.label}>
+              <Link href={f.href} className="flex h-full flex-col rounded-2xl border border-[var(--portal-line)] bg-white p-5 shadow-[var(--portal-shadow-card)] transition-colors hover:border-[var(--portal-control-line-hover)]">
                 <span className="text-[0.8125rem] font-medium text-ink-500">{f.label}</span>
-                <span className="text-[1.5rem] font-semibold leading-tight tabular-nums text-ink">{f.value}</span>
-                <span className={`text-xs ${f.alert ? "font-medium text-amber-900" : "text-ink-500"}`}>{f.sub}</span>
+                <span className="mt-1 text-[1.75rem] font-bold leading-[1.1] tracking-[-0.02em] tabular-nums text-ink">{f.value}</span>
+                <span className={`mt-1 text-xs ${f.alert ? "font-semibold text-amber-800" : "text-ink-500"}`}>{f.sub}</span>
+                {f.bars && <MiniBars values={f.bars} />}
               </Link>
             </li>
           ))}
         </ul>
+        <p className="t-meta mt-2">Bars show each of the last {WEEKS} weeks, this week in gold.</p>
       </section>
 
       <section aria-labelledby="ins-word" data-guide="insights-pupils">
         <div className="mb-2">
           <h2 id="ins-word" className="t-section">
-            Pupils who may need a word <span className="font-normal text-ink-500">· {pupils.length}</span>
+            Who needs attention <span className="font-normal text-ink-500">· {pupils.length}</span>
           </h2>
           <p className="t-meta">Attendance under 90%, two or more pieces of homework missing, or an average under 50%. Press a name for their record, or a figure for the page behind it.</p>
         </div>
         {pupils.length === 0 ? (
-          <p className="rounded-[10px] border border-gold-light bg-white px-4 py-5 text-sm text-ink-500">No one stands out. Everyone is attending, handing work in and doing well.</p>
+          <EmptyState title="No one stands out" icon="circleCheck">
+            Everyone is attending, handing work in and doing well.
+          </EmptyState>
         ) : (
           <>
             <div className="mb-3 flex flex-wrap gap-2" role="group" aria-label="Show">
@@ -149,53 +214,41 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
                 </button>
               ))}
             </div>
-            <div className="overflow-hidden rounded-[10px] border border-gold-light bg-white">
-              <table className="block w-full text-sm sm:table">
-                <thead className="hidden border-b border-gold-light text-left sm:table-header-group">
-                  <tr className="t-eyebrow">
-                    <th scope="col" className="px-4 py-2 font-semibold">Pupil</th>
-                    <th scope="col" className="px-3 py-2 font-semibold">Attendance</th>
-                    <th scope="col" className="px-3 py-2 font-semibold">Homework missing</th>
-                    <th scope="col" className="px-3 py-2 font-semibold">Average result</th>
-                    <th scope="col" className="px-4 py-2"><span className="sr-only">Actions</span></th>
-                  </tr>
-                </thead>
-                <tbody className="block divide-y divide-gold-light sm:table-row-group">
-                  {shown.map((p) => (
-                    <tr key={p.id} className="flex flex-wrap items-center gap-x-4 gap-y-1 px-4 py-3 sm:table-row sm:p-0">
-                      <th scope="row" className="w-full text-left font-medium sm:w-auto sm:px-4 sm:py-2.5">
-                        <Link href={profile(p.id)} className="text-ink hover:text-forest-700 hover:underline">
-                          {p.name}
-                        </Link>
-                      </th>
-                      <td className="tabular-nums sm:px-3 sm:py-2.5">
-                        <span className="text-ink-500 sm:hidden">Attendance </span>
+            <ul className="divide-y divide-[var(--portal-line-soft)] rounded-2xl border border-gold-light bg-white px-5">
+              {shown.map((p) => (
+                <li key={p.id} className="flex flex-wrap items-center gap-x-3 gap-y-2 py-3.5">
+                  <Avatar name={p.name} seed={p.id} />
+                  <span className="min-w-0 flex-[1_1_14rem]">
+                    <Link href={profile(p.id)} className="block truncate text-sm font-semibold text-ink hover:text-forest-700 hover:underline">
+                      {p.name}
+                    </Link>
+                    <span className="flex flex-wrap gap-x-3 gap-y-0.5 text-[0.8125rem] tabular-nums">
+                      <span>
+                        <span className="text-ink-500">Attendance </span>
                         {cell(p, "attendance", p.att === null ? "–" : `${p.att}%`)}
-                      </td>
-                      <td className="tabular-nums sm:px-3 sm:py-2.5">
-                        <span className="text-ink-500 sm:hidden">Homework missing </span>
+                      </span>
+                      <span>
+                        <span className="text-ink-500">Missing </span>
                         {cell(p, "homework", String(p.missing))}
-                      </td>
-                      <td className="tabular-nums sm:px-3 sm:py-2.5">
-                        <span className="text-ink-500 sm:hidden">Average </span>
+                      </span>
+                      <span>
+                        <span className="text-ink-500">Average </span>
                         {cell(p, "results", p.avg === null ? "–" : `${p.avg}%`)}
-                      </td>
-                      <td className="ml-auto sm:px-4 sm:py-2.5 sm:text-right">
-                        <span className="inline-flex gap-1">
-                          <Link href={`${area}/messages?family=${p.id}`} className={`${ui.btnGhost} ${ui.sm}`} aria-label={`Message ${p.name}'s family`}>
-                            <Icon name="messageSquare" size="sm" />
-                            <span className="hidden lg:inline">Message family</span>
-                          </Link>
-                          <Link href={profile(p.id)} className={`${ui.btnSecondary} ${ui.sm}`} aria-label={`Open ${p.name}'s record`}>
-                            Record
-                          </Link>
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                      </span>
+                    </span>
+                  </span>
+                  <span className="flex gap-1.5">
+                    <Link href={`${area}/messages?family=${p.id}`} className={`${ui.btnSecondary} ${ui.sm}`} aria-label={`Message ${p.name}'s family`}>
+                      <Icon name="messageSquare" size="sm" />
+                      <span className="hidden lg:inline">Message family</span>
+                    </Link>
+                    <Link href={profile(p.id)} className={`${ui.btnSecondary} ${ui.sm}`} aria-label={`Open ${p.name}'s record`}>
+                      Record
+                    </Link>
+                  </span>
+                </li>
+              ))}
+            </ul>
           </>
         )}
       </section>

@@ -259,7 +259,7 @@ function CategorySection({
   const id = `ac-${title.toLowerCase().replace(/[^a-z]+/g, "-")}`;
   const now = list.filter((i) => i.urgency === "now" && !isDone(i)).length;
   return (
-    <section ref={ref} aria-labelledby={id} className={showTitle ? "overflow-hidden rounded-[10px] border border-gold-light bg-white" : "space-y-2"}>
+    <section ref={ref} aria-labelledby={id} className={showTitle ? "overflow-hidden rounded-2xl border border-gold-light bg-white" : "space-y-2"}>
       <OwnPrintHeader title={`Waiting for you: ${title}`} />
       <div className={`flex items-center gap-2 ${showTitle ? "border-b border-gold-light bg-cream/40 px-4 py-2.5" : "sr-only"}`}>
         <Icon name={icon} size="sm" className="h-4 w-4 text-ink/65" />
@@ -316,7 +316,7 @@ function ItemRow({ item: i, role, done, onDone, flat = false, printOnly = false 
     </Link>
   );
   return (
-    <li className={`${flat ? "" : `rounded-[10px] border bg-white ${i.urgency === "now" && !done ? "border-red-200" : "border-gold-light"}`} ${done ? "opacity-70" : ""} ${printOnly ? "hidden print:block" : ""}`}>
+    <li className={`${flat ? "" : `rounded-2xl border bg-white ${i.urgency === "now" && !done ? "border-red-200" : "border-gold-light"}`} ${done ? "opacity-70" : ""} ${printOnly ? "hidden print:block" : ""}`}>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
         <div className="min-w-0 flex-1 basis-72">
           <p className="text-sm font-semibold text-ink">{i.title}</p>

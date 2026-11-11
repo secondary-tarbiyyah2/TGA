@@ -30,9 +30,9 @@ export function Card({
 }) {
   const statusStyle = status ? STATUS_STYLES[status] : null;
   return (
-    <div className="rounded-2xl border border-gold-light bg-white p-4 sm:p-6">
+    <div className="rounded-2xl border border-gold-light bg-white p-5 sm:p-6">
       <div className="flex items-start justify-between gap-3">
-        <h2 className="font-serif text-h3 font-semibold text-ink">{title}</h2>
+        <h2 className="text-[1.0625rem] font-bold tracking-[-0.01em] text-ink">{title}</h2>
         {statusStyle && (
           <span className="flex shrink-0 items-center gap-1.5 rounded-full bg-cream px-2.5 py-1 text-xs font-medium text-ink/70">
             <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${statusStyle.dot}`} />
@@ -64,8 +64,8 @@ export function StatTile({ label, value, status, href }: { label: string; value:
     <div
       className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gold-light bg-white p-5 transition before:absolute before:inset-y-0 before:left-0 before:w-1 ${tone.bar} ${href ? "hover:border-teal-500/40 hover:shadow-sm" : ""}`}
     >
-      <p className="text-sm font-medium text-ink/65">{label}</p>
-      <p className={`mt-1 text-2xl font-semibold tabular-nums tracking-tight ${tone.value}`}>{value}</p>
+      <p className="text-[0.8125rem] font-medium text-ink-500">{label}</p>
+      <p className={`mt-1 text-[1.75rem] font-bold leading-[1.1] tracking-[-0.02em] tabular-nums ${tone.value}`}>{value}</p>
       <div className="mt-auto flex items-center justify-between gap-2 pt-3">
         {statusStyle ? (
           <span className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs font-medium ${tone.pill}`}>

@@ -199,7 +199,7 @@ export function RegisterList({ scope, base }: { scope: "mine" | "all"; base: "/t
           {rows.length === 0 ? "Choose other dates, or check the published timetable." : "Try All, or other dates."}
         </EmptyState>
       ) : (
-        <div data-guide="registers-list" className="overflow-hidden rounded-[10px] border border-gold-light bg-white">
+        <div data-guide="registers-list" className="overflow-hidden rounded-2xl border border-gold-light bg-white">
           <table className="w-full text-left text-sm">
             <caption className="sr-only">Registers, newest first</caption>
             <thead className="hidden border-b border-gold-light text-xs text-ink-500 sm:table-header-group">

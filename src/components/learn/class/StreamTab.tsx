@@ -13,6 +13,8 @@ import { useNow } from "@/lib/learn/useNow";
 import { ukToday } from "@/lib/learn/ukTime";
 
 import { askConfirm } from "@/components/learn/kit";
+import { Icon } from "@/components/learn/Icon";
+import { EmptyState, Tag, ui } from "@/components/learn/ui";
 type AnnRow = {
   id: string;
   title: string;
@@ -88,7 +90,7 @@ function CommentThread({
   };
 
   return (
-    <div className="mt-3 border-t border-gold-light/60 pt-3">
+    <div className="mt-3 rounded-xl bg-[var(--portal-row-hover)] p-3">
       {visible.length === 0 && <p className="text-xs text-ink/65">No comments yet.</p>}
       <ul className="space-y-2.5">
         {visible.map((c) => (
@@ -118,9 +120,9 @@ function CommentThread({
             maxLength={2000}
             placeholder="Add a class comment"
             aria-label="Add a class comment"
-            className="min-w-0 flex-1 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm"
+            className={`${ui.input} min-w-0 flex-1`}
           />
-          <button type="button" onClick={add} disabled={busy || !text.trim()} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" onClick={add} disabled={busy || !text.trim()} className={ui.btnPrimary}>
             Post
           </button>
         </div>
@@ -227,22 +229,35 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
   const shown = (items || []).filter((i) => i.type !== "announcement" || !i.row.recalled_at || (isStaff && settings.showDeletedToStaff));
   const latestRecording = recordings.latest;
 
+  const nextLesson = upcoming.find((u) => u.kind === "lesson");
+  const dueSoon = upcoming.filter((u) => u.kind === "homework");
+
   return (
-    <div className="grid gap-6 lg:grid-cols-[16rem_minmax(0,1fr)]">
-      <aside className="space-y-4 lg:order-first">
-        <section className="rounded-2xl border border-gold-light bg-white p-4">
-          <h2 className="text-sm font-semibold text-ink">Upcoming</h2>
-          {upcoming.length === 0 ? (
-            <p className="mt-2 text-sm text-ink/65">Nothing coming up.</p>
+    <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_17.5rem]">
+      <aside className="space-y-4 xl:order-last">
+        <section className="rounded-2xl border border-gold-light bg-white p-5">
+          <h2 className="t-section">Next lesson</h2>
+          {nextLesson ? (
+            <Link href={nextLesson.href} className="group mt-2 block rounded-lg">
+              <span className="block text-[1.5rem] font-bold leading-tight tracking-[-0.02em] text-ink">{fmtWhen(nextLesson.when)}</span>
+              <span className="t-meta mt-0.5 block group-hover:text-forest-700 group-hover:underline">{nextLesson.title}</span>
+            </Link>
           ) : (
-            <ul className="mt-2 space-y-2.5">
-              {upcoming.map((u) => (
+            <p className="t-meta mt-2">No lesson on the timetable yet.</p>
+          )}
+        </section>
+        <section className="rounded-2xl border border-gold-light bg-white p-5">
+          <h2 className="t-section">Due soon</h2>
+          {dueSoon.length === 0 ? (
+            <p className="t-meta mt-2">Nothing due.</p>
+          ) : (
+            <ul className="mt-1 divide-y divide-[var(--portal-line-soft)]">
+              {dueSoon.map((u) => (
                 <li key={u.id}>
-                  <Link href={u.href} className="block text-sm hover:underline">
-                    <span className="font-medium text-ink">{u.title}</span>
-                    <span className="block text-xs text-ink/65">
-                      {u.kind === "lesson" ? "Lesson" : "Due"} {fmtWhen(u.when)}
-                    </span>
+                  <Link href={u.href} className="flex items-center gap-3 py-2.5 text-sm hover:text-forest-700">
+                    <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-amber-500" />
+                    <span className="min-w-0 flex-1 font-medium text-ink">{u.title}</span>
+                    <span className="t-meta shrink-0">{fmtWhen(u.when).split(",")[0]}</span>
                   </Link>
                 </li>
               ))}
@@ -250,8 +265,8 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
           )}
         </section>
         {latestRecording && (
-          <section className="rounded-2xl border border-gold-light bg-white p-4">
-            <h2 className="text-sm font-semibold text-ink">Latest lesson recording</h2>
+          <section className="rounded-2xl border border-gold-light bg-white p-5">
+            <h2 className="t-section">Latest lesson recording</h2>
             <div className="mt-2">
               <RecordingChip url={latestRecording.url} />
             </div>
@@ -263,9 +278,9 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
         {isStaff && <AnnouncementComposer classId={classId} onPosted={load} classworkHref={(k) => `${classHref("classwork")}&create=${k}`} />}
         {items === null && <div className="h-28 motion-safe:animate-pulse rounded-2xl bg-white" />}
         {items !== null && shown.length === 0 && (
-          <p className="rounded-2xl border border-gold-light bg-white px-5 py-8 text-center text-sm text-ink/65">
-            {isStaff ? "Nothing here yet. Add a post for your class, or set some classwork." : "Nothing has been posted to this class yet."}
-          </p>
+          <EmptyState title="Nothing posted yet" icon="megaphone">
+            {isStaff ? "Add a post for your class, or set some classwork." : "Your teachers' posts and new classwork will appear here."}
+          </EmptyState>
         )}
         {shown.map((item) => {
           const key = `${item.type}-${item.row.id}`;
@@ -279,35 +294,39 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
           const audience = isAnn ? (item.row as AnnRow).audience_child_ids : null;
           return (
             <article key={key} className={`rounded-2xl border border-gold-light bg-white p-5 ${recalled ? "opacity-60" : ""}`}>
-              <div className="flex flex-wrap items-start justify-between gap-2">
-                <div className="min-w-0">
-                  <h3 className="text-base font-semibold text-ink">
-                    {isAnn ? item.row.title : <Link href={classHref("classwork")} className="hover:underline">{item.row.title}</Link>}
-                  </h3>
-                  <p className="text-xs text-ink/65">
-                    {isAnn ? "Announcement" : (item.row as MatRow).kind === "question" ? "New question" : "New material"} · {fmtWhen(item.at)}
-                  </p>
-                </div>
-                <div className="flex flex-wrap items-center gap-1.5">
-                  {scheduled && <span className="rounded-full bg-gold-light/50 px-2 py-0.5 text-xs font-medium text-gold-700">Scheduled</span>}
-                  {recalled && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/65">Removed</span>}
-                  {isStaff && audience && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/70">{audience.length} selected pupil{audience.length === 1 ? "" : "s"}</span>}
+              <header className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                <span aria-hidden="true" className={`flex h-[2.125rem] w-[2.125rem] shrink-0 items-center justify-center rounded-full ${isAnn ? "bg-[var(--avatar-2)] text-[var(--tone-info)]" : "bg-[var(--avatar-0)] text-forest-700"}`}>
+                  <Icon name={isAnn ? "megaphone" : (item.row as MatRow).kind === "question" ? "circleHelp" : "bookOpen"} size="sm" />
+                </span>
+                <p className="min-w-0 flex-1 text-[0.8125rem] text-ink-500">
+                  <span className="font-semibold text-ink">{isAnn ? "Class post" : (item.row as MatRow).kind === "question" ? "New question" : "New material"}</span> · {fmtWhen(item.at)}
+                </p>
+                <span className="flex flex-wrap items-center gap-1.5">
+                  {isAnn && (item.row as AnnRow).pinned && <Tag tone="info">Pinned</Tag>}
+                  {scheduled && <Tag tone="warn">Scheduled</Tag>}
+                  {recalled && <Tag>Removed</Tag>}
+                  {isStaff && audience && <Tag>{audience.length} selected pupil{audience.length === 1 ? "" : "s"}</Tag>}
+                  {!isAnn && <Tag tone="good">{(item.row as MatRow).kind === "question" ? "Question" : "Material"}</Tag>}
                   {isStaff && isAnn && !recalled && (
-                    <button type="button" onClick={() => recall(item.row.id)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
+                    <button type="button" onClick={() => recall(item.row.id)} className={`${ui.btnGhost} ${ui.sm}`}>
                       Remove
                     </button>
                   )}
-                </div>
-              </div>
+                </span>
+              </header>
+              <h3 className="mt-3 text-[1.0625rem] font-bold leading-snug tracking-[-0.01em] text-ink">
+                {isAnn ? item.row.title : <Link href={classHref("classwork")} className="hover:text-forest-700 hover:underline">{item.row.title}</Link>}
+              </h3>
               {item.row.body && (
-                <div className="mt-2 space-y-1 text-sm text-ink/85">
+                <div className="mt-1.5 space-y-1 text-sm leading-relaxed text-ink-700">
                   {isAnn && (item.row as AnnRow).body_format === "markup" ? renderMarkup(item.row.body ?? "") : <p className="whitespace-pre-wrap">{item.row.body}</p>}
                 </div>
               )}
               <AttachmentList attachments={att} />
               {allow && (
-                <div className="mt-3">
-                  <button type="button" onClick={() => toggleThread(key)} aria-expanded={openThreads.has(key)} className="text-xs font-medium text-teal-800 hover:underline">
+                <div className="mt-3 border-t border-[var(--portal-line-soft)] pt-3">
+                  <button type="button" onClick={() => toggleThread(key)} aria-expanded={openThreads.has(key)} className="inline-flex items-center gap-1.5 text-[0.8125rem] font-semibold text-forest-700 hover:underline">
+                    <Icon name="messageSquare" size="sm" />
                     {live} class comment{live === 1 ? "" : "s"}
                   </button>
                   {openThreads.has(key) && (

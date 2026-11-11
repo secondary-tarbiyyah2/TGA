@@ -323,7 +323,7 @@ export function PeopleList({
         </div>
       </div>
 
-      <div className="rounded-[10px] border border-gold-light bg-[var(--portal-surface)]">
+      <div className="rounded-2xl border border-gold-light bg-[var(--portal-surface)]">
       {loading ? (
         <Loading label="Loading…" bare />
       ) : error ? (

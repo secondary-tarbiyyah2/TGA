@@ -311,7 +311,7 @@ export function MessageThread({
                         setBody(t);
                         boxRef.current?.focus();
                       }}
-                      className="w-full rounded-[10px] border border-gold-light bg-[var(--portal-surface)] px-3 py-2.5 text-sm text-ink-700 transition-colors hover:border-forest-500 hover:bg-[var(--portal-hover)]"
+                      className="w-full rounded-2xl border border-gold-light bg-[var(--portal-surface)] px-3 py-2.5 text-sm text-ink-700 transition-colors hover:border-forest-500 hover:bg-[var(--portal-hover)]"
                     >
                       {t}
                     </button>
@@ -340,7 +340,7 @@ export function MessageThread({
                 {showDay && <p className="t-eyebrow my-3 text-center">{dayLabel(m.created_at)}</p>}
                 <div className={`group flex items-end gap-1 ${mine ? "justify-end" : "justify-start"}`}>
                   {deleted ? (
-                    <div className={`max-w-[85%] rounded-[10px] border border-dashed border-gold-light px-3 py-2 text-sm italic text-ink-500 sm:max-w-[70%]`}>
+                    <div className={`max-w-[85%] rounded-2xl border border-dashed border-gold-light px-3 py-2 text-sm italic text-ink-500 sm:max-w-[70%]`}>
                       Message deleted
                       <span className="ml-2 text-[11px] not-italic">{timeOf(m.created_at)}</span>
                     </div>
@@ -350,7 +350,7 @@ export function MessageThread({
                         <MsgActions m={m} canReply={canPost} canChange={canChange} open={menuId === m.id} onToggle={() => setMenuId(menuId === m.id ? null : m.id)} onReply={() => startReply(m)} onEdit={() => { setMenuId(null); setEditId(m.id); setEditBody(m.body); }} onDelete={() => { setMenuId(null); setConfirmDeleteId(m.id); }} />
                       )}
                       <div
-                        className={`relative max-w-[85%] rounded-[10px] px-3 py-2 text-sm sm:max-w-[70%] ${mine ? "bg-forest-700 text-white" : "border border-gold-light bg-[var(--portal-surface)] text-ink"} ${flash === m.id ? "ring-2 ring-amber-400" : ""}`}
+                        className={`relative max-w-[85%] rounded-2xl px-3 py-2 text-sm sm:max-w-[70%] ${mine ? "bg-forest-700 text-white" : "border border-gold-light bg-[var(--portal-surface)] text-ink"} ${flash === m.id ? "ring-2 ring-amber-400" : ""}`}
                       >
                         {showName && <p className="mb-0.5 text-xs font-semibold text-forest-700">{nameOf(m.sender_id)}</p>}
                         {quoted && (

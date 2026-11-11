@@ -499,6 +499,12 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: **Evergreen** (owner chose design 1 of 5: "i like 1, so change everything to that. but the buttons etc
+  on the pages themself need to be improved"). Stone canvas, white 18px cards with a soft shadow, a floating rounded
+  sidebar with the TGA mark, a top bar on the canvas with white 40px controls, 40px buttons with a forest gradient
+  primary, tinted pill tags, round tinted avatars, and the classroom opening on a deep green hero with the sections in
+  a white card down the left (Stream, Classwork with progress bars, Lessons timeline, People cards, Attendance heat
+  grid, Grades score chips, Insights with weekly bars). DESIGN.md "Portal design system" rewritten to match.
 - 2026-11-11: House points as a proper system (feedback 2, item 21; `rewards/HousePoints.tsx`): one page for teachers and the
   head teacher with sections down the left (Standings and award, Leaderboard with top pupils, History with filters, CSV
   and taken-back awards, Star of the week, and for the head Limits and houses); Award points in a side panel; the head

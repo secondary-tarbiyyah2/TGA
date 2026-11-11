@@ -78,7 +78,7 @@ export function QuranSchoolOverview({ onOpen }: { onOpen: (classId: string) => v
       <h2 id="quran-school" className="t-section">
         Across the school
       </h2>
-      <div className="overflow-x-auto rounded-[10px] border border-gold-light bg-white">
+      <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
         <table className="w-full min-w-[40rem] text-sm">
           <thead className="border-b border-gold-light bg-[var(--portal-hover)] text-left text-xs font-semibold text-ink-500">
             <tr>

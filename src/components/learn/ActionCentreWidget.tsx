@@ -49,7 +49,7 @@ export function ActionCentreWidget({ role, extra = [], skipAreas = [] }: { role:
         {groups.map((g) => {
           const headingId = `ac-w-${g.key}`;
           return (
-            <li key={g.key} className={`flex flex-col rounded-[10px] border bg-white ${g.now ? "border-red-200" : "border-gold-light"}`}>
+            <li key={g.key} className={`flex flex-col rounded-2xl border bg-white ${g.now ? "border-red-200" : "border-gold-light"}`}>
               <section aria-labelledby={headingId} className="flex flex-1 flex-col">
                 <div className="flex items-center gap-2 border-b border-gold-light/70 px-4 py-2.5">
                   <Icon name={g.icon} size="sm" className="h-4 w-4 text-ink/65" />

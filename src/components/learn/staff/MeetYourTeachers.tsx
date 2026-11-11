@@ -44,7 +44,7 @@ function TeacherCard({ t, photo, showClasses, messageHref }: { t: TeacherCardDat
   const languages = t.languages || [];
   const hasProfile = !!(t.bio || t.qualifications || subjects.length || t.years_experience != null || languages.length);
   return (
-    <li className="rounded-xl border border-gold-light/70 bg-white p-4">
+    <li className="rounded-[0.875rem] border border-[var(--portal-line-soft)] bg-[var(--portal-soft)] p-4">
       <div className="flex items-start gap-3">
         <StaffAvatar name={t.full_name} src={photo} size={56} />
         <div className="min-w-0">
@@ -53,7 +53,7 @@ function TeacherCard({ t, photo, showClasses, messageHref }: { t: TeacherCardDat
           {subjects.length > 0 && (
             <ul className="mt-1.5 flex flex-wrap gap-1.5" aria-label="Subjects taught">
               {subjects.map((s) => (
-                <li key={s} className="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-medium text-teal-900">
+                <li key={s} className="portal-tag portal-tag--ok">
                   {s}
                 </li>
               ))}
@@ -106,7 +106,7 @@ export function MeetYourTeachers({ classId, bare = false, messageHref }: { class
 
   const body =
     teachers === null ? (
-      <div className="h-24 motion-safe:animate-pulse rounded-xl bg-cream" />
+      <div className="h-24 motion-safe:animate-pulse rounded-xl bg-[var(--portal-soft)]" />
     ) : error ? (
       <p className="text-sm text-amber-900">Couldn&apos;t load your teachers just now.</p>
     ) : teachers.length === 0 ? (
@@ -122,7 +122,7 @@ export function MeetYourTeachers({ classId, bare = false, messageHref }: { class
   if (bare) return body;
   return (
     <section aria-labelledby="meet-teachers-heading" className="rounded-2xl border border-gold-light bg-white p-5">
-      <h2 id="meet-teachers-heading" className="text-sm font-semibold text-ink">
+      <h2 id="meet-teachers-heading" className="t-section">
         Meet your teachers
       </h2>
       <div className="mt-3">{body}</div>

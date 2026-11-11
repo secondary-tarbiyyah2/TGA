@@ -140,7 +140,7 @@ export function FamiliesContacts() {
             ))}
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a pupil, parent or contact" aria-label="Search" className="min-w-[12rem] flex-1 rounded-[7px] border border-gold-light bg-white px-3 py-2 text-sm" />
+            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a pupil, parent or contact" aria-label="Search" className="min-w-[12rem] flex-1 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm" />
             <Select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className={`${ui.select} w-full sm:w-44`}>
               <option value="">Every year</option>
               {years.map((y) => (
@@ -161,7 +161,7 @@ export function FamiliesContacts() {
           {shown.length === 0 ? (
             <EmptyState title={only ? "Nobody is missing this." : "No pupils to show."} />
           ) : (
-            <ul className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light bg-white" data-guide="families-list">
+            <ul className="divide-y divide-gold-light/60 rounded-2xl border border-gold-light bg-white" data-guide="families-list">
               {shown.map((f) => (
                 <li key={f.child.id}>
                   <button type="button" onClick={() => setOpen(f.child.id)} className="flex w-full flex-wrap items-center gap-x-4 gap-y-1 px-4 py-3 text-left hover:bg-cream/60">
@@ -245,7 +245,7 @@ export function FamiliesContacts() {
               {current.contacts.length === 0 ? (
                 <p className="text-ink/70">None yet. The family adds them under their child&apos;s details.</p>
               ) : (
-                <ol className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light">
+                <ol className="divide-y divide-gold-light/60 rounded-2xl border border-gold-light">
                   {current.contacts.map((c) => (
                     <li key={c.id} className="space-y-0.5 px-3 py-2.5">
                       <p className="font-medium text-ink">

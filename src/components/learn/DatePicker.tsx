@@ -210,7 +210,7 @@ export function DatePicker({
             aria-expanded={open}
             aria-controls={`${base}-cal`}
             onClick={() => setOpen((o) => !o)}
-            className={`${ui.btnIcon} border border-gold-light bg-white ${open ? "!border-teal-700 !text-teal-700" : ""}`}
+            className={`${ui.btnIcon} portal-btn--secondary !h-11 !w-11 ${open ? "!border-forest-500 !text-forest-700" : ""}`}
           >
             <Icon name="calendarDays" />
           </button>
@@ -307,7 +307,7 @@ function Calendar({ id, value, start, min, max, onPick, onClose }: { id: string;
   const navBtn = `${ui.btnIcon} !h-9 !w-9`;
 
   return (
-    <div id={id} role="dialog" aria-modal="false" aria-labelledby={titleId} className="absolute left-0 z-30 mt-2 w-[19rem] max-w-[calc(100vw-2rem)] portal-menu rounded-xl border border-gold-light bg-white p-3 shadow-lg">
+    <div id={id} role="dialog" aria-modal="false" aria-labelledby={titleId} className="absolute left-0 z-30 mt-2 w-[19rem] max-w-[calc(100vw-2rem)] portal-menu rounded-2xl border border-[var(--portal-line)] bg-white p-3.5 shadow-lg">
       <div className="mb-2 flex items-center justify-between gap-1">
         <span className="flex">
           <button type="button" className={navBtn} aria-label="Previous year" title="Previous year" onClick={() => nav(-12)}>

@@ -106,44 +106,79 @@ their section names. Our identity = gold, ink, cream, "tarbiyyah",
   page. The country list comes from `src/lib/countryZones.generated.ts`; regenerate it
   with `python3 scripts/gen-country-zones.py`.
 
-## Portal design system (learn.tarbiyyah.co.uk; owner brief 10 Nov 2026)
+## Portal design system (learn.tarbiyyah.co.uk): Evergreen
 
-The portal has its own, quieter design language (the public website keeps "Brand direction"
-above). The owner's brief is `docs/owner-briefs/2026-11-10-ui-ux-redesign.md`; the working
-notes and history are in `docs/portal-redesign.md`. Everything below lives as tokens in the
-`.portal` block of `src/app/globals.css` and as components in `src/components/learn/ui.tsx`
-and `kit.tsx`: change it there, never page by page.
+**Owner's decision, 11 November 2026:** of five design directions the owner chose **"1. Evergreen"**
+("i like 1, so change everything to that. but the buttons etc on the pages themself need to be
+improved"). Evergreen replaces the earlier quiet look of 10 November (7px controls, hairlines only,
+"no gradients, no heavy shadows") for the whole portal; the public website keeps "Brand direction"
+above. The owner's earlier brief still stands: the portal must be "modern, cool and very well made",
+"especially the classroom". The reference mockup is design 1 of the five (Main.dc.html); the working
+notes and history are in `docs/portal-redesign.md`.
 
-- **Feel:** premium, calm, scholarly; information first. No AI-dashboard look: no endless
-  rounded white cards, no gradients, no heavy shadows, no coloured icon tiles, no random badges.
-- **Colour, one job each:** warm ivory canvas (`--portal-canvas`), stone sidebar
-  (`--portal-sidebar`), near-white panels (`--portal-surface`), hairline borders
-  (`--color-gold-light`, now a warm stone grey); charcoal text (`ink-900`) and grey-green
-  secondary text and icons (`ink-500`); **deep forest green** (`forest-700`) for actions,
-  links, focus and "you are here"; **muted green** (`forest-500`) for progress and quiet
-  emphasis; **antique gold** only as an accent (logo, the small marker beside the page you
-  are on); amber, red and green only for status.
-- **Type:** Inter only (self-hosted). Roles as classes: `t-title` (page title, 22px
-  semibold), `t-section` (15px semibold), body 14 to 15px, `t-meta` (13px grey-green),
-  `t-eyebrow` (11px capitals). Never make everything the same size and weight.
-- **Spacing:** a 4px grid. Page gutter 16 / 24 / 40px (phone / tablet / desktop); 24 to 28px
-  under a page header; 24px between blocks; rows 32 to 40px tall on desktop and at least
-  44px on touch screens.
-- **Shape and depth:** controls 7px corners, panels 10px, chips are pills. Hairlines at rest;
-  one shadow (`--portal-shadow-pop`) only for things that float (menus, popovers, dialogs).
-  No card inside a card.
-- **Shell:** collapsible sidebar (268px, or a 64px icon rail with tooltips): Pinned, Home,
-  then category dropdowns; the page you are on is lifted onto the surface colour with
-  forest text and a short gold marker. The profile button at the foot opens the account menu
-  (account, switch portal, sign out). The top bar sits on the canvas: search with its
-  shortcut, clock-in, display, feedback, then **Report a concern** in its own red outline
-  (never in a menu), then notifications. **No strip of tabs across the top of a page** (owner,
-  11 Nov 2026): the sidebar is the way between a category's pages (a page's own steps are
-  listed one level further in while you are on it), and a page header names the category in a
-  small eyebrow. **Actions open in place** (a right-side panel, a bottom sheet on phones, or a
-  dialog), never on a separate page; lists open a record's detail in a side panel. The
-  structural patterns are in `docs/portal-structure.md`.
-- **Status language:** a dot and a word, not a coloured badge: pending, in progress,
-  completed, needs attention, overdue, approved, unavailable (`Status` in `ui.tsx`;
-  lesson review uses `WorkflowBadge` in `kit.tsx`).
-- **Motion:** 120 to 200ms, ease-out; nothing bounces; all of it off under reduced motion.
+Everything below lives as tokens in the `.portal` block of `src/app/globals.css` (plus the
+"Evergreen" components block at the end of that file) and as components in
+`src/components/learn/ui.tsx` and `kit.tsx`: change it there, never page by page.
+
+- **Surfaces:** a warm stone canvas (`--portal-canvas` #f6f4ef). Cards are white with a 1px
+  `--portal-line` (#ebe6db) edge, 18px corners (`rounded-2xl`), 20px padding and one soft shadow
+  (`--portal-shadow-card`). A card inside a card loses its frame and shadow and takes the soft
+  fill (`--portal-soft` #f6f3ec). Menus, popovers and dialogs float higher (`--portal-shadow-pop`).
+- **Colour, one job each:** near-black ink (#16191c) and a grey (#646a71, 5:1 on the canvas) for
+  secondary text; **forest green** (`forest-700` #1d4a37) for actions, links and "you are here";
+  `forest-500` (#3d7a5f) for progress bars and small charts; the page or row you are on is
+  `--portal-selected` (#eef5f0) with forest text. **Gold** is the accent: the TGA mark, the 3px
+  marker beside the current page, the class hero's eyebrow and its Join button. Gold as text is only
+  `gold-700` (#7d6428, 4.9:1 on the canvas) for 12px eyebrows; on the hero it is #e3c98f on green.
+- **Tags and status:** soft tinted pills (`Tag`, `StatusChip`, `Status` in `ui.tsx`;
+  `.portal-tag--ok|warn|bad|info`): ok #e3f0e8/#1b5a3d, warn #fcf0d6/#7a4f00, bad #fde7e4/#9a2a1e,
+  info #e6eef8/#25507d, neutral #f1ede4/#3a3f45. Every pair passes 4.5:1.
+- **Avatars:** round initials on one of six soft tints chosen from the name (`Avatar`).
+- **Buttons (the owner's specific ask):** 40px high (44px on phones), 11px corners, 16px icons.
+  Secondary: white, 1px #ddd6c8 edge, a tiny shadow; hover #faf8f3 with a #c9c1ae edge. Primary: a
+  forest vertical gradient (#245a43 to #1d4a37), a #173f2c edge, an inner highlight and a lift on
+  hover. Danger: the same shape in red. Gold call to action (`variant="gold"`, the class hero's Join):
+  46px. Small (`size="sm"`): 32px with 9px corners. Ghost: no box until hovered. Focus: a 3px soft
+  green ring (`--portal-focus-ring`). Use `Button`, `ButtonLink`, `IconButton` or `btn()`; the look
+  is `.portal-btn--*` in globals.css.
+- **Controls:** filter pills 34px (`ui.chip` / `ui.chipOn`, forest when on); segmented controls on
+  a #f1ede4 track with the chosen option raised in white (`ui.seg`, `Tabs variant="switch"`); text
+  fields 44px with 11px corners and a green focus ring (`ui.input`, `.portal-field`); yes/no
+  settings are switches (`Switch` in `ui.tsx`, or `className="portal-switch"` on a checkbox).
+- **Tables:** inside a white card; small grey headers; rows 10 to 14px padding; hover #faf8f3; the
+  chosen row #eef5f0 (`data-selected="true"`).
+- **Type:** Inter only. `t-title` 28px weight 750 with -0.025em tracking; `t-eyebrow` 12px gold-700
+  capitals (grey inside tables); `t-section` 15px; body 14 to 15px; `t-meta` 13px grey. The class
+  hero's title is 34px.
+- **Shell:** the sidebar is a **floating panel**: 16px from the window's edges, white, 22px corners,
+  a soft shadow. At its top the brand block (a 36px forest square with "TGA" in gold, then
+  "Tarbiyyah / Global Academy"); then Pinned, Home and the categories with icons, which open and
+  close; pages sit indented under their category; the page you are on is #eef5f0 with forest bold
+  text and a 3px gold inset marker on the left. The account sits at the foot in a soft #f6f3ec block
+  and opens the account menu. It still collapses to an icon rail (tooltips) and is the phone drawer.
+  The top bar sits on the canvas with no strip or line: search (white, 12px corners, the Ctrl K
+  hint), then guide, clock-in, display and feedback as 40px white buttons with 12px corners, then
+  **Report a concern** in red text with a pink edge (always visible, never in a menu), then
+  notifications. **No strip of tabs across the top of a page** (owner, 11 Nov 2026): the sidebar is
+  the way between a category's pages, and a page header names the category in its gold eyebrow.
+  **Actions open in place** (a right-side panel that floats with 22px corners, a bottom sheet on
+  phones, or a dialog), never on a separate page. The structural patterns are in
+  `docs/portal-structure.md`.
+- **Page header:** the eyebrow (12px gold capitals), the 28px title, a 13px grey line, actions on
+  the right.
+- **The classroom** (`components/learn/class/`): the class opens on a deep green hero
+  (`ClassHero.tsx`, `.portal-hero`: `radial-gradient(120% 140% at 100% 0%, #2f6b52, #1d4a37 45%,
+  #173f2c)`, 24px corners, a faint gold ring top right) with the subject and year as a gold eyebrow,
+  the class name, when it meets (the published timetable) and how many pupils, the teachers'
+  avatars, three figures for staff (attendance, work in, average result over ten weeks) and the live
+  lesson's gold Join button. Below it the sections are listed **down the left in a white card**,
+  marked like the sidebar's current page (never tabs across the top, never a dropdown; a board of
+  buttons on phones). Stream: a composer card and post cards with an icon avatar, tags and the title,
+  with Next lesson and Due soon on the right. Classwork: grouped by kind or topic, each piece with
+  its icon tile and a hand-in progress bar. Lessons: a week-by-week timeline. People: teacher cards
+  and pupil cards in a grid with each pupil's attendance. Attendance: a heat grid of the last ten
+  lessons (rounded code cells and a key), then the registers. Grades: tinted score chips and small
+  trend bars. Insights: figure cards with weekly bars, then "Who needs attention". Every figure comes
+  from the class's real records; nothing is invented.
+- **Motion:** 100 to 200ms, ease-out; buttons settle 1px when pressed; nothing bounces; all of it
+  off under reduced motion.

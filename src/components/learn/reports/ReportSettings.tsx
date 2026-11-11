@@ -114,7 +114,7 @@ function CommentBank() {
             {pageRows.map((c) => (
               <li key={c.id} className="flex items-start justify-between gap-3 py-1.5 text-sm text-ink-700">
                 <span className="min-w-0 leading-relaxed">{c.text}</span>
-                <button type="button" onClick={() => remove(c.id)} aria-label={`Remove: ${c.text}`} title="Remove" className={`${ui.btnIcon} -my-1 !h-8 !w-8 hover:!text-red-700`}>
+                <button type="button" onClick={() => remove(c.id)} aria-label={`Remove: ${c.text}`} title="Remove" className={`${ui.btnIcon} -my-1 !h-8 !min-h-8 !w-8 !min-w-8 hover:!text-red-700`}>
                   <Icon name="trash" size="sm" />
                 </button>
               </li>
@@ -364,7 +364,7 @@ function Grading() {
                       <td className="py-1.5 pr-3 tabular-nums text-ink-700">{b.min_percent}%</td>
                       <td className="py-1.5 pr-3 tabular-nums text-ink-500">{i === 0 ? "100%" : `under ${boundaries[i - 1].min_percent}%`}</td>
                       <td className="py-1 text-right">
-                        <button type="button" onClick={() => removeBoundary(b)} aria-label={`Remove grade ${b.label}`} title="Remove" className={`${ui.btnIcon} !h-8 !w-8 hover:!text-red-700`}>
+                        <button type="button" onClick={() => removeBoundary(b)} aria-label={`Remove grade ${b.label}`} title="Remove" className={`${ui.btnIcon} !h-8 !min-h-8 !w-8 !min-w-8 hover:!text-red-700`}>
                           <Icon name="trash" size="sm" />
                         </button>
                       </td>

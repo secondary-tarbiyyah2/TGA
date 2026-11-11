@@ -126,7 +126,7 @@ export function RegisterSheet({ lessonId, base, from }: { lessonId: string | nul
       <p className="mb-3 text-sm text-ink-500">
         Each mark saves as you choose it. Authorised is an absence the school has agreed to; add a note to any mark. On a keyboard, press a pupil&apos;s row and use P, L, A (authorised), U (unauthorised) or T; the arrow keys move between pupils.
       </p>
-      <section className="overflow-hidden rounded-[10px] border border-gold-light bg-white">
+      <section className="overflow-hidden rounded-2xl border border-gold-light bg-white">
         <Register lessonId={lesson.id} classId={lesson.classId} onProgress={(taken, total) => setProgress({ taken, total })} />
       </section>
       <p className="mt-4">

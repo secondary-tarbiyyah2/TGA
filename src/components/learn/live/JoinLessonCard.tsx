@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { localDateKey } from "@/lib/learn/calendar";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { btn } from "@/components/learn/ui";
+import { Icon } from "@/components/learn/Icon";
 
 /** Who is looking: a teacher, a student (own account) or a parent (one or all of their children). */
 export type JoinWho = { kind: "teacher" } | { kind: "student"; childId?: string } | { kind: "parent"; childId?: string };
@@ -115,7 +117,7 @@ export function joinWindowOpen(nowMinutes: number, start: string, end: string): 
  * `classId` narrows it to one class (the class page). Renders nothing when
  * there is no lesson to join right now.
  */
-export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho; classId?: string; className?: string }) {
+export function JoinLessonCard({ who, classId, className = "", variant = "card" }: { who: JoinWho; classId?: string; className?: string; /** "hero": just the gold Join button(s), for the class hero. */ variant?: "card" | "hero" }) {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [now, setNow] = useState<Date>(() => new Date());
   const [busy, setBusy] = useState<string | null>(null);
@@ -243,54 +245,73 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
     }
   };
 
+  const label = (l: Lesson, k: Kid | null, many: boolean) => {
+    const key = `${l.id}:${k ? k.id : "me"}`;
+    if (busy === key) return "Joining…";
+    const started = nowMinutes >= minutesOf(l.start);
+    const base = variant === "hero" ? (started ? "Join the live lesson" : `Join the ${l.start} lesson`) : "Join lesson";
+    return many && k ? `${base} · ${k.name}` : base;
+  };
+  const buttons = (l: Lesson) =>
+    who.kind === "parent" ? (
+      l.kids.map((k) => (
+        <button key={k.id} type="button" onClick={() => join(l, k)} disabled={busy !== null} className={btn("gold")}>
+          <Icon name="video" size="sm" />
+          {label(l, k, l.kids.length > 1)}
+        </button>
+      ))
+    ) : (
+      <button
+        type="button"
+        onClick={() => join(l, who.kind === "student" ? l.kids[0] ?? null : null)}
+        disabled={busy !== null || (who.kind === "student" && l.kids.length === 0)}
+        className={btn("gold")}
+      >
+        <Icon name="video" size="sm" />
+        {label(l, who.kind === "student" ? l.kids[0] ?? null : null, false)}
+      </button>
+    );
+
+  if (variant === "hero")
+    return (
+      <div data-guide="join-lesson" className={`flex flex-wrap items-center gap-2 ${className}`}>
+        {open.map((l) => (
+          <span key={l.id} className="contents">
+            {buttons(l)}
+          </span>
+        ))}
+        {message && (
+          <p role="alert" className="w-full rounded-xl bg-[var(--tone-bad-bg)] px-3 py-2 text-sm text-[var(--tone-bad)]">
+            {message}
+          </p>
+        )}
+      </div>
+    );
+
   return (
     <section data-guide="join-lesson" aria-label="Live lesson" className={`space-y-3 ${className}`}>
       {open.map((l) => {
         const started = nowMinutes >= minutesOf(l.start);
-        const asParent = who.kind === "parent";
         return (
-          <div key={l.id} className="rounded-2xl border-2 border-teal-600 bg-teal-50 p-5 sm:p-6">
+          <div key={l.id} className="portal-hero p-5 sm:p-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-wider text-teal-800">{started ? "Lesson in progress" : `Starts at ${l.start}`}</p>
-                <h2 className="mt-1 font-serif text-h2 font-semibold text-ink">
+                <p className="portal-hero-eyebrow text-xs font-semibold uppercase tracking-[0.06em]">{started ? "Lesson in progress" : `Starts at ${l.start}`}</p>
+                <h2 className="mt-1 text-[1.375rem] font-bold leading-tight tracking-[-0.02em] text-white">
                   {l.subject}
                   {l.className ? ` · ${l.className}` : ""}
                 </h2>
-                <p className="mt-0.5 text-sm text-ink/70">
-                  {l.start}–{l.end}
+                <p className="portal-hero-muted mt-0.5 text-sm">
+                  {l.start} to {l.end}
                 </p>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {asParent ? (
-                  l.kids.map((k) => (
-                    <button
-                      key={k.id}
-                      type="button"
-                      onClick={() => join(l, k)}
-                      disabled={busy !== null}
-                      className="rounded-xl bg-gold-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-gold-900 disabled:opacity-60"
-                    >
-                      {busy === `${l.id}:${k.id}` ? "Joining…" : l.kids.length > 1 ? `Join lesson · ${k.name}` : "Join lesson"}
-                    </button>
-                  ))
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => join(l, who.kind === "student" ? l.kids[0] ?? null : null)}
-                    disabled={busy !== null || (who.kind === "student" && l.kids.length === 0)}
-                    className="rounded-xl bg-gold-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-gold-900 disabled:opacity-60"
-                  >
-                    {busy === `${l.id}:${who.kind === "student" ? l.kids[0]?.id ?? "me" : "me"}` ? "Joining…" : "Join lesson"}
-                  </button>
-                )}
-              </div>
+              <div className="flex flex-wrap gap-2">{buttons(l)}</div>
             </div>
           </div>
         );
       })}
       {message && (
-        <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
+        <p role="alert" className="rounded-xl bg-[var(--tone-bad-bg)] px-3 py-2 text-sm text-[var(--tone-bad)]">
           {message}
         </p>
       )}

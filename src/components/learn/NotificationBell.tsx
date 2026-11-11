@@ -122,7 +122,7 @@ export function NotificationBell({ userId }: { userId: string }) {
         onClick={markRead}
         aria-expanded={open}
         aria-label={unreadCount > 0 ? `Notifications, ${unreadCount} unread` : "Notifications"}
-        className="portal-icon-btn relative"
+        className="portal-topbar-btn relative"
       >
         <Icon name="bell" />
         {unreadCount > 0 && (
@@ -133,7 +133,7 @@ export function NotificationBell({ userId }: { userId: string }) {
       </button>
 
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-80 rounded-xl border border-gold-light bg-white p-3 shadow-warm">
+        <div className="portal-menu absolute right-0 z-50 mt-2 w-80 max-w-[calc(100vw-2rem)] rounded-2xl border border-[var(--portal-line)] bg-white p-3 shadow-warm">
           <p className="px-1 pb-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Notifications</p>
           {signals === null ? (
             <Loading label="Loading…" bare />

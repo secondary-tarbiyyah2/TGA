@@ -144,7 +144,7 @@ export function TeachPupilProfile({ id }: { id: string }) {
         {sec === "support" && (
           <div className="space-y-4">
             {canAcknowledge && (
-              <div className={`flex flex-wrap items-center justify-between gap-3 rounded-[10px] border px-4 py-3 ${st === "current" ? "border-gold-light bg-white" : "border-amber-300 bg-amber-50/60"}`}>
+              <div className={`flex flex-wrap items-center justify-between gap-3 rounded-2xl border px-4 py-3 ${st === "current" ? "border-gold-light bg-white" : "border-amber-300 bg-amber-50/60"}`}>
                 <p className="text-sm text-ink">
                   {st === "current" && pupil.ack
                     ? `You acknowledged this on ${formatStamp(pupil.ack.acknowledged_at)}.`

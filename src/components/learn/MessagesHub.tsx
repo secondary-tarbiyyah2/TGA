@@ -288,7 +288,7 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
         {/* One fixed-height workspace: on a wide enough page the list and the open conversation sit side by side
             (sized by the space the page has, not the screen, so the menu being open never squeezes it into one
             column); the reply box is always at the foot of the conversation. */}
-        <div className="grid h-[max(30rem,calc(100dvh_-_13rem))] min-w-0 grid-rows-[minmax(0,1fr)] overflow-hidden rounded-[10px] border border-gold-light bg-[var(--portal-surface)] @2xl:grid-cols-[minmax(15rem,20rem)_minmax(0,1fr)]">
+        <div className="grid h-[max(30rem,calc(100dvh_-_13rem))] min-w-0 grid-rows-[minmax(0,1fr)] overflow-hidden rounded-2xl border border-gold-light bg-[var(--portal-surface)] @2xl:grid-cols-[minmax(15rem,20rem)_minmax(0,1fr)]">
           <div className={`flex min-h-0 min-w-0 flex-col border-gold-light @2xl:border-r ${active ? "hidden @2xl:flex" : ""}`}>
             <div className="space-y-2 border-b border-gold-light p-3">
               <label htmlFor="msg-search" className="sr-only">

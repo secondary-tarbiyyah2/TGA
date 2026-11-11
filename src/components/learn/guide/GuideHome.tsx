@@ -94,7 +94,7 @@ export function GuideHome({ userId, journeys }: { userId: string; journeys?: Rea
 
       {/* One guide in three parts (owner, 11 Nov 2026: "portal guide and tour together and structured"). */}
       <nav aria-label="Parts of the Portal guide">
-        <ol className="grid gap-px overflow-hidden rounded-[10px] border border-gold-light bg-gold-light sm:grid-cols-3">
+        <ol className="grid gap-px overflow-hidden rounded-2xl border border-gold-light bg-gold-light sm:grid-cols-3">
           {[
             {
               n: 1,

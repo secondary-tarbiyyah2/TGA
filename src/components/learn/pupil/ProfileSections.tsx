@@ -126,7 +126,7 @@ export function PupilWorkTab({ childId }: { childId: string }) {
         {w.length === 0 ? (
           <EmptyState title={show === "missing" ? "Nothing missing." : "No classwork set in the last 120 days."} />
         ) : (
-          <ul className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light bg-white">
+          <ul className="divide-y divide-gold-light/60 rounded-2xl border border-gold-light bg-white">
             {w.map((r) => (
               <li key={r.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm">
                 <span className="min-w-0 flex-1">
@@ -150,7 +150,7 @@ export function PupilWorkTab({ childId }: { childId: string }) {
         {g.length === 0 ? (
           <EmptyState title="No results recorded yet." />
         ) : (
-          <ul className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light bg-white">
+          <ul className="divide-y divide-gold-light/60 rounded-2xl border border-gold-light bg-white">
             {g.map((r) => (
               <li key={r.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm">
                 <span className="min-w-0 flex-1">
@@ -222,7 +222,7 @@ export function PupilDocumentsTab({ childId, onOpenReports }: { childId: string;
   ];
   if (items.length === 0) return <EmptyState title="No documents yet." icon="fileText">Issued term reports and support plan documents appear here.</EmptyState>;
   return (
-    <ul className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light bg-white">
+    <ul className="divide-y divide-gold-light/60 rounded-2xl border border-gold-light bg-white">
       {items.map((it) => (
         <li key={it.key} className="flex flex-wrap items-center gap-3 px-4 py-2.5 text-sm">
           <span className="min-w-0 flex-1">

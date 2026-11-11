@@ -136,9 +136,9 @@ export function TeachNow({ slots, classIds }: { slots: (TimetableSlot & { classe
           {lessons === null ? (
             <div className="h-16 motion-safe:animate-pulse rounded-lg bg-cream" />
           ) : lessons.length === 0 ? (
-            <p className="rounded-[10px] border border-gold-light bg-white px-4 py-5 text-sm text-ink-500">No lessons today.</p>
+            <p className="rounded-2xl border border-gold-light bg-white px-4 py-5 text-sm text-ink-500">No lessons today.</p>
           ) : (
-            <ul className="divide-y divide-gold-light overflow-hidden rounded-[10px] border border-gold-light bg-white" aria-label="Your day">
+            <ul className="divide-y divide-gold-light overflow-hidden rounded-2xl border border-gold-light bg-white" aria-label="Your day">
               {lessons.map((l) => {
                 const done = now > hhmm(l.end);
                 const due = !l.registerTaken && now >= hhmm(l.start);

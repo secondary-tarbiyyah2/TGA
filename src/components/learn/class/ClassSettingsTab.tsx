@@ -14,7 +14,7 @@ type AssessmentType = { id: string; name: string };
 function Group({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="rounded-2xl border border-gold-light bg-white">
-      <h2 className="border-b border-gold-light px-5 py-3 text-sm font-semibold text-ink">{title}</h2>
+      <h2 className="t-section border-b border-[var(--portal-line-soft)] px-5 py-4">{title}</h2>
       <div className="space-y-5 p-5">{children}</div>
     </section>
   );
@@ -163,10 +163,10 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
         </p>
       )}
 
-      <section aria-labelledby="teams-link" className="rounded-2xl border-2 border-forest-700 bg-white p-5">
+      <section aria-labelledby="teams-link" className="rounded-2xl border border-forest-200 bg-white p-5 shadow-[inset_3px_0_0_var(--portal-accent)]">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h2 id="teams-link" className="text-base font-semibold text-ink">
+            <h2 id="teams-link" className="t-section text-base">
               Live lessons on Teams
             </h2>
             <p className="mt-1 text-sm text-ink/70">Paste this class&apos;s recurring Teams meeting link once. Every lesson in the timetable uses it.</p>
@@ -219,7 +219,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
           Description
           <textarea value={s.description} onChange={(e) => set({ description: e.target.value })} maxLength={1000} rows={3} className={`${input} mt-1`} />
         </label>
-        <button type="button" onClick={saveDetails} className="rounded-lg bg-gold-700 px-5 py-2 text-sm font-medium text-white hover:bg-gold-900">
+        <button type="button" onClick={saveDetails} className={ui.btnPrimary}>
           Save details
         </button>
       </Group>
