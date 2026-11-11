@@ -43,8 +43,11 @@ Batches and status:
    left, one at a time, `?section=`; the accordions (`<details>`) in SchoolFeatures, Microsoft365Connection and
    AiUsage became plain panels; a section with no access or no data says so instead of vanishing. Your account
    (`/account`) is one panel of `SettingsGroup` rows (Password, Messages, Notifications, Parent PIN, Weekly email,
-   Your feedback); gold-filled buttons there became the forest primary. `SectionNav`'s phone dropdown now has the
-   input box (was borderless). Still to do: Academic setup, Admissions and Recruitment settings. 5a. [x] Figures: `.portal-figures` (globals.css) turns any grid of figure tiles into one panel divided by hairlines
+   Your feedback); gold-filled buttons there became the forest primary. Account also holds "Your signature" (staff), added
+   on main at the same time. Part 2: Admissions' Email settings and
+   Recruitment's Email settings use `SettingsGroup` rows in one panel (Paying fees / Assessments and interviews;
+   New applications / AI first read) with Save at the foot. Academic setup is
+   already a stepped workflow (steps in the menu, Previous and Next at the foot) and was left as it is. 5a. [x] Figures: `.portal-figures` (globals.css) turns any grid of figure tiles into one panel divided by hairlines
    (no separate cards, no tinted fills, no coloured left bars). Used on Fees (staff and family), Safeguarding,
    Behaviour (all four roles) and School summary; safeguarding figures carry their state in the number's colour.
    `Select` now treats an important width (`!w-auto`) as layout, so a dropdown given `!w-auto` sits inline in a
@@ -54,7 +57,10 @@ Batches and status:
    many are waiting, Issued), each pressable, instead of a switch strip; Report settings left the stages and
    opens from the header's menu with "Back to reports". The overview's figures use `.portal-figures`. The
    `Stepper` keeps one row on phones (no notes or joining lines there). Still to do: Admissions, Entry
-   assessments, Timetable. 6. [ ] Workspaces and Today, Messages,
+   assessments, Timetable. 6a. [x] Gradebook (workspace): the class picker, pupil count and Add an assessment sit on one line above the
+   grid (`ClassGradebook toolbar`); the card with a second "Gradebook" heading is gone, here and in a class's
+   Grades. "No assessment types" now points to Report settings, where they live.
+6. [ ] Workspaces and Today, Messages,
    Calendar, Qur'an, absences.
 
 Screenshots: `scratchpad/tpl/shots.mjs` (the redesign3 mock harness pointed at this worktree, plus subjects,
@@ -498,6 +504,9 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   and taken-back awards, Star of the week, and for the head Limits and houses); Award points in a side panel; the head
   teacher's limits (most points in one award, most a pupil a day from one member of staff) enforced by the database
   (migration 0217, pgTAP `house_point_limits.test.sql`).
+- 2026-11-11: A register's page (feedback 3): a footer that stays in view with the counts (marked, present, late,
+  authorised, unauthorised, technical) and when it last saved; Change the whole class; each pupil's attendance over the
+  last 60 days beside their name; keyboard marking (P, L, A, U, T, arrow keys); Previous and Next lesson of the class.
 - 2026-11-11: Families and contacts (`/admin/families`, Pupils and admissions; feedback 3): counts that filter (no parent
   linked, no parent email, no phone number, no emergency contact, only one contact, no one with parental responsibility),
   year and search, each family beside the list with tap-to-call numbers, Edit details and Download CSV. Email delivery
