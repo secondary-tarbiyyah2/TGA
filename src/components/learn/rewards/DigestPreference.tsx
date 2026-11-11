@@ -50,11 +50,8 @@ export function DigestPreference() {
   if (optOut === null) return null;
 
   return (
-    <section id="digest" aria-labelledby="digest-heading" className="print:hidden rounded-2xl border border-gold-light/50 bg-white p-5">
-      <h2 id="digest-heading" className="text-sm font-semibold text-ink">
-        Weekly email
-      </h2>
-      <label className="mt-2 flex items-start gap-2 text-sm text-ink/80">
+    <section id="digest" aria-label="Weekly email" className="print:hidden">
+      <label className="flex items-start gap-2 text-sm text-ink/80">
         <input type="checkbox" className="mt-1" checked={!optOut} disabled={busy} onChange={(e) => toggle(e.target.checked)} />
         <span>
           Email me a summary of my children&apos;s week every Friday afternoon

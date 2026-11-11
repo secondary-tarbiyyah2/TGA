@@ -131,7 +131,7 @@ export const keyStages: KeyStage[] = [
       "PSHE",
     ],
     liveSplit:
-      "Live lessons in every subject, leading to the same GCSE and International GCSE courses as Tarbiyyah Secondary School, our partner school and exam centre.",
+      "Live lessons in every subject, leading to the same GCSE and International GCSE courses as Tarbiyyah Secondary School, our partner school.",
     weekly: [
       { subject: "English Language and Literature", lessons: 5 },
       { subject: "Mathematics", lessons: 4 },
@@ -144,7 +144,7 @@ export const keyStages: KeyStage[] = [
     lessonLength: "50 minutes",
     totalLessons: "23 live lessons a week",
     note: "Years 10 and 11 follow the full live timetable, because GCSE courses need it. Pupils take the same exam courses as Tarbiyyah Secondary School: AQA GCSE English Language and Geography, Pearson Edexcel GCSE English Literature, and Pearson Edexcel International GCSEs in the other subjects. History is not offered at GCSE.",
-    gcseNote: "Exam entry fees are not included in tuition: families register their child at an approved exam centre and pay the centre's charges.",
+    gcseNote: "Exam entry fees are not included in tuition: families register their child as a private candidate at an approved exam centre near them and pay the centre's charges. We help you find a centre, free of charge.",
   },
 ];
 

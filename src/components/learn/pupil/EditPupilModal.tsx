@@ -102,7 +102,7 @@ export function EditPupilModal({ childId, onClose, onSaved }: { childId: string;
   const valid = !!form && !!form.name.trim() && !!form.dob;
 
   return (
-    <Modal title={orig ? `Edit ${orig.name}` : "Edit pupil"} onClose={onClose}>
+    <Modal title={orig ? `Edit ${orig.name}` : "Edit pupil"} onClose={onClose} panel>
       <div className="space-y-4 p-4 sm:p-5">
         {error && <Notice tone="bad">{error}</Notice>}
         {!form ? (

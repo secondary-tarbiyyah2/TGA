@@ -21,10 +21,13 @@ export type FeePayment = {
   created_at: string;
 };
 
-export type PaymentMethod = "cash" | "bank_transfer" | "card";
+/** 'bank_transfer' stays only so payments recorded before 11 Nov 2026 still show (migration 0214). */
+export type PaymentMethod = "online" | "card" | "cash" | "bank_transfer";
 export type ChargeStatus = "paid" | "overdue" | "outstanding" | "void";
 
-export const METHOD_LABEL: Record<PaymentMethod, string> = { cash: "Cash", bank_transfer: "Bank transfer", card: "Card" };
+export const METHOD_LABEL: Record<PaymentMethod, string> = { online: "Online payment", card: "Card", cash: "Cash", bank_transfer: "Bank transfer" };
+/** Methods offered when staff record a new payment. Fees are paid online (owner, 11 Nov 2026); bank transfer is no longer offered. */
+export const RECORDABLE_METHODS: PaymentMethod[] = ["online", "card", "cash"];
 export const STATUS_LABEL: Record<ChargeStatus, string> = { paid: "Paid", overdue: "Overdue", outstanding: "Outstanding", void: "Void" };
 export const STATUS_STYLE: Record<ChargeStatus, string> = {
   paid: "bg-green-50 text-green-800 border-green-200",

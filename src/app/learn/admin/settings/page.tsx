@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
-import { PageHeader } from "@/components/learn/PageHeader";
+import { SettingsPage } from "@/components/learn/templates/SettingsPage";
 import { learnRoleLabel, STAFF_ROLES, useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { FormSection, LoadingState, Switch, ui } from "@/components/learn/ui";
@@ -32,20 +33,15 @@ type SchoolSettings = {
 
 const SCHOOL_COLUMNS = "headteacher_name, admissions_email, contact_phone, contact_address, opening_hours, safeguarding_lead_name, safeguarding_lead_contact, portal_url";
 
-/** One settings group. Each opens in place (only School details starts
- * open), so the page is a short list of headings rather than one long form. */
-function Section({ title, hint, children, onSave, busy, message, defaultOpen = false, guide }: { title: string; hint: string; children: React.ReactNode; onSave?: () => void; busy?: boolean; message?: string | null; defaultOpen?: boolean; guide?: string }) {
+/** One settings section's body: its form in a panel and a Save row under it. The section's
+ * name and description are shown by the settings page above it; `hint` is shown only when
+ * there is nothing else to show (no access, or it could not load). */
+function Section({ hint, children, onSave, busy, message, guide }: { title?: string; hint: string; children: React.ReactNode; onSave?: () => void; busy?: boolean; message?: string | null; defaultOpen?: boolean; guide?: string }) {
   const bad = !!message && message !== "Saved." && !message.startsWith("Saved");
+  if (!children) return <p className="t-meta">{hint}</p>;
   return (
-    <details open={defaultOpen} data-guide={guide} className="group rounded-2xl border border-gold-light bg-white">
-      <summary className="flex cursor-pointer list-none items-start justify-between gap-3 px-5 py-4">
-        <span>
-          <span className="block text-base font-semibold text-ink">{title}</span>
-          <span className="mt-0.5 block text-sm text-ink/65">{hint}</span>
-        </span>
-        <span aria-hidden="true" className="mt-1 text-lg leading-none text-ink/50 transition-transform group-open:rotate-90">›</span>
-      </summary>
-      <div className="border-t border-gold-light px-5 py-5">{children}</div>
+    <div data-guide={guide} className="rounded-2xl border border-gold-light bg-white">
+      <div className="px-5 py-5">{children}</div>
       {onSave && (
         <div className="flex flex-wrap items-center gap-3 border-t border-gold-light px-5 py-3">
           <button type="button" disabled={busy} onClick={onSave} className={ui.btnPrimary}>
@@ -54,7 +50,7 @@ function Section({ title, hint, children, onSave, busy, message, defaultOpen = f
           {message && <p role={bad ? "alert" : "status"} className={`text-sm ${bad ? "text-red-700" : "text-ink/70"}`}>{message}</p>}
         </div>
       )}
-    </details>
+    </div>
   );
 }
 
@@ -120,7 +116,7 @@ function SchoolDetails() {
   if (!s) return <LoadingState rows={3} />;
   const set = (k: keyof SchoolSettings) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setS({ ...s, [k]: e.target.value || null });
   return (
-    <Section title="School details" hint="Shown on the website and in emails to families. Also editable under Website content, Site settings." onSave={save} busy={busy} message={msg} defaultOpen guide="settings-form">
+    <Section title="School details" hint="Shown on the website and in emails to families. Also editable under Website content, Site settings." onSave={save} busy={busy} message={msg}>
       <FormSection title="Contact" description="How families reach the school.">
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Headteacher name">
@@ -271,7 +267,7 @@ function MessagingSettings() {
     setMsg(error ? "Couldn't save. Only a Headteacher or Admin can change this." : "Saved.");
   };
 
-  if (days === null) return null;
+  if (days === null) return <p className="t-meta">Nothing to show yet. Only a Headteacher or Admin can see these.</p>;
   return (
     <Section title="Messages" hint="Staff and parents can message each other. Students have no private messaging." onSave={save} busy={busy} message={msg}>
       <Field label="Keep messages for (days)" help="Conversations with no new messages for this long are deleted automatically. 730 days is about two school years.">
@@ -285,6 +281,7 @@ type ClockInSettings = { require_clock_in: boolean; clock_in_roles: string[]; au
 
 function ClockInSettingsSection() {
   const [s, setS] = useState<ClockInSettings | null>(null);
+  const [loaded, setLoaded] = useState(false);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
@@ -296,7 +293,10 @@ function ClockInSettingsSection() {
       .select("require_clock_in, clock_in_roles, auto_clock_out_hours")
       .eq("id", true)
       .maybeSingle()
-      .then(({ data }) => setS((data as ClockInSettings | null) || null));
+      .then(({ data }) => {
+        setS((data as ClockInSettings | null) || null);
+        setLoaded(true);
+      });
   }, []);
 
   const save = async () => {
@@ -312,7 +312,7 @@ function ClockInSettingsSection() {
     setMsg(error ? "Couldn't save. Only a Headteacher or Admin can change this." : "Saved.");
   };
 
-  if (!s) return null;
+  if (!s) return <p className="t-meta">{loaded ? "Couldn't load these. Only a Headteacher or Admin can see them." : "Loading"}</p>;
   return (
     <Section title="Staff clock-in" hint="Staff who must clock in see a clock-in screen instead of the portal until they do." onSave={save} busy={busy} message={msg}>
       <div className="space-y-4">
@@ -357,7 +357,7 @@ function Shortcuts() {
     { href: "/account", title: "Your account", text: "Change your password and sign-in details." },
   ];
   return (
-    <Section title="Related pages" hint="Other places school-wide things are managed. Academic setup and the website are in the tabs above.">
+    <Section title="Related pages" hint="Other places school-wide things are managed.">
       <ul className="grid gap-3 sm:grid-cols-2">
         {links.map((l) => (
           <li key={l.href}>
@@ -372,21 +372,42 @@ function Shortcuts() {
   );
 }
 
+type Key = "features" | "details" | "lessons" | "messages" | "clockin" | "microsoft" | "ai" | "related";
+
+/** Settings, one section at a time with the sections down the left (owner, 11 Nov 2026:
+ * grouped configuration, much less scrolling). The section is kept in the address. */
+function SettingsContent() {
+  const params = useSearchParams();
+  const router = useRouter();
+  const raw = params.get("section") as Key | null;
+  const go = (k: Key) => router.replace(`?section=${k}`, { scroll: false });
+  return (
+    <SettingsPage<Key>
+      guide="settings-form"
+      header={{ title: "Settings", subtitle: "School features, school details, alerts, retention, staff clock-in and connections." }}
+      value={raw || undefined}
+      onChange={go}
+      sections={[
+        { key: "features", label: "School features", description: "Switch optional parts of the portal on or off for the whole school. Switching something off hides it; nothing is deleted.", content: <SchoolFeaturesSection /> },
+        { key: "details", label: "School details", description: "Shown on the website and in emails to families. Also editable under Website content, Site settings.", content: <SchoolDetails /> },
+        { key: "lessons", label: "Lessons and attendance", description: "When parents are told about absences, and how long recordings are kept.", content: <LessonSettings /> },
+        { key: "messages", label: "Messages", description: "Staff and parents can message each other. Students have no private messaging.", content: <MessagingSettings /> },
+        { key: "clockin", label: "Staff clock-in", description: "Staff who must clock in see a clock-in screen instead of the portal until they do.", content: <ClockInSettingsSection /> },
+        { key: "microsoft", label: "Microsoft 365", description: "School email from Outlook, a Teams meeting for each lesson, and Teams attendance hints on registers.", content: <Microsoft365Connection /> },
+        { key: "ai", label: "AI helpers", description: "Drafts of report comments, Tarbiyah Notes and replies to parents. Staff check every draft before it is sent.", content: <AiUsage /> },
+        { key: "related", label: "Related pages", description: "Other places school-wide things are managed.", content: <Shortcuts /> },
+      ]}
+    />
+  );
+}
+
 export default function AdminSettingsPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
-        <PageHeader title="Settings" subtitle="School features, school details, alerts, retention, staff clock-in and connections. Open a section to change it." />
-        <div className="space-y-5">
-          <SchoolFeaturesSection />
-          <SchoolDetails />
-          <LessonSettings />
-          <MessagingSettings />
-          <ClockInSettingsSection />
-          <Microsoft365Connection />
-          <AiUsage />
-          <Shortcuts />
-        </div>
+        <Suspense fallback={null}>
+          <SettingsContent />
+        </Suspense>
       </LearnGate>
     </section>
   );

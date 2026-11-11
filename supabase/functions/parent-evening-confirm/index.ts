@@ -9,6 +9,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { buildIcs } from "../_shared/ics.ts";
+import { ROLE_EMAILS } from "../_shared/contacts.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -84,7 +85,7 @@ Deno.serve(async (req) => {
   const childName = (child?.name as string | undefined) || "your child";
   const teacherName = (teacher?.full_name as string | undefined) || "the teacher";
   const title = evening.title as string;
-  const organizer = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+  const organizer = Deno.env.get("ADMISSIONS_EMAIL") || ROLE_EMAILS.admissions;
 
   const details = `
     <table role="presentation" cellpadding="0" cellspacing="0" style="margin:16px 0;font-size:15px;">

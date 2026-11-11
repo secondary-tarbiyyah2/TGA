@@ -5,6 +5,7 @@ import { leadRef, readRegisterInterest, type StoredRegisterInterest } from "@/li
 import { COUNTRIES } from "@/lib/countries";
 import { Select } from "@/components/ui/Dropdown";
 import { PhoneField } from "@/components/ui/PhoneInput";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 const YEAR_GROUPS = [
   "Year 1 (age 5–6)", "Year 2 (age 6–7)", "Year 3 (age 7–8)", "Year 4 (age 8–9)",
@@ -167,7 +168,7 @@ export function ApplicationForm() {
       {status === "error" && (
         <p role="alert" className="mt-4 text-sm text-red-700">
           Something went wrong sending your application. Please try again, or email{" "}
-          <a href="mailto:globalacademy@tarbiyyah.co.uk" className="underline">globalacademy@tarbiyyah.co.uk</a> directly.
+          <a href={`mailto:${ROLE_EMAILS.admissions}`} className="underline">{ROLE_EMAILS.admissions}</a> directly.
         </p>
       )}
     </form>

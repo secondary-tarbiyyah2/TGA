@@ -164,12 +164,13 @@ export function classColour(classId: string | null | undefined): string {
   return CLASS_COLOURS[h % CLASS_COLOURS.length];
 }
 
-const STAR_TILE =
-  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.16' stroke-width='1.2'%3E%3Cpath d='M24 8l4.7 11.3L40 24l-11.3 4.7L24 40l-4.7-11.3L8 24l11.3-4.7z'/%3E%3Crect x='14' y='14' width='20' height='20' transform='rotate(45 24 24)'/%3E%3C/g%3E%3C/svg%3E\")";
+// Fine diagonal lines (no star motif: owner, 11 Nov 2026).
+const BANNER_TILE =
+  "repeating-linear-gradient(45deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 16px)";
 
-/** Inline style for a class banner: its colour plus the star pattern. */
+/** Inline style for a class banner: its colour plus a fine line texture. */
 export function classBannerStyle(classId: string): CSSProperties {
-  return { backgroundColor: classColour(classId), backgroundImage: STAR_TILE, backgroundSize: "48px 48px" };
+  return { backgroundColor: classColour(classId), backgroundImage: BANNER_TILE };
 }
 
 // ── Recently accessed ─────────────────────────────────────────────────

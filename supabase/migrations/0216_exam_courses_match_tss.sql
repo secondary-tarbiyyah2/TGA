@@ -4,6 +4,8 @@
 -- sciences; Computer Science is not offered. Brings the DB-held website copy in line with
 -- src/content/curriculum.ts and src/content/seed.ts. Every statement only touches rows that still hold
 -- the previous text, so an admin's later edits in /learn/admin/content are never overwritten. Idempotent.
+-- Numbered after 0215 (Tarbiyyah Secondary is not an exam centre): the courses follow Tarbiyyah
+-- Secondary, but pupils sit their exams as private candidates at a centre near them.
 
 -- ── key_stage_pages: Key Stage 4 ─────────────────────────────────────────
 update public.key_stage_pages set
@@ -14,7 +16,7 @@ where slug = 'year-10-11' and subjects::text like '%4EB1%';
 update public.key_stage_pages set title = 'Key Stage 4 (GCSE and International GCSE)', updated_at = now()
 where slug = 'year-10-11' and title = 'Key Stage 4 (International GCSE)';
 
-update public.key_stage_pages set intro = 'Live lessons in every subject, leading to the same GCSE and International GCSE courses as Tarbiyyah Secondary School, our partner school and exam centre.', updated_at = now()
+update public.key_stage_pages set intro = 'Live lessons in every subject, leading to the same GCSE and International GCSE courses as Tarbiyyah Secondary School, our partner school.', updated_at = now()
 where slug = 'year-10-11' and intro like 'Live lessons in every subject, leading to Pearson Edexcel International GCSEs.%';
 
 update public.key_stage_pages set note = 'Years 10 and 11 follow the full live timetable, because GCSE courses need it. Pupils take the same exam courses as Tarbiyyah Secondary School: AQA GCSE English Language and Geography, Pearson Edexcel GCSE English Literature, and Pearson Edexcel International GCSEs in the other subjects. History is not offered at GCSE.', updated_at = now()
@@ -31,7 +33,7 @@ update public.key_stage_pages set weekly = replace(weekly::text, '"History, geog
 where slug = 'year-7-9' and weekly::text like '%"History, geography and computing"%';
 
 -- ── FAQs ───────────────────────────────────────────────────────────────────
-update public.faq_entries set answer = 'The same courses and exam boards as Tarbiyyah Secondary School, our partner school. UK pupils sit their exams there as their exam centre; for families outside the UK we help you find and register with an approved centre nearby. Core: English Language (AQA GCSE), English Literature (Pearson Edexcel GCSE), Mathematics, Biology, Chemistry and Physics (three separate Pearson Edexcel International GCSEs) and Islamic Studies (Pearson Edexcel International GCSE). Two options from Arabic, Business and Geography (AQA GCSE). History is not offered at GCSE.'
+update public.faq_entries set answer = 'The same courses and exam boards as Tarbiyyah Secondary School, our partner school. Pupils sit them as private candidates: you register your child at an approved centre near you, in the UK or abroad, and pay the centre''s entry fees directly. We help for free with a list of centres that accept private candidates, the entry deadlines and timetable, and the entry code for each subject. Core: English Language (AQA GCSE), English Literature (Pearson Edexcel GCSE), Mathematics, Biology, Chemistry and Physics (three separate Pearson Edexcel International GCSEs) and Islamic Studies (Pearson Edexcel International GCSE). Two options from Arabic, Business and Geography (AQA GCSE). History is not offered at GCSE.'
 where question = 'Which GCSEs do you offer, and with which exam boards?' and (answer like '%4EB1%' or answer like 'Pearson Edexcel International GCSEs.%');
 
 update public.faq_entries set answer = replace(answer, 'International GCSE exam entry fees', 'GCSE and International GCSE exam entry fees')

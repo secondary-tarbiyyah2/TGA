@@ -7,8 +7,8 @@ import path from "node:path";
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
 const dir = path.join(root, "content/syllabus/ks4");
 const LABELS = {
-  "gcse-science": "Pearson Edexcel IGCSE 4BI1 / 4CH1 / 4PH1 / 4SD0",
-  "english-literature": "Pearson Edexcel IGCSE 4ET1",
+  "gcse-science": "Pearson Edexcel IGCSE 4BI1 / 4CH1 / 4PH1",
+  "english-literature": "Pearson Edexcel GCSE 1ET0",
   business: "Pearson Edexcel IGCSE 4BS1",
   "islamic-studies": "Pearson Edexcel IGCSE 4IS1",
 };

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getEdgeFunctionUrl } from "@/lib/supabase/client";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 type State = { kind: "idle" } | { kind: "working" } | { kind: "done"; title?: string; already?: boolean } | { kind: "error"; message: string };
 
@@ -21,11 +22,11 @@ export function ManageOpenEveningClient() {
     setState({ kind: "working" });
     const url = getEdgeFunctionUrl("open-evening-book");
     const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    if (!url || !anonKey) return setState({ kind: "error", message: "The booking service is not available right now. Please email globalacademy@tarbiyyah.co.uk." });
+    if (!url || !anonKey) return setState({ kind: "error", message: `The booking service is not available right now. Please email ${ROLE_EMAILS.admissions}.` });
     try {
       const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", apikey: anonKey, Authorization: `Bearer ${anonKey}` }, body: JSON.stringify({ action: "cancel", token }) });
       const data = (await res.json()) as { ok: boolean; error?: string; title?: string; already?: boolean };
-      if (!data.ok) return setState({ kind: "error", message: data.error === "not_found" ? "We could not find a booking for this link. It may already have been cancelled, or the link is incomplete." : "Something went wrong. Please try again or email globalacademy@tarbiyyah.co.uk." });
+      if (!data.ok) return setState({ kind: "error", message: data.error === "not_found" ? "We could not find a booking for this link. It may already have been cancelled, or the link is incomplete." : `Something went wrong. Please try again or email ${ROLE_EMAILS.admissions}.` });
       setState({ kind: "done", title: data.title, already: data.already });
     } catch {
       setState({ kind: "error", message: "Couldn't reach the server. Please try again." });
@@ -33,7 +34,7 @@ export function ManageOpenEveningClient() {
   }
 
   if (token === null) return <p className="mt-6 text-ink/70">Loading…</p>;
-  if (!token) return <p className="mt-6 text-ink/70">This page works from the link in your confirmation email. If you need help, email globalacademy@tarbiyyah.co.uk.</p>;
+  if (!token) return <p className="mt-6 text-ink/70">This page works from the link in your confirmation email. If you need help, email {ROLE_EMAILS.admissions}.</p>;
 
   if (state.kind === "done") {
     return (

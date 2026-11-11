@@ -10,6 +10,7 @@ import { PlacePicker } from "@/components/booking/PlacePicker";
 import { Select } from "@/components/ui/Dropdown";
 import { PhoneField } from "@/components/ui/PhoneInput";
 import { Combobox } from "@/components/admissions/Combobox";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 type Slot = { slot_start: string; slot_end: string };
 /** A bookable time, with every staff member free then (who takes the call depends on who is available). */
@@ -240,7 +241,7 @@ export function BookingCalendar() {
     return (
       <div className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center text-sm text-ink/70">
         Booking isn&apos;t connected yet. Email{" "}
-        <a href="mailto:globalacademy@tarbiyyah.co.uk" className="text-gold-700 underline">globalacademy@tarbiyyah.co.uk</a> to arrange a call.
+        <a href={`mailto:${ROLE_EMAILS.admissions}`} className="text-gold-700 underline">{ROLE_EMAILS.admissions}</a> to arrange a call.
       </div>
     );
   }
@@ -261,7 +262,7 @@ export function BookingCalendar() {
         </p>
         <p className="mt-2">
           Please email{" "}
-          <a href="mailto:globalacademy@tarbiyyah.co.uk" className="text-gold-700 underline">globalacademy@tarbiyyah.co.uk</a>{" "}
+          <a href={`mailto:${ROLE_EMAILS.admissions}`} className="text-gold-700 underline">{ROLE_EMAILS.admissions}</a>{" "}
           or <a href="/contact/" className="text-gold-700 underline">leave your details</a> and our admissions team will arrange a time with you.
         </p>
       </div>
@@ -385,11 +386,11 @@ export function BookingCalendar() {
                 )}
                 {slotsError && !loadingSlots && (
                   <p role="alert" className="mt-3 text-xs text-red-700">
-                    We couldn&apos;t load times for this month. Please try again, or email globalacademy@tarbiyyah.co.uk.
+                    We couldn&apos;t load times for this month. Please try again, or email {ROLE_EMAILS.admissions}.
                   </p>
                 )}
                 {!slotsError && !loadingSlots && staffStatus === "ready" && Object.keys(slotsByDate).length === 0 && (
-                  <p className="mt-3 text-xs text-ink/65">No times available this month. Try the next month, or email globalacademy@tarbiyyah.co.uk.</p>
+                  <p className="mt-3 text-xs text-ink/65">No times available this month. Try the next month, or email {ROLE_EMAILS.admissions}.</p>
                 )}
               </div>
               <div className="md:border-l md:border-gold-light/50 md:pl-5">

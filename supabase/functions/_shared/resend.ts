@@ -6,6 +6,7 @@
 // so switching provider is a matter of adding or removing secrets.
 import { sendViaSes, sesConfigured } from "./ses.ts";
 import { graphConfigured, graphRaw } from "./graph.ts";
+import { NOREPLY_EMAIL, ROLE_EMAILS } from "./contacts.ts";
 
 const BRAND = {
   gold: "#B08E45",
@@ -115,9 +116,9 @@ export async function sendEmail(opts: {
     if (g.ok) return g;
     graphFailure = g.detail;
   }
-  const fromEmail = Deno.env.get("MAIL_FROM_EMAIL") || "noreply@globalacademy.tarbiyyah.co.uk";
+  const fromEmail = Deno.env.get("MAIL_FROM_EMAIL") || NOREPLY_EMAIL;
   const fromName = Deno.env.get("MAIL_FROM_NAME") || "Tarbiyyah Global Academy";
-  const replyTo = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+  const replyTo = Deno.env.get("ADMISSIONS_EMAIL") || ROLE_EMAILS.admissions;
 
   // Amazon SES. The From address must be on the verified SES domain
   // (globalacademy.tarbiyyah.co.uk), which MAIL_FROM_EMAIL is.

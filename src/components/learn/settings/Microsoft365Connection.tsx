@@ -72,18 +72,11 @@ export function Microsoft365Connection() {
     void test();
   };
 
-  if (!allowed) return null;
+  if (!allowed) return <p className="t-meta">Only a Headteacher or Admin can see this.</p>;
   const meetings = status?.meetings;
 
   return (
-    <details className="group rounded-2xl border border-gold-light bg-white">
-      <summary className="flex cursor-pointer list-none items-start justify-between gap-3 px-5 py-4">
-        <span>
-          <span className="block text-base font-semibold text-ink">Microsoft 365 connection</span>
-          <span className="mt-0.5 block text-sm text-ink/65">School email from Outlook, a Teams meeting for each lesson, and Teams attendance hints on registers.</span>
-        </span>
-        <span aria-hidden="true" className="mt-1 text-lg leading-none text-ink/50 transition-transform group-open:rotate-90">›</span>
-      </summary>
+    <div className="rounded-2xl border border-gold-light bg-white">
       <div className="border-t border-gold-light" />
       <div className="space-y-4 px-5 py-5">
         {!status && <div className="h-24 motion-safe:animate-pulse rounded-xl bg-cream" />}
@@ -135,6 +128,6 @@ export function Microsoft365Connection() {
           </p>
         )}
       </div>
-    </details>
+    </div>
   );
 }

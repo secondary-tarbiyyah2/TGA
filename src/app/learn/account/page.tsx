@@ -13,6 +13,9 @@ import { DigestPreference } from "@/components/learn/rewards/DigestPreference";
 import { MessageSettings } from "@/components/learn/messages/MessageSettings";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { PushOptIn } from "@/components/learn/PushOptIn";
+import { MySignatureSettings } from "@/components/learn/documents/MySignatureSettings";
+import { SettingsGroup } from "@/components/learn/templates/parts";
+import { ui } from "@/components/learn/ui";
 
 /**
  * The signed-in user's OWN account settings, password only, since MFA was
@@ -67,12 +70,11 @@ function ChangePassword() {
   };
 
   return (
-    <div data-guide="account-password" className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <h2 className="font-serif text-h3 font-semibold text-ink">Password</h2>
-      <form onSubmit={submit} noValidate className="mt-3 flex flex-wrap items-end gap-2">
+    <div data-guide="account-password">
+      <form onSubmit={submit} noValidate className="flex flex-wrap items-end gap-2">
         <PasswordInput label="New password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="new-password" />
         <PasswordInput label="Confirm" value={confirm} onChange={(e) => setConfirm(e.target.value)} autoComplete="new-password" />
-        <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
+        <button type="submit" disabled={busy} className={ui.btnPrimary}>
           {busy ? "Saving…" : "Change password"}
         </button>
       </form>
@@ -92,30 +94,47 @@ function AccountContent() {
   const { session, roles } = useLearnSession();
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6">
+    <div className="mx-auto max-w-4xl">
       <PageHeader
         crumbs={[{ label: "Home", href: roles[0] ? "/" : "/login" }, { label: "Your account" }]}
         title="Your account"
         subtitle={`${session && session !== "loading" ? session.user.email : ""} · ${roles.map((r) => learnRoleLabel(r.role)).join(", ") || "no portal role yet"}`}
       />
-      <ChangePassword />
-      {session && session !== "loading" && !roles.every((r) => r.role === "student") && <MessageSettings userId={session.user.id} />}
-      {session && session !== "loading" && !roles.every((r) => r.role === "student") && (
-        <div className="rounded-2xl border border-gold-light bg-white p-6">
-          <PushOptIn variant="setting" />
-        </div>
-      )}
-      {session && session !== "loading" && roles.some((r) => r.role === "parent") && <ParentPinSettings userId={session.user.id} />}
-      {roles.some((r) => r.role === "parent") && <DigestPreference />}
-      <Link href="/feedback" className="flex items-center justify-between gap-3 rounded-2xl border border-gold-light bg-white p-6 hover:bg-cream">
-        <span>
-          <span className="block text-h3 font-semibold text-ink">Your feedback</span>
-          <span className="mt-1 block text-sm text-ink/70">Problems you&apos;ve reported and ideas you&apos;ve shared, with our replies.</span>
-        </span>
-        <span aria-hidden="true" className="text-teal-700">
-          &rarr;
-        </span>
-      </Link>
+      <div className="rounded-2xl border border-gold-light bg-white px-4 py-5 sm:px-6">
+        <SettingsGroup title="Password" description="The password you sign in with.">
+          <ChangePassword />
+        </SettingsGroup>
+        {session && session !== "loading" && !roles.every((r) => r.role === "student") && (
+          <SettingsGroup title="Messages" description="Read receipts, and when you are emailed about new messages.">
+            <MessageSettings userId={session.user.id} />
+          </SettingsGroup>
+        )}
+        {session && session !== "loading" && !roles.every((r) => r.role === "student") && (
+          <SettingsGroup title="Notifications" description="A notification on this device when a message arrives. Set on each device you use.">
+            <PushOptIn variant="setting" />
+          </SettingsGroup>
+        )}
+        {session && session !== "loading" && roles.some((r) => ["head_teacher", "admin", "teacher", "teaching_assistant_cover"].includes(r.role)) && (
+          <SettingsGroup title="Your signature" description="Added to Star of the Week certificates you sign, and offered when you sign documents in the portal.">
+            <MySignatureSettings userId={session.user.id} />
+          </SettingsGroup>
+        )}
+        {session && session !== "loading" && roles.some((r) => r.role === "parent") && (
+          <SettingsGroup title="Parent PIN" description="Stops children opening your family area on a device you share.">
+            <ParentPinSettings userId={session.user.id} />
+          </SettingsGroup>
+        )}
+        {roles.some((r) => r.role === "parent") && (
+          <SettingsGroup title="Weekly email" description="A summary of your children's week.">
+            <DigestPreference />
+          </SettingsGroup>
+        )}
+        <SettingsGroup title="Your feedback" description="Problems you've reported and ideas you've shared, with our replies.">
+          <Link href="/feedback" className={ui.btnSecondary}>
+            Open your feedback
+          </Link>
+        </SettingsGroup>
+      </div>
     </div>
   );
 }

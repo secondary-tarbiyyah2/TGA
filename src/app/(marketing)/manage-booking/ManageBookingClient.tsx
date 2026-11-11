@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { formatWhenWithUk, initialTimeZone, isValidTimeZone } from "@/lib/timezones";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 type Booking = { id: string; status: string; startsAt: string; endsAt: string; teamsJoinUrl: string; bbbJoinUrl: string | null; timezone?: string | null };
 
@@ -118,7 +119,7 @@ export function ManageBookingClient() {
   if (error) {
     return (
       <div>
-        <ResendLinkForm intro={<p className="text-ink/70">That link didn&apos;t work; it may have expired. Enter your email and we&apos;ll send a new one, or email us at globalacademy@tarbiyyah.co.uk.</p>} />
+        <ResendLinkForm intro={<p className="text-ink/70">That link didn&apos;t work; it may have expired. Enter your email and we&apos;ll send a new one, or email us at {ROLE_EMAILS.admissions}.</p>} />
       </div>
     );
   }

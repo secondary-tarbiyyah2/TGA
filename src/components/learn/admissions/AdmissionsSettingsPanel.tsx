@@ -5,10 +5,10 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { EmailTemplatesPanel } from "@/components/learn/admissions/EmailTemplatesPanel";
 import { Group, fieldCls, primaryBtn } from "@/components/learn/admissions/ui";
 
-type Draft = { payment_instructions: string; assessment_join_url: string; interview_join_url: string; assessment_duration_text: string };
-const EMPTY: Draft = { payment_instructions: "", assessment_join_url: "", interview_join_url: "", assessment_duration_text: "" };
+type Draft = { online_payment_url: string; payment_instructions: string; assessment_join_url: string; interview_join_url: string; assessment_duration_text: string };
+const EMPTY: Draft = { online_payment_url: "", payment_instructions: "", assessment_join_url: "", interview_join_url: "", assessment_duration_text: "" };
 
-/** Owner-editable admissions text used in emails: bank details, default join links, assessment length. */
+/** Owner-editable admissions text used in emails: the online payment link, default join links, assessment length. */
 export function AdmissionsSettingsPanel() {
   const [d, setD] = useState<Draft>(EMPTY);
   const [saved, setSaved] = useState<Draft>(EMPTY);
@@ -21,13 +21,14 @@ export function AdmissionsSettingsPanel() {
     if (!supabase) return;
     void supabase
       .from("site_settings")
-      .select("payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text")
+      .select("online_payment_url, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text")
       .eq("id", true)
       .maybeSingle()
       .then(({ data, error }) => {
         if (error) return setMsg({ ok: false, text: "Couldn't load the settings. Migration 0061 may not be applied yet." });
         const r = (data || {}) as Partial<Record<keyof Draft, string | null>>;
         const next: Draft = {
+          online_payment_url: r.online_payment_url || "",
           payment_instructions: r.payment_instructions || "",
           assessment_join_url: r.assessment_join_url || "",
           interview_join_url: r.interview_join_url || "",
@@ -51,7 +52,8 @@ export function AdmissionsSettingsPanel() {
     const { data, error } = await supabase
       .from("site_settings")
       .update({
-        payment_instructions: d.payment_instructions.trim() || "Bank transfer details to follow.",
+        online_payment_url: nz(d.online_payment_url),
+        payment_instructions: d.payment_instructions.trim() || "Online payment details to follow.",
         assessment_join_url: nz(d.assessment_join_url),
         interview_join_url: nz(d.interview_join_url),
         assessment_duration_text: d.assessment_duration_text.trim() || "about 60 to 90 minutes",
@@ -59,6 +61,7 @@ export function AdmissionsSettingsPanel() {
       .eq("id", true)
       .select("id");
     setSaving(false);
+    if (error?.code === "23514") return setMsg({ ok: false, text: "The payment link must be a full https:// address." });
     if (error || !data?.length) return setMsg({ ok: false, text: "Couldn't save. Only an Admin can change these settings." });
     setSaved(d);
     setMsg({ ok: true, text: "Saved. New emails use these values." });
@@ -68,12 +71,17 @@ export function AdmissionsSettingsPanel() {
     <div className="space-y-4">
       <Group
         title="Offer & assessment email settings"
-        help="Used when staff write offer, assessment and interview emails. Fee amounts are not set here: change them in Content > Fees. The Fees Policy PDF is the source of truth for the bank details below. Note: these settings are stored in the public site settings table, so only put details here that you are happy to be in the Fees Policy."
+        help="Used when staff write offer, assessment and interview emails. Fee amounts are not set here: change them in Content > Fees. Note: these settings are stored in the public site settings table, so never put a password, API key or secret here."
       >
         <label className="block text-sm font-medium text-ink">
-          Payment instructions (bank details)
+          Online payment link
+          <input type="url" value={d.online_payment_url} onChange={(e) => set("online_payment_url", e.target.value)} placeholder="https://buy.stripe.com/…" maxLength={500} disabled={!loaded} className={fieldCls} />
+          <span className="mt-1 block text-xs font-normal text-ink/65">The address of your secure payment page (for example a Stripe Payment Link). Once it is set, the offer email&apos;s &ldquo;How to pay&rdquo; gives this link, and a Pay online button appears on the website&apos;s Fees page (after the next site update) and on the family Fees page in the portal. Leave it empty to show no button. See docs/online-payments-options.md.</span>
+        </label>
+        <label className="mt-3 block text-sm font-medium text-ink">
+          Payment instructions (only used while there is no online payment link)
           <textarea value={d.payment_instructions} onChange={(e) => set("payment_instructions", e.target.value)} rows={6} maxLength={2000} disabled={!loaded} className={`${fieldCls} font-mono text-xs`} />
-          <span className="mt-1 block text-xs font-normal text-ink/65">Pasted into the offer email under &ldquo;How to pay&rdquo;. The offer also asks families to use the child&apos;s full name as the reference.</span>
+          <span className="mt-1 block text-xs font-normal text-ink/65">Pasted into the offer email under &ldquo;How to pay&rdquo; until the online payment link above is set. The offer also asks families to use the child&apos;s full name as the reference.</span>
         </label>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">

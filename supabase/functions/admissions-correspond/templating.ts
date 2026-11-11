@@ -73,6 +73,8 @@ export type AppInput = {
 };
 
 export type SettingsInput = {
+  /** 0214: public https address of the hosted online payment page; when set, it replaces payment_instructions in "How to pay". */
+  online_payment_url?: string | null;
   payment_instructions: string | null;
   assessment_join_url: string | null;
   interview_join_url: string | null;
@@ -97,6 +99,7 @@ export type FeesInput = {
   plans: { id: string; label: string; firstPayment: number; detail: string }[];
 };
 
+/** Same as ROLE_EMAILS.admissions in _shared/contacts.ts (kept as a literal so this file stays import-free); change both together. */
 export const DEFAULT_SCHOOL_EMAIL = "globalacademy@tarbiyyah.co.uk";
 
 // ── formatting ───────────────────────────────────────────────────────────
@@ -242,8 +245,16 @@ export function buildTemplateContext(
   const assessmentLink = (stage?.assessment_link || settings?.assessment_join_url || "").trim();
   const interviewLink = (stage?.interview_link || settings?.interview_join_url || "").trim();
 
+  // Fees are paid online (owner, 11 Nov 2026). The {{bank_details}} token keeps
+  // its name so stored templates still work: it gives the online payment link
+  // once one is set, and the older payment instructions only until then.
+  const payOnline = onlinePaymentLink(settings?.online_payment_url, app.reference);
   const bankRaw = (settings?.payment_instructions || "").trim();
-  const bank = bankRaw && !/^bank transfer details to follow\.?$/i.test(bankRaw) ? bankRaw : "Please reply to this email and we will send you our bank transfer details.";
+  const bank = payOnline
+    ? `Pay online, by debit or credit card or straight from your bank app, on our secure payment page:\n${payOnline}`
+    : bankRaw && !/^(bank transfer|online payment) details to follow\.?$/i.test(bankRaw)
+      ? bankRaw
+      : "Please reply to this email and we will send you a secure link to pay online.";
 
   const deadline = fmtDayLong(app.offer_deadline) || fmtDayLong(londonWorkingDaysPlus(5, now));
 
@@ -273,6 +284,7 @@ export function buildTemplateContext(
     interview_duration: "about 20 to 30 minutes",
     deadline,
     bank_details: bank,
+    pay_online_link: payOnline,
     payment_link: app.reference ? PAYMENT_LINK_PLACEHOLDER : "",
     school_email: (settings?.admissions_email || "").trim() || DEFAULT_SCHOOL_EMAIL,
     school_phone: (settings?.contact_phone || "").trim(),
@@ -319,6 +331,26 @@ export function buildTemplateContext(
   return v;
 }
 
+/**
+ * The family's link to the online payment page, or "" when none is set or it
+ * is not https. A Stripe Payment Link (buy.stripe.com) gets the application
+ * reference as client_reference_id, so a webhook can match the payment later.
+ */
+export function onlinePaymentLink(raw: string | null | undefined, reference: string | null): string {
+  const v = (raw || "").trim();
+  if (!v) return "";
+  let u: URL;
+  try {
+    u = new URL(v);
+  } catch {
+    return "";
+  }
+  if (u.protocol !== "https:") return "";
+  const ref = (reference || "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 200);
+  if (u.hostname === "buy.stripe.com" && ref) u.searchParams.set("client_reference_id", ref);
+  return u.toString();
+}
+
 /** The server swaps this for the family's personal upload link at send time. */
 export const PAYMENT_LINK_PLACEHOLDER = "{{PAYMENT_LINK}}";
 
@@ -350,7 +382,8 @@ export const TOKEN_DOCS: { token: string; description: string }[] = [
   { token: "amounts_due", description: "Total due now under each plan, one per line" },
   { token: "first_payment_monthly", description: "First monthly instalment (also _termly, _annual)" },
   { token: "deadline", description: "Offer deadline, or five working days from today if none is set" },
-  { token: "bank_details", description: "Payment instructions from Admissions settings" },
+  { token: "bank_details", description: "How to pay: the online payment link once it is set in Admissions settings, otherwise the payment instructions there" },
+  { token: "pay_online_link", description: "The online payment link on its own (blank until it is set)" },
   { token: "payment_link", description: "The family's personal proof-of-payment upload link (issued when sent)" },
   { token: "school_email", description: "Admissions email address" },
   { token: "school_phone", description: "School phone (blank if none)" },

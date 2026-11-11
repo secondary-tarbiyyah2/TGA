@@ -97,8 +97,10 @@ export default async function CurriculumPage() {
           <Kicker>Years 10 and 11</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Recognised qualifications, sat as private candidates.</h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Years 10 and 11 follow two-year GCSE and International GCSE courses, the same as Tarbiyyah Secondary School: the core subjects plus two options. Pupils are entered for their examinations through
-            Tarbiyyah Secondary School as the examination centre, and for families outside the UK we help arrange a suitable centre near home.
+            Years 10 and 11 follow two-year GCSE and International GCSE courses, the same as Tarbiyyah Secondary School: the core subjects plus two options. Pupils sit their exams as private candidates: families register their child at an approved
+            exam centre near them, in the UK or abroad. We help for free with a list of centres that accept private
+            candidates, the entry deadlines and timetable, the entry code for each subject, what to ask a centre, and the evidence
+            a centre needs for access arrangements, and our exams lead answers your questions.
             History is not offered at GCSE.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -121,7 +123,7 @@ export default async function CurriculumPage() {
             </div>
           </div>
           <p className="mt-4 max-w-3xl text-sm text-ink/70">
-            Exam entry fees are not included in tuition and are paid to the examination centre. Full details are in the{" "}
+            Exam entry fees are not included in tuition and are paid by families directly to the centre. We do not book or pay for entries. Full details are in the{" "}
             <Link href="/policies/19-examinations-and-private-candidates/" className="font-semibold text-gold-700 underline">Examinations and Private Candidates Policy</Link>, and the subjects and lessons a week are on the{" "}
             <Link href="/curriculum/year-10-11" className="font-semibold text-gold-700 underline">Year 10 to Year 11 page</Link>.
           </p>

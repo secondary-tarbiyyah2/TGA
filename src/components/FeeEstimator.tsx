@@ -85,7 +85,7 @@ export function FeeEstimator({
   if (!estimate || !schedule) return null;
 
   const checkable = discounts.map((d, i) => ({ d, i })).filter(({ d }) => !d.appliesAutomatically);
-  const unitLabel = plan === "annual" ? "once, by 8 January 2027" : plan === "termly" ? "per payment" : "per month";
+  const unitLabel = plan === "annual" ? "once, when you accept your place" : plan === "termly" ? "per payment" : "per month";
   const evenPayments = estimate.payments.every((p) => p === estimate.payments[0]);
   const sel = "mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm";
 
@@ -216,7 +216,14 @@ export function FeeEstimator({
             <span className="font-semibold text-ink">Due when you accept an offer</span>
             <span className="font-serif text-lg font-bold text-ink">{formatGBP(estimate.dueOnAcceptance)}</span>
           </div>
-          <p className="mt-1 text-xs text-ink/70">Your first payment{estimate.applicationFeeTotal > 0 ? `, plus the application fee (${formatGBP(estimate.applicationFeeTotal)}) if you have not already paid it` : ""}.</p>
+          <p className="mt-1 text-xs text-ink/70">Your first payment, due when you accept your place (by 8 January 2027 at the latest){estimate.applicationFeeTotal > 0 ? `, plus the application fee (${formatGBP(estimate.applicationFeeTotal)}) if you have not already paid it` : ""}.</p>
+          {plan !== "annual" && estimate.payments.length > 1 && (
+            <p className="mt-1 text-xs text-ink/70">
+              {plan === "termly"
+                ? `Then the second payment of ${formatGBP(estimate.payments[estimate.payments.length - 1])} on 28 March 2027.`
+                : `Then ${estimate.payments.length - 1} monthly payments on the 28th of each month${estimate.payments.length === 7 ? " from January to June 2027" : ""}.`}
+            </p>
+          )}
         </div>
       </div>
 
