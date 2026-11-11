@@ -132,6 +132,17 @@ export function buildForm(year: number, seed: number, opts: FormOptions = {}): F
       const m = mcq(r, correct, q.choices.filter((_, i) => i !== q.answer));
       items.push({ id: id("r"), strand: "reading", level: q.level, objective: `Reading: ${q.skill}`, type: "mcq", stem: q.q, choices: m.choices, answer: m.answer, passageId: passage.id });
     }
+    if (young) {
+      // A few sentence questions for the youngest too (capital letters, question marks, joining
+      // words), as in the Tarbiyyah Primary Year 1 entry test (owner, 11 Nov 2026).
+      // Only short questions with one- or two-word options, so a five-year-old can tap them.
+      const short = (g: (typeof GRAMMAR)[number]) => g.stem.split(/\s+/).length <= 12 && g.choices.every((c) => c.split(/\s+/).length <= 4);
+      for (const g of spread(r, GRAMMAR.filter((g) => inRange(g.level, 1, Math.min(hi, 2.4)) && short(g)), Y === 1 ? 3 : 4)) {
+        const correct = g.choices[g.answer];
+        const m = mcq(r, correct, g.choices.filter((_, i) => i !== g.answer));
+        items.push({ id: id("g"), strand: "grammar", level: g.level, objective: g.objective, type: "mcq", stem: g.stem, speakPunctuation: PUNCTUATION_OBJECTIVE.test(g.objective) || undefined, choices: m.choices, answer: m.answer });
+      }
+    }
     if (!young) {
       const sg: Item[] = [];
       for (const s of spread(r, SPELLINGS.filter((s) => inRange(s.level, lo, hi)), Y <= 6 ? 6 : 5)) {
@@ -148,7 +159,7 @@ export function buildForm(year: number, seed: number, opts: FormOptions = {}): F
     sections.push({
       key: "english",
       title: young ? "Listening and reading" : "English",
-      intro: young ? "First listen and find some words. Then read a short story and answer questions about it." : "First read the text. Then answer the questions. You can look back at the text at any time.",
+      intro: young ? "First listen and find some words. Then read a short story and answer questions about it, and a few questions about sentences." : "First read the text. Then answer the questions. You can look back at the text at any time.",
       minutes: mins(young ? 12 : Y <= 6 ? 30 : 35),
       candidate: true,
       items,

@@ -27,6 +27,32 @@ function dotsSvg(n: number): string {
   }
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="${n} dots">${c}</svg>`;
 }
+/** A row (or two) of simple rabbits, for Year 1 "take away" in a picture. */
+function rabbitsSvg(n: number): string {
+  const per = 5, w = 52, h = 56;
+  const rows = Math.ceil(n / per);
+  const W = per * w + 8, H = rows * h + 8;
+  let c = "";
+  for (let i = 0; i < n; i++) {
+    const x = 4 + (i % per) * w, y = 4 + Math.floor(i / per) * h;
+    c += `<g transform="translate(${x},${y})" fill="#a89f94" stroke="#6b5f52" stroke-width="1.5"><ellipse cx="20" cy="12" rx="4" ry="11"/><ellipse cx="30" cy="12" rx="4" ry="11"/><circle cx="25" cy="27" r="9"/><ellipse cx="25" cy="42" rx="14" ry="11"/><circle cx="22" cy="25" r="1.4" fill="#2b2b2b" stroke="none"/></g>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${n} rabbits">${c}</svg>`;
+}
+
+/** UK coins (1p, 2p, 5p, 10p) drawn simply: copper for 1p and 2p, silver for 5p and 10p. */
+function coinsSvg(coins: number[]): string {
+  const size: Record<number, number> = { 1: 22, 2: 30, 5: 20, 10: 28 };
+  let x = 6, c = "";
+  for (const v of coins) {
+    const r = size[v];
+    const copper = v <= 2;
+    c += `<g><circle cx="${x + r}" cy="34" r="${r}" fill="${copper ? "#d9874a" : "#d7d7d7"}" stroke="${copper ? "#8a4a1c" : "#7a7a7a"}" stroke-width="2"/><text x="${x + r}" y="40" text-anchor="middle" font-family="Arial" font-weight="700" font-size="${r * 0.75}" fill="#222">${v}p</text></g>`;
+    x += 2 * r + 12;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${x} 68" width="${x}" height="68" role="img" aria-label="Coins: ${coins.map((v) => `${v}p`).join(", ")}">${c}</svg>`;
+}
+
 function clockSvg(h: number, m: number): string {
   const cx = 80, cy = 80, R = 70;
   let ticks = "";
@@ -55,6 +81,11 @@ export const MATHS: Gen[] = [
   { level: 1, objective: "Y1 one more / one less", make: (r) => { const n = r.int(8, 19); const more = r.chance(0.5); return choice(r, `What is one ${more ? "more" : "less"} than ${n}?`, more ? n + 1 : n - 1, [n, more ? n - 1 : n + 1, more ? n + 2 : n - 2], { say: `What is one ${more ? "more" : "less"} than ${n}?` }); } },
   { level: 1.2, objective: "Y1 add within 20", make: (r) => { const a = r.int(3, 9), b = r.int(2, 9); return choice(r, `${a} + ${b} = ?`, a + b, [a + b - 1, a + b + 1, a + b + 10], { say: `${a} add ${b}` }); } },
   { level: 1.4, objective: "Y1 subtract within 20", make: (r) => { const a = r.int(11, 19), b = r.int(2, 9); return choice(r, `${a} − ${b} = ?`, a - b, [a - b + 1, a - b - 1, a + b], { say: `${a} take away ${b}` }); } },
+  // The next four follow the Tarbiyyah Primary Year 1 admissions entry test (Questions 4, 6, 9 and 10), owner, 11 Nov 2026.
+  { level: 1.3, objective: "Y1 number bonds to 10", make: (r) => { const a = r.int(2, 8); return choice(r, `${a} + ? = 10`, 10 - a, [10 - a + 1, 10 - a - 1, 10 + a], { say: `${a} add what makes 10?` }); } },
+  { level: 1.5, objective: "Y1 take away in a picture", make: (r) => { const n = r.int(6, 10), k = r.int(2, 4); return choice(r, `If ${k} rabbits hop away, how many are left?`, n - k, [n, n + k, n - k - 1], { svg: rabbitsSvg(n), say: `Look at the rabbits. If ${k} rabbits hop away, how many are left?` }); } },
+  { level: 1.7, objective: "Y1 add ones to a 2-digit number", make: (r) => { const a = r.int(21, 25), b = r.int(3, 8); return choice(r, `${a} + ${b} = ?`, a + b, [a + b - 1, a + b + 1, a + b + 10], { say: `${a} add ${b}` }); } },
+  { level: 1.9, objective: "Y1 money: add coins", make: (r) => { const coins = r.pick([[10, 5, 2, 1], [10, 2, 1], [5, 2, 1], [10, 5, 1], [5, 5, 2], [10, 2, 2, 1]]); const t = coins.reduce((a, b) => a + b, 0); return choice(r, "How much money is there altogether?", `${t}p`, [`${t - 1}p`, `${t + 1}p`, `${coins.length}p`], { svg: coinsSvg(coins), say: "Look at the coins. How much money is there altogether?" }, [`${t + 10}p`, `${t - 2}p`]); } },
   { level: 1.6, objective: "Y1 missing number", make: (r) => { const a = r.int(2, 9), c = r.int(a + 3, 20); return choice(r, `${a} + ? = ${c}`, c - a, [c, c - a + 1, c + a], { say: `${a} add what makes ${c}?` }); } },
   { level: 1.8, objective: "Y1 halves of numbers", make: (r) => { const n = 2 * r.int(2, 10); return choice(r, `What is half of ${n}?`, n / 2, [n * 2, n - 2, n / 2 + 1], { say: `What is half of ${n}?` }); } },
   // ── Year 2 ──

@@ -31,6 +31,26 @@ export type WritingPrompt = { id: string; band: Band; title: string; prompt: str
 
 export const PASSAGES: Passage[] = [
   // ----- Band 1: Year 1 (very short; read to the child as well) -----
+  // From the Tarbiyyah Primary Year 1 admissions entry test (Questions 7 and 8), owner, 11 Nov 2026.
+  {
+    id: "y1-ant-grasshopper",
+    band: 1,
+    years: [1, 2],
+    title: "Ant and Grasshopper",
+    kind: "fiction",
+    text: [
+      "It was summer. The sun was hot.",
+      "Ant got berries to keep for winter.",
+      "“Get ready for winter,” said Ant. “I need food for my kids.”",
+      "But Grasshopper went to sleep in the sun.",
+    ].join("\n\n"),
+    questions: [
+      { q: "What was the weather like?", choices: ["sunny", "cloudy", "rainy", "snowy"], answer: 0, skill: "retrieval", level: 1.0 },
+      { q: "What did Ant get?", choices: ["leaves", "berries", "sticks", "stones"], answer: 1, skill: "retrieval", level: 1.2 },
+      { q: "Why did Ant need food?", choices: ["for his dinner", "for his kids", "for later that day", "for Grasshopper"], answer: 1, skill: "retrieval", level: 1.5 },
+      { q: "What did Grasshopper do?", choices: ["got food", "went to sleep", "helped Ant", "went home"], answer: 1, skill: "retrieval", level: 1.6 },
+    ],
+  },
   {
     id: "y1-big-box",
     band: 1,
@@ -329,6 +349,10 @@ export const GRAMMAR: Mcq[] = [
   { stem: "Which word means more than one?", choices: ["cat", "dog", "foxes", "bus"], answer: 2, level: 1.4, objective: "Y1 plural -s and -es" },
   { stem: "Which sentence should end with an exclamation mark?", choices: ["What a huge cake that is", "Is it raining", "I have a red coat", "Can you swim"], answer: 0, level: 1.6, objective: "Y1 exclamation marks" },
   { stem: "Yesterday we ____ on the trampoline.", choices: ["jump", "jumped", "jumping", "jumps"], answer: 1, level: 1.5, objective: "Y1 suffix -ed for past tense" },
+  // From the Tarbiyyah Primary Year 1 admissions entry test (Questions 1 to 3), owner, 11 Nov 2026.
+  { stem: "'My friend alex lives here.' Which word needs a capital letter?", choices: ["friend", "alex", "lives", "door"], answer: 1, level: 1.3, objective: "Y1 capital letters for names" },
+  { stem: "Which sentence should end with a question mark?", choices: ["I like apples", "Do you like apples", "Apples are red", "We ate apples"], answer: 1, level: 1.2, objective: "Y1 question marks" },
+  { stem: "I gave my sister an Eid present ____ she liked it.", choices: ["and", "if", "or", "the"], answer: 0, level: 1.4, objective: "Y1 joining words with and" },
   { stem: "Which sentence uses a capital letter for 'I' correctly?", choices: ["mum and I went out.", "Mum and i went out.", "Mum and I Went out.", "Mum and I went out."], answer: 3, level: 1.2, objective: "Y1 capital letter for I" },
 
   // Year 2
