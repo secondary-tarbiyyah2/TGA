@@ -19,15 +19,17 @@ export type QuickAction = {
 /**
  * The compact row of everyday jobs at the very top of Today (owner, 11 Nov 2026: "quick
  * action should be at the top"). Small jobs open a panel or dialog over Today; the rest go to
- * their page. One row of equal buttons that wraps on narrow screens, never a long list.
+ * their page. Equal buttons that wrap onto another row rather than shrink: each is at least
+ * wide enough for its whole label (owner, 11 Nov 2026: "those words shouldn't cut off midway"),
+ * so a label or its note is never cut with "...", at any width.
  */
 export function QuickActions({ actions, guide }: { actions: QuickAction[]; guide: string }) {
   const cls =
-    "flex min-h-12 w-full items-center gap-2.5 rounded-[10px] border border-gold-light bg-white px-3 py-2 text-left transition-colors hover:border-forest-700/40 hover:bg-[var(--portal-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700";
+    "flex h-full min-h-12 w-full items-center gap-2.5 rounded-[10px] border border-gold-light bg-white px-3 py-2 text-left transition-colors hover:border-forest-700/40 hover:bg-[var(--portal-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700";
   return (
     <nav data-guide={guide} aria-label="Quick actions">
       <h2 className="sr-only">Quick actions</h2>
-      <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-8">
+      <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,10rem),1fr))] gap-2 sm:grid-cols-[repeat(auto-fill,minmax(12rem,1fr))]">
         {actions.map((a) => {
           const inner = (
             <>
@@ -35,8 +37,8 @@ export function QuickActions({ actions, guide }: { actions: QuickAction[]; guide
                 <Icon name={a.icon} size="sm" />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block truncate text-sm font-medium text-ink">{a.label}</span>
-                {a.hint && <span className={`block truncate text-xs ${a.alert ? "font-medium text-amber-900" : "text-ink-500"}`}>{a.hint}</span>}
+                <span className="block text-sm font-medium leading-snug text-ink">{a.label}</span>
+                {a.hint && <span className={`mt-0.5 block text-xs leading-snug ${a.alert ? "font-medium text-amber-900" : "text-ink-500"}`}>{a.hint}</span>}
               </span>
             </>
           );

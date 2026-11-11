@@ -7,7 +7,6 @@ import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { PasswordInput } from "@/components/learn/PasswordInput";
 import { loginEmailFor } from "@/lib/learn/studentLogin";
 import { useLearnSession, dashboardPathForRole, STAFF_ROLES, type LearnRole } from "@/lib/learn/session";
-import { StarMark } from "@/components/StarMark";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 
 // Who is signing in. Every role uses the same field and the same sign-in
@@ -196,8 +195,7 @@ export default function LearnLoginPage() {
         {/* Brand panel: welcome and what the portal is for. */}
         <div className="geo-texture relative hidden flex-col justify-between bg-ink-900 p-10 text-cream lg:flex">
           <div>
-            <StarMark className="h-10 w-10 text-gold-300" />
-            <p className="mt-8 font-serif text-3xl font-semibold leading-tight text-white">
+            <p className="font-serif text-3xl font-semibold leading-tight text-white">
               Assalamu alaykum.
               <br />
               <span className="text-gold-300">Welcome back.</span>
@@ -209,7 +207,7 @@ export default function LearnLoginPage() {
           <ul className="mt-10 space-y-2 text-sm text-cream/80">
             {["Join today's live lessons", "See homework and feedback", "Messages between home and school"].map((t) => (
               <li key={t} className="flex items-center gap-2">
-                <StarMark className="h-3.5 w-3.5 text-gold-300" filled />
+                <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold-300" />
                 {t}
               </li>
             ))}

@@ -112,7 +112,7 @@ function ClassBlock({ c, rating }: { c: ClassSummary; rating?: SubjectRating }) 
       )}
       {rating?.comment && <p className="mt-2 whitespace-pre-wrap text-sm text-ink/80">{rating.comment}</p>}
       <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <Stat label="Attendance" value={fmtPct(a.rate)} sub={a.total === 0 ? "No lessons recorded" : `${a.attended} attended · ${a.absent} missed${a.excused ? ` · ${a.excused} excused` : ""}`} />
+        <Stat label="Attendance" value={fmtPct(a.rate)} sub={a.total === 0 ? "No lessons recorded" : `${a.attended} attended · ${a.absent} unauthorised${a.excused ? ` · ${a.excused} authorised` : ""}${a.technical ? ` · ${a.technical} technical` : ""}`} />
         <Stat label="Homework" value={h.total === 0 ? "–" : `${h.done}/${h.total}`} sub={h.rate === null ? "None set" : `${h.rate}% completed`} />
         <Stat label="Average grade" value={fmtPct(s.average_percent)} sub={s.count === 0 ? "No assessments" : `${s.count} assessment${s.count === 1 ? "" : "s"}`} />
         <Stat label="Qur'an progress" value={quranValue(c.quran)} sub={quranSub(c.quran)} />

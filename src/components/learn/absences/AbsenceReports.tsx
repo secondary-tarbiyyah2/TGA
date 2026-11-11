@@ -29,7 +29,7 @@ export function AbsenceReports({ absences, periodLabel }: { absences: Absence[] 
 
   const exportCsv = () => {
     const header = ["Date", "Student", "Class", "Status", "Reason"];
-    const kind = { authorised: "Authorised", unauthorised: "Not authorised", unexplained: "Unexplained" } as const;
+    const kind = { authorised: "Authorised absence", unauthorised: "Unauthorised absence", unexplained: "No reason yet (unauthorised)" } as const;
     saveCsv(
       `absences-with-reasons-${ukToday()}.csv`,
       toCsv(
@@ -63,7 +63,7 @@ export function AbsenceReports({ absences, periodLabel }: { absences: Absence[] 
             </tr>
           </thead>
           <tbody>
-            {[...REASONS.map((r) => ({ key: r.value, label: r.label })), { key: "none", label: "No reason recorded" }].map((r) => (
+            {[...REASONS.filter((r) => !r.legacy || counts[r.value]).map((r) => ({ key: r.value, label: r.label })), { key: "none", label: "No reason recorded" }].map((r) => (
               <tr key={r.key}>
                 <td className="border-b border-gold-light/20 px-4 py-2 text-ink">{r.label}</td>
                 <td className="border-b border-gold-light/20 px-4 py-2 text-right tabular-nums">{counts[r.key] || 0}</td>

@@ -1,7 +1,8 @@
 "use client";
 
 import { LearnGate } from "@/components/learn/LearnGate";
-import { WorkspaceHeader } from "@/components/learn/kit";
+import { ActionsMenu } from "@/components/learn/kit";
+import { PageHeader } from "@/components/learn/PageHeader";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
 import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
 
@@ -11,19 +12,20 @@ function TeachClassesContent() {
   const classes = useViewerClasses(VIEWER);
   return (
     <>
-      <div className="mb-6">
-        <WorkspaceHeader
-          eyebrow={[{ label: "Today", href: "/teach/dashboard" }, { label: "Teaching" }]}
-          title="My classes"
-          description="Every class you teach or cover."
-          stats={classes ? [{ value: classes.length, label: classes.length === 1 ? "class" : "classes" }] : undefined}
-          menu={[
-            { label: "Gradebook", icon: "award", href: "/teach/assessment" },
-            { label: "Classwork to action", icon: "notebookPen", href: "/teach/homework" },
-          ]}
-        />
-      </div>
-      <ClassGrid viewer={VIEWER} classes={classes} hrefFor={(c) => `/teach/class?id=${c.id}`} emptyLabel="You haven't been assigned to any classes yet." />
+      <PageHeader
+        title="My classes"
+        subtitle="Every class you teach or cover."
+        figures={classes ? [{ value: classes.length, label: classes.length === 1 ? "class" : "classes" }] : undefined}
+        actions={
+          <ActionsMenu
+            items={[
+              { label: "Gradebook", icon: "award", href: "/teach/assessment" },
+              { label: "Classwork to action", icon: "notebookPen", href: "/teach/homework" },
+            ]}
+          />
+        }
+      />
+      <ClassGrid viewer={VIEWER} classes={classes} defaultView="list" hrefFor={(c) => `/teach/class?id=${c.id}`} emptyLabel="You haven't been assigned to any classes yet." />
     </>
   );
 }

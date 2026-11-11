@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { SidePanel, WorkspaceHeader } from "@/components/learn/kit";
+import { SidePanel } from "@/components/learn/kit";
+import { PageHeader } from "@/components/learn/PageHeader";
 import { DataTable, type Column } from "@/components/learn/DataTable";
 import { Icon } from "@/components/learn/Icon";
 import { Button, IconButton, Notice, StatusChip, ui } from "@/components/learn/ui";
@@ -143,6 +144,9 @@ function PupilPeek({ pupil, extras, onClose, onEdit, onPrev, onNext, position }:
           <button type="button" onClick={onEdit} className={ui.btnSecondary}>
             Edit pupil
           </button>
+          <Link href={`/admin/messages?family=${pupil.id}`} className={ui.btnSecondary}>
+            Message family
+          </Link>
           <span className="ml-auto flex gap-1">
             <IconButton icon="chevronLeft" label="Previous pupil" onClick={onPrev} disabled={!onPrev} />
             <IconButton icon="chevronRight" label="Next pupil" onClick={onNext} disabled={!onNext} />
@@ -420,28 +424,15 @@ export function AdminPupils() {
 
   return (
     <>
-      <div className="mb-6">
-        <WorkspaceHeader
-          eyebrow={[{ label: "Today", href: "/admin/dashboard" }, { label: "Pupils" }]}
-          title="Pupils"
-          description="Press a pupil to see them beside the list; open the full record for details, medical, support, attendance, behaviour, reports and entry assessment."
-          stats={
-            pupils
-              ? [
-                  { value: summary.all, label: summary.all === 1 ? "pupil" : "pupils" },
-                  { value: summary.missing, label: "missing details" },
-                  { value: summary.alerts, label: "medical alerts" },
-                  { value: summary.support, label: "support plans" },
-                ]
-              : undefined
-          }
-          primary={
-            <Button variant="primary" icon="userRoundPlus" onClick={() => setAdding(true)} data-guide="pupils-add">
-              Add pupil
-            </Button>
-          }
-        />
-      </div>
+      <PageHeader
+        title="Pupils"
+        subtitle="Press a pupil to see them beside the list; open the full record for details, medical, support, attendance, behaviour, reports and entry assessment."
+        action={
+          <Button variant="primary" icon="userRoundPlus" onClick={() => setAdding(true)} data-guide="pupils-add">
+            Add pupil
+          </Button>
+        }
+      />
       {error && (
         <div className="mb-4">
           <Notice tone="bad">Some of this couldn&apos;t load: {error}</Notice>
@@ -454,7 +445,7 @@ export function AdminPupils() {
             .map((c) => (
               <button key={c.key} type="button" aria-pressed={show === c.key} onClick={() => setShow(c.key)} className={`${show === c.key ? ui.chipOn : ui.chip} shrink-0 whitespace-nowrap`}>
                 {c.label}
-                <span className={`tabular-nums ${show === c.key ? "text-white/85" : "text-ink/60"}`}>{pupils === null ? "" : c.count}</span>
+                <span className={`tabular-nums ${show === c.key ? "text-forest-800/75" : "text-ink/60"}`}>{pupils === null ? "" : c.count}</span>
               </button>
             ))}
         </div>
@@ -513,8 +504,11 @@ export function AdminPupils() {
       </div>
 
       {adding && <AddPupil onClose={() => setAdding(false)} onChanged={refresh} />}
+      {/* Edit pupil replaces the pupil's panel (owner, 11 Nov 2026: the edit form must never open
+          underneath it); closing the edit brings the pupil's panel back. */}
       {editing && <EditPupilModal childId={editing} onClose={() => setEditing(null)} onSaved={refresh} />}
       {(() => {
+        if (editing) return null;
         const i = peek ? rows.findIndex((r) => r.id === peek) : -1;
         if (i < 0) return null;
         const pupil = rows[i];

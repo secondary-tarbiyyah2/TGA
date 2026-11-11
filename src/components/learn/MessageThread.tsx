@@ -43,6 +43,8 @@ export function MessageThread({
   aiTriage = false,
   onTriaged,
   focusMessageId,
+  starters,
+  emptyTitle,
 }: {
   thread: InboxRow;
   me: string;
@@ -54,6 +56,10 @@ export function MessageThread({
   onTriaged?: () => void;
   /** Scroll to and highlight this message (from search). */
   focusMessageId?: string | null;
+  /** A new conversation: ready-made first lines that fill the reply box (never sent by themselves). */
+  starters?: string[];
+  /** A new conversation: the heading of its empty state. */
+  emptyTitle?: string;
 }) {
   const supabase = getSupabaseClient();
   const threadId = thread.thread_id;
@@ -281,7 +287,7 @@ export function MessageThread({
   const audienceNote = isGroup && thread.my_role !== "staff" ? (canPost ? "Your reply goes to the staff in this group only." : "Only staff write in this group. New messages appear here.") : null;
 
   return (
-    <div className="flex h-[min(64vh,640px)] min-h-[360px] flex-col">
+    <div className="flex h-full min-h-0 flex-col">
       <div
         ref={scrollRef}
         onScroll={(e) => {
@@ -292,7 +298,28 @@ export function MessageThread({
         {messages === null ? (
           <Loading label="Loading messages" bare />
         ) : messages.length === 0 ? (
-          <p className="py-10 text-center text-sm text-ink-500">{canPost ? "No messages yet. Write the first one below." : "No messages yet."}</p>
+          <div className="mx-auto flex h-full max-w-md flex-col justify-center py-8 text-center">
+            <p className="t-section">{emptyTitle || "A new conversation"}</p>
+            <p className="mt-1 text-sm text-ink-500">{canPost ? (starters?.length ? "Start with one of these and change it as you like, or write your own below. Nothing is sent until you press Send." : "Write the first message in the box below.") : "No messages yet."}</p>
+            {canPost && starters && starters.length > 0 && (
+              <ul className="mt-4 space-y-2 text-left">
+                {starters.map((t) => (
+                  <li key={t}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setBody(t);
+                        boxRef.current?.focus();
+                      }}
+                      className="w-full rounded-[10px] border border-gold-light bg-[var(--portal-surface)] px-3 py-2.5 text-sm text-ink-700 transition-colors hover:border-forest-500 hover:bg-[var(--portal-hover)]"
+                    >
+                      {t}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         ) : (
           messages.map((m, i) => {
             const mine = m.sender_id === me;
@@ -475,7 +502,7 @@ export function MessageThread({
                 }
                 if (e.key === "Escape" && replyTo) setReplyTo(null);
               }}
-              rows={body.includes("\n") || body.length > 90 ? 4 : 1}
+              rows={body.includes("\n") || body.length > 90 ? 4 : 2}
               maxLength={4000}
               aria-label="Type a message"
               placeholder={isGroup ? `Message ${thread.title}` : "Type a message"}
@@ -486,6 +513,7 @@ export function MessageThread({
               <span className="hidden sm:inline">Send</span>
             </button>
           </div>
+          <p className="mt-1 hidden px-1 text-[11px] text-ink-500 sm:block">Enter sends. Shift and Enter starts a new line.</p>
         </div>
       ) : (
         <p className="border-t border-gold-light px-4 py-3 text-sm text-ink-500">{audienceNote || "You can read this conversation but not write in it."}</p>
