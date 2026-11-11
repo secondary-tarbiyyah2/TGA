@@ -278,7 +278,9 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           const shown: Status | null = current || (didJoin || !anyJoins ? "present" : null);
           return (
             <li key={c.id} className="flex flex-wrap items-center gap-3 px-5 py-2.5">
-              <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">
+              {/* The name keeps at least 12rem; in a narrow panel the mark buttons wrap onto the
+                  next line instead of squeezing the name to a few letters (owner, 11 Nov 2026). */}
+              <span className="min-w-[12rem] flex-[1_1_12rem] break-words text-sm font-medium text-ink">
                 <PupilLink id={c.id} name={c.name} />
                 <SupportBadge plan={plans?.[c.id]} />
                 {didJoin ? <span className="ml-2 text-xs font-normal text-green-800">Joined {timeOf(joined[c.id])}</span> : anyJoins ? <span className="ml-2 text-xs font-normal text-amber-800">Has not joined</span> : null}
