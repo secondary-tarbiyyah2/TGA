@@ -58,6 +58,14 @@ patterns are in `docs/portal-structure.md`.
 10. [x] Curriculum editors in panels: the curriculum `Modal` takes `panel` (renders the portal `SidePanel`, size lg);
    the Planner's unit editor, the lesson's full form, sign off, upload own slides, version history, share to class
    (lessons and term resources) and lesson feedback all open as side panels. `SubPageNav` deleted (unused).
+11. [x] Curriculum as one Drive-like browser (owner feedback 2, items 14 and 18; `CurriculumBrowser.tsx`,
+   `CurriculumHome.tsx`): `/{area}/curriculum` (menu "Browse", was Lesson library) shows folders Year > Subject >
+   Unit, a unit holding its lessons, resources and weekly plan; breadcrumb; one toolbar (search, Everything / Lessons /
+   Resources, review status, grid or list remembered per browser); a details pane (a panel on phones); a lesson opens
+   its workspace page, which has "Back to <unit>". Address keeps `year`, `subject`, `unit` (old library links land in
+   the folder); `classic=1` opens the old unit page as "Unit tools" (spec, connections, revision pack, results);
+   `/curriculum/resources` opens the browser with `type=resources`, `?terms=1` keeps the term lists. Map, Planner,
+   Review and Syllabus carry the same Browse button and "Views and tools" menu (`CurriculumViews`).
 
 **Consistency sweep (11 Nov 2026): what is left, and why.**
 - In-page view switches (`Tabs`) remain on about 37 pages (Admissions, Attendance, Behaviour, Fees, GCSE,
