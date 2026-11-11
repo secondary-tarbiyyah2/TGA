@@ -323,7 +323,7 @@ function star8({ size = 130 } = {}) {
 /** A simple schematic map: areas (circles), roads (lines) and places (labelled points). Not to scale unless it says so. */
 function schematic({ height = 120, areas = [], roads = [], places = [], scale = "", north = true } = {}) {
   let s = `<rect x="0.3" y="0.3" width="${W - 0.6}" height="${height - 0.6}" fill="#FBF7EE" stroke="#B9B3A5" stroke-width="0.4"/>`;
-  for (const [x, y, r, label] of areas) s += `<circle cx="${x}" cy="${y}" r="${r}" fill="#F1EDE3" stroke="#B9B3A5" stroke-width="0.4"/>` + txt(x, y + 1.2, label, { size: 3.4, color: "#5B6168" });
+  for (const [x, y, r, label] of areas) s += `<circle cx="${x}" cy="${y}" r="${r}" fill="#F1EDE3" fill-opacity="0.55" stroke="#8C877C" stroke-width="0.4"/>` + txt(x, y + 1.2, label, { size: 3.4, color: "#5B6168" });
   for (const [x1, y1, x2, y2, label, wide] of roads) s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${wide ? "#2F5DA8" : "#8C877C"}" stroke-width="${wide ? 2.2 : 1}"/>` + (label ? txt((x1 + x2) / 2, (y1 + y2) / 2 - 2.5, label, { size: 3, color: wide ? "#2F5DA8" : "#5B6168" }) : "");
   for (const [x, y, label, tone] of places) s += `<circle cx="${x}" cy="${y}" r="2.4" fill="${tone === "gold" ? "#B8892B" : "#1B1E21"}"/>` + txt(x, y - 4, label, { size: 3.6, bold: true });
   if (scale) s += txt(W - 4, height - 4, scale, { size: 2.8, anchor: "end", color: "#5B6168" });

@@ -1,0 +1,125 @@
+{
+ "id": "mathematics-y11-venn-diagram-template-printable-in-the-pupil-pdf",
+ "title": "Venn diagram template",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4MA1 Higher",
+ "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+ "lessons": [
+  88
+ ],
+ "source": "Seeded from mathematics/y11 lesson 88 (Venn diagram template (printable, in the pupil PDF))",
+ "intro": "Lesson 88: Sets, Venn diagrams and probability. To understand set notation and Venn diagrams, and use them to find probabilities",
+ "blocks": [
+  {
+   "h": "Venn diagram"
+  },
+  {
+   "grid": {
+    "kind": "schematic",
+    "height": 80,
+    "north": false,
+    "areas": [
+     [
+      70,
+      40,
+      32,
+      "A"
+     ],
+     [
+      112,
+      40,
+      32,
+      "B"
+     ]
+    ]
+   }
+  },
+  {
+   "text": "Draw the rectangle round both circles for the universal set ξ. Write each value or count in the right region: A only, A ∩ B, B only, and outside both."
+  },
+  {
+   "grid": {
+    "kind": "schematic",
+    "height": 80,
+    "north": false,
+    "areas": [
+     [
+      70,
+      40,
+      32,
+      "A"
+     ],
+     [
+      112,
+      40,
+      32,
+      "B"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "ξ = {1, ..., 10}, P = primes, E = even numbers. List P ∩ E and P'.",
+     "a": "P ∩ E = {2}; P' = {1, 4, 6, 8, 9, 10}",
+     "model": "Primes 2, 3, 5, 7; evens 2, 4, 6, 8, 10. Both: 2. Not prime: 1, 4, 6, 8, 9, 10."
+    },
+    {
+     "q": "Using the Arabic and Business Venn: P(neither)?",
+     "a": "7/40"
+    },
+    {
+     "q": "Is {2, 4} a subset of the even numbers? Write it with the symbol.",
+     "a": "Yes: {2, 4} ⊂ E"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "In a group of 50, n(T) = 28 (tea), n(C) = 22 (coffee), n(T ∩ C) = 9. (a) Draw the Venn diagram [3] (b) n(T ∪ C)' [1] (c) P(coffee only) [2] (d) P(tea | coffee) [2] (e) ξ = {x : x is an integer, 1 ≤ x ≤ 20}, A = {x : x² < 30}: list A [2] (f) Shade (A ∪ B)' and A' ∩ B on two copies of a Venn diagram [2]",
+     "a": "(a) T only 19, both 9, C only 13, neither 9 (b) 9 (c) 13/50 (d) 9/22 (e) A = {1, 2, 3, 4, 5} (f) outside both circles; B without the overlap",
+     "model": "(a) 28 - 9 = 19, 22 - 9 = 13, 50 - 41 = 9. (b) outside both. (c) 13 of 50. (d) 9 of the 22 coffee drinkers. (e) 5² = 25 < 30 but 6² = 36. (f) shading as described."
+    },
+    {
+     "q": "n(ξ) = 60, n",
+     "a": "35 + 2x - x + 10 = 60, x = 15",
+     "options": [
+      "= 35, n(B) = 2x, n(A ∩",
+      "= x, n(A ∪ B)' = 10. Find x."
+     ]
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A ∩ B means",
+     "a": "A) in both",
+     "options": [
+      "in both",
+      "in either",
+      "in neither"
+     ]
+    },
+    {
+     "q": "Answer the ponder question.",
+     "a": "10 pupils study both, so they are counted twice: 25 + 18 + 7 - 10 = 40."
+    }
+   ]
+  }
+ ]
+}
