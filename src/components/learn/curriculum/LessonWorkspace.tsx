@@ -196,6 +196,10 @@ export function LessonWorkspace({ id, at, area }: { id: string; at?: { subject: 
 
   return (
     <div className="space-y-6">
+      {/* A focused page with a clear way back to the unit's folder (owner feedback 2, item 14). */}
+      <Link href={unitHref} data-guide="lesson-back" className="-mb-3 inline-flex min-h-11 items-center gap-1 rounded-lg text-sm font-medium text-forest-700 hover:underline sm:min-h-8">
+        <Icon name="chevronLeft" size="sm" /> Back to {lesson.unit || "the unit"}
+      </Link>
       <WorkspaceHeader
         eyebrow={[
           { label: lesson.subject, href: `${base}?year=${lesson.year}&subject=${encodeURIComponent(lesson.subject_slug)}` },

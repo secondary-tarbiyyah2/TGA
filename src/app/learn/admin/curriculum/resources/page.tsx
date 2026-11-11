@@ -1,20 +1,15 @@
 "use client";
 
 import { LearnGate } from "@/components/learn/LearnGate";
-import { PageHeader } from "@/components/learn/PageHeader";
-import { TermResources } from "@/components/learn/curriculum/TermResources";
+import { CurriculumHome } from "@/components/learn/curriculum/CurriculumHome";
 
-/** Curriculum > Resources: each term's resource list (docs/agent-briefs/BRIEF-RESOURCES.md). Staff only. */
+/** Resources now live in the Curriculum browser (each unit's folder); this address opens it
+ * showing resources, and `?terms=1` keeps each term's printable list. Staff only. */
 export default function AdminResourcesPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
-        <PageHeader
-          crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Curriculum", href: "/admin/curriculum" }, { label: "Term resources" }]}
-          title="Term resources"
-          subtitle="Every resource the lessons use, term by term: printables made by TGA to download or share, and what comes from the school's files or the pupil's own kit."
-        />
-        <TermResources area="admin" />
+        <CurriculumHome area="admin" mode="resources" />
       </LearnGate>
     </section>
   );
