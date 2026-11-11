@@ -8,7 +8,7 @@ import type { ClassViewer } from "@/lib/learn/classes";
 import { renderMarkup } from "@/lib/learn/markup";
 import { HOMEWORK_COLUMNS, type Homework } from "@/lib/learn/homework";
 import { AttachmentList, cleanAttachments } from "@/components/learn/class/Attachments";
-import { CLASSWORK_TYPES, CreatePicker, MaterialDialog, TopicDialog, type ClassworkType, type CreatePick } from "@/components/learn/class/CreateClasswork";
+import { CreatePicker, useClassworkTypes, MaterialDialog, TopicDialog, type ClassworkType, type CreatePick } from "@/components/learn/class/CreateClasswork";
 import { Icon, type IconName } from "@/components/learn/Icon";
 import { PostDialog } from "@/components/learn/class/AnnouncementComposer";
 import { HomeworkCard } from "@/components/learn/homework/HomeworkCards";
@@ -21,6 +21,7 @@ import { Select } from "@/components/learn/Select";
 
 import { askConfirm } from "@/components/learn/kit";
 import { Button, ui } from "@/components/learn/ui";
+import { useFeature } from "@/lib/learn/features";
 type Topic = { id: string; name: string; position: number };
 type Hw = Homework & { topic_id: string | null; status?: string; kind?: string | null; assigned_child_ids?: string[] | null };
 type Mat = { id: string; title: string; kind: "material" | "question"; body: string | null; resources: unknown; topic_id: string | null; allow_comments: boolean; created_at: string };
@@ -64,7 +65,11 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
   const canEdit = isStaff; // head/admin and the class teacher; the database refuses anyone else
   const childId = viewer.kind === "student" || viewer.kind === "parent" ? viewer.childId : null;
   const [topics, setTopics] = useState<Topic[] | null>(null);
-  const [rows, setRows] = useState<Row[]>([]);
+  const [allRows, setRows] = useState<Row[]>([]);
+  // Quizzes switched off by the Headteacher (School features): no Quiz to create and no quizzes listed; nothing is deleted.
+  const quizzesOn = useFeature("quizzes");
+  const kinds = useClassworkTypes();
+  const rows = quizzesOn ? allRows : allRows.filter((r) => !(r.type === "homework" && r.row.kind === "quiz"));
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
   const [expanded, setExpanded] = useState<string | null>(null);
   const [creating, setCreating] = useState<"material" | "question" | null>(null);
@@ -266,11 +271,11 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
   ) : null;
 
   const kindOf = (r: Row): ClassworkType => (r.type === "homework" ? (r.row.kind === "quiz" ? "quiz" : "assignment") : r.row.kind);
-  const counts = Object.fromEntries(CLASSWORK_TYPES.map((t) => [t.kind, rows.filter((r) => kindOf(r) === t.kind).length])) as Record<ClassworkType, number>;
+  const counts = Object.fromEntries(kinds.map((t) => [t.kind, rows.filter((r) => kindOf(r) === t.kind).length])) as Record<ClassworkType, number>;
   const filtered = kindFilter === "all" ? rows : rows.filter((r) => kindOf(r) === kindFilter);
   const groups: { key: string; topic: Topic | null; items: Row[]; label?: string; icon?: IconName }[] =
     groupBy === "kind"
-      ? CLASSWORK_TYPES.map((t) => ({ key: `kind-${t.kind}`, topic: null, label: KIND_GROUP[t.kind], icon: t.icon, items: filtered.filter((r) => kindOf(r) === t.kind) }))
+      ? kinds.map((t) => ({ key: `kind-${t.kind}`, topic: null, label: KIND_GROUP[t.kind], icon: t.icon, items: filtered.filter((r) => kindOf(r) === t.kind) }))
       : [
           { key: "none", topic: null, items: filtered.filter((r) => !r.topicId || !topics.some((t) => t.id === r.topicId)) },
           ...topics.map((t) => ({ key: t.id, topic: t, items: filtered.filter((r) => r.topicId === t.id) })),
@@ -342,7 +347,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
             <button type="button" aria-pressed={kindFilter === "all"} onClick={() => setKindFilter("all")} className={kindFilter === "all" ? ui.chipOn : ui.chip}>
               All {rows.length}
             </button>
-            {CLASSWORK_TYPES.map((t) => (
+            {kinds.map((t) => (
               <button key={t.kind} type="button" aria-pressed={kindFilter === t.kind} onClick={() => setKindFilter(t.kind)} className={kindFilter === t.kind ? ui.chipOn : ui.chip} disabled={!counts[t.kind] && kindFilter !== t.kind}>
                 <Icon name={t.icon} size="sm" />
                 {KIND_GROUP[t.kind]} {counts[t.kind]}

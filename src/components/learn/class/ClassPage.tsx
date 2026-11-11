@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useFeature } from "@/lib/learn/features";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
 import type { Crumb } from "@/components/learn/PageHeader";
@@ -198,6 +199,8 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
   // "Set work" opens a panel over whichever section you are in. An address with ?set=assignment
   // (or quiz) opens the same panel, so links from elsewhere land on the class with it open.
   const setParam = params.get("set");
+  // Quizzes switched off by the Headteacher (School features): no "Set a quiz" and no quiz panel.
+  const quizzesOn = useFeature("quizzes");
   const [setWork, setSetWork] = useState<"assignment" | "quiz" | null>(isStaff && (setParam === "assignment" || setParam === "quiz") ? setParam : null);
 
   useEffect(() => {
@@ -267,7 +270,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           ...(isStaff
             ? ([
                 // The quiz builder lives in Classwork (full screen over it).
-                { label: "Set a quiz", icon: "listChecks", onSelect: () => router.push(`${classHref("classwork")}&create=quiz&n=${Date.now()}`, { scroll: false }) },
+                ...(quizzesOn ? [{ label: "Set a quiz", icon: "listChecks", onSelect: () => router.push(`${classHref("classwork")}&create=quiz&n=${Date.now()}`, { scroll: false }) }] : []),
                 { label: "Take the register", icon: "userCheck", href: classHref("attendance") },
                 { label: "Grades", icon: "chartColumnIncreasing", href: classHref("grades") },
                 { label: "Class settings", icon: "settings", href: classHref("settings") },
@@ -276,7 +279,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           { label: viewer.kind === "student" ? "All my classes" : "All classes", icon: "layoutGrid", href: crumbs[1].href as string },
         ]}
       />
-      {setWork && (
+      {setWork && (setWork !== "quiz" || quizzesOn) && (
         <SetWorkPanel
           classId={cls.id}
           className={cls.name}

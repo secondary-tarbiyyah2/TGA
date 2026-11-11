@@ -584,6 +584,8 @@ const FEATURE_WORDS: Partial<Record<FeatureKey, RegExp>> = {
   revision_packs: /revision pack/i,
   house_points: /house points? (leaderboard|table)/i,
   lesson_feedback: /leave feedback on a lesson|lesson feedback/i,
+  // Classwork quizzes only; revision quizzes are worded "the quiz" / "quiz scores" and stay.
+  quizzes: /quiz assignment|class quiz|switched quizzes on/i,
 };
 
 /** What the Portal guide leaves out with these switches (see filterGuide in the guide content). */

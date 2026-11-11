@@ -34,15 +34,15 @@ insert into public.curriculum_lessons (id, subject_slug, subject, year, unit, le
 -- The defaults as shipped (a test database starts from the migrations).
 select is(
   (select string_agg(key || '=' || enabled::text, ',' order by key) from public.school_features),
-  'ai_helpers=true,guide_journeys=true,house_points=true,lesson_feedback=true,revision_packs=false,subject_lesson_editing=true',
-  'revision packs start off and every other switch starts on'
+  'ai_helpers=true,guide_journeys=true,house_points=true,lesson_feedback=true,quizzes=false,revision_packs=false,subject_lesson_editing=true',
+  'revision packs and quizzes start off and every other switch starts on'
 );
 
 set local role authenticated;
 
 -- ── who can read and change the switches ────────────────────────────────
 set local "request.jwt.claims" to '{"sub": "e2060000-0000-0000-0000-000000000003"}';
-select is((select count(*)::int from public.school_features), 6, 'a parent can read the switches (the portal hides switched-off parts for them too)');
+select is((select count(*)::int from public.school_features), 7, 'a parent can read the switches (the portal hides switched-off parts for them too)');
 update public.school_features set enabled = true where key = 'revision_packs';
 select is(public.school_feature_on('revision_packs'), false, 'a parent cannot switch anything on');
 

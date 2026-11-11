@@ -320,6 +320,9 @@ Deno.serve(async (req) => {
   // is saved: the questions go back to the builder, unchecked, for the teacher to review and edit.
   if (task === "quiz_questions") {
     if (!isWriter) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+    // Quizzes switched off by the Headteacher (School features, migration 0221): no drafts, no cost.
+    const { data: quizzesOn, error: quizzesErr } = await service.rpc("school_feature_on", { p_key: "quizzes" });
+    if (!quizzesErr && quizzesOn === false) return jsonResponse({ ok: false, error: "quizzes_switched_off", detail: "The Headteacher has switched Quizzes off." }, 403);
     const classId = typeof body.class_id === "string" && /^[0-9a-f-]{36}$/i.test(body.class_id) ? body.class_id : "";
     const unitName = typeof body.unit === "string" ? body.unit.trim().slice(0, 200) : "";
     if (!classId || !unitName) return jsonResponse({ ok: false, error: "invalid_input", detail: "Choose the unit to draft the quiz from." }, 400);
