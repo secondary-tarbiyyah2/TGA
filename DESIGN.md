@@ -101,3 +101,41 @@ their section names. Our identity = gold, ink, cream, 8-point geometric star, "t
   (`src/lib/place.ts`) and shared by the booking page, "Is it right for us?" and the fees
   page. The country list comes from `src/lib/countryZones.generated.ts`; regenerate it
   with `python3 scripts/gen-country-zones.py`.
+
+## Portal design system (learn.tarbiyyah.co.uk; owner brief 10 Nov 2026)
+
+The portal has its own, quieter design language (the public website keeps "Brand direction"
+above). The owner's brief is `docs/owner-briefs/2026-11-10-ui-ux-redesign.md`; the working
+notes and history are in `docs/portal-redesign.md`. Everything below lives as tokens in the
+`.portal` block of `src/app/globals.css` and as components in `src/components/learn/ui.tsx`
+and `kit.tsx`: change it there, never page by page.
+
+- **Feel:** premium, calm, scholarly; information first. No AI-dashboard look: no endless
+  rounded white cards, no gradients, no heavy shadows, no coloured icon tiles, no random badges.
+- **Colour, one job each:** warm ivory canvas (`--portal-canvas`), stone sidebar
+  (`--portal-sidebar`), near-white panels (`--portal-surface`), hairline borders
+  (`--color-gold-light`, now a warm stone grey); charcoal text (`ink-900`) and grey-green
+  secondary text and icons (`ink-500`); **deep forest green** (`forest-700`) for actions,
+  links, focus and "you are here"; **muted green** (`forest-500`) for progress and quiet
+  emphasis; **antique gold** only as an accent (logo, the small marker beside the page you
+  are on); amber, red and green only for status.
+- **Type:** Inter only (self-hosted). Roles as classes: `t-title` (page title, 22px
+  semibold), `t-section` (15px semibold), body 14 to 15px, `t-meta` (13px grey-green),
+  `t-eyebrow` (11px capitals). Never make everything the same size and weight.
+- **Spacing:** a 4px grid. Page gutter 16 / 24 / 40px (phone / tablet / desktop); 24 to 28px
+  under a page header; 24px between blocks; rows 32 to 40px tall on desktop and at least
+  44px on touch screens.
+- **Shape and depth:** controls 7px corners, panels 10px, chips are pills. Hairlines at rest;
+  one shadow (`--portal-shadow-pop`) only for things that float (menus, popovers, dialogs).
+  No card inside a card.
+- **Shell:** collapsible sidebar (268px, or a 64px icon rail with tooltips): Pinned, Home,
+  then category dropdowns; the page you are on is lifted onto the surface colour with
+  forest text and a short gold marker. The profile button at the foot opens the account menu
+  (account, switch portal, sign out). The top bar sits on the canvas: search with its
+  shortcut, clock-in, display, feedback, then **Report a concern** in its own red outline
+  (never in a menu), then notifications. A category's pages show as text tabs with a forest
+  underline under the top bar (`HubTabs`), so pages in a category need no breadcrumb.
+- **Status language:** a dot and a word, not a coloured badge: pending, in progress,
+  completed, needs attention, overdue, approved, unavailable (`Status` in `ui.tsx`;
+  lesson review uses `WorkflowBadge` in `kit.tsx`).
+- **Motion:** 120 to 200ms, ease-out; nothing bounces; all of it off under reduced motion.

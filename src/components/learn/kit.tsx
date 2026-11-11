@@ -53,6 +53,8 @@ export function ActionsMenu({
   triggerClassName,
   header,
   menuClassName = "min-w-[13.5rem]",
+  placement = "below",
+  onOpenChange,
 }: {
   items: MenuAction[];
   /** Accessible name; also the visible text when `trigger` is "text" or "primary". */
@@ -68,6 +70,9 @@ export function ActionsMenu({
   header?: ReactNode;
   /** Width of the open menu. */
   menuClassName?: string;
+  /** Open under the trigger (default) or above it (a trigger at the foot of the screen). */
+  placement?: "below" | "above";
+  onOpenChange?: (open: boolean) => void;
 }) {
   const [open, setOpen] = useState(false);
   // The side the menu opens to: `align`, flipped when that would run off a phone screen.
@@ -76,6 +81,9 @@ export function ActionsMenu({
   const btnRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const shown = items.filter((i) => i.section || i.onSelect || i.href || i.content);
+  useEffect(() => {
+    onOpenChange?.(open);
+  }, [open, onOpenChange]);
   const hasIcons = shown.some((i) => i.icon);
 
   const focusItem = (n: number) => {
@@ -166,7 +174,7 @@ export function ActionsMenu({
           role="menu"
           aria-label={label}
           onKeyDown={onListKey}
-          className={`absolute top-full z-40 mt-1 max-h-[min(80vh,40rem)] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-xl border border-gold-light bg-white p-1 shadow-lg ${menuClassName} ${side === "right" ? "right-0" : "left-0"}`}
+          className={`portal-menu absolute z-40 max-h-[min(80vh,40rem)] max-w-[calc(100vw-2rem)] overflow-y-auto rounded-xl border border-gold-light bg-white p-1 shadow-lg ${placement === "above" ? "bottom-full mb-1.5" : "top-full mt-1"} ${menuClassName} ${side === "right" ? "right-0" : "left-0"}`}
         >
           {header && (
             <div role="presentation" className="-mx-1 -mt-1 mb-1 border-b border-gold-light px-4 py-3">
@@ -186,12 +194,12 @@ export function ActionsMenu({
                   {it.section}
                 </p>
               );
-            const cls = `flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm outline-none focus:bg-cream hover:bg-cream ${
+            const cls = `flex min-h-9 w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left text-sm outline-none focus:bg-cream hover:bg-cream ${
               it.danger ? "text-red-700" : "text-ink"
             } ${it.disabled ? "pointer-events-none opacity-45" : ""}`;
             const inner = (
               <>
-                {it.icon ? <Icon name={it.icon} size="sm" className="h-4 w-4 shrink-0 opacity-70" /> : hasIcons ? <span className="w-4 shrink-0" aria-hidden="true" /> : null}
+                {it.icon ? <Icon name={it.icon} size="sm" className={`h-4 w-4 shrink-0 ${it.danger ? "" : "text-ink-500"}`} /> : hasIcons ? <span className="w-4 shrink-0" aria-hidden="true" /> : null}
                 {it.hint ? (
                   <span className="min-w-0 flex-1">
                     <span className="block font-medium">{it.label}</span>

@@ -22,8 +22,8 @@ export function FeedbackButton() {
   const btnRef = useRef<HTMLButtonElement>(null);
   return (
     <>
-      <button ref={btnRef} type="button" onClick={() => setOpen(true)} title="Send feedback" aria-label="Send feedback" aria-haspopup="dialog" className="portal-topbar-btn text-sm font-medium text-ink/75" data-activity-ignore>
-        <Icon name="messageSquarePlus" className="h-[18px] w-[18px]" />
+      <button ref={btnRef} type="button" onClick={() => setOpen(true)} title="Send feedback" aria-label="Send feedback" aria-haspopup="dialog" className="portal-topbar-btn" data-activity-ignore>
+        <Icon name="messageSquarePlus" />
         <span className="hidden xl:inline">Feedback</span>
       </button>
       {open &&

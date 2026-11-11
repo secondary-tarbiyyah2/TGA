@@ -127,33 +127,30 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
       <InstallAppSetup />
       <PortalSidebar area={area} session={activeSession} roles={roles} collapsed={collapsed} onToggle={toggleSidebar} />
 
-      <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-out ${collapsed ? "lg:pl-[76px]" : "lg:pl-[280px]"}`}>
+      <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-[var(--portal-ease)] motion-reduce:transition-none ${collapsed ? "lg:pl-[var(--portal-rail-w)]" : "lg:pl-[var(--portal-sidebar-w)]"}`}>
         <header className="portal-topbar sticky top-0 z-20">
-          <div className="flex h-[60px] items-center gap-2 px-4 sm:px-6 lg:px-8">
+          <div className="flex h-[var(--portal-topbar-h)] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
             <Link href={homeHref} className="flex shrink-0 items-center lg:hidden" aria-label="Tarbiyyah Global Academy, your dashboard">
               {/* Very narrow phones (360px) get the square mark, so every top-bar button still fits. */}
-              <Image src="/brand/ga-wordmark.png" alt="" width={110} height={33} priority className="h-[33px] w-[110px] max-w-none object-contain max-[419px]:hidden" />
-              <Image src="/brand/ga-logo-square.png" alt="" width={34} height={34} className="hidden h-[34px] w-[34px] max-w-none object-contain max-[419px]:block" />
+              <Image src="/brand/ga-wordmark.png" alt="" width={110} height={33} priority className="h-[32px] w-[106px] max-w-none object-contain max-[419px]:hidden" />
+              <Image src="/brand/ga-logo-square.png" alt="" width={32} height={32} className="hidden h-8 w-8 max-w-none rounded-md object-contain max-[419px]:block" />
             </Link>
 
-            {/* One search for the whole portal: a wide field on the left on desktop, an icon on phones. */}
-            <div className="flex items-center max-md:order-last">
+            {/* One search for the whole portal: a field on the left on desktop, an icon on phones. */}
+            <div className="flex min-w-0 items-center max-md:order-last md:flex-1">
               <CommandPalette area={area} roles={roles.map((r) => r.role)} />
             </div>
+            {/* Everyday tools, then safeguarding on its own (always visible, never in a menu), then alerts. */}
             <div className="ml-auto flex items-center gap-0.5 sm:gap-1">
               <GuideButton />
               <ClockChip userId={activeSession.user.id} roles={roles} />
+              <span aria-hidden="true" className="portal-topbar-sep hidden sm:block" />
               <ViewSettingsMenu variant="portal" />
               <FeedbackButton />
-              <Link
-                href="/report-concern"
-                title="Report a concern"
-                aria-label="Report a concern"
-                data-tour="concern"
-                className="portal-topbar-btn ml-1 whitespace-nowrap text-sm font-medium text-red-700 hover:!bg-red-50"
-              >
-                <Icon name="shieldAlert" className="h-[18px] w-[18px]" />
+              <span aria-hidden="true" className="portal-topbar-sep hidden sm:block" />
+              <Link href="/report-concern" title="Report a concern" aria-label="Report a concern" data-tour="concern" className="portal-topbar-btn portal-topbar-btn--concern whitespace-nowrap">
+                <Icon name="shieldAlert" />
                 <span className="hidden sm:inline">Report a concern</span>
               </Link>
               {roles.some((r) => ADMIN_ISH_ROLES.includes(r.role)) && (
@@ -166,7 +163,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
         </header>
 
         <main id="main" className="flex-1 overflow-x-clip pb-24 lg:pb-0">
-          <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-10">
+          <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
             <SignatureBanner />
             <HubTabs roles={roles.map((r) => r.role)} />
             <ClockInGate userId={activeSession.user.id} roles={roles}>

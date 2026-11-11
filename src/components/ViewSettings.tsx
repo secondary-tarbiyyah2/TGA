@@ -783,15 +783,15 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
         onClick={() => setOpen(true)}
         className={
           portal
-            ? "portal-topbar-btn relative px-2.5 text-sm font-medium text-ink/80"
+            ? "portal-topbar-btn relative"
             : footer
               ? "relative inline-flex items-center gap-1.5 rounded text-cream/75 transition-colors hover:text-cream focus-visible:outline-gold-light"
               : "relative inline-flex h-9 min-w-9 items-center justify-center gap-1.5 rounded-full px-2 text-sm font-medium text-ink/70 transition-colors hover:bg-gold-100 hover:text-ink"
         }
       >
-        <DisplayIcon className={footer ? "h-4 w-4" : "h-[18px] w-[18px]"} />
+        <DisplayIcon className={footer ? "h-4 w-4" : portal ? "" : "h-[18px] w-[18px]"} />
         {portal && (
-          <span aria-hidden="true" className="hidden md:inline">
+          <span aria-hidden="true" className="hidden xl:inline">
             Display
           </span>
         )}
@@ -804,7 +804,7 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
         {count > 0 && (
           <span
             aria-hidden="true"
-            className={`absolute flex min-w-4 items-center justify-center rounded-full bg-gold-500 px-1 text-[0.6rem] font-bold leading-4 text-ink-900 ${footer ? "-right-4 -top-1" : portal ? "-right-1 -top-1 border-2 border-white" : "-right-0.5 -top-0.5 ring-2 ring-cream"}`}
+            className={`absolute flex min-w-4 items-center justify-center rounded-full bg-gold-500 px-1 text-[0.6rem] font-bold leading-4 text-ink-900 ${footer ? "-right-4 -top-1" : portal ? "-right-1 -top-1 border-2 border-[var(--portal-canvas)]" : "-right-0.5 -top-0.5 ring-2 ring-cream"}`}
           >
             {count}
           </span>

@@ -102,6 +102,12 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
   const pathname = usePathname() || "";
   const prefs = usePortalPrefs(null);
   const [open, setOpen] = useState(false);
+  // The shortcut as this computer writes it (Cmd on a Mac, Ctrl elsewhere).
+  const [shortcut, setShortcut] = useState("Ctrl K");
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- read the platform once after mount
+    if (/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) setShortcut("\u2318K");
+  }, []);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
   const [classes, setClasses] = useState<ClassSummary[] | null>(null);
@@ -332,22 +338,23 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         type="button"
         onClick={openPalette}
         aria-label="Search"
-        title="Search (Ctrl K)"
+        title={`Search (${shortcut})`}
         data-tour="search"
-        className="flex h-11 w-11 items-center justify-center rounded-full text-ink/65 hover:bg-cream hover:text-ink md:hidden"
+        className="portal-icon-btn md:hidden"
       >
         <SearchIcon className="h-5 w-5" />
       </button>
       <button
         type="button"
         onClick={openPalette}
-        aria-label="Search pages and jobs (Ctrl K)"
+        aria-label={`Search pages, people and jobs (${shortcut})`}
+        aria-keyshortcuts="Control+K Meta+K"
         data-tour="search"
-        className="mr-1 hidden h-10 w-64 items-center gap-2.5 rounded-xl border border-gold-light bg-[var(--portal-canvas)] px-3.5 text-sm text-ink/65 transition-colors hover:border-ink/25 hover:bg-white hover:text-ink md:flex lg:w-80 xl:w-96"
+        className="portal-search hidden w-full max-w-[17rem] md:flex lg:max-w-[22rem] xl:max-w-[26rem]"
       >
-        <SearchIcon className="h-4 w-4" />
-        <span>Search pages and jobs</span>
-        <kbd className="ml-auto rounded border border-gold-light bg-white px-1.5 py-0.5 text-[11px] font-medium text-ink/65">Ctrl K</kbd>
+        <SearchIcon className="h-4 w-4 shrink-0" />
+        <span className="min-w-0 flex-1 truncate text-left">Search pages, people and jobs</span>
+        <kbd className="portal-kbd">{shortcut}</kbd>
       </button>
 
       {open &&
