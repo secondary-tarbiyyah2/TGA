@@ -15,6 +15,20 @@ import { Button, EmptyState, Notice, StatusChip, ui } from "@/components/learn/u
 
 type ClassOpt = { id: string; name: string };
 
+/** A resource line that ends with a link (the school's own SharePoint decks): the text, then an "Open" link. */
+export function LinkedWording({ text }: { text: string }) {
+  const m = /\s*(https:\/\/\S+)\s*$/.exec(text);
+  if (!m) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, m.index)}{" "}
+      <a href={m[1]} target="_blank" rel="noopener noreferrer" className={ui.btnLink}>
+        Open in SharePoint
+      </a>
+    </>
+  );
+}
+
 /**
  * Share a resource's pupil copy (never the mark scheme) to a class: it is posted as material in the
  * class's Classwork, the same way lesson slides are shared. Pupils only ever see resources shared like this.
@@ -196,7 +210,9 @@ export function LessonResourceList({ resources, area }: { resources: CurriculumR
         <ul className="space-y-1 text-sm text-ink/85">
           {rest.map((r) => (
             <li key={r.id} className="flex flex-wrap items-baseline gap-x-2">
-              <span>{r.wording || r.title}</span>
+              <span>
+                <LinkedWording text={r.wording || r.title} />
+              </span>
               <span className="text-xs text-ink/55">{r.status === "to make" ? "· still being made" : `· ${SOURCE_LABEL[r.source] || r.source}`}</span>
             </li>
           ))}
@@ -347,7 +363,11 @@ export function TermResources({ area }: { area: "teach" | "admin" }) {
                     {r.subject} · {yearLabel(r.year)} · {typeLabel(r.type)}
                   </p>
                   <p className="mt-0.5 text-sm font-medium text-ink">{r.title}</p>
-                  {r.wording && r.wording !== r.title && <p className="mt-0.5 text-xs text-ink/60">Lesson wording: {r.wording}</p>}
+                  {r.wording && r.wording !== r.title && (
+                    <p className="mt-0.5 text-xs text-ink/60">
+                      Lesson wording: <LinkedWording text={r.wording} />
+                    </p>
+                  )}
                   <p className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-xs text-ink/70">
                     <span>{SOURCE_LABEL[r.source] || r.source}</span>
                     <span aria-hidden="true">·</span>

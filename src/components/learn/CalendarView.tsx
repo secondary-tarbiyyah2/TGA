@@ -1,32 +1,38 @@
 "use client";
 
-import { Loading } from "@/components/learn/kit";
+import { Loading, SidePanel } from "@/components/learn/kit";
 import { ukToday } from "@/lib/learn/ukTime";
 import Link from "next/link";
 import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent as ReactKeyEvent } from "react";
 import { classColour } from "@/lib/learn/classes";
 import { localDateKey, useCalendarEvents, type CalendarScope } from "@/lib/learn/calendar";
 import { TermsManager } from "@/components/learn/calendar/TermsManager";
-import { CLOSURE_LABEL, dayInfo, useCalendarTerms } from "@/components/learn/calendar/useCalendarTerms";
+import { dayInfo, useCalendarTerms } from "@/components/learn/calendar/useCalendarTerms";
 import { useCalendarData, type DayItem, type Directory } from "@/components/learn/calendar/useCalendarData";
-import { applyView, countByKind, groupByDate, itemColour, type CalView } from "@/components/learn/calendar/calendarUtils";
+import { CATEGORIES, CAT, applyView, countByCategory, groupByDate, islamicItems, itemColour, sortDay, termItems, type CalView, type Category } from "@/components/learn/calendar/calendarUtils";
 import { ViewFilter } from "@/components/learn/calendar/ViewFilter";
-import { DayPanel, gregLong, parseKey, shiftKey } from "@/components/learn/calendar/DayPanel";
+import { DayPanel, ItemCard, gregLong, parseKey, shiftKey } from "@/components/learn/calendar/DayPanel";
+import { EventDialog } from "@/components/learn/calendar/EventDialog";
 import { addDays, formatHijri, hijriMonthLength, hijriMonthName, hijriMonthStart, isUmmAlQura, resetHijriEngine, shiftHijriMonth, toHijri, todayHijri } from "@/lib/learn/hijri";
 import { Tabs } from "@/components/learn/Tabs";
+import { Icon } from "@/components/learn/Icon";
+import { ui } from "@/components/learn/ui";
+import { useLearnSession } from "@/lib/learn/session";
+import type { EventRow } from "@/components/learn/calendar/useCalendarData";
 
 const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const GREG_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 type HMonth = { year: number; month: number };
 type Cell = { date: Date; hijriDay: number } | null;
-type Mode = "month" | "week" | "day";
-const MODES: { id: Mode; label: string }[] = [
-  { id: "month", label: "Month" },
-  { id: "week", label: "Week" },
-  { id: "day", label: "Day agenda" },
+type Mode = "month" | "week" | "agenda";
+const MODES: { key: Mode; label: string }[] = [
+  { key: "month", label: "Month" },
+  { key: "week", label: "Week" },
+  { key: "agenda", label: "Agenda" },
 ];
 const EMPTY_DIR: Directory = { classes: [], children: [], teachers: [], childClasses: new Map() };
+const AGENDA_DAYS = 42;
 
 /** A Hijri month laid out Monday-first: leading/trailing nulls pad the weeks. */
 function hijriGrid(m: HMonth): { cells: Cell[]; first: Date; last: Date } {
@@ -44,12 +50,7 @@ function gregShort(d: Date, withYear = false): string {
 }
 
 function gregSpan(a: Date, b: Date): string {
-  return `${gregShort(a, a.getFullYear() !== b.getFullYear())} – ${gregShort(b, true)}`;
-}
-
-function bothDates(k: string): string {
-  const d = parseKey(k);
-  return `${formatHijri(toHijri(d))} · ${gregShort(d, true)}`;
+  return `${gregShort(a, a.getFullYear() !== b.getFullYear())} to ${gregShort(b, true)}`;
 }
 
 function useIsDesktop(): boolean {
@@ -64,39 +65,39 @@ function useIsDesktop(): boolean {
   return on;
 }
 
-/** Marker for a kind of item: dot = lesson, square = homework, diamond = assessment, ring = announcement. */
-function Mark({ kind, colour, size = 8 }: { kind: DayItem["kind"]; colour: string; size?: number }) {
-  const shape = kind === "lesson" ? "rounded-full" : kind === "homework" ? "rounded-[2px]" : kind === "assessment" ? "rotate-45 rounded-[1px]" : "rounded-full bg-transparent";
-  return <span aria-hidden="true" className={`inline-block shrink-0 ${shape}`} style={{ width: size, height: size, backgroundColor: kind === "announcement" ? undefined : colour, border: kind === "announcement" ? `2px solid ${colour}` : undefined }} />;
-}
-
 function summary(list: DayItem[]): string {
-  const c = countByKind(list);
-  const parts = [c.lesson && `${c.lesson} lesson${c.lesson === 1 ? "" : "s"}`, c.homework && `${c.homework} homework due`, c.assessment && `${c.assessment} assessment${c.assessment === 1 ? "" : "s"}`, c.announcement && `${c.announcement} announcement${c.announcement === 1 ? "" : "s"}`].filter(Boolean);
+  const c = countByCategory(list);
+  const parts = CATEGORIES.filter((x) => c[x.key]).map((x) => `${c[x.key]} ${x.label.toLowerCase()}`);
   return parts.length ? parts.join(", ") : "nothing scheduled";
 }
 
-const navBtn = "rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream";
-type Tab = "month" | "dates" | "terms";
-const TABS: { id: Tab; label: string }[] = [
-  { id: "month", label: "Calendar" },
-  { id: "dates", label: "Dates and overrides" },
-  { id: "terms", label: "Terms" },
+const HIDDEN_KEY = "tga-calendar-hidden";
+type Tab = "month" | "terms";
+const TABS: { key: Tab; label: string }[] = [
+  { key: "month", label: "Calendar" },
+  { key: "terms", label: "Terms and closures" },
 ];
 
 /**
- * Academic calendar, Hijri-first (Umm al-Qura via the browser's Intl).
- * Month grid (Hijri day big, Gregorian small, coloured markers), a week list,
- * and a day agenda; selecting any date opens a DAY DETAIL panel (side panel on
- * desktop, bottom sheet on mobile) with everything on that date. One range is
- * fetched per visible month and split into days on the client.
+ * The school calendar (owner feedback 11 Nov 2026, item 4). Every item has a
+ * category with its own colour: lessons, assessments, homework and deadlines,
+ * school events, holidays and term dates, Islamic dates, meetings and (staff)
+ * admissions. The category chips are the legend and the filter. Month (the
+ * Hijri month, Gregorian dates small), Week and Agenda (the next six weeks)
+ * views; picking a day opens everything on it beside the calendar (a sheet on
+ * phones). Staff add entries in a dialog that fits the screen. Arrow keys move
+ * between days in the month; Page Up and Page Down change month.
  */
 export function CalendarView({ scope, canManageTerms = false }: { scope: CalendarScope | null; canManageTerms?: boolean }) {
-  const [ver, setVer] = useState(0); // bumped by "Sync Islamic dates"
-  // ?tab=terms opens a section directly (links from Academic setup and Reports).
+  const { roles, session } = useLearnSession();
+  const me = session && session !== "loading" ? session.user.id : null;
+  const roleNames = roles.map((r) => r.role as string);
+  const office = roleNames.some((r) => r === "head_teacher" || r === "admin" || r === "admissions");
+  const staff = scope?.kind === "staff" || scope?.kind === "teacher";
+  const [ver, setVer] = useState(0); // bumped by "Sync Islamic dates" and after an edit
   const [tab, setTab] = useState<Tab>(() => {
     const t = typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("tab");
-    return canManageTerms && (t === "terms" || t === "dates") ? t : "month";
+    return canManageTerms && (t === "terms" || t === "dates") ? "terms" : "month";
   });
   const [mode, setMode] = useState<Mode>("month");
   const [hm, setHm] = useState<HMonth>(() => {
@@ -106,37 +107,57 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
   const [selected, setSelected] = useState(() => ukToday());
   const [sheetOpen, setSheetOpen] = useState(false);
   const [view, setView] = useState<CalView>({ kind: "all" });
-  const [toast, setToast] = useState<string | null>(null);
-  const toastTimer = useRef<number | null>(null);
+  const [hidden, setHidden] = useState<Set<Category>>(() => {
+    try {
+      return new Set(JSON.parse(localStorage.getItem(HIDDEN_KEY) || "[]") as Category[]);
+    } catch {
+      return new Set();
+    }
+  });
+  const [editing, setEditing] = useState<{ row: EventRow | null; date: string } | null>(null);
   const sheetRef = useRef<HTMLDivElement>(null);
   const headingId = useId();
   const isDesktop = useIsDesktop();
   const { terms, years, closures, reload } = useCalendarTerms();
 
-  const today = new Date();
-  // "Today" as the school sees it (UK), whatever zone the viewer is in.
-  const todayKey = ukToday(today);
+  const todayKey = ukToday(new Date());
   // eslint-disable-next-line react-hooks/exhaustive-deps -- ver forces a recompute
   const grid = useMemo(() => hijriGrid(hm), [hm, ver]);
-  // A week either side so the week list and day arrows work across month edges.
-  const { data, loading } = useCalendarData(scope, localDateKey(addDays(grid.first, -7)), localDateKey(addDays(grid.last, 7)));
+  // The visible month, a week either side, and the agenda's six weeks from the chosen day.
+  const rangeFrom = localDateKey(addDays(grid.first, -7));
+  const agendaEnd = localDateKey(addDays(parseKey(selected), AGENDA_DAYS));
+  const monthEnd = localDateKey(addDays(grid.last, 7));
+  const rangeTo = mode === "agenda" && agendaEnd > monthEnd ? agendaEnd : monthEnd;
+  const { data, loading } = useCalendarData(scope, `${rangeFrom}`, `${rangeTo}`, ver);
   const dir = data?.directory || EMPTY_DIR;
-  const items = useMemo(() => applyView(data?.items || [], view, dir), [data, view, dir]);
+  const allItems = useMemo(
+    () => [...(data?.items || []), ...termItems(terms, closures, rangeFrom, rangeTo), ...islamicItems(rangeFrom, rangeTo)],
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- ver: the Hijri engine was reset
+    [data, terms, closures, rangeFrom, rangeTo, ver],
+  );
+  const viewed = useMemo(() => applyView(allItems, view, dir), [allItems, view, dir]);
+  const counts = useMemo(() => countByCategory(viewed), [viewed]);
+  const items = useMemo(() => viewed.filter((i) => !hidden.has(i.category)), [viewed, hidden]);
   const byDay = useMemo(() => groupByDate(items), [items]);
-  const childOrder = useMemo(() => (scope?.kind === "parent" ? scope.children.map((c) => c.id) : []), [scope]);
   const umalqura = isUmmAlQura();
   const role = scope?.kind === "parent" ? "parent" : scope?.kind === "teacher" ? "teacher" : scope?.kind === "staff" ? "staff" : null;
-  const perChild = childOrder.length > 1;
+  const shownCats = CATEGORIES.filter((c) => !c.staffOnly || staff);
 
-  useEffect(
-    () => () => {
-      if (toastTimer.current !== null) window.clearTimeout(toastTimer.current);
-    },
-    [],
-  );
+  const toggleCat = (c: Category) =>
+    setHidden((s) => {
+      const n = new Set(s);
+      if (n.has(c)) n.delete(c);
+      else n.add(c);
+      try {
+        localStorage.setItem(HIDDEN_KEY, JSON.stringify([...n]));
+      } catch {
+        /* private mode: the choice lasts this visit */
+      }
+      return n;
+    });
 
   // Bottom sheet: Escape closes, focus moves in, page behind doesn't scroll.
-  const sheetShown = sheetOpen && !isDesktop && mode !== "day" && tab === "month";
+  const sheetShown = sheetOpen && !isDesktop && mode !== "agenda" && tab === "month";
   useEffect(() => {
     if (!sheetShown) return;
     sheetRef.current?.focus();
@@ -164,51 +185,47 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
     setHm(next);
     setSelected(localDateKey(hijriMonthStart(next.year, next.month)));
   };
+  const step = (dir1: number) => (mode === "month" ? shiftMonth(dir1) : select(shiftKey(selected, dir1 * (mode === "week" ? 7 : AGENDA_DAYS))));
+  const goToday = () => select(todayKey);
   const sync = () => {
     resetHijriEngine();
     setVer((v) => v + 1);
-    setToast("Dates synced to Umm al-Qura");
-    if (toastTimer.current !== null) window.clearTimeout(toastTimer.current);
-    toastTimer.current = window.setTimeout(() => setToast(null), 2500);
   };
-  const goToday = () => select(todayKey);
-
-  const selectedItems = byDay.get(selected) || [];
 
   const onCellKey = (e: ReactKeyEvent, key: string) => {
-    const step = e.key === "ArrowLeft" ? -1 : e.key === "ArrowRight" ? 1 : e.key === "ArrowUp" ? -7 : e.key === "ArrowDown" ? 7 : 0;
-    if (!step) return;
+    if (e.key === "PageUp" || e.key === "PageDown") {
+      e.preventDefault();
+      shiftMonth(e.key === "PageUp" ? -1 : 1);
+      return;
+    }
+    const d = e.key === "ArrowLeft" ? -1 : e.key === "ArrowRight" ? 1 : e.key === "ArrowUp" ? -7 : e.key === "ArrowDown" ? 7 : 0;
+    if (!d) return;
     e.preventDefault();
-    const next = shiftKey(key, step);
+    const next = shiftKey(key, d);
     select(next);
     window.setTimeout(() => document.querySelector<HTMLElement>(`[data-day="${next}"]`)?.focus(), 30);
   };
 
-  // Cheap to work out, so it is computed on each render rather than memoised.
-  const upcoming = (() => {
-    const out: { key: string; date: string; label: string }[] = [];
-    for (const t of terms || []) {
-      if (t.starts_on >= todayKey) out.push({ key: `s-${t.id}`, date: t.starts_on, label: `${t.name} starts` });
-      if (t.ends_on >= todayKey) out.push({ key: `e-${t.id}`, date: t.ends_on, label: `${t.name} ends` });
-    }
-    for (const t of terms || []) if (t.half_term_starts_on && t.half_term_ends_on && t.half_term_ends_on >= todayKey) out.push({ key: `h-${t.id}`, date: t.half_term_starts_on, label: `${t.name} half-term break` });
-    for (const c of closures) if (c.ends_on >= todayKey) out.push({ key: `c-${c.id}`, date: c.starts_on, label: `${c.name} (${CLOSURE_LABEL[c.kind]})` });
-    for (const e of items) if (e.kind === "homework" && e.date >= todayKey) out.push({ key: e.id, date: e.date, label: `Homework due: ${e.title} (${e.className})${e.childName ? ` · ${e.childName}` : ""}` });
-    return out.sort((a, b) => a.date.localeCompare(b.date));
-  })();
+  // Your own entries, or any entry for the office (the database checks the same).
+  const canEdit = (i: DayItem) => !!i.event && staff && (office || i.event.created_by === me);
+  const addOn = (date: string) => setEditing({ row: null, date });
+  // Teachers see (and may add entries for) their own classes; the office every class.
+  const editClasses = dir.classes.map((c) => ({ id: c.id, name: c.name }));
 
   const panel = (onClose?: () => void) => (
     <DayPanel
       dateKey={selected}
-      items={selectedItems}
+      items={byDay.get(selected) || []}
       loading={loading && !data}
       terms={terms}
       closures={closures}
-      childOrder={childOrder}
       isToday={selected === todayKey}
       onShift={(n) => select(shiftKey(selected, n))}
       onToday={goToday}
       onClose={onClose}
+      onAdd={staff ? () => addOn(selected) : undefined}
+      canEdit={canEdit}
+      onEdit={(i) => i.event && setEditing({ row: i.event, date: i.event.starts_on })}
       headingId={headingId}
     />
   );
@@ -220,122 +237,95 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
     return Array.from({ length: 7 }, (_, i) => addDays(start, i));
   }, [selected]);
 
-  const filter = role && data ? <ViewFilter role={role} directory={dir} view={view} onChange={setView} /> : null;
+  const agendaDays = useMemo(() => {
+    const out: { key: string; list: DayItem[] }[] = [];
+    for (let i = 0; i < AGENDA_DAYS; i++) {
+      const k = shiftKey(selected, i);
+      const list = byDay.get(k);
+      if (list && list.length) out.push({ key: k, list: sortDay(list) });
+    }
+    return out;
+  }, [byDay, selected]);
+
+  const heading =
+    mode === "month"
+      ? { title: `${hijriMonthName(hm.month)} ${hm.year} AH`, sub: gregSpan(grid.first, grid.last) }
+      : mode === "week"
+        ? { title: `Week of ${gregShort(weekDays[0], true)}`, sub: `${formatHijri(toHijri(weekDays[0]), false)} to ${formatHijri(toHijri(weekDays[6]))}` }
+        : { title: `From ${gregShort(parseKey(selected), true)}`, sub: `The next six weeks · ${formatHijri(toHijri(parseKey(selected)))}` };
 
   return (
     <div className="space-y-4">
-      {/* Term setup and date overrides are for the people who manage them; everyone else just sees the calendar (the page header already names it). */}
       {canManageTerms && (
-        <div className="flex flex-wrap items-center gap-3">
-          <h2 className="mr-auto font-serif text-h3 font-semibold text-ink">Academic calendar</h2>
-          <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Calendar sections" guide="calendar-sections" />
-        </div>
-      )}
-
-      {toast && (
-        <p role="status" className="rounded-xl border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-900">
-          {toast}
-        </p>
+        <Tabs variant="switch" items={TABS} value={tab} onChange={setTab} label="Calendar sections" guide="calendar-sections" />
       )}
 
       {tab === "month" && (
         <>
-          {filter}
-          <div className={mode === "day" ? "" : "grid gap-6 xl:grid-cols-[minmax(0,1fr)_360px]"}>
-            <section className="min-w-0 overflow-hidden rounded-2xl border border-gold-light bg-white">
-              <div className="flex flex-wrap items-center gap-2 border-b border-gold-light px-4 py-3">
-                <div className="mr-auto min-w-0">
-                  <h3 className="text-lg font-semibold text-ink">
-                    {mode === "month" ? `${hijriMonthName(hm.month)} ${hm.year} AH` : mode === "week" ? `Week of ${formatHijri(toHijri(weekDays[0]), false)}` : formatHijri(toHijri(parseKey(selected)))}
-                  </h3>
-                  <p className="text-xs text-ink/65">
-                    {mode === "month" ? gregSpan(grid.first, grid.last) : mode === "week" ? gregSpan(weekDays[0], weekDays[6]) : gregLong(parseKey(selected))}
-                  </p>
-                </div>
-                <div data-guide="calendar-views" role="group" aria-label="Calendar view" className="flex gap-1 rounded-xl border border-gold-light bg-cream/60 p-1">
-                  {MODES.map((m) => (
-                    <button
-                      key={m.id}
-                      type="button"
-                      aria-pressed={mode === m.id}
-                      onClick={() => setMode(m.id)}
-                      className={`rounded-lg px-2.5 py-1 text-xs font-medium sm:text-sm ${mode === m.id ? "bg-white text-ink shadow-sm" : "text-ink/65 hover:text-ink"}`}
-                    >
-                      {m.label}
-                    </button>
-                  ))}
-                </div>
-                <button type="button" onClick={sync} className={`${navBtn} hidden sm:inline-block`}>
-                  Sync Islamic dates
-                </button>
-                <div className="flex items-center gap-1">
-                <button
-                  type="button"
-                  onClick={() => (mode === "month" ? shiftMonth(-1) : select(shiftKey(selected, mode === "week" ? -7 : -1)))}
-                  aria-label={mode === "month" ? "Previous month" : mode === "week" ? "Previous week" : "Previous day"}
-                  className={navBtn}
-                >
-                  ‹
-                </button>
-                <button type="button" onClick={goToday} className={navBtn}>
-                  Today
-                </button>
-                <button
-                  type="button"
-                  onClick={() => (mode === "month" ? shiftMonth(1) : select(shiftKey(selected, mode === "week" ? 7 : 1)))}
-                  aria-label={mode === "month" ? "Next month" : mode === "week" ? "Next week" : "Next day"}
-                  className={navBtn}
-                >
-                  ›
-                </button>
-                </div>
-              </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="mr-auto min-w-0">
+              <h2 className="t-section text-base">{heading.title}</h2>
+              <p className="t-meta">{heading.sub}</p>
+            </div>
+            <div className="flex items-center gap-1">
+              <button type="button" onClick={() => step(-1)} aria-label={mode === "month" ? "Previous month" : mode === "week" ? "Previous week" : "Earlier"} className={ui.btnIcon}>
+                <Icon name="chevronLeft" />
+              </button>
+              <button type="button" onClick={goToday} className={`${ui.btnSecondary} ${ui.sm}`}>
+                Today
+              </button>
+              <button type="button" onClick={() => step(1)} aria-label={mode === "month" ? "Next month" : mode === "week" ? "Next week" : "Later"} className={ui.btnIcon}>
+                <Icon name="chevronRight" />
+              </button>
+            </div>
+            <Tabs variant="switch" items={MODES} value={mode} onChange={(m) => { setMode(m); setSheetOpen(false); }} label="Calendar view" guide="calendar-views" />
+            {staff && (
+              <button type="button" onClick={() => addOn(selected)} className={ui.btnPrimary}>
+                <Icon name="plus" size="sm" /> Add to calendar
+              </button>
+            )}
+          </div>
 
-              <div className="space-y-1.5 border-b border-gold-light px-4 py-2 text-xs">
-                <p className="font-medium text-green-800">
-                  {formatHijri(todayHijri())} · {gregLong(today)}
-                </p>
-                <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-ink/65" aria-label="Legend">
-                  <span className="inline-flex items-center gap-1.5"><Mark kind="lesson" colour="#555" /> Lesson</span>
-                  <span className="inline-flex items-center gap-1.5"><Mark kind="homework" colour="#555" /> Homework due</span>
-                  <span className="inline-flex items-center gap-1.5"><Mark kind="assessment" colour="#555" size={7} /> Assessment</span>
-                  <span className="inline-flex items-center gap-1.5"><Mark kind="announcement" colour="#555" /> Announcement</span>
-                  <span className="text-ink/65">{perChild ? "Colour = child" : "Colour = class"}</span>
-                </p>
-                {mode === "month" && (
-                  <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-ink/65">
-                    <span className="inline-flex items-center gap-1.5"><span aria-hidden="true" className="h-3 w-3 rounded border border-green-200 bg-green-50" /> Term</span>
-                    <span className="inline-flex items-center gap-1.5"><span aria-hidden="true" className="h-3 w-3 rounded border border-amber-200 bg-amber-50" /> Half-term</span>
-                    <span className="inline-flex items-center gap-1.5"><span aria-hidden="true" className="h-3 w-3 rounded border border-red-200 bg-red-50" /> INSET / closure</span>
-                    <span><strong className="text-sm text-ink/80">1</strong> Hijri day · <span className="text-[10px]">1</span> Gregorian</span>
-                  </p>
-                )}
-                {!umalqura && <p className="text-amber-800">Your browser doesn&apos;t include the Umm al-Qura calendar, so the civil Islamic calendar is shown (a day may differ).</p>}
-              </div>
+          <div data-guide="calendar-categories" role="group" aria-label="Show categories (also the colour key)" className="-mx-4 flex gap-1.5 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
+            {shownCats.map((c) => {
+              const on = !hidden.has(c.key);
+              return (
+                <button key={c.key} type="button" aria-pressed={on} onClick={() => toggleCat(c.key)} className={`${on ? ui.chip : `${ui.chip} opacity-60`} min-h-9 shrink-0 sm:min-h-7`}>
+                  <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={on ? { backgroundColor: c.colour } : { boxShadow: `inset 0 0 0 1.5px ${c.colour}` }} />
+                  <span className={on ? "" : "line-through decoration-ink/40"}>{c.label}</span>
+                  {counts[c.key] > 0 && <span className="tabular-nums text-ink-500">{counts[c.key]}</span>}
+                </button>
+              );
+            })}
+            {hidden.size > 0 && (
+              <button type="button" onClick={() => { setHidden(new Set()); try { localStorage.removeItem(HIDDEN_KEY); } catch { /* ignore */ } }} className={`${ui.btnLink} text-xs`}>
+                Show all
+              </button>
+            )}
+          </div>
+          {role && data && <ViewFilter role={role} directory={dir} view={view} onChange={setView} />}
 
+          <div className={mode === "month" ? "grid gap-4 xl:grid-cols-[minmax(0,1fr)_340px]" : ""}>
+            <section className="min-w-0 overflow-hidden rounded-[10px] border border-gold-light bg-[var(--portal-surface)]">
               {mode === "month" && (
                 <>
-                  <div className="grid grid-cols-7 border-b border-gold-light bg-cream/60 text-center text-xs font-semibold uppercase tracking-wide text-ink/65">
+                  <div className="grid grid-cols-7 border-b border-gold-light text-center">
                     {WEEKDAYS.map((d) => (
-                      <div key={d} className="py-2">
+                      <div key={d} className="t-eyebrow py-2">
                         {d}
                       </div>
                     ))}
                   </div>
-                  <div className="grid grid-cols-7">
+                  <div className="grid grid-cols-7" role="grid" aria-label={`${hijriMonthName(hm.month)} ${hm.year} AH`}>
                     {grid.cells.map((c, i) => {
-                      if (!c) return <div key={`pad-${i}`} className="min-h-[64px] border-b border-r border-gold-light/70 bg-cream/40 sm:min-h-[96px]" />;
+                      if (!c) return <div key={`pad-${i}`} className="min-h-[64px] border-b border-r border-gold-light bg-[var(--portal-canvas)] sm:min-h-[104px]" />;
                       const key = localDateKey(c.date);
-                      const list = byDay.get(key) || [];
+                      const list = sortDay(byDay.get(key) || []);
                       const isToday = key === todayKey;
                       const isSelected = key === selected;
                       const firstOfGreg = c.date.getDate() === 1;
                       const info = dayInfo(key, terms, closures);
-                      const closed = info.closure.length > 0;
-                      const tint = closed ? "bg-red-50" : info.halfTerm ? "bg-amber-50" : info.term ? "bg-green-50/70" : "bg-white";
-                      const cellTag = closed ? info.closure[0].name : info.halfTerm ? "Half-term" : info.boundaryLabel;
-                      // One marker per item, capped; the badge carries the true count.
-                      const marks = list.slice(0, 6);
+                      const offDay = info.closure.length > 0 || info.halfTerm;
                       return (
                         <button
                           key={key}
@@ -344,38 +334,34 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                           onClick={() => select(key, true)}
                           onKeyDown={(e) => onCellKey(e, key)}
                           aria-pressed={isSelected}
-                          aria-label={`${c.hijriDay} ${hijriMonthName(hm.month)} ${hm.year} AH, ${gregLong(c.date)}, ${summary(list)}${cellTag ? `, ${cellTag}` : ""}`}
-                          className={`relative min-h-[64px] border-b border-r border-gold-light/70 p-1 text-left align-top transition-colors focus-visible:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-teal-700 sm:min-h-[96px] sm:p-1.5 ${
-                            isSelected ? "z-10 bg-teal-100 shadow-[inset_0_0_0_3px_var(--color-teal-700)]" : `${tint} hover:bg-cream/70`
+                          tabIndex={isSelected ? 0 : -1}
+                          aria-label={`${gregLong(c.date)}, ${c.hijriDay} ${hijriMonthName(hm.month)}, ${summary(list)}`}
+                          className={`relative min-h-[64px] border-b border-r border-gold-light p-1 text-left align-top transition-colors focus-visible:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-forest-700 sm:min-h-[104px] sm:p-1.5 ${
+                            isSelected ? "z-10 bg-forest-50 shadow-[inset_0_0_0_2px_var(--color-forest-700)]" : offDay ? "bg-[var(--portal-canvas)] hover:bg-[var(--portal-hover)]" : "hover:bg-[var(--portal-hover)]"
                           }`}
                         >
                           <span className="flex items-start justify-between gap-1">
-                            <span
-                              className={`inline-flex h-6 min-w-6 items-center justify-center rounded-full px-1 text-sm font-semibold sm:h-7 sm:min-w-7 sm:text-base ${
-                                isToday ? "bg-teal-700 text-white" : isSelected ? "text-teal-900" : "text-ink/85"
-                              }`}
-                            >
-                              {c.hijriDay}
-                            </span>
-                            <span className={`pt-0.5 text-[9px] sm:text-[11px] ${firstOfGreg ? "font-semibold text-ink/70" : "text-ink/65"}`}>
-                              {firstOfGreg ? gregShort(c.date) : c.date.getDate()}
-                            </span>
+                            <span className={`inline-flex h-6 min-w-6 items-center justify-center rounded-full px-1 text-sm font-semibold tabular-nums ${isToday ? "bg-forest-700 text-white" : "text-ink"}`}>{c.hijriDay}</span>
+                            <span className={`pt-0.5 text-[10px] tabular-nums sm:text-[11px] ${firstOfGreg ? "font-semibold text-ink-700" : "text-ink-500"}`}>{firstOfGreg ? gregShort(c.date) : c.date.getDate()}</span>
                           </span>
-                          {cellTag && (
-                            <span className={`mt-0.5 block truncate text-[9px] font-semibold sm:text-[10px] ${closed ? "text-red-800" : info.halfTerm ? "text-amber-800" : "text-green-800"}`}>{cellTag}</span>
-                          )}
+                          {/* Phones: a dot per category; wider: up to three named bars. */}
                           {list.length > 0 && (
-                            <span className="mt-1 flex flex-wrap items-center gap-1" aria-hidden="true">
-                              {marks.map((e) => (
-                                <Mark key={e.id} kind={e.kind} colour={itemColour(e, childOrder)} size={e.kind === "assessment" ? 6 : 8} />
-                              ))}
-                              {list.length > marks.length && <span className="text-[10px] font-medium text-ink/65">+{list.length - marks.length}</span>}
-                            </span>
-                          )}
-                          {list.length > 0 && (
-                            <span aria-hidden="true" className="absolute bottom-1 right-1 rounded-full bg-ink/80 px-1.5 text-[10px] font-semibold leading-4 text-white sm:text-[11px]">
-                              {list.length}
-                            </span>
+                            <>
+                              <span className="mt-1 flex flex-wrap gap-0.5 sm:hidden" aria-hidden="true">
+                                {[...new Set(list.map((x) => x.category))].slice(0, 4).map((cat) => (
+                                  <span key={cat} className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: CAT[cat].colour }} />
+                                ))}
+                              </span>
+                              <span className="mt-1 hidden space-y-0.5 sm:block" aria-hidden="true">
+                                {list.slice(0, 3).map((x) => (
+                                  <span key={x.id} className="block truncate rounded-[4px] py-px pl-1.5 pr-1 text-[11px] leading-4 text-ink" style={{ boxShadow: `inset 3px 0 0 ${itemColour(x)}`, backgroundColor: `color-mix(in oklab, ${itemColour(x)} 9%, transparent)` }}>
+                                    {x.time && x.kind !== "lesson" ? `${x.time} ` : ""}
+                                    {x.title}
+                                  </span>
+                                ))}
+                                {list.length > 3 && <span className="block pl-1.5 text-[11px] font-medium text-ink-500">{list.length - 3} more</span>}
+                              </span>
+                            </>
                           )}
                         </button>
                       );
@@ -385,38 +371,33 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
               )}
 
               {mode === "week" && (
-                <ul className="divide-y divide-gold-light/70">
+                <WeekGrid days={weekDays} byDay={byDay} selected={selected} todayKey={todayKey} onPick={(k) => select(k, true)} />
+              )}
+              {mode === "week" && (
+                <ul className="divide-y divide-gold-light lg:hidden">
                   {weekDays.map((d) => {
                     const key = localDateKey(d);
-                    const list = byDay.get(key) || [];
+                    const list = sortDay(byDay.get(key) || []);
                     const isSelected = key === selected;
-                    const info = dayInfo(key, terms, closures);
-                    const tag = info.closure[0]?.name || (info.halfTerm ? "Half-term" : info.boundaryLabel);
                     return (
-                      <li key={key} className={isSelected ? "bg-teal-100 shadow-[inset_4px_0_0_var(--color-teal-700)]" : ""}>
-                        <button type="button" data-day={key} onClick={() => select(key, true)} aria-pressed={isSelected} className="flex w-full items-start gap-3 px-4 py-3 text-left hover:bg-cream/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700">
-                          <span className="w-16 shrink-0">
-                            <span className={`inline-flex h-8 min-w-8 items-center justify-center rounded-full px-1 text-base font-semibold ${key === todayKey ? "bg-teal-700 text-white" : "text-ink/85"}`}>{toHijri(d).day}</span>
-                            <span className="block text-[11px] text-ink/65">
-                              {WEEKDAYS[(d.getDay() + 6) % 7]} {gregShort(d)}
-                            </span>
+                      <li key={key} className={`min-w-0 ${isSelected ? "bg-forest-50" : ""}`}>
+                        <button type="button" data-day={key} onClick={() => select(key, true)} aria-pressed={isSelected} className="flex w-full items-start gap-3 px-3 py-3 text-left hover:bg-[var(--portal-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest-700">
+                          <span className="w-14 shrink-0">
+                            <span className="t-eyebrow block">{WEEKDAYS[(d.getDay() + 6) % 7]}</span>
+                            <span className={`inline-flex h-7 min-w-7 items-center justify-center rounded-full px-1 text-base font-semibold tabular-nums ${key === todayKey ? "bg-forest-700 text-white" : "text-ink"}`}>{toHijri(d).day}</span>
+                            <span className="ml-1 text-[11px] text-ink-500">{gregShort(d)}</span>
                           </span>
-                          <span className="min-w-0 flex-1">
-                            {tag && <span className="mb-0.5 block text-xs font-semibold text-amber-800">{tag}</span>}
+                          <span className="min-w-0 flex-1 space-y-1 lg:block">
                             {list.length === 0 ? (
-                              <span className="text-xs text-ink/65">Nothing scheduled</span>
+                              <span className="text-xs text-ink-500">Nothing on</span>
                             ) : (
-                              <span className="block space-y-1">
-                                {list.slice(0, 4).map((e) => (
-                                  <span key={e.id} className="flex items-center gap-2 text-sm text-ink">
-                                    <Mark kind={e.kind} colour={itemColour(e, childOrder)} />
-                                    <span className="w-11 shrink-0 text-xs text-ink/65">{e.time || ""}</span>
-                                    <span className="truncate">{e.kind === "homework" ? `Due: ${e.title}` : e.title}</span>
-                                    {e.childName && <span className="shrink-0 text-xs text-ink/65">{e.childName}</span>}
-                                  </span>
-                                ))}
-                                {list.length > 4 && <span className="block text-xs font-medium text-ink/65">+{list.length - 4} more</span>}
-                              </span>
+                              list.map((x) => (
+                                <span key={x.id} className="block rounded-[5px] py-1 pl-2 pr-1 text-xs leading-snug text-ink" style={{ boxShadow: `inset 3px 0 0 ${itemColour(x)}`, backgroundColor: `color-mix(in oklab, ${itemColour(x)} 8%, transparent)` }}>
+                                  {x.time && <span className="block text-[11px] text-ink-500">{x.time}{x.endTime ? ` to ${x.endTime}` : ""}</span>}
+                                  <span className="line-clamp-2 font-medium">{x.kind === "homework" ? `Due: ${x.title}` : x.title}</span>
+                                  {x.childName && <span className="block text-[11px] text-ink-500">{x.childName}</span>}
+                                </span>
+                              ))
                             )}
                           </span>
                         </button>
@@ -426,25 +407,59 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                 </ul>
               )}
 
-              {mode === "day" && <div className="flex max-h-[75vh] flex-col">{panel()}</div>}
+              {mode === "agenda" && (
+                <div>
+                  {loading && !data ? (
+                    <Loading label="Loading the calendar" bare />
+                  ) : agendaDays.length === 0 ? (
+                    <p className="px-4 py-10 text-center text-sm text-ink-500">Nothing in the next six weeks{hidden.size ? " in the categories shown" : ""}.</p>
+                  ) : (
+                    <ol className="divide-y divide-gold-light">
+                      {agendaDays.map(({ key, list }) => {
+                        const d = parseKey(key);
+                        return (
+                          <li key={key} className="grid gap-2 px-3 py-3 sm:grid-cols-[9rem_minmax(0,1fr)] sm:px-4">
+                            <div>
+                              <p className={`text-sm font-semibold ${key === todayKey ? "text-forest-700" : "text-ink"}`}>
+                                {key === todayKey ? "Today" : d.toLocaleDateString("en-GB", { weekday: "long" })}
+                              </p>
+                              <p className="t-meta">
+                                {gregShort(d, true)} · {formatHijri(toHijri(d), false)}
+                              </p>
+                            </div>
+                            <ul className="space-y-2">
+                              {list.map((x) => (
+                                <ItemCard key={x.id} item={x} onEdit={canEdit(x) ? (i) => i.event && setEditing({ row: i.event, date: i.event.starts_on }) : undefined} />
+                              ))}
+                            </ul>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  )}
+                </div>
+              )}
 
-              <p className="px-4 py-2 text-[10px] text-ink/65">
-                {umalqura ? "Umm al-Qura calendar" : "Islamic civil calendar (fallback)"}
-                {loading && data ? " · updating…" : ""}
+              <p className="flex flex-wrap items-center gap-x-3 border-t border-gold-light px-4 py-2 text-[11px] text-ink-500">
+                <span>Hijri dates: {umalqura ? "Umm al-Qura" : "civil Islamic calendar (your browser lacks Umm al-Qura; a day may differ)"}. Islamic days depend on the moon sighting.</span>
+                <button type="button" onClick={sync} className="underline-offset-2 hover:text-forest-700 hover:underline">
+                  Refresh Islamic dates
+                </button>
+                {loading && data ? <span>Updating</span> : null}
               </p>
             </section>
 
-            {mode !== "day" && isDesktop && (
-              <aside aria-labelledby={headingId} className="flex flex-col overflow-hidden rounded-2xl border border-gold-light bg-white xl:sticky xl:top-[76px] xl:max-h-[calc(100vh-6rem)] xl:self-start">
+            {mode === "month" && isDesktop && (
+              <aside aria-labelledby={headingId} className="flex flex-col overflow-hidden rounded-[10px] border border-gold-light bg-[var(--portal-surface)] xl:sticky xl:top-[76px] xl:max-h-[calc(100vh-6rem)] xl:self-start">
                 {panel()}
               </aside>
             )}
           </div>
 
           {sheetShown && (
-            <div className="fixed inset-0 z-50 flex items-end" role="dialog" aria-modal="true" aria-labelledby={headingId}>
-              <button type="button" aria-label="Close day details" tabIndex={-1} onClick={() => setSheetOpen(false)} className="absolute inset-0 bg-ink/40" />
-              <div ref={sheetRef} tabIndex={-1} className="relative flex max-h-[82vh] w-full flex-col overflow-hidden rounded-t-2xl border-t border-gold-light bg-white shadow-2xl outline-none">
+            <div className="portal fixed inset-0 z-50 flex items-end" role="dialog" aria-modal="true" aria-labelledby={headingId}>
+              <button type="button" aria-label="Close day details" tabIndex={-1} onClick={() => setSheetOpen(false)} className="portal-scrim absolute inset-0 bg-ink/40" />
+              <div ref={sheetRef} tabIndex={-1} className="portal-sheet relative flex max-h-[82dvh] w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl outline-none">
                 <div aria-hidden="true" className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-ink/20" />
                 {panel(() => setSheetOpen(false))}
               </div>
@@ -453,28 +468,146 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
         </>
       )}
 
-      {tab === "dates" && (
-        <section className="rounded-2xl border border-gold-light bg-white">
-          <h3 className="border-b border-gold-light px-4 py-3 text-sm font-semibold text-ink">Upcoming term dates and deadlines</h3>
-          {terms === null || !data ? (
-            <Loading label="Loading…" bare />
-          ) : upcoming.length === 0 ? (
-            <p className="px-4 py-3 text-sm text-ink/65">No upcoming term boundaries or deadlines.</p>
-          ) : (
-            <ul className="divide-y divide-gold-light/60">
-              {upcoming.map((u) => (
-                <li key={u.key} className="px-4 py-2.5 text-sm">
-                  <span className="block font-medium text-ink">{u.label}</span>
-                  <span className="block text-xs text-ink/65">{bothDates(u.date)}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-          <p className="border-t border-gold-light px-4 py-2 text-[11px] text-ink/65">Showing term boundaries and the homework deadlines around {hijriMonthName(hm.month)} {hm.year} AH.</p>
-        </section>
+      {tab === "month" && mode === "week" && isDesktop && sheetOpen && (
+        <SidePanel title={gregLong(parseKey(selected))} eyebrow="Day" onClose={() => setSheetOpen(false)} label="Day details">
+          <div className="-mx-5 -my-4 flex min-h-full flex-col">{panel()}</div>
+        </SidePanel>
       )}
 
       {tab === "terms" && <TermsManager terms={terms} years={years} closures={closures} canManage={canManageTerms} reload={reload} />}
+
+      {editing && (
+        <EventDialog
+          initial={editing.row}
+          date={editing.date}
+          office={office}
+          classes={editClasses}
+          onClose={() => setEditing(null)}
+          onSaved={() => {
+            setEditing(null);
+            setVer((v) => v + 1);
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+const HOUR_PX = 52;
+const toMin = (t: string) => {
+  const [h, m] = t.split(":").map(Number);
+  return h * 60 + (m || 0);
+};
+
+/**
+ * The week as a timetable grid on wide screens (owner feedback 3: SchoolMS's full-week grid): a time rail on the
+ * left, a column per school day (Saturday and Sunday only when something is on), all-day items in a strip at the top,
+ * and timed items placed by their start and end like period cards. Phones keep the day-by-day list.
+ */
+function WeekGrid({ days, byDay, selected, todayKey, onPick }: { days: Date[]; byDay: Map<string, DayItem[]>; selected: string; todayKey: string; onPick: (key: string) => void }) {
+  const cols = days.filter((d, i) => i < 5 || (byDay.get(localDateKey(d)) || []).length > 0);
+  const lists = cols.map((d) => sortDay(byDay.get(localDateKey(d)) || []));
+  const timed = lists.flat().filter((x) => x.time);
+  let startH = 8;
+  let endH = 17;
+  for (const x of timed) {
+    startH = Math.min(startH, Math.floor(toMin(x.time!) / 60));
+    endH = Math.max(endH, Math.ceil(toMin(x.endTime || x.time!) / 60) + (x.endTime ? 0 : 1));
+  }
+  endH = Math.min(24, endH);
+  const hours = Array.from({ length: endH - startH }, (_, i) => startH + i);
+  const tpl = { gridTemplateColumns: `3.5rem repeat(${cols.length}, minmax(0, 1fr))` };
+  const hasAllDay = lists.some((l) => l.some((x) => !x.time));
+  return (
+    <div className="hidden lg:block">
+      <div className="grid border-b border-gold-light" style={tpl}>
+        <div />
+        {cols.map((d) => {
+          const key = localDateKey(d);
+          return (
+            <button key={key} type="button" data-day={key} onClick={() => onPick(key)} aria-pressed={key === selected} className={`border-l border-gold-light px-2 py-2 text-left hover:bg-[var(--portal-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest-700 ${key === selected ? "bg-forest-50" : ""}`}>
+              <span className="t-eyebrow block">{d.toLocaleDateString("en-GB", { weekday: "short" })}</span>
+              <span className="flex items-baseline gap-1.5">
+                <span className={`inline-flex h-7 min-w-7 items-center justify-center rounded-full px-1 text-base font-semibold tabular-nums ${key === todayKey ? "bg-forest-700 text-white" : "text-ink"}`}>{d.getDate()}</span>
+                <span className="text-[11px] text-ink-500">{GREG_MONTHS[d.getMonth()]}</span>
+              </span>
+              <span className="block truncate text-[11px] text-ink-500" title={formatHijri(toHijri(d))}>
+                {toHijri(d).day} {hijriMonthName(toHijri(d).month)}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+      {hasAllDay && (
+        <div className="grid border-b border-gold-light bg-[var(--portal-canvas)]" style={tpl}>
+          <div className="t-eyebrow px-2 py-2 text-right">All day</div>
+          {lists.map((l, i) => (
+            <div key={i} className="min-w-0 space-y-1 border-l border-gold-light p-1">
+              {l.filter((x) => !x.time).map((x) => (
+                <button key={x.id} type="button" onClick={() => onPick(x.date)} className="block w-full truncate rounded-[5px] px-1.5 py-0.5 text-left text-[11px] font-medium text-ink" style={{ boxShadow: `inset 3px 0 0 ${itemColour(x)}`, backgroundColor: `color-mix(in oklab, ${itemColour(x)} 10%, var(--portal-surface))` }} title={`${CAT[x.category].short}: ${x.title}`}>
+                  {x.kind === "homework" ? `Due: ${x.title}` : x.title}
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+      <div className="max-h-[min(70vh,720px)] overflow-y-auto">
+        <div className="relative grid" style={tpl}>
+          <div>
+            {hours.map((h) => (
+              <div key={h} className="relative border-t border-gold-light/60 pr-2 text-right text-[11px] tabular-nums text-ink-500" style={{ height: HOUR_PX }}>
+                <span className="relative top-0.5">{String(h).padStart(2, "0")}:00</span>
+              </div>
+            ))}
+          </div>
+          {lists.map((l, ci) => (
+            <div key={ci} className="relative border-l border-gold-light" style={{ height: hours.length * HOUR_PX }}>
+              {hours.map((h) => (
+                <div key={h} className="border-t border-gold-light/60" style={{ height: HOUR_PX }} />
+              ))}
+              {(() => {
+                // Side by side when items overlap: each takes a lane.
+                const items = l.filter((x) => x.time);
+                const lanes: number[] = [];
+                const placed = items.map((x) => {
+                  const s = toMin(x.time!);
+                  const e = x.endTime ? Math.max(toMin(x.endTime), s + 30) : s + 40;
+                  let lane = lanes.findIndex((end) => end <= s);
+                  if (lane < 0) lane = lanes.length;
+                  lanes[lane] = e;
+                  return { x, s, e, lane };
+                });
+                const n = Math.max(1, lanes.length);
+                return placed.map(({ x, s, e, lane }) => (
+                  <button
+                    key={x.id}
+                    type="button"
+                    onClick={() => onPick(x.date)}
+                    title={`${x.time}${x.endTime ? ` to ${x.endTime}` : ""} · ${CAT[x.category].short}: ${x.title}`}
+                    className="absolute overflow-hidden rounded-[6px] border border-gold-light px-1.5 py-1 text-left text-[11px] leading-tight text-ink hover:z-10 hover:shadow-[var(--portal-shadow-pop)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest-700"
+                    style={{
+                      top: ((s - startH * 60) / 60) * HOUR_PX + 1,
+                      height: Math.max(22, ((e - s) / 60) * HOUR_PX - 2),
+                      left: `calc(${(lane / n) * 100}% + 2px)`,
+                      width: `calc(${100 / n}% - 4px)`,
+                      boxShadow: `inset 3px 0 0 ${itemColour(x)}`,
+                      backgroundColor: `color-mix(in oklab, ${itemColour(x)} 9%, var(--portal-surface))`,
+                    }}
+                  >
+                    <span className="block truncate font-semibold">{x.kind === "homework" ? `Due: ${x.title}` : x.title}</span>
+                    <span className="block truncate tabular-nums text-ink-500">
+                      {x.time}
+                      {x.endTime ? `-${x.endTime}` : ""}
+                      {x.childName ? ` · ${x.childName}` : x.room ? ` · ${x.room}` : ""}
+                    </span>
+                  </button>
+                ));
+              })()}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

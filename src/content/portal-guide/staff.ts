@@ -38,25 +38,28 @@ export function messagesEntry(a: Area): GuideEntry {
     href: `/${a}/messages`,
     name: "Messages",
     category: "Home",
-    purpose: head(a) ? "Conversations with families and staff across the school." : "Conversations with the families of your classes and with colleagues.",
-    when: "To reply to a parent, contact a colleague or start a conversation about a pupil.",
+    purpose: head(a) ? "Conversations and groups with families and staff across the school." : "Conversations and groups with the families of your classes and with colleagues.",
+    when: "To reply to a parent, contact a colleague, message a whole class's families or start a conversation about a pupil.",
     steps: [
-      "Press New message.",
-      "Search by name or child, then choose a person (Staff or Parents).",
-      "Write and send.",
-      "Open a conversation on the left to read and reply; Urgent ones are marked.",
+      "Press New message. Choose A person, or A group (a class's parents or pupils, a year group, a staff team, or people you pick).",
+      "Write and send. Press the paper clip to attach documents or pictures (up to 10 MB each).",
+      "Open a conversation on the left to read and reply; press Reply beside a message to quote it. Your own message can be edited or deleted for 15 minutes.",
+      "Ticks show sent, delivered and read; in a group, Seen by shows who has read it.",
+      "Search finds people, groups and words in messages. The menu at the top of a conversation mutes it or opens Group details (members, name, replies on or off).",
     ],
     tips: [
       "A safeguarding worry belongs in Report a concern, not in a message.",
+      "In a group, families and pupils see only the staff's messages and their own, never each other's. Everyone chooses in Account how often they are emailed about new messages.",
       ...(head(a) ? ["The sort button can ask AI to sort the newest parent messages; you still read and reply yourself."] : []),
     ],
     privacy: `Only the people in a conversation see it, apart from safeguarding oversight. ${OVERSIGHT_NOTE}`,
     related: [`/${a}/announcements`, "/report-concern"],
     showMe: [
       { target: "messages-new", label: "New message", say: "Start a conversation here." },
-      { target: "messages-list", label: "Conversations", say: "Every conversation, with unread counts." },
+      { target: "messages-search", label: "Search", say: "People, groups and words in messages." },
+      { target: "messages-list", label: "Conversations", say: "Every conversation and group, with unread counts." },
     ],
-    tasks: ["message a parent", "reply to a parent", "message a colleague"],
+    tasks: ["message a parent", "reply to a parent", "message a colleague", "message a class's parents", "make a group"],
   };
 }
 
@@ -65,23 +68,26 @@ export function calendarEntry(a: Area): GuideEntry {
     href: `/${a}/calendar`,
     name: "Calendar",
     category: "Home",
-    purpose: "Term dates, half terms, closures, lessons, homework due dates and events in one calendar.",
+    purpose: "Lessons, assessments, homework and deadlines, school events, term dates, Islamic dates, meetings and admissions in one calendar, each in its own colour.",
     when: "When planning the week or checking a date.",
     steps: [
-      "Choose Month, Week or Day agenda.",
-      "Press a day to see what is on.",
-      head(a) ? "Use the Terms and Dates and overrides sections to add term dates, half terms and closures." : "Press Add to my calendar to subscribe from Google, Outlook or Apple Calendar.",
+      "Choose Month, Week or Agenda (the next six weeks).",
+      "Press a category to hide or show it; the coloured dots are the key.",
+      "Press a day to see everything on it beside the calendar.",
+      "Press Add to calendar for a meeting, event or deadline; choose its category and who sees it.",
+      head(a) ? "Use Terms and closures to set term dates, half terms and closures." : "Press Add to my calendar to subscribe from Google, Outlook or Apple Calendar.",
     ],
-    tips: ["Islamic dates are shown alongside each day."],
-    privacy: head(a) ? "Term dates and closures you add are shown to everyone in the school." : "Your calendar link shows your own lessons; keep it private. Stop sharing turns it off.",
+    tips: [head(a) ? "The office can show an entry to everyone, to families or to one class; admissions entries are for staff only." : "You can add entries for staff, or for a class you teach.", "Islamic dates are shown alongside each day."],
+    privacy: head(a) ? "Entries for everyone are shown to every family and pupil, so check them before saving." : "Your calendar link shows your own lessons; keep it private. Stop sharing turns it off.",
     related: [`/${a}/dashboard`, `/${a}/announcements`],
     showMe: [
-      { target: "calendar-views", label: "Calendar view", say: "Month, week or day." },
+      { target: "calendar-views", label: "Calendar view", say: "Month, week or agenda." },
+      { target: "calendar-categories", label: "Categories", say: "Each colour is a category; press one to hide or show it." },
       head(a)
-        ? { target: "calendar-sections", label: "Calendar sections", say: "Calendar, Dates and overrides, and Terms." }
+        ? { target: "calendar-sections", label: "Calendar sections", say: "The calendar, and Terms and closures." }
         : { target: "calendar-subscribe", label: "Add to my calendar", say: "Put the calendar on your phone or Outlook." },
     ],
-    tasks: ["see term dates", ...(head(a) ? ["add term dates", "add a closure"] : [])],
+    tasks: ["see term dates", "add a meeting", "add an event", ...(head(a) ? ["add term dates", "add a closure"] : [])],
   };
 }
 
@@ -119,7 +125,8 @@ export function classPageEntry(a: Area): GuideEntry {
     steps: [
       "Press Set work at the top of the class: the form opens in a panel over the section you are in.",
       "Fill in the title, instructions and due date, then press Assign (or Schedule for later); the panel closes and you are back where you were.",
-      "Inside Classwork, Create also offers Quiz assignment, Question and Material, each in the same panel.",
+      "Inside Classwork, Create shows the four kinds as cards: Assignment, Quiz assignment, Question and Material, each with its own form. The chips above the list show one kind at a time, grouped By kind or By topic.",
+      "A quiz opens full screen: add questions one at a time from the question-type cards (multiple choice, multiple answer, true or false, short and long answer, matching, ordering, number, label a diagram), set marks, explanations, a time limit and attempts, or press Draft questions from a unit and check each one. Press Set quiz; open it again for Results and to mark long answers.",
       "Open Classwork, then To review, to mark what pupils handed in and press Return to pupil.",
       "The class's sections are listed down the left (on a phone, choose one from Section); open Attendance to take this class's register.",
       "Open Settings to paste the class's Teams meeting link once, then Save link.",
@@ -130,8 +137,9 @@ export function classPageEntry(a: Area): GuideEntry {
     showMe: [
       { target: "class-tabs", label: "Class sections", say: "Stream, Classwork, Lessons, People, Attendance, Grades, Insights and Settings." },
       { target: "class-set-work", label: "Set work", say: "Start a new piece of classwork here: choose Assignment, Quiz assignment, Question or Material." },
+      { target: "classwork-kinds", label: "Kinds of classwork", say: "In Classwork: show Assignments, Quizzes, Questions or Materials, grouped by kind or by topic." },
     ],
-    tasks: ["set homework", "set classwork", "mark work", "add a Teams link"],
+    tasks: ["set homework", "set classwork", "set a quiz", "build a quiz", "mark work", "add a Teams link"],
   };
 }
 

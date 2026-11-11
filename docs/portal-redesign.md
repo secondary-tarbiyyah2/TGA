@@ -7,6 +7,44 @@
 > **Third pass (11 Nov 2026):** structure, not look. Read `docs/portal-structure.md` (the patterns) and "Third pass"
 > below (status) before changing how a page is put together.
 
+## Owner feedback 2 (11 Nov 2026), items 3 and 4: Messages and Calendar
+
+Brief: `docs/owner-briefs/2026-11-11-feedback-2.md`. Branches `claude/fb2-msg-*`.
+
+**Messages (item 3).**
+1. [x] Database (PR #171, migration 0204): groups (`kind = 'group'`, `message_thread_members`, `create_message_group()`
+   and the `message_group_*` functions; staff only, people added under the 1:1 rules), replies (`reply_to_id`),
+   attachments (bucket `message-attachments`), per-person receipts (`message_receipts()`), inbox
+   (`my_message_threads()`), `thread_members()`, `thread_sender_names()`, `search_messages()`. Safeguarding: in a
+   group, parents and pupils see only the staff's messages and their own; pupils are never in a 1:1 thread.
+2. [x] Email and mute (PR #174, migration 0205): `message_prefs.email_mode` (immediate, daily, off; set in Account),
+   `message_thread_mutes`, "delivered" (`mark_messages_delivered()`, `thread_delivery()`), attachments staff only.
+   Edge Function `message-email`: called by the portal after a send (sender's token; at most one email per
+   conversation every 30 minutes, only while unread, never the message text) and once a day by
+   `.github/workflows/message-digest.yml` (16:05 UTC) for people on "Once a day". push-notify reaches group members
+   and skips muted conversations.
+3. [x] Screens (PR "Messages: groups, replies, files, receipts, search and mute"): `MessagesHub` (search across
+   people, groups and message text; All, Unread, Groups and Urgent; muted marked), `MessageThread` (names in groups,
+   reply quotes, files, ticks for sent, delivered and read, "Seen by 3 of 10" with names, edit or delete within 15
+   minutes), `messages/NewConversation` (one dialog: a person, or a group from a class, a year group (office), a staff
+   team or people you pick), `messages/GroupInfo` (side panel: members, rename, replies on or off, add, remove, make
+   admin, leave). Pupils: `/student/messages` (their groups; they reply only where allowed, to staff only). New
+   messages arrive by polling (8 seconds in an open conversation, 30 in the list); the portal does not use Supabase
+   realtime. Also fixed: stray merge markers in `globals.css` (from #160) that switched off the dialog and menu
+   animations and the floating-shadow rule.
+
+**Calendar (item 4).**
+4. [x] PR "Calendar: categories, colours, filters, Month, Week and Agenda, Add to calendar" (migration 0207
+   `calendar_events`, RLS by audience: everyone, staff, families, a class; the office adds anything, other staff
+   staff-only entries and their own classes; admissions entries staff only). Eight categories, each a `--cal-*` token
+   in `globals.css`: lessons, assessments, homework and deadlines, school events, holidays and term dates, Islamic
+   dates (computed from the Hijri calendar: new year, Ashura, Ramadan, Eid al-Fitr, Dhul Hijjah, Arafah, Eid
+   al-Adha), meetings (also parents' evenings), admissions (also open evenings; staff only). The category chips are
+   the legend and the filter (remembered in the browser). Views: Month (Hijri month, Gregorian small, named bars in
+   category colours; dots on phones), Week (a timetable grid on wide screens: a time rail, a column per school day, an all-day strip, items placed by their times; structure only from the SchoolMS idea in feedback 3, in TGA's own look; a list per day on phones), Agenda (the next six weeks). Add to
+   calendar opens `calendar/EventDialog` (fits the screen; Enter saves, Escape closes). Announcements left the
+   calendar (they are notices, not dates; they stay on Announcements and Today).
+
 ## Third pass (owner feedback, 11 Nov 2026): structure
 
 Owner: "I don't like the fact that options are on top and across (Curriculum etc). Also some buttons, when I press,
@@ -404,6 +442,7 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
 ## Log
 - 2026-11-11: Pupil absences to act on (feedback 2, item 20): the follow-up queue with a case panel (contacts,
   call log, message, reason, decision, reminder, escalate, close, history); migration 0209.
+- 2026-11-11: Classwork quizzes (feedback 2, items 6, 15, 17; migration 0206): full-screen quiz builder with nine question types as cards, settings, AI draft checked question by question, results and marking; pupils sit quizzes full screen with the server clock, autosave and results; Classwork filters and groups by kind. Add an assessment opens full screen (item 10, `FocusView`).
 - 2026-11-11: Class Insights restructured (owner feedback 2, item 11): one strip of four figures linking to their sections, then "Pupils who may need a word" as a table with one column per reason (capitalised), a reason filter, each flagged figure linking to Attendance, Classwork or Grades, the name to the pupil record (`pupilRecordHref`), Message and Record per row; phones show each pupil as a short card.
 - 2026-11-11: Waiting for you page compartmentalised (owner feedback 2, item 2): in Everything each category is its own box with a count and "N to do now", showing its first four lines and Show all; every line carries its one action as a button (marking opens in place), and the three dots open its detail (pupils named, Mark done, print). Save as PDF still prints every line.
 - 2026-11-11: Pupil profile with sections down the left for teachers and the head (feedback 2, item 8): classwork
