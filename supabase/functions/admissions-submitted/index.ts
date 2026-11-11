@@ -127,7 +127,7 @@ Deno.serve(async (req) => {
   if (!tpl.auto_send) return jsonResponse({ ok: true, skipped: "auto_send_off", staffNotified });
 
   const [{ data: settings }, { data: stage }] = await Promise.all([
-    serviceClient.from("site_settings").select("payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone").eq("id", true).maybeSingle(),
+    serviceClient.from("site_settings").select("online_payment_url, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone").eq("id", true).maybeSingle(),
     serviceClient.from("admissions_stage_details").select("assessment_platform, assessment_link, assessment_duration_text, interview_interviewer, interview_link, offer_start_date").eq("application_id", lead.id).maybeSingle(),
   ]);
   const family: FamilyInput = {

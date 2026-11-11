@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
-import { METHOD_LABEL, parsePounds, round2, todayIso, type PaymentMethod } from "./shared";
+import { METHOD_LABEL, RECORDABLE_METHODS, parsePounds, round2, todayIso, type PaymentMethod } from "./shared";
 import { btn, ui } from "@/components/learn/ui";
 
 export function PaymentDialog({
@@ -23,7 +23,7 @@ export function PaymentDialog({
 }) {
   const supabase = getSupabaseClient();
   const [amount, setAmount] = useState(fullPayment ? balance.toFixed(2) : "");
-  const [method, setMethod] = useState<PaymentMethod>("bank_transfer");
+  const [method, setMethod] = useState<PaymentMethod>("online");
   const [paidOn, setPaidOn] = useState(todayIso());
   const [reference, setReference] = useState("");
   const [busy, setBusy] = useState(false);
@@ -82,7 +82,7 @@ export function PaymentDialog({
           <div>
             <span className="text-ink/70">Method</span>
             <div className="mt-1 flex flex-wrap gap-2">
-              {(Object.keys(METHOD_LABEL) as PaymentMethod[]).map((m) => (
+              {RECORDABLE_METHODS.map((m) => (
                 <button
                   key={m}
                   type="button"
@@ -102,7 +102,7 @@ export function PaymentDialog({
           </label>
           <label className="block">
             <span className="text-ink/70">Reference (optional)</span>
-            <input type="text" value={reference} onChange={(e) => setReference(e.target.value)} className={`${ui.input} mt-1`} placeholder="Bank ref, receipt no." />
+            <input type="text" value={reference} onChange={(e) => setReference(e.target.value)} className={`${ui.input} mt-1`} placeholder="Payment or receipt reference" />
           </label>
           {error && <p className="text-red-700">{error}</p>}
         </div>

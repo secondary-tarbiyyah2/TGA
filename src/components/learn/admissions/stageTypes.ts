@@ -50,6 +50,7 @@ export type AdmissionsSettings = {
   fee_instalments: number | null;
   annual_discount_percent: number | null;
   sibling_discount_percent: number | null;
+  online_payment_url?: string | null;
   payment_instructions: string | null;
   assessment_join_url: string | null;
   interview_join_url: string | null;
@@ -59,7 +60,7 @@ export type AdmissionsSettings = {
 };
 
 export const SETTINGS_COLUMNS =
-  "application_fee, fee_terms, fee_instalments, annual_discount_percent, sibling_discount_percent, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone";
+  "application_fee, fee_terms, fee_instalments, annual_discount_percent, sibling_discount_percent, online_payment_url, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone";
 
 export type FeeBandRow = { year_group_range: string; annual_fee: number };
 
