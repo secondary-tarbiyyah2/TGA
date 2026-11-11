@@ -10,13 +10,14 @@ import { PupilLink } from "@/components/learn/pupil/PupilLink";
 import { surahName } from "@/lib/learn/surahs";
 import { avg, bandFor, MARK_COLUMNS, type QuranMark } from "@/lib/learn/quranClassroom";
 import { MISTAKE_KINDS, defaultLevelForYear, levelLabel, practiceFocus, readMistakes, readStandard, type MarkingLevel, type MarkingStandard } from "@/lib/learn/quranMarking";
-import { RecitationDialog } from "./RecitationDialog";
+import { RecitationWorkspace } from "./RecitationWorkspace";
+import { LessonNotes } from "./LessonNotes";
 
 type Mark = QuranMark & { mistakes?: unknown; adjust_reason?: string | null; worked_out_score?: number | null; class_id?: string | null };
 type Pupil = { id: string; name: string };
 
 const fmt = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
-const isQuranClass = (c: ClassSummary) => /qur'?an|quran|qaidah|hifdh|hifz/i.test(`${c.subject || ""} ${c.name}`);
+export const isQuranClass = (c: Pick<ClassSummary, "name" | "subject">) => /qur'?an|quran|qaidah|hifdh|hifz/i.test(`${c.subject || ""} ${c.name}`);
 const TONE: Record<string, StatusKind> = { bad: "overdue", warn: "attention", info: "in_progress", good: "completed" };
 
 /** The school's standard and the class levels, read once. */
@@ -47,7 +48,7 @@ export function useQuranStandard() {
  * see every recitation and what to practise. Classes whose subject or name says Qur'an (or Qaidah, hifdh)
  * are shown first; with none, every class you can see is offered.
  */
-export function QuranClasses({ scope, focusPupil }: { scope: "teach" | "admin"; focusPupil?: string | null }) {
+export function QuranClasses({ scope, focusPupil, fixedClass }: { scope: "teach" | "admin"; focusPupil?: string | null; /** Inside a class's own page: that class only, with its lesson notes. */ fixedClass?: ClassSummary }) {
   const [classes, setClasses] = useState<ClassSummary[] | null>(null);
   const [classId, setClassId] = useState("");
   const [pupils, setPupils] = useState<Pupil[] | null>(null);
@@ -60,6 +61,10 @@ export function QuranClasses({ scope, focusPupil }: { scope: "teach" | "admin"; 
 
   useEffect(() => {
     let alive = true;
+    if (fixedClass) {
+      setClasses([fixedClass]);
+      return;
+    }
     (scope === "admin" ? fetchAllClasses() : fetchTeacherClasses()).then((all) => {
       if (!alive) return;
       const quran = all.filter(isQuranClass);
@@ -68,7 +73,7 @@ export function QuranClasses({ scope, focusPupil }: { scope: "teach" | "admin"; 
     return () => {
       alive = false;
     };
-  }, [scope]);
+  }, [scope, fixedClass]);
 
   const onlyGeneral = !!classes && classes.length > 0 && !classes.some(isQuranClass);
   const cls = classes?.find((c) => c.id === classId) || classes?.[0] || null;
@@ -111,12 +116,13 @@ export function QuranClasses({ scope, focusPupil }: { scope: "teach" | "admin"; 
   return (
     <div className="space-y-4" data-guide="quran-classes">
       {msg && <Notice tone="good">{msg}</Notice>}
-      {onlyGeneral && (
+      {onlyGeneral && !fixedClass && (
         <Notice tone="info">
           No class is set up as a Qur&apos;an class yet, so all classes are listed. {scope === "admin" ? "Add a Qur'an class for each year group in Academic setup (subject Qur'an)." : "The office can add a Qur'an class for each year group."}
         </Notice>
       )}
       <div className="flex flex-wrap items-end gap-3">
+        {!fixedClass && (
         <label className="text-sm">
           <span className="t-eyebrow mb-1 block">Class</span>
           <Select value={cls.id} onChange={(e) => setClassId(e.target.value)} aria-label="Qur'an class">
@@ -127,6 +133,7 @@ export function QuranClasses({ scope, focusPupil }: { scope: "teach" | "admin"; 
             ))}
           </Select>
         </label>
+        )}
         <p className="t-meta pb-2">
           Marked at the {levelLabel(level)} standard{levels[cls.id] ? "" : " (from the year group)"}.
         </p>
@@ -178,9 +185,10 @@ export function QuranClasses({ scope, focusPupil }: { scope: "teach" | "admin"; 
       )}
 
       {hear && (
-        <RecitationDialog
+        <RecitationWorkspace
           pupil={hear}
           classId={cls.id}
+          className={cls.name}
           level={level}
           standard={standard}
           last={byPupil(hear.id)[0] || null}
@@ -191,6 +199,7 @@ export function QuranClasses({ scope, focusPupil }: { scope: "teach" | "admin"; 
           }}
         />
       )}
+      {fixedClass && <LessonNotes classId={cls.id} />}
       {history && <PupilQuranHistory pupil={history} marks={byPupil(history.id)} onClose={() => setHistory(null)} onHear={() => { setHear(history); setHistory(null); }} />}
     </div>
   );

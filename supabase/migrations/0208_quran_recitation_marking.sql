@@ -84,3 +84,24 @@ create trigger audit_quran_marking_standard after insert or update or delete on 
 drop trigger if exists audit_quran_class_settings on public.quran_class_settings;
 create trigger audit_quran_class_settings after insert or update or delete on public.quran_class_settings
   for each row execute function public.audit_row_change();
+
+-- Hearing a recitation inside a Qur'an class (owner, 11 Nov 2026 13:47: "include this quran system as part of
+-- classroom but better"): what kind of recitation it was, and why it was dated away from the class's lesson day.
+alter table public.quran_progress
+  add column if not exists recitation_kind text,
+  add column if not exists date_reason text;
+alter table public.quran_progress drop constraint if exists quran_progress_recitation_kind_known;
+alter table public.quran_progress add constraint quran_progress_recitation_kind_known
+  check (recitation_kind is null or recitation_kind in ('memorisation', 'revision', 'reading'));
+alter table public.quran_progress drop constraint if exists quran_progress_date_reason_len;
+alter table public.quran_progress add constraint quran_progress_date_reason_len check (date_reason is null or char_length(date_reason) <= 300);
+
+-- Lesson notes: a photo or PDF of the whiteboard or notes, posted to the class stream for the class's pupils
+-- and families. A stream post with a kind and the lesson's date; who may post and read is unchanged.
+alter table public.announcements
+  add column if not exists kind text not null default 'post',
+  add column if not exists lesson_date date;
+alter table public.announcements drop constraint if exists announcements_kind_known;
+alter table public.announcements add constraint announcements_kind_known check (kind in ('post', 'lesson_note'));
+alter table public.announcements drop constraint if exists announcements_lesson_note_has_date;
+alter table public.announcements add constraint announcements_lesson_note_has_date check (kind <> 'lesson_note' or lesson_date is not null);

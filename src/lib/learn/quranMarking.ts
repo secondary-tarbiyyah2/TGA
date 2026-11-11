@@ -12,6 +12,7 @@
 // The mark keeps the meanings already used everywhere in the portal (quranClassroom.ts MARK_BANDS).
 
 import { surahAyat } from "./surahs.ts";
+import { ayatOfPortion, pagesForAyat } from "./mushaf.ts";
 
 export type MarkingLevel = "beginner" | "junior" | "senior";
 export const MARKING_LEVELS: ReadonlyArray<{ value: MarkingLevel; label: string; help: string }> = [
@@ -32,12 +33,18 @@ export function defaultLevelForYear(year: string | null | undefined): MarkingLev
 }
 
 export type MistakeKind = "prompt" | "slip" | "tajweed";
+/** What can be stored for a recitation: a mistake, or an ayah the pupil did not reach ("skipped": no
+ *  points, and it is left out of the pages the mark is judged on). */
+export type MarkKind = MistakeKind | "skipped";
 export const MISTAKE_KINDS: ReadonlyArray<{ value: MistakeKind; label: string; ar: string; help: string; key: string }> = [
   { value: "prompt", label: "Prompt", ar: "تنبيه", help: "You had to stop or correct them.", key: "p" },
   { value: "slip", label: "Slip", ar: "خطأ مصحح", help: "They went wrong but put it right themselves.", key: "s" },
   { value: "tajweed", label: "Tajweed", ar: "تجويد", help: "A tajweed rule missed on a word.", key: "t" },
 ];
-export type Mistake = { kind: MistakeKind; ayah: number | null; note?: string | null };
+/** One mark. `surah` is set when a recitation spans several surahs; `word` is the word's place in the
+ *  ayah (from 0) when it was tapped on the mushaf, and `gap` marks the join after that word (tajweed
+ *  between two words, such as ghunnah or idgham across the join). */
+export type Mistake = { kind: MarkKind; ayah: number | null; surah?: number | null; word?: number | null; gap?: boolean; note?: string | null };
 
 /** The most points per page each result allows. More than `weak` is below 3. */
 export type BandLimits = { strong: number; good: number; pass: number; weak: number };
@@ -90,33 +97,20 @@ export function readStandard(raw: unknown): MarkingStandard {
   return { limits, slip: pts("slip"), tajweed: pts("tajweed") };
 }
 
-// Where each surah starts in the standard 604-page Madinah mushaf, used only to estimate how many pages
-// a portion is (by its share of the surah's ayat), so the allowance grows with the length recited.
-const START_PAGE = [
-  1, 2, 50, 77, 106, 128, 151, 177, 187, 208, 221, 235, 249, 255, 262, 267, 282, 293, 305, 312, 322, 332, 342, 350, 359, 367, 377, 385, 396, 404, 411, 415, 418, 428,
-  434, 440, 446, 453, 458, 467, 477, 483, 489, 496, 499, 502, 507, 511, 515, 518, 520, 523, 526, 528, 531, 534, 537, 542, 545, 549, 551, 553, 554, 556, 558, 560,
-  562, 564, 566, 568, 570, 572, 574, 575, 577, 578, 580, 582, 583, 585, 586, 587, 587, 589, 590, 591, 591, 592, 593, 594, 595, 595, 596, 596, 597, 597, 598, 598,
-  599, 599, 600, 600, 601, 601, 601, 602, 602, 602, 603, 603, 603, 604, 604, 604,
-];
 /** A portion counts as at least half a page, so a few ayat do not get a whole page's allowance. */
 export const MIN_PAGES = 0.5;
 
-/** About how many mushaf pages a portion is (surah and ayah range), never less than MIN_PAGES. */
+/** How many mushaf pages a portion is (surah and ayah range, each ayah as its share of its page),
+ *  never less than MIN_PAGES. */
 export function portionPages(surah: number, from?: number | null, to?: number | null): number {
-  const total = surahAyat(surah);
-  if (!total) return MIN_PAGES;
-  const start = START_PAGE[surah - 1];
-  const end = surah < 114 ? START_PAGE[surah] : 605;
-  const span = Math.max(end - start, 0.34);
-  const a = Math.max(1, Math.min(from ?? 1, total));
-  const b = Math.max(a, Math.min(to ?? total, total));
-  const pages = (span * (b - a + 1)) / total;
-  return Math.max(MIN_PAGES, Math.round(pages * 100) / 100);
+  const ayat = ayatOfPortion(surah, from, to);
+  if (ayat.length === 0) return MIN_PAGES;
+  return Math.max(MIN_PAGES, pagesForAyat(ayat));
 }
 
 export function mistakePoints(mistakes: readonly Mistake[], level: MarkingLevel, standard: MarkingStandard = DEFAULT_STANDARD): number {
   let p = 0;
-  for (const m of mistakes) p += m.kind === "prompt" ? 1 : m.kind === "slip" ? standard.slip[level] : standard.tajweed[level];
+  for (const m of mistakes) p += m.kind === "prompt" ? 1 : m.kind === "slip" ? standard.slip[level] : m.kind === "tajweed" ? standard.tajweed[level] : 0;
   return Math.round(p * 100) / 100;
 }
 
@@ -154,19 +148,29 @@ export function adjustScore(score: number, delta: -1 | 0 | 1): number {
   return delta > 0 ? STEP_LOW[s] : STEP_HIGH[s];
 }
 
-/** Mistakes as stored (jsonb), tolerating anything odd. */
+/** Marks as stored (jsonb), tolerating anything odd. */
 export function readMistakes(raw: unknown): Mistake[] {
   if (!Array.isArray(raw)) return [];
   const out: Mistake[] = [];
   for (const m of raw) {
     if (!m || typeof m !== "object") continue;
-    const k = (m as Record<string, unknown>).kind;
-    if (k !== "prompt" && k !== "slip" && k !== "tajweed") continue;
-    const a = num((m as Record<string, unknown>).ayah);
-    out.push({ kind: k, ayah: a !== null && a >= 1 ? Math.floor(a) : null });
+    const o = m as Record<string, unknown>;
+    const k = o.kind;
+    if (k !== "prompt" && k !== "slip" && k !== "tajweed" && k !== "skipped") continue;
+    const a = num(o.ayah);
+    const s = num(o.surah);
+    const w = num(o.word);
+    const x: Mistake = { kind: k, ayah: a !== null && a >= 1 ? Math.floor(a) : null };
+    if (s !== null && s >= 1 && s <= 114) x.surah = Math.floor(s);
+    if (w !== null && w >= 0 && w < 200) x.word = Math.floor(w);
+    if (o.gap === true && x.word !== undefined) x.gap = true;
+    out.push(x);
   }
   return out;
 }
+
+/** The surah a mark belongs to: its own, or the recitation's. */
+export const markSurah = (m: Mistake, fallback: number | null) => m.surah ?? fallback;
 
 export type FocusEntry = { surah_from: number | null; mistakes?: unknown };
 /** What to practise, from the mistakes logged over the pupil's recent recitations: how many of each kind,
@@ -176,15 +180,17 @@ export function practiceFocus(entries: readonly FocusEntry[], limit = 5) {
   const ayat = new Map<string, { surah: number; ayah: number; marks: number; sessions: number }>();
   let heard = 0;
   for (const e of entries) {
-    const ms = readMistakes(e.mistakes);
+    const ms = readMistakes(e.mistakes).filter((m) => m.kind !== "skipped");
     if (ms.length === 0) continue;
     heard++;
     const seen = new Set<string>();
     for (const m of ms) {
+      if (m.kind === "skipped") continue;
       kinds[m.kind]++;
-      if (m.ayah && e.surah_from) {
-        const key = `${e.surah_from}:${m.ayah}`;
-        const x = ayat.get(key) || { surah: e.surah_from, ayah: m.ayah, marks: 0, sessions: 0 };
+      const surah = markSurah(m, e.surah_from);
+      if (m.ayah && surah) {
+        const key = `${surah}:${m.ayah}`;
+        const x = ayat.get(key) || { surah, ayah: m.ayah, marks: 0, sessions: 0 };
         x.marks++;
         if (!seen.has(key)) {
           x.sessions++;
