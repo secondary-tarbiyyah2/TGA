@@ -11,8 +11,9 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { formatDateKey, ukDateTime, ukToday } from "@/lib/learn/ukTime";
 import { ui } from "@/components/learn/ui";
+import { ROLE_EMAILS } from "@/content/contacts";
 
-export const ABSENCE_INBOX = "absence@globalacademy.tarbiyyah.co.uk";
+export const ABSENCE_INBOX = ROLE_EMAILS.attendance;
 const CATEGORIES = ["Unwell", "Medical or dental appointment", "Family emergency", "Religious observance", "Other"];
 
 type Status = "recorded" | "needs_review" | "rejected" | "duplicate" | "dismissed";

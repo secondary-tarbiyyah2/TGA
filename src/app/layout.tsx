@@ -5,6 +5,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
 import { getSiteSettings } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 // Fonts (Inter, Space Grotesk, and Amiri for Arabic) are self-hosted from src/app/fonts: see ./fonts.ts.
 
@@ -71,7 +72,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     url: siteUrl,
     logo: { "@type": "ImageObject", url: `${siteUrl}/brand/ga-logo-square.png`, width: 512, height: 512 },
     image: `${siteUrl}/brand/ga-wordmark.png`,
-    email: settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk",
+    email: settings.admissionsEmail || ROLE_EMAILS.general,
     ...(settings.contactPhone && { telephone: settings.contactPhone }),
     ...(settings.contactAddress && { address: { "@type": "PostalAddress", streetAddress: settings.contactAddress } }),
     areaServed: "Worldwide",

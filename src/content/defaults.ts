@@ -11,6 +11,7 @@
  *
  * If you change fallback copy on a marketing page, change it here too.
  */
+import { ROLE_EMAILS } from "@/content/contacts";
 
 export type TitleBody = { title: string; body: string };
 export type RecipeItem = { letter: string; word: string; body: string };
@@ -71,7 +72,7 @@ export const curriculumDefaults = {
 export const siteSettingsDefaults = {
   cta_primary_label: "Apply Now",
   cta_primary_href: "/admissions",
-  admissions_email: "globalacademy@tarbiyyah.co.uk",
+  admissions_email: ROLE_EMAILS.admissions,
 };
 
 /** Helper copy shown under every pre-filled editor. */

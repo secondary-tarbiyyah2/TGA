@@ -22,9 +22,10 @@ import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
 import { screenApplication, screeningConfigured, type AiScreening } from "../_shared/recruitmentScreen.ts";
+import { ROLE_EMAILS } from "../_shared/contacts.ts";
 
 const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
-const FALLBACK_INBOX = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+const FALLBACK_INBOX = Deno.env.get("ADMISSIONS_EMAIL") || ROLE_EMAILS.careers;
 const LEARN_SITE_URL = (Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk").replace(/\/$/, "");
 const BUCKET = "recruitment-documents";
 

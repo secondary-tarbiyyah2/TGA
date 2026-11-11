@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import Link from "next/link";
-import { getSiteSettings } from "@/lib/content";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
@@ -14,8 +14,7 @@ export const metadata: Metadata = pageMetadata({
 const LAST_UPDATED = "29 October 2026";
 
 export default async function PrivacyPolicyPage() {
-  const settings = await getSiteSettings();
-  const contactEmail = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
+  const contactEmail = ROLE_EMAILS.dataProtection;
 
   return (
     <section className="section-pad">

@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { getPolicyLinks, getSiteSettings } from "@/lib/content";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 export const metadata: Metadata = pageMetadata({
   title: "Safeguarding",
@@ -53,7 +54,7 @@ export default async function SafeguardingPage() {
   const safeguardingPolicy = policies.find((p) => p.number === "01");
   // Matched by title, not number: policy 27 is the Parent Communication Charter.
   const complaintsPolicy = policies.find((p) => /complaints/i.test(p.title));
-  const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
+  const email = ROLE_EMAILS.safeguarding;
   const dslName = settings.safeguardingLeadName || DSL_FALLBACK.name;
   const dslContact = settings.safeguardingLeadContact;
   const policyHref = (p: { readUrl?: string; fileUrl: string }) => p.readUrl || p.fileUrl;

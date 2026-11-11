@@ -41,7 +41,8 @@ const WHEN: Record<TemplateKey, string> = {
 };
 
 const SAMPLE_SETTINGS = {
-  payment_instructions: "Account name: Tarbiyyah Global Academy\nSort code: 00-00-00\nAccount number: 00000000",
+  online_payment_url: "https://pay.example.com/tga",
+  payment_instructions: null,
   assessment_join_url: null,
   interview_join_url: null,
   assessment_duration_text: null,

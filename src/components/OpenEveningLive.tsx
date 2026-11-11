@@ -6,6 +6,7 @@ import { getLiveSiteSettings } from "@/lib/content";
 import { getEdgeFunctionUrl, getSupabaseClient } from "@/lib/supabase/client";
 import { Select } from "@/components/ui/Dropdown";
 import { PhoneField } from "@/components/ui/PhoneInput";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 type Session = {
   id: string;
@@ -26,7 +27,7 @@ export type OpenEveningSettings = {
 
 type Status = "idle" | "sending" | "done" | "error";
 
-const DEFAULT_EMAIL = "globalacademy@tarbiyyah.co.uk";
+const DEFAULT_EMAIL = ROLE_EMAILS.admissions;
 const MAX_PER_BOOKING = 6;
 
 const fmtDate = (iso: string) =>

@@ -4,6 +4,7 @@ import { useEffect, useId, useMemo, useState } from "react";
 import Link from "next/link";
 import { getLivePolicyLinks, getLiveSiteSettings } from "@/lib/content";
 import type { ParentQuestionCategory, PolicyLink } from "@/content/seed";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 /** The bits of the site settings the Policies page shows. */
 export type PolicySettings = {
@@ -204,7 +205,7 @@ export function PolicyDirectory({ initialPolicies, initialSettings, showIntro = 
   const keyDocuments = policies.filter((p) => p.featured);
   const groups = PARENT_QUESTION_GROUPS.map((g) => ({ ...g, items: filtered.filter((p) => p.parentQuestionCategory === g.key) })).filter((g) => g.items.length > 0);
   const ungrouped = filtered.filter((p) => !p.parentQuestionCategory);
-  const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
+  const email = settings.admissionsEmail || ROLE_EMAILS.general;
 
   return (
     <>
