@@ -14,6 +14,7 @@ import { MarkedPage, RecitationWorkspace } from "./RecitationWorkspace";
 import { KIND_LABEL as RECITATION_KIND, heardLabel, pupilOverview, surahAverages, type PupilOverview, type Recitation } from "@/lib/learn/quranOverview";
 import { Icon } from "@/components/learn/Icon";
 import { LessonNotes } from "./LessonNotes";
+import { QuranSchoolOverview } from "./QuranSchoolOverview";
 
 type Mark = QuranMark & { mistakes?: unknown; adjust_reason?: string | null; worked_out_score?: number | null; class_id?: string | null; recitation_kind?: string | null };
 type Pupil = { id: string; name: string };
@@ -121,6 +122,7 @@ export function QuranClasses({ scope, focusPupil, fixedClass }: { scope: "teach"
           No class is set up as a Qur&apos;an class yet, so all classes are listed. {scope === "admin" ? "Add a Qur'an class for each year group in Academic setup (subject Qur'an)." : "The office can add a Qur'an class for each year group."}
         </Notice>
       )}
+      {scope === "admin" && !fixedClass && !onlyGeneral && <QuranSchoolOverview onOpen={setClassId} />}
       <div className="flex flex-wrap items-end gap-3">
         {!fixedClass && (
         <label className="text-sm">
