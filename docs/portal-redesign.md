@@ -499,6 +499,11 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: House points as a proper system (feedback 2, item 21; `rewards/HousePoints.tsx`): one page for teachers and the
+  head teacher with sections down the left (Standings and award, Leaderboard with top pupils, History with filters, CSV
+  and taken-back awards, Star of the week, and for the head Limits and houses); Award points in a side panel; the head
+  teacher's limits (most points in one award, most a pupil a day from one member of staff) enforced by the database
+  (migration 0217, pgTAP `house_point_limits.test.sql`).
 - 2026-11-11: A register's page (feedback 3): a footer that stays in view with the counts (marked, present, late,
   authorised, unauthorised, technical) and when it last saved; Change the whole class; each pupil's attendance over the
   last 60 days beside their name; keyboard marking (P, L, A, U, T, arrow keys); Previous and Next lesson of the class.
