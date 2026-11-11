@@ -30,7 +30,14 @@ Batches and status:
    assessments: comment bank (search, 8 a page, remove) beside assessment types (duplicates refused). Grading:
    Subject, then Scale, then Grade boundaries in three columns; boundaries as a table (grade, from, up to) with
    checks (label needed, 0 to 100, no duplicate grade or starting mark) and Remove. Same tables and RLS.
-2. [ ] Directories: pupils, staff, classes, people (families). 3. [ ] Records. 4. [ ] Other settings pages
+2. [x] Directories: `PageHeader` gained `figures` (a compact line of numbers, each optionally a link or a
+   filter). Classes (head and teacher) use the compact header, a "More" menu, and open as a sortable table
+   (Class, Subject, Year group, Pupils, Open; `ClassGrid defaultView="list"`; Cards still one click away and
+   the default for families and pupils). Pupils: compact header (the old figures repeated the filter chips, so
+   they went); the selected chip's count is readable again. People: Staff / Families switch beside the search,
+   role chips under it, one bordered list with shared `Pagination` (was a card around everything with Show
+   more). Staff profiles already list and detail; unchanged.
+3. [ ] Records. 4. [ ] Other settings pages
    (School settings, Account, Academic setup, Admissions and Recruitment settings). 5. [ ] Workflows (Reports'
    own sections as stages, Admissions, Entry assessments, Timetable). 6. [ ] Workspaces and Today, Messages,
    Calendar, Qur'an, absences.
@@ -471,6 +478,9 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: SEND register figures and filters (feedback 3): On the register, EHC plans, SEN support and Reviews due
+  (overdue in red) on one ruled strip, each pressing through to those pupils; filters by the four areas of need, level
+  and year; pupils' names open their profile (head teacher). Permissions unchanged.
 - 2026-11-11: Qur'an recitation marking (feedback 2, item 13): Hear and track per Qur'an class, the recitation panel
   with mistakes by type and ayah, strictness bands set by the head teacher (`/admin/quran`, migration 0208).
 - 2026-11-11: Classwork quizzes (feedback 2, items 6, 15, 17; migration 0208): full-screen quiz builder with nine question types as cards, settings, AI draft checked question by question, results and marking; pupils sit quizzes full screen with the server clock, autosave and results; Classwork filters and groups by kind. Add an assessment opens full screen (item 10, `FocusView`).

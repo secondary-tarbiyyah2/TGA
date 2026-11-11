@@ -66,8 +66,8 @@ geometric patterns only as very low-opacity textures.
 
 We benchmark against another online Islamic school. We must **not** look like a copy: no
 crescent/moon motifs, no word "pathway(s)", no yellow-on-white SaaS dashboard styling, none of
-their section names. Our identity = gold, ink, cream, 8-point geometric star, "tarbiyyah",
-"journey", "wherever home is."
+their section names. Our identity = gold, ink, cream, "tarbiyyah",
+"wherever home is." No star motifs anywhere (owner, 11 Nov 2026).
 
 ## Rules
 

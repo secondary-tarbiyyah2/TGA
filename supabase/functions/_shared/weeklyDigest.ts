@@ -359,7 +359,7 @@ function renderChild(w: ChildWeek, cfg: DigestSettings): string {
     <h2 style="margin:0 0 4px;font-size:20px;">${name}${w.child.yearGroup ? ` <span style="font-size:13px;font-weight:normal;color:${MUTED};">${esc(w.child.yearGroup)}</span>` : ""}</h2>`;
 
   if (w.star && cfg.include_star) {
-    h += `<p style="margin:8px 0;padding:10px 12px;background:#FDF6E3;border-left:3px solid ${GOLD};font-size:14px;line-height:1.5;">&#9733; <strong>${fn} was Star of the Week${w.star.className ? ` in ${esc(w.star.className)}` : ""}!</strong><br>${esc(w.star.reason)}</p>`;
+    h += `<p style="margin:8px 0;padding:10px 12px;background:#FDF6E3;border-left:3px solid ${GOLD};font-size:14px;line-height:1.5;"><strong>${fn} was Star of the Week${w.star.className ? ` in ${esc(w.star.className)}` : ""}!</strong><br>${esc(w.star.reason)}</p>`;
   }
 
   // Attendance

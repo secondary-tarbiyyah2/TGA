@@ -26,7 +26,7 @@ export default function MarketingLayout({
     <>
       <Header />
       <div className="site-type contents">
-        <main id="main" className="flex-1">
+        <main id="main" className="flex-1" data-site="public">
           <Breadcrumbs />
           <JourneyBar />
           {children}
