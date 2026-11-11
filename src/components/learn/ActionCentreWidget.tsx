@@ -45,14 +45,14 @@ export function ActionCentreWidget({ role, extra = [], skipAreas = [] }: { role:
           Open Waiting for you
         </Link>
       </div>
-      <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+      <ul className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3">
         {groups.map((g) => {
           const headingId = `ac-w-${g.key}`;
           return (
             <li key={g.key} className={`flex flex-col rounded-[10px] border bg-white ${g.now ? "border-red-200" : "border-gold-light"}`}>
               <section aria-labelledby={headingId} className="flex flex-1 flex-col">
                 <div className="flex items-center gap-2 border-b border-gold-light/70 px-4 py-2.5">
-                  <Icon name={g.icon} size="sm" className="text-ink/65" />
+                  <Icon name={g.icon} size="sm" className="h-4 w-4 text-ink/65" />
                   <h3 id={headingId} className="min-w-0 flex-1 truncate text-sm font-semibold text-ink">
                     {g.label}
                   </h3>
@@ -63,8 +63,8 @@ export function ActionCentreWidget({ role, extra = [], skipAreas = [] }: { role:
                 </div>
                 <ul className="flex-1 divide-y divide-gold-light/60">
                   {g.list.slice(0, PER_CATEGORY).map((i) => (
-                    <li key={i.id} className="flex items-center gap-3 px-4 py-2.5">
-                      <div className="min-w-0 flex-1">
+                    <li key={i.id} className="flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-2.5">
+                      <div className="min-w-[11rem] flex-1">
                         <p className="line-clamp-2 text-sm font-medium text-ink">
                           {i.urgency === "now" && <span className="mr-1.5 inline-block h-2 w-2 rounded-full bg-red-600 align-middle" aria-hidden="true" />}
                           {i.urgency === "now" && <span className="sr-only">Do now: </span>}

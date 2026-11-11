@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { StatusChip, ui } from "@/components/learn/ui";
+import { Status, ui } from "@/components/learn/ui";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
@@ -174,23 +174,19 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
           {shown.map((l) => {
             const started = now >= l.start_time.slice(0, 5);
             return (
-              <li key={l.id} className="flex flex-wrap items-center gap-3 px-5 py-3 text-sm">
-                <span className="w-24 shrink-0 font-medium tabular-nums text-ink/70">
-                  {l.start_time.slice(0, 5)} to {l.end_time.slice(0, 5)}
+              <li key={l.id} className="flex items-center gap-3 px-5 py-3 text-sm">
+                <span className="w-12 shrink-0 font-medium tabular-nums text-ink/70" title={`${l.start_time.slice(0, 5)} to ${l.end_time.slice(0, 5)}`}>
+                  {l.start_time.slice(0, 5)}
                 </span>
-                <Link href={`/admin/class?id=${l.class_id}`} className="min-w-0 flex-1 truncate font-medium text-ink hover:text-teal-700">
-                  {l.className}
-                </Link>
-                {l.bbb_status === "live" && <span className="rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">Live</span>}
-                {started ? (
-                  l.registered > 0 || marked[l.id] ? (
-                    <StatusChip tone="good">Register taken</StatusChip>
-                  ) : (
-                    <StatusChip tone="bad">Register missing</StatusChip>
-                  )
-                ) : (
-                  <StatusChip>Later</StatusChip>
-                )}
+                <span className="min-w-0 flex-1">
+                  <Link href={`/admin/class?id=${l.class_id}`} className="block truncate font-medium text-ink hover:text-teal-700" title={l.className}>
+                    {l.className}
+                  </Link>
+                  <span className="mt-0.5 flex flex-wrap items-center gap-x-3">
+                    {l.bbb_status === "live" && <span className="text-xs font-semibold text-red-700">Live now</span>}
+                    {started ? l.registered > 0 || marked[l.id] ? <Status kind="completed">Register taken</Status> : <Status kind="overdue">Register missing</Status> : <Status kind="pending">Later</Status>}
+                  </span>
+                </span>
                 {started && (
                   <button type="button" onClick={() => setRegister(l)} className={`${ui.btnSecondary} ${ui.sm}`}>
                     {l.registered > 0 || marked[l.id] ? "Register" : "Take register"}
