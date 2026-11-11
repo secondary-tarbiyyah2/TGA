@@ -18,7 +18,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
   return (
     <>
       <Header />
-      <main id="main" className="flex-1">
+      <main id="main" className="flex-1" data-site="public">
         <Breadcrumbs />
         <JourneyBar />
         {children}

@@ -6,7 +6,7 @@ export default function HoldingLayout({ children }: { children: React.ReactNode 
   return (
     <>
       <PrelaunchHeader />
-      <main id="main" className="flex-1">
+      <main id="main" className="flex-1" data-site="public">
         {children}
       </main>
       <PrelaunchFooter />
