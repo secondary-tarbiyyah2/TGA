@@ -120,17 +120,19 @@ export const TEACHER_GUIDE: GuideEntry[] = [
     steps: [
       "Choose a class, or All my classes, and search by name.",
       "Show Everyone, Away today, Medical alerts, Support plan or Still to read.",
-      "Open a pupil to read their information.",
-      "Mark it read; Changed since you read it tells you when it is updated.",
+      "Press a name to open their full profile on its own page.",
+      "Use the sections on the left: attendance, behaviour and house points, classwork and grades, Qur'an, support and medical, contacts, reports and documents.",
+      "In Support and medical, press I've read this; Changed since you read it tells you when it is updated.",
     ],
     tips: ["Pupil records to read on Today counts what you have not read yet."],
     privacy: "Staff only. You see only pupils in your classes.",
     related: ["/teach/send", "/teach/behaviour", "/teach/quran"],
     showMe: [
       { target: "pupils-filter", label: "Show", say: "Away today, medical alerts, support plans or still to read." },
-      { target: "pupils-list", label: "Pupils", say: "Open a pupil to read their information." },
+      { target: "pupils-list", label: "Pupils", say: "Press a name to open their full profile." },
+      { target: "pupil-sections", label: "Profile sections", say: "Each part of the pupil's profile, down the left." },
     ],
-    tasks: ["read pupil information", "medical alerts"],
+    tasks: ["read pupil information", "medical alerts", "open a pupil's profile"],
   },
   {
     href: "/teach/quran",
