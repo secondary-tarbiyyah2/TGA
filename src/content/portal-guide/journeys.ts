@@ -19,7 +19,7 @@ export const JOURNEYS: Record<GuideRole, Journey[]> = {
         { href: "/teach/today", target: "today-lessons", title: "Teach it live", body: "When the lesson is due, press Join to start it on Teams." },
         { href: "/teach/today", target: "register", title: "Take the register", body: "Tap Present, Late, Absent or Excused for each pupil; each mark saves straight away." },
         { href: "/teach/classes", target: "class-cards", title: "Open the class", body: "Classwork is set inside the class. Press a class card." },
-        { href: "/teach/class", from: "class-cards", target: "class-set-work", title: "Set work", body: "Press Set work, choose Assignment, add the task and due date, then Assign." },
+        { href: "/teach/class", from: "class-cards", target: "class-set-work", title: "Set work", body: "Press Set work, choose the Assignment card, add the task and due date, then Assign." },
         { href: "/teach/review", target: "mark-queue", title: "Mark it", body: "Handed-in work waits here. Press Mark, give feedback and press Return to pupil." },
         { href: "/teach/behaviour", target: "behaviour-quick", title: "Log behaviour", body: "Press + Merit beside a pupil, or + Log merit or demerit for more detail." },
         { href: "/teach/reports", target: "reports-sections", title: "Write a report", body: "At the end of term, open a class and a pupil, write the comment and Submit for approval." },
