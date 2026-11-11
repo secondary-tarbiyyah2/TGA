@@ -1,0 +1,106 @@
+{
+ "id": "science-y7-resistance-calculation-sheet",
+ "title": "Resistance calculation sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y7",
+ "unit": "Spring 2: Current electricity (7J); forces (7K)",
+ "lessons": [
+  37
+ ],
+ "source": "Seeded from science/y7 lesson 37 (Resistance calculation sheet (portal worksheet))",
+ "intro": "Lesson 37: Resistance. To understand what resistance is and how to calculate it from voltage and current",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "A lamp has 6 V across it and 0.5 A through it. Find its resistance.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Write the equation: R = V ÷ I"
+     },
+     {
+      "label": "Step 2",
+      "text": "Substitute: R = 6 ÷ 0.5"
+     },
+     {
+      "label": "Step 3",
+      "text": "Calculate: 12"
+     },
+     {
+      "label": "Step 4",
+      "text": "Add the unit: Ω"
+     },
+     {
+      "label": "Answer",
+      "text": "12 Ω"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "12 V across a heater, current 2 A. Resistance?",
+     "a": "6 Ω",
+     "model": "R = V ÷ I. Put in the numbers: 12 ÷ 2. That is 6. Unit: ohms. So 6 Ω."
+    },
+    {
+     "q": "What happens to current if resistance increases (same voltage)?",
+     "a": "It decreases"
+    },
+    {
+     "q": "Which has more resistance: a short thick wire or a long thin wire?",
+     "a": "A long thin wire"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Calculate: (a) 3 V, 0.1 A; (b) 4.5 V, 0.3 A; (c) 230 V, 10 A; (d) 1.5 V, 0.25 A.",
+     "a": "(a) 30 Ω (b) 15 Ω (c) 23 Ω (d) 6 Ω",
+     "model": "Teacher does (a): R = 3 ÷ 0.1 = 30 Ω."
+    },
+    {
+     "q": "In the simulator, change the wire resistance and watch the ammeter. Describe the pattern.",
+     "a": "As resistance increases, current decreases."
+    },
+    {
+     "q": "A resistor is 20 Ω with 0.4 A through it. Rearrange to find the voltage.",
+     "a": "V = I × R = 0.4 × 20 = 8 V"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "R = V ÷ I: 10 V, 2 A gives...",
+     "a": "5 Ω",
+     "options": [
+      "5 Ω",
+      "12 Ω",
+      "20 Ω"
+     ]
+    },
+    {
+     "q": "Big question: why does a toaster wire glow but the cable stays cool?",
+     "a": "The element has high resistance, so it heats up; the cable has low resistance."
+    }
+   ]
+  }
+ ]
+}

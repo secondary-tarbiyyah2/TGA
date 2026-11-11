@@ -1,0 +1,100 @@
+{
+ "id": "science-y7-ammeter-readings-table",
+ "title": "Ammeter readings table",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y7",
+ "unit": "Spring 2: Current electricity (7J); forces (7K)",
+ "lessons": [
+  33
+ ],
+ "source": "Seeded from science/y7 lesson 33 (Ammeter readings table (portal worksheet))",
+ "intro": "Lesson 33: Measuring current with an ammeter. To understand how to measure current and what happens to it in a series circuit",
+ "blocks": [
+  {
+   "h": "Same everywhere"
+  },
+  {
+   "table": {
+    "head": [
+     "Ammeter position",
+     "Reading (A)"
+    ],
+    "rows": [
+     [
+      "Before the lamp",
+      "0.3"
+     ],
+     [
+      "Between lamps",
+      "0.3"
+     ],
+     [
+      "After the lamp",
+      "0.3"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Draw a series circuit with a cell, a lamp and an ammeter.",
+     "a": "One loop with cell, lamp and A-in-a-circle",
+     "model": "One loop only. Put the ammeter in the loop like any other component: cell, wire, ammeter, wire, lamp, wire back."
+    },
+    {
+     "q": "Two lamps in series: A1 reads 0.25 A. What does A2 read?",
+     "a": "0.25 A"
+    },
+    {
+     "q": "What happens to the current if you add a second cell?",
+     "a": "It increases"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "In the simulator, build a series circuit with two lamps and three ammeters. Record the readings, then add a cell and record again.",
+     "a": "All three readings equal; all increase when a cell is added (exact values depend on the simulator)",
+     "model": "Teacher places the first ammeter on screen and reads it aloud: '0.30 A.'"
+    },
+    {
+     "q": "Explain why the lamps are dimmer with two in series than one.",
+     "a": "Two lamps give more resistance, so the current is smaller."
+    },
+    {
+     "q": "Why must an ammeter have very low resistance?",
+     "a": "So it does not reduce the current it is measuring."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "An ammeter is connected...",
+     "a": "In series",
+     "options": [
+      "In series",
+      "In parallel"
+     ]
+    },
+    {
+     "q": "Big question: is current bigger, smaller or the same after a lamp?",
+     "a": "The same: current is not used up in a series circuit."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "id": "science-y4-bar-chart-sheet",
+ "title": "Bar chart sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y4",
+ "unit": "Spring 2: Sound (Misty Mountain, Sierra and How Can We Change a Sound?)",
+ "lessons": [
+  20
+ ],
+ "source": "Seeded from science/y4 lesson 20 (Bar chart sheet (portal worksheet))",
+ "intro": "Lesson 20: Measuring volume: decibels and our ears. To understand how volume is measured in decibels and why loud sounds can harm our ears",
+ "blocks": [
+  {
+   "h": "Bar chart"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "yMax": 10,
+    "yStep": 1,
+    "yLabel": "",
+    "xLabel": ""
+   }
+  },
+  {
+   "text": "Label both axes, choose a scale, and draw the bars with a ruler, with gaps between them."
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A quiet room is 40 dB; talking is 60 dB. Which is louder and by how much?",
+     "a": "Talking, by 20 dB",
+     "model": "Bigger number is louder: 60. How much more? 60 minus 40 is 20. So talking is louder by 20 dB."
+    },
+    {
+     "q": "Why do workers with drills wear ear defenders?",
+     "a": "To protect their ears from loud noise"
+    },
+    {
+     "q": "What unit is volume measured in?",
+     "a": "Decibels (dB)"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "With an adult, measure three sounds with a sound meter app (a quiet room, the kettle boiling from 2 m away, talking). Record in dB and order them.",
+     "a": "Pupils' own readings, for example quiet room 35 dB, talking 60 dB, kettle 65 dB",
+     "model": "Teacher measures the quiet classroom on camera: 'About 38 dB.' Records it."
+    },
+    {
+     "q": "Draw a bar chart of your three readings.",
+     "a": "Three labelled bars in dB"
+    },
+    {
+     "q": "Why might two people get different readings for the same sound?",
+     "a": "Different distances, phones or background noise; keep distance the same."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Volume is measured in...",
+     "a": "Decibels",
+     "options": [
+      "Metres",
+      "Decibels",
+      "Kilograms"
+     ]
+    },
+    {
+     "q": "Big question: how could you prove which room is noisiest?",
+     "a": "Measure each room in decibels at the same distance and time."
+    }
+   ]
+  }
+ ]
+}

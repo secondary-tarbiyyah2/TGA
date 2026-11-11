@@ -1,0 +1,102 @@
+{
+ "id": "science-y7-pressure-calculation-sheet",
+ "title": "Pressure calculation sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y7",
+ "unit": "Spring 2: Current electricity (7J); forces (7K)",
+ "lessons": [
+  45
+ ],
+ "source": "Seeded from science/y7 lesson 45 (Pressure calculation sheet (portal worksheet))",
+ "intro": "Lesson 45: Pressure. To understand how pressure depends on force and area",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "A 600 N box rests on an area of 2 m². Find the pressure.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Pressure = force ÷ area"
+     },
+     {
+      "label": "Step 2",
+      "text": "= 600 ÷ 2"
+     },
+     {
+      "label": "Step 3",
+      "text": "= 300"
+     },
+     {
+      "label": "Answer",
+      "text": "300 N/m²"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A 500 N pupil stands on 0.04 m² of shoe. Pressure?",
+     "a": "12 500 N/m²",
+     "model": "P = F ÷ A = 500 ÷ 0.04. Dividing by 0.04 is multiplying by 25: 12 500 N/m²."
+    },
+    {
+     "q": "Why do camels have wide feet?",
+     "a": "To spread their weight and not sink into sand"
+    },
+    {
+     "q": "Unit of pressure?",
+     "a": "N/m² (pascal)"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Calculate: (a) 200 N on 4 m²; (b) 50 N on 0.5 m²; (c) 1000 N on 0.1 m²; (d) 36 N on 9 cm² (answer in N/cm²).",
+     "a": "(a) 50 N/m² (b) 100 N/m² (c) 10 000 N/m² (d) 4 N/cm²",
+     "model": "Teacher does (a): 200 ÷ 4 = 50 N/m²."
+    },
+    {
+     "q": "Why does a sharp knife cut better than a blunt one?",
+     "a": "Smaller area at the edge, so the same force gives a higher pressure."
+    },
+    {
+     "q": "A 30 N book makes 600 N/m² pressure. What area is it resting on?",
+     "a": "Area = F ÷ P = 30 ÷ 600 = 0.05 m²"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pressure = force ÷ ...",
+     "a": "Area",
+     "options": [
+      "Area",
+      "Mass",
+      "Time"
+     ]
+    },
+    {
+     "q": "Big question: why does a pin go in but not the pencil's flat end?",
+     "a": "The pin's tiny area makes a much higher pressure for the same force."
+    }
+   ]
+  }
+ ]
+}

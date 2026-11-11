@@ -1,0 +1,101 @@
+{
+ "id": "science-y7-weight-calculation-sheet",
+ "title": "Weight calculation sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y7",
+ "unit": "Spring 2: Current electricity (7J); forces (7K)",
+ "lessons": [
+  41
+ ],
+ "source": "Seeded from science/y7 lesson 41 (Weight calculation sheet (portal worksheet))",
+ "intro": "Lesson 41: Forces and their effects; weight and mass. To understand what forces do and the difference between mass and weight",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "A bag of rice has a mass of 2 kg. What is its weight on Earth?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Weight = mass × g"
+     },
+     {
+      "label": "Step 2",
+      "text": "= 2 kg × 10 N/kg"
+     },
+     {
+      "label": "Step 3",
+      "text": "= 20"
+     },
+     {
+      "label": "Answer",
+      "text": "20 N"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A 3 kg bag on the Moon (g = 1.6 N/kg). Weight?",
+     "a": "4.8 N",
+     "model": "Weight = mass × g. On the Moon g = 1.6. 3 × 1.6 = 4.8. So 4.8 N."
+    },
+    {
+     "q": "Is gravity a contact or non-contact force?",
+     "a": "Non-contact"
+    },
+    {
+     "q": "Does mass change on the Moon?",
+     "a": "No"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Weigh three items at home with kitchen scales (grams). Convert to kg and calculate each weight in N.",
+     "a": "For example: 500 g rice = 0.5 kg = 5 N; 1 kg flour = 10 N; 250 g butter = 2.5 N",
+     "model": "Teacher does the first: 500 g = 0.5 kg; 0.5 × 10 = 5 N."
+    },
+    {
+     "q": "Draw force arrows on a book resting on a table and label them.",
+     "a": "Weight down (gravity), equal reaction force up from the table"
+    },
+    {
+     "q": "Why do kitchen scales show grams, not newtons?",
+     "a": "They measure the push of weight but are set to show mass, assuming Earth's g."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Weight is measured in...",
+     "a": "Newtons",
+     "options": [
+      "Kilograms",
+      "Newtons"
+     ]
+    },
+    {
+     "q": "Big question: how can the astronaut's mass stay the same but weight change?",
+     "a": "Mass is the matter; weight depends on gravity, which is weaker on the Moon."
+    }
+   ]
+  }
+ ]
+}

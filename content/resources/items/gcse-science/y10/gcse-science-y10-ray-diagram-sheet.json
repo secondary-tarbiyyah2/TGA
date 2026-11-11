@@ -1,0 +1,123 @@
+{
+ "id": "gcse-science-y10-ray-diagram-sheet",
+ "title": "Ray diagram sheet",
+ "type": "worksheet",
+ "subject": "Science (GCSE Biology, Chemistry, Physics)",
+ "subjectSlug": "gcse-science",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0",
+ "unit": "Spring 2: Transport, the periodic table and waves",
+ "lessons": [
+  65
+ ],
+ "source": "Seeded from gcse-science/y10 lesson 65 (Ray diagram sheet (portal worksheet))",
+ "intro": "Lesson 65: Reflection and refraction of light. To understand how light reflects and refracts, and how to draw accurate ray diagrams",
+ "blocks": [
+  {
+   "h": "Label the diagram"
+  },
+  {
+   "picture": {
+    "find": "refraction glass block ray",
+    "alt": "A light ray refracting through a glass block",
+    "labels": 5,
+    "draw": "Draw and label: Ray diagram sheet"
+   }
+  },
+  {
+   "starters": [
+    "normal",
+    "angle of incidence",
+    "refraction",
+    "optically denser",
+    "ray diagram"
+   ],
+   "title": "Word bank"
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "A ray hits a plane mirror at 35° to the mirror surface. Find the angle of reflection.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Angle to the surface is not the angle of incidence"
+     },
+     {
+      "label": "Step 2",
+      "text": "i = 90° - 35° = 55°"
+     },
+     {
+      "label": "Step 3",
+      "text": "r = i"
+     },
+     {
+      "label": "Answer",
+      "text": "55° (to the normal)"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A ray enters water at 30° to the normal and refracts to 22°. Explain why it bent.",
+     "a": "Light slows down in water (1), so it changes direction towards the normal (1)",
+     "model": "What changed? The medium. What happens to speed? It slows. Slower, so it bends towards the normal: 30° became 22°."
+    },
+    {
+     "q": "What angle of refraction occurs when i = 0°?",
+     "a": "0°: no change of direction"
+    },
+    {
+     "q": "State the law of reflection.",
+     "a": "Angle of incidence equals angle of reflection"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Draw a ray entering and leaving a rectangular glass block at i = 40° (use the data: r = 25°) [4], and explain the emergent ray's direction [2].",
+     "a": "Normal at each face, refraction towards normal entering, away leaving (4); emergent ray parallel to incident ray because the faces are parallel and the bending is reversed (2)",
+     "model": "Teacher draws the block, the first normal and the incident ray on screen."
+    },
+    {
+     "q": "Explain why a straw in a glass of water looks bent.",
+     "a": "Light from the straw refracts at the water surface (1), bending away from the normal into air (1); the brain traces rays back in straight lines, so the straw appears displaced (1)"
+    },
+    {
+     "q": "Why do waves refract when they slow down? Use wavefronts.",
+     "a": "One side of the wavefront enters the slower medium first and slows, so the wavefront turns."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Angles are measured from the...",
+     "a": "Normal",
+     "options": [
+      "Surface",
+      "Normal"
+     ]
+    },
+    {
+     "q": "Big question: should you trust a pool's depth by eye?",
+     "a": "No: refraction makes the bottom look higher than it is."
+    }
+   ]
+  }
+ ]
+}
