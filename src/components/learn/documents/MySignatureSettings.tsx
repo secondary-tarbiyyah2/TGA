@@ -66,11 +66,7 @@ export function MySignatureSettings({ userId }: { userId: string }) {
   }
 
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <h2 className="font-serif text-h3 font-semibold text-ink">Your signature</h2>
-      <p className="mt-1 text-sm text-ink/70">
-        Added automatically to Star of the Week certificates you sign, and offered when you sign documents in the portal.
-      </p>
+    <div>
       {!loaded ? null : editing || !savedUrl ? (
         <div className="mt-4">
           <SignaturePad ref={pad} disabled={busy} onChange={(s) => setValid(s.valid)} label="Draw your signature here" />

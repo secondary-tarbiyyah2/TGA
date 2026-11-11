@@ -51,14 +51,7 @@ export function SchoolFeatures({ canChange }: { canChange: boolean }) {
   };
 
   return (
-    <details open data-guide="school-features" className="group rounded-2xl border border-gold-light bg-white">
-      <summary className="flex cursor-pointer list-none items-start justify-between gap-3 px-5 py-4">
-        <span>
-          <span className="block text-base font-semibold text-ink">School features</span>
-          <span className="mt-0.5 block text-sm text-ink/65">Switch optional parts of the portal on or off for the whole school. Switching something off hides it; nothing is deleted.</span>
-        </span>
-        <span aria-hidden="true" className="mt-1 text-lg leading-none text-ink/50 transition-transform group-open:rotate-90">›</span>
-      </summary>
+    <div data-guide="school-features" className="rounded-2xl border border-gold-light bg-white">
       <div className="border-t border-gold-light">
         {failed ? (
           <p className="px-5 py-5 text-sm text-ink/70">Couldn&apos;t load the school features. Refresh the page to try again.</p>
@@ -104,6 +97,6 @@ export function SchoolFeatures({ canChange }: { canChange: boolean }) {
           </p>
         )}
       </div>
-    </details>
+    </div>
   );
 }
