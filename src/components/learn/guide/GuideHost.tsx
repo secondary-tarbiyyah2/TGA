@@ -22,9 +22,11 @@ export function GuideHost({ area, roles, userId }: { area: PortalArea; roles: st
   const entries = role && content ? content.GUIDE[role] : null;
   const entry = role && content ? content.guideEntryFor(role, pathname) : null;
 
-  // A new page closes a Show me that belonged to the old one.
+  // A new page closes a Show me that belonged to the old one. A link from the
+  // Portal guide (?guide=1) opens the new page's guide straight away.
   useEffect(() => {
     if (spot?.kind === "show") endSpot();
+    if (new URLSearchParams(window.location.search).get("guide") === "1") openGuidePanel();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only on navigation
   }, [pathname]);
 

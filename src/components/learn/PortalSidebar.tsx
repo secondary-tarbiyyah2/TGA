@@ -268,6 +268,7 @@ function SidebarBody({
   // portals this person can open, and signing out.
   const accountItems: MenuAction[] = [
     { label: "Your account", icon: "userRound", href: "/account", hint: "Name, sign-in, notifications and display" },
+    { label: "Portal guide", icon: "bookOpenCheck", href: `/guide?area=${area}`, hint: "Every page explained, A to Z" },
     ...(areas.length > 1
       ? [
           { label: "", section: "Switch portal" } as MenuAction,
@@ -400,6 +401,18 @@ function SidebarBody({
               </span>
               <span className="min-w-0 flex-1 truncate">Take the tour</span>
             </button>
+          )}
+          {collapsed ? (
+            <Link href={`/guide?area=${area}`} data-tip="Portal guide" aria-label="Portal guide" aria-current={normalisePortalPath(pathname) === "/guide" ? "page" : undefined} className="portal-rail-btn">
+              <Icon name="bookOpenCheck" />
+            </Link>
+          ) : (
+            <Link href={`/guide?area=${area}`} onClick={onNavigate} data-tour="guide-home" aria-current={normalisePortalPath(pathname) === "/guide" ? "page" : undefined} className={`portal-nav-row ${normalisePortalPath(pathname) === "/guide" ? "portal-nav-row--active" : ""}`}>
+              <span className="portal-nav-icon" aria-hidden="true">
+                <Icon name="bookOpenCheck" />
+              </span>
+              <span className="min-w-0 flex-1 truncate">Portal guide</span>
+            </Link>
           )}
           <InstallAppLink onNavigate={onNavigate} compact={collapsed} />
         </div>
