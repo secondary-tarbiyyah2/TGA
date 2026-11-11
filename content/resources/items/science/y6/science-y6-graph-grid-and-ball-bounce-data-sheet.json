@@ -1,0 +1,254 @@
+{
+ "id": "science-y6-graph-grid-and-ball-bounce-data-sheet",
+ "title": "Graph grid and ball bounce data sheet",
+ "type": "printable graph/grid",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y6",
+ "unit": "Summer 1: Working scientifically, revision through enquiry (Revolution)",
+ "lessons": [
+  33
+ ],
+ "source": "Written for science/y6 lesson 33 (Graph grid and ball bounce data sheet (portal worksheet))",
+ "intro": "Lesson 33: Data: tables, bar charts and line graphs. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Ball bounce data"
+  },
+  {
+   "table": {
+    "head": [
+     "Drop height (cm)",
+     "Bounce height (cm)"
+    ],
+    "rows": [
+     [
+      "20",
+      "12"
+     ],
+     [
+      "40",
+      "25"
+     ],
+     [
+      "60",
+      "37"
+     ],
+     [
+      "80",
+      "49"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Graph grid"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": 0,
+    "xMax": 100,
+    "yMin": 0,
+    "yMax": 60,
+    "xStep": 10,
+    "yStep": 10,
+    "xLabel": "Drop height (cm)",
+    "yLabel": "Bounce height (cm)",
+    "height": 110
+   }
+  },
+  {
+   "h": "Good tables"
+  },
+  {
+   "table": {
+    "head": [
+     "Drop height (cm)",
+     "Bounce height (cm)"
+    ],
+    "rows": [
+     [
+      "20",
+      "12"
+     ],
+     [
+      "40",
+      "25"
+     ],
+     [
+      "60",
+      "37"
+     ],
+     [
+      "80",
+      "49"
+     ]
+    ]
+   }
+  },
+  {
+   "bullets": [
+    "Change in the first column",
+    "Measure in the next",
+    "Units in headings, not in boxes"
+   ]
+  },
+  {
+   "h": "Bar chart or line graph?"
+  },
+  {
+   "table": {
+    "head": [
+     "Bar chart",
+     "Line graph"
+    ],
+    "rows": [
+     [
+      "Categories",
+      "Numbers"
+     ],
+     [
+      "e.g. type of paper",
+      "e.g. time in minutes"
+     ],
+     [
+      "Bars do not touch",
+      "Points joined"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Plotting a line graph"
+  },
+  {
+   "model": {
+    "title": "Plot the ball bounce data.",
+    "parts": [
+     {
+      "text": "Change goes on the bottom axis: drop height"
+     },
+     {
+      "text": "Measure goes up the side: bounce height"
+     },
+     {
+      "text": "Choose a scale that fits: steps of 10"
+     },
+     {
+      "text": "Plot each point with a small cross, then join"
+     },
+     {
+      "label": "Why it works",
+      "text": "A straight-ish line going up: higher drop, higher bounce."
+     }
+    ]
+   }
+  },
+  {
+   "panels": [
+    {
+     "title": "Reading the graph",
+     "points": [
+      "Read across and down",
+      "Find values between points"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "table",
+     "def": "rows and columns to record results"
+    },
+    {
+     "term": "bar chart",
+     "def": "bars compare separate groups"
+    },
+    {
+     "term": "line graph",
+     "def": "a line shows how something changes continuously"
+    },
+    {
+     "term": "axis",
+     "def": "the line along the side or bottom of a graph"
+    },
+    {
+     "term": "unit",
+     "def": "what the number is measured in, such as cm or °C"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Temperature of cooling tea every 2 minutes: bar chart or line graph?",
+     "a": "Line graph"
+    },
+    {
+     "q": "Where do units go in a table?",
+     "a": "In the headings"
+    },
+    {
+     "q": "Which axis is the variable you change on?",
+     "a": "The bottom (horizontal) axis"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Draw a line graph of the ball bounce data on the grid. Label the axes with units.",
+     "a": "Correct axes and units, points plotted, line drawn"
+    },
+    {
+     "q": "Extend: Use your graph to predict the bounce from 70 cm.",
+     "a": "About 43 cm"
+    },
+    {
+     "q": "Stretch: Describe the pattern in one sentence using 'the higher ... the higher ...'.",
+     "a": "The higher the drop, the higher the bounce."
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "Results for 'which fabric is warmest' need a...",
+     "options": [
+      "Line graph",
+      "Bar chart",
+      "Pie chart"
+     ],
+     "a": "B) Bar chart. Fabrics are separate categories, so bars."
+    },
+    {
+     "q": "Categories need a...",
+     "a": "Bar chart",
+     "options": [
+      "Bar chart",
+      "Line graph"
+     ]
+    },
+    {
+     "q": "Big question: which graph shows ice cream sales against temperature best?",
+     "a": "A line graph (or scatter) because temperature is a number that changes."
+    }
+   ]
+  }
+ ]
+}

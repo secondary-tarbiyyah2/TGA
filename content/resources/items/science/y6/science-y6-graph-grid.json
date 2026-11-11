@@ -1,0 +1,195 @@
+{
+ "id": "science-y6-graph-grid",
+ "title": "Graph grid",
+ "type": "printable graph/grid",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y6",
+ "unit": "Summer 1: Working scientifically, revision through enquiry (Revolution)",
+ "lessons": [
+  35
+ ],
+ "source": "Written for science/y6 lesson 35 (Graph grid (portal worksheet))",
+ "intro": "Lesson 35: Working scientifically: Summer 1 check. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Graph grid"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": 0,
+    "xMax": 50,
+    "yMin": 0,
+    "yMax": 250,
+    "xStep": 10,
+    "yStep": 50,
+    "xLabel": "Ramp height (cm)",
+    "yLabel": "Mean distance (cm)",
+    "height": 110
+   }
+  },
+  {
+   "panels": [
+    {
+     "title": "Today's task",
+     "points": [
+      "Question: does the height of a ramp change how far a toy car rolls?",
+      "Plan, use the data, graph, conclude"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Data for the task"
+  },
+  {
+   "table": {
+    "head": [
+     "Ramp height (cm)",
+     "Test 1 (cm)",
+     "Test 2 (cm)",
+     "Test 3 (cm)"
+    ],
+    "rows": [
+     [
+      "10",
+      "52",
+      "50",
+      "54"
+     ],
+     [
+      "20",
+      "98",
+      "102",
+      "100"
+     ],
+     [
+      "30",
+      "150",
+      "147",
+      "153"
+     ],
+     [
+      "40",
+      "196",
+      "160",
+      "204"
+     ]
+    ]
+   }
+  },
+  {
+   "bullets": [
+    "Three repeats for each ramp height"
+   ]
+  },
+  {
+   "panels": [
+    {
+     "title": "Evaluating",
+     "points": [
+      "Was it fair?",
+      "Any anomalies?",
+      "One improvement"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "enquiry",
+     "def": "a way of finding out the answer to a question"
+    },
+    {
+     "term": "variable",
+     "def": "something that can change in a test"
+    },
+    {
+     "term": "conclusion",
+     "def": "what the results show"
+    },
+    {
+     "term": "evaluate",
+     "def": "say how good the method was and how to improve it"
+    },
+    {
+     "term": "mean",
+     "def": "add the results and divide by how many"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Mean distance at 20 cm height?",
+     "a": "100 cm"
+    },
+    {
+     "q": "Mean at 40 cm, leaving out the anomaly?",
+     "a": "200 cm"
+    },
+    {
+     "q": "Which graph: bar or line?",
+     "a": "Line graph: height is a number"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core (assessed): On the task sheet, write the variables, calculate the means, draw a line graph and write a conclusion and one improvement. Submit in the portal.",
+     "a": "Variables: change height, measure distance, control car and surface; means 52, 100, 150, 200 cm; line graph rising; conclusion: the higher the ramp, the further the car rolls; improvement e.g. more repeats"
+    },
+    {
+     "q": "Extend: Predict the distance for a 25 cm ramp from your graph.",
+     "a": "About 125 cm"
+    },
+    {
+     "q": "Stretch: Suggest why the 40 cm anomaly happened.",
+     "a": "e.g. the car hit something, was pushed, or the distance was misread"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "The anomaly in the data is...",
+     "options": [
+      "52 cm at 10 cm",
+      "100 cm at 20 cm",
+      "160 cm at 40 cm"
+     ],
+     "a": "C) 160 cm at 40 cm. 160 is far from 196 and 204."
+    },
+    {
+     "q": "Which step comes after 'measure and record'?",
+     "a": "Present the data",
+     "options": [
+      "Present the data",
+      "Ask a question"
+     ]
+    },
+    {
+     "q": "Big question: what does a good scientist always do?",
+     "a": "Uses evidence: fair tests, careful measuring, repeats and honest reports."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "id": "science-y7-survey-results-sheet-with-sample-data",
+ "title": "Quadrat survey results sheet with sample data",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y7",
+ "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+ "lessons": [
+  64
+ ],
+ "source": "Written for science/y7 lesson 64 (Survey results sheet with sample data (portal worksheet))",
+ "intro": "Lesson 64. Use your own counts, or the sample data, to estimate a population.",
+ "blocks": [
+  {
+   "h": "Sample data"
+  },
+  {
+   "table": {
+    "head": [
+     "Quadrat (0.25 m²)",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "rows": [
+     [
+      "Daisies",
+      "3",
+      "5",
+      "4",
+      "2",
+      "6"
+     ]
+    ]
+   }
+  },
+  {
+   "text": "The lawn is 20 m²."
+  },
+  {
+   "questions": [
+    {
+     "q": "Find the mean number of daisies per quadrat.",
+     "a": "(3 + 5 + 4 + 2 + 6) ÷ 5 = 4",
+     "marks": 2
+    },
+    {
+     "q": "How many daisies per m²?",
+     "a": "4 quadrats make 1 m², so 4 × 4 = 16",
+     "marks": 1
+    },
+    {
+     "q": "Estimate the number of daisies on the whole lawn.",
+     "a": "16 × 20 = 320",
+     "marks": 1
+    },
+    {
+     "q": "Why were the quadrats placed at random?",
+     "a": "To avoid choosing only the best spots (bias).",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "h": "My own survey"
+  },
+  {
+   "table": {
+    "head": [
+     "Quadrat",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "Mean"
+    ],
+    "rows": [
+     [
+      "Number of plants",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "box": {
+    "title": "My estimate (show working)",
+    "lines": 4
+   }
+  }
+ ]
+}
