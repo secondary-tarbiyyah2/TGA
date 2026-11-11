@@ -182,12 +182,6 @@ button:not(:disabled),
   padding-top: 1.5rem;
   padding-bottom: 3rem;
 }
-/* A hub's tab strip already gives the page its top spacing (mb-6).
-   General sibling (~), not +: Next can render a hidden element (streamed
-   metadata) between the tab strip and the page, which defeated +. */
-.hub-tabs ~ .app-pad {
-  padding-top: 0;
-}
 
 /* /learn portal look (owner brief 10 Nov 2026, "complete UI/UX redesign"; DESIGN.md
    "Portal design system"). Scoped to .portal (the wrapper in src/app/learn/layout.tsx), so the
@@ -352,77 +346,6 @@ html[data-readable-font] .portal .portal-display {
 }
 
 @layer components {
-/* Section navigation (HubTabs in PageHeader.tsx): the pages of the category you are in, as a
-   quiet row of text tabs under the top bar. The page you are on is marked by a forest underline
-   and darker text, not a filled pill. */
-.hub-nav {
-  display: flex;
-  align-items: stretch;
-  gap: 1.25rem;
-  border-bottom: 1px solid var(--color-gold-light);
-}
-.hub-nav__label {
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-  padding-right: 1.25rem;
-  margin: 0.625rem 0;
-  border-right: 1px solid var(--color-gold-light);
-  white-space: nowrap;
-}
-@media (min-width: 1024px) {
-  .hub-nav__label {
-    display: inline-flex;
-  }
-}
-.hub-seg {
-  display: flex;
-  min-width: max-content;
-  gap: 0.25rem;
-}
-.hub-seg a {
-  position: relative;
-  display: inline-flex;
-  min-height: 2.875rem;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 0.375rem 0.375rem 0 0;
-  padding: 0 0.625rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-ink-500);
-  transition: color var(--portal-fast) var(--portal-ease), background-color var(--portal-fast) var(--portal-ease);
-}
-.hub-seg a svg {
-  color: color-mix(in oklab, var(--color-ink-500) 80%, transparent);
-  transition: color var(--portal-fast) var(--portal-ease);
-}
-.hub-seg a:hover {
-  color: var(--color-ink-900);
-  background: color-mix(in oklab, var(--portal-hover) 60%, transparent);
-}
-.hub-seg a::after {
-  content: "";
-  position: absolute;
-  left: 0.625rem;
-  right: 0.625rem;
-  bottom: -1px;
-  height: 2px;
-  border-radius: 2px 2px 0 0;
-  background: var(--color-forest-700);
-  transform: scaleX(0);
-  transition: transform var(--portal-med) var(--portal-ease);
-}
-.hub-seg a[aria-current="page"] {
-  color: var(--color-ink-900);
-  font-weight: 600;
-}
-.hub-seg a[aria-current="page"] svg {
-  color: var(--color-forest-700);
-}
-.hub-seg a[aria-current="page"]::after {
-  transform: scaleX(1);
-}
 }
 /* Form controls: one look. Same corner radius as buttons and a clear forest focus ring. */
 .portal :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea) {
@@ -741,9 +664,61 @@ html[data-readable-font] .portal .portal-display {
   padding-left: 0.5rem;
   background: linear-gradient(var(--color-gold-light), var(--color-gold-light)) no-repeat 0 0 / 1px 100%;
 }
-.portal-nav-panel[data-open] > .portal-nav-tree {
+.portal-nav-panel[data-open] > .portal-nav-tree,
+.portal-nav-tree--open {
   padding-top: 0.125rem;
   padding-bottom: 0.375rem;
+}
+/* A category page you are inside of (one of its own steps is open): forest text, no lift. */
+.portal-nav-leaf--here {
+  color: var(--color-forest-900);
+  font-weight: 600;
+}
+/* A page's own steps (SUB_PAGES), one level further in: smaller, quieter, a forest dot for the
+   one you are on. They replace the strip of links that ran across the top of those pages. */
+.portal-nav-subtree {
+  margin: 0.125rem 0 0.25rem 0.75rem;
+}
+.portal-nav-sub {
+  position: relative;
+  display: flex;
+  min-height: 2.5rem;
+  align-items: center;
+  border-radius: var(--radius-lg);
+  padding: 0.125rem 0.625rem 0.125rem 1rem;
+  font-size: 0.8125rem;
+  color: var(--color-ink-500);
+  transition: background-color var(--portal-fast) var(--portal-ease), color var(--portal-fast) var(--portal-ease);
+}
+@media (min-width: 1024px) {
+  .portal-nav-sub {
+    min-height: 1.875rem;
+  }
+}
+.portal-nav-sub::before {
+  content: "";
+  position: absolute;
+  left: 0.375rem;
+  top: 50%;
+  height: 4px;
+  width: 4px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: var(--color-gold-light);
+}
+.portal-nav-sub:hover {
+  background: var(--portal-hover);
+  color: var(--color-ink-900);
+}
+.portal-nav-sub--active,
+.portal-nav-sub--active:hover {
+  background: var(--color-white);
+  box-shadow: var(--portal-shadow-lift);
+  color: var(--color-forest-900);
+  font-weight: 600;
+}
+.portal-nav-sub--active::before {
+  background: var(--color-forest-700);
 }
 /* Counts in the menu: a quiet number for things to get round to (messages, marking), a small
    red pill only for things that are late or missing. */

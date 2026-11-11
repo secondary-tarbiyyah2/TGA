@@ -133,8 +133,12 @@ and `kit.tsx`: change it there, never page by page.
   forest text and a short gold marker. The profile button at the foot opens the account menu
   (account, switch portal, sign out). The top bar sits on the canvas: search with its
   shortcut, clock-in, display, feedback, then **Report a concern** in its own red outline
-  (never in a menu), then notifications. A category's pages show as text tabs with a forest
-  underline under the top bar (`HubTabs`), so pages in a category need no breadcrumb.
+  (never in a menu), then notifications. **No strip of tabs across the top of a page** (owner,
+  11 Nov 2026): the sidebar is the way between a category's pages (a page's own steps are
+  listed one level further in while you are on it), and a page header names the category in a
+  small eyebrow. **Actions open in place** (a right-side panel, a bottom sheet on phones, or a
+  dialog), never on a separate page; lists open a record's detail in a side panel. The
+  structural patterns are in `docs/portal-structure.md`.
 - **Status language:** a dot and a word, not a coloured badge: pending, in progress,
   completed, needs attention, overdue, approved, unavailable (`Status` in `ui.tsx`;
   lesson review uses `WorkflowBadge` in `kit.tsx`).

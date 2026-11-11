@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
-import { ADMIN_INDEX_HREF, AREA_SUBTITLE, isGroupedArea, isSidebarItemActive, normalisePortalPath, sidebarLayout, visiblePages, visibleSidebar, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
+import { ADMIN_INDEX_HREF, AREA_SUBTITLE, SUB_PAGES, isGroupedArea, isSidebarItemActive, navItemFor, normalisePortalPath, sidebarLayout, visiblePages, visibleSidebar, type PortalArea, type PortalNavItem, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
 import { Icon } from "@/components/learn/Icon";
 import { ActionsMenu, type MenuAction } from "@/components/learn/kit";
 import { InstallAppLink } from "@/components/learn/InstallApp";
@@ -82,9 +82,9 @@ function PinButton({ item, pinned }: { item: SidebarItem; pinned: boolean }) {
 }
 
 /** A top-level page: icon and name. */
-function NavLink({ item, active, onNavigate, count, pin }: { item: SidebarItem; active: boolean; onNavigate?: () => void; count?: number; pin?: { pinned: boolean } }) {
+function NavLink({ item, active, here, onNavigate, count, pin }: { item: SidebarItem; active: boolean; /** One of its pages is open (they are listed under it). */ here?: boolean; onNavigate?: () => void; count?: number; pin?: { pinned: boolean } }) {
   const link = (
-    <Link href={item.href} onClick={onNavigate} aria-current={active ? "page" : undefined} title={item.hint} className={`portal-nav-row ${active ? "portal-nav-row--active" : ""} ${pin ? "!pr-9" : ""}`}>
+    <Link href={item.href} onClick={onNavigate} aria-current={active ? "page" : undefined} title={item.hint} className={`portal-nav-row ${active ? "portal-nav-row--active" : here ? "portal-nav-cat--here" : ""} ${pin ? "!pr-9" : ""}`}>
       <span className="portal-nav-icon" aria-hidden="true">
         <Icon name={item.icon} />
       </span>
@@ -101,8 +101,17 @@ function NavLink({ item, active, onNavigate, count, pin }: { item: SidebarItem; 
   );
 }
 
-/** The collapsed rail: one icon per page or category, its name in a tooltip. */
-function RailLink({ item, active, onNavigate, count }: { item: SidebarItem; active: boolean; onNavigate?: () => void; count?: number }) {
+/** The collapsed rail: one icon per page or category, its name in a tooltip. A category with
+ * several pages opens the menu at that category (its pages are listed there, not across the
+ * top of the page). */
+function RailLink({ item, active, onNavigate, count, onExpand }: { item: SidebarItem; active: boolean; onNavigate?: () => void; count?: number; onExpand?: () => void }) {
+  if (onExpand)
+    return (
+      <button type="button" onClick={onExpand} aria-current={active ? "page" : undefined} data-tip={count ? `${item.label} (${count})` : item.label} aria-label={count ? `${item.label}: show its pages (${count} waiting)` : `${item.label}: show its pages`} className="portal-rail-btn">
+        <Icon name={item.icon} />
+        {!!count && <span aria-hidden="true" className="portal-rail-dot" />}
+      </button>
+    );
   return (
     <Link href={item.href} onClick={onNavigate} aria-current={active ? "page" : undefined} data-tip={count ? `${item.label} (${count})` : item.label} aria-label={count ? `${item.label} (${count} waiting)` : item.label} className="portal-rail-btn">
       <Icon name={item.icon} />
@@ -111,16 +120,67 @@ function RailLink({ item, active, onNavigate, count }: { item: SidebarItem; acti
   );
 }
 
-/** A page inside a category: a text row under the category's heading. */
-function NavLeaf({ item, active, onNavigate, count, pinned }: { item: SidebarItem; active: boolean; onNavigate?: () => void; count?: number; pinned: boolean }) {
+const barePath = (p: string) => normalisePortalPath(p.split(/[?#]/)[0]).replace(/(.)\/$/, "$1");
+
+/** A page's own steps (Timetable: Weekly timetable, Teacher availability...; SUB_PAGES in
+ * nav.ts), listed under it while you are on it or one of them. They replace the strip of
+ * links that used to run across the top of those pages (owner, 11 Nov 2026). */
+function SubLeaves({ subs, pathname, onNavigate }: { subs: PortalNavItem[]; pathname: string; onNavigate?: () => void }) {
+  const here = barePath(pathname);
   return (
-    <div className="portal-nav-item relative">
-      <Link href={item.href} onClick={onNavigate} aria-current={active ? "page" : undefined} title={item.hint} className={`portal-nav-leaf !pr-9 ${active ? "portal-nav-leaf--active" : ""}`}>
-        <span className="min-w-0 flex-1 truncate">{item.label}</span>
-        <NavCount count={count} alert={isAlertBadge(item)} />
-      </Link>
-      <PinButton item={item} pinned={pinned} />
-    </div>
+    <ul className="portal-nav-subtree">
+      {subs.map((sp) => {
+        const on = here === barePath(sp.href) || here.startsWith(barePath(sp.href) + "/");
+        return (
+          <li key={sp.href}>
+            <Link href={sp.href} onClick={onNavigate} aria-current={on ? "page" : undefined} title={sp.hint} className={`portal-nav-sub ${on ? "portal-nav-sub--active" : ""}`}>
+              <span className="min-w-0 flex-1 truncate">{sp.label}</span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+/** A page inside a category: a text row under the category's heading (with its own steps
+ * underneath while you are on it). */
+function NavLeaf({ item, active, onNavigate, count, pinned, pathname }: { item: SidebarItem; active: boolean; onNavigate?: () => void; count?: number; pinned?: boolean; pathname?: string }) {
+  const subs = active && pathname ? SUB_PAGES[item.href] : undefined;
+  const onSub = !!subs && subs.some((sp) => barePath(pathname || "") === barePath(sp.href));
+  return (
+    <>
+      <div className="portal-nav-item relative">
+        <Link href={item.href} onClick={onNavigate} aria-current={active && !onSub ? "page" : undefined} title={item.hint} className={`portal-nav-leaf ${pinned === undefined ? "" : "!pr-9"} ${active ? (onSub ? "portal-nav-leaf--here" : "portal-nav-leaf--active") : ""}`}>
+          <span className="min-w-0 flex-1 truncate">{item.label}</span>
+          <NavCount count={count} alert={isAlertBadge(item)} />
+        </Link>
+        {pinned !== undefined && <PinButton item={item} pinned={pinned} />}
+      </div>
+      {subs && subs.length > 0 && <SubLeaves subs={subs} pathname={pathname || ""} onNavigate={onNavigate} />}
+    </>
+  );
+}
+
+/** Families and pupils: an entry with several pages (Messages: Inbox, Announcements) lists
+ * them underneath while you are in it, so the sidebar is the way between sibling pages. */
+function NavLinkWithPages({ item, pathname, onNavigate, count, badges }: { item: SidebarItem; pathname: string; onNavigate?: () => void; count?: number; badges: NavBadges }) {
+  const active = isSidebarItemActive(pathname, item);
+  const pages = item.tabs && item.tabs.length > 1 ? item.tabs : null;
+  const here = navItemFor(pathname);
+  return (
+    <>
+      <NavLink item={item} active={active && !pages} here={active && !!pages} onNavigate={onNavigate} count={count} />
+      {active && pages && (
+        <ul className="portal-nav-tree portal-nav-tree--open">
+          {pages.map((t) => (
+            <li key={t.href}>
+              <NavLeaf item={{ ...t, icon: t.icon || item.icon }} active={here?.tab?.href === t.href} onNavigate={onNavigate} count={t.badge ? badges[t.badge] : undefined} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
 
@@ -144,7 +204,7 @@ function NavSection({ section, isOpen, onToggle, pathname, onNavigate, badges, p
         <ul className="portal-nav-tree min-h-0 overflow-hidden">
           {section.items.map((i) => (
             <li key={i.href}>
-              <NavLeaf item={i} active={isSidebarItemActive(pathname, i)} onNavigate={onNavigate} count={i.badge ? badges[i.badge] : undefined} pinned={pinned.includes(i.href)} />
+              <NavLeaf item={i} active={isSidebarItemActive(pathname, i)} onNavigate={onNavigate} count={i.badge ? badges[i.badge] : undefined} pinned={pinned.includes(i.href)} pathname={pathname} />
             </li>
           ))}
         </ul>
@@ -321,7 +381,21 @@ function SidebarBody({
             {railItems.map(({ item, divider }) => (
               <li key={item.id || item.href}>
                 {divider && <div role="presentation" className="mx-auto my-2 w-6 border-t border-gold-light" />}
-                <RailLink item={item} active={isSidebarItemActive(pathname, item)} onNavigate={onNavigate} count={item.badge ? badges[item.badge] : undefined} />
+                <RailLink
+                  item={item}
+                  active={isSidebarItemActive(pathname, item)}
+                  onNavigate={onNavigate}
+                  count={item.badge ? badges[item.badge] : undefined}
+                  onExpand={
+                    grouped && !item.page && (item.tabs?.length || 0) > 1 && onToggle
+                      ? () => {
+                          const label = item.group || item.label;
+                          if (!isOpen(label)) toggle(label);
+                          onToggle();
+                        }
+                      : undefined
+                  }
+                />
               </li>
             ))}
           </ul>
@@ -355,7 +429,11 @@ function SidebarBody({
                 e.kind === "link"
                   ? [
                       <li key={e.item.id || e.item.href}>
-                        <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} pin={grouped ? { pinned: prefs.pinned.includes(e.item.href) } : undefined} />
+                        {grouped ? (
+                          <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} pin={{ pinned: prefs.pinned.includes(e.item.href) }} />
+                        ) : (
+                          <NavLinkWithPages item={e.item} pathname={pathname} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} badges={badges} />
+                        )}
                       </li>,
                     ]
                   : [],

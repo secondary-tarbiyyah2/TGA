@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon, type IconName } from "@/components/learn/Icon";
-import { dashboardPathForArea, hubFor, navItemFor, normalisePortalPath } from "@/lib/learn/nav";
+import { dashboardPathForArea, navItemFor, normalisePortalPath } from "@/lib/learn/nav";
 
 export type Crumb = { label: string; href?: string };
 
@@ -12,8 +12,9 @@ export type Crumb = { label: string; href?: string };
  * title, one line saying what the page is for, and the page's actions on the right. It sits
  * on the page, not inside a card, and takes as little height as it can.
  *
- * Where you are: on one of a category's own pages the section tabs above the header already
- * say it (Curriculum: Curriculum map, Lesson library...), so no breadcrumb is drawn. Deeper
+ * Where you are: on one of a category's own pages the sidebar lists the category's pages (no
+ * strip of tabs across the top: owner, 11 Nov 2026), so the header shows only the category
+ * name as a small eyebrow above the title, and no breadcrumb. Deeper
  * pages (a class, a pupil, a lesson) show a breadcrumb trail; on phones, one "back" link.
  * Crumbs are worked out from the sidebar when none are given: Today > Category > Page.
  *
@@ -80,11 +81,18 @@ export function PageHeader({
   // Phones: one link back to the nearest section above this page.
   const parent = back === false ? null : back || [...trail.slice(0, -1)].reverse().find((c) => c.href) || null;
   const hasActions = !!(actions || action);
-  // On one of a category's own pages the section tabs already say where you are.
+  // One of a category's own pages: the sidebar lists its sibling pages, so the header only
+  // names the category in a small eyebrow above the title (no trail, no strip of tabs).
   const inSection = !!nav?.tab && trail.length <= 3 && !(crumbs && crumbs.length > 3);
+  const category = inSection && nav ? nav.item.group || nav.item.label : null;
 
   return (
     <div className="mb-6 sm:mb-7">
+      {category && category !== title && (
+        <p className="t-eyebrow mb-1.5" data-page-category>
+          {category}
+        </p>
+      )}
       {parent?.href && !inSection && (
         <Link href={parent.href} className="-ml-1 mb-1.5 inline-flex min-h-11 items-center gap-1 rounded-lg px-1 text-sm font-medium text-ink-500 hover:text-forest-700 sm:hidden">
           <Icon name="chevronLeft" size="sm" />
@@ -132,35 +140,3 @@ export function Breadcrumbs({ trail, className = "" }: { trail: Crumb[]; classNa
   );
 }
 
-/**
- * The section navigation of a category (one sidebar category, several pages: see HUBS in
- * nav.ts), drawn by the shell at the top of each of its pages so the pages themselves don't
- * need to know: the category's name, then its pages as quiet text tabs with a forest
- * underline under the page you are on. Scrolls sideways on narrow screens.
- */
-export function HubTabs({ roles }: { roles: string[] }) {
-  const pathname = usePathname();
-  const hub = hubFor(pathname || "", roles);
-  if (!hub) return null;
-  return (
-    <nav aria-label={`${hub.item.label} pages`} className="hub-tabs hub-nav portal-tabs -mx-4 mb-6 overflow-x-auto px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 print:hidden">
-      <span className="hub-nav__label t-eyebrow" aria-hidden="true">
-        <Icon name={hub.item.icon} className="h-3.5 w-3.5" />
-        {hub.item.label}
-      </span>
-      <ul className="hub-seg">
-        {hub.tabs.map((t) => {
-          const active = hub.active?.href === t.href;
-          return (
-            <li key={t.href}>
-              <Link href={t.href} aria-current={active ? "page" : undefined} title={t.hint}>
-                <Icon name={t.icon || hub.item.icon} className="h-4 w-4" />
-                {t.label}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
-}

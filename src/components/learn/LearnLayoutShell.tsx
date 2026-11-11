@@ -17,7 +17,6 @@ import { ActivityRecorder } from "@/components/learn/feedback/ActivityRecorder";
 import { FeedbackButton } from "@/components/learn/feedback/FeedbackButton";
 import { MobileTabBar } from "@/components/learn/MobileTabBar";
 import { InstallAppSetup } from "@/components/learn/InstallApp";
-import { HubTabs } from "@/components/learn/PageHeader";
 import { ViewSettingsMenu } from "@/components/ViewSettings";
 import { ConfirmProvider } from "@/components/learn/kit";
 import { TourHost } from "@/components/learn/tour/TourHost";
@@ -165,7 +164,8 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
         <main id="main" className="flex-1 overflow-x-clip pb-24 lg:pb-0">
           <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
             <SignatureBanner />
-            <HubTabs roles={roles.map((r) => r.role)} />
+            {/* No strip of sibling pages across the top (owner, 11 Nov 2026): the sidebar lists a
+                category's pages, and each page starts with its own compact title. */}
             <ClockInGate userId={activeSession.user.id} roles={roles}>
               {children}
             </ClockInGate>
