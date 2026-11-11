@@ -1,0 +1,49 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-own-exam-style-questions-wit-l44",
+ "title": "Own exam-style questions with answers on the teacher sheet (lesson 44)",
+ "type": "revision set",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 2: Revision cycle 2",
+ "lessons": [
+  44
+ ],
+ "source": "Seeded from computing/y11 lesson 44 (Pupil PDF worksheet: own exam-style questions with answers on the teacher sheet)",
+ "intro": "Lesson 44: Revision: algorithms, trace tables and pseudocode. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "25 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: own exam-style section on three algorithms (trace, purpose, correct an error), including a binary search and a bubble sort pass.",
+     "a": "Answers on the teacher sheet.",
+     "model": "The teacher traces the first algorithm.",
+     "marks": 1
+    },
+    {
+     "q": "write the pseudocode for a linear search.",
+     "a": "Loop through items; if item = target, output found; else not found.",
+     "marks": 2
+    },
+    {
+     "q": "Trace: x = 10; while x > 1: x = x // 2. List x values.",
+     "a": "10, 5, 2, 1",
+     "model": "I do: x = 8: 8, 4, 2, 1.",
+     "marks": 1
+    },
+    {
+     "q": "A trace table helps to ...",
+     "a": "find logic errors",
+     "options": [
+      "find logic errors",
+      "fix syntax",
+      "compress files"
+     ],
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

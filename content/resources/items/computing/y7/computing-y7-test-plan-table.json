@@ -1,0 +1,167 @@
+{
+ "id": "computing-y7-test-plan-table",
+ "title": "Test plan table",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y7",
+ "unit": "Spring 2: Programming with Scratch",
+ "lessons": [
+  12
+ ],
+ "source": "Written for computing/y7 lesson 12 (Test plan table (pupil PDF))",
+ "intro": "Lesson 12: Test and debug the project; unit quiz. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Test plan"
+  },
+  {
+   "table": {
+    "head": [
+     "Test",
+     "Expected",
+     "Actual",
+     "Pass?"
+    ],
+    "rows": [
+     [
+      "Press right arrow",
+      "Basket moves right",
+      "",
+      ""
+     ],
+     [
+      "Apple touches basket",
+      "Score + 1",
+      "",
+      ""
+     ],
+     [
+      "Timer reaches 0",
+      "Game over",
+      "",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Common bugs"
+  },
+  {
+   "table": {
+    "head": [
+     "Bug",
+     "Fix"
+    ],
+    "rows": [
+     [
+      "Score never resets",
+      "set score to 0 on green flag"
+     ],
+     [
+      "Sprite leaves stage",
+      "if on edge, bounce"
+     ],
+     [
+      "Loop never ends",
+      "check the repeat until condition"
+     ]
+    ]
+   }
+  },
+  {
+   "panels": [
+    {
+     "title": "Unit quiz",
+     "points": [
+      "10 questions in the portal",
+      "Events, variables, IF, operators, loops"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "test",
+     "def": "check a program works as intended"
+    },
+    {
+     "term": "bug",
+     "def": "an error in a program"
+    },
+    {
+     "term": "debug",
+     "def": "find and fix errors"
+    },
+    {
+     "term": "test plan",
+     "def": "a table of tests and expected results"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find the bug: 'repeat until score = 10' but score goes 9, 11 (it adds 2). What happens and how do you fix it?",
+     "a": "It never equals 10 so the loop never ends; use 'score > 9'."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Complete your test plan, fix at least two bugs, save the final project; then take the 10-question unit quiz in the portal.",
+     "a": "A completed test plan, a working project and a quiz score."
+    },
+    {
+     "q": "Extend: write one sentence on each bug you fixed.",
+     "a": "Clear bug explanations."
+    },
+    {
+     "q": "Stretch: share your project with the teacher for feedback.",
+     "a": "Project shared."
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "The score keeps going up from last game. The fix is ...",
+     "options": [
+      "set score to 0 when green flag clicked",
+      "delete the score",
+      "add a forever loop"
+     ],
+     "a": "A) set score to 0 when green flag clicked. Initialise variables at the start."
+    },
+    {
+     "q": "A test plan lists ...",
+     "a": "tests and expected results",
+     "options": [
+      "tests and expected results",
+      "sprite names"
+     ]
+    },
+    {
+     "q": "Think again: If a program works once, does that mean it is bug-free?",
+     "a": "No: it must be tested with different inputs and situations."
+    }
+   ]
+  }
+ ]
+}

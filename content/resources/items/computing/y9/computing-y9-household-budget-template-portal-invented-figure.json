@@ -1,0 +1,174 @@
+{
+ "id": "computing-y9-household-budget-template-portal-invented-figure",
+ "title": "Household budget template",
+ "type": "printable graph/grid",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 2: Databases and spreadsheets",
+ "lessons": [
+  15
+ ],
+ "source": "Written for computing/y9 lesson 15 (Household budget template (portal, invented figures))",
+ "intro": "Lesson 15: Project: a household budget model. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Model structure"
+  },
+  {
+   "table": {
+    "head": [
+     "Item",
+     "Monthly (£)"
+    ],
+    "rows": [
+     [
+      "Income",
+      "2,400"
+     ],
+     [
+      "Rent",
+      "950"
+     ],
+     [
+      "Food",
+      "450"
+     ],
+     [
+      "Bills",
+      "300"
+     ],
+     [
+      "Travel",
+      "150"
+     ],
+     [
+      "Sadaqah",
+      "50"
+     ],
+     [
+      "Balance",
+      "=B2-SUM(B3:B7) = 500"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Savings target"
+  },
+  {
+   "model": {
+    "title": "Save for a £1,200 laptop with the £500 balance, keeping £200 for emergencies",
+    "parts": [
+     {
+      "text": "Available to save: 500 − 200 = 300 a month"
+     },
+     {
+      "text": "1,200 ÷ 300 = 4"
+     },
+     {
+      "text": "Saving for 4 months, no borrowing"
+     },
+     {
+      "label": "Why it works",
+      "text": "4 months, without interest-based credit"
+     }
+    ]
+   }
+  },
+  {
+   "panels": [
+    {
+     "title": "Scenarios",
+     "points": [
+      "Bills rise by 10%",
+      "Food falls by £50",
+      "Income drops one month"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "budget",
+     "def": "a plan for income and spending"
+    },
+    {
+     "term": "balance",
+     "def": "income minus spending"
+    },
+    {
+     "term": "zakah",
+     "def": "obligatory charity on wealth above the nisab, 2.5% a lunar year"
+    },
+    {
+     "term": "scenario",
+     "def": "a 'what if' version of the plan"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Bills rise by 10% (from £300). New bills and new balance?",
+     "a": "£330; balance £470."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Build the budget model (portal template): income, expenses, balance formula, a savings target and two scenarios; write a recommendation.",
+     "a": "A working model with scenarios and a recommendation."
+    },
+    {
+     "q": "Extend: add a chart of spending by category.",
+     "a": "A pie or bar chart."
+    },
+    {
+     "q": "Stretch: add a zakah calculator: 2.5% of savings above an example nisab.",
+     "a": "Correct zakah formula, e.g. =IF(B10>B11, B10*0.025, 0)."
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "Income £2,400, spending £1,900. Balance?",
+     "options": [
+      "£500",
+      "£4,300",
+      "£1,900"
+     ],
+     "a": "A) £500. 2,400 − 1,900 = 500."
+    },
+    {
+     "q": "The balance is ...",
+     "a": "income minus spending",
+     "options": [
+      "income minus spending",
+      "income plus spending"
+     ]
+    },
+    {
+     "q": "Think again: Why might a family with a good income still run out of money each month?",
+     "a": "Without a plan, small spends add up; a budget shows where money goes."
+    }
+   ]
+  }
+ ]
+}

@@ -56,12 +56,20 @@ every maths answer; own exam-style questions only (never copy past papers); Arab
 the lesson; no pictures of people or faces; British spelling, no em dashes; tests and mocks have marks on every
 question and an answer for every question.
 
-## State (10 Nov 2026)
+## State (11 Nov 2026)
 
-Spring 1 is complete: all 969 resources the Spring 1 lessons ask TGA to make are items (`content/resources/items`)
-and build into PDFs (see the "Term resources" log in `docs/curriculum-rebuild.md` for what each subject PR added).
-Spring 2, Summer 1 and Summer 2 have registers but no items yet (about 996, 856 and 814 to make; the numbers move
-as lessons change).
+Spring 1 (969) and Spring 2 (1,019) are complete: every resource those lessons ask TGA to make is an item
+(`content/resources/items`) and builds into PDFs (see the "Term resources" log in `docs/curriculum-rebuild.md` for
+what each subject PR added). Summer 1 and Summer 2 have registers but no items yet (about 865 and 810 to make; the
+numbers move as lessons change).
+
+Tips from Spring 2: the register takes a made item's type from the item, so no type override is needed. Rebuilding a
+worksheet from the whole lesson (its texts, tables, models, sorts and questions) is a good default; then hand-write
+what the lesson only names: full teacher-written texts (keep the lesson's quoted extract word for word inside them),
+papers with marks, home practical methods, case studies with data, maps and grids. When two resource PRs are open at
+once, both change `content/resources/<term>.json`: merge the first, then merge main into the second and rerun
+`register.mjs` (keep other terms' registers as on main). A cancelled "Build term resources" run means a newer run
+replaced it; the newest run builds everything that changed.
 
 What the seeder does well on its own: printable grids from the name (number lines, place value charts, times tables,
 fraction walls, squared, dot, graph paper, periodic table, clocks, bar chart axes), checklists (from the list in the

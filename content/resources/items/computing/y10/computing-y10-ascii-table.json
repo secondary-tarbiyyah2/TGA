@@ -1,0 +1,152 @@
+{
+ "id": "computing-y10-ascii-table",
+ "title": "ASCII table",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 2: Data representation",
+ "lessons": [
+  21
+ ],
+ "source": "Written for computing/y10 lesson 21 (ASCII table (pupil PDF))",
+ "intro": "Lesson 21: Representing text: ASCII. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "ASCII codes"
+  },
+  {
+   "table": {
+    "head": [
+     "Character",
+     "Denary",
+     "7-bit binary"
+    ],
+    "rows": [
+     [
+      "0",
+      "48",
+      "0110000"
+     ],
+     [
+      "A",
+      "65",
+      "1000001"
+     ],
+     [
+      "B",
+      "66",
+      "1000010"
+     ],
+     [
+      "a",
+      "97",
+      "1100001"
+     ],
+     [
+      "space",
+      "32",
+      "0100000"
+     ]
+    ]
+   }
+  },
+  {
+   "panels": [
+    {
+     "title": "Patterns",
+     "points": [
+      "Letters are in order: C = 67",
+      "Lower case = upper case + 32",
+      "Digit characters are not numbers: '7' is 55"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "character set",
+     "def": "a defined list of characters and their codes"
+    },
+    {
+     "term": "ASCII",
+     "def": "a 7-bit character set of 128 characters"
+    },
+    {
+     "term": "encode",
+     "def": "turn characters into codes"
+    },
+    {
+     "term": "decode",
+     "def": "turn codes back into characters"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Encode 'CAB' in denary ASCII.",
+     "a": "67 65 66"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: encode and decode six words in denary and binary; work out codes from the pattern.",
+     "a": "Answers on the teacher sheet."
+    },
+    {
+     "q": "Extend: write a Python loop that prints each letter of a word with its code.",
+     "a": "for ch in word: print(ch, ord(ch))"
+    },
+    {
+     "q": "Stretch: why is the string '7' different from the number 7?",
+     "a": "'7' is code 55; 7 is the value 7 in binary."
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "If 'a' is 97, 'e' is ...",
+     "options": [
+      "101",
+      "105",
+      "69",
+      "100"
+     ],
+     "a": "A) 101. a, b, c, d, e: 97 + 4 = 101."
+    },
+    {
+     "q": "7-bit ASCII has ...",
+     "a": "128 characters",
+     "options": [
+      "128 characters",
+      "256 characters",
+      "26 characters"
+     ]
+    },
+    {
+     "q": "Think again: When you type the letter A, what does the computer actually store?",
+     "a": "A number (65) stored in binary (1000001)."
+    }
+   ]
+  }
+ ]
+}

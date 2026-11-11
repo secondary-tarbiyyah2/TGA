@@ -1,0 +1,221 @@
+{
+ "id": "computing-y11-knowledge-organiser-u83b333",
+ "title": "Knowledge organiser: Revision cycle 2",
+ "type": "knowledge organiser",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 2: Revision cycle 2",
+ "lessons": [
+  38,
+  40,
+  41,
+  42,
+  43,
+  44,
+  49
+ ],
+ "source": "Seeded from computing/y11 lessons 38, 40, 41, 42, 43, 44, 49 (Knowledge organiser (pupil PDF))",
+ "intro": "Revision cycle 2: the big ideas, key words and examples on one sheet. Keep it in your book and use it to revise (cover, write, check).",
+ "blocks": [
+  {
+   "panels": [
+    {
+     "title": "Big questions",
+     "points": [
+      "Two pupils both scored 45/80. Could they need different revision?",
+      "How many phones has your family owned in ten years? Where are the old ones now?",
+      "An app is free. What is it selling?",
+      "Which is the weakest part of most security systems: the hardware, the software or the people?"
+     ]
+    },
+    {
+     "title": "Islamic foundation",
+     "text": "Allah says: 'Eat and drink, but be not excessive' (Al-A'raf 7:31). Avoiding waste (israf) applies to devices and energy as well as food."
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "repair list",
+     "def": "gaps to fix with actions and dates"
+    },
+    {
+     "term": "command word",
+     "def": "the word telling you what to do"
+    },
+    {
+     "term": "calculation",
+     "def": "a question with working and units"
+    },
+    {
+     "term": "discuss",
+     "def": "explore issues and reach a conclusion"
+    },
+    {
+     "term": "e-waste",
+     "def": "discarded electronic devices"
+    },
+    {
+     "term": "rare earth metals",
+     "def": "metals mined for electronic components"
+    },
+    {
+     "term": "data centre",
+     "def": "a building of servers using lots of energy"
+    },
+    {
+     "term": "recycling",
+     "def": "recovering materials for reuse"
+    },
+    {
+     "term": "personal data",
+     "def": "information that identifies a living person"
+    },
+    {
+     "term": "data protection",
+     "def": "laws on how personal data is collected and used"
+    },
+    {
+     "term": "bias",
+     "def": "unfair results from skewed data"
+    },
+    {
+     "term": "intellectual property",
+     "def": "creations protected by copyright, patents or trademarks"
+    },
+    {
+     "term": "malware",
+     "def": "software designed to cause harm"
+    },
+    {
+     "term": "social engineering",
+     "def": "tricking people into giving access"
+    },
+    {
+     "term": "encryption",
+     "def": "scrambling data so only key holders can read it"
+    },
+    {
+     "term": "penetration testing",
+     "def": "authorised attacks to find weaknesses"
+    },
+    {
+     "term": "transmission time",
+     "def": "file size ÷ transmission rate"
+    },
+    {
+     "term": "bit rate",
+     "def": "bits sent per second"
+    }
+   ]
+  },
+  {
+   "h": "What we learn"
+  },
+  {
+   "panels": [
+    {
+     "title": "Mock feedback: Paper 1 and the repair list",
+     "points": [
+      "identify my three weakest topics",
+      "classify lost marks (knowledge, calculation, extended answer)",
+      "rewrite one answer to full marks"
+     ]
+    },
+    {
+     "title": "Impact of technology: the environment",
+     "points": [
+      "name environmental impacts of manufacture, use and disposal",
+      "explain ways to reduce them",
+      "discuss a trade-off with a reasoned conclusion"
+     ]
+    },
+    {
+     "title": "Impact of technology: ethics, law and personal data",
+     "points": [
+      "Collected for a clear purpose",
+      "Kept secure and accurate",
+      "Not kept longer than needed",
+      "People have rights to see it"
+     ]
+    },
+    {
+     "title": "Writing 6-mark discuss answers: cybersecurity",
+     "points": [
+      "name threats and protections",
+      "develop points with 'because' and 'so'",
+      "reach a justified conclusion"
+     ]
+    },
+    {
+     "title": "Revision: data and network calculations",
+     "points": [
+      "Convert units first",
+      "Give units in the answer"
+     ]
+    },
+    {
+     "title": "Revision: algorithms, trace tables and pseudocode",
+     "points": [
+      "Purpose: sum of squares 1 to 4",
+      "Off-by-one: range(1, 4) stops at 3",
+      "Check boundaries"
+     ]
+    },
+    {
+     "title": "Feedback and the plan to the exams",
+     "points": [
+      "Use the mark scheme",
+      "Award method marks fairly",
+      "Note the type of each lost mark"
+     ]
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "panels": [
+    {
+     "title": "'Explain why hex is used' (2 marks); answer 'it is easier' scored 0",
+     "points": [
+      "Point: hex is shorter than binary",
+      "Development: so programmers make fewer mistakes reading it",
+      "Link: e.g. colour codes",
+      "Answer: A 2-mark answer with point and development"
+     ]
+    },
+    {
+     "title": "Discuss how a small business could protect itself from cyberattacks (6 marks)",
+     "points": [
+      "Training staff reduces phishing because staff spot fake emails",
+      "Anti-malware stops known threats but must be updated",
+      "Backups allow recovery from ransomware, but cost money",
+      "Conclusion: training is most important because most attacks target people",
+      "Answer: Developed, balanced and concluded"
+     ]
+    },
+    {
+     "title": "Send a 5 MiB file at 8 Mbps (8,000,000 bits per second). Time?",
+     "points": [
+      "5 MiB = 5 × 1024 × 1024 × 8 = 41,943,040 bits",
+      "41,943,040 ÷ 8,000,000",
+      "≈ 5.24 seconds",
+      "Answer: About 5.2 seconds"
+     ]
+    }
+   ],
+   "cols": 2
+  }
+ ],
+ "name": false
+}
