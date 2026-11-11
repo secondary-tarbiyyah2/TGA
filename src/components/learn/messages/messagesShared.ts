@@ -24,7 +24,7 @@ export type InboxRow = {
 
 export type Person = { user_id: string; full_name: string; roles: string[]; detail: string | null };
 
-export const STAFF_ROLE_IDS = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"];
+export const STAFF_ROLE_IDS = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "digital_lead"];
 
 /** Files staff may attach: documents and pictures (the bucket's own list, 0204). */
 export const ATTACH_ACCEPT = ".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,image/png,image/jpeg,image/webp,image/gif,image/heic,image/heif";

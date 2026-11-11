@@ -501,11 +501,12 @@ export function AddPersonModal({
               )}
 
               {type === "staff" && (
-                <Field label="Role" hint="Only a Headteacher can add another Headteacher or an Admin.">
+                <Field label="Role" hint="Only a Headteacher can add another Headteacher, an Admin or a Digital Lead.">
                   <Select value={staffRole} onChange={(e) => setStaffRole(e.target.value as LearnRole)} className={INPUT_CLASS}>
                     <option value="admissions">Admissions</option>
                     <option value="admin">Admin</option>
                     <option value="head_teacher">Headteacher</option>
+                    <option value="digital_lead">Digital Lead (reads the audit log, keeps the record of reviews)</option>
                   </Select>
                 </Field>
               )}

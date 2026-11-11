@@ -54,7 +54,7 @@ export function SingleCentralRecord() {
 
   const load = async () => {
     if (!supabase) return;
-    const { data: roles } = await supabase.from("user_roles").select("user_id, role, profiles(full_name)").in("role", ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"]);
+    const { data: roles } = await supabase.from("user_roles").select("user_id, role, profiles(full_name)").in("role", ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "digital_lead"]);
     const byUser = new Map<string, StaffRow>();
     for (const r of (roles as unknown as { user_id: string; role: string; profiles: { full_name: string } | null }[]) || []) {
       if (!byUser.has(r.user_id)) byUser.set(r.user_id, { user_id: r.user_id, full_name: r.profiles?.full_name || r.user_id, role: r.role });

@@ -69,10 +69,16 @@ function isSencoOnly(roles: string[]) {
   return roles.includes("senco") && !roles.some((r) => ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"].includes(r));
 }
 
+function isDigitalLeadOnly(roles: string[]) {
+  return roles.includes("digital_lead") && !roles.some((r) => ["head_teacher", "admin", "admissions"].includes(r));
+}
+
 /** The tour for this person in this area. */
 export function tourFor(area: PortalArea, roles: string[]): Tour {
   const key = `${area}:${VERSION}`;
   if (area === "admin") {
+    // A Digital Lead on their own has one page here, the Audit log.
+    if (isDigitalLeadOnly(roles)) return { key, steps: [CATEGORIES, PINNED, SEARCH, CONCERN, HELP] };
     const head = isHead(roles);
     return {
       key,

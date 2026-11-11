@@ -76,6 +76,8 @@ export const JOURNEYS: Record<GuideRole, Journey[]> = {
       ],
     },
   ],
+  // A Digital Lead on their own has one page, so no day in the life.
+  digital: [],
   parent: [
     {
       id: "parent-week",

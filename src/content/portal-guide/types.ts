@@ -8,15 +8,16 @@
 // No imports here: this file runs in node tests as well as in the portal.
 
 /** Who the guide is written for. Head teacher and admin share one guide;
- * teachers and cover staff share one; a SENCo-only account and admissions
- * staff get their own (they see fewer pages). */
-export type GuideRole = "head" | "admissions" | "teacher" | "senco" | "parent" | "pupil";
+ * teachers and cover staff share one; a SENCo-only account, a Digital
+ * Lead-only account and admissions staff get their own (they see fewer pages). */
+export type GuideRole = "head" | "admissions" | "teacher" | "senco" | "digital" | "parent" | "pupil";
 
 export const GUIDE_ROLE_LABEL: Record<GuideRole, string> = {
   head: "Head teacher and admin",
   admissions: "Admissions",
   teacher: "Teachers and cover staff",
   senco: "SENCo",
+  digital: "Digital Lead",
   parent: "Parents and carers",
   pupil: "Pupils",
 };

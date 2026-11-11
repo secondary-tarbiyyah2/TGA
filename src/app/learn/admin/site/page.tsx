@@ -101,7 +101,7 @@ function SiteAdminContent() {
 export default function SiteAdminPage() {
   return (
     <section className="app-pad">
-      <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
+      <LearnGate allowedRoles={["head_teacher", "admin", "admissions", "digital_lead"]}>
         <SiteAdminContent />
       </LearnGate>
     </section>

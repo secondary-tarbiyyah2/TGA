@@ -70,6 +70,8 @@ export type HubTab = {
   headOnly?: boolean;
   matchPrefixes?: string[];
   senco?: boolean;
+  /** Also open to a Digital Lead (see isDigitalLeadOnly). */
+  digitalLead?: boolean;
   badge?: NavBadgeName;
   keywords?: string;
   short?: string;
@@ -93,6 +95,8 @@ export type SidebarItem = {
   headOnly?: boolean;
   /** Also open to an account whose only staff role is SENCo (see sencoOnly). */
   senco?: boolean;
+  /** Also open to a Digital Lead (see isDigitalLeadOnly). */
+  digitalLead?: boolean;
   group?: string;
   matchPrefixes?: string[];
   badge?: NavBadgeName;
@@ -196,7 +200,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
         { href: "/admin/send", label: "SEND register", icon: "listChecks", hint: "Support plans, adjustments, access arrangements and reviews", headOnly: true, keywords: "special needs senco ehcp support plans" },
         { href: "/admin/message-oversight", label: "Message oversight", icon: "shieldAlert", hint: "Safeguarding view of staff-family messages", headOnly: true, keywords: "flagged messages monitoring" },
         { href: "/admin/data-protection", label: "Data protection", icon: "fileCheck", hint: "Retention rules and subject access exports", headOnly: true, keywords: "gdpr subject access request retention erase" },
-        { href: "/admin/audit-log", label: "Audit log", icon: "listChecks", hint: "Who changed what, with filters and CSV export", headOnly: true, keywords: "history changes who did what" },
+        { href: "/admin/audit-log", label: "Audit log", icon: "listChecks", hint: "Who changed what, accounts and sign-ins, and the record of reviews", headOnly: true, digitalLead: true, keywords: "history changes who did what digital lead review sign-ins accounts access record of reviews" },
       ],
     },
     {
@@ -493,6 +497,12 @@ export function isSencoOnly(roles: string[]): boolean {
   return roles.includes("senco") && !roles.some((r) => ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"].includes(r));
 }
 
+/** A Digital Lead account with no office role: in the Admin area it sees
+ * only the pages marked `digitalLead` (the Audit log). */
+export function isDigitalLeadOnly(roles: string[]): boolean {
+  return roles.includes("digital_lead") && !roles.some((r) => ["head_teacher", "admin", "admissions"].includes(r));
+}
+
 /** How well a route matches the current path: the href's length for the page
  * or a sub-page, 1 for a matchPrefix, 0 for no match. Longest wins. */
 function matchScore(p: string, href: string, prefixes?: string[]): number {
@@ -601,15 +611,19 @@ export function guideFilterFor(features: Partial<FeatureMap> | undefined): { hid
 export function visibleSidebar(area: PortalArea, roles: string[], features?: Partial<FeatureMap>): SidebarItem[] {
   const isHead = isHeadRole(roles);
   const sencoOnly = area === "teach" && isSencoOnly(roles);
+  const digitalLead = area === "admin" && roles.includes("digital_lead");
+  const digitalLeadOnly = area === "admin" && isDigitalLeadOnly(roles);
+  // A Digital Lead also opens the pages marked digitalLead; on their own, only those.
+  const canOpen = (x: { headOnly?: boolean; digitalLead?: boolean }) =>
+    digitalLeadOnly ? !!x.digitalLead : isHead || !x.headOnly || (digitalLead && !!x.digitalLead);
   const out: SidebarItem[] = [];
   for (const i of SIDEBAR_NAV[area]) {
-    if (i.headOnly && !isHead) continue;
     if (featureOff(features, i.feature)) continue;
     if (!i.tabs) {
-      if (!sencoOnly || i.senco) out.push(i);
+      if (canOpen(i) && (!sencoOnly || i.senco)) out.push(i);
       continue;
     }
-    const tabs = i.tabs.filter((t) => (isHead || !t.headOnly) && (!sencoOnly || t.senco || i.senco) && !featureOff(features, t.feature));
+    const tabs = i.tabs.filter((t) => canOpen(t) && (!sencoOnly || t.senco || i.senco) && !featureOff(features, t.feature));
     if (tabs.length === 0) continue;
     // A hub with one page left for this user is just that page. If that page
     // is the hub's own first page, it keeps the hub's name ("Today", not "Overview").
@@ -722,12 +736,12 @@ export const AREA_SUBTITLE: Record<PortalArea, string> = {
 /** The places each kind of user goes most, in priority order: the phone tab
  * bar shows the first four this user can open (see mobileTabsFor). Each is a
  * page's href. Extra entries are fallbacks for roles that can't open the
- * earlier ones (admissions staff, a SENCo). */
+ * earlier ones (admissions staff, a SENCo, a Digital Lead). */
 export const MOBILE_TABS: Record<PortalArea, string[]> = {
   student: ["/student/dashboard", "/student/todo", "/student/classes", "/student/revision"],
   family: ["/family/dashboard", "/family/todo", "/family/messages", "/family/classes"],
   teach: ["/teach/dashboard", "/teach/classes", "/teach/review", "/teach/messages", "/teach/send", "/teach/handbook"],
-  admin: ["/admin/dashboard", "/admin/messages", "/admin/pupils", "/admin/classes", "/admin/admissions", "/admin/calendar", "/admin/people", "/admin/open-evening"],
+  admin: ["/admin/dashboard", "/admin/messages", "/admin/pupils", "/admin/classes", "/admin/admissions", "/admin/calendar", "/admin/people", "/admin/open-evening", "/admin/audit-log"],
 };
 
 /** The (at most four) entries in this user's phone tab bar. Staff get single

@@ -124,3 +124,18 @@ test("search words: plain words find the right page", () => {
   assert.ok(find("gdpr").includes("Data protection"));
   assert.ok(find("subjects").includes("Subjects"));
 });
+
+test("a Digital Lead opens the Audit log, and on their own nothing else in Admin", () => {
+  const only = visiblePages("admin", ["digital_lead"]).map((p) => p.href).filter((h) => h !== "/admin/site");
+  assert.deepEqual(only, ["/admin/audit-log"]);
+  assert.deepEqual(mobileTabsFor("admin", ["digital_lead"]).map((t) => t.href), ["/admin/audit-log"]);
+  // A teacher who is also the Digital Lead: the same one page in Admin, and the teaching menu as before.
+  assert.ok(visiblePages("admin", ["teacher", "digital_lead"]).some((p) => p.href === "/admin/audit-log"));
+  assert.equal(visiblePages("teach", ["teacher", "digital_lead"]).length, visiblePages("teach", ["teacher"]).length);
+  // Admissions staff gain the Audit log only with the role.
+  assert.ok(!visiblePages("admin", ["admissions"]).some((p) => p.href === "/admin/audit-log"));
+  assert.ok(visiblePages("admin", ["admissions", "digital_lead"]).some((p) => p.href === "/admin/audit-log"));
+  assert.ok(visiblePages("admin", ["admissions", "digital_lead"]).some((p) => p.href === "/admin/admissions"));
+  // A Digital Lead never gets the head-only pages.
+  assert.ok(!visiblePages("admin", ["digital_lead"]).some((p) => p.href === "/admin/fees" || p.href === "/admin/staff"));
+});

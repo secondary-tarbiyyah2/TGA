@@ -24,9 +24,9 @@ type StaffRow = {
 };
 type DirectoryRow = { user_id: string; full_name: string; email: string | null; phone: string | null; display_title: string | null; roles: string[]; active: boolean; is_dsl: boolean };
 
-const STAFF_ROLE_LIST: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"];
+const STAFF_ROLE_LIST: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "digital_lead"];
 /** Roles the Headteacher can switch on/off here (head_teacher itself is never changed from this screen). */
-const EDITABLE_ROLES: LearnRole[] = ["teacher", "teaching_assistant_cover", "senco", "admissions", "admin"];
+const EDITABLE_ROLES: LearnRole[] = ["teacher", "teaching_assistant_cover", "senco", "digital_lead", "admissions", "admin"];
 
 function errText(e: { message?: string; details?: string; hint?: string; code?: string } | null | undefined): string {
   if (!e) return "unknown error";
@@ -271,7 +271,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
             ))}
           </div>
           {!canEditRoles && <p className="mt-1 text-xs text-ink/65">Only the Headteacher can change roles.</p>}
-          {canEditRoles && <p className="mt-1 text-xs text-ink/65">Removing a role removes every class it was granted for.</p>}
+          {canEditRoles && <p className="mt-1 text-xs text-ink/65">Removing a role removes every class it was granted for. Digital Lead reads the audit log, staff accounts and sign-ins, and keeps the record of reviews; it changes nothing else.</p>}
         </fieldset>
 
         <div className="flex items-center gap-3">
