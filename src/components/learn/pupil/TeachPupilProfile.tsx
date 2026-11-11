@@ -98,7 +98,7 @@ export function TeachPupilProfile({ id }: { id: string }) {
       <PageHeader
         crumbs={crumbs}
         title={pupil.name}
-        subtitle={[pupil.yearGroup, pupil.classes.map((c) => c.name).join(", "), pupil.dob ? `born ${formatDob(pupil.dob)}${age !== null ? ` (age ${age})` : ""}` : ""].filter(Boolean).join(" · ")}
+        subtitle={[pupil.yearGroup, pupil.classes.map((c) => c.name).join(", "), pupil.dob ? `born ${formatDob(pupil.dob)}${age !== null ? `, age ${age}` : ""}` : ""].filter(Boolean).join(" · ")}
         actions={
           <span className="flex items-center gap-1">
             {prev && (

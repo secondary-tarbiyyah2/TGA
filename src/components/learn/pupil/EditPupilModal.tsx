@@ -131,11 +131,11 @@ export function EditPupilModal({ childId, onClose, onSaved }: { childId: string;
                   {(["male", "female"] as const).map((g) => (
                     <label key={g} className={`inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-lg border px-3 text-sm ${form.gender === g ? "border-teal-700 bg-teal-100/60" : "border-gold-light bg-white hover:bg-cream"}`}>
                       <input type="radio" name="edit-pupil-gender" checked={form.gender === g} onChange={() => set("gender", g)} className="accent-[var(--color-teal-700)]" />
-                      {g === "male" ? "Male (he / him)" : "Female (she / her)"}
+                      {g === "male" ? "Male" : "Female"}
                     </label>
                   ))}
                 </div>
-                <p className={`mt-1 ${ui.hint}`}>Report and note forms use this for the pronoun; staff can still change it there.</p>
+                <p className={`mt-1 ${ui.hint}`}>Reports and notes to parents use this to write &ldquo;he&rdquo; or &ldquo;she&rdquo;.</p>
               </fieldset>
             </FormSection>
             <FormSection title="Classes" description="Tick every class the pupil is in. A pupil can be in one class per subject.">
